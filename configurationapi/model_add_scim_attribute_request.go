@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddScimAttributeRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddScimAttributeRequest{}
+
 // AddScimAttributeRequest struct for AddScimAttributeRequest
 type AddScimAttributeRequest struct {
 	// Name of the new SCIM Attribute
@@ -83,7 +86,7 @@ func (o *AddScimAttributeRequest) SetAttributeName(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *AddScimAttributeRequest) GetSchemas() []EnumscimAttributeSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumscimAttributeSchemaUrn
 		return ret
 	}
@@ -93,7 +96,7 @@ func (o *AddScimAttributeRequest) GetSchemas() []EnumscimAttributeSchemaUrn {
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddScimAttributeRequest) GetSchemasOk() ([]EnumscimAttributeSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -101,7 +104,7 @@ func (o *AddScimAttributeRequest) GetSchemasOk() ([]EnumscimAttributeSchemaUrn, 
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *AddScimAttributeRequest) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -115,7 +118,7 @@ func (o *AddScimAttributeRequest) SetSchemas(v []EnumscimAttributeSchemaUrn) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddScimAttributeRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -125,7 +128,7 @@ func (o *AddScimAttributeRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddScimAttributeRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -133,7 +136,7 @@ func (o *AddScimAttributeRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddScimAttributeRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -171,7 +174,7 @@ func (o *AddScimAttributeRequest) SetName(v string) {
 
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *AddScimAttributeRequest) GetType() EnumscimAttributeTypeProp {
-	if o == nil || isNil(o.Type) {
+	if o == nil || IsNil(o.Type) {
 		var ret EnumscimAttributeTypeProp
 		return ret
 	}
@@ -181,7 +184,7 @@ func (o *AddScimAttributeRequest) GetType() EnumscimAttributeTypeProp {
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddScimAttributeRequest) GetTypeOk() (*EnumscimAttributeTypeProp, bool) {
-	if o == nil || isNil(o.Type) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return o.Type, true
@@ -189,7 +192,7 @@ func (o *AddScimAttributeRequest) GetTypeOk() (*EnumscimAttributeTypeProp, bool)
 
 // HasType returns a boolean if a field has been set.
 func (o *AddScimAttributeRequest) HasType() bool {
-	if o != nil && !isNil(o.Type) {
+	if o != nil && !IsNil(o.Type) {
 		return true
 	}
 
@@ -203,7 +206,7 @@ func (o *AddScimAttributeRequest) SetType(v EnumscimAttributeTypeProp) {
 
 // GetRequired returns the Required field value if set, zero value otherwise.
 func (o *AddScimAttributeRequest) GetRequired() bool {
-	if o == nil || isNil(o.Required) {
+	if o == nil || IsNil(o.Required) {
 		var ret bool
 		return ret
 	}
@@ -213,7 +216,7 @@ func (o *AddScimAttributeRequest) GetRequired() bool {
 // GetRequiredOk returns a tuple with the Required field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddScimAttributeRequest) GetRequiredOk() (*bool, bool) {
-	if o == nil || isNil(o.Required) {
+	if o == nil || IsNil(o.Required) {
 		return nil, false
 	}
 	return o.Required, true
@@ -221,7 +224,7 @@ func (o *AddScimAttributeRequest) GetRequiredOk() (*bool, bool) {
 
 // HasRequired returns a boolean if a field has been set.
 func (o *AddScimAttributeRequest) HasRequired() bool {
-	if o != nil && !isNil(o.Required) {
+	if o != nil && !IsNil(o.Required) {
 		return true
 	}
 
@@ -235,7 +238,7 @@ func (o *AddScimAttributeRequest) SetRequired(v bool) {
 
 // GetCaseExact returns the CaseExact field value if set, zero value otherwise.
 func (o *AddScimAttributeRequest) GetCaseExact() bool {
-	if o == nil || isNil(o.CaseExact) {
+	if o == nil || IsNil(o.CaseExact) {
 		var ret bool
 		return ret
 	}
@@ -245,7 +248,7 @@ func (o *AddScimAttributeRequest) GetCaseExact() bool {
 // GetCaseExactOk returns a tuple with the CaseExact field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddScimAttributeRequest) GetCaseExactOk() (*bool, bool) {
-	if o == nil || isNil(o.CaseExact) {
+	if o == nil || IsNil(o.CaseExact) {
 		return nil, false
 	}
 	return o.CaseExact, true
@@ -253,7 +256,7 @@ func (o *AddScimAttributeRequest) GetCaseExactOk() (*bool, bool) {
 
 // HasCaseExact returns a boolean if a field has been set.
 func (o *AddScimAttributeRequest) HasCaseExact() bool {
-	if o != nil && !isNil(o.CaseExact) {
+	if o != nil && !IsNil(o.CaseExact) {
 		return true
 	}
 
@@ -267,7 +270,7 @@ func (o *AddScimAttributeRequest) SetCaseExact(v bool) {
 
 // GetMultiValued returns the MultiValued field value if set, zero value otherwise.
 func (o *AddScimAttributeRequest) GetMultiValued() bool {
-	if o == nil || isNil(o.MultiValued) {
+	if o == nil || IsNil(o.MultiValued) {
 		var ret bool
 		return ret
 	}
@@ -277,7 +280,7 @@ func (o *AddScimAttributeRequest) GetMultiValued() bool {
 // GetMultiValuedOk returns a tuple with the MultiValued field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddScimAttributeRequest) GetMultiValuedOk() (*bool, bool) {
-	if o == nil || isNil(o.MultiValued) {
+	if o == nil || IsNil(o.MultiValued) {
 		return nil, false
 	}
 	return o.MultiValued, true
@@ -285,7 +288,7 @@ func (o *AddScimAttributeRequest) GetMultiValuedOk() (*bool, bool) {
 
 // HasMultiValued returns a boolean if a field has been set.
 func (o *AddScimAttributeRequest) HasMultiValued() bool {
-	if o != nil && !isNil(o.MultiValued) {
+	if o != nil && !IsNil(o.MultiValued) {
 		return true
 	}
 
@@ -299,7 +302,7 @@ func (o *AddScimAttributeRequest) SetMultiValued(v bool) {
 
 // GetCanonicalValue returns the CanonicalValue field value if set, zero value otherwise.
 func (o *AddScimAttributeRequest) GetCanonicalValue() []string {
-	if o == nil || isNil(o.CanonicalValue) {
+	if o == nil || IsNil(o.CanonicalValue) {
 		var ret []string
 		return ret
 	}
@@ -309,7 +312,7 @@ func (o *AddScimAttributeRequest) GetCanonicalValue() []string {
 // GetCanonicalValueOk returns a tuple with the CanonicalValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddScimAttributeRequest) GetCanonicalValueOk() ([]string, bool) {
-	if o == nil || isNil(o.CanonicalValue) {
+	if o == nil || IsNil(o.CanonicalValue) {
 		return nil, false
 	}
 	return o.CanonicalValue, true
@@ -317,7 +320,7 @@ func (o *AddScimAttributeRequest) GetCanonicalValueOk() ([]string, bool) {
 
 // HasCanonicalValue returns a boolean if a field has been set.
 func (o *AddScimAttributeRequest) HasCanonicalValue() bool {
-	if o != nil && !isNil(o.CanonicalValue) {
+	if o != nil && !IsNil(o.CanonicalValue) {
 		return true
 	}
 
@@ -331,7 +334,7 @@ func (o *AddScimAttributeRequest) SetCanonicalValue(v []string) {
 
 // GetMutability returns the Mutability field value if set, zero value otherwise.
 func (o *AddScimAttributeRequest) GetMutability() EnumscimAttributeMutabilityProp {
-	if o == nil || isNil(o.Mutability) {
+	if o == nil || IsNil(o.Mutability) {
 		var ret EnumscimAttributeMutabilityProp
 		return ret
 	}
@@ -341,7 +344,7 @@ func (o *AddScimAttributeRequest) GetMutability() EnumscimAttributeMutabilityPro
 // GetMutabilityOk returns a tuple with the Mutability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddScimAttributeRequest) GetMutabilityOk() (*EnumscimAttributeMutabilityProp, bool) {
-	if o == nil || isNil(o.Mutability) {
+	if o == nil || IsNil(o.Mutability) {
 		return nil, false
 	}
 	return o.Mutability, true
@@ -349,7 +352,7 @@ func (o *AddScimAttributeRequest) GetMutabilityOk() (*EnumscimAttributeMutabilit
 
 // HasMutability returns a boolean if a field has been set.
 func (o *AddScimAttributeRequest) HasMutability() bool {
-	if o != nil && !isNil(o.Mutability) {
+	if o != nil && !IsNil(o.Mutability) {
 		return true
 	}
 
@@ -363,7 +366,7 @@ func (o *AddScimAttributeRequest) SetMutability(v EnumscimAttributeMutabilityPro
 
 // GetReturned returns the Returned field value if set, zero value otherwise.
 func (o *AddScimAttributeRequest) GetReturned() EnumscimAttributeReturnedProp {
-	if o == nil || isNil(o.Returned) {
+	if o == nil || IsNil(o.Returned) {
 		var ret EnumscimAttributeReturnedProp
 		return ret
 	}
@@ -373,7 +376,7 @@ func (o *AddScimAttributeRequest) GetReturned() EnumscimAttributeReturnedProp {
 // GetReturnedOk returns a tuple with the Returned field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddScimAttributeRequest) GetReturnedOk() (*EnumscimAttributeReturnedProp, bool) {
-	if o == nil || isNil(o.Returned) {
+	if o == nil || IsNil(o.Returned) {
 		return nil, false
 	}
 	return o.Returned, true
@@ -381,7 +384,7 @@ func (o *AddScimAttributeRequest) GetReturnedOk() (*EnumscimAttributeReturnedPro
 
 // HasReturned returns a boolean if a field has been set.
 func (o *AddScimAttributeRequest) HasReturned() bool {
-	if o != nil && !isNil(o.Returned) {
+	if o != nil && !IsNil(o.Returned) {
 		return true
 	}
 
@@ -395,7 +398,7 @@ func (o *AddScimAttributeRequest) SetReturned(v EnumscimAttributeReturnedProp) {
 
 // GetReferenceType returns the ReferenceType field value if set, zero value otherwise.
 func (o *AddScimAttributeRequest) GetReferenceType() []string {
-	if o == nil || isNil(o.ReferenceType) {
+	if o == nil || IsNil(o.ReferenceType) {
 		var ret []string
 		return ret
 	}
@@ -405,7 +408,7 @@ func (o *AddScimAttributeRequest) GetReferenceType() []string {
 // GetReferenceTypeOk returns a tuple with the ReferenceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddScimAttributeRequest) GetReferenceTypeOk() ([]string, bool) {
-	if o == nil || isNil(o.ReferenceType) {
+	if o == nil || IsNil(o.ReferenceType) {
 		return nil, false
 	}
 	return o.ReferenceType, true
@@ -413,7 +416,7 @@ func (o *AddScimAttributeRequest) GetReferenceTypeOk() ([]string, bool) {
 
 // HasReferenceType returns a boolean if a field has been set.
 func (o *AddScimAttributeRequest) HasReferenceType() bool {
-	if o != nil && !isNil(o.ReferenceType) {
+	if o != nil && !IsNil(o.ReferenceType) {
 		return true
 	}
 
@@ -426,44 +429,48 @@ func (o *AddScimAttributeRequest) SetReferenceType(v []string) {
 }
 
 func (o AddScimAttributeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["attributeName"] = o.AttributeName
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["name"] = o.Name
-	}
-	if !isNil(o.Type) {
-		toSerialize["type"] = o.Type
-	}
-	if !isNil(o.Required) {
-		toSerialize["required"] = o.Required
-	}
-	if !isNil(o.CaseExact) {
-		toSerialize["caseExact"] = o.CaseExact
-	}
-	if !isNil(o.MultiValued) {
-		toSerialize["multiValued"] = o.MultiValued
-	}
-	if !isNil(o.CanonicalValue) {
-		toSerialize["canonicalValue"] = o.CanonicalValue
-	}
-	if !isNil(o.Mutability) {
-		toSerialize["mutability"] = o.Mutability
-	}
-	if !isNil(o.Returned) {
-		toSerialize["returned"] = o.Returned
-	}
-	if !isNil(o.ReferenceType) {
-		toSerialize["referenceType"] = o.ReferenceType
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddScimAttributeRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["attributeName"] = o.AttributeName
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["name"] = o.Name
+	if !IsNil(o.Type) {
+		toSerialize["type"] = o.Type
+	}
+	if !IsNil(o.Required) {
+		toSerialize["required"] = o.Required
+	}
+	if !IsNil(o.CaseExact) {
+		toSerialize["caseExact"] = o.CaseExact
+	}
+	if !IsNil(o.MultiValued) {
+		toSerialize["multiValued"] = o.MultiValued
+	}
+	if !IsNil(o.CanonicalValue) {
+		toSerialize["canonicalValue"] = o.CanonicalValue
+	}
+	if !IsNil(o.Mutability) {
+		toSerialize["mutability"] = o.Mutability
+	}
+	if !IsNil(o.Returned) {
+		toSerialize["returned"] = o.Returned
+	}
+	if !IsNil(o.ReferenceType) {
+		toSerialize["referenceType"] = o.ReferenceType
+	}
+	return toSerialize, nil
 }
 
 type NullableAddScimAttributeRequest struct {

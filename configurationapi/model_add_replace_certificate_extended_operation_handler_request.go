@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddReplaceCertificateExtendedOperationHandlerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddReplaceCertificateExtendedOperationHandlerRequest{}
+
 // AddReplaceCertificateExtendedOperationHandlerRequest struct for AddReplaceCertificateExtendedOperationHandlerRequest
 type AddReplaceCertificateExtendedOperationHandlerRequest struct {
 	// Name of the new Extended Operation Handler
@@ -102,7 +105,7 @@ func (o *AddReplaceCertificateExtendedOperationHandlerRequest) SetSchemas(v []En
 
 // GetAllowRemotelyProvidedCertificates returns the AllowRemotelyProvidedCertificates field value if set, zero value otherwise.
 func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetAllowRemotelyProvidedCertificates() bool {
-	if o == nil || isNil(o.AllowRemotelyProvidedCertificates) {
+	if o == nil || IsNil(o.AllowRemotelyProvidedCertificates) {
 		var ret bool
 		return ret
 	}
@@ -112,7 +115,7 @@ func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetAllowRemotelyP
 // GetAllowRemotelyProvidedCertificatesOk returns a tuple with the AllowRemotelyProvidedCertificates field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetAllowRemotelyProvidedCertificatesOk() (*bool, bool) {
-	if o == nil || isNil(o.AllowRemotelyProvidedCertificates) {
+	if o == nil || IsNil(o.AllowRemotelyProvidedCertificates) {
 		return nil, false
 	}
 	return o.AllowRemotelyProvidedCertificates, true
@@ -120,7 +123,7 @@ func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetAllowRemotelyP
 
 // HasAllowRemotelyProvidedCertificates returns a boolean if a field has been set.
 func (o *AddReplaceCertificateExtendedOperationHandlerRequest) HasAllowRemotelyProvidedCertificates() bool {
-	if o != nil && !isNil(o.AllowRemotelyProvidedCertificates) {
+	if o != nil && !IsNil(o.AllowRemotelyProvidedCertificates) {
 		return true
 	}
 
@@ -134,7 +137,7 @@ func (o *AddReplaceCertificateExtendedOperationHandlerRequest) SetAllowRemotelyP
 
 // GetAllowedOperation returns the AllowedOperation field value if set, zero value otherwise.
 func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetAllowedOperation() []EnumextendedOperationHandlerAllowedOperationProp {
-	if o == nil || isNil(o.AllowedOperation) {
+	if o == nil || IsNil(o.AllowedOperation) {
 		var ret []EnumextendedOperationHandlerAllowedOperationProp
 		return ret
 	}
@@ -144,7 +147,7 @@ func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetAllowedOperati
 // GetAllowedOperationOk returns a tuple with the AllowedOperation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetAllowedOperationOk() ([]EnumextendedOperationHandlerAllowedOperationProp, bool) {
-	if o == nil || isNil(o.AllowedOperation) {
+	if o == nil || IsNil(o.AllowedOperation) {
 		return nil, false
 	}
 	return o.AllowedOperation, true
@@ -152,7 +155,7 @@ func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetAllowedOperati
 
 // HasAllowedOperation returns a boolean if a field has been set.
 func (o *AddReplaceCertificateExtendedOperationHandlerRequest) HasAllowedOperation() bool {
-	if o != nil && !isNil(o.AllowedOperation) {
+	if o != nil && !IsNil(o.AllowedOperation) {
 		return true
 	}
 
@@ -166,7 +169,7 @@ func (o *AddReplaceCertificateExtendedOperationHandlerRequest) SetAllowedOperati
 
 // GetConnectionCriteria returns the ConnectionCriteria field value if set, zero value otherwise.
 func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetConnectionCriteria() string {
-	if o == nil || isNil(o.ConnectionCriteria) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
 		var ret string
 		return ret
 	}
@@ -176,7 +179,7 @@ func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetConnectionCrit
 // GetConnectionCriteriaOk returns a tuple with the ConnectionCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetConnectionCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.ConnectionCriteria) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
 		return nil, false
 	}
 	return o.ConnectionCriteria, true
@@ -184,7 +187,7 @@ func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetConnectionCrit
 
 // HasConnectionCriteria returns a boolean if a field has been set.
 func (o *AddReplaceCertificateExtendedOperationHandlerRequest) HasConnectionCriteria() bool {
-	if o != nil && !isNil(o.ConnectionCriteria) {
+	if o != nil && !IsNil(o.ConnectionCriteria) {
 		return true
 	}
 
@@ -198,7 +201,7 @@ func (o *AddReplaceCertificateExtendedOperationHandlerRequest) SetConnectionCrit
 
 // GetRequestCriteria returns the RequestCriteria field value if set, zero value otherwise.
 func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetRequestCriteria() string {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -208,7 +211,7 @@ func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetRequestCriteri
 // GetRequestCriteriaOk returns a tuple with the RequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		return nil, false
 	}
 	return o.RequestCriteria, true
@@ -216,7 +219,7 @@ func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetRequestCriteri
 
 // HasRequestCriteria returns a boolean if a field has been set.
 func (o *AddReplaceCertificateExtendedOperationHandlerRequest) HasRequestCriteria() bool {
-	if o != nil && !isNil(o.RequestCriteria) {
+	if o != nil && !IsNil(o.RequestCriteria) {
 		return true
 	}
 
@@ -230,7 +233,7 @@ func (o *AddReplaceCertificateExtendedOperationHandlerRequest) SetRequestCriteri
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -240,7 +243,7 @@ func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetDescription() 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -248,7 +251,7 @@ func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetDescriptionOk(
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddReplaceCertificateExtendedOperationHandlerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -285,32 +288,34 @@ func (o *AddReplaceCertificateExtendedOperationHandlerRequest) SetEnabled(v bool
 }
 
 func (o AddReplaceCertificateExtendedOperationHandlerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["handlerName"] = o.HandlerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.AllowRemotelyProvidedCertificates) {
-		toSerialize["allowRemotelyProvidedCertificates"] = o.AllowRemotelyProvidedCertificates
-	}
-	if !isNil(o.AllowedOperation) {
-		toSerialize["allowedOperation"] = o.AllowedOperation
-	}
-	if !isNil(o.ConnectionCriteria) {
-		toSerialize["connectionCriteria"] = o.ConnectionCriteria
-	}
-	if !isNil(o.RequestCriteria) {
-		toSerialize["requestCriteria"] = o.RequestCriteria
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddReplaceCertificateExtendedOperationHandlerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["handlerName"] = o.HandlerName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.AllowRemotelyProvidedCertificates) {
+		toSerialize["allowRemotelyProvidedCertificates"] = o.AllowRemotelyProvidedCertificates
+	}
+	if !IsNil(o.AllowedOperation) {
+		toSerialize["allowedOperation"] = o.AllowedOperation
+	}
+	if !IsNil(o.ConnectionCriteria) {
+		toSerialize["connectionCriteria"] = o.ConnectionCriteria
+	}
+	if !IsNil(o.RequestCriteria) {
+		toSerialize["requestCriteria"] = o.RequestCriteria
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddReplaceCertificateExtendedOperationHandlerRequest struct {

@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -71,7 +71,7 @@ func (a *ScimAttributeApiService) AddScimAttributeExecute(r ApiAddScimAttributeR
 	}
 
 	localVarPath := localBasePath + "/scim-schemas/{scim-schema-name}/scim-attributes"
-	localVarPath = strings.Replace(localVarPath, "{"+"scim-schema-name"+"}", url.PathEscape(parameterToString(r.scimSchemaName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"scim-schema-name"+"}", url.PathEscape(parameterValueToString(r.scimSchemaName, "scimSchemaName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -109,9 +109,9 @@ func (a *ScimAttributeApiService) AddScimAttributeExecute(r ApiAddScimAttributeR
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -178,8 +178,8 @@ func (a *ScimAttributeApiService) DeleteScimAttributeExecute(r ApiDeleteScimAttr
 	}
 
 	localVarPath := localBasePath + "/scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"scim-attribute-name"+"}", url.PathEscape(parameterToString(r.scimAttributeName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"scim-schema-name"+"}", url.PathEscape(parameterToString(r.scimSchemaName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"scim-attribute-name"+"}", url.PathEscape(parameterValueToString(r.scimAttributeName, "scimAttributeName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"scim-schema-name"+"}", url.PathEscape(parameterValueToString(r.scimSchemaName, "scimSchemaName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -212,9 +212,9 @@ func (a *ScimAttributeApiService) DeleteScimAttributeExecute(r ApiDeleteScimAttr
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -275,8 +275,8 @@ func (a *ScimAttributeApiService) GetScimAttributeExecute(r ApiGetScimAttributeR
 	}
 
 	localVarPath := localBasePath + "/scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"scim-attribute-name"+"}", url.PathEscape(parameterToString(r.scimAttributeName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"scim-schema-name"+"}", url.PathEscape(parameterToString(r.scimSchemaName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"scim-attribute-name"+"}", url.PathEscape(parameterValueToString(r.scimAttributeName, "scimAttributeName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"scim-schema-name"+"}", url.PathEscape(parameterValueToString(r.scimSchemaName, "scimSchemaName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -309,9 +309,9 @@ func (a *ScimAttributeApiService) GetScimAttributeExecute(r ApiGetScimAttributeR
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -388,8 +388,8 @@ func (a *ScimAttributeApiService) UpdateScimAttributeExecute(r ApiUpdateScimAttr
 	}
 
 	localVarPath := localBasePath + "/scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"scim-attribute-name"+"}", url.PathEscape(parameterToString(r.scimAttributeName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"scim-schema-name"+"}", url.PathEscape(parameterToString(r.scimSchemaName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"scim-attribute-name"+"}", url.PathEscape(parameterValueToString(r.scimAttributeName, "scimAttributeName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"scim-schema-name"+"}", url.PathEscape(parameterValueToString(r.scimSchemaName, "scimSchemaName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -427,9 +427,9 @@ func (a *ScimAttributeApiService) UpdateScimAttributeExecute(r ApiUpdateScimAttr
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

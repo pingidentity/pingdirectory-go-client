@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the StringArrayTokenClaimValidationResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &StringArrayTokenClaimValidationResponse{}
+
 // StringArrayTokenClaimValidationResponse struct for StringArrayTokenClaimValidationResponse
 type StringArrayTokenClaimValidationResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -53,7 +56,7 @@ func NewStringArrayTokenClaimValidationResponseWithDefaults() *StringArrayTokenC
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *StringArrayTokenClaimValidationResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -63,7 +66,7 @@ func (o *StringArrayTokenClaimValidationResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StringArrayTokenClaimValidationResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -71,7 +74,7 @@ func (o *StringArrayTokenClaimValidationResponse) GetMetaOk() (*MetaMeta, bool) 
 
 // HasMeta returns a boolean if a field has been set.
 func (o *StringArrayTokenClaimValidationResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -85,7 +88,7 @@ func (o *StringArrayTokenClaimValidationResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *StringArrayTokenClaimValidationResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -95,7 +98,7 @@ func (o *StringArrayTokenClaimValidationResponse) GetUrnpingidentityschemasconfi
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StringArrayTokenClaimValidationResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -103,7 +106,7 @@ func (o *StringArrayTokenClaimValidationResponse) GetUrnpingidentityschemasconfi
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *StringArrayTokenClaimValidationResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -165,7 +168,7 @@ func (o *StringArrayTokenClaimValidationResponse) SetSchemas(v []EnumstringArray
 
 // GetAllRequiredValue returns the AllRequiredValue field value if set, zero value otherwise.
 func (o *StringArrayTokenClaimValidationResponse) GetAllRequiredValue() []string {
-	if o == nil || isNil(o.AllRequiredValue) {
+	if o == nil || IsNil(o.AllRequiredValue) {
 		var ret []string
 		return ret
 	}
@@ -175,7 +178,7 @@ func (o *StringArrayTokenClaimValidationResponse) GetAllRequiredValue() []string
 // GetAllRequiredValueOk returns a tuple with the AllRequiredValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StringArrayTokenClaimValidationResponse) GetAllRequiredValueOk() ([]string, bool) {
-	if o == nil || isNil(o.AllRequiredValue) {
+	if o == nil || IsNil(o.AllRequiredValue) {
 		return nil, false
 	}
 	return o.AllRequiredValue, true
@@ -183,7 +186,7 @@ func (o *StringArrayTokenClaimValidationResponse) GetAllRequiredValueOk() ([]str
 
 // HasAllRequiredValue returns a boolean if a field has been set.
 func (o *StringArrayTokenClaimValidationResponse) HasAllRequiredValue() bool {
-	if o != nil && !isNil(o.AllRequiredValue) {
+	if o != nil && !IsNil(o.AllRequiredValue) {
 		return true
 	}
 
@@ -197,7 +200,7 @@ func (o *StringArrayTokenClaimValidationResponse) SetAllRequiredValue(v []string
 
 // GetAnyRequiredValue returns the AnyRequiredValue field value if set, zero value otherwise.
 func (o *StringArrayTokenClaimValidationResponse) GetAnyRequiredValue() []string {
-	if o == nil || isNil(o.AnyRequiredValue) {
+	if o == nil || IsNil(o.AnyRequiredValue) {
 		var ret []string
 		return ret
 	}
@@ -207,7 +210,7 @@ func (o *StringArrayTokenClaimValidationResponse) GetAnyRequiredValue() []string
 // GetAnyRequiredValueOk returns a tuple with the AnyRequiredValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StringArrayTokenClaimValidationResponse) GetAnyRequiredValueOk() ([]string, bool) {
-	if o == nil || isNil(o.AnyRequiredValue) {
+	if o == nil || IsNil(o.AnyRequiredValue) {
 		return nil, false
 	}
 	return o.AnyRequiredValue, true
@@ -215,7 +218,7 @@ func (o *StringArrayTokenClaimValidationResponse) GetAnyRequiredValueOk() ([]str
 
 // HasAnyRequiredValue returns a boolean if a field has been set.
 func (o *StringArrayTokenClaimValidationResponse) HasAnyRequiredValue() bool {
-	if o != nil && !isNil(o.AnyRequiredValue) {
+	if o != nil && !IsNil(o.AnyRequiredValue) {
 		return true
 	}
 
@@ -229,7 +232,7 @@ func (o *StringArrayTokenClaimValidationResponse) SetAnyRequiredValue(v []string
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *StringArrayTokenClaimValidationResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -239,7 +242,7 @@ func (o *StringArrayTokenClaimValidationResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StringArrayTokenClaimValidationResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -247,7 +250,7 @@ func (o *StringArrayTokenClaimValidationResponse) GetDescriptionOk() (*string, b
 
 // HasDescription returns a boolean if a field has been set.
 func (o *StringArrayTokenClaimValidationResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -284,32 +287,34 @@ func (o *StringArrayTokenClaimValidationResponse) SetClaimName(v string) {
 }
 
 func (o StringArrayTokenClaimValidationResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.AllRequiredValue) {
-		toSerialize["allRequiredValue"] = o.AllRequiredValue
-	}
-	if !isNil(o.AnyRequiredValue) {
-		toSerialize["anyRequiredValue"] = o.AnyRequiredValue
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["claimName"] = o.ClaimName
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o StringArrayTokenClaimValidationResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.AllRequiredValue) {
+		toSerialize["allRequiredValue"] = o.AllRequiredValue
+	}
+	if !IsNil(o.AnyRequiredValue) {
+		toSerialize["anyRequiredValue"] = o.AnyRequiredValue
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["claimName"] = o.ClaimName
+	return toSerialize, nil
 }
 
 type NullableStringArrayTokenClaimValidationResponse struct {

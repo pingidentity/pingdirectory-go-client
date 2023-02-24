@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the DelegatedAdminCorrelatedRestResourceResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &DelegatedAdminCorrelatedRestResourceResponse{}
+
 // DelegatedAdminCorrelatedRestResourceResponse struct for DelegatedAdminCorrelatedRestResourceResponse
 type DelegatedAdminCorrelatedRestResourceResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -57,7 +60,7 @@ func NewDelegatedAdminCorrelatedRestResourceResponseWithDefaults() *DelegatedAdm
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *DelegatedAdminCorrelatedRestResourceResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -67,7 +70,7 @@ func (o *DelegatedAdminCorrelatedRestResourceResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminCorrelatedRestResourceResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -75,7 +78,7 @@ func (o *DelegatedAdminCorrelatedRestResourceResponse) GetMetaOk() (*MetaMeta, b
 
 // HasMeta returns a boolean if a field has been set.
 func (o *DelegatedAdminCorrelatedRestResourceResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -89,7 +92,7 @@ func (o *DelegatedAdminCorrelatedRestResourceResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *DelegatedAdminCorrelatedRestResourceResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -99,7 +102,7 @@ func (o *DelegatedAdminCorrelatedRestResourceResponse) GetUrnpingidentityschemas
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminCorrelatedRestResourceResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -107,7 +110,7 @@ func (o *DelegatedAdminCorrelatedRestResourceResponse) GetUrnpingidentityschemas
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *DelegatedAdminCorrelatedRestResourceResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -145,7 +148,7 @@ func (o *DelegatedAdminCorrelatedRestResourceResponse) SetId(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *DelegatedAdminCorrelatedRestResourceResponse) GetSchemas() []EnumdelegatedAdminCorrelatedRestResourceSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumdelegatedAdminCorrelatedRestResourceSchemaUrn
 		return ret
 	}
@@ -155,7 +158,7 @@ func (o *DelegatedAdminCorrelatedRestResourceResponse) GetSchemas() []Enumdelega
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminCorrelatedRestResourceResponse) GetSchemasOk() ([]EnumdelegatedAdminCorrelatedRestResourceSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -163,7 +166,7 @@ func (o *DelegatedAdminCorrelatedRestResourceResponse) GetSchemasOk() ([]Enumdel
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *DelegatedAdminCorrelatedRestResourceResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -273,7 +276,7 @@ func (o *DelegatedAdminCorrelatedRestResourceResponse) SetSecondaryRESTResourceC
 
 // GetUseSecondaryValueForLinking returns the UseSecondaryValueForLinking field value if set, zero value otherwise.
 func (o *DelegatedAdminCorrelatedRestResourceResponse) GetUseSecondaryValueForLinking() bool {
-	if o == nil || isNil(o.UseSecondaryValueForLinking) {
+	if o == nil || IsNil(o.UseSecondaryValueForLinking) {
 		var ret bool
 		return ret
 	}
@@ -283,7 +286,7 @@ func (o *DelegatedAdminCorrelatedRestResourceResponse) GetUseSecondaryValueForLi
 // GetUseSecondaryValueForLinkingOk returns a tuple with the UseSecondaryValueForLinking field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminCorrelatedRestResourceResponse) GetUseSecondaryValueForLinkingOk() (*bool, bool) {
-	if o == nil || isNil(o.UseSecondaryValueForLinking) {
+	if o == nil || IsNil(o.UseSecondaryValueForLinking) {
 		return nil, false
 	}
 	return o.UseSecondaryValueForLinking, true
@@ -291,7 +294,7 @@ func (o *DelegatedAdminCorrelatedRestResourceResponse) GetUseSecondaryValueForLi
 
 // HasUseSecondaryValueForLinking returns a boolean if a field has been set.
 func (o *DelegatedAdminCorrelatedRestResourceResponse) HasUseSecondaryValueForLinking() bool {
-	if o != nil && !isNil(o.UseSecondaryValueForLinking) {
+	if o != nil && !IsNil(o.UseSecondaryValueForLinking) {
 		return true
 	}
 
@@ -304,35 +307,33 @@ func (o *DelegatedAdminCorrelatedRestResourceResponse) SetUseSecondaryValueForLi
 }
 
 func (o DelegatedAdminCorrelatedRestResourceResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["displayName"] = o.DisplayName
-	}
-	if true {
-		toSerialize["correlatedRESTResource"] = o.CorrelatedRESTResource
-	}
-	if true {
-		toSerialize["primaryRESTResourceCorrelationAttribute"] = o.PrimaryRESTResourceCorrelationAttribute
-	}
-	if true {
-		toSerialize["secondaryRESTResourceCorrelationAttribute"] = o.SecondaryRESTResourceCorrelationAttribute
-	}
-	if !isNil(o.UseSecondaryValueForLinking) {
-		toSerialize["useSecondaryValueForLinking"] = o.UseSecondaryValueForLinking
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o DelegatedAdminCorrelatedRestResourceResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	toSerialize["displayName"] = o.DisplayName
+	toSerialize["correlatedRESTResource"] = o.CorrelatedRESTResource
+	toSerialize["primaryRESTResourceCorrelationAttribute"] = o.PrimaryRESTResourceCorrelationAttribute
+	toSerialize["secondaryRESTResourceCorrelationAttribute"] = o.SecondaryRESTResourceCorrelationAttribute
+	if !IsNil(o.UseSecondaryValueForLinking) {
+		toSerialize["useSecondaryValueForLinking"] = o.UseSecondaryValueForLinking
+	}
+	return toSerialize, nil
 }
 
 type NullableDelegatedAdminCorrelatedRestResourceResponse struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the SimpleToExternalBindPluginResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SimpleToExternalBindPluginResponse{}
+
 // SimpleToExternalBindPluginResponse struct for SimpleToExternalBindPluginResponse
 type SimpleToExternalBindPluginResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -53,7 +56,7 @@ func NewSimpleToExternalBindPluginResponseWithDefaults() *SimpleToExternalBindPl
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *SimpleToExternalBindPluginResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -63,7 +66,7 @@ func (o *SimpleToExternalBindPluginResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleToExternalBindPluginResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -71,7 +74,7 @@ func (o *SimpleToExternalBindPluginResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *SimpleToExternalBindPluginResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -85,7 +88,7 @@ func (o *SimpleToExternalBindPluginResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *SimpleToExternalBindPluginResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -95,7 +98,7 @@ func (o *SimpleToExternalBindPluginResponse) GetUrnpingidentityschemasconfigurat
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleToExternalBindPluginResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -103,7 +106,7 @@ func (o *SimpleToExternalBindPluginResponse) GetUrnpingidentityschemasconfigurat
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *SimpleToExternalBindPluginResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -165,7 +168,7 @@ func (o *SimpleToExternalBindPluginResponse) SetSchemas(v []EnumsimpleToExternal
 
 // GetConnectionCriteria returns the ConnectionCriteria field value if set, zero value otherwise.
 func (o *SimpleToExternalBindPluginResponse) GetConnectionCriteria() string {
-	if o == nil || isNil(o.ConnectionCriteria) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
 		var ret string
 		return ret
 	}
@@ -175,7 +178,7 @@ func (o *SimpleToExternalBindPluginResponse) GetConnectionCriteria() string {
 // GetConnectionCriteriaOk returns a tuple with the ConnectionCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleToExternalBindPluginResponse) GetConnectionCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.ConnectionCriteria) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
 		return nil, false
 	}
 	return o.ConnectionCriteria, true
@@ -183,7 +186,7 @@ func (o *SimpleToExternalBindPluginResponse) GetConnectionCriteriaOk() (*string,
 
 // HasConnectionCriteria returns a boolean if a field has been set.
 func (o *SimpleToExternalBindPluginResponse) HasConnectionCriteria() bool {
-	if o != nil && !isNil(o.ConnectionCriteria) {
+	if o != nil && !IsNil(o.ConnectionCriteria) {
 		return true
 	}
 
@@ -197,7 +200,7 @@ func (o *SimpleToExternalBindPluginResponse) SetConnectionCriteria(v string) {
 
 // GetRequestCriteria returns the RequestCriteria field value if set, zero value otherwise.
 func (o *SimpleToExternalBindPluginResponse) GetRequestCriteria() string {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -207,7 +210,7 @@ func (o *SimpleToExternalBindPluginResponse) GetRequestCriteria() string {
 // GetRequestCriteriaOk returns a tuple with the RequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleToExternalBindPluginResponse) GetRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		return nil, false
 	}
 	return o.RequestCriteria, true
@@ -215,7 +218,7 @@ func (o *SimpleToExternalBindPluginResponse) GetRequestCriteriaOk() (*string, bo
 
 // HasRequestCriteria returns a boolean if a field has been set.
 func (o *SimpleToExternalBindPluginResponse) HasRequestCriteria() bool {
-	if o != nil && !isNil(o.RequestCriteria) {
+	if o != nil && !IsNil(o.RequestCriteria) {
 		return true
 	}
 
@@ -229,7 +232,7 @@ func (o *SimpleToExternalBindPluginResponse) SetRequestCriteria(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *SimpleToExternalBindPluginResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -239,7 +242,7 @@ func (o *SimpleToExternalBindPluginResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleToExternalBindPluginResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -247,7 +250,7 @@ func (o *SimpleToExternalBindPluginResponse) GetDescriptionOk() (*string, bool) 
 
 // HasDescription returns a boolean if a field has been set.
 func (o *SimpleToExternalBindPluginResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -284,32 +287,34 @@ func (o *SimpleToExternalBindPluginResponse) SetEnabled(v bool) {
 }
 
 func (o SimpleToExternalBindPluginResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.ConnectionCriteria) {
-		toSerialize["connectionCriteria"] = o.ConnectionCriteria
-	}
-	if !isNil(o.RequestCriteria) {
-		toSerialize["requestCriteria"] = o.RequestCriteria
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o SimpleToExternalBindPluginResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.ConnectionCriteria) {
+		toSerialize["connectionCriteria"] = o.ConnectionCriteria
+	}
+	if !IsNil(o.RequestCriteria) {
+		toSerialize["requestCriteria"] = o.RequestCriteria
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableSimpleToExternalBindPluginResponse struct {

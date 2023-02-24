@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ConfigHttpServletExtensionResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ConfigHttpServletExtensionResponse{}
+
 // ConfigHttpServletExtensionResponse struct for ConfigHttpServletExtensionResponse
 type ConfigHttpServletExtensionResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -54,7 +57,7 @@ func NewConfigHttpServletExtensionResponseWithDefaults() *ConfigHttpServletExten
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *ConfigHttpServletExtensionResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -64,7 +67,7 @@ func (o *ConfigHttpServletExtensionResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigHttpServletExtensionResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -72,7 +75,7 @@ func (o *ConfigHttpServletExtensionResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *ConfigHttpServletExtensionResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -86,7 +89,7 @@ func (o *ConfigHttpServletExtensionResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *ConfigHttpServletExtensionResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -96,7 +99,7 @@ func (o *ConfigHttpServletExtensionResponse) GetUrnpingidentityschemasconfigurat
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigHttpServletExtensionResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -104,7 +107,7 @@ func (o *ConfigHttpServletExtensionResponse) GetUrnpingidentityschemasconfigurat
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *ConfigHttpServletExtensionResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -166,7 +169,7 @@ func (o *ConfigHttpServletExtensionResponse) SetId(v string) {
 
 // GetIdentityMapper returns the IdentityMapper field value if set, zero value otherwise.
 func (o *ConfigHttpServletExtensionResponse) GetIdentityMapper() string {
-	if o == nil || isNil(o.IdentityMapper) {
+	if o == nil || IsNil(o.IdentityMapper) {
 		var ret string
 		return ret
 	}
@@ -176,7 +179,7 @@ func (o *ConfigHttpServletExtensionResponse) GetIdentityMapper() string {
 // GetIdentityMapperOk returns a tuple with the IdentityMapper field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigHttpServletExtensionResponse) GetIdentityMapperOk() (*string, bool) {
-	if o == nil || isNil(o.IdentityMapper) {
+	if o == nil || IsNil(o.IdentityMapper) {
 		return nil, false
 	}
 	return o.IdentityMapper, true
@@ -184,7 +187,7 @@ func (o *ConfigHttpServletExtensionResponse) GetIdentityMapperOk() (*string, boo
 
 // HasIdentityMapper returns a boolean if a field has been set.
 func (o *ConfigHttpServletExtensionResponse) HasIdentityMapper() bool {
-	if o != nil && !isNil(o.IdentityMapper) {
+	if o != nil && !IsNil(o.IdentityMapper) {
 		return true
 	}
 
@@ -198,7 +201,7 @@ func (o *ConfigHttpServletExtensionResponse) SetIdentityMapper(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *ConfigHttpServletExtensionResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -208,7 +211,7 @@ func (o *ConfigHttpServletExtensionResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigHttpServletExtensionResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -216,7 +219,7 @@ func (o *ConfigHttpServletExtensionResponse) GetDescriptionOk() (*string, bool) 
 
 // HasDescription returns a boolean if a field has been set.
 func (o *ConfigHttpServletExtensionResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -230,7 +233,7 @@ func (o *ConfigHttpServletExtensionResponse) SetDescription(v string) {
 
 // GetCrossOriginPolicy returns the CrossOriginPolicy field value if set, zero value otherwise.
 func (o *ConfigHttpServletExtensionResponse) GetCrossOriginPolicy() string {
-	if o == nil || isNil(o.CrossOriginPolicy) {
+	if o == nil || IsNil(o.CrossOriginPolicy) {
 		var ret string
 		return ret
 	}
@@ -240,7 +243,7 @@ func (o *ConfigHttpServletExtensionResponse) GetCrossOriginPolicy() string {
 // GetCrossOriginPolicyOk returns a tuple with the CrossOriginPolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigHttpServletExtensionResponse) GetCrossOriginPolicyOk() (*string, bool) {
-	if o == nil || isNil(o.CrossOriginPolicy) {
+	if o == nil || IsNil(o.CrossOriginPolicy) {
 		return nil, false
 	}
 	return o.CrossOriginPolicy, true
@@ -248,7 +251,7 @@ func (o *ConfigHttpServletExtensionResponse) GetCrossOriginPolicyOk() (*string, 
 
 // HasCrossOriginPolicy returns a boolean if a field has been set.
 func (o *ConfigHttpServletExtensionResponse) HasCrossOriginPolicy() bool {
-	if o != nil && !isNil(o.CrossOriginPolicy) {
+	if o != nil && !IsNil(o.CrossOriginPolicy) {
 		return true
 	}
 
@@ -262,7 +265,7 @@ func (o *ConfigHttpServletExtensionResponse) SetCrossOriginPolicy(v string) {
 
 // GetResponseHeader returns the ResponseHeader field value if set, zero value otherwise.
 func (o *ConfigHttpServletExtensionResponse) GetResponseHeader() []string {
-	if o == nil || isNil(o.ResponseHeader) {
+	if o == nil || IsNil(o.ResponseHeader) {
 		var ret []string
 		return ret
 	}
@@ -272,7 +275,7 @@ func (o *ConfigHttpServletExtensionResponse) GetResponseHeader() []string {
 // GetResponseHeaderOk returns a tuple with the ResponseHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigHttpServletExtensionResponse) GetResponseHeaderOk() ([]string, bool) {
-	if o == nil || isNil(o.ResponseHeader) {
+	if o == nil || IsNil(o.ResponseHeader) {
 		return nil, false
 	}
 	return o.ResponseHeader, true
@@ -280,7 +283,7 @@ func (o *ConfigHttpServletExtensionResponse) GetResponseHeaderOk() ([]string, bo
 
 // HasResponseHeader returns a boolean if a field has been set.
 func (o *ConfigHttpServletExtensionResponse) HasResponseHeader() bool {
-	if o != nil && !isNil(o.ResponseHeader) {
+	if o != nil && !IsNil(o.ResponseHeader) {
 		return true
 	}
 
@@ -294,7 +297,7 @@ func (o *ConfigHttpServletExtensionResponse) SetResponseHeader(v []string) {
 
 // GetCorrelationIDResponseHeader returns the CorrelationIDResponseHeader field value if set, zero value otherwise.
 func (o *ConfigHttpServletExtensionResponse) GetCorrelationIDResponseHeader() string {
-	if o == nil || isNil(o.CorrelationIDResponseHeader) {
+	if o == nil || IsNil(o.CorrelationIDResponseHeader) {
 		var ret string
 		return ret
 	}
@@ -304,7 +307,7 @@ func (o *ConfigHttpServletExtensionResponse) GetCorrelationIDResponseHeader() st
 // GetCorrelationIDResponseHeaderOk returns a tuple with the CorrelationIDResponseHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigHttpServletExtensionResponse) GetCorrelationIDResponseHeaderOk() (*string, bool) {
-	if o == nil || isNil(o.CorrelationIDResponseHeader) {
+	if o == nil || IsNil(o.CorrelationIDResponseHeader) {
 		return nil, false
 	}
 	return o.CorrelationIDResponseHeader, true
@@ -312,7 +315,7 @@ func (o *ConfigHttpServletExtensionResponse) GetCorrelationIDResponseHeaderOk() 
 
 // HasCorrelationIDResponseHeader returns a boolean if a field has been set.
 func (o *ConfigHttpServletExtensionResponse) HasCorrelationIDResponseHeader() bool {
-	if o != nil && !isNil(o.CorrelationIDResponseHeader) {
+	if o != nil && !IsNil(o.CorrelationIDResponseHeader) {
 		return true
 	}
 
@@ -325,35 +328,39 @@ func (o *ConfigHttpServletExtensionResponse) SetCorrelationIDResponseHeader(v st
 }
 
 func (o ConfigHttpServletExtensionResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.IdentityMapper) {
-		toSerialize["identityMapper"] = o.IdentityMapper
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if !isNil(o.CrossOriginPolicy) {
-		toSerialize["crossOriginPolicy"] = o.CrossOriginPolicy
-	}
-	if !isNil(o.ResponseHeader) {
-		toSerialize["responseHeader"] = o.ResponseHeader
-	}
-	if !isNil(o.CorrelationIDResponseHeader) {
-		toSerialize["correlationIDResponseHeader"] = o.CorrelationIDResponseHeader
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ConfigHttpServletExtensionResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	if !IsNil(o.IdentityMapper) {
+		toSerialize["identityMapper"] = o.IdentityMapper
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.CrossOriginPolicy) {
+		toSerialize["crossOriginPolicy"] = o.CrossOriginPolicy
+	}
+	if !IsNil(o.ResponseHeader) {
+		toSerialize["responseHeader"] = o.ResponseHeader
+	}
+	if !IsNil(o.CorrelationIDResponseHeader) {
+		toSerialize["correlationIDResponseHeader"] = o.CorrelationIDResponseHeader
+	}
+	return toSerialize, nil
 }
 
 type NullableConfigHttpServletExtensionResponse struct {

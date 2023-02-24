@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the LdifExportRecurringTaskResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &LdifExportRecurringTaskResponse{}
+
 // LdifExportRecurringTaskResponse struct for LdifExportRecurringTaskResponse
 type LdifExportRecurringTaskResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -81,7 +84,7 @@ func NewLdifExportRecurringTaskResponseWithDefaults() *LdifExportRecurringTaskRe
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *LdifExportRecurringTaskResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -91,7 +94,7 @@ func (o *LdifExportRecurringTaskResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -99,7 +102,7 @@ func (o *LdifExportRecurringTaskResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *LdifExportRecurringTaskResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -113,7 +116,7 @@ func (o *LdifExportRecurringTaskResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *LdifExportRecurringTaskResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -123,7 +126,7 @@ func (o *LdifExportRecurringTaskResponse) GetUrnpingidentityschemasconfiguration
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -131,7 +134,7 @@ func (o *LdifExportRecurringTaskResponse) GetUrnpingidentityschemasconfiguration
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *LdifExportRecurringTaskResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -217,7 +220,7 @@ func (o *LdifExportRecurringTaskResponse) SetLdifDirectory(v string) {
 
 // GetBackendID returns the BackendID field value if set, zero value otherwise.
 func (o *LdifExportRecurringTaskResponse) GetBackendID() []string {
-	if o == nil || isNil(o.BackendID) {
+	if o == nil || IsNil(o.BackendID) {
 		var ret []string
 		return ret
 	}
@@ -227,7 +230,7 @@ func (o *LdifExportRecurringTaskResponse) GetBackendID() []string {
 // GetBackendIDOk returns a tuple with the BackendID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetBackendIDOk() ([]string, bool) {
-	if o == nil || isNil(o.BackendID) {
+	if o == nil || IsNil(o.BackendID) {
 		return nil, false
 	}
 	return o.BackendID, true
@@ -235,7 +238,7 @@ func (o *LdifExportRecurringTaskResponse) GetBackendIDOk() ([]string, bool) {
 
 // HasBackendID returns a boolean if a field has been set.
 func (o *LdifExportRecurringTaskResponse) HasBackendID() bool {
-	if o != nil && !isNil(o.BackendID) {
+	if o != nil && !IsNil(o.BackendID) {
 		return true
 	}
 
@@ -249,7 +252,7 @@ func (o *LdifExportRecurringTaskResponse) SetBackendID(v []string) {
 
 // GetExcludeBackendID returns the ExcludeBackendID field value if set, zero value otherwise.
 func (o *LdifExportRecurringTaskResponse) GetExcludeBackendID() []string {
-	if o == nil || isNil(o.ExcludeBackendID) {
+	if o == nil || IsNil(o.ExcludeBackendID) {
 		var ret []string
 		return ret
 	}
@@ -259,7 +262,7 @@ func (o *LdifExportRecurringTaskResponse) GetExcludeBackendID() []string {
 // GetExcludeBackendIDOk returns a tuple with the ExcludeBackendID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetExcludeBackendIDOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludeBackendID) {
+	if o == nil || IsNil(o.ExcludeBackendID) {
 		return nil, false
 	}
 	return o.ExcludeBackendID, true
@@ -267,7 +270,7 @@ func (o *LdifExportRecurringTaskResponse) GetExcludeBackendIDOk() ([]string, boo
 
 // HasExcludeBackendID returns a boolean if a field has been set.
 func (o *LdifExportRecurringTaskResponse) HasExcludeBackendID() bool {
-	if o != nil && !isNil(o.ExcludeBackendID) {
+	if o != nil && !IsNil(o.ExcludeBackendID) {
 		return true
 	}
 
@@ -281,7 +284,7 @@ func (o *LdifExportRecurringTaskResponse) SetExcludeBackendID(v []string) {
 
 // GetCompress returns the Compress field value if set, zero value otherwise.
 func (o *LdifExportRecurringTaskResponse) GetCompress() bool {
-	if o == nil || isNil(o.Compress) {
+	if o == nil || IsNil(o.Compress) {
 		var ret bool
 		return ret
 	}
@@ -291,7 +294,7 @@ func (o *LdifExportRecurringTaskResponse) GetCompress() bool {
 // GetCompressOk returns a tuple with the Compress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetCompressOk() (*bool, bool) {
-	if o == nil || isNil(o.Compress) {
+	if o == nil || IsNil(o.Compress) {
 		return nil, false
 	}
 	return o.Compress, true
@@ -299,7 +302,7 @@ func (o *LdifExportRecurringTaskResponse) GetCompressOk() (*bool, bool) {
 
 // HasCompress returns a boolean if a field has been set.
 func (o *LdifExportRecurringTaskResponse) HasCompress() bool {
-	if o != nil && !isNil(o.Compress) {
+	if o != nil && !IsNil(o.Compress) {
 		return true
 	}
 
@@ -313,7 +316,7 @@ func (o *LdifExportRecurringTaskResponse) SetCompress(v bool) {
 
 // GetEncrypt returns the Encrypt field value if set, zero value otherwise.
 func (o *LdifExportRecurringTaskResponse) GetEncrypt() bool {
-	if o == nil || isNil(o.Encrypt) {
+	if o == nil || IsNil(o.Encrypt) {
 		var ret bool
 		return ret
 	}
@@ -323,7 +326,7 @@ func (o *LdifExportRecurringTaskResponse) GetEncrypt() bool {
 // GetEncryptOk returns a tuple with the Encrypt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetEncryptOk() (*bool, bool) {
-	if o == nil || isNil(o.Encrypt) {
+	if o == nil || IsNil(o.Encrypt) {
 		return nil, false
 	}
 	return o.Encrypt, true
@@ -331,7 +334,7 @@ func (o *LdifExportRecurringTaskResponse) GetEncryptOk() (*bool, bool) {
 
 // HasEncrypt returns a boolean if a field has been set.
 func (o *LdifExportRecurringTaskResponse) HasEncrypt() bool {
-	if o != nil && !isNil(o.Encrypt) {
+	if o != nil && !IsNil(o.Encrypt) {
 		return true
 	}
 
@@ -345,7 +348,7 @@ func (o *LdifExportRecurringTaskResponse) SetEncrypt(v bool) {
 
 // GetEncryptionSettingsDefinitionID returns the EncryptionSettingsDefinitionID field value if set, zero value otherwise.
 func (o *LdifExportRecurringTaskResponse) GetEncryptionSettingsDefinitionID() string {
-	if o == nil || isNil(o.EncryptionSettingsDefinitionID) {
+	if o == nil || IsNil(o.EncryptionSettingsDefinitionID) {
 		var ret string
 		return ret
 	}
@@ -355,7 +358,7 @@ func (o *LdifExportRecurringTaskResponse) GetEncryptionSettingsDefinitionID() st
 // GetEncryptionSettingsDefinitionIDOk returns a tuple with the EncryptionSettingsDefinitionID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetEncryptionSettingsDefinitionIDOk() (*string, bool) {
-	if o == nil || isNil(o.EncryptionSettingsDefinitionID) {
+	if o == nil || IsNil(o.EncryptionSettingsDefinitionID) {
 		return nil, false
 	}
 	return o.EncryptionSettingsDefinitionID, true
@@ -363,7 +366,7 @@ func (o *LdifExportRecurringTaskResponse) GetEncryptionSettingsDefinitionIDOk() 
 
 // HasEncryptionSettingsDefinitionID returns a boolean if a field has been set.
 func (o *LdifExportRecurringTaskResponse) HasEncryptionSettingsDefinitionID() bool {
-	if o != nil && !isNil(o.EncryptionSettingsDefinitionID) {
+	if o != nil && !IsNil(o.EncryptionSettingsDefinitionID) {
 		return true
 	}
 
@@ -377,7 +380,7 @@ func (o *LdifExportRecurringTaskResponse) SetEncryptionSettingsDefinitionID(v st
 
 // GetSign returns the Sign field value if set, zero value otherwise.
 func (o *LdifExportRecurringTaskResponse) GetSign() bool {
-	if o == nil || isNil(o.Sign) {
+	if o == nil || IsNil(o.Sign) {
 		var ret bool
 		return ret
 	}
@@ -387,7 +390,7 @@ func (o *LdifExportRecurringTaskResponse) GetSign() bool {
 // GetSignOk returns a tuple with the Sign field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetSignOk() (*bool, bool) {
-	if o == nil || isNil(o.Sign) {
+	if o == nil || IsNil(o.Sign) {
 		return nil, false
 	}
 	return o.Sign, true
@@ -395,7 +398,7 @@ func (o *LdifExportRecurringTaskResponse) GetSignOk() (*bool, bool) {
 
 // HasSign returns a boolean if a field has been set.
 func (o *LdifExportRecurringTaskResponse) HasSign() bool {
-	if o != nil && !isNil(o.Sign) {
+	if o != nil && !IsNil(o.Sign) {
 		return true
 	}
 
@@ -409,7 +412,7 @@ func (o *LdifExportRecurringTaskResponse) SetSign(v bool) {
 
 // GetRetainPreviousLDIFExportCount returns the RetainPreviousLDIFExportCount field value if set, zero value otherwise.
 func (o *LdifExportRecurringTaskResponse) GetRetainPreviousLDIFExportCount() int32 {
-	if o == nil || isNil(o.RetainPreviousLDIFExportCount) {
+	if o == nil || IsNil(o.RetainPreviousLDIFExportCount) {
 		var ret int32
 		return ret
 	}
@@ -419,7 +422,7 @@ func (o *LdifExportRecurringTaskResponse) GetRetainPreviousLDIFExportCount() int
 // GetRetainPreviousLDIFExportCountOk returns a tuple with the RetainPreviousLDIFExportCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetRetainPreviousLDIFExportCountOk() (*int32, bool) {
-	if o == nil || isNil(o.RetainPreviousLDIFExportCount) {
+	if o == nil || IsNil(o.RetainPreviousLDIFExportCount) {
 		return nil, false
 	}
 	return o.RetainPreviousLDIFExportCount, true
@@ -427,7 +430,7 @@ func (o *LdifExportRecurringTaskResponse) GetRetainPreviousLDIFExportCountOk() (
 
 // HasRetainPreviousLDIFExportCount returns a boolean if a field has been set.
 func (o *LdifExportRecurringTaskResponse) HasRetainPreviousLDIFExportCount() bool {
-	if o != nil && !isNil(o.RetainPreviousLDIFExportCount) {
+	if o != nil && !IsNil(o.RetainPreviousLDIFExportCount) {
 		return true
 	}
 
@@ -441,7 +444,7 @@ func (o *LdifExportRecurringTaskResponse) SetRetainPreviousLDIFExportCount(v int
 
 // GetRetainPreviousLDIFExportAge returns the RetainPreviousLDIFExportAge field value if set, zero value otherwise.
 func (o *LdifExportRecurringTaskResponse) GetRetainPreviousLDIFExportAge() string {
-	if o == nil || isNil(o.RetainPreviousLDIFExportAge) {
+	if o == nil || IsNil(o.RetainPreviousLDIFExportAge) {
 		var ret string
 		return ret
 	}
@@ -451,7 +454,7 @@ func (o *LdifExportRecurringTaskResponse) GetRetainPreviousLDIFExportAge() strin
 // GetRetainPreviousLDIFExportAgeOk returns a tuple with the RetainPreviousLDIFExportAge field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetRetainPreviousLDIFExportAgeOk() (*string, bool) {
-	if o == nil || isNil(o.RetainPreviousLDIFExportAge) {
+	if o == nil || IsNil(o.RetainPreviousLDIFExportAge) {
 		return nil, false
 	}
 	return o.RetainPreviousLDIFExportAge, true
@@ -459,7 +462,7 @@ func (o *LdifExportRecurringTaskResponse) GetRetainPreviousLDIFExportAgeOk() (*s
 
 // HasRetainPreviousLDIFExportAge returns a boolean if a field has been set.
 func (o *LdifExportRecurringTaskResponse) HasRetainPreviousLDIFExportAge() bool {
-	if o != nil && !isNil(o.RetainPreviousLDIFExportAge) {
+	if o != nil && !IsNil(o.RetainPreviousLDIFExportAge) {
 		return true
 	}
 
@@ -473,7 +476,7 @@ func (o *LdifExportRecurringTaskResponse) SetRetainPreviousLDIFExportAge(v strin
 
 // GetMaxMegabytesPerSecond returns the MaxMegabytesPerSecond field value if set, zero value otherwise.
 func (o *LdifExportRecurringTaskResponse) GetMaxMegabytesPerSecond() int32 {
-	if o == nil || isNil(o.MaxMegabytesPerSecond) {
+	if o == nil || IsNil(o.MaxMegabytesPerSecond) {
 		var ret int32
 		return ret
 	}
@@ -483,7 +486,7 @@ func (o *LdifExportRecurringTaskResponse) GetMaxMegabytesPerSecond() int32 {
 // GetMaxMegabytesPerSecondOk returns a tuple with the MaxMegabytesPerSecond field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetMaxMegabytesPerSecondOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxMegabytesPerSecond) {
+	if o == nil || IsNil(o.MaxMegabytesPerSecond) {
 		return nil, false
 	}
 	return o.MaxMegabytesPerSecond, true
@@ -491,7 +494,7 @@ func (o *LdifExportRecurringTaskResponse) GetMaxMegabytesPerSecondOk() (*int32, 
 
 // HasMaxMegabytesPerSecond returns a boolean if a field has been set.
 func (o *LdifExportRecurringTaskResponse) HasMaxMegabytesPerSecond() bool {
-	if o != nil && !isNil(o.MaxMegabytesPerSecond) {
+	if o != nil && !IsNil(o.MaxMegabytesPerSecond) {
 		return true
 	}
 
@@ -505,7 +508,7 @@ func (o *LdifExportRecurringTaskResponse) SetMaxMegabytesPerSecond(v int32) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *LdifExportRecurringTaskResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -515,7 +518,7 @@ func (o *LdifExportRecurringTaskResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -523,7 +526,7 @@ func (o *LdifExportRecurringTaskResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *LdifExportRecurringTaskResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -537,7 +540,7 @@ func (o *LdifExportRecurringTaskResponse) SetDescription(v string) {
 
 // GetCancelOnTaskDependencyFailure returns the CancelOnTaskDependencyFailure field value if set, zero value otherwise.
 func (o *LdifExportRecurringTaskResponse) GetCancelOnTaskDependencyFailure() bool {
-	if o == nil || isNil(o.CancelOnTaskDependencyFailure) {
+	if o == nil || IsNil(o.CancelOnTaskDependencyFailure) {
 		var ret bool
 		return ret
 	}
@@ -547,7 +550,7 @@ func (o *LdifExportRecurringTaskResponse) GetCancelOnTaskDependencyFailure() boo
 // GetCancelOnTaskDependencyFailureOk returns a tuple with the CancelOnTaskDependencyFailure field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetCancelOnTaskDependencyFailureOk() (*bool, bool) {
-	if o == nil || isNil(o.CancelOnTaskDependencyFailure) {
+	if o == nil || IsNil(o.CancelOnTaskDependencyFailure) {
 		return nil, false
 	}
 	return o.CancelOnTaskDependencyFailure, true
@@ -555,7 +558,7 @@ func (o *LdifExportRecurringTaskResponse) GetCancelOnTaskDependencyFailureOk() (
 
 // HasCancelOnTaskDependencyFailure returns a boolean if a field has been set.
 func (o *LdifExportRecurringTaskResponse) HasCancelOnTaskDependencyFailure() bool {
-	if o != nil && !isNil(o.CancelOnTaskDependencyFailure) {
+	if o != nil && !IsNil(o.CancelOnTaskDependencyFailure) {
 		return true
 	}
 
@@ -569,7 +572,7 @@ func (o *LdifExportRecurringTaskResponse) SetCancelOnTaskDependencyFailure(v boo
 
 // GetEmailOnStart returns the EmailOnStart field value if set, zero value otherwise.
 func (o *LdifExportRecurringTaskResponse) GetEmailOnStart() []string {
-	if o == nil || isNil(o.EmailOnStart) {
+	if o == nil || IsNil(o.EmailOnStart) {
 		var ret []string
 		return ret
 	}
@@ -579,7 +582,7 @@ func (o *LdifExportRecurringTaskResponse) GetEmailOnStart() []string {
 // GetEmailOnStartOk returns a tuple with the EmailOnStart field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetEmailOnStartOk() ([]string, bool) {
-	if o == nil || isNil(o.EmailOnStart) {
+	if o == nil || IsNil(o.EmailOnStart) {
 		return nil, false
 	}
 	return o.EmailOnStart, true
@@ -587,7 +590,7 @@ func (o *LdifExportRecurringTaskResponse) GetEmailOnStartOk() ([]string, bool) {
 
 // HasEmailOnStart returns a boolean if a field has been set.
 func (o *LdifExportRecurringTaskResponse) HasEmailOnStart() bool {
-	if o != nil && !isNil(o.EmailOnStart) {
+	if o != nil && !IsNil(o.EmailOnStart) {
 		return true
 	}
 
@@ -601,7 +604,7 @@ func (o *LdifExportRecurringTaskResponse) SetEmailOnStart(v []string) {
 
 // GetEmailOnSuccess returns the EmailOnSuccess field value if set, zero value otherwise.
 func (o *LdifExportRecurringTaskResponse) GetEmailOnSuccess() []string {
-	if o == nil || isNil(o.EmailOnSuccess) {
+	if o == nil || IsNil(o.EmailOnSuccess) {
 		var ret []string
 		return ret
 	}
@@ -611,7 +614,7 @@ func (o *LdifExportRecurringTaskResponse) GetEmailOnSuccess() []string {
 // GetEmailOnSuccessOk returns a tuple with the EmailOnSuccess field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetEmailOnSuccessOk() ([]string, bool) {
-	if o == nil || isNil(o.EmailOnSuccess) {
+	if o == nil || IsNil(o.EmailOnSuccess) {
 		return nil, false
 	}
 	return o.EmailOnSuccess, true
@@ -619,7 +622,7 @@ func (o *LdifExportRecurringTaskResponse) GetEmailOnSuccessOk() ([]string, bool)
 
 // HasEmailOnSuccess returns a boolean if a field has been set.
 func (o *LdifExportRecurringTaskResponse) HasEmailOnSuccess() bool {
-	if o != nil && !isNil(o.EmailOnSuccess) {
+	if o != nil && !IsNil(o.EmailOnSuccess) {
 		return true
 	}
 
@@ -633,7 +636,7 @@ func (o *LdifExportRecurringTaskResponse) SetEmailOnSuccess(v []string) {
 
 // GetEmailOnFailure returns the EmailOnFailure field value if set, zero value otherwise.
 func (o *LdifExportRecurringTaskResponse) GetEmailOnFailure() []string {
-	if o == nil || isNil(o.EmailOnFailure) {
+	if o == nil || IsNil(o.EmailOnFailure) {
 		var ret []string
 		return ret
 	}
@@ -643,7 +646,7 @@ func (o *LdifExportRecurringTaskResponse) GetEmailOnFailure() []string {
 // GetEmailOnFailureOk returns a tuple with the EmailOnFailure field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetEmailOnFailureOk() ([]string, bool) {
-	if o == nil || isNil(o.EmailOnFailure) {
+	if o == nil || IsNil(o.EmailOnFailure) {
 		return nil, false
 	}
 	return o.EmailOnFailure, true
@@ -651,7 +654,7 @@ func (o *LdifExportRecurringTaskResponse) GetEmailOnFailureOk() ([]string, bool)
 
 // HasEmailOnFailure returns a boolean if a field has been set.
 func (o *LdifExportRecurringTaskResponse) HasEmailOnFailure() bool {
-	if o != nil && !isNil(o.EmailOnFailure) {
+	if o != nil && !IsNil(o.EmailOnFailure) {
 		return true
 	}
 
@@ -665,7 +668,7 @@ func (o *LdifExportRecurringTaskResponse) SetEmailOnFailure(v []string) {
 
 // GetAlertOnStart returns the AlertOnStart field value if set, zero value otherwise.
 func (o *LdifExportRecurringTaskResponse) GetAlertOnStart() bool {
-	if o == nil || isNil(o.AlertOnStart) {
+	if o == nil || IsNil(o.AlertOnStart) {
 		var ret bool
 		return ret
 	}
@@ -675,7 +678,7 @@ func (o *LdifExportRecurringTaskResponse) GetAlertOnStart() bool {
 // GetAlertOnStartOk returns a tuple with the AlertOnStart field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetAlertOnStartOk() (*bool, bool) {
-	if o == nil || isNil(o.AlertOnStart) {
+	if o == nil || IsNil(o.AlertOnStart) {
 		return nil, false
 	}
 	return o.AlertOnStart, true
@@ -683,7 +686,7 @@ func (o *LdifExportRecurringTaskResponse) GetAlertOnStartOk() (*bool, bool) {
 
 // HasAlertOnStart returns a boolean if a field has been set.
 func (o *LdifExportRecurringTaskResponse) HasAlertOnStart() bool {
-	if o != nil && !isNil(o.AlertOnStart) {
+	if o != nil && !IsNil(o.AlertOnStart) {
 		return true
 	}
 
@@ -697,7 +700,7 @@ func (o *LdifExportRecurringTaskResponse) SetAlertOnStart(v bool) {
 
 // GetAlertOnSuccess returns the AlertOnSuccess field value if set, zero value otherwise.
 func (o *LdifExportRecurringTaskResponse) GetAlertOnSuccess() bool {
-	if o == nil || isNil(o.AlertOnSuccess) {
+	if o == nil || IsNil(o.AlertOnSuccess) {
 		var ret bool
 		return ret
 	}
@@ -707,7 +710,7 @@ func (o *LdifExportRecurringTaskResponse) GetAlertOnSuccess() bool {
 // GetAlertOnSuccessOk returns a tuple with the AlertOnSuccess field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetAlertOnSuccessOk() (*bool, bool) {
-	if o == nil || isNil(o.AlertOnSuccess) {
+	if o == nil || IsNil(o.AlertOnSuccess) {
 		return nil, false
 	}
 	return o.AlertOnSuccess, true
@@ -715,7 +718,7 @@ func (o *LdifExportRecurringTaskResponse) GetAlertOnSuccessOk() (*bool, bool) {
 
 // HasAlertOnSuccess returns a boolean if a field has been set.
 func (o *LdifExportRecurringTaskResponse) HasAlertOnSuccess() bool {
-	if o != nil && !isNil(o.AlertOnSuccess) {
+	if o != nil && !IsNil(o.AlertOnSuccess) {
 		return true
 	}
 
@@ -729,7 +732,7 @@ func (o *LdifExportRecurringTaskResponse) SetAlertOnSuccess(v bool) {
 
 // GetAlertOnFailure returns the AlertOnFailure field value if set, zero value otherwise.
 func (o *LdifExportRecurringTaskResponse) GetAlertOnFailure() bool {
-	if o == nil || isNil(o.AlertOnFailure) {
+	if o == nil || IsNil(o.AlertOnFailure) {
 		var ret bool
 		return ret
 	}
@@ -739,7 +742,7 @@ func (o *LdifExportRecurringTaskResponse) GetAlertOnFailure() bool {
 // GetAlertOnFailureOk returns a tuple with the AlertOnFailure field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetAlertOnFailureOk() (*bool, bool) {
-	if o == nil || isNil(o.AlertOnFailure) {
+	if o == nil || IsNil(o.AlertOnFailure) {
 		return nil, false
 	}
 	return o.AlertOnFailure, true
@@ -747,7 +750,7 @@ func (o *LdifExportRecurringTaskResponse) GetAlertOnFailureOk() (*bool, bool) {
 
 // HasAlertOnFailure returns a boolean if a field has been set.
 func (o *LdifExportRecurringTaskResponse) HasAlertOnFailure() bool {
-	if o != nil && !isNil(o.AlertOnFailure) {
+	if o != nil && !IsNil(o.AlertOnFailure) {
 		return true
 	}
 
@@ -760,74 +763,76 @@ func (o *LdifExportRecurringTaskResponse) SetAlertOnFailure(v bool) {
 }
 
 func (o LdifExportRecurringTaskResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["ldifDirectory"] = o.LdifDirectory
-	}
-	if !isNil(o.BackendID) {
-		toSerialize["backendID"] = o.BackendID
-	}
-	if !isNil(o.ExcludeBackendID) {
-		toSerialize["excludeBackendID"] = o.ExcludeBackendID
-	}
-	if !isNil(o.Compress) {
-		toSerialize["compress"] = o.Compress
-	}
-	if !isNil(o.Encrypt) {
-		toSerialize["encrypt"] = o.Encrypt
-	}
-	if !isNil(o.EncryptionSettingsDefinitionID) {
-		toSerialize["encryptionSettingsDefinitionID"] = o.EncryptionSettingsDefinitionID
-	}
-	if !isNil(o.Sign) {
-		toSerialize["sign"] = o.Sign
-	}
-	if !isNil(o.RetainPreviousLDIFExportCount) {
-		toSerialize["retainPreviousLDIFExportCount"] = o.RetainPreviousLDIFExportCount
-	}
-	if !isNil(o.RetainPreviousLDIFExportAge) {
-		toSerialize["retainPreviousLDIFExportAge"] = o.RetainPreviousLDIFExportAge
-	}
-	if !isNil(o.MaxMegabytesPerSecond) {
-		toSerialize["maxMegabytesPerSecond"] = o.MaxMegabytesPerSecond
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if !isNil(o.CancelOnTaskDependencyFailure) {
-		toSerialize["cancelOnTaskDependencyFailure"] = o.CancelOnTaskDependencyFailure
-	}
-	if !isNil(o.EmailOnStart) {
-		toSerialize["emailOnStart"] = o.EmailOnStart
-	}
-	if !isNil(o.EmailOnSuccess) {
-		toSerialize["emailOnSuccess"] = o.EmailOnSuccess
-	}
-	if !isNil(o.EmailOnFailure) {
-		toSerialize["emailOnFailure"] = o.EmailOnFailure
-	}
-	if !isNil(o.AlertOnStart) {
-		toSerialize["alertOnStart"] = o.AlertOnStart
-	}
-	if !isNil(o.AlertOnSuccess) {
-		toSerialize["alertOnSuccess"] = o.AlertOnSuccess
-	}
-	if !isNil(o.AlertOnFailure) {
-		toSerialize["alertOnFailure"] = o.AlertOnFailure
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o LdifExportRecurringTaskResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["ldifDirectory"] = o.LdifDirectory
+	if !IsNil(o.BackendID) {
+		toSerialize["backendID"] = o.BackendID
+	}
+	if !IsNil(o.ExcludeBackendID) {
+		toSerialize["excludeBackendID"] = o.ExcludeBackendID
+	}
+	if !IsNil(o.Compress) {
+		toSerialize["compress"] = o.Compress
+	}
+	if !IsNil(o.Encrypt) {
+		toSerialize["encrypt"] = o.Encrypt
+	}
+	if !IsNil(o.EncryptionSettingsDefinitionID) {
+		toSerialize["encryptionSettingsDefinitionID"] = o.EncryptionSettingsDefinitionID
+	}
+	if !IsNil(o.Sign) {
+		toSerialize["sign"] = o.Sign
+	}
+	if !IsNil(o.RetainPreviousLDIFExportCount) {
+		toSerialize["retainPreviousLDIFExportCount"] = o.RetainPreviousLDIFExportCount
+	}
+	if !IsNil(o.RetainPreviousLDIFExportAge) {
+		toSerialize["retainPreviousLDIFExportAge"] = o.RetainPreviousLDIFExportAge
+	}
+	if !IsNil(o.MaxMegabytesPerSecond) {
+		toSerialize["maxMegabytesPerSecond"] = o.MaxMegabytesPerSecond
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.CancelOnTaskDependencyFailure) {
+		toSerialize["cancelOnTaskDependencyFailure"] = o.CancelOnTaskDependencyFailure
+	}
+	if !IsNil(o.EmailOnStart) {
+		toSerialize["emailOnStart"] = o.EmailOnStart
+	}
+	if !IsNil(o.EmailOnSuccess) {
+		toSerialize["emailOnSuccess"] = o.EmailOnSuccess
+	}
+	if !IsNil(o.EmailOnFailure) {
+		toSerialize["emailOnFailure"] = o.EmailOnFailure
+	}
+	if !IsNil(o.AlertOnStart) {
+		toSerialize["alertOnStart"] = o.AlertOnStart
+	}
+	if !IsNil(o.AlertOnSuccess) {
+		toSerialize["alertOnSuccess"] = o.AlertOnSuccess
+	}
+	if !IsNil(o.AlertOnFailure) {
+		toSerialize["alertOnFailure"] = o.AlertOnFailure
+	}
+	return toSerialize, nil
 }
 
 type NullableLdifExportRecurringTaskResponse struct {

@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -105,9 +105,9 @@ func (a *RequestCriteriaApiService) AddRequestCriteriaExecute(r ApiAddRequestCri
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -171,7 +171,7 @@ func (a *RequestCriteriaApiService) DeleteRequestCriteriaExecute(r ApiDeleteRequ
 	}
 
 	localVarPath := localBasePath + "/request-criteria/{request-criteria-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"request-criteria-name"+"}", url.PathEscape(parameterToString(r.requestCriteriaName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"request-criteria-name"+"}", url.PathEscape(parameterValueToString(r.requestCriteriaName, "requestCriteriaName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -204,9 +204,9 @@ func (a *RequestCriteriaApiService) DeleteRequestCriteriaExecute(r ApiDeleteRequ
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -264,7 +264,7 @@ func (a *RequestCriteriaApiService) GetRequestCriteriaExecute(r ApiGetRequestCri
 	}
 
 	localVarPath := localBasePath + "/request-criteria/{request-criteria-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"request-criteria-name"+"}", url.PathEscape(parameterToString(r.requestCriteriaName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"request-criteria-name"+"}", url.PathEscape(parameterValueToString(r.requestCriteriaName, "requestCriteriaName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -297,9 +297,9 @@ func (a *RequestCriteriaApiService) GetRequestCriteriaExecute(r ApiGetRequestCri
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -373,7 +373,7 @@ func (a *RequestCriteriaApiService) UpdateRequestCriteriaExecute(r ApiUpdateRequ
 	}
 
 	localVarPath := localBasePath + "/request-criteria/{request-criteria-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"request-criteria-name"+"}", url.PathEscape(parameterToString(r.requestCriteriaName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"request-criteria-name"+"}", url.PathEscape(parameterValueToString(r.requestCriteriaName, "requestCriteriaName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -411,9 +411,9 @@ func (a *RequestCriteriaApiService) UpdateRequestCriteriaExecute(r ApiUpdateRequ
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddReplicationAssuranceResultCriteriaRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddReplicationAssuranceResultCriteriaRequest{}
+
 // AddReplicationAssuranceResultCriteriaRequest struct for AddReplicationAssuranceResultCriteriaRequest
 type AddReplicationAssuranceResultCriteriaRequest struct {
 	// Name of the new Result Criteria
@@ -100,7 +103,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) SetSchemas(v []Enumreplic
 
 // GetLocalAssuranceLevel returns the LocalAssuranceLevel field value if set, zero value otherwise.
 func (o *AddReplicationAssuranceResultCriteriaRequest) GetLocalAssuranceLevel() []EnumresultCriteriaLocalAssuranceLevelProp {
-	if o == nil || isNil(o.LocalAssuranceLevel) {
+	if o == nil || IsNil(o.LocalAssuranceLevel) {
 		var ret []EnumresultCriteriaLocalAssuranceLevelProp
 		return ret
 	}
@@ -110,7 +113,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) GetLocalAssuranceLevel() 
 // GetLocalAssuranceLevelOk returns a tuple with the LocalAssuranceLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReplicationAssuranceResultCriteriaRequest) GetLocalAssuranceLevelOk() ([]EnumresultCriteriaLocalAssuranceLevelProp, bool) {
-	if o == nil || isNil(o.LocalAssuranceLevel) {
+	if o == nil || IsNil(o.LocalAssuranceLevel) {
 		return nil, false
 	}
 	return o.LocalAssuranceLevel, true
@@ -118,7 +121,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) GetLocalAssuranceLevelOk(
 
 // HasLocalAssuranceLevel returns a boolean if a field has been set.
 func (o *AddReplicationAssuranceResultCriteriaRequest) HasLocalAssuranceLevel() bool {
-	if o != nil && !isNil(o.LocalAssuranceLevel) {
+	if o != nil && !IsNil(o.LocalAssuranceLevel) {
 		return true
 	}
 
@@ -132,7 +135,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) SetLocalAssuranceLevel(v 
 
 // GetRemoteAssuranceLevel returns the RemoteAssuranceLevel field value if set, zero value otherwise.
 func (o *AddReplicationAssuranceResultCriteriaRequest) GetRemoteAssuranceLevel() []EnumresultCriteriaRemoteAssuranceLevelProp {
-	if o == nil || isNil(o.RemoteAssuranceLevel) {
+	if o == nil || IsNil(o.RemoteAssuranceLevel) {
 		var ret []EnumresultCriteriaRemoteAssuranceLevelProp
 		return ret
 	}
@@ -142,7 +145,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) GetRemoteAssuranceLevel()
 // GetRemoteAssuranceLevelOk returns a tuple with the RemoteAssuranceLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReplicationAssuranceResultCriteriaRequest) GetRemoteAssuranceLevelOk() ([]EnumresultCriteriaRemoteAssuranceLevelProp, bool) {
-	if o == nil || isNil(o.RemoteAssuranceLevel) {
+	if o == nil || IsNil(o.RemoteAssuranceLevel) {
 		return nil, false
 	}
 	return o.RemoteAssuranceLevel, true
@@ -150,7 +153,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) GetRemoteAssuranceLevelOk
 
 // HasRemoteAssuranceLevel returns a boolean if a field has been set.
 func (o *AddReplicationAssuranceResultCriteriaRequest) HasRemoteAssuranceLevel() bool {
-	if o != nil && !isNil(o.RemoteAssuranceLevel) {
+	if o != nil && !IsNil(o.RemoteAssuranceLevel) {
 		return true
 	}
 
@@ -164,7 +167,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) SetRemoteAssuranceLevel(v
 
 // GetAssuranceTimeoutCriteria returns the AssuranceTimeoutCriteria field value if set, zero value otherwise.
 func (o *AddReplicationAssuranceResultCriteriaRequest) GetAssuranceTimeoutCriteria() EnumresultCriteriaAssuranceTimeoutCriteriaProp {
-	if o == nil || isNil(o.AssuranceTimeoutCriteria) {
+	if o == nil || IsNil(o.AssuranceTimeoutCriteria) {
 		var ret EnumresultCriteriaAssuranceTimeoutCriteriaProp
 		return ret
 	}
@@ -174,7 +177,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) GetAssuranceTimeoutCriter
 // GetAssuranceTimeoutCriteriaOk returns a tuple with the AssuranceTimeoutCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReplicationAssuranceResultCriteriaRequest) GetAssuranceTimeoutCriteriaOk() (*EnumresultCriteriaAssuranceTimeoutCriteriaProp, bool) {
-	if o == nil || isNil(o.AssuranceTimeoutCriteria) {
+	if o == nil || IsNil(o.AssuranceTimeoutCriteria) {
 		return nil, false
 	}
 	return o.AssuranceTimeoutCriteria, true
@@ -182,7 +185,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) GetAssuranceTimeoutCriter
 
 // HasAssuranceTimeoutCriteria returns a boolean if a field has been set.
 func (o *AddReplicationAssuranceResultCriteriaRequest) HasAssuranceTimeoutCriteria() bool {
-	if o != nil && !isNil(o.AssuranceTimeoutCriteria) {
+	if o != nil && !IsNil(o.AssuranceTimeoutCriteria) {
 		return true
 	}
 
@@ -196,7 +199,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) SetAssuranceTimeoutCriter
 
 // GetAssuranceTimeoutValue returns the AssuranceTimeoutValue field value if set, zero value otherwise.
 func (o *AddReplicationAssuranceResultCriteriaRequest) GetAssuranceTimeoutValue() string {
-	if o == nil || isNil(o.AssuranceTimeoutValue) {
+	if o == nil || IsNil(o.AssuranceTimeoutValue) {
 		var ret string
 		return ret
 	}
@@ -206,7 +209,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) GetAssuranceTimeoutValue(
 // GetAssuranceTimeoutValueOk returns a tuple with the AssuranceTimeoutValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReplicationAssuranceResultCriteriaRequest) GetAssuranceTimeoutValueOk() (*string, bool) {
-	if o == nil || isNil(o.AssuranceTimeoutValue) {
+	if o == nil || IsNil(o.AssuranceTimeoutValue) {
 		return nil, false
 	}
 	return o.AssuranceTimeoutValue, true
@@ -214,7 +217,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) GetAssuranceTimeoutValueO
 
 // HasAssuranceTimeoutValue returns a boolean if a field has been set.
 func (o *AddReplicationAssuranceResultCriteriaRequest) HasAssuranceTimeoutValue() bool {
-	if o != nil && !isNil(o.AssuranceTimeoutValue) {
+	if o != nil && !IsNil(o.AssuranceTimeoutValue) {
 		return true
 	}
 
@@ -228,7 +231,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) SetAssuranceTimeoutValue(
 
 // GetResponseDelayedByAssurance returns the ResponseDelayedByAssurance field value if set, zero value otherwise.
 func (o *AddReplicationAssuranceResultCriteriaRequest) GetResponseDelayedByAssurance() EnumresultCriteriaResponseDelayedByAssuranceProp {
-	if o == nil || isNil(o.ResponseDelayedByAssurance) {
+	if o == nil || IsNil(o.ResponseDelayedByAssurance) {
 		var ret EnumresultCriteriaResponseDelayedByAssuranceProp
 		return ret
 	}
@@ -238,7 +241,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) GetResponseDelayedByAssur
 // GetResponseDelayedByAssuranceOk returns a tuple with the ResponseDelayedByAssurance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReplicationAssuranceResultCriteriaRequest) GetResponseDelayedByAssuranceOk() (*EnumresultCriteriaResponseDelayedByAssuranceProp, bool) {
-	if o == nil || isNil(o.ResponseDelayedByAssurance) {
+	if o == nil || IsNil(o.ResponseDelayedByAssurance) {
 		return nil, false
 	}
 	return o.ResponseDelayedByAssurance, true
@@ -246,7 +249,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) GetResponseDelayedByAssur
 
 // HasResponseDelayedByAssurance returns a boolean if a field has been set.
 func (o *AddReplicationAssuranceResultCriteriaRequest) HasResponseDelayedByAssurance() bool {
-	if o != nil && !isNil(o.ResponseDelayedByAssurance) {
+	if o != nil && !IsNil(o.ResponseDelayedByAssurance) {
 		return true
 	}
 
@@ -260,7 +263,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) SetResponseDelayedByAssur
 
 // GetAssuranceBehaviorAlteredByControl returns the AssuranceBehaviorAlteredByControl field value if set, zero value otherwise.
 func (o *AddReplicationAssuranceResultCriteriaRequest) GetAssuranceBehaviorAlteredByControl() EnumresultCriteriaAssuranceBehaviorAlteredByControlProp {
-	if o == nil || isNil(o.AssuranceBehaviorAlteredByControl) {
+	if o == nil || IsNil(o.AssuranceBehaviorAlteredByControl) {
 		var ret EnumresultCriteriaAssuranceBehaviorAlteredByControlProp
 		return ret
 	}
@@ -270,7 +273,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) GetAssuranceBehaviorAlter
 // GetAssuranceBehaviorAlteredByControlOk returns a tuple with the AssuranceBehaviorAlteredByControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReplicationAssuranceResultCriteriaRequest) GetAssuranceBehaviorAlteredByControlOk() (*EnumresultCriteriaAssuranceBehaviorAlteredByControlProp, bool) {
-	if o == nil || isNil(o.AssuranceBehaviorAlteredByControl) {
+	if o == nil || IsNil(o.AssuranceBehaviorAlteredByControl) {
 		return nil, false
 	}
 	return o.AssuranceBehaviorAlteredByControl, true
@@ -278,7 +281,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) GetAssuranceBehaviorAlter
 
 // HasAssuranceBehaviorAlteredByControl returns a boolean if a field has been set.
 func (o *AddReplicationAssuranceResultCriteriaRequest) HasAssuranceBehaviorAlteredByControl() bool {
-	if o != nil && !isNil(o.AssuranceBehaviorAlteredByControl) {
+	if o != nil && !IsNil(o.AssuranceBehaviorAlteredByControl) {
 		return true
 	}
 
@@ -292,7 +295,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) SetAssuranceBehaviorAlter
 
 // GetAssuranceSatisfied returns the AssuranceSatisfied field value if set, zero value otherwise.
 func (o *AddReplicationAssuranceResultCriteriaRequest) GetAssuranceSatisfied() EnumresultCriteriaAssuranceSatisfiedProp {
-	if o == nil || isNil(o.AssuranceSatisfied) {
+	if o == nil || IsNil(o.AssuranceSatisfied) {
 		var ret EnumresultCriteriaAssuranceSatisfiedProp
 		return ret
 	}
@@ -302,7 +305,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) GetAssuranceSatisfied() E
 // GetAssuranceSatisfiedOk returns a tuple with the AssuranceSatisfied field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReplicationAssuranceResultCriteriaRequest) GetAssuranceSatisfiedOk() (*EnumresultCriteriaAssuranceSatisfiedProp, bool) {
-	if o == nil || isNil(o.AssuranceSatisfied) {
+	if o == nil || IsNil(o.AssuranceSatisfied) {
 		return nil, false
 	}
 	return o.AssuranceSatisfied, true
@@ -310,7 +313,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) GetAssuranceSatisfiedOk()
 
 // HasAssuranceSatisfied returns a boolean if a field has been set.
 func (o *AddReplicationAssuranceResultCriteriaRequest) HasAssuranceSatisfied() bool {
-	if o != nil && !isNil(o.AssuranceSatisfied) {
+	if o != nil && !IsNil(o.AssuranceSatisfied) {
 		return true
 	}
 
@@ -324,7 +327,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) SetAssuranceSatisfied(v E
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddReplicationAssuranceResultCriteriaRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -334,7 +337,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReplicationAssuranceResultCriteriaRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -342,7 +345,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) GetDescriptionOk() (*stri
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddReplicationAssuranceResultCriteriaRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -355,38 +358,42 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) SetDescription(v string) 
 }
 
 func (o AddReplicationAssuranceResultCriteriaRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["criteriaName"] = o.CriteriaName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.LocalAssuranceLevel) {
-		toSerialize["localAssuranceLevel"] = o.LocalAssuranceLevel
-	}
-	if !isNil(o.RemoteAssuranceLevel) {
-		toSerialize["remoteAssuranceLevel"] = o.RemoteAssuranceLevel
-	}
-	if !isNil(o.AssuranceTimeoutCriteria) {
-		toSerialize["assuranceTimeoutCriteria"] = o.AssuranceTimeoutCriteria
-	}
-	if !isNil(o.AssuranceTimeoutValue) {
-		toSerialize["assuranceTimeoutValue"] = o.AssuranceTimeoutValue
-	}
-	if !isNil(o.ResponseDelayedByAssurance) {
-		toSerialize["responseDelayedByAssurance"] = o.ResponseDelayedByAssurance
-	}
-	if !isNil(o.AssuranceBehaviorAlteredByControl) {
-		toSerialize["assuranceBehaviorAlteredByControl"] = o.AssuranceBehaviorAlteredByControl
-	}
-	if !isNil(o.AssuranceSatisfied) {
-		toSerialize["assuranceSatisfied"] = o.AssuranceSatisfied
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddReplicationAssuranceResultCriteriaRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["criteriaName"] = o.CriteriaName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.LocalAssuranceLevel) {
+		toSerialize["localAssuranceLevel"] = o.LocalAssuranceLevel
+	}
+	if !IsNil(o.RemoteAssuranceLevel) {
+		toSerialize["remoteAssuranceLevel"] = o.RemoteAssuranceLevel
+	}
+	if !IsNil(o.AssuranceTimeoutCriteria) {
+		toSerialize["assuranceTimeoutCriteria"] = o.AssuranceTimeoutCriteria
+	}
+	if !IsNil(o.AssuranceTimeoutValue) {
+		toSerialize["assuranceTimeoutValue"] = o.AssuranceTimeoutValue
+	}
+	if !IsNil(o.ResponseDelayedByAssurance) {
+		toSerialize["responseDelayedByAssurance"] = o.ResponseDelayedByAssurance
+	}
+	if !IsNil(o.AssuranceBehaviorAlteredByControl) {
+		toSerialize["assuranceBehaviorAlteredByControl"] = o.AssuranceBehaviorAlteredByControl
+	}
+	if !IsNil(o.AssuranceSatisfied) {
+		toSerialize["assuranceSatisfied"] = o.AssuranceSatisfied
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAddReplicationAssuranceResultCriteriaRequest struct {

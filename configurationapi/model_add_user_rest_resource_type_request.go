@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddUserRestResourceTypeRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddUserRestResourceTypeRequest{}
+
 // AddUserRestResourceTypeRequest struct for AddUserRestResourceTypeRequest
 type AddUserRestResourceTypeRequest struct {
 	// Name of the new REST Resource Type
@@ -138,7 +141,7 @@ func (o *AddUserRestResourceTypeRequest) SetSchemas(v []EnumuserRestResourceType
 
 // GetPasswordAttributeCategory returns the PasswordAttributeCategory field value if set, zero value otherwise.
 func (o *AddUserRestResourceTypeRequest) GetPasswordAttributeCategory() string {
-	if o == nil || isNil(o.PasswordAttributeCategory) {
+	if o == nil || IsNil(o.PasswordAttributeCategory) {
 		var ret string
 		return ret
 	}
@@ -148,7 +151,7 @@ func (o *AddUserRestResourceTypeRequest) GetPasswordAttributeCategory() string {
 // GetPasswordAttributeCategoryOk returns a tuple with the PasswordAttributeCategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetPasswordAttributeCategoryOk() (*string, bool) {
-	if o == nil || isNil(o.PasswordAttributeCategory) {
+	if o == nil || IsNil(o.PasswordAttributeCategory) {
 		return nil, false
 	}
 	return o.PasswordAttributeCategory, true
@@ -156,7 +159,7 @@ func (o *AddUserRestResourceTypeRequest) GetPasswordAttributeCategoryOk() (*stri
 
 // HasPasswordAttributeCategory returns a boolean if a field has been set.
 func (o *AddUserRestResourceTypeRequest) HasPasswordAttributeCategory() bool {
-	if o != nil && !isNil(o.PasswordAttributeCategory) {
+	if o != nil && !IsNil(o.PasswordAttributeCategory) {
 		return true
 	}
 
@@ -170,7 +173,7 @@ func (o *AddUserRestResourceTypeRequest) SetPasswordAttributeCategory(v string) 
 
 // GetPasswordDisplayOrderIndex returns the PasswordDisplayOrderIndex field value if set, zero value otherwise.
 func (o *AddUserRestResourceTypeRequest) GetPasswordDisplayOrderIndex() int32 {
-	if o == nil || isNil(o.PasswordDisplayOrderIndex) {
+	if o == nil || IsNil(o.PasswordDisplayOrderIndex) {
 		var ret int32
 		return ret
 	}
@@ -180,7 +183,7 @@ func (o *AddUserRestResourceTypeRequest) GetPasswordDisplayOrderIndex() int32 {
 // GetPasswordDisplayOrderIndexOk returns a tuple with the PasswordDisplayOrderIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetPasswordDisplayOrderIndexOk() (*int32, bool) {
-	if o == nil || isNil(o.PasswordDisplayOrderIndex) {
+	if o == nil || IsNil(o.PasswordDisplayOrderIndex) {
 		return nil, false
 	}
 	return o.PasswordDisplayOrderIndex, true
@@ -188,7 +191,7 @@ func (o *AddUserRestResourceTypeRequest) GetPasswordDisplayOrderIndexOk() (*int3
 
 // HasPasswordDisplayOrderIndex returns a boolean if a field has been set.
 func (o *AddUserRestResourceTypeRequest) HasPasswordDisplayOrderIndex() bool {
-	if o != nil && !isNil(o.PasswordDisplayOrderIndex) {
+	if o != nil && !IsNil(o.PasswordDisplayOrderIndex) {
 		return true
 	}
 
@@ -202,7 +205,7 @@ func (o *AddUserRestResourceTypeRequest) SetPasswordDisplayOrderIndex(v int32) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddUserRestResourceTypeRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -212,7 +215,7 @@ func (o *AddUserRestResourceTypeRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -220,7 +223,7 @@ func (o *AddUserRestResourceTypeRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddUserRestResourceTypeRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -306,7 +309,7 @@ func (o *AddUserRestResourceTypeRequest) SetStructuralLDAPObjectclass(v string) 
 
 // GetAuxiliaryLDAPObjectclass returns the AuxiliaryLDAPObjectclass field value if set, zero value otherwise.
 func (o *AddUserRestResourceTypeRequest) GetAuxiliaryLDAPObjectclass() []string {
-	if o == nil || isNil(o.AuxiliaryLDAPObjectclass) {
+	if o == nil || IsNil(o.AuxiliaryLDAPObjectclass) {
 		var ret []string
 		return ret
 	}
@@ -316,7 +319,7 @@ func (o *AddUserRestResourceTypeRequest) GetAuxiliaryLDAPObjectclass() []string 
 // GetAuxiliaryLDAPObjectclassOk returns a tuple with the AuxiliaryLDAPObjectclass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetAuxiliaryLDAPObjectclassOk() ([]string, bool) {
-	if o == nil || isNil(o.AuxiliaryLDAPObjectclass) {
+	if o == nil || IsNil(o.AuxiliaryLDAPObjectclass) {
 		return nil, false
 	}
 	return o.AuxiliaryLDAPObjectclass, true
@@ -324,7 +327,7 @@ func (o *AddUserRestResourceTypeRequest) GetAuxiliaryLDAPObjectclassOk() ([]stri
 
 // HasAuxiliaryLDAPObjectclass returns a boolean if a field has been set.
 func (o *AddUserRestResourceTypeRequest) HasAuxiliaryLDAPObjectclass() bool {
-	if o != nil && !isNil(o.AuxiliaryLDAPObjectclass) {
+	if o != nil && !IsNil(o.AuxiliaryLDAPObjectclass) {
 		return true
 	}
 
@@ -362,7 +365,7 @@ func (o *AddUserRestResourceTypeRequest) SetSearchBaseDN(v string) {
 
 // GetIncludeFilter returns the IncludeFilter field value if set, zero value otherwise.
 func (o *AddUserRestResourceTypeRequest) GetIncludeFilter() []string {
-	if o == nil || isNil(o.IncludeFilter) {
+	if o == nil || IsNil(o.IncludeFilter) {
 		var ret []string
 		return ret
 	}
@@ -372,7 +375,7 @@ func (o *AddUserRestResourceTypeRequest) GetIncludeFilter() []string {
 // GetIncludeFilterOk returns a tuple with the IncludeFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetIncludeFilterOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludeFilter) {
+	if o == nil || IsNil(o.IncludeFilter) {
 		return nil, false
 	}
 	return o.IncludeFilter, true
@@ -380,7 +383,7 @@ func (o *AddUserRestResourceTypeRequest) GetIncludeFilterOk() ([]string, bool) {
 
 // HasIncludeFilter returns a boolean if a field has been set.
 func (o *AddUserRestResourceTypeRequest) HasIncludeFilter() bool {
-	if o != nil && !isNil(o.IncludeFilter) {
+	if o != nil && !IsNil(o.IncludeFilter) {
 		return true
 	}
 
@@ -394,7 +397,7 @@ func (o *AddUserRestResourceTypeRequest) SetIncludeFilter(v []string) {
 
 // GetParentDN returns the ParentDN field value if set, zero value otherwise.
 func (o *AddUserRestResourceTypeRequest) GetParentDN() string {
-	if o == nil || isNil(o.ParentDN) {
+	if o == nil || IsNil(o.ParentDN) {
 		var ret string
 		return ret
 	}
@@ -404,7 +407,7 @@ func (o *AddUserRestResourceTypeRequest) GetParentDN() string {
 // GetParentDNOk returns a tuple with the ParentDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetParentDNOk() (*string, bool) {
-	if o == nil || isNil(o.ParentDN) {
+	if o == nil || IsNil(o.ParentDN) {
 		return nil, false
 	}
 	return o.ParentDN, true
@@ -412,7 +415,7 @@ func (o *AddUserRestResourceTypeRequest) GetParentDNOk() (*string, bool) {
 
 // HasParentDN returns a boolean if a field has been set.
 func (o *AddUserRestResourceTypeRequest) HasParentDN() bool {
-	if o != nil && !isNil(o.ParentDN) {
+	if o != nil && !IsNil(o.ParentDN) {
 		return true
 	}
 
@@ -426,7 +429,7 @@ func (o *AddUserRestResourceTypeRequest) SetParentDN(v string) {
 
 // GetParentResourceType returns the ParentResourceType field value if set, zero value otherwise.
 func (o *AddUserRestResourceTypeRequest) GetParentResourceType() string {
-	if o == nil || isNil(o.ParentResourceType) {
+	if o == nil || IsNil(o.ParentResourceType) {
 		var ret string
 		return ret
 	}
@@ -436,7 +439,7 @@ func (o *AddUserRestResourceTypeRequest) GetParentResourceType() string {
 // GetParentResourceTypeOk returns a tuple with the ParentResourceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetParentResourceTypeOk() (*string, bool) {
-	if o == nil || isNil(o.ParentResourceType) {
+	if o == nil || IsNil(o.ParentResourceType) {
 		return nil, false
 	}
 	return o.ParentResourceType, true
@@ -444,7 +447,7 @@ func (o *AddUserRestResourceTypeRequest) GetParentResourceTypeOk() (*string, boo
 
 // HasParentResourceType returns a boolean if a field has been set.
 func (o *AddUserRestResourceTypeRequest) HasParentResourceType() bool {
-	if o != nil && !isNil(o.ParentResourceType) {
+	if o != nil && !IsNil(o.ParentResourceType) {
 		return true
 	}
 
@@ -458,7 +461,7 @@ func (o *AddUserRestResourceTypeRequest) SetParentResourceType(v string) {
 
 // GetRelativeDNFromParentResource returns the RelativeDNFromParentResource field value if set, zero value otherwise.
 func (o *AddUserRestResourceTypeRequest) GetRelativeDNFromParentResource() string {
-	if o == nil || isNil(o.RelativeDNFromParentResource) {
+	if o == nil || IsNil(o.RelativeDNFromParentResource) {
 		var ret string
 		return ret
 	}
@@ -468,7 +471,7 @@ func (o *AddUserRestResourceTypeRequest) GetRelativeDNFromParentResource() strin
 // GetRelativeDNFromParentResourceOk returns a tuple with the RelativeDNFromParentResource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetRelativeDNFromParentResourceOk() (*string, bool) {
-	if o == nil || isNil(o.RelativeDNFromParentResource) {
+	if o == nil || IsNil(o.RelativeDNFromParentResource) {
 		return nil, false
 	}
 	return o.RelativeDNFromParentResource, true
@@ -476,7 +479,7 @@ func (o *AddUserRestResourceTypeRequest) GetRelativeDNFromParentResourceOk() (*s
 
 // HasRelativeDNFromParentResource returns a boolean if a field has been set.
 func (o *AddUserRestResourceTypeRequest) HasRelativeDNFromParentResource() bool {
-	if o != nil && !isNil(o.RelativeDNFromParentResource) {
+	if o != nil && !IsNil(o.RelativeDNFromParentResource) {
 		return true
 	}
 
@@ -490,7 +493,7 @@ func (o *AddUserRestResourceTypeRequest) SetRelativeDNFromParentResource(v strin
 
 // GetCreateRDNAttributeType returns the CreateRDNAttributeType field value if set, zero value otherwise.
 func (o *AddUserRestResourceTypeRequest) GetCreateRDNAttributeType() string {
-	if o == nil || isNil(o.CreateRDNAttributeType) {
+	if o == nil || IsNil(o.CreateRDNAttributeType) {
 		var ret string
 		return ret
 	}
@@ -500,7 +503,7 @@ func (o *AddUserRestResourceTypeRequest) GetCreateRDNAttributeType() string {
 // GetCreateRDNAttributeTypeOk returns a tuple with the CreateRDNAttributeType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetCreateRDNAttributeTypeOk() (*string, bool) {
-	if o == nil || isNil(o.CreateRDNAttributeType) {
+	if o == nil || IsNil(o.CreateRDNAttributeType) {
 		return nil, false
 	}
 	return o.CreateRDNAttributeType, true
@@ -508,7 +511,7 @@ func (o *AddUserRestResourceTypeRequest) GetCreateRDNAttributeTypeOk() (*string,
 
 // HasCreateRDNAttributeType returns a boolean if a field has been set.
 func (o *AddUserRestResourceTypeRequest) HasCreateRDNAttributeType() bool {
-	if o != nil && !isNil(o.CreateRDNAttributeType) {
+	if o != nil && !IsNil(o.CreateRDNAttributeType) {
 		return true
 	}
 
@@ -522,7 +525,7 @@ func (o *AddUserRestResourceTypeRequest) SetCreateRDNAttributeType(v string) {
 
 // GetPostCreateConstructedAttribute returns the PostCreateConstructedAttribute field value if set, zero value otherwise.
 func (o *AddUserRestResourceTypeRequest) GetPostCreateConstructedAttribute() []string {
-	if o == nil || isNil(o.PostCreateConstructedAttribute) {
+	if o == nil || IsNil(o.PostCreateConstructedAttribute) {
 		var ret []string
 		return ret
 	}
@@ -532,7 +535,7 @@ func (o *AddUserRestResourceTypeRequest) GetPostCreateConstructedAttribute() []s
 // GetPostCreateConstructedAttributeOk returns a tuple with the PostCreateConstructedAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetPostCreateConstructedAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.PostCreateConstructedAttribute) {
+	if o == nil || IsNil(o.PostCreateConstructedAttribute) {
 		return nil, false
 	}
 	return o.PostCreateConstructedAttribute, true
@@ -540,7 +543,7 @@ func (o *AddUserRestResourceTypeRequest) GetPostCreateConstructedAttributeOk() (
 
 // HasPostCreateConstructedAttribute returns a boolean if a field has been set.
 func (o *AddUserRestResourceTypeRequest) HasPostCreateConstructedAttribute() bool {
-	if o != nil && !isNil(o.PostCreateConstructedAttribute) {
+	if o != nil && !IsNil(o.PostCreateConstructedAttribute) {
 		return true
 	}
 
@@ -554,7 +557,7 @@ func (o *AddUserRestResourceTypeRequest) SetPostCreateConstructedAttribute(v []s
 
 // GetUpdateConstructedAttribute returns the UpdateConstructedAttribute field value if set, zero value otherwise.
 func (o *AddUserRestResourceTypeRequest) GetUpdateConstructedAttribute() []string {
-	if o == nil || isNil(o.UpdateConstructedAttribute) {
+	if o == nil || IsNil(o.UpdateConstructedAttribute) {
 		var ret []string
 		return ret
 	}
@@ -564,7 +567,7 @@ func (o *AddUserRestResourceTypeRequest) GetUpdateConstructedAttribute() []strin
 // GetUpdateConstructedAttributeOk returns a tuple with the UpdateConstructedAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetUpdateConstructedAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.UpdateConstructedAttribute) {
+	if o == nil || IsNil(o.UpdateConstructedAttribute) {
 		return nil, false
 	}
 	return o.UpdateConstructedAttribute, true
@@ -572,7 +575,7 @@ func (o *AddUserRestResourceTypeRequest) GetUpdateConstructedAttributeOk() ([]st
 
 // HasUpdateConstructedAttribute returns a boolean if a field has been set.
 func (o *AddUserRestResourceTypeRequest) HasUpdateConstructedAttribute() bool {
-	if o != nil && !isNil(o.UpdateConstructedAttribute) {
+	if o != nil && !IsNil(o.UpdateConstructedAttribute) {
 		return true
 	}
 
@@ -586,7 +589,7 @@ func (o *AddUserRestResourceTypeRequest) SetUpdateConstructedAttribute(v []strin
 
 // GetDisplayName returns the DisplayName field value if set, zero value otherwise.
 func (o *AddUserRestResourceTypeRequest) GetDisplayName() string {
-	if o == nil || isNil(o.DisplayName) {
+	if o == nil || IsNil(o.DisplayName) {
 		var ret string
 		return ret
 	}
@@ -596,7 +599,7 @@ func (o *AddUserRestResourceTypeRequest) GetDisplayName() string {
 // GetDisplayNameOk returns a tuple with the DisplayName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetDisplayNameOk() (*string, bool) {
-	if o == nil || isNil(o.DisplayName) {
+	if o == nil || IsNil(o.DisplayName) {
 		return nil, false
 	}
 	return o.DisplayName, true
@@ -604,7 +607,7 @@ func (o *AddUserRestResourceTypeRequest) GetDisplayNameOk() (*string, bool) {
 
 // HasDisplayName returns a boolean if a field has been set.
 func (o *AddUserRestResourceTypeRequest) HasDisplayName() bool {
-	if o != nil && !isNil(o.DisplayName) {
+	if o != nil && !IsNil(o.DisplayName) {
 		return true
 	}
 
@@ -618,7 +621,7 @@ func (o *AddUserRestResourceTypeRequest) SetDisplayName(v string) {
 
 // GetSearchFilterPattern returns the SearchFilterPattern field value if set, zero value otherwise.
 func (o *AddUserRestResourceTypeRequest) GetSearchFilterPattern() string {
-	if o == nil || isNil(o.SearchFilterPattern) {
+	if o == nil || IsNil(o.SearchFilterPattern) {
 		var ret string
 		return ret
 	}
@@ -628,7 +631,7 @@ func (o *AddUserRestResourceTypeRequest) GetSearchFilterPattern() string {
 // GetSearchFilterPatternOk returns a tuple with the SearchFilterPattern field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetSearchFilterPatternOk() (*string, bool) {
-	if o == nil || isNil(o.SearchFilterPattern) {
+	if o == nil || IsNil(o.SearchFilterPattern) {
 		return nil, false
 	}
 	return o.SearchFilterPattern, true
@@ -636,7 +639,7 @@ func (o *AddUserRestResourceTypeRequest) GetSearchFilterPatternOk() (*string, bo
 
 // HasSearchFilterPattern returns a boolean if a field has been set.
 func (o *AddUserRestResourceTypeRequest) HasSearchFilterPattern() bool {
-	if o != nil && !isNil(o.SearchFilterPattern) {
+	if o != nil && !IsNil(o.SearchFilterPattern) {
 		return true
 	}
 
@@ -650,7 +653,7 @@ func (o *AddUserRestResourceTypeRequest) SetSearchFilterPattern(v string) {
 
 // GetPrimaryDisplayAttributeType returns the PrimaryDisplayAttributeType field value if set, zero value otherwise.
 func (o *AddUserRestResourceTypeRequest) GetPrimaryDisplayAttributeType() string {
-	if o == nil || isNil(o.PrimaryDisplayAttributeType) {
+	if o == nil || IsNil(o.PrimaryDisplayAttributeType) {
 		var ret string
 		return ret
 	}
@@ -660,7 +663,7 @@ func (o *AddUserRestResourceTypeRequest) GetPrimaryDisplayAttributeType() string
 // GetPrimaryDisplayAttributeTypeOk returns a tuple with the PrimaryDisplayAttributeType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetPrimaryDisplayAttributeTypeOk() (*string, bool) {
-	if o == nil || isNil(o.PrimaryDisplayAttributeType) {
+	if o == nil || IsNil(o.PrimaryDisplayAttributeType) {
 		return nil, false
 	}
 	return o.PrimaryDisplayAttributeType, true
@@ -668,7 +671,7 @@ func (o *AddUserRestResourceTypeRequest) GetPrimaryDisplayAttributeTypeOk() (*st
 
 // HasPrimaryDisplayAttributeType returns a boolean if a field has been set.
 func (o *AddUserRestResourceTypeRequest) HasPrimaryDisplayAttributeType() bool {
-	if o != nil && !isNil(o.PrimaryDisplayAttributeType) {
+	if o != nil && !IsNil(o.PrimaryDisplayAttributeType) {
 		return true
 	}
 
@@ -682,7 +685,7 @@ func (o *AddUserRestResourceTypeRequest) SetPrimaryDisplayAttributeType(v string
 
 // GetDelegatedAdminSearchSizeLimit returns the DelegatedAdminSearchSizeLimit field value if set, zero value otherwise.
 func (o *AddUserRestResourceTypeRequest) GetDelegatedAdminSearchSizeLimit() int32 {
-	if o == nil || isNil(o.DelegatedAdminSearchSizeLimit) {
+	if o == nil || IsNil(o.DelegatedAdminSearchSizeLimit) {
 		var ret int32
 		return ret
 	}
@@ -692,7 +695,7 @@ func (o *AddUserRestResourceTypeRequest) GetDelegatedAdminSearchSizeLimit() int3
 // GetDelegatedAdminSearchSizeLimitOk returns a tuple with the DelegatedAdminSearchSizeLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetDelegatedAdminSearchSizeLimitOk() (*int32, bool) {
-	if o == nil || isNil(o.DelegatedAdminSearchSizeLimit) {
+	if o == nil || IsNil(o.DelegatedAdminSearchSizeLimit) {
 		return nil, false
 	}
 	return o.DelegatedAdminSearchSizeLimit, true
@@ -700,7 +703,7 @@ func (o *AddUserRestResourceTypeRequest) GetDelegatedAdminSearchSizeLimitOk() (*
 
 // HasDelegatedAdminSearchSizeLimit returns a boolean if a field has been set.
 func (o *AddUserRestResourceTypeRequest) HasDelegatedAdminSearchSizeLimit() bool {
-	if o != nil && !isNil(o.DelegatedAdminSearchSizeLimit) {
+	if o != nil && !IsNil(o.DelegatedAdminSearchSizeLimit) {
 		return true
 	}
 
@@ -714,7 +717,7 @@ func (o *AddUserRestResourceTypeRequest) SetDelegatedAdminSearchSizeLimit(v int3
 
 // GetDelegatedAdminReportSizeLimit returns the DelegatedAdminReportSizeLimit field value if set, zero value otherwise.
 func (o *AddUserRestResourceTypeRequest) GetDelegatedAdminReportSizeLimit() int32 {
-	if o == nil || isNil(o.DelegatedAdminReportSizeLimit) {
+	if o == nil || IsNil(o.DelegatedAdminReportSizeLimit) {
 		var ret int32
 		return ret
 	}
@@ -724,7 +727,7 @@ func (o *AddUserRestResourceTypeRequest) GetDelegatedAdminReportSizeLimit() int3
 // GetDelegatedAdminReportSizeLimitOk returns a tuple with the DelegatedAdminReportSizeLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetDelegatedAdminReportSizeLimitOk() (*int32, bool) {
-	if o == nil || isNil(o.DelegatedAdminReportSizeLimit) {
+	if o == nil || IsNil(o.DelegatedAdminReportSizeLimit) {
 		return nil, false
 	}
 	return o.DelegatedAdminReportSizeLimit, true
@@ -732,7 +735,7 @@ func (o *AddUserRestResourceTypeRequest) GetDelegatedAdminReportSizeLimitOk() (*
 
 // HasDelegatedAdminReportSizeLimit returns a boolean if a field has been set.
 func (o *AddUserRestResourceTypeRequest) HasDelegatedAdminReportSizeLimit() bool {
-	if o != nil && !isNil(o.DelegatedAdminReportSizeLimit) {
+	if o != nil && !IsNil(o.DelegatedAdminReportSizeLimit) {
 		return true
 	}
 
@@ -746,7 +749,7 @@ func (o *AddUserRestResourceTypeRequest) SetDelegatedAdminReportSizeLimit(v int3
 
 // GetMembersColumnName returns the MembersColumnName field value if set, zero value otherwise.
 func (o *AddUserRestResourceTypeRequest) GetMembersColumnName() string {
-	if o == nil || isNil(o.MembersColumnName) {
+	if o == nil || IsNil(o.MembersColumnName) {
 		var ret string
 		return ret
 	}
@@ -756,7 +759,7 @@ func (o *AddUserRestResourceTypeRequest) GetMembersColumnName() string {
 // GetMembersColumnNameOk returns a tuple with the MembersColumnName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetMembersColumnNameOk() (*string, bool) {
-	if o == nil || isNil(o.MembersColumnName) {
+	if o == nil || IsNil(o.MembersColumnName) {
 		return nil, false
 	}
 	return o.MembersColumnName, true
@@ -764,7 +767,7 @@ func (o *AddUserRestResourceTypeRequest) GetMembersColumnNameOk() (*string, bool
 
 // HasMembersColumnName returns a boolean if a field has been set.
 func (o *AddUserRestResourceTypeRequest) HasMembersColumnName() bool {
-	if o != nil && !isNil(o.MembersColumnName) {
+	if o != nil && !IsNil(o.MembersColumnName) {
 		return true
 	}
 
@@ -778,7 +781,7 @@ func (o *AddUserRestResourceTypeRequest) SetMembersColumnName(v string) {
 
 // GetNonmembersColumnName returns the NonmembersColumnName field value if set, zero value otherwise.
 func (o *AddUserRestResourceTypeRequest) GetNonmembersColumnName() string {
-	if o == nil || isNil(o.NonmembersColumnName) {
+	if o == nil || IsNil(o.NonmembersColumnName) {
 		var ret string
 		return ret
 	}
@@ -788,7 +791,7 @@ func (o *AddUserRestResourceTypeRequest) GetNonmembersColumnName() string {
 // GetNonmembersColumnNameOk returns a tuple with the NonmembersColumnName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetNonmembersColumnNameOk() (*string, bool) {
-	if o == nil || isNil(o.NonmembersColumnName) {
+	if o == nil || IsNil(o.NonmembersColumnName) {
 		return nil, false
 	}
 	return o.NonmembersColumnName, true
@@ -796,7 +799,7 @@ func (o *AddUserRestResourceTypeRequest) GetNonmembersColumnNameOk() (*string, b
 
 // HasNonmembersColumnName returns a boolean if a field has been set.
 func (o *AddUserRestResourceTypeRequest) HasNonmembersColumnName() bool {
-	if o != nil && !isNil(o.NonmembersColumnName) {
+	if o != nil && !IsNil(o.NonmembersColumnName) {
 		return true
 	}
 
@@ -809,80 +812,76 @@ func (o *AddUserRestResourceTypeRequest) SetNonmembersColumnName(v string) {
 }
 
 func (o AddUserRestResourceTypeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["typeName"] = o.TypeName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.PasswordAttributeCategory) {
-		toSerialize["passwordAttributeCategory"] = o.PasswordAttributeCategory
-	}
-	if !isNil(o.PasswordDisplayOrderIndex) {
-		toSerialize["passwordDisplayOrderIndex"] = o.PasswordDisplayOrderIndex
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if true {
-		toSerialize["resourceEndpoint"] = o.ResourceEndpoint
-	}
-	if true {
-		toSerialize["structuralLDAPObjectclass"] = o.StructuralLDAPObjectclass
-	}
-	if !isNil(o.AuxiliaryLDAPObjectclass) {
-		toSerialize["auxiliaryLDAPObjectclass"] = o.AuxiliaryLDAPObjectclass
-	}
-	if true {
-		toSerialize["searchBaseDN"] = o.SearchBaseDN
-	}
-	if !isNil(o.IncludeFilter) {
-		toSerialize["includeFilter"] = o.IncludeFilter
-	}
-	if !isNil(o.ParentDN) {
-		toSerialize["parentDN"] = o.ParentDN
-	}
-	if !isNil(o.ParentResourceType) {
-		toSerialize["parentResourceType"] = o.ParentResourceType
-	}
-	if !isNil(o.RelativeDNFromParentResource) {
-		toSerialize["relativeDNFromParentResource"] = o.RelativeDNFromParentResource
-	}
-	if !isNil(o.CreateRDNAttributeType) {
-		toSerialize["createRDNAttributeType"] = o.CreateRDNAttributeType
-	}
-	if !isNil(o.PostCreateConstructedAttribute) {
-		toSerialize["postCreateConstructedAttribute"] = o.PostCreateConstructedAttribute
-	}
-	if !isNil(o.UpdateConstructedAttribute) {
-		toSerialize["updateConstructedAttribute"] = o.UpdateConstructedAttribute
-	}
-	if !isNil(o.DisplayName) {
-		toSerialize["displayName"] = o.DisplayName
-	}
-	if !isNil(o.SearchFilterPattern) {
-		toSerialize["searchFilterPattern"] = o.SearchFilterPattern
-	}
-	if !isNil(o.PrimaryDisplayAttributeType) {
-		toSerialize["primaryDisplayAttributeType"] = o.PrimaryDisplayAttributeType
-	}
-	if !isNil(o.DelegatedAdminSearchSizeLimit) {
-		toSerialize["delegatedAdminSearchSizeLimit"] = o.DelegatedAdminSearchSizeLimit
-	}
-	if !isNil(o.DelegatedAdminReportSizeLimit) {
-		toSerialize["delegatedAdminReportSizeLimit"] = o.DelegatedAdminReportSizeLimit
-	}
-	if !isNil(o.MembersColumnName) {
-		toSerialize["membersColumnName"] = o.MembersColumnName
-	}
-	if !isNil(o.NonmembersColumnName) {
-		toSerialize["nonmembersColumnName"] = o.NonmembersColumnName
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddUserRestResourceTypeRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["typeName"] = o.TypeName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.PasswordAttributeCategory) {
+		toSerialize["passwordAttributeCategory"] = o.PasswordAttributeCategory
+	}
+	if !IsNil(o.PasswordDisplayOrderIndex) {
+		toSerialize["passwordDisplayOrderIndex"] = o.PasswordDisplayOrderIndex
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	toSerialize["resourceEndpoint"] = o.ResourceEndpoint
+	toSerialize["structuralLDAPObjectclass"] = o.StructuralLDAPObjectclass
+	if !IsNil(o.AuxiliaryLDAPObjectclass) {
+		toSerialize["auxiliaryLDAPObjectclass"] = o.AuxiliaryLDAPObjectclass
+	}
+	toSerialize["searchBaseDN"] = o.SearchBaseDN
+	if !IsNil(o.IncludeFilter) {
+		toSerialize["includeFilter"] = o.IncludeFilter
+	}
+	if !IsNil(o.ParentDN) {
+		toSerialize["parentDN"] = o.ParentDN
+	}
+	if !IsNil(o.ParentResourceType) {
+		toSerialize["parentResourceType"] = o.ParentResourceType
+	}
+	if !IsNil(o.RelativeDNFromParentResource) {
+		toSerialize["relativeDNFromParentResource"] = o.RelativeDNFromParentResource
+	}
+	if !IsNil(o.CreateRDNAttributeType) {
+		toSerialize["createRDNAttributeType"] = o.CreateRDNAttributeType
+	}
+	if !IsNil(o.PostCreateConstructedAttribute) {
+		toSerialize["postCreateConstructedAttribute"] = o.PostCreateConstructedAttribute
+	}
+	if !IsNil(o.UpdateConstructedAttribute) {
+		toSerialize["updateConstructedAttribute"] = o.UpdateConstructedAttribute
+	}
+	if !IsNil(o.DisplayName) {
+		toSerialize["displayName"] = o.DisplayName
+	}
+	if !IsNil(o.SearchFilterPattern) {
+		toSerialize["searchFilterPattern"] = o.SearchFilterPattern
+	}
+	if !IsNil(o.PrimaryDisplayAttributeType) {
+		toSerialize["primaryDisplayAttributeType"] = o.PrimaryDisplayAttributeType
+	}
+	if !IsNil(o.DelegatedAdminSearchSizeLimit) {
+		toSerialize["delegatedAdminSearchSizeLimit"] = o.DelegatedAdminSearchSizeLimit
+	}
+	if !IsNil(o.DelegatedAdminReportSizeLimit) {
+		toSerialize["delegatedAdminReportSizeLimit"] = o.DelegatedAdminReportSizeLimit
+	}
+	if !IsNil(o.MembersColumnName) {
+		toSerialize["membersColumnName"] = o.MembersColumnName
+	}
+	if !IsNil(o.NonmembersColumnName) {
+		toSerialize["nonmembersColumnName"] = o.NonmembersColumnName
+	}
+	return toSerialize, nil
 }
 
 type NullableAddUserRestResourceTypeRequest struct {

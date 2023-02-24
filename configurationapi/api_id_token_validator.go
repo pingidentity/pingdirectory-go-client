@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -105,9 +105,9 @@ func (a *IdTokenValidatorApiService) AddIdTokenValidatorExecute(r ApiAddIdTokenV
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -171,7 +171,7 @@ func (a *IdTokenValidatorApiService) DeleteIdTokenValidatorExecute(r ApiDeleteId
 	}
 
 	localVarPath := localBasePath + "/id-token-validators/{id-token-validator-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id-token-validator-name"+"}", url.PathEscape(parameterToString(r.idTokenValidatorName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id-token-validator-name"+"}", url.PathEscape(parameterValueToString(r.idTokenValidatorName, "idTokenValidatorName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -204,9 +204,9 @@ func (a *IdTokenValidatorApiService) DeleteIdTokenValidatorExecute(r ApiDeleteId
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -264,7 +264,7 @@ func (a *IdTokenValidatorApiService) GetIdTokenValidatorExecute(r ApiGetIdTokenV
 	}
 
 	localVarPath := localBasePath + "/id-token-validators/{id-token-validator-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id-token-validator-name"+"}", url.PathEscape(parameterToString(r.idTokenValidatorName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id-token-validator-name"+"}", url.PathEscape(parameterValueToString(r.idTokenValidatorName, "idTokenValidatorName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -297,9 +297,9 @@ func (a *IdTokenValidatorApiService) GetIdTokenValidatorExecute(r ApiGetIdTokenV
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -373,7 +373,7 @@ func (a *IdTokenValidatorApiService) UpdateIdTokenValidatorExecute(r ApiUpdateId
 	}
 
 	localVarPath := localBasePath + "/id-token-validators/{id-token-validator-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id-token-validator-name"+"}", url.PathEscape(parameterToString(r.idTokenValidatorName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id-token-validator-name"+"}", url.PathEscape(parameterValueToString(r.idTokenValidatorName, "idTokenValidatorName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -411,9 +411,9 @@ func (a *IdTokenValidatorApiService) UpdateIdTokenValidatorExecute(r ApiUpdateId
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

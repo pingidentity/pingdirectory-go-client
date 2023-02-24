@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the SmtpAlertHandlerResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SmtpAlertHandlerResponse{}
+
 // SmtpAlertHandlerResponse struct for SmtpAlertHandlerResponse
 type SmtpAlertHandlerResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -68,7 +71,7 @@ func NewSmtpAlertHandlerResponseWithDefaults() *SmtpAlertHandlerResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *SmtpAlertHandlerResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -78,7 +81,7 @@ func (o *SmtpAlertHandlerResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmtpAlertHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -86,7 +89,7 @@ func (o *SmtpAlertHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *SmtpAlertHandlerResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -100,7 +103,7 @@ func (o *SmtpAlertHandlerResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *SmtpAlertHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -110,7 +113,7 @@ func (o *SmtpAlertHandlerResponse) GetUrnpingidentityschemasconfigurationmessage
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmtpAlertHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -118,7 +121,7 @@ func (o *SmtpAlertHandlerResponse) GetUrnpingidentityschemasconfigurationmessage
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *SmtpAlertHandlerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -180,7 +183,7 @@ func (o *SmtpAlertHandlerResponse) SetSchemas(v []EnumsmtpAlertHandlerSchemaUrn)
 
 // GetAsynchronous returns the Asynchronous field value if set, zero value otherwise.
 func (o *SmtpAlertHandlerResponse) GetAsynchronous() bool {
-	if o == nil || isNil(o.Asynchronous) {
+	if o == nil || IsNil(o.Asynchronous) {
 		var ret bool
 		return ret
 	}
@@ -190,7 +193,7 @@ func (o *SmtpAlertHandlerResponse) GetAsynchronous() bool {
 // GetAsynchronousOk returns a tuple with the Asynchronous field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmtpAlertHandlerResponse) GetAsynchronousOk() (*bool, bool) {
-	if o == nil || isNil(o.Asynchronous) {
+	if o == nil || IsNil(o.Asynchronous) {
 		return nil, false
 	}
 	return o.Asynchronous, true
@@ -198,7 +201,7 @@ func (o *SmtpAlertHandlerResponse) GetAsynchronousOk() (*bool, bool) {
 
 // HasAsynchronous returns a boolean if a field has been set.
 func (o *SmtpAlertHandlerResponse) HasAsynchronous() bool {
-	if o != nil && !isNil(o.Asynchronous) {
+	if o != nil && !IsNil(o.Asynchronous) {
 		return true
 	}
 
@@ -308,7 +311,7 @@ func (o *SmtpAlertHandlerResponse) SetMessageBody(v string) {
 
 // GetIncludeMonitorDataFilter returns the IncludeMonitorDataFilter field value if set, zero value otherwise.
 func (o *SmtpAlertHandlerResponse) GetIncludeMonitorDataFilter() string {
-	if o == nil || isNil(o.IncludeMonitorDataFilter) {
+	if o == nil || IsNil(o.IncludeMonitorDataFilter) {
 		var ret string
 		return ret
 	}
@@ -318,7 +321,7 @@ func (o *SmtpAlertHandlerResponse) GetIncludeMonitorDataFilter() string {
 // GetIncludeMonitorDataFilterOk returns a tuple with the IncludeMonitorDataFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmtpAlertHandlerResponse) GetIncludeMonitorDataFilterOk() (*string, bool) {
-	if o == nil || isNil(o.IncludeMonitorDataFilter) {
+	if o == nil || IsNil(o.IncludeMonitorDataFilter) {
 		return nil, false
 	}
 	return o.IncludeMonitorDataFilter, true
@@ -326,7 +329,7 @@ func (o *SmtpAlertHandlerResponse) GetIncludeMonitorDataFilterOk() (*string, boo
 
 // HasIncludeMonitorDataFilter returns a boolean if a field has been set.
 func (o *SmtpAlertHandlerResponse) HasIncludeMonitorDataFilter() bool {
-	if o != nil && !isNil(o.IncludeMonitorDataFilter) {
+	if o != nil && !IsNil(o.IncludeMonitorDataFilter) {
 		return true
 	}
 
@@ -340,7 +343,7 @@ func (o *SmtpAlertHandlerResponse) SetIncludeMonitorDataFilter(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *SmtpAlertHandlerResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -350,7 +353,7 @@ func (o *SmtpAlertHandlerResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmtpAlertHandlerResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -358,7 +361,7 @@ func (o *SmtpAlertHandlerResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *SmtpAlertHandlerResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -396,7 +399,7 @@ func (o *SmtpAlertHandlerResponse) SetEnabled(v bool) {
 
 // GetEnabledAlertSeverity returns the EnabledAlertSeverity field value if set, zero value otherwise.
 func (o *SmtpAlertHandlerResponse) GetEnabledAlertSeverity() []EnumalertHandlerEnabledAlertSeverityProp {
-	if o == nil || isNil(o.EnabledAlertSeverity) {
+	if o == nil || IsNil(o.EnabledAlertSeverity) {
 		var ret []EnumalertHandlerEnabledAlertSeverityProp
 		return ret
 	}
@@ -406,7 +409,7 @@ func (o *SmtpAlertHandlerResponse) GetEnabledAlertSeverity() []EnumalertHandlerE
 // GetEnabledAlertSeverityOk returns a tuple with the EnabledAlertSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmtpAlertHandlerResponse) GetEnabledAlertSeverityOk() ([]EnumalertHandlerEnabledAlertSeverityProp, bool) {
-	if o == nil || isNil(o.EnabledAlertSeverity) {
+	if o == nil || IsNil(o.EnabledAlertSeverity) {
 		return nil, false
 	}
 	return o.EnabledAlertSeverity, true
@@ -414,7 +417,7 @@ func (o *SmtpAlertHandlerResponse) GetEnabledAlertSeverityOk() ([]EnumalertHandl
 
 // HasEnabledAlertSeverity returns a boolean if a field has been set.
 func (o *SmtpAlertHandlerResponse) HasEnabledAlertSeverity() bool {
-	if o != nil && !isNil(o.EnabledAlertSeverity) {
+	if o != nil && !IsNil(o.EnabledAlertSeverity) {
 		return true
 	}
 
@@ -428,7 +431,7 @@ func (o *SmtpAlertHandlerResponse) SetEnabledAlertSeverity(v []EnumalertHandlerE
 
 // GetEnabledAlertType returns the EnabledAlertType field value if set, zero value otherwise.
 func (o *SmtpAlertHandlerResponse) GetEnabledAlertType() []EnumalertHandlerEnabledAlertTypeProp {
-	if o == nil || isNil(o.EnabledAlertType) {
+	if o == nil || IsNil(o.EnabledAlertType) {
 		var ret []EnumalertHandlerEnabledAlertTypeProp
 		return ret
 	}
@@ -438,7 +441,7 @@ func (o *SmtpAlertHandlerResponse) GetEnabledAlertType() []EnumalertHandlerEnabl
 // GetEnabledAlertTypeOk returns a tuple with the EnabledAlertType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmtpAlertHandlerResponse) GetEnabledAlertTypeOk() ([]EnumalertHandlerEnabledAlertTypeProp, bool) {
-	if o == nil || isNil(o.EnabledAlertType) {
+	if o == nil || IsNil(o.EnabledAlertType) {
 		return nil, false
 	}
 	return o.EnabledAlertType, true
@@ -446,7 +449,7 @@ func (o *SmtpAlertHandlerResponse) GetEnabledAlertTypeOk() ([]EnumalertHandlerEn
 
 // HasEnabledAlertType returns a boolean if a field has been set.
 func (o *SmtpAlertHandlerResponse) HasEnabledAlertType() bool {
-	if o != nil && !isNil(o.EnabledAlertType) {
+	if o != nil && !IsNil(o.EnabledAlertType) {
 		return true
 	}
 
@@ -460,7 +463,7 @@ func (o *SmtpAlertHandlerResponse) SetEnabledAlertType(v []EnumalertHandlerEnabl
 
 // GetDisabledAlertType returns the DisabledAlertType field value if set, zero value otherwise.
 func (o *SmtpAlertHandlerResponse) GetDisabledAlertType() []EnumalertHandlerDisabledAlertTypeProp {
-	if o == nil || isNil(o.DisabledAlertType) {
+	if o == nil || IsNil(o.DisabledAlertType) {
 		var ret []EnumalertHandlerDisabledAlertTypeProp
 		return ret
 	}
@@ -470,7 +473,7 @@ func (o *SmtpAlertHandlerResponse) GetDisabledAlertType() []EnumalertHandlerDisa
 // GetDisabledAlertTypeOk returns a tuple with the DisabledAlertType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmtpAlertHandlerResponse) GetDisabledAlertTypeOk() ([]EnumalertHandlerDisabledAlertTypeProp, bool) {
-	if o == nil || isNil(o.DisabledAlertType) {
+	if o == nil || IsNil(o.DisabledAlertType) {
 		return nil, false
 	}
 	return o.DisabledAlertType, true
@@ -478,7 +481,7 @@ func (o *SmtpAlertHandlerResponse) GetDisabledAlertTypeOk() ([]EnumalertHandlerD
 
 // HasDisabledAlertType returns a boolean if a field has been set.
 func (o *SmtpAlertHandlerResponse) HasDisabledAlertType() bool {
-	if o != nil && !isNil(o.DisabledAlertType) {
+	if o != nil && !IsNil(o.DisabledAlertType) {
 		return true
 	}
 
@@ -491,53 +494,47 @@ func (o *SmtpAlertHandlerResponse) SetDisabledAlertType(v []EnumalertHandlerDisa
 }
 
 func (o SmtpAlertHandlerResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Asynchronous) {
-		toSerialize["asynchronous"] = o.Asynchronous
-	}
-	if true {
-		toSerialize["senderAddress"] = o.SenderAddress
-	}
-	if true {
-		toSerialize["recipientAddress"] = o.RecipientAddress
-	}
-	if true {
-		toSerialize["messageSubject"] = o.MessageSubject
-	}
-	if true {
-		toSerialize["messageBody"] = o.MessageBody
-	}
-	if !isNil(o.IncludeMonitorDataFilter) {
-		toSerialize["includeMonitorDataFilter"] = o.IncludeMonitorDataFilter
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.EnabledAlertSeverity) {
-		toSerialize["enabledAlertSeverity"] = o.EnabledAlertSeverity
-	}
-	if !isNil(o.EnabledAlertType) {
-		toSerialize["enabledAlertType"] = o.EnabledAlertType
-	}
-	if !isNil(o.DisabledAlertType) {
-		toSerialize["disabledAlertType"] = o.DisabledAlertType
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o SmtpAlertHandlerResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.Asynchronous) {
+		toSerialize["asynchronous"] = o.Asynchronous
+	}
+	toSerialize["senderAddress"] = o.SenderAddress
+	toSerialize["recipientAddress"] = o.RecipientAddress
+	toSerialize["messageSubject"] = o.MessageSubject
+	toSerialize["messageBody"] = o.MessageBody
+	if !IsNil(o.IncludeMonitorDataFilter) {
+		toSerialize["includeMonitorDataFilter"] = o.IncludeMonitorDataFilter
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.EnabledAlertSeverity) {
+		toSerialize["enabledAlertSeverity"] = o.EnabledAlertSeverity
+	}
+	if !IsNil(o.EnabledAlertType) {
+		toSerialize["enabledAlertType"] = o.EnabledAlertType
+	}
+	if !IsNil(o.DisabledAlertType) {
+		toSerialize["disabledAlertType"] = o.DisabledAlertType
+	}
+	return toSerialize, nil
 }
 
 type NullableSmtpAlertHandlerResponse struct {

@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -71,7 +71,7 @@ func (a *DelegatedAdminAttributeApiService) AddDelegatedAdminAttributeExecute(r 
 	}
 
 	localVarPath := localBasePath + "/rest-resource-types/{rest-resource-type-name}/delegated-admin-attributes"
-	localVarPath = strings.Replace(localVarPath, "{"+"rest-resource-type-name"+"}", url.PathEscape(parameterToString(r.restResourceTypeName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"rest-resource-type-name"+"}", url.PathEscape(parameterValueToString(r.restResourceTypeName, "restResourceTypeName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -109,9 +109,9 @@ func (a *DelegatedAdminAttributeApiService) AddDelegatedAdminAttributeExecute(r 
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -178,8 +178,8 @@ func (a *DelegatedAdminAttributeApiService) DeleteDelegatedAdminAttributeExecute
 	}
 
 	localVarPath := localBasePath + "/rest-resource-types/{rest-resource-type-name}/delegated-admin-attributes/{delegated-admin-attribute-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"delegated-admin-attribute-name"+"}", url.PathEscape(parameterToString(r.delegatedAdminAttributeName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"rest-resource-type-name"+"}", url.PathEscape(parameterToString(r.restResourceTypeName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"delegated-admin-attribute-name"+"}", url.PathEscape(parameterValueToString(r.delegatedAdminAttributeName, "delegatedAdminAttributeName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"rest-resource-type-name"+"}", url.PathEscape(parameterValueToString(r.restResourceTypeName, "restResourceTypeName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -212,9 +212,9 @@ func (a *DelegatedAdminAttributeApiService) DeleteDelegatedAdminAttributeExecute
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -275,8 +275,8 @@ func (a *DelegatedAdminAttributeApiService) GetDelegatedAdminAttributeExecute(r 
 	}
 
 	localVarPath := localBasePath + "/rest-resource-types/{rest-resource-type-name}/delegated-admin-attributes/{delegated-admin-attribute-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"delegated-admin-attribute-name"+"}", url.PathEscape(parameterToString(r.delegatedAdminAttributeName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"rest-resource-type-name"+"}", url.PathEscape(parameterToString(r.restResourceTypeName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"delegated-admin-attribute-name"+"}", url.PathEscape(parameterValueToString(r.delegatedAdminAttributeName, "delegatedAdminAttributeName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"rest-resource-type-name"+"}", url.PathEscape(parameterValueToString(r.restResourceTypeName, "restResourceTypeName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -309,9 +309,9 @@ func (a *DelegatedAdminAttributeApiService) GetDelegatedAdminAttributeExecute(r 
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -388,8 +388,8 @@ func (a *DelegatedAdminAttributeApiService) UpdateDelegatedAdminAttributeExecute
 	}
 
 	localVarPath := localBasePath + "/rest-resource-types/{rest-resource-type-name}/delegated-admin-attributes/{delegated-admin-attribute-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"delegated-admin-attribute-name"+"}", url.PathEscape(parameterToString(r.delegatedAdminAttributeName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"rest-resource-type-name"+"}", url.PathEscape(parameterToString(r.restResourceTypeName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"delegated-admin-attribute-name"+"}", url.PathEscape(parameterValueToString(r.delegatedAdminAttributeName, "delegatedAdminAttributeName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"rest-resource-type-name"+"}", url.PathEscape(parameterValueToString(r.restResourceTypeName, "restResourceTypeName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -427,9 +427,9 @@ func (a *DelegatedAdminAttributeApiService) UpdateDelegatedAdminAttributeExecute
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

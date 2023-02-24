@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -71,7 +71,7 @@ func (a *JsonFieldConstraintsApiService) AddJsonFieldConstraintsExecute(r ApiAdd
 	}
 
 	localVarPath := localBasePath + "/json-attribute-constraints/{json-attribute-constraints-name}/json-field-constraints"
-	localVarPath = strings.Replace(localVarPath, "{"+"json-attribute-constraints-name"+"}", url.PathEscape(parameterToString(r.jsonAttributeConstraintsName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"json-attribute-constraints-name"+"}", url.PathEscape(parameterValueToString(r.jsonAttributeConstraintsName, "jsonAttributeConstraintsName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -109,9 +109,9 @@ func (a *JsonFieldConstraintsApiService) AddJsonFieldConstraintsExecute(r ApiAdd
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -178,8 +178,8 @@ func (a *JsonFieldConstraintsApiService) DeleteJsonFieldConstraintsExecute(r Api
 	}
 
 	localVarPath := localBasePath + "/json-attribute-constraints/{json-attribute-constraints-name}/json-field-constraints/{json-field-constraints-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"json-field-constraints-name"+"}", url.PathEscape(parameterToString(r.jsonFieldConstraintsName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"json-attribute-constraints-name"+"}", url.PathEscape(parameterToString(r.jsonAttributeConstraintsName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"json-field-constraints-name"+"}", url.PathEscape(parameterValueToString(r.jsonFieldConstraintsName, "jsonFieldConstraintsName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"json-attribute-constraints-name"+"}", url.PathEscape(parameterValueToString(r.jsonAttributeConstraintsName, "jsonAttributeConstraintsName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -212,9 +212,9 @@ func (a *JsonFieldConstraintsApiService) DeleteJsonFieldConstraintsExecute(r Api
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -275,8 +275,8 @@ func (a *JsonFieldConstraintsApiService) GetJsonFieldConstraintsExecute(r ApiGet
 	}
 
 	localVarPath := localBasePath + "/json-attribute-constraints/{json-attribute-constraints-name}/json-field-constraints/{json-field-constraints-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"json-field-constraints-name"+"}", url.PathEscape(parameterToString(r.jsonFieldConstraintsName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"json-attribute-constraints-name"+"}", url.PathEscape(parameterToString(r.jsonAttributeConstraintsName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"json-field-constraints-name"+"}", url.PathEscape(parameterValueToString(r.jsonFieldConstraintsName, "jsonFieldConstraintsName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"json-attribute-constraints-name"+"}", url.PathEscape(parameterValueToString(r.jsonAttributeConstraintsName, "jsonAttributeConstraintsName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -309,9 +309,9 @@ func (a *JsonFieldConstraintsApiService) GetJsonFieldConstraintsExecute(r ApiGet
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -388,8 +388,8 @@ func (a *JsonFieldConstraintsApiService) UpdateJsonFieldConstraintsExecute(r Api
 	}
 
 	localVarPath := localBasePath + "/json-attribute-constraints/{json-attribute-constraints-name}/json-field-constraints/{json-field-constraints-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"json-field-constraints-name"+"}", url.PathEscape(parameterToString(r.jsonFieldConstraintsName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"json-attribute-constraints-name"+"}", url.PathEscape(parameterToString(r.jsonAttributeConstraintsName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"json-field-constraints-name"+"}", url.PathEscape(parameterValueToString(r.jsonFieldConstraintsName, "jsonFieldConstraintsName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"json-attribute-constraints-name"+"}", url.PathEscape(parameterValueToString(r.jsonAttributeConstraintsName, "jsonAttributeConstraintsName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -427,9 +427,9 @@ func (a *JsonFieldConstraintsApiService) UpdateJsonFieldConstraintsExecute(r Api
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

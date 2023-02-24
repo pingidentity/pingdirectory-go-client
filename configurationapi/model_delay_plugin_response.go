@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the DelayPluginResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &DelayPluginResponse{}
+
 // DelayPluginResponse struct for DelayPluginResponse
 type DelayPluginResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -60,7 +63,7 @@ func NewDelayPluginResponseWithDefaults() *DelayPluginResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *DelayPluginResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -70,7 +73,7 @@ func (o *DelayPluginResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelayPluginResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -78,7 +81,7 @@ func (o *DelayPluginResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *DelayPluginResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -92,7 +95,7 @@ func (o *DelayPluginResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *DelayPluginResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -102,7 +105,7 @@ func (o *DelayPluginResponse) GetUrnpingidentityschemasconfigurationmessages20()
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelayPluginResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -110,7 +113,7 @@ func (o *DelayPluginResponse) GetUrnpingidentityschemasconfigurationmessages20Ok
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *DelayPluginResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -220,7 +223,7 @@ func (o *DelayPluginResponse) SetDelay(v string) {
 
 // GetConnectionCriteria returns the ConnectionCriteria field value if set, zero value otherwise.
 func (o *DelayPluginResponse) GetConnectionCriteria() string {
-	if o == nil || isNil(o.ConnectionCriteria) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
 		var ret string
 		return ret
 	}
@@ -230,7 +233,7 @@ func (o *DelayPluginResponse) GetConnectionCriteria() string {
 // GetConnectionCriteriaOk returns a tuple with the ConnectionCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelayPluginResponse) GetConnectionCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.ConnectionCriteria) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
 		return nil, false
 	}
 	return o.ConnectionCriteria, true
@@ -238,7 +241,7 @@ func (o *DelayPluginResponse) GetConnectionCriteriaOk() (*string, bool) {
 
 // HasConnectionCriteria returns a boolean if a field has been set.
 func (o *DelayPluginResponse) HasConnectionCriteria() bool {
-	if o != nil && !isNil(o.ConnectionCriteria) {
+	if o != nil && !IsNil(o.ConnectionCriteria) {
 		return true
 	}
 
@@ -252,7 +255,7 @@ func (o *DelayPluginResponse) SetConnectionCriteria(v string) {
 
 // GetRequestCriteria returns the RequestCriteria field value if set, zero value otherwise.
 func (o *DelayPluginResponse) GetRequestCriteria() string {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -262,7 +265,7 @@ func (o *DelayPluginResponse) GetRequestCriteria() string {
 // GetRequestCriteriaOk returns a tuple with the RequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelayPluginResponse) GetRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		return nil, false
 	}
 	return o.RequestCriteria, true
@@ -270,7 +273,7 @@ func (o *DelayPluginResponse) GetRequestCriteriaOk() (*string, bool) {
 
 // HasRequestCriteria returns a boolean if a field has been set.
 func (o *DelayPluginResponse) HasRequestCriteria() bool {
-	if o != nil && !isNil(o.RequestCriteria) {
+	if o != nil && !IsNil(o.RequestCriteria) {
 		return true
 	}
 
@@ -284,7 +287,7 @@ func (o *DelayPluginResponse) SetRequestCriteria(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *DelayPluginResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -294,7 +297,7 @@ func (o *DelayPluginResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelayPluginResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -302,7 +305,7 @@ func (o *DelayPluginResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *DelayPluginResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -340,7 +343,7 @@ func (o *DelayPluginResponse) SetEnabled(v bool) {
 
 // GetInvokeForInternalOperations returns the InvokeForInternalOperations field value if set, zero value otherwise.
 func (o *DelayPluginResponse) GetInvokeForInternalOperations() bool {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		var ret bool
 		return ret
 	}
@@ -350,7 +353,7 @@ func (o *DelayPluginResponse) GetInvokeForInternalOperations() bool {
 // GetInvokeForInternalOperationsOk returns a tuple with the InvokeForInternalOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelayPluginResponse) GetInvokeForInternalOperationsOk() (*bool, bool) {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		return nil, false
 	}
 	return o.InvokeForInternalOperations, true
@@ -358,7 +361,7 @@ func (o *DelayPluginResponse) GetInvokeForInternalOperationsOk() (*bool, bool) {
 
 // HasInvokeForInternalOperations returns a boolean if a field has been set.
 func (o *DelayPluginResponse) HasInvokeForInternalOperations() bool {
-	if o != nil && !isNil(o.InvokeForInternalOperations) {
+	if o != nil && !IsNil(o.InvokeForInternalOperations) {
 		return true
 	}
 
@@ -371,41 +374,39 @@ func (o *DelayPluginResponse) SetInvokeForInternalOperations(v bool) {
 }
 
 func (o DelayPluginResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["pluginType"] = o.PluginType
-	}
-	if true {
-		toSerialize["delay"] = o.Delay
-	}
-	if !isNil(o.ConnectionCriteria) {
-		toSerialize["connectionCriteria"] = o.ConnectionCriteria
-	}
-	if !isNil(o.RequestCriteria) {
-		toSerialize["requestCriteria"] = o.RequestCriteria
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.InvokeForInternalOperations) {
-		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o DelayPluginResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["pluginType"] = o.PluginType
+	toSerialize["delay"] = o.Delay
+	if !IsNil(o.ConnectionCriteria) {
+		toSerialize["connectionCriteria"] = o.ConnectionCriteria
+	}
+	if !IsNil(o.RequestCriteria) {
+		toSerialize["requestCriteria"] = o.RequestCriteria
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.InvokeForInternalOperations) {
+		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
+	}
+	return toSerialize, nil
 }
 
 type NullableDelayPluginResponse struct {

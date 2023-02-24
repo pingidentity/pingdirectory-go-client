@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ChangeSubscriptionNotificationPluginResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ChangeSubscriptionNotificationPluginResponse{}
+
 // ChangeSubscriptionNotificationPluginResponse struct for ChangeSubscriptionNotificationPluginResponse
 type ChangeSubscriptionNotificationPluginResponse struct {
 	Meta                                          *MetaMeta                                           `json:"meta,omitempty"`
@@ -53,7 +56,7 @@ func NewChangeSubscriptionNotificationPluginResponseWithDefaults() *ChangeSubscr
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *ChangeSubscriptionNotificationPluginResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -63,7 +66,7 @@ func (o *ChangeSubscriptionNotificationPluginResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangeSubscriptionNotificationPluginResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -71,7 +74,7 @@ func (o *ChangeSubscriptionNotificationPluginResponse) GetMetaOk() (*MetaMeta, b
 
 // HasMeta returns a boolean if a field has been set.
 func (o *ChangeSubscriptionNotificationPluginResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -85,7 +88,7 @@ func (o *ChangeSubscriptionNotificationPluginResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *ChangeSubscriptionNotificationPluginResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -95,7 +98,7 @@ func (o *ChangeSubscriptionNotificationPluginResponse) GetUrnpingidentityschemas
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangeSubscriptionNotificationPluginResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -103,7 +106,7 @@ func (o *ChangeSubscriptionNotificationPluginResponse) GetUrnpingidentityschemas
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *ChangeSubscriptionNotificationPluginResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -189,7 +192,7 @@ func (o *ChangeSubscriptionNotificationPluginResponse) SetPluginType(v []Enumplu
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *ChangeSubscriptionNotificationPluginResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -199,7 +202,7 @@ func (o *ChangeSubscriptionNotificationPluginResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangeSubscriptionNotificationPluginResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -207,7 +210,7 @@ func (o *ChangeSubscriptionNotificationPluginResponse) GetDescriptionOk() (*stri
 
 // HasDescription returns a boolean if a field has been set.
 func (o *ChangeSubscriptionNotificationPluginResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -245,7 +248,7 @@ func (o *ChangeSubscriptionNotificationPluginResponse) SetEnabled(v bool) {
 
 // GetInvokeForInternalOperations returns the InvokeForInternalOperations field value if set, zero value otherwise.
 func (o *ChangeSubscriptionNotificationPluginResponse) GetInvokeForInternalOperations() bool {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		var ret bool
 		return ret
 	}
@@ -255,7 +258,7 @@ func (o *ChangeSubscriptionNotificationPluginResponse) GetInvokeForInternalOpera
 // GetInvokeForInternalOperationsOk returns a tuple with the InvokeForInternalOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangeSubscriptionNotificationPluginResponse) GetInvokeForInternalOperationsOk() (*bool, bool) {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		return nil, false
 	}
 	return o.InvokeForInternalOperations, true
@@ -263,7 +266,7 @@ func (o *ChangeSubscriptionNotificationPluginResponse) GetInvokeForInternalOpera
 
 // HasInvokeForInternalOperations returns a boolean if a field has been set.
 func (o *ChangeSubscriptionNotificationPluginResponse) HasInvokeForInternalOperations() bool {
-	if o != nil && !isNil(o.InvokeForInternalOperations) {
+	if o != nil && !IsNil(o.InvokeForInternalOperations) {
 		return true
 	}
 
@@ -276,32 +279,32 @@ func (o *ChangeSubscriptionNotificationPluginResponse) SetInvokeForInternalOpera
 }
 
 func (o ChangeSubscriptionNotificationPluginResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["pluginType"] = o.PluginType
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.InvokeForInternalOperations) {
-		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ChangeSubscriptionNotificationPluginResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	toSerialize["pluginType"] = o.PluginType
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.InvokeForInternalOperations) {
+		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
+	}
+	return toSerialize, nil
 }
 
 type NullableChangeSubscriptionNotificationPluginResponse struct {

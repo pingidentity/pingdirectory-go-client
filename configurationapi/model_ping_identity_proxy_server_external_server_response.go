@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PingIdentityProxyServerExternalServerResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PingIdentityProxyServerExternalServerResponse{}
+
 // PingIdentityProxyServerExternalServerResponse struct for PingIdentityProxyServerExternalServerResponse
 type PingIdentityProxyServerExternalServerResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -92,7 +95,7 @@ func NewPingIdentityProxyServerExternalServerResponseWithDefaults() *PingIdentit
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *PingIdentityProxyServerExternalServerResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -102,7 +105,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -110,7 +113,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetMetaOk() (*MetaMeta, 
 
 // HasMeta returns a boolean if a field has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -124,7 +127,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *PingIdentityProxyServerExternalServerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -134,7 +137,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetUrnpingidentityschema
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -142,7 +145,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetUrnpingidentityschema
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -228,7 +231,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) SetVerifyCredentialsMeth
 
 // GetUseAdministrativeOperationControl returns the UseAdministrativeOperationControl field value if set, zero value otherwise.
 func (o *PingIdentityProxyServerExternalServerResponse) GetUseAdministrativeOperationControl() bool {
-	if o == nil || isNil(o.UseAdministrativeOperationControl) {
+	if o == nil || IsNil(o.UseAdministrativeOperationControl) {
 		var ret bool
 		return ret
 	}
@@ -238,7 +241,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetUseAdministrativeOper
 // GetUseAdministrativeOperationControlOk returns a tuple with the UseAdministrativeOperationControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) GetUseAdministrativeOperationControlOk() (*bool, bool) {
-	if o == nil || isNil(o.UseAdministrativeOperationControl) {
+	if o == nil || IsNil(o.UseAdministrativeOperationControl) {
 		return nil, false
 	}
 	return o.UseAdministrativeOperationControl, true
@@ -246,7 +249,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetUseAdministrativeOper
 
 // HasUseAdministrativeOperationControl returns a boolean if a field has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) HasUseAdministrativeOperationControl() bool {
-	if o != nil && !isNil(o.UseAdministrativeOperationControl) {
+	if o != nil && !IsNil(o.UseAdministrativeOperationControl) {
 		return true
 	}
 
@@ -308,7 +311,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) SetServerPort(v int32) {
 
 // GetLocation returns the Location field value if set, zero value otherwise.
 func (o *PingIdentityProxyServerExternalServerResponse) GetLocation() string {
-	if o == nil || isNil(o.Location) {
+	if o == nil || IsNil(o.Location) {
 		var ret string
 		return ret
 	}
@@ -318,7 +321,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetLocation() string {
 // GetLocationOk returns a tuple with the Location field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) GetLocationOk() (*string, bool) {
-	if o == nil || isNil(o.Location) {
+	if o == nil || IsNil(o.Location) {
 		return nil, false
 	}
 	return o.Location, true
@@ -326,7 +329,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetLocationOk() (*string
 
 // HasLocation returns a boolean if a field has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) HasLocation() bool {
-	if o != nil && !isNil(o.Location) {
+	if o != nil && !IsNil(o.Location) {
 		return true
 	}
 
@@ -340,7 +343,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) SetLocation(v string) {
 
 // GetBindDN returns the BindDN field value if set, zero value otherwise.
 func (o *PingIdentityProxyServerExternalServerResponse) GetBindDN() string {
-	if o == nil || isNil(o.BindDN) {
+	if o == nil || IsNil(o.BindDN) {
 		var ret string
 		return ret
 	}
@@ -350,7 +353,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetBindDN() string {
 // GetBindDNOk returns a tuple with the BindDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) GetBindDNOk() (*string, bool) {
-	if o == nil || isNil(o.BindDN) {
+	if o == nil || IsNil(o.BindDN) {
 		return nil, false
 	}
 	return o.BindDN, true
@@ -358,7 +361,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetBindDNOk() (*string, 
 
 // HasBindDN returns a boolean if a field has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) HasBindDN() bool {
-	if o != nil && !isNil(o.BindDN) {
+	if o != nil && !IsNil(o.BindDN) {
 		return true
 	}
 
@@ -372,7 +375,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) SetBindDN(v string) {
 
 // GetPassword returns the Password field value if set, zero value otherwise.
 func (o *PingIdentityProxyServerExternalServerResponse) GetPassword() string {
-	if o == nil || isNil(o.Password) {
+	if o == nil || IsNil(o.Password) {
 		var ret string
 		return ret
 	}
@@ -382,7 +385,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetPassword() string {
 // GetPasswordOk returns a tuple with the Password field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) GetPasswordOk() (*string, bool) {
-	if o == nil || isNil(o.Password) {
+	if o == nil || IsNil(o.Password) {
 		return nil, false
 	}
 	return o.Password, true
@@ -390,7 +393,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetPasswordOk() (*string
 
 // HasPassword returns a boolean if a field has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) HasPassword() bool {
-	if o != nil && !isNil(o.Password) {
+	if o != nil && !IsNil(o.Password) {
 		return true
 	}
 
@@ -404,7 +407,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) SetPassword(v string) {
 
 // GetPassphraseProvider returns the PassphraseProvider field value if set, zero value otherwise.
 func (o *PingIdentityProxyServerExternalServerResponse) GetPassphraseProvider() string {
-	if o == nil || isNil(o.PassphraseProvider) {
+	if o == nil || IsNil(o.PassphraseProvider) {
 		var ret string
 		return ret
 	}
@@ -414,7 +417,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetPassphraseProvider() 
 // GetPassphraseProviderOk returns a tuple with the PassphraseProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) GetPassphraseProviderOk() (*string, bool) {
-	if o == nil || isNil(o.PassphraseProvider) {
+	if o == nil || IsNil(o.PassphraseProvider) {
 		return nil, false
 	}
 	return o.PassphraseProvider, true
@@ -422,7 +425,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetPassphraseProviderOk(
 
 // HasPassphraseProvider returns a boolean if a field has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) HasPassphraseProvider() bool {
-	if o != nil && !isNil(o.PassphraseProvider) {
+	if o != nil && !IsNil(o.PassphraseProvider) {
 		return true
 	}
 
@@ -484,7 +487,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) SetAuthenticationMethod(
 
 // GetHealthCheckConnectTimeout returns the HealthCheckConnectTimeout field value if set, zero value otherwise.
 func (o *PingIdentityProxyServerExternalServerResponse) GetHealthCheckConnectTimeout() string {
-	if o == nil || isNil(o.HealthCheckConnectTimeout) {
+	if o == nil || IsNil(o.HealthCheckConnectTimeout) {
 		var ret string
 		return ret
 	}
@@ -494,7 +497,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetHealthCheckConnectTim
 // GetHealthCheckConnectTimeoutOk returns a tuple with the HealthCheckConnectTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) GetHealthCheckConnectTimeoutOk() (*string, bool) {
-	if o == nil || isNil(o.HealthCheckConnectTimeout) {
+	if o == nil || IsNil(o.HealthCheckConnectTimeout) {
 		return nil, false
 	}
 	return o.HealthCheckConnectTimeout, true
@@ -502,7 +505,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetHealthCheckConnectTim
 
 // HasHealthCheckConnectTimeout returns a boolean if a field has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) HasHealthCheckConnectTimeout() bool {
-	if o != nil && !isNil(o.HealthCheckConnectTimeout) {
+	if o != nil && !IsNil(o.HealthCheckConnectTimeout) {
 		return true
 	}
 
@@ -540,7 +543,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) SetMaxConnectionAge(v st
 
 // GetMinExpiredConnectionDisconnectInterval returns the MinExpiredConnectionDisconnectInterval field value if set, zero value otherwise.
 func (o *PingIdentityProxyServerExternalServerResponse) GetMinExpiredConnectionDisconnectInterval() string {
-	if o == nil || isNil(o.MinExpiredConnectionDisconnectInterval) {
+	if o == nil || IsNil(o.MinExpiredConnectionDisconnectInterval) {
 		var ret string
 		return ret
 	}
@@ -550,7 +553,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetMinExpiredConnectionD
 // GetMinExpiredConnectionDisconnectIntervalOk returns a tuple with the MinExpiredConnectionDisconnectInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) GetMinExpiredConnectionDisconnectIntervalOk() (*string, bool) {
-	if o == nil || isNil(o.MinExpiredConnectionDisconnectInterval) {
+	if o == nil || IsNil(o.MinExpiredConnectionDisconnectInterval) {
 		return nil, false
 	}
 	return o.MinExpiredConnectionDisconnectInterval, true
@@ -558,7 +561,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetMinExpiredConnectionD
 
 // HasMinExpiredConnectionDisconnectInterval returns a boolean if a field has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) HasMinExpiredConnectionDisconnectInterval() bool {
-	if o != nil && !isNil(o.MinExpiredConnectionDisconnectInterval) {
+	if o != nil && !IsNil(o.MinExpiredConnectionDisconnectInterval) {
 		return true
 	}
 
@@ -620,7 +623,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) SetMaxResponseSize(v str
 
 // GetKeyManagerProvider returns the KeyManagerProvider field value if set, zero value otherwise.
 func (o *PingIdentityProxyServerExternalServerResponse) GetKeyManagerProvider() string {
-	if o == nil || isNil(o.KeyManagerProvider) {
+	if o == nil || IsNil(o.KeyManagerProvider) {
 		var ret string
 		return ret
 	}
@@ -630,7 +633,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetKeyManagerProvider() 
 // GetKeyManagerProviderOk returns a tuple with the KeyManagerProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) GetKeyManagerProviderOk() (*string, bool) {
-	if o == nil || isNil(o.KeyManagerProvider) {
+	if o == nil || IsNil(o.KeyManagerProvider) {
 		return nil, false
 	}
 	return o.KeyManagerProvider, true
@@ -638,7 +641,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetKeyManagerProviderOk(
 
 // HasKeyManagerProvider returns a boolean if a field has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) HasKeyManagerProvider() bool {
-	if o != nil && !isNil(o.KeyManagerProvider) {
+	if o != nil && !IsNil(o.KeyManagerProvider) {
 		return true
 	}
 
@@ -652,7 +655,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) SetKeyManagerProvider(v 
 
 // GetTrustManagerProvider returns the TrustManagerProvider field value if set, zero value otherwise.
 func (o *PingIdentityProxyServerExternalServerResponse) GetTrustManagerProvider() string {
-	if o == nil || isNil(o.TrustManagerProvider) {
+	if o == nil || IsNil(o.TrustManagerProvider) {
 		var ret string
 		return ret
 	}
@@ -662,7 +665,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetTrustManagerProvider(
 // GetTrustManagerProviderOk returns a tuple with the TrustManagerProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) GetTrustManagerProviderOk() (*string, bool) {
-	if o == nil || isNil(o.TrustManagerProvider) {
+	if o == nil || IsNil(o.TrustManagerProvider) {
 		return nil, false
 	}
 	return o.TrustManagerProvider, true
@@ -670,7 +673,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetTrustManagerProviderO
 
 // HasTrustManagerProvider returns a boolean if a field has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) HasTrustManagerProvider() bool {
-	if o != nil && !isNil(o.TrustManagerProvider) {
+	if o != nil && !IsNil(o.TrustManagerProvider) {
 		return true
 	}
 
@@ -684,7 +687,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) SetTrustManagerProvider(
 
 // GetInitialConnections returns the InitialConnections field value if set, zero value otherwise.
 func (o *PingIdentityProxyServerExternalServerResponse) GetInitialConnections() int32 {
-	if o == nil || isNil(o.InitialConnections) {
+	if o == nil || IsNil(o.InitialConnections) {
 		var ret int32
 		return ret
 	}
@@ -694,7 +697,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetInitialConnections() 
 // GetInitialConnectionsOk returns a tuple with the InitialConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) GetInitialConnectionsOk() (*int32, bool) {
-	if o == nil || isNil(o.InitialConnections) {
+	if o == nil || IsNil(o.InitialConnections) {
 		return nil, false
 	}
 	return o.InitialConnections, true
@@ -702,7 +705,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetInitialConnectionsOk(
 
 // HasInitialConnections returns a boolean if a field has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) HasInitialConnections() bool {
-	if o != nil && !isNil(o.InitialConnections) {
+	if o != nil && !IsNil(o.InitialConnections) {
 		return true
 	}
 
@@ -716,7 +719,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) SetInitialConnections(v 
 
 // GetMaxConnections returns the MaxConnections field value if set, zero value otherwise.
 func (o *PingIdentityProxyServerExternalServerResponse) GetMaxConnections() int32 {
-	if o == nil || isNil(o.MaxConnections) {
+	if o == nil || IsNil(o.MaxConnections) {
 		var ret int32
 		return ret
 	}
@@ -726,7 +729,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetMaxConnections() int3
 // GetMaxConnectionsOk returns a tuple with the MaxConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) GetMaxConnectionsOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxConnections) {
+	if o == nil || IsNil(o.MaxConnections) {
 		return nil, false
 	}
 	return o.MaxConnections, true
@@ -734,7 +737,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetMaxConnectionsOk() (*
 
 // HasMaxConnections returns a boolean if a field has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) HasMaxConnections() bool {
-	if o != nil && !isNil(o.MaxConnections) {
+	if o != nil && !IsNil(o.MaxConnections) {
 		return true
 	}
 
@@ -748,7 +751,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) SetMaxConnections(v int3
 
 // GetDefunctConnectionResultCode returns the DefunctConnectionResultCode field value if set, zero value otherwise.
 func (o *PingIdentityProxyServerExternalServerResponse) GetDefunctConnectionResultCode() []EnumexternalServerDefunctConnectionResultCodeProp {
-	if o == nil || isNil(o.DefunctConnectionResultCode) {
+	if o == nil || IsNil(o.DefunctConnectionResultCode) {
 		var ret []EnumexternalServerDefunctConnectionResultCodeProp
 		return ret
 	}
@@ -758,7 +761,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetDefunctConnectionResu
 // GetDefunctConnectionResultCodeOk returns a tuple with the DefunctConnectionResultCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) GetDefunctConnectionResultCodeOk() ([]EnumexternalServerDefunctConnectionResultCodeProp, bool) {
-	if o == nil || isNil(o.DefunctConnectionResultCode) {
+	if o == nil || IsNil(o.DefunctConnectionResultCode) {
 		return nil, false
 	}
 	return o.DefunctConnectionResultCode, true
@@ -766,7 +769,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetDefunctConnectionResu
 
 // HasDefunctConnectionResultCode returns a boolean if a field has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) HasDefunctConnectionResultCode() bool {
-	if o != nil && !isNil(o.DefunctConnectionResultCode) {
+	if o != nil && !IsNil(o.DefunctConnectionResultCode) {
 		return true
 	}
 
@@ -780,7 +783,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) SetDefunctConnectionResu
 
 // GetAbandonOnTimeout returns the AbandonOnTimeout field value if set, zero value otherwise.
 func (o *PingIdentityProxyServerExternalServerResponse) GetAbandonOnTimeout() bool {
-	if o == nil || isNil(o.AbandonOnTimeout) {
+	if o == nil || IsNil(o.AbandonOnTimeout) {
 		var ret bool
 		return ret
 	}
@@ -790,7 +793,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetAbandonOnTimeout() bo
 // GetAbandonOnTimeoutOk returns a tuple with the AbandonOnTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) GetAbandonOnTimeoutOk() (*bool, bool) {
-	if o == nil || isNil(o.AbandonOnTimeout) {
+	if o == nil || IsNil(o.AbandonOnTimeout) {
 		return nil, false
 	}
 	return o.AbandonOnTimeout, true
@@ -798,7 +801,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetAbandonOnTimeoutOk() 
 
 // HasAbandonOnTimeout returns a boolean if a field has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) HasAbandonOnTimeout() bool {
-	if o != nil && !isNil(o.AbandonOnTimeout) {
+	if o != nil && !IsNil(o.AbandonOnTimeout) {
 		return true
 	}
 
@@ -812,7 +815,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) SetAbandonOnTimeout(v bo
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *PingIdentityProxyServerExternalServerResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -822,7 +825,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetDescription() string 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -830,7 +833,7 @@ func (o *PingIdentityProxyServerExternalServerResponse) GetDescriptionOk() (*str
 
 // HasDescription returns a boolean if a field has been set.
 func (o *PingIdentityProxyServerExternalServerResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -843,86 +846,74 @@ func (o *PingIdentityProxyServerExternalServerResponse) SetDescription(v string)
 }
 
 func (o PingIdentityProxyServerExternalServerResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["verifyCredentialsMethod"] = o.VerifyCredentialsMethod
-	}
-	if !isNil(o.UseAdministrativeOperationControl) {
-		toSerialize["useAdministrativeOperationControl"] = o.UseAdministrativeOperationControl
-	}
-	if true {
-		toSerialize["serverHostName"] = o.ServerHostName
-	}
-	if true {
-		toSerialize["serverPort"] = o.ServerPort
-	}
-	if !isNil(o.Location) {
-		toSerialize["location"] = o.Location
-	}
-	if !isNil(o.BindDN) {
-		toSerialize["bindDN"] = o.BindDN
-	}
-	if !isNil(o.Password) {
-		toSerialize["password"] = o.Password
-	}
-	if !isNil(o.PassphraseProvider) {
-		toSerialize["passphraseProvider"] = o.PassphraseProvider
-	}
-	if true {
-		toSerialize["connectionSecurity"] = o.ConnectionSecurity
-	}
-	if true {
-		toSerialize["authenticationMethod"] = o.AuthenticationMethod
-	}
-	if !isNil(o.HealthCheckConnectTimeout) {
-		toSerialize["healthCheckConnectTimeout"] = o.HealthCheckConnectTimeout
-	}
-	if true {
-		toSerialize["maxConnectionAge"] = o.MaxConnectionAge
-	}
-	if !isNil(o.MinExpiredConnectionDisconnectInterval) {
-		toSerialize["minExpiredConnectionDisconnectInterval"] = o.MinExpiredConnectionDisconnectInterval
-	}
-	if true {
-		toSerialize["connectTimeout"] = o.ConnectTimeout
-	}
-	if true {
-		toSerialize["maxResponseSize"] = o.MaxResponseSize
-	}
-	if !isNil(o.KeyManagerProvider) {
-		toSerialize["keyManagerProvider"] = o.KeyManagerProvider
-	}
-	if !isNil(o.TrustManagerProvider) {
-		toSerialize["trustManagerProvider"] = o.TrustManagerProvider
-	}
-	if !isNil(o.InitialConnections) {
-		toSerialize["initialConnections"] = o.InitialConnections
-	}
-	if !isNil(o.MaxConnections) {
-		toSerialize["maxConnections"] = o.MaxConnections
-	}
-	if !isNil(o.DefunctConnectionResultCode) {
-		toSerialize["defunctConnectionResultCode"] = o.DefunctConnectionResultCode
-	}
-	if !isNil(o.AbandonOnTimeout) {
-		toSerialize["abandonOnTimeout"] = o.AbandonOnTimeout
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PingIdentityProxyServerExternalServerResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["verifyCredentialsMethod"] = o.VerifyCredentialsMethod
+	if !IsNil(o.UseAdministrativeOperationControl) {
+		toSerialize["useAdministrativeOperationControl"] = o.UseAdministrativeOperationControl
+	}
+	toSerialize["serverHostName"] = o.ServerHostName
+	toSerialize["serverPort"] = o.ServerPort
+	if !IsNil(o.Location) {
+		toSerialize["location"] = o.Location
+	}
+	if !IsNil(o.BindDN) {
+		toSerialize["bindDN"] = o.BindDN
+	}
+	if !IsNil(o.Password) {
+		toSerialize["password"] = o.Password
+	}
+	if !IsNil(o.PassphraseProvider) {
+		toSerialize["passphraseProvider"] = o.PassphraseProvider
+	}
+	toSerialize["connectionSecurity"] = o.ConnectionSecurity
+	toSerialize["authenticationMethod"] = o.AuthenticationMethod
+	if !IsNil(o.HealthCheckConnectTimeout) {
+		toSerialize["healthCheckConnectTimeout"] = o.HealthCheckConnectTimeout
+	}
+	toSerialize["maxConnectionAge"] = o.MaxConnectionAge
+	if !IsNil(o.MinExpiredConnectionDisconnectInterval) {
+		toSerialize["minExpiredConnectionDisconnectInterval"] = o.MinExpiredConnectionDisconnectInterval
+	}
+	toSerialize["connectTimeout"] = o.ConnectTimeout
+	toSerialize["maxResponseSize"] = o.MaxResponseSize
+	if !IsNil(o.KeyManagerProvider) {
+		toSerialize["keyManagerProvider"] = o.KeyManagerProvider
+	}
+	if !IsNil(o.TrustManagerProvider) {
+		toSerialize["trustManagerProvider"] = o.TrustManagerProvider
+	}
+	if !IsNil(o.InitialConnections) {
+		toSerialize["initialConnections"] = o.InitialConnections
+	}
+	if !IsNil(o.MaxConnections) {
+		toSerialize["maxConnections"] = o.MaxConnections
+	}
+	if !IsNil(o.DefunctConnectionResultCode) {
+		toSerialize["defunctConnectionResultCode"] = o.DefunctConnectionResultCode
+	}
+	if !IsNil(o.AbandonOnTimeout) {
+		toSerialize["abandonOnTimeout"] = o.AbandonOnTimeout
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullablePingIdentityProxyServerExternalServerResponse struct {

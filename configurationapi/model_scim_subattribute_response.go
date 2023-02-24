@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ScimSubattributeResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ScimSubattributeResponse{}
+
 // ScimSubattributeResponse struct for ScimSubattributeResponse
 type ScimSubattributeResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -64,7 +67,7 @@ func NewScimSubattributeResponseWithDefaults() *ScimSubattributeResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *ScimSubattributeResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -74,7 +77,7 @@ func (o *ScimSubattributeResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScimSubattributeResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -82,7 +85,7 @@ func (o *ScimSubattributeResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *ScimSubattributeResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -96,7 +99,7 @@ func (o *ScimSubattributeResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *ScimSubattributeResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -106,7 +109,7 @@ func (o *ScimSubattributeResponse) GetUrnpingidentityschemasconfigurationmessage
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScimSubattributeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -114,7 +117,7 @@ func (o *ScimSubattributeResponse) GetUrnpingidentityschemasconfigurationmessage
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *ScimSubattributeResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -152,7 +155,7 @@ func (o *ScimSubattributeResponse) SetId(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *ScimSubattributeResponse) GetSchemas() []EnumscimSubattributeSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumscimSubattributeSchemaUrn
 		return ret
 	}
@@ -162,7 +165,7 @@ func (o *ScimSubattributeResponse) GetSchemas() []EnumscimSubattributeSchemaUrn 
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScimSubattributeResponse) GetSchemasOk() ([]EnumscimSubattributeSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -170,7 +173,7 @@ func (o *ScimSubattributeResponse) GetSchemasOk() ([]EnumscimSubattributeSchemaU
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *ScimSubattributeResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -184,7 +187,7 @@ func (o *ScimSubattributeResponse) SetSchemas(v []EnumscimSubattributeSchemaUrn)
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *ScimSubattributeResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -194,7 +197,7 @@ func (o *ScimSubattributeResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScimSubattributeResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -202,7 +205,7 @@ func (o *ScimSubattributeResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *ScimSubattributeResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -312,7 +315,7 @@ func (o *ScimSubattributeResponse) SetMultiValued(v bool) {
 
 // GetCanonicalValue returns the CanonicalValue field value if set, zero value otherwise.
 func (o *ScimSubattributeResponse) GetCanonicalValue() []string {
-	if o == nil || isNil(o.CanonicalValue) {
+	if o == nil || IsNil(o.CanonicalValue) {
 		var ret []string
 		return ret
 	}
@@ -322,7 +325,7 @@ func (o *ScimSubattributeResponse) GetCanonicalValue() []string {
 // GetCanonicalValueOk returns a tuple with the CanonicalValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScimSubattributeResponse) GetCanonicalValueOk() ([]string, bool) {
-	if o == nil || isNil(o.CanonicalValue) {
+	if o == nil || IsNil(o.CanonicalValue) {
 		return nil, false
 	}
 	return o.CanonicalValue, true
@@ -330,7 +333,7 @@ func (o *ScimSubattributeResponse) GetCanonicalValueOk() ([]string, bool) {
 
 // HasCanonicalValue returns a boolean if a field has been set.
 func (o *ScimSubattributeResponse) HasCanonicalValue() bool {
-	if o != nil && !isNil(o.CanonicalValue) {
+	if o != nil && !IsNil(o.CanonicalValue) {
 		return true
 	}
 
@@ -392,7 +395,7 @@ func (o *ScimSubattributeResponse) SetReturned(v EnumscimSubattributeReturnedPro
 
 // GetReferenceType returns the ReferenceType field value if set, zero value otherwise.
 func (o *ScimSubattributeResponse) GetReferenceType() []string {
-	if o == nil || isNil(o.ReferenceType) {
+	if o == nil || IsNil(o.ReferenceType) {
 		var ret []string
 		return ret
 	}
@@ -402,7 +405,7 @@ func (o *ScimSubattributeResponse) GetReferenceType() []string {
 // GetReferenceTypeOk returns a tuple with the ReferenceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScimSubattributeResponse) GetReferenceTypeOk() ([]string, bool) {
-	if o == nil || isNil(o.ReferenceType) {
+	if o == nil || IsNil(o.ReferenceType) {
 		return nil, false
 	}
 	return o.ReferenceType, true
@@ -410,7 +413,7 @@ func (o *ScimSubattributeResponse) GetReferenceTypeOk() ([]string, bool) {
 
 // HasReferenceType returns a boolean if a field has been set.
 func (o *ScimSubattributeResponse) HasReferenceType() bool {
-	if o != nil && !isNil(o.ReferenceType) {
+	if o != nil && !IsNil(o.ReferenceType) {
 		return true
 	}
 
@@ -423,47 +426,41 @@ func (o *ScimSubattributeResponse) SetReferenceType(v []string) {
 }
 
 func (o ScimSubattributeResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["required"] = o.Required
-	}
-	if true {
-		toSerialize["caseExact"] = o.CaseExact
-	}
-	if true {
-		toSerialize["multiValued"] = o.MultiValued
-	}
-	if !isNil(o.CanonicalValue) {
-		toSerialize["canonicalValue"] = o.CanonicalValue
-	}
-	if true {
-		toSerialize["mutability"] = o.Mutability
-	}
-	if true {
-		toSerialize["returned"] = o.Returned
-	}
-	if !isNil(o.ReferenceType) {
-		toSerialize["referenceType"] = o.ReferenceType
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ScimSubattributeResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["type"] = o.Type
+	toSerialize["required"] = o.Required
+	toSerialize["caseExact"] = o.CaseExact
+	toSerialize["multiValued"] = o.MultiValued
+	if !IsNil(o.CanonicalValue) {
+		toSerialize["canonicalValue"] = o.CanonicalValue
+	}
+	toSerialize["mutability"] = o.Mutability
+	toSerialize["returned"] = o.Returned
+	if !IsNil(o.ReferenceType) {
+		toSerialize["referenceType"] = o.ReferenceType
+	}
+	return toSerialize, nil
 }
 
 type NullableScimSubattributeResponse struct {

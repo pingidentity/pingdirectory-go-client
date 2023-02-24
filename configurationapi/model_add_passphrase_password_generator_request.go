@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddPassphrasePasswordGeneratorRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddPassphrasePasswordGeneratorRequest{}
+
 // AddPassphrasePasswordGeneratorRequest struct for AddPassphrasePasswordGeneratorRequest
 type AddPassphrasePasswordGeneratorRequest struct {
 	// Name of the new Password Generator
@@ -128,7 +131,7 @@ func (o *AddPassphrasePasswordGeneratorRequest) SetDictionaryFile(v string) {
 
 // GetMinimumPasswordCharacters returns the MinimumPasswordCharacters field value if set, zero value otherwise.
 func (o *AddPassphrasePasswordGeneratorRequest) GetMinimumPasswordCharacters() int32 {
-	if o == nil || isNil(o.MinimumPasswordCharacters) {
+	if o == nil || IsNil(o.MinimumPasswordCharacters) {
 		var ret int32
 		return ret
 	}
@@ -138,7 +141,7 @@ func (o *AddPassphrasePasswordGeneratorRequest) GetMinimumPasswordCharacters() i
 // GetMinimumPasswordCharactersOk returns a tuple with the MinimumPasswordCharacters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPassphrasePasswordGeneratorRequest) GetMinimumPasswordCharactersOk() (*int32, bool) {
-	if o == nil || isNil(o.MinimumPasswordCharacters) {
+	if o == nil || IsNil(o.MinimumPasswordCharacters) {
 		return nil, false
 	}
 	return o.MinimumPasswordCharacters, true
@@ -146,7 +149,7 @@ func (o *AddPassphrasePasswordGeneratorRequest) GetMinimumPasswordCharactersOk()
 
 // HasMinimumPasswordCharacters returns a boolean if a field has been set.
 func (o *AddPassphrasePasswordGeneratorRequest) HasMinimumPasswordCharacters() bool {
-	if o != nil && !isNil(o.MinimumPasswordCharacters) {
+	if o != nil && !IsNil(o.MinimumPasswordCharacters) {
 		return true
 	}
 
@@ -160,7 +163,7 @@ func (o *AddPassphrasePasswordGeneratorRequest) SetMinimumPasswordCharacters(v i
 
 // GetMinimumPasswordWords returns the MinimumPasswordWords field value if set, zero value otherwise.
 func (o *AddPassphrasePasswordGeneratorRequest) GetMinimumPasswordWords() int32 {
-	if o == nil || isNil(o.MinimumPasswordWords) {
+	if o == nil || IsNil(o.MinimumPasswordWords) {
 		var ret int32
 		return ret
 	}
@@ -170,7 +173,7 @@ func (o *AddPassphrasePasswordGeneratorRequest) GetMinimumPasswordWords() int32 
 // GetMinimumPasswordWordsOk returns a tuple with the MinimumPasswordWords field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPassphrasePasswordGeneratorRequest) GetMinimumPasswordWordsOk() (*int32, bool) {
-	if o == nil || isNil(o.MinimumPasswordWords) {
+	if o == nil || IsNil(o.MinimumPasswordWords) {
 		return nil, false
 	}
 	return o.MinimumPasswordWords, true
@@ -178,7 +181,7 @@ func (o *AddPassphrasePasswordGeneratorRequest) GetMinimumPasswordWordsOk() (*in
 
 // HasMinimumPasswordWords returns a boolean if a field has been set.
 func (o *AddPassphrasePasswordGeneratorRequest) HasMinimumPasswordWords() bool {
-	if o != nil && !isNil(o.MinimumPasswordWords) {
+	if o != nil && !IsNil(o.MinimumPasswordWords) {
 		return true
 	}
 
@@ -192,7 +195,7 @@ func (o *AddPassphrasePasswordGeneratorRequest) SetMinimumPasswordWords(v int32)
 
 // GetCapitalizeWords returns the CapitalizeWords field value if set, zero value otherwise.
 func (o *AddPassphrasePasswordGeneratorRequest) GetCapitalizeWords() bool {
-	if o == nil || isNil(o.CapitalizeWords) {
+	if o == nil || IsNil(o.CapitalizeWords) {
 		var ret bool
 		return ret
 	}
@@ -202,7 +205,7 @@ func (o *AddPassphrasePasswordGeneratorRequest) GetCapitalizeWords() bool {
 // GetCapitalizeWordsOk returns a tuple with the CapitalizeWords field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPassphrasePasswordGeneratorRequest) GetCapitalizeWordsOk() (*bool, bool) {
-	if o == nil || isNil(o.CapitalizeWords) {
+	if o == nil || IsNil(o.CapitalizeWords) {
 		return nil, false
 	}
 	return o.CapitalizeWords, true
@@ -210,7 +213,7 @@ func (o *AddPassphrasePasswordGeneratorRequest) GetCapitalizeWordsOk() (*bool, b
 
 // HasCapitalizeWords returns a boolean if a field has been set.
 func (o *AddPassphrasePasswordGeneratorRequest) HasCapitalizeWords() bool {
-	if o != nil && !isNil(o.CapitalizeWords) {
+	if o != nil && !IsNil(o.CapitalizeWords) {
 		return true
 	}
 
@@ -224,7 +227,7 @@ func (o *AddPassphrasePasswordGeneratorRequest) SetCapitalizeWords(v bool) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddPassphrasePasswordGeneratorRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -234,7 +237,7 @@ func (o *AddPassphrasePasswordGeneratorRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPassphrasePasswordGeneratorRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -242,7 +245,7 @@ func (o *AddPassphrasePasswordGeneratorRequest) GetDescriptionOk() (*string, boo
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddPassphrasePasswordGeneratorRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -279,32 +282,32 @@ func (o *AddPassphrasePasswordGeneratorRequest) SetEnabled(v bool) {
 }
 
 func (o AddPassphrasePasswordGeneratorRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["generatorName"] = o.GeneratorName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["dictionaryFile"] = o.DictionaryFile
-	}
-	if !isNil(o.MinimumPasswordCharacters) {
-		toSerialize["minimumPasswordCharacters"] = o.MinimumPasswordCharacters
-	}
-	if !isNil(o.MinimumPasswordWords) {
-		toSerialize["minimumPasswordWords"] = o.MinimumPasswordWords
-	}
-	if !isNil(o.CapitalizeWords) {
-		toSerialize["capitalizeWords"] = o.CapitalizeWords
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddPassphrasePasswordGeneratorRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["generatorName"] = o.GeneratorName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["dictionaryFile"] = o.DictionaryFile
+	if !IsNil(o.MinimumPasswordCharacters) {
+		toSerialize["minimumPasswordCharacters"] = o.MinimumPasswordCharacters
+	}
+	if !IsNil(o.MinimumPasswordWords) {
+		toSerialize["minimumPasswordWords"] = o.MinimumPasswordWords
+	}
+	if !IsNil(o.CapitalizeWords) {
+		toSerialize["capitalizeWords"] = o.CapitalizeWords
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddPassphrasePasswordGeneratorRequest struct {

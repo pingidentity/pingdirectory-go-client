@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddThirdPartyHttpOperationLogPublisherRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddThirdPartyHttpOperationLogPublisherRequest{}
+
 // AddThirdPartyHttpOperationLogPublisherRequest struct for AddThirdPartyHttpOperationLogPublisherRequest
 type AddThirdPartyHttpOperationLogPublisherRequest struct {
 	// Name of the new Log Publisher
@@ -125,7 +128,7 @@ func (o *AddThirdPartyHttpOperationLogPublisherRequest) SetExtensionClass(v stri
 
 // GetExtensionArgument returns the ExtensionArgument field value if set, zero value otherwise.
 func (o *AddThirdPartyHttpOperationLogPublisherRequest) GetExtensionArgument() []string {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		var ret []string
 		return ret
 	}
@@ -135,7 +138,7 @@ func (o *AddThirdPartyHttpOperationLogPublisherRequest) GetExtensionArgument() [
 // GetExtensionArgumentOk returns a tuple with the ExtensionArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyHttpOperationLogPublisherRequest) GetExtensionArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		return nil, false
 	}
 	return o.ExtensionArgument, true
@@ -143,7 +146,7 @@ func (o *AddThirdPartyHttpOperationLogPublisherRequest) GetExtensionArgumentOk()
 
 // HasExtensionArgument returns a boolean if a field has been set.
 func (o *AddThirdPartyHttpOperationLogPublisherRequest) HasExtensionArgument() bool {
-	if o != nil && !isNil(o.ExtensionArgument) {
+	if o != nil && !IsNil(o.ExtensionArgument) {
 		return true
 	}
 
@@ -157,7 +160,7 @@ func (o *AddThirdPartyHttpOperationLogPublisherRequest) SetExtensionArgument(v [
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddThirdPartyHttpOperationLogPublisherRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -167,7 +170,7 @@ func (o *AddThirdPartyHttpOperationLogPublisherRequest) GetDescription() string 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyHttpOperationLogPublisherRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -175,7 +178,7 @@ func (o *AddThirdPartyHttpOperationLogPublisherRequest) GetDescriptionOk() (*str
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddThirdPartyHttpOperationLogPublisherRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -213,7 +216,7 @@ func (o *AddThirdPartyHttpOperationLogPublisherRequest) SetEnabled(v bool) {
 
 // GetLoggingErrorBehavior returns the LoggingErrorBehavior field value if set, zero value otherwise.
 func (o *AddThirdPartyHttpOperationLogPublisherRequest) GetLoggingErrorBehavior() EnumlogPublisherLoggingErrorBehaviorProp {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		var ret EnumlogPublisherLoggingErrorBehaviorProp
 		return ret
 	}
@@ -223,7 +226,7 @@ func (o *AddThirdPartyHttpOperationLogPublisherRequest) GetLoggingErrorBehavior(
 // GetLoggingErrorBehaviorOk returns a tuple with the LoggingErrorBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyHttpOperationLogPublisherRequest) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
@@ -231,7 +234,7 @@ func (o *AddThirdPartyHttpOperationLogPublisherRequest) GetLoggingErrorBehaviorO
 
 // HasLoggingErrorBehavior returns a boolean if a field has been set.
 func (o *AddThirdPartyHttpOperationLogPublisherRequest) HasLoggingErrorBehavior() bool {
-	if o != nil && !isNil(o.LoggingErrorBehavior) {
+	if o != nil && !IsNil(o.LoggingErrorBehavior) {
 		return true
 	}
 
@@ -244,29 +247,29 @@ func (o *AddThirdPartyHttpOperationLogPublisherRequest) SetLoggingErrorBehavior(
 }
 
 func (o AddThirdPartyHttpOperationLogPublisherRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["publisherName"] = o.PublisherName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["extensionClass"] = o.ExtensionClass
-	}
-	if !isNil(o.ExtensionArgument) {
-		toSerialize["extensionArgument"] = o.ExtensionArgument
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.LoggingErrorBehavior) {
-		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddThirdPartyHttpOperationLogPublisherRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["publisherName"] = o.PublisherName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["extensionClass"] = o.ExtensionClass
+	if !IsNil(o.ExtensionArgument) {
+		toSerialize["extensionArgument"] = o.ExtensionArgument
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.LoggingErrorBehavior) {
+		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	}
+	return toSerialize, nil
 }
 
 type NullableAddThirdPartyHttpOperationLogPublisherRequest struct {

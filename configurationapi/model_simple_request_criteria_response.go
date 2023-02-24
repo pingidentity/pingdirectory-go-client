@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the SimpleRequestCriteriaResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SimpleRequestCriteriaResponse{}
+
 // SimpleRequestCriteriaResponse struct for SimpleRequestCriteriaResponse
 type SimpleRequestCriteriaResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -97,7 +100,7 @@ func NewSimpleRequestCriteriaResponseWithDefaults() *SimpleRequestCriteriaRespon
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *SimpleRequestCriteriaResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -107,7 +110,7 @@ func (o *SimpleRequestCriteriaResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -115,7 +118,7 @@ func (o *SimpleRequestCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *SimpleRequestCriteriaResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -129,7 +132,7 @@ func (o *SimpleRequestCriteriaResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *SimpleRequestCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -139,7 +142,7 @@ func (o *SimpleRequestCriteriaResponse) GetUrnpingidentityschemasconfigurationme
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -147,7 +150,7 @@ func (o *SimpleRequestCriteriaResponse) GetUrnpingidentityschemasconfigurationme
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *SimpleRequestCriteriaResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -209,7 +212,7 @@ func (o *SimpleRequestCriteriaResponse) SetSchemas(v []EnumsimpleRequestCriteria
 
 // GetOperationType returns the OperationType field value if set, zero value otherwise.
 func (o *SimpleRequestCriteriaResponse) GetOperationType() []EnumrequestCriteriaOperationTypeProp {
-	if o == nil || isNil(o.OperationType) {
+	if o == nil || IsNil(o.OperationType) {
 		var ret []EnumrequestCriteriaOperationTypeProp
 		return ret
 	}
@@ -219,7 +222,7 @@ func (o *SimpleRequestCriteriaResponse) GetOperationType() []EnumrequestCriteria
 // GetOperationTypeOk returns a tuple with the OperationType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetOperationTypeOk() ([]EnumrequestCriteriaOperationTypeProp, bool) {
-	if o == nil || isNil(o.OperationType) {
+	if o == nil || IsNil(o.OperationType) {
 		return nil, false
 	}
 	return o.OperationType, true
@@ -227,7 +230,7 @@ func (o *SimpleRequestCriteriaResponse) GetOperationTypeOk() ([]EnumrequestCrite
 
 // HasOperationType returns a boolean if a field has been set.
 func (o *SimpleRequestCriteriaResponse) HasOperationType() bool {
-	if o != nil && !isNil(o.OperationType) {
+	if o != nil && !IsNil(o.OperationType) {
 		return true
 	}
 
@@ -241,7 +244,7 @@ func (o *SimpleRequestCriteriaResponse) SetOperationType(v []EnumrequestCriteria
 
 // GetOperationOrigin returns the OperationOrigin field value if set, zero value otherwise.
 func (o *SimpleRequestCriteriaResponse) GetOperationOrigin() []EnumrequestCriteriaOperationOriginProp {
-	if o == nil || isNil(o.OperationOrigin) {
+	if o == nil || IsNil(o.OperationOrigin) {
 		var ret []EnumrequestCriteriaOperationOriginProp
 		return ret
 	}
@@ -251,7 +254,7 @@ func (o *SimpleRequestCriteriaResponse) GetOperationOrigin() []EnumrequestCriter
 // GetOperationOriginOk returns a tuple with the OperationOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetOperationOriginOk() ([]EnumrequestCriteriaOperationOriginProp, bool) {
-	if o == nil || isNil(o.OperationOrigin) {
+	if o == nil || IsNil(o.OperationOrigin) {
 		return nil, false
 	}
 	return o.OperationOrigin, true
@@ -259,7 +262,7 @@ func (o *SimpleRequestCriteriaResponse) GetOperationOriginOk() ([]EnumrequestCri
 
 // HasOperationOrigin returns a boolean if a field has been set.
 func (o *SimpleRequestCriteriaResponse) HasOperationOrigin() bool {
-	if o != nil && !isNil(o.OperationOrigin) {
+	if o != nil && !IsNil(o.OperationOrigin) {
 		return true
 	}
 
@@ -273,7 +276,7 @@ func (o *SimpleRequestCriteriaResponse) SetOperationOrigin(v []EnumrequestCriter
 
 // GetConnectionCriteria returns the ConnectionCriteria field value if set, zero value otherwise.
 func (o *SimpleRequestCriteriaResponse) GetConnectionCriteria() string {
-	if o == nil || isNil(o.ConnectionCriteria) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
 		var ret string
 		return ret
 	}
@@ -283,7 +286,7 @@ func (o *SimpleRequestCriteriaResponse) GetConnectionCriteria() string {
 // GetConnectionCriteriaOk returns a tuple with the ConnectionCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetConnectionCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.ConnectionCriteria) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
 		return nil, false
 	}
 	return o.ConnectionCriteria, true
@@ -291,7 +294,7 @@ func (o *SimpleRequestCriteriaResponse) GetConnectionCriteriaOk() (*string, bool
 
 // HasConnectionCriteria returns a boolean if a field has been set.
 func (o *SimpleRequestCriteriaResponse) HasConnectionCriteria() bool {
-	if o != nil && !isNil(o.ConnectionCriteria) {
+	if o != nil && !IsNil(o.ConnectionCriteria) {
 		return true
 	}
 
@@ -305,7 +308,7 @@ func (o *SimpleRequestCriteriaResponse) SetConnectionCriteria(v string) {
 
 // GetAllIncludedRequestControl returns the AllIncludedRequestControl field value if set, zero value otherwise.
 func (o *SimpleRequestCriteriaResponse) GetAllIncludedRequestControl() []string {
-	if o == nil || isNil(o.AllIncludedRequestControl) {
+	if o == nil || IsNil(o.AllIncludedRequestControl) {
 		var ret []string
 		return ret
 	}
@@ -315,7 +318,7 @@ func (o *SimpleRequestCriteriaResponse) GetAllIncludedRequestControl() []string 
 // GetAllIncludedRequestControlOk returns a tuple with the AllIncludedRequestControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetAllIncludedRequestControlOk() ([]string, bool) {
-	if o == nil || isNil(o.AllIncludedRequestControl) {
+	if o == nil || IsNil(o.AllIncludedRequestControl) {
 		return nil, false
 	}
 	return o.AllIncludedRequestControl, true
@@ -323,7 +326,7 @@ func (o *SimpleRequestCriteriaResponse) GetAllIncludedRequestControlOk() ([]stri
 
 // HasAllIncludedRequestControl returns a boolean if a field has been set.
 func (o *SimpleRequestCriteriaResponse) HasAllIncludedRequestControl() bool {
-	if o != nil && !isNil(o.AllIncludedRequestControl) {
+	if o != nil && !IsNil(o.AllIncludedRequestControl) {
 		return true
 	}
 
@@ -337,7 +340,7 @@ func (o *SimpleRequestCriteriaResponse) SetAllIncludedRequestControl(v []string)
 
 // GetAnyIncludedRequestControl returns the AnyIncludedRequestControl field value if set, zero value otherwise.
 func (o *SimpleRequestCriteriaResponse) GetAnyIncludedRequestControl() []string {
-	if o == nil || isNil(o.AnyIncludedRequestControl) {
+	if o == nil || IsNil(o.AnyIncludedRequestControl) {
 		var ret []string
 		return ret
 	}
@@ -347,7 +350,7 @@ func (o *SimpleRequestCriteriaResponse) GetAnyIncludedRequestControl() []string 
 // GetAnyIncludedRequestControlOk returns a tuple with the AnyIncludedRequestControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetAnyIncludedRequestControlOk() ([]string, bool) {
-	if o == nil || isNil(o.AnyIncludedRequestControl) {
+	if o == nil || IsNil(o.AnyIncludedRequestControl) {
 		return nil, false
 	}
 	return o.AnyIncludedRequestControl, true
@@ -355,7 +358,7 @@ func (o *SimpleRequestCriteriaResponse) GetAnyIncludedRequestControlOk() ([]stri
 
 // HasAnyIncludedRequestControl returns a boolean if a field has been set.
 func (o *SimpleRequestCriteriaResponse) HasAnyIncludedRequestControl() bool {
-	if o != nil && !isNil(o.AnyIncludedRequestControl) {
+	if o != nil && !IsNil(o.AnyIncludedRequestControl) {
 		return true
 	}
 
@@ -369,7 +372,7 @@ func (o *SimpleRequestCriteriaResponse) SetAnyIncludedRequestControl(v []string)
 
 // GetNotAllIncludedRequestControl returns the NotAllIncludedRequestControl field value if set, zero value otherwise.
 func (o *SimpleRequestCriteriaResponse) GetNotAllIncludedRequestControl() []string {
-	if o == nil || isNil(o.NotAllIncludedRequestControl) {
+	if o == nil || IsNil(o.NotAllIncludedRequestControl) {
 		var ret []string
 		return ret
 	}
@@ -379,7 +382,7 @@ func (o *SimpleRequestCriteriaResponse) GetNotAllIncludedRequestControl() []stri
 // GetNotAllIncludedRequestControlOk returns a tuple with the NotAllIncludedRequestControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetNotAllIncludedRequestControlOk() ([]string, bool) {
-	if o == nil || isNil(o.NotAllIncludedRequestControl) {
+	if o == nil || IsNil(o.NotAllIncludedRequestControl) {
 		return nil, false
 	}
 	return o.NotAllIncludedRequestControl, true
@@ -387,7 +390,7 @@ func (o *SimpleRequestCriteriaResponse) GetNotAllIncludedRequestControlOk() ([]s
 
 // HasNotAllIncludedRequestControl returns a boolean if a field has been set.
 func (o *SimpleRequestCriteriaResponse) HasNotAllIncludedRequestControl() bool {
-	if o != nil && !isNil(o.NotAllIncludedRequestControl) {
+	if o != nil && !IsNil(o.NotAllIncludedRequestControl) {
 		return true
 	}
 
@@ -401,7 +404,7 @@ func (o *SimpleRequestCriteriaResponse) SetNotAllIncludedRequestControl(v []stri
 
 // GetNoneIncludedRequestControl returns the NoneIncludedRequestControl field value if set, zero value otherwise.
 func (o *SimpleRequestCriteriaResponse) GetNoneIncludedRequestControl() []string {
-	if o == nil || isNil(o.NoneIncludedRequestControl) {
+	if o == nil || IsNil(o.NoneIncludedRequestControl) {
 		var ret []string
 		return ret
 	}
@@ -411,7 +414,7 @@ func (o *SimpleRequestCriteriaResponse) GetNoneIncludedRequestControl() []string
 // GetNoneIncludedRequestControlOk returns a tuple with the NoneIncludedRequestControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetNoneIncludedRequestControlOk() ([]string, bool) {
-	if o == nil || isNil(o.NoneIncludedRequestControl) {
+	if o == nil || IsNil(o.NoneIncludedRequestControl) {
 		return nil, false
 	}
 	return o.NoneIncludedRequestControl, true
@@ -419,7 +422,7 @@ func (o *SimpleRequestCriteriaResponse) GetNoneIncludedRequestControlOk() ([]str
 
 // HasNoneIncludedRequestControl returns a boolean if a field has been set.
 func (o *SimpleRequestCriteriaResponse) HasNoneIncludedRequestControl() bool {
-	if o != nil && !isNil(o.NoneIncludedRequestControl) {
+	if o != nil && !IsNil(o.NoneIncludedRequestControl) {
 		return true
 	}
 
@@ -433,7 +436,7 @@ func (o *SimpleRequestCriteriaResponse) SetNoneIncludedRequestControl(v []string
 
 // GetIncludedTargetEntryDN returns the IncludedTargetEntryDN field value if set, zero value otherwise.
 func (o *SimpleRequestCriteriaResponse) GetIncludedTargetEntryDN() []string {
-	if o == nil || isNil(o.IncludedTargetEntryDN) {
+	if o == nil || IsNil(o.IncludedTargetEntryDN) {
 		var ret []string
 		return ret
 	}
@@ -443,7 +446,7 @@ func (o *SimpleRequestCriteriaResponse) GetIncludedTargetEntryDN() []string {
 // GetIncludedTargetEntryDNOk returns a tuple with the IncludedTargetEntryDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetIncludedTargetEntryDNOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludedTargetEntryDN) {
+	if o == nil || IsNil(o.IncludedTargetEntryDN) {
 		return nil, false
 	}
 	return o.IncludedTargetEntryDN, true
@@ -451,7 +454,7 @@ func (o *SimpleRequestCriteriaResponse) GetIncludedTargetEntryDNOk() ([]string, 
 
 // HasIncludedTargetEntryDN returns a boolean if a field has been set.
 func (o *SimpleRequestCriteriaResponse) HasIncludedTargetEntryDN() bool {
-	if o != nil && !isNil(o.IncludedTargetEntryDN) {
+	if o != nil && !IsNil(o.IncludedTargetEntryDN) {
 		return true
 	}
 
@@ -465,7 +468,7 @@ func (o *SimpleRequestCriteriaResponse) SetIncludedTargetEntryDN(v []string) {
 
 // GetExcludedTargetEntryDN returns the ExcludedTargetEntryDN field value if set, zero value otherwise.
 func (o *SimpleRequestCriteriaResponse) GetExcludedTargetEntryDN() []string {
-	if o == nil || isNil(o.ExcludedTargetEntryDN) {
+	if o == nil || IsNil(o.ExcludedTargetEntryDN) {
 		var ret []string
 		return ret
 	}
@@ -475,7 +478,7 @@ func (o *SimpleRequestCriteriaResponse) GetExcludedTargetEntryDN() []string {
 // GetExcludedTargetEntryDNOk returns a tuple with the ExcludedTargetEntryDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetExcludedTargetEntryDNOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludedTargetEntryDN) {
+	if o == nil || IsNil(o.ExcludedTargetEntryDN) {
 		return nil, false
 	}
 	return o.ExcludedTargetEntryDN, true
@@ -483,7 +486,7 @@ func (o *SimpleRequestCriteriaResponse) GetExcludedTargetEntryDNOk() ([]string, 
 
 // HasExcludedTargetEntryDN returns a boolean if a field has been set.
 func (o *SimpleRequestCriteriaResponse) HasExcludedTargetEntryDN() bool {
-	if o != nil && !isNil(o.ExcludedTargetEntryDN) {
+	if o != nil && !IsNil(o.ExcludedTargetEntryDN) {
 		return true
 	}
 
@@ -497,7 +500,7 @@ func (o *SimpleRequestCriteriaResponse) SetExcludedTargetEntryDN(v []string) {
 
 // GetAllIncludedTargetEntryFilter returns the AllIncludedTargetEntryFilter field value if set, zero value otherwise.
 func (o *SimpleRequestCriteriaResponse) GetAllIncludedTargetEntryFilter() []string {
-	if o == nil || isNil(o.AllIncludedTargetEntryFilter) {
+	if o == nil || IsNil(o.AllIncludedTargetEntryFilter) {
 		var ret []string
 		return ret
 	}
@@ -507,7 +510,7 @@ func (o *SimpleRequestCriteriaResponse) GetAllIncludedTargetEntryFilter() []stri
 // GetAllIncludedTargetEntryFilterOk returns a tuple with the AllIncludedTargetEntryFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetAllIncludedTargetEntryFilterOk() ([]string, bool) {
-	if o == nil || isNil(o.AllIncludedTargetEntryFilter) {
+	if o == nil || IsNil(o.AllIncludedTargetEntryFilter) {
 		return nil, false
 	}
 	return o.AllIncludedTargetEntryFilter, true
@@ -515,7 +518,7 @@ func (o *SimpleRequestCriteriaResponse) GetAllIncludedTargetEntryFilterOk() ([]s
 
 // HasAllIncludedTargetEntryFilter returns a boolean if a field has been set.
 func (o *SimpleRequestCriteriaResponse) HasAllIncludedTargetEntryFilter() bool {
-	if o != nil && !isNil(o.AllIncludedTargetEntryFilter) {
+	if o != nil && !IsNil(o.AllIncludedTargetEntryFilter) {
 		return true
 	}
 
@@ -529,7 +532,7 @@ func (o *SimpleRequestCriteriaResponse) SetAllIncludedTargetEntryFilter(v []stri
 
 // GetAnyIncludedTargetEntryFilter returns the AnyIncludedTargetEntryFilter field value if set, zero value otherwise.
 func (o *SimpleRequestCriteriaResponse) GetAnyIncludedTargetEntryFilter() []string {
-	if o == nil || isNil(o.AnyIncludedTargetEntryFilter) {
+	if o == nil || IsNil(o.AnyIncludedTargetEntryFilter) {
 		var ret []string
 		return ret
 	}
@@ -539,7 +542,7 @@ func (o *SimpleRequestCriteriaResponse) GetAnyIncludedTargetEntryFilter() []stri
 // GetAnyIncludedTargetEntryFilterOk returns a tuple with the AnyIncludedTargetEntryFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetAnyIncludedTargetEntryFilterOk() ([]string, bool) {
-	if o == nil || isNil(o.AnyIncludedTargetEntryFilter) {
+	if o == nil || IsNil(o.AnyIncludedTargetEntryFilter) {
 		return nil, false
 	}
 	return o.AnyIncludedTargetEntryFilter, true
@@ -547,7 +550,7 @@ func (o *SimpleRequestCriteriaResponse) GetAnyIncludedTargetEntryFilterOk() ([]s
 
 // HasAnyIncludedTargetEntryFilter returns a boolean if a field has been set.
 func (o *SimpleRequestCriteriaResponse) HasAnyIncludedTargetEntryFilter() bool {
-	if o != nil && !isNil(o.AnyIncludedTargetEntryFilter) {
+	if o != nil && !IsNil(o.AnyIncludedTargetEntryFilter) {
 		return true
 	}
 
@@ -561,7 +564,7 @@ func (o *SimpleRequestCriteriaResponse) SetAnyIncludedTargetEntryFilter(v []stri
 
 // GetNotAllIncludedTargetEntryFilter returns the NotAllIncludedTargetEntryFilter field value if set, zero value otherwise.
 func (o *SimpleRequestCriteriaResponse) GetNotAllIncludedTargetEntryFilter() []string {
-	if o == nil || isNil(o.NotAllIncludedTargetEntryFilter) {
+	if o == nil || IsNil(o.NotAllIncludedTargetEntryFilter) {
 		var ret []string
 		return ret
 	}
@@ -571,7 +574,7 @@ func (o *SimpleRequestCriteriaResponse) GetNotAllIncludedTargetEntryFilter() []s
 // GetNotAllIncludedTargetEntryFilterOk returns a tuple with the NotAllIncludedTargetEntryFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetNotAllIncludedTargetEntryFilterOk() ([]string, bool) {
-	if o == nil || isNil(o.NotAllIncludedTargetEntryFilter) {
+	if o == nil || IsNil(o.NotAllIncludedTargetEntryFilter) {
 		return nil, false
 	}
 	return o.NotAllIncludedTargetEntryFilter, true
@@ -579,7 +582,7 @@ func (o *SimpleRequestCriteriaResponse) GetNotAllIncludedTargetEntryFilterOk() (
 
 // HasNotAllIncludedTargetEntryFilter returns a boolean if a field has been set.
 func (o *SimpleRequestCriteriaResponse) HasNotAllIncludedTargetEntryFilter() bool {
-	if o != nil && !isNil(o.NotAllIncludedTargetEntryFilter) {
+	if o != nil && !IsNil(o.NotAllIncludedTargetEntryFilter) {
 		return true
 	}
 
@@ -593,7 +596,7 @@ func (o *SimpleRequestCriteriaResponse) SetNotAllIncludedTargetEntryFilter(v []s
 
 // GetNoneIncludedTargetEntryFilter returns the NoneIncludedTargetEntryFilter field value if set, zero value otherwise.
 func (o *SimpleRequestCriteriaResponse) GetNoneIncludedTargetEntryFilter() []string {
-	if o == nil || isNil(o.NoneIncludedTargetEntryFilter) {
+	if o == nil || IsNil(o.NoneIncludedTargetEntryFilter) {
 		var ret []string
 		return ret
 	}
@@ -603,7 +606,7 @@ func (o *SimpleRequestCriteriaResponse) GetNoneIncludedTargetEntryFilter() []str
 // GetNoneIncludedTargetEntryFilterOk returns a tuple with the NoneIncludedTargetEntryFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetNoneIncludedTargetEntryFilterOk() ([]string, bool) {
-	if o == nil || isNil(o.NoneIncludedTargetEntryFilter) {
+	if o == nil || IsNil(o.NoneIncludedTargetEntryFilter) {
 		return nil, false
 	}
 	return o.NoneIncludedTargetEntryFilter, true
@@ -611,7 +614,7 @@ func (o *SimpleRequestCriteriaResponse) GetNoneIncludedTargetEntryFilterOk() ([]
 
 // HasNoneIncludedTargetEntryFilter returns a boolean if a field has been set.
 func (o *SimpleRequestCriteriaResponse) HasNoneIncludedTargetEntryFilter() bool {
-	if o != nil && !isNil(o.NoneIncludedTargetEntryFilter) {
+	if o != nil && !IsNil(o.NoneIncludedTargetEntryFilter) {
 		return true
 	}
 
@@ -625,7 +628,7 @@ func (o *SimpleRequestCriteriaResponse) SetNoneIncludedTargetEntryFilter(v []str
 
 // GetAllIncludedTargetEntryGroupDN returns the AllIncludedTargetEntryGroupDN field value if set, zero value otherwise.
 func (o *SimpleRequestCriteriaResponse) GetAllIncludedTargetEntryGroupDN() []string {
-	if o == nil || isNil(o.AllIncludedTargetEntryGroupDN) {
+	if o == nil || IsNil(o.AllIncludedTargetEntryGroupDN) {
 		var ret []string
 		return ret
 	}
@@ -635,7 +638,7 @@ func (o *SimpleRequestCriteriaResponse) GetAllIncludedTargetEntryGroupDN() []str
 // GetAllIncludedTargetEntryGroupDNOk returns a tuple with the AllIncludedTargetEntryGroupDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetAllIncludedTargetEntryGroupDNOk() ([]string, bool) {
-	if o == nil || isNil(o.AllIncludedTargetEntryGroupDN) {
+	if o == nil || IsNil(o.AllIncludedTargetEntryGroupDN) {
 		return nil, false
 	}
 	return o.AllIncludedTargetEntryGroupDN, true
@@ -643,7 +646,7 @@ func (o *SimpleRequestCriteriaResponse) GetAllIncludedTargetEntryGroupDNOk() ([]
 
 // HasAllIncludedTargetEntryGroupDN returns a boolean if a field has been set.
 func (o *SimpleRequestCriteriaResponse) HasAllIncludedTargetEntryGroupDN() bool {
-	if o != nil && !isNil(o.AllIncludedTargetEntryGroupDN) {
+	if o != nil && !IsNil(o.AllIncludedTargetEntryGroupDN) {
 		return true
 	}
 
@@ -657,7 +660,7 @@ func (o *SimpleRequestCriteriaResponse) SetAllIncludedTargetEntryGroupDN(v []str
 
 // GetAnyIncludedTargetEntryGroupDN returns the AnyIncludedTargetEntryGroupDN field value if set, zero value otherwise.
 func (o *SimpleRequestCriteriaResponse) GetAnyIncludedTargetEntryGroupDN() []string {
-	if o == nil || isNil(o.AnyIncludedTargetEntryGroupDN) {
+	if o == nil || IsNil(o.AnyIncludedTargetEntryGroupDN) {
 		var ret []string
 		return ret
 	}
@@ -667,7 +670,7 @@ func (o *SimpleRequestCriteriaResponse) GetAnyIncludedTargetEntryGroupDN() []str
 // GetAnyIncludedTargetEntryGroupDNOk returns a tuple with the AnyIncludedTargetEntryGroupDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetAnyIncludedTargetEntryGroupDNOk() ([]string, bool) {
-	if o == nil || isNil(o.AnyIncludedTargetEntryGroupDN) {
+	if o == nil || IsNil(o.AnyIncludedTargetEntryGroupDN) {
 		return nil, false
 	}
 	return o.AnyIncludedTargetEntryGroupDN, true
@@ -675,7 +678,7 @@ func (o *SimpleRequestCriteriaResponse) GetAnyIncludedTargetEntryGroupDNOk() ([]
 
 // HasAnyIncludedTargetEntryGroupDN returns a boolean if a field has been set.
 func (o *SimpleRequestCriteriaResponse) HasAnyIncludedTargetEntryGroupDN() bool {
-	if o != nil && !isNil(o.AnyIncludedTargetEntryGroupDN) {
+	if o != nil && !IsNil(o.AnyIncludedTargetEntryGroupDN) {
 		return true
 	}
 
@@ -689,7 +692,7 @@ func (o *SimpleRequestCriteriaResponse) SetAnyIncludedTargetEntryGroupDN(v []str
 
 // GetNotAllIncludedTargetEntryGroupDN returns the NotAllIncludedTargetEntryGroupDN field value if set, zero value otherwise.
 func (o *SimpleRequestCriteriaResponse) GetNotAllIncludedTargetEntryGroupDN() []string {
-	if o == nil || isNil(o.NotAllIncludedTargetEntryGroupDN) {
+	if o == nil || IsNil(o.NotAllIncludedTargetEntryGroupDN) {
 		var ret []string
 		return ret
 	}
@@ -699,7 +702,7 @@ func (o *SimpleRequestCriteriaResponse) GetNotAllIncludedTargetEntryGroupDN() []
 // GetNotAllIncludedTargetEntryGroupDNOk returns a tuple with the NotAllIncludedTargetEntryGroupDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetNotAllIncludedTargetEntryGroupDNOk() ([]string, bool) {
-	if o == nil || isNil(o.NotAllIncludedTargetEntryGroupDN) {
+	if o == nil || IsNil(o.NotAllIncludedTargetEntryGroupDN) {
 		return nil, false
 	}
 	return o.NotAllIncludedTargetEntryGroupDN, true
@@ -707,7 +710,7 @@ func (o *SimpleRequestCriteriaResponse) GetNotAllIncludedTargetEntryGroupDNOk() 
 
 // HasNotAllIncludedTargetEntryGroupDN returns a boolean if a field has been set.
 func (o *SimpleRequestCriteriaResponse) HasNotAllIncludedTargetEntryGroupDN() bool {
-	if o != nil && !isNil(o.NotAllIncludedTargetEntryGroupDN) {
+	if o != nil && !IsNil(o.NotAllIncludedTargetEntryGroupDN) {
 		return true
 	}
 
@@ -721,7 +724,7 @@ func (o *SimpleRequestCriteriaResponse) SetNotAllIncludedTargetEntryGroupDN(v []
 
 // GetNoneIncludedTargetEntryGroupDN returns the NoneIncludedTargetEntryGroupDN field value if set, zero value otherwise.
 func (o *SimpleRequestCriteriaResponse) GetNoneIncludedTargetEntryGroupDN() []string {
-	if o == nil || isNil(o.NoneIncludedTargetEntryGroupDN) {
+	if o == nil || IsNil(o.NoneIncludedTargetEntryGroupDN) {
 		var ret []string
 		return ret
 	}
@@ -731,7 +734,7 @@ func (o *SimpleRequestCriteriaResponse) GetNoneIncludedTargetEntryGroupDN() []st
 // GetNoneIncludedTargetEntryGroupDNOk returns a tuple with the NoneIncludedTargetEntryGroupDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetNoneIncludedTargetEntryGroupDNOk() ([]string, bool) {
-	if o == nil || isNil(o.NoneIncludedTargetEntryGroupDN) {
+	if o == nil || IsNil(o.NoneIncludedTargetEntryGroupDN) {
 		return nil, false
 	}
 	return o.NoneIncludedTargetEntryGroupDN, true
@@ -739,7 +742,7 @@ func (o *SimpleRequestCriteriaResponse) GetNoneIncludedTargetEntryGroupDNOk() ([
 
 // HasNoneIncludedTargetEntryGroupDN returns a boolean if a field has been set.
 func (o *SimpleRequestCriteriaResponse) HasNoneIncludedTargetEntryGroupDN() bool {
-	if o != nil && !isNil(o.NoneIncludedTargetEntryGroupDN) {
+	if o != nil && !IsNil(o.NoneIncludedTargetEntryGroupDN) {
 		return true
 	}
 
@@ -753,7 +756,7 @@ func (o *SimpleRequestCriteriaResponse) SetNoneIncludedTargetEntryGroupDN(v []st
 
 // GetTargetBindType returns the TargetBindType field value if set, zero value otherwise.
 func (o *SimpleRequestCriteriaResponse) GetTargetBindType() []EnumrequestCriteriaTargetBindTypeProp {
-	if o == nil || isNil(o.TargetBindType) {
+	if o == nil || IsNil(o.TargetBindType) {
 		var ret []EnumrequestCriteriaTargetBindTypeProp
 		return ret
 	}
@@ -763,7 +766,7 @@ func (o *SimpleRequestCriteriaResponse) GetTargetBindType() []EnumrequestCriteri
 // GetTargetBindTypeOk returns a tuple with the TargetBindType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetTargetBindTypeOk() ([]EnumrequestCriteriaTargetBindTypeProp, bool) {
-	if o == nil || isNil(o.TargetBindType) {
+	if o == nil || IsNil(o.TargetBindType) {
 		return nil, false
 	}
 	return o.TargetBindType, true
@@ -771,7 +774,7 @@ func (o *SimpleRequestCriteriaResponse) GetTargetBindTypeOk() ([]EnumrequestCrit
 
 // HasTargetBindType returns a boolean if a field has been set.
 func (o *SimpleRequestCriteriaResponse) HasTargetBindType() bool {
-	if o != nil && !isNil(o.TargetBindType) {
+	if o != nil && !IsNil(o.TargetBindType) {
 		return true
 	}
 
@@ -785,7 +788,7 @@ func (o *SimpleRequestCriteriaResponse) SetTargetBindType(v []EnumrequestCriteri
 
 // GetIncludedTargetSASLMechanism returns the IncludedTargetSASLMechanism field value if set, zero value otherwise.
 func (o *SimpleRequestCriteriaResponse) GetIncludedTargetSASLMechanism() []string {
-	if o == nil || isNil(o.IncludedTargetSASLMechanism) {
+	if o == nil || IsNil(o.IncludedTargetSASLMechanism) {
 		var ret []string
 		return ret
 	}
@@ -795,7 +798,7 @@ func (o *SimpleRequestCriteriaResponse) GetIncludedTargetSASLMechanism() []strin
 // GetIncludedTargetSASLMechanismOk returns a tuple with the IncludedTargetSASLMechanism field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetIncludedTargetSASLMechanismOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludedTargetSASLMechanism) {
+	if o == nil || IsNil(o.IncludedTargetSASLMechanism) {
 		return nil, false
 	}
 	return o.IncludedTargetSASLMechanism, true
@@ -803,7 +806,7 @@ func (o *SimpleRequestCriteriaResponse) GetIncludedTargetSASLMechanismOk() ([]st
 
 // HasIncludedTargetSASLMechanism returns a boolean if a field has been set.
 func (o *SimpleRequestCriteriaResponse) HasIncludedTargetSASLMechanism() bool {
-	if o != nil && !isNil(o.IncludedTargetSASLMechanism) {
+	if o != nil && !IsNil(o.IncludedTargetSASLMechanism) {
 		return true
 	}
 
@@ -817,7 +820,7 @@ func (o *SimpleRequestCriteriaResponse) SetIncludedTargetSASLMechanism(v []strin
 
 // GetExcludedTargetSASLMechanism returns the ExcludedTargetSASLMechanism field value if set, zero value otherwise.
 func (o *SimpleRequestCriteriaResponse) GetExcludedTargetSASLMechanism() []string {
-	if o == nil || isNil(o.ExcludedTargetSASLMechanism) {
+	if o == nil || IsNil(o.ExcludedTargetSASLMechanism) {
 		var ret []string
 		return ret
 	}
@@ -827,7 +830,7 @@ func (o *SimpleRequestCriteriaResponse) GetExcludedTargetSASLMechanism() []strin
 // GetExcludedTargetSASLMechanismOk returns a tuple with the ExcludedTargetSASLMechanism field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetExcludedTargetSASLMechanismOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludedTargetSASLMechanism) {
+	if o == nil || IsNil(o.ExcludedTargetSASLMechanism) {
 		return nil, false
 	}
 	return o.ExcludedTargetSASLMechanism, true
@@ -835,7 +838,7 @@ func (o *SimpleRequestCriteriaResponse) GetExcludedTargetSASLMechanismOk() ([]st
 
 // HasExcludedTargetSASLMechanism returns a boolean if a field has been set.
 func (o *SimpleRequestCriteriaResponse) HasExcludedTargetSASLMechanism() bool {
-	if o != nil && !isNil(o.ExcludedTargetSASLMechanism) {
+	if o != nil && !IsNil(o.ExcludedTargetSASLMechanism) {
 		return true
 	}
 
@@ -849,7 +852,7 @@ func (o *SimpleRequestCriteriaResponse) SetExcludedTargetSASLMechanism(v []strin
 
 // GetIncludedTargetAttribute returns the IncludedTargetAttribute field value if set, zero value otherwise.
 func (o *SimpleRequestCriteriaResponse) GetIncludedTargetAttribute() []string {
-	if o == nil || isNil(o.IncludedTargetAttribute) {
+	if o == nil || IsNil(o.IncludedTargetAttribute) {
 		var ret []string
 		return ret
 	}
@@ -859,7 +862,7 @@ func (o *SimpleRequestCriteriaResponse) GetIncludedTargetAttribute() []string {
 // GetIncludedTargetAttributeOk returns a tuple with the IncludedTargetAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetIncludedTargetAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludedTargetAttribute) {
+	if o == nil || IsNil(o.IncludedTargetAttribute) {
 		return nil, false
 	}
 	return o.IncludedTargetAttribute, true
@@ -867,7 +870,7 @@ func (o *SimpleRequestCriteriaResponse) GetIncludedTargetAttributeOk() ([]string
 
 // HasIncludedTargetAttribute returns a boolean if a field has been set.
 func (o *SimpleRequestCriteriaResponse) HasIncludedTargetAttribute() bool {
-	if o != nil && !isNil(o.IncludedTargetAttribute) {
+	if o != nil && !IsNil(o.IncludedTargetAttribute) {
 		return true
 	}
 
@@ -881,7 +884,7 @@ func (o *SimpleRequestCriteriaResponse) SetIncludedTargetAttribute(v []string) {
 
 // GetExcludedTargetAttribute returns the ExcludedTargetAttribute field value if set, zero value otherwise.
 func (o *SimpleRequestCriteriaResponse) GetExcludedTargetAttribute() []string {
-	if o == nil || isNil(o.ExcludedTargetAttribute) {
+	if o == nil || IsNil(o.ExcludedTargetAttribute) {
 		var ret []string
 		return ret
 	}
@@ -891,7 +894,7 @@ func (o *SimpleRequestCriteriaResponse) GetExcludedTargetAttribute() []string {
 // GetExcludedTargetAttributeOk returns a tuple with the ExcludedTargetAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetExcludedTargetAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludedTargetAttribute) {
+	if o == nil || IsNil(o.ExcludedTargetAttribute) {
 		return nil, false
 	}
 	return o.ExcludedTargetAttribute, true
@@ -899,7 +902,7 @@ func (o *SimpleRequestCriteriaResponse) GetExcludedTargetAttributeOk() ([]string
 
 // HasExcludedTargetAttribute returns a boolean if a field has been set.
 func (o *SimpleRequestCriteriaResponse) HasExcludedTargetAttribute() bool {
-	if o != nil && !isNil(o.ExcludedTargetAttribute) {
+	if o != nil && !IsNil(o.ExcludedTargetAttribute) {
 		return true
 	}
 
@@ -913,7 +916,7 @@ func (o *SimpleRequestCriteriaResponse) SetExcludedTargetAttribute(v []string) {
 
 // GetIncludedExtendedOperationOID returns the IncludedExtendedOperationOID field value if set, zero value otherwise.
 func (o *SimpleRequestCriteriaResponse) GetIncludedExtendedOperationOID() []string {
-	if o == nil || isNil(o.IncludedExtendedOperationOID) {
+	if o == nil || IsNil(o.IncludedExtendedOperationOID) {
 		var ret []string
 		return ret
 	}
@@ -923,7 +926,7 @@ func (o *SimpleRequestCriteriaResponse) GetIncludedExtendedOperationOID() []stri
 // GetIncludedExtendedOperationOIDOk returns a tuple with the IncludedExtendedOperationOID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetIncludedExtendedOperationOIDOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludedExtendedOperationOID) {
+	if o == nil || IsNil(o.IncludedExtendedOperationOID) {
 		return nil, false
 	}
 	return o.IncludedExtendedOperationOID, true
@@ -931,7 +934,7 @@ func (o *SimpleRequestCriteriaResponse) GetIncludedExtendedOperationOIDOk() ([]s
 
 // HasIncludedExtendedOperationOID returns a boolean if a field has been set.
 func (o *SimpleRequestCriteriaResponse) HasIncludedExtendedOperationOID() bool {
-	if o != nil && !isNil(o.IncludedExtendedOperationOID) {
+	if o != nil && !IsNil(o.IncludedExtendedOperationOID) {
 		return true
 	}
 
@@ -945,7 +948,7 @@ func (o *SimpleRequestCriteriaResponse) SetIncludedExtendedOperationOID(v []stri
 
 // GetExcludedExtendedOperationOID returns the ExcludedExtendedOperationOID field value if set, zero value otherwise.
 func (o *SimpleRequestCriteriaResponse) GetExcludedExtendedOperationOID() []string {
-	if o == nil || isNil(o.ExcludedExtendedOperationOID) {
+	if o == nil || IsNil(o.ExcludedExtendedOperationOID) {
 		var ret []string
 		return ret
 	}
@@ -955,7 +958,7 @@ func (o *SimpleRequestCriteriaResponse) GetExcludedExtendedOperationOID() []stri
 // GetExcludedExtendedOperationOIDOk returns a tuple with the ExcludedExtendedOperationOID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetExcludedExtendedOperationOIDOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludedExtendedOperationOID) {
+	if o == nil || IsNil(o.ExcludedExtendedOperationOID) {
 		return nil, false
 	}
 	return o.ExcludedExtendedOperationOID, true
@@ -963,7 +966,7 @@ func (o *SimpleRequestCriteriaResponse) GetExcludedExtendedOperationOIDOk() ([]s
 
 // HasExcludedExtendedOperationOID returns a boolean if a field has been set.
 func (o *SimpleRequestCriteriaResponse) HasExcludedExtendedOperationOID() bool {
-	if o != nil && !isNil(o.ExcludedExtendedOperationOID) {
+	if o != nil && !IsNil(o.ExcludedExtendedOperationOID) {
 		return true
 	}
 
@@ -977,7 +980,7 @@ func (o *SimpleRequestCriteriaResponse) SetExcludedExtendedOperationOID(v []stri
 
 // GetIncludedSearchScope returns the IncludedSearchScope field value if set, zero value otherwise.
 func (o *SimpleRequestCriteriaResponse) GetIncludedSearchScope() []EnumrequestCriteriaIncludedSearchScopeProp {
-	if o == nil || isNil(o.IncludedSearchScope) {
+	if o == nil || IsNil(o.IncludedSearchScope) {
 		var ret []EnumrequestCriteriaIncludedSearchScopeProp
 		return ret
 	}
@@ -987,7 +990,7 @@ func (o *SimpleRequestCriteriaResponse) GetIncludedSearchScope() []EnumrequestCr
 // GetIncludedSearchScopeOk returns a tuple with the IncludedSearchScope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetIncludedSearchScopeOk() ([]EnumrequestCriteriaIncludedSearchScopeProp, bool) {
-	if o == nil || isNil(o.IncludedSearchScope) {
+	if o == nil || IsNil(o.IncludedSearchScope) {
 		return nil, false
 	}
 	return o.IncludedSearchScope, true
@@ -995,7 +998,7 @@ func (o *SimpleRequestCriteriaResponse) GetIncludedSearchScopeOk() ([]Enumreques
 
 // HasIncludedSearchScope returns a boolean if a field has been set.
 func (o *SimpleRequestCriteriaResponse) HasIncludedSearchScope() bool {
-	if o != nil && !isNil(o.IncludedSearchScope) {
+	if o != nil && !IsNil(o.IncludedSearchScope) {
 		return true
 	}
 
@@ -1009,7 +1012,7 @@ func (o *SimpleRequestCriteriaResponse) SetIncludedSearchScope(v []EnumrequestCr
 
 // GetUsingAdministrativeSessionWorkerThread returns the UsingAdministrativeSessionWorkerThread field value if set, zero value otherwise.
 func (o *SimpleRequestCriteriaResponse) GetUsingAdministrativeSessionWorkerThread() EnumrequestCriteriaUsingAdministrativeSessionWorkerThreadProp {
-	if o == nil || isNil(o.UsingAdministrativeSessionWorkerThread) {
+	if o == nil || IsNil(o.UsingAdministrativeSessionWorkerThread) {
 		var ret EnumrequestCriteriaUsingAdministrativeSessionWorkerThreadProp
 		return ret
 	}
@@ -1019,7 +1022,7 @@ func (o *SimpleRequestCriteriaResponse) GetUsingAdministrativeSessionWorkerThrea
 // GetUsingAdministrativeSessionWorkerThreadOk returns a tuple with the UsingAdministrativeSessionWorkerThread field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetUsingAdministrativeSessionWorkerThreadOk() (*EnumrequestCriteriaUsingAdministrativeSessionWorkerThreadProp, bool) {
-	if o == nil || isNil(o.UsingAdministrativeSessionWorkerThread) {
+	if o == nil || IsNil(o.UsingAdministrativeSessionWorkerThread) {
 		return nil, false
 	}
 	return o.UsingAdministrativeSessionWorkerThread, true
@@ -1027,7 +1030,7 @@ func (o *SimpleRequestCriteriaResponse) GetUsingAdministrativeSessionWorkerThrea
 
 // HasUsingAdministrativeSessionWorkerThread returns a boolean if a field has been set.
 func (o *SimpleRequestCriteriaResponse) HasUsingAdministrativeSessionWorkerThread() bool {
-	if o != nil && !isNil(o.UsingAdministrativeSessionWorkerThread) {
+	if o != nil && !IsNil(o.UsingAdministrativeSessionWorkerThread) {
 		return true
 	}
 
@@ -1041,7 +1044,7 @@ func (o *SimpleRequestCriteriaResponse) SetUsingAdministrativeSessionWorkerThrea
 
 // GetIncludedApplicationName returns the IncludedApplicationName field value if set, zero value otherwise.
 func (o *SimpleRequestCriteriaResponse) GetIncludedApplicationName() []string {
-	if o == nil || isNil(o.IncludedApplicationName) {
+	if o == nil || IsNil(o.IncludedApplicationName) {
 		var ret []string
 		return ret
 	}
@@ -1051,7 +1054,7 @@ func (o *SimpleRequestCriteriaResponse) GetIncludedApplicationName() []string {
 // GetIncludedApplicationNameOk returns a tuple with the IncludedApplicationName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetIncludedApplicationNameOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludedApplicationName) {
+	if o == nil || IsNil(o.IncludedApplicationName) {
 		return nil, false
 	}
 	return o.IncludedApplicationName, true
@@ -1059,7 +1062,7 @@ func (o *SimpleRequestCriteriaResponse) GetIncludedApplicationNameOk() ([]string
 
 // HasIncludedApplicationName returns a boolean if a field has been set.
 func (o *SimpleRequestCriteriaResponse) HasIncludedApplicationName() bool {
-	if o != nil && !isNil(o.IncludedApplicationName) {
+	if o != nil && !IsNil(o.IncludedApplicationName) {
 		return true
 	}
 
@@ -1073,7 +1076,7 @@ func (o *SimpleRequestCriteriaResponse) SetIncludedApplicationName(v []string) {
 
 // GetExcludedApplicationName returns the ExcludedApplicationName field value if set, zero value otherwise.
 func (o *SimpleRequestCriteriaResponse) GetExcludedApplicationName() []string {
-	if o == nil || isNil(o.ExcludedApplicationName) {
+	if o == nil || IsNil(o.ExcludedApplicationName) {
 		var ret []string
 		return ret
 	}
@@ -1083,7 +1086,7 @@ func (o *SimpleRequestCriteriaResponse) GetExcludedApplicationName() []string {
 // GetExcludedApplicationNameOk returns a tuple with the ExcludedApplicationName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetExcludedApplicationNameOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludedApplicationName) {
+	if o == nil || IsNil(o.ExcludedApplicationName) {
 		return nil, false
 	}
 	return o.ExcludedApplicationName, true
@@ -1091,7 +1094,7 @@ func (o *SimpleRequestCriteriaResponse) GetExcludedApplicationNameOk() ([]string
 
 // HasExcludedApplicationName returns a boolean if a field has been set.
 func (o *SimpleRequestCriteriaResponse) HasExcludedApplicationName() bool {
-	if o != nil && !isNil(o.ExcludedApplicationName) {
+	if o != nil && !IsNil(o.ExcludedApplicationName) {
 		return true
 	}
 
@@ -1105,7 +1108,7 @@ func (o *SimpleRequestCriteriaResponse) SetExcludedApplicationName(v []string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *SimpleRequestCriteriaResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -1115,7 +1118,7 @@ func (o *SimpleRequestCriteriaResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -1123,7 +1126,7 @@ func (o *SimpleRequestCriteriaResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *SimpleRequestCriteriaResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -1136,107 +1139,111 @@ func (o *SimpleRequestCriteriaResponse) SetDescription(v string) {
 }
 
 func (o SimpleRequestCriteriaResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.OperationType) {
-		toSerialize["operationType"] = o.OperationType
-	}
-	if !isNil(o.OperationOrigin) {
-		toSerialize["operationOrigin"] = o.OperationOrigin
-	}
-	if !isNil(o.ConnectionCriteria) {
-		toSerialize["connectionCriteria"] = o.ConnectionCriteria
-	}
-	if !isNil(o.AllIncludedRequestControl) {
-		toSerialize["allIncludedRequestControl"] = o.AllIncludedRequestControl
-	}
-	if !isNil(o.AnyIncludedRequestControl) {
-		toSerialize["anyIncludedRequestControl"] = o.AnyIncludedRequestControl
-	}
-	if !isNil(o.NotAllIncludedRequestControl) {
-		toSerialize["notAllIncludedRequestControl"] = o.NotAllIncludedRequestControl
-	}
-	if !isNil(o.NoneIncludedRequestControl) {
-		toSerialize["noneIncludedRequestControl"] = o.NoneIncludedRequestControl
-	}
-	if !isNil(o.IncludedTargetEntryDN) {
-		toSerialize["includedTargetEntryDN"] = o.IncludedTargetEntryDN
-	}
-	if !isNil(o.ExcludedTargetEntryDN) {
-		toSerialize["excludedTargetEntryDN"] = o.ExcludedTargetEntryDN
-	}
-	if !isNil(o.AllIncludedTargetEntryFilter) {
-		toSerialize["allIncludedTargetEntryFilter"] = o.AllIncludedTargetEntryFilter
-	}
-	if !isNil(o.AnyIncludedTargetEntryFilter) {
-		toSerialize["anyIncludedTargetEntryFilter"] = o.AnyIncludedTargetEntryFilter
-	}
-	if !isNil(o.NotAllIncludedTargetEntryFilter) {
-		toSerialize["notAllIncludedTargetEntryFilter"] = o.NotAllIncludedTargetEntryFilter
-	}
-	if !isNil(o.NoneIncludedTargetEntryFilter) {
-		toSerialize["noneIncludedTargetEntryFilter"] = o.NoneIncludedTargetEntryFilter
-	}
-	if !isNil(o.AllIncludedTargetEntryGroupDN) {
-		toSerialize["allIncludedTargetEntryGroupDN"] = o.AllIncludedTargetEntryGroupDN
-	}
-	if !isNil(o.AnyIncludedTargetEntryGroupDN) {
-		toSerialize["anyIncludedTargetEntryGroupDN"] = o.AnyIncludedTargetEntryGroupDN
-	}
-	if !isNil(o.NotAllIncludedTargetEntryGroupDN) {
-		toSerialize["notAllIncludedTargetEntryGroupDN"] = o.NotAllIncludedTargetEntryGroupDN
-	}
-	if !isNil(o.NoneIncludedTargetEntryGroupDN) {
-		toSerialize["noneIncludedTargetEntryGroupDN"] = o.NoneIncludedTargetEntryGroupDN
-	}
-	if !isNil(o.TargetBindType) {
-		toSerialize["targetBindType"] = o.TargetBindType
-	}
-	if !isNil(o.IncludedTargetSASLMechanism) {
-		toSerialize["includedTargetSASLMechanism"] = o.IncludedTargetSASLMechanism
-	}
-	if !isNil(o.ExcludedTargetSASLMechanism) {
-		toSerialize["excludedTargetSASLMechanism"] = o.ExcludedTargetSASLMechanism
-	}
-	if !isNil(o.IncludedTargetAttribute) {
-		toSerialize["includedTargetAttribute"] = o.IncludedTargetAttribute
-	}
-	if !isNil(o.ExcludedTargetAttribute) {
-		toSerialize["excludedTargetAttribute"] = o.ExcludedTargetAttribute
-	}
-	if !isNil(o.IncludedExtendedOperationOID) {
-		toSerialize["includedExtendedOperationOID"] = o.IncludedExtendedOperationOID
-	}
-	if !isNil(o.ExcludedExtendedOperationOID) {
-		toSerialize["excludedExtendedOperationOID"] = o.ExcludedExtendedOperationOID
-	}
-	if !isNil(o.IncludedSearchScope) {
-		toSerialize["includedSearchScope"] = o.IncludedSearchScope
-	}
-	if !isNil(o.UsingAdministrativeSessionWorkerThread) {
-		toSerialize["usingAdministrativeSessionWorkerThread"] = o.UsingAdministrativeSessionWorkerThread
-	}
-	if !isNil(o.IncludedApplicationName) {
-		toSerialize["includedApplicationName"] = o.IncludedApplicationName
-	}
-	if !isNil(o.ExcludedApplicationName) {
-		toSerialize["excludedApplicationName"] = o.ExcludedApplicationName
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o SimpleRequestCriteriaResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.OperationType) {
+		toSerialize["operationType"] = o.OperationType
+	}
+	if !IsNil(o.OperationOrigin) {
+		toSerialize["operationOrigin"] = o.OperationOrigin
+	}
+	if !IsNil(o.ConnectionCriteria) {
+		toSerialize["connectionCriteria"] = o.ConnectionCriteria
+	}
+	if !IsNil(o.AllIncludedRequestControl) {
+		toSerialize["allIncludedRequestControl"] = o.AllIncludedRequestControl
+	}
+	if !IsNil(o.AnyIncludedRequestControl) {
+		toSerialize["anyIncludedRequestControl"] = o.AnyIncludedRequestControl
+	}
+	if !IsNil(o.NotAllIncludedRequestControl) {
+		toSerialize["notAllIncludedRequestControl"] = o.NotAllIncludedRequestControl
+	}
+	if !IsNil(o.NoneIncludedRequestControl) {
+		toSerialize["noneIncludedRequestControl"] = o.NoneIncludedRequestControl
+	}
+	if !IsNil(o.IncludedTargetEntryDN) {
+		toSerialize["includedTargetEntryDN"] = o.IncludedTargetEntryDN
+	}
+	if !IsNil(o.ExcludedTargetEntryDN) {
+		toSerialize["excludedTargetEntryDN"] = o.ExcludedTargetEntryDN
+	}
+	if !IsNil(o.AllIncludedTargetEntryFilter) {
+		toSerialize["allIncludedTargetEntryFilter"] = o.AllIncludedTargetEntryFilter
+	}
+	if !IsNil(o.AnyIncludedTargetEntryFilter) {
+		toSerialize["anyIncludedTargetEntryFilter"] = o.AnyIncludedTargetEntryFilter
+	}
+	if !IsNil(o.NotAllIncludedTargetEntryFilter) {
+		toSerialize["notAllIncludedTargetEntryFilter"] = o.NotAllIncludedTargetEntryFilter
+	}
+	if !IsNil(o.NoneIncludedTargetEntryFilter) {
+		toSerialize["noneIncludedTargetEntryFilter"] = o.NoneIncludedTargetEntryFilter
+	}
+	if !IsNil(o.AllIncludedTargetEntryGroupDN) {
+		toSerialize["allIncludedTargetEntryGroupDN"] = o.AllIncludedTargetEntryGroupDN
+	}
+	if !IsNil(o.AnyIncludedTargetEntryGroupDN) {
+		toSerialize["anyIncludedTargetEntryGroupDN"] = o.AnyIncludedTargetEntryGroupDN
+	}
+	if !IsNil(o.NotAllIncludedTargetEntryGroupDN) {
+		toSerialize["notAllIncludedTargetEntryGroupDN"] = o.NotAllIncludedTargetEntryGroupDN
+	}
+	if !IsNil(o.NoneIncludedTargetEntryGroupDN) {
+		toSerialize["noneIncludedTargetEntryGroupDN"] = o.NoneIncludedTargetEntryGroupDN
+	}
+	if !IsNil(o.TargetBindType) {
+		toSerialize["targetBindType"] = o.TargetBindType
+	}
+	if !IsNil(o.IncludedTargetSASLMechanism) {
+		toSerialize["includedTargetSASLMechanism"] = o.IncludedTargetSASLMechanism
+	}
+	if !IsNil(o.ExcludedTargetSASLMechanism) {
+		toSerialize["excludedTargetSASLMechanism"] = o.ExcludedTargetSASLMechanism
+	}
+	if !IsNil(o.IncludedTargetAttribute) {
+		toSerialize["includedTargetAttribute"] = o.IncludedTargetAttribute
+	}
+	if !IsNil(o.ExcludedTargetAttribute) {
+		toSerialize["excludedTargetAttribute"] = o.ExcludedTargetAttribute
+	}
+	if !IsNil(o.IncludedExtendedOperationOID) {
+		toSerialize["includedExtendedOperationOID"] = o.IncludedExtendedOperationOID
+	}
+	if !IsNil(o.ExcludedExtendedOperationOID) {
+		toSerialize["excludedExtendedOperationOID"] = o.ExcludedExtendedOperationOID
+	}
+	if !IsNil(o.IncludedSearchScope) {
+		toSerialize["includedSearchScope"] = o.IncludedSearchScope
+	}
+	if !IsNil(o.UsingAdministrativeSessionWorkerThread) {
+		toSerialize["usingAdministrativeSessionWorkerThread"] = o.UsingAdministrativeSessionWorkerThread
+	}
+	if !IsNil(o.IncludedApplicationName) {
+		toSerialize["includedApplicationName"] = o.IncludedApplicationName
+	}
+	if !IsNil(o.ExcludedApplicationName) {
+		toSerialize["excludedApplicationName"] = o.ExcludedApplicationName
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableSimpleRequestCriteriaResponse struct {

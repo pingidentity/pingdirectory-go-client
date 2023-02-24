@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddGroovyScriptedAccountStatusNotificationHandlerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddGroovyScriptedAccountStatusNotificationHandlerRequest{}
+
 // AddGroovyScriptedAccountStatusNotificationHandlerRequest struct for AddGroovyScriptedAccountStatusNotificationHandlerRequest
 type AddGroovyScriptedAccountStatusNotificationHandlerRequest struct {
 	// Name of the new Account Status Notification Handler
@@ -130,7 +133,7 @@ func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) SetScriptClas
 
 // GetScriptArgument returns the ScriptArgument field value if set, zero value otherwise.
 func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetScriptArgument() []string {
-	if o == nil || isNil(o.ScriptArgument) {
+	if o == nil || IsNil(o.ScriptArgument) {
 		var ret []string
 		return ret
 	}
@@ -140,7 +143,7 @@ func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetScriptArgu
 // GetScriptArgumentOk returns a tuple with the ScriptArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetScriptArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ScriptArgument) {
+	if o == nil || IsNil(o.ScriptArgument) {
 		return nil, false
 	}
 	return o.ScriptArgument, true
@@ -148,7 +151,7 @@ func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetScriptArgu
 
 // HasScriptArgument returns a boolean if a field has been set.
 func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) HasScriptArgument() bool {
-	if o != nil && !isNil(o.ScriptArgument) {
+	if o != nil && !IsNil(o.ScriptArgument) {
 		return true
 	}
 
@@ -162,7 +165,7 @@ func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) SetScriptArgu
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -172,7 +175,7 @@ func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetDescriptio
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -180,7 +183,7 @@ func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetDescriptio
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -218,7 +221,7 @@ func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) SetEnabled(v 
 
 // GetAsynchronous returns the Asynchronous field value if set, zero value otherwise.
 func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetAsynchronous() bool {
-	if o == nil || isNil(o.Asynchronous) {
+	if o == nil || IsNil(o.Asynchronous) {
 		var ret bool
 		return ret
 	}
@@ -228,7 +231,7 @@ func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetAsynchrono
 // GetAsynchronousOk returns a tuple with the Asynchronous field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetAsynchronousOk() (*bool, bool) {
-	if o == nil || isNil(o.Asynchronous) {
+	if o == nil || IsNil(o.Asynchronous) {
 		return nil, false
 	}
 	return o.Asynchronous, true
@@ -236,7 +239,7 @@ func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetAsynchrono
 
 // HasAsynchronous returns a boolean if a field has been set.
 func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) HasAsynchronous() bool {
-	if o != nil && !isNil(o.Asynchronous) {
+	if o != nil && !IsNil(o.Asynchronous) {
 		return true
 	}
 
@@ -250,7 +253,7 @@ func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) SetAsynchrono
 
 // GetAccountCreationNotificationRequestCriteria returns the AccountCreationNotificationRequestCriteria field value if set, zero value otherwise.
 func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetAccountCreationNotificationRequestCriteria() string {
-	if o == nil || isNil(o.AccountCreationNotificationRequestCriteria) {
+	if o == nil || IsNil(o.AccountCreationNotificationRequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -260,7 +263,7 @@ func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetAccountCre
 // GetAccountCreationNotificationRequestCriteriaOk returns a tuple with the AccountCreationNotificationRequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetAccountCreationNotificationRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.AccountCreationNotificationRequestCriteria) {
+	if o == nil || IsNil(o.AccountCreationNotificationRequestCriteria) {
 		return nil, false
 	}
 	return o.AccountCreationNotificationRequestCriteria, true
@@ -268,7 +271,7 @@ func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetAccountCre
 
 // HasAccountCreationNotificationRequestCriteria returns a boolean if a field has been set.
 func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) HasAccountCreationNotificationRequestCriteria() bool {
-	if o != nil && !isNil(o.AccountCreationNotificationRequestCriteria) {
+	if o != nil && !IsNil(o.AccountCreationNotificationRequestCriteria) {
 		return true
 	}
 
@@ -282,7 +285,7 @@ func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) SetAccountCre
 
 // GetAccountUpdateNotificationRequestCriteria returns the AccountUpdateNotificationRequestCriteria field value if set, zero value otherwise.
 func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetAccountUpdateNotificationRequestCriteria() string {
-	if o == nil || isNil(o.AccountUpdateNotificationRequestCriteria) {
+	if o == nil || IsNil(o.AccountUpdateNotificationRequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -292,7 +295,7 @@ func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetAccountUpd
 // GetAccountUpdateNotificationRequestCriteriaOk returns a tuple with the AccountUpdateNotificationRequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetAccountUpdateNotificationRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.AccountUpdateNotificationRequestCriteria) {
+	if o == nil || IsNil(o.AccountUpdateNotificationRequestCriteria) {
 		return nil, false
 	}
 	return o.AccountUpdateNotificationRequestCriteria, true
@@ -300,7 +303,7 @@ func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetAccountUpd
 
 // HasAccountUpdateNotificationRequestCriteria returns a boolean if a field has been set.
 func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) HasAccountUpdateNotificationRequestCriteria() bool {
-	if o != nil && !isNil(o.AccountUpdateNotificationRequestCriteria) {
+	if o != nil && !IsNil(o.AccountUpdateNotificationRequestCriteria) {
 		return true
 	}
 
@@ -313,35 +316,35 @@ func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) SetAccountUpd
 }
 
 func (o AddGroovyScriptedAccountStatusNotificationHandlerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["handlerName"] = o.HandlerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["scriptClass"] = o.ScriptClass
-	}
-	if !isNil(o.ScriptArgument) {
-		toSerialize["scriptArgument"] = o.ScriptArgument
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.Asynchronous) {
-		toSerialize["asynchronous"] = o.Asynchronous
-	}
-	if !isNil(o.AccountCreationNotificationRequestCriteria) {
-		toSerialize["accountCreationNotificationRequestCriteria"] = o.AccountCreationNotificationRequestCriteria
-	}
-	if !isNil(o.AccountUpdateNotificationRequestCriteria) {
-		toSerialize["accountUpdateNotificationRequestCriteria"] = o.AccountUpdateNotificationRequestCriteria
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddGroovyScriptedAccountStatusNotificationHandlerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["handlerName"] = o.HandlerName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["scriptClass"] = o.ScriptClass
+	if !IsNil(o.ScriptArgument) {
+		toSerialize["scriptArgument"] = o.ScriptArgument
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.Asynchronous) {
+		toSerialize["asynchronous"] = o.Asynchronous
+	}
+	if !IsNil(o.AccountCreationNotificationRequestCriteria) {
+		toSerialize["accountCreationNotificationRequestCriteria"] = o.AccountCreationNotificationRequestCriteria
+	}
+	if !IsNil(o.AccountUpdateNotificationRequestCriteria) {
+		toSerialize["accountUpdateNotificationRequestCriteria"] = o.AccountUpdateNotificationRequestCriteria
+	}
+	return toSerialize, nil
 }
 
 type NullableAddGroovyScriptedAccountStatusNotificationHandlerRequest struct {

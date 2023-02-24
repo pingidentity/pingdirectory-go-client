@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddRandomPasswordGeneratorRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddRandomPasswordGeneratorRequest{}
+
 // AddRandomPasswordGeneratorRequest struct for AddRandomPasswordGeneratorRequest
 type AddRandomPasswordGeneratorRequest struct {
 	// Name of the new Password Generator
@@ -149,7 +152,7 @@ func (o *AddRandomPasswordGeneratorRequest) SetPasswordFormat(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddRandomPasswordGeneratorRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -159,7 +162,7 @@ func (o *AddRandomPasswordGeneratorRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddRandomPasswordGeneratorRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -167,7 +170,7 @@ func (o *AddRandomPasswordGeneratorRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddRandomPasswordGeneratorRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -204,26 +207,24 @@ func (o *AddRandomPasswordGeneratorRequest) SetEnabled(v bool) {
 }
 
 func (o AddRandomPasswordGeneratorRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["generatorName"] = o.GeneratorName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["passwordCharacterSet"] = o.PasswordCharacterSet
-	}
-	if true {
-		toSerialize["passwordFormat"] = o.PasswordFormat
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddRandomPasswordGeneratorRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["generatorName"] = o.GeneratorName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["passwordCharacterSet"] = o.PasswordCharacterSet
+	toSerialize["passwordFormat"] = o.PasswordFormat
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddRandomPasswordGeneratorRequest struct {

@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -105,9 +105,9 @@ func (a *PassphraseProviderApiService) AddPassphraseProviderExecute(r ApiAddPass
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -171,7 +171,7 @@ func (a *PassphraseProviderApiService) DeletePassphraseProviderExecute(r ApiDele
 	}
 
 	localVarPath := localBasePath + "/passphrase-providers/{passphrase-provider-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"passphrase-provider-name"+"}", url.PathEscape(parameterToString(r.passphraseProviderName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"passphrase-provider-name"+"}", url.PathEscape(parameterValueToString(r.passphraseProviderName, "passphraseProviderName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -204,9 +204,9 @@ func (a *PassphraseProviderApiService) DeletePassphraseProviderExecute(r ApiDele
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -264,7 +264,7 @@ func (a *PassphraseProviderApiService) GetPassphraseProviderExecute(r ApiGetPass
 	}
 
 	localVarPath := localBasePath + "/passphrase-providers/{passphrase-provider-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"passphrase-provider-name"+"}", url.PathEscape(parameterToString(r.passphraseProviderName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"passphrase-provider-name"+"}", url.PathEscape(parameterValueToString(r.passphraseProviderName, "passphraseProviderName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -297,9 +297,9 @@ func (a *PassphraseProviderApiService) GetPassphraseProviderExecute(r ApiGetPass
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -373,7 +373,7 @@ func (a *PassphraseProviderApiService) UpdatePassphraseProviderExecute(r ApiUpda
 	}
 
 	localVarPath := localBasePath + "/passphrase-providers/{passphrase-provider-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"passphrase-provider-name"+"}", url.PathEscape(parameterToString(r.passphraseProviderName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"passphrase-provider-name"+"}", url.PathEscape(parameterValueToString(r.passphraseProviderName, "passphraseProviderName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -411,9 +411,9 @@ func (a *PassphraseProviderApiService) UpdatePassphraseProviderExecute(r ApiUpda
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

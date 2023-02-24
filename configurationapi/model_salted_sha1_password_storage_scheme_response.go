@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the SaltedSha1PasswordStorageSchemeResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SaltedSha1PasswordStorageSchemeResponse{}
+
 // SaltedSha1PasswordStorageSchemeResponse struct for SaltedSha1PasswordStorageSchemeResponse
 type SaltedSha1PasswordStorageSchemeResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -51,7 +54,7 @@ func NewSaltedSha1PasswordStorageSchemeResponseWithDefaults() *SaltedSha1Passwor
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *SaltedSha1PasswordStorageSchemeResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -61,7 +64,7 @@ func (o *SaltedSha1PasswordStorageSchemeResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SaltedSha1PasswordStorageSchemeResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -69,7 +72,7 @@ func (o *SaltedSha1PasswordStorageSchemeResponse) GetMetaOk() (*MetaMeta, bool) 
 
 // HasMeta returns a boolean if a field has been set.
 func (o *SaltedSha1PasswordStorageSchemeResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -83,7 +86,7 @@ func (o *SaltedSha1PasswordStorageSchemeResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *SaltedSha1PasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -93,7 +96,7 @@ func (o *SaltedSha1PasswordStorageSchemeResponse) GetUrnpingidentityschemasconfi
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SaltedSha1PasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -101,7 +104,7 @@ func (o *SaltedSha1PasswordStorageSchemeResponse) GetUrnpingidentityschemasconfi
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *SaltedSha1PasswordStorageSchemeResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -187,7 +190,7 @@ func (o *SaltedSha1PasswordStorageSchemeResponse) SetEnabled(v bool) {
 
 // GetSaltLengthBytes returns the SaltLengthBytes field value if set, zero value otherwise.
 func (o *SaltedSha1PasswordStorageSchemeResponse) GetSaltLengthBytes() int32 {
-	if o == nil || isNil(o.SaltLengthBytes) {
+	if o == nil || IsNil(o.SaltLengthBytes) {
 		var ret int32
 		return ret
 	}
@@ -197,7 +200,7 @@ func (o *SaltedSha1PasswordStorageSchemeResponse) GetSaltLengthBytes() int32 {
 // GetSaltLengthBytesOk returns a tuple with the SaltLengthBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SaltedSha1PasswordStorageSchemeResponse) GetSaltLengthBytesOk() (*int32, bool) {
-	if o == nil || isNil(o.SaltLengthBytes) {
+	if o == nil || IsNil(o.SaltLengthBytes) {
 		return nil, false
 	}
 	return o.SaltLengthBytes, true
@@ -205,7 +208,7 @@ func (o *SaltedSha1PasswordStorageSchemeResponse) GetSaltLengthBytesOk() (*int32
 
 // HasSaltLengthBytes returns a boolean if a field has been set.
 func (o *SaltedSha1PasswordStorageSchemeResponse) HasSaltLengthBytes() bool {
-	if o != nil && !isNil(o.SaltLengthBytes) {
+	if o != nil && !IsNil(o.SaltLengthBytes) {
 		return true
 	}
 
@@ -219,7 +222,7 @@ func (o *SaltedSha1PasswordStorageSchemeResponse) SetSaltLengthBytes(v int32) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *SaltedSha1PasswordStorageSchemeResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -229,7 +232,7 @@ func (o *SaltedSha1PasswordStorageSchemeResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SaltedSha1PasswordStorageSchemeResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -237,7 +240,7 @@ func (o *SaltedSha1PasswordStorageSchemeResponse) GetDescriptionOk() (*string, b
 
 // HasDescription returns a boolean if a field has been set.
 func (o *SaltedSha1PasswordStorageSchemeResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -250,29 +253,31 @@ func (o *SaltedSha1PasswordStorageSchemeResponse) SetDescription(v string) {
 }
 
 func (o SaltedSha1PasswordStorageSchemeResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.SaltLengthBytes) {
-		toSerialize["saltLengthBytes"] = o.SaltLengthBytes
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o SaltedSha1PasswordStorageSchemeResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.SaltLengthBytes) {
+		toSerialize["saltLengthBytes"] = o.SaltLengthBytes
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableSaltedSha1PasswordStorageSchemeResponse struct {

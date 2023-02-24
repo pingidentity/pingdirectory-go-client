@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddGroovyScriptedOauthTokenHandlerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddGroovyScriptedOauthTokenHandlerRequest{}
+
 // AddGroovyScriptedOauthTokenHandlerRequest struct for AddGroovyScriptedOauthTokenHandlerRequest
 type AddGroovyScriptedOauthTokenHandlerRequest struct {
 	// Name of the new OAuth Token Handler
@@ -121,7 +124,7 @@ func (o *AddGroovyScriptedOauthTokenHandlerRequest) SetScriptClass(v string) {
 
 // GetScriptArgument returns the ScriptArgument field value if set, zero value otherwise.
 func (o *AddGroovyScriptedOauthTokenHandlerRequest) GetScriptArgument() []string {
-	if o == nil || isNil(o.ScriptArgument) {
+	if o == nil || IsNil(o.ScriptArgument) {
 		var ret []string
 		return ret
 	}
@@ -131,7 +134,7 @@ func (o *AddGroovyScriptedOauthTokenHandlerRequest) GetScriptArgument() []string
 // GetScriptArgumentOk returns a tuple with the ScriptArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedOauthTokenHandlerRequest) GetScriptArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ScriptArgument) {
+	if o == nil || IsNil(o.ScriptArgument) {
 		return nil, false
 	}
 	return o.ScriptArgument, true
@@ -139,7 +142,7 @@ func (o *AddGroovyScriptedOauthTokenHandlerRequest) GetScriptArgumentOk() ([]str
 
 // HasScriptArgument returns a boolean if a field has been set.
 func (o *AddGroovyScriptedOauthTokenHandlerRequest) HasScriptArgument() bool {
-	if o != nil && !isNil(o.ScriptArgument) {
+	if o != nil && !IsNil(o.ScriptArgument) {
 		return true
 	}
 
@@ -153,7 +156,7 @@ func (o *AddGroovyScriptedOauthTokenHandlerRequest) SetScriptArgument(v []string
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddGroovyScriptedOauthTokenHandlerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -163,7 +166,7 @@ func (o *AddGroovyScriptedOauthTokenHandlerRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedOauthTokenHandlerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -171,7 +174,7 @@ func (o *AddGroovyScriptedOauthTokenHandlerRequest) GetDescriptionOk() (*string,
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddGroovyScriptedOauthTokenHandlerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -184,23 +187,25 @@ func (o *AddGroovyScriptedOauthTokenHandlerRequest) SetDescription(v string) {
 }
 
 func (o AddGroovyScriptedOauthTokenHandlerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["handlerName"] = o.HandlerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["scriptClass"] = o.ScriptClass
-	}
-	if !isNil(o.ScriptArgument) {
-		toSerialize["scriptArgument"] = o.ScriptArgument
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddGroovyScriptedOauthTokenHandlerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["handlerName"] = o.HandlerName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["scriptClass"] = o.ScriptClass
+	if !IsNil(o.ScriptArgument) {
+		toSerialize["scriptArgument"] = o.ScriptArgument
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAddGroovyScriptedOauthTokenHandlerRequest struct {

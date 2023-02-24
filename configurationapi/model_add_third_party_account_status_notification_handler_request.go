@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddThirdPartyAccountStatusNotificationHandlerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddThirdPartyAccountStatusNotificationHandlerRequest{}
+
 // AddThirdPartyAccountStatusNotificationHandlerRequest struct for AddThirdPartyAccountStatusNotificationHandlerRequest
 type AddThirdPartyAccountStatusNotificationHandlerRequest struct {
 	// Name of the new Account Status Notification Handler
@@ -130,7 +133,7 @@ func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) SetExtensionClass
 
 // GetExtensionArgument returns the ExtensionArgument field value if set, zero value otherwise.
 func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetExtensionArgument() []string {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		var ret []string
 		return ret
 	}
@@ -140,7 +143,7 @@ func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetExtensionArgum
 // GetExtensionArgumentOk returns a tuple with the ExtensionArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetExtensionArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		return nil, false
 	}
 	return o.ExtensionArgument, true
@@ -148,7 +151,7 @@ func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetExtensionArgum
 
 // HasExtensionArgument returns a boolean if a field has been set.
 func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) HasExtensionArgument() bool {
-	if o != nil && !isNil(o.ExtensionArgument) {
+	if o != nil && !IsNil(o.ExtensionArgument) {
 		return true
 	}
 
@@ -162,7 +165,7 @@ func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) SetExtensionArgum
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -172,7 +175,7 @@ func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetDescription() 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -180,7 +183,7 @@ func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetDescriptionOk(
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -218,7 +221,7 @@ func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) SetEnabled(v bool
 
 // GetAsynchronous returns the Asynchronous field value if set, zero value otherwise.
 func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetAsynchronous() bool {
-	if o == nil || isNil(o.Asynchronous) {
+	if o == nil || IsNil(o.Asynchronous) {
 		var ret bool
 		return ret
 	}
@@ -228,7 +231,7 @@ func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetAsynchronous()
 // GetAsynchronousOk returns a tuple with the Asynchronous field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetAsynchronousOk() (*bool, bool) {
-	if o == nil || isNil(o.Asynchronous) {
+	if o == nil || IsNil(o.Asynchronous) {
 		return nil, false
 	}
 	return o.Asynchronous, true
@@ -236,7 +239,7 @@ func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetAsynchronousOk
 
 // HasAsynchronous returns a boolean if a field has been set.
 func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) HasAsynchronous() bool {
-	if o != nil && !isNil(o.Asynchronous) {
+	if o != nil && !IsNil(o.Asynchronous) {
 		return true
 	}
 
@@ -250,7 +253,7 @@ func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) SetAsynchronous(v
 
 // GetAccountCreationNotificationRequestCriteria returns the AccountCreationNotificationRequestCriteria field value if set, zero value otherwise.
 func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetAccountCreationNotificationRequestCriteria() string {
-	if o == nil || isNil(o.AccountCreationNotificationRequestCriteria) {
+	if o == nil || IsNil(o.AccountCreationNotificationRequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -260,7 +263,7 @@ func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetAccountCreatio
 // GetAccountCreationNotificationRequestCriteriaOk returns a tuple with the AccountCreationNotificationRequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetAccountCreationNotificationRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.AccountCreationNotificationRequestCriteria) {
+	if o == nil || IsNil(o.AccountCreationNotificationRequestCriteria) {
 		return nil, false
 	}
 	return o.AccountCreationNotificationRequestCriteria, true
@@ -268,7 +271,7 @@ func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetAccountCreatio
 
 // HasAccountCreationNotificationRequestCriteria returns a boolean if a field has been set.
 func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) HasAccountCreationNotificationRequestCriteria() bool {
-	if o != nil && !isNil(o.AccountCreationNotificationRequestCriteria) {
+	if o != nil && !IsNil(o.AccountCreationNotificationRequestCriteria) {
 		return true
 	}
 
@@ -282,7 +285,7 @@ func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) SetAccountCreatio
 
 // GetAccountUpdateNotificationRequestCriteria returns the AccountUpdateNotificationRequestCriteria field value if set, zero value otherwise.
 func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetAccountUpdateNotificationRequestCriteria() string {
-	if o == nil || isNil(o.AccountUpdateNotificationRequestCriteria) {
+	if o == nil || IsNil(o.AccountUpdateNotificationRequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -292,7 +295,7 @@ func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetAccountUpdateN
 // GetAccountUpdateNotificationRequestCriteriaOk returns a tuple with the AccountUpdateNotificationRequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetAccountUpdateNotificationRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.AccountUpdateNotificationRequestCriteria) {
+	if o == nil || IsNil(o.AccountUpdateNotificationRequestCriteria) {
 		return nil, false
 	}
 	return o.AccountUpdateNotificationRequestCriteria, true
@@ -300,7 +303,7 @@ func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetAccountUpdateN
 
 // HasAccountUpdateNotificationRequestCriteria returns a boolean if a field has been set.
 func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) HasAccountUpdateNotificationRequestCriteria() bool {
-	if o != nil && !isNil(o.AccountUpdateNotificationRequestCriteria) {
+	if o != nil && !IsNil(o.AccountUpdateNotificationRequestCriteria) {
 		return true
 	}
 
@@ -313,35 +316,35 @@ func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) SetAccountUpdateN
 }
 
 func (o AddThirdPartyAccountStatusNotificationHandlerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["handlerName"] = o.HandlerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["extensionClass"] = o.ExtensionClass
-	}
-	if !isNil(o.ExtensionArgument) {
-		toSerialize["extensionArgument"] = o.ExtensionArgument
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.Asynchronous) {
-		toSerialize["asynchronous"] = o.Asynchronous
-	}
-	if !isNil(o.AccountCreationNotificationRequestCriteria) {
-		toSerialize["accountCreationNotificationRequestCriteria"] = o.AccountCreationNotificationRequestCriteria
-	}
-	if !isNil(o.AccountUpdateNotificationRequestCriteria) {
-		toSerialize["accountUpdateNotificationRequestCriteria"] = o.AccountUpdateNotificationRequestCriteria
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddThirdPartyAccountStatusNotificationHandlerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["handlerName"] = o.HandlerName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["extensionClass"] = o.ExtensionClass
+	if !IsNil(o.ExtensionArgument) {
+		toSerialize["extensionArgument"] = o.ExtensionArgument
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.Asynchronous) {
+		toSerialize["asynchronous"] = o.Asynchronous
+	}
+	if !IsNil(o.AccountCreationNotificationRequestCriteria) {
+		toSerialize["accountCreationNotificationRequestCriteria"] = o.AccountCreationNotificationRequestCriteria
+	}
+	if !IsNil(o.AccountUpdateNotificationRequestCriteria) {
+		toSerialize["accountUpdateNotificationRequestCriteria"] = o.AccountUpdateNotificationRequestCriteria
+	}
+	return toSerialize, nil
 }
 
 type NullableAddThirdPartyAccountStatusNotificationHandlerRequest struct {

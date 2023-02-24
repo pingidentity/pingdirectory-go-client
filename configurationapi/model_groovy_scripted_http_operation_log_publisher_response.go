@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the GroovyScriptedHttpOperationLogPublisherResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GroovyScriptedHttpOperationLogPublisherResponse{}
+
 // GroovyScriptedHttpOperationLogPublisherResponse struct for GroovyScriptedHttpOperationLogPublisherResponse
 type GroovyScriptedHttpOperationLogPublisherResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -55,7 +58,7 @@ func NewGroovyScriptedHttpOperationLogPublisherResponseWithDefaults() *GroovyScr
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -65,7 +68,7 @@ func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -73,7 +76,7 @@ func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetMetaOk() (*MetaMeta
 
 // HasMeta returns a boolean if a field has been set.
 func (o *GroovyScriptedHttpOperationLogPublisherResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -87,7 +90,7 @@ func (o *GroovyScriptedHttpOperationLogPublisherResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -97,7 +100,7 @@ func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetUrnpingidentitysche
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -105,7 +108,7 @@ func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetUrnpingidentitysche
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *GroovyScriptedHttpOperationLogPublisherResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -191,7 +194,7 @@ func (o *GroovyScriptedHttpOperationLogPublisherResponse) SetScriptClass(v strin
 
 // GetScriptArgument returns the ScriptArgument field value if set, zero value otherwise.
 func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetScriptArgument() []string {
-	if o == nil || isNil(o.ScriptArgument) {
+	if o == nil || IsNil(o.ScriptArgument) {
 		var ret []string
 		return ret
 	}
@@ -201,7 +204,7 @@ func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetScriptArgument() []
 // GetScriptArgumentOk returns a tuple with the ScriptArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetScriptArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ScriptArgument) {
+	if o == nil || IsNil(o.ScriptArgument) {
 		return nil, false
 	}
 	return o.ScriptArgument, true
@@ -209,7 +212,7 @@ func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetScriptArgumentOk() 
 
 // HasScriptArgument returns a boolean if a field has been set.
 func (o *GroovyScriptedHttpOperationLogPublisherResponse) HasScriptArgument() bool {
-	if o != nil && !isNil(o.ScriptArgument) {
+	if o != nil && !IsNil(o.ScriptArgument) {
 		return true
 	}
 
@@ -223,7 +226,7 @@ func (o *GroovyScriptedHttpOperationLogPublisherResponse) SetScriptArgument(v []
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -233,7 +236,7 @@ func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetDescription() strin
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -241,7 +244,7 @@ func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetDescriptionOk() (*s
 
 // HasDescription returns a boolean if a field has been set.
 func (o *GroovyScriptedHttpOperationLogPublisherResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -279,7 +282,7 @@ func (o *GroovyScriptedHttpOperationLogPublisherResponse) SetEnabled(v bool) {
 
 // GetLoggingErrorBehavior returns the LoggingErrorBehavior field value if set, zero value otherwise.
 func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetLoggingErrorBehavior() EnumlogPublisherLoggingErrorBehaviorProp {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		var ret EnumlogPublisherLoggingErrorBehaviorProp
 		return ret
 	}
@@ -289,7 +292,7 @@ func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetLoggingErrorBehavio
 // GetLoggingErrorBehaviorOk returns a tuple with the LoggingErrorBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
@@ -297,7 +300,7 @@ func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetLoggingErrorBehavio
 
 // HasLoggingErrorBehavior returns a boolean if a field has been set.
 func (o *GroovyScriptedHttpOperationLogPublisherResponse) HasLoggingErrorBehavior() bool {
-	if o != nil && !isNil(o.LoggingErrorBehavior) {
+	if o != nil && !IsNil(o.LoggingErrorBehavior) {
 		return true
 	}
 
@@ -310,35 +313,35 @@ func (o *GroovyScriptedHttpOperationLogPublisherResponse) SetLoggingErrorBehavio
 }
 
 func (o GroovyScriptedHttpOperationLogPublisherResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["scriptClass"] = o.ScriptClass
-	}
-	if !isNil(o.ScriptArgument) {
-		toSerialize["scriptArgument"] = o.ScriptArgument
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.LoggingErrorBehavior) {
-		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GroovyScriptedHttpOperationLogPublisherResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["scriptClass"] = o.ScriptClass
+	if !IsNil(o.ScriptArgument) {
+		toSerialize["scriptArgument"] = o.ScriptArgument
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.LoggingErrorBehavior) {
+		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	}
+	return toSerialize, nil
 }
 
 type NullableGroovyScriptedHttpOperationLogPublisherResponse struct {

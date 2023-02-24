@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner{}
+
 // MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner struct for MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner
 type MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner struct {
 	Property *string `json:"property,omitempty"`
@@ -42,7 +45,7 @@ func NewMetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInnerWit
 
 // GetProperty returns the Property field value if set, zero value otherwise.
 func (o *MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner) GetProperty() string {
-	if o == nil || isNil(o.Property) {
+	if o == nil || IsNil(o.Property) {
 		var ret string
 		return ret
 	}
@@ -52,7 +55,7 @@ func (o *MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner) 
 // GetPropertyOk returns a tuple with the Property field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner) GetPropertyOk() (*string, bool) {
-	if o == nil || isNil(o.Property) {
+	if o == nil || IsNil(o.Property) {
 		return nil, false
 	}
 	return o.Property, true
@@ -60,7 +63,7 @@ func (o *MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner) 
 
 // HasProperty returns a boolean if a field has been set.
 func (o *MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner) HasProperty() bool {
-	if o != nil && !isNil(o.Property) {
+	if o != nil && !IsNil(o.Property) {
 		return true
 	}
 
@@ -121,17 +124,21 @@ func (o *MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner) 
 }
 
 func (o MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Property) {
-		toSerialize["property"] = o.Property
-	}
-	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["synopsis"] = o.Synopsis
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Property) {
+		toSerialize["property"] = o.Property
+	}
+	toSerialize["type"] = o.Type
+	toSerialize["synopsis"] = o.Synopsis
+	return toSerialize, nil
 }
 
 type NullableMetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner struct {

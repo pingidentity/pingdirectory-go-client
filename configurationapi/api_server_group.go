@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -105,9 +105,9 @@ func (a *ServerGroupApiService) AddServerGroupExecute(r ApiAddServerGroupRequest
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -171,7 +171,7 @@ func (a *ServerGroupApiService) DeleteServerGroupExecute(r ApiDeleteServerGroupR
 	}
 
 	localVarPath := localBasePath + "/server-groups/{server-group-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"server-group-name"+"}", url.PathEscape(parameterToString(r.serverGroupName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"server-group-name"+"}", url.PathEscape(parameterValueToString(r.serverGroupName, "serverGroupName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -204,9 +204,9 @@ func (a *ServerGroupApiService) DeleteServerGroupExecute(r ApiDeleteServerGroupR
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -264,7 +264,7 @@ func (a *ServerGroupApiService) GetServerGroupExecute(r ApiGetServerGroupRequest
 	}
 
 	localVarPath := localBasePath + "/server-groups/{server-group-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"server-group-name"+"}", url.PathEscape(parameterToString(r.serverGroupName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"server-group-name"+"}", url.PathEscape(parameterValueToString(r.serverGroupName, "serverGroupName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -297,9 +297,9 @@ func (a *ServerGroupApiService) GetServerGroupExecute(r ApiGetServerGroupRequest
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -373,7 +373,7 @@ func (a *ServerGroupApiService) UpdateServerGroupExecute(r ApiUpdateServerGroupR
 	}
 
 	localVarPath := localBasePath + "/server-groups/{server-group-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"server-group-name"+"}", url.PathEscape(parameterToString(r.serverGroupName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"server-group-name"+"}", url.PathEscape(parameterValueToString(r.serverGroupName, "serverGroupName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -411,9 +411,9 @@ func (a *ServerGroupApiService) UpdateServerGroupExecute(r ApiUpdateServerGroupR
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

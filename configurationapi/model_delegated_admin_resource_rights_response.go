@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the DelegatedAdminResourceRightsResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &DelegatedAdminResourceRightsResponse{}
+
 // DelegatedAdminResourceRightsResponse struct for DelegatedAdminResourceRightsResponse
 type DelegatedAdminResourceRightsResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -57,7 +60,7 @@ func NewDelegatedAdminResourceRightsResponseWithDefaults() *DelegatedAdminResour
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *DelegatedAdminResourceRightsResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -67,7 +70,7 @@ func (o *DelegatedAdminResourceRightsResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminResourceRightsResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -75,7 +78,7 @@ func (o *DelegatedAdminResourceRightsResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *DelegatedAdminResourceRightsResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -89,7 +92,7 @@ func (o *DelegatedAdminResourceRightsResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *DelegatedAdminResourceRightsResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -99,7 +102,7 @@ func (o *DelegatedAdminResourceRightsResponse) GetUrnpingidentityschemasconfigur
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminResourceRightsResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -107,7 +110,7 @@ func (o *DelegatedAdminResourceRightsResponse) GetUrnpingidentityschemasconfigur
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *DelegatedAdminResourceRightsResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -145,7 +148,7 @@ func (o *DelegatedAdminResourceRightsResponse) SetId(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *DelegatedAdminResourceRightsResponse) GetSchemas() []EnumdelegatedAdminResourceRightsSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumdelegatedAdminResourceRightsSchemaUrn
 		return ret
 	}
@@ -155,7 +158,7 @@ func (o *DelegatedAdminResourceRightsResponse) GetSchemas() []EnumdelegatedAdmin
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminResourceRightsResponse) GetSchemasOk() ([]EnumdelegatedAdminResourceRightsSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -163,7 +166,7 @@ func (o *DelegatedAdminResourceRightsResponse) GetSchemasOk() ([]EnumdelegatedAd
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *DelegatedAdminResourceRightsResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -177,7 +180,7 @@ func (o *DelegatedAdminResourceRightsResponse) SetSchemas(v []EnumdelegatedAdmin
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *DelegatedAdminResourceRightsResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -187,7 +190,7 @@ func (o *DelegatedAdminResourceRightsResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminResourceRightsResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -195,7 +198,7 @@ func (o *DelegatedAdminResourceRightsResponse) GetDescriptionOk() (*string, bool
 
 // HasDescription returns a boolean if a field has been set.
 func (o *DelegatedAdminResourceRightsResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -257,7 +260,7 @@ func (o *DelegatedAdminResourceRightsResponse) SetRestResourceType(v string) {
 
 // GetAdminPermission returns the AdminPermission field value if set, zero value otherwise.
 func (o *DelegatedAdminResourceRightsResponse) GetAdminPermission() []EnumdelegatedAdminResourceRightsAdminPermissionProp {
-	if o == nil || isNil(o.AdminPermission) {
+	if o == nil || IsNil(o.AdminPermission) {
 		var ret []EnumdelegatedAdminResourceRightsAdminPermissionProp
 		return ret
 	}
@@ -267,7 +270,7 @@ func (o *DelegatedAdminResourceRightsResponse) GetAdminPermission() []Enumdelega
 // GetAdminPermissionOk returns a tuple with the AdminPermission field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminResourceRightsResponse) GetAdminPermissionOk() ([]EnumdelegatedAdminResourceRightsAdminPermissionProp, bool) {
-	if o == nil || isNil(o.AdminPermission) {
+	if o == nil || IsNil(o.AdminPermission) {
 		return nil, false
 	}
 	return o.AdminPermission, true
@@ -275,7 +278,7 @@ func (o *DelegatedAdminResourceRightsResponse) GetAdminPermissionOk() ([]Enumdel
 
 // HasAdminPermission returns a boolean if a field has been set.
 func (o *DelegatedAdminResourceRightsResponse) HasAdminPermission() bool {
-	if o != nil && !isNil(o.AdminPermission) {
+	if o != nil && !IsNil(o.AdminPermission) {
 		return true
 	}
 
@@ -289,7 +292,7 @@ func (o *DelegatedAdminResourceRightsResponse) SetAdminPermission(v []Enumdelega
 
 // GetAdminScope returns the AdminScope field value if set, zero value otherwise.
 func (o *DelegatedAdminResourceRightsResponse) GetAdminScope() EnumdelegatedAdminResourceRightsAdminScopeProp {
-	if o == nil || isNil(o.AdminScope) {
+	if o == nil || IsNil(o.AdminScope) {
 		var ret EnumdelegatedAdminResourceRightsAdminScopeProp
 		return ret
 	}
@@ -299,7 +302,7 @@ func (o *DelegatedAdminResourceRightsResponse) GetAdminScope() EnumdelegatedAdmi
 // GetAdminScopeOk returns a tuple with the AdminScope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminResourceRightsResponse) GetAdminScopeOk() (*EnumdelegatedAdminResourceRightsAdminScopeProp, bool) {
-	if o == nil || isNil(o.AdminScope) {
+	if o == nil || IsNil(o.AdminScope) {
 		return nil, false
 	}
 	return o.AdminScope, true
@@ -307,7 +310,7 @@ func (o *DelegatedAdminResourceRightsResponse) GetAdminScopeOk() (*Enumdelegated
 
 // HasAdminScope returns a boolean if a field has been set.
 func (o *DelegatedAdminResourceRightsResponse) HasAdminScope() bool {
-	if o != nil && !isNil(o.AdminScope) {
+	if o != nil && !IsNil(o.AdminScope) {
 		return true
 	}
 
@@ -321,7 +324,7 @@ func (o *DelegatedAdminResourceRightsResponse) SetAdminScope(v EnumdelegatedAdmi
 
 // GetResourceSubtree returns the ResourceSubtree field value if set, zero value otherwise.
 func (o *DelegatedAdminResourceRightsResponse) GetResourceSubtree() []string {
-	if o == nil || isNil(o.ResourceSubtree) {
+	if o == nil || IsNil(o.ResourceSubtree) {
 		var ret []string
 		return ret
 	}
@@ -331,7 +334,7 @@ func (o *DelegatedAdminResourceRightsResponse) GetResourceSubtree() []string {
 // GetResourceSubtreeOk returns a tuple with the ResourceSubtree field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminResourceRightsResponse) GetResourceSubtreeOk() ([]string, bool) {
-	if o == nil || isNil(o.ResourceSubtree) {
+	if o == nil || IsNil(o.ResourceSubtree) {
 		return nil, false
 	}
 	return o.ResourceSubtree, true
@@ -339,7 +342,7 @@ func (o *DelegatedAdminResourceRightsResponse) GetResourceSubtreeOk() ([]string,
 
 // HasResourceSubtree returns a boolean if a field has been set.
 func (o *DelegatedAdminResourceRightsResponse) HasResourceSubtree() bool {
-	if o != nil && !isNil(o.ResourceSubtree) {
+	if o != nil && !IsNil(o.ResourceSubtree) {
 		return true
 	}
 
@@ -353,7 +356,7 @@ func (o *DelegatedAdminResourceRightsResponse) SetResourceSubtree(v []string) {
 
 // GetResourcesInGroup returns the ResourcesInGroup field value if set, zero value otherwise.
 func (o *DelegatedAdminResourceRightsResponse) GetResourcesInGroup() []string {
-	if o == nil || isNil(o.ResourcesInGroup) {
+	if o == nil || IsNil(o.ResourcesInGroup) {
 		var ret []string
 		return ret
 	}
@@ -363,7 +366,7 @@ func (o *DelegatedAdminResourceRightsResponse) GetResourcesInGroup() []string {
 // GetResourcesInGroupOk returns a tuple with the ResourcesInGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminResourceRightsResponse) GetResourcesInGroupOk() ([]string, bool) {
-	if o == nil || isNil(o.ResourcesInGroup) {
+	if o == nil || IsNil(o.ResourcesInGroup) {
 		return nil, false
 	}
 	return o.ResourcesInGroup, true
@@ -371,7 +374,7 @@ func (o *DelegatedAdminResourceRightsResponse) GetResourcesInGroupOk() ([]string
 
 // HasResourcesInGroup returns a boolean if a field has been set.
 func (o *DelegatedAdminResourceRightsResponse) HasResourcesInGroup() bool {
-	if o != nil && !isNil(o.ResourcesInGroup) {
+	if o != nil && !IsNil(o.ResourcesInGroup) {
 		return true
 	}
 
@@ -384,41 +387,43 @@ func (o *DelegatedAdminResourceRightsResponse) SetResourcesInGroup(v []string) {
 }
 
 func (o DelegatedAdminResourceRightsResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if true {
-		toSerialize["restResourceType"] = o.RestResourceType
-	}
-	if !isNil(o.AdminPermission) {
-		toSerialize["adminPermission"] = o.AdminPermission
-	}
-	if !isNil(o.AdminScope) {
-		toSerialize["adminScope"] = o.AdminScope
-	}
-	if !isNil(o.ResourceSubtree) {
-		toSerialize["resourceSubtree"] = o.ResourceSubtree
-	}
-	if !isNil(o.ResourcesInGroup) {
-		toSerialize["resourcesInGroup"] = o.ResourcesInGroup
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o DelegatedAdminResourceRightsResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	toSerialize["restResourceType"] = o.RestResourceType
+	if !IsNil(o.AdminPermission) {
+		toSerialize["adminPermission"] = o.AdminPermission
+	}
+	if !IsNil(o.AdminScope) {
+		toSerialize["adminScope"] = o.AdminScope
+	}
+	if !IsNil(o.ResourceSubtree) {
+		toSerialize["resourceSubtree"] = o.ResourceSubtree
+	}
+	if !IsNil(o.ResourcesInGroup) {
+		toSerialize["resourcesInGroup"] = o.ResourcesInGroup
+	}
+	return toSerialize, nil
 }
 
 type NullableDelegatedAdminResourceRightsResponse struct {

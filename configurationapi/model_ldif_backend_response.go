@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the LdifBackendResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &LdifBackendResponse{}
+
 // LdifBackendResponse struct for LdifBackendResponse
 type LdifBackendResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -70,7 +73,7 @@ func NewLdifBackendResponseWithDefaults() *LdifBackendResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *LdifBackendResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -80,7 +83,7 @@ func (o *LdifBackendResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdifBackendResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -88,7 +91,7 @@ func (o *LdifBackendResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *LdifBackendResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -102,7 +105,7 @@ func (o *LdifBackendResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *LdifBackendResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -112,7 +115,7 @@ func (o *LdifBackendResponse) GetUrnpingidentityschemasconfigurationmessages20()
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdifBackendResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -120,7 +123,7 @@ func (o *LdifBackendResponse) GetUrnpingidentityschemasconfigurationmessages20Ok
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *LdifBackendResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -206,7 +209,7 @@ func (o *LdifBackendResponse) SetWritabilityMode(v EnumbackendWritabilityModePro
 
 // GetIsPrivateBackend returns the IsPrivateBackend field value if set, zero value otherwise.
 func (o *LdifBackendResponse) GetIsPrivateBackend() bool {
-	if o == nil || isNil(o.IsPrivateBackend) {
+	if o == nil || IsNil(o.IsPrivateBackend) {
 		var ret bool
 		return ret
 	}
@@ -216,7 +219,7 @@ func (o *LdifBackendResponse) GetIsPrivateBackend() bool {
 // GetIsPrivateBackendOk returns a tuple with the IsPrivateBackend field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdifBackendResponse) GetIsPrivateBackendOk() (*bool, bool) {
-	if o == nil || isNil(o.IsPrivateBackend) {
+	if o == nil || IsNil(o.IsPrivateBackend) {
 		return nil, false
 	}
 	return o.IsPrivateBackend, true
@@ -224,7 +227,7 @@ func (o *LdifBackendResponse) GetIsPrivateBackendOk() (*bool, bool) {
 
 // HasIsPrivateBackend returns a boolean if a field has been set.
 func (o *LdifBackendResponse) HasIsPrivateBackend() bool {
-	if o != nil && !isNil(o.IsPrivateBackend) {
+	if o != nil && !IsNil(o.IsPrivateBackend) {
 		return true
 	}
 
@@ -286,7 +289,7 @@ func (o *LdifBackendResponse) SetBackendID(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *LdifBackendResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -296,7 +299,7 @@ func (o *LdifBackendResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdifBackendResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -304,7 +307,7 @@ func (o *LdifBackendResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *LdifBackendResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -366,7 +369,7 @@ func (o *LdifBackendResponse) SetBaseDN(v []string) {
 
 // GetSetDegradedAlertWhenDisabled returns the SetDegradedAlertWhenDisabled field value if set, zero value otherwise.
 func (o *LdifBackendResponse) GetSetDegradedAlertWhenDisabled() bool {
-	if o == nil || isNil(o.SetDegradedAlertWhenDisabled) {
+	if o == nil || IsNil(o.SetDegradedAlertWhenDisabled) {
 		var ret bool
 		return ret
 	}
@@ -376,7 +379,7 @@ func (o *LdifBackendResponse) GetSetDegradedAlertWhenDisabled() bool {
 // GetSetDegradedAlertWhenDisabledOk returns a tuple with the SetDegradedAlertWhenDisabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdifBackendResponse) GetSetDegradedAlertWhenDisabledOk() (*bool, bool) {
-	if o == nil || isNil(o.SetDegradedAlertWhenDisabled) {
+	if o == nil || IsNil(o.SetDegradedAlertWhenDisabled) {
 		return nil, false
 	}
 	return o.SetDegradedAlertWhenDisabled, true
@@ -384,7 +387,7 @@ func (o *LdifBackendResponse) GetSetDegradedAlertWhenDisabledOk() (*bool, bool) 
 
 // HasSetDegradedAlertWhenDisabled returns a boolean if a field has been set.
 func (o *LdifBackendResponse) HasSetDegradedAlertWhenDisabled() bool {
-	if o != nil && !isNil(o.SetDegradedAlertWhenDisabled) {
+	if o != nil && !IsNil(o.SetDegradedAlertWhenDisabled) {
 		return true
 	}
 
@@ -398,7 +401,7 @@ func (o *LdifBackendResponse) SetSetDegradedAlertWhenDisabled(v bool) {
 
 // GetReturnUnavailableWhenDisabled returns the ReturnUnavailableWhenDisabled field value if set, zero value otherwise.
 func (o *LdifBackendResponse) GetReturnUnavailableWhenDisabled() bool {
-	if o == nil || isNil(o.ReturnUnavailableWhenDisabled) {
+	if o == nil || IsNil(o.ReturnUnavailableWhenDisabled) {
 		var ret bool
 		return ret
 	}
@@ -408,7 +411,7 @@ func (o *LdifBackendResponse) GetReturnUnavailableWhenDisabled() bool {
 // GetReturnUnavailableWhenDisabledOk returns a tuple with the ReturnUnavailableWhenDisabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdifBackendResponse) GetReturnUnavailableWhenDisabledOk() (*bool, bool) {
-	if o == nil || isNil(o.ReturnUnavailableWhenDisabled) {
+	if o == nil || IsNil(o.ReturnUnavailableWhenDisabled) {
 		return nil, false
 	}
 	return o.ReturnUnavailableWhenDisabled, true
@@ -416,7 +419,7 @@ func (o *LdifBackendResponse) GetReturnUnavailableWhenDisabledOk() (*bool, bool)
 
 // HasReturnUnavailableWhenDisabled returns a boolean if a field has been set.
 func (o *LdifBackendResponse) HasReturnUnavailableWhenDisabled() bool {
-	if o != nil && !isNil(o.ReturnUnavailableWhenDisabled) {
+	if o != nil && !IsNil(o.ReturnUnavailableWhenDisabled) {
 		return true
 	}
 
@@ -430,7 +433,7 @@ func (o *LdifBackendResponse) SetReturnUnavailableWhenDisabled(v bool) {
 
 // GetBackupFilePermissions returns the BackupFilePermissions field value if set, zero value otherwise.
 func (o *LdifBackendResponse) GetBackupFilePermissions() string {
-	if o == nil || isNil(o.BackupFilePermissions) {
+	if o == nil || IsNil(o.BackupFilePermissions) {
 		var ret string
 		return ret
 	}
@@ -440,7 +443,7 @@ func (o *LdifBackendResponse) GetBackupFilePermissions() string {
 // GetBackupFilePermissionsOk returns a tuple with the BackupFilePermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdifBackendResponse) GetBackupFilePermissionsOk() (*string, bool) {
-	if o == nil || isNil(o.BackupFilePermissions) {
+	if o == nil || IsNil(o.BackupFilePermissions) {
 		return nil, false
 	}
 	return o.BackupFilePermissions, true
@@ -448,7 +451,7 @@ func (o *LdifBackendResponse) GetBackupFilePermissionsOk() (*string, bool) {
 
 // HasBackupFilePermissions returns a boolean if a field has been set.
 func (o *LdifBackendResponse) HasBackupFilePermissions() bool {
-	if o != nil && !isNil(o.BackupFilePermissions) {
+	if o != nil && !IsNil(o.BackupFilePermissions) {
 		return true
 	}
 
@@ -462,7 +465,7 @@ func (o *LdifBackendResponse) SetBackupFilePermissions(v string) {
 
 // GetNotificationManager returns the NotificationManager field value if set, zero value otherwise.
 func (o *LdifBackendResponse) GetNotificationManager() string {
-	if o == nil || isNil(o.NotificationManager) {
+	if o == nil || IsNil(o.NotificationManager) {
 		var ret string
 		return ret
 	}
@@ -472,7 +475,7 @@ func (o *LdifBackendResponse) GetNotificationManager() string {
 // GetNotificationManagerOk returns a tuple with the NotificationManager field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdifBackendResponse) GetNotificationManagerOk() (*string, bool) {
-	if o == nil || isNil(o.NotificationManager) {
+	if o == nil || IsNil(o.NotificationManager) {
 		return nil, false
 	}
 	return o.NotificationManager, true
@@ -480,7 +483,7 @@ func (o *LdifBackendResponse) GetNotificationManagerOk() (*string, bool) {
 
 // HasNotificationManager returns a boolean if a field has been set.
 func (o *LdifBackendResponse) HasNotificationManager() bool {
-	if o != nil && !isNil(o.NotificationManager) {
+	if o != nil && !IsNil(o.NotificationManager) {
 		return true
 	}
 
@@ -493,53 +496,47 @@ func (o *LdifBackendResponse) SetNotificationManager(v string) {
 }
 
 func (o LdifBackendResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["writabilityMode"] = o.WritabilityMode
-	}
-	if !isNil(o.IsPrivateBackend) {
-		toSerialize["isPrivateBackend"] = o.IsPrivateBackend
-	}
-	if true {
-		toSerialize["ldifFile"] = o.LdifFile
-	}
-	if true {
-		toSerialize["backendID"] = o.BackendID
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if true {
-		toSerialize["baseDN"] = o.BaseDN
-	}
-	if !isNil(o.SetDegradedAlertWhenDisabled) {
-		toSerialize["setDegradedAlertWhenDisabled"] = o.SetDegradedAlertWhenDisabled
-	}
-	if !isNil(o.ReturnUnavailableWhenDisabled) {
-		toSerialize["returnUnavailableWhenDisabled"] = o.ReturnUnavailableWhenDisabled
-	}
-	if !isNil(o.BackupFilePermissions) {
-		toSerialize["backupFilePermissions"] = o.BackupFilePermissions
-	}
-	if !isNil(o.NotificationManager) {
-		toSerialize["notificationManager"] = o.NotificationManager
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o LdifBackendResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	toSerialize["writabilityMode"] = o.WritabilityMode
+	if !IsNil(o.IsPrivateBackend) {
+		toSerialize["isPrivateBackend"] = o.IsPrivateBackend
+	}
+	toSerialize["ldifFile"] = o.LdifFile
+	toSerialize["backendID"] = o.BackendID
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	toSerialize["baseDN"] = o.BaseDN
+	if !IsNil(o.SetDegradedAlertWhenDisabled) {
+		toSerialize["setDegradedAlertWhenDisabled"] = o.SetDegradedAlertWhenDisabled
+	}
+	if !IsNil(o.ReturnUnavailableWhenDisabled) {
+		toSerialize["returnUnavailableWhenDisabled"] = o.ReturnUnavailableWhenDisabled
+	}
+	if !IsNil(o.BackupFilePermissions) {
+		toSerialize["backupFilePermissions"] = o.BackupFilePermissions
+	}
+	if !IsNil(o.NotificationManager) {
+		toSerialize["notificationManager"] = o.NotificationManager
+	}
+	return toSerialize, nil
 }
 
 type NullableLdifBackendResponse struct {

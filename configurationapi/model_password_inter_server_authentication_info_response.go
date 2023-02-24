@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PasswordInterServerAuthenticationInfoResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PasswordInterServerAuthenticationInfoResponse{}
+
 // PasswordInterServerAuthenticationInfoResponse struct for PasswordInterServerAuthenticationInfoResponse
 type PasswordInterServerAuthenticationInfoResponse struct {
 	Meta                                          *MetaMeta                                            `json:"meta,omitempty"`
@@ -53,7 +56,7 @@ func NewPasswordInterServerAuthenticationInfoResponseWithDefaults() *PasswordInt
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *PasswordInterServerAuthenticationInfoResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -63,7 +66,7 @@ func (o *PasswordInterServerAuthenticationInfoResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PasswordInterServerAuthenticationInfoResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -71,7 +74,7 @@ func (o *PasswordInterServerAuthenticationInfoResponse) GetMetaOk() (*MetaMeta, 
 
 // HasMeta returns a boolean if a field has been set.
 func (o *PasswordInterServerAuthenticationInfoResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -85,7 +88,7 @@ func (o *PasswordInterServerAuthenticationInfoResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *PasswordInterServerAuthenticationInfoResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -95,7 +98,7 @@ func (o *PasswordInterServerAuthenticationInfoResponse) GetUrnpingidentityschema
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PasswordInterServerAuthenticationInfoResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -103,7 +106,7 @@ func (o *PasswordInterServerAuthenticationInfoResponse) GetUrnpingidentityschema
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *PasswordInterServerAuthenticationInfoResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -165,7 +168,7 @@ func (o *PasswordInterServerAuthenticationInfoResponse) SetId(v string) {
 
 // GetAuthenticationType returns the AuthenticationType field value if set, zero value otherwise.
 func (o *PasswordInterServerAuthenticationInfoResponse) GetAuthenticationType() EnuminterServerAuthenticationInfoAuthenticationTypeProp {
-	if o == nil || isNil(o.AuthenticationType) {
+	if o == nil || IsNil(o.AuthenticationType) {
 		var ret EnuminterServerAuthenticationInfoAuthenticationTypeProp
 		return ret
 	}
@@ -175,7 +178,7 @@ func (o *PasswordInterServerAuthenticationInfoResponse) GetAuthenticationType() 
 // GetAuthenticationTypeOk returns a tuple with the AuthenticationType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PasswordInterServerAuthenticationInfoResponse) GetAuthenticationTypeOk() (*EnuminterServerAuthenticationInfoAuthenticationTypeProp, bool) {
-	if o == nil || isNil(o.AuthenticationType) {
+	if o == nil || IsNil(o.AuthenticationType) {
 		return nil, false
 	}
 	return o.AuthenticationType, true
@@ -183,7 +186,7 @@ func (o *PasswordInterServerAuthenticationInfoResponse) GetAuthenticationTypeOk(
 
 // HasAuthenticationType returns a boolean if a field has been set.
 func (o *PasswordInterServerAuthenticationInfoResponse) HasAuthenticationType() bool {
-	if o != nil && !isNil(o.AuthenticationType) {
+	if o != nil && !IsNil(o.AuthenticationType) {
 		return true
 	}
 
@@ -197,7 +200,7 @@ func (o *PasswordInterServerAuthenticationInfoResponse) SetAuthenticationType(v 
 
 // GetBindDN returns the BindDN field value if set, zero value otherwise.
 func (o *PasswordInterServerAuthenticationInfoResponse) GetBindDN() string {
-	if o == nil || isNil(o.BindDN) {
+	if o == nil || IsNil(o.BindDN) {
 		var ret string
 		return ret
 	}
@@ -207,7 +210,7 @@ func (o *PasswordInterServerAuthenticationInfoResponse) GetBindDN() string {
 // GetBindDNOk returns a tuple with the BindDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PasswordInterServerAuthenticationInfoResponse) GetBindDNOk() (*string, bool) {
-	if o == nil || isNil(o.BindDN) {
+	if o == nil || IsNil(o.BindDN) {
 		return nil, false
 	}
 	return o.BindDN, true
@@ -215,7 +218,7 @@ func (o *PasswordInterServerAuthenticationInfoResponse) GetBindDNOk() (*string, 
 
 // HasBindDN returns a boolean if a field has been set.
 func (o *PasswordInterServerAuthenticationInfoResponse) HasBindDN() bool {
-	if o != nil && !isNil(o.BindDN) {
+	if o != nil && !IsNil(o.BindDN) {
 		return true
 	}
 
@@ -229,7 +232,7 @@ func (o *PasswordInterServerAuthenticationInfoResponse) SetBindDN(v string) {
 
 // GetUsername returns the Username field value if set, zero value otherwise.
 func (o *PasswordInterServerAuthenticationInfoResponse) GetUsername() string {
-	if o == nil || isNil(o.Username) {
+	if o == nil || IsNil(o.Username) {
 		var ret string
 		return ret
 	}
@@ -239,7 +242,7 @@ func (o *PasswordInterServerAuthenticationInfoResponse) GetUsername() string {
 // GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PasswordInterServerAuthenticationInfoResponse) GetUsernameOk() (*string, bool) {
-	if o == nil || isNil(o.Username) {
+	if o == nil || IsNil(o.Username) {
 		return nil, false
 	}
 	return o.Username, true
@@ -247,7 +250,7 @@ func (o *PasswordInterServerAuthenticationInfoResponse) GetUsernameOk() (*string
 
 // HasUsername returns a boolean if a field has been set.
 func (o *PasswordInterServerAuthenticationInfoResponse) HasUsername() bool {
-	if o != nil && !isNil(o.Username) {
+	if o != nil && !IsNil(o.Username) {
 		return true
 	}
 
@@ -285,7 +288,7 @@ func (o *PasswordInterServerAuthenticationInfoResponse) SetPassword(v string) {
 
 // GetPurpose returns the Purpose field value if set, zero value otherwise.
 func (o *PasswordInterServerAuthenticationInfoResponse) GetPurpose() []EnuminterServerAuthenticationInfoPurposeProp {
-	if o == nil || isNil(o.Purpose) {
+	if o == nil || IsNil(o.Purpose) {
 		var ret []EnuminterServerAuthenticationInfoPurposeProp
 		return ret
 	}
@@ -295,7 +298,7 @@ func (o *PasswordInterServerAuthenticationInfoResponse) GetPurpose() []Enuminter
 // GetPurposeOk returns a tuple with the Purpose field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PasswordInterServerAuthenticationInfoResponse) GetPurposeOk() ([]EnuminterServerAuthenticationInfoPurposeProp, bool) {
-	if o == nil || isNil(o.Purpose) {
+	if o == nil || IsNil(o.Purpose) {
 		return nil, false
 	}
 	return o.Purpose, true
@@ -303,7 +306,7 @@ func (o *PasswordInterServerAuthenticationInfoResponse) GetPurposeOk() ([]Enumin
 
 // HasPurpose returns a boolean if a field has been set.
 func (o *PasswordInterServerAuthenticationInfoResponse) HasPurpose() bool {
-	if o != nil && !isNil(o.Purpose) {
+	if o != nil && !IsNil(o.Purpose) {
 		return true
 	}
 
@@ -316,35 +319,37 @@ func (o *PasswordInterServerAuthenticationInfoResponse) SetPurpose(v []Enuminter
 }
 
 func (o PasswordInterServerAuthenticationInfoResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.AuthenticationType) {
-		toSerialize["authenticationType"] = o.AuthenticationType
-	}
-	if !isNil(o.BindDN) {
-		toSerialize["bindDN"] = o.BindDN
-	}
-	if !isNil(o.Username) {
-		toSerialize["username"] = o.Username
-	}
-	if true {
-		toSerialize["password"] = o.Password
-	}
-	if !isNil(o.Purpose) {
-		toSerialize["purpose"] = o.Purpose
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PasswordInterServerAuthenticationInfoResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	if !IsNil(o.AuthenticationType) {
+		toSerialize["authenticationType"] = o.AuthenticationType
+	}
+	if !IsNil(o.BindDN) {
+		toSerialize["bindDN"] = o.BindDN
+	}
+	if !IsNil(o.Username) {
+		toSerialize["username"] = o.Username
+	}
+	toSerialize["password"] = o.Password
+	if !IsNil(o.Purpose) {
+		toSerialize["purpose"] = o.Purpose
+	}
+	return toSerialize, nil
 }
 
 type NullablePasswordInterServerAuthenticationInfoResponse struct {

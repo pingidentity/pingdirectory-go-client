@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the RootDseBackendResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &RootDseBackendResponse{}
+
 // RootDseBackendResponse struct for RootDseBackendResponse
 type RootDseBackendResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -49,7 +52,7 @@ func NewRootDseBackendResponseWithDefaults() *RootDseBackendResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *RootDseBackendResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -59,7 +62,7 @@ func (o *RootDseBackendResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDseBackendResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -67,7 +70,7 @@ func (o *RootDseBackendResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *RootDseBackendResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -81,7 +84,7 @@ func (o *RootDseBackendResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *RootDseBackendResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -91,7 +94,7 @@ func (o *RootDseBackendResponse) GetUrnpingidentityschemasconfigurationmessages2
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDseBackendResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -99,7 +102,7 @@ func (o *RootDseBackendResponse) GetUrnpingidentityschemasconfigurationmessages2
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *RootDseBackendResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -113,7 +116,7 @@ func (o *RootDseBackendResponse) SetUrnpingidentityschemasconfigurationmessages2
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *RootDseBackendResponse) GetSchemas() []EnumrootDseBackendSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumrootDseBackendSchemaUrn
 		return ret
 	}
@@ -123,7 +126,7 @@ func (o *RootDseBackendResponse) GetSchemas() []EnumrootDseBackendSchemaUrn {
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDseBackendResponse) GetSchemasOk() ([]EnumrootDseBackendSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -131,7 +134,7 @@ func (o *RootDseBackendResponse) GetSchemasOk() ([]EnumrootDseBackendSchemaUrn, 
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *RootDseBackendResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -145,7 +148,7 @@ func (o *RootDseBackendResponse) SetSchemas(v []EnumrootDseBackendSchemaUrn) {
 
 // GetSubordinateBaseDN returns the SubordinateBaseDN field value if set, zero value otherwise.
 func (o *RootDseBackendResponse) GetSubordinateBaseDN() []string {
-	if o == nil || isNil(o.SubordinateBaseDN) {
+	if o == nil || IsNil(o.SubordinateBaseDN) {
 		var ret []string
 		return ret
 	}
@@ -155,7 +158,7 @@ func (o *RootDseBackendResponse) GetSubordinateBaseDN() []string {
 // GetSubordinateBaseDNOk returns a tuple with the SubordinateBaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDseBackendResponse) GetSubordinateBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.SubordinateBaseDN) {
+	if o == nil || IsNil(o.SubordinateBaseDN) {
 		return nil, false
 	}
 	return o.SubordinateBaseDN, true
@@ -163,7 +166,7 @@ func (o *RootDseBackendResponse) GetSubordinateBaseDNOk() ([]string, bool) {
 
 // HasSubordinateBaseDN returns a boolean if a field has been set.
 func (o *RootDseBackendResponse) HasSubordinateBaseDN() bool {
-	if o != nil && !isNil(o.SubordinateBaseDN) {
+	if o != nil && !IsNil(o.SubordinateBaseDN) {
 		return true
 	}
 
@@ -177,7 +180,7 @@ func (o *RootDseBackendResponse) SetSubordinateBaseDN(v []string) {
 
 // GetAdditionalSupportedControlOID returns the AdditionalSupportedControlOID field value if set, zero value otherwise.
 func (o *RootDseBackendResponse) GetAdditionalSupportedControlOID() []string {
-	if o == nil || isNil(o.AdditionalSupportedControlOID) {
+	if o == nil || IsNil(o.AdditionalSupportedControlOID) {
 		var ret []string
 		return ret
 	}
@@ -187,7 +190,7 @@ func (o *RootDseBackendResponse) GetAdditionalSupportedControlOID() []string {
 // GetAdditionalSupportedControlOIDOk returns a tuple with the AdditionalSupportedControlOID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDseBackendResponse) GetAdditionalSupportedControlOIDOk() ([]string, bool) {
-	if o == nil || isNil(o.AdditionalSupportedControlOID) {
+	if o == nil || IsNil(o.AdditionalSupportedControlOID) {
 		return nil, false
 	}
 	return o.AdditionalSupportedControlOID, true
@@ -195,7 +198,7 @@ func (o *RootDseBackendResponse) GetAdditionalSupportedControlOIDOk() ([]string,
 
 // HasAdditionalSupportedControlOID returns a boolean if a field has been set.
 func (o *RootDseBackendResponse) HasAdditionalSupportedControlOID() bool {
-	if o != nil && !isNil(o.AdditionalSupportedControlOID) {
+	if o != nil && !IsNil(o.AdditionalSupportedControlOID) {
 		return true
 	}
 
@@ -233,7 +236,7 @@ func (o *RootDseBackendResponse) SetShowAllAttributes(v bool) {
 
 // GetUseLegacyVendorVersion returns the UseLegacyVendorVersion field value if set, zero value otherwise.
 func (o *RootDseBackendResponse) GetUseLegacyVendorVersion() bool {
-	if o == nil || isNil(o.UseLegacyVendorVersion) {
+	if o == nil || IsNil(o.UseLegacyVendorVersion) {
 		var ret bool
 		return ret
 	}
@@ -243,7 +246,7 @@ func (o *RootDseBackendResponse) GetUseLegacyVendorVersion() bool {
 // GetUseLegacyVendorVersionOk returns a tuple with the UseLegacyVendorVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDseBackendResponse) GetUseLegacyVendorVersionOk() (*bool, bool) {
-	if o == nil || isNil(o.UseLegacyVendorVersion) {
+	if o == nil || IsNil(o.UseLegacyVendorVersion) {
 		return nil, false
 	}
 	return o.UseLegacyVendorVersion, true
@@ -251,7 +254,7 @@ func (o *RootDseBackendResponse) GetUseLegacyVendorVersionOk() (*bool, bool) {
 
 // HasUseLegacyVendorVersion returns a boolean if a field has been set.
 func (o *RootDseBackendResponse) HasUseLegacyVendorVersion() bool {
-	if o != nil && !isNil(o.UseLegacyVendorVersion) {
+	if o != nil && !IsNil(o.UseLegacyVendorVersion) {
 		return true
 	}
 
@@ -264,29 +267,35 @@ func (o *RootDseBackendResponse) SetUseLegacyVendorVersion(v bool) {
 }
 
 func (o RootDseBackendResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.SubordinateBaseDN) {
-		toSerialize["subordinateBaseDN"] = o.SubordinateBaseDN
-	}
-	if !isNil(o.AdditionalSupportedControlOID) {
-		toSerialize["additionalSupportedControlOID"] = o.AdditionalSupportedControlOID
-	}
-	if true {
-		toSerialize["showAllAttributes"] = o.ShowAllAttributes
-	}
-	if !isNil(o.UseLegacyVendorVersion) {
-		toSerialize["useLegacyVendorVersion"] = o.UseLegacyVendorVersion
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o RootDseBackendResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.SubordinateBaseDN) {
+		toSerialize["subordinateBaseDN"] = o.SubordinateBaseDN
+	}
+	if !IsNil(o.AdditionalSupportedControlOID) {
+		toSerialize["additionalSupportedControlOID"] = o.AdditionalSupportedControlOID
+	}
+	toSerialize["showAllAttributes"] = o.ShowAllAttributes
+	if !IsNil(o.UseLegacyVendorVersion) {
+		toSerialize["useLegacyVendorVersion"] = o.UseLegacyVendorVersion
+	}
+	return toSerialize, nil
 }
 
 type NullableRootDseBackendResponse struct {

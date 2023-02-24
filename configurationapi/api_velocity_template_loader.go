@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -71,7 +71,7 @@ func (a *VelocityTemplateLoaderApiService) AddVelocityTemplateLoaderExecute(r Ap
 	}
 
 	localVarPath := localBasePath + "/http-servlet-extensions/{http-servlet-extension-name}/velocity-template-loaders"
-	localVarPath = strings.Replace(localVarPath, "{"+"http-servlet-extension-name"+"}", url.PathEscape(parameterToString(r.httpServletExtensionName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"http-servlet-extension-name"+"}", url.PathEscape(parameterValueToString(r.httpServletExtensionName, "httpServletExtensionName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -109,9 +109,9 @@ func (a *VelocityTemplateLoaderApiService) AddVelocityTemplateLoaderExecute(r Ap
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -178,8 +178,8 @@ func (a *VelocityTemplateLoaderApiService) DeleteVelocityTemplateLoaderExecute(r
 	}
 
 	localVarPath := localBasePath + "/http-servlet-extensions/{http-servlet-extension-name}/velocity-template-loaders/{velocity-template-loader-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"velocity-template-loader-name"+"}", url.PathEscape(parameterToString(r.velocityTemplateLoaderName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"http-servlet-extension-name"+"}", url.PathEscape(parameterToString(r.httpServletExtensionName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"velocity-template-loader-name"+"}", url.PathEscape(parameterValueToString(r.velocityTemplateLoaderName, "velocityTemplateLoaderName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"http-servlet-extension-name"+"}", url.PathEscape(parameterValueToString(r.httpServletExtensionName, "httpServletExtensionName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -212,9 +212,9 @@ func (a *VelocityTemplateLoaderApiService) DeleteVelocityTemplateLoaderExecute(r
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -275,8 +275,8 @@ func (a *VelocityTemplateLoaderApiService) GetVelocityTemplateLoaderExecute(r Ap
 	}
 
 	localVarPath := localBasePath + "/http-servlet-extensions/{http-servlet-extension-name}/velocity-template-loaders/{velocity-template-loader-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"velocity-template-loader-name"+"}", url.PathEscape(parameterToString(r.velocityTemplateLoaderName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"http-servlet-extension-name"+"}", url.PathEscape(parameterToString(r.httpServletExtensionName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"velocity-template-loader-name"+"}", url.PathEscape(parameterValueToString(r.velocityTemplateLoaderName, "velocityTemplateLoaderName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"http-servlet-extension-name"+"}", url.PathEscape(parameterValueToString(r.httpServletExtensionName, "httpServletExtensionName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -309,9 +309,9 @@ func (a *VelocityTemplateLoaderApiService) GetVelocityTemplateLoaderExecute(r Ap
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -388,8 +388,8 @@ func (a *VelocityTemplateLoaderApiService) UpdateVelocityTemplateLoaderExecute(r
 	}
 
 	localVarPath := localBasePath + "/http-servlet-extensions/{http-servlet-extension-name}/velocity-template-loaders/{velocity-template-loader-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"velocity-template-loader-name"+"}", url.PathEscape(parameterToString(r.velocityTemplateLoaderName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"http-servlet-extension-name"+"}", url.PathEscape(parameterToString(r.httpServletExtensionName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"velocity-template-loader-name"+"}", url.PathEscape(parameterValueToString(r.velocityTemplateLoaderName, "velocityTemplateLoaderName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"http-servlet-extension-name"+"}", url.PathEscape(parameterValueToString(r.httpServletExtensionName, "httpServletExtensionName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -427,9 +427,9 @@ func (a *VelocityTemplateLoaderApiService) UpdateVelocityTemplateLoaderExecute(r
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

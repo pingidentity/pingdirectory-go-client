@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ThirdPartyErrorLogPublisherResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ThirdPartyErrorLogPublisherResponse{}
+
 // ThirdPartyErrorLogPublisherResponse struct for ThirdPartyErrorLogPublisherResponse
 type ThirdPartyErrorLogPublisherResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -58,7 +61,7 @@ func NewThirdPartyErrorLogPublisherResponseWithDefaults() *ThirdPartyErrorLogPub
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *ThirdPartyErrorLogPublisherResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -68,7 +71,7 @@ func (o *ThirdPartyErrorLogPublisherResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyErrorLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -76,7 +79,7 @@ func (o *ThirdPartyErrorLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *ThirdPartyErrorLogPublisherResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -90,7 +93,7 @@ func (o *ThirdPartyErrorLogPublisherResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *ThirdPartyErrorLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -100,7 +103,7 @@ func (o *ThirdPartyErrorLogPublisherResponse) GetUrnpingidentityschemasconfigura
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyErrorLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -108,7 +111,7 @@ func (o *ThirdPartyErrorLogPublisherResponse) GetUrnpingidentityschemasconfigura
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *ThirdPartyErrorLogPublisherResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -194,7 +197,7 @@ func (o *ThirdPartyErrorLogPublisherResponse) SetExtensionClass(v string) {
 
 // GetExtensionArgument returns the ExtensionArgument field value if set, zero value otherwise.
 func (o *ThirdPartyErrorLogPublisherResponse) GetExtensionArgument() []string {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		var ret []string
 		return ret
 	}
@@ -204,7 +207,7 @@ func (o *ThirdPartyErrorLogPublisherResponse) GetExtensionArgument() []string {
 // GetExtensionArgumentOk returns a tuple with the ExtensionArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyErrorLogPublisherResponse) GetExtensionArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		return nil, false
 	}
 	return o.ExtensionArgument, true
@@ -212,7 +215,7 @@ func (o *ThirdPartyErrorLogPublisherResponse) GetExtensionArgumentOk() ([]string
 
 // HasExtensionArgument returns a boolean if a field has been set.
 func (o *ThirdPartyErrorLogPublisherResponse) HasExtensionArgument() bool {
-	if o != nil && !isNil(o.ExtensionArgument) {
+	if o != nil && !IsNil(o.ExtensionArgument) {
 		return true
 	}
 
@@ -226,7 +229,7 @@ func (o *ThirdPartyErrorLogPublisherResponse) SetExtensionArgument(v []string) {
 
 // GetDefaultSeverity returns the DefaultSeverity field value if set, zero value otherwise.
 func (o *ThirdPartyErrorLogPublisherResponse) GetDefaultSeverity() []EnumlogPublisherDefaultSeverityProp {
-	if o == nil || isNil(o.DefaultSeverity) {
+	if o == nil || IsNil(o.DefaultSeverity) {
 		var ret []EnumlogPublisherDefaultSeverityProp
 		return ret
 	}
@@ -236,7 +239,7 @@ func (o *ThirdPartyErrorLogPublisherResponse) GetDefaultSeverity() []EnumlogPubl
 // GetDefaultSeverityOk returns a tuple with the DefaultSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyErrorLogPublisherResponse) GetDefaultSeverityOk() ([]EnumlogPublisherDefaultSeverityProp, bool) {
-	if o == nil || isNil(o.DefaultSeverity) {
+	if o == nil || IsNil(o.DefaultSeverity) {
 		return nil, false
 	}
 	return o.DefaultSeverity, true
@@ -244,7 +247,7 @@ func (o *ThirdPartyErrorLogPublisherResponse) GetDefaultSeverityOk() ([]EnumlogP
 
 // HasDefaultSeverity returns a boolean if a field has been set.
 func (o *ThirdPartyErrorLogPublisherResponse) HasDefaultSeverity() bool {
-	if o != nil && !isNil(o.DefaultSeverity) {
+	if o != nil && !IsNil(o.DefaultSeverity) {
 		return true
 	}
 
@@ -258,7 +261,7 @@ func (o *ThirdPartyErrorLogPublisherResponse) SetDefaultSeverity(v []EnumlogPubl
 
 // GetOverrideSeverity returns the OverrideSeverity field value if set, zero value otherwise.
 func (o *ThirdPartyErrorLogPublisherResponse) GetOverrideSeverity() []string {
-	if o == nil || isNil(o.OverrideSeverity) {
+	if o == nil || IsNil(o.OverrideSeverity) {
 		var ret []string
 		return ret
 	}
@@ -268,7 +271,7 @@ func (o *ThirdPartyErrorLogPublisherResponse) GetOverrideSeverity() []string {
 // GetOverrideSeverityOk returns a tuple with the OverrideSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyErrorLogPublisherResponse) GetOverrideSeverityOk() ([]string, bool) {
-	if o == nil || isNil(o.OverrideSeverity) {
+	if o == nil || IsNil(o.OverrideSeverity) {
 		return nil, false
 	}
 	return o.OverrideSeverity, true
@@ -276,7 +279,7 @@ func (o *ThirdPartyErrorLogPublisherResponse) GetOverrideSeverityOk() ([]string,
 
 // HasOverrideSeverity returns a boolean if a field has been set.
 func (o *ThirdPartyErrorLogPublisherResponse) HasOverrideSeverity() bool {
-	if o != nil && !isNil(o.OverrideSeverity) {
+	if o != nil && !IsNil(o.OverrideSeverity) {
 		return true
 	}
 
@@ -290,7 +293,7 @@ func (o *ThirdPartyErrorLogPublisherResponse) SetOverrideSeverity(v []string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *ThirdPartyErrorLogPublisherResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -300,7 +303,7 @@ func (o *ThirdPartyErrorLogPublisherResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyErrorLogPublisherResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -308,7 +311,7 @@ func (o *ThirdPartyErrorLogPublisherResponse) GetDescriptionOk() (*string, bool)
 
 // HasDescription returns a boolean if a field has been set.
 func (o *ThirdPartyErrorLogPublisherResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -346,7 +349,7 @@ func (o *ThirdPartyErrorLogPublisherResponse) SetEnabled(v bool) {
 
 // GetLoggingErrorBehavior returns the LoggingErrorBehavior field value if set, zero value otherwise.
 func (o *ThirdPartyErrorLogPublisherResponse) GetLoggingErrorBehavior() EnumlogPublisherLoggingErrorBehaviorProp {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		var ret EnumlogPublisherLoggingErrorBehaviorProp
 		return ret
 	}
@@ -356,7 +359,7 @@ func (o *ThirdPartyErrorLogPublisherResponse) GetLoggingErrorBehavior() EnumlogP
 // GetLoggingErrorBehaviorOk returns a tuple with the LoggingErrorBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyErrorLogPublisherResponse) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
@@ -364,7 +367,7 @@ func (o *ThirdPartyErrorLogPublisherResponse) GetLoggingErrorBehaviorOk() (*Enum
 
 // HasLoggingErrorBehavior returns a boolean if a field has been set.
 func (o *ThirdPartyErrorLogPublisherResponse) HasLoggingErrorBehavior() bool {
-	if o != nil && !isNil(o.LoggingErrorBehavior) {
+	if o != nil && !IsNil(o.LoggingErrorBehavior) {
 		return true
 	}
 
@@ -377,41 +380,41 @@ func (o *ThirdPartyErrorLogPublisherResponse) SetLoggingErrorBehavior(v EnumlogP
 }
 
 func (o ThirdPartyErrorLogPublisherResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["extensionClass"] = o.ExtensionClass
-	}
-	if !isNil(o.ExtensionArgument) {
-		toSerialize["extensionArgument"] = o.ExtensionArgument
-	}
-	if !isNil(o.DefaultSeverity) {
-		toSerialize["defaultSeverity"] = o.DefaultSeverity
-	}
-	if !isNil(o.OverrideSeverity) {
-		toSerialize["overrideSeverity"] = o.OverrideSeverity
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.LoggingErrorBehavior) {
-		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ThirdPartyErrorLogPublisherResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["extensionClass"] = o.ExtensionClass
+	if !IsNil(o.ExtensionArgument) {
+		toSerialize["extensionArgument"] = o.ExtensionArgument
+	}
+	if !IsNil(o.DefaultSeverity) {
+		toSerialize["defaultSeverity"] = o.DefaultSeverity
+	}
+	if !IsNil(o.OverrideSeverity) {
+		toSerialize["overrideSeverity"] = o.OverrideSeverity
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.LoggingErrorBehavior) {
+		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	}
+	return toSerialize, nil
 }
 
 type NullableThirdPartyErrorLogPublisherResponse struct {

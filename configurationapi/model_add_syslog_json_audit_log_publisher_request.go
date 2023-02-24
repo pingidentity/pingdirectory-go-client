@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddSyslogJsonAuditLogPublisherRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddSyslogJsonAuditLogPublisherRequest{}
+
 // AddSyslogJsonAuditLogPublisherRequest struct for AddSyslogJsonAuditLogPublisherRequest
 type AddSyslogJsonAuditLogPublisherRequest struct {
 	// Name of the new Log Publisher
@@ -174,7 +177,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetSyslogExternalServer(v []stri
 
 // GetSyslogFacility returns the SyslogFacility field value if set, zero value otherwise.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetSyslogFacility() EnumlogPublisherSyslogFacilityProp {
-	if o == nil || isNil(o.SyslogFacility) {
+	if o == nil || IsNil(o.SyslogFacility) {
 		var ret EnumlogPublisherSyslogFacilityProp
 		return ret
 	}
@@ -184,7 +187,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetSyslogFacility() EnumlogPubli
 // GetSyslogFacilityOk returns a tuple with the SyslogFacility field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetSyslogFacilityOk() (*EnumlogPublisherSyslogFacilityProp, bool) {
-	if o == nil || isNil(o.SyslogFacility) {
+	if o == nil || IsNil(o.SyslogFacility) {
 		return nil, false
 	}
 	return o.SyslogFacility, true
@@ -192,7 +195,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetSyslogFacilityOk() (*EnumlogP
 
 // HasSyslogFacility returns a boolean if a field has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) HasSyslogFacility() bool {
-	if o != nil && !isNil(o.SyslogFacility) {
+	if o != nil && !IsNil(o.SyslogFacility) {
 		return true
 	}
 
@@ -206,7 +209,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetSyslogFacility(v EnumlogPubli
 
 // GetSyslogSeverity returns the SyslogSeverity field value if set, zero value otherwise.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetSyslogSeverity() EnumlogPublisherSyslogSeverityProp {
-	if o == nil || isNil(o.SyslogSeverity) {
+	if o == nil || IsNil(o.SyslogSeverity) {
 		var ret EnumlogPublisherSyslogSeverityProp
 		return ret
 	}
@@ -216,7 +219,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetSyslogSeverity() EnumlogPubli
 // GetSyslogSeverityOk returns a tuple with the SyslogSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetSyslogSeverityOk() (*EnumlogPublisherSyslogSeverityProp, bool) {
-	if o == nil || isNil(o.SyslogSeverity) {
+	if o == nil || IsNil(o.SyslogSeverity) {
 		return nil, false
 	}
 	return o.SyslogSeverity, true
@@ -224,7 +227,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetSyslogSeverityOk() (*EnumlogP
 
 // HasSyslogSeverity returns a boolean if a field has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) HasSyslogSeverity() bool {
-	if o != nil && !isNil(o.SyslogSeverity) {
+	if o != nil && !IsNil(o.SyslogSeverity) {
 		return true
 	}
 
@@ -238,7 +241,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetSyslogSeverity(v EnumlogPubli
 
 // GetSyslogMessageHostName returns the SyslogMessageHostName field value if set, zero value otherwise.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetSyslogMessageHostName() string {
-	if o == nil || isNil(o.SyslogMessageHostName) {
+	if o == nil || IsNil(o.SyslogMessageHostName) {
 		var ret string
 		return ret
 	}
@@ -248,7 +251,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetSyslogMessageHostName() strin
 // GetSyslogMessageHostNameOk returns a tuple with the SyslogMessageHostName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetSyslogMessageHostNameOk() (*string, bool) {
-	if o == nil || isNil(o.SyslogMessageHostName) {
+	if o == nil || IsNil(o.SyslogMessageHostName) {
 		return nil, false
 	}
 	return o.SyslogMessageHostName, true
@@ -256,7 +259,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetSyslogMessageHostNameOk() (*s
 
 // HasSyslogMessageHostName returns a boolean if a field has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) HasSyslogMessageHostName() bool {
-	if o != nil && !isNil(o.SyslogMessageHostName) {
+	if o != nil && !IsNil(o.SyslogMessageHostName) {
 		return true
 	}
 
@@ -270,7 +273,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetSyslogMessageHostName(v strin
 
 // GetSyslogMessageApplicationName returns the SyslogMessageApplicationName field value if set, zero value otherwise.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetSyslogMessageApplicationName() string {
-	if o == nil || isNil(o.SyslogMessageApplicationName) {
+	if o == nil || IsNil(o.SyslogMessageApplicationName) {
 		var ret string
 		return ret
 	}
@@ -280,7 +283,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetSyslogMessageApplicationName(
 // GetSyslogMessageApplicationNameOk returns a tuple with the SyslogMessageApplicationName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetSyslogMessageApplicationNameOk() (*string, bool) {
-	if o == nil || isNil(o.SyslogMessageApplicationName) {
+	if o == nil || IsNil(o.SyslogMessageApplicationName) {
 		return nil, false
 	}
 	return o.SyslogMessageApplicationName, true
@@ -288,7 +291,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetSyslogMessageApplicationNameO
 
 // HasSyslogMessageApplicationName returns a boolean if a field has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) HasSyslogMessageApplicationName() bool {
-	if o != nil && !isNil(o.SyslogMessageApplicationName) {
+	if o != nil && !IsNil(o.SyslogMessageApplicationName) {
 		return true
 	}
 
@@ -302,7 +305,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetSyslogMessageApplicationName(
 
 // GetQueueSize returns the QueueSize field value if set, zero value otherwise.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetQueueSize() int32 {
-	if o == nil || isNil(o.QueueSize) {
+	if o == nil || IsNil(o.QueueSize) {
 		var ret int32
 		return ret
 	}
@@ -312,7 +315,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetQueueSize() int32 {
 // GetQueueSizeOk returns a tuple with the QueueSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetQueueSizeOk() (*int32, bool) {
-	if o == nil || isNil(o.QueueSize) {
+	if o == nil || IsNil(o.QueueSize) {
 		return nil, false
 	}
 	return o.QueueSize, true
@@ -320,7 +323,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetQueueSizeOk() (*int32, bool) 
 
 // HasQueueSize returns a boolean if a field has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) HasQueueSize() bool {
-	if o != nil && !isNil(o.QueueSize) {
+	if o != nil && !IsNil(o.QueueSize) {
 		return true
 	}
 
@@ -334,7 +337,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetQueueSize(v int32) {
 
 // GetWriteMultiLineMessages returns the WriteMultiLineMessages field value if set, zero value otherwise.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetWriteMultiLineMessages() bool {
-	if o == nil || isNil(o.WriteMultiLineMessages) {
+	if o == nil || IsNil(o.WriteMultiLineMessages) {
 		var ret bool
 		return ret
 	}
@@ -344,7 +347,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetWriteMultiLineMessages() bool
 // GetWriteMultiLineMessagesOk returns a tuple with the WriteMultiLineMessages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetWriteMultiLineMessagesOk() (*bool, bool) {
-	if o == nil || isNil(o.WriteMultiLineMessages) {
+	if o == nil || IsNil(o.WriteMultiLineMessages) {
 		return nil, false
 	}
 	return o.WriteMultiLineMessages, true
@@ -352,7 +355,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetWriteMultiLineMessagesOk() (*
 
 // HasWriteMultiLineMessages returns a boolean if a field has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) HasWriteMultiLineMessages() bool {
-	if o != nil && !isNil(o.WriteMultiLineMessages) {
+	if o != nil && !IsNil(o.WriteMultiLineMessages) {
 		return true
 	}
 
@@ -366,7 +369,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetWriteMultiLineMessages(v bool
 
 // GetUseReversibleForm returns the UseReversibleForm field value if set, zero value otherwise.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetUseReversibleForm() bool {
-	if o == nil || isNil(o.UseReversibleForm) {
+	if o == nil || IsNil(o.UseReversibleForm) {
 		var ret bool
 		return ret
 	}
@@ -376,7 +379,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetUseReversibleForm() bool {
 // GetUseReversibleFormOk returns a tuple with the UseReversibleForm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetUseReversibleFormOk() (*bool, bool) {
-	if o == nil || isNil(o.UseReversibleForm) {
+	if o == nil || IsNil(o.UseReversibleForm) {
 		return nil, false
 	}
 	return o.UseReversibleForm, true
@@ -384,7 +387,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetUseReversibleFormOk() (*bool,
 
 // HasUseReversibleForm returns a boolean if a field has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) HasUseReversibleForm() bool {
-	if o != nil && !isNil(o.UseReversibleForm) {
+	if o != nil && !IsNil(o.UseReversibleForm) {
 		return true
 	}
 
@@ -398,7 +401,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetUseReversibleForm(v bool) {
 
 // GetSoftDeleteEntryAuditBehavior returns the SoftDeleteEntryAuditBehavior field value if set, zero value otherwise.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetSoftDeleteEntryAuditBehavior() EnumlogPublisherSoftDeleteEntryAuditBehaviorProp {
-	if o == nil || isNil(o.SoftDeleteEntryAuditBehavior) {
+	if o == nil || IsNil(o.SoftDeleteEntryAuditBehavior) {
 		var ret EnumlogPublisherSoftDeleteEntryAuditBehaviorProp
 		return ret
 	}
@@ -408,7 +411,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetSoftDeleteEntryAuditBehavior(
 // GetSoftDeleteEntryAuditBehaviorOk returns a tuple with the SoftDeleteEntryAuditBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetSoftDeleteEntryAuditBehaviorOk() (*EnumlogPublisherSoftDeleteEntryAuditBehaviorProp, bool) {
-	if o == nil || isNil(o.SoftDeleteEntryAuditBehavior) {
+	if o == nil || IsNil(o.SoftDeleteEntryAuditBehavior) {
 		return nil, false
 	}
 	return o.SoftDeleteEntryAuditBehavior, true
@@ -416,7 +419,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetSoftDeleteEntryAuditBehaviorO
 
 // HasSoftDeleteEntryAuditBehavior returns a boolean if a field has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) HasSoftDeleteEntryAuditBehavior() bool {
-	if o != nil && !isNil(o.SoftDeleteEntryAuditBehavior) {
+	if o != nil && !IsNil(o.SoftDeleteEntryAuditBehavior) {
 		return true
 	}
 
@@ -430,7 +433,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetSoftDeleteEntryAuditBehavior(
 
 // GetIncludeOperationPurposeRequestControl returns the IncludeOperationPurposeRequestControl field value if set, zero value otherwise.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeOperationPurposeRequestControl() bool {
-	if o == nil || isNil(o.IncludeOperationPurposeRequestControl) {
+	if o == nil || IsNil(o.IncludeOperationPurposeRequestControl) {
 		var ret bool
 		return ret
 	}
@@ -440,7 +443,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeOperationPurposeReques
 // GetIncludeOperationPurposeRequestControlOk returns a tuple with the IncludeOperationPurposeRequestControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeOperationPurposeRequestControlOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeOperationPurposeRequestControl) {
+	if o == nil || IsNil(o.IncludeOperationPurposeRequestControl) {
 		return nil, false
 	}
 	return o.IncludeOperationPurposeRequestControl, true
@@ -448,7 +451,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeOperationPurposeReques
 
 // HasIncludeOperationPurposeRequestControl returns a boolean if a field has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) HasIncludeOperationPurposeRequestControl() bool {
-	if o != nil && !isNil(o.IncludeOperationPurposeRequestControl) {
+	if o != nil && !IsNil(o.IncludeOperationPurposeRequestControl) {
 		return true
 	}
 
@@ -462,7 +465,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetIncludeOperationPurposeReques
 
 // GetIncludeIntermediateClientRequestControl returns the IncludeIntermediateClientRequestControl field value if set, zero value otherwise.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeIntermediateClientRequestControl() bool {
-	if o == nil || isNil(o.IncludeIntermediateClientRequestControl) {
+	if o == nil || IsNil(o.IncludeIntermediateClientRequestControl) {
 		var ret bool
 		return ret
 	}
@@ -472,7 +475,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeIntermediateClientRequ
 // GetIncludeIntermediateClientRequestControlOk returns a tuple with the IncludeIntermediateClientRequestControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeIntermediateClientRequestControlOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeIntermediateClientRequestControl) {
+	if o == nil || IsNil(o.IncludeIntermediateClientRequestControl) {
 		return nil, false
 	}
 	return o.IncludeIntermediateClientRequestControl, true
@@ -480,7 +483,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeIntermediateClientRequ
 
 // HasIncludeIntermediateClientRequestControl returns a boolean if a field has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) HasIncludeIntermediateClientRequestControl() bool {
-	if o != nil && !isNil(o.IncludeIntermediateClientRequestControl) {
+	if o != nil && !IsNil(o.IncludeIntermediateClientRequestControl) {
 		return true
 	}
 
@@ -494,7 +497,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetIncludeIntermediateClientRequ
 
 // GetObscureAttribute returns the ObscureAttribute field value if set, zero value otherwise.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetObscureAttribute() []string {
-	if o == nil || isNil(o.ObscureAttribute) {
+	if o == nil || IsNil(o.ObscureAttribute) {
 		var ret []string
 		return ret
 	}
@@ -504,7 +507,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetObscureAttribute() []string {
 // GetObscureAttributeOk returns a tuple with the ObscureAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetObscureAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.ObscureAttribute) {
+	if o == nil || IsNil(o.ObscureAttribute) {
 		return nil, false
 	}
 	return o.ObscureAttribute, true
@@ -512,7 +515,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetObscureAttributeOk() ([]strin
 
 // HasObscureAttribute returns a boolean if a field has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) HasObscureAttribute() bool {
-	if o != nil && !isNil(o.ObscureAttribute) {
+	if o != nil && !IsNil(o.ObscureAttribute) {
 		return true
 	}
 
@@ -526,7 +529,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetObscureAttribute(v []string) 
 
 // GetExcludeAttribute returns the ExcludeAttribute field value if set, zero value otherwise.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetExcludeAttribute() []string {
-	if o == nil || isNil(o.ExcludeAttribute) {
+	if o == nil || IsNil(o.ExcludeAttribute) {
 		var ret []string
 		return ret
 	}
@@ -536,7 +539,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetExcludeAttribute() []string {
 // GetExcludeAttributeOk returns a tuple with the ExcludeAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetExcludeAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludeAttribute) {
+	if o == nil || IsNil(o.ExcludeAttribute) {
 		return nil, false
 	}
 	return o.ExcludeAttribute, true
@@ -544,7 +547,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetExcludeAttributeOk() ([]strin
 
 // HasExcludeAttribute returns a boolean if a field has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) HasExcludeAttribute() bool {
-	if o != nil && !isNil(o.ExcludeAttribute) {
+	if o != nil && !IsNil(o.ExcludeAttribute) {
 		return true
 	}
 
@@ -558,7 +561,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetExcludeAttribute(v []string) 
 
 // GetSuppressInternalOperations returns the SuppressInternalOperations field value if set, zero value otherwise.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetSuppressInternalOperations() bool {
-	if o == nil || isNil(o.SuppressInternalOperations) {
+	if o == nil || IsNil(o.SuppressInternalOperations) {
 		var ret bool
 		return ret
 	}
@@ -568,7 +571,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetSuppressInternalOperations() 
 // GetSuppressInternalOperationsOk returns a tuple with the SuppressInternalOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetSuppressInternalOperationsOk() (*bool, bool) {
-	if o == nil || isNil(o.SuppressInternalOperations) {
+	if o == nil || IsNil(o.SuppressInternalOperations) {
 		return nil, false
 	}
 	return o.SuppressInternalOperations, true
@@ -576,7 +579,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetSuppressInternalOperationsOk(
 
 // HasSuppressInternalOperations returns a boolean if a field has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) HasSuppressInternalOperations() bool {
-	if o != nil && !isNil(o.SuppressInternalOperations) {
+	if o != nil && !IsNil(o.SuppressInternalOperations) {
 		return true
 	}
 
@@ -590,7 +593,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetSuppressInternalOperations(v 
 
 // GetIncludeProductName returns the IncludeProductName field value if set, zero value otherwise.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeProductName() bool {
-	if o == nil || isNil(o.IncludeProductName) {
+	if o == nil || IsNil(o.IncludeProductName) {
 		var ret bool
 		return ret
 	}
@@ -600,7 +603,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeProductName() bool {
 // GetIncludeProductNameOk returns a tuple with the IncludeProductName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeProductNameOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeProductName) {
+	if o == nil || IsNil(o.IncludeProductName) {
 		return nil, false
 	}
 	return o.IncludeProductName, true
@@ -608,7 +611,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeProductNameOk() (*bool
 
 // HasIncludeProductName returns a boolean if a field has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) HasIncludeProductName() bool {
-	if o != nil && !isNil(o.IncludeProductName) {
+	if o != nil && !IsNil(o.IncludeProductName) {
 		return true
 	}
 
@@ -622,7 +625,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetIncludeProductName(v bool) {
 
 // GetIncludeInstanceName returns the IncludeInstanceName field value if set, zero value otherwise.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeInstanceName() bool {
-	if o == nil || isNil(o.IncludeInstanceName) {
+	if o == nil || IsNil(o.IncludeInstanceName) {
 		var ret bool
 		return ret
 	}
@@ -632,7 +635,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeInstanceName() bool {
 // GetIncludeInstanceNameOk returns a tuple with the IncludeInstanceName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeInstanceNameOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeInstanceName) {
+	if o == nil || IsNil(o.IncludeInstanceName) {
 		return nil, false
 	}
 	return o.IncludeInstanceName, true
@@ -640,7 +643,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeInstanceNameOk() (*boo
 
 // HasIncludeInstanceName returns a boolean if a field has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) HasIncludeInstanceName() bool {
-	if o != nil && !isNil(o.IncludeInstanceName) {
+	if o != nil && !IsNil(o.IncludeInstanceName) {
 		return true
 	}
 
@@ -654,7 +657,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetIncludeInstanceName(v bool) {
 
 // GetIncludeStartupID returns the IncludeStartupID field value if set, zero value otherwise.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeStartupID() bool {
-	if o == nil || isNil(o.IncludeStartupID) {
+	if o == nil || IsNil(o.IncludeStartupID) {
 		var ret bool
 		return ret
 	}
@@ -664,7 +667,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeStartupID() bool {
 // GetIncludeStartupIDOk returns a tuple with the IncludeStartupID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeStartupIDOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeStartupID) {
+	if o == nil || IsNil(o.IncludeStartupID) {
 		return nil, false
 	}
 	return o.IncludeStartupID, true
@@ -672,7 +675,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeStartupIDOk() (*bool, 
 
 // HasIncludeStartupID returns a boolean if a field has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) HasIncludeStartupID() bool {
-	if o != nil && !isNil(o.IncludeStartupID) {
+	if o != nil && !IsNil(o.IncludeStartupID) {
 		return true
 	}
 
@@ -686,7 +689,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetIncludeStartupID(v bool) {
 
 // GetIncludeThreadID returns the IncludeThreadID field value if set, zero value otherwise.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeThreadID() bool {
-	if o == nil || isNil(o.IncludeThreadID) {
+	if o == nil || IsNil(o.IncludeThreadID) {
 		var ret bool
 		return ret
 	}
@@ -696,7 +699,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeThreadID() bool {
 // GetIncludeThreadIDOk returns a tuple with the IncludeThreadID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeThreadIDOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeThreadID) {
+	if o == nil || IsNil(o.IncludeThreadID) {
 		return nil, false
 	}
 	return o.IncludeThreadID, true
@@ -704,7 +707,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeThreadIDOk() (*bool, b
 
 // HasIncludeThreadID returns a boolean if a field has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) HasIncludeThreadID() bool {
-	if o != nil && !isNil(o.IncludeThreadID) {
+	if o != nil && !IsNil(o.IncludeThreadID) {
 		return true
 	}
 
@@ -718,7 +721,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetIncludeThreadID(v bool) {
 
 // GetIncludeRequesterDN returns the IncludeRequesterDN field value if set, zero value otherwise.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeRequesterDN() bool {
-	if o == nil || isNil(o.IncludeRequesterDN) {
+	if o == nil || IsNil(o.IncludeRequesterDN) {
 		var ret bool
 		return ret
 	}
@@ -728,7 +731,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeRequesterDN() bool {
 // GetIncludeRequesterDNOk returns a tuple with the IncludeRequesterDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeRequesterDNOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeRequesterDN) {
+	if o == nil || IsNil(o.IncludeRequesterDN) {
 		return nil, false
 	}
 	return o.IncludeRequesterDN, true
@@ -736,7 +739,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeRequesterDNOk() (*bool
 
 // HasIncludeRequesterDN returns a boolean if a field has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) HasIncludeRequesterDN() bool {
-	if o != nil && !isNil(o.IncludeRequesterDN) {
+	if o != nil && !IsNil(o.IncludeRequesterDN) {
 		return true
 	}
 
@@ -750,7 +753,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetIncludeRequesterDN(v bool) {
 
 // GetIncludeRequesterIPAddress returns the IncludeRequesterIPAddress field value if set, zero value otherwise.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeRequesterIPAddress() bool {
-	if o == nil || isNil(o.IncludeRequesterIPAddress) {
+	if o == nil || IsNil(o.IncludeRequesterIPAddress) {
 		var ret bool
 		return ret
 	}
@@ -760,7 +763,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeRequesterIPAddress() b
 // GetIncludeRequesterIPAddressOk returns a tuple with the IncludeRequesterIPAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeRequesterIPAddressOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeRequesterIPAddress) {
+	if o == nil || IsNil(o.IncludeRequesterIPAddress) {
 		return nil, false
 	}
 	return o.IncludeRequesterIPAddress, true
@@ -768,7 +771,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeRequesterIPAddressOk()
 
 // HasIncludeRequesterIPAddress returns a boolean if a field has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) HasIncludeRequesterIPAddress() bool {
-	if o != nil && !isNil(o.IncludeRequesterIPAddress) {
+	if o != nil && !IsNil(o.IncludeRequesterIPAddress) {
 		return true
 	}
 
@@ -782,7 +785,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetIncludeRequesterIPAddress(v b
 
 // GetIncludeRequestControls returns the IncludeRequestControls field value if set, zero value otherwise.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeRequestControls() bool {
-	if o == nil || isNil(o.IncludeRequestControls) {
+	if o == nil || IsNil(o.IncludeRequestControls) {
 		var ret bool
 		return ret
 	}
@@ -792,7 +795,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeRequestControls() bool
 // GetIncludeRequestControlsOk returns a tuple with the IncludeRequestControls field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeRequestControlsOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeRequestControls) {
+	if o == nil || IsNil(o.IncludeRequestControls) {
 		return nil, false
 	}
 	return o.IncludeRequestControls, true
@@ -800,7 +803,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeRequestControlsOk() (*
 
 // HasIncludeRequestControls returns a boolean if a field has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) HasIncludeRequestControls() bool {
-	if o != nil && !isNil(o.IncludeRequestControls) {
+	if o != nil && !IsNil(o.IncludeRequestControls) {
 		return true
 	}
 
@@ -814,7 +817,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetIncludeRequestControls(v bool
 
 // GetIncludeResponseControls returns the IncludeResponseControls field value if set, zero value otherwise.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeResponseControls() bool {
-	if o == nil || isNil(o.IncludeResponseControls) {
+	if o == nil || IsNil(o.IncludeResponseControls) {
 		var ret bool
 		return ret
 	}
@@ -824,7 +827,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeResponseControls() boo
 // GetIncludeResponseControlsOk returns a tuple with the IncludeResponseControls field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeResponseControlsOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeResponseControls) {
+	if o == nil || IsNil(o.IncludeResponseControls) {
 		return nil, false
 	}
 	return o.IncludeResponseControls, true
@@ -832,7 +835,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeResponseControlsOk() (
 
 // HasIncludeResponseControls returns a boolean if a field has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) HasIncludeResponseControls() bool {
-	if o != nil && !isNil(o.IncludeResponseControls) {
+	if o != nil && !IsNil(o.IncludeResponseControls) {
 		return true
 	}
 
@@ -846,7 +849,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetIncludeResponseControls(v boo
 
 // GetIncludeReplicationChangeID returns the IncludeReplicationChangeID field value if set, zero value otherwise.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeReplicationChangeID() bool {
-	if o == nil || isNil(o.IncludeReplicationChangeID) {
+	if o == nil || IsNil(o.IncludeReplicationChangeID) {
 		var ret bool
 		return ret
 	}
@@ -856,7 +859,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeReplicationChangeID() 
 // GetIncludeReplicationChangeIDOk returns a tuple with the IncludeReplicationChangeID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeReplicationChangeIDOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeReplicationChangeID) {
+	if o == nil || IsNil(o.IncludeReplicationChangeID) {
 		return nil, false
 	}
 	return o.IncludeReplicationChangeID, true
@@ -864,7 +867,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetIncludeReplicationChangeIDOk(
 
 // HasIncludeReplicationChangeID returns a boolean if a field has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) HasIncludeReplicationChangeID() bool {
-	if o != nil && !isNil(o.IncludeReplicationChangeID) {
+	if o != nil && !IsNil(o.IncludeReplicationChangeID) {
 		return true
 	}
 
@@ -878,7 +881,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetIncludeReplicationChangeID(v 
 
 // GetLogSecurityNegotiation returns the LogSecurityNegotiation field value if set, zero value otherwise.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetLogSecurityNegotiation() bool {
-	if o == nil || isNil(o.LogSecurityNegotiation) {
+	if o == nil || IsNil(o.LogSecurityNegotiation) {
 		var ret bool
 		return ret
 	}
@@ -888,7 +891,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetLogSecurityNegotiation() bool
 // GetLogSecurityNegotiationOk returns a tuple with the LogSecurityNegotiation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetLogSecurityNegotiationOk() (*bool, bool) {
-	if o == nil || isNil(o.LogSecurityNegotiation) {
+	if o == nil || IsNil(o.LogSecurityNegotiation) {
 		return nil, false
 	}
 	return o.LogSecurityNegotiation, true
@@ -896,7 +899,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetLogSecurityNegotiationOk() (*
 
 // HasLogSecurityNegotiation returns a boolean if a field has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) HasLogSecurityNegotiation() bool {
-	if o != nil && !isNil(o.LogSecurityNegotiation) {
+	if o != nil && !IsNil(o.LogSecurityNegotiation) {
 		return true
 	}
 
@@ -910,7 +913,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetLogSecurityNegotiation(v bool
 
 // GetSuppressReplicationOperations returns the SuppressReplicationOperations field value if set, zero value otherwise.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetSuppressReplicationOperations() bool {
-	if o == nil || isNil(o.SuppressReplicationOperations) {
+	if o == nil || IsNil(o.SuppressReplicationOperations) {
 		var ret bool
 		return ret
 	}
@@ -920,7 +923,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetSuppressReplicationOperations
 // GetSuppressReplicationOperationsOk returns a tuple with the SuppressReplicationOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetSuppressReplicationOperationsOk() (*bool, bool) {
-	if o == nil || isNil(o.SuppressReplicationOperations) {
+	if o == nil || IsNil(o.SuppressReplicationOperations) {
 		return nil, false
 	}
 	return o.SuppressReplicationOperations, true
@@ -928,7 +931,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetSuppressReplicationOperations
 
 // HasSuppressReplicationOperations returns a boolean if a field has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) HasSuppressReplicationOperations() bool {
-	if o != nil && !isNil(o.SuppressReplicationOperations) {
+	if o != nil && !IsNil(o.SuppressReplicationOperations) {
 		return true
 	}
 
@@ -942,7 +945,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetSuppressReplicationOperations
 
 // GetConnectionCriteria returns the ConnectionCriteria field value if set, zero value otherwise.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetConnectionCriteria() string {
-	if o == nil || isNil(o.ConnectionCriteria) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
 		var ret string
 		return ret
 	}
@@ -952,7 +955,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetConnectionCriteria() string {
 // GetConnectionCriteriaOk returns a tuple with the ConnectionCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetConnectionCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.ConnectionCriteria) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
 		return nil, false
 	}
 	return o.ConnectionCriteria, true
@@ -960,7 +963,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetConnectionCriteriaOk() (*stri
 
 // HasConnectionCriteria returns a boolean if a field has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) HasConnectionCriteria() bool {
-	if o != nil && !isNil(o.ConnectionCriteria) {
+	if o != nil && !IsNil(o.ConnectionCriteria) {
 		return true
 	}
 
@@ -974,7 +977,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetConnectionCriteria(v string) 
 
 // GetRequestCriteria returns the RequestCriteria field value if set, zero value otherwise.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetRequestCriteria() string {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -984,7 +987,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetRequestCriteria() string {
 // GetRequestCriteriaOk returns a tuple with the RequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		return nil, false
 	}
 	return o.RequestCriteria, true
@@ -992,7 +995,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetRequestCriteriaOk() (*string,
 
 // HasRequestCriteria returns a boolean if a field has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) HasRequestCriteria() bool {
-	if o != nil && !isNil(o.RequestCriteria) {
+	if o != nil && !IsNil(o.RequestCriteria) {
 		return true
 	}
 
@@ -1006,7 +1009,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetRequestCriteria(v string) {
 
 // GetResultCriteria returns the ResultCriteria field value if set, zero value otherwise.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetResultCriteria() string {
-	if o == nil || isNil(o.ResultCriteria) {
+	if o == nil || IsNil(o.ResultCriteria) {
 		var ret string
 		return ret
 	}
@@ -1016,7 +1019,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetResultCriteria() string {
 // GetResultCriteriaOk returns a tuple with the ResultCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetResultCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.ResultCriteria) {
+	if o == nil || IsNil(o.ResultCriteria) {
 		return nil, false
 	}
 	return o.ResultCriteria, true
@@ -1024,7 +1027,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetResultCriteriaOk() (*string, 
 
 // HasResultCriteria returns a boolean if a field has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) HasResultCriteria() bool {
-	if o != nil && !isNil(o.ResultCriteria) {
+	if o != nil && !IsNil(o.ResultCriteria) {
 		return true
 	}
 
@@ -1038,7 +1041,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetResultCriteria(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -1048,7 +1051,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -1056,7 +1059,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetDescriptionOk() (*string, boo
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -1094,7 +1097,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetEnabled(v bool) {
 
 // GetLoggingErrorBehavior returns the LoggingErrorBehavior field value if set, zero value otherwise.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetLoggingErrorBehavior() EnumlogPublisherLoggingErrorBehaviorProp {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		var ret EnumlogPublisherLoggingErrorBehaviorProp
 		return ret
 	}
@@ -1104,7 +1107,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetLoggingErrorBehavior() Enumlo
 // GetLoggingErrorBehaviorOk returns a tuple with the LoggingErrorBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
@@ -1112,7 +1115,7 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) GetLoggingErrorBehaviorOk() (*En
 
 // HasLoggingErrorBehavior returns a boolean if a field has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) HasLoggingErrorBehavior() bool {
-	if o != nil && !isNil(o.LoggingErrorBehavior) {
+	if o != nil && !IsNil(o.LoggingErrorBehavior) {
 		return true
 	}
 
@@ -1125,107 +1128,107 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetLoggingErrorBehavior(v Enumlo
 }
 
 func (o AddSyslogJsonAuditLogPublisherRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["publisherName"] = o.PublisherName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["syslogExternalServer"] = o.SyslogExternalServer
-	}
-	if !isNil(o.SyslogFacility) {
-		toSerialize["syslogFacility"] = o.SyslogFacility
-	}
-	if !isNil(o.SyslogSeverity) {
-		toSerialize["syslogSeverity"] = o.SyslogSeverity
-	}
-	if !isNil(o.SyslogMessageHostName) {
-		toSerialize["syslogMessageHostName"] = o.SyslogMessageHostName
-	}
-	if !isNil(o.SyslogMessageApplicationName) {
-		toSerialize["syslogMessageApplicationName"] = o.SyslogMessageApplicationName
-	}
-	if !isNil(o.QueueSize) {
-		toSerialize["queueSize"] = o.QueueSize
-	}
-	if !isNil(o.WriteMultiLineMessages) {
-		toSerialize["writeMultiLineMessages"] = o.WriteMultiLineMessages
-	}
-	if !isNil(o.UseReversibleForm) {
-		toSerialize["useReversibleForm"] = o.UseReversibleForm
-	}
-	if !isNil(o.SoftDeleteEntryAuditBehavior) {
-		toSerialize["softDeleteEntryAuditBehavior"] = o.SoftDeleteEntryAuditBehavior
-	}
-	if !isNil(o.IncludeOperationPurposeRequestControl) {
-		toSerialize["includeOperationPurposeRequestControl"] = o.IncludeOperationPurposeRequestControl
-	}
-	if !isNil(o.IncludeIntermediateClientRequestControl) {
-		toSerialize["includeIntermediateClientRequestControl"] = o.IncludeIntermediateClientRequestControl
-	}
-	if !isNil(o.ObscureAttribute) {
-		toSerialize["obscureAttribute"] = o.ObscureAttribute
-	}
-	if !isNil(o.ExcludeAttribute) {
-		toSerialize["excludeAttribute"] = o.ExcludeAttribute
-	}
-	if !isNil(o.SuppressInternalOperations) {
-		toSerialize["suppressInternalOperations"] = o.SuppressInternalOperations
-	}
-	if !isNil(o.IncludeProductName) {
-		toSerialize["includeProductName"] = o.IncludeProductName
-	}
-	if !isNil(o.IncludeInstanceName) {
-		toSerialize["includeInstanceName"] = o.IncludeInstanceName
-	}
-	if !isNil(o.IncludeStartupID) {
-		toSerialize["includeStartupID"] = o.IncludeStartupID
-	}
-	if !isNil(o.IncludeThreadID) {
-		toSerialize["includeThreadID"] = o.IncludeThreadID
-	}
-	if !isNil(o.IncludeRequesterDN) {
-		toSerialize["includeRequesterDN"] = o.IncludeRequesterDN
-	}
-	if !isNil(o.IncludeRequesterIPAddress) {
-		toSerialize["includeRequesterIPAddress"] = o.IncludeRequesterIPAddress
-	}
-	if !isNil(o.IncludeRequestControls) {
-		toSerialize["includeRequestControls"] = o.IncludeRequestControls
-	}
-	if !isNil(o.IncludeResponseControls) {
-		toSerialize["includeResponseControls"] = o.IncludeResponseControls
-	}
-	if !isNil(o.IncludeReplicationChangeID) {
-		toSerialize["includeReplicationChangeID"] = o.IncludeReplicationChangeID
-	}
-	if !isNil(o.LogSecurityNegotiation) {
-		toSerialize["logSecurityNegotiation"] = o.LogSecurityNegotiation
-	}
-	if !isNil(o.SuppressReplicationOperations) {
-		toSerialize["suppressReplicationOperations"] = o.SuppressReplicationOperations
-	}
-	if !isNil(o.ConnectionCriteria) {
-		toSerialize["connectionCriteria"] = o.ConnectionCriteria
-	}
-	if !isNil(o.RequestCriteria) {
-		toSerialize["requestCriteria"] = o.RequestCriteria
-	}
-	if !isNil(o.ResultCriteria) {
-		toSerialize["resultCriteria"] = o.ResultCriteria
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.LoggingErrorBehavior) {
-		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddSyslogJsonAuditLogPublisherRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["publisherName"] = o.PublisherName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["syslogExternalServer"] = o.SyslogExternalServer
+	if !IsNil(o.SyslogFacility) {
+		toSerialize["syslogFacility"] = o.SyslogFacility
+	}
+	if !IsNil(o.SyslogSeverity) {
+		toSerialize["syslogSeverity"] = o.SyslogSeverity
+	}
+	if !IsNil(o.SyslogMessageHostName) {
+		toSerialize["syslogMessageHostName"] = o.SyslogMessageHostName
+	}
+	if !IsNil(o.SyslogMessageApplicationName) {
+		toSerialize["syslogMessageApplicationName"] = o.SyslogMessageApplicationName
+	}
+	if !IsNil(o.QueueSize) {
+		toSerialize["queueSize"] = o.QueueSize
+	}
+	if !IsNil(o.WriteMultiLineMessages) {
+		toSerialize["writeMultiLineMessages"] = o.WriteMultiLineMessages
+	}
+	if !IsNil(o.UseReversibleForm) {
+		toSerialize["useReversibleForm"] = o.UseReversibleForm
+	}
+	if !IsNil(o.SoftDeleteEntryAuditBehavior) {
+		toSerialize["softDeleteEntryAuditBehavior"] = o.SoftDeleteEntryAuditBehavior
+	}
+	if !IsNil(o.IncludeOperationPurposeRequestControl) {
+		toSerialize["includeOperationPurposeRequestControl"] = o.IncludeOperationPurposeRequestControl
+	}
+	if !IsNil(o.IncludeIntermediateClientRequestControl) {
+		toSerialize["includeIntermediateClientRequestControl"] = o.IncludeIntermediateClientRequestControl
+	}
+	if !IsNil(o.ObscureAttribute) {
+		toSerialize["obscureAttribute"] = o.ObscureAttribute
+	}
+	if !IsNil(o.ExcludeAttribute) {
+		toSerialize["excludeAttribute"] = o.ExcludeAttribute
+	}
+	if !IsNil(o.SuppressInternalOperations) {
+		toSerialize["suppressInternalOperations"] = o.SuppressInternalOperations
+	}
+	if !IsNil(o.IncludeProductName) {
+		toSerialize["includeProductName"] = o.IncludeProductName
+	}
+	if !IsNil(o.IncludeInstanceName) {
+		toSerialize["includeInstanceName"] = o.IncludeInstanceName
+	}
+	if !IsNil(o.IncludeStartupID) {
+		toSerialize["includeStartupID"] = o.IncludeStartupID
+	}
+	if !IsNil(o.IncludeThreadID) {
+		toSerialize["includeThreadID"] = o.IncludeThreadID
+	}
+	if !IsNil(o.IncludeRequesterDN) {
+		toSerialize["includeRequesterDN"] = o.IncludeRequesterDN
+	}
+	if !IsNil(o.IncludeRequesterIPAddress) {
+		toSerialize["includeRequesterIPAddress"] = o.IncludeRequesterIPAddress
+	}
+	if !IsNil(o.IncludeRequestControls) {
+		toSerialize["includeRequestControls"] = o.IncludeRequestControls
+	}
+	if !IsNil(o.IncludeResponseControls) {
+		toSerialize["includeResponseControls"] = o.IncludeResponseControls
+	}
+	if !IsNil(o.IncludeReplicationChangeID) {
+		toSerialize["includeReplicationChangeID"] = o.IncludeReplicationChangeID
+	}
+	if !IsNil(o.LogSecurityNegotiation) {
+		toSerialize["logSecurityNegotiation"] = o.LogSecurityNegotiation
+	}
+	if !IsNil(o.SuppressReplicationOperations) {
+		toSerialize["suppressReplicationOperations"] = o.SuppressReplicationOperations
+	}
+	if !IsNil(o.ConnectionCriteria) {
+		toSerialize["connectionCriteria"] = o.ConnectionCriteria
+	}
+	if !IsNil(o.RequestCriteria) {
+		toSerialize["requestCriteria"] = o.RequestCriteria
+	}
+	if !IsNil(o.ResultCriteria) {
+		toSerialize["resultCriteria"] = o.ResultCriteria
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.LoggingErrorBehavior) {
+		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	}
+	return toSerialize, nil
 }
 
 type NullableAddSyslogJsonAuditLogPublisherRequest struct {

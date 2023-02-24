@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ThirdPartyPluginResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ThirdPartyPluginResponse{}
+
 // ThirdPartyPluginResponse struct for ThirdPartyPluginResponse
 type ThirdPartyPluginResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -60,7 +63,7 @@ func NewThirdPartyPluginResponseWithDefaults() *ThirdPartyPluginResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *ThirdPartyPluginResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -70,7 +73,7 @@ func (o *ThirdPartyPluginResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyPluginResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -78,7 +81,7 @@ func (o *ThirdPartyPluginResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *ThirdPartyPluginResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -92,7 +95,7 @@ func (o *ThirdPartyPluginResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *ThirdPartyPluginResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -102,7 +105,7 @@ func (o *ThirdPartyPluginResponse) GetUrnpingidentityschemasconfigurationmessage
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyPluginResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -110,7 +113,7 @@ func (o *ThirdPartyPluginResponse) GetUrnpingidentityschemasconfigurationmessage
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *ThirdPartyPluginResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -196,7 +199,7 @@ func (o *ThirdPartyPluginResponse) SetExtensionClass(v string) {
 
 // GetExtensionArgument returns the ExtensionArgument field value if set, zero value otherwise.
 func (o *ThirdPartyPluginResponse) GetExtensionArgument() []string {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		var ret []string
 		return ret
 	}
@@ -206,7 +209,7 @@ func (o *ThirdPartyPluginResponse) GetExtensionArgument() []string {
 // GetExtensionArgumentOk returns a tuple with the ExtensionArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyPluginResponse) GetExtensionArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		return nil, false
 	}
 	return o.ExtensionArgument, true
@@ -214,7 +217,7 @@ func (o *ThirdPartyPluginResponse) GetExtensionArgumentOk() ([]string, bool) {
 
 // HasExtensionArgument returns a boolean if a field has been set.
 func (o *ThirdPartyPluginResponse) HasExtensionArgument() bool {
-	if o != nil && !isNil(o.ExtensionArgument) {
+	if o != nil && !IsNil(o.ExtensionArgument) {
 		return true
 	}
 
@@ -228,7 +231,7 @@ func (o *ThirdPartyPluginResponse) SetExtensionArgument(v []string) {
 
 // GetRequestCriteria returns the RequestCriteria field value if set, zero value otherwise.
 func (o *ThirdPartyPluginResponse) GetRequestCriteria() string {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -238,7 +241,7 @@ func (o *ThirdPartyPluginResponse) GetRequestCriteria() string {
 // GetRequestCriteriaOk returns a tuple with the RequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyPluginResponse) GetRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		return nil, false
 	}
 	return o.RequestCriteria, true
@@ -246,7 +249,7 @@ func (o *ThirdPartyPluginResponse) GetRequestCriteriaOk() (*string, bool) {
 
 // HasRequestCriteria returns a boolean if a field has been set.
 func (o *ThirdPartyPluginResponse) HasRequestCriteria() bool {
-	if o != nil && !isNil(o.RequestCriteria) {
+	if o != nil && !IsNil(o.RequestCriteria) {
 		return true
 	}
 
@@ -260,7 +263,7 @@ func (o *ThirdPartyPluginResponse) SetRequestCriteria(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *ThirdPartyPluginResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -270,7 +273,7 @@ func (o *ThirdPartyPluginResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyPluginResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -278,7 +281,7 @@ func (o *ThirdPartyPluginResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *ThirdPartyPluginResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -340,7 +343,7 @@ func (o *ThirdPartyPluginResponse) SetPluginType(v []EnumpluginPluginTypeProp) {
 
 // GetInvokeForInternalOperations returns the InvokeForInternalOperations field value if set, zero value otherwise.
 func (o *ThirdPartyPluginResponse) GetInvokeForInternalOperations() bool {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		var ret bool
 		return ret
 	}
@@ -350,7 +353,7 @@ func (o *ThirdPartyPluginResponse) GetInvokeForInternalOperations() bool {
 // GetInvokeForInternalOperationsOk returns a tuple with the InvokeForInternalOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyPluginResponse) GetInvokeForInternalOperationsOk() (*bool, bool) {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		return nil, false
 	}
 	return o.InvokeForInternalOperations, true
@@ -358,7 +361,7 @@ func (o *ThirdPartyPluginResponse) GetInvokeForInternalOperationsOk() (*bool, bo
 
 // HasInvokeForInternalOperations returns a boolean if a field has been set.
 func (o *ThirdPartyPluginResponse) HasInvokeForInternalOperations() bool {
-	if o != nil && !isNil(o.InvokeForInternalOperations) {
+	if o != nil && !IsNil(o.InvokeForInternalOperations) {
 		return true
 	}
 
@@ -371,41 +374,39 @@ func (o *ThirdPartyPluginResponse) SetInvokeForInternalOperations(v bool) {
 }
 
 func (o ThirdPartyPluginResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["extensionClass"] = o.ExtensionClass
-	}
-	if !isNil(o.ExtensionArgument) {
-		toSerialize["extensionArgument"] = o.ExtensionArgument
-	}
-	if !isNil(o.RequestCriteria) {
-		toSerialize["requestCriteria"] = o.RequestCriteria
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if true {
-		toSerialize["pluginType"] = o.PluginType
-	}
-	if !isNil(o.InvokeForInternalOperations) {
-		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ThirdPartyPluginResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["extensionClass"] = o.ExtensionClass
+	if !IsNil(o.ExtensionArgument) {
+		toSerialize["extensionArgument"] = o.ExtensionArgument
+	}
+	if !IsNil(o.RequestCriteria) {
+		toSerialize["requestCriteria"] = o.RequestCriteria
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	toSerialize["pluginType"] = o.PluginType
+	if !IsNil(o.InvokeForInternalOperations) {
+		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
+	}
+	return toSerialize, nil
 }
 
 type NullableThirdPartyPluginResponse struct {

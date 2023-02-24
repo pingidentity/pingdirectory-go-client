@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -105,9 +105,9 @@ func (a *KeyPairApiService) AddKeyPairExecute(r ApiAddKeyPairRequest) (*KeyPairR
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -171,7 +171,7 @@ func (a *KeyPairApiService) DeleteKeyPairExecute(r ApiDeleteKeyPairRequest) (*ht
 	}
 
 	localVarPath := localBasePath + "/key-pairs/{key-pair-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"key-pair-name"+"}", url.PathEscape(parameterToString(r.keyPairName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"key-pair-name"+"}", url.PathEscape(parameterValueToString(r.keyPairName, "keyPairName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -204,9 +204,9 @@ func (a *KeyPairApiService) DeleteKeyPairExecute(r ApiDeleteKeyPairRequest) (*ht
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -264,7 +264,7 @@ func (a *KeyPairApiService) GetKeyPairExecute(r ApiGetKeyPairRequest) (*KeyPairR
 	}
 
 	localVarPath := localBasePath + "/key-pairs/{key-pair-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"key-pair-name"+"}", url.PathEscape(parameterToString(r.keyPairName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"key-pair-name"+"}", url.PathEscape(parameterValueToString(r.keyPairName, "keyPairName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -297,9 +297,9 @@ func (a *KeyPairApiService) GetKeyPairExecute(r ApiGetKeyPairRequest) (*KeyPairR
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -373,7 +373,7 @@ func (a *KeyPairApiService) UpdateKeyPairExecute(r ApiUpdateKeyPairRequest) (*Ke
 	}
 
 	localVarPath := localBasePath + "/key-pairs/{key-pair-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"key-pair-name"+"}", url.PathEscape(parameterToString(r.keyPairName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"key-pair-name"+"}", url.PathEscape(parameterValueToString(r.keyPairName, "keyPairName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -411,9 +411,9 @@ func (a *KeyPairApiService) UpdateKeyPairExecute(r ApiUpdateKeyPairRequest) (*Ke
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

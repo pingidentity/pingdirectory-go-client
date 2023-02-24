@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddHaystackPasswordValidatorRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddHaystackPasswordValidatorRequest{}
+
 // AddHaystackPasswordValidatorRequest struct for AddHaystackPasswordValidatorRequest
 type AddHaystackPasswordValidatorRequest struct {
 	// Name of the new Password Validator
@@ -103,7 +106,7 @@ func (o *AddHaystackPasswordValidatorRequest) SetSchemas(v []EnumhaystackPasswor
 
 // GetAssumedPasswordGuessesPerSecond returns the AssumedPasswordGuessesPerSecond field value if set, zero value otherwise.
 func (o *AddHaystackPasswordValidatorRequest) GetAssumedPasswordGuessesPerSecond() string {
-	if o == nil || isNil(o.AssumedPasswordGuessesPerSecond) {
+	if o == nil || IsNil(o.AssumedPasswordGuessesPerSecond) {
 		var ret string
 		return ret
 	}
@@ -113,7 +116,7 @@ func (o *AddHaystackPasswordValidatorRequest) GetAssumedPasswordGuessesPerSecond
 // GetAssumedPasswordGuessesPerSecondOk returns a tuple with the AssumedPasswordGuessesPerSecond field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddHaystackPasswordValidatorRequest) GetAssumedPasswordGuessesPerSecondOk() (*string, bool) {
-	if o == nil || isNil(o.AssumedPasswordGuessesPerSecond) {
+	if o == nil || IsNil(o.AssumedPasswordGuessesPerSecond) {
 		return nil, false
 	}
 	return o.AssumedPasswordGuessesPerSecond, true
@@ -121,7 +124,7 @@ func (o *AddHaystackPasswordValidatorRequest) GetAssumedPasswordGuessesPerSecond
 
 // HasAssumedPasswordGuessesPerSecond returns a boolean if a field has been set.
 func (o *AddHaystackPasswordValidatorRequest) HasAssumedPasswordGuessesPerSecond() bool {
-	if o != nil && !isNil(o.AssumedPasswordGuessesPerSecond) {
+	if o != nil && !IsNil(o.AssumedPasswordGuessesPerSecond) {
 		return true
 	}
 
@@ -135,7 +138,7 @@ func (o *AddHaystackPasswordValidatorRequest) SetAssumedPasswordGuessesPerSecond
 
 // GetMinimumAcceptableTimeToExhaustSearchSpace returns the MinimumAcceptableTimeToExhaustSearchSpace field value if set, zero value otherwise.
 func (o *AddHaystackPasswordValidatorRequest) GetMinimumAcceptableTimeToExhaustSearchSpace() string {
-	if o == nil || isNil(o.MinimumAcceptableTimeToExhaustSearchSpace) {
+	if o == nil || IsNil(o.MinimumAcceptableTimeToExhaustSearchSpace) {
 		var ret string
 		return ret
 	}
@@ -145,7 +148,7 @@ func (o *AddHaystackPasswordValidatorRequest) GetMinimumAcceptableTimeToExhaustS
 // GetMinimumAcceptableTimeToExhaustSearchSpaceOk returns a tuple with the MinimumAcceptableTimeToExhaustSearchSpace field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddHaystackPasswordValidatorRequest) GetMinimumAcceptableTimeToExhaustSearchSpaceOk() (*string, bool) {
-	if o == nil || isNil(o.MinimumAcceptableTimeToExhaustSearchSpace) {
+	if o == nil || IsNil(o.MinimumAcceptableTimeToExhaustSearchSpace) {
 		return nil, false
 	}
 	return o.MinimumAcceptableTimeToExhaustSearchSpace, true
@@ -153,7 +156,7 @@ func (o *AddHaystackPasswordValidatorRequest) GetMinimumAcceptableTimeToExhaustS
 
 // HasMinimumAcceptableTimeToExhaustSearchSpace returns a boolean if a field has been set.
 func (o *AddHaystackPasswordValidatorRequest) HasMinimumAcceptableTimeToExhaustSearchSpace() bool {
-	if o != nil && !isNil(o.MinimumAcceptableTimeToExhaustSearchSpace) {
+	if o != nil && !IsNil(o.MinimumAcceptableTimeToExhaustSearchSpace) {
 		return true
 	}
 
@@ -167,7 +170,7 @@ func (o *AddHaystackPasswordValidatorRequest) SetMinimumAcceptableTimeToExhaustS
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddHaystackPasswordValidatorRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -177,7 +180,7 @@ func (o *AddHaystackPasswordValidatorRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddHaystackPasswordValidatorRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -185,7 +188,7 @@ func (o *AddHaystackPasswordValidatorRequest) GetDescriptionOk() (*string, bool)
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddHaystackPasswordValidatorRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -223,7 +226,7 @@ func (o *AddHaystackPasswordValidatorRequest) SetEnabled(v bool) {
 
 // GetValidatorRequirementDescription returns the ValidatorRequirementDescription field value if set, zero value otherwise.
 func (o *AddHaystackPasswordValidatorRequest) GetValidatorRequirementDescription() string {
-	if o == nil || isNil(o.ValidatorRequirementDescription) {
+	if o == nil || IsNil(o.ValidatorRequirementDescription) {
 		var ret string
 		return ret
 	}
@@ -233,7 +236,7 @@ func (o *AddHaystackPasswordValidatorRequest) GetValidatorRequirementDescription
 // GetValidatorRequirementDescriptionOk returns a tuple with the ValidatorRequirementDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddHaystackPasswordValidatorRequest) GetValidatorRequirementDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.ValidatorRequirementDescription) {
+	if o == nil || IsNil(o.ValidatorRequirementDescription) {
 		return nil, false
 	}
 	return o.ValidatorRequirementDescription, true
@@ -241,7 +244,7 @@ func (o *AddHaystackPasswordValidatorRequest) GetValidatorRequirementDescription
 
 // HasValidatorRequirementDescription returns a boolean if a field has been set.
 func (o *AddHaystackPasswordValidatorRequest) HasValidatorRequirementDescription() bool {
-	if o != nil && !isNil(o.ValidatorRequirementDescription) {
+	if o != nil && !IsNil(o.ValidatorRequirementDescription) {
 		return true
 	}
 
@@ -255,7 +258,7 @@ func (o *AddHaystackPasswordValidatorRequest) SetValidatorRequirementDescription
 
 // GetValidatorFailureMessage returns the ValidatorFailureMessage field value if set, zero value otherwise.
 func (o *AddHaystackPasswordValidatorRequest) GetValidatorFailureMessage() string {
-	if o == nil || isNil(o.ValidatorFailureMessage) {
+	if o == nil || IsNil(o.ValidatorFailureMessage) {
 		var ret string
 		return ret
 	}
@@ -265,7 +268,7 @@ func (o *AddHaystackPasswordValidatorRequest) GetValidatorFailureMessage() strin
 // GetValidatorFailureMessageOk returns a tuple with the ValidatorFailureMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddHaystackPasswordValidatorRequest) GetValidatorFailureMessageOk() (*string, bool) {
-	if o == nil || isNil(o.ValidatorFailureMessage) {
+	if o == nil || IsNil(o.ValidatorFailureMessage) {
 		return nil, false
 	}
 	return o.ValidatorFailureMessage, true
@@ -273,7 +276,7 @@ func (o *AddHaystackPasswordValidatorRequest) GetValidatorFailureMessageOk() (*s
 
 // HasValidatorFailureMessage returns a boolean if a field has been set.
 func (o *AddHaystackPasswordValidatorRequest) HasValidatorFailureMessage() bool {
-	if o != nil && !isNil(o.ValidatorFailureMessage) {
+	if o != nil && !IsNil(o.ValidatorFailureMessage) {
 		return true
 	}
 
@@ -286,32 +289,34 @@ func (o *AddHaystackPasswordValidatorRequest) SetValidatorFailureMessage(v strin
 }
 
 func (o AddHaystackPasswordValidatorRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["validatorName"] = o.ValidatorName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.AssumedPasswordGuessesPerSecond) {
-		toSerialize["assumedPasswordGuessesPerSecond"] = o.AssumedPasswordGuessesPerSecond
-	}
-	if !isNil(o.MinimumAcceptableTimeToExhaustSearchSpace) {
-		toSerialize["minimumAcceptableTimeToExhaustSearchSpace"] = o.MinimumAcceptableTimeToExhaustSearchSpace
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.ValidatorRequirementDescription) {
-		toSerialize["validatorRequirementDescription"] = o.ValidatorRequirementDescription
-	}
-	if !isNil(o.ValidatorFailureMessage) {
-		toSerialize["validatorFailureMessage"] = o.ValidatorFailureMessage
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddHaystackPasswordValidatorRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["validatorName"] = o.ValidatorName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.AssumedPasswordGuessesPerSecond) {
+		toSerialize["assumedPasswordGuessesPerSecond"] = o.AssumedPasswordGuessesPerSecond
+	}
+	if !IsNil(o.MinimumAcceptableTimeToExhaustSearchSpace) {
+		toSerialize["minimumAcceptableTimeToExhaustSearchSpace"] = o.MinimumAcceptableTimeToExhaustSearchSpace
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.ValidatorRequirementDescription) {
+		toSerialize["validatorRequirementDescription"] = o.ValidatorRequirementDescription
+	}
+	if !IsNil(o.ValidatorFailureMessage) {
+		toSerialize["validatorFailureMessage"] = o.ValidatorFailureMessage
+	}
+	return toSerialize, nil
 }
 
 type NullableAddHaystackPasswordValidatorRequest struct {

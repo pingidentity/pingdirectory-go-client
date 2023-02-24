@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddPluggablePassThroughAuthenticationPluginRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddPluggablePassThroughAuthenticationPluginRequest{}
+
 // AddPluggablePassThroughAuthenticationPluginRequest struct for AddPluggablePassThroughAuthenticationPluginRequest
 type AddPluggablePassThroughAuthenticationPluginRequest struct {
 	// Name of the new Plugin
@@ -141,7 +144,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) SetPassThroughAuthe
 
 // GetIncludedLocalEntryBaseDN returns the IncludedLocalEntryBaseDN field value if set, zero value otherwise.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetIncludedLocalEntryBaseDN() []string {
-	if o == nil || isNil(o.IncludedLocalEntryBaseDN) {
+	if o == nil || IsNil(o.IncludedLocalEntryBaseDN) {
 		var ret []string
 		return ret
 	}
@@ -151,7 +154,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetIncludedLocalEnt
 // GetIncludedLocalEntryBaseDNOk returns a tuple with the IncludedLocalEntryBaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetIncludedLocalEntryBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludedLocalEntryBaseDN) {
+	if o == nil || IsNil(o.IncludedLocalEntryBaseDN) {
 		return nil, false
 	}
 	return o.IncludedLocalEntryBaseDN, true
@@ -159,7 +162,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetIncludedLocalEnt
 
 // HasIncludedLocalEntryBaseDN returns a boolean if a field has been set.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) HasIncludedLocalEntryBaseDN() bool {
-	if o != nil && !isNil(o.IncludedLocalEntryBaseDN) {
+	if o != nil && !IsNil(o.IncludedLocalEntryBaseDN) {
 		return true
 	}
 
@@ -173,7 +176,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) SetIncludedLocalEnt
 
 // GetConnectionCriteria returns the ConnectionCriteria field value if set, zero value otherwise.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetConnectionCriteria() string {
-	if o == nil || isNil(o.ConnectionCriteria) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
 		var ret string
 		return ret
 	}
@@ -183,7 +186,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetConnectionCriter
 // GetConnectionCriteriaOk returns a tuple with the ConnectionCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetConnectionCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.ConnectionCriteria) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
 		return nil, false
 	}
 	return o.ConnectionCriteria, true
@@ -191,7 +194,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetConnectionCriter
 
 // HasConnectionCriteria returns a boolean if a field has been set.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) HasConnectionCriteria() bool {
-	if o != nil && !isNil(o.ConnectionCriteria) {
+	if o != nil && !IsNil(o.ConnectionCriteria) {
 		return true
 	}
 
@@ -205,7 +208,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) SetConnectionCriter
 
 // GetRequestCriteria returns the RequestCriteria field value if set, zero value otherwise.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetRequestCriteria() string {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -215,7 +218,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetRequestCriteria(
 // GetRequestCriteriaOk returns a tuple with the RequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		return nil, false
 	}
 	return o.RequestCriteria, true
@@ -223,7 +226,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetRequestCriteriaO
 
 // HasRequestCriteria returns a boolean if a field has been set.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) HasRequestCriteria() bool {
-	if o != nil && !isNil(o.RequestCriteria) {
+	if o != nil && !IsNil(o.RequestCriteria) {
 		return true
 	}
 
@@ -237,7 +240,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) SetRequestCriteria(
 
 // GetTryLocalBind returns the TryLocalBind field value if set, zero value otherwise.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetTryLocalBind() bool {
-	if o == nil || isNil(o.TryLocalBind) {
+	if o == nil || IsNil(o.TryLocalBind) {
 		var ret bool
 		return ret
 	}
@@ -247,7 +250,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetTryLocalBind() b
 // GetTryLocalBindOk returns a tuple with the TryLocalBind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetTryLocalBindOk() (*bool, bool) {
-	if o == nil || isNil(o.TryLocalBind) {
+	if o == nil || IsNil(o.TryLocalBind) {
 		return nil, false
 	}
 	return o.TryLocalBind, true
@@ -255,7 +258,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetTryLocalBindOk()
 
 // HasTryLocalBind returns a boolean if a field has been set.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) HasTryLocalBind() bool {
-	if o != nil && !isNil(o.TryLocalBind) {
+	if o != nil && !IsNil(o.TryLocalBind) {
 		return true
 	}
 
@@ -269,7 +272,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) SetTryLocalBind(v b
 
 // GetOverrideLocalPassword returns the OverrideLocalPassword field value if set, zero value otherwise.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetOverrideLocalPassword() bool {
-	if o == nil || isNil(o.OverrideLocalPassword) {
+	if o == nil || IsNil(o.OverrideLocalPassword) {
 		var ret bool
 		return ret
 	}
@@ -279,7 +282,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetOverrideLocalPas
 // GetOverrideLocalPasswordOk returns a tuple with the OverrideLocalPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetOverrideLocalPasswordOk() (*bool, bool) {
-	if o == nil || isNil(o.OverrideLocalPassword) {
+	if o == nil || IsNil(o.OverrideLocalPassword) {
 		return nil, false
 	}
 	return o.OverrideLocalPassword, true
@@ -287,7 +290,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetOverrideLocalPas
 
 // HasOverrideLocalPassword returns a boolean if a field has been set.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) HasOverrideLocalPassword() bool {
-	if o != nil && !isNil(o.OverrideLocalPassword) {
+	if o != nil && !IsNil(o.OverrideLocalPassword) {
 		return true
 	}
 
@@ -301,7 +304,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) SetOverrideLocalPas
 
 // GetUpdateLocalPassword returns the UpdateLocalPassword field value if set, zero value otherwise.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetUpdateLocalPassword() bool {
-	if o == nil || isNil(o.UpdateLocalPassword) {
+	if o == nil || IsNil(o.UpdateLocalPassword) {
 		var ret bool
 		return ret
 	}
@@ -311,7 +314,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetUpdateLocalPassw
 // GetUpdateLocalPasswordOk returns a tuple with the UpdateLocalPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetUpdateLocalPasswordOk() (*bool, bool) {
-	if o == nil || isNil(o.UpdateLocalPassword) {
+	if o == nil || IsNil(o.UpdateLocalPassword) {
 		return nil, false
 	}
 	return o.UpdateLocalPassword, true
@@ -319,7 +322,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetUpdateLocalPassw
 
 // HasUpdateLocalPassword returns a boolean if a field has been set.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) HasUpdateLocalPassword() bool {
-	if o != nil && !isNil(o.UpdateLocalPassword) {
+	if o != nil && !IsNil(o.UpdateLocalPassword) {
 		return true
 	}
 
@@ -333,7 +336,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) SetUpdateLocalPassw
 
 // GetUpdateLocalPasswordDN returns the UpdateLocalPasswordDN field value if set, zero value otherwise.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetUpdateLocalPasswordDN() string {
-	if o == nil || isNil(o.UpdateLocalPasswordDN) {
+	if o == nil || IsNil(o.UpdateLocalPasswordDN) {
 		var ret string
 		return ret
 	}
@@ -343,7 +346,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetUpdateLocalPassw
 // GetUpdateLocalPasswordDNOk returns a tuple with the UpdateLocalPasswordDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetUpdateLocalPasswordDNOk() (*string, bool) {
-	if o == nil || isNil(o.UpdateLocalPasswordDN) {
+	if o == nil || IsNil(o.UpdateLocalPasswordDN) {
 		return nil, false
 	}
 	return o.UpdateLocalPasswordDN, true
@@ -351,7 +354,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetUpdateLocalPassw
 
 // HasUpdateLocalPasswordDN returns a boolean if a field has been set.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) HasUpdateLocalPasswordDN() bool {
-	if o != nil && !isNil(o.UpdateLocalPasswordDN) {
+	if o != nil && !IsNil(o.UpdateLocalPasswordDN) {
 		return true
 	}
 
@@ -365,7 +368,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) SetUpdateLocalPassw
 
 // GetAllowLaxPassThroughAuthenticationPasswords returns the AllowLaxPassThroughAuthenticationPasswords field value if set, zero value otherwise.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetAllowLaxPassThroughAuthenticationPasswords() bool {
-	if o == nil || isNil(o.AllowLaxPassThroughAuthenticationPasswords) {
+	if o == nil || IsNil(o.AllowLaxPassThroughAuthenticationPasswords) {
 		var ret bool
 		return ret
 	}
@@ -375,7 +378,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetAllowLaxPassThro
 // GetAllowLaxPassThroughAuthenticationPasswordsOk returns a tuple with the AllowLaxPassThroughAuthenticationPasswords field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetAllowLaxPassThroughAuthenticationPasswordsOk() (*bool, bool) {
-	if o == nil || isNil(o.AllowLaxPassThroughAuthenticationPasswords) {
+	if o == nil || IsNil(o.AllowLaxPassThroughAuthenticationPasswords) {
 		return nil, false
 	}
 	return o.AllowLaxPassThroughAuthenticationPasswords, true
@@ -383,7 +386,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetAllowLaxPassThro
 
 // HasAllowLaxPassThroughAuthenticationPasswords returns a boolean if a field has been set.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) HasAllowLaxPassThroughAuthenticationPasswords() bool {
-	if o != nil && !isNil(o.AllowLaxPassThroughAuthenticationPasswords) {
+	if o != nil && !IsNil(o.AllowLaxPassThroughAuthenticationPasswords) {
 		return true
 	}
 
@@ -397,7 +400,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) SetAllowLaxPassThro
 
 // GetIgnoredPasswordPolicyStateErrorCondition returns the IgnoredPasswordPolicyStateErrorCondition field value if set, zero value otherwise.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetIgnoredPasswordPolicyStateErrorCondition() []EnumpluginIgnoredPasswordPolicyStateErrorConditionProp {
-	if o == nil || isNil(o.IgnoredPasswordPolicyStateErrorCondition) {
+	if o == nil || IsNil(o.IgnoredPasswordPolicyStateErrorCondition) {
 		var ret []EnumpluginIgnoredPasswordPolicyStateErrorConditionProp
 		return ret
 	}
@@ -407,7 +410,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetIgnoredPasswordP
 // GetIgnoredPasswordPolicyStateErrorConditionOk returns a tuple with the IgnoredPasswordPolicyStateErrorCondition field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetIgnoredPasswordPolicyStateErrorConditionOk() ([]EnumpluginIgnoredPasswordPolicyStateErrorConditionProp, bool) {
-	if o == nil || isNil(o.IgnoredPasswordPolicyStateErrorCondition) {
+	if o == nil || IsNil(o.IgnoredPasswordPolicyStateErrorCondition) {
 		return nil, false
 	}
 	return o.IgnoredPasswordPolicyStateErrorCondition, true
@@ -415,7 +418,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetIgnoredPasswordP
 
 // HasIgnoredPasswordPolicyStateErrorCondition returns a boolean if a field has been set.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) HasIgnoredPasswordPolicyStateErrorCondition() bool {
-	if o != nil && !isNil(o.IgnoredPasswordPolicyStateErrorCondition) {
+	if o != nil && !IsNil(o.IgnoredPasswordPolicyStateErrorCondition) {
 		return true
 	}
 
@@ -429,7 +432,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) SetIgnoredPasswordP
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -439,7 +442,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetDescription() st
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -447,7 +450,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetDescriptionOk() 
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -485,7 +488,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) SetEnabled(v bool) 
 
 // GetInvokeForInternalOperations returns the InvokeForInternalOperations field value if set, zero value otherwise.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetInvokeForInternalOperations() bool {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		var ret bool
 		return ret
 	}
@@ -495,7 +498,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetInvokeForInterna
 // GetInvokeForInternalOperationsOk returns a tuple with the InvokeForInternalOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetInvokeForInternalOperationsOk() (*bool, bool) {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		return nil, false
 	}
 	return o.InvokeForInternalOperations, true
@@ -503,7 +506,7 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) GetInvokeForInterna
 
 // HasInvokeForInternalOperations returns a boolean if a field has been set.
 func (o *AddPluggablePassThroughAuthenticationPluginRequest) HasInvokeForInternalOperations() bool {
-	if o != nil && !isNil(o.InvokeForInternalOperations) {
+	if o != nil && !IsNil(o.InvokeForInternalOperations) {
 		return true
 	}
 
@@ -516,53 +519,53 @@ func (o *AddPluggablePassThroughAuthenticationPluginRequest) SetInvokeForInterna
 }
 
 func (o AddPluggablePassThroughAuthenticationPluginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["pluginName"] = o.PluginName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["passThroughAuthenticationHandler"] = o.PassThroughAuthenticationHandler
-	}
-	if !isNil(o.IncludedLocalEntryBaseDN) {
-		toSerialize["includedLocalEntryBaseDN"] = o.IncludedLocalEntryBaseDN
-	}
-	if !isNil(o.ConnectionCriteria) {
-		toSerialize["connectionCriteria"] = o.ConnectionCriteria
-	}
-	if !isNil(o.RequestCriteria) {
-		toSerialize["requestCriteria"] = o.RequestCriteria
-	}
-	if !isNil(o.TryLocalBind) {
-		toSerialize["tryLocalBind"] = o.TryLocalBind
-	}
-	if !isNil(o.OverrideLocalPassword) {
-		toSerialize["overrideLocalPassword"] = o.OverrideLocalPassword
-	}
-	if !isNil(o.UpdateLocalPassword) {
-		toSerialize["updateLocalPassword"] = o.UpdateLocalPassword
-	}
-	if !isNil(o.UpdateLocalPasswordDN) {
-		toSerialize["updateLocalPasswordDN"] = o.UpdateLocalPasswordDN
-	}
-	if !isNil(o.AllowLaxPassThroughAuthenticationPasswords) {
-		toSerialize["allowLaxPassThroughAuthenticationPasswords"] = o.AllowLaxPassThroughAuthenticationPasswords
-	}
-	if !isNil(o.IgnoredPasswordPolicyStateErrorCondition) {
-		toSerialize["ignoredPasswordPolicyStateErrorCondition"] = o.IgnoredPasswordPolicyStateErrorCondition
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.InvokeForInternalOperations) {
-		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddPluggablePassThroughAuthenticationPluginRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["pluginName"] = o.PluginName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["passThroughAuthenticationHandler"] = o.PassThroughAuthenticationHandler
+	if !IsNil(o.IncludedLocalEntryBaseDN) {
+		toSerialize["includedLocalEntryBaseDN"] = o.IncludedLocalEntryBaseDN
+	}
+	if !IsNil(o.ConnectionCriteria) {
+		toSerialize["connectionCriteria"] = o.ConnectionCriteria
+	}
+	if !IsNil(o.RequestCriteria) {
+		toSerialize["requestCriteria"] = o.RequestCriteria
+	}
+	if !IsNil(o.TryLocalBind) {
+		toSerialize["tryLocalBind"] = o.TryLocalBind
+	}
+	if !IsNil(o.OverrideLocalPassword) {
+		toSerialize["overrideLocalPassword"] = o.OverrideLocalPassword
+	}
+	if !IsNil(o.UpdateLocalPassword) {
+		toSerialize["updateLocalPassword"] = o.UpdateLocalPassword
+	}
+	if !IsNil(o.UpdateLocalPasswordDN) {
+		toSerialize["updateLocalPasswordDN"] = o.UpdateLocalPasswordDN
+	}
+	if !IsNil(o.AllowLaxPassThroughAuthenticationPasswords) {
+		toSerialize["allowLaxPassThroughAuthenticationPasswords"] = o.AllowLaxPassThroughAuthenticationPasswords
+	}
+	if !IsNil(o.IgnoredPasswordPolicyStateErrorCondition) {
+		toSerialize["ignoredPasswordPolicyStateErrorCondition"] = o.IgnoredPasswordPolicyStateErrorCondition
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.InvokeForInternalOperations) {
+		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
+	}
+	return toSerialize, nil
 }
 
 type NullableAddPluggablePassThroughAuthenticationPluginRequest struct {

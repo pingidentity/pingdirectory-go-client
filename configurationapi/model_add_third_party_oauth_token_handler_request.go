@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddThirdPartyOauthTokenHandlerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddThirdPartyOauthTokenHandlerRequest{}
+
 // AddThirdPartyOauthTokenHandlerRequest struct for AddThirdPartyOauthTokenHandlerRequest
 type AddThirdPartyOauthTokenHandlerRequest struct {
 	// Name of the new OAuth Token Handler
@@ -121,7 +124,7 @@ func (o *AddThirdPartyOauthTokenHandlerRequest) SetExtensionClass(v string) {
 
 // GetExtensionArgument returns the ExtensionArgument field value if set, zero value otherwise.
 func (o *AddThirdPartyOauthTokenHandlerRequest) GetExtensionArgument() []string {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		var ret []string
 		return ret
 	}
@@ -131,7 +134,7 @@ func (o *AddThirdPartyOauthTokenHandlerRequest) GetExtensionArgument() []string 
 // GetExtensionArgumentOk returns a tuple with the ExtensionArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyOauthTokenHandlerRequest) GetExtensionArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		return nil, false
 	}
 	return o.ExtensionArgument, true
@@ -139,7 +142,7 @@ func (o *AddThirdPartyOauthTokenHandlerRequest) GetExtensionArgumentOk() ([]stri
 
 // HasExtensionArgument returns a boolean if a field has been set.
 func (o *AddThirdPartyOauthTokenHandlerRequest) HasExtensionArgument() bool {
-	if o != nil && !isNil(o.ExtensionArgument) {
+	if o != nil && !IsNil(o.ExtensionArgument) {
 		return true
 	}
 
@@ -153,7 +156,7 @@ func (o *AddThirdPartyOauthTokenHandlerRequest) SetExtensionArgument(v []string)
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddThirdPartyOauthTokenHandlerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -163,7 +166,7 @@ func (o *AddThirdPartyOauthTokenHandlerRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyOauthTokenHandlerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -171,7 +174,7 @@ func (o *AddThirdPartyOauthTokenHandlerRequest) GetDescriptionOk() (*string, boo
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddThirdPartyOauthTokenHandlerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -184,23 +187,25 @@ func (o *AddThirdPartyOauthTokenHandlerRequest) SetDescription(v string) {
 }
 
 func (o AddThirdPartyOauthTokenHandlerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["handlerName"] = o.HandlerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["extensionClass"] = o.ExtensionClass
-	}
-	if !isNil(o.ExtensionArgument) {
-		toSerialize["extensionArgument"] = o.ExtensionArgument
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddThirdPartyOauthTokenHandlerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["handlerName"] = o.HandlerName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["extensionClass"] = o.ExtensionClass
+	if !IsNil(o.ExtensionArgument) {
+		toSerialize["extensionArgument"] = o.ExtensionArgument
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAddThirdPartyOauthTokenHandlerRequest struct {

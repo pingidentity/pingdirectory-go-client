@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AlarmBackendResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AlarmBackendResponse{}
+
 // AlarmBackendResponse struct for AlarmBackendResponse
 type AlarmBackendResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -73,7 +76,7 @@ func NewAlarmBackendResponseWithDefaults() *AlarmBackendResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *AlarmBackendResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -83,7 +86,7 @@ func (o *AlarmBackendResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmBackendResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -91,7 +94,7 @@ func (o *AlarmBackendResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *AlarmBackendResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -105,7 +108,7 @@ func (o *AlarmBackendResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *AlarmBackendResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -115,7 +118,7 @@ func (o *AlarmBackendResponse) GetUrnpingidentityschemasconfigurationmessages20(
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmBackendResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -123,7 +126,7 @@ func (o *AlarmBackendResponse) GetUrnpingidentityschemasconfigurationmessages20O
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *AlarmBackendResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -281,7 +284,7 @@ func (o *AlarmBackendResponse) SetAlarmRetentionTime(v string) {
 
 // GetMaxAlarms returns the MaxAlarms field value if set, zero value otherwise.
 func (o *AlarmBackendResponse) GetMaxAlarms() int32 {
-	if o == nil || isNil(o.MaxAlarms) {
+	if o == nil || IsNil(o.MaxAlarms) {
 		var ret int32
 		return ret
 	}
@@ -291,7 +294,7 @@ func (o *AlarmBackendResponse) GetMaxAlarms() int32 {
 // GetMaxAlarmsOk returns a tuple with the MaxAlarms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmBackendResponse) GetMaxAlarmsOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxAlarms) {
+	if o == nil || IsNil(o.MaxAlarms) {
 		return nil, false
 	}
 	return o.MaxAlarms, true
@@ -299,7 +302,7 @@ func (o *AlarmBackendResponse) GetMaxAlarmsOk() (*int32, bool) {
 
 // HasMaxAlarms returns a boolean if a field has been set.
 func (o *AlarmBackendResponse) HasMaxAlarms() bool {
-	if o != nil && !isNil(o.MaxAlarms) {
+	if o != nil && !IsNil(o.MaxAlarms) {
 		return true
 	}
 
@@ -337,7 +340,7 @@ func (o *AlarmBackendResponse) SetWritabilityMode(v EnumbackendWritabilityModePr
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AlarmBackendResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -347,7 +350,7 @@ func (o *AlarmBackendResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmBackendResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -355,7 +358,7 @@ func (o *AlarmBackendResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AlarmBackendResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -393,7 +396,7 @@ func (o *AlarmBackendResponse) SetEnabled(v bool) {
 
 // GetSetDegradedAlertWhenDisabled returns the SetDegradedAlertWhenDisabled field value if set, zero value otherwise.
 func (o *AlarmBackendResponse) GetSetDegradedAlertWhenDisabled() bool {
-	if o == nil || isNil(o.SetDegradedAlertWhenDisabled) {
+	if o == nil || IsNil(o.SetDegradedAlertWhenDisabled) {
 		var ret bool
 		return ret
 	}
@@ -403,7 +406,7 @@ func (o *AlarmBackendResponse) GetSetDegradedAlertWhenDisabled() bool {
 // GetSetDegradedAlertWhenDisabledOk returns a tuple with the SetDegradedAlertWhenDisabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmBackendResponse) GetSetDegradedAlertWhenDisabledOk() (*bool, bool) {
-	if o == nil || isNil(o.SetDegradedAlertWhenDisabled) {
+	if o == nil || IsNil(o.SetDegradedAlertWhenDisabled) {
 		return nil, false
 	}
 	return o.SetDegradedAlertWhenDisabled, true
@@ -411,7 +414,7 @@ func (o *AlarmBackendResponse) GetSetDegradedAlertWhenDisabledOk() (*bool, bool)
 
 // HasSetDegradedAlertWhenDisabled returns a boolean if a field has been set.
 func (o *AlarmBackendResponse) HasSetDegradedAlertWhenDisabled() bool {
-	if o != nil && !isNil(o.SetDegradedAlertWhenDisabled) {
+	if o != nil && !IsNil(o.SetDegradedAlertWhenDisabled) {
 		return true
 	}
 
@@ -425,7 +428,7 @@ func (o *AlarmBackendResponse) SetSetDegradedAlertWhenDisabled(v bool) {
 
 // GetReturnUnavailableWhenDisabled returns the ReturnUnavailableWhenDisabled field value if set, zero value otherwise.
 func (o *AlarmBackendResponse) GetReturnUnavailableWhenDisabled() bool {
-	if o == nil || isNil(o.ReturnUnavailableWhenDisabled) {
+	if o == nil || IsNil(o.ReturnUnavailableWhenDisabled) {
 		var ret bool
 		return ret
 	}
@@ -435,7 +438,7 @@ func (o *AlarmBackendResponse) GetReturnUnavailableWhenDisabled() bool {
 // GetReturnUnavailableWhenDisabledOk returns a tuple with the ReturnUnavailableWhenDisabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmBackendResponse) GetReturnUnavailableWhenDisabledOk() (*bool, bool) {
-	if o == nil || isNil(o.ReturnUnavailableWhenDisabled) {
+	if o == nil || IsNil(o.ReturnUnavailableWhenDisabled) {
 		return nil, false
 	}
 	return o.ReturnUnavailableWhenDisabled, true
@@ -443,7 +446,7 @@ func (o *AlarmBackendResponse) GetReturnUnavailableWhenDisabledOk() (*bool, bool
 
 // HasReturnUnavailableWhenDisabled returns a boolean if a field has been set.
 func (o *AlarmBackendResponse) HasReturnUnavailableWhenDisabled() bool {
-	if o != nil && !isNil(o.ReturnUnavailableWhenDisabled) {
+	if o != nil && !IsNil(o.ReturnUnavailableWhenDisabled) {
 		return true
 	}
 
@@ -457,7 +460,7 @@ func (o *AlarmBackendResponse) SetReturnUnavailableWhenDisabled(v bool) {
 
 // GetBackupFilePermissions returns the BackupFilePermissions field value if set, zero value otherwise.
 func (o *AlarmBackendResponse) GetBackupFilePermissions() string {
-	if o == nil || isNil(o.BackupFilePermissions) {
+	if o == nil || IsNil(o.BackupFilePermissions) {
 		var ret string
 		return ret
 	}
@@ -467,7 +470,7 @@ func (o *AlarmBackendResponse) GetBackupFilePermissions() string {
 // GetBackupFilePermissionsOk returns a tuple with the BackupFilePermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmBackendResponse) GetBackupFilePermissionsOk() (*string, bool) {
-	if o == nil || isNil(o.BackupFilePermissions) {
+	if o == nil || IsNil(o.BackupFilePermissions) {
 		return nil, false
 	}
 	return o.BackupFilePermissions, true
@@ -475,7 +478,7 @@ func (o *AlarmBackendResponse) GetBackupFilePermissionsOk() (*string, bool) {
 
 // HasBackupFilePermissions returns a boolean if a field has been set.
 func (o *AlarmBackendResponse) HasBackupFilePermissions() bool {
-	if o != nil && !isNil(o.BackupFilePermissions) {
+	if o != nil && !IsNil(o.BackupFilePermissions) {
 		return true
 	}
 
@@ -489,7 +492,7 @@ func (o *AlarmBackendResponse) SetBackupFilePermissions(v string) {
 
 // GetNotificationManager returns the NotificationManager field value if set, zero value otherwise.
 func (o *AlarmBackendResponse) GetNotificationManager() string {
-	if o == nil || isNil(o.NotificationManager) {
+	if o == nil || IsNil(o.NotificationManager) {
 		var ret string
 		return ret
 	}
@@ -499,7 +502,7 @@ func (o *AlarmBackendResponse) GetNotificationManager() string {
 // GetNotificationManagerOk returns a tuple with the NotificationManager field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmBackendResponse) GetNotificationManagerOk() (*string, bool) {
-	if o == nil || isNil(o.NotificationManager) {
+	if o == nil || IsNil(o.NotificationManager) {
 		return nil, false
 	}
 	return o.NotificationManager, true
@@ -507,7 +510,7 @@ func (o *AlarmBackendResponse) GetNotificationManagerOk() (*string, bool) {
 
 // HasNotificationManager returns a boolean if a field has been set.
 func (o *AlarmBackendResponse) HasNotificationManager() bool {
-	if o != nil && !isNil(o.NotificationManager) {
+	if o != nil && !IsNil(o.NotificationManager) {
 		return true
 	}
 
@@ -520,56 +523,48 @@ func (o *AlarmBackendResponse) SetNotificationManager(v string) {
 }
 
 func (o AlarmBackendResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["backendID"] = o.BackendID
-	}
-	if true {
-		toSerialize["baseDN"] = o.BaseDN
-	}
-	if true {
-		toSerialize["ldifFile"] = o.LdifFile
-	}
-	if true {
-		toSerialize["alarmRetentionTime"] = o.AlarmRetentionTime
-	}
-	if !isNil(o.MaxAlarms) {
-		toSerialize["maxAlarms"] = o.MaxAlarms
-	}
-	if true {
-		toSerialize["writabilityMode"] = o.WritabilityMode
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.SetDegradedAlertWhenDisabled) {
-		toSerialize["setDegradedAlertWhenDisabled"] = o.SetDegradedAlertWhenDisabled
-	}
-	if !isNil(o.ReturnUnavailableWhenDisabled) {
-		toSerialize["returnUnavailableWhenDisabled"] = o.ReturnUnavailableWhenDisabled
-	}
-	if !isNil(o.BackupFilePermissions) {
-		toSerialize["backupFilePermissions"] = o.BackupFilePermissions
-	}
-	if !isNil(o.NotificationManager) {
-		toSerialize["notificationManager"] = o.NotificationManager
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AlarmBackendResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	toSerialize["backendID"] = o.BackendID
+	toSerialize["baseDN"] = o.BaseDN
+	toSerialize["ldifFile"] = o.LdifFile
+	toSerialize["alarmRetentionTime"] = o.AlarmRetentionTime
+	if !IsNil(o.MaxAlarms) {
+		toSerialize["maxAlarms"] = o.MaxAlarms
+	}
+	toSerialize["writabilityMode"] = o.WritabilityMode
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.SetDegradedAlertWhenDisabled) {
+		toSerialize["setDegradedAlertWhenDisabled"] = o.SetDegradedAlertWhenDisabled
+	}
+	if !IsNil(o.ReturnUnavailableWhenDisabled) {
+		toSerialize["returnUnavailableWhenDisabled"] = o.ReturnUnavailableWhenDisabled
+	}
+	if !IsNil(o.BackupFilePermissions) {
+		toSerialize["backupFilePermissions"] = o.BackupFilePermissions
+	}
+	if !IsNil(o.NotificationManager) {
+		toSerialize["notificationManager"] = o.NotificationManager
+	}
+	return toSerialize, nil
 }
 
 type NullableAlarmBackendResponse struct {

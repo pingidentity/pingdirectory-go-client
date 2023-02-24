@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddPingFederateAccessTokenValidatorRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddPingFederateAccessTokenValidatorRequest{}
+
 // AddPingFederateAccessTokenValidatorRequest struct for AddPingFederateAccessTokenValidatorRequest
 type AddPingFederateAccessTokenValidatorRequest struct {
 	// Name of the new Access Token Validator
@@ -140,7 +143,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) SetClientID(v string) {
 
 // GetClientSecret returns the ClientSecret field value if set, zero value otherwise.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetClientSecret() string {
-	if o == nil || isNil(o.ClientSecret) {
+	if o == nil || IsNil(o.ClientSecret) {
 		var ret string
 		return ret
 	}
@@ -150,7 +153,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetClientSecret() string {
 // GetClientSecretOk returns a tuple with the ClientSecret field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetClientSecretOk() (*string, bool) {
-	if o == nil || isNil(o.ClientSecret) {
+	if o == nil || IsNil(o.ClientSecret) {
 		return nil, false
 	}
 	return o.ClientSecret, true
@@ -158,7 +161,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetClientSecretOk() (*strin
 
 // HasClientSecret returns a boolean if a field has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) HasClientSecret() bool {
-	if o != nil && !isNil(o.ClientSecret) {
+	if o != nil && !IsNil(o.ClientSecret) {
 		return true
 	}
 
@@ -172,7 +175,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) SetClientSecret(v string) {
 
 // GetClientSecretPassphraseProvider returns the ClientSecretPassphraseProvider field value if set, zero value otherwise.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetClientSecretPassphraseProvider() string {
-	if o == nil || isNil(o.ClientSecretPassphraseProvider) {
+	if o == nil || IsNil(o.ClientSecretPassphraseProvider) {
 		var ret string
 		return ret
 	}
@@ -182,7 +185,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetClientSecretPassphrasePr
 // GetClientSecretPassphraseProviderOk returns a tuple with the ClientSecretPassphraseProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetClientSecretPassphraseProviderOk() (*string, bool) {
-	if o == nil || isNil(o.ClientSecretPassphraseProvider) {
+	if o == nil || IsNil(o.ClientSecretPassphraseProvider) {
 		return nil, false
 	}
 	return o.ClientSecretPassphraseProvider, true
@@ -190,7 +193,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetClientSecretPassphrasePr
 
 // HasClientSecretPassphraseProvider returns a boolean if a field has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) HasClientSecretPassphraseProvider() bool {
-	if o != nil && !isNil(o.ClientSecretPassphraseProvider) {
+	if o != nil && !IsNil(o.ClientSecretPassphraseProvider) {
 		return true
 	}
 
@@ -204,7 +207,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) SetClientSecretPassphrasePr
 
 // GetIncludeAudParameter returns the IncludeAudParameter field value if set, zero value otherwise.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetIncludeAudParameter() bool {
-	if o == nil || isNil(o.IncludeAudParameter) {
+	if o == nil || IsNil(o.IncludeAudParameter) {
 		var ret bool
 		return ret
 	}
@@ -214,7 +217,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetIncludeAudParameter() bo
 // GetIncludeAudParameterOk returns a tuple with the IncludeAudParameter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetIncludeAudParameterOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeAudParameter) {
+	if o == nil || IsNil(o.IncludeAudParameter) {
 		return nil, false
 	}
 	return o.IncludeAudParameter, true
@@ -222,7 +225,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetIncludeAudParameterOk() 
 
 // HasIncludeAudParameter returns a boolean if a field has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) HasIncludeAudParameter() bool {
-	if o != nil && !isNil(o.IncludeAudParameter) {
+	if o != nil && !IsNil(o.IncludeAudParameter) {
 		return true
 	}
 
@@ -236,7 +239,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) SetIncludeAudParameter(v bo
 
 // GetAccessTokenManagerID returns the AccessTokenManagerID field value if set, zero value otherwise.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetAccessTokenManagerID() string {
-	if o == nil || isNil(o.AccessTokenManagerID) {
+	if o == nil || IsNil(o.AccessTokenManagerID) {
 		var ret string
 		return ret
 	}
@@ -246,7 +249,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetAccessTokenManagerID() s
 // GetAccessTokenManagerIDOk returns a tuple with the AccessTokenManagerID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetAccessTokenManagerIDOk() (*string, bool) {
-	if o == nil || isNil(o.AccessTokenManagerID) {
+	if o == nil || IsNil(o.AccessTokenManagerID) {
 		return nil, false
 	}
 	return o.AccessTokenManagerID, true
@@ -254,7 +257,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetAccessTokenManagerIDOk()
 
 // HasAccessTokenManagerID returns a boolean if a field has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) HasAccessTokenManagerID() bool {
-	if o != nil && !isNil(o.AccessTokenManagerID) {
+	if o != nil && !IsNil(o.AccessTokenManagerID) {
 		return true
 	}
 
@@ -268,7 +271,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) SetAccessTokenManagerID(v s
 
 // GetEndpointCacheRefresh returns the EndpointCacheRefresh field value if set, zero value otherwise.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetEndpointCacheRefresh() string {
-	if o == nil || isNil(o.EndpointCacheRefresh) {
+	if o == nil || IsNil(o.EndpointCacheRefresh) {
 		var ret string
 		return ret
 	}
@@ -278,7 +281,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetEndpointCacheRefresh() s
 // GetEndpointCacheRefreshOk returns a tuple with the EndpointCacheRefresh field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetEndpointCacheRefreshOk() (*string, bool) {
-	if o == nil || isNil(o.EndpointCacheRefresh) {
+	if o == nil || IsNil(o.EndpointCacheRefresh) {
 		return nil, false
 	}
 	return o.EndpointCacheRefresh, true
@@ -286,7 +289,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetEndpointCacheRefreshOk()
 
 // HasEndpointCacheRefresh returns a boolean if a field has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) HasEndpointCacheRefresh() bool {
-	if o != nil && !isNil(o.EndpointCacheRefresh) {
+	if o != nil && !IsNil(o.EndpointCacheRefresh) {
 		return true
 	}
 
@@ -300,7 +303,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) SetEndpointCacheRefresh(v s
 
 // GetEvaluationOrderIndex returns the EvaluationOrderIndex field value if set, zero value otherwise.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetEvaluationOrderIndex() int32 {
-	if o == nil || isNil(o.EvaluationOrderIndex) {
+	if o == nil || IsNil(o.EvaluationOrderIndex) {
 		var ret int32
 		return ret
 	}
@@ -310,7 +313,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetEvaluationOrderIndex() i
 // GetEvaluationOrderIndexOk returns a tuple with the EvaluationOrderIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetEvaluationOrderIndexOk() (*int32, bool) {
-	if o == nil || isNil(o.EvaluationOrderIndex) {
+	if o == nil || IsNil(o.EvaluationOrderIndex) {
 		return nil, false
 	}
 	return o.EvaluationOrderIndex, true
@@ -318,7 +321,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetEvaluationOrderIndexOk()
 
 // HasEvaluationOrderIndex returns a boolean if a field has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) HasEvaluationOrderIndex() bool {
-	if o != nil && !isNil(o.EvaluationOrderIndex) {
+	if o != nil && !IsNil(o.EvaluationOrderIndex) {
 		return true
 	}
 
@@ -332,7 +335,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) SetEvaluationOrderIndex(v i
 
 // GetAuthorizationServer returns the AuthorizationServer field value if set, zero value otherwise.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetAuthorizationServer() string {
-	if o == nil || isNil(o.AuthorizationServer) {
+	if o == nil || IsNil(o.AuthorizationServer) {
 		var ret string
 		return ret
 	}
@@ -342,7 +345,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetAuthorizationServer() st
 // GetAuthorizationServerOk returns a tuple with the AuthorizationServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetAuthorizationServerOk() (*string, bool) {
-	if o == nil || isNil(o.AuthorizationServer) {
+	if o == nil || IsNil(o.AuthorizationServer) {
 		return nil, false
 	}
 	return o.AuthorizationServer, true
@@ -350,7 +353,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetAuthorizationServerOk() 
 
 // HasAuthorizationServer returns a boolean if a field has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) HasAuthorizationServer() bool {
-	if o != nil && !isNil(o.AuthorizationServer) {
+	if o != nil && !IsNil(o.AuthorizationServer) {
 		return true
 	}
 
@@ -364,7 +367,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) SetAuthorizationServer(v st
 
 // GetIdentityMapper returns the IdentityMapper field value if set, zero value otherwise.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetIdentityMapper() string {
-	if o == nil || isNil(o.IdentityMapper) {
+	if o == nil || IsNil(o.IdentityMapper) {
 		var ret string
 		return ret
 	}
@@ -374,7 +377,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetIdentityMapper() string 
 // GetIdentityMapperOk returns a tuple with the IdentityMapper field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetIdentityMapperOk() (*string, bool) {
-	if o == nil || isNil(o.IdentityMapper) {
+	if o == nil || IsNil(o.IdentityMapper) {
 		return nil, false
 	}
 	return o.IdentityMapper, true
@@ -382,7 +385,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetIdentityMapperOk() (*str
 
 // HasIdentityMapper returns a boolean if a field has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) HasIdentityMapper() bool {
-	if o != nil && !isNil(o.IdentityMapper) {
+	if o != nil && !IsNil(o.IdentityMapper) {
 		return true
 	}
 
@@ -396,7 +399,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) SetIdentityMapper(v string)
 
 // GetSubjectClaimName returns the SubjectClaimName field value if set, zero value otherwise.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetSubjectClaimName() string {
-	if o == nil || isNil(o.SubjectClaimName) {
+	if o == nil || IsNil(o.SubjectClaimName) {
 		var ret string
 		return ret
 	}
@@ -406,7 +409,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetSubjectClaimName() strin
 // GetSubjectClaimNameOk returns a tuple with the SubjectClaimName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetSubjectClaimNameOk() (*string, bool) {
-	if o == nil || isNil(o.SubjectClaimName) {
+	if o == nil || IsNil(o.SubjectClaimName) {
 		return nil, false
 	}
 	return o.SubjectClaimName, true
@@ -414,7 +417,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetSubjectClaimNameOk() (*s
 
 // HasSubjectClaimName returns a boolean if a field has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) HasSubjectClaimName() bool {
-	if o != nil && !isNil(o.SubjectClaimName) {
+	if o != nil && !IsNil(o.SubjectClaimName) {
 		return true
 	}
 
@@ -428,7 +431,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) SetSubjectClaimName(v strin
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -438,7 +441,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -446,7 +449,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetDescriptionOk() (*string
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -483,50 +486,50 @@ func (o *AddPingFederateAccessTokenValidatorRequest) SetEnabled(v bool) {
 }
 
 func (o AddPingFederateAccessTokenValidatorRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["validatorName"] = o.ValidatorName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["clientID"] = o.ClientID
-	}
-	if !isNil(o.ClientSecret) {
-		toSerialize["clientSecret"] = o.ClientSecret
-	}
-	if !isNil(o.ClientSecretPassphraseProvider) {
-		toSerialize["clientSecretPassphraseProvider"] = o.ClientSecretPassphraseProvider
-	}
-	if !isNil(o.IncludeAudParameter) {
-		toSerialize["includeAudParameter"] = o.IncludeAudParameter
-	}
-	if !isNil(o.AccessTokenManagerID) {
-		toSerialize["accessTokenManagerID"] = o.AccessTokenManagerID
-	}
-	if !isNil(o.EndpointCacheRefresh) {
-		toSerialize["endpointCacheRefresh"] = o.EndpointCacheRefresh
-	}
-	if !isNil(o.EvaluationOrderIndex) {
-		toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
-	}
-	if !isNil(o.AuthorizationServer) {
-		toSerialize["authorizationServer"] = o.AuthorizationServer
-	}
-	if !isNil(o.IdentityMapper) {
-		toSerialize["identityMapper"] = o.IdentityMapper
-	}
-	if !isNil(o.SubjectClaimName) {
-		toSerialize["subjectClaimName"] = o.SubjectClaimName
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddPingFederateAccessTokenValidatorRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["validatorName"] = o.ValidatorName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["clientID"] = o.ClientID
+	if !IsNil(o.ClientSecret) {
+		toSerialize["clientSecret"] = o.ClientSecret
+	}
+	if !IsNil(o.ClientSecretPassphraseProvider) {
+		toSerialize["clientSecretPassphraseProvider"] = o.ClientSecretPassphraseProvider
+	}
+	if !IsNil(o.IncludeAudParameter) {
+		toSerialize["includeAudParameter"] = o.IncludeAudParameter
+	}
+	if !IsNil(o.AccessTokenManagerID) {
+		toSerialize["accessTokenManagerID"] = o.AccessTokenManagerID
+	}
+	if !IsNil(o.EndpointCacheRefresh) {
+		toSerialize["endpointCacheRefresh"] = o.EndpointCacheRefresh
+	}
+	if !IsNil(o.EvaluationOrderIndex) {
+		toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
+	}
+	if !IsNil(o.AuthorizationServer) {
+		toSerialize["authorizationServer"] = o.AuthorizationServer
+	}
+	if !IsNil(o.IdentityMapper) {
+		toSerialize["identityMapper"] = o.IdentityMapper
+	}
+	if !IsNil(o.SubjectClaimName) {
+		toSerialize["subjectClaimName"] = o.SubjectClaimName
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddPingFederateAccessTokenValidatorRequest struct {

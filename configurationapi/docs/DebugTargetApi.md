@@ -26,7 +26,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
 )
 
 func main() {
@@ -96,7 +96,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
 )
 
 func main() {
@@ -105,7 +105,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DebugTargetApi.DeleteDebugTarget(context.Background(), debugTargetName, logPublisherName).Execute()
+    r, err := apiClient.DebugTargetApi.DeleteDebugTarget(context.Background(), debugTargetName, logPublisherName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DebugTargetApi.DeleteDebugTarget``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -165,7 +165,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
 )
 
 func main() {
@@ -236,7 +236,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
 )
 
 func main() {

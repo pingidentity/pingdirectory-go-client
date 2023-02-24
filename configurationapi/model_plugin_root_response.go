@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PluginRootResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PluginRootResponse{}
+
 // PluginRootResponse struct for PluginRootResponse
 type PluginRootResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -140,7 +143,7 @@ func NewPluginRootResponseWithDefaults() *PluginRootResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -150,7 +153,7 @@ func (o *PluginRootResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -158,7 +161,7 @@ func (o *PluginRootResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -172,7 +175,7 @@ func (o *PluginRootResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -182,7 +185,7 @@ func (o *PluginRootResponse) GetUrnpingidentityschemasconfigurationmessages20() 
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -190,7 +193,7 @@ func (o *PluginRootResponse) GetUrnpingidentityschemasconfigurationmessages20Ok(
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -204,7 +207,7 @@ func (o *PluginRootResponse) SetUrnpingidentityschemasconfigurationmessages20(v 
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetSchemas() []EnumpluginRootSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumpluginRootSchemaUrn
 		return ret
 	}
@@ -214,7 +217,7 @@ func (o *PluginRootResponse) GetSchemas() []EnumpluginRootSchemaUrn {
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetSchemasOk() ([]EnumpluginRootSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -222,7 +225,7 @@ func (o *PluginRootResponse) GetSchemasOk() ([]EnumpluginRootSchemaUrn, bool) {
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -236,7 +239,7 @@ func (o *PluginRootResponse) SetSchemas(v []EnumpluginRootSchemaUrn) {
 
 // GetPluginOrderStartup returns the PluginOrderStartup field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderStartup() string {
-	if o == nil || isNil(o.PluginOrderStartup) {
+	if o == nil || IsNil(o.PluginOrderStartup) {
 		var ret string
 		return ret
 	}
@@ -246,7 +249,7 @@ func (o *PluginRootResponse) GetPluginOrderStartup() string {
 // GetPluginOrderStartupOk returns a tuple with the PluginOrderStartup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderStartupOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderStartup) {
+	if o == nil || IsNil(o.PluginOrderStartup) {
 		return nil, false
 	}
 	return o.PluginOrderStartup, true
@@ -254,7 +257,7 @@ func (o *PluginRootResponse) GetPluginOrderStartupOk() (*string, bool) {
 
 // HasPluginOrderStartup returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderStartup() bool {
-	if o != nil && !isNil(o.PluginOrderStartup) {
+	if o != nil && !IsNil(o.PluginOrderStartup) {
 		return true
 	}
 
@@ -268,7 +271,7 @@ func (o *PluginRootResponse) SetPluginOrderStartup(v string) {
 
 // GetPluginOrderShutdown returns the PluginOrderShutdown field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderShutdown() string {
-	if o == nil || isNil(o.PluginOrderShutdown) {
+	if o == nil || IsNil(o.PluginOrderShutdown) {
 		var ret string
 		return ret
 	}
@@ -278,7 +281,7 @@ func (o *PluginRootResponse) GetPluginOrderShutdown() string {
 // GetPluginOrderShutdownOk returns a tuple with the PluginOrderShutdown field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderShutdownOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderShutdown) {
+	if o == nil || IsNil(o.PluginOrderShutdown) {
 		return nil, false
 	}
 	return o.PluginOrderShutdown, true
@@ -286,7 +289,7 @@ func (o *PluginRootResponse) GetPluginOrderShutdownOk() (*string, bool) {
 
 // HasPluginOrderShutdown returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderShutdown() bool {
-	if o != nil && !isNil(o.PluginOrderShutdown) {
+	if o != nil && !IsNil(o.PluginOrderShutdown) {
 		return true
 	}
 
@@ -300,7 +303,7 @@ func (o *PluginRootResponse) SetPluginOrderShutdown(v string) {
 
 // GetPluginOrderPostConnect returns the PluginOrderPostConnect field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPostConnect() string {
-	if o == nil || isNil(o.PluginOrderPostConnect) {
+	if o == nil || IsNil(o.PluginOrderPostConnect) {
 		var ret string
 		return ret
 	}
@@ -310,7 +313,7 @@ func (o *PluginRootResponse) GetPluginOrderPostConnect() string {
 // GetPluginOrderPostConnectOk returns a tuple with the PluginOrderPostConnect field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPostConnectOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPostConnect) {
+	if o == nil || IsNil(o.PluginOrderPostConnect) {
 		return nil, false
 	}
 	return o.PluginOrderPostConnect, true
@@ -318,7 +321,7 @@ func (o *PluginRootResponse) GetPluginOrderPostConnectOk() (*string, bool) {
 
 // HasPluginOrderPostConnect returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPostConnect() bool {
-	if o != nil && !isNil(o.PluginOrderPostConnect) {
+	if o != nil && !IsNil(o.PluginOrderPostConnect) {
 		return true
 	}
 
@@ -332,7 +335,7 @@ func (o *PluginRootResponse) SetPluginOrderPostConnect(v string) {
 
 // GetPluginOrderPostDisconnect returns the PluginOrderPostDisconnect field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPostDisconnect() string {
-	if o == nil || isNil(o.PluginOrderPostDisconnect) {
+	if o == nil || IsNil(o.PluginOrderPostDisconnect) {
 		var ret string
 		return ret
 	}
@@ -342,7 +345,7 @@ func (o *PluginRootResponse) GetPluginOrderPostDisconnect() string {
 // GetPluginOrderPostDisconnectOk returns a tuple with the PluginOrderPostDisconnect field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPostDisconnectOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPostDisconnect) {
+	if o == nil || IsNil(o.PluginOrderPostDisconnect) {
 		return nil, false
 	}
 	return o.PluginOrderPostDisconnect, true
@@ -350,7 +353,7 @@ func (o *PluginRootResponse) GetPluginOrderPostDisconnectOk() (*string, bool) {
 
 // HasPluginOrderPostDisconnect returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPostDisconnect() bool {
-	if o != nil && !isNil(o.PluginOrderPostDisconnect) {
+	if o != nil && !IsNil(o.PluginOrderPostDisconnect) {
 		return true
 	}
 
@@ -364,7 +367,7 @@ func (o *PluginRootResponse) SetPluginOrderPostDisconnect(v string) {
 
 // GetPluginOrderLDIFImport returns the PluginOrderLDIFImport field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderLDIFImport() string {
-	if o == nil || isNil(o.PluginOrderLDIFImport) {
+	if o == nil || IsNil(o.PluginOrderLDIFImport) {
 		var ret string
 		return ret
 	}
@@ -374,7 +377,7 @@ func (o *PluginRootResponse) GetPluginOrderLDIFImport() string {
 // GetPluginOrderLDIFImportOk returns a tuple with the PluginOrderLDIFImport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderLDIFImportOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderLDIFImport) {
+	if o == nil || IsNil(o.PluginOrderLDIFImport) {
 		return nil, false
 	}
 	return o.PluginOrderLDIFImport, true
@@ -382,7 +385,7 @@ func (o *PluginRootResponse) GetPluginOrderLDIFImportOk() (*string, bool) {
 
 // HasPluginOrderLDIFImport returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderLDIFImport() bool {
-	if o != nil && !isNil(o.PluginOrderLDIFImport) {
+	if o != nil && !IsNil(o.PluginOrderLDIFImport) {
 		return true
 	}
 
@@ -396,7 +399,7 @@ func (o *PluginRootResponse) SetPluginOrderLDIFImport(v string) {
 
 // GetPluginOrderLDIFExport returns the PluginOrderLDIFExport field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderLDIFExport() string {
-	if o == nil || isNil(o.PluginOrderLDIFExport) {
+	if o == nil || IsNil(o.PluginOrderLDIFExport) {
 		var ret string
 		return ret
 	}
@@ -406,7 +409,7 @@ func (o *PluginRootResponse) GetPluginOrderLDIFExport() string {
 // GetPluginOrderLDIFExportOk returns a tuple with the PluginOrderLDIFExport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderLDIFExportOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderLDIFExport) {
+	if o == nil || IsNil(o.PluginOrderLDIFExport) {
 		return nil, false
 	}
 	return o.PluginOrderLDIFExport, true
@@ -414,7 +417,7 @@ func (o *PluginRootResponse) GetPluginOrderLDIFExportOk() (*string, bool) {
 
 // HasPluginOrderLDIFExport returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderLDIFExport() bool {
-	if o != nil && !isNil(o.PluginOrderLDIFExport) {
+	if o != nil && !IsNil(o.PluginOrderLDIFExport) {
 		return true
 	}
 
@@ -428,7 +431,7 @@ func (o *PluginRootResponse) SetPluginOrderLDIFExport(v string) {
 
 // GetPluginOrderPreParseAbandon returns the PluginOrderPreParseAbandon field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPreParseAbandon() string {
-	if o == nil || isNil(o.PluginOrderPreParseAbandon) {
+	if o == nil || IsNil(o.PluginOrderPreParseAbandon) {
 		var ret string
 		return ret
 	}
@@ -438,7 +441,7 @@ func (o *PluginRootResponse) GetPluginOrderPreParseAbandon() string {
 // GetPluginOrderPreParseAbandonOk returns a tuple with the PluginOrderPreParseAbandon field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPreParseAbandonOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPreParseAbandon) {
+	if o == nil || IsNil(o.PluginOrderPreParseAbandon) {
 		return nil, false
 	}
 	return o.PluginOrderPreParseAbandon, true
@@ -446,7 +449,7 @@ func (o *PluginRootResponse) GetPluginOrderPreParseAbandonOk() (*string, bool) {
 
 // HasPluginOrderPreParseAbandon returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPreParseAbandon() bool {
-	if o != nil && !isNil(o.PluginOrderPreParseAbandon) {
+	if o != nil && !IsNil(o.PluginOrderPreParseAbandon) {
 		return true
 	}
 
@@ -460,7 +463,7 @@ func (o *PluginRootResponse) SetPluginOrderPreParseAbandon(v string) {
 
 // GetPluginOrderPreParseAdd returns the PluginOrderPreParseAdd field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPreParseAdd() string {
-	if o == nil || isNil(o.PluginOrderPreParseAdd) {
+	if o == nil || IsNil(o.PluginOrderPreParseAdd) {
 		var ret string
 		return ret
 	}
@@ -470,7 +473,7 @@ func (o *PluginRootResponse) GetPluginOrderPreParseAdd() string {
 // GetPluginOrderPreParseAddOk returns a tuple with the PluginOrderPreParseAdd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPreParseAddOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPreParseAdd) {
+	if o == nil || IsNil(o.PluginOrderPreParseAdd) {
 		return nil, false
 	}
 	return o.PluginOrderPreParseAdd, true
@@ -478,7 +481,7 @@ func (o *PluginRootResponse) GetPluginOrderPreParseAddOk() (*string, bool) {
 
 // HasPluginOrderPreParseAdd returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPreParseAdd() bool {
-	if o != nil && !isNil(o.PluginOrderPreParseAdd) {
+	if o != nil && !IsNil(o.PluginOrderPreParseAdd) {
 		return true
 	}
 
@@ -492,7 +495,7 @@ func (o *PluginRootResponse) SetPluginOrderPreParseAdd(v string) {
 
 // GetPluginOrderPreParseBind returns the PluginOrderPreParseBind field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPreParseBind() string {
-	if o == nil || isNil(o.PluginOrderPreParseBind) {
+	if o == nil || IsNil(o.PluginOrderPreParseBind) {
 		var ret string
 		return ret
 	}
@@ -502,7 +505,7 @@ func (o *PluginRootResponse) GetPluginOrderPreParseBind() string {
 // GetPluginOrderPreParseBindOk returns a tuple with the PluginOrderPreParseBind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPreParseBindOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPreParseBind) {
+	if o == nil || IsNil(o.PluginOrderPreParseBind) {
 		return nil, false
 	}
 	return o.PluginOrderPreParseBind, true
@@ -510,7 +513,7 @@ func (o *PluginRootResponse) GetPluginOrderPreParseBindOk() (*string, bool) {
 
 // HasPluginOrderPreParseBind returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPreParseBind() bool {
-	if o != nil && !isNil(o.PluginOrderPreParseBind) {
+	if o != nil && !IsNil(o.PluginOrderPreParseBind) {
 		return true
 	}
 
@@ -524,7 +527,7 @@ func (o *PluginRootResponse) SetPluginOrderPreParseBind(v string) {
 
 // GetPluginOrderPreParseCompare returns the PluginOrderPreParseCompare field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPreParseCompare() string {
-	if o == nil || isNil(o.PluginOrderPreParseCompare) {
+	if o == nil || IsNil(o.PluginOrderPreParseCompare) {
 		var ret string
 		return ret
 	}
@@ -534,7 +537,7 @@ func (o *PluginRootResponse) GetPluginOrderPreParseCompare() string {
 // GetPluginOrderPreParseCompareOk returns a tuple with the PluginOrderPreParseCompare field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPreParseCompareOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPreParseCompare) {
+	if o == nil || IsNil(o.PluginOrderPreParseCompare) {
 		return nil, false
 	}
 	return o.PluginOrderPreParseCompare, true
@@ -542,7 +545,7 @@ func (o *PluginRootResponse) GetPluginOrderPreParseCompareOk() (*string, bool) {
 
 // HasPluginOrderPreParseCompare returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPreParseCompare() bool {
-	if o != nil && !isNil(o.PluginOrderPreParseCompare) {
+	if o != nil && !IsNil(o.PluginOrderPreParseCompare) {
 		return true
 	}
 
@@ -556,7 +559,7 @@ func (o *PluginRootResponse) SetPluginOrderPreParseCompare(v string) {
 
 // GetPluginOrderPreParseDelete returns the PluginOrderPreParseDelete field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPreParseDelete() string {
-	if o == nil || isNil(o.PluginOrderPreParseDelete) {
+	if o == nil || IsNil(o.PluginOrderPreParseDelete) {
 		var ret string
 		return ret
 	}
@@ -566,7 +569,7 @@ func (o *PluginRootResponse) GetPluginOrderPreParseDelete() string {
 // GetPluginOrderPreParseDeleteOk returns a tuple with the PluginOrderPreParseDelete field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPreParseDeleteOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPreParseDelete) {
+	if o == nil || IsNil(o.PluginOrderPreParseDelete) {
 		return nil, false
 	}
 	return o.PluginOrderPreParseDelete, true
@@ -574,7 +577,7 @@ func (o *PluginRootResponse) GetPluginOrderPreParseDeleteOk() (*string, bool) {
 
 // HasPluginOrderPreParseDelete returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPreParseDelete() bool {
-	if o != nil && !isNil(o.PluginOrderPreParseDelete) {
+	if o != nil && !IsNil(o.PluginOrderPreParseDelete) {
 		return true
 	}
 
@@ -588,7 +591,7 @@ func (o *PluginRootResponse) SetPluginOrderPreParseDelete(v string) {
 
 // GetPluginOrderPreParseExtended returns the PluginOrderPreParseExtended field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPreParseExtended() string {
-	if o == nil || isNil(o.PluginOrderPreParseExtended) {
+	if o == nil || IsNil(o.PluginOrderPreParseExtended) {
 		var ret string
 		return ret
 	}
@@ -598,7 +601,7 @@ func (o *PluginRootResponse) GetPluginOrderPreParseExtended() string {
 // GetPluginOrderPreParseExtendedOk returns a tuple with the PluginOrderPreParseExtended field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPreParseExtendedOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPreParseExtended) {
+	if o == nil || IsNil(o.PluginOrderPreParseExtended) {
 		return nil, false
 	}
 	return o.PluginOrderPreParseExtended, true
@@ -606,7 +609,7 @@ func (o *PluginRootResponse) GetPluginOrderPreParseExtendedOk() (*string, bool) 
 
 // HasPluginOrderPreParseExtended returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPreParseExtended() bool {
-	if o != nil && !isNil(o.PluginOrderPreParseExtended) {
+	if o != nil && !IsNil(o.PluginOrderPreParseExtended) {
 		return true
 	}
 
@@ -620,7 +623,7 @@ func (o *PluginRootResponse) SetPluginOrderPreParseExtended(v string) {
 
 // GetPluginOrderPreParseModify returns the PluginOrderPreParseModify field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPreParseModify() string {
-	if o == nil || isNil(o.PluginOrderPreParseModify) {
+	if o == nil || IsNil(o.PluginOrderPreParseModify) {
 		var ret string
 		return ret
 	}
@@ -630,7 +633,7 @@ func (o *PluginRootResponse) GetPluginOrderPreParseModify() string {
 // GetPluginOrderPreParseModifyOk returns a tuple with the PluginOrderPreParseModify field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPreParseModifyOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPreParseModify) {
+	if o == nil || IsNil(o.PluginOrderPreParseModify) {
 		return nil, false
 	}
 	return o.PluginOrderPreParseModify, true
@@ -638,7 +641,7 @@ func (o *PluginRootResponse) GetPluginOrderPreParseModifyOk() (*string, bool) {
 
 // HasPluginOrderPreParseModify returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPreParseModify() bool {
-	if o != nil && !isNil(o.PluginOrderPreParseModify) {
+	if o != nil && !IsNil(o.PluginOrderPreParseModify) {
 		return true
 	}
 
@@ -652,7 +655,7 @@ func (o *PluginRootResponse) SetPluginOrderPreParseModify(v string) {
 
 // GetPluginOrderPreParseModifyDN returns the PluginOrderPreParseModifyDN field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPreParseModifyDN() string {
-	if o == nil || isNil(o.PluginOrderPreParseModifyDN) {
+	if o == nil || IsNil(o.PluginOrderPreParseModifyDN) {
 		var ret string
 		return ret
 	}
@@ -662,7 +665,7 @@ func (o *PluginRootResponse) GetPluginOrderPreParseModifyDN() string {
 // GetPluginOrderPreParseModifyDNOk returns a tuple with the PluginOrderPreParseModifyDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPreParseModifyDNOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPreParseModifyDN) {
+	if o == nil || IsNil(o.PluginOrderPreParseModifyDN) {
 		return nil, false
 	}
 	return o.PluginOrderPreParseModifyDN, true
@@ -670,7 +673,7 @@ func (o *PluginRootResponse) GetPluginOrderPreParseModifyDNOk() (*string, bool) 
 
 // HasPluginOrderPreParseModifyDN returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPreParseModifyDN() bool {
-	if o != nil && !isNil(o.PluginOrderPreParseModifyDN) {
+	if o != nil && !IsNil(o.PluginOrderPreParseModifyDN) {
 		return true
 	}
 
@@ -684,7 +687,7 @@ func (o *PluginRootResponse) SetPluginOrderPreParseModifyDN(v string) {
 
 // GetPluginOrderPreParseSearch returns the PluginOrderPreParseSearch field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPreParseSearch() string {
-	if o == nil || isNil(o.PluginOrderPreParseSearch) {
+	if o == nil || IsNil(o.PluginOrderPreParseSearch) {
 		var ret string
 		return ret
 	}
@@ -694,7 +697,7 @@ func (o *PluginRootResponse) GetPluginOrderPreParseSearch() string {
 // GetPluginOrderPreParseSearchOk returns a tuple with the PluginOrderPreParseSearch field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPreParseSearchOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPreParseSearch) {
+	if o == nil || IsNil(o.PluginOrderPreParseSearch) {
 		return nil, false
 	}
 	return o.PluginOrderPreParseSearch, true
@@ -702,7 +705,7 @@ func (o *PluginRootResponse) GetPluginOrderPreParseSearchOk() (*string, bool) {
 
 // HasPluginOrderPreParseSearch returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPreParseSearch() bool {
-	if o != nil && !isNil(o.PluginOrderPreParseSearch) {
+	if o != nil && !IsNil(o.PluginOrderPreParseSearch) {
 		return true
 	}
 
@@ -716,7 +719,7 @@ func (o *PluginRootResponse) SetPluginOrderPreParseSearch(v string) {
 
 // GetPluginOrderPreParseUnbind returns the PluginOrderPreParseUnbind field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPreParseUnbind() string {
-	if o == nil || isNil(o.PluginOrderPreParseUnbind) {
+	if o == nil || IsNil(o.PluginOrderPreParseUnbind) {
 		var ret string
 		return ret
 	}
@@ -726,7 +729,7 @@ func (o *PluginRootResponse) GetPluginOrderPreParseUnbind() string {
 // GetPluginOrderPreParseUnbindOk returns a tuple with the PluginOrderPreParseUnbind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPreParseUnbindOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPreParseUnbind) {
+	if o == nil || IsNil(o.PluginOrderPreParseUnbind) {
 		return nil, false
 	}
 	return o.PluginOrderPreParseUnbind, true
@@ -734,7 +737,7 @@ func (o *PluginRootResponse) GetPluginOrderPreParseUnbindOk() (*string, bool) {
 
 // HasPluginOrderPreParseUnbind returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPreParseUnbind() bool {
-	if o != nil && !isNil(o.PluginOrderPreParseUnbind) {
+	if o != nil && !IsNil(o.PluginOrderPreParseUnbind) {
 		return true
 	}
 
@@ -748,7 +751,7 @@ func (o *PluginRootResponse) SetPluginOrderPreParseUnbind(v string) {
 
 // GetPluginOrderPreOperationAdd returns the PluginOrderPreOperationAdd field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPreOperationAdd() string {
-	if o == nil || isNil(o.PluginOrderPreOperationAdd) {
+	if o == nil || IsNil(o.PluginOrderPreOperationAdd) {
 		var ret string
 		return ret
 	}
@@ -758,7 +761,7 @@ func (o *PluginRootResponse) GetPluginOrderPreOperationAdd() string {
 // GetPluginOrderPreOperationAddOk returns a tuple with the PluginOrderPreOperationAdd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPreOperationAddOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPreOperationAdd) {
+	if o == nil || IsNil(o.PluginOrderPreOperationAdd) {
 		return nil, false
 	}
 	return o.PluginOrderPreOperationAdd, true
@@ -766,7 +769,7 @@ func (o *PluginRootResponse) GetPluginOrderPreOperationAddOk() (*string, bool) {
 
 // HasPluginOrderPreOperationAdd returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPreOperationAdd() bool {
-	if o != nil && !isNil(o.PluginOrderPreOperationAdd) {
+	if o != nil && !IsNil(o.PluginOrderPreOperationAdd) {
 		return true
 	}
 
@@ -780,7 +783,7 @@ func (o *PluginRootResponse) SetPluginOrderPreOperationAdd(v string) {
 
 // GetPluginOrderPreOperationBind returns the PluginOrderPreOperationBind field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPreOperationBind() string {
-	if o == nil || isNil(o.PluginOrderPreOperationBind) {
+	if o == nil || IsNil(o.PluginOrderPreOperationBind) {
 		var ret string
 		return ret
 	}
@@ -790,7 +793,7 @@ func (o *PluginRootResponse) GetPluginOrderPreOperationBind() string {
 // GetPluginOrderPreOperationBindOk returns a tuple with the PluginOrderPreOperationBind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPreOperationBindOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPreOperationBind) {
+	if o == nil || IsNil(o.PluginOrderPreOperationBind) {
 		return nil, false
 	}
 	return o.PluginOrderPreOperationBind, true
@@ -798,7 +801,7 @@ func (o *PluginRootResponse) GetPluginOrderPreOperationBindOk() (*string, bool) 
 
 // HasPluginOrderPreOperationBind returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPreOperationBind() bool {
-	if o != nil && !isNil(o.PluginOrderPreOperationBind) {
+	if o != nil && !IsNil(o.PluginOrderPreOperationBind) {
 		return true
 	}
 
@@ -812,7 +815,7 @@ func (o *PluginRootResponse) SetPluginOrderPreOperationBind(v string) {
 
 // GetPluginOrderPreOperationCompare returns the PluginOrderPreOperationCompare field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPreOperationCompare() string {
-	if o == nil || isNil(o.PluginOrderPreOperationCompare) {
+	if o == nil || IsNil(o.PluginOrderPreOperationCompare) {
 		var ret string
 		return ret
 	}
@@ -822,7 +825,7 @@ func (o *PluginRootResponse) GetPluginOrderPreOperationCompare() string {
 // GetPluginOrderPreOperationCompareOk returns a tuple with the PluginOrderPreOperationCompare field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPreOperationCompareOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPreOperationCompare) {
+	if o == nil || IsNil(o.PluginOrderPreOperationCompare) {
 		return nil, false
 	}
 	return o.PluginOrderPreOperationCompare, true
@@ -830,7 +833,7 @@ func (o *PluginRootResponse) GetPluginOrderPreOperationCompareOk() (*string, boo
 
 // HasPluginOrderPreOperationCompare returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPreOperationCompare() bool {
-	if o != nil && !isNil(o.PluginOrderPreOperationCompare) {
+	if o != nil && !IsNil(o.PluginOrderPreOperationCompare) {
 		return true
 	}
 
@@ -844,7 +847,7 @@ func (o *PluginRootResponse) SetPluginOrderPreOperationCompare(v string) {
 
 // GetPluginOrderPreOperationDelete returns the PluginOrderPreOperationDelete field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPreOperationDelete() string {
-	if o == nil || isNil(o.PluginOrderPreOperationDelete) {
+	if o == nil || IsNil(o.PluginOrderPreOperationDelete) {
 		var ret string
 		return ret
 	}
@@ -854,7 +857,7 @@ func (o *PluginRootResponse) GetPluginOrderPreOperationDelete() string {
 // GetPluginOrderPreOperationDeleteOk returns a tuple with the PluginOrderPreOperationDelete field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPreOperationDeleteOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPreOperationDelete) {
+	if o == nil || IsNil(o.PluginOrderPreOperationDelete) {
 		return nil, false
 	}
 	return o.PluginOrderPreOperationDelete, true
@@ -862,7 +865,7 @@ func (o *PluginRootResponse) GetPluginOrderPreOperationDeleteOk() (*string, bool
 
 // HasPluginOrderPreOperationDelete returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPreOperationDelete() bool {
-	if o != nil && !isNil(o.PluginOrderPreOperationDelete) {
+	if o != nil && !IsNil(o.PluginOrderPreOperationDelete) {
 		return true
 	}
 
@@ -876,7 +879,7 @@ func (o *PluginRootResponse) SetPluginOrderPreOperationDelete(v string) {
 
 // GetPluginOrderPreOperationExtended returns the PluginOrderPreOperationExtended field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPreOperationExtended() string {
-	if o == nil || isNil(o.PluginOrderPreOperationExtended) {
+	if o == nil || IsNil(o.PluginOrderPreOperationExtended) {
 		var ret string
 		return ret
 	}
@@ -886,7 +889,7 @@ func (o *PluginRootResponse) GetPluginOrderPreOperationExtended() string {
 // GetPluginOrderPreOperationExtendedOk returns a tuple with the PluginOrderPreOperationExtended field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPreOperationExtendedOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPreOperationExtended) {
+	if o == nil || IsNil(o.PluginOrderPreOperationExtended) {
 		return nil, false
 	}
 	return o.PluginOrderPreOperationExtended, true
@@ -894,7 +897,7 @@ func (o *PluginRootResponse) GetPluginOrderPreOperationExtendedOk() (*string, bo
 
 // HasPluginOrderPreOperationExtended returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPreOperationExtended() bool {
-	if o != nil && !isNil(o.PluginOrderPreOperationExtended) {
+	if o != nil && !IsNil(o.PluginOrderPreOperationExtended) {
 		return true
 	}
 
@@ -908,7 +911,7 @@ func (o *PluginRootResponse) SetPluginOrderPreOperationExtended(v string) {
 
 // GetPluginOrderPreOperationModify returns the PluginOrderPreOperationModify field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPreOperationModify() string {
-	if o == nil || isNil(o.PluginOrderPreOperationModify) {
+	if o == nil || IsNil(o.PluginOrderPreOperationModify) {
 		var ret string
 		return ret
 	}
@@ -918,7 +921,7 @@ func (o *PluginRootResponse) GetPluginOrderPreOperationModify() string {
 // GetPluginOrderPreOperationModifyOk returns a tuple with the PluginOrderPreOperationModify field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPreOperationModifyOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPreOperationModify) {
+	if o == nil || IsNil(o.PluginOrderPreOperationModify) {
 		return nil, false
 	}
 	return o.PluginOrderPreOperationModify, true
@@ -926,7 +929,7 @@ func (o *PluginRootResponse) GetPluginOrderPreOperationModifyOk() (*string, bool
 
 // HasPluginOrderPreOperationModify returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPreOperationModify() bool {
-	if o != nil && !isNil(o.PluginOrderPreOperationModify) {
+	if o != nil && !IsNil(o.PluginOrderPreOperationModify) {
 		return true
 	}
 
@@ -940,7 +943,7 @@ func (o *PluginRootResponse) SetPluginOrderPreOperationModify(v string) {
 
 // GetPluginOrderPreOperationModifyDN returns the PluginOrderPreOperationModifyDN field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPreOperationModifyDN() string {
-	if o == nil || isNil(o.PluginOrderPreOperationModifyDN) {
+	if o == nil || IsNil(o.PluginOrderPreOperationModifyDN) {
 		var ret string
 		return ret
 	}
@@ -950,7 +953,7 @@ func (o *PluginRootResponse) GetPluginOrderPreOperationModifyDN() string {
 // GetPluginOrderPreOperationModifyDNOk returns a tuple with the PluginOrderPreOperationModifyDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPreOperationModifyDNOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPreOperationModifyDN) {
+	if o == nil || IsNil(o.PluginOrderPreOperationModifyDN) {
 		return nil, false
 	}
 	return o.PluginOrderPreOperationModifyDN, true
@@ -958,7 +961,7 @@ func (o *PluginRootResponse) GetPluginOrderPreOperationModifyDNOk() (*string, bo
 
 // HasPluginOrderPreOperationModifyDN returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPreOperationModifyDN() bool {
-	if o != nil && !isNil(o.PluginOrderPreOperationModifyDN) {
+	if o != nil && !IsNil(o.PluginOrderPreOperationModifyDN) {
 		return true
 	}
 
@@ -972,7 +975,7 @@ func (o *PluginRootResponse) SetPluginOrderPreOperationModifyDN(v string) {
 
 // GetPluginOrderPreOperationSearch returns the PluginOrderPreOperationSearch field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPreOperationSearch() string {
-	if o == nil || isNil(o.PluginOrderPreOperationSearch) {
+	if o == nil || IsNil(o.PluginOrderPreOperationSearch) {
 		var ret string
 		return ret
 	}
@@ -982,7 +985,7 @@ func (o *PluginRootResponse) GetPluginOrderPreOperationSearch() string {
 // GetPluginOrderPreOperationSearchOk returns a tuple with the PluginOrderPreOperationSearch field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPreOperationSearchOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPreOperationSearch) {
+	if o == nil || IsNil(o.PluginOrderPreOperationSearch) {
 		return nil, false
 	}
 	return o.PluginOrderPreOperationSearch, true
@@ -990,7 +993,7 @@ func (o *PluginRootResponse) GetPluginOrderPreOperationSearchOk() (*string, bool
 
 // HasPluginOrderPreOperationSearch returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPreOperationSearch() bool {
-	if o != nil && !isNil(o.PluginOrderPreOperationSearch) {
+	if o != nil && !IsNil(o.PluginOrderPreOperationSearch) {
 		return true
 	}
 
@@ -1004,7 +1007,7 @@ func (o *PluginRootResponse) SetPluginOrderPreOperationSearch(v string) {
 
 // GetPluginOrderPostOperationAbandon returns the PluginOrderPostOperationAbandon field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPostOperationAbandon() string {
-	if o == nil || isNil(o.PluginOrderPostOperationAbandon) {
+	if o == nil || IsNil(o.PluginOrderPostOperationAbandon) {
 		var ret string
 		return ret
 	}
@@ -1014,7 +1017,7 @@ func (o *PluginRootResponse) GetPluginOrderPostOperationAbandon() string {
 // GetPluginOrderPostOperationAbandonOk returns a tuple with the PluginOrderPostOperationAbandon field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPostOperationAbandonOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPostOperationAbandon) {
+	if o == nil || IsNil(o.PluginOrderPostOperationAbandon) {
 		return nil, false
 	}
 	return o.PluginOrderPostOperationAbandon, true
@@ -1022,7 +1025,7 @@ func (o *PluginRootResponse) GetPluginOrderPostOperationAbandonOk() (*string, bo
 
 // HasPluginOrderPostOperationAbandon returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPostOperationAbandon() bool {
-	if o != nil && !isNil(o.PluginOrderPostOperationAbandon) {
+	if o != nil && !IsNil(o.PluginOrderPostOperationAbandon) {
 		return true
 	}
 
@@ -1036,7 +1039,7 @@ func (o *PluginRootResponse) SetPluginOrderPostOperationAbandon(v string) {
 
 // GetPluginOrderPostOperationAdd returns the PluginOrderPostOperationAdd field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPostOperationAdd() string {
-	if o == nil || isNil(o.PluginOrderPostOperationAdd) {
+	if o == nil || IsNil(o.PluginOrderPostOperationAdd) {
 		var ret string
 		return ret
 	}
@@ -1046,7 +1049,7 @@ func (o *PluginRootResponse) GetPluginOrderPostOperationAdd() string {
 // GetPluginOrderPostOperationAddOk returns a tuple with the PluginOrderPostOperationAdd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPostOperationAddOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPostOperationAdd) {
+	if o == nil || IsNil(o.PluginOrderPostOperationAdd) {
 		return nil, false
 	}
 	return o.PluginOrderPostOperationAdd, true
@@ -1054,7 +1057,7 @@ func (o *PluginRootResponse) GetPluginOrderPostOperationAddOk() (*string, bool) 
 
 // HasPluginOrderPostOperationAdd returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPostOperationAdd() bool {
-	if o != nil && !isNil(o.PluginOrderPostOperationAdd) {
+	if o != nil && !IsNil(o.PluginOrderPostOperationAdd) {
 		return true
 	}
 
@@ -1068,7 +1071,7 @@ func (o *PluginRootResponse) SetPluginOrderPostOperationAdd(v string) {
 
 // GetPluginOrderPostOperationBind returns the PluginOrderPostOperationBind field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPostOperationBind() string {
-	if o == nil || isNil(o.PluginOrderPostOperationBind) {
+	if o == nil || IsNil(o.PluginOrderPostOperationBind) {
 		var ret string
 		return ret
 	}
@@ -1078,7 +1081,7 @@ func (o *PluginRootResponse) GetPluginOrderPostOperationBind() string {
 // GetPluginOrderPostOperationBindOk returns a tuple with the PluginOrderPostOperationBind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPostOperationBindOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPostOperationBind) {
+	if o == nil || IsNil(o.PluginOrderPostOperationBind) {
 		return nil, false
 	}
 	return o.PluginOrderPostOperationBind, true
@@ -1086,7 +1089,7 @@ func (o *PluginRootResponse) GetPluginOrderPostOperationBindOk() (*string, bool)
 
 // HasPluginOrderPostOperationBind returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPostOperationBind() bool {
-	if o != nil && !isNil(o.PluginOrderPostOperationBind) {
+	if o != nil && !IsNil(o.PluginOrderPostOperationBind) {
 		return true
 	}
 
@@ -1100,7 +1103,7 @@ func (o *PluginRootResponse) SetPluginOrderPostOperationBind(v string) {
 
 // GetPluginOrderPostOperationCompare returns the PluginOrderPostOperationCompare field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPostOperationCompare() string {
-	if o == nil || isNil(o.PluginOrderPostOperationCompare) {
+	if o == nil || IsNil(o.PluginOrderPostOperationCompare) {
 		var ret string
 		return ret
 	}
@@ -1110,7 +1113,7 @@ func (o *PluginRootResponse) GetPluginOrderPostOperationCompare() string {
 // GetPluginOrderPostOperationCompareOk returns a tuple with the PluginOrderPostOperationCompare field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPostOperationCompareOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPostOperationCompare) {
+	if o == nil || IsNil(o.PluginOrderPostOperationCompare) {
 		return nil, false
 	}
 	return o.PluginOrderPostOperationCompare, true
@@ -1118,7 +1121,7 @@ func (o *PluginRootResponse) GetPluginOrderPostOperationCompareOk() (*string, bo
 
 // HasPluginOrderPostOperationCompare returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPostOperationCompare() bool {
-	if o != nil && !isNil(o.PluginOrderPostOperationCompare) {
+	if o != nil && !IsNil(o.PluginOrderPostOperationCompare) {
 		return true
 	}
 
@@ -1132,7 +1135,7 @@ func (o *PluginRootResponse) SetPluginOrderPostOperationCompare(v string) {
 
 // GetPluginOrderPostOperationDelete returns the PluginOrderPostOperationDelete field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPostOperationDelete() string {
-	if o == nil || isNil(o.PluginOrderPostOperationDelete) {
+	if o == nil || IsNil(o.PluginOrderPostOperationDelete) {
 		var ret string
 		return ret
 	}
@@ -1142,7 +1145,7 @@ func (o *PluginRootResponse) GetPluginOrderPostOperationDelete() string {
 // GetPluginOrderPostOperationDeleteOk returns a tuple with the PluginOrderPostOperationDelete field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPostOperationDeleteOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPostOperationDelete) {
+	if o == nil || IsNil(o.PluginOrderPostOperationDelete) {
 		return nil, false
 	}
 	return o.PluginOrderPostOperationDelete, true
@@ -1150,7 +1153,7 @@ func (o *PluginRootResponse) GetPluginOrderPostOperationDeleteOk() (*string, boo
 
 // HasPluginOrderPostOperationDelete returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPostOperationDelete() bool {
-	if o != nil && !isNil(o.PluginOrderPostOperationDelete) {
+	if o != nil && !IsNil(o.PluginOrderPostOperationDelete) {
 		return true
 	}
 
@@ -1164,7 +1167,7 @@ func (o *PluginRootResponse) SetPluginOrderPostOperationDelete(v string) {
 
 // GetPluginOrderPostOperationExtended returns the PluginOrderPostOperationExtended field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPostOperationExtended() string {
-	if o == nil || isNil(o.PluginOrderPostOperationExtended) {
+	if o == nil || IsNil(o.PluginOrderPostOperationExtended) {
 		var ret string
 		return ret
 	}
@@ -1174,7 +1177,7 @@ func (o *PluginRootResponse) GetPluginOrderPostOperationExtended() string {
 // GetPluginOrderPostOperationExtendedOk returns a tuple with the PluginOrderPostOperationExtended field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPostOperationExtendedOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPostOperationExtended) {
+	if o == nil || IsNil(o.PluginOrderPostOperationExtended) {
 		return nil, false
 	}
 	return o.PluginOrderPostOperationExtended, true
@@ -1182,7 +1185,7 @@ func (o *PluginRootResponse) GetPluginOrderPostOperationExtendedOk() (*string, b
 
 // HasPluginOrderPostOperationExtended returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPostOperationExtended() bool {
-	if o != nil && !isNil(o.PluginOrderPostOperationExtended) {
+	if o != nil && !IsNil(o.PluginOrderPostOperationExtended) {
 		return true
 	}
 
@@ -1196,7 +1199,7 @@ func (o *PluginRootResponse) SetPluginOrderPostOperationExtended(v string) {
 
 // GetPluginOrderPostOperationModify returns the PluginOrderPostOperationModify field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPostOperationModify() string {
-	if o == nil || isNil(o.PluginOrderPostOperationModify) {
+	if o == nil || IsNil(o.PluginOrderPostOperationModify) {
 		var ret string
 		return ret
 	}
@@ -1206,7 +1209,7 @@ func (o *PluginRootResponse) GetPluginOrderPostOperationModify() string {
 // GetPluginOrderPostOperationModifyOk returns a tuple with the PluginOrderPostOperationModify field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPostOperationModifyOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPostOperationModify) {
+	if o == nil || IsNil(o.PluginOrderPostOperationModify) {
 		return nil, false
 	}
 	return o.PluginOrderPostOperationModify, true
@@ -1214,7 +1217,7 @@ func (o *PluginRootResponse) GetPluginOrderPostOperationModifyOk() (*string, boo
 
 // HasPluginOrderPostOperationModify returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPostOperationModify() bool {
-	if o != nil && !isNil(o.PluginOrderPostOperationModify) {
+	if o != nil && !IsNil(o.PluginOrderPostOperationModify) {
 		return true
 	}
 
@@ -1228,7 +1231,7 @@ func (o *PluginRootResponse) SetPluginOrderPostOperationModify(v string) {
 
 // GetPluginOrderPostOperationModifyDN returns the PluginOrderPostOperationModifyDN field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPostOperationModifyDN() string {
-	if o == nil || isNil(o.PluginOrderPostOperationModifyDN) {
+	if o == nil || IsNil(o.PluginOrderPostOperationModifyDN) {
 		var ret string
 		return ret
 	}
@@ -1238,7 +1241,7 @@ func (o *PluginRootResponse) GetPluginOrderPostOperationModifyDN() string {
 // GetPluginOrderPostOperationModifyDNOk returns a tuple with the PluginOrderPostOperationModifyDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPostOperationModifyDNOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPostOperationModifyDN) {
+	if o == nil || IsNil(o.PluginOrderPostOperationModifyDN) {
 		return nil, false
 	}
 	return o.PluginOrderPostOperationModifyDN, true
@@ -1246,7 +1249,7 @@ func (o *PluginRootResponse) GetPluginOrderPostOperationModifyDNOk() (*string, b
 
 // HasPluginOrderPostOperationModifyDN returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPostOperationModifyDN() bool {
-	if o != nil && !isNil(o.PluginOrderPostOperationModifyDN) {
+	if o != nil && !IsNil(o.PluginOrderPostOperationModifyDN) {
 		return true
 	}
 
@@ -1260,7 +1263,7 @@ func (o *PluginRootResponse) SetPluginOrderPostOperationModifyDN(v string) {
 
 // GetPluginOrderPostOperationSearch returns the PluginOrderPostOperationSearch field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPostOperationSearch() string {
-	if o == nil || isNil(o.PluginOrderPostOperationSearch) {
+	if o == nil || IsNil(o.PluginOrderPostOperationSearch) {
 		var ret string
 		return ret
 	}
@@ -1270,7 +1273,7 @@ func (o *PluginRootResponse) GetPluginOrderPostOperationSearch() string {
 // GetPluginOrderPostOperationSearchOk returns a tuple with the PluginOrderPostOperationSearch field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPostOperationSearchOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPostOperationSearch) {
+	if o == nil || IsNil(o.PluginOrderPostOperationSearch) {
 		return nil, false
 	}
 	return o.PluginOrderPostOperationSearch, true
@@ -1278,7 +1281,7 @@ func (o *PluginRootResponse) GetPluginOrderPostOperationSearchOk() (*string, boo
 
 // HasPluginOrderPostOperationSearch returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPostOperationSearch() bool {
-	if o != nil && !isNil(o.PluginOrderPostOperationSearch) {
+	if o != nil && !IsNil(o.PluginOrderPostOperationSearch) {
 		return true
 	}
 
@@ -1292,7 +1295,7 @@ func (o *PluginRootResponse) SetPluginOrderPostOperationSearch(v string) {
 
 // GetPluginOrderPostOperationUnbind returns the PluginOrderPostOperationUnbind field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPostOperationUnbind() string {
-	if o == nil || isNil(o.PluginOrderPostOperationUnbind) {
+	if o == nil || IsNil(o.PluginOrderPostOperationUnbind) {
 		var ret string
 		return ret
 	}
@@ -1302,7 +1305,7 @@ func (o *PluginRootResponse) GetPluginOrderPostOperationUnbind() string {
 // GetPluginOrderPostOperationUnbindOk returns a tuple with the PluginOrderPostOperationUnbind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPostOperationUnbindOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPostOperationUnbind) {
+	if o == nil || IsNil(o.PluginOrderPostOperationUnbind) {
 		return nil, false
 	}
 	return o.PluginOrderPostOperationUnbind, true
@@ -1310,7 +1313,7 @@ func (o *PluginRootResponse) GetPluginOrderPostOperationUnbindOk() (*string, boo
 
 // HasPluginOrderPostOperationUnbind returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPostOperationUnbind() bool {
-	if o != nil && !isNil(o.PluginOrderPostOperationUnbind) {
+	if o != nil && !IsNil(o.PluginOrderPostOperationUnbind) {
 		return true
 	}
 
@@ -1324,7 +1327,7 @@ func (o *PluginRootResponse) SetPluginOrderPostOperationUnbind(v string) {
 
 // GetPluginOrderPostResponseAdd returns the PluginOrderPostResponseAdd field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPostResponseAdd() string {
-	if o == nil || isNil(o.PluginOrderPostResponseAdd) {
+	if o == nil || IsNil(o.PluginOrderPostResponseAdd) {
 		var ret string
 		return ret
 	}
@@ -1334,7 +1337,7 @@ func (o *PluginRootResponse) GetPluginOrderPostResponseAdd() string {
 // GetPluginOrderPostResponseAddOk returns a tuple with the PluginOrderPostResponseAdd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPostResponseAddOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPostResponseAdd) {
+	if o == nil || IsNil(o.PluginOrderPostResponseAdd) {
 		return nil, false
 	}
 	return o.PluginOrderPostResponseAdd, true
@@ -1342,7 +1345,7 @@ func (o *PluginRootResponse) GetPluginOrderPostResponseAddOk() (*string, bool) {
 
 // HasPluginOrderPostResponseAdd returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPostResponseAdd() bool {
-	if o != nil && !isNil(o.PluginOrderPostResponseAdd) {
+	if o != nil && !IsNil(o.PluginOrderPostResponseAdd) {
 		return true
 	}
 
@@ -1356,7 +1359,7 @@ func (o *PluginRootResponse) SetPluginOrderPostResponseAdd(v string) {
 
 // GetPluginOrderPostResponseBind returns the PluginOrderPostResponseBind field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPostResponseBind() string {
-	if o == nil || isNil(o.PluginOrderPostResponseBind) {
+	if o == nil || IsNil(o.PluginOrderPostResponseBind) {
 		var ret string
 		return ret
 	}
@@ -1366,7 +1369,7 @@ func (o *PluginRootResponse) GetPluginOrderPostResponseBind() string {
 // GetPluginOrderPostResponseBindOk returns a tuple with the PluginOrderPostResponseBind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPostResponseBindOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPostResponseBind) {
+	if o == nil || IsNil(o.PluginOrderPostResponseBind) {
 		return nil, false
 	}
 	return o.PluginOrderPostResponseBind, true
@@ -1374,7 +1377,7 @@ func (o *PluginRootResponse) GetPluginOrderPostResponseBindOk() (*string, bool) 
 
 // HasPluginOrderPostResponseBind returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPostResponseBind() bool {
-	if o != nil && !isNil(o.PluginOrderPostResponseBind) {
+	if o != nil && !IsNil(o.PluginOrderPostResponseBind) {
 		return true
 	}
 
@@ -1388,7 +1391,7 @@ func (o *PluginRootResponse) SetPluginOrderPostResponseBind(v string) {
 
 // GetPluginOrderPostResponseCompare returns the PluginOrderPostResponseCompare field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPostResponseCompare() string {
-	if o == nil || isNil(o.PluginOrderPostResponseCompare) {
+	if o == nil || IsNil(o.PluginOrderPostResponseCompare) {
 		var ret string
 		return ret
 	}
@@ -1398,7 +1401,7 @@ func (o *PluginRootResponse) GetPluginOrderPostResponseCompare() string {
 // GetPluginOrderPostResponseCompareOk returns a tuple with the PluginOrderPostResponseCompare field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPostResponseCompareOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPostResponseCompare) {
+	if o == nil || IsNil(o.PluginOrderPostResponseCompare) {
 		return nil, false
 	}
 	return o.PluginOrderPostResponseCompare, true
@@ -1406,7 +1409,7 @@ func (o *PluginRootResponse) GetPluginOrderPostResponseCompareOk() (*string, boo
 
 // HasPluginOrderPostResponseCompare returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPostResponseCompare() bool {
-	if o != nil && !isNil(o.PluginOrderPostResponseCompare) {
+	if o != nil && !IsNil(o.PluginOrderPostResponseCompare) {
 		return true
 	}
 
@@ -1420,7 +1423,7 @@ func (o *PluginRootResponse) SetPluginOrderPostResponseCompare(v string) {
 
 // GetPluginOrderPostResponseDelete returns the PluginOrderPostResponseDelete field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPostResponseDelete() string {
-	if o == nil || isNil(o.PluginOrderPostResponseDelete) {
+	if o == nil || IsNil(o.PluginOrderPostResponseDelete) {
 		var ret string
 		return ret
 	}
@@ -1430,7 +1433,7 @@ func (o *PluginRootResponse) GetPluginOrderPostResponseDelete() string {
 // GetPluginOrderPostResponseDeleteOk returns a tuple with the PluginOrderPostResponseDelete field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPostResponseDeleteOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPostResponseDelete) {
+	if o == nil || IsNil(o.PluginOrderPostResponseDelete) {
 		return nil, false
 	}
 	return o.PluginOrderPostResponseDelete, true
@@ -1438,7 +1441,7 @@ func (o *PluginRootResponse) GetPluginOrderPostResponseDeleteOk() (*string, bool
 
 // HasPluginOrderPostResponseDelete returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPostResponseDelete() bool {
-	if o != nil && !isNil(o.PluginOrderPostResponseDelete) {
+	if o != nil && !IsNil(o.PluginOrderPostResponseDelete) {
 		return true
 	}
 
@@ -1452,7 +1455,7 @@ func (o *PluginRootResponse) SetPluginOrderPostResponseDelete(v string) {
 
 // GetPluginOrderPostResponseExtended returns the PluginOrderPostResponseExtended field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPostResponseExtended() string {
-	if o == nil || isNil(o.PluginOrderPostResponseExtended) {
+	if o == nil || IsNil(o.PluginOrderPostResponseExtended) {
 		var ret string
 		return ret
 	}
@@ -1462,7 +1465,7 @@ func (o *PluginRootResponse) GetPluginOrderPostResponseExtended() string {
 // GetPluginOrderPostResponseExtendedOk returns a tuple with the PluginOrderPostResponseExtended field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPostResponseExtendedOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPostResponseExtended) {
+	if o == nil || IsNil(o.PluginOrderPostResponseExtended) {
 		return nil, false
 	}
 	return o.PluginOrderPostResponseExtended, true
@@ -1470,7 +1473,7 @@ func (o *PluginRootResponse) GetPluginOrderPostResponseExtendedOk() (*string, bo
 
 // HasPluginOrderPostResponseExtended returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPostResponseExtended() bool {
-	if o != nil && !isNil(o.PluginOrderPostResponseExtended) {
+	if o != nil && !IsNil(o.PluginOrderPostResponseExtended) {
 		return true
 	}
 
@@ -1484,7 +1487,7 @@ func (o *PluginRootResponse) SetPluginOrderPostResponseExtended(v string) {
 
 // GetPluginOrderPostResponseModify returns the PluginOrderPostResponseModify field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPostResponseModify() string {
-	if o == nil || isNil(o.PluginOrderPostResponseModify) {
+	if o == nil || IsNil(o.PluginOrderPostResponseModify) {
 		var ret string
 		return ret
 	}
@@ -1494,7 +1497,7 @@ func (o *PluginRootResponse) GetPluginOrderPostResponseModify() string {
 // GetPluginOrderPostResponseModifyOk returns a tuple with the PluginOrderPostResponseModify field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPostResponseModifyOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPostResponseModify) {
+	if o == nil || IsNil(o.PluginOrderPostResponseModify) {
 		return nil, false
 	}
 	return o.PluginOrderPostResponseModify, true
@@ -1502,7 +1505,7 @@ func (o *PluginRootResponse) GetPluginOrderPostResponseModifyOk() (*string, bool
 
 // HasPluginOrderPostResponseModify returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPostResponseModify() bool {
-	if o != nil && !isNil(o.PluginOrderPostResponseModify) {
+	if o != nil && !IsNil(o.PluginOrderPostResponseModify) {
 		return true
 	}
 
@@ -1516,7 +1519,7 @@ func (o *PluginRootResponse) SetPluginOrderPostResponseModify(v string) {
 
 // GetPluginOrderPostResponseModifyDN returns the PluginOrderPostResponseModifyDN field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPostResponseModifyDN() string {
-	if o == nil || isNil(o.PluginOrderPostResponseModifyDN) {
+	if o == nil || IsNil(o.PluginOrderPostResponseModifyDN) {
 		var ret string
 		return ret
 	}
@@ -1526,7 +1529,7 @@ func (o *PluginRootResponse) GetPluginOrderPostResponseModifyDN() string {
 // GetPluginOrderPostResponseModifyDNOk returns a tuple with the PluginOrderPostResponseModifyDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPostResponseModifyDNOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPostResponseModifyDN) {
+	if o == nil || IsNil(o.PluginOrderPostResponseModifyDN) {
 		return nil, false
 	}
 	return o.PluginOrderPostResponseModifyDN, true
@@ -1534,7 +1537,7 @@ func (o *PluginRootResponse) GetPluginOrderPostResponseModifyDNOk() (*string, bo
 
 // HasPluginOrderPostResponseModifyDN returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPostResponseModifyDN() bool {
-	if o != nil && !isNil(o.PluginOrderPostResponseModifyDN) {
+	if o != nil && !IsNil(o.PluginOrderPostResponseModifyDN) {
 		return true
 	}
 
@@ -1548,7 +1551,7 @@ func (o *PluginRootResponse) SetPluginOrderPostResponseModifyDN(v string) {
 
 // GetPluginOrderPostSynchronizationAdd returns the PluginOrderPostSynchronizationAdd field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPostSynchronizationAdd() string {
-	if o == nil || isNil(o.PluginOrderPostSynchronizationAdd) {
+	if o == nil || IsNil(o.PluginOrderPostSynchronizationAdd) {
 		var ret string
 		return ret
 	}
@@ -1558,7 +1561,7 @@ func (o *PluginRootResponse) GetPluginOrderPostSynchronizationAdd() string {
 // GetPluginOrderPostSynchronizationAddOk returns a tuple with the PluginOrderPostSynchronizationAdd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPostSynchronizationAddOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPostSynchronizationAdd) {
+	if o == nil || IsNil(o.PluginOrderPostSynchronizationAdd) {
 		return nil, false
 	}
 	return o.PluginOrderPostSynchronizationAdd, true
@@ -1566,7 +1569,7 @@ func (o *PluginRootResponse) GetPluginOrderPostSynchronizationAddOk() (*string, 
 
 // HasPluginOrderPostSynchronizationAdd returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPostSynchronizationAdd() bool {
-	if o != nil && !isNil(o.PluginOrderPostSynchronizationAdd) {
+	if o != nil && !IsNil(o.PluginOrderPostSynchronizationAdd) {
 		return true
 	}
 
@@ -1580,7 +1583,7 @@ func (o *PluginRootResponse) SetPluginOrderPostSynchronizationAdd(v string) {
 
 // GetPluginOrderPostSynchronizationDelete returns the PluginOrderPostSynchronizationDelete field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPostSynchronizationDelete() string {
-	if o == nil || isNil(o.PluginOrderPostSynchronizationDelete) {
+	if o == nil || IsNil(o.PluginOrderPostSynchronizationDelete) {
 		var ret string
 		return ret
 	}
@@ -1590,7 +1593,7 @@ func (o *PluginRootResponse) GetPluginOrderPostSynchronizationDelete() string {
 // GetPluginOrderPostSynchronizationDeleteOk returns a tuple with the PluginOrderPostSynchronizationDelete field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPostSynchronizationDeleteOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPostSynchronizationDelete) {
+	if o == nil || IsNil(o.PluginOrderPostSynchronizationDelete) {
 		return nil, false
 	}
 	return o.PluginOrderPostSynchronizationDelete, true
@@ -1598,7 +1601,7 @@ func (o *PluginRootResponse) GetPluginOrderPostSynchronizationDeleteOk() (*strin
 
 // HasPluginOrderPostSynchronizationDelete returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPostSynchronizationDelete() bool {
-	if o != nil && !isNil(o.PluginOrderPostSynchronizationDelete) {
+	if o != nil && !IsNil(o.PluginOrderPostSynchronizationDelete) {
 		return true
 	}
 
@@ -1612,7 +1615,7 @@ func (o *PluginRootResponse) SetPluginOrderPostSynchronizationDelete(v string) {
 
 // GetPluginOrderPostSynchronizationModify returns the PluginOrderPostSynchronizationModify field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPostSynchronizationModify() string {
-	if o == nil || isNil(o.PluginOrderPostSynchronizationModify) {
+	if o == nil || IsNil(o.PluginOrderPostSynchronizationModify) {
 		var ret string
 		return ret
 	}
@@ -1622,7 +1625,7 @@ func (o *PluginRootResponse) GetPluginOrderPostSynchronizationModify() string {
 // GetPluginOrderPostSynchronizationModifyOk returns a tuple with the PluginOrderPostSynchronizationModify field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPostSynchronizationModifyOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPostSynchronizationModify) {
+	if o == nil || IsNil(o.PluginOrderPostSynchronizationModify) {
 		return nil, false
 	}
 	return o.PluginOrderPostSynchronizationModify, true
@@ -1630,7 +1633,7 @@ func (o *PluginRootResponse) GetPluginOrderPostSynchronizationModifyOk() (*strin
 
 // HasPluginOrderPostSynchronizationModify returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPostSynchronizationModify() bool {
-	if o != nil && !isNil(o.PluginOrderPostSynchronizationModify) {
+	if o != nil && !IsNil(o.PluginOrderPostSynchronizationModify) {
 		return true
 	}
 
@@ -1644,7 +1647,7 @@ func (o *PluginRootResponse) SetPluginOrderPostSynchronizationModify(v string) {
 
 // GetPluginOrderPostSynchronizationModifyDN returns the PluginOrderPostSynchronizationModifyDN field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPostSynchronizationModifyDN() string {
-	if o == nil || isNil(o.PluginOrderPostSynchronizationModifyDN) {
+	if o == nil || IsNil(o.PluginOrderPostSynchronizationModifyDN) {
 		var ret string
 		return ret
 	}
@@ -1654,7 +1657,7 @@ func (o *PluginRootResponse) GetPluginOrderPostSynchronizationModifyDN() string 
 // GetPluginOrderPostSynchronizationModifyDNOk returns a tuple with the PluginOrderPostSynchronizationModifyDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPostSynchronizationModifyDNOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPostSynchronizationModifyDN) {
+	if o == nil || IsNil(o.PluginOrderPostSynchronizationModifyDN) {
 		return nil, false
 	}
 	return o.PluginOrderPostSynchronizationModifyDN, true
@@ -1662,7 +1665,7 @@ func (o *PluginRootResponse) GetPluginOrderPostSynchronizationModifyDNOk() (*str
 
 // HasPluginOrderPostSynchronizationModifyDN returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPostSynchronizationModifyDN() bool {
-	if o != nil && !isNil(o.PluginOrderPostSynchronizationModifyDN) {
+	if o != nil && !IsNil(o.PluginOrderPostSynchronizationModifyDN) {
 		return true
 	}
 
@@ -1676,7 +1679,7 @@ func (o *PluginRootResponse) SetPluginOrderPostSynchronizationModifyDN(v string)
 
 // GetPluginOrderPostResponseSearch returns the PluginOrderPostResponseSearch field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderPostResponseSearch() string {
-	if o == nil || isNil(o.PluginOrderPostResponseSearch) {
+	if o == nil || IsNil(o.PluginOrderPostResponseSearch) {
 		var ret string
 		return ret
 	}
@@ -1686,7 +1689,7 @@ func (o *PluginRootResponse) GetPluginOrderPostResponseSearch() string {
 // GetPluginOrderPostResponseSearchOk returns a tuple with the PluginOrderPostResponseSearch field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderPostResponseSearchOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderPostResponseSearch) {
+	if o == nil || IsNil(o.PluginOrderPostResponseSearch) {
 		return nil, false
 	}
 	return o.PluginOrderPostResponseSearch, true
@@ -1694,7 +1697,7 @@ func (o *PluginRootResponse) GetPluginOrderPostResponseSearchOk() (*string, bool
 
 // HasPluginOrderPostResponseSearch returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderPostResponseSearch() bool {
-	if o != nil && !isNil(o.PluginOrderPostResponseSearch) {
+	if o != nil && !IsNil(o.PluginOrderPostResponseSearch) {
 		return true
 	}
 
@@ -1708,7 +1711,7 @@ func (o *PluginRootResponse) SetPluginOrderPostResponseSearch(v string) {
 
 // GetPluginOrderSearchResultEntry returns the PluginOrderSearchResultEntry field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderSearchResultEntry() string {
-	if o == nil || isNil(o.PluginOrderSearchResultEntry) {
+	if o == nil || IsNil(o.PluginOrderSearchResultEntry) {
 		var ret string
 		return ret
 	}
@@ -1718,7 +1721,7 @@ func (o *PluginRootResponse) GetPluginOrderSearchResultEntry() string {
 // GetPluginOrderSearchResultEntryOk returns a tuple with the PluginOrderSearchResultEntry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderSearchResultEntryOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderSearchResultEntry) {
+	if o == nil || IsNil(o.PluginOrderSearchResultEntry) {
 		return nil, false
 	}
 	return o.PluginOrderSearchResultEntry, true
@@ -1726,7 +1729,7 @@ func (o *PluginRootResponse) GetPluginOrderSearchResultEntryOk() (*string, bool)
 
 // HasPluginOrderSearchResultEntry returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderSearchResultEntry() bool {
-	if o != nil && !isNil(o.PluginOrderSearchResultEntry) {
+	if o != nil && !IsNil(o.PluginOrderSearchResultEntry) {
 		return true
 	}
 
@@ -1740,7 +1743,7 @@ func (o *PluginRootResponse) SetPluginOrderSearchResultEntry(v string) {
 
 // GetPluginOrderSearchResultReference returns the PluginOrderSearchResultReference field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderSearchResultReference() string {
-	if o == nil || isNil(o.PluginOrderSearchResultReference) {
+	if o == nil || IsNil(o.PluginOrderSearchResultReference) {
 		var ret string
 		return ret
 	}
@@ -1750,7 +1753,7 @@ func (o *PluginRootResponse) GetPluginOrderSearchResultReference() string {
 // GetPluginOrderSearchResultReferenceOk returns a tuple with the PluginOrderSearchResultReference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderSearchResultReferenceOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderSearchResultReference) {
+	if o == nil || IsNil(o.PluginOrderSearchResultReference) {
 		return nil, false
 	}
 	return o.PluginOrderSearchResultReference, true
@@ -1758,7 +1761,7 @@ func (o *PluginRootResponse) GetPluginOrderSearchResultReferenceOk() (*string, b
 
 // HasPluginOrderSearchResultReference returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderSearchResultReference() bool {
-	if o != nil && !isNil(o.PluginOrderSearchResultReference) {
+	if o != nil && !IsNil(o.PluginOrderSearchResultReference) {
 		return true
 	}
 
@@ -1772,7 +1775,7 @@ func (o *PluginRootResponse) SetPluginOrderSearchResultReference(v string) {
 
 // GetPluginOrderSubordinateModifyDN returns the PluginOrderSubordinateModifyDN field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderSubordinateModifyDN() string {
-	if o == nil || isNil(o.PluginOrderSubordinateModifyDN) {
+	if o == nil || IsNil(o.PluginOrderSubordinateModifyDN) {
 		var ret string
 		return ret
 	}
@@ -1782,7 +1785,7 @@ func (o *PluginRootResponse) GetPluginOrderSubordinateModifyDN() string {
 // GetPluginOrderSubordinateModifyDNOk returns a tuple with the PluginOrderSubordinateModifyDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderSubordinateModifyDNOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderSubordinateModifyDN) {
+	if o == nil || IsNil(o.PluginOrderSubordinateModifyDN) {
 		return nil, false
 	}
 	return o.PluginOrderSubordinateModifyDN, true
@@ -1790,7 +1793,7 @@ func (o *PluginRootResponse) GetPluginOrderSubordinateModifyDNOk() (*string, boo
 
 // HasPluginOrderSubordinateModifyDN returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderSubordinateModifyDN() bool {
-	if o != nil && !isNil(o.PluginOrderSubordinateModifyDN) {
+	if o != nil && !IsNil(o.PluginOrderSubordinateModifyDN) {
 		return true
 	}
 
@@ -1804,7 +1807,7 @@ func (o *PluginRootResponse) SetPluginOrderSubordinateModifyDN(v string) {
 
 // GetPluginOrderIntermediateResponse returns the PluginOrderIntermediateResponse field value if set, zero value otherwise.
 func (o *PluginRootResponse) GetPluginOrderIntermediateResponse() string {
-	if o == nil || isNil(o.PluginOrderIntermediateResponse) {
+	if o == nil || IsNil(o.PluginOrderIntermediateResponse) {
 		var ret string
 		return ret
 	}
@@ -1814,7 +1817,7 @@ func (o *PluginRootResponse) GetPluginOrderIntermediateResponse() string {
 // GetPluginOrderIntermediateResponseOk returns a tuple with the PluginOrderIntermediateResponse field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PluginRootResponse) GetPluginOrderIntermediateResponseOk() (*string, bool) {
-	if o == nil || isNil(o.PluginOrderIntermediateResponse) {
+	if o == nil || IsNil(o.PluginOrderIntermediateResponse) {
 		return nil, false
 	}
 	return o.PluginOrderIntermediateResponse, true
@@ -1822,7 +1825,7 @@ func (o *PluginRootResponse) GetPluginOrderIntermediateResponseOk() (*string, bo
 
 // HasPluginOrderIntermediateResponse returns a boolean if a field has been set.
 func (o *PluginRootResponse) HasPluginOrderIntermediateResponse() bool {
-	if o != nil && !isNil(o.PluginOrderIntermediateResponse) {
+	if o != nil && !IsNil(o.PluginOrderIntermediateResponse) {
 		return true
 	}
 
@@ -1835,167 +1838,175 @@ func (o *PluginRootResponse) SetPluginOrderIntermediateResponse(v string) {
 }
 
 func (o PluginRootResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.PluginOrderStartup) {
-		toSerialize["pluginOrderStartup"] = o.PluginOrderStartup
-	}
-	if !isNil(o.PluginOrderShutdown) {
-		toSerialize["pluginOrderShutdown"] = o.PluginOrderShutdown
-	}
-	if !isNil(o.PluginOrderPostConnect) {
-		toSerialize["pluginOrderPostConnect"] = o.PluginOrderPostConnect
-	}
-	if !isNil(o.PluginOrderPostDisconnect) {
-		toSerialize["pluginOrderPostDisconnect"] = o.PluginOrderPostDisconnect
-	}
-	if !isNil(o.PluginOrderLDIFImport) {
-		toSerialize["pluginOrderLDIFImport"] = o.PluginOrderLDIFImport
-	}
-	if !isNil(o.PluginOrderLDIFExport) {
-		toSerialize["pluginOrderLDIFExport"] = o.PluginOrderLDIFExport
-	}
-	if !isNil(o.PluginOrderPreParseAbandon) {
-		toSerialize["pluginOrderPreParseAbandon"] = o.PluginOrderPreParseAbandon
-	}
-	if !isNil(o.PluginOrderPreParseAdd) {
-		toSerialize["pluginOrderPreParseAdd"] = o.PluginOrderPreParseAdd
-	}
-	if !isNil(o.PluginOrderPreParseBind) {
-		toSerialize["pluginOrderPreParseBind"] = o.PluginOrderPreParseBind
-	}
-	if !isNil(o.PluginOrderPreParseCompare) {
-		toSerialize["pluginOrderPreParseCompare"] = o.PluginOrderPreParseCompare
-	}
-	if !isNil(o.PluginOrderPreParseDelete) {
-		toSerialize["pluginOrderPreParseDelete"] = o.PluginOrderPreParseDelete
-	}
-	if !isNil(o.PluginOrderPreParseExtended) {
-		toSerialize["pluginOrderPreParseExtended"] = o.PluginOrderPreParseExtended
-	}
-	if !isNil(o.PluginOrderPreParseModify) {
-		toSerialize["pluginOrderPreParseModify"] = o.PluginOrderPreParseModify
-	}
-	if !isNil(o.PluginOrderPreParseModifyDN) {
-		toSerialize["pluginOrderPreParseModifyDN"] = o.PluginOrderPreParseModifyDN
-	}
-	if !isNil(o.PluginOrderPreParseSearch) {
-		toSerialize["pluginOrderPreParseSearch"] = o.PluginOrderPreParseSearch
-	}
-	if !isNil(o.PluginOrderPreParseUnbind) {
-		toSerialize["pluginOrderPreParseUnbind"] = o.PluginOrderPreParseUnbind
-	}
-	if !isNil(o.PluginOrderPreOperationAdd) {
-		toSerialize["pluginOrderPreOperationAdd"] = o.PluginOrderPreOperationAdd
-	}
-	if !isNil(o.PluginOrderPreOperationBind) {
-		toSerialize["pluginOrderPreOperationBind"] = o.PluginOrderPreOperationBind
-	}
-	if !isNil(o.PluginOrderPreOperationCompare) {
-		toSerialize["pluginOrderPreOperationCompare"] = o.PluginOrderPreOperationCompare
-	}
-	if !isNil(o.PluginOrderPreOperationDelete) {
-		toSerialize["pluginOrderPreOperationDelete"] = o.PluginOrderPreOperationDelete
-	}
-	if !isNil(o.PluginOrderPreOperationExtended) {
-		toSerialize["pluginOrderPreOperationExtended"] = o.PluginOrderPreOperationExtended
-	}
-	if !isNil(o.PluginOrderPreOperationModify) {
-		toSerialize["pluginOrderPreOperationModify"] = o.PluginOrderPreOperationModify
-	}
-	if !isNil(o.PluginOrderPreOperationModifyDN) {
-		toSerialize["pluginOrderPreOperationModifyDN"] = o.PluginOrderPreOperationModifyDN
-	}
-	if !isNil(o.PluginOrderPreOperationSearch) {
-		toSerialize["pluginOrderPreOperationSearch"] = o.PluginOrderPreOperationSearch
-	}
-	if !isNil(o.PluginOrderPostOperationAbandon) {
-		toSerialize["pluginOrderPostOperationAbandon"] = o.PluginOrderPostOperationAbandon
-	}
-	if !isNil(o.PluginOrderPostOperationAdd) {
-		toSerialize["pluginOrderPostOperationAdd"] = o.PluginOrderPostOperationAdd
-	}
-	if !isNil(o.PluginOrderPostOperationBind) {
-		toSerialize["pluginOrderPostOperationBind"] = o.PluginOrderPostOperationBind
-	}
-	if !isNil(o.PluginOrderPostOperationCompare) {
-		toSerialize["pluginOrderPostOperationCompare"] = o.PluginOrderPostOperationCompare
-	}
-	if !isNil(o.PluginOrderPostOperationDelete) {
-		toSerialize["pluginOrderPostOperationDelete"] = o.PluginOrderPostOperationDelete
-	}
-	if !isNil(o.PluginOrderPostOperationExtended) {
-		toSerialize["pluginOrderPostOperationExtended"] = o.PluginOrderPostOperationExtended
-	}
-	if !isNil(o.PluginOrderPostOperationModify) {
-		toSerialize["pluginOrderPostOperationModify"] = o.PluginOrderPostOperationModify
-	}
-	if !isNil(o.PluginOrderPostOperationModifyDN) {
-		toSerialize["pluginOrderPostOperationModifyDN"] = o.PluginOrderPostOperationModifyDN
-	}
-	if !isNil(o.PluginOrderPostOperationSearch) {
-		toSerialize["pluginOrderPostOperationSearch"] = o.PluginOrderPostOperationSearch
-	}
-	if !isNil(o.PluginOrderPostOperationUnbind) {
-		toSerialize["pluginOrderPostOperationUnbind"] = o.PluginOrderPostOperationUnbind
-	}
-	if !isNil(o.PluginOrderPostResponseAdd) {
-		toSerialize["pluginOrderPostResponseAdd"] = o.PluginOrderPostResponseAdd
-	}
-	if !isNil(o.PluginOrderPostResponseBind) {
-		toSerialize["pluginOrderPostResponseBind"] = o.PluginOrderPostResponseBind
-	}
-	if !isNil(o.PluginOrderPostResponseCompare) {
-		toSerialize["pluginOrderPostResponseCompare"] = o.PluginOrderPostResponseCompare
-	}
-	if !isNil(o.PluginOrderPostResponseDelete) {
-		toSerialize["pluginOrderPostResponseDelete"] = o.PluginOrderPostResponseDelete
-	}
-	if !isNil(o.PluginOrderPostResponseExtended) {
-		toSerialize["pluginOrderPostResponseExtended"] = o.PluginOrderPostResponseExtended
-	}
-	if !isNil(o.PluginOrderPostResponseModify) {
-		toSerialize["pluginOrderPostResponseModify"] = o.PluginOrderPostResponseModify
-	}
-	if !isNil(o.PluginOrderPostResponseModifyDN) {
-		toSerialize["pluginOrderPostResponseModifyDN"] = o.PluginOrderPostResponseModifyDN
-	}
-	if !isNil(o.PluginOrderPostSynchronizationAdd) {
-		toSerialize["pluginOrderPostSynchronizationAdd"] = o.PluginOrderPostSynchronizationAdd
-	}
-	if !isNil(o.PluginOrderPostSynchronizationDelete) {
-		toSerialize["pluginOrderPostSynchronizationDelete"] = o.PluginOrderPostSynchronizationDelete
-	}
-	if !isNil(o.PluginOrderPostSynchronizationModify) {
-		toSerialize["pluginOrderPostSynchronizationModify"] = o.PluginOrderPostSynchronizationModify
-	}
-	if !isNil(o.PluginOrderPostSynchronizationModifyDN) {
-		toSerialize["pluginOrderPostSynchronizationModifyDN"] = o.PluginOrderPostSynchronizationModifyDN
-	}
-	if !isNil(o.PluginOrderPostResponseSearch) {
-		toSerialize["pluginOrderPostResponseSearch"] = o.PluginOrderPostResponseSearch
-	}
-	if !isNil(o.PluginOrderSearchResultEntry) {
-		toSerialize["pluginOrderSearchResultEntry"] = o.PluginOrderSearchResultEntry
-	}
-	if !isNil(o.PluginOrderSearchResultReference) {
-		toSerialize["pluginOrderSearchResultReference"] = o.PluginOrderSearchResultReference
-	}
-	if !isNil(o.PluginOrderSubordinateModifyDN) {
-		toSerialize["pluginOrderSubordinateModifyDN"] = o.PluginOrderSubordinateModifyDN
-	}
-	if !isNil(o.PluginOrderIntermediateResponse) {
-		toSerialize["pluginOrderIntermediateResponse"] = o.PluginOrderIntermediateResponse
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PluginRootResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.PluginOrderStartup) {
+		toSerialize["pluginOrderStartup"] = o.PluginOrderStartup
+	}
+	if !IsNil(o.PluginOrderShutdown) {
+		toSerialize["pluginOrderShutdown"] = o.PluginOrderShutdown
+	}
+	if !IsNil(o.PluginOrderPostConnect) {
+		toSerialize["pluginOrderPostConnect"] = o.PluginOrderPostConnect
+	}
+	if !IsNil(o.PluginOrderPostDisconnect) {
+		toSerialize["pluginOrderPostDisconnect"] = o.PluginOrderPostDisconnect
+	}
+	if !IsNil(o.PluginOrderLDIFImport) {
+		toSerialize["pluginOrderLDIFImport"] = o.PluginOrderLDIFImport
+	}
+	if !IsNil(o.PluginOrderLDIFExport) {
+		toSerialize["pluginOrderLDIFExport"] = o.PluginOrderLDIFExport
+	}
+	if !IsNil(o.PluginOrderPreParseAbandon) {
+		toSerialize["pluginOrderPreParseAbandon"] = o.PluginOrderPreParseAbandon
+	}
+	if !IsNil(o.PluginOrderPreParseAdd) {
+		toSerialize["pluginOrderPreParseAdd"] = o.PluginOrderPreParseAdd
+	}
+	if !IsNil(o.PluginOrderPreParseBind) {
+		toSerialize["pluginOrderPreParseBind"] = o.PluginOrderPreParseBind
+	}
+	if !IsNil(o.PluginOrderPreParseCompare) {
+		toSerialize["pluginOrderPreParseCompare"] = o.PluginOrderPreParseCompare
+	}
+	if !IsNil(o.PluginOrderPreParseDelete) {
+		toSerialize["pluginOrderPreParseDelete"] = o.PluginOrderPreParseDelete
+	}
+	if !IsNil(o.PluginOrderPreParseExtended) {
+		toSerialize["pluginOrderPreParseExtended"] = o.PluginOrderPreParseExtended
+	}
+	if !IsNil(o.PluginOrderPreParseModify) {
+		toSerialize["pluginOrderPreParseModify"] = o.PluginOrderPreParseModify
+	}
+	if !IsNil(o.PluginOrderPreParseModifyDN) {
+		toSerialize["pluginOrderPreParseModifyDN"] = o.PluginOrderPreParseModifyDN
+	}
+	if !IsNil(o.PluginOrderPreParseSearch) {
+		toSerialize["pluginOrderPreParseSearch"] = o.PluginOrderPreParseSearch
+	}
+	if !IsNil(o.PluginOrderPreParseUnbind) {
+		toSerialize["pluginOrderPreParseUnbind"] = o.PluginOrderPreParseUnbind
+	}
+	if !IsNil(o.PluginOrderPreOperationAdd) {
+		toSerialize["pluginOrderPreOperationAdd"] = o.PluginOrderPreOperationAdd
+	}
+	if !IsNil(o.PluginOrderPreOperationBind) {
+		toSerialize["pluginOrderPreOperationBind"] = o.PluginOrderPreOperationBind
+	}
+	if !IsNil(o.PluginOrderPreOperationCompare) {
+		toSerialize["pluginOrderPreOperationCompare"] = o.PluginOrderPreOperationCompare
+	}
+	if !IsNil(o.PluginOrderPreOperationDelete) {
+		toSerialize["pluginOrderPreOperationDelete"] = o.PluginOrderPreOperationDelete
+	}
+	if !IsNil(o.PluginOrderPreOperationExtended) {
+		toSerialize["pluginOrderPreOperationExtended"] = o.PluginOrderPreOperationExtended
+	}
+	if !IsNil(o.PluginOrderPreOperationModify) {
+		toSerialize["pluginOrderPreOperationModify"] = o.PluginOrderPreOperationModify
+	}
+	if !IsNil(o.PluginOrderPreOperationModifyDN) {
+		toSerialize["pluginOrderPreOperationModifyDN"] = o.PluginOrderPreOperationModifyDN
+	}
+	if !IsNil(o.PluginOrderPreOperationSearch) {
+		toSerialize["pluginOrderPreOperationSearch"] = o.PluginOrderPreOperationSearch
+	}
+	if !IsNil(o.PluginOrderPostOperationAbandon) {
+		toSerialize["pluginOrderPostOperationAbandon"] = o.PluginOrderPostOperationAbandon
+	}
+	if !IsNil(o.PluginOrderPostOperationAdd) {
+		toSerialize["pluginOrderPostOperationAdd"] = o.PluginOrderPostOperationAdd
+	}
+	if !IsNil(o.PluginOrderPostOperationBind) {
+		toSerialize["pluginOrderPostOperationBind"] = o.PluginOrderPostOperationBind
+	}
+	if !IsNil(o.PluginOrderPostOperationCompare) {
+		toSerialize["pluginOrderPostOperationCompare"] = o.PluginOrderPostOperationCompare
+	}
+	if !IsNil(o.PluginOrderPostOperationDelete) {
+		toSerialize["pluginOrderPostOperationDelete"] = o.PluginOrderPostOperationDelete
+	}
+	if !IsNil(o.PluginOrderPostOperationExtended) {
+		toSerialize["pluginOrderPostOperationExtended"] = o.PluginOrderPostOperationExtended
+	}
+	if !IsNil(o.PluginOrderPostOperationModify) {
+		toSerialize["pluginOrderPostOperationModify"] = o.PluginOrderPostOperationModify
+	}
+	if !IsNil(o.PluginOrderPostOperationModifyDN) {
+		toSerialize["pluginOrderPostOperationModifyDN"] = o.PluginOrderPostOperationModifyDN
+	}
+	if !IsNil(o.PluginOrderPostOperationSearch) {
+		toSerialize["pluginOrderPostOperationSearch"] = o.PluginOrderPostOperationSearch
+	}
+	if !IsNil(o.PluginOrderPostOperationUnbind) {
+		toSerialize["pluginOrderPostOperationUnbind"] = o.PluginOrderPostOperationUnbind
+	}
+	if !IsNil(o.PluginOrderPostResponseAdd) {
+		toSerialize["pluginOrderPostResponseAdd"] = o.PluginOrderPostResponseAdd
+	}
+	if !IsNil(o.PluginOrderPostResponseBind) {
+		toSerialize["pluginOrderPostResponseBind"] = o.PluginOrderPostResponseBind
+	}
+	if !IsNil(o.PluginOrderPostResponseCompare) {
+		toSerialize["pluginOrderPostResponseCompare"] = o.PluginOrderPostResponseCompare
+	}
+	if !IsNil(o.PluginOrderPostResponseDelete) {
+		toSerialize["pluginOrderPostResponseDelete"] = o.PluginOrderPostResponseDelete
+	}
+	if !IsNil(o.PluginOrderPostResponseExtended) {
+		toSerialize["pluginOrderPostResponseExtended"] = o.PluginOrderPostResponseExtended
+	}
+	if !IsNil(o.PluginOrderPostResponseModify) {
+		toSerialize["pluginOrderPostResponseModify"] = o.PluginOrderPostResponseModify
+	}
+	if !IsNil(o.PluginOrderPostResponseModifyDN) {
+		toSerialize["pluginOrderPostResponseModifyDN"] = o.PluginOrderPostResponseModifyDN
+	}
+	if !IsNil(o.PluginOrderPostSynchronizationAdd) {
+		toSerialize["pluginOrderPostSynchronizationAdd"] = o.PluginOrderPostSynchronizationAdd
+	}
+	if !IsNil(o.PluginOrderPostSynchronizationDelete) {
+		toSerialize["pluginOrderPostSynchronizationDelete"] = o.PluginOrderPostSynchronizationDelete
+	}
+	if !IsNil(o.PluginOrderPostSynchronizationModify) {
+		toSerialize["pluginOrderPostSynchronizationModify"] = o.PluginOrderPostSynchronizationModify
+	}
+	if !IsNil(o.PluginOrderPostSynchronizationModifyDN) {
+		toSerialize["pluginOrderPostSynchronizationModifyDN"] = o.PluginOrderPostSynchronizationModifyDN
+	}
+	if !IsNil(o.PluginOrderPostResponseSearch) {
+		toSerialize["pluginOrderPostResponseSearch"] = o.PluginOrderPostResponseSearch
+	}
+	if !IsNil(o.PluginOrderSearchResultEntry) {
+		toSerialize["pluginOrderSearchResultEntry"] = o.PluginOrderSearchResultEntry
+	}
+	if !IsNil(o.PluginOrderSearchResultReference) {
+		toSerialize["pluginOrderSearchResultReference"] = o.PluginOrderSearchResultReference
+	}
+	if !IsNil(o.PluginOrderSubordinateModifyDN) {
+		toSerialize["pluginOrderSubordinateModifyDN"] = o.PluginOrderSubordinateModifyDN
+	}
+	if !IsNil(o.PluginOrderIntermediateResponse) {
+		toSerialize["pluginOrderIntermediateResponse"] = o.PluginOrderIntermediateResponse
+	}
+	return toSerialize, nil
 }
 
 type NullablePluginRootResponse struct {

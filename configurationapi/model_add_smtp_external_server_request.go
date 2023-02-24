@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddSmtpExternalServerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddSmtpExternalServerRequest{}
+
 // AddSmtpExternalServerRequest struct for AddSmtpExternalServerRequest
 type AddSmtpExternalServerRequest struct {
 	// Name of the new External Server
@@ -132,7 +135,7 @@ func (o *AddSmtpExternalServerRequest) SetServerHostName(v string) {
 
 // GetServerPort returns the ServerPort field value if set, zero value otherwise.
 func (o *AddSmtpExternalServerRequest) GetServerPort() int32 {
-	if o == nil || isNil(o.ServerPort) {
+	if o == nil || IsNil(o.ServerPort) {
 		var ret int32
 		return ret
 	}
@@ -142,7 +145,7 @@ func (o *AddSmtpExternalServerRequest) GetServerPort() int32 {
 // GetServerPortOk returns a tuple with the ServerPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSmtpExternalServerRequest) GetServerPortOk() (*int32, bool) {
-	if o == nil || isNil(o.ServerPort) {
+	if o == nil || IsNil(o.ServerPort) {
 		return nil, false
 	}
 	return o.ServerPort, true
@@ -150,7 +153,7 @@ func (o *AddSmtpExternalServerRequest) GetServerPortOk() (*int32, bool) {
 
 // HasServerPort returns a boolean if a field has been set.
 func (o *AddSmtpExternalServerRequest) HasServerPort() bool {
-	if o != nil && !isNil(o.ServerPort) {
+	if o != nil && !IsNil(o.ServerPort) {
 		return true
 	}
 
@@ -164,7 +167,7 @@ func (o *AddSmtpExternalServerRequest) SetServerPort(v int32) {
 
 // GetSmtpSecurity returns the SmtpSecurity field value if set, zero value otherwise.
 func (o *AddSmtpExternalServerRequest) GetSmtpSecurity() EnumexternalServerSmtpSecurityProp {
-	if o == nil || isNil(o.SmtpSecurity) {
+	if o == nil || IsNil(o.SmtpSecurity) {
 		var ret EnumexternalServerSmtpSecurityProp
 		return ret
 	}
@@ -174,7 +177,7 @@ func (o *AddSmtpExternalServerRequest) GetSmtpSecurity() EnumexternalServerSmtpS
 // GetSmtpSecurityOk returns a tuple with the SmtpSecurity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSmtpExternalServerRequest) GetSmtpSecurityOk() (*EnumexternalServerSmtpSecurityProp, bool) {
-	if o == nil || isNil(o.SmtpSecurity) {
+	if o == nil || IsNil(o.SmtpSecurity) {
 		return nil, false
 	}
 	return o.SmtpSecurity, true
@@ -182,7 +185,7 @@ func (o *AddSmtpExternalServerRequest) GetSmtpSecurityOk() (*EnumexternalServerS
 
 // HasSmtpSecurity returns a boolean if a field has been set.
 func (o *AddSmtpExternalServerRequest) HasSmtpSecurity() bool {
-	if o != nil && !isNil(o.SmtpSecurity) {
+	if o != nil && !IsNil(o.SmtpSecurity) {
 		return true
 	}
 
@@ -196,7 +199,7 @@ func (o *AddSmtpExternalServerRequest) SetSmtpSecurity(v EnumexternalServerSmtpS
 
 // GetUserName returns the UserName field value if set, zero value otherwise.
 func (o *AddSmtpExternalServerRequest) GetUserName() string {
-	if o == nil || isNil(o.UserName) {
+	if o == nil || IsNil(o.UserName) {
 		var ret string
 		return ret
 	}
@@ -206,7 +209,7 @@ func (o *AddSmtpExternalServerRequest) GetUserName() string {
 // GetUserNameOk returns a tuple with the UserName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSmtpExternalServerRequest) GetUserNameOk() (*string, bool) {
-	if o == nil || isNil(o.UserName) {
+	if o == nil || IsNil(o.UserName) {
 		return nil, false
 	}
 	return o.UserName, true
@@ -214,7 +217,7 @@ func (o *AddSmtpExternalServerRequest) GetUserNameOk() (*string, bool) {
 
 // HasUserName returns a boolean if a field has been set.
 func (o *AddSmtpExternalServerRequest) HasUserName() bool {
-	if o != nil && !isNil(o.UserName) {
+	if o != nil && !IsNil(o.UserName) {
 		return true
 	}
 
@@ -228,7 +231,7 @@ func (o *AddSmtpExternalServerRequest) SetUserName(v string) {
 
 // GetPassword returns the Password field value if set, zero value otherwise.
 func (o *AddSmtpExternalServerRequest) GetPassword() string {
-	if o == nil || isNil(o.Password) {
+	if o == nil || IsNil(o.Password) {
 		var ret string
 		return ret
 	}
@@ -238,7 +241,7 @@ func (o *AddSmtpExternalServerRequest) GetPassword() string {
 // GetPasswordOk returns a tuple with the Password field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSmtpExternalServerRequest) GetPasswordOk() (*string, bool) {
-	if o == nil || isNil(o.Password) {
+	if o == nil || IsNil(o.Password) {
 		return nil, false
 	}
 	return o.Password, true
@@ -246,7 +249,7 @@ func (o *AddSmtpExternalServerRequest) GetPasswordOk() (*string, bool) {
 
 // HasPassword returns a boolean if a field has been set.
 func (o *AddSmtpExternalServerRequest) HasPassword() bool {
-	if o != nil && !isNil(o.Password) {
+	if o != nil && !IsNil(o.Password) {
 		return true
 	}
 
@@ -260,7 +263,7 @@ func (o *AddSmtpExternalServerRequest) SetPassword(v string) {
 
 // GetPassphraseProvider returns the PassphraseProvider field value if set, zero value otherwise.
 func (o *AddSmtpExternalServerRequest) GetPassphraseProvider() string {
-	if o == nil || isNil(o.PassphraseProvider) {
+	if o == nil || IsNil(o.PassphraseProvider) {
 		var ret string
 		return ret
 	}
@@ -270,7 +273,7 @@ func (o *AddSmtpExternalServerRequest) GetPassphraseProvider() string {
 // GetPassphraseProviderOk returns a tuple with the PassphraseProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSmtpExternalServerRequest) GetPassphraseProviderOk() (*string, bool) {
-	if o == nil || isNil(o.PassphraseProvider) {
+	if o == nil || IsNil(o.PassphraseProvider) {
 		return nil, false
 	}
 	return o.PassphraseProvider, true
@@ -278,7 +281,7 @@ func (o *AddSmtpExternalServerRequest) GetPassphraseProviderOk() (*string, bool)
 
 // HasPassphraseProvider returns a boolean if a field has been set.
 func (o *AddSmtpExternalServerRequest) HasPassphraseProvider() bool {
-	if o != nil && !isNil(o.PassphraseProvider) {
+	if o != nil && !IsNil(o.PassphraseProvider) {
 		return true
 	}
 
@@ -292,7 +295,7 @@ func (o *AddSmtpExternalServerRequest) SetPassphraseProvider(v string) {
 
 // GetSmtpTimeout returns the SmtpTimeout field value if set, zero value otherwise.
 func (o *AddSmtpExternalServerRequest) GetSmtpTimeout() string {
-	if o == nil || isNil(o.SmtpTimeout) {
+	if o == nil || IsNil(o.SmtpTimeout) {
 		var ret string
 		return ret
 	}
@@ -302,7 +305,7 @@ func (o *AddSmtpExternalServerRequest) GetSmtpTimeout() string {
 // GetSmtpTimeoutOk returns a tuple with the SmtpTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSmtpExternalServerRequest) GetSmtpTimeoutOk() (*string, bool) {
-	if o == nil || isNil(o.SmtpTimeout) {
+	if o == nil || IsNil(o.SmtpTimeout) {
 		return nil, false
 	}
 	return o.SmtpTimeout, true
@@ -310,7 +313,7 @@ func (o *AddSmtpExternalServerRequest) GetSmtpTimeoutOk() (*string, bool) {
 
 // HasSmtpTimeout returns a boolean if a field has been set.
 func (o *AddSmtpExternalServerRequest) HasSmtpTimeout() bool {
-	if o != nil && !isNil(o.SmtpTimeout) {
+	if o != nil && !IsNil(o.SmtpTimeout) {
 		return true
 	}
 
@@ -324,7 +327,7 @@ func (o *AddSmtpExternalServerRequest) SetSmtpTimeout(v string) {
 
 // GetSmtpConnectionProperties returns the SmtpConnectionProperties field value if set, zero value otherwise.
 func (o *AddSmtpExternalServerRequest) GetSmtpConnectionProperties() []string {
-	if o == nil || isNil(o.SmtpConnectionProperties) {
+	if o == nil || IsNil(o.SmtpConnectionProperties) {
 		var ret []string
 		return ret
 	}
@@ -334,7 +337,7 @@ func (o *AddSmtpExternalServerRequest) GetSmtpConnectionProperties() []string {
 // GetSmtpConnectionPropertiesOk returns a tuple with the SmtpConnectionProperties field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSmtpExternalServerRequest) GetSmtpConnectionPropertiesOk() ([]string, bool) {
-	if o == nil || isNil(o.SmtpConnectionProperties) {
+	if o == nil || IsNil(o.SmtpConnectionProperties) {
 		return nil, false
 	}
 	return o.SmtpConnectionProperties, true
@@ -342,7 +345,7 @@ func (o *AddSmtpExternalServerRequest) GetSmtpConnectionPropertiesOk() ([]string
 
 // HasSmtpConnectionProperties returns a boolean if a field has been set.
 func (o *AddSmtpExternalServerRequest) HasSmtpConnectionProperties() bool {
-	if o != nil && !isNil(o.SmtpConnectionProperties) {
+	if o != nil && !IsNil(o.SmtpConnectionProperties) {
 		return true
 	}
 
@@ -356,7 +359,7 @@ func (o *AddSmtpExternalServerRequest) SetSmtpConnectionProperties(v []string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddSmtpExternalServerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -366,7 +369,7 @@ func (o *AddSmtpExternalServerRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSmtpExternalServerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -374,7 +377,7 @@ func (o *AddSmtpExternalServerRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddSmtpExternalServerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -387,41 +390,43 @@ func (o *AddSmtpExternalServerRequest) SetDescription(v string) {
 }
 
 func (o AddSmtpExternalServerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["serverName"] = o.ServerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["serverHostName"] = o.ServerHostName
-	}
-	if !isNil(o.ServerPort) {
-		toSerialize["serverPort"] = o.ServerPort
-	}
-	if !isNil(o.SmtpSecurity) {
-		toSerialize["smtpSecurity"] = o.SmtpSecurity
-	}
-	if !isNil(o.UserName) {
-		toSerialize["userName"] = o.UserName
-	}
-	if !isNil(o.Password) {
-		toSerialize["password"] = o.Password
-	}
-	if !isNil(o.PassphraseProvider) {
-		toSerialize["passphraseProvider"] = o.PassphraseProvider
-	}
-	if !isNil(o.SmtpTimeout) {
-		toSerialize["smtpTimeout"] = o.SmtpTimeout
-	}
-	if !isNil(o.SmtpConnectionProperties) {
-		toSerialize["smtpConnectionProperties"] = o.SmtpConnectionProperties
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddSmtpExternalServerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["serverName"] = o.ServerName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["serverHostName"] = o.ServerHostName
+	if !IsNil(o.ServerPort) {
+		toSerialize["serverPort"] = o.ServerPort
+	}
+	if !IsNil(o.SmtpSecurity) {
+		toSerialize["smtpSecurity"] = o.SmtpSecurity
+	}
+	if !IsNil(o.UserName) {
+		toSerialize["userName"] = o.UserName
+	}
+	if !IsNil(o.Password) {
+		toSerialize["password"] = o.Password
+	}
+	if !IsNil(o.PassphraseProvider) {
+		toSerialize["passphraseProvider"] = o.PassphraseProvider
+	}
+	if !IsNil(o.SmtpTimeout) {
+		toSerialize["smtpTimeout"] = o.SmtpTimeout
+	}
+	if !IsNil(o.SmtpConnectionProperties) {
+		toSerialize["smtpConnectionProperties"] = o.SmtpConnectionProperties
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAddSmtpExternalServerRequest struct {

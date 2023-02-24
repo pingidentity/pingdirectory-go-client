@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -105,9 +105,9 @@ func (a *MonitoringEndpointApiService) AddMonitoringEndpointExecute(r ApiAddMoni
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -171,7 +171,7 @@ func (a *MonitoringEndpointApiService) DeleteMonitoringEndpointExecute(r ApiDele
 	}
 
 	localVarPath := localBasePath + "/monitoring-endpoints/{monitoring-endpoint-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"monitoring-endpoint-name"+"}", url.PathEscape(parameterToString(r.monitoringEndpointName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"monitoring-endpoint-name"+"}", url.PathEscape(parameterValueToString(r.monitoringEndpointName, "monitoringEndpointName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -204,9 +204,9 @@ func (a *MonitoringEndpointApiService) DeleteMonitoringEndpointExecute(r ApiDele
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -264,7 +264,7 @@ func (a *MonitoringEndpointApiService) GetMonitoringEndpointExecute(r ApiGetMoni
 	}
 
 	localVarPath := localBasePath + "/monitoring-endpoints/{monitoring-endpoint-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"monitoring-endpoint-name"+"}", url.PathEscape(parameterToString(r.monitoringEndpointName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"monitoring-endpoint-name"+"}", url.PathEscape(parameterValueToString(r.monitoringEndpointName, "monitoringEndpointName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -297,9 +297,9 @@ func (a *MonitoringEndpointApiService) GetMonitoringEndpointExecute(r ApiGetMoni
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -373,7 +373,7 @@ func (a *MonitoringEndpointApiService) UpdateMonitoringEndpointExecute(r ApiUpda
 	}
 
 	localVarPath := localBasePath + "/monitoring-endpoints/{monitoring-endpoint-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"monitoring-endpoint-name"+"}", url.PathEscape(parameterToString(r.monitoringEndpointName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"monitoring-endpoint-name"+"}", url.PathEscape(parameterValueToString(r.monitoringEndpointName, "monitoringEndpointName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -411,9 +411,9 @@ func (a *MonitoringEndpointApiService) UpdateMonitoringEndpointExecute(r ApiUpda
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

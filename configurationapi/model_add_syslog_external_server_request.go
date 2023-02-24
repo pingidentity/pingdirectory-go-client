@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddSyslogExternalServerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddSyslogExternalServerRequest{}
+
 // AddSyslogExternalServerRequest struct for AddSyslogExternalServerRequest
 type AddSyslogExternalServerRequest struct {
 	// Name of the new External Server
@@ -129,7 +132,7 @@ func (o *AddSyslogExternalServerRequest) SetServerHostName(v string) {
 
 // GetServerPort returns the ServerPort field value if set, zero value otherwise.
 func (o *AddSyslogExternalServerRequest) GetServerPort() int32 {
-	if o == nil || isNil(o.ServerPort) {
+	if o == nil || IsNil(o.ServerPort) {
 		var ret int32
 		return ret
 	}
@@ -139,7 +142,7 @@ func (o *AddSyslogExternalServerRequest) GetServerPort() int32 {
 // GetServerPortOk returns a tuple with the ServerPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogExternalServerRequest) GetServerPortOk() (*int32, bool) {
-	if o == nil || isNil(o.ServerPort) {
+	if o == nil || IsNil(o.ServerPort) {
 		return nil, false
 	}
 	return o.ServerPort, true
@@ -147,7 +150,7 @@ func (o *AddSyslogExternalServerRequest) GetServerPortOk() (*int32, bool) {
 
 // HasServerPort returns a boolean if a field has been set.
 func (o *AddSyslogExternalServerRequest) HasServerPort() bool {
-	if o != nil && !isNil(o.ServerPort) {
+	if o != nil && !IsNil(o.ServerPort) {
 		return true
 	}
 
@@ -185,7 +188,7 @@ func (o *AddSyslogExternalServerRequest) SetTransportMechanism(v EnumexternalSer
 
 // GetConnectTimeout returns the ConnectTimeout field value if set, zero value otherwise.
 func (o *AddSyslogExternalServerRequest) GetConnectTimeout() string {
-	if o == nil || isNil(o.ConnectTimeout) {
+	if o == nil || IsNil(o.ConnectTimeout) {
 		var ret string
 		return ret
 	}
@@ -195,7 +198,7 @@ func (o *AddSyslogExternalServerRequest) GetConnectTimeout() string {
 // GetConnectTimeoutOk returns a tuple with the ConnectTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogExternalServerRequest) GetConnectTimeoutOk() (*string, bool) {
-	if o == nil || isNil(o.ConnectTimeout) {
+	if o == nil || IsNil(o.ConnectTimeout) {
 		return nil, false
 	}
 	return o.ConnectTimeout, true
@@ -203,7 +206,7 @@ func (o *AddSyslogExternalServerRequest) GetConnectTimeoutOk() (*string, bool) {
 
 // HasConnectTimeout returns a boolean if a field has been set.
 func (o *AddSyslogExternalServerRequest) HasConnectTimeout() bool {
-	if o != nil && !isNil(o.ConnectTimeout) {
+	if o != nil && !IsNil(o.ConnectTimeout) {
 		return true
 	}
 
@@ -217,7 +220,7 @@ func (o *AddSyslogExternalServerRequest) SetConnectTimeout(v string) {
 
 // GetMaxConnectionAge returns the MaxConnectionAge field value if set, zero value otherwise.
 func (o *AddSyslogExternalServerRequest) GetMaxConnectionAge() string {
-	if o == nil || isNil(o.MaxConnectionAge) {
+	if o == nil || IsNil(o.MaxConnectionAge) {
 		var ret string
 		return ret
 	}
@@ -227,7 +230,7 @@ func (o *AddSyslogExternalServerRequest) GetMaxConnectionAge() string {
 // GetMaxConnectionAgeOk returns a tuple with the MaxConnectionAge field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogExternalServerRequest) GetMaxConnectionAgeOk() (*string, bool) {
-	if o == nil || isNil(o.MaxConnectionAge) {
+	if o == nil || IsNil(o.MaxConnectionAge) {
 		return nil, false
 	}
 	return o.MaxConnectionAge, true
@@ -235,7 +238,7 @@ func (o *AddSyslogExternalServerRequest) GetMaxConnectionAgeOk() (*string, bool)
 
 // HasMaxConnectionAge returns a boolean if a field has been set.
 func (o *AddSyslogExternalServerRequest) HasMaxConnectionAge() bool {
-	if o != nil && !isNil(o.MaxConnectionAge) {
+	if o != nil && !IsNil(o.MaxConnectionAge) {
 		return true
 	}
 
@@ -249,7 +252,7 @@ func (o *AddSyslogExternalServerRequest) SetMaxConnectionAge(v string) {
 
 // GetTrustManagerProvider returns the TrustManagerProvider field value if set, zero value otherwise.
 func (o *AddSyslogExternalServerRequest) GetTrustManagerProvider() string {
-	if o == nil || isNil(o.TrustManagerProvider) {
+	if o == nil || IsNil(o.TrustManagerProvider) {
 		var ret string
 		return ret
 	}
@@ -259,7 +262,7 @@ func (o *AddSyslogExternalServerRequest) GetTrustManagerProvider() string {
 // GetTrustManagerProviderOk returns a tuple with the TrustManagerProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogExternalServerRequest) GetTrustManagerProviderOk() (*string, bool) {
-	if o == nil || isNil(o.TrustManagerProvider) {
+	if o == nil || IsNil(o.TrustManagerProvider) {
 		return nil, false
 	}
 	return o.TrustManagerProvider, true
@@ -267,7 +270,7 @@ func (o *AddSyslogExternalServerRequest) GetTrustManagerProviderOk() (*string, b
 
 // HasTrustManagerProvider returns a boolean if a field has been set.
 func (o *AddSyslogExternalServerRequest) HasTrustManagerProvider() bool {
-	if o != nil && !isNil(o.TrustManagerProvider) {
+	if o != nil && !IsNil(o.TrustManagerProvider) {
 		return true
 	}
 
@@ -281,7 +284,7 @@ func (o *AddSyslogExternalServerRequest) SetTrustManagerProvider(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddSyslogExternalServerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -291,7 +294,7 @@ func (o *AddSyslogExternalServerRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogExternalServerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -299,7 +302,7 @@ func (o *AddSyslogExternalServerRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddSyslogExternalServerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -312,35 +315,35 @@ func (o *AddSyslogExternalServerRequest) SetDescription(v string) {
 }
 
 func (o AddSyslogExternalServerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["serverName"] = o.ServerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["serverHostName"] = o.ServerHostName
-	}
-	if !isNil(o.ServerPort) {
-		toSerialize["serverPort"] = o.ServerPort
-	}
-	if true {
-		toSerialize["transportMechanism"] = o.TransportMechanism
-	}
-	if !isNil(o.ConnectTimeout) {
-		toSerialize["connectTimeout"] = o.ConnectTimeout
-	}
-	if !isNil(o.MaxConnectionAge) {
-		toSerialize["maxConnectionAge"] = o.MaxConnectionAge
-	}
-	if !isNil(o.TrustManagerProvider) {
-		toSerialize["trustManagerProvider"] = o.TrustManagerProvider
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddSyslogExternalServerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["serverName"] = o.ServerName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["serverHostName"] = o.ServerHostName
+	if !IsNil(o.ServerPort) {
+		toSerialize["serverPort"] = o.ServerPort
+	}
+	toSerialize["transportMechanism"] = o.TransportMechanism
+	if !IsNil(o.ConnectTimeout) {
+		toSerialize["connectTimeout"] = o.ConnectTimeout
+	}
+	if !IsNil(o.MaxConnectionAge) {
+		toSerialize["maxConnectionAge"] = o.MaxConnectionAge
+	}
+	if !IsNil(o.TrustManagerProvider) {
+		toSerialize["trustManagerProvider"] = o.TrustManagerProvider
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAddSyslogExternalServerRequest struct {

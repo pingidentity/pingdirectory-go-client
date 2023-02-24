@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddReferentialIntegrityPluginRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddReferentialIntegrityPluginRequest{}
+
 // AddReferentialIntegrityPluginRequest struct for AddReferentialIntegrityPluginRequest
 type AddReferentialIntegrityPluginRequest struct {
 	// Name of the new Plugin
@@ -107,7 +110,7 @@ func (o *AddReferentialIntegrityPluginRequest) SetSchemas(v []EnumreferentialInt
 
 // GetPluginType returns the PluginType field value if set, zero value otherwise.
 func (o *AddReferentialIntegrityPluginRequest) GetPluginType() []EnumpluginPluginTypeProp {
-	if o == nil || isNil(o.PluginType) {
+	if o == nil || IsNil(o.PluginType) {
 		var ret []EnumpluginPluginTypeProp
 		return ret
 	}
@@ -117,7 +120,7 @@ func (o *AddReferentialIntegrityPluginRequest) GetPluginType() []EnumpluginPlugi
 // GetPluginTypeOk returns a tuple with the PluginType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReferentialIntegrityPluginRequest) GetPluginTypeOk() ([]EnumpluginPluginTypeProp, bool) {
-	if o == nil || isNil(o.PluginType) {
+	if o == nil || IsNil(o.PluginType) {
 		return nil, false
 	}
 	return o.PluginType, true
@@ -125,7 +128,7 @@ func (o *AddReferentialIntegrityPluginRequest) GetPluginTypeOk() ([]EnumpluginPl
 
 // HasPluginType returns a boolean if a field has been set.
 func (o *AddReferentialIntegrityPluginRequest) HasPluginType() bool {
-	if o != nil && !isNil(o.PluginType) {
+	if o != nil && !IsNil(o.PluginType) {
 		return true
 	}
 
@@ -163,7 +166,7 @@ func (o *AddReferentialIntegrityPluginRequest) SetAttributeType(v []string) {
 
 // GetBaseDN returns the BaseDN field value if set, zero value otherwise.
 func (o *AddReferentialIntegrityPluginRequest) GetBaseDN() []string {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		var ret []string
 		return ret
 	}
@@ -173,7 +176,7 @@ func (o *AddReferentialIntegrityPluginRequest) GetBaseDN() []string {
 // GetBaseDNOk returns a tuple with the BaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReferentialIntegrityPluginRequest) GetBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		return nil, false
 	}
 	return o.BaseDN, true
@@ -181,7 +184,7 @@ func (o *AddReferentialIntegrityPluginRequest) GetBaseDNOk() ([]string, bool) {
 
 // HasBaseDN returns a boolean if a field has been set.
 func (o *AddReferentialIntegrityPluginRequest) HasBaseDN() bool {
-	if o != nil && !isNil(o.BaseDN) {
+	if o != nil && !IsNil(o.BaseDN) {
 		return true
 	}
 
@@ -195,7 +198,7 @@ func (o *AddReferentialIntegrityPluginRequest) SetBaseDN(v []string) {
 
 // GetLogFile returns the LogFile field value if set, zero value otherwise.
 func (o *AddReferentialIntegrityPluginRequest) GetLogFile() string {
-	if o == nil || isNil(o.LogFile) {
+	if o == nil || IsNil(o.LogFile) {
 		var ret string
 		return ret
 	}
@@ -205,7 +208,7 @@ func (o *AddReferentialIntegrityPluginRequest) GetLogFile() string {
 // GetLogFileOk returns a tuple with the LogFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReferentialIntegrityPluginRequest) GetLogFileOk() (*string, bool) {
-	if o == nil || isNil(o.LogFile) {
+	if o == nil || IsNil(o.LogFile) {
 		return nil, false
 	}
 	return o.LogFile, true
@@ -213,7 +216,7 @@ func (o *AddReferentialIntegrityPluginRequest) GetLogFileOk() (*string, bool) {
 
 // HasLogFile returns a boolean if a field has been set.
 func (o *AddReferentialIntegrityPluginRequest) HasLogFile() bool {
-	if o != nil && !isNil(o.LogFile) {
+	if o != nil && !IsNil(o.LogFile) {
 		return true
 	}
 
@@ -227,7 +230,7 @@ func (o *AddReferentialIntegrityPluginRequest) SetLogFile(v string) {
 
 // GetUpdateInterval returns the UpdateInterval field value if set, zero value otherwise.
 func (o *AddReferentialIntegrityPluginRequest) GetUpdateInterval() string {
-	if o == nil || isNil(o.UpdateInterval) {
+	if o == nil || IsNil(o.UpdateInterval) {
 		var ret string
 		return ret
 	}
@@ -237,7 +240,7 @@ func (o *AddReferentialIntegrityPluginRequest) GetUpdateInterval() string {
 // GetUpdateIntervalOk returns a tuple with the UpdateInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReferentialIntegrityPluginRequest) GetUpdateIntervalOk() (*string, bool) {
-	if o == nil || isNil(o.UpdateInterval) {
+	if o == nil || IsNil(o.UpdateInterval) {
 		return nil, false
 	}
 	return o.UpdateInterval, true
@@ -245,7 +248,7 @@ func (o *AddReferentialIntegrityPluginRequest) GetUpdateIntervalOk() (*string, b
 
 // HasUpdateInterval returns a boolean if a field has been set.
 func (o *AddReferentialIntegrityPluginRequest) HasUpdateInterval() bool {
-	if o != nil && !isNil(o.UpdateInterval) {
+	if o != nil && !IsNil(o.UpdateInterval) {
 		return true
 	}
 
@@ -259,7 +262,7 @@ func (o *AddReferentialIntegrityPluginRequest) SetUpdateInterval(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddReferentialIntegrityPluginRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -269,7 +272,7 @@ func (o *AddReferentialIntegrityPluginRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReferentialIntegrityPluginRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -277,7 +280,7 @@ func (o *AddReferentialIntegrityPluginRequest) GetDescriptionOk() (*string, bool
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddReferentialIntegrityPluginRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -315,7 +318,7 @@ func (o *AddReferentialIntegrityPluginRequest) SetEnabled(v bool) {
 
 // GetInvokeForInternalOperations returns the InvokeForInternalOperations field value if set, zero value otherwise.
 func (o *AddReferentialIntegrityPluginRequest) GetInvokeForInternalOperations() bool {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		var ret bool
 		return ret
 	}
@@ -325,7 +328,7 @@ func (o *AddReferentialIntegrityPluginRequest) GetInvokeForInternalOperations() 
 // GetInvokeForInternalOperationsOk returns a tuple with the InvokeForInternalOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReferentialIntegrityPluginRequest) GetInvokeForInternalOperationsOk() (*bool, bool) {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		return nil, false
 	}
 	return o.InvokeForInternalOperations, true
@@ -333,7 +336,7 @@ func (o *AddReferentialIntegrityPluginRequest) GetInvokeForInternalOperationsOk(
 
 // HasInvokeForInternalOperations returns a boolean if a field has been set.
 func (o *AddReferentialIntegrityPluginRequest) HasInvokeForInternalOperations() bool {
-	if o != nil && !isNil(o.InvokeForInternalOperations) {
+	if o != nil && !IsNil(o.InvokeForInternalOperations) {
 		return true
 	}
 
@@ -346,38 +349,38 @@ func (o *AddReferentialIntegrityPluginRequest) SetInvokeForInternalOperations(v 
 }
 
 func (o AddReferentialIntegrityPluginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["pluginName"] = o.PluginName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.PluginType) {
-		toSerialize["pluginType"] = o.PluginType
-	}
-	if true {
-		toSerialize["attributeType"] = o.AttributeType
-	}
-	if !isNil(o.BaseDN) {
-		toSerialize["baseDN"] = o.BaseDN
-	}
-	if !isNil(o.LogFile) {
-		toSerialize["logFile"] = o.LogFile
-	}
-	if !isNil(o.UpdateInterval) {
-		toSerialize["updateInterval"] = o.UpdateInterval
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.InvokeForInternalOperations) {
-		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddReferentialIntegrityPluginRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["pluginName"] = o.PluginName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.PluginType) {
+		toSerialize["pluginType"] = o.PluginType
+	}
+	toSerialize["attributeType"] = o.AttributeType
+	if !IsNil(o.BaseDN) {
+		toSerialize["baseDN"] = o.BaseDN
+	}
+	if !IsNil(o.LogFile) {
+		toSerialize["logFile"] = o.LogFile
+	}
+	if !IsNil(o.UpdateInterval) {
+		toSerialize["updateInterval"] = o.UpdateInterval
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.InvokeForInternalOperations) {
+		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
+	}
+	return toSerialize, nil
 }
 
 type NullableAddReferentialIntegrityPluginRequest struct {

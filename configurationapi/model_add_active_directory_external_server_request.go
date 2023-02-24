@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddActiveDirectoryExternalServerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddActiveDirectoryExternalServerRequest{}
+
 // AddActiveDirectoryExternalServerRequest struct for AddActiveDirectoryExternalServerRequest
 type AddActiveDirectoryExternalServerRequest struct {
 	// Name of the new External Server
@@ -129,7 +132,7 @@ func (o *AddActiveDirectoryExternalServerRequest) SetSchemas(v []EnumactiveDirec
 
 // GetBindDN returns the BindDN field value if set, zero value otherwise.
 func (o *AddActiveDirectoryExternalServerRequest) GetBindDN() string {
-	if o == nil || isNil(o.BindDN) {
+	if o == nil || IsNil(o.BindDN) {
 		var ret string
 		return ret
 	}
@@ -139,7 +142,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetBindDN() string {
 // GetBindDNOk returns a tuple with the BindDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddActiveDirectoryExternalServerRequest) GetBindDNOk() (*string, bool) {
-	if o == nil || isNil(o.BindDN) {
+	if o == nil || IsNil(o.BindDN) {
 		return nil, false
 	}
 	return o.BindDN, true
@@ -147,7 +150,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetBindDNOk() (*string, bool) 
 
 // HasBindDN returns a boolean if a field has been set.
 func (o *AddActiveDirectoryExternalServerRequest) HasBindDN() bool {
-	if o != nil && !isNil(o.BindDN) {
+	if o != nil && !IsNil(o.BindDN) {
 		return true
 	}
 
@@ -185,7 +188,7 @@ func (o *AddActiveDirectoryExternalServerRequest) SetServerHostName(v string) {
 
 // GetServerPort returns the ServerPort field value if set, zero value otherwise.
 func (o *AddActiveDirectoryExternalServerRequest) GetServerPort() int32 {
-	if o == nil || isNil(o.ServerPort) {
+	if o == nil || IsNil(o.ServerPort) {
 		var ret int32
 		return ret
 	}
@@ -195,7 +198,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetServerPort() int32 {
 // GetServerPortOk returns a tuple with the ServerPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddActiveDirectoryExternalServerRequest) GetServerPortOk() (*int32, bool) {
-	if o == nil || isNil(o.ServerPort) {
+	if o == nil || IsNil(o.ServerPort) {
 		return nil, false
 	}
 	return o.ServerPort, true
@@ -203,7 +206,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetServerPortOk() (*int32, boo
 
 // HasServerPort returns a boolean if a field has been set.
 func (o *AddActiveDirectoryExternalServerRequest) HasServerPort() bool {
-	if o != nil && !isNil(o.ServerPort) {
+	if o != nil && !IsNil(o.ServerPort) {
 		return true
 	}
 
@@ -217,7 +220,7 @@ func (o *AddActiveDirectoryExternalServerRequest) SetServerPort(v int32) {
 
 // GetLocation returns the Location field value if set, zero value otherwise.
 func (o *AddActiveDirectoryExternalServerRequest) GetLocation() string {
-	if o == nil || isNil(o.Location) {
+	if o == nil || IsNil(o.Location) {
 		var ret string
 		return ret
 	}
@@ -227,7 +230,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetLocation() string {
 // GetLocationOk returns a tuple with the Location field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddActiveDirectoryExternalServerRequest) GetLocationOk() (*string, bool) {
-	if o == nil || isNil(o.Location) {
+	if o == nil || IsNil(o.Location) {
 		return nil, false
 	}
 	return o.Location, true
@@ -235,7 +238,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetLocationOk() (*string, bool
 
 // HasLocation returns a boolean if a field has been set.
 func (o *AddActiveDirectoryExternalServerRequest) HasLocation() bool {
-	if o != nil && !isNil(o.Location) {
+	if o != nil && !IsNil(o.Location) {
 		return true
 	}
 
@@ -249,7 +252,7 @@ func (o *AddActiveDirectoryExternalServerRequest) SetLocation(v string) {
 
 // GetPassword returns the Password field value if set, zero value otherwise.
 func (o *AddActiveDirectoryExternalServerRequest) GetPassword() string {
-	if o == nil || isNil(o.Password) {
+	if o == nil || IsNil(o.Password) {
 		var ret string
 		return ret
 	}
@@ -259,7 +262,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetPassword() string {
 // GetPasswordOk returns a tuple with the Password field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddActiveDirectoryExternalServerRequest) GetPasswordOk() (*string, bool) {
-	if o == nil || isNil(o.Password) {
+	if o == nil || IsNil(o.Password) {
 		return nil, false
 	}
 	return o.Password, true
@@ -267,7 +270,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetPasswordOk() (*string, bool
 
 // HasPassword returns a boolean if a field has been set.
 func (o *AddActiveDirectoryExternalServerRequest) HasPassword() bool {
-	if o != nil && !isNil(o.Password) {
+	if o != nil && !IsNil(o.Password) {
 		return true
 	}
 
@@ -281,7 +284,7 @@ func (o *AddActiveDirectoryExternalServerRequest) SetPassword(v string) {
 
 // GetPassphraseProvider returns the PassphraseProvider field value if set, zero value otherwise.
 func (o *AddActiveDirectoryExternalServerRequest) GetPassphraseProvider() string {
-	if o == nil || isNil(o.PassphraseProvider) {
+	if o == nil || IsNil(o.PassphraseProvider) {
 		var ret string
 		return ret
 	}
@@ -291,7 +294,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetPassphraseProvider() string
 // GetPassphraseProviderOk returns a tuple with the PassphraseProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddActiveDirectoryExternalServerRequest) GetPassphraseProviderOk() (*string, bool) {
-	if o == nil || isNil(o.PassphraseProvider) {
+	if o == nil || IsNil(o.PassphraseProvider) {
 		return nil, false
 	}
 	return o.PassphraseProvider, true
@@ -299,7 +302,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetPassphraseProviderOk() (*st
 
 // HasPassphraseProvider returns a boolean if a field has been set.
 func (o *AddActiveDirectoryExternalServerRequest) HasPassphraseProvider() bool {
-	if o != nil && !isNil(o.PassphraseProvider) {
+	if o != nil && !IsNil(o.PassphraseProvider) {
 		return true
 	}
 
@@ -313,7 +316,7 @@ func (o *AddActiveDirectoryExternalServerRequest) SetPassphraseProvider(v string
 
 // GetConnectionSecurity returns the ConnectionSecurity field value if set, zero value otherwise.
 func (o *AddActiveDirectoryExternalServerRequest) GetConnectionSecurity() EnumexternalServerConnectionSecurityProp {
-	if o == nil || isNil(o.ConnectionSecurity) {
+	if o == nil || IsNil(o.ConnectionSecurity) {
 		var ret EnumexternalServerConnectionSecurityProp
 		return ret
 	}
@@ -323,7 +326,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetConnectionSecurity() Enumex
 // GetConnectionSecurityOk returns a tuple with the ConnectionSecurity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddActiveDirectoryExternalServerRequest) GetConnectionSecurityOk() (*EnumexternalServerConnectionSecurityProp, bool) {
-	if o == nil || isNil(o.ConnectionSecurity) {
+	if o == nil || IsNil(o.ConnectionSecurity) {
 		return nil, false
 	}
 	return o.ConnectionSecurity, true
@@ -331,7 +334,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetConnectionSecurityOk() (*En
 
 // HasConnectionSecurity returns a boolean if a field has been set.
 func (o *AddActiveDirectoryExternalServerRequest) HasConnectionSecurity() bool {
-	if o != nil && !isNil(o.ConnectionSecurity) {
+	if o != nil && !IsNil(o.ConnectionSecurity) {
 		return true
 	}
 
@@ -345,7 +348,7 @@ func (o *AddActiveDirectoryExternalServerRequest) SetConnectionSecurity(v Enumex
 
 // GetAuthenticationMethod returns the AuthenticationMethod field value if set, zero value otherwise.
 func (o *AddActiveDirectoryExternalServerRequest) GetAuthenticationMethod() EnumexternalServerAuthenticationMethodProp {
-	if o == nil || isNil(o.AuthenticationMethod) {
+	if o == nil || IsNil(o.AuthenticationMethod) {
 		var ret EnumexternalServerAuthenticationMethodProp
 		return ret
 	}
@@ -355,7 +358,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetAuthenticationMethod() Enum
 // GetAuthenticationMethodOk returns a tuple with the AuthenticationMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddActiveDirectoryExternalServerRequest) GetAuthenticationMethodOk() (*EnumexternalServerAuthenticationMethodProp, bool) {
-	if o == nil || isNil(o.AuthenticationMethod) {
+	if o == nil || IsNil(o.AuthenticationMethod) {
 		return nil, false
 	}
 	return o.AuthenticationMethod, true
@@ -363,7 +366,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetAuthenticationMethodOk() (*
 
 // HasAuthenticationMethod returns a boolean if a field has been set.
 func (o *AddActiveDirectoryExternalServerRequest) HasAuthenticationMethod() bool {
-	if o != nil && !isNil(o.AuthenticationMethod) {
+	if o != nil && !IsNil(o.AuthenticationMethod) {
 		return true
 	}
 
@@ -377,7 +380,7 @@ func (o *AddActiveDirectoryExternalServerRequest) SetAuthenticationMethod(v Enum
 
 // GetVerifyCredentialsMethod returns the VerifyCredentialsMethod field value if set, zero value otherwise.
 func (o *AddActiveDirectoryExternalServerRequest) GetVerifyCredentialsMethod() EnumexternalServerVerifyCredentialsMethodProp {
-	if o == nil || isNil(o.VerifyCredentialsMethod) {
+	if o == nil || IsNil(o.VerifyCredentialsMethod) {
 		var ret EnumexternalServerVerifyCredentialsMethodProp
 		return ret
 	}
@@ -387,7 +390,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetVerifyCredentialsMethod() E
 // GetVerifyCredentialsMethodOk returns a tuple with the VerifyCredentialsMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddActiveDirectoryExternalServerRequest) GetVerifyCredentialsMethodOk() (*EnumexternalServerVerifyCredentialsMethodProp, bool) {
-	if o == nil || isNil(o.VerifyCredentialsMethod) {
+	if o == nil || IsNil(o.VerifyCredentialsMethod) {
 		return nil, false
 	}
 	return o.VerifyCredentialsMethod, true
@@ -395,7 +398,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetVerifyCredentialsMethodOk()
 
 // HasVerifyCredentialsMethod returns a boolean if a field has been set.
 func (o *AddActiveDirectoryExternalServerRequest) HasVerifyCredentialsMethod() bool {
-	if o != nil && !isNil(o.VerifyCredentialsMethod) {
+	if o != nil && !IsNil(o.VerifyCredentialsMethod) {
 		return true
 	}
 
@@ -409,7 +412,7 @@ func (o *AddActiveDirectoryExternalServerRequest) SetVerifyCredentialsMethod(v E
 
 // GetHealthCheckConnectTimeout returns the HealthCheckConnectTimeout field value if set, zero value otherwise.
 func (o *AddActiveDirectoryExternalServerRequest) GetHealthCheckConnectTimeout() string {
-	if o == nil || isNil(o.HealthCheckConnectTimeout) {
+	if o == nil || IsNil(o.HealthCheckConnectTimeout) {
 		var ret string
 		return ret
 	}
@@ -419,7 +422,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetHealthCheckConnectTimeout()
 // GetHealthCheckConnectTimeoutOk returns a tuple with the HealthCheckConnectTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddActiveDirectoryExternalServerRequest) GetHealthCheckConnectTimeoutOk() (*string, bool) {
-	if o == nil || isNil(o.HealthCheckConnectTimeout) {
+	if o == nil || IsNil(o.HealthCheckConnectTimeout) {
 		return nil, false
 	}
 	return o.HealthCheckConnectTimeout, true
@@ -427,7 +430,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetHealthCheckConnectTimeoutOk
 
 // HasHealthCheckConnectTimeout returns a boolean if a field has been set.
 func (o *AddActiveDirectoryExternalServerRequest) HasHealthCheckConnectTimeout() bool {
-	if o != nil && !isNil(o.HealthCheckConnectTimeout) {
+	if o != nil && !IsNil(o.HealthCheckConnectTimeout) {
 		return true
 	}
 
@@ -441,7 +444,7 @@ func (o *AddActiveDirectoryExternalServerRequest) SetHealthCheckConnectTimeout(v
 
 // GetMaxConnectionAge returns the MaxConnectionAge field value if set, zero value otherwise.
 func (o *AddActiveDirectoryExternalServerRequest) GetMaxConnectionAge() string {
-	if o == nil || isNil(o.MaxConnectionAge) {
+	if o == nil || IsNil(o.MaxConnectionAge) {
 		var ret string
 		return ret
 	}
@@ -451,7 +454,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetMaxConnectionAge() string {
 // GetMaxConnectionAgeOk returns a tuple with the MaxConnectionAge field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddActiveDirectoryExternalServerRequest) GetMaxConnectionAgeOk() (*string, bool) {
-	if o == nil || isNil(o.MaxConnectionAge) {
+	if o == nil || IsNil(o.MaxConnectionAge) {
 		return nil, false
 	}
 	return o.MaxConnectionAge, true
@@ -459,7 +462,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetMaxConnectionAgeOk() (*stri
 
 // HasMaxConnectionAge returns a boolean if a field has been set.
 func (o *AddActiveDirectoryExternalServerRequest) HasMaxConnectionAge() bool {
-	if o != nil && !isNil(o.MaxConnectionAge) {
+	if o != nil && !IsNil(o.MaxConnectionAge) {
 		return true
 	}
 
@@ -473,7 +476,7 @@ func (o *AddActiveDirectoryExternalServerRequest) SetMaxConnectionAge(v string) 
 
 // GetMinExpiredConnectionDisconnectInterval returns the MinExpiredConnectionDisconnectInterval field value if set, zero value otherwise.
 func (o *AddActiveDirectoryExternalServerRequest) GetMinExpiredConnectionDisconnectInterval() string {
-	if o == nil || isNil(o.MinExpiredConnectionDisconnectInterval) {
+	if o == nil || IsNil(o.MinExpiredConnectionDisconnectInterval) {
 		var ret string
 		return ret
 	}
@@ -483,7 +486,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetMinExpiredConnectionDisconn
 // GetMinExpiredConnectionDisconnectIntervalOk returns a tuple with the MinExpiredConnectionDisconnectInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddActiveDirectoryExternalServerRequest) GetMinExpiredConnectionDisconnectIntervalOk() (*string, bool) {
-	if o == nil || isNil(o.MinExpiredConnectionDisconnectInterval) {
+	if o == nil || IsNil(o.MinExpiredConnectionDisconnectInterval) {
 		return nil, false
 	}
 	return o.MinExpiredConnectionDisconnectInterval, true
@@ -491,7 +494,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetMinExpiredConnectionDisconn
 
 // HasMinExpiredConnectionDisconnectInterval returns a boolean if a field has been set.
 func (o *AddActiveDirectoryExternalServerRequest) HasMinExpiredConnectionDisconnectInterval() bool {
-	if o != nil && !isNil(o.MinExpiredConnectionDisconnectInterval) {
+	if o != nil && !IsNil(o.MinExpiredConnectionDisconnectInterval) {
 		return true
 	}
 
@@ -505,7 +508,7 @@ func (o *AddActiveDirectoryExternalServerRequest) SetMinExpiredConnectionDisconn
 
 // GetConnectTimeout returns the ConnectTimeout field value if set, zero value otherwise.
 func (o *AddActiveDirectoryExternalServerRequest) GetConnectTimeout() string {
-	if o == nil || isNil(o.ConnectTimeout) {
+	if o == nil || IsNil(o.ConnectTimeout) {
 		var ret string
 		return ret
 	}
@@ -515,7 +518,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetConnectTimeout() string {
 // GetConnectTimeoutOk returns a tuple with the ConnectTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddActiveDirectoryExternalServerRequest) GetConnectTimeoutOk() (*string, bool) {
-	if o == nil || isNil(o.ConnectTimeout) {
+	if o == nil || IsNil(o.ConnectTimeout) {
 		return nil, false
 	}
 	return o.ConnectTimeout, true
@@ -523,7 +526,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetConnectTimeoutOk() (*string
 
 // HasConnectTimeout returns a boolean if a field has been set.
 func (o *AddActiveDirectoryExternalServerRequest) HasConnectTimeout() bool {
-	if o != nil && !isNil(o.ConnectTimeout) {
+	if o != nil && !IsNil(o.ConnectTimeout) {
 		return true
 	}
 
@@ -537,7 +540,7 @@ func (o *AddActiveDirectoryExternalServerRequest) SetConnectTimeout(v string) {
 
 // GetMaxResponseSize returns the MaxResponseSize field value if set, zero value otherwise.
 func (o *AddActiveDirectoryExternalServerRequest) GetMaxResponseSize() string {
-	if o == nil || isNil(o.MaxResponseSize) {
+	if o == nil || IsNil(o.MaxResponseSize) {
 		var ret string
 		return ret
 	}
@@ -547,7 +550,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetMaxResponseSize() string {
 // GetMaxResponseSizeOk returns a tuple with the MaxResponseSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddActiveDirectoryExternalServerRequest) GetMaxResponseSizeOk() (*string, bool) {
-	if o == nil || isNil(o.MaxResponseSize) {
+	if o == nil || IsNil(o.MaxResponseSize) {
 		return nil, false
 	}
 	return o.MaxResponseSize, true
@@ -555,7 +558,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetMaxResponseSizeOk() (*strin
 
 // HasMaxResponseSize returns a boolean if a field has been set.
 func (o *AddActiveDirectoryExternalServerRequest) HasMaxResponseSize() bool {
-	if o != nil && !isNil(o.MaxResponseSize) {
+	if o != nil && !IsNil(o.MaxResponseSize) {
 		return true
 	}
 
@@ -569,7 +572,7 @@ func (o *AddActiveDirectoryExternalServerRequest) SetMaxResponseSize(v string) {
 
 // GetKeyManagerProvider returns the KeyManagerProvider field value if set, zero value otherwise.
 func (o *AddActiveDirectoryExternalServerRequest) GetKeyManagerProvider() string {
-	if o == nil || isNil(o.KeyManagerProvider) {
+	if o == nil || IsNil(o.KeyManagerProvider) {
 		var ret string
 		return ret
 	}
@@ -579,7 +582,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetKeyManagerProvider() string
 // GetKeyManagerProviderOk returns a tuple with the KeyManagerProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddActiveDirectoryExternalServerRequest) GetKeyManagerProviderOk() (*string, bool) {
-	if o == nil || isNil(o.KeyManagerProvider) {
+	if o == nil || IsNil(o.KeyManagerProvider) {
 		return nil, false
 	}
 	return o.KeyManagerProvider, true
@@ -587,7 +590,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetKeyManagerProviderOk() (*st
 
 // HasKeyManagerProvider returns a boolean if a field has been set.
 func (o *AddActiveDirectoryExternalServerRequest) HasKeyManagerProvider() bool {
-	if o != nil && !isNil(o.KeyManagerProvider) {
+	if o != nil && !IsNil(o.KeyManagerProvider) {
 		return true
 	}
 
@@ -601,7 +604,7 @@ func (o *AddActiveDirectoryExternalServerRequest) SetKeyManagerProvider(v string
 
 // GetTrustManagerProvider returns the TrustManagerProvider field value if set, zero value otherwise.
 func (o *AddActiveDirectoryExternalServerRequest) GetTrustManagerProvider() string {
-	if o == nil || isNil(o.TrustManagerProvider) {
+	if o == nil || IsNil(o.TrustManagerProvider) {
 		var ret string
 		return ret
 	}
@@ -611,7 +614,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetTrustManagerProvider() stri
 // GetTrustManagerProviderOk returns a tuple with the TrustManagerProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddActiveDirectoryExternalServerRequest) GetTrustManagerProviderOk() (*string, bool) {
-	if o == nil || isNil(o.TrustManagerProvider) {
+	if o == nil || IsNil(o.TrustManagerProvider) {
 		return nil, false
 	}
 	return o.TrustManagerProvider, true
@@ -619,7 +622,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetTrustManagerProviderOk() (*
 
 // HasTrustManagerProvider returns a boolean if a field has been set.
 func (o *AddActiveDirectoryExternalServerRequest) HasTrustManagerProvider() bool {
-	if o != nil && !isNil(o.TrustManagerProvider) {
+	if o != nil && !IsNil(o.TrustManagerProvider) {
 		return true
 	}
 
@@ -633,7 +636,7 @@ func (o *AddActiveDirectoryExternalServerRequest) SetTrustManagerProvider(v stri
 
 // GetInitialConnections returns the InitialConnections field value if set, zero value otherwise.
 func (o *AddActiveDirectoryExternalServerRequest) GetInitialConnections() int32 {
-	if o == nil || isNil(o.InitialConnections) {
+	if o == nil || IsNil(o.InitialConnections) {
 		var ret int32
 		return ret
 	}
@@ -643,7 +646,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetInitialConnections() int32 
 // GetInitialConnectionsOk returns a tuple with the InitialConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddActiveDirectoryExternalServerRequest) GetInitialConnectionsOk() (*int32, bool) {
-	if o == nil || isNil(o.InitialConnections) {
+	if o == nil || IsNil(o.InitialConnections) {
 		return nil, false
 	}
 	return o.InitialConnections, true
@@ -651,7 +654,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetInitialConnectionsOk() (*in
 
 // HasInitialConnections returns a boolean if a field has been set.
 func (o *AddActiveDirectoryExternalServerRequest) HasInitialConnections() bool {
-	if o != nil && !isNil(o.InitialConnections) {
+	if o != nil && !IsNil(o.InitialConnections) {
 		return true
 	}
 
@@ -665,7 +668,7 @@ func (o *AddActiveDirectoryExternalServerRequest) SetInitialConnections(v int32)
 
 // GetMaxConnections returns the MaxConnections field value if set, zero value otherwise.
 func (o *AddActiveDirectoryExternalServerRequest) GetMaxConnections() int32 {
-	if o == nil || isNil(o.MaxConnections) {
+	if o == nil || IsNil(o.MaxConnections) {
 		var ret int32
 		return ret
 	}
@@ -675,7 +678,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetMaxConnections() int32 {
 // GetMaxConnectionsOk returns a tuple with the MaxConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddActiveDirectoryExternalServerRequest) GetMaxConnectionsOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxConnections) {
+	if o == nil || IsNil(o.MaxConnections) {
 		return nil, false
 	}
 	return o.MaxConnections, true
@@ -683,7 +686,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetMaxConnectionsOk() (*int32,
 
 // HasMaxConnections returns a boolean if a field has been set.
 func (o *AddActiveDirectoryExternalServerRequest) HasMaxConnections() bool {
-	if o != nil && !isNil(o.MaxConnections) {
+	if o != nil && !IsNil(o.MaxConnections) {
 		return true
 	}
 
@@ -697,7 +700,7 @@ func (o *AddActiveDirectoryExternalServerRequest) SetMaxConnections(v int32) {
 
 // GetDefunctConnectionResultCode returns the DefunctConnectionResultCode field value if set, zero value otherwise.
 func (o *AddActiveDirectoryExternalServerRequest) GetDefunctConnectionResultCode() []EnumexternalServerDefunctConnectionResultCodeProp {
-	if o == nil || isNil(o.DefunctConnectionResultCode) {
+	if o == nil || IsNil(o.DefunctConnectionResultCode) {
 		var ret []EnumexternalServerDefunctConnectionResultCodeProp
 		return ret
 	}
@@ -707,7 +710,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetDefunctConnectionResultCode
 // GetDefunctConnectionResultCodeOk returns a tuple with the DefunctConnectionResultCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddActiveDirectoryExternalServerRequest) GetDefunctConnectionResultCodeOk() ([]EnumexternalServerDefunctConnectionResultCodeProp, bool) {
-	if o == nil || isNil(o.DefunctConnectionResultCode) {
+	if o == nil || IsNil(o.DefunctConnectionResultCode) {
 		return nil, false
 	}
 	return o.DefunctConnectionResultCode, true
@@ -715,7 +718,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetDefunctConnectionResultCode
 
 // HasDefunctConnectionResultCode returns a boolean if a field has been set.
 func (o *AddActiveDirectoryExternalServerRequest) HasDefunctConnectionResultCode() bool {
-	if o != nil && !isNil(o.DefunctConnectionResultCode) {
+	if o != nil && !IsNil(o.DefunctConnectionResultCode) {
 		return true
 	}
 
@@ -729,7 +732,7 @@ func (o *AddActiveDirectoryExternalServerRequest) SetDefunctConnectionResultCode
 
 // GetAbandonOnTimeout returns the AbandonOnTimeout field value if set, zero value otherwise.
 func (o *AddActiveDirectoryExternalServerRequest) GetAbandonOnTimeout() bool {
-	if o == nil || isNil(o.AbandonOnTimeout) {
+	if o == nil || IsNil(o.AbandonOnTimeout) {
 		var ret bool
 		return ret
 	}
@@ -739,7 +742,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetAbandonOnTimeout() bool {
 // GetAbandonOnTimeoutOk returns a tuple with the AbandonOnTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddActiveDirectoryExternalServerRequest) GetAbandonOnTimeoutOk() (*bool, bool) {
-	if o == nil || isNil(o.AbandonOnTimeout) {
+	if o == nil || IsNil(o.AbandonOnTimeout) {
 		return nil, false
 	}
 	return o.AbandonOnTimeout, true
@@ -747,7 +750,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetAbandonOnTimeoutOk() (*bool
 
 // HasAbandonOnTimeout returns a boolean if a field has been set.
 func (o *AddActiveDirectoryExternalServerRequest) HasAbandonOnTimeout() bool {
-	if o != nil && !isNil(o.AbandonOnTimeout) {
+	if o != nil && !IsNil(o.AbandonOnTimeout) {
 		return true
 	}
 
@@ -761,7 +764,7 @@ func (o *AddActiveDirectoryExternalServerRequest) SetAbandonOnTimeout(v bool) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddActiveDirectoryExternalServerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -771,7 +774,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddActiveDirectoryExternalServerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -779,7 +782,7 @@ func (o *AddActiveDirectoryExternalServerRequest) GetDescriptionOk() (*string, b
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddActiveDirectoryExternalServerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -792,77 +795,79 @@ func (o *AddActiveDirectoryExternalServerRequest) SetDescription(v string) {
 }
 
 func (o AddActiveDirectoryExternalServerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["serverName"] = o.ServerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.BindDN) {
-		toSerialize["bindDN"] = o.BindDN
-	}
-	if true {
-		toSerialize["serverHostName"] = o.ServerHostName
-	}
-	if !isNil(o.ServerPort) {
-		toSerialize["serverPort"] = o.ServerPort
-	}
-	if !isNil(o.Location) {
-		toSerialize["location"] = o.Location
-	}
-	if !isNil(o.Password) {
-		toSerialize["password"] = o.Password
-	}
-	if !isNil(o.PassphraseProvider) {
-		toSerialize["passphraseProvider"] = o.PassphraseProvider
-	}
-	if !isNil(o.ConnectionSecurity) {
-		toSerialize["connectionSecurity"] = o.ConnectionSecurity
-	}
-	if !isNil(o.AuthenticationMethod) {
-		toSerialize["authenticationMethod"] = o.AuthenticationMethod
-	}
-	if !isNil(o.VerifyCredentialsMethod) {
-		toSerialize["verifyCredentialsMethod"] = o.VerifyCredentialsMethod
-	}
-	if !isNil(o.HealthCheckConnectTimeout) {
-		toSerialize["healthCheckConnectTimeout"] = o.HealthCheckConnectTimeout
-	}
-	if !isNil(o.MaxConnectionAge) {
-		toSerialize["maxConnectionAge"] = o.MaxConnectionAge
-	}
-	if !isNil(o.MinExpiredConnectionDisconnectInterval) {
-		toSerialize["minExpiredConnectionDisconnectInterval"] = o.MinExpiredConnectionDisconnectInterval
-	}
-	if !isNil(o.ConnectTimeout) {
-		toSerialize["connectTimeout"] = o.ConnectTimeout
-	}
-	if !isNil(o.MaxResponseSize) {
-		toSerialize["maxResponseSize"] = o.MaxResponseSize
-	}
-	if !isNil(o.KeyManagerProvider) {
-		toSerialize["keyManagerProvider"] = o.KeyManagerProvider
-	}
-	if !isNil(o.TrustManagerProvider) {
-		toSerialize["trustManagerProvider"] = o.TrustManagerProvider
-	}
-	if !isNil(o.InitialConnections) {
-		toSerialize["initialConnections"] = o.InitialConnections
-	}
-	if !isNil(o.MaxConnections) {
-		toSerialize["maxConnections"] = o.MaxConnections
-	}
-	if !isNil(o.DefunctConnectionResultCode) {
-		toSerialize["defunctConnectionResultCode"] = o.DefunctConnectionResultCode
-	}
-	if !isNil(o.AbandonOnTimeout) {
-		toSerialize["abandonOnTimeout"] = o.AbandonOnTimeout
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddActiveDirectoryExternalServerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["serverName"] = o.ServerName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.BindDN) {
+		toSerialize["bindDN"] = o.BindDN
+	}
+	toSerialize["serverHostName"] = o.ServerHostName
+	if !IsNil(o.ServerPort) {
+		toSerialize["serverPort"] = o.ServerPort
+	}
+	if !IsNil(o.Location) {
+		toSerialize["location"] = o.Location
+	}
+	if !IsNil(o.Password) {
+		toSerialize["password"] = o.Password
+	}
+	if !IsNil(o.PassphraseProvider) {
+		toSerialize["passphraseProvider"] = o.PassphraseProvider
+	}
+	if !IsNil(o.ConnectionSecurity) {
+		toSerialize["connectionSecurity"] = o.ConnectionSecurity
+	}
+	if !IsNil(o.AuthenticationMethod) {
+		toSerialize["authenticationMethod"] = o.AuthenticationMethod
+	}
+	if !IsNil(o.VerifyCredentialsMethod) {
+		toSerialize["verifyCredentialsMethod"] = o.VerifyCredentialsMethod
+	}
+	if !IsNil(o.HealthCheckConnectTimeout) {
+		toSerialize["healthCheckConnectTimeout"] = o.HealthCheckConnectTimeout
+	}
+	if !IsNil(o.MaxConnectionAge) {
+		toSerialize["maxConnectionAge"] = o.MaxConnectionAge
+	}
+	if !IsNil(o.MinExpiredConnectionDisconnectInterval) {
+		toSerialize["minExpiredConnectionDisconnectInterval"] = o.MinExpiredConnectionDisconnectInterval
+	}
+	if !IsNil(o.ConnectTimeout) {
+		toSerialize["connectTimeout"] = o.ConnectTimeout
+	}
+	if !IsNil(o.MaxResponseSize) {
+		toSerialize["maxResponseSize"] = o.MaxResponseSize
+	}
+	if !IsNil(o.KeyManagerProvider) {
+		toSerialize["keyManagerProvider"] = o.KeyManagerProvider
+	}
+	if !IsNil(o.TrustManagerProvider) {
+		toSerialize["trustManagerProvider"] = o.TrustManagerProvider
+	}
+	if !IsNil(o.InitialConnections) {
+		toSerialize["initialConnections"] = o.InitialConnections
+	}
+	if !IsNil(o.MaxConnections) {
+		toSerialize["maxConnections"] = o.MaxConnections
+	}
+	if !IsNil(o.DefunctConnectionResultCode) {
+		toSerialize["defunctConnectionResultCode"] = o.DefunctConnectionResultCode
+	}
+	if !IsNil(o.AbandonOnTimeout) {
+		toSerialize["abandonOnTimeout"] = o.AbandonOnTimeout
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAddActiveDirectoryExternalServerRequest struct {

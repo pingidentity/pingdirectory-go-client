@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the VelocityToolsVelocityContextProviderResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &VelocityToolsVelocityContextProviderResponse{}
+
 // VelocityToolsVelocityContextProviderResponse struct for VelocityToolsVelocityContextProviderResponse
 type VelocityToolsVelocityContextProviderResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -59,7 +62,7 @@ func NewVelocityToolsVelocityContextProviderResponseWithDefaults() *VelocityTool
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *VelocityToolsVelocityContextProviderResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -69,7 +72,7 @@ func (o *VelocityToolsVelocityContextProviderResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityToolsVelocityContextProviderResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -77,7 +80,7 @@ func (o *VelocityToolsVelocityContextProviderResponse) GetMetaOk() (*MetaMeta, b
 
 // HasMeta returns a boolean if a field has been set.
 func (o *VelocityToolsVelocityContextProviderResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -91,7 +94,7 @@ func (o *VelocityToolsVelocityContextProviderResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *VelocityToolsVelocityContextProviderResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -101,7 +104,7 @@ func (o *VelocityToolsVelocityContextProviderResponse) GetUrnpingidentityschemas
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityToolsVelocityContextProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -109,7 +112,7 @@ func (o *VelocityToolsVelocityContextProviderResponse) GetUrnpingidentityschemas
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *VelocityToolsVelocityContextProviderResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -171,7 +174,7 @@ func (o *VelocityToolsVelocityContextProviderResponse) SetSchemas(v []Enumveloci
 
 // GetRequestTool returns the RequestTool field value if set, zero value otherwise.
 func (o *VelocityToolsVelocityContextProviderResponse) GetRequestTool() []string {
-	if o == nil || isNil(o.RequestTool) {
+	if o == nil || IsNil(o.RequestTool) {
 		var ret []string
 		return ret
 	}
@@ -181,7 +184,7 @@ func (o *VelocityToolsVelocityContextProviderResponse) GetRequestTool() []string
 // GetRequestToolOk returns a tuple with the RequestTool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityToolsVelocityContextProviderResponse) GetRequestToolOk() ([]string, bool) {
-	if o == nil || isNil(o.RequestTool) {
+	if o == nil || IsNil(o.RequestTool) {
 		return nil, false
 	}
 	return o.RequestTool, true
@@ -189,7 +192,7 @@ func (o *VelocityToolsVelocityContextProviderResponse) GetRequestToolOk() ([]str
 
 // HasRequestTool returns a boolean if a field has been set.
 func (o *VelocityToolsVelocityContextProviderResponse) HasRequestTool() bool {
-	if o != nil && !isNil(o.RequestTool) {
+	if o != nil && !IsNil(o.RequestTool) {
 		return true
 	}
 
@@ -203,7 +206,7 @@ func (o *VelocityToolsVelocityContextProviderResponse) SetRequestTool(v []string
 
 // GetSessionTool returns the SessionTool field value if set, zero value otherwise.
 func (o *VelocityToolsVelocityContextProviderResponse) GetSessionTool() []string {
-	if o == nil || isNil(o.SessionTool) {
+	if o == nil || IsNil(o.SessionTool) {
 		var ret []string
 		return ret
 	}
@@ -213,7 +216,7 @@ func (o *VelocityToolsVelocityContextProviderResponse) GetSessionTool() []string
 // GetSessionToolOk returns a tuple with the SessionTool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityToolsVelocityContextProviderResponse) GetSessionToolOk() ([]string, bool) {
-	if o == nil || isNil(o.SessionTool) {
+	if o == nil || IsNil(o.SessionTool) {
 		return nil, false
 	}
 	return o.SessionTool, true
@@ -221,7 +224,7 @@ func (o *VelocityToolsVelocityContextProviderResponse) GetSessionToolOk() ([]str
 
 // HasSessionTool returns a boolean if a field has been set.
 func (o *VelocityToolsVelocityContextProviderResponse) HasSessionTool() bool {
-	if o != nil && !isNil(o.SessionTool) {
+	if o != nil && !IsNil(o.SessionTool) {
 		return true
 	}
 
@@ -235,7 +238,7 @@ func (o *VelocityToolsVelocityContextProviderResponse) SetSessionTool(v []string
 
 // GetApplicationTool returns the ApplicationTool field value if set, zero value otherwise.
 func (o *VelocityToolsVelocityContextProviderResponse) GetApplicationTool() []string {
-	if o == nil || isNil(o.ApplicationTool) {
+	if o == nil || IsNil(o.ApplicationTool) {
 		var ret []string
 		return ret
 	}
@@ -245,7 +248,7 @@ func (o *VelocityToolsVelocityContextProviderResponse) GetApplicationTool() []st
 // GetApplicationToolOk returns a tuple with the ApplicationTool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityToolsVelocityContextProviderResponse) GetApplicationToolOk() ([]string, bool) {
-	if o == nil || isNil(o.ApplicationTool) {
+	if o == nil || IsNil(o.ApplicationTool) {
 		return nil, false
 	}
 	return o.ApplicationTool, true
@@ -253,7 +256,7 @@ func (o *VelocityToolsVelocityContextProviderResponse) GetApplicationToolOk() ([
 
 // HasApplicationTool returns a boolean if a field has been set.
 func (o *VelocityToolsVelocityContextProviderResponse) HasApplicationTool() bool {
-	if o != nil && !isNil(o.ApplicationTool) {
+	if o != nil && !IsNil(o.ApplicationTool) {
 		return true
 	}
 
@@ -267,7 +270,7 @@ func (o *VelocityToolsVelocityContextProviderResponse) SetApplicationTool(v []st
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
 func (o *VelocityToolsVelocityContextProviderResponse) GetEnabled() bool {
-	if o == nil || isNil(o.Enabled) {
+	if o == nil || IsNil(o.Enabled) {
 		var ret bool
 		return ret
 	}
@@ -277,7 +280,7 @@ func (o *VelocityToolsVelocityContextProviderResponse) GetEnabled() bool {
 // GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityToolsVelocityContextProviderResponse) GetEnabledOk() (*bool, bool) {
-	if o == nil || isNil(o.Enabled) {
+	if o == nil || IsNil(o.Enabled) {
 		return nil, false
 	}
 	return o.Enabled, true
@@ -285,7 +288,7 @@ func (o *VelocityToolsVelocityContextProviderResponse) GetEnabledOk() (*bool, bo
 
 // HasEnabled returns a boolean if a field has been set.
 func (o *VelocityToolsVelocityContextProviderResponse) HasEnabled() bool {
-	if o != nil && !isNil(o.Enabled) {
+	if o != nil && !IsNil(o.Enabled) {
 		return true
 	}
 
@@ -299,7 +302,7 @@ func (o *VelocityToolsVelocityContextProviderResponse) SetEnabled(v bool) {
 
 // GetObjectScope returns the ObjectScope field value if set, zero value otherwise.
 func (o *VelocityToolsVelocityContextProviderResponse) GetObjectScope() EnumvelocityContextProviderObjectScopeProp {
-	if o == nil || isNil(o.ObjectScope) {
+	if o == nil || IsNil(o.ObjectScope) {
 		var ret EnumvelocityContextProviderObjectScopeProp
 		return ret
 	}
@@ -309,7 +312,7 @@ func (o *VelocityToolsVelocityContextProviderResponse) GetObjectScope() Enumvelo
 // GetObjectScopeOk returns a tuple with the ObjectScope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityToolsVelocityContextProviderResponse) GetObjectScopeOk() (*EnumvelocityContextProviderObjectScopeProp, bool) {
-	if o == nil || isNil(o.ObjectScope) {
+	if o == nil || IsNil(o.ObjectScope) {
 		return nil, false
 	}
 	return o.ObjectScope, true
@@ -317,7 +320,7 @@ func (o *VelocityToolsVelocityContextProviderResponse) GetObjectScopeOk() (*Enum
 
 // HasObjectScope returns a boolean if a field has been set.
 func (o *VelocityToolsVelocityContextProviderResponse) HasObjectScope() bool {
-	if o != nil && !isNil(o.ObjectScope) {
+	if o != nil && !IsNil(o.ObjectScope) {
 		return true
 	}
 
@@ -331,7 +334,7 @@ func (o *VelocityToolsVelocityContextProviderResponse) SetObjectScope(v Enumvelo
 
 // GetIncludedView returns the IncludedView field value if set, zero value otherwise.
 func (o *VelocityToolsVelocityContextProviderResponse) GetIncludedView() []string {
-	if o == nil || isNil(o.IncludedView) {
+	if o == nil || IsNil(o.IncludedView) {
 		var ret []string
 		return ret
 	}
@@ -341,7 +344,7 @@ func (o *VelocityToolsVelocityContextProviderResponse) GetIncludedView() []strin
 // GetIncludedViewOk returns a tuple with the IncludedView field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityToolsVelocityContextProviderResponse) GetIncludedViewOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludedView) {
+	if o == nil || IsNil(o.IncludedView) {
 		return nil, false
 	}
 	return o.IncludedView, true
@@ -349,7 +352,7 @@ func (o *VelocityToolsVelocityContextProviderResponse) GetIncludedViewOk() ([]st
 
 // HasIncludedView returns a boolean if a field has been set.
 func (o *VelocityToolsVelocityContextProviderResponse) HasIncludedView() bool {
-	if o != nil && !isNil(o.IncludedView) {
+	if o != nil && !IsNil(o.IncludedView) {
 		return true
 	}
 
@@ -363,7 +366,7 @@ func (o *VelocityToolsVelocityContextProviderResponse) SetIncludedView(v []strin
 
 // GetExcludedView returns the ExcludedView field value if set, zero value otherwise.
 func (o *VelocityToolsVelocityContextProviderResponse) GetExcludedView() []string {
-	if o == nil || isNil(o.ExcludedView) {
+	if o == nil || IsNil(o.ExcludedView) {
 		var ret []string
 		return ret
 	}
@@ -373,7 +376,7 @@ func (o *VelocityToolsVelocityContextProviderResponse) GetExcludedView() []strin
 // GetExcludedViewOk returns a tuple with the ExcludedView field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityToolsVelocityContextProviderResponse) GetExcludedViewOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludedView) {
+	if o == nil || IsNil(o.ExcludedView) {
 		return nil, false
 	}
 	return o.ExcludedView, true
@@ -381,7 +384,7 @@ func (o *VelocityToolsVelocityContextProviderResponse) GetExcludedViewOk() ([]st
 
 // HasExcludedView returns a boolean if a field has been set.
 func (o *VelocityToolsVelocityContextProviderResponse) HasExcludedView() bool {
-	if o != nil && !isNil(o.ExcludedView) {
+	if o != nil && !IsNil(o.ExcludedView) {
 		return true
 	}
 
@@ -395,7 +398,7 @@ func (o *VelocityToolsVelocityContextProviderResponse) SetExcludedView(v []strin
 
 // GetResponseHeader returns the ResponseHeader field value if set, zero value otherwise.
 func (o *VelocityToolsVelocityContextProviderResponse) GetResponseHeader() []string {
-	if o == nil || isNil(o.ResponseHeader) {
+	if o == nil || IsNil(o.ResponseHeader) {
 		var ret []string
 		return ret
 	}
@@ -405,7 +408,7 @@ func (o *VelocityToolsVelocityContextProviderResponse) GetResponseHeader() []str
 // GetResponseHeaderOk returns a tuple with the ResponseHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityToolsVelocityContextProviderResponse) GetResponseHeaderOk() ([]string, bool) {
-	if o == nil || isNil(o.ResponseHeader) {
+	if o == nil || IsNil(o.ResponseHeader) {
 		return nil, false
 	}
 	return o.ResponseHeader, true
@@ -413,7 +416,7 @@ func (o *VelocityToolsVelocityContextProviderResponse) GetResponseHeaderOk() ([]
 
 // HasResponseHeader returns a boolean if a field has been set.
 func (o *VelocityToolsVelocityContextProviderResponse) HasResponseHeader() bool {
-	if o != nil && !isNil(o.ResponseHeader) {
+	if o != nil && !IsNil(o.ResponseHeader) {
 		return true
 	}
 
@@ -426,44 +429,48 @@ func (o *VelocityToolsVelocityContextProviderResponse) SetResponseHeader(v []str
 }
 
 func (o VelocityToolsVelocityContextProviderResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.RequestTool) {
-		toSerialize["requestTool"] = o.RequestTool
-	}
-	if !isNil(o.SessionTool) {
-		toSerialize["sessionTool"] = o.SessionTool
-	}
-	if !isNil(o.ApplicationTool) {
-		toSerialize["applicationTool"] = o.ApplicationTool
-	}
-	if !isNil(o.Enabled) {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.ObjectScope) {
-		toSerialize["objectScope"] = o.ObjectScope
-	}
-	if !isNil(o.IncludedView) {
-		toSerialize["includedView"] = o.IncludedView
-	}
-	if !isNil(o.ExcludedView) {
-		toSerialize["excludedView"] = o.ExcludedView
-	}
-	if !isNil(o.ResponseHeader) {
-		toSerialize["responseHeader"] = o.ResponseHeader
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o VelocityToolsVelocityContextProviderResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.RequestTool) {
+		toSerialize["requestTool"] = o.RequestTool
+	}
+	if !IsNil(o.SessionTool) {
+		toSerialize["sessionTool"] = o.SessionTool
+	}
+	if !IsNil(o.ApplicationTool) {
+		toSerialize["applicationTool"] = o.ApplicationTool
+	}
+	if !IsNil(o.Enabled) {
+		toSerialize["enabled"] = o.Enabled
+	}
+	if !IsNil(o.ObjectScope) {
+		toSerialize["objectScope"] = o.ObjectScope
+	}
+	if !IsNil(o.IncludedView) {
+		toSerialize["includedView"] = o.IncludedView
+	}
+	if !IsNil(o.ExcludedView) {
+		toSerialize["excludedView"] = o.ExcludedView
+	}
+	if !IsNil(o.ResponseHeader) {
+		toSerialize["responseHeader"] = o.ResponseHeader
+	}
+	return toSerialize, nil
 }
 
 type NullableVelocityToolsVelocityContextProviderResponse struct {

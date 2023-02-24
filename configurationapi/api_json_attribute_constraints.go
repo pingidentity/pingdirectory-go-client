@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -105,9 +105,9 @@ func (a *JsonAttributeConstraintsApiService) AddJsonAttributeConstraintsExecute(
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -171,7 +171,7 @@ func (a *JsonAttributeConstraintsApiService) DeleteJsonAttributeConstraintsExecu
 	}
 
 	localVarPath := localBasePath + "/json-attribute-constraints/{json-attribute-constraints-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"json-attribute-constraints-name"+"}", url.PathEscape(parameterToString(r.jsonAttributeConstraintsName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"json-attribute-constraints-name"+"}", url.PathEscape(parameterValueToString(r.jsonAttributeConstraintsName, "jsonAttributeConstraintsName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -204,9 +204,9 @@ func (a *JsonAttributeConstraintsApiService) DeleteJsonAttributeConstraintsExecu
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -264,7 +264,7 @@ func (a *JsonAttributeConstraintsApiService) GetJsonAttributeConstraintsExecute(
 	}
 
 	localVarPath := localBasePath + "/json-attribute-constraints/{json-attribute-constraints-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"json-attribute-constraints-name"+"}", url.PathEscape(parameterToString(r.jsonAttributeConstraintsName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"json-attribute-constraints-name"+"}", url.PathEscape(parameterValueToString(r.jsonAttributeConstraintsName, "jsonAttributeConstraintsName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -297,9 +297,9 @@ func (a *JsonAttributeConstraintsApiService) GetJsonAttributeConstraintsExecute(
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -373,7 +373,7 @@ func (a *JsonAttributeConstraintsApiService) UpdateJsonAttributeConstraintsExecu
 	}
 
 	localVarPath := localBasePath + "/json-attribute-constraints/{json-attribute-constraints-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"json-attribute-constraints-name"+"}", url.PathEscape(parameterToString(r.jsonAttributeConstraintsName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"json-attribute-constraints-name"+"}", url.PathEscape(parameterValueToString(r.jsonAttributeConstraintsName, "jsonAttributeConstraintsName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -411,9 +411,9 @@ func (a *JsonAttributeConstraintsApiService) UpdateJsonAttributeConstraintsExecu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

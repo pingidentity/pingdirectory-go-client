@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PhotoDelegatedAdminAttributeResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PhotoDelegatedAdminAttributeResponse{}
+
 // PhotoDelegatedAdminAttributeResponse struct for PhotoDelegatedAdminAttributeResponse
 type PhotoDelegatedAdminAttributeResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -68,7 +71,7 @@ func NewPhotoDelegatedAdminAttributeResponseWithDefaults() *PhotoDelegatedAdminA
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *PhotoDelegatedAdminAttributeResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -78,7 +81,7 @@ func (o *PhotoDelegatedAdminAttributeResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PhotoDelegatedAdminAttributeResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -86,7 +89,7 @@ func (o *PhotoDelegatedAdminAttributeResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *PhotoDelegatedAdminAttributeResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -100,7 +103,7 @@ func (o *PhotoDelegatedAdminAttributeResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *PhotoDelegatedAdminAttributeResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -110,7 +113,7 @@ func (o *PhotoDelegatedAdminAttributeResponse) GetUrnpingidentityschemasconfigur
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PhotoDelegatedAdminAttributeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -118,7 +121,7 @@ func (o *PhotoDelegatedAdminAttributeResponse) GetUrnpingidentityschemasconfigur
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *PhotoDelegatedAdminAttributeResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -180,7 +183,7 @@ func (o *PhotoDelegatedAdminAttributeResponse) SetSchemas(v []EnumphotoDelegated
 
 // GetAllowedMIMEType returns the AllowedMIMEType field value if set, zero value otherwise.
 func (o *PhotoDelegatedAdminAttributeResponse) GetAllowedMIMEType() []EnumdelegatedAdminAttributeAllowedMIMETypeProp {
-	if o == nil || isNil(o.AllowedMIMEType) {
+	if o == nil || IsNil(o.AllowedMIMEType) {
 		var ret []EnumdelegatedAdminAttributeAllowedMIMETypeProp
 		return ret
 	}
@@ -190,7 +193,7 @@ func (o *PhotoDelegatedAdminAttributeResponse) GetAllowedMIMEType() []Enumdelega
 // GetAllowedMIMETypeOk returns a tuple with the AllowedMIMEType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PhotoDelegatedAdminAttributeResponse) GetAllowedMIMETypeOk() ([]EnumdelegatedAdminAttributeAllowedMIMETypeProp, bool) {
-	if o == nil || isNil(o.AllowedMIMEType) {
+	if o == nil || IsNil(o.AllowedMIMEType) {
 		return nil, false
 	}
 	return o.AllowedMIMEType, true
@@ -198,7 +201,7 @@ func (o *PhotoDelegatedAdminAttributeResponse) GetAllowedMIMETypeOk() ([]Enumdel
 
 // HasAllowedMIMEType returns a boolean if a field has been set.
 func (o *PhotoDelegatedAdminAttributeResponse) HasAllowedMIMEType() bool {
-	if o != nil && !isNil(o.AllowedMIMEType) {
+	if o != nil && !IsNil(o.AllowedMIMEType) {
 		return true
 	}
 
@@ -212,7 +215,7 @@ func (o *PhotoDelegatedAdminAttributeResponse) SetAllowedMIMEType(v []Enumdelega
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *PhotoDelegatedAdminAttributeResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -222,7 +225,7 @@ func (o *PhotoDelegatedAdminAttributeResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PhotoDelegatedAdminAttributeResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -230,7 +233,7 @@ func (o *PhotoDelegatedAdminAttributeResponse) GetDescriptionOk() (*string, bool
 
 // HasDescription returns a boolean if a field has been set.
 func (o *PhotoDelegatedAdminAttributeResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -340,7 +343,7 @@ func (o *PhotoDelegatedAdminAttributeResponse) SetMultiValued(v bool) {
 
 // GetAttributeCategory returns the AttributeCategory field value if set, zero value otherwise.
 func (o *PhotoDelegatedAdminAttributeResponse) GetAttributeCategory() string {
-	if o == nil || isNil(o.AttributeCategory) {
+	if o == nil || IsNil(o.AttributeCategory) {
 		var ret string
 		return ret
 	}
@@ -350,7 +353,7 @@ func (o *PhotoDelegatedAdminAttributeResponse) GetAttributeCategory() string {
 // GetAttributeCategoryOk returns a tuple with the AttributeCategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PhotoDelegatedAdminAttributeResponse) GetAttributeCategoryOk() (*string, bool) {
-	if o == nil || isNil(o.AttributeCategory) {
+	if o == nil || IsNil(o.AttributeCategory) {
 		return nil, false
 	}
 	return o.AttributeCategory, true
@@ -358,7 +361,7 @@ func (o *PhotoDelegatedAdminAttributeResponse) GetAttributeCategoryOk() (*string
 
 // HasAttributeCategory returns a boolean if a field has been set.
 func (o *PhotoDelegatedAdminAttributeResponse) HasAttributeCategory() bool {
-	if o != nil && !isNil(o.AttributeCategory) {
+	if o != nil && !IsNil(o.AttributeCategory) {
 		return true
 	}
 
@@ -396,7 +399,7 @@ func (o *PhotoDelegatedAdminAttributeResponse) SetDisplayOrderIndex(v int32) {
 
 // GetReferenceResourceType returns the ReferenceResourceType field value if set, zero value otherwise.
 func (o *PhotoDelegatedAdminAttributeResponse) GetReferenceResourceType() string {
-	if o == nil || isNil(o.ReferenceResourceType) {
+	if o == nil || IsNil(o.ReferenceResourceType) {
 		var ret string
 		return ret
 	}
@@ -406,7 +409,7 @@ func (o *PhotoDelegatedAdminAttributeResponse) GetReferenceResourceType() string
 // GetReferenceResourceTypeOk returns a tuple with the ReferenceResourceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PhotoDelegatedAdminAttributeResponse) GetReferenceResourceTypeOk() (*string, bool) {
-	if o == nil || isNil(o.ReferenceResourceType) {
+	if o == nil || IsNil(o.ReferenceResourceType) {
 		return nil, false
 	}
 	return o.ReferenceResourceType, true
@@ -414,7 +417,7 @@ func (o *PhotoDelegatedAdminAttributeResponse) GetReferenceResourceTypeOk() (*st
 
 // HasReferenceResourceType returns a boolean if a field has been set.
 func (o *PhotoDelegatedAdminAttributeResponse) HasReferenceResourceType() bool {
-	if o != nil && !isNil(o.ReferenceResourceType) {
+	if o != nil && !IsNil(o.ReferenceResourceType) {
 		return true
 	}
 
@@ -428,7 +431,7 @@ func (o *PhotoDelegatedAdminAttributeResponse) SetReferenceResourceType(v string
 
 // GetAttributePresentation returns the AttributePresentation field value if set, zero value otherwise.
 func (o *PhotoDelegatedAdminAttributeResponse) GetAttributePresentation() EnumdelegatedAdminAttributeAttributePresentationProp {
-	if o == nil || isNil(o.AttributePresentation) {
+	if o == nil || IsNil(o.AttributePresentation) {
 		var ret EnumdelegatedAdminAttributeAttributePresentationProp
 		return ret
 	}
@@ -438,7 +441,7 @@ func (o *PhotoDelegatedAdminAttributeResponse) GetAttributePresentation() Enumde
 // GetAttributePresentationOk returns a tuple with the AttributePresentation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PhotoDelegatedAdminAttributeResponse) GetAttributePresentationOk() (*EnumdelegatedAdminAttributeAttributePresentationProp, bool) {
-	if o == nil || isNil(o.AttributePresentation) {
+	if o == nil || IsNil(o.AttributePresentation) {
 		return nil, false
 	}
 	return o.AttributePresentation, true
@@ -446,7 +449,7 @@ func (o *PhotoDelegatedAdminAttributeResponse) GetAttributePresentationOk() (*En
 
 // HasAttributePresentation returns a boolean if a field has been set.
 func (o *PhotoDelegatedAdminAttributeResponse) HasAttributePresentation() bool {
-	if o != nil && !isNil(o.AttributePresentation) {
+	if o != nil && !IsNil(o.AttributePresentation) {
 		return true
 	}
 
@@ -460,7 +463,7 @@ func (o *PhotoDelegatedAdminAttributeResponse) SetAttributePresentation(v Enumde
 
 // GetDateTimeFormat returns the DateTimeFormat field value if set, zero value otherwise.
 func (o *PhotoDelegatedAdminAttributeResponse) GetDateTimeFormat() string {
-	if o == nil || isNil(o.DateTimeFormat) {
+	if o == nil || IsNil(o.DateTimeFormat) {
 		var ret string
 		return ret
 	}
@@ -470,7 +473,7 @@ func (o *PhotoDelegatedAdminAttributeResponse) GetDateTimeFormat() string {
 // GetDateTimeFormatOk returns a tuple with the DateTimeFormat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PhotoDelegatedAdminAttributeResponse) GetDateTimeFormatOk() (*string, bool) {
-	if o == nil || isNil(o.DateTimeFormat) {
+	if o == nil || IsNil(o.DateTimeFormat) {
 		return nil, false
 	}
 	return o.DateTimeFormat, true
@@ -478,7 +481,7 @@ func (o *PhotoDelegatedAdminAttributeResponse) GetDateTimeFormatOk() (*string, b
 
 // HasDateTimeFormat returns a boolean if a field has been set.
 func (o *PhotoDelegatedAdminAttributeResponse) HasDateTimeFormat() bool {
-	if o != nil && !isNil(o.DateTimeFormat) {
+	if o != nil && !IsNil(o.DateTimeFormat) {
 		return true
 	}
 
@@ -491,53 +494,47 @@ func (o *PhotoDelegatedAdminAttributeResponse) SetDateTimeFormat(v string) {
 }
 
 func (o PhotoDelegatedAdminAttributeResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.AllowedMIMEType) {
-		toSerialize["allowedMIMEType"] = o.AllowedMIMEType
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["attributeType"] = o.AttributeType
-	}
-	if true {
-		toSerialize["displayName"] = o.DisplayName
-	}
-	if true {
-		toSerialize["mutability"] = o.Mutability
-	}
-	if true {
-		toSerialize["multiValued"] = o.MultiValued
-	}
-	if !isNil(o.AttributeCategory) {
-		toSerialize["attributeCategory"] = o.AttributeCategory
-	}
-	if true {
-		toSerialize["displayOrderIndex"] = o.DisplayOrderIndex
-	}
-	if !isNil(o.ReferenceResourceType) {
-		toSerialize["referenceResourceType"] = o.ReferenceResourceType
-	}
-	if !isNil(o.AttributePresentation) {
-		toSerialize["attributePresentation"] = o.AttributePresentation
-	}
-	if !isNil(o.DateTimeFormat) {
-		toSerialize["dateTimeFormat"] = o.DateTimeFormat
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PhotoDelegatedAdminAttributeResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.AllowedMIMEType) {
+		toSerialize["allowedMIMEType"] = o.AllowedMIMEType
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["attributeType"] = o.AttributeType
+	toSerialize["displayName"] = o.DisplayName
+	toSerialize["mutability"] = o.Mutability
+	toSerialize["multiValued"] = o.MultiValued
+	if !IsNil(o.AttributeCategory) {
+		toSerialize["attributeCategory"] = o.AttributeCategory
+	}
+	toSerialize["displayOrderIndex"] = o.DisplayOrderIndex
+	if !IsNil(o.ReferenceResourceType) {
+		toSerialize["referenceResourceType"] = o.ReferenceResourceType
+	}
+	if !IsNil(o.AttributePresentation) {
+		toSerialize["attributePresentation"] = o.AttributePresentation
+	}
+	if !IsNil(o.DateTimeFormat) {
+		toSerialize["dateTimeFormat"] = o.DateTimeFormat
+	}
+	return toSerialize, nil
 }
 
 type NullablePhotoDelegatedAdminAttributeResponse struct {

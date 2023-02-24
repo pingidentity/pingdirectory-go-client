@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the NotificationSubscriptionExtendedOperationHandlerResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &NotificationSubscriptionExtendedOperationHandlerResponse{}
+
 // NotificationSubscriptionExtendedOperationHandlerResponse struct for NotificationSubscriptionExtendedOperationHandlerResponse
 type NotificationSubscriptionExtendedOperationHandlerResponse struct {
 	Meta                                          *MetaMeta                                                       `json:"meta,omitempty"`
@@ -49,7 +52,7 @@ func NewNotificationSubscriptionExtendedOperationHandlerResponseWithDefaults() *
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *NotificationSubscriptionExtendedOperationHandlerResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -59,7 +62,7 @@ func (o *NotificationSubscriptionExtendedOperationHandlerResponse) GetMeta() Met
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationSubscriptionExtendedOperationHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -67,7 +70,7 @@ func (o *NotificationSubscriptionExtendedOperationHandlerResponse) GetMetaOk() (
 
 // HasMeta returns a boolean if a field has been set.
 func (o *NotificationSubscriptionExtendedOperationHandlerResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -81,7 +84,7 @@ func (o *NotificationSubscriptionExtendedOperationHandlerResponse) SetMeta(v Met
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *NotificationSubscriptionExtendedOperationHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -91,7 +94,7 @@ func (o *NotificationSubscriptionExtendedOperationHandlerResponse) GetUrnpingide
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationSubscriptionExtendedOperationHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -99,7 +102,7 @@ func (o *NotificationSubscriptionExtendedOperationHandlerResponse) GetUrnpingide
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *NotificationSubscriptionExtendedOperationHandlerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -161,7 +164,7 @@ func (o *NotificationSubscriptionExtendedOperationHandlerResponse) SetId(v strin
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *NotificationSubscriptionExtendedOperationHandlerResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -171,7 +174,7 @@ func (o *NotificationSubscriptionExtendedOperationHandlerResponse) GetDescriptio
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationSubscriptionExtendedOperationHandlerResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -179,7 +182,7 @@ func (o *NotificationSubscriptionExtendedOperationHandlerResponse) GetDescriptio
 
 // HasDescription returns a boolean if a field has been set.
 func (o *NotificationSubscriptionExtendedOperationHandlerResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -216,26 +219,28 @@ func (o *NotificationSubscriptionExtendedOperationHandlerResponse) SetEnabled(v 
 }
 
 func (o NotificationSubscriptionExtendedOperationHandlerResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o NotificationSubscriptionExtendedOperationHandlerResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableNotificationSubscriptionExtendedOperationHandlerResponse struct {

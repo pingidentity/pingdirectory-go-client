@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddInternalSearchRatePluginRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddInternalSearchRatePluginRequest{}
+
 // AddInternalSearchRatePluginRequest struct for AddInternalSearchRatePluginRequest
 type AddInternalSearchRatePluginRequest struct {
 	// Name of the new Plugin
@@ -112,7 +115,7 @@ func (o *AddInternalSearchRatePluginRequest) SetSchemas(v []EnuminternalSearchRa
 
 // GetPluginType returns the PluginType field value if set, zero value otherwise.
 func (o *AddInternalSearchRatePluginRequest) GetPluginType() []EnumpluginPluginTypeProp {
-	if o == nil || isNil(o.PluginType) {
+	if o == nil || IsNil(o.PluginType) {
 		var ret []EnumpluginPluginTypeProp
 		return ret
 	}
@@ -122,7 +125,7 @@ func (o *AddInternalSearchRatePluginRequest) GetPluginType() []EnumpluginPluginT
 // GetPluginTypeOk returns a tuple with the PluginType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddInternalSearchRatePluginRequest) GetPluginTypeOk() ([]EnumpluginPluginTypeProp, bool) {
-	if o == nil || isNil(o.PluginType) {
+	if o == nil || IsNil(o.PluginType) {
 		return nil, false
 	}
 	return o.PluginType, true
@@ -130,7 +133,7 @@ func (o *AddInternalSearchRatePluginRequest) GetPluginTypeOk() ([]EnumpluginPlug
 
 // HasPluginType returns a boolean if a field has been set.
 func (o *AddInternalSearchRatePluginRequest) HasPluginType() bool {
-	if o != nil && !isNil(o.PluginType) {
+	if o != nil && !IsNil(o.PluginType) {
 		return true
 	}
 
@@ -144,7 +147,7 @@ func (o *AddInternalSearchRatePluginRequest) SetPluginType(v []EnumpluginPluginT
 
 // GetNumThreads returns the NumThreads field value if set, zero value otherwise.
 func (o *AddInternalSearchRatePluginRequest) GetNumThreads() int32 {
-	if o == nil || isNil(o.NumThreads) {
+	if o == nil || IsNil(o.NumThreads) {
 		var ret int32
 		return ret
 	}
@@ -154,7 +157,7 @@ func (o *AddInternalSearchRatePluginRequest) GetNumThreads() int32 {
 // GetNumThreadsOk returns a tuple with the NumThreads field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddInternalSearchRatePluginRequest) GetNumThreadsOk() (*int32, bool) {
-	if o == nil || isNil(o.NumThreads) {
+	if o == nil || IsNil(o.NumThreads) {
 		return nil, false
 	}
 	return o.NumThreads, true
@@ -162,7 +165,7 @@ func (o *AddInternalSearchRatePluginRequest) GetNumThreadsOk() (*int32, bool) {
 
 // HasNumThreads returns a boolean if a field has been set.
 func (o *AddInternalSearchRatePluginRequest) HasNumThreads() bool {
-	if o != nil && !isNil(o.NumThreads) {
+	if o != nil && !IsNil(o.NumThreads) {
 		return true
 	}
 
@@ -200,7 +203,7 @@ func (o *AddInternalSearchRatePluginRequest) SetBaseDN(v string) {
 
 // GetLowerBound returns the LowerBound field value if set, zero value otherwise.
 func (o *AddInternalSearchRatePluginRequest) GetLowerBound() int32 {
-	if o == nil || isNil(o.LowerBound) {
+	if o == nil || IsNil(o.LowerBound) {
 		var ret int32
 		return ret
 	}
@@ -210,7 +213,7 @@ func (o *AddInternalSearchRatePluginRequest) GetLowerBound() int32 {
 // GetLowerBoundOk returns a tuple with the LowerBound field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddInternalSearchRatePluginRequest) GetLowerBoundOk() (*int32, bool) {
-	if o == nil || isNil(o.LowerBound) {
+	if o == nil || IsNil(o.LowerBound) {
 		return nil, false
 	}
 	return o.LowerBound, true
@@ -218,7 +221,7 @@ func (o *AddInternalSearchRatePluginRequest) GetLowerBoundOk() (*int32, bool) {
 
 // HasLowerBound returns a boolean if a field has been set.
 func (o *AddInternalSearchRatePluginRequest) HasLowerBound() bool {
-	if o != nil && !isNil(o.LowerBound) {
+	if o != nil && !IsNil(o.LowerBound) {
 		return true
 	}
 
@@ -232,7 +235,7 @@ func (o *AddInternalSearchRatePluginRequest) SetLowerBound(v int32) {
 
 // GetUpperBound returns the UpperBound field value if set, zero value otherwise.
 func (o *AddInternalSearchRatePluginRequest) GetUpperBound() int32 {
-	if o == nil || isNil(o.UpperBound) {
+	if o == nil || IsNil(o.UpperBound) {
 		var ret int32
 		return ret
 	}
@@ -242,7 +245,7 @@ func (o *AddInternalSearchRatePluginRequest) GetUpperBound() int32 {
 // GetUpperBoundOk returns a tuple with the UpperBound field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddInternalSearchRatePluginRequest) GetUpperBoundOk() (*int32, bool) {
-	if o == nil || isNil(o.UpperBound) {
+	if o == nil || IsNil(o.UpperBound) {
 		return nil, false
 	}
 	return o.UpperBound, true
@@ -250,7 +253,7 @@ func (o *AddInternalSearchRatePluginRequest) GetUpperBoundOk() (*int32, bool) {
 
 // HasUpperBound returns a boolean if a field has been set.
 func (o *AddInternalSearchRatePluginRequest) HasUpperBound() bool {
-	if o != nil && !isNil(o.UpperBound) {
+	if o != nil && !IsNil(o.UpperBound) {
 		return true
 	}
 
@@ -288,7 +291,7 @@ func (o *AddInternalSearchRatePluginRequest) SetFilterPrefix(v string) {
 
 // GetFilterSuffix returns the FilterSuffix field value if set, zero value otherwise.
 func (o *AddInternalSearchRatePluginRequest) GetFilterSuffix() string {
-	if o == nil || isNil(o.FilterSuffix) {
+	if o == nil || IsNil(o.FilterSuffix) {
 		var ret string
 		return ret
 	}
@@ -298,7 +301,7 @@ func (o *AddInternalSearchRatePluginRequest) GetFilterSuffix() string {
 // GetFilterSuffixOk returns a tuple with the FilterSuffix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddInternalSearchRatePluginRequest) GetFilterSuffixOk() (*string, bool) {
-	if o == nil || isNil(o.FilterSuffix) {
+	if o == nil || IsNil(o.FilterSuffix) {
 		return nil, false
 	}
 	return o.FilterSuffix, true
@@ -306,7 +309,7 @@ func (o *AddInternalSearchRatePluginRequest) GetFilterSuffixOk() (*string, bool)
 
 // HasFilterSuffix returns a boolean if a field has been set.
 func (o *AddInternalSearchRatePluginRequest) HasFilterSuffix() bool {
-	if o != nil && !isNil(o.FilterSuffix) {
+	if o != nil && !IsNil(o.FilterSuffix) {
 		return true
 	}
 
@@ -320,7 +323,7 @@ func (o *AddInternalSearchRatePluginRequest) SetFilterSuffix(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddInternalSearchRatePluginRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -330,7 +333,7 @@ func (o *AddInternalSearchRatePluginRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddInternalSearchRatePluginRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -338,7 +341,7 @@ func (o *AddInternalSearchRatePluginRequest) GetDescriptionOk() (*string, bool) 
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddInternalSearchRatePluginRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -376,7 +379,7 @@ func (o *AddInternalSearchRatePluginRequest) SetEnabled(v bool) {
 
 // GetInvokeForInternalOperations returns the InvokeForInternalOperations field value if set, zero value otherwise.
 func (o *AddInternalSearchRatePluginRequest) GetInvokeForInternalOperations() bool {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		var ret bool
 		return ret
 	}
@@ -386,7 +389,7 @@ func (o *AddInternalSearchRatePluginRequest) GetInvokeForInternalOperations() bo
 // GetInvokeForInternalOperationsOk returns a tuple with the InvokeForInternalOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddInternalSearchRatePluginRequest) GetInvokeForInternalOperationsOk() (*bool, bool) {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		return nil, false
 	}
 	return o.InvokeForInternalOperations, true
@@ -394,7 +397,7 @@ func (o *AddInternalSearchRatePluginRequest) GetInvokeForInternalOperationsOk() 
 
 // HasInvokeForInternalOperations returns a boolean if a field has been set.
 func (o *AddInternalSearchRatePluginRequest) HasInvokeForInternalOperations() bool {
-	if o != nil && !isNil(o.InvokeForInternalOperations) {
+	if o != nil && !IsNil(o.InvokeForInternalOperations) {
 		return true
 	}
 
@@ -407,44 +410,42 @@ func (o *AddInternalSearchRatePluginRequest) SetInvokeForInternalOperations(v bo
 }
 
 func (o AddInternalSearchRatePluginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["pluginName"] = o.PluginName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.PluginType) {
-		toSerialize["pluginType"] = o.PluginType
-	}
-	if !isNil(o.NumThreads) {
-		toSerialize["numThreads"] = o.NumThreads
-	}
-	if true {
-		toSerialize["baseDN"] = o.BaseDN
-	}
-	if !isNil(o.LowerBound) {
-		toSerialize["lowerBound"] = o.LowerBound
-	}
-	if !isNil(o.UpperBound) {
-		toSerialize["upperBound"] = o.UpperBound
-	}
-	if true {
-		toSerialize["filterPrefix"] = o.FilterPrefix
-	}
-	if !isNil(o.FilterSuffix) {
-		toSerialize["filterSuffix"] = o.FilterSuffix
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.InvokeForInternalOperations) {
-		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddInternalSearchRatePluginRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["pluginName"] = o.PluginName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.PluginType) {
+		toSerialize["pluginType"] = o.PluginType
+	}
+	if !IsNil(o.NumThreads) {
+		toSerialize["numThreads"] = o.NumThreads
+	}
+	toSerialize["baseDN"] = o.BaseDN
+	if !IsNil(o.LowerBound) {
+		toSerialize["lowerBound"] = o.LowerBound
+	}
+	if !IsNil(o.UpperBound) {
+		toSerialize["upperBound"] = o.UpperBound
+	}
+	toSerialize["filterPrefix"] = o.FilterPrefix
+	if !IsNil(o.FilterSuffix) {
+		toSerialize["filterSuffix"] = o.FilterSuffix
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.InvokeForInternalOperations) {
+		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
+	}
+	return toSerialize, nil
 }
 
 type NullableAddInternalSearchRatePluginRequest struct {

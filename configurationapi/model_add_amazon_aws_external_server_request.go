@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddAmazonAwsExternalServerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddAmazonAwsExternalServerRequest{}
+
 // AddAmazonAwsExternalServerRequest struct for AddAmazonAwsExternalServerRequest
 type AddAmazonAwsExternalServerRequest struct {
 	// Name of the new External Server
@@ -99,7 +102,7 @@ func (o *AddAmazonAwsExternalServerRequest) SetSchemas(v []EnumamazonAwsExternal
 
 // GetAwsAccessKeyID returns the AwsAccessKeyID field value if set, zero value otherwise.
 func (o *AddAmazonAwsExternalServerRequest) GetAwsAccessKeyID() string {
-	if o == nil || isNil(o.AwsAccessKeyID) {
+	if o == nil || IsNil(o.AwsAccessKeyID) {
 		var ret string
 		return ret
 	}
@@ -109,7 +112,7 @@ func (o *AddAmazonAwsExternalServerRequest) GetAwsAccessKeyID() string {
 // GetAwsAccessKeyIDOk returns a tuple with the AwsAccessKeyID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAmazonAwsExternalServerRequest) GetAwsAccessKeyIDOk() (*string, bool) {
-	if o == nil || isNil(o.AwsAccessKeyID) {
+	if o == nil || IsNil(o.AwsAccessKeyID) {
 		return nil, false
 	}
 	return o.AwsAccessKeyID, true
@@ -117,7 +120,7 @@ func (o *AddAmazonAwsExternalServerRequest) GetAwsAccessKeyIDOk() (*string, bool
 
 // HasAwsAccessKeyID returns a boolean if a field has been set.
 func (o *AddAmazonAwsExternalServerRequest) HasAwsAccessKeyID() bool {
-	if o != nil && !isNil(o.AwsAccessKeyID) {
+	if o != nil && !IsNil(o.AwsAccessKeyID) {
 		return true
 	}
 
@@ -131,7 +134,7 @@ func (o *AddAmazonAwsExternalServerRequest) SetAwsAccessKeyID(v string) {
 
 // GetAwsSecretAccessKey returns the AwsSecretAccessKey field value if set, zero value otherwise.
 func (o *AddAmazonAwsExternalServerRequest) GetAwsSecretAccessKey() string {
-	if o == nil || isNil(o.AwsSecretAccessKey) {
+	if o == nil || IsNil(o.AwsSecretAccessKey) {
 		var ret string
 		return ret
 	}
@@ -141,7 +144,7 @@ func (o *AddAmazonAwsExternalServerRequest) GetAwsSecretAccessKey() string {
 // GetAwsSecretAccessKeyOk returns a tuple with the AwsSecretAccessKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAmazonAwsExternalServerRequest) GetAwsSecretAccessKeyOk() (*string, bool) {
-	if o == nil || isNil(o.AwsSecretAccessKey) {
+	if o == nil || IsNil(o.AwsSecretAccessKey) {
 		return nil, false
 	}
 	return o.AwsSecretAccessKey, true
@@ -149,7 +152,7 @@ func (o *AddAmazonAwsExternalServerRequest) GetAwsSecretAccessKeyOk() (*string, 
 
 // HasAwsSecretAccessKey returns a boolean if a field has been set.
 func (o *AddAmazonAwsExternalServerRequest) HasAwsSecretAccessKey() bool {
-	if o != nil && !isNil(o.AwsSecretAccessKey) {
+	if o != nil && !IsNil(o.AwsSecretAccessKey) {
 		return true
 	}
 
@@ -187,7 +190,7 @@ func (o *AddAmazonAwsExternalServerRequest) SetAwsRegionName(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddAmazonAwsExternalServerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -197,7 +200,7 @@ func (o *AddAmazonAwsExternalServerRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAmazonAwsExternalServerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -205,7 +208,7 @@ func (o *AddAmazonAwsExternalServerRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddAmazonAwsExternalServerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -218,26 +221,28 @@ func (o *AddAmazonAwsExternalServerRequest) SetDescription(v string) {
 }
 
 func (o AddAmazonAwsExternalServerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["serverName"] = o.ServerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.AwsAccessKeyID) {
-		toSerialize["awsAccessKeyID"] = o.AwsAccessKeyID
-	}
-	if !isNil(o.AwsSecretAccessKey) {
-		toSerialize["awsSecretAccessKey"] = o.AwsSecretAccessKey
-	}
-	if true {
-		toSerialize["awsRegionName"] = o.AwsRegionName
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddAmazonAwsExternalServerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["serverName"] = o.ServerName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.AwsAccessKeyID) {
+		toSerialize["awsAccessKeyID"] = o.AwsAccessKeyID
+	}
+	if !IsNil(o.AwsSecretAccessKey) {
+		toSerialize["awsSecretAccessKey"] = o.AwsSecretAccessKey
+	}
+	toSerialize["awsRegionName"] = o.AwsRegionName
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAddAmazonAwsExternalServerRequest struct {

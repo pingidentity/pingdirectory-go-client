@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ExternalSaslMechanismHandlerResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ExternalSaslMechanismHandlerResponse{}
+
 // ExternalSaslMechanismHandlerResponse struct for ExternalSaslMechanismHandlerResponse
 type ExternalSaslMechanismHandlerResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -56,7 +59,7 @@ func NewExternalSaslMechanismHandlerResponseWithDefaults() *ExternalSaslMechanis
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *ExternalSaslMechanismHandlerResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -66,7 +69,7 @@ func (o *ExternalSaslMechanismHandlerResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalSaslMechanismHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -74,7 +77,7 @@ func (o *ExternalSaslMechanismHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *ExternalSaslMechanismHandlerResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -88,7 +91,7 @@ func (o *ExternalSaslMechanismHandlerResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *ExternalSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -98,7 +101,7 @@ func (o *ExternalSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigur
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -106,7 +109,7 @@ func (o *ExternalSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigur
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *ExternalSaslMechanismHandlerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -192,7 +195,7 @@ func (o *ExternalSaslMechanismHandlerResponse) SetCertificateValidationPolicy(v 
 
 // GetCertificateAttribute returns the CertificateAttribute field value if set, zero value otherwise.
 func (o *ExternalSaslMechanismHandlerResponse) GetCertificateAttribute() string {
-	if o == nil || isNil(o.CertificateAttribute) {
+	if o == nil || IsNil(o.CertificateAttribute) {
 		var ret string
 		return ret
 	}
@@ -202,7 +205,7 @@ func (o *ExternalSaslMechanismHandlerResponse) GetCertificateAttribute() string 
 // GetCertificateAttributeOk returns a tuple with the CertificateAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalSaslMechanismHandlerResponse) GetCertificateAttributeOk() (*string, bool) {
-	if o == nil || isNil(o.CertificateAttribute) {
+	if o == nil || IsNil(o.CertificateAttribute) {
 		return nil, false
 	}
 	return o.CertificateAttribute, true
@@ -210,7 +213,7 @@ func (o *ExternalSaslMechanismHandlerResponse) GetCertificateAttributeOk() (*str
 
 // HasCertificateAttribute returns a boolean if a field has been set.
 func (o *ExternalSaslMechanismHandlerResponse) HasCertificateAttribute() bool {
-	if o != nil && !isNil(o.CertificateAttribute) {
+	if o != nil && !IsNil(o.CertificateAttribute) {
 		return true
 	}
 
@@ -248,7 +251,7 @@ func (o *ExternalSaslMechanismHandlerResponse) SetCertificateMapper(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *ExternalSaslMechanismHandlerResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -258,7 +261,7 @@ func (o *ExternalSaslMechanismHandlerResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalSaslMechanismHandlerResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -266,7 +269,7 @@ func (o *ExternalSaslMechanismHandlerResponse) GetDescriptionOk() (*string, bool
 
 // HasDescription returns a boolean if a field has been set.
 func (o *ExternalSaslMechanismHandlerResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -303,35 +306,33 @@ func (o *ExternalSaslMechanismHandlerResponse) SetEnabled(v bool) {
 }
 
 func (o ExternalSaslMechanismHandlerResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["certificateValidationPolicy"] = o.CertificateValidationPolicy
-	}
-	if !isNil(o.CertificateAttribute) {
-		toSerialize["certificateAttribute"] = o.CertificateAttribute
-	}
-	if true {
-		toSerialize["certificateMapper"] = o.CertificateMapper
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ExternalSaslMechanismHandlerResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	toSerialize["certificateValidationPolicy"] = o.CertificateValidationPolicy
+	if !IsNil(o.CertificateAttribute) {
+		toSerialize["certificateAttribute"] = o.CertificateAttribute
+	}
+	toSerialize["certificateMapper"] = o.CertificateMapper
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableExternalSaslMechanismHandlerResponse struct {

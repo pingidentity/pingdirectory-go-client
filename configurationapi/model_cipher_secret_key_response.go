@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the CipherSecretKeyResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CipherSecretKeyResponse{}
+
 // CipherSecretKeyResponse struct for CipherSecretKeyResponse
 type CipherSecretKeyResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -54,7 +57,7 @@ func NewCipherSecretKeyResponseWithDefaults() *CipherSecretKeyResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *CipherSecretKeyResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -64,7 +67,7 @@ func (o *CipherSecretKeyResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CipherSecretKeyResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -72,7 +75,7 @@ func (o *CipherSecretKeyResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *CipherSecretKeyResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -86,7 +89,7 @@ func (o *CipherSecretKeyResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *CipherSecretKeyResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -96,7 +99,7 @@ func (o *CipherSecretKeyResponse) GetUrnpingidentityschemasconfigurationmessages
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CipherSecretKeyResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -104,7 +107,7 @@ func (o *CipherSecretKeyResponse) GetUrnpingidentityschemasconfigurationmessages
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *CipherSecretKeyResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -118,7 +121,7 @@ func (o *CipherSecretKeyResponse) SetUrnpingidentityschemasconfigurationmessages
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *CipherSecretKeyResponse) GetSchemas() []EnumcipherSecretKeySchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumcipherSecretKeySchemaUrn
 		return ret
 	}
@@ -128,7 +131,7 @@ func (o *CipherSecretKeyResponse) GetSchemas() []EnumcipherSecretKeySchemaUrn {
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CipherSecretKeyResponse) GetSchemasOk() ([]EnumcipherSecretKeySchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -136,7 +139,7 @@ func (o *CipherSecretKeyResponse) GetSchemasOk() ([]EnumcipherSecretKeySchemaUrn
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *CipherSecretKeyResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -150,7 +153,7 @@ func (o *CipherSecretKeyResponse) SetSchemas(v []EnumcipherSecretKeySchemaUrn) {
 
 // GetCipherTransformationName returns the CipherTransformationName field value if set, zero value otherwise.
 func (o *CipherSecretKeyResponse) GetCipherTransformationName() string {
-	if o == nil || isNil(o.CipherTransformationName) {
+	if o == nil || IsNil(o.CipherTransformationName) {
 		var ret string
 		return ret
 	}
@@ -160,7 +163,7 @@ func (o *CipherSecretKeyResponse) GetCipherTransformationName() string {
 // GetCipherTransformationNameOk returns a tuple with the CipherTransformationName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CipherSecretKeyResponse) GetCipherTransformationNameOk() (*string, bool) {
-	if o == nil || isNil(o.CipherTransformationName) {
+	if o == nil || IsNil(o.CipherTransformationName) {
 		return nil, false
 	}
 	return o.CipherTransformationName, true
@@ -168,7 +171,7 @@ func (o *CipherSecretKeyResponse) GetCipherTransformationNameOk() (*string, bool
 
 // HasCipherTransformationName returns a boolean if a field has been set.
 func (o *CipherSecretKeyResponse) HasCipherTransformationName() bool {
-	if o != nil && !isNil(o.CipherTransformationName) {
+	if o != nil && !IsNil(o.CipherTransformationName) {
 		return true
 	}
 
@@ -182,7 +185,7 @@ func (o *CipherSecretKeyResponse) SetCipherTransformationName(v string) {
 
 // GetInitializationVectorLengthBits returns the InitializationVectorLengthBits field value if set, zero value otherwise.
 func (o *CipherSecretKeyResponse) GetInitializationVectorLengthBits() int32 {
-	if o == nil || isNil(o.InitializationVectorLengthBits) {
+	if o == nil || IsNil(o.InitializationVectorLengthBits) {
 		var ret int32
 		return ret
 	}
@@ -192,7 +195,7 @@ func (o *CipherSecretKeyResponse) GetInitializationVectorLengthBits() int32 {
 // GetInitializationVectorLengthBitsOk returns a tuple with the InitializationVectorLengthBits field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CipherSecretKeyResponse) GetInitializationVectorLengthBitsOk() (*int32, bool) {
-	if o == nil || isNil(o.InitializationVectorLengthBits) {
+	if o == nil || IsNil(o.InitializationVectorLengthBits) {
 		return nil, false
 	}
 	return o.InitializationVectorLengthBits, true
@@ -200,7 +203,7 @@ func (o *CipherSecretKeyResponse) GetInitializationVectorLengthBitsOk() (*int32,
 
 // HasInitializationVectorLengthBits returns a boolean if a field has been set.
 func (o *CipherSecretKeyResponse) HasInitializationVectorLengthBits() bool {
-	if o != nil && !isNil(o.InitializationVectorLengthBits) {
+	if o != nil && !IsNil(o.InitializationVectorLengthBits) {
 		return true
 	}
 
@@ -238,7 +241,7 @@ func (o *CipherSecretKeyResponse) SetKeyID(v string) {
 
 // GetIsCompromised returns the IsCompromised field value if set, zero value otherwise.
 func (o *CipherSecretKeyResponse) GetIsCompromised() bool {
-	if o == nil || isNil(o.IsCompromised) {
+	if o == nil || IsNil(o.IsCompromised) {
 		var ret bool
 		return ret
 	}
@@ -248,7 +251,7 @@ func (o *CipherSecretKeyResponse) GetIsCompromised() bool {
 // GetIsCompromisedOk returns a tuple with the IsCompromised field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CipherSecretKeyResponse) GetIsCompromisedOk() (*bool, bool) {
-	if o == nil || isNil(o.IsCompromised) {
+	if o == nil || IsNil(o.IsCompromised) {
 		return nil, false
 	}
 	return o.IsCompromised, true
@@ -256,7 +259,7 @@ func (o *CipherSecretKeyResponse) GetIsCompromisedOk() (*bool, bool) {
 
 // HasIsCompromised returns a boolean if a field has been set.
 func (o *CipherSecretKeyResponse) HasIsCompromised() bool {
-	if o != nil && !isNil(o.IsCompromised) {
+	if o != nil && !IsNil(o.IsCompromised) {
 		return true
 	}
 
@@ -270,7 +273,7 @@ func (o *CipherSecretKeyResponse) SetIsCompromised(v bool) {
 
 // GetSymmetricKey returns the SymmetricKey field value if set, zero value otherwise.
 func (o *CipherSecretKeyResponse) GetSymmetricKey() []string {
-	if o == nil || isNil(o.SymmetricKey) {
+	if o == nil || IsNil(o.SymmetricKey) {
 		var ret []string
 		return ret
 	}
@@ -280,7 +283,7 @@ func (o *CipherSecretKeyResponse) GetSymmetricKey() []string {
 // GetSymmetricKeyOk returns a tuple with the SymmetricKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CipherSecretKeyResponse) GetSymmetricKeyOk() ([]string, bool) {
-	if o == nil || isNil(o.SymmetricKey) {
+	if o == nil || IsNil(o.SymmetricKey) {
 		return nil, false
 	}
 	return o.SymmetricKey, true
@@ -288,7 +291,7 @@ func (o *CipherSecretKeyResponse) GetSymmetricKeyOk() ([]string, bool) {
 
 // HasSymmetricKey returns a boolean if a field has been set.
 func (o *CipherSecretKeyResponse) HasSymmetricKey() bool {
-	if o != nil && !isNil(o.SymmetricKey) {
+	if o != nil && !IsNil(o.SymmetricKey) {
 		return true
 	}
 
@@ -325,35 +328,39 @@ func (o *CipherSecretKeyResponse) SetKeyLengthBits(v int32) {
 }
 
 func (o CipherSecretKeyResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.CipherTransformationName) {
-		toSerialize["cipherTransformationName"] = o.CipherTransformationName
-	}
-	if !isNil(o.InitializationVectorLengthBits) {
-		toSerialize["initializationVectorLengthBits"] = o.InitializationVectorLengthBits
-	}
-	if true {
-		toSerialize["keyID"] = o.KeyID
-	}
-	if !isNil(o.IsCompromised) {
-		toSerialize["isCompromised"] = o.IsCompromised
-	}
-	if !isNil(o.SymmetricKey) {
-		toSerialize["symmetricKey"] = o.SymmetricKey
-	}
-	if true {
-		toSerialize["keyLengthBits"] = o.KeyLengthBits
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CipherSecretKeyResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.CipherTransformationName) {
+		toSerialize["cipherTransformationName"] = o.CipherTransformationName
+	}
+	if !IsNil(o.InitializationVectorLengthBits) {
+		toSerialize["initializationVectorLengthBits"] = o.InitializationVectorLengthBits
+	}
+	toSerialize["keyID"] = o.KeyID
+	if !IsNil(o.IsCompromised) {
+		toSerialize["isCompromised"] = o.IsCompromised
+	}
+	if !IsNil(o.SymmetricKey) {
+		toSerialize["symmetricKey"] = o.SymmetricKey
+	}
+	toSerialize["keyLengthBits"] = o.KeyLengthBits
+	return toSerialize, nil
 }
 
 type NullableCipherSecretKeyResponse struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddThirdPartyNotificationManagerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddThirdPartyNotificationManagerRequest{}
+
 // AddThirdPartyNotificationManagerRequest struct for AddThirdPartyNotificationManagerRequest
 type AddThirdPartyNotificationManagerRequest struct {
 	// Name of the new Notification Manager
@@ -81,7 +84,7 @@ func (o *AddThirdPartyNotificationManagerRequest) SetManagerName(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *AddThirdPartyNotificationManagerRequest) GetSchemas() []EnumthirdPartyNotificationManagerSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumthirdPartyNotificationManagerSchemaUrn
 		return ret
 	}
@@ -91,7 +94,7 @@ func (o *AddThirdPartyNotificationManagerRequest) GetSchemas() []EnumthirdPartyN
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyNotificationManagerRequest) GetSchemasOk() ([]EnumthirdPartyNotificationManagerSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -99,7 +102,7 @@ func (o *AddThirdPartyNotificationManagerRequest) GetSchemasOk() ([]EnumthirdPar
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *AddThirdPartyNotificationManagerRequest) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -137,7 +140,7 @@ func (o *AddThirdPartyNotificationManagerRequest) SetExtensionClass(v string) {
 
 // GetExtensionArgument returns the ExtensionArgument field value if set, zero value otherwise.
 func (o *AddThirdPartyNotificationManagerRequest) GetExtensionArgument() []string {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		var ret []string
 		return ret
 	}
@@ -147,7 +150,7 @@ func (o *AddThirdPartyNotificationManagerRequest) GetExtensionArgument() []strin
 // GetExtensionArgumentOk returns a tuple with the ExtensionArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyNotificationManagerRequest) GetExtensionArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		return nil, false
 	}
 	return o.ExtensionArgument, true
@@ -155,7 +158,7 @@ func (o *AddThirdPartyNotificationManagerRequest) GetExtensionArgumentOk() ([]st
 
 // HasExtensionArgument returns a boolean if a field has been set.
 func (o *AddThirdPartyNotificationManagerRequest) HasExtensionArgument() bool {
-	if o != nil && !isNil(o.ExtensionArgument) {
+	if o != nil && !IsNil(o.ExtensionArgument) {
 		return true
 	}
 
@@ -169,7 +172,7 @@ func (o *AddThirdPartyNotificationManagerRequest) SetExtensionArgument(v []strin
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddThirdPartyNotificationManagerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -179,7 +182,7 @@ func (o *AddThirdPartyNotificationManagerRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyNotificationManagerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -187,7 +190,7 @@ func (o *AddThirdPartyNotificationManagerRequest) GetDescriptionOk() (*string, b
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddThirdPartyNotificationManagerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -249,7 +252,7 @@ func (o *AddThirdPartyNotificationManagerRequest) SetSubscriptionBaseDN(v string
 
 // GetTransactionNotification returns the TransactionNotification field value if set, zero value otherwise.
 func (o *AddThirdPartyNotificationManagerRequest) GetTransactionNotification() EnumnotificationManagerTransactionNotificationProp {
-	if o == nil || isNil(o.TransactionNotification) {
+	if o == nil || IsNil(o.TransactionNotification) {
 		var ret EnumnotificationManagerTransactionNotificationProp
 		return ret
 	}
@@ -259,7 +262,7 @@ func (o *AddThirdPartyNotificationManagerRequest) GetTransactionNotification() E
 // GetTransactionNotificationOk returns a tuple with the TransactionNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyNotificationManagerRequest) GetTransactionNotificationOk() (*EnumnotificationManagerTransactionNotificationProp, bool) {
-	if o == nil || isNil(o.TransactionNotification) {
+	if o == nil || IsNil(o.TransactionNotification) {
 		return nil, false
 	}
 	return o.TransactionNotification, true
@@ -267,7 +270,7 @@ func (o *AddThirdPartyNotificationManagerRequest) GetTransactionNotificationOk()
 
 // HasTransactionNotification returns a boolean if a field has been set.
 func (o *AddThirdPartyNotificationManagerRequest) HasTransactionNotification() bool {
-	if o != nil && !isNil(o.TransactionNotification) {
+	if o != nil && !IsNil(o.TransactionNotification) {
 		return true
 	}
 
@@ -281,7 +284,7 @@ func (o *AddThirdPartyNotificationManagerRequest) SetTransactionNotification(v E
 
 // GetMonitorEntriesEnabled returns the MonitorEntriesEnabled field value if set, zero value otherwise.
 func (o *AddThirdPartyNotificationManagerRequest) GetMonitorEntriesEnabled() bool {
-	if o == nil || isNil(o.MonitorEntriesEnabled) {
+	if o == nil || IsNil(o.MonitorEntriesEnabled) {
 		var ret bool
 		return ret
 	}
@@ -291,7 +294,7 @@ func (o *AddThirdPartyNotificationManagerRequest) GetMonitorEntriesEnabled() boo
 // GetMonitorEntriesEnabledOk returns a tuple with the MonitorEntriesEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyNotificationManagerRequest) GetMonitorEntriesEnabledOk() (*bool, bool) {
-	if o == nil || isNil(o.MonitorEntriesEnabled) {
+	if o == nil || IsNil(o.MonitorEntriesEnabled) {
 		return nil, false
 	}
 	return o.MonitorEntriesEnabled, true
@@ -299,7 +302,7 @@ func (o *AddThirdPartyNotificationManagerRequest) GetMonitorEntriesEnabledOk() (
 
 // HasMonitorEntriesEnabled returns a boolean if a field has been set.
 func (o *AddThirdPartyNotificationManagerRequest) HasMonitorEntriesEnabled() bool {
-	if o != nil && !isNil(o.MonitorEntriesEnabled) {
+	if o != nil && !IsNil(o.MonitorEntriesEnabled) {
 		return true
 	}
 
@@ -312,35 +315,35 @@ func (o *AddThirdPartyNotificationManagerRequest) SetMonitorEntriesEnabled(v boo
 }
 
 func (o AddThirdPartyNotificationManagerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["managerName"] = o.ManagerName
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["extensionClass"] = o.ExtensionClass
-	}
-	if !isNil(o.ExtensionArgument) {
-		toSerialize["extensionArgument"] = o.ExtensionArgument
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if true {
-		toSerialize["subscriptionBaseDN"] = o.SubscriptionBaseDN
-	}
-	if !isNil(o.TransactionNotification) {
-		toSerialize["transactionNotification"] = o.TransactionNotification
-	}
-	if !isNil(o.MonitorEntriesEnabled) {
-		toSerialize["monitorEntriesEnabled"] = o.MonitorEntriesEnabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddThirdPartyNotificationManagerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["managerName"] = o.ManagerName
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	toSerialize["extensionClass"] = o.ExtensionClass
+	if !IsNil(o.ExtensionArgument) {
+		toSerialize["extensionArgument"] = o.ExtensionArgument
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	toSerialize["subscriptionBaseDN"] = o.SubscriptionBaseDN
+	if !IsNil(o.TransactionNotification) {
+		toSerialize["transactionNotification"] = o.TransactionNotification
+	}
+	if !IsNil(o.MonitorEntriesEnabled) {
+		toSerialize["monitorEntriesEnabled"] = o.MonitorEntriesEnabled
+	}
+	return toSerialize, nil
 }
 
 type NullableAddThirdPartyNotificationManagerRequest struct {

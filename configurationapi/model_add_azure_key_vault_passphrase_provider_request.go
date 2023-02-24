@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddAzureKeyVaultPassphraseProviderRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddAzureKeyVaultPassphraseProviderRequest{}
+
 // AddAzureKeyVaultPassphraseProviderRequest struct for AddAzureKeyVaultPassphraseProviderRequest
 type AddAzureKeyVaultPassphraseProviderRequest struct {
 	// Name of the new Passphrase Provider
@@ -178,7 +181,7 @@ func (o *AddAzureKeyVaultPassphraseProviderRequest) SetSecretName(v string) {
 
 // GetMaxCacheDuration returns the MaxCacheDuration field value if set, zero value otherwise.
 func (o *AddAzureKeyVaultPassphraseProviderRequest) GetMaxCacheDuration() string {
-	if o == nil || isNil(o.MaxCacheDuration) {
+	if o == nil || IsNil(o.MaxCacheDuration) {
 		var ret string
 		return ret
 	}
@@ -188,7 +191,7 @@ func (o *AddAzureKeyVaultPassphraseProviderRequest) GetMaxCacheDuration() string
 // GetMaxCacheDurationOk returns a tuple with the MaxCacheDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAzureKeyVaultPassphraseProviderRequest) GetMaxCacheDurationOk() (*string, bool) {
-	if o == nil || isNil(o.MaxCacheDuration) {
+	if o == nil || IsNil(o.MaxCacheDuration) {
 		return nil, false
 	}
 	return o.MaxCacheDuration, true
@@ -196,7 +199,7 @@ func (o *AddAzureKeyVaultPassphraseProviderRequest) GetMaxCacheDurationOk() (*st
 
 // HasMaxCacheDuration returns a boolean if a field has been set.
 func (o *AddAzureKeyVaultPassphraseProviderRequest) HasMaxCacheDuration() bool {
-	if o != nil && !isNil(o.MaxCacheDuration) {
+	if o != nil && !IsNil(o.MaxCacheDuration) {
 		return true
 	}
 
@@ -210,7 +213,7 @@ func (o *AddAzureKeyVaultPassphraseProviderRequest) SetMaxCacheDuration(v string
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddAzureKeyVaultPassphraseProviderRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -220,7 +223,7 @@ func (o *AddAzureKeyVaultPassphraseProviderRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAzureKeyVaultPassphraseProviderRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -228,7 +231,7 @@ func (o *AddAzureKeyVaultPassphraseProviderRequest) GetDescriptionOk() (*string,
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddAzureKeyVaultPassphraseProviderRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -265,32 +268,28 @@ func (o *AddAzureKeyVaultPassphraseProviderRequest) SetEnabled(v bool) {
 }
 
 func (o AddAzureKeyVaultPassphraseProviderRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["providerName"] = o.ProviderName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["keyVaultURI"] = o.KeyVaultURI
-	}
-	if true {
-		toSerialize["azureAuthenticationMethod"] = o.AzureAuthenticationMethod
-	}
-	if true {
-		toSerialize["secretName"] = o.SecretName
-	}
-	if !isNil(o.MaxCacheDuration) {
-		toSerialize["maxCacheDuration"] = o.MaxCacheDuration
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddAzureKeyVaultPassphraseProviderRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["providerName"] = o.ProviderName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["keyVaultURI"] = o.KeyVaultURI
+	toSerialize["azureAuthenticationMethod"] = o.AzureAuthenticationMethod
+	toSerialize["secretName"] = o.SecretName
+	if !IsNil(o.MaxCacheDuration) {
+		toSerialize["maxCacheDuration"] = o.MaxCacheDuration
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddAzureKeyVaultPassphraseProviderRequest struct {

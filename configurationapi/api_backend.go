@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -105,9 +105,9 @@ func (a *BackendApiService) AddBackendExecute(r ApiAddBackendRequest) (*AddBacke
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -171,7 +171,7 @@ func (a *BackendApiService) DeleteBackendExecute(r ApiDeleteBackendRequest) (*ht
 	}
 
 	localVarPath := localBasePath + "/backends/{backend-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"backend-name"+"}", url.PathEscape(parameterToString(r.backendName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"backend-name"+"}", url.PathEscape(parameterValueToString(r.backendName, "backendName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -204,9 +204,9 @@ func (a *BackendApiService) DeleteBackendExecute(r ApiDeleteBackendRequest) (*ht
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -264,7 +264,7 @@ func (a *BackendApiService) GetBackendExecute(r ApiGetBackendRequest) (*GetBacke
 	}
 
 	localVarPath := localBasePath + "/backends/{backend-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"backend-name"+"}", url.PathEscape(parameterToString(r.backendName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"backend-name"+"}", url.PathEscape(parameterValueToString(r.backendName, "backendName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -297,9 +297,9 @@ func (a *BackendApiService) GetBackendExecute(r ApiGetBackendRequest) (*GetBacke
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -373,7 +373,7 @@ func (a *BackendApiService) UpdateBackendExecute(r ApiUpdateBackendRequest) (*Ge
 	}
 
 	localVarPath := localBasePath + "/backends/{backend-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"backend-name"+"}", url.PathEscape(parameterToString(r.backendName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"backend-name"+"}", url.PathEscape(parameterValueToString(r.backendName, "backendName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -411,9 +411,9 @@ func (a *BackendApiService) UpdateBackendExecute(r ApiUpdateBackendRequest) (*Ge
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

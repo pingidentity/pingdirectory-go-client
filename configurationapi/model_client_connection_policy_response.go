@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ClientConnectionPolicyResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ClientConnectionPolicyResponse{}
+
 // ClientConnectionPolicyResponse struct for ClientConnectionPolicyResponse
 type ClientConnectionPolicyResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -124,7 +127,7 @@ func NewClientConnectionPolicyResponseWithDefaults() *ClientConnectionPolicyResp
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -134,7 +137,7 @@ func (o *ClientConnectionPolicyResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -142,7 +145,7 @@ func (o *ClientConnectionPolicyResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -156,7 +159,7 @@ func (o *ClientConnectionPolicyResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -166,7 +169,7 @@ func (o *ClientConnectionPolicyResponse) GetUrnpingidentityschemasconfigurationm
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -174,7 +177,7 @@ func (o *ClientConnectionPolicyResponse) GetUrnpingidentityschemasconfigurationm
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -212,7 +215,7 @@ func (o *ClientConnectionPolicyResponse) SetId(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetSchemas() []EnumclientConnectionPolicySchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumclientConnectionPolicySchemaUrn
 		return ret
 	}
@@ -222,7 +225,7 @@ func (o *ClientConnectionPolicyResponse) GetSchemas() []EnumclientConnectionPoli
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetSchemasOk() ([]EnumclientConnectionPolicySchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -230,7 +233,7 @@ func (o *ClientConnectionPolicyResponse) GetSchemasOk() ([]EnumclientConnectionP
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -268,7 +271,7 @@ func (o *ClientConnectionPolicyResponse) SetPolicyID(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -278,7 +281,7 @@ func (o *ClientConnectionPolicyResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -286,7 +289,7 @@ func (o *ClientConnectionPolicyResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -348,7 +351,7 @@ func (o *ClientConnectionPolicyResponse) SetEvaluationOrderIndex(v int32) {
 
 // GetConnectionCriteria returns the ConnectionCriteria field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetConnectionCriteria() string {
-	if o == nil || isNil(o.ConnectionCriteria) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
 		var ret string
 		return ret
 	}
@@ -358,7 +361,7 @@ func (o *ClientConnectionPolicyResponse) GetConnectionCriteria() string {
 // GetConnectionCriteriaOk returns a tuple with the ConnectionCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetConnectionCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.ConnectionCriteria) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
 		return nil, false
 	}
 	return o.ConnectionCriteria, true
@@ -366,7 +369,7 @@ func (o *ClientConnectionPolicyResponse) GetConnectionCriteriaOk() (*string, boo
 
 // HasConnectionCriteria returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasConnectionCriteria() bool {
-	if o != nil && !isNil(o.ConnectionCriteria) {
+	if o != nil && !IsNil(o.ConnectionCriteria) {
 		return true
 	}
 
@@ -380,7 +383,7 @@ func (o *ClientConnectionPolicyResponse) SetConnectionCriteria(v string) {
 
 // GetTerminateConnection returns the TerminateConnection field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetTerminateConnection() bool {
-	if o == nil || isNil(o.TerminateConnection) {
+	if o == nil || IsNil(o.TerminateConnection) {
 		var ret bool
 		return ret
 	}
@@ -390,7 +393,7 @@ func (o *ClientConnectionPolicyResponse) GetTerminateConnection() bool {
 // GetTerminateConnectionOk returns a tuple with the TerminateConnection field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetTerminateConnectionOk() (*bool, bool) {
-	if o == nil || isNil(o.TerminateConnection) {
+	if o == nil || IsNil(o.TerminateConnection) {
 		return nil, false
 	}
 	return o.TerminateConnection, true
@@ -398,7 +401,7 @@ func (o *ClientConnectionPolicyResponse) GetTerminateConnectionOk() (*bool, bool
 
 // HasTerminateConnection returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasTerminateConnection() bool {
-	if o != nil && !isNil(o.TerminateConnection) {
+	if o != nil && !IsNil(o.TerminateConnection) {
 		return true
 	}
 
@@ -412,7 +415,7 @@ func (o *ClientConnectionPolicyResponse) SetTerminateConnection(v bool) {
 
 // GetSensitiveAttribute returns the SensitiveAttribute field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetSensitiveAttribute() []string {
-	if o == nil || isNil(o.SensitiveAttribute) {
+	if o == nil || IsNil(o.SensitiveAttribute) {
 		var ret []string
 		return ret
 	}
@@ -422,7 +425,7 @@ func (o *ClientConnectionPolicyResponse) GetSensitiveAttribute() []string {
 // GetSensitiveAttributeOk returns a tuple with the SensitiveAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetSensitiveAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.SensitiveAttribute) {
+	if o == nil || IsNil(o.SensitiveAttribute) {
 		return nil, false
 	}
 	return o.SensitiveAttribute, true
@@ -430,7 +433,7 @@ func (o *ClientConnectionPolicyResponse) GetSensitiveAttributeOk() ([]string, bo
 
 // HasSensitiveAttribute returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasSensitiveAttribute() bool {
-	if o != nil && !isNil(o.SensitiveAttribute) {
+	if o != nil && !IsNil(o.SensitiveAttribute) {
 		return true
 	}
 
@@ -444,7 +447,7 @@ func (o *ClientConnectionPolicyResponse) SetSensitiveAttribute(v []string) {
 
 // GetExcludeGlobalSensitiveAttribute returns the ExcludeGlobalSensitiveAttribute field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetExcludeGlobalSensitiveAttribute() []string {
-	if o == nil || isNil(o.ExcludeGlobalSensitiveAttribute) {
+	if o == nil || IsNil(o.ExcludeGlobalSensitiveAttribute) {
 		var ret []string
 		return ret
 	}
@@ -454,7 +457,7 @@ func (o *ClientConnectionPolicyResponse) GetExcludeGlobalSensitiveAttribute() []
 // GetExcludeGlobalSensitiveAttributeOk returns a tuple with the ExcludeGlobalSensitiveAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetExcludeGlobalSensitiveAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludeGlobalSensitiveAttribute) {
+	if o == nil || IsNil(o.ExcludeGlobalSensitiveAttribute) {
 		return nil, false
 	}
 	return o.ExcludeGlobalSensitiveAttribute, true
@@ -462,7 +465,7 @@ func (o *ClientConnectionPolicyResponse) GetExcludeGlobalSensitiveAttributeOk() 
 
 // HasExcludeGlobalSensitiveAttribute returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasExcludeGlobalSensitiveAttribute() bool {
-	if o != nil && !isNil(o.ExcludeGlobalSensitiveAttribute) {
+	if o != nil && !IsNil(o.ExcludeGlobalSensitiveAttribute) {
 		return true
 	}
 
@@ -476,7 +479,7 @@ func (o *ClientConnectionPolicyResponse) SetExcludeGlobalSensitiveAttribute(v []
 
 // GetResultCodeMap returns the ResultCodeMap field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetResultCodeMap() string {
-	if o == nil || isNil(o.ResultCodeMap) {
+	if o == nil || IsNil(o.ResultCodeMap) {
 		var ret string
 		return ret
 	}
@@ -486,7 +489,7 @@ func (o *ClientConnectionPolicyResponse) GetResultCodeMap() string {
 // GetResultCodeMapOk returns a tuple with the ResultCodeMap field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetResultCodeMapOk() (*string, bool) {
-	if o == nil || isNil(o.ResultCodeMap) {
+	if o == nil || IsNil(o.ResultCodeMap) {
 		return nil, false
 	}
 	return o.ResultCodeMap, true
@@ -494,7 +497,7 @@ func (o *ClientConnectionPolicyResponse) GetResultCodeMapOk() (*string, bool) {
 
 // HasResultCodeMap returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasResultCodeMap() bool {
-	if o != nil && !isNil(o.ResultCodeMap) {
+	if o != nil && !IsNil(o.ResultCodeMap) {
 		return true
 	}
 
@@ -508,7 +511,7 @@ func (o *ClientConnectionPolicyResponse) SetResultCodeMap(v string) {
 
 // GetIncludedBackendBaseDN returns the IncludedBackendBaseDN field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetIncludedBackendBaseDN() []string {
-	if o == nil || isNil(o.IncludedBackendBaseDN) {
+	if o == nil || IsNil(o.IncludedBackendBaseDN) {
 		var ret []string
 		return ret
 	}
@@ -518,7 +521,7 @@ func (o *ClientConnectionPolicyResponse) GetIncludedBackendBaseDN() []string {
 // GetIncludedBackendBaseDNOk returns a tuple with the IncludedBackendBaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetIncludedBackendBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludedBackendBaseDN) {
+	if o == nil || IsNil(o.IncludedBackendBaseDN) {
 		return nil, false
 	}
 	return o.IncludedBackendBaseDN, true
@@ -526,7 +529,7 @@ func (o *ClientConnectionPolicyResponse) GetIncludedBackendBaseDNOk() ([]string,
 
 // HasIncludedBackendBaseDN returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasIncludedBackendBaseDN() bool {
-	if o != nil && !isNil(o.IncludedBackendBaseDN) {
+	if o != nil && !IsNil(o.IncludedBackendBaseDN) {
 		return true
 	}
 
@@ -540,7 +543,7 @@ func (o *ClientConnectionPolicyResponse) SetIncludedBackendBaseDN(v []string) {
 
 // GetExcludedBackendBaseDN returns the ExcludedBackendBaseDN field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetExcludedBackendBaseDN() []string {
-	if o == nil || isNil(o.ExcludedBackendBaseDN) {
+	if o == nil || IsNil(o.ExcludedBackendBaseDN) {
 		var ret []string
 		return ret
 	}
@@ -550,7 +553,7 @@ func (o *ClientConnectionPolicyResponse) GetExcludedBackendBaseDN() []string {
 // GetExcludedBackendBaseDNOk returns a tuple with the ExcludedBackendBaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetExcludedBackendBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludedBackendBaseDN) {
+	if o == nil || IsNil(o.ExcludedBackendBaseDN) {
 		return nil, false
 	}
 	return o.ExcludedBackendBaseDN, true
@@ -558,7 +561,7 @@ func (o *ClientConnectionPolicyResponse) GetExcludedBackendBaseDNOk() ([]string,
 
 // HasExcludedBackendBaseDN returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasExcludedBackendBaseDN() bool {
-	if o != nil && !isNil(o.ExcludedBackendBaseDN) {
+	if o != nil && !IsNil(o.ExcludedBackendBaseDN) {
 		return true
 	}
 
@@ -596,7 +599,7 @@ func (o *ClientConnectionPolicyResponse) SetAllowedOperation(v []EnumclientConne
 
 // GetRequiredOperationRequestCriteria returns the RequiredOperationRequestCriteria field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetRequiredOperationRequestCriteria() string {
-	if o == nil || isNil(o.RequiredOperationRequestCriteria) {
+	if o == nil || IsNil(o.RequiredOperationRequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -606,7 +609,7 @@ func (o *ClientConnectionPolicyResponse) GetRequiredOperationRequestCriteria() s
 // GetRequiredOperationRequestCriteriaOk returns a tuple with the RequiredOperationRequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetRequiredOperationRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.RequiredOperationRequestCriteria) {
+	if o == nil || IsNil(o.RequiredOperationRequestCriteria) {
 		return nil, false
 	}
 	return o.RequiredOperationRequestCriteria, true
@@ -614,7 +617,7 @@ func (o *ClientConnectionPolicyResponse) GetRequiredOperationRequestCriteriaOk()
 
 // HasRequiredOperationRequestCriteria returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasRequiredOperationRequestCriteria() bool {
-	if o != nil && !isNil(o.RequiredOperationRequestCriteria) {
+	if o != nil && !IsNil(o.RequiredOperationRequestCriteria) {
 		return true
 	}
 
@@ -628,7 +631,7 @@ func (o *ClientConnectionPolicyResponse) SetRequiredOperationRequestCriteria(v s
 
 // GetProhibitedOperationRequestCriteria returns the ProhibitedOperationRequestCriteria field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetProhibitedOperationRequestCriteria() string {
-	if o == nil || isNil(o.ProhibitedOperationRequestCriteria) {
+	if o == nil || IsNil(o.ProhibitedOperationRequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -638,7 +641,7 @@ func (o *ClientConnectionPolicyResponse) GetProhibitedOperationRequestCriteria()
 // GetProhibitedOperationRequestCriteriaOk returns a tuple with the ProhibitedOperationRequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetProhibitedOperationRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.ProhibitedOperationRequestCriteria) {
+	if o == nil || IsNil(o.ProhibitedOperationRequestCriteria) {
 		return nil, false
 	}
 	return o.ProhibitedOperationRequestCriteria, true
@@ -646,7 +649,7 @@ func (o *ClientConnectionPolicyResponse) GetProhibitedOperationRequestCriteriaOk
 
 // HasProhibitedOperationRequestCriteria returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasProhibitedOperationRequestCriteria() bool {
-	if o != nil && !isNil(o.ProhibitedOperationRequestCriteria) {
+	if o != nil && !IsNil(o.ProhibitedOperationRequestCriteria) {
 		return true
 	}
 
@@ -660,7 +663,7 @@ func (o *ClientConnectionPolicyResponse) SetProhibitedOperationRequestCriteria(v
 
 // GetAllowedRequestControl returns the AllowedRequestControl field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetAllowedRequestControl() []string {
-	if o == nil || isNil(o.AllowedRequestControl) {
+	if o == nil || IsNil(o.AllowedRequestControl) {
 		var ret []string
 		return ret
 	}
@@ -670,7 +673,7 @@ func (o *ClientConnectionPolicyResponse) GetAllowedRequestControl() []string {
 // GetAllowedRequestControlOk returns a tuple with the AllowedRequestControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetAllowedRequestControlOk() ([]string, bool) {
-	if o == nil || isNil(o.AllowedRequestControl) {
+	if o == nil || IsNil(o.AllowedRequestControl) {
 		return nil, false
 	}
 	return o.AllowedRequestControl, true
@@ -678,7 +681,7 @@ func (o *ClientConnectionPolicyResponse) GetAllowedRequestControlOk() ([]string,
 
 // HasAllowedRequestControl returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasAllowedRequestControl() bool {
-	if o != nil && !isNil(o.AllowedRequestControl) {
+	if o != nil && !IsNil(o.AllowedRequestControl) {
 		return true
 	}
 
@@ -692,7 +695,7 @@ func (o *ClientConnectionPolicyResponse) SetAllowedRequestControl(v []string) {
 
 // GetDeniedRequestControl returns the DeniedRequestControl field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetDeniedRequestControl() []string {
-	if o == nil || isNil(o.DeniedRequestControl) {
+	if o == nil || IsNil(o.DeniedRequestControl) {
 		var ret []string
 		return ret
 	}
@@ -702,7 +705,7 @@ func (o *ClientConnectionPolicyResponse) GetDeniedRequestControl() []string {
 // GetDeniedRequestControlOk returns a tuple with the DeniedRequestControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetDeniedRequestControlOk() ([]string, bool) {
-	if o == nil || isNil(o.DeniedRequestControl) {
+	if o == nil || IsNil(o.DeniedRequestControl) {
 		return nil, false
 	}
 	return o.DeniedRequestControl, true
@@ -710,7 +713,7 @@ func (o *ClientConnectionPolicyResponse) GetDeniedRequestControlOk() ([]string, 
 
 // HasDeniedRequestControl returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasDeniedRequestControl() bool {
-	if o != nil && !isNil(o.DeniedRequestControl) {
+	if o != nil && !IsNil(o.DeniedRequestControl) {
 		return true
 	}
 
@@ -724,7 +727,7 @@ func (o *ClientConnectionPolicyResponse) SetDeniedRequestControl(v []string) {
 
 // GetAllowedExtendedOperation returns the AllowedExtendedOperation field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetAllowedExtendedOperation() []string {
-	if o == nil || isNil(o.AllowedExtendedOperation) {
+	if o == nil || IsNil(o.AllowedExtendedOperation) {
 		var ret []string
 		return ret
 	}
@@ -734,7 +737,7 @@ func (o *ClientConnectionPolicyResponse) GetAllowedExtendedOperation() []string 
 // GetAllowedExtendedOperationOk returns a tuple with the AllowedExtendedOperation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetAllowedExtendedOperationOk() ([]string, bool) {
-	if o == nil || isNil(o.AllowedExtendedOperation) {
+	if o == nil || IsNil(o.AllowedExtendedOperation) {
 		return nil, false
 	}
 	return o.AllowedExtendedOperation, true
@@ -742,7 +745,7 @@ func (o *ClientConnectionPolicyResponse) GetAllowedExtendedOperationOk() ([]stri
 
 // HasAllowedExtendedOperation returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasAllowedExtendedOperation() bool {
-	if o != nil && !isNil(o.AllowedExtendedOperation) {
+	if o != nil && !IsNil(o.AllowedExtendedOperation) {
 		return true
 	}
 
@@ -756,7 +759,7 @@ func (o *ClientConnectionPolicyResponse) SetAllowedExtendedOperation(v []string)
 
 // GetDeniedExtendedOperation returns the DeniedExtendedOperation field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetDeniedExtendedOperation() []string {
-	if o == nil || isNil(o.DeniedExtendedOperation) {
+	if o == nil || IsNil(o.DeniedExtendedOperation) {
 		var ret []string
 		return ret
 	}
@@ -766,7 +769,7 @@ func (o *ClientConnectionPolicyResponse) GetDeniedExtendedOperation() []string {
 // GetDeniedExtendedOperationOk returns a tuple with the DeniedExtendedOperation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetDeniedExtendedOperationOk() ([]string, bool) {
-	if o == nil || isNil(o.DeniedExtendedOperation) {
+	if o == nil || IsNil(o.DeniedExtendedOperation) {
 		return nil, false
 	}
 	return o.DeniedExtendedOperation, true
@@ -774,7 +777,7 @@ func (o *ClientConnectionPolicyResponse) GetDeniedExtendedOperationOk() ([]strin
 
 // HasDeniedExtendedOperation returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasDeniedExtendedOperation() bool {
-	if o != nil && !isNil(o.DeniedExtendedOperation) {
+	if o != nil && !IsNil(o.DeniedExtendedOperation) {
 		return true
 	}
 
@@ -812,7 +815,7 @@ func (o *ClientConnectionPolicyResponse) SetAllowedAuthType(v []EnumclientConnec
 
 // GetAllowedSASLMechanism returns the AllowedSASLMechanism field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetAllowedSASLMechanism() []string {
-	if o == nil || isNil(o.AllowedSASLMechanism) {
+	if o == nil || IsNil(o.AllowedSASLMechanism) {
 		var ret []string
 		return ret
 	}
@@ -822,7 +825,7 @@ func (o *ClientConnectionPolicyResponse) GetAllowedSASLMechanism() []string {
 // GetAllowedSASLMechanismOk returns a tuple with the AllowedSASLMechanism field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetAllowedSASLMechanismOk() ([]string, bool) {
-	if o == nil || isNil(o.AllowedSASLMechanism) {
+	if o == nil || IsNil(o.AllowedSASLMechanism) {
 		return nil, false
 	}
 	return o.AllowedSASLMechanism, true
@@ -830,7 +833,7 @@ func (o *ClientConnectionPolicyResponse) GetAllowedSASLMechanismOk() ([]string, 
 
 // HasAllowedSASLMechanism returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasAllowedSASLMechanism() bool {
-	if o != nil && !isNil(o.AllowedSASLMechanism) {
+	if o != nil && !IsNil(o.AllowedSASLMechanism) {
 		return true
 	}
 
@@ -844,7 +847,7 @@ func (o *ClientConnectionPolicyResponse) SetAllowedSASLMechanism(v []string) {
 
 // GetDeniedSASLMechanism returns the DeniedSASLMechanism field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetDeniedSASLMechanism() []string {
-	if o == nil || isNil(o.DeniedSASLMechanism) {
+	if o == nil || IsNil(o.DeniedSASLMechanism) {
 		var ret []string
 		return ret
 	}
@@ -854,7 +857,7 @@ func (o *ClientConnectionPolicyResponse) GetDeniedSASLMechanism() []string {
 // GetDeniedSASLMechanismOk returns a tuple with the DeniedSASLMechanism field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetDeniedSASLMechanismOk() ([]string, bool) {
-	if o == nil || isNil(o.DeniedSASLMechanism) {
+	if o == nil || IsNil(o.DeniedSASLMechanism) {
 		return nil, false
 	}
 	return o.DeniedSASLMechanism, true
@@ -862,7 +865,7 @@ func (o *ClientConnectionPolicyResponse) GetDeniedSASLMechanismOk() ([]string, b
 
 // HasDeniedSASLMechanism returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasDeniedSASLMechanism() bool {
-	if o != nil && !isNil(o.DeniedSASLMechanism) {
+	if o != nil && !IsNil(o.DeniedSASLMechanism) {
 		return true
 	}
 
@@ -876,7 +879,7 @@ func (o *ClientConnectionPolicyResponse) SetDeniedSASLMechanism(v []string) {
 
 // GetAllowedFilterType returns the AllowedFilterType field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetAllowedFilterType() []EnumclientConnectionPolicyAllowedFilterTypeProp {
-	if o == nil || isNil(o.AllowedFilterType) {
+	if o == nil || IsNil(o.AllowedFilterType) {
 		var ret []EnumclientConnectionPolicyAllowedFilterTypeProp
 		return ret
 	}
@@ -886,7 +889,7 @@ func (o *ClientConnectionPolicyResponse) GetAllowedFilterType() []EnumclientConn
 // GetAllowedFilterTypeOk returns a tuple with the AllowedFilterType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetAllowedFilterTypeOk() ([]EnumclientConnectionPolicyAllowedFilterTypeProp, bool) {
-	if o == nil || isNil(o.AllowedFilterType) {
+	if o == nil || IsNil(o.AllowedFilterType) {
 		return nil, false
 	}
 	return o.AllowedFilterType, true
@@ -894,7 +897,7 @@ func (o *ClientConnectionPolicyResponse) GetAllowedFilterTypeOk() ([]EnumclientC
 
 // HasAllowedFilterType returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasAllowedFilterType() bool {
-	if o != nil && !isNil(o.AllowedFilterType) {
+	if o != nil && !IsNil(o.AllowedFilterType) {
 		return true
 	}
 
@@ -908,7 +911,7 @@ func (o *ClientConnectionPolicyResponse) SetAllowedFilterType(v []EnumclientConn
 
 // GetAllowUnindexedSearches returns the AllowUnindexedSearches field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetAllowUnindexedSearches() bool {
-	if o == nil || isNil(o.AllowUnindexedSearches) {
+	if o == nil || IsNil(o.AllowUnindexedSearches) {
 		var ret bool
 		return ret
 	}
@@ -918,7 +921,7 @@ func (o *ClientConnectionPolicyResponse) GetAllowUnindexedSearches() bool {
 // GetAllowUnindexedSearchesOk returns a tuple with the AllowUnindexedSearches field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetAllowUnindexedSearchesOk() (*bool, bool) {
-	if o == nil || isNil(o.AllowUnindexedSearches) {
+	if o == nil || IsNil(o.AllowUnindexedSearches) {
 		return nil, false
 	}
 	return o.AllowUnindexedSearches, true
@@ -926,7 +929,7 @@ func (o *ClientConnectionPolicyResponse) GetAllowUnindexedSearchesOk() (*bool, b
 
 // HasAllowUnindexedSearches returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasAllowUnindexedSearches() bool {
-	if o != nil && !isNil(o.AllowUnindexedSearches) {
+	if o != nil && !IsNil(o.AllowUnindexedSearches) {
 		return true
 	}
 
@@ -940,7 +943,7 @@ func (o *ClientConnectionPolicyResponse) SetAllowUnindexedSearches(v bool) {
 
 // GetAllowUnindexedSearchesWithControl returns the AllowUnindexedSearchesWithControl field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetAllowUnindexedSearchesWithControl() bool {
-	if o == nil || isNil(o.AllowUnindexedSearchesWithControl) {
+	if o == nil || IsNil(o.AllowUnindexedSearchesWithControl) {
 		var ret bool
 		return ret
 	}
@@ -950,7 +953,7 @@ func (o *ClientConnectionPolicyResponse) GetAllowUnindexedSearchesWithControl() 
 // GetAllowUnindexedSearchesWithControlOk returns a tuple with the AllowUnindexedSearchesWithControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetAllowUnindexedSearchesWithControlOk() (*bool, bool) {
-	if o == nil || isNil(o.AllowUnindexedSearchesWithControl) {
+	if o == nil || IsNil(o.AllowUnindexedSearchesWithControl) {
 		return nil, false
 	}
 	return o.AllowUnindexedSearchesWithControl, true
@@ -958,7 +961,7 @@ func (o *ClientConnectionPolicyResponse) GetAllowUnindexedSearchesWithControlOk(
 
 // HasAllowUnindexedSearchesWithControl returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasAllowUnindexedSearchesWithControl() bool {
-	if o != nil && !isNil(o.AllowUnindexedSearchesWithControl) {
+	if o != nil && !IsNil(o.AllowUnindexedSearchesWithControl) {
 		return true
 	}
 
@@ -972,7 +975,7 @@ func (o *ClientConnectionPolicyResponse) SetAllowUnindexedSearchesWithControl(v 
 
 // GetMinimumSubstringLength returns the MinimumSubstringLength field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetMinimumSubstringLength() int32 {
-	if o == nil || isNil(o.MinimumSubstringLength) {
+	if o == nil || IsNil(o.MinimumSubstringLength) {
 		var ret int32
 		return ret
 	}
@@ -982,7 +985,7 @@ func (o *ClientConnectionPolicyResponse) GetMinimumSubstringLength() int32 {
 // GetMinimumSubstringLengthOk returns a tuple with the MinimumSubstringLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMinimumSubstringLengthOk() (*int32, bool) {
-	if o == nil || isNil(o.MinimumSubstringLength) {
+	if o == nil || IsNil(o.MinimumSubstringLength) {
 		return nil, false
 	}
 	return o.MinimumSubstringLength, true
@@ -990,7 +993,7 @@ func (o *ClientConnectionPolicyResponse) GetMinimumSubstringLengthOk() (*int32, 
 
 // HasMinimumSubstringLength returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasMinimumSubstringLength() bool {
-	if o != nil && !isNil(o.MinimumSubstringLength) {
+	if o != nil && !IsNil(o.MinimumSubstringLength) {
 		return true
 	}
 
@@ -1004,7 +1007,7 @@ func (o *ClientConnectionPolicyResponse) SetMinimumSubstringLength(v int32) {
 
 // GetMaximumConcurrentConnections returns the MaximumConcurrentConnections field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetMaximumConcurrentConnections() int32 {
-	if o == nil || isNil(o.MaximumConcurrentConnections) {
+	if o == nil || IsNil(o.MaximumConcurrentConnections) {
 		var ret int32
 		return ret
 	}
@@ -1014,7 +1017,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumConcurrentConnections() int32
 // GetMaximumConcurrentConnectionsOk returns a tuple with the MaximumConcurrentConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMaximumConcurrentConnectionsOk() (*int32, bool) {
-	if o == nil || isNil(o.MaximumConcurrentConnections) {
+	if o == nil || IsNil(o.MaximumConcurrentConnections) {
 		return nil, false
 	}
 	return o.MaximumConcurrentConnections, true
@@ -1022,7 +1025,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumConcurrentConnectionsOk() (*i
 
 // HasMaximumConcurrentConnections returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasMaximumConcurrentConnections() bool {
-	if o != nil && !isNil(o.MaximumConcurrentConnections) {
+	if o != nil && !IsNil(o.MaximumConcurrentConnections) {
 		return true
 	}
 
@@ -1036,7 +1039,7 @@ func (o *ClientConnectionPolicyResponse) SetMaximumConcurrentConnections(v int32
 
 // GetMaximumConnectionDuration returns the MaximumConnectionDuration field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetMaximumConnectionDuration() string {
-	if o == nil || isNil(o.MaximumConnectionDuration) {
+	if o == nil || IsNil(o.MaximumConnectionDuration) {
 		var ret string
 		return ret
 	}
@@ -1046,7 +1049,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumConnectionDuration() string {
 // GetMaximumConnectionDurationOk returns a tuple with the MaximumConnectionDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMaximumConnectionDurationOk() (*string, bool) {
-	if o == nil || isNil(o.MaximumConnectionDuration) {
+	if o == nil || IsNil(o.MaximumConnectionDuration) {
 		return nil, false
 	}
 	return o.MaximumConnectionDuration, true
@@ -1054,7 +1057,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumConnectionDurationOk() (*stri
 
 // HasMaximumConnectionDuration returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasMaximumConnectionDuration() bool {
-	if o != nil && !isNil(o.MaximumConnectionDuration) {
+	if o != nil && !IsNil(o.MaximumConnectionDuration) {
 		return true
 	}
 
@@ -1068,7 +1071,7 @@ func (o *ClientConnectionPolicyResponse) SetMaximumConnectionDuration(v string) 
 
 // GetMaximumIdleConnectionDuration returns the MaximumIdleConnectionDuration field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetMaximumIdleConnectionDuration() string {
-	if o == nil || isNil(o.MaximumIdleConnectionDuration) {
+	if o == nil || IsNil(o.MaximumIdleConnectionDuration) {
 		var ret string
 		return ret
 	}
@@ -1078,7 +1081,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumIdleConnectionDuration() stri
 // GetMaximumIdleConnectionDurationOk returns a tuple with the MaximumIdleConnectionDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMaximumIdleConnectionDurationOk() (*string, bool) {
-	if o == nil || isNil(o.MaximumIdleConnectionDuration) {
+	if o == nil || IsNil(o.MaximumIdleConnectionDuration) {
 		return nil, false
 	}
 	return o.MaximumIdleConnectionDuration, true
@@ -1086,7 +1089,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumIdleConnectionDurationOk() (*
 
 // HasMaximumIdleConnectionDuration returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasMaximumIdleConnectionDuration() bool {
-	if o != nil && !isNil(o.MaximumIdleConnectionDuration) {
+	if o != nil && !IsNil(o.MaximumIdleConnectionDuration) {
 		return true
 	}
 
@@ -1100,7 +1103,7 @@ func (o *ClientConnectionPolicyResponse) SetMaximumIdleConnectionDuration(v stri
 
 // GetMaximumOperationCountPerConnection returns the MaximumOperationCountPerConnection field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetMaximumOperationCountPerConnection() int32 {
-	if o == nil || isNil(o.MaximumOperationCountPerConnection) {
+	if o == nil || IsNil(o.MaximumOperationCountPerConnection) {
 		var ret int32
 		return ret
 	}
@@ -1110,7 +1113,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumOperationCountPerConnection()
 // GetMaximumOperationCountPerConnectionOk returns a tuple with the MaximumOperationCountPerConnection field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMaximumOperationCountPerConnectionOk() (*int32, bool) {
-	if o == nil || isNil(o.MaximumOperationCountPerConnection) {
+	if o == nil || IsNil(o.MaximumOperationCountPerConnection) {
 		return nil, false
 	}
 	return o.MaximumOperationCountPerConnection, true
@@ -1118,7 +1121,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumOperationCountPerConnectionOk
 
 // HasMaximumOperationCountPerConnection returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasMaximumOperationCountPerConnection() bool {
-	if o != nil && !isNil(o.MaximumOperationCountPerConnection) {
+	if o != nil && !IsNil(o.MaximumOperationCountPerConnection) {
 		return true
 	}
 
@@ -1132,7 +1135,7 @@ func (o *ClientConnectionPolicyResponse) SetMaximumOperationCountPerConnection(v
 
 // GetMaximumConcurrentOperationsPerConnection returns the MaximumConcurrentOperationsPerConnection field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetMaximumConcurrentOperationsPerConnection() int32 {
-	if o == nil || isNil(o.MaximumConcurrentOperationsPerConnection) {
+	if o == nil || IsNil(o.MaximumConcurrentOperationsPerConnection) {
 		var ret int32
 		return ret
 	}
@@ -1142,7 +1145,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumConcurrentOperationsPerConnec
 // GetMaximumConcurrentOperationsPerConnectionOk returns a tuple with the MaximumConcurrentOperationsPerConnection field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMaximumConcurrentOperationsPerConnectionOk() (*int32, bool) {
-	if o == nil || isNil(o.MaximumConcurrentOperationsPerConnection) {
+	if o == nil || IsNil(o.MaximumConcurrentOperationsPerConnection) {
 		return nil, false
 	}
 	return o.MaximumConcurrentOperationsPerConnection, true
@@ -1150,7 +1153,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumConcurrentOperationsPerConnec
 
 // HasMaximumConcurrentOperationsPerConnection returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasMaximumConcurrentOperationsPerConnection() bool {
-	if o != nil && !isNil(o.MaximumConcurrentOperationsPerConnection) {
+	if o != nil && !IsNil(o.MaximumConcurrentOperationsPerConnection) {
 		return true
 	}
 
@@ -1164,7 +1167,7 @@ func (o *ClientConnectionPolicyResponse) SetMaximumConcurrentOperationsPerConnec
 
 // GetMaximumConcurrentOperationWaitTimeBeforeRejecting returns the MaximumConcurrentOperationWaitTimeBeforeRejecting field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetMaximumConcurrentOperationWaitTimeBeforeRejecting() string {
-	if o == nil || isNil(o.MaximumConcurrentOperationWaitTimeBeforeRejecting) {
+	if o == nil || IsNil(o.MaximumConcurrentOperationWaitTimeBeforeRejecting) {
 		var ret string
 		return ret
 	}
@@ -1174,7 +1177,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumConcurrentOperationWaitTimeBe
 // GetMaximumConcurrentOperationWaitTimeBeforeRejectingOk returns a tuple with the MaximumConcurrentOperationWaitTimeBeforeRejecting field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMaximumConcurrentOperationWaitTimeBeforeRejectingOk() (*string, bool) {
-	if o == nil || isNil(o.MaximumConcurrentOperationWaitTimeBeforeRejecting) {
+	if o == nil || IsNil(o.MaximumConcurrentOperationWaitTimeBeforeRejecting) {
 		return nil, false
 	}
 	return o.MaximumConcurrentOperationWaitTimeBeforeRejecting, true
@@ -1182,7 +1185,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumConcurrentOperationWaitTimeBe
 
 // HasMaximumConcurrentOperationWaitTimeBeforeRejecting returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasMaximumConcurrentOperationWaitTimeBeforeRejecting() bool {
-	if o != nil && !isNil(o.MaximumConcurrentOperationWaitTimeBeforeRejecting) {
+	if o != nil && !IsNil(o.MaximumConcurrentOperationWaitTimeBeforeRejecting) {
 		return true
 	}
 
@@ -1196,7 +1199,7 @@ func (o *ClientConnectionPolicyResponse) SetMaximumConcurrentOperationWaitTimeBe
 
 // GetMaximumConcurrentOperationsPerConnectionExceededBehavior returns the MaximumConcurrentOperationsPerConnectionExceededBehavior field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetMaximumConcurrentOperationsPerConnectionExceededBehavior() EnumclientConnectionPolicyMaximumConcurrentOperationsPerConnectionExceededBehaviorProp {
-	if o == nil || isNil(o.MaximumConcurrentOperationsPerConnectionExceededBehavior) {
+	if o == nil || IsNil(o.MaximumConcurrentOperationsPerConnectionExceededBehavior) {
 		var ret EnumclientConnectionPolicyMaximumConcurrentOperationsPerConnectionExceededBehaviorProp
 		return ret
 	}
@@ -1206,7 +1209,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumConcurrentOperationsPerConnec
 // GetMaximumConcurrentOperationsPerConnectionExceededBehaviorOk returns a tuple with the MaximumConcurrentOperationsPerConnectionExceededBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMaximumConcurrentOperationsPerConnectionExceededBehaviorOk() (*EnumclientConnectionPolicyMaximumConcurrentOperationsPerConnectionExceededBehaviorProp, bool) {
-	if o == nil || isNil(o.MaximumConcurrentOperationsPerConnectionExceededBehavior) {
+	if o == nil || IsNil(o.MaximumConcurrentOperationsPerConnectionExceededBehavior) {
 		return nil, false
 	}
 	return o.MaximumConcurrentOperationsPerConnectionExceededBehavior, true
@@ -1214,7 +1217,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumConcurrentOperationsPerConnec
 
 // HasMaximumConcurrentOperationsPerConnectionExceededBehavior returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasMaximumConcurrentOperationsPerConnectionExceededBehavior() bool {
-	if o != nil && !isNil(o.MaximumConcurrentOperationsPerConnectionExceededBehavior) {
+	if o != nil && !IsNil(o.MaximumConcurrentOperationsPerConnectionExceededBehavior) {
 		return true
 	}
 
@@ -1228,7 +1231,7 @@ func (o *ClientConnectionPolicyResponse) SetMaximumConcurrentOperationsPerConnec
 
 // GetMaximumConnectionOperationRate returns the MaximumConnectionOperationRate field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetMaximumConnectionOperationRate() []string {
-	if o == nil || isNil(o.MaximumConnectionOperationRate) {
+	if o == nil || IsNil(o.MaximumConnectionOperationRate) {
 		var ret []string
 		return ret
 	}
@@ -1238,7 +1241,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumConnectionOperationRate() []s
 // GetMaximumConnectionOperationRateOk returns a tuple with the MaximumConnectionOperationRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMaximumConnectionOperationRateOk() ([]string, bool) {
-	if o == nil || isNil(o.MaximumConnectionOperationRate) {
+	if o == nil || IsNil(o.MaximumConnectionOperationRate) {
 		return nil, false
 	}
 	return o.MaximumConnectionOperationRate, true
@@ -1246,7 +1249,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumConnectionOperationRateOk() (
 
 // HasMaximumConnectionOperationRate returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasMaximumConnectionOperationRate() bool {
-	if o != nil && !isNil(o.MaximumConnectionOperationRate) {
+	if o != nil && !IsNil(o.MaximumConnectionOperationRate) {
 		return true
 	}
 
@@ -1260,7 +1263,7 @@ func (o *ClientConnectionPolicyResponse) SetMaximumConnectionOperationRate(v []s
 
 // GetConnectionOperationRateExceededBehavior returns the ConnectionOperationRateExceededBehavior field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetConnectionOperationRateExceededBehavior() EnumclientConnectionPolicyConnectionOperationRateExceededBehaviorProp {
-	if o == nil || isNil(o.ConnectionOperationRateExceededBehavior) {
+	if o == nil || IsNil(o.ConnectionOperationRateExceededBehavior) {
 		var ret EnumclientConnectionPolicyConnectionOperationRateExceededBehaviorProp
 		return ret
 	}
@@ -1270,7 +1273,7 @@ func (o *ClientConnectionPolicyResponse) GetConnectionOperationRateExceededBehav
 // GetConnectionOperationRateExceededBehaviorOk returns a tuple with the ConnectionOperationRateExceededBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetConnectionOperationRateExceededBehaviorOk() (*EnumclientConnectionPolicyConnectionOperationRateExceededBehaviorProp, bool) {
-	if o == nil || isNil(o.ConnectionOperationRateExceededBehavior) {
+	if o == nil || IsNil(o.ConnectionOperationRateExceededBehavior) {
 		return nil, false
 	}
 	return o.ConnectionOperationRateExceededBehavior, true
@@ -1278,7 +1281,7 @@ func (o *ClientConnectionPolicyResponse) GetConnectionOperationRateExceededBehav
 
 // HasConnectionOperationRateExceededBehavior returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasConnectionOperationRateExceededBehavior() bool {
-	if o != nil && !isNil(o.ConnectionOperationRateExceededBehavior) {
+	if o != nil && !IsNil(o.ConnectionOperationRateExceededBehavior) {
 		return true
 	}
 
@@ -1292,7 +1295,7 @@ func (o *ClientConnectionPolicyResponse) SetConnectionOperationRateExceededBehav
 
 // GetMaximumPolicyOperationRate returns the MaximumPolicyOperationRate field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetMaximumPolicyOperationRate() []string {
-	if o == nil || isNil(o.MaximumPolicyOperationRate) {
+	if o == nil || IsNil(o.MaximumPolicyOperationRate) {
 		var ret []string
 		return ret
 	}
@@ -1302,7 +1305,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumPolicyOperationRate() []strin
 // GetMaximumPolicyOperationRateOk returns a tuple with the MaximumPolicyOperationRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMaximumPolicyOperationRateOk() ([]string, bool) {
-	if o == nil || isNil(o.MaximumPolicyOperationRate) {
+	if o == nil || IsNil(o.MaximumPolicyOperationRate) {
 		return nil, false
 	}
 	return o.MaximumPolicyOperationRate, true
@@ -1310,7 +1313,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumPolicyOperationRateOk() ([]st
 
 // HasMaximumPolicyOperationRate returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasMaximumPolicyOperationRate() bool {
-	if o != nil && !isNil(o.MaximumPolicyOperationRate) {
+	if o != nil && !IsNil(o.MaximumPolicyOperationRate) {
 		return true
 	}
 
@@ -1324,7 +1327,7 @@ func (o *ClientConnectionPolicyResponse) SetMaximumPolicyOperationRate(v []strin
 
 // GetPolicyOperationRateExceededBehavior returns the PolicyOperationRateExceededBehavior field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetPolicyOperationRateExceededBehavior() EnumclientConnectionPolicyPolicyOperationRateExceededBehaviorProp {
-	if o == nil || isNil(o.PolicyOperationRateExceededBehavior) {
+	if o == nil || IsNil(o.PolicyOperationRateExceededBehavior) {
 		var ret EnumclientConnectionPolicyPolicyOperationRateExceededBehaviorProp
 		return ret
 	}
@@ -1334,7 +1337,7 @@ func (o *ClientConnectionPolicyResponse) GetPolicyOperationRateExceededBehavior(
 // GetPolicyOperationRateExceededBehaviorOk returns a tuple with the PolicyOperationRateExceededBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetPolicyOperationRateExceededBehaviorOk() (*EnumclientConnectionPolicyPolicyOperationRateExceededBehaviorProp, bool) {
-	if o == nil || isNil(o.PolicyOperationRateExceededBehavior) {
+	if o == nil || IsNil(o.PolicyOperationRateExceededBehavior) {
 		return nil, false
 	}
 	return o.PolicyOperationRateExceededBehavior, true
@@ -1342,7 +1345,7 @@ func (o *ClientConnectionPolicyResponse) GetPolicyOperationRateExceededBehaviorO
 
 // HasPolicyOperationRateExceededBehavior returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasPolicyOperationRateExceededBehavior() bool {
-	if o != nil && !isNil(o.PolicyOperationRateExceededBehavior) {
+	if o != nil && !IsNil(o.PolicyOperationRateExceededBehavior) {
 		return true
 	}
 
@@ -1356,7 +1359,7 @@ func (o *ClientConnectionPolicyResponse) SetPolicyOperationRateExceededBehavior(
 
 // GetMaximumSearchSizeLimit returns the MaximumSearchSizeLimit field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetMaximumSearchSizeLimit() int32 {
-	if o == nil || isNil(o.MaximumSearchSizeLimit) {
+	if o == nil || IsNil(o.MaximumSearchSizeLimit) {
 		var ret int32
 		return ret
 	}
@@ -1366,7 +1369,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumSearchSizeLimit() int32 {
 // GetMaximumSearchSizeLimitOk returns a tuple with the MaximumSearchSizeLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMaximumSearchSizeLimitOk() (*int32, bool) {
-	if o == nil || isNil(o.MaximumSearchSizeLimit) {
+	if o == nil || IsNil(o.MaximumSearchSizeLimit) {
 		return nil, false
 	}
 	return o.MaximumSearchSizeLimit, true
@@ -1374,7 +1377,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumSearchSizeLimitOk() (*int32, 
 
 // HasMaximumSearchSizeLimit returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasMaximumSearchSizeLimit() bool {
-	if o != nil && !isNil(o.MaximumSearchSizeLimit) {
+	if o != nil && !IsNil(o.MaximumSearchSizeLimit) {
 		return true
 	}
 
@@ -1388,7 +1391,7 @@ func (o *ClientConnectionPolicyResponse) SetMaximumSearchSizeLimit(v int32) {
 
 // GetMaximumSearchTimeLimit returns the MaximumSearchTimeLimit field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetMaximumSearchTimeLimit() string {
-	if o == nil || isNil(o.MaximumSearchTimeLimit) {
+	if o == nil || IsNil(o.MaximumSearchTimeLimit) {
 		var ret string
 		return ret
 	}
@@ -1398,7 +1401,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumSearchTimeLimit() string {
 // GetMaximumSearchTimeLimitOk returns a tuple with the MaximumSearchTimeLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMaximumSearchTimeLimitOk() (*string, bool) {
-	if o == nil || isNil(o.MaximumSearchTimeLimit) {
+	if o == nil || IsNil(o.MaximumSearchTimeLimit) {
 		return nil, false
 	}
 	return o.MaximumSearchTimeLimit, true
@@ -1406,7 +1409,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumSearchTimeLimitOk() (*string,
 
 // HasMaximumSearchTimeLimit returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasMaximumSearchTimeLimit() bool {
-	if o != nil && !isNil(o.MaximumSearchTimeLimit) {
+	if o != nil && !IsNil(o.MaximumSearchTimeLimit) {
 		return true
 	}
 
@@ -1420,7 +1423,7 @@ func (o *ClientConnectionPolicyResponse) SetMaximumSearchTimeLimit(v string) {
 
 // GetMaximumSearchLookthroughLimit returns the MaximumSearchLookthroughLimit field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetMaximumSearchLookthroughLimit() int32 {
-	if o == nil || isNil(o.MaximumSearchLookthroughLimit) {
+	if o == nil || IsNil(o.MaximumSearchLookthroughLimit) {
 		var ret int32
 		return ret
 	}
@@ -1430,7 +1433,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumSearchLookthroughLimit() int3
 // GetMaximumSearchLookthroughLimitOk returns a tuple with the MaximumSearchLookthroughLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMaximumSearchLookthroughLimitOk() (*int32, bool) {
-	if o == nil || isNil(o.MaximumSearchLookthroughLimit) {
+	if o == nil || IsNil(o.MaximumSearchLookthroughLimit) {
 		return nil, false
 	}
 	return o.MaximumSearchLookthroughLimit, true
@@ -1438,7 +1441,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumSearchLookthroughLimitOk() (*
 
 // HasMaximumSearchLookthroughLimit returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasMaximumSearchLookthroughLimit() bool {
-	if o != nil && !isNil(o.MaximumSearchLookthroughLimit) {
+	if o != nil && !IsNil(o.MaximumSearchLookthroughLimit) {
 		return true
 	}
 
@@ -1452,7 +1455,7 @@ func (o *ClientConnectionPolicyResponse) SetMaximumSearchLookthroughLimit(v int3
 
 // GetMaximumLDAPJoinSizeLimit returns the MaximumLDAPJoinSizeLimit field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetMaximumLDAPJoinSizeLimit() int32 {
-	if o == nil || isNil(o.MaximumLDAPJoinSizeLimit) {
+	if o == nil || IsNil(o.MaximumLDAPJoinSizeLimit) {
 		var ret int32
 		return ret
 	}
@@ -1462,7 +1465,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumLDAPJoinSizeLimit() int32 {
 // GetMaximumLDAPJoinSizeLimitOk returns a tuple with the MaximumLDAPJoinSizeLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMaximumLDAPJoinSizeLimitOk() (*int32, bool) {
-	if o == nil || isNil(o.MaximumLDAPJoinSizeLimit) {
+	if o == nil || IsNil(o.MaximumLDAPJoinSizeLimit) {
 		return nil, false
 	}
 	return o.MaximumLDAPJoinSizeLimit, true
@@ -1470,7 +1473,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumLDAPJoinSizeLimitOk() (*int32
 
 // HasMaximumLDAPJoinSizeLimit returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasMaximumLDAPJoinSizeLimit() bool {
-	if o != nil && !isNil(o.MaximumLDAPJoinSizeLimit) {
+	if o != nil && !IsNil(o.MaximumLDAPJoinSizeLimit) {
 		return true
 	}
 
@@ -1484,7 +1487,7 @@ func (o *ClientConnectionPolicyResponse) SetMaximumLDAPJoinSizeLimit(v int32) {
 
 // GetMaximumSortSizeLimitWithoutVLVIndex returns the MaximumSortSizeLimitWithoutVLVIndex field value if set, zero value otherwise.
 func (o *ClientConnectionPolicyResponse) GetMaximumSortSizeLimitWithoutVLVIndex() int32 {
-	if o == nil || isNil(o.MaximumSortSizeLimitWithoutVLVIndex) {
+	if o == nil || IsNil(o.MaximumSortSizeLimitWithoutVLVIndex) {
 		var ret int32
 		return ret
 	}
@@ -1494,7 +1497,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumSortSizeLimitWithoutVLVIndex(
 // GetMaximumSortSizeLimitWithoutVLVIndexOk returns a tuple with the MaximumSortSizeLimitWithoutVLVIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMaximumSortSizeLimitWithoutVLVIndexOk() (*int32, bool) {
-	if o == nil || isNil(o.MaximumSortSizeLimitWithoutVLVIndex) {
+	if o == nil || IsNil(o.MaximumSortSizeLimitWithoutVLVIndex) {
 		return nil, false
 	}
 	return o.MaximumSortSizeLimitWithoutVLVIndex, true
@@ -1502,7 +1505,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumSortSizeLimitWithoutVLVIndexO
 
 // HasMaximumSortSizeLimitWithoutVLVIndex returns a boolean if a field has been set.
 func (o *ClientConnectionPolicyResponse) HasMaximumSortSizeLimitWithoutVLVIndex() bool {
-	if o != nil && !isNil(o.MaximumSortSizeLimitWithoutVLVIndex) {
+	if o != nil && !IsNil(o.MaximumSortSizeLimitWithoutVLVIndex) {
 		return true
 	}
 
@@ -1515,143 +1518,139 @@ func (o *ClientConnectionPolicyResponse) SetMaximumSortSizeLimitWithoutVLVIndex(
 }
 
 func (o ClientConnectionPolicyResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["policyID"] = o.PolicyID
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if true {
-		toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
-	}
-	if !isNil(o.ConnectionCriteria) {
-		toSerialize["connectionCriteria"] = o.ConnectionCriteria
-	}
-	if !isNil(o.TerminateConnection) {
-		toSerialize["terminateConnection"] = o.TerminateConnection
-	}
-	if !isNil(o.SensitiveAttribute) {
-		toSerialize["sensitiveAttribute"] = o.SensitiveAttribute
-	}
-	if !isNil(o.ExcludeGlobalSensitiveAttribute) {
-		toSerialize["excludeGlobalSensitiveAttribute"] = o.ExcludeGlobalSensitiveAttribute
-	}
-	if !isNil(o.ResultCodeMap) {
-		toSerialize["resultCodeMap"] = o.ResultCodeMap
-	}
-	if !isNil(o.IncludedBackendBaseDN) {
-		toSerialize["includedBackendBaseDN"] = o.IncludedBackendBaseDN
-	}
-	if !isNil(o.ExcludedBackendBaseDN) {
-		toSerialize["excludedBackendBaseDN"] = o.ExcludedBackendBaseDN
-	}
-	if true {
-		toSerialize["allowedOperation"] = o.AllowedOperation
-	}
-	if !isNil(o.RequiredOperationRequestCriteria) {
-		toSerialize["requiredOperationRequestCriteria"] = o.RequiredOperationRequestCriteria
-	}
-	if !isNil(o.ProhibitedOperationRequestCriteria) {
-		toSerialize["prohibitedOperationRequestCriteria"] = o.ProhibitedOperationRequestCriteria
-	}
-	if !isNil(o.AllowedRequestControl) {
-		toSerialize["allowedRequestControl"] = o.AllowedRequestControl
-	}
-	if !isNil(o.DeniedRequestControl) {
-		toSerialize["deniedRequestControl"] = o.DeniedRequestControl
-	}
-	if !isNil(o.AllowedExtendedOperation) {
-		toSerialize["allowedExtendedOperation"] = o.AllowedExtendedOperation
-	}
-	if !isNil(o.DeniedExtendedOperation) {
-		toSerialize["deniedExtendedOperation"] = o.DeniedExtendedOperation
-	}
-	if true {
-		toSerialize["allowedAuthType"] = o.AllowedAuthType
-	}
-	if !isNil(o.AllowedSASLMechanism) {
-		toSerialize["allowedSASLMechanism"] = o.AllowedSASLMechanism
-	}
-	if !isNil(o.DeniedSASLMechanism) {
-		toSerialize["deniedSASLMechanism"] = o.DeniedSASLMechanism
-	}
-	if !isNil(o.AllowedFilterType) {
-		toSerialize["allowedFilterType"] = o.AllowedFilterType
-	}
-	if !isNil(o.AllowUnindexedSearches) {
-		toSerialize["allowUnindexedSearches"] = o.AllowUnindexedSearches
-	}
-	if !isNil(o.AllowUnindexedSearchesWithControl) {
-		toSerialize["allowUnindexedSearchesWithControl"] = o.AllowUnindexedSearchesWithControl
-	}
-	if !isNil(o.MinimumSubstringLength) {
-		toSerialize["minimumSubstringLength"] = o.MinimumSubstringLength
-	}
-	if !isNil(o.MaximumConcurrentConnections) {
-		toSerialize["maximumConcurrentConnections"] = o.MaximumConcurrentConnections
-	}
-	if !isNil(o.MaximumConnectionDuration) {
-		toSerialize["maximumConnectionDuration"] = o.MaximumConnectionDuration
-	}
-	if !isNil(o.MaximumIdleConnectionDuration) {
-		toSerialize["maximumIdleConnectionDuration"] = o.MaximumIdleConnectionDuration
-	}
-	if !isNil(o.MaximumOperationCountPerConnection) {
-		toSerialize["maximumOperationCountPerConnection"] = o.MaximumOperationCountPerConnection
-	}
-	if !isNil(o.MaximumConcurrentOperationsPerConnection) {
-		toSerialize["maximumConcurrentOperationsPerConnection"] = o.MaximumConcurrentOperationsPerConnection
-	}
-	if !isNil(o.MaximumConcurrentOperationWaitTimeBeforeRejecting) {
-		toSerialize["maximumConcurrentOperationWaitTimeBeforeRejecting"] = o.MaximumConcurrentOperationWaitTimeBeforeRejecting
-	}
-	if !isNil(o.MaximumConcurrentOperationsPerConnectionExceededBehavior) {
-		toSerialize["maximumConcurrentOperationsPerConnectionExceededBehavior"] = o.MaximumConcurrentOperationsPerConnectionExceededBehavior
-	}
-	if !isNil(o.MaximumConnectionOperationRate) {
-		toSerialize["maximumConnectionOperationRate"] = o.MaximumConnectionOperationRate
-	}
-	if !isNil(o.ConnectionOperationRateExceededBehavior) {
-		toSerialize["connectionOperationRateExceededBehavior"] = o.ConnectionOperationRateExceededBehavior
-	}
-	if !isNil(o.MaximumPolicyOperationRate) {
-		toSerialize["maximumPolicyOperationRate"] = o.MaximumPolicyOperationRate
-	}
-	if !isNil(o.PolicyOperationRateExceededBehavior) {
-		toSerialize["policyOperationRateExceededBehavior"] = o.PolicyOperationRateExceededBehavior
-	}
-	if !isNil(o.MaximumSearchSizeLimit) {
-		toSerialize["maximumSearchSizeLimit"] = o.MaximumSearchSizeLimit
-	}
-	if !isNil(o.MaximumSearchTimeLimit) {
-		toSerialize["maximumSearchTimeLimit"] = o.MaximumSearchTimeLimit
-	}
-	if !isNil(o.MaximumSearchLookthroughLimit) {
-		toSerialize["maximumSearchLookthroughLimit"] = o.MaximumSearchLookthroughLimit
-	}
-	if !isNil(o.MaximumLDAPJoinSizeLimit) {
-		toSerialize["maximumLDAPJoinSizeLimit"] = o.MaximumLDAPJoinSizeLimit
-	}
-	if !isNil(o.MaximumSortSizeLimitWithoutVLVIndex) {
-		toSerialize["maximumSortSizeLimitWithoutVLVIndex"] = o.MaximumSortSizeLimitWithoutVLVIndex
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ClientConnectionPolicyResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	toSerialize["policyID"] = o.PolicyID
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
+	if !IsNil(o.ConnectionCriteria) {
+		toSerialize["connectionCriteria"] = o.ConnectionCriteria
+	}
+	if !IsNil(o.TerminateConnection) {
+		toSerialize["terminateConnection"] = o.TerminateConnection
+	}
+	if !IsNil(o.SensitiveAttribute) {
+		toSerialize["sensitiveAttribute"] = o.SensitiveAttribute
+	}
+	if !IsNil(o.ExcludeGlobalSensitiveAttribute) {
+		toSerialize["excludeGlobalSensitiveAttribute"] = o.ExcludeGlobalSensitiveAttribute
+	}
+	if !IsNil(o.ResultCodeMap) {
+		toSerialize["resultCodeMap"] = o.ResultCodeMap
+	}
+	if !IsNil(o.IncludedBackendBaseDN) {
+		toSerialize["includedBackendBaseDN"] = o.IncludedBackendBaseDN
+	}
+	if !IsNil(o.ExcludedBackendBaseDN) {
+		toSerialize["excludedBackendBaseDN"] = o.ExcludedBackendBaseDN
+	}
+	toSerialize["allowedOperation"] = o.AllowedOperation
+	if !IsNil(o.RequiredOperationRequestCriteria) {
+		toSerialize["requiredOperationRequestCriteria"] = o.RequiredOperationRequestCriteria
+	}
+	if !IsNil(o.ProhibitedOperationRequestCriteria) {
+		toSerialize["prohibitedOperationRequestCriteria"] = o.ProhibitedOperationRequestCriteria
+	}
+	if !IsNil(o.AllowedRequestControl) {
+		toSerialize["allowedRequestControl"] = o.AllowedRequestControl
+	}
+	if !IsNil(o.DeniedRequestControl) {
+		toSerialize["deniedRequestControl"] = o.DeniedRequestControl
+	}
+	if !IsNil(o.AllowedExtendedOperation) {
+		toSerialize["allowedExtendedOperation"] = o.AllowedExtendedOperation
+	}
+	if !IsNil(o.DeniedExtendedOperation) {
+		toSerialize["deniedExtendedOperation"] = o.DeniedExtendedOperation
+	}
+	toSerialize["allowedAuthType"] = o.AllowedAuthType
+	if !IsNil(o.AllowedSASLMechanism) {
+		toSerialize["allowedSASLMechanism"] = o.AllowedSASLMechanism
+	}
+	if !IsNil(o.DeniedSASLMechanism) {
+		toSerialize["deniedSASLMechanism"] = o.DeniedSASLMechanism
+	}
+	if !IsNil(o.AllowedFilterType) {
+		toSerialize["allowedFilterType"] = o.AllowedFilterType
+	}
+	if !IsNil(o.AllowUnindexedSearches) {
+		toSerialize["allowUnindexedSearches"] = o.AllowUnindexedSearches
+	}
+	if !IsNil(o.AllowUnindexedSearchesWithControl) {
+		toSerialize["allowUnindexedSearchesWithControl"] = o.AllowUnindexedSearchesWithControl
+	}
+	if !IsNil(o.MinimumSubstringLength) {
+		toSerialize["minimumSubstringLength"] = o.MinimumSubstringLength
+	}
+	if !IsNil(o.MaximumConcurrentConnections) {
+		toSerialize["maximumConcurrentConnections"] = o.MaximumConcurrentConnections
+	}
+	if !IsNil(o.MaximumConnectionDuration) {
+		toSerialize["maximumConnectionDuration"] = o.MaximumConnectionDuration
+	}
+	if !IsNil(o.MaximumIdleConnectionDuration) {
+		toSerialize["maximumIdleConnectionDuration"] = o.MaximumIdleConnectionDuration
+	}
+	if !IsNil(o.MaximumOperationCountPerConnection) {
+		toSerialize["maximumOperationCountPerConnection"] = o.MaximumOperationCountPerConnection
+	}
+	if !IsNil(o.MaximumConcurrentOperationsPerConnection) {
+		toSerialize["maximumConcurrentOperationsPerConnection"] = o.MaximumConcurrentOperationsPerConnection
+	}
+	if !IsNil(o.MaximumConcurrentOperationWaitTimeBeforeRejecting) {
+		toSerialize["maximumConcurrentOperationWaitTimeBeforeRejecting"] = o.MaximumConcurrentOperationWaitTimeBeforeRejecting
+	}
+	if !IsNil(o.MaximumConcurrentOperationsPerConnectionExceededBehavior) {
+		toSerialize["maximumConcurrentOperationsPerConnectionExceededBehavior"] = o.MaximumConcurrentOperationsPerConnectionExceededBehavior
+	}
+	if !IsNil(o.MaximumConnectionOperationRate) {
+		toSerialize["maximumConnectionOperationRate"] = o.MaximumConnectionOperationRate
+	}
+	if !IsNil(o.ConnectionOperationRateExceededBehavior) {
+		toSerialize["connectionOperationRateExceededBehavior"] = o.ConnectionOperationRateExceededBehavior
+	}
+	if !IsNil(o.MaximumPolicyOperationRate) {
+		toSerialize["maximumPolicyOperationRate"] = o.MaximumPolicyOperationRate
+	}
+	if !IsNil(o.PolicyOperationRateExceededBehavior) {
+		toSerialize["policyOperationRateExceededBehavior"] = o.PolicyOperationRateExceededBehavior
+	}
+	if !IsNil(o.MaximumSearchSizeLimit) {
+		toSerialize["maximumSearchSizeLimit"] = o.MaximumSearchSizeLimit
+	}
+	if !IsNil(o.MaximumSearchTimeLimit) {
+		toSerialize["maximumSearchTimeLimit"] = o.MaximumSearchTimeLimit
+	}
+	if !IsNil(o.MaximumSearchLookthroughLimit) {
+		toSerialize["maximumSearchLookthroughLimit"] = o.MaximumSearchLookthroughLimit
+	}
+	if !IsNil(o.MaximumLDAPJoinSizeLimit) {
+		toSerialize["maximumLDAPJoinSizeLimit"] = o.MaximumLDAPJoinSizeLimit
+	}
+	if !IsNil(o.MaximumSortSizeLimitWithoutVLVIndex) {
+		toSerialize["maximumSortSizeLimitWithoutVLVIndex"] = o.MaximumSortSizeLimitWithoutVLVIndex
+	}
+	return toSerialize, nil
 }
 
 type NullableClientConnectionPolicyResponse struct {

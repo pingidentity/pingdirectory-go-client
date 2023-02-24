@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddFileRetentionRecurringTaskRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddFileRetentionRecurringTaskRequest{}
+
 // AddFileRetentionRecurringTaskRequest struct for AddFileRetentionRecurringTaskRequest
 type AddFileRetentionRecurringTaskRequest struct {
 	// Name of the new Recurring Task
@@ -192,7 +195,7 @@ func (o *AddFileRetentionRecurringTaskRequest) SetTimestampFormat(v Enumrecurrin
 
 // GetRetainFileCount returns the RetainFileCount field value if set, zero value otherwise.
 func (o *AddFileRetentionRecurringTaskRequest) GetRetainFileCount() int32 {
-	if o == nil || isNil(o.RetainFileCount) {
+	if o == nil || IsNil(o.RetainFileCount) {
 		var ret int32
 		return ret
 	}
@@ -202,7 +205,7 @@ func (o *AddFileRetentionRecurringTaskRequest) GetRetainFileCount() int32 {
 // GetRetainFileCountOk returns a tuple with the RetainFileCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileRetentionRecurringTaskRequest) GetRetainFileCountOk() (*int32, bool) {
-	if o == nil || isNil(o.RetainFileCount) {
+	if o == nil || IsNil(o.RetainFileCount) {
 		return nil, false
 	}
 	return o.RetainFileCount, true
@@ -210,7 +213,7 @@ func (o *AddFileRetentionRecurringTaskRequest) GetRetainFileCountOk() (*int32, b
 
 // HasRetainFileCount returns a boolean if a field has been set.
 func (o *AddFileRetentionRecurringTaskRequest) HasRetainFileCount() bool {
-	if o != nil && !isNil(o.RetainFileCount) {
+	if o != nil && !IsNil(o.RetainFileCount) {
 		return true
 	}
 
@@ -224,7 +227,7 @@ func (o *AddFileRetentionRecurringTaskRequest) SetRetainFileCount(v int32) {
 
 // GetRetainFileAge returns the RetainFileAge field value if set, zero value otherwise.
 func (o *AddFileRetentionRecurringTaskRequest) GetRetainFileAge() string {
-	if o == nil || isNil(o.RetainFileAge) {
+	if o == nil || IsNil(o.RetainFileAge) {
 		var ret string
 		return ret
 	}
@@ -234,7 +237,7 @@ func (o *AddFileRetentionRecurringTaskRequest) GetRetainFileAge() string {
 // GetRetainFileAgeOk returns a tuple with the RetainFileAge field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileRetentionRecurringTaskRequest) GetRetainFileAgeOk() (*string, bool) {
-	if o == nil || isNil(o.RetainFileAge) {
+	if o == nil || IsNil(o.RetainFileAge) {
 		return nil, false
 	}
 	return o.RetainFileAge, true
@@ -242,7 +245,7 @@ func (o *AddFileRetentionRecurringTaskRequest) GetRetainFileAgeOk() (*string, bo
 
 // HasRetainFileAge returns a boolean if a field has been set.
 func (o *AddFileRetentionRecurringTaskRequest) HasRetainFileAge() bool {
-	if o != nil && !isNil(o.RetainFileAge) {
+	if o != nil && !IsNil(o.RetainFileAge) {
 		return true
 	}
 
@@ -256,7 +259,7 @@ func (o *AddFileRetentionRecurringTaskRequest) SetRetainFileAge(v string) {
 
 // GetRetainAggregateFileSize returns the RetainAggregateFileSize field value if set, zero value otherwise.
 func (o *AddFileRetentionRecurringTaskRequest) GetRetainAggregateFileSize() string {
-	if o == nil || isNil(o.RetainAggregateFileSize) {
+	if o == nil || IsNil(o.RetainAggregateFileSize) {
 		var ret string
 		return ret
 	}
@@ -266,7 +269,7 @@ func (o *AddFileRetentionRecurringTaskRequest) GetRetainAggregateFileSize() stri
 // GetRetainAggregateFileSizeOk returns a tuple with the RetainAggregateFileSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileRetentionRecurringTaskRequest) GetRetainAggregateFileSizeOk() (*string, bool) {
-	if o == nil || isNil(o.RetainAggregateFileSize) {
+	if o == nil || IsNil(o.RetainAggregateFileSize) {
 		return nil, false
 	}
 	return o.RetainAggregateFileSize, true
@@ -274,7 +277,7 @@ func (o *AddFileRetentionRecurringTaskRequest) GetRetainAggregateFileSizeOk() (*
 
 // HasRetainAggregateFileSize returns a boolean if a field has been set.
 func (o *AddFileRetentionRecurringTaskRequest) HasRetainAggregateFileSize() bool {
-	if o != nil && !isNil(o.RetainAggregateFileSize) {
+	if o != nil && !IsNil(o.RetainAggregateFileSize) {
 		return true
 	}
 
@@ -288,7 +291,7 @@ func (o *AddFileRetentionRecurringTaskRequest) SetRetainAggregateFileSize(v stri
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddFileRetentionRecurringTaskRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -298,7 +301,7 @@ func (o *AddFileRetentionRecurringTaskRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileRetentionRecurringTaskRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -306,7 +309,7 @@ func (o *AddFileRetentionRecurringTaskRequest) GetDescriptionOk() (*string, bool
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddFileRetentionRecurringTaskRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -320,7 +323,7 @@ func (o *AddFileRetentionRecurringTaskRequest) SetDescription(v string) {
 
 // GetCancelOnTaskDependencyFailure returns the CancelOnTaskDependencyFailure field value if set, zero value otherwise.
 func (o *AddFileRetentionRecurringTaskRequest) GetCancelOnTaskDependencyFailure() bool {
-	if o == nil || isNil(o.CancelOnTaskDependencyFailure) {
+	if o == nil || IsNil(o.CancelOnTaskDependencyFailure) {
 		var ret bool
 		return ret
 	}
@@ -330,7 +333,7 @@ func (o *AddFileRetentionRecurringTaskRequest) GetCancelOnTaskDependencyFailure(
 // GetCancelOnTaskDependencyFailureOk returns a tuple with the CancelOnTaskDependencyFailure field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileRetentionRecurringTaskRequest) GetCancelOnTaskDependencyFailureOk() (*bool, bool) {
-	if o == nil || isNil(o.CancelOnTaskDependencyFailure) {
+	if o == nil || IsNil(o.CancelOnTaskDependencyFailure) {
 		return nil, false
 	}
 	return o.CancelOnTaskDependencyFailure, true
@@ -338,7 +341,7 @@ func (o *AddFileRetentionRecurringTaskRequest) GetCancelOnTaskDependencyFailureO
 
 // HasCancelOnTaskDependencyFailure returns a boolean if a field has been set.
 func (o *AddFileRetentionRecurringTaskRequest) HasCancelOnTaskDependencyFailure() bool {
-	if o != nil && !isNil(o.CancelOnTaskDependencyFailure) {
+	if o != nil && !IsNil(o.CancelOnTaskDependencyFailure) {
 		return true
 	}
 
@@ -352,7 +355,7 @@ func (o *AddFileRetentionRecurringTaskRequest) SetCancelOnTaskDependencyFailure(
 
 // GetEmailOnStart returns the EmailOnStart field value if set, zero value otherwise.
 func (o *AddFileRetentionRecurringTaskRequest) GetEmailOnStart() []string {
-	if o == nil || isNil(o.EmailOnStart) {
+	if o == nil || IsNil(o.EmailOnStart) {
 		var ret []string
 		return ret
 	}
@@ -362,7 +365,7 @@ func (o *AddFileRetentionRecurringTaskRequest) GetEmailOnStart() []string {
 // GetEmailOnStartOk returns a tuple with the EmailOnStart field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileRetentionRecurringTaskRequest) GetEmailOnStartOk() ([]string, bool) {
-	if o == nil || isNil(o.EmailOnStart) {
+	if o == nil || IsNil(o.EmailOnStart) {
 		return nil, false
 	}
 	return o.EmailOnStart, true
@@ -370,7 +373,7 @@ func (o *AddFileRetentionRecurringTaskRequest) GetEmailOnStartOk() ([]string, bo
 
 // HasEmailOnStart returns a boolean if a field has been set.
 func (o *AddFileRetentionRecurringTaskRequest) HasEmailOnStart() bool {
-	if o != nil && !isNil(o.EmailOnStart) {
+	if o != nil && !IsNil(o.EmailOnStart) {
 		return true
 	}
 
@@ -384,7 +387,7 @@ func (o *AddFileRetentionRecurringTaskRequest) SetEmailOnStart(v []string) {
 
 // GetEmailOnSuccess returns the EmailOnSuccess field value if set, zero value otherwise.
 func (o *AddFileRetentionRecurringTaskRequest) GetEmailOnSuccess() []string {
-	if o == nil || isNil(o.EmailOnSuccess) {
+	if o == nil || IsNil(o.EmailOnSuccess) {
 		var ret []string
 		return ret
 	}
@@ -394,7 +397,7 @@ func (o *AddFileRetentionRecurringTaskRequest) GetEmailOnSuccess() []string {
 // GetEmailOnSuccessOk returns a tuple with the EmailOnSuccess field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileRetentionRecurringTaskRequest) GetEmailOnSuccessOk() ([]string, bool) {
-	if o == nil || isNil(o.EmailOnSuccess) {
+	if o == nil || IsNil(o.EmailOnSuccess) {
 		return nil, false
 	}
 	return o.EmailOnSuccess, true
@@ -402,7 +405,7 @@ func (o *AddFileRetentionRecurringTaskRequest) GetEmailOnSuccessOk() ([]string, 
 
 // HasEmailOnSuccess returns a boolean if a field has been set.
 func (o *AddFileRetentionRecurringTaskRequest) HasEmailOnSuccess() bool {
-	if o != nil && !isNil(o.EmailOnSuccess) {
+	if o != nil && !IsNil(o.EmailOnSuccess) {
 		return true
 	}
 
@@ -416,7 +419,7 @@ func (o *AddFileRetentionRecurringTaskRequest) SetEmailOnSuccess(v []string) {
 
 // GetEmailOnFailure returns the EmailOnFailure field value if set, zero value otherwise.
 func (o *AddFileRetentionRecurringTaskRequest) GetEmailOnFailure() []string {
-	if o == nil || isNil(o.EmailOnFailure) {
+	if o == nil || IsNil(o.EmailOnFailure) {
 		var ret []string
 		return ret
 	}
@@ -426,7 +429,7 @@ func (o *AddFileRetentionRecurringTaskRequest) GetEmailOnFailure() []string {
 // GetEmailOnFailureOk returns a tuple with the EmailOnFailure field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileRetentionRecurringTaskRequest) GetEmailOnFailureOk() ([]string, bool) {
-	if o == nil || isNil(o.EmailOnFailure) {
+	if o == nil || IsNil(o.EmailOnFailure) {
 		return nil, false
 	}
 	return o.EmailOnFailure, true
@@ -434,7 +437,7 @@ func (o *AddFileRetentionRecurringTaskRequest) GetEmailOnFailureOk() ([]string, 
 
 // HasEmailOnFailure returns a boolean if a field has been set.
 func (o *AddFileRetentionRecurringTaskRequest) HasEmailOnFailure() bool {
-	if o != nil && !isNil(o.EmailOnFailure) {
+	if o != nil && !IsNil(o.EmailOnFailure) {
 		return true
 	}
 
@@ -448,7 +451,7 @@ func (o *AddFileRetentionRecurringTaskRequest) SetEmailOnFailure(v []string) {
 
 // GetAlertOnStart returns the AlertOnStart field value if set, zero value otherwise.
 func (o *AddFileRetentionRecurringTaskRequest) GetAlertOnStart() bool {
-	if o == nil || isNil(o.AlertOnStart) {
+	if o == nil || IsNil(o.AlertOnStart) {
 		var ret bool
 		return ret
 	}
@@ -458,7 +461,7 @@ func (o *AddFileRetentionRecurringTaskRequest) GetAlertOnStart() bool {
 // GetAlertOnStartOk returns a tuple with the AlertOnStart field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileRetentionRecurringTaskRequest) GetAlertOnStartOk() (*bool, bool) {
-	if o == nil || isNil(o.AlertOnStart) {
+	if o == nil || IsNil(o.AlertOnStart) {
 		return nil, false
 	}
 	return o.AlertOnStart, true
@@ -466,7 +469,7 @@ func (o *AddFileRetentionRecurringTaskRequest) GetAlertOnStartOk() (*bool, bool)
 
 // HasAlertOnStart returns a boolean if a field has been set.
 func (o *AddFileRetentionRecurringTaskRequest) HasAlertOnStart() bool {
-	if o != nil && !isNil(o.AlertOnStart) {
+	if o != nil && !IsNil(o.AlertOnStart) {
 		return true
 	}
 
@@ -480,7 +483,7 @@ func (o *AddFileRetentionRecurringTaskRequest) SetAlertOnStart(v bool) {
 
 // GetAlertOnSuccess returns the AlertOnSuccess field value if set, zero value otherwise.
 func (o *AddFileRetentionRecurringTaskRequest) GetAlertOnSuccess() bool {
-	if o == nil || isNil(o.AlertOnSuccess) {
+	if o == nil || IsNil(o.AlertOnSuccess) {
 		var ret bool
 		return ret
 	}
@@ -490,7 +493,7 @@ func (o *AddFileRetentionRecurringTaskRequest) GetAlertOnSuccess() bool {
 // GetAlertOnSuccessOk returns a tuple with the AlertOnSuccess field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileRetentionRecurringTaskRequest) GetAlertOnSuccessOk() (*bool, bool) {
-	if o == nil || isNil(o.AlertOnSuccess) {
+	if o == nil || IsNil(o.AlertOnSuccess) {
 		return nil, false
 	}
 	return o.AlertOnSuccess, true
@@ -498,7 +501,7 @@ func (o *AddFileRetentionRecurringTaskRequest) GetAlertOnSuccessOk() (*bool, boo
 
 // HasAlertOnSuccess returns a boolean if a field has been set.
 func (o *AddFileRetentionRecurringTaskRequest) HasAlertOnSuccess() bool {
-	if o != nil && !isNil(o.AlertOnSuccess) {
+	if o != nil && !IsNil(o.AlertOnSuccess) {
 		return true
 	}
 
@@ -512,7 +515,7 @@ func (o *AddFileRetentionRecurringTaskRequest) SetAlertOnSuccess(v bool) {
 
 // GetAlertOnFailure returns the AlertOnFailure field value if set, zero value otherwise.
 func (o *AddFileRetentionRecurringTaskRequest) GetAlertOnFailure() bool {
-	if o == nil || isNil(o.AlertOnFailure) {
+	if o == nil || IsNil(o.AlertOnFailure) {
 		var ret bool
 		return ret
 	}
@@ -522,7 +525,7 @@ func (o *AddFileRetentionRecurringTaskRequest) GetAlertOnFailure() bool {
 // GetAlertOnFailureOk returns a tuple with the AlertOnFailure field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileRetentionRecurringTaskRequest) GetAlertOnFailureOk() (*bool, bool) {
-	if o == nil || isNil(o.AlertOnFailure) {
+	if o == nil || IsNil(o.AlertOnFailure) {
 		return nil, false
 	}
 	return o.AlertOnFailure, true
@@ -530,7 +533,7 @@ func (o *AddFileRetentionRecurringTaskRequest) GetAlertOnFailureOk() (*bool, boo
 
 // HasAlertOnFailure returns a boolean if a field has been set.
 func (o *AddFileRetentionRecurringTaskRequest) HasAlertOnFailure() bool {
-	if o != nil && !isNil(o.AlertOnFailure) {
+	if o != nil && !IsNil(o.AlertOnFailure) {
 		return true
 	}
 
@@ -543,56 +546,54 @@ func (o *AddFileRetentionRecurringTaskRequest) SetAlertOnFailure(v bool) {
 }
 
 func (o AddFileRetentionRecurringTaskRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["taskName"] = o.TaskName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["targetDirectory"] = o.TargetDirectory
-	}
-	if true {
-		toSerialize["filenamePattern"] = o.FilenamePattern
-	}
-	if true {
-		toSerialize["timestampFormat"] = o.TimestampFormat
-	}
-	if !isNil(o.RetainFileCount) {
-		toSerialize["retainFileCount"] = o.RetainFileCount
-	}
-	if !isNil(o.RetainFileAge) {
-		toSerialize["retainFileAge"] = o.RetainFileAge
-	}
-	if !isNil(o.RetainAggregateFileSize) {
-		toSerialize["retainAggregateFileSize"] = o.RetainAggregateFileSize
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if !isNil(o.CancelOnTaskDependencyFailure) {
-		toSerialize["cancelOnTaskDependencyFailure"] = o.CancelOnTaskDependencyFailure
-	}
-	if !isNil(o.EmailOnStart) {
-		toSerialize["emailOnStart"] = o.EmailOnStart
-	}
-	if !isNil(o.EmailOnSuccess) {
-		toSerialize["emailOnSuccess"] = o.EmailOnSuccess
-	}
-	if !isNil(o.EmailOnFailure) {
-		toSerialize["emailOnFailure"] = o.EmailOnFailure
-	}
-	if !isNil(o.AlertOnStart) {
-		toSerialize["alertOnStart"] = o.AlertOnStart
-	}
-	if !isNil(o.AlertOnSuccess) {
-		toSerialize["alertOnSuccess"] = o.AlertOnSuccess
-	}
-	if !isNil(o.AlertOnFailure) {
-		toSerialize["alertOnFailure"] = o.AlertOnFailure
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddFileRetentionRecurringTaskRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["taskName"] = o.TaskName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["targetDirectory"] = o.TargetDirectory
+	toSerialize["filenamePattern"] = o.FilenamePattern
+	toSerialize["timestampFormat"] = o.TimestampFormat
+	if !IsNil(o.RetainFileCount) {
+		toSerialize["retainFileCount"] = o.RetainFileCount
+	}
+	if !IsNil(o.RetainFileAge) {
+		toSerialize["retainFileAge"] = o.RetainFileAge
+	}
+	if !IsNil(o.RetainAggregateFileSize) {
+		toSerialize["retainAggregateFileSize"] = o.RetainAggregateFileSize
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.CancelOnTaskDependencyFailure) {
+		toSerialize["cancelOnTaskDependencyFailure"] = o.CancelOnTaskDependencyFailure
+	}
+	if !IsNil(o.EmailOnStart) {
+		toSerialize["emailOnStart"] = o.EmailOnStart
+	}
+	if !IsNil(o.EmailOnSuccess) {
+		toSerialize["emailOnSuccess"] = o.EmailOnSuccess
+	}
+	if !IsNil(o.EmailOnFailure) {
+		toSerialize["emailOnFailure"] = o.EmailOnFailure
+	}
+	if !IsNil(o.AlertOnStart) {
+		toSerialize["alertOnStart"] = o.AlertOnStart
+	}
+	if !IsNil(o.AlertOnSuccess) {
+		toSerialize["alertOnSuccess"] = o.AlertOnSuccess
+	}
+	if !IsNil(o.AlertOnFailure) {
+		toSerialize["alertOnFailure"] = o.AlertOnFailure
+	}
+	return toSerialize, nil
 }
 
 type NullableAddFileRetentionRecurringTaskRequest struct {

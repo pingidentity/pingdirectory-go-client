@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the VaultExternalServerResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &VaultExternalServerResponse{}
+
 // VaultExternalServerResponse struct for VaultExternalServerResponse
 type VaultExternalServerResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -58,7 +61,7 @@ func NewVaultExternalServerResponseWithDefaults() *VaultExternalServerResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *VaultExternalServerResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -68,7 +71,7 @@ func (o *VaultExternalServerResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VaultExternalServerResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -76,7 +79,7 @@ func (o *VaultExternalServerResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *VaultExternalServerResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -90,7 +93,7 @@ func (o *VaultExternalServerResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *VaultExternalServerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -100,7 +103,7 @@ func (o *VaultExternalServerResponse) GetUrnpingidentityschemasconfigurationmess
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VaultExternalServerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -108,7 +111,7 @@ func (o *VaultExternalServerResponse) GetUrnpingidentityschemasconfigurationmess
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *VaultExternalServerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -218,7 +221,7 @@ func (o *VaultExternalServerResponse) SetVaultAuthenticationMethod(v string) {
 
 // GetTrustStoreFile returns the TrustStoreFile field value if set, zero value otherwise.
 func (o *VaultExternalServerResponse) GetTrustStoreFile() string {
-	if o == nil || isNil(o.TrustStoreFile) {
+	if o == nil || IsNil(o.TrustStoreFile) {
 		var ret string
 		return ret
 	}
@@ -228,7 +231,7 @@ func (o *VaultExternalServerResponse) GetTrustStoreFile() string {
 // GetTrustStoreFileOk returns a tuple with the TrustStoreFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VaultExternalServerResponse) GetTrustStoreFileOk() (*string, bool) {
-	if o == nil || isNil(o.TrustStoreFile) {
+	if o == nil || IsNil(o.TrustStoreFile) {
 		return nil, false
 	}
 	return o.TrustStoreFile, true
@@ -236,7 +239,7 @@ func (o *VaultExternalServerResponse) GetTrustStoreFileOk() (*string, bool) {
 
 // HasTrustStoreFile returns a boolean if a field has been set.
 func (o *VaultExternalServerResponse) HasTrustStoreFile() bool {
-	if o != nil && !isNil(o.TrustStoreFile) {
+	if o != nil && !IsNil(o.TrustStoreFile) {
 		return true
 	}
 
@@ -250,7 +253,7 @@ func (o *VaultExternalServerResponse) SetTrustStoreFile(v string) {
 
 // GetTrustStorePin returns the TrustStorePin field value if set, zero value otherwise.
 func (o *VaultExternalServerResponse) GetTrustStorePin() string {
-	if o == nil || isNil(o.TrustStorePin) {
+	if o == nil || IsNil(o.TrustStorePin) {
 		var ret string
 		return ret
 	}
@@ -260,7 +263,7 @@ func (o *VaultExternalServerResponse) GetTrustStorePin() string {
 // GetTrustStorePinOk returns a tuple with the TrustStorePin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VaultExternalServerResponse) GetTrustStorePinOk() (*string, bool) {
-	if o == nil || isNil(o.TrustStorePin) {
+	if o == nil || IsNil(o.TrustStorePin) {
 		return nil, false
 	}
 	return o.TrustStorePin, true
@@ -268,7 +271,7 @@ func (o *VaultExternalServerResponse) GetTrustStorePinOk() (*string, bool) {
 
 // HasTrustStorePin returns a boolean if a field has been set.
 func (o *VaultExternalServerResponse) HasTrustStorePin() bool {
-	if o != nil && !isNil(o.TrustStorePin) {
+	if o != nil && !IsNil(o.TrustStorePin) {
 		return true
 	}
 
@@ -282,7 +285,7 @@ func (o *VaultExternalServerResponse) SetTrustStorePin(v string) {
 
 // GetTrustStoreType returns the TrustStoreType field value if set, zero value otherwise.
 func (o *VaultExternalServerResponse) GetTrustStoreType() string {
-	if o == nil || isNil(o.TrustStoreType) {
+	if o == nil || IsNil(o.TrustStoreType) {
 		var ret string
 		return ret
 	}
@@ -292,7 +295,7 @@ func (o *VaultExternalServerResponse) GetTrustStoreType() string {
 // GetTrustStoreTypeOk returns a tuple with the TrustStoreType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VaultExternalServerResponse) GetTrustStoreTypeOk() (*string, bool) {
-	if o == nil || isNil(o.TrustStoreType) {
+	if o == nil || IsNil(o.TrustStoreType) {
 		return nil, false
 	}
 	return o.TrustStoreType, true
@@ -300,7 +303,7 @@ func (o *VaultExternalServerResponse) GetTrustStoreTypeOk() (*string, bool) {
 
 // HasTrustStoreType returns a boolean if a field has been set.
 func (o *VaultExternalServerResponse) HasTrustStoreType() bool {
-	if o != nil && !isNil(o.TrustStoreType) {
+	if o != nil && !IsNil(o.TrustStoreType) {
 		return true
 	}
 
@@ -314,7 +317,7 @@ func (o *VaultExternalServerResponse) SetTrustStoreType(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *VaultExternalServerResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -324,7 +327,7 @@ func (o *VaultExternalServerResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VaultExternalServerResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -332,7 +335,7 @@ func (o *VaultExternalServerResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *VaultExternalServerResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -345,38 +348,38 @@ func (o *VaultExternalServerResponse) SetDescription(v string) {
 }
 
 func (o VaultExternalServerResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["vaultServerBaseURI"] = o.VaultServerBaseURI
-	}
-	if true {
-		toSerialize["vaultAuthenticationMethod"] = o.VaultAuthenticationMethod
-	}
-	if !isNil(o.TrustStoreFile) {
-		toSerialize["trustStoreFile"] = o.TrustStoreFile
-	}
-	if !isNil(o.TrustStorePin) {
-		toSerialize["trustStorePin"] = o.TrustStorePin
-	}
-	if !isNil(o.TrustStoreType) {
-		toSerialize["trustStoreType"] = o.TrustStoreType
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o VaultExternalServerResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["vaultServerBaseURI"] = o.VaultServerBaseURI
+	toSerialize["vaultAuthenticationMethod"] = o.VaultAuthenticationMethod
+	if !IsNil(o.TrustStoreFile) {
+		toSerialize["trustStoreFile"] = o.TrustStoreFile
+	}
+	if !IsNil(o.TrustStorePin) {
+		toSerialize["trustStorePin"] = o.TrustStorePin
+	}
+	if !IsNil(o.TrustStoreType) {
+		toSerialize["trustStoreType"] = o.TrustStoreType
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableVaultExternalServerResponse struct {

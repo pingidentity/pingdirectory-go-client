@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddFingerprintCertificateMapperRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddFingerprintCertificateMapperRequest{}
+
 // AddFingerprintCertificateMapperRequest struct for AddFingerprintCertificateMapperRequest
 type AddFingerprintCertificateMapperRequest struct {
 	// Name of the new Certificate Mapper
@@ -101,7 +104,7 @@ func (o *AddFingerprintCertificateMapperRequest) SetSchemas(v []EnumfingerprintC
 
 // GetFingerprintAttribute returns the FingerprintAttribute field value if set, zero value otherwise.
 func (o *AddFingerprintCertificateMapperRequest) GetFingerprintAttribute() string {
-	if o == nil || isNil(o.FingerprintAttribute) {
+	if o == nil || IsNil(o.FingerprintAttribute) {
 		var ret string
 		return ret
 	}
@@ -111,7 +114,7 @@ func (o *AddFingerprintCertificateMapperRequest) GetFingerprintAttribute() strin
 // GetFingerprintAttributeOk returns a tuple with the FingerprintAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFingerprintCertificateMapperRequest) GetFingerprintAttributeOk() (*string, bool) {
-	if o == nil || isNil(o.FingerprintAttribute) {
+	if o == nil || IsNil(o.FingerprintAttribute) {
 		return nil, false
 	}
 	return o.FingerprintAttribute, true
@@ -119,7 +122,7 @@ func (o *AddFingerprintCertificateMapperRequest) GetFingerprintAttributeOk() (*s
 
 // HasFingerprintAttribute returns a boolean if a field has been set.
 func (o *AddFingerprintCertificateMapperRequest) HasFingerprintAttribute() bool {
-	if o != nil && !isNil(o.FingerprintAttribute) {
+	if o != nil && !IsNil(o.FingerprintAttribute) {
 		return true
 	}
 
@@ -157,7 +160,7 @@ func (o *AddFingerprintCertificateMapperRequest) SetFingerprintAlgorithm(v Enumc
 
 // GetUserBaseDN returns the UserBaseDN field value if set, zero value otherwise.
 func (o *AddFingerprintCertificateMapperRequest) GetUserBaseDN() []string {
-	if o == nil || isNil(o.UserBaseDN) {
+	if o == nil || IsNil(o.UserBaseDN) {
 		var ret []string
 		return ret
 	}
@@ -167,7 +170,7 @@ func (o *AddFingerprintCertificateMapperRequest) GetUserBaseDN() []string {
 // GetUserBaseDNOk returns a tuple with the UserBaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFingerprintCertificateMapperRequest) GetUserBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.UserBaseDN) {
+	if o == nil || IsNil(o.UserBaseDN) {
 		return nil, false
 	}
 	return o.UserBaseDN, true
@@ -175,7 +178,7 @@ func (o *AddFingerprintCertificateMapperRequest) GetUserBaseDNOk() ([]string, bo
 
 // HasUserBaseDN returns a boolean if a field has been set.
 func (o *AddFingerprintCertificateMapperRequest) HasUserBaseDN() bool {
-	if o != nil && !isNil(o.UserBaseDN) {
+	if o != nil && !IsNil(o.UserBaseDN) {
 		return true
 	}
 
@@ -189,7 +192,7 @@ func (o *AddFingerprintCertificateMapperRequest) SetUserBaseDN(v []string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddFingerprintCertificateMapperRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -199,7 +202,7 @@ func (o *AddFingerprintCertificateMapperRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFingerprintCertificateMapperRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -207,7 +210,7 @@ func (o *AddFingerprintCertificateMapperRequest) GetDescriptionOk() (*string, bo
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddFingerprintCertificateMapperRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -244,29 +247,29 @@ func (o *AddFingerprintCertificateMapperRequest) SetEnabled(v bool) {
 }
 
 func (o AddFingerprintCertificateMapperRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["mapperName"] = o.MapperName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.FingerprintAttribute) {
-		toSerialize["fingerprintAttribute"] = o.FingerprintAttribute
-	}
-	if true {
-		toSerialize["fingerprintAlgorithm"] = o.FingerprintAlgorithm
-	}
-	if !isNil(o.UserBaseDN) {
-		toSerialize["userBaseDN"] = o.UserBaseDN
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddFingerprintCertificateMapperRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["mapperName"] = o.MapperName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.FingerprintAttribute) {
+		toSerialize["fingerprintAttribute"] = o.FingerprintAttribute
+	}
+	toSerialize["fingerprintAlgorithm"] = o.FingerprintAlgorithm
+	if !IsNil(o.UserBaseDN) {
+		toSerialize["userBaseDN"] = o.UserBaseDN
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddFingerprintCertificateMapperRequest struct {

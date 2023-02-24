@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the StatsdMonitoringEndpointResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &StatsdMonitoringEndpointResponse{}
+
 // StatsdMonitoringEndpointResponse struct for StatsdMonitoringEndpointResponse
 type StatsdMonitoringEndpointResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -58,7 +61,7 @@ func NewStatsdMonitoringEndpointResponseWithDefaults() *StatsdMonitoringEndpoint
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *StatsdMonitoringEndpointResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -68,7 +71,7 @@ func (o *StatsdMonitoringEndpointResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatsdMonitoringEndpointResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -76,7 +79,7 @@ func (o *StatsdMonitoringEndpointResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *StatsdMonitoringEndpointResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -90,7 +93,7 @@ func (o *StatsdMonitoringEndpointResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *StatsdMonitoringEndpointResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -100,7 +103,7 @@ func (o *StatsdMonitoringEndpointResponse) GetUrnpingidentityschemasconfiguratio
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatsdMonitoringEndpointResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -108,7 +111,7 @@ func (o *StatsdMonitoringEndpointResponse) GetUrnpingidentityschemasconfiguratio
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *StatsdMonitoringEndpointResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -146,7 +149,7 @@ func (o *StatsdMonitoringEndpointResponse) SetId(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *StatsdMonitoringEndpointResponse) GetSchemas() []EnumstatsdMonitoringEndpointSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumstatsdMonitoringEndpointSchemaUrn
 		return ret
 	}
@@ -156,7 +159,7 @@ func (o *StatsdMonitoringEndpointResponse) GetSchemas() []EnumstatsdMonitoringEn
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatsdMonitoringEndpointResponse) GetSchemasOk() ([]EnumstatsdMonitoringEndpointSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -164,7 +167,7 @@ func (o *StatsdMonitoringEndpointResponse) GetSchemasOk() ([]EnumstatsdMonitorin
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *StatsdMonitoringEndpointResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -250,7 +253,7 @@ func (o *StatsdMonitoringEndpointResponse) SetConnectionType(v EnummonitoringEnd
 
 // GetTrustManagerProvider returns the TrustManagerProvider field value if set, zero value otherwise.
 func (o *StatsdMonitoringEndpointResponse) GetTrustManagerProvider() string {
-	if o == nil || isNil(o.TrustManagerProvider) {
+	if o == nil || IsNil(o.TrustManagerProvider) {
 		var ret string
 		return ret
 	}
@@ -260,7 +263,7 @@ func (o *StatsdMonitoringEndpointResponse) GetTrustManagerProvider() string {
 // GetTrustManagerProviderOk returns a tuple with the TrustManagerProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatsdMonitoringEndpointResponse) GetTrustManagerProviderOk() (*string, bool) {
-	if o == nil || isNil(o.TrustManagerProvider) {
+	if o == nil || IsNil(o.TrustManagerProvider) {
 		return nil, false
 	}
 	return o.TrustManagerProvider, true
@@ -268,7 +271,7 @@ func (o *StatsdMonitoringEndpointResponse) GetTrustManagerProviderOk() (*string,
 
 // HasTrustManagerProvider returns a boolean if a field has been set.
 func (o *StatsdMonitoringEndpointResponse) HasTrustManagerProvider() bool {
-	if o != nil && !isNil(o.TrustManagerProvider) {
+	if o != nil && !IsNil(o.TrustManagerProvider) {
 		return true
 	}
 
@@ -282,7 +285,7 @@ func (o *StatsdMonitoringEndpointResponse) SetTrustManagerProvider(v string) {
 
 // GetAdditionalTags returns the AdditionalTags field value if set, zero value otherwise.
 func (o *StatsdMonitoringEndpointResponse) GetAdditionalTags() []string {
-	if o == nil || isNil(o.AdditionalTags) {
+	if o == nil || IsNil(o.AdditionalTags) {
 		var ret []string
 		return ret
 	}
@@ -292,7 +295,7 @@ func (o *StatsdMonitoringEndpointResponse) GetAdditionalTags() []string {
 // GetAdditionalTagsOk returns a tuple with the AdditionalTags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatsdMonitoringEndpointResponse) GetAdditionalTagsOk() ([]string, bool) {
-	if o == nil || isNil(o.AdditionalTags) {
+	if o == nil || IsNil(o.AdditionalTags) {
 		return nil, false
 	}
 	return o.AdditionalTags, true
@@ -300,7 +303,7 @@ func (o *StatsdMonitoringEndpointResponse) GetAdditionalTagsOk() ([]string, bool
 
 // HasAdditionalTags returns a boolean if a field has been set.
 func (o *StatsdMonitoringEndpointResponse) HasAdditionalTags() bool {
-	if o != nil && !isNil(o.AdditionalTags) {
+	if o != nil && !IsNil(o.AdditionalTags) {
 		return true
 	}
 
@@ -337,38 +340,36 @@ func (o *StatsdMonitoringEndpointResponse) SetEnabled(v bool) {
 }
 
 func (o StatsdMonitoringEndpointResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["hostname"] = o.Hostname
-	}
-	if true {
-		toSerialize["serverPort"] = o.ServerPort
-	}
-	if true {
-		toSerialize["connectionType"] = o.ConnectionType
-	}
-	if !isNil(o.TrustManagerProvider) {
-		toSerialize["trustManagerProvider"] = o.TrustManagerProvider
-	}
-	if !isNil(o.AdditionalTags) {
-		toSerialize["additionalTags"] = o.AdditionalTags
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o StatsdMonitoringEndpointResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	toSerialize["hostname"] = o.Hostname
+	toSerialize["serverPort"] = o.ServerPort
+	toSerialize["connectionType"] = o.ConnectionType
+	if !IsNil(o.TrustManagerProvider) {
+		toSerialize["trustManagerProvider"] = o.TrustManagerProvider
+	}
+	if !IsNil(o.AdditionalTags) {
+		toSerialize["additionalTags"] = o.AdditionalTags
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableStatsdMonitoringEndpointResponse struct {

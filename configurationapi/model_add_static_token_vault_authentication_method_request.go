@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddStaticTokenVaultAuthenticationMethodRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddStaticTokenVaultAuthenticationMethodRequest{}
+
 // AddStaticTokenVaultAuthenticationMethodRequest struct for AddStaticTokenVaultAuthenticationMethodRequest
 type AddStaticTokenVaultAuthenticationMethodRequest struct {
 	// Name of the new Vault Authentication Method
@@ -119,7 +122,7 @@ func (o *AddStaticTokenVaultAuthenticationMethodRequest) SetVaultAccessToken(v s
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddStaticTokenVaultAuthenticationMethodRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -129,7 +132,7 @@ func (o *AddStaticTokenVaultAuthenticationMethodRequest) GetDescription() string
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddStaticTokenVaultAuthenticationMethodRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -137,7 +140,7 @@ func (o *AddStaticTokenVaultAuthenticationMethodRequest) GetDescriptionOk() (*st
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddStaticTokenVaultAuthenticationMethodRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -150,20 +153,22 @@ func (o *AddStaticTokenVaultAuthenticationMethodRequest) SetDescription(v string
 }
 
 func (o AddStaticTokenVaultAuthenticationMethodRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["methodName"] = o.MethodName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["vaultAccessToken"] = o.VaultAccessToken
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddStaticTokenVaultAuthenticationMethodRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["methodName"] = o.MethodName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["vaultAccessToken"] = o.VaultAccessToken
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAddStaticTokenVaultAuthenticationMethodRequest struct {

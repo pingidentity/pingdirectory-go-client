@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddLocalDbCompositeIndexRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddLocalDbCompositeIndexRequest{}
+
 // AddLocalDbCompositeIndexRequest struct for AddLocalDbCompositeIndexRequest
 type AddLocalDbCompositeIndexRequest struct {
 	// Name of the new Local DB Composite Index
@@ -79,7 +82,7 @@ func (o *AddLocalDbCompositeIndexRequest) SetIndexName(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *AddLocalDbCompositeIndexRequest) GetSchemas() []EnumlocalDbCompositeIndexSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumlocalDbCompositeIndexSchemaUrn
 		return ret
 	}
@@ -89,7 +92,7 @@ func (o *AddLocalDbCompositeIndexRequest) GetSchemas() []EnumlocalDbCompositeInd
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLocalDbCompositeIndexRequest) GetSchemasOk() ([]EnumlocalDbCompositeIndexSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -97,7 +100,7 @@ func (o *AddLocalDbCompositeIndexRequest) GetSchemasOk() ([]EnumlocalDbComposite
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *AddLocalDbCompositeIndexRequest) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -111,7 +114,7 @@ func (o *AddLocalDbCompositeIndexRequest) SetSchemas(v []EnumlocalDbCompositeInd
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddLocalDbCompositeIndexRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -121,7 +124,7 @@ func (o *AddLocalDbCompositeIndexRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLocalDbCompositeIndexRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -129,7 +132,7 @@ func (o *AddLocalDbCompositeIndexRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddLocalDbCompositeIndexRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -167,7 +170,7 @@ func (o *AddLocalDbCompositeIndexRequest) SetIndexFilterPattern(v string) {
 
 // GetIndexBaseDNPattern returns the IndexBaseDNPattern field value if set, zero value otherwise.
 func (o *AddLocalDbCompositeIndexRequest) GetIndexBaseDNPattern() string {
-	if o == nil || isNil(o.IndexBaseDNPattern) {
+	if o == nil || IsNil(o.IndexBaseDNPattern) {
 		var ret string
 		return ret
 	}
@@ -177,7 +180,7 @@ func (o *AddLocalDbCompositeIndexRequest) GetIndexBaseDNPattern() string {
 // GetIndexBaseDNPatternOk returns a tuple with the IndexBaseDNPattern field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLocalDbCompositeIndexRequest) GetIndexBaseDNPatternOk() (*string, bool) {
-	if o == nil || isNil(o.IndexBaseDNPattern) {
+	if o == nil || IsNil(o.IndexBaseDNPattern) {
 		return nil, false
 	}
 	return o.IndexBaseDNPattern, true
@@ -185,7 +188,7 @@ func (o *AddLocalDbCompositeIndexRequest) GetIndexBaseDNPatternOk() (*string, bo
 
 // HasIndexBaseDNPattern returns a boolean if a field has been set.
 func (o *AddLocalDbCompositeIndexRequest) HasIndexBaseDNPattern() bool {
-	if o != nil && !isNil(o.IndexBaseDNPattern) {
+	if o != nil && !IsNil(o.IndexBaseDNPattern) {
 		return true
 	}
 
@@ -199,7 +202,7 @@ func (o *AddLocalDbCompositeIndexRequest) SetIndexBaseDNPattern(v string) {
 
 // GetIndexEntryLimit returns the IndexEntryLimit field value if set, zero value otherwise.
 func (o *AddLocalDbCompositeIndexRequest) GetIndexEntryLimit() int32 {
-	if o == nil || isNil(o.IndexEntryLimit) {
+	if o == nil || IsNil(o.IndexEntryLimit) {
 		var ret int32
 		return ret
 	}
@@ -209,7 +212,7 @@ func (o *AddLocalDbCompositeIndexRequest) GetIndexEntryLimit() int32 {
 // GetIndexEntryLimitOk returns a tuple with the IndexEntryLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLocalDbCompositeIndexRequest) GetIndexEntryLimitOk() (*int32, bool) {
-	if o == nil || isNil(o.IndexEntryLimit) {
+	if o == nil || IsNil(o.IndexEntryLimit) {
 		return nil, false
 	}
 	return o.IndexEntryLimit, true
@@ -217,7 +220,7 @@ func (o *AddLocalDbCompositeIndexRequest) GetIndexEntryLimitOk() (*int32, bool) 
 
 // HasIndexEntryLimit returns a boolean if a field has been set.
 func (o *AddLocalDbCompositeIndexRequest) HasIndexEntryLimit() bool {
-	if o != nil && !isNil(o.IndexEntryLimit) {
+	if o != nil && !IsNil(o.IndexEntryLimit) {
 		return true
 	}
 
@@ -231,7 +234,7 @@ func (o *AddLocalDbCompositeIndexRequest) SetIndexEntryLimit(v int32) {
 
 // GetPrimeIndex returns the PrimeIndex field value if set, zero value otherwise.
 func (o *AddLocalDbCompositeIndexRequest) GetPrimeIndex() bool {
-	if o == nil || isNil(o.PrimeIndex) {
+	if o == nil || IsNil(o.PrimeIndex) {
 		var ret bool
 		return ret
 	}
@@ -241,7 +244,7 @@ func (o *AddLocalDbCompositeIndexRequest) GetPrimeIndex() bool {
 // GetPrimeIndexOk returns a tuple with the PrimeIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLocalDbCompositeIndexRequest) GetPrimeIndexOk() (*bool, bool) {
-	if o == nil || isNil(o.PrimeIndex) {
+	if o == nil || IsNil(o.PrimeIndex) {
 		return nil, false
 	}
 	return o.PrimeIndex, true
@@ -249,7 +252,7 @@ func (o *AddLocalDbCompositeIndexRequest) GetPrimeIndexOk() (*bool, bool) {
 
 // HasPrimeIndex returns a boolean if a field has been set.
 func (o *AddLocalDbCompositeIndexRequest) HasPrimeIndex() bool {
-	if o != nil && !isNil(o.PrimeIndex) {
+	if o != nil && !IsNil(o.PrimeIndex) {
 		return true
 	}
 
@@ -263,7 +266,7 @@ func (o *AddLocalDbCompositeIndexRequest) SetPrimeIndex(v bool) {
 
 // GetPrimeInternalNodesOnly returns the PrimeInternalNodesOnly field value if set, zero value otherwise.
 func (o *AddLocalDbCompositeIndexRequest) GetPrimeInternalNodesOnly() bool {
-	if o == nil || isNil(o.PrimeInternalNodesOnly) {
+	if o == nil || IsNil(o.PrimeInternalNodesOnly) {
 		var ret bool
 		return ret
 	}
@@ -273,7 +276,7 @@ func (o *AddLocalDbCompositeIndexRequest) GetPrimeInternalNodesOnly() bool {
 // GetPrimeInternalNodesOnlyOk returns a tuple with the PrimeInternalNodesOnly field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLocalDbCompositeIndexRequest) GetPrimeInternalNodesOnlyOk() (*bool, bool) {
-	if o == nil || isNil(o.PrimeInternalNodesOnly) {
+	if o == nil || IsNil(o.PrimeInternalNodesOnly) {
 		return nil, false
 	}
 	return o.PrimeInternalNodesOnly, true
@@ -281,7 +284,7 @@ func (o *AddLocalDbCompositeIndexRequest) GetPrimeInternalNodesOnlyOk() (*bool, 
 
 // HasPrimeInternalNodesOnly returns a boolean if a field has been set.
 func (o *AddLocalDbCompositeIndexRequest) HasPrimeInternalNodesOnly() bool {
-	if o != nil && !isNil(o.PrimeInternalNodesOnly) {
+	if o != nil && !IsNil(o.PrimeInternalNodesOnly) {
 		return true
 	}
 
@@ -295,7 +298,7 @@ func (o *AddLocalDbCompositeIndexRequest) SetPrimeInternalNodesOnly(v bool) {
 
 // GetCacheMode returns the CacheMode field value if set, zero value otherwise.
 func (o *AddLocalDbCompositeIndexRequest) GetCacheMode() EnumlocalDbCompositeIndexCacheModeProp {
-	if o == nil || isNil(o.CacheMode) {
+	if o == nil || IsNil(o.CacheMode) {
 		var ret EnumlocalDbCompositeIndexCacheModeProp
 		return ret
 	}
@@ -305,7 +308,7 @@ func (o *AddLocalDbCompositeIndexRequest) GetCacheMode() EnumlocalDbCompositeInd
 // GetCacheModeOk returns a tuple with the CacheMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLocalDbCompositeIndexRequest) GetCacheModeOk() (*EnumlocalDbCompositeIndexCacheModeProp, bool) {
-	if o == nil || isNil(o.CacheMode) {
+	if o == nil || IsNil(o.CacheMode) {
 		return nil, false
 	}
 	return o.CacheMode, true
@@ -313,7 +316,7 @@ func (o *AddLocalDbCompositeIndexRequest) GetCacheModeOk() (*EnumlocalDbComposit
 
 // HasCacheMode returns a boolean if a field has been set.
 func (o *AddLocalDbCompositeIndexRequest) HasCacheMode() bool {
-	if o != nil && !isNil(o.CacheMode) {
+	if o != nil && !IsNil(o.CacheMode) {
 		return true
 	}
 
@@ -326,35 +329,39 @@ func (o *AddLocalDbCompositeIndexRequest) SetCacheMode(v EnumlocalDbCompositeInd
 }
 
 func (o AddLocalDbCompositeIndexRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["indexName"] = o.IndexName
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["indexFilterPattern"] = o.IndexFilterPattern
-	}
-	if !isNil(o.IndexBaseDNPattern) {
-		toSerialize["indexBaseDNPattern"] = o.IndexBaseDNPattern
-	}
-	if !isNil(o.IndexEntryLimit) {
-		toSerialize["indexEntryLimit"] = o.IndexEntryLimit
-	}
-	if !isNil(o.PrimeIndex) {
-		toSerialize["primeIndex"] = o.PrimeIndex
-	}
-	if !isNil(o.PrimeInternalNodesOnly) {
-		toSerialize["primeInternalNodesOnly"] = o.PrimeInternalNodesOnly
-	}
-	if !isNil(o.CacheMode) {
-		toSerialize["cacheMode"] = o.CacheMode
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddLocalDbCompositeIndexRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["indexName"] = o.IndexName
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["indexFilterPattern"] = o.IndexFilterPattern
+	if !IsNil(o.IndexBaseDNPattern) {
+		toSerialize["indexBaseDNPattern"] = o.IndexBaseDNPattern
+	}
+	if !IsNil(o.IndexEntryLimit) {
+		toSerialize["indexEntryLimit"] = o.IndexEntryLimit
+	}
+	if !IsNil(o.PrimeIndex) {
+		toSerialize["primeIndex"] = o.PrimeIndex
+	}
+	if !IsNil(o.PrimeInternalNodesOnly) {
+		toSerialize["primeInternalNodesOnly"] = o.PrimeInternalNodesOnly
+	}
+	if !IsNil(o.CacheMode) {
+		toSerialize["cacheMode"] = o.CacheMode
+	}
+	return toSerialize, nil
 }
 
 type NullableAddLocalDbCompositeIndexRequest struct {

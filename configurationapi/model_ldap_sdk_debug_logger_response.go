@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the LdapSdkDebugLoggerResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &LdapSdkDebugLoggerResponse{}
+
 // LdapSdkDebugLoggerResponse struct for LdapSdkDebugLoggerResponse
 type LdapSdkDebugLoggerResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -88,7 +91,7 @@ func NewLdapSdkDebugLoggerResponseWithDefaults() *LdapSdkDebugLoggerResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *LdapSdkDebugLoggerResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -98,7 +101,7 @@ func (o *LdapSdkDebugLoggerResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapSdkDebugLoggerResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -106,7 +109,7 @@ func (o *LdapSdkDebugLoggerResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *LdapSdkDebugLoggerResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -120,7 +123,7 @@ func (o *LdapSdkDebugLoggerResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *LdapSdkDebugLoggerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -130,7 +133,7 @@ func (o *LdapSdkDebugLoggerResponse) GetUrnpingidentityschemasconfigurationmessa
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapSdkDebugLoggerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -138,7 +141,7 @@ func (o *LdapSdkDebugLoggerResponse) GetUrnpingidentityschemasconfigurationmessa
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *LdapSdkDebugLoggerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -152,7 +155,7 @@ func (o *LdapSdkDebugLoggerResponse) SetUrnpingidentityschemasconfigurationmessa
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *LdapSdkDebugLoggerResponse) GetSchemas() []EnumldapSdkDebugLoggerSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumldapSdkDebugLoggerSchemaUrn
 		return ret
 	}
@@ -162,7 +165,7 @@ func (o *LdapSdkDebugLoggerResponse) GetSchemas() []EnumldapSdkDebugLoggerSchema
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapSdkDebugLoggerResponse) GetSchemasOk() ([]EnumldapSdkDebugLoggerSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -170,7 +173,7 @@ func (o *LdapSdkDebugLoggerResponse) GetSchemasOk() ([]EnumldapSdkDebugLoggerSch
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *LdapSdkDebugLoggerResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -184,7 +187,7 @@ func (o *LdapSdkDebugLoggerResponse) SetSchemas(v []EnumldapSdkDebugLoggerSchema
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *LdapSdkDebugLoggerResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -194,7 +197,7 @@ func (o *LdapSdkDebugLoggerResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapSdkDebugLoggerResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -202,7 +205,7 @@ func (o *LdapSdkDebugLoggerResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *LdapSdkDebugLoggerResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -360,7 +363,7 @@ func (o *LdapSdkDebugLoggerResponse) SetLogFilePermissions(v string) {
 
 // GetTimeInterval returns the TimeInterval field value if set, zero value otherwise.
 func (o *LdapSdkDebugLoggerResponse) GetTimeInterval() string {
-	if o == nil || isNil(o.TimeInterval) {
+	if o == nil || IsNil(o.TimeInterval) {
 		var ret string
 		return ret
 	}
@@ -370,7 +373,7 @@ func (o *LdapSdkDebugLoggerResponse) GetTimeInterval() string {
 // GetTimeIntervalOk returns a tuple with the TimeInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapSdkDebugLoggerResponse) GetTimeIntervalOk() (*string, bool) {
-	if o == nil || isNil(o.TimeInterval) {
+	if o == nil || IsNil(o.TimeInterval) {
 		return nil, false
 	}
 	return o.TimeInterval, true
@@ -378,7 +381,7 @@ func (o *LdapSdkDebugLoggerResponse) GetTimeIntervalOk() (*string, bool) {
 
 // HasTimeInterval returns a boolean if a field has been set.
 func (o *LdapSdkDebugLoggerResponse) HasTimeInterval() bool {
-	if o != nil && !isNil(o.TimeInterval) {
+	if o != nil && !IsNil(o.TimeInterval) {
 		return true
 	}
 
@@ -392,7 +395,7 @@ func (o *LdapSdkDebugLoggerResponse) SetTimeInterval(v string) {
 
 // GetAutoFlush returns the AutoFlush field value if set, zero value otherwise.
 func (o *LdapSdkDebugLoggerResponse) GetAutoFlush() bool {
-	if o == nil || isNil(o.AutoFlush) {
+	if o == nil || IsNil(o.AutoFlush) {
 		var ret bool
 		return ret
 	}
@@ -402,7 +405,7 @@ func (o *LdapSdkDebugLoggerResponse) GetAutoFlush() bool {
 // GetAutoFlushOk returns a tuple with the AutoFlush field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapSdkDebugLoggerResponse) GetAutoFlushOk() (*bool, bool) {
-	if o == nil || isNil(o.AutoFlush) {
+	if o == nil || IsNil(o.AutoFlush) {
 		return nil, false
 	}
 	return o.AutoFlush, true
@@ -410,7 +413,7 @@ func (o *LdapSdkDebugLoggerResponse) GetAutoFlushOk() (*bool, bool) {
 
 // HasAutoFlush returns a boolean if a field has been set.
 func (o *LdapSdkDebugLoggerResponse) HasAutoFlush() bool {
-	if o != nil && !isNil(o.AutoFlush) {
+	if o != nil && !IsNil(o.AutoFlush) {
 		return true
 	}
 
@@ -448,7 +451,7 @@ func (o *LdapSdkDebugLoggerResponse) SetAsynchronous(v bool) {
 
 // GetQueueSize returns the QueueSize field value if set, zero value otherwise.
 func (o *LdapSdkDebugLoggerResponse) GetQueueSize() int32 {
-	if o == nil || isNil(o.QueueSize) {
+	if o == nil || IsNil(o.QueueSize) {
 		var ret int32
 		return ret
 	}
@@ -458,7 +461,7 @@ func (o *LdapSdkDebugLoggerResponse) GetQueueSize() int32 {
 // GetQueueSizeOk returns a tuple with the QueueSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapSdkDebugLoggerResponse) GetQueueSizeOk() (*int32, bool) {
-	if o == nil || isNil(o.QueueSize) {
+	if o == nil || IsNil(o.QueueSize) {
 		return nil, false
 	}
 	return o.QueueSize, true
@@ -466,7 +469,7 @@ func (o *LdapSdkDebugLoggerResponse) GetQueueSizeOk() (*int32, bool) {
 
 // HasQueueSize returns a boolean if a field has been set.
 func (o *LdapSdkDebugLoggerResponse) HasQueueSize() bool {
-	if o != nil && !isNil(o.QueueSize) {
+	if o != nil && !IsNil(o.QueueSize) {
 		return true
 	}
 
@@ -480,7 +483,7 @@ func (o *LdapSdkDebugLoggerResponse) SetQueueSize(v int32) {
 
 // GetBufferSize returns the BufferSize field value if set, zero value otherwise.
 func (o *LdapSdkDebugLoggerResponse) GetBufferSize() string {
-	if o == nil || isNil(o.BufferSize) {
+	if o == nil || IsNil(o.BufferSize) {
 		var ret string
 		return ret
 	}
@@ -490,7 +493,7 @@ func (o *LdapSdkDebugLoggerResponse) GetBufferSize() string {
 // GetBufferSizeOk returns a tuple with the BufferSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapSdkDebugLoggerResponse) GetBufferSizeOk() (*string, bool) {
-	if o == nil || isNil(o.BufferSize) {
+	if o == nil || IsNil(o.BufferSize) {
 		return nil, false
 	}
 	return o.BufferSize, true
@@ -498,7 +501,7 @@ func (o *LdapSdkDebugLoggerResponse) GetBufferSizeOk() (*string, bool) {
 
 // HasBufferSize returns a boolean if a field has been set.
 func (o *LdapSdkDebugLoggerResponse) HasBufferSize() bool {
-	if o != nil && !isNil(o.BufferSize) {
+	if o != nil && !IsNil(o.BufferSize) {
 		return true
 	}
 
@@ -512,7 +515,7 @@ func (o *LdapSdkDebugLoggerResponse) SetBufferSize(v string) {
 
 // GetAppend returns the Append field value if set, zero value otherwise.
 func (o *LdapSdkDebugLoggerResponse) GetAppend() bool {
-	if o == nil || isNil(o.Append) {
+	if o == nil || IsNil(o.Append) {
 		var ret bool
 		return ret
 	}
@@ -522,7 +525,7 @@ func (o *LdapSdkDebugLoggerResponse) GetAppend() bool {
 // GetAppendOk returns a tuple with the Append field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapSdkDebugLoggerResponse) GetAppendOk() (*bool, bool) {
-	if o == nil || isNil(o.Append) {
+	if o == nil || IsNil(o.Append) {
 		return nil, false
 	}
 	return o.Append, true
@@ -530,7 +533,7 @@ func (o *LdapSdkDebugLoggerResponse) GetAppendOk() (*bool, bool) {
 
 // HasAppend returns a boolean if a field has been set.
 func (o *LdapSdkDebugLoggerResponse) HasAppend() bool {
-	if o != nil && !isNil(o.Append) {
+	if o != nil && !IsNil(o.Append) {
 		return true
 	}
 
@@ -568,7 +571,7 @@ func (o *LdapSdkDebugLoggerResponse) SetRotationPolicy(v []string) {
 
 // GetRotationListener returns the RotationListener field value if set, zero value otherwise.
 func (o *LdapSdkDebugLoggerResponse) GetRotationListener() []string {
-	if o == nil || isNil(o.RotationListener) {
+	if o == nil || IsNil(o.RotationListener) {
 		var ret []string
 		return ret
 	}
@@ -578,7 +581,7 @@ func (o *LdapSdkDebugLoggerResponse) GetRotationListener() []string {
 // GetRotationListenerOk returns a tuple with the RotationListener field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapSdkDebugLoggerResponse) GetRotationListenerOk() ([]string, bool) {
-	if o == nil || isNil(o.RotationListener) {
+	if o == nil || IsNil(o.RotationListener) {
 		return nil, false
 	}
 	return o.RotationListener, true
@@ -586,7 +589,7 @@ func (o *LdapSdkDebugLoggerResponse) GetRotationListenerOk() ([]string, bool) {
 
 // HasRotationListener returns a boolean if a field has been set.
 func (o *LdapSdkDebugLoggerResponse) HasRotationListener() bool {
-	if o != nil && !isNil(o.RotationListener) {
+	if o != nil && !IsNil(o.RotationListener) {
 		return true
 	}
 
@@ -624,7 +627,7 @@ func (o *LdapSdkDebugLoggerResponse) SetRetentionPolicy(v []string) {
 
 // GetCompressionMechanism returns the CompressionMechanism field value if set, zero value otherwise.
 func (o *LdapSdkDebugLoggerResponse) GetCompressionMechanism() EnumldapSdkDebugLoggerCompressionMechanismProp {
-	if o == nil || isNil(o.CompressionMechanism) {
+	if o == nil || IsNil(o.CompressionMechanism) {
 		var ret EnumldapSdkDebugLoggerCompressionMechanismProp
 		return ret
 	}
@@ -634,7 +637,7 @@ func (o *LdapSdkDebugLoggerResponse) GetCompressionMechanism() EnumldapSdkDebugL
 // GetCompressionMechanismOk returns a tuple with the CompressionMechanism field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapSdkDebugLoggerResponse) GetCompressionMechanismOk() (*EnumldapSdkDebugLoggerCompressionMechanismProp, bool) {
-	if o == nil || isNil(o.CompressionMechanism) {
+	if o == nil || IsNil(o.CompressionMechanism) {
 		return nil, false
 	}
 	return o.CompressionMechanism, true
@@ -642,7 +645,7 @@ func (o *LdapSdkDebugLoggerResponse) GetCompressionMechanismOk() (*EnumldapSdkDe
 
 // HasCompressionMechanism returns a boolean if a field has been set.
 func (o *LdapSdkDebugLoggerResponse) HasCompressionMechanism() bool {
-	if o != nil && !isNil(o.CompressionMechanism) {
+	if o != nil && !IsNil(o.CompressionMechanism) {
 		return true
 	}
 
@@ -656,7 +659,7 @@ func (o *LdapSdkDebugLoggerResponse) SetCompressionMechanism(v EnumldapSdkDebugL
 
 // GetSignLog returns the SignLog field value if set, zero value otherwise.
 func (o *LdapSdkDebugLoggerResponse) GetSignLog() bool {
-	if o == nil || isNil(o.SignLog) {
+	if o == nil || IsNil(o.SignLog) {
 		var ret bool
 		return ret
 	}
@@ -666,7 +669,7 @@ func (o *LdapSdkDebugLoggerResponse) GetSignLog() bool {
 // GetSignLogOk returns a tuple with the SignLog field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapSdkDebugLoggerResponse) GetSignLogOk() (*bool, bool) {
-	if o == nil || isNil(o.SignLog) {
+	if o == nil || IsNil(o.SignLog) {
 		return nil, false
 	}
 	return o.SignLog, true
@@ -674,7 +677,7 @@ func (o *LdapSdkDebugLoggerResponse) GetSignLogOk() (*bool, bool) {
 
 // HasSignLog returns a boolean if a field has been set.
 func (o *LdapSdkDebugLoggerResponse) HasSignLog() bool {
-	if o != nil && !isNil(o.SignLog) {
+	if o != nil && !IsNil(o.SignLog) {
 		return true
 	}
 
@@ -688,7 +691,7 @@ func (o *LdapSdkDebugLoggerResponse) SetSignLog(v bool) {
 
 // GetEncryptLog returns the EncryptLog field value if set, zero value otherwise.
 func (o *LdapSdkDebugLoggerResponse) GetEncryptLog() bool {
-	if o == nil || isNil(o.EncryptLog) {
+	if o == nil || IsNil(o.EncryptLog) {
 		var ret bool
 		return ret
 	}
@@ -698,7 +701,7 @@ func (o *LdapSdkDebugLoggerResponse) GetEncryptLog() bool {
 // GetEncryptLogOk returns a tuple with the EncryptLog field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapSdkDebugLoggerResponse) GetEncryptLogOk() (*bool, bool) {
-	if o == nil || isNil(o.EncryptLog) {
+	if o == nil || IsNil(o.EncryptLog) {
 		return nil, false
 	}
 	return o.EncryptLog, true
@@ -706,7 +709,7 @@ func (o *LdapSdkDebugLoggerResponse) GetEncryptLogOk() (*bool, bool) {
 
 // HasEncryptLog returns a boolean if a field has been set.
 func (o *LdapSdkDebugLoggerResponse) HasEncryptLog() bool {
-	if o != nil && !isNil(o.EncryptLog) {
+	if o != nil && !IsNil(o.EncryptLog) {
 		return true
 	}
 
@@ -720,7 +723,7 @@ func (o *LdapSdkDebugLoggerResponse) SetEncryptLog(v bool) {
 
 // GetEncryptionSettingsDefinitionID returns the EncryptionSettingsDefinitionID field value if set, zero value otherwise.
 func (o *LdapSdkDebugLoggerResponse) GetEncryptionSettingsDefinitionID() string {
-	if o == nil || isNil(o.EncryptionSettingsDefinitionID) {
+	if o == nil || IsNil(o.EncryptionSettingsDefinitionID) {
 		var ret string
 		return ret
 	}
@@ -730,7 +733,7 @@ func (o *LdapSdkDebugLoggerResponse) GetEncryptionSettingsDefinitionID() string 
 // GetEncryptionSettingsDefinitionIDOk returns a tuple with the EncryptionSettingsDefinitionID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapSdkDebugLoggerResponse) GetEncryptionSettingsDefinitionIDOk() (*string, bool) {
-	if o == nil || isNil(o.EncryptionSettingsDefinitionID) {
+	if o == nil || IsNil(o.EncryptionSettingsDefinitionID) {
 		return nil, false
 	}
 	return o.EncryptionSettingsDefinitionID, true
@@ -738,7 +741,7 @@ func (o *LdapSdkDebugLoggerResponse) GetEncryptionSettingsDefinitionIDOk() (*str
 
 // HasEncryptionSettingsDefinitionID returns a boolean if a field has been set.
 func (o *LdapSdkDebugLoggerResponse) HasEncryptionSettingsDefinitionID() bool {
-	if o != nil && !isNil(o.EncryptionSettingsDefinitionID) {
+	if o != nil && !IsNil(o.EncryptionSettingsDefinitionID) {
 		return true
 	}
 
@@ -752,7 +755,7 @@ func (o *LdapSdkDebugLoggerResponse) SetEncryptionSettingsDefinitionID(v string)
 
 // GetTimestampPrecision returns the TimestampPrecision field value if set, zero value otherwise.
 func (o *LdapSdkDebugLoggerResponse) GetTimestampPrecision() EnumldapSdkDebugLoggerTimestampPrecisionProp {
-	if o == nil || isNil(o.TimestampPrecision) {
+	if o == nil || IsNil(o.TimestampPrecision) {
 		var ret EnumldapSdkDebugLoggerTimestampPrecisionProp
 		return ret
 	}
@@ -762,7 +765,7 @@ func (o *LdapSdkDebugLoggerResponse) GetTimestampPrecision() EnumldapSdkDebugLog
 // GetTimestampPrecisionOk returns a tuple with the TimestampPrecision field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapSdkDebugLoggerResponse) GetTimestampPrecisionOk() (*EnumldapSdkDebugLoggerTimestampPrecisionProp, bool) {
-	if o == nil || isNil(o.TimestampPrecision) {
+	if o == nil || IsNil(o.TimestampPrecision) {
 		return nil, false
 	}
 	return o.TimestampPrecision, true
@@ -770,7 +773,7 @@ func (o *LdapSdkDebugLoggerResponse) GetTimestampPrecisionOk() (*EnumldapSdkDebu
 
 // HasTimestampPrecision returns a boolean if a field has been set.
 func (o *LdapSdkDebugLoggerResponse) HasTimestampPrecision() bool {
-	if o != nil && !isNil(o.TimestampPrecision) {
+	if o != nil && !IsNil(o.TimestampPrecision) {
 		return true
 	}
 
@@ -784,7 +787,7 @@ func (o *LdapSdkDebugLoggerResponse) SetTimestampPrecision(v EnumldapSdkDebugLog
 
 // GetLoggingErrorBehavior returns the LoggingErrorBehavior field value if set, zero value otherwise.
 func (o *LdapSdkDebugLoggerResponse) GetLoggingErrorBehavior() EnumldapSdkDebugLoggerLoggingErrorBehaviorProp {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		var ret EnumldapSdkDebugLoggerLoggingErrorBehaviorProp
 		return ret
 	}
@@ -794,7 +797,7 @@ func (o *LdapSdkDebugLoggerResponse) GetLoggingErrorBehavior() EnumldapSdkDebugL
 // GetLoggingErrorBehaviorOk returns a tuple with the LoggingErrorBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapSdkDebugLoggerResponse) GetLoggingErrorBehaviorOk() (*EnumldapSdkDebugLoggerLoggingErrorBehaviorProp, bool) {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
@@ -802,7 +805,7 @@ func (o *LdapSdkDebugLoggerResponse) GetLoggingErrorBehaviorOk() (*EnumldapSdkDe
 
 // HasLoggingErrorBehavior returns a boolean if a field has been set.
 func (o *LdapSdkDebugLoggerResponse) HasLoggingErrorBehavior() bool {
-	if o != nil && !isNil(o.LoggingErrorBehavior) {
+	if o != nil && !IsNil(o.LoggingErrorBehavior) {
 		return true
 	}
 
@@ -815,83 +818,73 @@ func (o *LdapSdkDebugLoggerResponse) SetLoggingErrorBehavior(v EnumldapSdkDebugL
 }
 
 func (o LdapSdkDebugLoggerResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if true {
-		toSerialize["logFile"] = o.LogFile
-	}
-	if true {
-		toSerialize["debugLevel"] = o.DebugLevel
-	}
-	if true {
-		toSerialize["debugType"] = o.DebugType
-	}
-	if true {
-		toSerialize["includeStackTrace"] = o.IncludeStackTrace
-	}
-	if true {
-		toSerialize["logFilePermissions"] = o.LogFilePermissions
-	}
-	if !isNil(o.TimeInterval) {
-		toSerialize["timeInterval"] = o.TimeInterval
-	}
-	if !isNil(o.AutoFlush) {
-		toSerialize["autoFlush"] = o.AutoFlush
-	}
-	if true {
-		toSerialize["asynchronous"] = o.Asynchronous
-	}
-	if !isNil(o.QueueSize) {
-		toSerialize["queueSize"] = o.QueueSize
-	}
-	if !isNil(o.BufferSize) {
-		toSerialize["bufferSize"] = o.BufferSize
-	}
-	if !isNil(o.Append) {
-		toSerialize["append"] = o.Append
-	}
-	if true {
-		toSerialize["rotationPolicy"] = o.RotationPolicy
-	}
-	if !isNil(o.RotationListener) {
-		toSerialize["rotationListener"] = o.RotationListener
-	}
-	if true {
-		toSerialize["retentionPolicy"] = o.RetentionPolicy
-	}
-	if !isNil(o.CompressionMechanism) {
-		toSerialize["compressionMechanism"] = o.CompressionMechanism
-	}
-	if !isNil(o.SignLog) {
-		toSerialize["signLog"] = o.SignLog
-	}
-	if !isNil(o.EncryptLog) {
-		toSerialize["encryptLog"] = o.EncryptLog
-	}
-	if !isNil(o.EncryptionSettingsDefinitionID) {
-		toSerialize["encryptionSettingsDefinitionID"] = o.EncryptionSettingsDefinitionID
-	}
-	if !isNil(o.TimestampPrecision) {
-		toSerialize["timestampPrecision"] = o.TimestampPrecision
-	}
-	if !isNil(o.LoggingErrorBehavior) {
-		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o LdapSdkDebugLoggerResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	toSerialize["logFile"] = o.LogFile
+	toSerialize["debugLevel"] = o.DebugLevel
+	toSerialize["debugType"] = o.DebugType
+	toSerialize["includeStackTrace"] = o.IncludeStackTrace
+	toSerialize["logFilePermissions"] = o.LogFilePermissions
+	if !IsNil(o.TimeInterval) {
+		toSerialize["timeInterval"] = o.TimeInterval
+	}
+	if !IsNil(o.AutoFlush) {
+		toSerialize["autoFlush"] = o.AutoFlush
+	}
+	toSerialize["asynchronous"] = o.Asynchronous
+	if !IsNil(o.QueueSize) {
+		toSerialize["queueSize"] = o.QueueSize
+	}
+	if !IsNil(o.BufferSize) {
+		toSerialize["bufferSize"] = o.BufferSize
+	}
+	if !IsNil(o.Append) {
+		toSerialize["append"] = o.Append
+	}
+	toSerialize["rotationPolicy"] = o.RotationPolicy
+	if !IsNil(o.RotationListener) {
+		toSerialize["rotationListener"] = o.RotationListener
+	}
+	toSerialize["retentionPolicy"] = o.RetentionPolicy
+	if !IsNil(o.CompressionMechanism) {
+		toSerialize["compressionMechanism"] = o.CompressionMechanism
+	}
+	if !IsNil(o.SignLog) {
+		toSerialize["signLog"] = o.SignLog
+	}
+	if !IsNil(o.EncryptLog) {
+		toSerialize["encryptLog"] = o.EncryptLog
+	}
+	if !IsNil(o.EncryptionSettingsDefinitionID) {
+		toSerialize["encryptionSettingsDefinitionID"] = o.EncryptionSettingsDefinitionID
+	}
+	if !IsNil(o.TimestampPrecision) {
+		toSerialize["timestampPrecision"] = o.TimestampPrecision
+	}
+	if !IsNil(o.LoggingErrorBehavior) {
+		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	}
+	return toSerialize, nil
 }
 
 type NullableLdapSdkDebugLoggerResponse struct {

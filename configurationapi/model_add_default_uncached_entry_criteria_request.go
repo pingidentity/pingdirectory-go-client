@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddDefaultUncachedEntryCriteriaRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddDefaultUncachedEntryCriteriaRequest{}
+
 // AddDefaultUncachedEntryCriteriaRequest struct for AddDefaultUncachedEntryCriteriaRequest
 type AddDefaultUncachedEntryCriteriaRequest struct {
 	// Name of the new Uncached Entry Criteria
@@ -95,7 +98,7 @@ func (o *AddDefaultUncachedEntryCriteriaRequest) SetSchemas(v []EnumdefaultUncac
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddDefaultUncachedEntryCriteriaRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -105,7 +108,7 @@ func (o *AddDefaultUncachedEntryCriteriaRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDefaultUncachedEntryCriteriaRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -113,7 +116,7 @@ func (o *AddDefaultUncachedEntryCriteriaRequest) GetDescriptionOk() (*string, bo
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddDefaultUncachedEntryCriteriaRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -150,20 +153,22 @@ func (o *AddDefaultUncachedEntryCriteriaRequest) SetEnabled(v bool) {
 }
 
 func (o AddDefaultUncachedEntryCriteriaRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["criteriaName"] = o.CriteriaName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddDefaultUncachedEntryCriteriaRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["criteriaName"] = o.CriteriaName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddDefaultUncachedEntryCriteriaRequest struct {

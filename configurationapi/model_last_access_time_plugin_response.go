@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the LastAccessTimePluginResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &LastAccessTimePluginResponse{}
+
 // LastAccessTimePluginResponse struct for LastAccessTimePluginResponse
 type LastAccessTimePluginResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -60,7 +63,7 @@ func NewLastAccessTimePluginResponseWithDefaults() *LastAccessTimePluginResponse
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *LastAccessTimePluginResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -70,7 +73,7 @@ func (o *LastAccessTimePluginResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LastAccessTimePluginResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -78,7 +81,7 @@ func (o *LastAccessTimePluginResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *LastAccessTimePluginResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -92,7 +95,7 @@ func (o *LastAccessTimePluginResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *LastAccessTimePluginResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -102,7 +105,7 @@ func (o *LastAccessTimePluginResponse) GetUrnpingidentityschemasconfigurationmes
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LastAccessTimePluginResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -110,7 +113,7 @@ func (o *LastAccessTimePluginResponse) GetUrnpingidentityschemasconfigurationmes
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *LastAccessTimePluginResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -172,7 +175,7 @@ func (o *LastAccessTimePluginResponse) SetId(v string) {
 
 // GetMaxUpdateFrequency returns the MaxUpdateFrequency field value if set, zero value otherwise.
 func (o *LastAccessTimePluginResponse) GetMaxUpdateFrequency() string {
-	if o == nil || isNil(o.MaxUpdateFrequency) {
+	if o == nil || IsNil(o.MaxUpdateFrequency) {
 		var ret string
 		return ret
 	}
@@ -182,7 +185,7 @@ func (o *LastAccessTimePluginResponse) GetMaxUpdateFrequency() string {
 // GetMaxUpdateFrequencyOk returns a tuple with the MaxUpdateFrequency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LastAccessTimePluginResponse) GetMaxUpdateFrequencyOk() (*string, bool) {
-	if o == nil || isNil(o.MaxUpdateFrequency) {
+	if o == nil || IsNil(o.MaxUpdateFrequency) {
 		return nil, false
 	}
 	return o.MaxUpdateFrequency, true
@@ -190,7 +193,7 @@ func (o *LastAccessTimePluginResponse) GetMaxUpdateFrequencyOk() (*string, bool)
 
 // HasMaxUpdateFrequency returns a boolean if a field has been set.
 func (o *LastAccessTimePluginResponse) HasMaxUpdateFrequency() bool {
-	if o != nil && !isNil(o.MaxUpdateFrequency) {
+	if o != nil && !IsNil(o.MaxUpdateFrequency) {
 		return true
 	}
 
@@ -204,7 +207,7 @@ func (o *LastAccessTimePluginResponse) SetMaxUpdateFrequency(v string) {
 
 // GetOperationType returns the OperationType field value if set, zero value otherwise.
 func (o *LastAccessTimePluginResponse) GetOperationType() []EnumpluginOperationTypeProp {
-	if o == nil || isNil(o.OperationType) {
+	if o == nil || IsNil(o.OperationType) {
 		var ret []EnumpluginOperationTypeProp
 		return ret
 	}
@@ -214,7 +217,7 @@ func (o *LastAccessTimePluginResponse) GetOperationType() []EnumpluginOperationT
 // GetOperationTypeOk returns a tuple with the OperationType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LastAccessTimePluginResponse) GetOperationTypeOk() ([]EnumpluginOperationTypeProp, bool) {
-	if o == nil || isNil(o.OperationType) {
+	if o == nil || IsNil(o.OperationType) {
 		return nil, false
 	}
 	return o.OperationType, true
@@ -222,7 +225,7 @@ func (o *LastAccessTimePluginResponse) GetOperationTypeOk() ([]EnumpluginOperati
 
 // HasOperationType returns a boolean if a field has been set.
 func (o *LastAccessTimePluginResponse) HasOperationType() bool {
-	if o != nil && !isNil(o.OperationType) {
+	if o != nil && !IsNil(o.OperationType) {
 		return true
 	}
 
@@ -236,7 +239,7 @@ func (o *LastAccessTimePluginResponse) SetOperationType(v []EnumpluginOperationT
 
 // GetInvokeForFailedBinds returns the InvokeForFailedBinds field value if set, zero value otherwise.
 func (o *LastAccessTimePluginResponse) GetInvokeForFailedBinds() bool {
-	if o == nil || isNil(o.InvokeForFailedBinds) {
+	if o == nil || IsNil(o.InvokeForFailedBinds) {
 		var ret bool
 		return ret
 	}
@@ -246,7 +249,7 @@ func (o *LastAccessTimePluginResponse) GetInvokeForFailedBinds() bool {
 // GetInvokeForFailedBindsOk returns a tuple with the InvokeForFailedBinds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LastAccessTimePluginResponse) GetInvokeForFailedBindsOk() (*bool, bool) {
-	if o == nil || isNil(o.InvokeForFailedBinds) {
+	if o == nil || IsNil(o.InvokeForFailedBinds) {
 		return nil, false
 	}
 	return o.InvokeForFailedBinds, true
@@ -254,7 +257,7 @@ func (o *LastAccessTimePluginResponse) GetInvokeForFailedBindsOk() (*bool, bool)
 
 // HasInvokeForFailedBinds returns a boolean if a field has been set.
 func (o *LastAccessTimePluginResponse) HasInvokeForFailedBinds() bool {
-	if o != nil && !isNil(o.InvokeForFailedBinds) {
+	if o != nil && !IsNil(o.InvokeForFailedBinds) {
 		return true
 	}
 
@@ -268,7 +271,7 @@ func (o *LastAccessTimePluginResponse) SetInvokeForFailedBinds(v bool) {
 
 // GetMaxSearchResultEntriesToUpdate returns the MaxSearchResultEntriesToUpdate field value if set, zero value otherwise.
 func (o *LastAccessTimePluginResponse) GetMaxSearchResultEntriesToUpdate() int32 {
-	if o == nil || isNil(o.MaxSearchResultEntriesToUpdate) {
+	if o == nil || IsNil(o.MaxSearchResultEntriesToUpdate) {
 		var ret int32
 		return ret
 	}
@@ -278,7 +281,7 @@ func (o *LastAccessTimePluginResponse) GetMaxSearchResultEntriesToUpdate() int32
 // GetMaxSearchResultEntriesToUpdateOk returns a tuple with the MaxSearchResultEntriesToUpdate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LastAccessTimePluginResponse) GetMaxSearchResultEntriesToUpdateOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxSearchResultEntriesToUpdate) {
+	if o == nil || IsNil(o.MaxSearchResultEntriesToUpdate) {
 		return nil, false
 	}
 	return o.MaxSearchResultEntriesToUpdate, true
@@ -286,7 +289,7 @@ func (o *LastAccessTimePluginResponse) GetMaxSearchResultEntriesToUpdateOk() (*i
 
 // HasMaxSearchResultEntriesToUpdate returns a boolean if a field has been set.
 func (o *LastAccessTimePluginResponse) HasMaxSearchResultEntriesToUpdate() bool {
-	if o != nil && !isNil(o.MaxSearchResultEntriesToUpdate) {
+	if o != nil && !IsNil(o.MaxSearchResultEntriesToUpdate) {
 		return true
 	}
 
@@ -300,7 +303,7 @@ func (o *LastAccessTimePluginResponse) SetMaxSearchResultEntriesToUpdate(v int32
 
 // GetRequestCriteria returns the RequestCriteria field value if set, zero value otherwise.
 func (o *LastAccessTimePluginResponse) GetRequestCriteria() string {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -310,7 +313,7 @@ func (o *LastAccessTimePluginResponse) GetRequestCriteria() string {
 // GetRequestCriteriaOk returns a tuple with the RequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LastAccessTimePluginResponse) GetRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		return nil, false
 	}
 	return o.RequestCriteria, true
@@ -318,7 +321,7 @@ func (o *LastAccessTimePluginResponse) GetRequestCriteriaOk() (*string, bool) {
 
 // HasRequestCriteria returns a boolean if a field has been set.
 func (o *LastAccessTimePluginResponse) HasRequestCriteria() bool {
-	if o != nil && !isNil(o.RequestCriteria) {
+	if o != nil && !IsNil(o.RequestCriteria) {
 		return true
 	}
 
@@ -332,7 +335,7 @@ func (o *LastAccessTimePluginResponse) SetRequestCriteria(v string) {
 
 // GetInvokeForInternalOperations returns the InvokeForInternalOperations field value if set, zero value otherwise.
 func (o *LastAccessTimePluginResponse) GetInvokeForInternalOperations() bool {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		var ret bool
 		return ret
 	}
@@ -342,7 +345,7 @@ func (o *LastAccessTimePluginResponse) GetInvokeForInternalOperations() bool {
 // GetInvokeForInternalOperationsOk returns a tuple with the InvokeForInternalOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LastAccessTimePluginResponse) GetInvokeForInternalOperationsOk() (*bool, bool) {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		return nil, false
 	}
 	return o.InvokeForInternalOperations, true
@@ -350,7 +353,7 @@ func (o *LastAccessTimePluginResponse) GetInvokeForInternalOperationsOk() (*bool
 
 // HasInvokeForInternalOperations returns a boolean if a field has been set.
 func (o *LastAccessTimePluginResponse) HasInvokeForInternalOperations() bool {
-	if o != nil && !isNil(o.InvokeForInternalOperations) {
+	if o != nil && !IsNil(o.InvokeForInternalOperations) {
 		return true
 	}
 
@@ -364,7 +367,7 @@ func (o *LastAccessTimePluginResponse) SetInvokeForInternalOperations(v bool) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *LastAccessTimePluginResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -374,7 +377,7 @@ func (o *LastAccessTimePluginResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LastAccessTimePluginResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -382,7 +385,7 @@ func (o *LastAccessTimePluginResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *LastAccessTimePluginResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -419,44 +422,46 @@ func (o *LastAccessTimePluginResponse) SetEnabled(v bool) {
 }
 
 func (o LastAccessTimePluginResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.MaxUpdateFrequency) {
-		toSerialize["maxUpdateFrequency"] = o.MaxUpdateFrequency
-	}
-	if !isNil(o.OperationType) {
-		toSerialize["operationType"] = o.OperationType
-	}
-	if !isNil(o.InvokeForFailedBinds) {
-		toSerialize["invokeForFailedBinds"] = o.InvokeForFailedBinds
-	}
-	if !isNil(o.MaxSearchResultEntriesToUpdate) {
-		toSerialize["maxSearchResultEntriesToUpdate"] = o.MaxSearchResultEntriesToUpdate
-	}
-	if !isNil(o.RequestCriteria) {
-		toSerialize["requestCriteria"] = o.RequestCriteria
-	}
-	if !isNil(o.InvokeForInternalOperations) {
-		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o LastAccessTimePluginResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	if !IsNil(o.MaxUpdateFrequency) {
+		toSerialize["maxUpdateFrequency"] = o.MaxUpdateFrequency
+	}
+	if !IsNil(o.OperationType) {
+		toSerialize["operationType"] = o.OperationType
+	}
+	if !IsNil(o.InvokeForFailedBinds) {
+		toSerialize["invokeForFailedBinds"] = o.InvokeForFailedBinds
+	}
+	if !IsNil(o.MaxSearchResultEntriesToUpdate) {
+		toSerialize["maxSearchResultEntriesToUpdate"] = o.MaxSearchResultEntriesToUpdate
+	}
+	if !IsNil(o.RequestCriteria) {
+		toSerialize["requestCriteria"] = o.RequestCriteria
+	}
+	if !IsNil(o.InvokeForInternalOperations) {
+		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableLastAccessTimePluginResponse struct {

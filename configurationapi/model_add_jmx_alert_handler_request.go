@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddJmxAlertHandlerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddJmxAlertHandlerRequest{}
+
 // AddJmxAlertHandlerRequest struct for AddJmxAlertHandlerRequest
 type AddJmxAlertHandlerRequest struct {
 	// Name of the new Alert Handler
@@ -100,7 +103,7 @@ func (o *AddJmxAlertHandlerRequest) SetSchemas(v []EnumjmxAlertHandlerSchemaUrn)
 
 // GetAsynchronous returns the Asynchronous field value if set, zero value otherwise.
 func (o *AddJmxAlertHandlerRequest) GetAsynchronous() bool {
-	if o == nil || isNil(o.Asynchronous) {
+	if o == nil || IsNil(o.Asynchronous) {
 		var ret bool
 		return ret
 	}
@@ -110,7 +113,7 @@ func (o *AddJmxAlertHandlerRequest) GetAsynchronous() bool {
 // GetAsynchronousOk returns a tuple with the Asynchronous field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJmxAlertHandlerRequest) GetAsynchronousOk() (*bool, bool) {
-	if o == nil || isNil(o.Asynchronous) {
+	if o == nil || IsNil(o.Asynchronous) {
 		return nil, false
 	}
 	return o.Asynchronous, true
@@ -118,7 +121,7 @@ func (o *AddJmxAlertHandlerRequest) GetAsynchronousOk() (*bool, bool) {
 
 // HasAsynchronous returns a boolean if a field has been set.
 func (o *AddJmxAlertHandlerRequest) HasAsynchronous() bool {
-	if o != nil && !isNil(o.Asynchronous) {
+	if o != nil && !IsNil(o.Asynchronous) {
 		return true
 	}
 
@@ -132,7 +135,7 @@ func (o *AddJmxAlertHandlerRequest) SetAsynchronous(v bool) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddJmxAlertHandlerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -142,7 +145,7 @@ func (o *AddJmxAlertHandlerRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJmxAlertHandlerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -150,7 +153,7 @@ func (o *AddJmxAlertHandlerRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddJmxAlertHandlerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -188,7 +191,7 @@ func (o *AddJmxAlertHandlerRequest) SetEnabled(v bool) {
 
 // GetEnabledAlertSeverity returns the EnabledAlertSeverity field value if set, zero value otherwise.
 func (o *AddJmxAlertHandlerRequest) GetEnabledAlertSeverity() []EnumalertHandlerEnabledAlertSeverityProp {
-	if o == nil || isNil(o.EnabledAlertSeverity) {
+	if o == nil || IsNil(o.EnabledAlertSeverity) {
 		var ret []EnumalertHandlerEnabledAlertSeverityProp
 		return ret
 	}
@@ -198,7 +201,7 @@ func (o *AddJmxAlertHandlerRequest) GetEnabledAlertSeverity() []EnumalertHandler
 // GetEnabledAlertSeverityOk returns a tuple with the EnabledAlertSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJmxAlertHandlerRequest) GetEnabledAlertSeverityOk() ([]EnumalertHandlerEnabledAlertSeverityProp, bool) {
-	if o == nil || isNil(o.EnabledAlertSeverity) {
+	if o == nil || IsNil(o.EnabledAlertSeverity) {
 		return nil, false
 	}
 	return o.EnabledAlertSeverity, true
@@ -206,7 +209,7 @@ func (o *AddJmxAlertHandlerRequest) GetEnabledAlertSeverityOk() ([]EnumalertHand
 
 // HasEnabledAlertSeverity returns a boolean if a field has been set.
 func (o *AddJmxAlertHandlerRequest) HasEnabledAlertSeverity() bool {
-	if o != nil && !isNil(o.EnabledAlertSeverity) {
+	if o != nil && !IsNil(o.EnabledAlertSeverity) {
 		return true
 	}
 
@@ -220,7 +223,7 @@ func (o *AddJmxAlertHandlerRequest) SetEnabledAlertSeverity(v []EnumalertHandler
 
 // GetEnabledAlertType returns the EnabledAlertType field value if set, zero value otherwise.
 func (o *AddJmxAlertHandlerRequest) GetEnabledAlertType() []EnumalertHandlerEnabledAlertTypeProp {
-	if o == nil || isNil(o.EnabledAlertType) {
+	if o == nil || IsNil(o.EnabledAlertType) {
 		var ret []EnumalertHandlerEnabledAlertTypeProp
 		return ret
 	}
@@ -230,7 +233,7 @@ func (o *AddJmxAlertHandlerRequest) GetEnabledAlertType() []EnumalertHandlerEnab
 // GetEnabledAlertTypeOk returns a tuple with the EnabledAlertType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJmxAlertHandlerRequest) GetEnabledAlertTypeOk() ([]EnumalertHandlerEnabledAlertTypeProp, bool) {
-	if o == nil || isNil(o.EnabledAlertType) {
+	if o == nil || IsNil(o.EnabledAlertType) {
 		return nil, false
 	}
 	return o.EnabledAlertType, true
@@ -238,7 +241,7 @@ func (o *AddJmxAlertHandlerRequest) GetEnabledAlertTypeOk() ([]EnumalertHandlerE
 
 // HasEnabledAlertType returns a boolean if a field has been set.
 func (o *AddJmxAlertHandlerRequest) HasEnabledAlertType() bool {
-	if o != nil && !isNil(o.EnabledAlertType) {
+	if o != nil && !IsNil(o.EnabledAlertType) {
 		return true
 	}
 
@@ -252,7 +255,7 @@ func (o *AddJmxAlertHandlerRequest) SetEnabledAlertType(v []EnumalertHandlerEnab
 
 // GetDisabledAlertType returns the DisabledAlertType field value if set, zero value otherwise.
 func (o *AddJmxAlertHandlerRequest) GetDisabledAlertType() []EnumalertHandlerDisabledAlertTypeProp {
-	if o == nil || isNil(o.DisabledAlertType) {
+	if o == nil || IsNil(o.DisabledAlertType) {
 		var ret []EnumalertHandlerDisabledAlertTypeProp
 		return ret
 	}
@@ -262,7 +265,7 @@ func (o *AddJmxAlertHandlerRequest) GetDisabledAlertType() []EnumalertHandlerDis
 // GetDisabledAlertTypeOk returns a tuple with the DisabledAlertType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJmxAlertHandlerRequest) GetDisabledAlertTypeOk() ([]EnumalertHandlerDisabledAlertTypeProp, bool) {
-	if o == nil || isNil(o.DisabledAlertType) {
+	if o == nil || IsNil(o.DisabledAlertType) {
 		return nil, false
 	}
 	return o.DisabledAlertType, true
@@ -270,7 +273,7 @@ func (o *AddJmxAlertHandlerRequest) GetDisabledAlertTypeOk() ([]EnumalertHandler
 
 // HasDisabledAlertType returns a boolean if a field has been set.
 func (o *AddJmxAlertHandlerRequest) HasDisabledAlertType() bool {
-	if o != nil && !isNil(o.DisabledAlertType) {
+	if o != nil && !IsNil(o.DisabledAlertType) {
 		return true
 	}
 
@@ -283,32 +286,34 @@ func (o *AddJmxAlertHandlerRequest) SetDisabledAlertType(v []EnumalertHandlerDis
 }
 
 func (o AddJmxAlertHandlerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["handlerName"] = o.HandlerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Asynchronous) {
-		toSerialize["asynchronous"] = o.Asynchronous
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.EnabledAlertSeverity) {
-		toSerialize["enabledAlertSeverity"] = o.EnabledAlertSeverity
-	}
-	if !isNil(o.EnabledAlertType) {
-		toSerialize["enabledAlertType"] = o.EnabledAlertType
-	}
-	if !isNil(o.DisabledAlertType) {
-		toSerialize["disabledAlertType"] = o.DisabledAlertType
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddJmxAlertHandlerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["handlerName"] = o.HandlerName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.Asynchronous) {
+		toSerialize["asynchronous"] = o.Asynchronous
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.EnabledAlertSeverity) {
+		toSerialize["enabledAlertSeverity"] = o.EnabledAlertSeverity
+	}
+	if !IsNil(o.EnabledAlertType) {
+		toSerialize["enabledAlertType"] = o.EnabledAlertType
+	}
+	if !IsNil(o.DisabledAlertType) {
+		toSerialize["disabledAlertType"] = o.DisabledAlertType
+	}
+	return toSerialize, nil
 }
 
 type NullableAddJmxAlertHandlerRequest struct {

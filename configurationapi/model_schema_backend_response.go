@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the SchemaBackendResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SchemaBackendResponse{}
+
 // SchemaBackendResponse struct for SchemaBackendResponse
 type SchemaBackendResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -72,7 +75,7 @@ func NewSchemaBackendResponseWithDefaults() *SchemaBackendResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *SchemaBackendResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -82,7 +85,7 @@ func (o *SchemaBackendResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SchemaBackendResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -90,7 +93,7 @@ func (o *SchemaBackendResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *SchemaBackendResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -104,7 +107,7 @@ func (o *SchemaBackendResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *SchemaBackendResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -114,7 +117,7 @@ func (o *SchemaBackendResponse) GetUrnpingidentityschemasconfigurationmessages20
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SchemaBackendResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -122,7 +125,7 @@ func (o *SchemaBackendResponse) GetUrnpingidentityschemasconfigurationmessages20
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *SchemaBackendResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -256,7 +259,7 @@ func (o *SchemaBackendResponse) SetWritabilityMode(v EnumbackendWritabilityModeP
 
 // GetSchemaEntryDN returns the SchemaEntryDN field value if set, zero value otherwise.
 func (o *SchemaBackendResponse) GetSchemaEntryDN() []string {
-	if o == nil || isNil(o.SchemaEntryDN) {
+	if o == nil || IsNil(o.SchemaEntryDN) {
 		var ret []string
 		return ret
 	}
@@ -266,7 +269,7 @@ func (o *SchemaBackendResponse) GetSchemaEntryDN() []string {
 // GetSchemaEntryDNOk returns a tuple with the SchemaEntryDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SchemaBackendResponse) GetSchemaEntryDNOk() ([]string, bool) {
-	if o == nil || isNil(o.SchemaEntryDN) {
+	if o == nil || IsNil(o.SchemaEntryDN) {
 		return nil, false
 	}
 	return o.SchemaEntryDN, true
@@ -274,7 +277,7 @@ func (o *SchemaBackendResponse) GetSchemaEntryDNOk() ([]string, bool) {
 
 // HasSchemaEntryDN returns a boolean if a field has been set.
 func (o *SchemaBackendResponse) HasSchemaEntryDN() bool {
-	if o != nil && !isNil(o.SchemaEntryDN) {
+	if o != nil && !IsNil(o.SchemaEntryDN) {
 		return true
 	}
 
@@ -312,7 +315,7 @@ func (o *SchemaBackendResponse) SetShowAllAttributes(v bool) {
 
 // GetReadOnlySchemaFile returns the ReadOnlySchemaFile field value if set, zero value otherwise.
 func (o *SchemaBackendResponse) GetReadOnlySchemaFile() []string {
-	if o == nil || isNil(o.ReadOnlySchemaFile) {
+	if o == nil || IsNil(o.ReadOnlySchemaFile) {
 		var ret []string
 		return ret
 	}
@@ -322,7 +325,7 @@ func (o *SchemaBackendResponse) GetReadOnlySchemaFile() []string {
 // GetReadOnlySchemaFileOk returns a tuple with the ReadOnlySchemaFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SchemaBackendResponse) GetReadOnlySchemaFileOk() ([]string, bool) {
-	if o == nil || isNil(o.ReadOnlySchemaFile) {
+	if o == nil || IsNil(o.ReadOnlySchemaFile) {
 		return nil, false
 	}
 	return o.ReadOnlySchemaFile, true
@@ -330,7 +333,7 @@ func (o *SchemaBackendResponse) GetReadOnlySchemaFileOk() ([]string, bool) {
 
 // HasReadOnlySchemaFile returns a boolean if a field has been set.
 func (o *SchemaBackendResponse) HasReadOnlySchemaFile() bool {
-	if o != nil && !isNil(o.ReadOnlySchemaFile) {
+	if o != nil && !IsNil(o.ReadOnlySchemaFile) {
 		return true
 	}
 
@@ -344,7 +347,7 @@ func (o *SchemaBackendResponse) SetReadOnlySchemaFile(v []string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *SchemaBackendResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -354,7 +357,7 @@ func (o *SchemaBackendResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SchemaBackendResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -362,7 +365,7 @@ func (o *SchemaBackendResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *SchemaBackendResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -400,7 +403,7 @@ func (o *SchemaBackendResponse) SetEnabled(v bool) {
 
 // GetSetDegradedAlertWhenDisabled returns the SetDegradedAlertWhenDisabled field value if set, zero value otherwise.
 func (o *SchemaBackendResponse) GetSetDegradedAlertWhenDisabled() bool {
-	if o == nil || isNil(o.SetDegradedAlertWhenDisabled) {
+	if o == nil || IsNil(o.SetDegradedAlertWhenDisabled) {
 		var ret bool
 		return ret
 	}
@@ -410,7 +413,7 @@ func (o *SchemaBackendResponse) GetSetDegradedAlertWhenDisabled() bool {
 // GetSetDegradedAlertWhenDisabledOk returns a tuple with the SetDegradedAlertWhenDisabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SchemaBackendResponse) GetSetDegradedAlertWhenDisabledOk() (*bool, bool) {
-	if o == nil || isNil(o.SetDegradedAlertWhenDisabled) {
+	if o == nil || IsNil(o.SetDegradedAlertWhenDisabled) {
 		return nil, false
 	}
 	return o.SetDegradedAlertWhenDisabled, true
@@ -418,7 +421,7 @@ func (o *SchemaBackendResponse) GetSetDegradedAlertWhenDisabledOk() (*bool, bool
 
 // HasSetDegradedAlertWhenDisabled returns a boolean if a field has been set.
 func (o *SchemaBackendResponse) HasSetDegradedAlertWhenDisabled() bool {
-	if o != nil && !isNil(o.SetDegradedAlertWhenDisabled) {
+	if o != nil && !IsNil(o.SetDegradedAlertWhenDisabled) {
 		return true
 	}
 
@@ -432,7 +435,7 @@ func (o *SchemaBackendResponse) SetSetDegradedAlertWhenDisabled(v bool) {
 
 // GetReturnUnavailableWhenDisabled returns the ReturnUnavailableWhenDisabled field value if set, zero value otherwise.
 func (o *SchemaBackendResponse) GetReturnUnavailableWhenDisabled() bool {
-	if o == nil || isNil(o.ReturnUnavailableWhenDisabled) {
+	if o == nil || IsNil(o.ReturnUnavailableWhenDisabled) {
 		var ret bool
 		return ret
 	}
@@ -442,7 +445,7 @@ func (o *SchemaBackendResponse) GetReturnUnavailableWhenDisabled() bool {
 // GetReturnUnavailableWhenDisabledOk returns a tuple with the ReturnUnavailableWhenDisabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SchemaBackendResponse) GetReturnUnavailableWhenDisabledOk() (*bool, bool) {
-	if o == nil || isNil(o.ReturnUnavailableWhenDisabled) {
+	if o == nil || IsNil(o.ReturnUnavailableWhenDisabled) {
 		return nil, false
 	}
 	return o.ReturnUnavailableWhenDisabled, true
@@ -450,7 +453,7 @@ func (o *SchemaBackendResponse) GetReturnUnavailableWhenDisabledOk() (*bool, boo
 
 // HasReturnUnavailableWhenDisabled returns a boolean if a field has been set.
 func (o *SchemaBackendResponse) HasReturnUnavailableWhenDisabled() bool {
-	if o != nil && !isNil(o.ReturnUnavailableWhenDisabled) {
+	if o != nil && !IsNil(o.ReturnUnavailableWhenDisabled) {
 		return true
 	}
 
@@ -464,7 +467,7 @@ func (o *SchemaBackendResponse) SetReturnUnavailableWhenDisabled(v bool) {
 
 // GetBackupFilePermissions returns the BackupFilePermissions field value if set, zero value otherwise.
 func (o *SchemaBackendResponse) GetBackupFilePermissions() string {
-	if o == nil || isNil(o.BackupFilePermissions) {
+	if o == nil || IsNil(o.BackupFilePermissions) {
 		var ret string
 		return ret
 	}
@@ -474,7 +477,7 @@ func (o *SchemaBackendResponse) GetBackupFilePermissions() string {
 // GetBackupFilePermissionsOk returns a tuple with the BackupFilePermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SchemaBackendResponse) GetBackupFilePermissionsOk() (*string, bool) {
-	if o == nil || isNil(o.BackupFilePermissions) {
+	if o == nil || IsNil(o.BackupFilePermissions) {
 		return nil, false
 	}
 	return o.BackupFilePermissions, true
@@ -482,7 +485,7 @@ func (o *SchemaBackendResponse) GetBackupFilePermissionsOk() (*string, bool) {
 
 // HasBackupFilePermissions returns a boolean if a field has been set.
 func (o *SchemaBackendResponse) HasBackupFilePermissions() bool {
-	if o != nil && !isNil(o.BackupFilePermissions) {
+	if o != nil && !IsNil(o.BackupFilePermissions) {
 		return true
 	}
 
@@ -496,7 +499,7 @@ func (o *SchemaBackendResponse) SetBackupFilePermissions(v string) {
 
 // GetNotificationManager returns the NotificationManager field value if set, zero value otherwise.
 func (o *SchemaBackendResponse) GetNotificationManager() string {
-	if o == nil || isNil(o.NotificationManager) {
+	if o == nil || IsNil(o.NotificationManager) {
 		var ret string
 		return ret
 	}
@@ -506,7 +509,7 @@ func (o *SchemaBackendResponse) GetNotificationManager() string {
 // GetNotificationManagerOk returns a tuple with the NotificationManager field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SchemaBackendResponse) GetNotificationManagerOk() (*string, bool) {
-	if o == nil || isNil(o.NotificationManager) {
+	if o == nil || IsNil(o.NotificationManager) {
 		return nil, false
 	}
 	return o.NotificationManager, true
@@ -514,7 +517,7 @@ func (o *SchemaBackendResponse) GetNotificationManagerOk() (*string, bool) {
 
 // HasNotificationManager returns a boolean if a field has been set.
 func (o *SchemaBackendResponse) HasNotificationManager() bool {
-	if o != nil && !isNil(o.NotificationManager) {
+	if o != nil && !IsNil(o.NotificationManager) {
 		return true
 	}
 
@@ -527,56 +530,50 @@ func (o *SchemaBackendResponse) SetNotificationManager(v string) {
 }
 
 func (o SchemaBackendResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["backendID"] = o.BackendID
-	}
-	if true {
-		toSerialize["baseDN"] = o.BaseDN
-	}
-	if true {
-		toSerialize["writabilityMode"] = o.WritabilityMode
-	}
-	if !isNil(o.SchemaEntryDN) {
-		toSerialize["schemaEntryDN"] = o.SchemaEntryDN
-	}
-	if true {
-		toSerialize["showAllAttributes"] = o.ShowAllAttributes
-	}
-	if !isNil(o.ReadOnlySchemaFile) {
-		toSerialize["readOnlySchemaFile"] = o.ReadOnlySchemaFile
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.SetDegradedAlertWhenDisabled) {
-		toSerialize["setDegradedAlertWhenDisabled"] = o.SetDegradedAlertWhenDisabled
-	}
-	if !isNil(o.ReturnUnavailableWhenDisabled) {
-		toSerialize["returnUnavailableWhenDisabled"] = o.ReturnUnavailableWhenDisabled
-	}
-	if !isNil(o.BackupFilePermissions) {
-		toSerialize["backupFilePermissions"] = o.BackupFilePermissions
-	}
-	if !isNil(o.NotificationManager) {
-		toSerialize["notificationManager"] = o.NotificationManager
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o SchemaBackendResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	toSerialize["backendID"] = o.BackendID
+	toSerialize["baseDN"] = o.BaseDN
+	toSerialize["writabilityMode"] = o.WritabilityMode
+	if !IsNil(o.SchemaEntryDN) {
+		toSerialize["schemaEntryDN"] = o.SchemaEntryDN
+	}
+	toSerialize["showAllAttributes"] = o.ShowAllAttributes
+	if !IsNil(o.ReadOnlySchemaFile) {
+		toSerialize["readOnlySchemaFile"] = o.ReadOnlySchemaFile
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.SetDegradedAlertWhenDisabled) {
+		toSerialize["setDegradedAlertWhenDisabled"] = o.SetDegradedAlertWhenDisabled
+	}
+	if !IsNil(o.ReturnUnavailableWhenDisabled) {
+		toSerialize["returnUnavailableWhenDisabled"] = o.ReturnUnavailableWhenDisabled
+	}
+	if !IsNil(o.BackupFilePermissions) {
+		toSerialize["backupFilePermissions"] = o.BackupFilePermissions
+	}
+	if !IsNil(o.NotificationManager) {
+		toSerialize["notificationManager"] = o.NotificationManager
+	}
+	return toSerialize, nil
 }
 
 type NullableSchemaBackendResponse struct {

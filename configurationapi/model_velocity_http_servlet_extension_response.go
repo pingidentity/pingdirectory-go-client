@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the VelocityHttpServletExtensionResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &VelocityHttpServletExtensionResponse{}
+
 // VelocityHttpServletExtensionResponse struct for VelocityHttpServletExtensionResponse
 type VelocityHttpServletExtensionResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -84,7 +87,7 @@ func NewVelocityHttpServletExtensionResponseWithDefaults() *VelocityHttpServletE
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *VelocityHttpServletExtensionResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -94,7 +97,7 @@ func (o *VelocityHttpServletExtensionResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -102,7 +105,7 @@ func (o *VelocityHttpServletExtensionResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *VelocityHttpServletExtensionResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -116,7 +119,7 @@ func (o *VelocityHttpServletExtensionResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *VelocityHttpServletExtensionResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -126,7 +129,7 @@ func (o *VelocityHttpServletExtensionResponse) GetUrnpingidentityschemasconfigur
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -134,7 +137,7 @@ func (o *VelocityHttpServletExtensionResponse) GetUrnpingidentityschemasconfigur
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *VelocityHttpServletExtensionResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -220,7 +223,7 @@ func (o *VelocityHttpServletExtensionResponse) SetBaseContextPath(v string) {
 
 // GetStaticContextPath returns the StaticContextPath field value if set, zero value otherwise.
 func (o *VelocityHttpServletExtensionResponse) GetStaticContextPath() string {
-	if o == nil || isNil(o.StaticContextPath) {
+	if o == nil || IsNil(o.StaticContextPath) {
 		var ret string
 		return ret
 	}
@@ -230,7 +233,7 @@ func (o *VelocityHttpServletExtensionResponse) GetStaticContextPath() string {
 // GetStaticContextPathOk returns a tuple with the StaticContextPath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetStaticContextPathOk() (*string, bool) {
-	if o == nil || isNil(o.StaticContextPath) {
+	if o == nil || IsNil(o.StaticContextPath) {
 		return nil, false
 	}
 	return o.StaticContextPath, true
@@ -238,7 +241,7 @@ func (o *VelocityHttpServletExtensionResponse) GetStaticContextPathOk() (*string
 
 // HasStaticContextPath returns a boolean if a field has been set.
 func (o *VelocityHttpServletExtensionResponse) HasStaticContextPath() bool {
-	if o != nil && !isNil(o.StaticContextPath) {
+	if o != nil && !IsNil(o.StaticContextPath) {
 		return true
 	}
 
@@ -252,7 +255,7 @@ func (o *VelocityHttpServletExtensionResponse) SetStaticContextPath(v string) {
 
 // GetStaticContentDirectory returns the StaticContentDirectory field value if set, zero value otherwise.
 func (o *VelocityHttpServletExtensionResponse) GetStaticContentDirectory() string {
-	if o == nil || isNil(o.StaticContentDirectory) {
+	if o == nil || IsNil(o.StaticContentDirectory) {
 		var ret string
 		return ret
 	}
@@ -262,7 +265,7 @@ func (o *VelocityHttpServletExtensionResponse) GetStaticContentDirectory() strin
 // GetStaticContentDirectoryOk returns a tuple with the StaticContentDirectory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetStaticContentDirectoryOk() (*string, bool) {
-	if o == nil || isNil(o.StaticContentDirectory) {
+	if o == nil || IsNil(o.StaticContentDirectory) {
 		return nil, false
 	}
 	return o.StaticContentDirectory, true
@@ -270,7 +273,7 @@ func (o *VelocityHttpServletExtensionResponse) GetStaticContentDirectoryOk() (*s
 
 // HasStaticContentDirectory returns a boolean if a field has been set.
 func (o *VelocityHttpServletExtensionResponse) HasStaticContentDirectory() bool {
-	if o != nil && !isNil(o.StaticContentDirectory) {
+	if o != nil && !IsNil(o.StaticContentDirectory) {
 		return true
 	}
 
@@ -284,7 +287,7 @@ func (o *VelocityHttpServletExtensionResponse) SetStaticContentDirectory(v strin
 
 // GetStaticCustomDirectory returns the StaticCustomDirectory field value if set, zero value otherwise.
 func (o *VelocityHttpServletExtensionResponse) GetStaticCustomDirectory() string {
-	if o == nil || isNil(o.StaticCustomDirectory) {
+	if o == nil || IsNil(o.StaticCustomDirectory) {
 		var ret string
 		return ret
 	}
@@ -294,7 +297,7 @@ func (o *VelocityHttpServletExtensionResponse) GetStaticCustomDirectory() string
 // GetStaticCustomDirectoryOk returns a tuple with the StaticCustomDirectory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetStaticCustomDirectoryOk() (*string, bool) {
-	if o == nil || isNil(o.StaticCustomDirectory) {
+	if o == nil || IsNil(o.StaticCustomDirectory) {
 		return nil, false
 	}
 	return o.StaticCustomDirectory, true
@@ -302,7 +305,7 @@ func (o *VelocityHttpServletExtensionResponse) GetStaticCustomDirectoryOk() (*st
 
 // HasStaticCustomDirectory returns a boolean if a field has been set.
 func (o *VelocityHttpServletExtensionResponse) HasStaticCustomDirectory() bool {
-	if o != nil && !isNil(o.StaticCustomDirectory) {
+	if o != nil && !IsNil(o.StaticCustomDirectory) {
 		return true
 	}
 
@@ -340,7 +343,7 @@ func (o *VelocityHttpServletExtensionResponse) SetTemplateDirectory(v []string) 
 
 // GetExposeRequestAttributes returns the ExposeRequestAttributes field value if set, zero value otherwise.
 func (o *VelocityHttpServletExtensionResponse) GetExposeRequestAttributes() bool {
-	if o == nil || isNil(o.ExposeRequestAttributes) {
+	if o == nil || IsNil(o.ExposeRequestAttributes) {
 		var ret bool
 		return ret
 	}
@@ -350,7 +353,7 @@ func (o *VelocityHttpServletExtensionResponse) GetExposeRequestAttributes() bool
 // GetExposeRequestAttributesOk returns a tuple with the ExposeRequestAttributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetExposeRequestAttributesOk() (*bool, bool) {
-	if o == nil || isNil(o.ExposeRequestAttributes) {
+	if o == nil || IsNil(o.ExposeRequestAttributes) {
 		return nil, false
 	}
 	return o.ExposeRequestAttributes, true
@@ -358,7 +361,7 @@ func (o *VelocityHttpServletExtensionResponse) GetExposeRequestAttributesOk() (*
 
 // HasExposeRequestAttributes returns a boolean if a field has been set.
 func (o *VelocityHttpServletExtensionResponse) HasExposeRequestAttributes() bool {
-	if o != nil && !isNil(o.ExposeRequestAttributes) {
+	if o != nil && !IsNil(o.ExposeRequestAttributes) {
 		return true
 	}
 
@@ -372,7 +375,7 @@ func (o *VelocityHttpServletExtensionResponse) SetExposeRequestAttributes(v bool
 
 // GetExposeSessionAttributes returns the ExposeSessionAttributes field value if set, zero value otherwise.
 func (o *VelocityHttpServletExtensionResponse) GetExposeSessionAttributes() bool {
-	if o == nil || isNil(o.ExposeSessionAttributes) {
+	if o == nil || IsNil(o.ExposeSessionAttributes) {
 		var ret bool
 		return ret
 	}
@@ -382,7 +385,7 @@ func (o *VelocityHttpServletExtensionResponse) GetExposeSessionAttributes() bool
 // GetExposeSessionAttributesOk returns a tuple with the ExposeSessionAttributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetExposeSessionAttributesOk() (*bool, bool) {
-	if o == nil || isNil(o.ExposeSessionAttributes) {
+	if o == nil || IsNil(o.ExposeSessionAttributes) {
 		return nil, false
 	}
 	return o.ExposeSessionAttributes, true
@@ -390,7 +393,7 @@ func (o *VelocityHttpServletExtensionResponse) GetExposeSessionAttributesOk() (*
 
 // HasExposeSessionAttributes returns a boolean if a field has been set.
 func (o *VelocityHttpServletExtensionResponse) HasExposeSessionAttributes() bool {
-	if o != nil && !isNil(o.ExposeSessionAttributes) {
+	if o != nil && !IsNil(o.ExposeSessionAttributes) {
 		return true
 	}
 
@@ -404,7 +407,7 @@ func (o *VelocityHttpServletExtensionResponse) SetExposeSessionAttributes(v bool
 
 // GetExposeServerContext returns the ExposeServerContext field value if set, zero value otherwise.
 func (o *VelocityHttpServletExtensionResponse) GetExposeServerContext() bool {
-	if o == nil || isNil(o.ExposeServerContext) {
+	if o == nil || IsNil(o.ExposeServerContext) {
 		var ret bool
 		return ret
 	}
@@ -414,7 +417,7 @@ func (o *VelocityHttpServletExtensionResponse) GetExposeServerContext() bool {
 // GetExposeServerContextOk returns a tuple with the ExposeServerContext field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetExposeServerContextOk() (*bool, bool) {
-	if o == nil || isNil(o.ExposeServerContext) {
+	if o == nil || IsNil(o.ExposeServerContext) {
 		return nil, false
 	}
 	return o.ExposeServerContext, true
@@ -422,7 +425,7 @@ func (o *VelocityHttpServletExtensionResponse) GetExposeServerContextOk() (*bool
 
 // HasExposeServerContext returns a boolean if a field has been set.
 func (o *VelocityHttpServletExtensionResponse) HasExposeServerContext() bool {
-	if o != nil && !isNil(o.ExposeServerContext) {
+	if o != nil && !IsNil(o.ExposeServerContext) {
 		return true
 	}
 
@@ -436,7 +439,7 @@ func (o *VelocityHttpServletExtensionResponse) SetExposeServerContext(v bool) {
 
 // GetAllowContextOverride returns the AllowContextOverride field value if set, zero value otherwise.
 func (o *VelocityHttpServletExtensionResponse) GetAllowContextOverride() bool {
-	if o == nil || isNil(o.AllowContextOverride) {
+	if o == nil || IsNil(o.AllowContextOverride) {
 		var ret bool
 		return ret
 	}
@@ -446,7 +449,7 @@ func (o *VelocityHttpServletExtensionResponse) GetAllowContextOverride() bool {
 // GetAllowContextOverrideOk returns a tuple with the AllowContextOverride field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetAllowContextOverrideOk() (*bool, bool) {
-	if o == nil || isNil(o.AllowContextOverride) {
+	if o == nil || IsNil(o.AllowContextOverride) {
 		return nil, false
 	}
 	return o.AllowContextOverride, true
@@ -454,7 +457,7 @@ func (o *VelocityHttpServletExtensionResponse) GetAllowContextOverrideOk() (*boo
 
 // HasAllowContextOverride returns a boolean if a field has been set.
 func (o *VelocityHttpServletExtensionResponse) HasAllowContextOverride() bool {
-	if o != nil && !isNil(o.AllowContextOverride) {
+	if o != nil && !IsNil(o.AllowContextOverride) {
 		return true
 	}
 
@@ -468,7 +471,7 @@ func (o *VelocityHttpServletExtensionResponse) SetAllowContextOverride(v bool) {
 
 // GetMimeTypesFile returns the MimeTypesFile field value if set, zero value otherwise.
 func (o *VelocityHttpServletExtensionResponse) GetMimeTypesFile() string {
-	if o == nil || isNil(o.MimeTypesFile) {
+	if o == nil || IsNil(o.MimeTypesFile) {
 		var ret string
 		return ret
 	}
@@ -478,7 +481,7 @@ func (o *VelocityHttpServletExtensionResponse) GetMimeTypesFile() string {
 // GetMimeTypesFileOk returns a tuple with the MimeTypesFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetMimeTypesFileOk() (*string, bool) {
-	if o == nil || isNil(o.MimeTypesFile) {
+	if o == nil || IsNil(o.MimeTypesFile) {
 		return nil, false
 	}
 	return o.MimeTypesFile, true
@@ -486,7 +489,7 @@ func (o *VelocityHttpServletExtensionResponse) GetMimeTypesFileOk() (*string, bo
 
 // HasMimeTypesFile returns a boolean if a field has been set.
 func (o *VelocityHttpServletExtensionResponse) HasMimeTypesFile() bool {
-	if o != nil && !isNil(o.MimeTypesFile) {
+	if o != nil && !IsNil(o.MimeTypesFile) {
 		return true
 	}
 
@@ -500,7 +503,7 @@ func (o *VelocityHttpServletExtensionResponse) SetMimeTypesFile(v string) {
 
 // GetDefaultMIMEType returns the DefaultMIMEType field value if set, zero value otherwise.
 func (o *VelocityHttpServletExtensionResponse) GetDefaultMIMEType() string {
-	if o == nil || isNil(o.DefaultMIMEType) {
+	if o == nil || IsNil(o.DefaultMIMEType) {
 		var ret string
 		return ret
 	}
@@ -510,7 +513,7 @@ func (o *VelocityHttpServletExtensionResponse) GetDefaultMIMEType() string {
 // GetDefaultMIMETypeOk returns a tuple with the DefaultMIMEType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetDefaultMIMETypeOk() (*string, bool) {
-	if o == nil || isNil(o.DefaultMIMEType) {
+	if o == nil || IsNil(o.DefaultMIMEType) {
 		return nil, false
 	}
 	return o.DefaultMIMEType, true
@@ -518,7 +521,7 @@ func (o *VelocityHttpServletExtensionResponse) GetDefaultMIMETypeOk() (*string, 
 
 // HasDefaultMIMEType returns a boolean if a field has been set.
 func (o *VelocityHttpServletExtensionResponse) HasDefaultMIMEType() bool {
-	if o != nil && !isNil(o.DefaultMIMEType) {
+	if o != nil && !IsNil(o.DefaultMIMEType) {
 		return true
 	}
 
@@ -532,7 +535,7 @@ func (o *VelocityHttpServletExtensionResponse) SetDefaultMIMEType(v string) {
 
 // GetCharacterEncoding returns the CharacterEncoding field value if set, zero value otherwise.
 func (o *VelocityHttpServletExtensionResponse) GetCharacterEncoding() string {
-	if o == nil || isNil(o.CharacterEncoding) {
+	if o == nil || IsNil(o.CharacterEncoding) {
 		var ret string
 		return ret
 	}
@@ -542,7 +545,7 @@ func (o *VelocityHttpServletExtensionResponse) GetCharacterEncoding() string {
 // GetCharacterEncodingOk returns a tuple with the CharacterEncoding field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetCharacterEncodingOk() (*string, bool) {
-	if o == nil || isNil(o.CharacterEncoding) {
+	if o == nil || IsNil(o.CharacterEncoding) {
 		return nil, false
 	}
 	return o.CharacterEncoding, true
@@ -550,7 +553,7 @@ func (o *VelocityHttpServletExtensionResponse) GetCharacterEncodingOk() (*string
 
 // HasCharacterEncoding returns a boolean if a field has been set.
 func (o *VelocityHttpServletExtensionResponse) HasCharacterEncoding() bool {
-	if o != nil && !isNil(o.CharacterEncoding) {
+	if o != nil && !IsNil(o.CharacterEncoding) {
 		return true
 	}
 
@@ -564,7 +567,7 @@ func (o *VelocityHttpServletExtensionResponse) SetCharacterEncoding(v string) {
 
 // GetResponseHeader returns the ResponseHeader field value if set, zero value otherwise.
 func (o *VelocityHttpServletExtensionResponse) GetResponseHeader() []string {
-	if o == nil || isNil(o.ResponseHeader) {
+	if o == nil || IsNil(o.ResponseHeader) {
 		var ret []string
 		return ret
 	}
@@ -574,7 +577,7 @@ func (o *VelocityHttpServletExtensionResponse) GetResponseHeader() []string {
 // GetResponseHeaderOk returns a tuple with the ResponseHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetResponseHeaderOk() ([]string, bool) {
-	if o == nil || isNil(o.ResponseHeader) {
+	if o == nil || IsNil(o.ResponseHeader) {
 		return nil, false
 	}
 	return o.ResponseHeader, true
@@ -582,7 +585,7 @@ func (o *VelocityHttpServletExtensionResponse) GetResponseHeaderOk() ([]string, 
 
 // HasResponseHeader returns a boolean if a field has been set.
 func (o *VelocityHttpServletExtensionResponse) HasResponseHeader() bool {
-	if o != nil && !isNil(o.ResponseHeader) {
+	if o != nil && !IsNil(o.ResponseHeader) {
 		return true
 	}
 
@@ -596,7 +599,7 @@ func (o *VelocityHttpServletExtensionResponse) SetResponseHeader(v []string) {
 
 // GetStaticResponseHeader returns the StaticResponseHeader field value if set, zero value otherwise.
 func (o *VelocityHttpServletExtensionResponse) GetStaticResponseHeader() []string {
-	if o == nil || isNil(o.StaticResponseHeader) {
+	if o == nil || IsNil(o.StaticResponseHeader) {
 		var ret []string
 		return ret
 	}
@@ -606,7 +609,7 @@ func (o *VelocityHttpServletExtensionResponse) GetStaticResponseHeader() []strin
 // GetStaticResponseHeaderOk returns a tuple with the StaticResponseHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetStaticResponseHeaderOk() ([]string, bool) {
-	if o == nil || isNil(o.StaticResponseHeader) {
+	if o == nil || IsNil(o.StaticResponseHeader) {
 		return nil, false
 	}
 	return o.StaticResponseHeader, true
@@ -614,7 +617,7 @@ func (o *VelocityHttpServletExtensionResponse) GetStaticResponseHeaderOk() ([]st
 
 // HasStaticResponseHeader returns a boolean if a field has been set.
 func (o *VelocityHttpServletExtensionResponse) HasStaticResponseHeader() bool {
-	if o != nil && !isNil(o.StaticResponseHeader) {
+	if o != nil && !IsNil(o.StaticResponseHeader) {
 		return true
 	}
 
@@ -628,7 +631,7 @@ func (o *VelocityHttpServletExtensionResponse) SetStaticResponseHeader(v []strin
 
 // GetRequireAuthentication returns the RequireAuthentication field value if set, zero value otherwise.
 func (o *VelocityHttpServletExtensionResponse) GetRequireAuthentication() bool {
-	if o == nil || isNil(o.RequireAuthentication) {
+	if o == nil || IsNil(o.RequireAuthentication) {
 		var ret bool
 		return ret
 	}
@@ -638,7 +641,7 @@ func (o *VelocityHttpServletExtensionResponse) GetRequireAuthentication() bool {
 // GetRequireAuthenticationOk returns a tuple with the RequireAuthentication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetRequireAuthenticationOk() (*bool, bool) {
-	if o == nil || isNil(o.RequireAuthentication) {
+	if o == nil || IsNil(o.RequireAuthentication) {
 		return nil, false
 	}
 	return o.RequireAuthentication, true
@@ -646,7 +649,7 @@ func (o *VelocityHttpServletExtensionResponse) GetRequireAuthenticationOk() (*bo
 
 // HasRequireAuthentication returns a boolean if a field has been set.
 func (o *VelocityHttpServletExtensionResponse) HasRequireAuthentication() bool {
-	if o != nil && !isNil(o.RequireAuthentication) {
+	if o != nil && !IsNil(o.RequireAuthentication) {
 		return true
 	}
 
@@ -660,7 +663,7 @@ func (o *VelocityHttpServletExtensionResponse) SetRequireAuthentication(v bool) 
 
 // GetIdentityMapper returns the IdentityMapper field value if set, zero value otherwise.
 func (o *VelocityHttpServletExtensionResponse) GetIdentityMapper() string {
-	if o == nil || isNil(o.IdentityMapper) {
+	if o == nil || IsNil(o.IdentityMapper) {
 		var ret string
 		return ret
 	}
@@ -670,7 +673,7 @@ func (o *VelocityHttpServletExtensionResponse) GetIdentityMapper() string {
 // GetIdentityMapperOk returns a tuple with the IdentityMapper field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetIdentityMapperOk() (*string, bool) {
-	if o == nil || isNil(o.IdentityMapper) {
+	if o == nil || IsNil(o.IdentityMapper) {
 		return nil, false
 	}
 	return o.IdentityMapper, true
@@ -678,7 +681,7 @@ func (o *VelocityHttpServletExtensionResponse) GetIdentityMapperOk() (*string, b
 
 // HasIdentityMapper returns a boolean if a field has been set.
 func (o *VelocityHttpServletExtensionResponse) HasIdentityMapper() bool {
-	if o != nil && !isNil(o.IdentityMapper) {
+	if o != nil && !IsNil(o.IdentityMapper) {
 		return true
 	}
 
@@ -692,7 +695,7 @@ func (o *VelocityHttpServletExtensionResponse) SetIdentityMapper(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *VelocityHttpServletExtensionResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -702,7 +705,7 @@ func (o *VelocityHttpServletExtensionResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -710,7 +713,7 @@ func (o *VelocityHttpServletExtensionResponse) GetDescriptionOk() (*string, bool
 
 // HasDescription returns a boolean if a field has been set.
 func (o *VelocityHttpServletExtensionResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -724,7 +727,7 @@ func (o *VelocityHttpServletExtensionResponse) SetDescription(v string) {
 
 // GetCrossOriginPolicy returns the CrossOriginPolicy field value if set, zero value otherwise.
 func (o *VelocityHttpServletExtensionResponse) GetCrossOriginPolicy() string {
-	if o == nil || isNil(o.CrossOriginPolicy) {
+	if o == nil || IsNil(o.CrossOriginPolicy) {
 		var ret string
 		return ret
 	}
@@ -734,7 +737,7 @@ func (o *VelocityHttpServletExtensionResponse) GetCrossOriginPolicy() string {
 // GetCrossOriginPolicyOk returns a tuple with the CrossOriginPolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetCrossOriginPolicyOk() (*string, bool) {
-	if o == nil || isNil(o.CrossOriginPolicy) {
+	if o == nil || IsNil(o.CrossOriginPolicy) {
 		return nil, false
 	}
 	return o.CrossOriginPolicy, true
@@ -742,7 +745,7 @@ func (o *VelocityHttpServletExtensionResponse) GetCrossOriginPolicyOk() (*string
 
 // HasCrossOriginPolicy returns a boolean if a field has been set.
 func (o *VelocityHttpServletExtensionResponse) HasCrossOriginPolicy() bool {
-	if o != nil && !isNil(o.CrossOriginPolicy) {
+	if o != nil && !IsNil(o.CrossOriginPolicy) {
 		return true
 	}
 
@@ -756,7 +759,7 @@ func (o *VelocityHttpServletExtensionResponse) SetCrossOriginPolicy(v string) {
 
 // GetCorrelationIDResponseHeader returns the CorrelationIDResponseHeader field value if set, zero value otherwise.
 func (o *VelocityHttpServletExtensionResponse) GetCorrelationIDResponseHeader() string {
-	if o == nil || isNil(o.CorrelationIDResponseHeader) {
+	if o == nil || IsNil(o.CorrelationIDResponseHeader) {
 		var ret string
 		return ret
 	}
@@ -766,7 +769,7 @@ func (o *VelocityHttpServletExtensionResponse) GetCorrelationIDResponseHeader() 
 // GetCorrelationIDResponseHeaderOk returns a tuple with the CorrelationIDResponseHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetCorrelationIDResponseHeaderOk() (*string, bool) {
-	if o == nil || isNil(o.CorrelationIDResponseHeader) {
+	if o == nil || IsNil(o.CorrelationIDResponseHeader) {
 		return nil, false
 	}
 	return o.CorrelationIDResponseHeader, true
@@ -774,7 +777,7 @@ func (o *VelocityHttpServletExtensionResponse) GetCorrelationIDResponseHeaderOk(
 
 // HasCorrelationIDResponseHeader returns a boolean if a field has been set.
 func (o *VelocityHttpServletExtensionResponse) HasCorrelationIDResponseHeader() bool {
-	if o != nil && !isNil(o.CorrelationIDResponseHeader) {
+	if o != nil && !IsNil(o.CorrelationIDResponseHeader) {
 		return true
 	}
 
@@ -787,77 +790,77 @@ func (o *VelocityHttpServletExtensionResponse) SetCorrelationIDResponseHeader(v 
 }
 
 func (o VelocityHttpServletExtensionResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["baseContextPath"] = o.BaseContextPath
-	}
-	if !isNil(o.StaticContextPath) {
-		toSerialize["staticContextPath"] = o.StaticContextPath
-	}
-	if !isNil(o.StaticContentDirectory) {
-		toSerialize["staticContentDirectory"] = o.StaticContentDirectory
-	}
-	if !isNil(o.StaticCustomDirectory) {
-		toSerialize["staticCustomDirectory"] = o.StaticCustomDirectory
-	}
-	if true {
-		toSerialize["templateDirectory"] = o.TemplateDirectory
-	}
-	if !isNil(o.ExposeRequestAttributes) {
-		toSerialize["exposeRequestAttributes"] = o.ExposeRequestAttributes
-	}
-	if !isNil(o.ExposeSessionAttributes) {
-		toSerialize["exposeSessionAttributes"] = o.ExposeSessionAttributes
-	}
-	if !isNil(o.ExposeServerContext) {
-		toSerialize["exposeServerContext"] = o.ExposeServerContext
-	}
-	if !isNil(o.AllowContextOverride) {
-		toSerialize["allowContextOverride"] = o.AllowContextOverride
-	}
-	if !isNil(o.MimeTypesFile) {
-		toSerialize["mimeTypesFile"] = o.MimeTypesFile
-	}
-	if !isNil(o.DefaultMIMEType) {
-		toSerialize["defaultMIMEType"] = o.DefaultMIMEType
-	}
-	if !isNil(o.CharacterEncoding) {
-		toSerialize["characterEncoding"] = o.CharacterEncoding
-	}
-	if !isNil(o.ResponseHeader) {
-		toSerialize["responseHeader"] = o.ResponseHeader
-	}
-	if !isNil(o.StaticResponseHeader) {
-		toSerialize["staticResponseHeader"] = o.StaticResponseHeader
-	}
-	if !isNil(o.RequireAuthentication) {
-		toSerialize["requireAuthentication"] = o.RequireAuthentication
-	}
-	if !isNil(o.IdentityMapper) {
-		toSerialize["identityMapper"] = o.IdentityMapper
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if !isNil(o.CrossOriginPolicy) {
-		toSerialize["crossOriginPolicy"] = o.CrossOriginPolicy
-	}
-	if !isNil(o.CorrelationIDResponseHeader) {
-		toSerialize["correlationIDResponseHeader"] = o.CorrelationIDResponseHeader
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o VelocityHttpServletExtensionResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	toSerialize["baseContextPath"] = o.BaseContextPath
+	if !IsNil(o.StaticContextPath) {
+		toSerialize["staticContextPath"] = o.StaticContextPath
+	}
+	if !IsNil(o.StaticContentDirectory) {
+		toSerialize["staticContentDirectory"] = o.StaticContentDirectory
+	}
+	if !IsNil(o.StaticCustomDirectory) {
+		toSerialize["staticCustomDirectory"] = o.StaticCustomDirectory
+	}
+	toSerialize["templateDirectory"] = o.TemplateDirectory
+	if !IsNil(o.ExposeRequestAttributes) {
+		toSerialize["exposeRequestAttributes"] = o.ExposeRequestAttributes
+	}
+	if !IsNil(o.ExposeSessionAttributes) {
+		toSerialize["exposeSessionAttributes"] = o.ExposeSessionAttributes
+	}
+	if !IsNil(o.ExposeServerContext) {
+		toSerialize["exposeServerContext"] = o.ExposeServerContext
+	}
+	if !IsNil(o.AllowContextOverride) {
+		toSerialize["allowContextOverride"] = o.AllowContextOverride
+	}
+	if !IsNil(o.MimeTypesFile) {
+		toSerialize["mimeTypesFile"] = o.MimeTypesFile
+	}
+	if !IsNil(o.DefaultMIMEType) {
+		toSerialize["defaultMIMEType"] = o.DefaultMIMEType
+	}
+	if !IsNil(o.CharacterEncoding) {
+		toSerialize["characterEncoding"] = o.CharacterEncoding
+	}
+	if !IsNil(o.ResponseHeader) {
+		toSerialize["responseHeader"] = o.ResponseHeader
+	}
+	if !IsNil(o.StaticResponseHeader) {
+		toSerialize["staticResponseHeader"] = o.StaticResponseHeader
+	}
+	if !IsNil(o.RequireAuthentication) {
+		toSerialize["requireAuthentication"] = o.RequireAuthentication
+	}
+	if !IsNil(o.IdentityMapper) {
+		toSerialize["identityMapper"] = o.IdentityMapper
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.CrossOriginPolicy) {
+		toSerialize["crossOriginPolicy"] = o.CrossOriginPolicy
+	}
+	if !IsNil(o.CorrelationIDResponseHeader) {
+		toSerialize["correlationIDResponseHeader"] = o.CorrelationIDResponseHeader
+	}
+	return toSerialize, nil
 }
 
 type NullableVelocityHttpServletExtensionResponse struct {

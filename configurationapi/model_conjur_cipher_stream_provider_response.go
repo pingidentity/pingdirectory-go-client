@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ConjurCipherStreamProviderResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ConjurCipherStreamProviderResponse{}
+
 // ConjurCipherStreamProviderResponse struct for ConjurCipherStreamProviderResponse
 type ConjurCipherStreamProviderResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -58,7 +61,7 @@ func NewConjurCipherStreamProviderResponseWithDefaults() *ConjurCipherStreamProv
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *ConjurCipherStreamProviderResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -68,7 +71,7 @@ func (o *ConjurCipherStreamProviderResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConjurCipherStreamProviderResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -76,7 +79,7 @@ func (o *ConjurCipherStreamProviderResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *ConjurCipherStreamProviderResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -90,7 +93,7 @@ func (o *ConjurCipherStreamProviderResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *ConjurCipherStreamProviderResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -100,7 +103,7 @@ func (o *ConjurCipherStreamProviderResponse) GetUrnpingidentityschemasconfigurat
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConjurCipherStreamProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -108,7 +111,7 @@ func (o *ConjurCipherStreamProviderResponse) GetUrnpingidentityschemasconfigurat
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *ConjurCipherStreamProviderResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -242,7 +245,7 @@ func (o *ConjurCipherStreamProviderResponse) SetEncryptionMetadataFile(v string)
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *ConjurCipherStreamProviderResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -252,7 +255,7 @@ func (o *ConjurCipherStreamProviderResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConjurCipherStreamProviderResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -260,7 +263,7 @@ func (o *ConjurCipherStreamProviderResponse) GetDescriptionOk() (*string, bool) 
 
 // HasDescription returns a boolean if a field has been set.
 func (o *ConjurCipherStreamProviderResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -297,35 +300,31 @@ func (o *ConjurCipherStreamProviderResponse) SetEnabled(v bool) {
 }
 
 func (o ConjurCipherStreamProviderResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["conjurExternalServer"] = o.ConjurExternalServer
-	}
-	if true {
-		toSerialize["conjurSecretRelativePath"] = o.ConjurSecretRelativePath
-	}
-	if true {
-		toSerialize["encryptionMetadataFile"] = o.EncryptionMetadataFile
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ConjurCipherStreamProviderResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["conjurExternalServer"] = o.ConjurExternalServer
+	toSerialize["conjurSecretRelativePath"] = o.ConjurSecretRelativePath
+	toSerialize["encryptionMetadataFile"] = o.EncryptionMetadataFile
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableConjurCipherStreamProviderResponse struct {

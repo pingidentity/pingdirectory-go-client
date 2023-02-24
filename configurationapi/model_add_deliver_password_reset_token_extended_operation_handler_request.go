@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddDeliverPasswordResetTokenExtendedOperationHandlerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddDeliverPasswordResetTokenExtendedOperationHandlerRequest{}
+
 // AddDeliverPasswordResetTokenExtendedOperationHandlerRequest struct for AddDeliverPasswordResetTokenExtendedOperationHandlerRequest
 type AddDeliverPasswordResetTokenExtendedOperationHandlerRequest struct {
 	// Name of the new Extended Operation Handler
@@ -151,7 +154,7 @@ func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) SetDefault
 
 // GetPasswordResetTokenValidityDuration returns the PasswordResetTokenValidityDuration field value if set, zero value otherwise.
 func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetPasswordResetTokenValidityDuration() string {
-	if o == nil || isNil(o.PasswordResetTokenValidityDuration) {
+	if o == nil || IsNil(o.PasswordResetTokenValidityDuration) {
 		var ret string
 		return ret
 	}
@@ -161,7 +164,7 @@ func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetPasswor
 // GetPasswordResetTokenValidityDurationOk returns a tuple with the PasswordResetTokenValidityDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetPasswordResetTokenValidityDurationOk() (*string, bool) {
-	if o == nil || isNil(o.PasswordResetTokenValidityDuration) {
+	if o == nil || IsNil(o.PasswordResetTokenValidityDuration) {
 		return nil, false
 	}
 	return o.PasswordResetTokenValidityDuration, true
@@ -169,7 +172,7 @@ func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetPasswor
 
 // HasPasswordResetTokenValidityDuration returns a boolean if a field has been set.
 func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) HasPasswordResetTokenValidityDuration() bool {
-	if o != nil && !isNil(o.PasswordResetTokenValidityDuration) {
+	if o != nil && !IsNil(o.PasswordResetTokenValidityDuration) {
 		return true
 	}
 
@@ -183,7 +186,7 @@ func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) SetPasswor
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -193,7 +196,7 @@ func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetDescrip
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -201,7 +204,7 @@ func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetDescrip
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -238,29 +241,27 @@ func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) SetEnabled
 }
 
 func (o AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["handlerName"] = o.HandlerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["passwordGenerator"] = o.PasswordGenerator
-	}
-	if true {
-		toSerialize["defaultTokenDeliveryMechanism"] = o.DefaultTokenDeliveryMechanism
-	}
-	if !isNil(o.PasswordResetTokenValidityDuration) {
-		toSerialize["passwordResetTokenValidityDuration"] = o.PasswordResetTokenValidityDuration
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["handlerName"] = o.HandlerName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["passwordGenerator"] = o.PasswordGenerator
+	toSerialize["defaultTokenDeliveryMechanism"] = o.DefaultTokenDeliveryMechanism
+	if !IsNil(o.PasswordResetTokenValidityDuration) {
+		toSerialize["passwordResetTokenValidityDuration"] = o.PasswordResetTokenValidityDuration
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddDeliverPasswordResetTokenExtendedOperationHandlerRequest struct {

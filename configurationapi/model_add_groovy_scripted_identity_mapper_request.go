@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddGroovyScriptedIdentityMapperRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddGroovyScriptedIdentityMapperRequest{}
+
 // AddGroovyScriptedIdentityMapperRequest struct for AddGroovyScriptedIdentityMapperRequest
 type AddGroovyScriptedIdentityMapperRequest struct {
 	// Name of the new Identity Mapper
@@ -124,7 +127,7 @@ func (o *AddGroovyScriptedIdentityMapperRequest) SetScriptClass(v string) {
 
 // GetScriptArgument returns the ScriptArgument field value if set, zero value otherwise.
 func (o *AddGroovyScriptedIdentityMapperRequest) GetScriptArgument() []string {
-	if o == nil || isNil(o.ScriptArgument) {
+	if o == nil || IsNil(o.ScriptArgument) {
 		var ret []string
 		return ret
 	}
@@ -134,7 +137,7 @@ func (o *AddGroovyScriptedIdentityMapperRequest) GetScriptArgument() []string {
 // GetScriptArgumentOk returns a tuple with the ScriptArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedIdentityMapperRequest) GetScriptArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ScriptArgument) {
+	if o == nil || IsNil(o.ScriptArgument) {
 		return nil, false
 	}
 	return o.ScriptArgument, true
@@ -142,7 +145,7 @@ func (o *AddGroovyScriptedIdentityMapperRequest) GetScriptArgumentOk() ([]string
 
 // HasScriptArgument returns a boolean if a field has been set.
 func (o *AddGroovyScriptedIdentityMapperRequest) HasScriptArgument() bool {
-	if o != nil && !isNil(o.ScriptArgument) {
+	if o != nil && !IsNil(o.ScriptArgument) {
 		return true
 	}
 
@@ -156,7 +159,7 @@ func (o *AddGroovyScriptedIdentityMapperRequest) SetScriptArgument(v []string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddGroovyScriptedIdentityMapperRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -166,7 +169,7 @@ func (o *AddGroovyScriptedIdentityMapperRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedIdentityMapperRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -174,7 +177,7 @@ func (o *AddGroovyScriptedIdentityMapperRequest) GetDescriptionOk() (*string, bo
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddGroovyScriptedIdentityMapperRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -211,26 +214,26 @@ func (o *AddGroovyScriptedIdentityMapperRequest) SetEnabled(v bool) {
 }
 
 func (o AddGroovyScriptedIdentityMapperRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["mapperName"] = o.MapperName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["scriptClass"] = o.ScriptClass
-	}
-	if !isNil(o.ScriptArgument) {
-		toSerialize["scriptArgument"] = o.ScriptArgument
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddGroovyScriptedIdentityMapperRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["mapperName"] = o.MapperName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["scriptClass"] = o.ScriptClass
+	if !IsNil(o.ScriptArgument) {
+		toSerialize["scriptArgument"] = o.ScriptArgument
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddGroovyScriptedIdentityMapperRequest struct {

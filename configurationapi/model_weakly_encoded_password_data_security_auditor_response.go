@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the WeaklyEncodedPasswordDataSecurityAuditorResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &WeaklyEncodedPasswordDataSecurityAuditorResponse{}
+
 // WeaklyEncodedPasswordDataSecurityAuditorResponse struct for WeaklyEncodedPasswordDataSecurityAuditorResponse
 type WeaklyEncodedPasswordDataSecurityAuditorResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -59,7 +62,7 @@ func NewWeaklyEncodedPasswordDataSecurityAuditorResponseWithDefaults() *WeaklyEn
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -69,7 +72,7 @@ func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -77,7 +80,7 @@ func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) GetMetaOk() (*MetaMet
 
 // HasMeta returns a boolean if a field has been set.
 func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -91,7 +94,7 @@ func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -101,7 +104,7 @@ func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) GetUrnpingidentitysch
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -109,7 +112,7 @@ func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) GetUrnpingidentitysch
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -219,7 +222,7 @@ func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) SetWeakPasswordStorag
 
 // GetWeakCryptEncoding returns the WeakCryptEncoding field value if set, zero value otherwise.
 func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) GetWeakCryptEncoding() []EnumdataSecurityAuditorWeakCryptEncodingProp {
-	if o == nil || isNil(o.WeakCryptEncoding) {
+	if o == nil || IsNil(o.WeakCryptEncoding) {
 		var ret []EnumdataSecurityAuditorWeakCryptEncodingProp
 		return ret
 	}
@@ -229,7 +232,7 @@ func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) GetWeakCryptEncoding(
 // GetWeakCryptEncodingOk returns a tuple with the WeakCryptEncoding field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) GetWeakCryptEncodingOk() ([]EnumdataSecurityAuditorWeakCryptEncodingProp, bool) {
-	if o == nil || isNil(o.WeakCryptEncoding) {
+	if o == nil || IsNil(o.WeakCryptEncoding) {
 		return nil, false
 	}
 	return o.WeakCryptEncoding, true
@@ -237,7 +240,7 @@ func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) GetWeakCryptEncodingO
 
 // HasWeakCryptEncoding returns a boolean if a field has been set.
 func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) HasWeakCryptEncoding() bool {
-	if o != nil && !isNil(o.WeakCryptEncoding) {
+	if o != nil && !IsNil(o.WeakCryptEncoding) {
 		return true
 	}
 
@@ -275,7 +278,7 @@ func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) SetEnabled(v bool) {
 
 // GetIncludeAttribute returns the IncludeAttribute field value if set, zero value otherwise.
 func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) GetIncludeAttribute() []string {
-	if o == nil || isNil(o.IncludeAttribute) {
+	if o == nil || IsNil(o.IncludeAttribute) {
 		var ret []string
 		return ret
 	}
@@ -285,7 +288,7 @@ func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) GetIncludeAttribute()
 // GetIncludeAttributeOk returns a tuple with the IncludeAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) GetIncludeAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludeAttribute) {
+	if o == nil || IsNil(o.IncludeAttribute) {
 		return nil, false
 	}
 	return o.IncludeAttribute, true
@@ -293,7 +296,7 @@ func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) GetIncludeAttributeOk
 
 // HasIncludeAttribute returns a boolean if a field has been set.
 func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) HasIncludeAttribute() bool {
-	if o != nil && !isNil(o.IncludeAttribute) {
+	if o != nil && !IsNil(o.IncludeAttribute) {
 		return true
 	}
 
@@ -307,7 +310,7 @@ func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) SetIncludeAttribute(v
 
 // GetAuditBackend returns the AuditBackend field value if set, zero value otherwise.
 func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) GetAuditBackend() []string {
-	if o == nil || isNil(o.AuditBackend) {
+	if o == nil || IsNil(o.AuditBackend) {
 		var ret []string
 		return ret
 	}
@@ -317,7 +320,7 @@ func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) GetAuditBackend() []s
 // GetAuditBackendOk returns a tuple with the AuditBackend field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) GetAuditBackendOk() ([]string, bool) {
-	if o == nil || isNil(o.AuditBackend) {
+	if o == nil || IsNil(o.AuditBackend) {
 		return nil, false
 	}
 	return o.AuditBackend, true
@@ -325,7 +328,7 @@ func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) GetAuditBackendOk() (
 
 // HasAuditBackend returns a boolean if a field has been set.
 func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) HasAuditBackend() bool {
-	if o != nil && !isNil(o.AuditBackend) {
+	if o != nil && !IsNil(o.AuditBackend) {
 		return true
 	}
 
@@ -339,7 +342,7 @@ func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) SetAuditBackend(v []s
 
 // GetAuditSeverity returns the AuditSeverity field value if set, zero value otherwise.
 func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) GetAuditSeverity() EnumdataSecurityAuditorAuditSeverityProp {
-	if o == nil || isNil(o.AuditSeverity) {
+	if o == nil || IsNil(o.AuditSeverity) {
 		var ret EnumdataSecurityAuditorAuditSeverityProp
 		return ret
 	}
@@ -349,7 +352,7 @@ func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) GetAuditSeverity() En
 // GetAuditSeverityOk returns a tuple with the AuditSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) GetAuditSeverityOk() (*EnumdataSecurityAuditorAuditSeverityProp, bool) {
-	if o == nil || isNil(o.AuditSeverity) {
+	if o == nil || IsNil(o.AuditSeverity) {
 		return nil, false
 	}
 	return o.AuditSeverity, true
@@ -357,7 +360,7 @@ func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) GetAuditSeverityOk() 
 
 // HasAuditSeverity returns a boolean if a field has been set.
 func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) HasAuditSeverity() bool {
-	if o != nil && !isNil(o.AuditSeverity) {
+	if o != nil && !IsNil(o.AuditSeverity) {
 		return true
 	}
 
@@ -370,41 +373,39 @@ func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) SetAuditSeverity(v En
 }
 
 func (o WeaklyEncodedPasswordDataSecurityAuditorResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["reportFile"] = o.ReportFile
-	}
-	if true {
-		toSerialize["weakPasswordStorageScheme"] = o.WeakPasswordStorageScheme
-	}
-	if !isNil(o.WeakCryptEncoding) {
-		toSerialize["weakCryptEncoding"] = o.WeakCryptEncoding
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.IncludeAttribute) {
-		toSerialize["includeAttribute"] = o.IncludeAttribute
-	}
-	if !isNil(o.AuditBackend) {
-		toSerialize["auditBackend"] = o.AuditBackend
-	}
-	if !isNil(o.AuditSeverity) {
-		toSerialize["auditSeverity"] = o.AuditSeverity
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o WeaklyEncodedPasswordDataSecurityAuditorResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["reportFile"] = o.ReportFile
+	toSerialize["weakPasswordStorageScheme"] = o.WeakPasswordStorageScheme
+	if !IsNil(o.WeakCryptEncoding) {
+		toSerialize["weakCryptEncoding"] = o.WeakCryptEncoding
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.IncludeAttribute) {
+		toSerialize["includeAttribute"] = o.IncludeAttribute
+	}
+	if !IsNil(o.AuditBackend) {
+		toSerialize["auditBackend"] = o.AuditBackend
+	}
+	if !IsNil(o.AuditSeverity) {
+		toSerialize["auditSeverity"] = o.AuditSeverity
+	}
+	return toSerialize, nil
 }
 
 type NullableWeaklyEncodedPasswordDataSecurityAuditorResponse struct {

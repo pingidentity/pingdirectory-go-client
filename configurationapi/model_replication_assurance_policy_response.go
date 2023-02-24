@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ReplicationAssurancePolicyResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ReplicationAssurancePolicyResponse{}
+
 // ReplicationAssurancePolicyResponse struct for ReplicationAssurancePolicyResponse
 type ReplicationAssurancePolicyResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -62,7 +65,7 @@ func NewReplicationAssurancePolicyResponseWithDefaults() *ReplicationAssurancePo
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *ReplicationAssurancePolicyResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -72,7 +75,7 @@ func (o *ReplicationAssurancePolicyResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReplicationAssurancePolicyResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -80,7 +83,7 @@ func (o *ReplicationAssurancePolicyResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *ReplicationAssurancePolicyResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -94,7 +97,7 @@ func (o *ReplicationAssurancePolicyResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *ReplicationAssurancePolicyResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *ReplicationAssurancePolicyResponse) GetUrnpingidentityschemasconfigurat
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReplicationAssurancePolicyResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -112,7 +115,7 @@ func (o *ReplicationAssurancePolicyResponse) GetUrnpingidentityschemasconfigurat
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *ReplicationAssurancePolicyResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -150,7 +153,7 @@ func (o *ReplicationAssurancePolicyResponse) SetId(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *ReplicationAssurancePolicyResponse) GetSchemas() []EnumreplicationAssurancePolicySchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumreplicationAssurancePolicySchemaUrn
 		return ret
 	}
@@ -160,7 +163,7 @@ func (o *ReplicationAssurancePolicyResponse) GetSchemas() []EnumreplicationAssur
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReplicationAssurancePolicyResponse) GetSchemasOk() ([]EnumreplicationAssurancePolicySchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -168,7 +171,7 @@ func (o *ReplicationAssurancePolicyResponse) GetSchemasOk() ([]EnumreplicationAs
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *ReplicationAssurancePolicyResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -182,7 +185,7 @@ func (o *ReplicationAssurancePolicyResponse) SetSchemas(v []EnumreplicationAssur
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *ReplicationAssurancePolicyResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -192,7 +195,7 @@ func (o *ReplicationAssurancePolicyResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReplicationAssurancePolicyResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -200,7 +203,7 @@ func (o *ReplicationAssurancePolicyResponse) GetDescriptionOk() (*string, bool) 
 
 // HasDescription returns a boolean if a field has been set.
 func (o *ReplicationAssurancePolicyResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -334,7 +337,7 @@ func (o *ReplicationAssurancePolicyResponse) SetTimeout(v string) {
 
 // GetConnectionCriteria returns the ConnectionCriteria field value if set, zero value otherwise.
 func (o *ReplicationAssurancePolicyResponse) GetConnectionCriteria() string {
-	if o == nil || isNil(o.ConnectionCriteria) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
 		var ret string
 		return ret
 	}
@@ -344,7 +347,7 @@ func (o *ReplicationAssurancePolicyResponse) GetConnectionCriteria() string {
 // GetConnectionCriteriaOk returns a tuple with the ConnectionCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReplicationAssurancePolicyResponse) GetConnectionCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.ConnectionCriteria) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
 		return nil, false
 	}
 	return o.ConnectionCriteria, true
@@ -352,7 +355,7 @@ func (o *ReplicationAssurancePolicyResponse) GetConnectionCriteriaOk() (*string,
 
 // HasConnectionCriteria returns a boolean if a field has been set.
 func (o *ReplicationAssurancePolicyResponse) HasConnectionCriteria() bool {
-	if o != nil && !isNil(o.ConnectionCriteria) {
+	if o != nil && !IsNil(o.ConnectionCriteria) {
 		return true
 	}
 
@@ -366,7 +369,7 @@ func (o *ReplicationAssurancePolicyResponse) SetConnectionCriteria(v string) {
 
 // GetRequestCriteria returns the RequestCriteria field value if set, zero value otherwise.
 func (o *ReplicationAssurancePolicyResponse) GetRequestCriteria() string {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -376,7 +379,7 @@ func (o *ReplicationAssurancePolicyResponse) GetRequestCriteria() string {
 // GetRequestCriteriaOk returns a tuple with the RequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReplicationAssurancePolicyResponse) GetRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		return nil, false
 	}
 	return o.RequestCriteria, true
@@ -384,7 +387,7 @@ func (o *ReplicationAssurancePolicyResponse) GetRequestCriteriaOk() (*string, bo
 
 // HasRequestCriteria returns a boolean if a field has been set.
 func (o *ReplicationAssurancePolicyResponse) HasRequestCriteria() bool {
-	if o != nil && !isNil(o.RequestCriteria) {
+	if o != nil && !IsNil(o.RequestCriteria) {
 		return true
 	}
 
@@ -397,44 +400,40 @@ func (o *ReplicationAssurancePolicyResponse) SetRequestCriteria(v string) {
 }
 
 func (o ReplicationAssurancePolicyResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if true {
-		toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
-	}
-	if true {
-		toSerialize["localLevel"] = o.LocalLevel
-	}
-	if true {
-		toSerialize["remoteLevel"] = o.RemoteLevel
-	}
-	if true {
-		toSerialize["timeout"] = o.Timeout
-	}
-	if !isNil(o.ConnectionCriteria) {
-		toSerialize["connectionCriteria"] = o.ConnectionCriteria
-	}
-	if !isNil(o.RequestCriteria) {
-		toSerialize["requestCriteria"] = o.RequestCriteria
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ReplicationAssurancePolicyResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
+	toSerialize["localLevel"] = o.LocalLevel
+	toSerialize["remoteLevel"] = o.RemoteLevel
+	toSerialize["timeout"] = o.Timeout
+	if !IsNil(o.ConnectionCriteria) {
+		toSerialize["connectionCriteria"] = o.ConnectionCriteria
+	}
+	if !IsNil(o.RequestCriteria) {
+		toSerialize["requestCriteria"] = o.RequestCriteria
+	}
+	return toSerialize, nil
 }
 
 type NullableReplicationAssurancePolicyResponse struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PasswordPolicyImportPluginResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PasswordPolicyImportPluginResponse{}
+
 // PasswordPolicyImportPluginResponse struct for PasswordPolicyImportPluginResponse
 type PasswordPolicyImportPluginResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -55,7 +58,7 @@ func NewPasswordPolicyImportPluginResponseWithDefaults() *PasswordPolicyImportPl
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *PasswordPolicyImportPluginResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -65,7 +68,7 @@ func (o *PasswordPolicyImportPluginResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PasswordPolicyImportPluginResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -73,7 +76,7 @@ func (o *PasswordPolicyImportPluginResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *PasswordPolicyImportPluginResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -87,7 +90,7 @@ func (o *PasswordPolicyImportPluginResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *PasswordPolicyImportPluginResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -97,7 +100,7 @@ func (o *PasswordPolicyImportPluginResponse) GetUrnpingidentityschemasconfigurat
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PasswordPolicyImportPluginResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -105,7 +108,7 @@ func (o *PasswordPolicyImportPluginResponse) GetUrnpingidentityschemasconfigurat
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *PasswordPolicyImportPluginResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -167,7 +170,7 @@ func (o *PasswordPolicyImportPluginResponse) SetId(v string) {
 
 // GetInvokeForInternalOperations returns the InvokeForInternalOperations field value if set, zero value otherwise.
 func (o *PasswordPolicyImportPluginResponse) GetInvokeForInternalOperations() bool {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		var ret bool
 		return ret
 	}
@@ -177,7 +180,7 @@ func (o *PasswordPolicyImportPluginResponse) GetInvokeForInternalOperations() bo
 // GetInvokeForInternalOperationsOk returns a tuple with the InvokeForInternalOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PasswordPolicyImportPluginResponse) GetInvokeForInternalOperationsOk() (*bool, bool) {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		return nil, false
 	}
 	return o.InvokeForInternalOperations, true
@@ -185,7 +188,7 @@ func (o *PasswordPolicyImportPluginResponse) GetInvokeForInternalOperationsOk() 
 
 // HasInvokeForInternalOperations returns a boolean if a field has been set.
 func (o *PasswordPolicyImportPluginResponse) HasInvokeForInternalOperations() bool {
-	if o != nil && !isNil(o.InvokeForInternalOperations) {
+	if o != nil && !IsNil(o.InvokeForInternalOperations) {
 		return true
 	}
 
@@ -199,7 +202,7 @@ func (o *PasswordPolicyImportPluginResponse) SetInvokeForInternalOperations(v bo
 
 // GetDefaultUserPasswordStorageScheme returns the DefaultUserPasswordStorageScheme field value if set, zero value otherwise.
 func (o *PasswordPolicyImportPluginResponse) GetDefaultUserPasswordStorageScheme() []string {
-	if o == nil || isNil(o.DefaultUserPasswordStorageScheme) {
+	if o == nil || IsNil(o.DefaultUserPasswordStorageScheme) {
 		var ret []string
 		return ret
 	}
@@ -209,7 +212,7 @@ func (o *PasswordPolicyImportPluginResponse) GetDefaultUserPasswordStorageScheme
 // GetDefaultUserPasswordStorageSchemeOk returns a tuple with the DefaultUserPasswordStorageScheme field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PasswordPolicyImportPluginResponse) GetDefaultUserPasswordStorageSchemeOk() ([]string, bool) {
-	if o == nil || isNil(o.DefaultUserPasswordStorageScheme) {
+	if o == nil || IsNil(o.DefaultUserPasswordStorageScheme) {
 		return nil, false
 	}
 	return o.DefaultUserPasswordStorageScheme, true
@@ -217,7 +220,7 @@ func (o *PasswordPolicyImportPluginResponse) GetDefaultUserPasswordStorageScheme
 
 // HasDefaultUserPasswordStorageScheme returns a boolean if a field has been set.
 func (o *PasswordPolicyImportPluginResponse) HasDefaultUserPasswordStorageScheme() bool {
-	if o != nil && !isNil(o.DefaultUserPasswordStorageScheme) {
+	if o != nil && !IsNil(o.DefaultUserPasswordStorageScheme) {
 		return true
 	}
 
@@ -231,7 +234,7 @@ func (o *PasswordPolicyImportPluginResponse) SetDefaultUserPasswordStorageScheme
 
 // GetDefaultAuthPasswordStorageScheme returns the DefaultAuthPasswordStorageScheme field value if set, zero value otherwise.
 func (o *PasswordPolicyImportPluginResponse) GetDefaultAuthPasswordStorageScheme() []string {
-	if o == nil || isNil(o.DefaultAuthPasswordStorageScheme) {
+	if o == nil || IsNil(o.DefaultAuthPasswordStorageScheme) {
 		var ret []string
 		return ret
 	}
@@ -241,7 +244,7 @@ func (o *PasswordPolicyImportPluginResponse) GetDefaultAuthPasswordStorageScheme
 // GetDefaultAuthPasswordStorageSchemeOk returns a tuple with the DefaultAuthPasswordStorageScheme field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PasswordPolicyImportPluginResponse) GetDefaultAuthPasswordStorageSchemeOk() ([]string, bool) {
-	if o == nil || isNil(o.DefaultAuthPasswordStorageScheme) {
+	if o == nil || IsNil(o.DefaultAuthPasswordStorageScheme) {
 		return nil, false
 	}
 	return o.DefaultAuthPasswordStorageScheme, true
@@ -249,7 +252,7 @@ func (o *PasswordPolicyImportPluginResponse) GetDefaultAuthPasswordStorageScheme
 
 // HasDefaultAuthPasswordStorageScheme returns a boolean if a field has been set.
 func (o *PasswordPolicyImportPluginResponse) HasDefaultAuthPasswordStorageScheme() bool {
-	if o != nil && !isNil(o.DefaultAuthPasswordStorageScheme) {
+	if o != nil && !IsNil(o.DefaultAuthPasswordStorageScheme) {
 		return true
 	}
 
@@ -263,7 +266,7 @@ func (o *PasswordPolicyImportPluginResponse) SetDefaultAuthPasswordStorageScheme
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *PasswordPolicyImportPluginResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -273,7 +276,7 @@ func (o *PasswordPolicyImportPluginResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PasswordPolicyImportPluginResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -281,7 +284,7 @@ func (o *PasswordPolicyImportPluginResponse) GetDescriptionOk() (*string, bool) 
 
 // HasDescription returns a boolean if a field has been set.
 func (o *PasswordPolicyImportPluginResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -318,35 +321,37 @@ func (o *PasswordPolicyImportPluginResponse) SetEnabled(v bool) {
 }
 
 func (o PasswordPolicyImportPluginResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.InvokeForInternalOperations) {
-		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
-	}
-	if !isNil(o.DefaultUserPasswordStorageScheme) {
-		toSerialize["defaultUserPasswordStorageScheme"] = o.DefaultUserPasswordStorageScheme
-	}
-	if !isNil(o.DefaultAuthPasswordStorageScheme) {
-		toSerialize["defaultAuthPasswordStorageScheme"] = o.DefaultAuthPasswordStorageScheme
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PasswordPolicyImportPluginResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	if !IsNil(o.InvokeForInternalOperations) {
+		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
+	}
+	if !IsNil(o.DefaultUserPasswordStorageScheme) {
+		toSerialize["defaultUserPasswordStorageScheme"] = o.DefaultUserPasswordStorageScheme
+	}
+	if !IsNil(o.DefaultAuthPasswordStorageScheme) {
+		toSerialize["defaultAuthPasswordStorageScheme"] = o.DefaultAuthPasswordStorageScheme
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullablePasswordPolicyImportPluginResponse struct {

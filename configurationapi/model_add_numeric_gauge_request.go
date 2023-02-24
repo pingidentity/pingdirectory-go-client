@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddNumericGaugeRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddNumericGaugeRequest{}
+
 // AddNumericGaugeRequest struct for AddNumericGaugeRequest
 type AddNumericGaugeRequest struct {
 	// Name of the new Gauge
@@ -149,7 +152,7 @@ func (o *AddNumericGaugeRequest) SetGaugeDataSource(v string) {
 
 // GetCriticalValue returns the CriticalValue field value if set, zero value otherwise.
 func (o *AddNumericGaugeRequest) GetCriticalValue() float32 {
-	if o == nil || isNil(o.CriticalValue) {
+	if o == nil || IsNil(o.CriticalValue) {
 		var ret float32
 		return ret
 	}
@@ -159,7 +162,7 @@ func (o *AddNumericGaugeRequest) GetCriticalValue() float32 {
 // GetCriticalValueOk returns a tuple with the CriticalValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetCriticalValueOk() (*float32, bool) {
-	if o == nil || isNil(o.CriticalValue) {
+	if o == nil || IsNil(o.CriticalValue) {
 		return nil, false
 	}
 	return o.CriticalValue, true
@@ -167,7 +170,7 @@ func (o *AddNumericGaugeRequest) GetCriticalValueOk() (*float32, bool) {
 
 // HasCriticalValue returns a boolean if a field has been set.
 func (o *AddNumericGaugeRequest) HasCriticalValue() bool {
-	if o != nil && !isNil(o.CriticalValue) {
+	if o != nil && !IsNil(o.CriticalValue) {
 		return true
 	}
 
@@ -181,7 +184,7 @@ func (o *AddNumericGaugeRequest) SetCriticalValue(v float32) {
 
 // GetCriticalExitValue returns the CriticalExitValue field value if set, zero value otherwise.
 func (o *AddNumericGaugeRequest) GetCriticalExitValue() float32 {
-	if o == nil || isNil(o.CriticalExitValue) {
+	if o == nil || IsNil(o.CriticalExitValue) {
 		var ret float32
 		return ret
 	}
@@ -191,7 +194,7 @@ func (o *AddNumericGaugeRequest) GetCriticalExitValue() float32 {
 // GetCriticalExitValueOk returns a tuple with the CriticalExitValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetCriticalExitValueOk() (*float32, bool) {
-	if o == nil || isNil(o.CriticalExitValue) {
+	if o == nil || IsNil(o.CriticalExitValue) {
 		return nil, false
 	}
 	return o.CriticalExitValue, true
@@ -199,7 +202,7 @@ func (o *AddNumericGaugeRequest) GetCriticalExitValueOk() (*float32, bool) {
 
 // HasCriticalExitValue returns a boolean if a field has been set.
 func (o *AddNumericGaugeRequest) HasCriticalExitValue() bool {
-	if o != nil && !isNil(o.CriticalExitValue) {
+	if o != nil && !IsNil(o.CriticalExitValue) {
 		return true
 	}
 
@@ -213,7 +216,7 @@ func (o *AddNumericGaugeRequest) SetCriticalExitValue(v float32) {
 
 // GetMajorValue returns the MajorValue field value if set, zero value otherwise.
 func (o *AddNumericGaugeRequest) GetMajorValue() float32 {
-	if o == nil || isNil(o.MajorValue) {
+	if o == nil || IsNil(o.MajorValue) {
 		var ret float32
 		return ret
 	}
@@ -223,7 +226,7 @@ func (o *AddNumericGaugeRequest) GetMajorValue() float32 {
 // GetMajorValueOk returns a tuple with the MajorValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetMajorValueOk() (*float32, bool) {
-	if o == nil || isNil(o.MajorValue) {
+	if o == nil || IsNil(o.MajorValue) {
 		return nil, false
 	}
 	return o.MajorValue, true
@@ -231,7 +234,7 @@ func (o *AddNumericGaugeRequest) GetMajorValueOk() (*float32, bool) {
 
 // HasMajorValue returns a boolean if a field has been set.
 func (o *AddNumericGaugeRequest) HasMajorValue() bool {
-	if o != nil && !isNil(o.MajorValue) {
+	if o != nil && !IsNil(o.MajorValue) {
 		return true
 	}
 
@@ -245,7 +248,7 @@ func (o *AddNumericGaugeRequest) SetMajorValue(v float32) {
 
 // GetMajorExitValue returns the MajorExitValue field value if set, zero value otherwise.
 func (o *AddNumericGaugeRequest) GetMajorExitValue() float32 {
-	if o == nil || isNil(o.MajorExitValue) {
+	if o == nil || IsNil(o.MajorExitValue) {
 		var ret float32
 		return ret
 	}
@@ -255,7 +258,7 @@ func (o *AddNumericGaugeRequest) GetMajorExitValue() float32 {
 // GetMajorExitValueOk returns a tuple with the MajorExitValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetMajorExitValueOk() (*float32, bool) {
-	if o == nil || isNil(o.MajorExitValue) {
+	if o == nil || IsNil(o.MajorExitValue) {
 		return nil, false
 	}
 	return o.MajorExitValue, true
@@ -263,7 +266,7 @@ func (o *AddNumericGaugeRequest) GetMajorExitValueOk() (*float32, bool) {
 
 // HasMajorExitValue returns a boolean if a field has been set.
 func (o *AddNumericGaugeRequest) HasMajorExitValue() bool {
-	if o != nil && !isNil(o.MajorExitValue) {
+	if o != nil && !IsNil(o.MajorExitValue) {
 		return true
 	}
 
@@ -277,7 +280,7 @@ func (o *AddNumericGaugeRequest) SetMajorExitValue(v float32) {
 
 // GetMinorValue returns the MinorValue field value if set, zero value otherwise.
 func (o *AddNumericGaugeRequest) GetMinorValue() float32 {
-	if o == nil || isNil(o.MinorValue) {
+	if o == nil || IsNil(o.MinorValue) {
 		var ret float32
 		return ret
 	}
@@ -287,7 +290,7 @@ func (o *AddNumericGaugeRequest) GetMinorValue() float32 {
 // GetMinorValueOk returns a tuple with the MinorValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetMinorValueOk() (*float32, bool) {
-	if o == nil || isNil(o.MinorValue) {
+	if o == nil || IsNil(o.MinorValue) {
 		return nil, false
 	}
 	return o.MinorValue, true
@@ -295,7 +298,7 @@ func (o *AddNumericGaugeRequest) GetMinorValueOk() (*float32, bool) {
 
 // HasMinorValue returns a boolean if a field has been set.
 func (o *AddNumericGaugeRequest) HasMinorValue() bool {
-	if o != nil && !isNil(o.MinorValue) {
+	if o != nil && !IsNil(o.MinorValue) {
 		return true
 	}
 
@@ -309,7 +312,7 @@ func (o *AddNumericGaugeRequest) SetMinorValue(v float32) {
 
 // GetMinorExitValue returns the MinorExitValue field value if set, zero value otherwise.
 func (o *AddNumericGaugeRequest) GetMinorExitValue() float32 {
-	if o == nil || isNil(o.MinorExitValue) {
+	if o == nil || IsNil(o.MinorExitValue) {
 		var ret float32
 		return ret
 	}
@@ -319,7 +322,7 @@ func (o *AddNumericGaugeRequest) GetMinorExitValue() float32 {
 // GetMinorExitValueOk returns a tuple with the MinorExitValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetMinorExitValueOk() (*float32, bool) {
-	if o == nil || isNil(o.MinorExitValue) {
+	if o == nil || IsNil(o.MinorExitValue) {
 		return nil, false
 	}
 	return o.MinorExitValue, true
@@ -327,7 +330,7 @@ func (o *AddNumericGaugeRequest) GetMinorExitValueOk() (*float32, bool) {
 
 // HasMinorExitValue returns a boolean if a field has been set.
 func (o *AddNumericGaugeRequest) HasMinorExitValue() bool {
-	if o != nil && !isNil(o.MinorExitValue) {
+	if o != nil && !IsNil(o.MinorExitValue) {
 		return true
 	}
 
@@ -341,7 +344,7 @@ func (o *AddNumericGaugeRequest) SetMinorExitValue(v float32) {
 
 // GetWarningValue returns the WarningValue field value if set, zero value otherwise.
 func (o *AddNumericGaugeRequest) GetWarningValue() float32 {
-	if o == nil || isNil(o.WarningValue) {
+	if o == nil || IsNil(o.WarningValue) {
 		var ret float32
 		return ret
 	}
@@ -351,7 +354,7 @@ func (o *AddNumericGaugeRequest) GetWarningValue() float32 {
 // GetWarningValueOk returns a tuple with the WarningValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetWarningValueOk() (*float32, bool) {
-	if o == nil || isNil(o.WarningValue) {
+	if o == nil || IsNil(o.WarningValue) {
 		return nil, false
 	}
 	return o.WarningValue, true
@@ -359,7 +362,7 @@ func (o *AddNumericGaugeRequest) GetWarningValueOk() (*float32, bool) {
 
 // HasWarningValue returns a boolean if a field has been set.
 func (o *AddNumericGaugeRequest) HasWarningValue() bool {
-	if o != nil && !isNil(o.WarningValue) {
+	if o != nil && !IsNil(o.WarningValue) {
 		return true
 	}
 
@@ -373,7 +376,7 @@ func (o *AddNumericGaugeRequest) SetWarningValue(v float32) {
 
 // GetWarningExitValue returns the WarningExitValue field value if set, zero value otherwise.
 func (o *AddNumericGaugeRequest) GetWarningExitValue() float32 {
-	if o == nil || isNil(o.WarningExitValue) {
+	if o == nil || IsNil(o.WarningExitValue) {
 		var ret float32
 		return ret
 	}
@@ -383,7 +386,7 @@ func (o *AddNumericGaugeRequest) GetWarningExitValue() float32 {
 // GetWarningExitValueOk returns a tuple with the WarningExitValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetWarningExitValueOk() (*float32, bool) {
-	if o == nil || isNil(o.WarningExitValue) {
+	if o == nil || IsNil(o.WarningExitValue) {
 		return nil, false
 	}
 	return o.WarningExitValue, true
@@ -391,7 +394,7 @@ func (o *AddNumericGaugeRequest) GetWarningExitValueOk() (*float32, bool) {
 
 // HasWarningExitValue returns a boolean if a field has been set.
 func (o *AddNumericGaugeRequest) HasWarningExitValue() bool {
-	if o != nil && !isNil(o.WarningExitValue) {
+	if o != nil && !IsNil(o.WarningExitValue) {
 		return true
 	}
 
@@ -405,7 +408,7 @@ func (o *AddNumericGaugeRequest) SetWarningExitValue(v float32) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddNumericGaugeRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -415,7 +418,7 @@ func (o *AddNumericGaugeRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -423,7 +426,7 @@ func (o *AddNumericGaugeRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddNumericGaugeRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -437,7 +440,7 @@ func (o *AddNumericGaugeRequest) SetDescription(v string) {
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
 func (o *AddNumericGaugeRequest) GetEnabled() bool {
-	if o == nil || isNil(o.Enabled) {
+	if o == nil || IsNil(o.Enabled) {
 		var ret bool
 		return ret
 	}
@@ -447,7 +450,7 @@ func (o *AddNumericGaugeRequest) GetEnabled() bool {
 // GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetEnabledOk() (*bool, bool) {
-	if o == nil || isNil(o.Enabled) {
+	if o == nil || IsNil(o.Enabled) {
 		return nil, false
 	}
 	return o.Enabled, true
@@ -455,7 +458,7 @@ func (o *AddNumericGaugeRequest) GetEnabledOk() (*bool, bool) {
 
 // HasEnabled returns a boolean if a field has been set.
 func (o *AddNumericGaugeRequest) HasEnabled() bool {
-	if o != nil && !isNil(o.Enabled) {
+	if o != nil && !IsNil(o.Enabled) {
 		return true
 	}
 
@@ -469,7 +472,7 @@ func (o *AddNumericGaugeRequest) SetEnabled(v bool) {
 
 // GetOverrideSeverity returns the OverrideSeverity field value if set, zero value otherwise.
 func (o *AddNumericGaugeRequest) GetOverrideSeverity() EnumgaugeOverrideSeverityProp {
-	if o == nil || isNil(o.OverrideSeverity) {
+	if o == nil || IsNil(o.OverrideSeverity) {
 		var ret EnumgaugeOverrideSeverityProp
 		return ret
 	}
@@ -479,7 +482,7 @@ func (o *AddNumericGaugeRequest) GetOverrideSeverity() EnumgaugeOverrideSeverity
 // GetOverrideSeverityOk returns a tuple with the OverrideSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetOverrideSeverityOk() (*EnumgaugeOverrideSeverityProp, bool) {
-	if o == nil || isNil(o.OverrideSeverity) {
+	if o == nil || IsNil(o.OverrideSeverity) {
 		return nil, false
 	}
 	return o.OverrideSeverity, true
@@ -487,7 +490,7 @@ func (o *AddNumericGaugeRequest) GetOverrideSeverityOk() (*EnumgaugeOverrideSeve
 
 // HasOverrideSeverity returns a boolean if a field has been set.
 func (o *AddNumericGaugeRequest) HasOverrideSeverity() bool {
-	if o != nil && !isNil(o.OverrideSeverity) {
+	if o != nil && !IsNil(o.OverrideSeverity) {
 		return true
 	}
 
@@ -501,7 +504,7 @@ func (o *AddNumericGaugeRequest) SetOverrideSeverity(v EnumgaugeOverrideSeverity
 
 // GetAlertLevel returns the AlertLevel field value if set, zero value otherwise.
 func (o *AddNumericGaugeRequest) GetAlertLevel() EnumgaugeAlertLevelProp {
-	if o == nil || isNil(o.AlertLevel) {
+	if o == nil || IsNil(o.AlertLevel) {
 		var ret EnumgaugeAlertLevelProp
 		return ret
 	}
@@ -511,7 +514,7 @@ func (o *AddNumericGaugeRequest) GetAlertLevel() EnumgaugeAlertLevelProp {
 // GetAlertLevelOk returns a tuple with the AlertLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetAlertLevelOk() (*EnumgaugeAlertLevelProp, bool) {
-	if o == nil || isNil(o.AlertLevel) {
+	if o == nil || IsNil(o.AlertLevel) {
 		return nil, false
 	}
 	return o.AlertLevel, true
@@ -519,7 +522,7 @@ func (o *AddNumericGaugeRequest) GetAlertLevelOk() (*EnumgaugeAlertLevelProp, bo
 
 // HasAlertLevel returns a boolean if a field has been set.
 func (o *AddNumericGaugeRequest) HasAlertLevel() bool {
-	if o != nil && !isNil(o.AlertLevel) {
+	if o != nil && !IsNil(o.AlertLevel) {
 		return true
 	}
 
@@ -533,7 +536,7 @@ func (o *AddNumericGaugeRequest) SetAlertLevel(v EnumgaugeAlertLevelProp) {
 
 // GetUpdateInterval returns the UpdateInterval field value if set, zero value otherwise.
 func (o *AddNumericGaugeRequest) GetUpdateInterval() string {
-	if o == nil || isNil(o.UpdateInterval) {
+	if o == nil || IsNil(o.UpdateInterval) {
 		var ret string
 		return ret
 	}
@@ -543,7 +546,7 @@ func (o *AddNumericGaugeRequest) GetUpdateInterval() string {
 // GetUpdateIntervalOk returns a tuple with the UpdateInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetUpdateIntervalOk() (*string, bool) {
-	if o == nil || isNil(o.UpdateInterval) {
+	if o == nil || IsNil(o.UpdateInterval) {
 		return nil, false
 	}
 	return o.UpdateInterval, true
@@ -551,7 +554,7 @@ func (o *AddNumericGaugeRequest) GetUpdateIntervalOk() (*string, bool) {
 
 // HasUpdateInterval returns a boolean if a field has been set.
 func (o *AddNumericGaugeRequest) HasUpdateInterval() bool {
-	if o != nil && !isNil(o.UpdateInterval) {
+	if o != nil && !IsNil(o.UpdateInterval) {
 		return true
 	}
 
@@ -565,7 +568,7 @@ func (o *AddNumericGaugeRequest) SetUpdateInterval(v string) {
 
 // GetSamplesPerUpdateInterval returns the SamplesPerUpdateInterval field value if set, zero value otherwise.
 func (o *AddNumericGaugeRequest) GetSamplesPerUpdateInterval() int32 {
-	if o == nil || isNil(o.SamplesPerUpdateInterval) {
+	if o == nil || IsNil(o.SamplesPerUpdateInterval) {
 		var ret int32
 		return ret
 	}
@@ -575,7 +578,7 @@ func (o *AddNumericGaugeRequest) GetSamplesPerUpdateInterval() int32 {
 // GetSamplesPerUpdateIntervalOk returns a tuple with the SamplesPerUpdateInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetSamplesPerUpdateIntervalOk() (*int32, bool) {
-	if o == nil || isNil(o.SamplesPerUpdateInterval) {
+	if o == nil || IsNil(o.SamplesPerUpdateInterval) {
 		return nil, false
 	}
 	return o.SamplesPerUpdateInterval, true
@@ -583,7 +586,7 @@ func (o *AddNumericGaugeRequest) GetSamplesPerUpdateIntervalOk() (*int32, bool) 
 
 // HasSamplesPerUpdateInterval returns a boolean if a field has been set.
 func (o *AddNumericGaugeRequest) HasSamplesPerUpdateInterval() bool {
-	if o != nil && !isNil(o.SamplesPerUpdateInterval) {
+	if o != nil && !IsNil(o.SamplesPerUpdateInterval) {
 		return true
 	}
 
@@ -597,7 +600,7 @@ func (o *AddNumericGaugeRequest) SetSamplesPerUpdateInterval(v int32) {
 
 // GetIncludeResource returns the IncludeResource field value if set, zero value otherwise.
 func (o *AddNumericGaugeRequest) GetIncludeResource() []string {
-	if o == nil || isNil(o.IncludeResource) {
+	if o == nil || IsNil(o.IncludeResource) {
 		var ret []string
 		return ret
 	}
@@ -607,7 +610,7 @@ func (o *AddNumericGaugeRequest) GetIncludeResource() []string {
 // GetIncludeResourceOk returns a tuple with the IncludeResource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetIncludeResourceOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludeResource) {
+	if o == nil || IsNil(o.IncludeResource) {
 		return nil, false
 	}
 	return o.IncludeResource, true
@@ -615,7 +618,7 @@ func (o *AddNumericGaugeRequest) GetIncludeResourceOk() ([]string, bool) {
 
 // HasIncludeResource returns a boolean if a field has been set.
 func (o *AddNumericGaugeRequest) HasIncludeResource() bool {
-	if o != nil && !isNil(o.IncludeResource) {
+	if o != nil && !IsNil(o.IncludeResource) {
 		return true
 	}
 
@@ -629,7 +632,7 @@ func (o *AddNumericGaugeRequest) SetIncludeResource(v []string) {
 
 // GetExcludeResource returns the ExcludeResource field value if set, zero value otherwise.
 func (o *AddNumericGaugeRequest) GetExcludeResource() []string {
-	if o == nil || isNil(o.ExcludeResource) {
+	if o == nil || IsNil(o.ExcludeResource) {
 		var ret []string
 		return ret
 	}
@@ -639,7 +642,7 @@ func (o *AddNumericGaugeRequest) GetExcludeResource() []string {
 // GetExcludeResourceOk returns a tuple with the ExcludeResource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetExcludeResourceOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludeResource) {
+	if o == nil || IsNil(o.ExcludeResource) {
 		return nil, false
 	}
 	return o.ExcludeResource, true
@@ -647,7 +650,7 @@ func (o *AddNumericGaugeRequest) GetExcludeResourceOk() ([]string, bool) {
 
 // HasExcludeResource returns a boolean if a field has been set.
 func (o *AddNumericGaugeRequest) HasExcludeResource() bool {
-	if o != nil && !isNil(o.ExcludeResource) {
+	if o != nil && !IsNil(o.ExcludeResource) {
 		return true
 	}
 
@@ -661,7 +664,7 @@ func (o *AddNumericGaugeRequest) SetExcludeResource(v []string) {
 
 // GetServerUnavailableSeverityLevel returns the ServerUnavailableSeverityLevel field value if set, zero value otherwise.
 func (o *AddNumericGaugeRequest) GetServerUnavailableSeverityLevel() EnumgaugeServerUnavailableSeverityLevelProp {
-	if o == nil || isNil(o.ServerUnavailableSeverityLevel) {
+	if o == nil || IsNil(o.ServerUnavailableSeverityLevel) {
 		var ret EnumgaugeServerUnavailableSeverityLevelProp
 		return ret
 	}
@@ -671,7 +674,7 @@ func (o *AddNumericGaugeRequest) GetServerUnavailableSeverityLevel() EnumgaugeSe
 // GetServerUnavailableSeverityLevelOk returns a tuple with the ServerUnavailableSeverityLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetServerUnavailableSeverityLevelOk() (*EnumgaugeServerUnavailableSeverityLevelProp, bool) {
-	if o == nil || isNil(o.ServerUnavailableSeverityLevel) {
+	if o == nil || IsNil(o.ServerUnavailableSeverityLevel) {
 		return nil, false
 	}
 	return o.ServerUnavailableSeverityLevel, true
@@ -679,7 +682,7 @@ func (o *AddNumericGaugeRequest) GetServerUnavailableSeverityLevelOk() (*Enumgau
 
 // HasServerUnavailableSeverityLevel returns a boolean if a field has been set.
 func (o *AddNumericGaugeRequest) HasServerUnavailableSeverityLevel() bool {
-	if o != nil && !isNil(o.ServerUnavailableSeverityLevel) {
+	if o != nil && !IsNil(o.ServerUnavailableSeverityLevel) {
 		return true
 	}
 
@@ -693,7 +696,7 @@ func (o *AddNumericGaugeRequest) SetServerUnavailableSeverityLevel(v EnumgaugeSe
 
 // GetServerDegradedSeverityLevel returns the ServerDegradedSeverityLevel field value if set, zero value otherwise.
 func (o *AddNumericGaugeRequest) GetServerDegradedSeverityLevel() EnumgaugeServerDegradedSeverityLevelProp {
-	if o == nil || isNil(o.ServerDegradedSeverityLevel) {
+	if o == nil || IsNil(o.ServerDegradedSeverityLevel) {
 		var ret EnumgaugeServerDegradedSeverityLevelProp
 		return ret
 	}
@@ -703,7 +706,7 @@ func (o *AddNumericGaugeRequest) GetServerDegradedSeverityLevel() EnumgaugeServe
 // GetServerDegradedSeverityLevelOk returns a tuple with the ServerDegradedSeverityLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetServerDegradedSeverityLevelOk() (*EnumgaugeServerDegradedSeverityLevelProp, bool) {
-	if o == nil || isNil(o.ServerDegradedSeverityLevel) {
+	if o == nil || IsNil(o.ServerDegradedSeverityLevel) {
 		return nil, false
 	}
 	return o.ServerDegradedSeverityLevel, true
@@ -711,7 +714,7 @@ func (o *AddNumericGaugeRequest) GetServerDegradedSeverityLevelOk() (*EnumgaugeS
 
 // HasServerDegradedSeverityLevel returns a boolean if a field has been set.
 func (o *AddNumericGaugeRequest) HasServerDegradedSeverityLevel() bool {
-	if o != nil && !isNil(o.ServerDegradedSeverityLevel) {
+	if o != nil && !IsNil(o.ServerDegradedSeverityLevel) {
 		return true
 	}
 
@@ -724,71 +727,73 @@ func (o *AddNumericGaugeRequest) SetServerDegradedSeverityLevel(v EnumgaugeServe
 }
 
 func (o AddNumericGaugeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["gaugeName"] = o.GaugeName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["gaugeDataSource"] = o.GaugeDataSource
-	}
-	if !isNil(o.CriticalValue) {
-		toSerialize["criticalValue"] = o.CriticalValue
-	}
-	if !isNil(o.CriticalExitValue) {
-		toSerialize["criticalExitValue"] = o.CriticalExitValue
-	}
-	if !isNil(o.MajorValue) {
-		toSerialize["majorValue"] = o.MajorValue
-	}
-	if !isNil(o.MajorExitValue) {
-		toSerialize["majorExitValue"] = o.MajorExitValue
-	}
-	if !isNil(o.MinorValue) {
-		toSerialize["minorValue"] = o.MinorValue
-	}
-	if !isNil(o.MinorExitValue) {
-		toSerialize["minorExitValue"] = o.MinorExitValue
-	}
-	if !isNil(o.WarningValue) {
-		toSerialize["warningValue"] = o.WarningValue
-	}
-	if !isNil(o.WarningExitValue) {
-		toSerialize["warningExitValue"] = o.WarningExitValue
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if !isNil(o.Enabled) {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.OverrideSeverity) {
-		toSerialize["overrideSeverity"] = o.OverrideSeverity
-	}
-	if !isNil(o.AlertLevel) {
-		toSerialize["alertLevel"] = o.AlertLevel
-	}
-	if !isNil(o.UpdateInterval) {
-		toSerialize["updateInterval"] = o.UpdateInterval
-	}
-	if !isNil(o.SamplesPerUpdateInterval) {
-		toSerialize["samplesPerUpdateInterval"] = o.SamplesPerUpdateInterval
-	}
-	if !isNil(o.IncludeResource) {
-		toSerialize["includeResource"] = o.IncludeResource
-	}
-	if !isNil(o.ExcludeResource) {
-		toSerialize["excludeResource"] = o.ExcludeResource
-	}
-	if !isNil(o.ServerUnavailableSeverityLevel) {
-		toSerialize["serverUnavailableSeverityLevel"] = o.ServerUnavailableSeverityLevel
-	}
-	if !isNil(o.ServerDegradedSeverityLevel) {
-		toSerialize["serverDegradedSeverityLevel"] = o.ServerDegradedSeverityLevel
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddNumericGaugeRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["gaugeName"] = o.GaugeName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["gaugeDataSource"] = o.GaugeDataSource
+	if !IsNil(o.CriticalValue) {
+		toSerialize["criticalValue"] = o.CriticalValue
+	}
+	if !IsNil(o.CriticalExitValue) {
+		toSerialize["criticalExitValue"] = o.CriticalExitValue
+	}
+	if !IsNil(o.MajorValue) {
+		toSerialize["majorValue"] = o.MajorValue
+	}
+	if !IsNil(o.MajorExitValue) {
+		toSerialize["majorExitValue"] = o.MajorExitValue
+	}
+	if !IsNil(o.MinorValue) {
+		toSerialize["minorValue"] = o.MinorValue
+	}
+	if !IsNil(o.MinorExitValue) {
+		toSerialize["minorExitValue"] = o.MinorExitValue
+	}
+	if !IsNil(o.WarningValue) {
+		toSerialize["warningValue"] = o.WarningValue
+	}
+	if !IsNil(o.WarningExitValue) {
+		toSerialize["warningExitValue"] = o.WarningExitValue
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.Enabled) {
+		toSerialize["enabled"] = o.Enabled
+	}
+	if !IsNil(o.OverrideSeverity) {
+		toSerialize["overrideSeverity"] = o.OverrideSeverity
+	}
+	if !IsNil(o.AlertLevel) {
+		toSerialize["alertLevel"] = o.AlertLevel
+	}
+	if !IsNil(o.UpdateInterval) {
+		toSerialize["updateInterval"] = o.UpdateInterval
+	}
+	if !IsNil(o.SamplesPerUpdateInterval) {
+		toSerialize["samplesPerUpdateInterval"] = o.SamplesPerUpdateInterval
+	}
+	if !IsNil(o.IncludeResource) {
+		toSerialize["includeResource"] = o.IncludeResource
+	}
+	if !IsNil(o.ExcludeResource) {
+		toSerialize["excludeResource"] = o.ExcludeResource
+	}
+	if !IsNil(o.ServerUnavailableSeverityLevel) {
+		toSerialize["serverUnavailableSeverityLevel"] = o.ServerUnavailableSeverityLevel
+	}
+	if !IsNil(o.ServerDegradedSeverityLevel) {
+		toSerialize["serverDegradedSeverityLevel"] = o.ServerDegradedSeverityLevel
+	}
+	return toSerialize, nil
 }
 
 type NullableAddNumericGaugeRequest struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddCryptPasswordStorageSchemeRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddCryptPasswordStorageSchemeRequest{}
+
 // AddCryptPasswordStorageSchemeRequest struct for AddCryptPasswordStorageSchemeRequest
 type AddCryptPasswordStorageSchemeRequest struct {
 	// Name of the new Password Storage Scheme
@@ -100,7 +103,7 @@ func (o *AddCryptPasswordStorageSchemeRequest) SetSchemas(v []EnumcryptPasswordS
 
 // GetPasswordEncodingMechanism returns the PasswordEncodingMechanism field value if set, zero value otherwise.
 func (o *AddCryptPasswordStorageSchemeRequest) GetPasswordEncodingMechanism() EnumpasswordStorageSchemePasswordEncodingMechanismProp {
-	if o == nil || isNil(o.PasswordEncodingMechanism) {
+	if o == nil || IsNil(o.PasswordEncodingMechanism) {
 		var ret EnumpasswordStorageSchemePasswordEncodingMechanismProp
 		return ret
 	}
@@ -110,7 +113,7 @@ func (o *AddCryptPasswordStorageSchemeRequest) GetPasswordEncodingMechanism() En
 // GetPasswordEncodingMechanismOk returns a tuple with the PasswordEncodingMechanism field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCryptPasswordStorageSchemeRequest) GetPasswordEncodingMechanismOk() (*EnumpasswordStorageSchemePasswordEncodingMechanismProp, bool) {
-	if o == nil || isNil(o.PasswordEncodingMechanism) {
+	if o == nil || IsNil(o.PasswordEncodingMechanism) {
 		return nil, false
 	}
 	return o.PasswordEncodingMechanism, true
@@ -118,7 +121,7 @@ func (o *AddCryptPasswordStorageSchemeRequest) GetPasswordEncodingMechanismOk() 
 
 // HasPasswordEncodingMechanism returns a boolean if a field has been set.
 func (o *AddCryptPasswordStorageSchemeRequest) HasPasswordEncodingMechanism() bool {
-	if o != nil && !isNil(o.PasswordEncodingMechanism) {
+	if o != nil && !IsNil(o.PasswordEncodingMechanism) {
 		return true
 	}
 
@@ -132,7 +135,7 @@ func (o *AddCryptPasswordStorageSchemeRequest) SetPasswordEncodingMechanism(v En
 
 // GetNumDigestRounds returns the NumDigestRounds field value if set, zero value otherwise.
 func (o *AddCryptPasswordStorageSchemeRequest) GetNumDigestRounds() int32 {
-	if o == nil || isNil(o.NumDigestRounds) {
+	if o == nil || IsNil(o.NumDigestRounds) {
 		var ret int32
 		return ret
 	}
@@ -142,7 +145,7 @@ func (o *AddCryptPasswordStorageSchemeRequest) GetNumDigestRounds() int32 {
 // GetNumDigestRoundsOk returns a tuple with the NumDigestRounds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCryptPasswordStorageSchemeRequest) GetNumDigestRoundsOk() (*int32, bool) {
-	if o == nil || isNil(o.NumDigestRounds) {
+	if o == nil || IsNil(o.NumDigestRounds) {
 		return nil, false
 	}
 	return o.NumDigestRounds, true
@@ -150,7 +153,7 @@ func (o *AddCryptPasswordStorageSchemeRequest) GetNumDigestRoundsOk() (*int32, b
 
 // HasNumDigestRounds returns a boolean if a field has been set.
 func (o *AddCryptPasswordStorageSchemeRequest) HasNumDigestRounds() bool {
-	if o != nil && !isNil(o.NumDigestRounds) {
+	if o != nil && !IsNil(o.NumDigestRounds) {
 		return true
 	}
 
@@ -164,7 +167,7 @@ func (o *AddCryptPasswordStorageSchemeRequest) SetNumDigestRounds(v int32) {
 
 // GetMaxPasswordLength returns the MaxPasswordLength field value if set, zero value otherwise.
 func (o *AddCryptPasswordStorageSchemeRequest) GetMaxPasswordLength() int32 {
-	if o == nil || isNil(o.MaxPasswordLength) {
+	if o == nil || IsNil(o.MaxPasswordLength) {
 		var ret int32
 		return ret
 	}
@@ -174,7 +177,7 @@ func (o *AddCryptPasswordStorageSchemeRequest) GetMaxPasswordLength() int32 {
 // GetMaxPasswordLengthOk returns a tuple with the MaxPasswordLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCryptPasswordStorageSchemeRequest) GetMaxPasswordLengthOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxPasswordLength) {
+	if o == nil || IsNil(o.MaxPasswordLength) {
 		return nil, false
 	}
 	return o.MaxPasswordLength, true
@@ -182,7 +185,7 @@ func (o *AddCryptPasswordStorageSchemeRequest) GetMaxPasswordLengthOk() (*int32,
 
 // HasMaxPasswordLength returns a boolean if a field has been set.
 func (o *AddCryptPasswordStorageSchemeRequest) HasMaxPasswordLength() bool {
-	if o != nil && !isNil(o.MaxPasswordLength) {
+	if o != nil && !IsNil(o.MaxPasswordLength) {
 		return true
 	}
 
@@ -196,7 +199,7 @@ func (o *AddCryptPasswordStorageSchemeRequest) SetMaxPasswordLength(v int32) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddCryptPasswordStorageSchemeRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -206,7 +209,7 @@ func (o *AddCryptPasswordStorageSchemeRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCryptPasswordStorageSchemeRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -214,7 +217,7 @@ func (o *AddCryptPasswordStorageSchemeRequest) GetDescriptionOk() (*string, bool
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddCryptPasswordStorageSchemeRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -251,29 +254,31 @@ func (o *AddCryptPasswordStorageSchemeRequest) SetEnabled(v bool) {
 }
 
 func (o AddCryptPasswordStorageSchemeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["schemeName"] = o.SchemeName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.PasswordEncodingMechanism) {
-		toSerialize["passwordEncodingMechanism"] = o.PasswordEncodingMechanism
-	}
-	if !isNil(o.NumDigestRounds) {
-		toSerialize["numDigestRounds"] = o.NumDigestRounds
-	}
-	if !isNil(o.MaxPasswordLength) {
-		toSerialize["maxPasswordLength"] = o.MaxPasswordLength
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddCryptPasswordStorageSchemeRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["schemeName"] = o.SchemeName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.PasswordEncodingMechanism) {
+		toSerialize["passwordEncodingMechanism"] = o.PasswordEncodingMechanism
+	}
+	if !IsNil(o.NumDigestRounds) {
+		toSerialize["numDigestRounds"] = o.NumDigestRounds
+	}
+	if !IsNil(o.MaxPasswordLength) {
+		toSerialize["maxPasswordLength"] = o.MaxPasswordLength
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddCryptPasswordStorageSchemeRequest struct {

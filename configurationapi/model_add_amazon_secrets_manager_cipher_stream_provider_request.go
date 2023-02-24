@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddAmazonSecretsManagerCipherStreamProviderRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddAmazonSecretsManagerCipherStreamProviderRequest{}
+
 // AddAmazonSecretsManagerCipherStreamProviderRequest struct for AddAmazonSecretsManagerCipherStreamProviderRequest
 type AddAmazonSecretsManagerCipherStreamProviderRequest struct {
 	// Name of the new Cipher Stream Provider
@@ -182,7 +185,7 @@ func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) SetSecretFieldName(
 
 // GetSecretVersionID returns the SecretVersionID field value if set, zero value otherwise.
 func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetSecretVersionID() string {
-	if o == nil || isNil(o.SecretVersionID) {
+	if o == nil || IsNil(o.SecretVersionID) {
 		var ret string
 		return ret
 	}
@@ -192,7 +195,7 @@ func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetSecretVersionID(
 // GetSecretVersionIDOk returns a tuple with the SecretVersionID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetSecretVersionIDOk() (*string, bool) {
-	if o == nil || isNil(o.SecretVersionID) {
+	if o == nil || IsNil(o.SecretVersionID) {
 		return nil, false
 	}
 	return o.SecretVersionID, true
@@ -200,7 +203,7 @@ func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetSecretVersionIDO
 
 // HasSecretVersionID returns a boolean if a field has been set.
 func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) HasSecretVersionID() bool {
-	if o != nil && !isNil(o.SecretVersionID) {
+	if o != nil && !IsNil(o.SecretVersionID) {
 		return true
 	}
 
@@ -214,7 +217,7 @@ func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) SetSecretVersionID(
 
 // GetSecretVersionStage returns the SecretVersionStage field value if set, zero value otherwise.
 func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetSecretVersionStage() string {
-	if o == nil || isNil(o.SecretVersionStage) {
+	if o == nil || IsNil(o.SecretVersionStage) {
 		var ret string
 		return ret
 	}
@@ -224,7 +227,7 @@ func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetSecretVersionSta
 // GetSecretVersionStageOk returns a tuple with the SecretVersionStage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetSecretVersionStageOk() (*string, bool) {
-	if o == nil || isNil(o.SecretVersionStage) {
+	if o == nil || IsNil(o.SecretVersionStage) {
 		return nil, false
 	}
 	return o.SecretVersionStage, true
@@ -232,7 +235,7 @@ func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetSecretVersionSta
 
 // HasSecretVersionStage returns a boolean if a field has been set.
 func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) HasSecretVersionStage() bool {
-	if o != nil && !isNil(o.SecretVersionStage) {
+	if o != nil && !IsNil(o.SecretVersionStage) {
 		return true
 	}
 
@@ -246,7 +249,7 @@ func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) SetSecretVersionSta
 
 // GetEncryptionMetadataFile returns the EncryptionMetadataFile field value if set, zero value otherwise.
 func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetEncryptionMetadataFile() string {
-	if o == nil || isNil(o.EncryptionMetadataFile) {
+	if o == nil || IsNil(o.EncryptionMetadataFile) {
 		var ret string
 		return ret
 	}
@@ -256,7 +259,7 @@ func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetEncryptionMetada
 // GetEncryptionMetadataFileOk returns a tuple with the EncryptionMetadataFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetEncryptionMetadataFileOk() (*string, bool) {
-	if o == nil || isNil(o.EncryptionMetadataFile) {
+	if o == nil || IsNil(o.EncryptionMetadataFile) {
 		return nil, false
 	}
 	return o.EncryptionMetadataFile, true
@@ -264,7 +267,7 @@ func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetEncryptionMetada
 
 // HasEncryptionMetadataFile returns a boolean if a field has been set.
 func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) HasEncryptionMetadataFile() bool {
-	if o != nil && !isNil(o.EncryptionMetadataFile) {
+	if o != nil && !IsNil(o.EncryptionMetadataFile) {
 		return true
 	}
 
@@ -278,7 +281,7 @@ func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) SetEncryptionMetada
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -288,7 +291,7 @@ func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetDescription() st
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -296,7 +299,7 @@ func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetDescriptionOk() 
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -333,38 +336,34 @@ func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) SetEnabled(v bool) 
 }
 
 func (o AddAmazonSecretsManagerCipherStreamProviderRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["providerName"] = o.ProviderName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["awsExternalServer"] = o.AwsExternalServer
-	}
-	if true {
-		toSerialize["secretID"] = o.SecretID
-	}
-	if true {
-		toSerialize["secretFieldName"] = o.SecretFieldName
-	}
-	if !isNil(o.SecretVersionID) {
-		toSerialize["secretVersionID"] = o.SecretVersionID
-	}
-	if !isNil(o.SecretVersionStage) {
-		toSerialize["secretVersionStage"] = o.SecretVersionStage
-	}
-	if !isNil(o.EncryptionMetadataFile) {
-		toSerialize["encryptionMetadataFile"] = o.EncryptionMetadataFile
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddAmazonSecretsManagerCipherStreamProviderRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["providerName"] = o.ProviderName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["awsExternalServer"] = o.AwsExternalServer
+	toSerialize["secretID"] = o.SecretID
+	toSerialize["secretFieldName"] = o.SecretFieldName
+	if !IsNil(o.SecretVersionID) {
+		toSerialize["secretVersionID"] = o.SecretVersionID
+	}
+	if !IsNil(o.SecretVersionStage) {
+		toSerialize["secretVersionStage"] = o.SecretVersionStage
+	}
+	if !IsNil(o.EncryptionMetadataFile) {
+		toSerialize["encryptionMetadataFile"] = o.EncryptionMetadataFile
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddAmazonSecretsManagerCipherStreamProviderRequest struct {

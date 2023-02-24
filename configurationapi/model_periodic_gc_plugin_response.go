@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PeriodicGcPluginResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PeriodicGcPluginResponse{}
+
 // PeriodicGcPluginResponse struct for PeriodicGcPluginResponse
 type PeriodicGcPluginResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -61,7 +64,7 @@ func NewPeriodicGcPluginResponseWithDefaults() *PeriodicGcPluginResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *PeriodicGcPluginResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -71,7 +74,7 @@ func (o *PeriodicGcPluginResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeriodicGcPluginResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -79,7 +82,7 @@ func (o *PeriodicGcPluginResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *PeriodicGcPluginResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -93,7 +96,7 @@ func (o *PeriodicGcPluginResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *PeriodicGcPluginResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -103,7 +106,7 @@ func (o *PeriodicGcPluginResponse) GetUrnpingidentityschemasconfigurationmessage
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeriodicGcPluginResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -111,7 +114,7 @@ func (o *PeriodicGcPluginResponse) GetUrnpingidentityschemasconfigurationmessage
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *PeriodicGcPluginResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -197,7 +200,7 @@ func (o *PeriodicGcPluginResponse) SetPluginType(v []EnumpluginPluginTypeProp) {
 
 // GetInvokeGCDayOfWeek returns the InvokeGCDayOfWeek field value if set, zero value otherwise.
 func (o *PeriodicGcPluginResponse) GetInvokeGCDayOfWeek() []EnumpluginInvokeGCDayOfWeekProp {
-	if o == nil || isNil(o.InvokeGCDayOfWeek) {
+	if o == nil || IsNil(o.InvokeGCDayOfWeek) {
 		var ret []EnumpluginInvokeGCDayOfWeekProp
 		return ret
 	}
@@ -207,7 +210,7 @@ func (o *PeriodicGcPluginResponse) GetInvokeGCDayOfWeek() []EnumpluginInvokeGCDa
 // GetInvokeGCDayOfWeekOk returns a tuple with the InvokeGCDayOfWeek field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeriodicGcPluginResponse) GetInvokeGCDayOfWeekOk() ([]EnumpluginInvokeGCDayOfWeekProp, bool) {
-	if o == nil || isNil(o.InvokeGCDayOfWeek) {
+	if o == nil || IsNil(o.InvokeGCDayOfWeek) {
 		return nil, false
 	}
 	return o.InvokeGCDayOfWeek, true
@@ -215,7 +218,7 @@ func (o *PeriodicGcPluginResponse) GetInvokeGCDayOfWeekOk() ([]EnumpluginInvokeG
 
 // HasInvokeGCDayOfWeek returns a boolean if a field has been set.
 func (o *PeriodicGcPluginResponse) HasInvokeGCDayOfWeek() bool {
-	if o != nil && !isNil(o.InvokeGCDayOfWeek) {
+	if o != nil && !IsNil(o.InvokeGCDayOfWeek) {
 		return true
 	}
 
@@ -253,7 +256,7 @@ func (o *PeriodicGcPluginResponse) SetInvokeGCTimeUtc(v []string) {
 
 // GetDelayAfterAlert returns the DelayAfterAlert field value if set, zero value otherwise.
 func (o *PeriodicGcPluginResponse) GetDelayAfterAlert() string {
-	if o == nil || isNil(o.DelayAfterAlert) {
+	if o == nil || IsNil(o.DelayAfterAlert) {
 		var ret string
 		return ret
 	}
@@ -263,7 +266,7 @@ func (o *PeriodicGcPluginResponse) GetDelayAfterAlert() string {
 // GetDelayAfterAlertOk returns a tuple with the DelayAfterAlert field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeriodicGcPluginResponse) GetDelayAfterAlertOk() (*string, bool) {
-	if o == nil || isNil(o.DelayAfterAlert) {
+	if o == nil || IsNil(o.DelayAfterAlert) {
 		return nil, false
 	}
 	return o.DelayAfterAlert, true
@@ -271,7 +274,7 @@ func (o *PeriodicGcPluginResponse) GetDelayAfterAlertOk() (*string, bool) {
 
 // HasDelayAfterAlert returns a boolean if a field has been set.
 func (o *PeriodicGcPluginResponse) HasDelayAfterAlert() bool {
-	if o != nil && !isNil(o.DelayAfterAlert) {
+	if o != nil && !IsNil(o.DelayAfterAlert) {
 		return true
 	}
 
@@ -285,7 +288,7 @@ func (o *PeriodicGcPluginResponse) SetDelayAfterAlert(v string) {
 
 // GetDelayPostGC returns the DelayPostGC field value if set, zero value otherwise.
 func (o *PeriodicGcPluginResponse) GetDelayPostGC() string {
-	if o == nil || isNil(o.DelayPostGC) {
+	if o == nil || IsNil(o.DelayPostGC) {
 		var ret string
 		return ret
 	}
@@ -295,7 +298,7 @@ func (o *PeriodicGcPluginResponse) GetDelayPostGC() string {
 // GetDelayPostGCOk returns a tuple with the DelayPostGC field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeriodicGcPluginResponse) GetDelayPostGCOk() (*string, bool) {
-	if o == nil || isNil(o.DelayPostGC) {
+	if o == nil || IsNil(o.DelayPostGC) {
 		return nil, false
 	}
 	return o.DelayPostGC, true
@@ -303,7 +306,7 @@ func (o *PeriodicGcPluginResponse) GetDelayPostGCOk() (*string, bool) {
 
 // HasDelayPostGC returns a boolean if a field has been set.
 func (o *PeriodicGcPluginResponse) HasDelayPostGC() bool {
-	if o != nil && !isNil(o.DelayPostGC) {
+	if o != nil && !IsNil(o.DelayPostGC) {
 		return true
 	}
 
@@ -317,7 +320,7 @@ func (o *PeriodicGcPluginResponse) SetDelayPostGC(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *PeriodicGcPluginResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -327,7 +330,7 @@ func (o *PeriodicGcPluginResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeriodicGcPluginResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -335,7 +338,7 @@ func (o *PeriodicGcPluginResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *PeriodicGcPluginResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -373,7 +376,7 @@ func (o *PeriodicGcPluginResponse) SetEnabled(v bool) {
 
 // GetInvokeForInternalOperations returns the InvokeForInternalOperations field value if set, zero value otherwise.
 func (o *PeriodicGcPluginResponse) GetInvokeForInternalOperations() bool {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		var ret bool
 		return ret
 	}
@@ -383,7 +386,7 @@ func (o *PeriodicGcPluginResponse) GetInvokeForInternalOperations() bool {
 // GetInvokeForInternalOperationsOk returns a tuple with the InvokeForInternalOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeriodicGcPluginResponse) GetInvokeForInternalOperationsOk() (*bool, bool) {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		return nil, false
 	}
 	return o.InvokeForInternalOperations, true
@@ -391,7 +394,7 @@ func (o *PeriodicGcPluginResponse) GetInvokeForInternalOperationsOk() (*bool, bo
 
 // HasInvokeForInternalOperations returns a boolean if a field has been set.
 func (o *PeriodicGcPluginResponse) HasInvokeForInternalOperations() bool {
-	if o != nil && !isNil(o.InvokeForInternalOperations) {
+	if o != nil && !IsNil(o.InvokeForInternalOperations) {
 		return true
 	}
 
@@ -404,44 +407,42 @@ func (o *PeriodicGcPluginResponse) SetInvokeForInternalOperations(v bool) {
 }
 
 func (o PeriodicGcPluginResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["pluginType"] = o.PluginType
-	}
-	if !isNil(o.InvokeGCDayOfWeek) {
-		toSerialize["invokeGCDayOfWeek"] = o.InvokeGCDayOfWeek
-	}
-	if true {
-		toSerialize["invokeGCTimeUtc"] = o.InvokeGCTimeUtc
-	}
-	if !isNil(o.DelayAfterAlert) {
-		toSerialize["delayAfterAlert"] = o.DelayAfterAlert
-	}
-	if !isNil(o.DelayPostGC) {
-		toSerialize["delayPostGC"] = o.DelayPostGC
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.InvokeForInternalOperations) {
-		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PeriodicGcPluginResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["pluginType"] = o.PluginType
+	if !IsNil(o.InvokeGCDayOfWeek) {
+		toSerialize["invokeGCDayOfWeek"] = o.InvokeGCDayOfWeek
+	}
+	toSerialize["invokeGCTimeUtc"] = o.InvokeGCTimeUtc
+	if !IsNil(o.DelayAfterAlert) {
+		toSerialize["delayAfterAlert"] = o.DelayAfterAlert
+	}
+	if !IsNil(o.DelayPostGC) {
+		toSerialize["delayPostGC"] = o.DelayPostGC
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.InvokeForInternalOperations) {
+		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
+	}
+	return toSerialize, nil
 }
 
 type NullablePeriodicGcPluginResponse struct {

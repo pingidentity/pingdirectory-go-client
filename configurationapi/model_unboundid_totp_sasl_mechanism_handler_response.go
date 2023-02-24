@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the UnboundidTotpSaslMechanismHandlerResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &UnboundidTotpSaslMechanismHandlerResponse{}
+
 // UnboundidTotpSaslMechanismHandlerResponse struct for UnboundidTotpSaslMechanismHandlerResponse
 type UnboundidTotpSaslMechanismHandlerResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -62,7 +65,7 @@ func NewUnboundidTotpSaslMechanismHandlerResponseWithDefaults() *UnboundidTotpSa
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -72,7 +75,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -80,7 +83,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) GetMetaOk() (*MetaMeta, bool
 
 // HasMeta returns a boolean if a field has been set.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -94,7 +97,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) GetUrnpingidentityschemascon
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -112,7 +115,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) GetUrnpingidentityschemascon
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -198,7 +201,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) SetIdentityMapper(v string) 
 
 // GetSharedSecretAttributeType returns the SharedSecretAttributeType field value if set, zero value otherwise.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) GetSharedSecretAttributeType() string {
-	if o == nil || isNil(o.SharedSecretAttributeType) {
+	if o == nil || IsNil(o.SharedSecretAttributeType) {
 		var ret string
 		return ret
 	}
@@ -208,7 +211,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) GetSharedSecretAttributeType
 // GetSharedSecretAttributeTypeOk returns a tuple with the SharedSecretAttributeType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) GetSharedSecretAttributeTypeOk() (*string, bool) {
-	if o == nil || isNil(o.SharedSecretAttributeType) {
+	if o == nil || IsNil(o.SharedSecretAttributeType) {
 		return nil, false
 	}
 	return o.SharedSecretAttributeType, true
@@ -216,7 +219,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) GetSharedSecretAttributeType
 
 // HasSharedSecretAttributeType returns a boolean if a field has been set.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) HasSharedSecretAttributeType() bool {
-	if o != nil && !isNil(o.SharedSecretAttributeType) {
+	if o != nil && !IsNil(o.SharedSecretAttributeType) {
 		return true
 	}
 
@@ -230,7 +233,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) SetSharedSecretAttributeType
 
 // GetTimeIntervalDuration returns the TimeIntervalDuration field value if set, zero value otherwise.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) GetTimeIntervalDuration() string {
-	if o == nil || isNil(o.TimeIntervalDuration) {
+	if o == nil || IsNil(o.TimeIntervalDuration) {
 		var ret string
 		return ret
 	}
@@ -240,7 +243,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) GetTimeIntervalDuration() st
 // GetTimeIntervalDurationOk returns a tuple with the TimeIntervalDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) GetTimeIntervalDurationOk() (*string, bool) {
-	if o == nil || isNil(o.TimeIntervalDuration) {
+	if o == nil || IsNil(o.TimeIntervalDuration) {
 		return nil, false
 	}
 	return o.TimeIntervalDuration, true
@@ -248,7 +251,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) GetTimeIntervalDurationOk() 
 
 // HasTimeIntervalDuration returns a boolean if a field has been set.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) HasTimeIntervalDuration() bool {
-	if o != nil && !isNil(o.TimeIntervalDuration) {
+	if o != nil && !IsNil(o.TimeIntervalDuration) {
 		return true
 	}
 
@@ -262,7 +265,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) SetTimeIntervalDuration(v st
 
 // GetAdjacentIntervalsToCheck returns the AdjacentIntervalsToCheck field value if set, zero value otherwise.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) GetAdjacentIntervalsToCheck() int32 {
-	if o == nil || isNil(o.AdjacentIntervalsToCheck) {
+	if o == nil || IsNil(o.AdjacentIntervalsToCheck) {
 		var ret int32
 		return ret
 	}
@@ -272,7 +275,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) GetAdjacentIntervalsToCheck(
 // GetAdjacentIntervalsToCheckOk returns a tuple with the AdjacentIntervalsToCheck field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) GetAdjacentIntervalsToCheckOk() (*int32, bool) {
-	if o == nil || isNil(o.AdjacentIntervalsToCheck) {
+	if o == nil || IsNil(o.AdjacentIntervalsToCheck) {
 		return nil, false
 	}
 	return o.AdjacentIntervalsToCheck, true
@@ -280,7 +283,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) GetAdjacentIntervalsToCheckO
 
 // HasAdjacentIntervalsToCheck returns a boolean if a field has been set.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) HasAdjacentIntervalsToCheck() bool {
-	if o != nil && !isNil(o.AdjacentIntervalsToCheck) {
+	if o != nil && !IsNil(o.AdjacentIntervalsToCheck) {
 		return true
 	}
 
@@ -294,7 +297,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) SetAdjacentIntervalsToCheck(
 
 // GetRequireStaticPassword returns the RequireStaticPassword field value if set, zero value otherwise.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) GetRequireStaticPassword() bool {
-	if o == nil || isNil(o.RequireStaticPassword) {
+	if o == nil || IsNil(o.RequireStaticPassword) {
 		var ret bool
 		return ret
 	}
@@ -304,7 +307,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) GetRequireStaticPassword() b
 // GetRequireStaticPasswordOk returns a tuple with the RequireStaticPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) GetRequireStaticPasswordOk() (*bool, bool) {
-	if o == nil || isNil(o.RequireStaticPassword) {
+	if o == nil || IsNil(o.RequireStaticPassword) {
 		return nil, false
 	}
 	return o.RequireStaticPassword, true
@@ -312,7 +315,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) GetRequireStaticPasswordOk()
 
 // HasRequireStaticPassword returns a boolean if a field has been set.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) HasRequireStaticPassword() bool {
-	if o != nil && !isNil(o.RequireStaticPassword) {
+	if o != nil && !IsNil(o.RequireStaticPassword) {
 		return true
 	}
 
@@ -326,7 +329,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) SetRequireStaticPassword(v b
 
 // GetPreventTOTPReuse returns the PreventTOTPReuse field value if set, zero value otherwise.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) GetPreventTOTPReuse() bool {
-	if o == nil || isNil(o.PreventTOTPReuse) {
+	if o == nil || IsNil(o.PreventTOTPReuse) {
 		var ret bool
 		return ret
 	}
@@ -336,7 +339,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) GetPreventTOTPReuse() bool {
 // GetPreventTOTPReuseOk returns a tuple with the PreventTOTPReuse field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) GetPreventTOTPReuseOk() (*bool, bool) {
-	if o == nil || isNil(o.PreventTOTPReuse) {
+	if o == nil || IsNil(o.PreventTOTPReuse) {
 		return nil, false
 	}
 	return o.PreventTOTPReuse, true
@@ -344,7 +347,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) GetPreventTOTPReuseOk() (*bo
 
 // HasPreventTOTPReuse returns a boolean if a field has been set.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) HasPreventTOTPReuse() bool {
-	if o != nil && !isNil(o.PreventTOTPReuse) {
+	if o != nil && !IsNil(o.PreventTOTPReuse) {
 		return true
 	}
 
@@ -358,7 +361,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) SetPreventTOTPReuse(v bool) 
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -368,7 +371,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -376,7 +379,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) GetDescriptionOk() (*string,
 
 // HasDescription returns a boolean if a field has been set.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -413,44 +416,44 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) SetEnabled(v bool) {
 }
 
 func (o UnboundidTotpSaslMechanismHandlerResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["identityMapper"] = o.IdentityMapper
-	}
-	if !isNil(o.SharedSecretAttributeType) {
-		toSerialize["sharedSecretAttributeType"] = o.SharedSecretAttributeType
-	}
-	if !isNil(o.TimeIntervalDuration) {
-		toSerialize["timeIntervalDuration"] = o.TimeIntervalDuration
-	}
-	if !isNil(o.AdjacentIntervalsToCheck) {
-		toSerialize["adjacentIntervalsToCheck"] = o.AdjacentIntervalsToCheck
-	}
-	if !isNil(o.RequireStaticPassword) {
-		toSerialize["requireStaticPassword"] = o.RequireStaticPassword
-	}
-	if !isNil(o.PreventTOTPReuse) {
-		toSerialize["preventTOTPReuse"] = o.PreventTOTPReuse
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o UnboundidTotpSaslMechanismHandlerResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	toSerialize["identityMapper"] = o.IdentityMapper
+	if !IsNil(o.SharedSecretAttributeType) {
+		toSerialize["sharedSecretAttributeType"] = o.SharedSecretAttributeType
+	}
+	if !IsNil(o.TimeIntervalDuration) {
+		toSerialize["timeIntervalDuration"] = o.TimeIntervalDuration
+	}
+	if !IsNil(o.AdjacentIntervalsToCheck) {
+		toSerialize["adjacentIntervalsToCheck"] = o.AdjacentIntervalsToCheck
+	}
+	if !IsNil(o.RequireStaticPassword) {
+		toSerialize["requireStaticPassword"] = o.RequireStaticPassword
+	}
+	if !IsNil(o.PreventTOTPReuse) {
+		toSerialize["preventTOTPReuse"] = o.PreventTOTPReuse
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableUnboundidTotpSaslMechanismHandlerResponse struct {

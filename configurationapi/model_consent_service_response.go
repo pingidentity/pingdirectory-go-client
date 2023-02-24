@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ConsentServiceResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ConsentServiceResponse{}
+
 // ConsentServiceResponse struct for ConsentServiceResponse
 type ConsentServiceResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -59,7 +62,7 @@ func NewConsentServiceResponseWithDefaults() *ConsentServiceResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *ConsentServiceResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -69,7 +72,7 @@ func (o *ConsentServiceResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsentServiceResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -77,7 +80,7 @@ func (o *ConsentServiceResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *ConsentServiceResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -91,7 +94,7 @@ func (o *ConsentServiceResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *ConsentServiceResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -101,7 +104,7 @@ func (o *ConsentServiceResponse) GetUrnpingidentityschemasconfigurationmessages2
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsentServiceResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -109,7 +112,7 @@ func (o *ConsentServiceResponse) GetUrnpingidentityschemasconfigurationmessages2
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *ConsentServiceResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -123,7 +126,7 @@ func (o *ConsentServiceResponse) SetUrnpingidentityschemasconfigurationmessages2
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *ConsentServiceResponse) GetSchemas() []EnumconsentServiceSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumconsentServiceSchemaUrn
 		return ret
 	}
@@ -133,7 +136,7 @@ func (o *ConsentServiceResponse) GetSchemas() []EnumconsentServiceSchemaUrn {
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsentServiceResponse) GetSchemasOk() ([]EnumconsentServiceSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -141,7 +144,7 @@ func (o *ConsentServiceResponse) GetSchemasOk() ([]EnumconsentServiceSchemaUrn, 
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *ConsentServiceResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -179,7 +182,7 @@ func (o *ConsentServiceResponse) SetEnabled(v bool) {
 
 // GetBaseDN returns the BaseDN field value if set, zero value otherwise.
 func (o *ConsentServiceResponse) GetBaseDN() string {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		var ret string
 		return ret
 	}
@@ -189,7 +192,7 @@ func (o *ConsentServiceResponse) GetBaseDN() string {
 // GetBaseDNOk returns a tuple with the BaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsentServiceResponse) GetBaseDNOk() (*string, bool) {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		return nil, false
 	}
 	return o.BaseDN, true
@@ -197,7 +200,7 @@ func (o *ConsentServiceResponse) GetBaseDNOk() (*string, bool) {
 
 // HasBaseDN returns a boolean if a field has been set.
 func (o *ConsentServiceResponse) HasBaseDN() bool {
-	if o != nil && !isNil(o.BaseDN) {
+	if o != nil && !IsNil(o.BaseDN) {
 		return true
 	}
 
@@ -211,7 +214,7 @@ func (o *ConsentServiceResponse) SetBaseDN(v string) {
 
 // GetBindDN returns the BindDN field value if set, zero value otherwise.
 func (o *ConsentServiceResponse) GetBindDN() string {
-	if o == nil || isNil(o.BindDN) {
+	if o == nil || IsNil(o.BindDN) {
 		var ret string
 		return ret
 	}
@@ -221,7 +224,7 @@ func (o *ConsentServiceResponse) GetBindDN() string {
 // GetBindDNOk returns a tuple with the BindDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsentServiceResponse) GetBindDNOk() (*string, bool) {
-	if o == nil || isNil(o.BindDN) {
+	if o == nil || IsNil(o.BindDN) {
 		return nil, false
 	}
 	return o.BindDN, true
@@ -229,7 +232,7 @@ func (o *ConsentServiceResponse) GetBindDNOk() (*string, bool) {
 
 // HasBindDN returns a boolean if a field has been set.
 func (o *ConsentServiceResponse) HasBindDN() bool {
-	if o != nil && !isNil(o.BindDN) {
+	if o != nil && !IsNil(o.BindDN) {
 		return true
 	}
 
@@ -243,7 +246,7 @@ func (o *ConsentServiceResponse) SetBindDN(v string) {
 
 // GetSearchSizeLimit returns the SearchSizeLimit field value if set, zero value otherwise.
 func (o *ConsentServiceResponse) GetSearchSizeLimit() int32 {
-	if o == nil || isNil(o.SearchSizeLimit) {
+	if o == nil || IsNil(o.SearchSizeLimit) {
 		var ret int32
 		return ret
 	}
@@ -253,7 +256,7 @@ func (o *ConsentServiceResponse) GetSearchSizeLimit() int32 {
 // GetSearchSizeLimitOk returns a tuple with the SearchSizeLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsentServiceResponse) GetSearchSizeLimitOk() (*int32, bool) {
-	if o == nil || isNil(o.SearchSizeLimit) {
+	if o == nil || IsNil(o.SearchSizeLimit) {
 		return nil, false
 	}
 	return o.SearchSizeLimit, true
@@ -261,7 +264,7 @@ func (o *ConsentServiceResponse) GetSearchSizeLimitOk() (*int32, bool) {
 
 // HasSearchSizeLimit returns a boolean if a field has been set.
 func (o *ConsentServiceResponse) HasSearchSizeLimit() bool {
-	if o != nil && !isNil(o.SearchSizeLimit) {
+	if o != nil && !IsNil(o.SearchSizeLimit) {
 		return true
 	}
 
@@ -275,7 +278,7 @@ func (o *ConsentServiceResponse) SetSearchSizeLimit(v int32) {
 
 // GetConsentRecordIdentityMapper returns the ConsentRecordIdentityMapper field value if set, zero value otherwise.
 func (o *ConsentServiceResponse) GetConsentRecordIdentityMapper() []string {
-	if o == nil || isNil(o.ConsentRecordIdentityMapper) {
+	if o == nil || IsNil(o.ConsentRecordIdentityMapper) {
 		var ret []string
 		return ret
 	}
@@ -285,7 +288,7 @@ func (o *ConsentServiceResponse) GetConsentRecordIdentityMapper() []string {
 // GetConsentRecordIdentityMapperOk returns a tuple with the ConsentRecordIdentityMapper field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsentServiceResponse) GetConsentRecordIdentityMapperOk() ([]string, bool) {
-	if o == nil || isNil(o.ConsentRecordIdentityMapper) {
+	if o == nil || IsNil(o.ConsentRecordIdentityMapper) {
 		return nil, false
 	}
 	return o.ConsentRecordIdentityMapper, true
@@ -293,7 +296,7 @@ func (o *ConsentServiceResponse) GetConsentRecordIdentityMapperOk() ([]string, b
 
 // HasConsentRecordIdentityMapper returns a boolean if a field has been set.
 func (o *ConsentServiceResponse) HasConsentRecordIdentityMapper() bool {
-	if o != nil && !isNil(o.ConsentRecordIdentityMapper) {
+	if o != nil && !IsNil(o.ConsentRecordIdentityMapper) {
 		return true
 	}
 
@@ -307,7 +310,7 @@ func (o *ConsentServiceResponse) SetConsentRecordIdentityMapper(v []string) {
 
 // GetServiceAccountDN returns the ServiceAccountDN field value if set, zero value otherwise.
 func (o *ConsentServiceResponse) GetServiceAccountDN() []string {
-	if o == nil || isNil(o.ServiceAccountDN) {
+	if o == nil || IsNil(o.ServiceAccountDN) {
 		var ret []string
 		return ret
 	}
@@ -317,7 +320,7 @@ func (o *ConsentServiceResponse) GetServiceAccountDN() []string {
 // GetServiceAccountDNOk returns a tuple with the ServiceAccountDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsentServiceResponse) GetServiceAccountDNOk() ([]string, bool) {
-	if o == nil || isNil(o.ServiceAccountDN) {
+	if o == nil || IsNil(o.ServiceAccountDN) {
 		return nil, false
 	}
 	return o.ServiceAccountDN, true
@@ -325,7 +328,7 @@ func (o *ConsentServiceResponse) GetServiceAccountDNOk() ([]string, bool) {
 
 // HasServiceAccountDN returns a boolean if a field has been set.
 func (o *ConsentServiceResponse) HasServiceAccountDN() bool {
-	if o != nil && !isNil(o.ServiceAccountDN) {
+	if o != nil && !IsNil(o.ServiceAccountDN) {
 		return true
 	}
 
@@ -339,7 +342,7 @@ func (o *ConsentServiceResponse) SetServiceAccountDN(v []string) {
 
 // GetUnprivilegedConsentScope returns the UnprivilegedConsentScope field value if set, zero value otherwise.
 func (o *ConsentServiceResponse) GetUnprivilegedConsentScope() string {
-	if o == nil || isNil(o.UnprivilegedConsentScope) {
+	if o == nil || IsNil(o.UnprivilegedConsentScope) {
 		var ret string
 		return ret
 	}
@@ -349,7 +352,7 @@ func (o *ConsentServiceResponse) GetUnprivilegedConsentScope() string {
 // GetUnprivilegedConsentScopeOk returns a tuple with the UnprivilegedConsentScope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsentServiceResponse) GetUnprivilegedConsentScopeOk() (*string, bool) {
-	if o == nil || isNil(o.UnprivilegedConsentScope) {
+	if o == nil || IsNil(o.UnprivilegedConsentScope) {
 		return nil, false
 	}
 	return o.UnprivilegedConsentScope, true
@@ -357,7 +360,7 @@ func (o *ConsentServiceResponse) GetUnprivilegedConsentScopeOk() (*string, bool)
 
 // HasUnprivilegedConsentScope returns a boolean if a field has been set.
 func (o *ConsentServiceResponse) HasUnprivilegedConsentScope() bool {
-	if o != nil && !isNil(o.UnprivilegedConsentScope) {
+	if o != nil && !IsNil(o.UnprivilegedConsentScope) {
 		return true
 	}
 
@@ -371,7 +374,7 @@ func (o *ConsentServiceResponse) SetUnprivilegedConsentScope(v string) {
 
 // GetPrivilegedConsentScope returns the PrivilegedConsentScope field value if set, zero value otherwise.
 func (o *ConsentServiceResponse) GetPrivilegedConsentScope() string {
-	if o == nil || isNil(o.PrivilegedConsentScope) {
+	if o == nil || IsNil(o.PrivilegedConsentScope) {
 		var ret string
 		return ret
 	}
@@ -381,7 +384,7 @@ func (o *ConsentServiceResponse) GetPrivilegedConsentScope() string {
 // GetPrivilegedConsentScopeOk returns a tuple with the PrivilegedConsentScope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsentServiceResponse) GetPrivilegedConsentScopeOk() (*string, bool) {
-	if o == nil || isNil(o.PrivilegedConsentScope) {
+	if o == nil || IsNil(o.PrivilegedConsentScope) {
 		return nil, false
 	}
 	return o.PrivilegedConsentScope, true
@@ -389,7 +392,7 @@ func (o *ConsentServiceResponse) GetPrivilegedConsentScopeOk() (*string, bool) {
 
 // HasPrivilegedConsentScope returns a boolean if a field has been set.
 func (o *ConsentServiceResponse) HasPrivilegedConsentScope() bool {
-	if o != nil && !isNil(o.PrivilegedConsentScope) {
+	if o != nil && !IsNil(o.PrivilegedConsentScope) {
 		return true
 	}
 
@@ -403,7 +406,7 @@ func (o *ConsentServiceResponse) SetPrivilegedConsentScope(v string) {
 
 // GetAudience returns the Audience field value if set, zero value otherwise.
 func (o *ConsentServiceResponse) GetAudience() string {
-	if o == nil || isNil(o.Audience) {
+	if o == nil || IsNil(o.Audience) {
 		var ret string
 		return ret
 	}
@@ -413,7 +416,7 @@ func (o *ConsentServiceResponse) GetAudience() string {
 // GetAudienceOk returns a tuple with the Audience field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsentServiceResponse) GetAudienceOk() (*string, bool) {
-	if o == nil || isNil(o.Audience) {
+	if o == nil || IsNil(o.Audience) {
 		return nil, false
 	}
 	return o.Audience, true
@@ -421,7 +424,7 @@ func (o *ConsentServiceResponse) GetAudienceOk() (*string, bool) {
 
 // HasAudience returns a boolean if a field has been set.
 func (o *ConsentServiceResponse) HasAudience() bool {
-	if o != nil && !isNil(o.Audience) {
+	if o != nil && !IsNil(o.Audience) {
 		return true
 	}
 
@@ -434,44 +437,50 @@ func (o *ConsentServiceResponse) SetAudience(v string) {
 }
 
 func (o ConsentServiceResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.BaseDN) {
-		toSerialize["baseDN"] = o.BaseDN
-	}
-	if !isNil(o.BindDN) {
-		toSerialize["bindDN"] = o.BindDN
-	}
-	if !isNil(o.SearchSizeLimit) {
-		toSerialize["searchSizeLimit"] = o.SearchSizeLimit
-	}
-	if !isNil(o.ConsentRecordIdentityMapper) {
-		toSerialize["consentRecordIdentityMapper"] = o.ConsentRecordIdentityMapper
-	}
-	if !isNil(o.ServiceAccountDN) {
-		toSerialize["serviceAccountDN"] = o.ServiceAccountDN
-	}
-	if !isNil(o.UnprivilegedConsentScope) {
-		toSerialize["unprivilegedConsentScope"] = o.UnprivilegedConsentScope
-	}
-	if !isNil(o.PrivilegedConsentScope) {
-		toSerialize["privilegedConsentScope"] = o.PrivilegedConsentScope
-	}
-	if !isNil(o.Audience) {
-		toSerialize["audience"] = o.Audience
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ConsentServiceResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.BaseDN) {
+		toSerialize["baseDN"] = o.BaseDN
+	}
+	if !IsNil(o.BindDN) {
+		toSerialize["bindDN"] = o.BindDN
+	}
+	if !IsNil(o.SearchSizeLimit) {
+		toSerialize["searchSizeLimit"] = o.SearchSizeLimit
+	}
+	if !IsNil(o.ConsentRecordIdentityMapper) {
+		toSerialize["consentRecordIdentityMapper"] = o.ConsentRecordIdentityMapper
+	}
+	if !IsNil(o.ServiceAccountDN) {
+		toSerialize["serviceAccountDN"] = o.ServiceAccountDN
+	}
+	if !IsNil(o.UnprivilegedConsentScope) {
+		toSerialize["unprivilegedConsentScope"] = o.UnprivilegedConsentScope
+	}
+	if !IsNil(o.PrivilegedConsentScope) {
+		toSerialize["privilegedConsentScope"] = o.PrivilegedConsentScope
+	}
+	if !IsNil(o.Audience) {
+		toSerialize["audience"] = o.Audience
+	}
+	return toSerialize, nil
 }
 
 type NullableConsentServiceResponse struct {

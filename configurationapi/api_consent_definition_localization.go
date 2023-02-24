@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -71,7 +71,7 @@ func (a *ConsentDefinitionLocalizationApiService) AddConsentDefinitionLocalizati
 	}
 
 	localVarPath := localBasePath + "/consent-definitions/{consent-definition-name}/consent-definition-localizations"
-	localVarPath = strings.Replace(localVarPath, "{"+"consent-definition-name"+"}", url.PathEscape(parameterToString(r.consentDefinitionName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"consent-definition-name"+"}", url.PathEscape(parameterValueToString(r.consentDefinitionName, "consentDefinitionName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -109,9 +109,9 @@ func (a *ConsentDefinitionLocalizationApiService) AddConsentDefinitionLocalizati
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -178,8 +178,8 @@ func (a *ConsentDefinitionLocalizationApiService) DeleteConsentDefinitionLocaliz
 	}
 
 	localVarPath := localBasePath + "/consent-definitions/{consent-definition-name}/consent-definition-localizations/{consent-definition-localization-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"consent-definition-localization-name"+"}", url.PathEscape(parameterToString(r.consentDefinitionLocalizationName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"consent-definition-name"+"}", url.PathEscape(parameterToString(r.consentDefinitionName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"consent-definition-localization-name"+"}", url.PathEscape(parameterValueToString(r.consentDefinitionLocalizationName, "consentDefinitionLocalizationName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"consent-definition-name"+"}", url.PathEscape(parameterValueToString(r.consentDefinitionName, "consentDefinitionName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -212,9 +212,9 @@ func (a *ConsentDefinitionLocalizationApiService) DeleteConsentDefinitionLocaliz
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -275,8 +275,8 @@ func (a *ConsentDefinitionLocalizationApiService) GetConsentDefinitionLocalizati
 	}
 
 	localVarPath := localBasePath + "/consent-definitions/{consent-definition-name}/consent-definition-localizations/{consent-definition-localization-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"consent-definition-localization-name"+"}", url.PathEscape(parameterToString(r.consentDefinitionLocalizationName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"consent-definition-name"+"}", url.PathEscape(parameterToString(r.consentDefinitionName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"consent-definition-localization-name"+"}", url.PathEscape(parameterValueToString(r.consentDefinitionLocalizationName, "consentDefinitionLocalizationName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"consent-definition-name"+"}", url.PathEscape(parameterValueToString(r.consentDefinitionName, "consentDefinitionName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -309,9 +309,9 @@ func (a *ConsentDefinitionLocalizationApiService) GetConsentDefinitionLocalizati
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -388,8 +388,8 @@ func (a *ConsentDefinitionLocalizationApiService) UpdateConsentDefinitionLocaliz
 	}
 
 	localVarPath := localBasePath + "/consent-definitions/{consent-definition-name}/consent-definition-localizations/{consent-definition-localization-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"consent-definition-localization-name"+"}", url.PathEscape(parameterToString(r.consentDefinitionLocalizationName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"consent-definition-name"+"}", url.PathEscape(parameterToString(r.consentDefinitionName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"consent-definition-localization-name"+"}", url.PathEscape(parameterValueToString(r.consentDefinitionLocalizationName, "consentDefinitionLocalizationName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"consent-definition-name"+"}", url.PathEscape(parameterValueToString(r.consentDefinitionName, "consentDefinitionName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -427,9 +427,9 @@ func (a *ConsentDefinitionLocalizationApiService) UpdateConsentDefinitionLocaliz
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

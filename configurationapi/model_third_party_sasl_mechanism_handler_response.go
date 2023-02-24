@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ThirdPartySaslMechanismHandlerResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ThirdPartySaslMechanismHandlerResponse{}
+
 // ThirdPartySaslMechanismHandlerResponse struct for ThirdPartySaslMechanismHandlerResponse
 type ThirdPartySaslMechanismHandlerResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -56,7 +59,7 @@ func NewThirdPartySaslMechanismHandlerResponseWithDefaults() *ThirdPartySaslMech
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *ThirdPartySaslMechanismHandlerResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -66,7 +69,7 @@ func (o *ThirdPartySaslMechanismHandlerResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartySaslMechanismHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -74,7 +77,7 @@ func (o *ThirdPartySaslMechanismHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *ThirdPartySaslMechanismHandlerResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -88,7 +91,7 @@ func (o *ThirdPartySaslMechanismHandlerResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *ThirdPartySaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -98,7 +101,7 @@ func (o *ThirdPartySaslMechanismHandlerResponse) GetUrnpingidentityschemasconfig
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartySaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -106,7 +109,7 @@ func (o *ThirdPartySaslMechanismHandlerResponse) GetUrnpingidentityschemasconfig
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *ThirdPartySaslMechanismHandlerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -192,7 +195,7 @@ func (o *ThirdPartySaslMechanismHandlerResponse) SetExtensionClass(v string) {
 
 // GetExtensionArgument returns the ExtensionArgument field value if set, zero value otherwise.
 func (o *ThirdPartySaslMechanismHandlerResponse) GetExtensionArgument() []string {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		var ret []string
 		return ret
 	}
@@ -202,7 +205,7 @@ func (o *ThirdPartySaslMechanismHandlerResponse) GetExtensionArgument() []string
 // GetExtensionArgumentOk returns a tuple with the ExtensionArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartySaslMechanismHandlerResponse) GetExtensionArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		return nil, false
 	}
 	return o.ExtensionArgument, true
@@ -210,7 +213,7 @@ func (o *ThirdPartySaslMechanismHandlerResponse) GetExtensionArgumentOk() ([]str
 
 // HasExtensionArgument returns a boolean if a field has been set.
 func (o *ThirdPartySaslMechanismHandlerResponse) HasExtensionArgument() bool {
-	if o != nil && !isNil(o.ExtensionArgument) {
+	if o != nil && !IsNil(o.ExtensionArgument) {
 		return true
 	}
 
@@ -224,7 +227,7 @@ func (o *ThirdPartySaslMechanismHandlerResponse) SetExtensionArgument(v []string
 
 // GetIdentityMapper returns the IdentityMapper field value if set, zero value otherwise.
 func (o *ThirdPartySaslMechanismHandlerResponse) GetIdentityMapper() string {
-	if o == nil || isNil(o.IdentityMapper) {
+	if o == nil || IsNil(o.IdentityMapper) {
 		var ret string
 		return ret
 	}
@@ -234,7 +237,7 @@ func (o *ThirdPartySaslMechanismHandlerResponse) GetIdentityMapper() string {
 // GetIdentityMapperOk returns a tuple with the IdentityMapper field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartySaslMechanismHandlerResponse) GetIdentityMapperOk() (*string, bool) {
-	if o == nil || isNil(o.IdentityMapper) {
+	if o == nil || IsNil(o.IdentityMapper) {
 		return nil, false
 	}
 	return o.IdentityMapper, true
@@ -242,7 +245,7 @@ func (o *ThirdPartySaslMechanismHandlerResponse) GetIdentityMapperOk() (*string,
 
 // HasIdentityMapper returns a boolean if a field has been set.
 func (o *ThirdPartySaslMechanismHandlerResponse) HasIdentityMapper() bool {
-	if o != nil && !isNil(o.IdentityMapper) {
+	if o != nil && !IsNil(o.IdentityMapper) {
 		return true
 	}
 
@@ -256,7 +259,7 @@ func (o *ThirdPartySaslMechanismHandlerResponse) SetIdentityMapper(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *ThirdPartySaslMechanismHandlerResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -266,7 +269,7 @@ func (o *ThirdPartySaslMechanismHandlerResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartySaslMechanismHandlerResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -274,7 +277,7 @@ func (o *ThirdPartySaslMechanismHandlerResponse) GetDescriptionOk() (*string, bo
 
 // HasDescription returns a boolean if a field has been set.
 func (o *ThirdPartySaslMechanismHandlerResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -311,35 +314,35 @@ func (o *ThirdPartySaslMechanismHandlerResponse) SetEnabled(v bool) {
 }
 
 func (o ThirdPartySaslMechanismHandlerResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["extensionClass"] = o.ExtensionClass
-	}
-	if !isNil(o.ExtensionArgument) {
-		toSerialize["extensionArgument"] = o.ExtensionArgument
-	}
-	if !isNil(o.IdentityMapper) {
-		toSerialize["identityMapper"] = o.IdentityMapper
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ThirdPartySaslMechanismHandlerResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["extensionClass"] = o.ExtensionClass
+	if !IsNil(o.ExtensionArgument) {
+		toSerialize["extensionArgument"] = o.ExtensionArgument
+	}
+	if !IsNil(o.IdentityMapper) {
+		toSerialize["identityMapper"] = o.IdentityMapper
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableThirdPartySaslMechanismHandlerResponse struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the DebugAccessLogPublisherResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &DebugAccessLogPublisherResponse{}
+
 // DebugAccessLogPublisherResponse struct for DebugAccessLogPublisherResponse
 type DebugAccessLogPublisherResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -126,7 +129,7 @@ func NewDebugAccessLogPublisherResponseWithDefaults() *DebugAccessLogPublisherRe
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -136,7 +139,7 @@ func (o *DebugAccessLogPublisherResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -144,7 +147,7 @@ func (o *DebugAccessLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -158,7 +161,7 @@ func (o *DebugAccessLogPublisherResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -168,7 +171,7 @@ func (o *DebugAccessLogPublisherResponse) GetUrnpingidentityschemasconfiguration
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -176,7 +179,7 @@ func (o *DebugAccessLogPublisherResponse) GetUrnpingidentityschemasconfiguration
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -238,7 +241,7 @@ func (o *DebugAccessLogPublisherResponse) SetSchemas(v []EnumdebugAccessLogPubli
 
 // GetSuppressReplicationOperations returns the SuppressReplicationOperations field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetSuppressReplicationOperations() bool {
-	if o == nil || isNil(o.SuppressReplicationOperations) {
+	if o == nil || IsNil(o.SuppressReplicationOperations) {
 		var ret bool
 		return ret
 	}
@@ -248,7 +251,7 @@ func (o *DebugAccessLogPublisherResponse) GetSuppressReplicationOperations() boo
 // GetSuppressReplicationOperationsOk returns a tuple with the SuppressReplicationOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetSuppressReplicationOperationsOk() (*bool, bool) {
-	if o == nil || isNil(o.SuppressReplicationOperations) {
+	if o == nil || IsNil(o.SuppressReplicationOperations) {
 		return nil, false
 	}
 	return o.SuppressReplicationOperations, true
@@ -256,7 +259,7 @@ func (o *DebugAccessLogPublisherResponse) GetSuppressReplicationOperationsOk() (
 
 // HasSuppressReplicationOperations returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasSuppressReplicationOperations() bool {
-	if o != nil && !isNil(o.SuppressReplicationOperations) {
+	if o != nil && !IsNil(o.SuppressReplicationOperations) {
 		return true
 	}
 
@@ -270,7 +273,7 @@ func (o *DebugAccessLogPublisherResponse) SetSuppressReplicationOperations(v boo
 
 // GetLogSecurityNegotiation returns the LogSecurityNegotiation field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetLogSecurityNegotiation() bool {
-	if o == nil || isNil(o.LogSecurityNegotiation) {
+	if o == nil || IsNil(o.LogSecurityNegotiation) {
 		var ret bool
 		return ret
 	}
@@ -280,7 +283,7 @@ func (o *DebugAccessLogPublisherResponse) GetLogSecurityNegotiation() bool {
 // GetLogSecurityNegotiationOk returns a tuple with the LogSecurityNegotiation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetLogSecurityNegotiationOk() (*bool, bool) {
-	if o == nil || isNil(o.LogSecurityNegotiation) {
+	if o == nil || IsNil(o.LogSecurityNegotiation) {
 		return nil, false
 	}
 	return o.LogSecurityNegotiation, true
@@ -288,7 +291,7 @@ func (o *DebugAccessLogPublisherResponse) GetLogSecurityNegotiationOk() (*bool, 
 
 // HasLogSecurityNegotiation returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasLogSecurityNegotiation() bool {
-	if o != nil && !isNil(o.LogSecurityNegotiation) {
+	if o != nil && !IsNil(o.LogSecurityNegotiation) {
 		return true
 	}
 
@@ -302,7 +305,7 @@ func (o *DebugAccessLogPublisherResponse) SetLogSecurityNegotiation(v bool) {
 
 // GetLogAssuranceCompleted returns the LogAssuranceCompleted field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetLogAssuranceCompleted() bool {
-	if o == nil || isNil(o.LogAssuranceCompleted) {
+	if o == nil || IsNil(o.LogAssuranceCompleted) {
 		var ret bool
 		return ret
 	}
@@ -312,7 +315,7 @@ func (o *DebugAccessLogPublisherResponse) GetLogAssuranceCompleted() bool {
 // GetLogAssuranceCompletedOk returns a tuple with the LogAssuranceCompleted field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetLogAssuranceCompletedOk() (*bool, bool) {
-	if o == nil || isNil(o.LogAssuranceCompleted) {
+	if o == nil || IsNil(o.LogAssuranceCompleted) {
 		return nil, false
 	}
 	return o.LogAssuranceCompleted, true
@@ -320,7 +323,7 @@ func (o *DebugAccessLogPublisherResponse) GetLogAssuranceCompletedOk() (*bool, b
 
 // HasLogAssuranceCompleted returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasLogAssuranceCompleted() bool {
-	if o != nil && !isNil(o.LogAssuranceCompleted) {
+	if o != nil && !IsNil(o.LogAssuranceCompleted) {
 		return true
 	}
 
@@ -334,7 +337,7 @@ func (o *DebugAccessLogPublisherResponse) SetLogAssuranceCompleted(v bool) {
 
 // GetLogSearchEntries returns the LogSearchEntries field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetLogSearchEntries() bool {
-	if o == nil || isNil(o.LogSearchEntries) {
+	if o == nil || IsNil(o.LogSearchEntries) {
 		var ret bool
 		return ret
 	}
@@ -344,7 +347,7 @@ func (o *DebugAccessLogPublisherResponse) GetLogSearchEntries() bool {
 // GetLogSearchEntriesOk returns a tuple with the LogSearchEntries field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetLogSearchEntriesOk() (*bool, bool) {
-	if o == nil || isNil(o.LogSearchEntries) {
+	if o == nil || IsNil(o.LogSearchEntries) {
 		return nil, false
 	}
 	return o.LogSearchEntries, true
@@ -352,7 +355,7 @@ func (o *DebugAccessLogPublisherResponse) GetLogSearchEntriesOk() (*bool, bool) 
 
 // HasLogSearchEntries returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasLogSearchEntries() bool {
-	if o != nil && !isNil(o.LogSearchEntries) {
+	if o != nil && !IsNil(o.LogSearchEntries) {
 		return true
 	}
 
@@ -366,7 +369,7 @@ func (o *DebugAccessLogPublisherResponse) SetLogSearchEntries(v bool) {
 
 // GetLogSearchReferences returns the LogSearchReferences field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetLogSearchReferences() bool {
-	if o == nil || isNil(o.LogSearchReferences) {
+	if o == nil || IsNil(o.LogSearchReferences) {
 		var ret bool
 		return ret
 	}
@@ -376,7 +379,7 @@ func (o *DebugAccessLogPublisherResponse) GetLogSearchReferences() bool {
 // GetLogSearchReferencesOk returns a tuple with the LogSearchReferences field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetLogSearchReferencesOk() (*bool, bool) {
-	if o == nil || isNil(o.LogSearchReferences) {
+	if o == nil || IsNil(o.LogSearchReferences) {
 		return nil, false
 	}
 	return o.LogSearchReferences, true
@@ -384,7 +387,7 @@ func (o *DebugAccessLogPublisherResponse) GetLogSearchReferencesOk() (*bool, boo
 
 // HasLogSearchReferences returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasLogSearchReferences() bool {
-	if o != nil && !isNil(o.LogSearchReferences) {
+	if o != nil && !IsNil(o.LogSearchReferences) {
 		return true
 	}
 
@@ -470,7 +473,7 @@ func (o *DebugAccessLogPublisherResponse) SetRotationPolicy(v []string) {
 
 // GetRotationListener returns the RotationListener field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetRotationListener() []string {
-	if o == nil || isNil(o.RotationListener) {
+	if o == nil || IsNil(o.RotationListener) {
 		var ret []string
 		return ret
 	}
@@ -480,7 +483,7 @@ func (o *DebugAccessLogPublisherResponse) GetRotationListener() []string {
 // GetRotationListenerOk returns a tuple with the RotationListener field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetRotationListenerOk() ([]string, bool) {
-	if o == nil || isNil(o.RotationListener) {
+	if o == nil || IsNil(o.RotationListener) {
 		return nil, false
 	}
 	return o.RotationListener, true
@@ -488,7 +491,7 @@ func (o *DebugAccessLogPublisherResponse) GetRotationListenerOk() ([]string, boo
 
 // HasRotationListener returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasRotationListener() bool {
-	if o != nil && !isNil(o.RotationListener) {
+	if o != nil && !IsNil(o.RotationListener) {
 		return true
 	}
 
@@ -526,7 +529,7 @@ func (o *DebugAccessLogPublisherResponse) SetRetentionPolicy(v []string) {
 
 // GetCompressionMechanism returns the CompressionMechanism field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetCompressionMechanism() EnumlogPublisherCompressionMechanismProp {
-	if o == nil || isNil(o.CompressionMechanism) {
+	if o == nil || IsNil(o.CompressionMechanism) {
 		var ret EnumlogPublisherCompressionMechanismProp
 		return ret
 	}
@@ -536,7 +539,7 @@ func (o *DebugAccessLogPublisherResponse) GetCompressionMechanism() EnumlogPubli
 // GetCompressionMechanismOk returns a tuple with the CompressionMechanism field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetCompressionMechanismOk() (*EnumlogPublisherCompressionMechanismProp, bool) {
-	if o == nil || isNil(o.CompressionMechanism) {
+	if o == nil || IsNil(o.CompressionMechanism) {
 		return nil, false
 	}
 	return o.CompressionMechanism, true
@@ -544,7 +547,7 @@ func (o *DebugAccessLogPublisherResponse) GetCompressionMechanismOk() (*EnumlogP
 
 // HasCompressionMechanism returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasCompressionMechanism() bool {
-	if o != nil && !isNil(o.CompressionMechanism) {
+	if o != nil && !IsNil(o.CompressionMechanism) {
 		return true
 	}
 
@@ -558,7 +561,7 @@ func (o *DebugAccessLogPublisherResponse) SetCompressionMechanism(v EnumlogPubli
 
 // GetSignLog returns the SignLog field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetSignLog() bool {
-	if o == nil || isNil(o.SignLog) {
+	if o == nil || IsNil(o.SignLog) {
 		var ret bool
 		return ret
 	}
@@ -568,7 +571,7 @@ func (o *DebugAccessLogPublisherResponse) GetSignLog() bool {
 // GetSignLogOk returns a tuple with the SignLog field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetSignLogOk() (*bool, bool) {
-	if o == nil || isNil(o.SignLog) {
+	if o == nil || IsNil(o.SignLog) {
 		return nil, false
 	}
 	return o.SignLog, true
@@ -576,7 +579,7 @@ func (o *DebugAccessLogPublisherResponse) GetSignLogOk() (*bool, bool) {
 
 // HasSignLog returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasSignLog() bool {
-	if o != nil && !isNil(o.SignLog) {
+	if o != nil && !IsNil(o.SignLog) {
 		return true
 	}
 
@@ -590,7 +593,7 @@ func (o *DebugAccessLogPublisherResponse) SetSignLog(v bool) {
 
 // GetEncryptLog returns the EncryptLog field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetEncryptLog() bool {
-	if o == nil || isNil(o.EncryptLog) {
+	if o == nil || IsNil(o.EncryptLog) {
 		var ret bool
 		return ret
 	}
@@ -600,7 +603,7 @@ func (o *DebugAccessLogPublisherResponse) GetEncryptLog() bool {
 // GetEncryptLogOk returns a tuple with the EncryptLog field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetEncryptLogOk() (*bool, bool) {
-	if o == nil || isNil(o.EncryptLog) {
+	if o == nil || IsNil(o.EncryptLog) {
 		return nil, false
 	}
 	return o.EncryptLog, true
@@ -608,7 +611,7 @@ func (o *DebugAccessLogPublisherResponse) GetEncryptLogOk() (*bool, bool) {
 
 // HasEncryptLog returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasEncryptLog() bool {
-	if o != nil && !isNil(o.EncryptLog) {
+	if o != nil && !IsNil(o.EncryptLog) {
 		return true
 	}
 
@@ -622,7 +625,7 @@ func (o *DebugAccessLogPublisherResponse) SetEncryptLog(v bool) {
 
 // GetEncryptionSettingsDefinitionID returns the EncryptionSettingsDefinitionID field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetEncryptionSettingsDefinitionID() string {
-	if o == nil || isNil(o.EncryptionSettingsDefinitionID) {
+	if o == nil || IsNil(o.EncryptionSettingsDefinitionID) {
 		var ret string
 		return ret
 	}
@@ -632,7 +635,7 @@ func (o *DebugAccessLogPublisherResponse) GetEncryptionSettingsDefinitionID() st
 // GetEncryptionSettingsDefinitionIDOk returns a tuple with the EncryptionSettingsDefinitionID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetEncryptionSettingsDefinitionIDOk() (*string, bool) {
-	if o == nil || isNil(o.EncryptionSettingsDefinitionID) {
+	if o == nil || IsNil(o.EncryptionSettingsDefinitionID) {
 		return nil, false
 	}
 	return o.EncryptionSettingsDefinitionID, true
@@ -640,7 +643,7 @@ func (o *DebugAccessLogPublisherResponse) GetEncryptionSettingsDefinitionIDOk() 
 
 // HasEncryptionSettingsDefinitionID returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasEncryptionSettingsDefinitionID() bool {
-	if o != nil && !isNil(o.EncryptionSettingsDefinitionID) {
+	if o != nil && !IsNil(o.EncryptionSettingsDefinitionID) {
 		return true
 	}
 
@@ -654,7 +657,7 @@ func (o *DebugAccessLogPublisherResponse) SetEncryptionSettingsDefinitionID(v st
 
 // GetAppend returns the Append field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetAppend() bool {
-	if o == nil || isNil(o.Append) {
+	if o == nil || IsNil(o.Append) {
 		var ret bool
 		return ret
 	}
@@ -664,7 +667,7 @@ func (o *DebugAccessLogPublisherResponse) GetAppend() bool {
 // GetAppendOk returns a tuple with the Append field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetAppendOk() (*bool, bool) {
-	if o == nil || isNil(o.Append) {
+	if o == nil || IsNil(o.Append) {
 		return nil, false
 	}
 	return o.Append, true
@@ -672,7 +675,7 @@ func (o *DebugAccessLogPublisherResponse) GetAppendOk() (*bool, bool) {
 
 // HasAppend returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasAppend() bool {
-	if o != nil && !isNil(o.Append) {
+	if o != nil && !IsNil(o.Append) {
 		return true
 	}
 
@@ -686,7 +689,7 @@ func (o *DebugAccessLogPublisherResponse) SetAppend(v bool) {
 
 // GetObscureSensitiveContent returns the ObscureSensitiveContent field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetObscureSensitiveContent() bool {
-	if o == nil || isNil(o.ObscureSensitiveContent) {
+	if o == nil || IsNil(o.ObscureSensitiveContent) {
 		var ret bool
 		return ret
 	}
@@ -696,7 +699,7 @@ func (o *DebugAccessLogPublisherResponse) GetObscureSensitiveContent() bool {
 // GetObscureSensitiveContentOk returns a tuple with the ObscureSensitiveContent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetObscureSensitiveContentOk() (*bool, bool) {
-	if o == nil || isNil(o.ObscureSensitiveContent) {
+	if o == nil || IsNil(o.ObscureSensitiveContent) {
 		return nil, false
 	}
 	return o.ObscureSensitiveContent, true
@@ -704,7 +707,7 @@ func (o *DebugAccessLogPublisherResponse) GetObscureSensitiveContentOk() (*bool,
 
 // HasObscureSensitiveContent returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasObscureSensitiveContent() bool {
-	if o != nil && !isNil(o.ObscureSensitiveContent) {
+	if o != nil && !IsNil(o.ObscureSensitiveContent) {
 		return true
 	}
 
@@ -718,7 +721,7 @@ func (o *DebugAccessLogPublisherResponse) SetObscureSensitiveContent(v bool) {
 
 // GetObscureAttribute returns the ObscureAttribute field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetObscureAttribute() []string {
-	if o == nil || isNil(o.ObscureAttribute) {
+	if o == nil || IsNil(o.ObscureAttribute) {
 		var ret []string
 		return ret
 	}
@@ -728,7 +731,7 @@ func (o *DebugAccessLogPublisherResponse) GetObscureAttribute() []string {
 // GetObscureAttributeOk returns a tuple with the ObscureAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetObscureAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.ObscureAttribute) {
+	if o == nil || IsNil(o.ObscureAttribute) {
 		return nil, false
 	}
 	return o.ObscureAttribute, true
@@ -736,7 +739,7 @@ func (o *DebugAccessLogPublisherResponse) GetObscureAttributeOk() ([]string, boo
 
 // HasObscureAttribute returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasObscureAttribute() bool {
-	if o != nil && !isNil(o.ObscureAttribute) {
+	if o != nil && !IsNil(o.ObscureAttribute) {
 		return true
 	}
 
@@ -750,7 +753,7 @@ func (o *DebugAccessLogPublisherResponse) SetObscureAttribute(v []string) {
 
 // GetDebugACIEnabled returns the DebugACIEnabled field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetDebugACIEnabled() bool {
-	if o == nil || isNil(o.DebugACIEnabled) {
+	if o == nil || IsNil(o.DebugACIEnabled) {
 		var ret bool
 		return ret
 	}
@@ -760,7 +763,7 @@ func (o *DebugAccessLogPublisherResponse) GetDebugACIEnabled() bool {
 // GetDebugACIEnabledOk returns a tuple with the DebugACIEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetDebugACIEnabledOk() (*bool, bool) {
-	if o == nil || isNil(o.DebugACIEnabled) {
+	if o == nil || IsNil(o.DebugACIEnabled) {
 		return nil, false
 	}
 	return o.DebugACIEnabled, true
@@ -768,7 +771,7 @@ func (o *DebugAccessLogPublisherResponse) GetDebugACIEnabledOk() (*bool, bool) {
 
 // HasDebugACIEnabled returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasDebugACIEnabled() bool {
-	if o != nil && !isNil(o.DebugACIEnabled) {
+	if o != nil && !IsNil(o.DebugACIEnabled) {
 		return true
 	}
 
@@ -806,7 +809,7 @@ func (o *DebugAccessLogPublisherResponse) SetAsynchronous(v bool) {
 
 // GetAutoFlush returns the AutoFlush field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetAutoFlush() bool {
-	if o == nil || isNil(o.AutoFlush) {
+	if o == nil || IsNil(o.AutoFlush) {
 		var ret bool
 		return ret
 	}
@@ -816,7 +819,7 @@ func (o *DebugAccessLogPublisherResponse) GetAutoFlush() bool {
 // GetAutoFlushOk returns a tuple with the AutoFlush field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetAutoFlushOk() (*bool, bool) {
-	if o == nil || isNil(o.AutoFlush) {
+	if o == nil || IsNil(o.AutoFlush) {
 		return nil, false
 	}
 	return o.AutoFlush, true
@@ -824,7 +827,7 @@ func (o *DebugAccessLogPublisherResponse) GetAutoFlushOk() (*bool, bool) {
 
 // HasAutoFlush returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasAutoFlush() bool {
-	if o != nil && !isNil(o.AutoFlush) {
+	if o != nil && !IsNil(o.AutoFlush) {
 		return true
 	}
 
@@ -838,7 +841,7 @@ func (o *DebugAccessLogPublisherResponse) SetAutoFlush(v bool) {
 
 // GetBufferSize returns the BufferSize field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetBufferSize() string {
-	if o == nil || isNil(o.BufferSize) {
+	if o == nil || IsNil(o.BufferSize) {
 		var ret string
 		return ret
 	}
@@ -848,7 +851,7 @@ func (o *DebugAccessLogPublisherResponse) GetBufferSize() string {
 // GetBufferSizeOk returns a tuple with the BufferSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetBufferSizeOk() (*string, bool) {
-	if o == nil || isNil(o.BufferSize) {
+	if o == nil || IsNil(o.BufferSize) {
 		return nil, false
 	}
 	return o.BufferSize, true
@@ -856,7 +859,7 @@ func (o *DebugAccessLogPublisherResponse) GetBufferSizeOk() (*string, bool) {
 
 // HasBufferSize returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasBufferSize() bool {
-	if o != nil && !isNil(o.BufferSize) {
+	if o != nil && !IsNil(o.BufferSize) {
 		return true
 	}
 
@@ -870,7 +873,7 @@ func (o *DebugAccessLogPublisherResponse) SetBufferSize(v string) {
 
 // GetQueueSize returns the QueueSize field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetQueueSize() int32 {
-	if o == nil || isNil(o.QueueSize) {
+	if o == nil || IsNil(o.QueueSize) {
 		var ret int32
 		return ret
 	}
@@ -880,7 +883,7 @@ func (o *DebugAccessLogPublisherResponse) GetQueueSize() int32 {
 // GetQueueSizeOk returns a tuple with the QueueSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetQueueSizeOk() (*int32, bool) {
-	if o == nil || isNil(o.QueueSize) {
+	if o == nil || IsNil(o.QueueSize) {
 		return nil, false
 	}
 	return o.QueueSize, true
@@ -888,7 +891,7 @@ func (o *DebugAccessLogPublisherResponse) GetQueueSizeOk() (*int32, bool) {
 
 // HasQueueSize returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasQueueSize() bool {
-	if o != nil && !isNil(o.QueueSize) {
+	if o != nil && !IsNil(o.QueueSize) {
 		return true
 	}
 
@@ -902,7 +905,7 @@ func (o *DebugAccessLogPublisherResponse) SetQueueSize(v int32) {
 
 // GetTimeInterval returns the TimeInterval field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetTimeInterval() string {
-	if o == nil || isNil(o.TimeInterval) {
+	if o == nil || IsNil(o.TimeInterval) {
 		var ret string
 		return ret
 	}
@@ -912,7 +915,7 @@ func (o *DebugAccessLogPublisherResponse) GetTimeInterval() string {
 // GetTimeIntervalOk returns a tuple with the TimeInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetTimeIntervalOk() (*string, bool) {
-	if o == nil || isNil(o.TimeInterval) {
+	if o == nil || IsNil(o.TimeInterval) {
 		return nil, false
 	}
 	return o.TimeInterval, true
@@ -920,7 +923,7 @@ func (o *DebugAccessLogPublisherResponse) GetTimeIntervalOk() (*string, bool) {
 
 // HasTimeInterval returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasTimeInterval() bool {
-	if o != nil && !isNil(o.TimeInterval) {
+	if o != nil && !IsNil(o.TimeInterval) {
 		return true
 	}
 
@@ -934,7 +937,7 @@ func (o *DebugAccessLogPublisherResponse) SetTimeInterval(v string) {
 
 // GetLogConnects returns the LogConnects field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetLogConnects() bool {
-	if o == nil || isNil(o.LogConnects) {
+	if o == nil || IsNil(o.LogConnects) {
 		var ret bool
 		return ret
 	}
@@ -944,7 +947,7 @@ func (o *DebugAccessLogPublisherResponse) GetLogConnects() bool {
 // GetLogConnectsOk returns a tuple with the LogConnects field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetLogConnectsOk() (*bool, bool) {
-	if o == nil || isNil(o.LogConnects) {
+	if o == nil || IsNil(o.LogConnects) {
 		return nil, false
 	}
 	return o.LogConnects, true
@@ -952,7 +955,7 @@ func (o *DebugAccessLogPublisherResponse) GetLogConnectsOk() (*bool, bool) {
 
 // HasLogConnects returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasLogConnects() bool {
-	if o != nil && !isNil(o.LogConnects) {
+	if o != nil && !IsNil(o.LogConnects) {
 		return true
 	}
 
@@ -966,7 +969,7 @@ func (o *DebugAccessLogPublisherResponse) SetLogConnects(v bool) {
 
 // GetLogDisconnects returns the LogDisconnects field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetLogDisconnects() bool {
-	if o == nil || isNil(o.LogDisconnects) {
+	if o == nil || IsNil(o.LogDisconnects) {
 		var ret bool
 		return ret
 	}
@@ -976,7 +979,7 @@ func (o *DebugAccessLogPublisherResponse) GetLogDisconnects() bool {
 // GetLogDisconnectsOk returns a tuple with the LogDisconnects field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetLogDisconnectsOk() (*bool, bool) {
-	if o == nil || isNil(o.LogDisconnects) {
+	if o == nil || IsNil(o.LogDisconnects) {
 		return nil, false
 	}
 	return o.LogDisconnects, true
@@ -984,7 +987,7 @@ func (o *DebugAccessLogPublisherResponse) GetLogDisconnectsOk() (*bool, bool) {
 
 // HasLogDisconnects returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasLogDisconnects() bool {
-	if o != nil && !isNil(o.LogDisconnects) {
+	if o != nil && !IsNil(o.LogDisconnects) {
 		return true
 	}
 
@@ -998,7 +1001,7 @@ func (o *DebugAccessLogPublisherResponse) SetLogDisconnects(v bool) {
 
 // GetLogClientCertificates returns the LogClientCertificates field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetLogClientCertificates() bool {
-	if o == nil || isNil(o.LogClientCertificates) {
+	if o == nil || IsNil(o.LogClientCertificates) {
 		var ret bool
 		return ret
 	}
@@ -1008,7 +1011,7 @@ func (o *DebugAccessLogPublisherResponse) GetLogClientCertificates() bool {
 // GetLogClientCertificatesOk returns a tuple with the LogClientCertificates field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetLogClientCertificatesOk() (*bool, bool) {
-	if o == nil || isNil(o.LogClientCertificates) {
+	if o == nil || IsNil(o.LogClientCertificates) {
 		return nil, false
 	}
 	return o.LogClientCertificates, true
@@ -1016,7 +1019,7 @@ func (o *DebugAccessLogPublisherResponse) GetLogClientCertificatesOk() (*bool, b
 
 // HasLogClientCertificates returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasLogClientCertificates() bool {
-	if o != nil && !isNil(o.LogClientCertificates) {
+	if o != nil && !IsNil(o.LogClientCertificates) {
 		return true
 	}
 
@@ -1030,7 +1033,7 @@ func (o *DebugAccessLogPublisherResponse) SetLogClientCertificates(v bool) {
 
 // GetLogRequests returns the LogRequests field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetLogRequests() bool {
-	if o == nil || isNil(o.LogRequests) {
+	if o == nil || IsNil(o.LogRequests) {
 		var ret bool
 		return ret
 	}
@@ -1040,7 +1043,7 @@ func (o *DebugAccessLogPublisherResponse) GetLogRequests() bool {
 // GetLogRequestsOk returns a tuple with the LogRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetLogRequestsOk() (*bool, bool) {
-	if o == nil || isNil(o.LogRequests) {
+	if o == nil || IsNil(o.LogRequests) {
 		return nil, false
 	}
 	return o.LogRequests, true
@@ -1048,7 +1051,7 @@ func (o *DebugAccessLogPublisherResponse) GetLogRequestsOk() (*bool, bool) {
 
 // HasLogRequests returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasLogRequests() bool {
-	if o != nil && !isNil(o.LogRequests) {
+	if o != nil && !IsNil(o.LogRequests) {
 		return true
 	}
 
@@ -1062,7 +1065,7 @@ func (o *DebugAccessLogPublisherResponse) SetLogRequests(v bool) {
 
 // GetLogResults returns the LogResults field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetLogResults() bool {
-	if o == nil || isNil(o.LogResults) {
+	if o == nil || IsNil(o.LogResults) {
 		var ret bool
 		return ret
 	}
@@ -1072,7 +1075,7 @@ func (o *DebugAccessLogPublisherResponse) GetLogResults() bool {
 // GetLogResultsOk returns a tuple with the LogResults field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetLogResultsOk() (*bool, bool) {
-	if o == nil || isNil(o.LogResults) {
+	if o == nil || IsNil(o.LogResults) {
 		return nil, false
 	}
 	return o.LogResults, true
@@ -1080,7 +1083,7 @@ func (o *DebugAccessLogPublisherResponse) GetLogResultsOk() (*bool, bool) {
 
 // HasLogResults returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasLogResults() bool {
-	if o != nil && !isNil(o.LogResults) {
+	if o != nil && !IsNil(o.LogResults) {
 		return true
 	}
 
@@ -1094,7 +1097,7 @@ func (o *DebugAccessLogPublisherResponse) SetLogResults(v bool) {
 
 // GetLogIntermediateResponses returns the LogIntermediateResponses field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetLogIntermediateResponses() bool {
-	if o == nil || isNil(o.LogIntermediateResponses) {
+	if o == nil || IsNil(o.LogIntermediateResponses) {
 		var ret bool
 		return ret
 	}
@@ -1104,7 +1107,7 @@ func (o *DebugAccessLogPublisherResponse) GetLogIntermediateResponses() bool {
 // GetLogIntermediateResponsesOk returns a tuple with the LogIntermediateResponses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetLogIntermediateResponsesOk() (*bool, bool) {
-	if o == nil || isNil(o.LogIntermediateResponses) {
+	if o == nil || IsNil(o.LogIntermediateResponses) {
 		return nil, false
 	}
 	return o.LogIntermediateResponses, true
@@ -1112,7 +1115,7 @@ func (o *DebugAccessLogPublisherResponse) GetLogIntermediateResponsesOk() (*bool
 
 // HasLogIntermediateResponses returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasLogIntermediateResponses() bool {
-	if o != nil && !isNil(o.LogIntermediateResponses) {
+	if o != nil && !IsNil(o.LogIntermediateResponses) {
 		return true
 	}
 
@@ -1126,7 +1129,7 @@ func (o *DebugAccessLogPublisherResponse) SetLogIntermediateResponses(v bool) {
 
 // GetSuppressInternalOperations returns the SuppressInternalOperations field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetSuppressInternalOperations() bool {
-	if o == nil || isNil(o.SuppressInternalOperations) {
+	if o == nil || IsNil(o.SuppressInternalOperations) {
 		var ret bool
 		return ret
 	}
@@ -1136,7 +1139,7 @@ func (o *DebugAccessLogPublisherResponse) GetSuppressInternalOperations() bool {
 // GetSuppressInternalOperationsOk returns a tuple with the SuppressInternalOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetSuppressInternalOperationsOk() (*bool, bool) {
-	if o == nil || isNil(o.SuppressInternalOperations) {
+	if o == nil || IsNil(o.SuppressInternalOperations) {
 		return nil, false
 	}
 	return o.SuppressInternalOperations, true
@@ -1144,7 +1147,7 @@ func (o *DebugAccessLogPublisherResponse) GetSuppressInternalOperationsOk() (*bo
 
 // HasSuppressInternalOperations returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasSuppressInternalOperations() bool {
-	if o != nil && !isNil(o.SuppressInternalOperations) {
+	if o != nil && !IsNil(o.SuppressInternalOperations) {
 		return true
 	}
 
@@ -1158,7 +1161,7 @@ func (o *DebugAccessLogPublisherResponse) SetSuppressInternalOperations(v bool) 
 
 // GetCorrelateRequestsAndResults returns the CorrelateRequestsAndResults field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetCorrelateRequestsAndResults() bool {
-	if o == nil || isNil(o.CorrelateRequestsAndResults) {
+	if o == nil || IsNil(o.CorrelateRequestsAndResults) {
 		var ret bool
 		return ret
 	}
@@ -1168,7 +1171,7 @@ func (o *DebugAccessLogPublisherResponse) GetCorrelateRequestsAndResults() bool 
 // GetCorrelateRequestsAndResultsOk returns a tuple with the CorrelateRequestsAndResults field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetCorrelateRequestsAndResultsOk() (*bool, bool) {
-	if o == nil || isNil(o.CorrelateRequestsAndResults) {
+	if o == nil || IsNil(o.CorrelateRequestsAndResults) {
 		return nil, false
 	}
 	return o.CorrelateRequestsAndResults, true
@@ -1176,7 +1179,7 @@ func (o *DebugAccessLogPublisherResponse) GetCorrelateRequestsAndResultsOk() (*b
 
 // HasCorrelateRequestsAndResults returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasCorrelateRequestsAndResults() bool {
-	if o != nil && !isNil(o.CorrelateRequestsAndResults) {
+	if o != nil && !IsNil(o.CorrelateRequestsAndResults) {
 		return true
 	}
 
@@ -1190,7 +1193,7 @@ func (o *DebugAccessLogPublisherResponse) SetCorrelateRequestsAndResults(v bool)
 
 // GetConnectionCriteria returns the ConnectionCriteria field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetConnectionCriteria() string {
-	if o == nil || isNil(o.ConnectionCriteria) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
 		var ret string
 		return ret
 	}
@@ -1200,7 +1203,7 @@ func (o *DebugAccessLogPublisherResponse) GetConnectionCriteria() string {
 // GetConnectionCriteriaOk returns a tuple with the ConnectionCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetConnectionCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.ConnectionCriteria) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
 		return nil, false
 	}
 	return o.ConnectionCriteria, true
@@ -1208,7 +1211,7 @@ func (o *DebugAccessLogPublisherResponse) GetConnectionCriteriaOk() (*string, bo
 
 // HasConnectionCriteria returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasConnectionCriteria() bool {
-	if o != nil && !isNil(o.ConnectionCriteria) {
+	if o != nil && !IsNil(o.ConnectionCriteria) {
 		return true
 	}
 
@@ -1222,7 +1225,7 @@ func (o *DebugAccessLogPublisherResponse) SetConnectionCriteria(v string) {
 
 // GetRequestCriteria returns the RequestCriteria field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetRequestCriteria() string {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -1232,7 +1235,7 @@ func (o *DebugAccessLogPublisherResponse) GetRequestCriteria() string {
 // GetRequestCriteriaOk returns a tuple with the RequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		return nil, false
 	}
 	return o.RequestCriteria, true
@@ -1240,7 +1243,7 @@ func (o *DebugAccessLogPublisherResponse) GetRequestCriteriaOk() (*string, bool)
 
 // HasRequestCriteria returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasRequestCriteria() bool {
-	if o != nil && !isNil(o.RequestCriteria) {
+	if o != nil && !IsNil(o.RequestCriteria) {
 		return true
 	}
 
@@ -1254,7 +1257,7 @@ func (o *DebugAccessLogPublisherResponse) SetRequestCriteria(v string) {
 
 // GetResultCriteria returns the ResultCriteria field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetResultCriteria() string {
-	if o == nil || isNil(o.ResultCriteria) {
+	if o == nil || IsNil(o.ResultCriteria) {
 		var ret string
 		return ret
 	}
@@ -1264,7 +1267,7 @@ func (o *DebugAccessLogPublisherResponse) GetResultCriteria() string {
 // GetResultCriteriaOk returns a tuple with the ResultCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetResultCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.ResultCriteria) {
+	if o == nil || IsNil(o.ResultCriteria) {
 		return nil, false
 	}
 	return o.ResultCriteria, true
@@ -1272,7 +1275,7 @@ func (o *DebugAccessLogPublisherResponse) GetResultCriteriaOk() (*string, bool) 
 
 // HasResultCriteria returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasResultCriteria() bool {
-	if o != nil && !isNil(o.ResultCriteria) {
+	if o != nil && !IsNil(o.ResultCriteria) {
 		return true
 	}
 
@@ -1286,7 +1289,7 @@ func (o *DebugAccessLogPublisherResponse) SetResultCriteria(v string) {
 
 // GetSearchEntryCriteria returns the SearchEntryCriteria field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetSearchEntryCriteria() string {
-	if o == nil || isNil(o.SearchEntryCriteria) {
+	if o == nil || IsNil(o.SearchEntryCriteria) {
 		var ret string
 		return ret
 	}
@@ -1296,7 +1299,7 @@ func (o *DebugAccessLogPublisherResponse) GetSearchEntryCriteria() string {
 // GetSearchEntryCriteriaOk returns a tuple with the SearchEntryCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetSearchEntryCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.SearchEntryCriteria) {
+	if o == nil || IsNil(o.SearchEntryCriteria) {
 		return nil, false
 	}
 	return o.SearchEntryCriteria, true
@@ -1304,7 +1307,7 @@ func (o *DebugAccessLogPublisherResponse) GetSearchEntryCriteriaOk() (*string, b
 
 // HasSearchEntryCriteria returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasSearchEntryCriteria() bool {
-	if o != nil && !isNil(o.SearchEntryCriteria) {
+	if o != nil && !IsNil(o.SearchEntryCriteria) {
 		return true
 	}
 
@@ -1318,7 +1321,7 @@ func (o *DebugAccessLogPublisherResponse) SetSearchEntryCriteria(v string) {
 
 // GetSearchReferenceCriteria returns the SearchReferenceCriteria field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetSearchReferenceCriteria() string {
-	if o == nil || isNil(o.SearchReferenceCriteria) {
+	if o == nil || IsNil(o.SearchReferenceCriteria) {
 		var ret string
 		return ret
 	}
@@ -1328,7 +1331,7 @@ func (o *DebugAccessLogPublisherResponse) GetSearchReferenceCriteria() string {
 // GetSearchReferenceCriteriaOk returns a tuple with the SearchReferenceCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetSearchReferenceCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.SearchReferenceCriteria) {
+	if o == nil || IsNil(o.SearchReferenceCriteria) {
 		return nil, false
 	}
 	return o.SearchReferenceCriteria, true
@@ -1336,7 +1339,7 @@ func (o *DebugAccessLogPublisherResponse) GetSearchReferenceCriteriaOk() (*strin
 
 // HasSearchReferenceCriteria returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasSearchReferenceCriteria() bool {
-	if o != nil && !isNil(o.SearchReferenceCriteria) {
+	if o != nil && !IsNil(o.SearchReferenceCriteria) {
 		return true
 	}
 
@@ -1350,7 +1353,7 @@ func (o *DebugAccessLogPublisherResponse) SetSearchReferenceCriteria(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -1360,7 +1363,7 @@ func (o *DebugAccessLogPublisherResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -1368,7 +1371,7 @@ func (o *DebugAccessLogPublisherResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -1406,7 +1409,7 @@ func (o *DebugAccessLogPublisherResponse) SetEnabled(v bool) {
 
 // GetLoggingErrorBehavior returns the LoggingErrorBehavior field value if set, zero value otherwise.
 func (o *DebugAccessLogPublisherResponse) GetLoggingErrorBehavior() EnumlogPublisherLoggingErrorBehaviorProp {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		var ret EnumlogPublisherLoggingErrorBehaviorProp
 		return ret
 	}
@@ -1416,7 +1419,7 @@ func (o *DebugAccessLogPublisherResponse) GetLoggingErrorBehavior() EnumlogPubli
 // GetLoggingErrorBehaviorOk returns a tuple with the LoggingErrorBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugAccessLogPublisherResponse) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
@@ -1424,7 +1427,7 @@ func (o *DebugAccessLogPublisherResponse) GetLoggingErrorBehaviorOk() (*EnumlogP
 
 // HasLoggingErrorBehavior returns a boolean if a field has been set.
 func (o *DebugAccessLogPublisherResponse) HasLoggingErrorBehavior() bool {
-	if o != nil && !isNil(o.LoggingErrorBehavior) {
+	if o != nil && !IsNil(o.LoggingErrorBehavior) {
 		return true
 	}
 
@@ -1437,137 +1440,129 @@ func (o *DebugAccessLogPublisherResponse) SetLoggingErrorBehavior(v EnumlogPubli
 }
 
 func (o DebugAccessLogPublisherResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.SuppressReplicationOperations) {
-		toSerialize["suppressReplicationOperations"] = o.SuppressReplicationOperations
-	}
-	if !isNil(o.LogSecurityNegotiation) {
-		toSerialize["logSecurityNegotiation"] = o.LogSecurityNegotiation
-	}
-	if !isNil(o.LogAssuranceCompleted) {
-		toSerialize["logAssuranceCompleted"] = o.LogAssuranceCompleted
-	}
-	if !isNil(o.LogSearchEntries) {
-		toSerialize["logSearchEntries"] = o.LogSearchEntries
-	}
-	if !isNil(o.LogSearchReferences) {
-		toSerialize["logSearchReferences"] = o.LogSearchReferences
-	}
-	if true {
-		toSerialize["logFile"] = o.LogFile
-	}
-	if true {
-		toSerialize["logFilePermissions"] = o.LogFilePermissions
-	}
-	if true {
-		toSerialize["rotationPolicy"] = o.RotationPolicy
-	}
-	if !isNil(o.RotationListener) {
-		toSerialize["rotationListener"] = o.RotationListener
-	}
-	if true {
-		toSerialize["retentionPolicy"] = o.RetentionPolicy
-	}
-	if !isNil(o.CompressionMechanism) {
-		toSerialize["compressionMechanism"] = o.CompressionMechanism
-	}
-	if !isNil(o.SignLog) {
-		toSerialize["signLog"] = o.SignLog
-	}
-	if !isNil(o.EncryptLog) {
-		toSerialize["encryptLog"] = o.EncryptLog
-	}
-	if !isNil(o.EncryptionSettingsDefinitionID) {
-		toSerialize["encryptionSettingsDefinitionID"] = o.EncryptionSettingsDefinitionID
-	}
-	if !isNil(o.Append) {
-		toSerialize["append"] = o.Append
-	}
-	if !isNil(o.ObscureSensitiveContent) {
-		toSerialize["obscureSensitiveContent"] = o.ObscureSensitiveContent
-	}
-	if !isNil(o.ObscureAttribute) {
-		toSerialize["obscureAttribute"] = o.ObscureAttribute
-	}
-	if !isNil(o.DebugACIEnabled) {
-		toSerialize["debugACIEnabled"] = o.DebugACIEnabled
-	}
-	if true {
-		toSerialize["asynchronous"] = o.Asynchronous
-	}
-	if !isNil(o.AutoFlush) {
-		toSerialize["autoFlush"] = o.AutoFlush
-	}
-	if !isNil(o.BufferSize) {
-		toSerialize["bufferSize"] = o.BufferSize
-	}
-	if !isNil(o.QueueSize) {
-		toSerialize["queueSize"] = o.QueueSize
-	}
-	if !isNil(o.TimeInterval) {
-		toSerialize["timeInterval"] = o.TimeInterval
-	}
-	if !isNil(o.LogConnects) {
-		toSerialize["logConnects"] = o.LogConnects
-	}
-	if !isNil(o.LogDisconnects) {
-		toSerialize["logDisconnects"] = o.LogDisconnects
-	}
-	if !isNil(o.LogClientCertificates) {
-		toSerialize["logClientCertificates"] = o.LogClientCertificates
-	}
-	if !isNil(o.LogRequests) {
-		toSerialize["logRequests"] = o.LogRequests
-	}
-	if !isNil(o.LogResults) {
-		toSerialize["logResults"] = o.LogResults
-	}
-	if !isNil(o.LogIntermediateResponses) {
-		toSerialize["logIntermediateResponses"] = o.LogIntermediateResponses
-	}
-	if !isNil(o.SuppressInternalOperations) {
-		toSerialize["suppressInternalOperations"] = o.SuppressInternalOperations
-	}
-	if !isNil(o.CorrelateRequestsAndResults) {
-		toSerialize["correlateRequestsAndResults"] = o.CorrelateRequestsAndResults
-	}
-	if !isNil(o.ConnectionCriteria) {
-		toSerialize["connectionCriteria"] = o.ConnectionCriteria
-	}
-	if !isNil(o.RequestCriteria) {
-		toSerialize["requestCriteria"] = o.RequestCriteria
-	}
-	if !isNil(o.ResultCriteria) {
-		toSerialize["resultCriteria"] = o.ResultCriteria
-	}
-	if !isNil(o.SearchEntryCriteria) {
-		toSerialize["searchEntryCriteria"] = o.SearchEntryCriteria
-	}
-	if !isNil(o.SearchReferenceCriteria) {
-		toSerialize["searchReferenceCriteria"] = o.SearchReferenceCriteria
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.LoggingErrorBehavior) {
-		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o DebugAccessLogPublisherResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.SuppressReplicationOperations) {
+		toSerialize["suppressReplicationOperations"] = o.SuppressReplicationOperations
+	}
+	if !IsNil(o.LogSecurityNegotiation) {
+		toSerialize["logSecurityNegotiation"] = o.LogSecurityNegotiation
+	}
+	if !IsNil(o.LogAssuranceCompleted) {
+		toSerialize["logAssuranceCompleted"] = o.LogAssuranceCompleted
+	}
+	if !IsNil(o.LogSearchEntries) {
+		toSerialize["logSearchEntries"] = o.LogSearchEntries
+	}
+	if !IsNil(o.LogSearchReferences) {
+		toSerialize["logSearchReferences"] = o.LogSearchReferences
+	}
+	toSerialize["logFile"] = o.LogFile
+	toSerialize["logFilePermissions"] = o.LogFilePermissions
+	toSerialize["rotationPolicy"] = o.RotationPolicy
+	if !IsNil(o.RotationListener) {
+		toSerialize["rotationListener"] = o.RotationListener
+	}
+	toSerialize["retentionPolicy"] = o.RetentionPolicy
+	if !IsNil(o.CompressionMechanism) {
+		toSerialize["compressionMechanism"] = o.CompressionMechanism
+	}
+	if !IsNil(o.SignLog) {
+		toSerialize["signLog"] = o.SignLog
+	}
+	if !IsNil(o.EncryptLog) {
+		toSerialize["encryptLog"] = o.EncryptLog
+	}
+	if !IsNil(o.EncryptionSettingsDefinitionID) {
+		toSerialize["encryptionSettingsDefinitionID"] = o.EncryptionSettingsDefinitionID
+	}
+	if !IsNil(o.Append) {
+		toSerialize["append"] = o.Append
+	}
+	if !IsNil(o.ObscureSensitiveContent) {
+		toSerialize["obscureSensitiveContent"] = o.ObscureSensitiveContent
+	}
+	if !IsNil(o.ObscureAttribute) {
+		toSerialize["obscureAttribute"] = o.ObscureAttribute
+	}
+	if !IsNil(o.DebugACIEnabled) {
+		toSerialize["debugACIEnabled"] = o.DebugACIEnabled
+	}
+	toSerialize["asynchronous"] = o.Asynchronous
+	if !IsNil(o.AutoFlush) {
+		toSerialize["autoFlush"] = o.AutoFlush
+	}
+	if !IsNil(o.BufferSize) {
+		toSerialize["bufferSize"] = o.BufferSize
+	}
+	if !IsNil(o.QueueSize) {
+		toSerialize["queueSize"] = o.QueueSize
+	}
+	if !IsNil(o.TimeInterval) {
+		toSerialize["timeInterval"] = o.TimeInterval
+	}
+	if !IsNil(o.LogConnects) {
+		toSerialize["logConnects"] = o.LogConnects
+	}
+	if !IsNil(o.LogDisconnects) {
+		toSerialize["logDisconnects"] = o.LogDisconnects
+	}
+	if !IsNil(o.LogClientCertificates) {
+		toSerialize["logClientCertificates"] = o.LogClientCertificates
+	}
+	if !IsNil(o.LogRequests) {
+		toSerialize["logRequests"] = o.LogRequests
+	}
+	if !IsNil(o.LogResults) {
+		toSerialize["logResults"] = o.LogResults
+	}
+	if !IsNil(o.LogIntermediateResponses) {
+		toSerialize["logIntermediateResponses"] = o.LogIntermediateResponses
+	}
+	if !IsNil(o.SuppressInternalOperations) {
+		toSerialize["suppressInternalOperations"] = o.SuppressInternalOperations
+	}
+	if !IsNil(o.CorrelateRequestsAndResults) {
+		toSerialize["correlateRequestsAndResults"] = o.CorrelateRequestsAndResults
+	}
+	if !IsNil(o.ConnectionCriteria) {
+		toSerialize["connectionCriteria"] = o.ConnectionCriteria
+	}
+	if !IsNil(o.RequestCriteria) {
+		toSerialize["requestCriteria"] = o.RequestCriteria
+	}
+	if !IsNil(o.ResultCriteria) {
+		toSerialize["resultCriteria"] = o.ResultCriteria
+	}
+	if !IsNil(o.SearchEntryCriteria) {
+		toSerialize["searchEntryCriteria"] = o.SearchEntryCriteria
+	}
+	if !IsNil(o.SearchReferenceCriteria) {
+		toSerialize["searchReferenceCriteria"] = o.SearchReferenceCriteria
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.LoggingErrorBehavior) {
+		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	}
+	return toSerialize, nil
 }
 
 type NullableDebugAccessLogPublisherResponse struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the IndicatorGaugeDataSourceResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &IndicatorGaugeDataSourceResponse{}
+
 // IndicatorGaugeDataSourceResponse struct for IndicatorGaugeDataSourceResponse
 type IndicatorGaugeDataSourceResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -62,7 +65,7 @@ func NewIndicatorGaugeDataSourceResponseWithDefaults() *IndicatorGaugeDataSource
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *IndicatorGaugeDataSourceResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -72,7 +75,7 @@ func (o *IndicatorGaugeDataSourceResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeDataSourceResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -80,7 +83,7 @@ func (o *IndicatorGaugeDataSourceResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *IndicatorGaugeDataSourceResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -94,7 +97,7 @@ func (o *IndicatorGaugeDataSourceResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *IndicatorGaugeDataSourceResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *IndicatorGaugeDataSourceResponse) GetUrnpingidentityschemasconfiguratio
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeDataSourceResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -112,7 +115,7 @@ func (o *IndicatorGaugeDataSourceResponse) GetUrnpingidentityschemasconfiguratio
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *IndicatorGaugeDataSourceResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -174,7 +177,7 @@ func (o *IndicatorGaugeDataSourceResponse) SetSchemas(v []EnumindicatorGaugeData
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *IndicatorGaugeDataSourceResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -184,7 +187,7 @@ func (o *IndicatorGaugeDataSourceResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeDataSourceResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -192,7 +195,7 @@ func (o *IndicatorGaugeDataSourceResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *IndicatorGaugeDataSourceResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -206,7 +209,7 @@ func (o *IndicatorGaugeDataSourceResponse) SetDescription(v string) {
 
 // GetAdditionalText returns the AdditionalText field value if set, zero value otherwise.
 func (o *IndicatorGaugeDataSourceResponse) GetAdditionalText() string {
-	if o == nil || isNil(o.AdditionalText) {
+	if o == nil || IsNil(o.AdditionalText) {
 		var ret string
 		return ret
 	}
@@ -216,7 +219,7 @@ func (o *IndicatorGaugeDataSourceResponse) GetAdditionalText() string {
 // GetAdditionalTextOk returns a tuple with the AdditionalText field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeDataSourceResponse) GetAdditionalTextOk() (*string, bool) {
-	if o == nil || isNil(o.AdditionalText) {
+	if o == nil || IsNil(o.AdditionalText) {
 		return nil, false
 	}
 	return o.AdditionalText, true
@@ -224,7 +227,7 @@ func (o *IndicatorGaugeDataSourceResponse) GetAdditionalTextOk() (*string, bool)
 
 // HasAdditionalText returns a boolean if a field has been set.
 func (o *IndicatorGaugeDataSourceResponse) HasAdditionalText() bool {
-	if o != nil && !isNil(o.AdditionalText) {
+	if o != nil && !IsNil(o.AdditionalText) {
 		return true
 	}
 
@@ -286,7 +289,7 @@ func (o *IndicatorGaugeDataSourceResponse) SetMonitorAttribute(v string) {
 
 // GetIncludeFilter returns the IncludeFilter field value if set, zero value otherwise.
 func (o *IndicatorGaugeDataSourceResponse) GetIncludeFilter() string {
-	if o == nil || isNil(o.IncludeFilter) {
+	if o == nil || IsNil(o.IncludeFilter) {
 		var ret string
 		return ret
 	}
@@ -296,7 +299,7 @@ func (o *IndicatorGaugeDataSourceResponse) GetIncludeFilter() string {
 // GetIncludeFilterOk returns a tuple with the IncludeFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeDataSourceResponse) GetIncludeFilterOk() (*string, bool) {
-	if o == nil || isNil(o.IncludeFilter) {
+	if o == nil || IsNil(o.IncludeFilter) {
 		return nil, false
 	}
 	return o.IncludeFilter, true
@@ -304,7 +307,7 @@ func (o *IndicatorGaugeDataSourceResponse) GetIncludeFilterOk() (*string, bool) 
 
 // HasIncludeFilter returns a boolean if a field has been set.
 func (o *IndicatorGaugeDataSourceResponse) HasIncludeFilter() bool {
-	if o != nil && !isNil(o.IncludeFilter) {
+	if o != nil && !IsNil(o.IncludeFilter) {
 		return true
 	}
 
@@ -318,7 +321,7 @@ func (o *IndicatorGaugeDataSourceResponse) SetIncludeFilter(v string) {
 
 // GetResourceAttribute returns the ResourceAttribute field value if set, zero value otherwise.
 func (o *IndicatorGaugeDataSourceResponse) GetResourceAttribute() string {
-	if o == nil || isNil(o.ResourceAttribute) {
+	if o == nil || IsNil(o.ResourceAttribute) {
 		var ret string
 		return ret
 	}
@@ -328,7 +331,7 @@ func (o *IndicatorGaugeDataSourceResponse) GetResourceAttribute() string {
 // GetResourceAttributeOk returns a tuple with the ResourceAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeDataSourceResponse) GetResourceAttributeOk() (*string, bool) {
-	if o == nil || isNil(o.ResourceAttribute) {
+	if o == nil || IsNil(o.ResourceAttribute) {
 		return nil, false
 	}
 	return o.ResourceAttribute, true
@@ -336,7 +339,7 @@ func (o *IndicatorGaugeDataSourceResponse) GetResourceAttributeOk() (*string, bo
 
 // HasResourceAttribute returns a boolean if a field has been set.
 func (o *IndicatorGaugeDataSourceResponse) HasResourceAttribute() bool {
-	if o != nil && !isNil(o.ResourceAttribute) {
+	if o != nil && !IsNil(o.ResourceAttribute) {
 		return true
 	}
 
@@ -350,7 +353,7 @@ func (o *IndicatorGaugeDataSourceResponse) SetResourceAttribute(v string) {
 
 // GetResourceType returns the ResourceType field value if set, zero value otherwise.
 func (o *IndicatorGaugeDataSourceResponse) GetResourceType() string {
-	if o == nil || isNil(o.ResourceType) {
+	if o == nil || IsNil(o.ResourceType) {
 		var ret string
 		return ret
 	}
@@ -360,7 +363,7 @@ func (o *IndicatorGaugeDataSourceResponse) GetResourceType() string {
 // GetResourceTypeOk returns a tuple with the ResourceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeDataSourceResponse) GetResourceTypeOk() (*string, bool) {
-	if o == nil || isNil(o.ResourceType) {
+	if o == nil || IsNil(o.ResourceType) {
 		return nil, false
 	}
 	return o.ResourceType, true
@@ -368,7 +371,7 @@ func (o *IndicatorGaugeDataSourceResponse) GetResourceTypeOk() (*string, bool) {
 
 // HasResourceType returns a boolean if a field has been set.
 func (o *IndicatorGaugeDataSourceResponse) HasResourceType() bool {
-	if o != nil && !isNil(o.ResourceType) {
+	if o != nil && !IsNil(o.ResourceType) {
 		return true
 	}
 
@@ -382,7 +385,7 @@ func (o *IndicatorGaugeDataSourceResponse) SetResourceType(v string) {
 
 // GetMinimumUpdateInterval returns the MinimumUpdateInterval field value if set, zero value otherwise.
 func (o *IndicatorGaugeDataSourceResponse) GetMinimumUpdateInterval() string {
-	if o == nil || isNil(o.MinimumUpdateInterval) {
+	if o == nil || IsNil(o.MinimumUpdateInterval) {
 		var ret string
 		return ret
 	}
@@ -392,7 +395,7 @@ func (o *IndicatorGaugeDataSourceResponse) GetMinimumUpdateInterval() string {
 // GetMinimumUpdateIntervalOk returns a tuple with the MinimumUpdateInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeDataSourceResponse) GetMinimumUpdateIntervalOk() (*string, bool) {
-	if o == nil || isNil(o.MinimumUpdateInterval) {
+	if o == nil || IsNil(o.MinimumUpdateInterval) {
 		return nil, false
 	}
 	return o.MinimumUpdateInterval, true
@@ -400,7 +403,7 @@ func (o *IndicatorGaugeDataSourceResponse) GetMinimumUpdateIntervalOk() (*string
 
 // HasMinimumUpdateInterval returns a boolean if a field has been set.
 func (o *IndicatorGaugeDataSourceResponse) HasMinimumUpdateInterval() bool {
-	if o != nil && !isNil(o.MinimumUpdateInterval) {
+	if o != nil && !IsNil(o.MinimumUpdateInterval) {
 		return true
 	}
 
@@ -413,44 +416,44 @@ func (o *IndicatorGaugeDataSourceResponse) SetMinimumUpdateInterval(v string) {
 }
 
 func (o IndicatorGaugeDataSourceResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if !isNil(o.AdditionalText) {
-		toSerialize["additionalText"] = o.AdditionalText
-	}
-	if true {
-		toSerialize["monitorObjectclass"] = o.MonitorObjectclass
-	}
-	if true {
-		toSerialize["monitorAttribute"] = o.MonitorAttribute
-	}
-	if !isNil(o.IncludeFilter) {
-		toSerialize["includeFilter"] = o.IncludeFilter
-	}
-	if !isNil(o.ResourceAttribute) {
-		toSerialize["resourceAttribute"] = o.ResourceAttribute
-	}
-	if !isNil(o.ResourceType) {
-		toSerialize["resourceType"] = o.ResourceType
-	}
-	if !isNil(o.MinimumUpdateInterval) {
-		toSerialize["minimumUpdateInterval"] = o.MinimumUpdateInterval
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o IndicatorGaugeDataSourceResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.AdditionalText) {
+		toSerialize["additionalText"] = o.AdditionalText
+	}
+	toSerialize["monitorObjectclass"] = o.MonitorObjectclass
+	toSerialize["monitorAttribute"] = o.MonitorAttribute
+	if !IsNil(o.IncludeFilter) {
+		toSerialize["includeFilter"] = o.IncludeFilter
+	}
+	if !IsNil(o.ResourceAttribute) {
+		toSerialize["resourceAttribute"] = o.ResourceAttribute
+	}
+	if !IsNil(o.ResourceType) {
+		toSerialize["resourceType"] = o.ResourceType
+	}
+	if !IsNil(o.MinimumUpdateInterval) {
+		toSerialize["minimumUpdateInterval"] = o.MinimumUpdateInterval
+	}
+	return toSerialize, nil
 }
 
 type NullableIndicatorGaugeDataSourceResponse struct {

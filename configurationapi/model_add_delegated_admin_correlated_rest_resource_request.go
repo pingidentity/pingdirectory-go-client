@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddDelegatedAdminCorrelatedRestResourceRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddDelegatedAdminCorrelatedRestResourceRequest{}
+
 // AddDelegatedAdminCorrelatedRestResourceRequest struct for AddDelegatedAdminCorrelatedRestResourceRequest
 type AddDelegatedAdminCorrelatedRestResourceRequest struct {
 	// Name of the new Delegated Admin Correlated REST Resource
@@ -79,7 +82,7 @@ func (o *AddDelegatedAdminCorrelatedRestResourceRequest) SetResourceName(v strin
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *AddDelegatedAdminCorrelatedRestResourceRequest) GetSchemas() []EnumdelegatedAdminCorrelatedRestResourceSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumdelegatedAdminCorrelatedRestResourceSchemaUrn
 		return ret
 	}
@@ -89,7 +92,7 @@ func (o *AddDelegatedAdminCorrelatedRestResourceRequest) GetSchemas() []Enumdele
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDelegatedAdminCorrelatedRestResourceRequest) GetSchemasOk() ([]EnumdelegatedAdminCorrelatedRestResourceSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -97,7 +100,7 @@ func (o *AddDelegatedAdminCorrelatedRestResourceRequest) GetSchemasOk() ([]Enumd
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *AddDelegatedAdminCorrelatedRestResourceRequest) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -207,7 +210,7 @@ func (o *AddDelegatedAdminCorrelatedRestResourceRequest) SetSecondaryRESTResourc
 
 // GetUseSecondaryValueForLinking returns the UseSecondaryValueForLinking field value if set, zero value otherwise.
 func (o *AddDelegatedAdminCorrelatedRestResourceRequest) GetUseSecondaryValueForLinking() bool {
-	if o == nil || isNil(o.UseSecondaryValueForLinking) {
+	if o == nil || IsNil(o.UseSecondaryValueForLinking) {
 		var ret bool
 		return ret
 	}
@@ -217,7 +220,7 @@ func (o *AddDelegatedAdminCorrelatedRestResourceRequest) GetUseSecondaryValueFor
 // GetUseSecondaryValueForLinkingOk returns a tuple with the UseSecondaryValueForLinking field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDelegatedAdminCorrelatedRestResourceRequest) GetUseSecondaryValueForLinkingOk() (*bool, bool) {
-	if o == nil || isNil(o.UseSecondaryValueForLinking) {
+	if o == nil || IsNil(o.UseSecondaryValueForLinking) {
 		return nil, false
 	}
 	return o.UseSecondaryValueForLinking, true
@@ -225,7 +228,7 @@ func (o *AddDelegatedAdminCorrelatedRestResourceRequest) GetUseSecondaryValueFor
 
 // HasUseSecondaryValueForLinking returns a boolean if a field has been set.
 func (o *AddDelegatedAdminCorrelatedRestResourceRequest) HasUseSecondaryValueForLinking() bool {
-	if o != nil && !isNil(o.UseSecondaryValueForLinking) {
+	if o != nil && !IsNil(o.UseSecondaryValueForLinking) {
 		return true
 	}
 
@@ -238,29 +241,27 @@ func (o *AddDelegatedAdminCorrelatedRestResourceRequest) SetUseSecondaryValueFor
 }
 
 func (o AddDelegatedAdminCorrelatedRestResourceRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["resourceName"] = o.ResourceName
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["displayName"] = o.DisplayName
-	}
-	if true {
-		toSerialize["correlatedRESTResource"] = o.CorrelatedRESTResource
-	}
-	if true {
-		toSerialize["primaryRESTResourceCorrelationAttribute"] = o.PrimaryRESTResourceCorrelationAttribute
-	}
-	if true {
-		toSerialize["secondaryRESTResourceCorrelationAttribute"] = o.SecondaryRESTResourceCorrelationAttribute
-	}
-	if !isNil(o.UseSecondaryValueForLinking) {
-		toSerialize["useSecondaryValueForLinking"] = o.UseSecondaryValueForLinking
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddDelegatedAdminCorrelatedRestResourceRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["resourceName"] = o.ResourceName
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	toSerialize["displayName"] = o.DisplayName
+	toSerialize["correlatedRESTResource"] = o.CorrelatedRESTResource
+	toSerialize["primaryRESTResourceCorrelationAttribute"] = o.PrimaryRESTResourceCorrelationAttribute
+	toSerialize["secondaryRESTResourceCorrelationAttribute"] = o.SecondaryRESTResourceCorrelationAttribute
+	if !IsNil(o.UseSecondaryValueForLinking) {
+		toSerialize["useSecondaryValueForLinking"] = o.UseSecondaryValueForLinking
+	}
+	return toSerialize, nil
 }
 
 type NullableAddDelegatedAdminCorrelatedRestResourceRequest struct {

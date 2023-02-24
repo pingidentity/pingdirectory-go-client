@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddSimpleSearchEntryCriteriaRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddSimpleSearchEntryCriteriaRequest{}
+
 // AddSimpleSearchEntryCriteriaRequest struct for AddSimpleSearchEntryCriteriaRequest
 type AddSimpleSearchEntryCriteriaRequest struct {
 	// Name of the new Search Entry Criteria
@@ -122,7 +125,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) SetSchemas(v []EnumsimpleSearchEnt
 
 // GetRequestCriteria returns the RequestCriteria field value if set, zero value otherwise.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetRequestCriteria() string {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -132,7 +135,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetRequestCriteria() string {
 // GetRequestCriteriaOk returns a tuple with the RequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		return nil, false
 	}
 	return o.RequestCriteria, true
@@ -140,7 +143,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetRequestCriteriaOk() (*string, b
 
 // HasRequestCriteria returns a boolean if a field has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) HasRequestCriteria() bool {
-	if o != nil && !isNil(o.RequestCriteria) {
+	if o != nil && !IsNil(o.RequestCriteria) {
 		return true
 	}
 
@@ -154,7 +157,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) SetRequestCriteria(v string) {
 
 // GetAllIncludedEntryControl returns the AllIncludedEntryControl field value if set, zero value otherwise.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetAllIncludedEntryControl() []string {
-	if o == nil || isNil(o.AllIncludedEntryControl) {
+	if o == nil || IsNil(o.AllIncludedEntryControl) {
 		var ret []string
 		return ret
 	}
@@ -164,7 +167,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetAllIncludedEntryControl() []str
 // GetAllIncludedEntryControlOk returns a tuple with the AllIncludedEntryControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetAllIncludedEntryControlOk() ([]string, bool) {
-	if o == nil || isNil(o.AllIncludedEntryControl) {
+	if o == nil || IsNil(o.AllIncludedEntryControl) {
 		return nil, false
 	}
 	return o.AllIncludedEntryControl, true
@@ -172,7 +175,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetAllIncludedEntryControlOk() ([]
 
 // HasAllIncludedEntryControl returns a boolean if a field has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) HasAllIncludedEntryControl() bool {
-	if o != nil && !isNil(o.AllIncludedEntryControl) {
+	if o != nil && !IsNil(o.AllIncludedEntryControl) {
 		return true
 	}
 
@@ -186,7 +189,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) SetAllIncludedEntryControl(v []str
 
 // GetAnyIncludedEntryControl returns the AnyIncludedEntryControl field value if set, zero value otherwise.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetAnyIncludedEntryControl() []string {
-	if o == nil || isNil(o.AnyIncludedEntryControl) {
+	if o == nil || IsNil(o.AnyIncludedEntryControl) {
 		var ret []string
 		return ret
 	}
@@ -196,7 +199,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetAnyIncludedEntryControl() []str
 // GetAnyIncludedEntryControlOk returns a tuple with the AnyIncludedEntryControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetAnyIncludedEntryControlOk() ([]string, bool) {
-	if o == nil || isNil(o.AnyIncludedEntryControl) {
+	if o == nil || IsNil(o.AnyIncludedEntryControl) {
 		return nil, false
 	}
 	return o.AnyIncludedEntryControl, true
@@ -204,7 +207,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetAnyIncludedEntryControlOk() ([]
 
 // HasAnyIncludedEntryControl returns a boolean if a field has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) HasAnyIncludedEntryControl() bool {
-	if o != nil && !isNil(o.AnyIncludedEntryControl) {
+	if o != nil && !IsNil(o.AnyIncludedEntryControl) {
 		return true
 	}
 
@@ -218,7 +221,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) SetAnyIncludedEntryControl(v []str
 
 // GetNotAllIncludedEntryControl returns the NotAllIncludedEntryControl field value if set, zero value otherwise.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetNotAllIncludedEntryControl() []string {
-	if o == nil || isNil(o.NotAllIncludedEntryControl) {
+	if o == nil || IsNil(o.NotAllIncludedEntryControl) {
 		var ret []string
 		return ret
 	}
@@ -228,7 +231,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetNotAllIncludedEntryControl() []
 // GetNotAllIncludedEntryControlOk returns a tuple with the NotAllIncludedEntryControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetNotAllIncludedEntryControlOk() ([]string, bool) {
-	if o == nil || isNil(o.NotAllIncludedEntryControl) {
+	if o == nil || IsNil(o.NotAllIncludedEntryControl) {
 		return nil, false
 	}
 	return o.NotAllIncludedEntryControl, true
@@ -236,7 +239,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetNotAllIncludedEntryControlOk() 
 
 // HasNotAllIncludedEntryControl returns a boolean if a field has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) HasNotAllIncludedEntryControl() bool {
-	if o != nil && !isNil(o.NotAllIncludedEntryControl) {
+	if o != nil && !IsNil(o.NotAllIncludedEntryControl) {
 		return true
 	}
 
@@ -250,7 +253,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) SetNotAllIncludedEntryControl(v []
 
 // GetNoneIncludedEntryControl returns the NoneIncludedEntryControl field value if set, zero value otherwise.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetNoneIncludedEntryControl() []string {
-	if o == nil || isNil(o.NoneIncludedEntryControl) {
+	if o == nil || IsNil(o.NoneIncludedEntryControl) {
 		var ret []string
 		return ret
 	}
@@ -260,7 +263,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetNoneIncludedEntryControl() []st
 // GetNoneIncludedEntryControlOk returns a tuple with the NoneIncludedEntryControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetNoneIncludedEntryControlOk() ([]string, bool) {
-	if o == nil || isNil(o.NoneIncludedEntryControl) {
+	if o == nil || IsNil(o.NoneIncludedEntryControl) {
 		return nil, false
 	}
 	return o.NoneIncludedEntryControl, true
@@ -268,7 +271,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetNoneIncludedEntryControlOk() ([
 
 // HasNoneIncludedEntryControl returns a boolean if a field has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) HasNoneIncludedEntryControl() bool {
-	if o != nil && !isNil(o.NoneIncludedEntryControl) {
+	if o != nil && !IsNil(o.NoneIncludedEntryControl) {
 		return true
 	}
 
@@ -282,7 +285,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) SetNoneIncludedEntryControl(v []st
 
 // GetIncludedEntryBaseDN returns the IncludedEntryBaseDN field value if set, zero value otherwise.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetIncludedEntryBaseDN() []string {
-	if o == nil || isNil(o.IncludedEntryBaseDN) {
+	if o == nil || IsNil(o.IncludedEntryBaseDN) {
 		var ret []string
 		return ret
 	}
@@ -292,7 +295,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetIncludedEntryBaseDN() []string 
 // GetIncludedEntryBaseDNOk returns a tuple with the IncludedEntryBaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetIncludedEntryBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludedEntryBaseDN) {
+	if o == nil || IsNil(o.IncludedEntryBaseDN) {
 		return nil, false
 	}
 	return o.IncludedEntryBaseDN, true
@@ -300,7 +303,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetIncludedEntryBaseDNOk() ([]stri
 
 // HasIncludedEntryBaseDN returns a boolean if a field has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) HasIncludedEntryBaseDN() bool {
-	if o != nil && !isNil(o.IncludedEntryBaseDN) {
+	if o != nil && !IsNil(o.IncludedEntryBaseDN) {
 		return true
 	}
 
@@ -314,7 +317,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) SetIncludedEntryBaseDN(v []string)
 
 // GetExcludedEntryBaseDN returns the ExcludedEntryBaseDN field value if set, zero value otherwise.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetExcludedEntryBaseDN() []string {
-	if o == nil || isNil(o.ExcludedEntryBaseDN) {
+	if o == nil || IsNil(o.ExcludedEntryBaseDN) {
 		var ret []string
 		return ret
 	}
@@ -324,7 +327,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetExcludedEntryBaseDN() []string 
 // GetExcludedEntryBaseDNOk returns a tuple with the ExcludedEntryBaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetExcludedEntryBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludedEntryBaseDN) {
+	if o == nil || IsNil(o.ExcludedEntryBaseDN) {
 		return nil, false
 	}
 	return o.ExcludedEntryBaseDN, true
@@ -332,7 +335,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetExcludedEntryBaseDNOk() ([]stri
 
 // HasExcludedEntryBaseDN returns a boolean if a field has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) HasExcludedEntryBaseDN() bool {
-	if o != nil && !isNil(o.ExcludedEntryBaseDN) {
+	if o != nil && !IsNil(o.ExcludedEntryBaseDN) {
 		return true
 	}
 
@@ -346,7 +349,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) SetExcludedEntryBaseDN(v []string)
 
 // GetAllIncludedEntryFilter returns the AllIncludedEntryFilter field value if set, zero value otherwise.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetAllIncludedEntryFilter() []string {
-	if o == nil || isNil(o.AllIncludedEntryFilter) {
+	if o == nil || IsNil(o.AllIncludedEntryFilter) {
 		var ret []string
 		return ret
 	}
@@ -356,7 +359,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetAllIncludedEntryFilter() []stri
 // GetAllIncludedEntryFilterOk returns a tuple with the AllIncludedEntryFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetAllIncludedEntryFilterOk() ([]string, bool) {
-	if o == nil || isNil(o.AllIncludedEntryFilter) {
+	if o == nil || IsNil(o.AllIncludedEntryFilter) {
 		return nil, false
 	}
 	return o.AllIncludedEntryFilter, true
@@ -364,7 +367,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetAllIncludedEntryFilterOk() ([]s
 
 // HasAllIncludedEntryFilter returns a boolean if a field has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) HasAllIncludedEntryFilter() bool {
-	if o != nil && !isNil(o.AllIncludedEntryFilter) {
+	if o != nil && !IsNil(o.AllIncludedEntryFilter) {
 		return true
 	}
 
@@ -378,7 +381,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) SetAllIncludedEntryFilter(v []stri
 
 // GetAnyIncludedEntryFilter returns the AnyIncludedEntryFilter field value if set, zero value otherwise.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetAnyIncludedEntryFilter() []string {
-	if o == nil || isNil(o.AnyIncludedEntryFilter) {
+	if o == nil || IsNil(o.AnyIncludedEntryFilter) {
 		var ret []string
 		return ret
 	}
@@ -388,7 +391,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetAnyIncludedEntryFilter() []stri
 // GetAnyIncludedEntryFilterOk returns a tuple with the AnyIncludedEntryFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetAnyIncludedEntryFilterOk() ([]string, bool) {
-	if o == nil || isNil(o.AnyIncludedEntryFilter) {
+	if o == nil || IsNil(o.AnyIncludedEntryFilter) {
 		return nil, false
 	}
 	return o.AnyIncludedEntryFilter, true
@@ -396,7 +399,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetAnyIncludedEntryFilterOk() ([]s
 
 // HasAnyIncludedEntryFilter returns a boolean if a field has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) HasAnyIncludedEntryFilter() bool {
-	if o != nil && !isNil(o.AnyIncludedEntryFilter) {
+	if o != nil && !IsNil(o.AnyIncludedEntryFilter) {
 		return true
 	}
 
@@ -410,7 +413,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) SetAnyIncludedEntryFilter(v []stri
 
 // GetNotAllIncludedEntryFilter returns the NotAllIncludedEntryFilter field value if set, zero value otherwise.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetNotAllIncludedEntryFilter() []string {
-	if o == nil || isNil(o.NotAllIncludedEntryFilter) {
+	if o == nil || IsNil(o.NotAllIncludedEntryFilter) {
 		var ret []string
 		return ret
 	}
@@ -420,7 +423,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetNotAllIncludedEntryFilter() []s
 // GetNotAllIncludedEntryFilterOk returns a tuple with the NotAllIncludedEntryFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetNotAllIncludedEntryFilterOk() ([]string, bool) {
-	if o == nil || isNil(o.NotAllIncludedEntryFilter) {
+	if o == nil || IsNil(o.NotAllIncludedEntryFilter) {
 		return nil, false
 	}
 	return o.NotAllIncludedEntryFilter, true
@@ -428,7 +431,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetNotAllIncludedEntryFilterOk() (
 
 // HasNotAllIncludedEntryFilter returns a boolean if a field has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) HasNotAllIncludedEntryFilter() bool {
-	if o != nil && !isNil(o.NotAllIncludedEntryFilter) {
+	if o != nil && !IsNil(o.NotAllIncludedEntryFilter) {
 		return true
 	}
 
@@ -442,7 +445,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) SetNotAllIncludedEntryFilter(v []s
 
 // GetNoneIncludedEntryFilter returns the NoneIncludedEntryFilter field value if set, zero value otherwise.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetNoneIncludedEntryFilter() []string {
-	if o == nil || isNil(o.NoneIncludedEntryFilter) {
+	if o == nil || IsNil(o.NoneIncludedEntryFilter) {
 		var ret []string
 		return ret
 	}
@@ -452,7 +455,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetNoneIncludedEntryFilter() []str
 // GetNoneIncludedEntryFilterOk returns a tuple with the NoneIncludedEntryFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetNoneIncludedEntryFilterOk() ([]string, bool) {
-	if o == nil || isNil(o.NoneIncludedEntryFilter) {
+	if o == nil || IsNil(o.NoneIncludedEntryFilter) {
 		return nil, false
 	}
 	return o.NoneIncludedEntryFilter, true
@@ -460,7 +463,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetNoneIncludedEntryFilterOk() ([]
 
 // HasNoneIncludedEntryFilter returns a boolean if a field has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) HasNoneIncludedEntryFilter() bool {
-	if o != nil && !isNil(o.NoneIncludedEntryFilter) {
+	if o != nil && !IsNil(o.NoneIncludedEntryFilter) {
 		return true
 	}
 
@@ -474,7 +477,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) SetNoneIncludedEntryFilter(v []str
 
 // GetAllIncludedEntryGroupDN returns the AllIncludedEntryGroupDN field value if set, zero value otherwise.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetAllIncludedEntryGroupDN() []string {
-	if o == nil || isNil(o.AllIncludedEntryGroupDN) {
+	if o == nil || IsNil(o.AllIncludedEntryGroupDN) {
 		var ret []string
 		return ret
 	}
@@ -484,7 +487,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetAllIncludedEntryGroupDN() []str
 // GetAllIncludedEntryGroupDNOk returns a tuple with the AllIncludedEntryGroupDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetAllIncludedEntryGroupDNOk() ([]string, bool) {
-	if o == nil || isNil(o.AllIncludedEntryGroupDN) {
+	if o == nil || IsNil(o.AllIncludedEntryGroupDN) {
 		return nil, false
 	}
 	return o.AllIncludedEntryGroupDN, true
@@ -492,7 +495,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetAllIncludedEntryGroupDNOk() ([]
 
 // HasAllIncludedEntryGroupDN returns a boolean if a field has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) HasAllIncludedEntryGroupDN() bool {
-	if o != nil && !isNil(o.AllIncludedEntryGroupDN) {
+	if o != nil && !IsNil(o.AllIncludedEntryGroupDN) {
 		return true
 	}
 
@@ -506,7 +509,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) SetAllIncludedEntryGroupDN(v []str
 
 // GetAnyIncludedEntryGroupDN returns the AnyIncludedEntryGroupDN field value if set, zero value otherwise.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetAnyIncludedEntryGroupDN() []string {
-	if o == nil || isNil(o.AnyIncludedEntryGroupDN) {
+	if o == nil || IsNil(o.AnyIncludedEntryGroupDN) {
 		var ret []string
 		return ret
 	}
@@ -516,7 +519,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetAnyIncludedEntryGroupDN() []str
 // GetAnyIncludedEntryGroupDNOk returns a tuple with the AnyIncludedEntryGroupDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetAnyIncludedEntryGroupDNOk() ([]string, bool) {
-	if o == nil || isNil(o.AnyIncludedEntryGroupDN) {
+	if o == nil || IsNil(o.AnyIncludedEntryGroupDN) {
 		return nil, false
 	}
 	return o.AnyIncludedEntryGroupDN, true
@@ -524,7 +527,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetAnyIncludedEntryGroupDNOk() ([]
 
 // HasAnyIncludedEntryGroupDN returns a boolean if a field has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) HasAnyIncludedEntryGroupDN() bool {
-	if o != nil && !isNil(o.AnyIncludedEntryGroupDN) {
+	if o != nil && !IsNil(o.AnyIncludedEntryGroupDN) {
 		return true
 	}
 
@@ -538,7 +541,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) SetAnyIncludedEntryGroupDN(v []str
 
 // GetNotAllIncludedEntryGroupDN returns the NotAllIncludedEntryGroupDN field value if set, zero value otherwise.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetNotAllIncludedEntryGroupDN() []string {
-	if o == nil || isNil(o.NotAllIncludedEntryGroupDN) {
+	if o == nil || IsNil(o.NotAllIncludedEntryGroupDN) {
 		var ret []string
 		return ret
 	}
@@ -548,7 +551,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetNotAllIncludedEntryGroupDN() []
 // GetNotAllIncludedEntryGroupDNOk returns a tuple with the NotAllIncludedEntryGroupDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetNotAllIncludedEntryGroupDNOk() ([]string, bool) {
-	if o == nil || isNil(o.NotAllIncludedEntryGroupDN) {
+	if o == nil || IsNil(o.NotAllIncludedEntryGroupDN) {
 		return nil, false
 	}
 	return o.NotAllIncludedEntryGroupDN, true
@@ -556,7 +559,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetNotAllIncludedEntryGroupDNOk() 
 
 // HasNotAllIncludedEntryGroupDN returns a boolean if a field has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) HasNotAllIncludedEntryGroupDN() bool {
-	if o != nil && !isNil(o.NotAllIncludedEntryGroupDN) {
+	if o != nil && !IsNil(o.NotAllIncludedEntryGroupDN) {
 		return true
 	}
 
@@ -570,7 +573,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) SetNotAllIncludedEntryGroupDN(v []
 
 // GetNoneIncludedEntryGroupDN returns the NoneIncludedEntryGroupDN field value if set, zero value otherwise.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetNoneIncludedEntryGroupDN() []string {
-	if o == nil || isNil(o.NoneIncludedEntryGroupDN) {
+	if o == nil || IsNil(o.NoneIncludedEntryGroupDN) {
 		var ret []string
 		return ret
 	}
@@ -580,7 +583,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetNoneIncludedEntryGroupDN() []st
 // GetNoneIncludedEntryGroupDNOk returns a tuple with the NoneIncludedEntryGroupDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetNoneIncludedEntryGroupDNOk() ([]string, bool) {
-	if o == nil || isNil(o.NoneIncludedEntryGroupDN) {
+	if o == nil || IsNil(o.NoneIncludedEntryGroupDN) {
 		return nil, false
 	}
 	return o.NoneIncludedEntryGroupDN, true
@@ -588,7 +591,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetNoneIncludedEntryGroupDNOk() ([
 
 // HasNoneIncludedEntryGroupDN returns a boolean if a field has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) HasNoneIncludedEntryGroupDN() bool {
-	if o != nil && !isNil(o.NoneIncludedEntryGroupDN) {
+	if o != nil && !IsNil(o.NoneIncludedEntryGroupDN) {
 		return true
 	}
 
@@ -602,7 +605,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) SetNoneIncludedEntryGroupDN(v []st
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -612,7 +615,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -620,7 +623,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetDescriptionOk() (*string, bool)
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -633,62 +636,66 @@ func (o *AddSimpleSearchEntryCriteriaRequest) SetDescription(v string) {
 }
 
 func (o AddSimpleSearchEntryCriteriaRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["criteriaName"] = o.CriteriaName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.RequestCriteria) {
-		toSerialize["requestCriteria"] = o.RequestCriteria
-	}
-	if !isNil(o.AllIncludedEntryControl) {
-		toSerialize["allIncludedEntryControl"] = o.AllIncludedEntryControl
-	}
-	if !isNil(o.AnyIncludedEntryControl) {
-		toSerialize["anyIncludedEntryControl"] = o.AnyIncludedEntryControl
-	}
-	if !isNil(o.NotAllIncludedEntryControl) {
-		toSerialize["notAllIncludedEntryControl"] = o.NotAllIncludedEntryControl
-	}
-	if !isNil(o.NoneIncludedEntryControl) {
-		toSerialize["noneIncludedEntryControl"] = o.NoneIncludedEntryControl
-	}
-	if !isNil(o.IncludedEntryBaseDN) {
-		toSerialize["includedEntryBaseDN"] = o.IncludedEntryBaseDN
-	}
-	if !isNil(o.ExcludedEntryBaseDN) {
-		toSerialize["excludedEntryBaseDN"] = o.ExcludedEntryBaseDN
-	}
-	if !isNil(o.AllIncludedEntryFilter) {
-		toSerialize["allIncludedEntryFilter"] = o.AllIncludedEntryFilter
-	}
-	if !isNil(o.AnyIncludedEntryFilter) {
-		toSerialize["anyIncludedEntryFilter"] = o.AnyIncludedEntryFilter
-	}
-	if !isNil(o.NotAllIncludedEntryFilter) {
-		toSerialize["notAllIncludedEntryFilter"] = o.NotAllIncludedEntryFilter
-	}
-	if !isNil(o.NoneIncludedEntryFilter) {
-		toSerialize["noneIncludedEntryFilter"] = o.NoneIncludedEntryFilter
-	}
-	if !isNil(o.AllIncludedEntryGroupDN) {
-		toSerialize["allIncludedEntryGroupDN"] = o.AllIncludedEntryGroupDN
-	}
-	if !isNil(o.AnyIncludedEntryGroupDN) {
-		toSerialize["anyIncludedEntryGroupDN"] = o.AnyIncludedEntryGroupDN
-	}
-	if !isNil(o.NotAllIncludedEntryGroupDN) {
-		toSerialize["notAllIncludedEntryGroupDN"] = o.NotAllIncludedEntryGroupDN
-	}
-	if !isNil(o.NoneIncludedEntryGroupDN) {
-		toSerialize["noneIncludedEntryGroupDN"] = o.NoneIncludedEntryGroupDN
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddSimpleSearchEntryCriteriaRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["criteriaName"] = o.CriteriaName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.RequestCriteria) {
+		toSerialize["requestCriteria"] = o.RequestCriteria
+	}
+	if !IsNil(o.AllIncludedEntryControl) {
+		toSerialize["allIncludedEntryControl"] = o.AllIncludedEntryControl
+	}
+	if !IsNil(o.AnyIncludedEntryControl) {
+		toSerialize["anyIncludedEntryControl"] = o.AnyIncludedEntryControl
+	}
+	if !IsNil(o.NotAllIncludedEntryControl) {
+		toSerialize["notAllIncludedEntryControl"] = o.NotAllIncludedEntryControl
+	}
+	if !IsNil(o.NoneIncludedEntryControl) {
+		toSerialize["noneIncludedEntryControl"] = o.NoneIncludedEntryControl
+	}
+	if !IsNil(o.IncludedEntryBaseDN) {
+		toSerialize["includedEntryBaseDN"] = o.IncludedEntryBaseDN
+	}
+	if !IsNil(o.ExcludedEntryBaseDN) {
+		toSerialize["excludedEntryBaseDN"] = o.ExcludedEntryBaseDN
+	}
+	if !IsNil(o.AllIncludedEntryFilter) {
+		toSerialize["allIncludedEntryFilter"] = o.AllIncludedEntryFilter
+	}
+	if !IsNil(o.AnyIncludedEntryFilter) {
+		toSerialize["anyIncludedEntryFilter"] = o.AnyIncludedEntryFilter
+	}
+	if !IsNil(o.NotAllIncludedEntryFilter) {
+		toSerialize["notAllIncludedEntryFilter"] = o.NotAllIncludedEntryFilter
+	}
+	if !IsNil(o.NoneIncludedEntryFilter) {
+		toSerialize["noneIncludedEntryFilter"] = o.NoneIncludedEntryFilter
+	}
+	if !IsNil(o.AllIncludedEntryGroupDN) {
+		toSerialize["allIncludedEntryGroupDN"] = o.AllIncludedEntryGroupDN
+	}
+	if !IsNil(o.AnyIncludedEntryGroupDN) {
+		toSerialize["anyIncludedEntryGroupDN"] = o.AnyIncludedEntryGroupDN
+	}
+	if !IsNil(o.NotAllIncludedEntryGroupDN) {
+		toSerialize["notAllIncludedEntryGroupDN"] = o.NotAllIncludedEntryGroupDN
+	}
+	if !IsNil(o.NoneIncludedEntryGroupDN) {
+		toSerialize["noneIncludedEntryGroupDN"] = o.NoneIncludedEntryGroupDN
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAddSimpleSearchEntryCriteriaRequest struct {

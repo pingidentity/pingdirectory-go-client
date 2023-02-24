@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the UnboundidYubikeyOtpSaslMechanismHandlerResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &UnboundidYubikeyOtpSaslMechanismHandlerResponse{}
+
 // UnboundidYubikeyOtpSaslMechanismHandlerResponse struct for UnboundidYubikeyOtpSaslMechanismHandlerResponse
 type UnboundidYubikeyOtpSaslMechanismHandlerResponse struct {
 	Meta                                          *MetaMeta                                              `json:"meta,omitempty"`
@@ -67,7 +70,7 @@ func NewUnboundidYubikeyOtpSaslMechanismHandlerResponseWithDefaults() *Unboundid
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -77,7 +80,7 @@ func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -85,7 +88,7 @@ func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetMetaOk() (*MetaMeta
 
 // HasMeta returns a boolean if a field has been set.
 func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -99,7 +102,7 @@ func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -109,7 +112,7 @@ func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetUrnpingidentitysche
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -117,7 +120,7 @@ func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetUrnpingidentitysche
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -179,7 +182,7 @@ func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) SetId(v string) {
 
 // GetYubikeyClientID returns the YubikeyClientID field value if set, zero value otherwise.
 func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetYubikeyClientID() string {
-	if o == nil || isNil(o.YubikeyClientID) {
+	if o == nil || IsNil(o.YubikeyClientID) {
 		var ret string
 		return ret
 	}
@@ -189,7 +192,7 @@ func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetYubikeyClientID() s
 // GetYubikeyClientIDOk returns a tuple with the YubikeyClientID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetYubikeyClientIDOk() (*string, bool) {
-	if o == nil || isNil(o.YubikeyClientID) {
+	if o == nil || IsNil(o.YubikeyClientID) {
 		return nil, false
 	}
 	return o.YubikeyClientID, true
@@ -197,7 +200,7 @@ func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetYubikeyClientIDOk()
 
 // HasYubikeyClientID returns a boolean if a field has been set.
 func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) HasYubikeyClientID() bool {
-	if o != nil && !isNil(o.YubikeyClientID) {
+	if o != nil && !IsNil(o.YubikeyClientID) {
 		return true
 	}
 
@@ -211,7 +214,7 @@ func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) SetYubikeyClientID(v s
 
 // GetYubikeyAPIKey returns the YubikeyAPIKey field value if set, zero value otherwise.
 func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetYubikeyAPIKey() string {
-	if o == nil || isNil(o.YubikeyAPIKey) {
+	if o == nil || IsNil(o.YubikeyAPIKey) {
 		var ret string
 		return ret
 	}
@@ -221,7 +224,7 @@ func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetYubikeyAPIKey() str
 // GetYubikeyAPIKeyOk returns a tuple with the YubikeyAPIKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetYubikeyAPIKeyOk() (*string, bool) {
-	if o == nil || isNil(o.YubikeyAPIKey) {
+	if o == nil || IsNil(o.YubikeyAPIKey) {
 		return nil, false
 	}
 	return o.YubikeyAPIKey, true
@@ -229,7 +232,7 @@ func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetYubikeyAPIKeyOk() (
 
 // HasYubikeyAPIKey returns a boolean if a field has been set.
 func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) HasYubikeyAPIKey() bool {
-	if o != nil && !isNil(o.YubikeyAPIKey) {
+	if o != nil && !IsNil(o.YubikeyAPIKey) {
 		return true
 	}
 
@@ -243,7 +246,7 @@ func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) SetYubikeyAPIKey(v str
 
 // GetYubikeyAPIKeyPassphraseProvider returns the YubikeyAPIKeyPassphraseProvider field value if set, zero value otherwise.
 func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetYubikeyAPIKeyPassphraseProvider() string {
-	if o == nil || isNil(o.YubikeyAPIKeyPassphraseProvider) {
+	if o == nil || IsNil(o.YubikeyAPIKeyPassphraseProvider) {
 		var ret string
 		return ret
 	}
@@ -253,7 +256,7 @@ func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetYubikeyAPIKeyPassph
 // GetYubikeyAPIKeyPassphraseProviderOk returns a tuple with the YubikeyAPIKeyPassphraseProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetYubikeyAPIKeyPassphraseProviderOk() (*string, bool) {
-	if o == nil || isNil(o.YubikeyAPIKeyPassphraseProvider) {
+	if o == nil || IsNil(o.YubikeyAPIKeyPassphraseProvider) {
 		return nil, false
 	}
 	return o.YubikeyAPIKeyPassphraseProvider, true
@@ -261,7 +264,7 @@ func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetYubikeyAPIKeyPassph
 
 // HasYubikeyAPIKeyPassphraseProvider returns a boolean if a field has been set.
 func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) HasYubikeyAPIKeyPassphraseProvider() bool {
-	if o != nil && !isNil(o.YubikeyAPIKeyPassphraseProvider) {
+	if o != nil && !IsNil(o.YubikeyAPIKeyPassphraseProvider) {
 		return true
 	}
 
@@ -323,7 +326,7 @@ func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) SetIdentityMapper(v st
 
 // GetRequireStaticPassword returns the RequireStaticPassword field value if set, zero value otherwise.
 func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetRequireStaticPassword() bool {
-	if o == nil || isNil(o.RequireStaticPassword) {
+	if o == nil || IsNil(o.RequireStaticPassword) {
 		var ret bool
 		return ret
 	}
@@ -333,7 +336,7 @@ func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetRequireStaticPasswo
 // GetRequireStaticPasswordOk returns a tuple with the RequireStaticPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetRequireStaticPasswordOk() (*bool, bool) {
-	if o == nil || isNil(o.RequireStaticPassword) {
+	if o == nil || IsNil(o.RequireStaticPassword) {
 		return nil, false
 	}
 	return o.RequireStaticPassword, true
@@ -341,7 +344,7 @@ func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetRequireStaticPasswo
 
 // HasRequireStaticPassword returns a boolean if a field has been set.
 func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) HasRequireStaticPassword() bool {
-	if o != nil && !isNil(o.RequireStaticPassword) {
+	if o != nil && !IsNil(o.RequireStaticPassword) {
 		return true
 	}
 
@@ -355,7 +358,7 @@ func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) SetRequireStaticPasswo
 
 // GetKeyManagerProvider returns the KeyManagerProvider field value if set, zero value otherwise.
 func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetKeyManagerProvider() string {
-	if o == nil || isNil(o.KeyManagerProvider) {
+	if o == nil || IsNil(o.KeyManagerProvider) {
 		var ret string
 		return ret
 	}
@@ -365,7 +368,7 @@ func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetKeyManagerProvider(
 // GetKeyManagerProviderOk returns a tuple with the KeyManagerProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetKeyManagerProviderOk() (*string, bool) {
-	if o == nil || isNil(o.KeyManagerProvider) {
+	if o == nil || IsNil(o.KeyManagerProvider) {
 		return nil, false
 	}
 	return o.KeyManagerProvider, true
@@ -373,7 +376,7 @@ func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetKeyManagerProviderO
 
 // HasKeyManagerProvider returns a boolean if a field has been set.
 func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) HasKeyManagerProvider() bool {
-	if o != nil && !isNil(o.KeyManagerProvider) {
+	if o != nil && !IsNil(o.KeyManagerProvider) {
 		return true
 	}
 
@@ -387,7 +390,7 @@ func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) SetKeyManagerProvider(
 
 // GetTrustManagerProvider returns the TrustManagerProvider field value if set, zero value otherwise.
 func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetTrustManagerProvider() string {
-	if o == nil || isNil(o.TrustManagerProvider) {
+	if o == nil || IsNil(o.TrustManagerProvider) {
 		var ret string
 		return ret
 	}
@@ -397,7 +400,7 @@ func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetTrustManagerProvide
 // GetTrustManagerProviderOk returns a tuple with the TrustManagerProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetTrustManagerProviderOk() (*string, bool) {
-	if o == nil || isNil(o.TrustManagerProvider) {
+	if o == nil || IsNil(o.TrustManagerProvider) {
 		return nil, false
 	}
 	return o.TrustManagerProvider, true
@@ -405,7 +408,7 @@ func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetTrustManagerProvide
 
 // HasTrustManagerProvider returns a boolean if a field has been set.
 func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) HasTrustManagerProvider() bool {
-	if o != nil && !isNil(o.TrustManagerProvider) {
+	if o != nil && !IsNil(o.TrustManagerProvider) {
 		return true
 	}
 
@@ -419,7 +422,7 @@ func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) SetTrustManagerProvide
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -429,7 +432,7 @@ func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetDescription() strin
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -437,7 +440,7 @@ func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetDescriptionOk() (*s
 
 // HasDescription returns a boolean if a field has been set.
 func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -474,50 +477,48 @@ func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) SetEnabled(v bool) {
 }
 
 func (o UnboundidYubikeyOtpSaslMechanismHandlerResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.YubikeyClientID) {
-		toSerialize["yubikeyClientID"] = o.YubikeyClientID
-	}
-	if !isNil(o.YubikeyAPIKey) {
-		toSerialize["yubikeyAPIKey"] = o.YubikeyAPIKey
-	}
-	if !isNil(o.YubikeyAPIKeyPassphraseProvider) {
-		toSerialize["yubikeyAPIKeyPassphraseProvider"] = o.YubikeyAPIKeyPassphraseProvider
-	}
-	if true {
-		toSerialize["yubikeyValidationServerBaseURL"] = o.YubikeyValidationServerBaseURL
-	}
-	if true {
-		toSerialize["identityMapper"] = o.IdentityMapper
-	}
-	if !isNil(o.RequireStaticPassword) {
-		toSerialize["requireStaticPassword"] = o.RequireStaticPassword
-	}
-	if !isNil(o.KeyManagerProvider) {
-		toSerialize["keyManagerProvider"] = o.KeyManagerProvider
-	}
-	if !isNil(o.TrustManagerProvider) {
-		toSerialize["trustManagerProvider"] = o.TrustManagerProvider
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o UnboundidYubikeyOtpSaslMechanismHandlerResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	if !IsNil(o.YubikeyClientID) {
+		toSerialize["yubikeyClientID"] = o.YubikeyClientID
+	}
+	if !IsNil(o.YubikeyAPIKey) {
+		toSerialize["yubikeyAPIKey"] = o.YubikeyAPIKey
+	}
+	if !IsNil(o.YubikeyAPIKeyPassphraseProvider) {
+		toSerialize["yubikeyAPIKeyPassphraseProvider"] = o.YubikeyAPIKeyPassphraseProvider
+	}
+	toSerialize["yubikeyValidationServerBaseURL"] = o.YubikeyValidationServerBaseURL
+	toSerialize["identityMapper"] = o.IdentityMapper
+	if !IsNil(o.RequireStaticPassword) {
+		toSerialize["requireStaticPassword"] = o.RequireStaticPassword
+	}
+	if !IsNil(o.KeyManagerProvider) {
+		toSerialize["keyManagerProvider"] = o.KeyManagerProvider
+	}
+	if !IsNil(o.TrustManagerProvider) {
+		toSerialize["trustManagerProvider"] = o.TrustManagerProvider
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableUnboundidYubikeyOtpSaslMechanismHandlerResponse struct {

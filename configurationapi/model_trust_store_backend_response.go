@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the TrustStoreBackendResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &TrustStoreBackendResponse{}
+
 // TrustStoreBackendResponse struct for TrustStoreBackendResponse
 type TrustStoreBackendResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -76,7 +79,7 @@ func NewTrustStoreBackendResponseWithDefaults() *TrustStoreBackendResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *TrustStoreBackendResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -86,7 +89,7 @@ func (o *TrustStoreBackendResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrustStoreBackendResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -94,7 +97,7 @@ func (o *TrustStoreBackendResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *TrustStoreBackendResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -108,7 +111,7 @@ func (o *TrustStoreBackendResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *TrustStoreBackendResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -118,7 +121,7 @@ func (o *TrustStoreBackendResponse) GetUrnpingidentityschemasconfigurationmessag
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrustStoreBackendResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -126,7 +129,7 @@ func (o *TrustStoreBackendResponse) GetUrnpingidentityschemasconfigurationmessag
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *TrustStoreBackendResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -284,7 +287,7 @@ func (o *TrustStoreBackendResponse) SetTrustStoreFile(v string) {
 
 // GetTrustStoreType returns the TrustStoreType field value if set, zero value otherwise.
 func (o *TrustStoreBackendResponse) GetTrustStoreType() string {
-	if o == nil || isNil(o.TrustStoreType) {
+	if o == nil || IsNil(o.TrustStoreType) {
 		var ret string
 		return ret
 	}
@@ -294,7 +297,7 @@ func (o *TrustStoreBackendResponse) GetTrustStoreType() string {
 // GetTrustStoreTypeOk returns a tuple with the TrustStoreType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrustStoreBackendResponse) GetTrustStoreTypeOk() (*string, bool) {
-	if o == nil || isNil(o.TrustStoreType) {
+	if o == nil || IsNil(o.TrustStoreType) {
 		return nil, false
 	}
 	return o.TrustStoreType, true
@@ -302,7 +305,7 @@ func (o *TrustStoreBackendResponse) GetTrustStoreTypeOk() (*string, bool) {
 
 // HasTrustStoreType returns a boolean if a field has been set.
 func (o *TrustStoreBackendResponse) HasTrustStoreType() bool {
-	if o != nil && !isNil(o.TrustStoreType) {
+	if o != nil && !IsNil(o.TrustStoreType) {
 		return true
 	}
 
@@ -316,7 +319,7 @@ func (o *TrustStoreBackendResponse) SetTrustStoreType(v string) {
 
 // GetTrustStorePin returns the TrustStorePin field value if set, zero value otherwise.
 func (o *TrustStoreBackendResponse) GetTrustStorePin() string {
-	if o == nil || isNil(o.TrustStorePin) {
+	if o == nil || IsNil(o.TrustStorePin) {
 		var ret string
 		return ret
 	}
@@ -326,7 +329,7 @@ func (o *TrustStoreBackendResponse) GetTrustStorePin() string {
 // GetTrustStorePinOk returns a tuple with the TrustStorePin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrustStoreBackendResponse) GetTrustStorePinOk() (*string, bool) {
-	if o == nil || isNil(o.TrustStorePin) {
+	if o == nil || IsNil(o.TrustStorePin) {
 		return nil, false
 	}
 	return o.TrustStorePin, true
@@ -334,7 +337,7 @@ func (o *TrustStoreBackendResponse) GetTrustStorePinOk() (*string, bool) {
 
 // HasTrustStorePin returns a boolean if a field has been set.
 func (o *TrustStoreBackendResponse) HasTrustStorePin() bool {
-	if o != nil && !isNil(o.TrustStorePin) {
+	if o != nil && !IsNil(o.TrustStorePin) {
 		return true
 	}
 
@@ -348,7 +351,7 @@ func (o *TrustStoreBackendResponse) SetTrustStorePin(v string) {
 
 // GetTrustStorePinFile returns the TrustStorePinFile field value if set, zero value otherwise.
 func (o *TrustStoreBackendResponse) GetTrustStorePinFile() string {
-	if o == nil || isNil(o.TrustStorePinFile) {
+	if o == nil || IsNil(o.TrustStorePinFile) {
 		var ret string
 		return ret
 	}
@@ -358,7 +361,7 @@ func (o *TrustStoreBackendResponse) GetTrustStorePinFile() string {
 // GetTrustStorePinFileOk returns a tuple with the TrustStorePinFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrustStoreBackendResponse) GetTrustStorePinFileOk() (*string, bool) {
-	if o == nil || isNil(o.TrustStorePinFile) {
+	if o == nil || IsNil(o.TrustStorePinFile) {
 		return nil, false
 	}
 	return o.TrustStorePinFile, true
@@ -366,7 +369,7 @@ func (o *TrustStoreBackendResponse) GetTrustStorePinFileOk() (*string, bool) {
 
 // HasTrustStorePinFile returns a boolean if a field has been set.
 func (o *TrustStoreBackendResponse) HasTrustStorePinFile() bool {
-	if o != nil && !isNil(o.TrustStorePinFile) {
+	if o != nil && !IsNil(o.TrustStorePinFile) {
 		return true
 	}
 
@@ -380,7 +383,7 @@ func (o *TrustStoreBackendResponse) SetTrustStorePinFile(v string) {
 
 // GetTrustStorePinPassphraseProvider returns the TrustStorePinPassphraseProvider field value if set, zero value otherwise.
 func (o *TrustStoreBackendResponse) GetTrustStorePinPassphraseProvider() string {
-	if o == nil || isNil(o.TrustStorePinPassphraseProvider) {
+	if o == nil || IsNil(o.TrustStorePinPassphraseProvider) {
 		var ret string
 		return ret
 	}
@@ -390,7 +393,7 @@ func (o *TrustStoreBackendResponse) GetTrustStorePinPassphraseProvider() string 
 // GetTrustStorePinPassphraseProviderOk returns a tuple with the TrustStorePinPassphraseProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrustStoreBackendResponse) GetTrustStorePinPassphraseProviderOk() (*string, bool) {
-	if o == nil || isNil(o.TrustStorePinPassphraseProvider) {
+	if o == nil || IsNil(o.TrustStorePinPassphraseProvider) {
 		return nil, false
 	}
 	return o.TrustStorePinPassphraseProvider, true
@@ -398,7 +401,7 @@ func (o *TrustStoreBackendResponse) GetTrustStorePinPassphraseProviderOk() (*str
 
 // HasTrustStorePinPassphraseProvider returns a boolean if a field has been set.
 func (o *TrustStoreBackendResponse) HasTrustStorePinPassphraseProvider() bool {
-	if o != nil && !isNil(o.TrustStorePinPassphraseProvider) {
+	if o != nil && !IsNil(o.TrustStorePinPassphraseProvider) {
 		return true
 	}
 
@@ -412,7 +415,7 @@ func (o *TrustStoreBackendResponse) SetTrustStorePinPassphraseProvider(v string)
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *TrustStoreBackendResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -422,7 +425,7 @@ func (o *TrustStoreBackendResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrustStoreBackendResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -430,7 +433,7 @@ func (o *TrustStoreBackendResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *TrustStoreBackendResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -468,7 +471,7 @@ func (o *TrustStoreBackendResponse) SetEnabled(v bool) {
 
 // GetSetDegradedAlertWhenDisabled returns the SetDegradedAlertWhenDisabled field value if set, zero value otherwise.
 func (o *TrustStoreBackendResponse) GetSetDegradedAlertWhenDisabled() bool {
-	if o == nil || isNil(o.SetDegradedAlertWhenDisabled) {
+	if o == nil || IsNil(o.SetDegradedAlertWhenDisabled) {
 		var ret bool
 		return ret
 	}
@@ -478,7 +481,7 @@ func (o *TrustStoreBackendResponse) GetSetDegradedAlertWhenDisabled() bool {
 // GetSetDegradedAlertWhenDisabledOk returns a tuple with the SetDegradedAlertWhenDisabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrustStoreBackendResponse) GetSetDegradedAlertWhenDisabledOk() (*bool, bool) {
-	if o == nil || isNil(o.SetDegradedAlertWhenDisabled) {
+	if o == nil || IsNil(o.SetDegradedAlertWhenDisabled) {
 		return nil, false
 	}
 	return o.SetDegradedAlertWhenDisabled, true
@@ -486,7 +489,7 @@ func (o *TrustStoreBackendResponse) GetSetDegradedAlertWhenDisabledOk() (*bool, 
 
 // HasSetDegradedAlertWhenDisabled returns a boolean if a field has been set.
 func (o *TrustStoreBackendResponse) HasSetDegradedAlertWhenDisabled() bool {
-	if o != nil && !isNil(o.SetDegradedAlertWhenDisabled) {
+	if o != nil && !IsNil(o.SetDegradedAlertWhenDisabled) {
 		return true
 	}
 
@@ -500,7 +503,7 @@ func (o *TrustStoreBackendResponse) SetSetDegradedAlertWhenDisabled(v bool) {
 
 // GetReturnUnavailableWhenDisabled returns the ReturnUnavailableWhenDisabled field value if set, zero value otherwise.
 func (o *TrustStoreBackendResponse) GetReturnUnavailableWhenDisabled() bool {
-	if o == nil || isNil(o.ReturnUnavailableWhenDisabled) {
+	if o == nil || IsNil(o.ReturnUnavailableWhenDisabled) {
 		var ret bool
 		return ret
 	}
@@ -510,7 +513,7 @@ func (o *TrustStoreBackendResponse) GetReturnUnavailableWhenDisabled() bool {
 // GetReturnUnavailableWhenDisabledOk returns a tuple with the ReturnUnavailableWhenDisabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrustStoreBackendResponse) GetReturnUnavailableWhenDisabledOk() (*bool, bool) {
-	if o == nil || isNil(o.ReturnUnavailableWhenDisabled) {
+	if o == nil || IsNil(o.ReturnUnavailableWhenDisabled) {
 		return nil, false
 	}
 	return o.ReturnUnavailableWhenDisabled, true
@@ -518,7 +521,7 @@ func (o *TrustStoreBackendResponse) GetReturnUnavailableWhenDisabledOk() (*bool,
 
 // HasReturnUnavailableWhenDisabled returns a boolean if a field has been set.
 func (o *TrustStoreBackendResponse) HasReturnUnavailableWhenDisabled() bool {
-	if o != nil && !isNil(o.ReturnUnavailableWhenDisabled) {
+	if o != nil && !IsNil(o.ReturnUnavailableWhenDisabled) {
 		return true
 	}
 
@@ -532,7 +535,7 @@ func (o *TrustStoreBackendResponse) SetReturnUnavailableWhenDisabled(v bool) {
 
 // GetBackupFilePermissions returns the BackupFilePermissions field value if set, zero value otherwise.
 func (o *TrustStoreBackendResponse) GetBackupFilePermissions() string {
-	if o == nil || isNil(o.BackupFilePermissions) {
+	if o == nil || IsNil(o.BackupFilePermissions) {
 		var ret string
 		return ret
 	}
@@ -542,7 +545,7 @@ func (o *TrustStoreBackendResponse) GetBackupFilePermissions() string {
 // GetBackupFilePermissionsOk returns a tuple with the BackupFilePermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrustStoreBackendResponse) GetBackupFilePermissionsOk() (*string, bool) {
-	if o == nil || isNil(o.BackupFilePermissions) {
+	if o == nil || IsNil(o.BackupFilePermissions) {
 		return nil, false
 	}
 	return o.BackupFilePermissions, true
@@ -550,7 +553,7 @@ func (o *TrustStoreBackendResponse) GetBackupFilePermissionsOk() (*string, bool)
 
 // HasBackupFilePermissions returns a boolean if a field has been set.
 func (o *TrustStoreBackendResponse) HasBackupFilePermissions() bool {
-	if o != nil && !isNil(o.BackupFilePermissions) {
+	if o != nil && !IsNil(o.BackupFilePermissions) {
 		return true
 	}
 
@@ -564,7 +567,7 @@ func (o *TrustStoreBackendResponse) SetBackupFilePermissions(v string) {
 
 // GetNotificationManager returns the NotificationManager field value if set, zero value otherwise.
 func (o *TrustStoreBackendResponse) GetNotificationManager() string {
-	if o == nil || isNil(o.NotificationManager) {
+	if o == nil || IsNil(o.NotificationManager) {
 		var ret string
 		return ret
 	}
@@ -574,7 +577,7 @@ func (o *TrustStoreBackendResponse) GetNotificationManager() string {
 // GetNotificationManagerOk returns a tuple with the NotificationManager field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrustStoreBackendResponse) GetNotificationManagerOk() (*string, bool) {
-	if o == nil || isNil(o.NotificationManager) {
+	if o == nil || IsNil(o.NotificationManager) {
 		return nil, false
 	}
 	return o.NotificationManager, true
@@ -582,7 +585,7 @@ func (o *TrustStoreBackendResponse) GetNotificationManagerOk() (*string, bool) {
 
 // HasNotificationManager returns a boolean if a field has been set.
 func (o *TrustStoreBackendResponse) HasNotificationManager() bool {
-	if o != nil && !isNil(o.NotificationManager) {
+	if o != nil && !IsNil(o.NotificationManager) {
 		return true
 	}
 
@@ -595,62 +598,56 @@ func (o *TrustStoreBackendResponse) SetNotificationManager(v string) {
 }
 
 func (o TrustStoreBackendResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["backendID"] = o.BackendID
-	}
-	if true {
-		toSerialize["baseDN"] = o.BaseDN
-	}
-	if true {
-		toSerialize["writabilityMode"] = o.WritabilityMode
-	}
-	if true {
-		toSerialize["trustStoreFile"] = o.TrustStoreFile
-	}
-	if !isNil(o.TrustStoreType) {
-		toSerialize["trustStoreType"] = o.TrustStoreType
-	}
-	if !isNil(o.TrustStorePin) {
-		toSerialize["trustStorePin"] = o.TrustStorePin
-	}
-	if !isNil(o.TrustStorePinFile) {
-		toSerialize["trustStorePinFile"] = o.TrustStorePinFile
-	}
-	if !isNil(o.TrustStorePinPassphraseProvider) {
-		toSerialize["trustStorePinPassphraseProvider"] = o.TrustStorePinPassphraseProvider
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.SetDegradedAlertWhenDisabled) {
-		toSerialize["setDegradedAlertWhenDisabled"] = o.SetDegradedAlertWhenDisabled
-	}
-	if !isNil(o.ReturnUnavailableWhenDisabled) {
-		toSerialize["returnUnavailableWhenDisabled"] = o.ReturnUnavailableWhenDisabled
-	}
-	if !isNil(o.BackupFilePermissions) {
-		toSerialize["backupFilePermissions"] = o.BackupFilePermissions
-	}
-	if !isNil(o.NotificationManager) {
-		toSerialize["notificationManager"] = o.NotificationManager
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o TrustStoreBackendResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	toSerialize["backendID"] = o.BackendID
+	toSerialize["baseDN"] = o.BaseDN
+	toSerialize["writabilityMode"] = o.WritabilityMode
+	toSerialize["trustStoreFile"] = o.TrustStoreFile
+	if !IsNil(o.TrustStoreType) {
+		toSerialize["trustStoreType"] = o.TrustStoreType
+	}
+	if !IsNil(o.TrustStorePin) {
+		toSerialize["trustStorePin"] = o.TrustStorePin
+	}
+	if !IsNil(o.TrustStorePinFile) {
+		toSerialize["trustStorePinFile"] = o.TrustStorePinFile
+	}
+	if !IsNil(o.TrustStorePinPassphraseProvider) {
+		toSerialize["trustStorePinPassphraseProvider"] = o.TrustStorePinPassphraseProvider
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.SetDegradedAlertWhenDisabled) {
+		toSerialize["setDegradedAlertWhenDisabled"] = o.SetDegradedAlertWhenDisabled
+	}
+	if !IsNil(o.ReturnUnavailableWhenDisabled) {
+		toSerialize["returnUnavailableWhenDisabled"] = o.ReturnUnavailableWhenDisabled
+	}
+	if !IsNil(o.BackupFilePermissions) {
+		toSerialize["backupFilePermissions"] = o.BackupFilePermissions
+	}
+	if !IsNil(o.NotificationManager) {
+		toSerialize["notificationManager"] = o.NotificationManager
+	}
+	return toSerialize, nil
 }
 
 type NullableTrustStoreBackendResponse struct {

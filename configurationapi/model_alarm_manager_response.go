@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AlarmManagerResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AlarmManagerResponse{}
+
 // AlarmManagerResponse struct for AlarmManagerResponse
 type AlarmManagerResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -45,7 +48,7 @@ func NewAlarmManagerResponseWithDefaults() *AlarmManagerResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *AlarmManagerResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -55,7 +58,7 @@ func (o *AlarmManagerResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmManagerResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -63,7 +66,7 @@ func (o *AlarmManagerResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *AlarmManagerResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -77,7 +80,7 @@ func (o *AlarmManagerResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *AlarmManagerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -87,7 +90,7 @@ func (o *AlarmManagerResponse) GetUrnpingidentityschemasconfigurationmessages20(
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmManagerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -95,7 +98,7 @@ func (o *AlarmManagerResponse) GetUrnpingidentityschemasconfigurationmessages20O
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *AlarmManagerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -109,7 +112,7 @@ func (o *AlarmManagerResponse) SetUrnpingidentityschemasconfigurationmessages20(
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *AlarmManagerResponse) GetSchemas() []EnumalarmManagerSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumalarmManagerSchemaUrn
 		return ret
 	}
@@ -119,7 +122,7 @@ func (o *AlarmManagerResponse) GetSchemas() []EnumalarmManagerSchemaUrn {
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmManagerResponse) GetSchemasOk() ([]EnumalarmManagerSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -127,7 +130,7 @@ func (o *AlarmManagerResponse) GetSchemasOk() ([]EnumalarmManagerSchemaUrn, bool
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *AlarmManagerResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -189,7 +192,7 @@ func (o *AlarmManagerResponse) SetGeneratedAlertTypes(v []EnumalarmManagerGenera
 
 // GetSuppressedAlarm returns the SuppressedAlarm field value if set, zero value otherwise.
 func (o *AlarmManagerResponse) GetSuppressedAlarm() []EnumalarmManagerSuppressedAlarmProp {
-	if o == nil || isNil(o.SuppressedAlarm) {
+	if o == nil || IsNil(o.SuppressedAlarm) {
 		var ret []EnumalarmManagerSuppressedAlarmProp
 		return ret
 	}
@@ -199,7 +202,7 @@ func (o *AlarmManagerResponse) GetSuppressedAlarm() []EnumalarmManagerSuppressed
 // GetSuppressedAlarmOk returns a tuple with the SuppressedAlarm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmManagerResponse) GetSuppressedAlarmOk() ([]EnumalarmManagerSuppressedAlarmProp, bool) {
-	if o == nil || isNil(o.SuppressedAlarm) {
+	if o == nil || IsNil(o.SuppressedAlarm) {
 		return nil, false
 	}
 	return o.SuppressedAlarm, true
@@ -207,7 +210,7 @@ func (o *AlarmManagerResponse) GetSuppressedAlarmOk() ([]EnumalarmManagerSuppres
 
 // HasSuppressedAlarm returns a boolean if a field has been set.
 func (o *AlarmManagerResponse) HasSuppressedAlarm() bool {
-	if o != nil && !isNil(o.SuppressedAlarm) {
+	if o != nil && !IsNil(o.SuppressedAlarm) {
 		return true
 	}
 
@@ -220,26 +223,30 @@ func (o *AlarmManagerResponse) SetSuppressedAlarm(v []EnumalarmManagerSuppressed
 }
 
 func (o AlarmManagerResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["defaultGaugeAlertLevel"] = o.DefaultGaugeAlertLevel
-	}
-	if true {
-		toSerialize["generatedAlertTypes"] = o.GeneratedAlertTypes
-	}
-	if !isNil(o.SuppressedAlarm) {
-		toSerialize["suppressedAlarm"] = o.SuppressedAlarm
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AlarmManagerResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	toSerialize["defaultGaugeAlertLevel"] = o.DefaultGaugeAlertLevel
+	toSerialize["generatedAlertTypes"] = o.GeneratedAlertTypes
+	if !IsNil(o.SuppressedAlarm) {
+		toSerialize["suppressedAlarm"] = o.SuppressedAlarm
+	}
+	return toSerialize, nil
 }
 
 type NullableAlarmManagerResponse struct {

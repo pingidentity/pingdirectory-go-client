@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AccessLogFieldMappingResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AccessLogFieldMappingResponse{}
+
 // AccessLogFieldMappingResponse struct for AccessLogFieldMappingResponse
 type AccessLogFieldMappingResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -150,7 +153,7 @@ func NewAccessLogFieldMappingResponseWithDefaults() *AccessLogFieldMappingRespon
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -160,7 +163,7 @@ func (o *AccessLogFieldMappingResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -168,7 +171,7 @@ func (o *AccessLogFieldMappingResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -182,7 +185,7 @@ func (o *AccessLogFieldMappingResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -192,7 +195,7 @@ func (o *AccessLogFieldMappingResponse) GetUrnpingidentityschemasconfigurationme
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -200,7 +203,7 @@ func (o *AccessLogFieldMappingResponse) GetUrnpingidentityschemasconfigurationme
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -262,7 +265,7 @@ func (o *AccessLogFieldMappingResponse) SetSchemas(v []EnumaccessLogFieldMapping
 
 // GetLogFieldTimestamp returns the LogFieldTimestamp field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldTimestamp() string {
-	if o == nil || isNil(o.LogFieldTimestamp) {
+	if o == nil || IsNil(o.LogFieldTimestamp) {
 		var ret string
 		return ret
 	}
@@ -272,7 +275,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldTimestamp() string {
 // GetLogFieldTimestampOk returns a tuple with the LogFieldTimestamp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldTimestampOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldTimestamp) {
+	if o == nil || IsNil(o.LogFieldTimestamp) {
 		return nil, false
 	}
 	return o.LogFieldTimestamp, true
@@ -280,7 +283,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldTimestampOk() (*string, bool)
 
 // HasLogFieldTimestamp returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldTimestamp() bool {
-	if o != nil && !isNil(o.LogFieldTimestamp) {
+	if o != nil && !IsNil(o.LogFieldTimestamp) {
 		return true
 	}
 
@@ -294,7 +297,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldTimestamp(v string) {
 
 // GetLogFieldConnectionID returns the LogFieldConnectionID field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldConnectionID() string {
-	if o == nil || isNil(o.LogFieldConnectionID) {
+	if o == nil || IsNil(o.LogFieldConnectionID) {
 		var ret string
 		return ret
 	}
@@ -304,7 +307,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldConnectionID() string {
 // GetLogFieldConnectionIDOk returns a tuple with the LogFieldConnectionID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldConnectionIDOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldConnectionID) {
+	if o == nil || IsNil(o.LogFieldConnectionID) {
 		return nil, false
 	}
 	return o.LogFieldConnectionID, true
@@ -312,7 +315,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldConnectionIDOk() (*string, bo
 
 // HasLogFieldConnectionID returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldConnectionID() bool {
-	if o != nil && !isNil(o.LogFieldConnectionID) {
+	if o != nil && !IsNil(o.LogFieldConnectionID) {
 		return true
 	}
 
@@ -326,7 +329,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldConnectionID(v string) {
 
 // GetLogFieldStartupid returns the LogFieldStartupid field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldStartupid() string {
-	if o == nil || isNil(o.LogFieldStartupid) {
+	if o == nil || IsNil(o.LogFieldStartupid) {
 		var ret string
 		return ret
 	}
@@ -336,7 +339,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldStartupid() string {
 // GetLogFieldStartupidOk returns a tuple with the LogFieldStartupid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldStartupidOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldStartupid) {
+	if o == nil || IsNil(o.LogFieldStartupid) {
 		return nil, false
 	}
 	return o.LogFieldStartupid, true
@@ -344,7 +347,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldStartupidOk() (*string, bool)
 
 // HasLogFieldStartupid returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldStartupid() bool {
-	if o != nil && !isNil(o.LogFieldStartupid) {
+	if o != nil && !IsNil(o.LogFieldStartupid) {
 		return true
 	}
 
@@ -358,7 +361,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldStartupid(v string) {
 
 // GetLogFieldProductName returns the LogFieldProductName field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldProductName() string {
-	if o == nil || isNil(o.LogFieldProductName) {
+	if o == nil || IsNil(o.LogFieldProductName) {
 		var ret string
 		return ret
 	}
@@ -368,7 +371,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldProductName() string {
 // GetLogFieldProductNameOk returns a tuple with the LogFieldProductName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldProductNameOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldProductName) {
+	if o == nil || IsNil(o.LogFieldProductName) {
 		return nil, false
 	}
 	return o.LogFieldProductName, true
@@ -376,7 +379,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldProductNameOk() (*string, boo
 
 // HasLogFieldProductName returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldProductName() bool {
-	if o != nil && !isNil(o.LogFieldProductName) {
+	if o != nil && !IsNil(o.LogFieldProductName) {
 		return true
 	}
 
@@ -390,7 +393,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldProductName(v string) {
 
 // GetLogFieldInstanceName returns the LogFieldInstanceName field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldInstanceName() string {
-	if o == nil || isNil(o.LogFieldInstanceName) {
+	if o == nil || IsNil(o.LogFieldInstanceName) {
 		var ret string
 		return ret
 	}
@@ -400,7 +403,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldInstanceName() string {
 // GetLogFieldInstanceNameOk returns a tuple with the LogFieldInstanceName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldInstanceNameOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldInstanceName) {
+	if o == nil || IsNil(o.LogFieldInstanceName) {
 		return nil, false
 	}
 	return o.LogFieldInstanceName, true
@@ -408,7 +411,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldInstanceNameOk() (*string, bo
 
 // HasLogFieldInstanceName returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldInstanceName() bool {
-	if o != nil && !isNil(o.LogFieldInstanceName) {
+	if o != nil && !IsNil(o.LogFieldInstanceName) {
 		return true
 	}
 
@@ -422,7 +425,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldInstanceName(v string) {
 
 // GetLogFieldOperationID returns the LogFieldOperationID field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldOperationID() string {
-	if o == nil || isNil(o.LogFieldOperationID) {
+	if o == nil || IsNil(o.LogFieldOperationID) {
 		var ret string
 		return ret
 	}
@@ -432,7 +435,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldOperationID() string {
 // GetLogFieldOperationIDOk returns a tuple with the LogFieldOperationID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldOperationIDOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldOperationID) {
+	if o == nil || IsNil(o.LogFieldOperationID) {
 		return nil, false
 	}
 	return o.LogFieldOperationID, true
@@ -440,7 +443,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldOperationIDOk() (*string, boo
 
 // HasLogFieldOperationID returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldOperationID() bool {
-	if o != nil && !isNil(o.LogFieldOperationID) {
+	if o != nil && !IsNil(o.LogFieldOperationID) {
 		return true
 	}
 
@@ -454,7 +457,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldOperationID(v string) {
 
 // GetLogFieldMessageType returns the LogFieldMessageType field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldMessageType() string {
-	if o == nil || isNil(o.LogFieldMessageType) {
+	if o == nil || IsNil(o.LogFieldMessageType) {
 		var ret string
 		return ret
 	}
@@ -464,7 +467,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldMessageType() string {
 // GetLogFieldMessageTypeOk returns a tuple with the LogFieldMessageType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldMessageTypeOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldMessageType) {
+	if o == nil || IsNil(o.LogFieldMessageType) {
 		return nil, false
 	}
 	return o.LogFieldMessageType, true
@@ -472,7 +475,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldMessageTypeOk() (*string, boo
 
 // HasLogFieldMessageType returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldMessageType() bool {
-	if o != nil && !isNil(o.LogFieldMessageType) {
+	if o != nil && !IsNil(o.LogFieldMessageType) {
 		return true
 	}
 
@@ -486,7 +489,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldMessageType(v string) {
 
 // GetLogFieldOperationType returns the LogFieldOperationType field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldOperationType() string {
-	if o == nil || isNil(o.LogFieldOperationType) {
+	if o == nil || IsNil(o.LogFieldOperationType) {
 		var ret string
 		return ret
 	}
@@ -496,7 +499,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldOperationType() string {
 // GetLogFieldOperationTypeOk returns a tuple with the LogFieldOperationType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldOperationTypeOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldOperationType) {
+	if o == nil || IsNil(o.LogFieldOperationType) {
 		return nil, false
 	}
 	return o.LogFieldOperationType, true
@@ -504,7 +507,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldOperationTypeOk() (*string, b
 
 // HasLogFieldOperationType returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldOperationType() bool {
-	if o != nil && !isNil(o.LogFieldOperationType) {
+	if o != nil && !IsNil(o.LogFieldOperationType) {
 		return true
 	}
 
@@ -518,7 +521,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldOperationType(v string) {
 
 // GetLogFieldMessageID returns the LogFieldMessageID field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldMessageID() string {
-	if o == nil || isNil(o.LogFieldMessageID) {
+	if o == nil || IsNil(o.LogFieldMessageID) {
 		var ret string
 		return ret
 	}
@@ -528,7 +531,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldMessageID() string {
 // GetLogFieldMessageIDOk returns a tuple with the LogFieldMessageID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldMessageIDOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldMessageID) {
+	if o == nil || IsNil(o.LogFieldMessageID) {
 		return nil, false
 	}
 	return o.LogFieldMessageID, true
@@ -536,7 +539,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldMessageIDOk() (*string, bool)
 
 // HasLogFieldMessageID returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldMessageID() bool {
-	if o != nil && !isNil(o.LogFieldMessageID) {
+	if o != nil && !IsNil(o.LogFieldMessageID) {
 		return true
 	}
 
@@ -550,7 +553,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldMessageID(v string) {
 
 // GetLogFieldResultCode returns the LogFieldResultCode field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldResultCode() string {
-	if o == nil || isNil(o.LogFieldResultCode) {
+	if o == nil || IsNil(o.LogFieldResultCode) {
 		var ret string
 		return ret
 	}
@@ -560,7 +563,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldResultCode() string {
 // GetLogFieldResultCodeOk returns a tuple with the LogFieldResultCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldResultCodeOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldResultCode) {
+	if o == nil || IsNil(o.LogFieldResultCode) {
 		return nil, false
 	}
 	return o.LogFieldResultCode, true
@@ -568,7 +571,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldResultCodeOk() (*string, bool
 
 // HasLogFieldResultCode returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldResultCode() bool {
-	if o != nil && !isNil(o.LogFieldResultCode) {
+	if o != nil && !IsNil(o.LogFieldResultCode) {
 		return true
 	}
 
@@ -582,7 +585,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldResultCode(v string) {
 
 // GetLogFieldMessage returns the LogFieldMessage field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldMessage() string {
-	if o == nil || isNil(o.LogFieldMessage) {
+	if o == nil || IsNil(o.LogFieldMessage) {
 		var ret string
 		return ret
 	}
@@ -592,7 +595,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldMessage() string {
 // GetLogFieldMessageOk returns a tuple with the LogFieldMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldMessageOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldMessage) {
+	if o == nil || IsNil(o.LogFieldMessage) {
 		return nil, false
 	}
 	return o.LogFieldMessage, true
@@ -600,7 +603,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldMessageOk() (*string, bool) {
 
 // HasLogFieldMessage returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldMessage() bool {
-	if o != nil && !isNil(o.LogFieldMessage) {
+	if o != nil && !IsNil(o.LogFieldMessage) {
 		return true
 	}
 
@@ -614,7 +617,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldMessage(v string) {
 
 // GetLogFieldOrigin returns the LogFieldOrigin field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldOrigin() string {
-	if o == nil || isNil(o.LogFieldOrigin) {
+	if o == nil || IsNil(o.LogFieldOrigin) {
 		var ret string
 		return ret
 	}
@@ -624,7 +627,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldOrigin() string {
 // GetLogFieldOriginOk returns a tuple with the LogFieldOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldOriginOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldOrigin) {
+	if o == nil || IsNil(o.LogFieldOrigin) {
 		return nil, false
 	}
 	return o.LogFieldOrigin, true
@@ -632,7 +635,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldOriginOk() (*string, bool) {
 
 // HasLogFieldOrigin returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldOrigin() bool {
-	if o != nil && !isNil(o.LogFieldOrigin) {
+	if o != nil && !IsNil(o.LogFieldOrigin) {
 		return true
 	}
 
@@ -646,7 +649,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldOrigin(v string) {
 
 // GetLogFieldRequesterDN returns the LogFieldRequesterDN field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldRequesterDN() string {
-	if o == nil || isNil(o.LogFieldRequesterDN) {
+	if o == nil || IsNil(o.LogFieldRequesterDN) {
 		var ret string
 		return ret
 	}
@@ -656,7 +659,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldRequesterDN() string {
 // GetLogFieldRequesterDNOk returns a tuple with the LogFieldRequesterDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldRequesterDNOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldRequesterDN) {
+	if o == nil || IsNil(o.LogFieldRequesterDN) {
 		return nil, false
 	}
 	return o.LogFieldRequesterDN, true
@@ -664,7 +667,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldRequesterDNOk() (*string, boo
 
 // HasLogFieldRequesterDN returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldRequesterDN() bool {
-	if o != nil && !isNil(o.LogFieldRequesterDN) {
+	if o != nil && !IsNil(o.LogFieldRequesterDN) {
 		return true
 	}
 
@@ -678,7 +681,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldRequesterDN(v string) {
 
 // GetLogFieldDisconnectReason returns the LogFieldDisconnectReason field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldDisconnectReason() string {
-	if o == nil || isNil(o.LogFieldDisconnectReason) {
+	if o == nil || IsNil(o.LogFieldDisconnectReason) {
 		var ret string
 		return ret
 	}
@@ -688,7 +691,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldDisconnectReason() string {
 // GetLogFieldDisconnectReasonOk returns a tuple with the LogFieldDisconnectReason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldDisconnectReasonOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldDisconnectReason) {
+	if o == nil || IsNil(o.LogFieldDisconnectReason) {
 		return nil, false
 	}
 	return o.LogFieldDisconnectReason, true
@@ -696,7 +699,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldDisconnectReasonOk() (*string
 
 // HasLogFieldDisconnectReason returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldDisconnectReason() bool {
-	if o != nil && !isNil(o.LogFieldDisconnectReason) {
+	if o != nil && !IsNil(o.LogFieldDisconnectReason) {
 		return true
 	}
 
@@ -710,7 +713,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldDisconnectReason(v string) {
 
 // GetLogFieldDeleteOldRDN returns the LogFieldDeleteOldRDN field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldDeleteOldRDN() string {
-	if o == nil || isNil(o.LogFieldDeleteOldRDN) {
+	if o == nil || IsNil(o.LogFieldDeleteOldRDN) {
 		var ret string
 		return ret
 	}
@@ -720,7 +723,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldDeleteOldRDN() string {
 // GetLogFieldDeleteOldRDNOk returns a tuple with the LogFieldDeleteOldRDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldDeleteOldRDNOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldDeleteOldRDN) {
+	if o == nil || IsNil(o.LogFieldDeleteOldRDN) {
 		return nil, false
 	}
 	return o.LogFieldDeleteOldRDN, true
@@ -728,7 +731,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldDeleteOldRDNOk() (*string, bo
 
 // HasLogFieldDeleteOldRDN returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldDeleteOldRDN() bool {
-	if o != nil && !isNil(o.LogFieldDeleteOldRDN) {
+	if o != nil && !IsNil(o.LogFieldDeleteOldRDN) {
 		return true
 	}
 
@@ -742,7 +745,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldDeleteOldRDN(v string) {
 
 // GetLogFieldAuthenticatedUserDN returns the LogFieldAuthenticatedUserDN field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldAuthenticatedUserDN() string {
-	if o == nil || isNil(o.LogFieldAuthenticatedUserDN) {
+	if o == nil || IsNil(o.LogFieldAuthenticatedUserDN) {
 		var ret string
 		return ret
 	}
@@ -752,7 +755,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldAuthenticatedUserDN() string 
 // GetLogFieldAuthenticatedUserDNOk returns a tuple with the LogFieldAuthenticatedUserDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldAuthenticatedUserDNOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldAuthenticatedUserDN) {
+	if o == nil || IsNil(o.LogFieldAuthenticatedUserDN) {
 		return nil, false
 	}
 	return o.LogFieldAuthenticatedUserDN, true
@@ -760,7 +763,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldAuthenticatedUserDNOk() (*str
 
 // HasLogFieldAuthenticatedUserDN returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldAuthenticatedUserDN() bool {
-	if o != nil && !isNil(o.LogFieldAuthenticatedUserDN) {
+	if o != nil && !IsNil(o.LogFieldAuthenticatedUserDN) {
 		return true
 	}
 
@@ -774,7 +777,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldAuthenticatedUserDN(v string)
 
 // GetLogFieldProcessingTime returns the LogFieldProcessingTime field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldProcessingTime() string {
-	if o == nil || isNil(o.LogFieldProcessingTime) {
+	if o == nil || IsNil(o.LogFieldProcessingTime) {
 		var ret string
 		return ret
 	}
@@ -784,7 +787,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldProcessingTime() string {
 // GetLogFieldProcessingTimeOk returns a tuple with the LogFieldProcessingTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldProcessingTimeOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldProcessingTime) {
+	if o == nil || IsNil(o.LogFieldProcessingTime) {
 		return nil, false
 	}
 	return o.LogFieldProcessingTime, true
@@ -792,7 +795,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldProcessingTimeOk() (*string, 
 
 // HasLogFieldProcessingTime returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldProcessingTime() bool {
-	if o != nil && !isNil(o.LogFieldProcessingTime) {
+	if o != nil && !IsNil(o.LogFieldProcessingTime) {
 		return true
 	}
 
@@ -806,7 +809,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldProcessingTime(v string) {
 
 // GetLogFieldRequestedAttributes returns the LogFieldRequestedAttributes field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldRequestedAttributes() string {
-	if o == nil || isNil(o.LogFieldRequestedAttributes) {
+	if o == nil || IsNil(o.LogFieldRequestedAttributes) {
 		var ret string
 		return ret
 	}
@@ -816,7 +819,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldRequestedAttributes() string 
 // GetLogFieldRequestedAttributesOk returns a tuple with the LogFieldRequestedAttributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldRequestedAttributesOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldRequestedAttributes) {
+	if o == nil || IsNil(o.LogFieldRequestedAttributes) {
 		return nil, false
 	}
 	return o.LogFieldRequestedAttributes, true
@@ -824,7 +827,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldRequestedAttributesOk() (*str
 
 // HasLogFieldRequestedAttributes returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldRequestedAttributes() bool {
-	if o != nil && !isNil(o.LogFieldRequestedAttributes) {
+	if o != nil && !IsNil(o.LogFieldRequestedAttributes) {
 		return true
 	}
 
@@ -838,7 +841,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldRequestedAttributes(v string)
 
 // GetLogFieldSASLMechanismName returns the LogFieldSASLMechanismName field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldSASLMechanismName() string {
-	if o == nil || isNil(o.LogFieldSASLMechanismName) {
+	if o == nil || IsNil(o.LogFieldSASLMechanismName) {
 		var ret string
 		return ret
 	}
@@ -848,7 +851,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldSASLMechanismName() string {
 // GetLogFieldSASLMechanismNameOk returns a tuple with the LogFieldSASLMechanismName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldSASLMechanismNameOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldSASLMechanismName) {
+	if o == nil || IsNil(o.LogFieldSASLMechanismName) {
 		return nil, false
 	}
 	return o.LogFieldSASLMechanismName, true
@@ -856,7 +859,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldSASLMechanismNameOk() (*strin
 
 // HasLogFieldSASLMechanismName returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldSASLMechanismName() bool {
-	if o != nil && !isNil(o.LogFieldSASLMechanismName) {
+	if o != nil && !IsNil(o.LogFieldSASLMechanismName) {
 		return true
 	}
 
@@ -870,7 +873,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldSASLMechanismName(v string) {
 
 // GetLogFieldNewRDN returns the LogFieldNewRDN field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldNewRDN() string {
-	if o == nil || isNil(o.LogFieldNewRDN) {
+	if o == nil || IsNil(o.LogFieldNewRDN) {
 		var ret string
 		return ret
 	}
@@ -880,7 +883,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldNewRDN() string {
 // GetLogFieldNewRDNOk returns a tuple with the LogFieldNewRDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldNewRDNOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldNewRDN) {
+	if o == nil || IsNil(o.LogFieldNewRDN) {
 		return nil, false
 	}
 	return o.LogFieldNewRDN, true
@@ -888,7 +891,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldNewRDNOk() (*string, bool) {
 
 // HasLogFieldNewRDN returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldNewRDN() bool {
-	if o != nil && !isNil(o.LogFieldNewRDN) {
+	if o != nil && !IsNil(o.LogFieldNewRDN) {
 		return true
 	}
 
@@ -902,7 +905,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldNewRDN(v string) {
 
 // GetLogFieldBaseDN returns the LogFieldBaseDN field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldBaseDN() string {
-	if o == nil || isNil(o.LogFieldBaseDN) {
+	if o == nil || IsNil(o.LogFieldBaseDN) {
 		var ret string
 		return ret
 	}
@@ -912,7 +915,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldBaseDN() string {
 // GetLogFieldBaseDNOk returns a tuple with the LogFieldBaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldBaseDNOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldBaseDN) {
+	if o == nil || IsNil(o.LogFieldBaseDN) {
 		return nil, false
 	}
 	return o.LogFieldBaseDN, true
@@ -920,7 +923,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldBaseDNOk() (*string, bool) {
 
 // HasLogFieldBaseDN returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldBaseDN() bool {
-	if o != nil && !isNil(o.LogFieldBaseDN) {
+	if o != nil && !IsNil(o.LogFieldBaseDN) {
 		return true
 	}
 
@@ -934,7 +937,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldBaseDN(v string) {
 
 // GetLogFieldBindDN returns the LogFieldBindDN field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldBindDN() string {
-	if o == nil || isNil(o.LogFieldBindDN) {
+	if o == nil || IsNil(o.LogFieldBindDN) {
 		var ret string
 		return ret
 	}
@@ -944,7 +947,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldBindDN() string {
 // GetLogFieldBindDNOk returns a tuple with the LogFieldBindDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldBindDNOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldBindDN) {
+	if o == nil || IsNil(o.LogFieldBindDN) {
 		return nil, false
 	}
 	return o.LogFieldBindDN, true
@@ -952,7 +955,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldBindDNOk() (*string, bool) {
 
 // HasLogFieldBindDN returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldBindDN() bool {
-	if o != nil && !isNil(o.LogFieldBindDN) {
+	if o != nil && !IsNil(o.LogFieldBindDN) {
 		return true
 	}
 
@@ -966,7 +969,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldBindDN(v string) {
 
 // GetLogFieldMatchedDN returns the LogFieldMatchedDN field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldMatchedDN() string {
-	if o == nil || isNil(o.LogFieldMatchedDN) {
+	if o == nil || IsNil(o.LogFieldMatchedDN) {
 		var ret string
 		return ret
 	}
@@ -976,7 +979,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldMatchedDN() string {
 // GetLogFieldMatchedDNOk returns a tuple with the LogFieldMatchedDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldMatchedDNOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldMatchedDN) {
+	if o == nil || IsNil(o.LogFieldMatchedDN) {
 		return nil, false
 	}
 	return o.LogFieldMatchedDN, true
@@ -984,7 +987,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldMatchedDNOk() (*string, bool)
 
 // HasLogFieldMatchedDN returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldMatchedDN() bool {
-	if o != nil && !isNil(o.LogFieldMatchedDN) {
+	if o != nil && !IsNil(o.LogFieldMatchedDN) {
 		return true
 	}
 
@@ -998,7 +1001,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldMatchedDN(v string) {
 
 // GetLogFieldRequesterIPAddress returns the LogFieldRequesterIPAddress field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldRequesterIPAddress() string {
-	if o == nil || isNil(o.LogFieldRequesterIPAddress) {
+	if o == nil || IsNil(o.LogFieldRequesterIPAddress) {
 		var ret string
 		return ret
 	}
@@ -1008,7 +1011,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldRequesterIPAddress() string {
 // GetLogFieldRequesterIPAddressOk returns a tuple with the LogFieldRequesterIPAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldRequesterIPAddressOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldRequesterIPAddress) {
+	if o == nil || IsNil(o.LogFieldRequesterIPAddress) {
 		return nil, false
 	}
 	return o.LogFieldRequesterIPAddress, true
@@ -1016,7 +1019,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldRequesterIPAddressOk() (*stri
 
 // HasLogFieldRequesterIPAddress returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldRequesterIPAddress() bool {
-	if o != nil && !isNil(o.LogFieldRequesterIPAddress) {
+	if o != nil && !IsNil(o.LogFieldRequesterIPAddress) {
 		return true
 	}
 
@@ -1030,7 +1033,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldRequesterIPAddress(v string) 
 
 // GetLogFieldAuthenticationType returns the LogFieldAuthenticationType field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldAuthenticationType() string {
-	if o == nil || isNil(o.LogFieldAuthenticationType) {
+	if o == nil || IsNil(o.LogFieldAuthenticationType) {
 		var ret string
 		return ret
 	}
@@ -1040,7 +1043,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldAuthenticationType() string {
 // GetLogFieldAuthenticationTypeOk returns a tuple with the LogFieldAuthenticationType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldAuthenticationTypeOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldAuthenticationType) {
+	if o == nil || IsNil(o.LogFieldAuthenticationType) {
 		return nil, false
 	}
 	return o.LogFieldAuthenticationType, true
@@ -1048,7 +1051,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldAuthenticationTypeOk() (*stri
 
 // HasLogFieldAuthenticationType returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldAuthenticationType() bool {
-	if o != nil && !isNil(o.LogFieldAuthenticationType) {
+	if o != nil && !IsNil(o.LogFieldAuthenticationType) {
 		return true
 	}
 
@@ -1062,7 +1065,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldAuthenticationType(v string) 
 
 // GetLogFieldNewSuperiorDN returns the LogFieldNewSuperiorDN field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldNewSuperiorDN() string {
-	if o == nil || isNil(o.LogFieldNewSuperiorDN) {
+	if o == nil || IsNil(o.LogFieldNewSuperiorDN) {
 		var ret string
 		return ret
 	}
@@ -1072,7 +1075,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldNewSuperiorDN() string {
 // GetLogFieldNewSuperiorDNOk returns a tuple with the LogFieldNewSuperiorDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldNewSuperiorDNOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldNewSuperiorDN) {
+	if o == nil || IsNil(o.LogFieldNewSuperiorDN) {
 		return nil, false
 	}
 	return o.LogFieldNewSuperiorDN, true
@@ -1080,7 +1083,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldNewSuperiorDNOk() (*string, b
 
 // HasLogFieldNewSuperiorDN returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldNewSuperiorDN() bool {
-	if o != nil && !isNil(o.LogFieldNewSuperiorDN) {
+	if o != nil && !IsNil(o.LogFieldNewSuperiorDN) {
 		return true
 	}
 
@@ -1094,7 +1097,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldNewSuperiorDN(v string) {
 
 // GetLogFieldFilter returns the LogFieldFilter field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldFilter() string {
-	if o == nil || isNil(o.LogFieldFilter) {
+	if o == nil || IsNil(o.LogFieldFilter) {
 		var ret string
 		return ret
 	}
@@ -1104,7 +1107,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldFilter() string {
 // GetLogFieldFilterOk returns a tuple with the LogFieldFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldFilterOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldFilter) {
+	if o == nil || IsNil(o.LogFieldFilter) {
 		return nil, false
 	}
 	return o.LogFieldFilter, true
@@ -1112,7 +1115,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldFilterOk() (*string, bool) {
 
 // HasLogFieldFilter returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldFilter() bool {
-	if o != nil && !isNil(o.LogFieldFilter) {
+	if o != nil && !IsNil(o.LogFieldFilter) {
 		return true
 	}
 
@@ -1126,7 +1129,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldFilter(v string) {
 
 // GetLogFieldAlternateAuthorizationDN returns the LogFieldAlternateAuthorizationDN field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldAlternateAuthorizationDN() string {
-	if o == nil || isNil(o.LogFieldAlternateAuthorizationDN) {
+	if o == nil || IsNil(o.LogFieldAlternateAuthorizationDN) {
 		var ret string
 		return ret
 	}
@@ -1136,7 +1139,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldAlternateAuthorizationDN() st
 // GetLogFieldAlternateAuthorizationDNOk returns a tuple with the LogFieldAlternateAuthorizationDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldAlternateAuthorizationDNOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldAlternateAuthorizationDN) {
+	if o == nil || IsNil(o.LogFieldAlternateAuthorizationDN) {
 		return nil, false
 	}
 	return o.LogFieldAlternateAuthorizationDN, true
@@ -1144,7 +1147,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldAlternateAuthorizationDNOk() 
 
 // HasLogFieldAlternateAuthorizationDN returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldAlternateAuthorizationDN() bool {
-	if o != nil && !isNil(o.LogFieldAlternateAuthorizationDN) {
+	if o != nil && !IsNil(o.LogFieldAlternateAuthorizationDN) {
 		return true
 	}
 
@@ -1158,7 +1161,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldAlternateAuthorizationDN(v st
 
 // GetLogFieldEntryDN returns the LogFieldEntryDN field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldEntryDN() string {
-	if o == nil || isNil(o.LogFieldEntryDN) {
+	if o == nil || IsNil(o.LogFieldEntryDN) {
 		var ret string
 		return ret
 	}
@@ -1168,7 +1171,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldEntryDN() string {
 // GetLogFieldEntryDNOk returns a tuple with the LogFieldEntryDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldEntryDNOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldEntryDN) {
+	if o == nil || IsNil(o.LogFieldEntryDN) {
 		return nil, false
 	}
 	return o.LogFieldEntryDN, true
@@ -1176,7 +1179,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldEntryDNOk() (*string, bool) {
 
 // HasLogFieldEntryDN returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldEntryDN() bool {
-	if o != nil && !isNil(o.LogFieldEntryDN) {
+	if o != nil && !IsNil(o.LogFieldEntryDN) {
 		return true
 	}
 
@@ -1190,7 +1193,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldEntryDN(v string) {
 
 // GetLogFieldEntriesReturned returns the LogFieldEntriesReturned field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldEntriesReturned() string {
-	if o == nil || isNil(o.LogFieldEntriesReturned) {
+	if o == nil || IsNil(o.LogFieldEntriesReturned) {
 		var ret string
 		return ret
 	}
@@ -1200,7 +1203,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldEntriesReturned() string {
 // GetLogFieldEntriesReturnedOk returns a tuple with the LogFieldEntriesReturned field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldEntriesReturnedOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldEntriesReturned) {
+	if o == nil || IsNil(o.LogFieldEntriesReturned) {
 		return nil, false
 	}
 	return o.LogFieldEntriesReturned, true
@@ -1208,7 +1211,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldEntriesReturnedOk() (*string,
 
 // HasLogFieldEntriesReturned returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldEntriesReturned() bool {
-	if o != nil && !isNil(o.LogFieldEntriesReturned) {
+	if o != nil && !IsNil(o.LogFieldEntriesReturned) {
 		return true
 	}
 
@@ -1222,7 +1225,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldEntriesReturned(v string) {
 
 // GetLogFieldAuthenticationFailureID returns the LogFieldAuthenticationFailureID field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldAuthenticationFailureID() string {
-	if o == nil || isNil(o.LogFieldAuthenticationFailureID) {
+	if o == nil || IsNil(o.LogFieldAuthenticationFailureID) {
 		var ret string
 		return ret
 	}
@@ -1232,7 +1235,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldAuthenticationFailureID() str
 // GetLogFieldAuthenticationFailureIDOk returns a tuple with the LogFieldAuthenticationFailureID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldAuthenticationFailureIDOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldAuthenticationFailureID) {
+	if o == nil || IsNil(o.LogFieldAuthenticationFailureID) {
 		return nil, false
 	}
 	return o.LogFieldAuthenticationFailureID, true
@@ -1240,7 +1243,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldAuthenticationFailureIDOk() (
 
 // HasLogFieldAuthenticationFailureID returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldAuthenticationFailureID() bool {
-	if o != nil && !isNil(o.LogFieldAuthenticationFailureID) {
+	if o != nil && !IsNil(o.LogFieldAuthenticationFailureID) {
 		return true
 	}
 
@@ -1254,7 +1257,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldAuthenticationFailureID(v str
 
 // GetLogFieldRequestOID returns the LogFieldRequestOID field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldRequestOID() string {
-	if o == nil || isNil(o.LogFieldRequestOID) {
+	if o == nil || IsNil(o.LogFieldRequestOID) {
 		var ret string
 		return ret
 	}
@@ -1264,7 +1267,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldRequestOID() string {
 // GetLogFieldRequestOIDOk returns a tuple with the LogFieldRequestOID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldRequestOIDOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldRequestOID) {
+	if o == nil || IsNil(o.LogFieldRequestOID) {
 		return nil, false
 	}
 	return o.LogFieldRequestOID, true
@@ -1272,7 +1275,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldRequestOIDOk() (*string, bool
 
 // HasLogFieldRequestOID returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldRequestOID() bool {
-	if o != nil && !isNil(o.LogFieldRequestOID) {
+	if o != nil && !IsNil(o.LogFieldRequestOID) {
 		return true
 	}
 
@@ -1286,7 +1289,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldRequestOID(v string) {
 
 // GetLogFieldResponseOID returns the LogFieldResponseOID field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldResponseOID() string {
-	if o == nil || isNil(o.LogFieldResponseOID) {
+	if o == nil || IsNil(o.LogFieldResponseOID) {
 		var ret string
 		return ret
 	}
@@ -1296,7 +1299,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldResponseOID() string {
 // GetLogFieldResponseOIDOk returns a tuple with the LogFieldResponseOID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldResponseOIDOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldResponseOID) {
+	if o == nil || IsNil(o.LogFieldResponseOID) {
 		return nil, false
 	}
 	return o.LogFieldResponseOID, true
@@ -1304,7 +1307,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldResponseOIDOk() (*string, boo
 
 // HasLogFieldResponseOID returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldResponseOID() bool {
-	if o != nil && !isNil(o.LogFieldResponseOID) {
+	if o != nil && !IsNil(o.LogFieldResponseOID) {
 		return true
 	}
 
@@ -1318,7 +1321,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldResponseOID(v string) {
 
 // GetLogFieldTargetProtocol returns the LogFieldTargetProtocol field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldTargetProtocol() string {
-	if o == nil || isNil(o.LogFieldTargetProtocol) {
+	if o == nil || IsNil(o.LogFieldTargetProtocol) {
 		var ret string
 		return ret
 	}
@@ -1328,7 +1331,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldTargetProtocol() string {
 // GetLogFieldTargetProtocolOk returns a tuple with the LogFieldTargetProtocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldTargetProtocolOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldTargetProtocol) {
+	if o == nil || IsNil(o.LogFieldTargetProtocol) {
 		return nil, false
 	}
 	return o.LogFieldTargetProtocol, true
@@ -1336,7 +1339,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldTargetProtocolOk() (*string, 
 
 // HasLogFieldTargetProtocol returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldTargetProtocol() bool {
-	if o != nil && !isNil(o.LogFieldTargetProtocol) {
+	if o != nil && !IsNil(o.LogFieldTargetProtocol) {
 		return true
 	}
 
@@ -1350,7 +1353,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldTargetProtocol(v string) {
 
 // GetLogFieldTargetPort returns the LogFieldTargetPort field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldTargetPort() string {
-	if o == nil || isNil(o.LogFieldTargetPort) {
+	if o == nil || IsNil(o.LogFieldTargetPort) {
 		var ret string
 		return ret
 	}
@@ -1360,7 +1363,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldTargetPort() string {
 // GetLogFieldTargetPortOk returns a tuple with the LogFieldTargetPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldTargetPortOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldTargetPort) {
+	if o == nil || IsNil(o.LogFieldTargetPort) {
 		return nil, false
 	}
 	return o.LogFieldTargetPort, true
@@ -1368,7 +1371,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldTargetPortOk() (*string, bool
 
 // HasLogFieldTargetPort returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldTargetPort() bool {
-	if o != nil && !isNil(o.LogFieldTargetPort) {
+	if o != nil && !IsNil(o.LogFieldTargetPort) {
 		return true
 	}
 
@@ -1382,7 +1385,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldTargetPort(v string) {
 
 // GetLogFieldTargetAddress returns the LogFieldTargetAddress field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldTargetAddress() string {
-	if o == nil || isNil(o.LogFieldTargetAddress) {
+	if o == nil || IsNil(o.LogFieldTargetAddress) {
 		var ret string
 		return ret
 	}
@@ -1392,7 +1395,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldTargetAddress() string {
 // GetLogFieldTargetAddressOk returns a tuple with the LogFieldTargetAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldTargetAddressOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldTargetAddress) {
+	if o == nil || IsNil(o.LogFieldTargetAddress) {
 		return nil, false
 	}
 	return o.LogFieldTargetAddress, true
@@ -1400,7 +1403,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldTargetAddressOk() (*string, b
 
 // HasLogFieldTargetAddress returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldTargetAddress() bool {
-	if o != nil && !isNil(o.LogFieldTargetAddress) {
+	if o != nil && !IsNil(o.LogFieldTargetAddress) {
 		return true
 	}
 
@@ -1414,7 +1417,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldTargetAddress(v string) {
 
 // GetLogFieldTargetAttribute returns the LogFieldTargetAttribute field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldTargetAttribute() string {
-	if o == nil || isNil(o.LogFieldTargetAttribute) {
+	if o == nil || IsNil(o.LogFieldTargetAttribute) {
 		var ret string
 		return ret
 	}
@@ -1424,7 +1427,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldTargetAttribute() string {
 // GetLogFieldTargetAttributeOk returns a tuple with the LogFieldTargetAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldTargetAttributeOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldTargetAttribute) {
+	if o == nil || IsNil(o.LogFieldTargetAttribute) {
 		return nil, false
 	}
 	return o.LogFieldTargetAttribute, true
@@ -1432,7 +1435,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldTargetAttributeOk() (*string,
 
 // HasLogFieldTargetAttribute returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldTargetAttribute() bool {
-	if o != nil && !isNil(o.LogFieldTargetAttribute) {
+	if o != nil && !IsNil(o.LogFieldTargetAttribute) {
 		return true
 	}
 
@@ -1446,7 +1449,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldTargetAttribute(v string) {
 
 // GetLogFieldTargetHost returns the LogFieldTargetHost field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldTargetHost() string {
-	if o == nil || isNil(o.LogFieldTargetHost) {
+	if o == nil || IsNil(o.LogFieldTargetHost) {
 		var ret string
 		return ret
 	}
@@ -1456,7 +1459,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldTargetHost() string {
 // GetLogFieldTargetHostOk returns a tuple with the LogFieldTargetHost field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldTargetHostOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldTargetHost) {
+	if o == nil || IsNil(o.LogFieldTargetHost) {
 		return nil, false
 	}
 	return o.LogFieldTargetHost, true
@@ -1464,7 +1467,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldTargetHostOk() (*string, bool
 
 // HasLogFieldTargetHost returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldTargetHost() bool {
-	if o != nil && !isNil(o.LogFieldTargetHost) {
+	if o != nil && !IsNil(o.LogFieldTargetHost) {
 		return true
 	}
 
@@ -1478,7 +1481,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldTargetHost(v string) {
 
 // GetLogFieldProtocolVersion returns the LogFieldProtocolVersion field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldProtocolVersion() string {
-	if o == nil || isNil(o.LogFieldProtocolVersion) {
+	if o == nil || IsNil(o.LogFieldProtocolVersion) {
 		var ret string
 		return ret
 	}
@@ -1488,7 +1491,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldProtocolVersion() string {
 // GetLogFieldProtocolVersionOk returns a tuple with the LogFieldProtocolVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldProtocolVersionOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldProtocolVersion) {
+	if o == nil || IsNil(o.LogFieldProtocolVersion) {
 		return nil, false
 	}
 	return o.LogFieldProtocolVersion, true
@@ -1496,7 +1499,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldProtocolVersionOk() (*string,
 
 // HasLogFieldProtocolVersion returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldProtocolVersion() bool {
-	if o != nil && !isNil(o.LogFieldProtocolVersion) {
+	if o != nil && !IsNil(o.LogFieldProtocolVersion) {
 		return true
 	}
 
@@ -1510,7 +1513,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldProtocolVersion(v string) {
 
 // GetLogFieldProtocolName returns the LogFieldProtocolName field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldProtocolName() string {
-	if o == nil || isNil(o.LogFieldProtocolName) {
+	if o == nil || IsNil(o.LogFieldProtocolName) {
 		var ret string
 		return ret
 	}
@@ -1520,7 +1523,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldProtocolName() string {
 // GetLogFieldProtocolNameOk returns a tuple with the LogFieldProtocolName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldProtocolNameOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldProtocolName) {
+	if o == nil || IsNil(o.LogFieldProtocolName) {
 		return nil, false
 	}
 	return o.LogFieldProtocolName, true
@@ -1528,7 +1531,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldProtocolNameOk() (*string, bo
 
 // HasLogFieldProtocolName returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldProtocolName() bool {
-	if o != nil && !isNil(o.LogFieldProtocolName) {
+	if o != nil && !IsNil(o.LogFieldProtocolName) {
 		return true
 	}
 
@@ -1542,7 +1545,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldProtocolName(v string) {
 
 // GetLogFieldAuthenticationFailureReason returns the LogFieldAuthenticationFailureReason field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldAuthenticationFailureReason() string {
-	if o == nil || isNil(o.LogFieldAuthenticationFailureReason) {
+	if o == nil || IsNil(o.LogFieldAuthenticationFailureReason) {
 		var ret string
 		return ret
 	}
@@ -1552,7 +1555,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldAuthenticationFailureReason()
 // GetLogFieldAuthenticationFailureReasonOk returns a tuple with the LogFieldAuthenticationFailureReason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldAuthenticationFailureReasonOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldAuthenticationFailureReason) {
+	if o == nil || IsNil(o.LogFieldAuthenticationFailureReason) {
 		return nil, false
 	}
 	return o.LogFieldAuthenticationFailureReason, true
@@ -1560,7 +1563,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldAuthenticationFailureReasonOk
 
 // HasLogFieldAuthenticationFailureReason returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldAuthenticationFailureReason() bool {
-	if o != nil && !isNil(o.LogFieldAuthenticationFailureReason) {
+	if o != nil && !IsNil(o.LogFieldAuthenticationFailureReason) {
 		return true
 	}
 
@@ -1574,7 +1577,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldAuthenticationFailureReason(v
 
 // GetLogFieldAdditionalInformation returns the LogFieldAdditionalInformation field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldAdditionalInformation() string {
-	if o == nil || isNil(o.LogFieldAdditionalInformation) {
+	if o == nil || IsNil(o.LogFieldAdditionalInformation) {
 		var ret string
 		return ret
 	}
@@ -1584,7 +1587,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldAdditionalInformation() strin
 // GetLogFieldAdditionalInformationOk returns a tuple with the LogFieldAdditionalInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldAdditionalInformationOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldAdditionalInformation) {
+	if o == nil || IsNil(o.LogFieldAdditionalInformation) {
 		return nil, false
 	}
 	return o.LogFieldAdditionalInformation, true
@@ -1592,7 +1595,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldAdditionalInformationOk() (*s
 
 // HasLogFieldAdditionalInformation returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldAdditionalInformation() bool {
-	if o != nil && !isNil(o.LogFieldAdditionalInformation) {
+	if o != nil && !IsNil(o.LogFieldAdditionalInformation) {
 		return true
 	}
 
@@ -1606,7 +1609,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldAdditionalInformation(v strin
 
 // GetLogFieldUnindexed returns the LogFieldUnindexed field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldUnindexed() string {
-	if o == nil || isNil(o.LogFieldUnindexed) {
+	if o == nil || IsNil(o.LogFieldUnindexed) {
 		var ret string
 		return ret
 	}
@@ -1616,7 +1619,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldUnindexed() string {
 // GetLogFieldUnindexedOk returns a tuple with the LogFieldUnindexed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldUnindexedOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldUnindexed) {
+	if o == nil || IsNil(o.LogFieldUnindexed) {
 		return nil, false
 	}
 	return o.LogFieldUnindexed, true
@@ -1624,7 +1627,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldUnindexedOk() (*string, bool)
 
 // HasLogFieldUnindexed returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldUnindexed() bool {
-	if o != nil && !isNil(o.LogFieldUnindexed) {
+	if o != nil && !IsNil(o.LogFieldUnindexed) {
 		return true
 	}
 
@@ -1638,7 +1641,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldUnindexed(v string) {
 
 // GetLogFieldScope returns the LogFieldScope field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldScope() string {
-	if o == nil || isNil(o.LogFieldScope) {
+	if o == nil || IsNil(o.LogFieldScope) {
 		var ret string
 		return ret
 	}
@@ -1648,7 +1651,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldScope() string {
 // GetLogFieldScopeOk returns a tuple with the LogFieldScope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldScopeOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldScope) {
+	if o == nil || IsNil(o.LogFieldScope) {
 		return nil, false
 	}
 	return o.LogFieldScope, true
@@ -1656,7 +1659,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldScopeOk() (*string, bool) {
 
 // HasLogFieldScope returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldScope() bool {
-	if o != nil && !isNil(o.LogFieldScope) {
+	if o != nil && !IsNil(o.LogFieldScope) {
 		return true
 	}
 
@@ -1670,7 +1673,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldScope(v string) {
 
 // GetLogFieldReferralUrls returns the LogFieldReferralUrls field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldReferralUrls() string {
-	if o == nil || isNil(o.LogFieldReferralUrls) {
+	if o == nil || IsNil(o.LogFieldReferralUrls) {
 		var ret string
 		return ret
 	}
@@ -1680,7 +1683,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldReferralUrls() string {
 // GetLogFieldReferralUrlsOk returns a tuple with the LogFieldReferralUrls field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldReferralUrlsOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldReferralUrls) {
+	if o == nil || IsNil(o.LogFieldReferralUrls) {
 		return nil, false
 	}
 	return o.LogFieldReferralUrls, true
@@ -1688,7 +1691,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldReferralUrlsOk() (*string, bo
 
 // HasLogFieldReferralUrls returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldReferralUrls() bool {
-	if o != nil && !isNil(o.LogFieldReferralUrls) {
+	if o != nil && !IsNil(o.LogFieldReferralUrls) {
 		return true
 	}
 
@@ -1702,7 +1705,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldReferralUrls(v string) {
 
 // GetLogFieldSourceAddress returns the LogFieldSourceAddress field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldSourceAddress() string {
-	if o == nil || isNil(o.LogFieldSourceAddress) {
+	if o == nil || IsNil(o.LogFieldSourceAddress) {
 		var ret string
 		return ret
 	}
@@ -1712,7 +1715,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldSourceAddress() string {
 // GetLogFieldSourceAddressOk returns a tuple with the LogFieldSourceAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldSourceAddressOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldSourceAddress) {
+	if o == nil || IsNil(o.LogFieldSourceAddress) {
 		return nil, false
 	}
 	return o.LogFieldSourceAddress, true
@@ -1720,7 +1723,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldSourceAddressOk() (*string, b
 
 // HasLogFieldSourceAddress returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldSourceAddress() bool {
-	if o != nil && !isNil(o.LogFieldSourceAddress) {
+	if o != nil && !IsNil(o.LogFieldSourceAddress) {
 		return true
 	}
 
@@ -1734,7 +1737,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldSourceAddress(v string) {
 
 // GetLogFieldMessageIDToAbandon returns the LogFieldMessageIDToAbandon field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldMessageIDToAbandon() string {
-	if o == nil || isNil(o.LogFieldMessageIDToAbandon) {
+	if o == nil || IsNil(o.LogFieldMessageIDToAbandon) {
 		var ret string
 		return ret
 	}
@@ -1744,7 +1747,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldMessageIDToAbandon() string {
 // GetLogFieldMessageIDToAbandonOk returns a tuple with the LogFieldMessageIDToAbandon field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldMessageIDToAbandonOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldMessageIDToAbandon) {
+	if o == nil || IsNil(o.LogFieldMessageIDToAbandon) {
 		return nil, false
 	}
 	return o.LogFieldMessageIDToAbandon, true
@@ -1752,7 +1755,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldMessageIDToAbandonOk() (*stri
 
 // HasLogFieldMessageIDToAbandon returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldMessageIDToAbandon() bool {
-	if o != nil && !isNil(o.LogFieldMessageIDToAbandon) {
+	if o != nil && !IsNil(o.LogFieldMessageIDToAbandon) {
 		return true
 	}
 
@@ -1766,7 +1769,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldMessageIDToAbandon(v string) 
 
 // GetLogFieldResponseControls returns the LogFieldResponseControls field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldResponseControls() string {
-	if o == nil || isNil(o.LogFieldResponseControls) {
+	if o == nil || IsNil(o.LogFieldResponseControls) {
 		var ret string
 		return ret
 	}
@@ -1776,7 +1779,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldResponseControls() string {
 // GetLogFieldResponseControlsOk returns a tuple with the LogFieldResponseControls field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldResponseControlsOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldResponseControls) {
+	if o == nil || IsNil(o.LogFieldResponseControls) {
 		return nil, false
 	}
 	return o.LogFieldResponseControls, true
@@ -1784,7 +1787,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldResponseControlsOk() (*string
 
 // HasLogFieldResponseControls returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldResponseControls() bool {
-	if o != nil && !isNil(o.LogFieldResponseControls) {
+	if o != nil && !IsNil(o.LogFieldResponseControls) {
 		return true
 	}
 
@@ -1798,7 +1801,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldResponseControls(v string) {
 
 // GetLogFieldRequestControls returns the LogFieldRequestControls field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldRequestControls() string {
-	if o == nil || isNil(o.LogFieldRequestControls) {
+	if o == nil || IsNil(o.LogFieldRequestControls) {
 		var ret string
 		return ret
 	}
@@ -1808,7 +1811,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldRequestControls() string {
 // GetLogFieldRequestControlsOk returns a tuple with the LogFieldRequestControls field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldRequestControlsOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldRequestControls) {
+	if o == nil || IsNil(o.LogFieldRequestControls) {
 		return nil, false
 	}
 	return o.LogFieldRequestControls, true
@@ -1816,7 +1819,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldRequestControlsOk() (*string,
 
 // HasLogFieldRequestControls returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldRequestControls() bool {
-	if o != nil && !isNil(o.LogFieldRequestControls) {
+	if o != nil && !IsNil(o.LogFieldRequestControls) {
 		return true
 	}
 
@@ -1830,7 +1833,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldRequestControls(v string) {
 
 // GetLogFieldIntermediateClientResult returns the LogFieldIntermediateClientResult field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldIntermediateClientResult() string {
-	if o == nil || isNil(o.LogFieldIntermediateClientResult) {
+	if o == nil || IsNil(o.LogFieldIntermediateClientResult) {
 		var ret string
 		return ret
 	}
@@ -1840,7 +1843,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldIntermediateClientResult() st
 // GetLogFieldIntermediateClientResultOk returns a tuple with the LogFieldIntermediateClientResult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldIntermediateClientResultOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldIntermediateClientResult) {
+	if o == nil || IsNil(o.LogFieldIntermediateClientResult) {
 		return nil, false
 	}
 	return o.LogFieldIntermediateClientResult, true
@@ -1848,7 +1851,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldIntermediateClientResultOk() 
 
 // HasLogFieldIntermediateClientResult returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldIntermediateClientResult() bool {
-	if o != nil && !isNil(o.LogFieldIntermediateClientResult) {
+	if o != nil && !IsNil(o.LogFieldIntermediateClientResult) {
 		return true
 	}
 
@@ -1862,7 +1865,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldIntermediateClientResult(v st
 
 // GetLogFieldIntermediateClientRequest returns the LogFieldIntermediateClientRequest field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldIntermediateClientRequest() string {
-	if o == nil || isNil(o.LogFieldIntermediateClientRequest) {
+	if o == nil || IsNil(o.LogFieldIntermediateClientRequest) {
 		var ret string
 		return ret
 	}
@@ -1872,7 +1875,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldIntermediateClientRequest() s
 // GetLogFieldIntermediateClientRequestOk returns a tuple with the LogFieldIntermediateClientRequest field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldIntermediateClientRequestOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldIntermediateClientRequest) {
+	if o == nil || IsNil(o.LogFieldIntermediateClientRequest) {
 		return nil, false
 	}
 	return o.LogFieldIntermediateClientRequest, true
@@ -1880,7 +1883,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldIntermediateClientRequestOk()
 
 // HasLogFieldIntermediateClientRequest returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldIntermediateClientRequest() bool {
-	if o != nil && !isNil(o.LogFieldIntermediateClientRequest) {
+	if o != nil && !IsNil(o.LogFieldIntermediateClientRequest) {
 		return true
 	}
 
@@ -1894,7 +1897,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldIntermediateClientRequest(v s
 
 // GetLogFieldReplicationChangeID returns the LogFieldReplicationChangeID field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetLogFieldReplicationChangeID() string {
-	if o == nil || isNil(o.LogFieldReplicationChangeID) {
+	if o == nil || IsNil(o.LogFieldReplicationChangeID) {
 		var ret string
 		return ret
 	}
@@ -1904,7 +1907,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldReplicationChangeID() string 
 // GetLogFieldReplicationChangeIDOk returns a tuple with the LogFieldReplicationChangeID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetLogFieldReplicationChangeIDOk() (*string, bool) {
-	if o == nil || isNil(o.LogFieldReplicationChangeID) {
+	if o == nil || IsNil(o.LogFieldReplicationChangeID) {
 		return nil, false
 	}
 	return o.LogFieldReplicationChangeID, true
@@ -1912,7 +1915,7 @@ func (o *AccessLogFieldMappingResponse) GetLogFieldReplicationChangeIDOk() (*str
 
 // HasLogFieldReplicationChangeID returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasLogFieldReplicationChangeID() bool {
-	if o != nil && !isNil(o.LogFieldReplicationChangeID) {
+	if o != nil && !IsNil(o.LogFieldReplicationChangeID) {
 		return true
 	}
 
@@ -1926,7 +1929,7 @@ func (o *AccessLogFieldMappingResponse) SetLogFieldReplicationChangeID(v string)
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AccessLogFieldMappingResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -1936,7 +1939,7 @@ func (o *AccessLogFieldMappingResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessLogFieldMappingResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -1944,7 +1947,7 @@ func (o *AccessLogFieldMappingResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AccessLogFieldMappingResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -1957,179 +1960,183 @@ func (o *AccessLogFieldMappingResponse) SetDescription(v string) {
 }
 
 func (o AccessLogFieldMappingResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.LogFieldTimestamp) {
-		toSerialize["logFieldTimestamp"] = o.LogFieldTimestamp
-	}
-	if !isNil(o.LogFieldConnectionID) {
-		toSerialize["logFieldConnectionID"] = o.LogFieldConnectionID
-	}
-	if !isNil(o.LogFieldStartupid) {
-		toSerialize["logFieldStartupid"] = o.LogFieldStartupid
-	}
-	if !isNil(o.LogFieldProductName) {
-		toSerialize["logFieldProductName"] = o.LogFieldProductName
-	}
-	if !isNil(o.LogFieldInstanceName) {
-		toSerialize["logFieldInstanceName"] = o.LogFieldInstanceName
-	}
-	if !isNil(o.LogFieldOperationID) {
-		toSerialize["logFieldOperationID"] = o.LogFieldOperationID
-	}
-	if !isNil(o.LogFieldMessageType) {
-		toSerialize["logFieldMessageType"] = o.LogFieldMessageType
-	}
-	if !isNil(o.LogFieldOperationType) {
-		toSerialize["logFieldOperationType"] = o.LogFieldOperationType
-	}
-	if !isNil(o.LogFieldMessageID) {
-		toSerialize["logFieldMessageID"] = o.LogFieldMessageID
-	}
-	if !isNil(o.LogFieldResultCode) {
-		toSerialize["logFieldResultCode"] = o.LogFieldResultCode
-	}
-	if !isNil(o.LogFieldMessage) {
-		toSerialize["logFieldMessage"] = o.LogFieldMessage
-	}
-	if !isNil(o.LogFieldOrigin) {
-		toSerialize["logFieldOrigin"] = o.LogFieldOrigin
-	}
-	if !isNil(o.LogFieldRequesterDN) {
-		toSerialize["logFieldRequesterDN"] = o.LogFieldRequesterDN
-	}
-	if !isNil(o.LogFieldDisconnectReason) {
-		toSerialize["logFieldDisconnectReason"] = o.LogFieldDisconnectReason
-	}
-	if !isNil(o.LogFieldDeleteOldRDN) {
-		toSerialize["logFieldDeleteOldRDN"] = o.LogFieldDeleteOldRDN
-	}
-	if !isNil(o.LogFieldAuthenticatedUserDN) {
-		toSerialize["logFieldAuthenticatedUserDN"] = o.LogFieldAuthenticatedUserDN
-	}
-	if !isNil(o.LogFieldProcessingTime) {
-		toSerialize["logFieldProcessingTime"] = o.LogFieldProcessingTime
-	}
-	if !isNil(o.LogFieldRequestedAttributes) {
-		toSerialize["logFieldRequestedAttributes"] = o.LogFieldRequestedAttributes
-	}
-	if !isNil(o.LogFieldSASLMechanismName) {
-		toSerialize["logFieldSASLMechanismName"] = o.LogFieldSASLMechanismName
-	}
-	if !isNil(o.LogFieldNewRDN) {
-		toSerialize["logFieldNewRDN"] = o.LogFieldNewRDN
-	}
-	if !isNil(o.LogFieldBaseDN) {
-		toSerialize["logFieldBaseDN"] = o.LogFieldBaseDN
-	}
-	if !isNil(o.LogFieldBindDN) {
-		toSerialize["logFieldBindDN"] = o.LogFieldBindDN
-	}
-	if !isNil(o.LogFieldMatchedDN) {
-		toSerialize["logFieldMatchedDN"] = o.LogFieldMatchedDN
-	}
-	if !isNil(o.LogFieldRequesterIPAddress) {
-		toSerialize["logFieldRequesterIPAddress"] = o.LogFieldRequesterIPAddress
-	}
-	if !isNil(o.LogFieldAuthenticationType) {
-		toSerialize["logFieldAuthenticationType"] = o.LogFieldAuthenticationType
-	}
-	if !isNil(o.LogFieldNewSuperiorDN) {
-		toSerialize["logFieldNewSuperiorDN"] = o.LogFieldNewSuperiorDN
-	}
-	if !isNil(o.LogFieldFilter) {
-		toSerialize["logFieldFilter"] = o.LogFieldFilter
-	}
-	if !isNil(o.LogFieldAlternateAuthorizationDN) {
-		toSerialize["logFieldAlternateAuthorizationDN"] = o.LogFieldAlternateAuthorizationDN
-	}
-	if !isNil(o.LogFieldEntryDN) {
-		toSerialize["logFieldEntryDN"] = o.LogFieldEntryDN
-	}
-	if !isNil(o.LogFieldEntriesReturned) {
-		toSerialize["logFieldEntriesReturned"] = o.LogFieldEntriesReturned
-	}
-	if !isNil(o.LogFieldAuthenticationFailureID) {
-		toSerialize["logFieldAuthenticationFailureID"] = o.LogFieldAuthenticationFailureID
-	}
-	if !isNil(o.LogFieldRequestOID) {
-		toSerialize["logFieldRequestOID"] = o.LogFieldRequestOID
-	}
-	if !isNil(o.LogFieldResponseOID) {
-		toSerialize["logFieldResponseOID"] = o.LogFieldResponseOID
-	}
-	if !isNil(o.LogFieldTargetProtocol) {
-		toSerialize["logFieldTargetProtocol"] = o.LogFieldTargetProtocol
-	}
-	if !isNil(o.LogFieldTargetPort) {
-		toSerialize["logFieldTargetPort"] = o.LogFieldTargetPort
-	}
-	if !isNil(o.LogFieldTargetAddress) {
-		toSerialize["logFieldTargetAddress"] = o.LogFieldTargetAddress
-	}
-	if !isNil(o.LogFieldTargetAttribute) {
-		toSerialize["logFieldTargetAttribute"] = o.LogFieldTargetAttribute
-	}
-	if !isNil(o.LogFieldTargetHost) {
-		toSerialize["logFieldTargetHost"] = o.LogFieldTargetHost
-	}
-	if !isNil(o.LogFieldProtocolVersion) {
-		toSerialize["logFieldProtocolVersion"] = o.LogFieldProtocolVersion
-	}
-	if !isNil(o.LogFieldProtocolName) {
-		toSerialize["logFieldProtocolName"] = o.LogFieldProtocolName
-	}
-	if !isNil(o.LogFieldAuthenticationFailureReason) {
-		toSerialize["logFieldAuthenticationFailureReason"] = o.LogFieldAuthenticationFailureReason
-	}
-	if !isNil(o.LogFieldAdditionalInformation) {
-		toSerialize["logFieldAdditionalInformation"] = o.LogFieldAdditionalInformation
-	}
-	if !isNil(o.LogFieldUnindexed) {
-		toSerialize["logFieldUnindexed"] = o.LogFieldUnindexed
-	}
-	if !isNil(o.LogFieldScope) {
-		toSerialize["logFieldScope"] = o.LogFieldScope
-	}
-	if !isNil(o.LogFieldReferralUrls) {
-		toSerialize["logFieldReferralUrls"] = o.LogFieldReferralUrls
-	}
-	if !isNil(o.LogFieldSourceAddress) {
-		toSerialize["logFieldSourceAddress"] = o.LogFieldSourceAddress
-	}
-	if !isNil(o.LogFieldMessageIDToAbandon) {
-		toSerialize["logFieldMessageIDToAbandon"] = o.LogFieldMessageIDToAbandon
-	}
-	if !isNil(o.LogFieldResponseControls) {
-		toSerialize["logFieldResponseControls"] = o.LogFieldResponseControls
-	}
-	if !isNil(o.LogFieldRequestControls) {
-		toSerialize["logFieldRequestControls"] = o.LogFieldRequestControls
-	}
-	if !isNil(o.LogFieldIntermediateClientResult) {
-		toSerialize["logFieldIntermediateClientResult"] = o.LogFieldIntermediateClientResult
-	}
-	if !isNil(o.LogFieldIntermediateClientRequest) {
-		toSerialize["logFieldIntermediateClientRequest"] = o.LogFieldIntermediateClientRequest
-	}
-	if !isNil(o.LogFieldReplicationChangeID) {
-		toSerialize["logFieldReplicationChangeID"] = o.LogFieldReplicationChangeID
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AccessLogFieldMappingResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.LogFieldTimestamp) {
+		toSerialize["logFieldTimestamp"] = o.LogFieldTimestamp
+	}
+	if !IsNil(o.LogFieldConnectionID) {
+		toSerialize["logFieldConnectionID"] = o.LogFieldConnectionID
+	}
+	if !IsNil(o.LogFieldStartupid) {
+		toSerialize["logFieldStartupid"] = o.LogFieldStartupid
+	}
+	if !IsNil(o.LogFieldProductName) {
+		toSerialize["logFieldProductName"] = o.LogFieldProductName
+	}
+	if !IsNil(o.LogFieldInstanceName) {
+		toSerialize["logFieldInstanceName"] = o.LogFieldInstanceName
+	}
+	if !IsNil(o.LogFieldOperationID) {
+		toSerialize["logFieldOperationID"] = o.LogFieldOperationID
+	}
+	if !IsNil(o.LogFieldMessageType) {
+		toSerialize["logFieldMessageType"] = o.LogFieldMessageType
+	}
+	if !IsNil(o.LogFieldOperationType) {
+		toSerialize["logFieldOperationType"] = o.LogFieldOperationType
+	}
+	if !IsNil(o.LogFieldMessageID) {
+		toSerialize["logFieldMessageID"] = o.LogFieldMessageID
+	}
+	if !IsNil(o.LogFieldResultCode) {
+		toSerialize["logFieldResultCode"] = o.LogFieldResultCode
+	}
+	if !IsNil(o.LogFieldMessage) {
+		toSerialize["logFieldMessage"] = o.LogFieldMessage
+	}
+	if !IsNil(o.LogFieldOrigin) {
+		toSerialize["logFieldOrigin"] = o.LogFieldOrigin
+	}
+	if !IsNil(o.LogFieldRequesterDN) {
+		toSerialize["logFieldRequesterDN"] = o.LogFieldRequesterDN
+	}
+	if !IsNil(o.LogFieldDisconnectReason) {
+		toSerialize["logFieldDisconnectReason"] = o.LogFieldDisconnectReason
+	}
+	if !IsNil(o.LogFieldDeleteOldRDN) {
+		toSerialize["logFieldDeleteOldRDN"] = o.LogFieldDeleteOldRDN
+	}
+	if !IsNil(o.LogFieldAuthenticatedUserDN) {
+		toSerialize["logFieldAuthenticatedUserDN"] = o.LogFieldAuthenticatedUserDN
+	}
+	if !IsNil(o.LogFieldProcessingTime) {
+		toSerialize["logFieldProcessingTime"] = o.LogFieldProcessingTime
+	}
+	if !IsNil(o.LogFieldRequestedAttributes) {
+		toSerialize["logFieldRequestedAttributes"] = o.LogFieldRequestedAttributes
+	}
+	if !IsNil(o.LogFieldSASLMechanismName) {
+		toSerialize["logFieldSASLMechanismName"] = o.LogFieldSASLMechanismName
+	}
+	if !IsNil(o.LogFieldNewRDN) {
+		toSerialize["logFieldNewRDN"] = o.LogFieldNewRDN
+	}
+	if !IsNil(o.LogFieldBaseDN) {
+		toSerialize["logFieldBaseDN"] = o.LogFieldBaseDN
+	}
+	if !IsNil(o.LogFieldBindDN) {
+		toSerialize["logFieldBindDN"] = o.LogFieldBindDN
+	}
+	if !IsNil(o.LogFieldMatchedDN) {
+		toSerialize["logFieldMatchedDN"] = o.LogFieldMatchedDN
+	}
+	if !IsNil(o.LogFieldRequesterIPAddress) {
+		toSerialize["logFieldRequesterIPAddress"] = o.LogFieldRequesterIPAddress
+	}
+	if !IsNil(o.LogFieldAuthenticationType) {
+		toSerialize["logFieldAuthenticationType"] = o.LogFieldAuthenticationType
+	}
+	if !IsNil(o.LogFieldNewSuperiorDN) {
+		toSerialize["logFieldNewSuperiorDN"] = o.LogFieldNewSuperiorDN
+	}
+	if !IsNil(o.LogFieldFilter) {
+		toSerialize["logFieldFilter"] = o.LogFieldFilter
+	}
+	if !IsNil(o.LogFieldAlternateAuthorizationDN) {
+		toSerialize["logFieldAlternateAuthorizationDN"] = o.LogFieldAlternateAuthorizationDN
+	}
+	if !IsNil(o.LogFieldEntryDN) {
+		toSerialize["logFieldEntryDN"] = o.LogFieldEntryDN
+	}
+	if !IsNil(o.LogFieldEntriesReturned) {
+		toSerialize["logFieldEntriesReturned"] = o.LogFieldEntriesReturned
+	}
+	if !IsNil(o.LogFieldAuthenticationFailureID) {
+		toSerialize["logFieldAuthenticationFailureID"] = o.LogFieldAuthenticationFailureID
+	}
+	if !IsNil(o.LogFieldRequestOID) {
+		toSerialize["logFieldRequestOID"] = o.LogFieldRequestOID
+	}
+	if !IsNil(o.LogFieldResponseOID) {
+		toSerialize["logFieldResponseOID"] = o.LogFieldResponseOID
+	}
+	if !IsNil(o.LogFieldTargetProtocol) {
+		toSerialize["logFieldTargetProtocol"] = o.LogFieldTargetProtocol
+	}
+	if !IsNil(o.LogFieldTargetPort) {
+		toSerialize["logFieldTargetPort"] = o.LogFieldTargetPort
+	}
+	if !IsNil(o.LogFieldTargetAddress) {
+		toSerialize["logFieldTargetAddress"] = o.LogFieldTargetAddress
+	}
+	if !IsNil(o.LogFieldTargetAttribute) {
+		toSerialize["logFieldTargetAttribute"] = o.LogFieldTargetAttribute
+	}
+	if !IsNil(o.LogFieldTargetHost) {
+		toSerialize["logFieldTargetHost"] = o.LogFieldTargetHost
+	}
+	if !IsNil(o.LogFieldProtocolVersion) {
+		toSerialize["logFieldProtocolVersion"] = o.LogFieldProtocolVersion
+	}
+	if !IsNil(o.LogFieldProtocolName) {
+		toSerialize["logFieldProtocolName"] = o.LogFieldProtocolName
+	}
+	if !IsNil(o.LogFieldAuthenticationFailureReason) {
+		toSerialize["logFieldAuthenticationFailureReason"] = o.LogFieldAuthenticationFailureReason
+	}
+	if !IsNil(o.LogFieldAdditionalInformation) {
+		toSerialize["logFieldAdditionalInformation"] = o.LogFieldAdditionalInformation
+	}
+	if !IsNil(o.LogFieldUnindexed) {
+		toSerialize["logFieldUnindexed"] = o.LogFieldUnindexed
+	}
+	if !IsNil(o.LogFieldScope) {
+		toSerialize["logFieldScope"] = o.LogFieldScope
+	}
+	if !IsNil(o.LogFieldReferralUrls) {
+		toSerialize["logFieldReferralUrls"] = o.LogFieldReferralUrls
+	}
+	if !IsNil(o.LogFieldSourceAddress) {
+		toSerialize["logFieldSourceAddress"] = o.LogFieldSourceAddress
+	}
+	if !IsNil(o.LogFieldMessageIDToAbandon) {
+		toSerialize["logFieldMessageIDToAbandon"] = o.LogFieldMessageIDToAbandon
+	}
+	if !IsNil(o.LogFieldResponseControls) {
+		toSerialize["logFieldResponseControls"] = o.LogFieldResponseControls
+	}
+	if !IsNil(o.LogFieldRequestControls) {
+		toSerialize["logFieldRequestControls"] = o.LogFieldRequestControls
+	}
+	if !IsNil(o.LogFieldIntermediateClientResult) {
+		toSerialize["logFieldIntermediateClientResult"] = o.LogFieldIntermediateClientResult
+	}
+	if !IsNil(o.LogFieldIntermediateClientRequest) {
+		toSerialize["logFieldIntermediateClientRequest"] = o.LogFieldIntermediateClientRequest
+	}
+	if !IsNil(o.LogFieldReplicationChangeID) {
+		toSerialize["logFieldReplicationChangeID"] = o.LogFieldReplicationChangeID
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAccessLogFieldMappingResponse struct {

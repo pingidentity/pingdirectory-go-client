@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the MacSecretKeyResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &MacSecretKeyResponse{}
+
 // MacSecretKeyResponse struct for MacSecretKeyResponse
 type MacSecretKeyResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -52,7 +55,7 @@ func NewMacSecretKeyResponseWithDefaults() *MacSecretKeyResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *MacSecretKeyResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -62,7 +65,7 @@ func (o *MacSecretKeyResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MacSecretKeyResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -70,7 +73,7 @@ func (o *MacSecretKeyResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *MacSecretKeyResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -84,7 +87,7 @@ func (o *MacSecretKeyResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *MacSecretKeyResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -94,7 +97,7 @@ func (o *MacSecretKeyResponse) GetUrnpingidentityschemasconfigurationmessages20(
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MacSecretKeyResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -102,7 +105,7 @@ func (o *MacSecretKeyResponse) GetUrnpingidentityschemasconfigurationmessages20O
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *MacSecretKeyResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -116,7 +119,7 @@ func (o *MacSecretKeyResponse) SetUrnpingidentityschemasconfigurationmessages20(
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *MacSecretKeyResponse) GetSchemas() []EnummacSecretKeySchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnummacSecretKeySchemaUrn
 		return ret
 	}
@@ -126,7 +129,7 @@ func (o *MacSecretKeyResponse) GetSchemas() []EnummacSecretKeySchemaUrn {
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MacSecretKeyResponse) GetSchemasOk() ([]EnummacSecretKeySchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -134,7 +137,7 @@ func (o *MacSecretKeyResponse) GetSchemasOk() ([]EnummacSecretKeySchemaUrn, bool
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *MacSecretKeyResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -148,7 +151,7 @@ func (o *MacSecretKeyResponse) SetSchemas(v []EnummacSecretKeySchemaUrn) {
 
 // GetMacAlgorithmName returns the MacAlgorithmName field value if set, zero value otherwise.
 func (o *MacSecretKeyResponse) GetMacAlgorithmName() string {
-	if o == nil || isNil(o.MacAlgorithmName) {
+	if o == nil || IsNil(o.MacAlgorithmName) {
 		var ret string
 		return ret
 	}
@@ -158,7 +161,7 @@ func (o *MacSecretKeyResponse) GetMacAlgorithmName() string {
 // GetMacAlgorithmNameOk returns a tuple with the MacAlgorithmName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MacSecretKeyResponse) GetMacAlgorithmNameOk() (*string, bool) {
-	if o == nil || isNil(o.MacAlgorithmName) {
+	if o == nil || IsNil(o.MacAlgorithmName) {
 		return nil, false
 	}
 	return o.MacAlgorithmName, true
@@ -166,7 +169,7 @@ func (o *MacSecretKeyResponse) GetMacAlgorithmNameOk() (*string, bool) {
 
 // HasMacAlgorithmName returns a boolean if a field has been set.
 func (o *MacSecretKeyResponse) HasMacAlgorithmName() bool {
-	if o != nil && !isNil(o.MacAlgorithmName) {
+	if o != nil && !IsNil(o.MacAlgorithmName) {
 		return true
 	}
 
@@ -204,7 +207,7 @@ func (o *MacSecretKeyResponse) SetKeyID(v string) {
 
 // GetIsCompromised returns the IsCompromised field value if set, zero value otherwise.
 func (o *MacSecretKeyResponse) GetIsCompromised() bool {
-	if o == nil || isNil(o.IsCompromised) {
+	if o == nil || IsNil(o.IsCompromised) {
 		var ret bool
 		return ret
 	}
@@ -214,7 +217,7 @@ func (o *MacSecretKeyResponse) GetIsCompromised() bool {
 // GetIsCompromisedOk returns a tuple with the IsCompromised field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MacSecretKeyResponse) GetIsCompromisedOk() (*bool, bool) {
-	if o == nil || isNil(o.IsCompromised) {
+	if o == nil || IsNil(o.IsCompromised) {
 		return nil, false
 	}
 	return o.IsCompromised, true
@@ -222,7 +225,7 @@ func (o *MacSecretKeyResponse) GetIsCompromisedOk() (*bool, bool) {
 
 // HasIsCompromised returns a boolean if a field has been set.
 func (o *MacSecretKeyResponse) HasIsCompromised() bool {
-	if o != nil && !isNil(o.IsCompromised) {
+	if o != nil && !IsNil(o.IsCompromised) {
 		return true
 	}
 
@@ -236,7 +239,7 @@ func (o *MacSecretKeyResponse) SetIsCompromised(v bool) {
 
 // GetSymmetricKey returns the SymmetricKey field value if set, zero value otherwise.
 func (o *MacSecretKeyResponse) GetSymmetricKey() []string {
-	if o == nil || isNil(o.SymmetricKey) {
+	if o == nil || IsNil(o.SymmetricKey) {
 		var ret []string
 		return ret
 	}
@@ -246,7 +249,7 @@ func (o *MacSecretKeyResponse) GetSymmetricKey() []string {
 // GetSymmetricKeyOk returns a tuple with the SymmetricKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MacSecretKeyResponse) GetSymmetricKeyOk() ([]string, bool) {
-	if o == nil || isNil(o.SymmetricKey) {
+	if o == nil || IsNil(o.SymmetricKey) {
 		return nil, false
 	}
 	return o.SymmetricKey, true
@@ -254,7 +257,7 @@ func (o *MacSecretKeyResponse) GetSymmetricKeyOk() ([]string, bool) {
 
 // HasSymmetricKey returns a boolean if a field has been set.
 func (o *MacSecretKeyResponse) HasSymmetricKey() bool {
-	if o != nil && !isNil(o.SymmetricKey) {
+	if o != nil && !IsNil(o.SymmetricKey) {
 		return true
 	}
 
@@ -291,32 +294,36 @@ func (o *MacSecretKeyResponse) SetKeyLengthBits(v int32) {
 }
 
 func (o MacSecretKeyResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.MacAlgorithmName) {
-		toSerialize["macAlgorithmName"] = o.MacAlgorithmName
-	}
-	if true {
-		toSerialize["keyID"] = o.KeyID
-	}
-	if !isNil(o.IsCompromised) {
-		toSerialize["isCompromised"] = o.IsCompromised
-	}
-	if !isNil(o.SymmetricKey) {
-		toSerialize["symmetricKey"] = o.SymmetricKey
-	}
-	if true {
-		toSerialize["keyLengthBits"] = o.KeyLengthBits
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o MacSecretKeyResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.MacAlgorithmName) {
+		toSerialize["macAlgorithmName"] = o.MacAlgorithmName
+	}
+	toSerialize["keyID"] = o.KeyID
+	if !IsNil(o.IsCompromised) {
+		toSerialize["isCompromised"] = o.IsCompromised
+	}
+	if !IsNil(o.SymmetricKey) {
+		toSerialize["symmetricKey"] = o.SymmetricKey
+	}
+	toSerialize["keyLengthBits"] = o.KeyLengthBits
+	return toSerialize, nil
 }
 
 type NullableMacSecretKeyResponse struct {

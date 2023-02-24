@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddArgon2PasswordStorageSchemeRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddArgon2PasswordStorageSchemeRequest{}
+
 // AddArgon2PasswordStorageSchemeRequest struct for AddArgon2PasswordStorageSchemeRequest
 type AddArgon2PasswordStorageSchemeRequest struct {
 	// Name of the new Password Storage Scheme
@@ -230,7 +233,7 @@ func (o *AddArgon2PasswordStorageSchemeRequest) SetDerivedKeyLengthBytes(v int32
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddArgon2PasswordStorageSchemeRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -240,7 +243,7 @@ func (o *AddArgon2PasswordStorageSchemeRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddArgon2PasswordStorageSchemeRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -248,7 +251,7 @@ func (o *AddArgon2PasswordStorageSchemeRequest) GetDescriptionOk() (*string, boo
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddArgon2PasswordStorageSchemeRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -285,35 +288,27 @@ func (o *AddArgon2PasswordStorageSchemeRequest) SetEnabled(v bool) {
 }
 
 func (o AddArgon2PasswordStorageSchemeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["schemeName"] = o.SchemeName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["iterationCount"] = o.IterationCount
-	}
-	if true {
-		toSerialize["parallelismFactor"] = o.ParallelismFactor
-	}
-	if true {
-		toSerialize["memoryUsageKb"] = o.MemoryUsageKb
-	}
-	if true {
-		toSerialize["saltLengthBytes"] = o.SaltLengthBytes
-	}
-	if true {
-		toSerialize["derivedKeyLengthBytes"] = o.DerivedKeyLengthBytes
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddArgon2PasswordStorageSchemeRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["schemeName"] = o.SchemeName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["iterationCount"] = o.IterationCount
+	toSerialize["parallelismFactor"] = o.ParallelismFactor
+	toSerialize["memoryUsageKb"] = o.MemoryUsageKb
+	toSerialize["saltLengthBytes"] = o.SaltLengthBytes
+	toSerialize["derivedKeyLengthBytes"] = o.DerivedKeyLengthBytes
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddArgon2PasswordStorageSchemeRequest struct {

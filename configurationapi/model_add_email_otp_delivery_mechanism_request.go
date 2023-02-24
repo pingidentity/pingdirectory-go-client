@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddEmailOtpDeliveryMechanismRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddEmailOtpDeliveryMechanismRequest{}
+
 // AddEmailOtpDeliveryMechanismRequest struct for AddEmailOtpDeliveryMechanismRequest
 type AddEmailOtpDeliveryMechanismRequest struct {
 	// Name of the new OTP Delivery Mechanism
@@ -110,7 +113,7 @@ func (o *AddEmailOtpDeliveryMechanismRequest) SetSchemas(v []EnumemailOtpDeliver
 
 // GetEmailAddressAttributeType returns the EmailAddressAttributeType field value if set, zero value otherwise.
 func (o *AddEmailOtpDeliveryMechanismRequest) GetEmailAddressAttributeType() string {
-	if o == nil || isNil(o.EmailAddressAttributeType) {
+	if o == nil || IsNil(o.EmailAddressAttributeType) {
 		var ret string
 		return ret
 	}
@@ -120,7 +123,7 @@ func (o *AddEmailOtpDeliveryMechanismRequest) GetEmailAddressAttributeType() str
 // GetEmailAddressAttributeTypeOk returns a tuple with the EmailAddressAttributeType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddEmailOtpDeliveryMechanismRequest) GetEmailAddressAttributeTypeOk() (*string, bool) {
-	if o == nil || isNil(o.EmailAddressAttributeType) {
+	if o == nil || IsNil(o.EmailAddressAttributeType) {
 		return nil, false
 	}
 	return o.EmailAddressAttributeType, true
@@ -128,7 +131,7 @@ func (o *AddEmailOtpDeliveryMechanismRequest) GetEmailAddressAttributeTypeOk() (
 
 // HasEmailAddressAttributeType returns a boolean if a field has been set.
 func (o *AddEmailOtpDeliveryMechanismRequest) HasEmailAddressAttributeType() bool {
-	if o != nil && !isNil(o.EmailAddressAttributeType) {
+	if o != nil && !IsNil(o.EmailAddressAttributeType) {
 		return true
 	}
 
@@ -142,7 +145,7 @@ func (o *AddEmailOtpDeliveryMechanismRequest) SetEmailAddressAttributeType(v str
 
 // GetEmailAddressJSONField returns the EmailAddressJSONField field value if set, zero value otherwise.
 func (o *AddEmailOtpDeliveryMechanismRequest) GetEmailAddressJSONField() string {
-	if o == nil || isNil(o.EmailAddressJSONField) {
+	if o == nil || IsNil(o.EmailAddressJSONField) {
 		var ret string
 		return ret
 	}
@@ -152,7 +155,7 @@ func (o *AddEmailOtpDeliveryMechanismRequest) GetEmailAddressJSONField() string 
 // GetEmailAddressJSONFieldOk returns a tuple with the EmailAddressJSONField field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddEmailOtpDeliveryMechanismRequest) GetEmailAddressJSONFieldOk() (*string, bool) {
-	if o == nil || isNil(o.EmailAddressJSONField) {
+	if o == nil || IsNil(o.EmailAddressJSONField) {
 		return nil, false
 	}
 	return o.EmailAddressJSONField, true
@@ -160,7 +163,7 @@ func (o *AddEmailOtpDeliveryMechanismRequest) GetEmailAddressJSONFieldOk() (*str
 
 // HasEmailAddressJSONField returns a boolean if a field has been set.
 func (o *AddEmailOtpDeliveryMechanismRequest) HasEmailAddressJSONField() bool {
-	if o != nil && !isNil(o.EmailAddressJSONField) {
+	if o != nil && !IsNil(o.EmailAddressJSONField) {
 		return true
 	}
 
@@ -174,7 +177,7 @@ func (o *AddEmailOtpDeliveryMechanismRequest) SetEmailAddressJSONField(v string)
 
 // GetEmailAddressJSONObjectFilter returns the EmailAddressJSONObjectFilter field value if set, zero value otherwise.
 func (o *AddEmailOtpDeliveryMechanismRequest) GetEmailAddressJSONObjectFilter() string {
-	if o == nil || isNil(o.EmailAddressJSONObjectFilter) {
+	if o == nil || IsNil(o.EmailAddressJSONObjectFilter) {
 		var ret string
 		return ret
 	}
@@ -184,7 +187,7 @@ func (o *AddEmailOtpDeliveryMechanismRequest) GetEmailAddressJSONObjectFilter() 
 // GetEmailAddressJSONObjectFilterOk returns a tuple with the EmailAddressJSONObjectFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddEmailOtpDeliveryMechanismRequest) GetEmailAddressJSONObjectFilterOk() (*string, bool) {
-	if o == nil || isNil(o.EmailAddressJSONObjectFilter) {
+	if o == nil || IsNil(o.EmailAddressJSONObjectFilter) {
 		return nil, false
 	}
 	return o.EmailAddressJSONObjectFilter, true
@@ -192,7 +195,7 @@ func (o *AddEmailOtpDeliveryMechanismRequest) GetEmailAddressJSONObjectFilterOk(
 
 // HasEmailAddressJSONObjectFilter returns a boolean if a field has been set.
 func (o *AddEmailOtpDeliveryMechanismRequest) HasEmailAddressJSONObjectFilter() bool {
-	if o != nil && !isNil(o.EmailAddressJSONObjectFilter) {
+	if o != nil && !IsNil(o.EmailAddressJSONObjectFilter) {
 		return true
 	}
 
@@ -230,7 +233,7 @@ func (o *AddEmailOtpDeliveryMechanismRequest) SetSenderAddress(v string) {
 
 // GetMessageSubject returns the MessageSubject field value if set, zero value otherwise.
 func (o *AddEmailOtpDeliveryMechanismRequest) GetMessageSubject() string {
-	if o == nil || isNil(o.MessageSubject) {
+	if o == nil || IsNil(o.MessageSubject) {
 		var ret string
 		return ret
 	}
@@ -240,7 +243,7 @@ func (o *AddEmailOtpDeliveryMechanismRequest) GetMessageSubject() string {
 // GetMessageSubjectOk returns a tuple with the MessageSubject field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddEmailOtpDeliveryMechanismRequest) GetMessageSubjectOk() (*string, bool) {
-	if o == nil || isNil(o.MessageSubject) {
+	if o == nil || IsNil(o.MessageSubject) {
 		return nil, false
 	}
 	return o.MessageSubject, true
@@ -248,7 +251,7 @@ func (o *AddEmailOtpDeliveryMechanismRequest) GetMessageSubjectOk() (*string, bo
 
 // HasMessageSubject returns a boolean if a field has been set.
 func (o *AddEmailOtpDeliveryMechanismRequest) HasMessageSubject() bool {
-	if o != nil && !isNil(o.MessageSubject) {
+	if o != nil && !IsNil(o.MessageSubject) {
 		return true
 	}
 
@@ -262,7 +265,7 @@ func (o *AddEmailOtpDeliveryMechanismRequest) SetMessageSubject(v string) {
 
 // GetMessageTextBeforeOTP returns the MessageTextBeforeOTP field value if set, zero value otherwise.
 func (o *AddEmailOtpDeliveryMechanismRequest) GetMessageTextBeforeOTP() string {
-	if o == nil || isNil(o.MessageTextBeforeOTP) {
+	if o == nil || IsNil(o.MessageTextBeforeOTP) {
 		var ret string
 		return ret
 	}
@@ -272,7 +275,7 @@ func (o *AddEmailOtpDeliveryMechanismRequest) GetMessageTextBeforeOTP() string {
 // GetMessageTextBeforeOTPOk returns a tuple with the MessageTextBeforeOTP field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddEmailOtpDeliveryMechanismRequest) GetMessageTextBeforeOTPOk() (*string, bool) {
-	if o == nil || isNil(o.MessageTextBeforeOTP) {
+	if o == nil || IsNil(o.MessageTextBeforeOTP) {
 		return nil, false
 	}
 	return o.MessageTextBeforeOTP, true
@@ -280,7 +283,7 @@ func (o *AddEmailOtpDeliveryMechanismRequest) GetMessageTextBeforeOTPOk() (*stri
 
 // HasMessageTextBeforeOTP returns a boolean if a field has been set.
 func (o *AddEmailOtpDeliveryMechanismRequest) HasMessageTextBeforeOTP() bool {
-	if o != nil && !isNil(o.MessageTextBeforeOTP) {
+	if o != nil && !IsNil(o.MessageTextBeforeOTP) {
 		return true
 	}
 
@@ -294,7 +297,7 @@ func (o *AddEmailOtpDeliveryMechanismRequest) SetMessageTextBeforeOTP(v string) 
 
 // GetMessageTextAfterOTP returns the MessageTextAfterOTP field value if set, zero value otherwise.
 func (o *AddEmailOtpDeliveryMechanismRequest) GetMessageTextAfterOTP() string {
-	if o == nil || isNil(o.MessageTextAfterOTP) {
+	if o == nil || IsNil(o.MessageTextAfterOTP) {
 		var ret string
 		return ret
 	}
@@ -304,7 +307,7 @@ func (o *AddEmailOtpDeliveryMechanismRequest) GetMessageTextAfterOTP() string {
 // GetMessageTextAfterOTPOk returns a tuple with the MessageTextAfterOTP field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddEmailOtpDeliveryMechanismRequest) GetMessageTextAfterOTPOk() (*string, bool) {
-	if o == nil || isNil(o.MessageTextAfterOTP) {
+	if o == nil || IsNil(o.MessageTextAfterOTP) {
 		return nil, false
 	}
 	return o.MessageTextAfterOTP, true
@@ -312,7 +315,7 @@ func (o *AddEmailOtpDeliveryMechanismRequest) GetMessageTextAfterOTPOk() (*strin
 
 // HasMessageTextAfterOTP returns a boolean if a field has been set.
 func (o *AddEmailOtpDeliveryMechanismRequest) HasMessageTextAfterOTP() bool {
-	if o != nil && !isNil(o.MessageTextAfterOTP) {
+	if o != nil && !IsNil(o.MessageTextAfterOTP) {
 		return true
 	}
 
@@ -326,7 +329,7 @@ func (o *AddEmailOtpDeliveryMechanismRequest) SetMessageTextAfterOTP(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddEmailOtpDeliveryMechanismRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -336,7 +339,7 @@ func (o *AddEmailOtpDeliveryMechanismRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddEmailOtpDeliveryMechanismRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -344,7 +347,7 @@ func (o *AddEmailOtpDeliveryMechanismRequest) GetDescriptionOk() (*string, bool)
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddEmailOtpDeliveryMechanismRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -381,41 +384,41 @@ func (o *AddEmailOtpDeliveryMechanismRequest) SetEnabled(v bool) {
 }
 
 func (o AddEmailOtpDeliveryMechanismRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["mechanismName"] = o.MechanismName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.EmailAddressAttributeType) {
-		toSerialize["emailAddressAttributeType"] = o.EmailAddressAttributeType
-	}
-	if !isNil(o.EmailAddressJSONField) {
-		toSerialize["emailAddressJSONField"] = o.EmailAddressJSONField
-	}
-	if !isNil(o.EmailAddressJSONObjectFilter) {
-		toSerialize["emailAddressJSONObjectFilter"] = o.EmailAddressJSONObjectFilter
-	}
-	if true {
-		toSerialize["senderAddress"] = o.SenderAddress
-	}
-	if !isNil(o.MessageSubject) {
-		toSerialize["messageSubject"] = o.MessageSubject
-	}
-	if !isNil(o.MessageTextBeforeOTP) {
-		toSerialize["messageTextBeforeOTP"] = o.MessageTextBeforeOTP
-	}
-	if !isNil(o.MessageTextAfterOTP) {
-		toSerialize["messageTextAfterOTP"] = o.MessageTextAfterOTP
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddEmailOtpDeliveryMechanismRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["mechanismName"] = o.MechanismName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.EmailAddressAttributeType) {
+		toSerialize["emailAddressAttributeType"] = o.EmailAddressAttributeType
+	}
+	if !IsNil(o.EmailAddressJSONField) {
+		toSerialize["emailAddressJSONField"] = o.EmailAddressJSONField
+	}
+	if !IsNil(o.EmailAddressJSONObjectFilter) {
+		toSerialize["emailAddressJSONObjectFilter"] = o.EmailAddressJSONObjectFilter
+	}
+	toSerialize["senderAddress"] = o.SenderAddress
+	if !IsNil(o.MessageSubject) {
+		toSerialize["messageSubject"] = o.MessageSubject
+	}
+	if !IsNil(o.MessageTextBeforeOTP) {
+		toSerialize["messageTextBeforeOTP"] = o.MessageTextBeforeOTP
+	}
+	if !IsNil(o.MessageTextAfterOTP) {
+		toSerialize["messageTextAfterOTP"] = o.MessageTextAfterOTP
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddEmailOtpDeliveryMechanismRequest struct {

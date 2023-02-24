@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddVaultPasswordStorageSchemeRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddVaultPasswordStorageSchemeRequest{}
+
 // AddVaultPasswordStorageSchemeRequest struct for AddVaultPasswordStorageSchemeRequest
 type AddVaultPasswordStorageSchemeRequest struct {
 	// Name of the new Password Storage Scheme
@@ -124,7 +127,7 @@ func (o *AddVaultPasswordStorageSchemeRequest) SetVaultExternalServer(v string) 
 
 // GetDefaultField returns the DefaultField field value if set, zero value otherwise.
 func (o *AddVaultPasswordStorageSchemeRequest) GetDefaultField() string {
-	if o == nil || isNil(o.DefaultField) {
+	if o == nil || IsNil(o.DefaultField) {
 		var ret string
 		return ret
 	}
@@ -134,7 +137,7 @@ func (o *AddVaultPasswordStorageSchemeRequest) GetDefaultField() string {
 // GetDefaultFieldOk returns a tuple with the DefaultField field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddVaultPasswordStorageSchemeRequest) GetDefaultFieldOk() (*string, bool) {
-	if o == nil || isNil(o.DefaultField) {
+	if o == nil || IsNil(o.DefaultField) {
 		return nil, false
 	}
 	return o.DefaultField, true
@@ -142,7 +145,7 @@ func (o *AddVaultPasswordStorageSchemeRequest) GetDefaultFieldOk() (*string, boo
 
 // HasDefaultField returns a boolean if a field has been set.
 func (o *AddVaultPasswordStorageSchemeRequest) HasDefaultField() bool {
-	if o != nil && !isNil(o.DefaultField) {
+	if o != nil && !IsNil(o.DefaultField) {
 		return true
 	}
 
@@ -156,7 +159,7 @@ func (o *AddVaultPasswordStorageSchemeRequest) SetDefaultField(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddVaultPasswordStorageSchemeRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -166,7 +169,7 @@ func (o *AddVaultPasswordStorageSchemeRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddVaultPasswordStorageSchemeRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -174,7 +177,7 @@ func (o *AddVaultPasswordStorageSchemeRequest) GetDescriptionOk() (*string, bool
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddVaultPasswordStorageSchemeRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -211,26 +214,26 @@ func (o *AddVaultPasswordStorageSchemeRequest) SetEnabled(v bool) {
 }
 
 func (o AddVaultPasswordStorageSchemeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["schemeName"] = o.SchemeName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["vaultExternalServer"] = o.VaultExternalServer
-	}
-	if !isNil(o.DefaultField) {
-		toSerialize["defaultField"] = o.DefaultField
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddVaultPasswordStorageSchemeRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["schemeName"] = o.SchemeName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["vaultExternalServer"] = o.VaultExternalServer
+	if !IsNil(o.DefaultField) {
+		toSerialize["defaultField"] = o.DefaultField
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddVaultPasswordStorageSchemeRequest struct {

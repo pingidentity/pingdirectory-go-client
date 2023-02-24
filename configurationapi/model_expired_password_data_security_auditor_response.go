@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ExpiredPasswordDataSecurityAuditorResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ExpiredPasswordDataSecurityAuditorResponse{}
+
 // ExpiredPasswordDataSecurityAuditorResponse struct for ExpiredPasswordDataSecurityAuditorResponse
 type ExpiredPasswordDataSecurityAuditorResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -57,7 +60,7 @@ func NewExpiredPasswordDataSecurityAuditorResponseWithDefaults() *ExpiredPasswor
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *ExpiredPasswordDataSecurityAuditorResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -67,7 +70,7 @@ func (o *ExpiredPasswordDataSecurityAuditorResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExpiredPasswordDataSecurityAuditorResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -75,7 +78,7 @@ func (o *ExpiredPasswordDataSecurityAuditorResponse) GetMetaOk() (*MetaMeta, boo
 
 // HasMeta returns a boolean if a field has been set.
 func (o *ExpiredPasswordDataSecurityAuditorResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -89,7 +92,7 @@ func (o *ExpiredPasswordDataSecurityAuditorResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *ExpiredPasswordDataSecurityAuditorResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -99,7 +102,7 @@ func (o *ExpiredPasswordDataSecurityAuditorResponse) GetUrnpingidentityschemasco
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExpiredPasswordDataSecurityAuditorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -107,7 +110,7 @@ func (o *ExpiredPasswordDataSecurityAuditorResponse) GetUrnpingidentityschemasco
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *ExpiredPasswordDataSecurityAuditorResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -193,7 +196,7 @@ func (o *ExpiredPasswordDataSecurityAuditorResponse) SetReportFile(v string) {
 
 // GetIncludeAttribute returns the IncludeAttribute field value if set, zero value otherwise.
 func (o *ExpiredPasswordDataSecurityAuditorResponse) GetIncludeAttribute() []string {
-	if o == nil || isNil(o.IncludeAttribute) {
+	if o == nil || IsNil(o.IncludeAttribute) {
 		var ret []string
 		return ret
 	}
@@ -203,7 +206,7 @@ func (o *ExpiredPasswordDataSecurityAuditorResponse) GetIncludeAttribute() []str
 // GetIncludeAttributeOk returns a tuple with the IncludeAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExpiredPasswordDataSecurityAuditorResponse) GetIncludeAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludeAttribute) {
+	if o == nil || IsNil(o.IncludeAttribute) {
 		return nil, false
 	}
 	return o.IncludeAttribute, true
@@ -211,7 +214,7 @@ func (o *ExpiredPasswordDataSecurityAuditorResponse) GetIncludeAttributeOk() ([]
 
 // HasIncludeAttribute returns a boolean if a field has been set.
 func (o *ExpiredPasswordDataSecurityAuditorResponse) HasIncludeAttribute() bool {
-	if o != nil && !isNil(o.IncludeAttribute) {
+	if o != nil && !IsNil(o.IncludeAttribute) {
 		return true
 	}
 
@@ -225,7 +228,7 @@ func (o *ExpiredPasswordDataSecurityAuditorResponse) SetIncludeAttribute(v []str
 
 // GetPasswordEvaluationAge returns the PasswordEvaluationAge field value if set, zero value otherwise.
 func (o *ExpiredPasswordDataSecurityAuditorResponse) GetPasswordEvaluationAge() string {
-	if o == nil || isNil(o.PasswordEvaluationAge) {
+	if o == nil || IsNil(o.PasswordEvaluationAge) {
 		var ret string
 		return ret
 	}
@@ -235,7 +238,7 @@ func (o *ExpiredPasswordDataSecurityAuditorResponse) GetPasswordEvaluationAge() 
 // GetPasswordEvaluationAgeOk returns a tuple with the PasswordEvaluationAge field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExpiredPasswordDataSecurityAuditorResponse) GetPasswordEvaluationAgeOk() (*string, bool) {
-	if o == nil || isNil(o.PasswordEvaluationAge) {
+	if o == nil || IsNil(o.PasswordEvaluationAge) {
 		return nil, false
 	}
 	return o.PasswordEvaluationAge, true
@@ -243,7 +246,7 @@ func (o *ExpiredPasswordDataSecurityAuditorResponse) GetPasswordEvaluationAgeOk(
 
 // HasPasswordEvaluationAge returns a boolean if a field has been set.
 func (o *ExpiredPasswordDataSecurityAuditorResponse) HasPasswordEvaluationAge() bool {
-	if o != nil && !isNil(o.PasswordEvaluationAge) {
+	if o != nil && !IsNil(o.PasswordEvaluationAge) {
 		return true
 	}
 
@@ -281,7 +284,7 @@ func (o *ExpiredPasswordDataSecurityAuditorResponse) SetEnabled(v bool) {
 
 // GetAuditBackend returns the AuditBackend field value if set, zero value otherwise.
 func (o *ExpiredPasswordDataSecurityAuditorResponse) GetAuditBackend() []string {
-	if o == nil || isNil(o.AuditBackend) {
+	if o == nil || IsNil(o.AuditBackend) {
 		var ret []string
 		return ret
 	}
@@ -291,7 +294,7 @@ func (o *ExpiredPasswordDataSecurityAuditorResponse) GetAuditBackend() []string 
 // GetAuditBackendOk returns a tuple with the AuditBackend field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExpiredPasswordDataSecurityAuditorResponse) GetAuditBackendOk() ([]string, bool) {
-	if o == nil || isNil(o.AuditBackend) {
+	if o == nil || IsNil(o.AuditBackend) {
 		return nil, false
 	}
 	return o.AuditBackend, true
@@ -299,7 +302,7 @@ func (o *ExpiredPasswordDataSecurityAuditorResponse) GetAuditBackendOk() ([]stri
 
 // HasAuditBackend returns a boolean if a field has been set.
 func (o *ExpiredPasswordDataSecurityAuditorResponse) HasAuditBackend() bool {
-	if o != nil && !isNil(o.AuditBackend) {
+	if o != nil && !IsNil(o.AuditBackend) {
 		return true
 	}
 
@@ -313,7 +316,7 @@ func (o *ExpiredPasswordDataSecurityAuditorResponse) SetAuditBackend(v []string)
 
 // GetAuditSeverity returns the AuditSeverity field value if set, zero value otherwise.
 func (o *ExpiredPasswordDataSecurityAuditorResponse) GetAuditSeverity() EnumdataSecurityAuditorAuditSeverityProp {
-	if o == nil || isNil(o.AuditSeverity) {
+	if o == nil || IsNil(o.AuditSeverity) {
 		var ret EnumdataSecurityAuditorAuditSeverityProp
 		return ret
 	}
@@ -323,7 +326,7 @@ func (o *ExpiredPasswordDataSecurityAuditorResponse) GetAuditSeverity() Enumdata
 // GetAuditSeverityOk returns a tuple with the AuditSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExpiredPasswordDataSecurityAuditorResponse) GetAuditSeverityOk() (*EnumdataSecurityAuditorAuditSeverityProp, bool) {
-	if o == nil || isNil(o.AuditSeverity) {
+	if o == nil || IsNil(o.AuditSeverity) {
 		return nil, false
 	}
 	return o.AuditSeverity, true
@@ -331,7 +334,7 @@ func (o *ExpiredPasswordDataSecurityAuditorResponse) GetAuditSeverityOk() (*Enum
 
 // HasAuditSeverity returns a boolean if a field has been set.
 func (o *ExpiredPasswordDataSecurityAuditorResponse) HasAuditSeverity() bool {
-	if o != nil && !isNil(o.AuditSeverity) {
+	if o != nil && !IsNil(o.AuditSeverity) {
 		return true
 	}
 
@@ -344,38 +347,38 @@ func (o *ExpiredPasswordDataSecurityAuditorResponse) SetAuditSeverity(v Enumdata
 }
 
 func (o ExpiredPasswordDataSecurityAuditorResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["reportFile"] = o.ReportFile
-	}
-	if !isNil(o.IncludeAttribute) {
-		toSerialize["includeAttribute"] = o.IncludeAttribute
-	}
-	if !isNil(o.PasswordEvaluationAge) {
-		toSerialize["passwordEvaluationAge"] = o.PasswordEvaluationAge
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.AuditBackend) {
-		toSerialize["auditBackend"] = o.AuditBackend
-	}
-	if !isNil(o.AuditSeverity) {
-		toSerialize["auditSeverity"] = o.AuditSeverity
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ExpiredPasswordDataSecurityAuditorResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["reportFile"] = o.ReportFile
+	if !IsNil(o.IncludeAttribute) {
+		toSerialize["includeAttribute"] = o.IncludeAttribute
+	}
+	if !IsNil(o.PasswordEvaluationAge) {
+		toSerialize["passwordEvaluationAge"] = o.PasswordEvaluationAge
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.AuditBackend) {
+		toSerialize["auditBackend"] = o.AuditBackend
+	}
+	if !IsNil(o.AuditSeverity) {
+		toSerialize["auditSeverity"] = o.AuditSeverity
+	}
+	return toSerialize, nil
 }
 
 type NullableExpiredPasswordDataSecurityAuditorResponse struct {

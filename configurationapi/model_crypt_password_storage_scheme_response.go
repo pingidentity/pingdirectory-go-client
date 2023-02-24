@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the CryptPasswordStorageSchemeResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CryptPasswordStorageSchemeResponse{}
+
 // CryptPasswordStorageSchemeResponse struct for CryptPasswordStorageSchemeResponse
 type CryptPasswordStorageSchemeResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -54,7 +57,7 @@ func NewCryptPasswordStorageSchemeResponseWithDefaults() *CryptPasswordStorageSc
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *CryptPasswordStorageSchemeResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -64,7 +67,7 @@ func (o *CryptPasswordStorageSchemeResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CryptPasswordStorageSchemeResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -72,7 +75,7 @@ func (o *CryptPasswordStorageSchemeResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *CryptPasswordStorageSchemeResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -86,7 +89,7 @@ func (o *CryptPasswordStorageSchemeResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *CryptPasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -96,7 +99,7 @@ func (o *CryptPasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurat
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CryptPasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -104,7 +107,7 @@ func (o *CryptPasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurat
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *CryptPasswordStorageSchemeResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -166,7 +169,7 @@ func (o *CryptPasswordStorageSchemeResponse) SetSchemas(v []EnumcryptPasswordSto
 
 // GetPasswordEncodingMechanism returns the PasswordEncodingMechanism field value if set, zero value otherwise.
 func (o *CryptPasswordStorageSchemeResponse) GetPasswordEncodingMechanism() EnumpasswordStorageSchemePasswordEncodingMechanismProp {
-	if o == nil || isNil(o.PasswordEncodingMechanism) {
+	if o == nil || IsNil(o.PasswordEncodingMechanism) {
 		var ret EnumpasswordStorageSchemePasswordEncodingMechanismProp
 		return ret
 	}
@@ -176,7 +179,7 @@ func (o *CryptPasswordStorageSchemeResponse) GetPasswordEncodingMechanism() Enum
 // GetPasswordEncodingMechanismOk returns a tuple with the PasswordEncodingMechanism field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CryptPasswordStorageSchemeResponse) GetPasswordEncodingMechanismOk() (*EnumpasswordStorageSchemePasswordEncodingMechanismProp, bool) {
-	if o == nil || isNil(o.PasswordEncodingMechanism) {
+	if o == nil || IsNil(o.PasswordEncodingMechanism) {
 		return nil, false
 	}
 	return o.PasswordEncodingMechanism, true
@@ -184,7 +187,7 @@ func (o *CryptPasswordStorageSchemeResponse) GetPasswordEncodingMechanismOk() (*
 
 // HasPasswordEncodingMechanism returns a boolean if a field has been set.
 func (o *CryptPasswordStorageSchemeResponse) HasPasswordEncodingMechanism() bool {
-	if o != nil && !isNil(o.PasswordEncodingMechanism) {
+	if o != nil && !IsNil(o.PasswordEncodingMechanism) {
 		return true
 	}
 
@@ -198,7 +201,7 @@ func (o *CryptPasswordStorageSchemeResponse) SetPasswordEncodingMechanism(v Enum
 
 // GetNumDigestRounds returns the NumDigestRounds field value if set, zero value otherwise.
 func (o *CryptPasswordStorageSchemeResponse) GetNumDigestRounds() int32 {
-	if o == nil || isNil(o.NumDigestRounds) {
+	if o == nil || IsNil(o.NumDigestRounds) {
 		var ret int32
 		return ret
 	}
@@ -208,7 +211,7 @@ func (o *CryptPasswordStorageSchemeResponse) GetNumDigestRounds() int32 {
 // GetNumDigestRoundsOk returns a tuple with the NumDigestRounds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CryptPasswordStorageSchemeResponse) GetNumDigestRoundsOk() (*int32, bool) {
-	if o == nil || isNil(o.NumDigestRounds) {
+	if o == nil || IsNil(o.NumDigestRounds) {
 		return nil, false
 	}
 	return o.NumDigestRounds, true
@@ -216,7 +219,7 @@ func (o *CryptPasswordStorageSchemeResponse) GetNumDigestRoundsOk() (*int32, boo
 
 // HasNumDigestRounds returns a boolean if a field has been set.
 func (o *CryptPasswordStorageSchemeResponse) HasNumDigestRounds() bool {
-	if o != nil && !isNil(o.NumDigestRounds) {
+	if o != nil && !IsNil(o.NumDigestRounds) {
 		return true
 	}
 
@@ -230,7 +233,7 @@ func (o *CryptPasswordStorageSchemeResponse) SetNumDigestRounds(v int32) {
 
 // GetMaxPasswordLength returns the MaxPasswordLength field value if set, zero value otherwise.
 func (o *CryptPasswordStorageSchemeResponse) GetMaxPasswordLength() int32 {
-	if o == nil || isNil(o.MaxPasswordLength) {
+	if o == nil || IsNil(o.MaxPasswordLength) {
 		var ret int32
 		return ret
 	}
@@ -240,7 +243,7 @@ func (o *CryptPasswordStorageSchemeResponse) GetMaxPasswordLength() int32 {
 // GetMaxPasswordLengthOk returns a tuple with the MaxPasswordLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CryptPasswordStorageSchemeResponse) GetMaxPasswordLengthOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxPasswordLength) {
+	if o == nil || IsNil(o.MaxPasswordLength) {
 		return nil, false
 	}
 	return o.MaxPasswordLength, true
@@ -248,7 +251,7 @@ func (o *CryptPasswordStorageSchemeResponse) GetMaxPasswordLengthOk() (*int32, b
 
 // HasMaxPasswordLength returns a boolean if a field has been set.
 func (o *CryptPasswordStorageSchemeResponse) HasMaxPasswordLength() bool {
-	if o != nil && !isNil(o.MaxPasswordLength) {
+	if o != nil && !IsNil(o.MaxPasswordLength) {
 		return true
 	}
 
@@ -262,7 +265,7 @@ func (o *CryptPasswordStorageSchemeResponse) SetMaxPasswordLength(v int32) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *CryptPasswordStorageSchemeResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -272,7 +275,7 @@ func (o *CryptPasswordStorageSchemeResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CryptPasswordStorageSchemeResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -280,7 +283,7 @@ func (o *CryptPasswordStorageSchemeResponse) GetDescriptionOk() (*string, bool) 
 
 // HasDescription returns a boolean if a field has been set.
 func (o *CryptPasswordStorageSchemeResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -317,35 +320,37 @@ func (o *CryptPasswordStorageSchemeResponse) SetEnabled(v bool) {
 }
 
 func (o CryptPasswordStorageSchemeResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.PasswordEncodingMechanism) {
-		toSerialize["passwordEncodingMechanism"] = o.PasswordEncodingMechanism
-	}
-	if !isNil(o.NumDigestRounds) {
-		toSerialize["numDigestRounds"] = o.NumDigestRounds
-	}
-	if !isNil(o.MaxPasswordLength) {
-		toSerialize["maxPasswordLength"] = o.MaxPasswordLength
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CryptPasswordStorageSchemeResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.PasswordEncodingMechanism) {
+		toSerialize["passwordEncodingMechanism"] = o.PasswordEncodingMechanism
+	}
+	if !IsNil(o.NumDigestRounds) {
+		toSerialize["numDigestRounds"] = o.NumDigestRounds
+	}
+	if !IsNil(o.MaxPasswordLength) {
+		toSerialize["maxPasswordLength"] = o.MaxPasswordLength
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableCryptPasswordStorageSchemeResponse struct {

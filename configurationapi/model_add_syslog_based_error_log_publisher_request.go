@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddSyslogBasedErrorLogPublisherRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddSyslogBasedErrorLogPublisherRequest{}
+
 // AddSyslogBasedErrorLogPublisherRequest struct for AddSyslogBasedErrorLogPublisherRequest
 type AddSyslogBasedErrorLogPublisherRequest struct {
 	// Name of the new Log Publisher
@@ -135,7 +138,7 @@ func (o *AddSyslogBasedErrorLogPublisherRequest) SetEnabled(v bool) {
 
 // GetServerHostName returns the ServerHostName field value if set, zero value otherwise.
 func (o *AddSyslogBasedErrorLogPublisherRequest) GetServerHostName() string {
-	if o == nil || isNil(o.ServerHostName) {
+	if o == nil || IsNil(o.ServerHostName) {
 		var ret string
 		return ret
 	}
@@ -145,7 +148,7 @@ func (o *AddSyslogBasedErrorLogPublisherRequest) GetServerHostName() string {
 // GetServerHostNameOk returns a tuple with the ServerHostName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogBasedErrorLogPublisherRequest) GetServerHostNameOk() (*string, bool) {
-	if o == nil || isNil(o.ServerHostName) {
+	if o == nil || IsNil(o.ServerHostName) {
 		return nil, false
 	}
 	return o.ServerHostName, true
@@ -153,7 +156,7 @@ func (o *AddSyslogBasedErrorLogPublisherRequest) GetServerHostNameOk() (*string,
 
 // HasServerHostName returns a boolean if a field has been set.
 func (o *AddSyslogBasedErrorLogPublisherRequest) HasServerHostName() bool {
-	if o != nil && !isNil(o.ServerHostName) {
+	if o != nil && !IsNil(o.ServerHostName) {
 		return true
 	}
 
@@ -167,7 +170,7 @@ func (o *AddSyslogBasedErrorLogPublisherRequest) SetServerHostName(v string) {
 
 // GetServerPort returns the ServerPort field value if set, zero value otherwise.
 func (o *AddSyslogBasedErrorLogPublisherRequest) GetServerPort() int32 {
-	if o == nil || isNil(o.ServerPort) {
+	if o == nil || IsNil(o.ServerPort) {
 		var ret int32
 		return ret
 	}
@@ -177,7 +180,7 @@ func (o *AddSyslogBasedErrorLogPublisherRequest) GetServerPort() int32 {
 // GetServerPortOk returns a tuple with the ServerPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogBasedErrorLogPublisherRequest) GetServerPortOk() (*int32, bool) {
-	if o == nil || isNil(o.ServerPort) {
+	if o == nil || IsNil(o.ServerPort) {
 		return nil, false
 	}
 	return o.ServerPort, true
@@ -185,7 +188,7 @@ func (o *AddSyslogBasedErrorLogPublisherRequest) GetServerPortOk() (*int32, bool
 
 // HasServerPort returns a boolean if a field has been set.
 func (o *AddSyslogBasedErrorLogPublisherRequest) HasServerPort() bool {
-	if o != nil && !isNil(o.ServerPort) {
+	if o != nil && !IsNil(o.ServerPort) {
 		return true
 	}
 
@@ -199,7 +202,7 @@ func (o *AddSyslogBasedErrorLogPublisherRequest) SetServerPort(v int32) {
 
 // GetSyslogFacility returns the SyslogFacility field value if set, zero value otherwise.
 func (o *AddSyslogBasedErrorLogPublisherRequest) GetSyslogFacility() int32 {
-	if o == nil || isNil(o.SyslogFacility) {
+	if o == nil || IsNil(o.SyslogFacility) {
 		var ret int32
 		return ret
 	}
@@ -209,7 +212,7 @@ func (o *AddSyslogBasedErrorLogPublisherRequest) GetSyslogFacility() int32 {
 // GetSyslogFacilityOk returns a tuple with the SyslogFacility field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogBasedErrorLogPublisherRequest) GetSyslogFacilityOk() (*int32, bool) {
-	if o == nil || isNil(o.SyslogFacility) {
+	if o == nil || IsNil(o.SyslogFacility) {
 		return nil, false
 	}
 	return o.SyslogFacility, true
@@ -217,7 +220,7 @@ func (o *AddSyslogBasedErrorLogPublisherRequest) GetSyslogFacilityOk() (*int32, 
 
 // HasSyslogFacility returns a boolean if a field has been set.
 func (o *AddSyslogBasedErrorLogPublisherRequest) HasSyslogFacility() bool {
-	if o != nil && !isNil(o.SyslogFacility) {
+	if o != nil && !IsNil(o.SyslogFacility) {
 		return true
 	}
 
@@ -231,7 +234,7 @@ func (o *AddSyslogBasedErrorLogPublisherRequest) SetSyslogFacility(v int32) {
 
 // GetAutoFlush returns the AutoFlush field value if set, zero value otherwise.
 func (o *AddSyslogBasedErrorLogPublisherRequest) GetAutoFlush() bool {
-	if o == nil || isNil(o.AutoFlush) {
+	if o == nil || IsNil(o.AutoFlush) {
 		var ret bool
 		return ret
 	}
@@ -241,7 +244,7 @@ func (o *AddSyslogBasedErrorLogPublisherRequest) GetAutoFlush() bool {
 // GetAutoFlushOk returns a tuple with the AutoFlush field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogBasedErrorLogPublisherRequest) GetAutoFlushOk() (*bool, bool) {
-	if o == nil || isNil(o.AutoFlush) {
+	if o == nil || IsNil(o.AutoFlush) {
 		return nil, false
 	}
 	return o.AutoFlush, true
@@ -249,7 +252,7 @@ func (o *AddSyslogBasedErrorLogPublisherRequest) GetAutoFlushOk() (*bool, bool) 
 
 // HasAutoFlush returns a boolean if a field has been set.
 func (o *AddSyslogBasedErrorLogPublisherRequest) HasAutoFlush() bool {
-	if o != nil && !isNil(o.AutoFlush) {
+	if o != nil && !IsNil(o.AutoFlush) {
 		return true
 	}
 
@@ -263,7 +266,7 @@ func (o *AddSyslogBasedErrorLogPublisherRequest) SetAutoFlush(v bool) {
 
 // GetAsynchronous returns the Asynchronous field value if set, zero value otherwise.
 func (o *AddSyslogBasedErrorLogPublisherRequest) GetAsynchronous() bool {
-	if o == nil || isNil(o.Asynchronous) {
+	if o == nil || IsNil(o.Asynchronous) {
 		var ret bool
 		return ret
 	}
@@ -273,7 +276,7 @@ func (o *AddSyslogBasedErrorLogPublisherRequest) GetAsynchronous() bool {
 // GetAsynchronousOk returns a tuple with the Asynchronous field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogBasedErrorLogPublisherRequest) GetAsynchronousOk() (*bool, bool) {
-	if o == nil || isNil(o.Asynchronous) {
+	if o == nil || IsNil(o.Asynchronous) {
 		return nil, false
 	}
 	return o.Asynchronous, true
@@ -281,7 +284,7 @@ func (o *AddSyslogBasedErrorLogPublisherRequest) GetAsynchronousOk() (*bool, boo
 
 // HasAsynchronous returns a boolean if a field has been set.
 func (o *AddSyslogBasedErrorLogPublisherRequest) HasAsynchronous() bool {
-	if o != nil && !isNil(o.Asynchronous) {
+	if o != nil && !IsNil(o.Asynchronous) {
 		return true
 	}
 
@@ -295,7 +298,7 @@ func (o *AddSyslogBasedErrorLogPublisherRequest) SetAsynchronous(v bool) {
 
 // GetQueueSize returns the QueueSize field value if set, zero value otherwise.
 func (o *AddSyslogBasedErrorLogPublisherRequest) GetQueueSize() int32 {
-	if o == nil || isNil(o.QueueSize) {
+	if o == nil || IsNil(o.QueueSize) {
 		var ret int32
 		return ret
 	}
@@ -305,7 +308,7 @@ func (o *AddSyslogBasedErrorLogPublisherRequest) GetQueueSize() int32 {
 // GetQueueSizeOk returns a tuple with the QueueSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogBasedErrorLogPublisherRequest) GetQueueSizeOk() (*int32, bool) {
-	if o == nil || isNil(o.QueueSize) {
+	if o == nil || IsNil(o.QueueSize) {
 		return nil, false
 	}
 	return o.QueueSize, true
@@ -313,7 +316,7 @@ func (o *AddSyslogBasedErrorLogPublisherRequest) GetQueueSizeOk() (*int32, bool)
 
 // HasQueueSize returns a boolean if a field has been set.
 func (o *AddSyslogBasedErrorLogPublisherRequest) HasQueueSize() bool {
-	if o != nil && !isNil(o.QueueSize) {
+	if o != nil && !IsNil(o.QueueSize) {
 		return true
 	}
 
@@ -327,7 +330,7 @@ func (o *AddSyslogBasedErrorLogPublisherRequest) SetQueueSize(v int32) {
 
 // GetDefaultSeverity returns the DefaultSeverity field value if set, zero value otherwise.
 func (o *AddSyslogBasedErrorLogPublisherRequest) GetDefaultSeverity() []EnumlogPublisherDefaultSeverityProp {
-	if o == nil || isNil(o.DefaultSeverity) {
+	if o == nil || IsNil(o.DefaultSeverity) {
 		var ret []EnumlogPublisherDefaultSeverityProp
 		return ret
 	}
@@ -337,7 +340,7 @@ func (o *AddSyslogBasedErrorLogPublisherRequest) GetDefaultSeverity() []EnumlogP
 // GetDefaultSeverityOk returns a tuple with the DefaultSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogBasedErrorLogPublisherRequest) GetDefaultSeverityOk() ([]EnumlogPublisherDefaultSeverityProp, bool) {
-	if o == nil || isNil(o.DefaultSeverity) {
+	if o == nil || IsNil(o.DefaultSeverity) {
 		return nil, false
 	}
 	return o.DefaultSeverity, true
@@ -345,7 +348,7 @@ func (o *AddSyslogBasedErrorLogPublisherRequest) GetDefaultSeverityOk() ([]Enuml
 
 // HasDefaultSeverity returns a boolean if a field has been set.
 func (o *AddSyslogBasedErrorLogPublisherRequest) HasDefaultSeverity() bool {
-	if o != nil && !isNil(o.DefaultSeverity) {
+	if o != nil && !IsNil(o.DefaultSeverity) {
 		return true
 	}
 
@@ -359,7 +362,7 @@ func (o *AddSyslogBasedErrorLogPublisherRequest) SetDefaultSeverity(v []EnumlogP
 
 // GetOverrideSeverity returns the OverrideSeverity field value if set, zero value otherwise.
 func (o *AddSyslogBasedErrorLogPublisherRequest) GetOverrideSeverity() []string {
-	if o == nil || isNil(o.OverrideSeverity) {
+	if o == nil || IsNil(o.OverrideSeverity) {
 		var ret []string
 		return ret
 	}
@@ -369,7 +372,7 @@ func (o *AddSyslogBasedErrorLogPublisherRequest) GetOverrideSeverity() []string 
 // GetOverrideSeverityOk returns a tuple with the OverrideSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogBasedErrorLogPublisherRequest) GetOverrideSeverityOk() ([]string, bool) {
-	if o == nil || isNil(o.OverrideSeverity) {
+	if o == nil || IsNil(o.OverrideSeverity) {
 		return nil, false
 	}
 	return o.OverrideSeverity, true
@@ -377,7 +380,7 @@ func (o *AddSyslogBasedErrorLogPublisherRequest) GetOverrideSeverityOk() ([]stri
 
 // HasOverrideSeverity returns a boolean if a field has been set.
 func (o *AddSyslogBasedErrorLogPublisherRequest) HasOverrideSeverity() bool {
-	if o != nil && !isNil(o.OverrideSeverity) {
+	if o != nil && !IsNil(o.OverrideSeverity) {
 		return true
 	}
 
@@ -391,7 +394,7 @@ func (o *AddSyslogBasedErrorLogPublisherRequest) SetOverrideSeverity(v []string)
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddSyslogBasedErrorLogPublisherRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -401,7 +404,7 @@ func (o *AddSyslogBasedErrorLogPublisherRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogBasedErrorLogPublisherRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -409,7 +412,7 @@ func (o *AddSyslogBasedErrorLogPublisherRequest) GetDescriptionOk() (*string, bo
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddSyslogBasedErrorLogPublisherRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -423,7 +426,7 @@ func (o *AddSyslogBasedErrorLogPublisherRequest) SetDescription(v string) {
 
 // GetLoggingErrorBehavior returns the LoggingErrorBehavior field value if set, zero value otherwise.
 func (o *AddSyslogBasedErrorLogPublisherRequest) GetLoggingErrorBehavior() EnumlogPublisherLoggingErrorBehaviorProp {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		var ret EnumlogPublisherLoggingErrorBehaviorProp
 		return ret
 	}
@@ -433,7 +436,7 @@ func (o *AddSyslogBasedErrorLogPublisherRequest) GetLoggingErrorBehavior() Enuml
 // GetLoggingErrorBehaviorOk returns a tuple with the LoggingErrorBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogBasedErrorLogPublisherRequest) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
@@ -441,7 +444,7 @@ func (o *AddSyslogBasedErrorLogPublisherRequest) GetLoggingErrorBehaviorOk() (*E
 
 // HasLoggingErrorBehavior returns a boolean if a field has been set.
 func (o *AddSyslogBasedErrorLogPublisherRequest) HasLoggingErrorBehavior() bool {
-	if o != nil && !isNil(o.LoggingErrorBehavior) {
+	if o != nil && !IsNil(o.LoggingErrorBehavior) {
 		return true
 	}
 
@@ -454,47 +457,49 @@ func (o *AddSyslogBasedErrorLogPublisherRequest) SetLoggingErrorBehavior(v Enuml
 }
 
 func (o AddSyslogBasedErrorLogPublisherRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["publisherName"] = o.PublisherName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.ServerHostName) {
-		toSerialize["serverHostName"] = o.ServerHostName
-	}
-	if !isNil(o.ServerPort) {
-		toSerialize["serverPort"] = o.ServerPort
-	}
-	if !isNil(o.SyslogFacility) {
-		toSerialize["syslogFacility"] = o.SyslogFacility
-	}
-	if !isNil(o.AutoFlush) {
-		toSerialize["autoFlush"] = o.AutoFlush
-	}
-	if !isNil(o.Asynchronous) {
-		toSerialize["asynchronous"] = o.Asynchronous
-	}
-	if !isNil(o.QueueSize) {
-		toSerialize["queueSize"] = o.QueueSize
-	}
-	if !isNil(o.DefaultSeverity) {
-		toSerialize["defaultSeverity"] = o.DefaultSeverity
-	}
-	if !isNil(o.OverrideSeverity) {
-		toSerialize["overrideSeverity"] = o.OverrideSeverity
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if !isNil(o.LoggingErrorBehavior) {
-		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddSyslogBasedErrorLogPublisherRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["publisherName"] = o.PublisherName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.ServerHostName) {
+		toSerialize["serverHostName"] = o.ServerHostName
+	}
+	if !IsNil(o.ServerPort) {
+		toSerialize["serverPort"] = o.ServerPort
+	}
+	if !IsNil(o.SyslogFacility) {
+		toSerialize["syslogFacility"] = o.SyslogFacility
+	}
+	if !IsNil(o.AutoFlush) {
+		toSerialize["autoFlush"] = o.AutoFlush
+	}
+	if !IsNil(o.Asynchronous) {
+		toSerialize["asynchronous"] = o.Asynchronous
+	}
+	if !IsNil(o.QueueSize) {
+		toSerialize["queueSize"] = o.QueueSize
+	}
+	if !IsNil(o.DefaultSeverity) {
+		toSerialize["defaultSeverity"] = o.DefaultSeverity
+	}
+	if !IsNil(o.OverrideSeverity) {
+		toSerialize["overrideSeverity"] = o.OverrideSeverity
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.LoggingErrorBehavior) {
+		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	}
+	return toSerialize, nil
 }
 
 type NullableAddSyslogBasedErrorLogPublisherRequest struct {

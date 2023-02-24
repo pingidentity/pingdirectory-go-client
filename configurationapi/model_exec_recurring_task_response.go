@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ExecRecurringTaskResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ExecRecurringTaskResponse{}
+
 // ExecRecurringTaskResponse struct for ExecRecurringTaskResponse
 type ExecRecurringTaskResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -76,7 +79,7 @@ func NewExecRecurringTaskResponseWithDefaults() *ExecRecurringTaskResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *ExecRecurringTaskResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -86,7 +89,7 @@ func (o *ExecRecurringTaskResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExecRecurringTaskResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -94,7 +97,7 @@ func (o *ExecRecurringTaskResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *ExecRecurringTaskResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -108,7 +111,7 @@ func (o *ExecRecurringTaskResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *ExecRecurringTaskResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -118,7 +121,7 @@ func (o *ExecRecurringTaskResponse) GetUrnpingidentityschemasconfigurationmessag
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExecRecurringTaskResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -126,7 +129,7 @@ func (o *ExecRecurringTaskResponse) GetUrnpingidentityschemasconfigurationmessag
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *ExecRecurringTaskResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -212,7 +215,7 @@ func (o *ExecRecurringTaskResponse) SetCommandPath(v string) {
 
 // GetCommandArguments returns the CommandArguments field value if set, zero value otherwise.
 func (o *ExecRecurringTaskResponse) GetCommandArguments() string {
-	if o == nil || isNil(o.CommandArguments) {
+	if o == nil || IsNil(o.CommandArguments) {
 		var ret string
 		return ret
 	}
@@ -222,7 +225,7 @@ func (o *ExecRecurringTaskResponse) GetCommandArguments() string {
 // GetCommandArgumentsOk returns a tuple with the CommandArguments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExecRecurringTaskResponse) GetCommandArgumentsOk() (*string, bool) {
-	if o == nil || isNil(o.CommandArguments) {
+	if o == nil || IsNil(o.CommandArguments) {
 		return nil, false
 	}
 	return o.CommandArguments, true
@@ -230,7 +233,7 @@ func (o *ExecRecurringTaskResponse) GetCommandArgumentsOk() (*string, bool) {
 
 // HasCommandArguments returns a boolean if a field has been set.
 func (o *ExecRecurringTaskResponse) HasCommandArguments() bool {
-	if o != nil && !isNil(o.CommandArguments) {
+	if o != nil && !IsNil(o.CommandArguments) {
 		return true
 	}
 
@@ -244,7 +247,7 @@ func (o *ExecRecurringTaskResponse) SetCommandArguments(v string) {
 
 // GetCommandOutputFileBaseName returns the CommandOutputFileBaseName field value if set, zero value otherwise.
 func (o *ExecRecurringTaskResponse) GetCommandOutputFileBaseName() string {
-	if o == nil || isNil(o.CommandOutputFileBaseName) {
+	if o == nil || IsNil(o.CommandOutputFileBaseName) {
 		var ret string
 		return ret
 	}
@@ -254,7 +257,7 @@ func (o *ExecRecurringTaskResponse) GetCommandOutputFileBaseName() string {
 // GetCommandOutputFileBaseNameOk returns a tuple with the CommandOutputFileBaseName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExecRecurringTaskResponse) GetCommandOutputFileBaseNameOk() (*string, bool) {
-	if o == nil || isNil(o.CommandOutputFileBaseName) {
+	if o == nil || IsNil(o.CommandOutputFileBaseName) {
 		return nil, false
 	}
 	return o.CommandOutputFileBaseName, true
@@ -262,7 +265,7 @@ func (o *ExecRecurringTaskResponse) GetCommandOutputFileBaseNameOk() (*string, b
 
 // HasCommandOutputFileBaseName returns a boolean if a field has been set.
 func (o *ExecRecurringTaskResponse) HasCommandOutputFileBaseName() bool {
-	if o != nil && !isNil(o.CommandOutputFileBaseName) {
+	if o != nil && !IsNil(o.CommandOutputFileBaseName) {
 		return true
 	}
 
@@ -276,7 +279,7 @@ func (o *ExecRecurringTaskResponse) SetCommandOutputFileBaseName(v string) {
 
 // GetRetainPreviousOutputFileCount returns the RetainPreviousOutputFileCount field value if set, zero value otherwise.
 func (o *ExecRecurringTaskResponse) GetRetainPreviousOutputFileCount() int32 {
-	if o == nil || isNil(o.RetainPreviousOutputFileCount) {
+	if o == nil || IsNil(o.RetainPreviousOutputFileCount) {
 		var ret int32
 		return ret
 	}
@@ -286,7 +289,7 @@ func (o *ExecRecurringTaskResponse) GetRetainPreviousOutputFileCount() int32 {
 // GetRetainPreviousOutputFileCountOk returns a tuple with the RetainPreviousOutputFileCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExecRecurringTaskResponse) GetRetainPreviousOutputFileCountOk() (*int32, bool) {
-	if o == nil || isNil(o.RetainPreviousOutputFileCount) {
+	if o == nil || IsNil(o.RetainPreviousOutputFileCount) {
 		return nil, false
 	}
 	return o.RetainPreviousOutputFileCount, true
@@ -294,7 +297,7 @@ func (o *ExecRecurringTaskResponse) GetRetainPreviousOutputFileCountOk() (*int32
 
 // HasRetainPreviousOutputFileCount returns a boolean if a field has been set.
 func (o *ExecRecurringTaskResponse) HasRetainPreviousOutputFileCount() bool {
-	if o != nil && !isNil(o.RetainPreviousOutputFileCount) {
+	if o != nil && !IsNil(o.RetainPreviousOutputFileCount) {
 		return true
 	}
 
@@ -308,7 +311,7 @@ func (o *ExecRecurringTaskResponse) SetRetainPreviousOutputFileCount(v int32) {
 
 // GetRetainPreviousOutputFileAge returns the RetainPreviousOutputFileAge field value if set, zero value otherwise.
 func (o *ExecRecurringTaskResponse) GetRetainPreviousOutputFileAge() string {
-	if o == nil || isNil(o.RetainPreviousOutputFileAge) {
+	if o == nil || IsNil(o.RetainPreviousOutputFileAge) {
 		var ret string
 		return ret
 	}
@@ -318,7 +321,7 @@ func (o *ExecRecurringTaskResponse) GetRetainPreviousOutputFileAge() string {
 // GetRetainPreviousOutputFileAgeOk returns a tuple with the RetainPreviousOutputFileAge field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExecRecurringTaskResponse) GetRetainPreviousOutputFileAgeOk() (*string, bool) {
-	if o == nil || isNil(o.RetainPreviousOutputFileAge) {
+	if o == nil || IsNil(o.RetainPreviousOutputFileAge) {
 		return nil, false
 	}
 	return o.RetainPreviousOutputFileAge, true
@@ -326,7 +329,7 @@ func (o *ExecRecurringTaskResponse) GetRetainPreviousOutputFileAgeOk() (*string,
 
 // HasRetainPreviousOutputFileAge returns a boolean if a field has been set.
 func (o *ExecRecurringTaskResponse) HasRetainPreviousOutputFileAge() bool {
-	if o != nil && !isNil(o.RetainPreviousOutputFileAge) {
+	if o != nil && !IsNil(o.RetainPreviousOutputFileAge) {
 		return true
 	}
 
@@ -340,7 +343,7 @@ func (o *ExecRecurringTaskResponse) SetRetainPreviousOutputFileAge(v string) {
 
 // GetLogCommandOutput returns the LogCommandOutput field value if set, zero value otherwise.
 func (o *ExecRecurringTaskResponse) GetLogCommandOutput() bool {
-	if o == nil || isNil(o.LogCommandOutput) {
+	if o == nil || IsNil(o.LogCommandOutput) {
 		var ret bool
 		return ret
 	}
@@ -350,7 +353,7 @@ func (o *ExecRecurringTaskResponse) GetLogCommandOutput() bool {
 // GetLogCommandOutputOk returns a tuple with the LogCommandOutput field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExecRecurringTaskResponse) GetLogCommandOutputOk() (*bool, bool) {
-	if o == nil || isNil(o.LogCommandOutput) {
+	if o == nil || IsNil(o.LogCommandOutput) {
 		return nil, false
 	}
 	return o.LogCommandOutput, true
@@ -358,7 +361,7 @@ func (o *ExecRecurringTaskResponse) GetLogCommandOutputOk() (*bool, bool) {
 
 // HasLogCommandOutput returns a boolean if a field has been set.
 func (o *ExecRecurringTaskResponse) HasLogCommandOutput() bool {
-	if o != nil && !isNil(o.LogCommandOutput) {
+	if o != nil && !IsNil(o.LogCommandOutput) {
 		return true
 	}
 
@@ -372,7 +375,7 @@ func (o *ExecRecurringTaskResponse) SetLogCommandOutput(v bool) {
 
 // GetTaskCompletionStateForNonzeroExitCode returns the TaskCompletionStateForNonzeroExitCode field value if set, zero value otherwise.
 func (o *ExecRecurringTaskResponse) GetTaskCompletionStateForNonzeroExitCode() EnumrecurringTaskTaskCompletionStateForNonzeroExitCodeProp {
-	if o == nil || isNil(o.TaskCompletionStateForNonzeroExitCode) {
+	if o == nil || IsNil(o.TaskCompletionStateForNonzeroExitCode) {
 		var ret EnumrecurringTaskTaskCompletionStateForNonzeroExitCodeProp
 		return ret
 	}
@@ -382,7 +385,7 @@ func (o *ExecRecurringTaskResponse) GetTaskCompletionStateForNonzeroExitCode() E
 // GetTaskCompletionStateForNonzeroExitCodeOk returns a tuple with the TaskCompletionStateForNonzeroExitCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExecRecurringTaskResponse) GetTaskCompletionStateForNonzeroExitCodeOk() (*EnumrecurringTaskTaskCompletionStateForNonzeroExitCodeProp, bool) {
-	if o == nil || isNil(o.TaskCompletionStateForNonzeroExitCode) {
+	if o == nil || IsNil(o.TaskCompletionStateForNonzeroExitCode) {
 		return nil, false
 	}
 	return o.TaskCompletionStateForNonzeroExitCode, true
@@ -390,7 +393,7 @@ func (o *ExecRecurringTaskResponse) GetTaskCompletionStateForNonzeroExitCodeOk()
 
 // HasTaskCompletionStateForNonzeroExitCode returns a boolean if a field has been set.
 func (o *ExecRecurringTaskResponse) HasTaskCompletionStateForNonzeroExitCode() bool {
-	if o != nil && !isNil(o.TaskCompletionStateForNonzeroExitCode) {
+	if o != nil && !IsNil(o.TaskCompletionStateForNonzeroExitCode) {
 		return true
 	}
 
@@ -404,7 +407,7 @@ func (o *ExecRecurringTaskResponse) SetTaskCompletionStateForNonzeroExitCode(v E
 
 // GetWorkingDirectory returns the WorkingDirectory field value if set, zero value otherwise.
 func (o *ExecRecurringTaskResponse) GetWorkingDirectory() string {
-	if o == nil || isNil(o.WorkingDirectory) {
+	if o == nil || IsNil(o.WorkingDirectory) {
 		var ret string
 		return ret
 	}
@@ -414,7 +417,7 @@ func (o *ExecRecurringTaskResponse) GetWorkingDirectory() string {
 // GetWorkingDirectoryOk returns a tuple with the WorkingDirectory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExecRecurringTaskResponse) GetWorkingDirectoryOk() (*string, bool) {
-	if o == nil || isNil(o.WorkingDirectory) {
+	if o == nil || IsNil(o.WorkingDirectory) {
 		return nil, false
 	}
 	return o.WorkingDirectory, true
@@ -422,7 +425,7 @@ func (o *ExecRecurringTaskResponse) GetWorkingDirectoryOk() (*string, bool) {
 
 // HasWorkingDirectory returns a boolean if a field has been set.
 func (o *ExecRecurringTaskResponse) HasWorkingDirectory() bool {
-	if o != nil && !isNil(o.WorkingDirectory) {
+	if o != nil && !IsNil(o.WorkingDirectory) {
 		return true
 	}
 
@@ -436,7 +439,7 @@ func (o *ExecRecurringTaskResponse) SetWorkingDirectory(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *ExecRecurringTaskResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -446,7 +449,7 @@ func (o *ExecRecurringTaskResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExecRecurringTaskResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -454,7 +457,7 @@ func (o *ExecRecurringTaskResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *ExecRecurringTaskResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -468,7 +471,7 @@ func (o *ExecRecurringTaskResponse) SetDescription(v string) {
 
 // GetCancelOnTaskDependencyFailure returns the CancelOnTaskDependencyFailure field value if set, zero value otherwise.
 func (o *ExecRecurringTaskResponse) GetCancelOnTaskDependencyFailure() bool {
-	if o == nil || isNil(o.CancelOnTaskDependencyFailure) {
+	if o == nil || IsNil(o.CancelOnTaskDependencyFailure) {
 		var ret bool
 		return ret
 	}
@@ -478,7 +481,7 @@ func (o *ExecRecurringTaskResponse) GetCancelOnTaskDependencyFailure() bool {
 // GetCancelOnTaskDependencyFailureOk returns a tuple with the CancelOnTaskDependencyFailure field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExecRecurringTaskResponse) GetCancelOnTaskDependencyFailureOk() (*bool, bool) {
-	if o == nil || isNil(o.CancelOnTaskDependencyFailure) {
+	if o == nil || IsNil(o.CancelOnTaskDependencyFailure) {
 		return nil, false
 	}
 	return o.CancelOnTaskDependencyFailure, true
@@ -486,7 +489,7 @@ func (o *ExecRecurringTaskResponse) GetCancelOnTaskDependencyFailureOk() (*bool,
 
 // HasCancelOnTaskDependencyFailure returns a boolean if a field has been set.
 func (o *ExecRecurringTaskResponse) HasCancelOnTaskDependencyFailure() bool {
-	if o != nil && !isNil(o.CancelOnTaskDependencyFailure) {
+	if o != nil && !IsNil(o.CancelOnTaskDependencyFailure) {
 		return true
 	}
 
@@ -500,7 +503,7 @@ func (o *ExecRecurringTaskResponse) SetCancelOnTaskDependencyFailure(v bool) {
 
 // GetEmailOnStart returns the EmailOnStart field value if set, zero value otherwise.
 func (o *ExecRecurringTaskResponse) GetEmailOnStart() []string {
-	if o == nil || isNil(o.EmailOnStart) {
+	if o == nil || IsNil(o.EmailOnStart) {
 		var ret []string
 		return ret
 	}
@@ -510,7 +513,7 @@ func (o *ExecRecurringTaskResponse) GetEmailOnStart() []string {
 // GetEmailOnStartOk returns a tuple with the EmailOnStart field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExecRecurringTaskResponse) GetEmailOnStartOk() ([]string, bool) {
-	if o == nil || isNil(o.EmailOnStart) {
+	if o == nil || IsNil(o.EmailOnStart) {
 		return nil, false
 	}
 	return o.EmailOnStart, true
@@ -518,7 +521,7 @@ func (o *ExecRecurringTaskResponse) GetEmailOnStartOk() ([]string, bool) {
 
 // HasEmailOnStart returns a boolean if a field has been set.
 func (o *ExecRecurringTaskResponse) HasEmailOnStart() bool {
-	if o != nil && !isNil(o.EmailOnStart) {
+	if o != nil && !IsNil(o.EmailOnStart) {
 		return true
 	}
 
@@ -532,7 +535,7 @@ func (o *ExecRecurringTaskResponse) SetEmailOnStart(v []string) {
 
 // GetEmailOnSuccess returns the EmailOnSuccess field value if set, zero value otherwise.
 func (o *ExecRecurringTaskResponse) GetEmailOnSuccess() []string {
-	if o == nil || isNil(o.EmailOnSuccess) {
+	if o == nil || IsNil(o.EmailOnSuccess) {
 		var ret []string
 		return ret
 	}
@@ -542,7 +545,7 @@ func (o *ExecRecurringTaskResponse) GetEmailOnSuccess() []string {
 // GetEmailOnSuccessOk returns a tuple with the EmailOnSuccess field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExecRecurringTaskResponse) GetEmailOnSuccessOk() ([]string, bool) {
-	if o == nil || isNil(o.EmailOnSuccess) {
+	if o == nil || IsNil(o.EmailOnSuccess) {
 		return nil, false
 	}
 	return o.EmailOnSuccess, true
@@ -550,7 +553,7 @@ func (o *ExecRecurringTaskResponse) GetEmailOnSuccessOk() ([]string, bool) {
 
 // HasEmailOnSuccess returns a boolean if a field has been set.
 func (o *ExecRecurringTaskResponse) HasEmailOnSuccess() bool {
-	if o != nil && !isNil(o.EmailOnSuccess) {
+	if o != nil && !IsNil(o.EmailOnSuccess) {
 		return true
 	}
 
@@ -564,7 +567,7 @@ func (o *ExecRecurringTaskResponse) SetEmailOnSuccess(v []string) {
 
 // GetEmailOnFailure returns the EmailOnFailure field value if set, zero value otherwise.
 func (o *ExecRecurringTaskResponse) GetEmailOnFailure() []string {
-	if o == nil || isNil(o.EmailOnFailure) {
+	if o == nil || IsNil(o.EmailOnFailure) {
 		var ret []string
 		return ret
 	}
@@ -574,7 +577,7 @@ func (o *ExecRecurringTaskResponse) GetEmailOnFailure() []string {
 // GetEmailOnFailureOk returns a tuple with the EmailOnFailure field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExecRecurringTaskResponse) GetEmailOnFailureOk() ([]string, bool) {
-	if o == nil || isNil(o.EmailOnFailure) {
+	if o == nil || IsNil(o.EmailOnFailure) {
 		return nil, false
 	}
 	return o.EmailOnFailure, true
@@ -582,7 +585,7 @@ func (o *ExecRecurringTaskResponse) GetEmailOnFailureOk() ([]string, bool) {
 
 // HasEmailOnFailure returns a boolean if a field has been set.
 func (o *ExecRecurringTaskResponse) HasEmailOnFailure() bool {
-	if o != nil && !isNil(o.EmailOnFailure) {
+	if o != nil && !IsNil(o.EmailOnFailure) {
 		return true
 	}
 
@@ -596,7 +599,7 @@ func (o *ExecRecurringTaskResponse) SetEmailOnFailure(v []string) {
 
 // GetAlertOnStart returns the AlertOnStart field value if set, zero value otherwise.
 func (o *ExecRecurringTaskResponse) GetAlertOnStart() bool {
-	if o == nil || isNil(o.AlertOnStart) {
+	if o == nil || IsNil(o.AlertOnStart) {
 		var ret bool
 		return ret
 	}
@@ -606,7 +609,7 @@ func (o *ExecRecurringTaskResponse) GetAlertOnStart() bool {
 // GetAlertOnStartOk returns a tuple with the AlertOnStart field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExecRecurringTaskResponse) GetAlertOnStartOk() (*bool, bool) {
-	if o == nil || isNil(o.AlertOnStart) {
+	if o == nil || IsNil(o.AlertOnStart) {
 		return nil, false
 	}
 	return o.AlertOnStart, true
@@ -614,7 +617,7 @@ func (o *ExecRecurringTaskResponse) GetAlertOnStartOk() (*bool, bool) {
 
 // HasAlertOnStart returns a boolean if a field has been set.
 func (o *ExecRecurringTaskResponse) HasAlertOnStart() bool {
-	if o != nil && !isNil(o.AlertOnStart) {
+	if o != nil && !IsNil(o.AlertOnStart) {
 		return true
 	}
 
@@ -628,7 +631,7 @@ func (o *ExecRecurringTaskResponse) SetAlertOnStart(v bool) {
 
 // GetAlertOnSuccess returns the AlertOnSuccess field value if set, zero value otherwise.
 func (o *ExecRecurringTaskResponse) GetAlertOnSuccess() bool {
-	if o == nil || isNil(o.AlertOnSuccess) {
+	if o == nil || IsNil(o.AlertOnSuccess) {
 		var ret bool
 		return ret
 	}
@@ -638,7 +641,7 @@ func (o *ExecRecurringTaskResponse) GetAlertOnSuccess() bool {
 // GetAlertOnSuccessOk returns a tuple with the AlertOnSuccess field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExecRecurringTaskResponse) GetAlertOnSuccessOk() (*bool, bool) {
-	if o == nil || isNil(o.AlertOnSuccess) {
+	if o == nil || IsNil(o.AlertOnSuccess) {
 		return nil, false
 	}
 	return o.AlertOnSuccess, true
@@ -646,7 +649,7 @@ func (o *ExecRecurringTaskResponse) GetAlertOnSuccessOk() (*bool, bool) {
 
 // HasAlertOnSuccess returns a boolean if a field has been set.
 func (o *ExecRecurringTaskResponse) HasAlertOnSuccess() bool {
-	if o != nil && !isNil(o.AlertOnSuccess) {
+	if o != nil && !IsNil(o.AlertOnSuccess) {
 		return true
 	}
 
@@ -660,7 +663,7 @@ func (o *ExecRecurringTaskResponse) SetAlertOnSuccess(v bool) {
 
 // GetAlertOnFailure returns the AlertOnFailure field value if set, zero value otherwise.
 func (o *ExecRecurringTaskResponse) GetAlertOnFailure() bool {
-	if o == nil || isNil(o.AlertOnFailure) {
+	if o == nil || IsNil(o.AlertOnFailure) {
 		var ret bool
 		return ret
 	}
@@ -670,7 +673,7 @@ func (o *ExecRecurringTaskResponse) GetAlertOnFailure() bool {
 // GetAlertOnFailureOk returns a tuple with the AlertOnFailure field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExecRecurringTaskResponse) GetAlertOnFailureOk() (*bool, bool) {
-	if o == nil || isNil(o.AlertOnFailure) {
+	if o == nil || IsNil(o.AlertOnFailure) {
 		return nil, false
 	}
 	return o.AlertOnFailure, true
@@ -678,7 +681,7 @@ func (o *ExecRecurringTaskResponse) GetAlertOnFailureOk() (*bool, bool) {
 
 // HasAlertOnFailure returns a boolean if a field has been set.
 func (o *ExecRecurringTaskResponse) HasAlertOnFailure() bool {
-	if o != nil && !isNil(o.AlertOnFailure) {
+	if o != nil && !IsNil(o.AlertOnFailure) {
 		return true
 	}
 
@@ -691,68 +694,70 @@ func (o *ExecRecurringTaskResponse) SetAlertOnFailure(v bool) {
 }
 
 func (o ExecRecurringTaskResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["commandPath"] = o.CommandPath
-	}
-	if !isNil(o.CommandArguments) {
-		toSerialize["commandArguments"] = o.CommandArguments
-	}
-	if !isNil(o.CommandOutputFileBaseName) {
-		toSerialize["commandOutputFileBaseName"] = o.CommandOutputFileBaseName
-	}
-	if !isNil(o.RetainPreviousOutputFileCount) {
-		toSerialize["retainPreviousOutputFileCount"] = o.RetainPreviousOutputFileCount
-	}
-	if !isNil(o.RetainPreviousOutputFileAge) {
-		toSerialize["retainPreviousOutputFileAge"] = o.RetainPreviousOutputFileAge
-	}
-	if !isNil(o.LogCommandOutput) {
-		toSerialize["logCommandOutput"] = o.LogCommandOutput
-	}
-	if !isNil(o.TaskCompletionStateForNonzeroExitCode) {
-		toSerialize["taskCompletionStateForNonzeroExitCode"] = o.TaskCompletionStateForNonzeroExitCode
-	}
-	if !isNil(o.WorkingDirectory) {
-		toSerialize["workingDirectory"] = o.WorkingDirectory
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if !isNil(o.CancelOnTaskDependencyFailure) {
-		toSerialize["cancelOnTaskDependencyFailure"] = o.CancelOnTaskDependencyFailure
-	}
-	if !isNil(o.EmailOnStart) {
-		toSerialize["emailOnStart"] = o.EmailOnStart
-	}
-	if !isNil(o.EmailOnSuccess) {
-		toSerialize["emailOnSuccess"] = o.EmailOnSuccess
-	}
-	if !isNil(o.EmailOnFailure) {
-		toSerialize["emailOnFailure"] = o.EmailOnFailure
-	}
-	if !isNil(o.AlertOnStart) {
-		toSerialize["alertOnStart"] = o.AlertOnStart
-	}
-	if !isNil(o.AlertOnSuccess) {
-		toSerialize["alertOnSuccess"] = o.AlertOnSuccess
-	}
-	if !isNil(o.AlertOnFailure) {
-		toSerialize["alertOnFailure"] = o.AlertOnFailure
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ExecRecurringTaskResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["commandPath"] = o.CommandPath
+	if !IsNil(o.CommandArguments) {
+		toSerialize["commandArguments"] = o.CommandArguments
+	}
+	if !IsNil(o.CommandOutputFileBaseName) {
+		toSerialize["commandOutputFileBaseName"] = o.CommandOutputFileBaseName
+	}
+	if !IsNil(o.RetainPreviousOutputFileCount) {
+		toSerialize["retainPreviousOutputFileCount"] = o.RetainPreviousOutputFileCount
+	}
+	if !IsNil(o.RetainPreviousOutputFileAge) {
+		toSerialize["retainPreviousOutputFileAge"] = o.RetainPreviousOutputFileAge
+	}
+	if !IsNil(o.LogCommandOutput) {
+		toSerialize["logCommandOutput"] = o.LogCommandOutput
+	}
+	if !IsNil(o.TaskCompletionStateForNonzeroExitCode) {
+		toSerialize["taskCompletionStateForNonzeroExitCode"] = o.TaskCompletionStateForNonzeroExitCode
+	}
+	if !IsNil(o.WorkingDirectory) {
+		toSerialize["workingDirectory"] = o.WorkingDirectory
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.CancelOnTaskDependencyFailure) {
+		toSerialize["cancelOnTaskDependencyFailure"] = o.CancelOnTaskDependencyFailure
+	}
+	if !IsNil(o.EmailOnStart) {
+		toSerialize["emailOnStart"] = o.EmailOnStart
+	}
+	if !IsNil(o.EmailOnSuccess) {
+		toSerialize["emailOnSuccess"] = o.EmailOnSuccess
+	}
+	if !IsNil(o.EmailOnFailure) {
+		toSerialize["emailOnFailure"] = o.EmailOnFailure
+	}
+	if !IsNil(o.AlertOnStart) {
+		toSerialize["alertOnStart"] = o.AlertOnStart
+	}
+	if !IsNil(o.AlertOnSuccess) {
+		toSerialize["alertOnSuccess"] = o.AlertOnSuccess
+	}
+	if !IsNil(o.AlertOnFailure) {
+		toSerialize["alertOnFailure"] = o.AlertOnFailure
+	}
+	return toSerialize, nil
 }
 
 type NullableExecRecurringTaskResponse struct {

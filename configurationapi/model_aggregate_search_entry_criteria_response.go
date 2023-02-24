@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AggregateSearchEntryCriteriaResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AggregateSearchEntryCriteriaResponse{}
+
 // AggregateSearchEntryCriteriaResponse struct for AggregateSearchEntryCriteriaResponse
 type AggregateSearchEntryCriteriaResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -54,7 +57,7 @@ func NewAggregateSearchEntryCriteriaResponseWithDefaults() *AggregateSearchEntry
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *AggregateSearchEntryCriteriaResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -64,7 +67,7 @@ func (o *AggregateSearchEntryCriteriaResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AggregateSearchEntryCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -72,7 +75,7 @@ func (o *AggregateSearchEntryCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *AggregateSearchEntryCriteriaResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -86,7 +89,7 @@ func (o *AggregateSearchEntryCriteriaResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *AggregateSearchEntryCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -96,7 +99,7 @@ func (o *AggregateSearchEntryCriteriaResponse) GetUrnpingidentityschemasconfigur
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AggregateSearchEntryCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -104,7 +107,7 @@ func (o *AggregateSearchEntryCriteriaResponse) GetUrnpingidentityschemasconfigur
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *AggregateSearchEntryCriteriaResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -166,7 +169,7 @@ func (o *AggregateSearchEntryCriteriaResponse) SetSchemas(v []EnumaggregateSearc
 
 // GetAllIncludedSearchEntryCriteria returns the AllIncludedSearchEntryCriteria field value if set, zero value otherwise.
 func (o *AggregateSearchEntryCriteriaResponse) GetAllIncludedSearchEntryCriteria() []string {
-	if o == nil || isNil(o.AllIncludedSearchEntryCriteria) {
+	if o == nil || IsNil(o.AllIncludedSearchEntryCriteria) {
 		var ret []string
 		return ret
 	}
@@ -176,7 +179,7 @@ func (o *AggregateSearchEntryCriteriaResponse) GetAllIncludedSearchEntryCriteria
 // GetAllIncludedSearchEntryCriteriaOk returns a tuple with the AllIncludedSearchEntryCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AggregateSearchEntryCriteriaResponse) GetAllIncludedSearchEntryCriteriaOk() ([]string, bool) {
-	if o == nil || isNil(o.AllIncludedSearchEntryCriteria) {
+	if o == nil || IsNil(o.AllIncludedSearchEntryCriteria) {
 		return nil, false
 	}
 	return o.AllIncludedSearchEntryCriteria, true
@@ -184,7 +187,7 @@ func (o *AggregateSearchEntryCriteriaResponse) GetAllIncludedSearchEntryCriteria
 
 // HasAllIncludedSearchEntryCriteria returns a boolean if a field has been set.
 func (o *AggregateSearchEntryCriteriaResponse) HasAllIncludedSearchEntryCriteria() bool {
-	if o != nil && !isNil(o.AllIncludedSearchEntryCriteria) {
+	if o != nil && !IsNil(o.AllIncludedSearchEntryCriteria) {
 		return true
 	}
 
@@ -198,7 +201,7 @@ func (o *AggregateSearchEntryCriteriaResponse) SetAllIncludedSearchEntryCriteria
 
 // GetAnyIncludedSearchEntryCriteria returns the AnyIncludedSearchEntryCriteria field value if set, zero value otherwise.
 func (o *AggregateSearchEntryCriteriaResponse) GetAnyIncludedSearchEntryCriteria() []string {
-	if o == nil || isNil(o.AnyIncludedSearchEntryCriteria) {
+	if o == nil || IsNil(o.AnyIncludedSearchEntryCriteria) {
 		var ret []string
 		return ret
 	}
@@ -208,7 +211,7 @@ func (o *AggregateSearchEntryCriteriaResponse) GetAnyIncludedSearchEntryCriteria
 // GetAnyIncludedSearchEntryCriteriaOk returns a tuple with the AnyIncludedSearchEntryCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AggregateSearchEntryCriteriaResponse) GetAnyIncludedSearchEntryCriteriaOk() ([]string, bool) {
-	if o == nil || isNil(o.AnyIncludedSearchEntryCriteria) {
+	if o == nil || IsNil(o.AnyIncludedSearchEntryCriteria) {
 		return nil, false
 	}
 	return o.AnyIncludedSearchEntryCriteria, true
@@ -216,7 +219,7 @@ func (o *AggregateSearchEntryCriteriaResponse) GetAnyIncludedSearchEntryCriteria
 
 // HasAnyIncludedSearchEntryCriteria returns a boolean if a field has been set.
 func (o *AggregateSearchEntryCriteriaResponse) HasAnyIncludedSearchEntryCriteria() bool {
-	if o != nil && !isNil(o.AnyIncludedSearchEntryCriteria) {
+	if o != nil && !IsNil(o.AnyIncludedSearchEntryCriteria) {
 		return true
 	}
 
@@ -230,7 +233,7 @@ func (o *AggregateSearchEntryCriteriaResponse) SetAnyIncludedSearchEntryCriteria
 
 // GetNotAllIncludedSearchEntryCriteria returns the NotAllIncludedSearchEntryCriteria field value if set, zero value otherwise.
 func (o *AggregateSearchEntryCriteriaResponse) GetNotAllIncludedSearchEntryCriteria() []string {
-	if o == nil || isNil(o.NotAllIncludedSearchEntryCriteria) {
+	if o == nil || IsNil(o.NotAllIncludedSearchEntryCriteria) {
 		var ret []string
 		return ret
 	}
@@ -240,7 +243,7 @@ func (o *AggregateSearchEntryCriteriaResponse) GetNotAllIncludedSearchEntryCrite
 // GetNotAllIncludedSearchEntryCriteriaOk returns a tuple with the NotAllIncludedSearchEntryCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AggregateSearchEntryCriteriaResponse) GetNotAllIncludedSearchEntryCriteriaOk() ([]string, bool) {
-	if o == nil || isNil(o.NotAllIncludedSearchEntryCriteria) {
+	if o == nil || IsNil(o.NotAllIncludedSearchEntryCriteria) {
 		return nil, false
 	}
 	return o.NotAllIncludedSearchEntryCriteria, true
@@ -248,7 +251,7 @@ func (o *AggregateSearchEntryCriteriaResponse) GetNotAllIncludedSearchEntryCrite
 
 // HasNotAllIncludedSearchEntryCriteria returns a boolean if a field has been set.
 func (o *AggregateSearchEntryCriteriaResponse) HasNotAllIncludedSearchEntryCriteria() bool {
-	if o != nil && !isNil(o.NotAllIncludedSearchEntryCriteria) {
+	if o != nil && !IsNil(o.NotAllIncludedSearchEntryCriteria) {
 		return true
 	}
 
@@ -262,7 +265,7 @@ func (o *AggregateSearchEntryCriteriaResponse) SetNotAllIncludedSearchEntryCrite
 
 // GetNoneIncludedSearchEntryCriteria returns the NoneIncludedSearchEntryCriteria field value if set, zero value otherwise.
 func (o *AggregateSearchEntryCriteriaResponse) GetNoneIncludedSearchEntryCriteria() []string {
-	if o == nil || isNil(o.NoneIncludedSearchEntryCriteria) {
+	if o == nil || IsNil(o.NoneIncludedSearchEntryCriteria) {
 		var ret []string
 		return ret
 	}
@@ -272,7 +275,7 @@ func (o *AggregateSearchEntryCriteriaResponse) GetNoneIncludedSearchEntryCriteri
 // GetNoneIncludedSearchEntryCriteriaOk returns a tuple with the NoneIncludedSearchEntryCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AggregateSearchEntryCriteriaResponse) GetNoneIncludedSearchEntryCriteriaOk() ([]string, bool) {
-	if o == nil || isNil(o.NoneIncludedSearchEntryCriteria) {
+	if o == nil || IsNil(o.NoneIncludedSearchEntryCriteria) {
 		return nil, false
 	}
 	return o.NoneIncludedSearchEntryCriteria, true
@@ -280,7 +283,7 @@ func (o *AggregateSearchEntryCriteriaResponse) GetNoneIncludedSearchEntryCriteri
 
 // HasNoneIncludedSearchEntryCriteria returns a boolean if a field has been set.
 func (o *AggregateSearchEntryCriteriaResponse) HasNoneIncludedSearchEntryCriteria() bool {
-	if o != nil && !isNil(o.NoneIncludedSearchEntryCriteria) {
+	if o != nil && !IsNil(o.NoneIncludedSearchEntryCriteria) {
 		return true
 	}
 
@@ -294,7 +297,7 @@ func (o *AggregateSearchEntryCriteriaResponse) SetNoneIncludedSearchEntryCriteri
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AggregateSearchEntryCriteriaResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -304,7 +307,7 @@ func (o *AggregateSearchEntryCriteriaResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AggregateSearchEntryCriteriaResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -312,7 +315,7 @@ func (o *AggregateSearchEntryCriteriaResponse) GetDescriptionOk() (*string, bool
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AggregateSearchEntryCriteriaResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -325,35 +328,39 @@ func (o *AggregateSearchEntryCriteriaResponse) SetDescription(v string) {
 }
 
 func (o AggregateSearchEntryCriteriaResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.AllIncludedSearchEntryCriteria) {
-		toSerialize["allIncludedSearchEntryCriteria"] = o.AllIncludedSearchEntryCriteria
-	}
-	if !isNil(o.AnyIncludedSearchEntryCriteria) {
-		toSerialize["anyIncludedSearchEntryCriteria"] = o.AnyIncludedSearchEntryCriteria
-	}
-	if !isNil(o.NotAllIncludedSearchEntryCriteria) {
-		toSerialize["notAllIncludedSearchEntryCriteria"] = o.NotAllIncludedSearchEntryCriteria
-	}
-	if !isNil(o.NoneIncludedSearchEntryCriteria) {
-		toSerialize["noneIncludedSearchEntryCriteria"] = o.NoneIncludedSearchEntryCriteria
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AggregateSearchEntryCriteriaResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.AllIncludedSearchEntryCriteria) {
+		toSerialize["allIncludedSearchEntryCriteria"] = o.AllIncludedSearchEntryCriteria
+	}
+	if !IsNil(o.AnyIncludedSearchEntryCriteria) {
+		toSerialize["anyIncludedSearchEntryCriteria"] = o.AnyIncludedSearchEntryCriteria
+	}
+	if !IsNil(o.NotAllIncludedSearchEntryCriteria) {
+		toSerialize["notAllIncludedSearchEntryCriteria"] = o.NotAllIncludedSearchEntryCriteria
+	}
+	if !IsNil(o.NoneIncludedSearchEntryCriteria) {
+		toSerialize["noneIncludedSearchEntryCriteria"] = o.NoneIncludedSearchEntryCriteria
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAggregateSearchEntryCriteriaResponse struct {

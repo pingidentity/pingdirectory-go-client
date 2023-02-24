@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AmazonAwsExternalServerResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AmazonAwsExternalServerResponse{}
+
 // AmazonAwsExternalServerResponse struct for AmazonAwsExternalServerResponse
 type AmazonAwsExternalServerResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -53,7 +56,7 @@ func NewAmazonAwsExternalServerResponseWithDefaults() *AmazonAwsExternalServerRe
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *AmazonAwsExternalServerResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -63,7 +66,7 @@ func (o *AmazonAwsExternalServerResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmazonAwsExternalServerResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -71,7 +74,7 @@ func (o *AmazonAwsExternalServerResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *AmazonAwsExternalServerResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -85,7 +88,7 @@ func (o *AmazonAwsExternalServerResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *AmazonAwsExternalServerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -95,7 +98,7 @@ func (o *AmazonAwsExternalServerResponse) GetUrnpingidentityschemasconfiguration
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmazonAwsExternalServerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -103,7 +106,7 @@ func (o *AmazonAwsExternalServerResponse) GetUrnpingidentityschemasconfiguration
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *AmazonAwsExternalServerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -165,7 +168,7 @@ func (o *AmazonAwsExternalServerResponse) SetSchemas(v []EnumamazonAwsExternalSe
 
 // GetAwsAccessKeyID returns the AwsAccessKeyID field value if set, zero value otherwise.
 func (o *AmazonAwsExternalServerResponse) GetAwsAccessKeyID() string {
-	if o == nil || isNil(o.AwsAccessKeyID) {
+	if o == nil || IsNil(o.AwsAccessKeyID) {
 		var ret string
 		return ret
 	}
@@ -175,7 +178,7 @@ func (o *AmazonAwsExternalServerResponse) GetAwsAccessKeyID() string {
 // GetAwsAccessKeyIDOk returns a tuple with the AwsAccessKeyID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmazonAwsExternalServerResponse) GetAwsAccessKeyIDOk() (*string, bool) {
-	if o == nil || isNil(o.AwsAccessKeyID) {
+	if o == nil || IsNil(o.AwsAccessKeyID) {
 		return nil, false
 	}
 	return o.AwsAccessKeyID, true
@@ -183,7 +186,7 @@ func (o *AmazonAwsExternalServerResponse) GetAwsAccessKeyIDOk() (*string, bool) 
 
 // HasAwsAccessKeyID returns a boolean if a field has been set.
 func (o *AmazonAwsExternalServerResponse) HasAwsAccessKeyID() bool {
-	if o != nil && !isNil(o.AwsAccessKeyID) {
+	if o != nil && !IsNil(o.AwsAccessKeyID) {
 		return true
 	}
 
@@ -197,7 +200,7 @@ func (o *AmazonAwsExternalServerResponse) SetAwsAccessKeyID(v string) {
 
 // GetAwsSecretAccessKey returns the AwsSecretAccessKey field value if set, zero value otherwise.
 func (o *AmazonAwsExternalServerResponse) GetAwsSecretAccessKey() string {
-	if o == nil || isNil(o.AwsSecretAccessKey) {
+	if o == nil || IsNil(o.AwsSecretAccessKey) {
 		var ret string
 		return ret
 	}
@@ -207,7 +210,7 @@ func (o *AmazonAwsExternalServerResponse) GetAwsSecretAccessKey() string {
 // GetAwsSecretAccessKeyOk returns a tuple with the AwsSecretAccessKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmazonAwsExternalServerResponse) GetAwsSecretAccessKeyOk() (*string, bool) {
-	if o == nil || isNil(o.AwsSecretAccessKey) {
+	if o == nil || IsNil(o.AwsSecretAccessKey) {
 		return nil, false
 	}
 	return o.AwsSecretAccessKey, true
@@ -215,7 +218,7 @@ func (o *AmazonAwsExternalServerResponse) GetAwsSecretAccessKeyOk() (*string, bo
 
 // HasAwsSecretAccessKey returns a boolean if a field has been set.
 func (o *AmazonAwsExternalServerResponse) HasAwsSecretAccessKey() bool {
-	if o != nil && !isNil(o.AwsSecretAccessKey) {
+	if o != nil && !IsNil(o.AwsSecretAccessKey) {
 		return true
 	}
 
@@ -253,7 +256,7 @@ func (o *AmazonAwsExternalServerResponse) SetAwsRegionName(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AmazonAwsExternalServerResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -263,7 +266,7 @@ func (o *AmazonAwsExternalServerResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmazonAwsExternalServerResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -271,7 +274,7 @@ func (o *AmazonAwsExternalServerResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AmazonAwsExternalServerResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -284,32 +287,34 @@ func (o *AmazonAwsExternalServerResponse) SetDescription(v string) {
 }
 
 func (o AmazonAwsExternalServerResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.AwsAccessKeyID) {
-		toSerialize["awsAccessKeyID"] = o.AwsAccessKeyID
-	}
-	if !isNil(o.AwsSecretAccessKey) {
-		toSerialize["awsSecretAccessKey"] = o.AwsSecretAccessKey
-	}
-	if true {
-		toSerialize["awsRegionName"] = o.AwsRegionName
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AmazonAwsExternalServerResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.AwsAccessKeyID) {
+		toSerialize["awsAccessKeyID"] = o.AwsAccessKeyID
+	}
+	if !IsNil(o.AwsSecretAccessKey) {
+		toSerialize["awsSecretAccessKey"] = o.AwsSecretAccessKey
+	}
+	toSerialize["awsRegionName"] = o.AwsRegionName
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAmazonAwsExternalServerResponse struct {

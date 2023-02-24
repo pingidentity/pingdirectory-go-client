@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddServerGroupRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddServerGroupRequest{}
+
 // AddServerGroupRequest struct for AddServerGroupRequest
 type AddServerGroupRequest struct {
 	// Name of the new Server Group
@@ -67,7 +70,7 @@ func (o *AddServerGroupRequest) SetGroupName(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *AddServerGroupRequest) GetSchemas() []EnumserverGroupSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumserverGroupSchemaUrn
 		return ret
 	}
@@ -77,7 +80,7 @@ func (o *AddServerGroupRequest) GetSchemas() []EnumserverGroupSchemaUrn {
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddServerGroupRequest) GetSchemasOk() ([]EnumserverGroupSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -85,7 +88,7 @@ func (o *AddServerGroupRequest) GetSchemasOk() ([]EnumserverGroupSchemaUrn, bool
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *AddServerGroupRequest) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -99,7 +102,7 @@ func (o *AddServerGroupRequest) SetSchemas(v []EnumserverGroupSchemaUrn) {
 
 // GetMember returns the Member field value if set, zero value otherwise.
 func (o *AddServerGroupRequest) GetMember() []string {
-	if o == nil || isNil(o.Member) {
+	if o == nil || IsNil(o.Member) {
 		var ret []string
 		return ret
 	}
@@ -109,7 +112,7 @@ func (o *AddServerGroupRequest) GetMember() []string {
 // GetMemberOk returns a tuple with the Member field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddServerGroupRequest) GetMemberOk() ([]string, bool) {
-	if o == nil || isNil(o.Member) {
+	if o == nil || IsNil(o.Member) {
 		return nil, false
 	}
 	return o.Member, true
@@ -117,7 +120,7 @@ func (o *AddServerGroupRequest) GetMemberOk() ([]string, bool) {
 
 // HasMember returns a boolean if a field has been set.
 func (o *AddServerGroupRequest) HasMember() bool {
-	if o != nil && !isNil(o.Member) {
+	if o != nil && !IsNil(o.Member) {
 		return true
 	}
 
@@ -130,17 +133,23 @@ func (o *AddServerGroupRequest) SetMember(v []string) {
 }
 
 func (o AddServerGroupRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["groupName"] = o.GroupName
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Member) {
-		toSerialize["member"] = o.Member
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddServerGroupRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["groupName"] = o.GroupName
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.Member) {
+		toSerialize["member"] = o.Member
+	}
+	return toSerialize, nil
 }
 
 type NullableAddServerGroupRequest struct {

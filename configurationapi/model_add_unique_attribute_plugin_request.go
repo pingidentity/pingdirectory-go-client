@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddUniqueAttributePluginRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddUniqueAttributePluginRequest{}
+
 // AddUniqueAttributePluginRequest struct for AddUniqueAttributePluginRequest
 type AddUniqueAttributePluginRequest struct {
 	// Name of the new Plugin
@@ -108,7 +111,7 @@ func (o *AddUniqueAttributePluginRequest) SetSchemas(v []EnumuniqueAttributePlug
 
 // GetPluginType returns the PluginType field value if set, zero value otherwise.
 func (o *AddUniqueAttributePluginRequest) GetPluginType() []EnumpluginPluginTypeProp {
-	if o == nil || isNil(o.PluginType) {
+	if o == nil || IsNil(o.PluginType) {
 		var ret []EnumpluginPluginTypeProp
 		return ret
 	}
@@ -118,7 +121,7 @@ func (o *AddUniqueAttributePluginRequest) GetPluginType() []EnumpluginPluginType
 // GetPluginTypeOk returns a tuple with the PluginType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddUniqueAttributePluginRequest) GetPluginTypeOk() ([]EnumpluginPluginTypeProp, bool) {
-	if o == nil || isNil(o.PluginType) {
+	if o == nil || IsNil(o.PluginType) {
 		return nil, false
 	}
 	return o.PluginType, true
@@ -126,7 +129,7 @@ func (o *AddUniqueAttributePluginRequest) GetPluginTypeOk() ([]EnumpluginPluginT
 
 // HasPluginType returns a boolean if a field has been set.
 func (o *AddUniqueAttributePluginRequest) HasPluginType() bool {
-	if o != nil && !isNil(o.PluginType) {
+	if o != nil && !IsNil(o.PluginType) {
 		return true
 	}
 
@@ -164,7 +167,7 @@ func (o *AddUniqueAttributePluginRequest) SetType(v []string) {
 
 // GetMultipleAttributeBehavior returns the MultipleAttributeBehavior field value if set, zero value otherwise.
 func (o *AddUniqueAttributePluginRequest) GetMultipleAttributeBehavior() EnumpluginMultipleAttributeBehaviorProp {
-	if o == nil || isNil(o.MultipleAttributeBehavior) {
+	if o == nil || IsNil(o.MultipleAttributeBehavior) {
 		var ret EnumpluginMultipleAttributeBehaviorProp
 		return ret
 	}
@@ -174,7 +177,7 @@ func (o *AddUniqueAttributePluginRequest) GetMultipleAttributeBehavior() Enumplu
 // GetMultipleAttributeBehaviorOk returns a tuple with the MultipleAttributeBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddUniqueAttributePluginRequest) GetMultipleAttributeBehaviorOk() (*EnumpluginMultipleAttributeBehaviorProp, bool) {
-	if o == nil || isNil(o.MultipleAttributeBehavior) {
+	if o == nil || IsNil(o.MultipleAttributeBehavior) {
 		return nil, false
 	}
 	return o.MultipleAttributeBehavior, true
@@ -182,7 +185,7 @@ func (o *AddUniqueAttributePluginRequest) GetMultipleAttributeBehaviorOk() (*Enu
 
 // HasMultipleAttributeBehavior returns a boolean if a field has been set.
 func (o *AddUniqueAttributePluginRequest) HasMultipleAttributeBehavior() bool {
-	if o != nil && !isNil(o.MultipleAttributeBehavior) {
+	if o != nil && !IsNil(o.MultipleAttributeBehavior) {
 		return true
 	}
 
@@ -196,7 +199,7 @@ func (o *AddUniqueAttributePluginRequest) SetMultipleAttributeBehavior(v Enumplu
 
 // GetBaseDN returns the BaseDN field value if set, zero value otherwise.
 func (o *AddUniqueAttributePluginRequest) GetBaseDN() []string {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		var ret []string
 		return ret
 	}
@@ -206,7 +209,7 @@ func (o *AddUniqueAttributePluginRequest) GetBaseDN() []string {
 // GetBaseDNOk returns a tuple with the BaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddUniqueAttributePluginRequest) GetBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		return nil, false
 	}
 	return o.BaseDN, true
@@ -214,7 +217,7 @@ func (o *AddUniqueAttributePluginRequest) GetBaseDNOk() ([]string, bool) {
 
 // HasBaseDN returns a boolean if a field has been set.
 func (o *AddUniqueAttributePluginRequest) HasBaseDN() bool {
-	if o != nil && !isNil(o.BaseDN) {
+	if o != nil && !IsNil(o.BaseDN) {
 		return true
 	}
 
@@ -228,7 +231,7 @@ func (o *AddUniqueAttributePluginRequest) SetBaseDN(v []string) {
 
 // GetPreventConflictsWithSoftDeletedEntries returns the PreventConflictsWithSoftDeletedEntries field value if set, zero value otherwise.
 func (o *AddUniqueAttributePluginRequest) GetPreventConflictsWithSoftDeletedEntries() bool {
-	if o == nil || isNil(o.PreventConflictsWithSoftDeletedEntries) {
+	if o == nil || IsNil(o.PreventConflictsWithSoftDeletedEntries) {
 		var ret bool
 		return ret
 	}
@@ -238,7 +241,7 @@ func (o *AddUniqueAttributePluginRequest) GetPreventConflictsWithSoftDeletedEntr
 // GetPreventConflictsWithSoftDeletedEntriesOk returns a tuple with the PreventConflictsWithSoftDeletedEntries field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddUniqueAttributePluginRequest) GetPreventConflictsWithSoftDeletedEntriesOk() (*bool, bool) {
-	if o == nil || isNil(o.PreventConflictsWithSoftDeletedEntries) {
+	if o == nil || IsNil(o.PreventConflictsWithSoftDeletedEntries) {
 		return nil, false
 	}
 	return o.PreventConflictsWithSoftDeletedEntries, true
@@ -246,7 +249,7 @@ func (o *AddUniqueAttributePluginRequest) GetPreventConflictsWithSoftDeletedEntr
 
 // HasPreventConflictsWithSoftDeletedEntries returns a boolean if a field has been set.
 func (o *AddUniqueAttributePluginRequest) HasPreventConflictsWithSoftDeletedEntries() bool {
-	if o != nil && !isNil(o.PreventConflictsWithSoftDeletedEntries) {
+	if o != nil && !IsNil(o.PreventConflictsWithSoftDeletedEntries) {
 		return true
 	}
 
@@ -260,7 +263,7 @@ func (o *AddUniqueAttributePluginRequest) SetPreventConflictsWithSoftDeletedEntr
 
 // GetFilter returns the Filter field value if set, zero value otherwise.
 func (o *AddUniqueAttributePluginRequest) GetFilter() string {
-	if o == nil || isNil(o.Filter) {
+	if o == nil || IsNil(o.Filter) {
 		var ret string
 		return ret
 	}
@@ -270,7 +273,7 @@ func (o *AddUniqueAttributePluginRequest) GetFilter() string {
 // GetFilterOk returns a tuple with the Filter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddUniqueAttributePluginRequest) GetFilterOk() (*string, bool) {
-	if o == nil || isNil(o.Filter) {
+	if o == nil || IsNil(o.Filter) {
 		return nil, false
 	}
 	return o.Filter, true
@@ -278,7 +281,7 @@ func (o *AddUniqueAttributePluginRequest) GetFilterOk() (*string, bool) {
 
 // HasFilter returns a boolean if a field has been set.
 func (o *AddUniqueAttributePluginRequest) HasFilter() bool {
-	if o != nil && !isNil(o.Filter) {
+	if o != nil && !IsNil(o.Filter) {
 		return true
 	}
 
@@ -292,7 +295,7 @@ func (o *AddUniqueAttributePluginRequest) SetFilter(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddUniqueAttributePluginRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -302,7 +305,7 @@ func (o *AddUniqueAttributePluginRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddUniqueAttributePluginRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -310,7 +313,7 @@ func (o *AddUniqueAttributePluginRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddUniqueAttributePluginRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -348,7 +351,7 @@ func (o *AddUniqueAttributePluginRequest) SetEnabled(v bool) {
 
 // GetInvokeForInternalOperations returns the InvokeForInternalOperations field value if set, zero value otherwise.
 func (o *AddUniqueAttributePluginRequest) GetInvokeForInternalOperations() bool {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		var ret bool
 		return ret
 	}
@@ -358,7 +361,7 @@ func (o *AddUniqueAttributePluginRequest) GetInvokeForInternalOperations() bool 
 // GetInvokeForInternalOperationsOk returns a tuple with the InvokeForInternalOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddUniqueAttributePluginRequest) GetInvokeForInternalOperationsOk() (*bool, bool) {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		return nil, false
 	}
 	return o.InvokeForInternalOperations, true
@@ -366,7 +369,7 @@ func (o *AddUniqueAttributePluginRequest) GetInvokeForInternalOperationsOk() (*b
 
 // HasInvokeForInternalOperations returns a boolean if a field has been set.
 func (o *AddUniqueAttributePluginRequest) HasInvokeForInternalOperations() bool {
-	if o != nil && !isNil(o.InvokeForInternalOperations) {
+	if o != nil && !IsNil(o.InvokeForInternalOperations) {
 		return true
 	}
 
@@ -379,41 +382,41 @@ func (o *AddUniqueAttributePluginRequest) SetInvokeForInternalOperations(v bool)
 }
 
 func (o AddUniqueAttributePluginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["pluginName"] = o.PluginName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.PluginType) {
-		toSerialize["pluginType"] = o.PluginType
-	}
-	if true {
-		toSerialize["type"] = o.Type
-	}
-	if !isNil(o.MultipleAttributeBehavior) {
-		toSerialize["multipleAttributeBehavior"] = o.MultipleAttributeBehavior
-	}
-	if !isNil(o.BaseDN) {
-		toSerialize["baseDN"] = o.BaseDN
-	}
-	if !isNil(o.PreventConflictsWithSoftDeletedEntries) {
-		toSerialize["preventConflictsWithSoftDeletedEntries"] = o.PreventConflictsWithSoftDeletedEntries
-	}
-	if !isNil(o.Filter) {
-		toSerialize["filter"] = o.Filter
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.InvokeForInternalOperations) {
-		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddUniqueAttributePluginRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["pluginName"] = o.PluginName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.PluginType) {
+		toSerialize["pluginType"] = o.PluginType
+	}
+	toSerialize["type"] = o.Type
+	if !IsNil(o.MultipleAttributeBehavior) {
+		toSerialize["multipleAttributeBehavior"] = o.MultipleAttributeBehavior
+	}
+	if !IsNil(o.BaseDN) {
+		toSerialize["baseDN"] = o.BaseDN
+	}
+	if !IsNil(o.PreventConflictsWithSoftDeletedEntries) {
+		toSerialize["preventConflictsWithSoftDeletedEntries"] = o.PreventConflictsWithSoftDeletedEntries
+	}
+	if !IsNil(o.Filter) {
+		toSerialize["filter"] = o.Filter
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.InvokeForInternalOperations) {
+		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
+	}
+	return toSerialize, nil
 }
 
 type NullableAddUniqueAttributePluginRequest struct {

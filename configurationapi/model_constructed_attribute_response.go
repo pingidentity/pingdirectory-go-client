@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ConstructedAttributeResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ConstructedAttributeResponse{}
+
 // ConstructedAttributeResponse struct for ConstructedAttributeResponse
 type ConstructedAttributeResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -51,7 +54,7 @@ func NewConstructedAttributeResponseWithDefaults() *ConstructedAttributeResponse
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *ConstructedAttributeResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -61,7 +64,7 @@ func (o *ConstructedAttributeResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConstructedAttributeResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -69,7 +72,7 @@ func (o *ConstructedAttributeResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *ConstructedAttributeResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -83,7 +86,7 @@ func (o *ConstructedAttributeResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *ConstructedAttributeResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -93,7 +96,7 @@ func (o *ConstructedAttributeResponse) GetUrnpingidentityschemasconfigurationmes
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConstructedAttributeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -101,7 +104,7 @@ func (o *ConstructedAttributeResponse) GetUrnpingidentityschemasconfigurationmes
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *ConstructedAttributeResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -139,7 +142,7 @@ func (o *ConstructedAttributeResponse) SetId(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *ConstructedAttributeResponse) GetSchemas() []EnumconstructedAttributeSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumconstructedAttributeSchemaUrn
 		return ret
 	}
@@ -149,7 +152,7 @@ func (o *ConstructedAttributeResponse) GetSchemas() []EnumconstructedAttributeSc
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConstructedAttributeResponse) GetSchemasOk() ([]EnumconstructedAttributeSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -157,7 +160,7 @@ func (o *ConstructedAttributeResponse) GetSchemasOk() ([]EnumconstructedAttribut
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *ConstructedAttributeResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -171,7 +174,7 @@ func (o *ConstructedAttributeResponse) SetSchemas(v []EnumconstructedAttributeSc
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *ConstructedAttributeResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -181,7 +184,7 @@ func (o *ConstructedAttributeResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConstructedAttributeResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -189,7 +192,7 @@ func (o *ConstructedAttributeResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *ConstructedAttributeResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -250,29 +253,31 @@ func (o *ConstructedAttributeResponse) SetValuePattern(v []string) {
 }
 
 func (o ConstructedAttributeResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["attributeType"] = o.AttributeType
-	}
-	if true {
-		toSerialize["valuePattern"] = o.ValuePattern
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ConstructedAttributeResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["attributeType"] = o.AttributeType
+	toSerialize["valuePattern"] = o.ValuePattern
+	return toSerialize, nil
 }
 
 type NullableConstructedAttributeResponse struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ReplicationStateDetailVirtualAttributeResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ReplicationStateDetailVirtualAttributeResponse{}
+
 // ReplicationStateDetailVirtualAttributeResponse struct for ReplicationStateDetailVirtualAttributeResponse
 type ReplicationStateDetailVirtualAttributeResponse struct {
 	Meta                                          *MetaMeta                                             `json:"meta,omitempty"`
@@ -49,7 +52,7 @@ func NewReplicationStateDetailVirtualAttributeResponseWithDefaults() *Replicatio
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *ReplicationStateDetailVirtualAttributeResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -59,7 +62,7 @@ func (o *ReplicationStateDetailVirtualAttributeResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReplicationStateDetailVirtualAttributeResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -67,7 +70,7 @@ func (o *ReplicationStateDetailVirtualAttributeResponse) GetMetaOk() (*MetaMeta,
 
 // HasMeta returns a boolean if a field has been set.
 func (o *ReplicationStateDetailVirtualAttributeResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -81,7 +84,7 @@ func (o *ReplicationStateDetailVirtualAttributeResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *ReplicationStateDetailVirtualAttributeResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -91,7 +94,7 @@ func (o *ReplicationStateDetailVirtualAttributeResponse) GetUrnpingidentityschem
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReplicationStateDetailVirtualAttributeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -99,7 +102,7 @@ func (o *ReplicationStateDetailVirtualAttributeResponse) GetUrnpingidentityschem
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *ReplicationStateDetailVirtualAttributeResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -185,7 +188,7 @@ func (o *ReplicationStateDetailVirtualAttributeResponse) SetEnabled(v bool) {
 
 // GetRequireExplicitRequestByName returns the RequireExplicitRequestByName field value if set, zero value otherwise.
 func (o *ReplicationStateDetailVirtualAttributeResponse) GetRequireExplicitRequestByName() bool {
-	if o == nil || isNil(o.RequireExplicitRequestByName) {
+	if o == nil || IsNil(o.RequireExplicitRequestByName) {
 		var ret bool
 		return ret
 	}
@@ -195,7 +198,7 @@ func (o *ReplicationStateDetailVirtualAttributeResponse) GetRequireExplicitReque
 // GetRequireExplicitRequestByNameOk returns a tuple with the RequireExplicitRequestByName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReplicationStateDetailVirtualAttributeResponse) GetRequireExplicitRequestByNameOk() (*bool, bool) {
-	if o == nil || isNil(o.RequireExplicitRequestByName) {
+	if o == nil || IsNil(o.RequireExplicitRequestByName) {
 		return nil, false
 	}
 	return o.RequireExplicitRequestByName, true
@@ -203,7 +206,7 @@ func (o *ReplicationStateDetailVirtualAttributeResponse) GetRequireExplicitReque
 
 // HasRequireExplicitRequestByName returns a boolean if a field has been set.
 func (o *ReplicationStateDetailVirtualAttributeResponse) HasRequireExplicitRequestByName() bool {
-	if o != nil && !isNil(o.RequireExplicitRequestByName) {
+	if o != nil && !IsNil(o.RequireExplicitRequestByName) {
 		return true
 	}
 
@@ -216,26 +219,28 @@ func (o *ReplicationStateDetailVirtualAttributeResponse) SetRequireExplicitReque
 }
 
 func (o ReplicationStateDetailVirtualAttributeResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.RequireExplicitRequestByName) {
-		toSerialize["requireExplicitRequestByName"] = o.RequireExplicitRequestByName
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ReplicationStateDetailVirtualAttributeResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.RequireExplicitRequestByName) {
+		toSerialize["requireExplicitRequestByName"] = o.RequireExplicitRequestByName
+	}
+	return toSerialize, nil
 }
 
 type NullableReplicationStateDetailVirtualAttributeResponse struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddEntryDnVirtualAttributeRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddEntryDnVirtualAttributeRequest{}
+
 // AddEntryDnVirtualAttributeRequest struct for AddEntryDnVirtualAttributeRequest
 type AddEntryDnVirtualAttributeRequest struct {
 	// Name of the new Virtual Attribute
@@ -113,7 +116,7 @@ func (o *AddEntryDnVirtualAttributeRequest) SetSchemas(v []EnumentryDnVirtualAtt
 
 // GetConflictBehavior returns the ConflictBehavior field value if set, zero value otherwise.
 func (o *AddEntryDnVirtualAttributeRequest) GetConflictBehavior() EnumvirtualAttributeConflictBehaviorProp {
-	if o == nil || isNil(o.ConflictBehavior) {
+	if o == nil || IsNil(o.ConflictBehavior) {
 		var ret EnumvirtualAttributeConflictBehaviorProp
 		return ret
 	}
@@ -123,7 +126,7 @@ func (o *AddEntryDnVirtualAttributeRequest) GetConflictBehavior() EnumvirtualAtt
 // GetConflictBehaviorOk returns a tuple with the ConflictBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddEntryDnVirtualAttributeRequest) GetConflictBehaviorOk() (*EnumvirtualAttributeConflictBehaviorProp, bool) {
-	if o == nil || isNil(o.ConflictBehavior) {
+	if o == nil || IsNil(o.ConflictBehavior) {
 		return nil, false
 	}
 	return o.ConflictBehavior, true
@@ -131,7 +134,7 @@ func (o *AddEntryDnVirtualAttributeRequest) GetConflictBehaviorOk() (*Enumvirtua
 
 // HasConflictBehavior returns a boolean if a field has been set.
 func (o *AddEntryDnVirtualAttributeRequest) HasConflictBehavior() bool {
-	if o != nil && !isNil(o.ConflictBehavior) {
+	if o != nil && !IsNil(o.ConflictBehavior) {
 		return true
 	}
 
@@ -145,7 +148,7 @@ func (o *AddEntryDnVirtualAttributeRequest) SetConflictBehavior(v EnumvirtualAtt
 
 // GetAttributeType returns the AttributeType field value if set, zero value otherwise.
 func (o *AddEntryDnVirtualAttributeRequest) GetAttributeType() string {
-	if o == nil || isNil(o.AttributeType) {
+	if o == nil || IsNil(o.AttributeType) {
 		var ret string
 		return ret
 	}
@@ -155,7 +158,7 @@ func (o *AddEntryDnVirtualAttributeRequest) GetAttributeType() string {
 // GetAttributeTypeOk returns a tuple with the AttributeType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddEntryDnVirtualAttributeRequest) GetAttributeTypeOk() (*string, bool) {
-	if o == nil || isNil(o.AttributeType) {
+	if o == nil || IsNil(o.AttributeType) {
 		return nil, false
 	}
 	return o.AttributeType, true
@@ -163,7 +166,7 @@ func (o *AddEntryDnVirtualAttributeRequest) GetAttributeTypeOk() (*string, bool)
 
 // HasAttributeType returns a boolean if a field has been set.
 func (o *AddEntryDnVirtualAttributeRequest) HasAttributeType() bool {
-	if o != nil && !isNil(o.AttributeType) {
+	if o != nil && !IsNil(o.AttributeType) {
 		return true
 	}
 
@@ -177,7 +180,7 @@ func (o *AddEntryDnVirtualAttributeRequest) SetAttributeType(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddEntryDnVirtualAttributeRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -187,7 +190,7 @@ func (o *AddEntryDnVirtualAttributeRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddEntryDnVirtualAttributeRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -195,7 +198,7 @@ func (o *AddEntryDnVirtualAttributeRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddEntryDnVirtualAttributeRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -233,7 +236,7 @@ func (o *AddEntryDnVirtualAttributeRequest) SetEnabled(v bool) {
 
 // GetBaseDN returns the BaseDN field value if set, zero value otherwise.
 func (o *AddEntryDnVirtualAttributeRequest) GetBaseDN() []string {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		var ret []string
 		return ret
 	}
@@ -243,7 +246,7 @@ func (o *AddEntryDnVirtualAttributeRequest) GetBaseDN() []string {
 // GetBaseDNOk returns a tuple with the BaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddEntryDnVirtualAttributeRequest) GetBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		return nil, false
 	}
 	return o.BaseDN, true
@@ -251,7 +254,7 @@ func (o *AddEntryDnVirtualAttributeRequest) GetBaseDNOk() ([]string, bool) {
 
 // HasBaseDN returns a boolean if a field has been set.
 func (o *AddEntryDnVirtualAttributeRequest) HasBaseDN() bool {
-	if o != nil && !isNil(o.BaseDN) {
+	if o != nil && !IsNil(o.BaseDN) {
 		return true
 	}
 
@@ -265,7 +268,7 @@ func (o *AddEntryDnVirtualAttributeRequest) SetBaseDN(v []string) {
 
 // GetGroupDN returns the GroupDN field value if set, zero value otherwise.
 func (o *AddEntryDnVirtualAttributeRequest) GetGroupDN() []string {
-	if o == nil || isNil(o.GroupDN) {
+	if o == nil || IsNil(o.GroupDN) {
 		var ret []string
 		return ret
 	}
@@ -275,7 +278,7 @@ func (o *AddEntryDnVirtualAttributeRequest) GetGroupDN() []string {
 // GetGroupDNOk returns a tuple with the GroupDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddEntryDnVirtualAttributeRequest) GetGroupDNOk() ([]string, bool) {
-	if o == nil || isNil(o.GroupDN) {
+	if o == nil || IsNil(o.GroupDN) {
 		return nil, false
 	}
 	return o.GroupDN, true
@@ -283,7 +286,7 @@ func (o *AddEntryDnVirtualAttributeRequest) GetGroupDNOk() ([]string, bool) {
 
 // HasGroupDN returns a boolean if a field has been set.
 func (o *AddEntryDnVirtualAttributeRequest) HasGroupDN() bool {
-	if o != nil && !isNil(o.GroupDN) {
+	if o != nil && !IsNil(o.GroupDN) {
 		return true
 	}
 
@@ -297,7 +300,7 @@ func (o *AddEntryDnVirtualAttributeRequest) SetGroupDN(v []string) {
 
 // GetFilter returns the Filter field value if set, zero value otherwise.
 func (o *AddEntryDnVirtualAttributeRequest) GetFilter() []string {
-	if o == nil || isNil(o.Filter) {
+	if o == nil || IsNil(o.Filter) {
 		var ret []string
 		return ret
 	}
@@ -307,7 +310,7 @@ func (o *AddEntryDnVirtualAttributeRequest) GetFilter() []string {
 // GetFilterOk returns a tuple with the Filter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddEntryDnVirtualAttributeRequest) GetFilterOk() ([]string, bool) {
-	if o == nil || isNil(o.Filter) {
+	if o == nil || IsNil(o.Filter) {
 		return nil, false
 	}
 	return o.Filter, true
@@ -315,7 +318,7 @@ func (o *AddEntryDnVirtualAttributeRequest) GetFilterOk() ([]string, bool) {
 
 // HasFilter returns a boolean if a field has been set.
 func (o *AddEntryDnVirtualAttributeRequest) HasFilter() bool {
-	if o != nil && !isNil(o.Filter) {
+	if o != nil && !IsNil(o.Filter) {
 		return true
 	}
 
@@ -329,7 +332,7 @@ func (o *AddEntryDnVirtualAttributeRequest) SetFilter(v []string) {
 
 // GetClientConnectionPolicy returns the ClientConnectionPolicy field value if set, zero value otherwise.
 func (o *AddEntryDnVirtualAttributeRequest) GetClientConnectionPolicy() []string {
-	if o == nil || isNil(o.ClientConnectionPolicy) {
+	if o == nil || IsNil(o.ClientConnectionPolicy) {
 		var ret []string
 		return ret
 	}
@@ -339,7 +342,7 @@ func (o *AddEntryDnVirtualAttributeRequest) GetClientConnectionPolicy() []string
 // GetClientConnectionPolicyOk returns a tuple with the ClientConnectionPolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddEntryDnVirtualAttributeRequest) GetClientConnectionPolicyOk() ([]string, bool) {
-	if o == nil || isNil(o.ClientConnectionPolicy) {
+	if o == nil || IsNil(o.ClientConnectionPolicy) {
 		return nil, false
 	}
 	return o.ClientConnectionPolicy, true
@@ -347,7 +350,7 @@ func (o *AddEntryDnVirtualAttributeRequest) GetClientConnectionPolicyOk() ([]str
 
 // HasClientConnectionPolicy returns a boolean if a field has been set.
 func (o *AddEntryDnVirtualAttributeRequest) HasClientConnectionPolicy() bool {
-	if o != nil && !isNil(o.ClientConnectionPolicy) {
+	if o != nil && !IsNil(o.ClientConnectionPolicy) {
 		return true
 	}
 
@@ -361,7 +364,7 @@ func (o *AddEntryDnVirtualAttributeRequest) SetClientConnectionPolicy(v []string
 
 // GetRequireExplicitRequestByName returns the RequireExplicitRequestByName field value if set, zero value otherwise.
 func (o *AddEntryDnVirtualAttributeRequest) GetRequireExplicitRequestByName() bool {
-	if o == nil || isNil(o.RequireExplicitRequestByName) {
+	if o == nil || IsNil(o.RequireExplicitRequestByName) {
 		var ret bool
 		return ret
 	}
@@ -371,7 +374,7 @@ func (o *AddEntryDnVirtualAttributeRequest) GetRequireExplicitRequestByName() bo
 // GetRequireExplicitRequestByNameOk returns a tuple with the RequireExplicitRequestByName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddEntryDnVirtualAttributeRequest) GetRequireExplicitRequestByNameOk() (*bool, bool) {
-	if o == nil || isNil(o.RequireExplicitRequestByName) {
+	if o == nil || IsNil(o.RequireExplicitRequestByName) {
 		return nil, false
 	}
 	return o.RequireExplicitRequestByName, true
@@ -379,7 +382,7 @@ func (o *AddEntryDnVirtualAttributeRequest) GetRequireExplicitRequestByNameOk() 
 
 // HasRequireExplicitRequestByName returns a boolean if a field has been set.
 func (o *AddEntryDnVirtualAttributeRequest) HasRequireExplicitRequestByName() bool {
-	if o != nil && !isNil(o.RequireExplicitRequestByName) {
+	if o != nil && !IsNil(o.RequireExplicitRequestByName) {
 		return true
 	}
 
@@ -393,7 +396,7 @@ func (o *AddEntryDnVirtualAttributeRequest) SetRequireExplicitRequestByName(v bo
 
 // GetMultipleVirtualAttributeEvaluationOrderIndex returns the MultipleVirtualAttributeEvaluationOrderIndex field value if set, zero value otherwise.
 func (o *AddEntryDnVirtualAttributeRequest) GetMultipleVirtualAttributeEvaluationOrderIndex() int32 {
-	if o == nil || isNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
+	if o == nil || IsNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
 		var ret int32
 		return ret
 	}
@@ -403,7 +406,7 @@ func (o *AddEntryDnVirtualAttributeRequest) GetMultipleVirtualAttributeEvaluatio
 // GetMultipleVirtualAttributeEvaluationOrderIndexOk returns a tuple with the MultipleVirtualAttributeEvaluationOrderIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddEntryDnVirtualAttributeRequest) GetMultipleVirtualAttributeEvaluationOrderIndexOk() (*int32, bool) {
-	if o == nil || isNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
+	if o == nil || IsNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
 		return nil, false
 	}
 	return o.MultipleVirtualAttributeEvaluationOrderIndex, true
@@ -411,7 +414,7 @@ func (o *AddEntryDnVirtualAttributeRequest) GetMultipleVirtualAttributeEvaluatio
 
 // HasMultipleVirtualAttributeEvaluationOrderIndex returns a boolean if a field has been set.
 func (o *AddEntryDnVirtualAttributeRequest) HasMultipleVirtualAttributeEvaluationOrderIndex() bool {
-	if o != nil && !isNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
+	if o != nil && !IsNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
 		return true
 	}
 
@@ -425,7 +428,7 @@ func (o *AddEntryDnVirtualAttributeRequest) SetMultipleVirtualAttributeEvaluatio
 
 // GetMultipleVirtualAttributeMergeBehavior returns the MultipleVirtualAttributeMergeBehavior field value if set, zero value otherwise.
 func (o *AddEntryDnVirtualAttributeRequest) GetMultipleVirtualAttributeMergeBehavior() EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp {
-	if o == nil || isNil(o.MultipleVirtualAttributeMergeBehavior) {
+	if o == nil || IsNil(o.MultipleVirtualAttributeMergeBehavior) {
 		var ret EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp
 		return ret
 	}
@@ -435,7 +438,7 @@ func (o *AddEntryDnVirtualAttributeRequest) GetMultipleVirtualAttributeMergeBeha
 // GetMultipleVirtualAttributeMergeBehaviorOk returns a tuple with the MultipleVirtualAttributeMergeBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddEntryDnVirtualAttributeRequest) GetMultipleVirtualAttributeMergeBehaviorOk() (*EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp, bool) {
-	if o == nil || isNil(o.MultipleVirtualAttributeMergeBehavior) {
+	if o == nil || IsNil(o.MultipleVirtualAttributeMergeBehavior) {
 		return nil, false
 	}
 	return o.MultipleVirtualAttributeMergeBehavior, true
@@ -443,7 +446,7 @@ func (o *AddEntryDnVirtualAttributeRequest) GetMultipleVirtualAttributeMergeBeha
 
 // HasMultipleVirtualAttributeMergeBehavior returns a boolean if a field has been set.
 func (o *AddEntryDnVirtualAttributeRequest) HasMultipleVirtualAttributeMergeBehavior() bool {
-	if o != nil && !isNil(o.MultipleVirtualAttributeMergeBehavior) {
+	if o != nil && !IsNil(o.MultipleVirtualAttributeMergeBehavior) {
 		return true
 	}
 
@@ -457,7 +460,7 @@ func (o *AddEntryDnVirtualAttributeRequest) SetMultipleVirtualAttributeMergeBeha
 
 // GetAllowIndexConflicts returns the AllowIndexConflicts field value if set, zero value otherwise.
 func (o *AddEntryDnVirtualAttributeRequest) GetAllowIndexConflicts() bool {
-	if o == nil || isNil(o.AllowIndexConflicts) {
+	if o == nil || IsNil(o.AllowIndexConflicts) {
 		var ret bool
 		return ret
 	}
@@ -467,7 +470,7 @@ func (o *AddEntryDnVirtualAttributeRequest) GetAllowIndexConflicts() bool {
 // GetAllowIndexConflictsOk returns a tuple with the AllowIndexConflicts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddEntryDnVirtualAttributeRequest) GetAllowIndexConflictsOk() (*bool, bool) {
-	if o == nil || isNil(o.AllowIndexConflicts) {
+	if o == nil || IsNil(o.AllowIndexConflicts) {
 		return nil, false
 	}
 	return o.AllowIndexConflicts, true
@@ -475,7 +478,7 @@ func (o *AddEntryDnVirtualAttributeRequest) GetAllowIndexConflictsOk() (*bool, b
 
 // HasAllowIndexConflicts returns a boolean if a field has been set.
 func (o *AddEntryDnVirtualAttributeRequest) HasAllowIndexConflicts() bool {
-	if o != nil && !isNil(o.AllowIndexConflicts) {
+	if o != nil && !IsNil(o.AllowIndexConflicts) {
 		return true
 	}
 
@@ -488,50 +491,52 @@ func (o *AddEntryDnVirtualAttributeRequest) SetAllowIndexConflicts(v bool) {
 }
 
 func (o AddEntryDnVirtualAttributeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["name"] = o.Name
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.ConflictBehavior) {
-		toSerialize["conflictBehavior"] = o.ConflictBehavior
-	}
-	if !isNil(o.AttributeType) {
-		toSerialize["attributeType"] = o.AttributeType
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.BaseDN) {
-		toSerialize["baseDN"] = o.BaseDN
-	}
-	if !isNil(o.GroupDN) {
-		toSerialize["groupDN"] = o.GroupDN
-	}
-	if !isNil(o.Filter) {
-		toSerialize["filter"] = o.Filter
-	}
-	if !isNil(o.ClientConnectionPolicy) {
-		toSerialize["clientConnectionPolicy"] = o.ClientConnectionPolicy
-	}
-	if !isNil(o.RequireExplicitRequestByName) {
-		toSerialize["requireExplicitRequestByName"] = o.RequireExplicitRequestByName
-	}
-	if !isNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
-		toSerialize["multipleVirtualAttributeEvaluationOrderIndex"] = o.MultipleVirtualAttributeEvaluationOrderIndex
-	}
-	if !isNil(o.MultipleVirtualAttributeMergeBehavior) {
-		toSerialize["multipleVirtualAttributeMergeBehavior"] = o.MultipleVirtualAttributeMergeBehavior
-	}
-	if !isNil(o.AllowIndexConflicts) {
-		toSerialize["allowIndexConflicts"] = o.AllowIndexConflicts
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddEntryDnVirtualAttributeRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["name"] = o.Name
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.ConflictBehavior) {
+		toSerialize["conflictBehavior"] = o.ConflictBehavior
+	}
+	if !IsNil(o.AttributeType) {
+		toSerialize["attributeType"] = o.AttributeType
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.BaseDN) {
+		toSerialize["baseDN"] = o.BaseDN
+	}
+	if !IsNil(o.GroupDN) {
+		toSerialize["groupDN"] = o.GroupDN
+	}
+	if !IsNil(o.Filter) {
+		toSerialize["filter"] = o.Filter
+	}
+	if !IsNil(o.ClientConnectionPolicy) {
+		toSerialize["clientConnectionPolicy"] = o.ClientConnectionPolicy
+	}
+	if !IsNil(o.RequireExplicitRequestByName) {
+		toSerialize["requireExplicitRequestByName"] = o.RequireExplicitRequestByName
+	}
+	if !IsNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
+		toSerialize["multipleVirtualAttributeEvaluationOrderIndex"] = o.MultipleVirtualAttributeEvaluationOrderIndex
+	}
+	if !IsNil(o.MultipleVirtualAttributeMergeBehavior) {
+		toSerialize["multipleVirtualAttributeMergeBehavior"] = o.MultipleVirtualAttributeMergeBehavior
+	}
+	if !IsNil(o.AllowIndexConflicts) {
+		toSerialize["allowIndexConflicts"] = o.AllowIndexConflicts
+	}
+	return toSerialize, nil
 }
 
 type NullableAddEntryDnVirtualAttributeRequest struct {

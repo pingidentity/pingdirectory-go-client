@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the GroovyScriptedFileBasedAccessLogPublisherResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GroovyScriptedFileBasedAccessLogPublisherResponse{}
+
 // GroovyScriptedFileBasedAccessLogPublisherResponse struct for GroovyScriptedFileBasedAccessLogPublisherResponse
 type GroovyScriptedFileBasedAccessLogPublisherResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -123,7 +126,7 @@ func NewGroovyScriptedFileBasedAccessLogPublisherResponseWithDefaults() *GroovyS
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -133,7 +136,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -141,7 +144,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetMetaOk() (*MetaMe
 
 // HasMeta returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -155,7 +158,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetMeta(v MetaMeta) 
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -165,7 +168,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetUrnpingidentitysc
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -173,7 +176,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetUrnpingidentitysc
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -331,7 +334,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetRotationPolicy(v 
 
 // GetRotationListener returns the RotationListener field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetRotationListener() []string {
-	if o == nil || isNil(o.RotationListener) {
+	if o == nil || IsNil(o.RotationListener) {
 		var ret []string
 		return ret
 	}
@@ -341,7 +344,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetRotationListener(
 // GetRotationListenerOk returns a tuple with the RotationListener field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetRotationListenerOk() ([]string, bool) {
-	if o == nil || isNil(o.RotationListener) {
+	if o == nil || IsNil(o.RotationListener) {
 		return nil, false
 	}
 	return o.RotationListener, true
@@ -349,7 +352,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetRotationListenerO
 
 // HasRotationListener returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasRotationListener() bool {
-	if o != nil && !isNil(o.RotationListener) {
+	if o != nil && !IsNil(o.RotationListener) {
 		return true
 	}
 
@@ -387,7 +390,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetRetentionPolicy(v
 
 // GetCompressionMechanism returns the CompressionMechanism field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetCompressionMechanism() EnumlogPublisherCompressionMechanismProp {
-	if o == nil || isNil(o.CompressionMechanism) {
+	if o == nil || IsNil(o.CompressionMechanism) {
 		var ret EnumlogPublisherCompressionMechanismProp
 		return ret
 	}
@@ -397,7 +400,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetCompressionMechan
 // GetCompressionMechanismOk returns a tuple with the CompressionMechanism field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetCompressionMechanismOk() (*EnumlogPublisherCompressionMechanismProp, bool) {
-	if o == nil || isNil(o.CompressionMechanism) {
+	if o == nil || IsNil(o.CompressionMechanism) {
 		return nil, false
 	}
 	return o.CompressionMechanism, true
@@ -405,7 +408,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetCompressionMechan
 
 // HasCompressionMechanism returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasCompressionMechanism() bool {
-	if o != nil && !isNil(o.CompressionMechanism) {
+	if o != nil && !IsNil(o.CompressionMechanism) {
 		return true
 	}
 
@@ -419,7 +422,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetCompressionMechan
 
 // GetSignLog returns the SignLog field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetSignLog() bool {
-	if o == nil || isNil(o.SignLog) {
+	if o == nil || IsNil(o.SignLog) {
 		var ret bool
 		return ret
 	}
@@ -429,7 +432,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetSignLog() bool {
 // GetSignLogOk returns a tuple with the SignLog field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetSignLogOk() (*bool, bool) {
-	if o == nil || isNil(o.SignLog) {
+	if o == nil || IsNil(o.SignLog) {
 		return nil, false
 	}
 	return o.SignLog, true
@@ -437,7 +440,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetSignLogOk() (*boo
 
 // HasSignLog returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasSignLog() bool {
-	if o != nil && !isNil(o.SignLog) {
+	if o != nil && !IsNil(o.SignLog) {
 		return true
 	}
 
@@ -451,7 +454,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetSignLog(v bool) {
 
 // GetEncryptLog returns the EncryptLog field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetEncryptLog() bool {
-	if o == nil || isNil(o.EncryptLog) {
+	if o == nil || IsNil(o.EncryptLog) {
 		var ret bool
 		return ret
 	}
@@ -461,7 +464,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetEncryptLog() bool
 // GetEncryptLogOk returns a tuple with the EncryptLog field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetEncryptLogOk() (*bool, bool) {
-	if o == nil || isNil(o.EncryptLog) {
+	if o == nil || IsNil(o.EncryptLog) {
 		return nil, false
 	}
 	return o.EncryptLog, true
@@ -469,7 +472,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetEncryptLogOk() (*
 
 // HasEncryptLog returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasEncryptLog() bool {
-	if o != nil && !isNil(o.EncryptLog) {
+	if o != nil && !IsNil(o.EncryptLog) {
 		return true
 	}
 
@@ -483,7 +486,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetEncryptLog(v bool
 
 // GetEncryptionSettingsDefinitionID returns the EncryptionSettingsDefinitionID field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetEncryptionSettingsDefinitionID() string {
-	if o == nil || isNil(o.EncryptionSettingsDefinitionID) {
+	if o == nil || IsNil(o.EncryptionSettingsDefinitionID) {
 		var ret string
 		return ret
 	}
@@ -493,7 +496,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetEncryptionSetting
 // GetEncryptionSettingsDefinitionIDOk returns a tuple with the EncryptionSettingsDefinitionID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetEncryptionSettingsDefinitionIDOk() (*string, bool) {
-	if o == nil || isNil(o.EncryptionSettingsDefinitionID) {
+	if o == nil || IsNil(o.EncryptionSettingsDefinitionID) {
 		return nil, false
 	}
 	return o.EncryptionSettingsDefinitionID, true
@@ -501,7 +504,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetEncryptionSetting
 
 // HasEncryptionSettingsDefinitionID returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasEncryptionSettingsDefinitionID() bool {
-	if o != nil && !isNil(o.EncryptionSettingsDefinitionID) {
+	if o != nil && !IsNil(o.EncryptionSettingsDefinitionID) {
 		return true
 	}
 
@@ -515,7 +518,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetEncryptionSetting
 
 // GetAppend returns the Append field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetAppend() bool {
-	if o == nil || isNil(o.Append) {
+	if o == nil || IsNil(o.Append) {
 		var ret bool
 		return ret
 	}
@@ -525,7 +528,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetAppend() bool {
 // GetAppendOk returns a tuple with the Append field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetAppendOk() (*bool, bool) {
-	if o == nil || isNil(o.Append) {
+	if o == nil || IsNil(o.Append) {
 		return nil, false
 	}
 	return o.Append, true
@@ -533,7 +536,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetAppendOk() (*bool
 
 // HasAppend returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasAppend() bool {
-	if o != nil && !isNil(o.Append) {
+	if o != nil && !IsNil(o.Append) {
 		return true
 	}
 
@@ -547,7 +550,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetAppend(v bool) {
 
 // GetScriptArgument returns the ScriptArgument field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetScriptArgument() []string {
-	if o == nil || isNil(o.ScriptArgument) {
+	if o == nil || IsNil(o.ScriptArgument) {
 		var ret []string
 		return ret
 	}
@@ -557,7 +560,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetScriptArgument() 
 // GetScriptArgumentOk returns a tuple with the ScriptArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetScriptArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ScriptArgument) {
+	if o == nil || IsNil(o.ScriptArgument) {
 		return nil, false
 	}
 	return o.ScriptArgument, true
@@ -565,7 +568,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetScriptArgumentOk(
 
 // HasScriptArgument returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasScriptArgument() bool {
-	if o != nil && !isNil(o.ScriptArgument) {
+	if o != nil && !IsNil(o.ScriptArgument) {
 		return true
 	}
 
@@ -603,7 +606,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetAsynchronous(v bo
 
 // GetAutoFlush returns the AutoFlush field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetAutoFlush() bool {
-	if o == nil || isNil(o.AutoFlush) {
+	if o == nil || IsNil(o.AutoFlush) {
 		var ret bool
 		return ret
 	}
@@ -613,7 +616,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetAutoFlush() bool 
 // GetAutoFlushOk returns a tuple with the AutoFlush field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetAutoFlushOk() (*bool, bool) {
-	if o == nil || isNil(o.AutoFlush) {
+	if o == nil || IsNil(o.AutoFlush) {
 		return nil, false
 	}
 	return o.AutoFlush, true
@@ -621,7 +624,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetAutoFlushOk() (*b
 
 // HasAutoFlush returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasAutoFlush() bool {
-	if o != nil && !isNil(o.AutoFlush) {
+	if o != nil && !IsNil(o.AutoFlush) {
 		return true
 	}
 
@@ -635,7 +638,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetAutoFlush(v bool)
 
 // GetBufferSize returns the BufferSize field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetBufferSize() string {
-	if o == nil || isNil(o.BufferSize) {
+	if o == nil || IsNil(o.BufferSize) {
 		var ret string
 		return ret
 	}
@@ -645,7 +648,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetBufferSize() stri
 // GetBufferSizeOk returns a tuple with the BufferSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetBufferSizeOk() (*string, bool) {
-	if o == nil || isNil(o.BufferSize) {
+	if o == nil || IsNil(o.BufferSize) {
 		return nil, false
 	}
 	return o.BufferSize, true
@@ -653,7 +656,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetBufferSizeOk() (*
 
 // HasBufferSize returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasBufferSize() bool {
-	if o != nil && !isNil(o.BufferSize) {
+	if o != nil && !IsNil(o.BufferSize) {
 		return true
 	}
 
@@ -667,7 +670,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetBufferSize(v stri
 
 // GetQueueSize returns the QueueSize field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetQueueSize() int32 {
-	if o == nil || isNil(o.QueueSize) {
+	if o == nil || IsNil(o.QueueSize) {
 		var ret int32
 		return ret
 	}
@@ -677,7 +680,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetQueueSize() int32
 // GetQueueSizeOk returns a tuple with the QueueSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetQueueSizeOk() (*int32, bool) {
-	if o == nil || isNil(o.QueueSize) {
+	if o == nil || IsNil(o.QueueSize) {
 		return nil, false
 	}
 	return o.QueueSize, true
@@ -685,7 +688,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetQueueSizeOk() (*i
 
 // HasQueueSize returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasQueueSize() bool {
-	if o != nil && !isNil(o.QueueSize) {
+	if o != nil && !IsNil(o.QueueSize) {
 		return true
 	}
 
@@ -699,7 +702,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetQueueSize(v int32
 
 // GetTimeInterval returns the TimeInterval field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetTimeInterval() string {
-	if o == nil || isNil(o.TimeInterval) {
+	if o == nil || IsNil(o.TimeInterval) {
 		var ret string
 		return ret
 	}
@@ -709,7 +712,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetTimeInterval() st
 // GetTimeIntervalOk returns a tuple with the TimeInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetTimeIntervalOk() (*string, bool) {
-	if o == nil || isNil(o.TimeInterval) {
+	if o == nil || IsNil(o.TimeInterval) {
 		return nil, false
 	}
 	return o.TimeInterval, true
@@ -717,7 +720,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetTimeIntervalOk() 
 
 // HasTimeInterval returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasTimeInterval() bool {
-	if o != nil && !isNil(o.TimeInterval) {
+	if o != nil && !IsNil(o.TimeInterval) {
 		return true
 	}
 
@@ -731,7 +734,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetTimeInterval(v st
 
 // GetLogConnects returns the LogConnects field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogConnects() bool {
-	if o == nil || isNil(o.LogConnects) {
+	if o == nil || IsNil(o.LogConnects) {
 		var ret bool
 		return ret
 	}
@@ -741,7 +744,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogConnects() boo
 // GetLogConnectsOk returns a tuple with the LogConnects field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogConnectsOk() (*bool, bool) {
-	if o == nil || isNil(o.LogConnects) {
+	if o == nil || IsNil(o.LogConnects) {
 		return nil, false
 	}
 	return o.LogConnects, true
@@ -749,7 +752,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogConnectsOk() (
 
 // HasLogConnects returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasLogConnects() bool {
-	if o != nil && !isNil(o.LogConnects) {
+	if o != nil && !IsNil(o.LogConnects) {
 		return true
 	}
 
@@ -763,7 +766,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetLogConnects(v boo
 
 // GetLogDisconnects returns the LogDisconnects field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogDisconnects() bool {
-	if o == nil || isNil(o.LogDisconnects) {
+	if o == nil || IsNil(o.LogDisconnects) {
 		var ret bool
 		return ret
 	}
@@ -773,7 +776,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogDisconnects() 
 // GetLogDisconnectsOk returns a tuple with the LogDisconnects field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogDisconnectsOk() (*bool, bool) {
-	if o == nil || isNil(o.LogDisconnects) {
+	if o == nil || IsNil(o.LogDisconnects) {
 		return nil, false
 	}
 	return o.LogDisconnects, true
@@ -781,7 +784,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogDisconnectsOk(
 
 // HasLogDisconnects returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasLogDisconnects() bool {
-	if o != nil && !isNil(o.LogDisconnects) {
+	if o != nil && !IsNil(o.LogDisconnects) {
 		return true
 	}
 
@@ -795,7 +798,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetLogDisconnects(v 
 
 // GetLogSecurityNegotiation returns the LogSecurityNegotiation field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogSecurityNegotiation() bool {
-	if o == nil || isNil(o.LogSecurityNegotiation) {
+	if o == nil || IsNil(o.LogSecurityNegotiation) {
 		var ret bool
 		return ret
 	}
@@ -805,7 +808,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogSecurityNegoti
 // GetLogSecurityNegotiationOk returns a tuple with the LogSecurityNegotiation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogSecurityNegotiationOk() (*bool, bool) {
-	if o == nil || isNil(o.LogSecurityNegotiation) {
+	if o == nil || IsNil(o.LogSecurityNegotiation) {
 		return nil, false
 	}
 	return o.LogSecurityNegotiation, true
@@ -813,7 +816,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogSecurityNegoti
 
 // HasLogSecurityNegotiation returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasLogSecurityNegotiation() bool {
-	if o != nil && !isNil(o.LogSecurityNegotiation) {
+	if o != nil && !IsNil(o.LogSecurityNegotiation) {
 		return true
 	}
 
@@ -827,7 +830,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetLogSecurityNegoti
 
 // GetLogClientCertificates returns the LogClientCertificates field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogClientCertificates() bool {
-	if o == nil || isNil(o.LogClientCertificates) {
+	if o == nil || IsNil(o.LogClientCertificates) {
 		var ret bool
 		return ret
 	}
@@ -837,7 +840,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogClientCertific
 // GetLogClientCertificatesOk returns a tuple with the LogClientCertificates field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogClientCertificatesOk() (*bool, bool) {
-	if o == nil || isNil(o.LogClientCertificates) {
+	if o == nil || IsNil(o.LogClientCertificates) {
 		return nil, false
 	}
 	return o.LogClientCertificates, true
@@ -845,7 +848,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogClientCertific
 
 // HasLogClientCertificates returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasLogClientCertificates() bool {
-	if o != nil && !isNil(o.LogClientCertificates) {
+	if o != nil && !IsNil(o.LogClientCertificates) {
 		return true
 	}
 
@@ -859,7 +862,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetLogClientCertific
 
 // GetLogRequests returns the LogRequests field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogRequests() bool {
-	if o == nil || isNil(o.LogRequests) {
+	if o == nil || IsNil(o.LogRequests) {
 		var ret bool
 		return ret
 	}
@@ -869,7 +872,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogRequests() boo
 // GetLogRequestsOk returns a tuple with the LogRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogRequestsOk() (*bool, bool) {
-	if o == nil || isNil(o.LogRequests) {
+	if o == nil || IsNil(o.LogRequests) {
 		return nil, false
 	}
 	return o.LogRequests, true
@@ -877,7 +880,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogRequestsOk() (
 
 // HasLogRequests returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasLogRequests() bool {
-	if o != nil && !isNil(o.LogRequests) {
+	if o != nil && !IsNil(o.LogRequests) {
 		return true
 	}
 
@@ -891,7 +894,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetLogRequests(v boo
 
 // GetLogResults returns the LogResults field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogResults() bool {
-	if o == nil || isNil(o.LogResults) {
+	if o == nil || IsNil(o.LogResults) {
 		var ret bool
 		return ret
 	}
@@ -901,7 +904,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogResults() bool
 // GetLogResultsOk returns a tuple with the LogResults field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogResultsOk() (*bool, bool) {
-	if o == nil || isNil(o.LogResults) {
+	if o == nil || IsNil(o.LogResults) {
 		return nil, false
 	}
 	return o.LogResults, true
@@ -909,7 +912,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogResultsOk() (*
 
 // HasLogResults returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasLogResults() bool {
-	if o != nil && !isNil(o.LogResults) {
+	if o != nil && !IsNil(o.LogResults) {
 		return true
 	}
 
@@ -923,7 +926,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetLogResults(v bool
 
 // GetLogSearchEntries returns the LogSearchEntries field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogSearchEntries() bool {
-	if o == nil || isNil(o.LogSearchEntries) {
+	if o == nil || IsNil(o.LogSearchEntries) {
 		var ret bool
 		return ret
 	}
@@ -933,7 +936,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogSearchEntries(
 // GetLogSearchEntriesOk returns a tuple with the LogSearchEntries field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogSearchEntriesOk() (*bool, bool) {
-	if o == nil || isNil(o.LogSearchEntries) {
+	if o == nil || IsNil(o.LogSearchEntries) {
 		return nil, false
 	}
 	return o.LogSearchEntries, true
@@ -941,7 +944,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogSearchEntriesO
 
 // HasLogSearchEntries returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasLogSearchEntries() bool {
-	if o != nil && !isNil(o.LogSearchEntries) {
+	if o != nil && !IsNil(o.LogSearchEntries) {
 		return true
 	}
 
@@ -955,7 +958,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetLogSearchEntries(
 
 // GetLogSearchReferences returns the LogSearchReferences field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogSearchReferences() bool {
-	if o == nil || isNil(o.LogSearchReferences) {
+	if o == nil || IsNil(o.LogSearchReferences) {
 		var ret bool
 		return ret
 	}
@@ -965,7 +968,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogSearchReferenc
 // GetLogSearchReferencesOk returns a tuple with the LogSearchReferences field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogSearchReferencesOk() (*bool, bool) {
-	if o == nil || isNil(o.LogSearchReferences) {
+	if o == nil || IsNil(o.LogSearchReferences) {
 		return nil, false
 	}
 	return o.LogSearchReferences, true
@@ -973,7 +976,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogSearchReferenc
 
 // HasLogSearchReferences returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasLogSearchReferences() bool {
-	if o != nil && !isNil(o.LogSearchReferences) {
+	if o != nil && !IsNil(o.LogSearchReferences) {
 		return true
 	}
 
@@ -987,7 +990,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetLogSearchReferenc
 
 // GetLogIntermediateResponses returns the LogIntermediateResponses field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogIntermediateResponses() bool {
-	if o == nil || isNil(o.LogIntermediateResponses) {
+	if o == nil || IsNil(o.LogIntermediateResponses) {
 		var ret bool
 		return ret
 	}
@@ -997,7 +1000,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogIntermediateRe
 // GetLogIntermediateResponsesOk returns a tuple with the LogIntermediateResponses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogIntermediateResponsesOk() (*bool, bool) {
-	if o == nil || isNil(o.LogIntermediateResponses) {
+	if o == nil || IsNil(o.LogIntermediateResponses) {
 		return nil, false
 	}
 	return o.LogIntermediateResponses, true
@@ -1005,7 +1008,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLogIntermediateRe
 
 // HasLogIntermediateResponses returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasLogIntermediateResponses() bool {
-	if o != nil && !isNil(o.LogIntermediateResponses) {
+	if o != nil && !IsNil(o.LogIntermediateResponses) {
 		return true
 	}
 
@@ -1019,7 +1022,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetLogIntermediateRe
 
 // GetSuppressInternalOperations returns the SuppressInternalOperations field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetSuppressInternalOperations() bool {
-	if o == nil || isNil(o.SuppressInternalOperations) {
+	if o == nil || IsNil(o.SuppressInternalOperations) {
 		var ret bool
 		return ret
 	}
@@ -1029,7 +1032,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetSuppressInternalO
 // GetSuppressInternalOperationsOk returns a tuple with the SuppressInternalOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetSuppressInternalOperationsOk() (*bool, bool) {
-	if o == nil || isNil(o.SuppressInternalOperations) {
+	if o == nil || IsNil(o.SuppressInternalOperations) {
 		return nil, false
 	}
 	return o.SuppressInternalOperations, true
@@ -1037,7 +1040,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetSuppressInternalO
 
 // HasSuppressInternalOperations returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasSuppressInternalOperations() bool {
-	if o != nil && !isNil(o.SuppressInternalOperations) {
+	if o != nil && !IsNil(o.SuppressInternalOperations) {
 		return true
 	}
 
@@ -1051,7 +1054,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetSuppressInternalO
 
 // GetSuppressReplicationOperations returns the SuppressReplicationOperations field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetSuppressReplicationOperations() bool {
-	if o == nil || isNil(o.SuppressReplicationOperations) {
+	if o == nil || IsNil(o.SuppressReplicationOperations) {
 		var ret bool
 		return ret
 	}
@@ -1061,7 +1064,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetSuppressReplicati
 // GetSuppressReplicationOperationsOk returns a tuple with the SuppressReplicationOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetSuppressReplicationOperationsOk() (*bool, bool) {
-	if o == nil || isNil(o.SuppressReplicationOperations) {
+	if o == nil || IsNil(o.SuppressReplicationOperations) {
 		return nil, false
 	}
 	return o.SuppressReplicationOperations, true
@@ -1069,7 +1072,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetSuppressReplicati
 
 // HasSuppressReplicationOperations returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasSuppressReplicationOperations() bool {
-	if o != nil && !isNil(o.SuppressReplicationOperations) {
+	if o != nil && !IsNil(o.SuppressReplicationOperations) {
 		return true
 	}
 
@@ -1083,7 +1086,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetSuppressReplicati
 
 // GetCorrelateRequestsAndResults returns the CorrelateRequestsAndResults field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetCorrelateRequestsAndResults() bool {
-	if o == nil || isNil(o.CorrelateRequestsAndResults) {
+	if o == nil || IsNil(o.CorrelateRequestsAndResults) {
 		var ret bool
 		return ret
 	}
@@ -1093,7 +1096,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetCorrelateRequests
 // GetCorrelateRequestsAndResultsOk returns a tuple with the CorrelateRequestsAndResults field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetCorrelateRequestsAndResultsOk() (*bool, bool) {
-	if o == nil || isNil(o.CorrelateRequestsAndResults) {
+	if o == nil || IsNil(o.CorrelateRequestsAndResults) {
 		return nil, false
 	}
 	return o.CorrelateRequestsAndResults, true
@@ -1101,7 +1104,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetCorrelateRequests
 
 // HasCorrelateRequestsAndResults returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasCorrelateRequestsAndResults() bool {
-	if o != nil && !isNil(o.CorrelateRequestsAndResults) {
+	if o != nil && !IsNil(o.CorrelateRequestsAndResults) {
 		return true
 	}
 
@@ -1115,7 +1118,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetCorrelateRequests
 
 // GetConnectionCriteria returns the ConnectionCriteria field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetConnectionCriteria() string {
-	if o == nil || isNil(o.ConnectionCriteria) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
 		var ret string
 		return ret
 	}
@@ -1125,7 +1128,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetConnectionCriteri
 // GetConnectionCriteriaOk returns a tuple with the ConnectionCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetConnectionCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.ConnectionCriteria) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
 		return nil, false
 	}
 	return o.ConnectionCriteria, true
@@ -1133,7 +1136,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetConnectionCriteri
 
 // HasConnectionCriteria returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasConnectionCriteria() bool {
-	if o != nil && !isNil(o.ConnectionCriteria) {
+	if o != nil && !IsNil(o.ConnectionCriteria) {
 		return true
 	}
 
@@ -1147,7 +1150,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetConnectionCriteri
 
 // GetRequestCriteria returns the RequestCriteria field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetRequestCriteria() string {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -1157,7 +1160,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetRequestCriteria()
 // GetRequestCriteriaOk returns a tuple with the RequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		return nil, false
 	}
 	return o.RequestCriteria, true
@@ -1165,7 +1168,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetRequestCriteriaOk
 
 // HasRequestCriteria returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasRequestCriteria() bool {
-	if o != nil && !isNil(o.RequestCriteria) {
+	if o != nil && !IsNil(o.RequestCriteria) {
 		return true
 	}
 
@@ -1179,7 +1182,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetRequestCriteria(v
 
 // GetResultCriteria returns the ResultCriteria field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetResultCriteria() string {
-	if o == nil || isNil(o.ResultCriteria) {
+	if o == nil || IsNil(o.ResultCriteria) {
 		var ret string
 		return ret
 	}
@@ -1189,7 +1192,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetResultCriteria() 
 // GetResultCriteriaOk returns a tuple with the ResultCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetResultCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.ResultCriteria) {
+	if o == nil || IsNil(o.ResultCriteria) {
 		return nil, false
 	}
 	return o.ResultCriteria, true
@@ -1197,7 +1200,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetResultCriteriaOk(
 
 // HasResultCriteria returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasResultCriteria() bool {
-	if o != nil && !isNil(o.ResultCriteria) {
+	if o != nil && !IsNil(o.ResultCriteria) {
 		return true
 	}
 
@@ -1211,7 +1214,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetResultCriteria(v 
 
 // GetSearchEntryCriteria returns the SearchEntryCriteria field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetSearchEntryCriteria() string {
-	if o == nil || isNil(o.SearchEntryCriteria) {
+	if o == nil || IsNil(o.SearchEntryCriteria) {
 		var ret string
 		return ret
 	}
@@ -1221,7 +1224,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetSearchEntryCriter
 // GetSearchEntryCriteriaOk returns a tuple with the SearchEntryCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetSearchEntryCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.SearchEntryCriteria) {
+	if o == nil || IsNil(o.SearchEntryCriteria) {
 		return nil, false
 	}
 	return o.SearchEntryCriteria, true
@@ -1229,7 +1232,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetSearchEntryCriter
 
 // HasSearchEntryCriteria returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasSearchEntryCriteria() bool {
-	if o != nil && !isNil(o.SearchEntryCriteria) {
+	if o != nil && !IsNil(o.SearchEntryCriteria) {
 		return true
 	}
 
@@ -1243,7 +1246,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetSearchEntryCriter
 
 // GetSearchReferenceCriteria returns the SearchReferenceCriteria field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetSearchReferenceCriteria() string {
-	if o == nil || isNil(o.SearchReferenceCriteria) {
+	if o == nil || IsNil(o.SearchReferenceCriteria) {
 		var ret string
 		return ret
 	}
@@ -1253,7 +1256,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetSearchReferenceCr
 // GetSearchReferenceCriteriaOk returns a tuple with the SearchReferenceCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetSearchReferenceCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.SearchReferenceCriteria) {
+	if o == nil || IsNil(o.SearchReferenceCriteria) {
 		return nil, false
 	}
 	return o.SearchReferenceCriteria, true
@@ -1261,7 +1264,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetSearchReferenceCr
 
 // HasSearchReferenceCriteria returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasSearchReferenceCriteria() bool {
-	if o != nil && !isNil(o.SearchReferenceCriteria) {
+	if o != nil && !IsNil(o.SearchReferenceCriteria) {
 		return true
 	}
 
@@ -1275,7 +1278,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetSearchReferenceCr
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -1285,7 +1288,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetDescription() str
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -1293,7 +1296,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetDescriptionOk() (
 
 // HasDescription returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -1331,7 +1334,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetEnabled(v bool) {
 
 // GetLoggingErrorBehavior returns the LoggingErrorBehavior field value if set, zero value otherwise.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLoggingErrorBehavior() EnumlogPublisherLoggingErrorBehaviorProp {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		var ret EnumlogPublisherLoggingErrorBehaviorProp
 		return ret
 	}
@@ -1341,7 +1344,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLoggingErrorBehav
 // GetLoggingErrorBehaviorOk returns a tuple with the LoggingErrorBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
@@ -1349,7 +1352,7 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) GetLoggingErrorBehav
 
 // HasLoggingErrorBehavior returns a boolean if a field has been set.
 func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) HasLoggingErrorBehavior() bool {
-	if o != nil && !isNil(o.LoggingErrorBehavior) {
+	if o != nil && !IsNil(o.LoggingErrorBehavior) {
 		return true
 	}
 
@@ -1362,131 +1365,121 @@ func (o *GroovyScriptedFileBasedAccessLogPublisherResponse) SetLoggingErrorBehav
 }
 
 func (o GroovyScriptedFileBasedAccessLogPublisherResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["scriptClass"] = o.ScriptClass
-	}
-	if true {
-		toSerialize["logFile"] = o.LogFile
-	}
-	if true {
-		toSerialize["logFilePermissions"] = o.LogFilePermissions
-	}
-	if true {
-		toSerialize["rotationPolicy"] = o.RotationPolicy
-	}
-	if !isNil(o.RotationListener) {
-		toSerialize["rotationListener"] = o.RotationListener
-	}
-	if true {
-		toSerialize["retentionPolicy"] = o.RetentionPolicy
-	}
-	if !isNil(o.CompressionMechanism) {
-		toSerialize["compressionMechanism"] = o.CompressionMechanism
-	}
-	if !isNil(o.SignLog) {
-		toSerialize["signLog"] = o.SignLog
-	}
-	if !isNil(o.EncryptLog) {
-		toSerialize["encryptLog"] = o.EncryptLog
-	}
-	if !isNil(o.EncryptionSettingsDefinitionID) {
-		toSerialize["encryptionSettingsDefinitionID"] = o.EncryptionSettingsDefinitionID
-	}
-	if !isNil(o.Append) {
-		toSerialize["append"] = o.Append
-	}
-	if !isNil(o.ScriptArgument) {
-		toSerialize["scriptArgument"] = o.ScriptArgument
-	}
-	if true {
-		toSerialize["asynchronous"] = o.Asynchronous
-	}
-	if !isNil(o.AutoFlush) {
-		toSerialize["autoFlush"] = o.AutoFlush
-	}
-	if !isNil(o.BufferSize) {
-		toSerialize["bufferSize"] = o.BufferSize
-	}
-	if !isNil(o.QueueSize) {
-		toSerialize["queueSize"] = o.QueueSize
-	}
-	if !isNil(o.TimeInterval) {
-		toSerialize["timeInterval"] = o.TimeInterval
-	}
-	if !isNil(o.LogConnects) {
-		toSerialize["logConnects"] = o.LogConnects
-	}
-	if !isNil(o.LogDisconnects) {
-		toSerialize["logDisconnects"] = o.LogDisconnects
-	}
-	if !isNil(o.LogSecurityNegotiation) {
-		toSerialize["logSecurityNegotiation"] = o.LogSecurityNegotiation
-	}
-	if !isNil(o.LogClientCertificates) {
-		toSerialize["logClientCertificates"] = o.LogClientCertificates
-	}
-	if !isNil(o.LogRequests) {
-		toSerialize["logRequests"] = o.LogRequests
-	}
-	if !isNil(o.LogResults) {
-		toSerialize["logResults"] = o.LogResults
-	}
-	if !isNil(o.LogSearchEntries) {
-		toSerialize["logSearchEntries"] = o.LogSearchEntries
-	}
-	if !isNil(o.LogSearchReferences) {
-		toSerialize["logSearchReferences"] = o.LogSearchReferences
-	}
-	if !isNil(o.LogIntermediateResponses) {
-		toSerialize["logIntermediateResponses"] = o.LogIntermediateResponses
-	}
-	if !isNil(o.SuppressInternalOperations) {
-		toSerialize["suppressInternalOperations"] = o.SuppressInternalOperations
-	}
-	if !isNil(o.SuppressReplicationOperations) {
-		toSerialize["suppressReplicationOperations"] = o.SuppressReplicationOperations
-	}
-	if !isNil(o.CorrelateRequestsAndResults) {
-		toSerialize["correlateRequestsAndResults"] = o.CorrelateRequestsAndResults
-	}
-	if !isNil(o.ConnectionCriteria) {
-		toSerialize["connectionCriteria"] = o.ConnectionCriteria
-	}
-	if !isNil(o.RequestCriteria) {
-		toSerialize["requestCriteria"] = o.RequestCriteria
-	}
-	if !isNil(o.ResultCriteria) {
-		toSerialize["resultCriteria"] = o.ResultCriteria
-	}
-	if !isNil(o.SearchEntryCriteria) {
-		toSerialize["searchEntryCriteria"] = o.SearchEntryCriteria
-	}
-	if !isNil(o.SearchReferenceCriteria) {
-		toSerialize["searchReferenceCriteria"] = o.SearchReferenceCriteria
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.LoggingErrorBehavior) {
-		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GroovyScriptedFileBasedAccessLogPublisherResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["scriptClass"] = o.ScriptClass
+	toSerialize["logFile"] = o.LogFile
+	toSerialize["logFilePermissions"] = o.LogFilePermissions
+	toSerialize["rotationPolicy"] = o.RotationPolicy
+	if !IsNil(o.RotationListener) {
+		toSerialize["rotationListener"] = o.RotationListener
+	}
+	toSerialize["retentionPolicy"] = o.RetentionPolicy
+	if !IsNil(o.CompressionMechanism) {
+		toSerialize["compressionMechanism"] = o.CompressionMechanism
+	}
+	if !IsNil(o.SignLog) {
+		toSerialize["signLog"] = o.SignLog
+	}
+	if !IsNil(o.EncryptLog) {
+		toSerialize["encryptLog"] = o.EncryptLog
+	}
+	if !IsNil(o.EncryptionSettingsDefinitionID) {
+		toSerialize["encryptionSettingsDefinitionID"] = o.EncryptionSettingsDefinitionID
+	}
+	if !IsNil(o.Append) {
+		toSerialize["append"] = o.Append
+	}
+	if !IsNil(o.ScriptArgument) {
+		toSerialize["scriptArgument"] = o.ScriptArgument
+	}
+	toSerialize["asynchronous"] = o.Asynchronous
+	if !IsNil(o.AutoFlush) {
+		toSerialize["autoFlush"] = o.AutoFlush
+	}
+	if !IsNil(o.BufferSize) {
+		toSerialize["bufferSize"] = o.BufferSize
+	}
+	if !IsNil(o.QueueSize) {
+		toSerialize["queueSize"] = o.QueueSize
+	}
+	if !IsNil(o.TimeInterval) {
+		toSerialize["timeInterval"] = o.TimeInterval
+	}
+	if !IsNil(o.LogConnects) {
+		toSerialize["logConnects"] = o.LogConnects
+	}
+	if !IsNil(o.LogDisconnects) {
+		toSerialize["logDisconnects"] = o.LogDisconnects
+	}
+	if !IsNil(o.LogSecurityNegotiation) {
+		toSerialize["logSecurityNegotiation"] = o.LogSecurityNegotiation
+	}
+	if !IsNil(o.LogClientCertificates) {
+		toSerialize["logClientCertificates"] = o.LogClientCertificates
+	}
+	if !IsNil(o.LogRequests) {
+		toSerialize["logRequests"] = o.LogRequests
+	}
+	if !IsNil(o.LogResults) {
+		toSerialize["logResults"] = o.LogResults
+	}
+	if !IsNil(o.LogSearchEntries) {
+		toSerialize["logSearchEntries"] = o.LogSearchEntries
+	}
+	if !IsNil(o.LogSearchReferences) {
+		toSerialize["logSearchReferences"] = o.LogSearchReferences
+	}
+	if !IsNil(o.LogIntermediateResponses) {
+		toSerialize["logIntermediateResponses"] = o.LogIntermediateResponses
+	}
+	if !IsNil(o.SuppressInternalOperations) {
+		toSerialize["suppressInternalOperations"] = o.SuppressInternalOperations
+	}
+	if !IsNil(o.SuppressReplicationOperations) {
+		toSerialize["suppressReplicationOperations"] = o.SuppressReplicationOperations
+	}
+	if !IsNil(o.CorrelateRequestsAndResults) {
+		toSerialize["correlateRequestsAndResults"] = o.CorrelateRequestsAndResults
+	}
+	if !IsNil(o.ConnectionCriteria) {
+		toSerialize["connectionCriteria"] = o.ConnectionCriteria
+	}
+	if !IsNil(o.RequestCriteria) {
+		toSerialize["requestCriteria"] = o.RequestCriteria
+	}
+	if !IsNil(o.ResultCriteria) {
+		toSerialize["resultCriteria"] = o.ResultCriteria
+	}
+	if !IsNil(o.SearchEntryCriteria) {
+		toSerialize["searchEntryCriteria"] = o.SearchEntryCriteria
+	}
+	if !IsNil(o.SearchReferenceCriteria) {
+		toSerialize["searchReferenceCriteria"] = o.SearchReferenceCriteria
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.LoggingErrorBehavior) {
+		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	}
+	return toSerialize, nil
 }
 
 type NullableGroovyScriptedFileBasedAccessLogPublisherResponse struct {

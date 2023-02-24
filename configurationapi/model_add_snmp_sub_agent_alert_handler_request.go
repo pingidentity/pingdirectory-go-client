@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddSnmpSubAgentAlertHandlerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddSnmpSubAgentAlertHandlerRequest{}
+
 // AddSnmpSubAgentAlertHandlerRequest struct for AddSnmpSubAgentAlertHandlerRequest
 type AddSnmpSubAgentAlertHandlerRequest struct {
 	// Name of the new Alert Handler
@@ -100,7 +103,7 @@ func (o *AddSnmpSubAgentAlertHandlerRequest) SetSchemas(v []EnumsnmpSubAgentAler
 
 // GetAsynchronous returns the Asynchronous field value if set, zero value otherwise.
 func (o *AddSnmpSubAgentAlertHandlerRequest) GetAsynchronous() bool {
-	if o == nil || isNil(o.Asynchronous) {
+	if o == nil || IsNil(o.Asynchronous) {
 		var ret bool
 		return ret
 	}
@@ -110,7 +113,7 @@ func (o *AddSnmpSubAgentAlertHandlerRequest) GetAsynchronous() bool {
 // GetAsynchronousOk returns a tuple with the Asynchronous field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSnmpSubAgentAlertHandlerRequest) GetAsynchronousOk() (*bool, bool) {
-	if o == nil || isNil(o.Asynchronous) {
+	if o == nil || IsNil(o.Asynchronous) {
 		return nil, false
 	}
 	return o.Asynchronous, true
@@ -118,7 +121,7 @@ func (o *AddSnmpSubAgentAlertHandlerRequest) GetAsynchronousOk() (*bool, bool) {
 
 // HasAsynchronous returns a boolean if a field has been set.
 func (o *AddSnmpSubAgentAlertHandlerRequest) HasAsynchronous() bool {
-	if o != nil && !isNil(o.Asynchronous) {
+	if o != nil && !IsNil(o.Asynchronous) {
 		return true
 	}
 
@@ -132,7 +135,7 @@ func (o *AddSnmpSubAgentAlertHandlerRequest) SetAsynchronous(v bool) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddSnmpSubAgentAlertHandlerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -142,7 +145,7 @@ func (o *AddSnmpSubAgentAlertHandlerRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSnmpSubAgentAlertHandlerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -150,7 +153,7 @@ func (o *AddSnmpSubAgentAlertHandlerRequest) GetDescriptionOk() (*string, bool) 
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddSnmpSubAgentAlertHandlerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -188,7 +191,7 @@ func (o *AddSnmpSubAgentAlertHandlerRequest) SetEnabled(v bool) {
 
 // GetEnabledAlertSeverity returns the EnabledAlertSeverity field value if set, zero value otherwise.
 func (o *AddSnmpSubAgentAlertHandlerRequest) GetEnabledAlertSeverity() []EnumalertHandlerEnabledAlertSeverityProp {
-	if o == nil || isNil(o.EnabledAlertSeverity) {
+	if o == nil || IsNil(o.EnabledAlertSeverity) {
 		var ret []EnumalertHandlerEnabledAlertSeverityProp
 		return ret
 	}
@@ -198,7 +201,7 @@ func (o *AddSnmpSubAgentAlertHandlerRequest) GetEnabledAlertSeverity() []Enumale
 // GetEnabledAlertSeverityOk returns a tuple with the EnabledAlertSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSnmpSubAgentAlertHandlerRequest) GetEnabledAlertSeverityOk() ([]EnumalertHandlerEnabledAlertSeverityProp, bool) {
-	if o == nil || isNil(o.EnabledAlertSeverity) {
+	if o == nil || IsNil(o.EnabledAlertSeverity) {
 		return nil, false
 	}
 	return o.EnabledAlertSeverity, true
@@ -206,7 +209,7 @@ func (o *AddSnmpSubAgentAlertHandlerRequest) GetEnabledAlertSeverityOk() ([]Enum
 
 // HasEnabledAlertSeverity returns a boolean if a field has been set.
 func (o *AddSnmpSubAgentAlertHandlerRequest) HasEnabledAlertSeverity() bool {
-	if o != nil && !isNil(o.EnabledAlertSeverity) {
+	if o != nil && !IsNil(o.EnabledAlertSeverity) {
 		return true
 	}
 
@@ -220,7 +223,7 @@ func (o *AddSnmpSubAgentAlertHandlerRequest) SetEnabledAlertSeverity(v []Enumale
 
 // GetEnabledAlertType returns the EnabledAlertType field value if set, zero value otherwise.
 func (o *AddSnmpSubAgentAlertHandlerRequest) GetEnabledAlertType() []EnumalertHandlerEnabledAlertTypeProp {
-	if o == nil || isNil(o.EnabledAlertType) {
+	if o == nil || IsNil(o.EnabledAlertType) {
 		var ret []EnumalertHandlerEnabledAlertTypeProp
 		return ret
 	}
@@ -230,7 +233,7 @@ func (o *AddSnmpSubAgentAlertHandlerRequest) GetEnabledAlertType() []EnumalertHa
 // GetEnabledAlertTypeOk returns a tuple with the EnabledAlertType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSnmpSubAgentAlertHandlerRequest) GetEnabledAlertTypeOk() ([]EnumalertHandlerEnabledAlertTypeProp, bool) {
-	if o == nil || isNil(o.EnabledAlertType) {
+	if o == nil || IsNil(o.EnabledAlertType) {
 		return nil, false
 	}
 	return o.EnabledAlertType, true
@@ -238,7 +241,7 @@ func (o *AddSnmpSubAgentAlertHandlerRequest) GetEnabledAlertTypeOk() ([]Enumaler
 
 // HasEnabledAlertType returns a boolean if a field has been set.
 func (o *AddSnmpSubAgentAlertHandlerRequest) HasEnabledAlertType() bool {
-	if o != nil && !isNil(o.EnabledAlertType) {
+	if o != nil && !IsNil(o.EnabledAlertType) {
 		return true
 	}
 
@@ -252,7 +255,7 @@ func (o *AddSnmpSubAgentAlertHandlerRequest) SetEnabledAlertType(v []EnumalertHa
 
 // GetDisabledAlertType returns the DisabledAlertType field value if set, zero value otherwise.
 func (o *AddSnmpSubAgentAlertHandlerRequest) GetDisabledAlertType() []EnumalertHandlerDisabledAlertTypeProp {
-	if o == nil || isNil(o.DisabledAlertType) {
+	if o == nil || IsNil(o.DisabledAlertType) {
 		var ret []EnumalertHandlerDisabledAlertTypeProp
 		return ret
 	}
@@ -262,7 +265,7 @@ func (o *AddSnmpSubAgentAlertHandlerRequest) GetDisabledAlertType() []EnumalertH
 // GetDisabledAlertTypeOk returns a tuple with the DisabledAlertType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSnmpSubAgentAlertHandlerRequest) GetDisabledAlertTypeOk() ([]EnumalertHandlerDisabledAlertTypeProp, bool) {
-	if o == nil || isNil(o.DisabledAlertType) {
+	if o == nil || IsNil(o.DisabledAlertType) {
 		return nil, false
 	}
 	return o.DisabledAlertType, true
@@ -270,7 +273,7 @@ func (o *AddSnmpSubAgentAlertHandlerRequest) GetDisabledAlertTypeOk() ([]Enumale
 
 // HasDisabledAlertType returns a boolean if a field has been set.
 func (o *AddSnmpSubAgentAlertHandlerRequest) HasDisabledAlertType() bool {
-	if o != nil && !isNil(o.DisabledAlertType) {
+	if o != nil && !IsNil(o.DisabledAlertType) {
 		return true
 	}
 
@@ -283,32 +286,34 @@ func (o *AddSnmpSubAgentAlertHandlerRequest) SetDisabledAlertType(v []EnumalertH
 }
 
 func (o AddSnmpSubAgentAlertHandlerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["handlerName"] = o.HandlerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Asynchronous) {
-		toSerialize["asynchronous"] = o.Asynchronous
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.EnabledAlertSeverity) {
-		toSerialize["enabledAlertSeverity"] = o.EnabledAlertSeverity
-	}
-	if !isNil(o.EnabledAlertType) {
-		toSerialize["enabledAlertType"] = o.EnabledAlertType
-	}
-	if !isNil(o.DisabledAlertType) {
-		toSerialize["disabledAlertType"] = o.DisabledAlertType
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddSnmpSubAgentAlertHandlerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["handlerName"] = o.HandlerName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.Asynchronous) {
+		toSerialize["asynchronous"] = o.Asynchronous
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.EnabledAlertSeverity) {
+		toSerialize["enabledAlertSeverity"] = o.EnabledAlertSeverity
+	}
+	if !IsNil(o.EnabledAlertType) {
+		toSerialize["enabledAlertType"] = o.EnabledAlertType
+	}
+	if !IsNil(o.DisabledAlertType) {
+		toSerialize["disabledAlertType"] = o.DisabledAlertType
+	}
+	return toSerialize, nil
 }
 
 type NullableAddSnmpSubAgentAlertHandlerRequest struct {

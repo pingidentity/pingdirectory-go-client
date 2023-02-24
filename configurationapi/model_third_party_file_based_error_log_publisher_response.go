@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ThirdPartyFileBasedErrorLogPublisherResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ThirdPartyFileBasedErrorLogPublisherResponse{}
+
 // ThirdPartyFileBasedErrorLogPublisherResponse struct for ThirdPartyFileBasedErrorLogPublisherResponse
 type ThirdPartyFileBasedErrorLogPublisherResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -92,7 +95,7 @@ func NewThirdPartyFileBasedErrorLogPublisherResponseWithDefaults() *ThirdPartyFi
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -102,7 +105,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -110,7 +113,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetMetaOk() (*MetaMeta, b
 
 // HasMeta returns a boolean if a field has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -124,7 +127,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -134,7 +137,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetUrnpingidentityschemas
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -142,7 +145,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetUrnpingidentityschemas
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -276,7 +279,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) SetRotationPolicy(v []str
 
 // GetRotationListener returns the RotationListener field value if set, zero value otherwise.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetRotationListener() []string {
-	if o == nil || isNil(o.RotationListener) {
+	if o == nil || IsNil(o.RotationListener) {
 		var ret []string
 		return ret
 	}
@@ -286,7 +289,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetRotationListener() []s
 // GetRotationListenerOk returns a tuple with the RotationListener field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetRotationListenerOk() ([]string, bool) {
-	if o == nil || isNil(o.RotationListener) {
+	if o == nil || IsNil(o.RotationListener) {
 		return nil, false
 	}
 	return o.RotationListener, true
@@ -294,7 +297,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetRotationListenerOk() (
 
 // HasRotationListener returns a boolean if a field has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) HasRotationListener() bool {
-	if o != nil && !isNil(o.RotationListener) {
+	if o != nil && !IsNil(o.RotationListener) {
 		return true
 	}
 
@@ -332,7 +335,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) SetRetentionPolicy(v []st
 
 // GetCompressionMechanism returns the CompressionMechanism field value if set, zero value otherwise.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetCompressionMechanism() EnumlogPublisherCompressionMechanismProp {
-	if o == nil || isNil(o.CompressionMechanism) {
+	if o == nil || IsNil(o.CompressionMechanism) {
 		var ret EnumlogPublisherCompressionMechanismProp
 		return ret
 	}
@@ -342,7 +345,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetCompressionMechanism()
 // GetCompressionMechanismOk returns a tuple with the CompressionMechanism field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetCompressionMechanismOk() (*EnumlogPublisherCompressionMechanismProp, bool) {
-	if o == nil || isNil(o.CompressionMechanism) {
+	if o == nil || IsNil(o.CompressionMechanism) {
 		return nil, false
 	}
 	return o.CompressionMechanism, true
@@ -350,7 +353,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetCompressionMechanismOk
 
 // HasCompressionMechanism returns a boolean if a field has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) HasCompressionMechanism() bool {
-	if o != nil && !isNil(o.CompressionMechanism) {
+	if o != nil && !IsNil(o.CompressionMechanism) {
 		return true
 	}
 
@@ -364,7 +367,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) SetCompressionMechanism(v
 
 // GetSignLog returns the SignLog field value if set, zero value otherwise.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetSignLog() bool {
-	if o == nil || isNil(o.SignLog) {
+	if o == nil || IsNil(o.SignLog) {
 		var ret bool
 		return ret
 	}
@@ -374,7 +377,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetSignLog() bool {
 // GetSignLogOk returns a tuple with the SignLog field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetSignLogOk() (*bool, bool) {
-	if o == nil || isNil(o.SignLog) {
+	if o == nil || IsNil(o.SignLog) {
 		return nil, false
 	}
 	return o.SignLog, true
@@ -382,7 +385,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetSignLogOk() (*bool, bo
 
 // HasSignLog returns a boolean if a field has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) HasSignLog() bool {
-	if o != nil && !isNil(o.SignLog) {
+	if o != nil && !IsNil(o.SignLog) {
 		return true
 	}
 
@@ -396,7 +399,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) SetSignLog(v bool) {
 
 // GetEncryptLog returns the EncryptLog field value if set, zero value otherwise.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetEncryptLog() bool {
-	if o == nil || isNil(o.EncryptLog) {
+	if o == nil || IsNil(o.EncryptLog) {
 		var ret bool
 		return ret
 	}
@@ -406,7 +409,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetEncryptLog() bool {
 // GetEncryptLogOk returns a tuple with the EncryptLog field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetEncryptLogOk() (*bool, bool) {
-	if o == nil || isNil(o.EncryptLog) {
+	if o == nil || IsNil(o.EncryptLog) {
 		return nil, false
 	}
 	return o.EncryptLog, true
@@ -414,7 +417,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetEncryptLogOk() (*bool,
 
 // HasEncryptLog returns a boolean if a field has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) HasEncryptLog() bool {
-	if o != nil && !isNil(o.EncryptLog) {
+	if o != nil && !IsNil(o.EncryptLog) {
 		return true
 	}
 
@@ -428,7 +431,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) SetEncryptLog(v bool) {
 
 // GetEncryptionSettingsDefinitionID returns the EncryptionSettingsDefinitionID field value if set, zero value otherwise.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetEncryptionSettingsDefinitionID() string {
-	if o == nil || isNil(o.EncryptionSettingsDefinitionID) {
+	if o == nil || IsNil(o.EncryptionSettingsDefinitionID) {
 		var ret string
 		return ret
 	}
@@ -438,7 +441,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetEncryptionSettingsDefi
 // GetEncryptionSettingsDefinitionIDOk returns a tuple with the EncryptionSettingsDefinitionID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetEncryptionSettingsDefinitionIDOk() (*string, bool) {
-	if o == nil || isNil(o.EncryptionSettingsDefinitionID) {
+	if o == nil || IsNil(o.EncryptionSettingsDefinitionID) {
 		return nil, false
 	}
 	return o.EncryptionSettingsDefinitionID, true
@@ -446,7 +449,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetEncryptionSettingsDefi
 
 // HasEncryptionSettingsDefinitionID returns a boolean if a field has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) HasEncryptionSettingsDefinitionID() bool {
-	if o != nil && !isNil(o.EncryptionSettingsDefinitionID) {
+	if o != nil && !IsNil(o.EncryptionSettingsDefinitionID) {
 		return true
 	}
 
@@ -460,7 +463,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) SetEncryptionSettingsDefi
 
 // GetAppend returns the Append field value if set, zero value otherwise.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetAppend() bool {
-	if o == nil || isNil(o.Append) {
+	if o == nil || IsNil(o.Append) {
 		var ret bool
 		return ret
 	}
@@ -470,7 +473,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetAppend() bool {
 // GetAppendOk returns a tuple with the Append field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetAppendOk() (*bool, bool) {
-	if o == nil || isNil(o.Append) {
+	if o == nil || IsNil(o.Append) {
 		return nil, false
 	}
 	return o.Append, true
@@ -478,7 +481,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetAppendOk() (*bool, boo
 
 // HasAppend returns a boolean if a field has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) HasAppend() bool {
-	if o != nil && !isNil(o.Append) {
+	if o != nil && !IsNil(o.Append) {
 		return true
 	}
 
@@ -516,7 +519,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) SetExtensionClass(v strin
 
 // GetExtensionArgument returns the ExtensionArgument field value if set, zero value otherwise.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetExtensionArgument() []string {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		var ret []string
 		return ret
 	}
@@ -526,7 +529,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetExtensionArgument() []
 // GetExtensionArgumentOk returns a tuple with the ExtensionArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetExtensionArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		return nil, false
 	}
 	return o.ExtensionArgument, true
@@ -534,7 +537,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetExtensionArgumentOk() 
 
 // HasExtensionArgument returns a boolean if a field has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) HasExtensionArgument() bool {
-	if o != nil && !isNil(o.ExtensionArgument) {
+	if o != nil && !IsNil(o.ExtensionArgument) {
 		return true
 	}
 
@@ -572,7 +575,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) SetAsynchronous(v bool) {
 
 // GetAutoFlush returns the AutoFlush field value if set, zero value otherwise.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetAutoFlush() bool {
-	if o == nil || isNil(o.AutoFlush) {
+	if o == nil || IsNil(o.AutoFlush) {
 		var ret bool
 		return ret
 	}
@@ -582,7 +585,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetAutoFlush() bool {
 // GetAutoFlushOk returns a tuple with the AutoFlush field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetAutoFlushOk() (*bool, bool) {
-	if o == nil || isNil(o.AutoFlush) {
+	if o == nil || IsNil(o.AutoFlush) {
 		return nil, false
 	}
 	return o.AutoFlush, true
@@ -590,7 +593,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetAutoFlushOk() (*bool, 
 
 // HasAutoFlush returns a boolean if a field has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) HasAutoFlush() bool {
-	if o != nil && !isNil(o.AutoFlush) {
+	if o != nil && !IsNil(o.AutoFlush) {
 		return true
 	}
 
@@ -604,7 +607,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) SetAutoFlush(v bool) {
 
 // GetBufferSize returns the BufferSize field value if set, zero value otherwise.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetBufferSize() string {
-	if o == nil || isNil(o.BufferSize) {
+	if o == nil || IsNil(o.BufferSize) {
 		var ret string
 		return ret
 	}
@@ -614,7 +617,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetBufferSize() string {
 // GetBufferSizeOk returns a tuple with the BufferSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetBufferSizeOk() (*string, bool) {
-	if o == nil || isNil(o.BufferSize) {
+	if o == nil || IsNil(o.BufferSize) {
 		return nil, false
 	}
 	return o.BufferSize, true
@@ -622,7 +625,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetBufferSizeOk() (*strin
 
 // HasBufferSize returns a boolean if a field has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) HasBufferSize() bool {
-	if o != nil && !isNil(o.BufferSize) {
+	if o != nil && !IsNil(o.BufferSize) {
 		return true
 	}
 
@@ -636,7 +639,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) SetBufferSize(v string) {
 
 // GetQueueSize returns the QueueSize field value if set, zero value otherwise.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetQueueSize() int32 {
-	if o == nil || isNil(o.QueueSize) {
+	if o == nil || IsNil(o.QueueSize) {
 		var ret int32
 		return ret
 	}
@@ -646,7 +649,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetQueueSize() int32 {
 // GetQueueSizeOk returns a tuple with the QueueSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetQueueSizeOk() (*int32, bool) {
-	if o == nil || isNil(o.QueueSize) {
+	if o == nil || IsNil(o.QueueSize) {
 		return nil, false
 	}
 	return o.QueueSize, true
@@ -654,7 +657,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetQueueSizeOk() (*int32,
 
 // HasQueueSize returns a boolean if a field has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) HasQueueSize() bool {
-	if o != nil && !isNil(o.QueueSize) {
+	if o != nil && !IsNil(o.QueueSize) {
 		return true
 	}
 
@@ -668,7 +671,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) SetQueueSize(v int32) {
 
 // GetTimeInterval returns the TimeInterval field value if set, zero value otherwise.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetTimeInterval() string {
-	if o == nil || isNil(o.TimeInterval) {
+	if o == nil || IsNil(o.TimeInterval) {
 		var ret string
 		return ret
 	}
@@ -678,7 +681,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetTimeInterval() string 
 // GetTimeIntervalOk returns a tuple with the TimeInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetTimeIntervalOk() (*string, bool) {
-	if o == nil || isNil(o.TimeInterval) {
+	if o == nil || IsNil(o.TimeInterval) {
 		return nil, false
 	}
 	return o.TimeInterval, true
@@ -686,7 +689,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetTimeIntervalOk() (*str
 
 // HasTimeInterval returns a boolean if a field has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) HasTimeInterval() bool {
-	if o != nil && !isNil(o.TimeInterval) {
+	if o != nil && !IsNil(o.TimeInterval) {
 		return true
 	}
 
@@ -700,7 +703,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) SetTimeInterval(v string)
 
 // GetDefaultSeverity returns the DefaultSeverity field value if set, zero value otherwise.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetDefaultSeverity() []EnumlogPublisherDefaultSeverityProp {
-	if o == nil || isNil(o.DefaultSeverity) {
+	if o == nil || IsNil(o.DefaultSeverity) {
 		var ret []EnumlogPublisherDefaultSeverityProp
 		return ret
 	}
@@ -710,7 +713,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetDefaultSeverity() []En
 // GetDefaultSeverityOk returns a tuple with the DefaultSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetDefaultSeverityOk() ([]EnumlogPublisherDefaultSeverityProp, bool) {
-	if o == nil || isNil(o.DefaultSeverity) {
+	if o == nil || IsNil(o.DefaultSeverity) {
 		return nil, false
 	}
 	return o.DefaultSeverity, true
@@ -718,7 +721,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetDefaultSeverityOk() ([
 
 // HasDefaultSeverity returns a boolean if a field has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) HasDefaultSeverity() bool {
-	if o != nil && !isNil(o.DefaultSeverity) {
+	if o != nil && !IsNil(o.DefaultSeverity) {
 		return true
 	}
 
@@ -732,7 +735,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) SetDefaultSeverity(v []En
 
 // GetOverrideSeverity returns the OverrideSeverity field value if set, zero value otherwise.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetOverrideSeverity() []string {
-	if o == nil || isNil(o.OverrideSeverity) {
+	if o == nil || IsNil(o.OverrideSeverity) {
 		var ret []string
 		return ret
 	}
@@ -742,7 +745,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetOverrideSeverity() []s
 // GetOverrideSeverityOk returns a tuple with the OverrideSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetOverrideSeverityOk() ([]string, bool) {
-	if o == nil || isNil(o.OverrideSeverity) {
+	if o == nil || IsNil(o.OverrideSeverity) {
 		return nil, false
 	}
 	return o.OverrideSeverity, true
@@ -750,7 +753,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetOverrideSeverityOk() (
 
 // HasOverrideSeverity returns a boolean if a field has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) HasOverrideSeverity() bool {
-	if o != nil && !isNil(o.OverrideSeverity) {
+	if o != nil && !IsNil(o.OverrideSeverity) {
 		return true
 	}
 
@@ -764,7 +767,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) SetOverrideSeverity(v []s
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -774,7 +777,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -782,7 +785,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetDescriptionOk() (*stri
 
 // HasDescription returns a boolean if a field has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -820,7 +823,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) SetEnabled(v bool) {
 
 // GetLoggingErrorBehavior returns the LoggingErrorBehavior field value if set, zero value otherwise.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetLoggingErrorBehavior() EnumlogPublisherLoggingErrorBehaviorProp {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		var ret EnumlogPublisherLoggingErrorBehaviorProp
 		return ret
 	}
@@ -830,7 +833,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetLoggingErrorBehavior()
 // GetLoggingErrorBehaviorOk returns a tuple with the LoggingErrorBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
@@ -838,7 +841,7 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) GetLoggingErrorBehaviorOk
 
 // HasLoggingErrorBehavior returns a boolean if a field has been set.
 func (o *ThirdPartyFileBasedErrorLogPublisherResponse) HasLoggingErrorBehavior() bool {
-	if o != nil && !isNil(o.LoggingErrorBehavior) {
+	if o != nil && !IsNil(o.LoggingErrorBehavior) {
 		return true
 	}
 
@@ -851,86 +854,76 @@ func (o *ThirdPartyFileBasedErrorLogPublisherResponse) SetLoggingErrorBehavior(v
 }
 
 func (o ThirdPartyFileBasedErrorLogPublisherResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["logFile"] = o.LogFile
-	}
-	if true {
-		toSerialize["logFilePermissions"] = o.LogFilePermissions
-	}
-	if true {
-		toSerialize["rotationPolicy"] = o.RotationPolicy
-	}
-	if !isNil(o.RotationListener) {
-		toSerialize["rotationListener"] = o.RotationListener
-	}
-	if true {
-		toSerialize["retentionPolicy"] = o.RetentionPolicy
-	}
-	if !isNil(o.CompressionMechanism) {
-		toSerialize["compressionMechanism"] = o.CompressionMechanism
-	}
-	if !isNil(o.SignLog) {
-		toSerialize["signLog"] = o.SignLog
-	}
-	if !isNil(o.EncryptLog) {
-		toSerialize["encryptLog"] = o.EncryptLog
-	}
-	if !isNil(o.EncryptionSettingsDefinitionID) {
-		toSerialize["encryptionSettingsDefinitionID"] = o.EncryptionSettingsDefinitionID
-	}
-	if !isNil(o.Append) {
-		toSerialize["append"] = o.Append
-	}
-	if true {
-		toSerialize["extensionClass"] = o.ExtensionClass
-	}
-	if !isNil(o.ExtensionArgument) {
-		toSerialize["extensionArgument"] = o.ExtensionArgument
-	}
-	if true {
-		toSerialize["asynchronous"] = o.Asynchronous
-	}
-	if !isNil(o.AutoFlush) {
-		toSerialize["autoFlush"] = o.AutoFlush
-	}
-	if !isNil(o.BufferSize) {
-		toSerialize["bufferSize"] = o.BufferSize
-	}
-	if !isNil(o.QueueSize) {
-		toSerialize["queueSize"] = o.QueueSize
-	}
-	if !isNil(o.TimeInterval) {
-		toSerialize["timeInterval"] = o.TimeInterval
-	}
-	if !isNil(o.DefaultSeverity) {
-		toSerialize["defaultSeverity"] = o.DefaultSeverity
-	}
-	if !isNil(o.OverrideSeverity) {
-		toSerialize["overrideSeverity"] = o.OverrideSeverity
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.LoggingErrorBehavior) {
-		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ThirdPartyFileBasedErrorLogPublisherResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["logFile"] = o.LogFile
+	toSerialize["logFilePermissions"] = o.LogFilePermissions
+	toSerialize["rotationPolicy"] = o.RotationPolicy
+	if !IsNil(o.RotationListener) {
+		toSerialize["rotationListener"] = o.RotationListener
+	}
+	toSerialize["retentionPolicy"] = o.RetentionPolicy
+	if !IsNil(o.CompressionMechanism) {
+		toSerialize["compressionMechanism"] = o.CompressionMechanism
+	}
+	if !IsNil(o.SignLog) {
+		toSerialize["signLog"] = o.SignLog
+	}
+	if !IsNil(o.EncryptLog) {
+		toSerialize["encryptLog"] = o.EncryptLog
+	}
+	if !IsNil(o.EncryptionSettingsDefinitionID) {
+		toSerialize["encryptionSettingsDefinitionID"] = o.EncryptionSettingsDefinitionID
+	}
+	if !IsNil(o.Append) {
+		toSerialize["append"] = o.Append
+	}
+	toSerialize["extensionClass"] = o.ExtensionClass
+	if !IsNil(o.ExtensionArgument) {
+		toSerialize["extensionArgument"] = o.ExtensionArgument
+	}
+	toSerialize["asynchronous"] = o.Asynchronous
+	if !IsNil(o.AutoFlush) {
+		toSerialize["autoFlush"] = o.AutoFlush
+	}
+	if !IsNil(o.BufferSize) {
+		toSerialize["bufferSize"] = o.BufferSize
+	}
+	if !IsNil(o.QueueSize) {
+		toSerialize["queueSize"] = o.QueueSize
+	}
+	if !IsNil(o.TimeInterval) {
+		toSerialize["timeInterval"] = o.TimeInterval
+	}
+	if !IsNil(o.DefaultSeverity) {
+		toSerialize["defaultSeverity"] = o.DefaultSeverity
+	}
+	if !IsNil(o.OverrideSeverity) {
+		toSerialize["overrideSeverity"] = o.OverrideSeverity
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.LoggingErrorBehavior) {
+		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	}
+	return toSerialize, nil
 }
 
 type NullableThirdPartyFileBasedErrorLogPublisherResponse struct {

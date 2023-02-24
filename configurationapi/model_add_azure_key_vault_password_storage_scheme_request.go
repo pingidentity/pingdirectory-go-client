@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddAzureKeyVaultPasswordStorageSchemeRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddAzureKeyVaultPasswordStorageSchemeRequest{}
+
 // AddAzureKeyVaultPasswordStorageSchemeRequest struct for AddAzureKeyVaultPasswordStorageSchemeRequest
 type AddAzureKeyVaultPasswordStorageSchemeRequest struct {
 	// Name of the new Password Storage Scheme
@@ -149,7 +152,7 @@ func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) SetAzureAuthenticationMet
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -159,7 +162,7 @@ func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -167,7 +170,7 @@ func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) GetDescriptionOk() (*stri
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -204,26 +207,24 @@ func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) SetEnabled(v bool) {
 }
 
 func (o AddAzureKeyVaultPasswordStorageSchemeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["schemeName"] = o.SchemeName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["keyVaultURI"] = o.KeyVaultURI
-	}
-	if true {
-		toSerialize["azureAuthenticationMethod"] = o.AzureAuthenticationMethod
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddAzureKeyVaultPasswordStorageSchemeRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["schemeName"] = o.SchemeName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["keyVaultURI"] = o.KeyVaultURI
+	toSerialize["azureAuthenticationMethod"] = o.AzureAuthenticationMethod
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddAzureKeyVaultPasswordStorageSchemeRequest struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the DseeCompatAccessControlHandlerResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &DseeCompatAccessControlHandlerResponse{}
+
 // DseeCompatAccessControlHandlerResponse struct for DseeCompatAccessControlHandlerResponse
 type DseeCompatAccessControlHandlerResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -48,7 +51,7 @@ func NewDseeCompatAccessControlHandlerResponseWithDefaults() *DseeCompatAccessCo
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *DseeCompatAccessControlHandlerResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -58,7 +61,7 @@ func (o *DseeCompatAccessControlHandlerResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DseeCompatAccessControlHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -66,7 +69,7 @@ func (o *DseeCompatAccessControlHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *DseeCompatAccessControlHandlerResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -80,7 +83,7 @@ func (o *DseeCompatAccessControlHandlerResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *DseeCompatAccessControlHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -90,7 +93,7 @@ func (o *DseeCompatAccessControlHandlerResponse) GetUrnpingidentityschemasconfig
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DseeCompatAccessControlHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -98,7 +101,7 @@ func (o *DseeCompatAccessControlHandlerResponse) GetUrnpingidentityschemasconfig
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *DseeCompatAccessControlHandlerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -112,7 +115,7 @@ func (o *DseeCompatAccessControlHandlerResponse) SetUrnpingidentityschemasconfig
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *DseeCompatAccessControlHandlerResponse) GetSchemas() []EnumdseeCompatAccessControlHandlerSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumdseeCompatAccessControlHandlerSchemaUrn
 		return ret
 	}
@@ -122,7 +125,7 @@ func (o *DseeCompatAccessControlHandlerResponse) GetSchemas() []EnumdseeCompatAc
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DseeCompatAccessControlHandlerResponse) GetSchemasOk() ([]EnumdseeCompatAccessControlHandlerSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -130,7 +133,7 @@ func (o *DseeCompatAccessControlHandlerResponse) GetSchemasOk() ([]EnumdseeCompa
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *DseeCompatAccessControlHandlerResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -144,7 +147,7 @@ func (o *DseeCompatAccessControlHandlerResponse) SetSchemas(v []EnumdseeCompatAc
 
 // GetGlobalACI returns the GlobalACI field value if set, zero value otherwise.
 func (o *DseeCompatAccessControlHandlerResponse) GetGlobalACI() []string {
-	if o == nil || isNil(o.GlobalACI) {
+	if o == nil || IsNil(o.GlobalACI) {
 		var ret []string
 		return ret
 	}
@@ -154,7 +157,7 @@ func (o *DseeCompatAccessControlHandlerResponse) GetGlobalACI() []string {
 // GetGlobalACIOk returns a tuple with the GlobalACI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DseeCompatAccessControlHandlerResponse) GetGlobalACIOk() ([]string, bool) {
-	if o == nil || isNil(o.GlobalACI) {
+	if o == nil || IsNil(o.GlobalACI) {
 		return nil, false
 	}
 	return o.GlobalACI, true
@@ -162,7 +165,7 @@ func (o *DseeCompatAccessControlHandlerResponse) GetGlobalACIOk() ([]string, boo
 
 // HasGlobalACI returns a boolean if a field has been set.
 func (o *DseeCompatAccessControlHandlerResponse) HasGlobalACI() bool {
-	if o != nil && !isNil(o.GlobalACI) {
+	if o != nil && !IsNil(o.GlobalACI) {
 		return true
 	}
 
@@ -176,7 +179,7 @@ func (o *DseeCompatAccessControlHandlerResponse) SetGlobalACI(v []string) {
 
 // GetAllowedBindControl returns the AllowedBindControl field value if set, zero value otherwise.
 func (o *DseeCompatAccessControlHandlerResponse) GetAllowedBindControl() []EnumaccessControlHandlerAllowedBindControlProp {
-	if o == nil || isNil(o.AllowedBindControl) {
+	if o == nil || IsNil(o.AllowedBindControl) {
 		var ret []EnumaccessControlHandlerAllowedBindControlProp
 		return ret
 	}
@@ -186,7 +189,7 @@ func (o *DseeCompatAccessControlHandlerResponse) GetAllowedBindControl() []Enuma
 // GetAllowedBindControlOk returns a tuple with the AllowedBindControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DseeCompatAccessControlHandlerResponse) GetAllowedBindControlOk() ([]EnumaccessControlHandlerAllowedBindControlProp, bool) {
-	if o == nil || isNil(o.AllowedBindControl) {
+	if o == nil || IsNil(o.AllowedBindControl) {
 		return nil, false
 	}
 	return o.AllowedBindControl, true
@@ -194,7 +197,7 @@ func (o *DseeCompatAccessControlHandlerResponse) GetAllowedBindControlOk() ([]En
 
 // HasAllowedBindControl returns a boolean if a field has been set.
 func (o *DseeCompatAccessControlHandlerResponse) HasAllowedBindControl() bool {
-	if o != nil && !isNil(o.AllowedBindControl) {
+	if o != nil && !IsNil(o.AllowedBindControl) {
 		return true
 	}
 
@@ -208,7 +211,7 @@ func (o *DseeCompatAccessControlHandlerResponse) SetAllowedBindControl(v []Enuma
 
 // GetAllowedBindControlOID returns the AllowedBindControlOID field value if set, zero value otherwise.
 func (o *DseeCompatAccessControlHandlerResponse) GetAllowedBindControlOID() []string {
-	if o == nil || isNil(o.AllowedBindControlOID) {
+	if o == nil || IsNil(o.AllowedBindControlOID) {
 		var ret []string
 		return ret
 	}
@@ -218,7 +221,7 @@ func (o *DseeCompatAccessControlHandlerResponse) GetAllowedBindControlOID() []st
 // GetAllowedBindControlOIDOk returns a tuple with the AllowedBindControlOID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DseeCompatAccessControlHandlerResponse) GetAllowedBindControlOIDOk() ([]string, bool) {
-	if o == nil || isNil(o.AllowedBindControlOID) {
+	if o == nil || IsNil(o.AllowedBindControlOID) {
 		return nil, false
 	}
 	return o.AllowedBindControlOID, true
@@ -226,7 +229,7 @@ func (o *DseeCompatAccessControlHandlerResponse) GetAllowedBindControlOIDOk() ([
 
 // HasAllowedBindControlOID returns a boolean if a field has been set.
 func (o *DseeCompatAccessControlHandlerResponse) HasAllowedBindControlOID() bool {
-	if o != nil && !isNil(o.AllowedBindControlOID) {
+	if o != nil && !IsNil(o.AllowedBindControlOID) {
 		return true
 	}
 
@@ -263,29 +266,35 @@ func (o *DseeCompatAccessControlHandlerResponse) SetEnabled(v bool) {
 }
 
 func (o DseeCompatAccessControlHandlerResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.GlobalACI) {
-		toSerialize["globalACI"] = o.GlobalACI
-	}
-	if !isNil(o.AllowedBindControl) {
-		toSerialize["allowedBindControl"] = o.AllowedBindControl
-	}
-	if !isNil(o.AllowedBindControlOID) {
-		toSerialize["allowedBindControlOID"] = o.AllowedBindControlOID
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o DseeCompatAccessControlHandlerResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.GlobalACI) {
+		toSerialize["globalACI"] = o.GlobalACI
+	}
+	if !IsNil(o.AllowedBindControl) {
+		toSerialize["allowedBindControl"] = o.AllowedBindControl
+	}
+	if !IsNil(o.AllowedBindControlOID) {
+		toSerialize["allowedBindControlOID"] = o.AllowedBindControlOID
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableDseeCompatAccessControlHandlerResponse struct {

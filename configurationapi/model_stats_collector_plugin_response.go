@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the StatsCollectorPluginResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &StatsCollectorPluginResponse{}
+
 // StatsCollectorPluginResponse struct for StatsCollectorPluginResponse
 type StatsCollectorPluginResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -68,7 +71,7 @@ func NewStatsCollectorPluginResponseWithDefaults() *StatsCollectorPluginResponse
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *StatsCollectorPluginResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -78,7 +81,7 @@ func (o *StatsCollectorPluginResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatsCollectorPluginResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -86,7 +89,7 @@ func (o *StatsCollectorPluginResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *StatsCollectorPluginResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -100,7 +103,7 @@ func (o *StatsCollectorPluginResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *StatsCollectorPluginResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -110,7 +113,7 @@ func (o *StatsCollectorPluginResponse) GetUrnpingidentityschemasconfigurationmes
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatsCollectorPluginResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -118,7 +121,7 @@ func (o *StatsCollectorPluginResponse) GetUrnpingidentityschemasconfigurationmes
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *StatsCollectorPluginResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -228,7 +231,7 @@ func (o *StatsCollectorPluginResponse) SetCollectionInterval(v string) {
 
 // GetLdapInfo returns the LdapInfo field value if set, zero value otherwise.
 func (o *StatsCollectorPluginResponse) GetLdapInfo() EnumpluginLdapInfoProp {
-	if o == nil || isNil(o.LdapInfo) {
+	if o == nil || IsNil(o.LdapInfo) {
 		var ret EnumpluginLdapInfoProp
 		return ret
 	}
@@ -238,7 +241,7 @@ func (o *StatsCollectorPluginResponse) GetLdapInfo() EnumpluginLdapInfoProp {
 // GetLdapInfoOk returns a tuple with the LdapInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatsCollectorPluginResponse) GetLdapInfoOk() (*EnumpluginLdapInfoProp, bool) {
-	if o == nil || isNil(o.LdapInfo) {
+	if o == nil || IsNil(o.LdapInfo) {
 		return nil, false
 	}
 	return o.LdapInfo, true
@@ -246,7 +249,7 @@ func (o *StatsCollectorPluginResponse) GetLdapInfoOk() (*EnumpluginLdapInfoProp,
 
 // HasLdapInfo returns a boolean if a field has been set.
 func (o *StatsCollectorPluginResponse) HasLdapInfo() bool {
-	if o != nil && !isNil(o.LdapInfo) {
+	if o != nil && !IsNil(o.LdapInfo) {
 		return true
 	}
 
@@ -260,7 +263,7 @@ func (o *StatsCollectorPluginResponse) SetLdapInfo(v EnumpluginLdapInfoProp) {
 
 // GetServerInfo returns the ServerInfo field value if set, zero value otherwise.
 func (o *StatsCollectorPluginResponse) GetServerInfo() EnumpluginServerInfoProp {
-	if o == nil || isNil(o.ServerInfo) {
+	if o == nil || IsNil(o.ServerInfo) {
 		var ret EnumpluginServerInfoProp
 		return ret
 	}
@@ -270,7 +273,7 @@ func (o *StatsCollectorPluginResponse) GetServerInfo() EnumpluginServerInfoProp 
 // GetServerInfoOk returns a tuple with the ServerInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatsCollectorPluginResponse) GetServerInfoOk() (*EnumpluginServerInfoProp, bool) {
-	if o == nil || isNil(o.ServerInfo) {
+	if o == nil || IsNil(o.ServerInfo) {
 		return nil, false
 	}
 	return o.ServerInfo, true
@@ -278,7 +281,7 @@ func (o *StatsCollectorPluginResponse) GetServerInfoOk() (*EnumpluginServerInfoP
 
 // HasServerInfo returns a boolean if a field has been set.
 func (o *StatsCollectorPluginResponse) HasServerInfo() bool {
-	if o != nil && !isNil(o.ServerInfo) {
+	if o != nil && !IsNil(o.ServerInfo) {
 		return true
 	}
 
@@ -292,7 +295,7 @@ func (o *StatsCollectorPluginResponse) SetServerInfo(v EnumpluginServerInfoProp)
 
 // GetPerApplicationLDAPStats returns the PerApplicationLDAPStats field value if set, zero value otherwise.
 func (o *StatsCollectorPluginResponse) GetPerApplicationLDAPStats() EnumpluginPerApplicationLDAPStatsProp {
-	if o == nil || isNil(o.PerApplicationLDAPStats) {
+	if o == nil || IsNil(o.PerApplicationLDAPStats) {
 		var ret EnumpluginPerApplicationLDAPStatsProp
 		return ret
 	}
@@ -302,7 +305,7 @@ func (o *StatsCollectorPluginResponse) GetPerApplicationLDAPStats() EnumpluginPe
 // GetPerApplicationLDAPStatsOk returns a tuple with the PerApplicationLDAPStats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatsCollectorPluginResponse) GetPerApplicationLDAPStatsOk() (*EnumpluginPerApplicationLDAPStatsProp, bool) {
-	if o == nil || isNil(o.PerApplicationLDAPStats) {
+	if o == nil || IsNil(o.PerApplicationLDAPStats) {
 		return nil, false
 	}
 	return o.PerApplicationLDAPStats, true
@@ -310,7 +313,7 @@ func (o *StatsCollectorPluginResponse) GetPerApplicationLDAPStatsOk() (*Enumplug
 
 // HasPerApplicationLDAPStats returns a boolean if a field has been set.
 func (o *StatsCollectorPluginResponse) HasPerApplicationLDAPStats() bool {
-	if o != nil && !isNil(o.PerApplicationLDAPStats) {
+	if o != nil && !IsNil(o.PerApplicationLDAPStats) {
 		return true
 	}
 
@@ -324,7 +327,7 @@ func (o *StatsCollectorPluginResponse) SetPerApplicationLDAPStats(v EnumpluginPe
 
 // GetLdapChangelogInfo returns the LdapChangelogInfo field value if set, zero value otherwise.
 func (o *StatsCollectorPluginResponse) GetLdapChangelogInfo() EnumpluginLdapChangelogInfoProp {
-	if o == nil || isNil(o.LdapChangelogInfo) {
+	if o == nil || IsNil(o.LdapChangelogInfo) {
 		var ret EnumpluginLdapChangelogInfoProp
 		return ret
 	}
@@ -334,7 +337,7 @@ func (o *StatsCollectorPluginResponse) GetLdapChangelogInfo() EnumpluginLdapChan
 // GetLdapChangelogInfoOk returns a tuple with the LdapChangelogInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatsCollectorPluginResponse) GetLdapChangelogInfoOk() (*EnumpluginLdapChangelogInfoProp, bool) {
-	if o == nil || isNil(o.LdapChangelogInfo) {
+	if o == nil || IsNil(o.LdapChangelogInfo) {
 		return nil, false
 	}
 	return o.LdapChangelogInfo, true
@@ -342,7 +345,7 @@ func (o *StatsCollectorPluginResponse) GetLdapChangelogInfoOk() (*EnumpluginLdap
 
 // HasLdapChangelogInfo returns a boolean if a field has been set.
 func (o *StatsCollectorPluginResponse) HasLdapChangelogInfo() bool {
-	if o != nil && !isNil(o.LdapChangelogInfo) {
+	if o != nil && !IsNil(o.LdapChangelogInfo) {
 		return true
 	}
 
@@ -356,7 +359,7 @@ func (o *StatsCollectorPluginResponse) SetLdapChangelogInfo(v EnumpluginLdapChan
 
 // GetStatusSummaryInfo returns the StatusSummaryInfo field value if set, zero value otherwise.
 func (o *StatsCollectorPluginResponse) GetStatusSummaryInfo() EnumpluginStatusSummaryInfoProp {
-	if o == nil || isNil(o.StatusSummaryInfo) {
+	if o == nil || IsNil(o.StatusSummaryInfo) {
 		var ret EnumpluginStatusSummaryInfoProp
 		return ret
 	}
@@ -366,7 +369,7 @@ func (o *StatsCollectorPluginResponse) GetStatusSummaryInfo() EnumpluginStatusSu
 // GetStatusSummaryInfoOk returns a tuple with the StatusSummaryInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatsCollectorPluginResponse) GetStatusSummaryInfoOk() (*EnumpluginStatusSummaryInfoProp, bool) {
-	if o == nil || isNil(o.StatusSummaryInfo) {
+	if o == nil || IsNil(o.StatusSummaryInfo) {
 		return nil, false
 	}
 	return o.StatusSummaryInfo, true
@@ -374,7 +377,7 @@ func (o *StatsCollectorPluginResponse) GetStatusSummaryInfoOk() (*EnumpluginStat
 
 // HasStatusSummaryInfo returns a boolean if a field has been set.
 func (o *StatsCollectorPluginResponse) HasStatusSummaryInfo() bool {
-	if o != nil && !isNil(o.StatusSummaryInfo) {
+	if o != nil && !IsNil(o.StatusSummaryInfo) {
 		return true
 	}
 
@@ -388,7 +391,7 @@ func (o *StatsCollectorPluginResponse) SetStatusSummaryInfo(v EnumpluginStatusSu
 
 // GetGenerateCollectorFiles returns the GenerateCollectorFiles field value if set, zero value otherwise.
 func (o *StatsCollectorPluginResponse) GetGenerateCollectorFiles() bool {
-	if o == nil || isNil(o.GenerateCollectorFiles) {
+	if o == nil || IsNil(o.GenerateCollectorFiles) {
 		var ret bool
 		return ret
 	}
@@ -398,7 +401,7 @@ func (o *StatsCollectorPluginResponse) GetGenerateCollectorFiles() bool {
 // GetGenerateCollectorFilesOk returns a tuple with the GenerateCollectorFiles field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatsCollectorPluginResponse) GetGenerateCollectorFilesOk() (*bool, bool) {
-	if o == nil || isNil(o.GenerateCollectorFiles) {
+	if o == nil || IsNil(o.GenerateCollectorFiles) {
 		return nil, false
 	}
 	return o.GenerateCollectorFiles, true
@@ -406,7 +409,7 @@ func (o *StatsCollectorPluginResponse) GetGenerateCollectorFilesOk() (*bool, boo
 
 // HasGenerateCollectorFiles returns a boolean if a field has been set.
 func (o *StatsCollectorPluginResponse) HasGenerateCollectorFiles() bool {
-	if o != nil && !isNil(o.GenerateCollectorFiles) {
+	if o != nil && !IsNil(o.GenerateCollectorFiles) {
 		return true
 	}
 
@@ -420,7 +423,7 @@ func (o *StatsCollectorPluginResponse) SetGenerateCollectorFiles(v bool) {
 
 // GetLocalDBBackendInfo returns the LocalDBBackendInfo field value if set, zero value otherwise.
 func (o *StatsCollectorPluginResponse) GetLocalDBBackendInfo() EnumpluginLocalDBBackendInfoProp {
-	if o == nil || isNil(o.LocalDBBackendInfo) {
+	if o == nil || IsNil(o.LocalDBBackendInfo) {
 		var ret EnumpluginLocalDBBackendInfoProp
 		return ret
 	}
@@ -430,7 +433,7 @@ func (o *StatsCollectorPluginResponse) GetLocalDBBackendInfo() EnumpluginLocalDB
 // GetLocalDBBackendInfoOk returns a tuple with the LocalDBBackendInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatsCollectorPluginResponse) GetLocalDBBackendInfoOk() (*EnumpluginLocalDBBackendInfoProp, bool) {
-	if o == nil || isNil(o.LocalDBBackendInfo) {
+	if o == nil || IsNil(o.LocalDBBackendInfo) {
 		return nil, false
 	}
 	return o.LocalDBBackendInfo, true
@@ -438,7 +441,7 @@ func (o *StatsCollectorPluginResponse) GetLocalDBBackendInfoOk() (*EnumpluginLoc
 
 // HasLocalDBBackendInfo returns a boolean if a field has been set.
 func (o *StatsCollectorPluginResponse) HasLocalDBBackendInfo() bool {
-	if o != nil && !isNil(o.LocalDBBackendInfo) {
+	if o != nil && !IsNil(o.LocalDBBackendInfo) {
 		return true
 	}
 
@@ -452,7 +455,7 @@ func (o *StatsCollectorPluginResponse) SetLocalDBBackendInfo(v EnumpluginLocalDB
 
 // GetReplicationInfo returns the ReplicationInfo field value if set, zero value otherwise.
 func (o *StatsCollectorPluginResponse) GetReplicationInfo() EnumpluginReplicationInfoProp {
-	if o == nil || isNil(o.ReplicationInfo) {
+	if o == nil || IsNil(o.ReplicationInfo) {
 		var ret EnumpluginReplicationInfoProp
 		return ret
 	}
@@ -462,7 +465,7 @@ func (o *StatsCollectorPluginResponse) GetReplicationInfo() EnumpluginReplicatio
 // GetReplicationInfoOk returns a tuple with the ReplicationInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatsCollectorPluginResponse) GetReplicationInfoOk() (*EnumpluginReplicationInfoProp, bool) {
-	if o == nil || isNil(o.ReplicationInfo) {
+	if o == nil || IsNil(o.ReplicationInfo) {
 		return nil, false
 	}
 	return o.ReplicationInfo, true
@@ -470,7 +473,7 @@ func (o *StatsCollectorPluginResponse) GetReplicationInfoOk() (*EnumpluginReplic
 
 // HasReplicationInfo returns a boolean if a field has been set.
 func (o *StatsCollectorPluginResponse) HasReplicationInfo() bool {
-	if o != nil && !isNil(o.ReplicationInfo) {
+	if o != nil && !IsNil(o.ReplicationInfo) {
 		return true
 	}
 
@@ -484,7 +487,7 @@ func (o *StatsCollectorPluginResponse) SetReplicationInfo(v EnumpluginReplicatio
 
 // GetEntryCacheInfo returns the EntryCacheInfo field value if set, zero value otherwise.
 func (o *StatsCollectorPluginResponse) GetEntryCacheInfo() EnumpluginEntryCacheInfoProp {
-	if o == nil || isNil(o.EntryCacheInfo) {
+	if o == nil || IsNil(o.EntryCacheInfo) {
 		var ret EnumpluginEntryCacheInfoProp
 		return ret
 	}
@@ -494,7 +497,7 @@ func (o *StatsCollectorPluginResponse) GetEntryCacheInfo() EnumpluginEntryCacheI
 // GetEntryCacheInfoOk returns a tuple with the EntryCacheInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatsCollectorPluginResponse) GetEntryCacheInfoOk() (*EnumpluginEntryCacheInfoProp, bool) {
-	if o == nil || isNil(o.EntryCacheInfo) {
+	if o == nil || IsNil(o.EntryCacheInfo) {
 		return nil, false
 	}
 	return o.EntryCacheInfo, true
@@ -502,7 +505,7 @@ func (o *StatsCollectorPluginResponse) GetEntryCacheInfoOk() (*EnumpluginEntryCa
 
 // HasEntryCacheInfo returns a boolean if a field has been set.
 func (o *StatsCollectorPluginResponse) HasEntryCacheInfo() bool {
-	if o != nil && !isNil(o.EntryCacheInfo) {
+	if o != nil && !IsNil(o.EntryCacheInfo) {
 		return true
 	}
 
@@ -516,7 +519,7 @@ func (o *StatsCollectorPluginResponse) SetEntryCacheInfo(v EnumpluginEntryCacheI
 
 // GetHostInfo returns the HostInfo field value if set, zero value otherwise.
 func (o *StatsCollectorPluginResponse) GetHostInfo() []EnumpluginHostInfoProp {
-	if o == nil || isNil(o.HostInfo) {
+	if o == nil || IsNil(o.HostInfo) {
 		var ret []EnumpluginHostInfoProp
 		return ret
 	}
@@ -526,7 +529,7 @@ func (o *StatsCollectorPluginResponse) GetHostInfo() []EnumpluginHostInfoProp {
 // GetHostInfoOk returns a tuple with the HostInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatsCollectorPluginResponse) GetHostInfoOk() ([]EnumpluginHostInfoProp, bool) {
-	if o == nil || isNil(o.HostInfo) {
+	if o == nil || IsNil(o.HostInfo) {
 		return nil, false
 	}
 	return o.HostInfo, true
@@ -534,7 +537,7 @@ func (o *StatsCollectorPluginResponse) GetHostInfoOk() ([]EnumpluginHostInfoProp
 
 // HasHostInfo returns a boolean if a field has been set.
 func (o *StatsCollectorPluginResponse) HasHostInfo() bool {
-	if o != nil && !isNil(o.HostInfo) {
+	if o != nil && !IsNil(o.HostInfo) {
 		return true
 	}
 
@@ -548,7 +551,7 @@ func (o *StatsCollectorPluginResponse) SetHostInfo(v []EnumpluginHostInfoProp) {
 
 // GetIncludedLDAPApplication returns the IncludedLDAPApplication field value if set, zero value otherwise.
 func (o *StatsCollectorPluginResponse) GetIncludedLDAPApplication() []string {
-	if o == nil || isNil(o.IncludedLDAPApplication) {
+	if o == nil || IsNil(o.IncludedLDAPApplication) {
 		var ret []string
 		return ret
 	}
@@ -558,7 +561,7 @@ func (o *StatsCollectorPluginResponse) GetIncludedLDAPApplication() []string {
 // GetIncludedLDAPApplicationOk returns a tuple with the IncludedLDAPApplication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatsCollectorPluginResponse) GetIncludedLDAPApplicationOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludedLDAPApplication) {
+	if o == nil || IsNil(o.IncludedLDAPApplication) {
 		return nil, false
 	}
 	return o.IncludedLDAPApplication, true
@@ -566,7 +569,7 @@ func (o *StatsCollectorPluginResponse) GetIncludedLDAPApplicationOk() ([]string,
 
 // HasIncludedLDAPApplication returns a boolean if a field has been set.
 func (o *StatsCollectorPluginResponse) HasIncludedLDAPApplication() bool {
-	if o != nil && !isNil(o.IncludedLDAPApplication) {
+	if o != nil && !IsNil(o.IncludedLDAPApplication) {
 		return true
 	}
 
@@ -580,7 +583,7 @@ func (o *StatsCollectorPluginResponse) SetIncludedLDAPApplication(v []string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *StatsCollectorPluginResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -590,7 +593,7 @@ func (o *StatsCollectorPluginResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatsCollectorPluginResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -598,7 +601,7 @@ func (o *StatsCollectorPluginResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *StatsCollectorPluginResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -635,65 +638,63 @@ func (o *StatsCollectorPluginResponse) SetEnabled(v bool) {
 }
 
 func (o StatsCollectorPluginResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["sampleInterval"] = o.SampleInterval
-	}
-	if true {
-		toSerialize["collectionInterval"] = o.CollectionInterval
-	}
-	if !isNil(o.LdapInfo) {
-		toSerialize["ldapInfo"] = o.LdapInfo
-	}
-	if !isNil(o.ServerInfo) {
-		toSerialize["serverInfo"] = o.ServerInfo
-	}
-	if !isNil(o.PerApplicationLDAPStats) {
-		toSerialize["perApplicationLDAPStats"] = o.PerApplicationLDAPStats
-	}
-	if !isNil(o.LdapChangelogInfo) {
-		toSerialize["ldapChangelogInfo"] = o.LdapChangelogInfo
-	}
-	if !isNil(o.StatusSummaryInfo) {
-		toSerialize["statusSummaryInfo"] = o.StatusSummaryInfo
-	}
-	if !isNil(o.GenerateCollectorFiles) {
-		toSerialize["generateCollectorFiles"] = o.GenerateCollectorFiles
-	}
-	if !isNil(o.LocalDBBackendInfo) {
-		toSerialize["localDBBackendInfo"] = o.LocalDBBackendInfo
-	}
-	if !isNil(o.ReplicationInfo) {
-		toSerialize["replicationInfo"] = o.ReplicationInfo
-	}
-	if !isNil(o.EntryCacheInfo) {
-		toSerialize["entryCacheInfo"] = o.EntryCacheInfo
-	}
-	if !isNil(o.HostInfo) {
-		toSerialize["hostInfo"] = o.HostInfo
-	}
-	if !isNil(o.IncludedLDAPApplication) {
-		toSerialize["includedLDAPApplication"] = o.IncludedLDAPApplication
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o StatsCollectorPluginResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	toSerialize["sampleInterval"] = o.SampleInterval
+	toSerialize["collectionInterval"] = o.CollectionInterval
+	if !IsNil(o.LdapInfo) {
+		toSerialize["ldapInfo"] = o.LdapInfo
+	}
+	if !IsNil(o.ServerInfo) {
+		toSerialize["serverInfo"] = o.ServerInfo
+	}
+	if !IsNil(o.PerApplicationLDAPStats) {
+		toSerialize["perApplicationLDAPStats"] = o.PerApplicationLDAPStats
+	}
+	if !IsNil(o.LdapChangelogInfo) {
+		toSerialize["ldapChangelogInfo"] = o.LdapChangelogInfo
+	}
+	if !IsNil(o.StatusSummaryInfo) {
+		toSerialize["statusSummaryInfo"] = o.StatusSummaryInfo
+	}
+	if !IsNil(o.GenerateCollectorFiles) {
+		toSerialize["generateCollectorFiles"] = o.GenerateCollectorFiles
+	}
+	if !IsNil(o.LocalDBBackendInfo) {
+		toSerialize["localDBBackendInfo"] = o.LocalDBBackendInfo
+	}
+	if !IsNil(o.ReplicationInfo) {
+		toSerialize["replicationInfo"] = o.ReplicationInfo
+	}
+	if !IsNil(o.EntryCacheInfo) {
+		toSerialize["entryCacheInfo"] = o.EntryCacheInfo
+	}
+	if !IsNil(o.HostInfo) {
+		toSerialize["hostInfo"] = o.HostInfo
+	}
+	if !IsNil(o.IncludedLDAPApplication) {
+		toSerialize["includedLDAPApplication"] = o.IncludedLDAPApplication
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableStatsCollectorPluginResponse struct {

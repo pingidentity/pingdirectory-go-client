@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddGroovyScriptedVirtualAttributeRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddGroovyScriptedVirtualAttributeRequest{}
+
 // AddGroovyScriptedVirtualAttributeRequest struct for AddGroovyScriptedVirtualAttributeRequest
 type AddGroovyScriptedVirtualAttributeRequest struct {
 	// Name of the new Virtual Attribute
@@ -143,7 +146,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) SetScriptClass(v string) {
 
 // GetScriptArgument returns the ScriptArgument field value if set, zero value otherwise.
 func (o *AddGroovyScriptedVirtualAttributeRequest) GetScriptArgument() []string {
-	if o == nil || isNil(o.ScriptArgument) {
+	if o == nil || IsNil(o.ScriptArgument) {
 		var ret []string
 		return ret
 	}
@@ -153,7 +156,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) GetScriptArgument() []string 
 // GetScriptArgumentOk returns a tuple with the ScriptArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedVirtualAttributeRequest) GetScriptArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ScriptArgument) {
+	if o == nil || IsNil(o.ScriptArgument) {
 		return nil, false
 	}
 	return o.ScriptArgument, true
@@ -161,7 +164,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) GetScriptArgumentOk() ([]stri
 
 // HasScriptArgument returns a boolean if a field has been set.
 func (o *AddGroovyScriptedVirtualAttributeRequest) HasScriptArgument() bool {
-	if o != nil && !isNil(o.ScriptArgument) {
+	if o != nil && !IsNil(o.ScriptArgument) {
 		return true
 	}
 
@@ -175,7 +178,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) SetScriptArgument(v []string)
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddGroovyScriptedVirtualAttributeRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -185,7 +188,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedVirtualAttributeRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -193,7 +196,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) GetDescriptionOk() (*string, 
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddGroovyScriptedVirtualAttributeRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -255,7 +258,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) SetAttributeType(v string) {
 
 // GetBaseDN returns the BaseDN field value if set, zero value otherwise.
 func (o *AddGroovyScriptedVirtualAttributeRequest) GetBaseDN() []string {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		var ret []string
 		return ret
 	}
@@ -265,7 +268,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) GetBaseDN() []string {
 // GetBaseDNOk returns a tuple with the BaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedVirtualAttributeRequest) GetBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		return nil, false
 	}
 	return o.BaseDN, true
@@ -273,7 +276,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) GetBaseDNOk() ([]string, bool
 
 // HasBaseDN returns a boolean if a field has been set.
 func (o *AddGroovyScriptedVirtualAttributeRequest) HasBaseDN() bool {
-	if o != nil && !isNil(o.BaseDN) {
+	if o != nil && !IsNil(o.BaseDN) {
 		return true
 	}
 
@@ -287,7 +290,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) SetBaseDN(v []string) {
 
 // GetGroupDN returns the GroupDN field value if set, zero value otherwise.
 func (o *AddGroovyScriptedVirtualAttributeRequest) GetGroupDN() []string {
-	if o == nil || isNil(o.GroupDN) {
+	if o == nil || IsNil(o.GroupDN) {
 		var ret []string
 		return ret
 	}
@@ -297,7 +300,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) GetGroupDN() []string {
 // GetGroupDNOk returns a tuple with the GroupDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedVirtualAttributeRequest) GetGroupDNOk() ([]string, bool) {
-	if o == nil || isNil(o.GroupDN) {
+	if o == nil || IsNil(o.GroupDN) {
 		return nil, false
 	}
 	return o.GroupDN, true
@@ -305,7 +308,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) GetGroupDNOk() ([]string, boo
 
 // HasGroupDN returns a boolean if a field has been set.
 func (o *AddGroovyScriptedVirtualAttributeRequest) HasGroupDN() bool {
-	if o != nil && !isNil(o.GroupDN) {
+	if o != nil && !IsNil(o.GroupDN) {
 		return true
 	}
 
@@ -319,7 +322,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) SetGroupDN(v []string) {
 
 // GetFilter returns the Filter field value if set, zero value otherwise.
 func (o *AddGroovyScriptedVirtualAttributeRequest) GetFilter() []string {
-	if o == nil || isNil(o.Filter) {
+	if o == nil || IsNil(o.Filter) {
 		var ret []string
 		return ret
 	}
@@ -329,7 +332,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) GetFilter() []string {
 // GetFilterOk returns a tuple with the Filter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedVirtualAttributeRequest) GetFilterOk() ([]string, bool) {
-	if o == nil || isNil(o.Filter) {
+	if o == nil || IsNil(o.Filter) {
 		return nil, false
 	}
 	return o.Filter, true
@@ -337,7 +340,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) GetFilterOk() ([]string, bool
 
 // HasFilter returns a boolean if a field has been set.
 func (o *AddGroovyScriptedVirtualAttributeRequest) HasFilter() bool {
-	if o != nil && !isNil(o.Filter) {
+	if o != nil && !IsNil(o.Filter) {
 		return true
 	}
 
@@ -351,7 +354,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) SetFilter(v []string) {
 
 // GetClientConnectionPolicy returns the ClientConnectionPolicy field value if set, zero value otherwise.
 func (o *AddGroovyScriptedVirtualAttributeRequest) GetClientConnectionPolicy() []string {
-	if o == nil || isNil(o.ClientConnectionPolicy) {
+	if o == nil || IsNil(o.ClientConnectionPolicy) {
 		var ret []string
 		return ret
 	}
@@ -361,7 +364,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) GetClientConnectionPolicy() [
 // GetClientConnectionPolicyOk returns a tuple with the ClientConnectionPolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedVirtualAttributeRequest) GetClientConnectionPolicyOk() ([]string, bool) {
-	if o == nil || isNil(o.ClientConnectionPolicy) {
+	if o == nil || IsNil(o.ClientConnectionPolicy) {
 		return nil, false
 	}
 	return o.ClientConnectionPolicy, true
@@ -369,7 +372,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) GetClientConnectionPolicyOk()
 
 // HasClientConnectionPolicy returns a boolean if a field has been set.
 func (o *AddGroovyScriptedVirtualAttributeRequest) HasClientConnectionPolicy() bool {
-	if o != nil && !isNil(o.ClientConnectionPolicy) {
+	if o != nil && !IsNil(o.ClientConnectionPolicy) {
 		return true
 	}
 
@@ -383,7 +386,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) SetClientConnectionPolicy(v [
 
 // GetConflictBehavior returns the ConflictBehavior field value if set, zero value otherwise.
 func (o *AddGroovyScriptedVirtualAttributeRequest) GetConflictBehavior() EnumvirtualAttributeConflictBehaviorProp {
-	if o == nil || isNil(o.ConflictBehavior) {
+	if o == nil || IsNil(o.ConflictBehavior) {
 		var ret EnumvirtualAttributeConflictBehaviorProp
 		return ret
 	}
@@ -393,7 +396,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) GetConflictBehavior() Enumvir
 // GetConflictBehaviorOk returns a tuple with the ConflictBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedVirtualAttributeRequest) GetConflictBehaviorOk() (*EnumvirtualAttributeConflictBehaviorProp, bool) {
-	if o == nil || isNil(o.ConflictBehavior) {
+	if o == nil || IsNil(o.ConflictBehavior) {
 		return nil, false
 	}
 	return o.ConflictBehavior, true
@@ -401,7 +404,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) GetConflictBehaviorOk() (*Enu
 
 // HasConflictBehavior returns a boolean if a field has been set.
 func (o *AddGroovyScriptedVirtualAttributeRequest) HasConflictBehavior() bool {
-	if o != nil && !isNil(o.ConflictBehavior) {
+	if o != nil && !IsNil(o.ConflictBehavior) {
 		return true
 	}
 
@@ -415,7 +418,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) SetConflictBehavior(v Enumvir
 
 // GetRequireExplicitRequestByName returns the RequireExplicitRequestByName field value if set, zero value otherwise.
 func (o *AddGroovyScriptedVirtualAttributeRequest) GetRequireExplicitRequestByName() bool {
-	if o == nil || isNil(o.RequireExplicitRequestByName) {
+	if o == nil || IsNil(o.RequireExplicitRequestByName) {
 		var ret bool
 		return ret
 	}
@@ -425,7 +428,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) GetRequireExplicitRequestByNa
 // GetRequireExplicitRequestByNameOk returns a tuple with the RequireExplicitRequestByName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedVirtualAttributeRequest) GetRequireExplicitRequestByNameOk() (*bool, bool) {
-	if o == nil || isNil(o.RequireExplicitRequestByName) {
+	if o == nil || IsNil(o.RequireExplicitRequestByName) {
 		return nil, false
 	}
 	return o.RequireExplicitRequestByName, true
@@ -433,7 +436,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) GetRequireExplicitRequestByNa
 
 // HasRequireExplicitRequestByName returns a boolean if a field has been set.
 func (o *AddGroovyScriptedVirtualAttributeRequest) HasRequireExplicitRequestByName() bool {
-	if o != nil && !isNil(o.RequireExplicitRequestByName) {
+	if o != nil && !IsNil(o.RequireExplicitRequestByName) {
 		return true
 	}
 
@@ -447,7 +450,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) SetRequireExplicitRequestByNa
 
 // GetMultipleVirtualAttributeEvaluationOrderIndex returns the MultipleVirtualAttributeEvaluationOrderIndex field value if set, zero value otherwise.
 func (o *AddGroovyScriptedVirtualAttributeRequest) GetMultipleVirtualAttributeEvaluationOrderIndex() int32 {
-	if o == nil || isNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
+	if o == nil || IsNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
 		var ret int32
 		return ret
 	}
@@ -457,7 +460,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) GetMultipleVirtualAttributeEv
 // GetMultipleVirtualAttributeEvaluationOrderIndexOk returns a tuple with the MultipleVirtualAttributeEvaluationOrderIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedVirtualAttributeRequest) GetMultipleVirtualAttributeEvaluationOrderIndexOk() (*int32, bool) {
-	if o == nil || isNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
+	if o == nil || IsNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
 		return nil, false
 	}
 	return o.MultipleVirtualAttributeEvaluationOrderIndex, true
@@ -465,7 +468,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) GetMultipleVirtualAttributeEv
 
 // HasMultipleVirtualAttributeEvaluationOrderIndex returns a boolean if a field has been set.
 func (o *AddGroovyScriptedVirtualAttributeRequest) HasMultipleVirtualAttributeEvaluationOrderIndex() bool {
-	if o != nil && !isNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
+	if o != nil && !IsNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
 		return true
 	}
 
@@ -479,7 +482,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) SetMultipleVirtualAttributeEv
 
 // GetMultipleVirtualAttributeMergeBehavior returns the MultipleVirtualAttributeMergeBehavior field value if set, zero value otherwise.
 func (o *AddGroovyScriptedVirtualAttributeRequest) GetMultipleVirtualAttributeMergeBehavior() EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp {
-	if o == nil || isNil(o.MultipleVirtualAttributeMergeBehavior) {
+	if o == nil || IsNil(o.MultipleVirtualAttributeMergeBehavior) {
 		var ret EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp
 		return ret
 	}
@@ -489,7 +492,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) GetMultipleVirtualAttributeMe
 // GetMultipleVirtualAttributeMergeBehaviorOk returns a tuple with the MultipleVirtualAttributeMergeBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedVirtualAttributeRequest) GetMultipleVirtualAttributeMergeBehaviorOk() (*EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp, bool) {
-	if o == nil || isNil(o.MultipleVirtualAttributeMergeBehavior) {
+	if o == nil || IsNil(o.MultipleVirtualAttributeMergeBehavior) {
 		return nil, false
 	}
 	return o.MultipleVirtualAttributeMergeBehavior, true
@@ -497,7 +500,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) GetMultipleVirtualAttributeMe
 
 // HasMultipleVirtualAttributeMergeBehavior returns a boolean if a field has been set.
 func (o *AddGroovyScriptedVirtualAttributeRequest) HasMultipleVirtualAttributeMergeBehavior() bool {
-	if o != nil && !isNil(o.MultipleVirtualAttributeMergeBehavior) {
+	if o != nil && !IsNil(o.MultipleVirtualAttributeMergeBehavior) {
 		return true
 	}
 
@@ -511,7 +514,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) SetMultipleVirtualAttributeMe
 
 // GetAllowIndexConflicts returns the AllowIndexConflicts field value if set, zero value otherwise.
 func (o *AddGroovyScriptedVirtualAttributeRequest) GetAllowIndexConflicts() bool {
-	if o == nil || isNil(o.AllowIndexConflicts) {
+	if o == nil || IsNil(o.AllowIndexConflicts) {
 		var ret bool
 		return ret
 	}
@@ -521,7 +524,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) GetAllowIndexConflicts() bool
 // GetAllowIndexConflictsOk returns a tuple with the AllowIndexConflicts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedVirtualAttributeRequest) GetAllowIndexConflictsOk() (*bool, bool) {
-	if o == nil || isNil(o.AllowIndexConflicts) {
+	if o == nil || IsNil(o.AllowIndexConflicts) {
 		return nil, false
 	}
 	return o.AllowIndexConflicts, true
@@ -529,7 +532,7 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) GetAllowIndexConflictsOk() (*
 
 // HasAllowIndexConflicts returns a boolean if a field has been set.
 func (o *AddGroovyScriptedVirtualAttributeRequest) HasAllowIndexConflicts() bool {
-	if o != nil && !isNil(o.AllowIndexConflicts) {
+	if o != nil && !IsNil(o.AllowIndexConflicts) {
 		return true
 	}
 
@@ -542,56 +545,54 @@ func (o *AddGroovyScriptedVirtualAttributeRequest) SetAllowIndexConflicts(v bool
 }
 
 func (o AddGroovyScriptedVirtualAttributeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["name"] = o.Name
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["scriptClass"] = o.ScriptClass
-	}
-	if !isNil(o.ScriptArgument) {
-		toSerialize["scriptArgument"] = o.ScriptArgument
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if true {
-		toSerialize["attributeType"] = o.AttributeType
-	}
-	if !isNil(o.BaseDN) {
-		toSerialize["baseDN"] = o.BaseDN
-	}
-	if !isNil(o.GroupDN) {
-		toSerialize["groupDN"] = o.GroupDN
-	}
-	if !isNil(o.Filter) {
-		toSerialize["filter"] = o.Filter
-	}
-	if !isNil(o.ClientConnectionPolicy) {
-		toSerialize["clientConnectionPolicy"] = o.ClientConnectionPolicy
-	}
-	if !isNil(o.ConflictBehavior) {
-		toSerialize["conflictBehavior"] = o.ConflictBehavior
-	}
-	if !isNil(o.RequireExplicitRequestByName) {
-		toSerialize["requireExplicitRequestByName"] = o.RequireExplicitRequestByName
-	}
-	if !isNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
-		toSerialize["multipleVirtualAttributeEvaluationOrderIndex"] = o.MultipleVirtualAttributeEvaluationOrderIndex
-	}
-	if !isNil(o.MultipleVirtualAttributeMergeBehavior) {
-		toSerialize["multipleVirtualAttributeMergeBehavior"] = o.MultipleVirtualAttributeMergeBehavior
-	}
-	if !isNil(o.AllowIndexConflicts) {
-		toSerialize["allowIndexConflicts"] = o.AllowIndexConflicts
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddGroovyScriptedVirtualAttributeRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["name"] = o.Name
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["scriptClass"] = o.ScriptClass
+	if !IsNil(o.ScriptArgument) {
+		toSerialize["scriptArgument"] = o.ScriptArgument
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	toSerialize["attributeType"] = o.AttributeType
+	if !IsNil(o.BaseDN) {
+		toSerialize["baseDN"] = o.BaseDN
+	}
+	if !IsNil(o.GroupDN) {
+		toSerialize["groupDN"] = o.GroupDN
+	}
+	if !IsNil(o.Filter) {
+		toSerialize["filter"] = o.Filter
+	}
+	if !IsNil(o.ClientConnectionPolicy) {
+		toSerialize["clientConnectionPolicy"] = o.ClientConnectionPolicy
+	}
+	if !IsNil(o.ConflictBehavior) {
+		toSerialize["conflictBehavior"] = o.ConflictBehavior
+	}
+	if !IsNil(o.RequireExplicitRequestByName) {
+		toSerialize["requireExplicitRequestByName"] = o.RequireExplicitRequestByName
+	}
+	if !IsNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
+		toSerialize["multipleVirtualAttributeEvaluationOrderIndex"] = o.MultipleVirtualAttributeEvaluationOrderIndex
+	}
+	if !IsNil(o.MultipleVirtualAttributeMergeBehavior) {
+		toSerialize["multipleVirtualAttributeMergeBehavior"] = o.MultipleVirtualAttributeMergeBehavior
+	}
+	if !IsNil(o.AllowIndexConflicts) {
+		toSerialize["allowIndexConflicts"] = o.AllowIndexConflicts
+	}
+	return toSerialize, nil
 }
 
 type NullableAddGroovyScriptedVirtualAttributeRequest struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddCleanUpInactivePingfederatePersistentSessionsPluginRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddCleanUpInactivePingfederatePersistentSessionsPluginRequest{}
+
 // AddCleanUpInactivePingfederatePersistentSessionsPluginRequest struct for AddCleanUpInactivePingfederatePersistentSessionsPluginRequest
 type AddCleanUpInactivePingfederatePersistentSessionsPluginRequest struct {
 	// Name of the new Plugin
@@ -130,7 +133,7 @@ func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) SetExpir
 
 // GetPollingInterval returns the PollingInterval field value if set, zero value otherwise.
 func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetPollingInterval() string {
-	if o == nil || isNil(o.PollingInterval) {
+	if o == nil || IsNil(o.PollingInterval) {
 		var ret string
 		return ret
 	}
@@ -140,7 +143,7 @@ func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetPolli
 // GetPollingIntervalOk returns a tuple with the PollingInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetPollingIntervalOk() (*string, bool) {
-	if o == nil || isNil(o.PollingInterval) {
+	if o == nil || IsNil(o.PollingInterval) {
 		return nil, false
 	}
 	return o.PollingInterval, true
@@ -148,7 +151,7 @@ func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetPolli
 
 // HasPollingInterval returns a boolean if a field has been set.
 func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) HasPollingInterval() bool {
-	if o != nil && !isNil(o.PollingInterval) {
+	if o != nil && !IsNil(o.PollingInterval) {
 		return true
 	}
 
@@ -162,7 +165,7 @@ func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) SetPolli
 
 // GetPeerServerPriorityIndex returns the PeerServerPriorityIndex field value if set, zero value otherwise.
 func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetPeerServerPriorityIndex() int32 {
-	if o == nil || isNil(o.PeerServerPriorityIndex) {
+	if o == nil || IsNil(o.PeerServerPriorityIndex) {
 		var ret int32
 		return ret
 	}
@@ -172,7 +175,7 @@ func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetPeerS
 // GetPeerServerPriorityIndexOk returns a tuple with the PeerServerPriorityIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetPeerServerPriorityIndexOk() (*int32, bool) {
-	if o == nil || isNil(o.PeerServerPriorityIndex) {
+	if o == nil || IsNil(o.PeerServerPriorityIndex) {
 		return nil, false
 	}
 	return o.PeerServerPriorityIndex, true
@@ -180,7 +183,7 @@ func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetPeerS
 
 // HasPeerServerPriorityIndex returns a boolean if a field has been set.
 func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) HasPeerServerPriorityIndex() bool {
-	if o != nil && !isNil(o.PeerServerPriorityIndex) {
+	if o != nil && !IsNil(o.PeerServerPriorityIndex) {
 		return true
 	}
 
@@ -194,7 +197,7 @@ func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) SetPeerS
 
 // GetBaseDN returns the BaseDN field value if set, zero value otherwise.
 func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetBaseDN() string {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		var ret string
 		return ret
 	}
@@ -204,7 +207,7 @@ func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetBaseD
 // GetBaseDNOk returns a tuple with the BaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetBaseDNOk() (*string, bool) {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		return nil, false
 	}
 	return o.BaseDN, true
@@ -212,7 +215,7 @@ func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetBaseD
 
 // HasBaseDN returns a boolean if a field has been set.
 func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) HasBaseDN() bool {
-	if o != nil && !isNil(o.BaseDN) {
+	if o != nil && !IsNil(o.BaseDN) {
 		return true
 	}
 
@@ -226,7 +229,7 @@ func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) SetBaseD
 
 // GetMaxUpdatesPerSecond returns the MaxUpdatesPerSecond field value if set, zero value otherwise.
 func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetMaxUpdatesPerSecond() int32 {
-	if o == nil || isNil(o.MaxUpdatesPerSecond) {
+	if o == nil || IsNil(o.MaxUpdatesPerSecond) {
 		var ret int32
 		return ret
 	}
@@ -236,7 +239,7 @@ func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetMaxUp
 // GetMaxUpdatesPerSecondOk returns a tuple with the MaxUpdatesPerSecond field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetMaxUpdatesPerSecondOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxUpdatesPerSecond) {
+	if o == nil || IsNil(o.MaxUpdatesPerSecond) {
 		return nil, false
 	}
 	return o.MaxUpdatesPerSecond, true
@@ -244,7 +247,7 @@ func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetMaxUp
 
 // HasMaxUpdatesPerSecond returns a boolean if a field has been set.
 func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) HasMaxUpdatesPerSecond() bool {
-	if o != nil && !isNil(o.MaxUpdatesPerSecond) {
+	if o != nil && !IsNil(o.MaxUpdatesPerSecond) {
 		return true
 	}
 
@@ -258,7 +261,7 @@ func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) SetMaxUp
 
 // GetNumDeleteThreads returns the NumDeleteThreads field value if set, zero value otherwise.
 func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetNumDeleteThreads() int32 {
-	if o == nil || isNil(o.NumDeleteThreads) {
+	if o == nil || IsNil(o.NumDeleteThreads) {
 		var ret int32
 		return ret
 	}
@@ -268,7 +271,7 @@ func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetNumDe
 // GetNumDeleteThreadsOk returns a tuple with the NumDeleteThreads field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetNumDeleteThreadsOk() (*int32, bool) {
-	if o == nil || isNil(o.NumDeleteThreads) {
+	if o == nil || IsNil(o.NumDeleteThreads) {
 		return nil, false
 	}
 	return o.NumDeleteThreads, true
@@ -276,7 +279,7 @@ func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetNumDe
 
 // HasNumDeleteThreads returns a boolean if a field has been set.
 func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) HasNumDeleteThreads() bool {
-	if o != nil && !isNil(o.NumDeleteThreads) {
+	if o != nil && !IsNil(o.NumDeleteThreads) {
 		return true
 	}
 
@@ -313,35 +316,35 @@ func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) SetEnabl
 }
 
 func (o AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["pluginName"] = o.PluginName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["expirationOffset"] = o.ExpirationOffset
-	}
-	if !isNil(o.PollingInterval) {
-		toSerialize["pollingInterval"] = o.PollingInterval
-	}
-	if !isNil(o.PeerServerPriorityIndex) {
-		toSerialize["peerServerPriorityIndex"] = o.PeerServerPriorityIndex
-	}
-	if !isNil(o.BaseDN) {
-		toSerialize["baseDN"] = o.BaseDN
-	}
-	if !isNil(o.MaxUpdatesPerSecond) {
-		toSerialize["maxUpdatesPerSecond"] = o.MaxUpdatesPerSecond
-	}
-	if !isNil(o.NumDeleteThreads) {
-		toSerialize["numDeleteThreads"] = o.NumDeleteThreads
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["pluginName"] = o.PluginName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["expirationOffset"] = o.ExpirationOffset
+	if !IsNil(o.PollingInterval) {
+		toSerialize["pollingInterval"] = o.PollingInterval
+	}
+	if !IsNil(o.PeerServerPriorityIndex) {
+		toSerialize["peerServerPriorityIndex"] = o.PeerServerPriorityIndex
+	}
+	if !IsNil(o.BaseDN) {
+		toSerialize["baseDN"] = o.BaseDN
+	}
+	if !IsNil(o.MaxUpdatesPerSecond) {
+		toSerialize["maxUpdatesPerSecond"] = o.MaxUpdatesPerSecond
+	}
+	if !IsNil(o.NumDeleteThreads) {
+		toSerialize["numDeleteThreads"] = o.NumDeleteThreads
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddCleanUpInactivePingfederatePersistentSessionsPluginRequest struct {

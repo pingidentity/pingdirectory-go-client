@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PeriodicStatsLoggerPluginResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PeriodicStatsLoggerPluginResponse{}
+
 // PeriodicStatsLoggerPluginResponse struct for PeriodicStatsLoggerPluginResponse
 type PeriodicStatsLoggerPluginResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -98,7 +101,7 @@ func NewPeriodicStatsLoggerPluginResponseWithDefaults() *PeriodicStatsLoggerPlug
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *PeriodicStatsLoggerPluginResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -108,7 +111,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeriodicStatsLoggerPluginResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -116,7 +119,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *PeriodicStatsLoggerPluginResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -130,7 +133,7 @@ func (o *PeriodicStatsLoggerPluginResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *PeriodicStatsLoggerPluginResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -140,7 +143,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetUrnpingidentityschemasconfigurati
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeriodicStatsLoggerPluginResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -148,7 +151,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetUrnpingidentityschemasconfigurati
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *PeriodicStatsLoggerPluginResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -282,7 +285,7 @@ func (o *PeriodicStatsLoggerPluginResponse) SetSuppressIfIdle(v bool) {
 
 // GetHeaderPrefixPerColumn returns the HeaderPrefixPerColumn field value if set, zero value otherwise.
 func (o *PeriodicStatsLoggerPluginResponse) GetHeaderPrefixPerColumn() bool {
-	if o == nil || isNil(o.HeaderPrefixPerColumn) {
+	if o == nil || IsNil(o.HeaderPrefixPerColumn) {
 		var ret bool
 		return ret
 	}
@@ -292,7 +295,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetHeaderPrefixPerColumn() bool {
 // GetHeaderPrefixPerColumnOk returns a tuple with the HeaderPrefixPerColumn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeriodicStatsLoggerPluginResponse) GetHeaderPrefixPerColumnOk() (*bool, bool) {
-	if o == nil || isNil(o.HeaderPrefixPerColumn) {
+	if o == nil || IsNil(o.HeaderPrefixPerColumn) {
 		return nil, false
 	}
 	return o.HeaderPrefixPerColumn, true
@@ -300,7 +303,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetHeaderPrefixPerColumnOk() (*bool,
 
 // HasHeaderPrefixPerColumn returns a boolean if a field has been set.
 func (o *PeriodicStatsLoggerPluginResponse) HasHeaderPrefixPerColumn() bool {
-	if o != nil && !isNil(o.HeaderPrefixPerColumn) {
+	if o != nil && !IsNil(o.HeaderPrefixPerColumn) {
 		return true
 	}
 
@@ -314,7 +317,7 @@ func (o *PeriodicStatsLoggerPluginResponse) SetHeaderPrefixPerColumn(v bool) {
 
 // GetEmptyInsteadOfZero returns the EmptyInsteadOfZero field value if set, zero value otherwise.
 func (o *PeriodicStatsLoggerPluginResponse) GetEmptyInsteadOfZero() bool {
-	if o == nil || isNil(o.EmptyInsteadOfZero) {
+	if o == nil || IsNil(o.EmptyInsteadOfZero) {
 		var ret bool
 		return ret
 	}
@@ -324,7 +327,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetEmptyInsteadOfZero() bool {
 // GetEmptyInsteadOfZeroOk returns a tuple with the EmptyInsteadOfZero field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeriodicStatsLoggerPluginResponse) GetEmptyInsteadOfZeroOk() (*bool, bool) {
-	if o == nil || isNil(o.EmptyInsteadOfZero) {
+	if o == nil || IsNil(o.EmptyInsteadOfZero) {
 		return nil, false
 	}
 	return o.EmptyInsteadOfZero, true
@@ -332,7 +335,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetEmptyInsteadOfZeroOk() (*bool, bo
 
 // HasEmptyInsteadOfZero returns a boolean if a field has been set.
 func (o *PeriodicStatsLoggerPluginResponse) HasEmptyInsteadOfZero() bool {
-	if o != nil && !isNil(o.EmptyInsteadOfZero) {
+	if o != nil && !IsNil(o.EmptyInsteadOfZero) {
 		return true
 	}
 
@@ -370,7 +373,7 @@ func (o *PeriodicStatsLoggerPluginResponse) SetLinesBetweenHeader(v int32) {
 
 // GetIncludedLDAPStat returns the IncludedLDAPStat field value if set, zero value otherwise.
 func (o *PeriodicStatsLoggerPluginResponse) GetIncludedLDAPStat() []EnumpluginIncludedLDAPStatProp {
-	if o == nil || isNil(o.IncludedLDAPStat) {
+	if o == nil || IsNil(o.IncludedLDAPStat) {
 		var ret []EnumpluginIncludedLDAPStatProp
 		return ret
 	}
@@ -380,7 +383,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetIncludedLDAPStat() []EnumpluginIn
 // GetIncludedLDAPStatOk returns a tuple with the IncludedLDAPStat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeriodicStatsLoggerPluginResponse) GetIncludedLDAPStatOk() ([]EnumpluginIncludedLDAPStatProp, bool) {
-	if o == nil || isNil(o.IncludedLDAPStat) {
+	if o == nil || IsNil(o.IncludedLDAPStat) {
 		return nil, false
 	}
 	return o.IncludedLDAPStat, true
@@ -388,7 +391,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetIncludedLDAPStatOk() ([]Enumplugi
 
 // HasIncludedLDAPStat returns a boolean if a field has been set.
 func (o *PeriodicStatsLoggerPluginResponse) HasIncludedLDAPStat() bool {
-	if o != nil && !isNil(o.IncludedLDAPStat) {
+	if o != nil && !IsNil(o.IncludedLDAPStat) {
 		return true
 	}
 
@@ -402,7 +405,7 @@ func (o *PeriodicStatsLoggerPluginResponse) SetIncludedLDAPStat(v []EnumpluginIn
 
 // GetIncludedResourceStat returns the IncludedResourceStat field value if set, zero value otherwise.
 func (o *PeriodicStatsLoggerPluginResponse) GetIncludedResourceStat() []EnumpluginIncludedResourceStatProp {
-	if o == nil || isNil(o.IncludedResourceStat) {
+	if o == nil || IsNil(o.IncludedResourceStat) {
 		var ret []EnumpluginIncludedResourceStatProp
 		return ret
 	}
@@ -412,7 +415,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetIncludedResourceStat() []Enumplug
 // GetIncludedResourceStatOk returns a tuple with the IncludedResourceStat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeriodicStatsLoggerPluginResponse) GetIncludedResourceStatOk() ([]EnumpluginIncludedResourceStatProp, bool) {
-	if o == nil || isNil(o.IncludedResourceStat) {
+	if o == nil || IsNil(o.IncludedResourceStat) {
 		return nil, false
 	}
 	return o.IncludedResourceStat, true
@@ -420,7 +423,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetIncludedResourceStatOk() ([]Enump
 
 // HasIncludedResourceStat returns a boolean if a field has been set.
 func (o *PeriodicStatsLoggerPluginResponse) HasIncludedResourceStat() bool {
-	if o != nil && !isNil(o.IncludedResourceStat) {
+	if o != nil && !IsNil(o.IncludedResourceStat) {
 		return true
 	}
 
@@ -458,7 +461,7 @@ func (o *PeriodicStatsLoggerPluginResponse) SetHistogramFormat(v EnumpluginHisto
 
 // GetHistogramOpType returns the HistogramOpType field value if set, zero value otherwise.
 func (o *PeriodicStatsLoggerPluginResponse) GetHistogramOpType() []EnumpluginHistogramOpTypeProp {
-	if o == nil || isNil(o.HistogramOpType) {
+	if o == nil || IsNil(o.HistogramOpType) {
 		var ret []EnumpluginHistogramOpTypeProp
 		return ret
 	}
@@ -468,7 +471,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetHistogramOpType() []EnumpluginHis
 // GetHistogramOpTypeOk returns a tuple with the HistogramOpType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeriodicStatsLoggerPluginResponse) GetHistogramOpTypeOk() ([]EnumpluginHistogramOpTypeProp, bool) {
-	if o == nil || isNil(o.HistogramOpType) {
+	if o == nil || IsNil(o.HistogramOpType) {
 		return nil, false
 	}
 	return o.HistogramOpType, true
@@ -476,7 +479,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetHistogramOpTypeOk() ([]Enumplugin
 
 // HasHistogramOpType returns a boolean if a field has been set.
 func (o *PeriodicStatsLoggerPluginResponse) HasHistogramOpType() bool {
-	if o != nil && !isNil(o.HistogramOpType) {
+	if o != nil && !IsNil(o.HistogramOpType) {
 		return true
 	}
 
@@ -490,7 +493,7 @@ func (o *PeriodicStatsLoggerPluginResponse) SetHistogramOpType(v []EnumpluginHis
 
 // GetPerApplicationLDAPStats returns the PerApplicationLDAPStats field value if set, zero value otherwise.
 func (o *PeriodicStatsLoggerPluginResponse) GetPerApplicationLDAPStats() EnumpluginPerApplicationLDAPStatsProp {
-	if o == nil || isNil(o.PerApplicationLDAPStats) {
+	if o == nil || IsNil(o.PerApplicationLDAPStats) {
 		var ret EnumpluginPerApplicationLDAPStatsProp
 		return ret
 	}
@@ -500,7 +503,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetPerApplicationLDAPStats() Enumplu
 // GetPerApplicationLDAPStatsOk returns a tuple with the PerApplicationLDAPStats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeriodicStatsLoggerPluginResponse) GetPerApplicationLDAPStatsOk() (*EnumpluginPerApplicationLDAPStatsProp, bool) {
-	if o == nil || isNil(o.PerApplicationLDAPStats) {
+	if o == nil || IsNil(o.PerApplicationLDAPStats) {
 		return nil, false
 	}
 	return o.PerApplicationLDAPStats, true
@@ -508,7 +511,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetPerApplicationLDAPStatsOk() (*Enu
 
 // HasPerApplicationLDAPStats returns a boolean if a field has been set.
 func (o *PeriodicStatsLoggerPluginResponse) HasPerApplicationLDAPStats() bool {
-	if o != nil && !isNil(o.PerApplicationLDAPStats) {
+	if o != nil && !IsNil(o.PerApplicationLDAPStats) {
 		return true
 	}
 
@@ -522,7 +525,7 @@ func (o *PeriodicStatsLoggerPluginResponse) SetPerApplicationLDAPStats(v Enumplu
 
 // GetStatusSummaryInfo returns the StatusSummaryInfo field value if set, zero value otherwise.
 func (o *PeriodicStatsLoggerPluginResponse) GetStatusSummaryInfo() EnumpluginStatusSummaryInfoProp {
-	if o == nil || isNil(o.StatusSummaryInfo) {
+	if o == nil || IsNil(o.StatusSummaryInfo) {
 		var ret EnumpluginStatusSummaryInfoProp
 		return ret
 	}
@@ -532,7 +535,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetStatusSummaryInfo() EnumpluginSta
 // GetStatusSummaryInfoOk returns a tuple with the StatusSummaryInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeriodicStatsLoggerPluginResponse) GetStatusSummaryInfoOk() (*EnumpluginStatusSummaryInfoProp, bool) {
-	if o == nil || isNil(o.StatusSummaryInfo) {
+	if o == nil || IsNil(o.StatusSummaryInfo) {
 		return nil, false
 	}
 	return o.StatusSummaryInfo, true
@@ -540,7 +543,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetStatusSummaryInfoOk() (*Enumplugi
 
 // HasStatusSummaryInfo returns a boolean if a field has been set.
 func (o *PeriodicStatsLoggerPluginResponse) HasStatusSummaryInfo() bool {
-	if o != nil && !isNil(o.StatusSummaryInfo) {
+	if o != nil && !IsNil(o.StatusSummaryInfo) {
 		return true
 	}
 
@@ -554,7 +557,7 @@ func (o *PeriodicStatsLoggerPluginResponse) SetStatusSummaryInfo(v EnumpluginSta
 
 // GetLdapChangelogInfo returns the LdapChangelogInfo field value if set, zero value otherwise.
 func (o *PeriodicStatsLoggerPluginResponse) GetLdapChangelogInfo() EnumpluginLdapChangelogInfoProp {
-	if o == nil || isNil(o.LdapChangelogInfo) {
+	if o == nil || IsNil(o.LdapChangelogInfo) {
 		var ret EnumpluginLdapChangelogInfoProp
 		return ret
 	}
@@ -564,7 +567,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetLdapChangelogInfo() EnumpluginLda
 // GetLdapChangelogInfoOk returns a tuple with the LdapChangelogInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeriodicStatsLoggerPluginResponse) GetLdapChangelogInfoOk() (*EnumpluginLdapChangelogInfoProp, bool) {
-	if o == nil || isNil(o.LdapChangelogInfo) {
+	if o == nil || IsNil(o.LdapChangelogInfo) {
 		return nil, false
 	}
 	return o.LdapChangelogInfo, true
@@ -572,7 +575,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetLdapChangelogInfoOk() (*Enumplugi
 
 // HasLdapChangelogInfo returns a boolean if a field has been set.
 func (o *PeriodicStatsLoggerPluginResponse) HasLdapChangelogInfo() bool {
-	if o != nil && !isNil(o.LdapChangelogInfo) {
+	if o != nil && !IsNil(o.LdapChangelogInfo) {
 		return true
 	}
 
@@ -586,7 +589,7 @@ func (o *PeriodicStatsLoggerPluginResponse) SetLdapChangelogInfo(v EnumpluginLda
 
 // GetGaugeInfo returns the GaugeInfo field value if set, zero value otherwise.
 func (o *PeriodicStatsLoggerPluginResponse) GetGaugeInfo() EnumpluginGaugeInfoProp {
-	if o == nil || isNil(o.GaugeInfo) {
+	if o == nil || IsNil(o.GaugeInfo) {
 		var ret EnumpluginGaugeInfoProp
 		return ret
 	}
@@ -596,7 +599,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetGaugeInfo() EnumpluginGaugeInfoPr
 // GetGaugeInfoOk returns a tuple with the GaugeInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeriodicStatsLoggerPluginResponse) GetGaugeInfoOk() (*EnumpluginGaugeInfoProp, bool) {
-	if o == nil || isNil(o.GaugeInfo) {
+	if o == nil || IsNil(o.GaugeInfo) {
 		return nil, false
 	}
 	return o.GaugeInfo, true
@@ -604,7 +607,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetGaugeInfoOk() (*EnumpluginGaugeIn
 
 // HasGaugeInfo returns a boolean if a field has been set.
 func (o *PeriodicStatsLoggerPluginResponse) HasGaugeInfo() bool {
-	if o != nil && !isNil(o.GaugeInfo) {
+	if o != nil && !IsNil(o.GaugeInfo) {
 		return true
 	}
 
@@ -618,7 +621,7 @@ func (o *PeriodicStatsLoggerPluginResponse) SetGaugeInfo(v EnumpluginGaugeInfoPr
 
 // GetLogFileFormat returns the LogFileFormat field value if set, zero value otherwise.
 func (o *PeriodicStatsLoggerPluginResponse) GetLogFileFormat() EnumpluginLogFileFormatProp {
-	if o == nil || isNil(o.LogFileFormat) {
+	if o == nil || IsNil(o.LogFileFormat) {
 		var ret EnumpluginLogFileFormatProp
 		return ret
 	}
@@ -628,7 +631,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetLogFileFormat() EnumpluginLogFile
 // GetLogFileFormatOk returns a tuple with the LogFileFormat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeriodicStatsLoggerPluginResponse) GetLogFileFormatOk() (*EnumpluginLogFileFormatProp, bool) {
-	if o == nil || isNil(o.LogFileFormat) {
+	if o == nil || IsNil(o.LogFileFormat) {
 		return nil, false
 	}
 	return o.LogFileFormat, true
@@ -636,7 +639,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetLogFileFormatOk() (*EnumpluginLog
 
 // HasLogFileFormat returns a boolean if a field has been set.
 func (o *PeriodicStatsLoggerPluginResponse) HasLogFileFormat() bool {
-	if o != nil && !isNil(o.LogFileFormat) {
+	if o != nil && !IsNil(o.LogFileFormat) {
 		return true
 	}
 
@@ -698,7 +701,7 @@ func (o *PeriodicStatsLoggerPluginResponse) SetLogFilePermissions(v string) {
 
 // GetAppend returns the Append field value if set, zero value otherwise.
 func (o *PeriodicStatsLoggerPluginResponse) GetAppend() bool {
-	if o == nil || isNil(o.Append) {
+	if o == nil || IsNil(o.Append) {
 		var ret bool
 		return ret
 	}
@@ -708,7 +711,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetAppend() bool {
 // GetAppendOk returns a tuple with the Append field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeriodicStatsLoggerPluginResponse) GetAppendOk() (*bool, bool) {
-	if o == nil || isNil(o.Append) {
+	if o == nil || IsNil(o.Append) {
 		return nil, false
 	}
 	return o.Append, true
@@ -716,7 +719,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetAppendOk() (*bool, bool) {
 
 // HasAppend returns a boolean if a field has been set.
 func (o *PeriodicStatsLoggerPluginResponse) HasAppend() bool {
-	if o != nil && !isNil(o.Append) {
+	if o != nil && !IsNil(o.Append) {
 		return true
 	}
 
@@ -754,7 +757,7 @@ func (o *PeriodicStatsLoggerPluginResponse) SetRotationPolicy(v []string) {
 
 // GetRotationListener returns the RotationListener field value if set, zero value otherwise.
 func (o *PeriodicStatsLoggerPluginResponse) GetRotationListener() []string {
-	if o == nil || isNil(o.RotationListener) {
+	if o == nil || IsNil(o.RotationListener) {
 		var ret []string
 		return ret
 	}
@@ -764,7 +767,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetRotationListener() []string {
 // GetRotationListenerOk returns a tuple with the RotationListener field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeriodicStatsLoggerPluginResponse) GetRotationListenerOk() ([]string, bool) {
-	if o == nil || isNil(o.RotationListener) {
+	if o == nil || IsNil(o.RotationListener) {
 		return nil, false
 	}
 	return o.RotationListener, true
@@ -772,7 +775,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetRotationListenerOk() ([]string, b
 
 // HasRotationListener returns a boolean if a field has been set.
 func (o *PeriodicStatsLoggerPluginResponse) HasRotationListener() bool {
-	if o != nil && !isNil(o.RotationListener) {
+	if o != nil && !IsNil(o.RotationListener) {
 		return true
 	}
 
@@ -810,7 +813,7 @@ func (o *PeriodicStatsLoggerPluginResponse) SetRetentionPolicy(v []string) {
 
 // GetLoggingErrorBehavior returns the LoggingErrorBehavior field value if set, zero value otherwise.
 func (o *PeriodicStatsLoggerPluginResponse) GetLoggingErrorBehavior() EnumpluginLoggingErrorBehaviorProp {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		var ret EnumpluginLoggingErrorBehaviorProp
 		return ret
 	}
@@ -820,7 +823,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetLoggingErrorBehavior() Enumplugin
 // GetLoggingErrorBehaviorOk returns a tuple with the LoggingErrorBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeriodicStatsLoggerPluginResponse) GetLoggingErrorBehaviorOk() (*EnumpluginLoggingErrorBehaviorProp, bool) {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
@@ -828,7 +831,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetLoggingErrorBehaviorOk() (*Enumpl
 
 // HasLoggingErrorBehavior returns a boolean if a field has been set.
 func (o *PeriodicStatsLoggerPluginResponse) HasLoggingErrorBehavior() bool {
-	if o != nil && !isNil(o.LoggingErrorBehavior) {
+	if o != nil && !IsNil(o.LoggingErrorBehavior) {
 		return true
 	}
 
@@ -842,7 +845,7 @@ func (o *PeriodicStatsLoggerPluginResponse) SetLoggingErrorBehavior(v Enumplugin
 
 // GetLocalDBBackendInfo returns the LocalDBBackendInfo field value if set, zero value otherwise.
 func (o *PeriodicStatsLoggerPluginResponse) GetLocalDBBackendInfo() EnumpluginLocalDBBackendInfoProp {
-	if o == nil || isNil(o.LocalDBBackendInfo) {
+	if o == nil || IsNil(o.LocalDBBackendInfo) {
 		var ret EnumpluginLocalDBBackendInfoProp
 		return ret
 	}
@@ -852,7 +855,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetLocalDBBackendInfo() EnumpluginLo
 // GetLocalDBBackendInfoOk returns a tuple with the LocalDBBackendInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeriodicStatsLoggerPluginResponse) GetLocalDBBackendInfoOk() (*EnumpluginLocalDBBackendInfoProp, bool) {
-	if o == nil || isNil(o.LocalDBBackendInfo) {
+	if o == nil || IsNil(o.LocalDBBackendInfo) {
 		return nil, false
 	}
 	return o.LocalDBBackendInfo, true
@@ -860,7 +863,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetLocalDBBackendInfoOk() (*Enumplug
 
 // HasLocalDBBackendInfo returns a boolean if a field has been set.
 func (o *PeriodicStatsLoggerPluginResponse) HasLocalDBBackendInfo() bool {
-	if o != nil && !isNil(o.LocalDBBackendInfo) {
+	if o != nil && !IsNil(o.LocalDBBackendInfo) {
 		return true
 	}
 
@@ -874,7 +877,7 @@ func (o *PeriodicStatsLoggerPluginResponse) SetLocalDBBackendInfo(v EnumpluginLo
 
 // GetReplicationInfo returns the ReplicationInfo field value if set, zero value otherwise.
 func (o *PeriodicStatsLoggerPluginResponse) GetReplicationInfo() EnumpluginReplicationInfoProp {
-	if o == nil || isNil(o.ReplicationInfo) {
+	if o == nil || IsNil(o.ReplicationInfo) {
 		var ret EnumpluginReplicationInfoProp
 		return ret
 	}
@@ -884,7 +887,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetReplicationInfo() EnumpluginRepli
 // GetReplicationInfoOk returns a tuple with the ReplicationInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeriodicStatsLoggerPluginResponse) GetReplicationInfoOk() (*EnumpluginReplicationInfoProp, bool) {
-	if o == nil || isNil(o.ReplicationInfo) {
+	if o == nil || IsNil(o.ReplicationInfo) {
 		return nil, false
 	}
 	return o.ReplicationInfo, true
@@ -892,7 +895,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetReplicationInfoOk() (*EnumpluginR
 
 // HasReplicationInfo returns a boolean if a field has been set.
 func (o *PeriodicStatsLoggerPluginResponse) HasReplicationInfo() bool {
-	if o != nil && !isNil(o.ReplicationInfo) {
+	if o != nil && !IsNil(o.ReplicationInfo) {
 		return true
 	}
 
@@ -906,7 +909,7 @@ func (o *PeriodicStatsLoggerPluginResponse) SetReplicationInfo(v EnumpluginRepli
 
 // GetEntryCacheInfo returns the EntryCacheInfo field value if set, zero value otherwise.
 func (o *PeriodicStatsLoggerPluginResponse) GetEntryCacheInfo() EnumpluginEntryCacheInfoProp {
-	if o == nil || isNil(o.EntryCacheInfo) {
+	if o == nil || IsNil(o.EntryCacheInfo) {
 		var ret EnumpluginEntryCacheInfoProp
 		return ret
 	}
@@ -916,7 +919,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetEntryCacheInfo() EnumpluginEntryC
 // GetEntryCacheInfoOk returns a tuple with the EntryCacheInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeriodicStatsLoggerPluginResponse) GetEntryCacheInfoOk() (*EnumpluginEntryCacheInfoProp, bool) {
-	if o == nil || isNil(o.EntryCacheInfo) {
+	if o == nil || IsNil(o.EntryCacheInfo) {
 		return nil, false
 	}
 	return o.EntryCacheInfo, true
@@ -924,7 +927,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetEntryCacheInfoOk() (*EnumpluginEn
 
 // HasEntryCacheInfo returns a boolean if a field has been set.
 func (o *PeriodicStatsLoggerPluginResponse) HasEntryCacheInfo() bool {
-	if o != nil && !isNil(o.EntryCacheInfo) {
+	if o != nil && !IsNil(o.EntryCacheInfo) {
 		return true
 	}
 
@@ -938,7 +941,7 @@ func (o *PeriodicStatsLoggerPluginResponse) SetEntryCacheInfo(v EnumpluginEntryC
 
 // GetHostInfo returns the HostInfo field value if set, zero value otherwise.
 func (o *PeriodicStatsLoggerPluginResponse) GetHostInfo() []EnumpluginHostInfoProp {
-	if o == nil || isNil(o.HostInfo) {
+	if o == nil || IsNil(o.HostInfo) {
 		var ret []EnumpluginHostInfoProp
 		return ret
 	}
@@ -948,7 +951,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetHostInfo() []EnumpluginHostInfoPr
 // GetHostInfoOk returns a tuple with the HostInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeriodicStatsLoggerPluginResponse) GetHostInfoOk() ([]EnumpluginHostInfoProp, bool) {
-	if o == nil || isNil(o.HostInfo) {
+	if o == nil || IsNil(o.HostInfo) {
 		return nil, false
 	}
 	return o.HostInfo, true
@@ -956,7 +959,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetHostInfoOk() ([]EnumpluginHostInf
 
 // HasHostInfo returns a boolean if a field has been set.
 func (o *PeriodicStatsLoggerPluginResponse) HasHostInfo() bool {
-	if o != nil && !isNil(o.HostInfo) {
+	if o != nil && !IsNil(o.HostInfo) {
 		return true
 	}
 
@@ -970,7 +973,7 @@ func (o *PeriodicStatsLoggerPluginResponse) SetHostInfo(v []EnumpluginHostInfoPr
 
 // GetIncludedLDAPApplication returns the IncludedLDAPApplication field value if set, zero value otherwise.
 func (o *PeriodicStatsLoggerPluginResponse) GetIncludedLDAPApplication() []string {
-	if o == nil || isNil(o.IncludedLDAPApplication) {
+	if o == nil || IsNil(o.IncludedLDAPApplication) {
 		var ret []string
 		return ret
 	}
@@ -980,7 +983,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetIncludedLDAPApplication() []strin
 // GetIncludedLDAPApplicationOk returns a tuple with the IncludedLDAPApplication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeriodicStatsLoggerPluginResponse) GetIncludedLDAPApplicationOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludedLDAPApplication) {
+	if o == nil || IsNil(o.IncludedLDAPApplication) {
 		return nil, false
 	}
 	return o.IncludedLDAPApplication, true
@@ -988,7 +991,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetIncludedLDAPApplicationOk() ([]st
 
 // HasIncludedLDAPApplication returns a boolean if a field has been set.
 func (o *PeriodicStatsLoggerPluginResponse) HasIncludedLDAPApplication() bool {
-	if o != nil && !isNil(o.IncludedLDAPApplication) {
+	if o != nil && !IsNil(o.IncludedLDAPApplication) {
 		return true
 	}
 
@@ -1002,7 +1005,7 @@ func (o *PeriodicStatsLoggerPluginResponse) SetIncludedLDAPApplication(v []strin
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *PeriodicStatsLoggerPluginResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -1012,7 +1015,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeriodicStatsLoggerPluginResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -1020,7 +1023,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *PeriodicStatsLoggerPluginResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -1057,107 +1060,91 @@ func (o *PeriodicStatsLoggerPluginResponse) SetEnabled(v bool) {
 }
 
 func (o PeriodicStatsLoggerPluginResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["logInterval"] = o.LogInterval
-	}
-	if true {
-		toSerialize["collectionInterval"] = o.CollectionInterval
-	}
-	if true {
-		toSerialize["suppressIfIdle"] = o.SuppressIfIdle
-	}
-	if !isNil(o.HeaderPrefixPerColumn) {
-		toSerialize["headerPrefixPerColumn"] = o.HeaderPrefixPerColumn
-	}
-	if !isNil(o.EmptyInsteadOfZero) {
-		toSerialize["emptyInsteadOfZero"] = o.EmptyInsteadOfZero
-	}
-	if true {
-		toSerialize["linesBetweenHeader"] = o.LinesBetweenHeader
-	}
-	if !isNil(o.IncludedLDAPStat) {
-		toSerialize["includedLDAPStat"] = o.IncludedLDAPStat
-	}
-	if !isNil(o.IncludedResourceStat) {
-		toSerialize["includedResourceStat"] = o.IncludedResourceStat
-	}
-	if true {
-		toSerialize["histogramFormat"] = o.HistogramFormat
-	}
-	if !isNil(o.HistogramOpType) {
-		toSerialize["histogramOpType"] = o.HistogramOpType
-	}
-	if !isNil(o.PerApplicationLDAPStats) {
-		toSerialize["perApplicationLDAPStats"] = o.PerApplicationLDAPStats
-	}
-	if !isNil(o.StatusSummaryInfo) {
-		toSerialize["statusSummaryInfo"] = o.StatusSummaryInfo
-	}
-	if !isNil(o.LdapChangelogInfo) {
-		toSerialize["ldapChangelogInfo"] = o.LdapChangelogInfo
-	}
-	if !isNil(o.GaugeInfo) {
-		toSerialize["gaugeInfo"] = o.GaugeInfo
-	}
-	if !isNil(o.LogFileFormat) {
-		toSerialize["logFileFormat"] = o.LogFileFormat
-	}
-	if true {
-		toSerialize["logFile"] = o.LogFile
-	}
-	if true {
-		toSerialize["logFilePermissions"] = o.LogFilePermissions
-	}
-	if !isNil(o.Append) {
-		toSerialize["append"] = o.Append
-	}
-	if true {
-		toSerialize["rotationPolicy"] = o.RotationPolicy
-	}
-	if !isNil(o.RotationListener) {
-		toSerialize["rotationListener"] = o.RotationListener
-	}
-	if true {
-		toSerialize["retentionPolicy"] = o.RetentionPolicy
-	}
-	if !isNil(o.LoggingErrorBehavior) {
-		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
-	}
-	if !isNil(o.LocalDBBackendInfo) {
-		toSerialize["localDBBackendInfo"] = o.LocalDBBackendInfo
-	}
-	if !isNil(o.ReplicationInfo) {
-		toSerialize["replicationInfo"] = o.ReplicationInfo
-	}
-	if !isNil(o.EntryCacheInfo) {
-		toSerialize["entryCacheInfo"] = o.EntryCacheInfo
-	}
-	if !isNil(o.HostInfo) {
-		toSerialize["hostInfo"] = o.HostInfo
-	}
-	if !isNil(o.IncludedLDAPApplication) {
-		toSerialize["includedLDAPApplication"] = o.IncludedLDAPApplication
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PeriodicStatsLoggerPluginResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["logInterval"] = o.LogInterval
+	toSerialize["collectionInterval"] = o.CollectionInterval
+	toSerialize["suppressIfIdle"] = o.SuppressIfIdle
+	if !IsNil(o.HeaderPrefixPerColumn) {
+		toSerialize["headerPrefixPerColumn"] = o.HeaderPrefixPerColumn
+	}
+	if !IsNil(o.EmptyInsteadOfZero) {
+		toSerialize["emptyInsteadOfZero"] = o.EmptyInsteadOfZero
+	}
+	toSerialize["linesBetweenHeader"] = o.LinesBetweenHeader
+	if !IsNil(o.IncludedLDAPStat) {
+		toSerialize["includedLDAPStat"] = o.IncludedLDAPStat
+	}
+	if !IsNil(o.IncludedResourceStat) {
+		toSerialize["includedResourceStat"] = o.IncludedResourceStat
+	}
+	toSerialize["histogramFormat"] = o.HistogramFormat
+	if !IsNil(o.HistogramOpType) {
+		toSerialize["histogramOpType"] = o.HistogramOpType
+	}
+	if !IsNil(o.PerApplicationLDAPStats) {
+		toSerialize["perApplicationLDAPStats"] = o.PerApplicationLDAPStats
+	}
+	if !IsNil(o.StatusSummaryInfo) {
+		toSerialize["statusSummaryInfo"] = o.StatusSummaryInfo
+	}
+	if !IsNil(o.LdapChangelogInfo) {
+		toSerialize["ldapChangelogInfo"] = o.LdapChangelogInfo
+	}
+	if !IsNil(o.GaugeInfo) {
+		toSerialize["gaugeInfo"] = o.GaugeInfo
+	}
+	if !IsNil(o.LogFileFormat) {
+		toSerialize["logFileFormat"] = o.LogFileFormat
+	}
+	toSerialize["logFile"] = o.LogFile
+	toSerialize["logFilePermissions"] = o.LogFilePermissions
+	if !IsNil(o.Append) {
+		toSerialize["append"] = o.Append
+	}
+	toSerialize["rotationPolicy"] = o.RotationPolicy
+	if !IsNil(o.RotationListener) {
+		toSerialize["rotationListener"] = o.RotationListener
+	}
+	toSerialize["retentionPolicy"] = o.RetentionPolicy
+	if !IsNil(o.LoggingErrorBehavior) {
+		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	}
+	if !IsNil(o.LocalDBBackendInfo) {
+		toSerialize["localDBBackendInfo"] = o.LocalDBBackendInfo
+	}
+	if !IsNil(o.ReplicationInfo) {
+		toSerialize["replicationInfo"] = o.ReplicationInfo
+	}
+	if !IsNil(o.EntryCacheInfo) {
+		toSerialize["entryCacheInfo"] = o.EntryCacheInfo
+	}
+	if !IsNil(o.HostInfo) {
+		toSerialize["hostInfo"] = o.HostInfo
+	}
+	if !IsNil(o.IncludedLDAPApplication) {
+		toSerialize["includedLDAPApplication"] = o.IncludedLDAPApplication
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullablePeriodicStatsLoggerPluginResponse struct {

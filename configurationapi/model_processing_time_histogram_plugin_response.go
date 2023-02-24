@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ProcessingTimeHistogramPluginResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ProcessingTimeHistogramPluginResponse{}
+
 // ProcessingTimeHistogramPluginResponse struct for ProcessingTimeHistogramPluginResponse
 type ProcessingTimeHistogramPluginResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -60,7 +63,7 @@ func NewProcessingTimeHistogramPluginResponseWithDefaults() *ProcessingTimeHisto
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *ProcessingTimeHistogramPluginResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -70,7 +73,7 @@ func (o *ProcessingTimeHistogramPluginResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProcessingTimeHistogramPluginResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -78,7 +81,7 @@ func (o *ProcessingTimeHistogramPluginResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *ProcessingTimeHistogramPluginResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -92,7 +95,7 @@ func (o *ProcessingTimeHistogramPluginResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *ProcessingTimeHistogramPluginResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -102,7 +105,7 @@ func (o *ProcessingTimeHistogramPluginResponse) GetUrnpingidentityschemasconfigu
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProcessingTimeHistogramPluginResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -110,7 +113,7 @@ func (o *ProcessingTimeHistogramPluginResponse) GetUrnpingidentityschemasconfigu
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *ProcessingTimeHistogramPluginResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -220,7 +223,7 @@ func (o *ProcessingTimeHistogramPluginResponse) SetHistogramCategoryBoundary(v [
 
 // GetIncludeQueueTime returns the IncludeQueueTime field value if set, zero value otherwise.
 func (o *ProcessingTimeHistogramPluginResponse) GetIncludeQueueTime() bool {
-	if o == nil || isNil(o.IncludeQueueTime) {
+	if o == nil || IsNil(o.IncludeQueueTime) {
 		var ret bool
 		return ret
 	}
@@ -230,7 +233,7 @@ func (o *ProcessingTimeHistogramPluginResponse) GetIncludeQueueTime() bool {
 // GetIncludeQueueTimeOk returns a tuple with the IncludeQueueTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProcessingTimeHistogramPluginResponse) GetIncludeQueueTimeOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeQueueTime) {
+	if o == nil || IsNil(o.IncludeQueueTime) {
 		return nil, false
 	}
 	return o.IncludeQueueTime, true
@@ -238,7 +241,7 @@ func (o *ProcessingTimeHistogramPluginResponse) GetIncludeQueueTimeOk() (*bool, 
 
 // HasIncludeQueueTime returns a boolean if a field has been set.
 func (o *ProcessingTimeHistogramPluginResponse) HasIncludeQueueTime() bool {
-	if o != nil && !isNil(o.IncludeQueueTime) {
+	if o != nil && !IsNil(o.IncludeQueueTime) {
 		return true
 	}
 
@@ -252,7 +255,7 @@ func (o *ProcessingTimeHistogramPluginResponse) SetIncludeQueueTime(v bool) {
 
 // GetSeparateMonitorEntryPerTrackedApplication returns the SeparateMonitorEntryPerTrackedApplication field value if set, zero value otherwise.
 func (o *ProcessingTimeHistogramPluginResponse) GetSeparateMonitorEntryPerTrackedApplication() bool {
-	if o == nil || isNil(o.SeparateMonitorEntryPerTrackedApplication) {
+	if o == nil || IsNil(o.SeparateMonitorEntryPerTrackedApplication) {
 		var ret bool
 		return ret
 	}
@@ -262,7 +265,7 @@ func (o *ProcessingTimeHistogramPluginResponse) GetSeparateMonitorEntryPerTracke
 // GetSeparateMonitorEntryPerTrackedApplicationOk returns a tuple with the SeparateMonitorEntryPerTrackedApplication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProcessingTimeHistogramPluginResponse) GetSeparateMonitorEntryPerTrackedApplicationOk() (*bool, bool) {
-	if o == nil || isNil(o.SeparateMonitorEntryPerTrackedApplication) {
+	if o == nil || IsNil(o.SeparateMonitorEntryPerTrackedApplication) {
 		return nil, false
 	}
 	return o.SeparateMonitorEntryPerTrackedApplication, true
@@ -270,7 +273,7 @@ func (o *ProcessingTimeHistogramPluginResponse) GetSeparateMonitorEntryPerTracke
 
 // HasSeparateMonitorEntryPerTrackedApplication returns a boolean if a field has been set.
 func (o *ProcessingTimeHistogramPluginResponse) HasSeparateMonitorEntryPerTrackedApplication() bool {
-	if o != nil && !isNil(o.SeparateMonitorEntryPerTrackedApplication) {
+	if o != nil && !IsNil(o.SeparateMonitorEntryPerTrackedApplication) {
 		return true
 	}
 
@@ -284,7 +287,7 @@ func (o *ProcessingTimeHistogramPluginResponse) SetSeparateMonitorEntryPerTracke
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *ProcessingTimeHistogramPluginResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -294,7 +297,7 @@ func (o *ProcessingTimeHistogramPluginResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProcessingTimeHistogramPluginResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -302,7 +305,7 @@ func (o *ProcessingTimeHistogramPluginResponse) GetDescriptionOk() (*string, boo
 
 // HasDescription returns a boolean if a field has been set.
 func (o *ProcessingTimeHistogramPluginResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -340,7 +343,7 @@ func (o *ProcessingTimeHistogramPluginResponse) SetEnabled(v bool) {
 
 // GetInvokeForInternalOperations returns the InvokeForInternalOperations field value if set, zero value otherwise.
 func (o *ProcessingTimeHistogramPluginResponse) GetInvokeForInternalOperations() bool {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		var ret bool
 		return ret
 	}
@@ -350,7 +353,7 @@ func (o *ProcessingTimeHistogramPluginResponse) GetInvokeForInternalOperations()
 // GetInvokeForInternalOperationsOk returns a tuple with the InvokeForInternalOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProcessingTimeHistogramPluginResponse) GetInvokeForInternalOperationsOk() (*bool, bool) {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		return nil, false
 	}
 	return o.InvokeForInternalOperations, true
@@ -358,7 +361,7 @@ func (o *ProcessingTimeHistogramPluginResponse) GetInvokeForInternalOperationsOk
 
 // HasInvokeForInternalOperations returns a boolean if a field has been set.
 func (o *ProcessingTimeHistogramPluginResponse) HasInvokeForInternalOperations() bool {
-	if o != nil && !isNil(o.InvokeForInternalOperations) {
+	if o != nil && !IsNil(o.InvokeForInternalOperations) {
 		return true
 	}
 
@@ -371,41 +374,39 @@ func (o *ProcessingTimeHistogramPluginResponse) SetInvokeForInternalOperations(v
 }
 
 func (o ProcessingTimeHistogramPluginResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["pluginType"] = o.PluginType
-	}
-	if true {
-		toSerialize["histogramCategoryBoundary"] = o.HistogramCategoryBoundary
-	}
-	if !isNil(o.IncludeQueueTime) {
-		toSerialize["includeQueueTime"] = o.IncludeQueueTime
-	}
-	if !isNil(o.SeparateMonitorEntryPerTrackedApplication) {
-		toSerialize["separateMonitorEntryPerTrackedApplication"] = o.SeparateMonitorEntryPerTrackedApplication
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.InvokeForInternalOperations) {
-		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ProcessingTimeHistogramPluginResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	toSerialize["pluginType"] = o.PluginType
+	toSerialize["histogramCategoryBoundary"] = o.HistogramCategoryBoundary
+	if !IsNil(o.IncludeQueueTime) {
+		toSerialize["includeQueueTime"] = o.IncludeQueueTime
+	}
+	if !IsNil(o.SeparateMonitorEntryPerTrackedApplication) {
+		toSerialize["separateMonitorEntryPerTrackedApplication"] = o.SeparateMonitorEntryPerTrackedApplication
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.InvokeForInternalOperations) {
+		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
+	}
+	return toSerialize, nil
 }
 
 type NullableProcessingTimeHistogramPluginResponse struct {

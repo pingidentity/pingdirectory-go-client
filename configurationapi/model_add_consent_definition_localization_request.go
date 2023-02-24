@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddConsentDefinitionLocalizationRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddConsentDefinitionLocalizationRequest{}
+
 // AddConsentDefinitionLocalizationRequest struct for AddConsentDefinitionLocalizationRequest
 type AddConsentDefinitionLocalizationRequest struct {
 	// Name of the new Consent Definition Localization
@@ -79,7 +82,7 @@ func (o *AddConsentDefinitionLocalizationRequest) SetLocalizationName(v string) 
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *AddConsentDefinitionLocalizationRequest) GetSchemas() []EnumconsentDefinitionLocalizationSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumconsentDefinitionLocalizationSchemaUrn
 		return ret
 	}
@@ -89,7 +92,7 @@ func (o *AddConsentDefinitionLocalizationRequest) GetSchemas() []EnumconsentDefi
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConsentDefinitionLocalizationRequest) GetSchemasOk() ([]EnumconsentDefinitionLocalizationSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -97,7 +100,7 @@ func (o *AddConsentDefinitionLocalizationRequest) GetSchemasOk() ([]EnumconsentD
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *AddConsentDefinitionLocalizationRequest) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -159,7 +162,7 @@ func (o *AddConsentDefinitionLocalizationRequest) SetVersion(v string) {
 
 // GetTitleText returns the TitleText field value if set, zero value otherwise.
 func (o *AddConsentDefinitionLocalizationRequest) GetTitleText() string {
-	if o == nil || isNil(o.TitleText) {
+	if o == nil || IsNil(o.TitleText) {
 		var ret string
 		return ret
 	}
@@ -169,7 +172,7 @@ func (o *AddConsentDefinitionLocalizationRequest) GetTitleText() string {
 // GetTitleTextOk returns a tuple with the TitleText field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConsentDefinitionLocalizationRequest) GetTitleTextOk() (*string, bool) {
-	if o == nil || isNil(o.TitleText) {
+	if o == nil || IsNil(o.TitleText) {
 		return nil, false
 	}
 	return o.TitleText, true
@@ -177,7 +180,7 @@ func (o *AddConsentDefinitionLocalizationRequest) GetTitleTextOk() (*string, boo
 
 // HasTitleText returns a boolean if a field has been set.
 func (o *AddConsentDefinitionLocalizationRequest) HasTitleText() bool {
-	if o != nil && !isNil(o.TitleText) {
+	if o != nil && !IsNil(o.TitleText) {
 		return true
 	}
 
@@ -238,29 +241,27 @@ func (o *AddConsentDefinitionLocalizationRequest) SetPurposeText(v string) {
 }
 
 func (o AddConsentDefinitionLocalizationRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["localizationName"] = o.LocalizationName
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["locale"] = o.Locale
-	}
-	if true {
-		toSerialize["version"] = o.Version
-	}
-	if !isNil(o.TitleText) {
-		toSerialize["titleText"] = o.TitleText
-	}
-	if true {
-		toSerialize["dataText"] = o.DataText
-	}
-	if true {
-		toSerialize["purposeText"] = o.PurposeText
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddConsentDefinitionLocalizationRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["localizationName"] = o.LocalizationName
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	toSerialize["locale"] = o.Locale
+	toSerialize["version"] = o.Version
+	if !IsNil(o.TitleText) {
+		toSerialize["titleText"] = o.TitleText
+	}
+	toSerialize["dataText"] = o.DataText
+	toSerialize["purposeText"] = o.PurposeText
+	return toSerialize, nil
 }
 
 type NullableAddConsentDefinitionLocalizationRequest struct {
