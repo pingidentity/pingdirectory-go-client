@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the RegularExpressionIdentityMapperResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &RegularExpressionIdentityMapperResponse{}
+
 // RegularExpressionIdentityMapperResponse struct for RegularExpressionIdentityMapperResponse
 type RegularExpressionIdentityMapperResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -61,7 +64,7 @@ func NewRegularExpressionIdentityMapperResponseWithDefaults() *RegularExpression
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *RegularExpressionIdentityMapperResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -71,7 +74,7 @@ func (o *RegularExpressionIdentityMapperResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegularExpressionIdentityMapperResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -79,7 +82,7 @@ func (o *RegularExpressionIdentityMapperResponse) GetMetaOk() (*MetaMeta, bool) 
 
 // HasMeta returns a boolean if a field has been set.
 func (o *RegularExpressionIdentityMapperResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -93,7 +96,7 @@ func (o *RegularExpressionIdentityMapperResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *RegularExpressionIdentityMapperResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -103,7 +106,7 @@ func (o *RegularExpressionIdentityMapperResponse) GetUrnpingidentityschemasconfi
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegularExpressionIdentityMapperResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -111,7 +114,7 @@ func (o *RegularExpressionIdentityMapperResponse) GetUrnpingidentityschemasconfi
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *RegularExpressionIdentityMapperResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -197,7 +200,7 @@ func (o *RegularExpressionIdentityMapperResponse) SetMatchAttribute(v []string) 
 
 // GetMatchBaseDN returns the MatchBaseDN field value if set, zero value otherwise.
 func (o *RegularExpressionIdentityMapperResponse) GetMatchBaseDN() []string {
-	if o == nil || isNil(o.MatchBaseDN) {
+	if o == nil || IsNil(o.MatchBaseDN) {
 		var ret []string
 		return ret
 	}
@@ -207,7 +210,7 @@ func (o *RegularExpressionIdentityMapperResponse) GetMatchBaseDN() []string {
 // GetMatchBaseDNOk returns a tuple with the MatchBaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegularExpressionIdentityMapperResponse) GetMatchBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.MatchBaseDN) {
+	if o == nil || IsNil(o.MatchBaseDN) {
 		return nil, false
 	}
 	return o.MatchBaseDN, true
@@ -215,7 +218,7 @@ func (o *RegularExpressionIdentityMapperResponse) GetMatchBaseDNOk() ([]string, 
 
 // HasMatchBaseDN returns a boolean if a field has been set.
 func (o *RegularExpressionIdentityMapperResponse) HasMatchBaseDN() bool {
-	if o != nil && !isNil(o.MatchBaseDN) {
+	if o != nil && !IsNil(o.MatchBaseDN) {
 		return true
 	}
 
@@ -229,7 +232,7 @@ func (o *RegularExpressionIdentityMapperResponse) SetMatchBaseDN(v []string) {
 
 // GetMatchFilter returns the MatchFilter field value if set, zero value otherwise.
 func (o *RegularExpressionIdentityMapperResponse) GetMatchFilter() string {
-	if o == nil || isNil(o.MatchFilter) {
+	if o == nil || IsNil(o.MatchFilter) {
 		var ret string
 		return ret
 	}
@@ -239,7 +242,7 @@ func (o *RegularExpressionIdentityMapperResponse) GetMatchFilter() string {
 // GetMatchFilterOk returns a tuple with the MatchFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegularExpressionIdentityMapperResponse) GetMatchFilterOk() (*string, bool) {
-	if o == nil || isNil(o.MatchFilter) {
+	if o == nil || IsNil(o.MatchFilter) {
 		return nil, false
 	}
 	return o.MatchFilter, true
@@ -247,7 +250,7 @@ func (o *RegularExpressionIdentityMapperResponse) GetMatchFilterOk() (*string, b
 
 // HasMatchFilter returns a boolean if a field has been set.
 func (o *RegularExpressionIdentityMapperResponse) HasMatchFilter() bool {
-	if o != nil && !isNil(o.MatchFilter) {
+	if o != nil && !IsNil(o.MatchFilter) {
 		return true
 	}
 
@@ -285,7 +288,7 @@ func (o *RegularExpressionIdentityMapperResponse) SetMatchPattern(v string) {
 
 // GetReplacePattern returns the ReplacePattern field value if set, zero value otherwise.
 func (o *RegularExpressionIdentityMapperResponse) GetReplacePattern() string {
-	if o == nil || isNil(o.ReplacePattern) {
+	if o == nil || IsNil(o.ReplacePattern) {
 		var ret string
 		return ret
 	}
@@ -295,7 +298,7 @@ func (o *RegularExpressionIdentityMapperResponse) GetReplacePattern() string {
 // GetReplacePatternOk returns a tuple with the ReplacePattern field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegularExpressionIdentityMapperResponse) GetReplacePatternOk() (*string, bool) {
-	if o == nil || isNil(o.ReplacePattern) {
+	if o == nil || IsNil(o.ReplacePattern) {
 		return nil, false
 	}
 	return o.ReplacePattern, true
@@ -303,7 +306,7 @@ func (o *RegularExpressionIdentityMapperResponse) GetReplacePatternOk() (*string
 
 // HasReplacePattern returns a boolean if a field has been set.
 func (o *RegularExpressionIdentityMapperResponse) HasReplacePattern() bool {
-	if o != nil && !isNil(o.ReplacePattern) {
+	if o != nil && !IsNil(o.ReplacePattern) {
 		return true
 	}
 
@@ -317,7 +320,7 @@ func (o *RegularExpressionIdentityMapperResponse) SetReplacePattern(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *RegularExpressionIdentityMapperResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -327,7 +330,7 @@ func (o *RegularExpressionIdentityMapperResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegularExpressionIdentityMapperResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -335,7 +338,7 @@ func (o *RegularExpressionIdentityMapperResponse) GetDescriptionOk() (*string, b
 
 // HasDescription returns a boolean if a field has been set.
 func (o *RegularExpressionIdentityMapperResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -372,41 +375,39 @@ func (o *RegularExpressionIdentityMapperResponse) SetEnabled(v bool) {
 }
 
 func (o RegularExpressionIdentityMapperResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["matchAttribute"] = o.MatchAttribute
-	}
-	if !isNil(o.MatchBaseDN) {
-		toSerialize["matchBaseDN"] = o.MatchBaseDN
-	}
-	if !isNil(o.MatchFilter) {
-		toSerialize["matchFilter"] = o.MatchFilter
-	}
-	if true {
-		toSerialize["matchPattern"] = o.MatchPattern
-	}
-	if !isNil(o.ReplacePattern) {
-		toSerialize["replacePattern"] = o.ReplacePattern
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o RegularExpressionIdentityMapperResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["matchAttribute"] = o.MatchAttribute
+	if !IsNil(o.MatchBaseDN) {
+		toSerialize["matchBaseDN"] = o.MatchBaseDN
+	}
+	if !IsNil(o.MatchFilter) {
+		toSerialize["matchFilter"] = o.MatchFilter
+	}
+	toSerialize["matchPattern"] = o.MatchPattern
+	if !IsNil(o.ReplacePattern) {
+		toSerialize["replacePattern"] = o.ReplacePattern
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableRegularExpressionIdentityMapperResponse struct {

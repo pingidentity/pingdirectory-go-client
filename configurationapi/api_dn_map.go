@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -105,9 +105,9 @@ func (a *DnMapApiService) AddDnMapExecute(r ApiAddDnMapRequest) (*DnMapResponse,
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -171,7 +171,7 @@ func (a *DnMapApiService) DeleteDnMapExecute(r ApiDeleteDnMapRequest) (*http.Res
 	}
 
 	localVarPath := localBasePath + "/dn-maps/{dn-map-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"dn-map-name"+"}", url.PathEscape(parameterToString(r.dnMapName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"dn-map-name"+"}", url.PathEscape(parameterValueToString(r.dnMapName, "dnMapName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -204,9 +204,9 @@ func (a *DnMapApiService) DeleteDnMapExecute(r ApiDeleteDnMapRequest) (*http.Res
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -264,7 +264,7 @@ func (a *DnMapApiService) GetDnMapExecute(r ApiGetDnMapRequest) (*DnMapResponse,
 	}
 
 	localVarPath := localBasePath + "/dn-maps/{dn-map-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"dn-map-name"+"}", url.PathEscape(parameterToString(r.dnMapName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"dn-map-name"+"}", url.PathEscape(parameterValueToString(r.dnMapName, "dnMapName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -297,9 +297,9 @@ func (a *DnMapApiService) GetDnMapExecute(r ApiGetDnMapRequest) (*DnMapResponse,
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -373,7 +373,7 @@ func (a *DnMapApiService) UpdateDnMapExecute(r ApiUpdateDnMapRequest) (*DnMapRes
 	}
 
 	localVarPath := localBasePath + "/dn-maps/{dn-map-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"dn-map-name"+"}", url.PathEscape(parameterToString(r.dnMapName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"dn-map-name"+"}", url.PathEscape(parameterValueToString(r.dnMapName, "dnMapName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -411,9 +411,9 @@ func (a *DnMapApiService) UpdateDnMapExecute(r ApiUpdateDnMapRequest) (*DnMapRes
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

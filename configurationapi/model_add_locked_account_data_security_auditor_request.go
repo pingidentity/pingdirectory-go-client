@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddLockedAccountDataSecurityAuditorRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddLockedAccountDataSecurityAuditorRequest{}
+
 // AddLockedAccountDataSecurityAuditorRequest struct for AddLockedAccountDataSecurityAuditorRequest
 type AddLockedAccountDataSecurityAuditorRequest struct {
 	// Name of the new Data Security Auditor
@@ -101,7 +104,7 @@ func (o *AddLockedAccountDataSecurityAuditorRequest) SetSchemas(v []EnumlockedAc
 
 // GetReportFile returns the ReportFile field value if set, zero value otherwise.
 func (o *AddLockedAccountDataSecurityAuditorRequest) GetReportFile() string {
-	if o == nil || isNil(o.ReportFile) {
+	if o == nil || IsNil(o.ReportFile) {
 		var ret string
 		return ret
 	}
@@ -111,7 +114,7 @@ func (o *AddLockedAccountDataSecurityAuditorRequest) GetReportFile() string {
 // GetReportFileOk returns a tuple with the ReportFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLockedAccountDataSecurityAuditorRequest) GetReportFileOk() (*string, bool) {
-	if o == nil || isNil(o.ReportFile) {
+	if o == nil || IsNil(o.ReportFile) {
 		return nil, false
 	}
 	return o.ReportFile, true
@@ -119,7 +122,7 @@ func (o *AddLockedAccountDataSecurityAuditorRequest) GetReportFileOk() (*string,
 
 // HasReportFile returns a boolean if a field has been set.
 func (o *AddLockedAccountDataSecurityAuditorRequest) HasReportFile() bool {
-	if o != nil && !isNil(o.ReportFile) {
+	if o != nil && !IsNil(o.ReportFile) {
 		return true
 	}
 
@@ -133,7 +136,7 @@ func (o *AddLockedAccountDataSecurityAuditorRequest) SetReportFile(v string) {
 
 // GetIncludeAttribute returns the IncludeAttribute field value if set, zero value otherwise.
 func (o *AddLockedAccountDataSecurityAuditorRequest) GetIncludeAttribute() []string {
-	if o == nil || isNil(o.IncludeAttribute) {
+	if o == nil || IsNil(o.IncludeAttribute) {
 		var ret []string
 		return ret
 	}
@@ -143,7 +146,7 @@ func (o *AddLockedAccountDataSecurityAuditorRequest) GetIncludeAttribute() []str
 // GetIncludeAttributeOk returns a tuple with the IncludeAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLockedAccountDataSecurityAuditorRequest) GetIncludeAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludeAttribute) {
+	if o == nil || IsNil(o.IncludeAttribute) {
 		return nil, false
 	}
 	return o.IncludeAttribute, true
@@ -151,7 +154,7 @@ func (o *AddLockedAccountDataSecurityAuditorRequest) GetIncludeAttributeOk() ([]
 
 // HasIncludeAttribute returns a boolean if a field has been set.
 func (o *AddLockedAccountDataSecurityAuditorRequest) HasIncludeAttribute() bool {
-	if o != nil && !isNil(o.IncludeAttribute) {
+	if o != nil && !IsNil(o.IncludeAttribute) {
 		return true
 	}
 
@@ -165,7 +168,7 @@ func (o *AddLockedAccountDataSecurityAuditorRequest) SetIncludeAttribute(v []str
 
 // GetMaximumIdleTime returns the MaximumIdleTime field value if set, zero value otherwise.
 func (o *AddLockedAccountDataSecurityAuditorRequest) GetMaximumIdleTime() string {
-	if o == nil || isNil(o.MaximumIdleTime) {
+	if o == nil || IsNil(o.MaximumIdleTime) {
 		var ret string
 		return ret
 	}
@@ -175,7 +178,7 @@ func (o *AddLockedAccountDataSecurityAuditorRequest) GetMaximumIdleTime() string
 // GetMaximumIdleTimeOk returns a tuple with the MaximumIdleTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLockedAccountDataSecurityAuditorRequest) GetMaximumIdleTimeOk() (*string, bool) {
-	if o == nil || isNil(o.MaximumIdleTime) {
+	if o == nil || IsNil(o.MaximumIdleTime) {
 		return nil, false
 	}
 	return o.MaximumIdleTime, true
@@ -183,7 +186,7 @@ func (o *AddLockedAccountDataSecurityAuditorRequest) GetMaximumIdleTimeOk() (*st
 
 // HasMaximumIdleTime returns a boolean if a field has been set.
 func (o *AddLockedAccountDataSecurityAuditorRequest) HasMaximumIdleTime() bool {
-	if o != nil && !isNil(o.MaximumIdleTime) {
+	if o != nil && !IsNil(o.MaximumIdleTime) {
 		return true
 	}
 
@@ -197,7 +200,7 @@ func (o *AddLockedAccountDataSecurityAuditorRequest) SetMaximumIdleTime(v string
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
 func (o *AddLockedAccountDataSecurityAuditorRequest) GetEnabled() bool {
-	if o == nil || isNil(o.Enabled) {
+	if o == nil || IsNil(o.Enabled) {
 		var ret bool
 		return ret
 	}
@@ -207,7 +210,7 @@ func (o *AddLockedAccountDataSecurityAuditorRequest) GetEnabled() bool {
 // GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLockedAccountDataSecurityAuditorRequest) GetEnabledOk() (*bool, bool) {
-	if o == nil || isNil(o.Enabled) {
+	if o == nil || IsNil(o.Enabled) {
 		return nil, false
 	}
 	return o.Enabled, true
@@ -215,7 +218,7 @@ func (o *AddLockedAccountDataSecurityAuditorRequest) GetEnabledOk() (*bool, bool
 
 // HasEnabled returns a boolean if a field has been set.
 func (o *AddLockedAccountDataSecurityAuditorRequest) HasEnabled() bool {
-	if o != nil && !isNil(o.Enabled) {
+	if o != nil && !IsNil(o.Enabled) {
 		return true
 	}
 
@@ -229,7 +232,7 @@ func (o *AddLockedAccountDataSecurityAuditorRequest) SetEnabled(v bool) {
 
 // GetAuditBackend returns the AuditBackend field value if set, zero value otherwise.
 func (o *AddLockedAccountDataSecurityAuditorRequest) GetAuditBackend() []string {
-	if o == nil || isNil(o.AuditBackend) {
+	if o == nil || IsNil(o.AuditBackend) {
 		var ret []string
 		return ret
 	}
@@ -239,7 +242,7 @@ func (o *AddLockedAccountDataSecurityAuditorRequest) GetAuditBackend() []string 
 // GetAuditBackendOk returns a tuple with the AuditBackend field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLockedAccountDataSecurityAuditorRequest) GetAuditBackendOk() ([]string, bool) {
-	if o == nil || isNil(o.AuditBackend) {
+	if o == nil || IsNil(o.AuditBackend) {
 		return nil, false
 	}
 	return o.AuditBackend, true
@@ -247,7 +250,7 @@ func (o *AddLockedAccountDataSecurityAuditorRequest) GetAuditBackendOk() ([]stri
 
 // HasAuditBackend returns a boolean if a field has been set.
 func (o *AddLockedAccountDataSecurityAuditorRequest) HasAuditBackend() bool {
-	if o != nil && !isNil(o.AuditBackend) {
+	if o != nil && !IsNil(o.AuditBackend) {
 		return true
 	}
 
@@ -261,7 +264,7 @@ func (o *AddLockedAccountDataSecurityAuditorRequest) SetAuditBackend(v []string)
 
 // GetAuditSeverity returns the AuditSeverity field value if set, zero value otherwise.
 func (o *AddLockedAccountDataSecurityAuditorRequest) GetAuditSeverity() EnumdataSecurityAuditorAuditSeverityProp {
-	if o == nil || isNil(o.AuditSeverity) {
+	if o == nil || IsNil(o.AuditSeverity) {
 		var ret EnumdataSecurityAuditorAuditSeverityProp
 		return ret
 	}
@@ -271,7 +274,7 @@ func (o *AddLockedAccountDataSecurityAuditorRequest) GetAuditSeverity() Enumdata
 // GetAuditSeverityOk returns a tuple with the AuditSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLockedAccountDataSecurityAuditorRequest) GetAuditSeverityOk() (*EnumdataSecurityAuditorAuditSeverityProp, bool) {
-	if o == nil || isNil(o.AuditSeverity) {
+	if o == nil || IsNil(o.AuditSeverity) {
 		return nil, false
 	}
 	return o.AuditSeverity, true
@@ -279,7 +282,7 @@ func (o *AddLockedAccountDataSecurityAuditorRequest) GetAuditSeverityOk() (*Enum
 
 // HasAuditSeverity returns a boolean if a field has been set.
 func (o *AddLockedAccountDataSecurityAuditorRequest) HasAuditSeverity() bool {
-	if o != nil && !isNil(o.AuditSeverity) {
+	if o != nil && !IsNil(o.AuditSeverity) {
 		return true
 	}
 
@@ -292,32 +295,36 @@ func (o *AddLockedAccountDataSecurityAuditorRequest) SetAuditSeverity(v Enumdata
 }
 
 func (o AddLockedAccountDataSecurityAuditorRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["auditorName"] = o.AuditorName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.ReportFile) {
-		toSerialize["reportFile"] = o.ReportFile
-	}
-	if !isNil(o.IncludeAttribute) {
-		toSerialize["includeAttribute"] = o.IncludeAttribute
-	}
-	if !isNil(o.MaximumIdleTime) {
-		toSerialize["maximumIdleTime"] = o.MaximumIdleTime
-	}
-	if !isNil(o.Enabled) {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.AuditBackend) {
-		toSerialize["auditBackend"] = o.AuditBackend
-	}
-	if !isNil(o.AuditSeverity) {
-		toSerialize["auditSeverity"] = o.AuditSeverity
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddLockedAccountDataSecurityAuditorRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["auditorName"] = o.AuditorName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.ReportFile) {
+		toSerialize["reportFile"] = o.ReportFile
+	}
+	if !IsNil(o.IncludeAttribute) {
+		toSerialize["includeAttribute"] = o.IncludeAttribute
+	}
+	if !IsNil(o.MaximumIdleTime) {
+		toSerialize["maximumIdleTime"] = o.MaximumIdleTime
+	}
+	if !IsNil(o.Enabled) {
+		toSerialize["enabled"] = o.Enabled
+	}
+	if !IsNil(o.AuditBackend) {
+		toSerialize["auditBackend"] = o.AuditBackend
+	}
+	if !IsNil(o.AuditSeverity) {
+		toSerialize["auditSeverity"] = o.AuditSeverity
+	}
+	return toSerialize, nil
 }
 
 type NullableAddLockedAccountDataSecurityAuditorRequest struct {

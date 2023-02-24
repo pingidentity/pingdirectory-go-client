@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *SynchronizationProviderApiService) GetSynchronizationProviderExecute(r 
 	}
 
 	localVarPath := localBasePath + "/synchronization-providers/{synchronization-provider-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"synchronization-provider-name"+"}", url.PathEscape(parameterToString(r.synchronizationProviderName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"synchronization-provider-name"+"}", url.PathEscape(parameterValueToString(r.synchronizationProviderName, "synchronizationProviderName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *SynchronizationProviderApiService) GetSynchronizationProviderExecute(r 
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -173,7 +173,7 @@ func (a *SynchronizationProviderApiService) UpdateSynchronizationProviderExecute
 	}
 
 	localVarPath := localBasePath + "/synchronization-providers/{synchronization-provider-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"synchronization-provider-name"+"}", url.PathEscape(parameterToString(r.synchronizationProviderName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"synchronization-provider-name"+"}", url.PathEscape(parameterValueToString(r.synchronizationProviderName, "synchronizationProviderName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -211,9 +211,9 @@ func (a *SynchronizationProviderApiService) UpdateSynchronizationProviderExecute
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

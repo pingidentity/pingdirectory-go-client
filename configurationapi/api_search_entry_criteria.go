@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -105,9 +105,9 @@ func (a *SearchEntryCriteriaApiService) AddSearchEntryCriteriaExecute(r ApiAddSe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -171,7 +171,7 @@ func (a *SearchEntryCriteriaApiService) DeleteSearchEntryCriteriaExecute(r ApiDe
 	}
 
 	localVarPath := localBasePath + "/search-entry-criteria/{search-entry-criteria-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"search-entry-criteria-name"+"}", url.PathEscape(parameterToString(r.searchEntryCriteriaName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"search-entry-criteria-name"+"}", url.PathEscape(parameterValueToString(r.searchEntryCriteriaName, "searchEntryCriteriaName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -204,9 +204,9 @@ func (a *SearchEntryCriteriaApiService) DeleteSearchEntryCriteriaExecute(r ApiDe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -264,7 +264,7 @@ func (a *SearchEntryCriteriaApiService) GetSearchEntryCriteriaExecute(r ApiGetSe
 	}
 
 	localVarPath := localBasePath + "/search-entry-criteria/{search-entry-criteria-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"search-entry-criteria-name"+"}", url.PathEscape(parameterToString(r.searchEntryCriteriaName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"search-entry-criteria-name"+"}", url.PathEscape(parameterValueToString(r.searchEntryCriteriaName, "searchEntryCriteriaName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -297,9 +297,9 @@ func (a *SearchEntryCriteriaApiService) GetSearchEntryCriteriaExecute(r ApiGetSe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -373,7 +373,7 @@ func (a *SearchEntryCriteriaApiService) UpdateSearchEntryCriteriaExecute(r ApiUp
 	}
 
 	localVarPath := localBasePath + "/search-entry-criteria/{search-entry-criteria-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"search-entry-criteria-name"+"}", url.PathEscape(parameterToString(r.searchEntryCriteriaName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"search-entry-criteria-name"+"}", url.PathEscape(parameterValueToString(r.searchEntryCriteriaName, "searchEntryCriteriaName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -411,9 +411,9 @@ func (a *SearchEntryCriteriaApiService) UpdateSearchEntryCriteriaExecute(r ApiUp
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

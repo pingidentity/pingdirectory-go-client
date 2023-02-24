@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddAmazonKeyManagementServiceCipherStreamProviderRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddAmazonKeyManagementServiceCipherStreamProviderRequest{}
+
 // AddAmazonKeyManagementServiceCipherStreamProviderRequest struct for AddAmazonKeyManagementServiceCipherStreamProviderRequest
 type AddAmazonKeyManagementServiceCipherStreamProviderRequest struct {
 	// Name of the new Cipher Stream Provider
@@ -108,7 +111,7 @@ func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) SetSchemas(v 
 
 // GetEncryptedPassphraseFile returns the EncryptedPassphraseFile field value if set, zero value otherwise.
 func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetEncryptedPassphraseFile() string {
-	if o == nil || isNil(o.EncryptedPassphraseFile) {
+	if o == nil || IsNil(o.EncryptedPassphraseFile) {
 		var ret string
 		return ret
 	}
@@ -118,7 +121,7 @@ func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetEncryptedP
 // GetEncryptedPassphraseFileOk returns a tuple with the EncryptedPassphraseFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetEncryptedPassphraseFileOk() (*string, bool) {
-	if o == nil || isNil(o.EncryptedPassphraseFile) {
+	if o == nil || IsNil(o.EncryptedPassphraseFile) {
 		return nil, false
 	}
 	return o.EncryptedPassphraseFile, true
@@ -126,7 +129,7 @@ func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetEncryptedP
 
 // HasEncryptedPassphraseFile returns a boolean if a field has been set.
 func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) HasEncryptedPassphraseFile() bool {
-	if o != nil && !isNil(o.EncryptedPassphraseFile) {
+	if o != nil && !IsNil(o.EncryptedPassphraseFile) {
 		return true
 	}
 
@@ -140,7 +143,7 @@ func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) SetEncryptedP
 
 // GetAwsExternalServer returns the AwsExternalServer field value if set, zero value otherwise.
 func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetAwsExternalServer() string {
-	if o == nil || isNil(o.AwsExternalServer) {
+	if o == nil || IsNil(o.AwsExternalServer) {
 		var ret string
 		return ret
 	}
@@ -150,7 +153,7 @@ func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetAwsExterna
 // GetAwsExternalServerOk returns a tuple with the AwsExternalServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetAwsExternalServerOk() (*string, bool) {
-	if o == nil || isNil(o.AwsExternalServer) {
+	if o == nil || IsNil(o.AwsExternalServer) {
 		return nil, false
 	}
 	return o.AwsExternalServer, true
@@ -158,7 +161,7 @@ func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetAwsExterna
 
 // HasAwsExternalServer returns a boolean if a field has been set.
 func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) HasAwsExternalServer() bool {
-	if o != nil && !isNil(o.AwsExternalServer) {
+	if o != nil && !IsNil(o.AwsExternalServer) {
 		return true
 	}
 
@@ -172,7 +175,7 @@ func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) SetAwsExterna
 
 // GetAwsAccessKeyID returns the AwsAccessKeyID field value if set, zero value otherwise.
 func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetAwsAccessKeyID() string {
-	if o == nil || isNil(o.AwsAccessKeyID) {
+	if o == nil || IsNil(o.AwsAccessKeyID) {
 		var ret string
 		return ret
 	}
@@ -182,7 +185,7 @@ func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetAwsAccessK
 // GetAwsAccessKeyIDOk returns a tuple with the AwsAccessKeyID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetAwsAccessKeyIDOk() (*string, bool) {
-	if o == nil || isNil(o.AwsAccessKeyID) {
+	if o == nil || IsNil(o.AwsAccessKeyID) {
 		return nil, false
 	}
 	return o.AwsAccessKeyID, true
@@ -190,7 +193,7 @@ func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetAwsAccessK
 
 // HasAwsAccessKeyID returns a boolean if a field has been set.
 func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) HasAwsAccessKeyID() bool {
-	if o != nil && !isNil(o.AwsAccessKeyID) {
+	if o != nil && !IsNil(o.AwsAccessKeyID) {
 		return true
 	}
 
@@ -204,7 +207,7 @@ func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) SetAwsAccessK
 
 // GetAwsSecretAccessKey returns the AwsSecretAccessKey field value if set, zero value otherwise.
 func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetAwsSecretAccessKey() string {
-	if o == nil || isNil(o.AwsSecretAccessKey) {
+	if o == nil || IsNil(o.AwsSecretAccessKey) {
 		var ret string
 		return ret
 	}
@@ -214,7 +217,7 @@ func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetAwsSecretA
 // GetAwsSecretAccessKeyOk returns a tuple with the AwsSecretAccessKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetAwsSecretAccessKeyOk() (*string, bool) {
-	if o == nil || isNil(o.AwsSecretAccessKey) {
+	if o == nil || IsNil(o.AwsSecretAccessKey) {
 		return nil, false
 	}
 	return o.AwsSecretAccessKey, true
@@ -222,7 +225,7 @@ func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetAwsSecretA
 
 // HasAwsSecretAccessKey returns a boolean if a field has been set.
 func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) HasAwsSecretAccessKey() bool {
-	if o != nil && !isNil(o.AwsSecretAccessKey) {
+	if o != nil && !IsNil(o.AwsSecretAccessKey) {
 		return true
 	}
 
@@ -236,7 +239,7 @@ func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) SetAwsSecretA
 
 // GetAwsRegionName returns the AwsRegionName field value if set, zero value otherwise.
 func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetAwsRegionName() string {
-	if o == nil || isNil(o.AwsRegionName) {
+	if o == nil || IsNil(o.AwsRegionName) {
 		var ret string
 		return ret
 	}
@@ -246,7 +249,7 @@ func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetAwsRegionN
 // GetAwsRegionNameOk returns a tuple with the AwsRegionName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetAwsRegionNameOk() (*string, bool) {
-	if o == nil || isNil(o.AwsRegionName) {
+	if o == nil || IsNil(o.AwsRegionName) {
 		return nil, false
 	}
 	return o.AwsRegionName, true
@@ -254,7 +257,7 @@ func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetAwsRegionN
 
 // HasAwsRegionName returns a boolean if a field has been set.
 func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) HasAwsRegionName() bool {
-	if o != nil && !isNil(o.AwsRegionName) {
+	if o != nil && !IsNil(o.AwsRegionName) {
 		return true
 	}
 
@@ -292,7 +295,7 @@ func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) SetKmsEncrypt
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -302,7 +305,7 @@ func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetDescriptio
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -310,7 +313,7 @@ func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetDescriptio
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -347,38 +350,38 @@ func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) SetEnabled(v 
 }
 
 func (o AddAmazonKeyManagementServiceCipherStreamProviderRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["providerName"] = o.ProviderName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.EncryptedPassphraseFile) {
-		toSerialize["encryptedPassphraseFile"] = o.EncryptedPassphraseFile
-	}
-	if !isNil(o.AwsExternalServer) {
-		toSerialize["awsExternalServer"] = o.AwsExternalServer
-	}
-	if !isNil(o.AwsAccessKeyID) {
-		toSerialize["awsAccessKeyID"] = o.AwsAccessKeyID
-	}
-	if !isNil(o.AwsSecretAccessKey) {
-		toSerialize["awsSecretAccessKey"] = o.AwsSecretAccessKey
-	}
-	if !isNil(o.AwsRegionName) {
-		toSerialize["awsRegionName"] = o.AwsRegionName
-	}
-	if true {
-		toSerialize["kmsEncryptionKeyArn"] = o.KmsEncryptionKeyArn
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddAmazonKeyManagementServiceCipherStreamProviderRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["providerName"] = o.ProviderName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.EncryptedPassphraseFile) {
+		toSerialize["encryptedPassphraseFile"] = o.EncryptedPassphraseFile
+	}
+	if !IsNil(o.AwsExternalServer) {
+		toSerialize["awsExternalServer"] = o.AwsExternalServer
+	}
+	if !IsNil(o.AwsAccessKeyID) {
+		toSerialize["awsAccessKeyID"] = o.AwsAccessKeyID
+	}
+	if !IsNil(o.AwsSecretAccessKey) {
+		toSerialize["awsSecretAccessKey"] = o.AwsSecretAccessKey
+	}
+	if !IsNil(o.AwsRegionName) {
+		toSerialize["awsRegionName"] = o.AwsRegionName
+	}
+	toSerialize["kmsEncryptionKeyArn"] = o.KmsEncryptionKeyArn
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddAmazonKeyManagementServiceCipherStreamProviderRequest struct {

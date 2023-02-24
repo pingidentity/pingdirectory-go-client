@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ConsentHttpServletExtensionResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ConsentHttpServletExtensionResponse{}
+
 // ConsentHttpServletExtensionResponse struct for ConsentHttpServletExtensionResponse
 type ConsentHttpServletExtensionResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -60,7 +63,7 @@ func NewConsentHttpServletExtensionResponseWithDefaults() *ConsentHttpServletExt
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *ConsentHttpServletExtensionResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -70,7 +73,7 @@ func (o *ConsentHttpServletExtensionResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsentHttpServletExtensionResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -78,7 +81,7 @@ func (o *ConsentHttpServletExtensionResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *ConsentHttpServletExtensionResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -92,7 +95,7 @@ func (o *ConsentHttpServletExtensionResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *ConsentHttpServletExtensionResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -102,7 +105,7 @@ func (o *ConsentHttpServletExtensionResponse) GetUrnpingidentityschemasconfigura
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsentHttpServletExtensionResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -110,7 +113,7 @@ func (o *ConsentHttpServletExtensionResponse) GetUrnpingidentityschemasconfigura
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *ConsentHttpServletExtensionResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -172,7 +175,7 @@ func (o *ConsentHttpServletExtensionResponse) SetId(v string) {
 
 // GetBearerTokenAuthEnabled returns the BearerTokenAuthEnabled field value if set, zero value otherwise.
 func (o *ConsentHttpServletExtensionResponse) GetBearerTokenAuthEnabled() bool {
-	if o == nil || isNil(o.BearerTokenAuthEnabled) {
+	if o == nil || IsNil(o.BearerTokenAuthEnabled) {
 		var ret bool
 		return ret
 	}
@@ -182,7 +185,7 @@ func (o *ConsentHttpServletExtensionResponse) GetBearerTokenAuthEnabled() bool {
 // GetBearerTokenAuthEnabledOk returns a tuple with the BearerTokenAuthEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsentHttpServletExtensionResponse) GetBearerTokenAuthEnabledOk() (*bool, bool) {
-	if o == nil || isNil(o.BearerTokenAuthEnabled) {
+	if o == nil || IsNil(o.BearerTokenAuthEnabled) {
 		return nil, false
 	}
 	return o.BearerTokenAuthEnabled, true
@@ -190,7 +193,7 @@ func (o *ConsentHttpServletExtensionResponse) GetBearerTokenAuthEnabledOk() (*bo
 
 // HasBearerTokenAuthEnabled returns a boolean if a field has been set.
 func (o *ConsentHttpServletExtensionResponse) HasBearerTokenAuthEnabled() bool {
-	if o != nil && !isNil(o.BearerTokenAuthEnabled) {
+	if o != nil && !IsNil(o.BearerTokenAuthEnabled) {
 		return true
 	}
 
@@ -204,7 +207,7 @@ func (o *ConsentHttpServletExtensionResponse) SetBearerTokenAuthEnabled(v bool) 
 
 // GetBasicAuthEnabled returns the BasicAuthEnabled field value if set, zero value otherwise.
 func (o *ConsentHttpServletExtensionResponse) GetBasicAuthEnabled() bool {
-	if o == nil || isNil(o.BasicAuthEnabled) {
+	if o == nil || IsNil(o.BasicAuthEnabled) {
 		var ret bool
 		return ret
 	}
@@ -214,7 +217,7 @@ func (o *ConsentHttpServletExtensionResponse) GetBasicAuthEnabled() bool {
 // GetBasicAuthEnabledOk returns a tuple with the BasicAuthEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsentHttpServletExtensionResponse) GetBasicAuthEnabledOk() (*bool, bool) {
-	if o == nil || isNil(o.BasicAuthEnabled) {
+	if o == nil || IsNil(o.BasicAuthEnabled) {
 		return nil, false
 	}
 	return o.BasicAuthEnabled, true
@@ -222,7 +225,7 @@ func (o *ConsentHttpServletExtensionResponse) GetBasicAuthEnabledOk() (*bool, bo
 
 // HasBasicAuthEnabled returns a boolean if a field has been set.
 func (o *ConsentHttpServletExtensionResponse) HasBasicAuthEnabled() bool {
-	if o != nil && !isNil(o.BasicAuthEnabled) {
+	if o != nil && !IsNil(o.BasicAuthEnabled) {
 		return true
 	}
 
@@ -236,7 +239,7 @@ func (o *ConsentHttpServletExtensionResponse) SetBasicAuthEnabled(v bool) {
 
 // GetIdentityMapper returns the IdentityMapper field value if set, zero value otherwise.
 func (o *ConsentHttpServletExtensionResponse) GetIdentityMapper() string {
-	if o == nil || isNil(o.IdentityMapper) {
+	if o == nil || IsNil(o.IdentityMapper) {
 		var ret string
 		return ret
 	}
@@ -246,7 +249,7 @@ func (o *ConsentHttpServletExtensionResponse) GetIdentityMapper() string {
 // GetIdentityMapperOk returns a tuple with the IdentityMapper field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsentHttpServletExtensionResponse) GetIdentityMapperOk() (*string, bool) {
-	if o == nil || isNil(o.IdentityMapper) {
+	if o == nil || IsNil(o.IdentityMapper) {
 		return nil, false
 	}
 	return o.IdentityMapper, true
@@ -254,7 +257,7 @@ func (o *ConsentHttpServletExtensionResponse) GetIdentityMapperOk() (*string, bo
 
 // HasIdentityMapper returns a boolean if a field has been set.
 func (o *ConsentHttpServletExtensionResponse) HasIdentityMapper() bool {
-	if o != nil && !isNil(o.IdentityMapper) {
+	if o != nil && !IsNil(o.IdentityMapper) {
 		return true
 	}
 
@@ -268,7 +271,7 @@ func (o *ConsentHttpServletExtensionResponse) SetIdentityMapper(v string) {
 
 // GetAccessTokenValidator returns the AccessTokenValidator field value if set, zero value otherwise.
 func (o *ConsentHttpServletExtensionResponse) GetAccessTokenValidator() []string {
-	if o == nil || isNil(o.AccessTokenValidator) {
+	if o == nil || IsNil(o.AccessTokenValidator) {
 		var ret []string
 		return ret
 	}
@@ -278,7 +281,7 @@ func (o *ConsentHttpServletExtensionResponse) GetAccessTokenValidator() []string
 // GetAccessTokenValidatorOk returns a tuple with the AccessTokenValidator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsentHttpServletExtensionResponse) GetAccessTokenValidatorOk() ([]string, bool) {
-	if o == nil || isNil(o.AccessTokenValidator) {
+	if o == nil || IsNil(o.AccessTokenValidator) {
 		return nil, false
 	}
 	return o.AccessTokenValidator, true
@@ -286,7 +289,7 @@ func (o *ConsentHttpServletExtensionResponse) GetAccessTokenValidatorOk() ([]str
 
 // HasAccessTokenValidator returns a boolean if a field has been set.
 func (o *ConsentHttpServletExtensionResponse) HasAccessTokenValidator() bool {
-	if o != nil && !isNil(o.AccessTokenValidator) {
+	if o != nil && !IsNil(o.AccessTokenValidator) {
 		return true
 	}
 
@@ -300,7 +303,7 @@ func (o *ConsentHttpServletExtensionResponse) SetAccessTokenValidator(v []string
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *ConsentHttpServletExtensionResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -310,7 +313,7 @@ func (o *ConsentHttpServletExtensionResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsentHttpServletExtensionResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -318,7 +321,7 @@ func (o *ConsentHttpServletExtensionResponse) GetDescriptionOk() (*string, bool)
 
 // HasDescription returns a boolean if a field has been set.
 func (o *ConsentHttpServletExtensionResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -332,7 +335,7 @@ func (o *ConsentHttpServletExtensionResponse) SetDescription(v string) {
 
 // GetCrossOriginPolicy returns the CrossOriginPolicy field value if set, zero value otherwise.
 func (o *ConsentHttpServletExtensionResponse) GetCrossOriginPolicy() string {
-	if o == nil || isNil(o.CrossOriginPolicy) {
+	if o == nil || IsNil(o.CrossOriginPolicy) {
 		var ret string
 		return ret
 	}
@@ -342,7 +345,7 @@ func (o *ConsentHttpServletExtensionResponse) GetCrossOriginPolicy() string {
 // GetCrossOriginPolicyOk returns a tuple with the CrossOriginPolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsentHttpServletExtensionResponse) GetCrossOriginPolicyOk() (*string, bool) {
-	if o == nil || isNil(o.CrossOriginPolicy) {
+	if o == nil || IsNil(o.CrossOriginPolicy) {
 		return nil, false
 	}
 	return o.CrossOriginPolicy, true
@@ -350,7 +353,7 @@ func (o *ConsentHttpServletExtensionResponse) GetCrossOriginPolicyOk() (*string,
 
 // HasCrossOriginPolicy returns a boolean if a field has been set.
 func (o *ConsentHttpServletExtensionResponse) HasCrossOriginPolicy() bool {
-	if o != nil && !isNil(o.CrossOriginPolicy) {
+	if o != nil && !IsNil(o.CrossOriginPolicy) {
 		return true
 	}
 
@@ -364,7 +367,7 @@ func (o *ConsentHttpServletExtensionResponse) SetCrossOriginPolicy(v string) {
 
 // GetResponseHeader returns the ResponseHeader field value if set, zero value otherwise.
 func (o *ConsentHttpServletExtensionResponse) GetResponseHeader() []string {
-	if o == nil || isNil(o.ResponseHeader) {
+	if o == nil || IsNil(o.ResponseHeader) {
 		var ret []string
 		return ret
 	}
@@ -374,7 +377,7 @@ func (o *ConsentHttpServletExtensionResponse) GetResponseHeader() []string {
 // GetResponseHeaderOk returns a tuple with the ResponseHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsentHttpServletExtensionResponse) GetResponseHeaderOk() ([]string, bool) {
-	if o == nil || isNil(o.ResponseHeader) {
+	if o == nil || IsNil(o.ResponseHeader) {
 		return nil, false
 	}
 	return o.ResponseHeader, true
@@ -382,7 +385,7 @@ func (o *ConsentHttpServletExtensionResponse) GetResponseHeaderOk() ([]string, b
 
 // HasResponseHeader returns a boolean if a field has been set.
 func (o *ConsentHttpServletExtensionResponse) HasResponseHeader() bool {
-	if o != nil && !isNil(o.ResponseHeader) {
+	if o != nil && !IsNil(o.ResponseHeader) {
 		return true
 	}
 
@@ -396,7 +399,7 @@ func (o *ConsentHttpServletExtensionResponse) SetResponseHeader(v []string) {
 
 // GetCorrelationIDResponseHeader returns the CorrelationIDResponseHeader field value if set, zero value otherwise.
 func (o *ConsentHttpServletExtensionResponse) GetCorrelationIDResponseHeader() string {
-	if o == nil || isNil(o.CorrelationIDResponseHeader) {
+	if o == nil || IsNil(o.CorrelationIDResponseHeader) {
 		var ret string
 		return ret
 	}
@@ -406,7 +409,7 @@ func (o *ConsentHttpServletExtensionResponse) GetCorrelationIDResponseHeader() s
 // GetCorrelationIDResponseHeaderOk returns a tuple with the CorrelationIDResponseHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsentHttpServletExtensionResponse) GetCorrelationIDResponseHeaderOk() (*string, bool) {
-	if o == nil || isNil(o.CorrelationIDResponseHeader) {
+	if o == nil || IsNil(o.CorrelationIDResponseHeader) {
 		return nil, false
 	}
 	return o.CorrelationIDResponseHeader, true
@@ -414,7 +417,7 @@ func (o *ConsentHttpServletExtensionResponse) GetCorrelationIDResponseHeaderOk()
 
 // HasCorrelationIDResponseHeader returns a boolean if a field has been set.
 func (o *ConsentHttpServletExtensionResponse) HasCorrelationIDResponseHeader() bool {
-	if o != nil && !isNil(o.CorrelationIDResponseHeader) {
+	if o != nil && !IsNil(o.CorrelationIDResponseHeader) {
 		return true
 	}
 
@@ -427,44 +430,48 @@ func (o *ConsentHttpServletExtensionResponse) SetCorrelationIDResponseHeader(v s
 }
 
 func (o ConsentHttpServletExtensionResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.BearerTokenAuthEnabled) {
-		toSerialize["bearerTokenAuthEnabled"] = o.BearerTokenAuthEnabled
-	}
-	if !isNil(o.BasicAuthEnabled) {
-		toSerialize["basicAuthEnabled"] = o.BasicAuthEnabled
-	}
-	if !isNil(o.IdentityMapper) {
-		toSerialize["identityMapper"] = o.IdentityMapper
-	}
-	if !isNil(o.AccessTokenValidator) {
-		toSerialize["accessTokenValidator"] = o.AccessTokenValidator
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if !isNil(o.CrossOriginPolicy) {
-		toSerialize["crossOriginPolicy"] = o.CrossOriginPolicy
-	}
-	if !isNil(o.ResponseHeader) {
-		toSerialize["responseHeader"] = o.ResponseHeader
-	}
-	if !isNil(o.CorrelationIDResponseHeader) {
-		toSerialize["correlationIDResponseHeader"] = o.CorrelationIDResponseHeader
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ConsentHttpServletExtensionResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	if !IsNil(o.BearerTokenAuthEnabled) {
+		toSerialize["bearerTokenAuthEnabled"] = o.BearerTokenAuthEnabled
+	}
+	if !IsNil(o.BasicAuthEnabled) {
+		toSerialize["basicAuthEnabled"] = o.BasicAuthEnabled
+	}
+	if !IsNil(o.IdentityMapper) {
+		toSerialize["identityMapper"] = o.IdentityMapper
+	}
+	if !IsNil(o.AccessTokenValidator) {
+		toSerialize["accessTokenValidator"] = o.AccessTokenValidator
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.CrossOriginPolicy) {
+		toSerialize["crossOriginPolicy"] = o.CrossOriginPolicy
+	}
+	if !IsNil(o.ResponseHeader) {
+		toSerialize["responseHeader"] = o.ResponseHeader
+	}
+	if !IsNil(o.CorrelationIDResponseHeader) {
+		toSerialize["correlationIDResponseHeader"] = o.CorrelationIDResponseHeader
+	}
+	return toSerialize, nil
 }
 
 type NullableConsentHttpServletExtensionResponse struct {

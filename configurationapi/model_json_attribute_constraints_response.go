@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the JsonAttributeConstraintsResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &JsonAttributeConstraintsResponse{}
+
 // JsonAttributeConstraintsResponse struct for JsonAttributeConstraintsResponse
 type JsonAttributeConstraintsResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -52,7 +55,7 @@ func NewJsonAttributeConstraintsResponseWithDefaults() *JsonAttributeConstraints
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *JsonAttributeConstraintsResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -62,7 +65,7 @@ func (o *JsonAttributeConstraintsResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JsonAttributeConstraintsResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -70,7 +73,7 @@ func (o *JsonAttributeConstraintsResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *JsonAttributeConstraintsResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -84,7 +87,7 @@ func (o *JsonAttributeConstraintsResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *JsonAttributeConstraintsResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -94,7 +97,7 @@ func (o *JsonAttributeConstraintsResponse) GetUrnpingidentityschemasconfiguratio
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JsonAttributeConstraintsResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -102,7 +105,7 @@ func (o *JsonAttributeConstraintsResponse) GetUrnpingidentityschemasconfiguratio
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *JsonAttributeConstraintsResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -140,7 +143,7 @@ func (o *JsonAttributeConstraintsResponse) SetId(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *JsonAttributeConstraintsResponse) GetSchemas() []EnumjsonAttributeConstraintsSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumjsonAttributeConstraintsSchemaUrn
 		return ret
 	}
@@ -150,7 +153,7 @@ func (o *JsonAttributeConstraintsResponse) GetSchemas() []EnumjsonAttributeConst
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JsonAttributeConstraintsResponse) GetSchemasOk() ([]EnumjsonAttributeConstraintsSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -158,7 +161,7 @@ func (o *JsonAttributeConstraintsResponse) GetSchemasOk() ([]EnumjsonAttributeCo
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *JsonAttributeConstraintsResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -172,7 +175,7 @@ func (o *JsonAttributeConstraintsResponse) SetSchemas(v []EnumjsonAttributeConst
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *JsonAttributeConstraintsResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -182,7 +185,7 @@ func (o *JsonAttributeConstraintsResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JsonAttributeConstraintsResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -190,7 +193,7 @@ func (o *JsonAttributeConstraintsResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *JsonAttributeConstraintsResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -204,7 +207,7 @@ func (o *JsonAttributeConstraintsResponse) SetDescription(v string) {
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
 func (o *JsonAttributeConstraintsResponse) GetEnabled() bool {
-	if o == nil || isNil(o.Enabled) {
+	if o == nil || IsNil(o.Enabled) {
 		var ret bool
 		return ret
 	}
@@ -214,7 +217,7 @@ func (o *JsonAttributeConstraintsResponse) GetEnabled() bool {
 // GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JsonAttributeConstraintsResponse) GetEnabledOk() (*bool, bool) {
-	if o == nil || isNil(o.Enabled) {
+	if o == nil || IsNil(o.Enabled) {
 		return nil, false
 	}
 	return o.Enabled, true
@@ -222,7 +225,7 @@ func (o *JsonAttributeConstraintsResponse) GetEnabledOk() (*bool, bool) {
 
 // HasEnabled returns a boolean if a field has been set.
 func (o *JsonAttributeConstraintsResponse) HasEnabled() bool {
-	if o != nil && !isNil(o.Enabled) {
+	if o != nil && !IsNil(o.Enabled) {
 		return true
 	}
 
@@ -260,7 +263,7 @@ func (o *JsonAttributeConstraintsResponse) SetAttributeType(v string) {
 
 // GetAllowUnnamedFields returns the AllowUnnamedFields field value if set, zero value otherwise.
 func (o *JsonAttributeConstraintsResponse) GetAllowUnnamedFields() bool {
-	if o == nil || isNil(o.AllowUnnamedFields) {
+	if o == nil || IsNil(o.AllowUnnamedFields) {
 		var ret bool
 		return ret
 	}
@@ -270,7 +273,7 @@ func (o *JsonAttributeConstraintsResponse) GetAllowUnnamedFields() bool {
 // GetAllowUnnamedFieldsOk returns a tuple with the AllowUnnamedFields field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JsonAttributeConstraintsResponse) GetAllowUnnamedFieldsOk() (*bool, bool) {
-	if o == nil || isNil(o.AllowUnnamedFields) {
+	if o == nil || IsNil(o.AllowUnnamedFields) {
 		return nil, false
 	}
 	return o.AllowUnnamedFields, true
@@ -278,7 +281,7 @@ func (o *JsonAttributeConstraintsResponse) GetAllowUnnamedFieldsOk() (*bool, boo
 
 // HasAllowUnnamedFields returns a boolean if a field has been set.
 func (o *JsonAttributeConstraintsResponse) HasAllowUnnamedFields() bool {
-	if o != nil && !isNil(o.AllowUnnamedFields) {
+	if o != nil && !IsNil(o.AllowUnnamedFields) {
 		return true
 	}
 
@@ -291,32 +294,36 @@ func (o *JsonAttributeConstraintsResponse) SetAllowUnnamedFields(v bool) {
 }
 
 func (o JsonAttributeConstraintsResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if !isNil(o.Enabled) {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if true {
-		toSerialize["attributeType"] = o.AttributeType
-	}
-	if !isNil(o.AllowUnnamedFields) {
-		toSerialize["allowUnnamedFields"] = o.AllowUnnamedFields
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o JsonAttributeConstraintsResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.Enabled) {
+		toSerialize["enabled"] = o.Enabled
+	}
+	toSerialize["attributeType"] = o.AttributeType
+	if !IsNil(o.AllowUnnamedFields) {
+		toSerialize["allowUnnamedFields"] = o.AllowUnnamedFields
+	}
+	return toSerialize, nil
 }
 
 type NullableJsonAttributeConstraintsResponse struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddVaultExternalServerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddVaultExternalServerRequest{}
+
 // AddVaultExternalServerRequest struct for AddVaultExternalServerRequest
 type AddVaultExternalServerRequest struct {
 	// Name of the new External Server
@@ -152,7 +155,7 @@ func (o *AddVaultExternalServerRequest) SetVaultAuthenticationMethod(v string) {
 
 // GetTrustStoreFile returns the TrustStoreFile field value if set, zero value otherwise.
 func (o *AddVaultExternalServerRequest) GetTrustStoreFile() string {
-	if o == nil || isNil(o.TrustStoreFile) {
+	if o == nil || IsNil(o.TrustStoreFile) {
 		var ret string
 		return ret
 	}
@@ -162,7 +165,7 @@ func (o *AddVaultExternalServerRequest) GetTrustStoreFile() string {
 // GetTrustStoreFileOk returns a tuple with the TrustStoreFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddVaultExternalServerRequest) GetTrustStoreFileOk() (*string, bool) {
-	if o == nil || isNil(o.TrustStoreFile) {
+	if o == nil || IsNil(o.TrustStoreFile) {
 		return nil, false
 	}
 	return o.TrustStoreFile, true
@@ -170,7 +173,7 @@ func (o *AddVaultExternalServerRequest) GetTrustStoreFileOk() (*string, bool) {
 
 // HasTrustStoreFile returns a boolean if a field has been set.
 func (o *AddVaultExternalServerRequest) HasTrustStoreFile() bool {
-	if o != nil && !isNil(o.TrustStoreFile) {
+	if o != nil && !IsNil(o.TrustStoreFile) {
 		return true
 	}
 
@@ -184,7 +187,7 @@ func (o *AddVaultExternalServerRequest) SetTrustStoreFile(v string) {
 
 // GetTrustStorePin returns the TrustStorePin field value if set, zero value otherwise.
 func (o *AddVaultExternalServerRequest) GetTrustStorePin() string {
-	if o == nil || isNil(o.TrustStorePin) {
+	if o == nil || IsNil(o.TrustStorePin) {
 		var ret string
 		return ret
 	}
@@ -194,7 +197,7 @@ func (o *AddVaultExternalServerRequest) GetTrustStorePin() string {
 // GetTrustStorePinOk returns a tuple with the TrustStorePin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddVaultExternalServerRequest) GetTrustStorePinOk() (*string, bool) {
-	if o == nil || isNil(o.TrustStorePin) {
+	if o == nil || IsNil(o.TrustStorePin) {
 		return nil, false
 	}
 	return o.TrustStorePin, true
@@ -202,7 +205,7 @@ func (o *AddVaultExternalServerRequest) GetTrustStorePinOk() (*string, bool) {
 
 // HasTrustStorePin returns a boolean if a field has been set.
 func (o *AddVaultExternalServerRequest) HasTrustStorePin() bool {
-	if o != nil && !isNil(o.TrustStorePin) {
+	if o != nil && !IsNil(o.TrustStorePin) {
 		return true
 	}
 
@@ -216,7 +219,7 @@ func (o *AddVaultExternalServerRequest) SetTrustStorePin(v string) {
 
 // GetTrustStoreType returns the TrustStoreType field value if set, zero value otherwise.
 func (o *AddVaultExternalServerRequest) GetTrustStoreType() string {
-	if o == nil || isNil(o.TrustStoreType) {
+	if o == nil || IsNil(o.TrustStoreType) {
 		var ret string
 		return ret
 	}
@@ -226,7 +229,7 @@ func (o *AddVaultExternalServerRequest) GetTrustStoreType() string {
 // GetTrustStoreTypeOk returns a tuple with the TrustStoreType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddVaultExternalServerRequest) GetTrustStoreTypeOk() (*string, bool) {
-	if o == nil || isNil(o.TrustStoreType) {
+	if o == nil || IsNil(o.TrustStoreType) {
 		return nil, false
 	}
 	return o.TrustStoreType, true
@@ -234,7 +237,7 @@ func (o *AddVaultExternalServerRequest) GetTrustStoreTypeOk() (*string, bool) {
 
 // HasTrustStoreType returns a boolean if a field has been set.
 func (o *AddVaultExternalServerRequest) HasTrustStoreType() bool {
-	if o != nil && !isNil(o.TrustStoreType) {
+	if o != nil && !IsNil(o.TrustStoreType) {
 		return true
 	}
 
@@ -248,7 +251,7 @@ func (o *AddVaultExternalServerRequest) SetTrustStoreType(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddVaultExternalServerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -258,7 +261,7 @@ func (o *AddVaultExternalServerRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddVaultExternalServerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -266,7 +269,7 @@ func (o *AddVaultExternalServerRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddVaultExternalServerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -279,32 +282,32 @@ func (o *AddVaultExternalServerRequest) SetDescription(v string) {
 }
 
 func (o AddVaultExternalServerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["serverName"] = o.ServerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["vaultServerBaseURI"] = o.VaultServerBaseURI
-	}
-	if true {
-		toSerialize["vaultAuthenticationMethod"] = o.VaultAuthenticationMethod
-	}
-	if !isNil(o.TrustStoreFile) {
-		toSerialize["trustStoreFile"] = o.TrustStoreFile
-	}
-	if !isNil(o.TrustStorePin) {
-		toSerialize["trustStorePin"] = o.TrustStorePin
-	}
-	if !isNil(o.TrustStoreType) {
-		toSerialize["trustStoreType"] = o.TrustStoreType
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddVaultExternalServerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["serverName"] = o.ServerName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["vaultServerBaseURI"] = o.VaultServerBaseURI
+	toSerialize["vaultAuthenticationMethod"] = o.VaultAuthenticationMethod
+	if !IsNil(o.TrustStoreFile) {
+		toSerialize["trustStoreFile"] = o.TrustStoreFile
+	}
+	if !IsNil(o.TrustStorePin) {
+		toSerialize["trustStorePin"] = o.TrustStorePin
+	}
+	if !IsNil(o.TrustStoreType) {
+		toSerialize["trustStoreType"] = o.TrustStoreType
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAddVaultExternalServerRequest struct {

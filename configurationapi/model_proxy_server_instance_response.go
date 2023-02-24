@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ProxyServerInstanceResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ProxyServerInstanceResponse{}
+
 // ProxyServerInstanceResponse struct for ProxyServerInstanceResponse
 type ProxyServerInstanceResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -87,7 +90,7 @@ func NewProxyServerInstanceResponseWithDefaults() *ProxyServerInstanceResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *ProxyServerInstanceResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -97,7 +100,7 @@ func (o *ProxyServerInstanceResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -105,7 +108,7 @@ func (o *ProxyServerInstanceResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *ProxyServerInstanceResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -119,7 +122,7 @@ func (o *ProxyServerInstanceResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *ProxyServerInstanceResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -129,7 +132,7 @@ func (o *ProxyServerInstanceResponse) GetUrnpingidentityschemasconfigurationmess
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -137,7 +140,7 @@ func (o *ProxyServerInstanceResponse) GetUrnpingidentityschemasconfigurationmess
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *ProxyServerInstanceResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -199,7 +202,7 @@ func (o *ProxyServerInstanceResponse) SetId(v string) {
 
 // GetServerInstanceType returns the ServerInstanceType field value if set, zero value otherwise.
 func (o *ProxyServerInstanceResponse) GetServerInstanceType() EnumserverInstanceServerInstanceTypeProp {
-	if o == nil || isNil(o.ServerInstanceType) {
+	if o == nil || IsNil(o.ServerInstanceType) {
 		var ret EnumserverInstanceServerInstanceTypeProp
 		return ret
 	}
@@ -209,7 +212,7 @@ func (o *ProxyServerInstanceResponse) GetServerInstanceType() EnumserverInstance
 // GetServerInstanceTypeOk returns a tuple with the ServerInstanceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetServerInstanceTypeOk() (*EnumserverInstanceServerInstanceTypeProp, bool) {
-	if o == nil || isNil(o.ServerInstanceType) {
+	if o == nil || IsNil(o.ServerInstanceType) {
 		return nil, false
 	}
 	return o.ServerInstanceType, true
@@ -217,7 +220,7 @@ func (o *ProxyServerInstanceResponse) GetServerInstanceTypeOk() (*EnumserverInst
 
 // HasServerInstanceType returns a boolean if a field has been set.
 func (o *ProxyServerInstanceResponse) HasServerInstanceType() bool {
-	if o != nil && !isNil(o.ServerInstanceType) {
+	if o != nil && !IsNil(o.ServerInstanceType) {
 		return true
 	}
 
@@ -279,7 +282,7 @@ func (o *ProxyServerInstanceResponse) SetClusterName(v string) {
 
 // GetServerInstanceLocation returns the ServerInstanceLocation field value if set, zero value otherwise.
 func (o *ProxyServerInstanceResponse) GetServerInstanceLocation() string {
-	if o == nil || isNil(o.ServerInstanceLocation) {
+	if o == nil || IsNil(o.ServerInstanceLocation) {
 		var ret string
 		return ret
 	}
@@ -289,7 +292,7 @@ func (o *ProxyServerInstanceResponse) GetServerInstanceLocation() string {
 // GetServerInstanceLocationOk returns a tuple with the ServerInstanceLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetServerInstanceLocationOk() (*string, bool) {
-	if o == nil || isNil(o.ServerInstanceLocation) {
+	if o == nil || IsNil(o.ServerInstanceLocation) {
 		return nil, false
 	}
 	return o.ServerInstanceLocation, true
@@ -297,7 +300,7 @@ func (o *ProxyServerInstanceResponse) GetServerInstanceLocationOk() (*string, bo
 
 // HasServerInstanceLocation returns a boolean if a field has been set.
 func (o *ProxyServerInstanceResponse) HasServerInstanceLocation() bool {
-	if o != nil && !isNil(o.ServerInstanceLocation) {
+	if o != nil && !IsNil(o.ServerInstanceLocation) {
 		return true
 	}
 
@@ -311,7 +314,7 @@ func (o *ProxyServerInstanceResponse) SetServerInstanceLocation(v string) {
 
 // GetHostname returns the Hostname field value if set, zero value otherwise.
 func (o *ProxyServerInstanceResponse) GetHostname() string {
-	if o == nil || isNil(o.Hostname) {
+	if o == nil || IsNil(o.Hostname) {
 		var ret string
 		return ret
 	}
@@ -321,7 +324,7 @@ func (o *ProxyServerInstanceResponse) GetHostname() string {
 // GetHostnameOk returns a tuple with the Hostname field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetHostnameOk() (*string, bool) {
-	if o == nil || isNil(o.Hostname) {
+	if o == nil || IsNil(o.Hostname) {
 		return nil, false
 	}
 	return o.Hostname, true
@@ -329,7 +332,7 @@ func (o *ProxyServerInstanceResponse) GetHostnameOk() (*string, bool) {
 
 // HasHostname returns a boolean if a field has been set.
 func (o *ProxyServerInstanceResponse) HasHostname() bool {
-	if o != nil && !isNil(o.Hostname) {
+	if o != nil && !IsNil(o.Hostname) {
 		return true
 	}
 
@@ -343,7 +346,7 @@ func (o *ProxyServerInstanceResponse) SetHostname(v string) {
 
 // GetServerRoot returns the ServerRoot field value if set, zero value otherwise.
 func (o *ProxyServerInstanceResponse) GetServerRoot() string {
-	if o == nil || isNil(o.ServerRoot) {
+	if o == nil || IsNil(o.ServerRoot) {
 		var ret string
 		return ret
 	}
@@ -353,7 +356,7 @@ func (o *ProxyServerInstanceResponse) GetServerRoot() string {
 // GetServerRootOk returns a tuple with the ServerRoot field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetServerRootOk() (*string, bool) {
-	if o == nil || isNil(o.ServerRoot) {
+	if o == nil || IsNil(o.ServerRoot) {
 		return nil, false
 	}
 	return o.ServerRoot, true
@@ -361,7 +364,7 @@ func (o *ProxyServerInstanceResponse) GetServerRootOk() (*string, bool) {
 
 // HasServerRoot returns a boolean if a field has been set.
 func (o *ProxyServerInstanceResponse) HasServerRoot() bool {
-	if o != nil && !isNil(o.ServerRoot) {
+	if o != nil && !IsNil(o.ServerRoot) {
 		return true
 	}
 
@@ -399,7 +402,7 @@ func (o *ProxyServerInstanceResponse) SetServerVersion(v string) {
 
 // GetInterServerCertificate returns the InterServerCertificate field value if set, zero value otherwise.
 func (o *ProxyServerInstanceResponse) GetInterServerCertificate() string {
-	if o == nil || isNil(o.InterServerCertificate) {
+	if o == nil || IsNil(o.InterServerCertificate) {
 		var ret string
 		return ret
 	}
@@ -409,7 +412,7 @@ func (o *ProxyServerInstanceResponse) GetInterServerCertificate() string {
 // GetInterServerCertificateOk returns a tuple with the InterServerCertificate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetInterServerCertificateOk() (*string, bool) {
-	if o == nil || isNil(o.InterServerCertificate) {
+	if o == nil || IsNil(o.InterServerCertificate) {
 		return nil, false
 	}
 	return o.InterServerCertificate, true
@@ -417,7 +420,7 @@ func (o *ProxyServerInstanceResponse) GetInterServerCertificateOk() (*string, bo
 
 // HasInterServerCertificate returns a boolean if a field has been set.
 func (o *ProxyServerInstanceResponse) HasInterServerCertificate() bool {
-	if o != nil && !isNil(o.InterServerCertificate) {
+	if o != nil && !IsNil(o.InterServerCertificate) {
 		return true
 	}
 
@@ -431,7 +434,7 @@ func (o *ProxyServerInstanceResponse) SetInterServerCertificate(v string) {
 
 // GetLdapPort returns the LdapPort field value if set, zero value otherwise.
 func (o *ProxyServerInstanceResponse) GetLdapPort() int32 {
-	if o == nil || isNil(o.LdapPort) {
+	if o == nil || IsNil(o.LdapPort) {
 		var ret int32
 		return ret
 	}
@@ -441,7 +444,7 @@ func (o *ProxyServerInstanceResponse) GetLdapPort() int32 {
 // GetLdapPortOk returns a tuple with the LdapPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetLdapPortOk() (*int32, bool) {
-	if o == nil || isNil(o.LdapPort) {
+	if o == nil || IsNil(o.LdapPort) {
 		return nil, false
 	}
 	return o.LdapPort, true
@@ -449,7 +452,7 @@ func (o *ProxyServerInstanceResponse) GetLdapPortOk() (*int32, bool) {
 
 // HasLdapPort returns a boolean if a field has been set.
 func (o *ProxyServerInstanceResponse) HasLdapPort() bool {
-	if o != nil && !isNil(o.LdapPort) {
+	if o != nil && !IsNil(o.LdapPort) {
 		return true
 	}
 
@@ -463,7 +466,7 @@ func (o *ProxyServerInstanceResponse) SetLdapPort(v int32) {
 
 // GetLdapsPort returns the LdapsPort field value if set, zero value otherwise.
 func (o *ProxyServerInstanceResponse) GetLdapsPort() int32 {
-	if o == nil || isNil(o.LdapsPort) {
+	if o == nil || IsNil(o.LdapsPort) {
 		var ret int32
 		return ret
 	}
@@ -473,7 +476,7 @@ func (o *ProxyServerInstanceResponse) GetLdapsPort() int32 {
 // GetLdapsPortOk returns a tuple with the LdapsPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetLdapsPortOk() (*int32, bool) {
-	if o == nil || isNil(o.LdapsPort) {
+	if o == nil || IsNil(o.LdapsPort) {
 		return nil, false
 	}
 	return o.LdapsPort, true
@@ -481,7 +484,7 @@ func (o *ProxyServerInstanceResponse) GetLdapsPortOk() (*int32, bool) {
 
 // HasLdapsPort returns a boolean if a field has been set.
 func (o *ProxyServerInstanceResponse) HasLdapsPort() bool {
-	if o != nil && !isNil(o.LdapsPort) {
+	if o != nil && !IsNil(o.LdapsPort) {
 		return true
 	}
 
@@ -495,7 +498,7 @@ func (o *ProxyServerInstanceResponse) SetLdapsPort(v int32) {
 
 // GetHttpPort returns the HttpPort field value if set, zero value otherwise.
 func (o *ProxyServerInstanceResponse) GetHttpPort() int32 {
-	if o == nil || isNil(o.HttpPort) {
+	if o == nil || IsNil(o.HttpPort) {
 		var ret int32
 		return ret
 	}
@@ -505,7 +508,7 @@ func (o *ProxyServerInstanceResponse) GetHttpPort() int32 {
 // GetHttpPortOk returns a tuple with the HttpPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetHttpPortOk() (*int32, bool) {
-	if o == nil || isNil(o.HttpPort) {
+	if o == nil || IsNil(o.HttpPort) {
 		return nil, false
 	}
 	return o.HttpPort, true
@@ -513,7 +516,7 @@ func (o *ProxyServerInstanceResponse) GetHttpPortOk() (*int32, bool) {
 
 // HasHttpPort returns a boolean if a field has been set.
 func (o *ProxyServerInstanceResponse) HasHttpPort() bool {
-	if o != nil && !isNil(o.HttpPort) {
+	if o != nil && !IsNil(o.HttpPort) {
 		return true
 	}
 
@@ -527,7 +530,7 @@ func (o *ProxyServerInstanceResponse) SetHttpPort(v int32) {
 
 // GetHttpsPort returns the HttpsPort field value if set, zero value otherwise.
 func (o *ProxyServerInstanceResponse) GetHttpsPort() int32 {
-	if o == nil || isNil(o.HttpsPort) {
+	if o == nil || IsNil(o.HttpsPort) {
 		var ret int32
 		return ret
 	}
@@ -537,7 +540,7 @@ func (o *ProxyServerInstanceResponse) GetHttpsPort() int32 {
 // GetHttpsPortOk returns a tuple with the HttpsPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetHttpsPortOk() (*int32, bool) {
-	if o == nil || isNil(o.HttpsPort) {
+	if o == nil || IsNil(o.HttpsPort) {
 		return nil, false
 	}
 	return o.HttpsPort, true
@@ -545,7 +548,7 @@ func (o *ProxyServerInstanceResponse) GetHttpsPortOk() (*int32, bool) {
 
 // HasHttpsPort returns a boolean if a field has been set.
 func (o *ProxyServerInstanceResponse) HasHttpsPort() bool {
-	if o != nil && !isNil(o.HttpsPort) {
+	if o != nil && !IsNil(o.HttpsPort) {
 		return true
 	}
 
@@ -559,7 +562,7 @@ func (o *ProxyServerInstanceResponse) SetHttpsPort(v int32) {
 
 // GetReplicationPort returns the ReplicationPort field value if set, zero value otherwise.
 func (o *ProxyServerInstanceResponse) GetReplicationPort() int32 {
-	if o == nil || isNil(o.ReplicationPort) {
+	if o == nil || IsNil(o.ReplicationPort) {
 		var ret int32
 		return ret
 	}
@@ -569,7 +572,7 @@ func (o *ProxyServerInstanceResponse) GetReplicationPort() int32 {
 // GetReplicationPortOk returns a tuple with the ReplicationPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetReplicationPortOk() (*int32, bool) {
-	if o == nil || isNil(o.ReplicationPort) {
+	if o == nil || IsNil(o.ReplicationPort) {
 		return nil, false
 	}
 	return o.ReplicationPort, true
@@ -577,7 +580,7 @@ func (o *ProxyServerInstanceResponse) GetReplicationPortOk() (*int32, bool) {
 
 // HasReplicationPort returns a boolean if a field has been set.
 func (o *ProxyServerInstanceResponse) HasReplicationPort() bool {
-	if o != nil && !isNil(o.ReplicationPort) {
+	if o != nil && !IsNil(o.ReplicationPort) {
 		return true
 	}
 
@@ -591,7 +594,7 @@ func (o *ProxyServerInstanceResponse) SetReplicationPort(v int32) {
 
 // GetReplicationServerID returns the ReplicationServerID field value if set, zero value otherwise.
 func (o *ProxyServerInstanceResponse) GetReplicationServerID() int32 {
-	if o == nil || isNil(o.ReplicationServerID) {
+	if o == nil || IsNil(o.ReplicationServerID) {
 		var ret int32
 		return ret
 	}
@@ -601,7 +604,7 @@ func (o *ProxyServerInstanceResponse) GetReplicationServerID() int32 {
 // GetReplicationServerIDOk returns a tuple with the ReplicationServerID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetReplicationServerIDOk() (*int32, bool) {
-	if o == nil || isNil(o.ReplicationServerID) {
+	if o == nil || IsNil(o.ReplicationServerID) {
 		return nil, false
 	}
 	return o.ReplicationServerID, true
@@ -609,7 +612,7 @@ func (o *ProxyServerInstanceResponse) GetReplicationServerIDOk() (*int32, bool) 
 
 // HasReplicationServerID returns a boolean if a field has been set.
 func (o *ProxyServerInstanceResponse) HasReplicationServerID() bool {
-	if o != nil && !isNil(o.ReplicationServerID) {
+	if o != nil && !IsNil(o.ReplicationServerID) {
 		return true
 	}
 
@@ -623,7 +626,7 @@ func (o *ProxyServerInstanceResponse) SetReplicationServerID(v int32) {
 
 // GetReplicationDomainServerID returns the ReplicationDomainServerID field value if set, zero value otherwise.
 func (o *ProxyServerInstanceResponse) GetReplicationDomainServerID() []int32 {
-	if o == nil || isNil(o.ReplicationDomainServerID) {
+	if o == nil || IsNil(o.ReplicationDomainServerID) {
 		var ret []int32
 		return ret
 	}
@@ -633,7 +636,7 @@ func (o *ProxyServerInstanceResponse) GetReplicationDomainServerID() []int32 {
 // GetReplicationDomainServerIDOk returns a tuple with the ReplicationDomainServerID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetReplicationDomainServerIDOk() ([]int32, bool) {
-	if o == nil || isNil(o.ReplicationDomainServerID) {
+	if o == nil || IsNil(o.ReplicationDomainServerID) {
 		return nil, false
 	}
 	return o.ReplicationDomainServerID, true
@@ -641,7 +644,7 @@ func (o *ProxyServerInstanceResponse) GetReplicationDomainServerIDOk() ([]int32,
 
 // HasReplicationDomainServerID returns a boolean if a field has been set.
 func (o *ProxyServerInstanceResponse) HasReplicationDomainServerID() bool {
-	if o != nil && !isNil(o.ReplicationDomainServerID) {
+	if o != nil && !IsNil(o.ReplicationDomainServerID) {
 		return true
 	}
 
@@ -655,7 +658,7 @@ func (o *ProxyServerInstanceResponse) SetReplicationDomainServerID(v []int32) {
 
 // GetJmxPort returns the JmxPort field value if set, zero value otherwise.
 func (o *ProxyServerInstanceResponse) GetJmxPort() int32 {
-	if o == nil || isNil(o.JmxPort) {
+	if o == nil || IsNil(o.JmxPort) {
 		var ret int32
 		return ret
 	}
@@ -665,7 +668,7 @@ func (o *ProxyServerInstanceResponse) GetJmxPort() int32 {
 // GetJmxPortOk returns a tuple with the JmxPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetJmxPortOk() (*int32, bool) {
-	if o == nil || isNil(o.JmxPort) {
+	if o == nil || IsNil(o.JmxPort) {
 		return nil, false
 	}
 	return o.JmxPort, true
@@ -673,7 +676,7 @@ func (o *ProxyServerInstanceResponse) GetJmxPortOk() (*int32, bool) {
 
 // HasJmxPort returns a boolean if a field has been set.
 func (o *ProxyServerInstanceResponse) HasJmxPort() bool {
-	if o != nil && !isNil(o.JmxPort) {
+	if o != nil && !IsNil(o.JmxPort) {
 		return true
 	}
 
@@ -687,7 +690,7 @@ func (o *ProxyServerInstanceResponse) SetJmxPort(v int32) {
 
 // GetJmxsPort returns the JmxsPort field value if set, zero value otherwise.
 func (o *ProxyServerInstanceResponse) GetJmxsPort() int32 {
-	if o == nil || isNil(o.JmxsPort) {
+	if o == nil || IsNil(o.JmxsPort) {
 		var ret int32
 		return ret
 	}
@@ -697,7 +700,7 @@ func (o *ProxyServerInstanceResponse) GetJmxsPort() int32 {
 // GetJmxsPortOk returns a tuple with the JmxsPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetJmxsPortOk() (*int32, bool) {
-	if o == nil || isNil(o.JmxsPort) {
+	if o == nil || IsNil(o.JmxsPort) {
 		return nil, false
 	}
 	return o.JmxsPort, true
@@ -705,7 +708,7 @@ func (o *ProxyServerInstanceResponse) GetJmxsPortOk() (*int32, bool) {
 
 // HasJmxsPort returns a boolean if a field has been set.
 func (o *ProxyServerInstanceResponse) HasJmxsPort() bool {
-	if o != nil && !isNil(o.JmxsPort) {
+	if o != nil && !IsNil(o.JmxsPort) {
 		return true
 	}
 
@@ -719,7 +722,7 @@ func (o *ProxyServerInstanceResponse) SetJmxsPort(v int32) {
 
 // GetPreferredSecurity returns the PreferredSecurity field value if set, zero value otherwise.
 func (o *ProxyServerInstanceResponse) GetPreferredSecurity() EnumserverInstancePreferredSecurityProp {
-	if o == nil || isNil(o.PreferredSecurity) {
+	if o == nil || IsNil(o.PreferredSecurity) {
 		var ret EnumserverInstancePreferredSecurityProp
 		return ret
 	}
@@ -729,7 +732,7 @@ func (o *ProxyServerInstanceResponse) GetPreferredSecurity() EnumserverInstanceP
 // GetPreferredSecurityOk returns a tuple with the PreferredSecurity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetPreferredSecurityOk() (*EnumserverInstancePreferredSecurityProp, bool) {
-	if o == nil || isNil(o.PreferredSecurity) {
+	if o == nil || IsNil(o.PreferredSecurity) {
 		return nil, false
 	}
 	return o.PreferredSecurity, true
@@ -737,7 +740,7 @@ func (o *ProxyServerInstanceResponse) GetPreferredSecurityOk() (*EnumserverInsta
 
 // HasPreferredSecurity returns a boolean if a field has been set.
 func (o *ProxyServerInstanceResponse) HasPreferredSecurity() bool {
-	if o != nil && !isNil(o.PreferredSecurity) {
+	if o != nil && !IsNil(o.PreferredSecurity) {
 		return true
 	}
 
@@ -751,7 +754,7 @@ func (o *ProxyServerInstanceResponse) SetPreferredSecurity(v EnumserverInstanceP
 
 // GetStartTLSEnabled returns the StartTLSEnabled field value if set, zero value otherwise.
 func (o *ProxyServerInstanceResponse) GetStartTLSEnabled() bool {
-	if o == nil || isNil(o.StartTLSEnabled) {
+	if o == nil || IsNil(o.StartTLSEnabled) {
 		var ret bool
 		return ret
 	}
@@ -761,7 +764,7 @@ func (o *ProxyServerInstanceResponse) GetStartTLSEnabled() bool {
 // GetStartTLSEnabledOk returns a tuple with the StartTLSEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetStartTLSEnabledOk() (*bool, bool) {
-	if o == nil || isNil(o.StartTLSEnabled) {
+	if o == nil || IsNil(o.StartTLSEnabled) {
 		return nil, false
 	}
 	return o.StartTLSEnabled, true
@@ -769,7 +772,7 @@ func (o *ProxyServerInstanceResponse) GetStartTLSEnabledOk() (*bool, bool) {
 
 // HasStartTLSEnabled returns a boolean if a field has been set.
 func (o *ProxyServerInstanceResponse) HasStartTLSEnabled() bool {
-	if o != nil && !isNil(o.StartTLSEnabled) {
+	if o != nil && !IsNil(o.StartTLSEnabled) {
 		return true
 	}
 
@@ -783,7 +786,7 @@ func (o *ProxyServerInstanceResponse) SetStartTLSEnabled(v bool) {
 
 // GetBaseDN returns the BaseDN field value if set, zero value otherwise.
 func (o *ProxyServerInstanceResponse) GetBaseDN() []string {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		var ret []string
 		return ret
 	}
@@ -793,7 +796,7 @@ func (o *ProxyServerInstanceResponse) GetBaseDN() []string {
 // GetBaseDNOk returns a tuple with the BaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		return nil, false
 	}
 	return o.BaseDN, true
@@ -801,7 +804,7 @@ func (o *ProxyServerInstanceResponse) GetBaseDNOk() ([]string, bool) {
 
 // HasBaseDN returns a boolean if a field has been set.
 func (o *ProxyServerInstanceResponse) HasBaseDN() bool {
-	if o != nil && !isNil(o.BaseDN) {
+	if o != nil && !IsNil(o.BaseDN) {
 		return true
 	}
 
@@ -815,7 +818,7 @@ func (o *ProxyServerInstanceResponse) SetBaseDN(v []string) {
 
 // GetMemberOfServerGroup returns the MemberOfServerGroup field value if set, zero value otherwise.
 func (o *ProxyServerInstanceResponse) GetMemberOfServerGroup() []string {
-	if o == nil || isNil(o.MemberOfServerGroup) {
+	if o == nil || IsNil(o.MemberOfServerGroup) {
 		var ret []string
 		return ret
 	}
@@ -825,7 +828,7 @@ func (o *ProxyServerInstanceResponse) GetMemberOfServerGroup() []string {
 // GetMemberOfServerGroupOk returns a tuple with the MemberOfServerGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetMemberOfServerGroupOk() ([]string, bool) {
-	if o == nil || isNil(o.MemberOfServerGroup) {
+	if o == nil || IsNil(o.MemberOfServerGroup) {
 		return nil, false
 	}
 	return o.MemberOfServerGroup, true
@@ -833,7 +836,7 @@ func (o *ProxyServerInstanceResponse) GetMemberOfServerGroupOk() ([]string, bool
 
 // HasMemberOfServerGroup returns a boolean if a field has been set.
 func (o *ProxyServerInstanceResponse) HasMemberOfServerGroup() bool {
-	if o != nil && !isNil(o.MemberOfServerGroup) {
+	if o != nil && !IsNil(o.MemberOfServerGroup) {
 		return true
 	}
 
@@ -846,83 +849,81 @@ func (o *ProxyServerInstanceResponse) SetMemberOfServerGroup(v []string) {
 }
 
 func (o ProxyServerInstanceResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.ServerInstanceType) {
-		toSerialize["serverInstanceType"] = o.ServerInstanceType
-	}
-	if true {
-		toSerialize["serverInstanceName"] = o.ServerInstanceName
-	}
-	if true {
-		toSerialize["clusterName"] = o.ClusterName
-	}
-	if !isNil(o.ServerInstanceLocation) {
-		toSerialize["serverInstanceLocation"] = o.ServerInstanceLocation
-	}
-	if !isNil(o.Hostname) {
-		toSerialize["hostname"] = o.Hostname
-	}
-	if !isNil(o.ServerRoot) {
-		toSerialize["serverRoot"] = o.ServerRoot
-	}
-	if true {
-		toSerialize["serverVersion"] = o.ServerVersion
-	}
-	if !isNil(o.InterServerCertificate) {
-		toSerialize["interServerCertificate"] = o.InterServerCertificate
-	}
-	if !isNil(o.LdapPort) {
-		toSerialize["ldapPort"] = o.LdapPort
-	}
-	if !isNil(o.LdapsPort) {
-		toSerialize["ldapsPort"] = o.LdapsPort
-	}
-	if !isNil(o.HttpPort) {
-		toSerialize["httpPort"] = o.HttpPort
-	}
-	if !isNil(o.HttpsPort) {
-		toSerialize["httpsPort"] = o.HttpsPort
-	}
-	if !isNil(o.ReplicationPort) {
-		toSerialize["replicationPort"] = o.ReplicationPort
-	}
-	if !isNil(o.ReplicationServerID) {
-		toSerialize["replicationServerID"] = o.ReplicationServerID
-	}
-	if !isNil(o.ReplicationDomainServerID) {
-		toSerialize["replicationDomainServerID"] = o.ReplicationDomainServerID
-	}
-	if !isNil(o.JmxPort) {
-		toSerialize["jmxPort"] = o.JmxPort
-	}
-	if !isNil(o.JmxsPort) {
-		toSerialize["jmxsPort"] = o.JmxsPort
-	}
-	if !isNil(o.PreferredSecurity) {
-		toSerialize["preferredSecurity"] = o.PreferredSecurity
-	}
-	if !isNil(o.StartTLSEnabled) {
-		toSerialize["startTLSEnabled"] = o.StartTLSEnabled
-	}
-	if !isNil(o.BaseDN) {
-		toSerialize["baseDN"] = o.BaseDN
-	}
-	if !isNil(o.MemberOfServerGroup) {
-		toSerialize["memberOfServerGroup"] = o.MemberOfServerGroup
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ProxyServerInstanceResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	if !IsNil(o.ServerInstanceType) {
+		toSerialize["serverInstanceType"] = o.ServerInstanceType
+	}
+	toSerialize["serverInstanceName"] = o.ServerInstanceName
+	toSerialize["clusterName"] = o.ClusterName
+	if !IsNil(o.ServerInstanceLocation) {
+		toSerialize["serverInstanceLocation"] = o.ServerInstanceLocation
+	}
+	if !IsNil(o.Hostname) {
+		toSerialize["hostname"] = o.Hostname
+	}
+	if !IsNil(o.ServerRoot) {
+		toSerialize["serverRoot"] = o.ServerRoot
+	}
+	toSerialize["serverVersion"] = o.ServerVersion
+	if !IsNil(o.InterServerCertificate) {
+		toSerialize["interServerCertificate"] = o.InterServerCertificate
+	}
+	if !IsNil(o.LdapPort) {
+		toSerialize["ldapPort"] = o.LdapPort
+	}
+	if !IsNil(o.LdapsPort) {
+		toSerialize["ldapsPort"] = o.LdapsPort
+	}
+	if !IsNil(o.HttpPort) {
+		toSerialize["httpPort"] = o.HttpPort
+	}
+	if !IsNil(o.HttpsPort) {
+		toSerialize["httpsPort"] = o.HttpsPort
+	}
+	if !IsNil(o.ReplicationPort) {
+		toSerialize["replicationPort"] = o.ReplicationPort
+	}
+	if !IsNil(o.ReplicationServerID) {
+		toSerialize["replicationServerID"] = o.ReplicationServerID
+	}
+	if !IsNil(o.ReplicationDomainServerID) {
+		toSerialize["replicationDomainServerID"] = o.ReplicationDomainServerID
+	}
+	if !IsNil(o.JmxPort) {
+		toSerialize["jmxPort"] = o.JmxPort
+	}
+	if !IsNil(o.JmxsPort) {
+		toSerialize["jmxsPort"] = o.JmxsPort
+	}
+	if !IsNil(o.PreferredSecurity) {
+		toSerialize["preferredSecurity"] = o.PreferredSecurity
+	}
+	if !IsNil(o.StartTLSEnabled) {
+		toSerialize["startTLSEnabled"] = o.StartTLSEnabled
+	}
+	if !IsNil(o.BaseDN) {
+		toSerialize["baseDN"] = o.BaseDN
+	}
+	if !IsNil(o.MemberOfServerGroup) {
+		toSerialize["memberOfServerGroup"] = o.MemberOfServerGroup
+	}
+	return toSerialize, nil
 }
 
 type NullableProxyServerInstanceResponse struct {

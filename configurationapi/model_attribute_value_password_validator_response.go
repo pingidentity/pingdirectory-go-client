@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AttributeValuePasswordValidatorResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AttributeValuePasswordValidatorResponse{}
+
 // AttributeValuePasswordValidatorResponse struct for AttributeValuePasswordValidatorResponse
 type AttributeValuePasswordValidatorResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -64,7 +67,7 @@ func NewAttributeValuePasswordValidatorResponseWithDefaults() *AttributeValuePas
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *AttributeValuePasswordValidatorResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -74,7 +77,7 @@ func (o *AttributeValuePasswordValidatorResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AttributeValuePasswordValidatorResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -82,7 +85,7 @@ func (o *AttributeValuePasswordValidatorResponse) GetMetaOk() (*MetaMeta, bool) 
 
 // HasMeta returns a boolean if a field has been set.
 func (o *AttributeValuePasswordValidatorResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -96,7 +99,7 @@ func (o *AttributeValuePasswordValidatorResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *AttributeValuePasswordValidatorResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -106,7 +109,7 @@ func (o *AttributeValuePasswordValidatorResponse) GetUrnpingidentityschemasconfi
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AttributeValuePasswordValidatorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -114,7 +117,7 @@ func (o *AttributeValuePasswordValidatorResponse) GetUrnpingidentityschemasconfi
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *AttributeValuePasswordValidatorResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -176,7 +179,7 @@ func (o *AttributeValuePasswordValidatorResponse) SetSchemas(v []EnumattributeVa
 
 // GetMatchAttribute returns the MatchAttribute field value if set, zero value otherwise.
 func (o *AttributeValuePasswordValidatorResponse) GetMatchAttribute() []string {
-	if o == nil || isNil(o.MatchAttribute) {
+	if o == nil || IsNil(o.MatchAttribute) {
 		var ret []string
 		return ret
 	}
@@ -186,7 +189,7 @@ func (o *AttributeValuePasswordValidatorResponse) GetMatchAttribute() []string {
 // GetMatchAttributeOk returns a tuple with the MatchAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AttributeValuePasswordValidatorResponse) GetMatchAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.MatchAttribute) {
+	if o == nil || IsNil(o.MatchAttribute) {
 		return nil, false
 	}
 	return o.MatchAttribute, true
@@ -194,7 +197,7 @@ func (o *AttributeValuePasswordValidatorResponse) GetMatchAttributeOk() ([]strin
 
 // HasMatchAttribute returns a boolean if a field has been set.
 func (o *AttributeValuePasswordValidatorResponse) HasMatchAttribute() bool {
-	if o != nil && !isNil(o.MatchAttribute) {
+	if o != nil && !IsNil(o.MatchAttribute) {
 		return true
 	}
 
@@ -208,7 +211,7 @@ func (o *AttributeValuePasswordValidatorResponse) SetMatchAttribute(v []string) 
 
 // GetTestPasswordSubstringOfAttributeValue returns the TestPasswordSubstringOfAttributeValue field value if set, zero value otherwise.
 func (o *AttributeValuePasswordValidatorResponse) GetTestPasswordSubstringOfAttributeValue() bool {
-	if o == nil || isNil(o.TestPasswordSubstringOfAttributeValue) {
+	if o == nil || IsNil(o.TestPasswordSubstringOfAttributeValue) {
 		var ret bool
 		return ret
 	}
@@ -218,7 +221,7 @@ func (o *AttributeValuePasswordValidatorResponse) GetTestPasswordSubstringOfAttr
 // GetTestPasswordSubstringOfAttributeValueOk returns a tuple with the TestPasswordSubstringOfAttributeValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AttributeValuePasswordValidatorResponse) GetTestPasswordSubstringOfAttributeValueOk() (*bool, bool) {
-	if o == nil || isNil(o.TestPasswordSubstringOfAttributeValue) {
+	if o == nil || IsNil(o.TestPasswordSubstringOfAttributeValue) {
 		return nil, false
 	}
 	return o.TestPasswordSubstringOfAttributeValue, true
@@ -226,7 +229,7 @@ func (o *AttributeValuePasswordValidatorResponse) GetTestPasswordSubstringOfAttr
 
 // HasTestPasswordSubstringOfAttributeValue returns a boolean if a field has been set.
 func (o *AttributeValuePasswordValidatorResponse) HasTestPasswordSubstringOfAttributeValue() bool {
-	if o != nil && !isNil(o.TestPasswordSubstringOfAttributeValue) {
+	if o != nil && !IsNil(o.TestPasswordSubstringOfAttributeValue) {
 		return true
 	}
 
@@ -240,7 +243,7 @@ func (o *AttributeValuePasswordValidatorResponse) SetTestPasswordSubstringOfAttr
 
 // GetTestAttributeValueSubstringOfPassword returns the TestAttributeValueSubstringOfPassword field value if set, zero value otherwise.
 func (o *AttributeValuePasswordValidatorResponse) GetTestAttributeValueSubstringOfPassword() bool {
-	if o == nil || isNil(o.TestAttributeValueSubstringOfPassword) {
+	if o == nil || IsNil(o.TestAttributeValueSubstringOfPassword) {
 		var ret bool
 		return ret
 	}
@@ -250,7 +253,7 @@ func (o *AttributeValuePasswordValidatorResponse) GetTestAttributeValueSubstring
 // GetTestAttributeValueSubstringOfPasswordOk returns a tuple with the TestAttributeValueSubstringOfPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AttributeValuePasswordValidatorResponse) GetTestAttributeValueSubstringOfPasswordOk() (*bool, bool) {
-	if o == nil || isNil(o.TestAttributeValueSubstringOfPassword) {
+	if o == nil || IsNil(o.TestAttributeValueSubstringOfPassword) {
 		return nil, false
 	}
 	return o.TestAttributeValueSubstringOfPassword, true
@@ -258,7 +261,7 @@ func (o *AttributeValuePasswordValidatorResponse) GetTestAttributeValueSubstring
 
 // HasTestAttributeValueSubstringOfPassword returns a boolean if a field has been set.
 func (o *AttributeValuePasswordValidatorResponse) HasTestAttributeValueSubstringOfPassword() bool {
-	if o != nil && !isNil(o.TestAttributeValueSubstringOfPassword) {
+	if o != nil && !IsNil(o.TestAttributeValueSubstringOfPassword) {
 		return true
 	}
 
@@ -272,7 +275,7 @@ func (o *AttributeValuePasswordValidatorResponse) SetTestAttributeValueSubstring
 
 // GetMinimumAttributeValueLengthForSubstringMatches returns the MinimumAttributeValueLengthForSubstringMatches field value if set, zero value otherwise.
 func (o *AttributeValuePasswordValidatorResponse) GetMinimumAttributeValueLengthForSubstringMatches() int32 {
-	if o == nil || isNil(o.MinimumAttributeValueLengthForSubstringMatches) {
+	if o == nil || IsNil(o.MinimumAttributeValueLengthForSubstringMatches) {
 		var ret int32
 		return ret
 	}
@@ -282,7 +285,7 @@ func (o *AttributeValuePasswordValidatorResponse) GetMinimumAttributeValueLength
 // GetMinimumAttributeValueLengthForSubstringMatchesOk returns a tuple with the MinimumAttributeValueLengthForSubstringMatches field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AttributeValuePasswordValidatorResponse) GetMinimumAttributeValueLengthForSubstringMatchesOk() (*int32, bool) {
-	if o == nil || isNil(o.MinimumAttributeValueLengthForSubstringMatches) {
+	if o == nil || IsNil(o.MinimumAttributeValueLengthForSubstringMatches) {
 		return nil, false
 	}
 	return o.MinimumAttributeValueLengthForSubstringMatches, true
@@ -290,7 +293,7 @@ func (o *AttributeValuePasswordValidatorResponse) GetMinimumAttributeValueLength
 
 // HasMinimumAttributeValueLengthForSubstringMatches returns a boolean if a field has been set.
 func (o *AttributeValuePasswordValidatorResponse) HasMinimumAttributeValueLengthForSubstringMatches() bool {
-	if o != nil && !isNil(o.MinimumAttributeValueLengthForSubstringMatches) {
+	if o != nil && !IsNil(o.MinimumAttributeValueLengthForSubstringMatches) {
 		return true
 	}
 
@@ -328,7 +331,7 @@ func (o *AttributeValuePasswordValidatorResponse) SetTestReversedPassword(v bool
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AttributeValuePasswordValidatorResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -338,7 +341,7 @@ func (o *AttributeValuePasswordValidatorResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AttributeValuePasswordValidatorResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -346,7 +349,7 @@ func (o *AttributeValuePasswordValidatorResponse) GetDescriptionOk() (*string, b
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AttributeValuePasswordValidatorResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -384,7 +387,7 @@ func (o *AttributeValuePasswordValidatorResponse) SetEnabled(v bool) {
 
 // GetValidatorRequirementDescription returns the ValidatorRequirementDescription field value if set, zero value otherwise.
 func (o *AttributeValuePasswordValidatorResponse) GetValidatorRequirementDescription() string {
-	if o == nil || isNil(o.ValidatorRequirementDescription) {
+	if o == nil || IsNil(o.ValidatorRequirementDescription) {
 		var ret string
 		return ret
 	}
@@ -394,7 +397,7 @@ func (o *AttributeValuePasswordValidatorResponse) GetValidatorRequirementDescrip
 // GetValidatorRequirementDescriptionOk returns a tuple with the ValidatorRequirementDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AttributeValuePasswordValidatorResponse) GetValidatorRequirementDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.ValidatorRequirementDescription) {
+	if o == nil || IsNil(o.ValidatorRequirementDescription) {
 		return nil, false
 	}
 	return o.ValidatorRequirementDescription, true
@@ -402,7 +405,7 @@ func (o *AttributeValuePasswordValidatorResponse) GetValidatorRequirementDescrip
 
 // HasValidatorRequirementDescription returns a boolean if a field has been set.
 func (o *AttributeValuePasswordValidatorResponse) HasValidatorRequirementDescription() bool {
-	if o != nil && !isNil(o.ValidatorRequirementDescription) {
+	if o != nil && !IsNil(o.ValidatorRequirementDescription) {
 		return true
 	}
 
@@ -416,7 +419,7 @@ func (o *AttributeValuePasswordValidatorResponse) SetValidatorRequirementDescrip
 
 // GetValidatorFailureMessage returns the ValidatorFailureMessage field value if set, zero value otherwise.
 func (o *AttributeValuePasswordValidatorResponse) GetValidatorFailureMessage() string {
-	if o == nil || isNil(o.ValidatorFailureMessage) {
+	if o == nil || IsNil(o.ValidatorFailureMessage) {
 		var ret string
 		return ret
 	}
@@ -426,7 +429,7 @@ func (o *AttributeValuePasswordValidatorResponse) GetValidatorFailureMessage() s
 // GetValidatorFailureMessageOk returns a tuple with the ValidatorFailureMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AttributeValuePasswordValidatorResponse) GetValidatorFailureMessageOk() (*string, bool) {
-	if o == nil || isNil(o.ValidatorFailureMessage) {
+	if o == nil || IsNil(o.ValidatorFailureMessage) {
 		return nil, false
 	}
 	return o.ValidatorFailureMessage, true
@@ -434,7 +437,7 @@ func (o *AttributeValuePasswordValidatorResponse) GetValidatorFailureMessageOk()
 
 // HasValidatorFailureMessage returns a boolean if a field has been set.
 func (o *AttributeValuePasswordValidatorResponse) HasValidatorFailureMessage() bool {
-	if o != nil && !isNil(o.ValidatorFailureMessage) {
+	if o != nil && !IsNil(o.ValidatorFailureMessage) {
 		return true
 	}
 
@@ -447,47 +450,47 @@ func (o *AttributeValuePasswordValidatorResponse) SetValidatorFailureMessage(v s
 }
 
 func (o AttributeValuePasswordValidatorResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.MatchAttribute) {
-		toSerialize["matchAttribute"] = o.MatchAttribute
-	}
-	if !isNil(o.TestPasswordSubstringOfAttributeValue) {
-		toSerialize["testPasswordSubstringOfAttributeValue"] = o.TestPasswordSubstringOfAttributeValue
-	}
-	if !isNil(o.TestAttributeValueSubstringOfPassword) {
-		toSerialize["testAttributeValueSubstringOfPassword"] = o.TestAttributeValueSubstringOfPassword
-	}
-	if !isNil(o.MinimumAttributeValueLengthForSubstringMatches) {
-		toSerialize["minimumAttributeValueLengthForSubstringMatches"] = o.MinimumAttributeValueLengthForSubstringMatches
-	}
-	if true {
-		toSerialize["testReversedPassword"] = o.TestReversedPassword
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.ValidatorRequirementDescription) {
-		toSerialize["validatorRequirementDescription"] = o.ValidatorRequirementDescription
-	}
-	if !isNil(o.ValidatorFailureMessage) {
-		toSerialize["validatorFailureMessage"] = o.ValidatorFailureMessage
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AttributeValuePasswordValidatorResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.MatchAttribute) {
+		toSerialize["matchAttribute"] = o.MatchAttribute
+	}
+	if !IsNil(o.TestPasswordSubstringOfAttributeValue) {
+		toSerialize["testPasswordSubstringOfAttributeValue"] = o.TestPasswordSubstringOfAttributeValue
+	}
+	if !IsNil(o.TestAttributeValueSubstringOfPassword) {
+		toSerialize["testAttributeValueSubstringOfPassword"] = o.TestAttributeValueSubstringOfPassword
+	}
+	if !IsNil(o.MinimumAttributeValueLengthForSubstringMatches) {
+		toSerialize["minimumAttributeValueLengthForSubstringMatches"] = o.MinimumAttributeValueLengthForSubstringMatches
+	}
+	toSerialize["testReversedPassword"] = o.TestReversedPassword
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.ValidatorRequirementDescription) {
+		toSerialize["validatorRequirementDescription"] = o.ValidatorRequirementDescription
+	}
+	if !IsNil(o.ValidatorFailureMessage) {
+		toSerialize["validatorFailureMessage"] = o.ValidatorFailureMessage
+	}
+	return toSerialize, nil
 }
 
 type NullableAttributeValuePasswordValidatorResponse struct {

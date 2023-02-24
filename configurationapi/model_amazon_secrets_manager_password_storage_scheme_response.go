@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AmazonSecretsManagerPasswordStorageSchemeResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AmazonSecretsManagerPasswordStorageSchemeResponse{}
+
 // AmazonSecretsManagerPasswordStorageSchemeResponse struct for AmazonSecretsManagerPasswordStorageSchemeResponse
 type AmazonSecretsManagerPasswordStorageSchemeResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -54,7 +57,7 @@ func NewAmazonSecretsManagerPasswordStorageSchemeResponseWithDefaults() *AmazonS
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -64,7 +67,7 @@ func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -72,7 +75,7 @@ func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetMetaOk() (*MetaMe
 
 // HasMeta returns a boolean if a field has been set.
 func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -86,7 +89,7 @@ func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) SetMeta(v MetaMeta) 
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -96,7 +99,7 @@ func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetUrnpingidentitysc
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -104,7 +107,7 @@ func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetUrnpingidentitysc
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -190,7 +193,7 @@ func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) SetAwsExternalServer
 
 // GetDefaultField returns the DefaultField field value if set, zero value otherwise.
 func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetDefaultField() string {
-	if o == nil || isNil(o.DefaultField) {
+	if o == nil || IsNil(o.DefaultField) {
 		var ret string
 		return ret
 	}
@@ -200,7 +203,7 @@ func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetDefaultField() st
 // GetDefaultFieldOk returns a tuple with the DefaultField field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetDefaultFieldOk() (*string, bool) {
-	if o == nil || isNil(o.DefaultField) {
+	if o == nil || IsNil(o.DefaultField) {
 		return nil, false
 	}
 	return o.DefaultField, true
@@ -208,7 +211,7 @@ func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetDefaultFieldOk() 
 
 // HasDefaultField returns a boolean if a field has been set.
 func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) HasDefaultField() bool {
-	if o != nil && !isNil(o.DefaultField) {
+	if o != nil && !IsNil(o.DefaultField) {
 		return true
 	}
 
@@ -222,7 +225,7 @@ func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) SetDefaultField(v st
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -232,7 +235,7 @@ func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetDescription() str
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -240,7 +243,7 @@ func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetDescriptionOk() (
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -277,32 +280,32 @@ func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) SetEnabled(v bool) {
 }
 
 func (o AmazonSecretsManagerPasswordStorageSchemeResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["awsExternalServer"] = o.AwsExternalServer
-	}
-	if !isNil(o.DefaultField) {
-		toSerialize["defaultField"] = o.DefaultField
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AmazonSecretsManagerPasswordStorageSchemeResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["awsExternalServer"] = o.AwsExternalServer
+	if !IsNil(o.DefaultField) {
+		toSerialize["defaultField"] = o.DefaultField
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAmazonSecretsManagerPasswordStorageSchemeResponse struct {

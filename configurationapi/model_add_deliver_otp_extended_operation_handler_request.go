@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddDeliverOtpExtendedOperationHandlerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddDeliverOtpExtendedOperationHandlerRequest{}
+
 // AddDeliverOtpExtendedOperationHandlerRequest struct for AddDeliverOtpExtendedOperationHandlerRequest
 type AddDeliverOtpExtendedOperationHandlerRequest struct {
 	// Name of the new Extended Operation Handler
@@ -176,7 +179,7 @@ func (o *AddDeliverOtpExtendedOperationHandlerRequest) SetDefaultOTPDeliveryMech
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddDeliverOtpExtendedOperationHandlerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -186,7 +189,7 @@ func (o *AddDeliverOtpExtendedOperationHandlerRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDeliverOtpExtendedOperationHandlerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -194,7 +197,7 @@ func (o *AddDeliverOtpExtendedOperationHandlerRequest) GetDescriptionOk() (*stri
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddDeliverOtpExtendedOperationHandlerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -231,29 +234,25 @@ func (o *AddDeliverOtpExtendedOperationHandlerRequest) SetEnabled(v bool) {
 }
 
 func (o AddDeliverOtpExtendedOperationHandlerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["handlerName"] = o.HandlerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["identityMapper"] = o.IdentityMapper
-	}
-	if true {
-		toSerialize["passwordGenerator"] = o.PasswordGenerator
-	}
-	if true {
-		toSerialize["defaultOTPDeliveryMechanism"] = o.DefaultOTPDeliveryMechanism
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddDeliverOtpExtendedOperationHandlerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["handlerName"] = o.HandlerName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["identityMapper"] = o.IdentityMapper
+	toSerialize["passwordGenerator"] = o.PasswordGenerator
+	toSerialize["defaultOTPDeliveryMechanism"] = o.DefaultOTPDeliveryMechanism
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddDeliverOtpExtendedOperationHandlerRequest struct {

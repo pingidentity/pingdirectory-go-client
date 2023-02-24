@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -70,9 +70,9 @@ func (a *InterServerAuthenticationInfoApiService) GetInterServerAuthenticationIn
 	}
 
 	localVarPath := localBasePath + "/server-instances/{server-instance-name}/server-instance-listeners/{server-instance-listener-name}/inter-server-authentication-info/{inter-server-authentication-info-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"inter-server-authentication-info-name"+"}", url.PathEscape(parameterToString(r.interServerAuthenticationInfoName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"server-instance-listener-name"+"}", url.PathEscape(parameterToString(r.serverInstanceListenerName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"server-instance-name"+"}", url.PathEscape(parameterToString(r.serverInstanceName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inter-server-authentication-info-name"+"}", url.PathEscape(parameterValueToString(r.interServerAuthenticationInfoName, "interServerAuthenticationInfoName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"server-instance-listener-name"+"}", url.PathEscape(parameterValueToString(r.serverInstanceListenerName, "serverInstanceListenerName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"server-instance-name"+"}", url.PathEscape(parameterValueToString(r.serverInstanceName, "serverInstanceName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -105,9 +105,9 @@ func (a *InterServerAuthenticationInfoApiService) GetInterServerAuthenticationIn
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -187,9 +187,9 @@ func (a *InterServerAuthenticationInfoApiService) UpdateInterServerAuthenticatio
 	}
 
 	localVarPath := localBasePath + "/server-instances/{server-instance-name}/server-instance-listeners/{server-instance-listener-name}/inter-server-authentication-info/{inter-server-authentication-info-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"inter-server-authentication-info-name"+"}", url.PathEscape(parameterToString(r.interServerAuthenticationInfoName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"server-instance-listener-name"+"}", url.PathEscape(parameterToString(r.serverInstanceListenerName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"server-instance-name"+"}", url.PathEscape(parameterToString(r.serverInstanceName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inter-server-authentication-info-name"+"}", url.PathEscape(parameterValueToString(r.interServerAuthenticationInfoName, "interServerAuthenticationInfoName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"server-instance-listener-name"+"}", url.PathEscape(parameterValueToString(r.serverInstanceListenerName, "serverInstanceListenerName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"server-instance-name"+"}", url.PathEscape(parameterValueToString(r.serverInstanceName, "serverInstanceName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -227,9 +227,9 @@ func (a *InterServerAuthenticationInfoApiService) UpdateInterServerAuthenticatio
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

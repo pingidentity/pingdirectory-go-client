@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -105,9 +105,9 @@ func (a *PasswordGeneratorApiService) AddPasswordGeneratorExecute(r ApiAddPasswo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -171,7 +171,7 @@ func (a *PasswordGeneratorApiService) DeletePasswordGeneratorExecute(r ApiDelete
 	}
 
 	localVarPath := localBasePath + "/password-generators/{password-generator-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"password-generator-name"+"}", url.PathEscape(parameterToString(r.passwordGeneratorName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"password-generator-name"+"}", url.PathEscape(parameterValueToString(r.passwordGeneratorName, "passwordGeneratorName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -204,9 +204,9 @@ func (a *PasswordGeneratorApiService) DeletePasswordGeneratorExecute(r ApiDelete
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -264,7 +264,7 @@ func (a *PasswordGeneratorApiService) GetPasswordGeneratorExecute(r ApiGetPasswo
 	}
 
 	localVarPath := localBasePath + "/password-generators/{password-generator-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"password-generator-name"+"}", url.PathEscape(parameterToString(r.passwordGeneratorName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"password-generator-name"+"}", url.PathEscape(parameterValueToString(r.passwordGeneratorName, "passwordGeneratorName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -297,9 +297,9 @@ func (a *PasswordGeneratorApiService) GetPasswordGeneratorExecute(r ApiGetPasswo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -373,7 +373,7 @@ func (a *PasswordGeneratorApiService) UpdatePasswordGeneratorExecute(r ApiUpdate
 	}
 
 	localVarPath := localBasePath + "/password-generators/{password-generator-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"password-generator-name"+"}", url.PathEscape(parameterToString(r.passwordGeneratorName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"password-generator-name"+"}", url.PathEscape(parameterValueToString(r.passwordGeneratorName, "passwordGeneratorName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -411,9 +411,9 @@ func (a *PasswordGeneratorApiService) UpdatePasswordGeneratorExecute(r ApiUpdate
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

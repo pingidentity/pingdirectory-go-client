@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the VelocityTemplateLoaderResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &VelocityTemplateLoaderResponse{}
+
 // VelocityTemplateLoaderResponse struct for VelocityTemplateLoaderResponse
 type VelocityTemplateLoaderResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -57,7 +60,7 @@ func NewVelocityTemplateLoaderResponseWithDefaults() *VelocityTemplateLoaderResp
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *VelocityTemplateLoaderResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -67,7 +70,7 @@ func (o *VelocityTemplateLoaderResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityTemplateLoaderResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -75,7 +78,7 @@ func (o *VelocityTemplateLoaderResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *VelocityTemplateLoaderResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -89,7 +92,7 @@ func (o *VelocityTemplateLoaderResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *VelocityTemplateLoaderResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -99,7 +102,7 @@ func (o *VelocityTemplateLoaderResponse) GetUrnpingidentityschemasconfigurationm
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityTemplateLoaderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -107,7 +110,7 @@ func (o *VelocityTemplateLoaderResponse) GetUrnpingidentityschemasconfigurationm
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *VelocityTemplateLoaderResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -145,7 +148,7 @@ func (o *VelocityTemplateLoaderResponse) SetId(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *VelocityTemplateLoaderResponse) GetSchemas() []EnumvelocityTemplateLoaderSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumvelocityTemplateLoaderSchemaUrn
 		return ret
 	}
@@ -155,7 +158,7 @@ func (o *VelocityTemplateLoaderResponse) GetSchemas() []EnumvelocityTemplateLoad
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityTemplateLoaderResponse) GetSchemasOk() ([]EnumvelocityTemplateLoaderSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -163,7 +166,7 @@ func (o *VelocityTemplateLoaderResponse) GetSchemasOk() ([]EnumvelocityTemplateL
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *VelocityTemplateLoaderResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -177,7 +180,7 @@ func (o *VelocityTemplateLoaderResponse) SetSchemas(v []EnumvelocityTemplateLoad
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
 func (o *VelocityTemplateLoaderResponse) GetEnabled() bool {
-	if o == nil || isNil(o.Enabled) {
+	if o == nil || IsNil(o.Enabled) {
 		var ret bool
 		return ret
 	}
@@ -187,7 +190,7 @@ func (o *VelocityTemplateLoaderResponse) GetEnabled() bool {
 // GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityTemplateLoaderResponse) GetEnabledOk() (*bool, bool) {
-	if o == nil || isNil(o.Enabled) {
+	if o == nil || IsNil(o.Enabled) {
 		return nil, false
 	}
 	return o.Enabled, true
@@ -195,7 +198,7 @@ func (o *VelocityTemplateLoaderResponse) GetEnabledOk() (*bool, bool) {
 
 // HasEnabled returns a boolean if a field has been set.
 func (o *VelocityTemplateLoaderResponse) HasEnabled() bool {
-	if o != nil && !isNil(o.Enabled) {
+	if o != nil && !IsNil(o.Enabled) {
 		return true
 	}
 
@@ -257,7 +260,7 @@ func (o *VelocityTemplateLoaderResponse) SetMimeTypeMatcher(v string) {
 
 // GetMimeType returns the MimeType field value if set, zero value otherwise.
 func (o *VelocityTemplateLoaderResponse) GetMimeType() string {
-	if o == nil || isNil(o.MimeType) {
+	if o == nil || IsNil(o.MimeType) {
 		var ret string
 		return ret
 	}
@@ -267,7 +270,7 @@ func (o *VelocityTemplateLoaderResponse) GetMimeType() string {
 // GetMimeTypeOk returns a tuple with the MimeType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityTemplateLoaderResponse) GetMimeTypeOk() (*string, bool) {
-	if o == nil || isNil(o.MimeType) {
+	if o == nil || IsNil(o.MimeType) {
 		return nil, false
 	}
 	return o.MimeType, true
@@ -275,7 +278,7 @@ func (o *VelocityTemplateLoaderResponse) GetMimeTypeOk() (*string, bool) {
 
 // HasMimeType returns a boolean if a field has been set.
 func (o *VelocityTemplateLoaderResponse) HasMimeType() bool {
-	if o != nil && !isNil(o.MimeType) {
+	if o != nil && !IsNil(o.MimeType) {
 		return true
 	}
 
@@ -289,7 +292,7 @@ func (o *VelocityTemplateLoaderResponse) SetMimeType(v string) {
 
 // GetTemplateSuffix returns the TemplateSuffix field value if set, zero value otherwise.
 func (o *VelocityTemplateLoaderResponse) GetTemplateSuffix() string {
-	if o == nil || isNil(o.TemplateSuffix) {
+	if o == nil || IsNil(o.TemplateSuffix) {
 		var ret string
 		return ret
 	}
@@ -299,7 +302,7 @@ func (o *VelocityTemplateLoaderResponse) GetTemplateSuffix() string {
 // GetTemplateSuffixOk returns a tuple with the TemplateSuffix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityTemplateLoaderResponse) GetTemplateSuffixOk() (*string, bool) {
-	if o == nil || isNil(o.TemplateSuffix) {
+	if o == nil || IsNil(o.TemplateSuffix) {
 		return nil, false
 	}
 	return o.TemplateSuffix, true
@@ -307,7 +310,7 @@ func (o *VelocityTemplateLoaderResponse) GetTemplateSuffixOk() (*string, bool) {
 
 // HasTemplateSuffix returns a boolean if a field has been set.
 func (o *VelocityTemplateLoaderResponse) HasTemplateSuffix() bool {
-	if o != nil && !isNil(o.TemplateSuffix) {
+	if o != nil && !IsNil(o.TemplateSuffix) {
 		return true
 	}
 
@@ -321,7 +324,7 @@ func (o *VelocityTemplateLoaderResponse) SetTemplateSuffix(v string) {
 
 // GetTemplateDirectory returns the TemplateDirectory field value if set, zero value otherwise.
 func (o *VelocityTemplateLoaderResponse) GetTemplateDirectory() string {
-	if o == nil || isNil(o.TemplateDirectory) {
+	if o == nil || IsNil(o.TemplateDirectory) {
 		var ret string
 		return ret
 	}
@@ -331,7 +334,7 @@ func (o *VelocityTemplateLoaderResponse) GetTemplateDirectory() string {
 // GetTemplateDirectoryOk returns a tuple with the TemplateDirectory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VelocityTemplateLoaderResponse) GetTemplateDirectoryOk() (*string, bool) {
-	if o == nil || isNil(o.TemplateDirectory) {
+	if o == nil || IsNil(o.TemplateDirectory) {
 		return nil, false
 	}
 	return o.TemplateDirectory, true
@@ -339,7 +342,7 @@ func (o *VelocityTemplateLoaderResponse) GetTemplateDirectoryOk() (*string, bool
 
 // HasTemplateDirectory returns a boolean if a field has been set.
 func (o *VelocityTemplateLoaderResponse) HasTemplateDirectory() bool {
-	if o != nil && !isNil(o.TemplateDirectory) {
+	if o != nil && !IsNil(o.TemplateDirectory) {
 		return true
 	}
 
@@ -352,38 +355,40 @@ func (o *VelocityTemplateLoaderResponse) SetTemplateDirectory(v string) {
 }
 
 func (o VelocityTemplateLoaderResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Enabled) {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if true {
-		toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
-	}
-	if true {
-		toSerialize["mimeTypeMatcher"] = o.MimeTypeMatcher
-	}
-	if !isNil(o.MimeType) {
-		toSerialize["mimeType"] = o.MimeType
-	}
-	if !isNil(o.TemplateSuffix) {
-		toSerialize["templateSuffix"] = o.TemplateSuffix
-	}
-	if !isNil(o.TemplateDirectory) {
-		toSerialize["templateDirectory"] = o.TemplateDirectory
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o VelocityTemplateLoaderResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.Enabled) {
+		toSerialize["enabled"] = o.Enabled
+	}
+	toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
+	toSerialize["mimeTypeMatcher"] = o.MimeTypeMatcher
+	if !IsNil(o.MimeType) {
+		toSerialize["mimeType"] = o.MimeType
+	}
+	if !IsNil(o.TemplateSuffix) {
+		toSerialize["templateSuffix"] = o.TemplateSuffix
+	}
+	if !IsNil(o.TemplateDirectory) {
+		toSerialize["templateDirectory"] = o.TemplateDirectory
+	}
+	return toSerialize, nil
 }
 
 type NullableVelocityTemplateLoaderResponse struct {

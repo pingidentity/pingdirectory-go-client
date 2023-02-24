@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddUsernamePasswordAzureAuthenticationMethodRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddUsernamePasswordAzureAuthenticationMethodRequest{}
+
 // AddUsernamePasswordAzureAuthenticationMethodRequest struct for AddUsernamePasswordAzureAuthenticationMethodRequest
 type AddUsernamePasswordAzureAuthenticationMethodRequest struct {
 	// Name of the new Azure Authentication Method
@@ -200,7 +203,7 @@ func (o *AddUsernamePasswordAzureAuthenticationMethodRequest) SetPassword(v stri
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddUsernamePasswordAzureAuthenticationMethodRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -210,7 +213,7 @@ func (o *AddUsernamePasswordAzureAuthenticationMethodRequest) GetDescription() s
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddUsernamePasswordAzureAuthenticationMethodRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -218,7 +221,7 @@ func (o *AddUsernamePasswordAzureAuthenticationMethodRequest) GetDescriptionOk()
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddUsernamePasswordAzureAuthenticationMethodRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -231,29 +234,25 @@ func (o *AddUsernamePasswordAzureAuthenticationMethodRequest) SetDescription(v s
 }
 
 func (o AddUsernamePasswordAzureAuthenticationMethodRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["methodName"] = o.MethodName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["tenantID"] = o.TenantID
-	}
-	if true {
-		toSerialize["clientID"] = o.ClientID
-	}
-	if true {
-		toSerialize["username"] = o.Username
-	}
-	if true {
-		toSerialize["password"] = o.Password
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddUsernamePasswordAzureAuthenticationMethodRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["methodName"] = o.MethodName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["tenantID"] = o.TenantID
+	toSerialize["clientID"] = o.ClientID
+	toSerialize["username"] = o.Username
+	toSerialize["password"] = o.Password
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAddUsernamePasswordAzureAuthenticationMethodRequest struct {

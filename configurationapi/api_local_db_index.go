@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -71,7 +71,7 @@ func (a *LocalDbIndexApiService) AddLocalDbIndexExecute(r ApiAddLocalDbIndexRequ
 	}
 
 	localVarPath := localBasePath + "/backends/{backend-name}/local-db-indexes"
-	localVarPath = strings.Replace(localVarPath, "{"+"backend-name"+"}", url.PathEscape(parameterToString(r.backendName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"backend-name"+"}", url.PathEscape(parameterValueToString(r.backendName, "backendName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -109,9 +109,9 @@ func (a *LocalDbIndexApiService) AddLocalDbIndexExecute(r ApiAddLocalDbIndexRequ
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -178,8 +178,8 @@ func (a *LocalDbIndexApiService) DeleteLocalDbIndexExecute(r ApiDeleteLocalDbInd
 	}
 
 	localVarPath := localBasePath + "/backends/{backend-name}/local-db-indexes/{local-db-index-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"local-db-index-name"+"}", url.PathEscape(parameterToString(r.localDbIndexName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"backend-name"+"}", url.PathEscape(parameterToString(r.backendName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"local-db-index-name"+"}", url.PathEscape(parameterValueToString(r.localDbIndexName, "localDbIndexName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"backend-name"+"}", url.PathEscape(parameterValueToString(r.backendName, "backendName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -212,9 +212,9 @@ func (a *LocalDbIndexApiService) DeleteLocalDbIndexExecute(r ApiDeleteLocalDbInd
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -275,8 +275,8 @@ func (a *LocalDbIndexApiService) GetLocalDbIndexExecute(r ApiGetLocalDbIndexRequ
 	}
 
 	localVarPath := localBasePath + "/backends/{backend-name}/local-db-indexes/{local-db-index-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"local-db-index-name"+"}", url.PathEscape(parameterToString(r.localDbIndexName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"backend-name"+"}", url.PathEscape(parameterToString(r.backendName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"local-db-index-name"+"}", url.PathEscape(parameterValueToString(r.localDbIndexName, "localDbIndexName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"backend-name"+"}", url.PathEscape(parameterValueToString(r.backendName, "backendName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -309,9 +309,9 @@ func (a *LocalDbIndexApiService) GetLocalDbIndexExecute(r ApiGetLocalDbIndexRequ
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -388,8 +388,8 @@ func (a *LocalDbIndexApiService) UpdateLocalDbIndexExecute(r ApiUpdateLocalDbInd
 	}
 
 	localVarPath := localBasePath + "/backends/{backend-name}/local-db-indexes/{local-db-index-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"local-db-index-name"+"}", url.PathEscape(parameterToString(r.localDbIndexName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"backend-name"+"}", url.PathEscape(parameterToString(r.backendName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"local-db-index-name"+"}", url.PathEscape(parameterValueToString(r.localDbIndexName, "localDbIndexName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"backend-name"+"}", url.PathEscape(parameterValueToString(r.backendName, "backendName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -427,9 +427,9 @@ func (a *LocalDbIndexApiService) UpdateLocalDbIndexExecute(r ApiUpdateLocalDbInd
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

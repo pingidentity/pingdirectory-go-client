@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddDelegatedAdminAttributeCategoryRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddDelegatedAdminAttributeCategoryRequest{}
+
 // AddDelegatedAdminAttributeCategoryRequest struct for AddDelegatedAdminAttributeCategoryRequest
 type AddDelegatedAdminAttributeCategoryRequest struct {
 	// A human readable display name for this Delegated Admin Attribute Category.
@@ -70,7 +73,7 @@ func (o *AddDelegatedAdminAttributeCategoryRequest) SetDisplayName(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *AddDelegatedAdminAttributeCategoryRequest) GetSchemas() []EnumdelegatedAdminAttributeCategorySchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumdelegatedAdminAttributeCategorySchemaUrn
 		return ret
 	}
@@ -80,7 +83,7 @@ func (o *AddDelegatedAdminAttributeCategoryRequest) GetSchemas() []Enumdelegated
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDelegatedAdminAttributeCategoryRequest) GetSchemasOk() ([]EnumdelegatedAdminAttributeCategorySchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -88,7 +91,7 @@ func (o *AddDelegatedAdminAttributeCategoryRequest) GetSchemasOk() ([]Enumdelega
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *AddDelegatedAdminAttributeCategoryRequest) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -102,7 +105,7 @@ func (o *AddDelegatedAdminAttributeCategoryRequest) SetSchemas(v []Enumdelegated
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddDelegatedAdminAttributeCategoryRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -112,7 +115,7 @@ func (o *AddDelegatedAdminAttributeCategoryRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDelegatedAdminAttributeCategoryRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -120,7 +123,7 @@ func (o *AddDelegatedAdminAttributeCategoryRequest) GetDescriptionOk() (*string,
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddDelegatedAdminAttributeCategoryRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -157,20 +160,24 @@ func (o *AddDelegatedAdminAttributeCategoryRequest) SetDisplayOrderIndex(v int32
 }
 
 func (o AddDelegatedAdminAttributeCategoryRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["displayName"] = o.DisplayName
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["displayOrderIndex"] = o.DisplayOrderIndex
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddDelegatedAdminAttributeCategoryRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["displayName"] = o.DisplayName
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["displayOrderIndex"] = o.DisplayOrderIndex
+	return toSerialize, nil
 }
 
 type NullableAddDelegatedAdminAttributeCategoryRequest struct {

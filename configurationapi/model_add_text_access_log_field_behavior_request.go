@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddTextAccessLogFieldBehaviorRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddTextAccessLogFieldBehaviorRequest{}
+
 // AddTextAccessLogFieldBehaviorRequest struct for AddTextAccessLogFieldBehaviorRequest
 type AddTextAccessLogFieldBehaviorRequest struct {
 	// Name of the new Log Field Behavior
@@ -111,7 +114,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) SetSchemas(v []EnumtextAccessLogF
 
 // GetPreserveField returns the PreserveField field value if set, zero value otherwise.
 func (o *AddTextAccessLogFieldBehaviorRequest) GetPreserveField() []EnumlogFieldBehaviorPreserveFieldProp {
-	if o == nil || isNil(o.PreserveField) {
+	if o == nil || IsNil(o.PreserveField) {
 		var ret []EnumlogFieldBehaviorPreserveFieldProp
 		return ret
 	}
@@ -121,7 +124,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) GetPreserveField() []EnumlogField
 // GetPreserveFieldOk returns a tuple with the PreserveField field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddTextAccessLogFieldBehaviorRequest) GetPreserveFieldOk() ([]EnumlogFieldBehaviorPreserveFieldProp, bool) {
-	if o == nil || isNil(o.PreserveField) {
+	if o == nil || IsNil(o.PreserveField) {
 		return nil, false
 	}
 	return o.PreserveField, true
@@ -129,7 +132,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) GetPreserveFieldOk() ([]EnumlogFi
 
 // HasPreserveField returns a boolean if a field has been set.
 func (o *AddTextAccessLogFieldBehaviorRequest) HasPreserveField() bool {
-	if o != nil && !isNil(o.PreserveField) {
+	if o != nil && !IsNil(o.PreserveField) {
 		return true
 	}
 
@@ -143,7 +146,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) SetPreserveField(v []EnumlogField
 
 // GetPreserveFieldName returns the PreserveFieldName field value if set, zero value otherwise.
 func (o *AddTextAccessLogFieldBehaviorRequest) GetPreserveFieldName() []string {
-	if o == nil || isNil(o.PreserveFieldName) {
+	if o == nil || IsNil(o.PreserveFieldName) {
 		var ret []string
 		return ret
 	}
@@ -153,7 +156,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) GetPreserveFieldName() []string {
 // GetPreserveFieldNameOk returns a tuple with the PreserveFieldName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddTextAccessLogFieldBehaviorRequest) GetPreserveFieldNameOk() ([]string, bool) {
-	if o == nil || isNil(o.PreserveFieldName) {
+	if o == nil || IsNil(o.PreserveFieldName) {
 		return nil, false
 	}
 	return o.PreserveFieldName, true
@@ -161,7 +164,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) GetPreserveFieldNameOk() ([]strin
 
 // HasPreserveFieldName returns a boolean if a field has been set.
 func (o *AddTextAccessLogFieldBehaviorRequest) HasPreserveFieldName() bool {
-	if o != nil && !isNil(o.PreserveFieldName) {
+	if o != nil && !IsNil(o.PreserveFieldName) {
 		return true
 	}
 
@@ -175,7 +178,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) SetPreserveFieldName(v []string) 
 
 // GetOmitField returns the OmitField field value if set, zero value otherwise.
 func (o *AddTextAccessLogFieldBehaviorRequest) GetOmitField() []EnumlogFieldBehaviorOmitFieldProp {
-	if o == nil || isNil(o.OmitField) {
+	if o == nil || IsNil(o.OmitField) {
 		var ret []EnumlogFieldBehaviorOmitFieldProp
 		return ret
 	}
@@ -185,7 +188,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) GetOmitField() []EnumlogFieldBeha
 // GetOmitFieldOk returns a tuple with the OmitField field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddTextAccessLogFieldBehaviorRequest) GetOmitFieldOk() ([]EnumlogFieldBehaviorOmitFieldProp, bool) {
-	if o == nil || isNil(o.OmitField) {
+	if o == nil || IsNil(o.OmitField) {
 		return nil, false
 	}
 	return o.OmitField, true
@@ -193,7 +196,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) GetOmitFieldOk() ([]EnumlogFieldB
 
 // HasOmitField returns a boolean if a field has been set.
 func (o *AddTextAccessLogFieldBehaviorRequest) HasOmitField() bool {
-	if o != nil && !isNil(o.OmitField) {
+	if o != nil && !IsNil(o.OmitField) {
 		return true
 	}
 
@@ -207,7 +210,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) SetOmitField(v []EnumlogFieldBeha
 
 // GetOmitFieldName returns the OmitFieldName field value if set, zero value otherwise.
 func (o *AddTextAccessLogFieldBehaviorRequest) GetOmitFieldName() []string {
-	if o == nil || isNil(o.OmitFieldName) {
+	if o == nil || IsNil(o.OmitFieldName) {
 		var ret []string
 		return ret
 	}
@@ -217,7 +220,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) GetOmitFieldName() []string {
 // GetOmitFieldNameOk returns a tuple with the OmitFieldName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddTextAccessLogFieldBehaviorRequest) GetOmitFieldNameOk() ([]string, bool) {
-	if o == nil || isNil(o.OmitFieldName) {
+	if o == nil || IsNil(o.OmitFieldName) {
 		return nil, false
 	}
 	return o.OmitFieldName, true
@@ -225,7 +228,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) GetOmitFieldNameOk() ([]string, b
 
 // HasOmitFieldName returns a boolean if a field has been set.
 func (o *AddTextAccessLogFieldBehaviorRequest) HasOmitFieldName() bool {
-	if o != nil && !isNil(o.OmitFieldName) {
+	if o != nil && !IsNil(o.OmitFieldName) {
 		return true
 	}
 
@@ -239,7 +242,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) SetOmitFieldName(v []string) {
 
 // GetRedactEntireValueField returns the RedactEntireValueField field value if set, zero value otherwise.
 func (o *AddTextAccessLogFieldBehaviorRequest) GetRedactEntireValueField() []EnumlogFieldBehaviorRedactEntireValueFieldProp {
-	if o == nil || isNil(o.RedactEntireValueField) {
+	if o == nil || IsNil(o.RedactEntireValueField) {
 		var ret []EnumlogFieldBehaviorRedactEntireValueFieldProp
 		return ret
 	}
@@ -249,7 +252,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) GetRedactEntireValueField() []Enu
 // GetRedactEntireValueFieldOk returns a tuple with the RedactEntireValueField field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddTextAccessLogFieldBehaviorRequest) GetRedactEntireValueFieldOk() ([]EnumlogFieldBehaviorRedactEntireValueFieldProp, bool) {
-	if o == nil || isNil(o.RedactEntireValueField) {
+	if o == nil || IsNil(o.RedactEntireValueField) {
 		return nil, false
 	}
 	return o.RedactEntireValueField, true
@@ -257,7 +260,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) GetRedactEntireValueFieldOk() ([]
 
 // HasRedactEntireValueField returns a boolean if a field has been set.
 func (o *AddTextAccessLogFieldBehaviorRequest) HasRedactEntireValueField() bool {
-	if o != nil && !isNil(o.RedactEntireValueField) {
+	if o != nil && !IsNil(o.RedactEntireValueField) {
 		return true
 	}
 
@@ -271,7 +274,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) SetRedactEntireValueField(v []Enu
 
 // GetRedactEntireValueFieldName returns the RedactEntireValueFieldName field value if set, zero value otherwise.
 func (o *AddTextAccessLogFieldBehaviorRequest) GetRedactEntireValueFieldName() []string {
-	if o == nil || isNil(o.RedactEntireValueFieldName) {
+	if o == nil || IsNil(o.RedactEntireValueFieldName) {
 		var ret []string
 		return ret
 	}
@@ -281,7 +284,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) GetRedactEntireValueFieldName() [
 // GetRedactEntireValueFieldNameOk returns a tuple with the RedactEntireValueFieldName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddTextAccessLogFieldBehaviorRequest) GetRedactEntireValueFieldNameOk() ([]string, bool) {
-	if o == nil || isNil(o.RedactEntireValueFieldName) {
+	if o == nil || IsNil(o.RedactEntireValueFieldName) {
 		return nil, false
 	}
 	return o.RedactEntireValueFieldName, true
@@ -289,7 +292,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) GetRedactEntireValueFieldNameOk()
 
 // HasRedactEntireValueFieldName returns a boolean if a field has been set.
 func (o *AddTextAccessLogFieldBehaviorRequest) HasRedactEntireValueFieldName() bool {
-	if o != nil && !isNil(o.RedactEntireValueFieldName) {
+	if o != nil && !IsNil(o.RedactEntireValueFieldName) {
 		return true
 	}
 
@@ -303,7 +306,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) SetRedactEntireValueFieldName(v [
 
 // GetRedactValueComponentsField returns the RedactValueComponentsField field value if set, zero value otherwise.
 func (o *AddTextAccessLogFieldBehaviorRequest) GetRedactValueComponentsField() []EnumlogFieldBehaviorRedactValueComponentsFieldProp {
-	if o == nil || isNil(o.RedactValueComponentsField) {
+	if o == nil || IsNil(o.RedactValueComponentsField) {
 		var ret []EnumlogFieldBehaviorRedactValueComponentsFieldProp
 		return ret
 	}
@@ -313,7 +316,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) GetRedactValueComponentsField() [
 // GetRedactValueComponentsFieldOk returns a tuple with the RedactValueComponentsField field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddTextAccessLogFieldBehaviorRequest) GetRedactValueComponentsFieldOk() ([]EnumlogFieldBehaviorRedactValueComponentsFieldProp, bool) {
-	if o == nil || isNil(o.RedactValueComponentsField) {
+	if o == nil || IsNil(o.RedactValueComponentsField) {
 		return nil, false
 	}
 	return o.RedactValueComponentsField, true
@@ -321,7 +324,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) GetRedactValueComponentsFieldOk()
 
 // HasRedactValueComponentsField returns a boolean if a field has been set.
 func (o *AddTextAccessLogFieldBehaviorRequest) HasRedactValueComponentsField() bool {
-	if o != nil && !isNil(o.RedactValueComponentsField) {
+	if o != nil && !IsNil(o.RedactValueComponentsField) {
 		return true
 	}
 
@@ -335,7 +338,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) SetRedactValueComponentsField(v [
 
 // GetRedactValueComponentsFieldName returns the RedactValueComponentsFieldName field value if set, zero value otherwise.
 func (o *AddTextAccessLogFieldBehaviorRequest) GetRedactValueComponentsFieldName() []string {
-	if o == nil || isNil(o.RedactValueComponentsFieldName) {
+	if o == nil || IsNil(o.RedactValueComponentsFieldName) {
 		var ret []string
 		return ret
 	}
@@ -345,7 +348,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) GetRedactValueComponentsFieldName
 // GetRedactValueComponentsFieldNameOk returns a tuple with the RedactValueComponentsFieldName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddTextAccessLogFieldBehaviorRequest) GetRedactValueComponentsFieldNameOk() ([]string, bool) {
-	if o == nil || isNil(o.RedactValueComponentsFieldName) {
+	if o == nil || IsNil(o.RedactValueComponentsFieldName) {
 		return nil, false
 	}
 	return o.RedactValueComponentsFieldName, true
@@ -353,7 +356,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) GetRedactValueComponentsFieldName
 
 // HasRedactValueComponentsFieldName returns a boolean if a field has been set.
 func (o *AddTextAccessLogFieldBehaviorRequest) HasRedactValueComponentsFieldName() bool {
-	if o != nil && !isNil(o.RedactValueComponentsFieldName) {
+	if o != nil && !IsNil(o.RedactValueComponentsFieldName) {
 		return true
 	}
 
@@ -367,7 +370,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) SetRedactValueComponentsFieldName
 
 // GetTokenizeEntireValueField returns the TokenizeEntireValueField field value if set, zero value otherwise.
 func (o *AddTextAccessLogFieldBehaviorRequest) GetTokenizeEntireValueField() []EnumlogFieldBehaviorTokenizeEntireValueFieldProp {
-	if o == nil || isNil(o.TokenizeEntireValueField) {
+	if o == nil || IsNil(o.TokenizeEntireValueField) {
 		var ret []EnumlogFieldBehaviorTokenizeEntireValueFieldProp
 		return ret
 	}
@@ -377,7 +380,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) GetTokenizeEntireValueField() []E
 // GetTokenizeEntireValueFieldOk returns a tuple with the TokenizeEntireValueField field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddTextAccessLogFieldBehaviorRequest) GetTokenizeEntireValueFieldOk() ([]EnumlogFieldBehaviorTokenizeEntireValueFieldProp, bool) {
-	if o == nil || isNil(o.TokenizeEntireValueField) {
+	if o == nil || IsNil(o.TokenizeEntireValueField) {
 		return nil, false
 	}
 	return o.TokenizeEntireValueField, true
@@ -385,7 +388,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) GetTokenizeEntireValueFieldOk() (
 
 // HasTokenizeEntireValueField returns a boolean if a field has been set.
 func (o *AddTextAccessLogFieldBehaviorRequest) HasTokenizeEntireValueField() bool {
-	if o != nil && !isNil(o.TokenizeEntireValueField) {
+	if o != nil && !IsNil(o.TokenizeEntireValueField) {
 		return true
 	}
 
@@ -399,7 +402,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) SetTokenizeEntireValueField(v []E
 
 // GetTokenizeEntireValueFieldName returns the TokenizeEntireValueFieldName field value if set, zero value otherwise.
 func (o *AddTextAccessLogFieldBehaviorRequest) GetTokenizeEntireValueFieldName() []string {
-	if o == nil || isNil(o.TokenizeEntireValueFieldName) {
+	if o == nil || IsNil(o.TokenizeEntireValueFieldName) {
 		var ret []string
 		return ret
 	}
@@ -409,7 +412,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) GetTokenizeEntireValueFieldName()
 // GetTokenizeEntireValueFieldNameOk returns a tuple with the TokenizeEntireValueFieldName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddTextAccessLogFieldBehaviorRequest) GetTokenizeEntireValueFieldNameOk() ([]string, bool) {
-	if o == nil || isNil(o.TokenizeEntireValueFieldName) {
+	if o == nil || IsNil(o.TokenizeEntireValueFieldName) {
 		return nil, false
 	}
 	return o.TokenizeEntireValueFieldName, true
@@ -417,7 +420,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) GetTokenizeEntireValueFieldNameOk
 
 // HasTokenizeEntireValueFieldName returns a boolean if a field has been set.
 func (o *AddTextAccessLogFieldBehaviorRequest) HasTokenizeEntireValueFieldName() bool {
-	if o != nil && !isNil(o.TokenizeEntireValueFieldName) {
+	if o != nil && !IsNil(o.TokenizeEntireValueFieldName) {
 		return true
 	}
 
@@ -431,7 +434,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) SetTokenizeEntireValueFieldName(v
 
 // GetTokenizeValueComponentsField returns the TokenizeValueComponentsField field value if set, zero value otherwise.
 func (o *AddTextAccessLogFieldBehaviorRequest) GetTokenizeValueComponentsField() []EnumlogFieldBehaviorTokenizeValueComponentsFieldProp {
-	if o == nil || isNil(o.TokenizeValueComponentsField) {
+	if o == nil || IsNil(o.TokenizeValueComponentsField) {
 		var ret []EnumlogFieldBehaviorTokenizeValueComponentsFieldProp
 		return ret
 	}
@@ -441,7 +444,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) GetTokenizeValueComponentsField()
 // GetTokenizeValueComponentsFieldOk returns a tuple with the TokenizeValueComponentsField field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddTextAccessLogFieldBehaviorRequest) GetTokenizeValueComponentsFieldOk() ([]EnumlogFieldBehaviorTokenizeValueComponentsFieldProp, bool) {
-	if o == nil || isNil(o.TokenizeValueComponentsField) {
+	if o == nil || IsNil(o.TokenizeValueComponentsField) {
 		return nil, false
 	}
 	return o.TokenizeValueComponentsField, true
@@ -449,7 +452,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) GetTokenizeValueComponentsFieldOk
 
 // HasTokenizeValueComponentsField returns a boolean if a field has been set.
 func (o *AddTextAccessLogFieldBehaviorRequest) HasTokenizeValueComponentsField() bool {
-	if o != nil && !isNil(o.TokenizeValueComponentsField) {
+	if o != nil && !IsNil(o.TokenizeValueComponentsField) {
 		return true
 	}
 
@@ -463,7 +466,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) SetTokenizeValueComponentsField(v
 
 // GetTokenizeValueComponentsFieldName returns the TokenizeValueComponentsFieldName field value if set, zero value otherwise.
 func (o *AddTextAccessLogFieldBehaviorRequest) GetTokenizeValueComponentsFieldName() []string {
-	if o == nil || isNil(o.TokenizeValueComponentsFieldName) {
+	if o == nil || IsNil(o.TokenizeValueComponentsFieldName) {
 		var ret []string
 		return ret
 	}
@@ -473,7 +476,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) GetTokenizeValueComponentsFieldNa
 // GetTokenizeValueComponentsFieldNameOk returns a tuple with the TokenizeValueComponentsFieldName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddTextAccessLogFieldBehaviorRequest) GetTokenizeValueComponentsFieldNameOk() ([]string, bool) {
-	if o == nil || isNil(o.TokenizeValueComponentsFieldName) {
+	if o == nil || IsNil(o.TokenizeValueComponentsFieldName) {
 		return nil, false
 	}
 	return o.TokenizeValueComponentsFieldName, true
@@ -481,7 +484,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) GetTokenizeValueComponentsFieldNa
 
 // HasTokenizeValueComponentsFieldName returns a boolean if a field has been set.
 func (o *AddTextAccessLogFieldBehaviorRequest) HasTokenizeValueComponentsFieldName() bool {
-	if o != nil && !isNil(o.TokenizeValueComponentsFieldName) {
+	if o != nil && !IsNil(o.TokenizeValueComponentsFieldName) {
 		return true
 	}
 
@@ -495,7 +498,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) SetTokenizeValueComponentsFieldNa
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddTextAccessLogFieldBehaviorRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -505,7 +508,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddTextAccessLogFieldBehaviorRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -513,7 +516,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) GetDescriptionOk() (*string, bool
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddTextAccessLogFieldBehaviorRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -527,7 +530,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) SetDescription(v string) {
 
 // GetDefaultBehavior returns the DefaultBehavior field value if set, zero value otherwise.
 func (o *AddTextAccessLogFieldBehaviorRequest) GetDefaultBehavior() EnumlogFieldBehaviorDefaultBehaviorProp {
-	if o == nil || isNil(o.DefaultBehavior) {
+	if o == nil || IsNil(o.DefaultBehavior) {
 		var ret EnumlogFieldBehaviorDefaultBehaviorProp
 		return ret
 	}
@@ -537,7 +540,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) GetDefaultBehavior() EnumlogField
 // GetDefaultBehaviorOk returns a tuple with the DefaultBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddTextAccessLogFieldBehaviorRequest) GetDefaultBehaviorOk() (*EnumlogFieldBehaviorDefaultBehaviorProp, bool) {
-	if o == nil || isNil(o.DefaultBehavior) {
+	if o == nil || IsNil(o.DefaultBehavior) {
 		return nil, false
 	}
 	return o.DefaultBehavior, true
@@ -545,7 +548,7 @@ func (o *AddTextAccessLogFieldBehaviorRequest) GetDefaultBehaviorOk() (*EnumlogF
 
 // HasDefaultBehavior returns a boolean if a field has been set.
 func (o *AddTextAccessLogFieldBehaviorRequest) HasDefaultBehavior() bool {
-	if o != nil && !isNil(o.DefaultBehavior) {
+	if o != nil && !IsNil(o.DefaultBehavior) {
 		return true
 	}
 
@@ -558,56 +561,60 @@ func (o *AddTextAccessLogFieldBehaviorRequest) SetDefaultBehavior(v EnumlogField
 }
 
 func (o AddTextAccessLogFieldBehaviorRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["behaviorName"] = o.BehaviorName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.PreserveField) {
-		toSerialize["preserveField"] = o.PreserveField
-	}
-	if !isNil(o.PreserveFieldName) {
-		toSerialize["preserveFieldName"] = o.PreserveFieldName
-	}
-	if !isNil(o.OmitField) {
-		toSerialize["omitField"] = o.OmitField
-	}
-	if !isNil(o.OmitFieldName) {
-		toSerialize["omitFieldName"] = o.OmitFieldName
-	}
-	if !isNil(o.RedactEntireValueField) {
-		toSerialize["redactEntireValueField"] = o.RedactEntireValueField
-	}
-	if !isNil(o.RedactEntireValueFieldName) {
-		toSerialize["redactEntireValueFieldName"] = o.RedactEntireValueFieldName
-	}
-	if !isNil(o.RedactValueComponentsField) {
-		toSerialize["redactValueComponentsField"] = o.RedactValueComponentsField
-	}
-	if !isNil(o.RedactValueComponentsFieldName) {
-		toSerialize["redactValueComponentsFieldName"] = o.RedactValueComponentsFieldName
-	}
-	if !isNil(o.TokenizeEntireValueField) {
-		toSerialize["tokenizeEntireValueField"] = o.TokenizeEntireValueField
-	}
-	if !isNil(o.TokenizeEntireValueFieldName) {
-		toSerialize["tokenizeEntireValueFieldName"] = o.TokenizeEntireValueFieldName
-	}
-	if !isNil(o.TokenizeValueComponentsField) {
-		toSerialize["tokenizeValueComponentsField"] = o.TokenizeValueComponentsField
-	}
-	if !isNil(o.TokenizeValueComponentsFieldName) {
-		toSerialize["tokenizeValueComponentsFieldName"] = o.TokenizeValueComponentsFieldName
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if !isNil(o.DefaultBehavior) {
-		toSerialize["defaultBehavior"] = o.DefaultBehavior
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddTextAccessLogFieldBehaviorRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["behaviorName"] = o.BehaviorName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.PreserveField) {
+		toSerialize["preserveField"] = o.PreserveField
+	}
+	if !IsNil(o.PreserveFieldName) {
+		toSerialize["preserveFieldName"] = o.PreserveFieldName
+	}
+	if !IsNil(o.OmitField) {
+		toSerialize["omitField"] = o.OmitField
+	}
+	if !IsNil(o.OmitFieldName) {
+		toSerialize["omitFieldName"] = o.OmitFieldName
+	}
+	if !IsNil(o.RedactEntireValueField) {
+		toSerialize["redactEntireValueField"] = o.RedactEntireValueField
+	}
+	if !IsNil(o.RedactEntireValueFieldName) {
+		toSerialize["redactEntireValueFieldName"] = o.RedactEntireValueFieldName
+	}
+	if !IsNil(o.RedactValueComponentsField) {
+		toSerialize["redactValueComponentsField"] = o.RedactValueComponentsField
+	}
+	if !IsNil(o.RedactValueComponentsFieldName) {
+		toSerialize["redactValueComponentsFieldName"] = o.RedactValueComponentsFieldName
+	}
+	if !IsNil(o.TokenizeEntireValueField) {
+		toSerialize["tokenizeEntireValueField"] = o.TokenizeEntireValueField
+	}
+	if !IsNil(o.TokenizeEntireValueFieldName) {
+		toSerialize["tokenizeEntireValueFieldName"] = o.TokenizeEntireValueFieldName
+	}
+	if !IsNil(o.TokenizeValueComponentsField) {
+		toSerialize["tokenizeValueComponentsField"] = o.TokenizeValueComponentsField
+	}
+	if !IsNil(o.TokenizeValueComponentsFieldName) {
+		toSerialize["tokenizeValueComponentsFieldName"] = o.TokenizeValueComponentsFieldName
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.DefaultBehavior) {
+		toSerialize["defaultBehavior"] = o.DefaultBehavior
+	}
+	return toSerialize, nil
 }
 
 type NullableAddTextAccessLogFieldBehaviorRequest struct {

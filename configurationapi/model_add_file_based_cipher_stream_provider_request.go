@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddFileBasedCipherStreamProviderRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddFileBasedCipherStreamProviderRequest{}
+
 // AddFileBasedCipherStreamProviderRequest struct for AddFileBasedCipherStreamProviderRequest
 type AddFileBasedCipherStreamProviderRequest struct {
 	// Name of the new Cipher Stream Provider
@@ -124,7 +127,7 @@ func (o *AddFileBasedCipherStreamProviderRequest) SetPasswordFile(v string) {
 
 // GetWaitForPasswordFile returns the WaitForPasswordFile field value if set, zero value otherwise.
 func (o *AddFileBasedCipherStreamProviderRequest) GetWaitForPasswordFile() bool {
-	if o == nil || isNil(o.WaitForPasswordFile) {
+	if o == nil || IsNil(o.WaitForPasswordFile) {
 		var ret bool
 		return ret
 	}
@@ -134,7 +137,7 @@ func (o *AddFileBasedCipherStreamProviderRequest) GetWaitForPasswordFile() bool 
 // GetWaitForPasswordFileOk returns a tuple with the WaitForPasswordFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedCipherStreamProviderRequest) GetWaitForPasswordFileOk() (*bool, bool) {
-	if o == nil || isNil(o.WaitForPasswordFile) {
+	if o == nil || IsNil(o.WaitForPasswordFile) {
 		return nil, false
 	}
 	return o.WaitForPasswordFile, true
@@ -142,7 +145,7 @@ func (o *AddFileBasedCipherStreamProviderRequest) GetWaitForPasswordFileOk() (*b
 
 // HasWaitForPasswordFile returns a boolean if a field has been set.
 func (o *AddFileBasedCipherStreamProviderRequest) HasWaitForPasswordFile() bool {
-	if o != nil && !isNil(o.WaitForPasswordFile) {
+	if o != nil && !IsNil(o.WaitForPasswordFile) {
 		return true
 	}
 
@@ -156,7 +159,7 @@ func (o *AddFileBasedCipherStreamProviderRequest) SetWaitForPasswordFile(v bool)
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddFileBasedCipherStreamProviderRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -166,7 +169,7 @@ func (o *AddFileBasedCipherStreamProviderRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedCipherStreamProviderRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -174,7 +177,7 @@ func (o *AddFileBasedCipherStreamProviderRequest) GetDescriptionOk() (*string, b
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddFileBasedCipherStreamProviderRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -211,26 +214,26 @@ func (o *AddFileBasedCipherStreamProviderRequest) SetEnabled(v bool) {
 }
 
 func (o AddFileBasedCipherStreamProviderRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["providerName"] = o.ProviderName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["passwordFile"] = o.PasswordFile
-	}
-	if !isNil(o.WaitForPasswordFile) {
-		toSerialize["waitForPasswordFile"] = o.WaitForPasswordFile
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddFileBasedCipherStreamProviderRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["providerName"] = o.ProviderName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["passwordFile"] = o.PasswordFile
+	if !IsNil(o.WaitForPasswordFile) {
+		toSerialize["waitForPasswordFile"] = o.WaitForPasswordFile
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddFileBasedCipherStreamProviderRequest struct {

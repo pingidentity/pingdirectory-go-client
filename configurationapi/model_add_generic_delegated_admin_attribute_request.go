@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddGenericDelegatedAdminAttributeRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddGenericDelegatedAdminAttributeRequest{}
+
 // AddGenericDelegatedAdminAttributeRequest struct for AddGenericDelegatedAdminAttributeRequest
 type AddGenericDelegatedAdminAttributeRequest struct {
 	// Specifies the name or OID of the LDAP attribute type.
@@ -109,7 +112,7 @@ func (o *AddGenericDelegatedAdminAttributeRequest) SetSchemas(v []EnumgenericDel
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddGenericDelegatedAdminAttributeRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -119,7 +122,7 @@ func (o *AddGenericDelegatedAdminAttributeRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGenericDelegatedAdminAttributeRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -127,7 +130,7 @@ func (o *AddGenericDelegatedAdminAttributeRequest) GetDescriptionOk() (*string, 
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddGenericDelegatedAdminAttributeRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -165,7 +168,7 @@ func (o *AddGenericDelegatedAdminAttributeRequest) SetDisplayName(v string) {
 
 // GetMutability returns the Mutability field value if set, zero value otherwise.
 func (o *AddGenericDelegatedAdminAttributeRequest) GetMutability() EnumdelegatedAdminAttributeMutabilityProp {
-	if o == nil || isNil(o.Mutability) {
+	if o == nil || IsNil(o.Mutability) {
 		var ret EnumdelegatedAdminAttributeMutabilityProp
 		return ret
 	}
@@ -175,7 +178,7 @@ func (o *AddGenericDelegatedAdminAttributeRequest) GetMutability() Enumdelegated
 // GetMutabilityOk returns a tuple with the Mutability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGenericDelegatedAdminAttributeRequest) GetMutabilityOk() (*EnumdelegatedAdminAttributeMutabilityProp, bool) {
-	if o == nil || isNil(o.Mutability) {
+	if o == nil || IsNil(o.Mutability) {
 		return nil, false
 	}
 	return o.Mutability, true
@@ -183,7 +186,7 @@ func (o *AddGenericDelegatedAdminAttributeRequest) GetMutabilityOk() (*Enumdeleg
 
 // HasMutability returns a boolean if a field has been set.
 func (o *AddGenericDelegatedAdminAttributeRequest) HasMutability() bool {
-	if o != nil && !isNil(o.Mutability) {
+	if o != nil && !IsNil(o.Mutability) {
 		return true
 	}
 
@@ -197,7 +200,7 @@ func (o *AddGenericDelegatedAdminAttributeRequest) SetMutability(v Enumdelegated
 
 // GetMultiValued returns the MultiValued field value if set, zero value otherwise.
 func (o *AddGenericDelegatedAdminAttributeRequest) GetMultiValued() bool {
-	if o == nil || isNil(o.MultiValued) {
+	if o == nil || IsNil(o.MultiValued) {
 		var ret bool
 		return ret
 	}
@@ -207,7 +210,7 @@ func (o *AddGenericDelegatedAdminAttributeRequest) GetMultiValued() bool {
 // GetMultiValuedOk returns a tuple with the MultiValued field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGenericDelegatedAdminAttributeRequest) GetMultiValuedOk() (*bool, bool) {
-	if o == nil || isNil(o.MultiValued) {
+	if o == nil || IsNil(o.MultiValued) {
 		return nil, false
 	}
 	return o.MultiValued, true
@@ -215,7 +218,7 @@ func (o *AddGenericDelegatedAdminAttributeRequest) GetMultiValuedOk() (*bool, bo
 
 // HasMultiValued returns a boolean if a field has been set.
 func (o *AddGenericDelegatedAdminAttributeRequest) HasMultiValued() bool {
-	if o != nil && !isNil(o.MultiValued) {
+	if o != nil && !IsNil(o.MultiValued) {
 		return true
 	}
 
@@ -229,7 +232,7 @@ func (o *AddGenericDelegatedAdminAttributeRequest) SetMultiValued(v bool) {
 
 // GetIncludeInSummary returns the IncludeInSummary field value if set, zero value otherwise.
 func (o *AddGenericDelegatedAdminAttributeRequest) GetIncludeInSummary() bool {
-	if o == nil || isNil(o.IncludeInSummary) {
+	if o == nil || IsNil(o.IncludeInSummary) {
 		var ret bool
 		return ret
 	}
@@ -239,7 +242,7 @@ func (o *AddGenericDelegatedAdminAttributeRequest) GetIncludeInSummary() bool {
 // GetIncludeInSummaryOk returns a tuple with the IncludeInSummary field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGenericDelegatedAdminAttributeRequest) GetIncludeInSummaryOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeInSummary) {
+	if o == nil || IsNil(o.IncludeInSummary) {
 		return nil, false
 	}
 	return o.IncludeInSummary, true
@@ -247,7 +250,7 @@ func (o *AddGenericDelegatedAdminAttributeRequest) GetIncludeInSummaryOk() (*boo
 
 // HasIncludeInSummary returns a boolean if a field has been set.
 func (o *AddGenericDelegatedAdminAttributeRequest) HasIncludeInSummary() bool {
-	if o != nil && !isNil(o.IncludeInSummary) {
+	if o != nil && !IsNil(o.IncludeInSummary) {
 		return true
 	}
 
@@ -261,7 +264,7 @@ func (o *AddGenericDelegatedAdminAttributeRequest) SetIncludeInSummary(v bool) {
 
 // GetAttributeCategory returns the AttributeCategory field value if set, zero value otherwise.
 func (o *AddGenericDelegatedAdminAttributeRequest) GetAttributeCategory() string {
-	if o == nil || isNil(o.AttributeCategory) {
+	if o == nil || IsNil(o.AttributeCategory) {
 		var ret string
 		return ret
 	}
@@ -271,7 +274,7 @@ func (o *AddGenericDelegatedAdminAttributeRequest) GetAttributeCategory() string
 // GetAttributeCategoryOk returns a tuple with the AttributeCategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGenericDelegatedAdminAttributeRequest) GetAttributeCategoryOk() (*string, bool) {
-	if o == nil || isNil(o.AttributeCategory) {
+	if o == nil || IsNil(o.AttributeCategory) {
 		return nil, false
 	}
 	return o.AttributeCategory, true
@@ -279,7 +282,7 @@ func (o *AddGenericDelegatedAdminAttributeRequest) GetAttributeCategoryOk() (*st
 
 // HasAttributeCategory returns a boolean if a field has been set.
 func (o *AddGenericDelegatedAdminAttributeRequest) HasAttributeCategory() bool {
-	if o != nil && !isNil(o.AttributeCategory) {
+	if o != nil && !IsNil(o.AttributeCategory) {
 		return true
 	}
 
@@ -293,7 +296,7 @@ func (o *AddGenericDelegatedAdminAttributeRequest) SetAttributeCategory(v string
 
 // GetDisplayOrderIndex returns the DisplayOrderIndex field value if set, zero value otherwise.
 func (o *AddGenericDelegatedAdminAttributeRequest) GetDisplayOrderIndex() int32 {
-	if o == nil || isNil(o.DisplayOrderIndex) {
+	if o == nil || IsNil(o.DisplayOrderIndex) {
 		var ret int32
 		return ret
 	}
@@ -303,7 +306,7 @@ func (o *AddGenericDelegatedAdminAttributeRequest) GetDisplayOrderIndex() int32 
 // GetDisplayOrderIndexOk returns a tuple with the DisplayOrderIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGenericDelegatedAdminAttributeRequest) GetDisplayOrderIndexOk() (*int32, bool) {
-	if o == nil || isNil(o.DisplayOrderIndex) {
+	if o == nil || IsNil(o.DisplayOrderIndex) {
 		return nil, false
 	}
 	return o.DisplayOrderIndex, true
@@ -311,7 +314,7 @@ func (o *AddGenericDelegatedAdminAttributeRequest) GetDisplayOrderIndexOk() (*in
 
 // HasDisplayOrderIndex returns a boolean if a field has been set.
 func (o *AddGenericDelegatedAdminAttributeRequest) HasDisplayOrderIndex() bool {
-	if o != nil && !isNil(o.DisplayOrderIndex) {
+	if o != nil && !IsNil(o.DisplayOrderIndex) {
 		return true
 	}
 
@@ -325,7 +328,7 @@ func (o *AddGenericDelegatedAdminAttributeRequest) SetDisplayOrderIndex(v int32)
 
 // GetReferenceResourceType returns the ReferenceResourceType field value if set, zero value otherwise.
 func (o *AddGenericDelegatedAdminAttributeRequest) GetReferenceResourceType() string {
-	if o == nil || isNil(o.ReferenceResourceType) {
+	if o == nil || IsNil(o.ReferenceResourceType) {
 		var ret string
 		return ret
 	}
@@ -335,7 +338,7 @@ func (o *AddGenericDelegatedAdminAttributeRequest) GetReferenceResourceType() st
 // GetReferenceResourceTypeOk returns a tuple with the ReferenceResourceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGenericDelegatedAdminAttributeRequest) GetReferenceResourceTypeOk() (*string, bool) {
-	if o == nil || isNil(o.ReferenceResourceType) {
+	if o == nil || IsNil(o.ReferenceResourceType) {
 		return nil, false
 	}
 	return o.ReferenceResourceType, true
@@ -343,7 +346,7 @@ func (o *AddGenericDelegatedAdminAttributeRequest) GetReferenceResourceTypeOk() 
 
 // HasReferenceResourceType returns a boolean if a field has been set.
 func (o *AddGenericDelegatedAdminAttributeRequest) HasReferenceResourceType() bool {
-	if o != nil && !isNil(o.ReferenceResourceType) {
+	if o != nil && !IsNil(o.ReferenceResourceType) {
 		return true
 	}
 
@@ -357,7 +360,7 @@ func (o *AddGenericDelegatedAdminAttributeRequest) SetReferenceResourceType(v st
 
 // GetAttributePresentation returns the AttributePresentation field value if set, zero value otherwise.
 func (o *AddGenericDelegatedAdminAttributeRequest) GetAttributePresentation() EnumdelegatedAdminAttributeAttributePresentationProp {
-	if o == nil || isNil(o.AttributePresentation) {
+	if o == nil || IsNil(o.AttributePresentation) {
 		var ret EnumdelegatedAdminAttributeAttributePresentationProp
 		return ret
 	}
@@ -367,7 +370,7 @@ func (o *AddGenericDelegatedAdminAttributeRequest) GetAttributePresentation() En
 // GetAttributePresentationOk returns a tuple with the AttributePresentation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGenericDelegatedAdminAttributeRequest) GetAttributePresentationOk() (*EnumdelegatedAdminAttributeAttributePresentationProp, bool) {
-	if o == nil || isNil(o.AttributePresentation) {
+	if o == nil || IsNil(o.AttributePresentation) {
 		return nil, false
 	}
 	return o.AttributePresentation, true
@@ -375,7 +378,7 @@ func (o *AddGenericDelegatedAdminAttributeRequest) GetAttributePresentationOk() 
 
 // HasAttributePresentation returns a boolean if a field has been set.
 func (o *AddGenericDelegatedAdminAttributeRequest) HasAttributePresentation() bool {
-	if o != nil && !isNil(o.AttributePresentation) {
+	if o != nil && !IsNil(o.AttributePresentation) {
 		return true
 	}
 
@@ -389,7 +392,7 @@ func (o *AddGenericDelegatedAdminAttributeRequest) SetAttributePresentation(v En
 
 // GetDateTimeFormat returns the DateTimeFormat field value if set, zero value otherwise.
 func (o *AddGenericDelegatedAdminAttributeRequest) GetDateTimeFormat() string {
-	if o == nil || isNil(o.DateTimeFormat) {
+	if o == nil || IsNil(o.DateTimeFormat) {
 		var ret string
 		return ret
 	}
@@ -399,7 +402,7 @@ func (o *AddGenericDelegatedAdminAttributeRequest) GetDateTimeFormat() string {
 // GetDateTimeFormatOk returns a tuple with the DateTimeFormat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGenericDelegatedAdminAttributeRequest) GetDateTimeFormatOk() (*string, bool) {
-	if o == nil || isNil(o.DateTimeFormat) {
+	if o == nil || IsNil(o.DateTimeFormat) {
 		return nil, false
 	}
 	return o.DateTimeFormat, true
@@ -407,7 +410,7 @@ func (o *AddGenericDelegatedAdminAttributeRequest) GetDateTimeFormatOk() (*strin
 
 // HasDateTimeFormat returns a boolean if a field has been set.
 func (o *AddGenericDelegatedAdminAttributeRequest) HasDateTimeFormat() bool {
-	if o != nil && !isNil(o.DateTimeFormat) {
+	if o != nil && !IsNil(o.DateTimeFormat) {
 		return true
 	}
 
@@ -420,44 +423,46 @@ func (o *AddGenericDelegatedAdminAttributeRequest) SetDateTimeFormat(v string) {
 }
 
 func (o AddGenericDelegatedAdminAttributeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["attributeType"] = o.AttributeType
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["displayName"] = o.DisplayName
-	}
-	if !isNil(o.Mutability) {
-		toSerialize["mutability"] = o.Mutability
-	}
-	if !isNil(o.MultiValued) {
-		toSerialize["multiValued"] = o.MultiValued
-	}
-	if !isNil(o.IncludeInSummary) {
-		toSerialize["includeInSummary"] = o.IncludeInSummary
-	}
-	if !isNil(o.AttributeCategory) {
-		toSerialize["attributeCategory"] = o.AttributeCategory
-	}
-	if !isNil(o.DisplayOrderIndex) {
-		toSerialize["displayOrderIndex"] = o.DisplayOrderIndex
-	}
-	if !isNil(o.ReferenceResourceType) {
-		toSerialize["referenceResourceType"] = o.ReferenceResourceType
-	}
-	if !isNil(o.AttributePresentation) {
-		toSerialize["attributePresentation"] = o.AttributePresentation
-	}
-	if !isNil(o.DateTimeFormat) {
-		toSerialize["dateTimeFormat"] = o.DateTimeFormat
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddGenericDelegatedAdminAttributeRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["attributeType"] = o.AttributeType
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["displayName"] = o.DisplayName
+	if !IsNil(o.Mutability) {
+		toSerialize["mutability"] = o.Mutability
+	}
+	if !IsNil(o.MultiValued) {
+		toSerialize["multiValued"] = o.MultiValued
+	}
+	if !IsNil(o.IncludeInSummary) {
+		toSerialize["includeInSummary"] = o.IncludeInSummary
+	}
+	if !IsNil(o.AttributeCategory) {
+		toSerialize["attributeCategory"] = o.AttributeCategory
+	}
+	if !IsNil(o.DisplayOrderIndex) {
+		toSerialize["displayOrderIndex"] = o.DisplayOrderIndex
+	}
+	if !IsNil(o.ReferenceResourceType) {
+		toSerialize["referenceResourceType"] = o.ReferenceResourceType
+	}
+	if !IsNil(o.AttributePresentation) {
+		toSerialize["attributePresentation"] = o.AttributePresentation
+	}
+	if !IsNil(o.DateTimeFormat) {
+		toSerialize["dateTimeFormat"] = o.DateTimeFormat
+	}
+	return toSerialize, nil
 }
 
 type NullableAddGenericDelegatedAdminAttributeRequest struct {

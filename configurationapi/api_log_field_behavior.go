@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -105,9 +105,9 @@ func (a *LogFieldBehaviorApiService) AddLogFieldBehaviorExecute(r ApiAddLogField
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -171,7 +171,7 @@ func (a *LogFieldBehaviorApiService) DeleteLogFieldBehaviorExecute(r ApiDeleteLo
 	}
 
 	localVarPath := localBasePath + "/log-field-behaviors/{log-field-behavior-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"log-field-behavior-name"+"}", url.PathEscape(parameterToString(r.logFieldBehaviorName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"log-field-behavior-name"+"}", url.PathEscape(parameterValueToString(r.logFieldBehaviorName, "logFieldBehaviorName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -204,9 +204,9 @@ func (a *LogFieldBehaviorApiService) DeleteLogFieldBehaviorExecute(r ApiDeleteLo
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -264,7 +264,7 @@ func (a *LogFieldBehaviorApiService) GetLogFieldBehaviorExecute(r ApiGetLogField
 	}
 
 	localVarPath := localBasePath + "/log-field-behaviors/{log-field-behavior-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"log-field-behavior-name"+"}", url.PathEscape(parameterToString(r.logFieldBehaviorName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"log-field-behavior-name"+"}", url.PathEscape(parameterValueToString(r.logFieldBehaviorName, "logFieldBehaviorName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -297,9 +297,9 @@ func (a *LogFieldBehaviorApiService) GetLogFieldBehaviorExecute(r ApiGetLogField
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -373,7 +373,7 @@ func (a *LogFieldBehaviorApiService) UpdateLogFieldBehaviorExecute(r ApiUpdateLo
 	}
 
 	localVarPath := localBasePath + "/log-field-behaviors/{log-field-behavior-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"log-field-behavior-name"+"}", url.PathEscape(parameterToString(r.logFieldBehaviorName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"log-field-behavior-name"+"}", url.PathEscape(parameterValueToString(r.logFieldBehaviorName, "logFieldBehaviorName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -411,9 +411,9 @@ func (a *LogFieldBehaviorApiService) UpdateLogFieldBehaviorExecute(r ApiUpdateLo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

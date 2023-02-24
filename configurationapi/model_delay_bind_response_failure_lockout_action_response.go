@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the DelayBindResponseFailureLockoutActionResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &DelayBindResponseFailureLockoutActionResponse{}
+
 // DelayBindResponseFailureLockoutActionResponse struct for DelayBindResponseFailureLockoutActionResponse
 type DelayBindResponseFailureLockoutActionResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -53,7 +56,7 @@ func NewDelayBindResponseFailureLockoutActionResponseWithDefaults() *DelayBindRe
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *DelayBindResponseFailureLockoutActionResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -63,7 +66,7 @@ func (o *DelayBindResponseFailureLockoutActionResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelayBindResponseFailureLockoutActionResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -71,7 +74,7 @@ func (o *DelayBindResponseFailureLockoutActionResponse) GetMetaOk() (*MetaMeta, 
 
 // HasMeta returns a boolean if a field has been set.
 func (o *DelayBindResponseFailureLockoutActionResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -85,7 +88,7 @@ func (o *DelayBindResponseFailureLockoutActionResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *DelayBindResponseFailureLockoutActionResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -95,7 +98,7 @@ func (o *DelayBindResponseFailureLockoutActionResponse) GetUrnpingidentityschema
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelayBindResponseFailureLockoutActionResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -103,7 +106,7 @@ func (o *DelayBindResponseFailureLockoutActionResponse) GetUrnpingidentityschema
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *DelayBindResponseFailureLockoutActionResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -189,7 +192,7 @@ func (o *DelayBindResponseFailureLockoutActionResponse) SetDelay(v string) {
 
 // GetAllowBlockingDelay returns the AllowBlockingDelay field value if set, zero value otherwise.
 func (o *DelayBindResponseFailureLockoutActionResponse) GetAllowBlockingDelay() bool {
-	if o == nil || isNil(o.AllowBlockingDelay) {
+	if o == nil || IsNil(o.AllowBlockingDelay) {
 		var ret bool
 		return ret
 	}
@@ -199,7 +202,7 @@ func (o *DelayBindResponseFailureLockoutActionResponse) GetAllowBlockingDelay() 
 // GetAllowBlockingDelayOk returns a tuple with the AllowBlockingDelay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelayBindResponseFailureLockoutActionResponse) GetAllowBlockingDelayOk() (*bool, bool) {
-	if o == nil || isNil(o.AllowBlockingDelay) {
+	if o == nil || IsNil(o.AllowBlockingDelay) {
 		return nil, false
 	}
 	return o.AllowBlockingDelay, true
@@ -207,7 +210,7 @@ func (o *DelayBindResponseFailureLockoutActionResponse) GetAllowBlockingDelayOk(
 
 // HasAllowBlockingDelay returns a boolean if a field has been set.
 func (o *DelayBindResponseFailureLockoutActionResponse) HasAllowBlockingDelay() bool {
-	if o != nil && !isNil(o.AllowBlockingDelay) {
+	if o != nil && !IsNil(o.AllowBlockingDelay) {
 		return true
 	}
 
@@ -221,7 +224,7 @@ func (o *DelayBindResponseFailureLockoutActionResponse) SetAllowBlockingDelay(v 
 
 // GetGenerateAccountStatusNotification returns the GenerateAccountStatusNotification field value if set, zero value otherwise.
 func (o *DelayBindResponseFailureLockoutActionResponse) GetGenerateAccountStatusNotification() bool {
-	if o == nil || isNil(o.GenerateAccountStatusNotification) {
+	if o == nil || IsNil(o.GenerateAccountStatusNotification) {
 		var ret bool
 		return ret
 	}
@@ -231,7 +234,7 @@ func (o *DelayBindResponseFailureLockoutActionResponse) GetGenerateAccountStatus
 // GetGenerateAccountStatusNotificationOk returns a tuple with the GenerateAccountStatusNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelayBindResponseFailureLockoutActionResponse) GetGenerateAccountStatusNotificationOk() (*bool, bool) {
-	if o == nil || isNil(o.GenerateAccountStatusNotification) {
+	if o == nil || IsNil(o.GenerateAccountStatusNotification) {
 		return nil, false
 	}
 	return o.GenerateAccountStatusNotification, true
@@ -239,7 +242,7 @@ func (o *DelayBindResponseFailureLockoutActionResponse) GetGenerateAccountStatus
 
 // HasGenerateAccountStatusNotification returns a boolean if a field has been set.
 func (o *DelayBindResponseFailureLockoutActionResponse) HasGenerateAccountStatusNotification() bool {
-	if o != nil && !isNil(o.GenerateAccountStatusNotification) {
+	if o != nil && !IsNil(o.GenerateAccountStatusNotification) {
 		return true
 	}
 
@@ -253,7 +256,7 @@ func (o *DelayBindResponseFailureLockoutActionResponse) SetGenerateAccountStatus
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *DelayBindResponseFailureLockoutActionResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -263,7 +266,7 @@ func (o *DelayBindResponseFailureLockoutActionResponse) GetDescription() string 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelayBindResponseFailureLockoutActionResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -271,7 +274,7 @@ func (o *DelayBindResponseFailureLockoutActionResponse) GetDescriptionOk() (*str
 
 // HasDescription returns a boolean if a field has been set.
 func (o *DelayBindResponseFailureLockoutActionResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -284,32 +287,34 @@ func (o *DelayBindResponseFailureLockoutActionResponse) SetDescription(v string)
 }
 
 func (o DelayBindResponseFailureLockoutActionResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["delay"] = o.Delay
-	}
-	if !isNil(o.AllowBlockingDelay) {
-		toSerialize["allowBlockingDelay"] = o.AllowBlockingDelay
-	}
-	if !isNil(o.GenerateAccountStatusNotification) {
-		toSerialize["generateAccountStatusNotification"] = o.GenerateAccountStatusNotification
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o DelayBindResponseFailureLockoutActionResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["delay"] = o.Delay
+	if !IsNil(o.AllowBlockingDelay) {
+		toSerialize["allowBlockingDelay"] = o.AllowBlockingDelay
+	}
+	if !IsNil(o.GenerateAccountStatusNotification) {
+		toSerialize["generateAccountStatusNotification"] = o.GenerateAccountStatusNotification
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableDelayBindResponseFailureLockoutActionResponse struct {

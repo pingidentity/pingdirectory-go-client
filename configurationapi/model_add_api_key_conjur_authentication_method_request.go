@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddApiKeyConjurAuthenticationMethodRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddApiKeyConjurAuthenticationMethodRequest{}
+
 // AddApiKeyConjurAuthenticationMethodRequest struct for AddApiKeyConjurAuthenticationMethodRequest
 type AddApiKeyConjurAuthenticationMethodRequest struct {
 	// Name of the new Conjur Authentication Method
@@ -74,7 +77,7 @@ func (o *AddApiKeyConjurAuthenticationMethodRequest) SetMethodName(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *AddApiKeyConjurAuthenticationMethodRequest) GetSchemas() []EnumapiKeyConjurAuthenticationMethodSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumapiKeyConjurAuthenticationMethodSchemaUrn
 		return ret
 	}
@@ -84,7 +87,7 @@ func (o *AddApiKeyConjurAuthenticationMethodRequest) GetSchemas() []EnumapiKeyCo
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddApiKeyConjurAuthenticationMethodRequest) GetSchemasOk() ([]EnumapiKeyConjurAuthenticationMethodSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -92,7 +95,7 @@ func (o *AddApiKeyConjurAuthenticationMethodRequest) GetSchemasOk() ([]EnumapiKe
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *AddApiKeyConjurAuthenticationMethodRequest) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -130,7 +133,7 @@ func (o *AddApiKeyConjurAuthenticationMethodRequest) SetUsername(v string) {
 
 // GetPassword returns the Password field value if set, zero value otherwise.
 func (o *AddApiKeyConjurAuthenticationMethodRequest) GetPassword() string {
-	if o == nil || isNil(o.Password) {
+	if o == nil || IsNil(o.Password) {
 		var ret string
 		return ret
 	}
@@ -140,7 +143,7 @@ func (o *AddApiKeyConjurAuthenticationMethodRequest) GetPassword() string {
 // GetPasswordOk returns a tuple with the Password field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddApiKeyConjurAuthenticationMethodRequest) GetPasswordOk() (*string, bool) {
-	if o == nil || isNil(o.Password) {
+	if o == nil || IsNil(o.Password) {
 		return nil, false
 	}
 	return o.Password, true
@@ -148,7 +151,7 @@ func (o *AddApiKeyConjurAuthenticationMethodRequest) GetPasswordOk() (*string, b
 
 // HasPassword returns a boolean if a field has been set.
 func (o *AddApiKeyConjurAuthenticationMethodRequest) HasPassword() bool {
-	if o != nil && !isNil(o.Password) {
+	if o != nil && !IsNil(o.Password) {
 		return true
 	}
 
@@ -162,7 +165,7 @@ func (o *AddApiKeyConjurAuthenticationMethodRequest) SetPassword(v string) {
 
 // GetApiKey returns the ApiKey field value if set, zero value otherwise.
 func (o *AddApiKeyConjurAuthenticationMethodRequest) GetApiKey() string {
-	if o == nil || isNil(o.ApiKey) {
+	if o == nil || IsNil(o.ApiKey) {
 		var ret string
 		return ret
 	}
@@ -172,7 +175,7 @@ func (o *AddApiKeyConjurAuthenticationMethodRequest) GetApiKey() string {
 // GetApiKeyOk returns a tuple with the ApiKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddApiKeyConjurAuthenticationMethodRequest) GetApiKeyOk() (*string, bool) {
-	if o == nil || isNil(o.ApiKey) {
+	if o == nil || IsNil(o.ApiKey) {
 		return nil, false
 	}
 	return o.ApiKey, true
@@ -180,7 +183,7 @@ func (o *AddApiKeyConjurAuthenticationMethodRequest) GetApiKeyOk() (*string, boo
 
 // HasApiKey returns a boolean if a field has been set.
 func (o *AddApiKeyConjurAuthenticationMethodRequest) HasApiKey() bool {
-	if o != nil && !isNil(o.ApiKey) {
+	if o != nil && !IsNil(o.ApiKey) {
 		return true
 	}
 
@@ -194,7 +197,7 @@ func (o *AddApiKeyConjurAuthenticationMethodRequest) SetApiKey(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddApiKeyConjurAuthenticationMethodRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -204,7 +207,7 @@ func (o *AddApiKeyConjurAuthenticationMethodRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddApiKeyConjurAuthenticationMethodRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -212,7 +215,7 @@ func (o *AddApiKeyConjurAuthenticationMethodRequest) GetDescriptionOk() (*string
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddApiKeyConjurAuthenticationMethodRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -225,26 +228,30 @@ func (o *AddApiKeyConjurAuthenticationMethodRequest) SetDescription(v string) {
 }
 
 func (o AddApiKeyConjurAuthenticationMethodRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["methodName"] = o.MethodName
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["username"] = o.Username
-	}
-	if !isNil(o.Password) {
-		toSerialize["password"] = o.Password
-	}
-	if !isNil(o.ApiKey) {
-		toSerialize["apiKey"] = o.ApiKey
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddApiKeyConjurAuthenticationMethodRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["methodName"] = o.MethodName
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	toSerialize["username"] = o.Username
+	if !IsNil(o.Password) {
+		toSerialize["password"] = o.Password
+	}
+	if !IsNil(o.ApiKey) {
+		toSerialize["apiKey"] = o.ApiKey
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAddApiKeyConjurAuthenticationMethodRequest struct {

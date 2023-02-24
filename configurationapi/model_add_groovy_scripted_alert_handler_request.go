@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddGroovyScriptedAlertHandlerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddGroovyScriptedAlertHandlerRequest{}
+
 // AddGroovyScriptedAlertHandlerRequest struct for AddGroovyScriptedAlertHandlerRequest
 type AddGroovyScriptedAlertHandlerRequest struct {
 	// Name of the new Alert Handler
@@ -129,7 +132,7 @@ func (o *AddGroovyScriptedAlertHandlerRequest) SetScriptClass(v string) {
 
 // GetScriptArgument returns the ScriptArgument field value if set, zero value otherwise.
 func (o *AddGroovyScriptedAlertHandlerRequest) GetScriptArgument() []string {
-	if o == nil || isNil(o.ScriptArgument) {
+	if o == nil || IsNil(o.ScriptArgument) {
 		var ret []string
 		return ret
 	}
@@ -139,7 +142,7 @@ func (o *AddGroovyScriptedAlertHandlerRequest) GetScriptArgument() []string {
 // GetScriptArgumentOk returns a tuple with the ScriptArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedAlertHandlerRequest) GetScriptArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ScriptArgument) {
+	if o == nil || IsNil(o.ScriptArgument) {
 		return nil, false
 	}
 	return o.ScriptArgument, true
@@ -147,7 +150,7 @@ func (o *AddGroovyScriptedAlertHandlerRequest) GetScriptArgumentOk() ([]string, 
 
 // HasScriptArgument returns a boolean if a field has been set.
 func (o *AddGroovyScriptedAlertHandlerRequest) HasScriptArgument() bool {
-	if o != nil && !isNil(o.ScriptArgument) {
+	if o != nil && !IsNil(o.ScriptArgument) {
 		return true
 	}
 
@@ -161,7 +164,7 @@ func (o *AddGroovyScriptedAlertHandlerRequest) SetScriptArgument(v []string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddGroovyScriptedAlertHandlerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -171,7 +174,7 @@ func (o *AddGroovyScriptedAlertHandlerRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedAlertHandlerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -179,7 +182,7 @@ func (o *AddGroovyScriptedAlertHandlerRequest) GetDescriptionOk() (*string, bool
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddGroovyScriptedAlertHandlerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -217,7 +220,7 @@ func (o *AddGroovyScriptedAlertHandlerRequest) SetEnabled(v bool) {
 
 // GetAsynchronous returns the Asynchronous field value if set, zero value otherwise.
 func (o *AddGroovyScriptedAlertHandlerRequest) GetAsynchronous() bool {
-	if o == nil || isNil(o.Asynchronous) {
+	if o == nil || IsNil(o.Asynchronous) {
 		var ret bool
 		return ret
 	}
@@ -227,7 +230,7 @@ func (o *AddGroovyScriptedAlertHandlerRequest) GetAsynchronous() bool {
 // GetAsynchronousOk returns a tuple with the Asynchronous field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedAlertHandlerRequest) GetAsynchronousOk() (*bool, bool) {
-	if o == nil || isNil(o.Asynchronous) {
+	if o == nil || IsNil(o.Asynchronous) {
 		return nil, false
 	}
 	return o.Asynchronous, true
@@ -235,7 +238,7 @@ func (o *AddGroovyScriptedAlertHandlerRequest) GetAsynchronousOk() (*bool, bool)
 
 // HasAsynchronous returns a boolean if a field has been set.
 func (o *AddGroovyScriptedAlertHandlerRequest) HasAsynchronous() bool {
-	if o != nil && !isNil(o.Asynchronous) {
+	if o != nil && !IsNil(o.Asynchronous) {
 		return true
 	}
 
@@ -249,7 +252,7 @@ func (o *AddGroovyScriptedAlertHandlerRequest) SetAsynchronous(v bool) {
 
 // GetEnabledAlertSeverity returns the EnabledAlertSeverity field value if set, zero value otherwise.
 func (o *AddGroovyScriptedAlertHandlerRequest) GetEnabledAlertSeverity() []EnumalertHandlerEnabledAlertSeverityProp {
-	if o == nil || isNil(o.EnabledAlertSeverity) {
+	if o == nil || IsNil(o.EnabledAlertSeverity) {
 		var ret []EnumalertHandlerEnabledAlertSeverityProp
 		return ret
 	}
@@ -259,7 +262,7 @@ func (o *AddGroovyScriptedAlertHandlerRequest) GetEnabledAlertSeverity() []Enuma
 // GetEnabledAlertSeverityOk returns a tuple with the EnabledAlertSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedAlertHandlerRequest) GetEnabledAlertSeverityOk() ([]EnumalertHandlerEnabledAlertSeverityProp, bool) {
-	if o == nil || isNil(o.EnabledAlertSeverity) {
+	if o == nil || IsNil(o.EnabledAlertSeverity) {
 		return nil, false
 	}
 	return o.EnabledAlertSeverity, true
@@ -267,7 +270,7 @@ func (o *AddGroovyScriptedAlertHandlerRequest) GetEnabledAlertSeverityOk() ([]En
 
 // HasEnabledAlertSeverity returns a boolean if a field has been set.
 func (o *AddGroovyScriptedAlertHandlerRequest) HasEnabledAlertSeverity() bool {
-	if o != nil && !isNil(o.EnabledAlertSeverity) {
+	if o != nil && !IsNil(o.EnabledAlertSeverity) {
 		return true
 	}
 
@@ -281,7 +284,7 @@ func (o *AddGroovyScriptedAlertHandlerRequest) SetEnabledAlertSeverity(v []Enuma
 
 // GetEnabledAlertType returns the EnabledAlertType field value if set, zero value otherwise.
 func (o *AddGroovyScriptedAlertHandlerRequest) GetEnabledAlertType() []EnumalertHandlerEnabledAlertTypeProp {
-	if o == nil || isNil(o.EnabledAlertType) {
+	if o == nil || IsNil(o.EnabledAlertType) {
 		var ret []EnumalertHandlerEnabledAlertTypeProp
 		return ret
 	}
@@ -291,7 +294,7 @@ func (o *AddGroovyScriptedAlertHandlerRequest) GetEnabledAlertType() []Enumalert
 // GetEnabledAlertTypeOk returns a tuple with the EnabledAlertType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedAlertHandlerRequest) GetEnabledAlertTypeOk() ([]EnumalertHandlerEnabledAlertTypeProp, bool) {
-	if o == nil || isNil(o.EnabledAlertType) {
+	if o == nil || IsNil(o.EnabledAlertType) {
 		return nil, false
 	}
 	return o.EnabledAlertType, true
@@ -299,7 +302,7 @@ func (o *AddGroovyScriptedAlertHandlerRequest) GetEnabledAlertTypeOk() ([]Enumal
 
 // HasEnabledAlertType returns a boolean if a field has been set.
 func (o *AddGroovyScriptedAlertHandlerRequest) HasEnabledAlertType() bool {
-	if o != nil && !isNil(o.EnabledAlertType) {
+	if o != nil && !IsNil(o.EnabledAlertType) {
 		return true
 	}
 
@@ -313,7 +316,7 @@ func (o *AddGroovyScriptedAlertHandlerRequest) SetEnabledAlertType(v []Enumalert
 
 // GetDisabledAlertType returns the DisabledAlertType field value if set, zero value otherwise.
 func (o *AddGroovyScriptedAlertHandlerRequest) GetDisabledAlertType() []EnumalertHandlerDisabledAlertTypeProp {
-	if o == nil || isNil(o.DisabledAlertType) {
+	if o == nil || IsNil(o.DisabledAlertType) {
 		var ret []EnumalertHandlerDisabledAlertTypeProp
 		return ret
 	}
@@ -323,7 +326,7 @@ func (o *AddGroovyScriptedAlertHandlerRequest) GetDisabledAlertType() []Enumaler
 // GetDisabledAlertTypeOk returns a tuple with the DisabledAlertType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedAlertHandlerRequest) GetDisabledAlertTypeOk() ([]EnumalertHandlerDisabledAlertTypeProp, bool) {
-	if o == nil || isNil(o.DisabledAlertType) {
+	if o == nil || IsNil(o.DisabledAlertType) {
 		return nil, false
 	}
 	return o.DisabledAlertType, true
@@ -331,7 +334,7 @@ func (o *AddGroovyScriptedAlertHandlerRequest) GetDisabledAlertTypeOk() ([]Enuma
 
 // HasDisabledAlertType returns a boolean if a field has been set.
 func (o *AddGroovyScriptedAlertHandlerRequest) HasDisabledAlertType() bool {
-	if o != nil && !isNil(o.DisabledAlertType) {
+	if o != nil && !IsNil(o.DisabledAlertType) {
 		return true
 	}
 
@@ -344,38 +347,38 @@ func (o *AddGroovyScriptedAlertHandlerRequest) SetDisabledAlertType(v []Enumaler
 }
 
 func (o AddGroovyScriptedAlertHandlerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["handlerName"] = o.HandlerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["scriptClass"] = o.ScriptClass
-	}
-	if !isNil(o.ScriptArgument) {
-		toSerialize["scriptArgument"] = o.ScriptArgument
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.Asynchronous) {
-		toSerialize["asynchronous"] = o.Asynchronous
-	}
-	if !isNil(o.EnabledAlertSeverity) {
-		toSerialize["enabledAlertSeverity"] = o.EnabledAlertSeverity
-	}
-	if !isNil(o.EnabledAlertType) {
-		toSerialize["enabledAlertType"] = o.EnabledAlertType
-	}
-	if !isNil(o.DisabledAlertType) {
-		toSerialize["disabledAlertType"] = o.DisabledAlertType
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddGroovyScriptedAlertHandlerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["handlerName"] = o.HandlerName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["scriptClass"] = o.ScriptClass
+	if !IsNil(o.ScriptArgument) {
+		toSerialize["scriptArgument"] = o.ScriptArgument
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.Asynchronous) {
+		toSerialize["asynchronous"] = o.Asynchronous
+	}
+	if !IsNil(o.EnabledAlertSeverity) {
+		toSerialize["enabledAlertSeverity"] = o.EnabledAlertSeverity
+	}
+	if !IsNil(o.EnabledAlertType) {
+		toSerialize["enabledAlertType"] = o.EnabledAlertType
+	}
+	if !IsNil(o.DisabledAlertType) {
+		toSerialize["disabledAlertType"] = o.DisabledAlertType
+	}
+	return toSerialize, nil
 }
 
 type NullableAddGroovyScriptedAlertHandlerRequest struct {

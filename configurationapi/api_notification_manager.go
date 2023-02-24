@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -105,9 +105,9 @@ func (a *NotificationManagerApiService) AddNotificationManagerExecute(r ApiAddNo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -171,7 +171,7 @@ func (a *NotificationManagerApiService) DeleteNotificationManagerExecute(r ApiDe
 	}
 
 	localVarPath := localBasePath + "/notification-managers/{notification-manager-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"notification-manager-name"+"}", url.PathEscape(parameterToString(r.notificationManagerName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"notification-manager-name"+"}", url.PathEscape(parameterValueToString(r.notificationManagerName, "notificationManagerName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -204,9 +204,9 @@ func (a *NotificationManagerApiService) DeleteNotificationManagerExecute(r ApiDe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -264,7 +264,7 @@ func (a *NotificationManagerApiService) GetNotificationManagerExecute(r ApiGetNo
 	}
 
 	localVarPath := localBasePath + "/notification-managers/{notification-manager-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"notification-manager-name"+"}", url.PathEscape(parameterToString(r.notificationManagerName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"notification-manager-name"+"}", url.PathEscape(parameterValueToString(r.notificationManagerName, "notificationManagerName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -297,9 +297,9 @@ func (a *NotificationManagerApiService) GetNotificationManagerExecute(r ApiGetNo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -373,7 +373,7 @@ func (a *NotificationManagerApiService) UpdateNotificationManagerExecute(r ApiUp
 	}
 
 	localVarPath := localBasePath + "/notification-managers/{notification-manager-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"notification-manager-name"+"}", url.PathEscape(parameterToString(r.notificationManagerName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"notification-manager-name"+"}", url.PathEscape(parameterValueToString(r.notificationManagerName, "notificationManagerName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -411,9 +411,9 @@ func (a *NotificationManagerApiService) UpdateNotificationManagerExecute(r ApiUp
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

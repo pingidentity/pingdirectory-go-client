@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddThirdPartyHttpServletExtensionRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddThirdPartyHttpServletExtensionRequest{}
+
 // AddThirdPartyHttpServletExtensionRequest struct for AddThirdPartyHttpServletExtensionRequest
 type AddThirdPartyHttpServletExtensionRequest struct {
 	// Name of the new HTTP Servlet Extension
@@ -127,7 +130,7 @@ func (o *AddThirdPartyHttpServletExtensionRequest) SetExtensionClass(v string) {
 
 // GetExtensionArgument returns the ExtensionArgument field value if set, zero value otherwise.
 func (o *AddThirdPartyHttpServletExtensionRequest) GetExtensionArgument() []string {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		var ret []string
 		return ret
 	}
@@ -137,7 +140,7 @@ func (o *AddThirdPartyHttpServletExtensionRequest) GetExtensionArgument() []stri
 // GetExtensionArgumentOk returns a tuple with the ExtensionArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyHttpServletExtensionRequest) GetExtensionArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		return nil, false
 	}
 	return o.ExtensionArgument, true
@@ -145,7 +148,7 @@ func (o *AddThirdPartyHttpServletExtensionRequest) GetExtensionArgumentOk() ([]s
 
 // HasExtensionArgument returns a boolean if a field has been set.
 func (o *AddThirdPartyHttpServletExtensionRequest) HasExtensionArgument() bool {
-	if o != nil && !isNil(o.ExtensionArgument) {
+	if o != nil && !IsNil(o.ExtensionArgument) {
 		return true
 	}
 
@@ -159,7 +162,7 @@ func (o *AddThirdPartyHttpServletExtensionRequest) SetExtensionArgument(v []stri
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddThirdPartyHttpServletExtensionRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -169,7 +172,7 @@ func (o *AddThirdPartyHttpServletExtensionRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyHttpServletExtensionRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -177,7 +180,7 @@ func (o *AddThirdPartyHttpServletExtensionRequest) GetDescriptionOk() (*string, 
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddThirdPartyHttpServletExtensionRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -191,7 +194,7 @@ func (o *AddThirdPartyHttpServletExtensionRequest) SetDescription(v string) {
 
 // GetCrossOriginPolicy returns the CrossOriginPolicy field value if set, zero value otherwise.
 func (o *AddThirdPartyHttpServletExtensionRequest) GetCrossOriginPolicy() string {
-	if o == nil || isNil(o.CrossOriginPolicy) {
+	if o == nil || IsNil(o.CrossOriginPolicy) {
 		var ret string
 		return ret
 	}
@@ -201,7 +204,7 @@ func (o *AddThirdPartyHttpServletExtensionRequest) GetCrossOriginPolicy() string
 // GetCrossOriginPolicyOk returns a tuple with the CrossOriginPolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyHttpServletExtensionRequest) GetCrossOriginPolicyOk() (*string, bool) {
-	if o == nil || isNil(o.CrossOriginPolicy) {
+	if o == nil || IsNil(o.CrossOriginPolicy) {
 		return nil, false
 	}
 	return o.CrossOriginPolicy, true
@@ -209,7 +212,7 @@ func (o *AddThirdPartyHttpServletExtensionRequest) GetCrossOriginPolicyOk() (*st
 
 // HasCrossOriginPolicy returns a boolean if a field has been set.
 func (o *AddThirdPartyHttpServletExtensionRequest) HasCrossOriginPolicy() bool {
-	if o != nil && !isNil(o.CrossOriginPolicy) {
+	if o != nil && !IsNil(o.CrossOriginPolicy) {
 		return true
 	}
 
@@ -223,7 +226,7 @@ func (o *AddThirdPartyHttpServletExtensionRequest) SetCrossOriginPolicy(v string
 
 // GetResponseHeader returns the ResponseHeader field value if set, zero value otherwise.
 func (o *AddThirdPartyHttpServletExtensionRequest) GetResponseHeader() []string {
-	if o == nil || isNil(o.ResponseHeader) {
+	if o == nil || IsNil(o.ResponseHeader) {
 		var ret []string
 		return ret
 	}
@@ -233,7 +236,7 @@ func (o *AddThirdPartyHttpServletExtensionRequest) GetResponseHeader() []string 
 // GetResponseHeaderOk returns a tuple with the ResponseHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyHttpServletExtensionRequest) GetResponseHeaderOk() ([]string, bool) {
-	if o == nil || isNil(o.ResponseHeader) {
+	if o == nil || IsNil(o.ResponseHeader) {
 		return nil, false
 	}
 	return o.ResponseHeader, true
@@ -241,7 +244,7 @@ func (o *AddThirdPartyHttpServletExtensionRequest) GetResponseHeaderOk() ([]stri
 
 // HasResponseHeader returns a boolean if a field has been set.
 func (o *AddThirdPartyHttpServletExtensionRequest) HasResponseHeader() bool {
-	if o != nil && !isNil(o.ResponseHeader) {
+	if o != nil && !IsNil(o.ResponseHeader) {
 		return true
 	}
 
@@ -255,7 +258,7 @@ func (o *AddThirdPartyHttpServletExtensionRequest) SetResponseHeader(v []string)
 
 // GetCorrelationIDResponseHeader returns the CorrelationIDResponseHeader field value if set, zero value otherwise.
 func (o *AddThirdPartyHttpServletExtensionRequest) GetCorrelationIDResponseHeader() string {
-	if o == nil || isNil(o.CorrelationIDResponseHeader) {
+	if o == nil || IsNil(o.CorrelationIDResponseHeader) {
 		var ret string
 		return ret
 	}
@@ -265,7 +268,7 @@ func (o *AddThirdPartyHttpServletExtensionRequest) GetCorrelationIDResponseHeade
 // GetCorrelationIDResponseHeaderOk returns a tuple with the CorrelationIDResponseHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyHttpServletExtensionRequest) GetCorrelationIDResponseHeaderOk() (*string, bool) {
-	if o == nil || isNil(o.CorrelationIDResponseHeader) {
+	if o == nil || IsNil(o.CorrelationIDResponseHeader) {
 		return nil, false
 	}
 	return o.CorrelationIDResponseHeader, true
@@ -273,7 +276,7 @@ func (o *AddThirdPartyHttpServletExtensionRequest) GetCorrelationIDResponseHeade
 
 // HasCorrelationIDResponseHeader returns a boolean if a field has been set.
 func (o *AddThirdPartyHttpServletExtensionRequest) HasCorrelationIDResponseHeader() bool {
-	if o != nil && !isNil(o.CorrelationIDResponseHeader) {
+	if o != nil && !IsNil(o.CorrelationIDResponseHeader) {
 		return true
 	}
 
@@ -286,32 +289,34 @@ func (o *AddThirdPartyHttpServletExtensionRequest) SetCorrelationIDResponseHeade
 }
 
 func (o AddThirdPartyHttpServletExtensionRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["extensionName"] = o.ExtensionName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["extensionClass"] = o.ExtensionClass
-	}
-	if !isNil(o.ExtensionArgument) {
-		toSerialize["extensionArgument"] = o.ExtensionArgument
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if !isNil(o.CrossOriginPolicy) {
-		toSerialize["crossOriginPolicy"] = o.CrossOriginPolicy
-	}
-	if !isNil(o.ResponseHeader) {
-		toSerialize["responseHeader"] = o.ResponseHeader
-	}
-	if !isNil(o.CorrelationIDResponseHeader) {
-		toSerialize["correlationIDResponseHeader"] = o.CorrelationIDResponseHeader
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddThirdPartyHttpServletExtensionRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["extensionName"] = o.ExtensionName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["extensionClass"] = o.ExtensionClass
+	if !IsNil(o.ExtensionArgument) {
+		toSerialize["extensionArgument"] = o.ExtensionArgument
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.CrossOriginPolicy) {
+		toSerialize["crossOriginPolicy"] = o.CrossOriginPolicy
+	}
+	if !IsNil(o.ResponseHeader) {
+		toSerialize["responseHeader"] = o.ResponseHeader
+	}
+	if !IsNil(o.CorrelationIDResponseHeader) {
+		toSerialize["correlationIDResponseHeader"] = o.CorrelationIDResponseHeader
+	}
+	return toSerialize, nil
 }
 
 type NullableAddThirdPartyHttpServletExtensionRequest struct {

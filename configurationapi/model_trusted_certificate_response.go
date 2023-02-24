@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the TrustedCertificateResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &TrustedCertificateResponse{}
+
 // TrustedCertificateResponse struct for TrustedCertificateResponse
 type TrustedCertificateResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -46,7 +49,7 @@ func NewTrustedCertificateResponseWithDefaults() *TrustedCertificateResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *TrustedCertificateResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -56,7 +59,7 @@ func (o *TrustedCertificateResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrustedCertificateResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -64,7 +67,7 @@ func (o *TrustedCertificateResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *TrustedCertificateResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -78,7 +81,7 @@ func (o *TrustedCertificateResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *TrustedCertificateResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -88,7 +91,7 @@ func (o *TrustedCertificateResponse) GetUrnpingidentityschemasconfigurationmessa
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrustedCertificateResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -96,7 +99,7 @@ func (o *TrustedCertificateResponse) GetUrnpingidentityschemasconfigurationmessa
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *TrustedCertificateResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -134,7 +137,7 @@ func (o *TrustedCertificateResponse) SetId(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *TrustedCertificateResponse) GetSchemas() []EnumtrustedCertificateSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumtrustedCertificateSchemaUrn
 		return ret
 	}
@@ -144,7 +147,7 @@ func (o *TrustedCertificateResponse) GetSchemas() []EnumtrustedCertificateSchema
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrustedCertificateResponse) GetSchemasOk() ([]EnumtrustedCertificateSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -152,7 +155,7 @@ func (o *TrustedCertificateResponse) GetSchemasOk() ([]EnumtrustedCertificateSch
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *TrustedCertificateResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -189,23 +192,27 @@ func (o *TrustedCertificateResponse) SetCertificate(v string) {
 }
 
 func (o TrustedCertificateResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["certificate"] = o.Certificate
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o TrustedCertificateResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	toSerialize["certificate"] = o.Certificate
+	return toSerialize, nil
 }
 
 type NullableTrustedCertificateResponse struct {

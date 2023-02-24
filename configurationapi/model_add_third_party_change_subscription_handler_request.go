@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddThirdPartyChangeSubscriptionHandlerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddThirdPartyChangeSubscriptionHandlerRequest{}
+
 // AddThirdPartyChangeSubscriptionHandlerRequest struct for AddThirdPartyChangeSubscriptionHandlerRequest
 type AddThirdPartyChangeSubscriptionHandlerRequest struct {
 	// Name of the new Change Subscription Handler
@@ -126,7 +129,7 @@ func (o *AddThirdPartyChangeSubscriptionHandlerRequest) SetExtensionClass(v stri
 
 // GetExtensionArgument returns the ExtensionArgument field value if set, zero value otherwise.
 func (o *AddThirdPartyChangeSubscriptionHandlerRequest) GetExtensionArgument() []string {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		var ret []string
 		return ret
 	}
@@ -136,7 +139,7 @@ func (o *AddThirdPartyChangeSubscriptionHandlerRequest) GetExtensionArgument() [
 // GetExtensionArgumentOk returns a tuple with the ExtensionArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyChangeSubscriptionHandlerRequest) GetExtensionArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		return nil, false
 	}
 	return o.ExtensionArgument, true
@@ -144,7 +147,7 @@ func (o *AddThirdPartyChangeSubscriptionHandlerRequest) GetExtensionArgumentOk()
 
 // HasExtensionArgument returns a boolean if a field has been set.
 func (o *AddThirdPartyChangeSubscriptionHandlerRequest) HasExtensionArgument() bool {
-	if o != nil && !isNil(o.ExtensionArgument) {
+	if o != nil && !IsNil(o.ExtensionArgument) {
 		return true
 	}
 
@@ -158,7 +161,7 @@ func (o *AddThirdPartyChangeSubscriptionHandlerRequest) SetExtensionArgument(v [
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddThirdPartyChangeSubscriptionHandlerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -168,7 +171,7 @@ func (o *AddThirdPartyChangeSubscriptionHandlerRequest) GetDescription() string 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyChangeSubscriptionHandlerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -176,7 +179,7 @@ func (o *AddThirdPartyChangeSubscriptionHandlerRequest) GetDescriptionOk() (*str
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddThirdPartyChangeSubscriptionHandlerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -214,7 +217,7 @@ func (o *AddThirdPartyChangeSubscriptionHandlerRequest) SetEnabled(v bool) {
 
 // GetChangeSubscription returns the ChangeSubscription field value if set, zero value otherwise.
 func (o *AddThirdPartyChangeSubscriptionHandlerRequest) GetChangeSubscription() []string {
-	if o == nil || isNil(o.ChangeSubscription) {
+	if o == nil || IsNil(o.ChangeSubscription) {
 		var ret []string
 		return ret
 	}
@@ -224,7 +227,7 @@ func (o *AddThirdPartyChangeSubscriptionHandlerRequest) GetChangeSubscription() 
 // GetChangeSubscriptionOk returns a tuple with the ChangeSubscription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyChangeSubscriptionHandlerRequest) GetChangeSubscriptionOk() ([]string, bool) {
-	if o == nil || isNil(o.ChangeSubscription) {
+	if o == nil || IsNil(o.ChangeSubscription) {
 		return nil, false
 	}
 	return o.ChangeSubscription, true
@@ -232,7 +235,7 @@ func (o *AddThirdPartyChangeSubscriptionHandlerRequest) GetChangeSubscriptionOk(
 
 // HasChangeSubscription returns a boolean if a field has been set.
 func (o *AddThirdPartyChangeSubscriptionHandlerRequest) HasChangeSubscription() bool {
-	if o != nil && !isNil(o.ChangeSubscription) {
+	if o != nil && !IsNil(o.ChangeSubscription) {
 		return true
 	}
 
@@ -245,29 +248,29 @@ func (o *AddThirdPartyChangeSubscriptionHandlerRequest) SetChangeSubscription(v 
 }
 
 func (o AddThirdPartyChangeSubscriptionHandlerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["handlerName"] = o.HandlerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["extensionClass"] = o.ExtensionClass
-	}
-	if !isNil(o.ExtensionArgument) {
-		toSerialize["extensionArgument"] = o.ExtensionArgument
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.ChangeSubscription) {
-		toSerialize["changeSubscription"] = o.ChangeSubscription
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddThirdPartyChangeSubscriptionHandlerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["handlerName"] = o.HandlerName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["extensionClass"] = o.ExtensionClass
+	if !IsNil(o.ExtensionArgument) {
+		toSerialize["extensionArgument"] = o.ExtensionArgument
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.ChangeSubscription) {
+		toSerialize["changeSubscription"] = o.ChangeSubscription
+	}
+	return toSerialize, nil
 }
 
 type NullableAddThirdPartyChangeSubscriptionHandlerRequest struct {

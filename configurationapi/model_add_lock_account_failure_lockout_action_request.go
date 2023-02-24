@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddLockAccountFailureLockoutActionRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddLockAccountFailureLockoutActionRequest{}
+
 // AddLockAccountFailureLockoutActionRequest struct for AddLockAccountFailureLockoutActionRequest
 type AddLockAccountFailureLockoutActionRequest struct {
 	// Name of the new Failure Lockout Action
@@ -92,7 +95,7 @@ func (o *AddLockAccountFailureLockoutActionRequest) SetSchemas(v []EnumlockAccou
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddLockAccountFailureLockoutActionRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -102,7 +105,7 @@ func (o *AddLockAccountFailureLockoutActionRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLockAccountFailureLockoutActionRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -110,7 +113,7 @@ func (o *AddLockAccountFailureLockoutActionRequest) GetDescriptionOk() (*string,
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddLockAccountFailureLockoutActionRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -123,17 +126,21 @@ func (o *AddLockAccountFailureLockoutActionRequest) SetDescription(v string) {
 }
 
 func (o AddLockAccountFailureLockoutActionRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["actionName"] = o.ActionName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddLockAccountFailureLockoutActionRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["actionName"] = o.ActionName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAddLockAccountFailureLockoutActionRequest struct {

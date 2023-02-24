@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the DnJoinVirtualAttributeResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &DnJoinVirtualAttributeResponse{}
+
 // DnJoinVirtualAttributeResponse struct for DnJoinVirtualAttributeResponse
 type DnJoinVirtualAttributeResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -82,7 +85,7 @@ func NewDnJoinVirtualAttributeResponseWithDefaults() *DnJoinVirtualAttributeResp
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *DnJoinVirtualAttributeResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -92,7 +95,7 @@ func (o *DnJoinVirtualAttributeResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -100,7 +103,7 @@ func (o *DnJoinVirtualAttributeResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *DnJoinVirtualAttributeResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -114,7 +117,7 @@ func (o *DnJoinVirtualAttributeResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *DnJoinVirtualAttributeResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -124,7 +127,7 @@ func (o *DnJoinVirtualAttributeResponse) GetUrnpingidentityschemasconfigurationm
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -132,7 +135,7 @@ func (o *DnJoinVirtualAttributeResponse) GetUrnpingidentityschemasconfigurationm
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *DnJoinVirtualAttributeResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -242,7 +245,7 @@ func (o *DnJoinVirtualAttributeResponse) SetJoinBaseDNType(v EnumvirtualAttribut
 
 // GetJoinCustomBaseDN returns the JoinCustomBaseDN field value if set, zero value otherwise.
 func (o *DnJoinVirtualAttributeResponse) GetJoinCustomBaseDN() string {
-	if o == nil || isNil(o.JoinCustomBaseDN) {
+	if o == nil || IsNil(o.JoinCustomBaseDN) {
 		var ret string
 		return ret
 	}
@@ -252,7 +255,7 @@ func (o *DnJoinVirtualAttributeResponse) GetJoinCustomBaseDN() string {
 // GetJoinCustomBaseDNOk returns a tuple with the JoinCustomBaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetJoinCustomBaseDNOk() (*string, bool) {
-	if o == nil || isNil(o.JoinCustomBaseDN) {
+	if o == nil || IsNil(o.JoinCustomBaseDN) {
 		return nil, false
 	}
 	return o.JoinCustomBaseDN, true
@@ -260,7 +263,7 @@ func (o *DnJoinVirtualAttributeResponse) GetJoinCustomBaseDNOk() (*string, bool)
 
 // HasJoinCustomBaseDN returns a boolean if a field has been set.
 func (o *DnJoinVirtualAttributeResponse) HasJoinCustomBaseDN() bool {
-	if o != nil && !isNil(o.JoinCustomBaseDN) {
+	if o != nil && !IsNil(o.JoinCustomBaseDN) {
 		return true
 	}
 
@@ -274,7 +277,7 @@ func (o *DnJoinVirtualAttributeResponse) SetJoinCustomBaseDN(v string) {
 
 // GetJoinScope returns the JoinScope field value if set, zero value otherwise.
 func (o *DnJoinVirtualAttributeResponse) GetJoinScope() EnumvirtualAttributeJoinScopeProp {
-	if o == nil || isNil(o.JoinScope) {
+	if o == nil || IsNil(o.JoinScope) {
 		var ret EnumvirtualAttributeJoinScopeProp
 		return ret
 	}
@@ -284,7 +287,7 @@ func (o *DnJoinVirtualAttributeResponse) GetJoinScope() EnumvirtualAttributeJoin
 // GetJoinScopeOk returns a tuple with the JoinScope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetJoinScopeOk() (*EnumvirtualAttributeJoinScopeProp, bool) {
-	if o == nil || isNil(o.JoinScope) {
+	if o == nil || IsNil(o.JoinScope) {
 		return nil, false
 	}
 	return o.JoinScope, true
@@ -292,7 +295,7 @@ func (o *DnJoinVirtualAttributeResponse) GetJoinScopeOk() (*EnumvirtualAttribute
 
 // HasJoinScope returns a boolean if a field has been set.
 func (o *DnJoinVirtualAttributeResponse) HasJoinScope() bool {
-	if o != nil && !isNil(o.JoinScope) {
+	if o != nil && !IsNil(o.JoinScope) {
 		return true
 	}
 
@@ -306,7 +309,7 @@ func (o *DnJoinVirtualAttributeResponse) SetJoinScope(v EnumvirtualAttributeJoin
 
 // GetJoinSizeLimit returns the JoinSizeLimit field value if set, zero value otherwise.
 func (o *DnJoinVirtualAttributeResponse) GetJoinSizeLimit() int32 {
-	if o == nil || isNil(o.JoinSizeLimit) {
+	if o == nil || IsNil(o.JoinSizeLimit) {
 		var ret int32
 		return ret
 	}
@@ -316,7 +319,7 @@ func (o *DnJoinVirtualAttributeResponse) GetJoinSizeLimit() int32 {
 // GetJoinSizeLimitOk returns a tuple with the JoinSizeLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetJoinSizeLimitOk() (*int32, bool) {
-	if o == nil || isNil(o.JoinSizeLimit) {
+	if o == nil || IsNil(o.JoinSizeLimit) {
 		return nil, false
 	}
 	return o.JoinSizeLimit, true
@@ -324,7 +327,7 @@ func (o *DnJoinVirtualAttributeResponse) GetJoinSizeLimitOk() (*int32, bool) {
 
 // HasJoinSizeLimit returns a boolean if a field has been set.
 func (o *DnJoinVirtualAttributeResponse) HasJoinSizeLimit() bool {
-	if o != nil && !isNil(o.JoinSizeLimit) {
+	if o != nil && !IsNil(o.JoinSizeLimit) {
 		return true
 	}
 
@@ -338,7 +341,7 @@ func (o *DnJoinVirtualAttributeResponse) SetJoinSizeLimit(v int32) {
 
 // GetJoinFilter returns the JoinFilter field value if set, zero value otherwise.
 func (o *DnJoinVirtualAttributeResponse) GetJoinFilter() string {
-	if o == nil || isNil(o.JoinFilter) {
+	if o == nil || IsNil(o.JoinFilter) {
 		var ret string
 		return ret
 	}
@@ -348,7 +351,7 @@ func (o *DnJoinVirtualAttributeResponse) GetJoinFilter() string {
 // GetJoinFilterOk returns a tuple with the JoinFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetJoinFilterOk() (*string, bool) {
-	if o == nil || isNil(o.JoinFilter) {
+	if o == nil || IsNil(o.JoinFilter) {
 		return nil, false
 	}
 	return o.JoinFilter, true
@@ -356,7 +359,7 @@ func (o *DnJoinVirtualAttributeResponse) GetJoinFilterOk() (*string, bool) {
 
 // HasJoinFilter returns a boolean if a field has been set.
 func (o *DnJoinVirtualAttributeResponse) HasJoinFilter() bool {
-	if o != nil && !isNil(o.JoinFilter) {
+	if o != nil && !IsNil(o.JoinFilter) {
 		return true
 	}
 
@@ -370,7 +373,7 @@ func (o *DnJoinVirtualAttributeResponse) SetJoinFilter(v string) {
 
 // GetJoinAttribute returns the JoinAttribute field value if set, zero value otherwise.
 func (o *DnJoinVirtualAttributeResponse) GetJoinAttribute() []string {
-	if o == nil || isNil(o.JoinAttribute) {
+	if o == nil || IsNil(o.JoinAttribute) {
 		var ret []string
 		return ret
 	}
@@ -380,7 +383,7 @@ func (o *DnJoinVirtualAttributeResponse) GetJoinAttribute() []string {
 // GetJoinAttributeOk returns a tuple with the JoinAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetJoinAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.JoinAttribute) {
+	if o == nil || IsNil(o.JoinAttribute) {
 		return nil, false
 	}
 	return o.JoinAttribute, true
@@ -388,7 +391,7 @@ func (o *DnJoinVirtualAttributeResponse) GetJoinAttributeOk() ([]string, bool) {
 
 // HasJoinAttribute returns a boolean if a field has been set.
 func (o *DnJoinVirtualAttributeResponse) HasJoinAttribute() bool {
-	if o != nil && !isNil(o.JoinAttribute) {
+	if o != nil && !IsNil(o.JoinAttribute) {
 		return true
 	}
 
@@ -402,7 +405,7 @@ func (o *DnJoinVirtualAttributeResponse) SetJoinAttribute(v []string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *DnJoinVirtualAttributeResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -412,7 +415,7 @@ func (o *DnJoinVirtualAttributeResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -420,7 +423,7 @@ func (o *DnJoinVirtualAttributeResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *DnJoinVirtualAttributeResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -482,7 +485,7 @@ func (o *DnJoinVirtualAttributeResponse) SetAttributeType(v string) {
 
 // GetBaseDN returns the BaseDN field value if set, zero value otherwise.
 func (o *DnJoinVirtualAttributeResponse) GetBaseDN() []string {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		var ret []string
 		return ret
 	}
@@ -492,7 +495,7 @@ func (o *DnJoinVirtualAttributeResponse) GetBaseDN() []string {
 // GetBaseDNOk returns a tuple with the BaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		return nil, false
 	}
 	return o.BaseDN, true
@@ -500,7 +503,7 @@ func (o *DnJoinVirtualAttributeResponse) GetBaseDNOk() ([]string, bool) {
 
 // HasBaseDN returns a boolean if a field has been set.
 func (o *DnJoinVirtualAttributeResponse) HasBaseDN() bool {
-	if o != nil && !isNil(o.BaseDN) {
+	if o != nil && !IsNil(o.BaseDN) {
 		return true
 	}
 
@@ -514,7 +517,7 @@ func (o *DnJoinVirtualAttributeResponse) SetBaseDN(v []string) {
 
 // GetGroupDN returns the GroupDN field value if set, zero value otherwise.
 func (o *DnJoinVirtualAttributeResponse) GetGroupDN() []string {
-	if o == nil || isNil(o.GroupDN) {
+	if o == nil || IsNil(o.GroupDN) {
 		var ret []string
 		return ret
 	}
@@ -524,7 +527,7 @@ func (o *DnJoinVirtualAttributeResponse) GetGroupDN() []string {
 // GetGroupDNOk returns a tuple with the GroupDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetGroupDNOk() ([]string, bool) {
-	if o == nil || isNil(o.GroupDN) {
+	if o == nil || IsNil(o.GroupDN) {
 		return nil, false
 	}
 	return o.GroupDN, true
@@ -532,7 +535,7 @@ func (o *DnJoinVirtualAttributeResponse) GetGroupDNOk() ([]string, bool) {
 
 // HasGroupDN returns a boolean if a field has been set.
 func (o *DnJoinVirtualAttributeResponse) HasGroupDN() bool {
-	if o != nil && !isNil(o.GroupDN) {
+	if o != nil && !IsNil(o.GroupDN) {
 		return true
 	}
 
@@ -546,7 +549,7 @@ func (o *DnJoinVirtualAttributeResponse) SetGroupDN(v []string) {
 
 // GetFilter returns the Filter field value if set, zero value otherwise.
 func (o *DnJoinVirtualAttributeResponse) GetFilter() []string {
-	if o == nil || isNil(o.Filter) {
+	if o == nil || IsNil(o.Filter) {
 		var ret []string
 		return ret
 	}
@@ -556,7 +559,7 @@ func (o *DnJoinVirtualAttributeResponse) GetFilter() []string {
 // GetFilterOk returns a tuple with the Filter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetFilterOk() ([]string, bool) {
-	if o == nil || isNil(o.Filter) {
+	if o == nil || IsNil(o.Filter) {
 		return nil, false
 	}
 	return o.Filter, true
@@ -564,7 +567,7 @@ func (o *DnJoinVirtualAttributeResponse) GetFilterOk() ([]string, bool) {
 
 // HasFilter returns a boolean if a field has been set.
 func (o *DnJoinVirtualAttributeResponse) HasFilter() bool {
-	if o != nil && !isNil(o.Filter) {
+	if o != nil && !IsNil(o.Filter) {
 		return true
 	}
 
@@ -578,7 +581,7 @@ func (o *DnJoinVirtualAttributeResponse) SetFilter(v []string) {
 
 // GetClientConnectionPolicy returns the ClientConnectionPolicy field value if set, zero value otherwise.
 func (o *DnJoinVirtualAttributeResponse) GetClientConnectionPolicy() []string {
-	if o == nil || isNil(o.ClientConnectionPolicy) {
+	if o == nil || IsNil(o.ClientConnectionPolicy) {
 		var ret []string
 		return ret
 	}
@@ -588,7 +591,7 @@ func (o *DnJoinVirtualAttributeResponse) GetClientConnectionPolicy() []string {
 // GetClientConnectionPolicyOk returns a tuple with the ClientConnectionPolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetClientConnectionPolicyOk() ([]string, bool) {
-	if o == nil || isNil(o.ClientConnectionPolicy) {
+	if o == nil || IsNil(o.ClientConnectionPolicy) {
 		return nil, false
 	}
 	return o.ClientConnectionPolicy, true
@@ -596,7 +599,7 @@ func (o *DnJoinVirtualAttributeResponse) GetClientConnectionPolicyOk() ([]string
 
 // HasClientConnectionPolicy returns a boolean if a field has been set.
 func (o *DnJoinVirtualAttributeResponse) HasClientConnectionPolicy() bool {
-	if o != nil && !isNil(o.ClientConnectionPolicy) {
+	if o != nil && !IsNil(o.ClientConnectionPolicy) {
 		return true
 	}
 
@@ -610,7 +613,7 @@ func (o *DnJoinVirtualAttributeResponse) SetClientConnectionPolicy(v []string) {
 
 // GetConflictBehavior returns the ConflictBehavior field value if set, zero value otherwise.
 func (o *DnJoinVirtualAttributeResponse) GetConflictBehavior() EnumvirtualAttributeConflictBehaviorProp {
-	if o == nil || isNil(o.ConflictBehavior) {
+	if o == nil || IsNil(o.ConflictBehavior) {
 		var ret EnumvirtualAttributeConflictBehaviorProp
 		return ret
 	}
@@ -620,7 +623,7 @@ func (o *DnJoinVirtualAttributeResponse) GetConflictBehavior() EnumvirtualAttrib
 // GetConflictBehaviorOk returns a tuple with the ConflictBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetConflictBehaviorOk() (*EnumvirtualAttributeConflictBehaviorProp, bool) {
-	if o == nil || isNil(o.ConflictBehavior) {
+	if o == nil || IsNil(o.ConflictBehavior) {
 		return nil, false
 	}
 	return o.ConflictBehavior, true
@@ -628,7 +631,7 @@ func (o *DnJoinVirtualAttributeResponse) GetConflictBehaviorOk() (*EnumvirtualAt
 
 // HasConflictBehavior returns a boolean if a field has been set.
 func (o *DnJoinVirtualAttributeResponse) HasConflictBehavior() bool {
-	if o != nil && !isNil(o.ConflictBehavior) {
+	if o != nil && !IsNil(o.ConflictBehavior) {
 		return true
 	}
 
@@ -642,7 +645,7 @@ func (o *DnJoinVirtualAttributeResponse) SetConflictBehavior(v EnumvirtualAttrib
 
 // GetRequireExplicitRequestByName returns the RequireExplicitRequestByName field value if set, zero value otherwise.
 func (o *DnJoinVirtualAttributeResponse) GetRequireExplicitRequestByName() bool {
-	if o == nil || isNil(o.RequireExplicitRequestByName) {
+	if o == nil || IsNil(o.RequireExplicitRequestByName) {
 		var ret bool
 		return ret
 	}
@@ -652,7 +655,7 @@ func (o *DnJoinVirtualAttributeResponse) GetRequireExplicitRequestByName() bool 
 // GetRequireExplicitRequestByNameOk returns a tuple with the RequireExplicitRequestByName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetRequireExplicitRequestByNameOk() (*bool, bool) {
-	if o == nil || isNil(o.RequireExplicitRequestByName) {
+	if o == nil || IsNil(o.RequireExplicitRequestByName) {
 		return nil, false
 	}
 	return o.RequireExplicitRequestByName, true
@@ -660,7 +663,7 @@ func (o *DnJoinVirtualAttributeResponse) GetRequireExplicitRequestByNameOk() (*b
 
 // HasRequireExplicitRequestByName returns a boolean if a field has been set.
 func (o *DnJoinVirtualAttributeResponse) HasRequireExplicitRequestByName() bool {
-	if o != nil && !isNil(o.RequireExplicitRequestByName) {
+	if o != nil && !IsNil(o.RequireExplicitRequestByName) {
 		return true
 	}
 
@@ -674,7 +677,7 @@ func (o *DnJoinVirtualAttributeResponse) SetRequireExplicitRequestByName(v bool)
 
 // GetMultipleVirtualAttributeEvaluationOrderIndex returns the MultipleVirtualAttributeEvaluationOrderIndex field value if set, zero value otherwise.
 func (o *DnJoinVirtualAttributeResponse) GetMultipleVirtualAttributeEvaluationOrderIndex() int32 {
-	if o == nil || isNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
+	if o == nil || IsNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
 		var ret int32
 		return ret
 	}
@@ -684,7 +687,7 @@ func (o *DnJoinVirtualAttributeResponse) GetMultipleVirtualAttributeEvaluationOr
 // GetMultipleVirtualAttributeEvaluationOrderIndexOk returns a tuple with the MultipleVirtualAttributeEvaluationOrderIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetMultipleVirtualAttributeEvaluationOrderIndexOk() (*int32, bool) {
-	if o == nil || isNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
+	if o == nil || IsNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
 		return nil, false
 	}
 	return o.MultipleVirtualAttributeEvaluationOrderIndex, true
@@ -692,7 +695,7 @@ func (o *DnJoinVirtualAttributeResponse) GetMultipleVirtualAttributeEvaluationOr
 
 // HasMultipleVirtualAttributeEvaluationOrderIndex returns a boolean if a field has been set.
 func (o *DnJoinVirtualAttributeResponse) HasMultipleVirtualAttributeEvaluationOrderIndex() bool {
-	if o != nil && !isNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
+	if o != nil && !IsNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
 		return true
 	}
 
@@ -706,7 +709,7 @@ func (o *DnJoinVirtualAttributeResponse) SetMultipleVirtualAttributeEvaluationOr
 
 // GetMultipleVirtualAttributeMergeBehavior returns the MultipleVirtualAttributeMergeBehavior field value if set, zero value otherwise.
 func (o *DnJoinVirtualAttributeResponse) GetMultipleVirtualAttributeMergeBehavior() EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp {
-	if o == nil || isNil(o.MultipleVirtualAttributeMergeBehavior) {
+	if o == nil || IsNil(o.MultipleVirtualAttributeMergeBehavior) {
 		var ret EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp
 		return ret
 	}
@@ -716,7 +719,7 @@ func (o *DnJoinVirtualAttributeResponse) GetMultipleVirtualAttributeMergeBehavio
 // GetMultipleVirtualAttributeMergeBehaviorOk returns a tuple with the MultipleVirtualAttributeMergeBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetMultipleVirtualAttributeMergeBehaviorOk() (*EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp, bool) {
-	if o == nil || isNil(o.MultipleVirtualAttributeMergeBehavior) {
+	if o == nil || IsNil(o.MultipleVirtualAttributeMergeBehavior) {
 		return nil, false
 	}
 	return o.MultipleVirtualAttributeMergeBehavior, true
@@ -724,7 +727,7 @@ func (o *DnJoinVirtualAttributeResponse) GetMultipleVirtualAttributeMergeBehavio
 
 // HasMultipleVirtualAttributeMergeBehavior returns a boolean if a field has been set.
 func (o *DnJoinVirtualAttributeResponse) HasMultipleVirtualAttributeMergeBehavior() bool {
-	if o != nil && !isNil(o.MultipleVirtualAttributeMergeBehavior) {
+	if o != nil && !IsNil(o.MultipleVirtualAttributeMergeBehavior) {
 		return true
 	}
 
@@ -738,7 +741,7 @@ func (o *DnJoinVirtualAttributeResponse) SetMultipleVirtualAttributeMergeBehavio
 
 // GetAllowIndexConflicts returns the AllowIndexConflicts field value if set, zero value otherwise.
 func (o *DnJoinVirtualAttributeResponse) GetAllowIndexConflicts() bool {
-	if o == nil || isNil(o.AllowIndexConflicts) {
+	if o == nil || IsNil(o.AllowIndexConflicts) {
 		var ret bool
 		return ret
 	}
@@ -748,7 +751,7 @@ func (o *DnJoinVirtualAttributeResponse) GetAllowIndexConflicts() bool {
 // GetAllowIndexConflictsOk returns a tuple with the AllowIndexConflicts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetAllowIndexConflictsOk() (*bool, bool) {
-	if o == nil || isNil(o.AllowIndexConflicts) {
+	if o == nil || IsNil(o.AllowIndexConflicts) {
 		return nil, false
 	}
 	return o.AllowIndexConflicts, true
@@ -756,7 +759,7 @@ func (o *DnJoinVirtualAttributeResponse) GetAllowIndexConflictsOk() (*bool, bool
 
 // HasAllowIndexConflicts returns a boolean if a field has been set.
 func (o *DnJoinVirtualAttributeResponse) HasAllowIndexConflicts() bool {
-	if o != nil && !isNil(o.AllowIndexConflicts) {
+	if o != nil && !IsNil(o.AllowIndexConflicts) {
 		return true
 	}
 
@@ -769,77 +772,73 @@ func (o *DnJoinVirtualAttributeResponse) SetAllowIndexConflicts(v bool) {
 }
 
 func (o DnJoinVirtualAttributeResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["joinDNAttribute"] = o.JoinDNAttribute
-	}
-	if true {
-		toSerialize["joinBaseDNType"] = o.JoinBaseDNType
-	}
-	if !isNil(o.JoinCustomBaseDN) {
-		toSerialize["joinCustomBaseDN"] = o.JoinCustomBaseDN
-	}
-	if !isNil(o.JoinScope) {
-		toSerialize["joinScope"] = o.JoinScope
-	}
-	if !isNil(o.JoinSizeLimit) {
-		toSerialize["joinSizeLimit"] = o.JoinSizeLimit
-	}
-	if !isNil(o.JoinFilter) {
-		toSerialize["joinFilter"] = o.JoinFilter
-	}
-	if !isNil(o.JoinAttribute) {
-		toSerialize["joinAttribute"] = o.JoinAttribute
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if true {
-		toSerialize["attributeType"] = o.AttributeType
-	}
-	if !isNil(o.BaseDN) {
-		toSerialize["baseDN"] = o.BaseDN
-	}
-	if !isNil(o.GroupDN) {
-		toSerialize["groupDN"] = o.GroupDN
-	}
-	if !isNil(o.Filter) {
-		toSerialize["filter"] = o.Filter
-	}
-	if !isNil(o.ClientConnectionPolicy) {
-		toSerialize["clientConnectionPolicy"] = o.ClientConnectionPolicy
-	}
-	if !isNil(o.ConflictBehavior) {
-		toSerialize["conflictBehavior"] = o.ConflictBehavior
-	}
-	if !isNil(o.RequireExplicitRequestByName) {
-		toSerialize["requireExplicitRequestByName"] = o.RequireExplicitRequestByName
-	}
-	if !isNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
-		toSerialize["multipleVirtualAttributeEvaluationOrderIndex"] = o.MultipleVirtualAttributeEvaluationOrderIndex
-	}
-	if !isNil(o.MultipleVirtualAttributeMergeBehavior) {
-		toSerialize["multipleVirtualAttributeMergeBehavior"] = o.MultipleVirtualAttributeMergeBehavior
-	}
-	if !isNil(o.AllowIndexConflicts) {
-		toSerialize["allowIndexConflicts"] = o.AllowIndexConflicts
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o DnJoinVirtualAttributeResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["joinDNAttribute"] = o.JoinDNAttribute
+	toSerialize["joinBaseDNType"] = o.JoinBaseDNType
+	if !IsNil(o.JoinCustomBaseDN) {
+		toSerialize["joinCustomBaseDN"] = o.JoinCustomBaseDN
+	}
+	if !IsNil(o.JoinScope) {
+		toSerialize["joinScope"] = o.JoinScope
+	}
+	if !IsNil(o.JoinSizeLimit) {
+		toSerialize["joinSizeLimit"] = o.JoinSizeLimit
+	}
+	if !IsNil(o.JoinFilter) {
+		toSerialize["joinFilter"] = o.JoinFilter
+	}
+	if !IsNil(o.JoinAttribute) {
+		toSerialize["joinAttribute"] = o.JoinAttribute
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	toSerialize["attributeType"] = o.AttributeType
+	if !IsNil(o.BaseDN) {
+		toSerialize["baseDN"] = o.BaseDN
+	}
+	if !IsNil(o.GroupDN) {
+		toSerialize["groupDN"] = o.GroupDN
+	}
+	if !IsNil(o.Filter) {
+		toSerialize["filter"] = o.Filter
+	}
+	if !IsNil(o.ClientConnectionPolicy) {
+		toSerialize["clientConnectionPolicy"] = o.ClientConnectionPolicy
+	}
+	if !IsNil(o.ConflictBehavior) {
+		toSerialize["conflictBehavior"] = o.ConflictBehavior
+	}
+	if !IsNil(o.RequireExplicitRequestByName) {
+		toSerialize["requireExplicitRequestByName"] = o.RequireExplicitRequestByName
+	}
+	if !IsNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
+		toSerialize["multipleVirtualAttributeEvaluationOrderIndex"] = o.MultipleVirtualAttributeEvaluationOrderIndex
+	}
+	if !IsNil(o.MultipleVirtualAttributeMergeBehavior) {
+		toSerialize["multipleVirtualAttributeMergeBehavior"] = o.MultipleVirtualAttributeMergeBehavior
+	}
+	if !IsNil(o.AllowIndexConflicts) {
+		toSerialize["allowIndexConflicts"] = o.AllowIndexConflicts
+	}
+	return toSerialize, nil
 }
 
 type NullableDnJoinVirtualAttributeResponse struct {

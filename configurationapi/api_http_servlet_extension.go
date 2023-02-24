@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -105,9 +105,9 @@ func (a *HttpServletExtensionApiService) AddHttpServletExtensionExecute(r ApiAdd
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -171,7 +171,7 @@ func (a *HttpServletExtensionApiService) DeleteHttpServletExtensionExecute(r Api
 	}
 
 	localVarPath := localBasePath + "/http-servlet-extensions/{http-servlet-extension-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"http-servlet-extension-name"+"}", url.PathEscape(parameterToString(r.httpServletExtensionName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"http-servlet-extension-name"+"}", url.PathEscape(parameterValueToString(r.httpServletExtensionName, "httpServletExtensionName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -204,9 +204,9 @@ func (a *HttpServletExtensionApiService) DeleteHttpServletExtensionExecute(r Api
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -264,7 +264,7 @@ func (a *HttpServletExtensionApiService) GetHttpServletExtensionExecute(r ApiGet
 	}
 
 	localVarPath := localBasePath + "/http-servlet-extensions/{http-servlet-extension-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"http-servlet-extension-name"+"}", url.PathEscape(parameterToString(r.httpServletExtensionName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"http-servlet-extension-name"+"}", url.PathEscape(parameterValueToString(r.httpServletExtensionName, "httpServletExtensionName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -297,9 +297,9 @@ func (a *HttpServletExtensionApiService) GetHttpServletExtensionExecute(r ApiGet
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -373,7 +373,7 @@ func (a *HttpServletExtensionApiService) UpdateHttpServletExtensionExecute(r Api
 	}
 
 	localVarPath := localBasePath + "/http-servlet-extensions/{http-servlet-extension-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"http-servlet-extension-name"+"}", url.PathEscape(parameterToString(r.httpServletExtensionName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"http-servlet-extension-name"+"}", url.PathEscape(parameterValueToString(r.httpServletExtensionName, "httpServletExtensionName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -411,9 +411,9 @@ func (a *HttpServletExtensionApiService) UpdateHttpServletExtensionExecute(r Api
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

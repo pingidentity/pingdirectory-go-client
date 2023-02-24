@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddRegularExpressionIdentityMapperRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddRegularExpressionIdentityMapperRequest{}
+
 // AddRegularExpressionIdentityMapperRequest struct for AddRegularExpressionIdentityMapperRequest
 type AddRegularExpressionIdentityMapperRequest struct {
 	// Name of the new Identity Mapper
@@ -106,7 +109,7 @@ func (o *AddRegularExpressionIdentityMapperRequest) SetSchemas(v []EnumregularEx
 
 // GetMatchAttribute returns the MatchAttribute field value if set, zero value otherwise.
 func (o *AddRegularExpressionIdentityMapperRequest) GetMatchAttribute() []string {
-	if o == nil || isNil(o.MatchAttribute) {
+	if o == nil || IsNil(o.MatchAttribute) {
 		var ret []string
 		return ret
 	}
@@ -116,7 +119,7 @@ func (o *AddRegularExpressionIdentityMapperRequest) GetMatchAttribute() []string
 // GetMatchAttributeOk returns a tuple with the MatchAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddRegularExpressionIdentityMapperRequest) GetMatchAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.MatchAttribute) {
+	if o == nil || IsNil(o.MatchAttribute) {
 		return nil, false
 	}
 	return o.MatchAttribute, true
@@ -124,7 +127,7 @@ func (o *AddRegularExpressionIdentityMapperRequest) GetMatchAttributeOk() ([]str
 
 // HasMatchAttribute returns a boolean if a field has been set.
 func (o *AddRegularExpressionIdentityMapperRequest) HasMatchAttribute() bool {
-	if o != nil && !isNil(o.MatchAttribute) {
+	if o != nil && !IsNil(o.MatchAttribute) {
 		return true
 	}
 
@@ -138,7 +141,7 @@ func (o *AddRegularExpressionIdentityMapperRequest) SetMatchAttribute(v []string
 
 // GetMatchBaseDN returns the MatchBaseDN field value if set, zero value otherwise.
 func (o *AddRegularExpressionIdentityMapperRequest) GetMatchBaseDN() []string {
-	if o == nil || isNil(o.MatchBaseDN) {
+	if o == nil || IsNil(o.MatchBaseDN) {
 		var ret []string
 		return ret
 	}
@@ -148,7 +151,7 @@ func (o *AddRegularExpressionIdentityMapperRequest) GetMatchBaseDN() []string {
 // GetMatchBaseDNOk returns a tuple with the MatchBaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddRegularExpressionIdentityMapperRequest) GetMatchBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.MatchBaseDN) {
+	if o == nil || IsNil(o.MatchBaseDN) {
 		return nil, false
 	}
 	return o.MatchBaseDN, true
@@ -156,7 +159,7 @@ func (o *AddRegularExpressionIdentityMapperRequest) GetMatchBaseDNOk() ([]string
 
 // HasMatchBaseDN returns a boolean if a field has been set.
 func (o *AddRegularExpressionIdentityMapperRequest) HasMatchBaseDN() bool {
-	if o != nil && !isNil(o.MatchBaseDN) {
+	if o != nil && !IsNil(o.MatchBaseDN) {
 		return true
 	}
 
@@ -170,7 +173,7 @@ func (o *AddRegularExpressionIdentityMapperRequest) SetMatchBaseDN(v []string) {
 
 // GetMatchFilter returns the MatchFilter field value if set, zero value otherwise.
 func (o *AddRegularExpressionIdentityMapperRequest) GetMatchFilter() string {
-	if o == nil || isNil(o.MatchFilter) {
+	if o == nil || IsNil(o.MatchFilter) {
 		var ret string
 		return ret
 	}
@@ -180,7 +183,7 @@ func (o *AddRegularExpressionIdentityMapperRequest) GetMatchFilter() string {
 // GetMatchFilterOk returns a tuple with the MatchFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddRegularExpressionIdentityMapperRequest) GetMatchFilterOk() (*string, bool) {
-	if o == nil || isNil(o.MatchFilter) {
+	if o == nil || IsNil(o.MatchFilter) {
 		return nil, false
 	}
 	return o.MatchFilter, true
@@ -188,7 +191,7 @@ func (o *AddRegularExpressionIdentityMapperRequest) GetMatchFilterOk() (*string,
 
 // HasMatchFilter returns a boolean if a field has been set.
 func (o *AddRegularExpressionIdentityMapperRequest) HasMatchFilter() bool {
-	if o != nil && !isNil(o.MatchFilter) {
+	if o != nil && !IsNil(o.MatchFilter) {
 		return true
 	}
 
@@ -226,7 +229,7 @@ func (o *AddRegularExpressionIdentityMapperRequest) SetMatchPattern(v string) {
 
 // GetReplacePattern returns the ReplacePattern field value if set, zero value otherwise.
 func (o *AddRegularExpressionIdentityMapperRequest) GetReplacePattern() string {
-	if o == nil || isNil(o.ReplacePattern) {
+	if o == nil || IsNil(o.ReplacePattern) {
 		var ret string
 		return ret
 	}
@@ -236,7 +239,7 @@ func (o *AddRegularExpressionIdentityMapperRequest) GetReplacePattern() string {
 // GetReplacePatternOk returns a tuple with the ReplacePattern field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddRegularExpressionIdentityMapperRequest) GetReplacePatternOk() (*string, bool) {
-	if o == nil || isNil(o.ReplacePattern) {
+	if o == nil || IsNil(o.ReplacePattern) {
 		return nil, false
 	}
 	return o.ReplacePattern, true
@@ -244,7 +247,7 @@ func (o *AddRegularExpressionIdentityMapperRequest) GetReplacePatternOk() (*stri
 
 // HasReplacePattern returns a boolean if a field has been set.
 func (o *AddRegularExpressionIdentityMapperRequest) HasReplacePattern() bool {
-	if o != nil && !isNil(o.ReplacePattern) {
+	if o != nil && !IsNil(o.ReplacePattern) {
 		return true
 	}
 
@@ -258,7 +261,7 @@ func (o *AddRegularExpressionIdentityMapperRequest) SetReplacePattern(v string) 
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddRegularExpressionIdentityMapperRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -268,7 +271,7 @@ func (o *AddRegularExpressionIdentityMapperRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddRegularExpressionIdentityMapperRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -276,7 +279,7 @@ func (o *AddRegularExpressionIdentityMapperRequest) GetDescriptionOk() (*string,
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddRegularExpressionIdentityMapperRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -313,35 +316,35 @@ func (o *AddRegularExpressionIdentityMapperRequest) SetEnabled(v bool) {
 }
 
 func (o AddRegularExpressionIdentityMapperRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["mapperName"] = o.MapperName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.MatchAttribute) {
-		toSerialize["matchAttribute"] = o.MatchAttribute
-	}
-	if !isNil(o.MatchBaseDN) {
-		toSerialize["matchBaseDN"] = o.MatchBaseDN
-	}
-	if !isNil(o.MatchFilter) {
-		toSerialize["matchFilter"] = o.MatchFilter
-	}
-	if true {
-		toSerialize["matchPattern"] = o.MatchPattern
-	}
-	if !isNil(o.ReplacePattern) {
-		toSerialize["replacePattern"] = o.ReplacePattern
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddRegularExpressionIdentityMapperRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["mapperName"] = o.MapperName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.MatchAttribute) {
+		toSerialize["matchAttribute"] = o.MatchAttribute
+	}
+	if !IsNil(o.MatchBaseDN) {
+		toSerialize["matchBaseDN"] = o.MatchBaseDN
+	}
+	if !IsNil(o.MatchFilter) {
+		toSerialize["matchFilter"] = o.MatchFilter
+	}
+	toSerialize["matchPattern"] = o.MatchPattern
+	if !IsNil(o.ReplacePattern) {
+		toSerialize["replacePattern"] = o.ReplacePattern
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddRegularExpressionIdentityMapperRequest struct {

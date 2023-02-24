@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the RepeatedCharactersPasswordValidatorResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &RepeatedCharactersPasswordValidatorResponse{}
+
 // RepeatedCharactersPasswordValidatorResponse struct for RepeatedCharactersPasswordValidatorResponse
 type RepeatedCharactersPasswordValidatorResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -61,7 +64,7 @@ func NewRepeatedCharactersPasswordValidatorResponseWithDefaults() *RepeatedChara
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *RepeatedCharactersPasswordValidatorResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -71,7 +74,7 @@ func (o *RepeatedCharactersPasswordValidatorResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RepeatedCharactersPasswordValidatorResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -79,7 +82,7 @@ func (o *RepeatedCharactersPasswordValidatorResponse) GetMetaOk() (*MetaMeta, bo
 
 // HasMeta returns a boolean if a field has been set.
 func (o *RepeatedCharactersPasswordValidatorResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -93,7 +96,7 @@ func (o *RepeatedCharactersPasswordValidatorResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *RepeatedCharactersPasswordValidatorResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -103,7 +106,7 @@ func (o *RepeatedCharactersPasswordValidatorResponse) GetUrnpingidentityschemasc
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RepeatedCharactersPasswordValidatorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -111,7 +114,7 @@ func (o *RepeatedCharactersPasswordValidatorResponse) GetUrnpingidentityschemasc
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *RepeatedCharactersPasswordValidatorResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -221,7 +224,7 @@ func (o *RepeatedCharactersPasswordValidatorResponse) SetCaseSensitiveValidation
 
 // GetCharacterSet returns the CharacterSet field value if set, zero value otherwise.
 func (o *RepeatedCharactersPasswordValidatorResponse) GetCharacterSet() []string {
-	if o == nil || isNil(o.CharacterSet) {
+	if o == nil || IsNil(o.CharacterSet) {
 		var ret []string
 		return ret
 	}
@@ -231,7 +234,7 @@ func (o *RepeatedCharactersPasswordValidatorResponse) GetCharacterSet() []string
 // GetCharacterSetOk returns a tuple with the CharacterSet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RepeatedCharactersPasswordValidatorResponse) GetCharacterSetOk() ([]string, bool) {
-	if o == nil || isNil(o.CharacterSet) {
+	if o == nil || IsNil(o.CharacterSet) {
 		return nil, false
 	}
 	return o.CharacterSet, true
@@ -239,7 +242,7 @@ func (o *RepeatedCharactersPasswordValidatorResponse) GetCharacterSetOk() ([]str
 
 // HasCharacterSet returns a boolean if a field has been set.
 func (o *RepeatedCharactersPasswordValidatorResponse) HasCharacterSet() bool {
-	if o != nil && !isNil(o.CharacterSet) {
+	if o != nil && !IsNil(o.CharacterSet) {
 		return true
 	}
 
@@ -253,7 +256,7 @@ func (o *RepeatedCharactersPasswordValidatorResponse) SetCharacterSet(v []string
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *RepeatedCharactersPasswordValidatorResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -263,7 +266,7 @@ func (o *RepeatedCharactersPasswordValidatorResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RepeatedCharactersPasswordValidatorResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -271,7 +274,7 @@ func (o *RepeatedCharactersPasswordValidatorResponse) GetDescriptionOk() (*strin
 
 // HasDescription returns a boolean if a field has been set.
 func (o *RepeatedCharactersPasswordValidatorResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -309,7 +312,7 @@ func (o *RepeatedCharactersPasswordValidatorResponse) SetEnabled(v bool) {
 
 // GetValidatorRequirementDescription returns the ValidatorRequirementDescription field value if set, zero value otherwise.
 func (o *RepeatedCharactersPasswordValidatorResponse) GetValidatorRequirementDescription() string {
-	if o == nil || isNil(o.ValidatorRequirementDescription) {
+	if o == nil || IsNil(o.ValidatorRequirementDescription) {
 		var ret string
 		return ret
 	}
@@ -319,7 +322,7 @@ func (o *RepeatedCharactersPasswordValidatorResponse) GetValidatorRequirementDes
 // GetValidatorRequirementDescriptionOk returns a tuple with the ValidatorRequirementDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RepeatedCharactersPasswordValidatorResponse) GetValidatorRequirementDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.ValidatorRequirementDescription) {
+	if o == nil || IsNil(o.ValidatorRequirementDescription) {
 		return nil, false
 	}
 	return o.ValidatorRequirementDescription, true
@@ -327,7 +330,7 @@ func (o *RepeatedCharactersPasswordValidatorResponse) GetValidatorRequirementDes
 
 // HasValidatorRequirementDescription returns a boolean if a field has been set.
 func (o *RepeatedCharactersPasswordValidatorResponse) HasValidatorRequirementDescription() bool {
-	if o != nil && !isNil(o.ValidatorRequirementDescription) {
+	if o != nil && !IsNil(o.ValidatorRequirementDescription) {
 		return true
 	}
 
@@ -341,7 +344,7 @@ func (o *RepeatedCharactersPasswordValidatorResponse) SetValidatorRequirementDes
 
 // GetValidatorFailureMessage returns the ValidatorFailureMessage field value if set, zero value otherwise.
 func (o *RepeatedCharactersPasswordValidatorResponse) GetValidatorFailureMessage() string {
-	if o == nil || isNil(o.ValidatorFailureMessage) {
+	if o == nil || IsNil(o.ValidatorFailureMessage) {
 		var ret string
 		return ret
 	}
@@ -351,7 +354,7 @@ func (o *RepeatedCharactersPasswordValidatorResponse) GetValidatorFailureMessage
 // GetValidatorFailureMessageOk returns a tuple with the ValidatorFailureMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RepeatedCharactersPasswordValidatorResponse) GetValidatorFailureMessageOk() (*string, bool) {
-	if o == nil || isNil(o.ValidatorFailureMessage) {
+	if o == nil || IsNil(o.ValidatorFailureMessage) {
 		return nil, false
 	}
 	return o.ValidatorFailureMessage, true
@@ -359,7 +362,7 @@ func (o *RepeatedCharactersPasswordValidatorResponse) GetValidatorFailureMessage
 
 // HasValidatorFailureMessage returns a boolean if a field has been set.
 func (o *RepeatedCharactersPasswordValidatorResponse) HasValidatorFailureMessage() bool {
-	if o != nil && !isNil(o.ValidatorFailureMessage) {
+	if o != nil && !IsNil(o.ValidatorFailureMessage) {
 		return true
 	}
 
@@ -372,41 +375,39 @@ func (o *RepeatedCharactersPasswordValidatorResponse) SetValidatorFailureMessage
 }
 
 func (o RepeatedCharactersPasswordValidatorResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["maxConsecutiveLength"] = o.MaxConsecutiveLength
-	}
-	if true {
-		toSerialize["caseSensitiveValidation"] = o.CaseSensitiveValidation
-	}
-	if !isNil(o.CharacterSet) {
-		toSerialize["characterSet"] = o.CharacterSet
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.ValidatorRequirementDescription) {
-		toSerialize["validatorRequirementDescription"] = o.ValidatorRequirementDescription
-	}
-	if !isNil(o.ValidatorFailureMessage) {
-		toSerialize["validatorFailureMessage"] = o.ValidatorFailureMessage
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o RepeatedCharactersPasswordValidatorResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["maxConsecutiveLength"] = o.MaxConsecutiveLength
+	toSerialize["caseSensitiveValidation"] = o.CaseSensitiveValidation
+	if !IsNil(o.CharacterSet) {
+		toSerialize["characterSet"] = o.CharacterSet
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.ValidatorRequirementDescription) {
+		toSerialize["validatorRequirementDescription"] = o.ValidatorRequirementDescription
+	}
+	if !IsNil(o.ValidatorFailureMessage) {
+		toSerialize["validatorFailureMessage"] = o.ValidatorFailureMessage
+	}
+	return toSerialize, nil
 }
 
 type NullableRepeatedCharactersPasswordValidatorResponse struct {

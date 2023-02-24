@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the LocalDbIndexResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &LocalDbIndexResponse{}
+
 // LocalDbIndexResponse struct for LocalDbIndexResponse
 type LocalDbIndexResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -65,7 +68,7 @@ func NewLocalDbIndexResponseWithDefaults() *LocalDbIndexResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *LocalDbIndexResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -75,7 +78,7 @@ func (o *LocalDbIndexResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalDbIndexResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -83,7 +86,7 @@ func (o *LocalDbIndexResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *LocalDbIndexResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -97,7 +100,7 @@ func (o *LocalDbIndexResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *LocalDbIndexResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -107,7 +110,7 @@ func (o *LocalDbIndexResponse) GetUrnpingidentityschemasconfigurationmessages20(
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalDbIndexResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -115,7 +118,7 @@ func (o *LocalDbIndexResponse) GetUrnpingidentityschemasconfigurationmessages20O
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *LocalDbIndexResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -153,7 +156,7 @@ func (o *LocalDbIndexResponse) SetId(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *LocalDbIndexResponse) GetSchemas() []EnumlocalDbIndexSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumlocalDbIndexSchemaUrn
 		return ret
 	}
@@ -163,7 +166,7 @@ func (o *LocalDbIndexResponse) GetSchemas() []EnumlocalDbIndexSchemaUrn {
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalDbIndexResponse) GetSchemasOk() ([]EnumlocalDbIndexSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -171,7 +174,7 @@ func (o *LocalDbIndexResponse) GetSchemasOk() ([]EnumlocalDbIndexSchemaUrn, bool
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *LocalDbIndexResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -209,7 +212,7 @@ func (o *LocalDbIndexResponse) SetAttribute(v string) {
 
 // GetIndexEntryLimit returns the IndexEntryLimit field value if set, zero value otherwise.
 func (o *LocalDbIndexResponse) GetIndexEntryLimit() int32 {
-	if o == nil || isNil(o.IndexEntryLimit) {
+	if o == nil || IsNil(o.IndexEntryLimit) {
 		var ret int32
 		return ret
 	}
@@ -219,7 +222,7 @@ func (o *LocalDbIndexResponse) GetIndexEntryLimit() int32 {
 // GetIndexEntryLimitOk returns a tuple with the IndexEntryLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalDbIndexResponse) GetIndexEntryLimitOk() (*int32, bool) {
-	if o == nil || isNil(o.IndexEntryLimit) {
+	if o == nil || IsNil(o.IndexEntryLimit) {
 		return nil, false
 	}
 	return o.IndexEntryLimit, true
@@ -227,7 +230,7 @@ func (o *LocalDbIndexResponse) GetIndexEntryLimitOk() (*int32, bool) {
 
 // HasIndexEntryLimit returns a boolean if a field has been set.
 func (o *LocalDbIndexResponse) HasIndexEntryLimit() bool {
-	if o != nil && !isNil(o.IndexEntryLimit) {
+	if o != nil && !IsNil(o.IndexEntryLimit) {
 		return true
 	}
 
@@ -241,7 +244,7 @@ func (o *LocalDbIndexResponse) SetIndexEntryLimit(v int32) {
 
 // GetSubstringIndexEntryLimit returns the SubstringIndexEntryLimit field value if set, zero value otherwise.
 func (o *LocalDbIndexResponse) GetSubstringIndexEntryLimit() int32 {
-	if o == nil || isNil(o.SubstringIndexEntryLimit) {
+	if o == nil || IsNil(o.SubstringIndexEntryLimit) {
 		var ret int32
 		return ret
 	}
@@ -251,7 +254,7 @@ func (o *LocalDbIndexResponse) GetSubstringIndexEntryLimit() int32 {
 // GetSubstringIndexEntryLimitOk returns a tuple with the SubstringIndexEntryLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalDbIndexResponse) GetSubstringIndexEntryLimitOk() (*int32, bool) {
-	if o == nil || isNil(o.SubstringIndexEntryLimit) {
+	if o == nil || IsNil(o.SubstringIndexEntryLimit) {
 		return nil, false
 	}
 	return o.SubstringIndexEntryLimit, true
@@ -259,7 +262,7 @@ func (o *LocalDbIndexResponse) GetSubstringIndexEntryLimitOk() (*int32, bool) {
 
 // HasSubstringIndexEntryLimit returns a boolean if a field has been set.
 func (o *LocalDbIndexResponse) HasSubstringIndexEntryLimit() bool {
-	if o != nil && !isNil(o.SubstringIndexEntryLimit) {
+	if o != nil && !IsNil(o.SubstringIndexEntryLimit) {
 		return true
 	}
 
@@ -273,7 +276,7 @@ func (o *LocalDbIndexResponse) SetSubstringIndexEntryLimit(v int32) {
 
 // GetMaintainMatchCountForKeysExceedingEntryLimit returns the MaintainMatchCountForKeysExceedingEntryLimit field value if set, zero value otherwise.
 func (o *LocalDbIndexResponse) GetMaintainMatchCountForKeysExceedingEntryLimit() bool {
-	if o == nil || isNil(o.MaintainMatchCountForKeysExceedingEntryLimit) {
+	if o == nil || IsNil(o.MaintainMatchCountForKeysExceedingEntryLimit) {
 		var ret bool
 		return ret
 	}
@@ -283,7 +286,7 @@ func (o *LocalDbIndexResponse) GetMaintainMatchCountForKeysExceedingEntryLimit()
 // GetMaintainMatchCountForKeysExceedingEntryLimitOk returns a tuple with the MaintainMatchCountForKeysExceedingEntryLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalDbIndexResponse) GetMaintainMatchCountForKeysExceedingEntryLimitOk() (*bool, bool) {
-	if o == nil || isNil(o.MaintainMatchCountForKeysExceedingEntryLimit) {
+	if o == nil || IsNil(o.MaintainMatchCountForKeysExceedingEntryLimit) {
 		return nil, false
 	}
 	return o.MaintainMatchCountForKeysExceedingEntryLimit, true
@@ -291,7 +294,7 @@ func (o *LocalDbIndexResponse) GetMaintainMatchCountForKeysExceedingEntryLimitOk
 
 // HasMaintainMatchCountForKeysExceedingEntryLimit returns a boolean if a field has been set.
 func (o *LocalDbIndexResponse) HasMaintainMatchCountForKeysExceedingEntryLimit() bool {
-	if o != nil && !isNil(o.MaintainMatchCountForKeysExceedingEntryLimit) {
+	if o != nil && !IsNil(o.MaintainMatchCountForKeysExceedingEntryLimit) {
 		return true
 	}
 
@@ -329,7 +332,7 @@ func (o *LocalDbIndexResponse) SetIndexType(v []EnumlocalDbIndexIndexTypeProp) {
 
 // GetSubstringLength returns the SubstringLength field value if set, zero value otherwise.
 func (o *LocalDbIndexResponse) GetSubstringLength() int32 {
-	if o == nil || isNil(o.SubstringLength) {
+	if o == nil || IsNil(o.SubstringLength) {
 		var ret int32
 		return ret
 	}
@@ -339,7 +342,7 @@ func (o *LocalDbIndexResponse) GetSubstringLength() int32 {
 // GetSubstringLengthOk returns a tuple with the SubstringLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalDbIndexResponse) GetSubstringLengthOk() (*int32, bool) {
-	if o == nil || isNil(o.SubstringLength) {
+	if o == nil || IsNil(o.SubstringLength) {
 		return nil, false
 	}
 	return o.SubstringLength, true
@@ -347,7 +350,7 @@ func (o *LocalDbIndexResponse) GetSubstringLengthOk() (*int32, bool) {
 
 // HasSubstringLength returns a boolean if a field has been set.
 func (o *LocalDbIndexResponse) HasSubstringLength() bool {
-	if o != nil && !isNil(o.SubstringLength) {
+	if o != nil && !IsNil(o.SubstringLength) {
 		return true
 	}
 
@@ -361,7 +364,7 @@ func (o *LocalDbIndexResponse) SetSubstringLength(v int32) {
 
 // GetPrimeIndex returns the PrimeIndex field value if set, zero value otherwise.
 func (o *LocalDbIndexResponse) GetPrimeIndex() bool {
-	if o == nil || isNil(o.PrimeIndex) {
+	if o == nil || IsNil(o.PrimeIndex) {
 		var ret bool
 		return ret
 	}
@@ -371,7 +374,7 @@ func (o *LocalDbIndexResponse) GetPrimeIndex() bool {
 // GetPrimeIndexOk returns a tuple with the PrimeIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalDbIndexResponse) GetPrimeIndexOk() (*bool, bool) {
-	if o == nil || isNil(o.PrimeIndex) {
+	if o == nil || IsNil(o.PrimeIndex) {
 		return nil, false
 	}
 	return o.PrimeIndex, true
@@ -379,7 +382,7 @@ func (o *LocalDbIndexResponse) GetPrimeIndexOk() (*bool, bool) {
 
 // HasPrimeIndex returns a boolean if a field has been set.
 func (o *LocalDbIndexResponse) HasPrimeIndex() bool {
-	if o != nil && !isNil(o.PrimeIndex) {
+	if o != nil && !IsNil(o.PrimeIndex) {
 		return true
 	}
 
@@ -393,7 +396,7 @@ func (o *LocalDbIndexResponse) SetPrimeIndex(v bool) {
 
 // GetPrimeInternalNodesOnly returns the PrimeInternalNodesOnly field value if set, zero value otherwise.
 func (o *LocalDbIndexResponse) GetPrimeInternalNodesOnly() bool {
-	if o == nil || isNil(o.PrimeInternalNodesOnly) {
+	if o == nil || IsNil(o.PrimeInternalNodesOnly) {
 		var ret bool
 		return ret
 	}
@@ -403,7 +406,7 @@ func (o *LocalDbIndexResponse) GetPrimeInternalNodesOnly() bool {
 // GetPrimeInternalNodesOnlyOk returns a tuple with the PrimeInternalNodesOnly field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalDbIndexResponse) GetPrimeInternalNodesOnlyOk() (*bool, bool) {
-	if o == nil || isNil(o.PrimeInternalNodesOnly) {
+	if o == nil || IsNil(o.PrimeInternalNodesOnly) {
 		return nil, false
 	}
 	return o.PrimeInternalNodesOnly, true
@@ -411,7 +414,7 @@ func (o *LocalDbIndexResponse) GetPrimeInternalNodesOnlyOk() (*bool, bool) {
 
 // HasPrimeInternalNodesOnly returns a boolean if a field has been set.
 func (o *LocalDbIndexResponse) HasPrimeInternalNodesOnly() bool {
-	if o != nil && !isNil(o.PrimeInternalNodesOnly) {
+	if o != nil && !IsNil(o.PrimeInternalNodesOnly) {
 		return true
 	}
 
@@ -425,7 +428,7 @@ func (o *LocalDbIndexResponse) SetPrimeInternalNodesOnly(v bool) {
 
 // GetEqualityIndexFilter returns the EqualityIndexFilter field value if set, zero value otherwise.
 func (o *LocalDbIndexResponse) GetEqualityIndexFilter() []string {
-	if o == nil || isNil(o.EqualityIndexFilter) {
+	if o == nil || IsNil(o.EqualityIndexFilter) {
 		var ret []string
 		return ret
 	}
@@ -435,7 +438,7 @@ func (o *LocalDbIndexResponse) GetEqualityIndexFilter() []string {
 // GetEqualityIndexFilterOk returns a tuple with the EqualityIndexFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalDbIndexResponse) GetEqualityIndexFilterOk() ([]string, bool) {
-	if o == nil || isNil(o.EqualityIndexFilter) {
+	if o == nil || IsNil(o.EqualityIndexFilter) {
 		return nil, false
 	}
 	return o.EqualityIndexFilter, true
@@ -443,7 +446,7 @@ func (o *LocalDbIndexResponse) GetEqualityIndexFilterOk() ([]string, bool) {
 
 // HasEqualityIndexFilter returns a boolean if a field has been set.
 func (o *LocalDbIndexResponse) HasEqualityIndexFilter() bool {
-	if o != nil && !isNil(o.EqualityIndexFilter) {
+	if o != nil && !IsNil(o.EqualityIndexFilter) {
 		return true
 	}
 
@@ -457,7 +460,7 @@ func (o *LocalDbIndexResponse) SetEqualityIndexFilter(v []string) {
 
 // GetMaintainEqualityIndexWithoutFilter returns the MaintainEqualityIndexWithoutFilter field value if set, zero value otherwise.
 func (o *LocalDbIndexResponse) GetMaintainEqualityIndexWithoutFilter() bool {
-	if o == nil || isNil(o.MaintainEqualityIndexWithoutFilter) {
+	if o == nil || IsNil(o.MaintainEqualityIndexWithoutFilter) {
 		var ret bool
 		return ret
 	}
@@ -467,7 +470,7 @@ func (o *LocalDbIndexResponse) GetMaintainEqualityIndexWithoutFilter() bool {
 // GetMaintainEqualityIndexWithoutFilterOk returns a tuple with the MaintainEqualityIndexWithoutFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalDbIndexResponse) GetMaintainEqualityIndexWithoutFilterOk() (*bool, bool) {
-	if o == nil || isNil(o.MaintainEqualityIndexWithoutFilter) {
+	if o == nil || IsNil(o.MaintainEqualityIndexWithoutFilter) {
 		return nil, false
 	}
 	return o.MaintainEqualityIndexWithoutFilter, true
@@ -475,7 +478,7 @@ func (o *LocalDbIndexResponse) GetMaintainEqualityIndexWithoutFilterOk() (*bool,
 
 // HasMaintainEqualityIndexWithoutFilter returns a boolean if a field has been set.
 func (o *LocalDbIndexResponse) HasMaintainEqualityIndexWithoutFilter() bool {
-	if o != nil && !isNil(o.MaintainEqualityIndexWithoutFilter) {
+	if o != nil && !IsNil(o.MaintainEqualityIndexWithoutFilter) {
 		return true
 	}
 
@@ -489,7 +492,7 @@ func (o *LocalDbIndexResponse) SetMaintainEqualityIndexWithoutFilter(v bool) {
 
 // GetCacheMode returns the CacheMode field value if set, zero value otherwise.
 func (o *LocalDbIndexResponse) GetCacheMode() EnumlocalDbIndexCacheModeProp {
-	if o == nil || isNil(o.CacheMode) {
+	if o == nil || IsNil(o.CacheMode) {
 		var ret EnumlocalDbIndexCacheModeProp
 		return ret
 	}
@@ -499,7 +502,7 @@ func (o *LocalDbIndexResponse) GetCacheMode() EnumlocalDbIndexCacheModeProp {
 // GetCacheModeOk returns a tuple with the CacheMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalDbIndexResponse) GetCacheModeOk() (*EnumlocalDbIndexCacheModeProp, bool) {
-	if o == nil || isNil(o.CacheMode) {
+	if o == nil || IsNil(o.CacheMode) {
 		return nil, false
 	}
 	return o.CacheMode, true
@@ -507,7 +510,7 @@ func (o *LocalDbIndexResponse) GetCacheModeOk() (*EnumlocalDbIndexCacheModeProp,
 
 // HasCacheMode returns a boolean if a field has been set.
 func (o *LocalDbIndexResponse) HasCacheMode() bool {
-	if o != nil && !isNil(o.CacheMode) {
+	if o != nil && !IsNil(o.CacheMode) {
 		return true
 	}
 
@@ -520,53 +523,55 @@ func (o *LocalDbIndexResponse) SetCacheMode(v EnumlocalDbIndexCacheModeProp) {
 }
 
 func (o LocalDbIndexResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["attribute"] = o.Attribute
-	}
-	if !isNil(o.IndexEntryLimit) {
-		toSerialize["indexEntryLimit"] = o.IndexEntryLimit
-	}
-	if !isNil(o.SubstringIndexEntryLimit) {
-		toSerialize["substringIndexEntryLimit"] = o.SubstringIndexEntryLimit
-	}
-	if !isNil(o.MaintainMatchCountForKeysExceedingEntryLimit) {
-		toSerialize["maintainMatchCountForKeysExceedingEntryLimit"] = o.MaintainMatchCountForKeysExceedingEntryLimit
-	}
-	if true {
-		toSerialize["indexType"] = o.IndexType
-	}
-	if !isNil(o.SubstringLength) {
-		toSerialize["substringLength"] = o.SubstringLength
-	}
-	if !isNil(o.PrimeIndex) {
-		toSerialize["primeIndex"] = o.PrimeIndex
-	}
-	if !isNil(o.PrimeInternalNodesOnly) {
-		toSerialize["primeInternalNodesOnly"] = o.PrimeInternalNodesOnly
-	}
-	if !isNil(o.EqualityIndexFilter) {
-		toSerialize["equalityIndexFilter"] = o.EqualityIndexFilter
-	}
-	if !isNil(o.MaintainEqualityIndexWithoutFilter) {
-		toSerialize["maintainEqualityIndexWithoutFilter"] = o.MaintainEqualityIndexWithoutFilter
-	}
-	if !isNil(o.CacheMode) {
-		toSerialize["cacheMode"] = o.CacheMode
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o LocalDbIndexResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	toSerialize["attribute"] = o.Attribute
+	if !IsNil(o.IndexEntryLimit) {
+		toSerialize["indexEntryLimit"] = o.IndexEntryLimit
+	}
+	if !IsNil(o.SubstringIndexEntryLimit) {
+		toSerialize["substringIndexEntryLimit"] = o.SubstringIndexEntryLimit
+	}
+	if !IsNil(o.MaintainMatchCountForKeysExceedingEntryLimit) {
+		toSerialize["maintainMatchCountForKeysExceedingEntryLimit"] = o.MaintainMatchCountForKeysExceedingEntryLimit
+	}
+	toSerialize["indexType"] = o.IndexType
+	if !IsNil(o.SubstringLength) {
+		toSerialize["substringLength"] = o.SubstringLength
+	}
+	if !IsNil(o.PrimeIndex) {
+		toSerialize["primeIndex"] = o.PrimeIndex
+	}
+	if !IsNil(o.PrimeInternalNodesOnly) {
+		toSerialize["primeInternalNodesOnly"] = o.PrimeInternalNodesOnly
+	}
+	if !IsNil(o.EqualityIndexFilter) {
+		toSerialize["equalityIndexFilter"] = o.EqualityIndexFilter
+	}
+	if !IsNil(o.MaintainEqualityIndexWithoutFilter) {
+		toSerialize["maintainEqualityIndexWithoutFilter"] = o.MaintainEqualityIndexWithoutFilter
+	}
+	if !IsNil(o.CacheMode) {
+		toSerialize["cacheMode"] = o.CacheMode
+	}
+	return toSerialize, nil
 }
 
 type NullableLocalDbIndexResponse struct {

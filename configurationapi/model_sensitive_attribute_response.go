@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the SensitiveAttributeResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SensitiveAttributeResponse{}
+
 // SensitiveAttributeResponse struct for SensitiveAttributeResponse
 type SensitiveAttributeResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -55,7 +58,7 @@ func NewSensitiveAttributeResponseWithDefaults() *SensitiveAttributeResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *SensitiveAttributeResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -65,7 +68,7 @@ func (o *SensitiveAttributeResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SensitiveAttributeResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -73,7 +76,7 @@ func (o *SensitiveAttributeResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *SensitiveAttributeResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -87,7 +90,7 @@ func (o *SensitiveAttributeResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *SensitiveAttributeResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -97,7 +100,7 @@ func (o *SensitiveAttributeResponse) GetUrnpingidentityschemasconfigurationmessa
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SensitiveAttributeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -105,7 +108,7 @@ func (o *SensitiveAttributeResponse) GetUrnpingidentityschemasconfigurationmessa
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *SensitiveAttributeResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -143,7 +146,7 @@ func (o *SensitiveAttributeResponse) SetId(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *SensitiveAttributeResponse) GetSchemas() []EnumsensitiveAttributeSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumsensitiveAttributeSchemaUrn
 		return ret
 	}
@@ -153,7 +156,7 @@ func (o *SensitiveAttributeResponse) GetSchemas() []EnumsensitiveAttributeSchema
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SensitiveAttributeResponse) GetSchemasOk() ([]EnumsensitiveAttributeSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -161,7 +164,7 @@ func (o *SensitiveAttributeResponse) GetSchemasOk() ([]EnumsensitiveAttributeSch
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *SensitiveAttributeResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -175,7 +178,7 @@ func (o *SensitiveAttributeResponse) SetSchemas(v []EnumsensitiveAttributeSchema
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *SensitiveAttributeResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -185,7 +188,7 @@ func (o *SensitiveAttributeResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SensitiveAttributeResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -193,7 +196,7 @@ func (o *SensitiveAttributeResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *SensitiveAttributeResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -231,7 +234,7 @@ func (o *SensitiveAttributeResponse) SetAttributeType(v []string) {
 
 // GetIncludeDefaultSensitiveOperationalAttributes returns the IncludeDefaultSensitiveOperationalAttributes field value if set, zero value otherwise.
 func (o *SensitiveAttributeResponse) GetIncludeDefaultSensitiveOperationalAttributes() bool {
-	if o == nil || isNil(o.IncludeDefaultSensitiveOperationalAttributes) {
+	if o == nil || IsNil(o.IncludeDefaultSensitiveOperationalAttributes) {
 		var ret bool
 		return ret
 	}
@@ -241,7 +244,7 @@ func (o *SensitiveAttributeResponse) GetIncludeDefaultSensitiveOperationalAttrib
 // GetIncludeDefaultSensitiveOperationalAttributesOk returns a tuple with the IncludeDefaultSensitiveOperationalAttributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SensitiveAttributeResponse) GetIncludeDefaultSensitiveOperationalAttributesOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeDefaultSensitiveOperationalAttributes) {
+	if o == nil || IsNil(o.IncludeDefaultSensitiveOperationalAttributes) {
 		return nil, false
 	}
 	return o.IncludeDefaultSensitiveOperationalAttributes, true
@@ -249,7 +252,7 @@ func (o *SensitiveAttributeResponse) GetIncludeDefaultSensitiveOperationalAttrib
 
 // HasIncludeDefaultSensitiveOperationalAttributes returns a boolean if a field has been set.
 func (o *SensitiveAttributeResponse) HasIncludeDefaultSensitiveOperationalAttributes() bool {
-	if o != nil && !isNil(o.IncludeDefaultSensitiveOperationalAttributes) {
+	if o != nil && !IsNil(o.IncludeDefaultSensitiveOperationalAttributes) {
 		return true
 	}
 
@@ -263,7 +266,7 @@ func (o *SensitiveAttributeResponse) SetIncludeDefaultSensitiveOperationalAttrib
 
 // GetAllowInReturnedEntries returns the AllowInReturnedEntries field value if set, zero value otherwise.
 func (o *SensitiveAttributeResponse) GetAllowInReturnedEntries() EnumsensitiveAttributeAllowInReturnedEntriesProp {
-	if o == nil || isNil(o.AllowInReturnedEntries) {
+	if o == nil || IsNil(o.AllowInReturnedEntries) {
 		var ret EnumsensitiveAttributeAllowInReturnedEntriesProp
 		return ret
 	}
@@ -273,7 +276,7 @@ func (o *SensitiveAttributeResponse) GetAllowInReturnedEntries() EnumsensitiveAt
 // GetAllowInReturnedEntriesOk returns a tuple with the AllowInReturnedEntries field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SensitiveAttributeResponse) GetAllowInReturnedEntriesOk() (*EnumsensitiveAttributeAllowInReturnedEntriesProp, bool) {
-	if o == nil || isNil(o.AllowInReturnedEntries) {
+	if o == nil || IsNil(o.AllowInReturnedEntries) {
 		return nil, false
 	}
 	return o.AllowInReturnedEntries, true
@@ -281,7 +284,7 @@ func (o *SensitiveAttributeResponse) GetAllowInReturnedEntriesOk() (*Enumsensiti
 
 // HasAllowInReturnedEntries returns a boolean if a field has been set.
 func (o *SensitiveAttributeResponse) HasAllowInReturnedEntries() bool {
-	if o != nil && !isNil(o.AllowInReturnedEntries) {
+	if o != nil && !IsNil(o.AllowInReturnedEntries) {
 		return true
 	}
 
@@ -295,7 +298,7 @@ func (o *SensitiveAttributeResponse) SetAllowInReturnedEntries(v EnumsensitiveAt
 
 // GetAllowInFilter returns the AllowInFilter field value if set, zero value otherwise.
 func (o *SensitiveAttributeResponse) GetAllowInFilter() EnumsensitiveAttributeAllowInFilterProp {
-	if o == nil || isNil(o.AllowInFilter) {
+	if o == nil || IsNil(o.AllowInFilter) {
 		var ret EnumsensitiveAttributeAllowInFilterProp
 		return ret
 	}
@@ -305,7 +308,7 @@ func (o *SensitiveAttributeResponse) GetAllowInFilter() EnumsensitiveAttributeAl
 // GetAllowInFilterOk returns a tuple with the AllowInFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SensitiveAttributeResponse) GetAllowInFilterOk() (*EnumsensitiveAttributeAllowInFilterProp, bool) {
-	if o == nil || isNil(o.AllowInFilter) {
+	if o == nil || IsNil(o.AllowInFilter) {
 		return nil, false
 	}
 	return o.AllowInFilter, true
@@ -313,7 +316,7 @@ func (o *SensitiveAttributeResponse) GetAllowInFilterOk() (*EnumsensitiveAttribu
 
 // HasAllowInFilter returns a boolean if a field has been set.
 func (o *SensitiveAttributeResponse) HasAllowInFilter() bool {
-	if o != nil && !isNil(o.AllowInFilter) {
+	if o != nil && !IsNil(o.AllowInFilter) {
 		return true
 	}
 
@@ -327,7 +330,7 @@ func (o *SensitiveAttributeResponse) SetAllowInFilter(v EnumsensitiveAttributeAl
 
 // GetAllowInAdd returns the AllowInAdd field value if set, zero value otherwise.
 func (o *SensitiveAttributeResponse) GetAllowInAdd() EnumsensitiveAttributeAllowInAddProp {
-	if o == nil || isNil(o.AllowInAdd) {
+	if o == nil || IsNil(o.AllowInAdd) {
 		var ret EnumsensitiveAttributeAllowInAddProp
 		return ret
 	}
@@ -337,7 +340,7 @@ func (o *SensitiveAttributeResponse) GetAllowInAdd() EnumsensitiveAttributeAllow
 // GetAllowInAddOk returns a tuple with the AllowInAdd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SensitiveAttributeResponse) GetAllowInAddOk() (*EnumsensitiveAttributeAllowInAddProp, bool) {
-	if o == nil || isNil(o.AllowInAdd) {
+	if o == nil || IsNil(o.AllowInAdd) {
 		return nil, false
 	}
 	return o.AllowInAdd, true
@@ -345,7 +348,7 @@ func (o *SensitiveAttributeResponse) GetAllowInAddOk() (*EnumsensitiveAttributeA
 
 // HasAllowInAdd returns a boolean if a field has been set.
 func (o *SensitiveAttributeResponse) HasAllowInAdd() bool {
-	if o != nil && !isNil(o.AllowInAdd) {
+	if o != nil && !IsNil(o.AllowInAdd) {
 		return true
 	}
 
@@ -359,7 +362,7 @@ func (o *SensitiveAttributeResponse) SetAllowInAdd(v EnumsensitiveAttributeAllow
 
 // GetAllowInCompare returns the AllowInCompare field value if set, zero value otherwise.
 func (o *SensitiveAttributeResponse) GetAllowInCompare() EnumsensitiveAttributeAllowInCompareProp {
-	if o == nil || isNil(o.AllowInCompare) {
+	if o == nil || IsNil(o.AllowInCompare) {
 		var ret EnumsensitiveAttributeAllowInCompareProp
 		return ret
 	}
@@ -369,7 +372,7 @@ func (o *SensitiveAttributeResponse) GetAllowInCompare() EnumsensitiveAttributeA
 // GetAllowInCompareOk returns a tuple with the AllowInCompare field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SensitiveAttributeResponse) GetAllowInCompareOk() (*EnumsensitiveAttributeAllowInCompareProp, bool) {
-	if o == nil || isNil(o.AllowInCompare) {
+	if o == nil || IsNil(o.AllowInCompare) {
 		return nil, false
 	}
 	return o.AllowInCompare, true
@@ -377,7 +380,7 @@ func (o *SensitiveAttributeResponse) GetAllowInCompareOk() (*EnumsensitiveAttrib
 
 // HasAllowInCompare returns a boolean if a field has been set.
 func (o *SensitiveAttributeResponse) HasAllowInCompare() bool {
-	if o != nil && !isNil(o.AllowInCompare) {
+	if o != nil && !IsNil(o.AllowInCompare) {
 		return true
 	}
 
@@ -391,7 +394,7 @@ func (o *SensitiveAttributeResponse) SetAllowInCompare(v EnumsensitiveAttributeA
 
 // GetAllowInModify returns the AllowInModify field value if set, zero value otherwise.
 func (o *SensitiveAttributeResponse) GetAllowInModify() EnumsensitiveAttributeAllowInModifyProp {
-	if o == nil || isNil(o.AllowInModify) {
+	if o == nil || IsNil(o.AllowInModify) {
 		var ret EnumsensitiveAttributeAllowInModifyProp
 		return ret
 	}
@@ -401,7 +404,7 @@ func (o *SensitiveAttributeResponse) GetAllowInModify() EnumsensitiveAttributeAl
 // GetAllowInModifyOk returns a tuple with the AllowInModify field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SensitiveAttributeResponse) GetAllowInModifyOk() (*EnumsensitiveAttributeAllowInModifyProp, bool) {
-	if o == nil || isNil(o.AllowInModify) {
+	if o == nil || IsNil(o.AllowInModify) {
 		return nil, false
 	}
 	return o.AllowInModify, true
@@ -409,7 +412,7 @@ func (o *SensitiveAttributeResponse) GetAllowInModifyOk() (*EnumsensitiveAttribu
 
 // HasAllowInModify returns a boolean if a field has been set.
 func (o *SensitiveAttributeResponse) HasAllowInModify() bool {
-	if o != nil && !isNil(o.AllowInModify) {
+	if o != nil && !IsNil(o.AllowInModify) {
 		return true
 	}
 
@@ -422,44 +425,48 @@ func (o *SensitiveAttributeResponse) SetAllowInModify(v EnumsensitiveAttributeAl
 }
 
 func (o SensitiveAttributeResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["attributeType"] = o.AttributeType
-	}
-	if !isNil(o.IncludeDefaultSensitiveOperationalAttributes) {
-		toSerialize["includeDefaultSensitiveOperationalAttributes"] = o.IncludeDefaultSensitiveOperationalAttributes
-	}
-	if !isNil(o.AllowInReturnedEntries) {
-		toSerialize["allowInReturnedEntries"] = o.AllowInReturnedEntries
-	}
-	if !isNil(o.AllowInFilter) {
-		toSerialize["allowInFilter"] = o.AllowInFilter
-	}
-	if !isNil(o.AllowInAdd) {
-		toSerialize["allowInAdd"] = o.AllowInAdd
-	}
-	if !isNil(o.AllowInCompare) {
-		toSerialize["allowInCompare"] = o.AllowInCompare
-	}
-	if !isNil(o.AllowInModify) {
-		toSerialize["allowInModify"] = o.AllowInModify
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o SensitiveAttributeResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["attributeType"] = o.AttributeType
+	if !IsNil(o.IncludeDefaultSensitiveOperationalAttributes) {
+		toSerialize["includeDefaultSensitiveOperationalAttributes"] = o.IncludeDefaultSensitiveOperationalAttributes
+	}
+	if !IsNil(o.AllowInReturnedEntries) {
+		toSerialize["allowInReturnedEntries"] = o.AllowInReturnedEntries
+	}
+	if !IsNil(o.AllowInFilter) {
+		toSerialize["allowInFilter"] = o.AllowInFilter
+	}
+	if !IsNil(o.AllowInAdd) {
+		toSerialize["allowInAdd"] = o.AllowInAdd
+	}
+	if !IsNil(o.AllowInCompare) {
+		toSerialize["allowInCompare"] = o.AllowInCompare
+	}
+	if !IsNil(o.AllowInModify) {
+		toSerialize["allowInModify"] = o.AllowInModify
+	}
+	return toSerialize, nil
 }
 
 type NullableSensitiveAttributeResponse struct {

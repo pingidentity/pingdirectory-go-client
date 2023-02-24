@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddModifiablePasswordPolicyStatePluginRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddModifiablePasswordPolicyStatePluginRequest{}
+
 // AddModifiablePasswordPolicyStatePluginRequest struct for AddModifiablePasswordPolicyStatePluginRequest
 type AddModifiablePasswordPolicyStatePluginRequest struct {
 	// Name of the new Plugin
@@ -99,7 +102,7 @@ func (o *AddModifiablePasswordPolicyStatePluginRequest) SetSchemas(v []Enummodif
 
 // GetBaseDN returns the BaseDN field value if set, zero value otherwise.
 func (o *AddModifiablePasswordPolicyStatePluginRequest) GetBaseDN() []string {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		var ret []string
 		return ret
 	}
@@ -109,7 +112,7 @@ func (o *AddModifiablePasswordPolicyStatePluginRequest) GetBaseDN() []string {
 // GetBaseDNOk returns a tuple with the BaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddModifiablePasswordPolicyStatePluginRequest) GetBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		return nil, false
 	}
 	return o.BaseDN, true
@@ -117,7 +120,7 @@ func (o *AddModifiablePasswordPolicyStatePluginRequest) GetBaseDNOk() ([]string,
 
 // HasBaseDN returns a boolean if a field has been set.
 func (o *AddModifiablePasswordPolicyStatePluginRequest) HasBaseDN() bool {
-	if o != nil && !isNil(o.BaseDN) {
+	if o != nil && !IsNil(o.BaseDN) {
 		return true
 	}
 
@@ -131,7 +134,7 @@ func (o *AddModifiablePasswordPolicyStatePluginRequest) SetBaseDN(v []string) {
 
 // GetFilter returns the Filter field value if set, zero value otherwise.
 func (o *AddModifiablePasswordPolicyStatePluginRequest) GetFilter() []string {
-	if o == nil || isNil(o.Filter) {
+	if o == nil || IsNil(o.Filter) {
 		var ret []string
 		return ret
 	}
@@ -141,7 +144,7 @@ func (o *AddModifiablePasswordPolicyStatePluginRequest) GetFilter() []string {
 // GetFilterOk returns a tuple with the Filter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddModifiablePasswordPolicyStatePluginRequest) GetFilterOk() ([]string, bool) {
-	if o == nil || isNil(o.Filter) {
+	if o == nil || IsNil(o.Filter) {
 		return nil, false
 	}
 	return o.Filter, true
@@ -149,7 +152,7 @@ func (o *AddModifiablePasswordPolicyStatePluginRequest) GetFilterOk() ([]string,
 
 // HasFilter returns a boolean if a field has been set.
 func (o *AddModifiablePasswordPolicyStatePluginRequest) HasFilter() bool {
-	if o != nil && !isNil(o.Filter) {
+	if o != nil && !IsNil(o.Filter) {
 		return true
 	}
 
@@ -163,7 +166,7 @@ func (o *AddModifiablePasswordPolicyStatePluginRequest) SetFilter(v []string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddModifiablePasswordPolicyStatePluginRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -173,7 +176,7 @@ func (o *AddModifiablePasswordPolicyStatePluginRequest) GetDescription() string 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddModifiablePasswordPolicyStatePluginRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -181,7 +184,7 @@ func (o *AddModifiablePasswordPolicyStatePluginRequest) GetDescriptionOk() (*str
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddModifiablePasswordPolicyStatePluginRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -218,26 +221,28 @@ func (o *AddModifiablePasswordPolicyStatePluginRequest) SetEnabled(v bool) {
 }
 
 func (o AddModifiablePasswordPolicyStatePluginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["pluginName"] = o.PluginName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.BaseDN) {
-		toSerialize["baseDN"] = o.BaseDN
-	}
-	if !isNil(o.Filter) {
-		toSerialize["filter"] = o.Filter
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddModifiablePasswordPolicyStatePluginRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["pluginName"] = o.PluginName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.BaseDN) {
+		toSerialize["baseDN"] = o.BaseDN
+	}
+	if !IsNil(o.Filter) {
+		toSerialize["filter"] = o.Filter
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddModifiablePasswordPolicyStatePluginRequest struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the RootDseRequestCriteriaResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &RootDseRequestCriteriaResponse{}
+
 // RootDseRequestCriteriaResponse struct for RootDseRequestCriteriaResponse
 type RootDseRequestCriteriaResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -47,7 +50,7 @@ func NewRootDseRequestCriteriaResponseWithDefaults() *RootDseRequestCriteriaResp
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *RootDseRequestCriteriaResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -57,7 +60,7 @@ func (o *RootDseRequestCriteriaResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDseRequestCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -65,7 +68,7 @@ func (o *RootDseRequestCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *RootDseRequestCriteriaResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -79,7 +82,7 @@ func (o *RootDseRequestCriteriaResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *RootDseRequestCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -89,7 +92,7 @@ func (o *RootDseRequestCriteriaResponse) GetUrnpingidentityschemasconfigurationm
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDseRequestCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -97,7 +100,7 @@ func (o *RootDseRequestCriteriaResponse) GetUrnpingidentityschemasconfigurationm
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *RootDseRequestCriteriaResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -159,7 +162,7 @@ func (o *RootDseRequestCriteriaResponse) SetSchemas(v []EnumrootDseRequestCriter
 
 // GetOperationType returns the OperationType field value if set, zero value otherwise.
 func (o *RootDseRequestCriteriaResponse) GetOperationType() []EnumrequestCriteriaOperationTypeProp {
-	if o == nil || isNil(o.OperationType) {
+	if o == nil || IsNil(o.OperationType) {
 		var ret []EnumrequestCriteriaOperationTypeProp
 		return ret
 	}
@@ -169,7 +172,7 @@ func (o *RootDseRequestCriteriaResponse) GetOperationType() []EnumrequestCriteri
 // GetOperationTypeOk returns a tuple with the OperationType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDseRequestCriteriaResponse) GetOperationTypeOk() ([]EnumrequestCriteriaOperationTypeProp, bool) {
-	if o == nil || isNil(o.OperationType) {
+	if o == nil || IsNil(o.OperationType) {
 		return nil, false
 	}
 	return o.OperationType, true
@@ -177,7 +180,7 @@ func (o *RootDseRequestCriteriaResponse) GetOperationTypeOk() ([]EnumrequestCrit
 
 // HasOperationType returns a boolean if a field has been set.
 func (o *RootDseRequestCriteriaResponse) HasOperationType() bool {
-	if o != nil && !isNil(o.OperationType) {
+	if o != nil && !IsNil(o.OperationType) {
 		return true
 	}
 
@@ -191,7 +194,7 @@ func (o *RootDseRequestCriteriaResponse) SetOperationType(v []EnumrequestCriteri
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *RootDseRequestCriteriaResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -201,7 +204,7 @@ func (o *RootDseRequestCriteriaResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDseRequestCriteriaResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -209,7 +212,7 @@ func (o *RootDseRequestCriteriaResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *RootDseRequestCriteriaResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -222,26 +225,30 @@ func (o *RootDseRequestCriteriaResponse) SetDescription(v string) {
 }
 
 func (o RootDseRequestCriteriaResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.OperationType) {
-		toSerialize["operationType"] = o.OperationType
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o RootDseRequestCriteriaResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.OperationType) {
+		toSerialize["operationType"] = o.OperationType
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableRootDseRequestCriteriaResponse struct {

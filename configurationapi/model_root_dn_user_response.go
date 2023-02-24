@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the RootDnUserResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &RootDnUserResponse{}
+
 // RootDnUserResponse struct for RootDnUserResponse
 type RootDnUserResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -115,7 +118,7 @@ func NewRootDnUserResponseWithDefaults() *RootDnUserResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *RootDnUserResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -125,7 +128,7 @@ func (o *RootDnUserResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDnUserResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -133,7 +136,7 @@ func (o *RootDnUserResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *RootDnUserResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -147,7 +150,7 @@ func (o *RootDnUserResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *RootDnUserResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -157,7 +160,7 @@ func (o *RootDnUserResponse) GetUrnpingidentityschemasconfigurationmessages20() 
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDnUserResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -165,7 +168,7 @@ func (o *RootDnUserResponse) GetUrnpingidentityschemasconfigurationmessages20Ok(
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *RootDnUserResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -203,7 +206,7 @@ func (o *RootDnUserResponse) SetId(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *RootDnUserResponse) GetSchemas() []EnumrootDnUserSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumrootDnUserSchemaUrn
 		return ret
 	}
@@ -213,7 +216,7 @@ func (o *RootDnUserResponse) GetSchemas() []EnumrootDnUserSchemaUrn {
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDnUserResponse) GetSchemasOk() ([]EnumrootDnUserSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -221,7 +224,7 @@ func (o *RootDnUserResponse) GetSchemasOk() ([]EnumrootDnUserSchemaUrn, bool) {
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *RootDnUserResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -235,7 +238,7 @@ func (o *RootDnUserResponse) SetSchemas(v []EnumrootDnUserSchemaUrn) {
 
 // GetAlternateBindDN returns the AlternateBindDN field value if set, zero value otherwise.
 func (o *RootDnUserResponse) GetAlternateBindDN() []string {
-	if o == nil || isNil(o.AlternateBindDN) {
+	if o == nil || IsNil(o.AlternateBindDN) {
 		var ret []string
 		return ret
 	}
@@ -245,7 +248,7 @@ func (o *RootDnUserResponse) GetAlternateBindDN() []string {
 // GetAlternateBindDNOk returns a tuple with the AlternateBindDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDnUserResponse) GetAlternateBindDNOk() ([]string, bool) {
-	if o == nil || isNil(o.AlternateBindDN) {
+	if o == nil || IsNil(o.AlternateBindDN) {
 		return nil, false
 	}
 	return o.AlternateBindDN, true
@@ -253,7 +256,7 @@ func (o *RootDnUserResponse) GetAlternateBindDNOk() ([]string, bool) {
 
 // HasAlternateBindDN returns a boolean if a field has been set.
 func (o *RootDnUserResponse) HasAlternateBindDN() bool {
-	if o != nil && !isNil(o.AlternateBindDN) {
+	if o != nil && !IsNil(o.AlternateBindDN) {
 		return true
 	}
 
@@ -267,7 +270,7 @@ func (o *RootDnUserResponse) SetAlternateBindDN(v []string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *RootDnUserResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -277,7 +280,7 @@ func (o *RootDnUserResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDnUserResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -285,7 +288,7 @@ func (o *RootDnUserResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *RootDnUserResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -299,7 +302,7 @@ func (o *RootDnUserResponse) SetDescription(v string) {
 
 // GetPassword returns the Password field value if set, zero value otherwise.
 func (o *RootDnUserResponse) GetPassword() string {
-	if o == nil || isNil(o.Password) {
+	if o == nil || IsNil(o.Password) {
 		var ret string
 		return ret
 	}
@@ -309,7 +312,7 @@ func (o *RootDnUserResponse) GetPassword() string {
 // GetPasswordOk returns a tuple with the Password field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDnUserResponse) GetPasswordOk() (*string, bool) {
-	if o == nil || isNil(o.Password) {
+	if o == nil || IsNil(o.Password) {
 		return nil, false
 	}
 	return o.Password, true
@@ -317,7 +320,7 @@ func (o *RootDnUserResponse) GetPasswordOk() (*string, bool) {
 
 // HasPassword returns a boolean if a field has been set.
 func (o *RootDnUserResponse) HasPassword() bool {
-	if o != nil && !isNil(o.Password) {
+	if o != nil && !IsNil(o.Password) {
 		return true
 	}
 
@@ -331,7 +334,7 @@ func (o *RootDnUserResponse) SetPassword(v string) {
 
 // GetFirstName returns the FirstName field value if set, zero value otherwise.
 func (o *RootDnUserResponse) GetFirstName() []string {
-	if o == nil || isNil(o.FirstName) {
+	if o == nil || IsNil(o.FirstName) {
 		var ret []string
 		return ret
 	}
@@ -341,7 +344,7 @@ func (o *RootDnUserResponse) GetFirstName() []string {
 // GetFirstNameOk returns a tuple with the FirstName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDnUserResponse) GetFirstNameOk() ([]string, bool) {
-	if o == nil || isNil(o.FirstName) {
+	if o == nil || IsNil(o.FirstName) {
 		return nil, false
 	}
 	return o.FirstName, true
@@ -349,7 +352,7 @@ func (o *RootDnUserResponse) GetFirstNameOk() ([]string, bool) {
 
 // HasFirstName returns a boolean if a field has been set.
 func (o *RootDnUserResponse) HasFirstName() bool {
-	if o != nil && !isNil(o.FirstName) {
+	if o != nil && !IsNil(o.FirstName) {
 		return true
 	}
 
@@ -363,7 +366,7 @@ func (o *RootDnUserResponse) SetFirstName(v []string) {
 
 // GetLastName returns the LastName field value if set, zero value otherwise.
 func (o *RootDnUserResponse) GetLastName() []string {
-	if o == nil || isNil(o.LastName) {
+	if o == nil || IsNil(o.LastName) {
 		var ret []string
 		return ret
 	}
@@ -373,7 +376,7 @@ func (o *RootDnUserResponse) GetLastName() []string {
 // GetLastNameOk returns a tuple with the LastName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDnUserResponse) GetLastNameOk() ([]string, bool) {
-	if o == nil || isNil(o.LastName) {
+	if o == nil || IsNil(o.LastName) {
 		return nil, false
 	}
 	return o.LastName, true
@@ -381,7 +384,7 @@ func (o *RootDnUserResponse) GetLastNameOk() ([]string, bool) {
 
 // HasLastName returns a boolean if a field has been set.
 func (o *RootDnUserResponse) HasLastName() bool {
-	if o != nil && !isNil(o.LastName) {
+	if o != nil && !IsNil(o.LastName) {
 		return true
 	}
 
@@ -395,7 +398,7 @@ func (o *RootDnUserResponse) SetLastName(v []string) {
 
 // GetUserID returns the UserID field value if set, zero value otherwise.
 func (o *RootDnUserResponse) GetUserID() string {
-	if o == nil || isNil(o.UserID) {
+	if o == nil || IsNil(o.UserID) {
 		var ret string
 		return ret
 	}
@@ -405,7 +408,7 @@ func (o *RootDnUserResponse) GetUserID() string {
 // GetUserIDOk returns a tuple with the UserID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDnUserResponse) GetUserIDOk() (*string, bool) {
-	if o == nil || isNil(o.UserID) {
+	if o == nil || IsNil(o.UserID) {
 		return nil, false
 	}
 	return o.UserID, true
@@ -413,7 +416,7 @@ func (o *RootDnUserResponse) GetUserIDOk() (*string, bool) {
 
 // HasUserID returns a boolean if a field has been set.
 func (o *RootDnUserResponse) HasUserID() bool {
-	if o != nil && !isNil(o.UserID) {
+	if o != nil && !IsNil(o.UserID) {
 		return true
 	}
 
@@ -427,7 +430,7 @@ func (o *RootDnUserResponse) SetUserID(v string) {
 
 // GetEmailAddress returns the EmailAddress field value if set, zero value otherwise.
 func (o *RootDnUserResponse) GetEmailAddress() []string {
-	if o == nil || isNil(o.EmailAddress) {
+	if o == nil || IsNil(o.EmailAddress) {
 		var ret []string
 		return ret
 	}
@@ -437,7 +440,7 @@ func (o *RootDnUserResponse) GetEmailAddress() []string {
 // GetEmailAddressOk returns a tuple with the EmailAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDnUserResponse) GetEmailAddressOk() ([]string, bool) {
-	if o == nil || isNil(o.EmailAddress) {
+	if o == nil || IsNil(o.EmailAddress) {
 		return nil, false
 	}
 	return o.EmailAddress, true
@@ -445,7 +448,7 @@ func (o *RootDnUserResponse) GetEmailAddressOk() ([]string, bool) {
 
 // HasEmailAddress returns a boolean if a field has been set.
 func (o *RootDnUserResponse) HasEmailAddress() bool {
-	if o != nil && !isNil(o.EmailAddress) {
+	if o != nil && !IsNil(o.EmailAddress) {
 		return true
 	}
 
@@ -459,7 +462,7 @@ func (o *RootDnUserResponse) SetEmailAddress(v []string) {
 
 // GetWorkTelephoneNumber returns the WorkTelephoneNumber field value if set, zero value otherwise.
 func (o *RootDnUserResponse) GetWorkTelephoneNumber() []string {
-	if o == nil || isNil(o.WorkTelephoneNumber) {
+	if o == nil || IsNil(o.WorkTelephoneNumber) {
 		var ret []string
 		return ret
 	}
@@ -469,7 +472,7 @@ func (o *RootDnUserResponse) GetWorkTelephoneNumber() []string {
 // GetWorkTelephoneNumberOk returns a tuple with the WorkTelephoneNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDnUserResponse) GetWorkTelephoneNumberOk() ([]string, bool) {
-	if o == nil || isNil(o.WorkTelephoneNumber) {
+	if o == nil || IsNil(o.WorkTelephoneNumber) {
 		return nil, false
 	}
 	return o.WorkTelephoneNumber, true
@@ -477,7 +480,7 @@ func (o *RootDnUserResponse) GetWorkTelephoneNumberOk() ([]string, bool) {
 
 // HasWorkTelephoneNumber returns a boolean if a field has been set.
 func (o *RootDnUserResponse) HasWorkTelephoneNumber() bool {
-	if o != nil && !isNil(o.WorkTelephoneNumber) {
+	if o != nil && !IsNil(o.WorkTelephoneNumber) {
 		return true
 	}
 
@@ -491,7 +494,7 @@ func (o *RootDnUserResponse) SetWorkTelephoneNumber(v []string) {
 
 // GetHomeTelephoneNumber returns the HomeTelephoneNumber field value if set, zero value otherwise.
 func (o *RootDnUserResponse) GetHomeTelephoneNumber() []string {
-	if o == nil || isNil(o.HomeTelephoneNumber) {
+	if o == nil || IsNil(o.HomeTelephoneNumber) {
 		var ret []string
 		return ret
 	}
@@ -501,7 +504,7 @@ func (o *RootDnUserResponse) GetHomeTelephoneNumber() []string {
 // GetHomeTelephoneNumberOk returns a tuple with the HomeTelephoneNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDnUserResponse) GetHomeTelephoneNumberOk() ([]string, bool) {
-	if o == nil || isNil(o.HomeTelephoneNumber) {
+	if o == nil || IsNil(o.HomeTelephoneNumber) {
 		return nil, false
 	}
 	return o.HomeTelephoneNumber, true
@@ -509,7 +512,7 @@ func (o *RootDnUserResponse) GetHomeTelephoneNumberOk() ([]string, bool) {
 
 // HasHomeTelephoneNumber returns a boolean if a field has been set.
 func (o *RootDnUserResponse) HasHomeTelephoneNumber() bool {
-	if o != nil && !isNil(o.HomeTelephoneNumber) {
+	if o != nil && !IsNil(o.HomeTelephoneNumber) {
 		return true
 	}
 
@@ -523,7 +526,7 @@ func (o *RootDnUserResponse) SetHomeTelephoneNumber(v []string) {
 
 // GetMobileTelephoneNumber returns the MobileTelephoneNumber field value if set, zero value otherwise.
 func (o *RootDnUserResponse) GetMobileTelephoneNumber() []string {
-	if o == nil || isNil(o.MobileTelephoneNumber) {
+	if o == nil || IsNil(o.MobileTelephoneNumber) {
 		var ret []string
 		return ret
 	}
@@ -533,7 +536,7 @@ func (o *RootDnUserResponse) GetMobileTelephoneNumber() []string {
 // GetMobileTelephoneNumberOk returns a tuple with the MobileTelephoneNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDnUserResponse) GetMobileTelephoneNumberOk() ([]string, bool) {
-	if o == nil || isNil(o.MobileTelephoneNumber) {
+	if o == nil || IsNil(o.MobileTelephoneNumber) {
 		return nil, false
 	}
 	return o.MobileTelephoneNumber, true
@@ -541,7 +544,7 @@ func (o *RootDnUserResponse) GetMobileTelephoneNumberOk() ([]string, bool) {
 
 // HasMobileTelephoneNumber returns a boolean if a field has been set.
 func (o *RootDnUserResponse) HasMobileTelephoneNumber() bool {
-	if o != nil && !isNil(o.MobileTelephoneNumber) {
+	if o != nil && !IsNil(o.MobileTelephoneNumber) {
 		return true
 	}
 
@@ -555,7 +558,7 @@ func (o *RootDnUserResponse) SetMobileTelephoneNumber(v []string) {
 
 // GetPagerTelephoneNumber returns the PagerTelephoneNumber field value if set, zero value otherwise.
 func (o *RootDnUserResponse) GetPagerTelephoneNumber() []string {
-	if o == nil || isNil(o.PagerTelephoneNumber) {
+	if o == nil || IsNil(o.PagerTelephoneNumber) {
 		var ret []string
 		return ret
 	}
@@ -565,7 +568,7 @@ func (o *RootDnUserResponse) GetPagerTelephoneNumber() []string {
 // GetPagerTelephoneNumberOk returns a tuple with the PagerTelephoneNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDnUserResponse) GetPagerTelephoneNumberOk() ([]string, bool) {
-	if o == nil || isNil(o.PagerTelephoneNumber) {
+	if o == nil || IsNil(o.PagerTelephoneNumber) {
 		return nil, false
 	}
 	return o.PagerTelephoneNumber, true
@@ -573,7 +576,7 @@ func (o *RootDnUserResponse) GetPagerTelephoneNumberOk() ([]string, bool) {
 
 // HasPagerTelephoneNumber returns a boolean if a field has been set.
 func (o *RootDnUserResponse) HasPagerTelephoneNumber() bool {
-	if o != nil && !isNil(o.PagerTelephoneNumber) {
+	if o != nil && !IsNil(o.PagerTelephoneNumber) {
 		return true
 	}
 
@@ -611,7 +614,7 @@ func (o *RootDnUserResponse) SetInheritDefaultRootPrivileges(v bool) {
 
 // GetPrivilege returns the Privilege field value if set, zero value otherwise.
 func (o *RootDnUserResponse) GetPrivilege() []EnumrootDnUserPrivilegeProp {
-	if o == nil || isNil(o.Privilege) {
+	if o == nil || IsNil(o.Privilege) {
 		var ret []EnumrootDnUserPrivilegeProp
 		return ret
 	}
@@ -621,7 +624,7 @@ func (o *RootDnUserResponse) GetPrivilege() []EnumrootDnUserPrivilegeProp {
 // GetPrivilegeOk returns a tuple with the Privilege field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDnUserResponse) GetPrivilegeOk() ([]EnumrootDnUserPrivilegeProp, bool) {
-	if o == nil || isNil(o.Privilege) {
+	if o == nil || IsNil(o.Privilege) {
 		return nil, false
 	}
 	return o.Privilege, true
@@ -629,7 +632,7 @@ func (o *RootDnUserResponse) GetPrivilegeOk() ([]EnumrootDnUserPrivilegeProp, bo
 
 // HasPrivilege returns a boolean if a field has been set.
 func (o *RootDnUserResponse) HasPrivilege() bool {
-	if o != nil && !isNil(o.Privilege) {
+	if o != nil && !IsNil(o.Privilege) {
 		return true
 	}
 
@@ -763,7 +766,7 @@ func (o *RootDnUserResponse) SetPasswordPolicy(v string) {
 
 // GetDisabled returns the Disabled field value if set, zero value otherwise.
 func (o *RootDnUserResponse) GetDisabled() bool {
-	if o == nil || isNil(o.Disabled) {
+	if o == nil || IsNil(o.Disabled) {
 		var ret bool
 		return ret
 	}
@@ -773,7 +776,7 @@ func (o *RootDnUserResponse) GetDisabled() bool {
 // GetDisabledOk returns a tuple with the Disabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDnUserResponse) GetDisabledOk() (*bool, bool) {
-	if o == nil || isNil(o.Disabled) {
+	if o == nil || IsNil(o.Disabled) {
 		return nil, false
 	}
 	return o.Disabled, true
@@ -781,7 +784,7 @@ func (o *RootDnUserResponse) GetDisabledOk() (*bool, bool) {
 
 // HasDisabled returns a boolean if a field has been set.
 func (o *RootDnUserResponse) HasDisabled() bool {
-	if o != nil && !isNil(o.Disabled) {
+	if o != nil && !IsNil(o.Disabled) {
 		return true
 	}
 
@@ -795,7 +798,7 @@ func (o *RootDnUserResponse) SetDisabled(v bool) {
 
 // GetAccountActivationTime returns the AccountActivationTime field value if set, zero value otherwise.
 func (o *RootDnUserResponse) GetAccountActivationTime() string {
-	if o == nil || isNil(o.AccountActivationTime) {
+	if o == nil || IsNil(o.AccountActivationTime) {
 		var ret string
 		return ret
 	}
@@ -805,7 +808,7 @@ func (o *RootDnUserResponse) GetAccountActivationTime() string {
 // GetAccountActivationTimeOk returns a tuple with the AccountActivationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDnUserResponse) GetAccountActivationTimeOk() (*string, bool) {
-	if o == nil || isNil(o.AccountActivationTime) {
+	if o == nil || IsNil(o.AccountActivationTime) {
 		return nil, false
 	}
 	return o.AccountActivationTime, true
@@ -813,7 +816,7 @@ func (o *RootDnUserResponse) GetAccountActivationTimeOk() (*string, bool) {
 
 // HasAccountActivationTime returns a boolean if a field has been set.
 func (o *RootDnUserResponse) HasAccountActivationTime() bool {
-	if o != nil && !isNil(o.AccountActivationTime) {
+	if o != nil && !IsNil(o.AccountActivationTime) {
 		return true
 	}
 
@@ -827,7 +830,7 @@ func (o *RootDnUserResponse) SetAccountActivationTime(v string) {
 
 // GetAccountExpirationTime returns the AccountExpirationTime field value if set, zero value otherwise.
 func (o *RootDnUserResponse) GetAccountExpirationTime() string {
-	if o == nil || isNil(o.AccountExpirationTime) {
+	if o == nil || IsNil(o.AccountExpirationTime) {
 		var ret string
 		return ret
 	}
@@ -837,7 +840,7 @@ func (o *RootDnUserResponse) GetAccountExpirationTime() string {
 // GetAccountExpirationTimeOk returns a tuple with the AccountExpirationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDnUserResponse) GetAccountExpirationTimeOk() (*string, bool) {
-	if o == nil || isNil(o.AccountExpirationTime) {
+	if o == nil || IsNil(o.AccountExpirationTime) {
 		return nil, false
 	}
 	return o.AccountExpirationTime, true
@@ -845,7 +848,7 @@ func (o *RootDnUserResponse) GetAccountExpirationTimeOk() (*string, bool) {
 
 // HasAccountExpirationTime returns a boolean if a field has been set.
 func (o *RootDnUserResponse) HasAccountExpirationTime() bool {
-	if o != nil && !isNil(o.AccountExpirationTime) {
+	if o != nil && !IsNil(o.AccountExpirationTime) {
 		return true
 	}
 
@@ -907,7 +910,7 @@ func (o *RootDnUserResponse) SetRequireSecureConnections(v bool) {
 
 // GetAllowedAuthenticationType returns the AllowedAuthenticationType field value if set, zero value otherwise.
 func (o *RootDnUserResponse) GetAllowedAuthenticationType() []string {
-	if o == nil || isNil(o.AllowedAuthenticationType) {
+	if o == nil || IsNil(o.AllowedAuthenticationType) {
 		var ret []string
 		return ret
 	}
@@ -917,7 +920,7 @@ func (o *RootDnUserResponse) GetAllowedAuthenticationType() []string {
 // GetAllowedAuthenticationTypeOk returns a tuple with the AllowedAuthenticationType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDnUserResponse) GetAllowedAuthenticationTypeOk() ([]string, bool) {
-	if o == nil || isNil(o.AllowedAuthenticationType) {
+	if o == nil || IsNil(o.AllowedAuthenticationType) {
 		return nil, false
 	}
 	return o.AllowedAuthenticationType, true
@@ -925,7 +928,7 @@ func (o *RootDnUserResponse) GetAllowedAuthenticationTypeOk() ([]string, bool) {
 
 // HasAllowedAuthenticationType returns a boolean if a field has been set.
 func (o *RootDnUserResponse) HasAllowedAuthenticationType() bool {
-	if o != nil && !isNil(o.AllowedAuthenticationType) {
+	if o != nil && !IsNil(o.AllowedAuthenticationType) {
 		return true
 	}
 
@@ -939,7 +942,7 @@ func (o *RootDnUserResponse) SetAllowedAuthenticationType(v []string) {
 
 // GetAllowedAuthenticationIPAddress returns the AllowedAuthenticationIPAddress field value if set, zero value otherwise.
 func (o *RootDnUserResponse) GetAllowedAuthenticationIPAddress() []string {
-	if o == nil || isNil(o.AllowedAuthenticationIPAddress) {
+	if o == nil || IsNil(o.AllowedAuthenticationIPAddress) {
 		var ret []string
 		return ret
 	}
@@ -949,7 +952,7 @@ func (o *RootDnUserResponse) GetAllowedAuthenticationIPAddress() []string {
 // GetAllowedAuthenticationIPAddressOk returns a tuple with the AllowedAuthenticationIPAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDnUserResponse) GetAllowedAuthenticationIPAddressOk() ([]string, bool) {
-	if o == nil || isNil(o.AllowedAuthenticationIPAddress) {
+	if o == nil || IsNil(o.AllowedAuthenticationIPAddress) {
 		return nil, false
 	}
 	return o.AllowedAuthenticationIPAddress, true
@@ -957,7 +960,7 @@ func (o *RootDnUserResponse) GetAllowedAuthenticationIPAddressOk() ([]string, bo
 
 // HasAllowedAuthenticationIPAddress returns a boolean if a field has been set.
 func (o *RootDnUserResponse) HasAllowedAuthenticationIPAddress() bool {
-	if o != nil && !isNil(o.AllowedAuthenticationIPAddress) {
+	if o != nil && !IsNil(o.AllowedAuthenticationIPAddress) {
 		return true
 	}
 
@@ -971,7 +974,7 @@ func (o *RootDnUserResponse) SetAllowedAuthenticationIPAddress(v []string) {
 
 // GetPreferredOTPDeliveryMechanism returns the PreferredOTPDeliveryMechanism field value if set, zero value otherwise.
 func (o *RootDnUserResponse) GetPreferredOTPDeliveryMechanism() []string {
-	if o == nil || isNil(o.PreferredOTPDeliveryMechanism) {
+	if o == nil || IsNil(o.PreferredOTPDeliveryMechanism) {
 		var ret []string
 		return ret
 	}
@@ -981,7 +984,7 @@ func (o *RootDnUserResponse) GetPreferredOTPDeliveryMechanism() []string {
 // GetPreferredOTPDeliveryMechanismOk returns a tuple with the PreferredOTPDeliveryMechanism field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDnUserResponse) GetPreferredOTPDeliveryMechanismOk() ([]string, bool) {
-	if o == nil || isNil(o.PreferredOTPDeliveryMechanism) {
+	if o == nil || IsNil(o.PreferredOTPDeliveryMechanism) {
 		return nil, false
 	}
 	return o.PreferredOTPDeliveryMechanism, true
@@ -989,7 +992,7 @@ func (o *RootDnUserResponse) GetPreferredOTPDeliveryMechanismOk() ([]string, boo
 
 // HasPreferredOTPDeliveryMechanism returns a boolean if a field has been set.
 func (o *RootDnUserResponse) HasPreferredOTPDeliveryMechanism() bool {
-	if o != nil && !isNil(o.PreferredOTPDeliveryMechanism) {
+	if o != nil && !IsNil(o.PreferredOTPDeliveryMechanism) {
 		return true
 	}
 
@@ -1003,7 +1006,7 @@ func (o *RootDnUserResponse) SetPreferredOTPDeliveryMechanism(v []string) {
 
 // GetIsProxyable returns the IsProxyable field value if set, zero value otherwise.
 func (o *RootDnUserResponse) GetIsProxyable() EnumrootDnUserIsProxyableProp {
-	if o == nil || isNil(o.IsProxyable) {
+	if o == nil || IsNil(o.IsProxyable) {
 		var ret EnumrootDnUserIsProxyableProp
 		return ret
 	}
@@ -1013,7 +1016,7 @@ func (o *RootDnUserResponse) GetIsProxyable() EnumrootDnUserIsProxyableProp {
 // GetIsProxyableOk returns a tuple with the IsProxyable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDnUserResponse) GetIsProxyableOk() (*EnumrootDnUserIsProxyableProp, bool) {
-	if o == nil || isNil(o.IsProxyable) {
+	if o == nil || IsNil(o.IsProxyable) {
 		return nil, false
 	}
 	return o.IsProxyable, true
@@ -1021,7 +1024,7 @@ func (o *RootDnUserResponse) GetIsProxyableOk() (*EnumrootDnUserIsProxyableProp,
 
 // HasIsProxyable returns a boolean if a field has been set.
 func (o *RootDnUserResponse) HasIsProxyable() bool {
-	if o != nil && !isNil(o.IsProxyable) {
+	if o != nil && !IsNil(o.IsProxyable) {
 		return true
 	}
 
@@ -1035,7 +1038,7 @@ func (o *RootDnUserResponse) SetIsProxyable(v EnumrootDnUserIsProxyableProp) {
 
 // GetIsProxyableByDN returns the IsProxyableByDN field value if set, zero value otherwise.
 func (o *RootDnUserResponse) GetIsProxyableByDN() []string {
-	if o == nil || isNil(o.IsProxyableByDN) {
+	if o == nil || IsNil(o.IsProxyableByDN) {
 		var ret []string
 		return ret
 	}
@@ -1045,7 +1048,7 @@ func (o *RootDnUserResponse) GetIsProxyableByDN() []string {
 // GetIsProxyableByDNOk returns a tuple with the IsProxyableByDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDnUserResponse) GetIsProxyableByDNOk() ([]string, bool) {
-	if o == nil || isNil(o.IsProxyableByDN) {
+	if o == nil || IsNil(o.IsProxyableByDN) {
 		return nil, false
 	}
 	return o.IsProxyableByDN, true
@@ -1053,7 +1056,7 @@ func (o *RootDnUserResponse) GetIsProxyableByDNOk() ([]string, bool) {
 
 // HasIsProxyableByDN returns a boolean if a field has been set.
 func (o *RootDnUserResponse) HasIsProxyableByDN() bool {
-	if o != nil && !isNil(o.IsProxyableByDN) {
+	if o != nil && !IsNil(o.IsProxyableByDN) {
 		return true
 	}
 
@@ -1067,7 +1070,7 @@ func (o *RootDnUserResponse) SetIsProxyableByDN(v []string) {
 
 // GetIsProxyableByGroup returns the IsProxyableByGroup field value if set, zero value otherwise.
 func (o *RootDnUserResponse) GetIsProxyableByGroup() []string {
-	if o == nil || isNil(o.IsProxyableByGroup) {
+	if o == nil || IsNil(o.IsProxyableByGroup) {
 		var ret []string
 		return ret
 	}
@@ -1077,7 +1080,7 @@ func (o *RootDnUserResponse) GetIsProxyableByGroup() []string {
 // GetIsProxyableByGroupOk returns a tuple with the IsProxyableByGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDnUserResponse) GetIsProxyableByGroupOk() ([]string, bool) {
-	if o == nil || isNil(o.IsProxyableByGroup) {
+	if o == nil || IsNil(o.IsProxyableByGroup) {
 		return nil, false
 	}
 	return o.IsProxyableByGroup, true
@@ -1085,7 +1088,7 @@ func (o *RootDnUserResponse) GetIsProxyableByGroupOk() ([]string, bool) {
 
 // HasIsProxyableByGroup returns a boolean if a field has been set.
 func (o *RootDnUserResponse) HasIsProxyableByGroup() bool {
-	if o != nil && !isNil(o.IsProxyableByGroup) {
+	if o != nil && !IsNil(o.IsProxyableByGroup) {
 		return true
 	}
 
@@ -1099,7 +1102,7 @@ func (o *RootDnUserResponse) SetIsProxyableByGroup(v []string) {
 
 // GetIsProxyableByURL returns the IsProxyableByURL field value if set, zero value otherwise.
 func (o *RootDnUserResponse) GetIsProxyableByURL() []string {
-	if o == nil || isNil(o.IsProxyableByURL) {
+	if o == nil || IsNil(o.IsProxyableByURL) {
 		var ret []string
 		return ret
 	}
@@ -1109,7 +1112,7 @@ func (o *RootDnUserResponse) GetIsProxyableByURL() []string {
 // GetIsProxyableByURLOk returns a tuple with the IsProxyableByURL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDnUserResponse) GetIsProxyableByURLOk() ([]string, bool) {
-	if o == nil || isNil(o.IsProxyableByURL) {
+	if o == nil || IsNil(o.IsProxyableByURL) {
 		return nil, false
 	}
 	return o.IsProxyableByURL, true
@@ -1117,7 +1120,7 @@ func (o *RootDnUserResponse) GetIsProxyableByURLOk() ([]string, bool) {
 
 // HasIsProxyableByURL returns a boolean if a field has been set.
 func (o *RootDnUserResponse) HasIsProxyableByURL() bool {
-	if o != nil && !isNil(o.IsProxyableByURL) {
+	if o != nil && !IsNil(o.IsProxyableByURL) {
 		return true
 	}
 
@@ -1131,7 +1134,7 @@ func (o *RootDnUserResponse) SetIsProxyableByURL(v []string) {
 
 // GetMayProxyAsDN returns the MayProxyAsDN field value if set, zero value otherwise.
 func (o *RootDnUserResponse) GetMayProxyAsDN() []string {
-	if o == nil || isNil(o.MayProxyAsDN) {
+	if o == nil || IsNil(o.MayProxyAsDN) {
 		var ret []string
 		return ret
 	}
@@ -1141,7 +1144,7 @@ func (o *RootDnUserResponse) GetMayProxyAsDN() []string {
 // GetMayProxyAsDNOk returns a tuple with the MayProxyAsDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDnUserResponse) GetMayProxyAsDNOk() ([]string, bool) {
-	if o == nil || isNil(o.MayProxyAsDN) {
+	if o == nil || IsNil(o.MayProxyAsDN) {
 		return nil, false
 	}
 	return o.MayProxyAsDN, true
@@ -1149,7 +1152,7 @@ func (o *RootDnUserResponse) GetMayProxyAsDNOk() ([]string, bool) {
 
 // HasMayProxyAsDN returns a boolean if a field has been set.
 func (o *RootDnUserResponse) HasMayProxyAsDN() bool {
-	if o != nil && !isNil(o.MayProxyAsDN) {
+	if o != nil && !IsNil(o.MayProxyAsDN) {
 		return true
 	}
 
@@ -1163,7 +1166,7 @@ func (o *RootDnUserResponse) SetMayProxyAsDN(v []string) {
 
 // GetMayProxyAsGroup returns the MayProxyAsGroup field value if set, zero value otherwise.
 func (o *RootDnUserResponse) GetMayProxyAsGroup() []string {
-	if o == nil || isNil(o.MayProxyAsGroup) {
+	if o == nil || IsNil(o.MayProxyAsGroup) {
 		var ret []string
 		return ret
 	}
@@ -1173,7 +1176,7 @@ func (o *RootDnUserResponse) GetMayProxyAsGroup() []string {
 // GetMayProxyAsGroupOk returns a tuple with the MayProxyAsGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDnUserResponse) GetMayProxyAsGroupOk() ([]string, bool) {
-	if o == nil || isNil(o.MayProxyAsGroup) {
+	if o == nil || IsNil(o.MayProxyAsGroup) {
 		return nil, false
 	}
 	return o.MayProxyAsGroup, true
@@ -1181,7 +1184,7 @@ func (o *RootDnUserResponse) GetMayProxyAsGroupOk() ([]string, bool) {
 
 // HasMayProxyAsGroup returns a boolean if a field has been set.
 func (o *RootDnUserResponse) HasMayProxyAsGroup() bool {
-	if o != nil && !isNil(o.MayProxyAsGroup) {
+	if o != nil && !IsNil(o.MayProxyAsGroup) {
 		return true
 	}
 
@@ -1195,7 +1198,7 @@ func (o *RootDnUserResponse) SetMayProxyAsGroup(v []string) {
 
 // GetMayProxyAsURL returns the MayProxyAsURL field value if set, zero value otherwise.
 func (o *RootDnUserResponse) GetMayProxyAsURL() []string {
-	if o == nil || isNil(o.MayProxyAsURL) {
+	if o == nil || IsNil(o.MayProxyAsURL) {
 		var ret []string
 		return ret
 	}
@@ -1205,7 +1208,7 @@ func (o *RootDnUserResponse) GetMayProxyAsURL() []string {
 // GetMayProxyAsURLOk returns a tuple with the MayProxyAsURL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootDnUserResponse) GetMayProxyAsURLOk() ([]string, bool) {
-	if o == nil || isNil(o.MayProxyAsURL) {
+	if o == nil || IsNil(o.MayProxyAsURL) {
 		return nil, false
 	}
 	return o.MayProxyAsURL, true
@@ -1213,7 +1216,7 @@ func (o *RootDnUserResponse) GetMayProxyAsURLOk() ([]string, bool) {
 
 // HasMayProxyAsURL returns a boolean if a field has been set.
 func (o *RootDnUserResponse) HasMayProxyAsURL() bool {
-	if o != nil && !isNil(o.MayProxyAsURL) {
+	if o != nil && !IsNil(o.MayProxyAsURL) {
 		return true
 	}
 
@@ -1226,119 +1229,109 @@ func (o *RootDnUserResponse) SetMayProxyAsURL(v []string) {
 }
 
 func (o RootDnUserResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.AlternateBindDN) {
-		toSerialize["alternateBindDN"] = o.AlternateBindDN
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if !isNil(o.Password) {
-		toSerialize["password"] = o.Password
-	}
-	if !isNil(o.FirstName) {
-		toSerialize["firstName"] = o.FirstName
-	}
-	if !isNil(o.LastName) {
-		toSerialize["lastName"] = o.LastName
-	}
-	if !isNil(o.UserID) {
-		toSerialize["userID"] = o.UserID
-	}
-	if !isNil(o.EmailAddress) {
-		toSerialize["emailAddress"] = o.EmailAddress
-	}
-	if !isNil(o.WorkTelephoneNumber) {
-		toSerialize["workTelephoneNumber"] = o.WorkTelephoneNumber
-	}
-	if !isNil(o.HomeTelephoneNumber) {
-		toSerialize["homeTelephoneNumber"] = o.HomeTelephoneNumber
-	}
-	if !isNil(o.MobileTelephoneNumber) {
-		toSerialize["mobileTelephoneNumber"] = o.MobileTelephoneNumber
-	}
-	if !isNil(o.PagerTelephoneNumber) {
-		toSerialize["pagerTelephoneNumber"] = o.PagerTelephoneNumber
-	}
-	if true {
-		toSerialize["inheritDefaultRootPrivileges"] = o.InheritDefaultRootPrivileges
-	}
-	if !isNil(o.Privilege) {
-		toSerialize["privilege"] = o.Privilege
-	}
-	if true {
-		toSerialize["searchResultEntryLimit"] = o.SearchResultEntryLimit
-	}
-	if true {
-		toSerialize["timeLimitSeconds"] = o.TimeLimitSeconds
-	}
-	if true {
-		toSerialize["lookThroughEntryLimit"] = o.LookThroughEntryLimit
-	}
-	if true {
-		toSerialize["idleTimeLimitSeconds"] = o.IdleTimeLimitSeconds
-	}
-	if true {
-		toSerialize["passwordPolicy"] = o.PasswordPolicy
-	}
-	if !isNil(o.Disabled) {
-		toSerialize["disabled"] = o.Disabled
-	}
-	if !isNil(o.AccountActivationTime) {
-		toSerialize["accountActivationTime"] = o.AccountActivationTime
-	}
-	if !isNil(o.AccountExpirationTime) {
-		toSerialize["accountExpirationTime"] = o.AccountExpirationTime
-	}
-	if true {
-		toSerialize["requireSecureAuthentication"] = o.RequireSecureAuthentication
-	}
-	if true {
-		toSerialize["requireSecureConnections"] = o.RequireSecureConnections
-	}
-	if !isNil(o.AllowedAuthenticationType) {
-		toSerialize["allowedAuthenticationType"] = o.AllowedAuthenticationType
-	}
-	if !isNil(o.AllowedAuthenticationIPAddress) {
-		toSerialize["allowedAuthenticationIPAddress"] = o.AllowedAuthenticationIPAddress
-	}
-	if !isNil(o.PreferredOTPDeliveryMechanism) {
-		toSerialize["preferredOTPDeliveryMechanism"] = o.PreferredOTPDeliveryMechanism
-	}
-	if !isNil(o.IsProxyable) {
-		toSerialize["isProxyable"] = o.IsProxyable
-	}
-	if !isNil(o.IsProxyableByDN) {
-		toSerialize["isProxyableByDN"] = o.IsProxyableByDN
-	}
-	if !isNil(o.IsProxyableByGroup) {
-		toSerialize["isProxyableByGroup"] = o.IsProxyableByGroup
-	}
-	if !isNil(o.IsProxyableByURL) {
-		toSerialize["isProxyableByURL"] = o.IsProxyableByURL
-	}
-	if !isNil(o.MayProxyAsDN) {
-		toSerialize["mayProxyAsDN"] = o.MayProxyAsDN
-	}
-	if !isNil(o.MayProxyAsGroup) {
-		toSerialize["mayProxyAsGroup"] = o.MayProxyAsGroup
-	}
-	if !isNil(o.MayProxyAsURL) {
-		toSerialize["mayProxyAsURL"] = o.MayProxyAsURL
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o RootDnUserResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.AlternateBindDN) {
+		toSerialize["alternateBindDN"] = o.AlternateBindDN
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.Password) {
+		toSerialize["password"] = o.Password
+	}
+	if !IsNil(o.FirstName) {
+		toSerialize["firstName"] = o.FirstName
+	}
+	if !IsNil(o.LastName) {
+		toSerialize["lastName"] = o.LastName
+	}
+	if !IsNil(o.UserID) {
+		toSerialize["userID"] = o.UserID
+	}
+	if !IsNil(o.EmailAddress) {
+		toSerialize["emailAddress"] = o.EmailAddress
+	}
+	if !IsNil(o.WorkTelephoneNumber) {
+		toSerialize["workTelephoneNumber"] = o.WorkTelephoneNumber
+	}
+	if !IsNil(o.HomeTelephoneNumber) {
+		toSerialize["homeTelephoneNumber"] = o.HomeTelephoneNumber
+	}
+	if !IsNil(o.MobileTelephoneNumber) {
+		toSerialize["mobileTelephoneNumber"] = o.MobileTelephoneNumber
+	}
+	if !IsNil(o.PagerTelephoneNumber) {
+		toSerialize["pagerTelephoneNumber"] = o.PagerTelephoneNumber
+	}
+	toSerialize["inheritDefaultRootPrivileges"] = o.InheritDefaultRootPrivileges
+	if !IsNil(o.Privilege) {
+		toSerialize["privilege"] = o.Privilege
+	}
+	toSerialize["searchResultEntryLimit"] = o.SearchResultEntryLimit
+	toSerialize["timeLimitSeconds"] = o.TimeLimitSeconds
+	toSerialize["lookThroughEntryLimit"] = o.LookThroughEntryLimit
+	toSerialize["idleTimeLimitSeconds"] = o.IdleTimeLimitSeconds
+	toSerialize["passwordPolicy"] = o.PasswordPolicy
+	if !IsNil(o.Disabled) {
+		toSerialize["disabled"] = o.Disabled
+	}
+	if !IsNil(o.AccountActivationTime) {
+		toSerialize["accountActivationTime"] = o.AccountActivationTime
+	}
+	if !IsNil(o.AccountExpirationTime) {
+		toSerialize["accountExpirationTime"] = o.AccountExpirationTime
+	}
+	toSerialize["requireSecureAuthentication"] = o.RequireSecureAuthentication
+	toSerialize["requireSecureConnections"] = o.RequireSecureConnections
+	if !IsNil(o.AllowedAuthenticationType) {
+		toSerialize["allowedAuthenticationType"] = o.AllowedAuthenticationType
+	}
+	if !IsNil(o.AllowedAuthenticationIPAddress) {
+		toSerialize["allowedAuthenticationIPAddress"] = o.AllowedAuthenticationIPAddress
+	}
+	if !IsNil(o.PreferredOTPDeliveryMechanism) {
+		toSerialize["preferredOTPDeliveryMechanism"] = o.PreferredOTPDeliveryMechanism
+	}
+	if !IsNil(o.IsProxyable) {
+		toSerialize["isProxyable"] = o.IsProxyable
+	}
+	if !IsNil(o.IsProxyableByDN) {
+		toSerialize["isProxyableByDN"] = o.IsProxyableByDN
+	}
+	if !IsNil(o.IsProxyableByGroup) {
+		toSerialize["isProxyableByGroup"] = o.IsProxyableByGroup
+	}
+	if !IsNil(o.IsProxyableByURL) {
+		toSerialize["isProxyableByURL"] = o.IsProxyableByURL
+	}
+	if !IsNil(o.MayProxyAsDN) {
+		toSerialize["mayProxyAsDN"] = o.MayProxyAsDN
+	}
+	if !IsNil(o.MayProxyAsGroup) {
+		toSerialize["mayProxyAsGroup"] = o.MayProxyAsGroup
+	}
+	if !IsNil(o.MayProxyAsURL) {
+		toSerialize["mayProxyAsURL"] = o.MayProxyAsURL
+	}
+	return toSerialize, nil
 }
 
 type NullableRootDnUserResponse struct {

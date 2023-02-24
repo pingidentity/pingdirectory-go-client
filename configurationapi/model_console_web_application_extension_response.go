@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ConsoleWebApplicationExtensionResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ConsoleWebApplicationExtensionResponse{}
+
 // ConsoleWebApplicationExtensionResponse struct for ConsoleWebApplicationExtensionResponse
 type ConsoleWebApplicationExtensionResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -90,7 +93,7 @@ func NewConsoleWebApplicationExtensionResponseWithDefaults() *ConsoleWebApplicat
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *ConsoleWebApplicationExtensionResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -100,7 +103,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -108,7 +111,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *ConsoleWebApplicationExtensionResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -122,7 +125,7 @@ func (o *ConsoleWebApplicationExtensionResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *ConsoleWebApplicationExtensionResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -132,7 +135,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetUrnpingidentityschemasconfig
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -140,7 +143,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetUrnpingidentityschemasconfig
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *ConsoleWebApplicationExtensionResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -202,7 +205,7 @@ func (o *ConsoleWebApplicationExtensionResponse) SetId(v string) {
 
 // GetSsoEnabled returns the SsoEnabled field value if set, zero value otherwise.
 func (o *ConsoleWebApplicationExtensionResponse) GetSsoEnabled() bool {
-	if o == nil || isNil(o.SsoEnabled) {
+	if o == nil || IsNil(o.SsoEnabled) {
 		var ret bool
 		return ret
 	}
@@ -212,7 +215,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetSsoEnabled() bool {
 // GetSsoEnabledOk returns a tuple with the SsoEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetSsoEnabledOk() (*bool, bool) {
-	if o == nil || isNil(o.SsoEnabled) {
+	if o == nil || IsNil(o.SsoEnabled) {
 		return nil, false
 	}
 	return o.SsoEnabled, true
@@ -220,7 +223,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetSsoEnabledOk() (*bool, bool)
 
 // HasSsoEnabled returns a boolean if a field has been set.
 func (o *ConsoleWebApplicationExtensionResponse) HasSsoEnabled() bool {
-	if o != nil && !isNil(o.SsoEnabled) {
+	if o != nil && !IsNil(o.SsoEnabled) {
 		return true
 	}
 
@@ -234,7 +237,7 @@ func (o *ConsoleWebApplicationExtensionResponse) SetSsoEnabled(v bool) {
 
 // GetOidcClientID returns the OidcClientID field value if set, zero value otherwise.
 func (o *ConsoleWebApplicationExtensionResponse) GetOidcClientID() string {
-	if o == nil || isNil(o.OidcClientID) {
+	if o == nil || IsNil(o.OidcClientID) {
 		var ret string
 		return ret
 	}
@@ -244,7 +247,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetOidcClientID() string {
 // GetOidcClientIDOk returns a tuple with the OidcClientID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetOidcClientIDOk() (*string, bool) {
-	if o == nil || isNil(o.OidcClientID) {
+	if o == nil || IsNil(o.OidcClientID) {
 		return nil, false
 	}
 	return o.OidcClientID, true
@@ -252,7 +255,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetOidcClientIDOk() (*string, b
 
 // HasOidcClientID returns a boolean if a field has been set.
 func (o *ConsoleWebApplicationExtensionResponse) HasOidcClientID() bool {
-	if o != nil && !isNil(o.OidcClientID) {
+	if o != nil && !IsNil(o.OidcClientID) {
 		return true
 	}
 
@@ -266,7 +269,7 @@ func (o *ConsoleWebApplicationExtensionResponse) SetOidcClientID(v string) {
 
 // GetOidcClientSecret returns the OidcClientSecret field value if set, zero value otherwise.
 func (o *ConsoleWebApplicationExtensionResponse) GetOidcClientSecret() string {
-	if o == nil || isNil(o.OidcClientSecret) {
+	if o == nil || IsNil(o.OidcClientSecret) {
 		var ret string
 		return ret
 	}
@@ -276,7 +279,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetOidcClientSecret() string {
 // GetOidcClientSecretOk returns a tuple with the OidcClientSecret field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetOidcClientSecretOk() (*string, bool) {
-	if o == nil || isNil(o.OidcClientSecret) {
+	if o == nil || IsNil(o.OidcClientSecret) {
 		return nil, false
 	}
 	return o.OidcClientSecret, true
@@ -284,7 +287,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetOidcClientSecretOk() (*strin
 
 // HasOidcClientSecret returns a boolean if a field has been set.
 func (o *ConsoleWebApplicationExtensionResponse) HasOidcClientSecret() bool {
-	if o != nil && !isNil(o.OidcClientSecret) {
+	if o != nil && !IsNil(o.OidcClientSecret) {
 		return true
 	}
 
@@ -298,7 +301,7 @@ func (o *ConsoleWebApplicationExtensionResponse) SetOidcClientSecret(v string) {
 
 // GetOidcClientSecretPassphraseProvider returns the OidcClientSecretPassphraseProvider field value if set, zero value otherwise.
 func (o *ConsoleWebApplicationExtensionResponse) GetOidcClientSecretPassphraseProvider() string {
-	if o == nil || isNil(o.OidcClientSecretPassphraseProvider) {
+	if o == nil || IsNil(o.OidcClientSecretPassphraseProvider) {
 		var ret string
 		return ret
 	}
@@ -308,7 +311,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetOidcClientSecretPassphrasePr
 // GetOidcClientSecretPassphraseProviderOk returns a tuple with the OidcClientSecretPassphraseProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetOidcClientSecretPassphraseProviderOk() (*string, bool) {
-	if o == nil || isNil(o.OidcClientSecretPassphraseProvider) {
+	if o == nil || IsNil(o.OidcClientSecretPassphraseProvider) {
 		return nil, false
 	}
 	return o.OidcClientSecretPassphraseProvider, true
@@ -316,7 +319,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetOidcClientSecretPassphrasePr
 
 // HasOidcClientSecretPassphraseProvider returns a boolean if a field has been set.
 func (o *ConsoleWebApplicationExtensionResponse) HasOidcClientSecretPassphraseProvider() bool {
-	if o != nil && !isNil(o.OidcClientSecretPassphraseProvider) {
+	if o != nil && !IsNil(o.OidcClientSecretPassphraseProvider) {
 		return true
 	}
 
@@ -330,7 +333,7 @@ func (o *ConsoleWebApplicationExtensionResponse) SetOidcClientSecretPassphrasePr
 
 // GetOidcIssuerURL returns the OidcIssuerURL field value if set, zero value otherwise.
 func (o *ConsoleWebApplicationExtensionResponse) GetOidcIssuerURL() string {
-	if o == nil || isNil(o.OidcIssuerURL) {
+	if o == nil || IsNil(o.OidcIssuerURL) {
 		var ret string
 		return ret
 	}
@@ -340,7 +343,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetOidcIssuerURL() string {
 // GetOidcIssuerURLOk returns a tuple with the OidcIssuerURL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetOidcIssuerURLOk() (*string, bool) {
-	if o == nil || isNil(o.OidcIssuerURL) {
+	if o == nil || IsNil(o.OidcIssuerURL) {
 		return nil, false
 	}
 	return o.OidcIssuerURL, true
@@ -348,7 +351,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetOidcIssuerURLOk() (*string, 
 
 // HasOidcIssuerURL returns a boolean if a field has been set.
 func (o *ConsoleWebApplicationExtensionResponse) HasOidcIssuerURL() bool {
-	if o != nil && !isNil(o.OidcIssuerURL) {
+	if o != nil && !IsNil(o.OidcIssuerURL) {
 		return true
 	}
 
@@ -362,7 +365,7 @@ func (o *ConsoleWebApplicationExtensionResponse) SetOidcIssuerURL(v string) {
 
 // GetOidcTrustStoreFile returns the OidcTrustStoreFile field value if set, zero value otherwise.
 func (o *ConsoleWebApplicationExtensionResponse) GetOidcTrustStoreFile() string {
-	if o == nil || isNil(o.OidcTrustStoreFile) {
+	if o == nil || IsNil(o.OidcTrustStoreFile) {
 		var ret string
 		return ret
 	}
@@ -372,7 +375,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetOidcTrustStoreFile() string 
 // GetOidcTrustStoreFileOk returns a tuple with the OidcTrustStoreFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetOidcTrustStoreFileOk() (*string, bool) {
-	if o == nil || isNil(o.OidcTrustStoreFile) {
+	if o == nil || IsNil(o.OidcTrustStoreFile) {
 		return nil, false
 	}
 	return o.OidcTrustStoreFile, true
@@ -380,7 +383,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetOidcTrustStoreFileOk() (*str
 
 // HasOidcTrustStoreFile returns a boolean if a field has been set.
 func (o *ConsoleWebApplicationExtensionResponse) HasOidcTrustStoreFile() bool {
-	if o != nil && !isNil(o.OidcTrustStoreFile) {
+	if o != nil && !IsNil(o.OidcTrustStoreFile) {
 		return true
 	}
 
@@ -394,7 +397,7 @@ func (o *ConsoleWebApplicationExtensionResponse) SetOidcTrustStoreFile(v string)
 
 // GetOidcTrustStoreType returns the OidcTrustStoreType field value if set, zero value otherwise.
 func (o *ConsoleWebApplicationExtensionResponse) GetOidcTrustStoreType() string {
-	if o == nil || isNil(o.OidcTrustStoreType) {
+	if o == nil || IsNil(o.OidcTrustStoreType) {
 		var ret string
 		return ret
 	}
@@ -404,7 +407,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetOidcTrustStoreType() string 
 // GetOidcTrustStoreTypeOk returns a tuple with the OidcTrustStoreType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetOidcTrustStoreTypeOk() (*string, bool) {
-	if o == nil || isNil(o.OidcTrustStoreType) {
+	if o == nil || IsNil(o.OidcTrustStoreType) {
 		return nil, false
 	}
 	return o.OidcTrustStoreType, true
@@ -412,7 +415,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetOidcTrustStoreTypeOk() (*str
 
 // HasOidcTrustStoreType returns a boolean if a field has been set.
 func (o *ConsoleWebApplicationExtensionResponse) HasOidcTrustStoreType() bool {
-	if o != nil && !isNil(o.OidcTrustStoreType) {
+	if o != nil && !IsNil(o.OidcTrustStoreType) {
 		return true
 	}
 
@@ -426,7 +429,7 @@ func (o *ConsoleWebApplicationExtensionResponse) SetOidcTrustStoreType(v string)
 
 // GetOidcTrustStorePinPassphraseProvider returns the OidcTrustStorePinPassphraseProvider field value if set, zero value otherwise.
 func (o *ConsoleWebApplicationExtensionResponse) GetOidcTrustStorePinPassphraseProvider() string {
-	if o == nil || isNil(o.OidcTrustStorePinPassphraseProvider) {
+	if o == nil || IsNil(o.OidcTrustStorePinPassphraseProvider) {
 		var ret string
 		return ret
 	}
@@ -436,7 +439,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetOidcTrustStorePinPassphraseP
 // GetOidcTrustStorePinPassphraseProviderOk returns a tuple with the OidcTrustStorePinPassphraseProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetOidcTrustStorePinPassphraseProviderOk() (*string, bool) {
-	if o == nil || isNil(o.OidcTrustStorePinPassphraseProvider) {
+	if o == nil || IsNil(o.OidcTrustStorePinPassphraseProvider) {
 		return nil, false
 	}
 	return o.OidcTrustStorePinPassphraseProvider, true
@@ -444,7 +447,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetOidcTrustStorePinPassphraseP
 
 // HasOidcTrustStorePinPassphraseProvider returns a boolean if a field has been set.
 func (o *ConsoleWebApplicationExtensionResponse) HasOidcTrustStorePinPassphraseProvider() bool {
-	if o != nil && !isNil(o.OidcTrustStorePinPassphraseProvider) {
+	if o != nil && !IsNil(o.OidcTrustStorePinPassphraseProvider) {
 		return true
 	}
 
@@ -458,7 +461,7 @@ func (o *ConsoleWebApplicationExtensionResponse) SetOidcTrustStorePinPassphraseP
 
 // GetOidcStrictHostnameVerification returns the OidcStrictHostnameVerification field value if set, zero value otherwise.
 func (o *ConsoleWebApplicationExtensionResponse) GetOidcStrictHostnameVerification() bool {
-	if o == nil || isNil(o.OidcStrictHostnameVerification) {
+	if o == nil || IsNil(o.OidcStrictHostnameVerification) {
 		var ret bool
 		return ret
 	}
@@ -468,7 +471,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetOidcStrictHostnameVerificati
 // GetOidcStrictHostnameVerificationOk returns a tuple with the OidcStrictHostnameVerification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetOidcStrictHostnameVerificationOk() (*bool, bool) {
-	if o == nil || isNil(o.OidcStrictHostnameVerification) {
+	if o == nil || IsNil(o.OidcStrictHostnameVerification) {
 		return nil, false
 	}
 	return o.OidcStrictHostnameVerification, true
@@ -476,7 +479,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetOidcStrictHostnameVerificati
 
 // HasOidcStrictHostnameVerification returns a boolean if a field has been set.
 func (o *ConsoleWebApplicationExtensionResponse) HasOidcStrictHostnameVerification() bool {
-	if o != nil && !isNil(o.OidcStrictHostnameVerification) {
+	if o != nil && !IsNil(o.OidcStrictHostnameVerification) {
 		return true
 	}
 
@@ -490,7 +493,7 @@ func (o *ConsoleWebApplicationExtensionResponse) SetOidcStrictHostnameVerificati
 
 // GetOidcTrustAll returns the OidcTrustAll field value if set, zero value otherwise.
 func (o *ConsoleWebApplicationExtensionResponse) GetOidcTrustAll() bool {
-	if o == nil || isNil(o.OidcTrustAll) {
+	if o == nil || IsNil(o.OidcTrustAll) {
 		var ret bool
 		return ret
 	}
@@ -500,7 +503,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetOidcTrustAll() bool {
 // GetOidcTrustAllOk returns a tuple with the OidcTrustAll field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetOidcTrustAllOk() (*bool, bool) {
-	if o == nil || isNil(o.OidcTrustAll) {
+	if o == nil || IsNil(o.OidcTrustAll) {
 		return nil, false
 	}
 	return o.OidcTrustAll, true
@@ -508,7 +511,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetOidcTrustAllOk() (*bool, boo
 
 // HasOidcTrustAll returns a boolean if a field has been set.
 func (o *ConsoleWebApplicationExtensionResponse) HasOidcTrustAll() bool {
-	if o != nil && !isNil(o.OidcTrustAll) {
+	if o != nil && !IsNil(o.OidcTrustAll) {
 		return true
 	}
 
@@ -522,7 +525,7 @@ func (o *ConsoleWebApplicationExtensionResponse) SetOidcTrustAll(v bool) {
 
 // GetLdapServer returns the LdapServer field value if set, zero value otherwise.
 func (o *ConsoleWebApplicationExtensionResponse) GetLdapServer() string {
-	if o == nil || isNil(o.LdapServer) {
+	if o == nil || IsNil(o.LdapServer) {
 		var ret string
 		return ret
 	}
@@ -532,7 +535,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetLdapServer() string {
 // GetLdapServerOk returns a tuple with the LdapServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetLdapServerOk() (*string, bool) {
-	if o == nil || isNil(o.LdapServer) {
+	if o == nil || IsNil(o.LdapServer) {
 		return nil, false
 	}
 	return o.LdapServer, true
@@ -540,7 +543,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetLdapServerOk() (*string, boo
 
 // HasLdapServer returns a boolean if a field has been set.
 func (o *ConsoleWebApplicationExtensionResponse) HasLdapServer() bool {
-	if o != nil && !isNil(o.LdapServer) {
+	if o != nil && !IsNil(o.LdapServer) {
 		return true
 	}
 
@@ -554,7 +557,7 @@ func (o *ConsoleWebApplicationExtensionResponse) SetLdapServer(v string) {
 
 // GetTrustStoreFile returns the TrustStoreFile field value if set, zero value otherwise.
 func (o *ConsoleWebApplicationExtensionResponse) GetTrustStoreFile() string {
-	if o == nil || isNil(o.TrustStoreFile) {
+	if o == nil || IsNil(o.TrustStoreFile) {
 		var ret string
 		return ret
 	}
@@ -564,7 +567,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetTrustStoreFile() string {
 // GetTrustStoreFileOk returns a tuple with the TrustStoreFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetTrustStoreFileOk() (*string, bool) {
-	if o == nil || isNil(o.TrustStoreFile) {
+	if o == nil || IsNil(o.TrustStoreFile) {
 		return nil, false
 	}
 	return o.TrustStoreFile, true
@@ -572,7 +575,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetTrustStoreFileOk() (*string,
 
 // HasTrustStoreFile returns a boolean if a field has been set.
 func (o *ConsoleWebApplicationExtensionResponse) HasTrustStoreFile() bool {
-	if o != nil && !isNil(o.TrustStoreFile) {
+	if o != nil && !IsNil(o.TrustStoreFile) {
 		return true
 	}
 
@@ -586,7 +589,7 @@ func (o *ConsoleWebApplicationExtensionResponse) SetTrustStoreFile(v string) {
 
 // GetTrustStoreType returns the TrustStoreType field value if set, zero value otherwise.
 func (o *ConsoleWebApplicationExtensionResponse) GetTrustStoreType() string {
-	if o == nil || isNil(o.TrustStoreType) {
+	if o == nil || IsNil(o.TrustStoreType) {
 		var ret string
 		return ret
 	}
@@ -596,7 +599,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetTrustStoreType() string {
 // GetTrustStoreTypeOk returns a tuple with the TrustStoreType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetTrustStoreTypeOk() (*string, bool) {
-	if o == nil || isNil(o.TrustStoreType) {
+	if o == nil || IsNil(o.TrustStoreType) {
 		return nil, false
 	}
 	return o.TrustStoreType, true
@@ -604,7 +607,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetTrustStoreTypeOk() (*string,
 
 // HasTrustStoreType returns a boolean if a field has been set.
 func (o *ConsoleWebApplicationExtensionResponse) HasTrustStoreType() bool {
-	if o != nil && !isNil(o.TrustStoreType) {
+	if o != nil && !IsNil(o.TrustStoreType) {
 		return true
 	}
 
@@ -618,7 +621,7 @@ func (o *ConsoleWebApplicationExtensionResponse) SetTrustStoreType(v string) {
 
 // GetTrustStorePinPassphraseProvider returns the TrustStorePinPassphraseProvider field value if set, zero value otherwise.
 func (o *ConsoleWebApplicationExtensionResponse) GetTrustStorePinPassphraseProvider() string {
-	if o == nil || isNil(o.TrustStorePinPassphraseProvider) {
+	if o == nil || IsNil(o.TrustStorePinPassphraseProvider) {
 		var ret string
 		return ret
 	}
@@ -628,7 +631,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetTrustStorePinPassphraseProvi
 // GetTrustStorePinPassphraseProviderOk returns a tuple with the TrustStorePinPassphraseProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetTrustStorePinPassphraseProviderOk() (*string, bool) {
-	if o == nil || isNil(o.TrustStorePinPassphraseProvider) {
+	if o == nil || IsNil(o.TrustStorePinPassphraseProvider) {
 		return nil, false
 	}
 	return o.TrustStorePinPassphraseProvider, true
@@ -636,7 +639,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetTrustStorePinPassphraseProvi
 
 // HasTrustStorePinPassphraseProvider returns a boolean if a field has been set.
 func (o *ConsoleWebApplicationExtensionResponse) HasTrustStorePinPassphraseProvider() bool {
-	if o != nil && !isNil(o.TrustStorePinPassphraseProvider) {
+	if o != nil && !IsNil(o.TrustStorePinPassphraseProvider) {
 		return true
 	}
 
@@ -650,7 +653,7 @@ func (o *ConsoleWebApplicationExtensionResponse) SetTrustStorePinPassphraseProvi
 
 // GetLogFile returns the LogFile field value if set, zero value otherwise.
 func (o *ConsoleWebApplicationExtensionResponse) GetLogFile() string {
-	if o == nil || isNil(o.LogFile) {
+	if o == nil || IsNil(o.LogFile) {
 		var ret string
 		return ret
 	}
@@ -660,7 +663,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetLogFile() string {
 // GetLogFileOk returns a tuple with the LogFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetLogFileOk() (*string, bool) {
-	if o == nil || isNil(o.LogFile) {
+	if o == nil || IsNil(o.LogFile) {
 		return nil, false
 	}
 	return o.LogFile, true
@@ -668,7 +671,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetLogFileOk() (*string, bool) 
 
 // HasLogFile returns a boolean if a field has been set.
 func (o *ConsoleWebApplicationExtensionResponse) HasLogFile() bool {
-	if o != nil && !isNil(o.LogFile) {
+	if o != nil && !IsNil(o.LogFile) {
 		return true
 	}
 
@@ -682,7 +685,7 @@ func (o *ConsoleWebApplicationExtensionResponse) SetLogFile(v string) {
 
 // GetComplexity returns the Complexity field value if set, zero value otherwise.
 func (o *ConsoleWebApplicationExtensionResponse) GetComplexity() EnumwebApplicationExtensionComplexityProp {
-	if o == nil || isNil(o.Complexity) {
+	if o == nil || IsNil(o.Complexity) {
 		var ret EnumwebApplicationExtensionComplexityProp
 		return ret
 	}
@@ -692,7 +695,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetComplexity() EnumwebApplicat
 // GetComplexityOk returns a tuple with the Complexity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetComplexityOk() (*EnumwebApplicationExtensionComplexityProp, bool) {
-	if o == nil || isNil(o.Complexity) {
+	if o == nil || IsNil(o.Complexity) {
 		return nil, false
 	}
 	return o.Complexity, true
@@ -700,7 +703,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetComplexityOk() (*EnumwebAppl
 
 // HasComplexity returns a boolean if a field has been set.
 func (o *ConsoleWebApplicationExtensionResponse) HasComplexity() bool {
-	if o != nil && !isNil(o.Complexity) {
+	if o != nil && !IsNil(o.Complexity) {
 		return true
 	}
 
@@ -714,7 +717,7 @@ func (o *ConsoleWebApplicationExtensionResponse) SetComplexity(v EnumwebApplicat
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *ConsoleWebApplicationExtensionResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -724,7 +727,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -732,7 +735,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetDescriptionOk() (*string, bo
 
 // HasDescription returns a boolean if a field has been set.
 func (o *ConsoleWebApplicationExtensionResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -770,7 +773,7 @@ func (o *ConsoleWebApplicationExtensionResponse) SetBaseContextPath(v string) {
 
 // GetWarFile returns the WarFile field value if set, zero value otherwise.
 func (o *ConsoleWebApplicationExtensionResponse) GetWarFile() string {
-	if o == nil || isNil(o.WarFile) {
+	if o == nil || IsNil(o.WarFile) {
 		var ret string
 		return ret
 	}
@@ -780,7 +783,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetWarFile() string {
 // GetWarFileOk returns a tuple with the WarFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetWarFileOk() (*string, bool) {
-	if o == nil || isNil(o.WarFile) {
+	if o == nil || IsNil(o.WarFile) {
 		return nil, false
 	}
 	return o.WarFile, true
@@ -788,7 +791,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetWarFileOk() (*string, bool) 
 
 // HasWarFile returns a boolean if a field has been set.
 func (o *ConsoleWebApplicationExtensionResponse) HasWarFile() bool {
-	if o != nil && !isNil(o.WarFile) {
+	if o != nil && !IsNil(o.WarFile) {
 		return true
 	}
 
@@ -802,7 +805,7 @@ func (o *ConsoleWebApplicationExtensionResponse) SetWarFile(v string) {
 
 // GetDocumentRootDirectory returns the DocumentRootDirectory field value if set, zero value otherwise.
 func (o *ConsoleWebApplicationExtensionResponse) GetDocumentRootDirectory() string {
-	if o == nil || isNil(o.DocumentRootDirectory) {
+	if o == nil || IsNil(o.DocumentRootDirectory) {
 		var ret string
 		return ret
 	}
@@ -812,7 +815,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetDocumentRootDirectory() stri
 // GetDocumentRootDirectoryOk returns a tuple with the DocumentRootDirectory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetDocumentRootDirectoryOk() (*string, bool) {
-	if o == nil || isNil(o.DocumentRootDirectory) {
+	if o == nil || IsNil(o.DocumentRootDirectory) {
 		return nil, false
 	}
 	return o.DocumentRootDirectory, true
@@ -820,7 +823,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetDocumentRootDirectoryOk() (*
 
 // HasDocumentRootDirectory returns a boolean if a field has been set.
 func (o *ConsoleWebApplicationExtensionResponse) HasDocumentRootDirectory() bool {
-	if o != nil && !isNil(o.DocumentRootDirectory) {
+	if o != nil && !IsNil(o.DocumentRootDirectory) {
 		return true
 	}
 
@@ -834,7 +837,7 @@ func (o *ConsoleWebApplicationExtensionResponse) SetDocumentRootDirectory(v stri
 
 // GetDeploymentDescriptorFile returns the DeploymentDescriptorFile field value if set, zero value otherwise.
 func (o *ConsoleWebApplicationExtensionResponse) GetDeploymentDescriptorFile() string {
-	if o == nil || isNil(o.DeploymentDescriptorFile) {
+	if o == nil || IsNil(o.DeploymentDescriptorFile) {
 		var ret string
 		return ret
 	}
@@ -844,7 +847,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetDeploymentDescriptorFile() s
 // GetDeploymentDescriptorFileOk returns a tuple with the DeploymentDescriptorFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetDeploymentDescriptorFileOk() (*string, bool) {
-	if o == nil || isNil(o.DeploymentDescriptorFile) {
+	if o == nil || IsNil(o.DeploymentDescriptorFile) {
 		return nil, false
 	}
 	return o.DeploymentDescriptorFile, true
@@ -852,7 +855,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetDeploymentDescriptorFileOk()
 
 // HasDeploymentDescriptorFile returns a boolean if a field has been set.
 func (o *ConsoleWebApplicationExtensionResponse) HasDeploymentDescriptorFile() bool {
-	if o != nil && !isNil(o.DeploymentDescriptorFile) {
+	if o != nil && !IsNil(o.DeploymentDescriptorFile) {
 		return true
 	}
 
@@ -866,7 +869,7 @@ func (o *ConsoleWebApplicationExtensionResponse) SetDeploymentDescriptorFile(v s
 
 // GetTemporaryDirectory returns the TemporaryDirectory field value if set, zero value otherwise.
 func (o *ConsoleWebApplicationExtensionResponse) GetTemporaryDirectory() string {
-	if o == nil || isNil(o.TemporaryDirectory) {
+	if o == nil || IsNil(o.TemporaryDirectory) {
 		var ret string
 		return ret
 	}
@@ -876,7 +879,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetTemporaryDirectory() string 
 // GetTemporaryDirectoryOk returns a tuple with the TemporaryDirectory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetTemporaryDirectoryOk() (*string, bool) {
-	if o == nil || isNil(o.TemporaryDirectory) {
+	if o == nil || IsNil(o.TemporaryDirectory) {
 		return nil, false
 	}
 	return o.TemporaryDirectory, true
@@ -884,7 +887,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetTemporaryDirectoryOk() (*str
 
 // HasTemporaryDirectory returns a boolean if a field has been set.
 func (o *ConsoleWebApplicationExtensionResponse) HasTemporaryDirectory() bool {
-	if o != nil && !isNil(o.TemporaryDirectory) {
+	if o != nil && !IsNil(o.TemporaryDirectory) {
 		return true
 	}
 
@@ -898,7 +901,7 @@ func (o *ConsoleWebApplicationExtensionResponse) SetTemporaryDirectory(v string)
 
 // GetInitParameter returns the InitParameter field value if set, zero value otherwise.
 func (o *ConsoleWebApplicationExtensionResponse) GetInitParameter() []string {
-	if o == nil || isNil(o.InitParameter) {
+	if o == nil || IsNil(o.InitParameter) {
 		var ret []string
 		return ret
 	}
@@ -908,7 +911,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetInitParameter() []string {
 // GetInitParameterOk returns a tuple with the InitParameter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetInitParameterOk() ([]string, bool) {
-	if o == nil || isNil(o.InitParameter) {
+	if o == nil || IsNil(o.InitParameter) {
 		return nil, false
 	}
 	return o.InitParameter, true
@@ -916,7 +919,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetInitParameterOk() ([]string,
 
 // HasInitParameter returns a boolean if a field has been set.
 func (o *ConsoleWebApplicationExtensionResponse) HasInitParameter() bool {
-	if o != nil && !isNil(o.InitParameter) {
+	if o != nil && !IsNil(o.InitParameter) {
 		return true
 	}
 
@@ -929,89 +932,91 @@ func (o *ConsoleWebApplicationExtensionResponse) SetInitParameter(v []string) {
 }
 
 func (o ConsoleWebApplicationExtensionResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.SsoEnabled) {
-		toSerialize["ssoEnabled"] = o.SsoEnabled
-	}
-	if !isNil(o.OidcClientID) {
-		toSerialize["oidcClientID"] = o.OidcClientID
-	}
-	if !isNil(o.OidcClientSecret) {
-		toSerialize["oidcClientSecret"] = o.OidcClientSecret
-	}
-	if !isNil(o.OidcClientSecretPassphraseProvider) {
-		toSerialize["oidcClientSecretPassphraseProvider"] = o.OidcClientSecretPassphraseProvider
-	}
-	if !isNil(o.OidcIssuerURL) {
-		toSerialize["oidcIssuerURL"] = o.OidcIssuerURL
-	}
-	if !isNil(o.OidcTrustStoreFile) {
-		toSerialize["oidcTrustStoreFile"] = o.OidcTrustStoreFile
-	}
-	if !isNil(o.OidcTrustStoreType) {
-		toSerialize["oidcTrustStoreType"] = o.OidcTrustStoreType
-	}
-	if !isNil(o.OidcTrustStorePinPassphraseProvider) {
-		toSerialize["oidcTrustStorePinPassphraseProvider"] = o.OidcTrustStorePinPassphraseProvider
-	}
-	if !isNil(o.OidcStrictHostnameVerification) {
-		toSerialize["oidcStrictHostnameVerification"] = o.OidcStrictHostnameVerification
-	}
-	if !isNil(o.OidcTrustAll) {
-		toSerialize["oidcTrustAll"] = o.OidcTrustAll
-	}
-	if !isNil(o.LdapServer) {
-		toSerialize["ldapServer"] = o.LdapServer
-	}
-	if !isNil(o.TrustStoreFile) {
-		toSerialize["trustStoreFile"] = o.TrustStoreFile
-	}
-	if !isNil(o.TrustStoreType) {
-		toSerialize["trustStoreType"] = o.TrustStoreType
-	}
-	if !isNil(o.TrustStorePinPassphraseProvider) {
-		toSerialize["trustStorePinPassphraseProvider"] = o.TrustStorePinPassphraseProvider
-	}
-	if !isNil(o.LogFile) {
-		toSerialize["logFile"] = o.LogFile
-	}
-	if !isNil(o.Complexity) {
-		toSerialize["complexity"] = o.Complexity
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["baseContextPath"] = o.BaseContextPath
-	}
-	if !isNil(o.WarFile) {
-		toSerialize["warFile"] = o.WarFile
-	}
-	if !isNil(o.DocumentRootDirectory) {
-		toSerialize["documentRootDirectory"] = o.DocumentRootDirectory
-	}
-	if !isNil(o.DeploymentDescriptorFile) {
-		toSerialize["deploymentDescriptorFile"] = o.DeploymentDescriptorFile
-	}
-	if !isNil(o.TemporaryDirectory) {
-		toSerialize["temporaryDirectory"] = o.TemporaryDirectory
-	}
-	if !isNil(o.InitParameter) {
-		toSerialize["initParameter"] = o.InitParameter
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ConsoleWebApplicationExtensionResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	if !IsNil(o.SsoEnabled) {
+		toSerialize["ssoEnabled"] = o.SsoEnabled
+	}
+	if !IsNil(o.OidcClientID) {
+		toSerialize["oidcClientID"] = o.OidcClientID
+	}
+	if !IsNil(o.OidcClientSecret) {
+		toSerialize["oidcClientSecret"] = o.OidcClientSecret
+	}
+	if !IsNil(o.OidcClientSecretPassphraseProvider) {
+		toSerialize["oidcClientSecretPassphraseProvider"] = o.OidcClientSecretPassphraseProvider
+	}
+	if !IsNil(o.OidcIssuerURL) {
+		toSerialize["oidcIssuerURL"] = o.OidcIssuerURL
+	}
+	if !IsNil(o.OidcTrustStoreFile) {
+		toSerialize["oidcTrustStoreFile"] = o.OidcTrustStoreFile
+	}
+	if !IsNil(o.OidcTrustStoreType) {
+		toSerialize["oidcTrustStoreType"] = o.OidcTrustStoreType
+	}
+	if !IsNil(o.OidcTrustStorePinPassphraseProvider) {
+		toSerialize["oidcTrustStorePinPassphraseProvider"] = o.OidcTrustStorePinPassphraseProvider
+	}
+	if !IsNil(o.OidcStrictHostnameVerification) {
+		toSerialize["oidcStrictHostnameVerification"] = o.OidcStrictHostnameVerification
+	}
+	if !IsNil(o.OidcTrustAll) {
+		toSerialize["oidcTrustAll"] = o.OidcTrustAll
+	}
+	if !IsNil(o.LdapServer) {
+		toSerialize["ldapServer"] = o.LdapServer
+	}
+	if !IsNil(o.TrustStoreFile) {
+		toSerialize["trustStoreFile"] = o.TrustStoreFile
+	}
+	if !IsNil(o.TrustStoreType) {
+		toSerialize["trustStoreType"] = o.TrustStoreType
+	}
+	if !IsNil(o.TrustStorePinPassphraseProvider) {
+		toSerialize["trustStorePinPassphraseProvider"] = o.TrustStorePinPassphraseProvider
+	}
+	if !IsNil(o.LogFile) {
+		toSerialize["logFile"] = o.LogFile
+	}
+	if !IsNil(o.Complexity) {
+		toSerialize["complexity"] = o.Complexity
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["baseContextPath"] = o.BaseContextPath
+	if !IsNil(o.WarFile) {
+		toSerialize["warFile"] = o.WarFile
+	}
+	if !IsNil(o.DocumentRootDirectory) {
+		toSerialize["documentRootDirectory"] = o.DocumentRootDirectory
+	}
+	if !IsNil(o.DeploymentDescriptorFile) {
+		toSerialize["deploymentDescriptorFile"] = o.DeploymentDescriptorFile
+	}
+	if !IsNil(o.TemporaryDirectory) {
+		toSerialize["temporaryDirectory"] = o.TemporaryDirectory
+	}
+	if !IsNil(o.InitParameter) {
+		toSerialize["initParameter"] = o.InitParameter
+	}
+	return toSerialize, nil
 }
 
 type NullableConsoleWebApplicationExtensionResponse struct {

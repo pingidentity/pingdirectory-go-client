@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ConsentDefinitionLocalizationResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ConsentDefinitionLocalizationResponse{}
+
 // ConsentDefinitionLocalizationResponse struct for ConsentDefinitionLocalizationResponse
 type ConsentDefinitionLocalizationResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -57,7 +60,7 @@ func NewConsentDefinitionLocalizationResponseWithDefaults() *ConsentDefinitionLo
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *ConsentDefinitionLocalizationResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -67,7 +70,7 @@ func (o *ConsentDefinitionLocalizationResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsentDefinitionLocalizationResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -75,7 +78,7 @@ func (o *ConsentDefinitionLocalizationResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *ConsentDefinitionLocalizationResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -89,7 +92,7 @@ func (o *ConsentDefinitionLocalizationResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *ConsentDefinitionLocalizationResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -99,7 +102,7 @@ func (o *ConsentDefinitionLocalizationResponse) GetUrnpingidentityschemasconfigu
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsentDefinitionLocalizationResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -107,7 +110,7 @@ func (o *ConsentDefinitionLocalizationResponse) GetUrnpingidentityschemasconfigu
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *ConsentDefinitionLocalizationResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -145,7 +148,7 @@ func (o *ConsentDefinitionLocalizationResponse) SetId(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *ConsentDefinitionLocalizationResponse) GetSchemas() []EnumconsentDefinitionLocalizationSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumconsentDefinitionLocalizationSchemaUrn
 		return ret
 	}
@@ -155,7 +158,7 @@ func (o *ConsentDefinitionLocalizationResponse) GetSchemas() []EnumconsentDefini
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsentDefinitionLocalizationResponse) GetSchemasOk() ([]EnumconsentDefinitionLocalizationSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -163,7 +166,7 @@ func (o *ConsentDefinitionLocalizationResponse) GetSchemasOk() ([]EnumconsentDef
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *ConsentDefinitionLocalizationResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -225,7 +228,7 @@ func (o *ConsentDefinitionLocalizationResponse) SetVersion(v string) {
 
 // GetTitleText returns the TitleText field value if set, zero value otherwise.
 func (o *ConsentDefinitionLocalizationResponse) GetTitleText() string {
-	if o == nil || isNil(o.TitleText) {
+	if o == nil || IsNil(o.TitleText) {
 		var ret string
 		return ret
 	}
@@ -235,7 +238,7 @@ func (o *ConsentDefinitionLocalizationResponse) GetTitleText() string {
 // GetTitleTextOk returns a tuple with the TitleText field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsentDefinitionLocalizationResponse) GetTitleTextOk() (*string, bool) {
-	if o == nil || isNil(o.TitleText) {
+	if o == nil || IsNil(o.TitleText) {
 		return nil, false
 	}
 	return o.TitleText, true
@@ -243,7 +246,7 @@ func (o *ConsentDefinitionLocalizationResponse) GetTitleTextOk() (*string, bool)
 
 // HasTitleText returns a boolean if a field has been set.
 func (o *ConsentDefinitionLocalizationResponse) HasTitleText() bool {
-	if o != nil && !isNil(o.TitleText) {
+	if o != nil && !IsNil(o.TitleText) {
 		return true
 	}
 
@@ -304,35 +307,33 @@ func (o *ConsentDefinitionLocalizationResponse) SetPurposeText(v string) {
 }
 
 func (o ConsentDefinitionLocalizationResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["locale"] = o.Locale
-	}
-	if true {
-		toSerialize["version"] = o.Version
-	}
-	if !isNil(o.TitleText) {
-		toSerialize["titleText"] = o.TitleText
-	}
-	if true {
-		toSerialize["dataText"] = o.DataText
-	}
-	if true {
-		toSerialize["purposeText"] = o.PurposeText
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ConsentDefinitionLocalizationResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	toSerialize["locale"] = o.Locale
+	toSerialize["version"] = o.Version
+	if !IsNil(o.TitleText) {
+		toSerialize["titleText"] = o.TitleText
+	}
+	toSerialize["dataText"] = o.DataText
+	toSerialize["purposeText"] = o.PurposeText
+	return toSerialize, nil
 }
 
 type NullableConsentDefinitionLocalizationResponse struct {

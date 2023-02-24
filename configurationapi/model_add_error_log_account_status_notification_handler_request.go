@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddErrorLogAccountStatusNotificationHandlerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddErrorLogAccountStatusNotificationHandlerRequest{}
+
 // AddErrorLogAccountStatusNotificationHandlerRequest struct for AddErrorLogAccountStatusNotificationHandlerRequest
 type AddErrorLogAccountStatusNotificationHandlerRequest struct {
 	// Name of the new Account Status Notification Handler
@@ -127,7 +130,7 @@ func (o *AddErrorLogAccountStatusNotificationHandlerRequest) SetAccountStatusNot
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddErrorLogAccountStatusNotificationHandlerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -137,7 +140,7 @@ func (o *AddErrorLogAccountStatusNotificationHandlerRequest) GetDescription() st
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddErrorLogAccountStatusNotificationHandlerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -145,7 +148,7 @@ func (o *AddErrorLogAccountStatusNotificationHandlerRequest) GetDescriptionOk() 
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddErrorLogAccountStatusNotificationHandlerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -183,7 +186,7 @@ func (o *AddErrorLogAccountStatusNotificationHandlerRequest) SetEnabled(v bool) 
 
 // GetAsynchronous returns the Asynchronous field value if set, zero value otherwise.
 func (o *AddErrorLogAccountStatusNotificationHandlerRequest) GetAsynchronous() bool {
-	if o == nil || isNil(o.Asynchronous) {
+	if o == nil || IsNil(o.Asynchronous) {
 		var ret bool
 		return ret
 	}
@@ -193,7 +196,7 @@ func (o *AddErrorLogAccountStatusNotificationHandlerRequest) GetAsynchronous() b
 // GetAsynchronousOk returns a tuple with the Asynchronous field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddErrorLogAccountStatusNotificationHandlerRequest) GetAsynchronousOk() (*bool, bool) {
-	if o == nil || isNil(o.Asynchronous) {
+	if o == nil || IsNil(o.Asynchronous) {
 		return nil, false
 	}
 	return o.Asynchronous, true
@@ -201,7 +204,7 @@ func (o *AddErrorLogAccountStatusNotificationHandlerRequest) GetAsynchronousOk()
 
 // HasAsynchronous returns a boolean if a field has been set.
 func (o *AddErrorLogAccountStatusNotificationHandlerRequest) HasAsynchronous() bool {
-	if o != nil && !isNil(o.Asynchronous) {
+	if o != nil && !IsNil(o.Asynchronous) {
 		return true
 	}
 
@@ -215,7 +218,7 @@ func (o *AddErrorLogAccountStatusNotificationHandlerRequest) SetAsynchronous(v b
 
 // GetAccountCreationNotificationRequestCriteria returns the AccountCreationNotificationRequestCriteria field value if set, zero value otherwise.
 func (o *AddErrorLogAccountStatusNotificationHandlerRequest) GetAccountCreationNotificationRequestCriteria() string {
-	if o == nil || isNil(o.AccountCreationNotificationRequestCriteria) {
+	if o == nil || IsNil(o.AccountCreationNotificationRequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -225,7 +228,7 @@ func (o *AddErrorLogAccountStatusNotificationHandlerRequest) GetAccountCreationN
 // GetAccountCreationNotificationRequestCriteriaOk returns a tuple with the AccountCreationNotificationRequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddErrorLogAccountStatusNotificationHandlerRequest) GetAccountCreationNotificationRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.AccountCreationNotificationRequestCriteria) {
+	if o == nil || IsNil(o.AccountCreationNotificationRequestCriteria) {
 		return nil, false
 	}
 	return o.AccountCreationNotificationRequestCriteria, true
@@ -233,7 +236,7 @@ func (o *AddErrorLogAccountStatusNotificationHandlerRequest) GetAccountCreationN
 
 // HasAccountCreationNotificationRequestCriteria returns a boolean if a field has been set.
 func (o *AddErrorLogAccountStatusNotificationHandlerRequest) HasAccountCreationNotificationRequestCriteria() bool {
-	if o != nil && !isNil(o.AccountCreationNotificationRequestCriteria) {
+	if o != nil && !IsNil(o.AccountCreationNotificationRequestCriteria) {
 		return true
 	}
 
@@ -247,7 +250,7 @@ func (o *AddErrorLogAccountStatusNotificationHandlerRequest) SetAccountCreationN
 
 // GetAccountUpdateNotificationRequestCriteria returns the AccountUpdateNotificationRequestCriteria field value if set, zero value otherwise.
 func (o *AddErrorLogAccountStatusNotificationHandlerRequest) GetAccountUpdateNotificationRequestCriteria() string {
-	if o == nil || isNil(o.AccountUpdateNotificationRequestCriteria) {
+	if o == nil || IsNil(o.AccountUpdateNotificationRequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -257,7 +260,7 @@ func (o *AddErrorLogAccountStatusNotificationHandlerRequest) GetAccountUpdateNot
 // GetAccountUpdateNotificationRequestCriteriaOk returns a tuple with the AccountUpdateNotificationRequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddErrorLogAccountStatusNotificationHandlerRequest) GetAccountUpdateNotificationRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.AccountUpdateNotificationRequestCriteria) {
+	if o == nil || IsNil(o.AccountUpdateNotificationRequestCriteria) {
 		return nil, false
 	}
 	return o.AccountUpdateNotificationRequestCriteria, true
@@ -265,7 +268,7 @@ func (o *AddErrorLogAccountStatusNotificationHandlerRequest) GetAccountUpdateNot
 
 // HasAccountUpdateNotificationRequestCriteria returns a boolean if a field has been set.
 func (o *AddErrorLogAccountStatusNotificationHandlerRequest) HasAccountUpdateNotificationRequestCriteria() bool {
-	if o != nil && !isNil(o.AccountUpdateNotificationRequestCriteria) {
+	if o != nil && !IsNil(o.AccountUpdateNotificationRequestCriteria) {
 		return true
 	}
 
@@ -278,32 +281,32 @@ func (o *AddErrorLogAccountStatusNotificationHandlerRequest) SetAccountUpdateNot
 }
 
 func (o AddErrorLogAccountStatusNotificationHandlerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["handlerName"] = o.HandlerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["accountStatusNotificationType"] = o.AccountStatusNotificationType
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.Asynchronous) {
-		toSerialize["asynchronous"] = o.Asynchronous
-	}
-	if !isNil(o.AccountCreationNotificationRequestCriteria) {
-		toSerialize["accountCreationNotificationRequestCriteria"] = o.AccountCreationNotificationRequestCriteria
-	}
-	if !isNil(o.AccountUpdateNotificationRequestCriteria) {
-		toSerialize["accountUpdateNotificationRequestCriteria"] = o.AccountUpdateNotificationRequestCriteria
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddErrorLogAccountStatusNotificationHandlerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["handlerName"] = o.HandlerName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["accountStatusNotificationType"] = o.AccountStatusNotificationType
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.Asynchronous) {
+		toSerialize["asynchronous"] = o.Asynchronous
+	}
+	if !IsNil(o.AccountCreationNotificationRequestCriteria) {
+		toSerialize["accountCreationNotificationRequestCriteria"] = o.AccountCreationNotificationRequestCriteria
+	}
+	if !IsNil(o.AccountUpdateNotificationRequestCriteria) {
+		toSerialize["accountUpdateNotificationRequestCriteria"] = o.AccountUpdateNotificationRequestCriteria
+	}
+	return toSerialize, nil
 }
 
 type NullableAddErrorLogAccountStatusNotificationHandlerRequest struct {

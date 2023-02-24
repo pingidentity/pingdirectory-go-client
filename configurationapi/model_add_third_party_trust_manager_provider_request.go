@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddThirdPartyTrustManagerProviderRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddThirdPartyTrustManagerProviderRequest{}
+
 // AddThirdPartyTrustManagerProviderRequest struct for AddThirdPartyTrustManagerProviderRequest
 type AddThirdPartyTrustManagerProviderRequest struct {
 	// Name of the new Trust Manager Provider
@@ -124,7 +127,7 @@ func (o *AddThirdPartyTrustManagerProviderRequest) SetExtensionClass(v string) {
 
 // GetExtensionArgument returns the ExtensionArgument field value if set, zero value otherwise.
 func (o *AddThirdPartyTrustManagerProviderRequest) GetExtensionArgument() []string {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		var ret []string
 		return ret
 	}
@@ -134,7 +137,7 @@ func (o *AddThirdPartyTrustManagerProviderRequest) GetExtensionArgument() []stri
 // GetExtensionArgumentOk returns a tuple with the ExtensionArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyTrustManagerProviderRequest) GetExtensionArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		return nil, false
 	}
 	return o.ExtensionArgument, true
@@ -142,7 +145,7 @@ func (o *AddThirdPartyTrustManagerProviderRequest) GetExtensionArgumentOk() ([]s
 
 // HasExtensionArgument returns a boolean if a field has been set.
 func (o *AddThirdPartyTrustManagerProviderRequest) HasExtensionArgument() bool {
-	if o != nil && !isNil(o.ExtensionArgument) {
+	if o != nil && !IsNil(o.ExtensionArgument) {
 		return true
 	}
 
@@ -180,7 +183,7 @@ func (o *AddThirdPartyTrustManagerProviderRequest) SetEnabled(v bool) {
 
 // GetIncludeJVMDefaultIssuers returns the IncludeJVMDefaultIssuers field value if set, zero value otherwise.
 func (o *AddThirdPartyTrustManagerProviderRequest) GetIncludeJVMDefaultIssuers() bool {
-	if o == nil || isNil(o.IncludeJVMDefaultIssuers) {
+	if o == nil || IsNil(o.IncludeJVMDefaultIssuers) {
 		var ret bool
 		return ret
 	}
@@ -190,7 +193,7 @@ func (o *AddThirdPartyTrustManagerProviderRequest) GetIncludeJVMDefaultIssuers()
 // GetIncludeJVMDefaultIssuersOk returns a tuple with the IncludeJVMDefaultIssuers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyTrustManagerProviderRequest) GetIncludeJVMDefaultIssuersOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeJVMDefaultIssuers) {
+	if o == nil || IsNil(o.IncludeJVMDefaultIssuers) {
 		return nil, false
 	}
 	return o.IncludeJVMDefaultIssuers, true
@@ -198,7 +201,7 @@ func (o *AddThirdPartyTrustManagerProviderRequest) GetIncludeJVMDefaultIssuersOk
 
 // HasIncludeJVMDefaultIssuers returns a boolean if a field has been set.
 func (o *AddThirdPartyTrustManagerProviderRequest) HasIncludeJVMDefaultIssuers() bool {
-	if o != nil && !isNil(o.IncludeJVMDefaultIssuers) {
+	if o != nil && !IsNil(o.IncludeJVMDefaultIssuers) {
 		return true
 	}
 
@@ -211,26 +214,26 @@ func (o *AddThirdPartyTrustManagerProviderRequest) SetIncludeJVMDefaultIssuers(v
 }
 
 func (o AddThirdPartyTrustManagerProviderRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["providerName"] = o.ProviderName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["extensionClass"] = o.ExtensionClass
-	}
-	if !isNil(o.ExtensionArgument) {
-		toSerialize["extensionArgument"] = o.ExtensionArgument
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.IncludeJVMDefaultIssuers) {
-		toSerialize["includeJVMDefaultIssuers"] = o.IncludeJVMDefaultIssuers
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddThirdPartyTrustManagerProviderRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["providerName"] = o.ProviderName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["extensionClass"] = o.ExtensionClass
+	if !IsNil(o.ExtensionArgument) {
+		toSerialize["extensionArgument"] = o.ExtensionArgument
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.IncludeJVMDefaultIssuers) {
+		toSerialize["includeJVMDefaultIssuers"] = o.IncludeJVMDefaultIssuers
+	}
+	return toSerialize, nil
 }
 
 type NullableAddThirdPartyTrustManagerProviderRequest struct {

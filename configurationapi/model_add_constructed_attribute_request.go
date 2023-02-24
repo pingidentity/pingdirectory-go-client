@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddConstructedAttributeRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddConstructedAttributeRequest{}
+
 // AddConstructedAttributeRequest struct for AddConstructedAttributeRequest
 type AddConstructedAttributeRequest struct {
 	// Name of the new Constructed Attribute
@@ -73,7 +76,7 @@ func (o *AddConstructedAttributeRequest) SetAttributeName(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *AddConstructedAttributeRequest) GetSchemas() []EnumconstructedAttributeSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumconstructedAttributeSchemaUrn
 		return ret
 	}
@@ -83,7 +86,7 @@ func (o *AddConstructedAttributeRequest) GetSchemas() []EnumconstructedAttribute
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConstructedAttributeRequest) GetSchemasOk() ([]EnumconstructedAttributeSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -91,7 +94,7 @@ func (o *AddConstructedAttributeRequest) GetSchemasOk() ([]EnumconstructedAttrib
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *AddConstructedAttributeRequest) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -105,7 +108,7 @@ func (o *AddConstructedAttributeRequest) SetSchemas(v []EnumconstructedAttribute
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddConstructedAttributeRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -115,7 +118,7 @@ func (o *AddConstructedAttributeRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConstructedAttributeRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -123,7 +126,7 @@ func (o *AddConstructedAttributeRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddConstructedAttributeRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -184,23 +187,25 @@ func (o *AddConstructedAttributeRequest) SetValuePattern(v []string) {
 }
 
 func (o AddConstructedAttributeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["attributeName"] = o.AttributeName
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["attributeType"] = o.AttributeType
-	}
-	if true {
-		toSerialize["valuePattern"] = o.ValuePattern
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddConstructedAttributeRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["attributeName"] = o.AttributeName
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["attributeType"] = o.AttributeType
+	toSerialize["valuePattern"] = o.ValuePattern
+	return toSerialize, nil
 }
 
 type NullableAddConstructedAttributeRequest struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddPurgeExpiredDataPluginRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddPurgeExpiredDataPluginRequest{}
+
 // AddPurgeExpiredDataPluginRequest struct for AddPurgeExpiredDataPluginRequest
 type AddPurgeExpiredDataPluginRequest struct {
 	// Name of the new Plugin
@@ -145,7 +148,7 @@ func (o *AddPurgeExpiredDataPluginRequest) SetDatetimeAttribute(v string) {
 
 // GetDatetimeJSONField returns the DatetimeJSONField field value if set, zero value otherwise.
 func (o *AddPurgeExpiredDataPluginRequest) GetDatetimeJSONField() string {
-	if o == nil || isNil(o.DatetimeJSONField) {
+	if o == nil || IsNil(o.DatetimeJSONField) {
 		var ret string
 		return ret
 	}
@@ -155,7 +158,7 @@ func (o *AddPurgeExpiredDataPluginRequest) GetDatetimeJSONField() string {
 // GetDatetimeJSONFieldOk returns a tuple with the DatetimeJSONField field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPurgeExpiredDataPluginRequest) GetDatetimeJSONFieldOk() (*string, bool) {
-	if o == nil || isNil(o.DatetimeJSONField) {
+	if o == nil || IsNil(o.DatetimeJSONField) {
 		return nil, false
 	}
 	return o.DatetimeJSONField, true
@@ -163,7 +166,7 @@ func (o *AddPurgeExpiredDataPluginRequest) GetDatetimeJSONFieldOk() (*string, bo
 
 // HasDatetimeJSONField returns a boolean if a field has been set.
 func (o *AddPurgeExpiredDataPluginRequest) HasDatetimeJSONField() bool {
-	if o != nil && !isNil(o.DatetimeJSONField) {
+	if o != nil && !IsNil(o.DatetimeJSONField) {
 		return true
 	}
 
@@ -177,7 +180,7 @@ func (o *AddPurgeExpiredDataPluginRequest) SetDatetimeJSONField(v string) {
 
 // GetDatetimeFormat returns the DatetimeFormat field value if set, zero value otherwise.
 func (o *AddPurgeExpiredDataPluginRequest) GetDatetimeFormat() EnumpluginDatetimeFormatProp {
-	if o == nil || isNil(o.DatetimeFormat) {
+	if o == nil || IsNil(o.DatetimeFormat) {
 		var ret EnumpluginDatetimeFormatProp
 		return ret
 	}
@@ -187,7 +190,7 @@ func (o *AddPurgeExpiredDataPluginRequest) GetDatetimeFormat() EnumpluginDatetim
 // GetDatetimeFormatOk returns a tuple with the DatetimeFormat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPurgeExpiredDataPluginRequest) GetDatetimeFormatOk() (*EnumpluginDatetimeFormatProp, bool) {
-	if o == nil || isNil(o.DatetimeFormat) {
+	if o == nil || IsNil(o.DatetimeFormat) {
 		return nil, false
 	}
 	return o.DatetimeFormat, true
@@ -195,7 +198,7 @@ func (o *AddPurgeExpiredDataPluginRequest) GetDatetimeFormatOk() (*EnumpluginDat
 
 // HasDatetimeFormat returns a boolean if a field has been set.
 func (o *AddPurgeExpiredDataPluginRequest) HasDatetimeFormat() bool {
-	if o != nil && !isNil(o.DatetimeFormat) {
+	if o != nil && !IsNil(o.DatetimeFormat) {
 		return true
 	}
 
@@ -209,7 +212,7 @@ func (o *AddPurgeExpiredDataPluginRequest) SetDatetimeFormat(v EnumpluginDatetim
 
 // GetCustomDatetimeFormat returns the CustomDatetimeFormat field value if set, zero value otherwise.
 func (o *AddPurgeExpiredDataPluginRequest) GetCustomDatetimeFormat() string {
-	if o == nil || isNil(o.CustomDatetimeFormat) {
+	if o == nil || IsNil(o.CustomDatetimeFormat) {
 		var ret string
 		return ret
 	}
@@ -219,7 +222,7 @@ func (o *AddPurgeExpiredDataPluginRequest) GetCustomDatetimeFormat() string {
 // GetCustomDatetimeFormatOk returns a tuple with the CustomDatetimeFormat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPurgeExpiredDataPluginRequest) GetCustomDatetimeFormatOk() (*string, bool) {
-	if o == nil || isNil(o.CustomDatetimeFormat) {
+	if o == nil || IsNil(o.CustomDatetimeFormat) {
 		return nil, false
 	}
 	return o.CustomDatetimeFormat, true
@@ -227,7 +230,7 @@ func (o *AddPurgeExpiredDataPluginRequest) GetCustomDatetimeFormatOk() (*string,
 
 // HasCustomDatetimeFormat returns a boolean if a field has been set.
 func (o *AddPurgeExpiredDataPluginRequest) HasCustomDatetimeFormat() bool {
-	if o != nil && !isNil(o.CustomDatetimeFormat) {
+	if o != nil && !IsNil(o.CustomDatetimeFormat) {
 		return true
 	}
 
@@ -241,7 +244,7 @@ func (o *AddPurgeExpiredDataPluginRequest) SetCustomDatetimeFormat(v string) {
 
 // GetCustomTimezone returns the CustomTimezone field value if set, zero value otherwise.
 func (o *AddPurgeExpiredDataPluginRequest) GetCustomTimezone() string {
-	if o == nil || isNil(o.CustomTimezone) {
+	if o == nil || IsNil(o.CustomTimezone) {
 		var ret string
 		return ret
 	}
@@ -251,7 +254,7 @@ func (o *AddPurgeExpiredDataPluginRequest) GetCustomTimezone() string {
 // GetCustomTimezoneOk returns a tuple with the CustomTimezone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPurgeExpiredDataPluginRequest) GetCustomTimezoneOk() (*string, bool) {
-	if o == nil || isNil(o.CustomTimezone) {
+	if o == nil || IsNil(o.CustomTimezone) {
 		return nil, false
 	}
 	return o.CustomTimezone, true
@@ -259,7 +262,7 @@ func (o *AddPurgeExpiredDataPluginRequest) GetCustomTimezoneOk() (*string, bool)
 
 // HasCustomTimezone returns a boolean if a field has been set.
 func (o *AddPurgeExpiredDataPluginRequest) HasCustomTimezone() bool {
-	if o != nil && !isNil(o.CustomTimezone) {
+	if o != nil && !IsNil(o.CustomTimezone) {
 		return true
 	}
 
@@ -297,7 +300,7 @@ func (o *AddPurgeExpiredDataPluginRequest) SetExpirationOffset(v string) {
 
 // GetPurgeBehavior returns the PurgeBehavior field value if set, zero value otherwise.
 func (o *AddPurgeExpiredDataPluginRequest) GetPurgeBehavior() EnumpluginPurgeBehaviorProp {
-	if o == nil || isNil(o.PurgeBehavior) {
+	if o == nil || IsNil(o.PurgeBehavior) {
 		var ret EnumpluginPurgeBehaviorProp
 		return ret
 	}
@@ -307,7 +310,7 @@ func (o *AddPurgeExpiredDataPluginRequest) GetPurgeBehavior() EnumpluginPurgeBeh
 // GetPurgeBehaviorOk returns a tuple with the PurgeBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPurgeExpiredDataPluginRequest) GetPurgeBehaviorOk() (*EnumpluginPurgeBehaviorProp, bool) {
-	if o == nil || isNil(o.PurgeBehavior) {
+	if o == nil || IsNil(o.PurgeBehavior) {
 		return nil, false
 	}
 	return o.PurgeBehavior, true
@@ -315,7 +318,7 @@ func (o *AddPurgeExpiredDataPluginRequest) GetPurgeBehaviorOk() (*EnumpluginPurg
 
 // HasPurgeBehavior returns a boolean if a field has been set.
 func (o *AddPurgeExpiredDataPluginRequest) HasPurgeBehavior() bool {
-	if o != nil && !isNil(o.PurgeBehavior) {
+	if o != nil && !IsNil(o.PurgeBehavior) {
 		return true
 	}
 
@@ -329,7 +332,7 @@ func (o *AddPurgeExpiredDataPluginRequest) SetPurgeBehavior(v EnumpluginPurgeBeh
 
 // GetBaseDN returns the BaseDN field value if set, zero value otherwise.
 func (o *AddPurgeExpiredDataPluginRequest) GetBaseDN() string {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		var ret string
 		return ret
 	}
@@ -339,7 +342,7 @@ func (o *AddPurgeExpiredDataPluginRequest) GetBaseDN() string {
 // GetBaseDNOk returns a tuple with the BaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPurgeExpiredDataPluginRequest) GetBaseDNOk() (*string, bool) {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		return nil, false
 	}
 	return o.BaseDN, true
@@ -347,7 +350,7 @@ func (o *AddPurgeExpiredDataPluginRequest) GetBaseDNOk() (*string, bool) {
 
 // HasBaseDN returns a boolean if a field has been set.
 func (o *AddPurgeExpiredDataPluginRequest) HasBaseDN() bool {
-	if o != nil && !isNil(o.BaseDN) {
+	if o != nil && !IsNil(o.BaseDN) {
 		return true
 	}
 
@@ -361,7 +364,7 @@ func (o *AddPurgeExpiredDataPluginRequest) SetBaseDN(v string) {
 
 // GetFilter returns the Filter field value if set, zero value otherwise.
 func (o *AddPurgeExpiredDataPluginRequest) GetFilter() string {
-	if o == nil || isNil(o.Filter) {
+	if o == nil || IsNil(o.Filter) {
 		var ret string
 		return ret
 	}
@@ -371,7 +374,7 @@ func (o *AddPurgeExpiredDataPluginRequest) GetFilter() string {
 // GetFilterOk returns a tuple with the Filter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPurgeExpiredDataPluginRequest) GetFilterOk() (*string, bool) {
-	if o == nil || isNil(o.Filter) {
+	if o == nil || IsNil(o.Filter) {
 		return nil, false
 	}
 	return o.Filter, true
@@ -379,7 +382,7 @@ func (o *AddPurgeExpiredDataPluginRequest) GetFilterOk() (*string, bool) {
 
 // HasFilter returns a boolean if a field has been set.
 func (o *AddPurgeExpiredDataPluginRequest) HasFilter() bool {
-	if o != nil && !isNil(o.Filter) {
+	if o != nil && !IsNil(o.Filter) {
 		return true
 	}
 
@@ -393,7 +396,7 @@ func (o *AddPurgeExpiredDataPluginRequest) SetFilter(v string) {
 
 // GetPollingInterval returns the PollingInterval field value if set, zero value otherwise.
 func (o *AddPurgeExpiredDataPluginRequest) GetPollingInterval() string {
-	if o == nil || isNil(o.PollingInterval) {
+	if o == nil || IsNil(o.PollingInterval) {
 		var ret string
 		return ret
 	}
@@ -403,7 +406,7 @@ func (o *AddPurgeExpiredDataPluginRequest) GetPollingInterval() string {
 // GetPollingIntervalOk returns a tuple with the PollingInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPurgeExpiredDataPluginRequest) GetPollingIntervalOk() (*string, bool) {
-	if o == nil || isNil(o.PollingInterval) {
+	if o == nil || IsNil(o.PollingInterval) {
 		return nil, false
 	}
 	return o.PollingInterval, true
@@ -411,7 +414,7 @@ func (o *AddPurgeExpiredDataPluginRequest) GetPollingIntervalOk() (*string, bool
 
 // HasPollingInterval returns a boolean if a field has been set.
 func (o *AddPurgeExpiredDataPluginRequest) HasPollingInterval() bool {
-	if o != nil && !isNil(o.PollingInterval) {
+	if o != nil && !IsNil(o.PollingInterval) {
 		return true
 	}
 
@@ -425,7 +428,7 @@ func (o *AddPurgeExpiredDataPluginRequest) SetPollingInterval(v string) {
 
 // GetMaxUpdatesPerSecond returns the MaxUpdatesPerSecond field value if set, zero value otherwise.
 func (o *AddPurgeExpiredDataPluginRequest) GetMaxUpdatesPerSecond() int32 {
-	if o == nil || isNil(o.MaxUpdatesPerSecond) {
+	if o == nil || IsNil(o.MaxUpdatesPerSecond) {
 		var ret int32
 		return ret
 	}
@@ -435,7 +438,7 @@ func (o *AddPurgeExpiredDataPluginRequest) GetMaxUpdatesPerSecond() int32 {
 // GetMaxUpdatesPerSecondOk returns a tuple with the MaxUpdatesPerSecond field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPurgeExpiredDataPluginRequest) GetMaxUpdatesPerSecondOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxUpdatesPerSecond) {
+	if o == nil || IsNil(o.MaxUpdatesPerSecond) {
 		return nil, false
 	}
 	return o.MaxUpdatesPerSecond, true
@@ -443,7 +446,7 @@ func (o *AddPurgeExpiredDataPluginRequest) GetMaxUpdatesPerSecondOk() (*int32, b
 
 // HasMaxUpdatesPerSecond returns a boolean if a field has been set.
 func (o *AddPurgeExpiredDataPluginRequest) HasMaxUpdatesPerSecond() bool {
-	if o != nil && !isNil(o.MaxUpdatesPerSecond) {
+	if o != nil && !IsNil(o.MaxUpdatesPerSecond) {
 		return true
 	}
 
@@ -457,7 +460,7 @@ func (o *AddPurgeExpiredDataPluginRequest) SetMaxUpdatesPerSecond(v int32) {
 
 // GetPeerServerPriorityIndex returns the PeerServerPriorityIndex field value if set, zero value otherwise.
 func (o *AddPurgeExpiredDataPluginRequest) GetPeerServerPriorityIndex() int32 {
-	if o == nil || isNil(o.PeerServerPriorityIndex) {
+	if o == nil || IsNil(o.PeerServerPriorityIndex) {
 		var ret int32
 		return ret
 	}
@@ -467,7 +470,7 @@ func (o *AddPurgeExpiredDataPluginRequest) GetPeerServerPriorityIndex() int32 {
 // GetPeerServerPriorityIndexOk returns a tuple with the PeerServerPriorityIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPurgeExpiredDataPluginRequest) GetPeerServerPriorityIndexOk() (*int32, bool) {
-	if o == nil || isNil(o.PeerServerPriorityIndex) {
+	if o == nil || IsNil(o.PeerServerPriorityIndex) {
 		return nil, false
 	}
 	return o.PeerServerPriorityIndex, true
@@ -475,7 +478,7 @@ func (o *AddPurgeExpiredDataPluginRequest) GetPeerServerPriorityIndexOk() (*int3
 
 // HasPeerServerPriorityIndex returns a boolean if a field has been set.
 func (o *AddPurgeExpiredDataPluginRequest) HasPeerServerPriorityIndex() bool {
-	if o != nil && !isNil(o.PeerServerPriorityIndex) {
+	if o != nil && !IsNil(o.PeerServerPriorityIndex) {
 		return true
 	}
 
@@ -489,7 +492,7 @@ func (o *AddPurgeExpiredDataPluginRequest) SetPeerServerPriorityIndex(v int32) {
 
 // GetNumDeleteThreads returns the NumDeleteThreads field value if set, zero value otherwise.
 func (o *AddPurgeExpiredDataPluginRequest) GetNumDeleteThreads() int32 {
-	if o == nil || isNil(o.NumDeleteThreads) {
+	if o == nil || IsNil(o.NumDeleteThreads) {
 		var ret int32
 		return ret
 	}
@@ -499,7 +502,7 @@ func (o *AddPurgeExpiredDataPluginRequest) GetNumDeleteThreads() int32 {
 // GetNumDeleteThreadsOk returns a tuple with the NumDeleteThreads field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPurgeExpiredDataPluginRequest) GetNumDeleteThreadsOk() (*int32, bool) {
-	if o == nil || isNil(o.NumDeleteThreads) {
+	if o == nil || IsNil(o.NumDeleteThreads) {
 		return nil, false
 	}
 	return o.NumDeleteThreads, true
@@ -507,7 +510,7 @@ func (o *AddPurgeExpiredDataPluginRequest) GetNumDeleteThreadsOk() (*int32, bool
 
 // HasNumDeleteThreads returns a boolean if a field has been set.
 func (o *AddPurgeExpiredDataPluginRequest) HasNumDeleteThreads() bool {
-	if o != nil && !isNil(o.NumDeleteThreads) {
+	if o != nil && !IsNil(o.NumDeleteThreads) {
 		return true
 	}
 
@@ -521,7 +524,7 @@ func (o *AddPurgeExpiredDataPluginRequest) SetNumDeleteThreads(v int32) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddPurgeExpiredDataPluginRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -531,7 +534,7 @@ func (o *AddPurgeExpiredDataPluginRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPurgeExpiredDataPluginRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -539,7 +542,7 @@ func (o *AddPurgeExpiredDataPluginRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddPurgeExpiredDataPluginRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -576,59 +579,57 @@ func (o *AddPurgeExpiredDataPluginRequest) SetEnabled(v bool) {
 }
 
 func (o AddPurgeExpiredDataPluginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["pluginName"] = o.PluginName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["datetimeAttribute"] = o.DatetimeAttribute
-	}
-	if !isNil(o.DatetimeJSONField) {
-		toSerialize["datetimeJSONField"] = o.DatetimeJSONField
-	}
-	if !isNil(o.DatetimeFormat) {
-		toSerialize["datetimeFormat"] = o.DatetimeFormat
-	}
-	if !isNil(o.CustomDatetimeFormat) {
-		toSerialize["customDatetimeFormat"] = o.CustomDatetimeFormat
-	}
-	if !isNil(o.CustomTimezone) {
-		toSerialize["customTimezone"] = o.CustomTimezone
-	}
-	if true {
-		toSerialize["expirationOffset"] = o.ExpirationOffset
-	}
-	if !isNil(o.PurgeBehavior) {
-		toSerialize["purgeBehavior"] = o.PurgeBehavior
-	}
-	if !isNil(o.BaseDN) {
-		toSerialize["baseDN"] = o.BaseDN
-	}
-	if !isNil(o.Filter) {
-		toSerialize["filter"] = o.Filter
-	}
-	if !isNil(o.PollingInterval) {
-		toSerialize["pollingInterval"] = o.PollingInterval
-	}
-	if !isNil(o.MaxUpdatesPerSecond) {
-		toSerialize["maxUpdatesPerSecond"] = o.MaxUpdatesPerSecond
-	}
-	if !isNil(o.PeerServerPriorityIndex) {
-		toSerialize["peerServerPriorityIndex"] = o.PeerServerPriorityIndex
-	}
-	if !isNil(o.NumDeleteThreads) {
-		toSerialize["numDeleteThreads"] = o.NumDeleteThreads
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddPurgeExpiredDataPluginRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["pluginName"] = o.PluginName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["datetimeAttribute"] = o.DatetimeAttribute
+	if !IsNil(o.DatetimeJSONField) {
+		toSerialize["datetimeJSONField"] = o.DatetimeJSONField
+	}
+	if !IsNil(o.DatetimeFormat) {
+		toSerialize["datetimeFormat"] = o.DatetimeFormat
+	}
+	if !IsNil(o.CustomDatetimeFormat) {
+		toSerialize["customDatetimeFormat"] = o.CustomDatetimeFormat
+	}
+	if !IsNil(o.CustomTimezone) {
+		toSerialize["customTimezone"] = o.CustomTimezone
+	}
+	toSerialize["expirationOffset"] = o.ExpirationOffset
+	if !IsNil(o.PurgeBehavior) {
+		toSerialize["purgeBehavior"] = o.PurgeBehavior
+	}
+	if !IsNil(o.BaseDN) {
+		toSerialize["baseDN"] = o.BaseDN
+	}
+	if !IsNil(o.Filter) {
+		toSerialize["filter"] = o.Filter
+	}
+	if !IsNil(o.PollingInterval) {
+		toSerialize["pollingInterval"] = o.PollingInterval
+	}
+	if !IsNil(o.MaxUpdatesPerSecond) {
+		toSerialize["maxUpdatesPerSecond"] = o.MaxUpdatesPerSecond
+	}
+	if !IsNil(o.PeerServerPriorityIndex) {
+		toSerialize["peerServerPriorityIndex"] = o.PeerServerPriorityIndex
+	}
+	if !IsNil(o.NumDeleteThreads) {
+		toSerialize["numDeleteThreads"] = o.NumDeleteThreads
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddPurgeExpiredDataPluginRequest struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the SimpleResultCriteriaResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SimpleResultCriteriaResponse{}
+
 // SimpleResultCriteriaResponse struct for SimpleResultCriteriaResponse
 type SimpleResultCriteriaResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -90,7 +93,7 @@ func NewSimpleResultCriteriaResponseWithDefaults() *SimpleResultCriteriaResponse
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -100,7 +103,7 @@ func (o *SimpleResultCriteriaResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -108,7 +111,7 @@ func (o *SimpleResultCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -122,7 +125,7 @@ func (o *SimpleResultCriteriaResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -132,7 +135,7 @@ func (o *SimpleResultCriteriaResponse) GetUrnpingidentityschemasconfigurationmes
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -140,7 +143,7 @@ func (o *SimpleResultCriteriaResponse) GetUrnpingidentityschemasconfigurationmes
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -202,7 +205,7 @@ func (o *SimpleResultCriteriaResponse) SetSchemas(v []EnumsimpleResultCriteriaSc
 
 // GetRequestCriteria returns the RequestCriteria field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetRequestCriteria() string {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -212,7 +215,7 @@ func (o *SimpleResultCriteriaResponse) GetRequestCriteria() string {
 // GetRequestCriteriaOk returns a tuple with the RequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		return nil, false
 	}
 	return o.RequestCriteria, true
@@ -220,7 +223,7 @@ func (o *SimpleResultCriteriaResponse) GetRequestCriteriaOk() (*string, bool) {
 
 // HasRequestCriteria returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasRequestCriteria() bool {
-	if o != nil && !isNil(o.RequestCriteria) {
+	if o != nil && !IsNil(o.RequestCriteria) {
 		return true
 	}
 
@@ -234,7 +237,7 @@ func (o *SimpleResultCriteriaResponse) SetRequestCriteria(v string) {
 
 // GetResultCodeCriteria returns the ResultCodeCriteria field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetResultCodeCriteria() EnumresultCriteriaResultCodeCriteriaProp {
-	if o == nil || isNil(o.ResultCodeCriteria) {
+	if o == nil || IsNil(o.ResultCodeCriteria) {
 		var ret EnumresultCriteriaResultCodeCriteriaProp
 		return ret
 	}
@@ -244,7 +247,7 @@ func (o *SimpleResultCriteriaResponse) GetResultCodeCriteria() EnumresultCriteri
 // GetResultCodeCriteriaOk returns a tuple with the ResultCodeCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetResultCodeCriteriaOk() (*EnumresultCriteriaResultCodeCriteriaProp, bool) {
-	if o == nil || isNil(o.ResultCodeCriteria) {
+	if o == nil || IsNil(o.ResultCodeCriteria) {
 		return nil, false
 	}
 	return o.ResultCodeCriteria, true
@@ -252,7 +255,7 @@ func (o *SimpleResultCriteriaResponse) GetResultCodeCriteriaOk() (*EnumresultCri
 
 // HasResultCodeCriteria returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasResultCodeCriteria() bool {
-	if o != nil && !isNil(o.ResultCodeCriteria) {
+	if o != nil && !IsNil(o.ResultCodeCriteria) {
 		return true
 	}
 
@@ -266,7 +269,7 @@ func (o *SimpleResultCriteriaResponse) SetResultCodeCriteria(v EnumresultCriteri
 
 // GetResultCodeValue returns the ResultCodeValue field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetResultCodeValue() []EnumresultCriteriaResultCodeValueProp {
-	if o == nil || isNil(o.ResultCodeValue) {
+	if o == nil || IsNil(o.ResultCodeValue) {
 		var ret []EnumresultCriteriaResultCodeValueProp
 		return ret
 	}
@@ -276,7 +279,7 @@ func (o *SimpleResultCriteriaResponse) GetResultCodeValue() []EnumresultCriteria
 // GetResultCodeValueOk returns a tuple with the ResultCodeValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetResultCodeValueOk() ([]EnumresultCriteriaResultCodeValueProp, bool) {
-	if o == nil || isNil(o.ResultCodeValue) {
+	if o == nil || IsNil(o.ResultCodeValue) {
 		return nil, false
 	}
 	return o.ResultCodeValue, true
@@ -284,7 +287,7 @@ func (o *SimpleResultCriteriaResponse) GetResultCodeValueOk() ([]EnumresultCrite
 
 // HasResultCodeValue returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasResultCodeValue() bool {
-	if o != nil && !isNil(o.ResultCodeValue) {
+	if o != nil && !IsNil(o.ResultCodeValue) {
 		return true
 	}
 
@@ -298,7 +301,7 @@ func (o *SimpleResultCriteriaResponse) SetResultCodeValue(v []EnumresultCriteria
 
 // GetProcessingTimeCriteria returns the ProcessingTimeCriteria field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetProcessingTimeCriteria() EnumresultCriteriaProcessingTimeCriteriaProp {
-	if o == nil || isNil(o.ProcessingTimeCriteria) {
+	if o == nil || IsNil(o.ProcessingTimeCriteria) {
 		var ret EnumresultCriteriaProcessingTimeCriteriaProp
 		return ret
 	}
@@ -308,7 +311,7 @@ func (o *SimpleResultCriteriaResponse) GetProcessingTimeCriteria() EnumresultCri
 // GetProcessingTimeCriteriaOk returns a tuple with the ProcessingTimeCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetProcessingTimeCriteriaOk() (*EnumresultCriteriaProcessingTimeCriteriaProp, bool) {
-	if o == nil || isNil(o.ProcessingTimeCriteria) {
+	if o == nil || IsNil(o.ProcessingTimeCriteria) {
 		return nil, false
 	}
 	return o.ProcessingTimeCriteria, true
@@ -316,7 +319,7 @@ func (o *SimpleResultCriteriaResponse) GetProcessingTimeCriteriaOk() (*Enumresul
 
 // HasProcessingTimeCriteria returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasProcessingTimeCriteria() bool {
-	if o != nil && !isNil(o.ProcessingTimeCriteria) {
+	if o != nil && !IsNil(o.ProcessingTimeCriteria) {
 		return true
 	}
 
@@ -330,7 +333,7 @@ func (o *SimpleResultCriteriaResponse) SetProcessingTimeCriteria(v EnumresultCri
 
 // GetProcessingTimeValue returns the ProcessingTimeValue field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetProcessingTimeValue() string {
-	if o == nil || isNil(o.ProcessingTimeValue) {
+	if o == nil || IsNil(o.ProcessingTimeValue) {
 		var ret string
 		return ret
 	}
@@ -340,7 +343,7 @@ func (o *SimpleResultCriteriaResponse) GetProcessingTimeValue() string {
 // GetProcessingTimeValueOk returns a tuple with the ProcessingTimeValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetProcessingTimeValueOk() (*string, bool) {
-	if o == nil || isNil(o.ProcessingTimeValue) {
+	if o == nil || IsNil(o.ProcessingTimeValue) {
 		return nil, false
 	}
 	return o.ProcessingTimeValue, true
@@ -348,7 +351,7 @@ func (o *SimpleResultCriteriaResponse) GetProcessingTimeValueOk() (*string, bool
 
 // HasProcessingTimeValue returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasProcessingTimeValue() bool {
-	if o != nil && !isNil(o.ProcessingTimeValue) {
+	if o != nil && !IsNil(o.ProcessingTimeValue) {
 		return true
 	}
 
@@ -362,7 +365,7 @@ func (o *SimpleResultCriteriaResponse) SetProcessingTimeValue(v string) {
 
 // GetQueueTimeCriteria returns the QueueTimeCriteria field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetQueueTimeCriteria() EnumresultCriteriaQueueTimeCriteriaProp {
-	if o == nil || isNil(o.QueueTimeCriteria) {
+	if o == nil || IsNil(o.QueueTimeCriteria) {
 		var ret EnumresultCriteriaQueueTimeCriteriaProp
 		return ret
 	}
@@ -372,7 +375,7 @@ func (o *SimpleResultCriteriaResponse) GetQueueTimeCriteria() EnumresultCriteria
 // GetQueueTimeCriteriaOk returns a tuple with the QueueTimeCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetQueueTimeCriteriaOk() (*EnumresultCriteriaQueueTimeCriteriaProp, bool) {
-	if o == nil || isNil(o.QueueTimeCriteria) {
+	if o == nil || IsNil(o.QueueTimeCriteria) {
 		return nil, false
 	}
 	return o.QueueTimeCriteria, true
@@ -380,7 +383,7 @@ func (o *SimpleResultCriteriaResponse) GetQueueTimeCriteriaOk() (*EnumresultCrit
 
 // HasQueueTimeCriteria returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasQueueTimeCriteria() bool {
-	if o != nil && !isNil(o.QueueTimeCriteria) {
+	if o != nil && !IsNil(o.QueueTimeCriteria) {
 		return true
 	}
 
@@ -394,7 +397,7 @@ func (o *SimpleResultCriteriaResponse) SetQueueTimeCriteria(v EnumresultCriteria
 
 // GetQueueTimeValue returns the QueueTimeValue field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetQueueTimeValue() string {
-	if o == nil || isNil(o.QueueTimeValue) {
+	if o == nil || IsNil(o.QueueTimeValue) {
 		var ret string
 		return ret
 	}
@@ -404,7 +407,7 @@ func (o *SimpleResultCriteriaResponse) GetQueueTimeValue() string {
 // GetQueueTimeValueOk returns a tuple with the QueueTimeValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetQueueTimeValueOk() (*string, bool) {
-	if o == nil || isNil(o.QueueTimeValue) {
+	if o == nil || IsNil(o.QueueTimeValue) {
 		return nil, false
 	}
 	return o.QueueTimeValue, true
@@ -412,7 +415,7 @@ func (o *SimpleResultCriteriaResponse) GetQueueTimeValueOk() (*string, bool) {
 
 // HasQueueTimeValue returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasQueueTimeValue() bool {
-	if o != nil && !isNil(o.QueueTimeValue) {
+	if o != nil && !IsNil(o.QueueTimeValue) {
 		return true
 	}
 
@@ -426,7 +429,7 @@ func (o *SimpleResultCriteriaResponse) SetQueueTimeValue(v string) {
 
 // GetReferralReturned returns the ReferralReturned field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetReferralReturned() EnumresultCriteriaReferralReturnedProp {
-	if o == nil || isNil(o.ReferralReturned) {
+	if o == nil || IsNil(o.ReferralReturned) {
 		var ret EnumresultCriteriaReferralReturnedProp
 		return ret
 	}
@@ -436,7 +439,7 @@ func (o *SimpleResultCriteriaResponse) GetReferralReturned() EnumresultCriteriaR
 // GetReferralReturnedOk returns a tuple with the ReferralReturned field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetReferralReturnedOk() (*EnumresultCriteriaReferralReturnedProp, bool) {
-	if o == nil || isNil(o.ReferralReturned) {
+	if o == nil || IsNil(o.ReferralReturned) {
 		return nil, false
 	}
 	return o.ReferralReturned, true
@@ -444,7 +447,7 @@ func (o *SimpleResultCriteriaResponse) GetReferralReturnedOk() (*EnumresultCrite
 
 // HasReferralReturned returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasReferralReturned() bool {
-	if o != nil && !isNil(o.ReferralReturned) {
+	if o != nil && !IsNil(o.ReferralReturned) {
 		return true
 	}
 
@@ -458,7 +461,7 @@ func (o *SimpleResultCriteriaResponse) SetReferralReturned(v EnumresultCriteriaR
 
 // GetAllIncludedResponseControl returns the AllIncludedResponseControl field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetAllIncludedResponseControl() []string {
-	if o == nil || isNil(o.AllIncludedResponseControl) {
+	if o == nil || IsNil(o.AllIncludedResponseControl) {
 		var ret []string
 		return ret
 	}
@@ -468,7 +471,7 @@ func (o *SimpleResultCriteriaResponse) GetAllIncludedResponseControl() []string 
 // GetAllIncludedResponseControlOk returns a tuple with the AllIncludedResponseControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetAllIncludedResponseControlOk() ([]string, bool) {
-	if o == nil || isNil(o.AllIncludedResponseControl) {
+	if o == nil || IsNil(o.AllIncludedResponseControl) {
 		return nil, false
 	}
 	return o.AllIncludedResponseControl, true
@@ -476,7 +479,7 @@ func (o *SimpleResultCriteriaResponse) GetAllIncludedResponseControlOk() ([]stri
 
 // HasAllIncludedResponseControl returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasAllIncludedResponseControl() bool {
-	if o != nil && !isNil(o.AllIncludedResponseControl) {
+	if o != nil && !IsNil(o.AllIncludedResponseControl) {
 		return true
 	}
 
@@ -490,7 +493,7 @@ func (o *SimpleResultCriteriaResponse) SetAllIncludedResponseControl(v []string)
 
 // GetAnyIncludedResponseControl returns the AnyIncludedResponseControl field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetAnyIncludedResponseControl() []string {
-	if o == nil || isNil(o.AnyIncludedResponseControl) {
+	if o == nil || IsNil(o.AnyIncludedResponseControl) {
 		var ret []string
 		return ret
 	}
@@ -500,7 +503,7 @@ func (o *SimpleResultCriteriaResponse) GetAnyIncludedResponseControl() []string 
 // GetAnyIncludedResponseControlOk returns a tuple with the AnyIncludedResponseControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetAnyIncludedResponseControlOk() ([]string, bool) {
-	if o == nil || isNil(o.AnyIncludedResponseControl) {
+	if o == nil || IsNil(o.AnyIncludedResponseControl) {
 		return nil, false
 	}
 	return o.AnyIncludedResponseControl, true
@@ -508,7 +511,7 @@ func (o *SimpleResultCriteriaResponse) GetAnyIncludedResponseControlOk() ([]stri
 
 // HasAnyIncludedResponseControl returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasAnyIncludedResponseControl() bool {
-	if o != nil && !isNil(o.AnyIncludedResponseControl) {
+	if o != nil && !IsNil(o.AnyIncludedResponseControl) {
 		return true
 	}
 
@@ -522,7 +525,7 @@ func (o *SimpleResultCriteriaResponse) SetAnyIncludedResponseControl(v []string)
 
 // GetNotAllIncludedResponseControl returns the NotAllIncludedResponseControl field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetNotAllIncludedResponseControl() []string {
-	if o == nil || isNil(o.NotAllIncludedResponseControl) {
+	if o == nil || IsNil(o.NotAllIncludedResponseControl) {
 		var ret []string
 		return ret
 	}
@@ -532,7 +535,7 @@ func (o *SimpleResultCriteriaResponse) GetNotAllIncludedResponseControl() []stri
 // GetNotAllIncludedResponseControlOk returns a tuple with the NotAllIncludedResponseControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetNotAllIncludedResponseControlOk() ([]string, bool) {
-	if o == nil || isNil(o.NotAllIncludedResponseControl) {
+	if o == nil || IsNil(o.NotAllIncludedResponseControl) {
 		return nil, false
 	}
 	return o.NotAllIncludedResponseControl, true
@@ -540,7 +543,7 @@ func (o *SimpleResultCriteriaResponse) GetNotAllIncludedResponseControlOk() ([]s
 
 // HasNotAllIncludedResponseControl returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasNotAllIncludedResponseControl() bool {
-	if o != nil && !isNil(o.NotAllIncludedResponseControl) {
+	if o != nil && !IsNil(o.NotAllIncludedResponseControl) {
 		return true
 	}
 
@@ -554,7 +557,7 @@ func (o *SimpleResultCriteriaResponse) SetNotAllIncludedResponseControl(v []stri
 
 // GetNoneIncludedResponseControl returns the NoneIncludedResponseControl field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetNoneIncludedResponseControl() []string {
-	if o == nil || isNil(o.NoneIncludedResponseControl) {
+	if o == nil || IsNil(o.NoneIncludedResponseControl) {
 		var ret []string
 		return ret
 	}
@@ -564,7 +567,7 @@ func (o *SimpleResultCriteriaResponse) GetNoneIncludedResponseControl() []string
 // GetNoneIncludedResponseControlOk returns a tuple with the NoneIncludedResponseControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetNoneIncludedResponseControlOk() ([]string, bool) {
-	if o == nil || isNil(o.NoneIncludedResponseControl) {
+	if o == nil || IsNil(o.NoneIncludedResponseControl) {
 		return nil, false
 	}
 	return o.NoneIncludedResponseControl, true
@@ -572,7 +575,7 @@ func (o *SimpleResultCriteriaResponse) GetNoneIncludedResponseControlOk() ([]str
 
 // HasNoneIncludedResponseControl returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasNoneIncludedResponseControl() bool {
-	if o != nil && !isNil(o.NoneIncludedResponseControl) {
+	if o != nil && !IsNil(o.NoneIncludedResponseControl) {
 		return true
 	}
 
@@ -586,7 +589,7 @@ func (o *SimpleResultCriteriaResponse) SetNoneIncludedResponseControl(v []string
 
 // GetUsedAlternateAuthzid returns the UsedAlternateAuthzid field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetUsedAlternateAuthzid() EnumresultCriteriaUsedAlternateAuthzidProp {
-	if o == nil || isNil(o.UsedAlternateAuthzid) {
+	if o == nil || IsNil(o.UsedAlternateAuthzid) {
 		var ret EnumresultCriteriaUsedAlternateAuthzidProp
 		return ret
 	}
@@ -596,7 +599,7 @@ func (o *SimpleResultCriteriaResponse) GetUsedAlternateAuthzid() EnumresultCrite
 // GetUsedAlternateAuthzidOk returns a tuple with the UsedAlternateAuthzid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetUsedAlternateAuthzidOk() (*EnumresultCriteriaUsedAlternateAuthzidProp, bool) {
-	if o == nil || isNil(o.UsedAlternateAuthzid) {
+	if o == nil || IsNil(o.UsedAlternateAuthzid) {
 		return nil, false
 	}
 	return o.UsedAlternateAuthzid, true
@@ -604,7 +607,7 @@ func (o *SimpleResultCriteriaResponse) GetUsedAlternateAuthzidOk() (*EnumresultC
 
 // HasUsedAlternateAuthzid returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasUsedAlternateAuthzid() bool {
-	if o != nil && !isNil(o.UsedAlternateAuthzid) {
+	if o != nil && !IsNil(o.UsedAlternateAuthzid) {
 		return true
 	}
 
@@ -618,7 +621,7 @@ func (o *SimpleResultCriteriaResponse) SetUsedAlternateAuthzid(v EnumresultCrite
 
 // GetUsedAnyPrivilege returns the UsedAnyPrivilege field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetUsedAnyPrivilege() EnumresultCriteriaUsedAnyPrivilegeProp {
-	if o == nil || isNil(o.UsedAnyPrivilege) {
+	if o == nil || IsNil(o.UsedAnyPrivilege) {
 		var ret EnumresultCriteriaUsedAnyPrivilegeProp
 		return ret
 	}
@@ -628,7 +631,7 @@ func (o *SimpleResultCriteriaResponse) GetUsedAnyPrivilege() EnumresultCriteriaU
 // GetUsedAnyPrivilegeOk returns a tuple with the UsedAnyPrivilege field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetUsedAnyPrivilegeOk() (*EnumresultCriteriaUsedAnyPrivilegeProp, bool) {
-	if o == nil || isNil(o.UsedAnyPrivilege) {
+	if o == nil || IsNil(o.UsedAnyPrivilege) {
 		return nil, false
 	}
 	return o.UsedAnyPrivilege, true
@@ -636,7 +639,7 @@ func (o *SimpleResultCriteriaResponse) GetUsedAnyPrivilegeOk() (*EnumresultCrite
 
 // HasUsedAnyPrivilege returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasUsedAnyPrivilege() bool {
-	if o != nil && !isNil(o.UsedAnyPrivilege) {
+	if o != nil && !IsNil(o.UsedAnyPrivilege) {
 		return true
 	}
 
@@ -650,7 +653,7 @@ func (o *SimpleResultCriteriaResponse) SetUsedAnyPrivilege(v EnumresultCriteriaU
 
 // GetUsedPrivilege returns the UsedPrivilege field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetUsedPrivilege() []EnumresultCriteriaUsedPrivilegeProp {
-	if o == nil || isNil(o.UsedPrivilege) {
+	if o == nil || IsNil(o.UsedPrivilege) {
 		var ret []EnumresultCriteriaUsedPrivilegeProp
 		return ret
 	}
@@ -660,7 +663,7 @@ func (o *SimpleResultCriteriaResponse) GetUsedPrivilege() []EnumresultCriteriaUs
 // GetUsedPrivilegeOk returns a tuple with the UsedPrivilege field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetUsedPrivilegeOk() ([]EnumresultCriteriaUsedPrivilegeProp, bool) {
-	if o == nil || isNil(o.UsedPrivilege) {
+	if o == nil || IsNil(o.UsedPrivilege) {
 		return nil, false
 	}
 	return o.UsedPrivilege, true
@@ -668,7 +671,7 @@ func (o *SimpleResultCriteriaResponse) GetUsedPrivilegeOk() ([]EnumresultCriteri
 
 // HasUsedPrivilege returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasUsedPrivilege() bool {
-	if o != nil && !isNil(o.UsedPrivilege) {
+	if o != nil && !IsNil(o.UsedPrivilege) {
 		return true
 	}
 
@@ -682,7 +685,7 @@ func (o *SimpleResultCriteriaResponse) SetUsedPrivilege(v []EnumresultCriteriaUs
 
 // GetMissingAnyPrivilege returns the MissingAnyPrivilege field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetMissingAnyPrivilege() EnumresultCriteriaMissingAnyPrivilegeProp {
-	if o == nil || isNil(o.MissingAnyPrivilege) {
+	if o == nil || IsNil(o.MissingAnyPrivilege) {
 		var ret EnumresultCriteriaMissingAnyPrivilegeProp
 		return ret
 	}
@@ -692,7 +695,7 @@ func (o *SimpleResultCriteriaResponse) GetMissingAnyPrivilege() EnumresultCriter
 // GetMissingAnyPrivilegeOk returns a tuple with the MissingAnyPrivilege field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetMissingAnyPrivilegeOk() (*EnumresultCriteriaMissingAnyPrivilegeProp, bool) {
-	if o == nil || isNil(o.MissingAnyPrivilege) {
+	if o == nil || IsNil(o.MissingAnyPrivilege) {
 		return nil, false
 	}
 	return o.MissingAnyPrivilege, true
@@ -700,7 +703,7 @@ func (o *SimpleResultCriteriaResponse) GetMissingAnyPrivilegeOk() (*EnumresultCr
 
 // HasMissingAnyPrivilege returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasMissingAnyPrivilege() bool {
-	if o != nil && !isNil(o.MissingAnyPrivilege) {
+	if o != nil && !IsNil(o.MissingAnyPrivilege) {
 		return true
 	}
 
@@ -714,7 +717,7 @@ func (o *SimpleResultCriteriaResponse) SetMissingAnyPrivilege(v EnumresultCriter
 
 // GetMissingPrivilege returns the MissingPrivilege field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetMissingPrivilege() []EnumresultCriteriaMissingPrivilegeProp {
-	if o == nil || isNil(o.MissingPrivilege) {
+	if o == nil || IsNil(o.MissingPrivilege) {
 		var ret []EnumresultCriteriaMissingPrivilegeProp
 		return ret
 	}
@@ -724,7 +727,7 @@ func (o *SimpleResultCriteriaResponse) GetMissingPrivilege() []EnumresultCriteri
 // GetMissingPrivilegeOk returns a tuple with the MissingPrivilege field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetMissingPrivilegeOk() ([]EnumresultCriteriaMissingPrivilegeProp, bool) {
-	if o == nil || isNil(o.MissingPrivilege) {
+	if o == nil || IsNil(o.MissingPrivilege) {
 		return nil, false
 	}
 	return o.MissingPrivilege, true
@@ -732,7 +735,7 @@ func (o *SimpleResultCriteriaResponse) GetMissingPrivilegeOk() ([]EnumresultCrit
 
 // HasMissingPrivilege returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasMissingPrivilege() bool {
-	if o != nil && !isNil(o.MissingPrivilege) {
+	if o != nil && !IsNil(o.MissingPrivilege) {
 		return true
 	}
 
@@ -746,7 +749,7 @@ func (o *SimpleResultCriteriaResponse) SetMissingPrivilege(v []EnumresultCriteri
 
 // GetRetiredPasswordUsedForBind returns the RetiredPasswordUsedForBind field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetRetiredPasswordUsedForBind() EnumresultCriteriaRetiredPasswordUsedForBindProp {
-	if o == nil || isNil(o.RetiredPasswordUsedForBind) {
+	if o == nil || IsNil(o.RetiredPasswordUsedForBind) {
 		var ret EnumresultCriteriaRetiredPasswordUsedForBindProp
 		return ret
 	}
@@ -756,7 +759,7 @@ func (o *SimpleResultCriteriaResponse) GetRetiredPasswordUsedForBind() Enumresul
 // GetRetiredPasswordUsedForBindOk returns a tuple with the RetiredPasswordUsedForBind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetRetiredPasswordUsedForBindOk() (*EnumresultCriteriaRetiredPasswordUsedForBindProp, bool) {
-	if o == nil || isNil(o.RetiredPasswordUsedForBind) {
+	if o == nil || IsNil(o.RetiredPasswordUsedForBind) {
 		return nil, false
 	}
 	return o.RetiredPasswordUsedForBind, true
@@ -764,7 +767,7 @@ func (o *SimpleResultCriteriaResponse) GetRetiredPasswordUsedForBindOk() (*Enumr
 
 // HasRetiredPasswordUsedForBind returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasRetiredPasswordUsedForBind() bool {
-	if o != nil && !isNil(o.RetiredPasswordUsedForBind) {
+	if o != nil && !IsNil(o.RetiredPasswordUsedForBind) {
 		return true
 	}
 
@@ -778,7 +781,7 @@ func (o *SimpleResultCriteriaResponse) SetRetiredPasswordUsedForBind(v Enumresul
 
 // GetSearchEntryReturnedCriteria returns the SearchEntryReturnedCriteria field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetSearchEntryReturnedCriteria() EnumresultCriteriaSearchEntryReturnedCriteriaProp {
-	if o == nil || isNil(o.SearchEntryReturnedCriteria) {
+	if o == nil || IsNil(o.SearchEntryReturnedCriteria) {
 		var ret EnumresultCriteriaSearchEntryReturnedCriteriaProp
 		return ret
 	}
@@ -788,7 +791,7 @@ func (o *SimpleResultCriteriaResponse) GetSearchEntryReturnedCriteria() Enumresu
 // GetSearchEntryReturnedCriteriaOk returns a tuple with the SearchEntryReturnedCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetSearchEntryReturnedCriteriaOk() (*EnumresultCriteriaSearchEntryReturnedCriteriaProp, bool) {
-	if o == nil || isNil(o.SearchEntryReturnedCriteria) {
+	if o == nil || IsNil(o.SearchEntryReturnedCriteria) {
 		return nil, false
 	}
 	return o.SearchEntryReturnedCriteria, true
@@ -796,7 +799,7 @@ func (o *SimpleResultCriteriaResponse) GetSearchEntryReturnedCriteriaOk() (*Enum
 
 // HasSearchEntryReturnedCriteria returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasSearchEntryReturnedCriteria() bool {
-	if o != nil && !isNil(o.SearchEntryReturnedCriteria) {
+	if o != nil && !IsNil(o.SearchEntryReturnedCriteria) {
 		return true
 	}
 
@@ -810,7 +813,7 @@ func (o *SimpleResultCriteriaResponse) SetSearchEntryReturnedCriteria(v Enumresu
 
 // GetSearchEntryReturnedCount returns the SearchEntryReturnedCount field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetSearchEntryReturnedCount() int32 {
-	if o == nil || isNil(o.SearchEntryReturnedCount) {
+	if o == nil || IsNil(o.SearchEntryReturnedCount) {
 		var ret int32
 		return ret
 	}
@@ -820,7 +823,7 @@ func (o *SimpleResultCriteriaResponse) GetSearchEntryReturnedCount() int32 {
 // GetSearchEntryReturnedCountOk returns a tuple with the SearchEntryReturnedCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetSearchEntryReturnedCountOk() (*int32, bool) {
-	if o == nil || isNil(o.SearchEntryReturnedCount) {
+	if o == nil || IsNil(o.SearchEntryReturnedCount) {
 		return nil, false
 	}
 	return o.SearchEntryReturnedCount, true
@@ -828,7 +831,7 @@ func (o *SimpleResultCriteriaResponse) GetSearchEntryReturnedCountOk() (*int32, 
 
 // HasSearchEntryReturnedCount returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasSearchEntryReturnedCount() bool {
-	if o != nil && !isNil(o.SearchEntryReturnedCount) {
+	if o != nil && !IsNil(o.SearchEntryReturnedCount) {
 		return true
 	}
 
@@ -842,7 +845,7 @@ func (o *SimpleResultCriteriaResponse) SetSearchEntryReturnedCount(v int32) {
 
 // GetSearchReferenceReturnedCriteria returns the SearchReferenceReturnedCriteria field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetSearchReferenceReturnedCriteria() EnumresultCriteriaSearchReferenceReturnedCriteriaProp {
-	if o == nil || isNil(o.SearchReferenceReturnedCriteria) {
+	if o == nil || IsNil(o.SearchReferenceReturnedCriteria) {
 		var ret EnumresultCriteriaSearchReferenceReturnedCriteriaProp
 		return ret
 	}
@@ -852,7 +855,7 @@ func (o *SimpleResultCriteriaResponse) GetSearchReferenceReturnedCriteria() Enum
 // GetSearchReferenceReturnedCriteriaOk returns a tuple with the SearchReferenceReturnedCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetSearchReferenceReturnedCriteriaOk() (*EnumresultCriteriaSearchReferenceReturnedCriteriaProp, bool) {
-	if o == nil || isNil(o.SearchReferenceReturnedCriteria) {
+	if o == nil || IsNil(o.SearchReferenceReturnedCriteria) {
 		return nil, false
 	}
 	return o.SearchReferenceReturnedCriteria, true
@@ -860,7 +863,7 @@ func (o *SimpleResultCriteriaResponse) GetSearchReferenceReturnedCriteriaOk() (*
 
 // HasSearchReferenceReturnedCriteria returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasSearchReferenceReturnedCriteria() bool {
-	if o != nil && !isNil(o.SearchReferenceReturnedCriteria) {
+	if o != nil && !IsNil(o.SearchReferenceReturnedCriteria) {
 		return true
 	}
 
@@ -874,7 +877,7 @@ func (o *SimpleResultCriteriaResponse) SetSearchReferenceReturnedCriteria(v Enum
 
 // GetSearchReferenceReturnedCount returns the SearchReferenceReturnedCount field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetSearchReferenceReturnedCount() int32 {
-	if o == nil || isNil(o.SearchReferenceReturnedCount) {
+	if o == nil || IsNil(o.SearchReferenceReturnedCount) {
 		var ret int32
 		return ret
 	}
@@ -884,7 +887,7 @@ func (o *SimpleResultCriteriaResponse) GetSearchReferenceReturnedCount() int32 {
 // GetSearchReferenceReturnedCountOk returns a tuple with the SearchReferenceReturnedCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetSearchReferenceReturnedCountOk() (*int32, bool) {
-	if o == nil || isNil(o.SearchReferenceReturnedCount) {
+	if o == nil || IsNil(o.SearchReferenceReturnedCount) {
 		return nil, false
 	}
 	return o.SearchReferenceReturnedCount, true
@@ -892,7 +895,7 @@ func (o *SimpleResultCriteriaResponse) GetSearchReferenceReturnedCountOk() (*int
 
 // HasSearchReferenceReturnedCount returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasSearchReferenceReturnedCount() bool {
-	if o != nil && !isNil(o.SearchReferenceReturnedCount) {
+	if o != nil && !IsNil(o.SearchReferenceReturnedCount) {
 		return true
 	}
 
@@ -906,7 +909,7 @@ func (o *SimpleResultCriteriaResponse) SetSearchReferenceReturnedCount(v int32) 
 
 // GetSearchIndexedCriteria returns the SearchIndexedCriteria field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetSearchIndexedCriteria() EnumresultCriteriaSearchIndexedCriteriaProp {
-	if o == nil || isNil(o.SearchIndexedCriteria) {
+	if o == nil || IsNil(o.SearchIndexedCriteria) {
 		var ret EnumresultCriteriaSearchIndexedCriteriaProp
 		return ret
 	}
@@ -916,7 +919,7 @@ func (o *SimpleResultCriteriaResponse) GetSearchIndexedCriteria() EnumresultCrit
 // GetSearchIndexedCriteriaOk returns a tuple with the SearchIndexedCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetSearchIndexedCriteriaOk() (*EnumresultCriteriaSearchIndexedCriteriaProp, bool) {
-	if o == nil || isNil(o.SearchIndexedCriteria) {
+	if o == nil || IsNil(o.SearchIndexedCriteria) {
 		return nil, false
 	}
 	return o.SearchIndexedCriteria, true
@@ -924,7 +927,7 @@ func (o *SimpleResultCriteriaResponse) GetSearchIndexedCriteriaOk() (*Enumresult
 
 // HasSearchIndexedCriteria returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasSearchIndexedCriteria() bool {
-	if o != nil && !isNil(o.SearchIndexedCriteria) {
+	if o != nil && !IsNil(o.SearchIndexedCriteria) {
 		return true
 	}
 
@@ -938,7 +941,7 @@ func (o *SimpleResultCriteriaResponse) SetSearchIndexedCriteria(v EnumresultCrit
 
 // GetIncludedAuthzUserBaseDN returns the IncludedAuthzUserBaseDN field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetIncludedAuthzUserBaseDN() []string {
-	if o == nil || isNil(o.IncludedAuthzUserBaseDN) {
+	if o == nil || IsNil(o.IncludedAuthzUserBaseDN) {
 		var ret []string
 		return ret
 	}
@@ -948,7 +951,7 @@ func (o *SimpleResultCriteriaResponse) GetIncludedAuthzUserBaseDN() []string {
 // GetIncludedAuthzUserBaseDNOk returns a tuple with the IncludedAuthzUserBaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetIncludedAuthzUserBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludedAuthzUserBaseDN) {
+	if o == nil || IsNil(o.IncludedAuthzUserBaseDN) {
 		return nil, false
 	}
 	return o.IncludedAuthzUserBaseDN, true
@@ -956,7 +959,7 @@ func (o *SimpleResultCriteriaResponse) GetIncludedAuthzUserBaseDNOk() ([]string,
 
 // HasIncludedAuthzUserBaseDN returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasIncludedAuthzUserBaseDN() bool {
-	if o != nil && !isNil(o.IncludedAuthzUserBaseDN) {
+	if o != nil && !IsNil(o.IncludedAuthzUserBaseDN) {
 		return true
 	}
 
@@ -970,7 +973,7 @@ func (o *SimpleResultCriteriaResponse) SetIncludedAuthzUserBaseDN(v []string) {
 
 // GetExcludedAuthzUserBaseDN returns the ExcludedAuthzUserBaseDN field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetExcludedAuthzUserBaseDN() []string {
-	if o == nil || isNil(o.ExcludedAuthzUserBaseDN) {
+	if o == nil || IsNil(o.ExcludedAuthzUserBaseDN) {
 		var ret []string
 		return ret
 	}
@@ -980,7 +983,7 @@ func (o *SimpleResultCriteriaResponse) GetExcludedAuthzUserBaseDN() []string {
 // GetExcludedAuthzUserBaseDNOk returns a tuple with the ExcludedAuthzUserBaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetExcludedAuthzUserBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludedAuthzUserBaseDN) {
+	if o == nil || IsNil(o.ExcludedAuthzUserBaseDN) {
 		return nil, false
 	}
 	return o.ExcludedAuthzUserBaseDN, true
@@ -988,7 +991,7 @@ func (o *SimpleResultCriteriaResponse) GetExcludedAuthzUserBaseDNOk() ([]string,
 
 // HasExcludedAuthzUserBaseDN returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasExcludedAuthzUserBaseDN() bool {
-	if o != nil && !isNil(o.ExcludedAuthzUserBaseDN) {
+	if o != nil && !IsNil(o.ExcludedAuthzUserBaseDN) {
 		return true
 	}
 
@@ -1002,7 +1005,7 @@ func (o *SimpleResultCriteriaResponse) SetExcludedAuthzUserBaseDN(v []string) {
 
 // GetAllIncludedAuthzUserGroupDN returns the AllIncludedAuthzUserGroupDN field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetAllIncludedAuthzUserGroupDN() []string {
-	if o == nil || isNil(o.AllIncludedAuthzUserGroupDN) {
+	if o == nil || IsNil(o.AllIncludedAuthzUserGroupDN) {
 		var ret []string
 		return ret
 	}
@@ -1012,7 +1015,7 @@ func (o *SimpleResultCriteriaResponse) GetAllIncludedAuthzUserGroupDN() []string
 // GetAllIncludedAuthzUserGroupDNOk returns a tuple with the AllIncludedAuthzUserGroupDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetAllIncludedAuthzUserGroupDNOk() ([]string, bool) {
-	if o == nil || isNil(o.AllIncludedAuthzUserGroupDN) {
+	if o == nil || IsNil(o.AllIncludedAuthzUserGroupDN) {
 		return nil, false
 	}
 	return o.AllIncludedAuthzUserGroupDN, true
@@ -1020,7 +1023,7 @@ func (o *SimpleResultCriteriaResponse) GetAllIncludedAuthzUserGroupDNOk() ([]str
 
 // HasAllIncludedAuthzUserGroupDN returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasAllIncludedAuthzUserGroupDN() bool {
-	if o != nil && !isNil(o.AllIncludedAuthzUserGroupDN) {
+	if o != nil && !IsNil(o.AllIncludedAuthzUserGroupDN) {
 		return true
 	}
 
@@ -1034,7 +1037,7 @@ func (o *SimpleResultCriteriaResponse) SetAllIncludedAuthzUserGroupDN(v []string
 
 // GetAnyIncludedAuthzUserGroupDN returns the AnyIncludedAuthzUserGroupDN field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetAnyIncludedAuthzUserGroupDN() []string {
-	if o == nil || isNil(o.AnyIncludedAuthzUserGroupDN) {
+	if o == nil || IsNil(o.AnyIncludedAuthzUserGroupDN) {
 		var ret []string
 		return ret
 	}
@@ -1044,7 +1047,7 @@ func (o *SimpleResultCriteriaResponse) GetAnyIncludedAuthzUserGroupDN() []string
 // GetAnyIncludedAuthzUserGroupDNOk returns a tuple with the AnyIncludedAuthzUserGroupDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetAnyIncludedAuthzUserGroupDNOk() ([]string, bool) {
-	if o == nil || isNil(o.AnyIncludedAuthzUserGroupDN) {
+	if o == nil || IsNil(o.AnyIncludedAuthzUserGroupDN) {
 		return nil, false
 	}
 	return o.AnyIncludedAuthzUserGroupDN, true
@@ -1052,7 +1055,7 @@ func (o *SimpleResultCriteriaResponse) GetAnyIncludedAuthzUserGroupDNOk() ([]str
 
 // HasAnyIncludedAuthzUserGroupDN returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasAnyIncludedAuthzUserGroupDN() bool {
-	if o != nil && !isNil(o.AnyIncludedAuthzUserGroupDN) {
+	if o != nil && !IsNil(o.AnyIncludedAuthzUserGroupDN) {
 		return true
 	}
 
@@ -1066,7 +1069,7 @@ func (o *SimpleResultCriteriaResponse) SetAnyIncludedAuthzUserGroupDN(v []string
 
 // GetNotAllIncludedAuthzUserGroupDN returns the NotAllIncludedAuthzUserGroupDN field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetNotAllIncludedAuthzUserGroupDN() []string {
-	if o == nil || isNil(o.NotAllIncludedAuthzUserGroupDN) {
+	if o == nil || IsNil(o.NotAllIncludedAuthzUserGroupDN) {
 		var ret []string
 		return ret
 	}
@@ -1076,7 +1079,7 @@ func (o *SimpleResultCriteriaResponse) GetNotAllIncludedAuthzUserGroupDN() []str
 // GetNotAllIncludedAuthzUserGroupDNOk returns a tuple with the NotAllIncludedAuthzUserGroupDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetNotAllIncludedAuthzUserGroupDNOk() ([]string, bool) {
-	if o == nil || isNil(o.NotAllIncludedAuthzUserGroupDN) {
+	if o == nil || IsNil(o.NotAllIncludedAuthzUserGroupDN) {
 		return nil, false
 	}
 	return o.NotAllIncludedAuthzUserGroupDN, true
@@ -1084,7 +1087,7 @@ func (o *SimpleResultCriteriaResponse) GetNotAllIncludedAuthzUserGroupDNOk() ([]
 
 // HasNotAllIncludedAuthzUserGroupDN returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasNotAllIncludedAuthzUserGroupDN() bool {
-	if o != nil && !isNil(o.NotAllIncludedAuthzUserGroupDN) {
+	if o != nil && !IsNil(o.NotAllIncludedAuthzUserGroupDN) {
 		return true
 	}
 
@@ -1098,7 +1101,7 @@ func (o *SimpleResultCriteriaResponse) SetNotAllIncludedAuthzUserGroupDN(v []str
 
 // GetNoneIncludedAuthzUserGroupDN returns the NoneIncludedAuthzUserGroupDN field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetNoneIncludedAuthzUserGroupDN() []string {
-	if o == nil || isNil(o.NoneIncludedAuthzUserGroupDN) {
+	if o == nil || IsNil(o.NoneIncludedAuthzUserGroupDN) {
 		var ret []string
 		return ret
 	}
@@ -1108,7 +1111,7 @@ func (o *SimpleResultCriteriaResponse) GetNoneIncludedAuthzUserGroupDN() []strin
 // GetNoneIncludedAuthzUserGroupDNOk returns a tuple with the NoneIncludedAuthzUserGroupDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetNoneIncludedAuthzUserGroupDNOk() ([]string, bool) {
-	if o == nil || isNil(o.NoneIncludedAuthzUserGroupDN) {
+	if o == nil || IsNil(o.NoneIncludedAuthzUserGroupDN) {
 		return nil, false
 	}
 	return o.NoneIncludedAuthzUserGroupDN, true
@@ -1116,7 +1119,7 @@ func (o *SimpleResultCriteriaResponse) GetNoneIncludedAuthzUserGroupDNOk() ([]st
 
 // HasNoneIncludedAuthzUserGroupDN returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasNoneIncludedAuthzUserGroupDN() bool {
-	if o != nil && !isNil(o.NoneIncludedAuthzUserGroupDN) {
+	if o != nil && !IsNil(o.NoneIncludedAuthzUserGroupDN) {
 		return true
 	}
 
@@ -1130,7 +1133,7 @@ func (o *SimpleResultCriteriaResponse) SetNoneIncludedAuthzUserGroupDN(v []strin
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *SimpleResultCriteriaResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -1140,7 +1143,7 @@ func (o *SimpleResultCriteriaResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleResultCriteriaResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -1148,7 +1151,7 @@ func (o *SimpleResultCriteriaResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *SimpleResultCriteriaResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -1161,110 +1164,114 @@ func (o *SimpleResultCriteriaResponse) SetDescription(v string) {
 }
 
 func (o SimpleResultCriteriaResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.RequestCriteria) {
-		toSerialize["requestCriteria"] = o.RequestCriteria
-	}
-	if !isNil(o.ResultCodeCriteria) {
-		toSerialize["resultCodeCriteria"] = o.ResultCodeCriteria
-	}
-	if !isNil(o.ResultCodeValue) {
-		toSerialize["resultCodeValue"] = o.ResultCodeValue
-	}
-	if !isNil(o.ProcessingTimeCriteria) {
-		toSerialize["processingTimeCriteria"] = o.ProcessingTimeCriteria
-	}
-	if !isNil(o.ProcessingTimeValue) {
-		toSerialize["processingTimeValue"] = o.ProcessingTimeValue
-	}
-	if !isNil(o.QueueTimeCriteria) {
-		toSerialize["queueTimeCriteria"] = o.QueueTimeCriteria
-	}
-	if !isNil(o.QueueTimeValue) {
-		toSerialize["queueTimeValue"] = o.QueueTimeValue
-	}
-	if !isNil(o.ReferralReturned) {
-		toSerialize["referralReturned"] = o.ReferralReturned
-	}
-	if !isNil(o.AllIncludedResponseControl) {
-		toSerialize["allIncludedResponseControl"] = o.AllIncludedResponseControl
-	}
-	if !isNil(o.AnyIncludedResponseControl) {
-		toSerialize["anyIncludedResponseControl"] = o.AnyIncludedResponseControl
-	}
-	if !isNil(o.NotAllIncludedResponseControl) {
-		toSerialize["notAllIncludedResponseControl"] = o.NotAllIncludedResponseControl
-	}
-	if !isNil(o.NoneIncludedResponseControl) {
-		toSerialize["noneIncludedResponseControl"] = o.NoneIncludedResponseControl
-	}
-	if !isNil(o.UsedAlternateAuthzid) {
-		toSerialize["usedAlternateAuthzid"] = o.UsedAlternateAuthzid
-	}
-	if !isNil(o.UsedAnyPrivilege) {
-		toSerialize["usedAnyPrivilege"] = o.UsedAnyPrivilege
-	}
-	if !isNil(o.UsedPrivilege) {
-		toSerialize["usedPrivilege"] = o.UsedPrivilege
-	}
-	if !isNil(o.MissingAnyPrivilege) {
-		toSerialize["missingAnyPrivilege"] = o.MissingAnyPrivilege
-	}
-	if !isNil(o.MissingPrivilege) {
-		toSerialize["missingPrivilege"] = o.MissingPrivilege
-	}
-	if !isNil(o.RetiredPasswordUsedForBind) {
-		toSerialize["retiredPasswordUsedForBind"] = o.RetiredPasswordUsedForBind
-	}
-	if !isNil(o.SearchEntryReturnedCriteria) {
-		toSerialize["searchEntryReturnedCriteria"] = o.SearchEntryReturnedCriteria
-	}
-	if !isNil(o.SearchEntryReturnedCount) {
-		toSerialize["searchEntryReturnedCount"] = o.SearchEntryReturnedCount
-	}
-	if !isNil(o.SearchReferenceReturnedCriteria) {
-		toSerialize["searchReferenceReturnedCriteria"] = o.SearchReferenceReturnedCriteria
-	}
-	if !isNil(o.SearchReferenceReturnedCount) {
-		toSerialize["searchReferenceReturnedCount"] = o.SearchReferenceReturnedCount
-	}
-	if !isNil(o.SearchIndexedCriteria) {
-		toSerialize["searchIndexedCriteria"] = o.SearchIndexedCriteria
-	}
-	if !isNil(o.IncludedAuthzUserBaseDN) {
-		toSerialize["includedAuthzUserBaseDN"] = o.IncludedAuthzUserBaseDN
-	}
-	if !isNil(o.ExcludedAuthzUserBaseDN) {
-		toSerialize["excludedAuthzUserBaseDN"] = o.ExcludedAuthzUserBaseDN
-	}
-	if !isNil(o.AllIncludedAuthzUserGroupDN) {
-		toSerialize["allIncludedAuthzUserGroupDN"] = o.AllIncludedAuthzUserGroupDN
-	}
-	if !isNil(o.AnyIncludedAuthzUserGroupDN) {
-		toSerialize["anyIncludedAuthzUserGroupDN"] = o.AnyIncludedAuthzUserGroupDN
-	}
-	if !isNil(o.NotAllIncludedAuthzUserGroupDN) {
-		toSerialize["notAllIncludedAuthzUserGroupDN"] = o.NotAllIncludedAuthzUserGroupDN
-	}
-	if !isNil(o.NoneIncludedAuthzUserGroupDN) {
-		toSerialize["noneIncludedAuthzUserGroupDN"] = o.NoneIncludedAuthzUserGroupDN
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o SimpleResultCriteriaResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.RequestCriteria) {
+		toSerialize["requestCriteria"] = o.RequestCriteria
+	}
+	if !IsNil(o.ResultCodeCriteria) {
+		toSerialize["resultCodeCriteria"] = o.ResultCodeCriteria
+	}
+	if !IsNil(o.ResultCodeValue) {
+		toSerialize["resultCodeValue"] = o.ResultCodeValue
+	}
+	if !IsNil(o.ProcessingTimeCriteria) {
+		toSerialize["processingTimeCriteria"] = o.ProcessingTimeCriteria
+	}
+	if !IsNil(o.ProcessingTimeValue) {
+		toSerialize["processingTimeValue"] = o.ProcessingTimeValue
+	}
+	if !IsNil(o.QueueTimeCriteria) {
+		toSerialize["queueTimeCriteria"] = o.QueueTimeCriteria
+	}
+	if !IsNil(o.QueueTimeValue) {
+		toSerialize["queueTimeValue"] = o.QueueTimeValue
+	}
+	if !IsNil(o.ReferralReturned) {
+		toSerialize["referralReturned"] = o.ReferralReturned
+	}
+	if !IsNil(o.AllIncludedResponseControl) {
+		toSerialize["allIncludedResponseControl"] = o.AllIncludedResponseControl
+	}
+	if !IsNil(o.AnyIncludedResponseControl) {
+		toSerialize["anyIncludedResponseControl"] = o.AnyIncludedResponseControl
+	}
+	if !IsNil(o.NotAllIncludedResponseControl) {
+		toSerialize["notAllIncludedResponseControl"] = o.NotAllIncludedResponseControl
+	}
+	if !IsNil(o.NoneIncludedResponseControl) {
+		toSerialize["noneIncludedResponseControl"] = o.NoneIncludedResponseControl
+	}
+	if !IsNil(o.UsedAlternateAuthzid) {
+		toSerialize["usedAlternateAuthzid"] = o.UsedAlternateAuthzid
+	}
+	if !IsNil(o.UsedAnyPrivilege) {
+		toSerialize["usedAnyPrivilege"] = o.UsedAnyPrivilege
+	}
+	if !IsNil(o.UsedPrivilege) {
+		toSerialize["usedPrivilege"] = o.UsedPrivilege
+	}
+	if !IsNil(o.MissingAnyPrivilege) {
+		toSerialize["missingAnyPrivilege"] = o.MissingAnyPrivilege
+	}
+	if !IsNil(o.MissingPrivilege) {
+		toSerialize["missingPrivilege"] = o.MissingPrivilege
+	}
+	if !IsNil(o.RetiredPasswordUsedForBind) {
+		toSerialize["retiredPasswordUsedForBind"] = o.RetiredPasswordUsedForBind
+	}
+	if !IsNil(o.SearchEntryReturnedCriteria) {
+		toSerialize["searchEntryReturnedCriteria"] = o.SearchEntryReturnedCriteria
+	}
+	if !IsNil(o.SearchEntryReturnedCount) {
+		toSerialize["searchEntryReturnedCount"] = o.SearchEntryReturnedCount
+	}
+	if !IsNil(o.SearchReferenceReturnedCriteria) {
+		toSerialize["searchReferenceReturnedCriteria"] = o.SearchReferenceReturnedCriteria
+	}
+	if !IsNil(o.SearchReferenceReturnedCount) {
+		toSerialize["searchReferenceReturnedCount"] = o.SearchReferenceReturnedCount
+	}
+	if !IsNil(o.SearchIndexedCriteria) {
+		toSerialize["searchIndexedCriteria"] = o.SearchIndexedCriteria
+	}
+	if !IsNil(o.IncludedAuthzUserBaseDN) {
+		toSerialize["includedAuthzUserBaseDN"] = o.IncludedAuthzUserBaseDN
+	}
+	if !IsNil(o.ExcludedAuthzUserBaseDN) {
+		toSerialize["excludedAuthzUserBaseDN"] = o.ExcludedAuthzUserBaseDN
+	}
+	if !IsNil(o.AllIncludedAuthzUserGroupDN) {
+		toSerialize["allIncludedAuthzUserGroupDN"] = o.AllIncludedAuthzUserGroupDN
+	}
+	if !IsNil(o.AnyIncludedAuthzUserGroupDN) {
+		toSerialize["anyIncludedAuthzUserGroupDN"] = o.AnyIncludedAuthzUserGroupDN
+	}
+	if !IsNil(o.NotAllIncludedAuthzUserGroupDN) {
+		toSerialize["notAllIncludedAuthzUserGroupDN"] = o.NotAllIncludedAuthzUserGroupDN
+	}
+	if !IsNil(o.NoneIncludedAuthzUserGroupDN) {
+		toSerialize["noneIncludedAuthzUserGroupDN"] = o.NoneIncludedAuthzUserGroupDN
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableSimpleResultCriteriaResponse struct {

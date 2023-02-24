@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the JmxConnectionHandlerResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &JmxConnectionHandlerResponse{}
+
 // JmxConnectionHandlerResponse struct for JmxConnectionHandlerResponse
 type JmxConnectionHandlerResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -62,7 +65,7 @@ func NewJmxConnectionHandlerResponseWithDefaults() *JmxConnectionHandlerResponse
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *JmxConnectionHandlerResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -72,7 +75,7 @@ func (o *JmxConnectionHandlerResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JmxConnectionHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -80,7 +83,7 @@ func (o *JmxConnectionHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *JmxConnectionHandlerResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -94,7 +97,7 @@ func (o *JmxConnectionHandlerResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *JmxConnectionHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *JmxConnectionHandlerResponse) GetUrnpingidentityschemasconfigurationmes
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JmxConnectionHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -112,7 +115,7 @@ func (o *JmxConnectionHandlerResponse) GetUrnpingidentityschemasconfigurationmes
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *JmxConnectionHandlerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -198,7 +201,7 @@ func (o *JmxConnectionHandlerResponse) SetListenPort(v int32) {
 
 // GetUseSSL returns the UseSSL field value if set, zero value otherwise.
 func (o *JmxConnectionHandlerResponse) GetUseSSL() bool {
-	if o == nil || isNil(o.UseSSL) {
+	if o == nil || IsNil(o.UseSSL) {
 		var ret bool
 		return ret
 	}
@@ -208,7 +211,7 @@ func (o *JmxConnectionHandlerResponse) GetUseSSL() bool {
 // GetUseSSLOk returns a tuple with the UseSSL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JmxConnectionHandlerResponse) GetUseSSLOk() (*bool, bool) {
-	if o == nil || isNil(o.UseSSL) {
+	if o == nil || IsNil(o.UseSSL) {
 		return nil, false
 	}
 	return o.UseSSL, true
@@ -216,7 +219,7 @@ func (o *JmxConnectionHandlerResponse) GetUseSSLOk() (*bool, bool) {
 
 // HasUseSSL returns a boolean if a field has been set.
 func (o *JmxConnectionHandlerResponse) HasUseSSL() bool {
-	if o != nil && !isNil(o.UseSSL) {
+	if o != nil && !IsNil(o.UseSSL) {
 		return true
 	}
 
@@ -230,7 +233,7 @@ func (o *JmxConnectionHandlerResponse) SetUseSSL(v bool) {
 
 // GetSslCertNickname returns the SslCertNickname field value if set, zero value otherwise.
 func (o *JmxConnectionHandlerResponse) GetSslCertNickname() string {
-	if o == nil || isNil(o.SslCertNickname) {
+	if o == nil || IsNil(o.SslCertNickname) {
 		var ret string
 		return ret
 	}
@@ -240,7 +243,7 @@ func (o *JmxConnectionHandlerResponse) GetSslCertNickname() string {
 // GetSslCertNicknameOk returns a tuple with the SslCertNickname field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JmxConnectionHandlerResponse) GetSslCertNicknameOk() (*string, bool) {
-	if o == nil || isNil(o.SslCertNickname) {
+	if o == nil || IsNil(o.SslCertNickname) {
 		return nil, false
 	}
 	return o.SslCertNickname, true
@@ -248,7 +251,7 @@ func (o *JmxConnectionHandlerResponse) GetSslCertNicknameOk() (*string, bool) {
 
 // HasSslCertNickname returns a boolean if a field has been set.
 func (o *JmxConnectionHandlerResponse) HasSslCertNickname() bool {
-	if o != nil && !isNil(o.SslCertNickname) {
+	if o != nil && !IsNil(o.SslCertNickname) {
 		return true
 	}
 
@@ -262,7 +265,7 @@ func (o *JmxConnectionHandlerResponse) SetSslCertNickname(v string) {
 
 // GetKeyManagerProvider returns the KeyManagerProvider field value if set, zero value otherwise.
 func (o *JmxConnectionHandlerResponse) GetKeyManagerProvider() string {
-	if o == nil || isNil(o.KeyManagerProvider) {
+	if o == nil || IsNil(o.KeyManagerProvider) {
 		var ret string
 		return ret
 	}
@@ -272,7 +275,7 @@ func (o *JmxConnectionHandlerResponse) GetKeyManagerProvider() string {
 // GetKeyManagerProviderOk returns a tuple with the KeyManagerProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JmxConnectionHandlerResponse) GetKeyManagerProviderOk() (*string, bool) {
-	if o == nil || isNil(o.KeyManagerProvider) {
+	if o == nil || IsNil(o.KeyManagerProvider) {
 		return nil, false
 	}
 	return o.KeyManagerProvider, true
@@ -280,7 +283,7 @@ func (o *JmxConnectionHandlerResponse) GetKeyManagerProviderOk() (*string, bool)
 
 // HasKeyManagerProvider returns a boolean if a field has been set.
 func (o *JmxConnectionHandlerResponse) HasKeyManagerProvider() bool {
-	if o != nil && !isNil(o.KeyManagerProvider) {
+	if o != nil && !IsNil(o.KeyManagerProvider) {
 		return true
 	}
 
@@ -294,7 +297,7 @@ func (o *JmxConnectionHandlerResponse) SetKeyManagerProvider(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *JmxConnectionHandlerResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -304,7 +307,7 @@ func (o *JmxConnectionHandlerResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JmxConnectionHandlerResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -312,7 +315,7 @@ func (o *JmxConnectionHandlerResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *JmxConnectionHandlerResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -350,7 +353,7 @@ func (o *JmxConnectionHandlerResponse) SetEnabled(v bool) {
 
 // GetAllowedClient returns the AllowedClient field value if set, zero value otherwise.
 func (o *JmxConnectionHandlerResponse) GetAllowedClient() []string {
-	if o == nil || isNil(o.AllowedClient) {
+	if o == nil || IsNil(o.AllowedClient) {
 		var ret []string
 		return ret
 	}
@@ -360,7 +363,7 @@ func (o *JmxConnectionHandlerResponse) GetAllowedClient() []string {
 // GetAllowedClientOk returns a tuple with the AllowedClient field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JmxConnectionHandlerResponse) GetAllowedClientOk() ([]string, bool) {
-	if o == nil || isNil(o.AllowedClient) {
+	if o == nil || IsNil(o.AllowedClient) {
 		return nil, false
 	}
 	return o.AllowedClient, true
@@ -368,7 +371,7 @@ func (o *JmxConnectionHandlerResponse) GetAllowedClientOk() ([]string, bool) {
 
 // HasAllowedClient returns a boolean if a field has been set.
 func (o *JmxConnectionHandlerResponse) HasAllowedClient() bool {
-	if o != nil && !isNil(o.AllowedClient) {
+	if o != nil && !IsNil(o.AllowedClient) {
 		return true
 	}
 
@@ -382,7 +385,7 @@ func (o *JmxConnectionHandlerResponse) SetAllowedClient(v []string) {
 
 // GetDeniedClient returns the DeniedClient field value if set, zero value otherwise.
 func (o *JmxConnectionHandlerResponse) GetDeniedClient() []string {
-	if o == nil || isNil(o.DeniedClient) {
+	if o == nil || IsNil(o.DeniedClient) {
 		var ret []string
 		return ret
 	}
@@ -392,7 +395,7 @@ func (o *JmxConnectionHandlerResponse) GetDeniedClient() []string {
 // GetDeniedClientOk returns a tuple with the DeniedClient field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JmxConnectionHandlerResponse) GetDeniedClientOk() ([]string, bool) {
-	if o == nil || isNil(o.DeniedClient) {
+	if o == nil || IsNil(o.DeniedClient) {
 		return nil, false
 	}
 	return o.DeniedClient, true
@@ -400,7 +403,7 @@ func (o *JmxConnectionHandlerResponse) GetDeniedClientOk() ([]string, bool) {
 
 // HasDeniedClient returns a boolean if a field has been set.
 func (o *JmxConnectionHandlerResponse) HasDeniedClient() bool {
-	if o != nil && !isNil(o.DeniedClient) {
+	if o != nil && !IsNil(o.DeniedClient) {
 		return true
 	}
 
@@ -413,44 +416,44 @@ func (o *JmxConnectionHandlerResponse) SetDeniedClient(v []string) {
 }
 
 func (o JmxConnectionHandlerResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["listenPort"] = o.ListenPort
-	}
-	if !isNil(o.UseSSL) {
-		toSerialize["useSSL"] = o.UseSSL
-	}
-	if !isNil(o.SslCertNickname) {
-		toSerialize["sslCertNickname"] = o.SslCertNickname
-	}
-	if !isNil(o.KeyManagerProvider) {
-		toSerialize["keyManagerProvider"] = o.KeyManagerProvider
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.AllowedClient) {
-		toSerialize["allowedClient"] = o.AllowedClient
-	}
-	if !isNil(o.DeniedClient) {
-		toSerialize["deniedClient"] = o.DeniedClient
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o JmxConnectionHandlerResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["listenPort"] = o.ListenPort
+	if !IsNil(o.UseSSL) {
+		toSerialize["useSSL"] = o.UseSSL
+	}
+	if !IsNil(o.SslCertNickname) {
+		toSerialize["sslCertNickname"] = o.SslCertNickname
+	}
+	if !IsNil(o.KeyManagerProvider) {
+		toSerialize["keyManagerProvider"] = o.KeyManagerProvider
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.AllowedClient) {
+		toSerialize["allowedClient"] = o.AllowedClient
+	}
+	if !IsNil(o.DeniedClient) {
+		toSerialize["deniedClient"] = o.DeniedClient
+	}
+	return toSerialize, nil
 }
 
 type NullableJmxConnectionHandlerResponse struct {

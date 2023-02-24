@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the FilterBasedUncachedEntryCriteriaResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &FilterBasedUncachedEntryCriteriaResponse{}
+
 // FilterBasedUncachedEntryCriteriaResponse struct for FilterBasedUncachedEntryCriteriaResponse
 type FilterBasedUncachedEntryCriteriaResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -55,7 +58,7 @@ func NewFilterBasedUncachedEntryCriteriaResponseWithDefaults() *FilterBasedUncac
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *FilterBasedUncachedEntryCriteriaResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -65,7 +68,7 @@ func (o *FilterBasedUncachedEntryCriteriaResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FilterBasedUncachedEntryCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -73,7 +76,7 @@ func (o *FilterBasedUncachedEntryCriteriaResponse) GetMetaOk() (*MetaMeta, bool)
 
 // HasMeta returns a boolean if a field has been set.
 func (o *FilterBasedUncachedEntryCriteriaResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -87,7 +90,7 @@ func (o *FilterBasedUncachedEntryCriteriaResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *FilterBasedUncachedEntryCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -97,7 +100,7 @@ func (o *FilterBasedUncachedEntryCriteriaResponse) GetUrnpingidentityschemasconf
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FilterBasedUncachedEntryCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -105,7 +108,7 @@ func (o *FilterBasedUncachedEntryCriteriaResponse) GetUrnpingidentityschemasconf
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *FilterBasedUncachedEntryCriteriaResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -215,7 +218,7 @@ func (o *FilterBasedUncachedEntryCriteriaResponse) SetFilterIdentifiesUncachedEn
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *FilterBasedUncachedEntryCriteriaResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -225,7 +228,7 @@ func (o *FilterBasedUncachedEntryCriteriaResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FilterBasedUncachedEntryCriteriaResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -233,7 +236,7 @@ func (o *FilterBasedUncachedEntryCriteriaResponse) GetDescriptionOk() (*string, 
 
 // HasDescription returns a boolean if a field has been set.
 func (o *FilterBasedUncachedEntryCriteriaResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -270,32 +273,30 @@ func (o *FilterBasedUncachedEntryCriteriaResponse) SetEnabled(v bool) {
 }
 
 func (o FilterBasedUncachedEntryCriteriaResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["filter"] = o.Filter
-	}
-	if true {
-		toSerialize["filterIdentifiesUncachedEntries"] = o.FilterIdentifiesUncachedEntries
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o FilterBasedUncachedEntryCriteriaResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["filter"] = o.Filter
+	toSerialize["filterIdentifiesUncachedEntries"] = o.FilterIdentifiesUncachedEntries
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableFilterBasedUncachedEntryCriteriaResponse struct {

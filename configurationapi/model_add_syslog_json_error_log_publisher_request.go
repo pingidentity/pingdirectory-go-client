@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddSyslogJsonErrorLogPublisherRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddSyslogJsonErrorLogPublisherRequest{}
+
 // AddSyslogJsonErrorLogPublisherRequest struct for AddSyslogJsonErrorLogPublisherRequest
 type AddSyslogJsonErrorLogPublisherRequest struct {
 	// Name of the new Log Publisher
@@ -120,7 +123,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) SetSchemas(v []EnumsyslogJsonErr
 
 // GetDefaultSeverity returns the DefaultSeverity field value if set, zero value otherwise.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetDefaultSeverity() []EnumlogPublisherDefaultSeverityProp {
-	if o == nil || isNil(o.DefaultSeverity) {
+	if o == nil || IsNil(o.DefaultSeverity) {
 		var ret []EnumlogPublisherDefaultSeverityProp
 		return ret
 	}
@@ -130,7 +133,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetDefaultSeverity() []EnumlogPu
 // GetDefaultSeverityOk returns a tuple with the DefaultSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetDefaultSeverityOk() ([]EnumlogPublisherDefaultSeverityProp, bool) {
-	if o == nil || isNil(o.DefaultSeverity) {
+	if o == nil || IsNil(o.DefaultSeverity) {
 		return nil, false
 	}
 	return o.DefaultSeverity, true
@@ -138,7 +141,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetDefaultSeverityOk() ([]Enumlo
 
 // HasDefaultSeverity returns a boolean if a field has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) HasDefaultSeverity() bool {
-	if o != nil && !isNil(o.DefaultSeverity) {
+	if o != nil && !IsNil(o.DefaultSeverity) {
 		return true
 	}
 
@@ -176,7 +179,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) SetSyslogExternalServer(v []stri
 
 // GetSyslogFacility returns the SyslogFacility field value if set, zero value otherwise.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetSyslogFacility() EnumlogPublisherSyslogFacilityProp {
-	if o == nil || isNil(o.SyslogFacility) {
+	if o == nil || IsNil(o.SyslogFacility) {
 		var ret EnumlogPublisherSyslogFacilityProp
 		return ret
 	}
@@ -186,7 +189,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetSyslogFacility() EnumlogPubli
 // GetSyslogFacilityOk returns a tuple with the SyslogFacility field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetSyslogFacilityOk() (*EnumlogPublisherSyslogFacilityProp, bool) {
-	if o == nil || isNil(o.SyslogFacility) {
+	if o == nil || IsNil(o.SyslogFacility) {
 		return nil, false
 	}
 	return o.SyslogFacility, true
@@ -194,7 +197,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetSyslogFacilityOk() (*EnumlogP
 
 // HasSyslogFacility returns a boolean if a field has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) HasSyslogFacility() bool {
-	if o != nil && !isNil(o.SyslogFacility) {
+	if o != nil && !IsNil(o.SyslogFacility) {
 		return true
 	}
 
@@ -208,7 +211,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) SetSyslogFacility(v EnumlogPubli
 
 // GetSyslogSeverity returns the SyslogSeverity field value if set, zero value otherwise.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetSyslogSeverity() EnumlogPublisherSyslogSeverityProp {
-	if o == nil || isNil(o.SyslogSeverity) {
+	if o == nil || IsNil(o.SyslogSeverity) {
 		var ret EnumlogPublisherSyslogSeverityProp
 		return ret
 	}
@@ -218,7 +221,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetSyslogSeverity() EnumlogPubli
 // GetSyslogSeverityOk returns a tuple with the SyslogSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetSyslogSeverityOk() (*EnumlogPublisherSyslogSeverityProp, bool) {
-	if o == nil || isNil(o.SyslogSeverity) {
+	if o == nil || IsNil(o.SyslogSeverity) {
 		return nil, false
 	}
 	return o.SyslogSeverity, true
@@ -226,7 +229,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetSyslogSeverityOk() (*EnumlogP
 
 // HasSyslogSeverity returns a boolean if a field has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) HasSyslogSeverity() bool {
-	if o != nil && !isNil(o.SyslogSeverity) {
+	if o != nil && !IsNil(o.SyslogSeverity) {
 		return true
 	}
 
@@ -240,7 +243,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) SetSyslogSeverity(v EnumlogPubli
 
 // GetSyslogMessageHostName returns the SyslogMessageHostName field value if set, zero value otherwise.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetSyslogMessageHostName() string {
-	if o == nil || isNil(o.SyslogMessageHostName) {
+	if o == nil || IsNil(o.SyslogMessageHostName) {
 		var ret string
 		return ret
 	}
@@ -250,7 +253,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetSyslogMessageHostName() strin
 // GetSyslogMessageHostNameOk returns a tuple with the SyslogMessageHostName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetSyslogMessageHostNameOk() (*string, bool) {
-	if o == nil || isNil(o.SyslogMessageHostName) {
+	if o == nil || IsNil(o.SyslogMessageHostName) {
 		return nil, false
 	}
 	return o.SyslogMessageHostName, true
@@ -258,7 +261,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetSyslogMessageHostNameOk() (*s
 
 // HasSyslogMessageHostName returns a boolean if a field has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) HasSyslogMessageHostName() bool {
-	if o != nil && !isNil(o.SyslogMessageHostName) {
+	if o != nil && !IsNil(o.SyslogMessageHostName) {
 		return true
 	}
 
@@ -272,7 +275,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) SetSyslogMessageHostName(v strin
 
 // GetSyslogMessageApplicationName returns the SyslogMessageApplicationName field value if set, zero value otherwise.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetSyslogMessageApplicationName() string {
-	if o == nil || isNil(o.SyslogMessageApplicationName) {
+	if o == nil || IsNil(o.SyslogMessageApplicationName) {
 		var ret string
 		return ret
 	}
@@ -282,7 +285,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetSyslogMessageApplicationName(
 // GetSyslogMessageApplicationNameOk returns a tuple with the SyslogMessageApplicationName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetSyslogMessageApplicationNameOk() (*string, bool) {
-	if o == nil || isNil(o.SyslogMessageApplicationName) {
+	if o == nil || IsNil(o.SyslogMessageApplicationName) {
 		return nil, false
 	}
 	return o.SyslogMessageApplicationName, true
@@ -290,7 +293,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetSyslogMessageApplicationNameO
 
 // HasSyslogMessageApplicationName returns a boolean if a field has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) HasSyslogMessageApplicationName() bool {
-	if o != nil && !isNil(o.SyslogMessageApplicationName) {
+	if o != nil && !IsNil(o.SyslogMessageApplicationName) {
 		return true
 	}
 
@@ -304,7 +307,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) SetSyslogMessageApplicationName(
 
 // GetQueueSize returns the QueueSize field value if set, zero value otherwise.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetQueueSize() int32 {
-	if o == nil || isNil(o.QueueSize) {
+	if o == nil || IsNil(o.QueueSize) {
 		var ret int32
 		return ret
 	}
@@ -314,7 +317,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetQueueSize() int32 {
 // GetQueueSizeOk returns a tuple with the QueueSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetQueueSizeOk() (*int32, bool) {
-	if o == nil || isNil(o.QueueSize) {
+	if o == nil || IsNil(o.QueueSize) {
 		return nil, false
 	}
 	return o.QueueSize, true
@@ -322,7 +325,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetQueueSizeOk() (*int32, bool) 
 
 // HasQueueSize returns a boolean if a field has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) HasQueueSize() bool {
-	if o != nil && !isNil(o.QueueSize) {
+	if o != nil && !IsNil(o.QueueSize) {
 		return true
 	}
 
@@ -336,7 +339,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) SetQueueSize(v int32) {
 
 // GetIncludeProductName returns the IncludeProductName field value if set, zero value otherwise.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetIncludeProductName() bool {
-	if o == nil || isNil(o.IncludeProductName) {
+	if o == nil || IsNil(o.IncludeProductName) {
 		var ret bool
 		return ret
 	}
@@ -346,7 +349,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetIncludeProductName() bool {
 // GetIncludeProductNameOk returns a tuple with the IncludeProductName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetIncludeProductNameOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeProductName) {
+	if o == nil || IsNil(o.IncludeProductName) {
 		return nil, false
 	}
 	return o.IncludeProductName, true
@@ -354,7 +357,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetIncludeProductNameOk() (*bool
 
 // HasIncludeProductName returns a boolean if a field has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) HasIncludeProductName() bool {
-	if o != nil && !isNil(o.IncludeProductName) {
+	if o != nil && !IsNil(o.IncludeProductName) {
 		return true
 	}
 
@@ -368,7 +371,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) SetIncludeProductName(v bool) {
 
 // GetIncludeInstanceName returns the IncludeInstanceName field value if set, zero value otherwise.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetIncludeInstanceName() bool {
-	if o == nil || isNil(o.IncludeInstanceName) {
+	if o == nil || IsNil(o.IncludeInstanceName) {
 		var ret bool
 		return ret
 	}
@@ -378,7 +381,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetIncludeInstanceName() bool {
 // GetIncludeInstanceNameOk returns a tuple with the IncludeInstanceName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetIncludeInstanceNameOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeInstanceName) {
+	if o == nil || IsNil(o.IncludeInstanceName) {
 		return nil, false
 	}
 	return o.IncludeInstanceName, true
@@ -386,7 +389,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetIncludeInstanceNameOk() (*boo
 
 // HasIncludeInstanceName returns a boolean if a field has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) HasIncludeInstanceName() bool {
-	if o != nil && !isNil(o.IncludeInstanceName) {
+	if o != nil && !IsNil(o.IncludeInstanceName) {
 		return true
 	}
 
@@ -400,7 +403,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) SetIncludeInstanceName(v bool) {
 
 // GetIncludeStartupID returns the IncludeStartupID field value if set, zero value otherwise.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetIncludeStartupID() bool {
-	if o == nil || isNil(o.IncludeStartupID) {
+	if o == nil || IsNil(o.IncludeStartupID) {
 		var ret bool
 		return ret
 	}
@@ -410,7 +413,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetIncludeStartupID() bool {
 // GetIncludeStartupIDOk returns a tuple with the IncludeStartupID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetIncludeStartupIDOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeStartupID) {
+	if o == nil || IsNil(o.IncludeStartupID) {
 		return nil, false
 	}
 	return o.IncludeStartupID, true
@@ -418,7 +421,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetIncludeStartupIDOk() (*bool, 
 
 // HasIncludeStartupID returns a boolean if a field has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) HasIncludeStartupID() bool {
-	if o != nil && !isNil(o.IncludeStartupID) {
+	if o != nil && !IsNil(o.IncludeStartupID) {
 		return true
 	}
 
@@ -432,7 +435,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) SetIncludeStartupID(v bool) {
 
 // GetIncludeThreadID returns the IncludeThreadID field value if set, zero value otherwise.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetIncludeThreadID() bool {
-	if o == nil || isNil(o.IncludeThreadID) {
+	if o == nil || IsNil(o.IncludeThreadID) {
 		var ret bool
 		return ret
 	}
@@ -442,7 +445,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetIncludeThreadID() bool {
 // GetIncludeThreadIDOk returns a tuple with the IncludeThreadID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetIncludeThreadIDOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeThreadID) {
+	if o == nil || IsNil(o.IncludeThreadID) {
 		return nil, false
 	}
 	return o.IncludeThreadID, true
@@ -450,7 +453,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetIncludeThreadIDOk() (*bool, b
 
 // HasIncludeThreadID returns a boolean if a field has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) HasIncludeThreadID() bool {
-	if o != nil && !isNil(o.IncludeThreadID) {
+	if o != nil && !IsNil(o.IncludeThreadID) {
 		return true
 	}
 
@@ -464,7 +467,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) SetIncludeThreadID(v bool) {
 
 // GetGenerifyMessageStringsWhenPossible returns the GenerifyMessageStringsWhenPossible field value if set, zero value otherwise.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetGenerifyMessageStringsWhenPossible() bool {
-	if o == nil || isNil(o.GenerifyMessageStringsWhenPossible) {
+	if o == nil || IsNil(o.GenerifyMessageStringsWhenPossible) {
 		var ret bool
 		return ret
 	}
@@ -474,7 +477,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetGenerifyMessageStringsWhenPos
 // GetGenerifyMessageStringsWhenPossibleOk returns a tuple with the GenerifyMessageStringsWhenPossible field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetGenerifyMessageStringsWhenPossibleOk() (*bool, bool) {
-	if o == nil || isNil(o.GenerifyMessageStringsWhenPossible) {
+	if o == nil || IsNil(o.GenerifyMessageStringsWhenPossible) {
 		return nil, false
 	}
 	return o.GenerifyMessageStringsWhenPossible, true
@@ -482,7 +485,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetGenerifyMessageStringsWhenPos
 
 // HasGenerifyMessageStringsWhenPossible returns a boolean if a field has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) HasGenerifyMessageStringsWhenPossible() bool {
-	if o != nil && !isNil(o.GenerifyMessageStringsWhenPossible) {
+	if o != nil && !IsNil(o.GenerifyMessageStringsWhenPossible) {
 		return true
 	}
 
@@ -496,7 +499,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) SetGenerifyMessageStringsWhenPos
 
 // GetOverrideSeverity returns the OverrideSeverity field value if set, zero value otherwise.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetOverrideSeverity() []string {
-	if o == nil || isNil(o.OverrideSeverity) {
+	if o == nil || IsNil(o.OverrideSeverity) {
 		var ret []string
 		return ret
 	}
@@ -506,7 +509,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetOverrideSeverity() []string {
 // GetOverrideSeverityOk returns a tuple with the OverrideSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetOverrideSeverityOk() ([]string, bool) {
-	if o == nil || isNil(o.OverrideSeverity) {
+	if o == nil || IsNil(o.OverrideSeverity) {
 		return nil, false
 	}
 	return o.OverrideSeverity, true
@@ -514,7 +517,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetOverrideSeverityOk() ([]strin
 
 // HasOverrideSeverity returns a boolean if a field has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) HasOverrideSeverity() bool {
-	if o != nil && !isNil(o.OverrideSeverity) {
+	if o != nil && !IsNil(o.OverrideSeverity) {
 		return true
 	}
 
@@ -528,7 +531,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) SetOverrideSeverity(v []string) 
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -538,7 +541,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -546,7 +549,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetDescriptionOk() (*string, boo
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -584,7 +587,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) SetEnabled(v bool) {
 
 // GetLoggingErrorBehavior returns the LoggingErrorBehavior field value if set, zero value otherwise.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetLoggingErrorBehavior() EnumlogPublisherLoggingErrorBehaviorProp {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		var ret EnumlogPublisherLoggingErrorBehaviorProp
 		return ret
 	}
@@ -594,7 +597,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetLoggingErrorBehavior() Enumlo
 // GetLoggingErrorBehaviorOk returns a tuple with the LoggingErrorBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
@@ -602,7 +605,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetLoggingErrorBehaviorOk() (*En
 
 // HasLoggingErrorBehavior returns a boolean if a field has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) HasLoggingErrorBehavior() bool {
-	if o != nil && !isNil(o.LoggingErrorBehavior) {
+	if o != nil && !IsNil(o.LoggingErrorBehavior) {
 		return true
 	}
 
@@ -615,62 +618,62 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) SetLoggingErrorBehavior(v Enumlo
 }
 
 func (o AddSyslogJsonErrorLogPublisherRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["publisherName"] = o.PublisherName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.DefaultSeverity) {
-		toSerialize["defaultSeverity"] = o.DefaultSeverity
-	}
-	if true {
-		toSerialize["syslogExternalServer"] = o.SyslogExternalServer
-	}
-	if !isNil(o.SyslogFacility) {
-		toSerialize["syslogFacility"] = o.SyslogFacility
-	}
-	if !isNil(o.SyslogSeverity) {
-		toSerialize["syslogSeverity"] = o.SyslogSeverity
-	}
-	if !isNil(o.SyslogMessageHostName) {
-		toSerialize["syslogMessageHostName"] = o.SyslogMessageHostName
-	}
-	if !isNil(o.SyslogMessageApplicationName) {
-		toSerialize["syslogMessageApplicationName"] = o.SyslogMessageApplicationName
-	}
-	if !isNil(o.QueueSize) {
-		toSerialize["queueSize"] = o.QueueSize
-	}
-	if !isNil(o.IncludeProductName) {
-		toSerialize["includeProductName"] = o.IncludeProductName
-	}
-	if !isNil(o.IncludeInstanceName) {
-		toSerialize["includeInstanceName"] = o.IncludeInstanceName
-	}
-	if !isNil(o.IncludeStartupID) {
-		toSerialize["includeStartupID"] = o.IncludeStartupID
-	}
-	if !isNil(o.IncludeThreadID) {
-		toSerialize["includeThreadID"] = o.IncludeThreadID
-	}
-	if !isNil(o.GenerifyMessageStringsWhenPossible) {
-		toSerialize["generifyMessageStringsWhenPossible"] = o.GenerifyMessageStringsWhenPossible
-	}
-	if !isNil(o.OverrideSeverity) {
-		toSerialize["overrideSeverity"] = o.OverrideSeverity
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.LoggingErrorBehavior) {
-		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddSyslogJsonErrorLogPublisherRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["publisherName"] = o.PublisherName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.DefaultSeverity) {
+		toSerialize["defaultSeverity"] = o.DefaultSeverity
+	}
+	toSerialize["syslogExternalServer"] = o.SyslogExternalServer
+	if !IsNil(o.SyslogFacility) {
+		toSerialize["syslogFacility"] = o.SyslogFacility
+	}
+	if !IsNil(o.SyslogSeverity) {
+		toSerialize["syslogSeverity"] = o.SyslogSeverity
+	}
+	if !IsNil(o.SyslogMessageHostName) {
+		toSerialize["syslogMessageHostName"] = o.SyslogMessageHostName
+	}
+	if !IsNil(o.SyslogMessageApplicationName) {
+		toSerialize["syslogMessageApplicationName"] = o.SyslogMessageApplicationName
+	}
+	if !IsNil(o.QueueSize) {
+		toSerialize["queueSize"] = o.QueueSize
+	}
+	if !IsNil(o.IncludeProductName) {
+		toSerialize["includeProductName"] = o.IncludeProductName
+	}
+	if !IsNil(o.IncludeInstanceName) {
+		toSerialize["includeInstanceName"] = o.IncludeInstanceName
+	}
+	if !IsNil(o.IncludeStartupID) {
+		toSerialize["includeStartupID"] = o.IncludeStartupID
+	}
+	if !IsNil(o.IncludeThreadID) {
+		toSerialize["includeThreadID"] = o.IncludeThreadID
+	}
+	if !IsNil(o.GenerifyMessageStringsWhenPossible) {
+		toSerialize["generifyMessageStringsWhenPossible"] = o.GenerifyMessageStringsWhenPossible
+	}
+	if !IsNil(o.OverrideSeverity) {
+		toSerialize["overrideSeverity"] = o.OverrideSeverity
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.LoggingErrorBehavior) {
+		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	}
+	return toSerialize, nil
 }
 
 type NullableAddSyslogJsonErrorLogPublisherRequest struct {

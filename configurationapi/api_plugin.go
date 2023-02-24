@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -105,9 +105,9 @@ func (a *PluginApiService) AddPluginExecute(r ApiAddPluginRequest) (*AddPlugin20
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -171,7 +171,7 @@ func (a *PluginApiService) DeletePluginExecute(r ApiDeletePluginRequest) (*http.
 	}
 
 	localVarPath := localBasePath + "/plugin-root/plugins/{plugin-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"plugin-name"+"}", url.PathEscape(parameterToString(r.pluginName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"plugin-name"+"}", url.PathEscape(parameterValueToString(r.pluginName, "pluginName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -204,9 +204,9 @@ func (a *PluginApiService) DeletePluginExecute(r ApiDeletePluginRequest) (*http.
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -264,7 +264,7 @@ func (a *PluginApiService) GetPluginExecute(r ApiGetPluginRequest) (*GetPlugin20
 	}
 
 	localVarPath := localBasePath + "/plugin-root/plugins/{plugin-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"plugin-name"+"}", url.PathEscape(parameterToString(r.pluginName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"plugin-name"+"}", url.PathEscape(parameterValueToString(r.pluginName, "pluginName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -297,9 +297,9 @@ func (a *PluginApiService) GetPluginExecute(r ApiGetPluginRequest) (*GetPlugin20
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -373,7 +373,7 @@ func (a *PluginApiService) UpdatePluginExecute(r ApiUpdatePluginRequest) (*GetPl
 	}
 
 	localVarPath := localBasePath + "/plugin-root/plugins/{plugin-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"plugin-name"+"}", url.PathEscape(parameterToString(r.pluginName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"plugin-name"+"}", url.PathEscape(parameterValueToString(r.pluginName, "pluginName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -411,9 +411,9 @@ func (a *PluginApiService) UpdatePluginExecute(r ApiUpdatePluginRequest) (*GetPl
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

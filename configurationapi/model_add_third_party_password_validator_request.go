@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddThirdPartyPasswordValidatorRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddThirdPartyPasswordValidatorRequest{}
+
 // AddThirdPartyPasswordValidatorRequest struct for AddThirdPartyPasswordValidatorRequest
 type AddThirdPartyPasswordValidatorRequest struct {
 	// Name of the new Password Validator
@@ -128,7 +131,7 @@ func (o *AddThirdPartyPasswordValidatorRequest) SetExtensionClass(v string) {
 
 // GetExtensionArgument returns the ExtensionArgument field value if set, zero value otherwise.
 func (o *AddThirdPartyPasswordValidatorRequest) GetExtensionArgument() []string {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		var ret []string
 		return ret
 	}
@@ -138,7 +141,7 @@ func (o *AddThirdPartyPasswordValidatorRequest) GetExtensionArgument() []string 
 // GetExtensionArgumentOk returns a tuple with the ExtensionArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyPasswordValidatorRequest) GetExtensionArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		return nil, false
 	}
 	return o.ExtensionArgument, true
@@ -146,7 +149,7 @@ func (o *AddThirdPartyPasswordValidatorRequest) GetExtensionArgumentOk() ([]stri
 
 // HasExtensionArgument returns a boolean if a field has been set.
 func (o *AddThirdPartyPasswordValidatorRequest) HasExtensionArgument() bool {
-	if o != nil && !isNil(o.ExtensionArgument) {
+	if o != nil && !IsNil(o.ExtensionArgument) {
 		return true
 	}
 
@@ -160,7 +163,7 @@ func (o *AddThirdPartyPasswordValidatorRequest) SetExtensionArgument(v []string)
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddThirdPartyPasswordValidatorRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -170,7 +173,7 @@ func (o *AddThirdPartyPasswordValidatorRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyPasswordValidatorRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -178,7 +181,7 @@ func (o *AddThirdPartyPasswordValidatorRequest) GetDescriptionOk() (*string, boo
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddThirdPartyPasswordValidatorRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -216,7 +219,7 @@ func (o *AddThirdPartyPasswordValidatorRequest) SetEnabled(v bool) {
 
 // GetValidatorRequirementDescription returns the ValidatorRequirementDescription field value if set, zero value otherwise.
 func (o *AddThirdPartyPasswordValidatorRequest) GetValidatorRequirementDescription() string {
-	if o == nil || isNil(o.ValidatorRequirementDescription) {
+	if o == nil || IsNil(o.ValidatorRequirementDescription) {
 		var ret string
 		return ret
 	}
@@ -226,7 +229,7 @@ func (o *AddThirdPartyPasswordValidatorRequest) GetValidatorRequirementDescripti
 // GetValidatorRequirementDescriptionOk returns a tuple with the ValidatorRequirementDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyPasswordValidatorRequest) GetValidatorRequirementDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.ValidatorRequirementDescription) {
+	if o == nil || IsNil(o.ValidatorRequirementDescription) {
 		return nil, false
 	}
 	return o.ValidatorRequirementDescription, true
@@ -234,7 +237,7 @@ func (o *AddThirdPartyPasswordValidatorRequest) GetValidatorRequirementDescripti
 
 // HasValidatorRequirementDescription returns a boolean if a field has been set.
 func (o *AddThirdPartyPasswordValidatorRequest) HasValidatorRequirementDescription() bool {
-	if o != nil && !isNil(o.ValidatorRequirementDescription) {
+	if o != nil && !IsNil(o.ValidatorRequirementDescription) {
 		return true
 	}
 
@@ -248,7 +251,7 @@ func (o *AddThirdPartyPasswordValidatorRequest) SetValidatorRequirementDescripti
 
 // GetValidatorFailureMessage returns the ValidatorFailureMessage field value if set, zero value otherwise.
 func (o *AddThirdPartyPasswordValidatorRequest) GetValidatorFailureMessage() string {
-	if o == nil || isNil(o.ValidatorFailureMessage) {
+	if o == nil || IsNil(o.ValidatorFailureMessage) {
 		var ret string
 		return ret
 	}
@@ -258,7 +261,7 @@ func (o *AddThirdPartyPasswordValidatorRequest) GetValidatorFailureMessage() str
 // GetValidatorFailureMessageOk returns a tuple with the ValidatorFailureMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyPasswordValidatorRequest) GetValidatorFailureMessageOk() (*string, bool) {
-	if o == nil || isNil(o.ValidatorFailureMessage) {
+	if o == nil || IsNil(o.ValidatorFailureMessage) {
 		return nil, false
 	}
 	return o.ValidatorFailureMessage, true
@@ -266,7 +269,7 @@ func (o *AddThirdPartyPasswordValidatorRequest) GetValidatorFailureMessageOk() (
 
 // HasValidatorFailureMessage returns a boolean if a field has been set.
 func (o *AddThirdPartyPasswordValidatorRequest) HasValidatorFailureMessage() bool {
-	if o != nil && !isNil(o.ValidatorFailureMessage) {
+	if o != nil && !IsNil(o.ValidatorFailureMessage) {
 		return true
 	}
 
@@ -279,32 +282,32 @@ func (o *AddThirdPartyPasswordValidatorRequest) SetValidatorFailureMessage(v str
 }
 
 func (o AddThirdPartyPasswordValidatorRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["validatorName"] = o.ValidatorName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["extensionClass"] = o.ExtensionClass
-	}
-	if !isNil(o.ExtensionArgument) {
-		toSerialize["extensionArgument"] = o.ExtensionArgument
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.ValidatorRequirementDescription) {
-		toSerialize["validatorRequirementDescription"] = o.ValidatorRequirementDescription
-	}
-	if !isNil(o.ValidatorFailureMessage) {
-		toSerialize["validatorFailureMessage"] = o.ValidatorFailureMessage
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddThirdPartyPasswordValidatorRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["validatorName"] = o.ValidatorName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["extensionClass"] = o.ExtensionClass
+	if !IsNil(o.ExtensionArgument) {
+		toSerialize["extensionArgument"] = o.ExtensionArgument
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.ValidatorRequirementDescription) {
+		toSerialize["validatorRequirementDescription"] = o.ValidatorRequirementDescription
+	}
+	if !IsNil(o.ValidatorFailureMessage) {
+		toSerialize["validatorFailureMessage"] = o.ValidatorFailureMessage
+	}
+	return toSerialize, nil
 }
 
 type NullableAddThirdPartyPasswordValidatorRequest struct {

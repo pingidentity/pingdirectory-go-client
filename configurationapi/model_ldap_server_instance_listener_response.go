@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the LdapServerInstanceListenerResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &LdapServerInstanceListenerResponse{}
+
 // LdapServerInstanceListenerResponse struct for LdapServerInstanceListenerResponse
 type LdapServerInstanceListenerResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -50,7 +53,7 @@ func NewLdapServerInstanceListenerResponseWithDefaults() *LdapServerInstanceList
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *LdapServerInstanceListenerResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -60,7 +63,7 @@ func (o *LdapServerInstanceListenerResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapServerInstanceListenerResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -68,7 +71,7 @@ func (o *LdapServerInstanceListenerResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *LdapServerInstanceListenerResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -82,7 +85,7 @@ func (o *LdapServerInstanceListenerResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *LdapServerInstanceListenerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -92,7 +95,7 @@ func (o *LdapServerInstanceListenerResponse) GetUrnpingidentityschemasconfigurat
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapServerInstanceListenerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -100,7 +103,7 @@ func (o *LdapServerInstanceListenerResponse) GetUrnpingidentityschemasconfigurat
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *LdapServerInstanceListenerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -162,7 +165,7 @@ func (o *LdapServerInstanceListenerResponse) SetId(v string) {
 
 // GetServerLDAPPort returns the ServerLDAPPort field value if set, zero value otherwise.
 func (o *LdapServerInstanceListenerResponse) GetServerLDAPPort() int32 {
-	if o == nil || isNil(o.ServerLDAPPort) {
+	if o == nil || IsNil(o.ServerLDAPPort) {
 		var ret int32
 		return ret
 	}
@@ -172,7 +175,7 @@ func (o *LdapServerInstanceListenerResponse) GetServerLDAPPort() int32 {
 // GetServerLDAPPortOk returns a tuple with the ServerLDAPPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapServerInstanceListenerResponse) GetServerLDAPPortOk() (*int32, bool) {
-	if o == nil || isNil(o.ServerLDAPPort) {
+	if o == nil || IsNil(o.ServerLDAPPort) {
 		return nil, false
 	}
 	return o.ServerLDAPPort, true
@@ -180,7 +183,7 @@ func (o *LdapServerInstanceListenerResponse) GetServerLDAPPortOk() (*int32, bool
 
 // HasServerLDAPPort returns a boolean if a field has been set.
 func (o *LdapServerInstanceListenerResponse) HasServerLDAPPort() bool {
-	if o != nil && !isNil(o.ServerLDAPPort) {
+	if o != nil && !IsNil(o.ServerLDAPPort) {
 		return true
 	}
 
@@ -194,7 +197,7 @@ func (o *LdapServerInstanceListenerResponse) SetServerLDAPPort(v int32) {
 
 // GetConnectionSecurity returns the ConnectionSecurity field value if set, zero value otherwise.
 func (o *LdapServerInstanceListenerResponse) GetConnectionSecurity() EnumserverInstanceListenerConnectionSecurityProp {
-	if o == nil || isNil(o.ConnectionSecurity) {
+	if o == nil || IsNil(o.ConnectionSecurity) {
 		var ret EnumserverInstanceListenerConnectionSecurityProp
 		return ret
 	}
@@ -204,7 +207,7 @@ func (o *LdapServerInstanceListenerResponse) GetConnectionSecurity() EnumserverI
 // GetConnectionSecurityOk returns a tuple with the ConnectionSecurity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapServerInstanceListenerResponse) GetConnectionSecurityOk() (*EnumserverInstanceListenerConnectionSecurityProp, bool) {
-	if o == nil || isNil(o.ConnectionSecurity) {
+	if o == nil || IsNil(o.ConnectionSecurity) {
 		return nil, false
 	}
 	return o.ConnectionSecurity, true
@@ -212,7 +215,7 @@ func (o *LdapServerInstanceListenerResponse) GetConnectionSecurityOk() (*Enumser
 
 // HasConnectionSecurity returns a boolean if a field has been set.
 func (o *LdapServerInstanceListenerResponse) HasConnectionSecurity() bool {
-	if o != nil && !isNil(o.ConnectionSecurity) {
+	if o != nil && !IsNil(o.ConnectionSecurity) {
 		return true
 	}
 
@@ -226,7 +229,7 @@ func (o *LdapServerInstanceListenerResponse) SetConnectionSecurity(v EnumserverI
 
 // GetListenerCertificate returns the ListenerCertificate field value if set, zero value otherwise.
 func (o *LdapServerInstanceListenerResponse) GetListenerCertificate() string {
-	if o == nil || isNil(o.ListenerCertificate) {
+	if o == nil || IsNil(o.ListenerCertificate) {
 		var ret string
 		return ret
 	}
@@ -236,7 +239,7 @@ func (o *LdapServerInstanceListenerResponse) GetListenerCertificate() string {
 // GetListenerCertificateOk returns a tuple with the ListenerCertificate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapServerInstanceListenerResponse) GetListenerCertificateOk() (*string, bool) {
-	if o == nil || isNil(o.ListenerCertificate) {
+	if o == nil || IsNil(o.ListenerCertificate) {
 		return nil, false
 	}
 	return o.ListenerCertificate, true
@@ -244,7 +247,7 @@ func (o *LdapServerInstanceListenerResponse) GetListenerCertificateOk() (*string
 
 // HasListenerCertificate returns a boolean if a field has been set.
 func (o *LdapServerInstanceListenerResponse) HasListenerCertificate() bool {
-	if o != nil && !isNil(o.ListenerCertificate) {
+	if o != nil && !IsNil(o.ListenerCertificate) {
 		return true
 	}
 
@@ -258,7 +261,7 @@ func (o *LdapServerInstanceListenerResponse) SetListenerCertificate(v string) {
 
 // GetPurpose returns the Purpose field value if set, zero value otherwise.
 func (o *LdapServerInstanceListenerResponse) GetPurpose() []EnumserverInstanceListenerPurposeProp {
-	if o == nil || isNil(o.Purpose) {
+	if o == nil || IsNil(o.Purpose) {
 		var ret []EnumserverInstanceListenerPurposeProp
 		return ret
 	}
@@ -268,7 +271,7 @@ func (o *LdapServerInstanceListenerResponse) GetPurpose() []EnumserverInstanceLi
 // GetPurposeOk returns a tuple with the Purpose field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapServerInstanceListenerResponse) GetPurposeOk() ([]EnumserverInstanceListenerPurposeProp, bool) {
-	if o == nil || isNil(o.Purpose) {
+	if o == nil || IsNil(o.Purpose) {
 		return nil, false
 	}
 	return o.Purpose, true
@@ -276,7 +279,7 @@ func (o *LdapServerInstanceListenerResponse) GetPurposeOk() ([]EnumserverInstanc
 
 // HasPurpose returns a boolean if a field has been set.
 func (o *LdapServerInstanceListenerResponse) HasPurpose() bool {
-	if o != nil && !isNil(o.Purpose) {
+	if o != nil && !IsNil(o.Purpose) {
 		return true
 	}
 
@@ -289,32 +292,36 @@ func (o *LdapServerInstanceListenerResponse) SetPurpose(v []EnumserverInstanceLi
 }
 
 func (o LdapServerInstanceListenerResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.ServerLDAPPort) {
-		toSerialize["serverLDAPPort"] = o.ServerLDAPPort
-	}
-	if !isNil(o.ConnectionSecurity) {
-		toSerialize["connectionSecurity"] = o.ConnectionSecurity
-	}
-	if !isNil(o.ListenerCertificate) {
-		toSerialize["listenerCertificate"] = o.ListenerCertificate
-	}
-	if !isNil(o.Purpose) {
-		toSerialize["purpose"] = o.Purpose
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o LdapServerInstanceListenerResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	if !IsNil(o.ServerLDAPPort) {
+		toSerialize["serverLDAPPort"] = o.ServerLDAPPort
+	}
+	if !IsNil(o.ConnectionSecurity) {
+		toSerialize["connectionSecurity"] = o.ConnectionSecurity
+	}
+	if !IsNil(o.ListenerCertificate) {
+		toSerialize["listenerCertificate"] = o.ListenerCertificate
+	}
+	if !IsNil(o.Purpose) {
+		toSerialize["purpose"] = o.Purpose
+	}
+	return toSerialize, nil
 }
 
 type NullableLdapServerInstanceListenerResponse struct {

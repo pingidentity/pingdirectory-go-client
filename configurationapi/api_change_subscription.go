@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -105,9 +105,9 @@ func (a *ChangeSubscriptionApiService) AddChangeSubscriptionExecute(r ApiAddChan
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -171,7 +171,7 @@ func (a *ChangeSubscriptionApiService) DeleteChangeSubscriptionExecute(r ApiDele
 	}
 
 	localVarPath := localBasePath + "/change-subscriptions/{change-subscription-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"change-subscription-name"+"}", url.PathEscape(parameterToString(r.changeSubscriptionName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"change-subscription-name"+"}", url.PathEscape(parameterValueToString(r.changeSubscriptionName, "changeSubscriptionName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -204,9 +204,9 @@ func (a *ChangeSubscriptionApiService) DeleteChangeSubscriptionExecute(r ApiDele
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -264,7 +264,7 @@ func (a *ChangeSubscriptionApiService) GetChangeSubscriptionExecute(r ApiGetChan
 	}
 
 	localVarPath := localBasePath + "/change-subscriptions/{change-subscription-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"change-subscription-name"+"}", url.PathEscape(parameterToString(r.changeSubscriptionName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"change-subscription-name"+"}", url.PathEscape(parameterValueToString(r.changeSubscriptionName, "changeSubscriptionName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -297,9 +297,9 @@ func (a *ChangeSubscriptionApiService) GetChangeSubscriptionExecute(r ApiGetChan
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -373,7 +373,7 @@ func (a *ChangeSubscriptionApiService) UpdateChangeSubscriptionExecute(r ApiUpda
 	}
 
 	localVarPath := localBasePath + "/change-subscriptions/{change-subscription-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"change-subscription-name"+"}", url.PathEscape(parameterToString(r.changeSubscriptionName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"change-subscription-name"+"}", url.PathEscape(parameterValueToString(r.changeSubscriptionName, "changeSubscriptionName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -411,9 +411,9 @@ func (a *ChangeSubscriptionApiService) UpdateChangeSubscriptionExecute(r ApiUpda
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

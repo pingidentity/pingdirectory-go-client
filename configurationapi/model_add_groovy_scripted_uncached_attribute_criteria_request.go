@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddGroovyScriptedUncachedAttributeCriteriaRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddGroovyScriptedUncachedAttributeCriteriaRequest{}
+
 // AddGroovyScriptedUncachedAttributeCriteriaRequest struct for AddGroovyScriptedUncachedAttributeCriteriaRequest
 type AddGroovyScriptedUncachedAttributeCriteriaRequest struct {
 	// Name of the new Uncached Attribute Criteria
@@ -124,7 +127,7 @@ func (o *AddGroovyScriptedUncachedAttributeCriteriaRequest) SetScriptClass(v str
 
 // GetScriptArgument returns the ScriptArgument field value if set, zero value otherwise.
 func (o *AddGroovyScriptedUncachedAttributeCriteriaRequest) GetScriptArgument() []string {
-	if o == nil || isNil(o.ScriptArgument) {
+	if o == nil || IsNil(o.ScriptArgument) {
 		var ret []string
 		return ret
 	}
@@ -134,7 +137,7 @@ func (o *AddGroovyScriptedUncachedAttributeCriteriaRequest) GetScriptArgument() 
 // GetScriptArgumentOk returns a tuple with the ScriptArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedUncachedAttributeCriteriaRequest) GetScriptArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ScriptArgument) {
+	if o == nil || IsNil(o.ScriptArgument) {
 		return nil, false
 	}
 	return o.ScriptArgument, true
@@ -142,7 +145,7 @@ func (o *AddGroovyScriptedUncachedAttributeCriteriaRequest) GetScriptArgumentOk(
 
 // HasScriptArgument returns a boolean if a field has been set.
 func (o *AddGroovyScriptedUncachedAttributeCriteriaRequest) HasScriptArgument() bool {
-	if o != nil && !isNil(o.ScriptArgument) {
+	if o != nil && !IsNil(o.ScriptArgument) {
 		return true
 	}
 
@@ -156,7 +159,7 @@ func (o *AddGroovyScriptedUncachedAttributeCriteriaRequest) SetScriptArgument(v 
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddGroovyScriptedUncachedAttributeCriteriaRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -166,7 +169,7 @@ func (o *AddGroovyScriptedUncachedAttributeCriteriaRequest) GetDescription() str
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedUncachedAttributeCriteriaRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -174,7 +177,7 @@ func (o *AddGroovyScriptedUncachedAttributeCriteriaRequest) GetDescriptionOk() (
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddGroovyScriptedUncachedAttributeCriteriaRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -211,26 +214,26 @@ func (o *AddGroovyScriptedUncachedAttributeCriteriaRequest) SetEnabled(v bool) {
 }
 
 func (o AddGroovyScriptedUncachedAttributeCriteriaRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["criteriaName"] = o.CriteriaName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["scriptClass"] = o.ScriptClass
-	}
-	if !isNil(o.ScriptArgument) {
-		toSerialize["scriptArgument"] = o.ScriptArgument
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddGroovyScriptedUncachedAttributeCriteriaRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["criteriaName"] = o.CriteriaName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["scriptClass"] = o.ScriptClass
+	if !IsNil(o.ScriptArgument) {
+		toSerialize["scriptArgument"] = o.ScriptArgument
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddGroovyScriptedUncachedAttributeCriteriaRequest struct {

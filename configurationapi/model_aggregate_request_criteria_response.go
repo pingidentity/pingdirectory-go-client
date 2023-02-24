@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AggregateRequestCriteriaResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AggregateRequestCriteriaResponse{}
+
 // AggregateRequestCriteriaResponse struct for AggregateRequestCriteriaResponse
 type AggregateRequestCriteriaResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -54,7 +57,7 @@ func NewAggregateRequestCriteriaResponseWithDefaults() *AggregateRequestCriteria
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *AggregateRequestCriteriaResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -64,7 +67,7 @@ func (o *AggregateRequestCriteriaResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AggregateRequestCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -72,7 +75,7 @@ func (o *AggregateRequestCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *AggregateRequestCriteriaResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -86,7 +89,7 @@ func (o *AggregateRequestCriteriaResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *AggregateRequestCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -96,7 +99,7 @@ func (o *AggregateRequestCriteriaResponse) GetUrnpingidentityschemasconfiguratio
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AggregateRequestCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -104,7 +107,7 @@ func (o *AggregateRequestCriteriaResponse) GetUrnpingidentityschemasconfiguratio
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *AggregateRequestCriteriaResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -166,7 +169,7 @@ func (o *AggregateRequestCriteriaResponse) SetSchemas(v []EnumaggregateRequestCr
 
 // GetAllIncludedRequestCriteria returns the AllIncludedRequestCriteria field value if set, zero value otherwise.
 func (o *AggregateRequestCriteriaResponse) GetAllIncludedRequestCriteria() []string {
-	if o == nil || isNil(o.AllIncludedRequestCriteria) {
+	if o == nil || IsNil(o.AllIncludedRequestCriteria) {
 		var ret []string
 		return ret
 	}
@@ -176,7 +179,7 @@ func (o *AggregateRequestCriteriaResponse) GetAllIncludedRequestCriteria() []str
 // GetAllIncludedRequestCriteriaOk returns a tuple with the AllIncludedRequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AggregateRequestCriteriaResponse) GetAllIncludedRequestCriteriaOk() ([]string, bool) {
-	if o == nil || isNil(o.AllIncludedRequestCriteria) {
+	if o == nil || IsNil(o.AllIncludedRequestCriteria) {
 		return nil, false
 	}
 	return o.AllIncludedRequestCriteria, true
@@ -184,7 +187,7 @@ func (o *AggregateRequestCriteriaResponse) GetAllIncludedRequestCriteriaOk() ([]
 
 // HasAllIncludedRequestCriteria returns a boolean if a field has been set.
 func (o *AggregateRequestCriteriaResponse) HasAllIncludedRequestCriteria() bool {
-	if o != nil && !isNil(o.AllIncludedRequestCriteria) {
+	if o != nil && !IsNil(o.AllIncludedRequestCriteria) {
 		return true
 	}
 
@@ -198,7 +201,7 @@ func (o *AggregateRequestCriteriaResponse) SetAllIncludedRequestCriteria(v []str
 
 // GetAnyIncludedRequestCriteria returns the AnyIncludedRequestCriteria field value if set, zero value otherwise.
 func (o *AggregateRequestCriteriaResponse) GetAnyIncludedRequestCriteria() []string {
-	if o == nil || isNil(o.AnyIncludedRequestCriteria) {
+	if o == nil || IsNil(o.AnyIncludedRequestCriteria) {
 		var ret []string
 		return ret
 	}
@@ -208,7 +211,7 @@ func (o *AggregateRequestCriteriaResponse) GetAnyIncludedRequestCriteria() []str
 // GetAnyIncludedRequestCriteriaOk returns a tuple with the AnyIncludedRequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AggregateRequestCriteriaResponse) GetAnyIncludedRequestCriteriaOk() ([]string, bool) {
-	if o == nil || isNil(o.AnyIncludedRequestCriteria) {
+	if o == nil || IsNil(o.AnyIncludedRequestCriteria) {
 		return nil, false
 	}
 	return o.AnyIncludedRequestCriteria, true
@@ -216,7 +219,7 @@ func (o *AggregateRequestCriteriaResponse) GetAnyIncludedRequestCriteriaOk() ([]
 
 // HasAnyIncludedRequestCriteria returns a boolean if a field has been set.
 func (o *AggregateRequestCriteriaResponse) HasAnyIncludedRequestCriteria() bool {
-	if o != nil && !isNil(o.AnyIncludedRequestCriteria) {
+	if o != nil && !IsNil(o.AnyIncludedRequestCriteria) {
 		return true
 	}
 
@@ -230,7 +233,7 @@ func (o *AggregateRequestCriteriaResponse) SetAnyIncludedRequestCriteria(v []str
 
 // GetNotAllIncludedRequestCriteria returns the NotAllIncludedRequestCriteria field value if set, zero value otherwise.
 func (o *AggregateRequestCriteriaResponse) GetNotAllIncludedRequestCriteria() []string {
-	if o == nil || isNil(o.NotAllIncludedRequestCriteria) {
+	if o == nil || IsNil(o.NotAllIncludedRequestCriteria) {
 		var ret []string
 		return ret
 	}
@@ -240,7 +243,7 @@ func (o *AggregateRequestCriteriaResponse) GetNotAllIncludedRequestCriteria() []
 // GetNotAllIncludedRequestCriteriaOk returns a tuple with the NotAllIncludedRequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AggregateRequestCriteriaResponse) GetNotAllIncludedRequestCriteriaOk() ([]string, bool) {
-	if o == nil || isNil(o.NotAllIncludedRequestCriteria) {
+	if o == nil || IsNil(o.NotAllIncludedRequestCriteria) {
 		return nil, false
 	}
 	return o.NotAllIncludedRequestCriteria, true
@@ -248,7 +251,7 @@ func (o *AggregateRequestCriteriaResponse) GetNotAllIncludedRequestCriteriaOk() 
 
 // HasNotAllIncludedRequestCriteria returns a boolean if a field has been set.
 func (o *AggregateRequestCriteriaResponse) HasNotAllIncludedRequestCriteria() bool {
-	if o != nil && !isNil(o.NotAllIncludedRequestCriteria) {
+	if o != nil && !IsNil(o.NotAllIncludedRequestCriteria) {
 		return true
 	}
 
@@ -262,7 +265,7 @@ func (o *AggregateRequestCriteriaResponse) SetNotAllIncludedRequestCriteria(v []
 
 // GetNoneIncludedRequestCriteria returns the NoneIncludedRequestCriteria field value if set, zero value otherwise.
 func (o *AggregateRequestCriteriaResponse) GetNoneIncludedRequestCriteria() []string {
-	if o == nil || isNil(o.NoneIncludedRequestCriteria) {
+	if o == nil || IsNil(o.NoneIncludedRequestCriteria) {
 		var ret []string
 		return ret
 	}
@@ -272,7 +275,7 @@ func (o *AggregateRequestCriteriaResponse) GetNoneIncludedRequestCriteria() []st
 // GetNoneIncludedRequestCriteriaOk returns a tuple with the NoneIncludedRequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AggregateRequestCriteriaResponse) GetNoneIncludedRequestCriteriaOk() ([]string, bool) {
-	if o == nil || isNil(o.NoneIncludedRequestCriteria) {
+	if o == nil || IsNil(o.NoneIncludedRequestCriteria) {
 		return nil, false
 	}
 	return o.NoneIncludedRequestCriteria, true
@@ -280,7 +283,7 @@ func (o *AggregateRequestCriteriaResponse) GetNoneIncludedRequestCriteriaOk() ([
 
 // HasNoneIncludedRequestCriteria returns a boolean if a field has been set.
 func (o *AggregateRequestCriteriaResponse) HasNoneIncludedRequestCriteria() bool {
-	if o != nil && !isNil(o.NoneIncludedRequestCriteria) {
+	if o != nil && !IsNil(o.NoneIncludedRequestCriteria) {
 		return true
 	}
 
@@ -294,7 +297,7 @@ func (o *AggregateRequestCriteriaResponse) SetNoneIncludedRequestCriteria(v []st
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AggregateRequestCriteriaResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -304,7 +307,7 @@ func (o *AggregateRequestCriteriaResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AggregateRequestCriteriaResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -312,7 +315,7 @@ func (o *AggregateRequestCriteriaResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AggregateRequestCriteriaResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -325,35 +328,39 @@ func (o *AggregateRequestCriteriaResponse) SetDescription(v string) {
 }
 
 func (o AggregateRequestCriteriaResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.AllIncludedRequestCriteria) {
-		toSerialize["allIncludedRequestCriteria"] = o.AllIncludedRequestCriteria
-	}
-	if !isNil(o.AnyIncludedRequestCriteria) {
-		toSerialize["anyIncludedRequestCriteria"] = o.AnyIncludedRequestCriteria
-	}
-	if !isNil(o.NotAllIncludedRequestCriteria) {
-		toSerialize["notAllIncludedRequestCriteria"] = o.NotAllIncludedRequestCriteria
-	}
-	if !isNil(o.NoneIncludedRequestCriteria) {
-		toSerialize["noneIncludedRequestCriteria"] = o.NoneIncludedRequestCriteria
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AggregateRequestCriteriaResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.AllIncludedRequestCriteria) {
+		toSerialize["allIncludedRequestCriteria"] = o.AllIncludedRequestCriteria
+	}
+	if !IsNil(o.AnyIncludedRequestCriteria) {
+		toSerialize["anyIncludedRequestCriteria"] = o.AnyIncludedRequestCriteria
+	}
+	if !IsNil(o.NotAllIncludedRequestCriteria) {
+		toSerialize["notAllIncludedRequestCriteria"] = o.NotAllIncludedRequestCriteria
+	}
+	if !IsNil(o.NoneIncludedRequestCriteria) {
+		toSerialize["noneIncludedRequestCriteria"] = o.NoneIncludedRequestCriteria
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAggregateRequestCriteriaResponse struct {

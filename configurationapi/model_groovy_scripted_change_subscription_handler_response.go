@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the GroovyScriptedChangeSubscriptionHandlerResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GroovyScriptedChangeSubscriptionHandlerResponse{}
+
 // GroovyScriptedChangeSubscriptionHandlerResponse struct for GroovyScriptedChangeSubscriptionHandlerResponse
 type GroovyScriptedChangeSubscriptionHandlerResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -56,7 +59,7 @@ func NewGroovyScriptedChangeSubscriptionHandlerResponseWithDefaults() *GroovyScr
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -66,7 +69,7 @@ func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -74,7 +77,7 @@ func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetMetaOk() (*MetaMeta
 
 // HasMeta returns a boolean if a field has been set.
 func (o *GroovyScriptedChangeSubscriptionHandlerResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -88,7 +91,7 @@ func (o *GroovyScriptedChangeSubscriptionHandlerResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -98,7 +101,7 @@ func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetUrnpingidentitysche
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -106,7 +109,7 @@ func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetUrnpingidentitysche
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *GroovyScriptedChangeSubscriptionHandlerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -192,7 +195,7 @@ func (o *GroovyScriptedChangeSubscriptionHandlerResponse) SetScriptClass(v strin
 
 // GetScriptArgument returns the ScriptArgument field value if set, zero value otherwise.
 func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetScriptArgument() []string {
-	if o == nil || isNil(o.ScriptArgument) {
+	if o == nil || IsNil(o.ScriptArgument) {
 		var ret []string
 		return ret
 	}
@@ -202,7 +205,7 @@ func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetScriptArgument() []
 // GetScriptArgumentOk returns a tuple with the ScriptArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetScriptArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ScriptArgument) {
+	if o == nil || IsNil(o.ScriptArgument) {
 		return nil, false
 	}
 	return o.ScriptArgument, true
@@ -210,7 +213,7 @@ func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetScriptArgumentOk() 
 
 // HasScriptArgument returns a boolean if a field has been set.
 func (o *GroovyScriptedChangeSubscriptionHandlerResponse) HasScriptArgument() bool {
-	if o != nil && !isNil(o.ScriptArgument) {
+	if o != nil && !IsNil(o.ScriptArgument) {
 		return true
 	}
 
@@ -224,7 +227,7 @@ func (o *GroovyScriptedChangeSubscriptionHandlerResponse) SetScriptArgument(v []
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -234,7 +237,7 @@ func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetDescription() strin
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -242,7 +245,7 @@ func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetDescriptionOk() (*s
 
 // HasDescription returns a boolean if a field has been set.
 func (o *GroovyScriptedChangeSubscriptionHandlerResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -280,7 +283,7 @@ func (o *GroovyScriptedChangeSubscriptionHandlerResponse) SetEnabled(v bool) {
 
 // GetChangeSubscription returns the ChangeSubscription field value if set, zero value otherwise.
 func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetChangeSubscription() []string {
-	if o == nil || isNil(o.ChangeSubscription) {
+	if o == nil || IsNil(o.ChangeSubscription) {
 		var ret []string
 		return ret
 	}
@@ -290,7 +293,7 @@ func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetChangeSubscription(
 // GetChangeSubscriptionOk returns a tuple with the ChangeSubscription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetChangeSubscriptionOk() ([]string, bool) {
-	if o == nil || isNil(o.ChangeSubscription) {
+	if o == nil || IsNil(o.ChangeSubscription) {
 		return nil, false
 	}
 	return o.ChangeSubscription, true
@@ -298,7 +301,7 @@ func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetChangeSubscriptionO
 
 // HasChangeSubscription returns a boolean if a field has been set.
 func (o *GroovyScriptedChangeSubscriptionHandlerResponse) HasChangeSubscription() bool {
-	if o != nil && !isNil(o.ChangeSubscription) {
+	if o != nil && !IsNil(o.ChangeSubscription) {
 		return true
 	}
 
@@ -311,35 +314,35 @@ func (o *GroovyScriptedChangeSubscriptionHandlerResponse) SetChangeSubscription(
 }
 
 func (o GroovyScriptedChangeSubscriptionHandlerResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["scriptClass"] = o.ScriptClass
-	}
-	if !isNil(o.ScriptArgument) {
-		toSerialize["scriptArgument"] = o.ScriptArgument
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.ChangeSubscription) {
-		toSerialize["changeSubscription"] = o.ChangeSubscription
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GroovyScriptedChangeSubscriptionHandlerResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["scriptClass"] = o.ScriptClass
+	if !IsNil(o.ScriptArgument) {
+		toSerialize["scriptArgument"] = o.ScriptArgument
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.ChangeSubscription) {
+		toSerialize["changeSubscription"] = o.ChangeSubscription
+	}
+	return toSerialize, nil
 }
 
 type NullableGroovyScriptedChangeSubscriptionHandlerResponse struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the DebugTargetResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &DebugTargetResponse{}
+
 // DebugTargetResponse struct for DebugTargetResponse
 type DebugTargetResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -59,7 +62,7 @@ func NewDebugTargetResponseWithDefaults() *DebugTargetResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *DebugTargetResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -69,7 +72,7 @@ func (o *DebugTargetResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugTargetResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -77,7 +80,7 @@ func (o *DebugTargetResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *DebugTargetResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -91,7 +94,7 @@ func (o *DebugTargetResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *DebugTargetResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -101,7 +104,7 @@ func (o *DebugTargetResponse) GetUrnpingidentityschemasconfigurationmessages20()
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugTargetResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -109,7 +112,7 @@ func (o *DebugTargetResponse) GetUrnpingidentityschemasconfigurationmessages20Ok
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *DebugTargetResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -147,7 +150,7 @@ func (o *DebugTargetResponse) SetId(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *DebugTargetResponse) GetSchemas() []EnumdebugTargetSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumdebugTargetSchemaUrn
 		return ret
 	}
@@ -157,7 +160,7 @@ func (o *DebugTargetResponse) GetSchemas() []EnumdebugTargetSchemaUrn {
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugTargetResponse) GetSchemasOk() ([]EnumdebugTargetSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -165,7 +168,7 @@ func (o *DebugTargetResponse) GetSchemasOk() ([]EnumdebugTargetSchemaUrn, bool) 
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *DebugTargetResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -227,7 +230,7 @@ func (o *DebugTargetResponse) SetDebugLevel(v EnumdebugTargetDebugLevelProp) {
 
 // GetDebugCategory returns the DebugCategory field value if set, zero value otherwise.
 func (o *DebugTargetResponse) GetDebugCategory() []EnumdebugTargetDebugCategoryProp {
-	if o == nil || isNil(o.DebugCategory) {
+	if o == nil || IsNil(o.DebugCategory) {
 		var ret []EnumdebugTargetDebugCategoryProp
 		return ret
 	}
@@ -237,7 +240,7 @@ func (o *DebugTargetResponse) GetDebugCategory() []EnumdebugTargetDebugCategoryP
 // GetDebugCategoryOk returns a tuple with the DebugCategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugTargetResponse) GetDebugCategoryOk() ([]EnumdebugTargetDebugCategoryProp, bool) {
-	if o == nil || isNil(o.DebugCategory) {
+	if o == nil || IsNil(o.DebugCategory) {
 		return nil, false
 	}
 	return o.DebugCategory, true
@@ -245,7 +248,7 @@ func (o *DebugTargetResponse) GetDebugCategoryOk() ([]EnumdebugTargetDebugCatego
 
 // HasDebugCategory returns a boolean if a field has been set.
 func (o *DebugTargetResponse) HasDebugCategory() bool {
-	if o != nil && !isNil(o.DebugCategory) {
+	if o != nil && !IsNil(o.DebugCategory) {
 		return true
 	}
 
@@ -259,7 +262,7 @@ func (o *DebugTargetResponse) SetDebugCategory(v []EnumdebugTargetDebugCategoryP
 
 // GetOmitMethodEntryArguments returns the OmitMethodEntryArguments field value if set, zero value otherwise.
 func (o *DebugTargetResponse) GetOmitMethodEntryArguments() bool {
-	if o == nil || isNil(o.OmitMethodEntryArguments) {
+	if o == nil || IsNil(o.OmitMethodEntryArguments) {
 		var ret bool
 		return ret
 	}
@@ -269,7 +272,7 @@ func (o *DebugTargetResponse) GetOmitMethodEntryArguments() bool {
 // GetOmitMethodEntryArgumentsOk returns a tuple with the OmitMethodEntryArguments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugTargetResponse) GetOmitMethodEntryArgumentsOk() (*bool, bool) {
-	if o == nil || isNil(o.OmitMethodEntryArguments) {
+	if o == nil || IsNil(o.OmitMethodEntryArguments) {
 		return nil, false
 	}
 	return o.OmitMethodEntryArguments, true
@@ -277,7 +280,7 @@ func (o *DebugTargetResponse) GetOmitMethodEntryArgumentsOk() (*bool, bool) {
 
 // HasOmitMethodEntryArguments returns a boolean if a field has been set.
 func (o *DebugTargetResponse) HasOmitMethodEntryArguments() bool {
-	if o != nil && !isNil(o.OmitMethodEntryArguments) {
+	if o != nil && !IsNil(o.OmitMethodEntryArguments) {
 		return true
 	}
 
@@ -291,7 +294,7 @@ func (o *DebugTargetResponse) SetOmitMethodEntryArguments(v bool) {
 
 // GetOmitMethodReturnValue returns the OmitMethodReturnValue field value if set, zero value otherwise.
 func (o *DebugTargetResponse) GetOmitMethodReturnValue() bool {
-	if o == nil || isNil(o.OmitMethodReturnValue) {
+	if o == nil || IsNil(o.OmitMethodReturnValue) {
 		var ret bool
 		return ret
 	}
@@ -301,7 +304,7 @@ func (o *DebugTargetResponse) GetOmitMethodReturnValue() bool {
 // GetOmitMethodReturnValueOk returns a tuple with the OmitMethodReturnValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugTargetResponse) GetOmitMethodReturnValueOk() (*bool, bool) {
-	if o == nil || isNil(o.OmitMethodReturnValue) {
+	if o == nil || IsNil(o.OmitMethodReturnValue) {
 		return nil, false
 	}
 	return o.OmitMethodReturnValue, true
@@ -309,7 +312,7 @@ func (o *DebugTargetResponse) GetOmitMethodReturnValueOk() (*bool, bool) {
 
 // HasOmitMethodReturnValue returns a boolean if a field has been set.
 func (o *DebugTargetResponse) HasOmitMethodReturnValue() bool {
-	if o != nil && !isNil(o.OmitMethodReturnValue) {
+	if o != nil && !IsNil(o.OmitMethodReturnValue) {
 		return true
 	}
 
@@ -323,7 +326,7 @@ func (o *DebugTargetResponse) SetOmitMethodReturnValue(v bool) {
 
 // GetIncludeThrowableCause returns the IncludeThrowableCause field value if set, zero value otherwise.
 func (o *DebugTargetResponse) GetIncludeThrowableCause() bool {
-	if o == nil || isNil(o.IncludeThrowableCause) {
+	if o == nil || IsNil(o.IncludeThrowableCause) {
 		var ret bool
 		return ret
 	}
@@ -333,7 +336,7 @@ func (o *DebugTargetResponse) GetIncludeThrowableCause() bool {
 // GetIncludeThrowableCauseOk returns a tuple with the IncludeThrowableCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugTargetResponse) GetIncludeThrowableCauseOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeThrowableCause) {
+	if o == nil || IsNil(o.IncludeThrowableCause) {
 		return nil, false
 	}
 	return o.IncludeThrowableCause, true
@@ -341,7 +344,7 @@ func (o *DebugTargetResponse) GetIncludeThrowableCauseOk() (*bool, bool) {
 
 // HasIncludeThrowableCause returns a boolean if a field has been set.
 func (o *DebugTargetResponse) HasIncludeThrowableCause() bool {
-	if o != nil && !isNil(o.IncludeThrowableCause) {
+	if o != nil && !IsNil(o.IncludeThrowableCause) {
 		return true
 	}
 
@@ -355,7 +358,7 @@ func (o *DebugTargetResponse) SetIncludeThrowableCause(v bool) {
 
 // GetThrowableStackFrames returns the ThrowableStackFrames field value if set, zero value otherwise.
 func (o *DebugTargetResponse) GetThrowableStackFrames() int32 {
-	if o == nil || isNil(o.ThrowableStackFrames) {
+	if o == nil || IsNil(o.ThrowableStackFrames) {
 		var ret int32
 		return ret
 	}
@@ -365,7 +368,7 @@ func (o *DebugTargetResponse) GetThrowableStackFrames() int32 {
 // GetThrowableStackFramesOk returns a tuple with the ThrowableStackFrames field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugTargetResponse) GetThrowableStackFramesOk() (*int32, bool) {
-	if o == nil || isNil(o.ThrowableStackFrames) {
+	if o == nil || IsNil(o.ThrowableStackFrames) {
 		return nil, false
 	}
 	return o.ThrowableStackFrames, true
@@ -373,7 +376,7 @@ func (o *DebugTargetResponse) GetThrowableStackFramesOk() (*int32, bool) {
 
 // HasThrowableStackFrames returns a boolean if a field has been set.
 func (o *DebugTargetResponse) HasThrowableStackFrames() bool {
-	if o != nil && !isNil(o.ThrowableStackFrames) {
+	if o != nil && !IsNil(o.ThrowableStackFrames) {
 		return true
 	}
 
@@ -387,7 +390,7 @@ func (o *DebugTargetResponse) SetThrowableStackFrames(v int32) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *DebugTargetResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -397,7 +400,7 @@ func (o *DebugTargetResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DebugTargetResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -405,7 +408,7 @@ func (o *DebugTargetResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *DebugTargetResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -418,44 +421,46 @@ func (o *DebugTargetResponse) SetDescription(v string) {
 }
 
 func (o DebugTargetResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["debugScope"] = o.DebugScope
-	}
-	if true {
-		toSerialize["debugLevel"] = o.DebugLevel
-	}
-	if !isNil(o.DebugCategory) {
-		toSerialize["debugCategory"] = o.DebugCategory
-	}
-	if !isNil(o.OmitMethodEntryArguments) {
-		toSerialize["omitMethodEntryArguments"] = o.OmitMethodEntryArguments
-	}
-	if !isNil(o.OmitMethodReturnValue) {
-		toSerialize["omitMethodReturnValue"] = o.OmitMethodReturnValue
-	}
-	if !isNil(o.IncludeThrowableCause) {
-		toSerialize["includeThrowableCause"] = o.IncludeThrowableCause
-	}
-	if !isNil(o.ThrowableStackFrames) {
-		toSerialize["throwableStackFrames"] = o.ThrowableStackFrames
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o DebugTargetResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	toSerialize["debugScope"] = o.DebugScope
+	toSerialize["debugLevel"] = o.DebugLevel
+	if !IsNil(o.DebugCategory) {
+		toSerialize["debugCategory"] = o.DebugCategory
+	}
+	if !IsNil(o.OmitMethodEntryArguments) {
+		toSerialize["omitMethodEntryArguments"] = o.OmitMethodEntryArguments
+	}
+	if !IsNil(o.OmitMethodReturnValue) {
+		toSerialize["omitMethodReturnValue"] = o.OmitMethodReturnValue
+	}
+	if !IsNil(o.IncludeThrowableCause) {
+		toSerialize["includeThrowableCause"] = o.IncludeThrowableCause
+	}
+	if !IsNil(o.ThrowableStackFrames) {
+		toSerialize["throwableStackFrames"] = o.ThrowableStackFrames
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableDebugTargetResponse struct {

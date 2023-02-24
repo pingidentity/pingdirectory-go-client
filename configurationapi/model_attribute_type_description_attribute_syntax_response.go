@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AttributeTypeDescriptionAttributeSyntaxResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AttributeTypeDescriptionAttributeSyntaxResponse{}
+
 // AttributeTypeDescriptionAttributeSyntaxResponse struct for AttributeTypeDescriptionAttributeSyntaxResponse
 type AttributeTypeDescriptionAttributeSyntaxResponse struct {
 	Meta                                          *MetaMeta                                              `json:"meta,omitempty"`
@@ -51,7 +54,7 @@ func NewAttributeTypeDescriptionAttributeSyntaxResponseWithDefaults() *Attribute
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *AttributeTypeDescriptionAttributeSyntaxResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -61,7 +64,7 @@ func (o *AttributeTypeDescriptionAttributeSyntaxResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AttributeTypeDescriptionAttributeSyntaxResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -69,7 +72,7 @@ func (o *AttributeTypeDescriptionAttributeSyntaxResponse) GetMetaOk() (*MetaMeta
 
 // HasMeta returns a boolean if a field has been set.
 func (o *AttributeTypeDescriptionAttributeSyntaxResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -83,7 +86,7 @@ func (o *AttributeTypeDescriptionAttributeSyntaxResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *AttributeTypeDescriptionAttributeSyntaxResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -93,7 +96,7 @@ func (o *AttributeTypeDescriptionAttributeSyntaxResponse) GetUrnpingidentitysche
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AttributeTypeDescriptionAttributeSyntaxResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -101,7 +104,7 @@ func (o *AttributeTypeDescriptionAttributeSyntaxResponse) GetUrnpingidentitysche
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *AttributeTypeDescriptionAttributeSyntaxResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -163,7 +166,7 @@ func (o *AttributeTypeDescriptionAttributeSyntaxResponse) SetId(v string) {
 
 // GetStripSyntaxMinUpperBound returns the StripSyntaxMinUpperBound field value if set, zero value otherwise.
 func (o *AttributeTypeDescriptionAttributeSyntaxResponse) GetStripSyntaxMinUpperBound() bool {
-	if o == nil || isNil(o.StripSyntaxMinUpperBound) {
+	if o == nil || IsNil(o.StripSyntaxMinUpperBound) {
 		var ret bool
 		return ret
 	}
@@ -173,7 +176,7 @@ func (o *AttributeTypeDescriptionAttributeSyntaxResponse) GetStripSyntaxMinUpper
 // GetStripSyntaxMinUpperBoundOk returns a tuple with the StripSyntaxMinUpperBound field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AttributeTypeDescriptionAttributeSyntaxResponse) GetStripSyntaxMinUpperBoundOk() (*bool, bool) {
-	if o == nil || isNil(o.StripSyntaxMinUpperBound) {
+	if o == nil || IsNil(o.StripSyntaxMinUpperBound) {
 		return nil, false
 	}
 	return o.StripSyntaxMinUpperBound, true
@@ -181,7 +184,7 @@ func (o *AttributeTypeDescriptionAttributeSyntaxResponse) GetStripSyntaxMinUpper
 
 // HasStripSyntaxMinUpperBound returns a boolean if a field has been set.
 func (o *AttributeTypeDescriptionAttributeSyntaxResponse) HasStripSyntaxMinUpperBound() bool {
-	if o != nil && !isNil(o.StripSyntaxMinUpperBound) {
+	if o != nil && !IsNil(o.StripSyntaxMinUpperBound) {
 		return true
 	}
 
@@ -219,7 +222,7 @@ func (o *AttributeTypeDescriptionAttributeSyntaxResponse) SetEnabled(v bool) {
 
 // GetRequireBinaryTransfer returns the RequireBinaryTransfer field value if set, zero value otherwise.
 func (o *AttributeTypeDescriptionAttributeSyntaxResponse) GetRequireBinaryTransfer() bool {
-	if o == nil || isNil(o.RequireBinaryTransfer) {
+	if o == nil || IsNil(o.RequireBinaryTransfer) {
 		var ret bool
 		return ret
 	}
@@ -229,7 +232,7 @@ func (o *AttributeTypeDescriptionAttributeSyntaxResponse) GetRequireBinaryTransf
 // GetRequireBinaryTransferOk returns a tuple with the RequireBinaryTransfer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AttributeTypeDescriptionAttributeSyntaxResponse) GetRequireBinaryTransferOk() (*bool, bool) {
-	if o == nil || isNil(o.RequireBinaryTransfer) {
+	if o == nil || IsNil(o.RequireBinaryTransfer) {
 		return nil, false
 	}
 	return o.RequireBinaryTransfer, true
@@ -237,7 +240,7 @@ func (o *AttributeTypeDescriptionAttributeSyntaxResponse) GetRequireBinaryTransf
 
 // HasRequireBinaryTransfer returns a boolean if a field has been set.
 func (o *AttributeTypeDescriptionAttributeSyntaxResponse) HasRequireBinaryTransfer() bool {
-	if o != nil && !isNil(o.RequireBinaryTransfer) {
+	if o != nil && !IsNil(o.RequireBinaryTransfer) {
 		return true
 	}
 
@@ -250,29 +253,31 @@ func (o *AttributeTypeDescriptionAttributeSyntaxResponse) SetRequireBinaryTransf
 }
 
 func (o AttributeTypeDescriptionAttributeSyntaxResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.StripSyntaxMinUpperBound) {
-		toSerialize["stripSyntaxMinUpperBound"] = o.StripSyntaxMinUpperBound
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.RequireBinaryTransfer) {
-		toSerialize["requireBinaryTransfer"] = o.RequireBinaryTransfer
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AttributeTypeDescriptionAttributeSyntaxResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	if !IsNil(o.StripSyntaxMinUpperBound) {
+		toSerialize["stripSyntaxMinUpperBound"] = o.StripSyntaxMinUpperBound
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.RequireBinaryTransfer) {
+		toSerialize["requireBinaryTransfer"] = o.RequireBinaryTransfer
+	}
+	return toSerialize, nil
 }
 
 type NullableAttributeTypeDescriptionAttributeSyntaxResponse struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddRootDseRequestCriteriaRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddRootDseRequestCriteriaRequest{}
+
 // AddRootDseRequestCriteriaRequest struct for AddRootDseRequestCriteriaRequest
 type AddRootDseRequestCriteriaRequest struct {
 	// Name of the new Request Criteria
@@ -93,7 +96,7 @@ func (o *AddRootDseRequestCriteriaRequest) SetSchemas(v []EnumrootDseRequestCrit
 
 // GetOperationType returns the OperationType field value if set, zero value otherwise.
 func (o *AddRootDseRequestCriteriaRequest) GetOperationType() []EnumrequestCriteriaOperationTypeProp {
-	if o == nil || isNil(o.OperationType) {
+	if o == nil || IsNil(o.OperationType) {
 		var ret []EnumrequestCriteriaOperationTypeProp
 		return ret
 	}
@@ -103,7 +106,7 @@ func (o *AddRootDseRequestCriteriaRequest) GetOperationType() []EnumrequestCrite
 // GetOperationTypeOk returns a tuple with the OperationType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddRootDseRequestCriteriaRequest) GetOperationTypeOk() ([]EnumrequestCriteriaOperationTypeProp, bool) {
-	if o == nil || isNil(o.OperationType) {
+	if o == nil || IsNil(o.OperationType) {
 		return nil, false
 	}
 	return o.OperationType, true
@@ -111,7 +114,7 @@ func (o *AddRootDseRequestCriteriaRequest) GetOperationTypeOk() ([]EnumrequestCr
 
 // HasOperationType returns a boolean if a field has been set.
 func (o *AddRootDseRequestCriteriaRequest) HasOperationType() bool {
-	if o != nil && !isNil(o.OperationType) {
+	if o != nil && !IsNil(o.OperationType) {
 		return true
 	}
 
@@ -125,7 +128,7 @@ func (o *AddRootDseRequestCriteriaRequest) SetOperationType(v []EnumrequestCrite
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddRootDseRequestCriteriaRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -135,7 +138,7 @@ func (o *AddRootDseRequestCriteriaRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddRootDseRequestCriteriaRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -143,7 +146,7 @@ func (o *AddRootDseRequestCriteriaRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddRootDseRequestCriteriaRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -156,20 +159,24 @@ func (o *AddRootDseRequestCriteriaRequest) SetDescription(v string) {
 }
 
 func (o AddRootDseRequestCriteriaRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["criteriaName"] = o.CriteriaName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.OperationType) {
-		toSerialize["operationType"] = o.OperationType
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddRootDseRequestCriteriaRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["criteriaName"] = o.CriteriaName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.OperationType) {
+		toSerialize["operationType"] = o.OperationType
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAddRootDseRequestCriteriaRequest struct {

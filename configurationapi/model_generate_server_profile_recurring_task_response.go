@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the GenerateServerProfileRecurringTaskResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GenerateServerProfileRecurringTaskResponse{}
+
 // GenerateServerProfileRecurringTaskResponse struct for GenerateServerProfileRecurringTaskResponse
 type GenerateServerProfileRecurringTaskResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -69,7 +72,7 @@ func NewGenerateServerProfileRecurringTaskResponseWithDefaults() *GenerateServer
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *GenerateServerProfileRecurringTaskResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -79,7 +82,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenerateServerProfileRecurringTaskResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -87,7 +90,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) GetMetaOk() (*MetaMeta, boo
 
 // HasMeta returns a boolean if a field has been set.
 func (o *GenerateServerProfileRecurringTaskResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -101,7 +104,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *GenerateServerProfileRecurringTaskResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -111,7 +114,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) GetUrnpingidentityschemasco
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenerateServerProfileRecurringTaskResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -119,7 +122,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) GetUrnpingidentityschemasco
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *GenerateServerProfileRecurringTaskResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -205,7 +208,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) SetProfileDirectory(v strin
 
 // GetIncludePath returns the IncludePath field value if set, zero value otherwise.
 func (o *GenerateServerProfileRecurringTaskResponse) GetIncludePath() []string {
-	if o == nil || isNil(o.IncludePath) {
+	if o == nil || IsNil(o.IncludePath) {
 		var ret []string
 		return ret
 	}
@@ -215,7 +218,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) GetIncludePath() []string {
 // GetIncludePathOk returns a tuple with the IncludePath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenerateServerProfileRecurringTaskResponse) GetIncludePathOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludePath) {
+	if o == nil || IsNil(o.IncludePath) {
 		return nil, false
 	}
 	return o.IncludePath, true
@@ -223,7 +226,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) GetIncludePathOk() ([]strin
 
 // HasIncludePath returns a boolean if a field has been set.
 func (o *GenerateServerProfileRecurringTaskResponse) HasIncludePath() bool {
-	if o != nil && !isNil(o.IncludePath) {
+	if o != nil && !IsNil(o.IncludePath) {
 		return true
 	}
 
@@ -237,7 +240,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) SetIncludePath(v []string) 
 
 // GetRetainPreviousProfileCount returns the RetainPreviousProfileCount field value if set, zero value otherwise.
 func (o *GenerateServerProfileRecurringTaskResponse) GetRetainPreviousProfileCount() int32 {
-	if o == nil || isNil(o.RetainPreviousProfileCount) {
+	if o == nil || IsNil(o.RetainPreviousProfileCount) {
 		var ret int32
 		return ret
 	}
@@ -247,7 +250,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) GetRetainPreviousProfileCou
 // GetRetainPreviousProfileCountOk returns a tuple with the RetainPreviousProfileCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenerateServerProfileRecurringTaskResponse) GetRetainPreviousProfileCountOk() (*int32, bool) {
-	if o == nil || isNil(o.RetainPreviousProfileCount) {
+	if o == nil || IsNil(o.RetainPreviousProfileCount) {
 		return nil, false
 	}
 	return o.RetainPreviousProfileCount, true
@@ -255,7 +258,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) GetRetainPreviousProfileCou
 
 // HasRetainPreviousProfileCount returns a boolean if a field has been set.
 func (o *GenerateServerProfileRecurringTaskResponse) HasRetainPreviousProfileCount() bool {
-	if o != nil && !isNil(o.RetainPreviousProfileCount) {
+	if o != nil && !IsNil(o.RetainPreviousProfileCount) {
 		return true
 	}
 
@@ -269,7 +272,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) SetRetainPreviousProfileCou
 
 // GetRetainPreviousProfileAge returns the RetainPreviousProfileAge field value if set, zero value otherwise.
 func (o *GenerateServerProfileRecurringTaskResponse) GetRetainPreviousProfileAge() string {
-	if o == nil || isNil(o.RetainPreviousProfileAge) {
+	if o == nil || IsNil(o.RetainPreviousProfileAge) {
 		var ret string
 		return ret
 	}
@@ -279,7 +282,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) GetRetainPreviousProfileAge
 // GetRetainPreviousProfileAgeOk returns a tuple with the RetainPreviousProfileAge field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenerateServerProfileRecurringTaskResponse) GetRetainPreviousProfileAgeOk() (*string, bool) {
-	if o == nil || isNil(o.RetainPreviousProfileAge) {
+	if o == nil || IsNil(o.RetainPreviousProfileAge) {
 		return nil, false
 	}
 	return o.RetainPreviousProfileAge, true
@@ -287,7 +290,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) GetRetainPreviousProfileAge
 
 // HasRetainPreviousProfileAge returns a boolean if a field has been set.
 func (o *GenerateServerProfileRecurringTaskResponse) HasRetainPreviousProfileAge() bool {
-	if o != nil && !isNil(o.RetainPreviousProfileAge) {
+	if o != nil && !IsNil(o.RetainPreviousProfileAge) {
 		return true
 	}
 
@@ -301,7 +304,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) SetRetainPreviousProfileAge
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *GenerateServerProfileRecurringTaskResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -311,7 +314,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenerateServerProfileRecurringTaskResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -319,7 +322,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) GetDescriptionOk() (*string
 
 // HasDescription returns a boolean if a field has been set.
 func (o *GenerateServerProfileRecurringTaskResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -333,7 +336,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) SetDescription(v string) {
 
 // GetCancelOnTaskDependencyFailure returns the CancelOnTaskDependencyFailure field value if set, zero value otherwise.
 func (o *GenerateServerProfileRecurringTaskResponse) GetCancelOnTaskDependencyFailure() bool {
-	if o == nil || isNil(o.CancelOnTaskDependencyFailure) {
+	if o == nil || IsNil(o.CancelOnTaskDependencyFailure) {
 		var ret bool
 		return ret
 	}
@@ -343,7 +346,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) GetCancelOnTaskDependencyFa
 // GetCancelOnTaskDependencyFailureOk returns a tuple with the CancelOnTaskDependencyFailure field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenerateServerProfileRecurringTaskResponse) GetCancelOnTaskDependencyFailureOk() (*bool, bool) {
-	if o == nil || isNil(o.CancelOnTaskDependencyFailure) {
+	if o == nil || IsNil(o.CancelOnTaskDependencyFailure) {
 		return nil, false
 	}
 	return o.CancelOnTaskDependencyFailure, true
@@ -351,7 +354,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) GetCancelOnTaskDependencyFa
 
 // HasCancelOnTaskDependencyFailure returns a boolean if a field has been set.
 func (o *GenerateServerProfileRecurringTaskResponse) HasCancelOnTaskDependencyFailure() bool {
-	if o != nil && !isNil(o.CancelOnTaskDependencyFailure) {
+	if o != nil && !IsNil(o.CancelOnTaskDependencyFailure) {
 		return true
 	}
 
@@ -365,7 +368,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) SetCancelOnTaskDependencyFa
 
 // GetEmailOnStart returns the EmailOnStart field value if set, zero value otherwise.
 func (o *GenerateServerProfileRecurringTaskResponse) GetEmailOnStart() []string {
-	if o == nil || isNil(o.EmailOnStart) {
+	if o == nil || IsNil(o.EmailOnStart) {
 		var ret []string
 		return ret
 	}
@@ -375,7 +378,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) GetEmailOnStart() []string 
 // GetEmailOnStartOk returns a tuple with the EmailOnStart field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenerateServerProfileRecurringTaskResponse) GetEmailOnStartOk() ([]string, bool) {
-	if o == nil || isNil(o.EmailOnStart) {
+	if o == nil || IsNil(o.EmailOnStart) {
 		return nil, false
 	}
 	return o.EmailOnStart, true
@@ -383,7 +386,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) GetEmailOnStartOk() ([]stri
 
 // HasEmailOnStart returns a boolean if a field has been set.
 func (o *GenerateServerProfileRecurringTaskResponse) HasEmailOnStart() bool {
-	if o != nil && !isNil(o.EmailOnStart) {
+	if o != nil && !IsNil(o.EmailOnStart) {
 		return true
 	}
 
@@ -397,7 +400,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) SetEmailOnStart(v []string)
 
 // GetEmailOnSuccess returns the EmailOnSuccess field value if set, zero value otherwise.
 func (o *GenerateServerProfileRecurringTaskResponse) GetEmailOnSuccess() []string {
-	if o == nil || isNil(o.EmailOnSuccess) {
+	if o == nil || IsNil(o.EmailOnSuccess) {
 		var ret []string
 		return ret
 	}
@@ -407,7 +410,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) GetEmailOnSuccess() []strin
 // GetEmailOnSuccessOk returns a tuple with the EmailOnSuccess field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenerateServerProfileRecurringTaskResponse) GetEmailOnSuccessOk() ([]string, bool) {
-	if o == nil || isNil(o.EmailOnSuccess) {
+	if o == nil || IsNil(o.EmailOnSuccess) {
 		return nil, false
 	}
 	return o.EmailOnSuccess, true
@@ -415,7 +418,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) GetEmailOnSuccessOk() ([]st
 
 // HasEmailOnSuccess returns a boolean if a field has been set.
 func (o *GenerateServerProfileRecurringTaskResponse) HasEmailOnSuccess() bool {
-	if o != nil && !isNil(o.EmailOnSuccess) {
+	if o != nil && !IsNil(o.EmailOnSuccess) {
 		return true
 	}
 
@@ -429,7 +432,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) SetEmailOnSuccess(v []strin
 
 // GetEmailOnFailure returns the EmailOnFailure field value if set, zero value otherwise.
 func (o *GenerateServerProfileRecurringTaskResponse) GetEmailOnFailure() []string {
-	if o == nil || isNil(o.EmailOnFailure) {
+	if o == nil || IsNil(o.EmailOnFailure) {
 		var ret []string
 		return ret
 	}
@@ -439,7 +442,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) GetEmailOnFailure() []strin
 // GetEmailOnFailureOk returns a tuple with the EmailOnFailure field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenerateServerProfileRecurringTaskResponse) GetEmailOnFailureOk() ([]string, bool) {
-	if o == nil || isNil(o.EmailOnFailure) {
+	if o == nil || IsNil(o.EmailOnFailure) {
 		return nil, false
 	}
 	return o.EmailOnFailure, true
@@ -447,7 +450,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) GetEmailOnFailureOk() ([]st
 
 // HasEmailOnFailure returns a boolean if a field has been set.
 func (o *GenerateServerProfileRecurringTaskResponse) HasEmailOnFailure() bool {
-	if o != nil && !isNil(o.EmailOnFailure) {
+	if o != nil && !IsNil(o.EmailOnFailure) {
 		return true
 	}
 
@@ -461,7 +464,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) SetEmailOnFailure(v []strin
 
 // GetAlertOnStart returns the AlertOnStart field value if set, zero value otherwise.
 func (o *GenerateServerProfileRecurringTaskResponse) GetAlertOnStart() bool {
-	if o == nil || isNil(o.AlertOnStart) {
+	if o == nil || IsNil(o.AlertOnStart) {
 		var ret bool
 		return ret
 	}
@@ -471,7 +474,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) GetAlertOnStart() bool {
 // GetAlertOnStartOk returns a tuple with the AlertOnStart field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenerateServerProfileRecurringTaskResponse) GetAlertOnStartOk() (*bool, bool) {
-	if o == nil || isNil(o.AlertOnStart) {
+	if o == nil || IsNil(o.AlertOnStart) {
 		return nil, false
 	}
 	return o.AlertOnStart, true
@@ -479,7 +482,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) GetAlertOnStartOk() (*bool,
 
 // HasAlertOnStart returns a boolean if a field has been set.
 func (o *GenerateServerProfileRecurringTaskResponse) HasAlertOnStart() bool {
-	if o != nil && !isNil(o.AlertOnStart) {
+	if o != nil && !IsNil(o.AlertOnStart) {
 		return true
 	}
 
@@ -493,7 +496,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) SetAlertOnStart(v bool) {
 
 // GetAlertOnSuccess returns the AlertOnSuccess field value if set, zero value otherwise.
 func (o *GenerateServerProfileRecurringTaskResponse) GetAlertOnSuccess() bool {
-	if o == nil || isNil(o.AlertOnSuccess) {
+	if o == nil || IsNil(o.AlertOnSuccess) {
 		var ret bool
 		return ret
 	}
@@ -503,7 +506,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) GetAlertOnSuccess() bool {
 // GetAlertOnSuccessOk returns a tuple with the AlertOnSuccess field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenerateServerProfileRecurringTaskResponse) GetAlertOnSuccessOk() (*bool, bool) {
-	if o == nil || isNil(o.AlertOnSuccess) {
+	if o == nil || IsNil(o.AlertOnSuccess) {
 		return nil, false
 	}
 	return o.AlertOnSuccess, true
@@ -511,7 +514,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) GetAlertOnSuccessOk() (*boo
 
 // HasAlertOnSuccess returns a boolean if a field has been set.
 func (o *GenerateServerProfileRecurringTaskResponse) HasAlertOnSuccess() bool {
-	if o != nil && !isNil(o.AlertOnSuccess) {
+	if o != nil && !IsNil(o.AlertOnSuccess) {
 		return true
 	}
 
@@ -525,7 +528,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) SetAlertOnSuccess(v bool) {
 
 // GetAlertOnFailure returns the AlertOnFailure field value if set, zero value otherwise.
 func (o *GenerateServerProfileRecurringTaskResponse) GetAlertOnFailure() bool {
-	if o == nil || isNil(o.AlertOnFailure) {
+	if o == nil || IsNil(o.AlertOnFailure) {
 		var ret bool
 		return ret
 	}
@@ -535,7 +538,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) GetAlertOnFailure() bool {
 // GetAlertOnFailureOk returns a tuple with the AlertOnFailure field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenerateServerProfileRecurringTaskResponse) GetAlertOnFailureOk() (*bool, bool) {
-	if o == nil || isNil(o.AlertOnFailure) {
+	if o == nil || IsNil(o.AlertOnFailure) {
 		return nil, false
 	}
 	return o.AlertOnFailure, true
@@ -543,7 +546,7 @@ func (o *GenerateServerProfileRecurringTaskResponse) GetAlertOnFailureOk() (*boo
 
 // HasAlertOnFailure returns a boolean if a field has been set.
 func (o *GenerateServerProfileRecurringTaskResponse) HasAlertOnFailure() bool {
-	if o != nil && !isNil(o.AlertOnFailure) {
+	if o != nil && !IsNil(o.AlertOnFailure) {
 		return true
 	}
 
@@ -556,56 +559,58 @@ func (o *GenerateServerProfileRecurringTaskResponse) SetAlertOnFailure(v bool) {
 }
 
 func (o GenerateServerProfileRecurringTaskResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["profileDirectory"] = o.ProfileDirectory
-	}
-	if !isNil(o.IncludePath) {
-		toSerialize["includePath"] = o.IncludePath
-	}
-	if !isNil(o.RetainPreviousProfileCount) {
-		toSerialize["retainPreviousProfileCount"] = o.RetainPreviousProfileCount
-	}
-	if !isNil(o.RetainPreviousProfileAge) {
-		toSerialize["retainPreviousProfileAge"] = o.RetainPreviousProfileAge
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if !isNil(o.CancelOnTaskDependencyFailure) {
-		toSerialize["cancelOnTaskDependencyFailure"] = o.CancelOnTaskDependencyFailure
-	}
-	if !isNil(o.EmailOnStart) {
-		toSerialize["emailOnStart"] = o.EmailOnStart
-	}
-	if !isNil(o.EmailOnSuccess) {
-		toSerialize["emailOnSuccess"] = o.EmailOnSuccess
-	}
-	if !isNil(o.EmailOnFailure) {
-		toSerialize["emailOnFailure"] = o.EmailOnFailure
-	}
-	if !isNil(o.AlertOnStart) {
-		toSerialize["alertOnStart"] = o.AlertOnStart
-	}
-	if !isNil(o.AlertOnSuccess) {
-		toSerialize["alertOnSuccess"] = o.AlertOnSuccess
-	}
-	if !isNil(o.AlertOnFailure) {
-		toSerialize["alertOnFailure"] = o.AlertOnFailure
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GenerateServerProfileRecurringTaskResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["profileDirectory"] = o.ProfileDirectory
+	if !IsNil(o.IncludePath) {
+		toSerialize["includePath"] = o.IncludePath
+	}
+	if !IsNil(o.RetainPreviousProfileCount) {
+		toSerialize["retainPreviousProfileCount"] = o.RetainPreviousProfileCount
+	}
+	if !IsNil(o.RetainPreviousProfileAge) {
+		toSerialize["retainPreviousProfileAge"] = o.RetainPreviousProfileAge
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.CancelOnTaskDependencyFailure) {
+		toSerialize["cancelOnTaskDependencyFailure"] = o.CancelOnTaskDependencyFailure
+	}
+	if !IsNil(o.EmailOnStart) {
+		toSerialize["emailOnStart"] = o.EmailOnStart
+	}
+	if !IsNil(o.EmailOnSuccess) {
+		toSerialize["emailOnSuccess"] = o.EmailOnSuccess
+	}
+	if !IsNil(o.EmailOnFailure) {
+		toSerialize["emailOnFailure"] = o.EmailOnFailure
+	}
+	if !IsNil(o.AlertOnStart) {
+		toSerialize["alertOnStart"] = o.AlertOnStart
+	}
+	if !IsNil(o.AlertOnSuccess) {
+		toSerialize["alertOnSuccess"] = o.AlertOnSuccess
+	}
+	if !IsNil(o.AlertOnFailure) {
+		toSerialize["alertOnFailure"] = o.AlertOnFailure
+	}
+	return toSerialize, nil
 }
 
 type NullableGenerateServerProfileRecurringTaskResponse struct {

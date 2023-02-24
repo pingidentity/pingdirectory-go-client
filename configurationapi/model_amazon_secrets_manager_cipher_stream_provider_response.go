@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AmazonSecretsManagerCipherStreamProviderResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AmazonSecretsManagerCipherStreamProviderResponse{}
+
 // AmazonSecretsManagerCipherStreamProviderResponse struct for AmazonSecretsManagerCipherStreamProviderResponse
 type AmazonSecretsManagerCipherStreamProviderResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -65,7 +68,7 @@ func NewAmazonSecretsManagerCipherStreamProviderResponseWithDefaults() *AmazonSe
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *AmazonSecretsManagerCipherStreamProviderResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -75,7 +78,7 @@ func (o *AmazonSecretsManagerCipherStreamProviderResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmazonSecretsManagerCipherStreamProviderResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -83,7 +86,7 @@ func (o *AmazonSecretsManagerCipherStreamProviderResponse) GetMetaOk() (*MetaMet
 
 // HasMeta returns a boolean if a field has been set.
 func (o *AmazonSecretsManagerCipherStreamProviderResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -97,7 +100,7 @@ func (o *AmazonSecretsManagerCipherStreamProviderResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *AmazonSecretsManagerCipherStreamProviderResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -107,7 +110,7 @@ func (o *AmazonSecretsManagerCipherStreamProviderResponse) GetUrnpingidentitysch
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmazonSecretsManagerCipherStreamProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -115,7 +118,7 @@ func (o *AmazonSecretsManagerCipherStreamProviderResponse) GetUrnpingidentitysch
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *AmazonSecretsManagerCipherStreamProviderResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -249,7 +252,7 @@ func (o *AmazonSecretsManagerCipherStreamProviderResponse) SetSecretFieldName(v 
 
 // GetSecretVersionID returns the SecretVersionID field value if set, zero value otherwise.
 func (o *AmazonSecretsManagerCipherStreamProviderResponse) GetSecretVersionID() string {
-	if o == nil || isNil(o.SecretVersionID) {
+	if o == nil || IsNil(o.SecretVersionID) {
 		var ret string
 		return ret
 	}
@@ -259,7 +262,7 @@ func (o *AmazonSecretsManagerCipherStreamProviderResponse) GetSecretVersionID() 
 // GetSecretVersionIDOk returns a tuple with the SecretVersionID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmazonSecretsManagerCipherStreamProviderResponse) GetSecretVersionIDOk() (*string, bool) {
-	if o == nil || isNil(o.SecretVersionID) {
+	if o == nil || IsNil(o.SecretVersionID) {
 		return nil, false
 	}
 	return o.SecretVersionID, true
@@ -267,7 +270,7 @@ func (o *AmazonSecretsManagerCipherStreamProviderResponse) GetSecretVersionIDOk(
 
 // HasSecretVersionID returns a boolean if a field has been set.
 func (o *AmazonSecretsManagerCipherStreamProviderResponse) HasSecretVersionID() bool {
-	if o != nil && !isNil(o.SecretVersionID) {
+	if o != nil && !IsNil(o.SecretVersionID) {
 		return true
 	}
 
@@ -281,7 +284,7 @@ func (o *AmazonSecretsManagerCipherStreamProviderResponse) SetSecretVersionID(v 
 
 // GetSecretVersionStage returns the SecretVersionStage field value if set, zero value otherwise.
 func (o *AmazonSecretsManagerCipherStreamProviderResponse) GetSecretVersionStage() string {
-	if o == nil || isNil(o.SecretVersionStage) {
+	if o == nil || IsNil(o.SecretVersionStage) {
 		var ret string
 		return ret
 	}
@@ -291,7 +294,7 @@ func (o *AmazonSecretsManagerCipherStreamProviderResponse) GetSecretVersionStage
 // GetSecretVersionStageOk returns a tuple with the SecretVersionStage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmazonSecretsManagerCipherStreamProviderResponse) GetSecretVersionStageOk() (*string, bool) {
-	if o == nil || isNil(o.SecretVersionStage) {
+	if o == nil || IsNil(o.SecretVersionStage) {
 		return nil, false
 	}
 	return o.SecretVersionStage, true
@@ -299,7 +302,7 @@ func (o *AmazonSecretsManagerCipherStreamProviderResponse) GetSecretVersionStage
 
 // HasSecretVersionStage returns a boolean if a field has been set.
 func (o *AmazonSecretsManagerCipherStreamProviderResponse) HasSecretVersionStage() bool {
-	if o != nil && !isNil(o.SecretVersionStage) {
+	if o != nil && !IsNil(o.SecretVersionStage) {
 		return true
 	}
 
@@ -337,7 +340,7 @@ func (o *AmazonSecretsManagerCipherStreamProviderResponse) SetEncryptionMetadata
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AmazonSecretsManagerCipherStreamProviderResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -347,7 +350,7 @@ func (o *AmazonSecretsManagerCipherStreamProviderResponse) GetDescription() stri
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmazonSecretsManagerCipherStreamProviderResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -355,7 +358,7 @@ func (o *AmazonSecretsManagerCipherStreamProviderResponse) GetDescriptionOk() (*
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AmazonSecretsManagerCipherStreamProviderResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -392,44 +395,38 @@ func (o *AmazonSecretsManagerCipherStreamProviderResponse) SetEnabled(v bool) {
 }
 
 func (o AmazonSecretsManagerCipherStreamProviderResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["awsExternalServer"] = o.AwsExternalServer
-	}
-	if true {
-		toSerialize["secretID"] = o.SecretID
-	}
-	if true {
-		toSerialize["secretFieldName"] = o.SecretFieldName
-	}
-	if !isNil(o.SecretVersionID) {
-		toSerialize["secretVersionID"] = o.SecretVersionID
-	}
-	if !isNil(o.SecretVersionStage) {
-		toSerialize["secretVersionStage"] = o.SecretVersionStage
-	}
-	if true {
-		toSerialize["encryptionMetadataFile"] = o.EncryptionMetadataFile
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AmazonSecretsManagerCipherStreamProviderResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["awsExternalServer"] = o.AwsExternalServer
+	toSerialize["secretID"] = o.SecretID
+	toSerialize["secretFieldName"] = o.SecretFieldName
+	if !IsNil(o.SecretVersionID) {
+		toSerialize["secretVersionID"] = o.SecretVersionID
+	}
+	if !IsNil(o.SecretVersionStage) {
+		toSerialize["secretVersionStage"] = o.SecretVersionStage
+	}
+	toSerialize["encryptionMetadataFile"] = o.EncryptionMetadataFile
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAmazonSecretsManagerCipherStreamProviderResponse struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddSearchShutdownPluginRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddSearchShutdownPluginRequest{}
+
 // AddSearchShutdownPluginRequest struct for AddSearchShutdownPluginRequest
 type AddSearchShutdownPluginRequest struct {
 	// Name of the new Plugin
@@ -109,7 +112,7 @@ func (o *AddSearchShutdownPluginRequest) SetSchemas(v []EnumsearchShutdownPlugin
 
 // GetBaseDN returns the BaseDN field value if set, zero value otherwise.
 func (o *AddSearchShutdownPluginRequest) GetBaseDN() string {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		var ret string
 		return ret
 	}
@@ -119,7 +122,7 @@ func (o *AddSearchShutdownPluginRequest) GetBaseDN() string {
 // GetBaseDNOk returns a tuple with the BaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSearchShutdownPluginRequest) GetBaseDNOk() (*string, bool) {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		return nil, false
 	}
 	return o.BaseDN, true
@@ -127,7 +130,7 @@ func (o *AddSearchShutdownPluginRequest) GetBaseDNOk() (*string, bool) {
 
 // HasBaseDN returns a boolean if a field has been set.
 func (o *AddSearchShutdownPluginRequest) HasBaseDN() bool {
-	if o != nil && !isNil(o.BaseDN) {
+	if o != nil && !IsNil(o.BaseDN) {
 		return true
 	}
 
@@ -189,7 +192,7 @@ func (o *AddSearchShutdownPluginRequest) SetFilter(v string) {
 
 // GetIncludeAttribute returns the IncludeAttribute field value if set, zero value otherwise.
 func (o *AddSearchShutdownPluginRequest) GetIncludeAttribute() []string {
-	if o == nil || isNil(o.IncludeAttribute) {
+	if o == nil || IsNil(o.IncludeAttribute) {
 		var ret []string
 		return ret
 	}
@@ -199,7 +202,7 @@ func (o *AddSearchShutdownPluginRequest) GetIncludeAttribute() []string {
 // GetIncludeAttributeOk returns a tuple with the IncludeAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSearchShutdownPluginRequest) GetIncludeAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludeAttribute) {
+	if o == nil || IsNil(o.IncludeAttribute) {
 		return nil, false
 	}
 	return o.IncludeAttribute, true
@@ -207,7 +210,7 @@ func (o *AddSearchShutdownPluginRequest) GetIncludeAttributeOk() ([]string, bool
 
 // HasIncludeAttribute returns a boolean if a field has been set.
 func (o *AddSearchShutdownPluginRequest) HasIncludeAttribute() bool {
-	if o != nil && !isNil(o.IncludeAttribute) {
+	if o != nil && !IsNil(o.IncludeAttribute) {
 		return true
 	}
 
@@ -245,7 +248,7 @@ func (o *AddSearchShutdownPluginRequest) SetOutputFile(v string) {
 
 // GetPreviousFileExtension returns the PreviousFileExtension field value if set, zero value otherwise.
 func (o *AddSearchShutdownPluginRequest) GetPreviousFileExtension() string {
-	if o == nil || isNil(o.PreviousFileExtension) {
+	if o == nil || IsNil(o.PreviousFileExtension) {
 		var ret string
 		return ret
 	}
@@ -255,7 +258,7 @@ func (o *AddSearchShutdownPluginRequest) GetPreviousFileExtension() string {
 // GetPreviousFileExtensionOk returns a tuple with the PreviousFileExtension field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSearchShutdownPluginRequest) GetPreviousFileExtensionOk() (*string, bool) {
-	if o == nil || isNil(o.PreviousFileExtension) {
+	if o == nil || IsNil(o.PreviousFileExtension) {
 		return nil, false
 	}
 	return o.PreviousFileExtension, true
@@ -263,7 +266,7 @@ func (o *AddSearchShutdownPluginRequest) GetPreviousFileExtensionOk() (*string, 
 
 // HasPreviousFileExtension returns a boolean if a field has been set.
 func (o *AddSearchShutdownPluginRequest) HasPreviousFileExtension() bool {
-	if o != nil && !isNil(o.PreviousFileExtension) {
+	if o != nil && !IsNil(o.PreviousFileExtension) {
 		return true
 	}
 
@@ -277,7 +280,7 @@ func (o *AddSearchShutdownPluginRequest) SetPreviousFileExtension(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddSearchShutdownPluginRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -287,7 +290,7 @@ func (o *AddSearchShutdownPluginRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSearchShutdownPluginRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -295,7 +298,7 @@ func (o *AddSearchShutdownPluginRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddSearchShutdownPluginRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -332,38 +335,34 @@ func (o *AddSearchShutdownPluginRequest) SetEnabled(v bool) {
 }
 
 func (o AddSearchShutdownPluginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["pluginName"] = o.PluginName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.BaseDN) {
-		toSerialize["baseDN"] = o.BaseDN
-	}
-	if true {
-		toSerialize["scope"] = o.Scope
-	}
-	if true {
-		toSerialize["filter"] = o.Filter
-	}
-	if !isNil(o.IncludeAttribute) {
-		toSerialize["includeAttribute"] = o.IncludeAttribute
-	}
-	if true {
-		toSerialize["outputFile"] = o.OutputFile
-	}
-	if !isNil(o.PreviousFileExtension) {
-		toSerialize["previousFileExtension"] = o.PreviousFileExtension
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddSearchShutdownPluginRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["pluginName"] = o.PluginName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.BaseDN) {
+		toSerialize["baseDN"] = o.BaseDN
+	}
+	toSerialize["scope"] = o.Scope
+	toSerialize["filter"] = o.Filter
+	if !IsNil(o.IncludeAttribute) {
+		toSerialize["includeAttribute"] = o.IncludeAttribute
+	}
+	toSerialize["outputFile"] = o.OutputFile
+	if !IsNil(o.PreviousFileExtension) {
+		toSerialize["previousFileExtension"] = o.PreviousFileExtension
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddSearchShutdownPluginRequest struct {

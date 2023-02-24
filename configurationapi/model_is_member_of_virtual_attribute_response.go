@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the IsMemberOfVirtualAttributeResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &IsMemberOfVirtualAttributeResponse{}
+
 // IsMemberOfVirtualAttributeResponse struct for IsMemberOfVirtualAttributeResponse
 type IsMemberOfVirtualAttributeResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -73,7 +76,7 @@ func NewIsMemberOfVirtualAttributeResponseWithDefaults() *IsMemberOfVirtualAttri
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *IsMemberOfVirtualAttributeResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -83,7 +86,7 @@ func (o *IsMemberOfVirtualAttributeResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IsMemberOfVirtualAttributeResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -91,7 +94,7 @@ func (o *IsMemberOfVirtualAttributeResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *IsMemberOfVirtualAttributeResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -105,7 +108,7 @@ func (o *IsMemberOfVirtualAttributeResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *IsMemberOfVirtualAttributeResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -115,7 +118,7 @@ func (o *IsMemberOfVirtualAttributeResponse) GetUrnpingidentityschemasconfigurat
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IsMemberOfVirtualAttributeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -123,7 +126,7 @@ func (o *IsMemberOfVirtualAttributeResponse) GetUrnpingidentityschemasconfigurat
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *IsMemberOfVirtualAttributeResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -185,7 +188,7 @@ func (o *IsMemberOfVirtualAttributeResponse) SetSchemas(v []EnumisMemberOfVirtua
 
 // GetConflictBehavior returns the ConflictBehavior field value if set, zero value otherwise.
 func (o *IsMemberOfVirtualAttributeResponse) GetConflictBehavior() EnumvirtualAttributeConflictBehaviorProp {
-	if o == nil || isNil(o.ConflictBehavior) {
+	if o == nil || IsNil(o.ConflictBehavior) {
 		var ret EnumvirtualAttributeConflictBehaviorProp
 		return ret
 	}
@@ -195,7 +198,7 @@ func (o *IsMemberOfVirtualAttributeResponse) GetConflictBehavior() EnumvirtualAt
 // GetConflictBehaviorOk returns a tuple with the ConflictBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IsMemberOfVirtualAttributeResponse) GetConflictBehaviorOk() (*EnumvirtualAttributeConflictBehaviorProp, bool) {
-	if o == nil || isNil(o.ConflictBehavior) {
+	if o == nil || IsNil(o.ConflictBehavior) {
 		return nil, false
 	}
 	return o.ConflictBehavior, true
@@ -203,7 +206,7 @@ func (o *IsMemberOfVirtualAttributeResponse) GetConflictBehaviorOk() (*Enumvirtu
 
 // HasConflictBehavior returns a boolean if a field has been set.
 func (o *IsMemberOfVirtualAttributeResponse) HasConflictBehavior() bool {
-	if o != nil && !isNil(o.ConflictBehavior) {
+	if o != nil && !IsNil(o.ConflictBehavior) {
 		return true
 	}
 
@@ -241,7 +244,7 @@ func (o *IsMemberOfVirtualAttributeResponse) SetAttributeType(v string) {
 
 // GetDirectMembershipsOnly returns the DirectMembershipsOnly field value if set, zero value otherwise.
 func (o *IsMemberOfVirtualAttributeResponse) GetDirectMembershipsOnly() bool {
-	if o == nil || isNil(o.DirectMembershipsOnly) {
+	if o == nil || IsNil(o.DirectMembershipsOnly) {
 		var ret bool
 		return ret
 	}
@@ -251,7 +254,7 @@ func (o *IsMemberOfVirtualAttributeResponse) GetDirectMembershipsOnly() bool {
 // GetDirectMembershipsOnlyOk returns a tuple with the DirectMembershipsOnly field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IsMemberOfVirtualAttributeResponse) GetDirectMembershipsOnlyOk() (*bool, bool) {
-	if o == nil || isNil(o.DirectMembershipsOnly) {
+	if o == nil || IsNil(o.DirectMembershipsOnly) {
 		return nil, false
 	}
 	return o.DirectMembershipsOnly, true
@@ -259,7 +262,7 @@ func (o *IsMemberOfVirtualAttributeResponse) GetDirectMembershipsOnlyOk() (*bool
 
 // HasDirectMembershipsOnly returns a boolean if a field has been set.
 func (o *IsMemberOfVirtualAttributeResponse) HasDirectMembershipsOnly() bool {
-	if o != nil && !isNil(o.DirectMembershipsOnly) {
+	if o != nil && !IsNil(o.DirectMembershipsOnly) {
 		return true
 	}
 
@@ -273,7 +276,7 @@ func (o *IsMemberOfVirtualAttributeResponse) SetDirectMembershipsOnly(v bool) {
 
 // GetIncludedGroupFilter returns the IncludedGroupFilter field value if set, zero value otherwise.
 func (o *IsMemberOfVirtualAttributeResponse) GetIncludedGroupFilter() string {
-	if o == nil || isNil(o.IncludedGroupFilter) {
+	if o == nil || IsNil(o.IncludedGroupFilter) {
 		var ret string
 		return ret
 	}
@@ -283,7 +286,7 @@ func (o *IsMemberOfVirtualAttributeResponse) GetIncludedGroupFilter() string {
 // GetIncludedGroupFilterOk returns a tuple with the IncludedGroupFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IsMemberOfVirtualAttributeResponse) GetIncludedGroupFilterOk() (*string, bool) {
-	if o == nil || isNil(o.IncludedGroupFilter) {
+	if o == nil || IsNil(o.IncludedGroupFilter) {
 		return nil, false
 	}
 	return o.IncludedGroupFilter, true
@@ -291,7 +294,7 @@ func (o *IsMemberOfVirtualAttributeResponse) GetIncludedGroupFilterOk() (*string
 
 // HasIncludedGroupFilter returns a boolean if a field has been set.
 func (o *IsMemberOfVirtualAttributeResponse) HasIncludedGroupFilter() bool {
-	if o != nil && !isNil(o.IncludedGroupFilter) {
+	if o != nil && !IsNil(o.IncludedGroupFilter) {
 		return true
 	}
 
@@ -305,7 +308,7 @@ func (o *IsMemberOfVirtualAttributeResponse) SetIncludedGroupFilter(v string) {
 
 // GetRewriteSearchFilters returns the RewriteSearchFilters field value if set, zero value otherwise.
 func (o *IsMemberOfVirtualAttributeResponse) GetRewriteSearchFilters() EnumvirtualAttributeRewriteSearchFiltersProp {
-	if o == nil || isNil(o.RewriteSearchFilters) {
+	if o == nil || IsNil(o.RewriteSearchFilters) {
 		var ret EnumvirtualAttributeRewriteSearchFiltersProp
 		return ret
 	}
@@ -315,7 +318,7 @@ func (o *IsMemberOfVirtualAttributeResponse) GetRewriteSearchFilters() Enumvirtu
 // GetRewriteSearchFiltersOk returns a tuple with the RewriteSearchFilters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IsMemberOfVirtualAttributeResponse) GetRewriteSearchFiltersOk() (*EnumvirtualAttributeRewriteSearchFiltersProp, bool) {
-	if o == nil || isNil(o.RewriteSearchFilters) {
+	if o == nil || IsNil(o.RewriteSearchFilters) {
 		return nil, false
 	}
 	return o.RewriteSearchFilters, true
@@ -323,7 +326,7 @@ func (o *IsMemberOfVirtualAttributeResponse) GetRewriteSearchFiltersOk() (*Enumv
 
 // HasRewriteSearchFilters returns a boolean if a field has been set.
 func (o *IsMemberOfVirtualAttributeResponse) HasRewriteSearchFilters() bool {
-	if o != nil && !isNil(o.RewriteSearchFilters) {
+	if o != nil && !IsNil(o.RewriteSearchFilters) {
 		return true
 	}
 
@@ -337,7 +340,7 @@ func (o *IsMemberOfVirtualAttributeResponse) SetRewriteSearchFilters(v Enumvirtu
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *IsMemberOfVirtualAttributeResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -347,7 +350,7 @@ func (o *IsMemberOfVirtualAttributeResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IsMemberOfVirtualAttributeResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -355,7 +358,7 @@ func (o *IsMemberOfVirtualAttributeResponse) GetDescriptionOk() (*string, bool) 
 
 // HasDescription returns a boolean if a field has been set.
 func (o *IsMemberOfVirtualAttributeResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -393,7 +396,7 @@ func (o *IsMemberOfVirtualAttributeResponse) SetEnabled(v bool) {
 
 // GetBaseDN returns the BaseDN field value if set, zero value otherwise.
 func (o *IsMemberOfVirtualAttributeResponse) GetBaseDN() []string {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		var ret []string
 		return ret
 	}
@@ -403,7 +406,7 @@ func (o *IsMemberOfVirtualAttributeResponse) GetBaseDN() []string {
 // GetBaseDNOk returns a tuple with the BaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IsMemberOfVirtualAttributeResponse) GetBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		return nil, false
 	}
 	return o.BaseDN, true
@@ -411,7 +414,7 @@ func (o *IsMemberOfVirtualAttributeResponse) GetBaseDNOk() ([]string, bool) {
 
 // HasBaseDN returns a boolean if a field has been set.
 func (o *IsMemberOfVirtualAttributeResponse) HasBaseDN() bool {
-	if o != nil && !isNil(o.BaseDN) {
+	if o != nil && !IsNil(o.BaseDN) {
 		return true
 	}
 
@@ -425,7 +428,7 @@ func (o *IsMemberOfVirtualAttributeResponse) SetBaseDN(v []string) {
 
 // GetGroupDN returns the GroupDN field value if set, zero value otherwise.
 func (o *IsMemberOfVirtualAttributeResponse) GetGroupDN() []string {
-	if o == nil || isNil(o.GroupDN) {
+	if o == nil || IsNil(o.GroupDN) {
 		var ret []string
 		return ret
 	}
@@ -435,7 +438,7 @@ func (o *IsMemberOfVirtualAttributeResponse) GetGroupDN() []string {
 // GetGroupDNOk returns a tuple with the GroupDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IsMemberOfVirtualAttributeResponse) GetGroupDNOk() ([]string, bool) {
-	if o == nil || isNil(o.GroupDN) {
+	if o == nil || IsNil(o.GroupDN) {
 		return nil, false
 	}
 	return o.GroupDN, true
@@ -443,7 +446,7 @@ func (o *IsMemberOfVirtualAttributeResponse) GetGroupDNOk() ([]string, bool) {
 
 // HasGroupDN returns a boolean if a field has been set.
 func (o *IsMemberOfVirtualAttributeResponse) HasGroupDN() bool {
-	if o != nil && !isNil(o.GroupDN) {
+	if o != nil && !IsNil(o.GroupDN) {
 		return true
 	}
 
@@ -457,7 +460,7 @@ func (o *IsMemberOfVirtualAttributeResponse) SetGroupDN(v []string) {
 
 // GetFilter returns the Filter field value if set, zero value otherwise.
 func (o *IsMemberOfVirtualAttributeResponse) GetFilter() []string {
-	if o == nil || isNil(o.Filter) {
+	if o == nil || IsNil(o.Filter) {
 		var ret []string
 		return ret
 	}
@@ -467,7 +470,7 @@ func (o *IsMemberOfVirtualAttributeResponse) GetFilter() []string {
 // GetFilterOk returns a tuple with the Filter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IsMemberOfVirtualAttributeResponse) GetFilterOk() ([]string, bool) {
-	if o == nil || isNil(o.Filter) {
+	if o == nil || IsNil(o.Filter) {
 		return nil, false
 	}
 	return o.Filter, true
@@ -475,7 +478,7 @@ func (o *IsMemberOfVirtualAttributeResponse) GetFilterOk() ([]string, bool) {
 
 // HasFilter returns a boolean if a field has been set.
 func (o *IsMemberOfVirtualAttributeResponse) HasFilter() bool {
-	if o != nil && !isNil(o.Filter) {
+	if o != nil && !IsNil(o.Filter) {
 		return true
 	}
 
@@ -489,7 +492,7 @@ func (o *IsMemberOfVirtualAttributeResponse) SetFilter(v []string) {
 
 // GetClientConnectionPolicy returns the ClientConnectionPolicy field value if set, zero value otherwise.
 func (o *IsMemberOfVirtualAttributeResponse) GetClientConnectionPolicy() []string {
-	if o == nil || isNil(o.ClientConnectionPolicy) {
+	if o == nil || IsNil(o.ClientConnectionPolicy) {
 		var ret []string
 		return ret
 	}
@@ -499,7 +502,7 @@ func (o *IsMemberOfVirtualAttributeResponse) GetClientConnectionPolicy() []strin
 // GetClientConnectionPolicyOk returns a tuple with the ClientConnectionPolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IsMemberOfVirtualAttributeResponse) GetClientConnectionPolicyOk() ([]string, bool) {
-	if o == nil || isNil(o.ClientConnectionPolicy) {
+	if o == nil || IsNil(o.ClientConnectionPolicy) {
 		return nil, false
 	}
 	return o.ClientConnectionPolicy, true
@@ -507,7 +510,7 @@ func (o *IsMemberOfVirtualAttributeResponse) GetClientConnectionPolicyOk() ([]st
 
 // HasClientConnectionPolicy returns a boolean if a field has been set.
 func (o *IsMemberOfVirtualAttributeResponse) HasClientConnectionPolicy() bool {
-	if o != nil && !isNil(o.ClientConnectionPolicy) {
+	if o != nil && !IsNil(o.ClientConnectionPolicy) {
 		return true
 	}
 
@@ -521,7 +524,7 @@ func (o *IsMemberOfVirtualAttributeResponse) SetClientConnectionPolicy(v []strin
 
 // GetRequireExplicitRequestByName returns the RequireExplicitRequestByName field value if set, zero value otherwise.
 func (o *IsMemberOfVirtualAttributeResponse) GetRequireExplicitRequestByName() bool {
-	if o == nil || isNil(o.RequireExplicitRequestByName) {
+	if o == nil || IsNil(o.RequireExplicitRequestByName) {
 		var ret bool
 		return ret
 	}
@@ -531,7 +534,7 @@ func (o *IsMemberOfVirtualAttributeResponse) GetRequireExplicitRequestByName() b
 // GetRequireExplicitRequestByNameOk returns a tuple with the RequireExplicitRequestByName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IsMemberOfVirtualAttributeResponse) GetRequireExplicitRequestByNameOk() (*bool, bool) {
-	if o == nil || isNil(o.RequireExplicitRequestByName) {
+	if o == nil || IsNil(o.RequireExplicitRequestByName) {
 		return nil, false
 	}
 	return o.RequireExplicitRequestByName, true
@@ -539,7 +542,7 @@ func (o *IsMemberOfVirtualAttributeResponse) GetRequireExplicitRequestByNameOk()
 
 // HasRequireExplicitRequestByName returns a boolean if a field has been set.
 func (o *IsMemberOfVirtualAttributeResponse) HasRequireExplicitRequestByName() bool {
-	if o != nil && !isNil(o.RequireExplicitRequestByName) {
+	if o != nil && !IsNil(o.RequireExplicitRequestByName) {
 		return true
 	}
 
@@ -553,7 +556,7 @@ func (o *IsMemberOfVirtualAttributeResponse) SetRequireExplicitRequestByName(v b
 
 // GetMultipleVirtualAttributeEvaluationOrderIndex returns the MultipleVirtualAttributeEvaluationOrderIndex field value if set, zero value otherwise.
 func (o *IsMemberOfVirtualAttributeResponse) GetMultipleVirtualAttributeEvaluationOrderIndex() int32 {
-	if o == nil || isNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
+	if o == nil || IsNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
 		var ret int32
 		return ret
 	}
@@ -563,7 +566,7 @@ func (o *IsMemberOfVirtualAttributeResponse) GetMultipleVirtualAttributeEvaluati
 // GetMultipleVirtualAttributeEvaluationOrderIndexOk returns a tuple with the MultipleVirtualAttributeEvaluationOrderIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IsMemberOfVirtualAttributeResponse) GetMultipleVirtualAttributeEvaluationOrderIndexOk() (*int32, bool) {
-	if o == nil || isNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
+	if o == nil || IsNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
 		return nil, false
 	}
 	return o.MultipleVirtualAttributeEvaluationOrderIndex, true
@@ -571,7 +574,7 @@ func (o *IsMemberOfVirtualAttributeResponse) GetMultipleVirtualAttributeEvaluati
 
 // HasMultipleVirtualAttributeEvaluationOrderIndex returns a boolean if a field has been set.
 func (o *IsMemberOfVirtualAttributeResponse) HasMultipleVirtualAttributeEvaluationOrderIndex() bool {
-	if o != nil && !isNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
+	if o != nil && !IsNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
 		return true
 	}
 
@@ -585,7 +588,7 @@ func (o *IsMemberOfVirtualAttributeResponse) SetMultipleVirtualAttributeEvaluati
 
 // GetMultipleVirtualAttributeMergeBehavior returns the MultipleVirtualAttributeMergeBehavior field value if set, zero value otherwise.
 func (o *IsMemberOfVirtualAttributeResponse) GetMultipleVirtualAttributeMergeBehavior() EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp {
-	if o == nil || isNil(o.MultipleVirtualAttributeMergeBehavior) {
+	if o == nil || IsNil(o.MultipleVirtualAttributeMergeBehavior) {
 		var ret EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp
 		return ret
 	}
@@ -595,7 +598,7 @@ func (o *IsMemberOfVirtualAttributeResponse) GetMultipleVirtualAttributeMergeBeh
 // GetMultipleVirtualAttributeMergeBehaviorOk returns a tuple with the MultipleVirtualAttributeMergeBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IsMemberOfVirtualAttributeResponse) GetMultipleVirtualAttributeMergeBehaviorOk() (*EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp, bool) {
-	if o == nil || isNil(o.MultipleVirtualAttributeMergeBehavior) {
+	if o == nil || IsNil(o.MultipleVirtualAttributeMergeBehavior) {
 		return nil, false
 	}
 	return o.MultipleVirtualAttributeMergeBehavior, true
@@ -603,7 +606,7 @@ func (o *IsMemberOfVirtualAttributeResponse) GetMultipleVirtualAttributeMergeBeh
 
 // HasMultipleVirtualAttributeMergeBehavior returns a boolean if a field has been set.
 func (o *IsMemberOfVirtualAttributeResponse) HasMultipleVirtualAttributeMergeBehavior() bool {
-	if o != nil && !isNil(o.MultipleVirtualAttributeMergeBehavior) {
+	if o != nil && !IsNil(o.MultipleVirtualAttributeMergeBehavior) {
 		return true
 	}
 
@@ -617,7 +620,7 @@ func (o *IsMemberOfVirtualAttributeResponse) SetMultipleVirtualAttributeMergeBeh
 
 // GetAllowIndexConflicts returns the AllowIndexConflicts field value if set, zero value otherwise.
 func (o *IsMemberOfVirtualAttributeResponse) GetAllowIndexConflicts() bool {
-	if o == nil || isNil(o.AllowIndexConflicts) {
+	if o == nil || IsNil(o.AllowIndexConflicts) {
 		var ret bool
 		return ret
 	}
@@ -627,7 +630,7 @@ func (o *IsMemberOfVirtualAttributeResponse) GetAllowIndexConflicts() bool {
 // GetAllowIndexConflictsOk returns a tuple with the AllowIndexConflicts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IsMemberOfVirtualAttributeResponse) GetAllowIndexConflictsOk() (*bool, bool) {
-	if o == nil || isNil(o.AllowIndexConflicts) {
+	if o == nil || IsNil(o.AllowIndexConflicts) {
 		return nil, false
 	}
 	return o.AllowIndexConflicts, true
@@ -635,7 +638,7 @@ func (o *IsMemberOfVirtualAttributeResponse) GetAllowIndexConflictsOk() (*bool, 
 
 // HasAllowIndexConflicts returns a boolean if a field has been set.
 func (o *IsMemberOfVirtualAttributeResponse) HasAllowIndexConflicts() bool {
-	if o != nil && !isNil(o.AllowIndexConflicts) {
+	if o != nil && !IsNil(o.AllowIndexConflicts) {
 		return true
 	}
 
@@ -648,65 +651,65 @@ func (o *IsMemberOfVirtualAttributeResponse) SetAllowIndexConflicts(v bool) {
 }
 
 func (o IsMemberOfVirtualAttributeResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.ConflictBehavior) {
-		toSerialize["conflictBehavior"] = o.ConflictBehavior
-	}
-	if true {
-		toSerialize["attributeType"] = o.AttributeType
-	}
-	if !isNil(o.DirectMembershipsOnly) {
-		toSerialize["directMembershipsOnly"] = o.DirectMembershipsOnly
-	}
-	if !isNil(o.IncludedGroupFilter) {
-		toSerialize["includedGroupFilter"] = o.IncludedGroupFilter
-	}
-	if !isNil(o.RewriteSearchFilters) {
-		toSerialize["rewriteSearchFilters"] = o.RewriteSearchFilters
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.BaseDN) {
-		toSerialize["baseDN"] = o.BaseDN
-	}
-	if !isNil(o.GroupDN) {
-		toSerialize["groupDN"] = o.GroupDN
-	}
-	if !isNil(o.Filter) {
-		toSerialize["filter"] = o.Filter
-	}
-	if !isNil(o.ClientConnectionPolicy) {
-		toSerialize["clientConnectionPolicy"] = o.ClientConnectionPolicy
-	}
-	if !isNil(o.RequireExplicitRequestByName) {
-		toSerialize["requireExplicitRequestByName"] = o.RequireExplicitRequestByName
-	}
-	if !isNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
-		toSerialize["multipleVirtualAttributeEvaluationOrderIndex"] = o.MultipleVirtualAttributeEvaluationOrderIndex
-	}
-	if !isNil(o.MultipleVirtualAttributeMergeBehavior) {
-		toSerialize["multipleVirtualAttributeMergeBehavior"] = o.MultipleVirtualAttributeMergeBehavior
-	}
-	if !isNil(o.AllowIndexConflicts) {
-		toSerialize["allowIndexConflicts"] = o.AllowIndexConflicts
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o IsMemberOfVirtualAttributeResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.ConflictBehavior) {
+		toSerialize["conflictBehavior"] = o.ConflictBehavior
+	}
+	toSerialize["attributeType"] = o.AttributeType
+	if !IsNil(o.DirectMembershipsOnly) {
+		toSerialize["directMembershipsOnly"] = o.DirectMembershipsOnly
+	}
+	if !IsNil(o.IncludedGroupFilter) {
+		toSerialize["includedGroupFilter"] = o.IncludedGroupFilter
+	}
+	if !IsNil(o.RewriteSearchFilters) {
+		toSerialize["rewriteSearchFilters"] = o.RewriteSearchFilters
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.BaseDN) {
+		toSerialize["baseDN"] = o.BaseDN
+	}
+	if !IsNil(o.GroupDN) {
+		toSerialize["groupDN"] = o.GroupDN
+	}
+	if !IsNil(o.Filter) {
+		toSerialize["filter"] = o.Filter
+	}
+	if !IsNil(o.ClientConnectionPolicy) {
+		toSerialize["clientConnectionPolicy"] = o.ClientConnectionPolicy
+	}
+	if !IsNil(o.RequireExplicitRequestByName) {
+		toSerialize["requireExplicitRequestByName"] = o.RequireExplicitRequestByName
+	}
+	if !IsNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
+		toSerialize["multipleVirtualAttributeEvaluationOrderIndex"] = o.MultipleVirtualAttributeEvaluationOrderIndex
+	}
+	if !IsNil(o.MultipleVirtualAttributeMergeBehavior) {
+		toSerialize["multipleVirtualAttributeMergeBehavior"] = o.MultipleVirtualAttributeMergeBehavior
+	}
+	if !IsNil(o.AllowIndexConflicts) {
+		toSerialize["allowIndexConflicts"] = o.AllowIndexConflicts
+	}
+	return toSerialize, nil
 }
 
 type NullableIsMemberOfVirtualAttributeResponse struct {

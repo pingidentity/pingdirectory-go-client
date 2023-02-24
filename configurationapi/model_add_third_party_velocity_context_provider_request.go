@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddThirdPartyVelocityContextProviderRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddThirdPartyVelocityContextProviderRequest{}
+
 // AddThirdPartyVelocityContextProviderRequest struct for AddThirdPartyVelocityContextProviderRequest
 type AddThirdPartyVelocityContextProviderRequest struct {
 	// Name of the new Velocity Context Provider
@@ -130,7 +133,7 @@ func (o *AddThirdPartyVelocityContextProviderRequest) SetExtensionClass(v string
 
 // GetExtensionArgument returns the ExtensionArgument field value if set, zero value otherwise.
 func (o *AddThirdPartyVelocityContextProviderRequest) GetExtensionArgument() []string {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		var ret []string
 		return ret
 	}
@@ -140,7 +143,7 @@ func (o *AddThirdPartyVelocityContextProviderRequest) GetExtensionArgument() []s
 // GetExtensionArgumentOk returns a tuple with the ExtensionArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyVelocityContextProviderRequest) GetExtensionArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		return nil, false
 	}
 	return o.ExtensionArgument, true
@@ -148,7 +151,7 @@ func (o *AddThirdPartyVelocityContextProviderRequest) GetExtensionArgumentOk() (
 
 // HasExtensionArgument returns a boolean if a field has been set.
 func (o *AddThirdPartyVelocityContextProviderRequest) HasExtensionArgument() bool {
-	if o != nil && !isNil(o.ExtensionArgument) {
+	if o != nil && !IsNil(o.ExtensionArgument) {
 		return true
 	}
 
@@ -162,7 +165,7 @@ func (o *AddThirdPartyVelocityContextProviderRequest) SetExtensionArgument(v []s
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
 func (o *AddThirdPartyVelocityContextProviderRequest) GetEnabled() bool {
-	if o == nil || isNil(o.Enabled) {
+	if o == nil || IsNil(o.Enabled) {
 		var ret bool
 		return ret
 	}
@@ -172,7 +175,7 @@ func (o *AddThirdPartyVelocityContextProviderRequest) GetEnabled() bool {
 // GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyVelocityContextProviderRequest) GetEnabledOk() (*bool, bool) {
-	if o == nil || isNil(o.Enabled) {
+	if o == nil || IsNil(o.Enabled) {
 		return nil, false
 	}
 	return o.Enabled, true
@@ -180,7 +183,7 @@ func (o *AddThirdPartyVelocityContextProviderRequest) GetEnabledOk() (*bool, boo
 
 // HasEnabled returns a boolean if a field has been set.
 func (o *AddThirdPartyVelocityContextProviderRequest) HasEnabled() bool {
-	if o != nil && !isNil(o.Enabled) {
+	if o != nil && !IsNil(o.Enabled) {
 		return true
 	}
 
@@ -194,7 +197,7 @@ func (o *AddThirdPartyVelocityContextProviderRequest) SetEnabled(v bool) {
 
 // GetObjectScope returns the ObjectScope field value if set, zero value otherwise.
 func (o *AddThirdPartyVelocityContextProviderRequest) GetObjectScope() EnumvelocityContextProviderObjectScopeProp {
-	if o == nil || isNil(o.ObjectScope) {
+	if o == nil || IsNil(o.ObjectScope) {
 		var ret EnumvelocityContextProviderObjectScopeProp
 		return ret
 	}
@@ -204,7 +207,7 @@ func (o *AddThirdPartyVelocityContextProviderRequest) GetObjectScope() Enumveloc
 // GetObjectScopeOk returns a tuple with the ObjectScope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyVelocityContextProviderRequest) GetObjectScopeOk() (*EnumvelocityContextProviderObjectScopeProp, bool) {
-	if o == nil || isNil(o.ObjectScope) {
+	if o == nil || IsNil(o.ObjectScope) {
 		return nil, false
 	}
 	return o.ObjectScope, true
@@ -212,7 +215,7 @@ func (o *AddThirdPartyVelocityContextProviderRequest) GetObjectScopeOk() (*Enumv
 
 // HasObjectScope returns a boolean if a field has been set.
 func (o *AddThirdPartyVelocityContextProviderRequest) HasObjectScope() bool {
-	if o != nil && !isNil(o.ObjectScope) {
+	if o != nil && !IsNil(o.ObjectScope) {
 		return true
 	}
 
@@ -226,7 +229,7 @@ func (o *AddThirdPartyVelocityContextProviderRequest) SetObjectScope(v Enumveloc
 
 // GetIncludedView returns the IncludedView field value if set, zero value otherwise.
 func (o *AddThirdPartyVelocityContextProviderRequest) GetIncludedView() []string {
-	if o == nil || isNil(o.IncludedView) {
+	if o == nil || IsNil(o.IncludedView) {
 		var ret []string
 		return ret
 	}
@@ -236,7 +239,7 @@ func (o *AddThirdPartyVelocityContextProviderRequest) GetIncludedView() []string
 // GetIncludedViewOk returns a tuple with the IncludedView field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyVelocityContextProviderRequest) GetIncludedViewOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludedView) {
+	if o == nil || IsNil(o.IncludedView) {
 		return nil, false
 	}
 	return o.IncludedView, true
@@ -244,7 +247,7 @@ func (o *AddThirdPartyVelocityContextProviderRequest) GetIncludedViewOk() ([]str
 
 // HasIncludedView returns a boolean if a field has been set.
 func (o *AddThirdPartyVelocityContextProviderRequest) HasIncludedView() bool {
-	if o != nil && !isNil(o.IncludedView) {
+	if o != nil && !IsNil(o.IncludedView) {
 		return true
 	}
 
@@ -258,7 +261,7 @@ func (o *AddThirdPartyVelocityContextProviderRequest) SetIncludedView(v []string
 
 // GetExcludedView returns the ExcludedView field value if set, zero value otherwise.
 func (o *AddThirdPartyVelocityContextProviderRequest) GetExcludedView() []string {
-	if o == nil || isNil(o.ExcludedView) {
+	if o == nil || IsNil(o.ExcludedView) {
 		var ret []string
 		return ret
 	}
@@ -268,7 +271,7 @@ func (o *AddThirdPartyVelocityContextProviderRequest) GetExcludedView() []string
 // GetExcludedViewOk returns a tuple with the ExcludedView field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyVelocityContextProviderRequest) GetExcludedViewOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludedView) {
+	if o == nil || IsNil(o.ExcludedView) {
 		return nil, false
 	}
 	return o.ExcludedView, true
@@ -276,7 +279,7 @@ func (o *AddThirdPartyVelocityContextProviderRequest) GetExcludedViewOk() ([]str
 
 // HasExcludedView returns a boolean if a field has been set.
 func (o *AddThirdPartyVelocityContextProviderRequest) HasExcludedView() bool {
-	if o != nil && !isNil(o.ExcludedView) {
+	if o != nil && !IsNil(o.ExcludedView) {
 		return true
 	}
 
@@ -290,7 +293,7 @@ func (o *AddThirdPartyVelocityContextProviderRequest) SetExcludedView(v []string
 
 // GetHttpMethod returns the HttpMethod field value if set, zero value otherwise.
 func (o *AddThirdPartyVelocityContextProviderRequest) GetHttpMethod() []string {
-	if o == nil || isNil(o.HttpMethod) {
+	if o == nil || IsNil(o.HttpMethod) {
 		var ret []string
 		return ret
 	}
@@ -300,7 +303,7 @@ func (o *AddThirdPartyVelocityContextProviderRequest) GetHttpMethod() []string {
 // GetHttpMethodOk returns a tuple with the HttpMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyVelocityContextProviderRequest) GetHttpMethodOk() ([]string, bool) {
-	if o == nil || isNil(o.HttpMethod) {
+	if o == nil || IsNil(o.HttpMethod) {
 		return nil, false
 	}
 	return o.HttpMethod, true
@@ -308,7 +311,7 @@ func (o *AddThirdPartyVelocityContextProviderRequest) GetHttpMethodOk() ([]strin
 
 // HasHttpMethod returns a boolean if a field has been set.
 func (o *AddThirdPartyVelocityContextProviderRequest) HasHttpMethod() bool {
-	if o != nil && !isNil(o.HttpMethod) {
+	if o != nil && !IsNil(o.HttpMethod) {
 		return true
 	}
 
@@ -322,7 +325,7 @@ func (o *AddThirdPartyVelocityContextProviderRequest) SetHttpMethod(v []string) 
 
 // GetResponseHeader returns the ResponseHeader field value if set, zero value otherwise.
 func (o *AddThirdPartyVelocityContextProviderRequest) GetResponseHeader() []string {
-	if o == nil || isNil(o.ResponseHeader) {
+	if o == nil || IsNil(o.ResponseHeader) {
 		var ret []string
 		return ret
 	}
@@ -332,7 +335,7 @@ func (o *AddThirdPartyVelocityContextProviderRequest) GetResponseHeader() []stri
 // GetResponseHeaderOk returns a tuple with the ResponseHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyVelocityContextProviderRequest) GetResponseHeaderOk() ([]string, bool) {
-	if o == nil || isNil(o.ResponseHeader) {
+	if o == nil || IsNil(o.ResponseHeader) {
 		return nil, false
 	}
 	return o.ResponseHeader, true
@@ -340,7 +343,7 @@ func (o *AddThirdPartyVelocityContextProviderRequest) GetResponseHeaderOk() ([]s
 
 // HasResponseHeader returns a boolean if a field has been set.
 func (o *AddThirdPartyVelocityContextProviderRequest) HasResponseHeader() bool {
-	if o != nil && !isNil(o.ResponseHeader) {
+	if o != nil && !IsNil(o.ResponseHeader) {
 		return true
 	}
 
@@ -353,38 +356,40 @@ func (o *AddThirdPartyVelocityContextProviderRequest) SetResponseHeader(v []stri
 }
 
 func (o AddThirdPartyVelocityContextProviderRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["providerName"] = o.ProviderName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["extensionClass"] = o.ExtensionClass
-	}
-	if !isNil(o.ExtensionArgument) {
-		toSerialize["extensionArgument"] = o.ExtensionArgument
-	}
-	if !isNil(o.Enabled) {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.ObjectScope) {
-		toSerialize["objectScope"] = o.ObjectScope
-	}
-	if !isNil(o.IncludedView) {
-		toSerialize["includedView"] = o.IncludedView
-	}
-	if !isNil(o.ExcludedView) {
-		toSerialize["excludedView"] = o.ExcludedView
-	}
-	if !isNil(o.HttpMethod) {
-		toSerialize["httpMethod"] = o.HttpMethod
-	}
-	if !isNil(o.ResponseHeader) {
-		toSerialize["responseHeader"] = o.ResponseHeader
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddThirdPartyVelocityContextProviderRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["providerName"] = o.ProviderName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["extensionClass"] = o.ExtensionClass
+	if !IsNil(o.ExtensionArgument) {
+		toSerialize["extensionArgument"] = o.ExtensionArgument
+	}
+	if !IsNil(o.Enabled) {
+		toSerialize["enabled"] = o.Enabled
+	}
+	if !IsNil(o.ObjectScope) {
+		toSerialize["objectScope"] = o.ObjectScope
+	}
+	if !IsNil(o.IncludedView) {
+		toSerialize["includedView"] = o.IncludedView
+	}
+	if !IsNil(o.ExcludedView) {
+		toSerialize["excludedView"] = o.ExcludedView
+	}
+	if !IsNil(o.HttpMethod) {
+		toSerialize["httpMethod"] = o.HttpMethod
+	}
+	if !IsNil(o.ResponseHeader) {
+		toSerialize["responseHeader"] = o.ResponseHeader
+	}
+	return toSerialize, nil
 }
 
 type NullableAddThirdPartyVelocityContextProviderRequest struct {

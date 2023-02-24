@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddFileBasedTrustManagerProviderRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddFileBasedTrustManagerProviderRequest{}
+
 // AddFileBasedTrustManagerProviderRequest struct for AddFileBasedTrustManagerProviderRequest
 type AddFileBasedTrustManagerProviderRequest struct {
 	// Name of the new Trust Manager Provider
@@ -130,7 +133,7 @@ func (o *AddFileBasedTrustManagerProviderRequest) SetTrustStoreFile(v string) {
 
 // GetTrustStoreType returns the TrustStoreType field value if set, zero value otherwise.
 func (o *AddFileBasedTrustManagerProviderRequest) GetTrustStoreType() string {
-	if o == nil || isNil(o.TrustStoreType) {
+	if o == nil || IsNil(o.TrustStoreType) {
 		var ret string
 		return ret
 	}
@@ -140,7 +143,7 @@ func (o *AddFileBasedTrustManagerProviderRequest) GetTrustStoreType() string {
 // GetTrustStoreTypeOk returns a tuple with the TrustStoreType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedTrustManagerProviderRequest) GetTrustStoreTypeOk() (*string, bool) {
-	if o == nil || isNil(o.TrustStoreType) {
+	if o == nil || IsNil(o.TrustStoreType) {
 		return nil, false
 	}
 	return o.TrustStoreType, true
@@ -148,7 +151,7 @@ func (o *AddFileBasedTrustManagerProviderRequest) GetTrustStoreTypeOk() (*string
 
 // HasTrustStoreType returns a boolean if a field has been set.
 func (o *AddFileBasedTrustManagerProviderRequest) HasTrustStoreType() bool {
-	if o != nil && !isNil(o.TrustStoreType) {
+	if o != nil && !IsNil(o.TrustStoreType) {
 		return true
 	}
 
@@ -162,7 +165,7 @@ func (o *AddFileBasedTrustManagerProviderRequest) SetTrustStoreType(v string) {
 
 // GetTrustStorePin returns the TrustStorePin field value if set, zero value otherwise.
 func (o *AddFileBasedTrustManagerProviderRequest) GetTrustStorePin() string {
-	if o == nil || isNil(o.TrustStorePin) {
+	if o == nil || IsNil(o.TrustStorePin) {
 		var ret string
 		return ret
 	}
@@ -172,7 +175,7 @@ func (o *AddFileBasedTrustManagerProviderRequest) GetTrustStorePin() string {
 // GetTrustStorePinOk returns a tuple with the TrustStorePin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedTrustManagerProviderRequest) GetTrustStorePinOk() (*string, bool) {
-	if o == nil || isNil(o.TrustStorePin) {
+	if o == nil || IsNil(o.TrustStorePin) {
 		return nil, false
 	}
 	return o.TrustStorePin, true
@@ -180,7 +183,7 @@ func (o *AddFileBasedTrustManagerProviderRequest) GetTrustStorePinOk() (*string,
 
 // HasTrustStorePin returns a boolean if a field has been set.
 func (o *AddFileBasedTrustManagerProviderRequest) HasTrustStorePin() bool {
-	if o != nil && !isNil(o.TrustStorePin) {
+	if o != nil && !IsNil(o.TrustStorePin) {
 		return true
 	}
 
@@ -194,7 +197,7 @@ func (o *AddFileBasedTrustManagerProviderRequest) SetTrustStorePin(v string) {
 
 // GetTrustStorePinFile returns the TrustStorePinFile field value if set, zero value otherwise.
 func (o *AddFileBasedTrustManagerProviderRequest) GetTrustStorePinFile() string {
-	if o == nil || isNil(o.TrustStorePinFile) {
+	if o == nil || IsNil(o.TrustStorePinFile) {
 		var ret string
 		return ret
 	}
@@ -204,7 +207,7 @@ func (o *AddFileBasedTrustManagerProviderRequest) GetTrustStorePinFile() string 
 // GetTrustStorePinFileOk returns a tuple with the TrustStorePinFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedTrustManagerProviderRequest) GetTrustStorePinFileOk() (*string, bool) {
-	if o == nil || isNil(o.TrustStorePinFile) {
+	if o == nil || IsNil(o.TrustStorePinFile) {
 		return nil, false
 	}
 	return o.TrustStorePinFile, true
@@ -212,7 +215,7 @@ func (o *AddFileBasedTrustManagerProviderRequest) GetTrustStorePinFileOk() (*str
 
 // HasTrustStorePinFile returns a boolean if a field has been set.
 func (o *AddFileBasedTrustManagerProviderRequest) HasTrustStorePinFile() bool {
-	if o != nil && !isNil(o.TrustStorePinFile) {
+	if o != nil && !IsNil(o.TrustStorePinFile) {
 		return true
 	}
 
@@ -226,7 +229,7 @@ func (o *AddFileBasedTrustManagerProviderRequest) SetTrustStorePinFile(v string)
 
 // GetTrustStorePinPassphraseProvider returns the TrustStorePinPassphraseProvider field value if set, zero value otherwise.
 func (o *AddFileBasedTrustManagerProviderRequest) GetTrustStorePinPassphraseProvider() string {
-	if o == nil || isNil(o.TrustStorePinPassphraseProvider) {
+	if o == nil || IsNil(o.TrustStorePinPassphraseProvider) {
 		var ret string
 		return ret
 	}
@@ -236,7 +239,7 @@ func (o *AddFileBasedTrustManagerProviderRequest) GetTrustStorePinPassphraseProv
 // GetTrustStorePinPassphraseProviderOk returns a tuple with the TrustStorePinPassphraseProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedTrustManagerProviderRequest) GetTrustStorePinPassphraseProviderOk() (*string, bool) {
-	if o == nil || isNil(o.TrustStorePinPassphraseProvider) {
+	if o == nil || IsNil(o.TrustStorePinPassphraseProvider) {
 		return nil, false
 	}
 	return o.TrustStorePinPassphraseProvider, true
@@ -244,7 +247,7 @@ func (o *AddFileBasedTrustManagerProviderRequest) GetTrustStorePinPassphraseProv
 
 // HasTrustStorePinPassphraseProvider returns a boolean if a field has been set.
 func (o *AddFileBasedTrustManagerProviderRequest) HasTrustStorePinPassphraseProvider() bool {
-	if o != nil && !isNil(o.TrustStorePinPassphraseProvider) {
+	if o != nil && !IsNil(o.TrustStorePinPassphraseProvider) {
 		return true
 	}
 
@@ -282,7 +285,7 @@ func (o *AddFileBasedTrustManagerProviderRequest) SetEnabled(v bool) {
 
 // GetIncludeJVMDefaultIssuers returns the IncludeJVMDefaultIssuers field value if set, zero value otherwise.
 func (o *AddFileBasedTrustManagerProviderRequest) GetIncludeJVMDefaultIssuers() bool {
-	if o == nil || isNil(o.IncludeJVMDefaultIssuers) {
+	if o == nil || IsNil(o.IncludeJVMDefaultIssuers) {
 		var ret bool
 		return ret
 	}
@@ -292,7 +295,7 @@ func (o *AddFileBasedTrustManagerProviderRequest) GetIncludeJVMDefaultIssuers() 
 // GetIncludeJVMDefaultIssuersOk returns a tuple with the IncludeJVMDefaultIssuers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedTrustManagerProviderRequest) GetIncludeJVMDefaultIssuersOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeJVMDefaultIssuers) {
+	if o == nil || IsNil(o.IncludeJVMDefaultIssuers) {
 		return nil, false
 	}
 	return o.IncludeJVMDefaultIssuers, true
@@ -300,7 +303,7 @@ func (o *AddFileBasedTrustManagerProviderRequest) GetIncludeJVMDefaultIssuersOk(
 
 // HasIncludeJVMDefaultIssuers returns a boolean if a field has been set.
 func (o *AddFileBasedTrustManagerProviderRequest) HasIncludeJVMDefaultIssuers() bool {
-	if o != nil && !isNil(o.IncludeJVMDefaultIssuers) {
+	if o != nil && !IsNil(o.IncludeJVMDefaultIssuers) {
 		return true
 	}
 
@@ -313,35 +316,35 @@ func (o *AddFileBasedTrustManagerProviderRequest) SetIncludeJVMDefaultIssuers(v 
 }
 
 func (o AddFileBasedTrustManagerProviderRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["providerName"] = o.ProviderName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["trustStoreFile"] = o.TrustStoreFile
-	}
-	if !isNil(o.TrustStoreType) {
-		toSerialize["trustStoreType"] = o.TrustStoreType
-	}
-	if !isNil(o.TrustStorePin) {
-		toSerialize["trustStorePin"] = o.TrustStorePin
-	}
-	if !isNil(o.TrustStorePinFile) {
-		toSerialize["trustStorePinFile"] = o.TrustStorePinFile
-	}
-	if !isNil(o.TrustStorePinPassphraseProvider) {
-		toSerialize["trustStorePinPassphraseProvider"] = o.TrustStorePinPassphraseProvider
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.IncludeJVMDefaultIssuers) {
-		toSerialize["includeJVMDefaultIssuers"] = o.IncludeJVMDefaultIssuers
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddFileBasedTrustManagerProviderRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["providerName"] = o.ProviderName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["trustStoreFile"] = o.TrustStoreFile
+	if !IsNil(o.TrustStoreType) {
+		toSerialize["trustStoreType"] = o.TrustStoreType
+	}
+	if !IsNil(o.TrustStorePin) {
+		toSerialize["trustStorePin"] = o.TrustStorePin
+	}
+	if !IsNil(o.TrustStorePinFile) {
+		toSerialize["trustStorePinFile"] = o.TrustStorePinFile
+	}
+	if !IsNil(o.TrustStorePinPassphraseProvider) {
+		toSerialize["trustStorePinPassphraseProvider"] = o.TrustStorePinPassphraseProvider
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.IncludeJVMDefaultIssuers) {
+		toSerialize["includeJVMDefaultIssuers"] = o.IncludeJVMDefaultIssuers
+	}
+	return toSerialize, nil
 }
 
 type NullableAddFileBasedTrustManagerProviderRequest struct {

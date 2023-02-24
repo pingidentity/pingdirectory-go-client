@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest{}
+
 // AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest struct for AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest
 type AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest struct {
 	// Name of the new Plugin
@@ -103,7 +106,7 @@ func (o *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) SetSc
 
 // GetPollingInterval returns the PollingInterval field value if set, zero value otherwise.
 func (o *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) GetPollingInterval() string {
-	if o == nil || isNil(o.PollingInterval) {
+	if o == nil || IsNil(o.PollingInterval) {
 		var ret string
 		return ret
 	}
@@ -113,7 +116,7 @@ func (o *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) GetPo
 // GetPollingIntervalOk returns a tuple with the PollingInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) GetPollingIntervalOk() (*string, bool) {
-	if o == nil || isNil(o.PollingInterval) {
+	if o == nil || IsNil(o.PollingInterval) {
 		return nil, false
 	}
 	return o.PollingInterval, true
@@ -121,7 +124,7 @@ func (o *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) GetPo
 
 // HasPollingInterval returns a boolean if a field has been set.
 func (o *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) HasPollingInterval() bool {
-	if o != nil && !isNil(o.PollingInterval) {
+	if o != nil && !IsNil(o.PollingInterval) {
 		return true
 	}
 
@@ -135,7 +138,7 @@ func (o *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) SetPo
 
 // GetPeerServerPriorityIndex returns the PeerServerPriorityIndex field value if set, zero value otherwise.
 func (o *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) GetPeerServerPriorityIndex() int32 {
-	if o == nil || isNil(o.PeerServerPriorityIndex) {
+	if o == nil || IsNil(o.PeerServerPriorityIndex) {
 		var ret int32
 		return ret
 	}
@@ -145,7 +148,7 @@ func (o *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) GetPe
 // GetPeerServerPriorityIndexOk returns a tuple with the PeerServerPriorityIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) GetPeerServerPriorityIndexOk() (*int32, bool) {
-	if o == nil || isNil(o.PeerServerPriorityIndex) {
+	if o == nil || IsNil(o.PeerServerPriorityIndex) {
 		return nil, false
 	}
 	return o.PeerServerPriorityIndex, true
@@ -153,7 +156,7 @@ func (o *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) GetPe
 
 // HasPeerServerPriorityIndex returns a boolean if a field has been set.
 func (o *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) HasPeerServerPriorityIndex() bool {
-	if o != nil && !isNil(o.PeerServerPriorityIndex) {
+	if o != nil && !IsNil(o.PeerServerPriorityIndex) {
 		return true
 	}
 
@@ -167,7 +170,7 @@ func (o *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) SetPe
 
 // GetBaseDN returns the BaseDN field value if set, zero value otherwise.
 func (o *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) GetBaseDN() string {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		var ret string
 		return ret
 	}
@@ -177,7 +180,7 @@ func (o *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) GetBa
 // GetBaseDNOk returns a tuple with the BaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) GetBaseDNOk() (*string, bool) {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		return nil, false
 	}
 	return o.BaseDN, true
@@ -185,7 +188,7 @@ func (o *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) GetBa
 
 // HasBaseDN returns a boolean if a field has been set.
 func (o *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) HasBaseDN() bool {
-	if o != nil && !isNil(o.BaseDN) {
+	if o != nil && !IsNil(o.BaseDN) {
 		return true
 	}
 
@@ -199,7 +202,7 @@ func (o *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) SetBa
 
 // GetMaxUpdatesPerSecond returns the MaxUpdatesPerSecond field value if set, zero value otherwise.
 func (o *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) GetMaxUpdatesPerSecond() int32 {
-	if o == nil || isNil(o.MaxUpdatesPerSecond) {
+	if o == nil || IsNil(o.MaxUpdatesPerSecond) {
 		var ret int32
 		return ret
 	}
@@ -209,7 +212,7 @@ func (o *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) GetMa
 // GetMaxUpdatesPerSecondOk returns a tuple with the MaxUpdatesPerSecond field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) GetMaxUpdatesPerSecondOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxUpdatesPerSecond) {
+	if o == nil || IsNil(o.MaxUpdatesPerSecond) {
 		return nil, false
 	}
 	return o.MaxUpdatesPerSecond, true
@@ -217,7 +220,7 @@ func (o *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) GetMa
 
 // HasMaxUpdatesPerSecond returns a boolean if a field has been set.
 func (o *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) HasMaxUpdatesPerSecond() bool {
-	if o != nil && !isNil(o.MaxUpdatesPerSecond) {
+	if o != nil && !IsNil(o.MaxUpdatesPerSecond) {
 		return true
 	}
 
@@ -231,7 +234,7 @@ func (o *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) SetMa
 
 // GetNumDeleteThreads returns the NumDeleteThreads field value if set, zero value otherwise.
 func (o *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) GetNumDeleteThreads() int32 {
-	if o == nil || isNil(o.NumDeleteThreads) {
+	if o == nil || IsNil(o.NumDeleteThreads) {
 		var ret int32
 		return ret
 	}
@@ -241,7 +244,7 @@ func (o *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) GetNu
 // GetNumDeleteThreadsOk returns a tuple with the NumDeleteThreads field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) GetNumDeleteThreadsOk() (*int32, bool) {
-	if o == nil || isNil(o.NumDeleteThreads) {
+	if o == nil || IsNil(o.NumDeleteThreads) {
 		return nil, false
 	}
 	return o.NumDeleteThreads, true
@@ -249,7 +252,7 @@ func (o *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) GetNu
 
 // HasNumDeleteThreads returns a boolean if a field has been set.
 func (o *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) HasNumDeleteThreads() bool {
-	if o != nil && !isNil(o.NumDeleteThreads) {
+	if o != nil && !IsNil(o.NumDeleteThreads) {
 		return true
 	}
 
@@ -286,32 +289,34 @@ func (o *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) SetEn
 }
 
 func (o AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["pluginName"] = o.PluginName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.PollingInterval) {
-		toSerialize["pollingInterval"] = o.PollingInterval
-	}
-	if !isNil(o.PeerServerPriorityIndex) {
-		toSerialize["peerServerPriorityIndex"] = o.PeerServerPriorityIndex
-	}
-	if !isNil(o.BaseDN) {
-		toSerialize["baseDN"] = o.BaseDN
-	}
-	if !isNil(o.MaxUpdatesPerSecond) {
-		toSerialize["maxUpdatesPerSecond"] = o.MaxUpdatesPerSecond
-	}
-	if !isNil(o.NumDeleteThreads) {
-		toSerialize["numDeleteThreads"] = o.NumDeleteThreads
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["pluginName"] = o.PluginName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.PollingInterval) {
+		toSerialize["pollingInterval"] = o.PollingInterval
+	}
+	if !IsNil(o.PeerServerPriorityIndex) {
+		toSerialize["peerServerPriorityIndex"] = o.PeerServerPriorityIndex
+	}
+	if !IsNil(o.BaseDN) {
+		toSerialize["baseDN"] = o.BaseDN
+	}
+	if !IsNil(o.MaxUpdatesPerSecond) {
+		toSerialize["maxUpdatesPerSecond"] = o.MaxUpdatesPerSecond
+	}
+	if !IsNil(o.NumDeleteThreads) {
+		toSerialize["numDeleteThreads"] = o.NumDeleteThreads
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest struct {

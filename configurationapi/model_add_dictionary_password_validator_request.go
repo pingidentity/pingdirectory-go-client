@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddDictionaryPasswordValidatorRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddDictionaryPasswordValidatorRequest{}
+
 // AddDictionaryPasswordValidatorRequest struct for AddDictionaryPasswordValidatorRequest
 type AddDictionaryPasswordValidatorRequest struct {
 	// Name of the new Password Validator
@@ -115,7 +118,7 @@ func (o *AddDictionaryPasswordValidatorRequest) SetSchemas(v []EnumdictionaryPas
 
 // GetDictionaryFile returns the DictionaryFile field value if set, zero value otherwise.
 func (o *AddDictionaryPasswordValidatorRequest) GetDictionaryFile() string {
-	if o == nil || isNil(o.DictionaryFile) {
+	if o == nil || IsNil(o.DictionaryFile) {
 		var ret string
 		return ret
 	}
@@ -125,7 +128,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetDictionaryFile() string {
 // GetDictionaryFileOk returns a tuple with the DictionaryFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDictionaryPasswordValidatorRequest) GetDictionaryFileOk() (*string, bool) {
-	if o == nil || isNil(o.DictionaryFile) {
+	if o == nil || IsNil(o.DictionaryFile) {
 		return nil, false
 	}
 	return o.DictionaryFile, true
@@ -133,7 +136,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetDictionaryFileOk() (*string, 
 
 // HasDictionaryFile returns a boolean if a field has been set.
 func (o *AddDictionaryPasswordValidatorRequest) HasDictionaryFile() bool {
-	if o != nil && !isNil(o.DictionaryFile) {
+	if o != nil && !IsNil(o.DictionaryFile) {
 		return true
 	}
 
@@ -147,7 +150,7 @@ func (o *AddDictionaryPasswordValidatorRequest) SetDictionaryFile(v string) {
 
 // GetCaseSensitiveValidation returns the CaseSensitiveValidation field value if set, zero value otherwise.
 func (o *AddDictionaryPasswordValidatorRequest) GetCaseSensitiveValidation() bool {
-	if o == nil || isNil(o.CaseSensitiveValidation) {
+	if o == nil || IsNil(o.CaseSensitiveValidation) {
 		var ret bool
 		return ret
 	}
@@ -157,7 +160,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetCaseSensitiveValidation() boo
 // GetCaseSensitiveValidationOk returns a tuple with the CaseSensitiveValidation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDictionaryPasswordValidatorRequest) GetCaseSensitiveValidationOk() (*bool, bool) {
-	if o == nil || isNil(o.CaseSensitiveValidation) {
+	if o == nil || IsNil(o.CaseSensitiveValidation) {
 		return nil, false
 	}
 	return o.CaseSensitiveValidation, true
@@ -165,7 +168,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetCaseSensitiveValidationOk() (
 
 // HasCaseSensitiveValidation returns a boolean if a field has been set.
 func (o *AddDictionaryPasswordValidatorRequest) HasCaseSensitiveValidation() bool {
-	if o != nil && !isNil(o.CaseSensitiveValidation) {
+	if o != nil && !IsNil(o.CaseSensitiveValidation) {
 		return true
 	}
 
@@ -179,7 +182,7 @@ func (o *AddDictionaryPasswordValidatorRequest) SetCaseSensitiveValidation(v boo
 
 // GetTestReversedPassword returns the TestReversedPassword field value if set, zero value otherwise.
 func (o *AddDictionaryPasswordValidatorRequest) GetTestReversedPassword() bool {
-	if o == nil || isNil(o.TestReversedPassword) {
+	if o == nil || IsNil(o.TestReversedPassword) {
 		var ret bool
 		return ret
 	}
@@ -189,7 +192,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetTestReversedPassword() bool {
 // GetTestReversedPasswordOk returns a tuple with the TestReversedPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDictionaryPasswordValidatorRequest) GetTestReversedPasswordOk() (*bool, bool) {
-	if o == nil || isNil(o.TestReversedPassword) {
+	if o == nil || IsNil(o.TestReversedPassword) {
 		return nil, false
 	}
 	return o.TestReversedPassword, true
@@ -197,7 +200,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetTestReversedPasswordOk() (*bo
 
 // HasTestReversedPassword returns a boolean if a field has been set.
 func (o *AddDictionaryPasswordValidatorRequest) HasTestReversedPassword() bool {
-	if o != nil && !isNil(o.TestReversedPassword) {
+	if o != nil && !IsNil(o.TestReversedPassword) {
 		return true
 	}
 
@@ -211,7 +214,7 @@ func (o *AddDictionaryPasswordValidatorRequest) SetTestReversedPassword(v bool) 
 
 // GetIgnoreLeadingNonAlphabeticCharacters returns the IgnoreLeadingNonAlphabeticCharacters field value if set, zero value otherwise.
 func (o *AddDictionaryPasswordValidatorRequest) GetIgnoreLeadingNonAlphabeticCharacters() bool {
-	if o == nil || isNil(o.IgnoreLeadingNonAlphabeticCharacters) {
+	if o == nil || IsNil(o.IgnoreLeadingNonAlphabeticCharacters) {
 		var ret bool
 		return ret
 	}
@@ -221,7 +224,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetIgnoreLeadingNonAlphabeticCha
 // GetIgnoreLeadingNonAlphabeticCharactersOk returns a tuple with the IgnoreLeadingNonAlphabeticCharacters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDictionaryPasswordValidatorRequest) GetIgnoreLeadingNonAlphabeticCharactersOk() (*bool, bool) {
-	if o == nil || isNil(o.IgnoreLeadingNonAlphabeticCharacters) {
+	if o == nil || IsNil(o.IgnoreLeadingNonAlphabeticCharacters) {
 		return nil, false
 	}
 	return o.IgnoreLeadingNonAlphabeticCharacters, true
@@ -229,7 +232,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetIgnoreLeadingNonAlphabeticCha
 
 // HasIgnoreLeadingNonAlphabeticCharacters returns a boolean if a field has been set.
 func (o *AddDictionaryPasswordValidatorRequest) HasIgnoreLeadingNonAlphabeticCharacters() bool {
-	if o != nil && !isNil(o.IgnoreLeadingNonAlphabeticCharacters) {
+	if o != nil && !IsNil(o.IgnoreLeadingNonAlphabeticCharacters) {
 		return true
 	}
 
@@ -243,7 +246,7 @@ func (o *AddDictionaryPasswordValidatorRequest) SetIgnoreLeadingNonAlphabeticCha
 
 // GetIgnoreTrailingNonAlphabeticCharacters returns the IgnoreTrailingNonAlphabeticCharacters field value if set, zero value otherwise.
 func (o *AddDictionaryPasswordValidatorRequest) GetIgnoreTrailingNonAlphabeticCharacters() bool {
-	if o == nil || isNil(o.IgnoreTrailingNonAlphabeticCharacters) {
+	if o == nil || IsNil(o.IgnoreTrailingNonAlphabeticCharacters) {
 		var ret bool
 		return ret
 	}
@@ -253,7 +256,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetIgnoreTrailingNonAlphabeticCh
 // GetIgnoreTrailingNonAlphabeticCharactersOk returns a tuple with the IgnoreTrailingNonAlphabeticCharacters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDictionaryPasswordValidatorRequest) GetIgnoreTrailingNonAlphabeticCharactersOk() (*bool, bool) {
-	if o == nil || isNil(o.IgnoreTrailingNonAlphabeticCharacters) {
+	if o == nil || IsNil(o.IgnoreTrailingNonAlphabeticCharacters) {
 		return nil, false
 	}
 	return o.IgnoreTrailingNonAlphabeticCharacters, true
@@ -261,7 +264,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetIgnoreTrailingNonAlphabeticCh
 
 // HasIgnoreTrailingNonAlphabeticCharacters returns a boolean if a field has been set.
 func (o *AddDictionaryPasswordValidatorRequest) HasIgnoreTrailingNonAlphabeticCharacters() bool {
-	if o != nil && !isNil(o.IgnoreTrailingNonAlphabeticCharacters) {
+	if o != nil && !IsNil(o.IgnoreTrailingNonAlphabeticCharacters) {
 		return true
 	}
 
@@ -275,7 +278,7 @@ func (o *AddDictionaryPasswordValidatorRequest) SetIgnoreTrailingNonAlphabeticCh
 
 // GetStripDiacriticalMarks returns the StripDiacriticalMarks field value if set, zero value otherwise.
 func (o *AddDictionaryPasswordValidatorRequest) GetStripDiacriticalMarks() bool {
-	if o == nil || isNil(o.StripDiacriticalMarks) {
+	if o == nil || IsNil(o.StripDiacriticalMarks) {
 		var ret bool
 		return ret
 	}
@@ -285,7 +288,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetStripDiacriticalMarks() bool 
 // GetStripDiacriticalMarksOk returns a tuple with the StripDiacriticalMarks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDictionaryPasswordValidatorRequest) GetStripDiacriticalMarksOk() (*bool, bool) {
-	if o == nil || isNil(o.StripDiacriticalMarks) {
+	if o == nil || IsNil(o.StripDiacriticalMarks) {
 		return nil, false
 	}
 	return o.StripDiacriticalMarks, true
@@ -293,7 +296,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetStripDiacriticalMarksOk() (*b
 
 // HasStripDiacriticalMarks returns a boolean if a field has been set.
 func (o *AddDictionaryPasswordValidatorRequest) HasStripDiacriticalMarks() bool {
-	if o != nil && !isNil(o.StripDiacriticalMarks) {
+	if o != nil && !IsNil(o.StripDiacriticalMarks) {
 		return true
 	}
 
@@ -307,7 +310,7 @@ func (o *AddDictionaryPasswordValidatorRequest) SetStripDiacriticalMarks(v bool)
 
 // GetAlternativePasswordCharacterMapping returns the AlternativePasswordCharacterMapping field value if set, zero value otherwise.
 func (o *AddDictionaryPasswordValidatorRequest) GetAlternativePasswordCharacterMapping() []string {
-	if o == nil || isNil(o.AlternativePasswordCharacterMapping) {
+	if o == nil || IsNil(o.AlternativePasswordCharacterMapping) {
 		var ret []string
 		return ret
 	}
@@ -317,7 +320,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetAlternativePasswordCharacterM
 // GetAlternativePasswordCharacterMappingOk returns a tuple with the AlternativePasswordCharacterMapping field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDictionaryPasswordValidatorRequest) GetAlternativePasswordCharacterMappingOk() ([]string, bool) {
-	if o == nil || isNil(o.AlternativePasswordCharacterMapping) {
+	if o == nil || IsNil(o.AlternativePasswordCharacterMapping) {
 		return nil, false
 	}
 	return o.AlternativePasswordCharacterMapping, true
@@ -325,7 +328,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetAlternativePasswordCharacterM
 
 // HasAlternativePasswordCharacterMapping returns a boolean if a field has been set.
 func (o *AddDictionaryPasswordValidatorRequest) HasAlternativePasswordCharacterMapping() bool {
-	if o != nil && !isNil(o.AlternativePasswordCharacterMapping) {
+	if o != nil && !IsNil(o.AlternativePasswordCharacterMapping) {
 		return true
 	}
 
@@ -339,7 +342,7 @@ func (o *AddDictionaryPasswordValidatorRequest) SetAlternativePasswordCharacterM
 
 // GetMaximumAllowedPercentOfPassword returns the MaximumAllowedPercentOfPassword field value if set, zero value otherwise.
 func (o *AddDictionaryPasswordValidatorRequest) GetMaximumAllowedPercentOfPassword() int32 {
-	if o == nil || isNil(o.MaximumAllowedPercentOfPassword) {
+	if o == nil || IsNil(o.MaximumAllowedPercentOfPassword) {
 		var ret int32
 		return ret
 	}
@@ -349,7 +352,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetMaximumAllowedPercentOfPasswo
 // GetMaximumAllowedPercentOfPasswordOk returns a tuple with the MaximumAllowedPercentOfPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDictionaryPasswordValidatorRequest) GetMaximumAllowedPercentOfPasswordOk() (*int32, bool) {
-	if o == nil || isNil(o.MaximumAllowedPercentOfPassword) {
+	if o == nil || IsNil(o.MaximumAllowedPercentOfPassword) {
 		return nil, false
 	}
 	return o.MaximumAllowedPercentOfPassword, true
@@ -357,7 +360,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetMaximumAllowedPercentOfPasswo
 
 // HasMaximumAllowedPercentOfPassword returns a boolean if a field has been set.
 func (o *AddDictionaryPasswordValidatorRequest) HasMaximumAllowedPercentOfPassword() bool {
-	if o != nil && !isNil(o.MaximumAllowedPercentOfPassword) {
+	if o != nil && !IsNil(o.MaximumAllowedPercentOfPassword) {
 		return true
 	}
 
@@ -371,7 +374,7 @@ func (o *AddDictionaryPasswordValidatorRequest) SetMaximumAllowedPercentOfPasswo
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddDictionaryPasswordValidatorRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -381,7 +384,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDictionaryPasswordValidatorRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -389,7 +392,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetDescriptionOk() (*string, boo
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddDictionaryPasswordValidatorRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -427,7 +430,7 @@ func (o *AddDictionaryPasswordValidatorRequest) SetEnabled(v bool) {
 
 // GetValidatorRequirementDescription returns the ValidatorRequirementDescription field value if set, zero value otherwise.
 func (o *AddDictionaryPasswordValidatorRequest) GetValidatorRequirementDescription() string {
-	if o == nil || isNil(o.ValidatorRequirementDescription) {
+	if o == nil || IsNil(o.ValidatorRequirementDescription) {
 		var ret string
 		return ret
 	}
@@ -437,7 +440,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetValidatorRequirementDescripti
 // GetValidatorRequirementDescriptionOk returns a tuple with the ValidatorRequirementDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDictionaryPasswordValidatorRequest) GetValidatorRequirementDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.ValidatorRequirementDescription) {
+	if o == nil || IsNil(o.ValidatorRequirementDescription) {
 		return nil, false
 	}
 	return o.ValidatorRequirementDescription, true
@@ -445,7 +448,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetValidatorRequirementDescripti
 
 // HasValidatorRequirementDescription returns a boolean if a field has been set.
 func (o *AddDictionaryPasswordValidatorRequest) HasValidatorRequirementDescription() bool {
-	if o != nil && !isNil(o.ValidatorRequirementDescription) {
+	if o != nil && !IsNil(o.ValidatorRequirementDescription) {
 		return true
 	}
 
@@ -459,7 +462,7 @@ func (o *AddDictionaryPasswordValidatorRequest) SetValidatorRequirementDescripti
 
 // GetValidatorFailureMessage returns the ValidatorFailureMessage field value if set, zero value otherwise.
 func (o *AddDictionaryPasswordValidatorRequest) GetValidatorFailureMessage() string {
-	if o == nil || isNil(o.ValidatorFailureMessage) {
+	if o == nil || IsNil(o.ValidatorFailureMessage) {
 		var ret string
 		return ret
 	}
@@ -469,7 +472,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetValidatorFailureMessage() str
 // GetValidatorFailureMessageOk returns a tuple with the ValidatorFailureMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDictionaryPasswordValidatorRequest) GetValidatorFailureMessageOk() (*string, bool) {
-	if o == nil || isNil(o.ValidatorFailureMessage) {
+	if o == nil || IsNil(o.ValidatorFailureMessage) {
 		return nil, false
 	}
 	return o.ValidatorFailureMessage, true
@@ -477,7 +480,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetValidatorFailureMessageOk() (
 
 // HasValidatorFailureMessage returns a boolean if a field has been set.
 func (o *AddDictionaryPasswordValidatorRequest) HasValidatorFailureMessage() bool {
-	if o != nil && !isNil(o.ValidatorFailureMessage) {
+	if o != nil && !IsNil(o.ValidatorFailureMessage) {
 		return true
 	}
 
@@ -490,50 +493,52 @@ func (o *AddDictionaryPasswordValidatorRequest) SetValidatorFailureMessage(v str
 }
 
 func (o AddDictionaryPasswordValidatorRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["validatorName"] = o.ValidatorName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.DictionaryFile) {
-		toSerialize["dictionaryFile"] = o.DictionaryFile
-	}
-	if !isNil(o.CaseSensitiveValidation) {
-		toSerialize["caseSensitiveValidation"] = o.CaseSensitiveValidation
-	}
-	if !isNil(o.TestReversedPassword) {
-		toSerialize["testReversedPassword"] = o.TestReversedPassword
-	}
-	if !isNil(o.IgnoreLeadingNonAlphabeticCharacters) {
-		toSerialize["ignoreLeadingNonAlphabeticCharacters"] = o.IgnoreLeadingNonAlphabeticCharacters
-	}
-	if !isNil(o.IgnoreTrailingNonAlphabeticCharacters) {
-		toSerialize["ignoreTrailingNonAlphabeticCharacters"] = o.IgnoreTrailingNonAlphabeticCharacters
-	}
-	if !isNil(o.StripDiacriticalMarks) {
-		toSerialize["stripDiacriticalMarks"] = o.StripDiacriticalMarks
-	}
-	if !isNil(o.AlternativePasswordCharacterMapping) {
-		toSerialize["alternativePasswordCharacterMapping"] = o.AlternativePasswordCharacterMapping
-	}
-	if !isNil(o.MaximumAllowedPercentOfPassword) {
-		toSerialize["maximumAllowedPercentOfPassword"] = o.MaximumAllowedPercentOfPassword
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.ValidatorRequirementDescription) {
-		toSerialize["validatorRequirementDescription"] = o.ValidatorRequirementDescription
-	}
-	if !isNil(o.ValidatorFailureMessage) {
-		toSerialize["validatorFailureMessage"] = o.ValidatorFailureMessage
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddDictionaryPasswordValidatorRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["validatorName"] = o.ValidatorName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.DictionaryFile) {
+		toSerialize["dictionaryFile"] = o.DictionaryFile
+	}
+	if !IsNil(o.CaseSensitiveValidation) {
+		toSerialize["caseSensitiveValidation"] = o.CaseSensitiveValidation
+	}
+	if !IsNil(o.TestReversedPassword) {
+		toSerialize["testReversedPassword"] = o.TestReversedPassword
+	}
+	if !IsNil(o.IgnoreLeadingNonAlphabeticCharacters) {
+		toSerialize["ignoreLeadingNonAlphabeticCharacters"] = o.IgnoreLeadingNonAlphabeticCharacters
+	}
+	if !IsNil(o.IgnoreTrailingNonAlphabeticCharacters) {
+		toSerialize["ignoreTrailingNonAlphabeticCharacters"] = o.IgnoreTrailingNonAlphabeticCharacters
+	}
+	if !IsNil(o.StripDiacriticalMarks) {
+		toSerialize["stripDiacriticalMarks"] = o.StripDiacriticalMarks
+	}
+	if !IsNil(o.AlternativePasswordCharacterMapping) {
+		toSerialize["alternativePasswordCharacterMapping"] = o.AlternativePasswordCharacterMapping
+	}
+	if !IsNil(o.MaximumAllowedPercentOfPassword) {
+		toSerialize["maximumAllowedPercentOfPassword"] = o.MaximumAllowedPercentOfPassword
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.ValidatorRequirementDescription) {
+		toSerialize["validatorRequirementDescription"] = o.ValidatorRequirementDescription
+	}
+	if !IsNil(o.ValidatorFailureMessage) {
+		toSerialize["validatorFailureMessage"] = o.ValidatorFailureMessage
+	}
+	return toSerialize, nil
 }
 
 type NullableAddDictionaryPasswordValidatorRequest struct {

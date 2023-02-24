@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddErrorLogAlertHandlerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddErrorLogAlertHandlerRequest{}
+
 // AddErrorLogAlertHandlerRequest struct for AddErrorLogAlertHandlerRequest
 type AddErrorLogAlertHandlerRequest struct {
 	// Name of the new Alert Handler
@@ -100,7 +103,7 @@ func (o *AddErrorLogAlertHandlerRequest) SetSchemas(v []EnumerrorLogAlertHandler
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddErrorLogAlertHandlerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -110,7 +113,7 @@ func (o *AddErrorLogAlertHandlerRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddErrorLogAlertHandlerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -118,7 +121,7 @@ func (o *AddErrorLogAlertHandlerRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddErrorLogAlertHandlerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -156,7 +159,7 @@ func (o *AddErrorLogAlertHandlerRequest) SetEnabled(v bool) {
 
 // GetAsynchronous returns the Asynchronous field value if set, zero value otherwise.
 func (o *AddErrorLogAlertHandlerRequest) GetAsynchronous() bool {
-	if o == nil || isNil(o.Asynchronous) {
+	if o == nil || IsNil(o.Asynchronous) {
 		var ret bool
 		return ret
 	}
@@ -166,7 +169,7 @@ func (o *AddErrorLogAlertHandlerRequest) GetAsynchronous() bool {
 // GetAsynchronousOk returns a tuple with the Asynchronous field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddErrorLogAlertHandlerRequest) GetAsynchronousOk() (*bool, bool) {
-	if o == nil || isNil(o.Asynchronous) {
+	if o == nil || IsNil(o.Asynchronous) {
 		return nil, false
 	}
 	return o.Asynchronous, true
@@ -174,7 +177,7 @@ func (o *AddErrorLogAlertHandlerRequest) GetAsynchronousOk() (*bool, bool) {
 
 // HasAsynchronous returns a boolean if a field has been set.
 func (o *AddErrorLogAlertHandlerRequest) HasAsynchronous() bool {
-	if o != nil && !isNil(o.Asynchronous) {
+	if o != nil && !IsNil(o.Asynchronous) {
 		return true
 	}
 
@@ -188,7 +191,7 @@ func (o *AddErrorLogAlertHandlerRequest) SetAsynchronous(v bool) {
 
 // GetEnabledAlertSeverity returns the EnabledAlertSeverity field value if set, zero value otherwise.
 func (o *AddErrorLogAlertHandlerRequest) GetEnabledAlertSeverity() []EnumalertHandlerEnabledAlertSeverityProp {
-	if o == nil || isNil(o.EnabledAlertSeverity) {
+	if o == nil || IsNil(o.EnabledAlertSeverity) {
 		var ret []EnumalertHandlerEnabledAlertSeverityProp
 		return ret
 	}
@@ -198,7 +201,7 @@ func (o *AddErrorLogAlertHandlerRequest) GetEnabledAlertSeverity() []EnumalertHa
 // GetEnabledAlertSeverityOk returns a tuple with the EnabledAlertSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddErrorLogAlertHandlerRequest) GetEnabledAlertSeverityOk() ([]EnumalertHandlerEnabledAlertSeverityProp, bool) {
-	if o == nil || isNil(o.EnabledAlertSeverity) {
+	if o == nil || IsNil(o.EnabledAlertSeverity) {
 		return nil, false
 	}
 	return o.EnabledAlertSeverity, true
@@ -206,7 +209,7 @@ func (o *AddErrorLogAlertHandlerRequest) GetEnabledAlertSeverityOk() ([]Enumaler
 
 // HasEnabledAlertSeverity returns a boolean if a field has been set.
 func (o *AddErrorLogAlertHandlerRequest) HasEnabledAlertSeverity() bool {
-	if o != nil && !isNil(o.EnabledAlertSeverity) {
+	if o != nil && !IsNil(o.EnabledAlertSeverity) {
 		return true
 	}
 
@@ -220,7 +223,7 @@ func (o *AddErrorLogAlertHandlerRequest) SetEnabledAlertSeverity(v []EnumalertHa
 
 // GetEnabledAlertType returns the EnabledAlertType field value if set, zero value otherwise.
 func (o *AddErrorLogAlertHandlerRequest) GetEnabledAlertType() []EnumalertHandlerEnabledAlertTypeProp {
-	if o == nil || isNil(o.EnabledAlertType) {
+	if o == nil || IsNil(o.EnabledAlertType) {
 		var ret []EnumalertHandlerEnabledAlertTypeProp
 		return ret
 	}
@@ -230,7 +233,7 @@ func (o *AddErrorLogAlertHandlerRequest) GetEnabledAlertType() []EnumalertHandle
 // GetEnabledAlertTypeOk returns a tuple with the EnabledAlertType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddErrorLogAlertHandlerRequest) GetEnabledAlertTypeOk() ([]EnumalertHandlerEnabledAlertTypeProp, bool) {
-	if o == nil || isNil(o.EnabledAlertType) {
+	if o == nil || IsNil(o.EnabledAlertType) {
 		return nil, false
 	}
 	return o.EnabledAlertType, true
@@ -238,7 +241,7 @@ func (o *AddErrorLogAlertHandlerRequest) GetEnabledAlertTypeOk() ([]EnumalertHan
 
 // HasEnabledAlertType returns a boolean if a field has been set.
 func (o *AddErrorLogAlertHandlerRequest) HasEnabledAlertType() bool {
-	if o != nil && !isNil(o.EnabledAlertType) {
+	if o != nil && !IsNil(o.EnabledAlertType) {
 		return true
 	}
 
@@ -252,7 +255,7 @@ func (o *AddErrorLogAlertHandlerRequest) SetEnabledAlertType(v []EnumalertHandle
 
 // GetDisabledAlertType returns the DisabledAlertType field value if set, zero value otherwise.
 func (o *AddErrorLogAlertHandlerRequest) GetDisabledAlertType() []EnumalertHandlerDisabledAlertTypeProp {
-	if o == nil || isNil(o.DisabledAlertType) {
+	if o == nil || IsNil(o.DisabledAlertType) {
 		var ret []EnumalertHandlerDisabledAlertTypeProp
 		return ret
 	}
@@ -262,7 +265,7 @@ func (o *AddErrorLogAlertHandlerRequest) GetDisabledAlertType() []EnumalertHandl
 // GetDisabledAlertTypeOk returns a tuple with the DisabledAlertType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddErrorLogAlertHandlerRequest) GetDisabledAlertTypeOk() ([]EnumalertHandlerDisabledAlertTypeProp, bool) {
-	if o == nil || isNil(o.DisabledAlertType) {
+	if o == nil || IsNil(o.DisabledAlertType) {
 		return nil, false
 	}
 	return o.DisabledAlertType, true
@@ -270,7 +273,7 @@ func (o *AddErrorLogAlertHandlerRequest) GetDisabledAlertTypeOk() ([]EnumalertHa
 
 // HasDisabledAlertType returns a boolean if a field has been set.
 func (o *AddErrorLogAlertHandlerRequest) HasDisabledAlertType() bool {
-	if o != nil && !isNil(o.DisabledAlertType) {
+	if o != nil && !IsNil(o.DisabledAlertType) {
 		return true
 	}
 
@@ -283,32 +286,34 @@ func (o *AddErrorLogAlertHandlerRequest) SetDisabledAlertType(v []EnumalertHandl
 }
 
 func (o AddErrorLogAlertHandlerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["handlerName"] = o.HandlerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.Asynchronous) {
-		toSerialize["asynchronous"] = o.Asynchronous
-	}
-	if !isNil(o.EnabledAlertSeverity) {
-		toSerialize["enabledAlertSeverity"] = o.EnabledAlertSeverity
-	}
-	if !isNil(o.EnabledAlertType) {
-		toSerialize["enabledAlertType"] = o.EnabledAlertType
-	}
-	if !isNil(o.DisabledAlertType) {
-		toSerialize["disabledAlertType"] = o.DisabledAlertType
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddErrorLogAlertHandlerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["handlerName"] = o.HandlerName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.Asynchronous) {
+		toSerialize["asynchronous"] = o.Asynchronous
+	}
+	if !IsNil(o.EnabledAlertSeverity) {
+		toSerialize["enabledAlertSeverity"] = o.EnabledAlertSeverity
+	}
+	if !IsNil(o.EnabledAlertType) {
+		toSerialize["enabledAlertType"] = o.EnabledAlertType
+	}
+	if !IsNil(o.DisabledAlertType) {
+		toSerialize["disabledAlertType"] = o.DisabledAlertType
+	}
+	return toSerialize, nil
 }
 
 type NullableAddErrorLogAlertHandlerRequest struct {

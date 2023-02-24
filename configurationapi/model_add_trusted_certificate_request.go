@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddTrustedCertificateRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddTrustedCertificateRequest{}
+
 // AddTrustedCertificateRequest struct for AddTrustedCertificateRequest
 type AddTrustedCertificateRequest struct {
 	// Name of the new Trusted Certificate
@@ -68,7 +71,7 @@ func (o *AddTrustedCertificateRequest) SetCertificateName(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *AddTrustedCertificateRequest) GetSchemas() []EnumtrustedCertificateSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumtrustedCertificateSchemaUrn
 		return ret
 	}
@@ -78,7 +81,7 @@ func (o *AddTrustedCertificateRequest) GetSchemas() []EnumtrustedCertificateSche
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddTrustedCertificateRequest) GetSchemasOk() ([]EnumtrustedCertificateSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -86,7 +89,7 @@ func (o *AddTrustedCertificateRequest) GetSchemasOk() ([]EnumtrustedCertificateS
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *AddTrustedCertificateRequest) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -123,17 +126,21 @@ func (o *AddTrustedCertificateRequest) SetCertificate(v string) {
 }
 
 func (o AddTrustedCertificateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["certificateName"] = o.CertificateName
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["certificate"] = o.Certificate
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddTrustedCertificateRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["certificateName"] = o.CertificateName
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	toSerialize["certificate"] = o.Certificate
+	return toSerialize, nil
 }
 
 type NullableAddTrustedCertificateRequest struct {

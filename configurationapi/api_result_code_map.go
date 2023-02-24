@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -105,9 +105,9 @@ func (a *ResultCodeMapApiService) AddResultCodeMapExecute(r ApiAddResultCodeMapR
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -171,7 +171,7 @@ func (a *ResultCodeMapApiService) DeleteResultCodeMapExecute(r ApiDeleteResultCo
 	}
 
 	localVarPath := localBasePath + "/result-code-maps/{result-code-map-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"result-code-map-name"+"}", url.PathEscape(parameterToString(r.resultCodeMapName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"result-code-map-name"+"}", url.PathEscape(parameterValueToString(r.resultCodeMapName, "resultCodeMapName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -204,9 +204,9 @@ func (a *ResultCodeMapApiService) DeleteResultCodeMapExecute(r ApiDeleteResultCo
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -264,7 +264,7 @@ func (a *ResultCodeMapApiService) GetResultCodeMapExecute(r ApiGetResultCodeMapR
 	}
 
 	localVarPath := localBasePath + "/result-code-maps/{result-code-map-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"result-code-map-name"+"}", url.PathEscape(parameterToString(r.resultCodeMapName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"result-code-map-name"+"}", url.PathEscape(parameterValueToString(r.resultCodeMapName, "resultCodeMapName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -297,9 +297,9 @@ func (a *ResultCodeMapApiService) GetResultCodeMapExecute(r ApiGetResultCodeMapR
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -373,7 +373,7 @@ func (a *ResultCodeMapApiService) UpdateResultCodeMapExecute(r ApiUpdateResultCo
 	}
 
 	localVarPath := localBasePath + "/result-code-maps/{result-code-map-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"result-code-map-name"+"}", url.PathEscape(parameterToString(r.resultCodeMapName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"result-code-map-name"+"}", url.PathEscape(parameterValueToString(r.resultCodeMapName, "resultCodeMapName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -411,9 +411,9 @@ func (a *ResultCodeMapApiService) UpdateResultCodeMapExecute(r ApiUpdateResultCo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

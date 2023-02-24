@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddLocationRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddLocationRequest{}
+
 // AddLocationRequest struct for AddLocationRequest
 type AddLocationRequest struct {
 	// Name of the new Location
@@ -67,7 +70,7 @@ func (o *AddLocationRequest) SetLocationName(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *AddLocationRequest) GetSchemas() []EnumlocationSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumlocationSchemaUrn
 		return ret
 	}
@@ -77,7 +80,7 @@ func (o *AddLocationRequest) GetSchemas() []EnumlocationSchemaUrn {
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLocationRequest) GetSchemasOk() ([]EnumlocationSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -85,7 +88,7 @@ func (o *AddLocationRequest) GetSchemasOk() ([]EnumlocationSchemaUrn, bool) {
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *AddLocationRequest) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -99,7 +102,7 @@ func (o *AddLocationRequest) SetSchemas(v []EnumlocationSchemaUrn) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddLocationRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -109,7 +112,7 @@ func (o *AddLocationRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLocationRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -117,7 +120,7 @@ func (o *AddLocationRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddLocationRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -130,17 +133,23 @@ func (o *AddLocationRequest) SetDescription(v string) {
 }
 
 func (o AddLocationRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["locationName"] = o.LocationName
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddLocationRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["locationName"] = o.LocationName
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAddLocationRequest struct {

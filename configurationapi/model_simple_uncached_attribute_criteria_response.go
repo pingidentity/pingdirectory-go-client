@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the SimpleUncachedAttributeCriteriaResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SimpleUncachedAttributeCriteriaResponse{}
+
 // SimpleUncachedAttributeCriteriaResponse struct for SimpleUncachedAttributeCriteriaResponse
 type SimpleUncachedAttributeCriteriaResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -56,7 +59,7 @@ func NewSimpleUncachedAttributeCriteriaResponseWithDefaults() *SimpleUncachedAtt
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *SimpleUncachedAttributeCriteriaResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -66,7 +69,7 @@ func (o *SimpleUncachedAttributeCriteriaResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleUncachedAttributeCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -74,7 +77,7 @@ func (o *SimpleUncachedAttributeCriteriaResponse) GetMetaOk() (*MetaMeta, bool) 
 
 // HasMeta returns a boolean if a field has been set.
 func (o *SimpleUncachedAttributeCriteriaResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -88,7 +91,7 @@ func (o *SimpleUncachedAttributeCriteriaResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *SimpleUncachedAttributeCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -98,7 +101,7 @@ func (o *SimpleUncachedAttributeCriteriaResponse) GetUrnpingidentityschemasconfi
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleUncachedAttributeCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -106,7 +109,7 @@ func (o *SimpleUncachedAttributeCriteriaResponse) GetUrnpingidentityschemasconfi
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *SimpleUncachedAttributeCriteriaResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -192,7 +195,7 @@ func (o *SimpleUncachedAttributeCriteriaResponse) SetAttributeType(v []string) {
 
 // GetMinValueCount returns the MinValueCount field value if set, zero value otherwise.
 func (o *SimpleUncachedAttributeCriteriaResponse) GetMinValueCount() int32 {
-	if o == nil || isNil(o.MinValueCount) {
+	if o == nil || IsNil(o.MinValueCount) {
 		var ret int32
 		return ret
 	}
@@ -202,7 +205,7 @@ func (o *SimpleUncachedAttributeCriteriaResponse) GetMinValueCount() int32 {
 // GetMinValueCountOk returns a tuple with the MinValueCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleUncachedAttributeCriteriaResponse) GetMinValueCountOk() (*int32, bool) {
-	if o == nil || isNil(o.MinValueCount) {
+	if o == nil || IsNil(o.MinValueCount) {
 		return nil, false
 	}
 	return o.MinValueCount, true
@@ -210,7 +213,7 @@ func (o *SimpleUncachedAttributeCriteriaResponse) GetMinValueCountOk() (*int32, 
 
 // HasMinValueCount returns a boolean if a field has been set.
 func (o *SimpleUncachedAttributeCriteriaResponse) HasMinValueCount() bool {
-	if o != nil && !isNil(o.MinValueCount) {
+	if o != nil && !IsNil(o.MinValueCount) {
 		return true
 	}
 
@@ -224,7 +227,7 @@ func (o *SimpleUncachedAttributeCriteriaResponse) SetMinValueCount(v int32) {
 
 // GetMinTotalValueSize returns the MinTotalValueSize field value if set, zero value otherwise.
 func (o *SimpleUncachedAttributeCriteriaResponse) GetMinTotalValueSize() string {
-	if o == nil || isNil(o.MinTotalValueSize) {
+	if o == nil || IsNil(o.MinTotalValueSize) {
 		var ret string
 		return ret
 	}
@@ -234,7 +237,7 @@ func (o *SimpleUncachedAttributeCriteriaResponse) GetMinTotalValueSize() string 
 // GetMinTotalValueSizeOk returns a tuple with the MinTotalValueSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleUncachedAttributeCriteriaResponse) GetMinTotalValueSizeOk() (*string, bool) {
-	if o == nil || isNil(o.MinTotalValueSize) {
+	if o == nil || IsNil(o.MinTotalValueSize) {
 		return nil, false
 	}
 	return o.MinTotalValueSize, true
@@ -242,7 +245,7 @@ func (o *SimpleUncachedAttributeCriteriaResponse) GetMinTotalValueSizeOk() (*str
 
 // HasMinTotalValueSize returns a boolean if a field has been set.
 func (o *SimpleUncachedAttributeCriteriaResponse) HasMinTotalValueSize() bool {
-	if o != nil && !isNil(o.MinTotalValueSize) {
+	if o != nil && !IsNil(o.MinTotalValueSize) {
 		return true
 	}
 
@@ -256,7 +259,7 @@ func (o *SimpleUncachedAttributeCriteriaResponse) SetMinTotalValueSize(v string)
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *SimpleUncachedAttributeCriteriaResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -266,7 +269,7 @@ func (o *SimpleUncachedAttributeCriteriaResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleUncachedAttributeCriteriaResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -274,7 +277,7 @@ func (o *SimpleUncachedAttributeCriteriaResponse) GetDescriptionOk() (*string, b
 
 // HasDescription returns a boolean if a field has been set.
 func (o *SimpleUncachedAttributeCriteriaResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -311,35 +314,35 @@ func (o *SimpleUncachedAttributeCriteriaResponse) SetEnabled(v bool) {
 }
 
 func (o SimpleUncachedAttributeCriteriaResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["attributeType"] = o.AttributeType
-	}
-	if !isNil(o.MinValueCount) {
-		toSerialize["minValueCount"] = o.MinValueCount
-	}
-	if !isNil(o.MinTotalValueSize) {
-		toSerialize["minTotalValueSize"] = o.MinTotalValueSize
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o SimpleUncachedAttributeCriteriaResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["attributeType"] = o.AttributeType
+	if !IsNil(o.MinValueCount) {
+		toSerialize["minValueCount"] = o.MinValueCount
+	}
+	if !IsNil(o.MinTotalValueSize) {
+		toSerialize["minTotalValueSize"] = o.MinTotalValueSize
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableSimpleUncachedAttributeCriteriaResponse struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ReplicationDomainResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ReplicationDomainResponse{}
+
 // ReplicationDomainResponse struct for ReplicationDomainResponse
 type ReplicationDomainResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -58,7 +61,7 @@ func NewReplicationDomainResponseWithDefaults() *ReplicationDomainResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *ReplicationDomainResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -68,7 +71,7 @@ func (o *ReplicationDomainResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReplicationDomainResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -76,7 +79,7 @@ func (o *ReplicationDomainResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *ReplicationDomainResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -90,7 +93,7 @@ func (o *ReplicationDomainResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *ReplicationDomainResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -100,7 +103,7 @@ func (o *ReplicationDomainResponse) GetUrnpingidentityschemasconfigurationmessag
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReplicationDomainResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -108,7 +111,7 @@ func (o *ReplicationDomainResponse) GetUrnpingidentityschemasconfigurationmessag
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *ReplicationDomainResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -122,7 +125,7 @@ func (o *ReplicationDomainResponse) SetUrnpingidentityschemasconfigurationmessag
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *ReplicationDomainResponse) GetSchemas() []EnumreplicationDomainSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumreplicationDomainSchemaUrn
 		return ret
 	}
@@ -132,7 +135,7 @@ func (o *ReplicationDomainResponse) GetSchemas() []EnumreplicationDomainSchemaUr
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReplicationDomainResponse) GetSchemasOk() ([]EnumreplicationDomainSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -140,7 +143,7 @@ func (o *ReplicationDomainResponse) GetSchemasOk() ([]EnumreplicationDomainSchem
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *ReplicationDomainResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -202,7 +205,7 @@ func (o *ReplicationDomainResponse) SetBaseDN(v string) {
 
 // GetWindowSize returns the WindowSize field value if set, zero value otherwise.
 func (o *ReplicationDomainResponse) GetWindowSize() int32 {
-	if o == nil || isNil(o.WindowSize) {
+	if o == nil || IsNil(o.WindowSize) {
 		var ret int32
 		return ret
 	}
@@ -212,7 +215,7 @@ func (o *ReplicationDomainResponse) GetWindowSize() int32 {
 // GetWindowSizeOk returns a tuple with the WindowSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReplicationDomainResponse) GetWindowSizeOk() (*int32, bool) {
-	if o == nil || isNil(o.WindowSize) {
+	if o == nil || IsNil(o.WindowSize) {
 		return nil, false
 	}
 	return o.WindowSize, true
@@ -220,7 +223,7 @@ func (o *ReplicationDomainResponse) GetWindowSizeOk() (*int32, bool) {
 
 // HasWindowSize returns a boolean if a field has been set.
 func (o *ReplicationDomainResponse) HasWindowSize() bool {
-	if o != nil && !isNil(o.WindowSize) {
+	if o != nil && !IsNil(o.WindowSize) {
 		return true
 	}
 
@@ -234,7 +237,7 @@ func (o *ReplicationDomainResponse) SetWindowSize(v int32) {
 
 // GetHeartbeatInterval returns the HeartbeatInterval field value if set, zero value otherwise.
 func (o *ReplicationDomainResponse) GetHeartbeatInterval() string {
-	if o == nil || isNil(o.HeartbeatInterval) {
+	if o == nil || IsNil(o.HeartbeatInterval) {
 		var ret string
 		return ret
 	}
@@ -244,7 +247,7 @@ func (o *ReplicationDomainResponse) GetHeartbeatInterval() string {
 // GetHeartbeatIntervalOk returns a tuple with the HeartbeatInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReplicationDomainResponse) GetHeartbeatIntervalOk() (*string, bool) {
-	if o == nil || isNil(o.HeartbeatInterval) {
+	if o == nil || IsNil(o.HeartbeatInterval) {
 		return nil, false
 	}
 	return o.HeartbeatInterval, true
@@ -252,7 +255,7 @@ func (o *ReplicationDomainResponse) GetHeartbeatIntervalOk() (*string, bool) {
 
 // HasHeartbeatInterval returns a boolean if a field has been set.
 func (o *ReplicationDomainResponse) HasHeartbeatInterval() bool {
-	if o != nil && !isNil(o.HeartbeatInterval) {
+	if o != nil && !IsNil(o.HeartbeatInterval) {
 		return true
 	}
 
@@ -266,7 +269,7 @@ func (o *ReplicationDomainResponse) SetHeartbeatInterval(v string) {
 
 // GetSyncHistPurgeDelay returns the SyncHistPurgeDelay field value if set, zero value otherwise.
 func (o *ReplicationDomainResponse) GetSyncHistPurgeDelay() string {
-	if o == nil || isNil(o.SyncHistPurgeDelay) {
+	if o == nil || IsNil(o.SyncHistPurgeDelay) {
 		var ret string
 		return ret
 	}
@@ -276,7 +279,7 @@ func (o *ReplicationDomainResponse) GetSyncHistPurgeDelay() string {
 // GetSyncHistPurgeDelayOk returns a tuple with the SyncHistPurgeDelay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReplicationDomainResponse) GetSyncHistPurgeDelayOk() (*string, bool) {
-	if o == nil || isNil(o.SyncHistPurgeDelay) {
+	if o == nil || IsNil(o.SyncHistPurgeDelay) {
 		return nil, false
 	}
 	return o.SyncHistPurgeDelay, true
@@ -284,7 +287,7 @@ func (o *ReplicationDomainResponse) GetSyncHistPurgeDelayOk() (*string, bool) {
 
 // HasSyncHistPurgeDelay returns a boolean if a field has been set.
 func (o *ReplicationDomainResponse) HasSyncHistPurgeDelay() bool {
-	if o != nil && !isNil(o.SyncHistPurgeDelay) {
+	if o != nil && !IsNil(o.SyncHistPurgeDelay) {
 		return true
 	}
 
@@ -298,7 +301,7 @@ func (o *ReplicationDomainResponse) SetSyncHistPurgeDelay(v string) {
 
 // GetRestricted returns the Restricted field value if set, zero value otherwise.
 func (o *ReplicationDomainResponse) GetRestricted() bool {
-	if o == nil || isNil(o.Restricted) {
+	if o == nil || IsNil(o.Restricted) {
 		var ret bool
 		return ret
 	}
@@ -308,7 +311,7 @@ func (o *ReplicationDomainResponse) GetRestricted() bool {
 // GetRestrictedOk returns a tuple with the Restricted field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReplicationDomainResponse) GetRestrictedOk() (*bool, bool) {
-	if o == nil || isNil(o.Restricted) {
+	if o == nil || IsNil(o.Restricted) {
 		return nil, false
 	}
 	return o.Restricted, true
@@ -316,7 +319,7 @@ func (o *ReplicationDomainResponse) GetRestrictedOk() (*bool, bool) {
 
 // HasRestricted returns a boolean if a field has been set.
 func (o *ReplicationDomainResponse) HasRestricted() bool {
-	if o != nil && !isNil(o.Restricted) {
+	if o != nil && !IsNil(o.Restricted) {
 		return true
 	}
 
@@ -330,7 +333,7 @@ func (o *ReplicationDomainResponse) SetRestricted(v bool) {
 
 // GetOnReplayFailureWaitForDependentOpsTimeout returns the OnReplayFailureWaitForDependentOpsTimeout field value if set, zero value otherwise.
 func (o *ReplicationDomainResponse) GetOnReplayFailureWaitForDependentOpsTimeout() string {
-	if o == nil || isNil(o.OnReplayFailureWaitForDependentOpsTimeout) {
+	if o == nil || IsNil(o.OnReplayFailureWaitForDependentOpsTimeout) {
 		var ret string
 		return ret
 	}
@@ -340,7 +343,7 @@ func (o *ReplicationDomainResponse) GetOnReplayFailureWaitForDependentOpsTimeout
 // GetOnReplayFailureWaitForDependentOpsTimeoutOk returns a tuple with the OnReplayFailureWaitForDependentOpsTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReplicationDomainResponse) GetOnReplayFailureWaitForDependentOpsTimeoutOk() (*string, bool) {
-	if o == nil || isNil(o.OnReplayFailureWaitForDependentOpsTimeout) {
+	if o == nil || IsNil(o.OnReplayFailureWaitForDependentOpsTimeout) {
 		return nil, false
 	}
 	return o.OnReplayFailureWaitForDependentOpsTimeout, true
@@ -348,7 +351,7 @@ func (o *ReplicationDomainResponse) GetOnReplayFailureWaitForDependentOpsTimeout
 
 // HasOnReplayFailureWaitForDependentOpsTimeout returns a boolean if a field has been set.
 func (o *ReplicationDomainResponse) HasOnReplayFailureWaitForDependentOpsTimeout() bool {
-	if o != nil && !isNil(o.OnReplayFailureWaitForDependentOpsTimeout) {
+	if o != nil && !IsNil(o.OnReplayFailureWaitForDependentOpsTimeout) {
 		return true
 	}
 
@@ -362,7 +365,7 @@ func (o *ReplicationDomainResponse) SetOnReplayFailureWaitForDependentOpsTimeout
 
 // GetDependentOpsReplayFailureWaitTime returns the DependentOpsReplayFailureWaitTime field value if set, zero value otherwise.
 func (o *ReplicationDomainResponse) GetDependentOpsReplayFailureWaitTime() string {
-	if o == nil || isNil(o.DependentOpsReplayFailureWaitTime) {
+	if o == nil || IsNil(o.DependentOpsReplayFailureWaitTime) {
 		var ret string
 		return ret
 	}
@@ -372,7 +375,7 @@ func (o *ReplicationDomainResponse) GetDependentOpsReplayFailureWaitTime() strin
 // GetDependentOpsReplayFailureWaitTimeOk returns a tuple with the DependentOpsReplayFailureWaitTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReplicationDomainResponse) GetDependentOpsReplayFailureWaitTimeOk() (*string, bool) {
-	if o == nil || isNil(o.DependentOpsReplayFailureWaitTime) {
+	if o == nil || IsNil(o.DependentOpsReplayFailureWaitTime) {
 		return nil, false
 	}
 	return o.DependentOpsReplayFailureWaitTime, true
@@ -380,7 +383,7 @@ func (o *ReplicationDomainResponse) GetDependentOpsReplayFailureWaitTimeOk() (*s
 
 // HasDependentOpsReplayFailureWaitTime returns a boolean if a field has been set.
 func (o *ReplicationDomainResponse) HasDependentOpsReplayFailureWaitTime() bool {
-	if o != nil && !isNil(o.DependentOpsReplayFailureWaitTime) {
+	if o != nil && !IsNil(o.DependentOpsReplayFailureWaitTime) {
 		return true
 	}
 
@@ -393,41 +396,45 @@ func (o *ReplicationDomainResponse) SetDependentOpsReplayFailureWaitTime(v strin
 }
 
 func (o ReplicationDomainResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["serverID"] = o.ServerID
-	}
-	if true {
-		toSerialize["baseDN"] = o.BaseDN
-	}
-	if !isNil(o.WindowSize) {
-		toSerialize["windowSize"] = o.WindowSize
-	}
-	if !isNil(o.HeartbeatInterval) {
-		toSerialize["heartbeatInterval"] = o.HeartbeatInterval
-	}
-	if !isNil(o.SyncHistPurgeDelay) {
-		toSerialize["syncHistPurgeDelay"] = o.SyncHistPurgeDelay
-	}
-	if !isNil(o.Restricted) {
-		toSerialize["restricted"] = o.Restricted
-	}
-	if !isNil(o.OnReplayFailureWaitForDependentOpsTimeout) {
-		toSerialize["onReplayFailureWaitForDependentOpsTimeout"] = o.OnReplayFailureWaitForDependentOpsTimeout
-	}
-	if !isNil(o.DependentOpsReplayFailureWaitTime) {
-		toSerialize["dependentOpsReplayFailureWaitTime"] = o.DependentOpsReplayFailureWaitTime
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ReplicationDomainResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	toSerialize["serverID"] = o.ServerID
+	toSerialize["baseDN"] = o.BaseDN
+	if !IsNil(o.WindowSize) {
+		toSerialize["windowSize"] = o.WindowSize
+	}
+	if !IsNil(o.HeartbeatInterval) {
+		toSerialize["heartbeatInterval"] = o.HeartbeatInterval
+	}
+	if !IsNil(o.SyncHistPurgeDelay) {
+		toSerialize["syncHistPurgeDelay"] = o.SyncHistPurgeDelay
+	}
+	if !IsNil(o.Restricted) {
+		toSerialize["restricted"] = o.Restricted
+	}
+	if !IsNil(o.OnReplayFailureWaitForDependentOpsTimeout) {
+		toSerialize["onReplayFailureWaitForDependentOpsTimeout"] = o.OnReplayFailureWaitForDependentOpsTimeout
+	}
+	if !IsNil(o.DependentOpsReplayFailureWaitTime) {
+		toSerialize["dependentOpsReplayFailureWaitTime"] = o.DependentOpsReplayFailureWaitTime
+	}
+	return toSerialize, nil
 }
 
 type NullableReplicationDomainResponse struct {

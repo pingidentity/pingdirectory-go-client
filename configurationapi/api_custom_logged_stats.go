@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -71,7 +71,7 @@ func (a *CustomLoggedStatsApiService) AddCustomLoggedStatsExecute(r ApiAddCustom
 	}
 
 	localVarPath := localBasePath + "/plugin-root/plugins/{plugin-name}/custom-logged-stats"
-	localVarPath = strings.Replace(localVarPath, "{"+"plugin-name"+"}", url.PathEscape(parameterToString(r.pluginName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"plugin-name"+"}", url.PathEscape(parameterValueToString(r.pluginName, "pluginName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -109,9 +109,9 @@ func (a *CustomLoggedStatsApiService) AddCustomLoggedStatsExecute(r ApiAddCustom
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -178,8 +178,8 @@ func (a *CustomLoggedStatsApiService) DeleteCustomLoggedStatsExecute(r ApiDelete
 	}
 
 	localVarPath := localBasePath + "/plugin-root/plugins/{plugin-name}/custom-logged-stats/{custom-logged-stats-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"custom-logged-stats-name"+"}", url.PathEscape(parameterToString(r.customLoggedStatsName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"plugin-name"+"}", url.PathEscape(parameterToString(r.pluginName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"custom-logged-stats-name"+"}", url.PathEscape(parameterValueToString(r.customLoggedStatsName, "customLoggedStatsName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"plugin-name"+"}", url.PathEscape(parameterValueToString(r.pluginName, "pluginName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -212,9 +212,9 @@ func (a *CustomLoggedStatsApiService) DeleteCustomLoggedStatsExecute(r ApiDelete
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -275,8 +275,8 @@ func (a *CustomLoggedStatsApiService) GetCustomLoggedStatsExecute(r ApiGetCustom
 	}
 
 	localVarPath := localBasePath + "/plugin-root/plugins/{plugin-name}/custom-logged-stats/{custom-logged-stats-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"custom-logged-stats-name"+"}", url.PathEscape(parameterToString(r.customLoggedStatsName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"plugin-name"+"}", url.PathEscape(parameterToString(r.pluginName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"custom-logged-stats-name"+"}", url.PathEscape(parameterValueToString(r.customLoggedStatsName, "customLoggedStatsName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"plugin-name"+"}", url.PathEscape(parameterValueToString(r.pluginName, "pluginName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -309,9 +309,9 @@ func (a *CustomLoggedStatsApiService) GetCustomLoggedStatsExecute(r ApiGetCustom
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -388,8 +388,8 @@ func (a *CustomLoggedStatsApiService) UpdateCustomLoggedStatsExecute(r ApiUpdate
 	}
 
 	localVarPath := localBasePath + "/plugin-root/plugins/{plugin-name}/custom-logged-stats/{custom-logged-stats-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"custom-logged-stats-name"+"}", url.PathEscape(parameterToString(r.customLoggedStatsName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"plugin-name"+"}", url.PathEscape(parameterToString(r.pluginName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"custom-logged-stats-name"+"}", url.PathEscape(parameterValueToString(r.customLoggedStatsName, "customLoggedStatsName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"plugin-name"+"}", url.PathEscape(parameterValueToString(r.pluginName, "pluginName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -427,9 +427,9 @@ func (a *CustomLoggedStatsApiService) UpdateCustomLoggedStatsExecute(r ApiUpdate
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

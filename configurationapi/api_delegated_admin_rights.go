@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -105,9 +105,9 @@ func (a *DelegatedAdminRightsApiService) AddDelegatedAdminRightsExecute(r ApiAdd
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -171,7 +171,7 @@ func (a *DelegatedAdminRightsApiService) DeleteDelegatedAdminRightsExecute(r Api
 	}
 
 	localVarPath := localBasePath + "/delegated-admin-rights/{delegated-admin-rights-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"delegated-admin-rights-name"+"}", url.PathEscape(parameterToString(r.delegatedAdminRightsName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"delegated-admin-rights-name"+"}", url.PathEscape(parameterValueToString(r.delegatedAdminRightsName, "delegatedAdminRightsName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -204,9 +204,9 @@ func (a *DelegatedAdminRightsApiService) DeleteDelegatedAdminRightsExecute(r Api
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -264,7 +264,7 @@ func (a *DelegatedAdminRightsApiService) GetDelegatedAdminRightsExecute(r ApiGet
 	}
 
 	localVarPath := localBasePath + "/delegated-admin-rights/{delegated-admin-rights-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"delegated-admin-rights-name"+"}", url.PathEscape(parameterToString(r.delegatedAdminRightsName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"delegated-admin-rights-name"+"}", url.PathEscape(parameterValueToString(r.delegatedAdminRightsName, "delegatedAdminRightsName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -297,9 +297,9 @@ func (a *DelegatedAdminRightsApiService) GetDelegatedAdminRightsExecute(r ApiGet
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -373,7 +373,7 @@ func (a *DelegatedAdminRightsApiService) UpdateDelegatedAdminRightsExecute(r Api
 	}
 
 	localVarPath := localBasePath + "/delegated-admin-rights/{delegated-admin-rights-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"delegated-admin-rights-name"+"}", url.PathEscape(parameterToString(r.delegatedAdminRightsName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"delegated-admin-rights-name"+"}", url.PathEscape(parameterValueToString(r.delegatedAdminRightsName, "delegatedAdminRightsName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -411,9 +411,9 @@ func (a *DelegatedAdminRightsApiService) UpdateDelegatedAdminRightsExecute(r Api
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddVelocityToolsVelocityContextProviderRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddVelocityToolsVelocityContextProviderRequest{}
+
 // AddVelocityToolsVelocityContextProviderRequest struct for AddVelocityToolsVelocityContextProviderRequest
 type AddVelocityToolsVelocityContextProviderRequest struct {
 	// Name of the new Velocity Context Provider
@@ -105,7 +108,7 @@ func (o *AddVelocityToolsVelocityContextProviderRequest) SetSchemas(v []Enumvelo
 
 // GetRequestTool returns the RequestTool field value if set, zero value otherwise.
 func (o *AddVelocityToolsVelocityContextProviderRequest) GetRequestTool() []string {
-	if o == nil || isNil(o.RequestTool) {
+	if o == nil || IsNil(o.RequestTool) {
 		var ret []string
 		return ret
 	}
@@ -115,7 +118,7 @@ func (o *AddVelocityToolsVelocityContextProviderRequest) GetRequestTool() []stri
 // GetRequestToolOk returns a tuple with the RequestTool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddVelocityToolsVelocityContextProviderRequest) GetRequestToolOk() ([]string, bool) {
-	if o == nil || isNil(o.RequestTool) {
+	if o == nil || IsNil(o.RequestTool) {
 		return nil, false
 	}
 	return o.RequestTool, true
@@ -123,7 +126,7 @@ func (o *AddVelocityToolsVelocityContextProviderRequest) GetRequestToolOk() ([]s
 
 // HasRequestTool returns a boolean if a field has been set.
 func (o *AddVelocityToolsVelocityContextProviderRequest) HasRequestTool() bool {
-	if o != nil && !isNil(o.RequestTool) {
+	if o != nil && !IsNil(o.RequestTool) {
 		return true
 	}
 
@@ -137,7 +140,7 @@ func (o *AddVelocityToolsVelocityContextProviderRequest) SetRequestTool(v []stri
 
 // GetSessionTool returns the SessionTool field value if set, zero value otherwise.
 func (o *AddVelocityToolsVelocityContextProviderRequest) GetSessionTool() []string {
-	if o == nil || isNil(o.SessionTool) {
+	if o == nil || IsNil(o.SessionTool) {
 		var ret []string
 		return ret
 	}
@@ -147,7 +150,7 @@ func (o *AddVelocityToolsVelocityContextProviderRequest) GetSessionTool() []stri
 // GetSessionToolOk returns a tuple with the SessionTool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddVelocityToolsVelocityContextProviderRequest) GetSessionToolOk() ([]string, bool) {
-	if o == nil || isNil(o.SessionTool) {
+	if o == nil || IsNil(o.SessionTool) {
 		return nil, false
 	}
 	return o.SessionTool, true
@@ -155,7 +158,7 @@ func (o *AddVelocityToolsVelocityContextProviderRequest) GetSessionToolOk() ([]s
 
 // HasSessionTool returns a boolean if a field has been set.
 func (o *AddVelocityToolsVelocityContextProviderRequest) HasSessionTool() bool {
-	if o != nil && !isNil(o.SessionTool) {
+	if o != nil && !IsNil(o.SessionTool) {
 		return true
 	}
 
@@ -169,7 +172,7 @@ func (o *AddVelocityToolsVelocityContextProviderRequest) SetSessionTool(v []stri
 
 // GetApplicationTool returns the ApplicationTool field value if set, zero value otherwise.
 func (o *AddVelocityToolsVelocityContextProviderRequest) GetApplicationTool() []string {
-	if o == nil || isNil(o.ApplicationTool) {
+	if o == nil || IsNil(o.ApplicationTool) {
 		var ret []string
 		return ret
 	}
@@ -179,7 +182,7 @@ func (o *AddVelocityToolsVelocityContextProviderRequest) GetApplicationTool() []
 // GetApplicationToolOk returns a tuple with the ApplicationTool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddVelocityToolsVelocityContextProviderRequest) GetApplicationToolOk() ([]string, bool) {
-	if o == nil || isNil(o.ApplicationTool) {
+	if o == nil || IsNil(o.ApplicationTool) {
 		return nil, false
 	}
 	return o.ApplicationTool, true
@@ -187,7 +190,7 @@ func (o *AddVelocityToolsVelocityContextProviderRequest) GetApplicationToolOk() 
 
 // HasApplicationTool returns a boolean if a field has been set.
 func (o *AddVelocityToolsVelocityContextProviderRequest) HasApplicationTool() bool {
-	if o != nil && !isNil(o.ApplicationTool) {
+	if o != nil && !IsNil(o.ApplicationTool) {
 		return true
 	}
 
@@ -201,7 +204,7 @@ func (o *AddVelocityToolsVelocityContextProviderRequest) SetApplicationTool(v []
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
 func (o *AddVelocityToolsVelocityContextProviderRequest) GetEnabled() bool {
-	if o == nil || isNil(o.Enabled) {
+	if o == nil || IsNil(o.Enabled) {
 		var ret bool
 		return ret
 	}
@@ -211,7 +214,7 @@ func (o *AddVelocityToolsVelocityContextProviderRequest) GetEnabled() bool {
 // GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddVelocityToolsVelocityContextProviderRequest) GetEnabledOk() (*bool, bool) {
-	if o == nil || isNil(o.Enabled) {
+	if o == nil || IsNil(o.Enabled) {
 		return nil, false
 	}
 	return o.Enabled, true
@@ -219,7 +222,7 @@ func (o *AddVelocityToolsVelocityContextProviderRequest) GetEnabledOk() (*bool, 
 
 // HasEnabled returns a boolean if a field has been set.
 func (o *AddVelocityToolsVelocityContextProviderRequest) HasEnabled() bool {
-	if o != nil && !isNil(o.Enabled) {
+	if o != nil && !IsNil(o.Enabled) {
 		return true
 	}
 
@@ -233,7 +236,7 @@ func (o *AddVelocityToolsVelocityContextProviderRequest) SetEnabled(v bool) {
 
 // GetObjectScope returns the ObjectScope field value if set, zero value otherwise.
 func (o *AddVelocityToolsVelocityContextProviderRequest) GetObjectScope() EnumvelocityContextProviderObjectScopeProp {
-	if o == nil || isNil(o.ObjectScope) {
+	if o == nil || IsNil(o.ObjectScope) {
 		var ret EnumvelocityContextProviderObjectScopeProp
 		return ret
 	}
@@ -243,7 +246,7 @@ func (o *AddVelocityToolsVelocityContextProviderRequest) GetObjectScope() Enumve
 // GetObjectScopeOk returns a tuple with the ObjectScope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddVelocityToolsVelocityContextProviderRequest) GetObjectScopeOk() (*EnumvelocityContextProviderObjectScopeProp, bool) {
-	if o == nil || isNil(o.ObjectScope) {
+	if o == nil || IsNil(o.ObjectScope) {
 		return nil, false
 	}
 	return o.ObjectScope, true
@@ -251,7 +254,7 @@ func (o *AddVelocityToolsVelocityContextProviderRequest) GetObjectScopeOk() (*En
 
 // HasObjectScope returns a boolean if a field has been set.
 func (o *AddVelocityToolsVelocityContextProviderRequest) HasObjectScope() bool {
-	if o != nil && !isNil(o.ObjectScope) {
+	if o != nil && !IsNil(o.ObjectScope) {
 		return true
 	}
 
@@ -265,7 +268,7 @@ func (o *AddVelocityToolsVelocityContextProviderRequest) SetObjectScope(v Enumve
 
 // GetIncludedView returns the IncludedView field value if set, zero value otherwise.
 func (o *AddVelocityToolsVelocityContextProviderRequest) GetIncludedView() []string {
-	if o == nil || isNil(o.IncludedView) {
+	if o == nil || IsNil(o.IncludedView) {
 		var ret []string
 		return ret
 	}
@@ -275,7 +278,7 @@ func (o *AddVelocityToolsVelocityContextProviderRequest) GetIncludedView() []str
 // GetIncludedViewOk returns a tuple with the IncludedView field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddVelocityToolsVelocityContextProviderRequest) GetIncludedViewOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludedView) {
+	if o == nil || IsNil(o.IncludedView) {
 		return nil, false
 	}
 	return o.IncludedView, true
@@ -283,7 +286,7 @@ func (o *AddVelocityToolsVelocityContextProviderRequest) GetIncludedViewOk() ([]
 
 // HasIncludedView returns a boolean if a field has been set.
 func (o *AddVelocityToolsVelocityContextProviderRequest) HasIncludedView() bool {
-	if o != nil && !isNil(o.IncludedView) {
+	if o != nil && !IsNil(o.IncludedView) {
 		return true
 	}
 
@@ -297,7 +300,7 @@ func (o *AddVelocityToolsVelocityContextProviderRequest) SetIncludedView(v []str
 
 // GetExcludedView returns the ExcludedView field value if set, zero value otherwise.
 func (o *AddVelocityToolsVelocityContextProviderRequest) GetExcludedView() []string {
-	if o == nil || isNil(o.ExcludedView) {
+	if o == nil || IsNil(o.ExcludedView) {
 		var ret []string
 		return ret
 	}
@@ -307,7 +310,7 @@ func (o *AddVelocityToolsVelocityContextProviderRequest) GetExcludedView() []str
 // GetExcludedViewOk returns a tuple with the ExcludedView field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddVelocityToolsVelocityContextProviderRequest) GetExcludedViewOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludedView) {
+	if o == nil || IsNil(o.ExcludedView) {
 		return nil, false
 	}
 	return o.ExcludedView, true
@@ -315,7 +318,7 @@ func (o *AddVelocityToolsVelocityContextProviderRequest) GetExcludedViewOk() ([]
 
 // HasExcludedView returns a boolean if a field has been set.
 func (o *AddVelocityToolsVelocityContextProviderRequest) HasExcludedView() bool {
-	if o != nil && !isNil(o.ExcludedView) {
+	if o != nil && !IsNil(o.ExcludedView) {
 		return true
 	}
 
@@ -329,7 +332,7 @@ func (o *AddVelocityToolsVelocityContextProviderRequest) SetExcludedView(v []str
 
 // GetResponseHeader returns the ResponseHeader field value if set, zero value otherwise.
 func (o *AddVelocityToolsVelocityContextProviderRequest) GetResponseHeader() []string {
-	if o == nil || isNil(o.ResponseHeader) {
+	if o == nil || IsNil(o.ResponseHeader) {
 		var ret []string
 		return ret
 	}
@@ -339,7 +342,7 @@ func (o *AddVelocityToolsVelocityContextProviderRequest) GetResponseHeader() []s
 // GetResponseHeaderOk returns a tuple with the ResponseHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddVelocityToolsVelocityContextProviderRequest) GetResponseHeaderOk() ([]string, bool) {
-	if o == nil || isNil(o.ResponseHeader) {
+	if o == nil || IsNil(o.ResponseHeader) {
 		return nil, false
 	}
 	return o.ResponseHeader, true
@@ -347,7 +350,7 @@ func (o *AddVelocityToolsVelocityContextProviderRequest) GetResponseHeaderOk() (
 
 // HasResponseHeader returns a boolean if a field has been set.
 func (o *AddVelocityToolsVelocityContextProviderRequest) HasResponseHeader() bool {
-	if o != nil && !isNil(o.ResponseHeader) {
+	if o != nil && !IsNil(o.ResponseHeader) {
 		return true
 	}
 
@@ -360,38 +363,42 @@ func (o *AddVelocityToolsVelocityContextProviderRequest) SetResponseHeader(v []s
 }
 
 func (o AddVelocityToolsVelocityContextProviderRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["providerName"] = o.ProviderName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.RequestTool) {
-		toSerialize["requestTool"] = o.RequestTool
-	}
-	if !isNil(o.SessionTool) {
-		toSerialize["sessionTool"] = o.SessionTool
-	}
-	if !isNil(o.ApplicationTool) {
-		toSerialize["applicationTool"] = o.ApplicationTool
-	}
-	if !isNil(o.Enabled) {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.ObjectScope) {
-		toSerialize["objectScope"] = o.ObjectScope
-	}
-	if !isNil(o.IncludedView) {
-		toSerialize["includedView"] = o.IncludedView
-	}
-	if !isNil(o.ExcludedView) {
-		toSerialize["excludedView"] = o.ExcludedView
-	}
-	if !isNil(o.ResponseHeader) {
-		toSerialize["responseHeader"] = o.ResponseHeader
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddVelocityToolsVelocityContextProviderRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["providerName"] = o.ProviderName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.RequestTool) {
+		toSerialize["requestTool"] = o.RequestTool
+	}
+	if !IsNil(o.SessionTool) {
+		toSerialize["sessionTool"] = o.SessionTool
+	}
+	if !IsNil(o.ApplicationTool) {
+		toSerialize["applicationTool"] = o.ApplicationTool
+	}
+	if !IsNil(o.Enabled) {
+		toSerialize["enabled"] = o.Enabled
+	}
+	if !IsNil(o.ObjectScope) {
+		toSerialize["objectScope"] = o.ObjectScope
+	}
+	if !IsNil(o.IncludedView) {
+		toSerialize["includedView"] = o.IncludedView
+	}
+	if !IsNil(o.ExcludedView) {
+		toSerialize["excludedView"] = o.ExcludedView
+	}
+	if !IsNil(o.ResponseHeader) {
+		toSerialize["responseHeader"] = o.ResponseHeader
+	}
+	return toSerialize, nil
 }
 
 type NullableAddVelocityToolsVelocityContextProviderRequest struct {

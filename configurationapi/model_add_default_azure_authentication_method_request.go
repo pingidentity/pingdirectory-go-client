@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddDefaultAzureAuthenticationMethodRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddDefaultAzureAuthenticationMethodRequest{}
+
 // AddDefaultAzureAuthenticationMethodRequest struct for AddDefaultAzureAuthenticationMethodRequest
 type AddDefaultAzureAuthenticationMethodRequest struct {
 	// Name of the new Azure Authentication Method
@@ -96,7 +99,7 @@ func (o *AddDefaultAzureAuthenticationMethodRequest) SetSchemas(v []EnumdefaultA
 
 // GetTenantID returns the TenantID field value if set, zero value otherwise.
 func (o *AddDefaultAzureAuthenticationMethodRequest) GetTenantID() string {
-	if o == nil || isNil(o.TenantID) {
+	if o == nil || IsNil(o.TenantID) {
 		var ret string
 		return ret
 	}
@@ -106,7 +109,7 @@ func (o *AddDefaultAzureAuthenticationMethodRequest) GetTenantID() string {
 // GetTenantIDOk returns a tuple with the TenantID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDefaultAzureAuthenticationMethodRequest) GetTenantIDOk() (*string, bool) {
-	if o == nil || isNil(o.TenantID) {
+	if o == nil || IsNil(o.TenantID) {
 		return nil, false
 	}
 	return o.TenantID, true
@@ -114,7 +117,7 @@ func (o *AddDefaultAzureAuthenticationMethodRequest) GetTenantIDOk() (*string, b
 
 // HasTenantID returns a boolean if a field has been set.
 func (o *AddDefaultAzureAuthenticationMethodRequest) HasTenantID() bool {
-	if o != nil && !isNil(o.TenantID) {
+	if o != nil && !IsNil(o.TenantID) {
 		return true
 	}
 
@@ -128,7 +131,7 @@ func (o *AddDefaultAzureAuthenticationMethodRequest) SetTenantID(v string) {
 
 // GetClientID returns the ClientID field value if set, zero value otherwise.
 func (o *AddDefaultAzureAuthenticationMethodRequest) GetClientID() string {
-	if o == nil || isNil(o.ClientID) {
+	if o == nil || IsNil(o.ClientID) {
 		var ret string
 		return ret
 	}
@@ -138,7 +141,7 @@ func (o *AddDefaultAzureAuthenticationMethodRequest) GetClientID() string {
 // GetClientIDOk returns a tuple with the ClientID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDefaultAzureAuthenticationMethodRequest) GetClientIDOk() (*string, bool) {
-	if o == nil || isNil(o.ClientID) {
+	if o == nil || IsNil(o.ClientID) {
 		return nil, false
 	}
 	return o.ClientID, true
@@ -146,7 +149,7 @@ func (o *AddDefaultAzureAuthenticationMethodRequest) GetClientIDOk() (*string, b
 
 // HasClientID returns a boolean if a field has been set.
 func (o *AddDefaultAzureAuthenticationMethodRequest) HasClientID() bool {
-	if o != nil && !isNil(o.ClientID) {
+	if o != nil && !IsNil(o.ClientID) {
 		return true
 	}
 
@@ -160,7 +163,7 @@ func (o *AddDefaultAzureAuthenticationMethodRequest) SetClientID(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddDefaultAzureAuthenticationMethodRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -170,7 +173,7 @@ func (o *AddDefaultAzureAuthenticationMethodRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDefaultAzureAuthenticationMethodRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -178,7 +181,7 @@ func (o *AddDefaultAzureAuthenticationMethodRequest) GetDescriptionOk() (*string
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddDefaultAzureAuthenticationMethodRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -191,23 +194,27 @@ func (o *AddDefaultAzureAuthenticationMethodRequest) SetDescription(v string) {
 }
 
 func (o AddDefaultAzureAuthenticationMethodRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["methodName"] = o.MethodName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.TenantID) {
-		toSerialize["tenantID"] = o.TenantID
-	}
-	if !isNil(o.ClientID) {
-		toSerialize["clientID"] = o.ClientID
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddDefaultAzureAuthenticationMethodRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["methodName"] = o.MethodName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.TenantID) {
+		toSerialize["tenantID"] = o.TenantID
+	}
+	if !IsNil(o.ClientID) {
+		toSerialize["clientID"] = o.ClientID
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAddDefaultAzureAuthenticationMethodRequest struct {

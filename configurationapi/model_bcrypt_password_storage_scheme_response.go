@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the BcryptPasswordStorageSchemeResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BcryptPasswordStorageSchemeResponse{}
+
 // BcryptPasswordStorageSchemeResponse struct for BcryptPasswordStorageSchemeResponse
 type BcryptPasswordStorageSchemeResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -51,7 +54,7 @@ func NewBcryptPasswordStorageSchemeResponseWithDefaults() *BcryptPasswordStorage
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *BcryptPasswordStorageSchemeResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -61,7 +64,7 @@ func (o *BcryptPasswordStorageSchemeResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BcryptPasswordStorageSchemeResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -69,7 +72,7 @@ func (o *BcryptPasswordStorageSchemeResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *BcryptPasswordStorageSchemeResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -83,7 +86,7 @@ func (o *BcryptPasswordStorageSchemeResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *BcryptPasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -93,7 +96,7 @@ func (o *BcryptPasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigura
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BcryptPasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -101,7 +104,7 @@ func (o *BcryptPasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigura
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *BcryptPasswordStorageSchemeResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -163,7 +166,7 @@ func (o *BcryptPasswordStorageSchemeResponse) SetSchemas(v []EnumbcryptPasswordS
 
 // GetBcryptCostFactor returns the BcryptCostFactor field value if set, zero value otherwise.
 func (o *BcryptPasswordStorageSchemeResponse) GetBcryptCostFactor() int32 {
-	if o == nil || isNil(o.BcryptCostFactor) {
+	if o == nil || IsNil(o.BcryptCostFactor) {
 		var ret int32
 		return ret
 	}
@@ -173,7 +176,7 @@ func (o *BcryptPasswordStorageSchemeResponse) GetBcryptCostFactor() int32 {
 // GetBcryptCostFactorOk returns a tuple with the BcryptCostFactor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BcryptPasswordStorageSchemeResponse) GetBcryptCostFactorOk() (*int32, bool) {
-	if o == nil || isNil(o.BcryptCostFactor) {
+	if o == nil || IsNil(o.BcryptCostFactor) {
 		return nil, false
 	}
 	return o.BcryptCostFactor, true
@@ -181,7 +184,7 @@ func (o *BcryptPasswordStorageSchemeResponse) GetBcryptCostFactorOk() (*int32, b
 
 // HasBcryptCostFactor returns a boolean if a field has been set.
 func (o *BcryptPasswordStorageSchemeResponse) HasBcryptCostFactor() bool {
-	if o != nil && !isNil(o.BcryptCostFactor) {
+	if o != nil && !IsNil(o.BcryptCostFactor) {
 		return true
 	}
 
@@ -195,7 +198,7 @@ func (o *BcryptPasswordStorageSchemeResponse) SetBcryptCostFactor(v int32) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *BcryptPasswordStorageSchemeResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -205,7 +208,7 @@ func (o *BcryptPasswordStorageSchemeResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BcryptPasswordStorageSchemeResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -213,7 +216,7 @@ func (o *BcryptPasswordStorageSchemeResponse) GetDescriptionOk() (*string, bool)
 
 // HasDescription returns a boolean if a field has been set.
 func (o *BcryptPasswordStorageSchemeResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -250,29 +253,31 @@ func (o *BcryptPasswordStorageSchemeResponse) SetEnabled(v bool) {
 }
 
 func (o BcryptPasswordStorageSchemeResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.BcryptCostFactor) {
-		toSerialize["bcryptCostFactor"] = o.BcryptCostFactor
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o BcryptPasswordStorageSchemeResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.BcryptCostFactor) {
+		toSerialize["bcryptCostFactor"] = o.BcryptCostFactor
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableBcryptPasswordStorageSchemeResponse struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddDnMapRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddDnMapRequest{}
+
 // AddDnMapRequest struct for AddDnMapRequest
 type AddDnMapRequest struct {
 	// Name of the new DN Map
@@ -73,7 +76,7 @@ func (o *AddDnMapRequest) SetMapName(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *AddDnMapRequest) GetSchemas() []EnumdnMapSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumdnMapSchemaUrn
 		return ret
 	}
@@ -83,7 +86,7 @@ func (o *AddDnMapRequest) GetSchemas() []EnumdnMapSchemaUrn {
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDnMapRequest) GetSchemasOk() ([]EnumdnMapSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -91,7 +94,7 @@ func (o *AddDnMapRequest) GetSchemasOk() ([]EnumdnMapSchemaUrn, bool) {
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *AddDnMapRequest) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -105,7 +108,7 @@ func (o *AddDnMapRequest) SetSchemas(v []EnumdnMapSchemaUrn) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddDnMapRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -115,7 +118,7 @@ func (o *AddDnMapRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDnMapRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -123,7 +126,7 @@ func (o *AddDnMapRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddDnMapRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -184,23 +187,25 @@ func (o *AddDnMapRequest) SetToDNPattern(v string) {
 }
 
 func (o AddDnMapRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["mapName"] = o.MapName
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["fromDNPattern"] = o.FromDNPattern
-	}
-	if true {
-		toSerialize["toDNPattern"] = o.ToDNPattern
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddDnMapRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["mapName"] = o.MapName
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["fromDNPattern"] = o.FromDNPattern
+	toSerialize["toDNPattern"] = o.ToDNPattern
+	return toSerialize, nil
 }
 
 type NullableAddDnMapRequest struct {

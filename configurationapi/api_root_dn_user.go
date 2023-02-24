@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -105,9 +105,9 @@ func (a *RootDnUserApiService) AddRootDnUserExecute(r ApiAddRootDnUserRequest) (
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -171,7 +171,7 @@ func (a *RootDnUserApiService) DeleteRootDnUserExecute(r ApiDeleteRootDnUserRequ
 	}
 
 	localVarPath := localBasePath + "/root-dn/root-dn-users/{root-dn-user-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"root-dn-user-name"+"}", url.PathEscape(parameterToString(r.rootDnUserName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"root-dn-user-name"+"}", url.PathEscape(parameterValueToString(r.rootDnUserName, "rootDnUserName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -204,9 +204,9 @@ func (a *RootDnUserApiService) DeleteRootDnUserExecute(r ApiDeleteRootDnUserRequ
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -264,7 +264,7 @@ func (a *RootDnUserApiService) GetRootDnUserExecute(r ApiGetRootDnUserRequest) (
 	}
 
 	localVarPath := localBasePath + "/root-dn/root-dn-users/{root-dn-user-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"root-dn-user-name"+"}", url.PathEscape(parameterToString(r.rootDnUserName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"root-dn-user-name"+"}", url.PathEscape(parameterValueToString(r.rootDnUserName, "rootDnUserName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -297,9 +297,9 @@ func (a *RootDnUserApiService) GetRootDnUserExecute(r ApiGetRootDnUserRequest) (
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -373,7 +373,7 @@ func (a *RootDnUserApiService) UpdateRootDnUserExecute(r ApiUpdateRootDnUserRequ
 	}
 
 	localVarPath := localBasePath + "/root-dn/root-dn-users/{root-dn-user-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"root-dn-user-name"+"}", url.PathEscape(parameterToString(r.rootDnUserName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"root-dn-user-name"+"}", url.PathEscape(parameterValueToString(r.rootDnUserName, "rootDnUserName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -411,9 +411,9 @@ func (a *RootDnUserApiService) UpdateRootDnUserExecute(r ApiUpdateRootDnUserRequ
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

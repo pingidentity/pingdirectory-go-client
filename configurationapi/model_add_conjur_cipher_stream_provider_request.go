@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddConjurCipherStreamProviderRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddConjurCipherStreamProviderRequest{}
+
 // AddConjurCipherStreamProviderRequest struct for AddConjurCipherStreamProviderRequest
 type AddConjurCipherStreamProviderRequest struct {
 	// Name of the new Cipher Stream Provider
@@ -151,7 +154,7 @@ func (o *AddConjurCipherStreamProviderRequest) SetConjurSecretRelativePath(v str
 
 // GetEncryptionMetadataFile returns the EncryptionMetadataFile field value if set, zero value otherwise.
 func (o *AddConjurCipherStreamProviderRequest) GetEncryptionMetadataFile() string {
-	if o == nil || isNil(o.EncryptionMetadataFile) {
+	if o == nil || IsNil(o.EncryptionMetadataFile) {
 		var ret string
 		return ret
 	}
@@ -161,7 +164,7 @@ func (o *AddConjurCipherStreamProviderRequest) GetEncryptionMetadataFile() strin
 // GetEncryptionMetadataFileOk returns a tuple with the EncryptionMetadataFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConjurCipherStreamProviderRequest) GetEncryptionMetadataFileOk() (*string, bool) {
-	if o == nil || isNil(o.EncryptionMetadataFile) {
+	if o == nil || IsNil(o.EncryptionMetadataFile) {
 		return nil, false
 	}
 	return o.EncryptionMetadataFile, true
@@ -169,7 +172,7 @@ func (o *AddConjurCipherStreamProviderRequest) GetEncryptionMetadataFileOk() (*s
 
 // HasEncryptionMetadataFile returns a boolean if a field has been set.
 func (o *AddConjurCipherStreamProviderRequest) HasEncryptionMetadataFile() bool {
-	if o != nil && !isNil(o.EncryptionMetadataFile) {
+	if o != nil && !IsNil(o.EncryptionMetadataFile) {
 		return true
 	}
 
@@ -183,7 +186,7 @@ func (o *AddConjurCipherStreamProviderRequest) SetEncryptionMetadataFile(v strin
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddConjurCipherStreamProviderRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -193,7 +196,7 @@ func (o *AddConjurCipherStreamProviderRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConjurCipherStreamProviderRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -201,7 +204,7 @@ func (o *AddConjurCipherStreamProviderRequest) GetDescriptionOk() (*string, bool
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddConjurCipherStreamProviderRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -238,29 +241,27 @@ func (o *AddConjurCipherStreamProviderRequest) SetEnabled(v bool) {
 }
 
 func (o AddConjurCipherStreamProviderRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["providerName"] = o.ProviderName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["conjurExternalServer"] = o.ConjurExternalServer
-	}
-	if true {
-		toSerialize["conjurSecretRelativePath"] = o.ConjurSecretRelativePath
-	}
-	if !isNil(o.EncryptionMetadataFile) {
-		toSerialize["encryptionMetadataFile"] = o.EncryptionMetadataFile
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddConjurCipherStreamProviderRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["providerName"] = o.ProviderName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["conjurExternalServer"] = o.ConjurExternalServer
+	toSerialize["conjurSecretRelativePath"] = o.ConjurSecretRelativePath
+	if !IsNil(o.EncryptionMetadataFile) {
+		toSerialize["encryptionMetadataFile"] = o.EncryptionMetadataFile
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddConjurCipherStreamProviderRequest struct {

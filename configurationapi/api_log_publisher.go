@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -105,9 +105,9 @@ func (a *LogPublisherApiService) AddLogPublisherExecute(r ApiAddLogPublisherRequ
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -171,7 +171,7 @@ func (a *LogPublisherApiService) DeleteLogPublisherExecute(r ApiDeleteLogPublish
 	}
 
 	localVarPath := localBasePath + "/log-publishers/{log-publisher-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"log-publisher-name"+"}", url.PathEscape(parameterToString(r.logPublisherName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"log-publisher-name"+"}", url.PathEscape(parameterValueToString(r.logPublisherName, "logPublisherName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -204,9 +204,9 @@ func (a *LogPublisherApiService) DeleteLogPublisherExecute(r ApiDeleteLogPublish
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -264,7 +264,7 @@ func (a *LogPublisherApiService) GetLogPublisherExecute(r ApiGetLogPublisherRequ
 	}
 
 	localVarPath := localBasePath + "/log-publishers/{log-publisher-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"log-publisher-name"+"}", url.PathEscape(parameterToString(r.logPublisherName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"log-publisher-name"+"}", url.PathEscape(parameterValueToString(r.logPublisherName, "logPublisherName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -297,9 +297,9 @@ func (a *LogPublisherApiService) GetLogPublisherExecute(r ApiGetLogPublisherRequ
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -373,7 +373,7 @@ func (a *LogPublisherApiService) UpdateLogPublisherExecute(r ApiUpdateLogPublish
 	}
 
 	localVarPath := localBasePath + "/log-publishers/{log-publisher-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"log-publisher-name"+"}", url.PathEscape(parameterToString(r.logPublisherName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"log-publisher-name"+"}", url.PathEscape(parameterValueToString(r.logPublisherName, "logPublisherName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -411,9 +411,9 @@ func (a *LogPublisherApiService) UpdateLogPublisherExecute(r ApiUpdateLogPublish
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

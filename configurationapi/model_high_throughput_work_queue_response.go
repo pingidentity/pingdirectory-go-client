@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the HighThroughputWorkQueueResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &HighThroughputWorkQueueResponse{}
+
 // HighThroughputWorkQueueResponse struct for HighThroughputWorkQueueResponse
 type HighThroughputWorkQueueResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -64,7 +67,7 @@ func NewHighThroughputWorkQueueResponseWithDefaults() *HighThroughputWorkQueueRe
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *HighThroughputWorkQueueResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -74,7 +77,7 @@ func (o *HighThroughputWorkQueueResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HighThroughputWorkQueueResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -82,7 +85,7 @@ func (o *HighThroughputWorkQueueResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *HighThroughputWorkQueueResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -96,7 +99,7 @@ func (o *HighThroughputWorkQueueResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *HighThroughputWorkQueueResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -106,7 +109,7 @@ func (o *HighThroughputWorkQueueResponse) GetUrnpingidentityschemasconfiguration
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HighThroughputWorkQueueResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -114,7 +117,7 @@ func (o *HighThroughputWorkQueueResponse) GetUrnpingidentityschemasconfiguration
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *HighThroughputWorkQueueResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -128,7 +131,7 @@ func (o *HighThroughputWorkQueueResponse) SetUrnpingidentityschemasconfiguration
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *HighThroughputWorkQueueResponse) GetSchemas() []EnumhighThroughputWorkQueueSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumhighThroughputWorkQueueSchemaUrn
 		return ret
 	}
@@ -138,7 +141,7 @@ func (o *HighThroughputWorkQueueResponse) GetSchemas() []EnumhighThroughputWorkQ
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HighThroughputWorkQueueResponse) GetSchemasOk() ([]EnumhighThroughputWorkQueueSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -146,7 +149,7 @@ func (o *HighThroughputWorkQueueResponse) GetSchemasOk() ([]EnumhighThroughputWo
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *HighThroughputWorkQueueResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -160,7 +163,7 @@ func (o *HighThroughputWorkQueueResponse) SetSchemas(v []EnumhighThroughputWorkQ
 
 // GetNumWorkerThreads returns the NumWorkerThreads field value if set, zero value otherwise.
 func (o *HighThroughputWorkQueueResponse) GetNumWorkerThreads() int32 {
-	if o == nil || isNil(o.NumWorkerThreads) {
+	if o == nil || IsNil(o.NumWorkerThreads) {
 		var ret int32
 		return ret
 	}
@@ -170,7 +173,7 @@ func (o *HighThroughputWorkQueueResponse) GetNumWorkerThreads() int32 {
 // GetNumWorkerThreadsOk returns a tuple with the NumWorkerThreads field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HighThroughputWorkQueueResponse) GetNumWorkerThreadsOk() (*int32, bool) {
-	if o == nil || isNil(o.NumWorkerThreads) {
+	if o == nil || IsNil(o.NumWorkerThreads) {
 		return nil, false
 	}
 	return o.NumWorkerThreads, true
@@ -178,7 +181,7 @@ func (o *HighThroughputWorkQueueResponse) GetNumWorkerThreadsOk() (*int32, bool)
 
 // HasNumWorkerThreads returns a boolean if a field has been set.
 func (o *HighThroughputWorkQueueResponse) HasNumWorkerThreads() bool {
-	if o != nil && !isNil(o.NumWorkerThreads) {
+	if o != nil && !IsNil(o.NumWorkerThreads) {
 		return true
 	}
 
@@ -192,7 +195,7 @@ func (o *HighThroughputWorkQueueResponse) SetNumWorkerThreads(v int32) {
 
 // GetNumWriteWorkerThreads returns the NumWriteWorkerThreads field value if set, zero value otherwise.
 func (o *HighThroughputWorkQueueResponse) GetNumWriteWorkerThreads() int32 {
-	if o == nil || isNil(o.NumWriteWorkerThreads) {
+	if o == nil || IsNil(o.NumWriteWorkerThreads) {
 		var ret int32
 		return ret
 	}
@@ -202,7 +205,7 @@ func (o *HighThroughputWorkQueueResponse) GetNumWriteWorkerThreads() int32 {
 // GetNumWriteWorkerThreadsOk returns a tuple with the NumWriteWorkerThreads field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HighThroughputWorkQueueResponse) GetNumWriteWorkerThreadsOk() (*int32, bool) {
-	if o == nil || isNil(o.NumWriteWorkerThreads) {
+	if o == nil || IsNil(o.NumWriteWorkerThreads) {
 		return nil, false
 	}
 	return o.NumWriteWorkerThreads, true
@@ -210,7 +213,7 @@ func (o *HighThroughputWorkQueueResponse) GetNumWriteWorkerThreadsOk() (*int32, 
 
 // HasNumWriteWorkerThreads returns a boolean if a field has been set.
 func (o *HighThroughputWorkQueueResponse) HasNumWriteWorkerThreads() bool {
-	if o != nil && !isNil(o.NumWriteWorkerThreads) {
+	if o != nil && !IsNil(o.NumWriteWorkerThreads) {
 		return true
 	}
 
@@ -224,7 +227,7 @@ func (o *HighThroughputWorkQueueResponse) SetNumWriteWorkerThreads(v int32) {
 
 // GetNumAdministrativeSessionWorkerThreads returns the NumAdministrativeSessionWorkerThreads field value if set, zero value otherwise.
 func (o *HighThroughputWorkQueueResponse) GetNumAdministrativeSessionWorkerThreads() int32 {
-	if o == nil || isNil(o.NumAdministrativeSessionWorkerThreads) {
+	if o == nil || IsNil(o.NumAdministrativeSessionWorkerThreads) {
 		var ret int32
 		return ret
 	}
@@ -234,7 +237,7 @@ func (o *HighThroughputWorkQueueResponse) GetNumAdministrativeSessionWorkerThrea
 // GetNumAdministrativeSessionWorkerThreadsOk returns a tuple with the NumAdministrativeSessionWorkerThreads field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HighThroughputWorkQueueResponse) GetNumAdministrativeSessionWorkerThreadsOk() (*int32, bool) {
-	if o == nil || isNil(o.NumAdministrativeSessionWorkerThreads) {
+	if o == nil || IsNil(o.NumAdministrativeSessionWorkerThreads) {
 		return nil, false
 	}
 	return o.NumAdministrativeSessionWorkerThreads, true
@@ -242,7 +245,7 @@ func (o *HighThroughputWorkQueueResponse) GetNumAdministrativeSessionWorkerThrea
 
 // HasNumAdministrativeSessionWorkerThreads returns a boolean if a field has been set.
 func (o *HighThroughputWorkQueueResponse) HasNumAdministrativeSessionWorkerThreads() bool {
-	if o != nil && !isNil(o.NumAdministrativeSessionWorkerThreads) {
+	if o != nil && !IsNil(o.NumAdministrativeSessionWorkerThreads) {
 		return true
 	}
 
@@ -256,7 +259,7 @@ func (o *HighThroughputWorkQueueResponse) SetNumAdministrativeSessionWorkerThrea
 
 // GetNumQueues returns the NumQueues field value if set, zero value otherwise.
 func (o *HighThroughputWorkQueueResponse) GetNumQueues() int32 {
-	if o == nil || isNil(o.NumQueues) {
+	if o == nil || IsNil(o.NumQueues) {
 		var ret int32
 		return ret
 	}
@@ -266,7 +269,7 @@ func (o *HighThroughputWorkQueueResponse) GetNumQueues() int32 {
 // GetNumQueuesOk returns a tuple with the NumQueues field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HighThroughputWorkQueueResponse) GetNumQueuesOk() (*int32, bool) {
-	if o == nil || isNil(o.NumQueues) {
+	if o == nil || IsNil(o.NumQueues) {
 		return nil, false
 	}
 	return o.NumQueues, true
@@ -274,7 +277,7 @@ func (o *HighThroughputWorkQueueResponse) GetNumQueuesOk() (*int32, bool) {
 
 // HasNumQueues returns a boolean if a field has been set.
 func (o *HighThroughputWorkQueueResponse) HasNumQueues() bool {
-	if o != nil && !isNil(o.NumQueues) {
+	if o != nil && !IsNil(o.NumQueues) {
 		return true
 	}
 
@@ -288,7 +291,7 @@ func (o *HighThroughputWorkQueueResponse) SetNumQueues(v int32) {
 
 // GetNumWriteQueues returns the NumWriteQueues field value if set, zero value otherwise.
 func (o *HighThroughputWorkQueueResponse) GetNumWriteQueues() int32 {
-	if o == nil || isNil(o.NumWriteQueues) {
+	if o == nil || IsNil(o.NumWriteQueues) {
 		var ret int32
 		return ret
 	}
@@ -298,7 +301,7 @@ func (o *HighThroughputWorkQueueResponse) GetNumWriteQueues() int32 {
 // GetNumWriteQueuesOk returns a tuple with the NumWriteQueues field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HighThroughputWorkQueueResponse) GetNumWriteQueuesOk() (*int32, bool) {
-	if o == nil || isNil(o.NumWriteQueues) {
+	if o == nil || IsNil(o.NumWriteQueues) {
 		return nil, false
 	}
 	return o.NumWriteQueues, true
@@ -306,7 +309,7 @@ func (o *HighThroughputWorkQueueResponse) GetNumWriteQueuesOk() (*int32, bool) {
 
 // HasNumWriteQueues returns a boolean if a field has been set.
 func (o *HighThroughputWorkQueueResponse) HasNumWriteQueues() bool {
-	if o != nil && !isNil(o.NumWriteQueues) {
+	if o != nil && !IsNil(o.NumWriteQueues) {
 		return true
 	}
 
@@ -320,7 +323,7 @@ func (o *HighThroughputWorkQueueResponse) SetNumWriteQueues(v int32) {
 
 // GetMaxWorkQueueCapacity returns the MaxWorkQueueCapacity field value if set, zero value otherwise.
 func (o *HighThroughputWorkQueueResponse) GetMaxWorkQueueCapacity() int32 {
-	if o == nil || isNil(o.MaxWorkQueueCapacity) {
+	if o == nil || IsNil(o.MaxWorkQueueCapacity) {
 		var ret int32
 		return ret
 	}
@@ -330,7 +333,7 @@ func (o *HighThroughputWorkQueueResponse) GetMaxWorkQueueCapacity() int32 {
 // GetMaxWorkQueueCapacityOk returns a tuple with the MaxWorkQueueCapacity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HighThroughputWorkQueueResponse) GetMaxWorkQueueCapacityOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxWorkQueueCapacity) {
+	if o == nil || IsNil(o.MaxWorkQueueCapacity) {
 		return nil, false
 	}
 	return o.MaxWorkQueueCapacity, true
@@ -338,7 +341,7 @@ func (o *HighThroughputWorkQueueResponse) GetMaxWorkQueueCapacityOk() (*int32, b
 
 // HasMaxWorkQueueCapacity returns a boolean if a field has been set.
 func (o *HighThroughputWorkQueueResponse) HasMaxWorkQueueCapacity() bool {
-	if o != nil && !isNil(o.MaxWorkQueueCapacity) {
+	if o != nil && !IsNil(o.MaxWorkQueueCapacity) {
 		return true
 	}
 
@@ -352,7 +355,7 @@ func (o *HighThroughputWorkQueueResponse) SetMaxWorkQueueCapacity(v int32) {
 
 // GetMaxOfferTime returns the MaxOfferTime field value if set, zero value otherwise.
 func (o *HighThroughputWorkQueueResponse) GetMaxOfferTime() string {
-	if o == nil || isNil(o.MaxOfferTime) {
+	if o == nil || IsNil(o.MaxOfferTime) {
 		var ret string
 		return ret
 	}
@@ -362,7 +365,7 @@ func (o *HighThroughputWorkQueueResponse) GetMaxOfferTime() string {
 // GetMaxOfferTimeOk returns a tuple with the MaxOfferTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HighThroughputWorkQueueResponse) GetMaxOfferTimeOk() (*string, bool) {
-	if o == nil || isNil(o.MaxOfferTime) {
+	if o == nil || IsNil(o.MaxOfferTime) {
 		return nil, false
 	}
 	return o.MaxOfferTime, true
@@ -370,7 +373,7 @@ func (o *HighThroughputWorkQueueResponse) GetMaxOfferTimeOk() (*string, bool) {
 
 // HasMaxOfferTime returns a boolean if a field has been set.
 func (o *HighThroughputWorkQueueResponse) HasMaxOfferTime() bool {
-	if o != nil && !isNil(o.MaxOfferTime) {
+	if o != nil && !IsNil(o.MaxOfferTime) {
 		return true
 	}
 
@@ -384,7 +387,7 @@ func (o *HighThroughputWorkQueueResponse) SetMaxOfferTime(v string) {
 
 // GetMonitorQueueTime returns the MonitorQueueTime field value if set, zero value otherwise.
 func (o *HighThroughputWorkQueueResponse) GetMonitorQueueTime() bool {
-	if o == nil || isNil(o.MonitorQueueTime) {
+	if o == nil || IsNil(o.MonitorQueueTime) {
 		var ret bool
 		return ret
 	}
@@ -394,7 +397,7 @@ func (o *HighThroughputWorkQueueResponse) GetMonitorQueueTime() bool {
 // GetMonitorQueueTimeOk returns a tuple with the MonitorQueueTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HighThroughputWorkQueueResponse) GetMonitorQueueTimeOk() (*bool, bool) {
-	if o == nil || isNil(o.MonitorQueueTime) {
+	if o == nil || IsNil(o.MonitorQueueTime) {
 		return nil, false
 	}
 	return o.MonitorQueueTime, true
@@ -402,7 +405,7 @@ func (o *HighThroughputWorkQueueResponse) GetMonitorQueueTimeOk() (*bool, bool) 
 
 // HasMonitorQueueTime returns a boolean if a field has been set.
 func (o *HighThroughputWorkQueueResponse) HasMonitorQueueTime() bool {
-	if o != nil && !isNil(o.MonitorQueueTime) {
+	if o != nil && !IsNil(o.MonitorQueueTime) {
 		return true
 	}
 
@@ -416,7 +419,7 @@ func (o *HighThroughputWorkQueueResponse) SetMonitorQueueTime(v bool) {
 
 // GetMaxQueueTime returns the MaxQueueTime field value if set, zero value otherwise.
 func (o *HighThroughputWorkQueueResponse) GetMaxQueueTime() string {
-	if o == nil || isNil(o.MaxQueueTime) {
+	if o == nil || IsNil(o.MaxQueueTime) {
 		var ret string
 		return ret
 	}
@@ -426,7 +429,7 @@ func (o *HighThroughputWorkQueueResponse) GetMaxQueueTime() string {
 // GetMaxQueueTimeOk returns a tuple with the MaxQueueTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HighThroughputWorkQueueResponse) GetMaxQueueTimeOk() (*string, bool) {
-	if o == nil || isNil(o.MaxQueueTime) {
+	if o == nil || IsNil(o.MaxQueueTime) {
 		return nil, false
 	}
 	return o.MaxQueueTime, true
@@ -434,7 +437,7 @@ func (o *HighThroughputWorkQueueResponse) GetMaxQueueTimeOk() (*string, bool) {
 
 // HasMaxQueueTime returns a boolean if a field has been set.
 func (o *HighThroughputWorkQueueResponse) HasMaxQueueTime() bool {
-	if o != nil && !isNil(o.MaxQueueTime) {
+	if o != nil && !IsNil(o.MaxQueueTime) {
 		return true
 	}
 
@@ -448,7 +451,7 @@ func (o *HighThroughputWorkQueueResponse) SetMaxQueueTime(v string) {
 
 // GetExpensiveOperationCheckInterval returns the ExpensiveOperationCheckInterval field value if set, zero value otherwise.
 func (o *HighThroughputWorkQueueResponse) GetExpensiveOperationCheckInterval() string {
-	if o == nil || isNil(o.ExpensiveOperationCheckInterval) {
+	if o == nil || IsNil(o.ExpensiveOperationCheckInterval) {
 		var ret string
 		return ret
 	}
@@ -458,7 +461,7 @@ func (o *HighThroughputWorkQueueResponse) GetExpensiveOperationCheckInterval() s
 // GetExpensiveOperationCheckIntervalOk returns a tuple with the ExpensiveOperationCheckInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HighThroughputWorkQueueResponse) GetExpensiveOperationCheckIntervalOk() (*string, bool) {
-	if o == nil || isNil(o.ExpensiveOperationCheckInterval) {
+	if o == nil || IsNil(o.ExpensiveOperationCheckInterval) {
 		return nil, false
 	}
 	return o.ExpensiveOperationCheckInterval, true
@@ -466,7 +469,7 @@ func (o *HighThroughputWorkQueueResponse) GetExpensiveOperationCheckIntervalOk()
 
 // HasExpensiveOperationCheckInterval returns a boolean if a field has been set.
 func (o *HighThroughputWorkQueueResponse) HasExpensiveOperationCheckInterval() bool {
-	if o != nil && !isNil(o.ExpensiveOperationCheckInterval) {
+	if o != nil && !IsNil(o.ExpensiveOperationCheckInterval) {
 		return true
 	}
 
@@ -480,7 +483,7 @@ func (o *HighThroughputWorkQueueResponse) SetExpensiveOperationCheckInterval(v s
 
 // GetExpensiveOperationMinimumConcurrentCount returns the ExpensiveOperationMinimumConcurrentCount field value if set, zero value otherwise.
 func (o *HighThroughputWorkQueueResponse) GetExpensiveOperationMinimumConcurrentCount() int32 {
-	if o == nil || isNil(o.ExpensiveOperationMinimumConcurrentCount) {
+	if o == nil || IsNil(o.ExpensiveOperationMinimumConcurrentCount) {
 		var ret int32
 		return ret
 	}
@@ -490,7 +493,7 @@ func (o *HighThroughputWorkQueueResponse) GetExpensiveOperationMinimumConcurrent
 // GetExpensiveOperationMinimumConcurrentCountOk returns a tuple with the ExpensiveOperationMinimumConcurrentCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HighThroughputWorkQueueResponse) GetExpensiveOperationMinimumConcurrentCountOk() (*int32, bool) {
-	if o == nil || isNil(o.ExpensiveOperationMinimumConcurrentCount) {
+	if o == nil || IsNil(o.ExpensiveOperationMinimumConcurrentCount) {
 		return nil, false
 	}
 	return o.ExpensiveOperationMinimumConcurrentCount, true
@@ -498,7 +501,7 @@ func (o *HighThroughputWorkQueueResponse) GetExpensiveOperationMinimumConcurrent
 
 // HasExpensiveOperationMinimumConcurrentCount returns a boolean if a field has been set.
 func (o *HighThroughputWorkQueueResponse) HasExpensiveOperationMinimumConcurrentCount() bool {
-	if o != nil && !isNil(o.ExpensiveOperationMinimumConcurrentCount) {
+	if o != nil && !IsNil(o.ExpensiveOperationMinimumConcurrentCount) {
 		return true
 	}
 
@@ -512,7 +515,7 @@ func (o *HighThroughputWorkQueueResponse) SetExpensiveOperationMinimumConcurrent
 
 // GetExpensiveOperationMinimumDumpInterval returns the ExpensiveOperationMinimumDumpInterval field value if set, zero value otherwise.
 func (o *HighThroughputWorkQueueResponse) GetExpensiveOperationMinimumDumpInterval() string {
-	if o == nil || isNil(o.ExpensiveOperationMinimumDumpInterval) {
+	if o == nil || IsNil(o.ExpensiveOperationMinimumDumpInterval) {
 		var ret string
 		return ret
 	}
@@ -522,7 +525,7 @@ func (o *HighThroughputWorkQueueResponse) GetExpensiveOperationMinimumDumpInterv
 // GetExpensiveOperationMinimumDumpIntervalOk returns a tuple with the ExpensiveOperationMinimumDumpInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HighThroughputWorkQueueResponse) GetExpensiveOperationMinimumDumpIntervalOk() (*string, bool) {
-	if o == nil || isNil(o.ExpensiveOperationMinimumDumpInterval) {
+	if o == nil || IsNil(o.ExpensiveOperationMinimumDumpInterval) {
 		return nil, false
 	}
 	return o.ExpensiveOperationMinimumDumpInterval, true
@@ -530,7 +533,7 @@ func (o *HighThroughputWorkQueueResponse) GetExpensiveOperationMinimumDumpInterv
 
 // HasExpensiveOperationMinimumDumpInterval returns a boolean if a field has been set.
 func (o *HighThroughputWorkQueueResponse) HasExpensiveOperationMinimumDumpInterval() bool {
-	if o != nil && !isNil(o.ExpensiveOperationMinimumDumpInterval) {
+	if o != nil && !IsNil(o.ExpensiveOperationMinimumDumpInterval) {
 		return true
 	}
 
@@ -543,53 +546,61 @@ func (o *HighThroughputWorkQueueResponse) SetExpensiveOperationMinimumDumpInterv
 }
 
 func (o HighThroughputWorkQueueResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.NumWorkerThreads) {
-		toSerialize["numWorkerThreads"] = o.NumWorkerThreads
-	}
-	if !isNil(o.NumWriteWorkerThreads) {
-		toSerialize["numWriteWorkerThreads"] = o.NumWriteWorkerThreads
-	}
-	if !isNil(o.NumAdministrativeSessionWorkerThreads) {
-		toSerialize["numAdministrativeSessionWorkerThreads"] = o.NumAdministrativeSessionWorkerThreads
-	}
-	if !isNil(o.NumQueues) {
-		toSerialize["numQueues"] = o.NumQueues
-	}
-	if !isNil(o.NumWriteQueues) {
-		toSerialize["numWriteQueues"] = o.NumWriteQueues
-	}
-	if !isNil(o.MaxWorkQueueCapacity) {
-		toSerialize["maxWorkQueueCapacity"] = o.MaxWorkQueueCapacity
-	}
-	if !isNil(o.MaxOfferTime) {
-		toSerialize["maxOfferTime"] = o.MaxOfferTime
-	}
-	if !isNil(o.MonitorQueueTime) {
-		toSerialize["monitorQueueTime"] = o.MonitorQueueTime
-	}
-	if !isNil(o.MaxQueueTime) {
-		toSerialize["maxQueueTime"] = o.MaxQueueTime
-	}
-	if !isNil(o.ExpensiveOperationCheckInterval) {
-		toSerialize["expensiveOperationCheckInterval"] = o.ExpensiveOperationCheckInterval
-	}
-	if !isNil(o.ExpensiveOperationMinimumConcurrentCount) {
-		toSerialize["expensiveOperationMinimumConcurrentCount"] = o.ExpensiveOperationMinimumConcurrentCount
-	}
-	if !isNil(o.ExpensiveOperationMinimumDumpInterval) {
-		toSerialize["expensiveOperationMinimumDumpInterval"] = o.ExpensiveOperationMinimumDumpInterval
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o HighThroughputWorkQueueResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.NumWorkerThreads) {
+		toSerialize["numWorkerThreads"] = o.NumWorkerThreads
+	}
+	if !IsNil(o.NumWriteWorkerThreads) {
+		toSerialize["numWriteWorkerThreads"] = o.NumWriteWorkerThreads
+	}
+	if !IsNil(o.NumAdministrativeSessionWorkerThreads) {
+		toSerialize["numAdministrativeSessionWorkerThreads"] = o.NumAdministrativeSessionWorkerThreads
+	}
+	if !IsNil(o.NumQueues) {
+		toSerialize["numQueues"] = o.NumQueues
+	}
+	if !IsNil(o.NumWriteQueues) {
+		toSerialize["numWriteQueues"] = o.NumWriteQueues
+	}
+	if !IsNil(o.MaxWorkQueueCapacity) {
+		toSerialize["maxWorkQueueCapacity"] = o.MaxWorkQueueCapacity
+	}
+	if !IsNil(o.MaxOfferTime) {
+		toSerialize["maxOfferTime"] = o.MaxOfferTime
+	}
+	if !IsNil(o.MonitorQueueTime) {
+		toSerialize["monitorQueueTime"] = o.MonitorQueueTime
+	}
+	if !IsNil(o.MaxQueueTime) {
+		toSerialize["maxQueueTime"] = o.MaxQueueTime
+	}
+	if !IsNil(o.ExpensiveOperationCheckInterval) {
+		toSerialize["expensiveOperationCheckInterval"] = o.ExpensiveOperationCheckInterval
+	}
+	if !IsNil(o.ExpensiveOperationMinimumConcurrentCount) {
+		toSerialize["expensiveOperationMinimumConcurrentCount"] = o.ExpensiveOperationMinimumConcurrentCount
+	}
+	if !IsNil(o.ExpensiveOperationMinimumDumpInterval) {
+		toSerialize["expensiveOperationMinimumDumpInterval"] = o.ExpensiveOperationMinimumDumpInterval
+	}
+	return toSerialize, nil
 }
 
 type NullableHighThroughputWorkQueueResponse struct {

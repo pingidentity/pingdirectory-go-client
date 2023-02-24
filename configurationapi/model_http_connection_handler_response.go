@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the HttpConnectionHandlerResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &HttpConnectionHandlerResponse{}
+
 // HttpConnectionHandlerResponse struct for HttpConnectionHandlerResponse
 type HttpConnectionHandlerResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -101,7 +104,7 @@ func NewHttpConnectionHandlerResponseWithDefaults() *HttpConnectionHandlerRespon
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *HttpConnectionHandlerResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -111,7 +114,7 @@ func (o *HttpConnectionHandlerResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HttpConnectionHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -119,7 +122,7 @@ func (o *HttpConnectionHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *HttpConnectionHandlerResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -133,7 +136,7 @@ func (o *HttpConnectionHandlerResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *HttpConnectionHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -143,7 +146,7 @@ func (o *HttpConnectionHandlerResponse) GetUrnpingidentityschemasconfigurationme
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HttpConnectionHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -151,7 +154,7 @@ func (o *HttpConnectionHandlerResponse) GetUrnpingidentityschemasconfigurationme
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *HttpConnectionHandlerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -213,7 +216,7 @@ func (o *HttpConnectionHandlerResponse) SetSchemas(v []EnumhttpConnectionHandler
 
 // GetListenAddress returns the ListenAddress field value if set, zero value otherwise.
 func (o *HttpConnectionHandlerResponse) GetListenAddress() string {
-	if o == nil || isNil(o.ListenAddress) {
+	if o == nil || IsNil(o.ListenAddress) {
 		var ret string
 		return ret
 	}
@@ -223,7 +226,7 @@ func (o *HttpConnectionHandlerResponse) GetListenAddress() string {
 // GetListenAddressOk returns a tuple with the ListenAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HttpConnectionHandlerResponse) GetListenAddressOk() (*string, bool) {
-	if o == nil || isNil(o.ListenAddress) {
+	if o == nil || IsNil(o.ListenAddress) {
 		return nil, false
 	}
 	return o.ListenAddress, true
@@ -231,7 +234,7 @@ func (o *HttpConnectionHandlerResponse) GetListenAddressOk() (*string, bool) {
 
 // HasListenAddress returns a boolean if a field has been set.
 func (o *HttpConnectionHandlerResponse) HasListenAddress() bool {
-	if o != nil && !isNil(o.ListenAddress) {
+	if o != nil && !IsNil(o.ListenAddress) {
 		return true
 	}
 
@@ -269,7 +272,7 @@ func (o *HttpConnectionHandlerResponse) SetListenPort(v int32) {
 
 // GetUseSSL returns the UseSSL field value if set, zero value otherwise.
 func (o *HttpConnectionHandlerResponse) GetUseSSL() bool {
-	if o == nil || isNil(o.UseSSL) {
+	if o == nil || IsNil(o.UseSSL) {
 		var ret bool
 		return ret
 	}
@@ -279,7 +282,7 @@ func (o *HttpConnectionHandlerResponse) GetUseSSL() bool {
 // GetUseSSLOk returns a tuple with the UseSSL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HttpConnectionHandlerResponse) GetUseSSLOk() (*bool, bool) {
-	if o == nil || isNil(o.UseSSL) {
+	if o == nil || IsNil(o.UseSSL) {
 		return nil, false
 	}
 	return o.UseSSL, true
@@ -287,7 +290,7 @@ func (o *HttpConnectionHandlerResponse) GetUseSSLOk() (*bool, bool) {
 
 // HasUseSSL returns a boolean if a field has been set.
 func (o *HttpConnectionHandlerResponse) HasUseSSL() bool {
-	if o != nil && !isNil(o.UseSSL) {
+	if o != nil && !IsNil(o.UseSSL) {
 		return true
 	}
 
@@ -301,7 +304,7 @@ func (o *HttpConnectionHandlerResponse) SetUseSSL(v bool) {
 
 // GetSslCertNickname returns the SslCertNickname field value if set, zero value otherwise.
 func (o *HttpConnectionHandlerResponse) GetSslCertNickname() string {
-	if o == nil || isNil(o.SslCertNickname) {
+	if o == nil || IsNil(o.SslCertNickname) {
 		var ret string
 		return ret
 	}
@@ -311,7 +314,7 @@ func (o *HttpConnectionHandlerResponse) GetSslCertNickname() string {
 // GetSslCertNicknameOk returns a tuple with the SslCertNickname field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HttpConnectionHandlerResponse) GetSslCertNicknameOk() (*string, bool) {
-	if o == nil || isNil(o.SslCertNickname) {
+	if o == nil || IsNil(o.SslCertNickname) {
 		return nil, false
 	}
 	return o.SslCertNickname, true
@@ -319,7 +322,7 @@ func (o *HttpConnectionHandlerResponse) GetSslCertNicknameOk() (*string, bool) {
 
 // HasSslCertNickname returns a boolean if a field has been set.
 func (o *HttpConnectionHandlerResponse) HasSslCertNickname() bool {
-	if o != nil && !isNil(o.SslCertNickname) {
+	if o != nil && !IsNil(o.SslCertNickname) {
 		return true
 	}
 
@@ -333,7 +336,7 @@ func (o *HttpConnectionHandlerResponse) SetSslCertNickname(v string) {
 
 // GetHttpServletExtension returns the HttpServletExtension field value if set, zero value otherwise.
 func (o *HttpConnectionHandlerResponse) GetHttpServletExtension() []string {
-	if o == nil || isNil(o.HttpServletExtension) {
+	if o == nil || IsNil(o.HttpServletExtension) {
 		var ret []string
 		return ret
 	}
@@ -343,7 +346,7 @@ func (o *HttpConnectionHandlerResponse) GetHttpServletExtension() []string {
 // GetHttpServletExtensionOk returns a tuple with the HttpServletExtension field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HttpConnectionHandlerResponse) GetHttpServletExtensionOk() ([]string, bool) {
-	if o == nil || isNil(o.HttpServletExtension) {
+	if o == nil || IsNil(o.HttpServletExtension) {
 		return nil, false
 	}
 	return o.HttpServletExtension, true
@@ -351,7 +354,7 @@ func (o *HttpConnectionHandlerResponse) GetHttpServletExtensionOk() ([]string, b
 
 // HasHttpServletExtension returns a boolean if a field has been set.
 func (o *HttpConnectionHandlerResponse) HasHttpServletExtension() bool {
-	if o != nil && !isNil(o.HttpServletExtension) {
+	if o != nil && !IsNil(o.HttpServletExtension) {
 		return true
 	}
 
@@ -365,7 +368,7 @@ func (o *HttpConnectionHandlerResponse) SetHttpServletExtension(v []string) {
 
 // GetWebApplicationExtension returns the WebApplicationExtension field value if set, zero value otherwise.
 func (o *HttpConnectionHandlerResponse) GetWebApplicationExtension() []string {
-	if o == nil || isNil(o.WebApplicationExtension) {
+	if o == nil || IsNil(o.WebApplicationExtension) {
 		var ret []string
 		return ret
 	}
@@ -375,7 +378,7 @@ func (o *HttpConnectionHandlerResponse) GetWebApplicationExtension() []string {
 // GetWebApplicationExtensionOk returns a tuple with the WebApplicationExtension field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HttpConnectionHandlerResponse) GetWebApplicationExtensionOk() ([]string, bool) {
-	if o == nil || isNil(o.WebApplicationExtension) {
+	if o == nil || IsNil(o.WebApplicationExtension) {
 		return nil, false
 	}
 	return o.WebApplicationExtension, true
@@ -383,7 +386,7 @@ func (o *HttpConnectionHandlerResponse) GetWebApplicationExtensionOk() ([]string
 
 // HasWebApplicationExtension returns a boolean if a field has been set.
 func (o *HttpConnectionHandlerResponse) HasWebApplicationExtension() bool {
-	if o != nil && !isNil(o.WebApplicationExtension) {
+	if o != nil && !IsNil(o.WebApplicationExtension) {
 		return true
 	}
 
@@ -397,7 +400,7 @@ func (o *HttpConnectionHandlerResponse) SetWebApplicationExtension(v []string) {
 
 // GetHttpOperationLogPublisher returns the HttpOperationLogPublisher field value if set, zero value otherwise.
 func (o *HttpConnectionHandlerResponse) GetHttpOperationLogPublisher() []string {
-	if o == nil || isNil(o.HttpOperationLogPublisher) {
+	if o == nil || IsNil(o.HttpOperationLogPublisher) {
 		var ret []string
 		return ret
 	}
@@ -407,7 +410,7 @@ func (o *HttpConnectionHandlerResponse) GetHttpOperationLogPublisher() []string 
 // GetHttpOperationLogPublisherOk returns a tuple with the HttpOperationLogPublisher field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HttpConnectionHandlerResponse) GetHttpOperationLogPublisherOk() ([]string, bool) {
-	if o == nil || isNil(o.HttpOperationLogPublisher) {
+	if o == nil || IsNil(o.HttpOperationLogPublisher) {
 		return nil, false
 	}
 	return o.HttpOperationLogPublisher, true
@@ -415,7 +418,7 @@ func (o *HttpConnectionHandlerResponse) GetHttpOperationLogPublisherOk() ([]stri
 
 // HasHttpOperationLogPublisher returns a boolean if a field has been set.
 func (o *HttpConnectionHandlerResponse) HasHttpOperationLogPublisher() bool {
-	if o != nil && !isNil(o.HttpOperationLogPublisher) {
+	if o != nil && !IsNil(o.HttpOperationLogPublisher) {
 		return true
 	}
 
@@ -429,7 +432,7 @@ func (o *HttpConnectionHandlerResponse) SetHttpOperationLogPublisher(v []string)
 
 // GetSslProtocol returns the SslProtocol field value if set, zero value otherwise.
 func (o *HttpConnectionHandlerResponse) GetSslProtocol() []string {
-	if o == nil || isNil(o.SslProtocol) {
+	if o == nil || IsNil(o.SslProtocol) {
 		var ret []string
 		return ret
 	}
@@ -439,7 +442,7 @@ func (o *HttpConnectionHandlerResponse) GetSslProtocol() []string {
 // GetSslProtocolOk returns a tuple with the SslProtocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HttpConnectionHandlerResponse) GetSslProtocolOk() ([]string, bool) {
-	if o == nil || isNil(o.SslProtocol) {
+	if o == nil || IsNil(o.SslProtocol) {
 		return nil, false
 	}
 	return o.SslProtocol, true
@@ -447,7 +450,7 @@ func (o *HttpConnectionHandlerResponse) GetSslProtocolOk() ([]string, bool) {
 
 // HasSslProtocol returns a boolean if a field has been set.
 func (o *HttpConnectionHandlerResponse) HasSslProtocol() bool {
-	if o != nil && !isNil(o.SslProtocol) {
+	if o != nil && !IsNil(o.SslProtocol) {
 		return true
 	}
 
@@ -461,7 +464,7 @@ func (o *HttpConnectionHandlerResponse) SetSslProtocol(v []string) {
 
 // GetSslCipherSuite returns the SslCipherSuite field value if set, zero value otherwise.
 func (o *HttpConnectionHandlerResponse) GetSslCipherSuite() []string {
-	if o == nil || isNil(o.SslCipherSuite) {
+	if o == nil || IsNil(o.SslCipherSuite) {
 		var ret []string
 		return ret
 	}
@@ -471,7 +474,7 @@ func (o *HttpConnectionHandlerResponse) GetSslCipherSuite() []string {
 // GetSslCipherSuiteOk returns a tuple with the SslCipherSuite field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HttpConnectionHandlerResponse) GetSslCipherSuiteOk() ([]string, bool) {
-	if o == nil || isNil(o.SslCipherSuite) {
+	if o == nil || IsNil(o.SslCipherSuite) {
 		return nil, false
 	}
 	return o.SslCipherSuite, true
@@ -479,7 +482,7 @@ func (o *HttpConnectionHandlerResponse) GetSslCipherSuiteOk() ([]string, bool) {
 
 // HasSslCipherSuite returns a boolean if a field has been set.
 func (o *HttpConnectionHandlerResponse) HasSslCipherSuite() bool {
-	if o != nil && !isNil(o.SslCipherSuite) {
+	if o != nil && !IsNil(o.SslCipherSuite) {
 		return true
 	}
 
@@ -493,7 +496,7 @@ func (o *HttpConnectionHandlerResponse) SetSslCipherSuite(v []string) {
 
 // GetKeyManagerProvider returns the KeyManagerProvider field value if set, zero value otherwise.
 func (o *HttpConnectionHandlerResponse) GetKeyManagerProvider() string {
-	if o == nil || isNil(o.KeyManagerProvider) {
+	if o == nil || IsNil(o.KeyManagerProvider) {
 		var ret string
 		return ret
 	}
@@ -503,7 +506,7 @@ func (o *HttpConnectionHandlerResponse) GetKeyManagerProvider() string {
 // GetKeyManagerProviderOk returns a tuple with the KeyManagerProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HttpConnectionHandlerResponse) GetKeyManagerProviderOk() (*string, bool) {
-	if o == nil || isNil(o.KeyManagerProvider) {
+	if o == nil || IsNil(o.KeyManagerProvider) {
 		return nil, false
 	}
 	return o.KeyManagerProvider, true
@@ -511,7 +514,7 @@ func (o *HttpConnectionHandlerResponse) GetKeyManagerProviderOk() (*string, bool
 
 // HasKeyManagerProvider returns a boolean if a field has been set.
 func (o *HttpConnectionHandlerResponse) HasKeyManagerProvider() bool {
-	if o != nil && !isNil(o.KeyManagerProvider) {
+	if o != nil && !IsNil(o.KeyManagerProvider) {
 		return true
 	}
 
@@ -525,7 +528,7 @@ func (o *HttpConnectionHandlerResponse) SetKeyManagerProvider(v string) {
 
 // GetTrustManagerProvider returns the TrustManagerProvider field value if set, zero value otherwise.
 func (o *HttpConnectionHandlerResponse) GetTrustManagerProvider() string {
-	if o == nil || isNil(o.TrustManagerProvider) {
+	if o == nil || IsNil(o.TrustManagerProvider) {
 		var ret string
 		return ret
 	}
@@ -535,7 +538,7 @@ func (o *HttpConnectionHandlerResponse) GetTrustManagerProvider() string {
 // GetTrustManagerProviderOk returns a tuple with the TrustManagerProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HttpConnectionHandlerResponse) GetTrustManagerProviderOk() (*string, bool) {
-	if o == nil || isNil(o.TrustManagerProvider) {
+	if o == nil || IsNil(o.TrustManagerProvider) {
 		return nil, false
 	}
 	return o.TrustManagerProvider, true
@@ -543,7 +546,7 @@ func (o *HttpConnectionHandlerResponse) GetTrustManagerProviderOk() (*string, bo
 
 // HasTrustManagerProvider returns a boolean if a field has been set.
 func (o *HttpConnectionHandlerResponse) HasTrustManagerProvider() bool {
-	if o != nil && !isNil(o.TrustManagerProvider) {
+	if o != nil && !IsNil(o.TrustManagerProvider) {
 		return true
 	}
 
@@ -557,7 +560,7 @@ func (o *HttpConnectionHandlerResponse) SetTrustManagerProvider(v string) {
 
 // GetNumRequestHandlers returns the NumRequestHandlers field value if set, zero value otherwise.
 func (o *HttpConnectionHandlerResponse) GetNumRequestHandlers() int32 {
-	if o == nil || isNil(o.NumRequestHandlers) {
+	if o == nil || IsNil(o.NumRequestHandlers) {
 		var ret int32
 		return ret
 	}
@@ -567,7 +570,7 @@ func (o *HttpConnectionHandlerResponse) GetNumRequestHandlers() int32 {
 // GetNumRequestHandlersOk returns a tuple with the NumRequestHandlers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HttpConnectionHandlerResponse) GetNumRequestHandlersOk() (*int32, bool) {
-	if o == nil || isNil(o.NumRequestHandlers) {
+	if o == nil || IsNil(o.NumRequestHandlers) {
 		return nil, false
 	}
 	return o.NumRequestHandlers, true
@@ -575,7 +578,7 @@ func (o *HttpConnectionHandlerResponse) GetNumRequestHandlersOk() (*int32, bool)
 
 // HasNumRequestHandlers returns a boolean if a field has been set.
 func (o *HttpConnectionHandlerResponse) HasNumRequestHandlers() bool {
-	if o != nil && !isNil(o.NumRequestHandlers) {
+	if o != nil && !IsNil(o.NumRequestHandlers) {
 		return true
 	}
 
@@ -589,7 +592,7 @@ func (o *HttpConnectionHandlerResponse) SetNumRequestHandlers(v int32) {
 
 // GetKeepStats returns the KeepStats field value if set, zero value otherwise.
 func (o *HttpConnectionHandlerResponse) GetKeepStats() bool {
-	if o == nil || isNil(o.KeepStats) {
+	if o == nil || IsNil(o.KeepStats) {
 		var ret bool
 		return ret
 	}
@@ -599,7 +602,7 @@ func (o *HttpConnectionHandlerResponse) GetKeepStats() bool {
 // GetKeepStatsOk returns a tuple with the KeepStats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HttpConnectionHandlerResponse) GetKeepStatsOk() (*bool, bool) {
-	if o == nil || isNil(o.KeepStats) {
+	if o == nil || IsNil(o.KeepStats) {
 		return nil, false
 	}
 	return o.KeepStats, true
@@ -607,7 +610,7 @@ func (o *HttpConnectionHandlerResponse) GetKeepStatsOk() (*bool, bool) {
 
 // HasKeepStats returns a boolean if a field has been set.
 func (o *HttpConnectionHandlerResponse) HasKeepStats() bool {
-	if o != nil && !isNil(o.KeepStats) {
+	if o != nil && !IsNil(o.KeepStats) {
 		return true
 	}
 
@@ -621,7 +624,7 @@ func (o *HttpConnectionHandlerResponse) SetKeepStats(v bool) {
 
 // GetAcceptBacklog returns the AcceptBacklog field value if set, zero value otherwise.
 func (o *HttpConnectionHandlerResponse) GetAcceptBacklog() int32 {
-	if o == nil || isNil(o.AcceptBacklog) {
+	if o == nil || IsNil(o.AcceptBacklog) {
 		var ret int32
 		return ret
 	}
@@ -631,7 +634,7 @@ func (o *HttpConnectionHandlerResponse) GetAcceptBacklog() int32 {
 // GetAcceptBacklogOk returns a tuple with the AcceptBacklog field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HttpConnectionHandlerResponse) GetAcceptBacklogOk() (*int32, bool) {
-	if o == nil || isNil(o.AcceptBacklog) {
+	if o == nil || IsNil(o.AcceptBacklog) {
 		return nil, false
 	}
 	return o.AcceptBacklog, true
@@ -639,7 +642,7 @@ func (o *HttpConnectionHandlerResponse) GetAcceptBacklogOk() (*int32, bool) {
 
 // HasAcceptBacklog returns a boolean if a field has been set.
 func (o *HttpConnectionHandlerResponse) HasAcceptBacklog() bool {
-	if o != nil && !isNil(o.AcceptBacklog) {
+	if o != nil && !IsNil(o.AcceptBacklog) {
 		return true
 	}
 
@@ -653,7 +656,7 @@ func (o *HttpConnectionHandlerResponse) SetAcceptBacklog(v int32) {
 
 // GetAllowTCPReuseAddress returns the AllowTCPReuseAddress field value if set, zero value otherwise.
 func (o *HttpConnectionHandlerResponse) GetAllowTCPReuseAddress() bool {
-	if o == nil || isNil(o.AllowTCPReuseAddress) {
+	if o == nil || IsNil(o.AllowTCPReuseAddress) {
 		var ret bool
 		return ret
 	}
@@ -663,7 +666,7 @@ func (o *HttpConnectionHandlerResponse) GetAllowTCPReuseAddress() bool {
 // GetAllowTCPReuseAddressOk returns a tuple with the AllowTCPReuseAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HttpConnectionHandlerResponse) GetAllowTCPReuseAddressOk() (*bool, bool) {
-	if o == nil || isNil(o.AllowTCPReuseAddress) {
+	if o == nil || IsNil(o.AllowTCPReuseAddress) {
 		return nil, false
 	}
 	return o.AllowTCPReuseAddress, true
@@ -671,7 +674,7 @@ func (o *HttpConnectionHandlerResponse) GetAllowTCPReuseAddressOk() (*bool, bool
 
 // HasAllowTCPReuseAddress returns a boolean if a field has been set.
 func (o *HttpConnectionHandlerResponse) HasAllowTCPReuseAddress() bool {
-	if o != nil && !isNil(o.AllowTCPReuseAddress) {
+	if o != nil && !IsNil(o.AllowTCPReuseAddress) {
 		return true
 	}
 
@@ -685,7 +688,7 @@ func (o *HttpConnectionHandlerResponse) SetAllowTCPReuseAddress(v bool) {
 
 // GetIdleTimeLimit returns the IdleTimeLimit field value if set, zero value otherwise.
 func (o *HttpConnectionHandlerResponse) GetIdleTimeLimit() string {
-	if o == nil || isNil(o.IdleTimeLimit) {
+	if o == nil || IsNil(o.IdleTimeLimit) {
 		var ret string
 		return ret
 	}
@@ -695,7 +698,7 @@ func (o *HttpConnectionHandlerResponse) GetIdleTimeLimit() string {
 // GetIdleTimeLimitOk returns a tuple with the IdleTimeLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HttpConnectionHandlerResponse) GetIdleTimeLimitOk() (*string, bool) {
-	if o == nil || isNil(o.IdleTimeLimit) {
+	if o == nil || IsNil(o.IdleTimeLimit) {
 		return nil, false
 	}
 	return o.IdleTimeLimit, true
@@ -703,7 +706,7 @@ func (o *HttpConnectionHandlerResponse) GetIdleTimeLimitOk() (*string, bool) {
 
 // HasIdleTimeLimit returns a boolean if a field has been set.
 func (o *HttpConnectionHandlerResponse) HasIdleTimeLimit() bool {
-	if o != nil && !isNil(o.IdleTimeLimit) {
+	if o != nil && !IsNil(o.IdleTimeLimit) {
 		return true
 	}
 
@@ -717,7 +720,7 @@ func (o *HttpConnectionHandlerResponse) SetIdleTimeLimit(v string) {
 
 // GetLowResourcesConnectionThreshold returns the LowResourcesConnectionThreshold field value if set, zero value otherwise.
 func (o *HttpConnectionHandlerResponse) GetLowResourcesConnectionThreshold() int32 {
-	if o == nil || isNil(o.LowResourcesConnectionThreshold) {
+	if o == nil || IsNil(o.LowResourcesConnectionThreshold) {
 		var ret int32
 		return ret
 	}
@@ -727,7 +730,7 @@ func (o *HttpConnectionHandlerResponse) GetLowResourcesConnectionThreshold() int
 // GetLowResourcesConnectionThresholdOk returns a tuple with the LowResourcesConnectionThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HttpConnectionHandlerResponse) GetLowResourcesConnectionThresholdOk() (*int32, bool) {
-	if o == nil || isNil(o.LowResourcesConnectionThreshold) {
+	if o == nil || IsNil(o.LowResourcesConnectionThreshold) {
 		return nil, false
 	}
 	return o.LowResourcesConnectionThreshold, true
@@ -735,7 +738,7 @@ func (o *HttpConnectionHandlerResponse) GetLowResourcesConnectionThresholdOk() (
 
 // HasLowResourcesConnectionThreshold returns a boolean if a field has been set.
 func (o *HttpConnectionHandlerResponse) HasLowResourcesConnectionThreshold() bool {
-	if o != nil && !isNil(o.LowResourcesConnectionThreshold) {
+	if o != nil && !IsNil(o.LowResourcesConnectionThreshold) {
 		return true
 	}
 
@@ -749,7 +752,7 @@ func (o *HttpConnectionHandlerResponse) SetLowResourcesConnectionThreshold(v int
 
 // GetLowResourcesIdleTimeLimit returns the LowResourcesIdleTimeLimit field value if set, zero value otherwise.
 func (o *HttpConnectionHandlerResponse) GetLowResourcesIdleTimeLimit() string {
-	if o == nil || isNil(o.LowResourcesIdleTimeLimit) {
+	if o == nil || IsNil(o.LowResourcesIdleTimeLimit) {
 		var ret string
 		return ret
 	}
@@ -759,7 +762,7 @@ func (o *HttpConnectionHandlerResponse) GetLowResourcesIdleTimeLimit() string {
 // GetLowResourcesIdleTimeLimitOk returns a tuple with the LowResourcesIdleTimeLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HttpConnectionHandlerResponse) GetLowResourcesIdleTimeLimitOk() (*string, bool) {
-	if o == nil || isNil(o.LowResourcesIdleTimeLimit) {
+	if o == nil || IsNil(o.LowResourcesIdleTimeLimit) {
 		return nil, false
 	}
 	return o.LowResourcesIdleTimeLimit, true
@@ -767,7 +770,7 @@ func (o *HttpConnectionHandlerResponse) GetLowResourcesIdleTimeLimitOk() (*strin
 
 // HasLowResourcesIdleTimeLimit returns a boolean if a field has been set.
 func (o *HttpConnectionHandlerResponse) HasLowResourcesIdleTimeLimit() bool {
-	if o != nil && !isNil(o.LowResourcesIdleTimeLimit) {
+	if o != nil && !IsNil(o.LowResourcesIdleTimeLimit) {
 		return true
 	}
 
@@ -781,7 +784,7 @@ func (o *HttpConnectionHandlerResponse) SetLowResourcesIdleTimeLimit(v string) {
 
 // GetEnableMultipartMIMEParameters returns the EnableMultipartMIMEParameters field value if set, zero value otherwise.
 func (o *HttpConnectionHandlerResponse) GetEnableMultipartMIMEParameters() bool {
-	if o == nil || isNil(o.EnableMultipartMIMEParameters) {
+	if o == nil || IsNil(o.EnableMultipartMIMEParameters) {
 		var ret bool
 		return ret
 	}
@@ -791,7 +794,7 @@ func (o *HttpConnectionHandlerResponse) GetEnableMultipartMIMEParameters() bool 
 // GetEnableMultipartMIMEParametersOk returns a tuple with the EnableMultipartMIMEParameters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HttpConnectionHandlerResponse) GetEnableMultipartMIMEParametersOk() (*bool, bool) {
-	if o == nil || isNil(o.EnableMultipartMIMEParameters) {
+	if o == nil || IsNil(o.EnableMultipartMIMEParameters) {
 		return nil, false
 	}
 	return o.EnableMultipartMIMEParameters, true
@@ -799,7 +802,7 @@ func (o *HttpConnectionHandlerResponse) GetEnableMultipartMIMEParametersOk() (*b
 
 // HasEnableMultipartMIMEParameters returns a boolean if a field has been set.
 func (o *HttpConnectionHandlerResponse) HasEnableMultipartMIMEParameters() bool {
-	if o != nil && !isNil(o.EnableMultipartMIMEParameters) {
+	if o != nil && !IsNil(o.EnableMultipartMIMEParameters) {
 		return true
 	}
 
@@ -813,7 +816,7 @@ func (o *HttpConnectionHandlerResponse) SetEnableMultipartMIMEParameters(v bool)
 
 // GetUseForwardedHeaders returns the UseForwardedHeaders field value if set, zero value otherwise.
 func (o *HttpConnectionHandlerResponse) GetUseForwardedHeaders() bool {
-	if o == nil || isNil(o.UseForwardedHeaders) {
+	if o == nil || IsNil(o.UseForwardedHeaders) {
 		var ret bool
 		return ret
 	}
@@ -823,7 +826,7 @@ func (o *HttpConnectionHandlerResponse) GetUseForwardedHeaders() bool {
 // GetUseForwardedHeadersOk returns a tuple with the UseForwardedHeaders field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HttpConnectionHandlerResponse) GetUseForwardedHeadersOk() (*bool, bool) {
-	if o == nil || isNil(o.UseForwardedHeaders) {
+	if o == nil || IsNil(o.UseForwardedHeaders) {
 		return nil, false
 	}
 	return o.UseForwardedHeaders, true
@@ -831,7 +834,7 @@ func (o *HttpConnectionHandlerResponse) GetUseForwardedHeadersOk() (*bool, bool)
 
 // HasUseForwardedHeaders returns a boolean if a field has been set.
 func (o *HttpConnectionHandlerResponse) HasUseForwardedHeaders() bool {
-	if o != nil && !isNil(o.UseForwardedHeaders) {
+	if o != nil && !IsNil(o.UseForwardedHeaders) {
 		return true
 	}
 
@@ -845,7 +848,7 @@ func (o *HttpConnectionHandlerResponse) SetUseForwardedHeaders(v bool) {
 
 // GetHttpRequestHeaderSize returns the HttpRequestHeaderSize field value if set, zero value otherwise.
 func (o *HttpConnectionHandlerResponse) GetHttpRequestHeaderSize() int32 {
-	if o == nil || isNil(o.HttpRequestHeaderSize) {
+	if o == nil || IsNil(o.HttpRequestHeaderSize) {
 		var ret int32
 		return ret
 	}
@@ -855,7 +858,7 @@ func (o *HttpConnectionHandlerResponse) GetHttpRequestHeaderSize() int32 {
 // GetHttpRequestHeaderSizeOk returns a tuple with the HttpRequestHeaderSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HttpConnectionHandlerResponse) GetHttpRequestHeaderSizeOk() (*int32, bool) {
-	if o == nil || isNil(o.HttpRequestHeaderSize) {
+	if o == nil || IsNil(o.HttpRequestHeaderSize) {
 		return nil, false
 	}
 	return o.HttpRequestHeaderSize, true
@@ -863,7 +866,7 @@ func (o *HttpConnectionHandlerResponse) GetHttpRequestHeaderSizeOk() (*int32, bo
 
 // HasHttpRequestHeaderSize returns a boolean if a field has been set.
 func (o *HttpConnectionHandlerResponse) HasHttpRequestHeaderSize() bool {
-	if o != nil && !isNil(o.HttpRequestHeaderSize) {
+	if o != nil && !IsNil(o.HttpRequestHeaderSize) {
 		return true
 	}
 
@@ -877,7 +880,7 @@ func (o *HttpConnectionHandlerResponse) SetHttpRequestHeaderSize(v int32) {
 
 // GetResponseHeader returns the ResponseHeader field value if set, zero value otherwise.
 func (o *HttpConnectionHandlerResponse) GetResponseHeader() []string {
-	if o == nil || isNil(o.ResponseHeader) {
+	if o == nil || IsNil(o.ResponseHeader) {
 		var ret []string
 		return ret
 	}
@@ -887,7 +890,7 @@ func (o *HttpConnectionHandlerResponse) GetResponseHeader() []string {
 // GetResponseHeaderOk returns a tuple with the ResponseHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HttpConnectionHandlerResponse) GetResponseHeaderOk() ([]string, bool) {
-	if o == nil || isNil(o.ResponseHeader) {
+	if o == nil || IsNil(o.ResponseHeader) {
 		return nil, false
 	}
 	return o.ResponseHeader, true
@@ -895,7 +898,7 @@ func (o *HttpConnectionHandlerResponse) GetResponseHeaderOk() ([]string, bool) {
 
 // HasResponseHeader returns a boolean if a field has been set.
 func (o *HttpConnectionHandlerResponse) HasResponseHeader() bool {
-	if o != nil && !isNil(o.ResponseHeader) {
+	if o != nil && !IsNil(o.ResponseHeader) {
 		return true
 	}
 
@@ -909,7 +912,7 @@ func (o *HttpConnectionHandlerResponse) SetResponseHeader(v []string) {
 
 // GetUseCorrelationIDHeader returns the UseCorrelationIDHeader field value if set, zero value otherwise.
 func (o *HttpConnectionHandlerResponse) GetUseCorrelationIDHeader() bool {
-	if o == nil || isNil(o.UseCorrelationIDHeader) {
+	if o == nil || IsNil(o.UseCorrelationIDHeader) {
 		var ret bool
 		return ret
 	}
@@ -919,7 +922,7 @@ func (o *HttpConnectionHandlerResponse) GetUseCorrelationIDHeader() bool {
 // GetUseCorrelationIDHeaderOk returns a tuple with the UseCorrelationIDHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HttpConnectionHandlerResponse) GetUseCorrelationIDHeaderOk() (*bool, bool) {
-	if o == nil || isNil(o.UseCorrelationIDHeader) {
+	if o == nil || IsNil(o.UseCorrelationIDHeader) {
 		return nil, false
 	}
 	return o.UseCorrelationIDHeader, true
@@ -927,7 +930,7 @@ func (o *HttpConnectionHandlerResponse) GetUseCorrelationIDHeaderOk() (*bool, bo
 
 // HasUseCorrelationIDHeader returns a boolean if a field has been set.
 func (o *HttpConnectionHandlerResponse) HasUseCorrelationIDHeader() bool {
-	if o != nil && !isNil(o.UseCorrelationIDHeader) {
+	if o != nil && !IsNil(o.UseCorrelationIDHeader) {
 		return true
 	}
 
@@ -941,7 +944,7 @@ func (o *HttpConnectionHandlerResponse) SetUseCorrelationIDHeader(v bool) {
 
 // GetCorrelationIDResponseHeader returns the CorrelationIDResponseHeader field value if set, zero value otherwise.
 func (o *HttpConnectionHandlerResponse) GetCorrelationIDResponseHeader() string {
-	if o == nil || isNil(o.CorrelationIDResponseHeader) {
+	if o == nil || IsNil(o.CorrelationIDResponseHeader) {
 		var ret string
 		return ret
 	}
@@ -951,7 +954,7 @@ func (o *HttpConnectionHandlerResponse) GetCorrelationIDResponseHeader() string 
 // GetCorrelationIDResponseHeaderOk returns a tuple with the CorrelationIDResponseHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HttpConnectionHandlerResponse) GetCorrelationIDResponseHeaderOk() (*string, bool) {
-	if o == nil || isNil(o.CorrelationIDResponseHeader) {
+	if o == nil || IsNil(o.CorrelationIDResponseHeader) {
 		return nil, false
 	}
 	return o.CorrelationIDResponseHeader, true
@@ -959,7 +962,7 @@ func (o *HttpConnectionHandlerResponse) GetCorrelationIDResponseHeaderOk() (*str
 
 // HasCorrelationIDResponseHeader returns a boolean if a field has been set.
 func (o *HttpConnectionHandlerResponse) HasCorrelationIDResponseHeader() bool {
-	if o != nil && !isNil(o.CorrelationIDResponseHeader) {
+	if o != nil && !IsNil(o.CorrelationIDResponseHeader) {
 		return true
 	}
 
@@ -973,7 +976,7 @@ func (o *HttpConnectionHandlerResponse) SetCorrelationIDResponseHeader(v string)
 
 // GetCorrelationIDRequestHeader returns the CorrelationIDRequestHeader field value if set, zero value otherwise.
 func (o *HttpConnectionHandlerResponse) GetCorrelationIDRequestHeader() []string {
-	if o == nil || isNil(o.CorrelationIDRequestHeader) {
+	if o == nil || IsNil(o.CorrelationIDRequestHeader) {
 		var ret []string
 		return ret
 	}
@@ -983,7 +986,7 @@ func (o *HttpConnectionHandlerResponse) GetCorrelationIDRequestHeader() []string
 // GetCorrelationIDRequestHeaderOk returns a tuple with the CorrelationIDRequestHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HttpConnectionHandlerResponse) GetCorrelationIDRequestHeaderOk() ([]string, bool) {
-	if o == nil || isNil(o.CorrelationIDRequestHeader) {
+	if o == nil || IsNil(o.CorrelationIDRequestHeader) {
 		return nil, false
 	}
 	return o.CorrelationIDRequestHeader, true
@@ -991,7 +994,7 @@ func (o *HttpConnectionHandlerResponse) GetCorrelationIDRequestHeaderOk() ([]str
 
 // HasCorrelationIDRequestHeader returns a boolean if a field has been set.
 func (o *HttpConnectionHandlerResponse) HasCorrelationIDRequestHeader() bool {
-	if o != nil && !isNil(o.CorrelationIDRequestHeader) {
+	if o != nil && !IsNil(o.CorrelationIDRequestHeader) {
 		return true
 	}
 
@@ -1005,7 +1008,7 @@ func (o *HttpConnectionHandlerResponse) SetCorrelationIDRequestHeader(v []string
 
 // GetSslClientAuthPolicy returns the SslClientAuthPolicy field value if set, zero value otherwise.
 func (o *HttpConnectionHandlerResponse) GetSslClientAuthPolicy() EnumconnectionHandlerSslClientAuthPolicyProp {
-	if o == nil || isNil(o.SslClientAuthPolicy) {
+	if o == nil || IsNil(o.SslClientAuthPolicy) {
 		var ret EnumconnectionHandlerSslClientAuthPolicyProp
 		return ret
 	}
@@ -1015,7 +1018,7 @@ func (o *HttpConnectionHandlerResponse) GetSslClientAuthPolicy() EnumconnectionH
 // GetSslClientAuthPolicyOk returns a tuple with the SslClientAuthPolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HttpConnectionHandlerResponse) GetSslClientAuthPolicyOk() (*EnumconnectionHandlerSslClientAuthPolicyProp, bool) {
-	if o == nil || isNil(o.SslClientAuthPolicy) {
+	if o == nil || IsNil(o.SslClientAuthPolicy) {
 		return nil, false
 	}
 	return o.SslClientAuthPolicy, true
@@ -1023,7 +1026,7 @@ func (o *HttpConnectionHandlerResponse) GetSslClientAuthPolicyOk() (*Enumconnect
 
 // HasSslClientAuthPolicy returns a boolean if a field has been set.
 func (o *HttpConnectionHandlerResponse) HasSslClientAuthPolicy() bool {
-	if o != nil && !isNil(o.SslClientAuthPolicy) {
+	if o != nil && !IsNil(o.SslClientAuthPolicy) {
 		return true
 	}
 
@@ -1037,7 +1040,7 @@ func (o *HttpConnectionHandlerResponse) SetSslClientAuthPolicy(v EnumconnectionH
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *HttpConnectionHandlerResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -1047,7 +1050,7 @@ func (o *HttpConnectionHandlerResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HttpConnectionHandlerResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -1055,7 +1058,7 @@ func (o *HttpConnectionHandlerResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *HttpConnectionHandlerResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -1092,104 +1095,104 @@ func (o *HttpConnectionHandlerResponse) SetEnabled(v bool) {
 }
 
 func (o HttpConnectionHandlerResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.ListenAddress) {
-		toSerialize["listenAddress"] = o.ListenAddress
-	}
-	if true {
-		toSerialize["listenPort"] = o.ListenPort
-	}
-	if !isNil(o.UseSSL) {
-		toSerialize["useSSL"] = o.UseSSL
-	}
-	if !isNil(o.SslCertNickname) {
-		toSerialize["sslCertNickname"] = o.SslCertNickname
-	}
-	if !isNil(o.HttpServletExtension) {
-		toSerialize["httpServletExtension"] = o.HttpServletExtension
-	}
-	if !isNil(o.WebApplicationExtension) {
-		toSerialize["webApplicationExtension"] = o.WebApplicationExtension
-	}
-	if !isNil(o.HttpOperationLogPublisher) {
-		toSerialize["httpOperationLogPublisher"] = o.HttpOperationLogPublisher
-	}
-	if !isNil(o.SslProtocol) {
-		toSerialize["sslProtocol"] = o.SslProtocol
-	}
-	if !isNil(o.SslCipherSuite) {
-		toSerialize["sslCipherSuite"] = o.SslCipherSuite
-	}
-	if !isNil(o.KeyManagerProvider) {
-		toSerialize["keyManagerProvider"] = o.KeyManagerProvider
-	}
-	if !isNil(o.TrustManagerProvider) {
-		toSerialize["trustManagerProvider"] = o.TrustManagerProvider
-	}
-	if !isNil(o.NumRequestHandlers) {
-		toSerialize["numRequestHandlers"] = o.NumRequestHandlers
-	}
-	if !isNil(o.KeepStats) {
-		toSerialize["keepStats"] = o.KeepStats
-	}
-	if !isNil(o.AcceptBacklog) {
-		toSerialize["acceptBacklog"] = o.AcceptBacklog
-	}
-	if !isNil(o.AllowTCPReuseAddress) {
-		toSerialize["allowTCPReuseAddress"] = o.AllowTCPReuseAddress
-	}
-	if !isNil(o.IdleTimeLimit) {
-		toSerialize["idleTimeLimit"] = o.IdleTimeLimit
-	}
-	if !isNil(o.LowResourcesConnectionThreshold) {
-		toSerialize["lowResourcesConnectionThreshold"] = o.LowResourcesConnectionThreshold
-	}
-	if !isNil(o.LowResourcesIdleTimeLimit) {
-		toSerialize["lowResourcesIdleTimeLimit"] = o.LowResourcesIdleTimeLimit
-	}
-	if !isNil(o.EnableMultipartMIMEParameters) {
-		toSerialize["enableMultipartMIMEParameters"] = o.EnableMultipartMIMEParameters
-	}
-	if !isNil(o.UseForwardedHeaders) {
-		toSerialize["useForwardedHeaders"] = o.UseForwardedHeaders
-	}
-	if !isNil(o.HttpRequestHeaderSize) {
-		toSerialize["httpRequestHeaderSize"] = o.HttpRequestHeaderSize
-	}
-	if !isNil(o.ResponseHeader) {
-		toSerialize["responseHeader"] = o.ResponseHeader
-	}
-	if !isNil(o.UseCorrelationIDHeader) {
-		toSerialize["useCorrelationIDHeader"] = o.UseCorrelationIDHeader
-	}
-	if !isNil(o.CorrelationIDResponseHeader) {
-		toSerialize["correlationIDResponseHeader"] = o.CorrelationIDResponseHeader
-	}
-	if !isNil(o.CorrelationIDRequestHeader) {
-		toSerialize["correlationIDRequestHeader"] = o.CorrelationIDRequestHeader
-	}
-	if !isNil(o.SslClientAuthPolicy) {
-		toSerialize["sslClientAuthPolicy"] = o.SslClientAuthPolicy
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o HttpConnectionHandlerResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.ListenAddress) {
+		toSerialize["listenAddress"] = o.ListenAddress
+	}
+	toSerialize["listenPort"] = o.ListenPort
+	if !IsNil(o.UseSSL) {
+		toSerialize["useSSL"] = o.UseSSL
+	}
+	if !IsNil(o.SslCertNickname) {
+		toSerialize["sslCertNickname"] = o.SslCertNickname
+	}
+	if !IsNil(o.HttpServletExtension) {
+		toSerialize["httpServletExtension"] = o.HttpServletExtension
+	}
+	if !IsNil(o.WebApplicationExtension) {
+		toSerialize["webApplicationExtension"] = o.WebApplicationExtension
+	}
+	if !IsNil(o.HttpOperationLogPublisher) {
+		toSerialize["httpOperationLogPublisher"] = o.HttpOperationLogPublisher
+	}
+	if !IsNil(o.SslProtocol) {
+		toSerialize["sslProtocol"] = o.SslProtocol
+	}
+	if !IsNil(o.SslCipherSuite) {
+		toSerialize["sslCipherSuite"] = o.SslCipherSuite
+	}
+	if !IsNil(o.KeyManagerProvider) {
+		toSerialize["keyManagerProvider"] = o.KeyManagerProvider
+	}
+	if !IsNil(o.TrustManagerProvider) {
+		toSerialize["trustManagerProvider"] = o.TrustManagerProvider
+	}
+	if !IsNil(o.NumRequestHandlers) {
+		toSerialize["numRequestHandlers"] = o.NumRequestHandlers
+	}
+	if !IsNil(o.KeepStats) {
+		toSerialize["keepStats"] = o.KeepStats
+	}
+	if !IsNil(o.AcceptBacklog) {
+		toSerialize["acceptBacklog"] = o.AcceptBacklog
+	}
+	if !IsNil(o.AllowTCPReuseAddress) {
+		toSerialize["allowTCPReuseAddress"] = o.AllowTCPReuseAddress
+	}
+	if !IsNil(o.IdleTimeLimit) {
+		toSerialize["idleTimeLimit"] = o.IdleTimeLimit
+	}
+	if !IsNil(o.LowResourcesConnectionThreshold) {
+		toSerialize["lowResourcesConnectionThreshold"] = o.LowResourcesConnectionThreshold
+	}
+	if !IsNil(o.LowResourcesIdleTimeLimit) {
+		toSerialize["lowResourcesIdleTimeLimit"] = o.LowResourcesIdleTimeLimit
+	}
+	if !IsNil(o.EnableMultipartMIMEParameters) {
+		toSerialize["enableMultipartMIMEParameters"] = o.EnableMultipartMIMEParameters
+	}
+	if !IsNil(o.UseForwardedHeaders) {
+		toSerialize["useForwardedHeaders"] = o.UseForwardedHeaders
+	}
+	if !IsNil(o.HttpRequestHeaderSize) {
+		toSerialize["httpRequestHeaderSize"] = o.HttpRequestHeaderSize
+	}
+	if !IsNil(o.ResponseHeader) {
+		toSerialize["responseHeader"] = o.ResponseHeader
+	}
+	if !IsNil(o.UseCorrelationIDHeader) {
+		toSerialize["useCorrelationIDHeader"] = o.UseCorrelationIDHeader
+	}
+	if !IsNil(o.CorrelationIDResponseHeader) {
+		toSerialize["correlationIDResponseHeader"] = o.CorrelationIDResponseHeader
+	}
+	if !IsNil(o.CorrelationIDRequestHeader) {
+		toSerialize["correlationIDRequestHeader"] = o.CorrelationIDRequestHeader
+	}
+	if !IsNil(o.SslClientAuthPolicy) {
+		toSerialize["sslClientAuthPolicy"] = o.SslClientAuthPolicy
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableHttpConnectionHandlerResponse struct {

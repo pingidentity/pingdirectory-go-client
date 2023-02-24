@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ThirdPartyVelocityContextProviderResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ThirdPartyVelocityContextProviderResponse{}
+
 // ThirdPartyVelocityContextProviderResponse struct for ThirdPartyVelocityContextProviderResponse
 type ThirdPartyVelocityContextProviderResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -60,7 +63,7 @@ func NewThirdPartyVelocityContextProviderResponseWithDefaults() *ThirdPartyVeloc
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *ThirdPartyVelocityContextProviderResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -70,7 +73,7 @@ func (o *ThirdPartyVelocityContextProviderResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyVelocityContextProviderResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -78,7 +81,7 @@ func (o *ThirdPartyVelocityContextProviderResponse) GetMetaOk() (*MetaMeta, bool
 
 // HasMeta returns a boolean if a field has been set.
 func (o *ThirdPartyVelocityContextProviderResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -92,7 +95,7 @@ func (o *ThirdPartyVelocityContextProviderResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *ThirdPartyVelocityContextProviderResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -102,7 +105,7 @@ func (o *ThirdPartyVelocityContextProviderResponse) GetUrnpingidentityschemascon
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyVelocityContextProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -110,7 +113,7 @@ func (o *ThirdPartyVelocityContextProviderResponse) GetUrnpingidentityschemascon
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *ThirdPartyVelocityContextProviderResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -196,7 +199,7 @@ func (o *ThirdPartyVelocityContextProviderResponse) SetExtensionClass(v string) 
 
 // GetExtensionArgument returns the ExtensionArgument field value if set, zero value otherwise.
 func (o *ThirdPartyVelocityContextProviderResponse) GetExtensionArgument() []string {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		var ret []string
 		return ret
 	}
@@ -206,7 +209,7 @@ func (o *ThirdPartyVelocityContextProviderResponse) GetExtensionArgument() []str
 // GetExtensionArgumentOk returns a tuple with the ExtensionArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyVelocityContextProviderResponse) GetExtensionArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		return nil, false
 	}
 	return o.ExtensionArgument, true
@@ -214,7 +217,7 @@ func (o *ThirdPartyVelocityContextProviderResponse) GetExtensionArgumentOk() ([]
 
 // HasExtensionArgument returns a boolean if a field has been set.
 func (o *ThirdPartyVelocityContextProviderResponse) HasExtensionArgument() bool {
-	if o != nil && !isNil(o.ExtensionArgument) {
+	if o != nil && !IsNil(o.ExtensionArgument) {
 		return true
 	}
 
@@ -228,7 +231,7 @@ func (o *ThirdPartyVelocityContextProviderResponse) SetExtensionArgument(v []str
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
 func (o *ThirdPartyVelocityContextProviderResponse) GetEnabled() bool {
-	if o == nil || isNil(o.Enabled) {
+	if o == nil || IsNil(o.Enabled) {
 		var ret bool
 		return ret
 	}
@@ -238,7 +241,7 @@ func (o *ThirdPartyVelocityContextProviderResponse) GetEnabled() bool {
 // GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyVelocityContextProviderResponse) GetEnabledOk() (*bool, bool) {
-	if o == nil || isNil(o.Enabled) {
+	if o == nil || IsNil(o.Enabled) {
 		return nil, false
 	}
 	return o.Enabled, true
@@ -246,7 +249,7 @@ func (o *ThirdPartyVelocityContextProviderResponse) GetEnabledOk() (*bool, bool)
 
 // HasEnabled returns a boolean if a field has been set.
 func (o *ThirdPartyVelocityContextProviderResponse) HasEnabled() bool {
-	if o != nil && !isNil(o.Enabled) {
+	if o != nil && !IsNil(o.Enabled) {
 		return true
 	}
 
@@ -260,7 +263,7 @@ func (o *ThirdPartyVelocityContextProviderResponse) SetEnabled(v bool) {
 
 // GetObjectScope returns the ObjectScope field value if set, zero value otherwise.
 func (o *ThirdPartyVelocityContextProviderResponse) GetObjectScope() EnumvelocityContextProviderObjectScopeProp {
-	if o == nil || isNil(o.ObjectScope) {
+	if o == nil || IsNil(o.ObjectScope) {
 		var ret EnumvelocityContextProviderObjectScopeProp
 		return ret
 	}
@@ -270,7 +273,7 @@ func (o *ThirdPartyVelocityContextProviderResponse) GetObjectScope() Enumvelocit
 // GetObjectScopeOk returns a tuple with the ObjectScope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyVelocityContextProviderResponse) GetObjectScopeOk() (*EnumvelocityContextProviderObjectScopeProp, bool) {
-	if o == nil || isNil(o.ObjectScope) {
+	if o == nil || IsNil(o.ObjectScope) {
 		return nil, false
 	}
 	return o.ObjectScope, true
@@ -278,7 +281,7 @@ func (o *ThirdPartyVelocityContextProviderResponse) GetObjectScopeOk() (*Enumvel
 
 // HasObjectScope returns a boolean if a field has been set.
 func (o *ThirdPartyVelocityContextProviderResponse) HasObjectScope() bool {
-	if o != nil && !isNil(o.ObjectScope) {
+	if o != nil && !IsNil(o.ObjectScope) {
 		return true
 	}
 
@@ -292,7 +295,7 @@ func (o *ThirdPartyVelocityContextProviderResponse) SetObjectScope(v Enumvelocit
 
 // GetIncludedView returns the IncludedView field value if set, zero value otherwise.
 func (o *ThirdPartyVelocityContextProviderResponse) GetIncludedView() []string {
-	if o == nil || isNil(o.IncludedView) {
+	if o == nil || IsNil(o.IncludedView) {
 		var ret []string
 		return ret
 	}
@@ -302,7 +305,7 @@ func (o *ThirdPartyVelocityContextProviderResponse) GetIncludedView() []string {
 // GetIncludedViewOk returns a tuple with the IncludedView field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyVelocityContextProviderResponse) GetIncludedViewOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludedView) {
+	if o == nil || IsNil(o.IncludedView) {
 		return nil, false
 	}
 	return o.IncludedView, true
@@ -310,7 +313,7 @@ func (o *ThirdPartyVelocityContextProviderResponse) GetIncludedViewOk() ([]strin
 
 // HasIncludedView returns a boolean if a field has been set.
 func (o *ThirdPartyVelocityContextProviderResponse) HasIncludedView() bool {
-	if o != nil && !isNil(o.IncludedView) {
+	if o != nil && !IsNil(o.IncludedView) {
 		return true
 	}
 
@@ -324,7 +327,7 @@ func (o *ThirdPartyVelocityContextProviderResponse) SetIncludedView(v []string) 
 
 // GetExcludedView returns the ExcludedView field value if set, zero value otherwise.
 func (o *ThirdPartyVelocityContextProviderResponse) GetExcludedView() []string {
-	if o == nil || isNil(o.ExcludedView) {
+	if o == nil || IsNil(o.ExcludedView) {
 		var ret []string
 		return ret
 	}
@@ -334,7 +337,7 @@ func (o *ThirdPartyVelocityContextProviderResponse) GetExcludedView() []string {
 // GetExcludedViewOk returns a tuple with the ExcludedView field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyVelocityContextProviderResponse) GetExcludedViewOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludedView) {
+	if o == nil || IsNil(o.ExcludedView) {
 		return nil, false
 	}
 	return o.ExcludedView, true
@@ -342,7 +345,7 @@ func (o *ThirdPartyVelocityContextProviderResponse) GetExcludedViewOk() ([]strin
 
 // HasExcludedView returns a boolean if a field has been set.
 func (o *ThirdPartyVelocityContextProviderResponse) HasExcludedView() bool {
-	if o != nil && !isNil(o.ExcludedView) {
+	if o != nil && !IsNil(o.ExcludedView) {
 		return true
 	}
 
@@ -356,7 +359,7 @@ func (o *ThirdPartyVelocityContextProviderResponse) SetExcludedView(v []string) 
 
 // GetHttpMethod returns the HttpMethod field value if set, zero value otherwise.
 func (o *ThirdPartyVelocityContextProviderResponse) GetHttpMethod() []string {
-	if o == nil || isNil(o.HttpMethod) {
+	if o == nil || IsNil(o.HttpMethod) {
 		var ret []string
 		return ret
 	}
@@ -366,7 +369,7 @@ func (o *ThirdPartyVelocityContextProviderResponse) GetHttpMethod() []string {
 // GetHttpMethodOk returns a tuple with the HttpMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyVelocityContextProviderResponse) GetHttpMethodOk() ([]string, bool) {
-	if o == nil || isNil(o.HttpMethod) {
+	if o == nil || IsNil(o.HttpMethod) {
 		return nil, false
 	}
 	return o.HttpMethod, true
@@ -374,7 +377,7 @@ func (o *ThirdPartyVelocityContextProviderResponse) GetHttpMethodOk() ([]string,
 
 // HasHttpMethod returns a boolean if a field has been set.
 func (o *ThirdPartyVelocityContextProviderResponse) HasHttpMethod() bool {
-	if o != nil && !isNil(o.HttpMethod) {
+	if o != nil && !IsNil(o.HttpMethod) {
 		return true
 	}
 
@@ -388,7 +391,7 @@ func (o *ThirdPartyVelocityContextProviderResponse) SetHttpMethod(v []string) {
 
 // GetResponseHeader returns the ResponseHeader field value if set, zero value otherwise.
 func (o *ThirdPartyVelocityContextProviderResponse) GetResponseHeader() []string {
-	if o == nil || isNil(o.ResponseHeader) {
+	if o == nil || IsNil(o.ResponseHeader) {
 		var ret []string
 		return ret
 	}
@@ -398,7 +401,7 @@ func (o *ThirdPartyVelocityContextProviderResponse) GetResponseHeader() []string
 // GetResponseHeaderOk returns a tuple with the ResponseHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyVelocityContextProviderResponse) GetResponseHeaderOk() ([]string, bool) {
-	if o == nil || isNil(o.ResponseHeader) {
+	if o == nil || IsNil(o.ResponseHeader) {
 		return nil, false
 	}
 	return o.ResponseHeader, true
@@ -406,7 +409,7 @@ func (o *ThirdPartyVelocityContextProviderResponse) GetResponseHeaderOk() ([]str
 
 // HasResponseHeader returns a boolean if a field has been set.
 func (o *ThirdPartyVelocityContextProviderResponse) HasResponseHeader() bool {
-	if o != nil && !isNil(o.ResponseHeader) {
+	if o != nil && !IsNil(o.ResponseHeader) {
 		return true
 	}
 
@@ -419,44 +422,46 @@ func (o *ThirdPartyVelocityContextProviderResponse) SetResponseHeader(v []string
 }
 
 func (o ThirdPartyVelocityContextProviderResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["extensionClass"] = o.ExtensionClass
-	}
-	if !isNil(o.ExtensionArgument) {
-		toSerialize["extensionArgument"] = o.ExtensionArgument
-	}
-	if !isNil(o.Enabled) {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.ObjectScope) {
-		toSerialize["objectScope"] = o.ObjectScope
-	}
-	if !isNil(o.IncludedView) {
-		toSerialize["includedView"] = o.IncludedView
-	}
-	if !isNil(o.ExcludedView) {
-		toSerialize["excludedView"] = o.ExcludedView
-	}
-	if !isNil(o.HttpMethod) {
-		toSerialize["httpMethod"] = o.HttpMethod
-	}
-	if !isNil(o.ResponseHeader) {
-		toSerialize["responseHeader"] = o.ResponseHeader
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ThirdPartyVelocityContextProviderResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["extensionClass"] = o.ExtensionClass
+	if !IsNil(o.ExtensionArgument) {
+		toSerialize["extensionArgument"] = o.ExtensionArgument
+	}
+	if !IsNil(o.Enabled) {
+		toSerialize["enabled"] = o.Enabled
+	}
+	if !IsNil(o.ObjectScope) {
+		toSerialize["objectScope"] = o.ObjectScope
+	}
+	if !IsNil(o.IncludedView) {
+		toSerialize["includedView"] = o.IncludedView
+	}
+	if !IsNil(o.ExcludedView) {
+		toSerialize["excludedView"] = o.ExcludedView
+	}
+	if !IsNil(o.HttpMethod) {
+		toSerialize["httpMethod"] = o.HttpMethod
+	}
+	if !IsNil(o.ResponseHeader) {
+		toSerialize["responseHeader"] = o.ResponseHeader
+	}
+	return toSerialize, nil
 }
 
 type NullableThirdPartyVelocityContextProviderResponse struct {

@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -67,8 +67,8 @@ func (a *ServerInstanceListenerApiService) GetServerInstanceListenerExecute(r Ap
 	}
 
 	localVarPath := localBasePath + "/server-instances/{server-instance-name}/server-instance-listeners/{server-instance-listener-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"server-instance-listener-name"+"}", url.PathEscape(parameterToString(r.serverInstanceListenerName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"server-instance-name"+"}", url.PathEscape(parameterToString(r.serverInstanceName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"server-instance-listener-name"+"}", url.PathEscape(parameterValueToString(r.serverInstanceListenerName, "serverInstanceListenerName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"server-instance-name"+"}", url.PathEscape(parameterValueToString(r.serverInstanceName, "serverInstanceName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -101,9 +101,9 @@ func (a *ServerInstanceListenerApiService) GetServerInstanceListenerExecute(r Ap
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -180,8 +180,8 @@ func (a *ServerInstanceListenerApiService) UpdateServerInstanceListenerExecute(r
 	}
 
 	localVarPath := localBasePath + "/server-instances/{server-instance-name}/server-instance-listeners/{server-instance-listener-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"server-instance-listener-name"+"}", url.PathEscape(parameterToString(r.serverInstanceListenerName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"server-instance-name"+"}", url.PathEscape(parameterToString(r.serverInstanceName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"server-instance-listener-name"+"}", url.PathEscape(parameterValueToString(r.serverInstanceListenerName, "serverInstanceListenerName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"server-instance-name"+"}", url.PathEscape(parameterValueToString(r.serverInstanceName, "serverInstanceName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -219,9 +219,9 @@ func (a *ServerInstanceListenerApiService) UpdateServerInstanceListenerExecute(r
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

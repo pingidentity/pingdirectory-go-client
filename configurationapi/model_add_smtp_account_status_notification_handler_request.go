@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddSmtpAccountStatusNotificationHandlerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddSmtpAccountStatusNotificationHandlerRequest{}
+
 // AddSmtpAccountStatusNotificationHandlerRequest struct for AddSmtpAccountStatusNotificationHandlerRequest
 type AddSmtpAccountStatusNotificationHandlerRequest struct {
 	// Name of the new Account Status Notification Handler
@@ -120,7 +123,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) SetSchemas(v []Enumsmtp
 
 // GetEmailAddressAttributeType returns the EmailAddressAttributeType field value if set, zero value otherwise.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetEmailAddressAttributeType() []string {
-	if o == nil || isNil(o.EmailAddressAttributeType) {
+	if o == nil || IsNil(o.EmailAddressAttributeType) {
 		var ret []string
 		return ret
 	}
@@ -130,7 +133,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetEmailAddressAttribut
 // GetEmailAddressAttributeTypeOk returns a tuple with the EmailAddressAttributeType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetEmailAddressAttributeTypeOk() ([]string, bool) {
-	if o == nil || isNil(o.EmailAddressAttributeType) {
+	if o == nil || IsNil(o.EmailAddressAttributeType) {
 		return nil, false
 	}
 	return o.EmailAddressAttributeType, true
@@ -138,7 +141,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetEmailAddressAttribut
 
 // HasEmailAddressAttributeType returns a boolean if a field has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) HasEmailAddressAttributeType() bool {
-	if o != nil && !isNil(o.EmailAddressAttributeType) {
+	if o != nil && !IsNil(o.EmailAddressAttributeType) {
 		return true
 	}
 
@@ -152,7 +155,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) SetEmailAddressAttribut
 
 // GetEmailAddressJSONField returns the EmailAddressJSONField field value if set, zero value otherwise.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetEmailAddressJSONField() string {
-	if o == nil || isNil(o.EmailAddressJSONField) {
+	if o == nil || IsNil(o.EmailAddressJSONField) {
 		var ret string
 		return ret
 	}
@@ -162,7 +165,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetEmailAddressJSONFiel
 // GetEmailAddressJSONFieldOk returns a tuple with the EmailAddressJSONField field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetEmailAddressJSONFieldOk() (*string, bool) {
-	if o == nil || isNil(o.EmailAddressJSONField) {
+	if o == nil || IsNil(o.EmailAddressJSONField) {
 		return nil, false
 	}
 	return o.EmailAddressJSONField, true
@@ -170,7 +173,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetEmailAddressJSONFiel
 
 // HasEmailAddressJSONField returns a boolean if a field has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) HasEmailAddressJSONField() bool {
-	if o != nil && !isNil(o.EmailAddressJSONField) {
+	if o != nil && !IsNil(o.EmailAddressJSONField) {
 		return true
 	}
 
@@ -184,7 +187,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) SetEmailAddressJSONFiel
 
 // GetEmailAddressJSONObjectFilter returns the EmailAddressJSONObjectFilter field value if set, zero value otherwise.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetEmailAddressJSONObjectFilter() string {
-	if o == nil || isNil(o.EmailAddressJSONObjectFilter) {
+	if o == nil || IsNil(o.EmailAddressJSONObjectFilter) {
 		var ret string
 		return ret
 	}
@@ -194,7 +197,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetEmailAddressJSONObje
 // GetEmailAddressJSONObjectFilterOk returns a tuple with the EmailAddressJSONObjectFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetEmailAddressJSONObjectFilterOk() (*string, bool) {
-	if o == nil || isNil(o.EmailAddressJSONObjectFilter) {
+	if o == nil || IsNil(o.EmailAddressJSONObjectFilter) {
 		return nil, false
 	}
 	return o.EmailAddressJSONObjectFilter, true
@@ -202,7 +205,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetEmailAddressJSONObje
 
 // HasEmailAddressJSONObjectFilter returns a boolean if a field has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) HasEmailAddressJSONObjectFilter() bool {
-	if o != nil && !isNil(o.EmailAddressJSONObjectFilter) {
+	if o != nil && !IsNil(o.EmailAddressJSONObjectFilter) {
 		return true
 	}
 
@@ -216,7 +219,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) SetEmailAddressJSONObje
 
 // GetRecipientAddress returns the RecipientAddress field value if set, zero value otherwise.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetRecipientAddress() []string {
-	if o == nil || isNil(o.RecipientAddress) {
+	if o == nil || IsNil(o.RecipientAddress) {
 		var ret []string
 		return ret
 	}
@@ -226,7 +229,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetRecipientAddress() [
 // GetRecipientAddressOk returns a tuple with the RecipientAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetRecipientAddressOk() ([]string, bool) {
-	if o == nil || isNil(o.RecipientAddress) {
+	if o == nil || IsNil(o.RecipientAddress) {
 		return nil, false
 	}
 	return o.RecipientAddress, true
@@ -234,7 +237,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetRecipientAddressOk()
 
 // HasRecipientAddress returns a boolean if a field has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) HasRecipientAddress() bool {
-	if o != nil && !isNil(o.RecipientAddress) {
+	if o != nil && !IsNil(o.RecipientAddress) {
 		return true
 	}
 
@@ -248,7 +251,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) SetRecipientAddress(v [
 
 // GetSendMessageWithoutEndUserAddress returns the SendMessageWithoutEndUserAddress field value if set, zero value otherwise.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetSendMessageWithoutEndUserAddress() bool {
-	if o == nil || isNil(o.SendMessageWithoutEndUserAddress) {
+	if o == nil || IsNil(o.SendMessageWithoutEndUserAddress) {
 		var ret bool
 		return ret
 	}
@@ -258,7 +261,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetSendMessageWithoutEn
 // GetSendMessageWithoutEndUserAddressOk returns a tuple with the SendMessageWithoutEndUserAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetSendMessageWithoutEndUserAddressOk() (*bool, bool) {
-	if o == nil || isNil(o.SendMessageWithoutEndUserAddress) {
+	if o == nil || IsNil(o.SendMessageWithoutEndUserAddress) {
 		return nil, false
 	}
 	return o.SendMessageWithoutEndUserAddress, true
@@ -266,7 +269,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetSendMessageWithoutEn
 
 // HasSendMessageWithoutEndUserAddress returns a boolean if a field has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) HasSendMessageWithoutEndUserAddress() bool {
-	if o != nil && !isNil(o.SendMessageWithoutEndUserAddress) {
+	if o != nil && !IsNil(o.SendMessageWithoutEndUserAddress) {
 		return true
 	}
 
@@ -352,7 +355,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) SetMessageTemplateFile(
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -362,7 +365,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetDescription() string
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -370,7 +373,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetDescriptionOk() (*st
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -408,7 +411,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) SetEnabled(v bool) {
 
 // GetAsynchronous returns the Asynchronous field value if set, zero value otherwise.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetAsynchronous() bool {
-	if o == nil || isNil(o.Asynchronous) {
+	if o == nil || IsNil(o.Asynchronous) {
 		var ret bool
 		return ret
 	}
@@ -418,7 +421,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetAsynchronous() bool 
 // GetAsynchronousOk returns a tuple with the Asynchronous field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetAsynchronousOk() (*bool, bool) {
-	if o == nil || isNil(o.Asynchronous) {
+	if o == nil || IsNil(o.Asynchronous) {
 		return nil, false
 	}
 	return o.Asynchronous, true
@@ -426,7 +429,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetAsynchronousOk() (*b
 
 // HasAsynchronous returns a boolean if a field has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) HasAsynchronous() bool {
-	if o != nil && !isNil(o.Asynchronous) {
+	if o != nil && !IsNil(o.Asynchronous) {
 		return true
 	}
 
@@ -440,7 +443,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) SetAsynchronous(v bool)
 
 // GetAccountCreationNotificationRequestCriteria returns the AccountCreationNotificationRequestCriteria field value if set, zero value otherwise.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetAccountCreationNotificationRequestCriteria() string {
-	if o == nil || isNil(o.AccountCreationNotificationRequestCriteria) {
+	if o == nil || IsNil(o.AccountCreationNotificationRequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -450,7 +453,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetAccountCreationNotif
 // GetAccountCreationNotificationRequestCriteriaOk returns a tuple with the AccountCreationNotificationRequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetAccountCreationNotificationRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.AccountCreationNotificationRequestCriteria) {
+	if o == nil || IsNil(o.AccountCreationNotificationRequestCriteria) {
 		return nil, false
 	}
 	return o.AccountCreationNotificationRequestCriteria, true
@@ -458,7 +461,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetAccountCreationNotif
 
 // HasAccountCreationNotificationRequestCriteria returns a boolean if a field has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) HasAccountCreationNotificationRequestCriteria() bool {
-	if o != nil && !isNil(o.AccountCreationNotificationRequestCriteria) {
+	if o != nil && !IsNil(o.AccountCreationNotificationRequestCriteria) {
 		return true
 	}
 
@@ -472,7 +475,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) SetAccountCreationNotif
 
 // GetAccountUpdateNotificationRequestCriteria returns the AccountUpdateNotificationRequestCriteria field value if set, zero value otherwise.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetAccountUpdateNotificationRequestCriteria() string {
-	if o == nil || isNil(o.AccountUpdateNotificationRequestCriteria) {
+	if o == nil || IsNil(o.AccountUpdateNotificationRequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -482,7 +485,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetAccountUpdateNotific
 // GetAccountUpdateNotificationRequestCriteriaOk returns a tuple with the AccountUpdateNotificationRequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetAccountUpdateNotificationRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.AccountUpdateNotificationRequestCriteria) {
+	if o == nil || IsNil(o.AccountUpdateNotificationRequestCriteria) {
 		return nil, false
 	}
 	return o.AccountUpdateNotificationRequestCriteria, true
@@ -490,7 +493,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetAccountUpdateNotific
 
 // HasAccountUpdateNotificationRequestCriteria returns a boolean if a field has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) HasAccountUpdateNotificationRequestCriteria() bool {
-	if o != nil && !isNil(o.AccountUpdateNotificationRequestCriteria) {
+	if o != nil && !IsNil(o.AccountUpdateNotificationRequestCriteria) {
 		return true
 	}
 
@@ -503,53 +506,49 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) SetAccountUpdateNotific
 }
 
 func (o AddSmtpAccountStatusNotificationHandlerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["handlerName"] = o.HandlerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.EmailAddressAttributeType) {
-		toSerialize["emailAddressAttributeType"] = o.EmailAddressAttributeType
-	}
-	if !isNil(o.EmailAddressJSONField) {
-		toSerialize["emailAddressJSONField"] = o.EmailAddressJSONField
-	}
-	if !isNil(o.EmailAddressJSONObjectFilter) {
-		toSerialize["emailAddressJSONObjectFilter"] = o.EmailAddressJSONObjectFilter
-	}
-	if !isNil(o.RecipientAddress) {
-		toSerialize["recipientAddress"] = o.RecipientAddress
-	}
-	if !isNil(o.SendMessageWithoutEndUserAddress) {
-		toSerialize["sendMessageWithoutEndUserAddress"] = o.SendMessageWithoutEndUserAddress
-	}
-	if true {
-		toSerialize["senderAddress"] = o.SenderAddress
-	}
-	if true {
-		toSerialize["messageSubject"] = o.MessageSubject
-	}
-	if true {
-		toSerialize["messageTemplateFile"] = o.MessageTemplateFile
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.Asynchronous) {
-		toSerialize["asynchronous"] = o.Asynchronous
-	}
-	if !isNil(o.AccountCreationNotificationRequestCriteria) {
-		toSerialize["accountCreationNotificationRequestCriteria"] = o.AccountCreationNotificationRequestCriteria
-	}
-	if !isNil(o.AccountUpdateNotificationRequestCriteria) {
-		toSerialize["accountUpdateNotificationRequestCriteria"] = o.AccountUpdateNotificationRequestCriteria
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddSmtpAccountStatusNotificationHandlerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["handlerName"] = o.HandlerName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.EmailAddressAttributeType) {
+		toSerialize["emailAddressAttributeType"] = o.EmailAddressAttributeType
+	}
+	if !IsNil(o.EmailAddressJSONField) {
+		toSerialize["emailAddressJSONField"] = o.EmailAddressJSONField
+	}
+	if !IsNil(o.EmailAddressJSONObjectFilter) {
+		toSerialize["emailAddressJSONObjectFilter"] = o.EmailAddressJSONObjectFilter
+	}
+	if !IsNil(o.RecipientAddress) {
+		toSerialize["recipientAddress"] = o.RecipientAddress
+	}
+	if !IsNil(o.SendMessageWithoutEndUserAddress) {
+		toSerialize["sendMessageWithoutEndUserAddress"] = o.SendMessageWithoutEndUserAddress
+	}
+	toSerialize["senderAddress"] = o.SenderAddress
+	toSerialize["messageSubject"] = o.MessageSubject
+	toSerialize["messageTemplateFile"] = o.MessageTemplateFile
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.Asynchronous) {
+		toSerialize["asynchronous"] = o.Asynchronous
+	}
+	if !IsNil(o.AccountCreationNotificationRequestCriteria) {
+		toSerialize["accountCreationNotificationRequestCriteria"] = o.AccountCreationNotificationRequestCriteria
+	}
+	if !IsNil(o.AccountUpdateNotificationRequestCriteria) {
+		toSerialize["accountUpdateNotificationRequestCriteria"] = o.AccountUpdateNotificationRequestCriteria
+	}
+	return toSerialize, nil
 }
 
 type NullableAddSmtpAccountStatusNotificationHandlerRequest struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the LdapConnectionHandlerResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &LdapConnectionHandlerResponse{}
+
 // LdapConnectionHandlerResponse struct for LdapConnectionHandlerResponse
 type LdapConnectionHandlerResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -99,7 +102,7 @@ func NewLdapConnectionHandlerResponseWithDefaults() *LdapConnectionHandlerRespon
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *LdapConnectionHandlerResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -109,7 +112,7 @@ func (o *LdapConnectionHandlerResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -117,7 +120,7 @@ func (o *LdapConnectionHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *LdapConnectionHandlerResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -131,7 +134,7 @@ func (o *LdapConnectionHandlerResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *LdapConnectionHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -141,7 +144,7 @@ func (o *LdapConnectionHandlerResponse) GetUrnpingidentityschemasconfigurationme
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -149,7 +152,7 @@ func (o *LdapConnectionHandlerResponse) GetUrnpingidentityschemasconfigurationme
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *LdapConnectionHandlerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -211,7 +214,7 @@ func (o *LdapConnectionHandlerResponse) SetSchemas(v []EnumldapConnectionHandler
 
 // GetListenAddress returns the ListenAddress field value if set, zero value otherwise.
 func (o *LdapConnectionHandlerResponse) GetListenAddress() []string {
-	if o == nil || isNil(o.ListenAddress) {
+	if o == nil || IsNil(o.ListenAddress) {
 		var ret []string
 		return ret
 	}
@@ -221,7 +224,7 @@ func (o *LdapConnectionHandlerResponse) GetListenAddress() []string {
 // GetListenAddressOk returns a tuple with the ListenAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetListenAddressOk() ([]string, bool) {
-	if o == nil || isNil(o.ListenAddress) {
+	if o == nil || IsNil(o.ListenAddress) {
 		return nil, false
 	}
 	return o.ListenAddress, true
@@ -229,7 +232,7 @@ func (o *LdapConnectionHandlerResponse) GetListenAddressOk() ([]string, bool) {
 
 // HasListenAddress returns a boolean if a field has been set.
 func (o *LdapConnectionHandlerResponse) HasListenAddress() bool {
-	if o != nil && !isNil(o.ListenAddress) {
+	if o != nil && !IsNil(o.ListenAddress) {
 		return true
 	}
 
@@ -267,7 +270,7 @@ func (o *LdapConnectionHandlerResponse) SetListenPort(v int32) {
 
 // GetUseSSL returns the UseSSL field value if set, zero value otherwise.
 func (o *LdapConnectionHandlerResponse) GetUseSSL() bool {
-	if o == nil || isNil(o.UseSSL) {
+	if o == nil || IsNil(o.UseSSL) {
 		var ret bool
 		return ret
 	}
@@ -277,7 +280,7 @@ func (o *LdapConnectionHandlerResponse) GetUseSSL() bool {
 // GetUseSSLOk returns a tuple with the UseSSL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetUseSSLOk() (*bool, bool) {
-	if o == nil || isNil(o.UseSSL) {
+	if o == nil || IsNil(o.UseSSL) {
 		return nil, false
 	}
 	return o.UseSSL, true
@@ -285,7 +288,7 @@ func (o *LdapConnectionHandlerResponse) GetUseSSLOk() (*bool, bool) {
 
 // HasUseSSL returns a boolean if a field has been set.
 func (o *LdapConnectionHandlerResponse) HasUseSSL() bool {
-	if o != nil && !isNil(o.UseSSL) {
+	if o != nil && !IsNil(o.UseSSL) {
 		return true
 	}
 
@@ -299,7 +302,7 @@ func (o *LdapConnectionHandlerResponse) SetUseSSL(v bool) {
 
 // GetAllowStartTLS returns the AllowStartTLS field value if set, zero value otherwise.
 func (o *LdapConnectionHandlerResponse) GetAllowStartTLS() bool {
-	if o == nil || isNil(o.AllowStartTLS) {
+	if o == nil || IsNil(o.AllowStartTLS) {
 		var ret bool
 		return ret
 	}
@@ -309,7 +312,7 @@ func (o *LdapConnectionHandlerResponse) GetAllowStartTLS() bool {
 // GetAllowStartTLSOk returns a tuple with the AllowStartTLS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetAllowStartTLSOk() (*bool, bool) {
-	if o == nil || isNil(o.AllowStartTLS) {
+	if o == nil || IsNil(o.AllowStartTLS) {
 		return nil, false
 	}
 	return o.AllowStartTLS, true
@@ -317,7 +320,7 @@ func (o *LdapConnectionHandlerResponse) GetAllowStartTLSOk() (*bool, bool) {
 
 // HasAllowStartTLS returns a boolean if a field has been set.
 func (o *LdapConnectionHandlerResponse) HasAllowStartTLS() bool {
-	if o != nil && !isNil(o.AllowStartTLS) {
+	if o != nil && !IsNil(o.AllowStartTLS) {
 		return true
 	}
 
@@ -331,7 +334,7 @@ func (o *LdapConnectionHandlerResponse) SetAllowStartTLS(v bool) {
 
 // GetSslCertNickname returns the SslCertNickname field value if set, zero value otherwise.
 func (o *LdapConnectionHandlerResponse) GetSslCertNickname() string {
-	if o == nil || isNil(o.SslCertNickname) {
+	if o == nil || IsNil(o.SslCertNickname) {
 		var ret string
 		return ret
 	}
@@ -341,7 +344,7 @@ func (o *LdapConnectionHandlerResponse) GetSslCertNickname() string {
 // GetSslCertNicknameOk returns a tuple with the SslCertNickname field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetSslCertNicknameOk() (*string, bool) {
-	if o == nil || isNil(o.SslCertNickname) {
+	if o == nil || IsNil(o.SslCertNickname) {
 		return nil, false
 	}
 	return o.SslCertNickname, true
@@ -349,7 +352,7 @@ func (o *LdapConnectionHandlerResponse) GetSslCertNicknameOk() (*string, bool) {
 
 // HasSslCertNickname returns a boolean if a field has been set.
 func (o *LdapConnectionHandlerResponse) HasSslCertNickname() bool {
-	if o != nil && !isNil(o.SslCertNickname) {
+	if o != nil && !IsNil(o.SslCertNickname) {
 		return true
 	}
 
@@ -363,7 +366,7 @@ func (o *LdapConnectionHandlerResponse) SetSslCertNickname(v string) {
 
 // GetKeyManagerProvider returns the KeyManagerProvider field value if set, zero value otherwise.
 func (o *LdapConnectionHandlerResponse) GetKeyManagerProvider() string {
-	if o == nil || isNil(o.KeyManagerProvider) {
+	if o == nil || IsNil(o.KeyManagerProvider) {
 		var ret string
 		return ret
 	}
@@ -373,7 +376,7 @@ func (o *LdapConnectionHandlerResponse) GetKeyManagerProvider() string {
 // GetKeyManagerProviderOk returns a tuple with the KeyManagerProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetKeyManagerProviderOk() (*string, bool) {
-	if o == nil || isNil(o.KeyManagerProvider) {
+	if o == nil || IsNil(o.KeyManagerProvider) {
 		return nil, false
 	}
 	return o.KeyManagerProvider, true
@@ -381,7 +384,7 @@ func (o *LdapConnectionHandlerResponse) GetKeyManagerProviderOk() (*string, bool
 
 // HasKeyManagerProvider returns a boolean if a field has been set.
 func (o *LdapConnectionHandlerResponse) HasKeyManagerProvider() bool {
-	if o != nil && !isNil(o.KeyManagerProvider) {
+	if o != nil && !IsNil(o.KeyManagerProvider) {
 		return true
 	}
 
@@ -395,7 +398,7 @@ func (o *LdapConnectionHandlerResponse) SetKeyManagerProvider(v string) {
 
 // GetTrustManagerProvider returns the TrustManagerProvider field value if set, zero value otherwise.
 func (o *LdapConnectionHandlerResponse) GetTrustManagerProvider() string {
-	if o == nil || isNil(o.TrustManagerProvider) {
+	if o == nil || IsNil(o.TrustManagerProvider) {
 		var ret string
 		return ret
 	}
@@ -405,7 +408,7 @@ func (o *LdapConnectionHandlerResponse) GetTrustManagerProvider() string {
 // GetTrustManagerProviderOk returns a tuple with the TrustManagerProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetTrustManagerProviderOk() (*string, bool) {
-	if o == nil || isNil(o.TrustManagerProvider) {
+	if o == nil || IsNil(o.TrustManagerProvider) {
 		return nil, false
 	}
 	return o.TrustManagerProvider, true
@@ -413,7 +416,7 @@ func (o *LdapConnectionHandlerResponse) GetTrustManagerProviderOk() (*string, bo
 
 // HasTrustManagerProvider returns a boolean if a field has been set.
 func (o *LdapConnectionHandlerResponse) HasTrustManagerProvider() bool {
-	if o != nil && !isNil(o.TrustManagerProvider) {
+	if o != nil && !IsNil(o.TrustManagerProvider) {
 		return true
 	}
 
@@ -427,7 +430,7 @@ func (o *LdapConnectionHandlerResponse) SetTrustManagerProvider(v string) {
 
 // GetAllowLDAPV2 returns the AllowLDAPV2 field value if set, zero value otherwise.
 func (o *LdapConnectionHandlerResponse) GetAllowLDAPV2() bool {
-	if o == nil || isNil(o.AllowLDAPV2) {
+	if o == nil || IsNil(o.AllowLDAPV2) {
 		var ret bool
 		return ret
 	}
@@ -437,7 +440,7 @@ func (o *LdapConnectionHandlerResponse) GetAllowLDAPV2() bool {
 // GetAllowLDAPV2Ok returns a tuple with the AllowLDAPV2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetAllowLDAPV2Ok() (*bool, bool) {
-	if o == nil || isNil(o.AllowLDAPV2) {
+	if o == nil || IsNil(o.AllowLDAPV2) {
 		return nil, false
 	}
 	return o.AllowLDAPV2, true
@@ -445,7 +448,7 @@ func (o *LdapConnectionHandlerResponse) GetAllowLDAPV2Ok() (*bool, bool) {
 
 // HasAllowLDAPV2 returns a boolean if a field has been set.
 func (o *LdapConnectionHandlerResponse) HasAllowLDAPV2() bool {
-	if o != nil && !isNil(o.AllowLDAPV2) {
+	if o != nil && !IsNil(o.AllowLDAPV2) {
 		return true
 	}
 
@@ -459,7 +462,7 @@ func (o *LdapConnectionHandlerResponse) SetAllowLDAPV2(v bool) {
 
 // GetUseTCPKeepAlive returns the UseTCPKeepAlive field value if set, zero value otherwise.
 func (o *LdapConnectionHandlerResponse) GetUseTCPKeepAlive() bool {
-	if o == nil || isNil(o.UseTCPKeepAlive) {
+	if o == nil || IsNil(o.UseTCPKeepAlive) {
 		var ret bool
 		return ret
 	}
@@ -469,7 +472,7 @@ func (o *LdapConnectionHandlerResponse) GetUseTCPKeepAlive() bool {
 // GetUseTCPKeepAliveOk returns a tuple with the UseTCPKeepAlive field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetUseTCPKeepAliveOk() (*bool, bool) {
-	if o == nil || isNil(o.UseTCPKeepAlive) {
+	if o == nil || IsNil(o.UseTCPKeepAlive) {
 		return nil, false
 	}
 	return o.UseTCPKeepAlive, true
@@ -477,7 +480,7 @@ func (o *LdapConnectionHandlerResponse) GetUseTCPKeepAliveOk() (*bool, bool) {
 
 // HasUseTCPKeepAlive returns a boolean if a field has been set.
 func (o *LdapConnectionHandlerResponse) HasUseTCPKeepAlive() bool {
-	if o != nil && !isNil(o.UseTCPKeepAlive) {
+	if o != nil && !IsNil(o.UseTCPKeepAlive) {
 		return true
 	}
 
@@ -491,7 +494,7 @@ func (o *LdapConnectionHandlerResponse) SetUseTCPKeepAlive(v bool) {
 
 // GetSendRejectionNotice returns the SendRejectionNotice field value if set, zero value otherwise.
 func (o *LdapConnectionHandlerResponse) GetSendRejectionNotice() bool {
-	if o == nil || isNil(o.SendRejectionNotice) {
+	if o == nil || IsNil(o.SendRejectionNotice) {
 		var ret bool
 		return ret
 	}
@@ -501,7 +504,7 @@ func (o *LdapConnectionHandlerResponse) GetSendRejectionNotice() bool {
 // GetSendRejectionNoticeOk returns a tuple with the SendRejectionNotice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetSendRejectionNoticeOk() (*bool, bool) {
-	if o == nil || isNil(o.SendRejectionNotice) {
+	if o == nil || IsNil(o.SendRejectionNotice) {
 		return nil, false
 	}
 	return o.SendRejectionNotice, true
@@ -509,7 +512,7 @@ func (o *LdapConnectionHandlerResponse) GetSendRejectionNoticeOk() (*bool, bool)
 
 // HasSendRejectionNotice returns a boolean if a field has been set.
 func (o *LdapConnectionHandlerResponse) HasSendRejectionNotice() bool {
-	if o != nil && !isNil(o.SendRejectionNotice) {
+	if o != nil && !IsNil(o.SendRejectionNotice) {
 		return true
 	}
 
@@ -523,7 +526,7 @@ func (o *LdapConnectionHandlerResponse) SetSendRejectionNotice(v bool) {
 
 // GetFailedBindResponseDelay returns the FailedBindResponseDelay field value if set, zero value otherwise.
 func (o *LdapConnectionHandlerResponse) GetFailedBindResponseDelay() string {
-	if o == nil || isNil(o.FailedBindResponseDelay) {
+	if o == nil || IsNil(o.FailedBindResponseDelay) {
 		var ret string
 		return ret
 	}
@@ -533,7 +536,7 @@ func (o *LdapConnectionHandlerResponse) GetFailedBindResponseDelay() string {
 // GetFailedBindResponseDelayOk returns a tuple with the FailedBindResponseDelay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetFailedBindResponseDelayOk() (*string, bool) {
-	if o == nil || isNil(o.FailedBindResponseDelay) {
+	if o == nil || IsNil(o.FailedBindResponseDelay) {
 		return nil, false
 	}
 	return o.FailedBindResponseDelay, true
@@ -541,7 +544,7 @@ func (o *LdapConnectionHandlerResponse) GetFailedBindResponseDelayOk() (*string,
 
 // HasFailedBindResponseDelay returns a boolean if a field has been set.
 func (o *LdapConnectionHandlerResponse) HasFailedBindResponseDelay() bool {
-	if o != nil && !isNil(o.FailedBindResponseDelay) {
+	if o != nil && !IsNil(o.FailedBindResponseDelay) {
 		return true
 	}
 
@@ -555,7 +558,7 @@ func (o *LdapConnectionHandlerResponse) SetFailedBindResponseDelay(v string) {
 
 // GetMaxRequestSize returns the MaxRequestSize field value if set, zero value otherwise.
 func (o *LdapConnectionHandlerResponse) GetMaxRequestSize() string {
-	if o == nil || isNil(o.MaxRequestSize) {
+	if o == nil || IsNil(o.MaxRequestSize) {
 		var ret string
 		return ret
 	}
@@ -565,7 +568,7 @@ func (o *LdapConnectionHandlerResponse) GetMaxRequestSize() string {
 // GetMaxRequestSizeOk returns a tuple with the MaxRequestSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetMaxRequestSizeOk() (*string, bool) {
-	if o == nil || isNil(o.MaxRequestSize) {
+	if o == nil || IsNil(o.MaxRequestSize) {
 		return nil, false
 	}
 	return o.MaxRequestSize, true
@@ -573,7 +576,7 @@ func (o *LdapConnectionHandlerResponse) GetMaxRequestSizeOk() (*string, bool) {
 
 // HasMaxRequestSize returns a boolean if a field has been set.
 func (o *LdapConnectionHandlerResponse) HasMaxRequestSize() bool {
-	if o != nil && !isNil(o.MaxRequestSize) {
+	if o != nil && !IsNil(o.MaxRequestSize) {
 		return true
 	}
 
@@ -587,7 +590,7 @@ func (o *LdapConnectionHandlerResponse) SetMaxRequestSize(v string) {
 
 // GetMaxCancelHandlers returns the MaxCancelHandlers field value if set, zero value otherwise.
 func (o *LdapConnectionHandlerResponse) GetMaxCancelHandlers() int32 {
-	if o == nil || isNil(o.MaxCancelHandlers) {
+	if o == nil || IsNil(o.MaxCancelHandlers) {
 		var ret int32
 		return ret
 	}
@@ -597,7 +600,7 @@ func (o *LdapConnectionHandlerResponse) GetMaxCancelHandlers() int32 {
 // GetMaxCancelHandlersOk returns a tuple with the MaxCancelHandlers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetMaxCancelHandlersOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxCancelHandlers) {
+	if o == nil || IsNil(o.MaxCancelHandlers) {
 		return nil, false
 	}
 	return o.MaxCancelHandlers, true
@@ -605,7 +608,7 @@ func (o *LdapConnectionHandlerResponse) GetMaxCancelHandlersOk() (*int32, bool) 
 
 // HasMaxCancelHandlers returns a boolean if a field has been set.
 func (o *LdapConnectionHandlerResponse) HasMaxCancelHandlers() bool {
-	if o != nil && !isNil(o.MaxCancelHandlers) {
+	if o != nil && !IsNil(o.MaxCancelHandlers) {
 		return true
 	}
 
@@ -619,7 +622,7 @@ func (o *LdapConnectionHandlerResponse) SetMaxCancelHandlers(v int32) {
 
 // GetNumAcceptHandlers returns the NumAcceptHandlers field value if set, zero value otherwise.
 func (o *LdapConnectionHandlerResponse) GetNumAcceptHandlers() int32 {
-	if o == nil || isNil(o.NumAcceptHandlers) {
+	if o == nil || IsNil(o.NumAcceptHandlers) {
 		var ret int32
 		return ret
 	}
@@ -629,7 +632,7 @@ func (o *LdapConnectionHandlerResponse) GetNumAcceptHandlers() int32 {
 // GetNumAcceptHandlersOk returns a tuple with the NumAcceptHandlers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetNumAcceptHandlersOk() (*int32, bool) {
-	if o == nil || isNil(o.NumAcceptHandlers) {
+	if o == nil || IsNil(o.NumAcceptHandlers) {
 		return nil, false
 	}
 	return o.NumAcceptHandlers, true
@@ -637,7 +640,7 @@ func (o *LdapConnectionHandlerResponse) GetNumAcceptHandlersOk() (*int32, bool) 
 
 // HasNumAcceptHandlers returns a boolean if a field has been set.
 func (o *LdapConnectionHandlerResponse) HasNumAcceptHandlers() bool {
-	if o != nil && !isNil(o.NumAcceptHandlers) {
+	if o != nil && !IsNil(o.NumAcceptHandlers) {
 		return true
 	}
 
@@ -651,7 +654,7 @@ func (o *LdapConnectionHandlerResponse) SetNumAcceptHandlers(v int32) {
 
 // GetNumRequestHandlers returns the NumRequestHandlers field value if set, zero value otherwise.
 func (o *LdapConnectionHandlerResponse) GetNumRequestHandlers() int32 {
-	if o == nil || isNil(o.NumRequestHandlers) {
+	if o == nil || IsNil(o.NumRequestHandlers) {
 		var ret int32
 		return ret
 	}
@@ -661,7 +664,7 @@ func (o *LdapConnectionHandlerResponse) GetNumRequestHandlers() int32 {
 // GetNumRequestHandlersOk returns a tuple with the NumRequestHandlers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetNumRequestHandlersOk() (*int32, bool) {
-	if o == nil || isNil(o.NumRequestHandlers) {
+	if o == nil || IsNil(o.NumRequestHandlers) {
 		return nil, false
 	}
 	return o.NumRequestHandlers, true
@@ -669,7 +672,7 @@ func (o *LdapConnectionHandlerResponse) GetNumRequestHandlersOk() (*int32, bool)
 
 // HasNumRequestHandlers returns a boolean if a field has been set.
 func (o *LdapConnectionHandlerResponse) HasNumRequestHandlers() bool {
-	if o != nil && !isNil(o.NumRequestHandlers) {
+	if o != nil && !IsNil(o.NumRequestHandlers) {
 		return true
 	}
 
@@ -683,7 +686,7 @@ func (o *LdapConnectionHandlerResponse) SetNumRequestHandlers(v int32) {
 
 // GetSslClientAuthPolicy returns the SslClientAuthPolicy field value if set, zero value otherwise.
 func (o *LdapConnectionHandlerResponse) GetSslClientAuthPolicy() EnumconnectionHandlerSslClientAuthPolicyProp {
-	if o == nil || isNil(o.SslClientAuthPolicy) {
+	if o == nil || IsNil(o.SslClientAuthPolicy) {
 		var ret EnumconnectionHandlerSslClientAuthPolicyProp
 		return ret
 	}
@@ -693,7 +696,7 @@ func (o *LdapConnectionHandlerResponse) GetSslClientAuthPolicy() EnumconnectionH
 // GetSslClientAuthPolicyOk returns a tuple with the SslClientAuthPolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetSslClientAuthPolicyOk() (*EnumconnectionHandlerSslClientAuthPolicyProp, bool) {
-	if o == nil || isNil(o.SslClientAuthPolicy) {
+	if o == nil || IsNil(o.SslClientAuthPolicy) {
 		return nil, false
 	}
 	return o.SslClientAuthPolicy, true
@@ -701,7 +704,7 @@ func (o *LdapConnectionHandlerResponse) GetSslClientAuthPolicyOk() (*Enumconnect
 
 // HasSslClientAuthPolicy returns a boolean if a field has been set.
 func (o *LdapConnectionHandlerResponse) HasSslClientAuthPolicy() bool {
-	if o != nil && !isNil(o.SslClientAuthPolicy) {
+	if o != nil && !IsNil(o.SslClientAuthPolicy) {
 		return true
 	}
 
@@ -715,7 +718,7 @@ func (o *LdapConnectionHandlerResponse) SetSslClientAuthPolicy(v EnumconnectionH
 
 // GetAcceptBacklog returns the AcceptBacklog field value if set, zero value otherwise.
 func (o *LdapConnectionHandlerResponse) GetAcceptBacklog() int32 {
-	if o == nil || isNil(o.AcceptBacklog) {
+	if o == nil || IsNil(o.AcceptBacklog) {
 		var ret int32
 		return ret
 	}
@@ -725,7 +728,7 @@ func (o *LdapConnectionHandlerResponse) GetAcceptBacklog() int32 {
 // GetAcceptBacklogOk returns a tuple with the AcceptBacklog field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetAcceptBacklogOk() (*int32, bool) {
-	if o == nil || isNil(o.AcceptBacklog) {
+	if o == nil || IsNil(o.AcceptBacklog) {
 		return nil, false
 	}
 	return o.AcceptBacklog, true
@@ -733,7 +736,7 @@ func (o *LdapConnectionHandlerResponse) GetAcceptBacklogOk() (*int32, bool) {
 
 // HasAcceptBacklog returns a boolean if a field has been set.
 func (o *LdapConnectionHandlerResponse) HasAcceptBacklog() bool {
-	if o != nil && !isNil(o.AcceptBacklog) {
+	if o != nil && !IsNil(o.AcceptBacklog) {
 		return true
 	}
 
@@ -747,7 +750,7 @@ func (o *LdapConnectionHandlerResponse) SetAcceptBacklog(v int32) {
 
 // GetSslProtocol returns the SslProtocol field value if set, zero value otherwise.
 func (o *LdapConnectionHandlerResponse) GetSslProtocol() []string {
-	if o == nil || isNil(o.SslProtocol) {
+	if o == nil || IsNil(o.SslProtocol) {
 		var ret []string
 		return ret
 	}
@@ -757,7 +760,7 @@ func (o *LdapConnectionHandlerResponse) GetSslProtocol() []string {
 // GetSslProtocolOk returns a tuple with the SslProtocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetSslProtocolOk() ([]string, bool) {
-	if o == nil || isNil(o.SslProtocol) {
+	if o == nil || IsNil(o.SslProtocol) {
 		return nil, false
 	}
 	return o.SslProtocol, true
@@ -765,7 +768,7 @@ func (o *LdapConnectionHandlerResponse) GetSslProtocolOk() ([]string, bool) {
 
 // HasSslProtocol returns a boolean if a field has been set.
 func (o *LdapConnectionHandlerResponse) HasSslProtocol() bool {
-	if o != nil && !isNil(o.SslProtocol) {
+	if o != nil && !IsNil(o.SslProtocol) {
 		return true
 	}
 
@@ -779,7 +782,7 @@ func (o *LdapConnectionHandlerResponse) SetSslProtocol(v []string) {
 
 // GetSslCipherSuite returns the SslCipherSuite field value if set, zero value otherwise.
 func (o *LdapConnectionHandlerResponse) GetSslCipherSuite() []string {
-	if o == nil || isNil(o.SslCipherSuite) {
+	if o == nil || IsNil(o.SslCipherSuite) {
 		var ret []string
 		return ret
 	}
@@ -789,7 +792,7 @@ func (o *LdapConnectionHandlerResponse) GetSslCipherSuite() []string {
 // GetSslCipherSuiteOk returns a tuple with the SslCipherSuite field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetSslCipherSuiteOk() ([]string, bool) {
-	if o == nil || isNil(o.SslCipherSuite) {
+	if o == nil || IsNil(o.SslCipherSuite) {
 		return nil, false
 	}
 	return o.SslCipherSuite, true
@@ -797,7 +800,7 @@ func (o *LdapConnectionHandlerResponse) GetSslCipherSuiteOk() ([]string, bool) {
 
 // HasSslCipherSuite returns a boolean if a field has been set.
 func (o *LdapConnectionHandlerResponse) HasSslCipherSuite() bool {
-	if o != nil && !isNil(o.SslCipherSuite) {
+	if o != nil && !IsNil(o.SslCipherSuite) {
 		return true
 	}
 
@@ -811,7 +814,7 @@ func (o *LdapConnectionHandlerResponse) SetSslCipherSuite(v []string) {
 
 // GetMaxBlockedWriteTimeLimit returns the MaxBlockedWriteTimeLimit field value if set, zero value otherwise.
 func (o *LdapConnectionHandlerResponse) GetMaxBlockedWriteTimeLimit() string {
-	if o == nil || isNil(o.MaxBlockedWriteTimeLimit) {
+	if o == nil || IsNil(o.MaxBlockedWriteTimeLimit) {
 		var ret string
 		return ret
 	}
@@ -821,7 +824,7 @@ func (o *LdapConnectionHandlerResponse) GetMaxBlockedWriteTimeLimit() string {
 // GetMaxBlockedWriteTimeLimitOk returns a tuple with the MaxBlockedWriteTimeLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetMaxBlockedWriteTimeLimitOk() (*string, bool) {
-	if o == nil || isNil(o.MaxBlockedWriteTimeLimit) {
+	if o == nil || IsNil(o.MaxBlockedWriteTimeLimit) {
 		return nil, false
 	}
 	return o.MaxBlockedWriteTimeLimit, true
@@ -829,7 +832,7 @@ func (o *LdapConnectionHandlerResponse) GetMaxBlockedWriteTimeLimitOk() (*string
 
 // HasMaxBlockedWriteTimeLimit returns a boolean if a field has been set.
 func (o *LdapConnectionHandlerResponse) HasMaxBlockedWriteTimeLimit() bool {
-	if o != nil && !isNil(o.MaxBlockedWriteTimeLimit) {
+	if o != nil && !IsNil(o.MaxBlockedWriteTimeLimit) {
 		return true
 	}
 
@@ -843,7 +846,7 @@ func (o *LdapConnectionHandlerResponse) SetMaxBlockedWriteTimeLimit(v string) {
 
 // GetAutoAuthenticateUsingClientCertificate returns the AutoAuthenticateUsingClientCertificate field value if set, zero value otherwise.
 func (o *LdapConnectionHandlerResponse) GetAutoAuthenticateUsingClientCertificate() bool {
-	if o == nil || isNil(o.AutoAuthenticateUsingClientCertificate) {
+	if o == nil || IsNil(o.AutoAuthenticateUsingClientCertificate) {
 		var ret bool
 		return ret
 	}
@@ -853,7 +856,7 @@ func (o *LdapConnectionHandlerResponse) GetAutoAuthenticateUsingClientCertificat
 // GetAutoAuthenticateUsingClientCertificateOk returns a tuple with the AutoAuthenticateUsingClientCertificate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetAutoAuthenticateUsingClientCertificateOk() (*bool, bool) {
-	if o == nil || isNil(o.AutoAuthenticateUsingClientCertificate) {
+	if o == nil || IsNil(o.AutoAuthenticateUsingClientCertificate) {
 		return nil, false
 	}
 	return o.AutoAuthenticateUsingClientCertificate, true
@@ -861,7 +864,7 @@ func (o *LdapConnectionHandlerResponse) GetAutoAuthenticateUsingClientCertificat
 
 // HasAutoAuthenticateUsingClientCertificate returns a boolean if a field has been set.
 func (o *LdapConnectionHandlerResponse) HasAutoAuthenticateUsingClientCertificate() bool {
-	if o != nil && !isNil(o.AutoAuthenticateUsingClientCertificate) {
+	if o != nil && !IsNil(o.AutoAuthenticateUsingClientCertificate) {
 		return true
 	}
 
@@ -875,7 +878,7 @@ func (o *LdapConnectionHandlerResponse) SetAutoAuthenticateUsingClientCertificat
 
 // GetCloseConnectionsWhenUnavailable returns the CloseConnectionsWhenUnavailable field value if set, zero value otherwise.
 func (o *LdapConnectionHandlerResponse) GetCloseConnectionsWhenUnavailable() bool {
-	if o == nil || isNil(o.CloseConnectionsWhenUnavailable) {
+	if o == nil || IsNil(o.CloseConnectionsWhenUnavailable) {
 		var ret bool
 		return ret
 	}
@@ -885,7 +888,7 @@ func (o *LdapConnectionHandlerResponse) GetCloseConnectionsWhenUnavailable() boo
 // GetCloseConnectionsWhenUnavailableOk returns a tuple with the CloseConnectionsWhenUnavailable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetCloseConnectionsWhenUnavailableOk() (*bool, bool) {
-	if o == nil || isNil(o.CloseConnectionsWhenUnavailable) {
+	if o == nil || IsNil(o.CloseConnectionsWhenUnavailable) {
 		return nil, false
 	}
 	return o.CloseConnectionsWhenUnavailable, true
@@ -893,7 +896,7 @@ func (o *LdapConnectionHandlerResponse) GetCloseConnectionsWhenUnavailableOk() (
 
 // HasCloseConnectionsWhenUnavailable returns a boolean if a field has been set.
 func (o *LdapConnectionHandlerResponse) HasCloseConnectionsWhenUnavailable() bool {
-	if o != nil && !isNil(o.CloseConnectionsWhenUnavailable) {
+	if o != nil && !IsNil(o.CloseConnectionsWhenUnavailable) {
 		return true
 	}
 
@@ -907,7 +910,7 @@ func (o *LdapConnectionHandlerResponse) SetCloseConnectionsWhenUnavailable(v boo
 
 // GetCloseConnectionsOnExplicitGC returns the CloseConnectionsOnExplicitGC field value if set, zero value otherwise.
 func (o *LdapConnectionHandlerResponse) GetCloseConnectionsOnExplicitGC() bool {
-	if o == nil || isNil(o.CloseConnectionsOnExplicitGC) {
+	if o == nil || IsNil(o.CloseConnectionsOnExplicitGC) {
 		var ret bool
 		return ret
 	}
@@ -917,7 +920,7 @@ func (o *LdapConnectionHandlerResponse) GetCloseConnectionsOnExplicitGC() bool {
 // GetCloseConnectionsOnExplicitGCOk returns a tuple with the CloseConnectionsOnExplicitGC field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetCloseConnectionsOnExplicitGCOk() (*bool, bool) {
-	if o == nil || isNil(o.CloseConnectionsOnExplicitGC) {
+	if o == nil || IsNil(o.CloseConnectionsOnExplicitGC) {
 		return nil, false
 	}
 	return o.CloseConnectionsOnExplicitGC, true
@@ -925,7 +928,7 @@ func (o *LdapConnectionHandlerResponse) GetCloseConnectionsOnExplicitGCOk() (*bo
 
 // HasCloseConnectionsOnExplicitGC returns a boolean if a field has been set.
 func (o *LdapConnectionHandlerResponse) HasCloseConnectionsOnExplicitGC() bool {
-	if o != nil && !isNil(o.CloseConnectionsOnExplicitGC) {
+	if o != nil && !IsNil(o.CloseConnectionsOnExplicitGC) {
 		return true
 	}
 
@@ -939,7 +942,7 @@ func (o *LdapConnectionHandlerResponse) SetCloseConnectionsOnExplicitGC(v bool) 
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *LdapConnectionHandlerResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -949,7 +952,7 @@ func (o *LdapConnectionHandlerResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -957,7 +960,7 @@ func (o *LdapConnectionHandlerResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *LdapConnectionHandlerResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -995,7 +998,7 @@ func (o *LdapConnectionHandlerResponse) SetEnabled(v bool) {
 
 // GetAllowedClient returns the AllowedClient field value if set, zero value otherwise.
 func (o *LdapConnectionHandlerResponse) GetAllowedClient() []string {
-	if o == nil || isNil(o.AllowedClient) {
+	if o == nil || IsNil(o.AllowedClient) {
 		var ret []string
 		return ret
 	}
@@ -1005,7 +1008,7 @@ func (o *LdapConnectionHandlerResponse) GetAllowedClient() []string {
 // GetAllowedClientOk returns a tuple with the AllowedClient field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetAllowedClientOk() ([]string, bool) {
-	if o == nil || isNil(o.AllowedClient) {
+	if o == nil || IsNil(o.AllowedClient) {
 		return nil, false
 	}
 	return o.AllowedClient, true
@@ -1013,7 +1016,7 @@ func (o *LdapConnectionHandlerResponse) GetAllowedClientOk() ([]string, bool) {
 
 // HasAllowedClient returns a boolean if a field has been set.
 func (o *LdapConnectionHandlerResponse) HasAllowedClient() bool {
-	if o != nil && !isNil(o.AllowedClient) {
+	if o != nil && !IsNil(o.AllowedClient) {
 		return true
 	}
 
@@ -1027,7 +1030,7 @@ func (o *LdapConnectionHandlerResponse) SetAllowedClient(v []string) {
 
 // GetDeniedClient returns the DeniedClient field value if set, zero value otherwise.
 func (o *LdapConnectionHandlerResponse) GetDeniedClient() []string {
-	if o == nil || isNil(o.DeniedClient) {
+	if o == nil || IsNil(o.DeniedClient) {
 		var ret []string
 		return ret
 	}
@@ -1037,7 +1040,7 @@ func (o *LdapConnectionHandlerResponse) GetDeniedClient() []string {
 // GetDeniedClientOk returns a tuple with the DeniedClient field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetDeniedClientOk() ([]string, bool) {
-	if o == nil || isNil(o.DeniedClient) {
+	if o == nil || IsNil(o.DeniedClient) {
 		return nil, false
 	}
 	return o.DeniedClient, true
@@ -1045,7 +1048,7 @@ func (o *LdapConnectionHandlerResponse) GetDeniedClientOk() ([]string, bool) {
 
 // HasDeniedClient returns a boolean if a field has been set.
 func (o *LdapConnectionHandlerResponse) HasDeniedClient() bool {
-	if o != nil && !isNil(o.DeniedClient) {
+	if o != nil && !IsNil(o.DeniedClient) {
 		return true
 	}
 
@@ -1058,101 +1061,101 @@ func (o *LdapConnectionHandlerResponse) SetDeniedClient(v []string) {
 }
 
 func (o LdapConnectionHandlerResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.ListenAddress) {
-		toSerialize["listenAddress"] = o.ListenAddress
-	}
-	if true {
-		toSerialize["listenPort"] = o.ListenPort
-	}
-	if !isNil(o.UseSSL) {
-		toSerialize["useSSL"] = o.UseSSL
-	}
-	if !isNil(o.AllowStartTLS) {
-		toSerialize["allowStartTLS"] = o.AllowStartTLS
-	}
-	if !isNil(o.SslCertNickname) {
-		toSerialize["sslCertNickname"] = o.SslCertNickname
-	}
-	if !isNil(o.KeyManagerProvider) {
-		toSerialize["keyManagerProvider"] = o.KeyManagerProvider
-	}
-	if !isNil(o.TrustManagerProvider) {
-		toSerialize["trustManagerProvider"] = o.TrustManagerProvider
-	}
-	if !isNil(o.AllowLDAPV2) {
-		toSerialize["allowLDAPV2"] = o.AllowLDAPV2
-	}
-	if !isNil(o.UseTCPKeepAlive) {
-		toSerialize["useTCPKeepAlive"] = o.UseTCPKeepAlive
-	}
-	if !isNil(o.SendRejectionNotice) {
-		toSerialize["sendRejectionNotice"] = o.SendRejectionNotice
-	}
-	if !isNil(o.FailedBindResponseDelay) {
-		toSerialize["failedBindResponseDelay"] = o.FailedBindResponseDelay
-	}
-	if !isNil(o.MaxRequestSize) {
-		toSerialize["maxRequestSize"] = o.MaxRequestSize
-	}
-	if !isNil(o.MaxCancelHandlers) {
-		toSerialize["maxCancelHandlers"] = o.MaxCancelHandlers
-	}
-	if !isNil(o.NumAcceptHandlers) {
-		toSerialize["numAcceptHandlers"] = o.NumAcceptHandlers
-	}
-	if !isNil(o.NumRequestHandlers) {
-		toSerialize["numRequestHandlers"] = o.NumRequestHandlers
-	}
-	if !isNil(o.SslClientAuthPolicy) {
-		toSerialize["sslClientAuthPolicy"] = o.SslClientAuthPolicy
-	}
-	if !isNil(o.AcceptBacklog) {
-		toSerialize["acceptBacklog"] = o.AcceptBacklog
-	}
-	if !isNil(o.SslProtocol) {
-		toSerialize["sslProtocol"] = o.SslProtocol
-	}
-	if !isNil(o.SslCipherSuite) {
-		toSerialize["sslCipherSuite"] = o.SslCipherSuite
-	}
-	if !isNil(o.MaxBlockedWriteTimeLimit) {
-		toSerialize["maxBlockedWriteTimeLimit"] = o.MaxBlockedWriteTimeLimit
-	}
-	if !isNil(o.AutoAuthenticateUsingClientCertificate) {
-		toSerialize["autoAuthenticateUsingClientCertificate"] = o.AutoAuthenticateUsingClientCertificate
-	}
-	if !isNil(o.CloseConnectionsWhenUnavailable) {
-		toSerialize["closeConnectionsWhenUnavailable"] = o.CloseConnectionsWhenUnavailable
-	}
-	if !isNil(o.CloseConnectionsOnExplicitGC) {
-		toSerialize["closeConnectionsOnExplicitGC"] = o.CloseConnectionsOnExplicitGC
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.AllowedClient) {
-		toSerialize["allowedClient"] = o.AllowedClient
-	}
-	if !isNil(o.DeniedClient) {
-		toSerialize["deniedClient"] = o.DeniedClient
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o LdapConnectionHandlerResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.ListenAddress) {
+		toSerialize["listenAddress"] = o.ListenAddress
+	}
+	toSerialize["listenPort"] = o.ListenPort
+	if !IsNil(o.UseSSL) {
+		toSerialize["useSSL"] = o.UseSSL
+	}
+	if !IsNil(o.AllowStartTLS) {
+		toSerialize["allowStartTLS"] = o.AllowStartTLS
+	}
+	if !IsNil(o.SslCertNickname) {
+		toSerialize["sslCertNickname"] = o.SslCertNickname
+	}
+	if !IsNil(o.KeyManagerProvider) {
+		toSerialize["keyManagerProvider"] = o.KeyManagerProvider
+	}
+	if !IsNil(o.TrustManagerProvider) {
+		toSerialize["trustManagerProvider"] = o.TrustManagerProvider
+	}
+	if !IsNil(o.AllowLDAPV2) {
+		toSerialize["allowLDAPV2"] = o.AllowLDAPV2
+	}
+	if !IsNil(o.UseTCPKeepAlive) {
+		toSerialize["useTCPKeepAlive"] = o.UseTCPKeepAlive
+	}
+	if !IsNil(o.SendRejectionNotice) {
+		toSerialize["sendRejectionNotice"] = o.SendRejectionNotice
+	}
+	if !IsNil(o.FailedBindResponseDelay) {
+		toSerialize["failedBindResponseDelay"] = o.FailedBindResponseDelay
+	}
+	if !IsNil(o.MaxRequestSize) {
+		toSerialize["maxRequestSize"] = o.MaxRequestSize
+	}
+	if !IsNil(o.MaxCancelHandlers) {
+		toSerialize["maxCancelHandlers"] = o.MaxCancelHandlers
+	}
+	if !IsNil(o.NumAcceptHandlers) {
+		toSerialize["numAcceptHandlers"] = o.NumAcceptHandlers
+	}
+	if !IsNil(o.NumRequestHandlers) {
+		toSerialize["numRequestHandlers"] = o.NumRequestHandlers
+	}
+	if !IsNil(o.SslClientAuthPolicy) {
+		toSerialize["sslClientAuthPolicy"] = o.SslClientAuthPolicy
+	}
+	if !IsNil(o.AcceptBacklog) {
+		toSerialize["acceptBacklog"] = o.AcceptBacklog
+	}
+	if !IsNil(o.SslProtocol) {
+		toSerialize["sslProtocol"] = o.SslProtocol
+	}
+	if !IsNil(o.SslCipherSuite) {
+		toSerialize["sslCipherSuite"] = o.SslCipherSuite
+	}
+	if !IsNil(o.MaxBlockedWriteTimeLimit) {
+		toSerialize["maxBlockedWriteTimeLimit"] = o.MaxBlockedWriteTimeLimit
+	}
+	if !IsNil(o.AutoAuthenticateUsingClientCertificate) {
+		toSerialize["autoAuthenticateUsingClientCertificate"] = o.AutoAuthenticateUsingClientCertificate
+	}
+	if !IsNil(o.CloseConnectionsWhenUnavailable) {
+		toSerialize["closeConnectionsWhenUnavailable"] = o.CloseConnectionsWhenUnavailable
+	}
+	if !IsNil(o.CloseConnectionsOnExplicitGC) {
+		toSerialize["closeConnectionsOnExplicitGC"] = o.CloseConnectionsOnExplicitGC
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.AllowedClient) {
+		toSerialize["allowedClient"] = o.AllowedClient
+	}
+	if !IsNil(o.DeniedClient) {
+		toSerialize["deniedClient"] = o.DeniedClient
+	}
+	return toSerialize, nil
 }
 
 type NullableLdapConnectionHandlerResponse struct {

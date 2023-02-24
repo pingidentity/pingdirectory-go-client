@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ConjurExternalServerResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ConjurExternalServerResponse{}
+
 // ConjurExternalServerResponse struct for ConjurExternalServerResponse
 type ConjurExternalServerResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -61,7 +64,7 @@ func NewConjurExternalServerResponseWithDefaults() *ConjurExternalServerResponse
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *ConjurExternalServerResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -71,7 +74,7 @@ func (o *ConjurExternalServerResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConjurExternalServerResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -79,7 +82,7 @@ func (o *ConjurExternalServerResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *ConjurExternalServerResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -93,7 +96,7 @@ func (o *ConjurExternalServerResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *ConjurExternalServerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -103,7 +106,7 @@ func (o *ConjurExternalServerResponse) GetUrnpingidentityschemasconfigurationmes
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConjurExternalServerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -111,7 +114,7 @@ func (o *ConjurExternalServerResponse) GetUrnpingidentityschemasconfigurationmes
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *ConjurExternalServerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -245,7 +248,7 @@ func (o *ConjurExternalServerResponse) SetConjurAccountName(v string) {
 
 // GetTrustStoreFile returns the TrustStoreFile field value if set, zero value otherwise.
 func (o *ConjurExternalServerResponse) GetTrustStoreFile() string {
-	if o == nil || isNil(o.TrustStoreFile) {
+	if o == nil || IsNil(o.TrustStoreFile) {
 		var ret string
 		return ret
 	}
@@ -255,7 +258,7 @@ func (o *ConjurExternalServerResponse) GetTrustStoreFile() string {
 // GetTrustStoreFileOk returns a tuple with the TrustStoreFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConjurExternalServerResponse) GetTrustStoreFileOk() (*string, bool) {
-	if o == nil || isNil(o.TrustStoreFile) {
+	if o == nil || IsNil(o.TrustStoreFile) {
 		return nil, false
 	}
 	return o.TrustStoreFile, true
@@ -263,7 +266,7 @@ func (o *ConjurExternalServerResponse) GetTrustStoreFileOk() (*string, bool) {
 
 // HasTrustStoreFile returns a boolean if a field has been set.
 func (o *ConjurExternalServerResponse) HasTrustStoreFile() bool {
-	if o != nil && !isNil(o.TrustStoreFile) {
+	if o != nil && !IsNil(o.TrustStoreFile) {
 		return true
 	}
 
@@ -277,7 +280,7 @@ func (o *ConjurExternalServerResponse) SetTrustStoreFile(v string) {
 
 // GetTrustStorePin returns the TrustStorePin field value if set, zero value otherwise.
 func (o *ConjurExternalServerResponse) GetTrustStorePin() string {
-	if o == nil || isNil(o.TrustStorePin) {
+	if o == nil || IsNil(o.TrustStorePin) {
 		var ret string
 		return ret
 	}
@@ -287,7 +290,7 @@ func (o *ConjurExternalServerResponse) GetTrustStorePin() string {
 // GetTrustStorePinOk returns a tuple with the TrustStorePin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConjurExternalServerResponse) GetTrustStorePinOk() (*string, bool) {
-	if o == nil || isNil(o.TrustStorePin) {
+	if o == nil || IsNil(o.TrustStorePin) {
 		return nil, false
 	}
 	return o.TrustStorePin, true
@@ -295,7 +298,7 @@ func (o *ConjurExternalServerResponse) GetTrustStorePinOk() (*string, bool) {
 
 // HasTrustStorePin returns a boolean if a field has been set.
 func (o *ConjurExternalServerResponse) HasTrustStorePin() bool {
-	if o != nil && !isNil(o.TrustStorePin) {
+	if o != nil && !IsNil(o.TrustStorePin) {
 		return true
 	}
 
@@ -309,7 +312,7 @@ func (o *ConjurExternalServerResponse) SetTrustStorePin(v string) {
 
 // GetTrustStoreType returns the TrustStoreType field value if set, zero value otherwise.
 func (o *ConjurExternalServerResponse) GetTrustStoreType() string {
-	if o == nil || isNil(o.TrustStoreType) {
+	if o == nil || IsNil(o.TrustStoreType) {
 		var ret string
 		return ret
 	}
@@ -319,7 +322,7 @@ func (o *ConjurExternalServerResponse) GetTrustStoreType() string {
 // GetTrustStoreTypeOk returns a tuple with the TrustStoreType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConjurExternalServerResponse) GetTrustStoreTypeOk() (*string, bool) {
-	if o == nil || isNil(o.TrustStoreType) {
+	if o == nil || IsNil(o.TrustStoreType) {
 		return nil, false
 	}
 	return o.TrustStoreType, true
@@ -327,7 +330,7 @@ func (o *ConjurExternalServerResponse) GetTrustStoreTypeOk() (*string, bool) {
 
 // HasTrustStoreType returns a boolean if a field has been set.
 func (o *ConjurExternalServerResponse) HasTrustStoreType() bool {
-	if o != nil && !isNil(o.TrustStoreType) {
+	if o != nil && !IsNil(o.TrustStoreType) {
 		return true
 	}
 
@@ -341,7 +344,7 @@ func (o *ConjurExternalServerResponse) SetTrustStoreType(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *ConjurExternalServerResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -351,7 +354,7 @@ func (o *ConjurExternalServerResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConjurExternalServerResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -359,7 +362,7 @@ func (o *ConjurExternalServerResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *ConjurExternalServerResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -372,41 +375,39 @@ func (o *ConjurExternalServerResponse) SetDescription(v string) {
 }
 
 func (o ConjurExternalServerResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["conjurServerBaseURI"] = o.ConjurServerBaseURI
-	}
-	if true {
-		toSerialize["conjurAuthenticationMethod"] = o.ConjurAuthenticationMethod
-	}
-	if true {
-		toSerialize["conjurAccountName"] = o.ConjurAccountName
-	}
-	if !isNil(o.TrustStoreFile) {
-		toSerialize["trustStoreFile"] = o.TrustStoreFile
-	}
-	if !isNil(o.TrustStorePin) {
-		toSerialize["trustStorePin"] = o.TrustStorePin
-	}
-	if !isNil(o.TrustStoreType) {
-		toSerialize["trustStoreType"] = o.TrustStoreType
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ConjurExternalServerResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["conjurServerBaseURI"] = o.ConjurServerBaseURI
+	toSerialize["conjurAuthenticationMethod"] = o.ConjurAuthenticationMethod
+	toSerialize["conjurAccountName"] = o.ConjurAccountName
+	if !IsNil(o.TrustStoreFile) {
+		toSerialize["trustStoreFile"] = o.TrustStoreFile
+	}
+	if !IsNil(o.TrustStorePin) {
+		toSerialize["trustStorePin"] = o.TrustStorePin
+	}
+	if !IsNil(o.TrustStoreType) {
+		toSerialize["trustStoreType"] = o.TrustStoreType
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableConjurExternalServerResponse struct {

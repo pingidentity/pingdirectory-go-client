@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddSnmpAlertHandlerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddSnmpAlertHandlerRequest{}
+
 // AddSnmpAlertHandlerRequest struct for AddSnmpAlertHandlerRequest
 type AddSnmpAlertHandlerRequest struct {
 	// Name of the new Alert Handler
@@ -107,7 +110,7 @@ func (o *AddSnmpAlertHandlerRequest) SetSchemas(v []EnumsnmpAlertHandlerSchemaUr
 
 // GetAsynchronous returns the Asynchronous field value if set, zero value otherwise.
 func (o *AddSnmpAlertHandlerRequest) GetAsynchronous() bool {
-	if o == nil || isNil(o.Asynchronous) {
+	if o == nil || IsNil(o.Asynchronous) {
 		var ret bool
 		return ret
 	}
@@ -117,7 +120,7 @@ func (o *AddSnmpAlertHandlerRequest) GetAsynchronous() bool {
 // GetAsynchronousOk returns a tuple with the Asynchronous field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSnmpAlertHandlerRequest) GetAsynchronousOk() (*bool, bool) {
-	if o == nil || isNil(o.Asynchronous) {
+	if o == nil || IsNil(o.Asynchronous) {
 		return nil, false
 	}
 	return o.Asynchronous, true
@@ -125,7 +128,7 @@ func (o *AddSnmpAlertHandlerRequest) GetAsynchronousOk() (*bool, bool) {
 
 // HasAsynchronous returns a boolean if a field has been set.
 func (o *AddSnmpAlertHandlerRequest) HasAsynchronous() bool {
-	if o != nil && !isNil(o.Asynchronous) {
+	if o != nil && !IsNil(o.Asynchronous) {
 		return true
 	}
 
@@ -163,7 +166,7 @@ func (o *AddSnmpAlertHandlerRequest) SetServerHostName(v string) {
 
 // GetServerPort returns the ServerPort field value if set, zero value otherwise.
 func (o *AddSnmpAlertHandlerRequest) GetServerPort() int32 {
-	if o == nil || isNil(o.ServerPort) {
+	if o == nil || IsNil(o.ServerPort) {
 		var ret int32
 		return ret
 	}
@@ -173,7 +176,7 @@ func (o *AddSnmpAlertHandlerRequest) GetServerPort() int32 {
 // GetServerPortOk returns a tuple with the ServerPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSnmpAlertHandlerRequest) GetServerPortOk() (*int32, bool) {
-	if o == nil || isNil(o.ServerPort) {
+	if o == nil || IsNil(o.ServerPort) {
 		return nil, false
 	}
 	return o.ServerPort, true
@@ -181,7 +184,7 @@ func (o *AddSnmpAlertHandlerRequest) GetServerPortOk() (*int32, bool) {
 
 // HasServerPort returns a boolean if a field has been set.
 func (o *AddSnmpAlertHandlerRequest) HasServerPort() bool {
-	if o != nil && !isNil(o.ServerPort) {
+	if o != nil && !IsNil(o.ServerPort) {
 		return true
 	}
 
@@ -195,7 +198,7 @@ func (o *AddSnmpAlertHandlerRequest) SetServerPort(v int32) {
 
 // GetCommunityName returns the CommunityName field value if set, zero value otherwise.
 func (o *AddSnmpAlertHandlerRequest) GetCommunityName() string {
-	if o == nil || isNil(o.CommunityName) {
+	if o == nil || IsNil(o.CommunityName) {
 		var ret string
 		return ret
 	}
@@ -205,7 +208,7 @@ func (o *AddSnmpAlertHandlerRequest) GetCommunityName() string {
 // GetCommunityNameOk returns a tuple with the CommunityName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSnmpAlertHandlerRequest) GetCommunityNameOk() (*string, bool) {
-	if o == nil || isNil(o.CommunityName) {
+	if o == nil || IsNil(o.CommunityName) {
 		return nil, false
 	}
 	return o.CommunityName, true
@@ -213,7 +216,7 @@ func (o *AddSnmpAlertHandlerRequest) GetCommunityNameOk() (*string, bool) {
 
 // HasCommunityName returns a boolean if a field has been set.
 func (o *AddSnmpAlertHandlerRequest) HasCommunityName() bool {
-	if o != nil && !isNil(o.CommunityName) {
+	if o != nil && !IsNil(o.CommunityName) {
 		return true
 	}
 
@@ -227,7 +230,7 @@ func (o *AddSnmpAlertHandlerRequest) SetCommunityName(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddSnmpAlertHandlerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -237,7 +240,7 @@ func (o *AddSnmpAlertHandlerRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSnmpAlertHandlerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -245,7 +248,7 @@ func (o *AddSnmpAlertHandlerRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddSnmpAlertHandlerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -283,7 +286,7 @@ func (o *AddSnmpAlertHandlerRequest) SetEnabled(v bool) {
 
 // GetEnabledAlertSeverity returns the EnabledAlertSeverity field value if set, zero value otherwise.
 func (o *AddSnmpAlertHandlerRequest) GetEnabledAlertSeverity() []EnumalertHandlerEnabledAlertSeverityProp {
-	if o == nil || isNil(o.EnabledAlertSeverity) {
+	if o == nil || IsNil(o.EnabledAlertSeverity) {
 		var ret []EnumalertHandlerEnabledAlertSeverityProp
 		return ret
 	}
@@ -293,7 +296,7 @@ func (o *AddSnmpAlertHandlerRequest) GetEnabledAlertSeverity() []EnumalertHandle
 // GetEnabledAlertSeverityOk returns a tuple with the EnabledAlertSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSnmpAlertHandlerRequest) GetEnabledAlertSeverityOk() ([]EnumalertHandlerEnabledAlertSeverityProp, bool) {
-	if o == nil || isNil(o.EnabledAlertSeverity) {
+	if o == nil || IsNil(o.EnabledAlertSeverity) {
 		return nil, false
 	}
 	return o.EnabledAlertSeverity, true
@@ -301,7 +304,7 @@ func (o *AddSnmpAlertHandlerRequest) GetEnabledAlertSeverityOk() ([]EnumalertHan
 
 // HasEnabledAlertSeverity returns a boolean if a field has been set.
 func (o *AddSnmpAlertHandlerRequest) HasEnabledAlertSeverity() bool {
-	if o != nil && !isNil(o.EnabledAlertSeverity) {
+	if o != nil && !IsNil(o.EnabledAlertSeverity) {
 		return true
 	}
 
@@ -315,7 +318,7 @@ func (o *AddSnmpAlertHandlerRequest) SetEnabledAlertSeverity(v []EnumalertHandle
 
 // GetEnabledAlertType returns the EnabledAlertType field value if set, zero value otherwise.
 func (o *AddSnmpAlertHandlerRequest) GetEnabledAlertType() []EnumalertHandlerEnabledAlertTypeProp {
-	if o == nil || isNil(o.EnabledAlertType) {
+	if o == nil || IsNil(o.EnabledAlertType) {
 		var ret []EnumalertHandlerEnabledAlertTypeProp
 		return ret
 	}
@@ -325,7 +328,7 @@ func (o *AddSnmpAlertHandlerRequest) GetEnabledAlertType() []EnumalertHandlerEna
 // GetEnabledAlertTypeOk returns a tuple with the EnabledAlertType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSnmpAlertHandlerRequest) GetEnabledAlertTypeOk() ([]EnumalertHandlerEnabledAlertTypeProp, bool) {
-	if o == nil || isNil(o.EnabledAlertType) {
+	if o == nil || IsNil(o.EnabledAlertType) {
 		return nil, false
 	}
 	return o.EnabledAlertType, true
@@ -333,7 +336,7 @@ func (o *AddSnmpAlertHandlerRequest) GetEnabledAlertTypeOk() ([]EnumalertHandler
 
 // HasEnabledAlertType returns a boolean if a field has been set.
 func (o *AddSnmpAlertHandlerRequest) HasEnabledAlertType() bool {
-	if o != nil && !isNil(o.EnabledAlertType) {
+	if o != nil && !IsNil(o.EnabledAlertType) {
 		return true
 	}
 
@@ -347,7 +350,7 @@ func (o *AddSnmpAlertHandlerRequest) SetEnabledAlertType(v []EnumalertHandlerEna
 
 // GetDisabledAlertType returns the DisabledAlertType field value if set, zero value otherwise.
 func (o *AddSnmpAlertHandlerRequest) GetDisabledAlertType() []EnumalertHandlerDisabledAlertTypeProp {
-	if o == nil || isNil(o.DisabledAlertType) {
+	if o == nil || IsNil(o.DisabledAlertType) {
 		var ret []EnumalertHandlerDisabledAlertTypeProp
 		return ret
 	}
@@ -357,7 +360,7 @@ func (o *AddSnmpAlertHandlerRequest) GetDisabledAlertType() []EnumalertHandlerDi
 // GetDisabledAlertTypeOk returns a tuple with the DisabledAlertType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSnmpAlertHandlerRequest) GetDisabledAlertTypeOk() ([]EnumalertHandlerDisabledAlertTypeProp, bool) {
-	if o == nil || isNil(o.DisabledAlertType) {
+	if o == nil || IsNil(o.DisabledAlertType) {
 		return nil, false
 	}
 	return o.DisabledAlertType, true
@@ -365,7 +368,7 @@ func (o *AddSnmpAlertHandlerRequest) GetDisabledAlertTypeOk() ([]EnumalertHandle
 
 // HasDisabledAlertType returns a boolean if a field has been set.
 func (o *AddSnmpAlertHandlerRequest) HasDisabledAlertType() bool {
-	if o != nil && !isNil(o.DisabledAlertType) {
+	if o != nil && !IsNil(o.DisabledAlertType) {
 		return true
 	}
 
@@ -378,41 +381,41 @@ func (o *AddSnmpAlertHandlerRequest) SetDisabledAlertType(v []EnumalertHandlerDi
 }
 
 func (o AddSnmpAlertHandlerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["handlerName"] = o.HandlerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Asynchronous) {
-		toSerialize["asynchronous"] = o.Asynchronous
-	}
-	if true {
-		toSerialize["serverHostName"] = o.ServerHostName
-	}
-	if !isNil(o.ServerPort) {
-		toSerialize["serverPort"] = o.ServerPort
-	}
-	if !isNil(o.CommunityName) {
-		toSerialize["communityName"] = o.CommunityName
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.EnabledAlertSeverity) {
-		toSerialize["enabledAlertSeverity"] = o.EnabledAlertSeverity
-	}
-	if !isNil(o.EnabledAlertType) {
-		toSerialize["enabledAlertType"] = o.EnabledAlertType
-	}
-	if !isNil(o.DisabledAlertType) {
-		toSerialize["disabledAlertType"] = o.DisabledAlertType
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddSnmpAlertHandlerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["handlerName"] = o.HandlerName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.Asynchronous) {
+		toSerialize["asynchronous"] = o.Asynchronous
+	}
+	toSerialize["serverHostName"] = o.ServerHostName
+	if !IsNil(o.ServerPort) {
+		toSerialize["serverPort"] = o.ServerPort
+	}
+	if !IsNil(o.CommunityName) {
+		toSerialize["communityName"] = o.CommunityName
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.EnabledAlertSeverity) {
+		toSerialize["enabledAlertSeverity"] = o.EnabledAlertSeverity
+	}
+	if !IsNil(o.EnabledAlertType) {
+		toSerialize["enabledAlertType"] = o.EnabledAlertType
+	}
+	if !IsNil(o.DisabledAlertType) {
+		toSerialize["disabledAlertType"] = o.DisabledAlertType
+	}
+	return toSerialize, nil
 }
 
 type NullableAddSnmpAlertHandlerRequest struct {

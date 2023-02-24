@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddCopyLogFileRotationListenerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddCopyLogFileRotationListenerRequest{}
+
 // AddCopyLogFileRotationListenerRequest struct for AddCopyLogFileRotationListenerRequest
 type AddCopyLogFileRotationListenerRequest struct {
 	// Name of the new Log File Rotation Listener
@@ -124,7 +127,7 @@ func (o *AddCopyLogFileRotationListenerRequest) SetCopyToDirectory(v string) {
 
 // GetCompressOnCopy returns the CompressOnCopy field value if set, zero value otherwise.
 func (o *AddCopyLogFileRotationListenerRequest) GetCompressOnCopy() bool {
-	if o == nil || isNil(o.CompressOnCopy) {
+	if o == nil || IsNil(o.CompressOnCopy) {
 		var ret bool
 		return ret
 	}
@@ -134,7 +137,7 @@ func (o *AddCopyLogFileRotationListenerRequest) GetCompressOnCopy() bool {
 // GetCompressOnCopyOk returns a tuple with the CompressOnCopy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCopyLogFileRotationListenerRequest) GetCompressOnCopyOk() (*bool, bool) {
-	if o == nil || isNil(o.CompressOnCopy) {
+	if o == nil || IsNil(o.CompressOnCopy) {
 		return nil, false
 	}
 	return o.CompressOnCopy, true
@@ -142,7 +145,7 @@ func (o *AddCopyLogFileRotationListenerRequest) GetCompressOnCopyOk() (*bool, bo
 
 // HasCompressOnCopy returns a boolean if a field has been set.
 func (o *AddCopyLogFileRotationListenerRequest) HasCompressOnCopy() bool {
-	if o != nil && !isNil(o.CompressOnCopy) {
+	if o != nil && !IsNil(o.CompressOnCopy) {
 		return true
 	}
 
@@ -156,7 +159,7 @@ func (o *AddCopyLogFileRotationListenerRequest) SetCompressOnCopy(v bool) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddCopyLogFileRotationListenerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -166,7 +169,7 @@ func (o *AddCopyLogFileRotationListenerRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCopyLogFileRotationListenerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -174,7 +177,7 @@ func (o *AddCopyLogFileRotationListenerRequest) GetDescriptionOk() (*string, boo
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddCopyLogFileRotationListenerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -211,26 +214,26 @@ func (o *AddCopyLogFileRotationListenerRequest) SetEnabled(v bool) {
 }
 
 func (o AddCopyLogFileRotationListenerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["listenerName"] = o.ListenerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["copyToDirectory"] = o.CopyToDirectory
-	}
-	if !isNil(o.CompressOnCopy) {
-		toSerialize["compressOnCopy"] = o.CompressOnCopy
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddCopyLogFileRotationListenerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["listenerName"] = o.ListenerName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["copyToDirectory"] = o.CopyToDirectory
+	if !IsNil(o.CompressOnCopy) {
+		toSerialize["compressOnCopy"] = o.CompressOnCopy
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddCopyLogFileRotationListenerRequest struct {

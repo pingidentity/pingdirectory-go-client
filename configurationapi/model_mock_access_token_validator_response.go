@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the MockAccessTokenValidatorResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &MockAccessTokenValidatorResponse{}
+
 // MockAccessTokenValidatorResponse struct for MockAccessTokenValidatorResponse
 type MockAccessTokenValidatorResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -60,7 +63,7 @@ func NewMockAccessTokenValidatorResponseWithDefaults() *MockAccessTokenValidator
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *MockAccessTokenValidatorResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -70,7 +73,7 @@ func (o *MockAccessTokenValidatorResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MockAccessTokenValidatorResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -78,7 +81,7 @@ func (o *MockAccessTokenValidatorResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *MockAccessTokenValidatorResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -92,7 +95,7 @@ func (o *MockAccessTokenValidatorResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *MockAccessTokenValidatorResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -102,7 +105,7 @@ func (o *MockAccessTokenValidatorResponse) GetUrnpingidentityschemasconfiguratio
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MockAccessTokenValidatorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -110,7 +113,7 @@ func (o *MockAccessTokenValidatorResponse) GetUrnpingidentityschemasconfiguratio
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *MockAccessTokenValidatorResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -172,7 +175,7 @@ func (o *MockAccessTokenValidatorResponse) SetSchemas(v []EnummockAccessTokenVal
 
 // GetClientIDClaimName returns the ClientIDClaimName field value if set, zero value otherwise.
 func (o *MockAccessTokenValidatorResponse) GetClientIDClaimName() string {
-	if o == nil || isNil(o.ClientIDClaimName) {
+	if o == nil || IsNil(o.ClientIDClaimName) {
 		var ret string
 		return ret
 	}
@@ -182,7 +185,7 @@ func (o *MockAccessTokenValidatorResponse) GetClientIDClaimName() string {
 // GetClientIDClaimNameOk returns a tuple with the ClientIDClaimName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MockAccessTokenValidatorResponse) GetClientIDClaimNameOk() (*string, bool) {
-	if o == nil || isNil(o.ClientIDClaimName) {
+	if o == nil || IsNil(o.ClientIDClaimName) {
 		return nil, false
 	}
 	return o.ClientIDClaimName, true
@@ -190,7 +193,7 @@ func (o *MockAccessTokenValidatorResponse) GetClientIDClaimNameOk() (*string, bo
 
 // HasClientIDClaimName returns a boolean if a field has been set.
 func (o *MockAccessTokenValidatorResponse) HasClientIDClaimName() bool {
-	if o != nil && !isNil(o.ClientIDClaimName) {
+	if o != nil && !IsNil(o.ClientIDClaimName) {
 		return true
 	}
 
@@ -204,7 +207,7 @@ func (o *MockAccessTokenValidatorResponse) SetClientIDClaimName(v string) {
 
 // GetScopeClaimName returns the ScopeClaimName field value if set, zero value otherwise.
 func (o *MockAccessTokenValidatorResponse) GetScopeClaimName() string {
-	if o == nil || isNil(o.ScopeClaimName) {
+	if o == nil || IsNil(o.ScopeClaimName) {
 		var ret string
 		return ret
 	}
@@ -214,7 +217,7 @@ func (o *MockAccessTokenValidatorResponse) GetScopeClaimName() string {
 // GetScopeClaimNameOk returns a tuple with the ScopeClaimName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MockAccessTokenValidatorResponse) GetScopeClaimNameOk() (*string, bool) {
-	if o == nil || isNil(o.ScopeClaimName) {
+	if o == nil || IsNil(o.ScopeClaimName) {
 		return nil, false
 	}
 	return o.ScopeClaimName, true
@@ -222,7 +225,7 @@ func (o *MockAccessTokenValidatorResponse) GetScopeClaimNameOk() (*string, bool)
 
 // HasScopeClaimName returns a boolean if a field has been set.
 func (o *MockAccessTokenValidatorResponse) HasScopeClaimName() bool {
-	if o != nil && !isNil(o.ScopeClaimName) {
+	if o != nil && !IsNil(o.ScopeClaimName) {
 		return true
 	}
 
@@ -260,7 +263,7 @@ func (o *MockAccessTokenValidatorResponse) SetEvaluationOrderIndex(v int32) {
 
 // GetIdentityMapper returns the IdentityMapper field value if set, zero value otherwise.
 func (o *MockAccessTokenValidatorResponse) GetIdentityMapper() string {
-	if o == nil || isNil(o.IdentityMapper) {
+	if o == nil || IsNil(o.IdentityMapper) {
 		var ret string
 		return ret
 	}
@@ -270,7 +273,7 @@ func (o *MockAccessTokenValidatorResponse) GetIdentityMapper() string {
 // GetIdentityMapperOk returns a tuple with the IdentityMapper field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MockAccessTokenValidatorResponse) GetIdentityMapperOk() (*string, bool) {
-	if o == nil || isNil(o.IdentityMapper) {
+	if o == nil || IsNil(o.IdentityMapper) {
 		return nil, false
 	}
 	return o.IdentityMapper, true
@@ -278,7 +281,7 @@ func (o *MockAccessTokenValidatorResponse) GetIdentityMapperOk() (*string, bool)
 
 // HasIdentityMapper returns a boolean if a field has been set.
 func (o *MockAccessTokenValidatorResponse) HasIdentityMapper() bool {
-	if o != nil && !isNil(o.IdentityMapper) {
+	if o != nil && !IsNil(o.IdentityMapper) {
 		return true
 	}
 
@@ -292,7 +295,7 @@ func (o *MockAccessTokenValidatorResponse) SetIdentityMapper(v string) {
 
 // GetSubjectClaimName returns the SubjectClaimName field value if set, zero value otherwise.
 func (o *MockAccessTokenValidatorResponse) GetSubjectClaimName() string {
-	if o == nil || isNil(o.SubjectClaimName) {
+	if o == nil || IsNil(o.SubjectClaimName) {
 		var ret string
 		return ret
 	}
@@ -302,7 +305,7 @@ func (o *MockAccessTokenValidatorResponse) GetSubjectClaimName() string {
 // GetSubjectClaimNameOk returns a tuple with the SubjectClaimName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MockAccessTokenValidatorResponse) GetSubjectClaimNameOk() (*string, bool) {
-	if o == nil || isNil(o.SubjectClaimName) {
+	if o == nil || IsNil(o.SubjectClaimName) {
 		return nil, false
 	}
 	return o.SubjectClaimName, true
@@ -310,7 +313,7 @@ func (o *MockAccessTokenValidatorResponse) GetSubjectClaimNameOk() (*string, boo
 
 // HasSubjectClaimName returns a boolean if a field has been set.
 func (o *MockAccessTokenValidatorResponse) HasSubjectClaimName() bool {
-	if o != nil && !isNil(o.SubjectClaimName) {
+	if o != nil && !IsNil(o.SubjectClaimName) {
 		return true
 	}
 
@@ -324,7 +327,7 @@ func (o *MockAccessTokenValidatorResponse) SetSubjectClaimName(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *MockAccessTokenValidatorResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -334,7 +337,7 @@ func (o *MockAccessTokenValidatorResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MockAccessTokenValidatorResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -342,7 +345,7 @@ func (o *MockAccessTokenValidatorResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *MockAccessTokenValidatorResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -379,41 +382,41 @@ func (o *MockAccessTokenValidatorResponse) SetEnabled(v bool) {
 }
 
 func (o MockAccessTokenValidatorResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.ClientIDClaimName) {
-		toSerialize["clientIDClaimName"] = o.ClientIDClaimName
-	}
-	if !isNil(o.ScopeClaimName) {
-		toSerialize["scopeClaimName"] = o.ScopeClaimName
-	}
-	if true {
-		toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
-	}
-	if !isNil(o.IdentityMapper) {
-		toSerialize["identityMapper"] = o.IdentityMapper
-	}
-	if !isNil(o.SubjectClaimName) {
-		toSerialize["subjectClaimName"] = o.SubjectClaimName
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o MockAccessTokenValidatorResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.ClientIDClaimName) {
+		toSerialize["clientIDClaimName"] = o.ClientIDClaimName
+	}
+	if !IsNil(o.ScopeClaimName) {
+		toSerialize["scopeClaimName"] = o.ScopeClaimName
+	}
+	toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
+	if !IsNil(o.IdentityMapper) {
+		toSerialize["identityMapper"] = o.IdentityMapper
+	}
+	if !IsNil(o.SubjectClaimName) {
+		toSerialize["subjectClaimName"] = o.SubjectClaimName
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableMockAccessTokenValidatorResponse struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the DefaultAzureAuthenticationMethodResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &DefaultAzureAuthenticationMethodResponse{}
+
 // DefaultAzureAuthenticationMethodResponse struct for DefaultAzureAuthenticationMethodResponse
 type DefaultAzureAuthenticationMethodResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -50,7 +53,7 @@ func NewDefaultAzureAuthenticationMethodResponseWithDefaults() *DefaultAzureAuth
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *DefaultAzureAuthenticationMethodResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -60,7 +63,7 @@ func (o *DefaultAzureAuthenticationMethodResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DefaultAzureAuthenticationMethodResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -68,7 +71,7 @@ func (o *DefaultAzureAuthenticationMethodResponse) GetMetaOk() (*MetaMeta, bool)
 
 // HasMeta returns a boolean if a field has been set.
 func (o *DefaultAzureAuthenticationMethodResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -82,7 +85,7 @@ func (o *DefaultAzureAuthenticationMethodResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *DefaultAzureAuthenticationMethodResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -92,7 +95,7 @@ func (o *DefaultAzureAuthenticationMethodResponse) GetUrnpingidentityschemasconf
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DefaultAzureAuthenticationMethodResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -100,7 +103,7 @@ func (o *DefaultAzureAuthenticationMethodResponse) GetUrnpingidentityschemasconf
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *DefaultAzureAuthenticationMethodResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -162,7 +165,7 @@ func (o *DefaultAzureAuthenticationMethodResponse) SetSchemas(v []EnumdefaultAzu
 
 // GetTenantID returns the TenantID field value if set, zero value otherwise.
 func (o *DefaultAzureAuthenticationMethodResponse) GetTenantID() string {
-	if o == nil || isNil(o.TenantID) {
+	if o == nil || IsNil(o.TenantID) {
 		var ret string
 		return ret
 	}
@@ -172,7 +175,7 @@ func (o *DefaultAzureAuthenticationMethodResponse) GetTenantID() string {
 // GetTenantIDOk returns a tuple with the TenantID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DefaultAzureAuthenticationMethodResponse) GetTenantIDOk() (*string, bool) {
-	if o == nil || isNil(o.TenantID) {
+	if o == nil || IsNil(o.TenantID) {
 		return nil, false
 	}
 	return o.TenantID, true
@@ -180,7 +183,7 @@ func (o *DefaultAzureAuthenticationMethodResponse) GetTenantIDOk() (*string, boo
 
 // HasTenantID returns a boolean if a field has been set.
 func (o *DefaultAzureAuthenticationMethodResponse) HasTenantID() bool {
-	if o != nil && !isNil(o.TenantID) {
+	if o != nil && !IsNil(o.TenantID) {
 		return true
 	}
 
@@ -194,7 +197,7 @@ func (o *DefaultAzureAuthenticationMethodResponse) SetTenantID(v string) {
 
 // GetClientID returns the ClientID field value if set, zero value otherwise.
 func (o *DefaultAzureAuthenticationMethodResponse) GetClientID() string {
-	if o == nil || isNil(o.ClientID) {
+	if o == nil || IsNil(o.ClientID) {
 		var ret string
 		return ret
 	}
@@ -204,7 +207,7 @@ func (o *DefaultAzureAuthenticationMethodResponse) GetClientID() string {
 // GetClientIDOk returns a tuple with the ClientID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DefaultAzureAuthenticationMethodResponse) GetClientIDOk() (*string, bool) {
-	if o == nil || isNil(o.ClientID) {
+	if o == nil || IsNil(o.ClientID) {
 		return nil, false
 	}
 	return o.ClientID, true
@@ -212,7 +215,7 @@ func (o *DefaultAzureAuthenticationMethodResponse) GetClientIDOk() (*string, boo
 
 // HasClientID returns a boolean if a field has been set.
 func (o *DefaultAzureAuthenticationMethodResponse) HasClientID() bool {
-	if o != nil && !isNil(o.ClientID) {
+	if o != nil && !IsNil(o.ClientID) {
 		return true
 	}
 
@@ -226,7 +229,7 @@ func (o *DefaultAzureAuthenticationMethodResponse) SetClientID(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *DefaultAzureAuthenticationMethodResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -236,7 +239,7 @@ func (o *DefaultAzureAuthenticationMethodResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DefaultAzureAuthenticationMethodResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -244,7 +247,7 @@ func (o *DefaultAzureAuthenticationMethodResponse) GetDescriptionOk() (*string, 
 
 // HasDescription returns a boolean if a field has been set.
 func (o *DefaultAzureAuthenticationMethodResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -257,29 +260,33 @@ func (o *DefaultAzureAuthenticationMethodResponse) SetDescription(v string) {
 }
 
 func (o DefaultAzureAuthenticationMethodResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.TenantID) {
-		toSerialize["tenantID"] = o.TenantID
-	}
-	if !isNil(o.ClientID) {
-		toSerialize["clientID"] = o.ClientID
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o DefaultAzureAuthenticationMethodResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.TenantID) {
+		toSerialize["tenantID"] = o.TenantID
+	}
+	if !IsNil(o.ClientID) {
+		toSerialize["clientID"] = o.ClientID
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableDefaultAzureAuthenticationMethodResponse struct {

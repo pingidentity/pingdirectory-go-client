@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddJvmDefaultTrustManagerProviderRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddJvmDefaultTrustManagerProviderRequest{}
+
 // AddJvmDefaultTrustManagerProviderRequest struct for AddJvmDefaultTrustManagerProviderRequest
 type AddJvmDefaultTrustManagerProviderRequest struct {
 	// Name of the new Trust Manager Provider
@@ -116,17 +119,19 @@ func (o *AddJvmDefaultTrustManagerProviderRequest) SetEnabled(v bool) {
 }
 
 func (o AddJvmDefaultTrustManagerProviderRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["providerName"] = o.ProviderName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddJvmDefaultTrustManagerProviderRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["providerName"] = o.ProviderName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddJvmDefaultTrustManagerProviderRequest struct {

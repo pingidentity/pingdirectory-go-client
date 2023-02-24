@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the GssapiSaslMechanismHandlerResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GssapiSaslMechanismHandlerResponse{}
+
 // GssapiSaslMechanismHandlerResponse struct for GssapiSaslMechanismHandlerResponse
 type GssapiSaslMechanismHandlerResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -72,7 +75,7 @@ func NewGssapiSaslMechanismHandlerResponseWithDefaults() *GssapiSaslMechanismHan
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *GssapiSaslMechanismHandlerResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -82,7 +85,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -90,7 +93,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *GssapiSaslMechanismHandlerResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -104,7 +107,7 @@ func (o *GssapiSaslMechanismHandlerResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *GssapiSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -114,7 +117,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurat
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -122,7 +125,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurat
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *GssapiSaslMechanismHandlerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -184,7 +187,7 @@ func (o *GssapiSaslMechanismHandlerResponse) SetId(v string) {
 
 // GetRealm returns the Realm field value if set, zero value otherwise.
 func (o *GssapiSaslMechanismHandlerResponse) GetRealm() string {
-	if o == nil || isNil(o.Realm) {
+	if o == nil || IsNil(o.Realm) {
 		var ret string
 		return ret
 	}
@@ -194,7 +197,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetRealm() string {
 // GetRealmOk returns a tuple with the Realm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetRealmOk() (*string, bool) {
-	if o == nil || isNil(o.Realm) {
+	if o == nil || IsNil(o.Realm) {
 		return nil, false
 	}
 	return o.Realm, true
@@ -202,7 +205,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetRealmOk() (*string, bool) {
 
 // HasRealm returns a boolean if a field has been set.
 func (o *GssapiSaslMechanismHandlerResponse) HasRealm() bool {
-	if o != nil && !isNil(o.Realm) {
+	if o != nil && !IsNil(o.Realm) {
 		return true
 	}
 
@@ -216,7 +219,7 @@ func (o *GssapiSaslMechanismHandlerResponse) SetRealm(v string) {
 
 // GetKdcAddress returns the KdcAddress field value if set, zero value otherwise.
 func (o *GssapiSaslMechanismHandlerResponse) GetKdcAddress() string {
-	if o == nil || isNil(o.KdcAddress) {
+	if o == nil || IsNil(o.KdcAddress) {
 		var ret string
 		return ret
 	}
@@ -226,7 +229,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetKdcAddress() string {
 // GetKdcAddressOk returns a tuple with the KdcAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetKdcAddressOk() (*string, bool) {
-	if o == nil || isNil(o.KdcAddress) {
+	if o == nil || IsNil(o.KdcAddress) {
 		return nil, false
 	}
 	return o.KdcAddress, true
@@ -234,7 +237,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetKdcAddressOk() (*string, bool) {
 
 // HasKdcAddress returns a boolean if a field has been set.
 func (o *GssapiSaslMechanismHandlerResponse) HasKdcAddress() bool {
-	if o != nil && !isNil(o.KdcAddress) {
+	if o != nil && !IsNil(o.KdcAddress) {
 		return true
 	}
 
@@ -248,7 +251,7 @@ func (o *GssapiSaslMechanismHandlerResponse) SetKdcAddress(v string) {
 
 // GetKeytab returns the Keytab field value if set, zero value otherwise.
 func (o *GssapiSaslMechanismHandlerResponse) GetKeytab() string {
-	if o == nil || isNil(o.Keytab) {
+	if o == nil || IsNil(o.Keytab) {
 		var ret string
 		return ret
 	}
@@ -258,7 +261,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetKeytab() string {
 // GetKeytabOk returns a tuple with the Keytab field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetKeytabOk() (*string, bool) {
-	if o == nil || isNil(o.Keytab) {
+	if o == nil || IsNil(o.Keytab) {
 		return nil, false
 	}
 	return o.Keytab, true
@@ -266,7 +269,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetKeytabOk() (*string, bool) {
 
 // HasKeytab returns a boolean if a field has been set.
 func (o *GssapiSaslMechanismHandlerResponse) HasKeytab() bool {
-	if o != nil && !isNil(o.Keytab) {
+	if o != nil && !IsNil(o.Keytab) {
 		return true
 	}
 
@@ -280,7 +283,7 @@ func (o *GssapiSaslMechanismHandlerResponse) SetKeytab(v string) {
 
 // GetAllowNullServerFqdn returns the AllowNullServerFqdn field value if set, zero value otherwise.
 func (o *GssapiSaslMechanismHandlerResponse) GetAllowNullServerFqdn() bool {
-	if o == nil || isNil(o.AllowNullServerFqdn) {
+	if o == nil || IsNil(o.AllowNullServerFqdn) {
 		var ret bool
 		return ret
 	}
@@ -290,7 +293,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetAllowNullServerFqdn() bool {
 // GetAllowNullServerFqdnOk returns a tuple with the AllowNullServerFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetAllowNullServerFqdnOk() (*bool, bool) {
-	if o == nil || isNil(o.AllowNullServerFqdn) {
+	if o == nil || IsNil(o.AllowNullServerFqdn) {
 		return nil, false
 	}
 	return o.AllowNullServerFqdn, true
@@ -298,7 +301,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetAllowNullServerFqdnOk() (*bool, 
 
 // HasAllowNullServerFqdn returns a boolean if a field has been set.
 func (o *GssapiSaslMechanismHandlerResponse) HasAllowNullServerFqdn() bool {
-	if o != nil && !isNil(o.AllowNullServerFqdn) {
+	if o != nil && !IsNil(o.AllowNullServerFqdn) {
 		return true
 	}
 
@@ -312,7 +315,7 @@ func (o *GssapiSaslMechanismHandlerResponse) SetAllowNullServerFqdn(v bool) {
 
 // GetServerFqdn returns the ServerFqdn field value if set, zero value otherwise.
 func (o *GssapiSaslMechanismHandlerResponse) GetServerFqdn() string {
-	if o == nil || isNil(o.ServerFqdn) {
+	if o == nil || IsNil(o.ServerFqdn) {
 		var ret string
 		return ret
 	}
@@ -322,7 +325,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetServerFqdn() string {
 // GetServerFqdnOk returns a tuple with the ServerFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetServerFqdnOk() (*string, bool) {
-	if o == nil || isNil(o.ServerFqdn) {
+	if o == nil || IsNil(o.ServerFqdn) {
 		return nil, false
 	}
 	return o.ServerFqdn, true
@@ -330,7 +333,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetServerFqdnOk() (*string, bool) {
 
 // HasServerFqdn returns a boolean if a field has been set.
 func (o *GssapiSaslMechanismHandlerResponse) HasServerFqdn() bool {
-	if o != nil && !isNil(o.ServerFqdn) {
+	if o != nil && !IsNil(o.ServerFqdn) {
 		return true
 	}
 
@@ -344,7 +347,7 @@ func (o *GssapiSaslMechanismHandlerResponse) SetServerFqdn(v string) {
 
 // GetAllowedQualityOfProtection returns the AllowedQualityOfProtection field value if set, zero value otherwise.
 func (o *GssapiSaslMechanismHandlerResponse) GetAllowedQualityOfProtection() []EnumsaslMechanismHandlerAllowedQualityOfProtectionProp {
-	if o == nil || isNil(o.AllowedQualityOfProtection) {
+	if o == nil || IsNil(o.AllowedQualityOfProtection) {
 		var ret []EnumsaslMechanismHandlerAllowedQualityOfProtectionProp
 		return ret
 	}
@@ -354,7 +357,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetAllowedQualityOfProtection() []E
 // GetAllowedQualityOfProtectionOk returns a tuple with the AllowedQualityOfProtection field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetAllowedQualityOfProtectionOk() ([]EnumsaslMechanismHandlerAllowedQualityOfProtectionProp, bool) {
-	if o == nil || isNil(o.AllowedQualityOfProtection) {
+	if o == nil || IsNil(o.AllowedQualityOfProtection) {
 		return nil, false
 	}
 	return o.AllowedQualityOfProtection, true
@@ -362,7 +365,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetAllowedQualityOfProtectionOk() (
 
 // HasAllowedQualityOfProtection returns a boolean if a field has been set.
 func (o *GssapiSaslMechanismHandlerResponse) HasAllowedQualityOfProtection() bool {
-	if o != nil && !isNil(o.AllowedQualityOfProtection) {
+	if o != nil && !IsNil(o.AllowedQualityOfProtection) {
 		return true
 	}
 
@@ -400,7 +403,7 @@ func (o *GssapiSaslMechanismHandlerResponse) SetIdentityMapper(v string) {
 
 // GetAlternateAuthorizationIdentityMapper returns the AlternateAuthorizationIdentityMapper field value if set, zero value otherwise.
 func (o *GssapiSaslMechanismHandlerResponse) GetAlternateAuthorizationIdentityMapper() string {
-	if o == nil || isNil(o.AlternateAuthorizationIdentityMapper) {
+	if o == nil || IsNil(o.AlternateAuthorizationIdentityMapper) {
 		var ret string
 		return ret
 	}
@@ -410,7 +413,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetAlternateAuthorizationIdentityMa
 // GetAlternateAuthorizationIdentityMapperOk returns a tuple with the AlternateAuthorizationIdentityMapper field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetAlternateAuthorizationIdentityMapperOk() (*string, bool) {
-	if o == nil || isNil(o.AlternateAuthorizationIdentityMapper) {
+	if o == nil || IsNil(o.AlternateAuthorizationIdentityMapper) {
 		return nil, false
 	}
 	return o.AlternateAuthorizationIdentityMapper, true
@@ -418,7 +421,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetAlternateAuthorizationIdentityMa
 
 // HasAlternateAuthorizationIdentityMapper returns a boolean if a field has been set.
 func (o *GssapiSaslMechanismHandlerResponse) HasAlternateAuthorizationIdentityMapper() bool {
-	if o != nil && !isNil(o.AlternateAuthorizationIdentityMapper) {
+	if o != nil && !IsNil(o.AlternateAuthorizationIdentityMapper) {
 		return true
 	}
 
@@ -432,7 +435,7 @@ func (o *GssapiSaslMechanismHandlerResponse) SetAlternateAuthorizationIdentityMa
 
 // GetKerberosServicePrincipal returns the KerberosServicePrincipal field value if set, zero value otherwise.
 func (o *GssapiSaslMechanismHandlerResponse) GetKerberosServicePrincipal() string {
-	if o == nil || isNil(o.KerberosServicePrincipal) {
+	if o == nil || IsNil(o.KerberosServicePrincipal) {
 		var ret string
 		return ret
 	}
@@ -442,7 +445,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetKerberosServicePrincipal() strin
 // GetKerberosServicePrincipalOk returns a tuple with the KerberosServicePrincipal field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetKerberosServicePrincipalOk() (*string, bool) {
-	if o == nil || isNil(o.KerberosServicePrincipal) {
+	if o == nil || IsNil(o.KerberosServicePrincipal) {
 		return nil, false
 	}
 	return o.KerberosServicePrincipal, true
@@ -450,7 +453,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetKerberosServicePrincipalOk() (*s
 
 // HasKerberosServicePrincipal returns a boolean if a field has been set.
 func (o *GssapiSaslMechanismHandlerResponse) HasKerberosServicePrincipal() bool {
-	if o != nil && !isNil(o.KerberosServicePrincipal) {
+	if o != nil && !IsNil(o.KerberosServicePrincipal) {
 		return true
 	}
 
@@ -464,7 +467,7 @@ func (o *GssapiSaslMechanismHandlerResponse) SetKerberosServicePrincipal(v strin
 
 // GetGssapiRole returns the GssapiRole field value if set, zero value otherwise.
 func (o *GssapiSaslMechanismHandlerResponse) GetGssapiRole() EnumsaslMechanismHandlerGssapiRoleProp {
-	if o == nil || isNil(o.GssapiRole) {
+	if o == nil || IsNil(o.GssapiRole) {
 		var ret EnumsaslMechanismHandlerGssapiRoleProp
 		return ret
 	}
@@ -474,7 +477,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetGssapiRole() EnumsaslMechanismHa
 // GetGssapiRoleOk returns a tuple with the GssapiRole field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetGssapiRoleOk() (*EnumsaslMechanismHandlerGssapiRoleProp, bool) {
-	if o == nil || isNil(o.GssapiRole) {
+	if o == nil || IsNil(o.GssapiRole) {
 		return nil, false
 	}
 	return o.GssapiRole, true
@@ -482,7 +485,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetGssapiRoleOk() (*EnumsaslMechani
 
 // HasGssapiRole returns a boolean if a field has been set.
 func (o *GssapiSaslMechanismHandlerResponse) HasGssapiRole() bool {
-	if o != nil && !isNil(o.GssapiRole) {
+	if o != nil && !IsNil(o.GssapiRole) {
 		return true
 	}
 
@@ -496,7 +499,7 @@ func (o *GssapiSaslMechanismHandlerResponse) SetGssapiRole(v EnumsaslMechanismHa
 
 // GetJaasConfigFile returns the JaasConfigFile field value if set, zero value otherwise.
 func (o *GssapiSaslMechanismHandlerResponse) GetJaasConfigFile() string {
-	if o == nil || isNil(o.JaasConfigFile) {
+	if o == nil || IsNil(o.JaasConfigFile) {
 		var ret string
 		return ret
 	}
@@ -506,7 +509,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetJaasConfigFile() string {
 // GetJaasConfigFileOk returns a tuple with the JaasConfigFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetJaasConfigFileOk() (*string, bool) {
-	if o == nil || isNil(o.JaasConfigFile) {
+	if o == nil || IsNil(o.JaasConfigFile) {
 		return nil, false
 	}
 	return o.JaasConfigFile, true
@@ -514,7 +517,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetJaasConfigFileOk() (*string, boo
 
 // HasJaasConfigFile returns a boolean if a field has been set.
 func (o *GssapiSaslMechanismHandlerResponse) HasJaasConfigFile() bool {
-	if o != nil && !isNil(o.JaasConfigFile) {
+	if o != nil && !IsNil(o.JaasConfigFile) {
 		return true
 	}
 
@@ -528,7 +531,7 @@ func (o *GssapiSaslMechanismHandlerResponse) SetJaasConfigFile(v string) {
 
 // GetEnableDebug returns the EnableDebug field value if set, zero value otherwise.
 func (o *GssapiSaslMechanismHandlerResponse) GetEnableDebug() bool {
-	if o == nil || isNil(o.EnableDebug) {
+	if o == nil || IsNil(o.EnableDebug) {
 		var ret bool
 		return ret
 	}
@@ -538,7 +541,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetEnableDebug() bool {
 // GetEnableDebugOk returns a tuple with the EnableDebug field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetEnableDebugOk() (*bool, bool) {
-	if o == nil || isNil(o.EnableDebug) {
+	if o == nil || IsNil(o.EnableDebug) {
 		return nil, false
 	}
 	return o.EnableDebug, true
@@ -546,7 +549,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetEnableDebugOk() (*bool, bool) {
 
 // HasEnableDebug returns a boolean if a field has been set.
 func (o *GssapiSaslMechanismHandlerResponse) HasEnableDebug() bool {
-	if o != nil && !isNil(o.EnableDebug) {
+	if o != nil && !IsNil(o.EnableDebug) {
 		return true
 	}
 
@@ -560,7 +563,7 @@ func (o *GssapiSaslMechanismHandlerResponse) SetEnableDebug(v bool) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *GssapiSaslMechanismHandlerResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -570,7 +573,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -578,7 +581,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetDescriptionOk() (*string, bool) 
 
 // HasDescription returns a boolean if a field has been set.
 func (o *GssapiSaslMechanismHandlerResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -615,62 +618,62 @@ func (o *GssapiSaslMechanismHandlerResponse) SetEnabled(v bool) {
 }
 
 func (o GssapiSaslMechanismHandlerResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.Realm) {
-		toSerialize["realm"] = o.Realm
-	}
-	if !isNil(o.KdcAddress) {
-		toSerialize["kdcAddress"] = o.KdcAddress
-	}
-	if !isNil(o.Keytab) {
-		toSerialize["keytab"] = o.Keytab
-	}
-	if !isNil(o.AllowNullServerFqdn) {
-		toSerialize["allowNullServerFqdn"] = o.AllowNullServerFqdn
-	}
-	if !isNil(o.ServerFqdn) {
-		toSerialize["serverFqdn"] = o.ServerFqdn
-	}
-	if !isNil(o.AllowedQualityOfProtection) {
-		toSerialize["allowedQualityOfProtection"] = o.AllowedQualityOfProtection
-	}
-	if true {
-		toSerialize["identityMapper"] = o.IdentityMapper
-	}
-	if !isNil(o.AlternateAuthorizationIdentityMapper) {
-		toSerialize["alternateAuthorizationIdentityMapper"] = o.AlternateAuthorizationIdentityMapper
-	}
-	if !isNil(o.KerberosServicePrincipal) {
-		toSerialize["kerberosServicePrincipal"] = o.KerberosServicePrincipal
-	}
-	if !isNil(o.GssapiRole) {
-		toSerialize["gssapiRole"] = o.GssapiRole
-	}
-	if !isNil(o.JaasConfigFile) {
-		toSerialize["jaasConfigFile"] = o.JaasConfigFile
-	}
-	if !isNil(o.EnableDebug) {
-		toSerialize["enableDebug"] = o.EnableDebug
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GssapiSaslMechanismHandlerResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	if !IsNil(o.Realm) {
+		toSerialize["realm"] = o.Realm
+	}
+	if !IsNil(o.KdcAddress) {
+		toSerialize["kdcAddress"] = o.KdcAddress
+	}
+	if !IsNil(o.Keytab) {
+		toSerialize["keytab"] = o.Keytab
+	}
+	if !IsNil(o.AllowNullServerFqdn) {
+		toSerialize["allowNullServerFqdn"] = o.AllowNullServerFqdn
+	}
+	if !IsNil(o.ServerFqdn) {
+		toSerialize["serverFqdn"] = o.ServerFqdn
+	}
+	if !IsNil(o.AllowedQualityOfProtection) {
+		toSerialize["allowedQualityOfProtection"] = o.AllowedQualityOfProtection
+	}
+	toSerialize["identityMapper"] = o.IdentityMapper
+	if !IsNil(o.AlternateAuthorizationIdentityMapper) {
+		toSerialize["alternateAuthorizationIdentityMapper"] = o.AlternateAuthorizationIdentityMapper
+	}
+	if !IsNil(o.KerberosServicePrincipal) {
+		toSerialize["kerberosServicePrincipal"] = o.KerberosServicePrincipal
+	}
+	if !IsNil(o.GssapiRole) {
+		toSerialize["gssapiRole"] = o.GssapiRole
+	}
+	if !IsNil(o.JaasConfigFile) {
+		toSerialize["jaasConfigFile"] = o.JaasConfigFile
+	}
+	if !IsNil(o.EnableDebug) {
+		toSerialize["enableDebug"] = o.EnableDebug
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableGssapiSaslMechanismHandlerResponse struct {

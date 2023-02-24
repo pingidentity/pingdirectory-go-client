@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -105,9 +105,9 @@ func (a *ConnectionCriteriaApiService) AddConnectionCriteriaExecute(r ApiAddConn
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -171,7 +171,7 @@ func (a *ConnectionCriteriaApiService) DeleteConnectionCriteriaExecute(r ApiDele
 	}
 
 	localVarPath := localBasePath + "/connection-criteria/{connection-criteria-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"connection-criteria-name"+"}", url.PathEscape(parameterToString(r.connectionCriteriaName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"connection-criteria-name"+"}", url.PathEscape(parameterValueToString(r.connectionCriteriaName, "connectionCriteriaName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -204,9 +204,9 @@ func (a *ConnectionCriteriaApiService) DeleteConnectionCriteriaExecute(r ApiDele
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -264,7 +264,7 @@ func (a *ConnectionCriteriaApiService) GetConnectionCriteriaExecute(r ApiGetConn
 	}
 
 	localVarPath := localBasePath + "/connection-criteria/{connection-criteria-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"connection-criteria-name"+"}", url.PathEscape(parameterToString(r.connectionCriteriaName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"connection-criteria-name"+"}", url.PathEscape(parameterValueToString(r.connectionCriteriaName, "connectionCriteriaName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -297,9 +297,9 @@ func (a *ConnectionCriteriaApiService) GetConnectionCriteriaExecute(r ApiGetConn
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -373,7 +373,7 @@ func (a *ConnectionCriteriaApiService) UpdateConnectionCriteriaExecute(r ApiUpda
 	}
 
 	localVarPath := localBasePath + "/connection-criteria/{connection-criteria-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"connection-criteria-name"+"}", url.PathEscape(parameterToString(r.connectionCriteriaName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"connection-criteria-name"+"}", url.PathEscape(parameterValueToString(r.connectionCriteriaName, "connectionCriteriaName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -411,9 +411,9 @@ func (a *ConnectionCriteriaApiService) UpdateConnectionCriteriaExecute(r ApiUpda
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

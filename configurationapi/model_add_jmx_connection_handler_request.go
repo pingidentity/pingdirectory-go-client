@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddJmxConnectionHandlerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddJmxConnectionHandlerRequest{}
+
 // AddJmxConnectionHandlerRequest struct for AddJmxConnectionHandlerRequest
 type AddJmxConnectionHandlerRequest struct {
 	// Name of the new Connection Handler
@@ -132,7 +135,7 @@ func (o *AddJmxConnectionHandlerRequest) SetListenPort(v int32) {
 
 // GetUseSSL returns the UseSSL field value if set, zero value otherwise.
 func (o *AddJmxConnectionHandlerRequest) GetUseSSL() bool {
-	if o == nil || isNil(o.UseSSL) {
+	if o == nil || IsNil(o.UseSSL) {
 		var ret bool
 		return ret
 	}
@@ -142,7 +145,7 @@ func (o *AddJmxConnectionHandlerRequest) GetUseSSL() bool {
 // GetUseSSLOk returns a tuple with the UseSSL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJmxConnectionHandlerRequest) GetUseSSLOk() (*bool, bool) {
-	if o == nil || isNil(o.UseSSL) {
+	if o == nil || IsNil(o.UseSSL) {
 		return nil, false
 	}
 	return o.UseSSL, true
@@ -150,7 +153,7 @@ func (o *AddJmxConnectionHandlerRequest) GetUseSSLOk() (*bool, bool) {
 
 // HasUseSSL returns a boolean if a field has been set.
 func (o *AddJmxConnectionHandlerRequest) HasUseSSL() bool {
-	if o != nil && !isNil(o.UseSSL) {
+	if o != nil && !IsNil(o.UseSSL) {
 		return true
 	}
 
@@ -164,7 +167,7 @@ func (o *AddJmxConnectionHandlerRequest) SetUseSSL(v bool) {
 
 // GetSslCertNickname returns the SslCertNickname field value if set, zero value otherwise.
 func (o *AddJmxConnectionHandlerRequest) GetSslCertNickname() string {
-	if o == nil || isNil(o.SslCertNickname) {
+	if o == nil || IsNil(o.SslCertNickname) {
 		var ret string
 		return ret
 	}
@@ -174,7 +177,7 @@ func (o *AddJmxConnectionHandlerRequest) GetSslCertNickname() string {
 // GetSslCertNicknameOk returns a tuple with the SslCertNickname field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJmxConnectionHandlerRequest) GetSslCertNicknameOk() (*string, bool) {
-	if o == nil || isNil(o.SslCertNickname) {
+	if o == nil || IsNil(o.SslCertNickname) {
 		return nil, false
 	}
 	return o.SslCertNickname, true
@@ -182,7 +185,7 @@ func (o *AddJmxConnectionHandlerRequest) GetSslCertNicknameOk() (*string, bool) 
 
 // HasSslCertNickname returns a boolean if a field has been set.
 func (o *AddJmxConnectionHandlerRequest) HasSslCertNickname() bool {
-	if o != nil && !isNil(o.SslCertNickname) {
+	if o != nil && !IsNil(o.SslCertNickname) {
 		return true
 	}
 
@@ -196,7 +199,7 @@ func (o *AddJmxConnectionHandlerRequest) SetSslCertNickname(v string) {
 
 // GetKeyManagerProvider returns the KeyManagerProvider field value if set, zero value otherwise.
 func (o *AddJmxConnectionHandlerRequest) GetKeyManagerProvider() string {
-	if o == nil || isNil(o.KeyManagerProvider) {
+	if o == nil || IsNil(o.KeyManagerProvider) {
 		var ret string
 		return ret
 	}
@@ -206,7 +209,7 @@ func (o *AddJmxConnectionHandlerRequest) GetKeyManagerProvider() string {
 // GetKeyManagerProviderOk returns a tuple with the KeyManagerProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJmxConnectionHandlerRequest) GetKeyManagerProviderOk() (*string, bool) {
-	if o == nil || isNil(o.KeyManagerProvider) {
+	if o == nil || IsNil(o.KeyManagerProvider) {
 		return nil, false
 	}
 	return o.KeyManagerProvider, true
@@ -214,7 +217,7 @@ func (o *AddJmxConnectionHandlerRequest) GetKeyManagerProviderOk() (*string, boo
 
 // HasKeyManagerProvider returns a boolean if a field has been set.
 func (o *AddJmxConnectionHandlerRequest) HasKeyManagerProvider() bool {
-	if o != nil && !isNil(o.KeyManagerProvider) {
+	if o != nil && !IsNil(o.KeyManagerProvider) {
 		return true
 	}
 
@@ -228,7 +231,7 @@ func (o *AddJmxConnectionHandlerRequest) SetKeyManagerProvider(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddJmxConnectionHandlerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -238,7 +241,7 @@ func (o *AddJmxConnectionHandlerRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJmxConnectionHandlerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -246,7 +249,7 @@ func (o *AddJmxConnectionHandlerRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddJmxConnectionHandlerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -284,7 +287,7 @@ func (o *AddJmxConnectionHandlerRequest) SetEnabled(v bool) {
 
 // GetAllowedClient returns the AllowedClient field value if set, zero value otherwise.
 func (o *AddJmxConnectionHandlerRequest) GetAllowedClient() []string {
-	if o == nil || isNil(o.AllowedClient) {
+	if o == nil || IsNil(o.AllowedClient) {
 		var ret []string
 		return ret
 	}
@@ -294,7 +297,7 @@ func (o *AddJmxConnectionHandlerRequest) GetAllowedClient() []string {
 // GetAllowedClientOk returns a tuple with the AllowedClient field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJmxConnectionHandlerRequest) GetAllowedClientOk() ([]string, bool) {
-	if o == nil || isNil(o.AllowedClient) {
+	if o == nil || IsNil(o.AllowedClient) {
 		return nil, false
 	}
 	return o.AllowedClient, true
@@ -302,7 +305,7 @@ func (o *AddJmxConnectionHandlerRequest) GetAllowedClientOk() ([]string, bool) {
 
 // HasAllowedClient returns a boolean if a field has been set.
 func (o *AddJmxConnectionHandlerRequest) HasAllowedClient() bool {
-	if o != nil && !isNil(o.AllowedClient) {
+	if o != nil && !IsNil(o.AllowedClient) {
 		return true
 	}
 
@@ -316,7 +319,7 @@ func (o *AddJmxConnectionHandlerRequest) SetAllowedClient(v []string) {
 
 // GetDeniedClient returns the DeniedClient field value if set, zero value otherwise.
 func (o *AddJmxConnectionHandlerRequest) GetDeniedClient() []string {
-	if o == nil || isNil(o.DeniedClient) {
+	if o == nil || IsNil(o.DeniedClient) {
 		var ret []string
 		return ret
 	}
@@ -326,7 +329,7 @@ func (o *AddJmxConnectionHandlerRequest) GetDeniedClient() []string {
 // GetDeniedClientOk returns a tuple with the DeniedClient field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJmxConnectionHandlerRequest) GetDeniedClientOk() ([]string, bool) {
-	if o == nil || isNil(o.DeniedClient) {
+	if o == nil || IsNil(o.DeniedClient) {
 		return nil, false
 	}
 	return o.DeniedClient, true
@@ -334,7 +337,7 @@ func (o *AddJmxConnectionHandlerRequest) GetDeniedClientOk() ([]string, bool) {
 
 // HasDeniedClient returns a boolean if a field has been set.
 func (o *AddJmxConnectionHandlerRequest) HasDeniedClient() bool {
-	if o != nil && !isNil(o.DeniedClient) {
+	if o != nil && !IsNil(o.DeniedClient) {
 		return true
 	}
 
@@ -347,38 +350,38 @@ func (o *AddJmxConnectionHandlerRequest) SetDeniedClient(v []string) {
 }
 
 func (o AddJmxConnectionHandlerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["handlerName"] = o.HandlerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["listenPort"] = o.ListenPort
-	}
-	if !isNil(o.UseSSL) {
-		toSerialize["useSSL"] = o.UseSSL
-	}
-	if !isNil(o.SslCertNickname) {
-		toSerialize["sslCertNickname"] = o.SslCertNickname
-	}
-	if !isNil(o.KeyManagerProvider) {
-		toSerialize["keyManagerProvider"] = o.KeyManagerProvider
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.AllowedClient) {
-		toSerialize["allowedClient"] = o.AllowedClient
-	}
-	if !isNil(o.DeniedClient) {
-		toSerialize["deniedClient"] = o.DeniedClient
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddJmxConnectionHandlerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["handlerName"] = o.HandlerName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["listenPort"] = o.ListenPort
+	if !IsNil(o.UseSSL) {
+		toSerialize["useSSL"] = o.UseSSL
+	}
+	if !IsNil(o.SslCertNickname) {
+		toSerialize["sslCertNickname"] = o.SslCertNickname
+	}
+	if !IsNil(o.KeyManagerProvider) {
+		toSerialize["keyManagerProvider"] = o.KeyManagerProvider
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.AllowedClient) {
+		toSerialize["allowedClient"] = o.AllowedClient
+	}
+	if !IsNil(o.DeniedClient) {
+		toSerialize["deniedClient"] = o.DeniedClient
+	}
+	return toSerialize, nil
 }
 
 type NullableAddJmxConnectionHandlerRequest struct {

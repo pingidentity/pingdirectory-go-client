@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -71,7 +71,7 @@ func (a *DebugTargetApiService) AddDebugTargetExecute(r ApiAddDebugTargetRequest
 	}
 
 	localVarPath := localBasePath + "/log-publishers/{log-publisher-name}/debug-targets"
-	localVarPath = strings.Replace(localVarPath, "{"+"log-publisher-name"+"}", url.PathEscape(parameterToString(r.logPublisherName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"log-publisher-name"+"}", url.PathEscape(parameterValueToString(r.logPublisherName, "logPublisherName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -109,9 +109,9 @@ func (a *DebugTargetApiService) AddDebugTargetExecute(r ApiAddDebugTargetRequest
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -178,8 +178,8 @@ func (a *DebugTargetApiService) DeleteDebugTargetExecute(r ApiDeleteDebugTargetR
 	}
 
 	localVarPath := localBasePath + "/log-publishers/{log-publisher-name}/debug-targets/{debug-target-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"debug-target-name"+"}", url.PathEscape(parameterToString(r.debugTargetName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"log-publisher-name"+"}", url.PathEscape(parameterToString(r.logPublisherName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"debug-target-name"+"}", url.PathEscape(parameterValueToString(r.debugTargetName, "debugTargetName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"log-publisher-name"+"}", url.PathEscape(parameterValueToString(r.logPublisherName, "logPublisherName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -212,9 +212,9 @@ func (a *DebugTargetApiService) DeleteDebugTargetExecute(r ApiDeleteDebugTargetR
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -275,8 +275,8 @@ func (a *DebugTargetApiService) GetDebugTargetExecute(r ApiGetDebugTargetRequest
 	}
 
 	localVarPath := localBasePath + "/log-publishers/{log-publisher-name}/debug-targets/{debug-target-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"debug-target-name"+"}", url.PathEscape(parameterToString(r.debugTargetName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"log-publisher-name"+"}", url.PathEscape(parameterToString(r.logPublisherName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"debug-target-name"+"}", url.PathEscape(parameterValueToString(r.debugTargetName, "debugTargetName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"log-publisher-name"+"}", url.PathEscape(parameterValueToString(r.logPublisherName, "logPublisherName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -309,9 +309,9 @@ func (a *DebugTargetApiService) GetDebugTargetExecute(r ApiGetDebugTargetRequest
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -388,8 +388,8 @@ func (a *DebugTargetApiService) UpdateDebugTargetExecute(r ApiUpdateDebugTargetR
 	}
 
 	localVarPath := localBasePath + "/log-publishers/{log-publisher-name}/debug-targets/{debug-target-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"debug-target-name"+"}", url.PathEscape(parameterToString(r.debugTargetName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"log-publisher-name"+"}", url.PathEscape(parameterToString(r.logPublisherName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"debug-target-name"+"}", url.PathEscape(parameterValueToString(r.debugTargetName, "debugTargetName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"log-publisher-name"+"}", url.PathEscape(parameterValueToString(r.logPublisherName, "logPublisherName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -427,9 +427,9 @@ func (a *DebugTargetApiService) UpdateDebugTargetExecute(r ApiUpdateDebugTargetR
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

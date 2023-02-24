@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the CryptoManagerResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CryptoManagerResponse{}
+
 // CryptoManagerResponse struct for CryptoManagerResponse
 type CryptoManagerResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -66,7 +69,7 @@ func NewCryptoManagerResponseWithDefaults() *CryptoManagerResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *CryptoManagerResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -76,7 +79,7 @@ func (o *CryptoManagerResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -84,7 +87,7 @@ func (o *CryptoManagerResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *CryptoManagerResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -98,7 +101,7 @@ func (o *CryptoManagerResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *CryptoManagerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -108,7 +111,7 @@ func (o *CryptoManagerResponse) GetUrnpingidentityschemasconfigurationmessages20
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -116,7 +119,7 @@ func (o *CryptoManagerResponse) GetUrnpingidentityschemasconfigurationmessages20
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *CryptoManagerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -130,7 +133,7 @@ func (o *CryptoManagerResponse) SetUrnpingidentityschemasconfigurationmessages20
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *CryptoManagerResponse) GetSchemas() []EnumcryptoManagerSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumcryptoManagerSchemaUrn
 		return ret
 	}
@@ -140,7 +143,7 @@ func (o *CryptoManagerResponse) GetSchemas() []EnumcryptoManagerSchemaUrn {
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetSchemasOk() ([]EnumcryptoManagerSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -148,7 +151,7 @@ func (o *CryptoManagerResponse) GetSchemasOk() ([]EnumcryptoManagerSchemaUrn, bo
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *CryptoManagerResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -162,7 +165,7 @@ func (o *CryptoManagerResponse) SetSchemas(v []EnumcryptoManagerSchemaUrn) {
 
 // GetDigestAlgorithm returns the DigestAlgorithm field value if set, zero value otherwise.
 func (o *CryptoManagerResponse) GetDigestAlgorithm() string {
-	if o == nil || isNil(o.DigestAlgorithm) {
+	if o == nil || IsNil(o.DigestAlgorithm) {
 		var ret string
 		return ret
 	}
@@ -172,7 +175,7 @@ func (o *CryptoManagerResponse) GetDigestAlgorithm() string {
 // GetDigestAlgorithmOk returns a tuple with the DigestAlgorithm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetDigestAlgorithmOk() (*string, bool) {
-	if o == nil || isNil(o.DigestAlgorithm) {
+	if o == nil || IsNil(o.DigestAlgorithm) {
 		return nil, false
 	}
 	return o.DigestAlgorithm, true
@@ -180,7 +183,7 @@ func (o *CryptoManagerResponse) GetDigestAlgorithmOk() (*string, bool) {
 
 // HasDigestAlgorithm returns a boolean if a field has been set.
 func (o *CryptoManagerResponse) HasDigestAlgorithm() bool {
-	if o != nil && !isNil(o.DigestAlgorithm) {
+	if o != nil && !IsNil(o.DigestAlgorithm) {
 		return true
 	}
 
@@ -194,7 +197,7 @@ func (o *CryptoManagerResponse) SetDigestAlgorithm(v string) {
 
 // GetMacAlgorithm returns the MacAlgorithm field value if set, zero value otherwise.
 func (o *CryptoManagerResponse) GetMacAlgorithm() string {
-	if o == nil || isNil(o.MacAlgorithm) {
+	if o == nil || IsNil(o.MacAlgorithm) {
 		var ret string
 		return ret
 	}
@@ -204,7 +207,7 @@ func (o *CryptoManagerResponse) GetMacAlgorithm() string {
 // GetMacAlgorithmOk returns a tuple with the MacAlgorithm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetMacAlgorithmOk() (*string, bool) {
-	if o == nil || isNil(o.MacAlgorithm) {
+	if o == nil || IsNil(o.MacAlgorithm) {
 		return nil, false
 	}
 	return o.MacAlgorithm, true
@@ -212,7 +215,7 @@ func (o *CryptoManagerResponse) GetMacAlgorithmOk() (*string, bool) {
 
 // HasMacAlgorithm returns a boolean if a field has been set.
 func (o *CryptoManagerResponse) HasMacAlgorithm() bool {
-	if o != nil && !isNil(o.MacAlgorithm) {
+	if o != nil && !IsNil(o.MacAlgorithm) {
 		return true
 	}
 
@@ -226,7 +229,7 @@ func (o *CryptoManagerResponse) SetMacAlgorithm(v string) {
 
 // GetMacKeyLength returns the MacKeyLength field value if set, zero value otherwise.
 func (o *CryptoManagerResponse) GetMacKeyLength() int32 {
-	if o == nil || isNil(o.MacKeyLength) {
+	if o == nil || IsNil(o.MacKeyLength) {
 		var ret int32
 		return ret
 	}
@@ -236,7 +239,7 @@ func (o *CryptoManagerResponse) GetMacKeyLength() int32 {
 // GetMacKeyLengthOk returns a tuple with the MacKeyLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetMacKeyLengthOk() (*int32, bool) {
-	if o == nil || isNil(o.MacKeyLength) {
+	if o == nil || IsNil(o.MacKeyLength) {
 		return nil, false
 	}
 	return o.MacKeyLength, true
@@ -244,7 +247,7 @@ func (o *CryptoManagerResponse) GetMacKeyLengthOk() (*int32, bool) {
 
 // HasMacKeyLength returns a boolean if a field has been set.
 func (o *CryptoManagerResponse) HasMacKeyLength() bool {
-	if o != nil && !isNil(o.MacKeyLength) {
+	if o != nil && !IsNil(o.MacKeyLength) {
 		return true
 	}
 
@@ -258,7 +261,7 @@ func (o *CryptoManagerResponse) SetMacKeyLength(v int32) {
 
 // GetCipherTransformation returns the CipherTransformation field value if set, zero value otherwise.
 func (o *CryptoManagerResponse) GetCipherTransformation() string {
-	if o == nil || isNil(o.CipherTransformation) {
+	if o == nil || IsNil(o.CipherTransformation) {
 		var ret string
 		return ret
 	}
@@ -268,7 +271,7 @@ func (o *CryptoManagerResponse) GetCipherTransformation() string {
 // GetCipherTransformationOk returns a tuple with the CipherTransformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetCipherTransformationOk() (*string, bool) {
-	if o == nil || isNil(o.CipherTransformation) {
+	if o == nil || IsNil(o.CipherTransformation) {
 		return nil, false
 	}
 	return o.CipherTransformation, true
@@ -276,7 +279,7 @@ func (o *CryptoManagerResponse) GetCipherTransformationOk() (*string, bool) {
 
 // HasCipherTransformation returns a boolean if a field has been set.
 func (o *CryptoManagerResponse) HasCipherTransformation() bool {
-	if o != nil && !isNil(o.CipherTransformation) {
+	if o != nil && !IsNil(o.CipherTransformation) {
 		return true
 	}
 
@@ -290,7 +293,7 @@ func (o *CryptoManagerResponse) SetCipherTransformation(v string) {
 
 // GetCipherKeyLength returns the CipherKeyLength field value if set, zero value otherwise.
 func (o *CryptoManagerResponse) GetCipherKeyLength() int32 {
-	if o == nil || isNil(o.CipherKeyLength) {
+	if o == nil || IsNil(o.CipherKeyLength) {
 		var ret int32
 		return ret
 	}
@@ -300,7 +303,7 @@ func (o *CryptoManagerResponse) GetCipherKeyLength() int32 {
 // GetCipherKeyLengthOk returns a tuple with the CipherKeyLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetCipherKeyLengthOk() (*int32, bool) {
-	if o == nil || isNil(o.CipherKeyLength) {
+	if o == nil || IsNil(o.CipherKeyLength) {
 		return nil, false
 	}
 	return o.CipherKeyLength, true
@@ -308,7 +311,7 @@ func (o *CryptoManagerResponse) GetCipherKeyLengthOk() (*int32, bool) {
 
 // HasCipherKeyLength returns a boolean if a field has been set.
 func (o *CryptoManagerResponse) HasCipherKeyLength() bool {
-	if o != nil && !isNil(o.CipherKeyLength) {
+	if o != nil && !IsNil(o.CipherKeyLength) {
 		return true
 	}
 
@@ -322,7 +325,7 @@ func (o *CryptoManagerResponse) SetCipherKeyLength(v int32) {
 
 // GetKeyWrappingTransformation returns the KeyWrappingTransformation field value if set, zero value otherwise.
 func (o *CryptoManagerResponse) GetKeyWrappingTransformation() string {
-	if o == nil || isNil(o.KeyWrappingTransformation) {
+	if o == nil || IsNil(o.KeyWrappingTransformation) {
 		var ret string
 		return ret
 	}
@@ -332,7 +335,7 @@ func (o *CryptoManagerResponse) GetKeyWrappingTransformation() string {
 // GetKeyWrappingTransformationOk returns a tuple with the KeyWrappingTransformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetKeyWrappingTransformationOk() (*string, bool) {
-	if o == nil || isNil(o.KeyWrappingTransformation) {
+	if o == nil || IsNil(o.KeyWrappingTransformation) {
 		return nil, false
 	}
 	return o.KeyWrappingTransformation, true
@@ -340,7 +343,7 @@ func (o *CryptoManagerResponse) GetKeyWrappingTransformationOk() (*string, bool)
 
 // HasKeyWrappingTransformation returns a boolean if a field has been set.
 func (o *CryptoManagerResponse) HasKeyWrappingTransformation() bool {
-	if o != nil && !isNil(o.KeyWrappingTransformation) {
+	if o != nil && !IsNil(o.KeyWrappingTransformation) {
 		return true
 	}
 
@@ -354,7 +357,7 @@ func (o *CryptoManagerResponse) SetKeyWrappingTransformation(v string) {
 
 // GetSslProtocol returns the SslProtocol field value if set, zero value otherwise.
 func (o *CryptoManagerResponse) GetSslProtocol() []string {
-	if o == nil || isNil(o.SslProtocol) {
+	if o == nil || IsNil(o.SslProtocol) {
 		var ret []string
 		return ret
 	}
@@ -364,7 +367,7 @@ func (o *CryptoManagerResponse) GetSslProtocol() []string {
 // GetSslProtocolOk returns a tuple with the SslProtocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetSslProtocolOk() ([]string, bool) {
-	if o == nil || isNil(o.SslProtocol) {
+	if o == nil || IsNil(o.SslProtocol) {
 		return nil, false
 	}
 	return o.SslProtocol, true
@@ -372,7 +375,7 @@ func (o *CryptoManagerResponse) GetSslProtocolOk() ([]string, bool) {
 
 // HasSslProtocol returns a boolean if a field has been set.
 func (o *CryptoManagerResponse) HasSslProtocol() bool {
-	if o != nil && !isNil(o.SslProtocol) {
+	if o != nil && !IsNil(o.SslProtocol) {
 		return true
 	}
 
@@ -386,7 +389,7 @@ func (o *CryptoManagerResponse) SetSslProtocol(v []string) {
 
 // GetSslCipherSuite returns the SslCipherSuite field value if set, zero value otherwise.
 func (o *CryptoManagerResponse) GetSslCipherSuite() []string {
-	if o == nil || isNil(o.SslCipherSuite) {
+	if o == nil || IsNil(o.SslCipherSuite) {
 		var ret []string
 		return ret
 	}
@@ -396,7 +399,7 @@ func (o *CryptoManagerResponse) GetSslCipherSuite() []string {
 // GetSslCipherSuiteOk returns a tuple with the SslCipherSuite field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetSslCipherSuiteOk() ([]string, bool) {
-	if o == nil || isNil(o.SslCipherSuite) {
+	if o == nil || IsNil(o.SslCipherSuite) {
 		return nil, false
 	}
 	return o.SslCipherSuite, true
@@ -404,7 +407,7 @@ func (o *CryptoManagerResponse) GetSslCipherSuiteOk() ([]string, bool) {
 
 // HasSslCipherSuite returns a boolean if a field has been set.
 func (o *CryptoManagerResponse) HasSslCipherSuite() bool {
-	if o != nil && !isNil(o.SslCipherSuite) {
+	if o != nil && !IsNil(o.SslCipherSuite) {
 		return true
 	}
 
@@ -418,7 +421,7 @@ func (o *CryptoManagerResponse) SetSslCipherSuite(v []string) {
 
 // GetOutboundSSLProtocol returns the OutboundSSLProtocol field value if set, zero value otherwise.
 func (o *CryptoManagerResponse) GetOutboundSSLProtocol() []string {
-	if o == nil || isNil(o.OutboundSSLProtocol) {
+	if o == nil || IsNil(o.OutboundSSLProtocol) {
 		var ret []string
 		return ret
 	}
@@ -428,7 +431,7 @@ func (o *CryptoManagerResponse) GetOutboundSSLProtocol() []string {
 // GetOutboundSSLProtocolOk returns a tuple with the OutboundSSLProtocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetOutboundSSLProtocolOk() ([]string, bool) {
-	if o == nil || isNil(o.OutboundSSLProtocol) {
+	if o == nil || IsNil(o.OutboundSSLProtocol) {
 		return nil, false
 	}
 	return o.OutboundSSLProtocol, true
@@ -436,7 +439,7 @@ func (o *CryptoManagerResponse) GetOutboundSSLProtocolOk() ([]string, bool) {
 
 // HasOutboundSSLProtocol returns a boolean if a field has been set.
 func (o *CryptoManagerResponse) HasOutboundSSLProtocol() bool {
-	if o != nil && !isNil(o.OutboundSSLProtocol) {
+	if o != nil && !IsNil(o.OutboundSSLProtocol) {
 		return true
 	}
 
@@ -450,7 +453,7 @@ func (o *CryptoManagerResponse) SetOutboundSSLProtocol(v []string) {
 
 // GetOutboundSSLCipherSuite returns the OutboundSSLCipherSuite field value if set, zero value otherwise.
 func (o *CryptoManagerResponse) GetOutboundSSLCipherSuite() []string {
-	if o == nil || isNil(o.OutboundSSLCipherSuite) {
+	if o == nil || IsNil(o.OutboundSSLCipherSuite) {
 		var ret []string
 		return ret
 	}
@@ -460,7 +463,7 @@ func (o *CryptoManagerResponse) GetOutboundSSLCipherSuite() []string {
 // GetOutboundSSLCipherSuiteOk returns a tuple with the OutboundSSLCipherSuite field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetOutboundSSLCipherSuiteOk() ([]string, bool) {
-	if o == nil || isNil(o.OutboundSSLCipherSuite) {
+	if o == nil || IsNil(o.OutboundSSLCipherSuite) {
 		return nil, false
 	}
 	return o.OutboundSSLCipherSuite, true
@@ -468,7 +471,7 @@ func (o *CryptoManagerResponse) GetOutboundSSLCipherSuiteOk() ([]string, bool) {
 
 // HasOutboundSSLCipherSuite returns a boolean if a field has been set.
 func (o *CryptoManagerResponse) HasOutboundSSLCipherSuite() bool {
-	if o != nil && !isNil(o.OutboundSSLCipherSuite) {
+	if o != nil && !IsNil(o.OutboundSSLCipherSuite) {
 		return true
 	}
 
@@ -482,7 +485,7 @@ func (o *CryptoManagerResponse) SetOutboundSSLCipherSuite(v []string) {
 
 // GetEnableSha1CipherSuites returns the EnableSha1CipherSuites field value if set, zero value otherwise.
 func (o *CryptoManagerResponse) GetEnableSha1CipherSuites() bool {
-	if o == nil || isNil(o.EnableSha1CipherSuites) {
+	if o == nil || IsNil(o.EnableSha1CipherSuites) {
 		var ret bool
 		return ret
 	}
@@ -492,7 +495,7 @@ func (o *CryptoManagerResponse) GetEnableSha1CipherSuites() bool {
 // GetEnableSha1CipherSuitesOk returns a tuple with the EnableSha1CipherSuites field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetEnableSha1CipherSuitesOk() (*bool, bool) {
-	if o == nil || isNil(o.EnableSha1CipherSuites) {
+	if o == nil || IsNil(o.EnableSha1CipherSuites) {
 		return nil, false
 	}
 	return o.EnableSha1CipherSuites, true
@@ -500,7 +503,7 @@ func (o *CryptoManagerResponse) GetEnableSha1CipherSuitesOk() (*bool, bool) {
 
 // HasEnableSha1CipherSuites returns a boolean if a field has been set.
 func (o *CryptoManagerResponse) HasEnableSha1CipherSuites() bool {
-	if o != nil && !isNil(o.EnableSha1CipherSuites) {
+	if o != nil && !IsNil(o.EnableSha1CipherSuites) {
 		return true
 	}
 
@@ -514,7 +517,7 @@ func (o *CryptoManagerResponse) SetEnableSha1CipherSuites(v bool) {
 
 // GetEnableRsaKeyExchangeCipherSuites returns the EnableRsaKeyExchangeCipherSuites field value if set, zero value otherwise.
 func (o *CryptoManagerResponse) GetEnableRsaKeyExchangeCipherSuites() bool {
-	if o == nil || isNil(o.EnableRsaKeyExchangeCipherSuites) {
+	if o == nil || IsNil(o.EnableRsaKeyExchangeCipherSuites) {
 		var ret bool
 		return ret
 	}
@@ -524,7 +527,7 @@ func (o *CryptoManagerResponse) GetEnableRsaKeyExchangeCipherSuites() bool {
 // GetEnableRsaKeyExchangeCipherSuitesOk returns a tuple with the EnableRsaKeyExchangeCipherSuites field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetEnableRsaKeyExchangeCipherSuitesOk() (*bool, bool) {
-	if o == nil || isNil(o.EnableRsaKeyExchangeCipherSuites) {
+	if o == nil || IsNil(o.EnableRsaKeyExchangeCipherSuites) {
 		return nil, false
 	}
 	return o.EnableRsaKeyExchangeCipherSuites, true
@@ -532,7 +535,7 @@ func (o *CryptoManagerResponse) GetEnableRsaKeyExchangeCipherSuitesOk() (*bool, 
 
 // HasEnableRsaKeyExchangeCipherSuites returns a boolean if a field has been set.
 func (o *CryptoManagerResponse) HasEnableRsaKeyExchangeCipherSuites() bool {
-	if o != nil && !isNil(o.EnableRsaKeyExchangeCipherSuites) {
+	if o != nil && !IsNil(o.EnableRsaKeyExchangeCipherSuites) {
 		return true
 	}
 
@@ -546,7 +549,7 @@ func (o *CryptoManagerResponse) SetEnableRsaKeyExchangeCipherSuites(v bool) {
 
 // GetSslCertNickname returns the SslCertNickname field value if set, zero value otherwise.
 func (o *CryptoManagerResponse) GetSslCertNickname() string {
-	if o == nil || isNil(o.SslCertNickname) {
+	if o == nil || IsNil(o.SslCertNickname) {
 		var ret string
 		return ret
 	}
@@ -556,7 +559,7 @@ func (o *CryptoManagerResponse) GetSslCertNickname() string {
 // GetSslCertNicknameOk returns a tuple with the SslCertNickname field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetSslCertNicknameOk() (*string, bool) {
-	if o == nil || isNil(o.SslCertNickname) {
+	if o == nil || IsNil(o.SslCertNickname) {
 		return nil, false
 	}
 	return o.SslCertNickname, true
@@ -564,7 +567,7 @@ func (o *CryptoManagerResponse) GetSslCertNicknameOk() (*string, bool) {
 
 // HasSslCertNickname returns a boolean if a field has been set.
 func (o *CryptoManagerResponse) HasSslCertNickname() bool {
-	if o != nil && !isNil(o.SslCertNickname) {
+	if o != nil && !IsNil(o.SslCertNickname) {
 		return true
 	}
 
@@ -577,56 +580,64 @@ func (o *CryptoManagerResponse) SetSslCertNickname(v string) {
 }
 
 func (o CryptoManagerResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.DigestAlgorithm) {
-		toSerialize["digestAlgorithm"] = o.DigestAlgorithm
-	}
-	if !isNil(o.MacAlgorithm) {
-		toSerialize["macAlgorithm"] = o.MacAlgorithm
-	}
-	if !isNil(o.MacKeyLength) {
-		toSerialize["macKeyLength"] = o.MacKeyLength
-	}
-	if !isNil(o.CipherTransformation) {
-		toSerialize["cipherTransformation"] = o.CipherTransformation
-	}
-	if !isNil(o.CipherKeyLength) {
-		toSerialize["cipherKeyLength"] = o.CipherKeyLength
-	}
-	if !isNil(o.KeyWrappingTransformation) {
-		toSerialize["keyWrappingTransformation"] = o.KeyWrappingTransformation
-	}
-	if !isNil(o.SslProtocol) {
-		toSerialize["sslProtocol"] = o.SslProtocol
-	}
-	if !isNil(o.SslCipherSuite) {
-		toSerialize["sslCipherSuite"] = o.SslCipherSuite
-	}
-	if !isNil(o.OutboundSSLProtocol) {
-		toSerialize["outboundSSLProtocol"] = o.OutboundSSLProtocol
-	}
-	if !isNil(o.OutboundSSLCipherSuite) {
-		toSerialize["outboundSSLCipherSuite"] = o.OutboundSSLCipherSuite
-	}
-	if !isNil(o.EnableSha1CipherSuites) {
-		toSerialize["enableSha1CipherSuites"] = o.EnableSha1CipherSuites
-	}
-	if !isNil(o.EnableRsaKeyExchangeCipherSuites) {
-		toSerialize["enableRsaKeyExchangeCipherSuites"] = o.EnableRsaKeyExchangeCipherSuites
-	}
-	if !isNil(o.SslCertNickname) {
-		toSerialize["sslCertNickname"] = o.SslCertNickname
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CryptoManagerResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.DigestAlgorithm) {
+		toSerialize["digestAlgorithm"] = o.DigestAlgorithm
+	}
+	if !IsNil(o.MacAlgorithm) {
+		toSerialize["macAlgorithm"] = o.MacAlgorithm
+	}
+	if !IsNil(o.MacKeyLength) {
+		toSerialize["macKeyLength"] = o.MacKeyLength
+	}
+	if !IsNil(o.CipherTransformation) {
+		toSerialize["cipherTransformation"] = o.CipherTransformation
+	}
+	if !IsNil(o.CipherKeyLength) {
+		toSerialize["cipherKeyLength"] = o.CipherKeyLength
+	}
+	if !IsNil(o.KeyWrappingTransformation) {
+		toSerialize["keyWrappingTransformation"] = o.KeyWrappingTransformation
+	}
+	if !IsNil(o.SslProtocol) {
+		toSerialize["sslProtocol"] = o.SslProtocol
+	}
+	if !IsNil(o.SslCipherSuite) {
+		toSerialize["sslCipherSuite"] = o.SslCipherSuite
+	}
+	if !IsNil(o.OutboundSSLProtocol) {
+		toSerialize["outboundSSLProtocol"] = o.OutboundSSLProtocol
+	}
+	if !IsNil(o.OutboundSSLCipherSuite) {
+		toSerialize["outboundSSLCipherSuite"] = o.OutboundSSLCipherSuite
+	}
+	if !IsNil(o.EnableSha1CipherSuites) {
+		toSerialize["enableSha1CipherSuites"] = o.EnableSha1CipherSuites
+	}
+	if !IsNil(o.EnableRsaKeyExchangeCipherSuites) {
+		toSerialize["enableRsaKeyExchangeCipherSuites"] = o.EnableRsaKeyExchangeCipherSuites
+	}
+	if !IsNil(o.SslCertNickname) {
+		toSerialize["sslCertNickname"] = o.SslCertNickname
+	}
+	return toSerialize, nil
 }
 
 type NullableCryptoManagerResponse struct {

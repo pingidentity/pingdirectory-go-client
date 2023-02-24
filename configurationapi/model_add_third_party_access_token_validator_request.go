@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddThirdPartyAccessTokenValidatorRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddThirdPartyAccessTokenValidatorRequest{}
+
 // AddThirdPartyAccessTokenValidatorRequest struct for AddThirdPartyAccessTokenValidatorRequest
 type AddThirdPartyAccessTokenValidatorRequest struct {
 	// Name of the new Access Token Validator
@@ -131,7 +134,7 @@ func (o *AddThirdPartyAccessTokenValidatorRequest) SetExtensionClass(v string) {
 
 // GetExtensionArgument returns the ExtensionArgument field value if set, zero value otherwise.
 func (o *AddThirdPartyAccessTokenValidatorRequest) GetExtensionArgument() []string {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		var ret []string
 		return ret
 	}
@@ -141,7 +144,7 @@ func (o *AddThirdPartyAccessTokenValidatorRequest) GetExtensionArgument() []stri
 // GetExtensionArgumentOk returns a tuple with the ExtensionArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessTokenValidatorRequest) GetExtensionArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		return nil, false
 	}
 	return o.ExtensionArgument, true
@@ -149,7 +152,7 @@ func (o *AddThirdPartyAccessTokenValidatorRequest) GetExtensionArgumentOk() ([]s
 
 // HasExtensionArgument returns a boolean if a field has been set.
 func (o *AddThirdPartyAccessTokenValidatorRequest) HasExtensionArgument() bool {
-	if o != nil && !isNil(o.ExtensionArgument) {
+	if o != nil && !IsNil(o.ExtensionArgument) {
 		return true
 	}
 
@@ -163,7 +166,7 @@ func (o *AddThirdPartyAccessTokenValidatorRequest) SetExtensionArgument(v []stri
 
 // GetIdentityMapper returns the IdentityMapper field value if set, zero value otherwise.
 func (o *AddThirdPartyAccessTokenValidatorRequest) GetIdentityMapper() string {
-	if o == nil || isNil(o.IdentityMapper) {
+	if o == nil || IsNil(o.IdentityMapper) {
 		var ret string
 		return ret
 	}
@@ -173,7 +176,7 @@ func (o *AddThirdPartyAccessTokenValidatorRequest) GetIdentityMapper() string {
 // GetIdentityMapperOk returns a tuple with the IdentityMapper field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessTokenValidatorRequest) GetIdentityMapperOk() (*string, bool) {
-	if o == nil || isNil(o.IdentityMapper) {
+	if o == nil || IsNil(o.IdentityMapper) {
 		return nil, false
 	}
 	return o.IdentityMapper, true
@@ -181,7 +184,7 @@ func (o *AddThirdPartyAccessTokenValidatorRequest) GetIdentityMapperOk() (*strin
 
 // HasIdentityMapper returns a boolean if a field has been set.
 func (o *AddThirdPartyAccessTokenValidatorRequest) HasIdentityMapper() bool {
-	if o != nil && !isNil(o.IdentityMapper) {
+	if o != nil && !IsNil(o.IdentityMapper) {
 		return true
 	}
 
@@ -195,7 +198,7 @@ func (o *AddThirdPartyAccessTokenValidatorRequest) SetIdentityMapper(v string) {
 
 // GetSubjectClaimName returns the SubjectClaimName field value if set, zero value otherwise.
 func (o *AddThirdPartyAccessTokenValidatorRequest) GetSubjectClaimName() string {
-	if o == nil || isNil(o.SubjectClaimName) {
+	if o == nil || IsNil(o.SubjectClaimName) {
 		var ret string
 		return ret
 	}
@@ -205,7 +208,7 @@ func (o *AddThirdPartyAccessTokenValidatorRequest) GetSubjectClaimName() string 
 // GetSubjectClaimNameOk returns a tuple with the SubjectClaimName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessTokenValidatorRequest) GetSubjectClaimNameOk() (*string, bool) {
-	if o == nil || isNil(o.SubjectClaimName) {
+	if o == nil || IsNil(o.SubjectClaimName) {
 		return nil, false
 	}
 	return o.SubjectClaimName, true
@@ -213,7 +216,7 @@ func (o *AddThirdPartyAccessTokenValidatorRequest) GetSubjectClaimNameOk() (*str
 
 // HasSubjectClaimName returns a boolean if a field has been set.
 func (o *AddThirdPartyAccessTokenValidatorRequest) HasSubjectClaimName() bool {
-	if o != nil && !isNil(o.SubjectClaimName) {
+	if o != nil && !IsNil(o.SubjectClaimName) {
 		return true
 	}
 
@@ -227,7 +230,7 @@ func (o *AddThirdPartyAccessTokenValidatorRequest) SetSubjectClaimName(v string)
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddThirdPartyAccessTokenValidatorRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -237,7 +240,7 @@ func (o *AddThirdPartyAccessTokenValidatorRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessTokenValidatorRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -245,7 +248,7 @@ func (o *AddThirdPartyAccessTokenValidatorRequest) GetDescriptionOk() (*string, 
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddThirdPartyAccessTokenValidatorRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -306,35 +309,33 @@ func (o *AddThirdPartyAccessTokenValidatorRequest) SetEvaluationOrderIndex(v int
 }
 
 func (o AddThirdPartyAccessTokenValidatorRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["validatorName"] = o.ValidatorName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["extensionClass"] = o.ExtensionClass
-	}
-	if !isNil(o.ExtensionArgument) {
-		toSerialize["extensionArgument"] = o.ExtensionArgument
-	}
-	if !isNil(o.IdentityMapper) {
-		toSerialize["identityMapper"] = o.IdentityMapper
-	}
-	if !isNil(o.SubjectClaimName) {
-		toSerialize["subjectClaimName"] = o.SubjectClaimName
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if true {
-		toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddThirdPartyAccessTokenValidatorRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["validatorName"] = o.ValidatorName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["extensionClass"] = o.ExtensionClass
+	if !IsNil(o.ExtensionArgument) {
+		toSerialize["extensionArgument"] = o.ExtensionArgument
+	}
+	if !IsNil(o.IdentityMapper) {
+		toSerialize["identityMapper"] = o.IdentityMapper
+	}
+	if !IsNil(o.SubjectClaimName) {
+		toSerialize["subjectClaimName"] = o.SubjectClaimName
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
+	return toSerialize, nil
 }
 
 type NullableAddThirdPartyAccessTokenValidatorRequest struct {

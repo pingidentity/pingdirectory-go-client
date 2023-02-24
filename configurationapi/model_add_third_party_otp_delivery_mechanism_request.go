@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddThirdPartyOtpDeliveryMechanismRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddThirdPartyOtpDeliveryMechanismRequest{}
+
 // AddThirdPartyOtpDeliveryMechanismRequest struct for AddThirdPartyOtpDeliveryMechanismRequest
 type AddThirdPartyOtpDeliveryMechanismRequest struct {
 	// Name of the new OTP Delivery Mechanism
@@ -124,7 +127,7 @@ func (o *AddThirdPartyOtpDeliveryMechanismRequest) SetExtensionClass(v string) {
 
 // GetExtensionArgument returns the ExtensionArgument field value if set, zero value otherwise.
 func (o *AddThirdPartyOtpDeliveryMechanismRequest) GetExtensionArgument() []string {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		var ret []string
 		return ret
 	}
@@ -134,7 +137,7 @@ func (o *AddThirdPartyOtpDeliveryMechanismRequest) GetExtensionArgument() []stri
 // GetExtensionArgumentOk returns a tuple with the ExtensionArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyOtpDeliveryMechanismRequest) GetExtensionArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		return nil, false
 	}
 	return o.ExtensionArgument, true
@@ -142,7 +145,7 @@ func (o *AddThirdPartyOtpDeliveryMechanismRequest) GetExtensionArgumentOk() ([]s
 
 // HasExtensionArgument returns a boolean if a field has been set.
 func (o *AddThirdPartyOtpDeliveryMechanismRequest) HasExtensionArgument() bool {
-	if o != nil && !isNil(o.ExtensionArgument) {
+	if o != nil && !IsNil(o.ExtensionArgument) {
 		return true
 	}
 
@@ -156,7 +159,7 @@ func (o *AddThirdPartyOtpDeliveryMechanismRequest) SetExtensionArgument(v []stri
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddThirdPartyOtpDeliveryMechanismRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -166,7 +169,7 @@ func (o *AddThirdPartyOtpDeliveryMechanismRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyOtpDeliveryMechanismRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -174,7 +177,7 @@ func (o *AddThirdPartyOtpDeliveryMechanismRequest) GetDescriptionOk() (*string, 
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddThirdPartyOtpDeliveryMechanismRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -211,26 +214,26 @@ func (o *AddThirdPartyOtpDeliveryMechanismRequest) SetEnabled(v bool) {
 }
 
 func (o AddThirdPartyOtpDeliveryMechanismRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["mechanismName"] = o.MechanismName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["extensionClass"] = o.ExtensionClass
-	}
-	if !isNil(o.ExtensionArgument) {
-		toSerialize["extensionArgument"] = o.ExtensionArgument
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddThirdPartyOtpDeliveryMechanismRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["mechanismName"] = o.MechanismName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["extensionClass"] = o.ExtensionClass
+	if !IsNil(o.ExtensionArgument) {
+		toSerialize["extensionArgument"] = o.ExtensionArgument
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddThirdPartyOtpDeliveryMechanismRequest struct {

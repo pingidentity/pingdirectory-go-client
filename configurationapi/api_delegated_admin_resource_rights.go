@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -71,7 +71,7 @@ func (a *DelegatedAdminResourceRightsApiService) AddDelegatedAdminResourceRights
 	}
 
 	localVarPath := localBasePath + "/delegated-admin-rights/{delegated-admin-rights-name}/delegated-admin-resource-rights"
-	localVarPath = strings.Replace(localVarPath, "{"+"delegated-admin-rights-name"+"}", url.PathEscape(parameterToString(r.delegatedAdminRightsName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"delegated-admin-rights-name"+"}", url.PathEscape(parameterValueToString(r.delegatedAdminRightsName, "delegatedAdminRightsName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -109,9 +109,9 @@ func (a *DelegatedAdminResourceRightsApiService) AddDelegatedAdminResourceRights
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -178,8 +178,8 @@ func (a *DelegatedAdminResourceRightsApiService) DeleteDelegatedAdminResourceRig
 	}
 
 	localVarPath := localBasePath + "/delegated-admin-rights/{delegated-admin-rights-name}/delegated-admin-resource-rights/{delegated-admin-resource-rights-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"delegated-admin-resource-rights-name"+"}", url.PathEscape(parameterToString(r.delegatedAdminResourceRightsName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"delegated-admin-rights-name"+"}", url.PathEscape(parameterToString(r.delegatedAdminRightsName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"delegated-admin-resource-rights-name"+"}", url.PathEscape(parameterValueToString(r.delegatedAdminResourceRightsName, "delegatedAdminResourceRightsName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"delegated-admin-rights-name"+"}", url.PathEscape(parameterValueToString(r.delegatedAdminRightsName, "delegatedAdminRightsName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -212,9 +212,9 @@ func (a *DelegatedAdminResourceRightsApiService) DeleteDelegatedAdminResourceRig
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -275,8 +275,8 @@ func (a *DelegatedAdminResourceRightsApiService) GetDelegatedAdminResourceRights
 	}
 
 	localVarPath := localBasePath + "/delegated-admin-rights/{delegated-admin-rights-name}/delegated-admin-resource-rights/{delegated-admin-resource-rights-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"delegated-admin-resource-rights-name"+"}", url.PathEscape(parameterToString(r.delegatedAdminResourceRightsName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"delegated-admin-rights-name"+"}", url.PathEscape(parameterToString(r.delegatedAdminRightsName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"delegated-admin-resource-rights-name"+"}", url.PathEscape(parameterValueToString(r.delegatedAdminResourceRightsName, "delegatedAdminResourceRightsName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"delegated-admin-rights-name"+"}", url.PathEscape(parameterValueToString(r.delegatedAdminRightsName, "delegatedAdminRightsName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -309,9 +309,9 @@ func (a *DelegatedAdminResourceRightsApiService) GetDelegatedAdminResourceRights
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -388,8 +388,8 @@ func (a *DelegatedAdminResourceRightsApiService) UpdateDelegatedAdminResourceRig
 	}
 
 	localVarPath := localBasePath + "/delegated-admin-rights/{delegated-admin-rights-name}/delegated-admin-resource-rights/{delegated-admin-resource-rights-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"delegated-admin-resource-rights-name"+"}", url.PathEscape(parameterToString(r.delegatedAdminResourceRightsName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"delegated-admin-rights-name"+"}", url.PathEscape(parameterToString(r.delegatedAdminRightsName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"delegated-admin-resource-rights-name"+"}", url.PathEscape(parameterValueToString(r.delegatedAdminResourceRightsName, "delegatedAdminResourceRightsName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"delegated-admin-rights-name"+"}", url.PathEscape(parameterValueToString(r.delegatedAdminRightsName, "delegatedAdminRightsName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -427,9 +427,9 @@ func (a *DelegatedAdminResourceRightsApiService) UpdateDelegatedAdminResourceRig
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

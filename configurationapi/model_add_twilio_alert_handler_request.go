@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddTwilioAlertHandlerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddTwilioAlertHandlerRequest{}
+
 // AddTwilioAlertHandlerRequest struct for AddTwilioAlertHandlerRequest
 type AddTwilioAlertHandlerRequest struct {
 	// Name of the new Alert Handler
@@ -114,7 +117,7 @@ func (o *AddTwilioAlertHandlerRequest) SetSchemas(v []EnumtwilioAlertHandlerSche
 
 // GetAsynchronous returns the Asynchronous field value if set, zero value otherwise.
 func (o *AddTwilioAlertHandlerRequest) GetAsynchronous() bool {
-	if o == nil || isNil(o.Asynchronous) {
+	if o == nil || IsNil(o.Asynchronous) {
 		var ret bool
 		return ret
 	}
@@ -124,7 +127,7 @@ func (o *AddTwilioAlertHandlerRequest) GetAsynchronous() bool {
 // GetAsynchronousOk returns a tuple with the Asynchronous field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddTwilioAlertHandlerRequest) GetAsynchronousOk() (*bool, bool) {
-	if o == nil || isNil(o.Asynchronous) {
+	if o == nil || IsNil(o.Asynchronous) {
 		return nil, false
 	}
 	return o.Asynchronous, true
@@ -132,7 +135,7 @@ func (o *AddTwilioAlertHandlerRequest) GetAsynchronousOk() (*bool, bool) {
 
 // HasAsynchronous returns a boolean if a field has been set.
 func (o *AddTwilioAlertHandlerRequest) HasAsynchronous() bool {
-	if o != nil && !isNil(o.Asynchronous) {
+	if o != nil && !IsNil(o.Asynchronous) {
 		return true
 	}
 
@@ -170,7 +173,7 @@ func (o *AddTwilioAlertHandlerRequest) SetTwilioAccountSID(v string) {
 
 // GetTwilioAuthToken returns the TwilioAuthToken field value if set, zero value otherwise.
 func (o *AddTwilioAlertHandlerRequest) GetTwilioAuthToken() string {
-	if o == nil || isNil(o.TwilioAuthToken) {
+	if o == nil || IsNil(o.TwilioAuthToken) {
 		var ret string
 		return ret
 	}
@@ -180,7 +183,7 @@ func (o *AddTwilioAlertHandlerRequest) GetTwilioAuthToken() string {
 // GetTwilioAuthTokenOk returns a tuple with the TwilioAuthToken field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddTwilioAlertHandlerRequest) GetTwilioAuthTokenOk() (*string, bool) {
-	if o == nil || isNil(o.TwilioAuthToken) {
+	if o == nil || IsNil(o.TwilioAuthToken) {
 		return nil, false
 	}
 	return o.TwilioAuthToken, true
@@ -188,7 +191,7 @@ func (o *AddTwilioAlertHandlerRequest) GetTwilioAuthTokenOk() (*string, bool) {
 
 // HasTwilioAuthToken returns a boolean if a field has been set.
 func (o *AddTwilioAlertHandlerRequest) HasTwilioAuthToken() bool {
-	if o != nil && !isNil(o.TwilioAuthToken) {
+	if o != nil && !IsNil(o.TwilioAuthToken) {
 		return true
 	}
 
@@ -202,7 +205,7 @@ func (o *AddTwilioAlertHandlerRequest) SetTwilioAuthToken(v string) {
 
 // GetTwilioAuthTokenPassphraseProvider returns the TwilioAuthTokenPassphraseProvider field value if set, zero value otherwise.
 func (o *AddTwilioAlertHandlerRequest) GetTwilioAuthTokenPassphraseProvider() string {
-	if o == nil || isNil(o.TwilioAuthTokenPassphraseProvider) {
+	if o == nil || IsNil(o.TwilioAuthTokenPassphraseProvider) {
 		var ret string
 		return ret
 	}
@@ -212,7 +215,7 @@ func (o *AddTwilioAlertHandlerRequest) GetTwilioAuthTokenPassphraseProvider() st
 // GetTwilioAuthTokenPassphraseProviderOk returns a tuple with the TwilioAuthTokenPassphraseProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddTwilioAlertHandlerRequest) GetTwilioAuthTokenPassphraseProviderOk() (*string, bool) {
-	if o == nil || isNil(o.TwilioAuthTokenPassphraseProvider) {
+	if o == nil || IsNil(o.TwilioAuthTokenPassphraseProvider) {
 		return nil, false
 	}
 	return o.TwilioAuthTokenPassphraseProvider, true
@@ -220,7 +223,7 @@ func (o *AddTwilioAlertHandlerRequest) GetTwilioAuthTokenPassphraseProviderOk() 
 
 // HasTwilioAuthTokenPassphraseProvider returns a boolean if a field has been set.
 func (o *AddTwilioAlertHandlerRequest) HasTwilioAuthTokenPassphraseProvider() bool {
-	if o != nil && !isNil(o.TwilioAuthTokenPassphraseProvider) {
+	if o != nil && !IsNil(o.TwilioAuthTokenPassphraseProvider) {
 		return true
 	}
 
@@ -282,7 +285,7 @@ func (o *AddTwilioAlertHandlerRequest) SetRecipientPhoneNumber(v []string) {
 
 // GetLongMessageBehavior returns the LongMessageBehavior field value if set, zero value otherwise.
 func (o *AddTwilioAlertHandlerRequest) GetLongMessageBehavior() EnumalertHandlerLongMessageBehaviorProp {
-	if o == nil || isNil(o.LongMessageBehavior) {
+	if o == nil || IsNil(o.LongMessageBehavior) {
 		var ret EnumalertHandlerLongMessageBehaviorProp
 		return ret
 	}
@@ -292,7 +295,7 @@ func (o *AddTwilioAlertHandlerRequest) GetLongMessageBehavior() EnumalertHandler
 // GetLongMessageBehaviorOk returns a tuple with the LongMessageBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddTwilioAlertHandlerRequest) GetLongMessageBehaviorOk() (*EnumalertHandlerLongMessageBehaviorProp, bool) {
-	if o == nil || isNil(o.LongMessageBehavior) {
+	if o == nil || IsNil(o.LongMessageBehavior) {
 		return nil, false
 	}
 	return o.LongMessageBehavior, true
@@ -300,7 +303,7 @@ func (o *AddTwilioAlertHandlerRequest) GetLongMessageBehaviorOk() (*EnumalertHan
 
 // HasLongMessageBehavior returns a boolean if a field has been set.
 func (o *AddTwilioAlertHandlerRequest) HasLongMessageBehavior() bool {
-	if o != nil && !isNil(o.LongMessageBehavior) {
+	if o != nil && !IsNil(o.LongMessageBehavior) {
 		return true
 	}
 
@@ -314,7 +317,7 @@ func (o *AddTwilioAlertHandlerRequest) SetLongMessageBehavior(v EnumalertHandler
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddTwilioAlertHandlerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -324,7 +327,7 @@ func (o *AddTwilioAlertHandlerRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddTwilioAlertHandlerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -332,7 +335,7 @@ func (o *AddTwilioAlertHandlerRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddTwilioAlertHandlerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -370,7 +373,7 @@ func (o *AddTwilioAlertHandlerRequest) SetEnabled(v bool) {
 
 // GetEnabledAlertSeverity returns the EnabledAlertSeverity field value if set, zero value otherwise.
 func (o *AddTwilioAlertHandlerRequest) GetEnabledAlertSeverity() []EnumalertHandlerEnabledAlertSeverityProp {
-	if o == nil || isNil(o.EnabledAlertSeverity) {
+	if o == nil || IsNil(o.EnabledAlertSeverity) {
 		var ret []EnumalertHandlerEnabledAlertSeverityProp
 		return ret
 	}
@@ -380,7 +383,7 @@ func (o *AddTwilioAlertHandlerRequest) GetEnabledAlertSeverity() []EnumalertHand
 // GetEnabledAlertSeverityOk returns a tuple with the EnabledAlertSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddTwilioAlertHandlerRequest) GetEnabledAlertSeverityOk() ([]EnumalertHandlerEnabledAlertSeverityProp, bool) {
-	if o == nil || isNil(o.EnabledAlertSeverity) {
+	if o == nil || IsNil(o.EnabledAlertSeverity) {
 		return nil, false
 	}
 	return o.EnabledAlertSeverity, true
@@ -388,7 +391,7 @@ func (o *AddTwilioAlertHandlerRequest) GetEnabledAlertSeverityOk() ([]EnumalertH
 
 // HasEnabledAlertSeverity returns a boolean if a field has been set.
 func (o *AddTwilioAlertHandlerRequest) HasEnabledAlertSeverity() bool {
-	if o != nil && !isNil(o.EnabledAlertSeverity) {
+	if o != nil && !IsNil(o.EnabledAlertSeverity) {
 		return true
 	}
 
@@ -402,7 +405,7 @@ func (o *AddTwilioAlertHandlerRequest) SetEnabledAlertSeverity(v []EnumalertHand
 
 // GetEnabledAlertType returns the EnabledAlertType field value if set, zero value otherwise.
 func (o *AddTwilioAlertHandlerRequest) GetEnabledAlertType() []EnumalertHandlerEnabledAlertTypeProp {
-	if o == nil || isNil(o.EnabledAlertType) {
+	if o == nil || IsNil(o.EnabledAlertType) {
 		var ret []EnumalertHandlerEnabledAlertTypeProp
 		return ret
 	}
@@ -412,7 +415,7 @@ func (o *AddTwilioAlertHandlerRequest) GetEnabledAlertType() []EnumalertHandlerE
 // GetEnabledAlertTypeOk returns a tuple with the EnabledAlertType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddTwilioAlertHandlerRequest) GetEnabledAlertTypeOk() ([]EnumalertHandlerEnabledAlertTypeProp, bool) {
-	if o == nil || isNil(o.EnabledAlertType) {
+	if o == nil || IsNil(o.EnabledAlertType) {
 		return nil, false
 	}
 	return o.EnabledAlertType, true
@@ -420,7 +423,7 @@ func (o *AddTwilioAlertHandlerRequest) GetEnabledAlertTypeOk() ([]EnumalertHandl
 
 // HasEnabledAlertType returns a boolean if a field has been set.
 func (o *AddTwilioAlertHandlerRequest) HasEnabledAlertType() bool {
-	if o != nil && !isNil(o.EnabledAlertType) {
+	if o != nil && !IsNil(o.EnabledAlertType) {
 		return true
 	}
 
@@ -434,7 +437,7 @@ func (o *AddTwilioAlertHandlerRequest) SetEnabledAlertType(v []EnumalertHandlerE
 
 // GetDisabledAlertType returns the DisabledAlertType field value if set, zero value otherwise.
 func (o *AddTwilioAlertHandlerRequest) GetDisabledAlertType() []EnumalertHandlerDisabledAlertTypeProp {
-	if o == nil || isNil(o.DisabledAlertType) {
+	if o == nil || IsNil(o.DisabledAlertType) {
 		var ret []EnumalertHandlerDisabledAlertTypeProp
 		return ret
 	}
@@ -444,7 +447,7 @@ func (o *AddTwilioAlertHandlerRequest) GetDisabledAlertType() []EnumalertHandler
 // GetDisabledAlertTypeOk returns a tuple with the DisabledAlertType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddTwilioAlertHandlerRequest) GetDisabledAlertTypeOk() ([]EnumalertHandlerDisabledAlertTypeProp, bool) {
-	if o == nil || isNil(o.DisabledAlertType) {
+	if o == nil || IsNil(o.DisabledAlertType) {
 		return nil, false
 	}
 	return o.DisabledAlertType, true
@@ -452,7 +455,7 @@ func (o *AddTwilioAlertHandlerRequest) GetDisabledAlertTypeOk() ([]EnumalertHand
 
 // HasDisabledAlertType returns a boolean if a field has been set.
 func (o *AddTwilioAlertHandlerRequest) HasDisabledAlertType() bool {
-	if o != nil && !isNil(o.DisabledAlertType) {
+	if o != nil && !IsNil(o.DisabledAlertType) {
 		return true
 	}
 
@@ -465,50 +468,46 @@ func (o *AddTwilioAlertHandlerRequest) SetDisabledAlertType(v []EnumalertHandler
 }
 
 func (o AddTwilioAlertHandlerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["handlerName"] = o.HandlerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Asynchronous) {
-		toSerialize["asynchronous"] = o.Asynchronous
-	}
-	if true {
-		toSerialize["twilioAccountSID"] = o.TwilioAccountSID
-	}
-	if !isNil(o.TwilioAuthToken) {
-		toSerialize["twilioAuthToken"] = o.TwilioAuthToken
-	}
-	if !isNil(o.TwilioAuthTokenPassphraseProvider) {
-		toSerialize["twilioAuthTokenPassphraseProvider"] = o.TwilioAuthTokenPassphraseProvider
-	}
-	if true {
-		toSerialize["senderPhoneNumber"] = o.SenderPhoneNumber
-	}
-	if true {
-		toSerialize["recipientPhoneNumber"] = o.RecipientPhoneNumber
-	}
-	if !isNil(o.LongMessageBehavior) {
-		toSerialize["longMessageBehavior"] = o.LongMessageBehavior
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.EnabledAlertSeverity) {
-		toSerialize["enabledAlertSeverity"] = o.EnabledAlertSeverity
-	}
-	if !isNil(o.EnabledAlertType) {
-		toSerialize["enabledAlertType"] = o.EnabledAlertType
-	}
-	if !isNil(o.DisabledAlertType) {
-		toSerialize["disabledAlertType"] = o.DisabledAlertType
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddTwilioAlertHandlerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["handlerName"] = o.HandlerName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.Asynchronous) {
+		toSerialize["asynchronous"] = o.Asynchronous
+	}
+	toSerialize["twilioAccountSID"] = o.TwilioAccountSID
+	if !IsNil(o.TwilioAuthToken) {
+		toSerialize["twilioAuthToken"] = o.TwilioAuthToken
+	}
+	if !IsNil(o.TwilioAuthTokenPassphraseProvider) {
+		toSerialize["twilioAuthTokenPassphraseProvider"] = o.TwilioAuthTokenPassphraseProvider
+	}
+	toSerialize["senderPhoneNumber"] = o.SenderPhoneNumber
+	toSerialize["recipientPhoneNumber"] = o.RecipientPhoneNumber
+	if !IsNil(o.LongMessageBehavior) {
+		toSerialize["longMessageBehavior"] = o.LongMessageBehavior
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.EnabledAlertSeverity) {
+		toSerialize["enabledAlertSeverity"] = o.EnabledAlertSeverity
+	}
+	if !IsNil(o.EnabledAlertType) {
+		toSerialize["enabledAlertType"] = o.EnabledAlertType
+	}
+	if !IsNil(o.DisabledAlertType) {
+		toSerialize["disabledAlertType"] = o.DisabledAlertType
+	}
+	return toSerialize, nil
 }
 
 type NullableAddTwilioAlertHandlerRequest struct {

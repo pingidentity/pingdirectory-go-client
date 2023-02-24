@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddNumericGaugeDataSourceRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddNumericGaugeDataSourceRequest{}
+
 // AddNumericGaugeDataSourceRequest struct for AddNumericGaugeDataSourceRequest
 type AddNumericGaugeDataSourceRequest struct {
 	// Name of the new Gauge Data Source
@@ -116,7 +119,7 @@ func (o *AddNumericGaugeDataSourceRequest) SetSchemas(v []EnumnumericGaugeDataSo
 
 // GetDataOrientation returns the DataOrientation field value if set, zero value otherwise.
 func (o *AddNumericGaugeDataSourceRequest) GetDataOrientation() EnumgaugeDataSourceDataOrientationProp {
-	if o == nil || isNil(o.DataOrientation) {
+	if o == nil || IsNil(o.DataOrientation) {
 		var ret EnumgaugeDataSourceDataOrientationProp
 		return ret
 	}
@@ -126,7 +129,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetDataOrientation() EnumgaugeDataSou
 // GetDataOrientationOk returns a tuple with the DataOrientation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeDataSourceRequest) GetDataOrientationOk() (*EnumgaugeDataSourceDataOrientationProp, bool) {
-	if o == nil || isNil(o.DataOrientation) {
+	if o == nil || IsNil(o.DataOrientation) {
 		return nil, false
 	}
 	return o.DataOrientation, true
@@ -134,7 +137,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetDataOrientationOk() (*EnumgaugeDat
 
 // HasDataOrientation returns a boolean if a field has been set.
 func (o *AddNumericGaugeDataSourceRequest) HasDataOrientation() bool {
-	if o != nil && !isNil(o.DataOrientation) {
+	if o != nil && !IsNil(o.DataOrientation) {
 		return true
 	}
 
@@ -148,7 +151,7 @@ func (o *AddNumericGaugeDataSourceRequest) SetDataOrientation(v EnumgaugeDataSou
 
 // GetStatisticType returns the StatisticType field value if set, zero value otherwise.
 func (o *AddNumericGaugeDataSourceRequest) GetStatisticType() EnumgaugeDataSourceStatisticTypeProp {
-	if o == nil || isNil(o.StatisticType) {
+	if o == nil || IsNil(o.StatisticType) {
 		var ret EnumgaugeDataSourceStatisticTypeProp
 		return ret
 	}
@@ -158,7 +161,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetStatisticType() EnumgaugeDataSourc
 // GetStatisticTypeOk returns a tuple with the StatisticType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeDataSourceRequest) GetStatisticTypeOk() (*EnumgaugeDataSourceStatisticTypeProp, bool) {
-	if o == nil || isNil(o.StatisticType) {
+	if o == nil || IsNil(o.StatisticType) {
 		return nil, false
 	}
 	return o.StatisticType, true
@@ -166,7 +169,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetStatisticTypeOk() (*EnumgaugeDataS
 
 // HasStatisticType returns a boolean if a field has been set.
 func (o *AddNumericGaugeDataSourceRequest) HasStatisticType() bool {
-	if o != nil && !isNil(o.StatisticType) {
+	if o != nil && !IsNil(o.StatisticType) {
 		return true
 	}
 
@@ -180,7 +183,7 @@ func (o *AddNumericGaugeDataSourceRequest) SetStatisticType(v EnumgaugeDataSourc
 
 // GetDivideValueBy returns the DivideValueBy field value if set, zero value otherwise.
 func (o *AddNumericGaugeDataSourceRequest) GetDivideValueBy() float32 {
-	if o == nil || isNil(o.DivideValueBy) {
+	if o == nil || IsNil(o.DivideValueBy) {
 		var ret float32
 		return ret
 	}
@@ -190,7 +193,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetDivideValueBy() float32 {
 // GetDivideValueByOk returns a tuple with the DivideValueBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeDataSourceRequest) GetDivideValueByOk() (*float32, bool) {
-	if o == nil || isNil(o.DivideValueBy) {
+	if o == nil || IsNil(o.DivideValueBy) {
 		return nil, false
 	}
 	return o.DivideValueBy, true
@@ -198,7 +201,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetDivideValueByOk() (*float32, bool)
 
 // HasDivideValueBy returns a boolean if a field has been set.
 func (o *AddNumericGaugeDataSourceRequest) HasDivideValueBy() bool {
-	if o != nil && !isNil(o.DivideValueBy) {
+	if o != nil && !IsNil(o.DivideValueBy) {
 		return true
 	}
 
@@ -212,7 +215,7 @@ func (o *AddNumericGaugeDataSourceRequest) SetDivideValueBy(v float32) {
 
 // GetDivideValueByAttribute returns the DivideValueByAttribute field value if set, zero value otherwise.
 func (o *AddNumericGaugeDataSourceRequest) GetDivideValueByAttribute() string {
-	if o == nil || isNil(o.DivideValueByAttribute) {
+	if o == nil || IsNil(o.DivideValueByAttribute) {
 		var ret string
 		return ret
 	}
@@ -222,7 +225,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetDivideValueByAttribute() string {
 // GetDivideValueByAttributeOk returns a tuple with the DivideValueByAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeDataSourceRequest) GetDivideValueByAttributeOk() (*string, bool) {
-	if o == nil || isNil(o.DivideValueByAttribute) {
+	if o == nil || IsNil(o.DivideValueByAttribute) {
 		return nil, false
 	}
 	return o.DivideValueByAttribute, true
@@ -230,7 +233,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetDivideValueByAttributeOk() (*strin
 
 // HasDivideValueByAttribute returns a boolean if a field has been set.
 func (o *AddNumericGaugeDataSourceRequest) HasDivideValueByAttribute() bool {
-	if o != nil && !isNil(o.DivideValueByAttribute) {
+	if o != nil && !IsNil(o.DivideValueByAttribute) {
 		return true
 	}
 
@@ -244,7 +247,7 @@ func (o *AddNumericGaugeDataSourceRequest) SetDivideValueByAttribute(v string) {
 
 // GetDivideValueByCounterAttribute returns the DivideValueByCounterAttribute field value if set, zero value otherwise.
 func (o *AddNumericGaugeDataSourceRequest) GetDivideValueByCounterAttribute() string {
-	if o == nil || isNil(o.DivideValueByCounterAttribute) {
+	if o == nil || IsNil(o.DivideValueByCounterAttribute) {
 		var ret string
 		return ret
 	}
@@ -254,7 +257,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetDivideValueByCounterAttribute() st
 // GetDivideValueByCounterAttributeOk returns a tuple with the DivideValueByCounterAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeDataSourceRequest) GetDivideValueByCounterAttributeOk() (*string, bool) {
-	if o == nil || isNil(o.DivideValueByCounterAttribute) {
+	if o == nil || IsNil(o.DivideValueByCounterAttribute) {
 		return nil, false
 	}
 	return o.DivideValueByCounterAttribute, true
@@ -262,7 +265,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetDivideValueByCounterAttributeOk() 
 
 // HasDivideValueByCounterAttribute returns a boolean if a field has been set.
 func (o *AddNumericGaugeDataSourceRequest) HasDivideValueByCounterAttribute() bool {
-	if o != nil && !isNil(o.DivideValueByCounterAttribute) {
+	if o != nil && !IsNil(o.DivideValueByCounterAttribute) {
 		return true
 	}
 
@@ -276,7 +279,7 @@ func (o *AddNumericGaugeDataSourceRequest) SetDivideValueByCounterAttribute(v st
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddNumericGaugeDataSourceRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -286,7 +289,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeDataSourceRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -294,7 +297,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddNumericGaugeDataSourceRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -308,7 +311,7 @@ func (o *AddNumericGaugeDataSourceRequest) SetDescription(v string) {
 
 // GetAdditionalText returns the AdditionalText field value if set, zero value otherwise.
 func (o *AddNumericGaugeDataSourceRequest) GetAdditionalText() string {
-	if o == nil || isNil(o.AdditionalText) {
+	if o == nil || IsNil(o.AdditionalText) {
 		var ret string
 		return ret
 	}
@@ -318,7 +321,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetAdditionalText() string {
 // GetAdditionalTextOk returns a tuple with the AdditionalText field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeDataSourceRequest) GetAdditionalTextOk() (*string, bool) {
-	if o == nil || isNil(o.AdditionalText) {
+	if o == nil || IsNil(o.AdditionalText) {
 		return nil, false
 	}
 	return o.AdditionalText, true
@@ -326,7 +329,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetAdditionalTextOk() (*string, bool)
 
 // HasAdditionalText returns a boolean if a field has been set.
 func (o *AddNumericGaugeDataSourceRequest) HasAdditionalText() bool {
-	if o != nil && !isNil(o.AdditionalText) {
+	if o != nil && !IsNil(o.AdditionalText) {
 		return true
 	}
 
@@ -388,7 +391,7 @@ func (o *AddNumericGaugeDataSourceRequest) SetMonitorAttribute(v string) {
 
 // GetIncludeFilter returns the IncludeFilter field value if set, zero value otherwise.
 func (o *AddNumericGaugeDataSourceRequest) GetIncludeFilter() string {
-	if o == nil || isNil(o.IncludeFilter) {
+	if o == nil || IsNil(o.IncludeFilter) {
 		var ret string
 		return ret
 	}
@@ -398,7 +401,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetIncludeFilter() string {
 // GetIncludeFilterOk returns a tuple with the IncludeFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeDataSourceRequest) GetIncludeFilterOk() (*string, bool) {
-	if o == nil || isNil(o.IncludeFilter) {
+	if o == nil || IsNil(o.IncludeFilter) {
 		return nil, false
 	}
 	return o.IncludeFilter, true
@@ -406,7 +409,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetIncludeFilterOk() (*string, bool) 
 
 // HasIncludeFilter returns a boolean if a field has been set.
 func (o *AddNumericGaugeDataSourceRequest) HasIncludeFilter() bool {
-	if o != nil && !isNil(o.IncludeFilter) {
+	if o != nil && !IsNil(o.IncludeFilter) {
 		return true
 	}
 
@@ -420,7 +423,7 @@ func (o *AddNumericGaugeDataSourceRequest) SetIncludeFilter(v string) {
 
 // GetResourceAttribute returns the ResourceAttribute field value if set, zero value otherwise.
 func (o *AddNumericGaugeDataSourceRequest) GetResourceAttribute() string {
-	if o == nil || isNil(o.ResourceAttribute) {
+	if o == nil || IsNil(o.ResourceAttribute) {
 		var ret string
 		return ret
 	}
@@ -430,7 +433,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetResourceAttribute() string {
 // GetResourceAttributeOk returns a tuple with the ResourceAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeDataSourceRequest) GetResourceAttributeOk() (*string, bool) {
-	if o == nil || isNil(o.ResourceAttribute) {
+	if o == nil || IsNil(o.ResourceAttribute) {
 		return nil, false
 	}
 	return o.ResourceAttribute, true
@@ -438,7 +441,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetResourceAttributeOk() (*string, bo
 
 // HasResourceAttribute returns a boolean if a field has been set.
 func (o *AddNumericGaugeDataSourceRequest) HasResourceAttribute() bool {
-	if o != nil && !isNil(o.ResourceAttribute) {
+	if o != nil && !IsNil(o.ResourceAttribute) {
 		return true
 	}
 
@@ -452,7 +455,7 @@ func (o *AddNumericGaugeDataSourceRequest) SetResourceAttribute(v string) {
 
 // GetResourceType returns the ResourceType field value if set, zero value otherwise.
 func (o *AddNumericGaugeDataSourceRequest) GetResourceType() string {
-	if o == nil || isNil(o.ResourceType) {
+	if o == nil || IsNil(o.ResourceType) {
 		var ret string
 		return ret
 	}
@@ -462,7 +465,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetResourceType() string {
 // GetResourceTypeOk returns a tuple with the ResourceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeDataSourceRequest) GetResourceTypeOk() (*string, bool) {
-	if o == nil || isNil(o.ResourceType) {
+	if o == nil || IsNil(o.ResourceType) {
 		return nil, false
 	}
 	return o.ResourceType, true
@@ -470,7 +473,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetResourceTypeOk() (*string, bool) {
 
 // HasResourceType returns a boolean if a field has been set.
 func (o *AddNumericGaugeDataSourceRequest) HasResourceType() bool {
-	if o != nil && !isNil(o.ResourceType) {
+	if o != nil && !IsNil(o.ResourceType) {
 		return true
 	}
 
@@ -484,7 +487,7 @@ func (o *AddNumericGaugeDataSourceRequest) SetResourceType(v string) {
 
 // GetMinimumUpdateInterval returns the MinimumUpdateInterval field value if set, zero value otherwise.
 func (o *AddNumericGaugeDataSourceRequest) GetMinimumUpdateInterval() string {
-	if o == nil || isNil(o.MinimumUpdateInterval) {
+	if o == nil || IsNil(o.MinimumUpdateInterval) {
 		var ret string
 		return ret
 	}
@@ -494,7 +497,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetMinimumUpdateInterval() string {
 // GetMinimumUpdateIntervalOk returns a tuple with the MinimumUpdateInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeDataSourceRequest) GetMinimumUpdateIntervalOk() (*string, bool) {
-	if o == nil || isNil(o.MinimumUpdateInterval) {
+	if o == nil || IsNil(o.MinimumUpdateInterval) {
 		return nil, false
 	}
 	return o.MinimumUpdateInterval, true
@@ -502,7 +505,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetMinimumUpdateIntervalOk() (*string
 
 // HasMinimumUpdateInterval returns a boolean if a field has been set.
 func (o *AddNumericGaugeDataSourceRequest) HasMinimumUpdateInterval() bool {
-	if o != nil && !isNil(o.MinimumUpdateInterval) {
+	if o != nil && !IsNil(o.MinimumUpdateInterval) {
 		return true
 	}
 
@@ -515,53 +518,53 @@ func (o *AddNumericGaugeDataSourceRequest) SetMinimumUpdateInterval(v string) {
 }
 
 func (o AddNumericGaugeDataSourceRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["sourceName"] = o.SourceName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.DataOrientation) {
-		toSerialize["dataOrientation"] = o.DataOrientation
-	}
-	if !isNil(o.StatisticType) {
-		toSerialize["statisticType"] = o.StatisticType
-	}
-	if !isNil(o.DivideValueBy) {
-		toSerialize["divideValueBy"] = o.DivideValueBy
-	}
-	if !isNil(o.DivideValueByAttribute) {
-		toSerialize["divideValueByAttribute"] = o.DivideValueByAttribute
-	}
-	if !isNil(o.DivideValueByCounterAttribute) {
-		toSerialize["divideValueByCounterAttribute"] = o.DivideValueByCounterAttribute
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if !isNil(o.AdditionalText) {
-		toSerialize["additionalText"] = o.AdditionalText
-	}
-	if true {
-		toSerialize["monitorObjectclass"] = o.MonitorObjectclass
-	}
-	if true {
-		toSerialize["monitorAttribute"] = o.MonitorAttribute
-	}
-	if !isNil(o.IncludeFilter) {
-		toSerialize["includeFilter"] = o.IncludeFilter
-	}
-	if !isNil(o.ResourceAttribute) {
-		toSerialize["resourceAttribute"] = o.ResourceAttribute
-	}
-	if !isNil(o.ResourceType) {
-		toSerialize["resourceType"] = o.ResourceType
-	}
-	if !isNil(o.MinimumUpdateInterval) {
-		toSerialize["minimumUpdateInterval"] = o.MinimumUpdateInterval
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddNumericGaugeDataSourceRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["sourceName"] = o.SourceName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.DataOrientation) {
+		toSerialize["dataOrientation"] = o.DataOrientation
+	}
+	if !IsNil(o.StatisticType) {
+		toSerialize["statisticType"] = o.StatisticType
+	}
+	if !IsNil(o.DivideValueBy) {
+		toSerialize["divideValueBy"] = o.DivideValueBy
+	}
+	if !IsNil(o.DivideValueByAttribute) {
+		toSerialize["divideValueByAttribute"] = o.DivideValueByAttribute
+	}
+	if !IsNil(o.DivideValueByCounterAttribute) {
+		toSerialize["divideValueByCounterAttribute"] = o.DivideValueByCounterAttribute
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.AdditionalText) {
+		toSerialize["additionalText"] = o.AdditionalText
+	}
+	toSerialize["monitorObjectclass"] = o.MonitorObjectclass
+	toSerialize["monitorAttribute"] = o.MonitorAttribute
+	if !IsNil(o.IncludeFilter) {
+		toSerialize["includeFilter"] = o.IncludeFilter
+	}
+	if !IsNil(o.ResourceAttribute) {
+		toSerialize["resourceAttribute"] = o.ResourceAttribute
+	}
+	if !IsNil(o.ResourceType) {
+		toSerialize["resourceType"] = o.ResourceType
+	}
+	if !IsNil(o.MinimumUpdateInterval) {
+		toSerialize["minimumUpdateInterval"] = o.MinimumUpdateInterval
+	}
+	return toSerialize, nil
 }
 
 type NullableAddNumericGaugeDataSourceRequest struct {

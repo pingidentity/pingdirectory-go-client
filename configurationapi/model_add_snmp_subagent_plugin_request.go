@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddSnmpSubagentPluginRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddSnmpSubagentPluginRequest{}
+
 // AddSnmpSubagentPluginRequest struct for AddSnmpSubagentPluginRequest
 type AddSnmpSubagentPluginRequest struct {
 	// Name of the new Plugin
@@ -111,7 +114,7 @@ func (o *AddSnmpSubagentPluginRequest) SetSchemas(v []EnumsnmpSubagentPluginSche
 
 // GetContextName returns the ContextName field value if set, zero value otherwise.
 func (o *AddSnmpSubagentPluginRequest) GetContextName() string {
-	if o == nil || isNil(o.ContextName) {
+	if o == nil || IsNil(o.ContextName) {
 		var ret string
 		return ret
 	}
@@ -121,7 +124,7 @@ func (o *AddSnmpSubagentPluginRequest) GetContextName() string {
 // GetContextNameOk returns a tuple with the ContextName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSnmpSubagentPluginRequest) GetContextNameOk() (*string, bool) {
-	if o == nil || isNil(o.ContextName) {
+	if o == nil || IsNil(o.ContextName) {
 		return nil, false
 	}
 	return o.ContextName, true
@@ -129,7 +132,7 @@ func (o *AddSnmpSubagentPluginRequest) GetContextNameOk() (*string, bool) {
 
 // HasContextName returns a boolean if a field has been set.
 func (o *AddSnmpSubagentPluginRequest) HasContextName() bool {
-	if o != nil && !isNil(o.ContextName) {
+	if o != nil && !IsNil(o.ContextName) {
 		return true
 	}
 
@@ -143,7 +146,7 @@ func (o *AddSnmpSubagentPluginRequest) SetContextName(v string) {
 
 // GetAgentxAddress returns the AgentxAddress field value if set, zero value otherwise.
 func (o *AddSnmpSubagentPluginRequest) GetAgentxAddress() string {
-	if o == nil || isNil(o.AgentxAddress) {
+	if o == nil || IsNil(o.AgentxAddress) {
 		var ret string
 		return ret
 	}
@@ -153,7 +156,7 @@ func (o *AddSnmpSubagentPluginRequest) GetAgentxAddress() string {
 // GetAgentxAddressOk returns a tuple with the AgentxAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSnmpSubagentPluginRequest) GetAgentxAddressOk() (*string, bool) {
-	if o == nil || isNil(o.AgentxAddress) {
+	if o == nil || IsNil(o.AgentxAddress) {
 		return nil, false
 	}
 	return o.AgentxAddress, true
@@ -161,7 +164,7 @@ func (o *AddSnmpSubagentPluginRequest) GetAgentxAddressOk() (*string, bool) {
 
 // HasAgentxAddress returns a boolean if a field has been set.
 func (o *AddSnmpSubagentPluginRequest) HasAgentxAddress() bool {
-	if o != nil && !isNil(o.AgentxAddress) {
+	if o != nil && !IsNil(o.AgentxAddress) {
 		return true
 	}
 
@@ -175,7 +178,7 @@ func (o *AddSnmpSubagentPluginRequest) SetAgentxAddress(v string) {
 
 // GetAgentxPort returns the AgentxPort field value if set, zero value otherwise.
 func (o *AddSnmpSubagentPluginRequest) GetAgentxPort() int32 {
-	if o == nil || isNil(o.AgentxPort) {
+	if o == nil || IsNil(o.AgentxPort) {
 		var ret int32
 		return ret
 	}
@@ -185,7 +188,7 @@ func (o *AddSnmpSubagentPluginRequest) GetAgentxPort() int32 {
 // GetAgentxPortOk returns a tuple with the AgentxPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSnmpSubagentPluginRequest) GetAgentxPortOk() (*int32, bool) {
-	if o == nil || isNil(o.AgentxPort) {
+	if o == nil || IsNil(o.AgentxPort) {
 		return nil, false
 	}
 	return o.AgentxPort, true
@@ -193,7 +196,7 @@ func (o *AddSnmpSubagentPluginRequest) GetAgentxPortOk() (*int32, bool) {
 
 // HasAgentxPort returns a boolean if a field has been set.
 func (o *AddSnmpSubagentPluginRequest) HasAgentxPort() bool {
-	if o != nil && !isNil(o.AgentxPort) {
+	if o != nil && !IsNil(o.AgentxPort) {
 		return true
 	}
 
@@ -207,7 +210,7 @@ func (o *AddSnmpSubagentPluginRequest) SetAgentxPort(v int32) {
 
 // GetNumWorkerThreads returns the NumWorkerThreads field value if set, zero value otherwise.
 func (o *AddSnmpSubagentPluginRequest) GetNumWorkerThreads() int32 {
-	if o == nil || isNil(o.NumWorkerThreads) {
+	if o == nil || IsNil(o.NumWorkerThreads) {
 		var ret int32
 		return ret
 	}
@@ -217,7 +220,7 @@ func (o *AddSnmpSubagentPluginRequest) GetNumWorkerThreads() int32 {
 // GetNumWorkerThreadsOk returns a tuple with the NumWorkerThreads field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSnmpSubagentPluginRequest) GetNumWorkerThreadsOk() (*int32, bool) {
-	if o == nil || isNil(o.NumWorkerThreads) {
+	if o == nil || IsNil(o.NumWorkerThreads) {
 		return nil, false
 	}
 	return o.NumWorkerThreads, true
@@ -225,7 +228,7 @@ func (o *AddSnmpSubagentPluginRequest) GetNumWorkerThreadsOk() (*int32, bool) {
 
 // HasNumWorkerThreads returns a boolean if a field has been set.
 func (o *AddSnmpSubagentPluginRequest) HasNumWorkerThreads() bool {
-	if o != nil && !isNil(o.NumWorkerThreads) {
+	if o != nil && !IsNil(o.NumWorkerThreads) {
 		return true
 	}
 
@@ -239,7 +242,7 @@ func (o *AddSnmpSubagentPluginRequest) SetNumWorkerThreads(v int32) {
 
 // GetSessionTimeout returns the SessionTimeout field value if set, zero value otherwise.
 func (o *AddSnmpSubagentPluginRequest) GetSessionTimeout() string {
-	if o == nil || isNil(o.SessionTimeout) {
+	if o == nil || IsNil(o.SessionTimeout) {
 		var ret string
 		return ret
 	}
@@ -249,7 +252,7 @@ func (o *AddSnmpSubagentPluginRequest) GetSessionTimeout() string {
 // GetSessionTimeoutOk returns a tuple with the SessionTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSnmpSubagentPluginRequest) GetSessionTimeoutOk() (*string, bool) {
-	if o == nil || isNil(o.SessionTimeout) {
+	if o == nil || IsNil(o.SessionTimeout) {
 		return nil, false
 	}
 	return o.SessionTimeout, true
@@ -257,7 +260,7 @@ func (o *AddSnmpSubagentPluginRequest) GetSessionTimeoutOk() (*string, bool) {
 
 // HasSessionTimeout returns a boolean if a field has been set.
 func (o *AddSnmpSubagentPluginRequest) HasSessionTimeout() bool {
-	if o != nil && !isNil(o.SessionTimeout) {
+	if o != nil && !IsNil(o.SessionTimeout) {
 		return true
 	}
 
@@ -271,7 +274,7 @@ func (o *AddSnmpSubagentPluginRequest) SetSessionTimeout(v string) {
 
 // GetConnectRetryMaxWait returns the ConnectRetryMaxWait field value if set, zero value otherwise.
 func (o *AddSnmpSubagentPluginRequest) GetConnectRetryMaxWait() string {
-	if o == nil || isNil(o.ConnectRetryMaxWait) {
+	if o == nil || IsNil(o.ConnectRetryMaxWait) {
 		var ret string
 		return ret
 	}
@@ -281,7 +284,7 @@ func (o *AddSnmpSubagentPluginRequest) GetConnectRetryMaxWait() string {
 // GetConnectRetryMaxWaitOk returns a tuple with the ConnectRetryMaxWait field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSnmpSubagentPluginRequest) GetConnectRetryMaxWaitOk() (*string, bool) {
-	if o == nil || isNil(o.ConnectRetryMaxWait) {
+	if o == nil || IsNil(o.ConnectRetryMaxWait) {
 		return nil, false
 	}
 	return o.ConnectRetryMaxWait, true
@@ -289,7 +292,7 @@ func (o *AddSnmpSubagentPluginRequest) GetConnectRetryMaxWaitOk() (*string, bool
 
 // HasConnectRetryMaxWait returns a boolean if a field has been set.
 func (o *AddSnmpSubagentPluginRequest) HasConnectRetryMaxWait() bool {
-	if o != nil && !isNil(o.ConnectRetryMaxWait) {
+	if o != nil && !IsNil(o.ConnectRetryMaxWait) {
 		return true
 	}
 
@@ -303,7 +306,7 @@ func (o *AddSnmpSubagentPluginRequest) SetConnectRetryMaxWait(v string) {
 
 // GetPingInterval returns the PingInterval field value if set, zero value otherwise.
 func (o *AddSnmpSubagentPluginRequest) GetPingInterval() string {
-	if o == nil || isNil(o.PingInterval) {
+	if o == nil || IsNil(o.PingInterval) {
 		var ret string
 		return ret
 	}
@@ -313,7 +316,7 @@ func (o *AddSnmpSubagentPluginRequest) GetPingInterval() string {
 // GetPingIntervalOk returns a tuple with the PingInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSnmpSubagentPluginRequest) GetPingIntervalOk() (*string, bool) {
-	if o == nil || isNil(o.PingInterval) {
+	if o == nil || IsNil(o.PingInterval) {
 		return nil, false
 	}
 	return o.PingInterval, true
@@ -321,7 +324,7 @@ func (o *AddSnmpSubagentPluginRequest) GetPingIntervalOk() (*string, bool) {
 
 // HasPingInterval returns a boolean if a field has been set.
 func (o *AddSnmpSubagentPluginRequest) HasPingInterval() bool {
-	if o != nil && !isNil(o.PingInterval) {
+	if o != nil && !IsNil(o.PingInterval) {
 		return true
 	}
 
@@ -335,7 +338,7 @@ func (o *AddSnmpSubagentPluginRequest) SetPingInterval(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddSnmpSubagentPluginRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -345,7 +348,7 @@ func (o *AddSnmpSubagentPluginRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSnmpSubagentPluginRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -353,7 +356,7 @@ func (o *AddSnmpSubagentPluginRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddSnmpSubagentPluginRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -391,7 +394,7 @@ func (o *AddSnmpSubagentPluginRequest) SetEnabled(v bool) {
 
 // GetInvokeForInternalOperations returns the InvokeForInternalOperations field value if set, zero value otherwise.
 func (o *AddSnmpSubagentPluginRequest) GetInvokeForInternalOperations() bool {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		var ret bool
 		return ret
 	}
@@ -401,7 +404,7 @@ func (o *AddSnmpSubagentPluginRequest) GetInvokeForInternalOperations() bool {
 // GetInvokeForInternalOperationsOk returns a tuple with the InvokeForInternalOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSnmpSubagentPluginRequest) GetInvokeForInternalOperationsOk() (*bool, bool) {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		return nil, false
 	}
 	return o.InvokeForInternalOperations, true
@@ -409,7 +412,7 @@ func (o *AddSnmpSubagentPluginRequest) GetInvokeForInternalOperationsOk() (*bool
 
 // HasInvokeForInternalOperations returns a boolean if a field has been set.
 func (o *AddSnmpSubagentPluginRequest) HasInvokeForInternalOperations() bool {
-	if o != nil && !isNil(o.InvokeForInternalOperations) {
+	if o != nil && !IsNil(o.InvokeForInternalOperations) {
 		return true
 	}
 
@@ -422,44 +425,46 @@ func (o *AddSnmpSubagentPluginRequest) SetInvokeForInternalOperations(v bool) {
 }
 
 func (o AddSnmpSubagentPluginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["pluginName"] = o.PluginName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.ContextName) {
-		toSerialize["contextName"] = o.ContextName
-	}
-	if !isNil(o.AgentxAddress) {
-		toSerialize["agentxAddress"] = o.AgentxAddress
-	}
-	if !isNil(o.AgentxPort) {
-		toSerialize["agentxPort"] = o.AgentxPort
-	}
-	if !isNil(o.NumWorkerThreads) {
-		toSerialize["numWorkerThreads"] = o.NumWorkerThreads
-	}
-	if !isNil(o.SessionTimeout) {
-		toSerialize["sessionTimeout"] = o.SessionTimeout
-	}
-	if !isNil(o.ConnectRetryMaxWait) {
-		toSerialize["connectRetryMaxWait"] = o.ConnectRetryMaxWait
-	}
-	if !isNil(o.PingInterval) {
-		toSerialize["pingInterval"] = o.PingInterval
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.InvokeForInternalOperations) {
-		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddSnmpSubagentPluginRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["pluginName"] = o.PluginName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.ContextName) {
+		toSerialize["contextName"] = o.ContextName
+	}
+	if !IsNil(o.AgentxAddress) {
+		toSerialize["agentxAddress"] = o.AgentxAddress
+	}
+	if !IsNil(o.AgentxPort) {
+		toSerialize["agentxPort"] = o.AgentxPort
+	}
+	if !IsNil(o.NumWorkerThreads) {
+		toSerialize["numWorkerThreads"] = o.NumWorkerThreads
+	}
+	if !IsNil(o.SessionTimeout) {
+		toSerialize["sessionTimeout"] = o.SessionTimeout
+	}
+	if !IsNil(o.ConnectRetryMaxWait) {
+		toSerialize["connectRetryMaxWait"] = o.ConnectRetryMaxWait
+	}
+	if !IsNil(o.PingInterval) {
+		toSerialize["pingInterval"] = o.PingInterval
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.InvokeForInternalOperations) {
+		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
+	}
+	return toSerialize, nil
 }
 
 type NullableAddSnmpSubagentPluginRequest struct {

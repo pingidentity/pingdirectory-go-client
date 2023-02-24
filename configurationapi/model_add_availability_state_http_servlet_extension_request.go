@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddAvailabilityStateHttpServletExtensionRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddAvailabilityStateHttpServletExtensionRequest{}
+
 // AddAvailabilityStateHttpServletExtensionRequest struct for AddAvailabilityStateHttpServletExtensionRequest
 type AddAvailabilityStateHttpServletExtensionRequest struct {
 	// Name of the new HTTP Servlet Extension
@@ -212,7 +215,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) SetUnavailableStatusCo
 
 // GetOverrideStatusCode returns the OverrideStatusCode field value if set, zero value otherwise.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) GetOverrideStatusCode() int32 {
-	if o == nil || isNil(o.OverrideStatusCode) {
+	if o == nil || IsNil(o.OverrideStatusCode) {
 		var ret int32
 		return ret
 	}
@@ -222,7 +225,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetOverrideStatusCode(
 // GetOverrideStatusCodeOk returns a tuple with the OverrideStatusCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) GetOverrideStatusCodeOk() (*int32, bool) {
-	if o == nil || isNil(o.OverrideStatusCode) {
+	if o == nil || IsNil(o.OverrideStatusCode) {
 		return nil, false
 	}
 	return o.OverrideStatusCode, true
@@ -230,7 +233,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetOverrideStatusCodeO
 
 // HasOverrideStatusCode returns a boolean if a field has been set.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) HasOverrideStatusCode() bool {
-	if o != nil && !isNil(o.OverrideStatusCode) {
+	if o != nil && !IsNil(o.OverrideStatusCode) {
 		return true
 	}
 
@@ -244,7 +247,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) SetOverrideStatusCode(
 
 // GetIncludeResponseBody returns the IncludeResponseBody field value if set, zero value otherwise.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) GetIncludeResponseBody() bool {
-	if o == nil || isNil(o.IncludeResponseBody) {
+	if o == nil || IsNil(o.IncludeResponseBody) {
 		var ret bool
 		return ret
 	}
@@ -254,7 +257,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetIncludeResponseBody
 // GetIncludeResponseBodyOk returns a tuple with the IncludeResponseBody field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) GetIncludeResponseBodyOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeResponseBody) {
+	if o == nil || IsNil(o.IncludeResponseBody) {
 		return nil, false
 	}
 	return o.IncludeResponseBody, true
@@ -262,7 +265,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetIncludeResponseBody
 
 // HasIncludeResponseBody returns a boolean if a field has been set.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) HasIncludeResponseBody() bool {
-	if o != nil && !isNil(o.IncludeResponseBody) {
+	if o != nil && !IsNil(o.IncludeResponseBody) {
 		return true
 	}
 
@@ -276,7 +279,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) SetIncludeResponseBody
 
 // GetAdditionalResponseContents returns the AdditionalResponseContents field value if set, zero value otherwise.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) GetAdditionalResponseContents() string {
-	if o == nil || isNil(o.AdditionalResponseContents) {
+	if o == nil || IsNil(o.AdditionalResponseContents) {
 		var ret string
 		return ret
 	}
@@ -286,7 +289,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetAdditionalResponseC
 // GetAdditionalResponseContentsOk returns a tuple with the AdditionalResponseContents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) GetAdditionalResponseContentsOk() (*string, bool) {
-	if o == nil || isNil(o.AdditionalResponseContents) {
+	if o == nil || IsNil(o.AdditionalResponseContents) {
 		return nil, false
 	}
 	return o.AdditionalResponseContents, true
@@ -294,7 +297,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetAdditionalResponseC
 
 // HasAdditionalResponseContents returns a boolean if a field has been set.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) HasAdditionalResponseContents() bool {
-	if o != nil && !isNil(o.AdditionalResponseContents) {
+	if o != nil && !IsNil(o.AdditionalResponseContents) {
 		return true
 	}
 
@@ -308,7 +311,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) SetAdditionalResponseC
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -318,7 +321,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetDescription() strin
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -326,7 +329,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetDescriptionOk() (*s
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -340,7 +343,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) SetDescription(v strin
 
 // GetCrossOriginPolicy returns the CrossOriginPolicy field value if set, zero value otherwise.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) GetCrossOriginPolicy() string {
-	if o == nil || isNil(o.CrossOriginPolicy) {
+	if o == nil || IsNil(o.CrossOriginPolicy) {
 		var ret string
 		return ret
 	}
@@ -350,7 +353,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetCrossOriginPolicy()
 // GetCrossOriginPolicyOk returns a tuple with the CrossOriginPolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) GetCrossOriginPolicyOk() (*string, bool) {
-	if o == nil || isNil(o.CrossOriginPolicy) {
+	if o == nil || IsNil(o.CrossOriginPolicy) {
 		return nil, false
 	}
 	return o.CrossOriginPolicy, true
@@ -358,7 +361,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetCrossOriginPolicyOk
 
 // HasCrossOriginPolicy returns a boolean if a field has been set.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) HasCrossOriginPolicy() bool {
-	if o != nil && !isNil(o.CrossOriginPolicy) {
+	if o != nil && !IsNil(o.CrossOriginPolicy) {
 		return true
 	}
 
@@ -372,7 +375,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) SetCrossOriginPolicy(v
 
 // GetResponseHeader returns the ResponseHeader field value if set, zero value otherwise.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) GetResponseHeader() []string {
-	if o == nil || isNil(o.ResponseHeader) {
+	if o == nil || IsNil(o.ResponseHeader) {
 		var ret []string
 		return ret
 	}
@@ -382,7 +385,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetResponseHeader() []
 // GetResponseHeaderOk returns a tuple with the ResponseHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) GetResponseHeaderOk() ([]string, bool) {
-	if o == nil || isNil(o.ResponseHeader) {
+	if o == nil || IsNil(o.ResponseHeader) {
 		return nil, false
 	}
 	return o.ResponseHeader, true
@@ -390,7 +393,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetResponseHeaderOk() 
 
 // HasResponseHeader returns a boolean if a field has been set.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) HasResponseHeader() bool {
-	if o != nil && !isNil(o.ResponseHeader) {
+	if o != nil && !IsNil(o.ResponseHeader) {
 		return true
 	}
 
@@ -404,7 +407,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) SetResponseHeader(v []
 
 // GetCorrelationIDResponseHeader returns the CorrelationIDResponseHeader field value if set, zero value otherwise.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) GetCorrelationIDResponseHeader() string {
-	if o == nil || isNil(o.CorrelationIDResponseHeader) {
+	if o == nil || IsNil(o.CorrelationIDResponseHeader) {
 		var ret string
 		return ret
 	}
@@ -414,7 +417,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetCorrelationIDRespon
 // GetCorrelationIDResponseHeaderOk returns a tuple with the CorrelationIDResponseHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) GetCorrelationIDResponseHeaderOk() (*string, bool) {
-	if o == nil || isNil(o.CorrelationIDResponseHeader) {
+	if o == nil || IsNil(o.CorrelationIDResponseHeader) {
 		return nil, false
 	}
 	return o.CorrelationIDResponseHeader, true
@@ -422,7 +425,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetCorrelationIDRespon
 
 // HasCorrelationIDResponseHeader returns a boolean if a field has been set.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) HasCorrelationIDResponseHeader() bool {
-	if o != nil && !isNil(o.CorrelationIDResponseHeader) {
+	if o != nil && !IsNil(o.CorrelationIDResponseHeader) {
 		return true
 	}
 
@@ -435,47 +438,43 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) SetCorrelationIDRespon
 }
 
 func (o AddAvailabilityStateHttpServletExtensionRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["extensionName"] = o.ExtensionName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["baseContextPath"] = o.BaseContextPath
-	}
-	if true {
-		toSerialize["availableStatusCode"] = o.AvailableStatusCode
-	}
-	if true {
-		toSerialize["degradedStatusCode"] = o.DegradedStatusCode
-	}
-	if true {
-		toSerialize["unavailableStatusCode"] = o.UnavailableStatusCode
-	}
-	if !isNil(o.OverrideStatusCode) {
-		toSerialize["overrideStatusCode"] = o.OverrideStatusCode
-	}
-	if !isNil(o.IncludeResponseBody) {
-		toSerialize["includeResponseBody"] = o.IncludeResponseBody
-	}
-	if !isNil(o.AdditionalResponseContents) {
-		toSerialize["additionalResponseContents"] = o.AdditionalResponseContents
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if !isNil(o.CrossOriginPolicy) {
-		toSerialize["crossOriginPolicy"] = o.CrossOriginPolicy
-	}
-	if !isNil(o.ResponseHeader) {
-		toSerialize["responseHeader"] = o.ResponseHeader
-	}
-	if !isNil(o.CorrelationIDResponseHeader) {
-		toSerialize["correlationIDResponseHeader"] = o.CorrelationIDResponseHeader
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddAvailabilityStateHttpServletExtensionRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["extensionName"] = o.ExtensionName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["baseContextPath"] = o.BaseContextPath
+	toSerialize["availableStatusCode"] = o.AvailableStatusCode
+	toSerialize["degradedStatusCode"] = o.DegradedStatusCode
+	toSerialize["unavailableStatusCode"] = o.UnavailableStatusCode
+	if !IsNil(o.OverrideStatusCode) {
+		toSerialize["overrideStatusCode"] = o.OverrideStatusCode
+	}
+	if !IsNil(o.IncludeResponseBody) {
+		toSerialize["includeResponseBody"] = o.IncludeResponseBody
+	}
+	if !IsNil(o.AdditionalResponseContents) {
+		toSerialize["additionalResponseContents"] = o.AdditionalResponseContents
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.CrossOriginPolicy) {
+		toSerialize["crossOriginPolicy"] = o.CrossOriginPolicy
+	}
+	if !IsNil(o.ResponseHeader) {
+		toSerialize["responseHeader"] = o.ResponseHeader
+	}
+	if !IsNil(o.CorrelationIDResponseHeader) {
+		toSerialize["correlationIDResponseHeader"] = o.CorrelationIDResponseHeader
+	}
+	return toSerialize, nil
 }
 
 type NullableAddAvailabilityStateHttpServletExtensionRequest struct {

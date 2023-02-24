@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ChangelogBackendResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ChangelogBackendResponse{}
+
 // ChangelogBackendResponse struct for ChangelogBackendResponse
 type ChangelogBackendResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -113,7 +116,7 @@ func NewChangelogBackendResponseWithDefaults() *ChangelogBackendResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -123,7 +126,7 @@ func (o *ChangelogBackendResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -131,7 +134,7 @@ func (o *ChangelogBackendResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -145,7 +148,7 @@ func (o *ChangelogBackendResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -155,7 +158,7 @@ func (o *ChangelogBackendResponse) GetUrnpingidentityschemasconfigurationmessage
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -163,7 +166,7 @@ func (o *ChangelogBackendResponse) GetUrnpingidentityschemasconfigurationmessage
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -249,7 +252,7 @@ func (o *ChangelogBackendResponse) SetBaseDN(v []string) {
 
 // GetDbDirectory returns the DbDirectory field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetDbDirectory() string {
-	if o == nil || isNil(o.DbDirectory) {
+	if o == nil || IsNil(o.DbDirectory) {
 		var ret string
 		return ret
 	}
@@ -259,7 +262,7 @@ func (o *ChangelogBackendResponse) GetDbDirectory() string {
 // GetDbDirectoryOk returns a tuple with the DbDirectory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetDbDirectoryOk() (*string, bool) {
-	if o == nil || isNil(o.DbDirectory) {
+	if o == nil || IsNil(o.DbDirectory) {
 		return nil, false
 	}
 	return o.DbDirectory, true
@@ -267,7 +270,7 @@ func (o *ChangelogBackendResponse) GetDbDirectoryOk() (*string, bool) {
 
 // HasDbDirectory returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasDbDirectory() bool {
-	if o != nil && !isNil(o.DbDirectory) {
+	if o != nil && !IsNil(o.DbDirectory) {
 		return true
 	}
 
@@ -281,7 +284,7 @@ func (o *ChangelogBackendResponse) SetDbDirectory(v string) {
 
 // GetDbDirectoryPermissions returns the DbDirectoryPermissions field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetDbDirectoryPermissions() string {
-	if o == nil || isNil(o.DbDirectoryPermissions) {
+	if o == nil || IsNil(o.DbDirectoryPermissions) {
 		var ret string
 		return ret
 	}
@@ -291,7 +294,7 @@ func (o *ChangelogBackendResponse) GetDbDirectoryPermissions() string {
 // GetDbDirectoryPermissionsOk returns a tuple with the DbDirectoryPermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetDbDirectoryPermissionsOk() (*string, bool) {
-	if o == nil || isNil(o.DbDirectoryPermissions) {
+	if o == nil || IsNil(o.DbDirectoryPermissions) {
 		return nil, false
 	}
 	return o.DbDirectoryPermissions, true
@@ -299,7 +302,7 @@ func (o *ChangelogBackendResponse) GetDbDirectoryPermissionsOk() (*string, bool)
 
 // HasDbDirectoryPermissions returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasDbDirectoryPermissions() bool {
-	if o != nil && !isNil(o.DbDirectoryPermissions) {
+	if o != nil && !IsNil(o.DbDirectoryPermissions) {
 		return true
 	}
 
@@ -313,7 +316,7 @@ func (o *ChangelogBackendResponse) SetDbDirectoryPermissions(v string) {
 
 // GetDbCachePercent returns the DbCachePercent field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetDbCachePercent() int32 {
-	if o == nil || isNil(o.DbCachePercent) {
+	if o == nil || IsNil(o.DbCachePercent) {
 		var ret int32
 		return ret
 	}
@@ -323,7 +326,7 @@ func (o *ChangelogBackendResponse) GetDbCachePercent() int32 {
 // GetDbCachePercentOk returns a tuple with the DbCachePercent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetDbCachePercentOk() (*int32, bool) {
-	if o == nil || isNil(o.DbCachePercent) {
+	if o == nil || IsNil(o.DbCachePercent) {
 		return nil, false
 	}
 	return o.DbCachePercent, true
@@ -331,7 +334,7 @@ func (o *ChangelogBackendResponse) GetDbCachePercentOk() (*int32, bool) {
 
 // HasDbCachePercent returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasDbCachePercent() bool {
-	if o != nil && !isNil(o.DbCachePercent) {
+	if o != nil && !IsNil(o.DbCachePercent) {
 		return true
 	}
 
@@ -345,7 +348,7 @@ func (o *ChangelogBackendResponse) SetDbCachePercent(v int32) {
 
 // GetJeProperty returns the JeProperty field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetJeProperty() []string {
-	if o == nil || isNil(o.JeProperty) {
+	if o == nil || IsNil(o.JeProperty) {
 		var ret []string
 		return ret
 	}
@@ -355,7 +358,7 @@ func (o *ChangelogBackendResponse) GetJeProperty() []string {
 // GetJePropertyOk returns a tuple with the JeProperty field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetJePropertyOk() ([]string, bool) {
-	if o == nil || isNil(o.JeProperty) {
+	if o == nil || IsNil(o.JeProperty) {
 		return nil, false
 	}
 	return o.JeProperty, true
@@ -363,7 +366,7 @@ func (o *ChangelogBackendResponse) GetJePropertyOk() ([]string, bool) {
 
 // HasJeProperty returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasJeProperty() bool {
-	if o != nil && !isNil(o.JeProperty) {
+	if o != nil && !IsNil(o.JeProperty) {
 		return true
 	}
 
@@ -377,7 +380,7 @@ func (o *ChangelogBackendResponse) SetJeProperty(v []string) {
 
 // GetChangelogWriteBatchSize returns the ChangelogWriteBatchSize field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetChangelogWriteBatchSize() int32 {
-	if o == nil || isNil(o.ChangelogWriteBatchSize) {
+	if o == nil || IsNil(o.ChangelogWriteBatchSize) {
 		var ret int32
 		return ret
 	}
@@ -387,7 +390,7 @@ func (o *ChangelogBackendResponse) GetChangelogWriteBatchSize() int32 {
 // GetChangelogWriteBatchSizeOk returns a tuple with the ChangelogWriteBatchSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetChangelogWriteBatchSizeOk() (*int32, bool) {
-	if o == nil || isNil(o.ChangelogWriteBatchSize) {
+	if o == nil || IsNil(o.ChangelogWriteBatchSize) {
 		return nil, false
 	}
 	return o.ChangelogWriteBatchSize, true
@@ -395,7 +398,7 @@ func (o *ChangelogBackendResponse) GetChangelogWriteBatchSizeOk() (*int32, bool)
 
 // HasChangelogWriteBatchSize returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasChangelogWriteBatchSize() bool {
-	if o != nil && !isNil(o.ChangelogWriteBatchSize) {
+	if o != nil && !IsNil(o.ChangelogWriteBatchSize) {
 		return true
 	}
 
@@ -409,7 +412,7 @@ func (o *ChangelogBackendResponse) SetChangelogWriteBatchSize(v int32) {
 
 // GetChangelogPurgeBatchSize returns the ChangelogPurgeBatchSize field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetChangelogPurgeBatchSize() int32 {
-	if o == nil || isNil(o.ChangelogPurgeBatchSize) {
+	if o == nil || IsNil(o.ChangelogPurgeBatchSize) {
 		var ret int32
 		return ret
 	}
@@ -419,7 +422,7 @@ func (o *ChangelogBackendResponse) GetChangelogPurgeBatchSize() int32 {
 // GetChangelogPurgeBatchSizeOk returns a tuple with the ChangelogPurgeBatchSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetChangelogPurgeBatchSizeOk() (*int32, bool) {
-	if o == nil || isNil(o.ChangelogPurgeBatchSize) {
+	if o == nil || IsNil(o.ChangelogPurgeBatchSize) {
 		return nil, false
 	}
 	return o.ChangelogPurgeBatchSize, true
@@ -427,7 +430,7 @@ func (o *ChangelogBackendResponse) GetChangelogPurgeBatchSizeOk() (*int32, bool)
 
 // HasChangelogPurgeBatchSize returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasChangelogPurgeBatchSize() bool {
-	if o != nil && !isNil(o.ChangelogPurgeBatchSize) {
+	if o != nil && !IsNil(o.ChangelogPurgeBatchSize) {
 		return true
 	}
 
@@ -441,7 +444,7 @@ func (o *ChangelogBackendResponse) SetChangelogPurgeBatchSize(v int32) {
 
 // GetChangelogWriteQueueCapacity returns the ChangelogWriteQueueCapacity field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetChangelogWriteQueueCapacity() int32 {
-	if o == nil || isNil(o.ChangelogWriteQueueCapacity) {
+	if o == nil || IsNil(o.ChangelogWriteQueueCapacity) {
 		var ret int32
 		return ret
 	}
@@ -451,7 +454,7 @@ func (o *ChangelogBackendResponse) GetChangelogWriteQueueCapacity() int32 {
 // GetChangelogWriteQueueCapacityOk returns a tuple with the ChangelogWriteQueueCapacity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetChangelogWriteQueueCapacityOk() (*int32, bool) {
-	if o == nil || isNil(o.ChangelogWriteQueueCapacity) {
+	if o == nil || IsNil(o.ChangelogWriteQueueCapacity) {
 		return nil, false
 	}
 	return o.ChangelogWriteQueueCapacity, true
@@ -459,7 +462,7 @@ func (o *ChangelogBackendResponse) GetChangelogWriteQueueCapacityOk() (*int32, b
 
 // HasChangelogWriteQueueCapacity returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasChangelogWriteQueueCapacity() bool {
-	if o != nil && !isNil(o.ChangelogWriteQueueCapacity) {
+	if o != nil && !IsNil(o.ChangelogWriteQueueCapacity) {
 		return true
 	}
 
@@ -473,7 +476,7 @@ func (o *ChangelogBackendResponse) SetChangelogWriteQueueCapacity(v int32) {
 
 // GetIndexIncludeAttribute returns the IndexIncludeAttribute field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetIndexIncludeAttribute() []string {
-	if o == nil || isNil(o.IndexIncludeAttribute) {
+	if o == nil || IsNil(o.IndexIncludeAttribute) {
 		var ret []string
 		return ret
 	}
@@ -483,7 +486,7 @@ func (o *ChangelogBackendResponse) GetIndexIncludeAttribute() []string {
 // GetIndexIncludeAttributeOk returns a tuple with the IndexIncludeAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetIndexIncludeAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.IndexIncludeAttribute) {
+	if o == nil || IsNil(o.IndexIncludeAttribute) {
 		return nil, false
 	}
 	return o.IndexIncludeAttribute, true
@@ -491,7 +494,7 @@ func (o *ChangelogBackendResponse) GetIndexIncludeAttributeOk() ([]string, bool)
 
 // HasIndexIncludeAttribute returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasIndexIncludeAttribute() bool {
-	if o != nil && !isNil(o.IndexIncludeAttribute) {
+	if o != nil && !IsNil(o.IndexIncludeAttribute) {
 		return true
 	}
 
@@ -505,7 +508,7 @@ func (o *ChangelogBackendResponse) SetIndexIncludeAttribute(v []string) {
 
 // GetIndexExcludeAttribute returns the IndexExcludeAttribute field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetIndexExcludeAttribute() []string {
-	if o == nil || isNil(o.IndexExcludeAttribute) {
+	if o == nil || IsNil(o.IndexExcludeAttribute) {
 		var ret []string
 		return ret
 	}
@@ -515,7 +518,7 @@ func (o *ChangelogBackendResponse) GetIndexExcludeAttribute() []string {
 // GetIndexExcludeAttributeOk returns a tuple with the IndexExcludeAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetIndexExcludeAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.IndexExcludeAttribute) {
+	if o == nil || IsNil(o.IndexExcludeAttribute) {
 		return nil, false
 	}
 	return o.IndexExcludeAttribute, true
@@ -523,7 +526,7 @@ func (o *ChangelogBackendResponse) GetIndexExcludeAttributeOk() ([]string, bool)
 
 // HasIndexExcludeAttribute returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasIndexExcludeAttribute() bool {
-	if o != nil && !isNil(o.IndexExcludeAttribute) {
+	if o != nil && !IsNil(o.IndexExcludeAttribute) {
 		return true
 	}
 
@@ -561,7 +564,7 @@ func (o *ChangelogBackendResponse) SetChangelogMaximumAge(v string) {
 
 // GetTargetDatabaseSize returns the TargetDatabaseSize field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetTargetDatabaseSize() string {
-	if o == nil || isNil(o.TargetDatabaseSize) {
+	if o == nil || IsNil(o.TargetDatabaseSize) {
 		var ret string
 		return ret
 	}
@@ -571,7 +574,7 @@ func (o *ChangelogBackendResponse) GetTargetDatabaseSize() string {
 // GetTargetDatabaseSizeOk returns a tuple with the TargetDatabaseSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetTargetDatabaseSizeOk() (*string, bool) {
-	if o == nil || isNil(o.TargetDatabaseSize) {
+	if o == nil || IsNil(o.TargetDatabaseSize) {
 		return nil, false
 	}
 	return o.TargetDatabaseSize, true
@@ -579,7 +582,7 @@ func (o *ChangelogBackendResponse) GetTargetDatabaseSizeOk() (*string, bool) {
 
 // HasTargetDatabaseSize returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasTargetDatabaseSize() bool {
-	if o != nil && !isNil(o.TargetDatabaseSize) {
+	if o != nil && !IsNil(o.TargetDatabaseSize) {
 		return true
 	}
 
@@ -593,7 +596,7 @@ func (o *ChangelogBackendResponse) SetTargetDatabaseSize(v string) {
 
 // GetChangelogEntryIncludeBaseDN returns the ChangelogEntryIncludeBaseDN field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetChangelogEntryIncludeBaseDN() []string {
-	if o == nil || isNil(o.ChangelogEntryIncludeBaseDN) {
+	if o == nil || IsNil(o.ChangelogEntryIncludeBaseDN) {
 		var ret []string
 		return ret
 	}
@@ -603,7 +606,7 @@ func (o *ChangelogBackendResponse) GetChangelogEntryIncludeBaseDN() []string {
 // GetChangelogEntryIncludeBaseDNOk returns a tuple with the ChangelogEntryIncludeBaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetChangelogEntryIncludeBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.ChangelogEntryIncludeBaseDN) {
+	if o == nil || IsNil(o.ChangelogEntryIncludeBaseDN) {
 		return nil, false
 	}
 	return o.ChangelogEntryIncludeBaseDN, true
@@ -611,7 +614,7 @@ func (o *ChangelogBackendResponse) GetChangelogEntryIncludeBaseDNOk() ([]string,
 
 // HasChangelogEntryIncludeBaseDN returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasChangelogEntryIncludeBaseDN() bool {
-	if o != nil && !isNil(o.ChangelogEntryIncludeBaseDN) {
+	if o != nil && !IsNil(o.ChangelogEntryIncludeBaseDN) {
 		return true
 	}
 
@@ -625,7 +628,7 @@ func (o *ChangelogBackendResponse) SetChangelogEntryIncludeBaseDN(v []string) {
 
 // GetChangelogEntryExcludeBaseDN returns the ChangelogEntryExcludeBaseDN field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetChangelogEntryExcludeBaseDN() []string {
-	if o == nil || isNil(o.ChangelogEntryExcludeBaseDN) {
+	if o == nil || IsNil(o.ChangelogEntryExcludeBaseDN) {
 		var ret []string
 		return ret
 	}
@@ -635,7 +638,7 @@ func (o *ChangelogBackendResponse) GetChangelogEntryExcludeBaseDN() []string {
 // GetChangelogEntryExcludeBaseDNOk returns a tuple with the ChangelogEntryExcludeBaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetChangelogEntryExcludeBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.ChangelogEntryExcludeBaseDN) {
+	if o == nil || IsNil(o.ChangelogEntryExcludeBaseDN) {
 		return nil, false
 	}
 	return o.ChangelogEntryExcludeBaseDN, true
@@ -643,7 +646,7 @@ func (o *ChangelogBackendResponse) GetChangelogEntryExcludeBaseDNOk() ([]string,
 
 // HasChangelogEntryExcludeBaseDN returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasChangelogEntryExcludeBaseDN() bool {
-	if o != nil && !isNil(o.ChangelogEntryExcludeBaseDN) {
+	if o != nil && !IsNil(o.ChangelogEntryExcludeBaseDN) {
 		return true
 	}
 
@@ -657,7 +660,7 @@ func (o *ChangelogBackendResponse) SetChangelogEntryExcludeBaseDN(v []string) {
 
 // GetChangelogEntryIncludeFilter returns the ChangelogEntryIncludeFilter field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetChangelogEntryIncludeFilter() []string {
-	if o == nil || isNil(o.ChangelogEntryIncludeFilter) {
+	if o == nil || IsNil(o.ChangelogEntryIncludeFilter) {
 		var ret []string
 		return ret
 	}
@@ -667,7 +670,7 @@ func (o *ChangelogBackendResponse) GetChangelogEntryIncludeFilter() []string {
 // GetChangelogEntryIncludeFilterOk returns a tuple with the ChangelogEntryIncludeFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetChangelogEntryIncludeFilterOk() ([]string, bool) {
-	if o == nil || isNil(o.ChangelogEntryIncludeFilter) {
+	if o == nil || IsNil(o.ChangelogEntryIncludeFilter) {
 		return nil, false
 	}
 	return o.ChangelogEntryIncludeFilter, true
@@ -675,7 +678,7 @@ func (o *ChangelogBackendResponse) GetChangelogEntryIncludeFilterOk() ([]string,
 
 // HasChangelogEntryIncludeFilter returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasChangelogEntryIncludeFilter() bool {
-	if o != nil && !isNil(o.ChangelogEntryIncludeFilter) {
+	if o != nil && !IsNil(o.ChangelogEntryIncludeFilter) {
 		return true
 	}
 
@@ -689,7 +692,7 @@ func (o *ChangelogBackendResponse) SetChangelogEntryIncludeFilter(v []string) {
 
 // GetChangelogEntryExcludeFilter returns the ChangelogEntryExcludeFilter field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetChangelogEntryExcludeFilter() []string {
-	if o == nil || isNil(o.ChangelogEntryExcludeFilter) {
+	if o == nil || IsNil(o.ChangelogEntryExcludeFilter) {
 		var ret []string
 		return ret
 	}
@@ -699,7 +702,7 @@ func (o *ChangelogBackendResponse) GetChangelogEntryExcludeFilter() []string {
 // GetChangelogEntryExcludeFilterOk returns a tuple with the ChangelogEntryExcludeFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetChangelogEntryExcludeFilterOk() ([]string, bool) {
-	if o == nil || isNil(o.ChangelogEntryExcludeFilter) {
+	if o == nil || IsNil(o.ChangelogEntryExcludeFilter) {
 		return nil, false
 	}
 	return o.ChangelogEntryExcludeFilter, true
@@ -707,7 +710,7 @@ func (o *ChangelogBackendResponse) GetChangelogEntryExcludeFilterOk() ([]string,
 
 // HasChangelogEntryExcludeFilter returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasChangelogEntryExcludeFilter() bool {
-	if o != nil && !isNil(o.ChangelogEntryExcludeFilter) {
+	if o != nil && !IsNil(o.ChangelogEntryExcludeFilter) {
 		return true
 	}
 
@@ -721,7 +724,7 @@ func (o *ChangelogBackendResponse) SetChangelogEntryExcludeFilter(v []string) {
 
 // GetChangelogIncludeAttribute returns the ChangelogIncludeAttribute field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetChangelogIncludeAttribute() []string {
-	if o == nil || isNil(o.ChangelogIncludeAttribute) {
+	if o == nil || IsNil(o.ChangelogIncludeAttribute) {
 		var ret []string
 		return ret
 	}
@@ -731,7 +734,7 @@ func (o *ChangelogBackendResponse) GetChangelogIncludeAttribute() []string {
 // GetChangelogIncludeAttributeOk returns a tuple with the ChangelogIncludeAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetChangelogIncludeAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.ChangelogIncludeAttribute) {
+	if o == nil || IsNil(o.ChangelogIncludeAttribute) {
 		return nil, false
 	}
 	return o.ChangelogIncludeAttribute, true
@@ -739,7 +742,7 @@ func (o *ChangelogBackendResponse) GetChangelogIncludeAttributeOk() ([]string, b
 
 // HasChangelogIncludeAttribute returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasChangelogIncludeAttribute() bool {
-	if o != nil && !isNil(o.ChangelogIncludeAttribute) {
+	if o != nil && !IsNil(o.ChangelogIncludeAttribute) {
 		return true
 	}
 
@@ -753,7 +756,7 @@ func (o *ChangelogBackendResponse) SetChangelogIncludeAttribute(v []string) {
 
 // GetChangelogExcludeAttribute returns the ChangelogExcludeAttribute field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetChangelogExcludeAttribute() []string {
-	if o == nil || isNil(o.ChangelogExcludeAttribute) {
+	if o == nil || IsNil(o.ChangelogExcludeAttribute) {
 		var ret []string
 		return ret
 	}
@@ -763,7 +766,7 @@ func (o *ChangelogBackendResponse) GetChangelogExcludeAttribute() []string {
 // GetChangelogExcludeAttributeOk returns a tuple with the ChangelogExcludeAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetChangelogExcludeAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.ChangelogExcludeAttribute) {
+	if o == nil || IsNil(o.ChangelogExcludeAttribute) {
 		return nil, false
 	}
 	return o.ChangelogExcludeAttribute, true
@@ -771,7 +774,7 @@ func (o *ChangelogBackendResponse) GetChangelogExcludeAttributeOk() ([]string, b
 
 // HasChangelogExcludeAttribute returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasChangelogExcludeAttribute() bool {
-	if o != nil && !isNil(o.ChangelogExcludeAttribute) {
+	if o != nil && !IsNil(o.ChangelogExcludeAttribute) {
 		return true
 	}
 
@@ -785,7 +788,7 @@ func (o *ChangelogBackendResponse) SetChangelogExcludeAttribute(v []string) {
 
 // GetChangelogDeletedEntryIncludeAttribute returns the ChangelogDeletedEntryIncludeAttribute field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetChangelogDeletedEntryIncludeAttribute() []string {
-	if o == nil || isNil(o.ChangelogDeletedEntryIncludeAttribute) {
+	if o == nil || IsNil(o.ChangelogDeletedEntryIncludeAttribute) {
 		var ret []string
 		return ret
 	}
@@ -795,7 +798,7 @@ func (o *ChangelogBackendResponse) GetChangelogDeletedEntryIncludeAttribute() []
 // GetChangelogDeletedEntryIncludeAttributeOk returns a tuple with the ChangelogDeletedEntryIncludeAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetChangelogDeletedEntryIncludeAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.ChangelogDeletedEntryIncludeAttribute) {
+	if o == nil || IsNil(o.ChangelogDeletedEntryIncludeAttribute) {
 		return nil, false
 	}
 	return o.ChangelogDeletedEntryIncludeAttribute, true
@@ -803,7 +806,7 @@ func (o *ChangelogBackendResponse) GetChangelogDeletedEntryIncludeAttributeOk() 
 
 // HasChangelogDeletedEntryIncludeAttribute returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasChangelogDeletedEntryIncludeAttribute() bool {
-	if o != nil && !isNil(o.ChangelogDeletedEntryIncludeAttribute) {
+	if o != nil && !IsNil(o.ChangelogDeletedEntryIncludeAttribute) {
 		return true
 	}
 
@@ -817,7 +820,7 @@ func (o *ChangelogBackendResponse) SetChangelogDeletedEntryIncludeAttribute(v []
 
 // GetChangelogDeletedEntryExcludeAttribute returns the ChangelogDeletedEntryExcludeAttribute field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetChangelogDeletedEntryExcludeAttribute() []string {
-	if o == nil || isNil(o.ChangelogDeletedEntryExcludeAttribute) {
+	if o == nil || IsNil(o.ChangelogDeletedEntryExcludeAttribute) {
 		var ret []string
 		return ret
 	}
@@ -827,7 +830,7 @@ func (o *ChangelogBackendResponse) GetChangelogDeletedEntryExcludeAttribute() []
 // GetChangelogDeletedEntryExcludeAttributeOk returns a tuple with the ChangelogDeletedEntryExcludeAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetChangelogDeletedEntryExcludeAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.ChangelogDeletedEntryExcludeAttribute) {
+	if o == nil || IsNil(o.ChangelogDeletedEntryExcludeAttribute) {
 		return nil, false
 	}
 	return o.ChangelogDeletedEntryExcludeAttribute, true
@@ -835,7 +838,7 @@ func (o *ChangelogBackendResponse) GetChangelogDeletedEntryExcludeAttributeOk() 
 
 // HasChangelogDeletedEntryExcludeAttribute returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasChangelogDeletedEntryExcludeAttribute() bool {
-	if o != nil && !isNil(o.ChangelogDeletedEntryExcludeAttribute) {
+	if o != nil && !IsNil(o.ChangelogDeletedEntryExcludeAttribute) {
 		return true
 	}
 
@@ -849,7 +852,7 @@ func (o *ChangelogBackendResponse) SetChangelogDeletedEntryExcludeAttribute(v []
 
 // GetChangelogIncludeKeyAttribute returns the ChangelogIncludeKeyAttribute field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetChangelogIncludeKeyAttribute() []string {
-	if o == nil || isNil(o.ChangelogIncludeKeyAttribute) {
+	if o == nil || IsNil(o.ChangelogIncludeKeyAttribute) {
 		var ret []string
 		return ret
 	}
@@ -859,7 +862,7 @@ func (o *ChangelogBackendResponse) GetChangelogIncludeKeyAttribute() []string {
 // GetChangelogIncludeKeyAttributeOk returns a tuple with the ChangelogIncludeKeyAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetChangelogIncludeKeyAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.ChangelogIncludeKeyAttribute) {
+	if o == nil || IsNil(o.ChangelogIncludeKeyAttribute) {
 		return nil, false
 	}
 	return o.ChangelogIncludeKeyAttribute, true
@@ -867,7 +870,7 @@ func (o *ChangelogBackendResponse) GetChangelogIncludeKeyAttributeOk() ([]string
 
 // HasChangelogIncludeKeyAttribute returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasChangelogIncludeKeyAttribute() bool {
-	if o != nil && !isNil(o.ChangelogIncludeKeyAttribute) {
+	if o != nil && !IsNil(o.ChangelogIncludeKeyAttribute) {
 		return true
 	}
 
@@ -881,7 +884,7 @@ func (o *ChangelogBackendResponse) SetChangelogIncludeKeyAttribute(v []string) {
 
 // GetChangelogMaxBeforeAfterValues returns the ChangelogMaxBeforeAfterValues field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetChangelogMaxBeforeAfterValues() int32 {
-	if o == nil || isNil(o.ChangelogMaxBeforeAfterValues) {
+	if o == nil || IsNil(o.ChangelogMaxBeforeAfterValues) {
 		var ret int32
 		return ret
 	}
@@ -891,7 +894,7 @@ func (o *ChangelogBackendResponse) GetChangelogMaxBeforeAfterValues() int32 {
 // GetChangelogMaxBeforeAfterValuesOk returns a tuple with the ChangelogMaxBeforeAfterValues field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetChangelogMaxBeforeAfterValuesOk() (*int32, bool) {
-	if o == nil || isNil(o.ChangelogMaxBeforeAfterValues) {
+	if o == nil || IsNil(o.ChangelogMaxBeforeAfterValues) {
 		return nil, false
 	}
 	return o.ChangelogMaxBeforeAfterValues, true
@@ -899,7 +902,7 @@ func (o *ChangelogBackendResponse) GetChangelogMaxBeforeAfterValuesOk() (*int32,
 
 // HasChangelogMaxBeforeAfterValues returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasChangelogMaxBeforeAfterValues() bool {
-	if o != nil && !isNil(o.ChangelogMaxBeforeAfterValues) {
+	if o != nil && !IsNil(o.ChangelogMaxBeforeAfterValues) {
 		return true
 	}
 
@@ -913,7 +916,7 @@ func (o *ChangelogBackendResponse) SetChangelogMaxBeforeAfterValues(v int32) {
 
 // GetWriteLastmodAttributes returns the WriteLastmodAttributes field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetWriteLastmodAttributes() bool {
-	if o == nil || isNil(o.WriteLastmodAttributes) {
+	if o == nil || IsNil(o.WriteLastmodAttributes) {
 		var ret bool
 		return ret
 	}
@@ -923,7 +926,7 @@ func (o *ChangelogBackendResponse) GetWriteLastmodAttributes() bool {
 // GetWriteLastmodAttributesOk returns a tuple with the WriteLastmodAttributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetWriteLastmodAttributesOk() (*bool, bool) {
-	if o == nil || isNil(o.WriteLastmodAttributes) {
+	if o == nil || IsNil(o.WriteLastmodAttributes) {
 		return nil, false
 	}
 	return o.WriteLastmodAttributes, true
@@ -931,7 +934,7 @@ func (o *ChangelogBackendResponse) GetWriteLastmodAttributesOk() (*bool, bool) {
 
 // HasWriteLastmodAttributes returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasWriteLastmodAttributes() bool {
-	if o != nil && !isNil(o.WriteLastmodAttributes) {
+	if o != nil && !IsNil(o.WriteLastmodAttributes) {
 		return true
 	}
 
@@ -945,7 +948,7 @@ func (o *ChangelogBackendResponse) SetWriteLastmodAttributes(v bool) {
 
 // GetUseReversibleForm returns the UseReversibleForm field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetUseReversibleForm() bool {
-	if o == nil || isNil(o.UseReversibleForm) {
+	if o == nil || IsNil(o.UseReversibleForm) {
 		var ret bool
 		return ret
 	}
@@ -955,7 +958,7 @@ func (o *ChangelogBackendResponse) GetUseReversibleForm() bool {
 // GetUseReversibleFormOk returns a tuple with the UseReversibleForm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetUseReversibleFormOk() (*bool, bool) {
-	if o == nil || isNil(o.UseReversibleForm) {
+	if o == nil || IsNil(o.UseReversibleForm) {
 		return nil, false
 	}
 	return o.UseReversibleForm, true
@@ -963,7 +966,7 @@ func (o *ChangelogBackendResponse) GetUseReversibleFormOk() (*bool, bool) {
 
 // HasUseReversibleForm returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasUseReversibleForm() bool {
-	if o != nil && !isNil(o.UseReversibleForm) {
+	if o != nil && !IsNil(o.UseReversibleForm) {
 		return true
 	}
 
@@ -977,7 +980,7 @@ func (o *ChangelogBackendResponse) SetUseReversibleForm(v bool) {
 
 // GetIncludeVirtualAttributes returns the IncludeVirtualAttributes field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetIncludeVirtualAttributes() []EnumbackendIncludeVirtualAttributesProp {
-	if o == nil || isNil(o.IncludeVirtualAttributes) {
+	if o == nil || IsNil(o.IncludeVirtualAttributes) {
 		var ret []EnumbackendIncludeVirtualAttributesProp
 		return ret
 	}
@@ -987,7 +990,7 @@ func (o *ChangelogBackendResponse) GetIncludeVirtualAttributes() []EnumbackendIn
 // GetIncludeVirtualAttributesOk returns a tuple with the IncludeVirtualAttributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetIncludeVirtualAttributesOk() ([]EnumbackendIncludeVirtualAttributesProp, bool) {
-	if o == nil || isNil(o.IncludeVirtualAttributes) {
+	if o == nil || IsNil(o.IncludeVirtualAttributes) {
 		return nil, false
 	}
 	return o.IncludeVirtualAttributes, true
@@ -995,7 +998,7 @@ func (o *ChangelogBackendResponse) GetIncludeVirtualAttributesOk() ([]Enumbacken
 
 // HasIncludeVirtualAttributes returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasIncludeVirtualAttributes() bool {
-	if o != nil && !isNil(o.IncludeVirtualAttributes) {
+	if o != nil && !IsNil(o.IncludeVirtualAttributes) {
 		return true
 	}
 
@@ -1009,7 +1012,7 @@ func (o *ChangelogBackendResponse) SetIncludeVirtualAttributes(v []EnumbackendIn
 
 // GetApplyAccessControlsToChangelogEntryContents returns the ApplyAccessControlsToChangelogEntryContents field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetApplyAccessControlsToChangelogEntryContents() bool {
-	if o == nil || isNil(o.ApplyAccessControlsToChangelogEntryContents) {
+	if o == nil || IsNil(o.ApplyAccessControlsToChangelogEntryContents) {
 		var ret bool
 		return ret
 	}
@@ -1019,7 +1022,7 @@ func (o *ChangelogBackendResponse) GetApplyAccessControlsToChangelogEntryContent
 // GetApplyAccessControlsToChangelogEntryContentsOk returns a tuple with the ApplyAccessControlsToChangelogEntryContents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetApplyAccessControlsToChangelogEntryContentsOk() (*bool, bool) {
-	if o == nil || isNil(o.ApplyAccessControlsToChangelogEntryContents) {
+	if o == nil || IsNil(o.ApplyAccessControlsToChangelogEntryContents) {
 		return nil, false
 	}
 	return o.ApplyAccessControlsToChangelogEntryContents, true
@@ -1027,7 +1030,7 @@ func (o *ChangelogBackendResponse) GetApplyAccessControlsToChangelogEntryContent
 
 // HasApplyAccessControlsToChangelogEntryContents returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasApplyAccessControlsToChangelogEntryContents() bool {
-	if o != nil && !isNil(o.ApplyAccessControlsToChangelogEntryContents) {
+	if o != nil && !IsNil(o.ApplyAccessControlsToChangelogEntryContents) {
 		return true
 	}
 
@@ -1041,7 +1044,7 @@ func (o *ChangelogBackendResponse) SetApplyAccessControlsToChangelogEntryContent
 
 // GetReportExcludedChangelogAttributes returns the ReportExcludedChangelogAttributes field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetReportExcludedChangelogAttributes() EnumbackendReportExcludedChangelogAttributesProp {
-	if o == nil || isNil(o.ReportExcludedChangelogAttributes) {
+	if o == nil || IsNil(o.ReportExcludedChangelogAttributes) {
 		var ret EnumbackendReportExcludedChangelogAttributesProp
 		return ret
 	}
@@ -1051,7 +1054,7 @@ func (o *ChangelogBackendResponse) GetReportExcludedChangelogAttributes() Enumba
 // GetReportExcludedChangelogAttributesOk returns a tuple with the ReportExcludedChangelogAttributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetReportExcludedChangelogAttributesOk() (*EnumbackendReportExcludedChangelogAttributesProp, bool) {
-	if o == nil || isNil(o.ReportExcludedChangelogAttributes) {
+	if o == nil || IsNil(o.ReportExcludedChangelogAttributes) {
 		return nil, false
 	}
 	return o.ReportExcludedChangelogAttributes, true
@@ -1059,7 +1062,7 @@ func (o *ChangelogBackendResponse) GetReportExcludedChangelogAttributesOk() (*En
 
 // HasReportExcludedChangelogAttributes returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasReportExcludedChangelogAttributes() bool {
-	if o != nil && !isNil(o.ReportExcludedChangelogAttributes) {
+	if o != nil && !IsNil(o.ReportExcludedChangelogAttributes) {
 		return true
 	}
 
@@ -1073,7 +1076,7 @@ func (o *ChangelogBackendResponse) SetReportExcludedChangelogAttributes(v Enumba
 
 // GetSoftDeleteEntryIncludedOperation returns the SoftDeleteEntryIncludedOperation field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetSoftDeleteEntryIncludedOperation() []EnumbackendSoftDeleteEntryIncludedOperationProp {
-	if o == nil || isNil(o.SoftDeleteEntryIncludedOperation) {
+	if o == nil || IsNil(o.SoftDeleteEntryIncludedOperation) {
 		var ret []EnumbackendSoftDeleteEntryIncludedOperationProp
 		return ret
 	}
@@ -1083,7 +1086,7 @@ func (o *ChangelogBackendResponse) GetSoftDeleteEntryIncludedOperation() []Enumb
 // GetSoftDeleteEntryIncludedOperationOk returns a tuple with the SoftDeleteEntryIncludedOperation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetSoftDeleteEntryIncludedOperationOk() ([]EnumbackendSoftDeleteEntryIncludedOperationProp, bool) {
-	if o == nil || isNil(o.SoftDeleteEntryIncludedOperation) {
+	if o == nil || IsNil(o.SoftDeleteEntryIncludedOperation) {
 		return nil, false
 	}
 	return o.SoftDeleteEntryIncludedOperation, true
@@ -1091,7 +1094,7 @@ func (o *ChangelogBackendResponse) GetSoftDeleteEntryIncludedOperationOk() ([]En
 
 // HasSoftDeleteEntryIncludedOperation returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasSoftDeleteEntryIncludedOperation() bool {
-	if o != nil && !isNil(o.SoftDeleteEntryIncludedOperation) {
+	if o != nil && !IsNil(o.SoftDeleteEntryIncludedOperation) {
 		return true
 	}
 
@@ -1129,7 +1132,7 @@ func (o *ChangelogBackendResponse) SetBackendID(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -1139,7 +1142,7 @@ func (o *ChangelogBackendResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -1147,7 +1150,7 @@ func (o *ChangelogBackendResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -1185,7 +1188,7 @@ func (o *ChangelogBackendResponse) SetEnabled(v bool) {
 
 // GetSetDegradedAlertWhenDisabled returns the SetDegradedAlertWhenDisabled field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetSetDegradedAlertWhenDisabled() bool {
-	if o == nil || isNil(o.SetDegradedAlertWhenDisabled) {
+	if o == nil || IsNil(o.SetDegradedAlertWhenDisabled) {
 		var ret bool
 		return ret
 	}
@@ -1195,7 +1198,7 @@ func (o *ChangelogBackendResponse) GetSetDegradedAlertWhenDisabled() bool {
 // GetSetDegradedAlertWhenDisabledOk returns a tuple with the SetDegradedAlertWhenDisabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetSetDegradedAlertWhenDisabledOk() (*bool, bool) {
-	if o == nil || isNil(o.SetDegradedAlertWhenDisabled) {
+	if o == nil || IsNil(o.SetDegradedAlertWhenDisabled) {
 		return nil, false
 	}
 	return o.SetDegradedAlertWhenDisabled, true
@@ -1203,7 +1206,7 @@ func (o *ChangelogBackendResponse) GetSetDegradedAlertWhenDisabledOk() (*bool, b
 
 // HasSetDegradedAlertWhenDisabled returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasSetDegradedAlertWhenDisabled() bool {
-	if o != nil && !isNil(o.SetDegradedAlertWhenDisabled) {
+	if o != nil && !IsNil(o.SetDegradedAlertWhenDisabled) {
 		return true
 	}
 
@@ -1217,7 +1220,7 @@ func (o *ChangelogBackendResponse) SetSetDegradedAlertWhenDisabled(v bool) {
 
 // GetReturnUnavailableWhenDisabled returns the ReturnUnavailableWhenDisabled field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetReturnUnavailableWhenDisabled() bool {
-	if o == nil || isNil(o.ReturnUnavailableWhenDisabled) {
+	if o == nil || IsNil(o.ReturnUnavailableWhenDisabled) {
 		var ret bool
 		return ret
 	}
@@ -1227,7 +1230,7 @@ func (o *ChangelogBackendResponse) GetReturnUnavailableWhenDisabled() bool {
 // GetReturnUnavailableWhenDisabledOk returns a tuple with the ReturnUnavailableWhenDisabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetReturnUnavailableWhenDisabledOk() (*bool, bool) {
-	if o == nil || isNil(o.ReturnUnavailableWhenDisabled) {
+	if o == nil || IsNil(o.ReturnUnavailableWhenDisabled) {
 		return nil, false
 	}
 	return o.ReturnUnavailableWhenDisabled, true
@@ -1235,7 +1238,7 @@ func (o *ChangelogBackendResponse) GetReturnUnavailableWhenDisabledOk() (*bool, 
 
 // HasReturnUnavailableWhenDisabled returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasReturnUnavailableWhenDisabled() bool {
-	if o != nil && !isNil(o.ReturnUnavailableWhenDisabled) {
+	if o != nil && !IsNil(o.ReturnUnavailableWhenDisabled) {
 		return true
 	}
 
@@ -1249,7 +1252,7 @@ func (o *ChangelogBackendResponse) SetReturnUnavailableWhenDisabled(v bool) {
 
 // GetNotificationManager returns the NotificationManager field value if set, zero value otherwise.
 func (o *ChangelogBackendResponse) GetNotificationManager() string {
-	if o == nil || isNil(o.NotificationManager) {
+	if o == nil || IsNil(o.NotificationManager) {
 		var ret string
 		return ret
 	}
@@ -1259,7 +1262,7 @@ func (o *ChangelogBackendResponse) GetNotificationManager() string {
 // GetNotificationManagerOk returns a tuple with the NotificationManager field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetNotificationManagerOk() (*string, bool) {
-	if o == nil || isNil(o.NotificationManager) {
+	if o == nil || IsNil(o.NotificationManager) {
 		return nil, false
 	}
 	return o.NotificationManager, true
@@ -1267,7 +1270,7 @@ func (o *ChangelogBackendResponse) GetNotificationManagerOk() (*string, bool) {
 
 // HasNotificationManager returns a boolean if a field has been set.
 func (o *ChangelogBackendResponse) HasNotificationManager() bool {
-	if o != nil && !isNil(o.NotificationManager) {
+	if o != nil && !IsNil(o.NotificationManager) {
 		return true
 	}
 
@@ -1280,122 +1283,118 @@ func (o *ChangelogBackendResponse) SetNotificationManager(v string) {
 }
 
 func (o ChangelogBackendResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["baseDN"] = o.BaseDN
-	}
-	if !isNil(o.DbDirectory) {
-		toSerialize["dbDirectory"] = o.DbDirectory
-	}
-	if !isNil(o.DbDirectoryPermissions) {
-		toSerialize["dbDirectoryPermissions"] = o.DbDirectoryPermissions
-	}
-	if !isNil(o.DbCachePercent) {
-		toSerialize["dbCachePercent"] = o.DbCachePercent
-	}
-	if !isNil(o.JeProperty) {
-		toSerialize["jeProperty"] = o.JeProperty
-	}
-	if !isNil(o.ChangelogWriteBatchSize) {
-		toSerialize["changelogWriteBatchSize"] = o.ChangelogWriteBatchSize
-	}
-	if !isNil(o.ChangelogPurgeBatchSize) {
-		toSerialize["changelogPurgeBatchSize"] = o.ChangelogPurgeBatchSize
-	}
-	if !isNil(o.ChangelogWriteQueueCapacity) {
-		toSerialize["changelogWriteQueueCapacity"] = o.ChangelogWriteQueueCapacity
-	}
-	if !isNil(o.IndexIncludeAttribute) {
-		toSerialize["indexIncludeAttribute"] = o.IndexIncludeAttribute
-	}
-	if !isNil(o.IndexExcludeAttribute) {
-		toSerialize["indexExcludeAttribute"] = o.IndexExcludeAttribute
-	}
-	if true {
-		toSerialize["changelogMaximumAge"] = o.ChangelogMaximumAge
-	}
-	if !isNil(o.TargetDatabaseSize) {
-		toSerialize["targetDatabaseSize"] = o.TargetDatabaseSize
-	}
-	if !isNil(o.ChangelogEntryIncludeBaseDN) {
-		toSerialize["changelogEntryIncludeBaseDN"] = o.ChangelogEntryIncludeBaseDN
-	}
-	if !isNil(o.ChangelogEntryExcludeBaseDN) {
-		toSerialize["changelogEntryExcludeBaseDN"] = o.ChangelogEntryExcludeBaseDN
-	}
-	if !isNil(o.ChangelogEntryIncludeFilter) {
-		toSerialize["changelogEntryIncludeFilter"] = o.ChangelogEntryIncludeFilter
-	}
-	if !isNil(o.ChangelogEntryExcludeFilter) {
-		toSerialize["changelogEntryExcludeFilter"] = o.ChangelogEntryExcludeFilter
-	}
-	if !isNil(o.ChangelogIncludeAttribute) {
-		toSerialize["changelogIncludeAttribute"] = o.ChangelogIncludeAttribute
-	}
-	if !isNil(o.ChangelogExcludeAttribute) {
-		toSerialize["changelogExcludeAttribute"] = o.ChangelogExcludeAttribute
-	}
-	if !isNil(o.ChangelogDeletedEntryIncludeAttribute) {
-		toSerialize["changelogDeletedEntryIncludeAttribute"] = o.ChangelogDeletedEntryIncludeAttribute
-	}
-	if !isNil(o.ChangelogDeletedEntryExcludeAttribute) {
-		toSerialize["changelogDeletedEntryExcludeAttribute"] = o.ChangelogDeletedEntryExcludeAttribute
-	}
-	if !isNil(o.ChangelogIncludeKeyAttribute) {
-		toSerialize["changelogIncludeKeyAttribute"] = o.ChangelogIncludeKeyAttribute
-	}
-	if !isNil(o.ChangelogMaxBeforeAfterValues) {
-		toSerialize["changelogMaxBeforeAfterValues"] = o.ChangelogMaxBeforeAfterValues
-	}
-	if !isNil(o.WriteLastmodAttributes) {
-		toSerialize["writeLastmodAttributes"] = o.WriteLastmodAttributes
-	}
-	if !isNil(o.UseReversibleForm) {
-		toSerialize["useReversibleForm"] = o.UseReversibleForm
-	}
-	if !isNil(o.IncludeVirtualAttributes) {
-		toSerialize["includeVirtualAttributes"] = o.IncludeVirtualAttributes
-	}
-	if !isNil(o.ApplyAccessControlsToChangelogEntryContents) {
-		toSerialize["applyAccessControlsToChangelogEntryContents"] = o.ApplyAccessControlsToChangelogEntryContents
-	}
-	if !isNil(o.ReportExcludedChangelogAttributes) {
-		toSerialize["reportExcludedChangelogAttributes"] = o.ReportExcludedChangelogAttributes
-	}
-	if !isNil(o.SoftDeleteEntryIncludedOperation) {
-		toSerialize["softDeleteEntryIncludedOperation"] = o.SoftDeleteEntryIncludedOperation
-	}
-	if true {
-		toSerialize["backendID"] = o.BackendID
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.SetDegradedAlertWhenDisabled) {
-		toSerialize["setDegradedAlertWhenDisabled"] = o.SetDegradedAlertWhenDisabled
-	}
-	if !isNil(o.ReturnUnavailableWhenDisabled) {
-		toSerialize["returnUnavailableWhenDisabled"] = o.ReturnUnavailableWhenDisabled
-	}
-	if !isNil(o.NotificationManager) {
-		toSerialize["notificationManager"] = o.NotificationManager
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ChangelogBackendResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	toSerialize["baseDN"] = o.BaseDN
+	if !IsNil(o.DbDirectory) {
+		toSerialize["dbDirectory"] = o.DbDirectory
+	}
+	if !IsNil(o.DbDirectoryPermissions) {
+		toSerialize["dbDirectoryPermissions"] = o.DbDirectoryPermissions
+	}
+	if !IsNil(o.DbCachePercent) {
+		toSerialize["dbCachePercent"] = o.DbCachePercent
+	}
+	if !IsNil(o.JeProperty) {
+		toSerialize["jeProperty"] = o.JeProperty
+	}
+	if !IsNil(o.ChangelogWriteBatchSize) {
+		toSerialize["changelogWriteBatchSize"] = o.ChangelogWriteBatchSize
+	}
+	if !IsNil(o.ChangelogPurgeBatchSize) {
+		toSerialize["changelogPurgeBatchSize"] = o.ChangelogPurgeBatchSize
+	}
+	if !IsNil(o.ChangelogWriteQueueCapacity) {
+		toSerialize["changelogWriteQueueCapacity"] = o.ChangelogWriteQueueCapacity
+	}
+	if !IsNil(o.IndexIncludeAttribute) {
+		toSerialize["indexIncludeAttribute"] = o.IndexIncludeAttribute
+	}
+	if !IsNil(o.IndexExcludeAttribute) {
+		toSerialize["indexExcludeAttribute"] = o.IndexExcludeAttribute
+	}
+	toSerialize["changelogMaximumAge"] = o.ChangelogMaximumAge
+	if !IsNil(o.TargetDatabaseSize) {
+		toSerialize["targetDatabaseSize"] = o.TargetDatabaseSize
+	}
+	if !IsNil(o.ChangelogEntryIncludeBaseDN) {
+		toSerialize["changelogEntryIncludeBaseDN"] = o.ChangelogEntryIncludeBaseDN
+	}
+	if !IsNil(o.ChangelogEntryExcludeBaseDN) {
+		toSerialize["changelogEntryExcludeBaseDN"] = o.ChangelogEntryExcludeBaseDN
+	}
+	if !IsNil(o.ChangelogEntryIncludeFilter) {
+		toSerialize["changelogEntryIncludeFilter"] = o.ChangelogEntryIncludeFilter
+	}
+	if !IsNil(o.ChangelogEntryExcludeFilter) {
+		toSerialize["changelogEntryExcludeFilter"] = o.ChangelogEntryExcludeFilter
+	}
+	if !IsNil(o.ChangelogIncludeAttribute) {
+		toSerialize["changelogIncludeAttribute"] = o.ChangelogIncludeAttribute
+	}
+	if !IsNil(o.ChangelogExcludeAttribute) {
+		toSerialize["changelogExcludeAttribute"] = o.ChangelogExcludeAttribute
+	}
+	if !IsNil(o.ChangelogDeletedEntryIncludeAttribute) {
+		toSerialize["changelogDeletedEntryIncludeAttribute"] = o.ChangelogDeletedEntryIncludeAttribute
+	}
+	if !IsNil(o.ChangelogDeletedEntryExcludeAttribute) {
+		toSerialize["changelogDeletedEntryExcludeAttribute"] = o.ChangelogDeletedEntryExcludeAttribute
+	}
+	if !IsNil(o.ChangelogIncludeKeyAttribute) {
+		toSerialize["changelogIncludeKeyAttribute"] = o.ChangelogIncludeKeyAttribute
+	}
+	if !IsNil(o.ChangelogMaxBeforeAfterValues) {
+		toSerialize["changelogMaxBeforeAfterValues"] = o.ChangelogMaxBeforeAfterValues
+	}
+	if !IsNil(o.WriteLastmodAttributes) {
+		toSerialize["writeLastmodAttributes"] = o.WriteLastmodAttributes
+	}
+	if !IsNil(o.UseReversibleForm) {
+		toSerialize["useReversibleForm"] = o.UseReversibleForm
+	}
+	if !IsNil(o.IncludeVirtualAttributes) {
+		toSerialize["includeVirtualAttributes"] = o.IncludeVirtualAttributes
+	}
+	if !IsNil(o.ApplyAccessControlsToChangelogEntryContents) {
+		toSerialize["applyAccessControlsToChangelogEntryContents"] = o.ApplyAccessControlsToChangelogEntryContents
+	}
+	if !IsNil(o.ReportExcludedChangelogAttributes) {
+		toSerialize["reportExcludedChangelogAttributes"] = o.ReportExcludedChangelogAttributes
+	}
+	if !IsNil(o.SoftDeleteEntryIncludedOperation) {
+		toSerialize["softDeleteEntryIncludedOperation"] = o.SoftDeleteEntryIncludedOperation
+	}
+	toSerialize["backendID"] = o.BackendID
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.SetDegradedAlertWhenDisabled) {
+		toSerialize["setDegradedAlertWhenDisabled"] = o.SetDegradedAlertWhenDisabled
+	}
+	if !IsNil(o.ReturnUnavailableWhenDisabled) {
+		toSerialize["returnUnavailableWhenDisabled"] = o.ReturnUnavailableWhenDisabled
+	}
+	if !IsNil(o.NotificationManager) {
+		toSerialize["notificationManager"] = o.NotificationManager
+	}
+	return toSerialize, nil
 }
 
 type NullableChangelogBackendResponse struct {

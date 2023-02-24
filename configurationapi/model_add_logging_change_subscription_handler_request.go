@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddLoggingChangeSubscriptionHandlerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddLoggingChangeSubscriptionHandlerRequest{}
+
 // AddLoggingChangeSubscriptionHandlerRequest struct for AddLoggingChangeSubscriptionHandlerRequest
 type AddLoggingChangeSubscriptionHandlerRequest struct {
 	// Name of the new Change Subscription Handler
@@ -99,7 +102,7 @@ func (o *AddLoggingChangeSubscriptionHandlerRequest) SetSchemas(v []EnumloggingC
 
 // GetLogFile returns the LogFile field value if set, zero value otherwise.
 func (o *AddLoggingChangeSubscriptionHandlerRequest) GetLogFile() string {
-	if o == nil || isNil(o.LogFile) {
+	if o == nil || IsNil(o.LogFile) {
 		var ret string
 		return ret
 	}
@@ -109,7 +112,7 @@ func (o *AddLoggingChangeSubscriptionHandlerRequest) GetLogFile() string {
 // GetLogFileOk returns a tuple with the LogFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLoggingChangeSubscriptionHandlerRequest) GetLogFileOk() (*string, bool) {
-	if o == nil || isNil(o.LogFile) {
+	if o == nil || IsNil(o.LogFile) {
 		return nil, false
 	}
 	return o.LogFile, true
@@ -117,7 +120,7 @@ func (o *AddLoggingChangeSubscriptionHandlerRequest) GetLogFileOk() (*string, bo
 
 // HasLogFile returns a boolean if a field has been set.
 func (o *AddLoggingChangeSubscriptionHandlerRequest) HasLogFile() bool {
-	if o != nil && !isNil(o.LogFile) {
+	if o != nil && !IsNil(o.LogFile) {
 		return true
 	}
 
@@ -131,7 +134,7 @@ func (o *AddLoggingChangeSubscriptionHandlerRequest) SetLogFile(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddLoggingChangeSubscriptionHandlerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -141,7 +144,7 @@ func (o *AddLoggingChangeSubscriptionHandlerRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLoggingChangeSubscriptionHandlerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -149,7 +152,7 @@ func (o *AddLoggingChangeSubscriptionHandlerRequest) GetDescriptionOk() (*string
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddLoggingChangeSubscriptionHandlerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -187,7 +190,7 @@ func (o *AddLoggingChangeSubscriptionHandlerRequest) SetEnabled(v bool) {
 
 // GetChangeSubscription returns the ChangeSubscription field value if set, zero value otherwise.
 func (o *AddLoggingChangeSubscriptionHandlerRequest) GetChangeSubscription() []string {
-	if o == nil || isNil(o.ChangeSubscription) {
+	if o == nil || IsNil(o.ChangeSubscription) {
 		var ret []string
 		return ret
 	}
@@ -197,7 +200,7 @@ func (o *AddLoggingChangeSubscriptionHandlerRequest) GetChangeSubscription() []s
 // GetChangeSubscriptionOk returns a tuple with the ChangeSubscription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLoggingChangeSubscriptionHandlerRequest) GetChangeSubscriptionOk() ([]string, bool) {
-	if o == nil || isNil(o.ChangeSubscription) {
+	if o == nil || IsNil(o.ChangeSubscription) {
 		return nil, false
 	}
 	return o.ChangeSubscription, true
@@ -205,7 +208,7 @@ func (o *AddLoggingChangeSubscriptionHandlerRequest) GetChangeSubscriptionOk() (
 
 // HasChangeSubscription returns a boolean if a field has been set.
 func (o *AddLoggingChangeSubscriptionHandlerRequest) HasChangeSubscription() bool {
-	if o != nil && !isNil(o.ChangeSubscription) {
+	if o != nil && !IsNil(o.ChangeSubscription) {
 		return true
 	}
 
@@ -218,26 +221,28 @@ func (o *AddLoggingChangeSubscriptionHandlerRequest) SetChangeSubscription(v []s
 }
 
 func (o AddLoggingChangeSubscriptionHandlerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["handlerName"] = o.HandlerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.LogFile) {
-		toSerialize["logFile"] = o.LogFile
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.ChangeSubscription) {
-		toSerialize["changeSubscription"] = o.ChangeSubscription
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddLoggingChangeSubscriptionHandlerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["handlerName"] = o.HandlerName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.LogFile) {
+		toSerialize["logFile"] = o.LogFile
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.ChangeSubscription) {
+		toSerialize["changeSubscription"] = o.ChangeSubscription
+	}
+	return toSerialize, nil
 }
 
 type NullableAddLoggingChangeSubscriptionHandlerRequest struct {

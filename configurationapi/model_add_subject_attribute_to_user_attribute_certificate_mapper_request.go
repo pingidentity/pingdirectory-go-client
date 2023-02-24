@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddSubjectAttributeToUserAttributeCertificateMapperRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddSubjectAttributeToUserAttributeCertificateMapperRequest{}
+
 // AddSubjectAttributeToUserAttributeCertificateMapperRequest struct for AddSubjectAttributeToUserAttributeCertificateMapperRequest
 type AddSubjectAttributeToUserAttributeCertificateMapperRequest struct {
 	// Name of the new Certificate Mapper
@@ -124,7 +127,7 @@ func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) SetSubjectA
 
 // GetUserBaseDN returns the UserBaseDN field value if set, zero value otherwise.
 func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) GetUserBaseDN() []string {
-	if o == nil || isNil(o.UserBaseDN) {
+	if o == nil || IsNil(o.UserBaseDN) {
 		var ret []string
 		return ret
 	}
@@ -134,7 +137,7 @@ func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) GetUserBase
 // GetUserBaseDNOk returns a tuple with the UserBaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) GetUserBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.UserBaseDN) {
+	if o == nil || IsNil(o.UserBaseDN) {
 		return nil, false
 	}
 	return o.UserBaseDN, true
@@ -142,7 +145,7 @@ func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) GetUserBase
 
 // HasUserBaseDN returns a boolean if a field has been set.
 func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) HasUserBaseDN() bool {
-	if o != nil && !isNil(o.UserBaseDN) {
+	if o != nil && !IsNil(o.UserBaseDN) {
 		return true
 	}
 
@@ -156,7 +159,7 @@ func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) SetUserBase
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -166,7 +169,7 @@ func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) GetDescript
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -174,7 +177,7 @@ func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) GetDescript
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -211,26 +214,26 @@ func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) SetEnabled(
 }
 
 func (o AddSubjectAttributeToUserAttributeCertificateMapperRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["mapperName"] = o.MapperName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["subjectAttributeMapping"] = o.SubjectAttributeMapping
-	}
-	if !isNil(o.UserBaseDN) {
-		toSerialize["userBaseDN"] = o.UserBaseDN
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddSubjectAttributeToUserAttributeCertificateMapperRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["mapperName"] = o.MapperName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["subjectAttributeMapping"] = o.SubjectAttributeMapping
+	if !IsNil(o.UserBaseDN) {
+		toSerialize["userBaseDN"] = o.UserBaseDN
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddSubjectAttributeToUserAttributeCertificateMapperRequest struct {

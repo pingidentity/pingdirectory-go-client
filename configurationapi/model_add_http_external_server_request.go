@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddHttpExternalServerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddHttpExternalServerRequest{}
+
 // AddHttpExternalServerRequest struct for AddHttpExternalServerRequest
 type AddHttpExternalServerRequest struct {
 	// Name of the new External Server
@@ -130,7 +133,7 @@ func (o *AddHttpExternalServerRequest) SetBaseURL(v string) {
 
 // GetHostnameVerificationMethod returns the HostnameVerificationMethod field value if set, zero value otherwise.
 func (o *AddHttpExternalServerRequest) GetHostnameVerificationMethod() EnumexternalServerHostnameVerificationMethodProp {
-	if o == nil || isNil(o.HostnameVerificationMethod) {
+	if o == nil || IsNil(o.HostnameVerificationMethod) {
 		var ret EnumexternalServerHostnameVerificationMethodProp
 		return ret
 	}
@@ -140,7 +143,7 @@ func (o *AddHttpExternalServerRequest) GetHostnameVerificationMethod() Enumexter
 // GetHostnameVerificationMethodOk returns a tuple with the HostnameVerificationMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddHttpExternalServerRequest) GetHostnameVerificationMethodOk() (*EnumexternalServerHostnameVerificationMethodProp, bool) {
-	if o == nil || isNil(o.HostnameVerificationMethod) {
+	if o == nil || IsNil(o.HostnameVerificationMethod) {
 		return nil, false
 	}
 	return o.HostnameVerificationMethod, true
@@ -148,7 +151,7 @@ func (o *AddHttpExternalServerRequest) GetHostnameVerificationMethodOk() (*Enume
 
 // HasHostnameVerificationMethod returns a boolean if a field has been set.
 func (o *AddHttpExternalServerRequest) HasHostnameVerificationMethod() bool {
-	if o != nil && !isNil(o.HostnameVerificationMethod) {
+	if o != nil && !IsNil(o.HostnameVerificationMethod) {
 		return true
 	}
 
@@ -162,7 +165,7 @@ func (o *AddHttpExternalServerRequest) SetHostnameVerificationMethod(v Enumexter
 
 // GetKeyManagerProvider returns the KeyManagerProvider field value if set, zero value otherwise.
 func (o *AddHttpExternalServerRequest) GetKeyManagerProvider() string {
-	if o == nil || isNil(o.KeyManagerProvider) {
+	if o == nil || IsNil(o.KeyManagerProvider) {
 		var ret string
 		return ret
 	}
@@ -172,7 +175,7 @@ func (o *AddHttpExternalServerRequest) GetKeyManagerProvider() string {
 // GetKeyManagerProviderOk returns a tuple with the KeyManagerProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddHttpExternalServerRequest) GetKeyManagerProviderOk() (*string, bool) {
-	if o == nil || isNil(o.KeyManagerProvider) {
+	if o == nil || IsNil(o.KeyManagerProvider) {
 		return nil, false
 	}
 	return o.KeyManagerProvider, true
@@ -180,7 +183,7 @@ func (o *AddHttpExternalServerRequest) GetKeyManagerProviderOk() (*string, bool)
 
 // HasKeyManagerProvider returns a boolean if a field has been set.
 func (o *AddHttpExternalServerRequest) HasKeyManagerProvider() bool {
-	if o != nil && !isNil(o.KeyManagerProvider) {
+	if o != nil && !IsNil(o.KeyManagerProvider) {
 		return true
 	}
 
@@ -194,7 +197,7 @@ func (o *AddHttpExternalServerRequest) SetKeyManagerProvider(v string) {
 
 // GetTrustManagerProvider returns the TrustManagerProvider field value if set, zero value otherwise.
 func (o *AddHttpExternalServerRequest) GetTrustManagerProvider() string {
-	if o == nil || isNil(o.TrustManagerProvider) {
+	if o == nil || IsNil(o.TrustManagerProvider) {
 		var ret string
 		return ret
 	}
@@ -204,7 +207,7 @@ func (o *AddHttpExternalServerRequest) GetTrustManagerProvider() string {
 // GetTrustManagerProviderOk returns a tuple with the TrustManagerProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddHttpExternalServerRequest) GetTrustManagerProviderOk() (*string, bool) {
-	if o == nil || isNil(o.TrustManagerProvider) {
+	if o == nil || IsNil(o.TrustManagerProvider) {
 		return nil, false
 	}
 	return o.TrustManagerProvider, true
@@ -212,7 +215,7 @@ func (o *AddHttpExternalServerRequest) GetTrustManagerProviderOk() (*string, boo
 
 // HasTrustManagerProvider returns a boolean if a field has been set.
 func (o *AddHttpExternalServerRequest) HasTrustManagerProvider() bool {
-	if o != nil && !isNil(o.TrustManagerProvider) {
+	if o != nil && !IsNil(o.TrustManagerProvider) {
 		return true
 	}
 
@@ -226,7 +229,7 @@ func (o *AddHttpExternalServerRequest) SetTrustManagerProvider(v string) {
 
 // GetSslCertNickname returns the SslCertNickname field value if set, zero value otherwise.
 func (o *AddHttpExternalServerRequest) GetSslCertNickname() string {
-	if o == nil || isNil(o.SslCertNickname) {
+	if o == nil || IsNil(o.SslCertNickname) {
 		var ret string
 		return ret
 	}
@@ -236,7 +239,7 @@ func (o *AddHttpExternalServerRequest) GetSslCertNickname() string {
 // GetSslCertNicknameOk returns a tuple with the SslCertNickname field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddHttpExternalServerRequest) GetSslCertNicknameOk() (*string, bool) {
-	if o == nil || isNil(o.SslCertNickname) {
+	if o == nil || IsNil(o.SslCertNickname) {
 		return nil, false
 	}
 	return o.SslCertNickname, true
@@ -244,7 +247,7 @@ func (o *AddHttpExternalServerRequest) GetSslCertNicknameOk() (*string, bool) {
 
 // HasSslCertNickname returns a boolean if a field has been set.
 func (o *AddHttpExternalServerRequest) HasSslCertNickname() bool {
-	if o != nil && !isNil(o.SslCertNickname) {
+	if o != nil && !IsNil(o.SslCertNickname) {
 		return true
 	}
 
@@ -258,7 +261,7 @@ func (o *AddHttpExternalServerRequest) SetSslCertNickname(v string) {
 
 // GetConnectTimeout returns the ConnectTimeout field value if set, zero value otherwise.
 func (o *AddHttpExternalServerRequest) GetConnectTimeout() string {
-	if o == nil || isNil(o.ConnectTimeout) {
+	if o == nil || IsNil(o.ConnectTimeout) {
 		var ret string
 		return ret
 	}
@@ -268,7 +271,7 @@ func (o *AddHttpExternalServerRequest) GetConnectTimeout() string {
 // GetConnectTimeoutOk returns a tuple with the ConnectTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddHttpExternalServerRequest) GetConnectTimeoutOk() (*string, bool) {
-	if o == nil || isNil(o.ConnectTimeout) {
+	if o == nil || IsNil(o.ConnectTimeout) {
 		return nil, false
 	}
 	return o.ConnectTimeout, true
@@ -276,7 +279,7 @@ func (o *AddHttpExternalServerRequest) GetConnectTimeoutOk() (*string, bool) {
 
 // HasConnectTimeout returns a boolean if a field has been set.
 func (o *AddHttpExternalServerRequest) HasConnectTimeout() bool {
-	if o != nil && !isNil(o.ConnectTimeout) {
+	if o != nil && !IsNil(o.ConnectTimeout) {
 		return true
 	}
 
@@ -290,7 +293,7 @@ func (o *AddHttpExternalServerRequest) SetConnectTimeout(v string) {
 
 // GetResponseTimeout returns the ResponseTimeout field value if set, zero value otherwise.
 func (o *AddHttpExternalServerRequest) GetResponseTimeout() string {
-	if o == nil || isNil(o.ResponseTimeout) {
+	if o == nil || IsNil(o.ResponseTimeout) {
 		var ret string
 		return ret
 	}
@@ -300,7 +303,7 @@ func (o *AddHttpExternalServerRequest) GetResponseTimeout() string {
 // GetResponseTimeoutOk returns a tuple with the ResponseTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddHttpExternalServerRequest) GetResponseTimeoutOk() (*string, bool) {
-	if o == nil || isNil(o.ResponseTimeout) {
+	if o == nil || IsNil(o.ResponseTimeout) {
 		return nil, false
 	}
 	return o.ResponseTimeout, true
@@ -308,7 +311,7 @@ func (o *AddHttpExternalServerRequest) GetResponseTimeoutOk() (*string, bool) {
 
 // HasResponseTimeout returns a boolean if a field has been set.
 func (o *AddHttpExternalServerRequest) HasResponseTimeout() bool {
-	if o != nil && !isNil(o.ResponseTimeout) {
+	if o != nil && !IsNil(o.ResponseTimeout) {
 		return true
 	}
 
@@ -322,7 +325,7 @@ func (o *AddHttpExternalServerRequest) SetResponseTimeout(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddHttpExternalServerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -332,7 +335,7 @@ func (o *AddHttpExternalServerRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddHttpExternalServerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -340,7 +343,7 @@ func (o *AddHttpExternalServerRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddHttpExternalServerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -353,38 +356,40 @@ func (o *AddHttpExternalServerRequest) SetDescription(v string) {
 }
 
 func (o AddHttpExternalServerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["serverName"] = o.ServerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["baseURL"] = o.BaseURL
-	}
-	if !isNil(o.HostnameVerificationMethod) {
-		toSerialize["hostnameVerificationMethod"] = o.HostnameVerificationMethod
-	}
-	if !isNil(o.KeyManagerProvider) {
-		toSerialize["keyManagerProvider"] = o.KeyManagerProvider
-	}
-	if !isNil(o.TrustManagerProvider) {
-		toSerialize["trustManagerProvider"] = o.TrustManagerProvider
-	}
-	if !isNil(o.SslCertNickname) {
-		toSerialize["sslCertNickname"] = o.SslCertNickname
-	}
-	if !isNil(o.ConnectTimeout) {
-		toSerialize["connectTimeout"] = o.ConnectTimeout
-	}
-	if !isNil(o.ResponseTimeout) {
-		toSerialize["responseTimeout"] = o.ResponseTimeout
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddHttpExternalServerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["serverName"] = o.ServerName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["baseURL"] = o.BaseURL
+	if !IsNil(o.HostnameVerificationMethod) {
+		toSerialize["hostnameVerificationMethod"] = o.HostnameVerificationMethod
+	}
+	if !IsNil(o.KeyManagerProvider) {
+		toSerialize["keyManagerProvider"] = o.KeyManagerProvider
+	}
+	if !IsNil(o.TrustManagerProvider) {
+		toSerialize["trustManagerProvider"] = o.TrustManagerProvider
+	}
+	if !IsNil(o.SslCertNickname) {
+		toSerialize["sslCertNickname"] = o.SslCertNickname
+	}
+	if !IsNil(o.ConnectTimeout) {
+		toSerialize["connectTimeout"] = o.ConnectTimeout
+	}
+	if !IsNil(o.ResponseTimeout) {
+		toSerialize["responseTimeout"] = o.ResponseTimeout
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAddHttpExternalServerRequest struct {

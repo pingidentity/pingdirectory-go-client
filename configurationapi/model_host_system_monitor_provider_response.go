@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the HostSystemMonitorProviderResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &HostSystemMonitorProviderResponse{}
+
 // HostSystemMonitorProviderResponse struct for HostSystemMonitorProviderResponse
 type HostSystemMonitorProviderResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -56,7 +59,7 @@ func NewHostSystemMonitorProviderResponseWithDefaults() *HostSystemMonitorProvid
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *HostSystemMonitorProviderResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -66,7 +69,7 @@ func (o *HostSystemMonitorProviderResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HostSystemMonitorProviderResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -74,7 +77,7 @@ func (o *HostSystemMonitorProviderResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *HostSystemMonitorProviderResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -88,7 +91,7 @@ func (o *HostSystemMonitorProviderResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *HostSystemMonitorProviderResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -98,7 +101,7 @@ func (o *HostSystemMonitorProviderResponse) GetUrnpingidentityschemasconfigurati
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HostSystemMonitorProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -106,7 +109,7 @@ func (o *HostSystemMonitorProviderResponse) GetUrnpingidentityschemasconfigurati
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *HostSystemMonitorProviderResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -192,7 +195,7 @@ func (o *HostSystemMonitorProviderResponse) SetEnabled(v bool) {
 
 // GetDiskDevices returns the DiskDevices field value if set, zero value otherwise.
 func (o *HostSystemMonitorProviderResponse) GetDiskDevices() []string {
-	if o == nil || isNil(o.DiskDevices) {
+	if o == nil || IsNil(o.DiskDevices) {
 		var ret []string
 		return ret
 	}
@@ -202,7 +205,7 @@ func (o *HostSystemMonitorProviderResponse) GetDiskDevices() []string {
 // GetDiskDevicesOk returns a tuple with the DiskDevices field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HostSystemMonitorProviderResponse) GetDiskDevicesOk() ([]string, bool) {
-	if o == nil || isNil(o.DiskDevices) {
+	if o == nil || IsNil(o.DiskDevices) {
 		return nil, false
 	}
 	return o.DiskDevices, true
@@ -210,7 +213,7 @@ func (o *HostSystemMonitorProviderResponse) GetDiskDevicesOk() ([]string, bool) 
 
 // HasDiskDevices returns a boolean if a field has been set.
 func (o *HostSystemMonitorProviderResponse) HasDiskDevices() bool {
-	if o != nil && !isNil(o.DiskDevices) {
+	if o != nil && !IsNil(o.DiskDevices) {
 		return true
 	}
 
@@ -224,7 +227,7 @@ func (o *HostSystemMonitorProviderResponse) SetDiskDevices(v []string) {
 
 // GetNetworkDevices returns the NetworkDevices field value if set, zero value otherwise.
 func (o *HostSystemMonitorProviderResponse) GetNetworkDevices() []string {
-	if o == nil || isNil(o.NetworkDevices) {
+	if o == nil || IsNil(o.NetworkDevices) {
 		var ret []string
 		return ret
 	}
@@ -234,7 +237,7 @@ func (o *HostSystemMonitorProviderResponse) GetNetworkDevices() []string {
 // GetNetworkDevicesOk returns a tuple with the NetworkDevices field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HostSystemMonitorProviderResponse) GetNetworkDevicesOk() ([]string, bool) {
-	if o == nil || isNil(o.NetworkDevices) {
+	if o == nil || IsNil(o.NetworkDevices) {
 		return nil, false
 	}
 	return o.NetworkDevices, true
@@ -242,7 +245,7 @@ func (o *HostSystemMonitorProviderResponse) GetNetworkDevicesOk() ([]string, boo
 
 // HasNetworkDevices returns a boolean if a field has been set.
 func (o *HostSystemMonitorProviderResponse) HasNetworkDevices() bool {
-	if o != nil && !isNil(o.NetworkDevices) {
+	if o != nil && !IsNil(o.NetworkDevices) {
 		return true
 	}
 
@@ -280,7 +283,7 @@ func (o *HostSystemMonitorProviderResponse) SetSystemUtilizationMonitorLogDirect
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *HostSystemMonitorProviderResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -290,7 +293,7 @@ func (o *HostSystemMonitorProviderResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HostSystemMonitorProviderResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -298,7 +301,7 @@ func (o *HostSystemMonitorProviderResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *HostSystemMonitorProviderResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -311,35 +314,35 @@ func (o *HostSystemMonitorProviderResponse) SetDescription(v string) {
 }
 
 func (o HostSystemMonitorProviderResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.DiskDevices) {
-		toSerialize["diskDevices"] = o.DiskDevices
-	}
-	if !isNil(o.NetworkDevices) {
-		toSerialize["networkDevices"] = o.NetworkDevices
-	}
-	if true {
-		toSerialize["systemUtilizationMonitorLogDirectory"] = o.SystemUtilizationMonitorLogDirectory
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o HostSystemMonitorProviderResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.DiskDevices) {
+		toSerialize["diskDevices"] = o.DiskDevices
+	}
+	if !IsNil(o.NetworkDevices) {
+		toSerialize["networkDevices"] = o.NetworkDevices
+	}
+	toSerialize["systemUtilizationMonitorLogDirectory"] = o.SystemUtilizationMonitorLogDirectory
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableHostSystemMonitorProviderResponse struct {

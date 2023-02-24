@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the SimpleConnectionCriteriaResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SimpleConnectionCriteriaResponse{}
+
 // SimpleConnectionCriteriaResponse struct for SimpleConnectionCriteriaResponse
 type SimpleConnectionCriteriaResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -89,7 +92,7 @@ func NewSimpleConnectionCriteriaResponseWithDefaults() *SimpleConnectionCriteria
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *SimpleConnectionCriteriaResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -99,7 +102,7 @@ func (o *SimpleConnectionCriteriaResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -107,7 +110,7 @@ func (o *SimpleConnectionCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *SimpleConnectionCriteriaResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -121,7 +124,7 @@ func (o *SimpleConnectionCriteriaResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *SimpleConnectionCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -131,7 +134,7 @@ func (o *SimpleConnectionCriteriaResponse) GetUrnpingidentityschemasconfiguratio
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -139,7 +142,7 @@ func (o *SimpleConnectionCriteriaResponse) GetUrnpingidentityschemasconfiguratio
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *SimpleConnectionCriteriaResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -201,7 +204,7 @@ func (o *SimpleConnectionCriteriaResponse) SetSchemas(v []EnumsimpleConnectionCr
 
 // GetIncludedClientAddress returns the IncludedClientAddress field value if set, zero value otherwise.
 func (o *SimpleConnectionCriteriaResponse) GetIncludedClientAddress() []string {
-	if o == nil || isNil(o.IncludedClientAddress) {
+	if o == nil || IsNil(o.IncludedClientAddress) {
 		var ret []string
 		return ret
 	}
@@ -211,7 +214,7 @@ func (o *SimpleConnectionCriteriaResponse) GetIncludedClientAddress() []string {
 // GetIncludedClientAddressOk returns a tuple with the IncludedClientAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetIncludedClientAddressOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludedClientAddress) {
+	if o == nil || IsNil(o.IncludedClientAddress) {
 		return nil, false
 	}
 	return o.IncludedClientAddress, true
@@ -219,7 +222,7 @@ func (o *SimpleConnectionCriteriaResponse) GetIncludedClientAddressOk() ([]strin
 
 // HasIncludedClientAddress returns a boolean if a field has been set.
 func (o *SimpleConnectionCriteriaResponse) HasIncludedClientAddress() bool {
-	if o != nil && !isNil(o.IncludedClientAddress) {
+	if o != nil && !IsNil(o.IncludedClientAddress) {
 		return true
 	}
 
@@ -233,7 +236,7 @@ func (o *SimpleConnectionCriteriaResponse) SetIncludedClientAddress(v []string) 
 
 // GetExcludedClientAddress returns the ExcludedClientAddress field value if set, zero value otherwise.
 func (o *SimpleConnectionCriteriaResponse) GetExcludedClientAddress() []string {
-	if o == nil || isNil(o.ExcludedClientAddress) {
+	if o == nil || IsNil(o.ExcludedClientAddress) {
 		var ret []string
 		return ret
 	}
@@ -243,7 +246,7 @@ func (o *SimpleConnectionCriteriaResponse) GetExcludedClientAddress() []string {
 // GetExcludedClientAddressOk returns a tuple with the ExcludedClientAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetExcludedClientAddressOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludedClientAddress) {
+	if o == nil || IsNil(o.ExcludedClientAddress) {
 		return nil, false
 	}
 	return o.ExcludedClientAddress, true
@@ -251,7 +254,7 @@ func (o *SimpleConnectionCriteriaResponse) GetExcludedClientAddressOk() ([]strin
 
 // HasExcludedClientAddress returns a boolean if a field has been set.
 func (o *SimpleConnectionCriteriaResponse) HasExcludedClientAddress() bool {
-	if o != nil && !isNil(o.ExcludedClientAddress) {
+	if o != nil && !IsNil(o.ExcludedClientAddress) {
 		return true
 	}
 
@@ -265,7 +268,7 @@ func (o *SimpleConnectionCriteriaResponse) SetExcludedClientAddress(v []string) 
 
 // GetIncludedConnectionHandler returns the IncludedConnectionHandler field value if set, zero value otherwise.
 func (o *SimpleConnectionCriteriaResponse) GetIncludedConnectionHandler() []string {
-	if o == nil || isNil(o.IncludedConnectionHandler) {
+	if o == nil || IsNil(o.IncludedConnectionHandler) {
 		var ret []string
 		return ret
 	}
@@ -275,7 +278,7 @@ func (o *SimpleConnectionCriteriaResponse) GetIncludedConnectionHandler() []stri
 // GetIncludedConnectionHandlerOk returns a tuple with the IncludedConnectionHandler field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetIncludedConnectionHandlerOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludedConnectionHandler) {
+	if o == nil || IsNil(o.IncludedConnectionHandler) {
 		return nil, false
 	}
 	return o.IncludedConnectionHandler, true
@@ -283,7 +286,7 @@ func (o *SimpleConnectionCriteriaResponse) GetIncludedConnectionHandlerOk() ([]s
 
 // HasIncludedConnectionHandler returns a boolean if a field has been set.
 func (o *SimpleConnectionCriteriaResponse) HasIncludedConnectionHandler() bool {
-	if o != nil && !isNil(o.IncludedConnectionHandler) {
+	if o != nil && !IsNil(o.IncludedConnectionHandler) {
 		return true
 	}
 
@@ -297,7 +300,7 @@ func (o *SimpleConnectionCriteriaResponse) SetIncludedConnectionHandler(v []stri
 
 // GetExcludedConnectionHandler returns the ExcludedConnectionHandler field value if set, zero value otherwise.
 func (o *SimpleConnectionCriteriaResponse) GetExcludedConnectionHandler() []string {
-	if o == nil || isNil(o.ExcludedConnectionHandler) {
+	if o == nil || IsNil(o.ExcludedConnectionHandler) {
 		var ret []string
 		return ret
 	}
@@ -307,7 +310,7 @@ func (o *SimpleConnectionCriteriaResponse) GetExcludedConnectionHandler() []stri
 // GetExcludedConnectionHandlerOk returns a tuple with the ExcludedConnectionHandler field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetExcludedConnectionHandlerOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludedConnectionHandler) {
+	if o == nil || IsNil(o.ExcludedConnectionHandler) {
 		return nil, false
 	}
 	return o.ExcludedConnectionHandler, true
@@ -315,7 +318,7 @@ func (o *SimpleConnectionCriteriaResponse) GetExcludedConnectionHandlerOk() ([]s
 
 // HasExcludedConnectionHandler returns a boolean if a field has been set.
 func (o *SimpleConnectionCriteriaResponse) HasExcludedConnectionHandler() bool {
-	if o != nil && !isNil(o.ExcludedConnectionHandler) {
+	if o != nil && !IsNil(o.ExcludedConnectionHandler) {
 		return true
 	}
 
@@ -329,7 +332,7 @@ func (o *SimpleConnectionCriteriaResponse) SetExcludedConnectionHandler(v []stri
 
 // GetIncludedProtocol returns the IncludedProtocol field value if set, zero value otherwise.
 func (o *SimpleConnectionCriteriaResponse) GetIncludedProtocol() []string {
-	if o == nil || isNil(o.IncludedProtocol) {
+	if o == nil || IsNil(o.IncludedProtocol) {
 		var ret []string
 		return ret
 	}
@@ -339,7 +342,7 @@ func (o *SimpleConnectionCriteriaResponse) GetIncludedProtocol() []string {
 // GetIncludedProtocolOk returns a tuple with the IncludedProtocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetIncludedProtocolOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludedProtocol) {
+	if o == nil || IsNil(o.IncludedProtocol) {
 		return nil, false
 	}
 	return o.IncludedProtocol, true
@@ -347,7 +350,7 @@ func (o *SimpleConnectionCriteriaResponse) GetIncludedProtocolOk() ([]string, bo
 
 // HasIncludedProtocol returns a boolean if a field has been set.
 func (o *SimpleConnectionCriteriaResponse) HasIncludedProtocol() bool {
-	if o != nil && !isNil(o.IncludedProtocol) {
+	if o != nil && !IsNil(o.IncludedProtocol) {
 		return true
 	}
 
@@ -361,7 +364,7 @@ func (o *SimpleConnectionCriteriaResponse) SetIncludedProtocol(v []string) {
 
 // GetExcludedProtocol returns the ExcludedProtocol field value if set, zero value otherwise.
 func (o *SimpleConnectionCriteriaResponse) GetExcludedProtocol() []string {
-	if o == nil || isNil(o.ExcludedProtocol) {
+	if o == nil || IsNil(o.ExcludedProtocol) {
 		var ret []string
 		return ret
 	}
@@ -371,7 +374,7 @@ func (o *SimpleConnectionCriteriaResponse) GetExcludedProtocol() []string {
 // GetExcludedProtocolOk returns a tuple with the ExcludedProtocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetExcludedProtocolOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludedProtocol) {
+	if o == nil || IsNil(o.ExcludedProtocol) {
 		return nil, false
 	}
 	return o.ExcludedProtocol, true
@@ -379,7 +382,7 @@ func (o *SimpleConnectionCriteriaResponse) GetExcludedProtocolOk() ([]string, bo
 
 // HasExcludedProtocol returns a boolean if a field has been set.
 func (o *SimpleConnectionCriteriaResponse) HasExcludedProtocol() bool {
-	if o != nil && !isNil(o.ExcludedProtocol) {
+	if o != nil && !IsNil(o.ExcludedProtocol) {
 		return true
 	}
 
@@ -393,7 +396,7 @@ func (o *SimpleConnectionCriteriaResponse) SetExcludedProtocol(v []string) {
 
 // GetCommunicationSecurityLevel returns the CommunicationSecurityLevel field value if set, zero value otherwise.
 func (o *SimpleConnectionCriteriaResponse) GetCommunicationSecurityLevel() EnumconnectionCriteriaCommunicationSecurityLevelProp {
-	if o == nil || isNil(o.CommunicationSecurityLevel) {
+	if o == nil || IsNil(o.CommunicationSecurityLevel) {
 		var ret EnumconnectionCriteriaCommunicationSecurityLevelProp
 		return ret
 	}
@@ -403,7 +406,7 @@ func (o *SimpleConnectionCriteriaResponse) GetCommunicationSecurityLevel() Enumc
 // GetCommunicationSecurityLevelOk returns a tuple with the CommunicationSecurityLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetCommunicationSecurityLevelOk() (*EnumconnectionCriteriaCommunicationSecurityLevelProp, bool) {
-	if o == nil || isNil(o.CommunicationSecurityLevel) {
+	if o == nil || IsNil(o.CommunicationSecurityLevel) {
 		return nil, false
 	}
 	return o.CommunicationSecurityLevel, true
@@ -411,7 +414,7 @@ func (o *SimpleConnectionCriteriaResponse) GetCommunicationSecurityLevelOk() (*E
 
 // HasCommunicationSecurityLevel returns a boolean if a field has been set.
 func (o *SimpleConnectionCriteriaResponse) HasCommunicationSecurityLevel() bool {
-	if o != nil && !isNil(o.CommunicationSecurityLevel) {
+	if o != nil && !IsNil(o.CommunicationSecurityLevel) {
 		return true
 	}
 
@@ -425,7 +428,7 @@ func (o *SimpleConnectionCriteriaResponse) SetCommunicationSecurityLevel(v Enumc
 
 // GetUserAuthType returns the UserAuthType field value if set, zero value otherwise.
 func (o *SimpleConnectionCriteriaResponse) GetUserAuthType() []EnumconnectionCriteriaUserAuthTypeProp {
-	if o == nil || isNil(o.UserAuthType) {
+	if o == nil || IsNil(o.UserAuthType) {
 		var ret []EnumconnectionCriteriaUserAuthTypeProp
 		return ret
 	}
@@ -435,7 +438,7 @@ func (o *SimpleConnectionCriteriaResponse) GetUserAuthType() []EnumconnectionCri
 // GetUserAuthTypeOk returns a tuple with the UserAuthType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetUserAuthTypeOk() ([]EnumconnectionCriteriaUserAuthTypeProp, bool) {
-	if o == nil || isNil(o.UserAuthType) {
+	if o == nil || IsNil(o.UserAuthType) {
 		return nil, false
 	}
 	return o.UserAuthType, true
@@ -443,7 +446,7 @@ func (o *SimpleConnectionCriteriaResponse) GetUserAuthTypeOk() ([]Enumconnection
 
 // HasUserAuthType returns a boolean if a field has been set.
 func (o *SimpleConnectionCriteriaResponse) HasUserAuthType() bool {
-	if o != nil && !isNil(o.UserAuthType) {
+	if o != nil && !IsNil(o.UserAuthType) {
 		return true
 	}
 
@@ -457,7 +460,7 @@ func (o *SimpleConnectionCriteriaResponse) SetUserAuthType(v []EnumconnectionCri
 
 // GetAuthenticationSecurityLevel returns the AuthenticationSecurityLevel field value if set, zero value otherwise.
 func (o *SimpleConnectionCriteriaResponse) GetAuthenticationSecurityLevel() EnumconnectionCriteriaAuthenticationSecurityLevelProp {
-	if o == nil || isNil(o.AuthenticationSecurityLevel) {
+	if o == nil || IsNil(o.AuthenticationSecurityLevel) {
 		var ret EnumconnectionCriteriaAuthenticationSecurityLevelProp
 		return ret
 	}
@@ -467,7 +470,7 @@ func (o *SimpleConnectionCriteriaResponse) GetAuthenticationSecurityLevel() Enum
 // GetAuthenticationSecurityLevelOk returns a tuple with the AuthenticationSecurityLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetAuthenticationSecurityLevelOk() (*EnumconnectionCriteriaAuthenticationSecurityLevelProp, bool) {
-	if o == nil || isNil(o.AuthenticationSecurityLevel) {
+	if o == nil || IsNil(o.AuthenticationSecurityLevel) {
 		return nil, false
 	}
 	return o.AuthenticationSecurityLevel, true
@@ -475,7 +478,7 @@ func (o *SimpleConnectionCriteriaResponse) GetAuthenticationSecurityLevelOk() (*
 
 // HasAuthenticationSecurityLevel returns a boolean if a field has been set.
 func (o *SimpleConnectionCriteriaResponse) HasAuthenticationSecurityLevel() bool {
-	if o != nil && !isNil(o.AuthenticationSecurityLevel) {
+	if o != nil && !IsNil(o.AuthenticationSecurityLevel) {
 		return true
 	}
 
@@ -489,7 +492,7 @@ func (o *SimpleConnectionCriteriaResponse) SetAuthenticationSecurityLevel(v Enum
 
 // GetIncludedUserSASLMechanism returns the IncludedUserSASLMechanism field value if set, zero value otherwise.
 func (o *SimpleConnectionCriteriaResponse) GetIncludedUserSASLMechanism() []string {
-	if o == nil || isNil(o.IncludedUserSASLMechanism) {
+	if o == nil || IsNil(o.IncludedUserSASLMechanism) {
 		var ret []string
 		return ret
 	}
@@ -499,7 +502,7 @@ func (o *SimpleConnectionCriteriaResponse) GetIncludedUserSASLMechanism() []stri
 // GetIncludedUserSASLMechanismOk returns a tuple with the IncludedUserSASLMechanism field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetIncludedUserSASLMechanismOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludedUserSASLMechanism) {
+	if o == nil || IsNil(o.IncludedUserSASLMechanism) {
 		return nil, false
 	}
 	return o.IncludedUserSASLMechanism, true
@@ -507,7 +510,7 @@ func (o *SimpleConnectionCriteriaResponse) GetIncludedUserSASLMechanismOk() ([]s
 
 // HasIncludedUserSASLMechanism returns a boolean if a field has been set.
 func (o *SimpleConnectionCriteriaResponse) HasIncludedUserSASLMechanism() bool {
-	if o != nil && !isNil(o.IncludedUserSASLMechanism) {
+	if o != nil && !IsNil(o.IncludedUserSASLMechanism) {
 		return true
 	}
 
@@ -521,7 +524,7 @@ func (o *SimpleConnectionCriteriaResponse) SetIncludedUserSASLMechanism(v []stri
 
 // GetExcludedUserSASLMechanism returns the ExcludedUserSASLMechanism field value if set, zero value otherwise.
 func (o *SimpleConnectionCriteriaResponse) GetExcludedUserSASLMechanism() []string {
-	if o == nil || isNil(o.ExcludedUserSASLMechanism) {
+	if o == nil || IsNil(o.ExcludedUserSASLMechanism) {
 		var ret []string
 		return ret
 	}
@@ -531,7 +534,7 @@ func (o *SimpleConnectionCriteriaResponse) GetExcludedUserSASLMechanism() []stri
 // GetExcludedUserSASLMechanismOk returns a tuple with the ExcludedUserSASLMechanism field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetExcludedUserSASLMechanismOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludedUserSASLMechanism) {
+	if o == nil || IsNil(o.ExcludedUserSASLMechanism) {
 		return nil, false
 	}
 	return o.ExcludedUserSASLMechanism, true
@@ -539,7 +542,7 @@ func (o *SimpleConnectionCriteriaResponse) GetExcludedUserSASLMechanismOk() ([]s
 
 // HasExcludedUserSASLMechanism returns a boolean if a field has been set.
 func (o *SimpleConnectionCriteriaResponse) HasExcludedUserSASLMechanism() bool {
-	if o != nil && !isNil(o.ExcludedUserSASLMechanism) {
+	if o != nil && !IsNil(o.ExcludedUserSASLMechanism) {
 		return true
 	}
 
@@ -553,7 +556,7 @@ func (o *SimpleConnectionCriteriaResponse) SetExcludedUserSASLMechanism(v []stri
 
 // GetIncludedUserBaseDN returns the IncludedUserBaseDN field value if set, zero value otherwise.
 func (o *SimpleConnectionCriteriaResponse) GetIncludedUserBaseDN() []string {
-	if o == nil || isNil(o.IncludedUserBaseDN) {
+	if o == nil || IsNil(o.IncludedUserBaseDN) {
 		var ret []string
 		return ret
 	}
@@ -563,7 +566,7 @@ func (o *SimpleConnectionCriteriaResponse) GetIncludedUserBaseDN() []string {
 // GetIncludedUserBaseDNOk returns a tuple with the IncludedUserBaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetIncludedUserBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludedUserBaseDN) {
+	if o == nil || IsNil(o.IncludedUserBaseDN) {
 		return nil, false
 	}
 	return o.IncludedUserBaseDN, true
@@ -571,7 +574,7 @@ func (o *SimpleConnectionCriteriaResponse) GetIncludedUserBaseDNOk() ([]string, 
 
 // HasIncludedUserBaseDN returns a boolean if a field has been set.
 func (o *SimpleConnectionCriteriaResponse) HasIncludedUserBaseDN() bool {
-	if o != nil && !isNil(o.IncludedUserBaseDN) {
+	if o != nil && !IsNil(o.IncludedUserBaseDN) {
 		return true
 	}
 
@@ -585,7 +588,7 @@ func (o *SimpleConnectionCriteriaResponse) SetIncludedUserBaseDN(v []string) {
 
 // GetExcludedUserBaseDN returns the ExcludedUserBaseDN field value if set, zero value otherwise.
 func (o *SimpleConnectionCriteriaResponse) GetExcludedUserBaseDN() []string {
-	if o == nil || isNil(o.ExcludedUserBaseDN) {
+	if o == nil || IsNil(o.ExcludedUserBaseDN) {
 		var ret []string
 		return ret
 	}
@@ -595,7 +598,7 @@ func (o *SimpleConnectionCriteriaResponse) GetExcludedUserBaseDN() []string {
 // GetExcludedUserBaseDNOk returns a tuple with the ExcludedUserBaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetExcludedUserBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludedUserBaseDN) {
+	if o == nil || IsNil(o.ExcludedUserBaseDN) {
 		return nil, false
 	}
 	return o.ExcludedUserBaseDN, true
@@ -603,7 +606,7 @@ func (o *SimpleConnectionCriteriaResponse) GetExcludedUserBaseDNOk() ([]string, 
 
 // HasExcludedUserBaseDN returns a boolean if a field has been set.
 func (o *SimpleConnectionCriteriaResponse) HasExcludedUserBaseDN() bool {
-	if o != nil && !isNil(o.ExcludedUserBaseDN) {
+	if o != nil && !IsNil(o.ExcludedUserBaseDN) {
 		return true
 	}
 
@@ -617,7 +620,7 @@ func (o *SimpleConnectionCriteriaResponse) SetExcludedUserBaseDN(v []string) {
 
 // GetAllIncludedUserGroupDN returns the AllIncludedUserGroupDN field value if set, zero value otherwise.
 func (o *SimpleConnectionCriteriaResponse) GetAllIncludedUserGroupDN() []string {
-	if o == nil || isNil(o.AllIncludedUserGroupDN) {
+	if o == nil || IsNil(o.AllIncludedUserGroupDN) {
 		var ret []string
 		return ret
 	}
@@ -627,7 +630,7 @@ func (o *SimpleConnectionCriteriaResponse) GetAllIncludedUserGroupDN() []string 
 // GetAllIncludedUserGroupDNOk returns a tuple with the AllIncludedUserGroupDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetAllIncludedUserGroupDNOk() ([]string, bool) {
-	if o == nil || isNil(o.AllIncludedUserGroupDN) {
+	if o == nil || IsNil(o.AllIncludedUserGroupDN) {
 		return nil, false
 	}
 	return o.AllIncludedUserGroupDN, true
@@ -635,7 +638,7 @@ func (o *SimpleConnectionCriteriaResponse) GetAllIncludedUserGroupDNOk() ([]stri
 
 // HasAllIncludedUserGroupDN returns a boolean if a field has been set.
 func (o *SimpleConnectionCriteriaResponse) HasAllIncludedUserGroupDN() bool {
-	if o != nil && !isNil(o.AllIncludedUserGroupDN) {
+	if o != nil && !IsNil(o.AllIncludedUserGroupDN) {
 		return true
 	}
 
@@ -649,7 +652,7 @@ func (o *SimpleConnectionCriteriaResponse) SetAllIncludedUserGroupDN(v []string)
 
 // GetAnyIncludedUserGroupDN returns the AnyIncludedUserGroupDN field value if set, zero value otherwise.
 func (o *SimpleConnectionCriteriaResponse) GetAnyIncludedUserGroupDN() []string {
-	if o == nil || isNil(o.AnyIncludedUserGroupDN) {
+	if o == nil || IsNil(o.AnyIncludedUserGroupDN) {
 		var ret []string
 		return ret
 	}
@@ -659,7 +662,7 @@ func (o *SimpleConnectionCriteriaResponse) GetAnyIncludedUserGroupDN() []string 
 // GetAnyIncludedUserGroupDNOk returns a tuple with the AnyIncludedUserGroupDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetAnyIncludedUserGroupDNOk() ([]string, bool) {
-	if o == nil || isNil(o.AnyIncludedUserGroupDN) {
+	if o == nil || IsNil(o.AnyIncludedUserGroupDN) {
 		return nil, false
 	}
 	return o.AnyIncludedUserGroupDN, true
@@ -667,7 +670,7 @@ func (o *SimpleConnectionCriteriaResponse) GetAnyIncludedUserGroupDNOk() ([]stri
 
 // HasAnyIncludedUserGroupDN returns a boolean if a field has been set.
 func (o *SimpleConnectionCriteriaResponse) HasAnyIncludedUserGroupDN() bool {
-	if o != nil && !isNil(o.AnyIncludedUserGroupDN) {
+	if o != nil && !IsNil(o.AnyIncludedUserGroupDN) {
 		return true
 	}
 
@@ -681,7 +684,7 @@ func (o *SimpleConnectionCriteriaResponse) SetAnyIncludedUserGroupDN(v []string)
 
 // GetNotAllIncludedUserGroupDN returns the NotAllIncludedUserGroupDN field value if set, zero value otherwise.
 func (o *SimpleConnectionCriteriaResponse) GetNotAllIncludedUserGroupDN() []string {
-	if o == nil || isNil(o.NotAllIncludedUserGroupDN) {
+	if o == nil || IsNil(o.NotAllIncludedUserGroupDN) {
 		var ret []string
 		return ret
 	}
@@ -691,7 +694,7 @@ func (o *SimpleConnectionCriteriaResponse) GetNotAllIncludedUserGroupDN() []stri
 // GetNotAllIncludedUserGroupDNOk returns a tuple with the NotAllIncludedUserGroupDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetNotAllIncludedUserGroupDNOk() ([]string, bool) {
-	if o == nil || isNil(o.NotAllIncludedUserGroupDN) {
+	if o == nil || IsNil(o.NotAllIncludedUserGroupDN) {
 		return nil, false
 	}
 	return o.NotAllIncludedUserGroupDN, true
@@ -699,7 +702,7 @@ func (o *SimpleConnectionCriteriaResponse) GetNotAllIncludedUserGroupDNOk() ([]s
 
 // HasNotAllIncludedUserGroupDN returns a boolean if a field has been set.
 func (o *SimpleConnectionCriteriaResponse) HasNotAllIncludedUserGroupDN() bool {
-	if o != nil && !isNil(o.NotAllIncludedUserGroupDN) {
+	if o != nil && !IsNil(o.NotAllIncludedUserGroupDN) {
 		return true
 	}
 
@@ -713,7 +716,7 @@ func (o *SimpleConnectionCriteriaResponse) SetNotAllIncludedUserGroupDN(v []stri
 
 // GetNoneIncludedUserGroupDN returns the NoneIncludedUserGroupDN field value if set, zero value otherwise.
 func (o *SimpleConnectionCriteriaResponse) GetNoneIncludedUserGroupDN() []string {
-	if o == nil || isNil(o.NoneIncludedUserGroupDN) {
+	if o == nil || IsNil(o.NoneIncludedUserGroupDN) {
 		var ret []string
 		return ret
 	}
@@ -723,7 +726,7 @@ func (o *SimpleConnectionCriteriaResponse) GetNoneIncludedUserGroupDN() []string
 // GetNoneIncludedUserGroupDNOk returns a tuple with the NoneIncludedUserGroupDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetNoneIncludedUserGroupDNOk() ([]string, bool) {
-	if o == nil || isNil(o.NoneIncludedUserGroupDN) {
+	if o == nil || IsNil(o.NoneIncludedUserGroupDN) {
 		return nil, false
 	}
 	return o.NoneIncludedUserGroupDN, true
@@ -731,7 +734,7 @@ func (o *SimpleConnectionCriteriaResponse) GetNoneIncludedUserGroupDNOk() ([]str
 
 // HasNoneIncludedUserGroupDN returns a boolean if a field has been set.
 func (o *SimpleConnectionCriteriaResponse) HasNoneIncludedUserGroupDN() bool {
-	if o != nil && !isNil(o.NoneIncludedUserGroupDN) {
+	if o != nil && !IsNil(o.NoneIncludedUserGroupDN) {
 		return true
 	}
 
@@ -745,7 +748,7 @@ func (o *SimpleConnectionCriteriaResponse) SetNoneIncludedUserGroupDN(v []string
 
 // GetAllIncludedUserFilter returns the AllIncludedUserFilter field value if set, zero value otherwise.
 func (o *SimpleConnectionCriteriaResponse) GetAllIncludedUserFilter() []string {
-	if o == nil || isNil(o.AllIncludedUserFilter) {
+	if o == nil || IsNil(o.AllIncludedUserFilter) {
 		var ret []string
 		return ret
 	}
@@ -755,7 +758,7 @@ func (o *SimpleConnectionCriteriaResponse) GetAllIncludedUserFilter() []string {
 // GetAllIncludedUserFilterOk returns a tuple with the AllIncludedUserFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetAllIncludedUserFilterOk() ([]string, bool) {
-	if o == nil || isNil(o.AllIncludedUserFilter) {
+	if o == nil || IsNil(o.AllIncludedUserFilter) {
 		return nil, false
 	}
 	return o.AllIncludedUserFilter, true
@@ -763,7 +766,7 @@ func (o *SimpleConnectionCriteriaResponse) GetAllIncludedUserFilterOk() ([]strin
 
 // HasAllIncludedUserFilter returns a boolean if a field has been set.
 func (o *SimpleConnectionCriteriaResponse) HasAllIncludedUserFilter() bool {
-	if o != nil && !isNil(o.AllIncludedUserFilter) {
+	if o != nil && !IsNil(o.AllIncludedUserFilter) {
 		return true
 	}
 
@@ -777,7 +780,7 @@ func (o *SimpleConnectionCriteriaResponse) SetAllIncludedUserFilter(v []string) 
 
 // GetAnyIncludedUserFilter returns the AnyIncludedUserFilter field value if set, zero value otherwise.
 func (o *SimpleConnectionCriteriaResponse) GetAnyIncludedUserFilter() []string {
-	if o == nil || isNil(o.AnyIncludedUserFilter) {
+	if o == nil || IsNil(o.AnyIncludedUserFilter) {
 		var ret []string
 		return ret
 	}
@@ -787,7 +790,7 @@ func (o *SimpleConnectionCriteriaResponse) GetAnyIncludedUserFilter() []string {
 // GetAnyIncludedUserFilterOk returns a tuple with the AnyIncludedUserFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetAnyIncludedUserFilterOk() ([]string, bool) {
-	if o == nil || isNil(o.AnyIncludedUserFilter) {
+	if o == nil || IsNil(o.AnyIncludedUserFilter) {
 		return nil, false
 	}
 	return o.AnyIncludedUserFilter, true
@@ -795,7 +798,7 @@ func (o *SimpleConnectionCriteriaResponse) GetAnyIncludedUserFilterOk() ([]strin
 
 // HasAnyIncludedUserFilter returns a boolean if a field has been set.
 func (o *SimpleConnectionCriteriaResponse) HasAnyIncludedUserFilter() bool {
-	if o != nil && !isNil(o.AnyIncludedUserFilter) {
+	if o != nil && !IsNil(o.AnyIncludedUserFilter) {
 		return true
 	}
 
@@ -809,7 +812,7 @@ func (o *SimpleConnectionCriteriaResponse) SetAnyIncludedUserFilter(v []string) 
 
 // GetNotAllIncludedUserFilter returns the NotAllIncludedUserFilter field value if set, zero value otherwise.
 func (o *SimpleConnectionCriteriaResponse) GetNotAllIncludedUserFilter() []string {
-	if o == nil || isNil(o.NotAllIncludedUserFilter) {
+	if o == nil || IsNil(o.NotAllIncludedUserFilter) {
 		var ret []string
 		return ret
 	}
@@ -819,7 +822,7 @@ func (o *SimpleConnectionCriteriaResponse) GetNotAllIncludedUserFilter() []strin
 // GetNotAllIncludedUserFilterOk returns a tuple with the NotAllIncludedUserFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetNotAllIncludedUserFilterOk() ([]string, bool) {
-	if o == nil || isNil(o.NotAllIncludedUserFilter) {
+	if o == nil || IsNil(o.NotAllIncludedUserFilter) {
 		return nil, false
 	}
 	return o.NotAllIncludedUserFilter, true
@@ -827,7 +830,7 @@ func (o *SimpleConnectionCriteriaResponse) GetNotAllIncludedUserFilterOk() ([]st
 
 // HasNotAllIncludedUserFilter returns a boolean if a field has been set.
 func (o *SimpleConnectionCriteriaResponse) HasNotAllIncludedUserFilter() bool {
-	if o != nil && !isNil(o.NotAllIncludedUserFilter) {
+	if o != nil && !IsNil(o.NotAllIncludedUserFilter) {
 		return true
 	}
 
@@ -841,7 +844,7 @@ func (o *SimpleConnectionCriteriaResponse) SetNotAllIncludedUserFilter(v []strin
 
 // GetNoneIncludedUserFilter returns the NoneIncludedUserFilter field value if set, zero value otherwise.
 func (o *SimpleConnectionCriteriaResponse) GetNoneIncludedUserFilter() []string {
-	if o == nil || isNil(o.NoneIncludedUserFilter) {
+	if o == nil || IsNil(o.NoneIncludedUserFilter) {
 		var ret []string
 		return ret
 	}
@@ -851,7 +854,7 @@ func (o *SimpleConnectionCriteriaResponse) GetNoneIncludedUserFilter() []string 
 // GetNoneIncludedUserFilterOk returns a tuple with the NoneIncludedUserFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetNoneIncludedUserFilterOk() ([]string, bool) {
-	if o == nil || isNil(o.NoneIncludedUserFilter) {
+	if o == nil || IsNil(o.NoneIncludedUserFilter) {
 		return nil, false
 	}
 	return o.NoneIncludedUserFilter, true
@@ -859,7 +862,7 @@ func (o *SimpleConnectionCriteriaResponse) GetNoneIncludedUserFilterOk() ([]stri
 
 // HasNoneIncludedUserFilter returns a boolean if a field has been set.
 func (o *SimpleConnectionCriteriaResponse) HasNoneIncludedUserFilter() bool {
-	if o != nil && !isNil(o.NoneIncludedUserFilter) {
+	if o != nil && !IsNil(o.NoneIncludedUserFilter) {
 		return true
 	}
 
@@ -873,7 +876,7 @@ func (o *SimpleConnectionCriteriaResponse) SetNoneIncludedUserFilter(v []string)
 
 // GetAllIncludedUserPrivilege returns the AllIncludedUserPrivilege field value if set, zero value otherwise.
 func (o *SimpleConnectionCriteriaResponse) GetAllIncludedUserPrivilege() []EnumconnectionCriteriaAllIncludedUserPrivilegeProp {
-	if o == nil || isNil(o.AllIncludedUserPrivilege) {
+	if o == nil || IsNil(o.AllIncludedUserPrivilege) {
 		var ret []EnumconnectionCriteriaAllIncludedUserPrivilegeProp
 		return ret
 	}
@@ -883,7 +886,7 @@ func (o *SimpleConnectionCriteriaResponse) GetAllIncludedUserPrivilege() []Enumc
 // GetAllIncludedUserPrivilegeOk returns a tuple with the AllIncludedUserPrivilege field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetAllIncludedUserPrivilegeOk() ([]EnumconnectionCriteriaAllIncludedUserPrivilegeProp, bool) {
-	if o == nil || isNil(o.AllIncludedUserPrivilege) {
+	if o == nil || IsNil(o.AllIncludedUserPrivilege) {
 		return nil, false
 	}
 	return o.AllIncludedUserPrivilege, true
@@ -891,7 +894,7 @@ func (o *SimpleConnectionCriteriaResponse) GetAllIncludedUserPrivilegeOk() ([]En
 
 // HasAllIncludedUserPrivilege returns a boolean if a field has been set.
 func (o *SimpleConnectionCriteriaResponse) HasAllIncludedUserPrivilege() bool {
-	if o != nil && !isNil(o.AllIncludedUserPrivilege) {
+	if o != nil && !IsNil(o.AllIncludedUserPrivilege) {
 		return true
 	}
 
@@ -905,7 +908,7 @@ func (o *SimpleConnectionCriteriaResponse) SetAllIncludedUserPrivilege(v []Enumc
 
 // GetAnyIncludedUserPrivilege returns the AnyIncludedUserPrivilege field value if set, zero value otherwise.
 func (o *SimpleConnectionCriteriaResponse) GetAnyIncludedUserPrivilege() []EnumconnectionCriteriaAnyIncludedUserPrivilegeProp {
-	if o == nil || isNil(o.AnyIncludedUserPrivilege) {
+	if o == nil || IsNil(o.AnyIncludedUserPrivilege) {
 		var ret []EnumconnectionCriteriaAnyIncludedUserPrivilegeProp
 		return ret
 	}
@@ -915,7 +918,7 @@ func (o *SimpleConnectionCriteriaResponse) GetAnyIncludedUserPrivilege() []Enumc
 // GetAnyIncludedUserPrivilegeOk returns a tuple with the AnyIncludedUserPrivilege field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetAnyIncludedUserPrivilegeOk() ([]EnumconnectionCriteriaAnyIncludedUserPrivilegeProp, bool) {
-	if o == nil || isNil(o.AnyIncludedUserPrivilege) {
+	if o == nil || IsNil(o.AnyIncludedUserPrivilege) {
 		return nil, false
 	}
 	return o.AnyIncludedUserPrivilege, true
@@ -923,7 +926,7 @@ func (o *SimpleConnectionCriteriaResponse) GetAnyIncludedUserPrivilegeOk() ([]En
 
 // HasAnyIncludedUserPrivilege returns a boolean if a field has been set.
 func (o *SimpleConnectionCriteriaResponse) HasAnyIncludedUserPrivilege() bool {
-	if o != nil && !isNil(o.AnyIncludedUserPrivilege) {
+	if o != nil && !IsNil(o.AnyIncludedUserPrivilege) {
 		return true
 	}
 
@@ -937,7 +940,7 @@ func (o *SimpleConnectionCriteriaResponse) SetAnyIncludedUserPrivilege(v []Enumc
 
 // GetNotAllIncludedUserPrivilege returns the NotAllIncludedUserPrivilege field value if set, zero value otherwise.
 func (o *SimpleConnectionCriteriaResponse) GetNotAllIncludedUserPrivilege() []EnumconnectionCriteriaNotAllIncludedUserPrivilegeProp {
-	if o == nil || isNil(o.NotAllIncludedUserPrivilege) {
+	if o == nil || IsNil(o.NotAllIncludedUserPrivilege) {
 		var ret []EnumconnectionCriteriaNotAllIncludedUserPrivilegeProp
 		return ret
 	}
@@ -947,7 +950,7 @@ func (o *SimpleConnectionCriteriaResponse) GetNotAllIncludedUserPrivilege() []En
 // GetNotAllIncludedUserPrivilegeOk returns a tuple with the NotAllIncludedUserPrivilege field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetNotAllIncludedUserPrivilegeOk() ([]EnumconnectionCriteriaNotAllIncludedUserPrivilegeProp, bool) {
-	if o == nil || isNil(o.NotAllIncludedUserPrivilege) {
+	if o == nil || IsNil(o.NotAllIncludedUserPrivilege) {
 		return nil, false
 	}
 	return o.NotAllIncludedUserPrivilege, true
@@ -955,7 +958,7 @@ func (o *SimpleConnectionCriteriaResponse) GetNotAllIncludedUserPrivilegeOk() ([
 
 // HasNotAllIncludedUserPrivilege returns a boolean if a field has been set.
 func (o *SimpleConnectionCriteriaResponse) HasNotAllIncludedUserPrivilege() bool {
-	if o != nil && !isNil(o.NotAllIncludedUserPrivilege) {
+	if o != nil && !IsNil(o.NotAllIncludedUserPrivilege) {
 		return true
 	}
 
@@ -969,7 +972,7 @@ func (o *SimpleConnectionCriteriaResponse) SetNotAllIncludedUserPrivilege(v []En
 
 // GetNoneIncludedUserPrivilege returns the NoneIncludedUserPrivilege field value if set, zero value otherwise.
 func (o *SimpleConnectionCriteriaResponse) GetNoneIncludedUserPrivilege() []EnumconnectionCriteriaNoneIncludedUserPrivilegeProp {
-	if o == nil || isNil(o.NoneIncludedUserPrivilege) {
+	if o == nil || IsNil(o.NoneIncludedUserPrivilege) {
 		var ret []EnumconnectionCriteriaNoneIncludedUserPrivilegeProp
 		return ret
 	}
@@ -979,7 +982,7 @@ func (o *SimpleConnectionCriteriaResponse) GetNoneIncludedUserPrivilege() []Enum
 // GetNoneIncludedUserPrivilegeOk returns a tuple with the NoneIncludedUserPrivilege field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetNoneIncludedUserPrivilegeOk() ([]EnumconnectionCriteriaNoneIncludedUserPrivilegeProp, bool) {
-	if o == nil || isNil(o.NoneIncludedUserPrivilege) {
+	if o == nil || IsNil(o.NoneIncludedUserPrivilege) {
 		return nil, false
 	}
 	return o.NoneIncludedUserPrivilege, true
@@ -987,7 +990,7 @@ func (o *SimpleConnectionCriteriaResponse) GetNoneIncludedUserPrivilegeOk() ([]E
 
 // HasNoneIncludedUserPrivilege returns a boolean if a field has been set.
 func (o *SimpleConnectionCriteriaResponse) HasNoneIncludedUserPrivilege() bool {
-	if o != nil && !isNil(o.NoneIncludedUserPrivilege) {
+	if o != nil && !IsNil(o.NoneIncludedUserPrivilege) {
 		return true
 	}
 
@@ -1001,7 +1004,7 @@ func (o *SimpleConnectionCriteriaResponse) SetNoneIncludedUserPrivilege(v []Enum
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *SimpleConnectionCriteriaResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -1011,7 +1014,7 @@ func (o *SimpleConnectionCriteriaResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -1019,7 +1022,7 @@ func (o *SimpleConnectionCriteriaResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *SimpleConnectionCriteriaResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -1032,98 +1035,102 @@ func (o *SimpleConnectionCriteriaResponse) SetDescription(v string) {
 }
 
 func (o SimpleConnectionCriteriaResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.IncludedClientAddress) {
-		toSerialize["includedClientAddress"] = o.IncludedClientAddress
-	}
-	if !isNil(o.ExcludedClientAddress) {
-		toSerialize["excludedClientAddress"] = o.ExcludedClientAddress
-	}
-	if !isNil(o.IncludedConnectionHandler) {
-		toSerialize["includedConnectionHandler"] = o.IncludedConnectionHandler
-	}
-	if !isNil(o.ExcludedConnectionHandler) {
-		toSerialize["excludedConnectionHandler"] = o.ExcludedConnectionHandler
-	}
-	if !isNil(o.IncludedProtocol) {
-		toSerialize["includedProtocol"] = o.IncludedProtocol
-	}
-	if !isNil(o.ExcludedProtocol) {
-		toSerialize["excludedProtocol"] = o.ExcludedProtocol
-	}
-	if !isNil(o.CommunicationSecurityLevel) {
-		toSerialize["communicationSecurityLevel"] = o.CommunicationSecurityLevel
-	}
-	if !isNil(o.UserAuthType) {
-		toSerialize["userAuthType"] = o.UserAuthType
-	}
-	if !isNil(o.AuthenticationSecurityLevel) {
-		toSerialize["authenticationSecurityLevel"] = o.AuthenticationSecurityLevel
-	}
-	if !isNil(o.IncludedUserSASLMechanism) {
-		toSerialize["includedUserSASLMechanism"] = o.IncludedUserSASLMechanism
-	}
-	if !isNil(o.ExcludedUserSASLMechanism) {
-		toSerialize["excludedUserSASLMechanism"] = o.ExcludedUserSASLMechanism
-	}
-	if !isNil(o.IncludedUserBaseDN) {
-		toSerialize["includedUserBaseDN"] = o.IncludedUserBaseDN
-	}
-	if !isNil(o.ExcludedUserBaseDN) {
-		toSerialize["excludedUserBaseDN"] = o.ExcludedUserBaseDN
-	}
-	if !isNil(o.AllIncludedUserGroupDN) {
-		toSerialize["allIncludedUserGroupDN"] = o.AllIncludedUserGroupDN
-	}
-	if !isNil(o.AnyIncludedUserGroupDN) {
-		toSerialize["anyIncludedUserGroupDN"] = o.AnyIncludedUserGroupDN
-	}
-	if !isNil(o.NotAllIncludedUserGroupDN) {
-		toSerialize["notAllIncludedUserGroupDN"] = o.NotAllIncludedUserGroupDN
-	}
-	if !isNil(o.NoneIncludedUserGroupDN) {
-		toSerialize["noneIncludedUserGroupDN"] = o.NoneIncludedUserGroupDN
-	}
-	if !isNil(o.AllIncludedUserFilter) {
-		toSerialize["allIncludedUserFilter"] = o.AllIncludedUserFilter
-	}
-	if !isNil(o.AnyIncludedUserFilter) {
-		toSerialize["anyIncludedUserFilter"] = o.AnyIncludedUserFilter
-	}
-	if !isNil(o.NotAllIncludedUserFilter) {
-		toSerialize["notAllIncludedUserFilter"] = o.NotAllIncludedUserFilter
-	}
-	if !isNil(o.NoneIncludedUserFilter) {
-		toSerialize["noneIncludedUserFilter"] = o.NoneIncludedUserFilter
-	}
-	if !isNil(o.AllIncludedUserPrivilege) {
-		toSerialize["allIncludedUserPrivilege"] = o.AllIncludedUserPrivilege
-	}
-	if !isNil(o.AnyIncludedUserPrivilege) {
-		toSerialize["anyIncludedUserPrivilege"] = o.AnyIncludedUserPrivilege
-	}
-	if !isNil(o.NotAllIncludedUserPrivilege) {
-		toSerialize["notAllIncludedUserPrivilege"] = o.NotAllIncludedUserPrivilege
-	}
-	if !isNil(o.NoneIncludedUserPrivilege) {
-		toSerialize["noneIncludedUserPrivilege"] = o.NoneIncludedUserPrivilege
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o SimpleConnectionCriteriaResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.IncludedClientAddress) {
+		toSerialize["includedClientAddress"] = o.IncludedClientAddress
+	}
+	if !IsNil(o.ExcludedClientAddress) {
+		toSerialize["excludedClientAddress"] = o.ExcludedClientAddress
+	}
+	if !IsNil(o.IncludedConnectionHandler) {
+		toSerialize["includedConnectionHandler"] = o.IncludedConnectionHandler
+	}
+	if !IsNil(o.ExcludedConnectionHandler) {
+		toSerialize["excludedConnectionHandler"] = o.ExcludedConnectionHandler
+	}
+	if !IsNil(o.IncludedProtocol) {
+		toSerialize["includedProtocol"] = o.IncludedProtocol
+	}
+	if !IsNil(o.ExcludedProtocol) {
+		toSerialize["excludedProtocol"] = o.ExcludedProtocol
+	}
+	if !IsNil(o.CommunicationSecurityLevel) {
+		toSerialize["communicationSecurityLevel"] = o.CommunicationSecurityLevel
+	}
+	if !IsNil(o.UserAuthType) {
+		toSerialize["userAuthType"] = o.UserAuthType
+	}
+	if !IsNil(o.AuthenticationSecurityLevel) {
+		toSerialize["authenticationSecurityLevel"] = o.AuthenticationSecurityLevel
+	}
+	if !IsNil(o.IncludedUserSASLMechanism) {
+		toSerialize["includedUserSASLMechanism"] = o.IncludedUserSASLMechanism
+	}
+	if !IsNil(o.ExcludedUserSASLMechanism) {
+		toSerialize["excludedUserSASLMechanism"] = o.ExcludedUserSASLMechanism
+	}
+	if !IsNil(o.IncludedUserBaseDN) {
+		toSerialize["includedUserBaseDN"] = o.IncludedUserBaseDN
+	}
+	if !IsNil(o.ExcludedUserBaseDN) {
+		toSerialize["excludedUserBaseDN"] = o.ExcludedUserBaseDN
+	}
+	if !IsNil(o.AllIncludedUserGroupDN) {
+		toSerialize["allIncludedUserGroupDN"] = o.AllIncludedUserGroupDN
+	}
+	if !IsNil(o.AnyIncludedUserGroupDN) {
+		toSerialize["anyIncludedUserGroupDN"] = o.AnyIncludedUserGroupDN
+	}
+	if !IsNil(o.NotAllIncludedUserGroupDN) {
+		toSerialize["notAllIncludedUserGroupDN"] = o.NotAllIncludedUserGroupDN
+	}
+	if !IsNil(o.NoneIncludedUserGroupDN) {
+		toSerialize["noneIncludedUserGroupDN"] = o.NoneIncludedUserGroupDN
+	}
+	if !IsNil(o.AllIncludedUserFilter) {
+		toSerialize["allIncludedUserFilter"] = o.AllIncludedUserFilter
+	}
+	if !IsNil(o.AnyIncludedUserFilter) {
+		toSerialize["anyIncludedUserFilter"] = o.AnyIncludedUserFilter
+	}
+	if !IsNil(o.NotAllIncludedUserFilter) {
+		toSerialize["notAllIncludedUserFilter"] = o.NotAllIncludedUserFilter
+	}
+	if !IsNil(o.NoneIncludedUserFilter) {
+		toSerialize["noneIncludedUserFilter"] = o.NoneIncludedUserFilter
+	}
+	if !IsNil(o.AllIncludedUserPrivilege) {
+		toSerialize["allIncludedUserPrivilege"] = o.AllIncludedUserPrivilege
+	}
+	if !IsNil(o.AnyIncludedUserPrivilege) {
+		toSerialize["anyIncludedUserPrivilege"] = o.AnyIncludedUserPrivilege
+	}
+	if !IsNil(o.NotAllIncludedUserPrivilege) {
+		toSerialize["notAllIncludedUserPrivilege"] = o.NotAllIncludedUserPrivilege
+	}
+	if !IsNil(o.NoneIncludedUserPrivilege) {
+		toSerialize["noneIncludedUserPrivilege"] = o.NoneIncludedUserPrivilege
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableSimpleConnectionCriteriaResponse struct {

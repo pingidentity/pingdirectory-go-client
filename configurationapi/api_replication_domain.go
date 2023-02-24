@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -67,8 +67,8 @@ func (a *ReplicationDomainApiService) GetReplicationDomainExecute(r ApiGetReplic
 	}
 
 	localVarPath := localBasePath + "/synchronization-providers/{synchronization-provider-name}/replication-domains/{replication-domain-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"replication-domain-name"+"}", url.PathEscape(parameterToString(r.replicationDomainName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"synchronization-provider-name"+"}", url.PathEscape(parameterToString(r.synchronizationProviderName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"replication-domain-name"+"}", url.PathEscape(parameterValueToString(r.replicationDomainName, "replicationDomainName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"synchronization-provider-name"+"}", url.PathEscape(parameterValueToString(r.synchronizationProviderName, "synchronizationProviderName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -101,9 +101,9 @@ func (a *ReplicationDomainApiService) GetReplicationDomainExecute(r ApiGetReplic
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -180,8 +180,8 @@ func (a *ReplicationDomainApiService) UpdateReplicationDomainExecute(r ApiUpdate
 	}
 
 	localVarPath := localBasePath + "/synchronization-providers/{synchronization-provider-name}/replication-domains/{replication-domain-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"replication-domain-name"+"}", url.PathEscape(parameterToString(r.replicationDomainName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"synchronization-provider-name"+"}", url.PathEscape(parameterToString(r.synchronizationProviderName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"replication-domain-name"+"}", url.PathEscape(parameterValueToString(r.replicationDomainName, "replicationDomainName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"synchronization-provider-name"+"}", url.PathEscape(parameterValueToString(r.synchronizationProviderName, "synchronizationProviderName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -219,9 +219,9 @@ func (a *ReplicationDomainApiService) UpdateReplicationDomainExecute(r ApiUpdate
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the MultiplePasswordDataSecurityAuditorResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &MultiplePasswordDataSecurityAuditorResponse{}
+
 // MultiplePasswordDataSecurityAuditorResponse struct for MultiplePasswordDataSecurityAuditorResponse
 type MultiplePasswordDataSecurityAuditorResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -55,7 +58,7 @@ func NewMultiplePasswordDataSecurityAuditorResponseWithDefaults() *MultiplePassw
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *MultiplePasswordDataSecurityAuditorResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -65,7 +68,7 @@ func (o *MultiplePasswordDataSecurityAuditorResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MultiplePasswordDataSecurityAuditorResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -73,7 +76,7 @@ func (o *MultiplePasswordDataSecurityAuditorResponse) GetMetaOk() (*MetaMeta, bo
 
 // HasMeta returns a boolean if a field has been set.
 func (o *MultiplePasswordDataSecurityAuditorResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -87,7 +90,7 @@ func (o *MultiplePasswordDataSecurityAuditorResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *MultiplePasswordDataSecurityAuditorResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -97,7 +100,7 @@ func (o *MultiplePasswordDataSecurityAuditorResponse) GetUrnpingidentityschemasc
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MultiplePasswordDataSecurityAuditorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -105,7 +108,7 @@ func (o *MultiplePasswordDataSecurityAuditorResponse) GetUrnpingidentityschemasc
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *MultiplePasswordDataSecurityAuditorResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -215,7 +218,7 @@ func (o *MultiplePasswordDataSecurityAuditorResponse) SetEnabled(v bool) {
 
 // GetIncludeAttribute returns the IncludeAttribute field value if set, zero value otherwise.
 func (o *MultiplePasswordDataSecurityAuditorResponse) GetIncludeAttribute() []string {
-	if o == nil || isNil(o.IncludeAttribute) {
+	if o == nil || IsNil(o.IncludeAttribute) {
 		var ret []string
 		return ret
 	}
@@ -225,7 +228,7 @@ func (o *MultiplePasswordDataSecurityAuditorResponse) GetIncludeAttribute() []st
 // GetIncludeAttributeOk returns a tuple with the IncludeAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MultiplePasswordDataSecurityAuditorResponse) GetIncludeAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludeAttribute) {
+	if o == nil || IsNil(o.IncludeAttribute) {
 		return nil, false
 	}
 	return o.IncludeAttribute, true
@@ -233,7 +236,7 @@ func (o *MultiplePasswordDataSecurityAuditorResponse) GetIncludeAttributeOk() ([
 
 // HasIncludeAttribute returns a boolean if a field has been set.
 func (o *MultiplePasswordDataSecurityAuditorResponse) HasIncludeAttribute() bool {
-	if o != nil && !isNil(o.IncludeAttribute) {
+	if o != nil && !IsNil(o.IncludeAttribute) {
 		return true
 	}
 
@@ -247,7 +250,7 @@ func (o *MultiplePasswordDataSecurityAuditorResponse) SetIncludeAttribute(v []st
 
 // GetAuditBackend returns the AuditBackend field value if set, zero value otherwise.
 func (o *MultiplePasswordDataSecurityAuditorResponse) GetAuditBackend() []string {
-	if o == nil || isNil(o.AuditBackend) {
+	if o == nil || IsNil(o.AuditBackend) {
 		var ret []string
 		return ret
 	}
@@ -257,7 +260,7 @@ func (o *MultiplePasswordDataSecurityAuditorResponse) GetAuditBackend() []string
 // GetAuditBackendOk returns a tuple with the AuditBackend field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MultiplePasswordDataSecurityAuditorResponse) GetAuditBackendOk() ([]string, bool) {
-	if o == nil || isNil(o.AuditBackend) {
+	if o == nil || IsNil(o.AuditBackend) {
 		return nil, false
 	}
 	return o.AuditBackend, true
@@ -265,7 +268,7 @@ func (o *MultiplePasswordDataSecurityAuditorResponse) GetAuditBackendOk() ([]str
 
 // HasAuditBackend returns a boolean if a field has been set.
 func (o *MultiplePasswordDataSecurityAuditorResponse) HasAuditBackend() bool {
-	if o != nil && !isNil(o.AuditBackend) {
+	if o != nil && !IsNil(o.AuditBackend) {
 		return true
 	}
 
@@ -279,7 +282,7 @@ func (o *MultiplePasswordDataSecurityAuditorResponse) SetAuditBackend(v []string
 
 // GetAuditSeverity returns the AuditSeverity field value if set, zero value otherwise.
 func (o *MultiplePasswordDataSecurityAuditorResponse) GetAuditSeverity() EnumdataSecurityAuditorAuditSeverityProp {
-	if o == nil || isNil(o.AuditSeverity) {
+	if o == nil || IsNil(o.AuditSeverity) {
 		var ret EnumdataSecurityAuditorAuditSeverityProp
 		return ret
 	}
@@ -289,7 +292,7 @@ func (o *MultiplePasswordDataSecurityAuditorResponse) GetAuditSeverity() Enumdat
 // GetAuditSeverityOk returns a tuple with the AuditSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MultiplePasswordDataSecurityAuditorResponse) GetAuditSeverityOk() (*EnumdataSecurityAuditorAuditSeverityProp, bool) {
-	if o == nil || isNil(o.AuditSeverity) {
+	if o == nil || IsNil(o.AuditSeverity) {
 		return nil, false
 	}
 	return o.AuditSeverity, true
@@ -297,7 +300,7 @@ func (o *MultiplePasswordDataSecurityAuditorResponse) GetAuditSeverityOk() (*Enu
 
 // HasAuditSeverity returns a boolean if a field has been set.
 func (o *MultiplePasswordDataSecurityAuditorResponse) HasAuditSeverity() bool {
-	if o != nil && !isNil(o.AuditSeverity) {
+	if o != nil && !IsNil(o.AuditSeverity) {
 		return true
 	}
 
@@ -310,35 +313,35 @@ func (o *MultiplePasswordDataSecurityAuditorResponse) SetAuditSeverity(v Enumdat
 }
 
 func (o MultiplePasswordDataSecurityAuditorResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["reportFile"] = o.ReportFile
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.IncludeAttribute) {
-		toSerialize["includeAttribute"] = o.IncludeAttribute
-	}
-	if !isNil(o.AuditBackend) {
-		toSerialize["auditBackend"] = o.AuditBackend
-	}
-	if !isNil(o.AuditSeverity) {
-		toSerialize["auditSeverity"] = o.AuditSeverity
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o MultiplePasswordDataSecurityAuditorResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["reportFile"] = o.ReportFile
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.IncludeAttribute) {
+		toSerialize["includeAttribute"] = o.IncludeAttribute
+	}
+	if !IsNil(o.AuditBackend) {
+		toSerialize["auditBackend"] = o.AuditBackend
+	}
+	if !IsNil(o.AuditSeverity) {
+		toSerialize["auditSeverity"] = o.AuditSeverity
+	}
+	return toSerialize, nil
 }
 
 type NullableMultiplePasswordDataSecurityAuditorResponse struct {

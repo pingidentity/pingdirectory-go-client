@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddThirdPartySaslMechanismHandlerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddThirdPartySaslMechanismHandlerRequest{}
+
 // AddThirdPartySaslMechanismHandlerRequest struct for AddThirdPartySaslMechanismHandlerRequest
 type AddThirdPartySaslMechanismHandlerRequest struct {
 	// Name of the new SASL Mechanism Handler
@@ -126,7 +129,7 @@ func (o *AddThirdPartySaslMechanismHandlerRequest) SetExtensionClass(v string) {
 
 // GetExtensionArgument returns the ExtensionArgument field value if set, zero value otherwise.
 func (o *AddThirdPartySaslMechanismHandlerRequest) GetExtensionArgument() []string {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		var ret []string
 		return ret
 	}
@@ -136,7 +139,7 @@ func (o *AddThirdPartySaslMechanismHandlerRequest) GetExtensionArgument() []stri
 // GetExtensionArgumentOk returns a tuple with the ExtensionArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartySaslMechanismHandlerRequest) GetExtensionArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		return nil, false
 	}
 	return o.ExtensionArgument, true
@@ -144,7 +147,7 @@ func (o *AddThirdPartySaslMechanismHandlerRequest) GetExtensionArgumentOk() ([]s
 
 // HasExtensionArgument returns a boolean if a field has been set.
 func (o *AddThirdPartySaslMechanismHandlerRequest) HasExtensionArgument() bool {
-	if o != nil && !isNil(o.ExtensionArgument) {
+	if o != nil && !IsNil(o.ExtensionArgument) {
 		return true
 	}
 
@@ -158,7 +161,7 @@ func (o *AddThirdPartySaslMechanismHandlerRequest) SetExtensionArgument(v []stri
 
 // GetIdentityMapper returns the IdentityMapper field value if set, zero value otherwise.
 func (o *AddThirdPartySaslMechanismHandlerRequest) GetIdentityMapper() string {
-	if o == nil || isNil(o.IdentityMapper) {
+	if o == nil || IsNil(o.IdentityMapper) {
 		var ret string
 		return ret
 	}
@@ -168,7 +171,7 @@ func (o *AddThirdPartySaslMechanismHandlerRequest) GetIdentityMapper() string {
 // GetIdentityMapperOk returns a tuple with the IdentityMapper field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartySaslMechanismHandlerRequest) GetIdentityMapperOk() (*string, bool) {
-	if o == nil || isNil(o.IdentityMapper) {
+	if o == nil || IsNil(o.IdentityMapper) {
 		return nil, false
 	}
 	return o.IdentityMapper, true
@@ -176,7 +179,7 @@ func (o *AddThirdPartySaslMechanismHandlerRequest) GetIdentityMapperOk() (*strin
 
 // HasIdentityMapper returns a boolean if a field has been set.
 func (o *AddThirdPartySaslMechanismHandlerRequest) HasIdentityMapper() bool {
-	if o != nil && !isNil(o.IdentityMapper) {
+	if o != nil && !IsNil(o.IdentityMapper) {
 		return true
 	}
 
@@ -190,7 +193,7 @@ func (o *AddThirdPartySaslMechanismHandlerRequest) SetIdentityMapper(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddThirdPartySaslMechanismHandlerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -200,7 +203,7 @@ func (o *AddThirdPartySaslMechanismHandlerRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartySaslMechanismHandlerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -208,7 +211,7 @@ func (o *AddThirdPartySaslMechanismHandlerRequest) GetDescriptionOk() (*string, 
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddThirdPartySaslMechanismHandlerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -245,29 +248,29 @@ func (o *AddThirdPartySaslMechanismHandlerRequest) SetEnabled(v bool) {
 }
 
 func (o AddThirdPartySaslMechanismHandlerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["handlerName"] = o.HandlerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["extensionClass"] = o.ExtensionClass
-	}
-	if !isNil(o.ExtensionArgument) {
-		toSerialize["extensionArgument"] = o.ExtensionArgument
-	}
-	if !isNil(o.IdentityMapper) {
-		toSerialize["identityMapper"] = o.IdentityMapper
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddThirdPartySaslMechanismHandlerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["handlerName"] = o.HandlerName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["extensionClass"] = o.ExtensionClass
+	if !IsNil(o.ExtensionArgument) {
+		toSerialize["extensionArgument"] = o.ExtensionArgument
+	}
+	if !IsNil(o.IdentityMapper) {
+		toSerialize["identityMapper"] = o.IdentityMapper
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddThirdPartySaslMechanismHandlerRequest struct {

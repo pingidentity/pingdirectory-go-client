@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -105,9 +105,9 @@ func (a *GaugeApiService) AddGaugeExecute(r ApiAddGaugeRequest) (*AddGauge200Res
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -171,7 +171,7 @@ func (a *GaugeApiService) DeleteGaugeExecute(r ApiDeleteGaugeRequest) (*http.Res
 	}
 
 	localVarPath := localBasePath + "/gauges/{gauge-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"gauge-name"+"}", url.PathEscape(parameterToString(r.gaugeName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"gauge-name"+"}", url.PathEscape(parameterValueToString(r.gaugeName, "gaugeName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -204,9 +204,9 @@ func (a *GaugeApiService) DeleteGaugeExecute(r ApiDeleteGaugeRequest) (*http.Res
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -264,7 +264,7 @@ func (a *GaugeApiService) GetGaugeExecute(r ApiGetGaugeRequest) (*AddGauge200Res
 	}
 
 	localVarPath := localBasePath + "/gauges/{gauge-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"gauge-name"+"}", url.PathEscape(parameterToString(r.gaugeName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"gauge-name"+"}", url.PathEscape(parameterValueToString(r.gaugeName, "gaugeName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -297,9 +297,9 @@ func (a *GaugeApiService) GetGaugeExecute(r ApiGetGaugeRequest) (*AddGauge200Res
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -373,7 +373,7 @@ func (a *GaugeApiService) UpdateGaugeExecute(r ApiUpdateGaugeRequest) (*AddGauge
 	}
 
 	localVarPath := localBasePath + "/gauges/{gauge-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"gauge-name"+"}", url.PathEscape(parameterToString(r.gaugeName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"gauge-name"+"}", url.PathEscape(parameterValueToString(r.gaugeName, "gaugeName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -411,9 +411,9 @@ func (a *GaugeApiService) UpdateGaugeExecute(r ApiUpdateGaugeRequest) (*AddGauge
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

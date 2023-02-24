@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddSizeLimitLogRotationPolicyRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddSizeLimitLogRotationPolicyRequest{}
+
 // AddSizeLimitLogRotationPolicyRequest struct for AddSizeLimitLogRotationPolicyRequest
 type AddSizeLimitLogRotationPolicyRequest struct {
 	// Name of the new Log Rotation Policy
@@ -119,7 +122,7 @@ func (o *AddSizeLimitLogRotationPolicyRequest) SetFileSizeLimit(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddSizeLimitLogRotationPolicyRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -129,7 +132,7 @@ func (o *AddSizeLimitLogRotationPolicyRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSizeLimitLogRotationPolicyRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -137,7 +140,7 @@ func (o *AddSizeLimitLogRotationPolicyRequest) GetDescriptionOk() (*string, bool
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddSizeLimitLogRotationPolicyRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -150,20 +153,22 @@ func (o *AddSizeLimitLogRotationPolicyRequest) SetDescription(v string) {
 }
 
 func (o AddSizeLimitLogRotationPolicyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["policyName"] = o.PolicyName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["fileSizeLimit"] = o.FileSizeLimit
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddSizeLimitLogRotationPolicyRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["policyName"] = o.PolicyName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["fileSizeLimit"] = o.FileSizeLimit
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAddSizeLimitLogRotationPolicyRequest struct {

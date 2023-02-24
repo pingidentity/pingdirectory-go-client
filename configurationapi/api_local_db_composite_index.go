@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -71,7 +71,7 @@ func (a *LocalDbCompositeIndexApiService) AddLocalDbCompositeIndexExecute(r ApiA
 	}
 
 	localVarPath := localBasePath + "/backends/{backend-name}/local-db-composite-indexes"
-	localVarPath = strings.Replace(localVarPath, "{"+"backend-name"+"}", url.PathEscape(parameterToString(r.backendName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"backend-name"+"}", url.PathEscape(parameterValueToString(r.backendName, "backendName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -109,9 +109,9 @@ func (a *LocalDbCompositeIndexApiService) AddLocalDbCompositeIndexExecute(r ApiA
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -178,8 +178,8 @@ func (a *LocalDbCompositeIndexApiService) DeleteLocalDbCompositeIndexExecute(r A
 	}
 
 	localVarPath := localBasePath + "/backends/{backend-name}/local-db-composite-indexes/{local-db-composite-index-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"local-db-composite-index-name"+"}", url.PathEscape(parameterToString(r.localDbCompositeIndexName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"backend-name"+"}", url.PathEscape(parameterToString(r.backendName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"local-db-composite-index-name"+"}", url.PathEscape(parameterValueToString(r.localDbCompositeIndexName, "localDbCompositeIndexName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"backend-name"+"}", url.PathEscape(parameterValueToString(r.backendName, "backendName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -212,9 +212,9 @@ func (a *LocalDbCompositeIndexApiService) DeleteLocalDbCompositeIndexExecute(r A
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -275,8 +275,8 @@ func (a *LocalDbCompositeIndexApiService) GetLocalDbCompositeIndexExecute(r ApiG
 	}
 
 	localVarPath := localBasePath + "/backends/{backend-name}/local-db-composite-indexes/{local-db-composite-index-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"local-db-composite-index-name"+"}", url.PathEscape(parameterToString(r.localDbCompositeIndexName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"backend-name"+"}", url.PathEscape(parameterToString(r.backendName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"local-db-composite-index-name"+"}", url.PathEscape(parameterValueToString(r.localDbCompositeIndexName, "localDbCompositeIndexName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"backend-name"+"}", url.PathEscape(parameterValueToString(r.backendName, "backendName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -309,9 +309,9 @@ func (a *LocalDbCompositeIndexApiService) GetLocalDbCompositeIndexExecute(r ApiG
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -388,8 +388,8 @@ func (a *LocalDbCompositeIndexApiService) UpdateLocalDbCompositeIndexExecute(r A
 	}
 
 	localVarPath := localBasePath + "/backends/{backend-name}/local-db-composite-indexes/{local-db-composite-index-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"local-db-composite-index-name"+"}", url.PathEscape(parameterToString(r.localDbCompositeIndexName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"backend-name"+"}", url.PathEscape(parameterToString(r.backendName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"local-db-composite-index-name"+"}", url.PathEscape(parameterValueToString(r.localDbCompositeIndexName, "localDbCompositeIndexName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"backend-name"+"}", url.PathEscape(parameterValueToString(r.backendName, "backendName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -427,9 +427,9 @@ func (a *LocalDbCompositeIndexApiService) UpdateLocalDbCompositeIndexExecute(r A
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

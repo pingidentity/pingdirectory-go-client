@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddJdbcExternalServerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddJdbcExternalServerRequest{}
+
 // AddJdbcExternalServerRequest struct for AddJdbcExternalServerRequest
 type AddJdbcExternalServerRequest struct {
 	// Name of the new External Server
@@ -139,7 +142,7 @@ func (o *AddJdbcExternalServerRequest) SetJdbcDriverType(v EnumexternalServerJdb
 
 // GetJdbcDriverURL returns the JdbcDriverURL field value if set, zero value otherwise.
 func (o *AddJdbcExternalServerRequest) GetJdbcDriverURL() string {
-	if o == nil || isNil(o.JdbcDriverURL) {
+	if o == nil || IsNil(o.JdbcDriverURL) {
 		var ret string
 		return ret
 	}
@@ -149,7 +152,7 @@ func (o *AddJdbcExternalServerRequest) GetJdbcDriverURL() string {
 // GetJdbcDriverURLOk returns a tuple with the JdbcDriverURL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJdbcExternalServerRequest) GetJdbcDriverURLOk() (*string, bool) {
-	if o == nil || isNil(o.JdbcDriverURL) {
+	if o == nil || IsNil(o.JdbcDriverURL) {
 		return nil, false
 	}
 	return o.JdbcDriverURL, true
@@ -157,7 +160,7 @@ func (o *AddJdbcExternalServerRequest) GetJdbcDriverURLOk() (*string, bool) {
 
 // HasJdbcDriverURL returns a boolean if a field has been set.
 func (o *AddJdbcExternalServerRequest) HasJdbcDriverURL() bool {
-	if o != nil && !isNil(o.JdbcDriverURL) {
+	if o != nil && !IsNil(o.JdbcDriverURL) {
 		return true
 	}
 
@@ -171,7 +174,7 @@ func (o *AddJdbcExternalServerRequest) SetJdbcDriverURL(v string) {
 
 // GetDatabaseName returns the DatabaseName field value if set, zero value otherwise.
 func (o *AddJdbcExternalServerRequest) GetDatabaseName() string {
-	if o == nil || isNil(o.DatabaseName) {
+	if o == nil || IsNil(o.DatabaseName) {
 		var ret string
 		return ret
 	}
@@ -181,7 +184,7 @@ func (o *AddJdbcExternalServerRequest) GetDatabaseName() string {
 // GetDatabaseNameOk returns a tuple with the DatabaseName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJdbcExternalServerRequest) GetDatabaseNameOk() (*string, bool) {
-	if o == nil || isNil(o.DatabaseName) {
+	if o == nil || IsNil(o.DatabaseName) {
 		return nil, false
 	}
 	return o.DatabaseName, true
@@ -189,7 +192,7 @@ func (o *AddJdbcExternalServerRequest) GetDatabaseNameOk() (*string, bool) {
 
 // HasDatabaseName returns a boolean if a field has been set.
 func (o *AddJdbcExternalServerRequest) HasDatabaseName() bool {
-	if o != nil && !isNil(o.DatabaseName) {
+	if o != nil && !IsNil(o.DatabaseName) {
 		return true
 	}
 
@@ -203,7 +206,7 @@ func (o *AddJdbcExternalServerRequest) SetDatabaseName(v string) {
 
 // GetServerHostName returns the ServerHostName field value if set, zero value otherwise.
 func (o *AddJdbcExternalServerRequest) GetServerHostName() string {
-	if o == nil || isNil(o.ServerHostName) {
+	if o == nil || IsNil(o.ServerHostName) {
 		var ret string
 		return ret
 	}
@@ -213,7 +216,7 @@ func (o *AddJdbcExternalServerRequest) GetServerHostName() string {
 // GetServerHostNameOk returns a tuple with the ServerHostName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJdbcExternalServerRequest) GetServerHostNameOk() (*string, bool) {
-	if o == nil || isNil(o.ServerHostName) {
+	if o == nil || IsNil(o.ServerHostName) {
 		return nil, false
 	}
 	return o.ServerHostName, true
@@ -221,7 +224,7 @@ func (o *AddJdbcExternalServerRequest) GetServerHostNameOk() (*string, bool) {
 
 // HasServerHostName returns a boolean if a field has been set.
 func (o *AddJdbcExternalServerRequest) HasServerHostName() bool {
-	if o != nil && !isNil(o.ServerHostName) {
+	if o != nil && !IsNil(o.ServerHostName) {
 		return true
 	}
 
@@ -235,7 +238,7 @@ func (o *AddJdbcExternalServerRequest) SetServerHostName(v string) {
 
 // GetServerPort returns the ServerPort field value if set, zero value otherwise.
 func (o *AddJdbcExternalServerRequest) GetServerPort() int32 {
-	if o == nil || isNil(o.ServerPort) {
+	if o == nil || IsNil(o.ServerPort) {
 		var ret int32
 		return ret
 	}
@@ -245,7 +248,7 @@ func (o *AddJdbcExternalServerRequest) GetServerPort() int32 {
 // GetServerPortOk returns a tuple with the ServerPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJdbcExternalServerRequest) GetServerPortOk() (*int32, bool) {
-	if o == nil || isNil(o.ServerPort) {
+	if o == nil || IsNil(o.ServerPort) {
 		return nil, false
 	}
 	return o.ServerPort, true
@@ -253,7 +256,7 @@ func (o *AddJdbcExternalServerRequest) GetServerPortOk() (*int32, bool) {
 
 // HasServerPort returns a boolean if a field has been set.
 func (o *AddJdbcExternalServerRequest) HasServerPort() bool {
-	if o != nil && !isNil(o.ServerPort) {
+	if o != nil && !IsNil(o.ServerPort) {
 		return true
 	}
 
@@ -267,7 +270,7 @@ func (o *AddJdbcExternalServerRequest) SetServerPort(v int32) {
 
 // GetUserName returns the UserName field value if set, zero value otherwise.
 func (o *AddJdbcExternalServerRequest) GetUserName() string {
-	if o == nil || isNil(o.UserName) {
+	if o == nil || IsNil(o.UserName) {
 		var ret string
 		return ret
 	}
@@ -277,7 +280,7 @@ func (o *AddJdbcExternalServerRequest) GetUserName() string {
 // GetUserNameOk returns a tuple with the UserName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJdbcExternalServerRequest) GetUserNameOk() (*string, bool) {
-	if o == nil || isNil(o.UserName) {
+	if o == nil || IsNil(o.UserName) {
 		return nil, false
 	}
 	return o.UserName, true
@@ -285,7 +288,7 @@ func (o *AddJdbcExternalServerRequest) GetUserNameOk() (*string, bool) {
 
 // HasUserName returns a boolean if a field has been set.
 func (o *AddJdbcExternalServerRequest) HasUserName() bool {
-	if o != nil && !isNil(o.UserName) {
+	if o != nil && !IsNil(o.UserName) {
 		return true
 	}
 
@@ -299,7 +302,7 @@ func (o *AddJdbcExternalServerRequest) SetUserName(v string) {
 
 // GetPassword returns the Password field value if set, zero value otherwise.
 func (o *AddJdbcExternalServerRequest) GetPassword() string {
-	if o == nil || isNil(o.Password) {
+	if o == nil || IsNil(o.Password) {
 		var ret string
 		return ret
 	}
@@ -309,7 +312,7 @@ func (o *AddJdbcExternalServerRequest) GetPassword() string {
 // GetPasswordOk returns a tuple with the Password field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJdbcExternalServerRequest) GetPasswordOk() (*string, bool) {
-	if o == nil || isNil(o.Password) {
+	if o == nil || IsNil(o.Password) {
 		return nil, false
 	}
 	return o.Password, true
@@ -317,7 +320,7 @@ func (o *AddJdbcExternalServerRequest) GetPasswordOk() (*string, bool) {
 
 // HasPassword returns a boolean if a field has been set.
 func (o *AddJdbcExternalServerRequest) HasPassword() bool {
-	if o != nil && !isNil(o.Password) {
+	if o != nil && !IsNil(o.Password) {
 		return true
 	}
 
@@ -331,7 +334,7 @@ func (o *AddJdbcExternalServerRequest) SetPassword(v string) {
 
 // GetPassphraseProvider returns the PassphraseProvider field value if set, zero value otherwise.
 func (o *AddJdbcExternalServerRequest) GetPassphraseProvider() string {
-	if o == nil || isNil(o.PassphraseProvider) {
+	if o == nil || IsNil(o.PassphraseProvider) {
 		var ret string
 		return ret
 	}
@@ -341,7 +344,7 @@ func (o *AddJdbcExternalServerRequest) GetPassphraseProvider() string {
 // GetPassphraseProviderOk returns a tuple with the PassphraseProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJdbcExternalServerRequest) GetPassphraseProviderOk() (*string, bool) {
-	if o == nil || isNil(o.PassphraseProvider) {
+	if o == nil || IsNil(o.PassphraseProvider) {
 		return nil, false
 	}
 	return o.PassphraseProvider, true
@@ -349,7 +352,7 @@ func (o *AddJdbcExternalServerRequest) GetPassphraseProviderOk() (*string, bool)
 
 // HasPassphraseProvider returns a boolean if a field has been set.
 func (o *AddJdbcExternalServerRequest) HasPassphraseProvider() bool {
-	if o != nil && !isNil(o.PassphraseProvider) {
+	if o != nil && !IsNil(o.PassphraseProvider) {
 		return true
 	}
 
@@ -363,7 +366,7 @@ func (o *AddJdbcExternalServerRequest) SetPassphraseProvider(v string) {
 
 // GetValidationQuery returns the ValidationQuery field value if set, zero value otherwise.
 func (o *AddJdbcExternalServerRequest) GetValidationQuery() string {
-	if o == nil || isNil(o.ValidationQuery) {
+	if o == nil || IsNil(o.ValidationQuery) {
 		var ret string
 		return ret
 	}
@@ -373,7 +376,7 @@ func (o *AddJdbcExternalServerRequest) GetValidationQuery() string {
 // GetValidationQueryOk returns a tuple with the ValidationQuery field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJdbcExternalServerRequest) GetValidationQueryOk() (*string, bool) {
-	if o == nil || isNil(o.ValidationQuery) {
+	if o == nil || IsNil(o.ValidationQuery) {
 		return nil, false
 	}
 	return o.ValidationQuery, true
@@ -381,7 +384,7 @@ func (o *AddJdbcExternalServerRequest) GetValidationQueryOk() (*string, bool) {
 
 // HasValidationQuery returns a boolean if a field has been set.
 func (o *AddJdbcExternalServerRequest) HasValidationQuery() bool {
-	if o != nil && !isNil(o.ValidationQuery) {
+	if o != nil && !IsNil(o.ValidationQuery) {
 		return true
 	}
 
@@ -395,7 +398,7 @@ func (o *AddJdbcExternalServerRequest) SetValidationQuery(v string) {
 
 // GetValidationQueryTimeout returns the ValidationQueryTimeout field value if set, zero value otherwise.
 func (o *AddJdbcExternalServerRequest) GetValidationQueryTimeout() string {
-	if o == nil || isNil(o.ValidationQueryTimeout) {
+	if o == nil || IsNil(o.ValidationQueryTimeout) {
 		var ret string
 		return ret
 	}
@@ -405,7 +408,7 @@ func (o *AddJdbcExternalServerRequest) GetValidationQueryTimeout() string {
 // GetValidationQueryTimeoutOk returns a tuple with the ValidationQueryTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJdbcExternalServerRequest) GetValidationQueryTimeoutOk() (*string, bool) {
-	if o == nil || isNil(o.ValidationQueryTimeout) {
+	if o == nil || IsNil(o.ValidationQueryTimeout) {
 		return nil, false
 	}
 	return o.ValidationQueryTimeout, true
@@ -413,7 +416,7 @@ func (o *AddJdbcExternalServerRequest) GetValidationQueryTimeoutOk() (*string, b
 
 // HasValidationQueryTimeout returns a boolean if a field has been set.
 func (o *AddJdbcExternalServerRequest) HasValidationQueryTimeout() bool {
-	if o != nil && !isNil(o.ValidationQueryTimeout) {
+	if o != nil && !IsNil(o.ValidationQueryTimeout) {
 		return true
 	}
 
@@ -427,7 +430,7 @@ func (o *AddJdbcExternalServerRequest) SetValidationQueryTimeout(v string) {
 
 // GetJdbcConnectionProperties returns the JdbcConnectionProperties field value if set, zero value otherwise.
 func (o *AddJdbcExternalServerRequest) GetJdbcConnectionProperties() []string {
-	if o == nil || isNil(o.JdbcConnectionProperties) {
+	if o == nil || IsNil(o.JdbcConnectionProperties) {
 		var ret []string
 		return ret
 	}
@@ -437,7 +440,7 @@ func (o *AddJdbcExternalServerRequest) GetJdbcConnectionProperties() []string {
 // GetJdbcConnectionPropertiesOk returns a tuple with the JdbcConnectionProperties field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJdbcExternalServerRequest) GetJdbcConnectionPropertiesOk() ([]string, bool) {
-	if o == nil || isNil(o.JdbcConnectionProperties) {
+	if o == nil || IsNil(o.JdbcConnectionProperties) {
 		return nil, false
 	}
 	return o.JdbcConnectionProperties, true
@@ -445,7 +448,7 @@ func (o *AddJdbcExternalServerRequest) GetJdbcConnectionPropertiesOk() ([]string
 
 // HasJdbcConnectionProperties returns a boolean if a field has been set.
 func (o *AddJdbcExternalServerRequest) HasJdbcConnectionProperties() bool {
-	if o != nil && !isNil(o.JdbcConnectionProperties) {
+	if o != nil && !IsNil(o.JdbcConnectionProperties) {
 		return true
 	}
 
@@ -459,7 +462,7 @@ func (o *AddJdbcExternalServerRequest) SetJdbcConnectionProperties(v []string) {
 
 // GetTransactionIsolationLevel returns the TransactionIsolationLevel field value if set, zero value otherwise.
 func (o *AddJdbcExternalServerRequest) GetTransactionIsolationLevel() EnumexternalServerTransactionIsolationLevelProp {
-	if o == nil || isNil(o.TransactionIsolationLevel) {
+	if o == nil || IsNil(o.TransactionIsolationLevel) {
 		var ret EnumexternalServerTransactionIsolationLevelProp
 		return ret
 	}
@@ -469,7 +472,7 @@ func (o *AddJdbcExternalServerRequest) GetTransactionIsolationLevel() Enumextern
 // GetTransactionIsolationLevelOk returns a tuple with the TransactionIsolationLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJdbcExternalServerRequest) GetTransactionIsolationLevelOk() (*EnumexternalServerTransactionIsolationLevelProp, bool) {
-	if o == nil || isNil(o.TransactionIsolationLevel) {
+	if o == nil || IsNil(o.TransactionIsolationLevel) {
 		return nil, false
 	}
 	return o.TransactionIsolationLevel, true
@@ -477,7 +480,7 @@ func (o *AddJdbcExternalServerRequest) GetTransactionIsolationLevelOk() (*Enumex
 
 // HasTransactionIsolationLevel returns a boolean if a field has been set.
 func (o *AddJdbcExternalServerRequest) HasTransactionIsolationLevel() bool {
-	if o != nil && !isNil(o.TransactionIsolationLevel) {
+	if o != nil && !IsNil(o.TransactionIsolationLevel) {
 		return true
 	}
 
@@ -491,7 +494,7 @@ func (o *AddJdbcExternalServerRequest) SetTransactionIsolationLevel(v Enumextern
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddJdbcExternalServerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -501,7 +504,7 @@ func (o *AddJdbcExternalServerRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJdbcExternalServerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -509,7 +512,7 @@ func (o *AddJdbcExternalServerRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddJdbcExternalServerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -522,53 +525,55 @@ func (o *AddJdbcExternalServerRequest) SetDescription(v string) {
 }
 
 func (o AddJdbcExternalServerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["serverName"] = o.ServerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["jdbcDriverType"] = o.JdbcDriverType
-	}
-	if !isNil(o.JdbcDriverURL) {
-		toSerialize["jdbcDriverURL"] = o.JdbcDriverURL
-	}
-	if !isNil(o.DatabaseName) {
-		toSerialize["databaseName"] = o.DatabaseName
-	}
-	if !isNil(o.ServerHostName) {
-		toSerialize["serverHostName"] = o.ServerHostName
-	}
-	if !isNil(o.ServerPort) {
-		toSerialize["serverPort"] = o.ServerPort
-	}
-	if !isNil(o.UserName) {
-		toSerialize["userName"] = o.UserName
-	}
-	if !isNil(o.Password) {
-		toSerialize["password"] = o.Password
-	}
-	if !isNil(o.PassphraseProvider) {
-		toSerialize["passphraseProvider"] = o.PassphraseProvider
-	}
-	if !isNil(o.ValidationQuery) {
-		toSerialize["validationQuery"] = o.ValidationQuery
-	}
-	if !isNil(o.ValidationQueryTimeout) {
-		toSerialize["validationQueryTimeout"] = o.ValidationQueryTimeout
-	}
-	if !isNil(o.JdbcConnectionProperties) {
-		toSerialize["jdbcConnectionProperties"] = o.JdbcConnectionProperties
-	}
-	if !isNil(o.TransactionIsolationLevel) {
-		toSerialize["transactionIsolationLevel"] = o.TransactionIsolationLevel
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddJdbcExternalServerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["serverName"] = o.ServerName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["jdbcDriverType"] = o.JdbcDriverType
+	if !IsNil(o.JdbcDriverURL) {
+		toSerialize["jdbcDriverURL"] = o.JdbcDriverURL
+	}
+	if !IsNil(o.DatabaseName) {
+		toSerialize["databaseName"] = o.DatabaseName
+	}
+	if !IsNil(o.ServerHostName) {
+		toSerialize["serverHostName"] = o.ServerHostName
+	}
+	if !IsNil(o.ServerPort) {
+		toSerialize["serverPort"] = o.ServerPort
+	}
+	if !IsNil(o.UserName) {
+		toSerialize["userName"] = o.UserName
+	}
+	if !IsNil(o.Password) {
+		toSerialize["password"] = o.Password
+	}
+	if !IsNil(o.PassphraseProvider) {
+		toSerialize["passphraseProvider"] = o.PassphraseProvider
+	}
+	if !IsNil(o.ValidationQuery) {
+		toSerialize["validationQuery"] = o.ValidationQuery
+	}
+	if !IsNil(o.ValidationQueryTimeout) {
+		toSerialize["validationQueryTimeout"] = o.ValidationQueryTimeout
+	}
+	if !IsNil(o.JdbcConnectionProperties) {
+		toSerialize["jdbcConnectionProperties"] = o.JdbcConnectionProperties
+	}
+	if !IsNil(o.TransactionIsolationLevel) {
+		toSerialize["transactionIsolationLevel"] = o.TransactionIsolationLevel
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAddJdbcExternalServerRequest struct {

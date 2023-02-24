@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddChangeSubscriptionRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddChangeSubscriptionRequest{}
+
 // AddChangeSubscriptionRequest struct for AddChangeSubscriptionRequest
 type AddChangeSubscriptionRequest struct {
 	// Name of the new Change Subscription
@@ -75,7 +78,7 @@ func (o *AddChangeSubscriptionRequest) SetSubscriptionName(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *AddChangeSubscriptionRequest) GetSchemas() []EnumchangeSubscriptionSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumchangeSubscriptionSchemaUrn
 		return ret
 	}
@@ -85,7 +88,7 @@ func (o *AddChangeSubscriptionRequest) GetSchemas() []EnumchangeSubscriptionSche
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddChangeSubscriptionRequest) GetSchemasOk() ([]EnumchangeSubscriptionSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -93,7 +96,7 @@ func (o *AddChangeSubscriptionRequest) GetSchemasOk() ([]EnumchangeSubscriptionS
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *AddChangeSubscriptionRequest) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -107,7 +110,7 @@ func (o *AddChangeSubscriptionRequest) SetSchemas(v []EnumchangeSubscriptionSche
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddChangeSubscriptionRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -117,7 +120,7 @@ func (o *AddChangeSubscriptionRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddChangeSubscriptionRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -125,7 +128,7 @@ func (o *AddChangeSubscriptionRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddChangeSubscriptionRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -139,7 +142,7 @@ func (o *AddChangeSubscriptionRequest) SetDescription(v string) {
 
 // GetConnectionCriteria returns the ConnectionCriteria field value if set, zero value otherwise.
 func (o *AddChangeSubscriptionRequest) GetConnectionCriteria() string {
-	if o == nil || isNil(o.ConnectionCriteria) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
 		var ret string
 		return ret
 	}
@@ -149,7 +152,7 @@ func (o *AddChangeSubscriptionRequest) GetConnectionCriteria() string {
 // GetConnectionCriteriaOk returns a tuple with the ConnectionCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddChangeSubscriptionRequest) GetConnectionCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.ConnectionCriteria) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
 		return nil, false
 	}
 	return o.ConnectionCriteria, true
@@ -157,7 +160,7 @@ func (o *AddChangeSubscriptionRequest) GetConnectionCriteriaOk() (*string, bool)
 
 // HasConnectionCriteria returns a boolean if a field has been set.
 func (o *AddChangeSubscriptionRequest) HasConnectionCriteria() bool {
-	if o != nil && !isNil(o.ConnectionCriteria) {
+	if o != nil && !IsNil(o.ConnectionCriteria) {
 		return true
 	}
 
@@ -171,7 +174,7 @@ func (o *AddChangeSubscriptionRequest) SetConnectionCriteria(v string) {
 
 // GetRequestCriteria returns the RequestCriteria field value if set, zero value otherwise.
 func (o *AddChangeSubscriptionRequest) GetRequestCriteria() string {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -181,7 +184,7 @@ func (o *AddChangeSubscriptionRequest) GetRequestCriteria() string {
 // GetRequestCriteriaOk returns a tuple with the RequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddChangeSubscriptionRequest) GetRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		return nil, false
 	}
 	return o.RequestCriteria, true
@@ -189,7 +192,7 @@ func (o *AddChangeSubscriptionRequest) GetRequestCriteriaOk() (*string, bool) {
 
 // HasRequestCriteria returns a boolean if a field has been set.
 func (o *AddChangeSubscriptionRequest) HasRequestCriteria() bool {
-	if o != nil && !isNil(o.RequestCriteria) {
+	if o != nil && !IsNil(o.RequestCriteria) {
 		return true
 	}
 
@@ -203,7 +206,7 @@ func (o *AddChangeSubscriptionRequest) SetRequestCriteria(v string) {
 
 // GetResultCriteria returns the ResultCriteria field value if set, zero value otherwise.
 func (o *AddChangeSubscriptionRequest) GetResultCriteria() string {
-	if o == nil || isNil(o.ResultCriteria) {
+	if o == nil || IsNil(o.ResultCriteria) {
 		var ret string
 		return ret
 	}
@@ -213,7 +216,7 @@ func (o *AddChangeSubscriptionRequest) GetResultCriteria() string {
 // GetResultCriteriaOk returns a tuple with the ResultCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddChangeSubscriptionRequest) GetResultCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.ResultCriteria) {
+	if o == nil || IsNil(o.ResultCriteria) {
 		return nil, false
 	}
 	return o.ResultCriteria, true
@@ -221,7 +224,7 @@ func (o *AddChangeSubscriptionRequest) GetResultCriteriaOk() (*string, bool) {
 
 // HasResultCriteria returns a boolean if a field has been set.
 func (o *AddChangeSubscriptionRequest) HasResultCriteria() bool {
-	if o != nil && !isNil(o.ResultCriteria) {
+	if o != nil && !IsNil(o.ResultCriteria) {
 		return true
 	}
 
@@ -235,7 +238,7 @@ func (o *AddChangeSubscriptionRequest) SetResultCriteria(v string) {
 
 // GetExpirationTime returns the ExpirationTime field value if set, zero value otherwise.
 func (o *AddChangeSubscriptionRequest) GetExpirationTime() string {
-	if o == nil || isNil(o.ExpirationTime) {
+	if o == nil || IsNil(o.ExpirationTime) {
 		var ret string
 		return ret
 	}
@@ -245,7 +248,7 @@ func (o *AddChangeSubscriptionRequest) GetExpirationTime() string {
 // GetExpirationTimeOk returns a tuple with the ExpirationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddChangeSubscriptionRequest) GetExpirationTimeOk() (*string, bool) {
-	if o == nil || isNil(o.ExpirationTime) {
+	if o == nil || IsNil(o.ExpirationTime) {
 		return nil, false
 	}
 	return o.ExpirationTime, true
@@ -253,7 +256,7 @@ func (o *AddChangeSubscriptionRequest) GetExpirationTimeOk() (*string, bool) {
 
 // HasExpirationTime returns a boolean if a field has been set.
 func (o *AddChangeSubscriptionRequest) HasExpirationTime() bool {
-	if o != nil && !isNil(o.ExpirationTime) {
+	if o != nil && !IsNil(o.ExpirationTime) {
 		return true
 	}
 
@@ -266,29 +269,35 @@ func (o *AddChangeSubscriptionRequest) SetExpirationTime(v string) {
 }
 
 func (o AddChangeSubscriptionRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["subscriptionName"] = o.SubscriptionName
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if !isNil(o.ConnectionCriteria) {
-		toSerialize["connectionCriteria"] = o.ConnectionCriteria
-	}
-	if !isNil(o.RequestCriteria) {
-		toSerialize["requestCriteria"] = o.RequestCriteria
-	}
-	if !isNil(o.ResultCriteria) {
-		toSerialize["resultCriteria"] = o.ResultCriteria
-	}
-	if !isNil(o.ExpirationTime) {
-		toSerialize["expirationTime"] = o.ExpirationTime
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddChangeSubscriptionRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["subscriptionName"] = o.SubscriptionName
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.ConnectionCriteria) {
+		toSerialize["connectionCriteria"] = o.ConnectionCriteria
+	}
+	if !IsNil(o.RequestCriteria) {
+		toSerialize["requestCriteria"] = o.RequestCriteria
+	}
+	if !IsNil(o.ResultCriteria) {
+		toSerialize["resultCriteria"] = o.ResultCriteria
+	}
+	if !IsNil(o.ExpirationTime) {
+		toSerialize["expirationTime"] = o.ExpirationTime
+	}
+	return toSerialize, nil
 }
 
 type NullableAddChangeSubscriptionRequest struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AttributeBasedLogFieldSyntaxResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AttributeBasedLogFieldSyntaxResponse{}
+
 // AttributeBasedLogFieldSyntaxResponse struct for AttributeBasedLogFieldSyntaxResponse
 type AttributeBasedLogFieldSyntaxResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -51,7 +54,7 @@ func NewAttributeBasedLogFieldSyntaxResponseWithDefaults() *AttributeBasedLogFie
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *AttributeBasedLogFieldSyntaxResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -61,7 +64,7 @@ func (o *AttributeBasedLogFieldSyntaxResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AttributeBasedLogFieldSyntaxResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -69,7 +72,7 @@ func (o *AttributeBasedLogFieldSyntaxResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *AttributeBasedLogFieldSyntaxResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -83,7 +86,7 @@ func (o *AttributeBasedLogFieldSyntaxResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *AttributeBasedLogFieldSyntaxResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -93,7 +96,7 @@ func (o *AttributeBasedLogFieldSyntaxResponse) GetUrnpingidentityschemasconfigur
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AttributeBasedLogFieldSyntaxResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -101,7 +104,7 @@ func (o *AttributeBasedLogFieldSyntaxResponse) GetUrnpingidentityschemasconfigur
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *AttributeBasedLogFieldSyntaxResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -163,7 +166,7 @@ func (o *AttributeBasedLogFieldSyntaxResponse) SetId(v string) {
 
 // GetIncludedSensitiveAttribute returns the IncludedSensitiveAttribute field value if set, zero value otherwise.
 func (o *AttributeBasedLogFieldSyntaxResponse) GetIncludedSensitiveAttribute() []string {
-	if o == nil || isNil(o.IncludedSensitiveAttribute) {
+	if o == nil || IsNil(o.IncludedSensitiveAttribute) {
 		var ret []string
 		return ret
 	}
@@ -173,7 +176,7 @@ func (o *AttributeBasedLogFieldSyntaxResponse) GetIncludedSensitiveAttribute() [
 // GetIncludedSensitiveAttributeOk returns a tuple with the IncludedSensitiveAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AttributeBasedLogFieldSyntaxResponse) GetIncludedSensitiveAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludedSensitiveAttribute) {
+	if o == nil || IsNil(o.IncludedSensitiveAttribute) {
 		return nil, false
 	}
 	return o.IncludedSensitiveAttribute, true
@@ -181,7 +184,7 @@ func (o *AttributeBasedLogFieldSyntaxResponse) GetIncludedSensitiveAttributeOk()
 
 // HasIncludedSensitiveAttribute returns a boolean if a field has been set.
 func (o *AttributeBasedLogFieldSyntaxResponse) HasIncludedSensitiveAttribute() bool {
-	if o != nil && !isNil(o.IncludedSensitiveAttribute) {
+	if o != nil && !IsNil(o.IncludedSensitiveAttribute) {
 		return true
 	}
 
@@ -195,7 +198,7 @@ func (o *AttributeBasedLogFieldSyntaxResponse) SetIncludedSensitiveAttribute(v [
 
 // GetExcludedSensitiveAttribute returns the ExcludedSensitiveAttribute field value if set, zero value otherwise.
 func (o *AttributeBasedLogFieldSyntaxResponse) GetExcludedSensitiveAttribute() []string {
-	if o == nil || isNil(o.ExcludedSensitiveAttribute) {
+	if o == nil || IsNil(o.ExcludedSensitiveAttribute) {
 		var ret []string
 		return ret
 	}
@@ -205,7 +208,7 @@ func (o *AttributeBasedLogFieldSyntaxResponse) GetExcludedSensitiveAttribute() [
 // GetExcludedSensitiveAttributeOk returns a tuple with the ExcludedSensitiveAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AttributeBasedLogFieldSyntaxResponse) GetExcludedSensitiveAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludedSensitiveAttribute) {
+	if o == nil || IsNil(o.ExcludedSensitiveAttribute) {
 		return nil, false
 	}
 	return o.ExcludedSensitiveAttribute, true
@@ -213,7 +216,7 @@ func (o *AttributeBasedLogFieldSyntaxResponse) GetExcludedSensitiveAttributeOk()
 
 // HasExcludedSensitiveAttribute returns a boolean if a field has been set.
 func (o *AttributeBasedLogFieldSyntaxResponse) HasExcludedSensitiveAttribute() bool {
-	if o != nil && !isNil(o.ExcludedSensitiveAttribute) {
+	if o != nil && !IsNil(o.ExcludedSensitiveAttribute) {
 		return true
 	}
 
@@ -227,7 +230,7 @@ func (o *AttributeBasedLogFieldSyntaxResponse) SetExcludedSensitiveAttribute(v [
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AttributeBasedLogFieldSyntaxResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -237,7 +240,7 @@ func (o *AttributeBasedLogFieldSyntaxResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AttributeBasedLogFieldSyntaxResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -245,7 +248,7 @@ func (o *AttributeBasedLogFieldSyntaxResponse) GetDescriptionOk() (*string, bool
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AttributeBasedLogFieldSyntaxResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -259,7 +262,7 @@ func (o *AttributeBasedLogFieldSyntaxResponse) SetDescription(v string) {
 
 // GetDefaultBehavior returns the DefaultBehavior field value if set, zero value otherwise.
 func (o *AttributeBasedLogFieldSyntaxResponse) GetDefaultBehavior() EnumlogFieldSyntaxDefaultBehaviorProp {
-	if o == nil || isNil(o.DefaultBehavior) {
+	if o == nil || IsNil(o.DefaultBehavior) {
 		var ret EnumlogFieldSyntaxDefaultBehaviorProp
 		return ret
 	}
@@ -269,7 +272,7 @@ func (o *AttributeBasedLogFieldSyntaxResponse) GetDefaultBehavior() EnumlogField
 // GetDefaultBehaviorOk returns a tuple with the DefaultBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AttributeBasedLogFieldSyntaxResponse) GetDefaultBehaviorOk() (*EnumlogFieldSyntaxDefaultBehaviorProp, bool) {
-	if o == nil || isNil(o.DefaultBehavior) {
+	if o == nil || IsNil(o.DefaultBehavior) {
 		return nil, false
 	}
 	return o.DefaultBehavior, true
@@ -277,7 +280,7 @@ func (o *AttributeBasedLogFieldSyntaxResponse) GetDefaultBehaviorOk() (*EnumlogF
 
 // HasDefaultBehavior returns a boolean if a field has been set.
 func (o *AttributeBasedLogFieldSyntaxResponse) HasDefaultBehavior() bool {
-	if o != nil && !isNil(o.DefaultBehavior) {
+	if o != nil && !IsNil(o.DefaultBehavior) {
 		return true
 	}
 
@@ -290,32 +293,36 @@ func (o *AttributeBasedLogFieldSyntaxResponse) SetDefaultBehavior(v EnumlogField
 }
 
 func (o AttributeBasedLogFieldSyntaxResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.IncludedSensitiveAttribute) {
-		toSerialize["includedSensitiveAttribute"] = o.IncludedSensitiveAttribute
-	}
-	if !isNil(o.ExcludedSensitiveAttribute) {
-		toSerialize["excludedSensitiveAttribute"] = o.ExcludedSensitiveAttribute
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if !isNil(o.DefaultBehavior) {
-		toSerialize["defaultBehavior"] = o.DefaultBehavior
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AttributeBasedLogFieldSyntaxResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	if !IsNil(o.IncludedSensitiveAttribute) {
+		toSerialize["includedSensitiveAttribute"] = o.IncludedSensitiveAttribute
+	}
+	if !IsNil(o.ExcludedSensitiveAttribute) {
+		toSerialize["excludedSensitiveAttribute"] = o.ExcludedSensitiveAttribute
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.DefaultBehavior) {
+		toSerialize["defaultBehavior"] = o.DefaultBehavior
+	}
+	return toSerialize, nil
 }
 
 type NullableAttributeBasedLogFieldSyntaxResponse struct {

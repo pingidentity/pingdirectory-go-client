@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the DirectoryServerInstanceResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &DirectoryServerInstanceResponse{}
+
 // DirectoryServerInstanceResponse struct for DirectoryServerInstanceResponse
 type DirectoryServerInstanceResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -91,7 +94,7 @@ func NewDirectoryServerInstanceResponseWithDefaults() *DirectoryServerInstanceRe
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *DirectoryServerInstanceResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -101,7 +104,7 @@ func (o *DirectoryServerInstanceResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -109,7 +112,7 @@ func (o *DirectoryServerInstanceResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *DirectoryServerInstanceResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -123,7 +126,7 @@ func (o *DirectoryServerInstanceResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *DirectoryServerInstanceResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -133,7 +136,7 @@ func (o *DirectoryServerInstanceResponse) GetUrnpingidentityschemasconfiguration
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -141,7 +144,7 @@ func (o *DirectoryServerInstanceResponse) GetUrnpingidentityschemasconfiguration
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *DirectoryServerInstanceResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -203,7 +206,7 @@ func (o *DirectoryServerInstanceResponse) SetId(v string) {
 
 // GetServerInstanceType returns the ServerInstanceType field value if set, zero value otherwise.
 func (o *DirectoryServerInstanceResponse) GetServerInstanceType() EnumserverInstanceServerInstanceTypeProp {
-	if o == nil || isNil(o.ServerInstanceType) {
+	if o == nil || IsNil(o.ServerInstanceType) {
 		var ret EnumserverInstanceServerInstanceTypeProp
 		return ret
 	}
@@ -213,7 +216,7 @@ func (o *DirectoryServerInstanceResponse) GetServerInstanceType() EnumserverInst
 // GetServerInstanceTypeOk returns a tuple with the ServerInstanceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetServerInstanceTypeOk() (*EnumserverInstanceServerInstanceTypeProp, bool) {
-	if o == nil || isNil(o.ServerInstanceType) {
+	if o == nil || IsNil(o.ServerInstanceType) {
 		return nil, false
 	}
 	return o.ServerInstanceType, true
@@ -221,7 +224,7 @@ func (o *DirectoryServerInstanceResponse) GetServerInstanceTypeOk() (*Enumserver
 
 // HasServerInstanceType returns a boolean if a field has been set.
 func (o *DirectoryServerInstanceResponse) HasServerInstanceType() bool {
-	if o != nil && !isNil(o.ServerInstanceType) {
+	if o != nil && !IsNil(o.ServerInstanceType) {
 		return true
 	}
 
@@ -235,7 +238,7 @@ func (o *DirectoryServerInstanceResponse) SetServerInstanceType(v EnumserverInst
 
 // GetReplicationSetName returns the ReplicationSetName field value if set, zero value otherwise.
 func (o *DirectoryServerInstanceResponse) GetReplicationSetName() string {
-	if o == nil || isNil(o.ReplicationSetName) {
+	if o == nil || IsNil(o.ReplicationSetName) {
 		var ret string
 		return ret
 	}
@@ -245,7 +248,7 @@ func (o *DirectoryServerInstanceResponse) GetReplicationSetName() string {
 // GetReplicationSetNameOk returns a tuple with the ReplicationSetName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetReplicationSetNameOk() (*string, bool) {
-	if o == nil || isNil(o.ReplicationSetName) {
+	if o == nil || IsNil(o.ReplicationSetName) {
 		return nil, false
 	}
 	return o.ReplicationSetName, true
@@ -253,7 +256,7 @@ func (o *DirectoryServerInstanceResponse) GetReplicationSetNameOk() (*string, bo
 
 // HasReplicationSetName returns a boolean if a field has been set.
 func (o *DirectoryServerInstanceResponse) HasReplicationSetName() bool {
-	if o != nil && !isNil(o.ReplicationSetName) {
+	if o != nil && !IsNil(o.ReplicationSetName) {
 		return true
 	}
 
@@ -267,7 +270,7 @@ func (o *DirectoryServerInstanceResponse) SetReplicationSetName(v string) {
 
 // GetLoadBalancingAlgorithmName returns the LoadBalancingAlgorithmName field value if set, zero value otherwise.
 func (o *DirectoryServerInstanceResponse) GetLoadBalancingAlgorithmName() []string {
-	if o == nil || isNil(o.LoadBalancingAlgorithmName) {
+	if o == nil || IsNil(o.LoadBalancingAlgorithmName) {
 		var ret []string
 		return ret
 	}
@@ -277,7 +280,7 @@ func (o *DirectoryServerInstanceResponse) GetLoadBalancingAlgorithmName() []stri
 // GetLoadBalancingAlgorithmNameOk returns a tuple with the LoadBalancingAlgorithmName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetLoadBalancingAlgorithmNameOk() ([]string, bool) {
-	if o == nil || isNil(o.LoadBalancingAlgorithmName) {
+	if o == nil || IsNil(o.LoadBalancingAlgorithmName) {
 		return nil, false
 	}
 	return o.LoadBalancingAlgorithmName, true
@@ -285,7 +288,7 @@ func (o *DirectoryServerInstanceResponse) GetLoadBalancingAlgorithmNameOk() ([]s
 
 // HasLoadBalancingAlgorithmName returns a boolean if a field has been set.
 func (o *DirectoryServerInstanceResponse) HasLoadBalancingAlgorithmName() bool {
-	if o != nil && !isNil(o.LoadBalancingAlgorithmName) {
+	if o != nil && !IsNil(o.LoadBalancingAlgorithmName) {
 		return true
 	}
 
@@ -347,7 +350,7 @@ func (o *DirectoryServerInstanceResponse) SetClusterName(v string) {
 
 // GetServerInstanceLocation returns the ServerInstanceLocation field value if set, zero value otherwise.
 func (o *DirectoryServerInstanceResponse) GetServerInstanceLocation() string {
-	if o == nil || isNil(o.ServerInstanceLocation) {
+	if o == nil || IsNil(o.ServerInstanceLocation) {
 		var ret string
 		return ret
 	}
@@ -357,7 +360,7 @@ func (o *DirectoryServerInstanceResponse) GetServerInstanceLocation() string {
 // GetServerInstanceLocationOk returns a tuple with the ServerInstanceLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetServerInstanceLocationOk() (*string, bool) {
-	if o == nil || isNil(o.ServerInstanceLocation) {
+	if o == nil || IsNil(o.ServerInstanceLocation) {
 		return nil, false
 	}
 	return o.ServerInstanceLocation, true
@@ -365,7 +368,7 @@ func (o *DirectoryServerInstanceResponse) GetServerInstanceLocationOk() (*string
 
 // HasServerInstanceLocation returns a boolean if a field has been set.
 func (o *DirectoryServerInstanceResponse) HasServerInstanceLocation() bool {
-	if o != nil && !isNil(o.ServerInstanceLocation) {
+	if o != nil && !IsNil(o.ServerInstanceLocation) {
 		return true
 	}
 
@@ -379,7 +382,7 @@ func (o *DirectoryServerInstanceResponse) SetServerInstanceLocation(v string) {
 
 // GetHostname returns the Hostname field value if set, zero value otherwise.
 func (o *DirectoryServerInstanceResponse) GetHostname() string {
-	if o == nil || isNil(o.Hostname) {
+	if o == nil || IsNil(o.Hostname) {
 		var ret string
 		return ret
 	}
@@ -389,7 +392,7 @@ func (o *DirectoryServerInstanceResponse) GetHostname() string {
 // GetHostnameOk returns a tuple with the Hostname field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetHostnameOk() (*string, bool) {
-	if o == nil || isNil(o.Hostname) {
+	if o == nil || IsNil(o.Hostname) {
 		return nil, false
 	}
 	return o.Hostname, true
@@ -397,7 +400,7 @@ func (o *DirectoryServerInstanceResponse) GetHostnameOk() (*string, bool) {
 
 // HasHostname returns a boolean if a field has been set.
 func (o *DirectoryServerInstanceResponse) HasHostname() bool {
-	if o != nil && !isNil(o.Hostname) {
+	if o != nil && !IsNil(o.Hostname) {
 		return true
 	}
 
@@ -411,7 +414,7 @@ func (o *DirectoryServerInstanceResponse) SetHostname(v string) {
 
 // GetServerRoot returns the ServerRoot field value if set, zero value otherwise.
 func (o *DirectoryServerInstanceResponse) GetServerRoot() string {
-	if o == nil || isNil(o.ServerRoot) {
+	if o == nil || IsNil(o.ServerRoot) {
 		var ret string
 		return ret
 	}
@@ -421,7 +424,7 @@ func (o *DirectoryServerInstanceResponse) GetServerRoot() string {
 // GetServerRootOk returns a tuple with the ServerRoot field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetServerRootOk() (*string, bool) {
-	if o == nil || isNil(o.ServerRoot) {
+	if o == nil || IsNil(o.ServerRoot) {
 		return nil, false
 	}
 	return o.ServerRoot, true
@@ -429,7 +432,7 @@ func (o *DirectoryServerInstanceResponse) GetServerRootOk() (*string, bool) {
 
 // HasServerRoot returns a boolean if a field has been set.
 func (o *DirectoryServerInstanceResponse) HasServerRoot() bool {
-	if o != nil && !isNil(o.ServerRoot) {
+	if o != nil && !IsNil(o.ServerRoot) {
 		return true
 	}
 
@@ -467,7 +470,7 @@ func (o *DirectoryServerInstanceResponse) SetServerVersion(v string) {
 
 // GetInterServerCertificate returns the InterServerCertificate field value if set, zero value otherwise.
 func (o *DirectoryServerInstanceResponse) GetInterServerCertificate() string {
-	if o == nil || isNil(o.InterServerCertificate) {
+	if o == nil || IsNil(o.InterServerCertificate) {
 		var ret string
 		return ret
 	}
@@ -477,7 +480,7 @@ func (o *DirectoryServerInstanceResponse) GetInterServerCertificate() string {
 // GetInterServerCertificateOk returns a tuple with the InterServerCertificate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetInterServerCertificateOk() (*string, bool) {
-	if o == nil || isNil(o.InterServerCertificate) {
+	if o == nil || IsNil(o.InterServerCertificate) {
 		return nil, false
 	}
 	return o.InterServerCertificate, true
@@ -485,7 +488,7 @@ func (o *DirectoryServerInstanceResponse) GetInterServerCertificateOk() (*string
 
 // HasInterServerCertificate returns a boolean if a field has been set.
 func (o *DirectoryServerInstanceResponse) HasInterServerCertificate() bool {
-	if o != nil && !isNil(o.InterServerCertificate) {
+	if o != nil && !IsNil(o.InterServerCertificate) {
 		return true
 	}
 
@@ -499,7 +502,7 @@ func (o *DirectoryServerInstanceResponse) SetInterServerCertificate(v string) {
 
 // GetLdapPort returns the LdapPort field value if set, zero value otherwise.
 func (o *DirectoryServerInstanceResponse) GetLdapPort() int32 {
-	if o == nil || isNil(o.LdapPort) {
+	if o == nil || IsNil(o.LdapPort) {
 		var ret int32
 		return ret
 	}
@@ -509,7 +512,7 @@ func (o *DirectoryServerInstanceResponse) GetLdapPort() int32 {
 // GetLdapPortOk returns a tuple with the LdapPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetLdapPortOk() (*int32, bool) {
-	if o == nil || isNil(o.LdapPort) {
+	if o == nil || IsNil(o.LdapPort) {
 		return nil, false
 	}
 	return o.LdapPort, true
@@ -517,7 +520,7 @@ func (o *DirectoryServerInstanceResponse) GetLdapPortOk() (*int32, bool) {
 
 // HasLdapPort returns a boolean if a field has been set.
 func (o *DirectoryServerInstanceResponse) HasLdapPort() bool {
-	if o != nil && !isNil(o.LdapPort) {
+	if o != nil && !IsNil(o.LdapPort) {
 		return true
 	}
 
@@ -531,7 +534,7 @@ func (o *DirectoryServerInstanceResponse) SetLdapPort(v int32) {
 
 // GetLdapsPort returns the LdapsPort field value if set, zero value otherwise.
 func (o *DirectoryServerInstanceResponse) GetLdapsPort() int32 {
-	if o == nil || isNil(o.LdapsPort) {
+	if o == nil || IsNil(o.LdapsPort) {
 		var ret int32
 		return ret
 	}
@@ -541,7 +544,7 @@ func (o *DirectoryServerInstanceResponse) GetLdapsPort() int32 {
 // GetLdapsPortOk returns a tuple with the LdapsPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetLdapsPortOk() (*int32, bool) {
-	if o == nil || isNil(o.LdapsPort) {
+	if o == nil || IsNil(o.LdapsPort) {
 		return nil, false
 	}
 	return o.LdapsPort, true
@@ -549,7 +552,7 @@ func (o *DirectoryServerInstanceResponse) GetLdapsPortOk() (*int32, bool) {
 
 // HasLdapsPort returns a boolean if a field has been set.
 func (o *DirectoryServerInstanceResponse) HasLdapsPort() bool {
-	if o != nil && !isNil(o.LdapsPort) {
+	if o != nil && !IsNil(o.LdapsPort) {
 		return true
 	}
 
@@ -563,7 +566,7 @@ func (o *DirectoryServerInstanceResponse) SetLdapsPort(v int32) {
 
 // GetHttpPort returns the HttpPort field value if set, zero value otherwise.
 func (o *DirectoryServerInstanceResponse) GetHttpPort() int32 {
-	if o == nil || isNil(o.HttpPort) {
+	if o == nil || IsNil(o.HttpPort) {
 		var ret int32
 		return ret
 	}
@@ -573,7 +576,7 @@ func (o *DirectoryServerInstanceResponse) GetHttpPort() int32 {
 // GetHttpPortOk returns a tuple with the HttpPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetHttpPortOk() (*int32, bool) {
-	if o == nil || isNil(o.HttpPort) {
+	if o == nil || IsNil(o.HttpPort) {
 		return nil, false
 	}
 	return o.HttpPort, true
@@ -581,7 +584,7 @@ func (o *DirectoryServerInstanceResponse) GetHttpPortOk() (*int32, bool) {
 
 // HasHttpPort returns a boolean if a field has been set.
 func (o *DirectoryServerInstanceResponse) HasHttpPort() bool {
-	if o != nil && !isNil(o.HttpPort) {
+	if o != nil && !IsNil(o.HttpPort) {
 		return true
 	}
 
@@ -595,7 +598,7 @@ func (o *DirectoryServerInstanceResponse) SetHttpPort(v int32) {
 
 // GetHttpsPort returns the HttpsPort field value if set, zero value otherwise.
 func (o *DirectoryServerInstanceResponse) GetHttpsPort() int32 {
-	if o == nil || isNil(o.HttpsPort) {
+	if o == nil || IsNil(o.HttpsPort) {
 		var ret int32
 		return ret
 	}
@@ -605,7 +608,7 @@ func (o *DirectoryServerInstanceResponse) GetHttpsPort() int32 {
 // GetHttpsPortOk returns a tuple with the HttpsPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetHttpsPortOk() (*int32, bool) {
-	if o == nil || isNil(o.HttpsPort) {
+	if o == nil || IsNil(o.HttpsPort) {
 		return nil, false
 	}
 	return o.HttpsPort, true
@@ -613,7 +616,7 @@ func (o *DirectoryServerInstanceResponse) GetHttpsPortOk() (*int32, bool) {
 
 // HasHttpsPort returns a boolean if a field has been set.
 func (o *DirectoryServerInstanceResponse) HasHttpsPort() bool {
-	if o != nil && !isNil(o.HttpsPort) {
+	if o != nil && !IsNil(o.HttpsPort) {
 		return true
 	}
 
@@ -627,7 +630,7 @@ func (o *DirectoryServerInstanceResponse) SetHttpsPort(v int32) {
 
 // GetReplicationPort returns the ReplicationPort field value if set, zero value otherwise.
 func (o *DirectoryServerInstanceResponse) GetReplicationPort() int32 {
-	if o == nil || isNil(o.ReplicationPort) {
+	if o == nil || IsNil(o.ReplicationPort) {
 		var ret int32
 		return ret
 	}
@@ -637,7 +640,7 @@ func (o *DirectoryServerInstanceResponse) GetReplicationPort() int32 {
 // GetReplicationPortOk returns a tuple with the ReplicationPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetReplicationPortOk() (*int32, bool) {
-	if o == nil || isNil(o.ReplicationPort) {
+	if o == nil || IsNil(o.ReplicationPort) {
 		return nil, false
 	}
 	return o.ReplicationPort, true
@@ -645,7 +648,7 @@ func (o *DirectoryServerInstanceResponse) GetReplicationPortOk() (*int32, bool) 
 
 // HasReplicationPort returns a boolean if a field has been set.
 func (o *DirectoryServerInstanceResponse) HasReplicationPort() bool {
-	if o != nil && !isNil(o.ReplicationPort) {
+	if o != nil && !IsNil(o.ReplicationPort) {
 		return true
 	}
 
@@ -659,7 +662,7 @@ func (o *DirectoryServerInstanceResponse) SetReplicationPort(v int32) {
 
 // GetReplicationServerID returns the ReplicationServerID field value if set, zero value otherwise.
 func (o *DirectoryServerInstanceResponse) GetReplicationServerID() int32 {
-	if o == nil || isNil(o.ReplicationServerID) {
+	if o == nil || IsNil(o.ReplicationServerID) {
 		var ret int32
 		return ret
 	}
@@ -669,7 +672,7 @@ func (o *DirectoryServerInstanceResponse) GetReplicationServerID() int32 {
 // GetReplicationServerIDOk returns a tuple with the ReplicationServerID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetReplicationServerIDOk() (*int32, bool) {
-	if o == nil || isNil(o.ReplicationServerID) {
+	if o == nil || IsNil(o.ReplicationServerID) {
 		return nil, false
 	}
 	return o.ReplicationServerID, true
@@ -677,7 +680,7 @@ func (o *DirectoryServerInstanceResponse) GetReplicationServerIDOk() (*int32, bo
 
 // HasReplicationServerID returns a boolean if a field has been set.
 func (o *DirectoryServerInstanceResponse) HasReplicationServerID() bool {
-	if o != nil && !isNil(o.ReplicationServerID) {
+	if o != nil && !IsNil(o.ReplicationServerID) {
 		return true
 	}
 
@@ -691,7 +694,7 @@ func (o *DirectoryServerInstanceResponse) SetReplicationServerID(v int32) {
 
 // GetReplicationDomainServerID returns the ReplicationDomainServerID field value if set, zero value otherwise.
 func (o *DirectoryServerInstanceResponse) GetReplicationDomainServerID() []int32 {
-	if o == nil || isNil(o.ReplicationDomainServerID) {
+	if o == nil || IsNil(o.ReplicationDomainServerID) {
 		var ret []int32
 		return ret
 	}
@@ -701,7 +704,7 @@ func (o *DirectoryServerInstanceResponse) GetReplicationDomainServerID() []int32
 // GetReplicationDomainServerIDOk returns a tuple with the ReplicationDomainServerID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetReplicationDomainServerIDOk() ([]int32, bool) {
-	if o == nil || isNil(o.ReplicationDomainServerID) {
+	if o == nil || IsNil(o.ReplicationDomainServerID) {
 		return nil, false
 	}
 	return o.ReplicationDomainServerID, true
@@ -709,7 +712,7 @@ func (o *DirectoryServerInstanceResponse) GetReplicationDomainServerIDOk() ([]in
 
 // HasReplicationDomainServerID returns a boolean if a field has been set.
 func (o *DirectoryServerInstanceResponse) HasReplicationDomainServerID() bool {
-	if o != nil && !isNil(o.ReplicationDomainServerID) {
+	if o != nil && !IsNil(o.ReplicationDomainServerID) {
 		return true
 	}
 
@@ -723,7 +726,7 @@ func (o *DirectoryServerInstanceResponse) SetReplicationDomainServerID(v []int32
 
 // GetJmxPort returns the JmxPort field value if set, zero value otherwise.
 func (o *DirectoryServerInstanceResponse) GetJmxPort() int32 {
-	if o == nil || isNil(o.JmxPort) {
+	if o == nil || IsNil(o.JmxPort) {
 		var ret int32
 		return ret
 	}
@@ -733,7 +736,7 @@ func (o *DirectoryServerInstanceResponse) GetJmxPort() int32 {
 // GetJmxPortOk returns a tuple with the JmxPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetJmxPortOk() (*int32, bool) {
-	if o == nil || isNil(o.JmxPort) {
+	if o == nil || IsNil(o.JmxPort) {
 		return nil, false
 	}
 	return o.JmxPort, true
@@ -741,7 +744,7 @@ func (o *DirectoryServerInstanceResponse) GetJmxPortOk() (*int32, bool) {
 
 // HasJmxPort returns a boolean if a field has been set.
 func (o *DirectoryServerInstanceResponse) HasJmxPort() bool {
-	if o != nil && !isNil(o.JmxPort) {
+	if o != nil && !IsNil(o.JmxPort) {
 		return true
 	}
 
@@ -755,7 +758,7 @@ func (o *DirectoryServerInstanceResponse) SetJmxPort(v int32) {
 
 // GetJmxsPort returns the JmxsPort field value if set, zero value otherwise.
 func (o *DirectoryServerInstanceResponse) GetJmxsPort() int32 {
-	if o == nil || isNil(o.JmxsPort) {
+	if o == nil || IsNil(o.JmxsPort) {
 		var ret int32
 		return ret
 	}
@@ -765,7 +768,7 @@ func (o *DirectoryServerInstanceResponse) GetJmxsPort() int32 {
 // GetJmxsPortOk returns a tuple with the JmxsPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetJmxsPortOk() (*int32, bool) {
-	if o == nil || isNil(o.JmxsPort) {
+	if o == nil || IsNil(o.JmxsPort) {
 		return nil, false
 	}
 	return o.JmxsPort, true
@@ -773,7 +776,7 @@ func (o *DirectoryServerInstanceResponse) GetJmxsPortOk() (*int32, bool) {
 
 // HasJmxsPort returns a boolean if a field has been set.
 func (o *DirectoryServerInstanceResponse) HasJmxsPort() bool {
-	if o != nil && !isNil(o.JmxsPort) {
+	if o != nil && !IsNil(o.JmxsPort) {
 		return true
 	}
 
@@ -787,7 +790,7 @@ func (o *DirectoryServerInstanceResponse) SetJmxsPort(v int32) {
 
 // GetPreferredSecurity returns the PreferredSecurity field value if set, zero value otherwise.
 func (o *DirectoryServerInstanceResponse) GetPreferredSecurity() EnumserverInstancePreferredSecurityProp {
-	if o == nil || isNil(o.PreferredSecurity) {
+	if o == nil || IsNil(o.PreferredSecurity) {
 		var ret EnumserverInstancePreferredSecurityProp
 		return ret
 	}
@@ -797,7 +800,7 @@ func (o *DirectoryServerInstanceResponse) GetPreferredSecurity() EnumserverInsta
 // GetPreferredSecurityOk returns a tuple with the PreferredSecurity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetPreferredSecurityOk() (*EnumserverInstancePreferredSecurityProp, bool) {
-	if o == nil || isNil(o.PreferredSecurity) {
+	if o == nil || IsNil(o.PreferredSecurity) {
 		return nil, false
 	}
 	return o.PreferredSecurity, true
@@ -805,7 +808,7 @@ func (o *DirectoryServerInstanceResponse) GetPreferredSecurityOk() (*EnumserverI
 
 // HasPreferredSecurity returns a boolean if a field has been set.
 func (o *DirectoryServerInstanceResponse) HasPreferredSecurity() bool {
-	if o != nil && !isNil(o.PreferredSecurity) {
+	if o != nil && !IsNil(o.PreferredSecurity) {
 		return true
 	}
 
@@ -819,7 +822,7 @@ func (o *DirectoryServerInstanceResponse) SetPreferredSecurity(v EnumserverInsta
 
 // GetStartTLSEnabled returns the StartTLSEnabled field value if set, zero value otherwise.
 func (o *DirectoryServerInstanceResponse) GetStartTLSEnabled() bool {
-	if o == nil || isNil(o.StartTLSEnabled) {
+	if o == nil || IsNil(o.StartTLSEnabled) {
 		var ret bool
 		return ret
 	}
@@ -829,7 +832,7 @@ func (o *DirectoryServerInstanceResponse) GetStartTLSEnabled() bool {
 // GetStartTLSEnabledOk returns a tuple with the StartTLSEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetStartTLSEnabledOk() (*bool, bool) {
-	if o == nil || isNil(o.StartTLSEnabled) {
+	if o == nil || IsNil(o.StartTLSEnabled) {
 		return nil, false
 	}
 	return o.StartTLSEnabled, true
@@ -837,7 +840,7 @@ func (o *DirectoryServerInstanceResponse) GetStartTLSEnabledOk() (*bool, bool) {
 
 // HasStartTLSEnabled returns a boolean if a field has been set.
 func (o *DirectoryServerInstanceResponse) HasStartTLSEnabled() bool {
-	if o != nil && !isNil(o.StartTLSEnabled) {
+	if o != nil && !IsNil(o.StartTLSEnabled) {
 		return true
 	}
 
@@ -851,7 +854,7 @@ func (o *DirectoryServerInstanceResponse) SetStartTLSEnabled(v bool) {
 
 // GetBaseDN returns the BaseDN field value if set, zero value otherwise.
 func (o *DirectoryServerInstanceResponse) GetBaseDN() []string {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		var ret []string
 		return ret
 	}
@@ -861,7 +864,7 @@ func (o *DirectoryServerInstanceResponse) GetBaseDN() []string {
 // GetBaseDNOk returns a tuple with the BaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		return nil, false
 	}
 	return o.BaseDN, true
@@ -869,7 +872,7 @@ func (o *DirectoryServerInstanceResponse) GetBaseDNOk() ([]string, bool) {
 
 // HasBaseDN returns a boolean if a field has been set.
 func (o *DirectoryServerInstanceResponse) HasBaseDN() bool {
-	if o != nil && !isNil(o.BaseDN) {
+	if o != nil && !IsNil(o.BaseDN) {
 		return true
 	}
 
@@ -883,7 +886,7 @@ func (o *DirectoryServerInstanceResponse) SetBaseDN(v []string) {
 
 // GetMemberOfServerGroup returns the MemberOfServerGroup field value if set, zero value otherwise.
 func (o *DirectoryServerInstanceResponse) GetMemberOfServerGroup() []string {
-	if o == nil || isNil(o.MemberOfServerGroup) {
+	if o == nil || IsNil(o.MemberOfServerGroup) {
 		var ret []string
 		return ret
 	}
@@ -893,7 +896,7 @@ func (o *DirectoryServerInstanceResponse) GetMemberOfServerGroup() []string {
 // GetMemberOfServerGroupOk returns a tuple with the MemberOfServerGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetMemberOfServerGroupOk() ([]string, bool) {
-	if o == nil || isNil(o.MemberOfServerGroup) {
+	if o == nil || IsNil(o.MemberOfServerGroup) {
 		return nil, false
 	}
 	return o.MemberOfServerGroup, true
@@ -901,7 +904,7 @@ func (o *DirectoryServerInstanceResponse) GetMemberOfServerGroupOk() ([]string, 
 
 // HasMemberOfServerGroup returns a boolean if a field has been set.
 func (o *DirectoryServerInstanceResponse) HasMemberOfServerGroup() bool {
-	if o != nil && !isNil(o.MemberOfServerGroup) {
+	if o != nil && !IsNil(o.MemberOfServerGroup) {
 		return true
 	}
 
@@ -914,89 +917,87 @@ func (o *DirectoryServerInstanceResponse) SetMemberOfServerGroup(v []string) {
 }
 
 func (o DirectoryServerInstanceResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.ServerInstanceType) {
-		toSerialize["serverInstanceType"] = o.ServerInstanceType
-	}
-	if !isNil(o.ReplicationSetName) {
-		toSerialize["replicationSetName"] = o.ReplicationSetName
-	}
-	if !isNil(o.LoadBalancingAlgorithmName) {
-		toSerialize["loadBalancingAlgorithmName"] = o.LoadBalancingAlgorithmName
-	}
-	if true {
-		toSerialize["serverInstanceName"] = o.ServerInstanceName
-	}
-	if true {
-		toSerialize["clusterName"] = o.ClusterName
-	}
-	if !isNil(o.ServerInstanceLocation) {
-		toSerialize["serverInstanceLocation"] = o.ServerInstanceLocation
-	}
-	if !isNil(o.Hostname) {
-		toSerialize["hostname"] = o.Hostname
-	}
-	if !isNil(o.ServerRoot) {
-		toSerialize["serverRoot"] = o.ServerRoot
-	}
-	if true {
-		toSerialize["serverVersion"] = o.ServerVersion
-	}
-	if !isNil(o.InterServerCertificate) {
-		toSerialize["interServerCertificate"] = o.InterServerCertificate
-	}
-	if !isNil(o.LdapPort) {
-		toSerialize["ldapPort"] = o.LdapPort
-	}
-	if !isNil(o.LdapsPort) {
-		toSerialize["ldapsPort"] = o.LdapsPort
-	}
-	if !isNil(o.HttpPort) {
-		toSerialize["httpPort"] = o.HttpPort
-	}
-	if !isNil(o.HttpsPort) {
-		toSerialize["httpsPort"] = o.HttpsPort
-	}
-	if !isNil(o.ReplicationPort) {
-		toSerialize["replicationPort"] = o.ReplicationPort
-	}
-	if !isNil(o.ReplicationServerID) {
-		toSerialize["replicationServerID"] = o.ReplicationServerID
-	}
-	if !isNil(o.ReplicationDomainServerID) {
-		toSerialize["replicationDomainServerID"] = o.ReplicationDomainServerID
-	}
-	if !isNil(o.JmxPort) {
-		toSerialize["jmxPort"] = o.JmxPort
-	}
-	if !isNil(o.JmxsPort) {
-		toSerialize["jmxsPort"] = o.JmxsPort
-	}
-	if !isNil(o.PreferredSecurity) {
-		toSerialize["preferredSecurity"] = o.PreferredSecurity
-	}
-	if !isNil(o.StartTLSEnabled) {
-		toSerialize["startTLSEnabled"] = o.StartTLSEnabled
-	}
-	if !isNil(o.BaseDN) {
-		toSerialize["baseDN"] = o.BaseDN
-	}
-	if !isNil(o.MemberOfServerGroup) {
-		toSerialize["memberOfServerGroup"] = o.MemberOfServerGroup
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o DirectoryServerInstanceResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	if !IsNil(o.ServerInstanceType) {
+		toSerialize["serverInstanceType"] = o.ServerInstanceType
+	}
+	if !IsNil(o.ReplicationSetName) {
+		toSerialize["replicationSetName"] = o.ReplicationSetName
+	}
+	if !IsNil(o.LoadBalancingAlgorithmName) {
+		toSerialize["loadBalancingAlgorithmName"] = o.LoadBalancingAlgorithmName
+	}
+	toSerialize["serverInstanceName"] = o.ServerInstanceName
+	toSerialize["clusterName"] = o.ClusterName
+	if !IsNil(o.ServerInstanceLocation) {
+		toSerialize["serverInstanceLocation"] = o.ServerInstanceLocation
+	}
+	if !IsNil(o.Hostname) {
+		toSerialize["hostname"] = o.Hostname
+	}
+	if !IsNil(o.ServerRoot) {
+		toSerialize["serverRoot"] = o.ServerRoot
+	}
+	toSerialize["serverVersion"] = o.ServerVersion
+	if !IsNil(o.InterServerCertificate) {
+		toSerialize["interServerCertificate"] = o.InterServerCertificate
+	}
+	if !IsNil(o.LdapPort) {
+		toSerialize["ldapPort"] = o.LdapPort
+	}
+	if !IsNil(o.LdapsPort) {
+		toSerialize["ldapsPort"] = o.LdapsPort
+	}
+	if !IsNil(o.HttpPort) {
+		toSerialize["httpPort"] = o.HttpPort
+	}
+	if !IsNil(o.HttpsPort) {
+		toSerialize["httpsPort"] = o.HttpsPort
+	}
+	if !IsNil(o.ReplicationPort) {
+		toSerialize["replicationPort"] = o.ReplicationPort
+	}
+	if !IsNil(o.ReplicationServerID) {
+		toSerialize["replicationServerID"] = o.ReplicationServerID
+	}
+	if !IsNil(o.ReplicationDomainServerID) {
+		toSerialize["replicationDomainServerID"] = o.ReplicationDomainServerID
+	}
+	if !IsNil(o.JmxPort) {
+		toSerialize["jmxPort"] = o.JmxPort
+	}
+	if !IsNil(o.JmxsPort) {
+		toSerialize["jmxsPort"] = o.JmxsPort
+	}
+	if !IsNil(o.PreferredSecurity) {
+		toSerialize["preferredSecurity"] = o.PreferredSecurity
+	}
+	if !IsNil(o.StartTLSEnabled) {
+		toSerialize["startTLSEnabled"] = o.StartTLSEnabled
+	}
+	if !IsNil(o.BaseDN) {
+		toSerialize["baseDN"] = o.BaseDN
+	}
+	if !IsNil(o.MemberOfServerGroup) {
+		toSerialize["memberOfServerGroup"] = o.MemberOfServerGroup
+	}
+	return toSerialize, nil
 }
 
 type NullableDirectoryServerInstanceResponse struct {

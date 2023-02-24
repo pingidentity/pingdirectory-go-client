@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddScimSchemaRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddScimSchemaRequest{}
+
 // AddScimSchemaRequest struct for AddScimSchemaRequest
 type AddScimSchemaRequest struct {
 	// Name of the new SCIM Schema
@@ -72,7 +75,7 @@ func (o *AddScimSchemaRequest) SetSchemaName(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *AddScimSchemaRequest) GetSchemas() []EnumscimSchemaSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumscimSchemaSchemaUrn
 		return ret
 	}
@@ -82,7 +85,7 @@ func (o *AddScimSchemaRequest) GetSchemas() []EnumscimSchemaSchemaUrn {
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddScimSchemaRequest) GetSchemasOk() ([]EnumscimSchemaSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -90,7 +93,7 @@ func (o *AddScimSchemaRequest) GetSchemasOk() ([]EnumscimSchemaSchemaUrn, bool) 
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *AddScimSchemaRequest) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -104,7 +107,7 @@ func (o *AddScimSchemaRequest) SetSchemas(v []EnumscimSchemaSchemaUrn) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddScimSchemaRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -114,7 +117,7 @@ func (o *AddScimSchemaRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddScimSchemaRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -122,7 +125,7 @@ func (o *AddScimSchemaRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddScimSchemaRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -160,7 +163,7 @@ func (o *AddScimSchemaRequest) SetSchemaURN(v string) {
 
 // GetDisplayName returns the DisplayName field value if set, zero value otherwise.
 func (o *AddScimSchemaRequest) GetDisplayName() string {
-	if o == nil || isNil(o.DisplayName) {
+	if o == nil || IsNil(o.DisplayName) {
 		var ret string
 		return ret
 	}
@@ -170,7 +173,7 @@ func (o *AddScimSchemaRequest) GetDisplayName() string {
 // GetDisplayNameOk returns a tuple with the DisplayName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddScimSchemaRequest) GetDisplayNameOk() (*string, bool) {
-	if o == nil || isNil(o.DisplayName) {
+	if o == nil || IsNil(o.DisplayName) {
 		return nil, false
 	}
 	return o.DisplayName, true
@@ -178,7 +181,7 @@ func (o *AddScimSchemaRequest) GetDisplayNameOk() (*string, bool) {
 
 // HasDisplayName returns a boolean if a field has been set.
 func (o *AddScimSchemaRequest) HasDisplayName() bool {
-	if o != nil && !isNil(o.DisplayName) {
+	if o != nil && !IsNil(o.DisplayName) {
 		return true
 	}
 
@@ -191,23 +194,27 @@ func (o *AddScimSchemaRequest) SetDisplayName(v string) {
 }
 
 func (o AddScimSchemaRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["schemaName"] = o.SchemaName
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["schemaURN"] = o.SchemaURN
-	}
-	if !isNil(o.DisplayName) {
-		toSerialize["displayName"] = o.DisplayName
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddScimSchemaRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["schemaName"] = o.SchemaName
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["schemaURN"] = o.SchemaURN
+	if !IsNil(o.DisplayName) {
+		toSerialize["displayName"] = o.DisplayName
+	}
+	return toSerialize, nil
 }
 
 type NullableAddScimSchemaRequest struct {
