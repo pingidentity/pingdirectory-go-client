@@ -8,20 +8,20 @@ Name | Type | Description | Notes
 **Schemas** | Pointer to [**[]EnumscimAttributeSchemaUrn**](EnumscimAttributeSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this SCIM Attribute | [optional] 
 **Name** | **string** | The name of the attribute. | 
-**Type** | [**EnumscimAttributeTypeProp**](EnumscimAttributeTypeProp.md) |  | 
-**Required** | **bool** | Specifies whether this attribute is required. | 
-**CaseExact** | **bool** | Specifies whether the attribute values are case sensitive. | 
-**MultiValued** | **bool** | Specifies whether this attribute may have multiple values. | 
+**Type** | Pointer to [**EnumscimAttributeTypeProp**](EnumscimAttributeTypeProp.md) |  | [optional] 
+**Required** | Pointer to **bool** | Specifies whether this attribute is required. | [optional] 
+**CaseExact** | Pointer to **bool** | Specifies whether the attribute values are case sensitive. | [optional] 
+**MultiValued** | Pointer to **bool** | Specifies whether this attribute may have multiple values. | [optional] 
 **CanonicalValue** | Pointer to **[]string** | Specifies the suggested canonical type values for the attribute. | [optional] 
-**Mutability** | [**EnumscimAttributeMutabilityProp**](EnumscimAttributeMutabilityProp.md) |  | 
-**Returned** | [**EnumscimAttributeReturnedProp**](EnumscimAttributeReturnedProp.md) |  | 
+**Mutability** | Pointer to [**EnumscimAttributeMutabilityProp**](EnumscimAttributeMutabilityProp.md) |  | [optional] 
+**Returned** | Pointer to [**EnumscimAttributeReturnedProp**](EnumscimAttributeReturnedProp.md) |  | [optional] 
 **ReferenceType** | Pointer to **[]string** | Specifies the SCIM resource types that may be referenced. This property is only applicable for attributes that are of type &#39;reference&#39;. Valid values are: A SCIM resource type (e.g., &#39;User&#39; or &#39;Group&#39;), &#39;external&#39; - indicating the resource is an external resource (e.g., such as a photo), or &#39;uri&#39; - indicating that the reference is to a service endpoint or an identifier (such as a schema urn). | [optional] 
 
 ## Methods
 
 ### NewAddScimAttributeRequest
 
-`func NewAddScimAttributeRequest(attributeName string, name string, type_ EnumscimAttributeTypeProp, required bool, caseExact bool, multiValued bool, mutability EnumscimAttributeMutabilityProp, returned EnumscimAttributeReturnedProp, ) *AddScimAttributeRequest`
+`func NewAddScimAttributeRequest(attributeName string, name string, ) *AddScimAttributeRequest`
 
 NewAddScimAttributeRequest instantiates a new AddScimAttributeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -145,6 +145,11 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
+### HasType
+
+`func (o *AddScimAttributeRequest) HasType() bool`
+
+HasType returns a boolean if a field has been set.
 
 ### GetRequired
 
@@ -165,6 +170,11 @@ and a boolean to check if the value has been set.
 
 SetRequired sets Required field to given value.
 
+### HasRequired
+
+`func (o *AddScimAttributeRequest) HasRequired() bool`
+
+HasRequired returns a boolean if a field has been set.
 
 ### GetCaseExact
 
@@ -185,6 +195,11 @@ and a boolean to check if the value has been set.
 
 SetCaseExact sets CaseExact field to given value.
 
+### HasCaseExact
+
+`func (o *AddScimAttributeRequest) HasCaseExact() bool`
+
+HasCaseExact returns a boolean if a field has been set.
 
 ### GetMultiValued
 
@@ -205,6 +220,11 @@ and a boolean to check if the value has been set.
 
 SetMultiValued sets MultiValued field to given value.
 
+### HasMultiValued
+
+`func (o *AddScimAttributeRequest) HasMultiValued() bool`
+
+HasMultiValued returns a boolean if a field has been set.
 
 ### GetCanonicalValue
 
@@ -250,6 +270,11 @@ and a boolean to check if the value has been set.
 
 SetMutability sets Mutability field to given value.
 
+### HasMutability
+
+`func (o *AddScimAttributeRequest) HasMutability() bool`
+
+HasMutability returns a boolean if a field has been set.
 
 ### GetReturned
 
@@ -270,6 +295,11 @@ and a boolean to check if the value has been set.
 
 SetReturned sets Returned field to given value.
 
+### HasReturned
+
+`func (o *AddScimAttributeRequest) HasReturned() bool`
+
+HasReturned returns a boolean if a field has been set.
 
 ### GetReferenceType
 

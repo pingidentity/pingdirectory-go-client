@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Name** | **string** | Name of the new Virtual Attribute | 
 **Schemas** | [**[]EnumentryDnVirtualAttributeSchemaUrn**](EnumentryDnVirtualAttributeSchemaUrn.md) |  | 
 **ConflictBehavior** | Pointer to [**EnumvirtualAttributeConflictBehaviorProp**](EnumvirtualAttributeConflictBehaviorProp.md) |  | [optional] 
-**AttributeType** | **string** | Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute. | 
+**AttributeType** | Pointer to **string** | Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute. | [optional] 
 **Description** | Pointer to **string** | A description for this Virtual Attribute | [optional] 
 **Enabled** | **bool** | Indicates whether the Virtual Attribute is enabled for use. | 
 **BaseDN** | Pointer to **[]string** | Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute. | [optional] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewAddEntryDnVirtualAttributeRequest
 
-`func NewAddEntryDnVirtualAttributeRequest(name string, schemas []EnumentryDnVirtualAttributeSchemaUrn, attributeType string, enabled bool, ) *AddEntryDnVirtualAttributeRequest`
+`func NewAddEntryDnVirtualAttributeRequest(name string, schemas []EnumentryDnVirtualAttributeSchemaUrn, enabled bool, ) *AddEntryDnVirtualAttributeRequest`
 
 NewAddEntryDnVirtualAttributeRequest instantiates a new AddEntryDnVirtualAttributeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -122,6 +122,11 @@ and a boolean to check if the value has been set.
 
 SetAttributeType sets AttributeType field to given value.
 
+### HasAttributeType
+
+`func (o *AddEntryDnVirtualAttributeRequest) HasAttributeType() bool`
+
+HasAttributeType returns a boolean if a field has been set.
 
 ### GetDescription
 

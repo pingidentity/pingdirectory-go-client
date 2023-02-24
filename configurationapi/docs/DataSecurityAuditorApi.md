@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    addDataSecurityAuditorRequest := openapiclient.add_data_security_auditor_request{AddAccessControlDataSecurityAuditorRequest: openapiclient.NewAddAccessControlDataSecurityAuditorRequest("AuditorName_example", []openapiclient.EnumaccessControlDataSecurityAuditorSchemaUrn{openapiclient.Enumaccess-control-data-security-auditorSchemaUrn("urn:pingidentity:schemas:configuration:2.0:data-security-auditor:access-control")}, "ReportFile_example", false)} // AddDataSecurityAuditorRequest | Create a new Data Security Auditor in the config
+    addDataSecurityAuditorRequest := openapiclient.add_data_security_auditor_request{AddAccessControlDataSecurityAuditorRequest: openapiclient.NewAddAccessControlDataSecurityAuditorRequest("AuditorName_example", []openapiclient.EnumaccessControlDataSecurityAuditorSchemaUrn{openapiclient.Enumaccess-control-data-security-auditorSchemaUrn("urn:pingidentity:schemas:configuration:2.0:data-security-auditor:access-control")})} // AddDataSecurityAuditorRequest | Create a new Data Security Auditor in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **PublisherName** | **string** | Name of the new Log Publisher | 
 **Schemas** | [**[]EnumsyslogTextAccessLogPublisherSchemaUrn**](EnumsyslogTextAccessLogPublisherSchemaUrn.md) |  | 
 **SyslogExternalServer** | **[]string** | The syslog server to which messages should be sent. | 
-**SyslogFacility** | [**EnumlogPublisherSyslogFacilityProp**](EnumlogPublisherSyslogFacilityProp.md) |  | 
-**SyslogSeverity** | [**EnumlogPublisherSyslogSeverityProp**](EnumlogPublisherSyslogSeverityProp.md) |  | 
+**SyslogFacility** | Pointer to [**EnumlogPublisherSyslogFacilityProp**](EnumlogPublisherSyslogFacilityProp.md) |  | [optional] 
+**SyslogSeverity** | Pointer to [**EnumlogPublisherSyslogSeverityProp**](EnumlogPublisherSyslogSeverityProp.md) |  | [optional] 
 **SyslogMessageHostName** | Pointer to **string** | The local host name that will be included in syslog messages that are logged by this Syslog Text Access Log Publisher. | [optional] 
 **SyslogMessageApplicationName** | Pointer to **string** | The application name that will be included in syslog messages that are logged by this Syslog Text Access Log Publisher. | [optional] 
 **QueueSize** | Pointer to **int32** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
@@ -46,7 +46,7 @@ Name | Type | Description | Notes
 **MaxStringLength** | Pointer to **int32** | Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written. | [optional] 
 **TimestampPrecision** | Pointer to [**EnumlogPublisherTimestampPrecisionProp**](EnumlogPublisherTimestampPrecisionProp.md) |  | [optional] 
 **GenerifyMessageStringsWhenPossible** | Pointer to **bool** | Indicates whether to use generified version of certain message strings, including diagnostic messages, additional information messages, authentication failure reasons, and disconnect messages. Generified versions of those strings may use placeholders (like %s for a string or %d for an integer) rather than the version of the string with those placeholders replaced with specific values. | [optional] 
-**Asynchronous** | **bool** | Indicates whether the Writer Based Access Log Publisher will publish records asynchronously. | 
+**Asynchronous** | Pointer to **bool** | Indicates whether the Writer Based Access Log Publisher will publish records asynchronously. | [optional] 
 **AutoFlush** | Pointer to **bool** | Specifies whether to flush the writer after every log record. | [optional] 
 **LogFieldBehavior** | Pointer to **string** | The behavior to use for determining which fields to log and whether to transform the values of those fields in any way. | [optional] 
 **ConnectionCriteria** | Pointer to **string** | Specifies a set of connection criteria that must match the associated client connection in order for a connect, disconnect, request, or result message to be logged. | [optional] 
@@ -62,7 +62,7 @@ Name | Type | Description | Notes
 
 ### NewAddSyslogTextAccessLogPublisherRequest
 
-`func NewAddSyslogTextAccessLogPublisherRequest(publisherName string, schemas []EnumsyslogTextAccessLogPublisherSchemaUrn, syslogExternalServer []string, syslogFacility EnumlogPublisherSyslogFacilityProp, syslogSeverity EnumlogPublisherSyslogSeverityProp, asynchronous bool, enabled bool, ) *AddSyslogTextAccessLogPublisherRequest`
+`func NewAddSyslogTextAccessLogPublisherRequest(publisherName string, schemas []EnumsyslogTextAccessLogPublisherSchemaUrn, syslogExternalServer []string, enabled bool, ) *AddSyslogTextAccessLogPublisherRequest`
 
 NewAddSyslogTextAccessLogPublisherRequest instantiates a new AddSyslogTextAccessLogPublisherRequest object
 This constructor will assign default values to properties that have it defined,
@@ -156,6 +156,11 @@ and a boolean to check if the value has been set.
 
 SetSyslogFacility sets SyslogFacility field to given value.
 
+### HasSyslogFacility
+
+`func (o *AddSyslogTextAccessLogPublisherRequest) HasSyslogFacility() bool`
+
+HasSyslogFacility returns a boolean if a field has been set.
 
 ### GetSyslogSeverity
 
@@ -176,6 +181,11 @@ and a boolean to check if the value has been set.
 
 SetSyslogSeverity sets SyslogSeverity field to given value.
 
+### HasSyslogSeverity
+
+`func (o *AddSyslogTextAccessLogPublisherRequest) HasSyslogSeverity() bool`
+
+HasSyslogSeverity returns a boolean if a field has been set.
 
 ### GetSyslogMessageHostName
 
@@ -1121,6 +1131,11 @@ and a boolean to check if the value has been set.
 
 SetAsynchronous sets Asynchronous field to given value.
 
+### HasAsynchronous
+
+`func (o *AddSyslogTextAccessLogPublisherRequest) HasAsynchronous() bool`
+
+HasAsynchronous returns a boolean if a field has been set.
 
 ### GetAutoFlush
 

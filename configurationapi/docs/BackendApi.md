@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    addLocalDbBackendRequest := *openapiclient.NewAddLocalDbBackendRequest("BackendName_example", []openapiclient.EnumlocalDbBackendSchemaUrn{openapiclient.Enumlocal-db-backendSchemaUrn("urn:pingidentity:schemas:configuration:2.0:backend:local-db")}, openapiclient.Enumbackend-writabilityModeProp("enabled"), "DbDirectory_example", "ImportTempDirectory_example", "BackendID_example", false, []string{"BaseDN_example"}) // AddLocalDbBackendRequest | Create a new Backend in the config
+    addLocalDbBackendRequest := *openapiclient.NewAddLocalDbBackendRequest("BackendName_example", []openapiclient.EnumlocalDbBackendSchemaUrn{openapiclient.Enumlocal-db-backendSchemaUrn("urn:pingidentity:schemas:configuration:2.0:backend:local-db")}, "BackendID_example", false, []string{"BaseDN_example"}) // AddLocalDbBackendRequest | Create a new Backend in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

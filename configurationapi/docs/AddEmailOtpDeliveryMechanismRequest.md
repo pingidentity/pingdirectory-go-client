@@ -6,11 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MechanismName** | **string** | Name of the new OTP Delivery Mechanism | 
 **Schemas** | [**[]EnumemailOtpDeliveryMechanismSchemaUrn**](EnumemailOtpDeliveryMechanismSchemaUrn.md) |  | 
-**EmailAddressAttributeType** | **string** | The name or OID of the attribute that holds the email address to which the message should be sent. | 
+**EmailAddressAttributeType** | Pointer to **string** | The name or OID of the attribute that holds the email address to which the message should be sent. | [optional] 
 **EmailAddressJSONField** | Pointer to **string** | The name of the JSON field whose value is the email address to which the message should be sent. The email address must be contained in a top-level field whose value is a single string. | [optional] 
 **EmailAddressJSONObjectFilter** | Pointer to **string** | A JSON object filter that may be used to identify which email address value to use when sending the message. | [optional] 
 **SenderAddress** | **string** | The e-mail address to use as the sender for the one-time password. | 
-**MessageSubject** | **string** | The subject to use for the e-mail message. | 
+**MessageSubject** | Pointer to **string** | The subject to use for the e-mail message. | [optional] 
 **MessageTextBeforeOTP** | Pointer to **string** | Any text that should appear in the message before the one-time password value. | [optional] 
 **MessageTextAfterOTP** | Pointer to **string** | Any text that should appear in the message after the one-time password value. | [optional] 
 **Description** | Pointer to **string** | A description for this OTP Delivery Mechanism | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewAddEmailOtpDeliveryMechanismRequest
 
-`func NewAddEmailOtpDeliveryMechanismRequest(mechanismName string, schemas []EnumemailOtpDeliveryMechanismSchemaUrn, emailAddressAttributeType string, senderAddress string, messageSubject string, enabled bool, ) *AddEmailOtpDeliveryMechanismRequest`
+`func NewAddEmailOtpDeliveryMechanismRequest(mechanismName string, schemas []EnumemailOtpDeliveryMechanismSchemaUrn, senderAddress string, enabled bool, ) *AddEmailOtpDeliveryMechanismRequest`
 
 NewAddEmailOtpDeliveryMechanismRequest instantiates a new AddEmailOtpDeliveryMechanismRequest object
 This constructor will assign default values to properties that have it defined,
@@ -94,6 +94,11 @@ and a boolean to check if the value has been set.
 
 SetEmailAddressAttributeType sets EmailAddressAttributeType field to given value.
 
+### HasEmailAddressAttributeType
+
+`func (o *AddEmailOtpDeliveryMechanismRequest) HasEmailAddressAttributeType() bool`
+
+HasEmailAddressAttributeType returns a boolean if a field has been set.
 
 ### GetEmailAddressJSONField
 
@@ -184,6 +189,11 @@ and a boolean to check if the value has been set.
 
 SetMessageSubject sets MessageSubject field to given value.
 
+### HasMessageSubject
+
+`func (o *AddEmailOtpDeliveryMechanismRequest) HasMessageSubject() bool`
+
+HasMessageSubject returns a boolean if a field has been set.
 
 ### GetMessageTextBeforeOTP
 

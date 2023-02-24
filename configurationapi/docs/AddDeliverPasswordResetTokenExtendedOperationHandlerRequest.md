@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn**](EnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn.md) |  | 
 **PasswordGenerator** | **string** | The password generator that will be used to create the password reset token values to be delivered to the end user. | 
 **DefaultTokenDeliveryMechanism** | **[]string** | The set of delivery mechanisms that may be used to deliver password reset tokens to users for requests that do not specify one or more preferred delivery mechanisms. | 
-**PasswordResetTokenValidityDuration** | **string** | The maximum length of time that a password reset token should be considered valid. | 
+**PasswordResetTokenValidityDuration** | Pointer to **string** | The maximum length of time that a password reset token should be considered valid. | [optional] 
 **Description** | Pointer to **string** | A description for this Extended Operation Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server). | 
 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewAddDeliverPasswordResetTokenExtendedOperationHandlerRequest
 
-`func NewAddDeliverPasswordResetTokenExtendedOperationHandlerRequest(handlerName string, schemas []EnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn, passwordGenerator string, defaultTokenDeliveryMechanism []string, passwordResetTokenValidityDuration string, enabled bool, ) *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest`
+`func NewAddDeliverPasswordResetTokenExtendedOperationHandlerRequest(handlerName string, schemas []EnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn, passwordGenerator string, defaultTokenDeliveryMechanism []string, enabled bool, ) *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest`
 
 NewAddDeliverPasswordResetTokenExtendedOperationHandlerRequest instantiates a new AddDeliverPasswordResetTokenExtendedOperationHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -130,6 +130,11 @@ and a boolean to check if the value has been set.
 
 SetPasswordResetTokenValidityDuration sets PasswordResetTokenValidityDuration field to given value.
 
+### HasPasswordResetTokenValidityDuration
+
+`func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) HasPasswordResetTokenValidityDuration() bool`
+
+HasPasswordResetTokenValidityDuration returns a boolean if a field has been set.
 
 ### GetDescription
 

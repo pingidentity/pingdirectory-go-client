@@ -20,7 +20,7 @@ type AddRegularExpressionIdentityMapperRequest struct {
 	MapperName string                                         `json:"mapperName"`
 	Schemas    []EnumregularExpressionIdentityMapperSchemaUrn `json:"schemas"`
 	// Specifies the name or OID of the attribute whose value should match the provided identifier string after it has been processed by the associated regular expression.
-	MatchAttribute []string `json:"matchAttribute"`
+	MatchAttribute []string `json:"matchAttribute,omitempty"`
 	// Specifies the base DN(s) that should be used when performing searches to map the provided ID string to a user entry. If multiple values are given, searches are performed below all the specified base DNs.
 	MatchBaseDN []string `json:"matchBaseDN,omitempty"`
 	// An optional filter that mapped users must match.
@@ -39,11 +39,10 @@ type AddRegularExpressionIdentityMapperRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddRegularExpressionIdentityMapperRequest(mapperName string, schemas []EnumregularExpressionIdentityMapperSchemaUrn, matchAttribute []string, matchPattern string, enabled bool) *AddRegularExpressionIdentityMapperRequest {
+func NewAddRegularExpressionIdentityMapperRequest(mapperName string, schemas []EnumregularExpressionIdentityMapperSchemaUrn, matchPattern string, enabled bool) *AddRegularExpressionIdentityMapperRequest {
 	this := AddRegularExpressionIdentityMapperRequest{}
 	this.MapperName = mapperName
 	this.Schemas = schemas
-	this.MatchAttribute = matchAttribute
 	this.MatchPattern = matchPattern
 	this.Enabled = enabled
 	return &this
@@ -105,26 +104,34 @@ func (o *AddRegularExpressionIdentityMapperRequest) SetSchemas(v []EnumregularEx
 	o.Schemas = v
 }
 
-// GetMatchAttribute returns the MatchAttribute field value
+// GetMatchAttribute returns the MatchAttribute field value if set, zero value otherwise.
 func (o *AddRegularExpressionIdentityMapperRequest) GetMatchAttribute() []string {
-	if o == nil {
+	if o == nil || isNil(o.MatchAttribute) {
 		var ret []string
 		return ret
 	}
-
 	return o.MatchAttribute
 }
 
-// GetMatchAttributeOk returns a tuple with the MatchAttribute field value
+// GetMatchAttributeOk returns a tuple with the MatchAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddRegularExpressionIdentityMapperRequest) GetMatchAttributeOk() ([]string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.MatchAttribute) {
 		return nil, false
 	}
 	return o.MatchAttribute, true
 }
 
-// SetMatchAttribute sets field value
+// HasMatchAttribute returns a boolean if a field has been set.
+func (o *AddRegularExpressionIdentityMapperRequest) HasMatchAttribute() bool {
+	if o != nil && !isNil(o.MatchAttribute) {
+		return true
+	}
+
+	return false
+}
+
+// SetMatchAttribute gets a reference to the given []string and assigns it to the MatchAttribute field.
 func (o *AddRegularExpressionIdentityMapperRequest) SetMatchAttribute(v []string) {
 	o.MatchAttribute = v
 }
@@ -313,7 +320,7 @@ func (o AddRegularExpressionIdentityMapperRequest) MarshalJSON() ([]byte, error)
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if true {
+	if !isNil(o.MatchAttribute) {
 		toSerialize["matchAttribute"] = o.MatchAttribute
 	}
 	if !isNil(o.MatchBaseDN) {

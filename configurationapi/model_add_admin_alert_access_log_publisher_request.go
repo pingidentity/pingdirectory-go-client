@@ -42,7 +42,7 @@ type AddAdminAlertAccessLogPublisherRequest struct {
 	// Specifies whether to flush the writer after every log record.
 	AutoFlush *bool `json:"autoFlush,omitempty"`
 	// Indicates whether the Admin Alert Access Log Publisher will publish records asynchronously.
-	Asynchronous bool `json:"asynchronous"`
+	Asynchronous *bool `json:"asynchronous,omitempty"`
 	// The maximum number of log records that can be stored in the asynchronous queue.
 	QueueSize *int32 `json:"queueSize,omitempty"`
 	// Indicates whether log messages for operation results should include information about both the request and the result.
@@ -114,11 +114,10 @@ type AddAdminAlertAccessLogPublisherRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddAdminAlertAccessLogPublisherRequest(publisherName string, schemas []EnumadminAlertAccessLogPublisherSchemaUrn, asynchronous bool, enabled bool) *AddAdminAlertAccessLogPublisherRequest {
+func NewAddAdminAlertAccessLogPublisherRequest(publisherName string, schemas []EnumadminAlertAccessLogPublisherSchemaUrn, enabled bool) *AddAdminAlertAccessLogPublisherRequest {
 	this := AddAdminAlertAccessLogPublisherRequest{}
 	this.PublisherName = publisherName
 	this.Schemas = schemas
-	this.Asynchronous = asynchronous
 	this.Enabled = enabled
 	return &this
 }
@@ -531,28 +530,36 @@ func (o *AddAdminAlertAccessLogPublisherRequest) SetAutoFlush(v bool) {
 	o.AutoFlush = &v
 }
 
-// GetAsynchronous returns the Asynchronous field value
+// GetAsynchronous returns the Asynchronous field value if set, zero value otherwise.
 func (o *AddAdminAlertAccessLogPublisherRequest) GetAsynchronous() bool {
-	if o == nil {
+	if o == nil || isNil(o.Asynchronous) {
 		var ret bool
 		return ret
 	}
-
-	return o.Asynchronous
+	return *o.Asynchronous
 }
 
-// GetAsynchronousOk returns a tuple with the Asynchronous field value
+// GetAsynchronousOk returns a tuple with the Asynchronous field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAdminAlertAccessLogPublisherRequest) GetAsynchronousOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || isNil(o.Asynchronous) {
 		return nil, false
 	}
-	return &o.Asynchronous, true
+	return o.Asynchronous, true
 }
 
-// SetAsynchronous sets field value
+// HasAsynchronous returns a boolean if a field has been set.
+func (o *AddAdminAlertAccessLogPublisherRequest) HasAsynchronous() bool {
+	if o != nil && !isNil(o.Asynchronous) {
+		return true
+	}
+
+	return false
+}
+
+// SetAsynchronous gets a reference to the given bool and assigns it to the Asynchronous field.
 func (o *AddAdminAlertAccessLogPublisherRequest) SetAsynchronous(v bool) {
-	o.Asynchronous = v
+	o.Asynchronous = &v
 }
 
 // GetQueueSize returns the QueueSize field value if set, zero value otherwise.
@@ -1644,7 +1651,7 @@ func (o AddAdminAlertAccessLogPublisherRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.AutoFlush) {
 		toSerialize["autoFlush"] = o.AutoFlush
 	}
-	if true {
+	if !isNil(o.Asynchronous) {
 		toSerialize["asynchronous"] = o.Asynchronous
 	}
 	if !isNil(o.QueueSize) {

@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AuditorName** | **string** | Name of the new Data Security Auditor | 
 **Schemas** | [**[]EnumdisabledAccountDataSecurityAuditorSchemaUrn**](EnumdisabledAccountDataSecurityAuditorSchemaUrn.md) |  | 
-**ReportFile** | **string** | Specifies the name of the detailed report file. | 
-**Enabled** | **bool** | Indicates whether the Data Security Auditor is enabled for use. | 
+**ReportFile** | Pointer to **string** | Specifies the name of the detailed report file. | [optional] 
+**Enabled** | Pointer to **bool** | Indicates whether the Data Security Auditor is enabled for use. | [optional] 
 **IncludeAttribute** | Pointer to **[]string** | Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included. | [optional] 
 **AuditBackend** | Pointer to **[]string** | Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler). | [optional] 
 **AuditSeverity** | Pointer to [**EnumdataSecurityAuditorAuditSeverityProp**](EnumdataSecurityAuditorAuditSeverityProp.md) |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewAddDisabledAccountDataSecurityAuditorRequest
 
-`func NewAddDisabledAccountDataSecurityAuditorRequest(auditorName string, schemas []EnumdisabledAccountDataSecurityAuditorSchemaUrn, reportFile string, enabled bool, ) *AddDisabledAccountDataSecurityAuditorRequest`
+`func NewAddDisabledAccountDataSecurityAuditorRequest(auditorName string, schemas []EnumdisabledAccountDataSecurityAuditorSchemaUrn, ) *AddDisabledAccountDataSecurityAuditorRequest`
 
 NewAddDisabledAccountDataSecurityAuditorRequest instantiates a new AddDisabledAccountDataSecurityAuditorRequest object
 This constructor will assign default values to properties that have it defined,
@@ -90,6 +90,11 @@ and a boolean to check if the value has been set.
 
 SetReportFile sets ReportFile field to given value.
 
+### HasReportFile
+
+`func (o *AddDisabledAccountDataSecurityAuditorRequest) HasReportFile() bool`
+
+HasReportFile returns a boolean if a field has been set.
 
 ### GetEnabled
 
@@ -110,6 +115,11 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
+### HasEnabled
+
+`func (o *AddDisabledAccountDataSecurityAuditorRequest) HasEnabled() bool`
+
+HasEnabled returns a boolean if a field has been set.
 
 ### GetIncludeAttribute
 

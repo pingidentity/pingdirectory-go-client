@@ -20,9 +20,9 @@ type AddSyslogTextAccessLogPublisherRequest struct {
 	PublisherName string                                      `json:"publisherName"`
 	Schemas       []EnumsyslogTextAccessLogPublisherSchemaUrn `json:"schemas"`
 	// The syslog server to which messages should be sent.
-	SyslogExternalServer []string                           `json:"syslogExternalServer"`
-	SyslogFacility       EnumlogPublisherSyslogFacilityProp `json:"syslogFacility"`
-	SyslogSeverity       EnumlogPublisherSyslogSeverityProp `json:"syslogSeverity"`
+	SyslogExternalServer []string                            `json:"syslogExternalServer"`
+	SyslogFacility       *EnumlogPublisherSyslogFacilityProp `json:"syslogFacility,omitempty"`
+	SyslogSeverity       *EnumlogPublisherSyslogSeverityProp `json:"syslogSeverity,omitempty"`
 	// The local host name that will be included in syslog messages that are logged by this Syslog Text Access Log Publisher.
 	SyslogMessageHostName *string `json:"syslogMessageHostName,omitempty"`
 	// The application name that will be included in syslog messages that are logged by this Syslog Text Access Log Publisher.
@@ -97,7 +97,7 @@ type AddSyslogTextAccessLogPublisherRequest struct {
 	// Indicates whether to use generified version of certain message strings, including diagnostic messages, additional information messages, authentication failure reasons, and disconnect messages. Generified versions of those strings may use placeholders (like %s for a string or %d for an integer) rather than the version of the string with those placeholders replaced with specific values.
 	GenerifyMessageStringsWhenPossible *bool `json:"generifyMessageStringsWhenPossible,omitempty"`
 	// Indicates whether the Writer Based Access Log Publisher will publish records asynchronously.
-	Asynchronous bool `json:"asynchronous"`
+	Asynchronous *bool `json:"asynchronous,omitempty"`
 	// Specifies whether to flush the writer after every log record.
 	AutoFlush *bool `json:"autoFlush,omitempty"`
 	// The behavior to use for determining which fields to log and whether to transform the values of those fields in any way.
@@ -123,14 +123,11 @@ type AddSyslogTextAccessLogPublisherRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddSyslogTextAccessLogPublisherRequest(publisherName string, schemas []EnumsyslogTextAccessLogPublisherSchemaUrn, syslogExternalServer []string, syslogFacility EnumlogPublisherSyslogFacilityProp, syslogSeverity EnumlogPublisherSyslogSeverityProp, asynchronous bool, enabled bool) *AddSyslogTextAccessLogPublisherRequest {
+func NewAddSyslogTextAccessLogPublisherRequest(publisherName string, schemas []EnumsyslogTextAccessLogPublisherSchemaUrn, syslogExternalServer []string, enabled bool) *AddSyslogTextAccessLogPublisherRequest {
 	this := AddSyslogTextAccessLogPublisherRequest{}
 	this.PublisherName = publisherName
 	this.Schemas = schemas
 	this.SyslogExternalServer = syslogExternalServer
-	this.SyslogFacility = syslogFacility
-	this.SyslogSeverity = syslogSeverity
-	this.Asynchronous = asynchronous
 	this.Enabled = enabled
 	return &this
 }
@@ -215,52 +212,68 @@ func (o *AddSyslogTextAccessLogPublisherRequest) SetSyslogExternalServer(v []str
 	o.SyslogExternalServer = v
 }
 
-// GetSyslogFacility returns the SyslogFacility field value
+// GetSyslogFacility returns the SyslogFacility field value if set, zero value otherwise.
 func (o *AddSyslogTextAccessLogPublisherRequest) GetSyslogFacility() EnumlogPublisherSyslogFacilityProp {
-	if o == nil {
+	if o == nil || isNil(o.SyslogFacility) {
 		var ret EnumlogPublisherSyslogFacilityProp
 		return ret
 	}
-
-	return o.SyslogFacility
+	return *o.SyslogFacility
 }
 
-// GetSyslogFacilityOk returns a tuple with the SyslogFacility field value
+// GetSyslogFacilityOk returns a tuple with the SyslogFacility field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogTextAccessLogPublisherRequest) GetSyslogFacilityOk() (*EnumlogPublisherSyslogFacilityProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.SyslogFacility) {
 		return nil, false
 	}
-	return &o.SyslogFacility, true
+	return o.SyslogFacility, true
 }
 
-// SetSyslogFacility sets field value
+// HasSyslogFacility returns a boolean if a field has been set.
+func (o *AddSyslogTextAccessLogPublisherRequest) HasSyslogFacility() bool {
+	if o != nil && !isNil(o.SyslogFacility) {
+		return true
+	}
+
+	return false
+}
+
+// SetSyslogFacility gets a reference to the given EnumlogPublisherSyslogFacilityProp and assigns it to the SyslogFacility field.
 func (o *AddSyslogTextAccessLogPublisherRequest) SetSyslogFacility(v EnumlogPublisherSyslogFacilityProp) {
-	o.SyslogFacility = v
+	o.SyslogFacility = &v
 }
 
-// GetSyslogSeverity returns the SyslogSeverity field value
+// GetSyslogSeverity returns the SyslogSeverity field value if set, zero value otherwise.
 func (o *AddSyslogTextAccessLogPublisherRequest) GetSyslogSeverity() EnumlogPublisherSyslogSeverityProp {
-	if o == nil {
+	if o == nil || isNil(o.SyslogSeverity) {
 		var ret EnumlogPublisherSyslogSeverityProp
 		return ret
 	}
-
-	return o.SyslogSeverity
+	return *o.SyslogSeverity
 }
 
-// GetSyslogSeverityOk returns a tuple with the SyslogSeverity field value
+// GetSyslogSeverityOk returns a tuple with the SyslogSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogTextAccessLogPublisherRequest) GetSyslogSeverityOk() (*EnumlogPublisherSyslogSeverityProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.SyslogSeverity) {
 		return nil, false
 	}
-	return &o.SyslogSeverity, true
+	return o.SyslogSeverity, true
 }
 
-// SetSyslogSeverity sets field value
+// HasSyslogSeverity returns a boolean if a field has been set.
+func (o *AddSyslogTextAccessLogPublisherRequest) HasSyslogSeverity() bool {
+	if o != nil && !isNil(o.SyslogSeverity) {
+		return true
+	}
+
+	return false
+}
+
+// SetSyslogSeverity gets a reference to the given EnumlogPublisherSyslogSeverityProp and assigns it to the SyslogSeverity field.
 func (o *AddSyslogTextAccessLogPublisherRequest) SetSyslogSeverity(v EnumlogPublisherSyslogSeverityProp) {
-	o.SyslogSeverity = v
+	o.SyslogSeverity = &v
 }
 
 // GetSyslogMessageHostName returns the SyslogMessageHostName field value if set, zero value otherwise.
@@ -1447,28 +1460,36 @@ func (o *AddSyslogTextAccessLogPublisherRequest) SetGenerifyMessageStringsWhenPo
 	o.GenerifyMessageStringsWhenPossible = &v
 }
 
-// GetAsynchronous returns the Asynchronous field value
+// GetAsynchronous returns the Asynchronous field value if set, zero value otherwise.
 func (o *AddSyslogTextAccessLogPublisherRequest) GetAsynchronous() bool {
-	if o == nil {
+	if o == nil || isNil(o.Asynchronous) {
 		var ret bool
 		return ret
 	}
-
-	return o.Asynchronous
+	return *o.Asynchronous
 }
 
-// GetAsynchronousOk returns a tuple with the Asynchronous field value
+// GetAsynchronousOk returns a tuple with the Asynchronous field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogTextAccessLogPublisherRequest) GetAsynchronousOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || isNil(o.Asynchronous) {
 		return nil, false
 	}
-	return &o.Asynchronous, true
+	return o.Asynchronous, true
 }
 
-// SetAsynchronous sets field value
+// HasAsynchronous returns a boolean if a field has been set.
+func (o *AddSyslogTextAccessLogPublisherRequest) HasAsynchronous() bool {
+	if o != nil && !isNil(o.Asynchronous) {
+		return true
+	}
+
+	return false
+}
+
+// SetAsynchronous gets a reference to the given bool and assigns it to the Asynchronous field.
 func (o *AddSyslogTextAccessLogPublisherRequest) SetAsynchronous(v bool) {
-	o.Asynchronous = v
+	o.Asynchronous = &v
 }
 
 // GetAutoFlush returns the AutoFlush field value if set, zero value otherwise.
@@ -1794,10 +1815,10 @@ func (o AddSyslogTextAccessLogPublisherRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["syslogExternalServer"] = o.SyslogExternalServer
 	}
-	if true {
+	if !isNil(o.SyslogFacility) {
 		toSerialize["syslogFacility"] = o.SyslogFacility
 	}
-	if true {
+	if !isNil(o.SyslogSeverity) {
 		toSerialize["syslogSeverity"] = o.SyslogSeverity
 	}
 	if !isNil(o.SyslogMessageHostName) {
@@ -1911,7 +1932,7 @@ func (o AddSyslogTextAccessLogPublisherRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.GenerifyMessageStringsWhenPossible) {
 		toSerialize["generifyMessageStringsWhenPossible"] = o.GenerifyMessageStringsWhenPossible
 	}
-	if true {
+	if !isNil(o.Asynchronous) {
 		toSerialize["asynchronous"] = o.Asynchronous
 	}
 	if !isNil(o.AutoFlush) {

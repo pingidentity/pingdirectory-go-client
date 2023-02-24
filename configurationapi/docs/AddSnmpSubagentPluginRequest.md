@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnumsnmpSubagentPluginSchemaUrn**](EnumsnmpSubagentPluginSchemaUrn.md) |  | 
 **ContextName** | Pointer to **string** | The SNMP context name for this sub-agent. The context name must not be longer than 30 ASCII characters. Each server in a topology must have a unique SNMP context name. | [optional] 
-**AgentxAddress** | **string** | The hostname or IP address of the SNMP master agent. | 
-**AgentxPort** | **int32** | The port number on which the SNMP master agent will be contacted. | 
+**AgentxAddress** | Pointer to **string** | The hostname or IP address of the SNMP master agent. | [optional] 
+**AgentxPort** | Pointer to **int32** | The port number on which the SNMP master agent will be contacted. | [optional] 
 **NumWorkerThreads** | Pointer to **int32** | The number of worker threads to use to handle SNMP requests. | [optional] 
 **SessionTimeout** | Pointer to **string** | Specifies the maximum amount of time to wait for a session to the master agent to be established. | [optional] 
 **ConnectRetryMaxWait** | Pointer to **string** | The maximum amount of time to wait between attempts to establish a connection to the master agent. | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewAddSnmpSubagentPluginRequest
 
-`func NewAddSnmpSubagentPluginRequest(pluginName string, schemas []EnumsnmpSubagentPluginSchemaUrn, agentxAddress string, agentxPort int32, enabled bool, ) *AddSnmpSubagentPluginRequest`
+`func NewAddSnmpSubagentPluginRequest(pluginName string, schemas []EnumsnmpSubagentPluginSchemaUrn, enabled bool, ) *AddSnmpSubagentPluginRequest`
 
 NewAddSnmpSubagentPluginRequest instantiates a new AddSnmpSubagentPluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -120,6 +120,11 @@ and a boolean to check if the value has been set.
 
 SetAgentxAddress sets AgentxAddress field to given value.
 
+### HasAgentxAddress
+
+`func (o *AddSnmpSubagentPluginRequest) HasAgentxAddress() bool`
+
+HasAgentxAddress returns a boolean if a field has been set.
 
 ### GetAgentxPort
 
@@ -140,6 +145,11 @@ and a boolean to check if the value has been set.
 
 SetAgentxPort sets AgentxPort field to given value.
 
+### HasAgentxPort
+
+`func (o *AddSnmpSubagentPluginRequest) HasAgentxPort() bool`
+
+HasAgentxPort returns a boolean if a field has been set.
 
 ### GetNumWorkerThreads
 

@@ -22,7 +22,7 @@ type AddLdapExternalServerRequest struct {
 	// The host name or IP address of the target LDAP server.
 	ServerHostName string `json:"serverHostName"`
 	// The port number on which the server listens for requests.
-	ServerPort int32 `json:"serverPort"`
+	ServerPort *int32 `json:"serverPort,omitempty"`
 	// Specifies the location for the LDAP External Server.
 	Location *string `json:"location,omitempty"`
 	// The DN to use to bind to the target LDAP server if simple authentication is required.
@@ -30,20 +30,20 @@ type AddLdapExternalServerRequest struct {
 	// The login password for the specified user.
 	Password *string `json:"password,omitempty"`
 	// The passphrase provider to use to obtain the login password for the specified user.
-	PassphraseProvider      *string                                       `json:"passphraseProvider,omitempty"`
-	ConnectionSecurity      EnumexternalServerConnectionSecurityProp      `json:"connectionSecurity"`
-	AuthenticationMethod    EnumexternalServerAuthenticationMethodProp    `json:"authenticationMethod"`
-	VerifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp `json:"verifyCredentialsMethod"`
+	PassphraseProvider      *string                                        `json:"passphraseProvider,omitempty"`
+	ConnectionSecurity      *EnumexternalServerConnectionSecurityProp      `json:"connectionSecurity,omitempty"`
+	AuthenticationMethod    *EnumexternalServerAuthenticationMethodProp    `json:"authenticationMethod,omitempty"`
+	VerifyCredentialsMethod *EnumexternalServerVerifyCredentialsMethodProp `json:"verifyCredentialsMethod,omitempty"`
 	// Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
 	HealthCheckConnectTimeout *string `json:"healthCheckConnectTimeout,omitempty"`
 	// Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections.
-	MaxConnectionAge string `json:"maxConnectionAge"`
+	MaxConnectionAge *string `json:"maxConnectionAge,omitempty"`
 	// Specifies the minimum length of time that should pass between connection closures as a result of the connections being established for longer than the maximum connection age. This may help avoid cases in which a large number of connections are closed and re-established in a short period of time because of the maximum connection age.
 	MinExpiredConnectionDisconnectInterval *string `json:"minExpiredConnectionDisconnectInterval,omitempty"`
 	// Specifies the maximum length of time to wait for a connection to be established before giving up and considering the server unavailable.
-	ConnectTimeout string `json:"connectTimeout"`
+	ConnectTimeout *string `json:"connectTimeout,omitempty"`
 	// Specifies the maximum response size that should be supported for messages received from the LDAP external server.
-	MaxResponseSize string `json:"maxResponseSize"`
+	MaxResponseSize *string `json:"maxResponseSize,omitempty"`
 	// The key manager provider to use if SSL or StartTLS is to be used for connection-level security. When specifying a value for this property (except when using the Null key manager provider) you must ensure that the external server trusts this server's public certificate by adding this server's public certificate to the external server's trust store.
 	KeyManagerProvider *string `json:"keyManagerProvider,omitempty"`
 	// The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
@@ -63,18 +63,11 @@ type AddLdapExternalServerRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddLdapExternalServerRequest(serverName string, schemas []EnumldapExternalServerSchemaUrn, serverHostName string, serverPort int32, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerAuthenticationMethodProp, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string) *AddLdapExternalServerRequest {
+func NewAddLdapExternalServerRequest(serverName string, schemas []EnumldapExternalServerSchemaUrn, serverHostName string) *AddLdapExternalServerRequest {
 	this := AddLdapExternalServerRequest{}
 	this.ServerName = serverName
 	this.Schemas = schemas
 	this.ServerHostName = serverHostName
-	this.ServerPort = serverPort
-	this.ConnectionSecurity = connectionSecurity
-	this.AuthenticationMethod = authenticationMethod
-	this.VerifyCredentialsMethod = verifyCredentialsMethod
-	this.MaxConnectionAge = maxConnectionAge
-	this.ConnectTimeout = connectTimeout
-	this.MaxResponseSize = maxResponseSize
 	return &this
 }
 
@@ -158,28 +151,36 @@ func (o *AddLdapExternalServerRequest) SetServerHostName(v string) {
 	o.ServerHostName = v
 }
 
-// GetServerPort returns the ServerPort field value
+// GetServerPort returns the ServerPort field value if set, zero value otherwise.
 func (o *AddLdapExternalServerRequest) GetServerPort() int32 {
-	if o == nil {
+	if o == nil || isNil(o.ServerPort) {
 		var ret int32
 		return ret
 	}
-
-	return o.ServerPort
+	return *o.ServerPort
 }
 
-// GetServerPortOk returns a tuple with the ServerPort field value
+// GetServerPortOk returns a tuple with the ServerPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapExternalServerRequest) GetServerPortOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || isNil(o.ServerPort) {
 		return nil, false
 	}
-	return &o.ServerPort, true
+	return o.ServerPort, true
 }
 
-// SetServerPort sets field value
+// HasServerPort returns a boolean if a field has been set.
+func (o *AddLdapExternalServerRequest) HasServerPort() bool {
+	if o != nil && !isNil(o.ServerPort) {
+		return true
+	}
+
+	return false
+}
+
+// SetServerPort gets a reference to the given int32 and assigns it to the ServerPort field.
 func (o *AddLdapExternalServerRequest) SetServerPort(v int32) {
-	o.ServerPort = v
+	o.ServerPort = &v
 }
 
 // GetLocation returns the Location field value if set, zero value otherwise.
@@ -310,76 +311,100 @@ func (o *AddLdapExternalServerRequest) SetPassphraseProvider(v string) {
 	o.PassphraseProvider = &v
 }
 
-// GetConnectionSecurity returns the ConnectionSecurity field value
+// GetConnectionSecurity returns the ConnectionSecurity field value if set, zero value otherwise.
 func (o *AddLdapExternalServerRequest) GetConnectionSecurity() EnumexternalServerConnectionSecurityProp {
-	if o == nil {
+	if o == nil || isNil(o.ConnectionSecurity) {
 		var ret EnumexternalServerConnectionSecurityProp
 		return ret
 	}
-
-	return o.ConnectionSecurity
+	return *o.ConnectionSecurity
 }
 
-// GetConnectionSecurityOk returns a tuple with the ConnectionSecurity field value
+// GetConnectionSecurityOk returns a tuple with the ConnectionSecurity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapExternalServerRequest) GetConnectionSecurityOk() (*EnumexternalServerConnectionSecurityProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.ConnectionSecurity) {
 		return nil, false
 	}
-	return &o.ConnectionSecurity, true
+	return o.ConnectionSecurity, true
 }
 
-// SetConnectionSecurity sets field value
+// HasConnectionSecurity returns a boolean if a field has been set.
+func (o *AddLdapExternalServerRequest) HasConnectionSecurity() bool {
+	if o != nil && !isNil(o.ConnectionSecurity) {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectionSecurity gets a reference to the given EnumexternalServerConnectionSecurityProp and assigns it to the ConnectionSecurity field.
 func (o *AddLdapExternalServerRequest) SetConnectionSecurity(v EnumexternalServerConnectionSecurityProp) {
-	o.ConnectionSecurity = v
+	o.ConnectionSecurity = &v
 }
 
-// GetAuthenticationMethod returns the AuthenticationMethod field value
+// GetAuthenticationMethod returns the AuthenticationMethod field value if set, zero value otherwise.
 func (o *AddLdapExternalServerRequest) GetAuthenticationMethod() EnumexternalServerAuthenticationMethodProp {
-	if o == nil {
+	if o == nil || isNil(o.AuthenticationMethod) {
 		var ret EnumexternalServerAuthenticationMethodProp
 		return ret
 	}
-
-	return o.AuthenticationMethod
+	return *o.AuthenticationMethod
 }
 
-// GetAuthenticationMethodOk returns a tuple with the AuthenticationMethod field value
+// GetAuthenticationMethodOk returns a tuple with the AuthenticationMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapExternalServerRequest) GetAuthenticationMethodOk() (*EnumexternalServerAuthenticationMethodProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.AuthenticationMethod) {
 		return nil, false
 	}
-	return &o.AuthenticationMethod, true
+	return o.AuthenticationMethod, true
 }
 
-// SetAuthenticationMethod sets field value
+// HasAuthenticationMethod returns a boolean if a field has been set.
+func (o *AddLdapExternalServerRequest) HasAuthenticationMethod() bool {
+	if o != nil && !isNil(o.AuthenticationMethod) {
+		return true
+	}
+
+	return false
+}
+
+// SetAuthenticationMethod gets a reference to the given EnumexternalServerAuthenticationMethodProp and assigns it to the AuthenticationMethod field.
 func (o *AddLdapExternalServerRequest) SetAuthenticationMethod(v EnumexternalServerAuthenticationMethodProp) {
-	o.AuthenticationMethod = v
+	o.AuthenticationMethod = &v
 }
 
-// GetVerifyCredentialsMethod returns the VerifyCredentialsMethod field value
+// GetVerifyCredentialsMethod returns the VerifyCredentialsMethod field value if set, zero value otherwise.
 func (o *AddLdapExternalServerRequest) GetVerifyCredentialsMethod() EnumexternalServerVerifyCredentialsMethodProp {
-	if o == nil {
+	if o == nil || isNil(o.VerifyCredentialsMethod) {
 		var ret EnumexternalServerVerifyCredentialsMethodProp
 		return ret
 	}
-
-	return o.VerifyCredentialsMethod
+	return *o.VerifyCredentialsMethod
 }
 
-// GetVerifyCredentialsMethodOk returns a tuple with the VerifyCredentialsMethod field value
+// GetVerifyCredentialsMethodOk returns a tuple with the VerifyCredentialsMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapExternalServerRequest) GetVerifyCredentialsMethodOk() (*EnumexternalServerVerifyCredentialsMethodProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.VerifyCredentialsMethod) {
 		return nil, false
 	}
-	return &o.VerifyCredentialsMethod, true
+	return o.VerifyCredentialsMethod, true
 }
 
-// SetVerifyCredentialsMethod sets field value
+// HasVerifyCredentialsMethod returns a boolean if a field has been set.
+func (o *AddLdapExternalServerRequest) HasVerifyCredentialsMethod() bool {
+	if o != nil && !isNil(o.VerifyCredentialsMethod) {
+		return true
+	}
+
+	return false
+}
+
+// SetVerifyCredentialsMethod gets a reference to the given EnumexternalServerVerifyCredentialsMethodProp and assigns it to the VerifyCredentialsMethod field.
 func (o *AddLdapExternalServerRequest) SetVerifyCredentialsMethod(v EnumexternalServerVerifyCredentialsMethodProp) {
-	o.VerifyCredentialsMethod = v
+	o.VerifyCredentialsMethod = &v
 }
 
 // GetHealthCheckConnectTimeout returns the HealthCheckConnectTimeout field value if set, zero value otherwise.
@@ -414,28 +439,36 @@ func (o *AddLdapExternalServerRequest) SetHealthCheckConnectTimeout(v string) {
 	o.HealthCheckConnectTimeout = &v
 }
 
-// GetMaxConnectionAge returns the MaxConnectionAge field value
+// GetMaxConnectionAge returns the MaxConnectionAge field value if set, zero value otherwise.
 func (o *AddLdapExternalServerRequest) GetMaxConnectionAge() string {
-	if o == nil {
+	if o == nil || isNil(o.MaxConnectionAge) {
 		var ret string
 		return ret
 	}
-
-	return o.MaxConnectionAge
+	return *o.MaxConnectionAge
 }
 
-// GetMaxConnectionAgeOk returns a tuple with the MaxConnectionAge field value
+// GetMaxConnectionAgeOk returns a tuple with the MaxConnectionAge field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapExternalServerRequest) GetMaxConnectionAgeOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.MaxConnectionAge) {
 		return nil, false
 	}
-	return &o.MaxConnectionAge, true
+	return o.MaxConnectionAge, true
 }
 
-// SetMaxConnectionAge sets field value
+// HasMaxConnectionAge returns a boolean if a field has been set.
+func (o *AddLdapExternalServerRequest) HasMaxConnectionAge() bool {
+	if o != nil && !isNil(o.MaxConnectionAge) {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxConnectionAge gets a reference to the given string and assigns it to the MaxConnectionAge field.
 func (o *AddLdapExternalServerRequest) SetMaxConnectionAge(v string) {
-	o.MaxConnectionAge = v
+	o.MaxConnectionAge = &v
 }
 
 // GetMinExpiredConnectionDisconnectInterval returns the MinExpiredConnectionDisconnectInterval field value if set, zero value otherwise.
@@ -470,52 +503,68 @@ func (o *AddLdapExternalServerRequest) SetMinExpiredConnectionDisconnectInterval
 	o.MinExpiredConnectionDisconnectInterval = &v
 }
 
-// GetConnectTimeout returns the ConnectTimeout field value
+// GetConnectTimeout returns the ConnectTimeout field value if set, zero value otherwise.
 func (o *AddLdapExternalServerRequest) GetConnectTimeout() string {
-	if o == nil {
+	if o == nil || isNil(o.ConnectTimeout) {
 		var ret string
 		return ret
 	}
-
-	return o.ConnectTimeout
+	return *o.ConnectTimeout
 }
 
-// GetConnectTimeoutOk returns a tuple with the ConnectTimeout field value
+// GetConnectTimeoutOk returns a tuple with the ConnectTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapExternalServerRequest) GetConnectTimeoutOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.ConnectTimeout) {
 		return nil, false
 	}
-	return &o.ConnectTimeout, true
+	return o.ConnectTimeout, true
 }
 
-// SetConnectTimeout sets field value
+// HasConnectTimeout returns a boolean if a field has been set.
+func (o *AddLdapExternalServerRequest) HasConnectTimeout() bool {
+	if o != nil && !isNil(o.ConnectTimeout) {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectTimeout gets a reference to the given string and assigns it to the ConnectTimeout field.
 func (o *AddLdapExternalServerRequest) SetConnectTimeout(v string) {
-	o.ConnectTimeout = v
+	o.ConnectTimeout = &v
 }
 
-// GetMaxResponseSize returns the MaxResponseSize field value
+// GetMaxResponseSize returns the MaxResponseSize field value if set, zero value otherwise.
 func (o *AddLdapExternalServerRequest) GetMaxResponseSize() string {
-	if o == nil {
+	if o == nil || isNil(o.MaxResponseSize) {
 		var ret string
 		return ret
 	}
-
-	return o.MaxResponseSize
+	return *o.MaxResponseSize
 }
 
-// GetMaxResponseSizeOk returns a tuple with the MaxResponseSize field value
+// GetMaxResponseSizeOk returns a tuple with the MaxResponseSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapExternalServerRequest) GetMaxResponseSizeOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.MaxResponseSize) {
 		return nil, false
 	}
-	return &o.MaxResponseSize, true
+	return o.MaxResponseSize, true
 }
 
-// SetMaxResponseSize sets field value
+// HasMaxResponseSize returns a boolean if a field has been set.
+func (o *AddLdapExternalServerRequest) HasMaxResponseSize() bool {
+	if o != nil && !isNil(o.MaxResponseSize) {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxResponseSize gets a reference to the given string and assigns it to the MaxResponseSize field.
 func (o *AddLdapExternalServerRequest) SetMaxResponseSize(v string) {
-	o.MaxResponseSize = v
+	o.MaxResponseSize = &v
 }
 
 // GetKeyManagerProvider returns the KeyManagerProvider field value if set, zero value otherwise.
@@ -753,7 +802,7 @@ func (o AddLdapExternalServerRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["serverHostName"] = o.ServerHostName
 	}
-	if true {
+	if !isNil(o.ServerPort) {
 		toSerialize["serverPort"] = o.ServerPort
 	}
 	if !isNil(o.Location) {
@@ -768,28 +817,28 @@ func (o AddLdapExternalServerRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.PassphraseProvider) {
 		toSerialize["passphraseProvider"] = o.PassphraseProvider
 	}
-	if true {
+	if !isNil(o.ConnectionSecurity) {
 		toSerialize["connectionSecurity"] = o.ConnectionSecurity
 	}
-	if true {
+	if !isNil(o.AuthenticationMethod) {
 		toSerialize["authenticationMethod"] = o.AuthenticationMethod
 	}
-	if true {
+	if !isNil(o.VerifyCredentialsMethod) {
 		toSerialize["verifyCredentialsMethod"] = o.VerifyCredentialsMethod
 	}
 	if !isNil(o.HealthCheckConnectTimeout) {
 		toSerialize["healthCheckConnectTimeout"] = o.HealthCheckConnectTimeout
 	}
-	if true {
+	if !isNil(o.MaxConnectionAge) {
 		toSerialize["maxConnectionAge"] = o.MaxConnectionAge
 	}
 	if !isNil(o.MinExpiredConnectionDisconnectInterval) {
 		toSerialize["minExpiredConnectionDisconnectInterval"] = o.MinExpiredConnectionDisconnectInterval
 	}
-	if true {
+	if !isNil(o.ConnectTimeout) {
 		toSerialize["connectTimeout"] = o.ConnectTimeout
 	}
-	if true {
+	if !isNil(o.MaxResponseSize) {
 		toSerialize["maxResponseSize"] = o.MaxResponseSize
 	}
 	if !isNil(o.KeyManagerProvider) {

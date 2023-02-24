@@ -20,11 +20,11 @@ type AddDictionaryPasswordValidatorRequest struct {
 	ValidatorName string                                     `json:"validatorName"`
 	Schemas       []EnumdictionaryPasswordValidatorSchemaUrn `json:"schemas"`
 	// Specifies the path to the file containing a list of words that cannot be used as passwords.
-	DictionaryFile string `json:"dictionaryFile"`
+	DictionaryFile *string `json:"dictionaryFile,omitempty"`
 	// Indicates whether this password validator is to treat password characters in a case-sensitive manner.
-	CaseSensitiveValidation bool `json:"caseSensitiveValidation"`
+	CaseSensitiveValidation *bool `json:"caseSensitiveValidation,omitempty"`
 	// Indicates whether this password validator is to test the reversed value of the provided password as well as the order in which it was given.
-	TestReversedPassword bool `json:"testReversedPassword"`
+	TestReversedPassword *bool `json:"testReversedPassword,omitempty"`
 	// Indicates whether to ignore any digits, symbols, or other non-alphabetic characters that may appear at the beginning of a proposed password.
 	IgnoreLeadingNonAlphabeticCharacters *bool `json:"ignoreLeadingNonAlphabeticCharacters,omitempty"`
 	// Indicates whether to ignore any digits, symbols, or other non-alphabetic characters that may appear at the end of a proposed password.
@@ -49,13 +49,10 @@ type AddDictionaryPasswordValidatorRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddDictionaryPasswordValidatorRequest(validatorName string, schemas []EnumdictionaryPasswordValidatorSchemaUrn, dictionaryFile string, caseSensitiveValidation bool, testReversedPassword bool, enabled bool) *AddDictionaryPasswordValidatorRequest {
+func NewAddDictionaryPasswordValidatorRequest(validatorName string, schemas []EnumdictionaryPasswordValidatorSchemaUrn, enabled bool) *AddDictionaryPasswordValidatorRequest {
 	this := AddDictionaryPasswordValidatorRequest{}
 	this.ValidatorName = validatorName
 	this.Schemas = schemas
-	this.DictionaryFile = dictionaryFile
-	this.CaseSensitiveValidation = caseSensitiveValidation
-	this.TestReversedPassword = testReversedPassword
 	this.Enabled = enabled
 	return &this
 }
@@ -116,76 +113,100 @@ func (o *AddDictionaryPasswordValidatorRequest) SetSchemas(v []EnumdictionaryPas
 	o.Schemas = v
 }
 
-// GetDictionaryFile returns the DictionaryFile field value
+// GetDictionaryFile returns the DictionaryFile field value if set, zero value otherwise.
 func (o *AddDictionaryPasswordValidatorRequest) GetDictionaryFile() string {
-	if o == nil {
+	if o == nil || isNil(o.DictionaryFile) {
 		var ret string
 		return ret
 	}
-
-	return o.DictionaryFile
+	return *o.DictionaryFile
 }
 
-// GetDictionaryFileOk returns a tuple with the DictionaryFile field value
+// GetDictionaryFileOk returns a tuple with the DictionaryFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDictionaryPasswordValidatorRequest) GetDictionaryFileOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.DictionaryFile) {
 		return nil, false
 	}
-	return &o.DictionaryFile, true
+	return o.DictionaryFile, true
 }
 
-// SetDictionaryFile sets field value
+// HasDictionaryFile returns a boolean if a field has been set.
+func (o *AddDictionaryPasswordValidatorRequest) HasDictionaryFile() bool {
+	if o != nil && !isNil(o.DictionaryFile) {
+		return true
+	}
+
+	return false
+}
+
+// SetDictionaryFile gets a reference to the given string and assigns it to the DictionaryFile field.
 func (o *AddDictionaryPasswordValidatorRequest) SetDictionaryFile(v string) {
-	o.DictionaryFile = v
+	o.DictionaryFile = &v
 }
 
-// GetCaseSensitiveValidation returns the CaseSensitiveValidation field value
+// GetCaseSensitiveValidation returns the CaseSensitiveValidation field value if set, zero value otherwise.
 func (o *AddDictionaryPasswordValidatorRequest) GetCaseSensitiveValidation() bool {
-	if o == nil {
+	if o == nil || isNil(o.CaseSensitiveValidation) {
 		var ret bool
 		return ret
 	}
-
-	return o.CaseSensitiveValidation
+	return *o.CaseSensitiveValidation
 }
 
-// GetCaseSensitiveValidationOk returns a tuple with the CaseSensitiveValidation field value
+// GetCaseSensitiveValidationOk returns a tuple with the CaseSensitiveValidation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDictionaryPasswordValidatorRequest) GetCaseSensitiveValidationOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || isNil(o.CaseSensitiveValidation) {
 		return nil, false
 	}
-	return &o.CaseSensitiveValidation, true
+	return o.CaseSensitiveValidation, true
 }
 
-// SetCaseSensitiveValidation sets field value
+// HasCaseSensitiveValidation returns a boolean if a field has been set.
+func (o *AddDictionaryPasswordValidatorRequest) HasCaseSensitiveValidation() bool {
+	if o != nil && !isNil(o.CaseSensitiveValidation) {
+		return true
+	}
+
+	return false
+}
+
+// SetCaseSensitiveValidation gets a reference to the given bool and assigns it to the CaseSensitiveValidation field.
 func (o *AddDictionaryPasswordValidatorRequest) SetCaseSensitiveValidation(v bool) {
-	o.CaseSensitiveValidation = v
+	o.CaseSensitiveValidation = &v
 }
 
-// GetTestReversedPassword returns the TestReversedPassword field value
+// GetTestReversedPassword returns the TestReversedPassword field value if set, zero value otherwise.
 func (o *AddDictionaryPasswordValidatorRequest) GetTestReversedPassword() bool {
-	if o == nil {
+	if o == nil || isNil(o.TestReversedPassword) {
 		var ret bool
 		return ret
 	}
-
-	return o.TestReversedPassword
+	return *o.TestReversedPassword
 }
 
-// GetTestReversedPasswordOk returns a tuple with the TestReversedPassword field value
+// GetTestReversedPasswordOk returns a tuple with the TestReversedPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDictionaryPasswordValidatorRequest) GetTestReversedPasswordOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || isNil(o.TestReversedPassword) {
 		return nil, false
 	}
-	return &o.TestReversedPassword, true
+	return o.TestReversedPassword, true
 }
 
-// SetTestReversedPassword sets field value
+// HasTestReversedPassword returns a boolean if a field has been set.
+func (o *AddDictionaryPasswordValidatorRequest) HasTestReversedPassword() bool {
+	if o != nil && !isNil(o.TestReversedPassword) {
+		return true
+	}
+
+	return false
+}
+
+// SetTestReversedPassword gets a reference to the given bool and assigns it to the TestReversedPassword field.
 func (o *AddDictionaryPasswordValidatorRequest) SetTestReversedPassword(v bool) {
-	o.TestReversedPassword = v
+	o.TestReversedPassword = &v
 }
 
 // GetIgnoreLeadingNonAlphabeticCharacters returns the IgnoreLeadingNonAlphabeticCharacters field value if set, zero value otherwise.
@@ -476,13 +497,13 @@ func (o AddDictionaryPasswordValidatorRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if true {
+	if !isNil(o.DictionaryFile) {
 		toSerialize["dictionaryFile"] = o.DictionaryFile
 	}
-	if true {
+	if !isNil(o.CaseSensitiveValidation) {
 		toSerialize["caseSensitiveValidation"] = o.CaseSensitiveValidation
 	}
-	if true {
+	if !isNil(o.TestReversedPassword) {
 		toSerialize["testReversedPassword"] = o.TestReversedPassword
 	}
 	if !isNil(o.IgnoreLeadingNonAlphabeticCharacters) {

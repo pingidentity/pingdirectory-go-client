@@ -158,6 +158,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-notification-manager-shared'
+      required:
+      - transactionNotification
     third-party-notification-manager-shared:
       type: object
       properties:
@@ -199,7 +201,6 @@ components:
       - extensionClass
       - enabled
       - subscriptionBaseDN
-      - transactionNotification
     Enumthird-party-notification-managerSchemaUrn:
       type: string
       enum:

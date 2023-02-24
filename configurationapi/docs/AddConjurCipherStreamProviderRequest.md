@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumconjurCipherStreamProviderSchemaUrn**](EnumconjurCipherStreamProviderSchemaUrn.md) |  | 
 **ConjurExternalServer** | **string** | An external server definition with information needed to connect and authenticate to the Conjur server. | 
 **ConjurSecretRelativePath** | **string** | The portion of the path that follows the account name in the URI needed to obtain the secret passphrase to use to generate the encryption key. Any special characters in the path must be URL-encoded. | 
-**EncryptionMetadataFile** | **string** | The path to a file that will hold metadata about the encryption performed by this Conjur Cipher Stream Provider. | 
+**EncryptionMetadataFile** | Pointer to **string** | The path to a file that will hold metadata about the encryption performed by this Conjur Cipher Stream Provider. | [optional] 
 **Description** | Pointer to **string** | A description for this Cipher Stream Provider | [optional] 
 **Enabled** | **bool** | Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server. | 
 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewAddConjurCipherStreamProviderRequest
 
-`func NewAddConjurCipherStreamProviderRequest(providerName string, schemas []EnumconjurCipherStreamProviderSchemaUrn, conjurExternalServer string, conjurSecretRelativePath string, encryptionMetadataFile string, enabled bool, ) *AddConjurCipherStreamProviderRequest`
+`func NewAddConjurCipherStreamProviderRequest(providerName string, schemas []EnumconjurCipherStreamProviderSchemaUrn, conjurExternalServer string, conjurSecretRelativePath string, enabled bool, ) *AddConjurCipherStreamProviderRequest`
 
 NewAddConjurCipherStreamProviderRequest instantiates a new AddConjurCipherStreamProviderRequest object
 This constructor will assign default values to properties that have it defined,
@@ -130,6 +130,11 @@ and a boolean to check if the value has been set.
 
 SetEncryptionMetadataFile sets EncryptionMetadataFile field to given value.
 
+### HasEncryptionMetadataFile
+
+`func (o *AddConjurCipherStreamProviderRequest) HasEncryptionMetadataFile() bool`
+
+HasEncryptionMetadataFile returns a boolean if a field has been set.
 
 ### GetDescription
 

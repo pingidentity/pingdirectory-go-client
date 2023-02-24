@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Name** | **string** | Name of the new Virtual Attribute | 
 **Schemas** | [**[]EnummemberVirtualAttributeSchemaUrn**](EnummemberVirtualAttributeSchemaUrn.md) |  | 
 **ConflictBehavior** | Pointer to [**EnumvirtualAttributeConflictBehaviorProp**](EnumvirtualAttributeConflictBehaviorProp.md) |  | [optional] 
-**AllowRetrievingMembership** | **bool** | Indicates whether to handle requests that request all values for the virtual attribute. | 
+**AllowRetrievingMembership** | Pointer to **bool** | Indicates whether to handle requests that request all values for the virtual attribute. | [optional] 
 **Filter** | Pointer to **[]string** | Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries. | [optional] 
 **AllowIndexConflicts** | Pointer to **bool** | Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server. | [optional] 
 **Description** | Pointer to **string** | A description for this Virtual Attribute | [optional] 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 
 ### NewAddMemberVirtualAttributeRequest
 
-`func NewAddMemberVirtualAttributeRequest(name string, schemas []EnummemberVirtualAttributeSchemaUrn, allowRetrievingMembership bool, enabled bool, attributeType string, ) *AddMemberVirtualAttributeRequest`
+`func NewAddMemberVirtualAttributeRequest(name string, schemas []EnummemberVirtualAttributeSchemaUrn, enabled bool, attributeType string, ) *AddMemberVirtualAttributeRequest`
 
 NewAddMemberVirtualAttributeRequest instantiates a new AddMemberVirtualAttributeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -123,6 +123,11 @@ and a boolean to check if the value has been set.
 
 SetAllowRetrievingMembership sets AllowRetrievingMembership field to given value.
 
+### HasAllowRetrievingMembership
+
+`func (o *AddMemberVirtualAttributeRequest) HasAllowRetrievingMembership() bool`
+
+HasAllowRetrievingMembership returns a boolean if a field has been set.
 
 ### GetFilter
 

@@ -20,7 +20,7 @@ type AddAmazonKeyManagementServiceCipherStreamProviderRequest struct {
 	ProviderName string                                                        `json:"providerName"`
 	Schemas      []EnumamazonKeyManagementServiceCipherStreamProviderSchemaUrn `json:"schemas"`
 	// The path to a file that will hold the encrypted passphrase used by this cipher stream provider.
-	EncryptedPassphraseFile string `json:"encryptedPassphraseFile"`
+	EncryptedPassphraseFile *string `json:"encryptedPassphraseFile,omitempty"`
 	// The external server with information to use when interacting with the Amazon Key Management Service.
 	AwsExternalServer *string `json:"awsExternalServer,omitempty"`
 	// The access key ID that will be used if this cipher stream provider will authenticate to the Amazon Key Management Service using an access key rather than an IAM role associated with an EC2 instance.
@@ -41,11 +41,10 @@ type AddAmazonKeyManagementServiceCipherStreamProviderRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddAmazonKeyManagementServiceCipherStreamProviderRequest(providerName string, schemas []EnumamazonKeyManagementServiceCipherStreamProviderSchemaUrn, encryptedPassphraseFile string, kmsEncryptionKeyArn string, enabled bool) *AddAmazonKeyManagementServiceCipherStreamProviderRequest {
+func NewAddAmazonKeyManagementServiceCipherStreamProviderRequest(providerName string, schemas []EnumamazonKeyManagementServiceCipherStreamProviderSchemaUrn, kmsEncryptionKeyArn string, enabled bool) *AddAmazonKeyManagementServiceCipherStreamProviderRequest {
 	this := AddAmazonKeyManagementServiceCipherStreamProviderRequest{}
 	this.ProviderName = providerName
 	this.Schemas = schemas
-	this.EncryptedPassphraseFile = encryptedPassphraseFile
 	this.KmsEncryptionKeyArn = kmsEncryptionKeyArn
 	this.Enabled = enabled
 	return &this
@@ -107,28 +106,36 @@ func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) SetSchemas(v 
 	o.Schemas = v
 }
 
-// GetEncryptedPassphraseFile returns the EncryptedPassphraseFile field value
+// GetEncryptedPassphraseFile returns the EncryptedPassphraseFile field value if set, zero value otherwise.
 func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetEncryptedPassphraseFile() string {
-	if o == nil {
+	if o == nil || isNil(o.EncryptedPassphraseFile) {
 		var ret string
 		return ret
 	}
-
-	return o.EncryptedPassphraseFile
+	return *o.EncryptedPassphraseFile
 }
 
-// GetEncryptedPassphraseFileOk returns a tuple with the EncryptedPassphraseFile field value
+// GetEncryptedPassphraseFileOk returns a tuple with the EncryptedPassphraseFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetEncryptedPassphraseFileOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.EncryptedPassphraseFile) {
 		return nil, false
 	}
-	return &o.EncryptedPassphraseFile, true
+	return o.EncryptedPassphraseFile, true
 }
 
-// SetEncryptedPassphraseFile sets field value
+// HasEncryptedPassphraseFile returns a boolean if a field has been set.
+func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) HasEncryptedPassphraseFile() bool {
+	if o != nil && !isNil(o.EncryptedPassphraseFile) {
+		return true
+	}
+
+	return false
+}
+
+// SetEncryptedPassphraseFile gets a reference to the given string and assigns it to the EncryptedPassphraseFile field.
 func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) SetEncryptedPassphraseFile(v string) {
-	o.EncryptedPassphraseFile = v
+	o.EncryptedPassphraseFile = &v
 }
 
 // GetAwsExternalServer returns the AwsExternalServer field value if set, zero value otherwise.
@@ -347,7 +354,7 @@ func (o AddAmazonKeyManagementServiceCipherStreamProviderRequest) MarshalJSON() 
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if true {
+	if !isNil(o.EncryptedPassphraseFile) {
 		toSerialize["encryptedPassphraseFile"] = o.EncryptedPassphraseFile
 	}
 	if !isNil(o.AwsExternalServer) {

@@ -42,18 +42,18 @@ type AddRootDnUserRequest struct {
 	// Specifies the user's pager telephone number. This is stored in the pager LDAP attribute.
 	PagerTelephoneNumber []string `json:"pagerTelephoneNumber,omitempty"`
 	// Indicates whether this User should be automatically granted the set of privileges defined in the default-root-privilege-name property of the Root DN configuration object.
-	InheritDefaultRootPrivileges bool                          `json:"inheritDefaultRootPrivileges"`
+	InheritDefaultRootPrivileges *bool                         `json:"inheritDefaultRootPrivileges,omitempty"`
 	Privilege                    []EnumrootDnUserPrivilegeProp `json:"privilege,omitempty"`
 	// Specifies the maximum number of entries that the server may return to the user in response to any single search request. A value of 0 indicates no limit should be enforced. This is stored in the ds-rlim-size-limit LDAP attribute.
-	SearchResultEntryLimit int32 `json:"searchResultEntryLimit"`
+	SearchResultEntryLimit *int32 `json:"searchResultEntryLimit,omitempty"`
 	// Specifies the maximum length of time (in seconds) that the server may spend processing any single search request. A value of 0 indicates no limit should be enforced. This is stored in the ds-rlim-time-limit LDAP attribute.
-	TimeLimitSeconds int32 `json:"timeLimitSeconds"`
+	TimeLimitSeconds *int32 `json:"timeLimitSeconds,omitempty"`
 	// Specifies the maximum number of candidate entries that the server may examine in the course of processing any single search request. A value of 0 indicates no limit should be enforced. This is stored in the ds-rlim-lookthrough-limit LDAP attribute.
-	LookThroughEntryLimit int32 `json:"lookThroughEntryLimit"`
+	LookThroughEntryLimit *int32 `json:"lookThroughEntryLimit,omitempty"`
 	// Specifies the maximum length of time (in seconds) that a connection authenticated as this user may remain established without issuing any requests. A value of 0 indicates no limit should be enforced. This is stored in the ds-rlim-idle-time-limit LDAP attribute.
-	IdleTimeLimitSeconds int32 `json:"idleTimeLimitSeconds"`
+	IdleTimeLimitSeconds *int32 `json:"idleTimeLimitSeconds,omitempty"`
 	// Specifies the password policy for the user. This is stored in the ds-pwp-password-policy-dn LDAP attribute.
-	PasswordPolicy string `json:"passwordPolicy"`
+	PasswordPolicy *string `json:"passwordPolicy,omitempty"`
 	// Specifies whether the root user account should be disabled. A disabled account is not permitted to authenticate, nor can it be used as an authorization identity. This is stored in the ds-pwp-account-disabled LDAP attribute.
 	Disabled *bool `json:"disabled,omitempty"`
 	// Specifies the time, in generalized time format (e.g., '20160101070000Z'), that the root user account should become active. If an activation time is specified, the user will not be permitted to authenticate, nor can the account be used as an authorization identity, until the activation time has arrived. This is stored in the ds-pwp-account-activation-time LDAP attribute.
@@ -61,9 +61,9 @@ type AddRootDnUserRequest struct {
 	// Specifies the time, in generalized time format (e.g., '20240101070000Z'), that the root user account should expire. If an expiration time is specified, the user will not be permitted to authenticate, nor can the account be used as an authorization identity, after this time has passed. This is stored in the ds-pwp-account-expiration-time LDAP attribute.
 	AccountExpirationTime *string `json:"accountExpirationTime,omitempty"`
 	// Indicates whether this User must authenticate in a secure manner. When set to \"true\", the User will only be allowed to authenticate over a secure connection or using a mechanism that does not expose user credentials (e.g., the CRAM-MD5, DIGEST-MD5, and GSSAPI SASL mechanisms).
-	RequireSecureAuthentication bool `json:"requireSecureAuthentication"`
+	RequireSecureAuthentication *bool `json:"requireSecureAuthentication,omitempty"`
 	// Indicates whether this User must be required to communicate with the server over a secure connection. When set to \"true\", the User will only be allowed to communicate with the server over a secure connection (i.e., using TLS or the StartTLS extended operation).
-	RequireSecureConnections bool `json:"requireSecureConnections"`
+	RequireSecureConnections *bool `json:"requireSecureConnections,omitempty"`
 	// Indicates that User should only be allowed to authenticate in certain ways. Allowed values include \"simple\" (to indicate that the user should be allowed to bind using simple authentication) or \"sasl {mech}\" (to indicate that the user should be allowed to bind using the specified SASL mechanism, like \"sasl PLAIN\"). The list of available SASL mechanisms can be retrieved by running \"dsconfig --advanced list-sasl-mechanism-handlers\".
 	AllowedAuthenticationType []string `json:"allowedAuthenticationType,omitempty"`
 	// An IPv4 or IPv6 address mask that controls the set of IP addresses from which this User can authenticate to the server. For instance a value of 127.0.0.1 (or ::1 in IPv6) would restricted access only to localhost connections, whereas 10.6.1.* would restrict access to servers on the 10.6.1.* subnet.
@@ -89,17 +89,9 @@ type AddRootDnUserRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddRootDnUserRequest(userName string, inheritDefaultRootPrivileges bool, searchResultEntryLimit int32, timeLimitSeconds int32, lookThroughEntryLimit int32, idleTimeLimitSeconds int32, passwordPolicy string, requireSecureAuthentication bool, requireSecureConnections bool) *AddRootDnUserRequest {
+func NewAddRootDnUserRequest(userName string) *AddRootDnUserRequest {
 	this := AddRootDnUserRequest{}
 	this.UserName = userName
-	this.InheritDefaultRootPrivileges = inheritDefaultRootPrivileges
-	this.SearchResultEntryLimit = searchResultEntryLimit
-	this.TimeLimitSeconds = timeLimitSeconds
-	this.LookThroughEntryLimit = lookThroughEntryLimit
-	this.IdleTimeLimitSeconds = idleTimeLimitSeconds
-	this.PasswordPolicy = passwordPolicy
-	this.RequireSecureAuthentication = requireSecureAuthentication
-	this.RequireSecureConnections = requireSecureConnections
 	return &this
 }
 
@@ -519,28 +511,36 @@ func (o *AddRootDnUserRequest) SetPagerTelephoneNumber(v []string) {
 	o.PagerTelephoneNumber = v
 }
 
-// GetInheritDefaultRootPrivileges returns the InheritDefaultRootPrivileges field value
+// GetInheritDefaultRootPrivileges returns the InheritDefaultRootPrivileges field value if set, zero value otherwise.
 func (o *AddRootDnUserRequest) GetInheritDefaultRootPrivileges() bool {
-	if o == nil {
+	if o == nil || isNil(o.InheritDefaultRootPrivileges) {
 		var ret bool
 		return ret
 	}
-
-	return o.InheritDefaultRootPrivileges
+	return *o.InheritDefaultRootPrivileges
 }
 
-// GetInheritDefaultRootPrivilegesOk returns a tuple with the InheritDefaultRootPrivileges field value
+// GetInheritDefaultRootPrivilegesOk returns a tuple with the InheritDefaultRootPrivileges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddRootDnUserRequest) GetInheritDefaultRootPrivilegesOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || isNil(o.InheritDefaultRootPrivileges) {
 		return nil, false
 	}
-	return &o.InheritDefaultRootPrivileges, true
+	return o.InheritDefaultRootPrivileges, true
 }
 
-// SetInheritDefaultRootPrivileges sets field value
+// HasInheritDefaultRootPrivileges returns a boolean if a field has been set.
+func (o *AddRootDnUserRequest) HasInheritDefaultRootPrivileges() bool {
+	if o != nil && !isNil(o.InheritDefaultRootPrivileges) {
+		return true
+	}
+
+	return false
+}
+
+// SetInheritDefaultRootPrivileges gets a reference to the given bool and assigns it to the InheritDefaultRootPrivileges field.
 func (o *AddRootDnUserRequest) SetInheritDefaultRootPrivileges(v bool) {
-	o.InheritDefaultRootPrivileges = v
+	o.InheritDefaultRootPrivileges = &v
 }
 
 // GetPrivilege returns the Privilege field value if set, zero value otherwise.
@@ -575,124 +575,164 @@ func (o *AddRootDnUserRequest) SetPrivilege(v []EnumrootDnUserPrivilegeProp) {
 	o.Privilege = v
 }
 
-// GetSearchResultEntryLimit returns the SearchResultEntryLimit field value
+// GetSearchResultEntryLimit returns the SearchResultEntryLimit field value if set, zero value otherwise.
 func (o *AddRootDnUserRequest) GetSearchResultEntryLimit() int32 {
-	if o == nil {
+	if o == nil || isNil(o.SearchResultEntryLimit) {
 		var ret int32
 		return ret
 	}
-
-	return o.SearchResultEntryLimit
+	return *o.SearchResultEntryLimit
 }
 
-// GetSearchResultEntryLimitOk returns a tuple with the SearchResultEntryLimit field value
+// GetSearchResultEntryLimitOk returns a tuple with the SearchResultEntryLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddRootDnUserRequest) GetSearchResultEntryLimitOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || isNil(o.SearchResultEntryLimit) {
 		return nil, false
 	}
-	return &o.SearchResultEntryLimit, true
+	return o.SearchResultEntryLimit, true
 }
 
-// SetSearchResultEntryLimit sets field value
+// HasSearchResultEntryLimit returns a boolean if a field has been set.
+func (o *AddRootDnUserRequest) HasSearchResultEntryLimit() bool {
+	if o != nil && !isNil(o.SearchResultEntryLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetSearchResultEntryLimit gets a reference to the given int32 and assigns it to the SearchResultEntryLimit field.
 func (o *AddRootDnUserRequest) SetSearchResultEntryLimit(v int32) {
-	o.SearchResultEntryLimit = v
+	o.SearchResultEntryLimit = &v
 }
 
-// GetTimeLimitSeconds returns the TimeLimitSeconds field value
+// GetTimeLimitSeconds returns the TimeLimitSeconds field value if set, zero value otherwise.
 func (o *AddRootDnUserRequest) GetTimeLimitSeconds() int32 {
-	if o == nil {
+	if o == nil || isNil(o.TimeLimitSeconds) {
 		var ret int32
 		return ret
 	}
-
-	return o.TimeLimitSeconds
+	return *o.TimeLimitSeconds
 }
 
-// GetTimeLimitSecondsOk returns a tuple with the TimeLimitSeconds field value
+// GetTimeLimitSecondsOk returns a tuple with the TimeLimitSeconds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddRootDnUserRequest) GetTimeLimitSecondsOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || isNil(o.TimeLimitSeconds) {
 		return nil, false
 	}
-	return &o.TimeLimitSeconds, true
+	return o.TimeLimitSeconds, true
 }
 
-// SetTimeLimitSeconds sets field value
+// HasTimeLimitSeconds returns a boolean if a field has been set.
+func (o *AddRootDnUserRequest) HasTimeLimitSeconds() bool {
+	if o != nil && !isNil(o.TimeLimitSeconds) {
+		return true
+	}
+
+	return false
+}
+
+// SetTimeLimitSeconds gets a reference to the given int32 and assigns it to the TimeLimitSeconds field.
 func (o *AddRootDnUserRequest) SetTimeLimitSeconds(v int32) {
-	o.TimeLimitSeconds = v
+	o.TimeLimitSeconds = &v
 }
 
-// GetLookThroughEntryLimit returns the LookThroughEntryLimit field value
+// GetLookThroughEntryLimit returns the LookThroughEntryLimit field value if set, zero value otherwise.
 func (o *AddRootDnUserRequest) GetLookThroughEntryLimit() int32 {
-	if o == nil {
+	if o == nil || isNil(o.LookThroughEntryLimit) {
 		var ret int32
 		return ret
 	}
-
-	return o.LookThroughEntryLimit
+	return *o.LookThroughEntryLimit
 }
 
-// GetLookThroughEntryLimitOk returns a tuple with the LookThroughEntryLimit field value
+// GetLookThroughEntryLimitOk returns a tuple with the LookThroughEntryLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddRootDnUserRequest) GetLookThroughEntryLimitOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || isNil(o.LookThroughEntryLimit) {
 		return nil, false
 	}
-	return &o.LookThroughEntryLimit, true
+	return o.LookThroughEntryLimit, true
 }
 
-// SetLookThroughEntryLimit sets field value
+// HasLookThroughEntryLimit returns a boolean if a field has been set.
+func (o *AddRootDnUserRequest) HasLookThroughEntryLimit() bool {
+	if o != nil && !isNil(o.LookThroughEntryLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetLookThroughEntryLimit gets a reference to the given int32 and assigns it to the LookThroughEntryLimit field.
 func (o *AddRootDnUserRequest) SetLookThroughEntryLimit(v int32) {
-	o.LookThroughEntryLimit = v
+	o.LookThroughEntryLimit = &v
 }
 
-// GetIdleTimeLimitSeconds returns the IdleTimeLimitSeconds field value
+// GetIdleTimeLimitSeconds returns the IdleTimeLimitSeconds field value if set, zero value otherwise.
 func (o *AddRootDnUserRequest) GetIdleTimeLimitSeconds() int32 {
-	if o == nil {
+	if o == nil || isNil(o.IdleTimeLimitSeconds) {
 		var ret int32
 		return ret
 	}
-
-	return o.IdleTimeLimitSeconds
+	return *o.IdleTimeLimitSeconds
 }
 
-// GetIdleTimeLimitSecondsOk returns a tuple with the IdleTimeLimitSeconds field value
+// GetIdleTimeLimitSecondsOk returns a tuple with the IdleTimeLimitSeconds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddRootDnUserRequest) GetIdleTimeLimitSecondsOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || isNil(o.IdleTimeLimitSeconds) {
 		return nil, false
 	}
-	return &o.IdleTimeLimitSeconds, true
+	return o.IdleTimeLimitSeconds, true
 }
 
-// SetIdleTimeLimitSeconds sets field value
+// HasIdleTimeLimitSeconds returns a boolean if a field has been set.
+func (o *AddRootDnUserRequest) HasIdleTimeLimitSeconds() bool {
+	if o != nil && !isNil(o.IdleTimeLimitSeconds) {
+		return true
+	}
+
+	return false
+}
+
+// SetIdleTimeLimitSeconds gets a reference to the given int32 and assigns it to the IdleTimeLimitSeconds field.
 func (o *AddRootDnUserRequest) SetIdleTimeLimitSeconds(v int32) {
-	o.IdleTimeLimitSeconds = v
+	o.IdleTimeLimitSeconds = &v
 }
 
-// GetPasswordPolicy returns the PasswordPolicy field value
+// GetPasswordPolicy returns the PasswordPolicy field value if set, zero value otherwise.
 func (o *AddRootDnUserRequest) GetPasswordPolicy() string {
-	if o == nil {
+	if o == nil || isNil(o.PasswordPolicy) {
 		var ret string
 		return ret
 	}
-
-	return o.PasswordPolicy
+	return *o.PasswordPolicy
 }
 
-// GetPasswordPolicyOk returns a tuple with the PasswordPolicy field value
+// GetPasswordPolicyOk returns a tuple with the PasswordPolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddRootDnUserRequest) GetPasswordPolicyOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.PasswordPolicy) {
 		return nil, false
 	}
-	return &o.PasswordPolicy, true
+	return o.PasswordPolicy, true
 }
 
-// SetPasswordPolicy sets field value
+// HasPasswordPolicy returns a boolean if a field has been set.
+func (o *AddRootDnUserRequest) HasPasswordPolicy() bool {
+	if o != nil && !isNil(o.PasswordPolicy) {
+		return true
+	}
+
+	return false
+}
+
+// SetPasswordPolicy gets a reference to the given string and assigns it to the PasswordPolicy field.
 func (o *AddRootDnUserRequest) SetPasswordPolicy(v string) {
-	o.PasswordPolicy = v
+	o.PasswordPolicy = &v
 }
 
 // GetDisabled returns the Disabled field value if set, zero value otherwise.
@@ -791,52 +831,68 @@ func (o *AddRootDnUserRequest) SetAccountExpirationTime(v string) {
 	o.AccountExpirationTime = &v
 }
 
-// GetRequireSecureAuthentication returns the RequireSecureAuthentication field value
+// GetRequireSecureAuthentication returns the RequireSecureAuthentication field value if set, zero value otherwise.
 func (o *AddRootDnUserRequest) GetRequireSecureAuthentication() bool {
-	if o == nil {
+	if o == nil || isNil(o.RequireSecureAuthentication) {
 		var ret bool
 		return ret
 	}
-
-	return o.RequireSecureAuthentication
+	return *o.RequireSecureAuthentication
 }
 
-// GetRequireSecureAuthenticationOk returns a tuple with the RequireSecureAuthentication field value
+// GetRequireSecureAuthenticationOk returns a tuple with the RequireSecureAuthentication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddRootDnUserRequest) GetRequireSecureAuthenticationOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || isNil(o.RequireSecureAuthentication) {
 		return nil, false
 	}
-	return &o.RequireSecureAuthentication, true
+	return o.RequireSecureAuthentication, true
 }
 
-// SetRequireSecureAuthentication sets field value
+// HasRequireSecureAuthentication returns a boolean if a field has been set.
+func (o *AddRootDnUserRequest) HasRequireSecureAuthentication() bool {
+	if o != nil && !isNil(o.RequireSecureAuthentication) {
+		return true
+	}
+
+	return false
+}
+
+// SetRequireSecureAuthentication gets a reference to the given bool and assigns it to the RequireSecureAuthentication field.
 func (o *AddRootDnUserRequest) SetRequireSecureAuthentication(v bool) {
-	o.RequireSecureAuthentication = v
+	o.RequireSecureAuthentication = &v
 }
 
-// GetRequireSecureConnections returns the RequireSecureConnections field value
+// GetRequireSecureConnections returns the RequireSecureConnections field value if set, zero value otherwise.
 func (o *AddRootDnUserRequest) GetRequireSecureConnections() bool {
-	if o == nil {
+	if o == nil || isNil(o.RequireSecureConnections) {
 		var ret bool
 		return ret
 	}
-
-	return o.RequireSecureConnections
+	return *o.RequireSecureConnections
 }
 
-// GetRequireSecureConnectionsOk returns a tuple with the RequireSecureConnections field value
+// GetRequireSecureConnectionsOk returns a tuple with the RequireSecureConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddRootDnUserRequest) GetRequireSecureConnectionsOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || isNil(o.RequireSecureConnections) {
 		return nil, false
 	}
-	return &o.RequireSecureConnections, true
+	return o.RequireSecureConnections, true
 }
 
-// SetRequireSecureConnections sets field value
+// HasRequireSecureConnections returns a boolean if a field has been set.
+func (o *AddRootDnUserRequest) HasRequireSecureConnections() bool {
+	if o != nil && !isNil(o.RequireSecureConnections) {
+		return true
+	}
+
+	return false
+}
+
+// SetRequireSecureConnections gets a reference to the given bool and assigns it to the RequireSecureConnections field.
 func (o *AddRootDnUserRequest) SetRequireSecureConnections(v bool) {
-	o.RequireSecureConnections = v
+	o.RequireSecureConnections = &v
 }
 
 // GetAllowedAuthenticationType returns the AllowedAuthenticationType field value if set, zero value otherwise.
@@ -1200,25 +1256,25 @@ func (o AddRootDnUserRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.PagerTelephoneNumber) {
 		toSerialize["pagerTelephoneNumber"] = o.PagerTelephoneNumber
 	}
-	if true {
+	if !isNil(o.InheritDefaultRootPrivileges) {
 		toSerialize["inheritDefaultRootPrivileges"] = o.InheritDefaultRootPrivileges
 	}
 	if !isNil(o.Privilege) {
 		toSerialize["privilege"] = o.Privilege
 	}
-	if true {
+	if !isNil(o.SearchResultEntryLimit) {
 		toSerialize["searchResultEntryLimit"] = o.SearchResultEntryLimit
 	}
-	if true {
+	if !isNil(o.TimeLimitSeconds) {
 		toSerialize["timeLimitSeconds"] = o.TimeLimitSeconds
 	}
-	if true {
+	if !isNil(o.LookThroughEntryLimit) {
 		toSerialize["lookThroughEntryLimit"] = o.LookThroughEntryLimit
 	}
-	if true {
+	if !isNil(o.IdleTimeLimitSeconds) {
 		toSerialize["idleTimeLimitSeconds"] = o.IdleTimeLimitSeconds
 	}
-	if true {
+	if !isNil(o.PasswordPolicy) {
 		toSerialize["passwordPolicy"] = o.PasswordPolicy
 	}
 	if !isNil(o.Disabled) {
@@ -1230,10 +1286,10 @@ func (o AddRootDnUserRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.AccountExpirationTime) {
 		toSerialize["accountExpirationTime"] = o.AccountExpirationTime
 	}
-	if true {
+	if !isNil(o.RequireSecureAuthentication) {
 		toSerialize["requireSecureAuthentication"] = o.RequireSecureAuthentication
 	}
-	if true {
+	if !isNil(o.RequireSecureConnections) {
 		toSerialize["requireSecureConnections"] = o.RequireSecureConnections
 	}
 	if !isNil(o.AllowedAuthenticationType) {

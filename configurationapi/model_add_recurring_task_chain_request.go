@@ -22,10 +22,10 @@ type AddRecurringTaskChainRequest struct {
 	// A description for this Recurring Task Chain
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Recurring Task Chain is enabled for use. Recurring Task Chains that are disabled will not have any new instances scheduled, but instances that are already scheduled will be preserved. Those instances may be manually canceled if desired.
-	Enabled bool `json:"enabled"`
+	Enabled *bool `json:"enabled,omitempty"`
 	// The set of recurring tasks that make up this chain. At least one value must be provided. If multiple values are given, then the task instances will be invoked in the order in which they are listed.
 	RecurringTask              []string                                             `json:"recurringTask"`
-	ScheduledMonth             []EnumrecurringTaskChainScheduledMonthProp           `json:"scheduledMonth"`
+	ScheduledMonth             []EnumrecurringTaskChainScheduledMonthProp           `json:"scheduledMonth,omitempty"`
 	ScheduledDateSelectionType EnumrecurringTaskChainScheduledDateSelectionTypeProp `json:"scheduledDateSelectionType"`
 	ScheduledDayOfTheWeek      []EnumrecurringTaskChainScheduledDayOfTheWeekProp    `json:"scheduledDayOfTheWeek,omitempty"`
 	ScheduledDayOfTheMonth     []EnumrecurringTaskChainScheduledDayOfTheMonthProp   `json:"scheduledDayOfTheMonth,omitempty"`
@@ -41,12 +41,10 @@ type AddRecurringTaskChainRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddRecurringTaskChainRequest(chainName string, enabled bool, recurringTask []string, scheduledMonth []EnumrecurringTaskChainScheduledMonthProp, scheduledDateSelectionType EnumrecurringTaskChainScheduledDateSelectionTypeProp, scheduledTimeOfDay []string) *AddRecurringTaskChainRequest {
+func NewAddRecurringTaskChainRequest(chainName string, recurringTask []string, scheduledDateSelectionType EnumrecurringTaskChainScheduledDateSelectionTypeProp, scheduledTimeOfDay []string) *AddRecurringTaskChainRequest {
 	this := AddRecurringTaskChainRequest{}
 	this.ChainName = chainName
-	this.Enabled = enabled
 	this.RecurringTask = recurringTask
-	this.ScheduledMonth = scheduledMonth
 	this.ScheduledDateSelectionType = scheduledDateSelectionType
 	this.ScheduledTimeOfDay = scheduledTimeOfDay
 	return &this
@@ -148,28 +146,36 @@ func (o *AddRecurringTaskChainRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetEnabled returns the Enabled field value
+// GetEnabled returns the Enabled field value if set, zero value otherwise.
 func (o *AddRecurringTaskChainRequest) GetEnabled() bool {
-	if o == nil {
+	if o == nil || isNil(o.Enabled) {
 		var ret bool
 		return ret
 	}
-
-	return o.Enabled
+	return *o.Enabled
 }
 
-// GetEnabledOk returns a tuple with the Enabled field value
+// GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddRecurringTaskChainRequest) GetEnabledOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || isNil(o.Enabled) {
 		return nil, false
 	}
-	return &o.Enabled, true
+	return o.Enabled, true
 }
 
-// SetEnabled sets field value
+// HasEnabled returns a boolean if a field has been set.
+func (o *AddRecurringTaskChainRequest) HasEnabled() bool {
+	if o != nil && !isNil(o.Enabled) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *AddRecurringTaskChainRequest) SetEnabled(v bool) {
-	o.Enabled = v
+	o.Enabled = &v
 }
 
 // GetRecurringTask returns the RecurringTask field value
@@ -196,26 +202,34 @@ func (o *AddRecurringTaskChainRequest) SetRecurringTask(v []string) {
 	o.RecurringTask = v
 }
 
-// GetScheduledMonth returns the ScheduledMonth field value
+// GetScheduledMonth returns the ScheduledMonth field value if set, zero value otherwise.
 func (o *AddRecurringTaskChainRequest) GetScheduledMonth() []EnumrecurringTaskChainScheduledMonthProp {
-	if o == nil {
+	if o == nil || isNil(o.ScheduledMonth) {
 		var ret []EnumrecurringTaskChainScheduledMonthProp
 		return ret
 	}
-
 	return o.ScheduledMonth
 }
 
-// GetScheduledMonthOk returns a tuple with the ScheduledMonth field value
+// GetScheduledMonthOk returns a tuple with the ScheduledMonth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddRecurringTaskChainRequest) GetScheduledMonthOk() ([]EnumrecurringTaskChainScheduledMonthProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.ScheduledMonth) {
 		return nil, false
 	}
 	return o.ScheduledMonth, true
 }
 
-// SetScheduledMonth sets field value
+// HasScheduledMonth returns a boolean if a field has been set.
+func (o *AddRecurringTaskChainRequest) HasScheduledMonth() bool {
+	if o != nil && !isNil(o.ScheduledMonth) {
+		return true
+	}
+
+	return false
+}
+
+// SetScheduledMonth gets a reference to the given []EnumrecurringTaskChainScheduledMonthProp and assigns it to the ScheduledMonth field.
 func (o *AddRecurringTaskChainRequest) SetScheduledMonth(v []EnumrecurringTaskChainScheduledMonthProp) {
 	o.ScheduledMonth = v
 }
@@ -439,13 +453,13 @@ func (o AddRecurringTaskChainRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	if true {
+	if !isNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
 	if true {
 		toSerialize["recurringTask"] = o.RecurringTask
 	}
-	if true {
+	if !isNil(o.ScheduledMonth) {
 		toSerialize["scheduledMonth"] = o.ScheduledMonth
 	}
 	if true {

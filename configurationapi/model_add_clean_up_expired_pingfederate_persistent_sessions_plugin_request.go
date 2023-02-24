@@ -20,15 +20,15 @@ type AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest struct {
 	PluginName string                                                            `json:"pluginName"`
 	Schemas    []EnumcleanUpExpiredPingfederatePersistentSessionsPluginSchemaUrn `json:"schemas"`
 	// This specifies how often the plugin should check for expired data. It also controls the offset of peer servers (see the peer-server-priority-index for more information).
-	PollingInterval string `json:"pollingInterval"`
+	PollingInterval *string `json:"pollingInterval,omitempty"`
 	// In a replicated environment, this determines the order in which peer servers should attempt to purge data.
 	PeerServerPriorityIndex *int32 `json:"peerServerPriorityIndex,omitempty"`
 	// Only entries located within the subtree specified by this base DN are eligible for purging.
 	BaseDN *string `json:"baseDN,omitempty"`
 	// This setting smooths out the performance impact on the server by throttling the purging to the specified maximum number of updates per second. To avoid a large backlog, this value should be set comfortably above the average rate that expired data is generated. When purge-behavior is set to subtree-delete-entries, then deletion of the entire subtree is considered a single update for the purposes of throttling.
-	MaxUpdatesPerSecond int32 `json:"maxUpdatesPerSecond"`
+	MaxUpdatesPerSecond *int32 `json:"maxUpdatesPerSecond,omitempty"`
 	// The number of threads used to delete expired entries.
-	NumDeleteThreads int32 `json:"numDeleteThreads"`
+	NumDeleteThreads *int32 `json:"numDeleteThreads,omitempty"`
 	// Indicates whether the plug-in is enabled for use.
 	Enabled bool `json:"enabled"`
 }
@@ -37,13 +37,10 @@ type AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddCleanUpExpiredPingfederatePersistentSessionsPluginRequest(pluginName string, schemas []EnumcleanUpExpiredPingfederatePersistentSessionsPluginSchemaUrn, pollingInterval string, maxUpdatesPerSecond int32, numDeleteThreads int32, enabled bool) *AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest {
+func NewAddCleanUpExpiredPingfederatePersistentSessionsPluginRequest(pluginName string, schemas []EnumcleanUpExpiredPingfederatePersistentSessionsPluginSchemaUrn, enabled bool) *AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest {
 	this := AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest{}
 	this.PluginName = pluginName
 	this.Schemas = schemas
-	this.PollingInterval = pollingInterval
-	this.MaxUpdatesPerSecond = maxUpdatesPerSecond
-	this.NumDeleteThreads = numDeleteThreads
 	this.Enabled = enabled
 	return &this
 }
@@ -104,28 +101,36 @@ func (o *AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest) SetSchema
 	o.Schemas = v
 }
 
-// GetPollingInterval returns the PollingInterval field value
+// GetPollingInterval returns the PollingInterval field value if set, zero value otherwise.
 func (o *AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest) GetPollingInterval() string {
-	if o == nil {
+	if o == nil || isNil(o.PollingInterval) {
 		var ret string
 		return ret
 	}
-
-	return o.PollingInterval
+	return *o.PollingInterval
 }
 
-// GetPollingIntervalOk returns a tuple with the PollingInterval field value
+// GetPollingIntervalOk returns a tuple with the PollingInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest) GetPollingIntervalOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.PollingInterval) {
 		return nil, false
 	}
-	return &o.PollingInterval, true
+	return o.PollingInterval, true
 }
 
-// SetPollingInterval sets field value
+// HasPollingInterval returns a boolean if a field has been set.
+func (o *AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest) HasPollingInterval() bool {
+	if o != nil && !isNil(o.PollingInterval) {
+		return true
+	}
+
+	return false
+}
+
+// SetPollingInterval gets a reference to the given string and assigns it to the PollingInterval field.
 func (o *AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest) SetPollingInterval(v string) {
-	o.PollingInterval = v
+	o.PollingInterval = &v
 }
 
 // GetPeerServerPriorityIndex returns the PeerServerPriorityIndex field value if set, zero value otherwise.
@@ -192,52 +197,68 @@ func (o *AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest) SetBaseDN
 	o.BaseDN = &v
 }
 
-// GetMaxUpdatesPerSecond returns the MaxUpdatesPerSecond field value
+// GetMaxUpdatesPerSecond returns the MaxUpdatesPerSecond field value if set, zero value otherwise.
 func (o *AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest) GetMaxUpdatesPerSecond() int32 {
-	if o == nil {
+	if o == nil || isNil(o.MaxUpdatesPerSecond) {
 		var ret int32
 		return ret
 	}
-
-	return o.MaxUpdatesPerSecond
+	return *o.MaxUpdatesPerSecond
 }
 
-// GetMaxUpdatesPerSecondOk returns a tuple with the MaxUpdatesPerSecond field value
+// GetMaxUpdatesPerSecondOk returns a tuple with the MaxUpdatesPerSecond field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest) GetMaxUpdatesPerSecondOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || isNil(o.MaxUpdatesPerSecond) {
 		return nil, false
 	}
-	return &o.MaxUpdatesPerSecond, true
+	return o.MaxUpdatesPerSecond, true
 }
 
-// SetMaxUpdatesPerSecond sets field value
+// HasMaxUpdatesPerSecond returns a boolean if a field has been set.
+func (o *AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest) HasMaxUpdatesPerSecond() bool {
+	if o != nil && !isNil(o.MaxUpdatesPerSecond) {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxUpdatesPerSecond gets a reference to the given int32 and assigns it to the MaxUpdatesPerSecond field.
 func (o *AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest) SetMaxUpdatesPerSecond(v int32) {
-	o.MaxUpdatesPerSecond = v
+	o.MaxUpdatesPerSecond = &v
 }
 
-// GetNumDeleteThreads returns the NumDeleteThreads field value
+// GetNumDeleteThreads returns the NumDeleteThreads field value if set, zero value otherwise.
 func (o *AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest) GetNumDeleteThreads() int32 {
-	if o == nil {
+	if o == nil || isNil(o.NumDeleteThreads) {
 		var ret int32
 		return ret
 	}
-
-	return o.NumDeleteThreads
+	return *o.NumDeleteThreads
 }
 
-// GetNumDeleteThreadsOk returns a tuple with the NumDeleteThreads field value
+// GetNumDeleteThreadsOk returns a tuple with the NumDeleteThreads field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest) GetNumDeleteThreadsOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || isNil(o.NumDeleteThreads) {
 		return nil, false
 	}
-	return &o.NumDeleteThreads, true
+	return o.NumDeleteThreads, true
 }
 
-// SetNumDeleteThreads sets field value
+// HasNumDeleteThreads returns a boolean if a field has been set.
+func (o *AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest) HasNumDeleteThreads() bool {
+	if o != nil && !isNil(o.NumDeleteThreads) {
+		return true
+	}
+
+	return false
+}
+
+// SetNumDeleteThreads gets a reference to the given int32 and assigns it to the NumDeleteThreads field.
 func (o *AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest) SetNumDeleteThreads(v int32) {
-	o.NumDeleteThreads = v
+	o.NumDeleteThreads = &v
 }
 
 // GetEnabled returns the Enabled field value
@@ -272,7 +293,7 @@ func (o AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest) MarshalJSO
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if true {
+	if !isNil(o.PollingInterval) {
 		toSerialize["pollingInterval"] = o.PollingInterval
 	}
 	if !isNil(o.PeerServerPriorityIndex) {
@@ -281,10 +302,10 @@ func (o AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest) MarshalJSO
 	if !isNil(o.BaseDN) {
 		toSerialize["baseDN"] = o.BaseDN
 	}
-	if true {
+	if !isNil(o.MaxUpdatesPerSecond) {
 		toSerialize["maxUpdatesPerSecond"] = o.MaxUpdatesPerSecond
 	}
-	if true {
+	if !isNil(o.NumDeleteThreads) {
 		toSerialize["numDeleteThreads"] = o.NumDeleteThreads
 	}
 	if true {

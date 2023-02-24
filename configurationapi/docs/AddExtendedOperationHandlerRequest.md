@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **DefaultOTPDeliveryMechanism** | **[]string** | The set of delivery mechanisms that may be used to deliver one-time passwords to users in requests that do not specify one or more preferred delivery mechanisms. | 
 **DefaultSingleUseTokenValidityDuration** | Pointer to **string** | The default length of time that a single-use token will be considered valid by the server if the client doesn&#39;t specify a duration in the deliver single-use token request. | [optional] 
 **DefaultTokenDeliveryMechanism** | **[]string** | The set of delivery mechanisms that may be used to deliver password reset tokens to users for requests that do not specify one or more preferred delivery mechanisms. | 
-**PasswordResetTokenValidityDuration** | **string** | The maximum length of time that a password reset token should be considered valid. | 
+**PasswordResetTokenValidityDuration** | Pointer to **string** | The maximum length of time that a password reset token should be considered valid. | [optional] 
 **IdentityMapper** | **string** | The identity mapper that should be used to identify the user(s) targeted by the authentication identity contained in the extended request. This will only be used for \&quot;u:\&quot;-style authentication identities. | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Extended Operation Handler. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Extended Operation Handler. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 
 ### NewAddExtendedOperationHandlerRequest
 
-`func NewAddExtendedOperationHandlerRequest(handlerName string, schemas []EnumthirdPartyExtendedOperationHandlerSchemaUrn, enabled bool, passwordGenerator string, defaultOTPDeliveryMechanism []string, defaultTokenDeliveryMechanism []string, passwordResetTokenValidityDuration string, identityMapper string, extensionClass string, ) *AddExtendedOperationHandlerRequest`
+`func NewAddExtendedOperationHandlerRequest(handlerName string, schemas []EnumthirdPartyExtendedOperationHandlerSchemaUrn, enabled bool, passwordGenerator string, defaultOTPDeliveryMechanism []string, defaultTokenDeliveryMechanism []string, identityMapper string, extensionClass string, ) *AddExtendedOperationHandlerRequest`
 
 NewAddExtendedOperationHandlerRequest instantiates a new AddExtendedOperationHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -433,6 +433,11 @@ and a boolean to check if the value has been set.
 
 SetPasswordResetTokenValidityDuration sets PasswordResetTokenValidityDuration field to given value.
 
+### HasPasswordResetTokenValidityDuration
+
+`func (o *AddExtendedOperationHandlerRequest) HasPasswordResetTokenValidityDuration() bool`
+
+HasPasswordResetTokenValidityDuration returns a boolean if a field has been set.
 
 ### GetIdentityMapper
 

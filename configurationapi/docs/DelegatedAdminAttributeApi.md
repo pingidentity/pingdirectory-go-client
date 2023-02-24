@@ -31,7 +31,7 @@ import (
 
 func main() {
     restResourceTypeName := "restResourceTypeName_example" // string | Name of the REST Resource Type
-    addDelegatedAdminAttributeRequest := openapiclient.add_delegated_admin_attribute_request{AddCertificateDelegatedAdminAttributeRequest: openapiclient.NewAddCertificateDelegatedAdminAttributeRequest("AttributeType_example", []openapiclient.EnumcertificateDelegatedAdminAttributeSchemaUrn{openapiclient.Enumcertificate-delegated-admin-attributeSchemaUrn("urn:pingidentity:schemas:configuration:2.0:delegated-admin-attribute:certificate")}, "DisplayName_example", openapiclient.Enumdelegated-admin-attribute-mutabilityProp("read-only"), false, int32(123))} // AddDelegatedAdminAttributeRequest | Create a new Delegated Admin Attribute in the config
+    addDelegatedAdminAttributeRequest := openapiclient.add_delegated_admin_attribute_request{AddCertificateDelegatedAdminAttributeRequest: openapiclient.NewAddCertificateDelegatedAdminAttributeRequest("AttributeType_example", []openapiclient.EnumcertificateDelegatedAdminAttributeSchemaUrn{openapiclient.Enumcertificate-delegated-admin-attributeSchemaUrn("urn:pingidentity:schemas:configuration:2.0:delegated-admin-attribute:certificate")}, "DisplayName_example")} // AddDelegatedAdminAttributeRequest | Create a new Delegated Admin Attribute in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

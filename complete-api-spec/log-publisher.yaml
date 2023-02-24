@@ -464,6 +464,9 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/syslog-json-audit-log-publisher-shared'
+      required:
+      - syslogFacility
+      - syslogSeverity
     syslog-json-audit-log-publisher-shared:
       type: object
       properties:
@@ -598,8 +601,6 @@ components:
       required:
       - schemas
       - syslogExternalServer
-      - syslogFacility
-      - syslogSeverity
       - enabled
     Enumsyslog-json-audit-log-publisherSchemaUrn:
       type: string
@@ -626,6 +627,11 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/syslog-based-error-log-publisher-shared'
+      required:
+      - serverHostName
+      - serverPort
+      - syslogFacility
+      - asynchronous
     syslog-based-error-log-publisher-shared:
       type: object
       properties:
@@ -682,10 +688,6 @@ components:
       required:
       - schemas
       - enabled
-      - serverHostName
-      - serverPort
-      - syslogFacility
-      - asynchronous
     Enumsyslog-based-error-log-publisherSchemaUrn:
       type: string
       enum:
@@ -711,6 +713,11 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-file-based-access-log-publisher-shared'
+      required:
+      - logFilePermissions
+      - rotationPolicy
+      - retentionPolicy
+      - asynchronous
     third-party-file-based-access-log-publisher-shared:
       type: object
       properties:
@@ -875,11 +882,7 @@ components:
       required:
       - schemas
       - logFile
-      - logFilePermissions
-      - rotationPolicy
-      - retentionPolicy
       - extensionClass
-      - asynchronous
       - enabled
     Enumthird-party-file-based-access-log-publisherSchemaUrn:
       type: string
@@ -906,6 +909,11 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/operation-timing-access-log-publisher-shared'
+      required:
+      - logFilePermissions
+      - rotationPolicy
+      - retentionPolicy
+      - asynchronous
     operation-timing-access-log-publisher-shared:
       type: object
       properties:
@@ -1056,10 +1064,6 @@ components:
       required:
       - schemas
       - logFile
-      - logFilePermissions
-      - rotationPolicy
-      - retentionPolicy
-      - asynchronous
       - enabled
     Enumoperation-timing-access-log-publisherSchemaUrn:
       type: string
@@ -1144,6 +1148,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/admin-alert-access-log-publisher-shared'
+      required:
+      - asynchronous
     admin-alert-access-log-publisher-shared:
       type: object
       properties:
@@ -1333,7 +1339,6 @@ components:
           $ref: '#/components/schemas/Enumlog-publisher-loggingErrorBehaviorProp'
       required:
       - schemas
-      - asynchronous
       - enabled
     Enumadmin-alert-access-log-publisherSchemaUrn:
       type: string
@@ -1360,6 +1365,11 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/file-based-trace-log-publisher-shared'
+      required:
+      - logFilePermissions
+      - rotationPolicy
+      - retentionPolicy
+      - asynchronous
     file-based-trace-log-publisher-shared:
       type: object
       properties:
@@ -1490,10 +1500,6 @@ components:
       required:
       - schemas
       - logFile
-      - logFilePermissions
-      - rotationPolicy
-      - retentionPolicy
-      - asynchronous
       - enabled
     Enumfile-based-trace-log-publisherSchemaUrn:
       type: string
@@ -1520,6 +1526,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/jdbc-based-error-log-publisher-shared'
+      required:
+      - logTableName
     jdbc-based-error-log-publisher-shared:
       type: object
       properties:
@@ -1569,7 +1577,6 @@ components:
       - schemas
       - server
       - logFieldMapping
-      - logTableName
       - enabled
     Enumjdbc-based-error-log-publisherSchemaUrn:
       type: string
@@ -1596,6 +1603,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/jdbc-based-access-log-publisher-shared'
+      required:
+      - logTableName
     jdbc-based-access-log-publisher-shared:
       type: object
       properties:
@@ -1703,7 +1712,6 @@ components:
       - schemas
       - server
       - logFieldMapping
-      - logTableName
       - enabled
     Enumjdbc-based-access-log-publisherSchemaUrn:
       type: string
@@ -1730,6 +1738,11 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/common-log-file-http-operation-log-publisher-shared'
+      required:
+      - logFilePermissions
+      - rotationPolicy
+      - retentionPolicy
+      - asynchronous
     common-log-file-http-operation-log-publisher-shared:
       type: object
       properties:
@@ -1816,10 +1829,6 @@ components:
       required:
       - schemas
       - logFile
-      - logFilePermissions
-      - rotationPolicy
-      - retentionPolicy
-      - asynchronous
       - enabled
     Enumcommon-log-file-http-operation-log-publisherSchemaUrn:
       type: string
@@ -1914,6 +1923,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/syslog-text-error-log-publisher-shared'
+      required:
+      - syslogFacility
     syslog-text-error-log-publisher-shared:
       type: object
       properties:
@@ -1990,7 +2001,6 @@ components:
       required:
       - schemas
       - syslogExternalServer
-      - syslogFacility
       - enabled
     Enumsyslog-text-error-log-publisherSchemaUrn:
       type: string
@@ -2017,6 +2027,11 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/syslog-based-access-log-publisher-shared'
+      required:
+      - serverHostName
+      - serverPort
+      - syslogFacility
+      - asynchronous
     syslog-based-access-log-publisher-shared:
       type: object
       properties:
@@ -2219,10 +2234,6 @@ components:
       required:
       - schemas
       - enabled
-      - serverHostName
-      - serverPort
-      - syslogFacility
-      - asynchronous
     Enumsyslog-based-access-log-publisherSchemaUrn:
       type: string
       enum:
@@ -2248,6 +2259,11 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/file-based-json-audit-log-publisher-shared'
+      required:
+      - logFilePermissions
+      - rotationPolicy
+      - retentionPolicy
+      - asynchronous
     file-based-json-audit-log-publisher-shared:
       type: object
       properties:
@@ -2424,10 +2440,6 @@ components:
       required:
       - schemas
       - logFile
-      - logFilePermissions
-      - rotationPolicy
-      - retentionPolicy
-      - asynchronous
       - enabled
     Enumfile-based-json-audit-log-publisherSchemaUrn:
       type: string
@@ -2454,6 +2466,12 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/file-based-debug-log-publisher-shared'
+      required:
+      - logFilePermissions
+      - rotationPolicy
+      - retentionPolicy
+      - asynchronous
+      - defaultDebugLevel
     file-based-debug-log-publisher-shared:
       type: object
       properties:
@@ -2564,11 +2582,6 @@ components:
       required:
       - schemas
       - logFile
-      - logFilePermissions
-      - rotationPolicy
-      - retentionPolicy
-      - asynchronous
-      - defaultDebugLevel
       - enabled
     Enumfile-based-debug-log-publisherSchemaUrn:
       type: string
@@ -2595,6 +2608,11 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/file-based-error-log-publisher-shared'
+      required:
+      - logFilePermissions
+      - rotationPolicy
+      - retentionPolicy
+      - asynchronous
     file-based-error-log-publisher-shared:
       type: object
       properties:
@@ -2713,10 +2731,6 @@ components:
       required:
       - schemas
       - logFile
-      - logFilePermissions
-      - rotationPolicy
-      - retentionPolicy
-      - asynchronous
       - enabled
     Enumfile-based-error-log-publisherSchemaUrn:
       type: string
@@ -2811,6 +2825,10 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/syslog-text-access-log-publisher-shared'
+      required:
+      - syslogFacility
+      - syslogSeverity
+      - asynchronous
     syslog-text-access-log-publisher-shared:
       type: object
       properties:
@@ -3021,9 +3039,6 @@ components:
       required:
       - schemas
       - syslogExternalServer
-      - syslogFacility
-      - syslogSeverity
-      - asynchronous
       - enabled
     Enumsyslog-text-access-log-publisherSchemaUrn:
       type: string
@@ -3050,6 +3065,11 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/detailed-http-operation-log-publisher-shared'
+      required:
+      - logFilePermissions
+      - rotationPolicy
+      - retentionPolicy
+      - asynchronous
     detailed-http-operation-log-publisher-shared:
       type: object
       properties:
@@ -3212,10 +3232,6 @@ components:
       required:
       - schemas
       - logFile
-      - logFilePermissions
-      - rotationPolicy
-      - retentionPolicy
-      - asynchronous
       - enabled
     Enumdetailed-http-operation-log-publisherSchemaUrn:
       type: string
@@ -3242,6 +3258,11 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/json-access-log-publisher-shared'
+      required:
+      - logFilePermissions
+      - rotationPolicy
+      - retentionPolicy
+      - asynchronous
     json-access-log-publisher-shared:
       type: object
       properties:
@@ -3488,10 +3509,6 @@ components:
       required:
       - schemas
       - logFile
-      - logFilePermissions
-      - rotationPolicy
-      - retentionPolicy
-      - asynchronous
       - enabled
     Enumjson-access-log-publisherSchemaUrn:
       type: string
@@ -3518,6 +3535,11 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/debug-access-log-publisher-shared'
+      required:
+      - logFilePermissions
+      - rotationPolicy
+      - retentionPolicy
+      - asynchronous
     debug-access-log-publisher-shared:
       type: object
       properties:
@@ -3690,10 +3712,6 @@ components:
       required:
       - schemas
       - logFile
-      - logFilePermissions
-      - rotationPolicy
-      - retentionPolicy
-      - asynchronous
       - enabled
     Enumdebug-access-log-publisherSchemaUrn:
       type: string
@@ -3720,6 +3738,9 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/syslog-json-http-operation-log-publisher-shared'
+      required:
+      - syslogFacility
+      - syslogSeverity
     syslog-json-http-operation-log-publisher-shared:
       type: object
       properties:
@@ -3840,8 +3861,6 @@ components:
       required:
       - schemas
       - syslogExternalServer
-      - syslogFacility
-      - syslogSeverity
       - enabled
     Enumsyslog-json-http-operation-log-publisherSchemaUrn:
       type: string
@@ -3994,6 +4013,11 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/file-based-audit-log-publisher-shared'
+      required:
+      - logFilePermissions
+      - rotationPolicy
+      - retentionPolicy
+      - asynchronous
     file-based-audit-log-publisher-shared:
       type: object
       properties:
@@ -4168,10 +4192,6 @@ components:
       required:
       - schemas
       - logFile
-      - logFilePermissions
-      - rotationPolicy
-      - retentionPolicy
-      - asynchronous
       - enabled
     Enumfile-based-audit-log-publisherSchemaUrn:
       type: string
@@ -4198,6 +4218,11 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/json-error-log-publisher-shared'
+      required:
+      - logFilePermissions
+      - rotationPolicy
+      - retentionPolicy
+      - asynchronous
     json-error-log-publisher-shared:
       type: object
       properties:
@@ -4318,10 +4343,6 @@ components:
       required:
       - schemas
       - logFile
-      - logFilePermissions
-      - rotationPolicy
-      - retentionPolicy
-      - asynchronous
       - enabled
     Enumjson-error-log-publisherSchemaUrn:
       type: string
@@ -4348,6 +4369,11 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/groovy-scripted-file-based-access-log-publisher-shared'
+      required:
+      - logFilePermissions
+      - rotationPolicy
+      - retentionPolicy
+      - asynchronous
     groovy-scripted-file-based-access-log-publisher-shared:
       type: object
       properties:
@@ -4513,10 +4539,6 @@ components:
       - schemas
       - scriptClass
       - logFile
-      - logFilePermissions
-      - rotationPolicy
-      - retentionPolicy
-      - asynchronous
       - enabled
     Enumgroovy-scripted-file-based-access-log-publisherSchemaUrn:
       type: string
@@ -4543,6 +4565,11 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/groovy-scripted-file-based-error-log-publisher-shared'
+      required:
+      - logFilePermissions
+      - rotationPolicy
+      - retentionPolicy
+      - asynchronous
     groovy-scripted-file-based-error-log-publisher-shared:
       type: object
       properties:
@@ -4650,10 +4677,6 @@ components:
       - schemas
       - scriptClass
       - logFile
-      - logFilePermissions
-      - rotationPolicy
-      - retentionPolicy
-      - asynchronous
       - enabled
     Enumgroovy-scripted-file-based-error-log-publisherSchemaUrn:
       type: string
@@ -4680,6 +4703,9 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/syslog-json-access-log-publisher-shared'
+      required:
+      - syslogFacility
+      - syslogSeverity
     syslog-json-access-log-publisher-shared:
       type: object
       properties:
@@ -4880,8 +4906,6 @@ components:
       required:
       - schemas
       - syslogExternalServer
-      - syslogFacility
-      - syslogSeverity
       - enabled
     Enumsyslog-json-access-log-publisherSchemaUrn:
       type: string
@@ -5034,6 +5058,11 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-file-based-error-log-publisher-shared'
+      required:
+      - logFilePermissions
+      - rotationPolicy
+      - retentionPolicy
+      - asynchronous
     third-party-file-based-error-log-publisher-shared:
       type: object
       properties:
@@ -5140,11 +5169,7 @@ components:
       required:
       - schemas
       - logFile
-      - logFilePermissions
-      - rotationPolicy
-      - retentionPolicy
       - extensionClass
-      - asynchronous
       - enabled
     Enumthird-party-file-based-error-log-publisherSchemaUrn:
       type: string
@@ -5625,6 +5650,11 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/file-based-access-log-publisher-shared'
+      required:
+      - logFilePermissions
+      - rotationPolicy
+      - retentionPolicy
+      - asynchronous
     file-based-access-log-publisher-shared:
       type: object
       properties:
@@ -5869,10 +5899,6 @@ components:
       required:
       - schemas
       - logFile
-      - logFilePermissions
-      - rotationPolicy
-      - retentionPolicy
-      - asynchronous
       - enabled
     Enumfile-based-access-log-publisherSchemaUrn:
       type: string
@@ -5967,6 +5993,11 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/file-based-json-http-operation-log-publisher-shared'
+      required:
+      - logFilePermissions
+      - rotationPolicy
+      - retentionPolicy
+      - asynchronous
     file-based-json-http-operation-log-publisher-shared:
       type: object
       properties:
@@ -6129,10 +6160,6 @@ components:
       required:
       - schemas
       - logFile
-      - logFilePermissions
-      - rotationPolicy
-      - retentionPolicy
-      - asynchronous
       - enabled
     Enumfile-based-json-http-operation-log-publisherSchemaUrn:
       type: string
@@ -6159,6 +6186,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/syslog-json-error-log-publisher-shared'
+      required:
+      - syslogFacility
     syslog-json-error-log-publisher-shared:
       type: object
       properties:
@@ -6233,7 +6262,6 @@ components:
       required:
       - schemas
       - syslogExternalServer
-      - syslogFacility
       - enabled
     Enumsyslog-json-error-log-publisherSchemaUrn:
       type: string

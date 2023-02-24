@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    addPluginRequest := openapiclient.add_plugin_request{AddAttributeMapperPluginRequest: openapiclient.NewAddAttributeMapperPluginRequest("PluginName_example", []openapiclient.EnumattributeMapperPluginSchemaUrn{openapiclient.Enumattribute-mapper-pluginSchemaUrn("urn:pingidentity:schemas:configuration:2.0:plugin:attribute-mapper")}, []openapiclient.EnumpluginPluginTypeProp{openapiclient.Enumplugin-pluginTypeProp("startup")}, "SourceAttribute_example", "TargetAttribute_example", false, false, false)} // AddPluginRequest | Create a new Plugin in the config
+    addPluginRequest := openapiclient.add_plugin_request{AddAttributeMapperPluginRequest: openapiclient.NewAddAttributeMapperPluginRequest("PluginName_example", []openapiclient.EnumattributeMapperPluginSchemaUrn{openapiclient.Enumattribute-mapper-pluginSchemaUrn("urn:pingidentity:schemas:configuration:2.0:plugin:attribute-mapper")}, "SourceAttribute_example", "TargetAttribute_example", false)} // AddPluginRequest | Create a new Plugin in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

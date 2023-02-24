@@ -178,6 +178,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/exact-match-identity-mapper-shared'
+      required:
+      - matchAttribute
     exact-match-identity-mapper-shared:
       type: object
       properties:
@@ -213,7 +215,6 @@ components:
               Indicates whether the Identity Mapper is enabled for use.
       required:
       - schemas
-      - matchAttribute
       - enabled
     Enumexact-match-identity-mapperSchemaUrn:
       type: string
@@ -296,6 +297,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/regular-expression-identity-mapper-shared'
+      required:
+      - matchAttribute
     regular-expression-identity-mapper-shared:
       type: object
       properties:
@@ -339,7 +342,6 @@ components:
               Indicates whether the Identity Mapper is enabled for use.
       required:
       - schemas
-      - matchAttribute
       - matchPattern
       - enabled
     Enumregular-expression-identity-mapperSchemaUrn:

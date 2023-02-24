@@ -28,8 +28,8 @@ type AddThirdPartyNotificationManagerRequest struct {
 	// Indicates whether this Notification Manager is enabled within the server.
 	Enabled bool `json:"enabled"`
 	// Specifies the DN of the entry below which subscription data is stored for this Notification Manager. This needs to be in the backend that has the data to be notified on, and must not be the same entry as the backend base DN. The subscription base DN entry does not need to exist as it will be created by the server.
-	SubscriptionBaseDN      string                                             `json:"subscriptionBaseDN"`
-	TransactionNotification EnumnotificationManagerTransactionNotificationProp `json:"transactionNotification"`
+	SubscriptionBaseDN      string                                              `json:"subscriptionBaseDN"`
+	TransactionNotification *EnumnotificationManagerTransactionNotificationProp `json:"transactionNotification,omitempty"`
 	// Enables monitor entries for this Notification Manager.
 	MonitorEntriesEnabled *bool `json:"monitorEntriesEnabled,omitempty"`
 }
@@ -38,13 +38,12 @@ type AddThirdPartyNotificationManagerRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddThirdPartyNotificationManagerRequest(managerName string, extensionClass string, enabled bool, subscriptionBaseDN string, transactionNotification EnumnotificationManagerTransactionNotificationProp) *AddThirdPartyNotificationManagerRequest {
+func NewAddThirdPartyNotificationManagerRequest(managerName string, extensionClass string, enabled bool, subscriptionBaseDN string) *AddThirdPartyNotificationManagerRequest {
 	this := AddThirdPartyNotificationManagerRequest{}
 	this.ManagerName = managerName
 	this.ExtensionClass = extensionClass
 	this.Enabled = enabled
 	this.SubscriptionBaseDN = subscriptionBaseDN
-	this.TransactionNotification = transactionNotification
 	return &this
 }
 
@@ -248,28 +247,36 @@ func (o *AddThirdPartyNotificationManagerRequest) SetSubscriptionBaseDN(v string
 	o.SubscriptionBaseDN = v
 }
 
-// GetTransactionNotification returns the TransactionNotification field value
+// GetTransactionNotification returns the TransactionNotification field value if set, zero value otherwise.
 func (o *AddThirdPartyNotificationManagerRequest) GetTransactionNotification() EnumnotificationManagerTransactionNotificationProp {
-	if o == nil {
+	if o == nil || isNil(o.TransactionNotification) {
 		var ret EnumnotificationManagerTransactionNotificationProp
 		return ret
 	}
-
-	return o.TransactionNotification
+	return *o.TransactionNotification
 }
 
-// GetTransactionNotificationOk returns a tuple with the TransactionNotification field value
+// GetTransactionNotificationOk returns a tuple with the TransactionNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyNotificationManagerRequest) GetTransactionNotificationOk() (*EnumnotificationManagerTransactionNotificationProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.TransactionNotification) {
 		return nil, false
 	}
-	return &o.TransactionNotification, true
+	return o.TransactionNotification, true
 }
 
-// SetTransactionNotification sets field value
+// HasTransactionNotification returns a boolean if a field has been set.
+func (o *AddThirdPartyNotificationManagerRequest) HasTransactionNotification() bool {
+	if o != nil && !isNil(o.TransactionNotification) {
+		return true
+	}
+
+	return false
+}
+
+// SetTransactionNotification gets a reference to the given EnumnotificationManagerTransactionNotificationProp and assigns it to the TransactionNotification field.
 func (o *AddThirdPartyNotificationManagerRequest) SetTransactionNotification(v EnumnotificationManagerTransactionNotificationProp) {
-	o.TransactionNotification = v
+	o.TransactionNotification = &v
 }
 
 // GetMonitorEntriesEnabled returns the MonitorEntriesEnabled field value if set, zero value otherwise.
@@ -327,7 +334,7 @@ func (o AddThirdPartyNotificationManagerRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["subscriptionBaseDN"] = o.SubscriptionBaseDN
 	}
-	if true {
+	if !isNil(o.TransactionNotification) {
 		toSerialize["transactionNotification"] = o.TransactionNotification
 	}
 	if !isNil(o.MonitorEntriesEnabled) {

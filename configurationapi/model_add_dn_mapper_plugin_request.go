@@ -19,19 +19,19 @@ type AddDnMapperPluginRequest struct {
 	// Name of the new Plugin
 	PluginName string                        `json:"pluginName"`
 	Schemas    []EnumdnMapperPluginSchemaUrn `json:"schemas"`
-	PluginType []EnumpluginPluginTypeProp    `json:"pluginType"`
+	PluginType []EnumpluginPluginTypeProp    `json:"pluginType,omitempty"`
 	// Specifies the source DN that may appear in client requests which should be remapped to the target DN. Note that the source DN must not be equal to the target DN.
 	SourceDN string `json:"sourceDN"`
 	// Specifies the DN to which the source DN should be mapped. Note that the target DN must not be equal to the source DN.
 	TargetDN string `json:"targetDN"`
 	// Indicates whether DN mapping should be applied to the values of attributes with appropriate syntaxes.
-	EnableAttributeMapping bool `json:"enableAttributeMapping"`
+	EnableAttributeMapping *bool `json:"enableAttributeMapping,omitempty"`
 	// Specifies a set of specific attributes for which DN mapping should be applied. This will only be applicable if the enable-attribute-mapping property has a value of \"true\". Any attributes listed must be defined in the server schema with either the distinguished name syntax or the name and optional UID syntax.
 	MapAttribute []string `json:"mapAttribute,omitempty"`
 	// Indicates whether DN mapping should be applied to DNs that may be present in specific controls. DN mapping will only be applied for control types which are specifically supported by the DN mapper plugin.
-	EnableControlMapping bool `json:"enableControlMapping"`
+	EnableControlMapping *bool `json:"enableControlMapping,omitempty"`
 	// Indicates whether DNs in response messages containing the target DN should always be remapped back to the source DN. If this is \"false\", then mapping will be performed for a response message only if one or more elements of the associated request are mapped. Otherwise, the mapping will be performed for all responses regardless of whether the mapping was applied to the request.
-	AlwaysMapResponses bool `json:"alwaysMapResponses"`
+	AlwaysMapResponses *bool `json:"alwaysMapResponses,omitempty"`
 	// A description for this Plugin
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the plug-in is enabled for use.
@@ -44,16 +44,12 @@ type AddDnMapperPluginRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddDnMapperPluginRequest(pluginName string, schemas []EnumdnMapperPluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, sourceDN string, targetDN string, enableAttributeMapping bool, enableControlMapping bool, alwaysMapResponses bool, enabled bool) *AddDnMapperPluginRequest {
+func NewAddDnMapperPluginRequest(pluginName string, schemas []EnumdnMapperPluginSchemaUrn, sourceDN string, targetDN string, enabled bool) *AddDnMapperPluginRequest {
 	this := AddDnMapperPluginRequest{}
 	this.PluginName = pluginName
 	this.Schemas = schemas
-	this.PluginType = pluginType
 	this.SourceDN = sourceDN
 	this.TargetDN = targetDN
-	this.EnableAttributeMapping = enableAttributeMapping
-	this.EnableControlMapping = enableControlMapping
-	this.AlwaysMapResponses = alwaysMapResponses
 	this.Enabled = enabled
 	return &this
 }
@@ -114,26 +110,34 @@ func (o *AddDnMapperPluginRequest) SetSchemas(v []EnumdnMapperPluginSchemaUrn) {
 	o.Schemas = v
 }
 
-// GetPluginType returns the PluginType field value
+// GetPluginType returns the PluginType field value if set, zero value otherwise.
 func (o *AddDnMapperPluginRequest) GetPluginType() []EnumpluginPluginTypeProp {
-	if o == nil {
+	if o == nil || isNil(o.PluginType) {
 		var ret []EnumpluginPluginTypeProp
 		return ret
 	}
-
 	return o.PluginType
 }
 
-// GetPluginTypeOk returns a tuple with the PluginType field value
+// GetPluginTypeOk returns a tuple with the PluginType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDnMapperPluginRequest) GetPluginTypeOk() ([]EnumpluginPluginTypeProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.PluginType) {
 		return nil, false
 	}
 	return o.PluginType, true
 }
 
-// SetPluginType sets field value
+// HasPluginType returns a boolean if a field has been set.
+func (o *AddDnMapperPluginRequest) HasPluginType() bool {
+	if o != nil && !isNil(o.PluginType) {
+		return true
+	}
+
+	return false
+}
+
+// SetPluginType gets a reference to the given []EnumpluginPluginTypeProp and assigns it to the PluginType field.
 func (o *AddDnMapperPluginRequest) SetPluginType(v []EnumpluginPluginTypeProp) {
 	o.PluginType = v
 }
@@ -186,28 +190,36 @@ func (o *AddDnMapperPluginRequest) SetTargetDN(v string) {
 	o.TargetDN = v
 }
 
-// GetEnableAttributeMapping returns the EnableAttributeMapping field value
+// GetEnableAttributeMapping returns the EnableAttributeMapping field value if set, zero value otherwise.
 func (o *AddDnMapperPluginRequest) GetEnableAttributeMapping() bool {
-	if o == nil {
+	if o == nil || isNil(o.EnableAttributeMapping) {
 		var ret bool
 		return ret
 	}
-
-	return o.EnableAttributeMapping
+	return *o.EnableAttributeMapping
 }
 
-// GetEnableAttributeMappingOk returns a tuple with the EnableAttributeMapping field value
+// GetEnableAttributeMappingOk returns a tuple with the EnableAttributeMapping field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDnMapperPluginRequest) GetEnableAttributeMappingOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || isNil(o.EnableAttributeMapping) {
 		return nil, false
 	}
-	return &o.EnableAttributeMapping, true
+	return o.EnableAttributeMapping, true
 }
 
-// SetEnableAttributeMapping sets field value
+// HasEnableAttributeMapping returns a boolean if a field has been set.
+func (o *AddDnMapperPluginRequest) HasEnableAttributeMapping() bool {
+	if o != nil && !isNil(o.EnableAttributeMapping) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnableAttributeMapping gets a reference to the given bool and assigns it to the EnableAttributeMapping field.
 func (o *AddDnMapperPluginRequest) SetEnableAttributeMapping(v bool) {
-	o.EnableAttributeMapping = v
+	o.EnableAttributeMapping = &v
 }
 
 // GetMapAttribute returns the MapAttribute field value if set, zero value otherwise.
@@ -242,52 +254,68 @@ func (o *AddDnMapperPluginRequest) SetMapAttribute(v []string) {
 	o.MapAttribute = v
 }
 
-// GetEnableControlMapping returns the EnableControlMapping field value
+// GetEnableControlMapping returns the EnableControlMapping field value if set, zero value otherwise.
 func (o *AddDnMapperPluginRequest) GetEnableControlMapping() bool {
-	if o == nil {
+	if o == nil || isNil(o.EnableControlMapping) {
 		var ret bool
 		return ret
 	}
-
-	return o.EnableControlMapping
+	return *o.EnableControlMapping
 }
 
-// GetEnableControlMappingOk returns a tuple with the EnableControlMapping field value
+// GetEnableControlMappingOk returns a tuple with the EnableControlMapping field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDnMapperPluginRequest) GetEnableControlMappingOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || isNil(o.EnableControlMapping) {
 		return nil, false
 	}
-	return &o.EnableControlMapping, true
+	return o.EnableControlMapping, true
 }
 
-// SetEnableControlMapping sets field value
+// HasEnableControlMapping returns a boolean if a field has been set.
+func (o *AddDnMapperPluginRequest) HasEnableControlMapping() bool {
+	if o != nil && !isNil(o.EnableControlMapping) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnableControlMapping gets a reference to the given bool and assigns it to the EnableControlMapping field.
 func (o *AddDnMapperPluginRequest) SetEnableControlMapping(v bool) {
-	o.EnableControlMapping = v
+	o.EnableControlMapping = &v
 }
 
-// GetAlwaysMapResponses returns the AlwaysMapResponses field value
+// GetAlwaysMapResponses returns the AlwaysMapResponses field value if set, zero value otherwise.
 func (o *AddDnMapperPluginRequest) GetAlwaysMapResponses() bool {
-	if o == nil {
+	if o == nil || isNil(o.AlwaysMapResponses) {
 		var ret bool
 		return ret
 	}
-
-	return o.AlwaysMapResponses
+	return *o.AlwaysMapResponses
 }
 
-// GetAlwaysMapResponsesOk returns a tuple with the AlwaysMapResponses field value
+// GetAlwaysMapResponsesOk returns a tuple with the AlwaysMapResponses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDnMapperPluginRequest) GetAlwaysMapResponsesOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || isNil(o.AlwaysMapResponses) {
 		return nil, false
 	}
-	return &o.AlwaysMapResponses, true
+	return o.AlwaysMapResponses, true
 }
 
-// SetAlwaysMapResponses sets field value
+// HasAlwaysMapResponses returns a boolean if a field has been set.
+func (o *AddDnMapperPluginRequest) HasAlwaysMapResponses() bool {
+	if o != nil && !isNil(o.AlwaysMapResponses) {
+		return true
+	}
+
+	return false
+}
+
+// SetAlwaysMapResponses gets a reference to the given bool and assigns it to the AlwaysMapResponses field.
 func (o *AddDnMapperPluginRequest) SetAlwaysMapResponses(v bool) {
-	o.AlwaysMapResponses = v
+	o.AlwaysMapResponses = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -386,7 +414,7 @@ func (o AddDnMapperPluginRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if true {
+	if !isNil(o.PluginType) {
 		toSerialize["pluginType"] = o.PluginType
 	}
 	if true {
@@ -395,16 +423,16 @@ func (o AddDnMapperPluginRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["targetDN"] = o.TargetDN
 	}
-	if true {
+	if !isNil(o.EnableAttributeMapping) {
 		toSerialize["enableAttributeMapping"] = o.EnableAttributeMapping
 	}
 	if !isNil(o.MapAttribute) {
 		toSerialize["mapAttribute"] = o.MapAttribute
 	}
-	if true {
+	if !isNil(o.EnableControlMapping) {
 		toSerialize["enableControlMapping"] = o.EnableControlMapping
 	}
-	if true {
+	if !isNil(o.AlwaysMapResponses) {
 		toSerialize["alwaysMapResponses"] = o.AlwaysMapResponses
 	}
 	if !isNil(o.Description) {

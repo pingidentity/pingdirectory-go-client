@@ -166,6 +166,10 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/ldap-pass-through-authentication-handler-shared'
+      required:
+      - serverAccessMode
+      - initialConnections
+      - maxConnections
     ldap-pass-through-authentication-handler-shared:
       type: object
       properties:
@@ -232,9 +236,6 @@ components:
       required:
       - schemas
       - server
-      - serverAccessMode
-      - initialConnections
-      - maxConnections
     Enumldap-pass-through-authentication-handlerSchemaUrn:
       type: string
       enum:

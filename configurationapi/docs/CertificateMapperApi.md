@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    addCertificateMapperRequest := openapiclient.add_certificate_mapper_request{AddFingerprintCertificateMapperRequest: openapiclient.NewAddFingerprintCertificateMapperRequest("MapperName_example", []openapiclient.EnumfingerprintCertificateMapperSchemaUrn{openapiclient.Enumfingerprint-certificate-mapperSchemaUrn("urn:pingidentity:schemas:configuration:2.0:certificate-mapper:fingerprint")}, "FingerprintAttribute_example", openapiclient.Enumcertificate-mapper-fingerprintAlgorithmProp("md5"), false)} // AddCertificateMapperRequest | Create a new Certificate Mapper in the config
+    addCertificateMapperRequest := openapiclient.add_certificate_mapper_request{AddFingerprintCertificateMapperRequest: openapiclient.NewAddFingerprintCertificateMapperRequest("MapperName_example", []openapiclient.EnumfingerprintCertificateMapperSchemaUrn{openapiclient.Enumfingerprint-certificate-mapperSchemaUrn("urn:pingidentity:schemas:configuration:2.0:certificate-mapper:fingerprint")}, openapiclient.Enumcertificate-mapper-fingerprintAlgorithmProp("md5"), false)} // AddCertificateMapperRequest | Create a new Certificate Mapper in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

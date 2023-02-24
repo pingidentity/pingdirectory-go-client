@@ -22,9 +22,9 @@ type AddSnmpSubagentPluginRequest struct {
 	// The SNMP context name for this sub-agent. The context name must not be longer than 30 ASCII characters. Each server in a topology must have a unique SNMP context name.
 	ContextName *string `json:"contextName,omitempty"`
 	// The hostname or IP address of the SNMP master agent.
-	AgentxAddress string `json:"agentxAddress"`
+	AgentxAddress *string `json:"agentxAddress,omitempty"`
 	// The port number on which the SNMP master agent will be contacted.
-	AgentxPort int32 `json:"agentxPort"`
+	AgentxPort *int32 `json:"agentxPort,omitempty"`
 	// The number of worker threads to use to handle SNMP requests.
 	NumWorkerThreads *int32 `json:"numWorkerThreads,omitempty"`
 	// Specifies the maximum amount of time to wait for a session to the master agent to be established.
@@ -45,12 +45,10 @@ type AddSnmpSubagentPluginRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddSnmpSubagentPluginRequest(pluginName string, schemas []EnumsnmpSubagentPluginSchemaUrn, agentxAddress string, agentxPort int32, enabled bool) *AddSnmpSubagentPluginRequest {
+func NewAddSnmpSubagentPluginRequest(pluginName string, schemas []EnumsnmpSubagentPluginSchemaUrn, enabled bool) *AddSnmpSubagentPluginRequest {
 	this := AddSnmpSubagentPluginRequest{}
 	this.PluginName = pluginName
 	this.Schemas = schemas
-	this.AgentxAddress = agentxAddress
-	this.AgentxPort = agentxPort
 	this.Enabled = enabled
 	return &this
 }
@@ -143,52 +141,68 @@ func (o *AddSnmpSubagentPluginRequest) SetContextName(v string) {
 	o.ContextName = &v
 }
 
-// GetAgentxAddress returns the AgentxAddress field value
+// GetAgentxAddress returns the AgentxAddress field value if set, zero value otherwise.
 func (o *AddSnmpSubagentPluginRequest) GetAgentxAddress() string {
-	if o == nil {
+	if o == nil || isNil(o.AgentxAddress) {
 		var ret string
 		return ret
 	}
-
-	return o.AgentxAddress
+	return *o.AgentxAddress
 }
 
-// GetAgentxAddressOk returns a tuple with the AgentxAddress field value
+// GetAgentxAddressOk returns a tuple with the AgentxAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSnmpSubagentPluginRequest) GetAgentxAddressOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.AgentxAddress) {
 		return nil, false
 	}
-	return &o.AgentxAddress, true
+	return o.AgentxAddress, true
 }
 
-// SetAgentxAddress sets field value
+// HasAgentxAddress returns a boolean if a field has been set.
+func (o *AddSnmpSubagentPluginRequest) HasAgentxAddress() bool {
+	if o != nil && !isNil(o.AgentxAddress) {
+		return true
+	}
+
+	return false
+}
+
+// SetAgentxAddress gets a reference to the given string and assigns it to the AgentxAddress field.
 func (o *AddSnmpSubagentPluginRequest) SetAgentxAddress(v string) {
-	o.AgentxAddress = v
+	o.AgentxAddress = &v
 }
 
-// GetAgentxPort returns the AgentxPort field value
+// GetAgentxPort returns the AgentxPort field value if set, zero value otherwise.
 func (o *AddSnmpSubagentPluginRequest) GetAgentxPort() int32 {
-	if o == nil {
+	if o == nil || isNil(o.AgentxPort) {
 		var ret int32
 		return ret
 	}
-
-	return o.AgentxPort
+	return *o.AgentxPort
 }
 
-// GetAgentxPortOk returns a tuple with the AgentxPort field value
+// GetAgentxPortOk returns a tuple with the AgentxPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSnmpSubagentPluginRequest) GetAgentxPortOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || isNil(o.AgentxPort) {
 		return nil, false
 	}
-	return &o.AgentxPort, true
+	return o.AgentxPort, true
 }
 
-// SetAgentxPort sets field value
+// HasAgentxPort returns a boolean if a field has been set.
+func (o *AddSnmpSubagentPluginRequest) HasAgentxPort() bool {
+	if o != nil && !isNil(o.AgentxPort) {
+		return true
+	}
+
+	return false
+}
+
+// SetAgentxPort gets a reference to the given int32 and assigns it to the AgentxPort field.
 func (o *AddSnmpSubagentPluginRequest) SetAgentxPort(v int32) {
-	o.AgentxPort = v
+	o.AgentxPort = &v
 }
 
 // GetNumWorkerThreads returns the NumWorkerThreads field value if set, zero value otherwise.
@@ -418,10 +432,10 @@ func (o AddSnmpSubagentPluginRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.ContextName) {
 		toSerialize["contextName"] = o.ContextName
 	}
-	if true {
+	if !isNil(o.AgentxAddress) {
 		toSerialize["agentxAddress"] = o.AgentxAddress
 	}
-	if true {
+	if !isNil(o.AgentxPort) {
 		toSerialize["agentxPort"] = o.AgentxPort
 	}
 	if !isNil(o.NumWorkerThreads) {

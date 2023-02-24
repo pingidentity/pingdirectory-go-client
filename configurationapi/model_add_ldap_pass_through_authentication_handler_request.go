@@ -20,8 +20,8 @@ type AddLdapPassThroughAuthenticationHandlerRequest struct {
 	HandlerName string                                              `json:"handlerName"`
 	Schemas     []EnumldapPassThroughAuthenticationHandlerSchemaUrn `json:"schemas"`
 	// Specifies the LDAP external server(s) to which authentication attempts should be forwarded.
-	Server           []string                                                 `json:"server"`
-	ServerAccessMode EnumpassThroughAuthenticationHandlerServerAccessModeProp `json:"serverAccessMode"`
+	Server           []string                                                  `json:"server"`
+	ServerAccessMode *EnumpassThroughAuthenticationHandlerServerAccessModeProp `json:"serverAccessMode,omitempty"`
 	// Specifies one or more DN mappings that may be used to transform bind DNs before attempting to bind to the external servers.
 	DnMap []string `json:"dnMap,omitempty"`
 	// A pattern to use to construct the bind DN for the simple bind request to send to the remote server. This may consist of a combination of static text and attribute values and other directives enclosed in curly braces.  For example, the value \"cn={cn},ou=People,dc=example,dc=com\" indicates that the remote bind DN should be constructed from the text \"cn=\" followed by the value of the local entry's cn attribute followed by the text \"ou=People,dc=example,dc=com\". If an attribute contains the value to use as the bind DN for pass-through authentication, then the pattern may simply be the name of that attribute in curly braces (e.g., if the seeAlso attribute contains the bind DN for the target user, then a bind DN pattern of \"{seeAlso}\" would be appropriate).  Note that a bind DN pattern can be used to construct a bind DN that is not actually a valid LDAP distinguished name. For example, if authentication is being passed through to a Microsoft Active Directory server, then a bind DN pattern could be used to construct a user principal name (UPN) as an alternative to a distinguished name.
@@ -31,9 +31,9 @@ type AddLdapPassThroughAuthenticationHandlerRequest struct {
 	// A pattern to use to construct a filter to use when searching an external server for the entry of the user as whom to bind. For example, \"(mail={uid:ldapFilterEscape}@example.com)\" would construct a search filter to search for a user whose entry in the local server contains a uid attribute whose value appears before \"@example.com\" in the mail attribute in the external server. Note that the \"ldapFilterEscape\" modifier should almost always be used with attributes specified in the pattern.
 	SearchFilterPattern *string `json:"searchFilterPattern,omitempty"`
 	// Specifies the initial number of connections to establish to each external server against which authentication may be attempted.
-	InitialConnections int32 `json:"initialConnections"`
+	InitialConnections *int32 `json:"initialConnections,omitempty"`
 	// Specifies the maximum number of connections to maintain to each external server against which authentication may be attempted. This value must be greater than or equal to the value for the initial-connections property.
-	MaxConnections int32 `json:"maxConnections"`
+	MaxConnections *int32 `json:"maxConnections,omitempty"`
 	// Indicates whether to take server locations into account when prioritizing the servers to use for pass-through authentication attempts.
 	UseLocation *bool `json:"useLocation,omitempty"`
 	// The maximum length of time to wait for a response from an external server in the same location as this Directory Server before considering it unavailable.
@@ -50,14 +50,11 @@ type AddLdapPassThroughAuthenticationHandlerRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddLdapPassThroughAuthenticationHandlerRequest(handlerName string, schemas []EnumldapPassThroughAuthenticationHandlerSchemaUrn, server []string, serverAccessMode EnumpassThroughAuthenticationHandlerServerAccessModeProp, initialConnections int32, maxConnections int32) *AddLdapPassThroughAuthenticationHandlerRequest {
+func NewAddLdapPassThroughAuthenticationHandlerRequest(handlerName string, schemas []EnumldapPassThroughAuthenticationHandlerSchemaUrn, server []string) *AddLdapPassThroughAuthenticationHandlerRequest {
 	this := AddLdapPassThroughAuthenticationHandlerRequest{}
 	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.Server = server
-	this.ServerAccessMode = serverAccessMode
-	this.InitialConnections = initialConnections
-	this.MaxConnections = maxConnections
 	return &this
 }
 
@@ -141,28 +138,36 @@ func (o *AddLdapPassThroughAuthenticationHandlerRequest) SetServer(v []string) {
 	o.Server = v
 }
 
-// GetServerAccessMode returns the ServerAccessMode field value
+// GetServerAccessMode returns the ServerAccessMode field value if set, zero value otherwise.
 func (o *AddLdapPassThroughAuthenticationHandlerRequest) GetServerAccessMode() EnumpassThroughAuthenticationHandlerServerAccessModeProp {
-	if o == nil {
+	if o == nil || isNil(o.ServerAccessMode) {
 		var ret EnumpassThroughAuthenticationHandlerServerAccessModeProp
 		return ret
 	}
-
-	return o.ServerAccessMode
+	return *o.ServerAccessMode
 }
 
-// GetServerAccessModeOk returns a tuple with the ServerAccessMode field value
+// GetServerAccessModeOk returns a tuple with the ServerAccessMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapPassThroughAuthenticationHandlerRequest) GetServerAccessModeOk() (*EnumpassThroughAuthenticationHandlerServerAccessModeProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.ServerAccessMode) {
 		return nil, false
 	}
-	return &o.ServerAccessMode, true
+	return o.ServerAccessMode, true
 }
 
-// SetServerAccessMode sets field value
+// HasServerAccessMode returns a boolean if a field has been set.
+func (o *AddLdapPassThroughAuthenticationHandlerRequest) HasServerAccessMode() bool {
+	if o != nil && !isNil(o.ServerAccessMode) {
+		return true
+	}
+
+	return false
+}
+
+// SetServerAccessMode gets a reference to the given EnumpassThroughAuthenticationHandlerServerAccessModeProp and assigns it to the ServerAccessMode field.
 func (o *AddLdapPassThroughAuthenticationHandlerRequest) SetServerAccessMode(v EnumpassThroughAuthenticationHandlerServerAccessModeProp) {
-	o.ServerAccessMode = v
+	o.ServerAccessMode = &v
 }
 
 // GetDnMap returns the DnMap field value if set, zero value otherwise.
@@ -293,52 +298,68 @@ func (o *AddLdapPassThroughAuthenticationHandlerRequest) SetSearchFilterPattern(
 	o.SearchFilterPattern = &v
 }
 
-// GetInitialConnections returns the InitialConnections field value
+// GetInitialConnections returns the InitialConnections field value if set, zero value otherwise.
 func (o *AddLdapPassThroughAuthenticationHandlerRequest) GetInitialConnections() int32 {
-	if o == nil {
+	if o == nil || isNil(o.InitialConnections) {
 		var ret int32
 		return ret
 	}
-
-	return o.InitialConnections
+	return *o.InitialConnections
 }
 
-// GetInitialConnectionsOk returns a tuple with the InitialConnections field value
+// GetInitialConnectionsOk returns a tuple with the InitialConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapPassThroughAuthenticationHandlerRequest) GetInitialConnectionsOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || isNil(o.InitialConnections) {
 		return nil, false
 	}
-	return &o.InitialConnections, true
+	return o.InitialConnections, true
 }
 
-// SetInitialConnections sets field value
+// HasInitialConnections returns a boolean if a field has been set.
+func (o *AddLdapPassThroughAuthenticationHandlerRequest) HasInitialConnections() bool {
+	if o != nil && !isNil(o.InitialConnections) {
+		return true
+	}
+
+	return false
+}
+
+// SetInitialConnections gets a reference to the given int32 and assigns it to the InitialConnections field.
 func (o *AddLdapPassThroughAuthenticationHandlerRequest) SetInitialConnections(v int32) {
-	o.InitialConnections = v
+	o.InitialConnections = &v
 }
 
-// GetMaxConnections returns the MaxConnections field value
+// GetMaxConnections returns the MaxConnections field value if set, zero value otherwise.
 func (o *AddLdapPassThroughAuthenticationHandlerRequest) GetMaxConnections() int32 {
-	if o == nil {
+	if o == nil || isNil(o.MaxConnections) {
 		var ret int32
 		return ret
 	}
-
-	return o.MaxConnections
+	return *o.MaxConnections
 }
 
-// GetMaxConnectionsOk returns a tuple with the MaxConnections field value
+// GetMaxConnectionsOk returns a tuple with the MaxConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapPassThroughAuthenticationHandlerRequest) GetMaxConnectionsOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || isNil(o.MaxConnections) {
 		return nil, false
 	}
-	return &o.MaxConnections, true
+	return o.MaxConnections, true
 }
 
-// SetMaxConnections sets field value
+// HasMaxConnections returns a boolean if a field has been set.
+func (o *AddLdapPassThroughAuthenticationHandlerRequest) HasMaxConnections() bool {
+	if o != nil && !isNil(o.MaxConnections) {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxConnections gets a reference to the given int32 and assigns it to the MaxConnections field.
 func (o *AddLdapPassThroughAuthenticationHandlerRequest) SetMaxConnections(v int32) {
-	o.MaxConnections = v
+	o.MaxConnections = &v
 }
 
 // GetUseLocation returns the UseLocation field value if set, zero value otherwise.
@@ -512,7 +533,7 @@ func (o AddLdapPassThroughAuthenticationHandlerRequest) MarshalJSON() ([]byte, e
 	if true {
 		toSerialize["server"] = o.Server
 	}
-	if true {
+	if !isNil(o.ServerAccessMode) {
 		toSerialize["serverAccessMode"] = o.ServerAccessMode
 	}
 	if !isNil(o.DnMap) {
@@ -527,10 +548,10 @@ func (o AddLdapPassThroughAuthenticationHandlerRequest) MarshalJSON() ([]byte, e
 	if !isNil(o.SearchFilterPattern) {
 		toSerialize["searchFilterPattern"] = o.SearchFilterPattern
 	}
-	if true {
+	if !isNil(o.InitialConnections) {
 		toSerialize["initialConnections"] = o.InitialConnections
 	}
-	if true {
+	if !isNil(o.MaxConnections) {
 		toSerialize["maxConnections"] = o.MaxConnections
 	}
 	if !isNil(o.UseLocation) {

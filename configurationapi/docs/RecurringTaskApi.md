@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    addRecurringTaskRequest := openapiclient.add_recurring_task_request{AddBackupRecurringTaskRequest: openapiclient.NewAddBackupRecurringTaskRequest("TaskName_example", []openapiclient.EnumbackupRecurringTaskSchemaUrn{openapiclient.Enumbackup-recurring-taskSchemaUrn("urn:pingidentity:schemas:configuration:2.0:recurring-task:backup")}, "BackupDirectory_example")} // AddRecurringTaskRequest | Create a new Recurring Task in the config
+    addRecurringTaskRequest := openapiclient.add_recurring_task_request{AddBackupRecurringTaskRequest: openapiclient.NewAddBackupRecurringTaskRequest("TaskName_example", []openapiclient.EnumbackupRecurringTaskSchemaUrn{openapiclient.Enumbackup-recurring-taskSchemaUrn("urn:pingidentity:schemas:configuration:2.0:recurring-task:backup")})} // AddRecurringTaskRequest | Create a new Recurring Task in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

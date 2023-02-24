@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **TwilioAccountSID** | **string** | The unique identifier assigned to the Twilio account that will be used. | 
 **TwilioAuthToken** | Pointer to **string** | The auth token for the Twilio account that will be used. | [optional] 
 **TwilioAuthTokenPassphraseProvider** | Pointer to **string** | The passphrase provider that may be used to obtain the auth token for the Twilio account that will be used. | [optional] 
-**PhoneNumberAttributeType** | **string** | The name or OID of the attribute in the user&#39;s entry that holds the phone number to which the message should be sent. | 
+**PhoneNumberAttributeType** | Pointer to **string** | The name or OID of the attribute in the user&#39;s entry that holds the phone number to which the message should be sent. | [optional] 
 **PhoneNumberJSONField** | Pointer to **string** | The name of the JSON field whose value is the phone number to which the message should be sent. The phone number must be contained in a top-level field whose value is a single string. | [optional] 
 **PhoneNumberJSONObjectFilter** | Pointer to **string** | A JSON object filter that may be used to identify which phone number value to use when sending the message. | [optional] 
 **SenderPhoneNumber** | **[]string** | The outgoing phone number to use for the messages. Values must be phone numbers you have obtained for use with your Twilio account. | 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewAddTwilioOtpDeliveryMechanismRequest
 
-`func NewAddTwilioOtpDeliveryMechanismRequest(mechanismName string, schemas []EnumtwilioOtpDeliveryMechanismSchemaUrn, twilioAccountSID string, phoneNumberAttributeType string, senderPhoneNumber []string, enabled bool, ) *AddTwilioOtpDeliveryMechanismRequest`
+`func NewAddTwilioOtpDeliveryMechanismRequest(mechanismName string, schemas []EnumtwilioOtpDeliveryMechanismSchemaUrn, twilioAccountSID string, senderPhoneNumber []string, enabled bool, ) *AddTwilioOtpDeliveryMechanismRequest`
 
 NewAddTwilioOtpDeliveryMechanismRequest instantiates a new AddTwilioOtpDeliveryMechanismRequest object
 This constructor will assign default values to properties that have it defined,
@@ -166,6 +166,11 @@ and a boolean to check if the value has been set.
 
 SetPhoneNumberAttributeType sets PhoneNumberAttributeType field to given value.
 
+### HasPhoneNumberAttributeType
+
+`func (o *AddTwilioOtpDeliveryMechanismRequest) HasPhoneNumberAttributeType() bool`
+
+HasPhoneNumberAttributeType returns a boolean if a field has been set.
 
 ### GetPhoneNumberJSONField
 

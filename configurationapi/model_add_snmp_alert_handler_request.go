@@ -24,9 +24,9 @@ type AddSnmpAlertHandlerRequest struct {
 	// Specifies the address of the SNMP agent to which traps will be sent.
 	ServerHostName string `json:"serverHostName"`
 	// Specifies the port number of the SNMP agent to which traps will be sent.
-	ServerPort int32 `json:"serverPort"`
+	ServerPort *int32 `json:"serverPort,omitempty"`
 	// Specifies the name of the community to which the traps will be sent.
-	CommunityName string `json:"communityName"`
+	CommunityName *string `json:"communityName,omitempty"`
 	// A description for this Alert Handler
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Alert Handler is enabled.
@@ -40,13 +40,11 @@ type AddSnmpAlertHandlerRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddSnmpAlertHandlerRequest(handlerName string, schemas []EnumsnmpAlertHandlerSchemaUrn, serverHostName string, serverPort int32, communityName string, enabled bool) *AddSnmpAlertHandlerRequest {
+func NewAddSnmpAlertHandlerRequest(handlerName string, schemas []EnumsnmpAlertHandlerSchemaUrn, serverHostName string, enabled bool) *AddSnmpAlertHandlerRequest {
 	this := AddSnmpAlertHandlerRequest{}
 	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.ServerHostName = serverHostName
-	this.ServerPort = serverPort
-	this.CommunityName = communityName
 	this.Enabled = enabled
 	return &this
 }
@@ -163,52 +161,68 @@ func (o *AddSnmpAlertHandlerRequest) SetServerHostName(v string) {
 	o.ServerHostName = v
 }
 
-// GetServerPort returns the ServerPort field value
+// GetServerPort returns the ServerPort field value if set, zero value otherwise.
 func (o *AddSnmpAlertHandlerRequest) GetServerPort() int32 {
-	if o == nil {
+	if o == nil || isNil(o.ServerPort) {
 		var ret int32
 		return ret
 	}
-
-	return o.ServerPort
+	return *o.ServerPort
 }
 
-// GetServerPortOk returns a tuple with the ServerPort field value
+// GetServerPortOk returns a tuple with the ServerPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSnmpAlertHandlerRequest) GetServerPortOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || isNil(o.ServerPort) {
 		return nil, false
 	}
-	return &o.ServerPort, true
+	return o.ServerPort, true
 }
 
-// SetServerPort sets field value
+// HasServerPort returns a boolean if a field has been set.
+func (o *AddSnmpAlertHandlerRequest) HasServerPort() bool {
+	if o != nil && !isNil(o.ServerPort) {
+		return true
+	}
+
+	return false
+}
+
+// SetServerPort gets a reference to the given int32 and assigns it to the ServerPort field.
 func (o *AddSnmpAlertHandlerRequest) SetServerPort(v int32) {
-	o.ServerPort = v
+	o.ServerPort = &v
 }
 
-// GetCommunityName returns the CommunityName field value
+// GetCommunityName returns the CommunityName field value if set, zero value otherwise.
 func (o *AddSnmpAlertHandlerRequest) GetCommunityName() string {
-	if o == nil {
+	if o == nil || isNil(o.CommunityName) {
 		var ret string
 		return ret
 	}
-
-	return o.CommunityName
+	return *o.CommunityName
 }
 
-// GetCommunityNameOk returns a tuple with the CommunityName field value
+// GetCommunityNameOk returns a tuple with the CommunityName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSnmpAlertHandlerRequest) GetCommunityNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.CommunityName) {
 		return nil, false
 	}
-	return &o.CommunityName, true
+	return o.CommunityName, true
 }
 
-// SetCommunityName sets field value
+// HasCommunityName returns a boolean if a field has been set.
+func (o *AddSnmpAlertHandlerRequest) HasCommunityName() bool {
+	if o != nil && !isNil(o.CommunityName) {
+		return true
+	}
+
+	return false
+}
+
+// SetCommunityName gets a reference to the given string and assigns it to the CommunityName field.
 func (o *AddSnmpAlertHandlerRequest) SetCommunityName(v string) {
-	o.CommunityName = v
+	o.CommunityName = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -377,10 +391,10 @@ func (o AddSnmpAlertHandlerRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["serverHostName"] = o.ServerHostName
 	}
-	if true {
+	if !isNil(o.ServerPort) {
 		toSerialize["serverPort"] = o.ServerPort
 	}
-	if true {
+	if !isNil(o.CommunityName) {
 		toSerialize["communityName"] = o.CommunityName
 	}
 	if !isNil(o.Description) {

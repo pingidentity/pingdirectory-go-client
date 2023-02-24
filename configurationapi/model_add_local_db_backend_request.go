@@ -23,8 +23,8 @@ type AddLocalDbBackendRequest struct {
 	// The criteria that will be used to identify attributes that should be written into the uncached-id2entry database rather than the id2entry database. This will only be used for entries in which the associated uncached-entry-criteria does not indicate that the entire entry should be uncached.
 	UncachedAttributeCriteria *string `json:"uncachedAttributeCriteria,omitempty"`
 	// The criteria that will be used to identify entries that should be written into the uncached-id2entry database rather than the id2entry database.
-	UncachedEntryCriteria *string                        `json:"uncachedEntryCriteria,omitempty"`
-	WritabilityMode       EnumbackendWritabilityModeProp `json:"writabilityMode"`
+	UncachedEntryCriteria *string                         `json:"uncachedEntryCriteria,omitempty"`
+	WritabilityMode       *EnumbackendWritabilityModeProp `json:"writabilityMode,omitempty"`
 	// Determines whether the Directory Server enters a DEGRADED state when this Local DB Backend has an index whose contents cannot be trusted.
 	SetDegradedAlertForUntrustedIndex *bool `json:"setDegradedAlertForUntrustedIndex,omitempty"`
 	// Determines whether the Directory Server returns UNAVAILABLE for any LDAP search operation in this Local DB Backend that would use an index whose contents cannot be trusted.
@@ -34,7 +34,7 @@ type AddLocalDbBackendRequest struct {
 	// Indicates whether this backend should be considered a private backend in the server. Private backends are meant for storing server-internal information and should not be used for user or application data.
 	IsPrivateBackend *bool `json:"isPrivateBackend,omitempty"`
 	// Specifies the path to the filesystem directory that is used to hold the Berkeley DB Java Edition database files containing the data for this backend. The files for this backend are stored in a sub-directory named after the backend-id.
-	DbDirectory string `json:"dbDirectory"`
+	DbDirectory *string `json:"dbDirectory,omitempty"`
 	// Specifies the permissions that should be applied to the directory containing the backend database files and to directories and files created during backup or LDIF export of the backend.
 	DbDirectoryPermissions *string `json:"dbDirectoryPermissions,omitempty"`
 	// Provides a DN of an entry that may be the parent for a large number of entries in the backend. This may be used to help increase the space efficiency when encoding entries for storage.
@@ -89,7 +89,7 @@ type AddLocalDbBackendRequest struct {
 	// Specifies the maximum number of entry IDs to maintain for each entry in the id2subtree system index (which keeps track of all descendants below an entry, to assist in otherwise unindexed searches with a whole-subtree or subordinate subtree scope). A value of 0 means there is no limit, however this could have a big impact on database size on disk and on server performance.
 	Id2subtreeIndexEntryLimit *int32 `json:"id2subtreeIndexEntryLimit,omitempty"`
 	// Specifies the location of the directory that is used to hold temporary information during the index post-processing phase of an LDIF import.
-	ImportTempDirectory string `json:"importTempDirectory"`
+	ImportTempDirectory *string `json:"importTempDirectory,omitempty"`
 	// Specifies the number of threads to use for concurrent processing during an LDIF import.
 	ImportThreadCount *int32 `json:"importThreadCount,omitempty"`
 	// Specifies the number of threads to use for concurrently retrieving and encoding entries during an LDIF export.
@@ -128,13 +128,10 @@ type AddLocalDbBackendRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddLocalDbBackendRequest(backendName string, schemas []EnumlocalDbBackendSchemaUrn, writabilityMode EnumbackendWritabilityModeProp, dbDirectory string, importTempDirectory string, backendID string, enabled bool, baseDN []string) *AddLocalDbBackendRequest {
+func NewAddLocalDbBackendRequest(backendName string, schemas []EnumlocalDbBackendSchemaUrn, backendID string, enabled bool, baseDN []string) *AddLocalDbBackendRequest {
 	this := AddLocalDbBackendRequest{}
 	this.BackendName = backendName
 	this.Schemas = schemas
-	this.WritabilityMode = writabilityMode
-	this.DbDirectory = dbDirectory
-	this.ImportTempDirectory = importTempDirectory
 	this.BackendID = backendID
 	this.Enabled = enabled
 	this.BaseDN = baseDN
@@ -293,28 +290,36 @@ func (o *AddLocalDbBackendRequest) SetUncachedEntryCriteria(v string) {
 	o.UncachedEntryCriteria = &v
 }
 
-// GetWritabilityMode returns the WritabilityMode field value
+// GetWritabilityMode returns the WritabilityMode field value if set, zero value otherwise.
 func (o *AddLocalDbBackendRequest) GetWritabilityMode() EnumbackendWritabilityModeProp {
-	if o == nil {
+	if o == nil || isNil(o.WritabilityMode) {
 		var ret EnumbackendWritabilityModeProp
 		return ret
 	}
-
-	return o.WritabilityMode
+	return *o.WritabilityMode
 }
 
-// GetWritabilityModeOk returns a tuple with the WritabilityMode field value
+// GetWritabilityModeOk returns a tuple with the WritabilityMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLocalDbBackendRequest) GetWritabilityModeOk() (*EnumbackendWritabilityModeProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.WritabilityMode) {
 		return nil, false
 	}
-	return &o.WritabilityMode, true
+	return o.WritabilityMode, true
 }
 
-// SetWritabilityMode sets field value
+// HasWritabilityMode returns a boolean if a field has been set.
+func (o *AddLocalDbBackendRequest) HasWritabilityMode() bool {
+	if o != nil && !isNil(o.WritabilityMode) {
+		return true
+	}
+
+	return false
+}
+
+// SetWritabilityMode gets a reference to the given EnumbackendWritabilityModeProp and assigns it to the WritabilityMode field.
 func (o *AddLocalDbBackendRequest) SetWritabilityMode(v EnumbackendWritabilityModeProp) {
-	o.WritabilityMode = v
+	o.WritabilityMode = &v
 }
 
 // GetSetDegradedAlertForUntrustedIndex returns the SetDegradedAlertForUntrustedIndex field value if set, zero value otherwise.
@@ -445,28 +450,36 @@ func (o *AddLocalDbBackendRequest) SetIsPrivateBackend(v bool) {
 	o.IsPrivateBackend = &v
 }
 
-// GetDbDirectory returns the DbDirectory field value
+// GetDbDirectory returns the DbDirectory field value if set, zero value otherwise.
 func (o *AddLocalDbBackendRequest) GetDbDirectory() string {
-	if o == nil {
+	if o == nil || isNil(o.DbDirectory) {
 		var ret string
 		return ret
 	}
-
-	return o.DbDirectory
+	return *o.DbDirectory
 }
 
-// GetDbDirectoryOk returns a tuple with the DbDirectory field value
+// GetDbDirectoryOk returns a tuple with the DbDirectory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLocalDbBackendRequest) GetDbDirectoryOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.DbDirectory) {
 		return nil, false
 	}
-	return &o.DbDirectory, true
+	return o.DbDirectory, true
 }
 
-// SetDbDirectory sets field value
+// HasDbDirectory returns a boolean if a field has been set.
+func (o *AddLocalDbBackendRequest) HasDbDirectory() bool {
+	if o != nil && !isNil(o.DbDirectory) {
+		return true
+	}
+
+	return false
+}
+
+// SetDbDirectory gets a reference to the given string and assigns it to the DbDirectory field.
 func (o *AddLocalDbBackendRequest) SetDbDirectory(v string) {
-	o.DbDirectory = v
+	o.DbDirectory = &v
 }
 
 // GetDbDirectoryPermissions returns the DbDirectoryPermissions field value if set, zero value otherwise.
@@ -1461,28 +1474,36 @@ func (o *AddLocalDbBackendRequest) SetId2subtreeIndexEntryLimit(v int32) {
 	o.Id2subtreeIndexEntryLimit = &v
 }
 
-// GetImportTempDirectory returns the ImportTempDirectory field value
+// GetImportTempDirectory returns the ImportTempDirectory field value if set, zero value otherwise.
 func (o *AddLocalDbBackendRequest) GetImportTempDirectory() string {
-	if o == nil {
+	if o == nil || isNil(o.ImportTempDirectory) {
 		var ret string
 		return ret
 	}
-
-	return o.ImportTempDirectory
+	return *o.ImportTempDirectory
 }
 
-// GetImportTempDirectoryOk returns a tuple with the ImportTempDirectory field value
+// GetImportTempDirectoryOk returns a tuple with the ImportTempDirectory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLocalDbBackendRequest) GetImportTempDirectoryOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.ImportTempDirectory) {
 		return nil, false
 	}
-	return &o.ImportTempDirectory, true
+	return o.ImportTempDirectory, true
 }
 
-// SetImportTempDirectory sets field value
+// HasImportTempDirectory returns a boolean if a field has been set.
+func (o *AddLocalDbBackendRequest) HasImportTempDirectory() bool {
+	if o != nil && !isNil(o.ImportTempDirectory) {
+		return true
+	}
+
+	return false
+}
+
+// SetImportTempDirectory gets a reference to the given string and assigns it to the ImportTempDirectory field.
 func (o *AddLocalDbBackendRequest) SetImportTempDirectory(v string) {
-	o.ImportTempDirectory = v
+	o.ImportTempDirectory = &v
 }
 
 // GetImportThreadCount returns the ImportThreadCount field value if set, zero value otherwise.
@@ -2022,7 +2043,7 @@ func (o AddLocalDbBackendRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.UncachedEntryCriteria) {
 		toSerialize["uncachedEntryCriteria"] = o.UncachedEntryCriteria
 	}
-	if true {
+	if !isNil(o.WritabilityMode) {
 		toSerialize["writabilityMode"] = o.WritabilityMode
 	}
 	if !isNil(o.SetDegradedAlertForUntrustedIndex) {
@@ -2037,7 +2058,7 @@ func (o AddLocalDbBackendRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.IsPrivateBackend) {
 		toSerialize["isPrivateBackend"] = o.IsPrivateBackend
 	}
-	if true {
+	if !isNil(o.DbDirectory) {
 		toSerialize["dbDirectory"] = o.DbDirectory
 	}
 	if !isNil(o.DbDirectoryPermissions) {
@@ -2133,7 +2154,7 @@ func (o AddLocalDbBackendRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Id2subtreeIndexEntryLimit) {
 		toSerialize["id2subtreeIndexEntryLimit"] = o.Id2subtreeIndexEntryLimit
 	}
-	if true {
+	if !isNil(o.ImportTempDirectory) {
 		toSerialize["importTempDirectory"] = o.ImportTempDirectory
 	}
 	if !isNil(o.ImportThreadCount) {

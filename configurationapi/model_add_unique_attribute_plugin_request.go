@@ -19,7 +19,7 @@ type AddUniqueAttributePluginRequest struct {
 	// Name of the new Plugin
 	PluginName string                               `json:"pluginName"`
 	Schemas    []EnumuniqueAttributePluginSchemaUrn `json:"schemas"`
-	PluginType []EnumpluginPluginTypeProp           `json:"pluginType"`
+	PluginType []EnumpluginPluginTypeProp           `json:"pluginType,omitempty"`
 	// Specifies the type of attributes to check for value uniqueness.
 	Type                      []string                                 `json:"type"`
 	MultipleAttributeBehavior *EnumpluginMultipleAttributeBehaviorProp `json:"multipleAttributeBehavior,omitempty"`
@@ -41,11 +41,10 @@ type AddUniqueAttributePluginRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddUniqueAttributePluginRequest(pluginName string, schemas []EnumuniqueAttributePluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, type_ []string, enabled bool) *AddUniqueAttributePluginRequest {
+func NewAddUniqueAttributePluginRequest(pluginName string, schemas []EnumuniqueAttributePluginSchemaUrn, type_ []string, enabled bool) *AddUniqueAttributePluginRequest {
 	this := AddUniqueAttributePluginRequest{}
 	this.PluginName = pluginName
 	this.Schemas = schemas
-	this.PluginType = pluginType
 	this.Type = type_
 	this.Enabled = enabled
 	return &this
@@ -107,26 +106,34 @@ func (o *AddUniqueAttributePluginRequest) SetSchemas(v []EnumuniqueAttributePlug
 	o.Schemas = v
 }
 
-// GetPluginType returns the PluginType field value
+// GetPluginType returns the PluginType field value if set, zero value otherwise.
 func (o *AddUniqueAttributePluginRequest) GetPluginType() []EnumpluginPluginTypeProp {
-	if o == nil {
+	if o == nil || isNil(o.PluginType) {
 		var ret []EnumpluginPluginTypeProp
 		return ret
 	}
-
 	return o.PluginType
 }
 
-// GetPluginTypeOk returns a tuple with the PluginType field value
+// GetPluginTypeOk returns a tuple with the PluginType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddUniqueAttributePluginRequest) GetPluginTypeOk() ([]EnumpluginPluginTypeProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.PluginType) {
 		return nil, false
 	}
 	return o.PluginType, true
 }
 
-// SetPluginType sets field value
+// HasPluginType returns a boolean if a field has been set.
+func (o *AddUniqueAttributePluginRequest) HasPluginType() bool {
+	if o != nil && !isNil(o.PluginType) {
+		return true
+	}
+
+	return false
+}
+
+// SetPluginType gets a reference to the given []EnumpluginPluginTypeProp and assigns it to the PluginType field.
 func (o *AddUniqueAttributePluginRequest) SetPluginType(v []EnumpluginPluginTypeProp) {
 	o.PluginType = v
 }
@@ -379,7 +386,7 @@ func (o AddUniqueAttributePluginRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if true {
+	if !isNil(o.PluginType) {
 		toSerialize["pluginType"] = o.PluginType
 	}
 	if true {

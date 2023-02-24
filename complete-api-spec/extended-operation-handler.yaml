@@ -841,6 +841,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/deliver-password-reset-token-extended-operation-handler-shared'
+      required:
+      - passwordResetTokenValidityDuration
     deliver-password-reset-token-extended-operation-handler-shared:
       type: object
       properties:
@@ -876,7 +878,6 @@ components:
       - schemas
       - passwordGenerator
       - defaultTokenDeliveryMechanism
-      - passwordResetTokenValidityDuration
       - enabled
     Enumdeliver-password-reset-token-extended-operation-handlerSchemaUrn:
       type: string

@@ -20,9 +20,9 @@ type AddSyslogJsonAuditLogPublisherRequest struct {
 	PublisherName string                                     `json:"publisherName"`
 	Schemas       []EnumsyslogJsonAuditLogPublisherSchemaUrn `json:"schemas"`
 	// The syslog server to which messages should be sent.
-	SyslogExternalServer []string                           `json:"syslogExternalServer"`
-	SyslogFacility       EnumlogPublisherSyslogFacilityProp `json:"syslogFacility"`
-	SyslogSeverity       EnumlogPublisherSyslogSeverityProp `json:"syslogSeverity"`
+	SyslogExternalServer []string                            `json:"syslogExternalServer"`
+	SyslogFacility       *EnumlogPublisherSyslogFacilityProp `json:"syslogFacility,omitempty"`
+	SyslogSeverity       *EnumlogPublisherSyslogSeverityProp `json:"syslogSeverity,omitempty"`
 	// The local host name that will be included in syslog messages that are logged by this Syslog JSON Audit Log Publisher.
 	SyslogMessageHostName *string `json:"syslogMessageHostName,omitempty"`
 	// The application name that will be included in syslog messages that are logged by this Syslog JSON Audit Log Publisher.
@@ -83,13 +83,11 @@ type AddSyslogJsonAuditLogPublisherRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddSyslogJsonAuditLogPublisherRequest(publisherName string, schemas []EnumsyslogJsonAuditLogPublisherSchemaUrn, syslogExternalServer []string, syslogFacility EnumlogPublisherSyslogFacilityProp, syslogSeverity EnumlogPublisherSyslogSeverityProp, enabled bool) *AddSyslogJsonAuditLogPublisherRequest {
+func NewAddSyslogJsonAuditLogPublisherRequest(publisherName string, schemas []EnumsyslogJsonAuditLogPublisherSchemaUrn, syslogExternalServer []string, enabled bool) *AddSyslogJsonAuditLogPublisherRequest {
 	this := AddSyslogJsonAuditLogPublisherRequest{}
 	this.PublisherName = publisherName
 	this.Schemas = schemas
 	this.SyslogExternalServer = syslogExternalServer
-	this.SyslogFacility = syslogFacility
-	this.SyslogSeverity = syslogSeverity
 	this.Enabled = enabled
 	return &this
 }
@@ -174,52 +172,68 @@ func (o *AddSyslogJsonAuditLogPublisherRequest) SetSyslogExternalServer(v []stri
 	o.SyslogExternalServer = v
 }
 
-// GetSyslogFacility returns the SyslogFacility field value
+// GetSyslogFacility returns the SyslogFacility field value if set, zero value otherwise.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetSyslogFacility() EnumlogPublisherSyslogFacilityProp {
-	if o == nil {
+	if o == nil || isNil(o.SyslogFacility) {
 		var ret EnumlogPublisherSyslogFacilityProp
 		return ret
 	}
-
-	return o.SyslogFacility
+	return *o.SyslogFacility
 }
 
-// GetSyslogFacilityOk returns a tuple with the SyslogFacility field value
+// GetSyslogFacilityOk returns a tuple with the SyslogFacility field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetSyslogFacilityOk() (*EnumlogPublisherSyslogFacilityProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.SyslogFacility) {
 		return nil, false
 	}
-	return &o.SyslogFacility, true
+	return o.SyslogFacility, true
 }
 
-// SetSyslogFacility sets field value
+// HasSyslogFacility returns a boolean if a field has been set.
+func (o *AddSyslogJsonAuditLogPublisherRequest) HasSyslogFacility() bool {
+	if o != nil && !isNil(o.SyslogFacility) {
+		return true
+	}
+
+	return false
+}
+
+// SetSyslogFacility gets a reference to the given EnumlogPublisherSyslogFacilityProp and assigns it to the SyslogFacility field.
 func (o *AddSyslogJsonAuditLogPublisherRequest) SetSyslogFacility(v EnumlogPublisherSyslogFacilityProp) {
-	o.SyslogFacility = v
+	o.SyslogFacility = &v
 }
 
-// GetSyslogSeverity returns the SyslogSeverity field value
+// GetSyslogSeverity returns the SyslogSeverity field value if set, zero value otherwise.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetSyslogSeverity() EnumlogPublisherSyslogSeverityProp {
-	if o == nil {
+	if o == nil || isNil(o.SyslogSeverity) {
 		var ret EnumlogPublisherSyslogSeverityProp
 		return ret
 	}
-
-	return o.SyslogSeverity
+	return *o.SyslogSeverity
 }
 
-// GetSyslogSeverityOk returns a tuple with the SyslogSeverity field value
+// GetSyslogSeverityOk returns a tuple with the SyslogSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonAuditLogPublisherRequest) GetSyslogSeverityOk() (*EnumlogPublisherSyslogSeverityProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.SyslogSeverity) {
 		return nil, false
 	}
-	return &o.SyslogSeverity, true
+	return o.SyslogSeverity, true
 }
 
-// SetSyslogSeverity sets field value
+// HasSyslogSeverity returns a boolean if a field has been set.
+func (o *AddSyslogJsonAuditLogPublisherRequest) HasSyslogSeverity() bool {
+	if o != nil && !isNil(o.SyslogSeverity) {
+		return true
+	}
+
+	return false
+}
+
+// SetSyslogSeverity gets a reference to the given EnumlogPublisherSyslogSeverityProp and assigns it to the SyslogSeverity field.
 func (o *AddSyslogJsonAuditLogPublisherRequest) SetSyslogSeverity(v EnumlogPublisherSyslogSeverityProp) {
-	o.SyslogSeverity = v
+	o.SyslogSeverity = &v
 }
 
 // GetSyslogMessageHostName returns the SyslogMessageHostName field value if set, zero value otherwise.
@@ -1121,10 +1135,10 @@ func (o AddSyslogJsonAuditLogPublisherRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["syslogExternalServer"] = o.SyslogExternalServer
 	}
-	if true {
+	if !isNil(o.SyslogFacility) {
 		toSerialize["syslogFacility"] = o.SyslogFacility
 	}
-	if true {
+	if !isNil(o.SyslogSeverity) {
 		toSerialize["syslogSeverity"] = o.SyslogSeverity
 	}
 	if !isNil(o.SyslogMessageHostName) {

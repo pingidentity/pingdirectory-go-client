@@ -158,6 +158,9 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/statsd-monitoring-endpoint-shared'
+      required:
+      - serverPort
+      - connectionType
     statsd-monitoring-endpoint-shared:
       type: object
       properties:
@@ -193,8 +196,6 @@ components:
               Indicates whether this Monitoring Endpoint is enabled for use in the Directory Server.
       required:
       - hostname
-      - serverPort
-      - connectionType
       - enabled
     Enumstatsd-monitoring-endpointSchemaUrn:
       type: string

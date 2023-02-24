@@ -19,8 +19,8 @@ type AddReplicationAssuranceResultCriteriaRequest struct {
 	// Name of the new Result Criteria
 	CriteriaName             string                                            `json:"criteriaName"`
 	Schemas                  []EnumreplicationAssuranceResultCriteriaSchemaUrn `json:"schemas"`
-	LocalAssuranceLevel      []EnumresultCriteriaLocalAssuranceLevelProp       `json:"localAssuranceLevel"`
-	RemoteAssuranceLevel     []EnumresultCriteriaRemoteAssuranceLevelProp      `json:"remoteAssuranceLevel"`
+	LocalAssuranceLevel      []EnumresultCriteriaLocalAssuranceLevelProp       `json:"localAssuranceLevel,omitempty"`
+	RemoteAssuranceLevel     []EnumresultCriteriaRemoteAssuranceLevelProp      `json:"remoteAssuranceLevel,omitempty"`
 	AssuranceTimeoutCriteria *EnumresultCriteriaAssuranceTimeoutCriteriaProp   `json:"assuranceTimeoutCriteria,omitempty"`
 	// The value to use for performing matching based on the assurance timeout. This will be ignored if the assurance-timeout-criteria is \"any\".
 	AssuranceTimeoutValue             *string                                                  `json:"assuranceTimeoutValue,omitempty"`
@@ -35,12 +35,10 @@ type AddReplicationAssuranceResultCriteriaRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddReplicationAssuranceResultCriteriaRequest(criteriaName string, schemas []EnumreplicationAssuranceResultCriteriaSchemaUrn, localAssuranceLevel []EnumresultCriteriaLocalAssuranceLevelProp, remoteAssuranceLevel []EnumresultCriteriaRemoteAssuranceLevelProp) *AddReplicationAssuranceResultCriteriaRequest {
+func NewAddReplicationAssuranceResultCriteriaRequest(criteriaName string, schemas []EnumreplicationAssuranceResultCriteriaSchemaUrn) *AddReplicationAssuranceResultCriteriaRequest {
 	this := AddReplicationAssuranceResultCriteriaRequest{}
 	this.CriteriaName = criteriaName
 	this.Schemas = schemas
-	this.LocalAssuranceLevel = localAssuranceLevel
-	this.RemoteAssuranceLevel = remoteAssuranceLevel
 	return &this
 }
 
@@ -100,50 +98,66 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) SetSchemas(v []Enumreplic
 	o.Schemas = v
 }
 
-// GetLocalAssuranceLevel returns the LocalAssuranceLevel field value
+// GetLocalAssuranceLevel returns the LocalAssuranceLevel field value if set, zero value otherwise.
 func (o *AddReplicationAssuranceResultCriteriaRequest) GetLocalAssuranceLevel() []EnumresultCriteriaLocalAssuranceLevelProp {
-	if o == nil {
+	if o == nil || isNil(o.LocalAssuranceLevel) {
 		var ret []EnumresultCriteriaLocalAssuranceLevelProp
 		return ret
 	}
-
 	return o.LocalAssuranceLevel
 }
 
-// GetLocalAssuranceLevelOk returns a tuple with the LocalAssuranceLevel field value
+// GetLocalAssuranceLevelOk returns a tuple with the LocalAssuranceLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReplicationAssuranceResultCriteriaRequest) GetLocalAssuranceLevelOk() ([]EnumresultCriteriaLocalAssuranceLevelProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.LocalAssuranceLevel) {
 		return nil, false
 	}
 	return o.LocalAssuranceLevel, true
 }
 
-// SetLocalAssuranceLevel sets field value
+// HasLocalAssuranceLevel returns a boolean if a field has been set.
+func (o *AddReplicationAssuranceResultCriteriaRequest) HasLocalAssuranceLevel() bool {
+	if o != nil && !isNil(o.LocalAssuranceLevel) {
+		return true
+	}
+
+	return false
+}
+
+// SetLocalAssuranceLevel gets a reference to the given []EnumresultCriteriaLocalAssuranceLevelProp and assigns it to the LocalAssuranceLevel field.
 func (o *AddReplicationAssuranceResultCriteriaRequest) SetLocalAssuranceLevel(v []EnumresultCriteriaLocalAssuranceLevelProp) {
 	o.LocalAssuranceLevel = v
 }
 
-// GetRemoteAssuranceLevel returns the RemoteAssuranceLevel field value
+// GetRemoteAssuranceLevel returns the RemoteAssuranceLevel field value if set, zero value otherwise.
 func (o *AddReplicationAssuranceResultCriteriaRequest) GetRemoteAssuranceLevel() []EnumresultCriteriaRemoteAssuranceLevelProp {
-	if o == nil {
+	if o == nil || isNil(o.RemoteAssuranceLevel) {
 		var ret []EnumresultCriteriaRemoteAssuranceLevelProp
 		return ret
 	}
-
 	return o.RemoteAssuranceLevel
 }
 
-// GetRemoteAssuranceLevelOk returns a tuple with the RemoteAssuranceLevel field value
+// GetRemoteAssuranceLevelOk returns a tuple with the RemoteAssuranceLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReplicationAssuranceResultCriteriaRequest) GetRemoteAssuranceLevelOk() ([]EnumresultCriteriaRemoteAssuranceLevelProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.RemoteAssuranceLevel) {
 		return nil, false
 	}
 	return o.RemoteAssuranceLevel, true
 }
 
-// SetRemoteAssuranceLevel sets field value
+// HasRemoteAssuranceLevel returns a boolean if a field has been set.
+func (o *AddReplicationAssuranceResultCriteriaRequest) HasRemoteAssuranceLevel() bool {
+	if o != nil && !isNil(o.RemoteAssuranceLevel) {
+		return true
+	}
+
+	return false
+}
+
+// SetRemoteAssuranceLevel gets a reference to the given []EnumresultCriteriaRemoteAssuranceLevelProp and assigns it to the RemoteAssuranceLevel field.
 func (o *AddReplicationAssuranceResultCriteriaRequest) SetRemoteAssuranceLevel(v []EnumresultCriteriaRemoteAssuranceLevelProp) {
 	o.RemoteAssuranceLevel = v
 }
@@ -348,10 +362,10 @@ func (o AddReplicationAssuranceResultCriteriaRequest) MarshalJSON() ([]byte, err
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if true {
+	if !isNil(o.LocalAssuranceLevel) {
 		toSerialize["localAssuranceLevel"] = o.LocalAssuranceLevel
 	}
-	if true {
+	if !isNil(o.RemoteAssuranceLevel) {
 		toSerialize["remoteAssuranceLevel"] = o.RemoteAssuranceLevel
 	}
 	if !isNil(o.AssuranceTimeoutCriteria) {

@@ -17,14 +17,14 @@ Name | Type | Description | Notes
 **ResultCodeMap** | Pointer to **string** | Specifies the result code map that should be used for clients associated with this Client Connection Policy. If a value is defined for this property, then it will override any result code map referenced in the global configuration. | [optional] 
 **IncludedBackendBaseDN** | Pointer to **[]string** | Specifies the set of backend base DNs for which subtree views should be included in this Client Connection Policy. | [optional] 
 **ExcludedBackendBaseDN** | Pointer to **[]string** | Specifies the set of backend base DNs for which subtree views should be excluded from this Client Connection Policy. | [optional] 
-**AllowedOperation** | [**[]EnumclientConnectionPolicyAllowedOperationProp**](EnumclientConnectionPolicyAllowedOperationProp.md) |  | 
+**AllowedOperation** | Pointer to [**[]EnumclientConnectionPolicyAllowedOperationProp**](EnumclientConnectionPolicyAllowedOperationProp.md) |  | [optional] 
 **RequiredOperationRequestCriteria** | Pointer to **string** | Specifies a request criteria object that will be required to match all requests submitted by clients associated with this Client Connection Policy. If a client submits a request that does not satisfy this request criteria object, then that request will be rejected. | [optional] 
 **ProhibitedOperationRequestCriteria** | Pointer to **string** | Specifies a request criteria object that must not match any requests submitted by clients associated with this Client Connection Policy. If a client submits a request that satisfies this request criteria object, then that request will be rejected. | [optional] 
 **AllowedRequestControl** | Pointer to **[]string** | Specifies the OIDs of the controls that clients associated with this Client Connection Policy will be allowed to include in requests. | [optional] 
 **DeniedRequestControl** | Pointer to **[]string** | Specifies the OIDs of the controls that clients associated with this Client Connection Policy will not be allowed to include in requests. | [optional] 
 **AllowedExtendedOperation** | Pointer to **[]string** | Specifies the OIDs of the extended operations that clients associated with this Client Connection Policy will be allowed to request. | [optional] 
 **DeniedExtendedOperation** | Pointer to **[]string** | Specifies the OIDs of the extended operations that clients associated with this Client Connection Policy will not be allowed to request. | [optional] 
-**AllowedAuthType** | [**[]EnumclientConnectionPolicyAllowedAuthTypeProp**](EnumclientConnectionPolicyAllowedAuthTypeProp.md) |  | 
+**AllowedAuthType** | Pointer to [**[]EnumclientConnectionPolicyAllowedAuthTypeProp**](EnumclientConnectionPolicyAllowedAuthTypeProp.md) |  | [optional] 
 **AllowedSASLMechanism** | Pointer to **[]string** | Specifies the names of the SASL mechanisms that clients associated with this Client Connection Policy will be allowed to request. | [optional] 
 **DeniedSASLMechanism** | Pointer to **[]string** | Specifies the names of the SASL mechanisms that clients associated with this Client Connection Policy will not be allowed to request. | [optional] 
 **AllowedFilterType** | Pointer to [**[]EnumclientConnectionPolicyAllowedFilterTypeProp**](EnumclientConnectionPolicyAllowedFilterTypeProp.md) |  | [optional] 
@@ -52,7 +52,7 @@ Name | Type | Description | Notes
 
 ### NewAddClientConnectionPolicyRequest
 
-`func NewAddClientConnectionPolicyRequest(policyName string, policyID string, enabled bool, evaluationOrderIndex int32, allowedOperation []EnumclientConnectionPolicyAllowedOperationProp, allowedAuthType []EnumclientConnectionPolicyAllowedAuthTypeProp, ) *AddClientConnectionPolicyRequest`
+`func NewAddClientConnectionPolicyRequest(policyName string, policyID string, enabled bool, evaluationOrderIndex int32, ) *AddClientConnectionPolicyRequest`
 
 NewAddClientConnectionPolicyRequest instantiates a new AddClientConnectionPolicyRequest object
 This constructor will assign default values to properties that have it defined,
@@ -391,6 +391,11 @@ and a boolean to check if the value has been set.
 
 SetAllowedOperation sets AllowedOperation field to given value.
 
+### HasAllowedOperation
+
+`func (o *AddClientConnectionPolicyRequest) HasAllowedOperation() bool`
+
+HasAllowedOperation returns a boolean if a field has been set.
 
 ### GetRequiredOperationRequestCriteria
 
@@ -561,6 +566,11 @@ and a boolean to check if the value has been set.
 
 SetAllowedAuthType sets AllowedAuthType field to given value.
 
+### HasAllowedAuthType
+
+`func (o *AddClientConnectionPolicyRequest) HasAllowedAuthType() bool`
+
+HasAllowedAuthType returns a boolean if a field has been set.
 
 ### GetAllowedSASLMechanism
 

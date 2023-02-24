@@ -19,9 +19,9 @@ type AddInternalSearchRatePluginRequest struct {
 	// Name of the new Plugin
 	PluginName string                                  `json:"pluginName"`
 	Schemas    []EnuminternalSearchRatePluginSchemaUrn `json:"schemas"`
-	PluginType []EnumpluginPluginTypeProp              `json:"pluginType"`
+	PluginType []EnumpluginPluginTypeProp              `json:"pluginType,omitempty"`
 	// Specifies the number of concurrent threads that should be used to process the search operations.
-	NumThreads int32 `json:"numThreads"`
+	NumThreads *int32 `json:"numThreads,omitempty"`
 	// Specifies the base DN to use for the searches to perform.
 	BaseDN string `json:"baseDN"`
 	// Specifies the lower bound for the numeric value which will be inserted into the search filter.
@@ -44,12 +44,10 @@ type AddInternalSearchRatePluginRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddInternalSearchRatePluginRequest(pluginName string, schemas []EnuminternalSearchRatePluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, numThreads int32, baseDN string, filterPrefix string, enabled bool) *AddInternalSearchRatePluginRequest {
+func NewAddInternalSearchRatePluginRequest(pluginName string, schemas []EnuminternalSearchRatePluginSchemaUrn, baseDN string, filterPrefix string, enabled bool) *AddInternalSearchRatePluginRequest {
 	this := AddInternalSearchRatePluginRequest{}
 	this.PluginName = pluginName
 	this.Schemas = schemas
-	this.PluginType = pluginType
-	this.NumThreads = numThreads
 	this.BaseDN = baseDN
 	this.FilterPrefix = filterPrefix
 	this.Enabled = enabled
@@ -112,52 +110,68 @@ func (o *AddInternalSearchRatePluginRequest) SetSchemas(v []EnuminternalSearchRa
 	o.Schemas = v
 }
 
-// GetPluginType returns the PluginType field value
+// GetPluginType returns the PluginType field value if set, zero value otherwise.
 func (o *AddInternalSearchRatePluginRequest) GetPluginType() []EnumpluginPluginTypeProp {
-	if o == nil {
+	if o == nil || isNil(o.PluginType) {
 		var ret []EnumpluginPluginTypeProp
 		return ret
 	}
-
 	return o.PluginType
 }
 
-// GetPluginTypeOk returns a tuple with the PluginType field value
+// GetPluginTypeOk returns a tuple with the PluginType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddInternalSearchRatePluginRequest) GetPluginTypeOk() ([]EnumpluginPluginTypeProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.PluginType) {
 		return nil, false
 	}
 	return o.PluginType, true
 }
 
-// SetPluginType sets field value
+// HasPluginType returns a boolean if a field has been set.
+func (o *AddInternalSearchRatePluginRequest) HasPluginType() bool {
+	if o != nil && !isNil(o.PluginType) {
+		return true
+	}
+
+	return false
+}
+
+// SetPluginType gets a reference to the given []EnumpluginPluginTypeProp and assigns it to the PluginType field.
 func (o *AddInternalSearchRatePluginRequest) SetPluginType(v []EnumpluginPluginTypeProp) {
 	o.PluginType = v
 }
 
-// GetNumThreads returns the NumThreads field value
+// GetNumThreads returns the NumThreads field value if set, zero value otherwise.
 func (o *AddInternalSearchRatePluginRequest) GetNumThreads() int32 {
-	if o == nil {
+	if o == nil || isNil(o.NumThreads) {
 		var ret int32
 		return ret
 	}
-
-	return o.NumThreads
+	return *o.NumThreads
 }
 
-// GetNumThreadsOk returns a tuple with the NumThreads field value
+// GetNumThreadsOk returns a tuple with the NumThreads field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddInternalSearchRatePluginRequest) GetNumThreadsOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || isNil(o.NumThreads) {
 		return nil, false
 	}
-	return &o.NumThreads, true
+	return o.NumThreads, true
 }
 
-// SetNumThreads sets field value
+// HasNumThreads returns a boolean if a field has been set.
+func (o *AddInternalSearchRatePluginRequest) HasNumThreads() bool {
+	if o != nil && !isNil(o.NumThreads) {
+		return true
+	}
+
+	return false
+}
+
+// SetNumThreads gets a reference to the given int32 and assigns it to the NumThreads field.
 func (o *AddInternalSearchRatePluginRequest) SetNumThreads(v int32) {
-	o.NumThreads = v
+	o.NumThreads = &v
 }
 
 // GetBaseDN returns the BaseDN field value
@@ -400,10 +414,10 @@ func (o AddInternalSearchRatePluginRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if true {
+	if !isNil(o.PluginType) {
 		toSerialize["pluginType"] = o.PluginType
 	}
-	if true {
+	if !isNil(o.NumThreads) {
 		toSerialize["numThreads"] = o.NumThreads
 	}
 	if true {

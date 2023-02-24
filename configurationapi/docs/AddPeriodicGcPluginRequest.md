@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnumperiodicGcPluginSchemaUrn**](EnumperiodicGcPluginSchemaUrn.md) |  | 
-**PluginType** | [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | 
+**PluginType** | Pointer to [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | [optional] 
 **InvokeGCDayOfWeek** | Pointer to [**[]EnumpluginInvokeGCDayOfWeekProp**](EnumpluginInvokeGCDayOfWeekProp.md) |  | [optional] 
 **InvokeGCTimeUtc** | **[]string** | Specifies the times of the day at which garbage collection may be explicitly invoked. The times should be specified in \&quot;HH:MM\&quot; format, with \&quot;HH\&quot; as a two-digit numeric value between 00 and 23 representing the hour of the day, and MM as a two-digit numeric value between 00 and 59 representing the minute of the hour. All times will be interpreted in the UTC time zone. | 
 **DelayAfterAlert** | Pointer to **string** | Specifies the length of time that the Directory Server should wait after sending the \&quot;force-gc-starting\&quot; administrative alert before actually invoking the garbage collection processing. | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewAddPeriodicGcPluginRequest
 
-`func NewAddPeriodicGcPluginRequest(pluginName string, schemas []EnumperiodicGcPluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, invokeGCTimeUtc []string, enabled bool, ) *AddPeriodicGcPluginRequest`
+`func NewAddPeriodicGcPluginRequest(pluginName string, schemas []EnumperiodicGcPluginSchemaUrn, invokeGCTimeUtc []string, enabled bool, ) *AddPeriodicGcPluginRequest`
 
 NewAddPeriodicGcPluginRequest instantiates a new AddPeriodicGcPluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -93,6 +93,11 @@ and a boolean to check if the value has been set.
 
 SetPluginType sets PluginType field to given value.
 
+### HasPluginType
+
+`func (o *AddPeriodicGcPluginRequest) HasPluginType() bool`
+
+HasPluginType returns a boolean if a field has been set.
 
 ### GetInvokeGCDayOfWeek
 

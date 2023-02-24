@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    addRecurringTaskChainRequest := *openapiclient.NewAddRecurringTaskChainRequest("ChainName_example", false, []string{"RecurringTask_example"}, []openapiclient.EnumrecurringTaskChainScheduledMonthProp{openapiclient.Enumrecurring-task-chain-scheduledMonthProp("january")}, openapiclient.Enumrecurring-task-chain-scheduledDateSelectionTypeProp("every-day"), []string{"ScheduledTimeOfDay_example"}) // AddRecurringTaskChainRequest | Create a new Recurring Task Chain in the config
+    addRecurringTaskChainRequest := *openapiclient.NewAddRecurringTaskChainRequest("ChainName_example", []string{"RecurringTask_example"}, openapiclient.Enumrecurring-task-chain-scheduledDateSelectionTypeProp("every-day"), []string{"ScheduledTimeOfDay_example"}) // AddRecurringTaskChainRequest | Create a new Recurring Task Chain in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

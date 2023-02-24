@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **ValidatorName** | **string** | Name of the new ID Token Validator | 
 **Schemas** | [**[]EnumopenidConnectIdTokenValidatorSchemaUrn**](EnumopenidConnectIdTokenValidatorSchemaUrn.md) |  | 
 **IssuerURL** | **string** | Specifies the OpenID Connect provider&#39;s issuer URL. | 
-**OpenIDConnectProvider** | **string** | Specifies the OpenID Connect provider that issues ID tokens handled by this OpenID Connect ID Token Validator. This property is used in conjunction with the jwks-endpoint-path property. | 
+**OpenIDConnectProvider** | Pointer to **string** | Specifies the OpenID Connect provider that issues ID tokens handled by this OpenID Connect ID Token Validator. This property is used in conjunction with the jwks-endpoint-path property. | [optional] 
 **OpenIDConnectMetadataCacheDuration** | Pointer to **string** | How often the PingOne ID Token Validator should refresh its stored cache of OpenID Connect-related metadata. | [optional] 
 **Description** | Pointer to **string** | A description for this ID Token Validator | [optional] 
 **Enabled** | **bool** | Indicates whether this ID Token Validator is enabled for use in the Directory Server. | 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 
 ### NewAddIdTokenValidatorRequest
 
-`func NewAddIdTokenValidatorRequest(validatorName string, schemas []EnumopenidConnectIdTokenValidatorSchemaUrn, issuerURL string, openIDConnectProvider string, enabled bool, identityMapper string, evaluationOrderIndex int32, allowedSigningAlgorithm []EnumidTokenValidatorAllowedSigningAlgorithmProp, ) *AddIdTokenValidatorRequest`
+`func NewAddIdTokenValidatorRequest(validatorName string, schemas []EnumopenidConnectIdTokenValidatorSchemaUrn, issuerURL string, enabled bool, identityMapper string, evaluationOrderIndex int32, allowedSigningAlgorithm []EnumidTokenValidatorAllowedSigningAlgorithmProp, ) *AddIdTokenValidatorRequest`
 
 NewAddIdTokenValidatorRequest instantiates a new AddIdTokenValidatorRequest object
 This constructor will assign default values to properties that have it defined,
@@ -118,6 +118,11 @@ and a boolean to check if the value has been set.
 
 SetOpenIDConnectProvider sets OpenIDConnectProvider field to given value.
 
+### HasOpenIDConnectProvider
+
+`func (o *AddIdTokenValidatorRequest) HasOpenIDConnectProvider() bool`
+
+HasOpenIDConnectProvider returns a boolean if a field has been set.
 
 ### GetOpenIDConnectMetadataCacheDuration
 

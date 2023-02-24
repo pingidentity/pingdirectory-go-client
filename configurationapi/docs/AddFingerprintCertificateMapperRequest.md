@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MapperName** | **string** | Name of the new Certificate Mapper | 
 **Schemas** | [**[]EnumfingerprintCertificateMapperSchemaUrn**](EnumfingerprintCertificateMapperSchemaUrn.md) |  | 
-**FingerprintAttribute** | **string** | Specifies the attribute in which to look for the fingerprint. | 
+**FingerprintAttribute** | Pointer to **string** | Specifies the attribute in which to look for the fingerprint. | [optional] 
 **FingerprintAlgorithm** | [**EnumcertificateMapperFingerprintAlgorithmProp**](EnumcertificateMapperFingerprintAlgorithmProp.md) |  | 
 **UserBaseDN** | Pointer to **[]string** | Specifies the set of base DNs below which to search for users. | [optional] 
 **Description** | Pointer to **string** | A description for this Certificate Mapper | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewAddFingerprintCertificateMapperRequest
 
-`func NewAddFingerprintCertificateMapperRequest(mapperName string, schemas []EnumfingerprintCertificateMapperSchemaUrn, fingerprintAttribute string, fingerprintAlgorithm EnumcertificateMapperFingerprintAlgorithmProp, enabled bool, ) *AddFingerprintCertificateMapperRequest`
+`func NewAddFingerprintCertificateMapperRequest(mapperName string, schemas []EnumfingerprintCertificateMapperSchemaUrn, fingerprintAlgorithm EnumcertificateMapperFingerprintAlgorithmProp, enabled bool, ) *AddFingerprintCertificateMapperRequest`
 
 NewAddFingerprintCertificateMapperRequest instantiates a new AddFingerprintCertificateMapperRequest object
 This constructor will assign default values to properties that have it defined,
@@ -90,6 +90,11 @@ and a boolean to check if the value has been set.
 
 SetFingerprintAttribute sets FingerprintAttribute field to given value.
 
+### HasFingerprintAttribute
+
+`func (o *AddFingerprintCertificateMapperRequest) HasFingerprintAttribute() bool`
+
+HasFingerprintAttribute returns a boolean if a field has been set.
 
 ### GetFingerprintAlgorithm
 

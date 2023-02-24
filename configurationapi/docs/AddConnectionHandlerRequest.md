@@ -33,8 +33,8 @@ Name | Type | Description | Notes
 **AutoAuthenticateUsingClientCertificate** | Pointer to **bool** | Indicates whether to attempt to automatically authenticate a client connection that has established a secure communication channel (using either SSL or StartTLS) and presented its own client certificate. Generally, clients should use the SASL EXTERNAL mechanism to authenticate using a client certificate, but some clients may not support that capability and/or may expect automatic authentication. | [optional] 
 **CloseConnectionsWhenUnavailable** | Pointer to **bool** | Indicates whether all connections associated with this LDAP Connection Handler should be closed and no new connections accepted when the server has determined that it is \&quot;unavailable.\&quot; This allows clients (or a network load balancer) to route requests to another server. | [optional] 
 **CloseConnectionsOnExplicitGC** | Pointer to **bool** | Indicates whether all connections associated with this LDAP Connection Handler should be closed before an explicit garbage collection is performed to allow clients to route requests to another server. | [optional] 
-**LdifDirectory** | **string** | Specifies the path to the directory in which the LDIF files should be placed. | 
-**PollInterval** | **string** | Specifies how frequently the LDIF connection handler should check the LDIF directory to determine whether a new LDIF file has been added. | 
+**LdifDirectory** | Pointer to **string** | Specifies the path to the directory in which the LDIF files should be placed. | [optional] 
+**PollInterval** | Pointer to **string** | Specifies how frequently the LDIF connection handler should check the LDIF directory to determine whether a new LDIF file has been added. | [optional] 
 **HttpServletExtension** | Pointer to **[]string** | Specifies information about servlets that will be provided via this connection handler. | [optional] 
 **WebApplicationExtension** | Pointer to **[]string** | Specifies information about web applications that will be provided via this connection handler. | [optional] 
 **HttpOperationLogPublisher** | Pointer to **[]string** | Specifies the set of HTTP operation loggers that should be used to log information about requests and responses for operations processed through this HTTP Connection Handler. | [optional] 
@@ -55,7 +55,7 @@ Name | Type | Description | Notes
 
 ### NewAddConnectionHandlerRequest
 
-`func NewAddConnectionHandlerRequest(handlerName string, schemas []EnumhttpConnectionHandlerSchemaUrn, listenPort int32, enabled bool, ldifDirectory string, pollInterval string, ) *AddConnectionHandlerRequest`
+`func NewAddConnectionHandlerRequest(handlerName string, schemas []EnumhttpConnectionHandlerSchemaUrn, listenPort int32, enabled bool, ) *AddConnectionHandlerRequest`
 
 NewAddConnectionHandlerRequest instantiates a new AddConnectionHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -794,6 +794,11 @@ and a boolean to check if the value has been set.
 
 SetLdifDirectory sets LdifDirectory field to given value.
 
+### HasLdifDirectory
+
+`func (o *AddConnectionHandlerRequest) HasLdifDirectory() bool`
+
+HasLdifDirectory returns a boolean if a field has been set.
 
 ### GetPollInterval
 
@@ -814,6 +819,11 @@ and a boolean to check if the value has been set.
 
 SetPollInterval sets PollInterval field to given value.
 
+### HasPollInterval
+
+`func (o *AddConnectionHandlerRequest) HasPollInterval() bool`
+
+HasPollInterval returns a boolean if a field has been set.
 
 ### GetHttpServletExtension
 

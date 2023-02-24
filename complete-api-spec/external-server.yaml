@@ -296,6 +296,14 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/nokia-ds-external-server-shared'
+      required:
+      - verifyCredentialsMethod
+      - serverPort
+      - connectionSecurity
+      - authenticationMethod
+      - maxConnectionAge
+      - connectTimeout
+      - maxResponseSize
     nokia-ds-external-server-shared:
       type: object
       properties:
@@ -390,14 +398,7 @@ components:
               A description for this External Server
       required:
       - schemas
-      - verifyCredentialsMethod
       - serverHostName
-      - serverPort
-      - connectionSecurity
-      - authenticationMethod
-      - maxConnectionAge
-      - connectTimeout
-      - maxResponseSize
     Enumnokia-ds-external-serverSchemaUrn:
       type: string
       enum:
@@ -423,6 +424,14 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/ping-identity-ds-external-server-shared'
+      required:
+      - verifyCredentialsMethod
+      - serverPort
+      - connectionSecurity
+      - authenticationMethod
+      - maxConnectionAge
+      - connectTimeout
+      - maxResponseSize
     ping-identity-ds-external-server-shared:
       type: object
       properties:
@@ -517,14 +526,7 @@ components:
               A description for this External Server
       required:
       - schemas
-      - verifyCredentialsMethod
       - serverHostName
-      - serverPort
-      - connectionSecurity
-      - authenticationMethod
-      - maxConnectionAge
-      - connectTimeout
-      - maxResponseSize
     Enumping-identity-ds-external-serverSchemaUrn:
       type: string
       enum:
@@ -550,6 +552,14 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/active-directory-external-server-shared'
+      required:
+      - serverPort
+      - connectionSecurity
+      - authenticationMethod
+      - verifyCredentialsMethod
+      - maxConnectionAge
+      - connectTimeout
+      - maxResponseSize
     active-directory-external-server-shared:
       type: object
       properties:
@@ -641,13 +651,6 @@ components:
       required:
       - schemas
       - serverHostName
-      - serverPort
-      - connectionSecurity
-      - authenticationMethod
-      - verifyCredentialsMethod
-      - maxConnectionAge
-      - connectTimeout
-      - maxResponseSize
     Enumactive-directory-external-serverSchemaUrn:
       type: string
       enum:
@@ -761,6 +764,10 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/syslog-external-server-shared'
+      required:
+      - connectTimeout
+      - maxConnectionAge
+      - trustManagerProvider
     syslog-external-server-shared:
       type: object
       properties:
@@ -800,9 +807,6 @@ components:
       - schemas
       - serverHostName
       - transportMechanism
-      - connectTimeout
-      - maxConnectionAge
-      - trustManagerProvider
     Enumsyslog-external-serverSchemaUrn:
       type: string
       enum:
@@ -828,6 +832,14 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/ping-identity-proxy-server-external-server-shared'
+      required:
+      - verifyCredentialsMethod
+      - serverPort
+      - connectionSecurity
+      - authenticationMethod
+      - maxConnectionAge
+      - connectTimeout
+      - maxResponseSize
     ping-identity-proxy-server-external-server-shared:
       type: object
       properties:
@@ -922,14 +934,7 @@ components:
               A description for this External Server
       required:
       - schemas
-      - verifyCredentialsMethod
       - serverHostName
-      - serverPort
-      - connectionSecurity
-      - authenticationMethod
-      - maxConnectionAge
-      - connectTimeout
-      - maxResponseSize
     Enumping-identity-proxy-server-external-serverSchemaUrn:
       type: string
       enum:
@@ -955,6 +960,14 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/nokia-proxy-server-external-server-shared'
+      required:
+      - verifyCredentialsMethod
+      - serverPort
+      - connectionSecurity
+      - authenticationMethod
+      - maxConnectionAge
+      - connectTimeout
+      - maxResponseSize
     nokia-proxy-server-external-server-shared:
       type: object
       properties:
@@ -1049,14 +1062,7 @@ components:
               A description for this External Server
       required:
       - schemas
-      - verifyCredentialsMethod
       - serverHostName
-      - serverPort
-      - connectionSecurity
-      - authenticationMethod
-      - maxConnectionAge
-      - connectTimeout
-      - maxResponseSize
     Enumnokia-proxy-server-external-serverSchemaUrn:
       type: string
       enum:
@@ -1082,6 +1088,14 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/opendj-external-server-shared'
+      required:
+      - serverPort
+      - connectionSecurity
+      - authenticationMethod
+      - verifyCredentialsMethod
+      - maxConnectionAge
+      - connectTimeout
+      - maxResponseSize
     opendj-external-server-shared:
       type: object
       properties:
@@ -1173,13 +1187,6 @@ components:
       required:
       - schemas
       - serverHostName
-      - serverPort
-      - connectionSecurity
-      - authenticationMethod
-      - verifyCredentialsMethod
-      - maxConnectionAge
-      - connectTimeout
-      - maxResponseSize
     Enumopendj-external-serverSchemaUrn:
       type: string
       enum:
@@ -1205,6 +1212,14 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/ldap-external-server-shared'
+      required:
+      - serverPort
+      - connectionSecurity
+      - authenticationMethod
+      - verifyCredentialsMethod
+      - maxConnectionAge
+      - connectTimeout
+      - maxResponseSize
     ldap-external-server-shared:
       type: object
       properties:
@@ -1296,13 +1311,6 @@ components:
       required:
       - schemas
       - serverHostName
-      - serverPort
-      - connectionSecurity
-      - authenticationMethod
-      - verifyCredentialsMethod
-      - maxConnectionAge
-      - connectTimeout
-      - maxResponseSize
     Enumldap-external-serverSchemaUrn:
       type: string
       enum:
@@ -1449,6 +1457,14 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/oracle-unified-directory-external-server-shared'
+      required:
+      - serverPort
+      - connectionSecurity
+      - authenticationMethod
+      - verifyCredentialsMethod
+      - maxConnectionAge
+      - connectTimeout
+      - maxResponseSize
     oracle-unified-directory-external-server-shared:
       type: object
       properties:
@@ -1540,13 +1556,6 @@ components:
       required:
       - schemas
       - serverHostName
-      - serverPort
-      - connectionSecurity
-      - authenticationMethod
-      - verifyCredentialsMethod
-      - maxConnectionAge
-      - connectTimeout
-      - maxResponseSize
     Enumoracle-unified-directory-external-serverSchemaUrn:
       type: string
       enum:

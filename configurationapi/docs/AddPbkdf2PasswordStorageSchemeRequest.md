@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **SchemeName** | **string** | Name of the new Password Storage Scheme | 
 **Schemas** | [**[]Enumpbkdf2PasswordStorageSchemeSchemaUrn**](Enumpbkdf2PasswordStorageSchemeSchemaUrn.md) |  | 
 **DigestAlgorithm** | Pointer to [**EnumpasswordStorageSchemeDigestAlgorithmProp**](EnumpasswordStorageSchemeDigestAlgorithmProp.md) |  | [optional] 
-**IterationCount** | **int32** | Specifies the number of iterations to use when encoding passwords. The value must be greater than or equal to 1000. | 
-**SaltLengthBytes** | **int32** | Specifies the number of bytes to use for the generated salt. The value must be greater than or equal to 8. | 
-**DerivedKeyLengthBytes** | **int32** | Specifies the number of bytes to use for the derived key. The value must be greater than or equal to 8. | 
+**IterationCount** | Pointer to **int32** | Specifies the number of iterations to use when encoding passwords. The value must be greater than or equal to 1000. | [optional] 
+**SaltLengthBytes** | Pointer to **int32** | Specifies the number of bytes to use for the generated salt. The value must be greater than or equal to 8. | [optional] 
+**DerivedKeyLengthBytes** | Pointer to **int32** | Specifies the number of bytes to use for the derived key. The value must be greater than or equal to 8. | [optional] 
 **MaxPasswordLength** | Pointer to **int32** | Specifies the maximum allowed length, in bytes, for passwords encoded with this scheme, which can help mitigate denial of service attacks from clients that attempt to bind with very long passwords. | [optional] 
 **Description** | Pointer to **string** | A description for this Password Storage Scheme | [optional] 
 **Enabled** | **bool** | Indicates whether the Password Storage Scheme is enabled for use. | 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewAddPbkdf2PasswordStorageSchemeRequest
 
-`func NewAddPbkdf2PasswordStorageSchemeRequest(schemeName string, schemas []Enumpbkdf2PasswordStorageSchemeSchemaUrn, iterationCount int32, saltLengthBytes int32, derivedKeyLengthBytes int32, enabled bool, ) *AddPbkdf2PasswordStorageSchemeRequest`
+`func NewAddPbkdf2PasswordStorageSchemeRequest(schemeName string, schemas []Enumpbkdf2PasswordStorageSchemeSchemaUrn, enabled bool, ) *AddPbkdf2PasswordStorageSchemeRequest`
 
 NewAddPbkdf2PasswordStorageSchemeRequest instantiates a new AddPbkdf2PasswordStorageSchemeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -117,6 +117,11 @@ and a boolean to check if the value has been set.
 
 SetIterationCount sets IterationCount field to given value.
 
+### HasIterationCount
+
+`func (o *AddPbkdf2PasswordStorageSchemeRequest) HasIterationCount() bool`
+
+HasIterationCount returns a boolean if a field has been set.
 
 ### GetSaltLengthBytes
 
@@ -137,6 +142,11 @@ and a boolean to check if the value has been set.
 
 SetSaltLengthBytes sets SaltLengthBytes field to given value.
 
+### HasSaltLengthBytes
+
+`func (o *AddPbkdf2PasswordStorageSchemeRequest) HasSaltLengthBytes() bool`
+
+HasSaltLengthBytes returns a boolean if a field has been set.
 
 ### GetDerivedKeyLengthBytes
 
@@ -157,6 +167,11 @@ and a boolean to check if the value has been set.
 
 SetDerivedKeyLengthBytes sets DerivedKeyLengthBytes field to given value.
 
+### HasDerivedKeyLengthBytes
+
+`func (o *AddPbkdf2PasswordStorageSchemeRequest) HasDerivedKeyLengthBytes() bool`
+
+HasDerivedKeyLengthBytes returns a boolean if a field has been set.
 
 ### GetMaxPasswordLength
 

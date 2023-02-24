@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 **PolicyName** | **string** | Name of the new Replication Assurance Policy | 
 **Schemas** | Pointer to [**[]EnumreplicationAssurancePolicySchemaUrn**](EnumreplicationAssurancePolicySchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | Description of the Replication Assurance Policy. | [optional] 
-**Enabled** | **bool** | Indicates whether this Replication Assurance Policy is enabled for use in the server. If a Replication Assurance Policy is disabled, then no new operations will be associated with it. | 
+**Enabled** | Pointer to **bool** | Indicates whether this Replication Assurance Policy is enabled for use in the server. If a Replication Assurance Policy is disabled, then no new operations will be associated with it. | [optional] 
 **EvaluationOrderIndex** | **int32** | When multiple Replication Assurance Policies are defined, this property determines the evaluation order for finding a Replication Assurance Policy match against an operation. Policies are evaluated based on this index from least to greatest. Values of this property must be unique but not necessarily contiguous. | 
-**LocalLevel** | [**EnumreplicationAssurancePolicyLocalLevelProp**](EnumreplicationAssurancePolicyLocalLevelProp.md) |  | 
-**RemoteLevel** | [**EnumreplicationAssurancePolicyRemoteLevelProp**](EnumreplicationAssurancePolicyRemoteLevelProp.md) |  | 
+**LocalLevel** | Pointer to [**EnumreplicationAssurancePolicyLocalLevelProp**](EnumreplicationAssurancePolicyLocalLevelProp.md) |  | [optional] 
+**RemoteLevel** | Pointer to [**EnumreplicationAssurancePolicyRemoteLevelProp**](EnumreplicationAssurancePolicyRemoteLevelProp.md) |  | [optional] 
 **Timeout** | **string** | Specifies the maximum length of time to wait for the replication assurance requirements to be met before timing out and replying to the client. | 
 **ConnectionCriteria** | Pointer to **string** | Specifies a connection criteria used to indicate which operations from clients matching this criteria use this policy. If both a connection criteria and a request criteria are specified for a policy, then both must match an operation for the policy to be assigned. | [optional] 
 **RequestCriteria** | Pointer to **string** | Specifies a request criteria used to indicate which operations from clients matching this criteria use this policy. If both a connection criteria and a request criteria are specified for a policy, then both must match an operation for the policy to be assigned. | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewAddReplicationAssurancePolicyRequest
 
-`func NewAddReplicationAssurancePolicyRequest(policyName string, enabled bool, evaluationOrderIndex int32, localLevel EnumreplicationAssurancePolicyLocalLevelProp, remoteLevel EnumreplicationAssurancePolicyRemoteLevelProp, timeout string, ) *AddReplicationAssurancePolicyRequest`
+`func NewAddReplicationAssurancePolicyRequest(policyName string, evaluationOrderIndex int32, timeout string, ) *AddReplicationAssurancePolicyRequest`
 
 NewAddReplicationAssurancePolicyRequest instantiates a new AddReplicationAssurancePolicyRequest object
 This constructor will assign default values to properties that have it defined,
@@ -123,6 +123,11 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
+### HasEnabled
+
+`func (o *AddReplicationAssurancePolicyRequest) HasEnabled() bool`
+
+HasEnabled returns a boolean if a field has been set.
 
 ### GetEvaluationOrderIndex
 
@@ -163,6 +168,11 @@ and a boolean to check if the value has been set.
 
 SetLocalLevel sets LocalLevel field to given value.
 
+### HasLocalLevel
+
+`func (o *AddReplicationAssurancePolicyRequest) HasLocalLevel() bool`
+
+HasLocalLevel returns a boolean if a field has been set.
 
 ### GetRemoteLevel
 
@@ -183,6 +193,11 @@ and a boolean to check if the value has been set.
 
 SetRemoteLevel sets RemoteLevel field to given value.
 
+### HasRemoteLevel
+
+`func (o *AddReplicationAssurancePolicyRequest) HasRemoteLevel() bool`
+
+HasRemoteLevel returns a boolean if a field has been set.
 
 ### GetTimeout
 

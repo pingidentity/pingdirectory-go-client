@@ -20,7 +20,7 @@ type AddBackupRecurringTaskRequest struct {
 	TaskName string                             `json:"taskName"`
 	Schemas  []EnumbackupRecurringTaskSchemaUrn `json:"schemas"`
 	// The directory in which backup files will be placed. When backing up a single backend, the backup files will be placed directly in this directory. When backing up multiple backends, the backup files for each backend will be placed in a subdirectory whose name is the corresponding backend ID.
-	BackupDirectory string `json:"backupDirectory"`
+	BackupDirectory *string `json:"backupDirectory,omitempty"`
 	// The backend IDs of any backends that should be included in the backup.
 	IncludedBackendID []string `json:"includedBackendID,omitempty"`
 	// The backend IDs of any backends that should be excluded from the backup. All backends that support backups and are not listed will be included.
@@ -61,11 +61,10 @@ type AddBackupRecurringTaskRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddBackupRecurringTaskRequest(taskName string, schemas []EnumbackupRecurringTaskSchemaUrn, backupDirectory string) *AddBackupRecurringTaskRequest {
+func NewAddBackupRecurringTaskRequest(taskName string, schemas []EnumbackupRecurringTaskSchemaUrn) *AddBackupRecurringTaskRequest {
 	this := AddBackupRecurringTaskRequest{}
 	this.TaskName = taskName
 	this.Schemas = schemas
-	this.BackupDirectory = backupDirectory
 	return &this
 }
 
@@ -125,28 +124,36 @@ func (o *AddBackupRecurringTaskRequest) SetSchemas(v []EnumbackupRecurringTaskSc
 	o.Schemas = v
 }
 
-// GetBackupDirectory returns the BackupDirectory field value
+// GetBackupDirectory returns the BackupDirectory field value if set, zero value otherwise.
 func (o *AddBackupRecurringTaskRequest) GetBackupDirectory() string {
-	if o == nil {
+	if o == nil || isNil(o.BackupDirectory) {
 		var ret string
 		return ret
 	}
-
-	return o.BackupDirectory
+	return *o.BackupDirectory
 }
 
-// GetBackupDirectoryOk returns a tuple with the BackupDirectory field value
+// GetBackupDirectoryOk returns a tuple with the BackupDirectory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddBackupRecurringTaskRequest) GetBackupDirectoryOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.BackupDirectory) {
 		return nil, false
 	}
-	return &o.BackupDirectory, true
+	return o.BackupDirectory, true
 }
 
-// SetBackupDirectory sets field value
+// HasBackupDirectory returns a boolean if a field has been set.
+func (o *AddBackupRecurringTaskRequest) HasBackupDirectory() bool {
+	if o != nil && !isNil(o.BackupDirectory) {
+		return true
+	}
+
+	return false
+}
+
+// SetBackupDirectory gets a reference to the given string and assigns it to the BackupDirectory field.
 func (o *AddBackupRecurringTaskRequest) SetBackupDirectory(v string) {
-	o.BackupDirectory = v
+	o.BackupDirectory = &v
 }
 
 // GetIncludedBackendID returns the IncludedBackendID field value if set, zero value otherwise.
@@ -701,7 +708,7 @@ func (o AddBackupRecurringTaskRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if true {
+	if !isNil(o.BackupDirectory) {
 		toSerialize["backupDirectory"] = o.BackupDirectory
 	}
 	if !isNil(o.IncludedBackendID) {

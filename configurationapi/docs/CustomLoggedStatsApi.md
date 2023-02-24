@@ -31,7 +31,7 @@ import (
 
 func main() {
     pluginName := "pluginName_example" // string | Name of the Plugin
-    addCustomLoggedStatsRequest := *openapiclient.NewAddCustomLoggedStatsRequest("StatsName_example", false, "MonitorObjectclass_example", []string{"AttributeToLog_example"}, []openapiclient.EnumcustomLoggedStatsStatisticTypeProp{openapiclient.Enumcustom-logged-stats-statisticTypeProp("raw")}) // AddCustomLoggedStatsRequest | Create a new Custom Logged Stats in the config
+    addCustomLoggedStatsRequest := *openapiclient.NewAddCustomLoggedStatsRequest("StatsName_example", "MonitorObjectclass_example", []string{"AttributeToLog_example"}, []openapiclient.EnumcustomLoggedStatsStatisticTypeProp{openapiclient.Enumcustom-logged-stats-statisticTypeProp("raw")}) // AddCustomLoggedStatsRequest | Create a new Custom Logged Stats in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

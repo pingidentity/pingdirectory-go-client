@@ -20,12 +20,12 @@ type AddWeaklyEncodedPasswordDataSecurityAuditorRequest struct {
 	AuditorName string                                                  `json:"auditorName"`
 	Schemas     []EnumweaklyEncodedPasswordDataSecurityAuditorSchemaUrn `json:"schemas"`
 	// Specifies the name of the detailed report file.
-	ReportFile string `json:"reportFile"`
+	ReportFile *string `json:"reportFile,omitempty"`
 	// The password storage schemes that are considered weak. Users with any of the specified password storage schemes will be included in the report.
-	WeakPasswordStorageScheme []string                                       `json:"weakPasswordStorageScheme"`
+	WeakPasswordStorageScheme []string                                       `json:"weakPasswordStorageScheme,omitempty"`
 	WeakCryptEncoding         []EnumdataSecurityAuditorWeakCryptEncodingProp `json:"weakCryptEncoding,omitempty"`
 	// Indicates whether the Data Security Auditor is enabled for use.
-	Enabled bool `json:"enabled"`
+	Enabled *bool `json:"enabled,omitempty"`
 	// Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
 	IncludeAttribute []string `json:"includeAttribute,omitempty"`
 	// Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
@@ -37,13 +37,10 @@ type AddWeaklyEncodedPasswordDataSecurityAuditorRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddWeaklyEncodedPasswordDataSecurityAuditorRequest(auditorName string, schemas []EnumweaklyEncodedPasswordDataSecurityAuditorSchemaUrn, reportFile string, weakPasswordStorageScheme []string, enabled bool) *AddWeaklyEncodedPasswordDataSecurityAuditorRequest {
+func NewAddWeaklyEncodedPasswordDataSecurityAuditorRequest(auditorName string, schemas []EnumweaklyEncodedPasswordDataSecurityAuditorSchemaUrn) *AddWeaklyEncodedPasswordDataSecurityAuditorRequest {
 	this := AddWeaklyEncodedPasswordDataSecurityAuditorRequest{}
 	this.AuditorName = auditorName
 	this.Schemas = schemas
-	this.ReportFile = reportFile
-	this.WeakPasswordStorageScheme = weakPasswordStorageScheme
-	this.Enabled = enabled
 	return &this
 }
 
@@ -103,50 +100,66 @@ func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) SetSchemas(v []Enum
 	o.Schemas = v
 }
 
-// GetReportFile returns the ReportFile field value
+// GetReportFile returns the ReportFile field value if set, zero value otherwise.
 func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) GetReportFile() string {
-	if o == nil {
+	if o == nil || isNil(o.ReportFile) {
 		var ret string
 		return ret
 	}
-
-	return o.ReportFile
+	return *o.ReportFile
 }
 
-// GetReportFileOk returns a tuple with the ReportFile field value
+// GetReportFileOk returns a tuple with the ReportFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) GetReportFileOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.ReportFile) {
 		return nil, false
 	}
-	return &o.ReportFile, true
+	return o.ReportFile, true
 }
 
-// SetReportFile sets field value
+// HasReportFile returns a boolean if a field has been set.
+func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) HasReportFile() bool {
+	if o != nil && !isNil(o.ReportFile) {
+		return true
+	}
+
+	return false
+}
+
+// SetReportFile gets a reference to the given string and assigns it to the ReportFile field.
 func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) SetReportFile(v string) {
-	o.ReportFile = v
+	o.ReportFile = &v
 }
 
-// GetWeakPasswordStorageScheme returns the WeakPasswordStorageScheme field value
+// GetWeakPasswordStorageScheme returns the WeakPasswordStorageScheme field value if set, zero value otherwise.
 func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) GetWeakPasswordStorageScheme() []string {
-	if o == nil {
+	if o == nil || isNil(o.WeakPasswordStorageScheme) {
 		var ret []string
 		return ret
 	}
-
 	return o.WeakPasswordStorageScheme
 }
 
-// GetWeakPasswordStorageSchemeOk returns a tuple with the WeakPasswordStorageScheme field value
+// GetWeakPasswordStorageSchemeOk returns a tuple with the WeakPasswordStorageScheme field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) GetWeakPasswordStorageSchemeOk() ([]string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.WeakPasswordStorageScheme) {
 		return nil, false
 	}
 	return o.WeakPasswordStorageScheme, true
 }
 
-// SetWeakPasswordStorageScheme sets field value
+// HasWeakPasswordStorageScheme returns a boolean if a field has been set.
+func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) HasWeakPasswordStorageScheme() bool {
+	if o != nil && !isNil(o.WeakPasswordStorageScheme) {
+		return true
+	}
+
+	return false
+}
+
+// SetWeakPasswordStorageScheme gets a reference to the given []string and assigns it to the WeakPasswordStorageScheme field.
 func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) SetWeakPasswordStorageScheme(v []string) {
 	o.WeakPasswordStorageScheme = v
 }
@@ -183,28 +196,36 @@ func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) SetWeakCryptEncodin
 	o.WeakCryptEncoding = v
 }
 
-// GetEnabled returns the Enabled field value
+// GetEnabled returns the Enabled field value if set, zero value otherwise.
 func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) GetEnabled() bool {
-	if o == nil {
+	if o == nil || isNil(o.Enabled) {
 		var ret bool
 		return ret
 	}
-
-	return o.Enabled
+	return *o.Enabled
 }
 
-// GetEnabledOk returns a tuple with the Enabled field value
+// GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) GetEnabledOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || isNil(o.Enabled) {
 		return nil, false
 	}
-	return &o.Enabled, true
+	return o.Enabled, true
 }
 
-// SetEnabled sets field value
+// HasEnabled returns a boolean if a field has been set.
+func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) HasEnabled() bool {
+	if o != nil && !isNil(o.Enabled) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) SetEnabled(v bool) {
-	o.Enabled = v
+	o.Enabled = &v
 }
 
 // GetIncludeAttribute returns the IncludeAttribute field value if set, zero value otherwise.
@@ -311,16 +332,16 @@ func (o AddWeaklyEncodedPasswordDataSecurityAuditorRequest) MarshalJSON() ([]byt
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if true {
+	if !isNil(o.ReportFile) {
 		toSerialize["reportFile"] = o.ReportFile
 	}
-	if true {
+	if !isNil(o.WeakPasswordStorageScheme) {
 		toSerialize["weakPasswordStorageScheme"] = o.WeakPasswordStorageScheme
 	}
 	if !isNil(o.WeakCryptEncoding) {
 		toSerialize["weakCryptEncoding"] = o.WeakCryptEncoding
 	}
-	if true {
+	if !isNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
 	if !isNil(o.IncludeAttribute) {

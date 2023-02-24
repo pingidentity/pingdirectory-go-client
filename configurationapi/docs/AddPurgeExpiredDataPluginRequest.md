@@ -8,17 +8,17 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumpurgeExpiredDataPluginSchemaUrn**](EnumpurgeExpiredDataPluginSchemaUrn.md) |  | 
 **DatetimeAttribute** | **string** | The LDAP attribute that determines when data should be deleted. This could store the expiration time, or it could store the creation time and the expiration-offset property specifies the duration before data is deleted. | 
 **DatetimeJSONField** | Pointer to **string** | The top-level JSON field within the configured datetime-attribute that determines when data should be deleted. This could store the expiration time, or it could store the creation time and the expiration-offset property specifies the duration before data is deleted. | [optional] 
-**DatetimeFormat** | [**EnumpluginDatetimeFormatProp**](EnumpluginDatetimeFormatProp.md) |  | 
+**DatetimeFormat** | Pointer to [**EnumpluginDatetimeFormatProp**](EnumpluginDatetimeFormatProp.md) |  | [optional] 
 **CustomDatetimeFormat** | Pointer to **string** | When the datetime-format property is configured with a value of \&quot;custom\&quot;, this specifies the format (using a string compatible with the java.text.SimpleDateFormat class) that will be used to search for expired data. | [optional] 
 **CustomTimezone** | Pointer to **string** | Specifies the time zone to use when generating a date string using the configured custom-datetime-format value. The provided value must be accepted by java.util.TimeZone.getTimeZone. | [optional] 
 **ExpirationOffset** | **string** | The duration to wait after the value specified in datetime-attribute (and optionally datetime-json-field) before purging the data. | 
 **PurgeBehavior** | Pointer to [**EnumpluginPurgeBehaviorProp**](EnumpluginPurgeBehaviorProp.md) |  | [optional] 
 **BaseDN** | Pointer to **string** | Only entries located within the subtree specified by this base DN are eligible for purging. | [optional] 
 **Filter** | Pointer to **string** | Only entries that match this LDAP filter will be eligible for having data purged. | [optional] 
-**PollingInterval** | **string** | This specifies how often the plugin should check for expired data. It also controls the offset of peer servers (see the peer-server-priority-index for more information). | 
-**MaxUpdatesPerSecond** | **int32** | This setting smooths out the performance impact on the server by throttling the purging to the specified maximum number of updates per second. To avoid a large backlog, this value should be set comfortably above the average rate that expired data is generated. When purge-behavior is set to subtree-delete-entries, then deletion of the entire subtree is considered a single update for the purposes of throttling. | 
+**PollingInterval** | Pointer to **string** | This specifies how often the plugin should check for expired data. It also controls the offset of peer servers (see the peer-server-priority-index for more information). | [optional] 
+**MaxUpdatesPerSecond** | Pointer to **int32** | This setting smooths out the performance impact on the server by throttling the purging to the specified maximum number of updates per second. To avoid a large backlog, this value should be set comfortably above the average rate that expired data is generated. When purge-behavior is set to subtree-delete-entries, then deletion of the entire subtree is considered a single update for the purposes of throttling. | [optional] 
 **PeerServerPriorityIndex** | Pointer to **int32** | In a replicated environment, this determines the order in which peer servers should attempt to purge data. | [optional] 
-**NumDeleteThreads** | **int32** | The number of threads used to delete expired entries. | 
+**NumDeleteThreads** | Pointer to **int32** | The number of threads used to delete expired entries. | [optional] 
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 
 ### NewAddPurgeExpiredDataPluginRequest
 
-`func NewAddPurgeExpiredDataPluginRequest(pluginName string, schemas []EnumpurgeExpiredDataPluginSchemaUrn, datetimeAttribute string, datetimeFormat EnumpluginDatetimeFormatProp, expirationOffset string, pollingInterval string, maxUpdatesPerSecond int32, numDeleteThreads int32, enabled bool, ) *AddPurgeExpiredDataPluginRequest`
+`func NewAddPurgeExpiredDataPluginRequest(pluginName string, schemas []EnumpurgeExpiredDataPluginSchemaUrn, datetimeAttribute string, expirationOffset string, enabled bool, ) *AddPurgeExpiredDataPluginRequest`
 
 NewAddPurgeExpiredDataPluginRequest instantiates a new AddPurgeExpiredDataPluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -145,6 +145,11 @@ and a boolean to check if the value has been set.
 
 SetDatetimeFormat sets DatetimeFormat field to given value.
 
+### HasDatetimeFormat
+
+`func (o *AddPurgeExpiredDataPluginRequest) HasDatetimeFormat() bool`
+
+HasDatetimeFormat returns a boolean if a field has been set.
 
 ### GetCustomDatetimeFormat
 
@@ -310,6 +315,11 @@ and a boolean to check if the value has been set.
 
 SetPollingInterval sets PollingInterval field to given value.
 
+### HasPollingInterval
+
+`func (o *AddPurgeExpiredDataPluginRequest) HasPollingInterval() bool`
+
+HasPollingInterval returns a boolean if a field has been set.
 
 ### GetMaxUpdatesPerSecond
 
@@ -330,6 +340,11 @@ and a boolean to check if the value has been set.
 
 SetMaxUpdatesPerSecond sets MaxUpdatesPerSecond field to given value.
 
+### HasMaxUpdatesPerSecond
+
+`func (o *AddPurgeExpiredDataPluginRequest) HasMaxUpdatesPerSecond() bool`
+
+HasMaxUpdatesPerSecond returns a boolean if a field has been set.
 
 ### GetPeerServerPriorityIndex
 
@@ -375,6 +390,11 @@ and a boolean to check if the value has been set.
 
 SetNumDeleteThreads sets NumDeleteThreads field to given value.
 
+### HasNumDeleteThreads
+
+`func (o *AddPurgeExpiredDataPluginRequest) HasNumDeleteThreads() bool`
+
+HasNumDeleteThreads returns a boolean if a field has been set.
 
 ### GetDescription
 

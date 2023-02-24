@@ -21,7 +21,7 @@ type AddIsMemberOfVirtualAttributeRequest struct {
 	Schemas          []EnumisMemberOfVirtualAttributeSchemaUrn `json:"schemas"`
 	ConflictBehavior *EnumvirtualAttributeConflictBehaviorProp `json:"conflictBehavior,omitempty"`
 	// Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute.
-	AttributeType string `json:"attributeType"`
+	AttributeType *string `json:"attributeType,omitempty"`
 	// Specifies whether to only include groups in which the user is directly associated with and the membership maybe modified via the group entry. Groups in which the user's membership is derived dynamically or through nested groups will not be included.
 	DirectMembershipsOnly *bool `json:"directMembershipsOnly,omitempty"`
 	// A search filter that will be used to identify which groups should be included in the values of the virtual attribute. With no value defined (which is the default behavior), all groups that contain the target user will be included.
@@ -52,11 +52,10 @@ type AddIsMemberOfVirtualAttributeRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddIsMemberOfVirtualAttributeRequest(name string, schemas []EnumisMemberOfVirtualAttributeSchemaUrn, attributeType string, enabled bool) *AddIsMemberOfVirtualAttributeRequest {
+func NewAddIsMemberOfVirtualAttributeRequest(name string, schemas []EnumisMemberOfVirtualAttributeSchemaUrn, enabled bool) *AddIsMemberOfVirtualAttributeRequest {
 	this := AddIsMemberOfVirtualAttributeRequest{}
 	this.Name = name
 	this.Schemas = schemas
-	this.AttributeType = attributeType
 	this.Enabled = enabled
 	return &this
 }
@@ -149,28 +148,36 @@ func (o *AddIsMemberOfVirtualAttributeRequest) SetConflictBehavior(v Enumvirtual
 	o.ConflictBehavior = &v
 }
 
-// GetAttributeType returns the AttributeType field value
+// GetAttributeType returns the AttributeType field value if set, zero value otherwise.
 func (o *AddIsMemberOfVirtualAttributeRequest) GetAttributeType() string {
-	if o == nil {
+	if o == nil || isNil(o.AttributeType) {
 		var ret string
 		return ret
 	}
-
-	return o.AttributeType
+	return *o.AttributeType
 }
 
-// GetAttributeTypeOk returns a tuple with the AttributeType field value
+// GetAttributeTypeOk returns a tuple with the AttributeType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddIsMemberOfVirtualAttributeRequest) GetAttributeTypeOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.AttributeType) {
 		return nil, false
 	}
-	return &o.AttributeType, true
+	return o.AttributeType, true
 }
 
-// SetAttributeType sets field value
+// HasAttributeType returns a boolean if a field has been set.
+func (o *AddIsMemberOfVirtualAttributeRequest) HasAttributeType() bool {
+	if o != nil && !isNil(o.AttributeType) {
+		return true
+	}
+
+	return false
+}
+
+// SetAttributeType gets a reference to the given string and assigns it to the AttributeType field.
 func (o *AddIsMemberOfVirtualAttributeRequest) SetAttributeType(v string) {
-	o.AttributeType = v
+	o.AttributeType = &v
 }
 
 // GetDirectMembershipsOnly returns the DirectMembershipsOnly field value if set, zero value otherwise.
@@ -592,7 +599,7 @@ func (o AddIsMemberOfVirtualAttributeRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.ConflictBehavior) {
 		toSerialize["conflictBehavior"] = o.ConflictBehavior
 	}
-	if true {
+	if !isNil(o.AttributeType) {
 		toSerialize["attributeType"] = o.AttributeType
 	}
 	if !isNil(o.DirectMembershipsOnly) {

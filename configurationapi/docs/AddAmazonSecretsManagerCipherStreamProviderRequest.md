@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **SecretFieldName** | **string** | The name of the JSON field whose value is the passphrase that will be used to generate the encryption key for protecting the contents of the encryption settings database. | 
 **SecretVersionID** | Pointer to **string** | The unique identifier for the version of the secret to be retrieved. | [optional] 
 **SecretVersionStage** | Pointer to **string** | The staging label for the version of the secret to be retrieved. | [optional] 
-**EncryptionMetadataFile** | **string** | The path to a file that will hold metadata about the encryption performed by this Amazon Secrets Manager Cipher Stream Provider. | 
+**EncryptionMetadataFile** | Pointer to **string** | The path to a file that will hold metadata about the encryption performed by this Amazon Secrets Manager Cipher Stream Provider. | [optional] 
 **Description** | Pointer to **string** | A description for this Cipher Stream Provider | [optional] 
 **Enabled** | **bool** | Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server. | 
 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewAddAmazonSecretsManagerCipherStreamProviderRequest
 
-`func NewAddAmazonSecretsManagerCipherStreamProviderRequest(providerName string, schemas []EnumamazonSecretsManagerCipherStreamProviderSchemaUrn, awsExternalServer string, secretID string, secretFieldName string, encryptionMetadataFile string, enabled bool, ) *AddAmazonSecretsManagerCipherStreamProviderRequest`
+`func NewAddAmazonSecretsManagerCipherStreamProviderRequest(providerName string, schemas []EnumamazonSecretsManagerCipherStreamProviderSchemaUrn, awsExternalServer string, secretID string, secretFieldName string, enabled bool, ) *AddAmazonSecretsManagerCipherStreamProviderRequest`
 
 NewAddAmazonSecretsManagerCipherStreamProviderRequest instantiates a new AddAmazonSecretsManagerCipherStreamProviderRequest object
 This constructor will assign default values to properties that have it defined,
@@ -203,6 +203,11 @@ and a boolean to check if the value has been set.
 
 SetEncryptionMetadataFile sets EncryptionMetadataFile field to given value.
 
+### HasEncryptionMetadataFile
+
+`func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) HasEncryptionMetadataFile() bool`
+
+HasEncryptionMetadataFile returns a boolean if a field has been set.
 
 ### GetDescription
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **HandlerName** | **string** | Name of the new Change Subscription Handler | 
 **Schemas** | [**[]EnumloggingChangeSubscriptionHandlerSchemaUrn**](EnumloggingChangeSubscriptionHandlerSchemaUrn.md) |  | 
-**LogFile** | **string** | Specifies the log file in which the change notification messages will be written. | 
+**LogFile** | Pointer to **string** | Specifies the log file in which the change notification messages will be written. | [optional] 
 **Description** | Pointer to **string** | A description for this Change Subscription Handler | [optional] 
 **Enabled** | **bool** | Indicates whether this change subscription handler is enabled within the server. | 
 **ChangeSubscription** | Pointer to **[]string** | The set of change subscriptions for which this change subscription handler should be notified. If no values are provided then it will be notified for all change subscriptions defined in the server. | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewAddLoggingChangeSubscriptionHandlerRequest
 
-`func NewAddLoggingChangeSubscriptionHandlerRequest(handlerName string, schemas []EnumloggingChangeSubscriptionHandlerSchemaUrn, logFile string, enabled bool, ) *AddLoggingChangeSubscriptionHandlerRequest`
+`func NewAddLoggingChangeSubscriptionHandlerRequest(handlerName string, schemas []EnumloggingChangeSubscriptionHandlerSchemaUrn, enabled bool, ) *AddLoggingChangeSubscriptionHandlerRequest`
 
 NewAddLoggingChangeSubscriptionHandlerRequest instantiates a new AddLoggingChangeSubscriptionHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -89,6 +89,11 @@ and a boolean to check if the value has been set.
 
 SetLogFile sets LogFile field to given value.
 
+### HasLogFile
+
+`func (o *AddLoggingChangeSubscriptionHandlerRequest) HasLogFile() bool`
+
+HasLogFile returns a boolean if a field has been set.
 
 ### GetDescription
 

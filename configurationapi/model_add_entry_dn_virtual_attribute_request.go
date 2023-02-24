@@ -21,7 +21,7 @@ type AddEntryDnVirtualAttributeRequest struct {
 	Schemas          []EnumentryDnVirtualAttributeSchemaUrn    `json:"schemas"`
 	ConflictBehavior *EnumvirtualAttributeConflictBehaviorProp `json:"conflictBehavior,omitempty"`
 	// Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute.
-	AttributeType string `json:"attributeType"`
+	AttributeType *string `json:"attributeType,omitempty"`
 	// A description for this Virtual Attribute
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Virtual Attribute is enabled for use.
@@ -47,11 +47,10 @@ type AddEntryDnVirtualAttributeRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddEntryDnVirtualAttributeRequest(name string, schemas []EnumentryDnVirtualAttributeSchemaUrn, attributeType string, enabled bool) *AddEntryDnVirtualAttributeRequest {
+func NewAddEntryDnVirtualAttributeRequest(name string, schemas []EnumentryDnVirtualAttributeSchemaUrn, enabled bool) *AddEntryDnVirtualAttributeRequest {
 	this := AddEntryDnVirtualAttributeRequest{}
 	this.Name = name
 	this.Schemas = schemas
-	this.AttributeType = attributeType
 	this.Enabled = enabled
 	return &this
 }
@@ -144,28 +143,36 @@ func (o *AddEntryDnVirtualAttributeRequest) SetConflictBehavior(v EnumvirtualAtt
 	o.ConflictBehavior = &v
 }
 
-// GetAttributeType returns the AttributeType field value
+// GetAttributeType returns the AttributeType field value if set, zero value otherwise.
 func (o *AddEntryDnVirtualAttributeRequest) GetAttributeType() string {
-	if o == nil {
+	if o == nil || isNil(o.AttributeType) {
 		var ret string
 		return ret
 	}
-
-	return o.AttributeType
+	return *o.AttributeType
 }
 
-// GetAttributeTypeOk returns a tuple with the AttributeType field value
+// GetAttributeTypeOk returns a tuple with the AttributeType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddEntryDnVirtualAttributeRequest) GetAttributeTypeOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.AttributeType) {
 		return nil, false
 	}
-	return &o.AttributeType, true
+	return o.AttributeType, true
 }
 
-// SetAttributeType sets field value
+// HasAttributeType returns a boolean if a field has been set.
+func (o *AddEntryDnVirtualAttributeRequest) HasAttributeType() bool {
+	if o != nil && !isNil(o.AttributeType) {
+		return true
+	}
+
+	return false
+}
+
+// SetAttributeType gets a reference to the given string and assigns it to the AttributeType field.
 func (o *AddEntryDnVirtualAttributeRequest) SetAttributeType(v string) {
-	o.AttributeType = v
+	o.AttributeType = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -491,7 +498,7 @@ func (o AddEntryDnVirtualAttributeRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.ConflictBehavior) {
 		toSerialize["conflictBehavior"] = o.ConflictBehavior
 	}
-	if true {
+	if !isNil(o.AttributeType) {
 		toSerialize["attributeType"] = o.AttributeType
 	}
 	if !isNil(o.Description) {

@@ -22,7 +22,7 @@ type AddUnboundidDeliveredOtpSaslMechanismHandlerRequest struct {
 	// The identity mapper that should be used to identify the user(s) targeted in the authentication and/or authorization identities contained in the bind request. This will only be used for \"u:\"-style identities.
 	IdentityMapper string `json:"identityMapper"`
 	// The maximum length of time that a one-time password value should be considered valid.
-	OtpValidityDuration string `json:"otpValidityDuration"`
+	OtpValidityDuration *string `json:"otpValidityDuration,omitempty"`
 	// A description for this SASL Mechanism Handler
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the SASL mechanism handler is enabled for use.
@@ -33,12 +33,11 @@ type AddUnboundidDeliveredOtpSaslMechanismHandlerRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddUnboundidDeliveredOtpSaslMechanismHandlerRequest(handlerName string, schemas []EnumunboundidDeliveredOtpSaslMechanismHandlerSchemaUrn, identityMapper string, otpValidityDuration string, enabled bool) *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest {
+func NewAddUnboundidDeliveredOtpSaslMechanismHandlerRequest(handlerName string, schemas []EnumunboundidDeliveredOtpSaslMechanismHandlerSchemaUrn, identityMapper string, enabled bool) *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest {
 	this := AddUnboundidDeliveredOtpSaslMechanismHandlerRequest{}
 	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.IdentityMapper = identityMapper
-	this.OtpValidityDuration = otpValidityDuration
 	this.Enabled = enabled
 	return &this
 }
@@ -123,28 +122,36 @@ func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) SetIdentityMapper(
 	o.IdentityMapper = v
 }
 
-// GetOtpValidityDuration returns the OtpValidityDuration field value
+// GetOtpValidityDuration returns the OtpValidityDuration field value if set, zero value otherwise.
 func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) GetOtpValidityDuration() string {
-	if o == nil {
+	if o == nil || isNil(o.OtpValidityDuration) {
 		var ret string
 		return ret
 	}
-
-	return o.OtpValidityDuration
+	return *o.OtpValidityDuration
 }
 
-// GetOtpValidityDurationOk returns a tuple with the OtpValidityDuration field value
+// GetOtpValidityDurationOk returns a tuple with the OtpValidityDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) GetOtpValidityDurationOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.OtpValidityDuration) {
 		return nil, false
 	}
-	return &o.OtpValidityDuration, true
+	return o.OtpValidityDuration, true
 }
 
-// SetOtpValidityDuration sets field value
+// HasOtpValidityDuration returns a boolean if a field has been set.
+func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) HasOtpValidityDuration() bool {
+	if o != nil && !isNil(o.OtpValidityDuration) {
+		return true
+	}
+
+	return false
+}
+
+// SetOtpValidityDuration gets a reference to the given string and assigns it to the OtpValidityDuration field.
 func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) SetOtpValidityDuration(v string) {
-	o.OtpValidityDuration = v
+	o.OtpValidityDuration = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -214,7 +221,7 @@ func (o AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) MarshalJSON() ([]by
 	if true {
 		toSerialize["identityMapper"] = o.IdentityMapper
 	}
-	if true {
+	if !isNil(o.OtpValidityDuration) {
 		toSerialize["otpValidityDuration"] = o.OtpValidityDuration
 	}
 	if !isNil(o.Description) {

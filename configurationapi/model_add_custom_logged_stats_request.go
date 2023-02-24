@@ -22,7 +22,7 @@ type AddCustomLoggedStatsRequest struct {
 	// A description for this Custom Logged Stats
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Custom Logged Stats object is enabled.
-	Enabled bool `json:"enabled"`
+	Enabled *bool `json:"enabled,omitempty"`
 	// The objectclass name of the monitor entries to examine for generating these statistics.
 	MonitorObjectclass string `json:"monitorObjectclass"`
 	// An optional LDAP filter that can be used restrict which monitor entries are used to produce the output.
@@ -54,10 +54,9 @@ type AddCustomLoggedStatsRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddCustomLoggedStatsRequest(statsName string, enabled bool, monitorObjectclass string, attributeToLog []string, statisticType []EnumcustomLoggedStatsStatisticTypeProp) *AddCustomLoggedStatsRequest {
+func NewAddCustomLoggedStatsRequest(statsName string, monitorObjectclass string, attributeToLog []string, statisticType []EnumcustomLoggedStatsStatisticTypeProp) *AddCustomLoggedStatsRequest {
 	this := AddCustomLoggedStatsRequest{}
 	this.StatsName = statsName
-	this.Enabled = enabled
 	this.MonitorObjectclass = monitorObjectclass
 	this.AttributeToLog = attributeToLog
 	this.StatisticType = statisticType
@@ -160,28 +159,36 @@ func (o *AddCustomLoggedStatsRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetEnabled returns the Enabled field value
+// GetEnabled returns the Enabled field value if set, zero value otherwise.
 func (o *AddCustomLoggedStatsRequest) GetEnabled() bool {
-	if o == nil {
+	if o == nil || isNil(o.Enabled) {
 		var ret bool
 		return ret
 	}
-
-	return o.Enabled
+	return *o.Enabled
 }
 
-// GetEnabledOk returns a tuple with the Enabled field value
+// GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCustomLoggedStatsRequest) GetEnabledOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || isNil(o.Enabled) {
 		return nil, false
 	}
-	return &o.Enabled, true
+	return o.Enabled, true
 }
 
-// SetEnabled sets field value
+// HasEnabled returns a boolean if a field has been set.
+func (o *AddCustomLoggedStatsRequest) HasEnabled() bool {
+	if o != nil && !isNil(o.Enabled) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *AddCustomLoggedStatsRequest) SetEnabled(v bool) {
-	o.Enabled = v
+	o.Enabled = &v
 }
 
 // GetMonitorObjectclass returns the MonitorObjectclass field value
@@ -587,7 +594,7 @@ func (o AddCustomLoggedStatsRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	if true {
+	if !isNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
 	if true {

@@ -182,6 +182,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/smtp-account-status-notification-handler-shared'
+      required:
+      - sendMessageWithoutEndUserAddress
     smtp-account-status-notification-handler-shared:
       type: object
       properties:
@@ -253,7 +255,6 @@ components:
               A request criteria object that identifies which modify and modify DN requests should result in account update notifications for this handler.
       required:
       - schemas
-      - sendMessageWithoutEndUserAddress
       - senderAddress
       - messageSubject
       - messageTemplateFile

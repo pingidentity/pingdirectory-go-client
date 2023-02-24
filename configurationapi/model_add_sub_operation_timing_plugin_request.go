@@ -19,11 +19,11 @@ type AddSubOperationTimingPluginRequest struct {
 	// Name of the new Plugin
 	PluginName string                                  `json:"pluginName"`
 	Schemas    []EnumsubOperationTimingPluginSchemaUrn `json:"schemas"`
-	PluginType []EnumpluginPluginTypeProp              `json:"pluginType"`
+	PluginType []EnumpluginPluginTypeProp              `json:"pluginType,omitempty"`
 	// Specifies a set of request criteria used to indicate that only operations for requests matching this criteria should be counted when aggregating timing data.
 	RequestCriteria *string `json:"requestCriteria,omitempty"`
 	// This controls how many of the most expensive phases are included per operation type in the monitor entry.
-	NumMostExpensivePhasesShown int32 `json:"numMostExpensivePhasesShown"`
+	NumMostExpensivePhasesShown *int32 `json:"numMostExpensivePhasesShown,omitempty"`
 	// Indicates whether the plug-in should be invoked for internal operations.
 	InvokeForInternalOperations *bool `json:"invokeForInternalOperations,omitempty"`
 	// A description for this Plugin
@@ -36,12 +36,10 @@ type AddSubOperationTimingPluginRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddSubOperationTimingPluginRequest(pluginName string, schemas []EnumsubOperationTimingPluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, numMostExpensivePhasesShown int32, enabled bool) *AddSubOperationTimingPluginRequest {
+func NewAddSubOperationTimingPluginRequest(pluginName string, schemas []EnumsubOperationTimingPluginSchemaUrn, enabled bool) *AddSubOperationTimingPluginRequest {
 	this := AddSubOperationTimingPluginRequest{}
 	this.PluginName = pluginName
 	this.Schemas = schemas
-	this.PluginType = pluginType
-	this.NumMostExpensivePhasesShown = numMostExpensivePhasesShown
 	this.Enabled = enabled
 	return &this
 }
@@ -102,26 +100,34 @@ func (o *AddSubOperationTimingPluginRequest) SetSchemas(v []EnumsubOperationTimi
 	o.Schemas = v
 }
 
-// GetPluginType returns the PluginType field value
+// GetPluginType returns the PluginType field value if set, zero value otherwise.
 func (o *AddSubOperationTimingPluginRequest) GetPluginType() []EnumpluginPluginTypeProp {
-	if o == nil {
+	if o == nil || isNil(o.PluginType) {
 		var ret []EnumpluginPluginTypeProp
 		return ret
 	}
-
 	return o.PluginType
 }
 
-// GetPluginTypeOk returns a tuple with the PluginType field value
+// GetPluginTypeOk returns a tuple with the PluginType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSubOperationTimingPluginRequest) GetPluginTypeOk() ([]EnumpluginPluginTypeProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.PluginType) {
 		return nil, false
 	}
 	return o.PluginType, true
 }
 
-// SetPluginType sets field value
+// HasPluginType returns a boolean if a field has been set.
+func (o *AddSubOperationTimingPluginRequest) HasPluginType() bool {
+	if o != nil && !isNil(o.PluginType) {
+		return true
+	}
+
+	return false
+}
+
+// SetPluginType gets a reference to the given []EnumpluginPluginTypeProp and assigns it to the PluginType field.
 func (o *AddSubOperationTimingPluginRequest) SetPluginType(v []EnumpluginPluginTypeProp) {
 	o.PluginType = v
 }
@@ -158,28 +164,36 @@ func (o *AddSubOperationTimingPluginRequest) SetRequestCriteria(v string) {
 	o.RequestCriteria = &v
 }
 
-// GetNumMostExpensivePhasesShown returns the NumMostExpensivePhasesShown field value
+// GetNumMostExpensivePhasesShown returns the NumMostExpensivePhasesShown field value if set, zero value otherwise.
 func (o *AddSubOperationTimingPluginRequest) GetNumMostExpensivePhasesShown() int32 {
-	if o == nil {
+	if o == nil || isNil(o.NumMostExpensivePhasesShown) {
 		var ret int32
 		return ret
 	}
-
-	return o.NumMostExpensivePhasesShown
+	return *o.NumMostExpensivePhasesShown
 }
 
-// GetNumMostExpensivePhasesShownOk returns a tuple with the NumMostExpensivePhasesShown field value
+// GetNumMostExpensivePhasesShownOk returns a tuple with the NumMostExpensivePhasesShown field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSubOperationTimingPluginRequest) GetNumMostExpensivePhasesShownOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || isNil(o.NumMostExpensivePhasesShown) {
 		return nil, false
 	}
-	return &o.NumMostExpensivePhasesShown, true
+	return o.NumMostExpensivePhasesShown, true
 }
 
-// SetNumMostExpensivePhasesShown sets field value
+// HasNumMostExpensivePhasesShown returns a boolean if a field has been set.
+func (o *AddSubOperationTimingPluginRequest) HasNumMostExpensivePhasesShown() bool {
+	if o != nil && !isNil(o.NumMostExpensivePhasesShown) {
+		return true
+	}
+
+	return false
+}
+
+// SetNumMostExpensivePhasesShown gets a reference to the given int32 and assigns it to the NumMostExpensivePhasesShown field.
 func (o *AddSubOperationTimingPluginRequest) SetNumMostExpensivePhasesShown(v int32) {
-	o.NumMostExpensivePhasesShown = v
+	o.NumMostExpensivePhasesShown = &v
 }
 
 // GetInvokeForInternalOperations returns the InvokeForInternalOperations field value if set, zero value otherwise.
@@ -278,13 +292,13 @@ func (o AddSubOperationTimingPluginRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if true {
+	if !isNil(o.PluginType) {
 		toSerialize["pluginType"] = o.PluginType
 	}
 	if !isNil(o.RequestCriteria) {
 		toSerialize["requestCriteria"] = o.RequestCriteria
 	}
-	if true {
+	if !isNil(o.NumMostExpensivePhasesShown) {
 		toSerialize["numMostExpensivePhasesShown"] = o.NumMostExpensivePhasesShown
 	}
 	if !isNil(o.InvokeForInternalOperations) {

@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **ChainName** | **string** | Name of the new Recurring Task Chain | 
 **Schemas** | Pointer to [**[]EnumrecurringTaskChainSchemaUrn**](EnumrecurringTaskChainSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Recurring Task Chain | [optional] 
-**Enabled** | **bool** | Indicates whether this Recurring Task Chain is enabled for use. Recurring Task Chains that are disabled will not have any new instances scheduled, but instances that are already scheduled will be preserved. Those instances may be manually canceled if desired. | 
+**Enabled** | Pointer to **bool** | Indicates whether this Recurring Task Chain is enabled for use. Recurring Task Chains that are disabled will not have any new instances scheduled, but instances that are already scheduled will be preserved. Those instances may be manually canceled if desired. | [optional] 
 **RecurringTask** | **[]string** | The set of recurring tasks that make up this chain. At least one value must be provided. If multiple values are given, then the task instances will be invoked in the order in which they are listed. | 
-**ScheduledMonth** | [**[]EnumrecurringTaskChainScheduledMonthProp**](EnumrecurringTaskChainScheduledMonthProp.md) |  | 
+**ScheduledMonth** | Pointer to [**[]EnumrecurringTaskChainScheduledMonthProp**](EnumrecurringTaskChainScheduledMonthProp.md) |  | [optional] 
 **ScheduledDateSelectionType** | [**EnumrecurringTaskChainScheduledDateSelectionTypeProp**](EnumrecurringTaskChainScheduledDateSelectionTypeProp.md) |  | 
 **ScheduledDayOfTheWeek** | Pointer to [**[]EnumrecurringTaskChainScheduledDayOfTheWeekProp**](EnumrecurringTaskChainScheduledDayOfTheWeekProp.md) |  | [optional] 
 **ScheduledDayOfTheMonth** | Pointer to [**[]EnumrecurringTaskChainScheduledDayOfTheMonthProp**](EnumrecurringTaskChainScheduledDayOfTheMonthProp.md) |  | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewAddRecurringTaskChainRequest
 
-`func NewAddRecurringTaskChainRequest(chainName string, enabled bool, recurringTask []string, scheduledMonth []EnumrecurringTaskChainScheduledMonthProp, scheduledDateSelectionType EnumrecurringTaskChainScheduledDateSelectionTypeProp, scheduledTimeOfDay []string, ) *AddRecurringTaskChainRequest`
+`func NewAddRecurringTaskChainRequest(chainName string, recurringTask []string, scheduledDateSelectionType EnumrecurringTaskChainScheduledDateSelectionTypeProp, scheduledTimeOfDay []string, ) *AddRecurringTaskChainRequest`
 
 NewAddRecurringTaskChainRequest instantiates a new AddRecurringTaskChainRequest object
 This constructor will assign default values to properties that have it defined,
@@ -126,6 +126,11 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
+### HasEnabled
+
+`func (o *AddRecurringTaskChainRequest) HasEnabled() bool`
+
+HasEnabled returns a boolean if a field has been set.
 
 ### GetRecurringTask
 
@@ -166,6 +171,11 @@ and a boolean to check if the value has been set.
 
 SetScheduledMonth sets ScheduledMonth field to given value.
 
+### HasScheduledMonth
+
+`func (o *AddRecurringTaskChainRequest) HasScheduledMonth() bool`
+
+HasScheduledMonth returns a boolean if a field has been set.
 
 ### GetScheduledDateSelectionType
 

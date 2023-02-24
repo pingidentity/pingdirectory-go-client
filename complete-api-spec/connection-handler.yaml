@@ -402,6 +402,9 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/ldif-connection-handler-shared'
+      required:
+      - ldifDirectory
+      - pollInterval
     ldif-connection-handler-shared:
       type: object
       properties:
@@ -441,8 +444,6 @@ components:
               Indicates whether the Connection Handler is enabled.
       required:
       - schemas
-      - ldifDirectory
-      - pollInterval
       - enabled
     Enumldif-connection-handlerSchemaUrn:
       type: string

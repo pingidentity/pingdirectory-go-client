@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnumcomposedAttributePluginSchemaUrn**](EnumcomposedAttributePluginSchemaUrn.md) |  | 
-**PluginType** | [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | 
+**PluginType** | Pointer to [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | [optional] 
 **AttributeType** | **string** | The name or OID of the attribute type for which values are to be generated. | 
 **ValuePattern** | **[]string** | Specifies a pattern for constructing the values to use for the target attribute type. | 
 **MultipleValuePatternBehavior** | Pointer to [**EnumpluginMultipleValuePatternBehaviorProp**](EnumpluginMultipleValuePatternBehaviorProp.md) |  | [optional] 
@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 
 ### NewAddComposedAttributePluginRequest
 
-`func NewAddComposedAttributePluginRequest(pluginName string, schemas []EnumcomposedAttributePluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, attributeType string, valuePattern []string, enabled bool, ) *AddComposedAttributePluginRequest`
+`func NewAddComposedAttributePluginRequest(pluginName string, schemas []EnumcomposedAttributePluginSchemaUrn, attributeType string, valuePattern []string, enabled bool, ) *AddComposedAttributePluginRequest`
 
 NewAddComposedAttributePluginRequest instantiates a new AddComposedAttributePluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -103,6 +103,11 @@ and a boolean to check if the value has been set.
 
 SetPluginType sets PluginType field to given value.
 
+### HasPluginType
+
+`func (o *AddComposedAttributePluginRequest) HasPluginType() bool`
+
+HasPluginType returns a boolean if a field has been set.
 
 ### GetAttributeType
 

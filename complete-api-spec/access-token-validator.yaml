@@ -174,6 +174,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/ping-federate-access-token-validator-shared'
+      required:
+      - evaluationOrderIndex
     ping-federate-access-token-validator-shared:
       type: object
       properties:
@@ -235,7 +237,6 @@ components:
       required:
       - schemas
       - clientID
-      - evaluationOrderIndex
       - enabled
     Enumping-federate-access-token-validatorSchemaUrn:
       type: string
@@ -262,6 +263,11 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/jwt-access-token-validator-shared'
+      required:
+      - allowedSigningAlgorithm
+      - allowedKeyEncryptionAlgorithm
+      - allowedContentEncryptionAlgorithm
+      - evaluationOrderIndex
     jwt-access-token-validator-shared:
       type: object
       properties:
@@ -335,10 +341,6 @@ components:
               Indicates whether this Access Token Validator is enabled for use in Directory Server.
       required:
       - schemas
-      - allowedSigningAlgorithm
-      - allowedKeyEncryptionAlgorithm
-      - allowedContentEncryptionAlgorithm
-      - evaluationOrderIndex
       - enabled
     Enumjwt-access-token-validatorSchemaUrn:
       type: string
@@ -365,6 +367,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/mock-access-token-validator-shared'
+      required:
+      - evaluationOrderIndex
     mock-access-token-validator-shared:
       type: object
       properties:
@@ -404,7 +408,6 @@ components:
               Indicates whether this Access Token Validator is enabled for use in Directory Server.
       required:
       - schemas
-      - evaluationOrderIndex
       - enabled
     Enummock-access-token-validatorSchemaUrn:
       type: string

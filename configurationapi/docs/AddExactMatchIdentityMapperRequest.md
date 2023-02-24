@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MapperName** | **string** | Name of the new Identity Mapper | 
 **Schemas** | [**[]EnumexactMatchIdentityMapperSchemaUrn**](EnumexactMatchIdentityMapperSchemaUrn.md) |  | 
-**MatchAttribute** | **[]string** | Specifies the attribute whose value should exactly match the ID string provided to this identity mapper. | 
+**MatchAttribute** | Pointer to **[]string** | Specifies the attribute whose value should exactly match the ID string provided to this identity mapper. | [optional] 
 **MatchBaseDN** | Pointer to **[]string** | Specifies the set of base DNs below which to search for users. | [optional] 
 **MatchFilter** | Pointer to **string** | An optional filter that mapped users must match. | [optional] 
 **Description** | Pointer to **string** | A description for this Identity Mapper | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewAddExactMatchIdentityMapperRequest
 
-`func NewAddExactMatchIdentityMapperRequest(mapperName string, schemas []EnumexactMatchIdentityMapperSchemaUrn, matchAttribute []string, enabled bool, ) *AddExactMatchIdentityMapperRequest`
+`func NewAddExactMatchIdentityMapperRequest(mapperName string, schemas []EnumexactMatchIdentityMapperSchemaUrn, enabled bool, ) *AddExactMatchIdentityMapperRequest`
 
 NewAddExactMatchIdentityMapperRequest instantiates a new AddExactMatchIdentityMapperRequest object
 This constructor will assign default values to properties that have it defined,
@@ -90,6 +90,11 @@ and a boolean to check if the value has been set.
 
 SetMatchAttribute sets MatchAttribute field to given value.
 
+### HasMatchAttribute
+
+`func (o *AddExactMatchIdentityMapperRequest) HasMatchAttribute() bool`
+
+HasMatchAttribute returns a boolean if a field has been set.
 
 ### GetMatchBaseDN
 

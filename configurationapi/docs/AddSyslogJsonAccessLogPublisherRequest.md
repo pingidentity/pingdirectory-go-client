@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **PublisherName** | **string** | Name of the new Log Publisher | 
 **Schemas** | [**[]EnumsyslogJsonAccessLogPublisherSchemaUrn**](EnumsyslogJsonAccessLogPublisherSchemaUrn.md) |  | 
 **SyslogExternalServer** | **[]string** | The syslog server to which messages should be sent. | 
-**SyslogFacility** | [**EnumlogPublisherSyslogFacilityProp**](EnumlogPublisherSyslogFacilityProp.md) |  | 
-**SyslogSeverity** | [**EnumlogPublisherSyslogSeverityProp**](EnumlogPublisherSyslogSeverityProp.md) |  | 
+**SyslogFacility** | Pointer to [**EnumlogPublisherSyslogFacilityProp**](EnumlogPublisherSyslogFacilityProp.md) |  | [optional] 
+**SyslogSeverity** | Pointer to [**EnumlogPublisherSyslogSeverityProp**](EnumlogPublisherSyslogSeverityProp.md) |  | [optional] 
 **SyslogMessageHostName** | Pointer to **string** | The local host name that will be included in syslog messages that are logged by this Syslog JSON Access Log Publisher. | [optional] 
 **SyslogMessageApplicationName** | Pointer to **string** | The application name that will be included in syslog messages that are logged by this Syslog JSON Access Log Publisher. | [optional] 
 **QueueSize** | Pointer to **int32** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
@@ -59,7 +59,7 @@ Name | Type | Description | Notes
 
 ### NewAddSyslogJsonAccessLogPublisherRequest
 
-`func NewAddSyslogJsonAccessLogPublisherRequest(publisherName string, schemas []EnumsyslogJsonAccessLogPublisherSchemaUrn, syslogExternalServer []string, syslogFacility EnumlogPublisherSyslogFacilityProp, syslogSeverity EnumlogPublisherSyslogSeverityProp, enabled bool, ) *AddSyslogJsonAccessLogPublisherRequest`
+`func NewAddSyslogJsonAccessLogPublisherRequest(publisherName string, schemas []EnumsyslogJsonAccessLogPublisherSchemaUrn, syslogExternalServer []string, enabled bool, ) *AddSyslogJsonAccessLogPublisherRequest`
 
 NewAddSyslogJsonAccessLogPublisherRequest instantiates a new AddSyslogJsonAccessLogPublisherRequest object
 This constructor will assign default values to properties that have it defined,
@@ -153,6 +153,11 @@ and a boolean to check if the value has been set.
 
 SetSyslogFacility sets SyslogFacility field to given value.
 
+### HasSyslogFacility
+
+`func (o *AddSyslogJsonAccessLogPublisherRequest) HasSyslogFacility() bool`
+
+HasSyslogFacility returns a boolean if a field has been set.
 
 ### GetSyslogSeverity
 
@@ -173,6 +178,11 @@ and a boolean to check if the value has been set.
 
 SetSyslogSeverity sets SyslogSeverity field to given value.
 
+### HasSyslogSeverity
+
+`func (o *AddSyslogJsonAccessLogPublisherRequest) HasSyslogSeverity() bool`
+
+HasSyslogSeverity returns a boolean if a field has been set.
 
 ### GetSyslogMessageHostName
 
