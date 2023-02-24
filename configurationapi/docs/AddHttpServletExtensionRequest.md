@@ -40,16 +40,16 @@ Name | Type | Description | Notes
 **IncludeLDAPBaseDN** | Pointer to **[]string** | Specifies the base DNs for the branches of the DIT that should be exposed via the Identity Access API. | [optional] 
 **ExcludeLDAPBaseDN** | Pointer to **[]string** | Specifies the base DNs for the branches of the DIT that should not be exposed via the Identity Access API. | [optional] 
 **EntityTagLDAPAttribute** | Pointer to **string** | Specifies the LDAP attribute whose value should be used as the entity tag value to enable SCIM resource versioning support. | [optional] 
-**TemporaryDirectory** | **string** | Specifies the location of the directory that is used to create temporary files containing SCIM request data. | 
-**TemporaryDirectoryPermissions** | **string** | Specifies the permissions that should be applied to the directory that is used to create temporary files. | 
+**TemporaryDirectory** | Pointer to **string** | Specifies the location of the directory that is used to create temporary files containing SCIM request data. | [optional] 
+**TemporaryDirectoryPermissions** | Pointer to **string** | Specifies the permissions that should be applied to the directory that is used to create temporary files. | [optional] 
 **MaxResults** | Pointer to **int32** | The maximum number of resources that are returned in a response. | [optional] 
 **BulkMaxOperations** | Pointer to **int32** | The maximum number of operations that are permitted in a bulk request. | [optional] 
 **BulkMaxPayloadSize** | Pointer to **string** | The maximum payload size in bytes of a bulk request. | [optional] 
 **BulkMaxConcurrentRequests** | Pointer to **int32** | The maximum number of bulk requests that may be processed concurrently by the server. Any bulk request that would cause this limit to be exceeded is rejected with HTTP status code 503. | [optional] 
 **DebugEnabled** | Pointer to **bool** | Enables debug logging of the SCIM SDK. Debug messages will be forwarded to the Directory Server debug logger with the scope of com.unboundid.directory.server.extensions.scim.SCIMHTTPServletExtension. | [optional] 
-**DebugLevel** | [**EnumhttpServletExtensionDebugLevelProp**](EnumhttpServletExtensionDebugLevelProp.md) |  | 
-**DebugType** | [**[]EnumhttpServletExtensionDebugTypeProp**](EnumhttpServletExtensionDebugTypeProp.md) |  | 
-**IncludeStackTrace** | **bool** | Indicates whether a stack trace of the thread which called the debug method should be included in debug log messages. | 
+**DebugLevel** | Pointer to [**EnumhttpServletExtensionDebugLevelProp**](EnumhttpServletExtensionDebugLevelProp.md) |  | [optional] 
+**DebugType** | Pointer to [**[]EnumhttpServletExtensionDebugTypeProp**](EnumhttpServletExtensionDebugTypeProp.md) |  | [optional] 
+**IncludeStackTrace** | Pointer to **bool** | Indicates whether a stack trace of the thread which called the debug method should be included in debug log messages. | [optional] 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party HTTP Servlet Extension. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party HTTP Servlet Extension. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 
@@ -57,7 +57,7 @@ Name | Type | Description | Notes
 
 ### NewAddHttpServletExtensionRequest
 
-`func NewAddHttpServletExtensionRequest(extensionName string, schemas []EnumthirdPartyHttpServletExtensionSchemaUrn, scriptClass string, baseContextPath string, availableStatusCode int32, degradedStatusCode int32, unavailableStatusCode int32, documentRootDirectory string, temporaryDirectory string, temporaryDirectoryPermissions string, debugLevel EnumhttpServletExtensionDebugLevelProp, debugType []EnumhttpServletExtensionDebugTypeProp, includeStackTrace bool, extensionClass string, ) *AddHttpServletExtensionRequest`
+`func NewAddHttpServletExtensionRequest(extensionName string, schemas []EnumthirdPartyHttpServletExtensionSchemaUrn, scriptClass string, baseContextPath string, availableStatusCode int32, degradedStatusCode int32, unavailableStatusCode int32, documentRootDirectory string, extensionClass string, ) *AddHttpServletExtensionRequest`
 
 NewAddHttpServletExtensionRequest instantiates a new AddHttpServletExtensionRequest object
 This constructor will assign default values to properties that have it defined,
@@ -951,6 +951,11 @@ and a boolean to check if the value has been set.
 
 SetTemporaryDirectory sets TemporaryDirectory field to given value.
 
+### HasTemporaryDirectory
+
+`func (o *AddHttpServletExtensionRequest) HasTemporaryDirectory() bool`
+
+HasTemporaryDirectory returns a boolean if a field has been set.
 
 ### GetTemporaryDirectoryPermissions
 
@@ -971,6 +976,11 @@ and a boolean to check if the value has been set.
 
 SetTemporaryDirectoryPermissions sets TemporaryDirectoryPermissions field to given value.
 
+### HasTemporaryDirectoryPermissions
+
+`func (o *AddHttpServletExtensionRequest) HasTemporaryDirectoryPermissions() bool`
+
+HasTemporaryDirectoryPermissions returns a boolean if a field has been set.
 
 ### GetMaxResults
 
@@ -1116,6 +1126,11 @@ and a boolean to check if the value has been set.
 
 SetDebugLevel sets DebugLevel field to given value.
 
+### HasDebugLevel
+
+`func (o *AddHttpServletExtensionRequest) HasDebugLevel() bool`
+
+HasDebugLevel returns a boolean if a field has been set.
 
 ### GetDebugType
 
@@ -1136,6 +1151,11 @@ and a boolean to check if the value has been set.
 
 SetDebugType sets DebugType field to given value.
 
+### HasDebugType
+
+`func (o *AddHttpServletExtensionRequest) HasDebugType() bool`
+
+HasDebugType returns a boolean if a field has been set.
 
 ### GetIncludeStackTrace
 
@@ -1156,6 +1176,11 @@ and a boolean to check if the value has been set.
 
 SetIncludeStackTrace sets IncludeStackTrace field to given value.
 
+### HasIncludeStackTrace
+
+`func (o *AddHttpServletExtensionRequest) HasIncludeStackTrace() bool`
+
+HasIncludeStackTrace returns a boolean if a field has been set.
 
 ### GetExtensionClass
 

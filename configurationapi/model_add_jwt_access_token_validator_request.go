@@ -19,15 +19,15 @@ type AddJwtAccessTokenValidatorRequest struct {
 	// Name of the new Access Token Validator
 	ValidatorName           string                                                `json:"validatorName"`
 	Schemas                 []EnumjwtAccessTokenValidatorSchemaUrn                `json:"schemas"`
-	AllowedSigningAlgorithm []EnumaccessTokenValidatorAllowedSigningAlgorithmProp `json:"allowedSigningAlgorithm"`
+	AllowedSigningAlgorithm []EnumaccessTokenValidatorAllowedSigningAlgorithmProp `json:"allowedSigningAlgorithm,omitempty"`
 	// Specifies the locally stored certificates that may be used to validate the signature of an incoming JWT access token. If this property is specified, the JWT Access Token Validator will not use a JWKS endpoint to retrieve public keys.
 	SigningCertificate []string `json:"signingCertificate,omitempty"`
 	// The relative path to JWKS endpoint from which to retrieve one or more public signing keys that may be used to validate the signature of an incoming JWT access token. This path is relative to the base_url property defined for the validator's external authorization server. If jwks-endpoint-path is specified, the JWT Access Token Validator will not consult locally stored certificates for validating token signatures.
 	JwksEndpointPath *string `json:"jwksEndpointPath,omitempty"`
 	// The public-private key pair that is used to encrypt the JWT payload. If specified, the JWT Access Token Validator will use the private key to decrypt the JWT payload, and the public key must be exported to the Authorization Server that is issuing access tokens.
 	EncryptionKeyPair                 *string                                                         `json:"encryptionKeyPair,omitempty"`
-	AllowedKeyEncryptionAlgorithm     []EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp     `json:"allowedKeyEncryptionAlgorithm"`
-	AllowedContentEncryptionAlgorithm []EnumaccessTokenValidatorAllowedContentEncryptionAlgorithmProp `json:"allowedContentEncryptionAlgorithm"`
+	AllowedKeyEncryptionAlgorithm     []EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp     `json:"allowedKeyEncryptionAlgorithm,omitempty"`
+	AllowedContentEncryptionAlgorithm []EnumaccessTokenValidatorAllowedContentEncryptionAlgorithmProp `json:"allowedContentEncryptionAlgorithm,omitempty"`
 	// Specifies the amount of clock skew that is tolerated by the JWT Access Token Validator when evaluating whether a token is within its valid time interval. The duration specified by this parameter will be subtracted from the token's not-before (nbf) time and added to the token's expiration (exp) time, if present, to allow for any time difference between the local server's clock and the token issuer's clock.
 	ClockSkewGracePeriod *string `json:"clockSkewGracePeriod,omitempty"`
 	// The name of the token claim that contains the OAuth2 client Id.
@@ -35,7 +35,7 @@ type AddJwtAccessTokenValidatorRequest struct {
 	// The name of the token claim that contains the scopes granted by the token.
 	ScopeClaimName *string `json:"scopeClaimName,omitempty"`
 	// When multiple JWT Access Token Validators are defined for a single Directory Server, this property determines the evaluation order for determining the correct validator class for an access token received by the Directory Server. Values of this property must be unique among all JWT Access Token Validators defined within Directory Server but not necessarily contiguous. JWT Access Token Validators with a smaller value will be evaluated first to determine if they are able to validate the access token.
-	EvaluationOrderIndex int32 `json:"evaluationOrderIndex"`
+	EvaluationOrderIndex *int32 `json:"evaluationOrderIndex,omitempty"`
 	// Specifies the external server that will be used to aid in validating access tokens. In most cases this will be the Authorization Server that minted the token.
 	AuthorizationServer *string `json:"authorizationServer,omitempty"`
 	// Specifies the name of the Identity Mapper that should be used for associating user entries with Bearer token subject names. The claim name from which to obtain the subject (i.e. the currently logged-in user) may be configured using the subject-claim-name property.
@@ -52,14 +52,10 @@ type AddJwtAccessTokenValidatorRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddJwtAccessTokenValidatorRequest(validatorName string, schemas []EnumjwtAccessTokenValidatorSchemaUrn, allowedSigningAlgorithm []EnumaccessTokenValidatorAllowedSigningAlgorithmProp, allowedKeyEncryptionAlgorithm []EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp, allowedContentEncryptionAlgorithm []EnumaccessTokenValidatorAllowedContentEncryptionAlgorithmProp, evaluationOrderIndex int32, enabled bool) *AddJwtAccessTokenValidatorRequest {
+func NewAddJwtAccessTokenValidatorRequest(validatorName string, schemas []EnumjwtAccessTokenValidatorSchemaUrn, enabled bool) *AddJwtAccessTokenValidatorRequest {
 	this := AddJwtAccessTokenValidatorRequest{}
 	this.ValidatorName = validatorName
 	this.Schemas = schemas
-	this.AllowedSigningAlgorithm = allowedSigningAlgorithm
-	this.AllowedKeyEncryptionAlgorithm = allowedKeyEncryptionAlgorithm
-	this.AllowedContentEncryptionAlgorithm = allowedContentEncryptionAlgorithm
-	this.EvaluationOrderIndex = evaluationOrderIndex
 	this.Enabled = enabled
 	return &this
 }
@@ -120,26 +116,34 @@ func (o *AddJwtAccessTokenValidatorRequest) SetSchemas(v []EnumjwtAccessTokenVal
 	o.Schemas = v
 }
 
-// GetAllowedSigningAlgorithm returns the AllowedSigningAlgorithm field value
+// GetAllowedSigningAlgorithm returns the AllowedSigningAlgorithm field value if set, zero value otherwise.
 func (o *AddJwtAccessTokenValidatorRequest) GetAllowedSigningAlgorithm() []EnumaccessTokenValidatorAllowedSigningAlgorithmProp {
-	if o == nil {
+	if o == nil || isNil(o.AllowedSigningAlgorithm) {
 		var ret []EnumaccessTokenValidatorAllowedSigningAlgorithmProp
 		return ret
 	}
-
 	return o.AllowedSigningAlgorithm
 }
 
-// GetAllowedSigningAlgorithmOk returns a tuple with the AllowedSigningAlgorithm field value
+// GetAllowedSigningAlgorithmOk returns a tuple with the AllowedSigningAlgorithm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJwtAccessTokenValidatorRequest) GetAllowedSigningAlgorithmOk() ([]EnumaccessTokenValidatorAllowedSigningAlgorithmProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.AllowedSigningAlgorithm) {
 		return nil, false
 	}
 	return o.AllowedSigningAlgorithm, true
 }
 
-// SetAllowedSigningAlgorithm sets field value
+// HasAllowedSigningAlgorithm returns a boolean if a field has been set.
+func (o *AddJwtAccessTokenValidatorRequest) HasAllowedSigningAlgorithm() bool {
+	if o != nil && !isNil(o.AllowedSigningAlgorithm) {
+		return true
+	}
+
+	return false
+}
+
+// SetAllowedSigningAlgorithm gets a reference to the given []EnumaccessTokenValidatorAllowedSigningAlgorithmProp and assigns it to the AllowedSigningAlgorithm field.
 func (o *AddJwtAccessTokenValidatorRequest) SetAllowedSigningAlgorithm(v []EnumaccessTokenValidatorAllowedSigningAlgorithmProp) {
 	o.AllowedSigningAlgorithm = v
 }
@@ -240,50 +244,66 @@ func (o *AddJwtAccessTokenValidatorRequest) SetEncryptionKeyPair(v string) {
 	o.EncryptionKeyPair = &v
 }
 
-// GetAllowedKeyEncryptionAlgorithm returns the AllowedKeyEncryptionAlgorithm field value
+// GetAllowedKeyEncryptionAlgorithm returns the AllowedKeyEncryptionAlgorithm field value if set, zero value otherwise.
 func (o *AddJwtAccessTokenValidatorRequest) GetAllowedKeyEncryptionAlgorithm() []EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp {
-	if o == nil {
+	if o == nil || isNil(o.AllowedKeyEncryptionAlgorithm) {
 		var ret []EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp
 		return ret
 	}
-
 	return o.AllowedKeyEncryptionAlgorithm
 }
 
-// GetAllowedKeyEncryptionAlgorithmOk returns a tuple with the AllowedKeyEncryptionAlgorithm field value
+// GetAllowedKeyEncryptionAlgorithmOk returns a tuple with the AllowedKeyEncryptionAlgorithm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJwtAccessTokenValidatorRequest) GetAllowedKeyEncryptionAlgorithmOk() ([]EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.AllowedKeyEncryptionAlgorithm) {
 		return nil, false
 	}
 	return o.AllowedKeyEncryptionAlgorithm, true
 }
 
-// SetAllowedKeyEncryptionAlgorithm sets field value
+// HasAllowedKeyEncryptionAlgorithm returns a boolean if a field has been set.
+func (o *AddJwtAccessTokenValidatorRequest) HasAllowedKeyEncryptionAlgorithm() bool {
+	if o != nil && !isNil(o.AllowedKeyEncryptionAlgorithm) {
+		return true
+	}
+
+	return false
+}
+
+// SetAllowedKeyEncryptionAlgorithm gets a reference to the given []EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp and assigns it to the AllowedKeyEncryptionAlgorithm field.
 func (o *AddJwtAccessTokenValidatorRequest) SetAllowedKeyEncryptionAlgorithm(v []EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp) {
 	o.AllowedKeyEncryptionAlgorithm = v
 }
 
-// GetAllowedContentEncryptionAlgorithm returns the AllowedContentEncryptionAlgorithm field value
+// GetAllowedContentEncryptionAlgorithm returns the AllowedContentEncryptionAlgorithm field value if set, zero value otherwise.
 func (o *AddJwtAccessTokenValidatorRequest) GetAllowedContentEncryptionAlgorithm() []EnumaccessTokenValidatorAllowedContentEncryptionAlgorithmProp {
-	if o == nil {
+	if o == nil || isNil(o.AllowedContentEncryptionAlgorithm) {
 		var ret []EnumaccessTokenValidatorAllowedContentEncryptionAlgorithmProp
 		return ret
 	}
-
 	return o.AllowedContentEncryptionAlgorithm
 }
 
-// GetAllowedContentEncryptionAlgorithmOk returns a tuple with the AllowedContentEncryptionAlgorithm field value
+// GetAllowedContentEncryptionAlgorithmOk returns a tuple with the AllowedContentEncryptionAlgorithm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJwtAccessTokenValidatorRequest) GetAllowedContentEncryptionAlgorithmOk() ([]EnumaccessTokenValidatorAllowedContentEncryptionAlgorithmProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.AllowedContentEncryptionAlgorithm) {
 		return nil, false
 	}
 	return o.AllowedContentEncryptionAlgorithm, true
 }
 
-// SetAllowedContentEncryptionAlgorithm sets field value
+// HasAllowedContentEncryptionAlgorithm returns a boolean if a field has been set.
+func (o *AddJwtAccessTokenValidatorRequest) HasAllowedContentEncryptionAlgorithm() bool {
+	if o != nil && !isNil(o.AllowedContentEncryptionAlgorithm) {
+		return true
+	}
+
+	return false
+}
+
+// SetAllowedContentEncryptionAlgorithm gets a reference to the given []EnumaccessTokenValidatorAllowedContentEncryptionAlgorithmProp and assigns it to the AllowedContentEncryptionAlgorithm field.
 func (o *AddJwtAccessTokenValidatorRequest) SetAllowedContentEncryptionAlgorithm(v []EnumaccessTokenValidatorAllowedContentEncryptionAlgorithmProp) {
 	o.AllowedContentEncryptionAlgorithm = v
 }
@@ -384,28 +404,36 @@ func (o *AddJwtAccessTokenValidatorRequest) SetScopeClaimName(v string) {
 	o.ScopeClaimName = &v
 }
 
-// GetEvaluationOrderIndex returns the EvaluationOrderIndex field value
+// GetEvaluationOrderIndex returns the EvaluationOrderIndex field value if set, zero value otherwise.
 func (o *AddJwtAccessTokenValidatorRequest) GetEvaluationOrderIndex() int32 {
-	if o == nil {
+	if o == nil || isNil(o.EvaluationOrderIndex) {
 		var ret int32
 		return ret
 	}
-
-	return o.EvaluationOrderIndex
+	return *o.EvaluationOrderIndex
 }
 
-// GetEvaluationOrderIndexOk returns a tuple with the EvaluationOrderIndex field value
+// GetEvaluationOrderIndexOk returns a tuple with the EvaluationOrderIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJwtAccessTokenValidatorRequest) GetEvaluationOrderIndexOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || isNil(o.EvaluationOrderIndex) {
 		return nil, false
 	}
-	return &o.EvaluationOrderIndex, true
+	return o.EvaluationOrderIndex, true
 }
 
-// SetEvaluationOrderIndex sets field value
+// HasEvaluationOrderIndex returns a boolean if a field has been set.
+func (o *AddJwtAccessTokenValidatorRequest) HasEvaluationOrderIndex() bool {
+	if o != nil && !isNil(o.EvaluationOrderIndex) {
+		return true
+	}
+
+	return false
+}
+
+// SetEvaluationOrderIndex gets a reference to the given int32 and assigns it to the EvaluationOrderIndex field.
 func (o *AddJwtAccessTokenValidatorRequest) SetEvaluationOrderIndex(v int32) {
-	o.EvaluationOrderIndex = v
+	o.EvaluationOrderIndex = &v
 }
 
 // GetAuthorizationServer returns the AuthorizationServer field value if set, zero value otherwise.
@@ -568,7 +596,7 @@ func (o AddJwtAccessTokenValidatorRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if true {
+	if !isNil(o.AllowedSigningAlgorithm) {
 		toSerialize["allowedSigningAlgorithm"] = o.AllowedSigningAlgorithm
 	}
 	if !isNil(o.SigningCertificate) {
@@ -580,10 +608,10 @@ func (o AddJwtAccessTokenValidatorRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.EncryptionKeyPair) {
 		toSerialize["encryptionKeyPair"] = o.EncryptionKeyPair
 	}
-	if true {
+	if !isNil(o.AllowedKeyEncryptionAlgorithm) {
 		toSerialize["allowedKeyEncryptionAlgorithm"] = o.AllowedKeyEncryptionAlgorithm
 	}
-	if true {
+	if !isNil(o.AllowedContentEncryptionAlgorithm) {
 		toSerialize["allowedContentEncryptionAlgorithm"] = o.AllowedContentEncryptionAlgorithm
 	}
 	if !isNil(o.ClockSkewGracePeriod) {
@@ -595,7 +623,7 @@ func (o AddJwtAccessTokenValidatorRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.ScopeClaimName) {
 		toSerialize["scopeClaimName"] = o.ScopeClaimName
 	}
-	if true {
+	if !isNil(o.EvaluationOrderIndex) {
 		toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
 	}
 	if !isNil(o.AuthorizationServer) {

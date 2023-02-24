@@ -19,7 +19,7 @@ type AddComposedAttributePluginRequest struct {
 	// Name of the new Plugin
 	PluginName string                                 `json:"pluginName"`
 	Schemas    []EnumcomposedAttributePluginSchemaUrn `json:"schemas"`
-	PluginType []EnumpluginPluginTypeProp             `json:"pluginType"`
+	PluginType []EnumpluginPluginTypeProp             `json:"pluginType,omitempty"`
 	// The name or OID of the attribute type for which values are to be generated.
 	AttributeType string `json:"attributeType"`
 	// Specifies a pattern for constructing the values to use for the target attribute type.
@@ -52,11 +52,10 @@ type AddComposedAttributePluginRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddComposedAttributePluginRequest(pluginName string, schemas []EnumcomposedAttributePluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, attributeType string, valuePattern []string, enabled bool) *AddComposedAttributePluginRequest {
+func NewAddComposedAttributePluginRequest(pluginName string, schemas []EnumcomposedAttributePluginSchemaUrn, attributeType string, valuePattern []string, enabled bool) *AddComposedAttributePluginRequest {
 	this := AddComposedAttributePluginRequest{}
 	this.PluginName = pluginName
 	this.Schemas = schemas
-	this.PluginType = pluginType
 	this.AttributeType = attributeType
 	this.ValuePattern = valuePattern
 	this.Enabled = enabled
@@ -119,26 +118,34 @@ func (o *AddComposedAttributePluginRequest) SetSchemas(v []EnumcomposedAttribute
 	o.Schemas = v
 }
 
-// GetPluginType returns the PluginType field value
+// GetPluginType returns the PluginType field value if set, zero value otherwise.
 func (o *AddComposedAttributePluginRequest) GetPluginType() []EnumpluginPluginTypeProp {
-	if o == nil {
+	if o == nil || isNil(o.PluginType) {
 		var ret []EnumpluginPluginTypeProp
 		return ret
 	}
-
 	return o.PluginType
 }
 
-// GetPluginTypeOk returns a tuple with the PluginType field value
+// GetPluginTypeOk returns a tuple with the PluginType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddComposedAttributePluginRequest) GetPluginTypeOk() ([]EnumpluginPluginTypeProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.PluginType) {
 		return nil, false
 	}
 	return o.PluginType, true
 }
 
-// SetPluginType sets field value
+// HasPluginType returns a boolean if a field has been set.
+func (o *AddComposedAttributePluginRequest) HasPluginType() bool {
+	if o != nil && !isNil(o.PluginType) {
+		return true
+	}
+
+	return false
+}
+
+// SetPluginType gets a reference to the given []EnumpluginPluginTypeProp and assigns it to the PluginType field.
 func (o *AddComposedAttributePluginRequest) SetPluginType(v []EnumpluginPluginTypeProp) {
 	o.PluginType = v
 }
@@ -671,7 +678,7 @@ func (o AddComposedAttributePluginRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if true {
+	if !isNil(o.PluginType) {
 		toSerialize["pluginType"] = o.PluginType
 	}
 	if true {

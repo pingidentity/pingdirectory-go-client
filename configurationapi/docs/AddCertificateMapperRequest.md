@@ -8,12 +8,12 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumthirdPartyCertificateMapperSchemaUrn**](EnumthirdPartyCertificateMapperSchemaUrn.md) |  | 
 **Description** | Pointer to **string** | A description for this Certificate Mapper | [optional] 
 **Enabled** | **bool** | Indicates whether the Certificate Mapper is enabled. | 
-**SubjectAttribute** | **string** | Specifies the name or OID of the attribute whose value should exactly match the certificate subject DN. | 
+**SubjectAttribute** | Pointer to **string** | Specifies the name or OID of the attribute whose value should exactly match the certificate subject DN. | [optional] 
 **UserBaseDN** | Pointer to **[]string** | Specifies the set of base DNs below which to search for users. | [optional] 
 **ScriptClass** | **string** | The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Certificate Mapper. | 
 **ScriptArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Scripted Certificate Mapper. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **SubjectAttributeMapping** | **[]string** | Specifies a mapping between certificate attributes and user attributes. | 
-**FingerprintAttribute** | **string** | Specifies the attribute in which to look for the fingerprint. | 
+**FingerprintAttribute** | Pointer to **string** | Specifies the attribute in which to look for the fingerprint. | [optional] 
 **FingerprintAlgorithm** | [**EnumcertificateMapperFingerprintAlgorithmProp**](EnumcertificateMapperFingerprintAlgorithmProp.md) |  | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Certificate Mapper. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Certificate Mapper. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewAddCertificateMapperRequest
 
-`func NewAddCertificateMapperRequest(mapperName string, schemas []EnumthirdPartyCertificateMapperSchemaUrn, enabled bool, subjectAttribute string, scriptClass string, subjectAttributeMapping []string, fingerprintAttribute string, fingerprintAlgorithm EnumcertificateMapperFingerprintAlgorithmProp, extensionClass string, ) *AddCertificateMapperRequest`
+`func NewAddCertificateMapperRequest(mapperName string, schemas []EnumthirdPartyCertificateMapperSchemaUrn, enabled bool, scriptClass string, subjectAttributeMapping []string, fingerprintAlgorithm EnumcertificateMapperFingerprintAlgorithmProp, extensionClass string, ) *AddCertificateMapperRequest`
 
 NewAddCertificateMapperRequest instantiates a new AddCertificateMapperRequest object
 This constructor will assign default values to properties that have it defined,
@@ -141,6 +141,11 @@ and a boolean to check if the value has been set.
 
 SetSubjectAttribute sets SubjectAttribute field to given value.
 
+### HasSubjectAttribute
+
+`func (o *AddCertificateMapperRequest) HasSubjectAttribute() bool`
+
+HasSubjectAttribute returns a boolean if a field has been set.
 
 ### GetUserBaseDN
 
@@ -251,6 +256,11 @@ and a boolean to check if the value has been set.
 
 SetFingerprintAttribute sets FingerprintAttribute field to given value.
 
+### HasFingerprintAttribute
+
+`func (o *AddCertificateMapperRequest) HasFingerprintAttribute() bool`
+
+HasFingerprintAttribute returns a boolean if a field has been set.
 
 ### GetFingerprintAlgorithm
 

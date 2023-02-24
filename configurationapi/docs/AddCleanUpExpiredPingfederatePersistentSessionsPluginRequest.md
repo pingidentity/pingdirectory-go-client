@@ -6,18 +6,18 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnumcleanUpExpiredPingfederatePersistentSessionsPluginSchemaUrn**](EnumcleanUpExpiredPingfederatePersistentSessionsPluginSchemaUrn.md) |  | 
-**PollingInterval** | **string** | This specifies how often the plugin should check for expired data. It also controls the offset of peer servers (see the peer-server-priority-index for more information). | 
+**PollingInterval** | Pointer to **string** | This specifies how often the plugin should check for expired data. It also controls the offset of peer servers (see the peer-server-priority-index for more information). | [optional] 
 **PeerServerPriorityIndex** | Pointer to **int32** | In a replicated environment, this determines the order in which peer servers should attempt to purge data. | [optional] 
 **BaseDN** | Pointer to **string** | Only entries located within the subtree specified by this base DN are eligible for purging. | [optional] 
-**MaxUpdatesPerSecond** | **int32** | This setting smooths out the performance impact on the server by throttling the purging to the specified maximum number of updates per second. To avoid a large backlog, this value should be set comfortably above the average rate that expired data is generated. When purge-behavior is set to subtree-delete-entries, then deletion of the entire subtree is considered a single update for the purposes of throttling. | 
-**NumDeleteThreads** | **int32** | The number of threads used to delete expired entries. | 
+**MaxUpdatesPerSecond** | Pointer to **int32** | This setting smooths out the performance impact on the server by throttling the purging to the specified maximum number of updates per second. To avoid a large backlog, this value should be set comfortably above the average rate that expired data is generated. When purge-behavior is set to subtree-delete-entries, then deletion of the entire subtree is considered a single update for the purposes of throttling. | [optional] 
+**NumDeleteThreads** | Pointer to **int32** | The number of threads used to delete expired entries. | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
 
 ## Methods
 
 ### NewAddCleanUpExpiredPingfederatePersistentSessionsPluginRequest
 
-`func NewAddCleanUpExpiredPingfederatePersistentSessionsPluginRequest(pluginName string, schemas []EnumcleanUpExpiredPingfederatePersistentSessionsPluginSchemaUrn, pollingInterval string, maxUpdatesPerSecond int32, numDeleteThreads int32, enabled bool, ) *AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest`
+`func NewAddCleanUpExpiredPingfederatePersistentSessionsPluginRequest(pluginName string, schemas []EnumcleanUpExpiredPingfederatePersistentSessionsPluginSchemaUrn, enabled bool, ) *AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest`
 
 NewAddCleanUpExpiredPingfederatePersistentSessionsPluginRequest instantiates a new AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -91,6 +91,11 @@ and a boolean to check if the value has been set.
 
 SetPollingInterval sets PollingInterval field to given value.
 
+### HasPollingInterval
+
+`func (o *AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest) HasPollingInterval() bool`
+
+HasPollingInterval returns a boolean if a field has been set.
 
 ### GetPeerServerPriorityIndex
 
@@ -161,6 +166,11 @@ and a boolean to check if the value has been set.
 
 SetMaxUpdatesPerSecond sets MaxUpdatesPerSecond field to given value.
 
+### HasMaxUpdatesPerSecond
+
+`func (o *AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest) HasMaxUpdatesPerSecond() bool`
+
+HasMaxUpdatesPerSecond returns a boolean if a field has been set.
 
 ### GetNumDeleteThreads
 
@@ -181,6 +191,11 @@ and a boolean to check if the value has been set.
 
 SetNumDeleteThreads sets NumDeleteThreads field to given value.
 
+### HasNumDeleteThreads
+
+`func (o *AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest) HasNumDeleteThreads() bool`
+
+HasNumDeleteThreads returns a boolean if a field has been set.
 
 ### GetEnabled
 

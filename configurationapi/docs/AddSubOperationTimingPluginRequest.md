@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnumsubOperationTimingPluginSchemaUrn**](EnumsubOperationTimingPluginSchemaUrn.md) |  | 
-**PluginType** | [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | 
+**PluginType** | Pointer to [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | [optional] 
 **RequestCriteria** | Pointer to **string** | Specifies a set of request criteria used to indicate that only operations for requests matching this criteria should be counted when aggregating timing data. | [optional] 
-**NumMostExpensivePhasesShown** | **int32** | This controls how many of the most expensive phases are included per operation type in the monitor entry. | 
+**NumMostExpensivePhasesShown** | Pointer to **int32** | This controls how many of the most expensive phases are included per operation type in the monitor entry. | [optional] 
 **InvokeForInternalOperations** | Pointer to **bool** | Indicates whether the plug-in should be invoked for internal operations. | [optional] 
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewAddSubOperationTimingPluginRequest
 
-`func NewAddSubOperationTimingPluginRequest(pluginName string, schemas []EnumsubOperationTimingPluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, numMostExpensivePhasesShown int32, enabled bool, ) *AddSubOperationTimingPluginRequest`
+`func NewAddSubOperationTimingPluginRequest(pluginName string, schemas []EnumsubOperationTimingPluginSchemaUrn, enabled bool, ) *AddSubOperationTimingPluginRequest`
 
 NewAddSubOperationTimingPluginRequest instantiates a new AddSubOperationTimingPluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -91,6 +91,11 @@ and a boolean to check if the value has been set.
 
 SetPluginType sets PluginType field to given value.
 
+### HasPluginType
+
+`func (o *AddSubOperationTimingPluginRequest) HasPluginType() bool`
+
+HasPluginType returns a boolean if a field has been set.
 
 ### GetRequestCriteria
 
@@ -136,6 +141,11 @@ and a boolean to check if the value has been set.
 
 SetNumMostExpensivePhasesShown sets NumMostExpensivePhasesShown field to given value.
 
+### HasNumMostExpensivePhasesShown
+
+`func (o *AddSubOperationTimingPluginRequest) HasNumMostExpensivePhasesShown() bool`
+
+HasNumMostExpensivePhasesShown returns a boolean if a field has been set.
 
 ### GetInvokeForInternalOperations
 

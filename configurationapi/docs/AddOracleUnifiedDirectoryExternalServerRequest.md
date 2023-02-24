@@ -7,19 +7,19 @@ Name | Type | Description | Notes
 **ServerName** | **string** | Name of the new External Server | 
 **Schemas** | [**[]EnumoracleUnifiedDirectoryExternalServerSchemaUrn**](EnumoracleUnifiedDirectoryExternalServerSchemaUrn.md) |  | 
 **ServerHostName** | **string** | The host name or IP address of the target LDAP server. | 
-**ServerPort** | **int32** | The port number on which the server listens for requests. | 
+**ServerPort** | Pointer to **int32** | The port number on which the server listens for requests. | [optional] 
 **Location** | Pointer to **string** | Specifies the location for the LDAP External Server. | [optional] 
 **BindDN** | Pointer to **string** | The DN to use to bind to the target LDAP server if simple authentication is required. | [optional] 
 **Password** | Pointer to **string** | The login password for the specified user. | [optional] 
 **PassphraseProvider** | Pointer to **string** | The passphrase provider to use to obtain the login password for the specified user. | [optional] 
-**ConnectionSecurity** | [**EnumexternalServerConnectionSecurityProp**](EnumexternalServerConnectionSecurityProp.md) |  | 
-**AuthenticationMethod** | [**EnumexternalServerAuthenticationMethodProp**](EnumexternalServerAuthenticationMethodProp.md) |  | 
-**VerifyCredentialsMethod** | [**EnumexternalServerVerifyCredentialsMethodProp**](EnumexternalServerVerifyCredentialsMethodProp.md) |  | 
+**ConnectionSecurity** | Pointer to [**EnumexternalServerConnectionSecurityProp**](EnumexternalServerConnectionSecurityProp.md) |  | [optional] 
+**AuthenticationMethod** | Pointer to [**EnumexternalServerAuthenticationMethodProp**](EnumexternalServerAuthenticationMethodProp.md) |  | [optional] 
+**VerifyCredentialsMethod** | Pointer to [**EnumexternalServerVerifyCredentialsMethodProp**](EnumexternalServerVerifyCredentialsMethodProp.md) |  | [optional] 
 **HealthCheckConnectTimeout** | Pointer to **string** | Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable. | [optional] 
-**MaxConnectionAge** | **string** | Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections. | 
+**MaxConnectionAge** | Pointer to **string** | Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections. | [optional] 
 **MinExpiredConnectionDisconnectInterval** | Pointer to **string** | Specifies the minimum length of time that should pass between connection closures as a result of the connections being established for longer than the maximum connection age. This may help avoid cases in which a large number of connections are closed and re-established in a short period of time because of the maximum connection age. | [optional] 
-**ConnectTimeout** | **string** | Specifies the maximum length of time to wait for a connection to be established before giving up and considering the server unavailable. | 
-**MaxResponseSize** | **string** | Specifies the maximum response size that should be supported for messages received from the LDAP external server. | 
+**ConnectTimeout** | Pointer to **string** | Specifies the maximum length of time to wait for a connection to be established before giving up and considering the server unavailable. | [optional] 
+**MaxResponseSize** | Pointer to **string** | Specifies the maximum response size that should be supported for messages received from the LDAP external server. | [optional] 
 **KeyManagerProvider** | Pointer to **string** | The key manager provider to use if SSL or StartTLS is to be used for connection-level security. When specifying a value for this property (except when using the Null key manager provider) you must ensure that the external server trusts this server&#39;s public certificate by adding this server&#39;s public certificate to the external server&#39;s trust store. | [optional] 
 **TrustManagerProvider** | Pointer to **string** | The trust manager provider to use if SSL or StartTLS is to be used for connection-level security. | [optional] 
 **InitialConnections** | Pointer to **int32** | The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool. | [optional] 
@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 
 ### NewAddOracleUnifiedDirectoryExternalServerRequest
 
-`func NewAddOracleUnifiedDirectoryExternalServerRequest(serverName string, schemas []EnumoracleUnifiedDirectoryExternalServerSchemaUrn, serverHostName string, serverPort int32, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerAuthenticationMethodProp, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string, ) *AddOracleUnifiedDirectoryExternalServerRequest`
+`func NewAddOracleUnifiedDirectoryExternalServerRequest(serverName string, schemas []EnumoracleUnifiedDirectoryExternalServerSchemaUrn, serverHostName string, ) *AddOracleUnifiedDirectoryExternalServerRequest`
 
 NewAddOracleUnifiedDirectoryExternalServerRequest instantiates a new AddOracleUnifiedDirectoryExternalServerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -126,6 +126,11 @@ and a boolean to check if the value has been set.
 
 SetServerPort sets ServerPort field to given value.
 
+### HasServerPort
+
+`func (o *AddOracleUnifiedDirectoryExternalServerRequest) HasServerPort() bool`
+
+HasServerPort returns a boolean if a field has been set.
 
 ### GetLocation
 
@@ -246,6 +251,11 @@ and a boolean to check if the value has been set.
 
 SetConnectionSecurity sets ConnectionSecurity field to given value.
 
+### HasConnectionSecurity
+
+`func (o *AddOracleUnifiedDirectoryExternalServerRequest) HasConnectionSecurity() bool`
+
+HasConnectionSecurity returns a boolean if a field has been set.
 
 ### GetAuthenticationMethod
 
@@ -266,6 +276,11 @@ and a boolean to check if the value has been set.
 
 SetAuthenticationMethod sets AuthenticationMethod field to given value.
 
+### HasAuthenticationMethod
+
+`func (o *AddOracleUnifiedDirectoryExternalServerRequest) HasAuthenticationMethod() bool`
+
+HasAuthenticationMethod returns a boolean if a field has been set.
 
 ### GetVerifyCredentialsMethod
 
@@ -286,6 +301,11 @@ and a boolean to check if the value has been set.
 
 SetVerifyCredentialsMethod sets VerifyCredentialsMethod field to given value.
 
+### HasVerifyCredentialsMethod
+
+`func (o *AddOracleUnifiedDirectoryExternalServerRequest) HasVerifyCredentialsMethod() bool`
+
+HasVerifyCredentialsMethod returns a boolean if a field has been set.
 
 ### GetHealthCheckConnectTimeout
 
@@ -331,6 +351,11 @@ and a boolean to check if the value has been set.
 
 SetMaxConnectionAge sets MaxConnectionAge field to given value.
 
+### HasMaxConnectionAge
+
+`func (o *AddOracleUnifiedDirectoryExternalServerRequest) HasMaxConnectionAge() bool`
+
+HasMaxConnectionAge returns a boolean if a field has been set.
 
 ### GetMinExpiredConnectionDisconnectInterval
 
@@ -376,6 +401,11 @@ and a boolean to check if the value has been set.
 
 SetConnectTimeout sets ConnectTimeout field to given value.
 
+### HasConnectTimeout
+
+`func (o *AddOracleUnifiedDirectoryExternalServerRequest) HasConnectTimeout() bool`
+
+HasConnectTimeout returns a boolean if a field has been set.
 
 ### GetMaxResponseSize
 
@@ -396,6 +426,11 @@ and a boolean to check if the value has been set.
 
 SetMaxResponseSize sets MaxResponseSize field to given value.
 
+### HasMaxResponseSize
+
+`func (o *AddOracleUnifiedDirectoryExternalServerRequest) HasMaxResponseSize() bool`
+
+HasMaxResponseSize returns a boolean if a field has been set.
 
 ### GetKeyManagerProvider
 

@@ -40,7 +40,7 @@ type AddNumericGaugeRequest struct {
 	// A description for this Gauge
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Gauge is enabled.
-	Enabled          bool                           `json:"enabled"`
+	Enabled          *bool                          `json:"enabled,omitempty"`
 	OverrideSeverity *EnumgaugeOverrideSeverityProp `json:"overrideSeverity,omitempty"`
 	AlertLevel       *EnumgaugeAlertLevelProp       `json:"alertLevel,omitempty"`
 	// The frequency with which this Gauge is updated.
@@ -59,12 +59,11 @@ type AddNumericGaugeRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddNumericGaugeRequest(gaugeName string, schemas []EnumnumericGaugeSchemaUrn, gaugeDataSource string, enabled bool) *AddNumericGaugeRequest {
+func NewAddNumericGaugeRequest(gaugeName string, schemas []EnumnumericGaugeSchemaUrn, gaugeDataSource string) *AddNumericGaugeRequest {
 	this := AddNumericGaugeRequest{}
 	this.GaugeName = gaugeName
 	this.Schemas = schemas
 	this.GaugeDataSource = gaugeDataSource
-	this.Enabled = enabled
 	return &this
 }
 
@@ -436,28 +435,36 @@ func (o *AddNumericGaugeRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetEnabled returns the Enabled field value
+// GetEnabled returns the Enabled field value if set, zero value otherwise.
 func (o *AddNumericGaugeRequest) GetEnabled() bool {
-	if o == nil {
+	if o == nil || isNil(o.Enabled) {
 		var ret bool
 		return ret
 	}
-
-	return o.Enabled
+	return *o.Enabled
 }
 
-// GetEnabledOk returns a tuple with the Enabled field value
+// GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetEnabledOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || isNil(o.Enabled) {
 		return nil, false
 	}
-	return &o.Enabled, true
+	return o.Enabled, true
 }
 
-// SetEnabled sets field value
+// HasEnabled returns a boolean if a field has been set.
+func (o *AddNumericGaugeRequest) HasEnabled() bool {
+	if o != nil && !isNil(o.Enabled) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *AddNumericGaugeRequest) SetEnabled(v bool) {
-	o.Enabled = v
+	o.Enabled = &v
 }
 
 // GetOverrideSeverity returns the OverrideSeverity field value if set, zero value otherwise.
@@ -754,7 +761,7 @@ func (o AddNumericGaugeRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	if true {
+	if !isNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
 	if !isNil(o.OverrideSeverity) {

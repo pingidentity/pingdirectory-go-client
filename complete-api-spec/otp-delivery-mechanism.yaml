@@ -170,6 +170,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/twilio-otp-delivery-mechanism-shared'
+      required:
+      - phoneNumberAttributeType
     twilio-otp-delivery-mechanism-shared:
       type: object
       properties:
@@ -229,7 +231,6 @@ components:
       required:
       - schemas
       - twilioAccountSID
-      - phoneNumberAttributeType
       - senderPhoneNumber
       - enabled
     Enumtwilio-otp-delivery-mechanismSchemaUrn:
@@ -257,6 +258,9 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/email-otp-delivery-mechanism-shared'
+      required:
+      - emailAddressAttributeType
+      - messageSubject
     email-otp-delivery-mechanism-shared:
       type: object
       properties:
@@ -304,9 +308,7 @@ components:
               Indicates whether this OTP Delivery Mechanism is enabled for use in the server.
       required:
       - schemas
-      - emailAddressAttributeType
       - senderAddress
-      - messageSubject
       - enabled
     Enumemail-otp-delivery-mechanismSchemaUrn:
       type: string

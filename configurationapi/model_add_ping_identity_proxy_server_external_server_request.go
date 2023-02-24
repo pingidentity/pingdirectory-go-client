@@ -19,13 +19,13 @@ type AddPingIdentityProxyServerExternalServerRequest struct {
 	// Name of the new External Server
 	ServerName              string                                               `json:"serverName"`
 	Schemas                 []EnumpingIdentityProxyServerExternalServerSchemaUrn `json:"schemas"`
-	VerifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp        `json:"verifyCredentialsMethod"`
+	VerifyCredentialsMethod *EnumexternalServerVerifyCredentialsMethodProp       `json:"verifyCredentialsMethod,omitempty"`
 	// Indicates whether to include the administrative operation request control in requests sent to this server which are intended for administrative operations (e.g., health checking) rather than requests directly from clients.
 	UseAdministrativeOperationControl *bool `json:"useAdministrativeOperationControl,omitempty"`
 	// The host name or IP address of the target LDAP server.
 	ServerHostName string `json:"serverHostName"`
 	// The port number on which the server listens for requests.
-	ServerPort int32 `json:"serverPort"`
+	ServerPort *int32 `json:"serverPort,omitempty"`
 	// Specifies the location for the LDAP External Server.
 	Location *string `json:"location,omitempty"`
 	// The DN to use to bind to the target LDAP server if simple authentication is required.
@@ -33,19 +33,19 @@ type AddPingIdentityProxyServerExternalServerRequest struct {
 	// The login password for the specified user.
 	Password *string `json:"password,omitempty"`
 	// The passphrase provider to use to obtain the login password for the specified user.
-	PassphraseProvider   *string                                    `json:"passphraseProvider,omitempty"`
-	ConnectionSecurity   EnumexternalServerConnectionSecurityProp   `json:"connectionSecurity"`
-	AuthenticationMethod EnumexternalServerAuthenticationMethodProp `json:"authenticationMethod"`
+	PassphraseProvider   *string                                     `json:"passphraseProvider,omitempty"`
+	ConnectionSecurity   *EnumexternalServerConnectionSecurityProp   `json:"connectionSecurity,omitempty"`
+	AuthenticationMethod *EnumexternalServerAuthenticationMethodProp `json:"authenticationMethod,omitempty"`
 	// Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
 	HealthCheckConnectTimeout *string `json:"healthCheckConnectTimeout,omitempty"`
 	// Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections.
-	MaxConnectionAge string `json:"maxConnectionAge"`
+	MaxConnectionAge *string `json:"maxConnectionAge,omitempty"`
 	// Specifies the minimum length of time that should pass between connection closures as a result of the connections being established for longer than the maximum connection age. This may help avoid cases in which a large number of connections are closed and re-established in a short period of time because of the maximum connection age.
 	MinExpiredConnectionDisconnectInterval *string `json:"minExpiredConnectionDisconnectInterval,omitempty"`
 	// Specifies the maximum length of time to wait for a connection to be established before giving up and considering the server unavailable.
-	ConnectTimeout string `json:"connectTimeout"`
+	ConnectTimeout *string `json:"connectTimeout,omitempty"`
 	// Specifies the maximum response size that should be supported for messages received from the LDAP external server.
-	MaxResponseSize string `json:"maxResponseSize"`
+	MaxResponseSize *string `json:"maxResponseSize,omitempty"`
 	// The key manager provider to use if SSL or StartTLS is to be used for connection-level security. When specifying a value for this property (except when using the Null key manager provider) you must ensure that the external server trusts this server's public certificate by adding this server's public certificate to the external server's trust store.
 	KeyManagerProvider *string `json:"keyManagerProvider,omitempty"`
 	// The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
@@ -65,18 +65,11 @@ type AddPingIdentityProxyServerExternalServerRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddPingIdentityProxyServerExternalServerRequest(serverName string, schemas []EnumpingIdentityProxyServerExternalServerSchemaUrn, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, serverHostName string, serverPort int32, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerAuthenticationMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string) *AddPingIdentityProxyServerExternalServerRequest {
+func NewAddPingIdentityProxyServerExternalServerRequest(serverName string, schemas []EnumpingIdentityProxyServerExternalServerSchemaUrn, serverHostName string) *AddPingIdentityProxyServerExternalServerRequest {
 	this := AddPingIdentityProxyServerExternalServerRequest{}
 	this.ServerName = serverName
 	this.Schemas = schemas
-	this.VerifyCredentialsMethod = verifyCredentialsMethod
 	this.ServerHostName = serverHostName
-	this.ServerPort = serverPort
-	this.ConnectionSecurity = connectionSecurity
-	this.AuthenticationMethod = authenticationMethod
-	this.MaxConnectionAge = maxConnectionAge
-	this.ConnectTimeout = connectTimeout
-	this.MaxResponseSize = maxResponseSize
 	return &this
 }
 
@@ -136,28 +129,36 @@ func (o *AddPingIdentityProxyServerExternalServerRequest) SetSchemas(v []Enumpin
 	o.Schemas = v
 }
 
-// GetVerifyCredentialsMethod returns the VerifyCredentialsMethod field value
+// GetVerifyCredentialsMethod returns the VerifyCredentialsMethod field value if set, zero value otherwise.
 func (o *AddPingIdentityProxyServerExternalServerRequest) GetVerifyCredentialsMethod() EnumexternalServerVerifyCredentialsMethodProp {
-	if o == nil {
+	if o == nil || isNil(o.VerifyCredentialsMethod) {
 		var ret EnumexternalServerVerifyCredentialsMethodProp
 		return ret
 	}
-
-	return o.VerifyCredentialsMethod
+	return *o.VerifyCredentialsMethod
 }
 
-// GetVerifyCredentialsMethodOk returns a tuple with the VerifyCredentialsMethod field value
+// GetVerifyCredentialsMethodOk returns a tuple with the VerifyCredentialsMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPingIdentityProxyServerExternalServerRequest) GetVerifyCredentialsMethodOk() (*EnumexternalServerVerifyCredentialsMethodProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.VerifyCredentialsMethod) {
 		return nil, false
 	}
-	return &o.VerifyCredentialsMethod, true
+	return o.VerifyCredentialsMethod, true
 }
 
-// SetVerifyCredentialsMethod sets field value
+// HasVerifyCredentialsMethod returns a boolean if a field has been set.
+func (o *AddPingIdentityProxyServerExternalServerRequest) HasVerifyCredentialsMethod() bool {
+	if o != nil && !isNil(o.VerifyCredentialsMethod) {
+		return true
+	}
+
+	return false
+}
+
+// SetVerifyCredentialsMethod gets a reference to the given EnumexternalServerVerifyCredentialsMethodProp and assigns it to the VerifyCredentialsMethod field.
 func (o *AddPingIdentityProxyServerExternalServerRequest) SetVerifyCredentialsMethod(v EnumexternalServerVerifyCredentialsMethodProp) {
-	o.VerifyCredentialsMethod = v
+	o.VerifyCredentialsMethod = &v
 }
 
 // GetUseAdministrativeOperationControl returns the UseAdministrativeOperationControl field value if set, zero value otherwise.
@@ -216,28 +217,36 @@ func (o *AddPingIdentityProxyServerExternalServerRequest) SetServerHostName(v st
 	o.ServerHostName = v
 }
 
-// GetServerPort returns the ServerPort field value
+// GetServerPort returns the ServerPort field value if set, zero value otherwise.
 func (o *AddPingIdentityProxyServerExternalServerRequest) GetServerPort() int32 {
-	if o == nil {
+	if o == nil || isNil(o.ServerPort) {
 		var ret int32
 		return ret
 	}
-
-	return o.ServerPort
+	return *o.ServerPort
 }
 
-// GetServerPortOk returns a tuple with the ServerPort field value
+// GetServerPortOk returns a tuple with the ServerPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPingIdentityProxyServerExternalServerRequest) GetServerPortOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || isNil(o.ServerPort) {
 		return nil, false
 	}
-	return &o.ServerPort, true
+	return o.ServerPort, true
 }
 
-// SetServerPort sets field value
+// HasServerPort returns a boolean if a field has been set.
+func (o *AddPingIdentityProxyServerExternalServerRequest) HasServerPort() bool {
+	if o != nil && !isNil(o.ServerPort) {
+		return true
+	}
+
+	return false
+}
+
+// SetServerPort gets a reference to the given int32 and assigns it to the ServerPort field.
 func (o *AddPingIdentityProxyServerExternalServerRequest) SetServerPort(v int32) {
-	o.ServerPort = v
+	o.ServerPort = &v
 }
 
 // GetLocation returns the Location field value if set, zero value otherwise.
@@ -368,52 +377,68 @@ func (o *AddPingIdentityProxyServerExternalServerRequest) SetPassphraseProvider(
 	o.PassphraseProvider = &v
 }
 
-// GetConnectionSecurity returns the ConnectionSecurity field value
+// GetConnectionSecurity returns the ConnectionSecurity field value if set, zero value otherwise.
 func (o *AddPingIdentityProxyServerExternalServerRequest) GetConnectionSecurity() EnumexternalServerConnectionSecurityProp {
-	if o == nil {
+	if o == nil || isNil(o.ConnectionSecurity) {
 		var ret EnumexternalServerConnectionSecurityProp
 		return ret
 	}
-
-	return o.ConnectionSecurity
+	return *o.ConnectionSecurity
 }
 
-// GetConnectionSecurityOk returns a tuple with the ConnectionSecurity field value
+// GetConnectionSecurityOk returns a tuple with the ConnectionSecurity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPingIdentityProxyServerExternalServerRequest) GetConnectionSecurityOk() (*EnumexternalServerConnectionSecurityProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.ConnectionSecurity) {
 		return nil, false
 	}
-	return &o.ConnectionSecurity, true
+	return o.ConnectionSecurity, true
 }
 
-// SetConnectionSecurity sets field value
+// HasConnectionSecurity returns a boolean if a field has been set.
+func (o *AddPingIdentityProxyServerExternalServerRequest) HasConnectionSecurity() bool {
+	if o != nil && !isNil(o.ConnectionSecurity) {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectionSecurity gets a reference to the given EnumexternalServerConnectionSecurityProp and assigns it to the ConnectionSecurity field.
 func (o *AddPingIdentityProxyServerExternalServerRequest) SetConnectionSecurity(v EnumexternalServerConnectionSecurityProp) {
-	o.ConnectionSecurity = v
+	o.ConnectionSecurity = &v
 }
 
-// GetAuthenticationMethod returns the AuthenticationMethod field value
+// GetAuthenticationMethod returns the AuthenticationMethod field value if set, zero value otherwise.
 func (o *AddPingIdentityProxyServerExternalServerRequest) GetAuthenticationMethod() EnumexternalServerAuthenticationMethodProp {
-	if o == nil {
+	if o == nil || isNil(o.AuthenticationMethod) {
 		var ret EnumexternalServerAuthenticationMethodProp
 		return ret
 	}
-
-	return o.AuthenticationMethod
+	return *o.AuthenticationMethod
 }
 
-// GetAuthenticationMethodOk returns a tuple with the AuthenticationMethod field value
+// GetAuthenticationMethodOk returns a tuple with the AuthenticationMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPingIdentityProxyServerExternalServerRequest) GetAuthenticationMethodOk() (*EnumexternalServerAuthenticationMethodProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.AuthenticationMethod) {
 		return nil, false
 	}
-	return &o.AuthenticationMethod, true
+	return o.AuthenticationMethod, true
 }
 
-// SetAuthenticationMethod sets field value
+// HasAuthenticationMethod returns a boolean if a field has been set.
+func (o *AddPingIdentityProxyServerExternalServerRequest) HasAuthenticationMethod() bool {
+	if o != nil && !isNil(o.AuthenticationMethod) {
+		return true
+	}
+
+	return false
+}
+
+// SetAuthenticationMethod gets a reference to the given EnumexternalServerAuthenticationMethodProp and assigns it to the AuthenticationMethod field.
 func (o *AddPingIdentityProxyServerExternalServerRequest) SetAuthenticationMethod(v EnumexternalServerAuthenticationMethodProp) {
-	o.AuthenticationMethod = v
+	o.AuthenticationMethod = &v
 }
 
 // GetHealthCheckConnectTimeout returns the HealthCheckConnectTimeout field value if set, zero value otherwise.
@@ -448,28 +473,36 @@ func (o *AddPingIdentityProxyServerExternalServerRequest) SetHealthCheckConnectT
 	o.HealthCheckConnectTimeout = &v
 }
 
-// GetMaxConnectionAge returns the MaxConnectionAge field value
+// GetMaxConnectionAge returns the MaxConnectionAge field value if set, zero value otherwise.
 func (o *AddPingIdentityProxyServerExternalServerRequest) GetMaxConnectionAge() string {
-	if o == nil {
+	if o == nil || isNil(o.MaxConnectionAge) {
 		var ret string
 		return ret
 	}
-
-	return o.MaxConnectionAge
+	return *o.MaxConnectionAge
 }
 
-// GetMaxConnectionAgeOk returns a tuple with the MaxConnectionAge field value
+// GetMaxConnectionAgeOk returns a tuple with the MaxConnectionAge field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPingIdentityProxyServerExternalServerRequest) GetMaxConnectionAgeOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.MaxConnectionAge) {
 		return nil, false
 	}
-	return &o.MaxConnectionAge, true
+	return o.MaxConnectionAge, true
 }
 
-// SetMaxConnectionAge sets field value
+// HasMaxConnectionAge returns a boolean if a field has been set.
+func (o *AddPingIdentityProxyServerExternalServerRequest) HasMaxConnectionAge() bool {
+	if o != nil && !isNil(o.MaxConnectionAge) {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxConnectionAge gets a reference to the given string and assigns it to the MaxConnectionAge field.
 func (o *AddPingIdentityProxyServerExternalServerRequest) SetMaxConnectionAge(v string) {
-	o.MaxConnectionAge = v
+	o.MaxConnectionAge = &v
 }
 
 // GetMinExpiredConnectionDisconnectInterval returns the MinExpiredConnectionDisconnectInterval field value if set, zero value otherwise.
@@ -504,52 +537,68 @@ func (o *AddPingIdentityProxyServerExternalServerRequest) SetMinExpiredConnectio
 	o.MinExpiredConnectionDisconnectInterval = &v
 }
 
-// GetConnectTimeout returns the ConnectTimeout field value
+// GetConnectTimeout returns the ConnectTimeout field value if set, zero value otherwise.
 func (o *AddPingIdentityProxyServerExternalServerRequest) GetConnectTimeout() string {
-	if o == nil {
+	if o == nil || isNil(o.ConnectTimeout) {
 		var ret string
 		return ret
 	}
-
-	return o.ConnectTimeout
+	return *o.ConnectTimeout
 }
 
-// GetConnectTimeoutOk returns a tuple with the ConnectTimeout field value
+// GetConnectTimeoutOk returns a tuple with the ConnectTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPingIdentityProxyServerExternalServerRequest) GetConnectTimeoutOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.ConnectTimeout) {
 		return nil, false
 	}
-	return &o.ConnectTimeout, true
+	return o.ConnectTimeout, true
 }
 
-// SetConnectTimeout sets field value
+// HasConnectTimeout returns a boolean if a field has been set.
+func (o *AddPingIdentityProxyServerExternalServerRequest) HasConnectTimeout() bool {
+	if o != nil && !isNil(o.ConnectTimeout) {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectTimeout gets a reference to the given string and assigns it to the ConnectTimeout field.
 func (o *AddPingIdentityProxyServerExternalServerRequest) SetConnectTimeout(v string) {
-	o.ConnectTimeout = v
+	o.ConnectTimeout = &v
 }
 
-// GetMaxResponseSize returns the MaxResponseSize field value
+// GetMaxResponseSize returns the MaxResponseSize field value if set, zero value otherwise.
 func (o *AddPingIdentityProxyServerExternalServerRequest) GetMaxResponseSize() string {
-	if o == nil {
+	if o == nil || isNil(o.MaxResponseSize) {
 		var ret string
 		return ret
 	}
-
-	return o.MaxResponseSize
+	return *o.MaxResponseSize
 }
 
-// GetMaxResponseSizeOk returns a tuple with the MaxResponseSize field value
+// GetMaxResponseSizeOk returns a tuple with the MaxResponseSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPingIdentityProxyServerExternalServerRequest) GetMaxResponseSizeOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.MaxResponseSize) {
 		return nil, false
 	}
-	return &o.MaxResponseSize, true
+	return o.MaxResponseSize, true
 }
 
-// SetMaxResponseSize sets field value
+// HasMaxResponseSize returns a boolean if a field has been set.
+func (o *AddPingIdentityProxyServerExternalServerRequest) HasMaxResponseSize() bool {
+	if o != nil && !isNil(o.MaxResponseSize) {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxResponseSize gets a reference to the given string and assigns it to the MaxResponseSize field.
 func (o *AddPingIdentityProxyServerExternalServerRequest) SetMaxResponseSize(v string) {
-	o.MaxResponseSize = v
+	o.MaxResponseSize = &v
 }
 
 // GetKeyManagerProvider returns the KeyManagerProvider field value if set, zero value otherwise.
@@ -784,7 +833,7 @@ func (o AddPingIdentityProxyServerExternalServerRequest) MarshalJSON() ([]byte, 
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if true {
+	if !isNil(o.VerifyCredentialsMethod) {
 		toSerialize["verifyCredentialsMethod"] = o.VerifyCredentialsMethod
 	}
 	if !isNil(o.UseAdministrativeOperationControl) {
@@ -793,7 +842,7 @@ func (o AddPingIdentityProxyServerExternalServerRequest) MarshalJSON() ([]byte, 
 	if true {
 		toSerialize["serverHostName"] = o.ServerHostName
 	}
-	if true {
+	if !isNil(o.ServerPort) {
 		toSerialize["serverPort"] = o.ServerPort
 	}
 	if !isNil(o.Location) {
@@ -808,25 +857,25 @@ func (o AddPingIdentityProxyServerExternalServerRequest) MarshalJSON() ([]byte, 
 	if !isNil(o.PassphraseProvider) {
 		toSerialize["passphraseProvider"] = o.PassphraseProvider
 	}
-	if true {
+	if !isNil(o.ConnectionSecurity) {
 		toSerialize["connectionSecurity"] = o.ConnectionSecurity
 	}
-	if true {
+	if !isNil(o.AuthenticationMethod) {
 		toSerialize["authenticationMethod"] = o.AuthenticationMethod
 	}
 	if !isNil(o.HealthCheckConnectTimeout) {
 		toSerialize["healthCheckConnectTimeout"] = o.HealthCheckConnectTimeout
 	}
-	if true {
+	if !isNil(o.MaxConnectionAge) {
 		toSerialize["maxConnectionAge"] = o.MaxConnectionAge
 	}
 	if !isNil(o.MinExpiredConnectionDisconnectInterval) {
 		toSerialize["minExpiredConnectionDisconnectInterval"] = o.MinExpiredConnectionDisconnectInterval
 	}
-	if true {
+	if !isNil(o.ConnectTimeout) {
 		toSerialize["connectTimeout"] = o.ConnectTimeout
 	}
-	if true {
+	if !isNil(o.MaxResponseSize) {
 		toSerialize["maxResponseSize"] = o.MaxResponseSize
 	}
 	if !isNil(o.KeyManagerProvider) {

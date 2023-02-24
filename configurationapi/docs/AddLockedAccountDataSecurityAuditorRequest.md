@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AuditorName** | **string** | Name of the new Data Security Auditor | 
 **Schemas** | [**[]EnumlockedAccountDataSecurityAuditorSchemaUrn**](EnumlockedAccountDataSecurityAuditorSchemaUrn.md) |  | 
-**ReportFile** | **string** | Specifies the name of the detailed report file. | 
+**ReportFile** | Pointer to **string** | Specifies the name of the detailed report file. | [optional] 
 **IncludeAttribute** | Pointer to **[]string** | Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included. | [optional] 
 **MaximumIdleTime** | Pointer to **string** | If set, users that have not authenticated for more than the specified time will be reported even if idle account lockout is not configured. Note that users may only be reported if the last login time tracking is enabled. | [optional] 
-**Enabled** | **bool** | Indicates whether the Data Security Auditor is enabled for use. | 
+**Enabled** | Pointer to **bool** | Indicates whether the Data Security Auditor is enabled for use. | [optional] 
 **AuditBackend** | Pointer to **[]string** | Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler). | [optional] 
 **AuditSeverity** | Pointer to [**EnumdataSecurityAuditorAuditSeverityProp**](EnumdataSecurityAuditorAuditSeverityProp.md) |  | [optional] 
 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewAddLockedAccountDataSecurityAuditorRequest
 
-`func NewAddLockedAccountDataSecurityAuditorRequest(auditorName string, schemas []EnumlockedAccountDataSecurityAuditorSchemaUrn, reportFile string, enabled bool, ) *AddLockedAccountDataSecurityAuditorRequest`
+`func NewAddLockedAccountDataSecurityAuditorRequest(auditorName string, schemas []EnumlockedAccountDataSecurityAuditorSchemaUrn, ) *AddLockedAccountDataSecurityAuditorRequest`
 
 NewAddLockedAccountDataSecurityAuditorRequest instantiates a new AddLockedAccountDataSecurityAuditorRequest object
 This constructor will assign default values to properties that have it defined,
@@ -91,6 +91,11 @@ and a boolean to check if the value has been set.
 
 SetReportFile sets ReportFile field to given value.
 
+### HasReportFile
+
+`func (o *AddLockedAccountDataSecurityAuditorRequest) HasReportFile() bool`
+
+HasReportFile returns a boolean if a field has been set.
 
 ### GetIncludeAttribute
 
@@ -161,6 +166,11 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
+### HasEnabled
+
+`func (o *AddLockedAccountDataSecurityAuditorRequest) HasEnabled() bool`
+
+HasEnabled returns a boolean if a field has been set.
 
 ### GetAuditBackend
 

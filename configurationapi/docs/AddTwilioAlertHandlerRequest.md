@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **TwilioAuthTokenPassphraseProvider** | Pointer to **string** | The passphrase provider that may be used to obtain the auth token for the Twilio account that will be used. | [optional] 
 **SenderPhoneNumber** | **[]string** | The outgoing phone number to use for the messages. Values must be phone numbers you have obtained for use with your Twilio account. | 
 **RecipientPhoneNumber** | **[]string** | The phone number to which alert notifications should be delivered. | 
-**LongMessageBehavior** | [**EnumalertHandlerLongMessageBehaviorProp**](EnumalertHandlerLongMessageBehaviorProp.md) |  | 
+**LongMessageBehavior** | Pointer to [**EnumalertHandlerLongMessageBehaviorProp**](EnumalertHandlerLongMessageBehaviorProp.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Alert Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the Alert Handler is enabled. | 
 **EnabledAlertSeverity** | Pointer to [**[]EnumalertHandlerEnabledAlertSeverityProp**](EnumalertHandlerEnabledAlertSeverityProp.md) |  | [optional] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewAddTwilioAlertHandlerRequest
 
-`func NewAddTwilioAlertHandlerRequest(handlerName string, schemas []EnumtwilioAlertHandlerSchemaUrn, twilioAccountSID string, senderPhoneNumber []string, recipientPhoneNumber []string, longMessageBehavior EnumalertHandlerLongMessageBehaviorProp, enabled bool, ) *AddTwilioAlertHandlerRequest`
+`func NewAddTwilioAlertHandlerRequest(handlerName string, schemas []EnumtwilioAlertHandlerSchemaUrn, twilioAccountSID string, senderPhoneNumber []string, recipientPhoneNumber []string, enabled bool, ) *AddTwilioAlertHandlerRequest`
 
 NewAddTwilioAlertHandlerRequest instantiates a new AddTwilioAlertHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -232,6 +232,11 @@ and a boolean to check if the value has been set.
 
 SetLongMessageBehavior sets LongMessageBehavior field to given value.
 
+### HasLongMessageBehavior
+
+`func (o *AddTwilioAlertHandlerRequest) HasLongMessageBehavior() bool`
+
+HasLongMessageBehavior returns a boolean if a field has been set.
 
 ### GetDescription
 

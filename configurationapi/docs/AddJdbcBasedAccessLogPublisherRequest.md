@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumjdbcBasedAccessLogPublisherSchemaUrn**](EnumjdbcBasedAccessLogPublisherSchemaUrn.md) |  | 
 **Server** | **string** | The JDBC-based Database Server to use for a connection. | 
 **LogFieldMapping** | **string** | The log field mapping associates loggable fields to database column names. The table name is not part of this mapping. | 
-**LogTableName** | **string** | The table name to log entries to the database server. | 
+**LogTableName** | Pointer to **string** | The table name to log entries to the database server. | [optional] 
 **QueueSize** | Pointer to **int32** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
 **LogConnects** | Pointer to **bool** | Indicates whether to log information about connections established to the server. | [optional] 
 **LogDisconnects** | Pointer to **bool** | Indicates whether to log information about connections that have been closed by the client or terminated by the server. | [optional] 
@@ -35,7 +35,7 @@ Name | Type | Description | Notes
 
 ### NewAddJdbcBasedAccessLogPublisherRequest
 
-`func NewAddJdbcBasedAccessLogPublisherRequest(publisherName string, schemas []EnumjdbcBasedAccessLogPublisherSchemaUrn, server string, logFieldMapping string, logTableName string, enabled bool, ) *AddJdbcBasedAccessLogPublisherRequest`
+`func NewAddJdbcBasedAccessLogPublisherRequest(publisherName string, schemas []EnumjdbcBasedAccessLogPublisherSchemaUrn, server string, logFieldMapping string, enabled bool, ) *AddJdbcBasedAccessLogPublisherRequest`
 
 NewAddJdbcBasedAccessLogPublisherRequest instantiates a new AddJdbcBasedAccessLogPublisherRequest object
 This constructor will assign default values to properties that have it defined,
@@ -149,6 +149,11 @@ and a boolean to check if the value has been set.
 
 SetLogTableName sets LogTableName field to given value.
 
+### HasLogTableName
+
+`func (o *AddJdbcBasedAccessLogPublisherRequest) HasLogTableName() bool`
+
+HasLogTableName returns a boolean if a field has been set.
 
 ### GetQueueSize
 

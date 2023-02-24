@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **KeyVaultURI** | **string** | The URI that identifies the Azure Key Vault from which the secret is to be retrieved. | 
 **AzureAuthenticationMethod** | **string** | The mechanism used to authenticate to the Azure service. | 
 **SecretName** | **string** | The name of the secret to retrieve. | 
-**EncryptionMetadataFile** | **string** | The path to a file that will hold metadata about the encryption performed by this Azure Key Vault Cipher Stream Provider. | 
+**EncryptionMetadataFile** | Pointer to **string** | The path to a file that will hold metadata about the encryption performed by this Azure Key Vault Cipher Stream Provider. | [optional] 
 **Description** | Pointer to **string** | A description for this Cipher Stream Provider | [optional] 
 **Enabled** | **bool** | Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server. | 
 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewAddAzureKeyVaultCipherStreamProviderRequest
 
-`func NewAddAzureKeyVaultCipherStreamProviderRequest(providerName string, schemas []EnumazureKeyVaultCipherStreamProviderSchemaUrn, keyVaultURI string, azureAuthenticationMethod string, secretName string, encryptionMetadataFile string, enabled bool, ) *AddAzureKeyVaultCipherStreamProviderRequest`
+`func NewAddAzureKeyVaultCipherStreamProviderRequest(providerName string, schemas []EnumazureKeyVaultCipherStreamProviderSchemaUrn, keyVaultURI string, azureAuthenticationMethod string, secretName string, enabled bool, ) *AddAzureKeyVaultCipherStreamProviderRequest`
 
 NewAddAzureKeyVaultCipherStreamProviderRequest instantiates a new AddAzureKeyVaultCipherStreamProviderRequest object
 This constructor will assign default values to properties that have it defined,
@@ -151,6 +151,11 @@ and a boolean to check if the value has been set.
 
 SetEncryptionMetadataFile sets EncryptionMetadataFile field to given value.
 
+### HasEncryptionMetadataFile
+
+`func (o *AddAzureKeyVaultCipherStreamProviderRequest) HasEncryptionMetadataFile() bool`
+
+HasEncryptionMetadataFile returns a boolean if a field has been set.
 
 ### GetDescription
 

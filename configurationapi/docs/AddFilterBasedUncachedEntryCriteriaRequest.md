@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **CriteriaName** | **string** | Name of the new Uncached Entry Criteria | 
 **Schemas** | [**[]EnumfilterBasedUncachedEntryCriteriaSchemaUrn**](EnumfilterBasedUncachedEntryCriteriaSchemaUrn.md) |  | 
 **Filter** | **string** | Specifies the search filter that should be used to differentiate entries into cached and uncached sets. | 
-**FilterIdentifiesUncachedEntries** | **bool** | Indicates whether the associated filter identifies those entries which should be stored in the uncached-id2entry database (if true) or entries which should be stored in the id2entry database (if false). | 
+**FilterIdentifiesUncachedEntries** | Pointer to **bool** | Indicates whether the associated filter identifies those entries which should be stored in the uncached-id2entry database (if true) or entries which should be stored in the id2entry database (if false). | [optional] 
 **Description** | Pointer to **string** | A description for this Uncached Entry Criteria | [optional] 
 **Enabled** | **bool** | Indicates whether this Uncached Entry Criteria is enabled for use in the server. | 
 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewAddFilterBasedUncachedEntryCriteriaRequest
 
-`func NewAddFilterBasedUncachedEntryCriteriaRequest(criteriaName string, schemas []EnumfilterBasedUncachedEntryCriteriaSchemaUrn, filter string, filterIdentifiesUncachedEntries bool, enabled bool, ) *AddFilterBasedUncachedEntryCriteriaRequest`
+`func NewAddFilterBasedUncachedEntryCriteriaRequest(criteriaName string, schemas []EnumfilterBasedUncachedEntryCriteriaSchemaUrn, filter string, enabled bool, ) *AddFilterBasedUncachedEntryCriteriaRequest`
 
 NewAddFilterBasedUncachedEntryCriteriaRequest instantiates a new AddFilterBasedUncachedEntryCriteriaRequest object
 This constructor will assign default values to properties that have it defined,
@@ -109,6 +109,11 @@ and a boolean to check if the value has been set.
 
 SetFilterIdentifiesUncachedEntries sets FilterIdentifiesUncachedEntries field to given value.
 
+### HasFilterIdentifiesUncachedEntries
+
+`func (o *AddFilterBasedUncachedEntryCriteriaRequest) HasFilterIdentifiesUncachedEntries() bool`
+
+HasFilterIdentifiesUncachedEntries returns a boolean if a field has been set.
 
 ### GetDescription
 

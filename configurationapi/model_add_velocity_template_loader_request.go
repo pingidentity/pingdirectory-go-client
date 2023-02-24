@@ -22,7 +22,7 @@ type AddVelocityTemplateLoaderRequest struct {
 	// Indicates whether this Velocity Template Loader is enabled.
 	Enabled *bool `json:"enabled,omitempty"`
 	// This property determines the evaluation order for determining the correct Velocity Template Loader to load a template for generating content for a particular request.
-	EvaluationOrderIndex int32 `json:"evaluationOrderIndex"`
+	EvaluationOrderIndex *int32 `json:"evaluationOrderIndex,omitempty"`
 	// Specifies a media type for matching Accept request-header values.
 	MimeTypeMatcher string `json:"mimeTypeMatcher"`
 	// Specifies a the value that will be used in the response's Content-Type header that indicates the type of content to return.
@@ -37,10 +37,9 @@ type AddVelocityTemplateLoaderRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddVelocityTemplateLoaderRequest(loaderName string, evaluationOrderIndex int32, mimeTypeMatcher string) *AddVelocityTemplateLoaderRequest {
+func NewAddVelocityTemplateLoaderRequest(loaderName string, mimeTypeMatcher string) *AddVelocityTemplateLoaderRequest {
 	this := AddVelocityTemplateLoaderRequest{}
 	this.LoaderName = loaderName
-	this.EvaluationOrderIndex = evaluationOrderIndex
 	this.MimeTypeMatcher = mimeTypeMatcher
 	return &this
 }
@@ -141,28 +140,36 @@ func (o *AddVelocityTemplateLoaderRequest) SetEnabled(v bool) {
 	o.Enabled = &v
 }
 
-// GetEvaluationOrderIndex returns the EvaluationOrderIndex field value
+// GetEvaluationOrderIndex returns the EvaluationOrderIndex field value if set, zero value otherwise.
 func (o *AddVelocityTemplateLoaderRequest) GetEvaluationOrderIndex() int32 {
-	if o == nil {
+	if o == nil || isNil(o.EvaluationOrderIndex) {
 		var ret int32
 		return ret
 	}
-
-	return o.EvaluationOrderIndex
+	return *o.EvaluationOrderIndex
 }
 
-// GetEvaluationOrderIndexOk returns a tuple with the EvaluationOrderIndex field value
+// GetEvaluationOrderIndexOk returns a tuple with the EvaluationOrderIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddVelocityTemplateLoaderRequest) GetEvaluationOrderIndexOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || isNil(o.EvaluationOrderIndex) {
 		return nil, false
 	}
-	return &o.EvaluationOrderIndex, true
+	return o.EvaluationOrderIndex, true
 }
 
-// SetEvaluationOrderIndex sets field value
+// HasEvaluationOrderIndex returns a boolean if a field has been set.
+func (o *AddVelocityTemplateLoaderRequest) HasEvaluationOrderIndex() bool {
+	if o != nil && !isNil(o.EvaluationOrderIndex) {
+		return true
+	}
+
+	return false
+}
+
+// SetEvaluationOrderIndex gets a reference to the given int32 and assigns it to the EvaluationOrderIndex field.
 func (o *AddVelocityTemplateLoaderRequest) SetEvaluationOrderIndex(v int32) {
-	o.EvaluationOrderIndex = v
+	o.EvaluationOrderIndex = &v
 }
 
 // GetMimeTypeMatcher returns the MimeTypeMatcher field value
@@ -296,7 +303,7 @@ func (o AddVelocityTemplateLoaderRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
-	if true {
+	if !isNil(o.EvaluationOrderIndex) {
 		toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
 	}
 	if true {

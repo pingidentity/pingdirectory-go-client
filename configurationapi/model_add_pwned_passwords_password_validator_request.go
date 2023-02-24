@@ -20,15 +20,15 @@ type AddPwnedPasswordsPasswordValidatorRequest struct {
 	ValidatorName string                                         `json:"validatorName"`
 	Schemas       []EnumpwnedPasswordsPasswordValidatorSchemaUrn `json:"schemas"`
 	// The base URL for requests used to interact with the Pwned Passwords service. The first five characters of the hexadecimal representation of the unsalted SHA-1 digest of a proposed password will be appended to this base URL to construct the HTTP GET request used to obtain information about potential matches.
-	PwnedPasswordsBaseURL string `json:"pwnedPasswordsBaseURL"`
+	PwnedPasswordsBaseURL *string `json:"pwnedPasswordsBaseURL,omitempty"`
 	// Indicates whether this password validator should be used to validate clear-text passwords provided in LDAP add requests.
-	InvokeForAdd bool `json:"invokeForAdd"`
+	InvokeForAdd *bool `json:"invokeForAdd,omitempty"`
 	// Indicates whether this password validator should be used to validate clear-text passwords provided by an end user in the course of changing their own password.
-	InvokeForSelfChange bool `json:"invokeForSelfChange"`
+	InvokeForSelfChange *bool `json:"invokeForSelfChange,omitempty"`
 	// Indicates whether this password validator should be used to validate clear-text passwords provided by administrators when changing the password for another user.
-	InvokeForAdminReset bool `json:"invokeForAdminReset"`
+	InvokeForAdminReset *bool `json:"invokeForAdminReset,omitempty"`
 	// Indicates whether to accept the proposed password if an error occurs while attempting to interact with the Pwned Passwords service.
-	AcceptPasswordOnServiceError bool `json:"acceptPasswordOnServiceError"`
+	AcceptPasswordOnServiceError *bool `json:"acceptPasswordOnServiceError,omitempty"`
 	// Specifies which key manager provider should be used to obtain a client certificate to present to the validation server when performing HTTPS communication. This may be left undefined if communication will not be secured with HTTPS, or if there is no need to present a client certificate to the validation service.
 	KeyManagerProvider *string `json:"keyManagerProvider,omitempty"`
 	// Specifies which trust manager provider should be used to determine whether to trust the certificate presented by the server when performing HTTPS communication. This may be left undefined if HTTPS communication is not needed, or if the validation service presents a certificate that is trusted by the default JVM configuration (which should be the case for the Pwned Password servers).
@@ -47,15 +47,10 @@ type AddPwnedPasswordsPasswordValidatorRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddPwnedPasswordsPasswordValidatorRequest(validatorName string, schemas []EnumpwnedPasswordsPasswordValidatorSchemaUrn, pwnedPasswordsBaseURL string, invokeForAdd bool, invokeForSelfChange bool, invokeForAdminReset bool, acceptPasswordOnServiceError bool, enabled bool) *AddPwnedPasswordsPasswordValidatorRequest {
+func NewAddPwnedPasswordsPasswordValidatorRequest(validatorName string, schemas []EnumpwnedPasswordsPasswordValidatorSchemaUrn, enabled bool) *AddPwnedPasswordsPasswordValidatorRequest {
 	this := AddPwnedPasswordsPasswordValidatorRequest{}
 	this.ValidatorName = validatorName
 	this.Schemas = schemas
-	this.PwnedPasswordsBaseURL = pwnedPasswordsBaseURL
-	this.InvokeForAdd = invokeForAdd
-	this.InvokeForSelfChange = invokeForSelfChange
-	this.InvokeForAdminReset = invokeForAdminReset
-	this.AcceptPasswordOnServiceError = acceptPasswordOnServiceError
 	this.Enabled = enabled
 	return &this
 }
@@ -116,124 +111,164 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) SetSchemas(v []EnumpwnedPass
 	o.Schemas = v
 }
 
-// GetPwnedPasswordsBaseURL returns the PwnedPasswordsBaseURL field value
+// GetPwnedPasswordsBaseURL returns the PwnedPasswordsBaseURL field value if set, zero value otherwise.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) GetPwnedPasswordsBaseURL() string {
-	if o == nil {
+	if o == nil || isNil(o.PwnedPasswordsBaseURL) {
 		var ret string
 		return ret
 	}
-
-	return o.PwnedPasswordsBaseURL
+	return *o.PwnedPasswordsBaseURL
 }
 
-// GetPwnedPasswordsBaseURLOk returns a tuple with the PwnedPasswordsBaseURL field value
+// GetPwnedPasswordsBaseURLOk returns a tuple with the PwnedPasswordsBaseURL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) GetPwnedPasswordsBaseURLOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.PwnedPasswordsBaseURL) {
 		return nil, false
 	}
-	return &o.PwnedPasswordsBaseURL, true
+	return o.PwnedPasswordsBaseURL, true
 }
 
-// SetPwnedPasswordsBaseURL sets field value
+// HasPwnedPasswordsBaseURL returns a boolean if a field has been set.
+func (o *AddPwnedPasswordsPasswordValidatorRequest) HasPwnedPasswordsBaseURL() bool {
+	if o != nil && !isNil(o.PwnedPasswordsBaseURL) {
+		return true
+	}
+
+	return false
+}
+
+// SetPwnedPasswordsBaseURL gets a reference to the given string and assigns it to the PwnedPasswordsBaseURL field.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) SetPwnedPasswordsBaseURL(v string) {
-	o.PwnedPasswordsBaseURL = v
+	o.PwnedPasswordsBaseURL = &v
 }
 
-// GetInvokeForAdd returns the InvokeForAdd field value
+// GetInvokeForAdd returns the InvokeForAdd field value if set, zero value otherwise.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) GetInvokeForAdd() bool {
-	if o == nil {
+	if o == nil || isNil(o.InvokeForAdd) {
 		var ret bool
 		return ret
 	}
-
-	return o.InvokeForAdd
+	return *o.InvokeForAdd
 }
 
-// GetInvokeForAddOk returns a tuple with the InvokeForAdd field value
+// GetInvokeForAddOk returns a tuple with the InvokeForAdd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) GetInvokeForAddOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || isNil(o.InvokeForAdd) {
 		return nil, false
 	}
-	return &o.InvokeForAdd, true
+	return o.InvokeForAdd, true
 }
 
-// SetInvokeForAdd sets field value
+// HasInvokeForAdd returns a boolean if a field has been set.
+func (o *AddPwnedPasswordsPasswordValidatorRequest) HasInvokeForAdd() bool {
+	if o != nil && !isNil(o.InvokeForAdd) {
+		return true
+	}
+
+	return false
+}
+
+// SetInvokeForAdd gets a reference to the given bool and assigns it to the InvokeForAdd field.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) SetInvokeForAdd(v bool) {
-	o.InvokeForAdd = v
+	o.InvokeForAdd = &v
 }
 
-// GetInvokeForSelfChange returns the InvokeForSelfChange field value
+// GetInvokeForSelfChange returns the InvokeForSelfChange field value if set, zero value otherwise.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) GetInvokeForSelfChange() bool {
-	if o == nil {
+	if o == nil || isNil(o.InvokeForSelfChange) {
 		var ret bool
 		return ret
 	}
-
-	return o.InvokeForSelfChange
+	return *o.InvokeForSelfChange
 }
 
-// GetInvokeForSelfChangeOk returns a tuple with the InvokeForSelfChange field value
+// GetInvokeForSelfChangeOk returns a tuple with the InvokeForSelfChange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) GetInvokeForSelfChangeOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || isNil(o.InvokeForSelfChange) {
 		return nil, false
 	}
-	return &o.InvokeForSelfChange, true
+	return o.InvokeForSelfChange, true
 }
 
-// SetInvokeForSelfChange sets field value
+// HasInvokeForSelfChange returns a boolean if a field has been set.
+func (o *AddPwnedPasswordsPasswordValidatorRequest) HasInvokeForSelfChange() bool {
+	if o != nil && !isNil(o.InvokeForSelfChange) {
+		return true
+	}
+
+	return false
+}
+
+// SetInvokeForSelfChange gets a reference to the given bool and assigns it to the InvokeForSelfChange field.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) SetInvokeForSelfChange(v bool) {
-	o.InvokeForSelfChange = v
+	o.InvokeForSelfChange = &v
 }
 
-// GetInvokeForAdminReset returns the InvokeForAdminReset field value
+// GetInvokeForAdminReset returns the InvokeForAdminReset field value if set, zero value otherwise.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) GetInvokeForAdminReset() bool {
-	if o == nil {
+	if o == nil || isNil(o.InvokeForAdminReset) {
 		var ret bool
 		return ret
 	}
-
-	return o.InvokeForAdminReset
+	return *o.InvokeForAdminReset
 }
 
-// GetInvokeForAdminResetOk returns a tuple with the InvokeForAdminReset field value
+// GetInvokeForAdminResetOk returns a tuple with the InvokeForAdminReset field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) GetInvokeForAdminResetOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || isNil(o.InvokeForAdminReset) {
 		return nil, false
 	}
-	return &o.InvokeForAdminReset, true
+	return o.InvokeForAdminReset, true
 }
 
-// SetInvokeForAdminReset sets field value
+// HasInvokeForAdminReset returns a boolean if a field has been set.
+func (o *AddPwnedPasswordsPasswordValidatorRequest) HasInvokeForAdminReset() bool {
+	if o != nil && !isNil(o.InvokeForAdminReset) {
+		return true
+	}
+
+	return false
+}
+
+// SetInvokeForAdminReset gets a reference to the given bool and assigns it to the InvokeForAdminReset field.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) SetInvokeForAdminReset(v bool) {
-	o.InvokeForAdminReset = v
+	o.InvokeForAdminReset = &v
 }
 
-// GetAcceptPasswordOnServiceError returns the AcceptPasswordOnServiceError field value
+// GetAcceptPasswordOnServiceError returns the AcceptPasswordOnServiceError field value if set, zero value otherwise.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) GetAcceptPasswordOnServiceError() bool {
-	if o == nil {
+	if o == nil || isNil(o.AcceptPasswordOnServiceError) {
 		var ret bool
 		return ret
 	}
-
-	return o.AcceptPasswordOnServiceError
+	return *o.AcceptPasswordOnServiceError
 }
 
-// GetAcceptPasswordOnServiceErrorOk returns a tuple with the AcceptPasswordOnServiceError field value
+// GetAcceptPasswordOnServiceErrorOk returns a tuple with the AcceptPasswordOnServiceError field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) GetAcceptPasswordOnServiceErrorOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || isNil(o.AcceptPasswordOnServiceError) {
 		return nil, false
 	}
-	return &o.AcceptPasswordOnServiceError, true
+	return o.AcceptPasswordOnServiceError, true
 }
 
-// SetAcceptPasswordOnServiceError sets field value
+// HasAcceptPasswordOnServiceError returns a boolean if a field has been set.
+func (o *AddPwnedPasswordsPasswordValidatorRequest) HasAcceptPasswordOnServiceError() bool {
+	if o != nil && !isNil(o.AcceptPasswordOnServiceError) {
+		return true
+	}
+
+	return false
+}
+
+// SetAcceptPasswordOnServiceError gets a reference to the given bool and assigns it to the AcceptPasswordOnServiceError field.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) SetAcceptPasswordOnServiceError(v bool) {
-	o.AcceptPasswordOnServiceError = v
+	o.AcceptPasswordOnServiceError = &v
 }
 
 // GetKeyManagerProvider returns the KeyManagerProvider field value if set, zero value otherwise.
@@ -428,19 +463,19 @@ func (o AddPwnedPasswordsPasswordValidatorRequest) MarshalJSON() ([]byte, error)
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if true {
+	if !isNil(o.PwnedPasswordsBaseURL) {
 		toSerialize["pwnedPasswordsBaseURL"] = o.PwnedPasswordsBaseURL
 	}
-	if true {
+	if !isNil(o.InvokeForAdd) {
 		toSerialize["invokeForAdd"] = o.InvokeForAdd
 	}
-	if true {
+	if !isNil(o.InvokeForSelfChange) {
 		toSerialize["invokeForSelfChange"] = o.InvokeForSelfChange
 	}
-	if true {
+	if !isNil(o.InvokeForAdminReset) {
 		toSerialize["invokeForAdminReset"] = o.InvokeForAdminReset
 	}
-	if true {
+	if !isNil(o.AcceptPasswordOnServiceError) {
 		toSerialize["acceptPasswordOnServiceError"] = o.AcceptPasswordOnServiceError
 	}
 	if !isNil(o.KeyManagerProvider) {

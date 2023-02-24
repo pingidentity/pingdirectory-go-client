@@ -41,7 +41,7 @@ Name | Type | Description | Notes
 **JoinMatchAll** | Pointer to **bool** | Indicates whether joined entries will be required to have all values for the source attribute, or only at least one of its values. | [optional] 
 **ScriptClass** | **string** | The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Virtual Attribute. | 
 **ScriptArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Scripted Virtual Attribute. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
-**AllowRetrievingMembership** | **bool** | Indicates whether to handle requests that request all values for the virtual attribute. | 
+**AllowRetrievingMembership** | Pointer to **bool** | Indicates whether to handle requests that request all values for the virtual attribute. | [optional] 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Virtual Attribute. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Virtual Attribute. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 
@@ -49,7 +49,7 @@ Name | Type | Description | Notes
 
 ### NewAddVirtualAttributeRequest
 
-`func NewAddVirtualAttributeRequest(name string, schemas []EnumthirdPartyVirtualAttributeSchemaUrn, sourceAttribute string, enabled bool, attributeType string, valuePattern []string, joinDNAttribute string, joinBaseDNType EnumvirtualAttributeJoinBaseDNTypeProp, referencedByAttribute []string, value []string, joinSourceAttribute string, joinTargetAttribute string, scriptClass string, allowRetrievingMembership bool, extensionClass string, ) *AddVirtualAttributeRequest`
+`func NewAddVirtualAttributeRequest(name string, schemas []EnumthirdPartyVirtualAttributeSchemaUrn, sourceAttribute string, enabled bool, attributeType string, valuePattern []string, joinDNAttribute string, joinBaseDNType EnumvirtualAttributeJoinBaseDNTypeProp, referencedByAttribute []string, value []string, joinSourceAttribute string, joinTargetAttribute string, scriptClass string, extensionClass string, ) *AddVirtualAttributeRequest`
 
 NewAddVirtualAttributeRequest instantiates a new AddVirtualAttributeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -943,6 +943,11 @@ and a boolean to check if the value has been set.
 
 SetAllowRetrievingMembership sets AllowRetrievingMembership field to given value.
 
+### HasAllowRetrievingMembership
+
+`func (o *AddVirtualAttributeRequest) HasAllowRetrievingMembership() bool`
+
+HasAllowRetrievingMembership returns a boolean if a field has been set.
 
 ### GetExtensionClass
 

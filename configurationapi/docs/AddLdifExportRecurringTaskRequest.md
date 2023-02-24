@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **TaskName** | **string** | Name of the new Recurring Task | 
 **Schemas** | [**[]EnumldifExportRecurringTaskSchemaUrn**](EnumldifExportRecurringTaskSchemaUrn.md) |  | 
-**LdifDirectory** | **string** | The directory in which LDIF export files will be placed. The directory must already exist. | 
+**LdifDirectory** | Pointer to **string** | The directory in which LDIF export files will be placed. The directory must already exist. | [optional] 
 **BackendID** | Pointer to **[]string** | The backend ID for a backend to be exported. | [optional] 
 **ExcludeBackendID** | Pointer to **[]string** | The backend ID for a backend to be excluded from the export. | [optional] 
 **Compress** | Pointer to **bool** | Indicates whether to compress the LDIF data as it is exported. | [optional] 
@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 
 ### NewAddLdifExportRecurringTaskRequest
 
-`func NewAddLdifExportRecurringTaskRequest(taskName string, schemas []EnumldifExportRecurringTaskSchemaUrn, ldifDirectory string, ) *AddLdifExportRecurringTaskRequest`
+`func NewAddLdifExportRecurringTaskRequest(taskName string, schemas []EnumldifExportRecurringTaskSchemaUrn, ) *AddLdifExportRecurringTaskRequest`
 
 NewAddLdifExportRecurringTaskRequest instantiates a new AddLdifExportRecurringTaskRequest object
 This constructor will assign default values to properties that have it defined,
@@ -103,6 +103,11 @@ and a boolean to check if the value has been set.
 
 SetLdifDirectory sets LdifDirectory field to given value.
 
+### HasLdifDirectory
+
+`func (o *AddLdifExportRecurringTaskRequest) HasLdifDirectory() bool`
+
+HasLdifDirectory returns a boolean if a field has been set.
 
 ### GetBackendID
 

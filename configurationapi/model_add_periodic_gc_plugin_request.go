@@ -19,7 +19,7 @@ type AddPeriodicGcPluginRequest struct {
 	// Name of the new Plugin
 	PluginName        string                            `json:"pluginName"`
 	Schemas           []EnumperiodicGcPluginSchemaUrn   `json:"schemas"`
-	PluginType        []EnumpluginPluginTypeProp        `json:"pluginType"`
+	PluginType        []EnumpluginPluginTypeProp        `json:"pluginType,omitempty"`
 	InvokeGCDayOfWeek []EnumpluginInvokeGCDayOfWeekProp `json:"invokeGCDayOfWeek,omitempty"`
 	// Specifies the times of the day at which garbage collection may be explicitly invoked. The times should be specified in \"HH:MM\" format, with \"HH\" as a two-digit numeric value between 00 and 23 representing the hour of the day, and MM as a two-digit numeric value between 00 and 59 representing the minute of the hour. All times will be interpreted in the UTC time zone.
 	InvokeGCTimeUtc []string `json:"invokeGCTimeUtc"`
@@ -39,11 +39,10 @@ type AddPeriodicGcPluginRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddPeriodicGcPluginRequest(pluginName string, schemas []EnumperiodicGcPluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, invokeGCTimeUtc []string, enabled bool) *AddPeriodicGcPluginRequest {
+func NewAddPeriodicGcPluginRequest(pluginName string, schemas []EnumperiodicGcPluginSchemaUrn, invokeGCTimeUtc []string, enabled bool) *AddPeriodicGcPluginRequest {
 	this := AddPeriodicGcPluginRequest{}
 	this.PluginName = pluginName
 	this.Schemas = schemas
-	this.PluginType = pluginType
 	this.InvokeGCTimeUtc = invokeGCTimeUtc
 	this.Enabled = enabled
 	return &this
@@ -105,26 +104,34 @@ func (o *AddPeriodicGcPluginRequest) SetSchemas(v []EnumperiodicGcPluginSchemaUr
 	o.Schemas = v
 }
 
-// GetPluginType returns the PluginType field value
+// GetPluginType returns the PluginType field value if set, zero value otherwise.
 func (o *AddPeriodicGcPluginRequest) GetPluginType() []EnumpluginPluginTypeProp {
-	if o == nil {
+	if o == nil || isNil(o.PluginType) {
 		var ret []EnumpluginPluginTypeProp
 		return ret
 	}
-
 	return o.PluginType
 }
 
-// GetPluginTypeOk returns a tuple with the PluginType field value
+// GetPluginTypeOk returns a tuple with the PluginType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPeriodicGcPluginRequest) GetPluginTypeOk() ([]EnumpluginPluginTypeProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.PluginType) {
 		return nil, false
 	}
 	return o.PluginType, true
 }
 
-// SetPluginType sets field value
+// HasPluginType returns a boolean if a field has been set.
+func (o *AddPeriodicGcPluginRequest) HasPluginType() bool {
+	if o != nil && !isNil(o.PluginType) {
+		return true
+	}
+
+	return false
+}
+
+// SetPluginType gets a reference to the given []EnumpluginPluginTypeProp and assigns it to the PluginType field.
 func (o *AddPeriodicGcPluginRequest) SetPluginType(v []EnumpluginPluginTypeProp) {
 	o.PluginType = v
 }
@@ -345,7 +352,7 @@ func (o AddPeriodicGcPluginRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if true {
+	if !isNil(o.PluginType) {
 		toSerialize["pluginType"] = o.PluginType
 	}
 	if !isNil(o.InvokeGCDayOfWeek) {

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **SourceName** | **string** | Name of the new Gauge Data Source | 
 **Schemas** | [**[]EnumnumericGaugeDataSourceSchemaUrn**](EnumnumericGaugeDataSourceSchemaUrn.md) |  | 
 **DataOrientation** | Pointer to [**EnumgaugeDataSourceDataOrientationProp**](EnumgaugeDataSourceDataOrientationProp.md) |  | [optional] 
-**StatisticType** | [**EnumgaugeDataSourceStatisticTypeProp**](EnumgaugeDataSourceStatisticTypeProp.md) |  | 
+**StatisticType** | Pointer to [**EnumgaugeDataSourceStatisticTypeProp**](EnumgaugeDataSourceStatisticTypeProp.md) |  | [optional] 
 **DivideValueBy** | Pointer to **float32** | An optional floating point value that can be used to scale the resulting value. | [optional] 
 **DivideValueByAttribute** | Pointer to **string** | An optional property that can scale the resulting value by another attribute in the monitored entry. | [optional] 
 **DivideValueByCounterAttribute** | Pointer to **string** | An optional property that can scale the resulting value by another attribute whose value represents a counter in the monitored entry. | [optional] 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 
 ### NewAddNumericGaugeDataSourceRequest
 
-`func NewAddNumericGaugeDataSourceRequest(sourceName string, schemas []EnumnumericGaugeDataSourceSchemaUrn, statisticType EnumgaugeDataSourceStatisticTypeProp, monitorObjectclass string, monitorAttribute string, ) *AddNumericGaugeDataSourceRequest`
+`func NewAddNumericGaugeDataSourceRequest(sourceName string, schemas []EnumnumericGaugeDataSourceSchemaUrn, monitorObjectclass string, monitorAttribute string, ) *AddNumericGaugeDataSourceRequest`
 
 NewAddNumericGaugeDataSourceRequest instantiates a new AddNumericGaugeDataSourceRequest object
 This constructor will assign default values to properties that have it defined,
@@ -123,6 +123,11 @@ and a boolean to check if the value has been set.
 
 SetStatisticType sets StatisticType field to given value.
 
+### HasStatisticType
+
+`func (o *AddNumericGaugeDataSourceRequest) HasStatisticType() bool`
+
+HasStatisticType returns a boolean if a field has been set.
 
 ### GetDivideValueBy
 

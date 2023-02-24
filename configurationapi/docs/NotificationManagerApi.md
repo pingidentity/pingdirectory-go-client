@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    addThirdPartyNotificationManagerRequest := *openapiclient.NewAddThirdPartyNotificationManagerRequest("ManagerName_example", "ExtensionClass_example", false, "SubscriptionBaseDN_example", openapiclient.Enumnotification-manager-transactionNotificationProp("individual")) // AddThirdPartyNotificationManagerRequest | Create a new Notification Manager in the config
+    addThirdPartyNotificationManagerRequest := *openapiclient.NewAddThirdPartyNotificationManagerRequest("ManagerName_example", "ExtensionClass_example", false, "SubscriptionBaseDN_example") // AddThirdPartyNotificationManagerRequest | Create a new Notification Manager in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

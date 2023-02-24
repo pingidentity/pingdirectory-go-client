@@ -20,7 +20,7 @@ type AddFingerprintCertificateMapperRequest struct {
 	MapperName string                                      `json:"mapperName"`
 	Schemas    []EnumfingerprintCertificateMapperSchemaUrn `json:"schemas"`
 	// Specifies the attribute in which to look for the fingerprint.
-	FingerprintAttribute string                                        `json:"fingerprintAttribute"`
+	FingerprintAttribute *string                                       `json:"fingerprintAttribute,omitempty"`
 	FingerprintAlgorithm EnumcertificateMapperFingerprintAlgorithmProp `json:"fingerprintAlgorithm"`
 	// Specifies the set of base DNs below which to search for users.
 	UserBaseDN []string `json:"userBaseDN,omitempty"`
@@ -34,11 +34,10 @@ type AddFingerprintCertificateMapperRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddFingerprintCertificateMapperRequest(mapperName string, schemas []EnumfingerprintCertificateMapperSchemaUrn, fingerprintAttribute string, fingerprintAlgorithm EnumcertificateMapperFingerprintAlgorithmProp, enabled bool) *AddFingerprintCertificateMapperRequest {
+func NewAddFingerprintCertificateMapperRequest(mapperName string, schemas []EnumfingerprintCertificateMapperSchemaUrn, fingerprintAlgorithm EnumcertificateMapperFingerprintAlgorithmProp, enabled bool) *AddFingerprintCertificateMapperRequest {
 	this := AddFingerprintCertificateMapperRequest{}
 	this.MapperName = mapperName
 	this.Schemas = schemas
-	this.FingerprintAttribute = fingerprintAttribute
 	this.FingerprintAlgorithm = fingerprintAlgorithm
 	this.Enabled = enabled
 	return &this
@@ -100,28 +99,36 @@ func (o *AddFingerprintCertificateMapperRequest) SetSchemas(v []EnumfingerprintC
 	o.Schemas = v
 }
 
-// GetFingerprintAttribute returns the FingerprintAttribute field value
+// GetFingerprintAttribute returns the FingerprintAttribute field value if set, zero value otherwise.
 func (o *AddFingerprintCertificateMapperRequest) GetFingerprintAttribute() string {
-	if o == nil {
+	if o == nil || isNil(o.FingerprintAttribute) {
 		var ret string
 		return ret
 	}
-
-	return o.FingerprintAttribute
+	return *o.FingerprintAttribute
 }
 
-// GetFingerprintAttributeOk returns a tuple with the FingerprintAttribute field value
+// GetFingerprintAttributeOk returns a tuple with the FingerprintAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFingerprintCertificateMapperRequest) GetFingerprintAttributeOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.FingerprintAttribute) {
 		return nil, false
 	}
-	return &o.FingerprintAttribute, true
+	return o.FingerprintAttribute, true
 }
 
-// SetFingerprintAttribute sets field value
+// HasFingerprintAttribute returns a boolean if a field has been set.
+func (o *AddFingerprintCertificateMapperRequest) HasFingerprintAttribute() bool {
+	if o != nil && !isNil(o.FingerprintAttribute) {
+		return true
+	}
+
+	return false
+}
+
+// SetFingerprintAttribute gets a reference to the given string and assigns it to the FingerprintAttribute field.
 func (o *AddFingerprintCertificateMapperRequest) SetFingerprintAttribute(v string) {
-	o.FingerprintAttribute = v
+	o.FingerprintAttribute = &v
 }
 
 // GetFingerprintAlgorithm returns the FingerprintAlgorithm field value
@@ -244,7 +251,7 @@ func (o AddFingerprintCertificateMapperRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if true {
+	if !isNil(o.FingerprintAttribute) {
 		toSerialize["fingerprintAttribute"] = o.FingerprintAttribute
 	}
 	if true {

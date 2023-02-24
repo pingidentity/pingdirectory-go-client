@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **TaskName** | **string** | Name of the new Recurring Task | 
 **Schemas** | [**[]EnumbackupRecurringTaskSchemaUrn**](EnumbackupRecurringTaskSchemaUrn.md) |  | 
-**BackupDirectory** | **string** | The directory in which backup files will be placed. When backing up a single backend, the backup files will be placed directly in this directory. When backing up multiple backends, the backup files for each backend will be placed in a subdirectory whose name is the corresponding backend ID. | 
+**BackupDirectory** | Pointer to **string** | The directory in which backup files will be placed. When backing up a single backend, the backup files will be placed directly in this directory. When backing up multiple backends, the backup files for each backend will be placed in a subdirectory whose name is the corresponding backend ID. | [optional] 
 **IncludedBackendID** | Pointer to **[]string** | The backend IDs of any backends that should be included in the backup. | [optional] 
 **ExcludedBackendID** | Pointer to **[]string** | The backend IDs of any backends that should be excluded from the backup. All backends that support backups and are not listed will be included. | [optional] 
 **Compress** | Pointer to **bool** | Indicates whether to compress the data as it is written into the backup. | [optional] 
@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 
 ### NewAddBackupRecurringTaskRequest
 
-`func NewAddBackupRecurringTaskRequest(taskName string, schemas []EnumbackupRecurringTaskSchemaUrn, backupDirectory string, ) *AddBackupRecurringTaskRequest`
+`func NewAddBackupRecurringTaskRequest(taskName string, schemas []EnumbackupRecurringTaskSchemaUrn, ) *AddBackupRecurringTaskRequest`
 
 NewAddBackupRecurringTaskRequest instantiates a new AddBackupRecurringTaskRequest object
 This constructor will assign default values to properties that have it defined,
@@ -103,6 +103,11 @@ and a boolean to check if the value has been set.
 
 SetBackupDirectory sets BackupDirectory field to given value.
 
+### HasBackupDirectory
+
+`func (o *AddBackupRecurringTaskRequest) HasBackupDirectory() bool`
+
+HasBackupDirectory returns a boolean if a field has been set.
 
 ### GetIncludedBackendID
 

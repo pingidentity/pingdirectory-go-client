@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    addCipherStreamProviderRequest := openapiclient.add_cipher_stream_provider_request{AddAmazonKeyManagementServiceCipherStreamProviderRequest: openapiclient.NewAddAmazonKeyManagementServiceCipherStreamProviderRequest("ProviderName_example", []openapiclient.EnumamazonKeyManagementServiceCipherStreamProviderSchemaUrn{openapiclient.Enumamazon-key-management-service-cipher-stream-providerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:amazon-key-management-service")}, "EncryptedPassphraseFile_example", "KmsEncryptionKeyArn_example", false)} // AddCipherStreamProviderRequest | Create a new Cipher Stream Provider in the config
+    addCipherStreamProviderRequest := openapiclient.add_cipher_stream_provider_request{AddAmazonKeyManagementServiceCipherStreamProviderRequest: openapiclient.NewAddAmazonKeyManagementServiceCipherStreamProviderRequest("ProviderName_example", []openapiclient.EnumamazonKeyManagementServiceCipherStreamProviderSchemaUrn{openapiclient.Enumamazon-key-management-service-cipher-stream-providerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:amazon-key-management-service")}, "KmsEncryptionKeyArn_example", false)} // AddCipherStreamProviderRequest | Create a new Cipher Stream Provider in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

@@ -22,11 +22,11 @@ type AddSyslogBasedAccessLogPublisherRequest struct {
 	// Indicates whether the Syslog Based Access Log Publisher is enabled for use.
 	Enabled bool `json:"enabled"`
 	// Specifies the hostname or IP address of the syslogd host to log to. It is highly recommend to use localhost.
-	ServerHostName string `json:"serverHostName"`
+	ServerHostName *string `json:"serverHostName,omitempty"`
 	// Specifies the port number of the syslogd host to log to.
-	ServerPort int32 `json:"serverPort"`
+	ServerPort *int32 `json:"serverPort,omitempty"`
 	// Specifies the syslog facility to use for this Syslog Based Access Log Publisher
-	SyslogFacility int32 `json:"syslogFacility"`
+	SyslogFacility *int32 `json:"syslogFacility,omitempty"`
 	// Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written.
 	MaxStringLength *int32 `json:"maxStringLength,omitempty"`
 	// Indicates whether to log information about connections established to the server.
@@ -76,7 +76,7 @@ type AddSyslogBasedAccessLogPublisherRequest struct {
 	// Indicates whether to use generified version of certain message strings, including diagnostic messages, additional information messages, authentication failure reasons, and disconnect messages. Generified versions of those strings may use placeholders (like %s for a string or %d for an integer) rather than the version of the string with those placeholders replaced with specific values.
 	GenerifyMessageStringsWhenPossible *bool `json:"generifyMessageStringsWhenPossible,omitempty"`
 	// Indicates whether the Writer Based Access Log Publisher will publish records asynchronously.
-	Asynchronous bool `json:"asynchronous"`
+	Asynchronous *bool `json:"asynchronous,omitempty"`
 	// Specifies whether to flush the writer after every log record.
 	AutoFlush *bool `json:"autoFlush,omitempty"`
 	// The maximum number of log records that can be stored in the asynchronous queue.
@@ -120,15 +120,11 @@ type AddSyslogBasedAccessLogPublisherRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddSyslogBasedAccessLogPublisherRequest(publisherName string, schemas []EnumsyslogBasedAccessLogPublisherSchemaUrn, enabled bool, serverHostName string, serverPort int32, syslogFacility int32, asynchronous bool) *AddSyslogBasedAccessLogPublisherRequest {
+func NewAddSyslogBasedAccessLogPublisherRequest(publisherName string, schemas []EnumsyslogBasedAccessLogPublisherSchemaUrn, enabled bool) *AddSyslogBasedAccessLogPublisherRequest {
 	this := AddSyslogBasedAccessLogPublisherRequest{}
 	this.PublisherName = publisherName
 	this.Schemas = schemas
 	this.Enabled = enabled
-	this.ServerHostName = serverHostName
-	this.ServerPort = serverPort
-	this.SyslogFacility = syslogFacility
-	this.Asynchronous = asynchronous
 	return &this
 }
 
@@ -212,76 +208,100 @@ func (o *AddSyslogBasedAccessLogPublisherRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
-// GetServerHostName returns the ServerHostName field value
+// GetServerHostName returns the ServerHostName field value if set, zero value otherwise.
 func (o *AddSyslogBasedAccessLogPublisherRequest) GetServerHostName() string {
-	if o == nil {
+	if o == nil || isNil(o.ServerHostName) {
 		var ret string
 		return ret
 	}
-
-	return o.ServerHostName
+	return *o.ServerHostName
 }
 
-// GetServerHostNameOk returns a tuple with the ServerHostName field value
+// GetServerHostNameOk returns a tuple with the ServerHostName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogBasedAccessLogPublisherRequest) GetServerHostNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.ServerHostName) {
 		return nil, false
 	}
-	return &o.ServerHostName, true
+	return o.ServerHostName, true
 }
 
-// SetServerHostName sets field value
+// HasServerHostName returns a boolean if a field has been set.
+func (o *AddSyslogBasedAccessLogPublisherRequest) HasServerHostName() bool {
+	if o != nil && !isNil(o.ServerHostName) {
+		return true
+	}
+
+	return false
+}
+
+// SetServerHostName gets a reference to the given string and assigns it to the ServerHostName field.
 func (o *AddSyslogBasedAccessLogPublisherRequest) SetServerHostName(v string) {
-	o.ServerHostName = v
+	o.ServerHostName = &v
 }
 
-// GetServerPort returns the ServerPort field value
+// GetServerPort returns the ServerPort field value if set, zero value otherwise.
 func (o *AddSyslogBasedAccessLogPublisherRequest) GetServerPort() int32 {
-	if o == nil {
+	if o == nil || isNil(o.ServerPort) {
 		var ret int32
 		return ret
 	}
-
-	return o.ServerPort
+	return *o.ServerPort
 }
 
-// GetServerPortOk returns a tuple with the ServerPort field value
+// GetServerPortOk returns a tuple with the ServerPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogBasedAccessLogPublisherRequest) GetServerPortOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || isNil(o.ServerPort) {
 		return nil, false
 	}
-	return &o.ServerPort, true
+	return o.ServerPort, true
 }
 
-// SetServerPort sets field value
+// HasServerPort returns a boolean if a field has been set.
+func (o *AddSyslogBasedAccessLogPublisherRequest) HasServerPort() bool {
+	if o != nil && !isNil(o.ServerPort) {
+		return true
+	}
+
+	return false
+}
+
+// SetServerPort gets a reference to the given int32 and assigns it to the ServerPort field.
 func (o *AddSyslogBasedAccessLogPublisherRequest) SetServerPort(v int32) {
-	o.ServerPort = v
+	o.ServerPort = &v
 }
 
-// GetSyslogFacility returns the SyslogFacility field value
+// GetSyslogFacility returns the SyslogFacility field value if set, zero value otherwise.
 func (o *AddSyslogBasedAccessLogPublisherRequest) GetSyslogFacility() int32 {
-	if o == nil {
+	if o == nil || isNil(o.SyslogFacility) {
 		var ret int32
 		return ret
 	}
-
-	return o.SyslogFacility
+	return *o.SyslogFacility
 }
 
-// GetSyslogFacilityOk returns a tuple with the SyslogFacility field value
+// GetSyslogFacilityOk returns a tuple with the SyslogFacility field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogBasedAccessLogPublisherRequest) GetSyslogFacilityOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || isNil(o.SyslogFacility) {
 		return nil, false
 	}
-	return &o.SyslogFacility, true
+	return o.SyslogFacility, true
 }
 
-// SetSyslogFacility sets field value
+// HasSyslogFacility returns a boolean if a field has been set.
+func (o *AddSyslogBasedAccessLogPublisherRequest) HasSyslogFacility() bool {
+	if o != nil && !isNil(o.SyslogFacility) {
+		return true
+	}
+
+	return false
+}
+
+// SetSyslogFacility gets a reference to the given int32 and assigns it to the SyslogFacility field.
 func (o *AddSyslogBasedAccessLogPublisherRequest) SetSyslogFacility(v int32) {
-	o.SyslogFacility = v
+	o.SyslogFacility = &v
 }
 
 // GetMaxStringLength returns the MaxStringLength field value if set, zero value otherwise.
@@ -1052,28 +1072,36 @@ func (o *AddSyslogBasedAccessLogPublisherRequest) SetGenerifyMessageStringsWhenP
 	o.GenerifyMessageStringsWhenPossible = &v
 }
 
-// GetAsynchronous returns the Asynchronous field value
+// GetAsynchronous returns the Asynchronous field value if set, zero value otherwise.
 func (o *AddSyslogBasedAccessLogPublisherRequest) GetAsynchronous() bool {
-	if o == nil {
+	if o == nil || isNil(o.Asynchronous) {
 		var ret bool
 		return ret
 	}
-
-	return o.Asynchronous
+	return *o.Asynchronous
 }
 
-// GetAsynchronousOk returns a tuple with the Asynchronous field value
+// GetAsynchronousOk returns a tuple with the Asynchronous field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogBasedAccessLogPublisherRequest) GetAsynchronousOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || isNil(o.Asynchronous) {
 		return nil, false
 	}
-	return &o.Asynchronous, true
+	return o.Asynchronous, true
 }
 
-// SetAsynchronous sets field value
+// HasAsynchronous returns a boolean if a field has been set.
+func (o *AddSyslogBasedAccessLogPublisherRequest) HasAsynchronous() bool {
+	if o != nil && !isNil(o.Asynchronous) {
+		return true
+	}
+
+	return false
+}
+
+// SetAsynchronous gets a reference to the given bool and assigns it to the Asynchronous field.
 func (o *AddSyslogBasedAccessLogPublisherRequest) SetAsynchronous(v bool) {
-	o.Asynchronous = v
+	o.Asynchronous = &v
 }
 
 // GetAutoFlush returns the AutoFlush field value if set, zero value otherwise.
@@ -1695,13 +1723,13 @@ func (o AddSyslogBasedAccessLogPublisherRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["enabled"] = o.Enabled
 	}
-	if true {
+	if !isNil(o.ServerHostName) {
 		toSerialize["serverHostName"] = o.ServerHostName
 	}
-	if true {
+	if !isNil(o.ServerPort) {
 		toSerialize["serverPort"] = o.ServerPort
 	}
-	if true {
+	if !isNil(o.SyslogFacility) {
 		toSerialize["syslogFacility"] = o.SyslogFacility
 	}
 	if !isNil(o.MaxStringLength) {
@@ -1776,7 +1804,7 @@ func (o AddSyslogBasedAccessLogPublisherRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.GenerifyMessageStringsWhenPossible) {
 		toSerialize["generifyMessageStringsWhenPossible"] = o.GenerifyMessageStringsWhenPossible
 	}
-	if true {
+	if !isNil(o.Asynchronous) {
 		toSerialize["asynchronous"] = o.Asynchronous
 	}
 	if !isNil(o.AutoFlush) {

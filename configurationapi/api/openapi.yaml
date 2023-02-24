@@ -13555,6 +13555,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/ping_one_id_token_validator_response_allOf'
       - $ref: '#/components/schemas/ping-one-id-token-validator-shared'
+      required:
+      - OpenIDConnectProvider
     ping-one-id-token-validator-shared:
       properties:
         schemas:
@@ -13612,7 +13614,6 @@ components:
             \ evaluated first to determine if they are able to validate the ID token."
           type: integer
       required:
-      - OpenIDConnectProvider
       - enabled
       - evaluationOrderIndex
       - identityMapper
@@ -13882,6 +13883,9 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/internal_search_rate_plugin_response_allOf'
       - $ref: '#/components/schemas/internal-search-rate-plugin-shared'
+      required:
+      - numThreads
+      - pluginType
     internal-search-rate-plugin-shared:
       properties:
         schemas:
@@ -13933,8 +13937,6 @@ components:
       - baseDN
       - enabled
       - filterPrefix
-      - numThreads
-      - pluginType
       - schemas
       type: object
     Enuminternal-search-rate-pluginSchemaUrn:
@@ -13993,6 +13995,9 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/internal_search_rate_plugin_response_allOf'
       - $ref: '#/components/schemas/seven-bit-clean-plugin-shared'
+      required:
+      - attributeType
+      - pluginType
     seven-bit-clean-plugin-shared:
       properties:
         schemas:
@@ -14027,9 +14032,7 @@ components:
             operations.
           type: boolean
       required:
-      - attributeType
       - enabled
-      - pluginType
       - schemas
       type: object
     Enumseven-bit-clean-pluginSchemaUrn:
@@ -14045,6 +14048,10 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/internal_search_rate_plugin_response_allOf'
       - $ref: '#/components/schemas/clean-up-expired-pingfederate-persistent-access-grants-plugin-shared'
+      required:
+      - maxUpdatesPerSecond
+      - numDeleteThreads
+      - pollingInterval
     clean-up-expired-pingfederate-persistent-access-grants-plugin-shared:
       properties:
         schemas:
@@ -14082,9 +14089,6 @@ components:
           type: boolean
       required:
       - enabled
-      - maxUpdatesPerSecond
-      - numDeleteThreads
-      - pollingInterval
       - schemas
       type: object
     Enumclean-up-expired-pingfederate-persistent-access-grants-pluginSchemaUrn:
@@ -14100,6 +14104,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/internal_search_rate_plugin_response_allOf'
       - $ref: '#/components/schemas/periodic-gc-plugin-shared'
+      required:
+      - pluginType
     periodic-gc-plugin-shared:
       properties:
         schemas:
@@ -14150,7 +14156,6 @@ components:
       required:
       - enabled
       - invokeGCTimeUtc
-      - pluginType
       - schemas
       type: object
     Enumperiodic-gc-pluginSchemaUrn:
@@ -14373,6 +14378,15 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/internal_search_rate_plugin_response_allOf'
       - $ref: '#/components/schemas/periodic-stats-logger-plugin-shared'
+      required:
+      - collectionInterval
+      - histogramFormat
+      - linesBetweenHeader
+      - logFilePermissions
+      - logInterval
+      - retentionPolicy
+      - rotationPolicy
+      - suppressIfIdle
     periodic-stats-logger-plugin-shared:
       properties:
         schemas:
@@ -14490,17 +14504,9 @@ components:
           description: Indicates whether the plug-in is enabled for use.
           type: boolean
       required:
-      - collectionInterval
       - enabled
-      - histogramFormat
-      - linesBetweenHeader
       - logFile
-      - logFilePermissions
-      - logInterval
-      - retentionPolicy
-      - rotationPolicy
       - schemas
-      - suppressIfIdle
       type: object
     Enumperiodic-stats-logger-pluginSchemaUrn:
       enum:
@@ -14515,6 +14521,11 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/internal_search_rate_plugin_response_allOf'
       - $ref: '#/components/schemas/purge-expired-data-plugin-shared'
+      required:
+      - datetimeFormat
+      - maxUpdatesPerSecond
+      - numDeleteThreads
+      - pollingInterval
     purge-expired-data-plugin-shared:
       properties:
         schemas:
@@ -14590,12 +14601,8 @@ components:
           type: boolean
       required:
       - datetimeAttribute
-      - datetimeFormat
       - enabled
       - expirationOffset
-      - maxUpdatesPerSecond
-      - numDeleteThreads
-      - pollingInterval
       - schemas
       type: object
     Enumpurge-expired-data-pluginSchemaUrn:
@@ -14619,6 +14626,9 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/internal_search_rate_plugin_response_allOf'
       - $ref: '#/components/schemas/sub-operation-timing-plugin-shared'
+      required:
+      - numMostExpensivePhasesShown
+      - pluginType
     sub-operation-timing-plugin-shared:
       properties:
         schemas:
@@ -14652,8 +14662,6 @@ components:
           type: boolean
       required:
       - enabled
-      - numMostExpensivePhasesShown
-      - pluginType
       - schemas
       type: object
     Enumsub-operation-timing-pluginSchemaUrn:
@@ -14734,6 +14742,14 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/internal_search_rate_plugin_response_allOf'
       - $ref: '#/components/schemas/pass-through-authentication-plugin-shared'
+      required:
+      - initialConnections
+      - maxConnections
+      - overrideLocalPassword
+      - pluginType
+      - serverAccessMode
+      - tryLocalBind
+      - updateLocalPassword
     pass-through-authentication-plugin-shared:
       properties:
         schemas:
@@ -14851,15 +14867,8 @@ components:
           type: boolean
       required:
       - enabled
-      - initialConnections
-      - maxConnections
-      - overrideLocalPassword
-      - pluginType
       - schemas
       - server
-      - serverAccessMode
-      - tryLocalBind
-      - updateLocalPassword
       type: object
     Enumpass-through-authentication-pluginSchemaUrn:
       enum:
@@ -14874,6 +14883,11 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/internal_search_rate_plugin_response_allOf'
       - $ref: '#/components/schemas/dn-mapper-plugin-shared'
+      required:
+      - alwaysMapResponses
+      - enableAttributeMapping
+      - enableControlMapping
+      - pluginType
     dn-mapper-plugin-shared:
       properties:
         schemas:
@@ -14932,11 +14946,7 @@ components:
             operations.
           type: boolean
       required:
-      - alwaysMapResponses
-      - enableAttributeMapping
-      - enableControlMapping
       - enabled
-      - pluginType
       - schemas
       - sourceDN
       - targetDN
@@ -14962,6 +14972,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/internal_search_rate_plugin_response_allOf'
       - $ref: '#/components/schemas/referral-on-update-plugin-shared'
+      required:
+      - pluginType
     referral-on-update-plugin-shared:
       properties:
         schemas:
@@ -15000,7 +15012,6 @@ components:
           type: boolean
       required:
       - enabled
-      - pluginType
       - referralBaseURL
       - schemas
       type: object
@@ -15060,6 +15071,9 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/internal_search_rate_plugin_response_allOf'
       - $ref: '#/components/schemas/snmp-subagent-plugin-shared'
+      required:
+      - agentxAddress
+      - agentxPort
     snmp-subagent-plugin-shared:
       properties:
         schemas:
@@ -15106,8 +15120,6 @@ components:
             operations.
           type: boolean
       required:
-      - agentxAddress
-      - agentxPort
       - enabled
       - schemas
       type: object
@@ -15140,6 +15152,10 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/internal_search_rate_plugin_response_allOf'
       - $ref: '#/components/schemas/clean-up-inactive-pingfederate-persistent-sessions-plugin-shared'
+      required:
+      - maxUpdatesPerSecond
+      - numDeleteThreads
+      - pollingInterval
     clean-up-inactive-pingfederate-persistent-sessions-plugin-shared:
       properties:
         schemas:
@@ -15182,9 +15198,6 @@ components:
       required:
       - enabled
       - expirationOffset
-      - maxUpdatesPerSecond
-      - numDeleteThreads
-      - pollingInterval
       - schemas
       type: object
     Enumclean-up-inactive-pingfederate-persistent-sessions-pluginSchemaUrn:
@@ -15200,6 +15213,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/internal_search_rate_plugin_response_allOf'
       - $ref: '#/components/schemas/composed-attribute-plugin-shared'
+      required:
+      - pluginType
     composed-attribute-plugin-shared:
       properties:
         schemas:
@@ -15274,7 +15289,6 @@ components:
       required:
       - attributeType
       - enabled
-      - pluginType
       - schemas
       - valuePattern
       type: object
@@ -15299,6 +15313,10 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/internal_search_rate_plugin_response_allOf'
       - $ref: '#/components/schemas/attribute-mapper-plugin-shared'
+      required:
+      - alwaysMapResponses
+      - enableControlMapping
+      - pluginType
     attribute-mapper-plugin-shared:
       properties:
         schemas:
@@ -15347,10 +15365,7 @@ components:
             operations.
           type: boolean
       required:
-      - alwaysMapResponses
-      - enableControlMapping
       - enabled
-      - pluginType
       - schemas
       - sourceAttribute
       - targetAttribute
@@ -15368,6 +15383,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/internal_search_rate_plugin_response_allOf'
       - $ref: '#/components/schemas/delay-plugin-shared'
+      required:
+      - pluginType
     delay-plugin-shared:
       properties:
         schemas:
@@ -15407,7 +15424,6 @@ components:
       required:
       - delay
       - enabled
-      - pluginType
       - schemas
       type: object
     Enumdelay-pluginSchemaUrn:
@@ -15423,6 +15439,10 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/internal_search_rate_plugin_response_allOf'
       - $ref: '#/components/schemas/clean-up-expired-pingfederate-persistent-sessions-plugin-shared'
+      required:
+      - maxUpdatesPerSecond
+      - numDeleteThreads
+      - pollingInterval
     clean-up-expired-pingfederate-persistent-sessions-plugin-shared:
       properties:
         schemas:
@@ -15460,9 +15480,6 @@ components:
           type: boolean
       required:
       - enabled
-      - maxUpdatesPerSecond
-      - numDeleteThreads
-      - pollingInterval
       - schemas
       type: object
     Enumclean-up-expired-pingfederate-persistent-sessions-pluginSchemaUrn:
@@ -15634,6 +15651,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/internal_search_rate_plugin_response_allOf'
       - $ref: '#/components/schemas/referential-integrity-plugin-shared'
+      required:
+      - pluginType
     referential-integrity-plugin-shared:
       properties:
         schemas:
@@ -15679,7 +15698,6 @@ components:
       required:
       - attributeType
       - enabled
-      - pluginType
       - schemas
       type: object
     Enumreferential-integrity-pluginSchemaUrn:
@@ -15695,6 +15713,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/internal_search_rate_plugin_response_allOf'
       - $ref: '#/components/schemas/unique-attribute-plugin-shared'
+      required:
+      - pluginType
     unique-attribute-plugin-shared:
       properties:
         schemas:
@@ -15740,7 +15760,6 @@ components:
           type: boolean
       required:
       - enabled
-      - pluginType
       - schemas
       - type
       type: object
@@ -15757,6 +15776,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/custom_logged_stats_response_allOf'
       - $ref: '#/components/schemas/custom-logged-stats-shared'
+      required:
+      - enabled
     custom-logged-stats-shared:
       properties:
         schemas:
@@ -15833,7 +15854,6 @@ components:
           type: boolean
       required:
       - attributeToLog
-      - enabled
       - monitorObjectclass
       - statisticType
       type: object
@@ -16312,6 +16332,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/ping_federate_access_token_validator_response_allOf'
       - $ref: '#/components/schemas/ping-federate-access-token-validator-shared'
+      required:
+      - evaluationOrderIndex
     ping-federate-access-token-validator-shared:
       properties:
         schemas:
@@ -16384,7 +16406,6 @@ components:
       required:
       - clientID
       - enabled
-      - evaluationOrderIndex
       - schemas
       type: object
     Enumping-federate-access-token-validatorSchemaUrn:
@@ -16400,6 +16421,11 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/ping_federate_access_token_validator_response_allOf'
       - $ref: '#/components/schemas/jwt-access-token-validator-shared'
+      required:
+      - allowedContentEncryptionAlgorithm
+      - allowedKeyEncryptionAlgorithm
+      - allowedSigningAlgorithm
+      - evaluationOrderIndex
     jwt-access-token-validator-shared:
       properties:
         schemas:
@@ -16493,11 +16519,7 @@ components:
             use in Directory Server.
           type: boolean
       required:
-      - allowedContentEncryptionAlgorithm
-      - allowedKeyEncryptionAlgorithm
-      - allowedSigningAlgorithm
       - enabled
-      - evaluationOrderIndex
       - schemas
       type: object
     Enumjwt-access-token-validatorSchemaUrn:
@@ -16513,6 +16535,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/ping_federate_access_token_validator_response_allOf'
       - $ref: '#/components/schemas/mock-access-token-validator-shared'
+      required:
+      - evaluationOrderIndex
     mock-access-token-validator-shared:
       properties:
         schemas:
@@ -16560,7 +16584,6 @@ components:
           type: boolean
       required:
       - enabled
-      - evaluationOrderIndex
       - schemas
       type: object
     Enummock-access-token-validatorSchemaUrn:
@@ -17121,6 +17144,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/twilio_otp_delivery_mechanism_response_allOf'
       - $ref: '#/components/schemas/twilio-otp-delivery-mechanism-shared'
+      required:
+      - phoneNumberAttributeType
     twilio-otp-delivery-mechanism-shared:
       properties:
         schemas:
@@ -17177,7 +17202,6 @@ components:
           type: boolean
       required:
       - enabled
-      - phoneNumberAttributeType
       - schemas
       - senderPhoneNumber
       - twilioAccountSID
@@ -17195,6 +17219,9 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/twilio_otp_delivery_mechanism_response_allOf'
       - $ref: '#/components/schemas/email-otp-delivery-mechanism-shared'
+      required:
+      - emailAddressAttributeType
+      - messageSubject
     email-otp-delivery-mechanism-shared:
       properties:
         schemas:
@@ -17238,9 +17265,7 @@ components:
             use in the server.
           type: boolean
       required:
-      - emailAddressAttributeType
       - enabled
-      - messageSubject
       - schemas
       - senderAddress
       type: object
@@ -20529,6 +20554,15 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/root_dn_user_response_allOf'
       - $ref: '#/components/schemas/root-dn-user-shared'
+      required:
+      - idleTimeLimitSeconds
+      - inheritDefaultRootPrivileges
+      - lookThroughEntryLimit
+      - passwordPolicy
+      - requireSecureAuthentication
+      - requireSecureConnections
+      - searchResultEntryLimit
+      - timeLimitSeconds
     root-dn-user-shared:
       properties:
         schemas:
@@ -20741,15 +20775,6 @@ components:
           items:
             type: string
           type: array
-      required:
-      - idleTimeLimitSeconds
-      - inheritDefaultRootPrivileges
-      - lookThroughEntryLimit
-      - passwordPolicy
-      - requireSecureAuthentication
-      - requireSecureConnections
-      - searchResultEntryLimit
-      - timeLimitSeconds
       type: object
     Enumroot-dn-userSchemaUrn:
       enum:
@@ -21071,6 +21096,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/key_pair_response_allOf'
       - $ref: '#/components/schemas/key-pair-shared'
+      required:
+      - keyAlgorithm
     key-pair-shared:
       properties:
         schemas:
@@ -21101,8 +21128,6 @@ components:
             preferred encryption settings definition.
           format: password
           type: string
-      required:
-      - keyAlgorithm
       type: object
     Enumkey-pairSchemaUrn:
       enum:
@@ -22017,6 +22042,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/validate_totp_password_extended_operation_handler_response_allOf'
       - $ref: '#/components/schemas/deliver-password-reset-token-extended-operation-handler-shared'
+      required:
+      - passwordResetTokenValidityDuration
     deliver-password-reset-token-extended-operation-handler-shared:
       properties:
         schemas:
@@ -22052,7 +22079,6 @@ components:
       - defaultTokenDeliveryMechanism
       - enabled
       - passwordGenerator
-      - passwordResetTokenValidityDuration
       - schemas
       type: object
     Enumdeliver-password-reset-token-extended-operation-handlerSchemaUrn:
@@ -22723,6 +22749,9 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/recurring_task_chain_response_allOf'
       - $ref: '#/components/schemas/recurring-task-chain-shared'
+      required:
+      - enabled
+      - scheduledMonth
     recurring-task-chain-shared:
       properties:
         schemas:
@@ -22784,10 +22813,8 @@ components:
         serverOfflineAtStartTimeBehavior:
           $ref: '#/components/schemas/Enumrecurring-task-chain-serverOfflineAtStartTimeBehaviorProp'
       required:
-      - enabled
       - recurringTask
       - scheduledDateSelectionType
-      - scheduledMonth
       - scheduledTimeOfDay
       type: object
     Enumrecurring-task-chainSchemaUrn:
@@ -22939,6 +22966,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/indicator_gauge_response_allOf'
       - $ref: '#/components/schemas/indicator-gauge-shared'
+      required:
+      - enabled
     indicator-gauge-shared:
       properties:
         schemas:
@@ -23000,7 +23029,6 @@ components:
         serverDegradedSeverityLevel:
           $ref: '#/components/schemas/Enumgauge-serverDegradedSeverityLevelProp'
       required:
-      - enabled
       - gaugeDataSource
       - schemas
       type: object
@@ -23017,6 +23045,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/indicator_gauge_response_allOf'
       - $ref: '#/components/schemas/numeric-gauge-shared'
+      required:
+      - enabled
     numeric-gauge-shared:
       properties:
         schemas:
@@ -23093,7 +23123,6 @@ components:
         serverDegradedSeverityLevel:
           $ref: '#/components/schemas/Enumgauge-serverDegradedSeverityLevelProp'
       required:
-      - enabled
       - gaugeDataSource
       - schemas
       type: object
@@ -23443,6 +23472,9 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/smtp_alert_handler_response_allOf'
       - $ref: '#/components/schemas/smtp-alert-handler-shared'
+      required:
+      - messageBody
+      - messageSubject
     smtp-alert-handler-shared:
       properties:
         schemas:
@@ -23499,8 +23531,6 @@ components:
           type: array
       required:
       - enabled
-      - messageBody
-      - messageSubject
       - recipientAddress
       - schemas
       - senderAddress
@@ -23630,6 +23660,9 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/smtp_alert_handler_response_allOf'
       - $ref: '#/components/schemas/snmp-alert-handler-shared'
+      required:
+      - communityName
+      - serverPort
     snmp-alert-handler-shared:
       properties:
         schemas:
@@ -23676,11 +23709,9 @@ components:
             $ref: '#/components/schemas/Enumalert-handler-disabledAlertTypeProp'
           type: array
       required:
-      - communityName
       - enabled
       - schemas
       - serverHostName
-      - serverPort
       type: object
     Enumsnmp-alert-handlerSchemaUrn:
       enum:
@@ -23695,6 +23726,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/smtp_alert_handler_response_allOf'
       - $ref: '#/components/schemas/twilio-alert-handler-shared'
+      required:
+      - longMessageBehavior
     twilio-alert-handler-shared:
       properties:
         schemas:
@@ -23755,7 +23788,6 @@ components:
           type: array
       required:
       - enabled
-      - longMessageBehavior
       - recipientPhoneNumber
       - schemas
       - senderPhoneNumber
@@ -24406,6 +24438,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/amazon_key_management_service_cipher_stream_provider_response_allOf'
       - $ref: '#/components/schemas/amazon-key-management-service-cipher-stream-provider-shared'
+      required:
+      - encryptedPassphraseFile
     amazon-key-management-service-cipher-stream-provider-shared:
       properties:
         schemas:
@@ -24453,7 +24487,6 @@ components:
           type: boolean
       required:
       - enabled
-      - encryptedPassphraseFile
       - kmsEncryptionKeyArn
       - schemas
       type: object
@@ -24470,6 +24503,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/amazon_key_management_service_cipher_stream_provider_response_allOf'
       - $ref: '#/components/schemas/amazon-secrets-manager-cipher-stream-provider-shared'
+      required:
+      - encryptionMetadataFile
     amazon-secrets-manager-cipher-stream-provider-shared:
       properties:
         schemas:
@@ -24511,7 +24546,6 @@ components:
       required:
       - awsExternalServer
       - enabled
-      - encryptionMetadataFile
       - schemas
       - secretFieldName
       - secretID
@@ -24529,6 +24563,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/amazon_key_management_service_cipher_stream_provider_response_allOf'
       - $ref: '#/components/schemas/azure-key-vault-cipher-stream-provider-shared'
+      required:
+      - encryptionMetadataFile
     azure-key-vault-cipher-stream-provider-shared:
       properties:
         schemas:
@@ -24561,7 +24597,6 @@ components:
       required:
       - azureAuthenticationMethod
       - enabled
-      - encryptionMetadataFile
       - keyVaultURI
       - schemas
       - secretName
@@ -24652,6 +24687,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/amazon_key_management_service_cipher_stream_provider_response_allOf'
       - $ref: '#/components/schemas/conjur-cipher-stream-provider-shared'
+      required:
+      - encryptionMetadataFile
     conjur-cipher-stream-provider-shared:
       properties:
         schemas:
@@ -24684,7 +24721,6 @@ components:
       - conjurExternalServer
       - conjurSecretRelativePath
       - enabled
-      - encryptionMetadataFile
       - schemas
       type: object
     Enumconjur-cipher-stream-providerSchemaUrn:
@@ -24700,6 +24736,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/amazon_key_management_service_cipher_stream_provider_response_allOf'
       - $ref: '#/components/schemas/pkcs11-cipher-stream-provider-shared'
+      required:
+      - encryptionMetadataFile
     pkcs11-cipher-stream-provider-shared:
       properties:
         schemas:
@@ -24779,7 +24817,6 @@ components:
           type: boolean
       required:
       - enabled
-      - encryptionMetadataFile
       - schemas
       - sslCertNickname
       type: object
@@ -24796,6 +24833,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/amazon_key_management_service_cipher_stream_provider_response_allOf'
       - $ref: '#/components/schemas/vault-cipher-stream-provider-shared'
+      required:
+      - vaultEncryptionMetadataFile
     vault-cipher-stream-provider-shared:
       properties:
         schemas:
@@ -24856,7 +24895,6 @@ components:
       required:
       - enabled
       - schemas
-      - vaultEncryptionMetadataFile
       - vaultSecretFieldName
       - vaultSecretPath
       type: object
@@ -25029,6 +25067,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/smtp_account_status_notification_handler_response_allOf'
       - $ref: '#/components/schemas/smtp-account-status-notification-handler-shared'
+      required:
+      - sendMessageWithoutEndUserAddress
     smtp-account-status-notification-handler-shared:
       properties:
         schemas:
@@ -25111,7 +25151,6 @@ components:
       - messageSubject
       - messageTemplateFile
       - schemas
-      - sendMessageWithoutEndUserAddress
       - senderAddress
       type: object
     Enumsmtp-account-status-notification-handlerSchemaUrn:
@@ -25547,6 +25586,10 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/ldap_pass_through_authentication_handler_response_allOf'
       - $ref: '#/components/schemas/ldap-pass-through-authentication-handler-shared'
+      required:
+      - initialConnections
+      - maxConnections
+      - serverAccessMode
     ldap-pass-through-authentication-handler-shared:
       properties:
         schemas:
@@ -25636,11 +25679,8 @@ components:
           description: A description for this Pass Through Authentication Handler
           type: string
       required:
-      - initialConnections
-      - maxConnections
       - schemas
       - server
-      - serverAccessMode
       type: object
     Enumldap-pass-through-authentication-handlerSchemaUrn:
       enum:
@@ -25792,6 +25832,15 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/topology_admin_user_response_allOf'
       - $ref: '#/components/schemas/topology-admin-user-shared'
+      required:
+      - idleTimeLimitSeconds
+      - inheritDefaultRootPrivileges
+      - lookThroughEntryLimit
+      - passwordPolicy
+      - requireSecureAuthentication
+      - requireSecureConnections
+      - searchResultEntryLimit
+      - timeLimitSeconds
     topology-admin-user-shared:
       properties:
         schemas:
@@ -26004,15 +26053,6 @@ components:
           items:
             type: string
           type: array
-      required:
-      - idleTimeLimitSeconds
-      - inheritDefaultRootPrivileges
-      - lookThroughEntryLimit
-      - passwordPolicy
-      - requireSecureAuthentication
-      - requireSecureConnections
-      - searchResultEntryLimit
-      - timeLimitSeconds
       type: object
     Enumtopology-admin-userSchemaUrn:
       enum:
@@ -26476,6 +26516,10 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/character_set_password_validator_response_allOf'
       - $ref: '#/components/schemas/dictionary-password-validator-shared'
+      required:
+      - caseSensitiveValidation
+      - dictionaryFile
+      - testReversedPassword
     dictionary-password-validator-shared:
       properties:
         schemas:
@@ -26546,11 +26590,8 @@ components:
             \ message that may have otherwise been generated by the validator."
           type: string
       required:
-      - caseSensitiveValidation
-      - dictionaryFile
       - enabled
       - schemas
-      - testReversedPassword
       type: object
     Enumdictionary-password-validatorSchemaUrn:
       enum:
@@ -26565,6 +26606,9 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/character_set_password_validator_response_allOf'
       - $ref: '#/components/schemas/haystack-password-validator-shared'
+      required:
+      - assumedPasswordGuessesPerSecond
+      - minimumAcceptableTimeToExhaustSearchSpace
     haystack-password-validator-shared:
       properties:
         schemas:
@@ -26601,9 +26645,7 @@ components:
             \ message that may have otherwise been generated by the validator."
           type: string
       required:
-      - assumedPasswordGuessesPerSecond
       - enabled
-      - minimumAcceptableTimeToExhaustSearchSpace
       - schemas
       type: object
     Enumhaystack-password-validatorSchemaUrn:
@@ -26674,6 +26716,12 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/character_set_password_validator_response_allOf'
       - $ref: '#/components/schemas/pwned-passwords-password-validator-shared'
+      required:
+      - acceptPasswordOnServiceError
+      - invokeForAdd
+      - invokeForAdminReset
+      - invokeForSelfChange
+      - pwnedPasswordsBaseURL
     pwned-passwords-password-validator-shared:
       properties:
         schemas:
@@ -26741,12 +26789,7 @@ components:
             \ message that may have otherwise been generated by the validator."
           type: string
       required:
-      - acceptPasswordOnServiceError
       - enabled
-      - invokeForAdd
-      - invokeForAdminReset
-      - invokeForSelfChange
-      - pwnedPasswordsBaseURL
       - schemas
       type: object
     Enumpwned-passwords-password-validatorSchemaUrn:
@@ -27287,6 +27330,9 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/jmx_connection_handler_response_allOf'
       - $ref: '#/components/schemas/ldif-connection-handler-shared'
+      required:
+      - ldifDirectory
+      - pollInterval
     ldif-connection-handler-shared:
       properties:
         schemas:
@@ -27326,8 +27372,6 @@ components:
           type: boolean
       required:
       - enabled
-      - ldifDirectory
-      - pollInterval
       - schemas
       type: object
     Enumldif-connection-handlerSchemaUrn:
@@ -28001,6 +28045,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/subject_equals_dn_certificate_mapper_response_allOf'
       - $ref: '#/components/schemas/subject-dn-to-user-attribute-certificate-mapper-shared'
+      required:
+      - subjectAttribute
     subject-dn-to-user-attribute-certificate-mapper-shared:
       properties:
         schemas:
@@ -28028,7 +28074,6 @@ components:
       required:
       - enabled
       - schemas
-      - subjectAttribute
       type: object
     Enumsubject-dn-to-user-attribute-certificate-mapperSchemaUrn:
       enum:
@@ -28130,6 +28175,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/subject_equals_dn_certificate_mapper_response_allOf'
       - $ref: '#/components/schemas/fingerprint-certificate-mapper-shared'
+      required:
+      - fingerprintAttribute
     fingerprint-certificate-mapper-shared:
       properties:
         schemas:
@@ -28157,7 +28204,6 @@ components:
       required:
       - enabled
       - fingerprintAlgorithm
-      - fingerprintAttribute
       - schemas
       type: object
     Enumfingerprint-certificate-mapperSchemaUrn:
@@ -28224,6 +28270,9 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/syslog_json_audit_log_publisher_response_allOf'
       - $ref: '#/components/schemas/syslog-json-audit-log-publisher-shared'
+      required:
+      - syslogFacility
+      - syslogSeverity
     syslog-json-audit-log-publisher-shared:
       properties:
         schemas:
@@ -28372,8 +28421,6 @@ components:
       - enabled
       - schemas
       - syslogExternalServer
-      - syslogFacility
-      - syslogSeverity
       type: object
     Enumsyslog-json-audit-log-publisherSchemaUrn:
       enum:
@@ -28388,6 +28435,11 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/syslog_json_audit_log_publisher_response_allOf'
       - $ref: '#/components/schemas/syslog-based-error-log-publisher-shared'
+      required:
+      - asynchronous
+      - serverHostName
+      - serverPort
+      - syslogFacility
     syslog-based-error-log-publisher-shared:
       properties:
         schemas:
@@ -28438,12 +28490,8 @@ components:
         loggingErrorBehavior:
           $ref: '#/components/schemas/Enumlog-publisher-loggingErrorBehaviorProp'
       required:
-      - asynchronous
       - enabled
       - schemas
-      - serverHostName
-      - serverPort
-      - syslogFacility
       type: object
     Enumsyslog-based-error-log-publisherSchemaUrn:
       enum:
@@ -28458,6 +28506,11 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/syslog_json_audit_log_publisher_response_allOf'
       - $ref: '#/components/schemas/third-party-file-based-access-log-publisher-shared'
+      required:
+      - asynchronous
+      - logFilePermissions
+      - retentionPolicy
+      - rotationPolicy
     third-party-file-based-access-log-publisher-shared:
       properties:
         schemas:
@@ -28629,13 +28682,9 @@ components:
         loggingErrorBehavior:
           $ref: '#/components/schemas/Enumlog-publisher-loggingErrorBehaviorProp'
       required:
-      - asynchronous
       - enabled
       - extensionClass
       - logFile
-      - logFilePermissions
-      - retentionPolicy
-      - rotationPolicy
       - schemas
       type: object
     Enumthird-party-file-based-access-log-publisherSchemaUrn:
@@ -28651,6 +28700,11 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/syslog_json_audit_log_publisher_response_allOf'
       - $ref: '#/components/schemas/operation-timing-access-log-publisher-shared'
+      required:
+      - asynchronous
+      - logFilePermissions
+      - retentionPolicy
+      - rotationPolicy
     operation-timing-access-log-publisher-shared:
       properties:
         schemas:
@@ -28811,12 +28865,8 @@ components:
         loggingErrorBehavior:
           $ref: '#/components/schemas/Enumlog-publisher-loggingErrorBehaviorProp'
       required:
-      - asynchronous
       - enabled
       - logFile
-      - logFilePermissions
-      - retentionPolicy
-      - rotationPolicy
       - schemas
       type: object
     Enumoperation-timing-access-log-publisherSchemaUrn:
@@ -28877,6 +28927,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/syslog_json_audit_log_publisher_response_allOf'
       - $ref: '#/components/schemas/admin-alert-access-log-publisher-shared'
+      required:
+      - asynchronous
     admin-alert-access-log-publisher-shared:
       properties:
         schemas:
@@ -29087,7 +29139,6 @@ components:
         loggingErrorBehavior:
           $ref: '#/components/schemas/Enumlog-publisher-loggingErrorBehaviorProp'
       required:
-      - asynchronous
       - enabled
       - schemas
       type: object
@@ -29104,6 +29155,11 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/syslog_json_audit_log_publisher_response_allOf'
       - $ref: '#/components/schemas/file-based-trace-log-publisher-shared'
+      required:
+      - asynchronous
+      - logFilePermissions
+      - retentionPolicy
+      - rotationPolicy
     file-based-trace-log-publisher-shared:
       properties:
         schemas:
@@ -29239,12 +29295,8 @@ components:
         loggingErrorBehavior:
           $ref: '#/components/schemas/Enumlog-publisher-loggingErrorBehaviorProp'
       required:
-      - asynchronous
       - enabled
       - logFile
-      - logFilePermissions
-      - retentionPolicy
-      - rotationPolicy
       - schemas
       type: object
     Enumfile-based-trace-log-publisherSchemaUrn:
@@ -29260,6 +29312,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/syslog_json_audit_log_publisher_response_allOf'
       - $ref: '#/components/schemas/jdbc-based-error-log-publisher-shared'
+      required:
+      - logTableName
     jdbc-based-error-log-publisher-shared:
       properties:
         schemas:
@@ -29303,7 +29357,6 @@ components:
       required:
       - enabled
       - logFieldMapping
-      - logTableName
       - schemas
       - server
       type: object
@@ -29320,6 +29373,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/syslog_json_audit_log_publisher_response_allOf'
       - $ref: '#/components/schemas/jdbc-based-access-log-publisher-shared'
+      required:
+      - logTableName
     jdbc-based-access-log-publisher-shared:
       properties:
         schemas:
@@ -29431,7 +29486,6 @@ components:
       required:
       - enabled
       - logFieldMapping
-      - logTableName
       - schemas
       - server
       type: object
@@ -29448,6 +29502,11 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/syslog_json_audit_log_publisher_response_allOf'
       - $ref: '#/components/schemas/common-log-file-http-operation-log-publisher-shared'
+      required:
+      - asynchronous
+      - logFilePermissions
+      - retentionPolicy
+      - rotationPolicy
     common-log-file-http-operation-log-publisher-shared:
       properties:
         schemas:
@@ -29530,12 +29589,8 @@ components:
         loggingErrorBehavior:
           $ref: '#/components/schemas/Enumlog-publisher-loggingErrorBehaviorProp'
       required:
-      - asynchronous
       - enabled
       - logFile
-      - logFilePermissions
-      - retentionPolicy
-      - rotationPolicy
       - schemas
       type: object
     Enumcommon-log-file-http-operation-log-publisherSchemaUrn:
@@ -29559,6 +29614,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/syslog_json_audit_log_publisher_response_allOf'
       - $ref: '#/components/schemas/syslog-text-error-log-publisher-shared'
+      required:
+      - syslogFacility
     syslog-text-error-log-publisher-shared:
       properties:
         schemas:
@@ -29641,7 +29698,6 @@ components:
       - enabled
       - schemas
       - syslogExternalServer
-      - syslogFacility
       type: object
     Enumsyslog-text-error-log-publisherSchemaUrn:
       enum:
@@ -29656,6 +29712,11 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/syslog_json_audit_log_publisher_response_allOf'
       - $ref: '#/components/schemas/syslog-based-access-log-publisher-shared'
+      required:
+      - asynchronous
+      - serverHostName
+      - serverPort
+      - syslogFacility
     syslog-based-access-log-publisher-shared:
       properties:
         schemas:
@@ -29878,12 +29939,8 @@ components:
         loggingErrorBehavior:
           $ref: '#/components/schemas/Enumlog-publisher-loggingErrorBehaviorProp'
       required:
-      - asynchronous
       - enabled
       - schemas
-      - serverHostName
-      - serverPort
-      - syslogFacility
       type: object
     Enumsyslog-based-access-log-publisherSchemaUrn:
       enum:
@@ -29898,6 +29955,11 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/syslog_json_audit_log_publisher_response_allOf'
       - $ref: '#/components/schemas/file-based-json-audit-log-publisher-shared'
+      required:
+      - asynchronous
+      - logFilePermissions
+      - retentionPolicy
+      - rotationPolicy
     file-based-json-audit-log-publisher-shared:
       properties:
         schemas:
@@ -30087,12 +30149,8 @@ components:
         loggingErrorBehavior:
           $ref: '#/components/schemas/Enumlog-publisher-loggingErrorBehaviorProp'
       required:
-      - asynchronous
       - enabled
       - logFile
-      - logFilePermissions
-      - retentionPolicy
-      - rotationPolicy
       - schemas
       type: object
     Enumfile-based-json-audit-log-publisherSchemaUrn:
@@ -30108,6 +30166,12 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/syslog_json_audit_log_publisher_response_allOf'
       - $ref: '#/components/schemas/file-based-debug-log-publisher-shared'
+      required:
+      - asynchronous
+      - defaultDebugLevel
+      - logFilePermissions
+      - retentionPolicy
+      - rotationPolicy
     file-based-debug-log-publisher-shared:
       properties:
         schemas:
@@ -30214,13 +30278,8 @@ components:
         loggingErrorBehavior:
           $ref: '#/components/schemas/Enumlog-publisher-loggingErrorBehaviorProp'
       required:
-      - asynchronous
-      - defaultDebugLevel
       - enabled
       - logFile
-      - logFilePermissions
-      - retentionPolicy
-      - rotationPolicy
       - schemas
       type: object
     Enumfile-based-debug-log-publisherSchemaUrn:
@@ -30236,6 +30295,11 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/syslog_json_audit_log_publisher_response_allOf'
       - $ref: '#/components/schemas/file-based-error-log-publisher-shared'
+      required:
+      - asynchronous
+      - logFilePermissions
+      - retentionPolicy
+      - rotationPolicy
     file-based-error-log-publisher-shared:
       properties:
         schemas:
@@ -30359,12 +30423,8 @@ components:
         loggingErrorBehavior:
           $ref: '#/components/schemas/Enumlog-publisher-loggingErrorBehaviorProp'
       required:
-      - asynchronous
       - enabled
       - logFile
-      - logFilePermissions
-      - retentionPolicy
-      - rotationPolicy
       - schemas
       type: object
     Enumfile-based-error-log-publisherSchemaUrn:
@@ -30435,6 +30495,10 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/syslog_json_audit_log_publisher_response_allOf'
       - $ref: '#/components/schemas/syslog-text-access-log-publisher-shared'
+      required:
+      - asynchronous
+      - syslogFacility
+      - syslogSeverity
     syslog-text-access-log-publisher-shared:
       properties:
         schemas:
@@ -30664,12 +30728,9 @@ components:
         loggingErrorBehavior:
           $ref: '#/components/schemas/Enumlog-publisher-loggingErrorBehaviorProp'
       required:
-      - asynchronous
       - enabled
       - schemas
       - syslogExternalServer
-      - syslogFacility
-      - syslogSeverity
       type: object
     Enumsyslog-text-access-log-publisherSchemaUrn:
       enum:
@@ -30684,6 +30745,11 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/syslog_json_audit_log_publisher_response_allOf'
       - $ref: '#/components/schemas/detailed-http-operation-log-publisher-shared'
+      required:
+      - asynchronous
+      - logFilePermissions
+      - retentionPolicy
+      - rotationPolicy
     detailed-http-operation-log-publisher-shared:
       properties:
         schemas:
@@ -30864,12 +30930,8 @@ components:
         loggingErrorBehavior:
           $ref: '#/components/schemas/Enumlog-publisher-loggingErrorBehaviorProp'
       required:
-      - asynchronous
       - enabled
       - logFile
-      - logFilePermissions
-      - retentionPolicy
-      - rotationPolicy
       - schemas
       type: object
     Enumdetailed-http-operation-log-publisherSchemaUrn:
@@ -30885,6 +30947,11 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/syslog_json_audit_log_publisher_response_allOf'
       - $ref: '#/components/schemas/json-access-log-publisher-shared'
+      required:
+      - asynchronous
+      - logFilePermissions
+      - retentionPolicy
+      - rotationPolicy
     json-access-log-publisher-shared:
       properties:
         schemas:
@@ -31156,12 +31223,8 @@ components:
         loggingErrorBehavior:
           $ref: '#/components/schemas/Enumlog-publisher-loggingErrorBehaviorProp'
       required:
-      - asynchronous
       - enabled
       - logFile
-      - logFilePermissions
-      - retentionPolicy
-      - rotationPolicy
       - schemas
       type: object
     Enumjson-access-log-publisherSchemaUrn:
@@ -31177,6 +31240,11 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/syslog_json_audit_log_publisher_response_allOf'
       - $ref: '#/components/schemas/debug-access-log-publisher-shared'
+      required:
+      - asynchronous
+      - logFilePermissions
+      - retentionPolicy
+      - rotationPolicy
     debug-access-log-publisher-shared:
       properties:
         schemas:
@@ -31361,12 +31429,8 @@ components:
         loggingErrorBehavior:
           $ref: '#/components/schemas/Enumlog-publisher-loggingErrorBehaviorProp'
       required:
-      - asynchronous
       - enabled
       - logFile
-      - logFilePermissions
-      - retentionPolicy
-      - rotationPolicy
       - schemas
       type: object
     Enumdebug-access-log-publisherSchemaUrn:
@@ -31382,6 +31446,9 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/syslog_json_audit_log_publisher_response_allOf'
       - $ref: '#/components/schemas/syslog-json-http-operation-log-publisher-shared'
+      required:
+      - syslogFacility
+      - syslogSeverity
     syslog-json-http-operation-log-publisher-shared:
       properties:
         schemas:
@@ -31523,8 +31590,6 @@ components:
       - enabled
       - schemas
       - syslogExternalServer
-      - syslogFacility
-      - syslogSeverity
       type: object
     Enumsyslog-json-http-operation-log-publisherSchemaUrn:
       enum:
@@ -31662,6 +31727,11 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/syslog_json_audit_log_publisher_response_allOf'
       - $ref: '#/components/schemas/file-based-audit-log-publisher-shared'
+      required:
+      - asynchronous
+      - logFilePermissions
+      - retentionPolicy
+      - rotationPolicy
     file-based-audit-log-publisher-shared:
       properties:
         schemas:
@@ -31845,12 +31915,8 @@ components:
         loggingErrorBehavior:
           $ref: '#/components/schemas/Enumlog-publisher-loggingErrorBehaviorProp'
       required:
-      - asynchronous
       - enabled
       - logFile
-      - logFilePermissions
-      - retentionPolicy
-      - rotationPolicy
       - schemas
       type: object
     Enumfile-based-audit-log-publisherSchemaUrn:
@@ -31866,6 +31932,11 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/syslog_json_audit_log_publisher_response_allOf'
       - $ref: '#/components/schemas/json-error-log-publisher-shared'
+      required:
+      - asynchronous
+      - logFilePermissions
+      - retentionPolicy
+      - rotationPolicy
     json-error-log-publisher-shared:
       properties:
         schemas:
@@ -31994,12 +32065,8 @@ components:
         loggingErrorBehavior:
           $ref: '#/components/schemas/Enumlog-publisher-loggingErrorBehaviorProp'
       required:
-      - asynchronous
       - enabled
       - logFile
-      - logFilePermissions
-      - retentionPolicy
-      - rotationPolicy
       - schemas
       type: object
     Enumjson-error-log-publisherSchemaUrn:
@@ -32015,6 +32082,11 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/syslog_json_audit_log_publisher_response_allOf'
       - $ref: '#/components/schemas/groovy-scripted-file-based-access-log-publisher-shared'
+      required:
+      - asynchronous
+      - logFilePermissions
+      - retentionPolicy
+      - rotationPolicy
     groovy-scripted-file-based-access-log-publisher-shared:
       properties:
         schemas:
@@ -32186,12 +32258,8 @@ components:
         loggingErrorBehavior:
           $ref: '#/components/schemas/Enumlog-publisher-loggingErrorBehaviorProp'
       required:
-      - asynchronous
       - enabled
       - logFile
-      - logFilePermissions
-      - retentionPolicy
-      - rotationPolicy
       - schemas
       - scriptClass
       type: object
@@ -32208,6 +32276,11 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/syslog_json_audit_log_publisher_response_allOf'
       - $ref: '#/components/schemas/groovy-scripted-file-based-error-log-publisher-shared'
+      required:
+      - asynchronous
+      - logFilePermissions
+      - retentionPolicy
+      - rotationPolicy
     groovy-scripted-file-based-error-log-publisher-shared:
       properties:
         schemas:
@@ -32311,12 +32384,8 @@ components:
         loggingErrorBehavior:
           $ref: '#/components/schemas/Enumlog-publisher-loggingErrorBehaviorProp'
       required:
-      - asynchronous
       - enabled
       - logFile
-      - logFilePermissions
-      - retentionPolicy
-      - rotationPolicy
       - schemas
       - scriptClass
       type: object
@@ -32333,6 +32402,9 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/syslog_json_audit_log_publisher_response_allOf'
       - $ref: '#/components/schemas/syslog-json-access-log-publisher-shared'
+      required:
+      - syslogFacility
+      - syslogSeverity
     syslog-json-access-log-publisher-shared:
       properties:
         schemas:
@@ -32556,8 +32628,6 @@ components:
       - enabled
       - schemas
       - syslogExternalServer
-      - syslogFacility
-      - syslogSeverity
       type: object
     Enumsyslog-json-access-log-publisherSchemaUrn:
       enum:
@@ -32695,6 +32765,11 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/syslog_json_audit_log_publisher_response_allOf'
       - $ref: '#/components/schemas/third-party-file-based-error-log-publisher-shared'
+      required:
+      - asynchronous
+      - logFilePermissions
+      - retentionPolicy
+      - rotationPolicy
     third-party-file-based-error-log-publisher-shared:
       properties:
         schemas:
@@ -32798,13 +32873,9 @@ components:
         loggingErrorBehavior:
           $ref: '#/components/schemas/Enumlog-publisher-loggingErrorBehaviorProp'
       required:
-      - asynchronous
       - enabled
       - extensionClass
       - logFile
-      - logFilePermissions
-      - retentionPolicy
-      - rotationPolicy
       - schemas
       type: object
     Enumthird-party-file-based-error-log-publisherSchemaUrn:
@@ -33107,6 +33178,11 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/syslog_json_audit_log_publisher_response_allOf'
       - $ref: '#/components/schemas/file-based-access-log-publisher-shared'
+      required:
+      - asynchronous
+      - logFilePermissions
+      - retentionPolicy
+      - rotationPolicy
     file-based-access-log-publisher-shared:
       properties:
         schemas:
@@ -33373,12 +33449,8 @@ components:
         loggingErrorBehavior:
           $ref: '#/components/schemas/Enumlog-publisher-loggingErrorBehaviorProp'
       required:
-      - asynchronous
       - enabled
       - logFile
-      - logFilePermissions
-      - retentionPolicy
-      - rotationPolicy
       - schemas
       type: object
     Enumfile-based-access-log-publisherSchemaUrn:
@@ -33449,6 +33521,11 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/syslog_json_audit_log_publisher_response_allOf'
       - $ref: '#/components/schemas/file-based-json-http-operation-log-publisher-shared'
+      required:
+      - asynchronous
+      - logFilePermissions
+      - retentionPolicy
+      - rotationPolicy
     file-based-json-http-operation-log-publisher-shared:
       properties:
         schemas:
@@ -33631,12 +33708,8 @@ components:
         loggingErrorBehavior:
           $ref: '#/components/schemas/Enumlog-publisher-loggingErrorBehaviorProp'
       required:
-      - asynchronous
       - enabled
       - logFile
-      - logFilePermissions
-      - retentionPolicy
-      - rotationPolicy
       - schemas
       type: object
     Enumfile-based-json-http-operation-log-publisherSchemaUrn:
@@ -33652,6 +33725,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/syslog_json_audit_log_publisher_response_allOf'
       - $ref: '#/components/schemas/syslog-json-error-log-publisher-shared'
+      required:
+      - syslogFacility
     syslog-json-error-log-publisher-shared:
       properties:
         schemas:
@@ -33732,7 +33807,6 @@ components:
       - enabled
       - schemas
       - syslogExternalServer
-      - syslogFacility
       type: object
     Enumsyslog-json-error-log-publisherSchemaUrn:
       enum:
@@ -34096,6 +34170,10 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/replication_assurance_policy_response_allOf'
       - $ref: '#/components/schemas/replication-assurance-policy-shared'
+      required:
+      - enabled
+      - localLevel
+      - remoteLevel
     replication-assurance-policy-shared:
       properties:
         schemas:
@@ -34141,10 +34219,7 @@ components:
             \ must match an operation for the policy to be assigned."
           type: string
       required:
-      - enabled
       - evaluationOrderIndex
-      - localLevel
-      - remoteLevel
       - timeout
       type: object
     Enumreplication-assurance-policySchemaUrn:
@@ -34413,6 +34488,14 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/smtp_external_server_response_allOf'
       - $ref: '#/components/schemas/nokia-ds-external-server-shared'
+      required:
+      - authenticationMethod
+      - connectTimeout
+      - connectionSecurity
+      - maxConnectionAge
+      - maxResponseSize
+      - serverPort
+      - verifyCredentialsMethod
     nokia-ds-external-server-shared:
       properties:
         schemas:
@@ -34519,15 +34602,8 @@ components:
           description: A description for this External Server
           type: string
       required:
-      - authenticationMethod
-      - connectTimeout
-      - connectionSecurity
-      - maxConnectionAge
-      - maxResponseSize
       - schemas
       - serverHostName
-      - serverPort
-      - verifyCredentialsMethod
       type: object
     Enumnokia-ds-external-serverSchemaUrn:
       enum:
@@ -34542,6 +34618,14 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/smtp_external_server_response_allOf'
       - $ref: '#/components/schemas/ping-identity-ds-external-server-shared'
+      required:
+      - authenticationMethod
+      - connectTimeout
+      - connectionSecurity
+      - maxConnectionAge
+      - maxResponseSize
+      - serverPort
+      - verifyCredentialsMethod
     ping-identity-ds-external-server-shared:
       properties:
         schemas:
@@ -34648,15 +34732,8 @@ components:
           description: A description for this External Server
           type: string
       required:
-      - authenticationMethod
-      - connectTimeout
-      - connectionSecurity
-      - maxConnectionAge
-      - maxResponseSize
       - schemas
       - serverHostName
-      - serverPort
-      - verifyCredentialsMethod
       type: object
     Enumping-identity-ds-external-serverSchemaUrn:
       enum:
@@ -34671,6 +34748,14 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/smtp_external_server_response_allOf'
       - $ref: '#/components/schemas/active-directory-external-server-shared'
+      required:
+      - authenticationMethod
+      - connectTimeout
+      - connectionSecurity
+      - maxConnectionAge
+      - maxResponseSize
+      - serverPort
+      - verifyCredentialsMethod
     active-directory-external-server-shared:
       properties:
         schemas:
@@ -34772,15 +34857,8 @@ components:
           description: A description for this External Server
           type: string
       required:
-      - authenticationMethod
-      - connectTimeout
-      - connectionSecurity
-      - maxConnectionAge
-      - maxResponseSize
       - schemas
       - serverHostName
-      - serverPort
-      - verifyCredentialsMethod
       type: object
     Enumactive-directory-external-serverSchemaUrn:
       enum:
@@ -34870,6 +34948,10 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/smtp_external_server_response_allOf'
       - $ref: '#/components/schemas/syslog-external-server-shared'
+      required:
+      - connectTimeout
+      - maxConnectionAge
+      - trustManagerProvider
     syslog-external-server-shared:
       properties:
         schemas:
@@ -34907,12 +34989,9 @@ components:
           description: A description for this External Server
           type: string
       required:
-      - connectTimeout
-      - maxConnectionAge
       - schemas
       - serverHostName
       - transportMechanism
-      - trustManagerProvider
       type: object
     Enumsyslog-external-serverSchemaUrn:
       enum:
@@ -34927,6 +35006,14 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/smtp_external_server_response_allOf'
       - $ref: '#/components/schemas/ping-identity-proxy-server-external-server-shared'
+      required:
+      - authenticationMethod
+      - connectTimeout
+      - connectionSecurity
+      - maxConnectionAge
+      - maxResponseSize
+      - serverPort
+      - verifyCredentialsMethod
     ping-identity-proxy-server-external-server-shared:
       properties:
         schemas:
@@ -35033,15 +35120,8 @@ components:
           description: A description for this External Server
           type: string
       required:
-      - authenticationMethod
-      - connectTimeout
-      - connectionSecurity
-      - maxConnectionAge
-      - maxResponseSize
       - schemas
       - serverHostName
-      - serverPort
-      - verifyCredentialsMethod
       type: object
     Enumping-identity-proxy-server-external-serverSchemaUrn:
       enum:
@@ -35056,6 +35136,14 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/smtp_external_server_response_allOf'
       - $ref: '#/components/schemas/nokia-proxy-server-external-server-shared'
+      required:
+      - authenticationMethod
+      - connectTimeout
+      - connectionSecurity
+      - maxConnectionAge
+      - maxResponseSize
+      - serverPort
+      - verifyCredentialsMethod
     nokia-proxy-server-external-server-shared:
       properties:
         schemas:
@@ -35162,15 +35250,8 @@ components:
           description: A description for this External Server
           type: string
       required:
-      - authenticationMethod
-      - connectTimeout
-      - connectionSecurity
-      - maxConnectionAge
-      - maxResponseSize
       - schemas
       - serverHostName
-      - serverPort
-      - verifyCredentialsMethod
       type: object
     Enumnokia-proxy-server-external-serverSchemaUrn:
       enum:
@@ -35185,6 +35266,14 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/smtp_external_server_response_allOf'
       - $ref: '#/components/schemas/opendj-external-server-shared'
+      required:
+      - authenticationMethod
+      - connectTimeout
+      - connectionSecurity
+      - maxConnectionAge
+      - maxResponseSize
+      - serverPort
+      - verifyCredentialsMethod
     opendj-external-server-shared:
       properties:
         schemas:
@@ -35285,15 +35374,8 @@ components:
           description: A description for this External Server
           type: string
       required:
-      - authenticationMethod
-      - connectTimeout
-      - connectionSecurity
-      - maxConnectionAge
-      - maxResponseSize
       - schemas
       - serverHostName
-      - serverPort
-      - verifyCredentialsMethod
       type: object
     Enumopendj-external-serverSchemaUrn:
       enum:
@@ -35308,6 +35390,14 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/smtp_external_server_response_allOf'
       - $ref: '#/components/schemas/ldap-external-server-shared'
+      required:
+      - authenticationMethod
+      - connectTimeout
+      - connectionSecurity
+      - maxConnectionAge
+      - maxResponseSize
+      - serverPort
+      - verifyCredentialsMethod
     ldap-external-server-shared:
       properties:
         schemas:
@@ -35408,15 +35498,8 @@ components:
           description: A description for this External Server
           type: string
       required:
-      - authenticationMethod
-      - connectTimeout
-      - connectionSecurity
-      - maxConnectionAge
-      - maxResponseSize
       - schemas
       - serverHostName
-      - serverPort
-      - verifyCredentialsMethod
       type: object
     Enumldap-external-serverSchemaUrn:
       enum:
@@ -35534,6 +35617,14 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/smtp_external_server_response_allOf'
       - $ref: '#/components/schemas/oracle-unified-directory-external-server-shared'
+      required:
+      - authenticationMethod
+      - connectTimeout
+      - connectionSecurity
+      - maxConnectionAge
+      - maxResponseSize
+      - serverPort
+      - verifyCredentialsMethod
     oracle-unified-directory-external-server-shared:
       properties:
         schemas:
@@ -35634,15 +35725,8 @@ components:
           description: A description for this External Server
           type: string
       required:
-      - authenticationMethod
-      - connectTimeout
-      - connectionSecurity
-      - maxConnectionAge
-      - maxResponseSize
       - schemas
       - serverHostName
-      - serverPort
-      - verifyCredentialsMethod
       type: object
     Enumoracle-unified-directory-external-serverSchemaUrn:
       enum:
@@ -36055,6 +36139,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/groovy_scripted_change_subscription_handler_response_allOf'
       - $ref: '#/components/schemas/logging-change-subscription-handler-shared'
+      required:
+      - logFile
     logging-change-subscription-handler-shared:
       properties:
         schemas:
@@ -36083,7 +36169,6 @@ components:
           type: array
       required:
       - enabled
-      - logFile
       - schemas
       type: object
     Enumlogging-change-subscription-handlerSchemaUrn:
@@ -36394,6 +36479,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/indicator_gauge_data_source_response_allOf'
       - $ref: '#/components/schemas/numeric-gauge-data-source-shared'
+      required:
+      - statisticType
     numeric-gauge-data-source-shared:
       properties:
         schemas:
@@ -36454,7 +36541,6 @@ components:
       - monitorAttribute
       - monitorObjectclass
       - schemas
-      - statisticType
       type: object
     Enumnumeric-gauge-data-sourceSchemaUrn:
       enum:
@@ -36540,6 +36626,10 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/local_db_backend_response_allOf'
       - $ref: '#/components/schemas/local-db-backend-shared'
+      required:
+      - dbDirectory
+      - importTempDirectory
+      - writabilityMode
     local-db-backend-shared:
       properties:
         schemas:
@@ -36806,11 +36896,8 @@ components:
       required:
       - backendID
       - baseDN
-      - dbDirectory
       - enabled
-      - importTempDirectory
       - schemas
-      - writabilityMode
       type: object
     Enumlocal-db-backendSchemaUrn:
       enum:
@@ -37690,6 +37777,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/default_uncached_entry_criteria_response_allOf'
       - $ref: '#/components/schemas/filter-based-uncached-entry-criteria-shared'
+      required:
+      - filterIdentifiesUncachedEntries
     filter-based-uncached-entry-criteria-shared:
       properties:
         schemas:
@@ -37717,7 +37806,6 @@ components:
       required:
       - enabled
       - filter
-      - filterIdentifiesUncachedEntries
       - schemas
       type: object
     Enumfilter-based-uncached-entry-criteriaSchemaUrn:
@@ -38158,6 +38246,13 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/quickstart_http_servlet_extension_response_allOf'
       - $ref: '#/components/schemas/ldap-mapped-scim-http-servlet-extension-shared'
+      required:
+      - baseContextPath
+      - debugLevel
+      - debugType
+      - includeStackTrace
+      - temporaryDirectory
+      - temporaryDirectoryPermissions
     ldap-mapped-scim-http-servlet-extension-shared:
       properties:
         schemas:
@@ -38272,13 +38367,7 @@ components:
             , and \"X-Request-Id\"."
           type: string
       required:
-      - baseContextPath
-      - debugLevel
-      - debugType
-      - includeStackTrace
       - schemas
-      - temporaryDirectory
-      - temporaryDirectoryPermissions
       type: object
     Enumldap-mapped-scim-http-servlet-extensionSchemaUrn:
       enum:
@@ -38492,6 +38581,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/velocity_template_loader_response_allOf'
       - $ref: '#/components/schemas/velocity-template-loader-shared'
+      required:
+      - evaluationOrderIndex
     velocity-template-loader-shared:
       properties:
         schemas:
@@ -38524,7 +38615,6 @@ components:
             files.
           type: string
       required:
-      - evaluationOrderIndex
       - mimeTypeMatcher
       type: object
     Enumvelocity-template-loaderSchemaUrn:
@@ -38619,6 +38709,9 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/client_connection_policy_response_allOf'
       - $ref: '#/components/schemas/client-connection-policy-shared'
+      required:
+      - allowedAuthType
+      - allowedOperation
     client-connection-policy-shared:
       properties:
         schemas:
@@ -38863,8 +38956,6 @@ components:
             that no limit should be enforced.
           type: integer
       required:
-      - allowedAuthType
-      - allowedOperation
       - enabled
       - evaluationOrderIndex
       - policyID
@@ -39219,6 +39310,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/mirror_virtual_attribute_response_allOf'
       - $ref: '#/components/schemas/is-member-of-virtual-attribute-shared'
+      required:
+      - attributeType
     is-member-of-virtual-attribute-shared:
       properties:
         schemas:
@@ -39301,7 +39394,6 @@ components:
             indexes defined in the server.
           type: boolean
       required:
-      - attributeType
       - enabled
       - schemas
       type: object
@@ -39651,6 +39743,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/mirror_virtual_attribute_response_allOf'
       - $ref: '#/components/schemas/entry-dn-virtual-attribute-shared'
+      required:
+      - attributeType
     entry-dn-virtual-attribute-shared:
       properties:
         schemas:
@@ -39719,7 +39813,6 @@ components:
             indexes defined in the server.
           type: boolean
       required:
-      - attributeType
       - enabled
       - schemas
       type: object
@@ -39982,6 +40075,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/mirror_virtual_attribute_response_allOf'
       - $ref: '#/components/schemas/member-virtual-attribute-shared'
+      required:
+      - allowRetrievingMembership
     member-virtual-attribute-shared:
       properties:
         schemas:
@@ -40054,7 +40149,6 @@ components:
         multipleVirtualAttributeMergeBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-multipleVirtualAttributeMergeBehaviorProp'
       required:
-      - allowRetrievingMembership
       - attributeType
       - enabled
       - schemas
@@ -40407,6 +40501,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/third_party_notification_manager_response_allOf'
       - $ref: '#/components/schemas/third-party-notification-manager-shared'
+      required:
+      - transactionNotification
     third-party-notification-manager-shared:
       properties:
         schemas:
@@ -40449,7 +40545,6 @@ components:
       - enabled
       - extensionClass
       - subscriptionBaseDN
-      - transactionNotification
       type: object
     Enumthird-party-notification-managerSchemaUrn:
       enum:
@@ -40742,6 +40837,9 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/simple_result_criteria_response_allOf'
       - $ref: '#/components/schemas/replication-assurance-result-criteria-shared'
+      required:
+      - localAssuranceLevel
+      - remoteAssuranceLevel
     replication-assurance-result-criteria-shared:
       properties:
         schemas:
@@ -40774,8 +40872,6 @@ components:
           description: A description for this Result Criteria
           type: string
       required:
-      - localAssuranceLevel
-      - remoteAssuranceLevel
       - schemas
       type: object
     Enumreplication-assurance-result-criteriaSchemaUrn:
@@ -41167,6 +41263,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/exact_match_identity_mapper_response_allOf'
       - $ref: '#/components/schemas/exact-match-identity-mapper-shared'
+      required:
+      - matchAttribute
     exact-match-identity-mapper-shared:
       properties:
         schemas:
@@ -41197,7 +41295,6 @@ components:
           type: boolean
       required:
       - enabled
-      - matchAttribute
       - schemas
       type: object
     Enumexact-match-identity-mapperSchemaUrn:
@@ -41256,6 +41353,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/exact_match_identity_mapper_response_allOf'
       - $ref: '#/components/schemas/regular-expression-identity-mapper-shared'
+      required:
+      - matchAttribute
     regular-expression-identity-mapper-shared:
       properties:
         schemas:
@@ -41298,7 +41397,6 @@ components:
           type: boolean
       required:
       - enabled
-      - matchAttribute
       - matchPattern
       - schemas
       type: object
@@ -41572,6 +41670,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/generate_server_profile_recurring_task_response_allOf'
       - $ref: '#/components/schemas/backup-recurring-task-shared'
+      required:
+      - backupDirectory
     backup-recurring-task-shared:
       properties:
         schemas:
@@ -41675,7 +41775,6 @@ components:
             alert whenever an instance of this Recurring Task fails to complete successfully.
           type: boolean
       required:
-      - backupDirectory
       - schemas
       type: object
     Enumbackup-recurring-taskSchemaUrn:
@@ -42039,6 +42138,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/generate_server_profile_recurring_task_response_allOf'
       - $ref: '#/components/schemas/ldif-export-recurring-task-shared'
+      required:
+      - ldifDirectory
     ldif-export-recurring-task-shared:
       properties:
         schemas:
@@ -42134,7 +42235,6 @@ components:
             alert whenever an instance of this Recurring Task fails to complete successfully.
           type: boolean
       required:
-      - ldifDirectory
       - schemas
       type: object
     Enumldif-export-recurring-taskSchemaUrn:
@@ -42928,6 +43028,10 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/certificate_delegated_admin_attribute_response_allOf'
       - $ref: '#/components/schemas/certificate-delegated-admin-attribute-shared'
+      required:
+      - displayOrderIndex
+      - multiValued
+      - mutability
     certificate-delegated-admin-attribute-shared:
       properties:
         schemas:
@@ -42978,9 +43082,6 @@ components:
       required:
       - attributeType
       - displayName
-      - displayOrderIndex
-      - multiValued
-      - mutability
       - schemas
       type: object
     Enumcertificate-delegated-admin-attributeSchemaUrn:
@@ -42996,6 +43097,10 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/certificate_delegated_admin_attribute_response_allOf'
       - $ref: '#/components/schemas/photo-delegated-admin-attribute-shared'
+      required:
+      - displayOrderIndex
+      - multiValued
+      - mutability
     photo-delegated-admin-attribute-shared:
       properties:
         schemas:
@@ -43046,9 +43151,6 @@ components:
       required:
       - attributeType
       - displayName
-      - displayOrderIndex
-      - multiValued
-      - mutability
       - schemas
       type: object
     Enumphoto-delegated-admin-attributeSchemaUrn:
@@ -43064,6 +43166,11 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/certificate_delegated_admin_attribute_response_allOf'
       - $ref: '#/components/schemas/generic-delegated-admin-attribute-shared'
+      required:
+      - displayOrderIndex
+      - includeInSummary
+      - multiValued
+      - mutability
     generic-delegated-admin-attribute-shared:
       properties:
         schemas:
@@ -43114,10 +43221,6 @@ components:
       required:
       - attributeType
       - displayName
-      - displayOrderIndex
-      - includeInSummary
-      - multiValued
-      - mutability
       - schemas
       type: object
     Enumgeneric-delegated-admin-attributeSchemaUrn:
@@ -43291,6 +43394,8 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/unboundid_ms_chap_v2_sasl_mechanism_handler_response_allOf'
       - $ref: '#/components/schemas/unboundid-delivered-otp-sasl-mechanism-handler-shared'
+      required:
+      - otpValidityDuration
     unboundid-delivered-otp-sasl-mechanism-handler-shared:
       properties:
         schemas:
@@ -43318,7 +43423,6 @@ components:
       required:
       - enabled
       - identityMapper
-      - otpValidityDuration
       - schemas
       type: object
     Enumunboundid-delivered-otp-sasl-mechanism-handlerSchemaUrn:
@@ -43532,6 +43636,9 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/expired_password_data_security_auditor_response_allOf'
       - $ref: '#/components/schemas/expired-password-data-security-auditor-shared'
+      required:
+      - enabled
+      - reportFile
     expired-password-data-security-auditor-shared:
       properties:
         schemas:
@@ -43568,8 +43675,6 @@ components:
         auditSeverity:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
       required:
-      - enabled
-      - reportFile
       - schemas
       type: object
     Enumexpired-password-data-security-auditorSchemaUrn:
@@ -43585,6 +43690,9 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/expired_password_data_security_auditor_response_allOf'
       - $ref: '#/components/schemas/multiple-password-data-security-auditor-shared'
+      required:
+      - enabled
+      - reportFile
     multiple-password-data-security-auditor-shared:
       properties:
         schemas:
@@ -43617,8 +43725,6 @@ components:
         auditSeverity:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
       required:
-      - enabled
-      - reportFile
       - schemas
       type: object
     Enummultiple-password-data-security-auditorSchemaUrn:
@@ -43634,6 +43740,9 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/expired_password_data_security_auditor_response_allOf'
       - $ref: '#/components/schemas/disabled-account-data-security-auditor-shared'
+      required:
+      - enabled
+      - reportFile
     disabled-account-data-security-auditor-shared:
       properties:
         schemas:
@@ -43666,8 +43775,6 @@ components:
         auditSeverity:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
       required:
-      - enabled
-      - reportFile
       - schemas
       type: object
     Enumdisabled-account-data-security-auditorSchemaUrn:
@@ -43683,6 +43790,10 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/expired_password_data_security_auditor_response_allOf'
       - $ref: '#/components/schemas/weakly-encoded-password-data-security-auditor-shared'
+      required:
+      - enabled
+      - reportFile
+      - weakPasswordStorageScheme
     weakly-encoded-password-data-security-auditor-shared:
       properties:
         schemas:
@@ -43726,10 +43837,7 @@ components:
         auditSeverity:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
       required:
-      - enabled
-      - reportFile
       - schemas
-      - weakPasswordStorageScheme
       type: object
     Enumweakly-encoded-password-data-security-auditorSchemaUrn:
       enum:
@@ -43744,6 +43852,9 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/expired_password_data_security_auditor_response_allOf'
       - $ref: '#/components/schemas/privilege-data-security-auditor-shared'
+      required:
+      - enabled
+      - reportFile
     privilege-data-security-auditor-shared:
       properties:
         schemas:
@@ -43780,8 +43891,6 @@ components:
         auditSeverity:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
       required:
-      - enabled
-      - reportFile
       - schemas
       type: object
     Enumprivilege-data-security-auditorSchemaUrn:
@@ -43797,6 +43906,9 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/expired_password_data_security_auditor_response_allOf'
       - $ref: '#/components/schemas/locked-account-data-security-auditor-shared'
+      required:
+      - enabled
+      - reportFile
     locked-account-data-security-auditor-shared:
       properties:
         schemas:
@@ -43835,8 +43947,6 @@ components:
         auditSeverity:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
       required:
-      - enabled
-      - reportFile
       - schemas
       type: object
     Enumlocked-account-data-security-auditorSchemaUrn:
@@ -43852,6 +43962,9 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/expired_password_data_security_auditor_response_allOf'
       - $ref: '#/components/schemas/access-control-data-security-auditor-shared'
+      required:
+      - enabled
+      - reportFile
     access-control-data-security-auditor-shared:
       properties:
         schemas:
@@ -43884,8 +43997,6 @@ components:
         auditSeverity:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
       required:
-      - enabled
-      - reportFile
       - schemas
       type: object
     Enumaccess-control-data-security-auditorSchemaUrn:
@@ -43960,6 +44071,9 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/statsd_monitoring_endpoint_response_allOf'
       - $ref: '#/components/schemas/statsd-monitoring-endpoint-shared'
+      required:
+      - connectionType
+      - serverPort
     statsd-monitoring-endpoint-shared:
       properties:
         schemas:
@@ -43995,10 +44109,8 @@ components:
             in the Directory Server.
           type: boolean
       required:
-      - connectionType
       - enabled
       - hostname
-      - serverPort
       type: object
     Enumstatsd-monitoring-endpointSchemaUrn:
       enum:
@@ -44282,6 +44394,10 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/crypt_password_storage_scheme_response_allOf'
       - $ref: '#/components/schemas/pbkdf2-password-storage-scheme-shared'
+      required:
+      - derivedKeyLengthBytes
+      - iterationCount
+      - saltLengthBytes
     pbkdf2-password-storage-scheme-shared:
       properties:
         schemas:
@@ -44317,10 +44433,7 @@ components:
             use.
           type: boolean
       required:
-      - derivedKeyLengthBytes
       - enabled
-      - iterationCount
-      - saltLengthBytes
       - schemas
       type: object
     Enumpbkdf2-password-storage-schemeSchemaUrn:
@@ -45020,6 +45133,13 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/scim_attribute_response_allOf'
       - $ref: '#/components/schemas/scim-attribute-shared'
+      required:
+      - caseExact
+      - multiValued
+      - mutability
+      - required
+      - returned
+      - type
     scim-attribute-shared:
       properties:
         schemas:
@@ -45065,13 +45185,7 @@ components:
             type: string
           type: array
       required:
-      - caseExact
-      - multiValued
-      - mutability
       - name
-      - required
-      - returned
-      - type
       type: object
     Enumscim-attributeSchemaUrn:
       enum:
@@ -45086,6 +45200,13 @@ components:
       - $ref: '#/components/schemas/meta'
       - $ref: '#/components/schemas/scim_subattribute_response_allOf'
       - $ref: '#/components/schemas/scim-subattribute-shared'
+      required:
+      - caseExact
+      - multiValued
+      - mutability
+      - required
+      - returned
+      - type
     scim-subattribute-shared:
       properties:
         schemas:
@@ -45127,13 +45248,6 @@ components:
           items:
             type: string
           type: array
-      required:
-      - caseExact
-      - multiValued
-      - mutability
-      - required
-      - returned
-      - type
       type: object
     Enumscim-subattributeSchemaUrn:
       enum:

@@ -158,6 +158,9 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/client-connection-policy-shared'
+      required:
+      - allowedOperation
+      - allowedAuthType
     client-connection-policy-shared:
       type: object
       properties:
@@ -353,8 +356,6 @@ components:
       - policyID
       - enabled
       - evaluationOrderIndex
-      - allowedOperation
-      - allowedAuthType
     Enumclient-connection-policySchemaUrn:
       type: string
       enum:

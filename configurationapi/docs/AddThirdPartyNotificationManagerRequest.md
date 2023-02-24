@@ -11,14 +11,14 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | A description for this Notification Manager | [optional] 
 **Enabled** | **bool** | Indicates whether this Notification Manager is enabled within the server. | 
 **SubscriptionBaseDN** | **string** | Specifies the DN of the entry below which subscription data is stored for this Notification Manager. This needs to be in the backend that has the data to be notified on, and must not be the same entry as the backend base DN. The subscription base DN entry does not need to exist as it will be created by the server. | 
-**TransactionNotification** | [**EnumnotificationManagerTransactionNotificationProp**](EnumnotificationManagerTransactionNotificationProp.md) |  | 
+**TransactionNotification** | Pointer to [**EnumnotificationManagerTransactionNotificationProp**](EnumnotificationManagerTransactionNotificationProp.md) |  | [optional] 
 **MonitorEntriesEnabled** | Pointer to **bool** | Enables monitor entries for this Notification Manager. | [optional] 
 
 ## Methods
 
 ### NewAddThirdPartyNotificationManagerRequest
 
-`func NewAddThirdPartyNotificationManagerRequest(managerName string, extensionClass string, enabled bool, subscriptionBaseDN string, transactionNotification EnumnotificationManagerTransactionNotificationProp, ) *AddThirdPartyNotificationManagerRequest`
+`func NewAddThirdPartyNotificationManagerRequest(managerName string, extensionClass string, enabled bool, subscriptionBaseDN string, ) *AddThirdPartyNotificationManagerRequest`
 
 NewAddThirdPartyNotificationManagerRequest instantiates a new AddThirdPartyNotificationManagerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -207,6 +207,11 @@ and a boolean to check if the value has been set.
 
 SetTransactionNotification sets TransactionNotification field to given value.
 
+### HasTransactionNotification
+
+`func (o *AddThirdPartyNotificationManagerRequest) HasTransactionNotification() bool`
+
+HasTransactionNotification returns a boolean if a field has been set.
 
 ### GetMonitorEntriesEnabled
 

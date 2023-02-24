@@ -34,7 +34,7 @@ type AddPkcs11CipherStreamProviderRequest struct {
 	// The alias for the certificate in the PKCS #11 token that will be used to wrap the encryption key. The target certificate must exist in the PKCS #11 token, and it must have an RSA key pair because the JVM does not currently provide adequate key wrapping support for elliptic curve key pairs.  If you have also configured the server to use a PKCS #11 token for accessing listener certificates, we strongly recommend that you use a different certificate to protect the contents of the encryption settings database than you use for negotiating TLS sessions with clients. It is imperative that the certificate used by this PKCS11 Cipher Stream Provider remain constant for the life of the provider because if the certificate were to be replaced, then the contents of the encryption settings database could become inaccessible. Unlike with listener certificates used for TLS negotiation that need to be replaced on a regular basis, this PKCS11 Cipher Stream Provider does not consider the validity period for the associated certificate, and it will continue to function even after the certificate has expired.  If you need to rotate the certificate used to protect the server's encryption settings database, you should first install the desired new certificate in the PKCS #11 token under a different alias. Then, you should create a new instance of this PKCS11 Cipher Stream Provider that is configured to use that certificate, and that also uses a different value for the encryption-metadata-file because the information in that file is tied to the certificate used to generate it. Finally, you will need to update the global configuration so that the encryption-settings-cipher-stream-provider property references the new cipher stream provider rather than this one. The update to the global configuration must be done with the server online so that it can properly re-encrypt the contents of the encryption settings database with the correct key tied to the new certificate.
 	SslCertNickname string `json:"sslCertNickname"`
 	// The path to a file that will hold metadata about the encryption performed by this PKCS11 Cipher Stream Provider.
-	EncryptionMetadataFile string `json:"encryptionMetadataFile"`
+	EncryptionMetadataFile *string `json:"encryptionMetadataFile,omitempty"`
 	// A description for this Cipher Stream Provider
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server.
@@ -45,12 +45,11 @@ type AddPkcs11CipherStreamProviderRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddPkcs11CipherStreamProviderRequest(providerName string, schemas []Enumpkcs11CipherStreamProviderSchemaUrn, sslCertNickname string, encryptionMetadataFile string, enabled bool) *AddPkcs11CipherStreamProviderRequest {
+func NewAddPkcs11CipherStreamProviderRequest(providerName string, schemas []Enumpkcs11CipherStreamProviderSchemaUrn, sslCertNickname string, enabled bool) *AddPkcs11CipherStreamProviderRequest {
 	this := AddPkcs11CipherStreamProviderRequest{}
 	this.ProviderName = providerName
 	this.Schemas = schemas
 	this.SslCertNickname = sslCertNickname
-	this.EncryptionMetadataFile = encryptionMetadataFile
 	this.Enabled = enabled
 	return &this
 }
@@ -327,28 +326,36 @@ func (o *AddPkcs11CipherStreamProviderRequest) SetSslCertNickname(v string) {
 	o.SslCertNickname = v
 }
 
-// GetEncryptionMetadataFile returns the EncryptionMetadataFile field value
+// GetEncryptionMetadataFile returns the EncryptionMetadataFile field value if set, zero value otherwise.
 func (o *AddPkcs11CipherStreamProviderRequest) GetEncryptionMetadataFile() string {
-	if o == nil {
+	if o == nil || isNil(o.EncryptionMetadataFile) {
 		var ret string
 		return ret
 	}
-
-	return o.EncryptionMetadataFile
+	return *o.EncryptionMetadataFile
 }
 
-// GetEncryptionMetadataFileOk returns a tuple with the EncryptionMetadataFile field value
+// GetEncryptionMetadataFileOk returns a tuple with the EncryptionMetadataFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPkcs11CipherStreamProviderRequest) GetEncryptionMetadataFileOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.EncryptionMetadataFile) {
 		return nil, false
 	}
-	return &o.EncryptionMetadataFile, true
+	return o.EncryptionMetadataFile, true
 }
 
-// SetEncryptionMetadataFile sets field value
+// HasEncryptionMetadataFile returns a boolean if a field has been set.
+func (o *AddPkcs11CipherStreamProviderRequest) HasEncryptionMetadataFile() bool {
+	if o != nil && !isNil(o.EncryptionMetadataFile) {
+		return true
+	}
+
+	return false
+}
+
+// SetEncryptionMetadataFile gets a reference to the given string and assigns it to the EncryptionMetadataFile field.
 func (o *AddPkcs11CipherStreamProviderRequest) SetEncryptionMetadataFile(v string) {
-	o.EncryptionMetadataFile = v
+	o.EncryptionMetadataFile = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -436,7 +443,7 @@ func (o AddPkcs11CipherStreamProviderRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["sslCertNickname"] = o.SslCertNickname
 	}
-	if true {
+	if !isNil(o.EncryptionMetadataFile) {
 		toSerialize["encryptionMetadataFile"] = o.EncryptionMetadataFile
 	}
 	if !isNil(o.Description) {

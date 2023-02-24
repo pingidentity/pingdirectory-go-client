@@ -20,7 +20,7 @@ type AddNumericGaugeDataSourceRequest struct {
 	SourceName      string                                  `json:"sourceName"`
 	Schemas         []EnumnumericGaugeDataSourceSchemaUrn   `json:"schemas"`
 	DataOrientation *EnumgaugeDataSourceDataOrientationProp `json:"dataOrientation,omitempty"`
-	StatisticType   EnumgaugeDataSourceStatisticTypeProp    `json:"statisticType"`
+	StatisticType   *EnumgaugeDataSourceStatisticTypeProp   `json:"statisticType,omitempty"`
 	// An optional floating point value that can be used to scale the resulting value.
 	DivideValueBy *float32 `json:"divideValueBy,omitempty"`
 	// An optional property that can scale the resulting value by another attribute in the monitored entry.
@@ -49,11 +49,10 @@ type AddNumericGaugeDataSourceRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddNumericGaugeDataSourceRequest(sourceName string, schemas []EnumnumericGaugeDataSourceSchemaUrn, statisticType EnumgaugeDataSourceStatisticTypeProp, monitorObjectclass string, monitorAttribute string) *AddNumericGaugeDataSourceRequest {
+func NewAddNumericGaugeDataSourceRequest(sourceName string, schemas []EnumnumericGaugeDataSourceSchemaUrn, monitorObjectclass string, monitorAttribute string) *AddNumericGaugeDataSourceRequest {
 	this := AddNumericGaugeDataSourceRequest{}
 	this.SourceName = sourceName
 	this.Schemas = schemas
-	this.StatisticType = statisticType
 	this.MonitorObjectclass = monitorObjectclass
 	this.MonitorAttribute = monitorAttribute
 	return &this
@@ -147,28 +146,36 @@ func (o *AddNumericGaugeDataSourceRequest) SetDataOrientation(v EnumgaugeDataSou
 	o.DataOrientation = &v
 }
 
-// GetStatisticType returns the StatisticType field value
+// GetStatisticType returns the StatisticType field value if set, zero value otherwise.
 func (o *AddNumericGaugeDataSourceRequest) GetStatisticType() EnumgaugeDataSourceStatisticTypeProp {
-	if o == nil {
+	if o == nil || isNil(o.StatisticType) {
 		var ret EnumgaugeDataSourceStatisticTypeProp
 		return ret
 	}
-
-	return o.StatisticType
+	return *o.StatisticType
 }
 
-// GetStatisticTypeOk returns a tuple with the StatisticType field value
+// GetStatisticTypeOk returns a tuple with the StatisticType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeDataSourceRequest) GetStatisticTypeOk() (*EnumgaugeDataSourceStatisticTypeProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.StatisticType) {
 		return nil, false
 	}
-	return &o.StatisticType, true
+	return o.StatisticType, true
 }
 
-// SetStatisticType sets field value
+// HasStatisticType returns a boolean if a field has been set.
+func (o *AddNumericGaugeDataSourceRequest) HasStatisticType() bool {
+	if o != nil && !isNil(o.StatisticType) {
+		return true
+	}
+
+	return false
+}
+
+// SetStatisticType gets a reference to the given EnumgaugeDataSourceStatisticTypeProp and assigns it to the StatisticType field.
 func (o *AddNumericGaugeDataSourceRequest) SetStatisticType(v EnumgaugeDataSourceStatisticTypeProp) {
-	o.StatisticType = v
+	o.StatisticType = &v
 }
 
 // GetDivideValueBy returns the DivideValueBy field value if set, zero value otherwise.
@@ -518,7 +525,7 @@ func (o AddNumericGaugeDataSourceRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.DataOrientation) {
 		toSerialize["dataOrientation"] = o.DataOrientation
 	}
-	if true {
+	if !isNil(o.StatisticType) {
 		toSerialize["statisticType"] = o.StatisticType
 	}
 	if !isNil(o.DivideValueBy) {

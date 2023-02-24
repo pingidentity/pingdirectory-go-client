@@ -20,13 +20,13 @@ type AddExpiredPasswordDataSecurityAuditorRequest struct {
 	AuditorName string                                            `json:"auditorName"`
 	Schemas     []EnumexpiredPasswordDataSecurityAuditorSchemaUrn `json:"schemas"`
 	// Specifies the name of the detailed report file.
-	ReportFile string `json:"reportFile"`
+	ReportFile *string `json:"reportFile,omitempty"`
 	// Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
 	IncludeAttribute []string `json:"includeAttribute,omitempty"`
 	// If set, the auditor will report all users with passwords older than the specified value even if password expiration is not enabled.
 	PasswordEvaluationAge *string `json:"passwordEvaluationAge,omitempty"`
 	// Indicates whether the Data Security Auditor is enabled for use.
-	Enabled bool `json:"enabled"`
+	Enabled *bool `json:"enabled,omitempty"`
 	// Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
 	AuditBackend  []string                                  `json:"auditBackend,omitempty"`
 	AuditSeverity *EnumdataSecurityAuditorAuditSeverityProp `json:"auditSeverity,omitempty"`
@@ -36,12 +36,10 @@ type AddExpiredPasswordDataSecurityAuditorRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddExpiredPasswordDataSecurityAuditorRequest(auditorName string, schemas []EnumexpiredPasswordDataSecurityAuditorSchemaUrn, reportFile string, enabled bool) *AddExpiredPasswordDataSecurityAuditorRequest {
+func NewAddExpiredPasswordDataSecurityAuditorRequest(auditorName string, schemas []EnumexpiredPasswordDataSecurityAuditorSchemaUrn) *AddExpiredPasswordDataSecurityAuditorRequest {
 	this := AddExpiredPasswordDataSecurityAuditorRequest{}
 	this.AuditorName = auditorName
 	this.Schemas = schemas
-	this.ReportFile = reportFile
-	this.Enabled = enabled
 	return &this
 }
 
@@ -101,28 +99,36 @@ func (o *AddExpiredPasswordDataSecurityAuditorRequest) SetSchemas(v []Enumexpire
 	o.Schemas = v
 }
 
-// GetReportFile returns the ReportFile field value
+// GetReportFile returns the ReportFile field value if set, zero value otherwise.
 func (o *AddExpiredPasswordDataSecurityAuditorRequest) GetReportFile() string {
-	if o == nil {
+	if o == nil || isNil(o.ReportFile) {
 		var ret string
 		return ret
 	}
-
-	return o.ReportFile
+	return *o.ReportFile
 }
 
-// GetReportFileOk returns a tuple with the ReportFile field value
+// GetReportFileOk returns a tuple with the ReportFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddExpiredPasswordDataSecurityAuditorRequest) GetReportFileOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.ReportFile) {
 		return nil, false
 	}
-	return &o.ReportFile, true
+	return o.ReportFile, true
 }
 
-// SetReportFile sets field value
+// HasReportFile returns a boolean if a field has been set.
+func (o *AddExpiredPasswordDataSecurityAuditorRequest) HasReportFile() bool {
+	if o != nil && !isNil(o.ReportFile) {
+		return true
+	}
+
+	return false
+}
+
+// SetReportFile gets a reference to the given string and assigns it to the ReportFile field.
 func (o *AddExpiredPasswordDataSecurityAuditorRequest) SetReportFile(v string) {
-	o.ReportFile = v
+	o.ReportFile = &v
 }
 
 // GetIncludeAttribute returns the IncludeAttribute field value if set, zero value otherwise.
@@ -189,28 +195,36 @@ func (o *AddExpiredPasswordDataSecurityAuditorRequest) SetPasswordEvaluationAge(
 	o.PasswordEvaluationAge = &v
 }
 
-// GetEnabled returns the Enabled field value
+// GetEnabled returns the Enabled field value if set, zero value otherwise.
 func (o *AddExpiredPasswordDataSecurityAuditorRequest) GetEnabled() bool {
-	if o == nil {
+	if o == nil || isNil(o.Enabled) {
 		var ret bool
 		return ret
 	}
-
-	return o.Enabled
+	return *o.Enabled
 }
 
-// GetEnabledOk returns a tuple with the Enabled field value
+// GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddExpiredPasswordDataSecurityAuditorRequest) GetEnabledOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || isNil(o.Enabled) {
 		return nil, false
 	}
-	return &o.Enabled, true
+	return o.Enabled, true
 }
 
-// SetEnabled sets field value
+// HasEnabled returns a boolean if a field has been set.
+func (o *AddExpiredPasswordDataSecurityAuditorRequest) HasEnabled() bool {
+	if o != nil && !isNil(o.Enabled) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *AddExpiredPasswordDataSecurityAuditorRequest) SetEnabled(v bool) {
-	o.Enabled = v
+	o.Enabled = &v
 }
 
 // GetAuditBackend returns the AuditBackend field value if set, zero value otherwise.
@@ -285,7 +299,7 @@ func (o AddExpiredPasswordDataSecurityAuditorRequest) MarshalJSON() ([]byte, err
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if true {
+	if !isNil(o.ReportFile) {
 		toSerialize["reportFile"] = o.ReportFile
 	}
 	if !isNil(o.IncludeAttribute) {
@@ -294,7 +308,7 @@ func (o AddExpiredPasswordDataSecurityAuditorRequest) MarshalJSON() ([]byte, err
 	if !isNil(o.PasswordEvaluationAge) {
 		toSerialize["passwordEvaluationAge"] = o.PasswordEvaluationAge
 	}
-	if true {
+	if !isNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
 	if !isNil(o.AuditBackend) {

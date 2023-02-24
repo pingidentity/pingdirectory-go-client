@@ -17,9 +17,9 @@ import (
 // AddKeyPairRequest struct for AddKeyPairRequest
 type AddKeyPairRequest struct {
 	// Name of the new Key Pair
-	PairName     string                      `json:"pairName"`
-	Schemas      []EnumkeyPairSchemaUrn      `json:"schemas,omitempty"`
-	KeyAlgorithm EnumkeyPairKeyAlgorithmProp `json:"keyAlgorithm"`
+	PairName     string                       `json:"pairName"`
+	Schemas      []EnumkeyPairSchemaUrn       `json:"schemas,omitempty"`
+	KeyAlgorithm *EnumkeyPairKeyAlgorithmProp `json:"keyAlgorithm,omitempty"`
 	// The validity period for a self-signed certificate. If not specified, the self-signed certificate will be valid for approximately 20 years. This is not used when importing an existing key-pair. The system will not automatically rotate expired certificates. It is up to the administrator to do that when that happens.
 	SelfSignedCertificateValidity *string `json:"selfSignedCertificateValidity,omitempty"`
 	// The DN that should be used as the subject for the self-signed certificate and certificate signing request. This is not used when importing an existing key-pair.
@@ -34,10 +34,9 @@ type AddKeyPairRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddKeyPairRequest(pairName string, keyAlgorithm EnumkeyPairKeyAlgorithmProp) *AddKeyPairRequest {
+func NewAddKeyPairRequest(pairName string) *AddKeyPairRequest {
 	this := AddKeyPairRequest{}
 	this.PairName = pairName
-	this.KeyAlgorithm = keyAlgorithm
 	return &this
 }
 
@@ -105,28 +104,36 @@ func (o *AddKeyPairRequest) SetSchemas(v []EnumkeyPairSchemaUrn) {
 	o.Schemas = v
 }
 
-// GetKeyAlgorithm returns the KeyAlgorithm field value
+// GetKeyAlgorithm returns the KeyAlgorithm field value if set, zero value otherwise.
 func (o *AddKeyPairRequest) GetKeyAlgorithm() EnumkeyPairKeyAlgorithmProp {
-	if o == nil {
+	if o == nil || isNil(o.KeyAlgorithm) {
 		var ret EnumkeyPairKeyAlgorithmProp
 		return ret
 	}
-
-	return o.KeyAlgorithm
+	return *o.KeyAlgorithm
 }
 
-// GetKeyAlgorithmOk returns a tuple with the KeyAlgorithm field value
+// GetKeyAlgorithmOk returns a tuple with the KeyAlgorithm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddKeyPairRequest) GetKeyAlgorithmOk() (*EnumkeyPairKeyAlgorithmProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.KeyAlgorithm) {
 		return nil, false
 	}
-	return &o.KeyAlgorithm, true
+	return o.KeyAlgorithm, true
 }
 
-// SetKeyAlgorithm sets field value
+// HasKeyAlgorithm returns a boolean if a field has been set.
+func (o *AddKeyPairRequest) HasKeyAlgorithm() bool {
+	if o != nil && !isNil(o.KeyAlgorithm) {
+		return true
+	}
+
+	return false
+}
+
+// SetKeyAlgorithm gets a reference to the given EnumkeyPairKeyAlgorithmProp and assigns it to the KeyAlgorithm field.
 func (o *AddKeyPairRequest) SetKeyAlgorithm(v EnumkeyPairKeyAlgorithmProp) {
-	o.KeyAlgorithm = v
+	o.KeyAlgorithm = &v
 }
 
 // GetSelfSignedCertificateValidity returns the SelfSignedCertificateValidity field value if set, zero value otherwise.
@@ -265,7 +272,7 @@ func (o AddKeyPairRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if true {
+	if !isNil(o.KeyAlgorithm) {
 		toSerialize["keyAlgorithm"] = o.KeyAlgorithm
 	}
 	if !isNil(o.SelfSignedCertificateValidity) {

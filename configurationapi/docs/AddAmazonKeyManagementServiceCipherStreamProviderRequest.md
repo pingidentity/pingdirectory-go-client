@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ProviderName** | **string** | Name of the new Cipher Stream Provider | 
 **Schemas** | [**[]EnumamazonKeyManagementServiceCipherStreamProviderSchemaUrn**](EnumamazonKeyManagementServiceCipherStreamProviderSchemaUrn.md) |  | 
-**EncryptedPassphraseFile** | **string** | The path to a file that will hold the encrypted passphrase used by this cipher stream provider. | 
+**EncryptedPassphraseFile** | Pointer to **string** | The path to a file that will hold the encrypted passphrase used by this cipher stream provider. | [optional] 
 **AwsExternalServer** | Pointer to **string** | The external server with information to use when interacting with the Amazon Key Management Service. | [optional] 
 **AwsAccessKeyID** | Pointer to **string** | The access key ID that will be used if this cipher stream provider will authenticate to the Amazon Key Management Service using an access key rather than an IAM role associated with an EC2 instance. | [optional] 
 **AwsSecretAccessKey** | Pointer to **string** | The secret access key that will be used if this cipher stream provider will authenticate to the Amazon Key Management Service using an access key rather than an IAM role associated with an EC2 instance. | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewAddAmazonKeyManagementServiceCipherStreamProviderRequest
 
-`func NewAddAmazonKeyManagementServiceCipherStreamProviderRequest(providerName string, schemas []EnumamazonKeyManagementServiceCipherStreamProviderSchemaUrn, encryptedPassphraseFile string, kmsEncryptionKeyArn string, enabled bool, ) *AddAmazonKeyManagementServiceCipherStreamProviderRequest`
+`func NewAddAmazonKeyManagementServiceCipherStreamProviderRequest(providerName string, schemas []EnumamazonKeyManagementServiceCipherStreamProviderSchemaUrn, kmsEncryptionKeyArn string, enabled bool, ) *AddAmazonKeyManagementServiceCipherStreamProviderRequest`
 
 NewAddAmazonKeyManagementServiceCipherStreamProviderRequest instantiates a new AddAmazonKeyManagementServiceCipherStreamProviderRequest object
 This constructor will assign default values to properties that have it defined,
@@ -93,6 +93,11 @@ and a boolean to check if the value has been set.
 
 SetEncryptedPassphraseFile sets EncryptedPassphraseFile field to given value.
 
+### HasEncryptedPassphraseFile
+
+`func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) HasEncryptedPassphraseFile() bool`
+
+HasEncryptedPassphraseFile returns a boolean if a field has been set.
 
 ### GetAwsExternalServer
 

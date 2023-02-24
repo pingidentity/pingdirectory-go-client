@@ -273,6 +273,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/filter-based-uncached-entry-criteria-shared'
+      required:
+      - filterIdentifiesUncachedEntries
     filter-based-uncached-entry-criteria-shared:
       type: object
       properties:
@@ -301,7 +303,6 @@ components:
       required:
       - schemas
       - filter
-      - filterIdentifiesUncachedEntries
       - enabled
     Enumfilter-based-uncached-entry-criteriaSchemaUrn:
       type: string

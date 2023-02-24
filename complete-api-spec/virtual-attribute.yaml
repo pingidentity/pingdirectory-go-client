@@ -592,6 +592,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/is-member-of-virtual-attribute-shared'
+      required:
+      - attributeType
     is-member-of-virtual-attribute-shared:
       type: object
       properties:
@@ -665,7 +667,6 @@ components:
               Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
       required:
       - schemas
-      - attributeType
       - enabled
     Enumis-member-of-virtual-attributeSchemaUrn:
       type: string
@@ -1242,6 +1243,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/entry-dn-virtual-attribute-shared'
+      required:
+      - attributeType
     entry-dn-virtual-attribute-shared:
       type: object
       properties:
@@ -1305,7 +1308,6 @@ components:
               Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
       required:
       - schemas
-      - attributeType
       - enabled
     Enumentry-dn-virtual-attributeSchemaUrn:
       type: string
@@ -1740,6 +1742,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/member-virtual-attribute-shared'
+      required:
+      - allowRetrievingMembership
     member-virtual-attribute-shared:
       type: object
       properties:
@@ -1807,7 +1811,6 @@ components:
           $ref: '#/components/schemas/Enumvirtual-attribute-multipleVirtualAttributeMergeBehaviorProp'
       required:
       - schemas
-      - allowRetrievingMembership
       - enabled
       - attributeType
     Enummember-virtual-attributeSchemaUrn:

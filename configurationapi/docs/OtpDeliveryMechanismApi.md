@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    addOtpDeliveryMechanismRequest := openapiclient.add_otp_delivery_mechanism_request{AddEmailOtpDeliveryMechanismRequest: openapiclient.NewAddEmailOtpDeliveryMechanismRequest("MechanismName_example", []openapiclient.EnumemailOtpDeliveryMechanismSchemaUrn{openapiclient.Enumemail-otp-delivery-mechanismSchemaUrn("urn:pingidentity:schemas:configuration:2.0:otp-delivery-mechanism:email")}, "EmailAddressAttributeType_example", "SenderAddress_example", "MessageSubject_example", false)} // AddOtpDeliveryMechanismRequest | Create a new OTP Delivery Mechanism in the config
+    addOtpDeliveryMechanismRequest := openapiclient.add_otp_delivery_mechanism_request{AddEmailOtpDeliveryMechanismRequest: openapiclient.NewAddEmailOtpDeliveryMechanismRequest("MechanismName_example", []openapiclient.EnumemailOtpDeliveryMechanismSchemaUrn{openapiclient.Enumemail-otp-delivery-mechanismSchemaUrn("urn:pingidentity:schemas:configuration:2.0:otp-delivery-mechanism:email")}, "SenderAddress_example", false)} // AddOtpDeliveryMechanismRequest | Create a new OTP Delivery Mechanism in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

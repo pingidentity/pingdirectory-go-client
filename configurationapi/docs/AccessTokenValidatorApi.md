@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    addAccessTokenValidatorRequest := openapiclient.add_access_token_validator_request{AddJwtAccessTokenValidatorRequest: openapiclient.NewAddJwtAccessTokenValidatorRequest("ValidatorName_example", []openapiclient.EnumjwtAccessTokenValidatorSchemaUrn{openapiclient.Enumjwt-access-token-validatorSchemaUrn("urn:pingidentity:schemas:configuration:2.0:access-token-validator:jwt")}, []openapiclient.EnumaccessTokenValidatorAllowedSigningAlgorithmProp{openapiclient.Enumaccess-token-validator-allowedSigningAlgorithmProp("RS256")}, []openapiclient.EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp{openapiclient.Enumaccess-token-validator-allowedKeyEncryptionAlgorithmProp("RSA_OAEP")}, []openapiclient.EnumaccessTokenValidatorAllowedContentEncryptionAlgorithmProp{openapiclient.Enumaccess-token-validator-allowedContentEncryptionAlgorithmProp("A128CBC_HS256")}, int32(123), false)} // AddAccessTokenValidatorRequest | Create a new Access Token Validator in the config
+    addAccessTokenValidatorRequest := openapiclient.add_access_token_validator_request{AddJwtAccessTokenValidatorRequest: openapiclient.NewAddJwtAccessTokenValidatorRequest("ValidatorName_example", []openapiclient.EnumjwtAccessTokenValidatorSchemaUrn{openapiclient.Enumjwt-access-token-validatorSchemaUrn("urn:pingidentity:schemas:configuration:2.0:access-token-validator:jwt")}, false)} // AddAccessTokenValidatorRequest | Create a new Access Token Validator in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

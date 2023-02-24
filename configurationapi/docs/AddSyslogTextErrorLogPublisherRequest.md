@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumsyslogTextErrorLogPublisherSchemaUrn**](EnumsyslogTextErrorLogPublisherSchemaUrn.md) |  | 
 **DefaultSeverity** | Pointer to [**[]EnumlogPublisherDefaultSeverityProp**](EnumlogPublisherDefaultSeverityProp.md) |  | [optional] 
 **SyslogExternalServer** | **[]string** | The syslog server to which messages should be sent. | 
-**SyslogFacility** | [**EnumlogPublisherSyslogFacilityProp**](EnumlogPublisherSyslogFacilityProp.md) |  | 
+**SyslogFacility** | Pointer to [**EnumlogPublisherSyslogFacilityProp**](EnumlogPublisherSyslogFacilityProp.md) |  | [optional] 
 **SyslogSeverity** | Pointer to [**EnumlogPublisherSyslogSeverityProp**](EnumlogPublisherSyslogSeverityProp.md) |  | [optional] 
 **SyslogMessageHostName** | Pointer to **string** | The local host name that will be included in syslog messages that are logged by this Syslog Text Error Log Publisher. | [optional] 
 **SyslogMessageApplicationName** | Pointer to **string** | The application name that will be included in syslog messages that are logged by this Syslog Text Error Log Publisher. | [optional] 
@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 
 ### NewAddSyslogTextErrorLogPublisherRequest
 
-`func NewAddSyslogTextErrorLogPublisherRequest(publisherName string, schemas []EnumsyslogTextErrorLogPublisherSchemaUrn, syslogExternalServer []string, syslogFacility EnumlogPublisherSyslogFacilityProp, enabled bool, ) *AddSyslogTextErrorLogPublisherRequest`
+`func NewAddSyslogTextErrorLogPublisherRequest(publisherName string, schemas []EnumsyslogTextErrorLogPublisherSchemaUrn, syslogExternalServer []string, enabled bool, ) *AddSyslogTextErrorLogPublisherRequest`
 
 NewAddSyslogTextErrorLogPublisherRequest instantiates a new AddSyslogTextErrorLogPublisherRequest object
 This constructor will assign default values to properties that have it defined,
@@ -147,6 +147,11 @@ and a boolean to check if the value has been set.
 
 SetSyslogFacility sets SyslogFacility field to given value.
 
+### HasSyslogFacility
+
+`func (o *AddSyslogTextErrorLogPublisherRequest) HasSyslogFacility() bool`
+
+HasSyslogFacility returns a boolean if a field has been set.
 
 ### GetSyslogSeverity
 

@@ -41,7 +41,7 @@ type AddClientConnectionPolicyRequest struct {
 	IncludedBackendBaseDN []string `json:"includedBackendBaseDN,omitempty"`
 	// Specifies the set of backend base DNs for which subtree views should be excluded from this Client Connection Policy.
 	ExcludedBackendBaseDN []string                                         `json:"excludedBackendBaseDN,omitempty"`
-	AllowedOperation      []EnumclientConnectionPolicyAllowedOperationProp `json:"allowedOperation"`
+	AllowedOperation      []EnumclientConnectionPolicyAllowedOperationProp `json:"allowedOperation,omitempty"`
 	// Specifies a request criteria object that will be required to match all requests submitted by clients associated with this Client Connection Policy. If a client submits a request that does not satisfy this request criteria object, then that request will be rejected.
 	RequiredOperationRequestCriteria *string `json:"requiredOperationRequestCriteria,omitempty"`
 	// Specifies a request criteria object that must not match any requests submitted by clients associated with this Client Connection Policy. If a client submits a request that satisfies this request criteria object, then that request will be rejected.
@@ -54,7 +54,7 @@ type AddClientConnectionPolicyRequest struct {
 	AllowedExtendedOperation []string `json:"allowedExtendedOperation,omitempty"`
 	// Specifies the OIDs of the extended operations that clients associated with this Client Connection Policy will not be allowed to request.
 	DeniedExtendedOperation []string                                        `json:"deniedExtendedOperation,omitempty"`
-	AllowedAuthType         []EnumclientConnectionPolicyAllowedAuthTypeProp `json:"allowedAuthType"`
+	AllowedAuthType         []EnumclientConnectionPolicyAllowedAuthTypeProp `json:"allowedAuthType,omitempty"`
 	// Specifies the names of the SASL mechanisms that clients associated with this Client Connection Policy will be allowed to request.
 	AllowedSASLMechanism []string `json:"allowedSASLMechanism,omitempty"`
 	// Specifies the names of the SASL mechanisms that clients associated with this Client Connection Policy will not be allowed to request.
@@ -101,14 +101,12 @@ type AddClientConnectionPolicyRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddClientConnectionPolicyRequest(policyName string, policyID string, enabled bool, evaluationOrderIndex int32, allowedOperation []EnumclientConnectionPolicyAllowedOperationProp, allowedAuthType []EnumclientConnectionPolicyAllowedAuthTypeProp) *AddClientConnectionPolicyRequest {
+func NewAddClientConnectionPolicyRequest(policyName string, policyID string, enabled bool, evaluationOrderIndex int32) *AddClientConnectionPolicyRequest {
 	this := AddClientConnectionPolicyRequest{}
 	this.PolicyName = policyName
 	this.PolicyID = policyID
 	this.Enabled = enabled
 	this.EvaluationOrderIndex = evaluationOrderIndex
-	this.AllowedOperation = allowedOperation
-	this.AllowedAuthType = allowedAuthType
 	return &this
 }
 
@@ -504,26 +502,34 @@ func (o *AddClientConnectionPolicyRequest) SetExcludedBackendBaseDN(v []string) 
 	o.ExcludedBackendBaseDN = v
 }
 
-// GetAllowedOperation returns the AllowedOperation field value
+// GetAllowedOperation returns the AllowedOperation field value if set, zero value otherwise.
 func (o *AddClientConnectionPolicyRequest) GetAllowedOperation() []EnumclientConnectionPolicyAllowedOperationProp {
-	if o == nil {
+	if o == nil || isNil(o.AllowedOperation) {
 		var ret []EnumclientConnectionPolicyAllowedOperationProp
 		return ret
 	}
-
 	return o.AllowedOperation
 }
 
-// GetAllowedOperationOk returns a tuple with the AllowedOperation field value
+// GetAllowedOperationOk returns a tuple with the AllowedOperation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddClientConnectionPolicyRequest) GetAllowedOperationOk() ([]EnumclientConnectionPolicyAllowedOperationProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.AllowedOperation) {
 		return nil, false
 	}
 	return o.AllowedOperation, true
 }
 
-// SetAllowedOperation sets field value
+// HasAllowedOperation returns a boolean if a field has been set.
+func (o *AddClientConnectionPolicyRequest) HasAllowedOperation() bool {
+	if o != nil && !isNil(o.AllowedOperation) {
+		return true
+	}
+
+	return false
+}
+
+// SetAllowedOperation gets a reference to the given []EnumclientConnectionPolicyAllowedOperationProp and assigns it to the AllowedOperation field.
 func (o *AddClientConnectionPolicyRequest) SetAllowedOperation(v []EnumclientConnectionPolicyAllowedOperationProp) {
 	o.AllowedOperation = v
 }
@@ -720,26 +726,34 @@ func (o *AddClientConnectionPolicyRequest) SetDeniedExtendedOperation(v []string
 	o.DeniedExtendedOperation = v
 }
 
-// GetAllowedAuthType returns the AllowedAuthType field value
+// GetAllowedAuthType returns the AllowedAuthType field value if set, zero value otherwise.
 func (o *AddClientConnectionPolicyRequest) GetAllowedAuthType() []EnumclientConnectionPolicyAllowedAuthTypeProp {
-	if o == nil {
+	if o == nil || isNil(o.AllowedAuthType) {
 		var ret []EnumclientConnectionPolicyAllowedAuthTypeProp
 		return ret
 	}
-
 	return o.AllowedAuthType
 }
 
-// GetAllowedAuthTypeOk returns a tuple with the AllowedAuthType field value
+// GetAllowedAuthTypeOk returns a tuple with the AllowedAuthType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddClientConnectionPolicyRequest) GetAllowedAuthTypeOk() ([]EnumclientConnectionPolicyAllowedAuthTypeProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.AllowedAuthType) {
 		return nil, false
 	}
 	return o.AllowedAuthType, true
 }
 
-// SetAllowedAuthType sets field value
+// HasAllowedAuthType returns a boolean if a field has been set.
+func (o *AddClientConnectionPolicyRequest) HasAllowedAuthType() bool {
+	if o != nil && !isNil(o.AllowedAuthType) {
+		return true
+	}
+
+	return false
+}
+
+// SetAllowedAuthType gets a reference to the given []EnumclientConnectionPolicyAllowedAuthTypeProp and assigns it to the AllowedAuthType field.
 func (o *AddClientConnectionPolicyRequest) SetAllowedAuthType(v []EnumclientConnectionPolicyAllowedAuthTypeProp) {
 	o.AllowedAuthType = v
 }
@@ -1489,7 +1503,7 @@ func (o AddClientConnectionPolicyRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.ExcludedBackendBaseDN) {
 		toSerialize["excludedBackendBaseDN"] = o.ExcludedBackendBaseDN
 	}
-	if true {
+	if !isNil(o.AllowedOperation) {
 		toSerialize["allowedOperation"] = o.AllowedOperation
 	}
 	if !isNil(o.RequiredOperationRequestCriteria) {
@@ -1510,7 +1524,7 @@ func (o AddClientConnectionPolicyRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.DeniedExtendedOperation) {
 		toSerialize["deniedExtendedOperation"] = o.DeniedExtendedOperation
 	}
-	if true {
+	if !isNil(o.AllowedAuthType) {
 		toSerialize["allowedAuthType"] = o.AllowedAuthType
 	}
 	if !isNil(o.AllowedSASLMechanism) {

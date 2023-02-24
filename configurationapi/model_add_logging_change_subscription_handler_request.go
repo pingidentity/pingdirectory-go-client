@@ -20,7 +20,7 @@ type AddLoggingChangeSubscriptionHandlerRequest struct {
 	HandlerName string                                          `json:"handlerName"`
 	Schemas     []EnumloggingChangeSubscriptionHandlerSchemaUrn `json:"schemas"`
 	// Specifies the log file in which the change notification messages will be written.
-	LogFile string `json:"logFile"`
+	LogFile *string `json:"logFile,omitempty"`
 	// A description for this Change Subscription Handler
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this change subscription handler is enabled within the server.
@@ -33,11 +33,10 @@ type AddLoggingChangeSubscriptionHandlerRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddLoggingChangeSubscriptionHandlerRequest(handlerName string, schemas []EnumloggingChangeSubscriptionHandlerSchemaUrn, logFile string, enabled bool) *AddLoggingChangeSubscriptionHandlerRequest {
+func NewAddLoggingChangeSubscriptionHandlerRequest(handlerName string, schemas []EnumloggingChangeSubscriptionHandlerSchemaUrn, enabled bool) *AddLoggingChangeSubscriptionHandlerRequest {
 	this := AddLoggingChangeSubscriptionHandlerRequest{}
 	this.HandlerName = handlerName
 	this.Schemas = schemas
-	this.LogFile = logFile
 	this.Enabled = enabled
 	return &this
 }
@@ -98,28 +97,36 @@ func (o *AddLoggingChangeSubscriptionHandlerRequest) SetSchemas(v []EnumloggingC
 	o.Schemas = v
 }
 
-// GetLogFile returns the LogFile field value
+// GetLogFile returns the LogFile field value if set, zero value otherwise.
 func (o *AddLoggingChangeSubscriptionHandlerRequest) GetLogFile() string {
-	if o == nil {
+	if o == nil || isNil(o.LogFile) {
 		var ret string
 		return ret
 	}
-
-	return o.LogFile
+	return *o.LogFile
 }
 
-// GetLogFileOk returns a tuple with the LogFile field value
+// GetLogFileOk returns a tuple with the LogFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLoggingChangeSubscriptionHandlerRequest) GetLogFileOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.LogFile) {
 		return nil, false
 	}
-	return &o.LogFile, true
+	return o.LogFile, true
 }
 
-// SetLogFile sets field value
+// HasLogFile returns a boolean if a field has been set.
+func (o *AddLoggingChangeSubscriptionHandlerRequest) HasLogFile() bool {
+	if o != nil && !isNil(o.LogFile) {
+		return true
+	}
+
+	return false
+}
+
+// SetLogFile gets a reference to the given string and assigns it to the LogFile field.
 func (o *AddLoggingChangeSubscriptionHandlerRequest) SetLogFile(v string) {
-	o.LogFile = v
+	o.LogFile = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -218,7 +225,7 @@ func (o AddLoggingChangeSubscriptionHandlerRequest) MarshalJSON() ([]byte, error
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if true {
+	if !isNil(o.LogFile) {
 		toSerialize["logFile"] = o.LogFile
 	}
 	if !isNil(o.Description) {

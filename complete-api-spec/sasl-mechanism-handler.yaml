@@ -486,6 +486,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/unboundid-delivered-otp-sasl-mechanism-handler-shared'
+      required:
+      - otpValidityDuration
     unboundid-delivered-otp-sasl-mechanism-handler-shared:
       type: object
       properties:
@@ -514,7 +516,6 @@ components:
       required:
       - schemas
       - identityMapper
-      - otpValidityDuration
       - enabled
     Enumunboundid-delivered-otp-sasl-mechanism-handlerSchemaUrn:
       type: string

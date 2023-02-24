@@ -25,11 +25,11 @@ type AddSyslogExternalServerRequest struct {
 	ServerPort         *int32                                   `json:"serverPort,omitempty"`
 	TransportMechanism EnumexternalServerTransportMechanismProp `json:"transportMechanism"`
 	// Specifies the maximum length of time to wait for a connection to be established before giving up and considering the server unavailable. This will only be used when communicating with the syslog server over TCP (with or without TLS encryption).
-	ConnectTimeout string `json:"connectTimeout"`
+	ConnectTimeout *string `json:"connectTimeout,omitempty"`
 	// The maximum length of time that TCP connections should remain established. This will be ignored for UDP-based connections. A zero duration indicates that no maximum age will be imposed.
-	MaxConnectionAge string `json:"maxConnectionAge"`
+	MaxConnectionAge *string `json:"maxConnectionAge,omitempty"`
 	// A trust manager provider that will be used to determine whether to trust the certificate chain presented by the syslog server when communication is encrypted with TLS. This property will be ignored when not using TLS encryption.
-	TrustManagerProvider string `json:"trustManagerProvider"`
+	TrustManagerProvider *string `json:"trustManagerProvider,omitempty"`
 	// A description for this External Server
 	Description *string `json:"description,omitempty"`
 }
@@ -38,15 +38,12 @@ type AddSyslogExternalServerRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddSyslogExternalServerRequest(serverName string, schemas []EnumsyslogExternalServerSchemaUrn, serverHostName string, transportMechanism EnumexternalServerTransportMechanismProp, connectTimeout string, maxConnectionAge string, trustManagerProvider string) *AddSyslogExternalServerRequest {
+func NewAddSyslogExternalServerRequest(serverName string, schemas []EnumsyslogExternalServerSchemaUrn, serverHostName string, transportMechanism EnumexternalServerTransportMechanismProp) *AddSyslogExternalServerRequest {
 	this := AddSyslogExternalServerRequest{}
 	this.ServerName = serverName
 	this.Schemas = schemas
 	this.ServerHostName = serverHostName
 	this.TransportMechanism = transportMechanism
-	this.ConnectTimeout = connectTimeout
-	this.MaxConnectionAge = maxConnectionAge
-	this.TrustManagerProvider = trustManagerProvider
 	return &this
 }
 
@@ -186,76 +183,100 @@ func (o *AddSyslogExternalServerRequest) SetTransportMechanism(v EnumexternalSer
 	o.TransportMechanism = v
 }
 
-// GetConnectTimeout returns the ConnectTimeout field value
+// GetConnectTimeout returns the ConnectTimeout field value if set, zero value otherwise.
 func (o *AddSyslogExternalServerRequest) GetConnectTimeout() string {
-	if o == nil {
+	if o == nil || isNil(o.ConnectTimeout) {
 		var ret string
 		return ret
 	}
-
-	return o.ConnectTimeout
+	return *o.ConnectTimeout
 }
 
-// GetConnectTimeoutOk returns a tuple with the ConnectTimeout field value
+// GetConnectTimeoutOk returns a tuple with the ConnectTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogExternalServerRequest) GetConnectTimeoutOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.ConnectTimeout) {
 		return nil, false
 	}
-	return &o.ConnectTimeout, true
+	return o.ConnectTimeout, true
 }
 
-// SetConnectTimeout sets field value
+// HasConnectTimeout returns a boolean if a field has been set.
+func (o *AddSyslogExternalServerRequest) HasConnectTimeout() bool {
+	if o != nil && !isNil(o.ConnectTimeout) {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectTimeout gets a reference to the given string and assigns it to the ConnectTimeout field.
 func (o *AddSyslogExternalServerRequest) SetConnectTimeout(v string) {
-	o.ConnectTimeout = v
+	o.ConnectTimeout = &v
 }
 
-// GetMaxConnectionAge returns the MaxConnectionAge field value
+// GetMaxConnectionAge returns the MaxConnectionAge field value if set, zero value otherwise.
 func (o *AddSyslogExternalServerRequest) GetMaxConnectionAge() string {
-	if o == nil {
+	if o == nil || isNil(o.MaxConnectionAge) {
 		var ret string
 		return ret
 	}
-
-	return o.MaxConnectionAge
+	return *o.MaxConnectionAge
 }
 
-// GetMaxConnectionAgeOk returns a tuple with the MaxConnectionAge field value
+// GetMaxConnectionAgeOk returns a tuple with the MaxConnectionAge field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogExternalServerRequest) GetMaxConnectionAgeOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.MaxConnectionAge) {
 		return nil, false
 	}
-	return &o.MaxConnectionAge, true
+	return o.MaxConnectionAge, true
 }
 
-// SetMaxConnectionAge sets field value
+// HasMaxConnectionAge returns a boolean if a field has been set.
+func (o *AddSyslogExternalServerRequest) HasMaxConnectionAge() bool {
+	if o != nil && !isNil(o.MaxConnectionAge) {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxConnectionAge gets a reference to the given string and assigns it to the MaxConnectionAge field.
 func (o *AddSyslogExternalServerRequest) SetMaxConnectionAge(v string) {
-	o.MaxConnectionAge = v
+	o.MaxConnectionAge = &v
 }
 
-// GetTrustManagerProvider returns the TrustManagerProvider field value
+// GetTrustManagerProvider returns the TrustManagerProvider field value if set, zero value otherwise.
 func (o *AddSyslogExternalServerRequest) GetTrustManagerProvider() string {
-	if o == nil {
+	if o == nil || isNil(o.TrustManagerProvider) {
 		var ret string
 		return ret
 	}
-
-	return o.TrustManagerProvider
+	return *o.TrustManagerProvider
 }
 
-// GetTrustManagerProviderOk returns a tuple with the TrustManagerProvider field value
+// GetTrustManagerProviderOk returns a tuple with the TrustManagerProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSyslogExternalServerRequest) GetTrustManagerProviderOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.TrustManagerProvider) {
 		return nil, false
 	}
-	return &o.TrustManagerProvider, true
+	return o.TrustManagerProvider, true
 }
 
-// SetTrustManagerProvider sets field value
+// HasTrustManagerProvider returns a boolean if a field has been set.
+func (o *AddSyslogExternalServerRequest) HasTrustManagerProvider() bool {
+	if o != nil && !isNil(o.TrustManagerProvider) {
+		return true
+	}
+
+	return false
+}
+
+// SetTrustManagerProvider gets a reference to the given string and assigns it to the TrustManagerProvider field.
 func (o *AddSyslogExternalServerRequest) SetTrustManagerProvider(v string) {
-	o.TrustManagerProvider = v
+	o.TrustManagerProvider = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -307,13 +328,13 @@ func (o AddSyslogExternalServerRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["transportMechanism"] = o.TransportMechanism
 	}
-	if true {
+	if !isNil(o.ConnectTimeout) {
 		toSerialize["connectTimeout"] = o.ConnectTimeout
 	}
-	if true {
+	if !isNil(o.MaxConnectionAge) {
 		toSerialize["maxConnectionAge"] = o.MaxConnectionAge
 	}
-	if true {
+	if !isNil(o.TrustManagerProvider) {
 		toSerialize["trustManagerProvider"] = o.TrustManagerProvider
 	}
 	if !isNil(o.Description) {

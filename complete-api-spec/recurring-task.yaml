@@ -373,6 +373,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/backup-recurring-task-shared'
+      required:
+      - backupDirectory
     backup-recurring-task-shared:
       type: object
       properties:
@@ -466,7 +468,6 @@ components:
               Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
       required:
       - schemas
-      - backupDirectory
     Enumbackup-recurring-taskSchemaUrn:
       type: string
       enum:
@@ -827,6 +828,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/ldif-export-recurring-task-shared'
+      required:
+      - ldifDirectory
     ldif-export-recurring-task-shared:
       type: object
       properties:
@@ -920,7 +923,6 @@ components:
               Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
       required:
       - schemas
-      - ldifDirectory
     Enumldif-export-recurring-taskSchemaUrn:
       type: string
       enum:

@@ -17,18 +17,18 @@ Name | Type | Description | Notes
 **HomeTelephoneNumber** | Pointer to **[]string** | Specifies the user&#39;s home telephone number. This is stored in the homePhone LDAP attribute. | [optional] 
 **MobileTelephoneNumber** | Pointer to **[]string** | Specifies the user&#39;s mobile telephone number. This is stored in the mobile LDAP attribute. | [optional] 
 **PagerTelephoneNumber** | Pointer to **[]string** | Specifies the user&#39;s pager telephone number. This is stored in the pager LDAP attribute. | [optional] 
-**InheritDefaultRootPrivileges** | **bool** | Indicates whether this User should be automatically granted the set of privileges defined in the default-root-privilege-name property of the Root DN configuration object. | 
+**InheritDefaultRootPrivileges** | Pointer to **bool** | Indicates whether this User should be automatically granted the set of privileges defined in the default-root-privilege-name property of the Root DN configuration object. | [optional] 
 **Privilege** | Pointer to [**[]EnumrootDnUserPrivilegeProp**](EnumrootDnUserPrivilegeProp.md) |  | [optional] 
-**SearchResultEntryLimit** | **int32** | Specifies the maximum number of entries that the server may return to the user in response to any single search request. A value of 0 indicates no limit should be enforced. This is stored in the ds-rlim-size-limit LDAP attribute. | 
-**TimeLimitSeconds** | **int32** | Specifies the maximum length of time (in seconds) that the server may spend processing any single search request. A value of 0 indicates no limit should be enforced. This is stored in the ds-rlim-time-limit LDAP attribute. | 
-**LookThroughEntryLimit** | **int32** | Specifies the maximum number of candidate entries that the server may examine in the course of processing any single search request. A value of 0 indicates no limit should be enforced. This is stored in the ds-rlim-lookthrough-limit LDAP attribute. | 
-**IdleTimeLimitSeconds** | **int32** | Specifies the maximum length of time (in seconds) that a connection authenticated as this user may remain established without issuing any requests. A value of 0 indicates no limit should be enforced. This is stored in the ds-rlim-idle-time-limit LDAP attribute. | 
-**PasswordPolicy** | **string** | Specifies the password policy for the user. This is stored in the ds-pwp-password-policy-dn LDAP attribute. | 
+**SearchResultEntryLimit** | Pointer to **int32** | Specifies the maximum number of entries that the server may return to the user in response to any single search request. A value of 0 indicates no limit should be enforced. This is stored in the ds-rlim-size-limit LDAP attribute. | [optional] 
+**TimeLimitSeconds** | Pointer to **int32** | Specifies the maximum length of time (in seconds) that the server may spend processing any single search request. A value of 0 indicates no limit should be enforced. This is stored in the ds-rlim-time-limit LDAP attribute. | [optional] 
+**LookThroughEntryLimit** | Pointer to **int32** | Specifies the maximum number of candidate entries that the server may examine in the course of processing any single search request. A value of 0 indicates no limit should be enforced. This is stored in the ds-rlim-lookthrough-limit LDAP attribute. | [optional] 
+**IdleTimeLimitSeconds** | Pointer to **int32** | Specifies the maximum length of time (in seconds) that a connection authenticated as this user may remain established without issuing any requests. A value of 0 indicates no limit should be enforced. This is stored in the ds-rlim-idle-time-limit LDAP attribute. | [optional] 
+**PasswordPolicy** | Pointer to **string** | Specifies the password policy for the user. This is stored in the ds-pwp-password-policy-dn LDAP attribute. | [optional] 
 **Disabled** | Pointer to **bool** | Specifies whether the root user account should be disabled. A disabled account is not permitted to authenticate, nor can it be used as an authorization identity. This is stored in the ds-pwp-account-disabled LDAP attribute. | [optional] 
 **AccountActivationTime** | Pointer to **string** | Specifies the time, in generalized time format (e.g., &#39;20160101070000Z&#39;), that the root user account should become active. If an activation time is specified, the user will not be permitted to authenticate, nor can the account be used as an authorization identity, until the activation time has arrived. This is stored in the ds-pwp-account-activation-time LDAP attribute. | [optional] 
 **AccountExpirationTime** | Pointer to **string** | Specifies the time, in generalized time format (e.g., &#39;20240101070000Z&#39;), that the root user account should expire. If an expiration time is specified, the user will not be permitted to authenticate, nor can the account be used as an authorization identity, after this time has passed. This is stored in the ds-pwp-account-expiration-time LDAP attribute. | [optional] 
-**RequireSecureAuthentication** | **bool** | Indicates whether this User must authenticate in a secure manner. When set to \&quot;true\&quot;, the User will only be allowed to authenticate over a secure connection or using a mechanism that does not expose user credentials (e.g., the CRAM-MD5, DIGEST-MD5, and GSSAPI SASL mechanisms). | 
-**RequireSecureConnections** | **bool** | Indicates whether this User must be required to communicate with the server over a secure connection. When set to \&quot;true\&quot;, the User will only be allowed to communicate with the server over a secure connection (i.e., using TLS or the StartTLS extended operation). | 
+**RequireSecureAuthentication** | Pointer to **bool** | Indicates whether this User must authenticate in a secure manner. When set to \&quot;true\&quot;, the User will only be allowed to authenticate over a secure connection or using a mechanism that does not expose user credentials (e.g., the CRAM-MD5, DIGEST-MD5, and GSSAPI SASL mechanisms). | [optional] 
+**RequireSecureConnections** | Pointer to **bool** | Indicates whether this User must be required to communicate with the server over a secure connection. When set to \&quot;true\&quot;, the User will only be allowed to communicate with the server over a secure connection (i.e., using TLS or the StartTLS extended operation). | [optional] 
 **AllowedAuthenticationType** | Pointer to **[]string** | Indicates that User should only be allowed to authenticate in certain ways. Allowed values include \&quot;simple\&quot; (to indicate that the user should be allowed to bind using simple authentication) or \&quot;sasl {mech}\&quot; (to indicate that the user should be allowed to bind using the specified SASL mechanism, like \&quot;sasl PLAIN\&quot;). The list of available SASL mechanisms can be retrieved by running \&quot;dsconfig --advanced list-sasl-mechanism-handlers\&quot;. | [optional] 
 **AllowedAuthenticationIPAddress** | Pointer to **[]string** | An IPv4 or IPv6 address mask that controls the set of IP addresses from which this User can authenticate to the server. For instance a value of 127.0.0.1 (or ::1 in IPv6) would restricted access only to localhost connections, whereas 10.6.1.* would restrict access to servers on the 10.6.1.* subnet. | [optional] 
 **PreferredOTPDeliveryMechanism** | Pointer to **[]string** | Overrides the default settings for the mechanisms (e.g., email or SMS) that are used to deliver one time passwords to Users. | [optional] 
@@ -44,7 +44,7 @@ Name | Type | Description | Notes
 
 ### NewAddRootDnUserRequest
 
-`func NewAddRootDnUserRequest(userName string, inheritDefaultRootPrivileges bool, searchResultEntryLimit int32, timeLimitSeconds int32, lookThroughEntryLimit int32, idleTimeLimitSeconds int32, passwordPolicy string, requireSecureAuthentication bool, requireSecureConnections bool, ) *AddRootDnUserRequest`
+`func NewAddRootDnUserRequest(userName string, ) *AddRootDnUserRequest`
 
 NewAddRootDnUserRequest instantiates a new AddRootDnUserRequest object
 This constructor will assign default values to properties that have it defined,
@@ -398,6 +398,11 @@ and a boolean to check if the value has been set.
 
 SetInheritDefaultRootPrivileges sets InheritDefaultRootPrivileges field to given value.
 
+### HasInheritDefaultRootPrivileges
+
+`func (o *AddRootDnUserRequest) HasInheritDefaultRootPrivileges() bool`
+
+HasInheritDefaultRootPrivileges returns a boolean if a field has been set.
 
 ### GetPrivilege
 
@@ -443,6 +448,11 @@ and a boolean to check if the value has been set.
 
 SetSearchResultEntryLimit sets SearchResultEntryLimit field to given value.
 
+### HasSearchResultEntryLimit
+
+`func (o *AddRootDnUserRequest) HasSearchResultEntryLimit() bool`
+
+HasSearchResultEntryLimit returns a boolean if a field has been set.
 
 ### GetTimeLimitSeconds
 
@@ -463,6 +473,11 @@ and a boolean to check if the value has been set.
 
 SetTimeLimitSeconds sets TimeLimitSeconds field to given value.
 
+### HasTimeLimitSeconds
+
+`func (o *AddRootDnUserRequest) HasTimeLimitSeconds() bool`
+
+HasTimeLimitSeconds returns a boolean if a field has been set.
 
 ### GetLookThroughEntryLimit
 
@@ -483,6 +498,11 @@ and a boolean to check if the value has been set.
 
 SetLookThroughEntryLimit sets LookThroughEntryLimit field to given value.
 
+### HasLookThroughEntryLimit
+
+`func (o *AddRootDnUserRequest) HasLookThroughEntryLimit() bool`
+
+HasLookThroughEntryLimit returns a boolean if a field has been set.
 
 ### GetIdleTimeLimitSeconds
 
@@ -503,6 +523,11 @@ and a boolean to check if the value has been set.
 
 SetIdleTimeLimitSeconds sets IdleTimeLimitSeconds field to given value.
 
+### HasIdleTimeLimitSeconds
+
+`func (o *AddRootDnUserRequest) HasIdleTimeLimitSeconds() bool`
+
+HasIdleTimeLimitSeconds returns a boolean if a field has been set.
 
 ### GetPasswordPolicy
 
@@ -523,6 +548,11 @@ and a boolean to check if the value has been set.
 
 SetPasswordPolicy sets PasswordPolicy field to given value.
 
+### HasPasswordPolicy
+
+`func (o *AddRootDnUserRequest) HasPasswordPolicy() bool`
+
+HasPasswordPolicy returns a boolean if a field has been set.
 
 ### GetDisabled
 
@@ -618,6 +648,11 @@ and a boolean to check if the value has been set.
 
 SetRequireSecureAuthentication sets RequireSecureAuthentication field to given value.
 
+### HasRequireSecureAuthentication
+
+`func (o *AddRootDnUserRequest) HasRequireSecureAuthentication() bool`
+
+HasRequireSecureAuthentication returns a boolean if a field has been set.
 
 ### GetRequireSecureConnections
 
@@ -638,6 +673,11 @@ and a boolean to check if the value has been set.
 
 SetRequireSecureConnections sets RequireSecureConnections field to given value.
 
+### HasRequireSecureConnections
+
+`func (o *AddRootDnUserRequest) HasRequireSecureConnections() bool`
+
+HasRequireSecureConnections returns a boolean if a field has been set.
 
 ### GetAllowedAuthenticationType
 

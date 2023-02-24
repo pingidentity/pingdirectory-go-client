@@ -392,6 +392,9 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/replication-assurance-result-criteria-shared'
+      required:
+      - localAssuranceLevel
+      - remoteAssuranceLevel
     replication-assurance-result-criteria-shared:
       type: object
       properties:
@@ -427,8 +430,6 @@ components:
               A description for this Result Criteria
       required:
       - schemas
-      - localAssuranceLevel
-      - remoteAssuranceLevel
     Enumreplication-assurance-result-criteriaSchemaUrn:
       type: string
       enum:

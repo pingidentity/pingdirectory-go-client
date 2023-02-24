@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **MinorValue** | Pointer to **float32** | A value that is used to determine whether the current monitored value indicates this gauge&#39;s severity should be &#39;minor&#39;. | [optional] 
 **WarningValue** | Pointer to **float32** | A value that is used to determine whether the current monitored value indicates this gauge&#39;s severity should be &#39;warning&#39;. | [optional] 
 **Description** | Pointer to **string** | A description for this Gauge | [optional] 
-**Enabled** | **bool** | Indicates whether this Gauge is enabled. | 
+**Enabled** | Pointer to **bool** | Indicates whether this Gauge is enabled. | [optional] 
 **OverrideSeverity** | Pointer to [**EnumgaugeOverrideSeverityProp**](EnumgaugeOverrideSeverityProp.md) |  | [optional] 
 **AlertLevel** | Pointer to [**EnumgaugeAlertLevelProp**](EnumgaugeAlertLevelProp.md) |  | [optional] 
 **UpdateInterval** | Pointer to **string** | The frequency with which this Gauge is updated. | [optional] 
@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 
 ### NewAddGaugeRequest
 
-`func NewAddGaugeRequest(gaugeName string, schemas []EnumnumericGaugeSchemaUrn, gaugeDataSource string, enabled bool, ) *AddGaugeRequest`
+`func NewAddGaugeRequest(gaugeName string, schemas []EnumnumericGaugeSchemaUrn, gaugeDataSource string, ) *AddGaugeRequest`
 
 NewAddGaugeRequest instantiates a new AddGaugeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -249,6 +249,11 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
+### HasEnabled
+
+`func (o *AddGaugeRequest) HasEnabled() bool`
+
+HasEnabled returns a boolean if a field has been set.
 
 ### GetOverrideSeverity
 

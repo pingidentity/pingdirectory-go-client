@@ -19,22 +19,22 @@ Name | Type | Description | Notes
 **TestAttributeValueSubstringOfPassword** | Pointer to **bool** | Indicates whether to reject any proposed password in which a value in one of the match attributes in the target user&#39;s entry is a substring of that password. | [optional] 
 **MinimumAttributeValueLengthForSubstringMatches** | Pointer to **int32** | The minimum length that an attribute value must have for it to be considered when rejecting passwords that contain the value of another attribute as a substring. | [optional] 
 **TestReversedPassword** | **bool** | Indicates whether this password validator is to test the reversed value of the provided password as well as the order in which it was given. | 
-**DictionaryFile** | **string** | Specifies the path to the file containing a list of words that cannot be used as passwords. | 
+**DictionaryFile** | Pointer to **string** | Specifies the path to the file containing a list of words that cannot be used as passwords. | [optional] 
 **CaseSensitiveValidation** | **bool** | Indicates whether this password validator should treat password characters in a case-sensitive manner. | 
 **IgnoreLeadingNonAlphabeticCharacters** | Pointer to **bool** | Indicates whether to ignore any digits, symbols, or other non-alphabetic characters that may appear at the beginning of a proposed password. | [optional] 
 **IgnoreTrailingNonAlphabeticCharacters** | Pointer to **bool** | Indicates whether to ignore any digits, symbols, or other non-alphabetic characters that may appear at the end of a proposed password. | [optional] 
 **StripDiacriticalMarks** | Pointer to **bool** | Indicates whether to strip characters of any diacritical marks (like accents, cedillas, circumflexes, diaereses, tildes, and umlauts) they may contain. Any characters with a diacritical mark would be replaced with a base version | [optional] 
 **AlternativePasswordCharacterMapping** | Pointer to **[]string** | Provides a set of character substitutions that can be applied to the proposed password when checking to see if it is in the provided dictionary. Each mapping should consist of a single character followed by a colon and a list of the alternative characters that may be used in place of that character. | [optional] 
 **MaximumAllowedPercentOfPassword** | Pointer to **int32** | The maximum allowed percent of a proposed password that any single dictionary word is allowed to comprise. A value of 100 indicates that a proposed password will only be rejected if the dictionary contains the entire proposed password (after any configured transformations have been applied). | [optional] 
-**AssumedPasswordGuessesPerSecond** | **string** | The number of password guesses per second that a potential attacker may be expected to make. | 
-**MinimumAcceptableTimeToExhaustSearchSpace** | **string** | The minimum length of time (using the configured number of password guesses per second) required to exhaust the entire search space for a proposed password in order for that password to be considered acceptable. | 
+**AssumedPasswordGuessesPerSecond** | Pointer to **string** | The number of password guesses per second that a potential attacker may be expected to make. | [optional] 
+**MinimumAcceptableTimeToExhaustSearchSpace** | Pointer to **string** | The minimum length of time (using the configured number of password guesses per second) required to exhaust the entire search space for a proposed password in order for that password to be considered acceptable. | [optional] 
 **ScriptClass** | **string** | The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Password Validator. | 
 **ScriptArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Scripted Password Validator. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
-**PwnedPasswordsBaseURL** | **string** | The base URL for requests used to interact with the Pwned Passwords service. The first five characters of the hexadecimal representation of the unsalted SHA-1 digest of a proposed password will be appended to this base URL to construct the HTTP GET request used to obtain information about potential matches. | 
-**InvokeForAdd** | **bool** | Indicates whether this password validator should be used to validate clear-text passwords provided in LDAP add requests. | 
-**InvokeForSelfChange** | **bool** | Indicates whether this password validator should be used to validate clear-text passwords provided by an end user in the course of changing their own password. | 
-**InvokeForAdminReset** | **bool** | Indicates whether this password validator should be used to validate clear-text passwords provided by administrators when changing the password for another user. | 
-**AcceptPasswordOnServiceError** | **bool** | Indicates whether to accept the proposed password if an error occurs while attempting to interact with the Pwned Passwords service. | 
+**PwnedPasswordsBaseURL** | Pointer to **string** | The base URL for requests used to interact with the Pwned Passwords service. The first five characters of the hexadecimal representation of the unsalted SHA-1 digest of a proposed password will be appended to this base URL to construct the HTTP GET request used to obtain information about potential matches. | [optional] 
+**InvokeForAdd** | Pointer to **bool** | Indicates whether this password validator should be used to validate clear-text passwords provided in LDAP add requests. | [optional] 
+**InvokeForSelfChange** | Pointer to **bool** | Indicates whether this password validator should be used to validate clear-text passwords provided by an end user in the course of changing their own password. | [optional] 
+**InvokeForAdminReset** | Pointer to **bool** | Indicates whether this password validator should be used to validate clear-text passwords provided by administrators when changing the password for another user. | [optional] 
+**AcceptPasswordOnServiceError** | Pointer to **bool** | Indicates whether to accept the proposed password if an error occurs while attempting to interact with the Pwned Passwords service. | [optional] 
 **KeyManagerProvider** | Pointer to **string** | Specifies which key manager provider should be used to obtain a client certificate to present to the validation server when performing HTTPS communication. This may be left undefined if communication will not be secured with HTTPS, or if there is no need to present a client certificate to the validation service. | [optional] 
 **TrustManagerProvider** | Pointer to **string** | Specifies which trust manager provider should be used to determine whether to trust the certificate presented by the server when performing HTTPS communication. This may be left undefined if HTTPS communication is not needed, or if the validation service presents a certificate that is trusted by the default JVM configuration (which should be the case for the Pwned Password servers). | [optional] 
 **MaxPasswordLength** | Pointer to **int32** | Specifies the maximum number of characters that can be included in a proposed password. | [optional] 
@@ -50,7 +50,7 @@ Name | Type | Description | Notes
 
 ### NewAddPasswordValidatorRequest
 
-`func NewAddPasswordValidatorRequest(validatorName string, schemas []EnumthirdPartyPasswordValidatorSchemaUrn, characterSet []string, allowUnclassifiedCharacters bool, enabled bool, minPasswordDifference int32, testReversedPassword bool, dictionaryFile string, caseSensitiveValidation bool, assumedPasswordGuessesPerSecond string, minimumAcceptableTimeToExhaustSearchSpace string, scriptClass string, pwnedPasswordsBaseURL string, invokeForAdd bool, invokeForSelfChange bool, invokeForAdminReset bool, acceptPasswordOnServiceError bool, matchPattern string, matchBehavior EnumpasswordValidatorMatchBehaviorProp, minUniqueCharacters int32, maxConsecutiveLength int32, extensionClass string, ) *AddPasswordValidatorRequest`
+`func NewAddPasswordValidatorRequest(validatorName string, schemas []EnumthirdPartyPasswordValidatorSchemaUrn, characterSet []string, allowUnclassifiedCharacters bool, enabled bool, minPasswordDifference int32, testReversedPassword bool, caseSensitiveValidation bool, scriptClass string, matchPattern string, matchBehavior EnumpasswordValidatorMatchBehaviorProp, minUniqueCharacters int32, maxConsecutiveLength int32, extensionClass string, ) *AddPasswordValidatorRequest`
 
 NewAddPasswordValidatorRequest instantiates a new AddPasswordValidatorRequest object
 This constructor will assign default values to properties that have it defined,
@@ -424,6 +424,11 @@ and a boolean to check if the value has been set.
 
 SetDictionaryFile sets DictionaryFile field to given value.
 
+### HasDictionaryFile
+
+`func (o *AddPasswordValidatorRequest) HasDictionaryFile() bool`
+
+HasDictionaryFile returns a boolean if a field has been set.
 
 ### GetCaseSensitiveValidation
 
@@ -589,6 +594,11 @@ and a boolean to check if the value has been set.
 
 SetAssumedPasswordGuessesPerSecond sets AssumedPasswordGuessesPerSecond field to given value.
 
+### HasAssumedPasswordGuessesPerSecond
+
+`func (o *AddPasswordValidatorRequest) HasAssumedPasswordGuessesPerSecond() bool`
+
+HasAssumedPasswordGuessesPerSecond returns a boolean if a field has been set.
 
 ### GetMinimumAcceptableTimeToExhaustSearchSpace
 
@@ -609,6 +619,11 @@ and a boolean to check if the value has been set.
 
 SetMinimumAcceptableTimeToExhaustSearchSpace sets MinimumAcceptableTimeToExhaustSearchSpace field to given value.
 
+### HasMinimumAcceptableTimeToExhaustSearchSpace
+
+`func (o *AddPasswordValidatorRequest) HasMinimumAcceptableTimeToExhaustSearchSpace() bool`
+
+HasMinimumAcceptableTimeToExhaustSearchSpace returns a boolean if a field has been set.
 
 ### GetScriptClass
 
@@ -674,6 +689,11 @@ and a boolean to check if the value has been set.
 
 SetPwnedPasswordsBaseURL sets PwnedPasswordsBaseURL field to given value.
 
+### HasPwnedPasswordsBaseURL
+
+`func (o *AddPasswordValidatorRequest) HasPwnedPasswordsBaseURL() bool`
+
+HasPwnedPasswordsBaseURL returns a boolean if a field has been set.
 
 ### GetInvokeForAdd
 
@@ -694,6 +714,11 @@ and a boolean to check if the value has been set.
 
 SetInvokeForAdd sets InvokeForAdd field to given value.
 
+### HasInvokeForAdd
+
+`func (o *AddPasswordValidatorRequest) HasInvokeForAdd() bool`
+
+HasInvokeForAdd returns a boolean if a field has been set.
 
 ### GetInvokeForSelfChange
 
@@ -714,6 +739,11 @@ and a boolean to check if the value has been set.
 
 SetInvokeForSelfChange sets InvokeForSelfChange field to given value.
 
+### HasInvokeForSelfChange
+
+`func (o *AddPasswordValidatorRequest) HasInvokeForSelfChange() bool`
+
+HasInvokeForSelfChange returns a boolean if a field has been set.
 
 ### GetInvokeForAdminReset
 
@@ -734,6 +764,11 @@ and a boolean to check if the value has been set.
 
 SetInvokeForAdminReset sets InvokeForAdminReset field to given value.
 
+### HasInvokeForAdminReset
+
+`func (o *AddPasswordValidatorRequest) HasInvokeForAdminReset() bool`
+
+HasInvokeForAdminReset returns a boolean if a field has been set.
 
 ### GetAcceptPasswordOnServiceError
 
@@ -754,6 +789,11 @@ and a boolean to check if the value has been set.
 
 SetAcceptPasswordOnServiceError sets AcceptPasswordOnServiceError field to given value.
 
+### HasAcceptPasswordOnServiceError
+
+`func (o *AddPasswordValidatorRequest) HasAcceptPasswordOnServiceError() bool`
+
+HasAcceptPasswordOnServiceError returns a boolean if a field has been set.
 
 ### GetKeyManagerProvider
 

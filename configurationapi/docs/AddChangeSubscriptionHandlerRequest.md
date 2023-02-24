@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | A description for this Change Subscription Handler | [optional] 
 **Enabled** | **bool** | Indicates whether this change subscription handler is enabled within the server. | 
 **ChangeSubscription** | Pointer to **[]string** | The set of change subscriptions for which this change subscription handler should be notified. If no values are provided then it will be notified for all change subscriptions defined in the server. | [optional] 
-**LogFile** | **string** | Specifies the log file in which the change notification messages will be written. | 
+**LogFile** | Pointer to **string** | Specifies the log file in which the change notification messages will be written. | [optional] 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Change Subscription Handler. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Change Subscription Handler. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewAddChangeSubscriptionHandlerRequest
 
-`func NewAddChangeSubscriptionHandlerRequest(handlerName string, schemas []EnumthirdPartyChangeSubscriptionHandlerSchemaUrn, scriptClass string, enabled bool, logFile string, extensionClass string, ) *AddChangeSubscriptionHandlerRequest`
+`func NewAddChangeSubscriptionHandlerRequest(handlerName string, schemas []EnumthirdPartyChangeSubscriptionHandlerSchemaUrn, scriptClass string, enabled bool, extensionClass string, ) *AddChangeSubscriptionHandlerRequest`
 
 NewAddChangeSubscriptionHandlerRequest instantiates a new AddChangeSubscriptionHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -208,6 +208,11 @@ and a boolean to check if the value has been set.
 
 SetLogFile sets LogFile field to given value.
 
+### HasLogFile
+
+`func (o *AddChangeSubscriptionHandlerRequest) HasLogFile() bool`
+
+HasLogFile returns a boolean if a field has been set.
 
 ### GetExtensionClass
 

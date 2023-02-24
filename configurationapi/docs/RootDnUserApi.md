@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    addRootDnUserRequest := *openapiclient.NewAddRootDnUserRequest("UserName_example", false, int32(123), int32(123), int32(123), int32(123), "PasswordPolicy_example", false, false) // AddRootDnUserRequest | Create a new Root DN User in the config
+    addRootDnUserRequest := *openapiclient.NewAddRootDnUserRequest("UserName_example") // AddRootDnUserRequest | Create a new Root DN User in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

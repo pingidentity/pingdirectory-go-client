@@ -26,7 +26,7 @@ type AddAzureKeyVaultCipherStreamProviderRequest struct {
 	// The name of the secret to retrieve.
 	SecretName string `json:"secretName"`
 	// The path to a file that will hold metadata about the encryption performed by this Azure Key Vault Cipher Stream Provider.
-	EncryptionMetadataFile string `json:"encryptionMetadataFile"`
+	EncryptionMetadataFile *string `json:"encryptionMetadataFile,omitempty"`
 	// A description for this Cipher Stream Provider
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server.
@@ -37,14 +37,13 @@ type AddAzureKeyVaultCipherStreamProviderRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddAzureKeyVaultCipherStreamProviderRequest(providerName string, schemas []EnumazureKeyVaultCipherStreamProviderSchemaUrn, keyVaultURI string, azureAuthenticationMethod string, secretName string, encryptionMetadataFile string, enabled bool) *AddAzureKeyVaultCipherStreamProviderRequest {
+func NewAddAzureKeyVaultCipherStreamProviderRequest(providerName string, schemas []EnumazureKeyVaultCipherStreamProviderSchemaUrn, keyVaultURI string, azureAuthenticationMethod string, secretName string, enabled bool) *AddAzureKeyVaultCipherStreamProviderRequest {
 	this := AddAzureKeyVaultCipherStreamProviderRequest{}
 	this.ProviderName = providerName
 	this.Schemas = schemas
 	this.KeyVaultURI = keyVaultURI
 	this.AzureAuthenticationMethod = azureAuthenticationMethod
 	this.SecretName = secretName
-	this.EncryptionMetadataFile = encryptionMetadataFile
 	this.Enabled = enabled
 	return &this
 }
@@ -177,28 +176,36 @@ func (o *AddAzureKeyVaultCipherStreamProviderRequest) SetSecretName(v string) {
 	o.SecretName = v
 }
 
-// GetEncryptionMetadataFile returns the EncryptionMetadataFile field value
+// GetEncryptionMetadataFile returns the EncryptionMetadataFile field value if set, zero value otherwise.
 func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetEncryptionMetadataFile() string {
-	if o == nil {
+	if o == nil || isNil(o.EncryptionMetadataFile) {
 		var ret string
 		return ret
 	}
-
-	return o.EncryptionMetadataFile
+	return *o.EncryptionMetadataFile
 }
 
-// GetEncryptionMetadataFileOk returns a tuple with the EncryptionMetadataFile field value
+// GetEncryptionMetadataFileOk returns a tuple with the EncryptionMetadataFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetEncryptionMetadataFileOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.EncryptionMetadataFile) {
 		return nil, false
 	}
-	return &o.EncryptionMetadataFile, true
+	return o.EncryptionMetadataFile, true
 }
 
-// SetEncryptionMetadataFile sets field value
+// HasEncryptionMetadataFile returns a boolean if a field has been set.
+func (o *AddAzureKeyVaultCipherStreamProviderRequest) HasEncryptionMetadataFile() bool {
+	if o != nil && !isNil(o.EncryptionMetadataFile) {
+		return true
+	}
+
+	return false
+}
+
+// SetEncryptionMetadataFile gets a reference to the given string and assigns it to the EncryptionMetadataFile field.
 func (o *AddAzureKeyVaultCipherStreamProviderRequest) SetEncryptionMetadataFile(v string) {
-	o.EncryptionMetadataFile = v
+	o.EncryptionMetadataFile = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -274,7 +281,7 @@ func (o AddAzureKeyVaultCipherStreamProviderRequest) MarshalJSON() ([]byte, erro
 	if true {
 		toSerialize["secretName"] = o.SecretName
 	}
-	if true {
+	if !isNil(o.EncryptionMetadataFile) {
 		toSerialize["encryptionMetadataFile"] = o.EncryptionMetadataFile
 	}
 	if !isNil(o.Description) {

@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumldifConnectionHandlerSchemaUrn**](EnumldifConnectionHandlerSchemaUrn.md) |  | 
 **AllowedClient** | Pointer to **[]string** | Specifies a set of address masks that determines the addresses of the clients that are allowed to establish connections to this connection handler. | [optional] 
 **DeniedClient** | Pointer to **[]string** | Specifies a set of address masks that determines the addresses of the clients that are not allowed to establish connections to this connection handler. | [optional] 
-**LdifDirectory** | **string** | Specifies the path to the directory in which the LDIF files should be placed. | 
-**PollInterval** | **string** | Specifies how frequently the LDIF connection handler should check the LDIF directory to determine whether a new LDIF file has been added. | 
+**LdifDirectory** | Pointer to **string** | Specifies the path to the directory in which the LDIF files should be placed. | [optional] 
+**PollInterval** | Pointer to **string** | Specifies how frequently the LDIF connection handler should check the LDIF directory to determine whether a new LDIF file has been added. | [optional] 
 **Description** | Pointer to **string** | A description for this Connection Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the Connection Handler is enabled. | 
 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewAddLdifConnectionHandlerRequest
 
-`func NewAddLdifConnectionHandlerRequest(handlerName string, schemas []EnumldifConnectionHandlerSchemaUrn, ldifDirectory string, pollInterval string, enabled bool, ) *AddLdifConnectionHandlerRequest`
+`func NewAddLdifConnectionHandlerRequest(handlerName string, schemas []EnumldifConnectionHandlerSchemaUrn, enabled bool, ) *AddLdifConnectionHandlerRequest`
 
 NewAddLdifConnectionHandlerRequest instantiates a new AddLdifConnectionHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -141,6 +141,11 @@ and a boolean to check if the value has been set.
 
 SetLdifDirectory sets LdifDirectory field to given value.
 
+### HasLdifDirectory
+
+`func (o *AddLdifConnectionHandlerRequest) HasLdifDirectory() bool`
+
+HasLdifDirectory returns a boolean if a field has been set.
 
 ### GetPollInterval
 
@@ -161,6 +166,11 @@ and a boolean to check if the value has been set.
 
 SetPollInterval sets PollInterval field to given value.
 
+### HasPollInterval
+
+`func (o *AddLdifConnectionHandlerRequest) HasPollInterval() bool`
+
+HasPollInterval returns a boolean if a field has been set.
 
 ### GetDescription
 

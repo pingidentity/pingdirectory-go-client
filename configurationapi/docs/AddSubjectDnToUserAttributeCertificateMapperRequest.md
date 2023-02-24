@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MapperName** | **string** | Name of the new Certificate Mapper | 
 **Schemas** | [**[]EnumsubjectDnToUserAttributeCertificateMapperSchemaUrn**](EnumsubjectDnToUserAttributeCertificateMapperSchemaUrn.md) |  | 
-**SubjectAttribute** | **string** | Specifies the name or OID of the attribute whose value should exactly match the certificate subject DN. | 
+**SubjectAttribute** | Pointer to **string** | Specifies the name or OID of the attribute whose value should exactly match the certificate subject DN. | [optional] 
 **UserBaseDN** | Pointer to **[]string** | Specifies the base DNs that should be used when performing searches to map the client certificate to a user entry. | [optional] 
 **Description** | Pointer to **string** | A description for this Certificate Mapper | [optional] 
 **Enabled** | **bool** | Indicates whether the Certificate Mapper is enabled. | 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewAddSubjectDnToUserAttributeCertificateMapperRequest
 
-`func NewAddSubjectDnToUserAttributeCertificateMapperRequest(mapperName string, schemas []EnumsubjectDnToUserAttributeCertificateMapperSchemaUrn, subjectAttribute string, enabled bool, ) *AddSubjectDnToUserAttributeCertificateMapperRequest`
+`func NewAddSubjectDnToUserAttributeCertificateMapperRequest(mapperName string, schemas []EnumsubjectDnToUserAttributeCertificateMapperSchemaUrn, enabled bool, ) *AddSubjectDnToUserAttributeCertificateMapperRequest`
 
 NewAddSubjectDnToUserAttributeCertificateMapperRequest instantiates a new AddSubjectDnToUserAttributeCertificateMapperRequest object
 This constructor will assign default values to properties that have it defined,
@@ -89,6 +89,11 @@ and a boolean to check if the value has been set.
 
 SetSubjectAttribute sets SubjectAttribute field to given value.
 
+### HasSubjectAttribute
+
+`func (o *AddSubjectDnToUserAttributeCertificateMapperRequest) HasSubjectAttribute() bool`
+
+HasSubjectAttribute returns a boolean if a field has been set.
 
 ### GetUserBaseDN
 

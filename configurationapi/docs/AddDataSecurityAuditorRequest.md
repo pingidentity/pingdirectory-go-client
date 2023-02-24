@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AuditorName** | **string** | Name of the new Data Security Auditor | 
 **Schemas** | [**[]EnumaccessControlDataSecurityAuditorSchemaUrn**](EnumaccessControlDataSecurityAuditorSchemaUrn.md) |  | 
-**ReportFile** | **string** | Specifies the name of the detailed report file. | 
+**ReportFile** | Pointer to **string** | Specifies the name of the detailed report file. | [optional] 
 **IncludeAttribute** | Pointer to **[]string** | Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included. | [optional] 
 **PasswordEvaluationAge** | Pointer to **string** | If set, the auditor will report all users with passwords older than the specified value even if password expiration is not enabled. | [optional] 
-**Enabled** | **bool** | Indicates whether the Data Security Auditor is enabled for use. | 
+**Enabled** | Pointer to **bool** | Indicates whether the Data Security Auditor is enabled for use. | [optional] 
 **AuditBackend** | Pointer to **[]string** | Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler). | [optional] 
 **AuditSeverity** | Pointer to [**EnumdataSecurityAuditorAuditSeverityProp**](EnumdataSecurityAuditorAuditSeverityProp.md) |  | [optional] 
-**WeakPasswordStorageScheme** | **[]string** | The password storage schemes that are considered weak. Users with any of the specified password storage schemes will be included in the report. | 
+**WeakPasswordStorageScheme** | Pointer to **[]string** | The password storage schemes that are considered weak. Users with any of the specified password storage schemes will be included in the report. | [optional] 
 **WeakCryptEncoding** | Pointer to [**[]EnumdataSecurityAuditorWeakCryptEncodingProp**](EnumdataSecurityAuditorWeakCryptEncodingProp.md) |  | [optional] 
 **IncludePrivilege** | Pointer to [**[]EnumdataSecurityAuditorIncludePrivilegeProp**](EnumdataSecurityAuditorIncludePrivilegeProp.md) |  | [optional] 
 **MaximumIdleTime** | Pointer to **string** | If set, users that have not authenticated for more than the specified time will be reported even if idle account lockout is not configured. Note that users may only be reported if the last login time tracking is enabled. | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewAddDataSecurityAuditorRequest
 
-`func NewAddDataSecurityAuditorRequest(auditorName string, schemas []EnumaccessControlDataSecurityAuditorSchemaUrn, reportFile string, enabled bool, weakPasswordStorageScheme []string, ) *AddDataSecurityAuditorRequest`
+`func NewAddDataSecurityAuditorRequest(auditorName string, schemas []EnumaccessControlDataSecurityAuditorSchemaUrn, ) *AddDataSecurityAuditorRequest`
 
 NewAddDataSecurityAuditorRequest instantiates a new AddDataSecurityAuditorRequest object
 This constructor will assign default values to properties that have it defined,
@@ -95,6 +95,11 @@ and a boolean to check if the value has been set.
 
 SetReportFile sets ReportFile field to given value.
 
+### HasReportFile
+
+`func (o *AddDataSecurityAuditorRequest) HasReportFile() bool`
+
+HasReportFile returns a boolean if a field has been set.
 
 ### GetIncludeAttribute
 
@@ -165,6 +170,11 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
+### HasEnabled
+
+`func (o *AddDataSecurityAuditorRequest) HasEnabled() bool`
+
+HasEnabled returns a boolean if a field has been set.
 
 ### GetAuditBackend
 
@@ -235,6 +245,11 @@ and a boolean to check if the value has been set.
 
 SetWeakPasswordStorageScheme sets WeakPasswordStorageScheme field to given value.
 
+### HasWeakPasswordStorageScheme
+
+`func (o *AddDataSecurityAuditorRequest) HasWeakPasswordStorageScheme() bool`
+
+HasWeakPasswordStorageScheme returns a boolean if a field has been set.
 
 ### GetWeakCryptEncoding
 

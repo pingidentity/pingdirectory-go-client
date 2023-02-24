@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PairName** | **string** | Name of the new Key Pair | 
 **Schemas** | Pointer to [**[]EnumkeyPairSchemaUrn**](EnumkeyPairSchemaUrn.md) |  | [optional] 
-**KeyAlgorithm** | [**EnumkeyPairKeyAlgorithmProp**](EnumkeyPairKeyAlgorithmProp.md) |  | 
+**KeyAlgorithm** | Pointer to [**EnumkeyPairKeyAlgorithmProp**](EnumkeyPairKeyAlgorithmProp.md) |  | [optional] 
 **SelfSignedCertificateValidity** | Pointer to **string** | The validity period for a self-signed certificate. If not specified, the self-signed certificate will be valid for approximately 20 years. This is not used when importing an existing key-pair. The system will not automatically rotate expired certificates. It is up to the administrator to do that when that happens. | [optional] 
 **SubjectDN** | Pointer to **string** | The DN that should be used as the subject for the self-signed certificate and certificate signing request. This is not used when importing an existing key-pair. | [optional] 
 **CertificateChain** | Pointer to **string** | The PEM-encoded X.509 certificate chain. | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewAddKeyPairRequest
 
-`func NewAddKeyPairRequest(pairName string, keyAlgorithm EnumkeyPairKeyAlgorithmProp, ) *AddKeyPairRequest`
+`func NewAddKeyPairRequest(pairName string, ) *AddKeyPairRequest`
 
 NewAddKeyPairRequest instantiates a new AddKeyPairRequest object
 This constructor will assign default values to properties that have it defined,
@@ -95,6 +95,11 @@ and a boolean to check if the value has been set.
 
 SetKeyAlgorithm sets KeyAlgorithm field to given value.
 
+### HasKeyAlgorithm
+
+`func (o *AddKeyPairRequest) HasKeyAlgorithm() bool`
+
+HasKeyAlgorithm returns a boolean if a field has been set.
 
 ### GetSelfSignedCertificateValidity
 

@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AuditorName** | **string** | Name of the new Data Security Auditor | 
 **Schemas** | [**[]EnumexpiredPasswordDataSecurityAuditorSchemaUrn**](EnumexpiredPasswordDataSecurityAuditorSchemaUrn.md) |  | 
-**ReportFile** | **string** | Specifies the name of the detailed report file. | 
+**ReportFile** | Pointer to **string** | Specifies the name of the detailed report file. | [optional] 
 **IncludeAttribute** | Pointer to **[]string** | Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included. | [optional] 
 **PasswordEvaluationAge** | Pointer to **string** | If set, the auditor will report all users with passwords older than the specified value even if password expiration is not enabled. | [optional] 
-**Enabled** | **bool** | Indicates whether the Data Security Auditor is enabled for use. | 
+**Enabled** | Pointer to **bool** | Indicates whether the Data Security Auditor is enabled for use. | [optional] 
 **AuditBackend** | Pointer to **[]string** | Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler). | [optional] 
 **AuditSeverity** | Pointer to [**EnumdataSecurityAuditorAuditSeverityProp**](EnumdataSecurityAuditorAuditSeverityProp.md) |  | [optional] 
 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewAddExpiredPasswordDataSecurityAuditorRequest
 
-`func NewAddExpiredPasswordDataSecurityAuditorRequest(auditorName string, schemas []EnumexpiredPasswordDataSecurityAuditorSchemaUrn, reportFile string, enabled bool, ) *AddExpiredPasswordDataSecurityAuditorRequest`
+`func NewAddExpiredPasswordDataSecurityAuditorRequest(auditorName string, schemas []EnumexpiredPasswordDataSecurityAuditorSchemaUrn, ) *AddExpiredPasswordDataSecurityAuditorRequest`
 
 NewAddExpiredPasswordDataSecurityAuditorRequest instantiates a new AddExpiredPasswordDataSecurityAuditorRequest object
 This constructor will assign default values to properties that have it defined,
@@ -91,6 +91,11 @@ and a boolean to check if the value has been set.
 
 SetReportFile sets ReportFile field to given value.
 
+### HasReportFile
+
+`func (o *AddExpiredPasswordDataSecurityAuditorRequest) HasReportFile() bool`
+
+HasReportFile returns a boolean if a field has been set.
 
 ### GetIncludeAttribute
 
@@ -161,6 +166,11 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
+### HasEnabled
+
+`func (o *AddExpiredPasswordDataSecurityAuditorRequest) HasEnabled() bool`
+
+HasEnabled returns a boolean if a field has been set.
 
 ### GetAuditBackend
 

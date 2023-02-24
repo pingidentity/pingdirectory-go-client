@@ -1251,6 +1251,10 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/local-db-backend-shared'
+      required:
+      - writabilityMode
+      - dbDirectory
+      - importTempDirectory
     local-db-backend-shared:
       type: object
       properties:
@@ -1480,9 +1484,6 @@ components:
               Specifies a notification manager for changes resulting from operations processed through this Backend
       required:
       - schemas
-      - writabilityMode
-      - dbDirectory
-      - importTempDirectory
       - backendID
       - enabled
       - baseDN

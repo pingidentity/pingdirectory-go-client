@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumsnmpAlertHandlerSchemaUrn**](EnumsnmpAlertHandlerSchemaUrn.md) |  | 
 **Asynchronous** | Pointer to **bool** | Indicates whether the server should attempt to invoke this SNMP Alert Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver the alert notification) will not delay whatever processing the server was performing when the alert was generated. | [optional] 
 **ServerHostName** | **string** | Specifies the address of the SNMP agent to which traps will be sent. | 
-**ServerPort** | **int32** | Specifies the port number of the SNMP agent to which traps will be sent. | 
-**CommunityName** | **string** | Specifies the name of the community to which the traps will be sent. | 
+**ServerPort** | Pointer to **int32** | Specifies the port number of the SNMP agent to which traps will be sent. | [optional] 
+**CommunityName** | Pointer to **string** | Specifies the name of the community to which the traps will be sent. | [optional] 
 **Description** | Pointer to **string** | A description for this Alert Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the Alert Handler is enabled. | 
 **EnabledAlertSeverity** | Pointer to [**[]EnumalertHandlerEnabledAlertSeverityProp**](EnumalertHandlerEnabledAlertSeverityProp.md) |  | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewAddSnmpAlertHandlerRequest
 
-`func NewAddSnmpAlertHandlerRequest(handlerName string, schemas []EnumsnmpAlertHandlerSchemaUrn, serverHostName string, serverPort int32, communityName string, enabled bool, ) *AddSnmpAlertHandlerRequest`
+`func NewAddSnmpAlertHandlerRequest(handlerName string, schemas []EnumsnmpAlertHandlerSchemaUrn, serverHostName string, enabled bool, ) *AddSnmpAlertHandlerRequest`
 
 NewAddSnmpAlertHandlerRequest instantiates a new AddSnmpAlertHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -139,6 +139,11 @@ and a boolean to check if the value has been set.
 
 SetServerPort sets ServerPort field to given value.
 
+### HasServerPort
+
+`func (o *AddSnmpAlertHandlerRequest) HasServerPort() bool`
+
+HasServerPort returns a boolean if a field has been set.
 
 ### GetCommunityName
 
@@ -159,6 +164,11 @@ and a boolean to check if the value has been set.
 
 SetCommunityName sets CommunityName field to given value.
 
+### HasCommunityName
+
+`func (o *AddSnmpAlertHandlerRequest) HasCommunityName() bool`
+
+HasCommunityName returns a boolean if a field has been set.
 
 ### GetDescription
 

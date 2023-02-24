@@ -7,20 +7,20 @@ Name | Type | Description | Notes
 **SubattributeName** | **string** | Name of the new SCIM Subattribute | 
 **Schemas** | Pointer to [**[]EnumscimSubattributeSchemaUrn**](EnumscimSubattributeSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this SCIM Subattribute | [optional] 
-**Type** | [**EnumscimSubattributeTypeProp**](EnumscimSubattributeTypeProp.md) |  | 
-**Required** | **bool** | Specifies whether this sub-attribute is required. | 
-**CaseExact** | **bool** | Specifies whether the sub-attribute values are case sensitive. | 
-**MultiValued** | **bool** | Specifies whether this attribute may have multiple values. | 
+**Type** | Pointer to [**EnumscimSubattributeTypeProp**](EnumscimSubattributeTypeProp.md) |  | [optional] 
+**Required** | Pointer to **bool** | Specifies whether this sub-attribute is required. | [optional] 
+**CaseExact** | Pointer to **bool** | Specifies whether the sub-attribute values are case sensitive. | [optional] 
+**MultiValued** | Pointer to **bool** | Specifies whether this attribute may have multiple values. | [optional] 
 **CanonicalValue** | Pointer to **[]string** | Specifies the suggested canonical type values for the sub-attribute. | [optional] 
-**Mutability** | [**EnumscimSubattributeMutabilityProp**](EnumscimSubattributeMutabilityProp.md) |  | 
-**Returned** | [**EnumscimSubattributeReturnedProp**](EnumscimSubattributeReturnedProp.md) |  | 
+**Mutability** | Pointer to [**EnumscimSubattributeMutabilityProp**](EnumscimSubattributeMutabilityProp.md) |  | [optional] 
+**Returned** | Pointer to [**EnumscimSubattributeReturnedProp**](EnumscimSubattributeReturnedProp.md) |  | [optional] 
 **ReferenceType** | Pointer to **[]string** | Specifies the SCIM resource types that may be referenced. This property is only applicable for sub-attributes that are of type &#39;reference&#39;. Valid values are: A SCIM resource type (e.g., &#39;User&#39; or &#39;Group&#39;), &#39;external&#39; - indicating the resource is an external resource (e.g., such as a photo), or &#39;uri&#39; - indicating that the reference is to a service endpoint or an identifier (such as a schema urn). | [optional] 
 
 ## Methods
 
 ### NewAddScimSubattributeRequest
 
-`func NewAddScimSubattributeRequest(subattributeName string, type_ EnumscimSubattributeTypeProp, required bool, caseExact bool, multiValued bool, mutability EnumscimSubattributeMutabilityProp, returned EnumscimSubattributeReturnedProp, ) *AddScimSubattributeRequest`
+`func NewAddScimSubattributeRequest(subattributeName string, ) *AddScimSubattributeRequest`
 
 NewAddScimSubattributeRequest instantiates a new AddScimSubattributeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -124,6 +124,11 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
+### HasType
+
+`func (o *AddScimSubattributeRequest) HasType() bool`
+
+HasType returns a boolean if a field has been set.
 
 ### GetRequired
 
@@ -144,6 +149,11 @@ and a boolean to check if the value has been set.
 
 SetRequired sets Required field to given value.
 
+### HasRequired
+
+`func (o *AddScimSubattributeRequest) HasRequired() bool`
+
+HasRequired returns a boolean if a field has been set.
 
 ### GetCaseExact
 
@@ -164,6 +174,11 @@ and a boolean to check if the value has been set.
 
 SetCaseExact sets CaseExact field to given value.
 
+### HasCaseExact
+
+`func (o *AddScimSubattributeRequest) HasCaseExact() bool`
+
+HasCaseExact returns a boolean if a field has been set.
 
 ### GetMultiValued
 
@@ -184,6 +199,11 @@ and a boolean to check if the value has been set.
 
 SetMultiValued sets MultiValued field to given value.
 
+### HasMultiValued
+
+`func (o *AddScimSubattributeRequest) HasMultiValued() bool`
+
+HasMultiValued returns a boolean if a field has been set.
 
 ### GetCanonicalValue
 
@@ -229,6 +249,11 @@ and a boolean to check if the value has been set.
 
 SetMutability sets Mutability field to given value.
 
+### HasMutability
+
+`func (o *AddScimSubattributeRequest) HasMutability() bool`
+
+HasMutability returns a boolean if a field has been set.
 
 ### GetReturned
 
@@ -249,6 +274,11 @@ and a boolean to check if the value has been set.
 
 SetReturned sets Returned field to given value.
 
+### HasReturned
+
+`func (o *AddScimSubattributeRequest) HasReturned() bool`
+
+HasReturned returns a boolean if a field has been set.
 
 ### GetReferenceType
 

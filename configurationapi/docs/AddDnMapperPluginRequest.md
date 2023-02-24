@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnumdnMapperPluginSchemaUrn**](EnumdnMapperPluginSchemaUrn.md) |  | 
-**PluginType** | [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | 
+**PluginType** | Pointer to [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | [optional] 
 **SourceDN** | **string** | Specifies the source DN that may appear in client requests which should be remapped to the target DN. Note that the source DN must not be equal to the target DN. | 
 **TargetDN** | **string** | Specifies the DN to which the source DN should be mapped. Note that the target DN must not be equal to the source DN. | 
-**EnableAttributeMapping** | **bool** | Indicates whether DN mapping should be applied to the values of attributes with appropriate syntaxes. | 
+**EnableAttributeMapping** | Pointer to **bool** | Indicates whether DN mapping should be applied to the values of attributes with appropriate syntaxes. | [optional] 
 **MapAttribute** | Pointer to **[]string** | Specifies a set of specific attributes for which DN mapping should be applied. This will only be applicable if the enable-attribute-mapping property has a value of \&quot;true\&quot;. Any attributes listed must be defined in the server schema with either the distinguished name syntax or the name and optional UID syntax. | [optional] 
-**EnableControlMapping** | **bool** | Indicates whether DN mapping should be applied to DNs that may be present in specific controls. DN mapping will only be applied for control types which are specifically supported by the DN mapper plugin. | 
-**AlwaysMapResponses** | **bool** | Indicates whether DNs in response messages containing the target DN should always be remapped back to the source DN. If this is \&quot;false\&quot;, then mapping will be performed for a response message only if one or more elements of the associated request are mapped. Otherwise, the mapping will be performed for all responses regardless of whether the mapping was applied to the request. | 
+**EnableControlMapping** | Pointer to **bool** | Indicates whether DN mapping should be applied to DNs that may be present in specific controls. DN mapping will only be applied for control types which are specifically supported by the DN mapper plugin. | [optional] 
+**AlwaysMapResponses** | Pointer to **bool** | Indicates whether DNs in response messages containing the target DN should always be remapped back to the source DN. If this is \&quot;false\&quot;, then mapping will be performed for a response message only if one or more elements of the associated request are mapped. Otherwise, the mapping will be performed for all responses regardless of whether the mapping was applied to the request. | [optional] 
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
 **InvokeForInternalOperations** | Pointer to **bool** | Indicates whether the plug-in should be invoked for internal operations. | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewAddDnMapperPluginRequest
 
-`func NewAddDnMapperPluginRequest(pluginName string, schemas []EnumdnMapperPluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, sourceDN string, targetDN string, enableAttributeMapping bool, enableControlMapping bool, alwaysMapResponses bool, enabled bool, ) *AddDnMapperPluginRequest`
+`func NewAddDnMapperPluginRequest(pluginName string, schemas []EnumdnMapperPluginSchemaUrn, sourceDN string, targetDN string, enabled bool, ) *AddDnMapperPluginRequest`
 
 NewAddDnMapperPluginRequest instantiates a new AddDnMapperPluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -95,6 +95,11 @@ and a boolean to check if the value has been set.
 
 SetPluginType sets PluginType field to given value.
 
+### HasPluginType
+
+`func (o *AddDnMapperPluginRequest) HasPluginType() bool`
+
+HasPluginType returns a boolean if a field has been set.
 
 ### GetSourceDN
 
@@ -155,6 +160,11 @@ and a boolean to check if the value has been set.
 
 SetEnableAttributeMapping sets EnableAttributeMapping field to given value.
 
+### HasEnableAttributeMapping
+
+`func (o *AddDnMapperPluginRequest) HasEnableAttributeMapping() bool`
+
+HasEnableAttributeMapping returns a boolean if a field has been set.
 
 ### GetMapAttribute
 
@@ -200,6 +210,11 @@ and a boolean to check if the value has been set.
 
 SetEnableControlMapping sets EnableControlMapping field to given value.
 
+### HasEnableControlMapping
+
+`func (o *AddDnMapperPluginRequest) HasEnableControlMapping() bool`
+
+HasEnableControlMapping returns a boolean if a field has been set.
 
 ### GetAlwaysMapResponses
 
@@ -220,6 +235,11 @@ and a boolean to check if the value has been set.
 
 SetAlwaysMapResponses sets AlwaysMapResponses field to given value.
 
+### HasAlwaysMapResponses
+
+`func (o *AddDnMapperPluginRequest) HasAlwaysMapResponses() bool`
+
+HasAlwaysMapResponses returns a boolean if a field has been set.
 
 ### GetDescription
 

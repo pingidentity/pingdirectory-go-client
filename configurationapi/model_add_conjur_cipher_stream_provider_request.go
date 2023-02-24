@@ -24,7 +24,7 @@ type AddConjurCipherStreamProviderRequest struct {
 	// The portion of the path that follows the account name in the URI needed to obtain the secret passphrase to use to generate the encryption key. Any special characters in the path must be URL-encoded.
 	ConjurSecretRelativePath string `json:"conjurSecretRelativePath"`
 	// The path to a file that will hold metadata about the encryption performed by this Conjur Cipher Stream Provider.
-	EncryptionMetadataFile string `json:"encryptionMetadataFile"`
+	EncryptionMetadataFile *string `json:"encryptionMetadataFile,omitempty"`
 	// A description for this Cipher Stream Provider
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server.
@@ -35,13 +35,12 @@ type AddConjurCipherStreamProviderRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddConjurCipherStreamProviderRequest(providerName string, schemas []EnumconjurCipherStreamProviderSchemaUrn, conjurExternalServer string, conjurSecretRelativePath string, encryptionMetadataFile string, enabled bool) *AddConjurCipherStreamProviderRequest {
+func NewAddConjurCipherStreamProviderRequest(providerName string, schemas []EnumconjurCipherStreamProviderSchemaUrn, conjurExternalServer string, conjurSecretRelativePath string, enabled bool) *AddConjurCipherStreamProviderRequest {
 	this := AddConjurCipherStreamProviderRequest{}
 	this.ProviderName = providerName
 	this.Schemas = schemas
 	this.ConjurExternalServer = conjurExternalServer
 	this.ConjurSecretRelativePath = conjurSecretRelativePath
-	this.EncryptionMetadataFile = encryptionMetadataFile
 	this.Enabled = enabled
 	return &this
 }
@@ -150,28 +149,36 @@ func (o *AddConjurCipherStreamProviderRequest) SetConjurSecretRelativePath(v str
 	o.ConjurSecretRelativePath = v
 }
 
-// GetEncryptionMetadataFile returns the EncryptionMetadataFile field value
+// GetEncryptionMetadataFile returns the EncryptionMetadataFile field value if set, zero value otherwise.
 func (o *AddConjurCipherStreamProviderRequest) GetEncryptionMetadataFile() string {
-	if o == nil {
+	if o == nil || isNil(o.EncryptionMetadataFile) {
 		var ret string
 		return ret
 	}
-
-	return o.EncryptionMetadataFile
+	return *o.EncryptionMetadataFile
 }
 
-// GetEncryptionMetadataFileOk returns a tuple with the EncryptionMetadataFile field value
+// GetEncryptionMetadataFileOk returns a tuple with the EncryptionMetadataFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConjurCipherStreamProviderRequest) GetEncryptionMetadataFileOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.EncryptionMetadataFile) {
 		return nil, false
 	}
-	return &o.EncryptionMetadataFile, true
+	return o.EncryptionMetadataFile, true
 }
 
-// SetEncryptionMetadataFile sets field value
+// HasEncryptionMetadataFile returns a boolean if a field has been set.
+func (o *AddConjurCipherStreamProviderRequest) HasEncryptionMetadataFile() bool {
+	if o != nil && !isNil(o.EncryptionMetadataFile) {
+		return true
+	}
+
+	return false
+}
+
+// SetEncryptionMetadataFile gets a reference to the given string and assigns it to the EncryptionMetadataFile field.
 func (o *AddConjurCipherStreamProviderRequest) SetEncryptionMetadataFile(v string) {
-	o.EncryptionMetadataFile = v
+	o.EncryptionMetadataFile = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -244,7 +251,7 @@ func (o AddConjurCipherStreamProviderRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["conjurSecretRelativePath"] = o.ConjurSecretRelativePath
 	}
-	if true {
+	if !isNil(o.EncryptionMetadataFile) {
 		toSerialize["encryptionMetadataFile"] = o.EncryptionMetadataFile
 	}
 	if !isNil(o.Description) {

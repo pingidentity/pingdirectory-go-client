@@ -1269,6 +1269,13 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/ldap-mapped-scim-http-servlet-extension-shared'
+      required:
+      - baseContextPath
+      - temporaryDirectory
+      - temporaryDirectoryPermissions
+      - debugLevel
+      - debugType
+      - includeStackTrace
     ldap-mapped-scim-http-servlet-extension-shared:
       type: object
       properties:
@@ -1384,12 +1391,6 @@ components:
               Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
       required:
       - schemas
-      - baseContextPath
-      - temporaryDirectory
-      - temporaryDirectoryPermissions
-      - debugLevel
-      - debugType
-      - includeStackTrace
     Enumldap-mapped-scim-http-servlet-extensionSchemaUrn:
       type: string
       enum:
@@ -1635,6 +1636,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/velocity-template-loader-shared'
+      required:
+      - evaluationOrderIndex
     velocity-template-loader-shared:
       type: object
       properties:
@@ -1669,7 +1672,6 @@ components:
           description: >-
               Specifies the directory in which to search for the template files.
       required:
-      - evaluationOrderIndex
       - mimeTypeMatcher
     Enumvelocity-template-loaderSchemaUrn:
       type: string

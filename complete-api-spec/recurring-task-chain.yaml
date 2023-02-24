@@ -158,6 +158,9 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/recurring-task-chain-shared'
+      required:
+      - enabled
+      - scheduledMonth
     recurring-task-chain-shared:
       type: object
       properties:
@@ -210,9 +213,7 @@ components:
         serverOfflineAtStartTimeBehavior:
           $ref: '#/components/schemas/Enumrecurring-task-chain-serverOfflineAtStartTimeBehaviorProp'
       required:
-      - enabled
       - recurringTask
-      - scheduledMonth
       - scheduledDateSelectionType
       - scheduledTimeOfDay
     Enumrecurring-task-chainSchemaUrn:

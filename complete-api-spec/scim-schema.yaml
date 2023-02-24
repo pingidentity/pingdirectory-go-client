@@ -554,6 +554,13 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/scim-attribute-shared'
+      required:
+      - type
+      - required
+      - caseExact
+      - multiValued
+      - mutability
+      - returned
     scim-attribute-shared:
       type: object
       properties:
@@ -603,12 +610,6 @@ components:
               Specifies the SCIM resource types that may be referenced. This property is only applicable for attributes that are of type 'reference'. Valid values are: A SCIM resource type (e.g., 'User' or 'Group'), 'external' - indicating the resource is an external resource (e.g., such as a photo), or 'uri' - indicating that the reference is to a service endpoint or an identifier (such as a schema urn).
       required:
       - name
-      - type
-      - required
-      - caseExact
-      - multiValued
-      - mutability
-      - returned
     Enumscim-attributeSchemaUrn:
       type: string
       enum:
@@ -634,6 +635,13 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/scim-subattribute-shared'
+      required:
+      - type
+      - required
+      - caseExact
+      - multiValued
+      - mutability
+      - returned
     scim-subattribute-shared:
       type: object
       properties:
@@ -677,13 +685,6 @@ components:
             type: string
           description: >-
               Specifies the SCIM resource types that may be referenced. This property is only applicable for sub-attributes that are of type 'reference'. Valid values are: A SCIM resource type (e.g., 'User' or 'Group'), 'external' - indicating the resource is an external resource (e.g., such as a photo), or 'uri' - indicating that the reference is to a service endpoint or an identifier (such as a schema urn).
-      required:
-      - type
-      - required
-      - caseExact
-      - multiValued
-      - mutability
-      - returned
     Enumscim-subattributeSchemaUrn:
       type: string
       enum:

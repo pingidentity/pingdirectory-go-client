@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    addReplicationAssurancePolicyRequest := *openapiclient.NewAddReplicationAssurancePolicyRequest("PolicyName_example", false, int32(123), openapiclient.Enumreplication-assurance-policy-localLevelProp("none"), openapiclient.Enumreplication-assurance-policy-remoteLevelProp("none"), "Timeout_example") // AddReplicationAssurancePolicyRequest | Create a new Replication Assurance Policy in the config
+    addReplicationAssurancePolicyRequest := *openapiclient.NewAddReplicationAssurancePolicyRequest("PolicyName_example", int32(123), "Timeout_example") // AddReplicationAssurancePolicyRequest | Create a new Replication Assurance Policy in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

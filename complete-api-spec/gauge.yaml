@@ -166,6 +166,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/indicator-gauge-shared'
+      required:
+      - enabled
     indicator-gauge-shared:
       type: object
       properties:
@@ -234,7 +236,6 @@ components:
       required:
       - schemas
       - gaugeDataSource
-      - enabled
     Enumindicator-gaugeSchemaUrn:
       type: string
       enum:
@@ -260,6 +261,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/numeric-gauge-shared'
+      required:
+      - enabled
     numeric-gauge-shared:
       type: object
       properties:
@@ -344,7 +347,6 @@ components:
       required:
       - schemas
       - gaugeDataSource
-      - enabled
     Enumnumeric-gaugeSchemaUrn:
       type: string
       enum:

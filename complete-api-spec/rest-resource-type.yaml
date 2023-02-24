@@ -890,6 +890,10 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/certificate-delegated-admin-attribute-shared'
+      required:
+      - mutability
+      - multiValued
+      - displayOrderIndex
     certificate-delegated-admin-attribute-shared:
       type: object
       properties:
@@ -943,9 +947,6 @@ components:
       - schemas
       - attributeType
       - displayName
-      - mutability
-      - multiValued
-      - displayOrderIndex
     Enumcertificate-delegated-admin-attributeSchemaUrn:
       type: string
       enum:
@@ -971,6 +972,10 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/photo-delegated-admin-attribute-shared'
+      required:
+      - mutability
+      - multiValued
+      - displayOrderIndex
     photo-delegated-admin-attribute-shared:
       type: object
       properties:
@@ -1024,9 +1029,6 @@ components:
       - schemas
       - attributeType
       - displayName
-      - mutability
-      - multiValued
-      - displayOrderIndex
     Enumphoto-delegated-admin-attributeSchemaUrn:
       type: string
       enum:
@@ -1052,6 +1054,11 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/generic-delegated-admin-attribute-shared'
+      required:
+      - mutability
+      - multiValued
+      - includeInSummary
+      - displayOrderIndex
     generic-delegated-admin-attribute-shared:
       type: object
       properties:
@@ -1105,10 +1112,6 @@ components:
       - schemas
       - attributeType
       - displayName
-      - mutability
-      - multiValued
-      - includeInSummary
-      - displayOrderIndex
     Enumgeneric-delegated-admin-attributeSchemaUrn:
       type: string
       enum:

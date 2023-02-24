@@ -22,11 +22,11 @@ type AddReplicationAssurancePolicyRequest struct {
 	// Description of the Replication Assurance Policy.
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Replication Assurance Policy is enabled for use in the server. If a Replication Assurance Policy is disabled, then no new operations will be associated with it.
-	Enabled bool `json:"enabled"`
+	Enabled *bool `json:"enabled,omitempty"`
 	// When multiple Replication Assurance Policies are defined, this property determines the evaluation order for finding a Replication Assurance Policy match against an operation. Policies are evaluated based on this index from least to greatest. Values of this property must be unique but not necessarily contiguous.
-	EvaluationOrderIndex int32                                         `json:"evaluationOrderIndex"`
-	LocalLevel           EnumreplicationAssurancePolicyLocalLevelProp  `json:"localLevel"`
-	RemoteLevel          EnumreplicationAssurancePolicyRemoteLevelProp `json:"remoteLevel"`
+	EvaluationOrderIndex int32                                          `json:"evaluationOrderIndex"`
+	LocalLevel           *EnumreplicationAssurancePolicyLocalLevelProp  `json:"localLevel,omitempty"`
+	RemoteLevel          *EnumreplicationAssurancePolicyRemoteLevelProp `json:"remoteLevel,omitempty"`
 	// Specifies the maximum length of time to wait for the replication assurance requirements to be met before timing out and replying to the client.
 	Timeout string `json:"timeout"`
 	// Specifies a connection criteria used to indicate which operations from clients matching this criteria use this policy. If both a connection criteria and a request criteria are specified for a policy, then both must match an operation for the policy to be assigned.
@@ -39,13 +39,10 @@ type AddReplicationAssurancePolicyRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddReplicationAssurancePolicyRequest(policyName string, enabled bool, evaluationOrderIndex int32, localLevel EnumreplicationAssurancePolicyLocalLevelProp, remoteLevel EnumreplicationAssurancePolicyRemoteLevelProp, timeout string) *AddReplicationAssurancePolicyRequest {
+func NewAddReplicationAssurancePolicyRequest(policyName string, evaluationOrderIndex int32, timeout string) *AddReplicationAssurancePolicyRequest {
 	this := AddReplicationAssurancePolicyRequest{}
 	this.PolicyName = policyName
-	this.Enabled = enabled
 	this.EvaluationOrderIndex = evaluationOrderIndex
-	this.LocalLevel = localLevel
-	this.RemoteLevel = remoteLevel
 	this.Timeout = timeout
 	return &this
 }
@@ -146,28 +143,36 @@ func (o *AddReplicationAssurancePolicyRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetEnabled returns the Enabled field value
+// GetEnabled returns the Enabled field value if set, zero value otherwise.
 func (o *AddReplicationAssurancePolicyRequest) GetEnabled() bool {
-	if o == nil {
+	if o == nil || isNil(o.Enabled) {
 		var ret bool
 		return ret
 	}
-
-	return o.Enabled
+	return *o.Enabled
 }
 
-// GetEnabledOk returns a tuple with the Enabled field value
+// GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReplicationAssurancePolicyRequest) GetEnabledOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || isNil(o.Enabled) {
 		return nil, false
 	}
-	return &o.Enabled, true
+	return o.Enabled, true
 }
 
-// SetEnabled sets field value
+// HasEnabled returns a boolean if a field has been set.
+func (o *AddReplicationAssurancePolicyRequest) HasEnabled() bool {
+	if o != nil && !isNil(o.Enabled) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *AddReplicationAssurancePolicyRequest) SetEnabled(v bool) {
-	o.Enabled = v
+	o.Enabled = &v
 }
 
 // GetEvaluationOrderIndex returns the EvaluationOrderIndex field value
@@ -194,52 +199,68 @@ func (o *AddReplicationAssurancePolicyRequest) SetEvaluationOrderIndex(v int32) 
 	o.EvaluationOrderIndex = v
 }
 
-// GetLocalLevel returns the LocalLevel field value
+// GetLocalLevel returns the LocalLevel field value if set, zero value otherwise.
 func (o *AddReplicationAssurancePolicyRequest) GetLocalLevel() EnumreplicationAssurancePolicyLocalLevelProp {
-	if o == nil {
+	if o == nil || isNil(o.LocalLevel) {
 		var ret EnumreplicationAssurancePolicyLocalLevelProp
 		return ret
 	}
-
-	return o.LocalLevel
+	return *o.LocalLevel
 }
 
-// GetLocalLevelOk returns a tuple with the LocalLevel field value
+// GetLocalLevelOk returns a tuple with the LocalLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReplicationAssurancePolicyRequest) GetLocalLevelOk() (*EnumreplicationAssurancePolicyLocalLevelProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.LocalLevel) {
 		return nil, false
 	}
-	return &o.LocalLevel, true
+	return o.LocalLevel, true
 }
 
-// SetLocalLevel sets field value
+// HasLocalLevel returns a boolean if a field has been set.
+func (o *AddReplicationAssurancePolicyRequest) HasLocalLevel() bool {
+	if o != nil && !isNil(o.LocalLevel) {
+		return true
+	}
+
+	return false
+}
+
+// SetLocalLevel gets a reference to the given EnumreplicationAssurancePolicyLocalLevelProp and assigns it to the LocalLevel field.
 func (o *AddReplicationAssurancePolicyRequest) SetLocalLevel(v EnumreplicationAssurancePolicyLocalLevelProp) {
-	o.LocalLevel = v
+	o.LocalLevel = &v
 }
 
-// GetRemoteLevel returns the RemoteLevel field value
+// GetRemoteLevel returns the RemoteLevel field value if set, zero value otherwise.
 func (o *AddReplicationAssurancePolicyRequest) GetRemoteLevel() EnumreplicationAssurancePolicyRemoteLevelProp {
-	if o == nil {
+	if o == nil || isNil(o.RemoteLevel) {
 		var ret EnumreplicationAssurancePolicyRemoteLevelProp
 		return ret
 	}
-
-	return o.RemoteLevel
+	return *o.RemoteLevel
 }
 
-// GetRemoteLevelOk returns a tuple with the RemoteLevel field value
+// GetRemoteLevelOk returns a tuple with the RemoteLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReplicationAssurancePolicyRequest) GetRemoteLevelOk() (*EnumreplicationAssurancePolicyRemoteLevelProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.RemoteLevel) {
 		return nil, false
 	}
-	return &o.RemoteLevel, true
+	return o.RemoteLevel, true
 }
 
-// SetRemoteLevel sets field value
+// HasRemoteLevel returns a boolean if a field has been set.
+func (o *AddReplicationAssurancePolicyRequest) HasRemoteLevel() bool {
+	if o != nil && !isNil(o.RemoteLevel) {
+		return true
+	}
+
+	return false
+}
+
+// SetRemoteLevel gets a reference to the given EnumreplicationAssurancePolicyRemoteLevelProp and assigns it to the RemoteLevel field.
 func (o *AddReplicationAssurancePolicyRequest) SetRemoteLevel(v EnumreplicationAssurancePolicyRemoteLevelProp) {
-	o.RemoteLevel = v
+	o.RemoteLevel = &v
 }
 
 // GetTimeout returns the Timeout field value
@@ -341,16 +362,16 @@ func (o AddReplicationAssurancePolicyRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	if true {
+	if !isNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
 	if true {
 		toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
 	}
-	if true {
+	if !isNil(o.LocalLevel) {
 		toSerialize["localLevel"] = o.LocalLevel
 	}
-	if true {
+	if !isNil(o.RemoteLevel) {
 		toSerialize["remoteLevel"] = o.RemoteLevel
 	}
 	if true {

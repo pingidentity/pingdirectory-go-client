@@ -23,14 +23,14 @@ type AddPhotoDelegatedAdminAttributeRequest struct {
 	// A description for this Delegated Admin Attribute
 	Description *string `json:"description,omitempty"`
 	// A human readable display name for this Delegated Admin Attribute.
-	DisplayName string                                    `json:"displayName"`
-	Mutability  EnumdelegatedAdminAttributeMutabilityProp `json:"mutability"`
+	DisplayName string                                     `json:"displayName"`
+	Mutability  *EnumdelegatedAdminAttributeMutabilityProp `json:"mutability,omitempty"`
 	// Indicates whether this Delegated Admin Attribute may have multiple values.
-	MultiValued bool `json:"multiValued"`
+	MultiValued *bool `json:"multiValued,omitempty"`
 	// Specifies which attribute category this attribute belongs to.
 	AttributeCategory *string `json:"attributeCategory,omitempty"`
 	// This property determines a display order for attributes within a given attribute category. Attributes are ordered within their category based on this index from least to greatest.
-	DisplayOrderIndex int32 `json:"displayOrderIndex"`
+	DisplayOrderIndex *int32 `json:"displayOrderIndex,omitempty"`
 	// For LDAP attributes with DN syntax, specifies what kind of resource is referenced.
 	ReferenceResourceType *string                                               `json:"referenceResourceType,omitempty"`
 	AttributePresentation *EnumdelegatedAdminAttributeAttributePresentationProp `json:"attributePresentation,omitempty"`
@@ -42,14 +42,11 @@ type AddPhotoDelegatedAdminAttributeRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddPhotoDelegatedAdminAttributeRequest(attributeType string, schemas []EnumphotoDelegatedAdminAttributeSchemaUrn, displayName string, mutability EnumdelegatedAdminAttributeMutabilityProp, multiValued bool, displayOrderIndex int32) *AddPhotoDelegatedAdminAttributeRequest {
+func NewAddPhotoDelegatedAdminAttributeRequest(attributeType string, schemas []EnumphotoDelegatedAdminAttributeSchemaUrn, displayName string) *AddPhotoDelegatedAdminAttributeRequest {
 	this := AddPhotoDelegatedAdminAttributeRequest{}
 	this.AttributeType = attributeType
 	this.Schemas = schemas
 	this.DisplayName = displayName
-	this.Mutability = mutability
-	this.MultiValued = multiValued
-	this.DisplayOrderIndex = displayOrderIndex
 	return &this
 }
 
@@ -197,52 +194,68 @@ func (o *AddPhotoDelegatedAdminAttributeRequest) SetDisplayName(v string) {
 	o.DisplayName = v
 }
 
-// GetMutability returns the Mutability field value
+// GetMutability returns the Mutability field value if set, zero value otherwise.
 func (o *AddPhotoDelegatedAdminAttributeRequest) GetMutability() EnumdelegatedAdminAttributeMutabilityProp {
-	if o == nil {
+	if o == nil || isNil(o.Mutability) {
 		var ret EnumdelegatedAdminAttributeMutabilityProp
 		return ret
 	}
-
-	return o.Mutability
+	return *o.Mutability
 }
 
-// GetMutabilityOk returns a tuple with the Mutability field value
+// GetMutabilityOk returns a tuple with the Mutability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPhotoDelegatedAdminAttributeRequest) GetMutabilityOk() (*EnumdelegatedAdminAttributeMutabilityProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.Mutability) {
 		return nil, false
 	}
-	return &o.Mutability, true
+	return o.Mutability, true
 }
 
-// SetMutability sets field value
+// HasMutability returns a boolean if a field has been set.
+func (o *AddPhotoDelegatedAdminAttributeRequest) HasMutability() bool {
+	if o != nil && !isNil(o.Mutability) {
+		return true
+	}
+
+	return false
+}
+
+// SetMutability gets a reference to the given EnumdelegatedAdminAttributeMutabilityProp and assigns it to the Mutability field.
 func (o *AddPhotoDelegatedAdminAttributeRequest) SetMutability(v EnumdelegatedAdminAttributeMutabilityProp) {
-	o.Mutability = v
+	o.Mutability = &v
 }
 
-// GetMultiValued returns the MultiValued field value
+// GetMultiValued returns the MultiValued field value if set, zero value otherwise.
 func (o *AddPhotoDelegatedAdminAttributeRequest) GetMultiValued() bool {
-	if o == nil {
+	if o == nil || isNil(o.MultiValued) {
 		var ret bool
 		return ret
 	}
-
-	return o.MultiValued
+	return *o.MultiValued
 }
 
-// GetMultiValuedOk returns a tuple with the MultiValued field value
+// GetMultiValuedOk returns a tuple with the MultiValued field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPhotoDelegatedAdminAttributeRequest) GetMultiValuedOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || isNil(o.MultiValued) {
 		return nil, false
 	}
-	return &o.MultiValued, true
+	return o.MultiValued, true
 }
 
-// SetMultiValued sets field value
+// HasMultiValued returns a boolean if a field has been set.
+func (o *AddPhotoDelegatedAdminAttributeRequest) HasMultiValued() bool {
+	if o != nil && !isNil(o.MultiValued) {
+		return true
+	}
+
+	return false
+}
+
+// SetMultiValued gets a reference to the given bool and assigns it to the MultiValued field.
 func (o *AddPhotoDelegatedAdminAttributeRequest) SetMultiValued(v bool) {
-	o.MultiValued = v
+	o.MultiValued = &v
 }
 
 // GetAttributeCategory returns the AttributeCategory field value if set, zero value otherwise.
@@ -277,28 +290,36 @@ func (o *AddPhotoDelegatedAdminAttributeRequest) SetAttributeCategory(v string) 
 	o.AttributeCategory = &v
 }
 
-// GetDisplayOrderIndex returns the DisplayOrderIndex field value
+// GetDisplayOrderIndex returns the DisplayOrderIndex field value if set, zero value otherwise.
 func (o *AddPhotoDelegatedAdminAttributeRequest) GetDisplayOrderIndex() int32 {
-	if o == nil {
+	if o == nil || isNil(o.DisplayOrderIndex) {
 		var ret int32
 		return ret
 	}
-
-	return o.DisplayOrderIndex
+	return *o.DisplayOrderIndex
 }
 
-// GetDisplayOrderIndexOk returns a tuple with the DisplayOrderIndex field value
+// GetDisplayOrderIndexOk returns a tuple with the DisplayOrderIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPhotoDelegatedAdminAttributeRequest) GetDisplayOrderIndexOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || isNil(o.DisplayOrderIndex) {
 		return nil, false
 	}
-	return &o.DisplayOrderIndex, true
+	return o.DisplayOrderIndex, true
 }
 
-// SetDisplayOrderIndex sets field value
+// HasDisplayOrderIndex returns a boolean if a field has been set.
+func (o *AddPhotoDelegatedAdminAttributeRequest) HasDisplayOrderIndex() bool {
+	if o != nil && !isNil(o.DisplayOrderIndex) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplayOrderIndex gets a reference to the given int32 and assigns it to the DisplayOrderIndex field.
 func (o *AddPhotoDelegatedAdminAttributeRequest) SetDisplayOrderIndex(v int32) {
-	o.DisplayOrderIndex = v
+	o.DisplayOrderIndex = &v
 }
 
 // GetReferenceResourceType returns the ReferenceResourceType field value if set, zero value otherwise.
@@ -414,16 +435,16 @@ func (o AddPhotoDelegatedAdminAttributeRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["displayName"] = o.DisplayName
 	}
-	if true {
+	if !isNil(o.Mutability) {
 		toSerialize["mutability"] = o.Mutability
 	}
-	if true {
+	if !isNil(o.MultiValued) {
 		toSerialize["multiValued"] = o.MultiValued
 	}
 	if !isNil(o.AttributeCategory) {
 		toSerialize["attributeCategory"] = o.AttributeCategory
 	}
-	if true {
+	if !isNil(o.DisplayOrderIndex) {
 		toSerialize["displayOrderIndex"] = o.DisplayOrderIndex
 	}
 	if !isNil(o.ReferenceResourceType) {

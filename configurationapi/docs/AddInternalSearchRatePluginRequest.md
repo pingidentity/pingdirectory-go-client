@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnuminternalSearchRatePluginSchemaUrn**](EnuminternalSearchRatePluginSchemaUrn.md) |  | 
-**PluginType** | [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | 
-**NumThreads** | **int32** | Specifies the number of concurrent threads that should be used to process the search operations. | 
+**PluginType** | Pointer to [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | [optional] 
+**NumThreads** | Pointer to **int32** | Specifies the number of concurrent threads that should be used to process the search operations. | [optional] 
 **BaseDN** | **string** | Specifies the base DN to use for the searches to perform. | 
 **LowerBound** | Pointer to **int32** | Specifies the lower bound for the numeric value which will be inserted into the search filter. | [optional] 
 **UpperBound** | Pointer to **int32** | Specifies the upper bound for the numeric value which will be inserted into the search filter. | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewAddInternalSearchRatePluginRequest
 
-`func NewAddInternalSearchRatePluginRequest(pluginName string, schemas []EnuminternalSearchRatePluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, numThreads int32, baseDN string, filterPrefix string, enabled bool, ) *AddInternalSearchRatePluginRequest`
+`func NewAddInternalSearchRatePluginRequest(pluginName string, schemas []EnuminternalSearchRatePluginSchemaUrn, baseDN string, filterPrefix string, enabled bool, ) *AddInternalSearchRatePluginRequest`
 
 NewAddInternalSearchRatePluginRequest instantiates a new AddInternalSearchRatePluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -95,6 +95,11 @@ and a boolean to check if the value has been set.
 
 SetPluginType sets PluginType field to given value.
 
+### HasPluginType
+
+`func (o *AddInternalSearchRatePluginRequest) HasPluginType() bool`
+
+HasPluginType returns a boolean if a field has been set.
 
 ### GetNumThreads
 
@@ -115,6 +120,11 @@ and a boolean to check if the value has been set.
 
 SetNumThreads sets NumThreads field to given value.
 
+### HasNumThreads
+
+`func (o *AddInternalSearchRatePluginRequest) HasNumThreads() bool`
+
+HasNumThreads returns a boolean if a field has been set.
 
 ### GetBaseDN
 

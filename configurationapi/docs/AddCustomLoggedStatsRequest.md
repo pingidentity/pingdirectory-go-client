@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **StatsName** | **string** | Name of the new Custom Logged Stats | 
 **Schemas** | Pointer to [**[]EnumcustomLoggedStatsSchemaUrn**](EnumcustomLoggedStatsSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Custom Logged Stats | [optional] 
-**Enabled** | **bool** | Indicates whether the Custom Logged Stats object is enabled. | 
+**Enabled** | Pointer to **bool** | Indicates whether the Custom Logged Stats object is enabled. | [optional] 
 **MonitorObjectclass** | **string** | The objectclass name of the monitor entries to examine for generating these statistics. | 
 **IncludeFilter** | Pointer to **string** | An optional LDAP filter that can be used restrict which monitor entries are used to produce the output. | [optional] 
 **AttributeToLog** | **[]string** | Specifies the attributes on the monitor entries that should be included in the output. | 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 
 ### NewAddCustomLoggedStatsRequest
 
-`func NewAddCustomLoggedStatsRequest(statsName string, enabled bool, monitorObjectclass string, attributeToLog []string, statisticType []EnumcustomLoggedStatsStatisticTypeProp, ) *AddCustomLoggedStatsRequest`
+`func NewAddCustomLoggedStatsRequest(statsName string, monitorObjectclass string, attributeToLog []string, statisticType []EnumcustomLoggedStatsStatisticTypeProp, ) *AddCustomLoggedStatsRequest`
 
 NewAddCustomLoggedStatsRequest instantiates a new AddCustomLoggedStatsRequest object
 This constructor will assign default values to properties that have it defined,
@@ -130,6 +130,11 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
+### HasEnabled
+
+`func (o *AddCustomLoggedStatsRequest) HasEnabled() bool`
+
+HasEnabled returns a boolean if a field has been set.
 
 ### GetMonitorObjectclass
 

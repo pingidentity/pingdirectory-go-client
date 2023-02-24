@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **EndpointName** | **string** | Name of the new Monitoring Endpoint | 
 **Schemas** | Pointer to [**[]EnumstatsdMonitoringEndpointSchemaUrn**](EnumstatsdMonitoringEndpointSchemaUrn.md) |  | [optional] 
 **Hostname** | **string** | The name of the host where this StatsD Monitoring Endpoint should send metric data. | 
-**ServerPort** | **int32** | Specifies the port number of the endpoint where metric data should be sent. | 
-**ConnectionType** | [**EnummonitoringEndpointConnectionTypeProp**](EnummonitoringEndpointConnectionTypeProp.md) |  | 
+**ServerPort** | Pointer to **int32** | Specifies the port number of the endpoint where metric data should be sent. | [optional] 
+**ConnectionType** | Pointer to [**EnummonitoringEndpointConnectionTypeProp**](EnummonitoringEndpointConnectionTypeProp.md) |  | [optional] 
 **TrustManagerProvider** | Pointer to **string** | The trust manager provider to use if SSL over TCP is to be used for connection-level security. | [optional] 
 **AdditionalTags** | Pointer to **[]string** | Specifies any optional additional tags to include in StatsD messages. Any additional tags will be appended to the end of each StatsD message, separated by commas. Tags should be written in a [key]:[value] format (\&quot;host:server1\&quot;, for example). | [optional] 
 **Enabled** | **bool** | Indicates whether this Monitoring Endpoint is enabled for use in the Directory Server. | 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewAddStatsdMonitoringEndpointRequest
 
-`func NewAddStatsdMonitoringEndpointRequest(endpointName string, hostname string, serverPort int32, connectionType EnummonitoringEndpointConnectionTypeProp, enabled bool, ) *AddStatsdMonitoringEndpointRequest`
+`func NewAddStatsdMonitoringEndpointRequest(endpointName string, hostname string, enabled bool, ) *AddStatsdMonitoringEndpointRequest`
 
 NewAddStatsdMonitoringEndpointRequest instantiates a new AddStatsdMonitoringEndpointRequest object
 This constructor will assign default values to properties that have it defined,
@@ -116,6 +116,11 @@ and a boolean to check if the value has been set.
 
 SetServerPort sets ServerPort field to given value.
 
+### HasServerPort
+
+`func (o *AddStatsdMonitoringEndpointRequest) HasServerPort() bool`
+
+HasServerPort returns a boolean if a field has been set.
 
 ### GetConnectionType
 
@@ -136,6 +141,11 @@ and a boolean to check if the value has been set.
 
 SetConnectionType sets ConnectionType field to given value.
 
+### HasConnectionType
+
+`func (o *AddStatsdMonitoringEndpointRequest) HasConnectionType() bool`
+
+HasConnectionType returns a boolean if a field has been set.
 
 ### GetTrustManagerProvider
 

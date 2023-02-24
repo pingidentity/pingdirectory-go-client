@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Name** | **string** | Name of the new Virtual Attribute | 
 **Schemas** | [**[]EnumisMemberOfVirtualAttributeSchemaUrn**](EnumisMemberOfVirtualAttributeSchemaUrn.md) |  | 
 **ConflictBehavior** | Pointer to [**EnumvirtualAttributeConflictBehaviorProp**](EnumvirtualAttributeConflictBehaviorProp.md) |  | [optional] 
-**AttributeType** | **string** | Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute. | 
+**AttributeType** | Pointer to **string** | Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute. | [optional] 
 **DirectMembershipsOnly** | Pointer to **bool** | Specifies whether to only include groups in which the user is directly associated with and the membership maybe modified via the group entry. Groups in which the user&#39;s membership is derived dynamically or through nested groups will not be included. | [optional] 
 **IncludedGroupFilter** | Pointer to **string** | A search filter that will be used to identify which groups should be included in the values of the virtual attribute. With no value defined (which is the default behavior), all groups that contain the target user will be included. | [optional] 
 **RewriteSearchFilters** | Pointer to [**EnumvirtualAttributeRewriteSearchFiltersProp**](EnumvirtualAttributeRewriteSearchFiltersProp.md) |  | [optional] 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 
 ### NewAddIsMemberOfVirtualAttributeRequest
 
-`func NewAddIsMemberOfVirtualAttributeRequest(name string, schemas []EnumisMemberOfVirtualAttributeSchemaUrn, attributeType string, enabled bool, ) *AddIsMemberOfVirtualAttributeRequest`
+`func NewAddIsMemberOfVirtualAttributeRequest(name string, schemas []EnumisMemberOfVirtualAttributeSchemaUrn, enabled bool, ) *AddIsMemberOfVirtualAttributeRequest`
 
 NewAddIsMemberOfVirtualAttributeRequest instantiates a new AddIsMemberOfVirtualAttributeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -125,6 +125,11 @@ and a boolean to check if the value has been set.
 
 SetAttributeType sets AttributeType field to given value.
 
+### HasAttributeType
+
+`func (o *AddIsMemberOfVirtualAttributeRequest) HasAttributeType() bool`
+
+HasAttributeType returns a boolean if a field has been set.
 
 ### GetDirectMembershipsOnly
 

@@ -6,11 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ValidatorName** | **string** | Name of the new Password Validator | 
 **Schemas** | [**[]EnumpwnedPasswordsPasswordValidatorSchemaUrn**](EnumpwnedPasswordsPasswordValidatorSchemaUrn.md) |  | 
-**PwnedPasswordsBaseURL** | **string** | The base URL for requests used to interact with the Pwned Passwords service. The first five characters of the hexadecimal representation of the unsalted SHA-1 digest of a proposed password will be appended to this base URL to construct the HTTP GET request used to obtain information about potential matches. | 
-**InvokeForAdd** | **bool** | Indicates whether this password validator should be used to validate clear-text passwords provided in LDAP add requests. | 
-**InvokeForSelfChange** | **bool** | Indicates whether this password validator should be used to validate clear-text passwords provided by an end user in the course of changing their own password. | 
-**InvokeForAdminReset** | **bool** | Indicates whether this password validator should be used to validate clear-text passwords provided by administrators when changing the password for another user. | 
-**AcceptPasswordOnServiceError** | **bool** | Indicates whether to accept the proposed password if an error occurs while attempting to interact with the Pwned Passwords service. | 
+**PwnedPasswordsBaseURL** | Pointer to **string** | The base URL for requests used to interact with the Pwned Passwords service. The first five characters of the hexadecimal representation of the unsalted SHA-1 digest of a proposed password will be appended to this base URL to construct the HTTP GET request used to obtain information about potential matches. | [optional] 
+**InvokeForAdd** | Pointer to **bool** | Indicates whether this password validator should be used to validate clear-text passwords provided in LDAP add requests. | [optional] 
+**InvokeForSelfChange** | Pointer to **bool** | Indicates whether this password validator should be used to validate clear-text passwords provided by an end user in the course of changing their own password. | [optional] 
+**InvokeForAdminReset** | Pointer to **bool** | Indicates whether this password validator should be used to validate clear-text passwords provided by administrators when changing the password for another user. | [optional] 
+**AcceptPasswordOnServiceError** | Pointer to **bool** | Indicates whether to accept the proposed password if an error occurs while attempting to interact with the Pwned Passwords service. | [optional] 
 **KeyManagerProvider** | Pointer to **string** | Specifies which key manager provider should be used to obtain a client certificate to present to the validation server when performing HTTPS communication. This may be left undefined if communication will not be secured with HTTPS, or if there is no need to present a client certificate to the validation service. | [optional] 
 **TrustManagerProvider** | Pointer to **string** | Specifies which trust manager provider should be used to determine whether to trust the certificate presented by the server when performing HTTPS communication. This may be left undefined if HTTPS communication is not needed, or if the validation service presents a certificate that is trusted by the default JVM configuration (which should be the case for the Pwned Password servers). | [optional] 
 **Description** | Pointer to **string** | A description for this Password Validator | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewAddPwnedPasswordsPasswordValidatorRequest
 
-`func NewAddPwnedPasswordsPasswordValidatorRequest(validatorName string, schemas []EnumpwnedPasswordsPasswordValidatorSchemaUrn, pwnedPasswordsBaseURL string, invokeForAdd bool, invokeForSelfChange bool, invokeForAdminReset bool, acceptPasswordOnServiceError bool, enabled bool, ) *AddPwnedPasswordsPasswordValidatorRequest`
+`func NewAddPwnedPasswordsPasswordValidatorRequest(validatorName string, schemas []EnumpwnedPasswordsPasswordValidatorSchemaUrn, enabled bool, ) *AddPwnedPasswordsPasswordValidatorRequest`
 
 NewAddPwnedPasswordsPasswordValidatorRequest instantiates a new AddPwnedPasswordsPasswordValidatorRequest object
 This constructor will assign default values to properties that have it defined,
@@ -96,6 +96,11 @@ and a boolean to check if the value has been set.
 
 SetPwnedPasswordsBaseURL sets PwnedPasswordsBaseURL field to given value.
 
+### HasPwnedPasswordsBaseURL
+
+`func (o *AddPwnedPasswordsPasswordValidatorRequest) HasPwnedPasswordsBaseURL() bool`
+
+HasPwnedPasswordsBaseURL returns a boolean if a field has been set.
 
 ### GetInvokeForAdd
 
@@ -116,6 +121,11 @@ and a boolean to check if the value has been set.
 
 SetInvokeForAdd sets InvokeForAdd field to given value.
 
+### HasInvokeForAdd
+
+`func (o *AddPwnedPasswordsPasswordValidatorRequest) HasInvokeForAdd() bool`
+
+HasInvokeForAdd returns a boolean if a field has been set.
 
 ### GetInvokeForSelfChange
 
@@ -136,6 +146,11 @@ and a boolean to check if the value has been set.
 
 SetInvokeForSelfChange sets InvokeForSelfChange field to given value.
 
+### HasInvokeForSelfChange
+
+`func (o *AddPwnedPasswordsPasswordValidatorRequest) HasInvokeForSelfChange() bool`
+
+HasInvokeForSelfChange returns a boolean if a field has been set.
 
 ### GetInvokeForAdminReset
 
@@ -156,6 +171,11 @@ and a boolean to check if the value has been set.
 
 SetInvokeForAdminReset sets InvokeForAdminReset field to given value.
 
+### HasInvokeForAdminReset
+
+`func (o *AddPwnedPasswordsPasswordValidatorRequest) HasInvokeForAdminReset() bool`
+
+HasInvokeForAdminReset returns a boolean if a field has been set.
 
 ### GetAcceptPasswordOnServiceError
 
@@ -176,6 +196,11 @@ and a boolean to check if the value has been set.
 
 SetAcceptPasswordOnServiceError sets AcceptPasswordOnServiceError field to given value.
 
+### HasAcceptPasswordOnServiceError
+
+`func (o *AddPwnedPasswordsPasswordValidatorRequest) HasAcceptPasswordOnServiceError() bool`
+
+HasAcceptPasswordOnServiceError returns a boolean if a field has been set.
 
 ### GetKeyManagerProvider
 
