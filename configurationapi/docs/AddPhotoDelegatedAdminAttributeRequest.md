@@ -9,10 +9,10 @@ Name | Type | Description | Notes
 **AllowedMIMEType** | Pointer to [**[]EnumdelegatedAdminAttributeAllowedMIMETypeProp**](EnumdelegatedAdminAttributeAllowedMIMETypeProp.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Delegated Admin Attribute | [optional] 
 **DisplayName** | **string** | A human readable display name for this Delegated Admin Attribute. | 
-**Mutability** | [**EnumdelegatedAdminAttributeMutabilityProp**](EnumdelegatedAdminAttributeMutabilityProp.md) |  | 
-**MultiValued** | **bool** | Indicates whether this Delegated Admin Attribute may have multiple values. | 
+**Mutability** | Pointer to [**EnumdelegatedAdminAttributeMutabilityProp**](EnumdelegatedAdminAttributeMutabilityProp.md) |  | [optional] 
+**MultiValued** | Pointer to **bool** | Indicates whether this Delegated Admin Attribute may have multiple values. | [optional] 
 **AttributeCategory** | Pointer to **string** | Specifies which attribute category this attribute belongs to. | [optional] 
-**DisplayOrderIndex** | **int32** | This property determines a display order for attributes within a given attribute category. Attributes are ordered within their category based on this index from least to greatest. | 
+**DisplayOrderIndex** | Pointer to **int32** | This property determines a display order for attributes within a given attribute category. Attributes are ordered within their category based on this index from least to greatest. | [optional] 
 **ReferenceResourceType** | Pointer to **string** | For LDAP attributes with DN syntax, specifies what kind of resource is referenced. | [optional] 
 **AttributePresentation** | Pointer to [**EnumdelegatedAdminAttributeAttributePresentationProp**](EnumdelegatedAdminAttributeAttributePresentationProp.md) |  | [optional] 
 **DateTimeFormat** | Pointer to **string** | Specifies the format string that is used to present a date and/or time value to the user of the app. This property only applies to LDAP attribute types whose LDAP syntax is GeneralizedTime and is ignored if the attribute type has any other syntax. | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewAddPhotoDelegatedAdminAttributeRequest
 
-`func NewAddPhotoDelegatedAdminAttributeRequest(attributeType string, schemas []EnumphotoDelegatedAdminAttributeSchemaUrn, displayName string, mutability EnumdelegatedAdminAttributeMutabilityProp, multiValued bool, displayOrderIndex int32, ) *AddPhotoDelegatedAdminAttributeRequest`
+`func NewAddPhotoDelegatedAdminAttributeRequest(attributeType string, schemas []EnumphotoDelegatedAdminAttributeSchemaUrn, displayName string, ) *AddPhotoDelegatedAdminAttributeRequest`
 
 NewAddPhotoDelegatedAdminAttributeRequest instantiates a new AddPhotoDelegatedAdminAttributeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -165,6 +165,11 @@ and a boolean to check if the value has been set.
 
 SetMutability sets Mutability field to given value.
 
+### HasMutability
+
+`func (o *AddPhotoDelegatedAdminAttributeRequest) HasMutability() bool`
+
+HasMutability returns a boolean if a field has been set.
 
 ### GetMultiValued
 
@@ -185,6 +190,11 @@ and a boolean to check if the value has been set.
 
 SetMultiValued sets MultiValued field to given value.
 
+### HasMultiValued
+
+`func (o *AddPhotoDelegatedAdminAttributeRequest) HasMultiValued() bool`
+
+HasMultiValued returns a boolean if a field has been set.
 
 ### GetAttributeCategory
 
@@ -230,6 +240,11 @@ and a boolean to check if the value has been set.
 
 SetDisplayOrderIndex sets DisplayOrderIndex field to given value.
 
+### HasDisplayOrderIndex
+
+`func (o *AddPhotoDelegatedAdminAttributeRequest) HasDisplayOrderIndex() bool`
+
+HasDisplayOrderIndex returns a boolean if a field has been set.
 
 ### GetReferenceResourceType
 

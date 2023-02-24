@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ValidatorName** | **string** | Name of the new Password Validator | 
 **Schemas** | [**[]EnumdictionaryPasswordValidatorSchemaUrn**](EnumdictionaryPasswordValidatorSchemaUrn.md) |  | 
-**DictionaryFile** | **string** | Specifies the path to the file containing a list of words that cannot be used as passwords. | 
-**CaseSensitiveValidation** | **bool** | Indicates whether this password validator is to treat password characters in a case-sensitive manner. | 
-**TestReversedPassword** | **bool** | Indicates whether this password validator is to test the reversed value of the provided password as well as the order in which it was given. | 
+**DictionaryFile** | Pointer to **string** | Specifies the path to the file containing a list of words that cannot be used as passwords. | [optional] 
+**CaseSensitiveValidation** | Pointer to **bool** | Indicates whether this password validator is to treat password characters in a case-sensitive manner. | [optional] 
+**TestReversedPassword** | Pointer to **bool** | Indicates whether this password validator is to test the reversed value of the provided password as well as the order in which it was given. | [optional] 
 **IgnoreLeadingNonAlphabeticCharacters** | Pointer to **bool** | Indicates whether to ignore any digits, symbols, or other non-alphabetic characters that may appear at the beginning of a proposed password. | [optional] 
 **IgnoreTrailingNonAlphabeticCharacters** | Pointer to **bool** | Indicates whether to ignore any digits, symbols, or other non-alphabetic characters that may appear at the end of a proposed password. | [optional] 
 **StripDiacriticalMarks** | Pointer to **bool** | Indicates whether to strip characters of any diacritical marks (like accents, cedillas, circumflexes, diaereses, tildes, and umlauts) they may contain. Any characters with a diacritical mark would be replaced with a base version | [optional] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewAddDictionaryPasswordValidatorRequest
 
-`func NewAddDictionaryPasswordValidatorRequest(validatorName string, schemas []EnumdictionaryPasswordValidatorSchemaUrn, dictionaryFile string, caseSensitiveValidation bool, testReversedPassword bool, enabled bool, ) *AddDictionaryPasswordValidatorRequest`
+`func NewAddDictionaryPasswordValidatorRequest(validatorName string, schemas []EnumdictionaryPasswordValidatorSchemaUrn, enabled bool, ) *AddDictionaryPasswordValidatorRequest`
 
 NewAddDictionaryPasswordValidatorRequest instantiates a new AddDictionaryPasswordValidatorRequest object
 This constructor will assign default values to properties that have it defined,
@@ -97,6 +97,11 @@ and a boolean to check if the value has been set.
 
 SetDictionaryFile sets DictionaryFile field to given value.
 
+### HasDictionaryFile
+
+`func (o *AddDictionaryPasswordValidatorRequest) HasDictionaryFile() bool`
+
+HasDictionaryFile returns a boolean if a field has been set.
 
 ### GetCaseSensitiveValidation
 
@@ -117,6 +122,11 @@ and a boolean to check if the value has been set.
 
 SetCaseSensitiveValidation sets CaseSensitiveValidation field to given value.
 
+### HasCaseSensitiveValidation
+
+`func (o *AddDictionaryPasswordValidatorRequest) HasCaseSensitiveValidation() bool`
+
+HasCaseSensitiveValidation returns a boolean if a field has been set.
 
 ### GetTestReversedPassword
 
@@ -137,6 +147,11 @@ and a boolean to check if the value has been set.
 
 SetTestReversedPassword sets TestReversedPassword field to given value.
 
+### HasTestReversedPassword
+
+`func (o *AddDictionaryPasswordValidatorRequest) HasTestReversedPassword() bool`
+
+HasTestReversedPassword returns a boolean if a field has been set.
 
 ### GetIgnoreLeadingNonAlphabeticCharacters
 

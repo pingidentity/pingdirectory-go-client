@@ -30,8 +30,8 @@ type AddTwilioAlertHandlerRequest struct {
 	// The outgoing phone number to use for the messages. Values must be phone numbers you have obtained for use with your Twilio account.
 	SenderPhoneNumber []string `json:"senderPhoneNumber"`
 	// The phone number to which alert notifications should be delivered.
-	RecipientPhoneNumber []string                                `json:"recipientPhoneNumber"`
-	LongMessageBehavior  EnumalertHandlerLongMessageBehaviorProp `json:"longMessageBehavior"`
+	RecipientPhoneNumber []string                                 `json:"recipientPhoneNumber"`
+	LongMessageBehavior  *EnumalertHandlerLongMessageBehaviorProp `json:"longMessageBehavior,omitempty"`
 	// A description for this Alert Handler
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Alert Handler is enabled.
@@ -45,14 +45,13 @@ type AddTwilioAlertHandlerRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddTwilioAlertHandlerRequest(handlerName string, schemas []EnumtwilioAlertHandlerSchemaUrn, twilioAccountSID string, senderPhoneNumber []string, recipientPhoneNumber []string, longMessageBehavior EnumalertHandlerLongMessageBehaviorProp, enabled bool) *AddTwilioAlertHandlerRequest {
+func NewAddTwilioAlertHandlerRequest(handlerName string, schemas []EnumtwilioAlertHandlerSchemaUrn, twilioAccountSID string, senderPhoneNumber []string, recipientPhoneNumber []string, enabled bool) *AddTwilioAlertHandlerRequest {
 	this := AddTwilioAlertHandlerRequest{}
 	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.TwilioAccountSID = twilioAccountSID
 	this.SenderPhoneNumber = senderPhoneNumber
 	this.RecipientPhoneNumber = recipientPhoneNumber
-	this.LongMessageBehavior = longMessageBehavior
 	this.Enabled = enabled
 	return &this
 }
@@ -281,28 +280,36 @@ func (o *AddTwilioAlertHandlerRequest) SetRecipientPhoneNumber(v []string) {
 	o.RecipientPhoneNumber = v
 }
 
-// GetLongMessageBehavior returns the LongMessageBehavior field value
+// GetLongMessageBehavior returns the LongMessageBehavior field value if set, zero value otherwise.
 func (o *AddTwilioAlertHandlerRequest) GetLongMessageBehavior() EnumalertHandlerLongMessageBehaviorProp {
-	if o == nil {
+	if o == nil || isNil(o.LongMessageBehavior) {
 		var ret EnumalertHandlerLongMessageBehaviorProp
 		return ret
 	}
-
-	return o.LongMessageBehavior
+	return *o.LongMessageBehavior
 }
 
-// GetLongMessageBehaviorOk returns a tuple with the LongMessageBehavior field value
+// GetLongMessageBehaviorOk returns a tuple with the LongMessageBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddTwilioAlertHandlerRequest) GetLongMessageBehaviorOk() (*EnumalertHandlerLongMessageBehaviorProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.LongMessageBehavior) {
 		return nil, false
 	}
-	return &o.LongMessageBehavior, true
+	return o.LongMessageBehavior, true
 }
 
-// SetLongMessageBehavior sets field value
+// HasLongMessageBehavior returns a boolean if a field has been set.
+func (o *AddTwilioAlertHandlerRequest) HasLongMessageBehavior() bool {
+	if o != nil && !isNil(o.LongMessageBehavior) {
+		return true
+	}
+
+	return false
+}
+
+// SetLongMessageBehavior gets a reference to the given EnumalertHandlerLongMessageBehaviorProp and assigns it to the LongMessageBehavior field.
 func (o *AddTwilioAlertHandlerRequest) SetLongMessageBehavior(v EnumalertHandlerLongMessageBehaviorProp) {
-	o.LongMessageBehavior = v
+	o.LongMessageBehavior = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -483,7 +490,7 @@ func (o AddTwilioAlertHandlerRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["recipientPhoneNumber"] = o.RecipientPhoneNumber
 	}
-	if true {
+	if !isNil(o.LongMessageBehavior) {
 		toSerialize["longMessageBehavior"] = o.LongMessageBehavior
 	}
 	if !isNil(o.Description) {

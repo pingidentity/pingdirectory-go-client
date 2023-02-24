@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumjdbcBasedErrorLogPublisherSchemaUrn**](EnumjdbcBasedErrorLogPublisherSchemaUrn.md) |  | 
 **Server** | **string** | The JDBC-based Database Server to use for a connection. | 
 **LogFieldMapping** | **string** | The log field mapping associates loggable fields to database column names. The table name is not part of this mapping. | 
-**LogTableName** | **string** | The table name to log entries to the database server. | 
+**LogTableName** | Pointer to **string** | The table name to log entries to the database server. | [optional] 
 **QueueSize** | Pointer to **int32** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
 **DefaultSeverity** | Pointer to [**[]EnumlogPublisherDefaultSeverityProp**](EnumlogPublisherDefaultSeverityProp.md) |  | [optional] 
 **OverrideSeverity** | Pointer to **[]string** | Specifies the override severity levels for the logger based on the category of the messages. | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewAddJdbcBasedErrorLogPublisherRequest
 
-`func NewAddJdbcBasedErrorLogPublisherRequest(publisherName string, schemas []EnumjdbcBasedErrorLogPublisherSchemaUrn, server string, logFieldMapping string, logTableName string, enabled bool, ) *AddJdbcBasedErrorLogPublisherRequest`
+`func NewAddJdbcBasedErrorLogPublisherRequest(publisherName string, schemas []EnumjdbcBasedErrorLogPublisherSchemaUrn, server string, logFieldMapping string, enabled bool, ) *AddJdbcBasedErrorLogPublisherRequest`
 
 NewAddJdbcBasedErrorLogPublisherRequest instantiates a new AddJdbcBasedErrorLogPublisherRequest object
 This constructor will assign default values to properties that have it defined,
@@ -134,6 +134,11 @@ and a boolean to check if the value has been set.
 
 SetLogTableName sets LogTableName field to given value.
 
+### HasLogTableName
+
+`func (o *AddJdbcBasedErrorLogPublisherRequest) HasLogTableName() bool`
+
+HasLogTableName returns a boolean if a field has been set.
 
 ### GetQueueSize
 

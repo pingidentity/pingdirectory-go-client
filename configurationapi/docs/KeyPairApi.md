@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    addKeyPairRequest := *openapiclient.NewAddKeyPairRequest("PairName_example", openapiclient.Enumkey-pair-keyAlgorithmProp("RSA_2048")) // AddKeyPairRequest | Create a new Key Pair in the config
+    addKeyPairRequest := *openapiclient.NewAddKeyPairRequest("PairName_example") // AddKeyPairRequest | Create a new Key Pair in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

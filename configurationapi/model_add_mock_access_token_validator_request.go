@@ -24,7 +24,7 @@ type AddMockAccessTokenValidatorRequest struct {
 	// The name of the token claim that contains the scopes granted by the token.
 	ScopeClaimName *string `json:"scopeClaimName,omitempty"`
 	// When multiple Mock Access Token Validators are defined for a single Directory Server, this property determines the evaluation order for determining the correct validator class for an access token received by the Directory Server. Values of this property must be unique among all Mock Access Token Validators defined within Directory Server but not necessarily contiguous. Mock Access Token Validators with a smaller value will be evaluated first to determine if they are able to validate the access token.
-	EvaluationOrderIndex int32 `json:"evaluationOrderIndex"`
+	EvaluationOrderIndex *int32 `json:"evaluationOrderIndex,omitempty"`
 	// Specifies the name of the Identity Mapper that should be used for associating user entries with Bearer token subject names. The claim name from which to obtain the subject (i.e. the currently logged-in user) may be configured using the subject-claim-name property.
 	IdentityMapper *string `json:"identityMapper,omitempty"`
 	// The name of the token claim that contains the subject, i.e. the logged-in user in an access token. This property goes hand-in-hand with the identity-mapper property and tells the Identity Mapper which field to use to look up the user entry on the server.
@@ -39,11 +39,10 @@ type AddMockAccessTokenValidatorRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddMockAccessTokenValidatorRequest(validatorName string, schemas []EnummockAccessTokenValidatorSchemaUrn, evaluationOrderIndex int32, enabled bool) *AddMockAccessTokenValidatorRequest {
+func NewAddMockAccessTokenValidatorRequest(validatorName string, schemas []EnummockAccessTokenValidatorSchemaUrn, enabled bool) *AddMockAccessTokenValidatorRequest {
 	this := AddMockAccessTokenValidatorRequest{}
 	this.ValidatorName = validatorName
 	this.Schemas = schemas
-	this.EvaluationOrderIndex = evaluationOrderIndex
 	this.Enabled = enabled
 	return &this
 }
@@ -168,28 +167,36 @@ func (o *AddMockAccessTokenValidatorRequest) SetScopeClaimName(v string) {
 	o.ScopeClaimName = &v
 }
 
-// GetEvaluationOrderIndex returns the EvaluationOrderIndex field value
+// GetEvaluationOrderIndex returns the EvaluationOrderIndex field value if set, zero value otherwise.
 func (o *AddMockAccessTokenValidatorRequest) GetEvaluationOrderIndex() int32 {
-	if o == nil {
+	if o == nil || isNil(o.EvaluationOrderIndex) {
 		var ret int32
 		return ret
 	}
-
-	return o.EvaluationOrderIndex
+	return *o.EvaluationOrderIndex
 }
 
-// GetEvaluationOrderIndexOk returns a tuple with the EvaluationOrderIndex field value
+// GetEvaluationOrderIndexOk returns a tuple with the EvaluationOrderIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddMockAccessTokenValidatorRequest) GetEvaluationOrderIndexOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || isNil(o.EvaluationOrderIndex) {
 		return nil, false
 	}
-	return &o.EvaluationOrderIndex, true
+	return o.EvaluationOrderIndex, true
 }
 
-// SetEvaluationOrderIndex sets field value
+// HasEvaluationOrderIndex returns a boolean if a field has been set.
+func (o *AddMockAccessTokenValidatorRequest) HasEvaluationOrderIndex() bool {
+	if o != nil && !isNil(o.EvaluationOrderIndex) {
+		return true
+	}
+
+	return false
+}
+
+// SetEvaluationOrderIndex gets a reference to the given int32 and assigns it to the EvaluationOrderIndex field.
 func (o *AddMockAccessTokenValidatorRequest) SetEvaluationOrderIndex(v int32) {
-	o.EvaluationOrderIndex = v
+	o.EvaluationOrderIndex = &v
 }
 
 // GetIdentityMapper returns the IdentityMapper field value if set, zero value otherwise.
@@ -326,7 +333,7 @@ func (o AddMockAccessTokenValidatorRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.ScopeClaimName) {
 		toSerialize["scopeClaimName"] = o.ScopeClaimName
 	}
-	if true {
+	if !isNil(o.EvaluationOrderIndex) {
 		toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
 	}
 	if !isNil(o.IdentityMapper) {

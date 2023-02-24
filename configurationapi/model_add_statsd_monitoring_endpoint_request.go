@@ -22,8 +22,8 @@ type AddStatsdMonitoringEndpointRequest struct {
 	// The name of the host where this StatsD Monitoring Endpoint should send metric data.
 	Hostname string `json:"hostname"`
 	// Specifies the port number of the endpoint where metric data should be sent.
-	ServerPort     int32                                    `json:"serverPort"`
-	ConnectionType EnummonitoringEndpointConnectionTypeProp `json:"connectionType"`
+	ServerPort     *int32                                    `json:"serverPort,omitempty"`
+	ConnectionType *EnummonitoringEndpointConnectionTypeProp `json:"connectionType,omitempty"`
 	// The trust manager provider to use if SSL over TCP is to be used for connection-level security.
 	TrustManagerProvider *string `json:"trustManagerProvider,omitempty"`
 	// Specifies any optional additional tags to include in StatsD messages. Any additional tags will be appended to the end of each StatsD message, separated by commas. Tags should be written in a [key]:[value] format (\"host:server1\", for example).
@@ -36,12 +36,10 @@ type AddStatsdMonitoringEndpointRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddStatsdMonitoringEndpointRequest(endpointName string, hostname string, serverPort int32, connectionType EnummonitoringEndpointConnectionTypeProp, enabled bool) *AddStatsdMonitoringEndpointRequest {
+func NewAddStatsdMonitoringEndpointRequest(endpointName string, hostname string, enabled bool) *AddStatsdMonitoringEndpointRequest {
 	this := AddStatsdMonitoringEndpointRequest{}
 	this.EndpointName = endpointName
 	this.Hostname = hostname
-	this.ServerPort = serverPort
-	this.ConnectionType = connectionType
 	this.Enabled = enabled
 	return &this
 }
@@ -134,52 +132,68 @@ func (o *AddStatsdMonitoringEndpointRequest) SetHostname(v string) {
 	o.Hostname = v
 }
 
-// GetServerPort returns the ServerPort field value
+// GetServerPort returns the ServerPort field value if set, zero value otherwise.
 func (o *AddStatsdMonitoringEndpointRequest) GetServerPort() int32 {
-	if o == nil {
+	if o == nil || isNil(o.ServerPort) {
 		var ret int32
 		return ret
 	}
-
-	return o.ServerPort
+	return *o.ServerPort
 }
 
-// GetServerPortOk returns a tuple with the ServerPort field value
+// GetServerPortOk returns a tuple with the ServerPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddStatsdMonitoringEndpointRequest) GetServerPortOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || isNil(o.ServerPort) {
 		return nil, false
 	}
-	return &o.ServerPort, true
+	return o.ServerPort, true
 }
 
-// SetServerPort sets field value
+// HasServerPort returns a boolean if a field has been set.
+func (o *AddStatsdMonitoringEndpointRequest) HasServerPort() bool {
+	if o != nil && !isNil(o.ServerPort) {
+		return true
+	}
+
+	return false
+}
+
+// SetServerPort gets a reference to the given int32 and assigns it to the ServerPort field.
 func (o *AddStatsdMonitoringEndpointRequest) SetServerPort(v int32) {
-	o.ServerPort = v
+	o.ServerPort = &v
 }
 
-// GetConnectionType returns the ConnectionType field value
+// GetConnectionType returns the ConnectionType field value if set, zero value otherwise.
 func (o *AddStatsdMonitoringEndpointRequest) GetConnectionType() EnummonitoringEndpointConnectionTypeProp {
-	if o == nil {
+	if o == nil || isNil(o.ConnectionType) {
 		var ret EnummonitoringEndpointConnectionTypeProp
 		return ret
 	}
-
-	return o.ConnectionType
+	return *o.ConnectionType
 }
 
-// GetConnectionTypeOk returns a tuple with the ConnectionType field value
+// GetConnectionTypeOk returns a tuple with the ConnectionType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddStatsdMonitoringEndpointRequest) GetConnectionTypeOk() (*EnummonitoringEndpointConnectionTypeProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.ConnectionType) {
 		return nil, false
 	}
-	return &o.ConnectionType, true
+	return o.ConnectionType, true
 }
 
-// SetConnectionType sets field value
+// HasConnectionType returns a boolean if a field has been set.
+func (o *AddStatsdMonitoringEndpointRequest) HasConnectionType() bool {
+	if o != nil && !isNil(o.ConnectionType) {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectionType gets a reference to the given EnummonitoringEndpointConnectionTypeProp and assigns it to the ConnectionType field.
 func (o *AddStatsdMonitoringEndpointRequest) SetConnectionType(v EnummonitoringEndpointConnectionTypeProp) {
-	o.ConnectionType = v
+	o.ConnectionType = &v
 }
 
 // GetTrustManagerProvider returns the TrustManagerProvider field value if set, zero value otherwise.
@@ -281,10 +295,10 @@ func (o AddStatsdMonitoringEndpointRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["hostname"] = o.Hostname
 	}
-	if true {
+	if !isNil(o.ServerPort) {
 		toSerialize["serverPort"] = o.ServerPort
 	}
-	if true {
+	if !isNil(o.ConnectionType) {
 		toSerialize["connectionType"] = o.ConnectionType
 	}
 	if !isNil(o.TrustManagerProvider) {

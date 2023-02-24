@@ -8,11 +8,11 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumgenericDelegatedAdminAttributeSchemaUrn**](EnumgenericDelegatedAdminAttributeSchemaUrn.md) |  | 
 **Description** | Pointer to **string** | A description for this Delegated Admin Attribute | [optional] 
 **DisplayName** | **string** | A human readable display name for this Delegated Admin Attribute. | 
-**Mutability** | [**EnumdelegatedAdminAttributeMutabilityProp**](EnumdelegatedAdminAttributeMutabilityProp.md) |  | 
-**MultiValued** | **bool** | Indicates whether this Delegated Admin Attribute may have multiple values. | 
-**IncludeInSummary** | **bool** | Indicates whether this Delegated Admin Attribute is to be included in the summary display for a resource. | 
+**Mutability** | Pointer to [**EnumdelegatedAdminAttributeMutabilityProp**](EnumdelegatedAdminAttributeMutabilityProp.md) |  | [optional] 
+**MultiValued** | Pointer to **bool** | Indicates whether this Delegated Admin Attribute may have multiple values. | [optional] 
+**IncludeInSummary** | Pointer to **bool** | Indicates whether this Delegated Admin Attribute is to be included in the summary display for a resource. | [optional] 
 **AttributeCategory** | Pointer to **string** | Specifies which attribute category this attribute belongs to. | [optional] 
-**DisplayOrderIndex** | **int32** | This property determines a display order for attributes within a given attribute category. Attributes are ordered within their category based on this index from least to greatest. | 
+**DisplayOrderIndex** | Pointer to **int32** | This property determines a display order for attributes within a given attribute category. Attributes are ordered within their category based on this index from least to greatest. | [optional] 
 **ReferenceResourceType** | Pointer to **string** | For LDAP attributes with DN syntax, specifies what kind of resource is referenced. | [optional] 
 **AttributePresentation** | Pointer to [**EnumdelegatedAdminAttributeAttributePresentationProp**](EnumdelegatedAdminAttributeAttributePresentationProp.md) |  | [optional] 
 **DateTimeFormat** | Pointer to **string** | Specifies the format string that is used to present a date and/or time value to the user of the app. This property only applies to LDAP attribute types whose LDAP syntax is GeneralizedTime and is ignored if the attribute type has any other syntax. | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewAddGenericDelegatedAdminAttributeRequest
 
-`func NewAddGenericDelegatedAdminAttributeRequest(attributeType string, schemas []EnumgenericDelegatedAdminAttributeSchemaUrn, displayName string, mutability EnumdelegatedAdminAttributeMutabilityProp, multiValued bool, includeInSummary bool, displayOrderIndex int32, ) *AddGenericDelegatedAdminAttributeRequest`
+`func NewAddGenericDelegatedAdminAttributeRequest(attributeType string, schemas []EnumgenericDelegatedAdminAttributeSchemaUrn, displayName string, ) *AddGenericDelegatedAdminAttributeRequest`
 
 NewAddGenericDelegatedAdminAttributeRequest instantiates a new AddGenericDelegatedAdminAttributeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -140,6 +140,11 @@ and a boolean to check if the value has been set.
 
 SetMutability sets Mutability field to given value.
 
+### HasMutability
+
+`func (o *AddGenericDelegatedAdminAttributeRequest) HasMutability() bool`
+
+HasMutability returns a boolean if a field has been set.
 
 ### GetMultiValued
 
@@ -160,6 +165,11 @@ and a boolean to check if the value has been set.
 
 SetMultiValued sets MultiValued field to given value.
 
+### HasMultiValued
+
+`func (o *AddGenericDelegatedAdminAttributeRequest) HasMultiValued() bool`
+
+HasMultiValued returns a boolean if a field has been set.
 
 ### GetIncludeInSummary
 
@@ -180,6 +190,11 @@ and a boolean to check if the value has been set.
 
 SetIncludeInSummary sets IncludeInSummary field to given value.
 
+### HasIncludeInSummary
+
+`func (o *AddGenericDelegatedAdminAttributeRequest) HasIncludeInSummary() bool`
+
+HasIncludeInSummary returns a boolean if a field has been set.
 
 ### GetAttributeCategory
 
@@ -225,6 +240,11 @@ and a boolean to check if the value has been set.
 
 SetDisplayOrderIndex sets DisplayOrderIndex field to given value.
 
+### HasDisplayOrderIndex
+
+`func (o *AddGenericDelegatedAdminAttributeRequest) HasDisplayOrderIndex() bool`
+
+HasDisplayOrderIndex returns a boolean if a field has been set.
 
 ### GetReferenceResourceType
 

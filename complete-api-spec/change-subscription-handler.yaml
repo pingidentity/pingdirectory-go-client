@@ -232,6 +232,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/logging-change-subscription-handler-shared'
+      required:
+      - logFile
     logging-change-subscription-handler-shared:
       type: object
       properties:
@@ -261,7 +263,6 @@ components:
               The set of change subscriptions for which this change subscription handler should be notified. If no values are provided then it will be notified for all change subscriptions defined in the server.
       required:
       - schemas
-      - logFile
       - enabled
     Enumlogging-change-subscription-handlerSchemaUrn:
       type: string

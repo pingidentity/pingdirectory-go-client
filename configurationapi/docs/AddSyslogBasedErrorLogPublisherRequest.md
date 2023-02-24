@@ -7,11 +7,11 @@ Name | Type | Description | Notes
 **PublisherName** | **string** | Name of the new Log Publisher | 
 **Schemas** | [**[]EnumsyslogBasedErrorLogPublisherSchemaUrn**](EnumsyslogBasedErrorLogPublisherSchemaUrn.md) |  | 
 **Enabled** | **bool** | Indicates whether the Syslog Based Error Log Publisher is enabled for use. | 
-**ServerHostName** | **string** | Specifies the hostname or IP address of the syslogd host to log to. It is highly recommend to use localhost. | 
-**ServerPort** | **int32** | Specifies the port number of the syslogd host to log to. | 
-**SyslogFacility** | **int32** | Specifies the syslog facility to use for this Syslog Based Error Log Publisher | 
+**ServerHostName** | Pointer to **string** | Specifies the hostname or IP address of the syslogd host to log to. It is highly recommend to use localhost. | [optional] 
+**ServerPort** | Pointer to **int32** | Specifies the port number of the syslogd host to log to. | [optional] 
+**SyslogFacility** | Pointer to **int32** | Specifies the syslog facility to use for this Syslog Based Error Log Publisher | [optional] 
 **AutoFlush** | Pointer to **bool** | Specifies whether to flush the writer after every log record. | [optional] 
-**Asynchronous** | **bool** | Indicates whether the Syslog Based Error Log Publisher will publish records asynchronously. | 
+**Asynchronous** | Pointer to **bool** | Indicates whether the Syslog Based Error Log Publisher will publish records asynchronously. | [optional] 
 **QueueSize** | Pointer to **int32** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
 **DefaultSeverity** | Pointer to [**[]EnumlogPublisherDefaultSeverityProp**](EnumlogPublisherDefaultSeverityProp.md) |  | [optional] 
 **OverrideSeverity** | Pointer to **[]string** | Specifies the override severity levels for the logger based on the category of the messages. | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewAddSyslogBasedErrorLogPublisherRequest
 
-`func NewAddSyslogBasedErrorLogPublisherRequest(publisherName string, schemas []EnumsyslogBasedErrorLogPublisherSchemaUrn, enabled bool, serverHostName string, serverPort int32, syslogFacility int32, asynchronous bool, ) *AddSyslogBasedErrorLogPublisherRequest`
+`func NewAddSyslogBasedErrorLogPublisherRequest(publisherName string, schemas []EnumsyslogBasedErrorLogPublisherSchemaUrn, enabled bool, ) *AddSyslogBasedErrorLogPublisherRequest`
 
 NewAddSyslogBasedErrorLogPublisherRequest instantiates a new AddSyslogBasedErrorLogPublisherRequest object
 This constructor will assign default values to properties that have it defined,
@@ -116,6 +116,11 @@ and a boolean to check if the value has been set.
 
 SetServerHostName sets ServerHostName field to given value.
 
+### HasServerHostName
+
+`func (o *AddSyslogBasedErrorLogPublisherRequest) HasServerHostName() bool`
+
+HasServerHostName returns a boolean if a field has been set.
 
 ### GetServerPort
 
@@ -136,6 +141,11 @@ and a boolean to check if the value has been set.
 
 SetServerPort sets ServerPort field to given value.
 
+### HasServerPort
+
+`func (o *AddSyslogBasedErrorLogPublisherRequest) HasServerPort() bool`
+
+HasServerPort returns a boolean if a field has been set.
 
 ### GetSyslogFacility
 
@@ -156,6 +166,11 @@ and a boolean to check if the value has been set.
 
 SetSyslogFacility sets SyslogFacility field to given value.
 
+### HasSyslogFacility
+
+`func (o *AddSyslogBasedErrorLogPublisherRequest) HasSyslogFacility() bool`
+
+HasSyslogFacility returns a boolean if a field has been set.
 
 ### GetAutoFlush
 
@@ -201,6 +216,11 @@ and a boolean to check if the value has been set.
 
 SetAsynchronous sets Asynchronous field to given value.
 
+### HasAsynchronous
+
+`func (o *AddSyslogBasedErrorLogPublisherRequest) HasAsynchronous() bool`
+
+HasAsynchronous returns a boolean if a field has been set.
 
 ### GetQueueSize
 

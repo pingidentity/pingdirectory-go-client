@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnumdelayPluginSchemaUrn**](EnumdelayPluginSchemaUrn.md) |  | 
-**PluginType** | [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | 
+**PluginType** | Pointer to [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | [optional] 
 **Delay** | **string** | The delay to inject for operations matching the associated criteria. | 
 **ConnectionCriteria** | Pointer to **string** | Specifies a set of connection criteria used to indicate that only operations from clients matching this criteria should be subject to the configured delay. | [optional] 
 **RequestCriteria** | Pointer to **string** | Specifies a set of request criteria used to indicate that only operations for requests matching this criteria should be subject to the configured delay. | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewAddDelayPluginRequest
 
-`func NewAddDelayPluginRequest(pluginName string, schemas []EnumdelayPluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, delay string, enabled bool, ) *AddDelayPluginRequest`
+`func NewAddDelayPluginRequest(pluginName string, schemas []EnumdelayPluginSchemaUrn, delay string, enabled bool, ) *AddDelayPluginRequest`
 
 NewAddDelayPluginRequest instantiates a new AddDelayPluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -92,6 +92,11 @@ and a boolean to check if the value has been set.
 
 SetPluginType sets PluginType field to given value.
 
+### HasPluginType
+
+`func (o *AddDelayPluginRequest) HasPluginType() bool`
+
+HasPluginType returns a boolean if a field has been set.
 
 ### GetDelay
 

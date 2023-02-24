@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **HandlerName** | **string** | Name of the new SASL Mechanism Handler | 
 **Schemas** | [**[]EnumunboundidDeliveredOtpSaslMechanismHandlerSchemaUrn**](EnumunboundidDeliveredOtpSaslMechanismHandlerSchemaUrn.md) |  | 
 **IdentityMapper** | **string** | The identity mapper that should be used to identify the user(s) targeted in the authentication and/or authorization identities contained in the bind request. This will only be used for \&quot;u:\&quot;-style identities. | 
-**OtpValidityDuration** | **string** | The maximum length of time that a one-time password value should be considered valid. | 
+**OtpValidityDuration** | Pointer to **string** | The maximum length of time that a one-time password value should be considered valid. | [optional] 
 **Description** | Pointer to **string** | A description for this SASL Mechanism Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the SASL mechanism handler is enabled for use. | 
 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewAddUnboundidDeliveredOtpSaslMechanismHandlerRequest
 
-`func NewAddUnboundidDeliveredOtpSaslMechanismHandlerRequest(handlerName string, schemas []EnumunboundidDeliveredOtpSaslMechanismHandlerSchemaUrn, identityMapper string, otpValidityDuration string, enabled bool, ) *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest`
+`func NewAddUnboundidDeliveredOtpSaslMechanismHandlerRequest(handlerName string, schemas []EnumunboundidDeliveredOtpSaslMechanismHandlerSchemaUrn, identityMapper string, enabled bool, ) *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest`
 
 NewAddUnboundidDeliveredOtpSaslMechanismHandlerRequest instantiates a new AddUnboundidDeliveredOtpSaslMechanismHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -109,6 +109,11 @@ and a boolean to check if the value has been set.
 
 SetOtpValidityDuration sets OtpValidityDuration field to given value.
 
+### HasOtpValidityDuration
+
+`func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) HasOtpValidityDuration() bool`
+
+HasOtpValidityDuration returns a boolean if a field has been set.
 
 ### GetDescription
 

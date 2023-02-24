@@ -20,18 +20,18 @@ type AddScimSubattributeRequest struct {
 	SubattributeName string                          `json:"subattributeName"`
 	Schemas          []EnumscimSubattributeSchemaUrn `json:"schemas,omitempty"`
 	// A description for this SCIM Subattribute
-	Description *string                      `json:"description,omitempty"`
-	Type        EnumscimSubattributeTypeProp `json:"type"`
+	Description *string                       `json:"description,omitempty"`
+	Type        *EnumscimSubattributeTypeProp `json:"type,omitempty"`
 	// Specifies whether this sub-attribute is required.
-	Required bool `json:"required"`
+	Required *bool `json:"required,omitempty"`
 	// Specifies whether the sub-attribute values are case sensitive.
-	CaseExact bool `json:"caseExact"`
+	CaseExact *bool `json:"caseExact,omitempty"`
 	// Specifies whether this attribute may have multiple values.
-	MultiValued bool `json:"multiValued"`
+	MultiValued *bool `json:"multiValued,omitempty"`
 	// Specifies the suggested canonical type values for the sub-attribute.
-	CanonicalValue []string                           `json:"canonicalValue,omitempty"`
-	Mutability     EnumscimSubattributeMutabilityProp `json:"mutability"`
-	Returned       EnumscimSubattributeReturnedProp   `json:"returned"`
+	CanonicalValue []string                            `json:"canonicalValue,omitempty"`
+	Mutability     *EnumscimSubattributeMutabilityProp `json:"mutability,omitempty"`
+	Returned       *EnumscimSubattributeReturnedProp   `json:"returned,omitempty"`
 	// Specifies the SCIM resource types that may be referenced. This property is only applicable for sub-attributes that are of type 'reference'. Valid values are: A SCIM resource type (e.g., 'User' or 'Group'), 'external' - indicating the resource is an external resource (e.g., such as a photo), or 'uri' - indicating that the reference is to a service endpoint or an identifier (such as a schema urn).
 	ReferenceType []string `json:"referenceType,omitempty"`
 }
@@ -40,15 +40,9 @@ type AddScimSubattributeRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddScimSubattributeRequest(subattributeName string, type_ EnumscimSubattributeTypeProp, required bool, caseExact bool, multiValued bool, mutability EnumscimSubattributeMutabilityProp, returned EnumscimSubattributeReturnedProp) *AddScimSubattributeRequest {
+func NewAddScimSubattributeRequest(subattributeName string) *AddScimSubattributeRequest {
 	this := AddScimSubattributeRequest{}
 	this.SubattributeName = subattributeName
-	this.Type = type_
-	this.Required = required
-	this.CaseExact = caseExact
-	this.MultiValued = multiValued
-	this.Mutability = mutability
-	this.Returned = returned
 	return &this
 }
 
@@ -148,100 +142,132 @@ func (o *AddScimSubattributeRequest) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetType returns the Type field value
+// GetType returns the Type field value if set, zero value otherwise.
 func (o *AddScimSubattributeRequest) GetType() EnumscimSubattributeTypeProp {
-	if o == nil {
+	if o == nil || isNil(o.Type) {
 		var ret EnumscimSubattributeTypeProp
 		return ret
 	}
-
-	return o.Type
+	return *o.Type
 }
 
-// GetTypeOk returns a tuple with the Type field value
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddScimSubattributeRequest) GetTypeOk() (*EnumscimSubattributeTypeProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.Type) {
 		return nil, false
 	}
-	return &o.Type, true
+	return o.Type, true
 }
 
-// SetType sets field value
+// HasType returns a boolean if a field has been set.
+func (o *AddScimSubattributeRequest) HasType() bool {
+	if o != nil && !isNil(o.Type) {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given EnumscimSubattributeTypeProp and assigns it to the Type field.
 func (o *AddScimSubattributeRequest) SetType(v EnumscimSubattributeTypeProp) {
-	o.Type = v
+	o.Type = &v
 }
 
-// GetRequired returns the Required field value
+// GetRequired returns the Required field value if set, zero value otherwise.
 func (o *AddScimSubattributeRequest) GetRequired() bool {
-	if o == nil {
+	if o == nil || isNil(o.Required) {
 		var ret bool
 		return ret
 	}
-
-	return o.Required
+	return *o.Required
 }
 
-// GetRequiredOk returns a tuple with the Required field value
+// GetRequiredOk returns a tuple with the Required field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddScimSubattributeRequest) GetRequiredOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || isNil(o.Required) {
 		return nil, false
 	}
-	return &o.Required, true
+	return o.Required, true
 }
 
-// SetRequired sets field value
+// HasRequired returns a boolean if a field has been set.
+func (o *AddScimSubattributeRequest) HasRequired() bool {
+	if o != nil && !isNil(o.Required) {
+		return true
+	}
+
+	return false
+}
+
+// SetRequired gets a reference to the given bool and assigns it to the Required field.
 func (o *AddScimSubattributeRequest) SetRequired(v bool) {
-	o.Required = v
+	o.Required = &v
 }
 
-// GetCaseExact returns the CaseExact field value
+// GetCaseExact returns the CaseExact field value if set, zero value otherwise.
 func (o *AddScimSubattributeRequest) GetCaseExact() bool {
-	if o == nil {
+	if o == nil || isNil(o.CaseExact) {
 		var ret bool
 		return ret
 	}
-
-	return o.CaseExact
+	return *o.CaseExact
 }
 
-// GetCaseExactOk returns a tuple with the CaseExact field value
+// GetCaseExactOk returns a tuple with the CaseExact field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddScimSubattributeRequest) GetCaseExactOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || isNil(o.CaseExact) {
 		return nil, false
 	}
-	return &o.CaseExact, true
+	return o.CaseExact, true
 }
 
-// SetCaseExact sets field value
+// HasCaseExact returns a boolean if a field has been set.
+func (o *AddScimSubattributeRequest) HasCaseExact() bool {
+	if o != nil && !isNil(o.CaseExact) {
+		return true
+	}
+
+	return false
+}
+
+// SetCaseExact gets a reference to the given bool and assigns it to the CaseExact field.
 func (o *AddScimSubattributeRequest) SetCaseExact(v bool) {
-	o.CaseExact = v
+	o.CaseExact = &v
 }
 
-// GetMultiValued returns the MultiValued field value
+// GetMultiValued returns the MultiValued field value if set, zero value otherwise.
 func (o *AddScimSubattributeRequest) GetMultiValued() bool {
-	if o == nil {
+	if o == nil || isNil(o.MultiValued) {
 		var ret bool
 		return ret
 	}
-
-	return o.MultiValued
+	return *o.MultiValued
 }
 
-// GetMultiValuedOk returns a tuple with the MultiValued field value
+// GetMultiValuedOk returns a tuple with the MultiValued field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddScimSubattributeRequest) GetMultiValuedOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || isNil(o.MultiValued) {
 		return nil, false
 	}
-	return &o.MultiValued, true
+	return o.MultiValued, true
 }
 
-// SetMultiValued sets field value
+// HasMultiValued returns a boolean if a field has been set.
+func (o *AddScimSubattributeRequest) HasMultiValued() bool {
+	if o != nil && !isNil(o.MultiValued) {
+		return true
+	}
+
+	return false
+}
+
+// SetMultiValued gets a reference to the given bool and assigns it to the MultiValued field.
 func (o *AddScimSubattributeRequest) SetMultiValued(v bool) {
-	o.MultiValued = v
+	o.MultiValued = &v
 }
 
 // GetCanonicalValue returns the CanonicalValue field value if set, zero value otherwise.
@@ -276,52 +302,68 @@ func (o *AddScimSubattributeRequest) SetCanonicalValue(v []string) {
 	o.CanonicalValue = v
 }
 
-// GetMutability returns the Mutability field value
+// GetMutability returns the Mutability field value if set, zero value otherwise.
 func (o *AddScimSubattributeRequest) GetMutability() EnumscimSubattributeMutabilityProp {
-	if o == nil {
+	if o == nil || isNil(o.Mutability) {
 		var ret EnumscimSubattributeMutabilityProp
 		return ret
 	}
-
-	return o.Mutability
+	return *o.Mutability
 }
 
-// GetMutabilityOk returns a tuple with the Mutability field value
+// GetMutabilityOk returns a tuple with the Mutability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddScimSubattributeRequest) GetMutabilityOk() (*EnumscimSubattributeMutabilityProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.Mutability) {
 		return nil, false
 	}
-	return &o.Mutability, true
+	return o.Mutability, true
 }
 
-// SetMutability sets field value
+// HasMutability returns a boolean if a field has been set.
+func (o *AddScimSubattributeRequest) HasMutability() bool {
+	if o != nil && !isNil(o.Mutability) {
+		return true
+	}
+
+	return false
+}
+
+// SetMutability gets a reference to the given EnumscimSubattributeMutabilityProp and assigns it to the Mutability field.
 func (o *AddScimSubattributeRequest) SetMutability(v EnumscimSubattributeMutabilityProp) {
-	o.Mutability = v
+	o.Mutability = &v
 }
 
-// GetReturned returns the Returned field value
+// GetReturned returns the Returned field value if set, zero value otherwise.
 func (o *AddScimSubattributeRequest) GetReturned() EnumscimSubattributeReturnedProp {
-	if o == nil {
+	if o == nil || isNil(o.Returned) {
 		var ret EnumscimSubattributeReturnedProp
 		return ret
 	}
-
-	return o.Returned
+	return *o.Returned
 }
 
-// GetReturnedOk returns a tuple with the Returned field value
+// GetReturnedOk returns a tuple with the Returned field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddScimSubattributeRequest) GetReturnedOk() (*EnumscimSubattributeReturnedProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.Returned) {
 		return nil, false
 	}
-	return &o.Returned, true
+	return o.Returned, true
 }
 
-// SetReturned sets field value
+// HasReturned returns a boolean if a field has been set.
+func (o *AddScimSubattributeRequest) HasReturned() bool {
+	if o != nil && !isNil(o.Returned) {
+		return true
+	}
+
+	return false
+}
+
+// SetReturned gets a reference to the given EnumscimSubattributeReturnedProp and assigns it to the Returned field.
 func (o *AddScimSubattributeRequest) SetReturned(v EnumscimSubattributeReturnedProp) {
-	o.Returned = v
+	o.Returned = &v
 }
 
 // GetReferenceType returns the ReferenceType field value if set, zero value otherwise.
@@ -367,25 +409,25 @@ func (o AddScimSubattributeRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	if true {
+	if !isNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	if true {
+	if !isNil(o.Required) {
 		toSerialize["required"] = o.Required
 	}
-	if true {
+	if !isNil(o.CaseExact) {
 		toSerialize["caseExact"] = o.CaseExact
 	}
-	if true {
+	if !isNil(o.MultiValued) {
 		toSerialize["multiValued"] = o.MultiValued
 	}
 	if !isNil(o.CanonicalValue) {
 		toSerialize["canonicalValue"] = o.CanonicalValue
 	}
-	if true {
+	if !isNil(o.Mutability) {
 		toSerialize["mutability"] = o.Mutability
 	}
-	if true {
+	if !isNil(o.Returned) {
 		toSerialize["returned"] = o.Returned
 	}
 	if !isNil(o.ReferenceType) {

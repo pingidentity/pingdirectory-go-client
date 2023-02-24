@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **VaultAuthenticationMethod** | Pointer to **string** | The mechanism used to authenticate to the Vault server. | [optional] 
 **VaultSecretPath** | **string** | The path to the desired secret in the Vault service. This will be appended to the value of the base-url property for the associated Vault external server. | 
 **VaultSecretFieldName** | **string** | The name of the field in the Vault secret record that contains the passphrase to use to generate the encryption key. | 
-**VaultEncryptionMetadataFile** | **string** | The path to a file that will hold metadata about the encryption performed by this Vault Cipher Stream Provider. | 
+**VaultEncryptionMetadataFile** | Pointer to **string** | The path to a file that will hold metadata about the encryption performed by this Vault Cipher Stream Provider. | [optional] 
 **TrustStoreFile** | Pointer to **string** | The path to a file containing the information needed to trust the certificate presented by the Vault servers. | [optional] 
 **TrustStorePin** | Pointer to **string** | The passphrase needed to access the contents of the trust store. This is only required if a trust store file is required, and if that trust store requires a PIN to access its contents. | [optional] 
 **TrustStoreType** | Pointer to **string** | The store type for the specified trust store file. The value should likely be one of \&quot;JKS\&quot; or \&quot;PKCS12\&quot;. | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewAddVaultCipherStreamProviderRequest
 
-`func NewAddVaultCipherStreamProviderRequest(providerName string, schemas []EnumvaultCipherStreamProviderSchemaUrn, vaultSecretPath string, vaultSecretFieldName string, vaultEncryptionMetadataFile string, enabled bool, ) *AddVaultCipherStreamProviderRequest`
+`func NewAddVaultCipherStreamProviderRequest(providerName string, schemas []EnumvaultCipherStreamProviderSchemaUrn, vaultSecretPath string, vaultSecretFieldName string, enabled bool, ) *AddVaultCipherStreamProviderRequest`
 
 NewAddVaultCipherStreamProviderRequest instantiates a new AddVaultCipherStreamProviderRequest object
 This constructor will assign default values to properties that have it defined,
@@ -211,6 +211,11 @@ and a boolean to check if the value has been set.
 
 SetVaultEncryptionMetadataFile sets VaultEncryptionMetadataFile field to given value.
 
+### HasVaultEncryptionMetadataFile
+
+`func (o *AddVaultCipherStreamProviderRequest) HasVaultEncryptionMetadataFile() bool`
+
+HasVaultEncryptionMetadataFile returns a boolean if a field has been set.
 
 ### GetTrustStoreFile
 

@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **AlertOnSuccess** | Pointer to **bool** | Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task completes successfully. | [optional] 
 **AlertOnFailure** | Pointer to **bool** | Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully. | [optional] 
 **Reason** | Pointer to **string** | The reason that the server is being placed in lockdown mode. | [optional] 
-**BackupDirectory** | **string** | The directory in which backup files will be placed. When backing up a single backend, the backup files will be placed directly in this directory. When backing up multiple backends, the backup files for each backend will be placed in a subdirectory whose name is the corresponding backend ID. | 
+**BackupDirectory** | Pointer to **string** | The directory in which backup files will be placed. When backing up a single backend, the backup files will be placed directly in this directory. When backing up multiple backends, the backup files for each backend will be placed in a subdirectory whose name is the corresponding backend ID. | [optional] 
 **IncludedBackendID** | Pointer to **[]string** | The backend IDs of any backends that should be included in the backup. | [optional] 
 **ExcludedBackendID** | Pointer to **[]string** | The backend IDs of any backends that should be excluded from the backup. All backends that support backups and are not listed will be included. | [optional] 
 **Compress** | Pointer to **bool** | Indicates whether to compress the LDIF data as it is exported. | [optional] 
@@ -56,7 +56,7 @@ Name | Type | Description | Notes
 **Comment** | Pointer to **string** | An optional comment to include in a README file within the support data archive. | [optional] 
 **RetainPreviousSupportDataArchiveCount** | Pointer to **int32** | The minimum number of previous support data archives that should be preserved after a new archive is generated. | [optional] 
 **RetainPreviousSupportDataArchiveAge** | Pointer to **string** | The minimum age of previous support data archives that should be preserved after a new archive is generated. | [optional] 
-**LdifDirectory** | **string** | The directory in which LDIF export files will be placed. The directory must already exist. | 
+**LdifDirectory** | Pointer to **string** | The directory in which LDIF export files will be placed. The directory must already exist. | [optional] 
 **BackendID** | Pointer to **[]string** | The backend ID for a backend to be exported. | [optional] 
 **ExcludeBackendID** | Pointer to **[]string** | The backend ID for a backend to be excluded from the export. | [optional] 
 **RetainPreviousLDIFExportCount** | Pointer to **int32** | The minimum number of previous LDIF exports that should be preserved after a new export completes successfully. | [optional] 
@@ -82,7 +82,7 @@ Name | Type | Description | Notes
 
 ### NewAddRecurringTaskRequest
 
-`func NewAddRecurringTaskRequest(taskName string, schemas []EnumthirdPartyRecurringTaskSchemaUrn, profileDirectory string, backupDirectory string, taskJavaClass string, taskObjectClass []string, outputDirectory string, ldifDirectory string, commandPath string, targetDirectory string, filenamePattern string, timestampFormat EnumrecurringTaskTimestampFormatProp, extensionClass string, ) *AddRecurringTaskRequest`
+`func NewAddRecurringTaskRequest(taskName string, schemas []EnumthirdPartyRecurringTaskSchemaUrn, profileDirectory string, taskJavaClass string, taskObjectClass []string, outputDirectory string, commandPath string, targetDirectory string, filenamePattern string, timestampFormat EnumrecurringTaskTimestampFormatProp, extensionClass string, ) *AddRecurringTaskRequest`
 
 NewAddRecurringTaskRequest instantiates a new AddRecurringTaskRequest object
 This constructor will assign default values to properties that have it defined,
@@ -476,6 +476,11 @@ and a boolean to check if the value has been set.
 
 SetBackupDirectory sets BackupDirectory field to given value.
 
+### HasBackupDirectory
+
+`func (o *AddRecurringTaskRequest) HasBackupDirectory() bool`
+
+HasBackupDirectory returns a boolean if a field has been set.
 
 ### GetIncludedBackendID
 
@@ -1381,6 +1386,11 @@ and a boolean to check if the value has been set.
 
 SetLdifDirectory sets LdifDirectory field to given value.
 
+### HasLdifDirectory
+
+`func (o *AddRecurringTaskRequest) HasLdifDirectory() bool`
+
+HasLdifDirectory returns a boolean if a field has been set.
 
 ### GetBackendID
 

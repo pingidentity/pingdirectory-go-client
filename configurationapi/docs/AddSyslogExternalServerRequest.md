@@ -9,16 +9,16 @@ Name | Type | Description | Notes
 **ServerHostName** | **string** | The address of the syslog server. | 
 **ServerPort** | Pointer to **int32** | The port on which the syslog server accepts connections. | [optional] 
 **TransportMechanism** | [**EnumexternalServerTransportMechanismProp**](EnumexternalServerTransportMechanismProp.md) |  | 
-**ConnectTimeout** | **string** | Specifies the maximum length of time to wait for a connection to be established before giving up and considering the server unavailable. This will only be used when communicating with the syslog server over TCP (with or without TLS encryption). | 
-**MaxConnectionAge** | **string** | The maximum length of time that TCP connections should remain established. This will be ignored for UDP-based connections. A zero duration indicates that no maximum age will be imposed. | 
-**TrustManagerProvider** | **string** | A trust manager provider that will be used to determine whether to trust the certificate chain presented by the syslog server when communication is encrypted with TLS. This property will be ignored when not using TLS encryption. | 
+**ConnectTimeout** | Pointer to **string** | Specifies the maximum length of time to wait for a connection to be established before giving up and considering the server unavailable. This will only be used when communicating with the syslog server over TCP (with or without TLS encryption). | [optional] 
+**MaxConnectionAge** | Pointer to **string** | The maximum length of time that TCP connections should remain established. This will be ignored for UDP-based connections. A zero duration indicates that no maximum age will be imposed. | [optional] 
+**TrustManagerProvider** | Pointer to **string** | A trust manager provider that will be used to determine whether to trust the certificate chain presented by the syslog server when communication is encrypted with TLS. This property will be ignored when not using TLS encryption. | [optional] 
 **Description** | Pointer to **string** | A description for this External Server | [optional] 
 
 ## Methods
 
 ### NewAddSyslogExternalServerRequest
 
-`func NewAddSyslogExternalServerRequest(serverName string, schemas []EnumsyslogExternalServerSchemaUrn, serverHostName string, transportMechanism EnumexternalServerTransportMechanismProp, connectTimeout string, maxConnectionAge string, trustManagerProvider string, ) *AddSyslogExternalServerRequest`
+`func NewAddSyslogExternalServerRequest(serverName string, schemas []EnumsyslogExternalServerSchemaUrn, serverHostName string, transportMechanism EnumexternalServerTransportMechanismProp, ) *AddSyslogExternalServerRequest`
 
 NewAddSyslogExternalServerRequest instantiates a new AddSyslogExternalServerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -157,6 +157,11 @@ and a boolean to check if the value has been set.
 
 SetConnectTimeout sets ConnectTimeout field to given value.
 
+### HasConnectTimeout
+
+`func (o *AddSyslogExternalServerRequest) HasConnectTimeout() bool`
+
+HasConnectTimeout returns a boolean if a field has been set.
 
 ### GetMaxConnectionAge
 
@@ -177,6 +182,11 @@ and a boolean to check if the value has been set.
 
 SetMaxConnectionAge sets MaxConnectionAge field to given value.
 
+### HasMaxConnectionAge
+
+`func (o *AddSyslogExternalServerRequest) HasMaxConnectionAge() bool`
+
+HasMaxConnectionAge returns a boolean if a field has been set.
 
 ### GetTrustManagerProvider
 
@@ -197,6 +207,11 @@ and a boolean to check if the value has been set.
 
 SetTrustManagerProvider sets TrustManagerProvider field to given value.
 
+### HasTrustManagerProvider
+
+`func (o *AddSyslogExternalServerRequest) HasTrustManagerProvider() bool`
+
+HasTrustManagerProvider returns a boolean if a field has been set.
 
 ### GetDescription
 

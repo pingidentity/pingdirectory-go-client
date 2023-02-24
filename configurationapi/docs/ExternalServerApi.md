@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    addExternalServerRequest := openapiclient.add_external_server_request{AddActiveDirectoryExternalServerRequest: openapiclient.NewAddActiveDirectoryExternalServerRequest("ServerName_example", []openapiclient.EnumactiveDirectoryExternalServerSchemaUrn{openapiclient.Enumactive-directory-external-serverSchemaUrn("urn:pingidentity:schemas:configuration:2.0:external-server:active-directory")}, "ServerHostName_example", int32(123), openapiclient.Enumexternal-server-connectionSecurityProp("none"), openapiclient.Enumexternal-server-authenticationMethodProp("none"), openapiclient.Enumexternal-server-verifyCredentialsMethodProp("separate-connections"), "MaxConnectionAge_example", "ConnectTimeout_example", "MaxResponseSize_example")} // AddExternalServerRequest | Create a new External Server in the config
+    addExternalServerRequest := openapiclient.add_external_server_request{AddActiveDirectoryExternalServerRequest: openapiclient.NewAddActiveDirectoryExternalServerRequest("ServerName_example", []openapiclient.EnumactiveDirectoryExternalServerSchemaUrn{openapiclient.Enumactive-directory-external-serverSchemaUrn("urn:pingidentity:schemas:configuration:2.0:external-server:active-directory")}, "ServerHostName_example")} // AddExternalServerRequest | Create a new External Server in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

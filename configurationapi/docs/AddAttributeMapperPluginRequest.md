@@ -6,11 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnumattributeMapperPluginSchemaUrn**](EnumattributeMapperPluginSchemaUrn.md) |  | 
-**PluginType** | [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | 
+**PluginType** | Pointer to [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | [optional] 
 **SourceAttribute** | **string** | Specifies the source attribute type that may appear in client requests which should be remapped to the target attribute. Note that the source attribute type must be defined in the server schema and must not be equal to the target attribute type. | 
 **TargetAttribute** | **string** | Specifies the target attribute type to which the source attribute type should be mapped. Note that the target attribute type must be defined in the server schema and must not be equal to the source attribute type. | 
-**EnableControlMapping** | **bool** | Indicates whether mapping should be applied to attribute types that may be present in specific controls. If enabled, attribute mapping will only be applied for control types which are specifically supported by the attribute mapper plugin. | 
-**AlwaysMapResponses** | **bool** | Indicates whether the target attribute in response messages should always be remapped back to the source attribute. If this is \&quot;false\&quot;, then the mapping will be performed for a response message only if one or more elements of the associated request are mapped. Otherwise, the mapping will be performed for all responses regardless of whether the mapping was applied to the request. | 
+**EnableControlMapping** | Pointer to **bool** | Indicates whether mapping should be applied to attribute types that may be present in specific controls. If enabled, attribute mapping will only be applied for control types which are specifically supported by the attribute mapper plugin. | [optional] 
+**AlwaysMapResponses** | Pointer to **bool** | Indicates whether the target attribute in response messages should always be remapped back to the source attribute. If this is \&quot;false\&quot;, then the mapping will be performed for a response message only if one or more elements of the associated request are mapped. Otherwise, the mapping will be performed for all responses regardless of whether the mapping was applied to the request. | [optional] 
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
 **InvokeForInternalOperations** | Pointer to **bool** | Indicates whether the plug-in should be invoked for internal operations. | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewAddAttributeMapperPluginRequest
 
-`func NewAddAttributeMapperPluginRequest(pluginName string, schemas []EnumattributeMapperPluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, sourceAttribute string, targetAttribute string, enableControlMapping bool, alwaysMapResponses bool, enabled bool, ) *AddAttributeMapperPluginRequest`
+`func NewAddAttributeMapperPluginRequest(pluginName string, schemas []EnumattributeMapperPluginSchemaUrn, sourceAttribute string, targetAttribute string, enabled bool, ) *AddAttributeMapperPluginRequest`
 
 NewAddAttributeMapperPluginRequest instantiates a new AddAttributeMapperPluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -93,6 +93,11 @@ and a boolean to check if the value has been set.
 
 SetPluginType sets PluginType field to given value.
 
+### HasPluginType
+
+`func (o *AddAttributeMapperPluginRequest) HasPluginType() bool`
+
+HasPluginType returns a boolean if a field has been set.
 
 ### GetSourceAttribute
 
@@ -153,6 +158,11 @@ and a boolean to check if the value has been set.
 
 SetEnableControlMapping sets EnableControlMapping field to given value.
 
+### HasEnableControlMapping
+
+`func (o *AddAttributeMapperPluginRequest) HasEnableControlMapping() bool`
+
+HasEnableControlMapping returns a boolean if a field has been set.
 
 ### GetAlwaysMapResponses
 
@@ -173,6 +183,11 @@ and a boolean to check if the value has been set.
 
 SetAlwaysMapResponses sets AlwaysMapResponses field to given value.
 
+### HasAlwaysMapResponses
+
+`func (o *AddAttributeMapperPluginRequest) HasAlwaysMapResponses() bool`
+
+HasAlwaysMapResponses returns a boolean if a field has been set.
 
 ### GetDescription
 

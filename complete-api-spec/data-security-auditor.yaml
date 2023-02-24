@@ -186,6 +186,9 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/expired-password-data-security-auditor-shared'
+      required:
+      - reportFile
+      - enabled
     expired-password-data-security-auditor-shared:
       type: object
       properties:
@@ -223,8 +226,6 @@ components:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
       required:
       - schemas
-      - reportFile
-      - enabled
     Enumexpired-password-data-security-auditorSchemaUrn:
       type: string
       enum:
@@ -250,6 +251,9 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/multiple-password-data-security-auditor-shared'
+      required:
+      - reportFile
+      - enabled
     multiple-password-data-security-auditor-shared:
       type: object
       properties:
@@ -283,8 +287,6 @@ components:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
       required:
       - schemas
-      - reportFile
-      - enabled
     Enummultiple-password-data-security-auditorSchemaUrn:
       type: string
       enum:
@@ -310,6 +312,9 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/disabled-account-data-security-auditor-shared'
+      required:
+      - reportFile
+      - enabled
     disabled-account-data-security-auditor-shared:
       type: object
       properties:
@@ -343,8 +348,6 @@ components:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
       required:
       - schemas
-      - reportFile
-      - enabled
     Enumdisabled-account-data-security-auditorSchemaUrn:
       type: string
       enum:
@@ -370,6 +373,10 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/weakly-encoded-password-data-security-auditor-shared'
+      required:
+      - reportFile
+      - weakPasswordStorageScheme
+      - enabled
     weakly-encoded-password-data-security-auditor-shared:
       type: object
       properties:
@@ -413,9 +420,6 @@ components:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
       required:
       - schemas
-      - reportFile
-      - weakPasswordStorageScheme
-      - enabled
     Enumweakly-encoded-password-data-security-auditorSchemaUrn:
       type: string
       enum:
@@ -441,6 +445,9 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/privilege-data-security-auditor-shared'
+      required:
+      - reportFile
+      - enabled
     privilege-data-security-auditor-shared:
       type: object
       properties:
@@ -478,8 +485,6 @@ components:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
       required:
       - schemas
-      - reportFile
-      - enabled
     Enumprivilege-data-security-auditorSchemaUrn:
       type: string
       enum:
@@ -505,6 +510,9 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/locked-account-data-security-auditor-shared'
+      required:
+      - reportFile
+      - enabled
     locked-account-data-security-auditor-shared:
       type: object
       properties:
@@ -542,8 +550,6 @@ components:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
       required:
       - schemas
-      - reportFile
-      - enabled
     Enumlocked-account-data-security-auditorSchemaUrn:
       type: string
       enum:
@@ -569,6 +575,9 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/access-control-data-security-auditor-shared'
+      required:
+      - reportFile
+      - enabled
     access-control-data-security-auditor-shared:
       type: object
       properties:
@@ -602,8 +611,6 @@ components:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
       required:
       - schemas
-      - reportFile
-      - enabled
     Enumaccess-control-data-security-auditorSchemaUrn:
       type: string
       enum:

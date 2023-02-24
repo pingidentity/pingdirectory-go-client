@@ -18,12 +18,12 @@ Name | Type | Description | Notes
 **SubjectClaimName** | Pointer to **string** | The name of the token claim that contains the subject, i.e. the logged-in user in an access token. This property goes hand-in-hand with the identity-mapper property and tells the Identity Mapper which field to use to look up the user entry on the server. | [optional] 
 **Description** | Pointer to **string** | A description for this Access Token Validator | [optional] 
 **Enabled** | **bool** | Indicates whether this Access Token Validator is enabled for use in Directory Server. | 
-**AllowedSigningAlgorithm** | [**[]EnumaccessTokenValidatorAllowedSigningAlgorithmProp**](EnumaccessTokenValidatorAllowedSigningAlgorithmProp.md) |  | 
+**AllowedSigningAlgorithm** | Pointer to [**[]EnumaccessTokenValidatorAllowedSigningAlgorithmProp**](EnumaccessTokenValidatorAllowedSigningAlgorithmProp.md) |  | [optional] 
 **SigningCertificate** | Pointer to **[]string** | Specifies the locally stored certificates that may be used to validate the signature of an incoming JWT access token. If this property is specified, the JWT Access Token Validator will not use a JWKS endpoint to retrieve public keys. | [optional] 
 **JwksEndpointPath** | Pointer to **string** | The relative path to JWKS endpoint from which to retrieve one or more public signing keys that may be used to validate the signature of an incoming JWT access token. This path is relative to the base_url property defined for the validator&#39;s external authorization server. If jwks-endpoint-path is specified, the JWT Access Token Validator will not consult locally stored certificates for validating token signatures. | [optional] 
 **EncryptionKeyPair** | Pointer to **string** | The public-private key pair that is used to encrypt the JWT payload. If specified, the JWT Access Token Validator will use the private key to decrypt the JWT payload, and the public key must be exported to the Authorization Server that is issuing access tokens. | [optional] 
-**AllowedKeyEncryptionAlgorithm** | [**[]EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp**](EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp.md) |  | 
-**AllowedContentEncryptionAlgorithm** | [**[]EnumaccessTokenValidatorAllowedContentEncryptionAlgorithmProp**](EnumaccessTokenValidatorAllowedContentEncryptionAlgorithmProp.md) |  | 
+**AllowedKeyEncryptionAlgorithm** | Pointer to [**[]EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp**](EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp.md) |  | [optional] 
+**AllowedContentEncryptionAlgorithm** | Pointer to [**[]EnumaccessTokenValidatorAllowedContentEncryptionAlgorithmProp**](EnumaccessTokenValidatorAllowedContentEncryptionAlgorithmProp.md) |  | [optional] 
 **ClockSkewGracePeriod** | Pointer to **string** | Specifies the amount of clock skew that is tolerated by the JWT Access Token Validator when evaluating whether a token is within its valid time interval. The duration specified by this parameter will be subtracted from the token&#39;s not-before (nbf) time and added to the token&#39;s expiration (exp) time, if present, to allow for any time difference between the local server&#39;s clock and the token issuer&#39;s clock. | [optional] 
 **ClientIDClaimName** | Pointer to **string** | The name of the token claim that contains the OAuth2 client ID. | [optional] 
 **ScopeClaimName** | Pointer to **string** | The name of the token claim that contains the scopes granted by the token. | [optional] 
@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 
 ### NewAddAccessTokenValidatorRequest
 
-`func NewAddAccessTokenValidatorRequest(validatorName string, schemas []EnumthirdPartyAccessTokenValidatorSchemaUrn, clientID string, evaluationOrderIndex int32, enabled bool, allowedSigningAlgorithm []EnumaccessTokenValidatorAllowedSigningAlgorithmProp, allowedKeyEncryptionAlgorithm []EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp, allowedContentEncryptionAlgorithm []EnumaccessTokenValidatorAllowedContentEncryptionAlgorithmProp, extensionClass string, ) *AddAccessTokenValidatorRequest`
+`func NewAddAccessTokenValidatorRequest(validatorName string, schemas []EnumthirdPartyAccessTokenValidatorSchemaUrn, clientID string, evaluationOrderIndex int32, enabled bool, extensionClass string, ) *AddAccessTokenValidatorRequest`
 
 NewAddAccessTokenValidatorRequest instantiates a new AddAccessTokenValidatorRequest object
 This constructor will assign default values to properties that have it defined,
@@ -393,6 +393,11 @@ and a boolean to check if the value has been set.
 
 SetAllowedSigningAlgorithm sets AllowedSigningAlgorithm field to given value.
 
+### HasAllowedSigningAlgorithm
+
+`func (o *AddAccessTokenValidatorRequest) HasAllowedSigningAlgorithm() bool`
+
+HasAllowedSigningAlgorithm returns a boolean if a field has been set.
 
 ### GetSigningCertificate
 
@@ -488,6 +493,11 @@ and a boolean to check if the value has been set.
 
 SetAllowedKeyEncryptionAlgorithm sets AllowedKeyEncryptionAlgorithm field to given value.
 
+### HasAllowedKeyEncryptionAlgorithm
+
+`func (o *AddAccessTokenValidatorRequest) HasAllowedKeyEncryptionAlgorithm() bool`
+
+HasAllowedKeyEncryptionAlgorithm returns a boolean if a field has been set.
 
 ### GetAllowedContentEncryptionAlgorithm
 
@@ -508,6 +518,11 @@ and a boolean to check if the value has been set.
 
 SetAllowedContentEncryptionAlgorithm sets AllowedContentEncryptionAlgorithm field to given value.
 
+### HasAllowedContentEncryptionAlgorithm
+
+`func (o *AddAccessTokenValidatorRequest) HasAllowedContentEncryptionAlgorithm() bool`
+
+HasAllowedContentEncryptionAlgorithm returns a boolean if a field has been set.
 
 ### GetClockSkewGracePeriod
 

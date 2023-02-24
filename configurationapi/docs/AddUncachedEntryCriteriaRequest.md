@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Enabled** | **bool** | Indicates whether this Uncached Entry Criteria is enabled for use in the server. | 
 **AccessTimeThreshold** | **string** | Specifies the maximum length of time that has passed since an entry was last accessed that it should still be included in the id2entry database. Entries that have not been accessed in more than this length of time may be written into the uncached-id2entry database. | 
 **Filter** | **string** | Specifies the search filter that should be used to differentiate entries into cached and uncached sets. | 
-**FilterIdentifiesUncachedEntries** | **bool** | Indicates whether the associated filter identifies those entries which should be stored in the uncached-id2entry database (if true) or entries which should be stored in the id2entry database (if false). | 
+**FilterIdentifiesUncachedEntries** | Pointer to **bool** | Indicates whether the associated filter identifies those entries which should be stored in the uncached-id2entry database (if true) or entries which should be stored in the id2entry database (if false). | [optional] 
 **ScriptClass** | **string** | The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Uncached Entry Criteria. | 
 **ScriptArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Scripted Uncached Entry Criteria. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Uncached Entry Criteria. | 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewAddUncachedEntryCriteriaRequest
 
-`func NewAddUncachedEntryCriteriaRequest(criteriaName string, schemas []EnumthirdPartyUncachedEntryCriteriaSchemaUrn, enabled bool, accessTimeThreshold string, filter string, filterIdentifiesUncachedEntries bool, scriptClass string, extensionClass string, ) *AddUncachedEntryCriteriaRequest`
+`func NewAddUncachedEntryCriteriaRequest(criteriaName string, schemas []EnumthirdPartyUncachedEntryCriteriaSchemaUrn, enabled bool, accessTimeThreshold string, filter string, scriptClass string, extensionClass string, ) *AddUncachedEntryCriteriaRequest`
 
 NewAddUncachedEntryCriteriaRequest instantiates a new AddUncachedEntryCriteriaRequest object
 This constructor will assign default values to properties that have it defined,
@@ -179,6 +179,11 @@ and a boolean to check if the value has been set.
 
 SetFilterIdentifiesUncachedEntries sets FilterIdentifiesUncachedEntries field to given value.
 
+### HasFilterIdentifiesUncachedEntries
+
+`func (o *AddUncachedEntryCriteriaRequest) HasFilterIdentifiesUncachedEntries() bool`
+
+HasFilterIdentifiesUncachedEntries returns a boolean if a field has been set.
 
 ### GetScriptClass
 

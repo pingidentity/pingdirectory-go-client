@@ -158,6 +158,10 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/replication-assurance-policy-shared'
+      required:
+      - enabled
+      - localLevel
+      - remoteLevel
     replication-assurance-policy-shared:
       type: object
       properties:
@@ -196,10 +200,7 @@ components:
           description: >-
               Specifies a request criteria used to indicate which operations from clients matching this criteria use this policy. If both a connection criteria and a request criteria are specified for a policy, then both must match an operation for the policy to be assigned.
       required:
-      - enabled
       - evaluationOrderIndex
-      - localLevel
-      - remoteLevel
       - timeout
     Enumreplication-assurance-policySchemaUrn:
       type: string

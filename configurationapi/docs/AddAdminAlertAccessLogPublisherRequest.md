@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **SearchReferenceCriteria** | Pointer to **string** | Specifies a set of search reference criteria that must match the associated search result reference in order for that it to be logged by this Admin Alert Access Log Publisher. | [optional] 
 **CorrelateRequestsAndResults** | Pointer to **bool** | Indicates whether to automatically log result messages for any operation in which the corresponding request was logged. In such cases, the result, entry, and reference criteria will be ignored, although the log-responses, log-search-entries, and log-search-references properties will be honored. | [optional] 
 **AutoFlush** | Pointer to **bool** | Specifies whether to flush the writer after every log record. | [optional] 
-**Asynchronous** | **bool** | Indicates whether the Admin Alert Access Log Publisher will publish records asynchronously. | 
+**Asynchronous** | Pointer to **bool** | Indicates whether the Admin Alert Access Log Publisher will publish records asynchronously. | [optional] 
 **QueueSize** | Pointer to **int32** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
 **IncludeRequestDetailsInResultMessages** | Pointer to **bool** | Indicates whether log messages for operation results should include information about both the request and the result. | [optional] 
 **LogAssuranceCompleted** | Pointer to **bool** | Indicates whether to log information about the result of replication assurance processing. | [optional] 
@@ -56,7 +56,7 @@ Name | Type | Description | Notes
 
 ### NewAddAdminAlertAccessLogPublisherRequest
 
-`func NewAddAdminAlertAccessLogPublisherRequest(publisherName string, schemas []EnumadminAlertAccessLogPublisherSchemaUrn, asynchronous bool, enabled bool, ) *AddAdminAlertAccessLogPublisherRequest`
+`func NewAddAdminAlertAccessLogPublisherRequest(publisherName string, schemas []EnumadminAlertAccessLogPublisherSchemaUrn, enabled bool, ) *AddAdminAlertAccessLogPublisherRequest`
 
 NewAddAdminAlertAccessLogPublisherRequest instantiates a new AddAdminAlertAccessLogPublisherRequest object
 This constructor will assign default values to properties that have it defined,
@@ -405,6 +405,11 @@ and a boolean to check if the value has been set.
 
 SetAsynchronous sets Asynchronous field to given value.
 
+### HasAsynchronous
+
+`func (o *AddAdminAlertAccessLogPublisherRequest) HasAsynchronous() bool`
+
+HasAsynchronous returns a boolean if a field has been set.
 
 ### GetQueueSize
 

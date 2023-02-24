@@ -227,6 +227,15 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/root-dn-user-shared'
+      required:
+      - inheritDefaultRootPrivileges
+      - searchResultEntryLimit
+      - timeLimitSeconds
+      - lookThroughEntryLimit
+      - idleTimeLimitSeconds
+      - passwordPolicy
+      - requireSecureAuthentication
+      - requireSecureConnections
     root-dn-user-shared:
       type: object
       properties:
@@ -401,15 +410,6 @@ components:
             type: string
           description: >-
               This restricts the set of accounts that this User can proxy as to entries that are matched by the specified LDAP URL.
-      required:
-      - inheritDefaultRootPrivileges
-      - searchResultEntryLimit
-      - timeLimitSeconds
-      - lookThroughEntryLimit
-      - idleTimeLimitSeconds
-      - passwordPolicy
-      - requireSecureAuthentication
-      - requireSecureConnections
     Enumroot-dn-userSchemaUrn:
       type: string
       enum:

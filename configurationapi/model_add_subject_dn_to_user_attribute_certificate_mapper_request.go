@@ -20,7 +20,7 @@ type AddSubjectDnToUserAttributeCertificateMapperRequest struct {
 	MapperName string                                                   `json:"mapperName"`
 	Schemas    []EnumsubjectDnToUserAttributeCertificateMapperSchemaUrn `json:"schemas"`
 	// Specifies the name or OID of the attribute whose value should exactly match the certificate subject DN.
-	SubjectAttribute string `json:"subjectAttribute"`
+	SubjectAttribute *string `json:"subjectAttribute,omitempty"`
 	// Specifies the base DNs that should be used when performing searches to map the client certificate to a user entry.
 	UserBaseDN []string `json:"userBaseDN,omitempty"`
 	// A description for this Certificate Mapper
@@ -33,11 +33,10 @@ type AddSubjectDnToUserAttributeCertificateMapperRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddSubjectDnToUserAttributeCertificateMapperRequest(mapperName string, schemas []EnumsubjectDnToUserAttributeCertificateMapperSchemaUrn, subjectAttribute string, enabled bool) *AddSubjectDnToUserAttributeCertificateMapperRequest {
+func NewAddSubjectDnToUserAttributeCertificateMapperRequest(mapperName string, schemas []EnumsubjectDnToUserAttributeCertificateMapperSchemaUrn, enabled bool) *AddSubjectDnToUserAttributeCertificateMapperRequest {
 	this := AddSubjectDnToUserAttributeCertificateMapperRequest{}
 	this.MapperName = mapperName
 	this.Schemas = schemas
-	this.SubjectAttribute = subjectAttribute
 	this.Enabled = enabled
 	return &this
 }
@@ -98,28 +97,36 @@ func (o *AddSubjectDnToUserAttributeCertificateMapperRequest) SetSchemas(v []Enu
 	o.Schemas = v
 }
 
-// GetSubjectAttribute returns the SubjectAttribute field value
+// GetSubjectAttribute returns the SubjectAttribute field value if set, zero value otherwise.
 func (o *AddSubjectDnToUserAttributeCertificateMapperRequest) GetSubjectAttribute() string {
-	if o == nil {
+	if o == nil || isNil(o.SubjectAttribute) {
 		var ret string
 		return ret
 	}
-
-	return o.SubjectAttribute
+	return *o.SubjectAttribute
 }
 
-// GetSubjectAttributeOk returns a tuple with the SubjectAttribute field value
+// GetSubjectAttributeOk returns a tuple with the SubjectAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSubjectDnToUserAttributeCertificateMapperRequest) GetSubjectAttributeOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.SubjectAttribute) {
 		return nil, false
 	}
-	return &o.SubjectAttribute, true
+	return o.SubjectAttribute, true
 }
 
-// SetSubjectAttribute sets field value
+// HasSubjectAttribute returns a boolean if a field has been set.
+func (o *AddSubjectDnToUserAttributeCertificateMapperRequest) HasSubjectAttribute() bool {
+	if o != nil && !isNil(o.SubjectAttribute) {
+		return true
+	}
+
+	return false
+}
+
+// SetSubjectAttribute gets a reference to the given string and assigns it to the SubjectAttribute field.
 func (o *AddSubjectDnToUserAttributeCertificateMapperRequest) SetSubjectAttribute(v string) {
-	o.SubjectAttribute = v
+	o.SubjectAttribute = &v
 }
 
 // GetUserBaseDN returns the UserBaseDN field value if set, zero value otherwise.
@@ -218,7 +225,7 @@ func (o AddSubjectDnToUserAttributeCertificateMapperRequest) MarshalJSON() ([]by
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if true {
+	if !isNil(o.SubjectAttribute) {
 		toSerialize["subjectAttribute"] = o.SubjectAttribute
 	}
 	if !isNil(o.UserBaseDN) {

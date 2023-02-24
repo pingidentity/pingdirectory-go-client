@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    addTopologyAdminUserRequest := *openapiclient.NewAddTopologyAdminUserRequest("UserName_example", false, int32(123), int32(123), int32(123), int32(123), "PasswordPolicy_example", false, false) // AddTopologyAdminUserRequest | Create a new Topology Admin User in the config
+    addTopologyAdminUserRequest := *openapiclient.NewAddTopologyAdminUserRequest("UserName_example") // AddTopologyAdminUserRequest | Create a new Topology Admin User in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

@@ -31,7 +31,7 @@ import (
 
 func main() {
     httpServletExtensionName := "httpServletExtensionName_example" // string | Name of the HTTP Servlet Extension
-    addVelocityTemplateLoaderRequest := *openapiclient.NewAddVelocityTemplateLoaderRequest("LoaderName_example", int32(123), "MimeTypeMatcher_example") // AddVelocityTemplateLoaderRequest | Create a new Velocity Template Loader in the config
+    addVelocityTemplateLoaderRequest := *openapiclient.NewAddVelocityTemplateLoaderRequest("LoaderName_example", "MimeTypeMatcher_example") // AddVelocityTemplateLoaderRequest | Create a new Velocity Template Loader in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    addLogPublisherRequest := openapiclient.add_log_publisher_request{AddAdminAlertAccessLogPublisherRequest: openapiclient.NewAddAdminAlertAccessLogPublisherRequest("PublisherName_example", []openapiclient.EnumadminAlertAccessLogPublisherSchemaUrn{openapiclient.Enumadmin-alert-access-log-publisherSchemaUrn("urn:pingidentity:schemas:configuration:2.0:log-publisher:admin-alert-access")}, false, false)} // AddLogPublisherRequest | Create a new Log Publisher in the config
+    addLogPublisherRequest := openapiclient.add_log_publisher_request{AddAdminAlertAccessLogPublisherRequest: openapiclient.NewAddAdminAlertAccessLogPublisherRequest("PublisherName_example", []openapiclient.EnumadminAlertAccessLogPublisherSchemaUrn{openapiclient.Enumadmin-alert-access-log-publisherSchemaUrn("urn:pingidentity:schemas:configuration:2.0:log-publisher:admin-alert-access")}, false)} // AddLogPublisherRequest | Create a new Log Publisher in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

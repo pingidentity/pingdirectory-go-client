@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AuditorName** | **string** | Name of the new Data Security Auditor | 
 **Schemas** | [**[]EnumweaklyEncodedPasswordDataSecurityAuditorSchemaUrn**](EnumweaklyEncodedPasswordDataSecurityAuditorSchemaUrn.md) |  | 
-**ReportFile** | **string** | Specifies the name of the detailed report file. | 
-**WeakPasswordStorageScheme** | **[]string** | The password storage schemes that are considered weak. Users with any of the specified password storage schemes will be included in the report. | 
+**ReportFile** | Pointer to **string** | Specifies the name of the detailed report file. | [optional] 
+**WeakPasswordStorageScheme** | Pointer to **[]string** | The password storage schemes that are considered weak. Users with any of the specified password storage schemes will be included in the report. | [optional] 
 **WeakCryptEncoding** | Pointer to [**[]EnumdataSecurityAuditorWeakCryptEncodingProp**](EnumdataSecurityAuditorWeakCryptEncodingProp.md) |  | [optional] 
-**Enabled** | **bool** | Indicates whether the Data Security Auditor is enabled for use. | 
+**Enabled** | Pointer to **bool** | Indicates whether the Data Security Auditor is enabled for use. | [optional] 
 **IncludeAttribute** | Pointer to **[]string** | Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included. | [optional] 
 **AuditBackend** | Pointer to **[]string** | Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler). | [optional] 
 **AuditSeverity** | Pointer to [**EnumdataSecurityAuditorAuditSeverityProp**](EnumdataSecurityAuditorAuditSeverityProp.md) |  | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewAddWeaklyEncodedPasswordDataSecurityAuditorRequest
 
-`func NewAddWeaklyEncodedPasswordDataSecurityAuditorRequest(auditorName string, schemas []EnumweaklyEncodedPasswordDataSecurityAuditorSchemaUrn, reportFile string, weakPasswordStorageScheme []string, enabled bool, ) *AddWeaklyEncodedPasswordDataSecurityAuditorRequest`
+`func NewAddWeaklyEncodedPasswordDataSecurityAuditorRequest(auditorName string, schemas []EnumweaklyEncodedPasswordDataSecurityAuditorSchemaUrn, ) *AddWeaklyEncodedPasswordDataSecurityAuditorRequest`
 
 NewAddWeaklyEncodedPasswordDataSecurityAuditorRequest instantiates a new AddWeaklyEncodedPasswordDataSecurityAuditorRequest object
 This constructor will assign default values to properties that have it defined,
@@ -92,6 +92,11 @@ and a boolean to check if the value has been set.
 
 SetReportFile sets ReportFile field to given value.
 
+### HasReportFile
+
+`func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) HasReportFile() bool`
+
+HasReportFile returns a boolean if a field has been set.
 
 ### GetWeakPasswordStorageScheme
 
@@ -112,6 +117,11 @@ and a boolean to check if the value has been set.
 
 SetWeakPasswordStorageScheme sets WeakPasswordStorageScheme field to given value.
 
+### HasWeakPasswordStorageScheme
+
+`func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) HasWeakPasswordStorageScheme() bool`
+
+HasWeakPasswordStorageScheme returns a boolean if a field has been set.
 
 ### GetWeakCryptEncoding
 
@@ -157,6 +167,11 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
+### HasEnabled
+
+`func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) HasEnabled() bool`
+
+HasEnabled returns a boolean if a field has been set.
 
 ### GetIncludeAttribute
 

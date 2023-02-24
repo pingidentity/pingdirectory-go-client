@@ -31,7 +31,7 @@ import (
 
 func main() {
     scimSchemaName := "scimSchemaName_example" // string | Name of the SCIM Schema
-    addScimAttributeRequest := *openapiclient.NewAddScimAttributeRequest("AttributeName_example", "Name_example", openapiclient.Enumscim-attribute-typeProp("string"), false, false, false, openapiclient.Enumscim-attribute-mutabilityProp("read-only"), openapiclient.Enumscim-attribute-returnedProp("by-default")) // AddScimAttributeRequest | Create a new SCIM Attribute in the config
+    addScimAttributeRequest := *openapiclient.NewAddScimAttributeRequest("AttributeName_example", "Name_example") // AddScimAttributeRequest | Create a new SCIM Attribute in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

@@ -32,7 +32,7 @@ type AddPingFederateAccessTokenValidatorRequest struct {
 	// How often the Access Token Validator should refresh its stored value of the PingFederate server's token introspection endpoint.
 	EndpointCacheRefresh *string `json:"endpointCacheRefresh,omitempty"`
 	// When multiple Ping Federate Access Token Validators are defined for a single Directory Server, this property determines the evaluation order for determining the correct validator class for an access token received by the Directory Server. Values of this property must be unique among all Ping Federate Access Token Validators defined within Directory Server but not necessarily contiguous. Ping Federate Access Token Validators with a smaller value will be evaluated first to determine if they are able to validate the access token.
-	EvaluationOrderIndex int32 `json:"evaluationOrderIndex"`
+	EvaluationOrderIndex *int32 `json:"evaluationOrderIndex,omitempty"`
 	// Specifies the external server that will be used to aid in validating access tokens. In most cases this will be the Authorization Server that minted the token.
 	AuthorizationServer *string `json:"authorizationServer,omitempty"`
 	// Specifies the name of the Identity Mapper that should be used for associating user entries with Bearer token subject names. The claim name from which to obtain the subject (i.e. the currently logged-in user) may be configured using the subject-claim-name property.
@@ -49,12 +49,11 @@ type AddPingFederateAccessTokenValidatorRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddPingFederateAccessTokenValidatorRequest(validatorName string, schemas []EnumpingFederateAccessTokenValidatorSchemaUrn, clientID string, evaluationOrderIndex int32, enabled bool) *AddPingFederateAccessTokenValidatorRequest {
+func NewAddPingFederateAccessTokenValidatorRequest(validatorName string, schemas []EnumpingFederateAccessTokenValidatorSchemaUrn, clientID string, enabled bool) *AddPingFederateAccessTokenValidatorRequest {
 	this := AddPingFederateAccessTokenValidatorRequest{}
 	this.ValidatorName = validatorName
 	this.Schemas = schemas
 	this.ClientID = clientID
-	this.EvaluationOrderIndex = evaluationOrderIndex
 	this.Enabled = enabled
 	return &this
 }
@@ -299,28 +298,36 @@ func (o *AddPingFederateAccessTokenValidatorRequest) SetEndpointCacheRefresh(v s
 	o.EndpointCacheRefresh = &v
 }
 
-// GetEvaluationOrderIndex returns the EvaluationOrderIndex field value
+// GetEvaluationOrderIndex returns the EvaluationOrderIndex field value if set, zero value otherwise.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetEvaluationOrderIndex() int32 {
-	if o == nil {
+	if o == nil || isNil(o.EvaluationOrderIndex) {
 		var ret int32
 		return ret
 	}
-
-	return o.EvaluationOrderIndex
+	return *o.EvaluationOrderIndex
 }
 
-// GetEvaluationOrderIndexOk returns a tuple with the EvaluationOrderIndex field value
+// GetEvaluationOrderIndexOk returns a tuple with the EvaluationOrderIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetEvaluationOrderIndexOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || isNil(o.EvaluationOrderIndex) {
 		return nil, false
 	}
-	return &o.EvaluationOrderIndex, true
+	return o.EvaluationOrderIndex, true
 }
 
-// SetEvaluationOrderIndex sets field value
+// HasEvaluationOrderIndex returns a boolean if a field has been set.
+func (o *AddPingFederateAccessTokenValidatorRequest) HasEvaluationOrderIndex() bool {
+	if o != nil && !isNil(o.EvaluationOrderIndex) {
+		return true
+	}
+
+	return false
+}
+
+// SetEvaluationOrderIndex gets a reference to the given int32 and assigns it to the EvaluationOrderIndex field.
 func (o *AddPingFederateAccessTokenValidatorRequest) SetEvaluationOrderIndex(v int32) {
-	o.EvaluationOrderIndex = v
+	o.EvaluationOrderIndex = &v
 }
 
 // GetAuthorizationServer returns the AuthorizationServer field value if set, zero value otherwise.
@@ -501,7 +508,7 @@ func (o AddPingFederateAccessTokenValidatorRequest) MarshalJSON() ([]byte, error
 	if !isNil(o.EndpointCacheRefresh) {
 		toSerialize["endpointCacheRefresh"] = o.EndpointCacheRefresh
 	}
-	if true {
+	if !isNil(o.EvaluationOrderIndex) {
 		toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
 	}
 	if !isNil(o.AuthorizationServer) {

@@ -336,6 +336,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/ping-one-id-token-validator-shared'
+      required:
+      - OpenIDConnectProvider
     ping-one-id-token-validator-shared:
       type: object
       properties:
@@ -388,7 +390,6 @@ components:
       required:
       - schemas
       - issuerURL
-      - OpenIDConnectProvider
       - enabled
       - identityMapper
       - evaluationOrderIndex

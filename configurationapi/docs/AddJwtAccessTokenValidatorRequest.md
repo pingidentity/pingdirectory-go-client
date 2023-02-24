@@ -6,16 +6,16 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ValidatorName** | **string** | Name of the new Access Token Validator | 
 **Schemas** | [**[]EnumjwtAccessTokenValidatorSchemaUrn**](EnumjwtAccessTokenValidatorSchemaUrn.md) |  | 
-**AllowedSigningAlgorithm** | [**[]EnumaccessTokenValidatorAllowedSigningAlgorithmProp**](EnumaccessTokenValidatorAllowedSigningAlgorithmProp.md) |  | 
+**AllowedSigningAlgorithm** | Pointer to [**[]EnumaccessTokenValidatorAllowedSigningAlgorithmProp**](EnumaccessTokenValidatorAllowedSigningAlgorithmProp.md) |  | [optional] 
 **SigningCertificate** | Pointer to **[]string** | Specifies the locally stored certificates that may be used to validate the signature of an incoming JWT access token. If this property is specified, the JWT Access Token Validator will not use a JWKS endpoint to retrieve public keys. | [optional] 
 **JwksEndpointPath** | Pointer to **string** | The relative path to JWKS endpoint from which to retrieve one or more public signing keys that may be used to validate the signature of an incoming JWT access token. This path is relative to the base_url property defined for the validator&#39;s external authorization server. If jwks-endpoint-path is specified, the JWT Access Token Validator will not consult locally stored certificates for validating token signatures. | [optional] 
 **EncryptionKeyPair** | Pointer to **string** | The public-private key pair that is used to encrypt the JWT payload. If specified, the JWT Access Token Validator will use the private key to decrypt the JWT payload, and the public key must be exported to the Authorization Server that is issuing access tokens. | [optional] 
-**AllowedKeyEncryptionAlgorithm** | [**[]EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp**](EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp.md) |  | 
-**AllowedContentEncryptionAlgorithm** | [**[]EnumaccessTokenValidatorAllowedContentEncryptionAlgorithmProp**](EnumaccessTokenValidatorAllowedContentEncryptionAlgorithmProp.md) |  | 
+**AllowedKeyEncryptionAlgorithm** | Pointer to [**[]EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp**](EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp.md) |  | [optional] 
+**AllowedContentEncryptionAlgorithm** | Pointer to [**[]EnumaccessTokenValidatorAllowedContentEncryptionAlgorithmProp**](EnumaccessTokenValidatorAllowedContentEncryptionAlgorithmProp.md) |  | [optional] 
 **ClockSkewGracePeriod** | Pointer to **string** | Specifies the amount of clock skew that is tolerated by the JWT Access Token Validator when evaluating whether a token is within its valid time interval. The duration specified by this parameter will be subtracted from the token&#39;s not-before (nbf) time and added to the token&#39;s expiration (exp) time, if present, to allow for any time difference between the local server&#39;s clock and the token issuer&#39;s clock. | [optional] 
 **ClientIDClaimName** | Pointer to **string** | The name of the token claim that contains the OAuth2 client Id. | [optional] 
 **ScopeClaimName** | Pointer to **string** | The name of the token claim that contains the scopes granted by the token. | [optional] 
-**EvaluationOrderIndex** | **int32** | When multiple JWT Access Token Validators are defined for a single Directory Server, this property determines the evaluation order for determining the correct validator class for an access token received by the Directory Server. Values of this property must be unique among all JWT Access Token Validators defined within Directory Server but not necessarily contiguous. JWT Access Token Validators with a smaller value will be evaluated first to determine if they are able to validate the access token. | 
+**EvaluationOrderIndex** | Pointer to **int32** | When multiple JWT Access Token Validators are defined for a single Directory Server, this property determines the evaluation order for determining the correct validator class for an access token received by the Directory Server. Values of this property must be unique among all JWT Access Token Validators defined within Directory Server but not necessarily contiguous. JWT Access Token Validators with a smaller value will be evaluated first to determine if they are able to validate the access token. | [optional] 
 **AuthorizationServer** | Pointer to **string** | Specifies the external server that will be used to aid in validating access tokens. In most cases this will be the Authorization Server that minted the token. | [optional] 
 **IdentityMapper** | Pointer to **string** | Specifies the name of the Identity Mapper that should be used for associating user entries with Bearer token subject names. The claim name from which to obtain the subject (i.e. the currently logged-in user) may be configured using the subject-claim-name property. | [optional] 
 **SubjectClaimName** | Pointer to **string** | The name of the token claim that contains the subject, i.e. the logged-in user in an access token. This property goes hand-in-hand with the identity-mapper property and tells the Identity Mapper which field to use to look up the user entry on the server. | [optional] 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 
 ### NewAddJwtAccessTokenValidatorRequest
 
-`func NewAddJwtAccessTokenValidatorRequest(validatorName string, schemas []EnumjwtAccessTokenValidatorSchemaUrn, allowedSigningAlgorithm []EnumaccessTokenValidatorAllowedSigningAlgorithmProp, allowedKeyEncryptionAlgorithm []EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp, allowedContentEncryptionAlgorithm []EnumaccessTokenValidatorAllowedContentEncryptionAlgorithmProp, evaluationOrderIndex int32, enabled bool, ) *AddJwtAccessTokenValidatorRequest`
+`func NewAddJwtAccessTokenValidatorRequest(validatorName string, schemas []EnumjwtAccessTokenValidatorSchemaUrn, enabled bool, ) *AddJwtAccessTokenValidatorRequest`
 
 NewAddJwtAccessTokenValidatorRequest instantiates a new AddJwtAccessTokenValidatorRequest object
 This constructor will assign default values to properties that have it defined,
@@ -100,6 +100,11 @@ and a boolean to check if the value has been set.
 
 SetAllowedSigningAlgorithm sets AllowedSigningAlgorithm field to given value.
 
+### HasAllowedSigningAlgorithm
+
+`func (o *AddJwtAccessTokenValidatorRequest) HasAllowedSigningAlgorithm() bool`
+
+HasAllowedSigningAlgorithm returns a boolean if a field has been set.
 
 ### GetSigningCertificate
 
@@ -195,6 +200,11 @@ and a boolean to check if the value has been set.
 
 SetAllowedKeyEncryptionAlgorithm sets AllowedKeyEncryptionAlgorithm field to given value.
 
+### HasAllowedKeyEncryptionAlgorithm
+
+`func (o *AddJwtAccessTokenValidatorRequest) HasAllowedKeyEncryptionAlgorithm() bool`
+
+HasAllowedKeyEncryptionAlgorithm returns a boolean if a field has been set.
 
 ### GetAllowedContentEncryptionAlgorithm
 
@@ -215,6 +225,11 @@ and a boolean to check if the value has been set.
 
 SetAllowedContentEncryptionAlgorithm sets AllowedContentEncryptionAlgorithm field to given value.
 
+### HasAllowedContentEncryptionAlgorithm
+
+`func (o *AddJwtAccessTokenValidatorRequest) HasAllowedContentEncryptionAlgorithm() bool`
+
+HasAllowedContentEncryptionAlgorithm returns a boolean if a field has been set.
 
 ### GetClockSkewGracePeriod
 
@@ -310,6 +325,11 @@ and a boolean to check if the value has been set.
 
 SetEvaluationOrderIndex sets EvaluationOrderIndex field to given value.
 
+### HasEvaluationOrderIndex
+
+`func (o *AddJwtAccessTokenValidatorRequest) HasEvaluationOrderIndex() bool`
+
+HasEvaluationOrderIndex returns a boolean if a field has been set.
 
 ### GetAuthorizationServer
 

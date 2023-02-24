@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **IncludeAudParameter** | Pointer to **bool** | Whether to include the incoming request URL as the \&quot;aud\&quot; parameter when calling the PingFederate introspection endpoint. This property is ignored if the access-token-manager-id property is set. | [optional] 
 **AccessTokenManagerID** | Pointer to **string** | The Access Token Manager instance ID to specify when calling the PingFederate introspection endpoint. If this property is set the include-aud-parameter property is ignored. | [optional] 
 **EndpointCacheRefresh** | Pointer to **string** | How often the Access Token Validator should refresh its stored value of the PingFederate server&#39;s token introspection endpoint. | [optional] 
-**EvaluationOrderIndex** | **int32** | When multiple Ping Federate Access Token Validators are defined for a single Directory Server, this property determines the evaluation order for determining the correct validator class for an access token received by the Directory Server. Values of this property must be unique among all Ping Federate Access Token Validators defined within Directory Server but not necessarily contiguous. Ping Federate Access Token Validators with a smaller value will be evaluated first to determine if they are able to validate the access token. | 
+**EvaluationOrderIndex** | Pointer to **int32** | When multiple Ping Federate Access Token Validators are defined for a single Directory Server, this property determines the evaluation order for determining the correct validator class for an access token received by the Directory Server. Values of this property must be unique among all Ping Federate Access Token Validators defined within Directory Server but not necessarily contiguous. Ping Federate Access Token Validators with a smaller value will be evaluated first to determine if they are able to validate the access token. | [optional] 
 **AuthorizationServer** | Pointer to **string** | Specifies the external server that will be used to aid in validating access tokens. In most cases this will be the Authorization Server that minted the token. | [optional] 
 **IdentityMapper** | Pointer to **string** | Specifies the name of the Identity Mapper that should be used for associating user entries with Bearer token subject names. The claim name from which to obtain the subject (i.e. the currently logged-in user) may be configured using the subject-claim-name property. | [optional] 
 **SubjectClaimName** | Pointer to **string** | The name of the token claim that contains the subject, i.e. the logged-in user in an access token. This property goes hand-in-hand with the identity-mapper property and tells the Identity Mapper which field to use to look up the user entry on the server. | [optional] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewAddPingFederateAccessTokenValidatorRequest
 
-`func NewAddPingFederateAccessTokenValidatorRequest(validatorName string, schemas []EnumpingFederateAccessTokenValidatorSchemaUrn, clientID string, evaluationOrderIndex int32, enabled bool, ) *AddPingFederateAccessTokenValidatorRequest`
+`func NewAddPingFederateAccessTokenValidatorRequest(validatorName string, schemas []EnumpingFederateAccessTokenValidatorSchemaUrn, clientID string, enabled bool, ) *AddPingFederateAccessTokenValidatorRequest`
 
 NewAddPingFederateAccessTokenValidatorRequest instantiates a new AddPingFederateAccessTokenValidatorRequest object
 This constructor will assign default values to properties that have it defined,
@@ -242,6 +242,11 @@ and a boolean to check if the value has been set.
 
 SetEvaluationOrderIndex sets EvaluationOrderIndex field to given value.
 
+### HasEvaluationOrderIndex
+
+`func (o *AddPingFederateAccessTokenValidatorRequest) HasEvaluationOrderIndex() bool`
+
+HasEvaluationOrderIndex returns a boolean if a field has been set.
 
 ### GetAuthorizationServer
 

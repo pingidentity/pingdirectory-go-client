@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnumpassThroughAuthenticationPluginSchemaUrn**](EnumpassThroughAuthenticationPluginSchemaUrn.md) |  | 
-**PluginType** | [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | 
+**PluginType** | Pointer to [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | [optional] 
 **Server** | **[]string** | Specifies the LDAP external server(s) to which authentication attempts should be forwarded. | 
-**TryLocalBind** | **bool** | Indicates whether the bind attempt should first be attempted against the local server. Depending on the value of the override-local-password property, the bind attempt may then be attempted against a remote server if the local bind fails. | 
-**OverrideLocalPassword** | **bool** | Indicates whether the bind attempt should be attempted against a remote server in the event that the local bind fails but the local password is present. | 
-**UpdateLocalPassword** | **bool** | Indicates whether the local password value should be updated to the value used in the bind request in the event that the local bind fails but the remote bind succeeds. | 
+**TryLocalBind** | Pointer to **bool** | Indicates whether the bind attempt should first be attempted against the local server. Depending on the value of the override-local-password property, the bind attempt may then be attempted against a remote server if the local bind fails. | [optional] 
+**OverrideLocalPassword** | Pointer to **bool** | Indicates whether the bind attempt should be attempted against a remote server in the event that the local bind fails but the local password is present. | [optional] 
+**UpdateLocalPassword** | Pointer to **bool** | Indicates whether the local password value should be updated to the value used in the bind request in the event that the local bind fails but the remote bind succeeds. | [optional] 
 **AllowLaxPassThroughAuthenticationPasswords** | Pointer to **bool** | Indicates whether updates to the local password value should accept passwords that do not meet password policy constraints. | [optional] 
-**ServerAccessMode** | [**EnumpluginServerAccessModeProp**](EnumpluginServerAccessModeProp.md) |  | 
+**ServerAccessMode** | Pointer to [**EnumpluginServerAccessModeProp**](EnumpluginServerAccessModeProp.md) |  | [optional] 
 **IncludedLocalEntryBaseDN** | Pointer to **[]string** | The base DNs for the local users whose authentication attempts may be passed through to an alternate server. | [optional] 
 **ConnectionCriteria** | Pointer to **string** | Specifies a set of connection criteria that must match the client associated with the bind request for the bind to be passed through to an alternate server. | [optional] 
 **RequestCriteria** | Pointer to **string** | Specifies a set of request criteria that must match the bind request for the bind to be passed through to an alternate server. | [optional] 
@@ -20,8 +20,8 @@ Name | Type | Description | Notes
 **BindDNPattern** | Pointer to **string** | A pattern to use to construct the bind DN for the simple bind request to send to the remote server. This may consist of a combination of static text and attribute values and other directives enclosed in curly braces.  For example, the value \&quot;cn&#x3D;{cn},ou&#x3D;People,dc&#x3D;example,dc&#x3D;com\&quot; indicates that the remote bind DN should be constructed from the text \&quot;cn&#x3D;\&quot; followed by the value of the local entry&#39;s cn attribute followed by the text \&quot;ou&#x3D;People,dc&#x3D;example,dc&#x3D;com\&quot;. If an attribute contains the value to use as the bind DN for pass-through authentication, then the pattern may simply be the name of that attribute in curly braces (e.g., if the seeAlso attribute contains the bind DN for the target user, then a bind DN pattern of \&quot;{seeAlso}\&quot; would be appropriate).  Note that a bind DN pattern can be used to construct a bind DN that is not actually a valid LDAP distinguished name. For example, if authentication is being passed through to a Microsoft Active Directory server, then a bind DN pattern could be used to construct a user principal name (UPN) as an alternative to a distinguished name. | [optional] 
 **SearchBaseDN** | Pointer to **string** | The base DN to use when searching for the user entry using a filter constructed from the pattern defined in the search-filter-pattern property. If no base DN is specified, the null DN will be used as the search base DN. | [optional] 
 **SearchFilterPattern** | Pointer to **string** | A pattern to use to construct a filter to use when searching an external server for the entry of the user as whom to bind. For example, \&quot;(mail&#x3D;{uid:ldapFilterEscape}@example.com)\&quot; would construct a search filter to search for a user whose entry in the local server contains a uid attribute whose value appears before \&quot;@example.com\&quot; in the mail attribute in the external server. Note that the \&quot;ldapFilterEscape\&quot; modifier should almost always be used with attributes specified in the pattern. | [optional] 
-**InitialConnections** | **int32** | Specifies the initial number of connections to establish to each external server against which authentication may be attempted. | 
-**MaxConnections** | **int32** | Specifies the maximum number of connections to maintain to each external server against which authentication may be attempted. This value must be greater than or equal to the value for the initial-connections property. | 
+**InitialConnections** | Pointer to **int32** | Specifies the initial number of connections to establish to each external server against which authentication may be attempted. | [optional] 
+**MaxConnections** | Pointer to **int32** | Specifies the maximum number of connections to maintain to each external server against which authentication may be attempted. This value must be greater than or equal to the value for the initial-connections property. | [optional] 
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
 **InvokeForInternalOperations** | Pointer to **bool** | Indicates whether the plug-in should be invoked for internal operations. | [optional] 
@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 
 ### NewAddPassThroughAuthenticationPluginRequest
 
-`func NewAddPassThroughAuthenticationPluginRequest(pluginName string, schemas []EnumpassThroughAuthenticationPluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, server []string, tryLocalBind bool, overrideLocalPassword bool, updateLocalPassword bool, serverAccessMode EnumpluginServerAccessModeProp, initialConnections int32, maxConnections int32, enabled bool, ) *AddPassThroughAuthenticationPluginRequest`
+`func NewAddPassThroughAuthenticationPluginRequest(pluginName string, schemas []EnumpassThroughAuthenticationPluginSchemaUrn, server []string, enabled bool, ) *AddPassThroughAuthenticationPluginRequest`
 
 NewAddPassThroughAuthenticationPluginRequest instantiates a new AddPassThroughAuthenticationPluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -104,6 +104,11 @@ and a boolean to check if the value has been set.
 
 SetPluginType sets PluginType field to given value.
 
+### HasPluginType
+
+`func (o *AddPassThroughAuthenticationPluginRequest) HasPluginType() bool`
+
+HasPluginType returns a boolean if a field has been set.
 
 ### GetServer
 
@@ -144,6 +149,11 @@ and a boolean to check if the value has been set.
 
 SetTryLocalBind sets TryLocalBind field to given value.
 
+### HasTryLocalBind
+
+`func (o *AddPassThroughAuthenticationPluginRequest) HasTryLocalBind() bool`
+
+HasTryLocalBind returns a boolean if a field has been set.
 
 ### GetOverrideLocalPassword
 
@@ -164,6 +174,11 @@ and a boolean to check if the value has been set.
 
 SetOverrideLocalPassword sets OverrideLocalPassword field to given value.
 
+### HasOverrideLocalPassword
+
+`func (o *AddPassThroughAuthenticationPluginRequest) HasOverrideLocalPassword() bool`
+
+HasOverrideLocalPassword returns a boolean if a field has been set.
 
 ### GetUpdateLocalPassword
 
@@ -184,6 +199,11 @@ and a boolean to check if the value has been set.
 
 SetUpdateLocalPassword sets UpdateLocalPassword field to given value.
 
+### HasUpdateLocalPassword
+
+`func (o *AddPassThroughAuthenticationPluginRequest) HasUpdateLocalPassword() bool`
+
+HasUpdateLocalPassword returns a boolean if a field has been set.
 
 ### GetAllowLaxPassThroughAuthenticationPasswords
 
@@ -229,6 +249,11 @@ and a boolean to check if the value has been set.
 
 SetServerAccessMode sets ServerAccessMode field to given value.
 
+### HasServerAccessMode
+
+`func (o *AddPassThroughAuthenticationPluginRequest) HasServerAccessMode() bool`
+
+HasServerAccessMode returns a boolean if a field has been set.
 
 ### GetIncludedLocalEntryBaseDN
 
@@ -424,6 +449,11 @@ and a boolean to check if the value has been set.
 
 SetInitialConnections sets InitialConnections field to given value.
 
+### HasInitialConnections
+
+`func (o *AddPassThroughAuthenticationPluginRequest) HasInitialConnections() bool`
+
+HasInitialConnections returns a boolean if a field has been set.
 
 ### GetMaxConnections
 
@@ -444,6 +474,11 @@ and a boolean to check if the value has been set.
 
 SetMaxConnections sets MaxConnections field to given value.
 
+### HasMaxConnections
+
+`func (o *AddPassThroughAuthenticationPluginRequest) HasMaxConnections() bool`
+
+HasMaxConnections returns a boolean if a field has been set.
 
 ### GetDescription
 

@@ -26,7 +26,7 @@ type AddTwilioOtpDeliveryMechanismRequest struct {
 	// The passphrase provider that may be used to obtain the auth token for the Twilio account that will be used.
 	TwilioAuthTokenPassphraseProvider *string `json:"twilioAuthTokenPassphraseProvider,omitempty"`
 	// The name or OID of the attribute in the user's entry that holds the phone number to which the message should be sent.
-	PhoneNumberAttributeType string `json:"phoneNumberAttributeType"`
+	PhoneNumberAttributeType *string `json:"phoneNumberAttributeType,omitempty"`
 	// The name of the JSON field whose value is the phone number to which the message should be sent. The phone number must be contained in a top-level field whose value is a single string.
 	PhoneNumberJSONField *string `json:"phoneNumberJSONField,omitempty"`
 	// A JSON object filter that may be used to identify which phone number value to use when sending the message.
@@ -47,12 +47,11 @@ type AddTwilioOtpDeliveryMechanismRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddTwilioOtpDeliveryMechanismRequest(mechanismName string, schemas []EnumtwilioOtpDeliveryMechanismSchemaUrn, twilioAccountSID string, phoneNumberAttributeType string, senderPhoneNumber []string, enabled bool) *AddTwilioOtpDeliveryMechanismRequest {
+func NewAddTwilioOtpDeliveryMechanismRequest(mechanismName string, schemas []EnumtwilioOtpDeliveryMechanismSchemaUrn, twilioAccountSID string, senderPhoneNumber []string, enabled bool) *AddTwilioOtpDeliveryMechanismRequest {
 	this := AddTwilioOtpDeliveryMechanismRequest{}
 	this.MechanismName = mechanismName
 	this.Schemas = schemas
 	this.TwilioAccountSID = twilioAccountSID
-	this.PhoneNumberAttributeType = phoneNumberAttributeType
 	this.SenderPhoneNumber = senderPhoneNumber
 	this.Enabled = enabled
 	return &this
@@ -202,28 +201,36 @@ func (o *AddTwilioOtpDeliveryMechanismRequest) SetTwilioAuthTokenPassphraseProvi
 	o.TwilioAuthTokenPassphraseProvider = &v
 }
 
-// GetPhoneNumberAttributeType returns the PhoneNumberAttributeType field value
+// GetPhoneNumberAttributeType returns the PhoneNumberAttributeType field value if set, zero value otherwise.
 func (o *AddTwilioOtpDeliveryMechanismRequest) GetPhoneNumberAttributeType() string {
-	if o == nil {
+	if o == nil || isNil(o.PhoneNumberAttributeType) {
 		var ret string
 		return ret
 	}
-
-	return o.PhoneNumberAttributeType
+	return *o.PhoneNumberAttributeType
 }
 
-// GetPhoneNumberAttributeTypeOk returns a tuple with the PhoneNumberAttributeType field value
+// GetPhoneNumberAttributeTypeOk returns a tuple with the PhoneNumberAttributeType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddTwilioOtpDeliveryMechanismRequest) GetPhoneNumberAttributeTypeOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.PhoneNumberAttributeType) {
 		return nil, false
 	}
-	return &o.PhoneNumberAttributeType, true
+	return o.PhoneNumberAttributeType, true
 }
 
-// SetPhoneNumberAttributeType sets field value
+// HasPhoneNumberAttributeType returns a boolean if a field has been set.
+func (o *AddTwilioOtpDeliveryMechanismRequest) HasPhoneNumberAttributeType() bool {
+	if o != nil && !isNil(o.PhoneNumberAttributeType) {
+		return true
+	}
+
+	return false
+}
+
+// SetPhoneNumberAttributeType gets a reference to the given string and assigns it to the PhoneNumberAttributeType field.
 func (o *AddTwilioOtpDeliveryMechanismRequest) SetPhoneNumberAttributeType(v string) {
-	o.PhoneNumberAttributeType = v
+	o.PhoneNumberAttributeType = &v
 }
 
 // GetPhoneNumberJSONField returns the PhoneNumberJSONField field value if set, zero value otherwise.
@@ -451,7 +458,7 @@ func (o AddTwilioOtpDeliveryMechanismRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.TwilioAuthTokenPassphraseProvider) {
 		toSerialize["twilioAuthTokenPassphraseProvider"] = o.TwilioAuthTokenPassphraseProvider
 	}
-	if true {
+	if !isNil(o.PhoneNumberAttributeType) {
 		toSerialize["phoneNumberAttributeType"] = o.PhoneNumberAttributeType
 	}
 	if !isNil(o.PhoneNumberJSONField) {

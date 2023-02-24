@@ -19,9 +19,9 @@ type AddSevenBitCleanPluginRequest struct {
 	// Name of the new Plugin
 	PluginName string                             `json:"pluginName"`
 	Schemas    []EnumsevenBitCleanPluginSchemaUrn `json:"schemas"`
-	PluginType []EnumpluginPluginTypeProp         `json:"pluginType"`
+	PluginType []EnumpluginPluginTypeProp         `json:"pluginType,omitempty"`
 	// Specifies the name or OID of an attribute type for which values should be checked to ensure that they are 7-bit clean.
-	AttributeType []string `json:"attributeType"`
+	AttributeType []string `json:"attributeType,omitempty"`
 	// Specifies the base DN below which the checking is performed.
 	BaseDN []string `json:"baseDN,omitempty"`
 	// A description for this Plugin
@@ -36,12 +36,10 @@ type AddSevenBitCleanPluginRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddSevenBitCleanPluginRequest(pluginName string, schemas []EnumsevenBitCleanPluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, attributeType []string, enabled bool) *AddSevenBitCleanPluginRequest {
+func NewAddSevenBitCleanPluginRequest(pluginName string, schemas []EnumsevenBitCleanPluginSchemaUrn, enabled bool) *AddSevenBitCleanPluginRequest {
 	this := AddSevenBitCleanPluginRequest{}
 	this.PluginName = pluginName
 	this.Schemas = schemas
-	this.PluginType = pluginType
-	this.AttributeType = attributeType
 	this.Enabled = enabled
 	return &this
 }
@@ -102,50 +100,66 @@ func (o *AddSevenBitCleanPluginRequest) SetSchemas(v []EnumsevenBitCleanPluginSc
 	o.Schemas = v
 }
 
-// GetPluginType returns the PluginType field value
+// GetPluginType returns the PluginType field value if set, zero value otherwise.
 func (o *AddSevenBitCleanPluginRequest) GetPluginType() []EnumpluginPluginTypeProp {
-	if o == nil {
+	if o == nil || isNil(o.PluginType) {
 		var ret []EnumpluginPluginTypeProp
 		return ret
 	}
-
 	return o.PluginType
 }
 
-// GetPluginTypeOk returns a tuple with the PluginType field value
+// GetPluginTypeOk returns a tuple with the PluginType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSevenBitCleanPluginRequest) GetPluginTypeOk() ([]EnumpluginPluginTypeProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.PluginType) {
 		return nil, false
 	}
 	return o.PluginType, true
 }
 
-// SetPluginType sets field value
+// HasPluginType returns a boolean if a field has been set.
+func (o *AddSevenBitCleanPluginRequest) HasPluginType() bool {
+	if o != nil && !isNil(o.PluginType) {
+		return true
+	}
+
+	return false
+}
+
+// SetPluginType gets a reference to the given []EnumpluginPluginTypeProp and assigns it to the PluginType field.
 func (o *AddSevenBitCleanPluginRequest) SetPluginType(v []EnumpluginPluginTypeProp) {
 	o.PluginType = v
 }
 
-// GetAttributeType returns the AttributeType field value
+// GetAttributeType returns the AttributeType field value if set, zero value otherwise.
 func (o *AddSevenBitCleanPluginRequest) GetAttributeType() []string {
-	if o == nil {
+	if o == nil || isNil(o.AttributeType) {
 		var ret []string
 		return ret
 	}
-
 	return o.AttributeType
 }
 
-// GetAttributeTypeOk returns a tuple with the AttributeType field value
+// GetAttributeTypeOk returns a tuple with the AttributeType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSevenBitCleanPluginRequest) GetAttributeTypeOk() ([]string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.AttributeType) {
 		return nil, false
 	}
 	return o.AttributeType, true
 }
 
-// SetAttributeType sets field value
+// HasAttributeType returns a boolean if a field has been set.
+func (o *AddSevenBitCleanPluginRequest) HasAttributeType() bool {
+	if o != nil && !isNil(o.AttributeType) {
+		return true
+	}
+
+	return false
+}
+
+// SetAttributeType gets a reference to the given []string and assigns it to the AttributeType field.
 func (o *AddSevenBitCleanPluginRequest) SetAttributeType(v []string) {
 	o.AttributeType = v
 }
@@ -278,10 +292,10 @@ func (o AddSevenBitCleanPluginRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if true {
+	if !isNil(o.PluginType) {
 		toSerialize["pluginType"] = o.PluginType
 	}
-	if true {
+	if !isNil(o.AttributeType) {
 		toSerialize["attributeType"] = o.AttributeType
 	}
 	if !isNil(o.BaseDN) {

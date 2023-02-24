@@ -22,7 +22,7 @@ type AddFilterBasedUncachedEntryCriteriaRequest struct {
 	// Specifies the search filter that should be used to differentiate entries into cached and uncached sets.
 	Filter string `json:"filter"`
 	// Indicates whether the associated filter identifies those entries which should be stored in the uncached-id2entry database (if true) or entries which should be stored in the id2entry database (if false).
-	FilterIdentifiesUncachedEntries bool `json:"filterIdentifiesUncachedEntries"`
+	FilterIdentifiesUncachedEntries *bool `json:"filterIdentifiesUncachedEntries,omitempty"`
 	// A description for this Uncached Entry Criteria
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Uncached Entry Criteria is enabled for use in the server.
@@ -33,12 +33,11 @@ type AddFilterBasedUncachedEntryCriteriaRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddFilterBasedUncachedEntryCriteriaRequest(criteriaName string, schemas []EnumfilterBasedUncachedEntryCriteriaSchemaUrn, filter string, filterIdentifiesUncachedEntries bool, enabled bool) *AddFilterBasedUncachedEntryCriteriaRequest {
+func NewAddFilterBasedUncachedEntryCriteriaRequest(criteriaName string, schemas []EnumfilterBasedUncachedEntryCriteriaSchemaUrn, filter string, enabled bool) *AddFilterBasedUncachedEntryCriteriaRequest {
 	this := AddFilterBasedUncachedEntryCriteriaRequest{}
 	this.CriteriaName = criteriaName
 	this.Schemas = schemas
 	this.Filter = filter
-	this.FilterIdentifiesUncachedEntries = filterIdentifiesUncachedEntries
 	this.Enabled = enabled
 	return &this
 }
@@ -123,28 +122,36 @@ func (o *AddFilterBasedUncachedEntryCriteriaRequest) SetFilter(v string) {
 	o.Filter = v
 }
 
-// GetFilterIdentifiesUncachedEntries returns the FilterIdentifiesUncachedEntries field value
+// GetFilterIdentifiesUncachedEntries returns the FilterIdentifiesUncachedEntries field value if set, zero value otherwise.
 func (o *AddFilterBasedUncachedEntryCriteriaRequest) GetFilterIdentifiesUncachedEntries() bool {
-	if o == nil {
+	if o == nil || isNil(o.FilterIdentifiesUncachedEntries) {
 		var ret bool
 		return ret
 	}
-
-	return o.FilterIdentifiesUncachedEntries
+	return *o.FilterIdentifiesUncachedEntries
 }
 
-// GetFilterIdentifiesUncachedEntriesOk returns a tuple with the FilterIdentifiesUncachedEntries field value
+// GetFilterIdentifiesUncachedEntriesOk returns a tuple with the FilterIdentifiesUncachedEntries field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFilterBasedUncachedEntryCriteriaRequest) GetFilterIdentifiesUncachedEntriesOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || isNil(o.FilterIdentifiesUncachedEntries) {
 		return nil, false
 	}
-	return &o.FilterIdentifiesUncachedEntries, true
+	return o.FilterIdentifiesUncachedEntries, true
 }
 
-// SetFilterIdentifiesUncachedEntries sets field value
+// HasFilterIdentifiesUncachedEntries returns a boolean if a field has been set.
+func (o *AddFilterBasedUncachedEntryCriteriaRequest) HasFilterIdentifiesUncachedEntries() bool {
+	if o != nil && !isNil(o.FilterIdentifiesUncachedEntries) {
+		return true
+	}
+
+	return false
+}
+
+// SetFilterIdentifiesUncachedEntries gets a reference to the given bool and assigns it to the FilterIdentifiesUncachedEntries field.
 func (o *AddFilterBasedUncachedEntryCriteriaRequest) SetFilterIdentifiesUncachedEntries(v bool) {
-	o.FilterIdentifiesUncachedEntries = v
+	o.FilterIdentifiesUncachedEntries = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -214,7 +221,7 @@ func (o AddFilterBasedUncachedEntryCriteriaRequest) MarshalJSON() ([]byte, error
 	if true {
 		toSerialize["filter"] = o.Filter
 	}
-	if true {
+	if !isNil(o.FilterIdentifiesUncachedEntries) {
 		toSerialize["filterIdentifiesUncachedEntries"] = o.FilterIdentifiesUncachedEntries
 	}
 	if !isNil(o.Description) {

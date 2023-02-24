@@ -158,6 +158,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/key-pair-shared'
+      required:
+      - keyAlgorithm
     key-pair-shared:
       type: object
       properties:
@@ -186,8 +188,6 @@ components:
           format: password
           description: >-
               The base64-encoded private key that is encrypted using the preferred encryption settings definition.
-      required:
-      - keyAlgorithm
     Enumkey-pairSchemaUrn:
       type: string
       enum:

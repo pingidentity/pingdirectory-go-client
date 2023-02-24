@@ -19,18 +19,18 @@ type AddPassThroughAuthenticationPluginRequest struct {
 	// Name of the new Plugin
 	PluginName string                                         `json:"pluginName"`
 	Schemas    []EnumpassThroughAuthenticationPluginSchemaUrn `json:"schemas"`
-	PluginType []EnumpluginPluginTypeProp                     `json:"pluginType"`
+	PluginType []EnumpluginPluginTypeProp                     `json:"pluginType,omitempty"`
 	// Specifies the LDAP external server(s) to which authentication attempts should be forwarded.
 	Server []string `json:"server"`
 	// Indicates whether the bind attempt should first be attempted against the local server. Depending on the value of the override-local-password property, the bind attempt may then be attempted against a remote server if the local bind fails.
-	TryLocalBind bool `json:"tryLocalBind"`
+	TryLocalBind *bool `json:"tryLocalBind,omitempty"`
 	// Indicates whether the bind attempt should be attempted against a remote server in the event that the local bind fails but the local password is present.
-	OverrideLocalPassword bool `json:"overrideLocalPassword"`
+	OverrideLocalPassword *bool `json:"overrideLocalPassword,omitempty"`
 	// Indicates whether the local password value should be updated to the value used in the bind request in the event that the local bind fails but the remote bind succeeds.
-	UpdateLocalPassword bool `json:"updateLocalPassword"`
+	UpdateLocalPassword *bool `json:"updateLocalPassword,omitempty"`
 	// Indicates whether updates to the local password value should accept passwords that do not meet password policy constraints.
-	AllowLaxPassThroughAuthenticationPasswords *bool                          `json:"allowLaxPassThroughAuthenticationPasswords,omitempty"`
-	ServerAccessMode                           EnumpluginServerAccessModeProp `json:"serverAccessMode"`
+	AllowLaxPassThroughAuthenticationPasswords *bool                           `json:"allowLaxPassThroughAuthenticationPasswords,omitempty"`
+	ServerAccessMode                           *EnumpluginServerAccessModeProp `json:"serverAccessMode,omitempty"`
 	// The base DNs for the local users whose authentication attempts may be passed through to an alternate server.
 	IncludedLocalEntryBaseDN []string `json:"includedLocalEntryBaseDN,omitempty"`
 	// Specifies a set of connection criteria that must match the client associated with the bind request for the bind to be passed through to an alternate server.
@@ -46,9 +46,9 @@ type AddPassThroughAuthenticationPluginRequest struct {
 	// A pattern to use to construct a filter to use when searching an external server for the entry of the user as whom to bind. For example, \"(mail={uid:ldapFilterEscape}@example.com)\" would construct a search filter to search for a user whose entry in the local server contains a uid attribute whose value appears before \"@example.com\" in the mail attribute in the external server. Note that the \"ldapFilterEscape\" modifier should almost always be used with attributes specified in the pattern.
 	SearchFilterPattern *string `json:"searchFilterPattern,omitempty"`
 	// Specifies the initial number of connections to establish to each external server against which authentication may be attempted.
-	InitialConnections int32 `json:"initialConnections"`
+	InitialConnections *int32 `json:"initialConnections,omitempty"`
 	// Specifies the maximum number of connections to maintain to each external server against which authentication may be attempted. This value must be greater than or equal to the value for the initial-connections property.
-	MaxConnections int32 `json:"maxConnections"`
+	MaxConnections *int32 `json:"maxConnections,omitempty"`
 	// A description for this Plugin
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the plug-in is enabled for use.
@@ -61,18 +61,11 @@ type AddPassThroughAuthenticationPluginRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddPassThroughAuthenticationPluginRequest(pluginName string, schemas []EnumpassThroughAuthenticationPluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, server []string, tryLocalBind bool, overrideLocalPassword bool, updateLocalPassword bool, serverAccessMode EnumpluginServerAccessModeProp, initialConnections int32, maxConnections int32, enabled bool) *AddPassThroughAuthenticationPluginRequest {
+func NewAddPassThroughAuthenticationPluginRequest(pluginName string, schemas []EnumpassThroughAuthenticationPluginSchemaUrn, server []string, enabled bool) *AddPassThroughAuthenticationPluginRequest {
 	this := AddPassThroughAuthenticationPluginRequest{}
 	this.PluginName = pluginName
 	this.Schemas = schemas
-	this.PluginType = pluginType
 	this.Server = server
-	this.TryLocalBind = tryLocalBind
-	this.OverrideLocalPassword = overrideLocalPassword
-	this.UpdateLocalPassword = updateLocalPassword
-	this.ServerAccessMode = serverAccessMode
-	this.InitialConnections = initialConnections
-	this.MaxConnections = maxConnections
 	this.Enabled = enabled
 	return &this
 }
@@ -133,26 +126,34 @@ func (o *AddPassThroughAuthenticationPluginRequest) SetSchemas(v []EnumpassThrou
 	o.Schemas = v
 }
 
-// GetPluginType returns the PluginType field value
+// GetPluginType returns the PluginType field value if set, zero value otherwise.
 func (o *AddPassThroughAuthenticationPluginRequest) GetPluginType() []EnumpluginPluginTypeProp {
-	if o == nil {
+	if o == nil || isNil(o.PluginType) {
 		var ret []EnumpluginPluginTypeProp
 		return ret
 	}
-
 	return o.PluginType
 }
 
-// GetPluginTypeOk returns a tuple with the PluginType field value
+// GetPluginTypeOk returns a tuple with the PluginType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPassThroughAuthenticationPluginRequest) GetPluginTypeOk() ([]EnumpluginPluginTypeProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.PluginType) {
 		return nil, false
 	}
 	return o.PluginType, true
 }
 
-// SetPluginType sets field value
+// HasPluginType returns a boolean if a field has been set.
+func (o *AddPassThroughAuthenticationPluginRequest) HasPluginType() bool {
+	if o != nil && !isNil(o.PluginType) {
+		return true
+	}
+
+	return false
+}
+
+// SetPluginType gets a reference to the given []EnumpluginPluginTypeProp and assigns it to the PluginType field.
 func (o *AddPassThroughAuthenticationPluginRequest) SetPluginType(v []EnumpluginPluginTypeProp) {
 	o.PluginType = v
 }
@@ -181,76 +182,100 @@ func (o *AddPassThroughAuthenticationPluginRequest) SetServer(v []string) {
 	o.Server = v
 }
 
-// GetTryLocalBind returns the TryLocalBind field value
+// GetTryLocalBind returns the TryLocalBind field value if set, zero value otherwise.
 func (o *AddPassThroughAuthenticationPluginRequest) GetTryLocalBind() bool {
-	if o == nil {
+	if o == nil || isNil(o.TryLocalBind) {
 		var ret bool
 		return ret
 	}
-
-	return o.TryLocalBind
+	return *o.TryLocalBind
 }
 
-// GetTryLocalBindOk returns a tuple with the TryLocalBind field value
+// GetTryLocalBindOk returns a tuple with the TryLocalBind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPassThroughAuthenticationPluginRequest) GetTryLocalBindOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || isNil(o.TryLocalBind) {
 		return nil, false
 	}
-	return &o.TryLocalBind, true
+	return o.TryLocalBind, true
 }
 
-// SetTryLocalBind sets field value
+// HasTryLocalBind returns a boolean if a field has been set.
+func (o *AddPassThroughAuthenticationPluginRequest) HasTryLocalBind() bool {
+	if o != nil && !isNil(o.TryLocalBind) {
+		return true
+	}
+
+	return false
+}
+
+// SetTryLocalBind gets a reference to the given bool and assigns it to the TryLocalBind field.
 func (o *AddPassThroughAuthenticationPluginRequest) SetTryLocalBind(v bool) {
-	o.TryLocalBind = v
+	o.TryLocalBind = &v
 }
 
-// GetOverrideLocalPassword returns the OverrideLocalPassword field value
+// GetOverrideLocalPassword returns the OverrideLocalPassword field value if set, zero value otherwise.
 func (o *AddPassThroughAuthenticationPluginRequest) GetOverrideLocalPassword() bool {
-	if o == nil {
+	if o == nil || isNil(o.OverrideLocalPassword) {
 		var ret bool
 		return ret
 	}
-
-	return o.OverrideLocalPassword
+	return *o.OverrideLocalPassword
 }
 
-// GetOverrideLocalPasswordOk returns a tuple with the OverrideLocalPassword field value
+// GetOverrideLocalPasswordOk returns a tuple with the OverrideLocalPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPassThroughAuthenticationPluginRequest) GetOverrideLocalPasswordOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || isNil(o.OverrideLocalPassword) {
 		return nil, false
 	}
-	return &o.OverrideLocalPassword, true
+	return o.OverrideLocalPassword, true
 }
 
-// SetOverrideLocalPassword sets field value
+// HasOverrideLocalPassword returns a boolean if a field has been set.
+func (o *AddPassThroughAuthenticationPluginRequest) HasOverrideLocalPassword() bool {
+	if o != nil && !isNil(o.OverrideLocalPassword) {
+		return true
+	}
+
+	return false
+}
+
+// SetOverrideLocalPassword gets a reference to the given bool and assigns it to the OverrideLocalPassword field.
 func (o *AddPassThroughAuthenticationPluginRequest) SetOverrideLocalPassword(v bool) {
-	o.OverrideLocalPassword = v
+	o.OverrideLocalPassword = &v
 }
 
-// GetUpdateLocalPassword returns the UpdateLocalPassword field value
+// GetUpdateLocalPassword returns the UpdateLocalPassword field value if set, zero value otherwise.
 func (o *AddPassThroughAuthenticationPluginRequest) GetUpdateLocalPassword() bool {
-	if o == nil {
+	if o == nil || isNil(o.UpdateLocalPassword) {
 		var ret bool
 		return ret
 	}
-
-	return o.UpdateLocalPassword
+	return *o.UpdateLocalPassword
 }
 
-// GetUpdateLocalPasswordOk returns a tuple with the UpdateLocalPassword field value
+// GetUpdateLocalPasswordOk returns a tuple with the UpdateLocalPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPassThroughAuthenticationPluginRequest) GetUpdateLocalPasswordOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || isNil(o.UpdateLocalPassword) {
 		return nil, false
 	}
-	return &o.UpdateLocalPassword, true
+	return o.UpdateLocalPassword, true
 }
 
-// SetUpdateLocalPassword sets field value
+// HasUpdateLocalPassword returns a boolean if a field has been set.
+func (o *AddPassThroughAuthenticationPluginRequest) HasUpdateLocalPassword() bool {
+	if o != nil && !isNil(o.UpdateLocalPassword) {
+		return true
+	}
+
+	return false
+}
+
+// SetUpdateLocalPassword gets a reference to the given bool and assigns it to the UpdateLocalPassword field.
 func (o *AddPassThroughAuthenticationPluginRequest) SetUpdateLocalPassword(v bool) {
-	o.UpdateLocalPassword = v
+	o.UpdateLocalPassword = &v
 }
 
 // GetAllowLaxPassThroughAuthenticationPasswords returns the AllowLaxPassThroughAuthenticationPasswords field value if set, zero value otherwise.
@@ -285,28 +310,36 @@ func (o *AddPassThroughAuthenticationPluginRequest) SetAllowLaxPassThroughAuthen
 	o.AllowLaxPassThroughAuthenticationPasswords = &v
 }
 
-// GetServerAccessMode returns the ServerAccessMode field value
+// GetServerAccessMode returns the ServerAccessMode field value if set, zero value otherwise.
 func (o *AddPassThroughAuthenticationPluginRequest) GetServerAccessMode() EnumpluginServerAccessModeProp {
-	if o == nil {
+	if o == nil || isNil(o.ServerAccessMode) {
 		var ret EnumpluginServerAccessModeProp
 		return ret
 	}
-
-	return o.ServerAccessMode
+	return *o.ServerAccessMode
 }
 
-// GetServerAccessModeOk returns a tuple with the ServerAccessMode field value
+// GetServerAccessModeOk returns a tuple with the ServerAccessMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPassThroughAuthenticationPluginRequest) GetServerAccessModeOk() (*EnumpluginServerAccessModeProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.ServerAccessMode) {
 		return nil, false
 	}
-	return &o.ServerAccessMode, true
+	return o.ServerAccessMode, true
 }
 
-// SetServerAccessMode sets field value
+// HasServerAccessMode returns a boolean if a field has been set.
+func (o *AddPassThroughAuthenticationPluginRequest) HasServerAccessMode() bool {
+	if o != nil && !isNil(o.ServerAccessMode) {
+		return true
+	}
+
+	return false
+}
+
+// SetServerAccessMode gets a reference to the given EnumpluginServerAccessModeProp and assigns it to the ServerAccessMode field.
 func (o *AddPassThroughAuthenticationPluginRequest) SetServerAccessMode(v EnumpluginServerAccessModeProp) {
-	o.ServerAccessMode = v
+	o.ServerAccessMode = &v
 }
 
 // GetIncludedLocalEntryBaseDN returns the IncludedLocalEntryBaseDN field value if set, zero value otherwise.
@@ -533,52 +566,68 @@ func (o *AddPassThroughAuthenticationPluginRequest) SetSearchFilterPattern(v str
 	o.SearchFilterPattern = &v
 }
 
-// GetInitialConnections returns the InitialConnections field value
+// GetInitialConnections returns the InitialConnections field value if set, zero value otherwise.
 func (o *AddPassThroughAuthenticationPluginRequest) GetInitialConnections() int32 {
-	if o == nil {
+	if o == nil || isNil(o.InitialConnections) {
 		var ret int32
 		return ret
 	}
-
-	return o.InitialConnections
+	return *o.InitialConnections
 }
 
-// GetInitialConnectionsOk returns a tuple with the InitialConnections field value
+// GetInitialConnectionsOk returns a tuple with the InitialConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPassThroughAuthenticationPluginRequest) GetInitialConnectionsOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || isNil(o.InitialConnections) {
 		return nil, false
 	}
-	return &o.InitialConnections, true
+	return o.InitialConnections, true
 }
 
-// SetInitialConnections sets field value
+// HasInitialConnections returns a boolean if a field has been set.
+func (o *AddPassThroughAuthenticationPluginRequest) HasInitialConnections() bool {
+	if o != nil && !isNil(o.InitialConnections) {
+		return true
+	}
+
+	return false
+}
+
+// SetInitialConnections gets a reference to the given int32 and assigns it to the InitialConnections field.
 func (o *AddPassThroughAuthenticationPluginRequest) SetInitialConnections(v int32) {
-	o.InitialConnections = v
+	o.InitialConnections = &v
 }
 
-// GetMaxConnections returns the MaxConnections field value
+// GetMaxConnections returns the MaxConnections field value if set, zero value otherwise.
 func (o *AddPassThroughAuthenticationPluginRequest) GetMaxConnections() int32 {
-	if o == nil {
+	if o == nil || isNil(o.MaxConnections) {
 		var ret int32
 		return ret
 	}
-
-	return o.MaxConnections
+	return *o.MaxConnections
 }
 
-// GetMaxConnectionsOk returns a tuple with the MaxConnections field value
+// GetMaxConnectionsOk returns a tuple with the MaxConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPassThroughAuthenticationPluginRequest) GetMaxConnectionsOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || isNil(o.MaxConnections) {
 		return nil, false
 	}
-	return &o.MaxConnections, true
+	return o.MaxConnections, true
 }
 
-// SetMaxConnections sets field value
+// HasMaxConnections returns a boolean if a field has been set.
+func (o *AddPassThroughAuthenticationPluginRequest) HasMaxConnections() bool {
+	if o != nil && !isNil(o.MaxConnections) {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxConnections gets a reference to the given int32 and assigns it to the MaxConnections field.
 func (o *AddPassThroughAuthenticationPluginRequest) SetMaxConnections(v int32) {
-	o.MaxConnections = v
+	o.MaxConnections = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -677,25 +726,25 @@ func (o AddPassThroughAuthenticationPluginRequest) MarshalJSON() ([]byte, error)
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if true {
+	if !isNil(o.PluginType) {
 		toSerialize["pluginType"] = o.PluginType
 	}
 	if true {
 		toSerialize["server"] = o.Server
 	}
-	if true {
+	if !isNil(o.TryLocalBind) {
 		toSerialize["tryLocalBind"] = o.TryLocalBind
 	}
-	if true {
+	if !isNil(o.OverrideLocalPassword) {
 		toSerialize["overrideLocalPassword"] = o.OverrideLocalPassword
 	}
-	if true {
+	if !isNil(o.UpdateLocalPassword) {
 		toSerialize["updateLocalPassword"] = o.UpdateLocalPassword
 	}
 	if !isNil(o.AllowLaxPassThroughAuthenticationPasswords) {
 		toSerialize["allowLaxPassThroughAuthenticationPasswords"] = o.AllowLaxPassThroughAuthenticationPasswords
 	}
-	if true {
+	if !isNil(o.ServerAccessMode) {
 		toSerialize["serverAccessMode"] = o.ServerAccessMode
 	}
 	if !isNil(o.IncludedLocalEntryBaseDN) {
@@ -719,10 +768,10 @@ func (o AddPassThroughAuthenticationPluginRequest) MarshalJSON() ([]byte, error)
 	if !isNil(o.SearchFilterPattern) {
 		toSerialize["searchFilterPattern"] = o.SearchFilterPattern
 	}
-	if true {
+	if !isNil(o.InitialConnections) {
 		toSerialize["initialConnections"] = o.InitialConnections
 	}
-	if true {
+	if !isNil(o.MaxConnections) {
 		toSerialize["maxConnections"] = o.MaxConnections
 	}
 	if !isNil(o.Description) {

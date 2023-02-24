@@ -20,7 +20,7 @@ type AddEmailOtpDeliveryMechanismRequest struct {
 	MechanismName string                                   `json:"mechanismName"`
 	Schemas       []EnumemailOtpDeliveryMechanismSchemaUrn `json:"schemas"`
 	// The name or OID of the attribute that holds the email address to which the message should be sent.
-	EmailAddressAttributeType string `json:"emailAddressAttributeType"`
+	EmailAddressAttributeType *string `json:"emailAddressAttributeType,omitempty"`
 	// The name of the JSON field whose value is the email address to which the message should be sent. The email address must be contained in a top-level field whose value is a single string.
 	EmailAddressJSONField *string `json:"emailAddressJSONField,omitempty"`
 	// A JSON object filter that may be used to identify which email address value to use when sending the message.
@@ -28,7 +28,7 @@ type AddEmailOtpDeliveryMechanismRequest struct {
 	// The e-mail address to use as the sender for the one-time password.
 	SenderAddress string `json:"senderAddress"`
 	// The subject to use for the e-mail message.
-	MessageSubject string `json:"messageSubject"`
+	MessageSubject *string `json:"messageSubject,omitempty"`
 	// Any text that should appear in the message before the one-time password value.
 	MessageTextBeforeOTP *string `json:"messageTextBeforeOTP,omitempty"`
 	// Any text that should appear in the message after the one-time password value.
@@ -43,13 +43,11 @@ type AddEmailOtpDeliveryMechanismRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddEmailOtpDeliveryMechanismRequest(mechanismName string, schemas []EnumemailOtpDeliveryMechanismSchemaUrn, emailAddressAttributeType string, senderAddress string, messageSubject string, enabled bool) *AddEmailOtpDeliveryMechanismRequest {
+func NewAddEmailOtpDeliveryMechanismRequest(mechanismName string, schemas []EnumemailOtpDeliveryMechanismSchemaUrn, senderAddress string, enabled bool) *AddEmailOtpDeliveryMechanismRequest {
 	this := AddEmailOtpDeliveryMechanismRequest{}
 	this.MechanismName = mechanismName
 	this.Schemas = schemas
-	this.EmailAddressAttributeType = emailAddressAttributeType
 	this.SenderAddress = senderAddress
-	this.MessageSubject = messageSubject
 	this.Enabled = enabled
 	return &this
 }
@@ -110,28 +108,36 @@ func (o *AddEmailOtpDeliveryMechanismRequest) SetSchemas(v []EnumemailOtpDeliver
 	o.Schemas = v
 }
 
-// GetEmailAddressAttributeType returns the EmailAddressAttributeType field value
+// GetEmailAddressAttributeType returns the EmailAddressAttributeType field value if set, zero value otherwise.
 func (o *AddEmailOtpDeliveryMechanismRequest) GetEmailAddressAttributeType() string {
-	if o == nil {
+	if o == nil || isNil(o.EmailAddressAttributeType) {
 		var ret string
 		return ret
 	}
-
-	return o.EmailAddressAttributeType
+	return *o.EmailAddressAttributeType
 }
 
-// GetEmailAddressAttributeTypeOk returns a tuple with the EmailAddressAttributeType field value
+// GetEmailAddressAttributeTypeOk returns a tuple with the EmailAddressAttributeType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddEmailOtpDeliveryMechanismRequest) GetEmailAddressAttributeTypeOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.EmailAddressAttributeType) {
 		return nil, false
 	}
-	return &o.EmailAddressAttributeType, true
+	return o.EmailAddressAttributeType, true
 }
 
-// SetEmailAddressAttributeType sets field value
+// HasEmailAddressAttributeType returns a boolean if a field has been set.
+func (o *AddEmailOtpDeliveryMechanismRequest) HasEmailAddressAttributeType() bool {
+	if o != nil && !isNil(o.EmailAddressAttributeType) {
+		return true
+	}
+
+	return false
+}
+
+// SetEmailAddressAttributeType gets a reference to the given string and assigns it to the EmailAddressAttributeType field.
 func (o *AddEmailOtpDeliveryMechanismRequest) SetEmailAddressAttributeType(v string) {
-	o.EmailAddressAttributeType = v
+	o.EmailAddressAttributeType = &v
 }
 
 // GetEmailAddressJSONField returns the EmailAddressJSONField field value if set, zero value otherwise.
@@ -222,28 +228,36 @@ func (o *AddEmailOtpDeliveryMechanismRequest) SetSenderAddress(v string) {
 	o.SenderAddress = v
 }
 
-// GetMessageSubject returns the MessageSubject field value
+// GetMessageSubject returns the MessageSubject field value if set, zero value otherwise.
 func (o *AddEmailOtpDeliveryMechanismRequest) GetMessageSubject() string {
-	if o == nil {
+	if o == nil || isNil(o.MessageSubject) {
 		var ret string
 		return ret
 	}
-
-	return o.MessageSubject
+	return *o.MessageSubject
 }
 
-// GetMessageSubjectOk returns a tuple with the MessageSubject field value
+// GetMessageSubjectOk returns a tuple with the MessageSubject field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddEmailOtpDeliveryMechanismRequest) GetMessageSubjectOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.MessageSubject) {
 		return nil, false
 	}
-	return &o.MessageSubject, true
+	return o.MessageSubject, true
 }
 
-// SetMessageSubject sets field value
+// HasMessageSubject returns a boolean if a field has been set.
+func (o *AddEmailOtpDeliveryMechanismRequest) HasMessageSubject() bool {
+	if o != nil && !isNil(o.MessageSubject) {
+		return true
+	}
+
+	return false
+}
+
+// SetMessageSubject gets a reference to the given string and assigns it to the MessageSubject field.
 func (o *AddEmailOtpDeliveryMechanismRequest) SetMessageSubject(v string) {
-	o.MessageSubject = v
+	o.MessageSubject = &v
 }
 
 // GetMessageTextBeforeOTP returns the MessageTextBeforeOTP field value if set, zero value otherwise.
@@ -374,7 +388,7 @@ func (o AddEmailOtpDeliveryMechanismRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if true {
+	if !isNil(o.EmailAddressAttributeType) {
 		toSerialize["emailAddressAttributeType"] = o.EmailAddressAttributeType
 	}
 	if !isNil(o.EmailAddressJSONField) {
@@ -386,7 +400,7 @@ func (o AddEmailOtpDeliveryMechanismRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["senderAddress"] = o.SenderAddress
 	}
-	if true {
+	if !isNil(o.MessageSubject) {
 		toSerialize["messageSubject"] = o.MessageSubject
 	}
 	if !isNil(o.MessageTextBeforeOTP) {

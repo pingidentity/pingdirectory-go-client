@@ -21,11 +21,11 @@ type AddPbkdf2PasswordStorageSchemeRequest struct {
 	Schemas         []Enumpbkdf2PasswordStorageSchemeSchemaUrn    `json:"schemas"`
 	DigestAlgorithm *EnumpasswordStorageSchemeDigestAlgorithmProp `json:"digestAlgorithm,omitempty"`
 	// Specifies the number of iterations to use when encoding passwords. The value must be greater than or equal to 1000.
-	IterationCount int32 `json:"iterationCount"`
+	IterationCount *int32 `json:"iterationCount,omitempty"`
 	// Specifies the number of bytes to use for the generated salt. The value must be greater than or equal to 8.
-	SaltLengthBytes int32 `json:"saltLengthBytes"`
+	SaltLengthBytes *int32 `json:"saltLengthBytes,omitempty"`
 	// Specifies the number of bytes to use for the derived key. The value must be greater than or equal to 8.
-	DerivedKeyLengthBytes int32 `json:"derivedKeyLengthBytes"`
+	DerivedKeyLengthBytes *int32 `json:"derivedKeyLengthBytes,omitempty"`
 	// Specifies the maximum allowed length, in bytes, for passwords encoded with this scheme, which can help mitigate denial of service attacks from clients that attempt to bind with very long passwords.
 	MaxPasswordLength *int32 `json:"maxPasswordLength,omitempty"`
 	// A description for this Password Storage Scheme
@@ -38,13 +38,10 @@ type AddPbkdf2PasswordStorageSchemeRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddPbkdf2PasswordStorageSchemeRequest(schemeName string, schemas []Enumpbkdf2PasswordStorageSchemeSchemaUrn, iterationCount int32, saltLengthBytes int32, derivedKeyLengthBytes int32, enabled bool) *AddPbkdf2PasswordStorageSchemeRequest {
+func NewAddPbkdf2PasswordStorageSchemeRequest(schemeName string, schemas []Enumpbkdf2PasswordStorageSchemeSchemaUrn, enabled bool) *AddPbkdf2PasswordStorageSchemeRequest {
 	this := AddPbkdf2PasswordStorageSchemeRequest{}
 	this.SchemeName = schemeName
 	this.Schemas = schemas
-	this.IterationCount = iterationCount
-	this.SaltLengthBytes = saltLengthBytes
-	this.DerivedKeyLengthBytes = derivedKeyLengthBytes
 	this.Enabled = enabled
 	return &this
 }
@@ -137,76 +134,100 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) SetDigestAlgorithm(v Enumpasswor
 	o.DigestAlgorithm = &v
 }
 
-// GetIterationCount returns the IterationCount field value
+// GetIterationCount returns the IterationCount field value if set, zero value otherwise.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) GetIterationCount() int32 {
-	if o == nil {
+	if o == nil || isNil(o.IterationCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.IterationCount
+	return *o.IterationCount
 }
 
-// GetIterationCountOk returns a tuple with the IterationCount field value
+// GetIterationCountOk returns a tuple with the IterationCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) GetIterationCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || isNil(o.IterationCount) {
 		return nil, false
 	}
-	return &o.IterationCount, true
+	return o.IterationCount, true
 }
 
-// SetIterationCount sets field value
+// HasIterationCount returns a boolean if a field has been set.
+func (o *AddPbkdf2PasswordStorageSchemeRequest) HasIterationCount() bool {
+	if o != nil && !isNil(o.IterationCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetIterationCount gets a reference to the given int32 and assigns it to the IterationCount field.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) SetIterationCount(v int32) {
-	o.IterationCount = v
+	o.IterationCount = &v
 }
 
-// GetSaltLengthBytes returns the SaltLengthBytes field value
+// GetSaltLengthBytes returns the SaltLengthBytes field value if set, zero value otherwise.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) GetSaltLengthBytes() int32 {
-	if o == nil {
+	if o == nil || isNil(o.SaltLengthBytes) {
 		var ret int32
 		return ret
 	}
-
-	return o.SaltLengthBytes
+	return *o.SaltLengthBytes
 }
 
-// GetSaltLengthBytesOk returns a tuple with the SaltLengthBytes field value
+// GetSaltLengthBytesOk returns a tuple with the SaltLengthBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) GetSaltLengthBytesOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || isNil(o.SaltLengthBytes) {
 		return nil, false
 	}
-	return &o.SaltLengthBytes, true
+	return o.SaltLengthBytes, true
 }
 
-// SetSaltLengthBytes sets field value
+// HasSaltLengthBytes returns a boolean if a field has been set.
+func (o *AddPbkdf2PasswordStorageSchemeRequest) HasSaltLengthBytes() bool {
+	if o != nil && !isNil(o.SaltLengthBytes) {
+		return true
+	}
+
+	return false
+}
+
+// SetSaltLengthBytes gets a reference to the given int32 and assigns it to the SaltLengthBytes field.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) SetSaltLengthBytes(v int32) {
-	o.SaltLengthBytes = v
+	o.SaltLengthBytes = &v
 }
 
-// GetDerivedKeyLengthBytes returns the DerivedKeyLengthBytes field value
+// GetDerivedKeyLengthBytes returns the DerivedKeyLengthBytes field value if set, zero value otherwise.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) GetDerivedKeyLengthBytes() int32 {
-	if o == nil {
+	if o == nil || isNil(o.DerivedKeyLengthBytes) {
 		var ret int32
 		return ret
 	}
-
-	return o.DerivedKeyLengthBytes
+	return *o.DerivedKeyLengthBytes
 }
 
-// GetDerivedKeyLengthBytesOk returns a tuple with the DerivedKeyLengthBytes field value
+// GetDerivedKeyLengthBytesOk returns a tuple with the DerivedKeyLengthBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) GetDerivedKeyLengthBytesOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || isNil(o.DerivedKeyLengthBytes) {
 		return nil, false
 	}
-	return &o.DerivedKeyLengthBytes, true
+	return o.DerivedKeyLengthBytes, true
 }
 
-// SetDerivedKeyLengthBytes sets field value
+// HasDerivedKeyLengthBytes returns a boolean if a field has been set.
+func (o *AddPbkdf2PasswordStorageSchemeRequest) HasDerivedKeyLengthBytes() bool {
+	if o != nil && !isNil(o.DerivedKeyLengthBytes) {
+		return true
+	}
+
+	return false
+}
+
+// SetDerivedKeyLengthBytes gets a reference to the given int32 and assigns it to the DerivedKeyLengthBytes field.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) SetDerivedKeyLengthBytes(v int32) {
-	o.DerivedKeyLengthBytes = v
+	o.DerivedKeyLengthBytes = &v
 }
 
 // GetMaxPasswordLength returns the MaxPasswordLength field value if set, zero value otherwise.
@@ -308,13 +329,13 @@ func (o AddPbkdf2PasswordStorageSchemeRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.DigestAlgorithm) {
 		toSerialize["digestAlgorithm"] = o.DigestAlgorithm
 	}
-	if true {
+	if !isNil(o.IterationCount) {
 		toSerialize["iterationCount"] = o.IterationCount
 	}
-	if true {
+	if !isNil(o.SaltLengthBytes) {
 		toSerialize["saltLengthBytes"] = o.SaltLengthBytes
 	}
-	if true {
+	if !isNil(o.DerivedKeyLengthBytes) {
 		toSerialize["derivedKeyLengthBytes"] = o.DerivedKeyLengthBytes
 	}
 	if !isNil(o.MaxPasswordLength) {

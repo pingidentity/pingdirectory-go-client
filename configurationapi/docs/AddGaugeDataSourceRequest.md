@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **ResourceType** | Pointer to **string** | A string indicating the type of resource being monitored. | [optional] 
 **MinimumUpdateInterval** | Pointer to **string** | The minimum frequency with which gauges using this Gauge Data Source can be configured for update. In order to prevent undesirable side effects, some Gauge Data Sources may use this property to impose a higher bound on the update frequency of gauges. | [optional] 
 **DataOrientation** | Pointer to [**EnumgaugeDataSourceDataOrientationProp**](EnumgaugeDataSourceDataOrientationProp.md) |  | [optional] 
-**StatisticType** | [**EnumgaugeDataSourceStatisticTypeProp**](EnumgaugeDataSourceStatisticTypeProp.md) |  | 
+**StatisticType** | Pointer to [**EnumgaugeDataSourceStatisticTypeProp**](EnumgaugeDataSourceStatisticTypeProp.md) |  | [optional] 
 **DivideValueBy** | Pointer to **float32** | An optional floating point value that can be used to scale the resulting value. | [optional] 
 **DivideValueByAttribute** | Pointer to **string** | An optional property that can scale the resulting value by another attribute in the monitored entry. | [optional] 
 **DivideValueByCounterAttribute** | Pointer to **string** | An optional property that can scale the resulting value by another attribute whose value represents a counter in the monitored entry. | [optional] 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 
 ### NewAddGaugeDataSourceRequest
 
-`func NewAddGaugeDataSourceRequest(sourceName string, schemas []EnumnumericGaugeDataSourceSchemaUrn, monitorObjectclass string, monitorAttribute string, statisticType EnumgaugeDataSourceStatisticTypeProp, ) *AddGaugeDataSourceRequest`
+`func NewAddGaugeDataSourceRequest(sourceName string, schemas []EnumnumericGaugeDataSourceSchemaUrn, monitorObjectclass string, monitorAttribute string, ) *AddGaugeDataSourceRequest`
 
 NewAddGaugeDataSourceRequest instantiates a new AddGaugeDataSourceRequest object
 This constructor will assign default values to properties that have it defined,
@@ -313,6 +313,11 @@ and a boolean to check if the value has been set.
 
 SetStatisticType sets StatisticType field to given value.
 
+### HasStatisticType
+
+`func (o *AddGaugeDataSourceRequest) HasStatisticType() bool`
+
+HasStatisticType returns a boolean if a field has been set.
 
 ### GetDivideValueBy
 

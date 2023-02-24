@@ -20,7 +20,7 @@ type AddLdifExportRecurringTaskRequest struct {
 	TaskName string                                 `json:"taskName"`
 	Schemas  []EnumldifExportRecurringTaskSchemaUrn `json:"schemas"`
 	// The directory in which LDIF export files will be placed. The directory must already exist.
-	LdifDirectory string `json:"ldifDirectory"`
+	LdifDirectory *string `json:"ldifDirectory,omitempty"`
 	// The backend ID for a backend to be exported.
 	BackendID []string `json:"backendID,omitempty"`
 	// The backend ID for a backend to be excluded from the export.
@@ -61,11 +61,10 @@ type AddLdifExportRecurringTaskRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddLdifExportRecurringTaskRequest(taskName string, schemas []EnumldifExportRecurringTaskSchemaUrn, ldifDirectory string) *AddLdifExportRecurringTaskRequest {
+func NewAddLdifExportRecurringTaskRequest(taskName string, schemas []EnumldifExportRecurringTaskSchemaUrn) *AddLdifExportRecurringTaskRequest {
 	this := AddLdifExportRecurringTaskRequest{}
 	this.TaskName = taskName
 	this.Schemas = schemas
-	this.LdifDirectory = ldifDirectory
 	return &this
 }
 
@@ -125,28 +124,36 @@ func (o *AddLdifExportRecurringTaskRequest) SetSchemas(v []EnumldifExportRecurri
 	o.Schemas = v
 }
 
-// GetLdifDirectory returns the LdifDirectory field value
+// GetLdifDirectory returns the LdifDirectory field value if set, zero value otherwise.
 func (o *AddLdifExportRecurringTaskRequest) GetLdifDirectory() string {
-	if o == nil {
+	if o == nil || isNil(o.LdifDirectory) {
 		var ret string
 		return ret
 	}
-
-	return o.LdifDirectory
+	return *o.LdifDirectory
 }
 
-// GetLdifDirectoryOk returns a tuple with the LdifDirectory field value
+// GetLdifDirectoryOk returns a tuple with the LdifDirectory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdifExportRecurringTaskRequest) GetLdifDirectoryOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.LdifDirectory) {
 		return nil, false
 	}
-	return &o.LdifDirectory, true
+	return o.LdifDirectory, true
 }
 
-// SetLdifDirectory sets field value
+// HasLdifDirectory returns a boolean if a field has been set.
+func (o *AddLdifExportRecurringTaskRequest) HasLdifDirectory() bool {
+	if o != nil && !isNil(o.LdifDirectory) {
+		return true
+	}
+
+	return false
+}
+
+// SetLdifDirectory gets a reference to the given string and assigns it to the LdifDirectory field.
 func (o *AddLdifExportRecurringTaskRequest) SetLdifDirectory(v string) {
-	o.LdifDirectory = v
+	o.LdifDirectory = &v
 }
 
 // GetBackendID returns the BackendID field value if set, zero value otherwise.
@@ -701,7 +708,7 @@ func (o AddLdifExportRecurringTaskRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if true {
+	if !isNil(o.LdifDirectory) {
 		toSerialize["ldifDirectory"] = o.LdifDirectory
 	}
 	if !isNil(o.BackendID) {

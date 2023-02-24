@@ -827,6 +827,9 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/internal-search-rate-plugin-shared'
+      required:
+      - pluginType
+      - numThreads
     internal-search-rate-plugin-shared:
       type: object
       properties:
@@ -878,8 +881,6 @@ components:
               Indicates whether the plug-in should be invoked for internal operations.
       required:
       - schemas
-      - pluginType
-      - numThreads
       - baseDN
       - filterPrefix
       - enabled
@@ -965,6 +966,9 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/seven-bit-clean-plugin-shared'
+      required:
+      - pluginType
+      - attributeType
     seven-bit-clean-plugin-shared:
       type: object
       properties:
@@ -1004,8 +1008,6 @@ components:
               Indicates whether the plug-in should be invoked for internal operations.
       required:
       - schemas
-      - pluginType
-      - attributeType
       - enabled
     Enumseven-bit-clean-pluginSchemaUrn:
       type: string
@@ -1032,6 +1034,10 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/clean-up-expired-pingfederate-persistent-access-grants-plugin-shared'
+      required:
+      - pollingInterval
+      - maxUpdatesPerSecond
+      - numDeleteThreads
     clean-up-expired-pingfederate-persistent-access-grants-plugin-shared:
       type: object
       properties:
@@ -1067,9 +1073,6 @@ components:
               Indicates whether the plug-in is enabled for use.
       required:
       - schemas
-      - pollingInterval
-      - maxUpdatesPerSecond
-      - numDeleteThreads
       - enabled
     Enumclean-up-expired-pingfederate-persistent-access-grants-pluginSchemaUrn:
       type: string
@@ -1096,6 +1099,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/periodic-gc-plugin-shared'
+      required:
+      - pluginType
     periodic-gc-plugin-shared:
       type: object
       properties:
@@ -1141,7 +1146,6 @@ components:
               Indicates whether the plug-in should be invoked for internal operations.
       required:
       - schemas
-      - pluginType
       - invokeGCTimeUtc
       - enabled
     Enumperiodic-gc-pluginSchemaUrn:
@@ -1477,6 +1481,15 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/periodic-stats-logger-plugin-shared'
+      required:
+      - logInterval
+      - collectionInterval
+      - suppressIfIdle
+      - linesBetweenHeader
+      - histogramFormat
+      - logFilePermissions
+      - rotationPolicy
+      - retentionPolicy
     periodic-stats-logger-plugin-shared:
       type: object
       properties:
@@ -1592,15 +1605,7 @@ components:
               Indicates whether the plug-in is enabled for use.
       required:
       - schemas
-      - logInterval
-      - collectionInterval
-      - suppressIfIdle
-      - linesBetweenHeader
-      - histogramFormat
       - logFile
-      - logFilePermissions
-      - rotationPolicy
-      - retentionPolicy
       - enabled
     Enumperiodic-stats-logger-pluginSchemaUrn:
       type: string
@@ -1627,6 +1632,11 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/purge-expired-data-plugin-shared'
+      required:
+      - datetimeFormat
+      - pollingInterval
+      - maxUpdatesPerSecond
+      - numDeleteThreads
     purge-expired-data-plugin-shared:
       type: object
       properties:
@@ -1695,11 +1705,7 @@ components:
       required:
       - schemas
       - datetimeAttribute
-      - datetimeFormat
       - expirationOffset
-      - pollingInterval
-      - maxUpdatesPerSecond
-      - numDeleteThreads
       - enabled
     Enumpurge-expired-data-pluginSchemaUrn:
       type: string
@@ -1765,6 +1771,9 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/sub-operation-timing-plugin-shared'
+      required:
+      - pluginType
+      - numMostExpensivePhasesShown
     sub-operation-timing-plugin-shared:
       type: object
       properties:
@@ -1800,8 +1809,6 @@ components:
               Indicates whether the plug-in is enabled for use.
       required:
       - schemas
-      - pluginType
-      - numMostExpensivePhasesShown
       - enabled
     Enumsub-operation-timing-pluginSchemaUrn:
       type: string
@@ -1945,6 +1952,14 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/pass-through-authentication-plugin-shared'
+      required:
+      - pluginType
+      - tryLocalBind
+      - overrideLocalPassword
+      - updateLocalPassword
+      - serverAccessMode
+      - initialConnections
+      - maxConnections
     pass-through-authentication-plugin-shared:
       type: object
       properties:
@@ -2036,14 +2051,7 @@ components:
               Indicates whether the plug-in should be invoked for internal operations.
       required:
       - schemas
-      - pluginType
       - server
-      - tryLocalBind
-      - overrideLocalPassword
-      - updateLocalPassword
-      - serverAccessMode
-      - initialConnections
-      - maxConnections
       - enabled
     Enumpass-through-authentication-pluginSchemaUrn:
       type: string
@@ -2070,6 +2078,11 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/dn-mapper-plugin-shared'
+      required:
+      - pluginType
+      - enableAttributeMapping
+      - enableControlMapping
+      - alwaysMapResponses
     dn-mapper-plugin-shared:
       type: object
       properties:
@@ -2123,12 +2136,8 @@ components:
               Indicates whether the plug-in should be invoked for internal operations.
       required:
       - schemas
-      - pluginType
       - sourceDN
       - targetDN
-      - enableAttributeMapping
-      - enableControlMapping
-      - alwaysMapResponses
       - enabled
     Enumdn-mapper-pluginSchemaUrn:
       type: string
@@ -2217,6 +2226,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/referral-on-update-plugin-shared'
+      required:
+      - pluginType
     referral-on-update-plugin-shared:
       type: object
       properties:
@@ -2256,7 +2267,6 @@ components:
               Indicates whether the plug-in is enabled for use.
       required:
       - schemas
-      - pluginType
       - referralBaseURL
       - enabled
     Enumreferral-on-update-pluginSchemaUrn:
@@ -2337,6 +2347,9 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/snmp-subagent-plugin-shared'
+      required:
+      - agentxAddress
+      - agentxPort
     snmp-subagent-plugin-shared:
       type: object
       properties:
@@ -2388,8 +2401,6 @@ components:
               Indicates whether the plug-in should be invoked for internal operations.
       required:
       - schemas
-      - agentxAddress
-      - agentxPort
       - enabled
     Enumsnmp-subagent-pluginSchemaUrn:
       type: string
@@ -2509,6 +2520,10 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/clean-up-inactive-pingfederate-persistent-sessions-plugin-shared'
+      required:
+      - pollingInterval
+      - maxUpdatesPerSecond
+      - numDeleteThreads
     clean-up-inactive-pingfederate-persistent-sessions-plugin-shared:
       type: object
       properties:
@@ -2549,9 +2564,6 @@ components:
       required:
       - schemas
       - expirationOffset
-      - pollingInterval
-      - maxUpdatesPerSecond
-      - numDeleteThreads
       - enabled
     Enumclean-up-inactive-pingfederate-persistent-sessions-pluginSchemaUrn:
       type: string
@@ -2578,6 +2590,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/composed-attribute-plugin-shared'
+      required:
+      - pluginType
     composed-attribute-plugin-shared:
       type: object
       properties:
@@ -2655,7 +2669,6 @@ components:
               Indicates whether the plug-in should be invoked for internal operations.
       required:
       - schemas
-      - pluginType
       - attributeType
       - valuePattern
       - enabled
@@ -2723,6 +2736,10 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/attribute-mapper-plugin-shared'
+      required:
+      - pluginType
+      - enableControlMapping
+      - alwaysMapResponses
     attribute-mapper-plugin-shared:
       type: object
       properties:
@@ -2766,11 +2783,8 @@ components:
               Indicates whether the plug-in should be invoked for internal operations.
       required:
       - schemas
-      - pluginType
       - sourceAttribute
       - targetAttribute
-      - enableControlMapping
-      - alwaysMapResponses
       - enabled
     Enumattribute-mapper-pluginSchemaUrn:
       type: string
@@ -2797,6 +2811,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/delay-plugin-shared'
+      required:
+      - pluginType
     delay-plugin-shared:
       type: object
       properties:
@@ -2836,7 +2852,6 @@ components:
               Indicates whether the plug-in should be invoked for internal operations.
       required:
       - schemas
-      - pluginType
       - delay
       - enabled
     Enumdelay-pluginSchemaUrn:
@@ -2864,6 +2879,10 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/clean-up-expired-pingfederate-persistent-sessions-plugin-shared'
+      required:
+      - pollingInterval
+      - maxUpdatesPerSecond
+      - numDeleteThreads
     clean-up-expired-pingfederate-persistent-sessions-plugin-shared:
       type: object
       properties:
@@ -2899,9 +2918,6 @@ components:
               Indicates whether the plug-in is enabled for use.
       required:
       - schemas
-      - pollingInterval
-      - maxUpdatesPerSecond
-      - numDeleteThreads
       - enabled
     Enumclean-up-expired-pingfederate-persistent-sessions-pluginSchemaUrn:
       type: string
@@ -3140,6 +3156,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/referential-integrity-plugin-shared'
+      required:
+      - pluginType
     referential-integrity-plugin-shared:
       type: object
       properties:
@@ -3187,7 +3205,6 @@ components:
               Indicates whether the plug-in should be invoked for internal operations.
       required:
       - schemas
-      - pluginType
       - attributeType
       - enabled
     Enumreferential-integrity-pluginSchemaUrn:
@@ -3215,6 +3232,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/unique-attribute-plugin-shared'
+      required:
+      - pluginType
     unique-attribute-plugin-shared:
       type: object
       properties:
@@ -3264,7 +3283,6 @@ components:
               Indicates whether the plug-in should be invoked for internal operations.
       required:
       - schemas
-      - pluginType
       - type
       - enabled
     Enumunique-attribute-pluginSchemaUrn:
@@ -3292,6 +3310,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/custom-logged-stats-shared'
+      required:
+      - enabled
     custom-logged-stats-shared:
       type: object
       properties:
@@ -3366,7 +3386,6 @@ components:
           description: >-
               If this property is set to true, then the value of any of the monitored attributes here can contribute to whether an interval is considered "idle" by the Periodic Stats Logger.
       required:
-      - enabled
       - monitorObjectclass
       - attributeToLog
       - statisticType

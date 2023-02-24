@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **IdentityMapper** | **string** | The identity mapper that may be used to map usernames to user entries. If the custom SASL mechanism involves a username or some other form of authentication and/or authorization identity, then this may be used to map that ID to an entry for that user. | 
 **Description** | Pointer to **string** | A description for this SASL Mechanism Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the SASL mechanism handler is enabled for use. | 
-**OtpValidityDuration** | **string** | The maximum length of time that a one-time password value should be considered valid. | 
+**OtpValidityDuration** | Pointer to **string** | The maximum length of time that a one-time password value should be considered valid. | [optional] 
 **AccessTokenValidator** | Pointer to **[]string** | An access token validator that will ensure that each presented OAuth access token is authentic and trustworthy. It must be configured with an identity mapper that will be used to map the access token to a local entry. | [optional] 
 **IdTokenValidator** | Pointer to **[]string** | An ID token validator that will ensure that each presented OpenID Connect ID token is authentic and trustworthy, and that will map the token to a local entry. | [optional] 
 **RequireBothAccessTokenAndIDToken** | Pointer to **bool** | Indicates whether bind requests will be required to have both an OAuth access token (in the \&quot;auth\&quot; element of the bind request) and an OpenID Connect ID token (in the \&quot;pingidentityidtoken\&quot; element of the bind request). | [optional] 
@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 
 ### NewAddSaslMechanismHandlerRequest
 
-`func NewAddSaslMechanismHandlerRequest(handlerName string, schemas []EnumthirdPartySaslMechanismHandlerSchemaUrn, identityMapper string, enabled bool, otpValidityDuration string, extensionClass string, ) *AddSaslMechanismHandlerRequest`
+`func NewAddSaslMechanismHandlerRequest(handlerName string, schemas []EnumthirdPartySaslMechanismHandlerSchemaUrn, identityMapper string, enabled bool, extensionClass string, ) *AddSaslMechanismHandlerRequest`
 
 NewAddSaslMechanismHandlerRequest instantiates a new AddSaslMechanismHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -164,6 +164,11 @@ and a boolean to check if the value has been set.
 
 SetOtpValidityDuration sets OtpValidityDuration field to given value.
 
+### HasOtpValidityDuration
+
+`func (o *AddSaslMechanismHandlerRequest) HasOtpValidityDuration() bool`
+
+HasOtpValidityDuration returns a boolean if a field has been set.
 
 ### GetAccessTokenValidator
 

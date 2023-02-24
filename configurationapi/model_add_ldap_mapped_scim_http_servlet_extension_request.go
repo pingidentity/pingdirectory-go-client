@@ -38,11 +38,11 @@ type AddLdapMappedScimHttpServletExtensionRequest struct {
 	// Specifies the LDAP attribute whose value should be used as the entity tag value to enable SCIM resource versioning support.
 	EntityTagLDAPAttribute *string `json:"entityTagLDAPAttribute,omitempty"`
 	// The context path to use to access the SCIM interface. The value must start with a forward slash and must represent a valid HTTP context path.
-	BaseContextPath string `json:"baseContextPath"`
+	BaseContextPath *string `json:"baseContextPath,omitempty"`
 	// Specifies the location of the directory that is used to create temporary files containing SCIM request data.
-	TemporaryDirectory string `json:"temporaryDirectory"`
+	TemporaryDirectory *string `json:"temporaryDirectory,omitempty"`
 	// Specifies the permissions that should be applied to the directory that is used to create temporary files.
-	TemporaryDirectoryPermissions string `json:"temporaryDirectoryPermissions"`
+	TemporaryDirectoryPermissions *string `json:"temporaryDirectoryPermissions,omitempty"`
 	// The maximum number of resources that are returned in a response.
 	MaxResults *int32 `json:"maxResults,omitempty"`
 	// The maximum number of operations that are permitted in a bulk request.
@@ -53,10 +53,10 @@ type AddLdapMappedScimHttpServletExtensionRequest struct {
 	BulkMaxConcurrentRequests *int32 `json:"bulkMaxConcurrentRequests,omitempty"`
 	// Enables debug logging of the SCIM SDK. Debug messages will be forwarded to the Directory Server debug logger with the scope of com.unboundid.directory.server.extensions.scim.SCIMHTTPServletExtension.
 	DebugEnabled *bool                                   `json:"debugEnabled,omitempty"`
-	DebugLevel   EnumhttpServletExtensionDebugLevelProp  `json:"debugLevel"`
-	DebugType    []EnumhttpServletExtensionDebugTypeProp `json:"debugType"`
+	DebugLevel   *EnumhttpServletExtensionDebugLevelProp `json:"debugLevel,omitempty"`
+	DebugType    []EnumhttpServletExtensionDebugTypeProp `json:"debugType,omitempty"`
 	// Indicates whether a stack trace of the thread which called the debug method should be included in debug log messages.
-	IncludeStackTrace bool `json:"includeStackTrace"`
+	IncludeStackTrace *bool `json:"includeStackTrace,omitempty"`
 	// A description for this HTTP Servlet Extension
 	Description *string `json:"description,omitempty"`
 	// The cross-origin request policy to use for the HTTP Servlet Extension.
@@ -71,16 +71,10 @@ type AddLdapMappedScimHttpServletExtensionRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddLdapMappedScimHttpServletExtensionRequest(extensionName string, schemas []EnumldapMappedScimHttpServletExtensionSchemaUrn, baseContextPath string, temporaryDirectory string, temporaryDirectoryPermissions string, debugLevel EnumhttpServletExtensionDebugLevelProp, debugType []EnumhttpServletExtensionDebugTypeProp, includeStackTrace bool) *AddLdapMappedScimHttpServletExtensionRequest {
+func NewAddLdapMappedScimHttpServletExtensionRequest(extensionName string, schemas []EnumldapMappedScimHttpServletExtensionSchemaUrn) *AddLdapMappedScimHttpServletExtensionRequest {
 	this := AddLdapMappedScimHttpServletExtensionRequest{}
 	this.ExtensionName = extensionName
 	this.Schemas = schemas
-	this.BaseContextPath = baseContextPath
-	this.TemporaryDirectory = temporaryDirectory
-	this.TemporaryDirectoryPermissions = temporaryDirectoryPermissions
-	this.DebugLevel = debugLevel
-	this.DebugType = debugType
-	this.IncludeStackTrace = includeStackTrace
 	return &this
 }
 
@@ -428,76 +422,100 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) SetEntityTagLDAPAttribute
 	o.EntityTagLDAPAttribute = &v
 }
 
-// GetBaseContextPath returns the BaseContextPath field value
+// GetBaseContextPath returns the BaseContextPath field value if set, zero value otherwise.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetBaseContextPath() string {
-	if o == nil {
+	if o == nil || isNil(o.BaseContextPath) {
 		var ret string
 		return ret
 	}
-
-	return o.BaseContextPath
+	return *o.BaseContextPath
 }
 
-// GetBaseContextPathOk returns a tuple with the BaseContextPath field value
+// GetBaseContextPathOk returns a tuple with the BaseContextPath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetBaseContextPathOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.BaseContextPath) {
 		return nil, false
 	}
-	return &o.BaseContextPath, true
+	return o.BaseContextPath, true
 }
 
-// SetBaseContextPath sets field value
+// HasBaseContextPath returns a boolean if a field has been set.
+func (o *AddLdapMappedScimHttpServletExtensionRequest) HasBaseContextPath() bool {
+	if o != nil && !isNil(o.BaseContextPath) {
+		return true
+	}
+
+	return false
+}
+
+// SetBaseContextPath gets a reference to the given string and assigns it to the BaseContextPath field.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) SetBaseContextPath(v string) {
-	o.BaseContextPath = v
+	o.BaseContextPath = &v
 }
 
-// GetTemporaryDirectory returns the TemporaryDirectory field value
+// GetTemporaryDirectory returns the TemporaryDirectory field value if set, zero value otherwise.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetTemporaryDirectory() string {
-	if o == nil {
+	if o == nil || isNil(o.TemporaryDirectory) {
 		var ret string
 		return ret
 	}
-
-	return o.TemporaryDirectory
+	return *o.TemporaryDirectory
 }
 
-// GetTemporaryDirectoryOk returns a tuple with the TemporaryDirectory field value
+// GetTemporaryDirectoryOk returns a tuple with the TemporaryDirectory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetTemporaryDirectoryOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.TemporaryDirectory) {
 		return nil, false
 	}
-	return &o.TemporaryDirectory, true
+	return o.TemporaryDirectory, true
 }
 
-// SetTemporaryDirectory sets field value
+// HasTemporaryDirectory returns a boolean if a field has been set.
+func (o *AddLdapMappedScimHttpServletExtensionRequest) HasTemporaryDirectory() bool {
+	if o != nil && !isNil(o.TemporaryDirectory) {
+		return true
+	}
+
+	return false
+}
+
+// SetTemporaryDirectory gets a reference to the given string and assigns it to the TemporaryDirectory field.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) SetTemporaryDirectory(v string) {
-	o.TemporaryDirectory = v
+	o.TemporaryDirectory = &v
 }
 
-// GetTemporaryDirectoryPermissions returns the TemporaryDirectoryPermissions field value
+// GetTemporaryDirectoryPermissions returns the TemporaryDirectoryPermissions field value if set, zero value otherwise.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetTemporaryDirectoryPermissions() string {
-	if o == nil {
+	if o == nil || isNil(o.TemporaryDirectoryPermissions) {
 		var ret string
 		return ret
 	}
-
-	return o.TemporaryDirectoryPermissions
+	return *o.TemporaryDirectoryPermissions
 }
 
-// GetTemporaryDirectoryPermissionsOk returns a tuple with the TemporaryDirectoryPermissions field value
+// GetTemporaryDirectoryPermissionsOk returns a tuple with the TemporaryDirectoryPermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetTemporaryDirectoryPermissionsOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.TemporaryDirectoryPermissions) {
 		return nil, false
 	}
-	return &o.TemporaryDirectoryPermissions, true
+	return o.TemporaryDirectoryPermissions, true
 }
 
-// SetTemporaryDirectoryPermissions sets field value
+// HasTemporaryDirectoryPermissions returns a boolean if a field has been set.
+func (o *AddLdapMappedScimHttpServletExtensionRequest) HasTemporaryDirectoryPermissions() bool {
+	if o != nil && !isNil(o.TemporaryDirectoryPermissions) {
+		return true
+	}
+
+	return false
+}
+
+// SetTemporaryDirectoryPermissions gets a reference to the given string and assigns it to the TemporaryDirectoryPermissions field.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) SetTemporaryDirectoryPermissions(v string) {
-	o.TemporaryDirectoryPermissions = v
+	o.TemporaryDirectoryPermissions = &v
 }
 
 // GetMaxResults returns the MaxResults field value if set, zero value otherwise.
@@ -660,76 +678,100 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) SetDebugEnabled(v bool) {
 	o.DebugEnabled = &v
 }
 
-// GetDebugLevel returns the DebugLevel field value
+// GetDebugLevel returns the DebugLevel field value if set, zero value otherwise.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetDebugLevel() EnumhttpServletExtensionDebugLevelProp {
-	if o == nil {
+	if o == nil || isNil(o.DebugLevel) {
 		var ret EnumhttpServletExtensionDebugLevelProp
 		return ret
 	}
-
-	return o.DebugLevel
+	return *o.DebugLevel
 }
 
-// GetDebugLevelOk returns a tuple with the DebugLevel field value
+// GetDebugLevelOk returns a tuple with the DebugLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetDebugLevelOk() (*EnumhttpServletExtensionDebugLevelProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.DebugLevel) {
 		return nil, false
 	}
-	return &o.DebugLevel, true
+	return o.DebugLevel, true
 }
 
-// SetDebugLevel sets field value
+// HasDebugLevel returns a boolean if a field has been set.
+func (o *AddLdapMappedScimHttpServletExtensionRequest) HasDebugLevel() bool {
+	if o != nil && !isNil(o.DebugLevel) {
+		return true
+	}
+
+	return false
+}
+
+// SetDebugLevel gets a reference to the given EnumhttpServletExtensionDebugLevelProp and assigns it to the DebugLevel field.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) SetDebugLevel(v EnumhttpServletExtensionDebugLevelProp) {
-	o.DebugLevel = v
+	o.DebugLevel = &v
 }
 
-// GetDebugType returns the DebugType field value
+// GetDebugType returns the DebugType field value if set, zero value otherwise.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetDebugType() []EnumhttpServletExtensionDebugTypeProp {
-	if o == nil {
+	if o == nil || isNil(o.DebugType) {
 		var ret []EnumhttpServletExtensionDebugTypeProp
 		return ret
 	}
-
 	return o.DebugType
 }
 
-// GetDebugTypeOk returns a tuple with the DebugType field value
+// GetDebugTypeOk returns a tuple with the DebugType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetDebugTypeOk() ([]EnumhttpServletExtensionDebugTypeProp, bool) {
-	if o == nil {
+	if o == nil || isNil(o.DebugType) {
 		return nil, false
 	}
 	return o.DebugType, true
 }
 
-// SetDebugType sets field value
+// HasDebugType returns a boolean if a field has been set.
+func (o *AddLdapMappedScimHttpServletExtensionRequest) HasDebugType() bool {
+	if o != nil && !isNil(o.DebugType) {
+		return true
+	}
+
+	return false
+}
+
+// SetDebugType gets a reference to the given []EnumhttpServletExtensionDebugTypeProp and assigns it to the DebugType field.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) SetDebugType(v []EnumhttpServletExtensionDebugTypeProp) {
 	o.DebugType = v
 }
 
-// GetIncludeStackTrace returns the IncludeStackTrace field value
+// GetIncludeStackTrace returns the IncludeStackTrace field value if set, zero value otherwise.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetIncludeStackTrace() bool {
-	if o == nil {
+	if o == nil || isNil(o.IncludeStackTrace) {
 		var ret bool
 		return ret
 	}
-
-	return o.IncludeStackTrace
+	return *o.IncludeStackTrace
 }
 
-// GetIncludeStackTraceOk returns a tuple with the IncludeStackTrace field value
+// GetIncludeStackTraceOk returns a tuple with the IncludeStackTrace field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetIncludeStackTraceOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || isNil(o.IncludeStackTrace) {
 		return nil, false
 	}
-	return &o.IncludeStackTrace, true
+	return o.IncludeStackTrace, true
 }
 
-// SetIncludeStackTrace sets field value
+// HasIncludeStackTrace returns a boolean if a field has been set.
+func (o *AddLdapMappedScimHttpServletExtensionRequest) HasIncludeStackTrace() bool {
+	if o != nil && !isNil(o.IncludeStackTrace) {
+		return true
+	}
+
+	return false
+}
+
+// SetIncludeStackTrace gets a reference to the given bool and assigns it to the IncludeStackTrace field.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) SetIncludeStackTrace(v bool) {
-	o.IncludeStackTrace = v
+	o.IncludeStackTrace = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -895,13 +937,13 @@ func (o AddLdapMappedScimHttpServletExtensionRequest) MarshalJSON() ([]byte, err
 	if !isNil(o.EntityTagLDAPAttribute) {
 		toSerialize["entityTagLDAPAttribute"] = o.EntityTagLDAPAttribute
 	}
-	if true {
+	if !isNil(o.BaseContextPath) {
 		toSerialize["baseContextPath"] = o.BaseContextPath
 	}
-	if true {
+	if !isNil(o.TemporaryDirectory) {
 		toSerialize["temporaryDirectory"] = o.TemporaryDirectory
 	}
-	if true {
+	if !isNil(o.TemporaryDirectoryPermissions) {
 		toSerialize["temporaryDirectoryPermissions"] = o.TemporaryDirectoryPermissions
 	}
 	if !isNil(o.MaxResults) {
@@ -919,13 +961,13 @@ func (o AddLdapMappedScimHttpServletExtensionRequest) MarshalJSON() ([]byte, err
 	if !isNil(o.DebugEnabled) {
 		toSerialize["debugEnabled"] = o.DebugEnabled
 	}
-	if true {
+	if !isNil(o.DebugLevel) {
 		toSerialize["debugLevel"] = o.DebugLevel
 	}
-	if true {
+	if !isNil(o.DebugType) {
 		toSerialize["debugType"] = o.DebugType
 	}
-	if true {
+	if !isNil(o.IncludeStackTrace) {
 		toSerialize["includeStackTrace"] = o.IncludeStackTrace
 	}
 	if !isNil(o.Description) {

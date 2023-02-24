@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MapperName** | **string** | Name of the new Identity Mapper | 
 **Schemas** | [**[]EnumthirdPartyIdentityMapperSchemaUrn**](EnumthirdPartyIdentityMapperSchemaUrn.md) |  | 
-**MatchAttribute** | **[]string** | Specifies the name or OID of the attribute whose value should match the provided identifier string after it has been processed by the associated regular expression. | 
+**MatchAttribute** | Pointer to **[]string** | Specifies the name or OID of the attribute whose value should match the provided identifier string after it has been processed by the associated regular expression. | [optional] 
 **MatchBaseDN** | Pointer to **[]string** | Specifies the base DN(s) that should be used when performing searches to map the provided ID string to a user entry. If multiple values are given, searches are performed below all the specified base DNs. | [optional] 
 **MatchFilter** | Pointer to **string** | An optional filter that mapped users must match. | [optional] 
 **Description** | Pointer to **string** | A description for this Identity Mapper | [optional] 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 
 ### NewAddIdentityMapperRequest
 
-`func NewAddIdentityMapperRequest(mapperName string, schemas []EnumthirdPartyIdentityMapperSchemaUrn, matchAttribute []string, enabled bool, scriptClass string, matchPattern string, extensionClass string, ) *AddIdentityMapperRequest`
+`func NewAddIdentityMapperRequest(mapperName string, schemas []EnumthirdPartyIdentityMapperSchemaUrn, enabled bool, scriptClass string, matchPattern string, extensionClass string, ) *AddIdentityMapperRequest`
 
 NewAddIdentityMapperRequest instantiates a new AddIdentityMapperRequest object
 This constructor will assign default values to properties that have it defined,
@@ -98,6 +98,11 @@ and a boolean to check if the value has been set.
 
 SetMatchAttribute sets MatchAttribute field to given value.
 
+### HasMatchAttribute
+
+`func (o *AddIdentityMapperRequest) HasMatchAttribute() bool`
+
+HasMatchAttribute returns a boolean if a field has been set.
 
 ### GetMatchBaseDN
 

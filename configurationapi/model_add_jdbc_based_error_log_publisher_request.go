@@ -24,7 +24,7 @@ type AddJdbcBasedErrorLogPublisherRequest struct {
 	// The log field mapping associates loggable fields to database column names. The table name is not part of this mapping.
 	LogFieldMapping string `json:"logFieldMapping"`
 	// The table name to log entries to the database server.
-	LogTableName string `json:"logTableName"`
+	LogTableName *string `json:"logTableName,omitempty"`
 	// The maximum number of log records that can be stored in the asynchronous queue.
 	QueueSize       *int32                                `json:"queueSize,omitempty"`
 	DefaultSeverity []EnumlogPublisherDefaultSeverityProp `json:"defaultSeverity,omitempty"`
@@ -41,13 +41,12 @@ type AddJdbcBasedErrorLogPublisherRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddJdbcBasedErrorLogPublisherRequest(publisherName string, schemas []EnumjdbcBasedErrorLogPublisherSchemaUrn, server string, logFieldMapping string, logTableName string, enabled bool) *AddJdbcBasedErrorLogPublisherRequest {
+func NewAddJdbcBasedErrorLogPublisherRequest(publisherName string, schemas []EnumjdbcBasedErrorLogPublisherSchemaUrn, server string, logFieldMapping string, enabled bool) *AddJdbcBasedErrorLogPublisherRequest {
 	this := AddJdbcBasedErrorLogPublisherRequest{}
 	this.PublisherName = publisherName
 	this.Schemas = schemas
 	this.Server = server
 	this.LogFieldMapping = logFieldMapping
-	this.LogTableName = logTableName
 	this.Enabled = enabled
 	return &this
 }
@@ -156,28 +155,36 @@ func (o *AddJdbcBasedErrorLogPublisherRequest) SetLogFieldMapping(v string) {
 	o.LogFieldMapping = v
 }
 
-// GetLogTableName returns the LogTableName field value
+// GetLogTableName returns the LogTableName field value if set, zero value otherwise.
 func (o *AddJdbcBasedErrorLogPublisherRequest) GetLogTableName() string {
-	if o == nil {
+	if o == nil || isNil(o.LogTableName) {
 		var ret string
 		return ret
 	}
-
-	return o.LogTableName
+	return *o.LogTableName
 }
 
-// GetLogTableNameOk returns a tuple with the LogTableName field value
+// GetLogTableNameOk returns a tuple with the LogTableName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJdbcBasedErrorLogPublisherRequest) GetLogTableNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.LogTableName) {
 		return nil, false
 	}
-	return &o.LogTableName, true
+	return o.LogTableName, true
 }
 
-// SetLogTableName sets field value
+// HasLogTableName returns a boolean if a field has been set.
+func (o *AddJdbcBasedErrorLogPublisherRequest) HasLogTableName() bool {
+	if o != nil && !isNil(o.LogTableName) {
+		return true
+	}
+
+	return false
+}
+
+// SetLogTableName gets a reference to the given string and assigns it to the LogTableName field.
 func (o *AddJdbcBasedErrorLogPublisherRequest) SetLogTableName(v string) {
-	o.LogTableName = v
+	o.LogTableName = &v
 }
 
 // GetQueueSize returns the QueueSize field value if set, zero value otherwise.
@@ -378,7 +385,7 @@ func (o AddJdbcBasedErrorLogPublisherRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["logFieldMapping"] = o.LogFieldMapping
 	}
-	if true {
+	if !isNil(o.LogTableName) {
 		toSerialize["logTableName"] = o.LogTableName
 	}
 	if !isNil(o.QueueSize) {

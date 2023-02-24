@@ -246,6 +246,9 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/smtp-alert-handler-shared'
+      required:
+      - messageSubject
+      - messageBody
     smtp-alert-handler-shared:
       type: object
       properties:
@@ -305,8 +308,6 @@ components:
       - schemas
       - senderAddress
       - recipientAddress
-      - messageSubject
-      - messageBody
       - enabled
     Enumsmtp-alert-handlerSchemaUrn:
       type: string
@@ -466,6 +467,9 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/snmp-alert-handler-shared'
+      required:
+      - serverPort
+      - communityName
     snmp-alert-handler-shared:
       type: object
       properties:
@@ -514,8 +518,6 @@ components:
       required:
       - schemas
       - serverHostName
-      - serverPort
-      - communityName
       - enabled
     Enumsnmp-alert-handlerSchemaUrn:
       type: string
@@ -542,6 +544,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/twilio-alert-handler-shared'
+      required:
+      - longMessageBehavior
     twilio-alert-handler-shared:
       type: object
       properties:
@@ -607,7 +611,6 @@ components:
       - twilioAccountSID
       - senderPhoneNumber
       - recipientPhoneNumber
-      - longMessageBehavior
       - enabled
     Enumtwilio-alert-handlerSchemaUrn:
       type: string

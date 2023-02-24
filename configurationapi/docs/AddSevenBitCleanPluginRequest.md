@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnumsevenBitCleanPluginSchemaUrn**](EnumsevenBitCleanPluginSchemaUrn.md) |  | 
-**PluginType** | [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | 
-**AttributeType** | **[]string** | Specifies the name or OID of an attribute type for which values should be checked to ensure that they are 7-bit clean. | 
+**PluginType** | Pointer to [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | [optional] 
+**AttributeType** | Pointer to **[]string** | Specifies the name or OID of an attribute type for which values should be checked to ensure that they are 7-bit clean. | [optional] 
 **BaseDN** | Pointer to **[]string** | Specifies the base DN below which the checking is performed. | [optional] 
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewAddSevenBitCleanPluginRequest
 
-`func NewAddSevenBitCleanPluginRequest(pluginName string, schemas []EnumsevenBitCleanPluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, attributeType []string, enabled bool, ) *AddSevenBitCleanPluginRequest`
+`func NewAddSevenBitCleanPluginRequest(pluginName string, schemas []EnumsevenBitCleanPluginSchemaUrn, enabled bool, ) *AddSevenBitCleanPluginRequest`
 
 NewAddSevenBitCleanPluginRequest instantiates a new AddSevenBitCleanPluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -91,6 +91,11 @@ and a boolean to check if the value has been set.
 
 SetPluginType sets PluginType field to given value.
 
+### HasPluginType
+
+`func (o *AddSevenBitCleanPluginRequest) HasPluginType() bool`
+
+HasPluginType returns a boolean if a field has been set.
 
 ### GetAttributeType
 
@@ -111,6 +116,11 @@ and a boolean to check if the value has been set.
 
 SetAttributeType sets AttributeType field to given value.
 
+### HasAttributeType
+
+`func (o *AddSevenBitCleanPluginRequest) HasAttributeType() bool`
+
+HasAttributeType returns a boolean if a field has been set.
 
 ### GetBaseDN
 

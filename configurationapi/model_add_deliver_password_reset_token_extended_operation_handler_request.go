@@ -24,7 +24,7 @@ type AddDeliverPasswordResetTokenExtendedOperationHandlerRequest struct {
 	// The set of delivery mechanisms that may be used to deliver password reset tokens to users for requests that do not specify one or more preferred delivery mechanisms.
 	DefaultTokenDeliveryMechanism []string `json:"defaultTokenDeliveryMechanism"`
 	// The maximum length of time that a password reset token should be considered valid.
-	PasswordResetTokenValidityDuration string `json:"passwordResetTokenValidityDuration"`
+	PasswordResetTokenValidityDuration *string `json:"passwordResetTokenValidityDuration,omitempty"`
 	// A description for this Extended Operation Handler
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
@@ -35,13 +35,12 @@ type AddDeliverPasswordResetTokenExtendedOperationHandlerRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddDeliverPasswordResetTokenExtendedOperationHandlerRequest(handlerName string, schemas []EnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn, passwordGenerator string, defaultTokenDeliveryMechanism []string, passwordResetTokenValidityDuration string, enabled bool) *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest {
+func NewAddDeliverPasswordResetTokenExtendedOperationHandlerRequest(handlerName string, schemas []EnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn, passwordGenerator string, defaultTokenDeliveryMechanism []string, enabled bool) *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest {
 	this := AddDeliverPasswordResetTokenExtendedOperationHandlerRequest{}
 	this.HandlerName = handlerName
 	this.Schemas = schemas
 	this.PasswordGenerator = passwordGenerator
 	this.DefaultTokenDeliveryMechanism = defaultTokenDeliveryMechanism
-	this.PasswordResetTokenValidityDuration = passwordResetTokenValidityDuration
 	this.Enabled = enabled
 	return &this
 }
@@ -150,28 +149,36 @@ func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) SetDefault
 	o.DefaultTokenDeliveryMechanism = v
 }
 
-// GetPasswordResetTokenValidityDuration returns the PasswordResetTokenValidityDuration field value
+// GetPasswordResetTokenValidityDuration returns the PasswordResetTokenValidityDuration field value if set, zero value otherwise.
 func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetPasswordResetTokenValidityDuration() string {
-	if o == nil {
+	if o == nil || isNil(o.PasswordResetTokenValidityDuration) {
 		var ret string
 		return ret
 	}
-
-	return o.PasswordResetTokenValidityDuration
+	return *o.PasswordResetTokenValidityDuration
 }
 
-// GetPasswordResetTokenValidityDurationOk returns a tuple with the PasswordResetTokenValidityDuration field value
+// GetPasswordResetTokenValidityDurationOk returns a tuple with the PasswordResetTokenValidityDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetPasswordResetTokenValidityDurationOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.PasswordResetTokenValidityDuration) {
 		return nil, false
 	}
-	return &o.PasswordResetTokenValidityDuration, true
+	return o.PasswordResetTokenValidityDuration, true
 }
 
-// SetPasswordResetTokenValidityDuration sets field value
+// HasPasswordResetTokenValidityDuration returns a boolean if a field has been set.
+func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) HasPasswordResetTokenValidityDuration() bool {
+	if o != nil && !isNil(o.PasswordResetTokenValidityDuration) {
+		return true
+	}
+
+	return false
+}
+
+// SetPasswordResetTokenValidityDuration gets a reference to the given string and assigns it to the PasswordResetTokenValidityDuration field.
 func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) SetPasswordResetTokenValidityDuration(v string) {
-	o.PasswordResetTokenValidityDuration = v
+	o.PasswordResetTokenValidityDuration = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -244,7 +251,7 @@ func (o AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) MarshalJSON
 	if true {
 		toSerialize["defaultTokenDeliveryMechanism"] = o.DefaultTokenDeliveryMechanism
 	}
-	if true {
+	if !isNil(o.PasswordResetTokenValidityDuration) {
 		toSerialize["passwordResetTokenValidityDuration"] = o.PasswordResetTokenValidityDuration
 	}
 	if !isNil(o.Description) {

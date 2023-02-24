@@ -22,7 +22,7 @@ type AddPingOneIdTokenValidatorRequest struct {
 	// Specifies a PingOne base issuer URL.
 	IssuerURL string `json:"issuerURL"`
 	// Specifies HTTPS connection settings for the PingOne OpenID Connect provider.
-	OpenIDConnectProvider string `json:"OpenIDConnectProvider"`
+	OpenIDConnectProvider *string `json:"OpenIDConnectProvider,omitempty"`
 	// How often the PingOne ID Token Validator should refresh its stored cache of OpenID Connect-related metadata.
 	OpenIDConnectMetadataCacheDuration *string `json:"OpenIDConnectMetadataCacheDuration,omitempty"`
 	// A description for this ID Token Validator
@@ -45,12 +45,11 @@ type AddPingOneIdTokenValidatorRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddPingOneIdTokenValidatorRequest(validatorName string, schemas []EnumpingOneIdTokenValidatorSchemaUrn, issuerURL string, openIDConnectProvider string, enabled bool, identityMapper string, evaluationOrderIndex int32) *AddPingOneIdTokenValidatorRequest {
+func NewAddPingOneIdTokenValidatorRequest(validatorName string, schemas []EnumpingOneIdTokenValidatorSchemaUrn, issuerURL string, enabled bool, identityMapper string, evaluationOrderIndex int32) *AddPingOneIdTokenValidatorRequest {
 	this := AddPingOneIdTokenValidatorRequest{}
 	this.ValidatorName = validatorName
 	this.Schemas = schemas
 	this.IssuerURL = issuerURL
-	this.OpenIDConnectProvider = openIDConnectProvider
 	this.Enabled = enabled
 	this.IdentityMapper = identityMapper
 	this.EvaluationOrderIndex = evaluationOrderIndex
@@ -137,28 +136,36 @@ func (o *AddPingOneIdTokenValidatorRequest) SetIssuerURL(v string) {
 	o.IssuerURL = v
 }
 
-// GetOpenIDConnectProvider returns the OpenIDConnectProvider field value
+// GetOpenIDConnectProvider returns the OpenIDConnectProvider field value if set, zero value otherwise.
 func (o *AddPingOneIdTokenValidatorRequest) GetOpenIDConnectProvider() string {
-	if o == nil {
+	if o == nil || isNil(o.OpenIDConnectProvider) {
 		var ret string
 		return ret
 	}
-
-	return o.OpenIDConnectProvider
+	return *o.OpenIDConnectProvider
 }
 
-// GetOpenIDConnectProviderOk returns a tuple with the OpenIDConnectProvider field value
+// GetOpenIDConnectProviderOk returns a tuple with the OpenIDConnectProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPingOneIdTokenValidatorRequest) GetOpenIDConnectProviderOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.OpenIDConnectProvider) {
 		return nil, false
 	}
-	return &o.OpenIDConnectProvider, true
+	return o.OpenIDConnectProvider, true
 }
 
-// SetOpenIDConnectProvider sets field value
+// HasOpenIDConnectProvider returns a boolean if a field has been set.
+func (o *AddPingOneIdTokenValidatorRequest) HasOpenIDConnectProvider() bool {
+	if o != nil && !isNil(o.OpenIDConnectProvider) {
+		return true
+	}
+
+	return false
+}
+
+// SetOpenIDConnectProvider gets a reference to the given string and assigns it to the OpenIDConnectProvider field.
 func (o *AddPingOneIdTokenValidatorRequest) SetOpenIDConnectProvider(v string) {
-	o.OpenIDConnectProvider = v
+	o.OpenIDConnectProvider = &v
 }
 
 // GetOpenIDConnectMetadataCacheDuration returns the OpenIDConnectMetadataCacheDuration field value if set, zero value otherwise.
@@ -404,7 +411,7 @@ func (o AddPingOneIdTokenValidatorRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["issuerURL"] = o.IssuerURL
 	}
-	if true {
+	if !isNil(o.OpenIDConnectProvider) {
 		toSerialize["OpenIDConnectProvider"] = o.OpenIDConnectProvider
 	}
 	if !isNil(o.OpenIDConnectMetadataCacheDuration) {

@@ -30,7 +30,7 @@ type AddVaultCipherStreamProviderRequest struct {
 	// The name of the field in the Vault secret record that contains the passphrase to use to generate the encryption key.
 	VaultSecretFieldName string `json:"vaultSecretFieldName"`
 	// The path to a file that will hold metadata about the encryption performed by this Vault Cipher Stream Provider.
-	VaultEncryptionMetadataFile string `json:"vaultEncryptionMetadataFile"`
+	VaultEncryptionMetadataFile *string `json:"vaultEncryptionMetadataFile,omitempty"`
 	// The path to a file containing the information needed to trust the certificate presented by the Vault servers.
 	TrustStoreFile *string `json:"trustStoreFile,omitempty"`
 	// The passphrase needed to access the contents of the trust store. This is only required if a trust store file is required, and if that trust store requires a PIN to access its contents.
@@ -47,13 +47,12 @@ type AddVaultCipherStreamProviderRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddVaultCipherStreamProviderRequest(providerName string, schemas []EnumvaultCipherStreamProviderSchemaUrn, vaultSecretPath string, vaultSecretFieldName string, vaultEncryptionMetadataFile string, enabled bool) *AddVaultCipherStreamProviderRequest {
+func NewAddVaultCipherStreamProviderRequest(providerName string, schemas []EnumvaultCipherStreamProviderSchemaUrn, vaultSecretPath string, vaultSecretFieldName string, enabled bool) *AddVaultCipherStreamProviderRequest {
 	this := AddVaultCipherStreamProviderRequest{}
 	this.ProviderName = providerName
 	this.Schemas = schemas
 	this.VaultSecretPath = vaultSecretPath
 	this.VaultSecretFieldName = vaultSecretFieldName
-	this.VaultEncryptionMetadataFile = vaultEncryptionMetadataFile
 	this.Enabled = enabled
 	return &this
 }
@@ -258,28 +257,36 @@ func (o *AddVaultCipherStreamProviderRequest) SetVaultSecretFieldName(v string) 
 	o.VaultSecretFieldName = v
 }
 
-// GetVaultEncryptionMetadataFile returns the VaultEncryptionMetadataFile field value
+// GetVaultEncryptionMetadataFile returns the VaultEncryptionMetadataFile field value if set, zero value otherwise.
 func (o *AddVaultCipherStreamProviderRequest) GetVaultEncryptionMetadataFile() string {
-	if o == nil {
+	if o == nil || isNil(o.VaultEncryptionMetadataFile) {
 		var ret string
 		return ret
 	}
-
-	return o.VaultEncryptionMetadataFile
+	return *o.VaultEncryptionMetadataFile
 }
 
-// GetVaultEncryptionMetadataFileOk returns a tuple with the VaultEncryptionMetadataFile field value
+// GetVaultEncryptionMetadataFileOk returns a tuple with the VaultEncryptionMetadataFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddVaultCipherStreamProviderRequest) GetVaultEncryptionMetadataFileOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.VaultEncryptionMetadataFile) {
 		return nil, false
 	}
-	return &o.VaultEncryptionMetadataFile, true
+	return o.VaultEncryptionMetadataFile, true
 }
 
-// SetVaultEncryptionMetadataFile sets field value
+// HasVaultEncryptionMetadataFile returns a boolean if a field has been set.
+func (o *AddVaultCipherStreamProviderRequest) HasVaultEncryptionMetadataFile() bool {
+	if o != nil && !isNil(o.VaultEncryptionMetadataFile) {
+		return true
+	}
+
+	return false
+}
+
+// SetVaultEncryptionMetadataFile gets a reference to the given string and assigns it to the VaultEncryptionMetadataFile field.
 func (o *AddVaultCipherStreamProviderRequest) SetVaultEncryptionMetadataFile(v string) {
-	o.VaultEncryptionMetadataFile = v
+	o.VaultEncryptionMetadataFile = &v
 }
 
 // GetTrustStoreFile returns the TrustStoreFile field value if set, zero value otherwise.
@@ -457,7 +464,7 @@ func (o AddVaultCipherStreamProviderRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["vaultSecretFieldName"] = o.VaultSecretFieldName
 	}
-	if true {
+	if !isNil(o.VaultEncryptionMetadataFile) {
 		toSerialize["vaultEncryptionMetadataFile"] = o.VaultEncryptionMetadataFile
 	}
 	if !isNil(o.TrustStoreFile) {

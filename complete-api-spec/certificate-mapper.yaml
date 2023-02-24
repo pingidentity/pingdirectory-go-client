@@ -227,6 +227,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/subject-dn-to-user-attribute-certificate-mapper-shared'
+      required:
+      - subjectAttribute
     subject-dn-to-user-attribute-certificate-mapper-shared:
       type: object
       properties:
@@ -256,7 +258,6 @@ components:
               Indicates whether the Certificate Mapper is enabled.
       required:
       - schemas
-      - subjectAttribute
       - enabled
     Enumsubject-dn-to-user-attribute-certificate-mapperSchemaUrn:
       type: string
@@ -397,6 +398,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/fingerprint-certificate-mapper-shared'
+      required:
+      - fingerprintAttribute
     fingerprint-certificate-mapper-shared:
       type: object
       properties:
@@ -428,7 +431,6 @@ components:
               Indicates whether the Certificate Mapper is enabled.
       required:
       - schemas
-      - fingerprintAttribute
       - fingerprintAlgorithm
       - enabled
     Enumfingerprint-certificate-mapperSchemaUrn:

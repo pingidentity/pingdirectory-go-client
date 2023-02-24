@@ -24,9 +24,9 @@ type AddLdifConnectionHandlerRequest struct {
 	// Specifies a set of address masks that determines the addresses of the clients that are not allowed to establish connections to this connection handler.
 	DeniedClient []string `json:"deniedClient,omitempty"`
 	// Specifies the path to the directory in which the LDIF files should be placed.
-	LdifDirectory string `json:"ldifDirectory"`
+	LdifDirectory *string `json:"ldifDirectory,omitempty"`
 	// Specifies how frequently the LDIF connection handler should check the LDIF directory to determine whether a new LDIF file has been added.
-	PollInterval string `json:"pollInterval"`
+	PollInterval *string `json:"pollInterval,omitempty"`
 	// A description for this Connection Handler
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Connection Handler is enabled.
@@ -37,12 +37,10 @@ type AddLdifConnectionHandlerRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddLdifConnectionHandlerRequest(handlerName string, schemas []EnumldifConnectionHandlerSchemaUrn, ldifDirectory string, pollInterval string, enabled bool) *AddLdifConnectionHandlerRequest {
+func NewAddLdifConnectionHandlerRequest(handlerName string, schemas []EnumldifConnectionHandlerSchemaUrn, enabled bool) *AddLdifConnectionHandlerRequest {
 	this := AddLdifConnectionHandlerRequest{}
 	this.HandlerName = handlerName
 	this.Schemas = schemas
-	this.LdifDirectory = ldifDirectory
-	this.PollInterval = pollInterval
 	this.Enabled = enabled
 	return &this
 }
@@ -167,52 +165,68 @@ func (o *AddLdifConnectionHandlerRequest) SetDeniedClient(v []string) {
 	o.DeniedClient = v
 }
 
-// GetLdifDirectory returns the LdifDirectory field value
+// GetLdifDirectory returns the LdifDirectory field value if set, zero value otherwise.
 func (o *AddLdifConnectionHandlerRequest) GetLdifDirectory() string {
-	if o == nil {
+	if o == nil || isNil(o.LdifDirectory) {
 		var ret string
 		return ret
 	}
-
-	return o.LdifDirectory
+	return *o.LdifDirectory
 }
 
-// GetLdifDirectoryOk returns a tuple with the LdifDirectory field value
+// GetLdifDirectoryOk returns a tuple with the LdifDirectory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdifConnectionHandlerRequest) GetLdifDirectoryOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.LdifDirectory) {
 		return nil, false
 	}
-	return &o.LdifDirectory, true
+	return o.LdifDirectory, true
 }
 
-// SetLdifDirectory sets field value
+// HasLdifDirectory returns a boolean if a field has been set.
+func (o *AddLdifConnectionHandlerRequest) HasLdifDirectory() bool {
+	if o != nil && !isNil(o.LdifDirectory) {
+		return true
+	}
+
+	return false
+}
+
+// SetLdifDirectory gets a reference to the given string and assigns it to the LdifDirectory field.
 func (o *AddLdifConnectionHandlerRequest) SetLdifDirectory(v string) {
-	o.LdifDirectory = v
+	o.LdifDirectory = &v
 }
 
-// GetPollInterval returns the PollInterval field value
+// GetPollInterval returns the PollInterval field value if set, zero value otherwise.
 func (o *AddLdifConnectionHandlerRequest) GetPollInterval() string {
-	if o == nil {
+	if o == nil || isNil(o.PollInterval) {
 		var ret string
 		return ret
 	}
-
-	return o.PollInterval
+	return *o.PollInterval
 }
 
-// GetPollIntervalOk returns a tuple with the PollInterval field value
+// GetPollIntervalOk returns a tuple with the PollInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdifConnectionHandlerRequest) GetPollIntervalOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.PollInterval) {
 		return nil, false
 	}
-	return &o.PollInterval, true
+	return o.PollInterval, true
 }
 
-// SetPollInterval sets field value
+// HasPollInterval returns a boolean if a field has been set.
+func (o *AddLdifConnectionHandlerRequest) HasPollInterval() bool {
+	if o != nil && !isNil(o.PollInterval) {
+		return true
+	}
+
+	return false
+}
+
+// SetPollInterval gets a reference to the given string and assigns it to the PollInterval field.
 func (o *AddLdifConnectionHandlerRequest) SetPollInterval(v string) {
-	o.PollInterval = v
+	o.PollInterval = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -285,10 +299,10 @@ func (o AddLdifConnectionHandlerRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.DeniedClient) {
 		toSerialize["deniedClient"] = o.DeniedClient
 	}
-	if true {
+	if !isNil(o.LdifDirectory) {
 		toSerialize["ldifDirectory"] = o.LdifDirectory
 	}
-	if true {
+	if !isNil(o.PollInterval) {
 		toSerialize["pollInterval"] = o.PollInterval
 	}
 	if !isNil(o.Description) {

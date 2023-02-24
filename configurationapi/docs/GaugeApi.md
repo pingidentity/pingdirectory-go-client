@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    addGaugeRequest := openapiclient.add_gauge_request{AddIndicatorGaugeRequest: openapiclient.NewAddIndicatorGaugeRequest("GaugeName_example", []openapiclient.EnumindicatorGaugeSchemaUrn{openapiclient.Enumindicator-gaugeSchemaUrn("urn:pingidentity:schemas:configuration:2.0:gauge:indicator")}, "GaugeDataSource_example", false)} // AddGaugeRequest | Create a new Gauge in the config
+    addGaugeRequest := openapiclient.add_gauge_request{AddIndicatorGaugeRequest: openapiclient.NewAddIndicatorGaugeRequest("GaugeName_example", []openapiclient.EnumindicatorGaugeSchemaUrn{openapiclient.Enumindicator-gaugeSchemaUrn("urn:pingidentity:schemas:configuration:2.0:gauge:indicator")}, "GaugeDataSource_example")} // AddGaugeRequest | Create a new Gauge in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

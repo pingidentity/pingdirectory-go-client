@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnumuniqueAttributePluginSchemaUrn**](EnumuniqueAttributePluginSchemaUrn.md) |  | 
-**PluginType** | [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | 
+**PluginType** | Pointer to [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | [optional] 
 **Type** | **[]string** | Specifies the type of attributes to check for value uniqueness. | 
 **MultipleAttributeBehavior** | Pointer to [**EnumpluginMultipleAttributeBehaviorProp**](EnumpluginMultipleAttributeBehaviorProp.md) |  | [optional] 
 **BaseDN** | Pointer to **[]string** | Specifies a base DN within which the attribute must be unique. | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewAddUniqueAttributePluginRequest
 
-`func NewAddUniqueAttributePluginRequest(pluginName string, schemas []EnumuniqueAttributePluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, type_ []string, enabled bool, ) *AddUniqueAttributePluginRequest`
+`func NewAddUniqueAttributePluginRequest(pluginName string, schemas []EnumuniqueAttributePluginSchemaUrn, type_ []string, enabled bool, ) *AddUniqueAttributePluginRequest`
 
 NewAddUniqueAttributePluginRequest instantiates a new AddUniqueAttributePluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -94,6 +94,11 @@ and a boolean to check if the value has been set.
 
 SetPluginType sets PluginType field to given value.
 
+### HasPluginType
+
+`func (o *AddUniqueAttributePluginRequest) HasPluginType() bool`
+
+HasPluginType returns a boolean if a field has been set.
 
 ### GetType
 

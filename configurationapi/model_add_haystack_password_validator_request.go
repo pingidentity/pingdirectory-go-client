@@ -20,9 +20,9 @@ type AddHaystackPasswordValidatorRequest struct {
 	ValidatorName string                                   `json:"validatorName"`
 	Schemas       []EnumhaystackPasswordValidatorSchemaUrn `json:"schemas"`
 	// The number of password guesses per second that a potential attacker may be expected to make.
-	AssumedPasswordGuessesPerSecond string `json:"assumedPasswordGuessesPerSecond"`
+	AssumedPasswordGuessesPerSecond *string `json:"assumedPasswordGuessesPerSecond,omitempty"`
 	// The minimum length of time (using the configured number of password guesses per second) required to exhaust the entire search space for a proposed password in order for that password to be considered acceptable.
-	MinimumAcceptableTimeToExhaustSearchSpace string `json:"minimumAcceptableTimeToExhaustSearchSpace"`
+	MinimumAcceptableTimeToExhaustSearchSpace *string `json:"minimumAcceptableTimeToExhaustSearchSpace,omitempty"`
 	// A description for this Password Validator
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the password validator is enabled for use.
@@ -37,12 +37,10 @@ type AddHaystackPasswordValidatorRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddHaystackPasswordValidatorRequest(validatorName string, schemas []EnumhaystackPasswordValidatorSchemaUrn, assumedPasswordGuessesPerSecond string, minimumAcceptableTimeToExhaustSearchSpace string, enabled bool) *AddHaystackPasswordValidatorRequest {
+func NewAddHaystackPasswordValidatorRequest(validatorName string, schemas []EnumhaystackPasswordValidatorSchemaUrn, enabled bool) *AddHaystackPasswordValidatorRequest {
 	this := AddHaystackPasswordValidatorRequest{}
 	this.ValidatorName = validatorName
 	this.Schemas = schemas
-	this.AssumedPasswordGuessesPerSecond = assumedPasswordGuessesPerSecond
-	this.MinimumAcceptableTimeToExhaustSearchSpace = minimumAcceptableTimeToExhaustSearchSpace
 	this.Enabled = enabled
 	return &this
 }
@@ -103,52 +101,68 @@ func (o *AddHaystackPasswordValidatorRequest) SetSchemas(v []EnumhaystackPasswor
 	o.Schemas = v
 }
 
-// GetAssumedPasswordGuessesPerSecond returns the AssumedPasswordGuessesPerSecond field value
+// GetAssumedPasswordGuessesPerSecond returns the AssumedPasswordGuessesPerSecond field value if set, zero value otherwise.
 func (o *AddHaystackPasswordValidatorRequest) GetAssumedPasswordGuessesPerSecond() string {
-	if o == nil {
+	if o == nil || isNil(o.AssumedPasswordGuessesPerSecond) {
 		var ret string
 		return ret
 	}
-
-	return o.AssumedPasswordGuessesPerSecond
+	return *o.AssumedPasswordGuessesPerSecond
 }
 
-// GetAssumedPasswordGuessesPerSecondOk returns a tuple with the AssumedPasswordGuessesPerSecond field value
+// GetAssumedPasswordGuessesPerSecondOk returns a tuple with the AssumedPasswordGuessesPerSecond field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddHaystackPasswordValidatorRequest) GetAssumedPasswordGuessesPerSecondOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.AssumedPasswordGuessesPerSecond) {
 		return nil, false
 	}
-	return &o.AssumedPasswordGuessesPerSecond, true
+	return o.AssumedPasswordGuessesPerSecond, true
 }
 
-// SetAssumedPasswordGuessesPerSecond sets field value
+// HasAssumedPasswordGuessesPerSecond returns a boolean if a field has been set.
+func (o *AddHaystackPasswordValidatorRequest) HasAssumedPasswordGuessesPerSecond() bool {
+	if o != nil && !isNil(o.AssumedPasswordGuessesPerSecond) {
+		return true
+	}
+
+	return false
+}
+
+// SetAssumedPasswordGuessesPerSecond gets a reference to the given string and assigns it to the AssumedPasswordGuessesPerSecond field.
 func (o *AddHaystackPasswordValidatorRequest) SetAssumedPasswordGuessesPerSecond(v string) {
-	o.AssumedPasswordGuessesPerSecond = v
+	o.AssumedPasswordGuessesPerSecond = &v
 }
 
-// GetMinimumAcceptableTimeToExhaustSearchSpace returns the MinimumAcceptableTimeToExhaustSearchSpace field value
+// GetMinimumAcceptableTimeToExhaustSearchSpace returns the MinimumAcceptableTimeToExhaustSearchSpace field value if set, zero value otherwise.
 func (o *AddHaystackPasswordValidatorRequest) GetMinimumAcceptableTimeToExhaustSearchSpace() string {
-	if o == nil {
+	if o == nil || isNil(o.MinimumAcceptableTimeToExhaustSearchSpace) {
 		var ret string
 		return ret
 	}
-
-	return o.MinimumAcceptableTimeToExhaustSearchSpace
+	return *o.MinimumAcceptableTimeToExhaustSearchSpace
 }
 
-// GetMinimumAcceptableTimeToExhaustSearchSpaceOk returns a tuple with the MinimumAcceptableTimeToExhaustSearchSpace field value
+// GetMinimumAcceptableTimeToExhaustSearchSpaceOk returns a tuple with the MinimumAcceptableTimeToExhaustSearchSpace field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddHaystackPasswordValidatorRequest) GetMinimumAcceptableTimeToExhaustSearchSpaceOk() (*string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.MinimumAcceptableTimeToExhaustSearchSpace) {
 		return nil, false
 	}
-	return &o.MinimumAcceptableTimeToExhaustSearchSpace, true
+	return o.MinimumAcceptableTimeToExhaustSearchSpace, true
 }
 
-// SetMinimumAcceptableTimeToExhaustSearchSpace sets field value
+// HasMinimumAcceptableTimeToExhaustSearchSpace returns a boolean if a field has been set.
+func (o *AddHaystackPasswordValidatorRequest) HasMinimumAcceptableTimeToExhaustSearchSpace() bool {
+	if o != nil && !isNil(o.MinimumAcceptableTimeToExhaustSearchSpace) {
+		return true
+	}
+
+	return false
+}
+
+// SetMinimumAcceptableTimeToExhaustSearchSpace gets a reference to the given string and assigns it to the MinimumAcceptableTimeToExhaustSearchSpace field.
 func (o *AddHaystackPasswordValidatorRequest) SetMinimumAcceptableTimeToExhaustSearchSpace(v string) {
-	o.MinimumAcceptableTimeToExhaustSearchSpace = v
+	o.MinimumAcceptableTimeToExhaustSearchSpace = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -279,10 +293,10 @@ func (o AddHaystackPasswordValidatorRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if true {
+	if !isNil(o.AssumedPasswordGuessesPerSecond) {
 		toSerialize["assumedPasswordGuessesPerSecond"] = o.AssumedPasswordGuessesPerSecond
 	}
-	if true {
+	if !isNil(o.MinimumAcceptableTimeToExhaustSearchSpace) {
 		toSerialize["minimumAcceptableTimeToExhaustSearchSpace"] = o.MinimumAcceptableTimeToExhaustSearchSpace
 	}
 	if !isNil(o.Description) {

@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    addClientConnectionPolicyRequest := *openapiclient.NewAddClientConnectionPolicyRequest("PolicyName_example", "PolicyID_example", false, int32(123), []openapiclient.EnumclientConnectionPolicyAllowedOperationProp{openapiclient.Enumclient-connection-policy-allowedOperationProp("abandon")}, []openapiclient.EnumclientConnectionPolicyAllowedAuthTypeProp{openapiclient.Enumclient-connection-policy-allowedAuthTypeProp("simple")}) // AddClientConnectionPolicyRequest | Create a new Client Connection Policy in the config
+    addClientConnectionPolicyRequest := *openapiclient.NewAddClientConnectionPolicyRequest("PolicyName_example", "PolicyID_example", false, int32(123)) // AddClientConnectionPolicyRequest | Create a new Client Connection Policy in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

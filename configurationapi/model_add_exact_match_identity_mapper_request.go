@@ -20,7 +20,7 @@ type AddExactMatchIdentityMapperRequest struct {
 	MapperName string                                  `json:"mapperName"`
 	Schemas    []EnumexactMatchIdentityMapperSchemaUrn `json:"schemas"`
 	// Specifies the attribute whose value should exactly match the ID string provided to this identity mapper.
-	MatchAttribute []string `json:"matchAttribute"`
+	MatchAttribute []string `json:"matchAttribute,omitempty"`
 	// Specifies the set of base DNs below which to search for users.
 	MatchBaseDN []string `json:"matchBaseDN,omitempty"`
 	// An optional filter that mapped users must match.
@@ -35,11 +35,10 @@ type AddExactMatchIdentityMapperRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddExactMatchIdentityMapperRequest(mapperName string, schemas []EnumexactMatchIdentityMapperSchemaUrn, matchAttribute []string, enabled bool) *AddExactMatchIdentityMapperRequest {
+func NewAddExactMatchIdentityMapperRequest(mapperName string, schemas []EnumexactMatchIdentityMapperSchemaUrn, enabled bool) *AddExactMatchIdentityMapperRequest {
 	this := AddExactMatchIdentityMapperRequest{}
 	this.MapperName = mapperName
 	this.Schemas = schemas
-	this.MatchAttribute = matchAttribute
 	this.Enabled = enabled
 	return &this
 }
@@ -100,26 +99,34 @@ func (o *AddExactMatchIdentityMapperRequest) SetSchemas(v []EnumexactMatchIdenti
 	o.Schemas = v
 }
 
-// GetMatchAttribute returns the MatchAttribute field value
+// GetMatchAttribute returns the MatchAttribute field value if set, zero value otherwise.
 func (o *AddExactMatchIdentityMapperRequest) GetMatchAttribute() []string {
-	if o == nil {
+	if o == nil || isNil(o.MatchAttribute) {
 		var ret []string
 		return ret
 	}
-
 	return o.MatchAttribute
 }
 
-// GetMatchAttributeOk returns a tuple with the MatchAttribute field value
+// GetMatchAttributeOk returns a tuple with the MatchAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddExactMatchIdentityMapperRequest) GetMatchAttributeOk() ([]string, bool) {
-	if o == nil {
+	if o == nil || isNil(o.MatchAttribute) {
 		return nil, false
 	}
 	return o.MatchAttribute, true
 }
 
-// SetMatchAttribute sets field value
+// HasMatchAttribute returns a boolean if a field has been set.
+func (o *AddExactMatchIdentityMapperRequest) HasMatchAttribute() bool {
+	if o != nil && !isNil(o.MatchAttribute) {
+		return true
+	}
+
+	return false
+}
+
+// SetMatchAttribute gets a reference to the given []string and assigns it to the MatchAttribute field.
 func (o *AddExactMatchIdentityMapperRequest) SetMatchAttribute(v []string) {
 	o.MatchAttribute = v
 }
@@ -252,7 +259,7 @@ func (o AddExactMatchIdentityMapperRequest) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if true {
+	if !isNil(o.MatchAttribute) {
 		toSerialize["matchAttribute"] = o.MatchAttribute
 	}
 	if !isNil(o.MatchBaseDN) {

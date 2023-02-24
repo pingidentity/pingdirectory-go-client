@@ -40,8 +40,8 @@ Name | Type | Description | Notes
 **AnyIncludedResultCriteria** | Pointer to **[]string** | Specifies a result criteria object that may match the associated operation result in order to match the aggregate result criteria. If one or more any-included result criteria objects are provided, then an operation result must match at least one of them in order to match the aggregate result criteria. | [optional] 
 **NotAllIncludedResultCriteria** | Pointer to **[]string** | Specifies a result criteria object that should not match the associated operation result in order to match the aggregate result criteria. If one or more not-all-included result criteria objects are provided, then an operation result must not match all of them (that is, it may match zero or more of them, but it must not match all of them) in order to match the aggregate result criteria. | [optional] 
 **NoneIncludedResultCriteria** | Pointer to **[]string** | Specifies a result criteria object that must not match the associated operation result in order to match the aggregate result criteria. If one or more none-included result criteria objects are provided, then an operation result must not match any of them in order to match the aggregate result criteria. | [optional] 
-**LocalAssuranceLevel** | [**[]EnumresultCriteriaLocalAssuranceLevelProp**](EnumresultCriteriaLocalAssuranceLevelProp.md) |  | 
-**RemoteAssuranceLevel** | [**[]EnumresultCriteriaRemoteAssuranceLevelProp**](EnumresultCriteriaRemoteAssuranceLevelProp.md) |  | 
+**LocalAssuranceLevel** | Pointer to [**[]EnumresultCriteriaLocalAssuranceLevelProp**](EnumresultCriteriaLocalAssuranceLevelProp.md) |  | [optional] 
+**RemoteAssuranceLevel** | Pointer to [**[]EnumresultCriteriaRemoteAssuranceLevelProp**](EnumresultCriteriaRemoteAssuranceLevelProp.md) |  | [optional] 
 **AssuranceTimeoutCriteria** | Pointer to [**EnumresultCriteriaAssuranceTimeoutCriteriaProp**](EnumresultCriteriaAssuranceTimeoutCriteriaProp.md) |  | [optional] 
 **AssuranceTimeoutValue** | Pointer to **string** | The value to use for performing matching based on the assurance timeout. This will be ignored if the assurance-timeout-criteria is \&quot;any\&quot;. | [optional] 
 **ResponseDelayedByAssurance** | Pointer to [**EnumresultCriteriaResponseDelayedByAssuranceProp**](EnumresultCriteriaResponseDelayedByAssuranceProp.md) |  | [optional] 
@@ -54,7 +54,7 @@ Name | Type | Description | Notes
 
 ### NewAddResultCriteriaRequest
 
-`func NewAddResultCriteriaRequest(criteriaName string, schemas []EnumthirdPartyResultCriteriaSchemaUrn, localAssuranceLevel []EnumresultCriteriaLocalAssuranceLevelProp, remoteAssuranceLevel []EnumresultCriteriaRemoteAssuranceLevelProp, extensionClass string, ) *AddResultCriteriaRequest`
+`func NewAddResultCriteriaRequest(criteriaName string, schemas []EnumthirdPartyResultCriteriaSchemaUrn, extensionClass string, ) *AddResultCriteriaRequest`
 
 NewAddResultCriteriaRequest instantiates a new AddResultCriteriaRequest object
 This constructor will assign default values to properties that have it defined,
@@ -978,6 +978,11 @@ and a boolean to check if the value has been set.
 
 SetLocalAssuranceLevel sets LocalAssuranceLevel field to given value.
 
+### HasLocalAssuranceLevel
+
+`func (o *AddResultCriteriaRequest) HasLocalAssuranceLevel() bool`
+
+HasLocalAssuranceLevel returns a boolean if a field has been set.
 
 ### GetRemoteAssuranceLevel
 
@@ -998,6 +1003,11 @@ and a boolean to check if the value has been set.
 
 SetRemoteAssuranceLevel sets RemoteAssuranceLevel field to given value.
 
+### HasRemoteAssuranceLevel
+
+`func (o *AddResultCriteriaRequest) HasRemoteAssuranceLevel() bool`
+
+HasRemoteAssuranceLevel returns a boolean if a field has been set.
 
 ### GetAssuranceTimeoutCriteria
 

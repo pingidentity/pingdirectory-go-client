@@ -9,12 +9,12 @@ Name | Type | Description | Notes
 **UncachedId2entryCacheMode** | Pointer to [**EnumbackendUncachedId2entryCacheModeProp**](EnumbackendUncachedId2entryCacheModeProp.md) |  | [optional] 
 **UncachedAttributeCriteria** | Pointer to **string** | The criteria that will be used to identify attributes that should be written into the uncached-id2entry database rather than the id2entry database. This will only be used for entries in which the associated uncached-entry-criteria does not indicate that the entire entry should be uncached. | [optional] 
 **UncachedEntryCriteria** | Pointer to **string** | The criteria that will be used to identify entries that should be written into the uncached-id2entry database rather than the id2entry database. | [optional] 
-**WritabilityMode** | [**EnumbackendWritabilityModeProp**](EnumbackendWritabilityModeProp.md) |  | 
+**WritabilityMode** | Pointer to [**EnumbackendWritabilityModeProp**](EnumbackendWritabilityModeProp.md) |  | [optional] 
 **SetDegradedAlertForUntrustedIndex** | Pointer to **bool** | Determines whether the Directory Server enters a DEGRADED state when this Local DB Backend has an index whose contents cannot be trusted. | [optional] 
 **ReturnUnavailableForUntrustedIndex** | Pointer to **bool** | Determines whether the Directory Server returns UNAVAILABLE for any LDAP search operation in this Local DB Backend that would use an index whose contents cannot be trusted. | [optional] 
 **ProcessFiltersWithUndefinedAttributeTypes** | Pointer to **bool** | Determines whether the Directory Server should continue filter processing for LDAP search operations in this Local DB Backend that includes a search filter with an attribute that is not defined in the schema. This will only apply if check-schema is enabled in the global configuration. | [optional] 
 **IsPrivateBackend** | Pointer to **bool** | Indicates whether this backend should be considered a private backend in the server. Private backends are meant for storing server-internal information and should not be used for user or application data. | [optional] 
-**DbDirectory** | **string** | Specifies the path to the filesystem directory that is used to hold the Berkeley DB Java Edition database files containing the data for this backend. The files for this backend are stored in a sub-directory named after the backend-id. | 
+**DbDirectory** | Pointer to **string** | Specifies the path to the filesystem directory that is used to hold the Berkeley DB Java Edition database files containing the data for this backend. The files for this backend are stored in a sub-directory named after the backend-id. | [optional] 
 **DbDirectoryPermissions** | Pointer to **string** | Specifies the permissions that should be applied to the directory containing the backend database files and to directories and files created during backup or LDIF export of the backend. | [optional] 
 **CompactCommonParentDN** | Pointer to **[]string** | Provides a DN of an entry that may be the parent for a large number of entries in the backend. This may be used to help increase the space efficiency when encoding entries for storage. | [optional] 
 **CompressEntries** | Pointer to **bool** | Indicates whether the backend should attempt to compress entries before storing them in the database. | [optional] 
@@ -46,7 +46,7 @@ Name | Type | Description | Notes
 **CompositeIndexEntryLimit** | Pointer to **int32** | Specifies the maximum number of entries that are allowed to match a given composite index key before that particular composite index key is no longer maintained. | [optional] 
 **Id2childrenIndexEntryLimit** | Pointer to **int32** | Specifies the maximum number of entry IDs to maintain for each entry in the id2children system index (which keeps track of the immediate children for an entry, to assist in otherwise unindexed searches with a single-level scope). A value of 0 means there is no limit, however this could have a big impact on database size on disk and on server performance. | [optional] 
 **Id2subtreeIndexEntryLimit** | Pointer to **int32** | Specifies the maximum number of entry IDs to maintain for each entry in the id2subtree system index (which keeps track of all descendants below an entry, to assist in otherwise unindexed searches with a whole-subtree or subordinate subtree scope). A value of 0 means there is no limit, however this could have a big impact on database size on disk and on server performance. | [optional] 
-**ImportTempDirectory** | **string** | Specifies the location of the directory that is used to hold temporary information during the index post-processing phase of an LDIF import. | 
+**ImportTempDirectory** | Pointer to **string** | Specifies the location of the directory that is used to hold temporary information during the index post-processing phase of an LDIF import. | [optional] 
 **ImportThreadCount** | Pointer to **int32** | Specifies the number of threads to use for concurrent processing during an LDIF import. | [optional] 
 **ExportThreadCount** | Pointer to **int32** | Specifies the number of threads to use for concurrently retrieving and encoding entries during an LDIF export. | [optional] 
 **DbImportCachePercent** | Pointer to **int32** | The percentage of JVM memory to allocate to the database cache during import operations. | [optional] 
@@ -69,7 +69,7 @@ Name | Type | Description | Notes
 
 ### NewAddLocalDbBackendRequest
 
-`func NewAddLocalDbBackendRequest(backendName string, schemas []EnumlocalDbBackendSchemaUrn, writabilityMode EnumbackendWritabilityModeProp, dbDirectory string, importTempDirectory string, backendID string, enabled bool, baseDN []string, ) *AddLocalDbBackendRequest`
+`func NewAddLocalDbBackendRequest(backendName string, schemas []EnumlocalDbBackendSchemaUrn, backendID string, enabled bool, baseDN []string, ) *AddLocalDbBackendRequest`
 
 NewAddLocalDbBackendRequest instantiates a new AddLocalDbBackendRequest object
 This constructor will assign default values to properties that have it defined,
@@ -218,6 +218,11 @@ and a boolean to check if the value has been set.
 
 SetWritabilityMode sets WritabilityMode field to given value.
 
+### HasWritabilityMode
+
+`func (o *AddLocalDbBackendRequest) HasWritabilityMode() bool`
+
+HasWritabilityMode returns a boolean if a field has been set.
 
 ### GetSetDegradedAlertForUntrustedIndex
 
@@ -338,6 +343,11 @@ and a boolean to check if the value has been set.
 
 SetDbDirectory sets DbDirectory field to given value.
 
+### HasDbDirectory
+
+`func (o *AddLocalDbBackendRequest) HasDbDirectory() bool`
+
+HasDbDirectory returns a boolean if a field has been set.
 
 ### GetDbDirectoryPermissions
 
@@ -1133,6 +1143,11 @@ and a boolean to check if the value has been set.
 
 SetImportTempDirectory sets ImportTempDirectory field to given value.
 
+### HasImportTempDirectory
+
+`func (o *AddLocalDbBackendRequest) HasImportTempDirectory() bool`
+
+HasImportTempDirectory returns a boolean if a field has been set.
 
 ### GetImportThreadCount
 

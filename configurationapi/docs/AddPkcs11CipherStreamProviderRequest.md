@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **KeyStorePinEnvironmentVariable** | Pointer to **string** | The name of an environment variable whose value is the user PIN needed to interact with the PKCS #11 token. The environment variable must be defined and must contain a clear-text representation of the PIN. | [optional] 
 **Pkcs11KeyStoreType** | Pointer to **string** | The key store type to use when obtaining an instance of a key store for interacting with a PKCS #11 token. | [optional] 
 **SslCertNickname** | **string** | The alias for the certificate in the PKCS #11 token that will be used to wrap the encryption key. The target certificate must exist in the PKCS #11 token, and it must have an RSA key pair because the JVM does not currently provide adequate key wrapping support for elliptic curve key pairs.  If you have also configured the server to use a PKCS #11 token for accessing listener certificates, we strongly recommend that you use a different certificate to protect the contents of the encryption settings database than you use for negotiating TLS sessions with clients. It is imperative that the certificate used by this PKCS11 Cipher Stream Provider remain constant for the life of the provider because if the certificate were to be replaced, then the contents of the encryption settings database could become inaccessible. Unlike with listener certificates used for TLS negotiation that need to be replaced on a regular basis, this PKCS11 Cipher Stream Provider does not consider the validity period for the associated certificate, and it will continue to function even after the certificate has expired.  If you need to rotate the certificate used to protect the server&#39;s encryption settings database, you should first install the desired new certificate in the PKCS #11 token under a different alias. Then, you should create a new instance of this PKCS11 Cipher Stream Provider that is configured to use that certificate, and that also uses a different value for the encryption-metadata-file because the information in that file is tied to the certificate used to generate it. Finally, you will need to update the global configuration so that the encryption-settings-cipher-stream-provider property references the new cipher stream provider rather than this one. The update to the global configuration must be done with the server online so that it can properly re-encrypt the contents of the encryption settings database with the correct key tied to the new certificate. | 
-**EncryptionMetadataFile** | **string** | The path to a file that will hold metadata about the encryption performed by this PKCS11 Cipher Stream Provider. | 
+**EncryptionMetadataFile** | Pointer to **string** | The path to a file that will hold metadata about the encryption performed by this PKCS11 Cipher Stream Provider. | [optional] 
 **Description** | Pointer to **string** | A description for this Cipher Stream Provider | [optional] 
 **Enabled** | **bool** | Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server. | 
 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewAddPkcs11CipherStreamProviderRequest
 
-`func NewAddPkcs11CipherStreamProviderRequest(providerName string, schemas []Enumpkcs11CipherStreamProviderSchemaUrn, sslCertNickname string, encryptionMetadataFile string, enabled bool, ) *AddPkcs11CipherStreamProviderRequest`
+`func NewAddPkcs11CipherStreamProviderRequest(providerName string, schemas []Enumpkcs11CipherStreamProviderSchemaUrn, sslCertNickname string, enabled bool, ) *AddPkcs11CipherStreamProviderRequest`
 
 NewAddPkcs11CipherStreamProviderRequest instantiates a new AddPkcs11CipherStreamProviderRequest object
 This constructor will assign default values to properties that have it defined,
@@ -265,6 +265,11 @@ and a boolean to check if the value has been set.
 
 SetEncryptionMetadataFile sets EncryptionMetadataFile field to given value.
 
+### HasEncryptionMetadataFile
+
+`func (o *AddPkcs11CipherStreamProviderRequest) HasEncryptionMetadataFile() bool`
+
+HasEncryptionMetadataFile returns a boolean if a field has been set.
 
 ### GetDescription
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **ValidatorName** | **string** | Name of the new ID Token Validator | 
 **Schemas** | [**[]EnumpingOneIdTokenValidatorSchemaUrn**](EnumpingOneIdTokenValidatorSchemaUrn.md) |  | 
 **IssuerURL** | **string** | Specifies a PingOne base issuer URL. | 
-**OpenIDConnectProvider** | **string** | Specifies HTTPS connection settings for the PingOne OpenID Connect provider. | 
+**OpenIDConnectProvider** | Pointer to **string** | Specifies HTTPS connection settings for the PingOne OpenID Connect provider. | [optional] 
 **OpenIDConnectMetadataCacheDuration** | Pointer to **string** | How often the PingOne ID Token Validator should refresh its stored cache of OpenID Connect-related metadata. | [optional] 
 **Description** | Pointer to **string** | A description for this ID Token Validator | [optional] 
 **Enabled** | **bool** | Indicates whether this ID Token Validator is enabled for use in the Directory Server. | 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewAddPingOneIdTokenValidatorRequest
 
-`func NewAddPingOneIdTokenValidatorRequest(validatorName string, schemas []EnumpingOneIdTokenValidatorSchemaUrn, issuerURL string, openIDConnectProvider string, enabled bool, identityMapper string, evaluationOrderIndex int32, ) *AddPingOneIdTokenValidatorRequest`
+`func NewAddPingOneIdTokenValidatorRequest(validatorName string, schemas []EnumpingOneIdTokenValidatorSchemaUrn, issuerURL string, enabled bool, identityMapper string, evaluationOrderIndex int32, ) *AddPingOneIdTokenValidatorRequest`
 
 NewAddPingOneIdTokenValidatorRequest instantiates a new AddPingOneIdTokenValidatorRequest object
 This constructor will assign default values to properties that have it defined,
@@ -115,6 +115,11 @@ and a boolean to check if the value has been set.
 
 SetOpenIDConnectProvider sets OpenIDConnectProvider field to given value.
 
+### HasOpenIDConnectProvider
+
+`func (o *AddPingOneIdTokenValidatorRequest) HasOpenIDConnectProvider() bool`
+
+HasOpenIDConnectProvider returns a boolean if a field has been set.
 
 ### GetOpenIDConnectMetadataCacheDuration
 

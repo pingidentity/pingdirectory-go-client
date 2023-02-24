@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnumreferentialIntegrityPluginSchemaUrn**](EnumreferentialIntegrityPluginSchemaUrn.md) |  | 
-**PluginType** | [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | 
+**PluginType** | Pointer to [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | [optional] 
 **AttributeType** | **[]string** | Specifies the attribute types for which referential integrity is to be maintained. | 
 **BaseDN** | Pointer to **[]string** | Specifies the base DN that limits the scope within which referential integrity is maintained. | [optional] 
 **LogFile** | Pointer to **string** | Specifies the log file location where the update records are written when the plug-in is in background-mode processing. | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewAddReferentialIntegrityPluginRequest
 
-`func NewAddReferentialIntegrityPluginRequest(pluginName string, schemas []EnumreferentialIntegrityPluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, attributeType []string, enabled bool, ) *AddReferentialIntegrityPluginRequest`
+`func NewAddReferentialIntegrityPluginRequest(pluginName string, schemas []EnumreferentialIntegrityPluginSchemaUrn, attributeType []string, enabled bool, ) *AddReferentialIntegrityPluginRequest`
 
 NewAddReferentialIntegrityPluginRequest instantiates a new AddReferentialIntegrityPluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -93,6 +93,11 @@ and a boolean to check if the value has been set.
 
 SetPluginType sets PluginType field to given value.
 
+### HasPluginType
+
+`func (o *AddReferentialIntegrityPluginRequest) HasPluginType() bool`
+
+HasPluginType returns a boolean if a field has been set.
 
 ### GetAttributeType
 

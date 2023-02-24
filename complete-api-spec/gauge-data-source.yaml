@@ -236,6 +236,8 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/numeric-gauge-data-source-shared'
+      required:
+      - statisticType
     numeric-gauge-data-source-shared:
       type: object
       properties:
@@ -295,7 +297,6 @@ components:
               The minimum frequency with which gauges using this Gauge Data Source can be configured for update. In order to prevent undesirable side effects, some Gauge Data Sources may use this property to impose a higher bound on the update frequency of gauges.
       required:
       - schemas
-      - statisticType
       - monitorObjectclass
       - monitorAttribute
     Enumnumeric-gauge-data-sourceSchemaUrn:

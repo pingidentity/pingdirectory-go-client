@@ -21,7 +21,7 @@ type AddMemberVirtualAttributeRequest struct {
 	Schemas          []EnummemberVirtualAttributeSchemaUrn     `json:"schemas"`
 	ConflictBehavior *EnumvirtualAttributeConflictBehaviorProp `json:"conflictBehavior,omitempty"`
 	// Indicates whether to handle requests that request all values for the virtual attribute.
-	AllowRetrievingMembership bool `json:"allowRetrievingMembership"`
+	AllowRetrievingMembership *bool `json:"allowRetrievingMembership,omitempty"`
 	// Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
 	Filter []string `json:"filter,omitempty"`
 	// Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
@@ -49,11 +49,10 @@ type AddMemberVirtualAttributeRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddMemberVirtualAttributeRequest(name string, schemas []EnummemberVirtualAttributeSchemaUrn, allowRetrievingMembership bool, enabled bool, attributeType string) *AddMemberVirtualAttributeRequest {
+func NewAddMemberVirtualAttributeRequest(name string, schemas []EnummemberVirtualAttributeSchemaUrn, enabled bool, attributeType string) *AddMemberVirtualAttributeRequest {
 	this := AddMemberVirtualAttributeRequest{}
 	this.Name = name
 	this.Schemas = schemas
-	this.AllowRetrievingMembership = allowRetrievingMembership
 	this.Enabled = enabled
 	this.AttributeType = attributeType
 	return &this
@@ -147,28 +146,36 @@ func (o *AddMemberVirtualAttributeRequest) SetConflictBehavior(v EnumvirtualAttr
 	o.ConflictBehavior = &v
 }
 
-// GetAllowRetrievingMembership returns the AllowRetrievingMembership field value
+// GetAllowRetrievingMembership returns the AllowRetrievingMembership field value if set, zero value otherwise.
 func (o *AddMemberVirtualAttributeRequest) GetAllowRetrievingMembership() bool {
-	if o == nil {
+	if o == nil || isNil(o.AllowRetrievingMembership) {
 		var ret bool
 		return ret
 	}
-
-	return o.AllowRetrievingMembership
+	return *o.AllowRetrievingMembership
 }
 
-// GetAllowRetrievingMembershipOk returns a tuple with the AllowRetrievingMembership field value
+// GetAllowRetrievingMembershipOk returns a tuple with the AllowRetrievingMembership field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddMemberVirtualAttributeRequest) GetAllowRetrievingMembershipOk() (*bool, bool) {
-	if o == nil {
+	if o == nil || isNil(o.AllowRetrievingMembership) {
 		return nil, false
 	}
-	return &o.AllowRetrievingMembership, true
+	return o.AllowRetrievingMembership, true
 }
 
-// SetAllowRetrievingMembership sets field value
+// HasAllowRetrievingMembership returns a boolean if a field has been set.
+func (o *AddMemberVirtualAttributeRequest) HasAllowRetrievingMembership() bool {
+	if o != nil && !isNil(o.AllowRetrievingMembership) {
+		return true
+	}
+
+	return false
+}
+
+// SetAllowRetrievingMembership gets a reference to the given bool and assigns it to the AllowRetrievingMembership field.
 func (o *AddMemberVirtualAttributeRequest) SetAllowRetrievingMembership(v bool) {
-	o.AllowRetrievingMembership = v
+	o.AllowRetrievingMembership = &v
 }
 
 // GetFilter returns the Filter field value if set, zero value otherwise.
@@ -518,7 +525,7 @@ func (o AddMemberVirtualAttributeRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.ConflictBehavior) {
 		toSerialize["conflictBehavior"] = o.ConflictBehavior
 	}
-	if true {
+	if !isNil(o.AllowRetrievingMembership) {
 		toSerialize["allowRetrievingMembership"] = o.AllowRetrievingMembership
 	}
 	if !isNil(o.Filter) {
