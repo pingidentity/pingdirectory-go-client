@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CriteriaName** | **string** | Name of the new Request Criteria | 
 **Schemas** | [**[]EnumrootDseRequestCriteriaSchemaUrn**](EnumrootDseRequestCriteriaSchemaUrn.md) |  | 
-**OperationType** | Pointer to [**[]EnumrequestCriteriaOperationTypeProp**](EnumrequestCriteriaOperationTypeProp.md) |  | [optional] 
+**OperationType** | Pointer to [**[]EnumrequestCriteriaRootDseOperationTypeProp**](EnumrequestCriteriaRootDseOperationTypeProp.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Request Criteria | [optional] 
 
 ## Methods
@@ -70,20 +70,20 @@ SetSchemas sets Schemas field to given value.
 
 ### GetOperationType
 
-`func (o *AddRootDseRequestCriteriaRequest) GetOperationType() []EnumrequestCriteriaOperationTypeProp`
+`func (o *AddRootDseRequestCriteriaRequest) GetOperationType() []EnumrequestCriteriaRootDseOperationTypeProp`
 
 GetOperationType returns the OperationType field if non-nil, zero value otherwise.
 
 ### GetOperationTypeOk
 
-`func (o *AddRootDseRequestCriteriaRequest) GetOperationTypeOk() (*[]EnumrequestCriteriaOperationTypeProp, bool)`
+`func (o *AddRootDseRequestCriteriaRequest) GetOperationTypeOk() (*[]EnumrequestCriteriaRootDseOperationTypeProp, bool)`
 
 GetOperationTypeOk returns a tuple with the OperationType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOperationType
 
-`func (o *AddRootDseRequestCriteriaRequest) SetOperationType(v []EnumrequestCriteriaOperationTypeProp)`
+`func (o *AddRootDseRequestCriteriaRequest) SetOperationType(v []EnumrequestCriteriaRootDseOperationTypeProp)`
 
 SetOperationType sets OperationType field to given value.
 

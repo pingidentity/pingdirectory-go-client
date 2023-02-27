@@ -8,17 +8,17 @@ Name | Type | Description | Notes
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Id** | **string** | Name of the Log Field Behavior | 
 **Schemas** | [**[]EnumjsonFormattedAccessLogFieldBehaviorSchemaUrn**](EnumjsonFormattedAccessLogFieldBehaviorSchemaUrn.md) |  | 
-**PreserveField** | Pointer to [**[]EnumlogFieldBehaviorPreserveFieldProp**](EnumlogFieldBehaviorPreserveFieldProp.md) |  | [optional] 
+**PreserveField** | Pointer to [**[]EnumlogFieldBehaviorJsonFormattedAccessPreserveFieldProp**](EnumlogFieldBehaviorJsonFormattedAccessPreserveFieldProp.md) |  | [optional] 
 **PreserveFieldName** | Pointer to **[]string** | The names of any custom fields whose values should be preserved. This should generally only be used for fields that are not available through the preserve-field property (for example, custom log fields defined in Server SDK extensions). | [optional] 
-**OmitField** | Pointer to [**[]EnumlogFieldBehaviorOmitFieldProp**](EnumlogFieldBehaviorOmitFieldProp.md) |  | [optional] 
+**OmitField** | Pointer to [**[]EnumlogFieldBehaviorJsonFormattedAccessOmitFieldProp**](EnumlogFieldBehaviorJsonFormattedAccessOmitFieldProp.md) |  | [optional] 
 **OmitFieldName** | Pointer to **[]string** | The names of any custom fields that should be omitted from log messages. This should generally only be used for fields that are not available through the omit-field property (for example, custom log fields defined in Server SDK extensions). | [optional] 
-**RedactEntireValueField** | Pointer to [**[]EnumlogFieldBehaviorRedactEntireValueFieldProp**](EnumlogFieldBehaviorRedactEntireValueFieldProp.md) |  | [optional] 
+**RedactEntireValueField** | Pointer to [**[]EnumlogFieldBehaviorJsonFormattedAccessRedactEntireValueFieldProp**](EnumlogFieldBehaviorJsonFormattedAccessRedactEntireValueFieldProp.md) |  | [optional] 
 **RedactEntireValueFieldName** | Pointer to **[]string** | The names of any custom fields whose values should be completely redacted. This should generally only be used for fields that are not available through the redact-entire-value-field property (for example, custom log fields defined in Server SDK extensions). | [optional] 
-**RedactValueComponentsField** | Pointer to [**[]EnumlogFieldBehaviorRedactValueComponentsFieldProp**](EnumlogFieldBehaviorRedactValueComponentsFieldProp.md) |  | [optional] 
+**RedactValueComponentsField** | Pointer to [**[]EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp**](EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp.md) |  | [optional] 
 **RedactValueComponentsFieldName** | Pointer to **[]string** | The names of any custom fields for which to redact components within the value. This should generally only be used for fields that are not available through the redact-value-components-field property (for example, custom log fields defined in Server SDK extensions). | [optional] 
-**TokenizeEntireValueField** | Pointer to [**[]EnumlogFieldBehaviorTokenizeEntireValueFieldProp**](EnumlogFieldBehaviorTokenizeEntireValueFieldProp.md) |  | [optional] 
+**TokenizeEntireValueField** | Pointer to [**[]EnumlogFieldBehaviorJsonFormattedAccessTokenizeEntireValueFieldProp**](EnumlogFieldBehaviorJsonFormattedAccessTokenizeEntireValueFieldProp.md) |  | [optional] 
 **TokenizeEntireValueFieldName** | Pointer to **[]string** | The names of any custom fields whose values should be completely tokenized. This should generally only be used for fields that are not available through the tokenize-entire-value-field property (for example, custom log fields defined in Server SDK extensions). | [optional] 
-**TokenizeValueComponentsField** | Pointer to [**[]EnumlogFieldBehaviorTokenizeValueComponentsFieldProp**](EnumlogFieldBehaviorTokenizeValueComponentsFieldProp.md) |  | [optional] 
+**TokenizeValueComponentsField** | Pointer to [**[]EnumlogFieldBehaviorJsonFormattedAccessTokenizeValueComponentsFieldProp**](EnumlogFieldBehaviorJsonFormattedAccessTokenizeValueComponentsFieldProp.md) |  | [optional] 
 **TokenizeValueComponentsFieldName** | Pointer to **[]string** | The names of any custom fields for which to tokenize components within the value. This should generally only be used for fields that are not available through the tokenize-value-components-field property (for example, custom log fields defined in Server SDK extensions). | [optional] 
 **Description** | Pointer to **string** | A description for this Log Field Behavior | [optional] 
 **DefaultBehavior** | Pointer to [**EnumlogFieldBehaviorDefaultBehaviorProp**](EnumlogFieldBehaviorDefaultBehaviorProp.md) |  | [optional] 
@@ -134,20 +134,20 @@ SetSchemas sets Schemas field to given value.
 
 ### GetPreserveField
 
-`func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetPreserveField() []EnumlogFieldBehaviorPreserveFieldProp`
+`func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetPreserveField() []EnumlogFieldBehaviorJsonFormattedAccessPreserveFieldProp`
 
 GetPreserveField returns the PreserveField field if non-nil, zero value otherwise.
 
 ### GetPreserveFieldOk
 
-`func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetPreserveFieldOk() (*[]EnumlogFieldBehaviorPreserveFieldProp, bool)`
+`func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetPreserveFieldOk() (*[]EnumlogFieldBehaviorJsonFormattedAccessPreserveFieldProp, bool)`
 
 GetPreserveFieldOk returns a tuple with the PreserveField field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPreserveField
 
-`func (o *JsonFormattedAccessLogFieldBehaviorResponse) SetPreserveField(v []EnumlogFieldBehaviorPreserveFieldProp)`
+`func (o *JsonFormattedAccessLogFieldBehaviorResponse) SetPreserveField(v []EnumlogFieldBehaviorJsonFormattedAccessPreserveFieldProp)`
 
 SetPreserveField sets PreserveField field to given value.
 
@@ -184,20 +184,20 @@ HasPreserveFieldName returns a boolean if a field has been set.
 
 ### GetOmitField
 
-`func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetOmitField() []EnumlogFieldBehaviorOmitFieldProp`
+`func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetOmitField() []EnumlogFieldBehaviorJsonFormattedAccessOmitFieldProp`
 
 GetOmitField returns the OmitField field if non-nil, zero value otherwise.
 
 ### GetOmitFieldOk
 
-`func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetOmitFieldOk() (*[]EnumlogFieldBehaviorOmitFieldProp, bool)`
+`func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetOmitFieldOk() (*[]EnumlogFieldBehaviorJsonFormattedAccessOmitFieldProp, bool)`
 
 GetOmitFieldOk returns a tuple with the OmitField field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOmitField
 
-`func (o *JsonFormattedAccessLogFieldBehaviorResponse) SetOmitField(v []EnumlogFieldBehaviorOmitFieldProp)`
+`func (o *JsonFormattedAccessLogFieldBehaviorResponse) SetOmitField(v []EnumlogFieldBehaviorJsonFormattedAccessOmitFieldProp)`
 
 SetOmitField sets OmitField field to given value.
 
@@ -234,20 +234,20 @@ HasOmitFieldName returns a boolean if a field has been set.
 
 ### GetRedactEntireValueField
 
-`func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetRedactEntireValueField() []EnumlogFieldBehaviorRedactEntireValueFieldProp`
+`func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetRedactEntireValueField() []EnumlogFieldBehaviorJsonFormattedAccessRedactEntireValueFieldProp`
 
 GetRedactEntireValueField returns the RedactEntireValueField field if non-nil, zero value otherwise.
 
 ### GetRedactEntireValueFieldOk
 
-`func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetRedactEntireValueFieldOk() (*[]EnumlogFieldBehaviorRedactEntireValueFieldProp, bool)`
+`func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetRedactEntireValueFieldOk() (*[]EnumlogFieldBehaviorJsonFormattedAccessRedactEntireValueFieldProp, bool)`
 
 GetRedactEntireValueFieldOk returns a tuple with the RedactEntireValueField field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRedactEntireValueField
 
-`func (o *JsonFormattedAccessLogFieldBehaviorResponse) SetRedactEntireValueField(v []EnumlogFieldBehaviorRedactEntireValueFieldProp)`
+`func (o *JsonFormattedAccessLogFieldBehaviorResponse) SetRedactEntireValueField(v []EnumlogFieldBehaviorJsonFormattedAccessRedactEntireValueFieldProp)`
 
 SetRedactEntireValueField sets RedactEntireValueField field to given value.
 
@@ -284,20 +284,20 @@ HasRedactEntireValueFieldName returns a boolean if a field has been set.
 
 ### GetRedactValueComponentsField
 
-`func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetRedactValueComponentsField() []EnumlogFieldBehaviorRedactValueComponentsFieldProp`
+`func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetRedactValueComponentsField() []EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp`
 
 GetRedactValueComponentsField returns the RedactValueComponentsField field if non-nil, zero value otherwise.
 
 ### GetRedactValueComponentsFieldOk
 
-`func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetRedactValueComponentsFieldOk() (*[]EnumlogFieldBehaviorRedactValueComponentsFieldProp, bool)`
+`func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetRedactValueComponentsFieldOk() (*[]EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp, bool)`
 
 GetRedactValueComponentsFieldOk returns a tuple with the RedactValueComponentsField field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRedactValueComponentsField
 
-`func (o *JsonFormattedAccessLogFieldBehaviorResponse) SetRedactValueComponentsField(v []EnumlogFieldBehaviorRedactValueComponentsFieldProp)`
+`func (o *JsonFormattedAccessLogFieldBehaviorResponse) SetRedactValueComponentsField(v []EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp)`
 
 SetRedactValueComponentsField sets RedactValueComponentsField field to given value.
 
@@ -334,20 +334,20 @@ HasRedactValueComponentsFieldName returns a boolean if a field has been set.
 
 ### GetTokenizeEntireValueField
 
-`func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetTokenizeEntireValueField() []EnumlogFieldBehaviorTokenizeEntireValueFieldProp`
+`func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetTokenizeEntireValueField() []EnumlogFieldBehaviorJsonFormattedAccessTokenizeEntireValueFieldProp`
 
 GetTokenizeEntireValueField returns the TokenizeEntireValueField field if non-nil, zero value otherwise.
 
 ### GetTokenizeEntireValueFieldOk
 
-`func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetTokenizeEntireValueFieldOk() (*[]EnumlogFieldBehaviorTokenizeEntireValueFieldProp, bool)`
+`func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetTokenizeEntireValueFieldOk() (*[]EnumlogFieldBehaviorJsonFormattedAccessTokenizeEntireValueFieldProp, bool)`
 
 GetTokenizeEntireValueFieldOk returns a tuple with the TokenizeEntireValueField field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenizeEntireValueField
 
-`func (o *JsonFormattedAccessLogFieldBehaviorResponse) SetTokenizeEntireValueField(v []EnumlogFieldBehaviorTokenizeEntireValueFieldProp)`
+`func (o *JsonFormattedAccessLogFieldBehaviorResponse) SetTokenizeEntireValueField(v []EnumlogFieldBehaviorJsonFormattedAccessTokenizeEntireValueFieldProp)`
 
 SetTokenizeEntireValueField sets TokenizeEntireValueField field to given value.
 
@@ -384,20 +384,20 @@ HasTokenizeEntireValueFieldName returns a boolean if a field has been set.
 
 ### GetTokenizeValueComponentsField
 
-`func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetTokenizeValueComponentsField() []EnumlogFieldBehaviorTokenizeValueComponentsFieldProp`
+`func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetTokenizeValueComponentsField() []EnumlogFieldBehaviorJsonFormattedAccessTokenizeValueComponentsFieldProp`
 
 GetTokenizeValueComponentsField returns the TokenizeValueComponentsField field if non-nil, zero value otherwise.
 
 ### GetTokenizeValueComponentsFieldOk
 
-`func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetTokenizeValueComponentsFieldOk() (*[]EnumlogFieldBehaviorTokenizeValueComponentsFieldProp, bool)`
+`func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetTokenizeValueComponentsFieldOk() (*[]EnumlogFieldBehaviorJsonFormattedAccessTokenizeValueComponentsFieldProp, bool)`
 
 GetTokenizeValueComponentsFieldOk returns a tuple with the TokenizeValueComponentsField field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenizeValueComponentsField
 
-`func (o *JsonFormattedAccessLogFieldBehaviorResponse) SetTokenizeValueComponentsField(v []EnumlogFieldBehaviorTokenizeValueComponentsFieldProp)`
+`func (o *JsonFormattedAccessLogFieldBehaviorResponse) SetTokenizeValueComponentsField(v []EnumlogFieldBehaviorJsonFormattedAccessTokenizeValueComponentsFieldProp)`
 
 SetTokenizeValueComponentsField sets TokenizeValueComponentsField field to given value.
 

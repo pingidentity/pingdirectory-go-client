@@ -1029,7 +1029,7 @@ components:
             description: >-
                 The TCP port number on which the LDAP server is listening.
           connectionSecurity:
-            $ref: '#/components/schemas/Enumserver-instance-listener-connectionSecurityProp'
+            $ref: '#/components/schemas/Enumserver-instance-listener-ldap-connectionSecurityProp'
           listenerCertificate:
             type: string
             description: >-
@@ -1068,7 +1068,7 @@ components:
             description: >-
                 The TCP port number on which the HTTP server is listening.
           connectionSecurity:
-            $ref: '#/components/schemas/Enumserver-instance-listener-connectionSecurityProp'
+            $ref: '#/components/schemas/Enumserver-instance-listener-http-connectionSecurityProp'
           purpose:
             type: array
             items:
@@ -1238,14 +1238,6 @@ components:
       - "starttls"
       description: >-
           Specifies the preferred mechanism to use for securing connections to the server.
-    Enumserver-instance-listener-connectionSecurityProp:
-      type: string
-      enum:
-      - "none"
-      - "ssl"
-      - "starttls"
-      description: >-
-          Specifies the mechanism to use for securing connections to the server.
     Enumserver-instance-listener-purposeProp:
       type: string
       enum:
@@ -1259,6 +1251,21 @@ components:
       - "sasl-plain"
       description: >-
           Identifies the type of password authentication that will be used.
+    Enumserver-instance-listener-ldap-connectionSecurityProp:
+      type: string
+      enum:
+      - "none"
+      - "ssl"
+      - "starttls"
+      description: >-
+          Specifies the mechanism to use for securing connections to the server.
+    Enumserver-instance-listener-http-connectionSecurityProp:
+      type: string
+      enum:
+      - "none"
+      - "ssl"
+      description: >-
+          Specifies the mechanism to use for securing connections to the server.
     Enuminter-server-authentication-info-purposeProp:
       type: string
       enum:

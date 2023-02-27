@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Id** | **string** | Name of the Request Criteria | 
 **Schemas** | [**[]EnumrootDseRequestCriteriaSchemaUrn**](EnumrootDseRequestCriteriaSchemaUrn.md) |  | 
-**OperationType** | Pointer to [**[]EnumrequestCriteriaOperationTypeProp**](EnumrequestCriteriaOperationTypeProp.md) |  | [optional] 
+**OperationType** | Pointer to [**[]EnumrequestCriteriaRootDseOperationTypeProp**](EnumrequestCriteriaRootDseOperationTypeProp.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Request Criteria | [optional] 
 
 ## Methods
@@ -122,20 +122,20 @@ SetSchemas sets Schemas field to given value.
 
 ### GetOperationType
 
-`func (o *RootDseRequestCriteriaResponse) GetOperationType() []EnumrequestCriteriaOperationTypeProp`
+`func (o *RootDseRequestCriteriaResponse) GetOperationType() []EnumrequestCriteriaRootDseOperationTypeProp`
 
 GetOperationType returns the OperationType field if non-nil, zero value otherwise.
 
 ### GetOperationTypeOk
 
-`func (o *RootDseRequestCriteriaResponse) GetOperationTypeOk() (*[]EnumrequestCriteriaOperationTypeProp, bool)`
+`func (o *RootDseRequestCriteriaResponse) GetOperationTypeOk() (*[]EnumrequestCriteriaRootDseOperationTypeProp, bool)`
 
 GetOperationTypeOk returns a tuple with the OperationType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOperationType
 
-`func (o *RootDseRequestCriteriaResponse) SetOperationType(v []EnumrequestCriteriaOperationTypeProp)`
+`func (o *RootDseRequestCriteriaResponse) SetOperationType(v []EnumrequestCriteriaRootDseOperationTypeProp)`
 
 SetOperationType sets OperationType field to given value.
 

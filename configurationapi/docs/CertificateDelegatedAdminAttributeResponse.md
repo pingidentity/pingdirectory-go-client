@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Id** | **string** | Name of the Delegated Admin Attribute | 
 **Schemas** | [**[]EnumcertificateDelegatedAdminAttributeSchemaUrn**](EnumcertificateDelegatedAdminAttributeSchemaUrn.md) |  | 
-**AllowedMIMEType** | Pointer to [**[]EnumdelegatedAdminAttributeAllowedMIMETypeProp**](EnumdelegatedAdminAttributeAllowedMIMETypeProp.md) |  | [optional] 
+**AllowedMIMEType** | Pointer to [**[]EnumdelegatedAdminAttributeCertificateAllowedMIMETypeProp**](EnumdelegatedAdminAttributeCertificateAllowedMIMETypeProp.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Delegated Admin Attribute | [optional] 
 **AttributeType** | **string** | Specifies the name or OID of the LDAP attribute type. | 
 **DisplayName** | **string** | A human readable display name for this Delegated Admin Attribute. | 
@@ -131,20 +131,20 @@ SetSchemas sets Schemas field to given value.
 
 ### GetAllowedMIMEType
 
-`func (o *CertificateDelegatedAdminAttributeResponse) GetAllowedMIMEType() []EnumdelegatedAdminAttributeAllowedMIMETypeProp`
+`func (o *CertificateDelegatedAdminAttributeResponse) GetAllowedMIMEType() []EnumdelegatedAdminAttributeCertificateAllowedMIMETypeProp`
 
 GetAllowedMIMEType returns the AllowedMIMEType field if non-nil, zero value otherwise.
 
 ### GetAllowedMIMETypeOk
 
-`func (o *CertificateDelegatedAdminAttributeResponse) GetAllowedMIMETypeOk() (*[]EnumdelegatedAdminAttributeAllowedMIMETypeProp, bool)`
+`func (o *CertificateDelegatedAdminAttributeResponse) GetAllowedMIMETypeOk() (*[]EnumdelegatedAdminAttributeCertificateAllowedMIMETypeProp, bool)`
 
 GetAllowedMIMETypeOk returns a tuple with the AllowedMIMEType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowedMIMEType
 
-`func (o *CertificateDelegatedAdminAttributeResponse) SetAllowedMIMEType(v []EnumdelegatedAdminAttributeAllowedMIMETypeProp)`
+`func (o *CertificateDelegatedAdminAttributeResponse) SetAllowedMIMEType(v []EnumdelegatedAdminAttributeCertificateAllowedMIMETypeProp)`
 
 SetAllowedMIMEType sets AllowedMIMEType field to given value.
 

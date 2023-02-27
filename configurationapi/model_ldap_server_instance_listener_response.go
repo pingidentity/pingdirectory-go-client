@@ -25,8 +25,8 @@ type LdapServerInstanceListenerResponse struct {
 	// Name of the Server Instance Listener
 	Id string `json:"id"`
 	// The TCP port number on which the LDAP server is listening.
-	ServerLDAPPort     *int32                                            `json:"serverLDAPPort,omitempty"`
-	ConnectionSecurity *EnumserverInstanceListenerConnectionSecurityProp `json:"connectionSecurity,omitempty"`
+	ServerLDAPPort     *int32                                                `json:"serverLDAPPort,omitempty"`
+	ConnectionSecurity *EnumserverInstanceListenerLdapConnectionSecurityProp `json:"connectionSecurity,omitempty"`
 	// The public component of the certificate that the listener is expected to present to clients. When establishing a connection to this server, only the certificate(s) listed here will be trusted.
 	ListenerCertificate *string                                 `json:"listenerCertificate,omitempty"`
 	Purpose             []EnumserverInstanceListenerPurposeProp `json:"purpose,omitempty"`
@@ -196,9 +196,9 @@ func (o *LdapServerInstanceListenerResponse) SetServerLDAPPort(v int32) {
 }
 
 // GetConnectionSecurity returns the ConnectionSecurity field value if set, zero value otherwise.
-func (o *LdapServerInstanceListenerResponse) GetConnectionSecurity() EnumserverInstanceListenerConnectionSecurityProp {
+func (o *LdapServerInstanceListenerResponse) GetConnectionSecurity() EnumserverInstanceListenerLdapConnectionSecurityProp {
 	if o == nil || IsNil(o.ConnectionSecurity) {
-		var ret EnumserverInstanceListenerConnectionSecurityProp
+		var ret EnumserverInstanceListenerLdapConnectionSecurityProp
 		return ret
 	}
 	return *o.ConnectionSecurity
@@ -206,7 +206,7 @@ func (o *LdapServerInstanceListenerResponse) GetConnectionSecurity() EnumserverI
 
 // GetConnectionSecurityOk returns a tuple with the ConnectionSecurity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LdapServerInstanceListenerResponse) GetConnectionSecurityOk() (*EnumserverInstanceListenerConnectionSecurityProp, bool) {
+func (o *LdapServerInstanceListenerResponse) GetConnectionSecurityOk() (*EnumserverInstanceListenerLdapConnectionSecurityProp, bool) {
 	if o == nil || IsNil(o.ConnectionSecurity) {
 		return nil, false
 	}
@@ -222,8 +222,8 @@ func (o *LdapServerInstanceListenerResponse) HasConnectionSecurity() bool {
 	return false
 }
 
-// SetConnectionSecurity gets a reference to the given EnumserverInstanceListenerConnectionSecurityProp and assigns it to the ConnectionSecurity field.
-func (o *LdapServerInstanceListenerResponse) SetConnectionSecurity(v EnumserverInstanceListenerConnectionSecurityProp) {
+// SetConnectionSecurity gets a reference to the given EnumserverInstanceListenerLdapConnectionSecurityProp and assigns it to the ConnectionSecurity field.
+func (o *LdapServerInstanceListenerResponse) SetConnectionSecurity(v EnumserverInstanceListenerLdapConnectionSecurityProp) {
 	o.ConnectionSecurity = &v
 }
 

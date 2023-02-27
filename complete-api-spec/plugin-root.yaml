@@ -763,7 +763,7 @@ components:
           serverInfo:
             $ref: '#/components/schemas/Enumplugin-serverInfoProp'
           perApplicationLDAPStats:
-            $ref: '#/components/schemas/Enumplugin-perApplicationLDAPStatsProp'
+            $ref: '#/components/schemas/Enumplugin-stats-collector-perApplicationLDAPStatsProp'
           ldapChangelogInfo:
             $ref: '#/components/schemas/Enumplugin-ldapChangelogInfoProp'
           statusSummaryInfo:
@@ -1538,7 +1538,7 @@ components:
           items:
             $ref: '#/components/schemas/Enumplugin-histogramOpTypeProp'
         perApplicationLDAPStats:
-          $ref: '#/components/schemas/Enumplugin-perApplicationLDAPStatsProp'
+          $ref: '#/components/schemas/Enumplugin-periodic-stats-logger-perApplicationLDAPStatsProp'
         statusSummaryInfo:
           $ref: '#/components/schemas/Enumplugin-statusSummaryInfoProp'
         ldapChangelogInfo:
@@ -3431,6 +3431,14 @@ components:
       - "use-all-values-if-possible-but-only-first-value-if-not"
       description: >-
           The behavior to exhibit for source attributes that have multiple values.
+    Enumplugin-periodic-stats-logger-perApplicationLDAPStatsProp:
+      type: string
+      enum:
+      - "aggregate-only"
+      - "per-application-only"
+      - "per-application-and-aggregate"
+      description: >-
+          Controls whether per application LDAP statistics are included in the output for selected LDAP operation statistics.
     Enumplugin-updatedEntryNoLongerMatchesCriteriaBehaviorProp:
       type: string
       enum:
@@ -3449,13 +3457,6 @@ components:
       - "cancel"
       description: >-
           Specifies the action that should be taken by the profiler.
-    Enumplugin-perApplicationLDAPStatsProp:
-      type: string
-      enum:
-      - "aggregate-only"
-      - "per-application-only"
-      description: >-
-          Controls whether per application LDAP statistics are included in the output for selected LDAP operation statistics.
     Enumplugin-targetAttributeExistsDuringInitialPopulationBehaviorProp:
       type: string
       enum:
@@ -3759,6 +3760,13 @@ components:
       - "never-allow"
       description: >-
           The behavior to exhibit for modify and modify DN operations that attempt to update the set of values for the target attribute.
+    Enumplugin-stats-collector-perApplicationLDAPStatsProp:
+      type: string
+      enum:
+      - "aggregate-only"
+      - "per-application-only"
+      description: >-
+          Controls whether per application LDAP statistics are included in the output for selected LDAP operation statistics.
     Enumplugin-updateSourceAttributeBehaviorProp:
       type: string
       enum:

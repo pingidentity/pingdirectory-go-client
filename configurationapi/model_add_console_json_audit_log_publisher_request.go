@@ -28,8 +28,8 @@ type AddConsoleJsonAuditLogPublisherRequest struct {
 	// Indicates whether the JSON objects should use a multi-line representation (with each object field and array value on its own line) that may be easier for administrators to read, but each message will be larger (because of additional spaces and end-of-line markers), and it may be more difficult to consume and parse through some text-oriented tools.
 	WriteMultiLineMessages *bool `json:"writeMultiLineMessages,omitempty"`
 	// Indicates whether the audit log should be written in reversible form so that it is possible to revert the changes if desired.
-	UseReversibleForm            *bool                                             `json:"useReversibleForm,omitempty"`
-	SoftDeleteEntryAuditBehavior *EnumlogPublisherSoftDeleteEntryAuditBehaviorProp `json:"softDeleteEntryAuditBehavior,omitempty"`
+	UseReversibleForm            *bool                                                             `json:"useReversibleForm,omitempty"`
+	SoftDeleteEntryAuditBehavior *EnumlogPublisherConsoleJsonAuditSoftDeleteEntryAuditBehaviorProp `json:"softDeleteEntryAuditBehavior,omitempty"`
 	// Indicates whether to include information about any operation purpose request control that may have been included in the request.
 	IncludeOperationPurposeRequestControl *bool `json:"includeOperationPurposeRequestControl,omitempty"`
 	// Indicates whether to include information about any intermediate client request control that may have been included in the request.
@@ -262,9 +262,9 @@ func (o *AddConsoleJsonAuditLogPublisherRequest) SetUseReversibleForm(v bool) {
 }
 
 // GetSoftDeleteEntryAuditBehavior returns the SoftDeleteEntryAuditBehavior field value if set, zero value otherwise.
-func (o *AddConsoleJsonAuditLogPublisherRequest) GetSoftDeleteEntryAuditBehavior() EnumlogPublisherSoftDeleteEntryAuditBehaviorProp {
+func (o *AddConsoleJsonAuditLogPublisherRequest) GetSoftDeleteEntryAuditBehavior() EnumlogPublisherConsoleJsonAuditSoftDeleteEntryAuditBehaviorProp {
 	if o == nil || IsNil(o.SoftDeleteEntryAuditBehavior) {
-		var ret EnumlogPublisherSoftDeleteEntryAuditBehaviorProp
+		var ret EnumlogPublisherConsoleJsonAuditSoftDeleteEntryAuditBehaviorProp
 		return ret
 	}
 	return *o.SoftDeleteEntryAuditBehavior
@@ -272,7 +272,7 @@ func (o *AddConsoleJsonAuditLogPublisherRequest) GetSoftDeleteEntryAuditBehavior
 
 // GetSoftDeleteEntryAuditBehaviorOk returns a tuple with the SoftDeleteEntryAuditBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddConsoleJsonAuditLogPublisherRequest) GetSoftDeleteEntryAuditBehaviorOk() (*EnumlogPublisherSoftDeleteEntryAuditBehaviorProp, bool) {
+func (o *AddConsoleJsonAuditLogPublisherRequest) GetSoftDeleteEntryAuditBehaviorOk() (*EnumlogPublisherConsoleJsonAuditSoftDeleteEntryAuditBehaviorProp, bool) {
 	if o == nil || IsNil(o.SoftDeleteEntryAuditBehavior) {
 		return nil, false
 	}
@@ -288,8 +288,8 @@ func (o *AddConsoleJsonAuditLogPublisherRequest) HasSoftDeleteEntryAuditBehavior
 	return false
 }
 
-// SetSoftDeleteEntryAuditBehavior gets a reference to the given EnumlogPublisherSoftDeleteEntryAuditBehaviorProp and assigns it to the SoftDeleteEntryAuditBehavior field.
-func (o *AddConsoleJsonAuditLogPublisherRequest) SetSoftDeleteEntryAuditBehavior(v EnumlogPublisherSoftDeleteEntryAuditBehaviorProp) {
+// SetSoftDeleteEntryAuditBehavior gets a reference to the given EnumlogPublisherConsoleJsonAuditSoftDeleteEntryAuditBehaviorProp and assigns it to the SoftDeleteEntryAuditBehavior field.
+func (o *AddConsoleJsonAuditLogPublisherRequest) SetSoftDeleteEntryAuditBehavior(v EnumlogPublisherConsoleJsonAuditSoftDeleteEntryAuditBehaviorProp) {
 	o.SoftDeleteEntryAuditBehavior = &v
 }
 

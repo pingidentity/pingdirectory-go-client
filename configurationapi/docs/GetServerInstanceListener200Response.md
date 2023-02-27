@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumhttpServerInstanceListenerSchemaUrn**](EnumhttpServerInstanceListenerSchemaUrn.md) |  | 
 **Id** | **string** | Name of the Server Instance Listener | 
 **ServerLDAPPort** | Pointer to **int32** | The TCP port number on which the LDAP server is listening. | [optional] 
-**ConnectionSecurity** | Pointer to [**EnumserverInstanceListenerConnectionSecurityProp**](EnumserverInstanceListenerConnectionSecurityProp.md) |  | [optional] 
+**ConnectionSecurity** | Pointer to [**EnumserverInstanceListenerHttpConnectionSecurityProp**](EnumserverInstanceListenerHttpConnectionSecurityProp.md) |  | [optional] 
 **ListenerCertificate** | Pointer to **string** | The public component of the certificate that the listener is expected to present to clients. When establishing a connection to this server, only the certificate(s) listed here will be trusted. | [optional] 
 **Purpose** | Pointer to [**[]EnumserverInstanceListenerPurposeProp**](EnumserverInstanceListenerPurposeProp.md) |  | [optional] 
 **ListenAddress** | Pointer to **string** | If the server is listening on a particular address different from the hostname, then this property may be used to specify the address on which to listen for connections from HTTP clients. | [optional] 
@@ -151,20 +151,20 @@ HasServerLDAPPort returns a boolean if a field has been set.
 
 ### GetConnectionSecurity
 
-`func (o *GetServerInstanceListener200Response) GetConnectionSecurity() EnumserverInstanceListenerConnectionSecurityProp`
+`func (o *GetServerInstanceListener200Response) GetConnectionSecurity() EnumserverInstanceListenerHttpConnectionSecurityProp`
 
 GetConnectionSecurity returns the ConnectionSecurity field if non-nil, zero value otherwise.
 
 ### GetConnectionSecurityOk
 
-`func (o *GetServerInstanceListener200Response) GetConnectionSecurityOk() (*EnumserverInstanceListenerConnectionSecurityProp, bool)`
+`func (o *GetServerInstanceListener200Response) GetConnectionSecurityOk() (*EnumserverInstanceListenerHttpConnectionSecurityProp, bool)`
 
 GetConnectionSecurityOk returns a tuple with the ConnectionSecurity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConnectionSecurity
 
-`func (o *GetServerInstanceListener200Response) SetConnectionSecurity(v EnumserverInstanceListenerConnectionSecurityProp)`
+`func (o *GetServerInstanceListener200Response) SetConnectionSecurity(v EnumserverInstanceListenerHttpConnectionSecurityProp)`
 
 SetConnectionSecurity sets ConnectionSecurity field to given value.
 

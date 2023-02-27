@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **QueueSize** | Pointer to **int32** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
 **WriteMultiLineMessages** | Pointer to **bool** | Indicates whether the JSON objects should use a multi-line representation (with each object field and array value on its own line) that may be easier for administrators to read, but each message will be larger (because of additional spaces and end-of-line markers), and it may be more difficult to consume and parse through some text-oriented tools. | [optional] 
 **UseReversibleForm** | Pointer to **bool** | Indicates whether the audit log should be written in reversible form so that it is possible to revert the changes if desired. | [optional] 
-**SoftDeleteEntryAuditBehavior** | Pointer to [**EnumlogPublisherSoftDeleteEntryAuditBehaviorProp**](EnumlogPublisherSoftDeleteEntryAuditBehaviorProp.md) |  | [optional] 
+**SoftDeleteEntryAuditBehavior** | Pointer to [**EnumlogPublisherSyslogJsonAuditSoftDeleteEntryAuditBehaviorProp**](EnumlogPublisherSyslogJsonAuditSoftDeleteEntryAuditBehaviorProp.md) |  | [optional] 
 **IncludeOperationPurposeRequestControl** | Pointer to **bool** | Indicates whether to include information about any operation purpose request control that may have been included in the request. | [optional] 
 **IncludeIntermediateClientRequestControl** | Pointer to **bool** | Indicates whether to include information about any intermediate client request control that may have been included in the request. | [optional] 
 **ObscureAttribute** | Pointer to **[]string** | Specifies the names of any attribute types that should have their values obscured in the audit log because they may be considered sensitive. | [optional] 
@@ -336,20 +336,20 @@ HasUseReversibleForm returns a boolean if a field has been set.
 
 ### GetSoftDeleteEntryAuditBehavior
 
-`func (o *SyslogJsonAuditLogPublisherResponse) GetSoftDeleteEntryAuditBehavior() EnumlogPublisherSoftDeleteEntryAuditBehaviorProp`
+`func (o *SyslogJsonAuditLogPublisherResponse) GetSoftDeleteEntryAuditBehavior() EnumlogPublisherSyslogJsonAuditSoftDeleteEntryAuditBehaviorProp`
 
 GetSoftDeleteEntryAuditBehavior returns the SoftDeleteEntryAuditBehavior field if non-nil, zero value otherwise.
 
 ### GetSoftDeleteEntryAuditBehaviorOk
 
-`func (o *SyslogJsonAuditLogPublisherResponse) GetSoftDeleteEntryAuditBehaviorOk() (*EnumlogPublisherSoftDeleteEntryAuditBehaviorProp, bool)`
+`func (o *SyslogJsonAuditLogPublisherResponse) GetSoftDeleteEntryAuditBehaviorOk() (*EnumlogPublisherSyslogJsonAuditSoftDeleteEntryAuditBehaviorProp, bool)`
 
 GetSoftDeleteEntryAuditBehaviorOk returns a tuple with the SoftDeleteEntryAuditBehavior field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSoftDeleteEntryAuditBehavior
 
-`func (o *SyslogJsonAuditLogPublisherResponse) SetSoftDeleteEntryAuditBehavior(v EnumlogPublisherSoftDeleteEntryAuditBehaviorProp)`
+`func (o *SyslogJsonAuditLogPublisherResponse) SetSoftDeleteEntryAuditBehavior(v EnumlogPublisherSyslogJsonAuditSoftDeleteEntryAuditBehaviorProp)`
 
 SetSoftDeleteEntryAuditBehavior sets SoftDeleteEntryAuditBehavior field to given value.
 
