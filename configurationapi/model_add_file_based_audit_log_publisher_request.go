@@ -58,8 +58,8 @@ type AddFileBasedAuditLogPublisherRequest struct {
 	// Indicates whether to log information about the replication change ID.
 	IncludeReplicationChangeID *bool `json:"includeReplicationChangeID,omitempty"`
 	// Indicates whether the audit log should be written in reversible form so that it is possible to revert the changes if desired.
-	UseReversibleForm            *bool                                             `json:"useReversibleForm,omitempty"`
-	SoftDeleteEntryAuditBehavior *EnumlogPublisherSoftDeleteEntryAuditBehaviorProp `json:"softDeleteEntryAuditBehavior,omitempty"`
+	UseReversibleForm            *bool                                                           `json:"useReversibleForm,omitempty"`
+	SoftDeleteEntryAuditBehavior *EnumlogPublisherFileBasedAuditSoftDeleteEntryAuditBehaviorProp `json:"softDeleteEntryAuditBehavior,omitempty"`
 	// Indicates whether log messages for operation requests should include a list of the OIDs of any controls included in the request.
 	IncludeRequestControls *bool `json:"includeRequestControls,omitempty"`
 	// Indicates whether to include information about any operation purpose request control that may have been included in the request.
@@ -770,9 +770,9 @@ func (o *AddFileBasedAuditLogPublisherRequest) SetUseReversibleForm(v bool) {
 }
 
 // GetSoftDeleteEntryAuditBehavior returns the SoftDeleteEntryAuditBehavior field value if set, zero value otherwise.
-func (o *AddFileBasedAuditLogPublisherRequest) GetSoftDeleteEntryAuditBehavior() EnumlogPublisherSoftDeleteEntryAuditBehaviorProp {
+func (o *AddFileBasedAuditLogPublisherRequest) GetSoftDeleteEntryAuditBehavior() EnumlogPublisherFileBasedAuditSoftDeleteEntryAuditBehaviorProp {
 	if o == nil || IsNil(o.SoftDeleteEntryAuditBehavior) {
-		var ret EnumlogPublisherSoftDeleteEntryAuditBehaviorProp
+		var ret EnumlogPublisherFileBasedAuditSoftDeleteEntryAuditBehaviorProp
 		return ret
 	}
 	return *o.SoftDeleteEntryAuditBehavior
@@ -780,7 +780,7 @@ func (o *AddFileBasedAuditLogPublisherRequest) GetSoftDeleteEntryAuditBehavior()
 
 // GetSoftDeleteEntryAuditBehaviorOk returns a tuple with the SoftDeleteEntryAuditBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddFileBasedAuditLogPublisherRequest) GetSoftDeleteEntryAuditBehaviorOk() (*EnumlogPublisherSoftDeleteEntryAuditBehaviorProp, bool) {
+func (o *AddFileBasedAuditLogPublisherRequest) GetSoftDeleteEntryAuditBehaviorOk() (*EnumlogPublisherFileBasedAuditSoftDeleteEntryAuditBehaviorProp, bool) {
 	if o == nil || IsNil(o.SoftDeleteEntryAuditBehavior) {
 		return nil, false
 	}
@@ -796,8 +796,8 @@ func (o *AddFileBasedAuditLogPublisherRequest) HasSoftDeleteEntryAuditBehavior()
 	return false
 }
 
-// SetSoftDeleteEntryAuditBehavior gets a reference to the given EnumlogPublisherSoftDeleteEntryAuditBehaviorProp and assigns it to the SoftDeleteEntryAuditBehavior field.
-func (o *AddFileBasedAuditLogPublisherRequest) SetSoftDeleteEntryAuditBehavior(v EnumlogPublisherSoftDeleteEntryAuditBehaviorProp) {
+// SetSoftDeleteEntryAuditBehavior gets a reference to the given EnumlogPublisherFileBasedAuditSoftDeleteEntryAuditBehaviorProp and assigns it to the SoftDeleteEntryAuditBehavior field.
+func (o *AddFileBasedAuditLogPublisherRequest) SetSoftDeleteEntryAuditBehavior(v EnumlogPublisherFileBasedAuditSoftDeleteEntryAuditBehaviorProp) {
 	o.SoftDeleteEntryAuditBehavior = &v
 }
 

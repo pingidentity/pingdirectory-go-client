@@ -58,7 +58,7 @@ Name | Type | Description | Notes
 **IncludedResourceStat** | Pointer to [**[]EnumpluginIncludedResourceStatProp**](EnumpluginIncludedResourceStatProp.md) |  | [optional] 
 **HistogramFormat** | Pointer to [**EnumpluginHistogramFormatProp**](EnumpluginHistogramFormatProp.md) |  | [optional] 
 **HistogramOpType** | Pointer to [**[]EnumpluginHistogramOpTypeProp**](EnumpluginHistogramOpTypeProp.md) |  | [optional] 
-**PerApplicationLDAPStats** | Pointer to [**EnumpluginPerApplicationLDAPStatsProp**](EnumpluginPerApplicationLDAPStatsProp.md) |  | [optional] 
+**PerApplicationLDAPStats** | Pointer to [**EnumpluginPeriodicStatsLoggerPerApplicationLDAPStatsProp**](EnumpluginPeriodicStatsLoggerPerApplicationLDAPStatsProp.md) |  | [optional] 
 **StatusSummaryInfo** | Pointer to [**EnumpluginStatusSummaryInfoProp**](EnumpluginStatusSummaryInfoProp.md) |  | [optional] 
 **LdapChangelogInfo** | Pointer to [**EnumpluginLdapChangelogInfoProp**](EnumpluginLdapChangelogInfoProp.md) |  | [optional] 
 **GaugeInfo** | Pointer to [**EnumpluginGaugeInfoProp**](EnumpluginGaugeInfoProp.md) |  | [optional] 
@@ -1417,20 +1417,20 @@ HasHistogramOpType returns a boolean if a field has been set.
 
 ### GetPerApplicationLDAPStats
 
-`func (o *AddPluginRequest) GetPerApplicationLDAPStats() EnumpluginPerApplicationLDAPStatsProp`
+`func (o *AddPluginRequest) GetPerApplicationLDAPStats() EnumpluginPeriodicStatsLoggerPerApplicationLDAPStatsProp`
 
 GetPerApplicationLDAPStats returns the PerApplicationLDAPStats field if non-nil, zero value otherwise.
 
 ### GetPerApplicationLDAPStatsOk
 
-`func (o *AddPluginRequest) GetPerApplicationLDAPStatsOk() (*EnumpluginPerApplicationLDAPStatsProp, bool)`
+`func (o *AddPluginRequest) GetPerApplicationLDAPStatsOk() (*EnumpluginPeriodicStatsLoggerPerApplicationLDAPStatsProp, bool)`
 
 GetPerApplicationLDAPStatsOk returns a tuple with the PerApplicationLDAPStats field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPerApplicationLDAPStats
 
-`func (o *AddPluginRequest) SetPerApplicationLDAPStats(v EnumpluginPerApplicationLDAPStatsProp)`
+`func (o *AddPluginRequest) SetPerApplicationLDAPStats(v EnumpluginPeriodicStatsLoggerPerApplicationLDAPStatsProp)`
 
 SetPerApplicationLDAPStats sets PerApplicationLDAPStats field to given value.
 

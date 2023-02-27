@@ -906,7 +906,7 @@ components:
         allowedMIMEType:
           type: array
           items:
-            $ref: '#/components/schemas/Enumdelegated-admin-attribute-allowedMIMETypeProp'
+            $ref: '#/components/schemas/Enumdelegated-admin-attribute-certificate-allowedMIMETypeProp'
         description:
           type: string
           description: >-
@@ -988,7 +988,7 @@ components:
         allowedMIMEType:
           type: array
           items:
-            $ref: '#/components/schemas/Enumdelegated-admin-attribute-allowedMIMETypeProp'
+            $ref: '#/components/schemas/Enumdelegated-admin-attribute-photo-allowedMIMETypeProp'
         description:
           type: string
           description: >-
@@ -1175,14 +1175,7 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:delegated-admin-correlated-rest-resource"
-    Enumdelegated-admin-attribute-mutabilityProp:
-      type: string
-      enum:
-      - "read-only"
-      - "read-write"
-      description: >-
-          Specifies the circumstances under which the values of the attribute can be written.
-    Enumdelegated-admin-attribute-allowedMIMETypeProp:
+    Enumdelegated-admin-attribute-certificate-allowedMIMETypeProp:
       type: string
       enum:
       - "cer"
@@ -1197,6 +1190,22 @@ components:
       - "pem"
       - "pfx"
       - "spc"
+      description: >-
+          The list of file types allowed to be uploaded. If no types are specified, then all types will be allowed.
+    Enumdelegated-admin-attribute-mutabilityProp:
+      type: string
+      enum:
+      - "read-only"
+      - "read-write"
+      description: >-
+          Specifies the circumstances under which the values of the attribute can be written.
+    Enumdelegated-admin-attribute-photo-allowedMIMETypeProp:
+      type: string
+      enum:
+      - "gif"
+      - "jpeg"
+      - "jpg"
+      - "png"
       description: >-
           The list of file types allowed to be uploaded. If no types are specified, then all types will be allowed.
     Enumdelegated-admin-attribute-attributePresentationProp:

@@ -507,7 +507,7 @@ components:
           description: >-
               Indicates whether the audit log should be written in reversible form so that it is possible to revert the changes if desired.
         softDeleteEntryAuditBehavior:
-          $ref: '#/components/schemas/Enumlog-publisher-softDeleteEntryAuditBehaviorProp'
+          $ref: '#/components/schemas/Enumlog-publisher-syslog-json-audit-softDeleteEntryAuditBehaviorProp'
         includeOperationPurposeRequestControl:
           type: boolean
           description: >-
@@ -2346,7 +2346,7 @@ components:
           description: >-
               Indicates whether the audit log should be written in reversible form so that it is possible to revert the changes if desired.
         softDeleteEntryAuditBehavior:
-          $ref: '#/components/schemas/Enumlog-publisher-softDeleteEntryAuditBehaviorProp'
+          $ref: '#/components/schemas/Enumlog-publisher-file-based-json-audit-softDeleteEntryAuditBehaviorProp'
         includeOperationPurposeRequestControl:
           type: boolean
           description: >-
@@ -4108,7 +4108,7 @@ components:
           description: >-
               Indicates whether the audit log should be written in reversible form so that it is possible to revert the changes if desired.
         softDeleteEntryAuditBehavior:
-          $ref: '#/components/schemas/Enumlog-publisher-softDeleteEntryAuditBehaviorProp'
+          $ref: '#/components/schemas/Enumlog-publisher-file-based-audit-softDeleteEntryAuditBehaviorProp'
         includeRequestControls:
           type: boolean
           description: >-
@@ -5220,7 +5220,7 @@ components:
           description: >-
               Indicates whether the audit log should be written in reversible form so that it is possible to revert the changes if desired.
         softDeleteEntryAuditBehavior:
-          $ref: '#/components/schemas/Enumlog-publisher-softDeleteEntryAuditBehaviorProp'
+          $ref: '#/components/schemas/Enumlog-publisher-console-json-audit-softDeleteEntryAuditBehaviorProp'
         includeOperationPurposeRequestControl:
           type: boolean
           description: >-
@@ -6392,45 +6392,27 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:debug-target"
-    Enumlog-publisher-httpMessageTypeProp:
+    Enumlog-publisher-syslog-json-audit-softDeleteEntryAuditBehaviorProp:
       type: string
       enum:
-      - "request"
-      - "response"
+      - "included"
+      - "excluded"
       description: >-
-          Specifies the HTTP message types which can be logged.
-    Enumlog-publisher-debugMessageTypeProp:
+          Specifies the audit behavior for delete and modify operations on soft-deleted entries.
+    Enumlog-publisher-file-based-json-audit-softDeleteEntryAuditBehaviorProp:
       type: string
       enum:
-      - "http-full-request-and-response"
-      - "ldap-external-server-request"
-      - "server-sdk-extension"
-      - "store-adapter-mapping"
-      - "store-adapter-processing"
-      - "access-token-validator-request-and-response"
-      - "access-token-validator-processing"
-      - "id-token-validator-request-and-response"
-      - "id-token-validator-processing"
-      - "consent-service-request-and-response"
-      - "gateway-request-and-response"
-      - "policy-request-and-response"
+      - "included"
+      - "excluded"
       description: >-
-          Specifies the debug message types which can be logged. Note that enabling these may result in sensitive information being logged.
-    Enumlog-publisher-directoryRESTAPIMessageTypeProp:
+          Specifies the audit behavior for delete and modify operations on soft-deleted entries.
+    Enumlog-publisher-file-based-audit-softDeleteEntryAuditBehaviorProp:
       type: string
       enum:
-      - "error"
+      - "commented"
+      - "uncommented"
       description: >-
-          Specifies the Directory REST API message types which can be logged.
-    Enumlog-publisher-extensionMessageTypeProp:
-      type: string
-      enum:
-      - "error"
-      - "warning"
-      - "notice"
-      - "info"
-      description: >-
-          Specifies the Server SDK extension message types that can be logged.
+          Specifies the audit behavior for delete and modify operations on soft-deleted entries.
     Enumlog-publisher-defaultDebugLevelProp:
       type: string
       enum:
@@ -6462,13 +6444,6 @@ components:
       - "milliseconds"
       description: >-
           Specifies the smallest time unit to be included in timestamps.
-    Enumlog-publisher-softDeleteEntryAuditBehaviorProp:
-      type: string
-      enum:
-      - "included"
-      - "excluded"
-      description: >-
-          Specifies the audit behavior for delete and modify operations on soft-deleted entries.
     Enumlog-publisher-scimMessageTypeProp:
       type: string
       enum:
@@ -6505,35 +6480,6 @@ components:
       - "header-names-and-values"
       description: >-
           Indicates whether response log messages should include information about HTTP headers included in the response.
-    Enumlog-publisher-syslogFacilityProp:
-      type: string
-      enum:
-      - "user-level-messages"
-      - "system-daemons"
-      - "security-and-authorization"
-      - "security-and-authorization-alternative"
-      - "log-audit"
-      - "log-alert"
-      - "local-use-0"
-      - "local-use-1"
-      - "local-use-2"
-      - "local-use-3"
-      - "local-use-4"
-      - "local-use-5"
-      - "local-use-6"
-      - "local-use-7"
-      - "kernel-messages"
-      - "mail-system"
-      - "syslogd-internal-messages"
-      - "line-printer"
-      - "network-news"
-      - "uucp"
-      - "clock-daemon"
-      - "ftp-daemon"
-      - "ntp-daemon"
-      - "clock-daemon-alternative"
-      description: >-
-          The syslog facility to use for the messages that are logged by this Syslog JSON Audit Log Publisher.
     Enumlog-publisher-outputLocationProp:
       type: string
       enum:
@@ -6548,49 +6494,6 @@ components:
       - "gzip"
       description: >-
           Specifies the type of compression (if any) to use for log files that are written.
-    Enumlog-publisher-loggingErrorBehaviorProp:
-      type: string
-      enum:
-      - "standard-error"
-      - "lockdown-mode"
-      description: >-
-          Specifies the behavior that the server should exhibit if an error occurs during logging processing.
-    Enumdebug-target-debugCategoryProp:
-      type: string
-      enum:
-      - "caught"
-      - "constructor"
-      - "data"
-      - "database-access"
-      - "enter"
-      - "exit"
-      - "message"
-      - "protocol"
-      - "thrown"
-      description: >-
-          Specifies the debug message categories to be logged.
-    Enumlog-publisher-consentMessageTypeProp:
-      type: string
-      enum:
-      - "consent-created"
-      - "consent-updated"
-      - "consent-deleted"
-      - "consent-retrieved"
-      - "consent-search"
-      - "definition-created"
-      - "definition-updated"
-      - "definition-deleted"
-      - "definition-retrieved"
-      - "definition-search"
-      - "localization-created"
-      - "localization-updated"
-      - "localization-deleted"
-      - "localization-retrieved"
-      - "localization-search"
-      - "error"
-      - "audit"
-      description: >-
-          Specifies the consent message types that can be logged.
     Enumdebug-target-debugLevelProp:
       type: string
       enum:
@@ -6649,6 +6552,124 @@ components:
       - "thrown"
       description: >-
           The debug message categories to be logged when none of the defined targets match the message.
+    Enumlog-publisher-httpMessageTypeProp:
+      type: string
+      enum:
+      - "request"
+      - "response"
+      description: >-
+          Specifies the HTTP message types which can be logged.
+    Enumlog-publisher-debugMessageTypeProp:
+      type: string
+      enum:
+      - "http-full-request-and-response"
+      - "ldap-external-server-request"
+      - "server-sdk-extension"
+      - "store-adapter-mapping"
+      - "store-adapter-processing"
+      - "access-token-validator-request-and-response"
+      - "access-token-validator-processing"
+      - "id-token-validator-request-and-response"
+      - "id-token-validator-processing"
+      - "consent-service-request-and-response"
+      - "gateway-request-and-response"
+      - "policy-request-and-response"
+      description: >-
+          Specifies the debug message types which can be logged. Note that enabling these may result in sensitive information being logged.
+    Enumlog-publisher-directoryRESTAPIMessageTypeProp:
+      type: string
+      enum:
+      - "error"
+      description: >-
+          Specifies the Directory REST API message types which can be logged.
+    Enumlog-publisher-extensionMessageTypeProp:
+      type: string
+      enum:
+      - "error"
+      - "warning"
+      - "notice"
+      - "info"
+      description: >-
+          Specifies the Server SDK extension message types that can be logged.
+    Enumlog-publisher-syslogFacilityProp:
+      type: string
+      enum:
+      - "user-level-messages"
+      - "system-daemons"
+      - "security-and-authorization"
+      - "security-and-authorization-alternative"
+      - "log-audit"
+      - "log-alert"
+      - "local-use-0"
+      - "local-use-1"
+      - "local-use-2"
+      - "local-use-3"
+      - "local-use-4"
+      - "local-use-5"
+      - "local-use-6"
+      - "local-use-7"
+      - "kernel-messages"
+      - "mail-system"
+      - "syslogd-internal-messages"
+      - "line-printer"
+      - "network-news"
+      - "uucp"
+      - "clock-daemon"
+      - "ftp-daemon"
+      - "ntp-daemon"
+      - "clock-daemon-alternative"
+      description: >-
+          The syslog facility to use for the messages that are logged by this Syslog JSON Audit Log Publisher.
+    Enumlog-publisher-loggingErrorBehaviorProp:
+      type: string
+      enum:
+      - "standard-error"
+      - "lockdown-mode"
+      description: >-
+          Specifies the behavior that the server should exhibit if an error occurs during logging processing.
+    Enumdebug-target-debugCategoryProp:
+      type: string
+      enum:
+      - "caught"
+      - "constructor"
+      - "data"
+      - "database-access"
+      - "enter"
+      - "exit"
+      - "message"
+      - "protocol"
+      - "thrown"
+      description: >-
+          Specifies the debug message categories to be logged.
+    Enumlog-publisher-consentMessageTypeProp:
+      type: string
+      enum:
+      - "consent-created"
+      - "consent-updated"
+      - "consent-deleted"
+      - "consent-retrieved"
+      - "consent-search"
+      - "definition-created"
+      - "definition-updated"
+      - "definition-deleted"
+      - "definition-retrieved"
+      - "definition-search"
+      - "localization-created"
+      - "localization-updated"
+      - "localization-deleted"
+      - "localization-retrieved"
+      - "localization-search"
+      - "error"
+      - "audit"
+      description: >-
+          Specifies the consent message types that can be logged.
+    Enumlog-publisher-console-json-audit-softDeleteEntryAuditBehaviorProp:
+      type: string
+      enum:
+      - "included"
+      - "excluded"
+      description: >-
+          Specifies the audit behavior for delete and modify operations on soft-deleted entries.
     updateRequest:
       type: object
       properties:

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Id** | **string** | Name of the Server Instance Listener | 
 **ListenAddress** | Pointer to **string** | If the server is listening on a particular address different from the hostname, then this property may be used to specify the address on which to listen for connections from HTTP clients. | [optional] 
 **ServerHTTPPort** | Pointer to **int32** | The TCP port number on which the HTTP server is listening. | [optional] 
-**ConnectionSecurity** | Pointer to [**EnumserverInstanceListenerConnectionSecurityProp**](EnumserverInstanceListenerConnectionSecurityProp.md) |  | [optional] 
+**ConnectionSecurity** | Pointer to [**EnumserverInstanceListenerHttpConnectionSecurityProp**](EnumserverInstanceListenerHttpConnectionSecurityProp.md) |  | [optional] 
 **Purpose** | Pointer to [**[]EnumserverInstanceListenerPurposeProp**](EnumserverInstanceListenerPurposeProp.md) |  | [optional] 
 
 ## Methods
@@ -174,20 +174,20 @@ HasServerHTTPPort returns a boolean if a field has been set.
 
 ### GetConnectionSecurity
 
-`func (o *HttpServerInstanceListenerResponse) GetConnectionSecurity() EnumserverInstanceListenerConnectionSecurityProp`
+`func (o *HttpServerInstanceListenerResponse) GetConnectionSecurity() EnumserverInstanceListenerHttpConnectionSecurityProp`
 
 GetConnectionSecurity returns the ConnectionSecurity field if non-nil, zero value otherwise.
 
 ### GetConnectionSecurityOk
 
-`func (o *HttpServerInstanceListenerResponse) GetConnectionSecurityOk() (*EnumserverInstanceListenerConnectionSecurityProp, bool)`
+`func (o *HttpServerInstanceListenerResponse) GetConnectionSecurityOk() (*EnumserverInstanceListenerHttpConnectionSecurityProp, bool)`
 
 GetConnectionSecurityOk returns a tuple with the ConnectionSecurity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConnectionSecurity
 
-`func (o *HttpServerInstanceListenerResponse) SetConnectionSecurity(v EnumserverInstanceListenerConnectionSecurityProp)`
+`func (o *HttpServerInstanceListenerResponse) SetConnectionSecurity(v EnumserverInstanceListenerHttpConnectionSecurityProp)`
 
 SetConnectionSecurity sets ConnectionSecurity field to given value.
 

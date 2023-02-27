@@ -14440,7 +14440,7 @@ components:
             $ref: '#/components/schemas/Enumplugin-histogramOpTypeProp'
           type: array
         perApplicationLDAPStats:
-          $ref: '#/components/schemas/Enumplugin-perApplicationLDAPStatsProp'
+          $ref: '#/components/schemas/Enumplugin-periodic-stats-logger-perApplicationLDAPStatsProp'
         statusSummaryInfo:
           $ref: '#/components/schemas/Enumplugin-statusSummaryInfoProp'
         ldapChangelogInfo:
@@ -15900,6 +15900,14 @@ components:
       - use-all-values-if-possible-but-reject-if-not
       - use-all-values-if-possible-but-only-first-value-if-not
       type: string
+    Enumplugin-periodic-stats-logger-perApplicationLDAPStatsProp:
+      description: Controls whether per application LDAP statistics are included in
+        the output for selected LDAP operation statistics.
+      enum:
+      - aggregate-only
+      - per-application-only
+      - per-application-and-aggregate
+      type: string
     Enumplugin-updatedEntryNoLongerMatchesCriteriaBehaviorProp:
       description: "The behavior to exhibit for modify or modify DN operations that\
         \ update an entry that previously satisfied the base DN and filter criteria,\
@@ -15917,13 +15925,6 @@ components:
       - start
       - stop
       - cancel
-      type: string
-    Enumplugin-perApplicationLDAPStatsProp:
-      description: Controls whether per application LDAP statistics are included in
-        the output for selected LDAP operation statistics.
-      enum:
-      - aggregate-only
-      - per-application-only
       type: string
     Enumplugin-targetAttributeExistsDuringInitialPopulationBehaviorProp:
       description: "The behavior to exhibit if the target attribute exists when initially\
@@ -16224,6 +16225,13 @@ components:
       - always-allow
       - allow-only-for-non-composed-values
       - never-allow
+      type: string
+    Enumplugin-stats-collector-perApplicationLDAPStatsProp:
+      description: Controls whether per application LDAP statistics are included in
+        the output for selected LDAP operation statistics.
+      enum:
+      - aggregate-only
+      - per-application-only
       type: string
     Enumplugin-updateSourceAttributeBehaviorProp:
       description: The behavior to exhibit for modify and modify DN operations that
@@ -17336,7 +17344,7 @@ components:
           type: array
         preserveField:
           items:
-            $ref: '#/components/schemas/Enumlog-field-behavior-preserveFieldProp'
+            $ref: '#/components/schemas/Enumlog-field-behavior-text-access-preserveFieldProp'
           type: array
         preserveFieldName:
           description: "The names of any custom fields whose values should be preserved.\
@@ -17348,7 +17356,7 @@ components:
           type: array
         omitField:
           items:
-            $ref: '#/components/schemas/Enumlog-field-behavior-omitFieldProp'
+            $ref: '#/components/schemas/Enumlog-field-behavior-text-access-omitFieldProp'
           type: array
         omitFieldName:
           description: "The names of any custom fields that should be omitted from\
@@ -17360,7 +17368,7 @@ components:
           type: array
         redactEntireValueField:
           items:
-            $ref: '#/components/schemas/Enumlog-field-behavior-redactEntireValueFieldProp'
+            $ref: '#/components/schemas/Enumlog-field-behavior-text-access-redactEntireValueFieldProp'
           type: array
         redactEntireValueFieldName:
           description: "The names of any custom fields whose values should be completely\
@@ -17372,7 +17380,7 @@ components:
           type: array
         redactValueComponentsField:
           items:
-            $ref: '#/components/schemas/Enumlog-field-behavior-redactValueComponentsFieldProp'
+            $ref: '#/components/schemas/Enumlog-field-behavior-text-access-redactValueComponentsFieldProp'
           type: array
         redactValueComponentsFieldName:
           description: "The names of any custom fields for which to redact components\
@@ -17384,7 +17392,7 @@ components:
           type: array
         tokenizeEntireValueField:
           items:
-            $ref: '#/components/schemas/Enumlog-field-behavior-tokenizeEntireValueFieldProp'
+            $ref: '#/components/schemas/Enumlog-field-behavior-text-access-tokenizeEntireValueFieldProp'
           type: array
         tokenizeEntireValueFieldName:
           description: "The names of any custom fields whose values should be completely\
@@ -17396,7 +17404,7 @@ components:
           type: array
         tokenizeValueComponentsField:
           items:
-            $ref: '#/components/schemas/Enumlog-field-behavior-tokenizeValueComponentsFieldProp'
+            $ref: '#/components/schemas/Enumlog-field-behavior-text-access-tokenizeValueComponentsFieldProp'
           type: array
         tokenizeValueComponentsFieldName:
           description: "The names of any custom fields for which to tokenize components\
@@ -17437,7 +17445,7 @@ components:
           type: array
         preserveField:
           items:
-            $ref: '#/components/schemas/Enumlog-field-behavior-preserveFieldProp'
+            $ref: '#/components/schemas/Enumlog-field-behavior-json-formatted-access-preserveFieldProp'
           type: array
         preserveFieldName:
           description: "The names of any custom fields whose values should be preserved.\
@@ -17449,7 +17457,7 @@ components:
           type: array
         omitField:
           items:
-            $ref: '#/components/schemas/Enumlog-field-behavior-omitFieldProp'
+            $ref: '#/components/schemas/Enumlog-field-behavior-json-formatted-access-omitFieldProp'
           type: array
         omitFieldName:
           description: "The names of any custom fields that should be omitted from\
@@ -17461,7 +17469,7 @@ components:
           type: array
         redactEntireValueField:
           items:
-            $ref: '#/components/schemas/Enumlog-field-behavior-redactEntireValueFieldProp'
+            $ref: '#/components/schemas/Enumlog-field-behavior-json-formatted-access-redactEntireValueFieldProp'
           type: array
         redactEntireValueFieldName:
           description: "The names of any custom fields whose values should be completely\
@@ -17473,7 +17481,7 @@ components:
           type: array
         redactValueComponentsField:
           items:
-            $ref: '#/components/schemas/Enumlog-field-behavior-redactValueComponentsFieldProp'
+            $ref: '#/components/schemas/Enumlog-field-behavior-json-formatted-access-redactValueComponentsFieldProp'
           type: array
         redactValueComponentsFieldName:
           description: "The names of any custom fields for which to redact components\
@@ -17485,7 +17493,7 @@ components:
           type: array
         tokenizeEntireValueField:
           items:
-            $ref: '#/components/schemas/Enumlog-field-behavior-tokenizeEntireValueFieldProp'
+            $ref: '#/components/schemas/Enumlog-field-behavior-json-formatted-access-tokenizeEntireValueFieldProp'
           type: array
         tokenizeEntireValueFieldName:
           description: "The names of any custom fields whose values should be completely\
@@ -17497,7 +17505,7 @@ components:
           type: array
         tokenizeValueComponentsField:
           items:
-            $ref: '#/components/schemas/Enumlog-field-behavior-tokenizeValueComponentsFieldProp'
+            $ref: '#/components/schemas/Enumlog-field-behavior-json-formatted-access-tokenizeValueComponentsFieldProp'
           type: array
         tokenizeValueComponentsFieldName:
           description: "The names of any custom fields for which to tokenize components\
@@ -17519,7 +17527,7 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:log-field-behavior:json-formatted-access
       type: string
-    Enumlog-field-behavior-preserveFieldProp:
+    Enumlog-field-behavior-text-access-preserveFieldProp:
       description: "The log fields whose values should be logged with the intended\
         \ value. The values for these fields will be preserved, although they may\
         \ be sanitized for parsability or safety purposes (for example, to escape\
@@ -17780,8 +17788,9 @@ components:
       - yubikey-otp-device-static-password-provided
       - yubikey-otp-device-yubikey-public-id
       type: string
-    Enumlog-field-behavior-redactValueComponentsFieldProp:
-      description: The log fields whose values will include redacted components.
+    Enumlog-field-behavior-json-formatted-access-omitFieldProp:
+      description: The log fields that should be omitted entirely from log messages.
+        Neither the field name nor value will be included.
       enum:
       - abandon-message-id
       - add-attributes
@@ -17789,13 +17798,19 @@ components:
       - add-undelete-from-dn
       - additional-info
       - administrative-operation
-      - assurance-timeout-millis
+      - assured-replication-requirements
+      - assured-replication-requirements-altered-by-request-control
+      - assured-replication-requirements-local-assurance-level
+      - assured-replication-requirements-remote-assurance-level
+      - assured-replication-requirements-response-delayed-by-assurance
+      - assured-replication-requirements-assurance-timeout-millis
       - authorization-dn
       - auto-authenticated-as
       - bind-authentication-dn
-      - bind-authentication-failure-id
-      - bind-authentication-failure-name
       - bind-authentication-failure-reason
+      - bind-authentication-failure-reason-id
+      - bind-authentication-failure-reason-message
+      - bind-authentication-failure-reason-name
       - bind-authentication-type
       - bind-authorization-dn
       - bind-dn
@@ -17849,10 +17864,14 @@ components:
       - entry-rebalancing-size-limit
       - entry-rebalancing-source-backend-set
       - entry-rebalancing-source-server
+      - entry-rebalancing-source-server-address
       - entry-rebalancing-source-server-altered
+      - entry-rebalancing-source-server-port
       - entry-rebalancing-target-backend-set
       - entry-rebalancing-target-server
+      - entry-rebalancing-target-server-address
       - entry-rebalancing-target-server-altered
+      - entry-rebalancing-target-server-port
       - export-reversible-passwords-backend-id
       - export-reversible-passwords-encryption-settings-definition-id
       - export-reversible-passwords-entries-excluded-not-matching-filter
@@ -17893,22 +17912,38 @@ components:
       - inter-server-bind-connection-privileges
       - inter-server-bind-connection-purpose
       - inter-server-bind-source-certificate-subject
-      - inter-server-component
       - inter-server-control-forwarded-client-connection-policy
-      - inter-server-properties
-      - inter-server-operation-purpose
-      - intermediate-client-request
-      - intermediate-client-result
+      - inter-server-request-controls
+      - inter-server-request-controls-component-name
+      - inter-server-request-controls-operation-purpose
+      - inter-server-request-controls-properties
+      - inter-server-request-controls-properties-name
+      - inter-server-request-controls-properties-value
+      - intermediate-client-request-control
+      - intermediate-client-request-control-client-identity
+      - intermediate-client-request-control-client-name
+      - intermediate-client-request-control-downstream-client-address
+      - intermediate-client-request-control-downstream-client-secure
+      - intermediate-client-request-control-downstream-request
+      - intermediate-client-request-control-request-id
+      - intermediate-client-request-control-session-id
+      - intermediate-client-response-control
+      - intermediate-client-response-control-response-id
+      - intermediate-client-response-control-server-name
+      - intermediate-client-response-control-session-id
+      - intermediate-client-response-control-upstream-response
+      - intermediate-client-response-control-upstream-server-address
+      - intermediate-client-response-control-upstream-server-secure
       - intermediate-response-name
       - intermediate-response-oid
       - intermediate-response-value
       - intermediate-responses-returned
-      - issuer-certificate-subject-dn
       - ldap-client-decode-error-message
-      - local-assurance-level
       - local-assurance-satisfied
+      - log-type
       - matched-dn
       - message-id
+      - message-type
       - missing-privileges
       - moddn-delete-old-rdn
       - moddn-entry-dn
@@ -17955,7 +17990,15 @@ components:
       - operation-id
       - operation-oauth-scopes
       - operation-purpose
+      - operation-purpose-application-name
+      - operation-purpose-application-version
+      - operation-purpose-code-location
+      - operation-purpose-request-purpose
+      - operation-type
       - origin
+      - origin-details
+      - origin-details-name
+      - origin-details-value
       - pass-through-authentication-mapped-dn
       - pass-through-authentication-succeeded
       - pass-through-authentication-updated-local-password
@@ -17970,7 +18013,17 @@ components:
       - password-update-behavior-must-change-password
       - password-update-behavior-password-storage-scheme
       - password-update-behavior-skip-password-validation
-      - peer-certificate-subject-dn
+      - peer-certificate-chain
+      - peer-certificate-chain-certificate-bytes
+      - peer-certificate-chain-certificate-string
+      - peer-certificate-chain-certificate-type
+      - peer-certificate-chain-issuer-subject-dn
+      - peer-certificate-chain-not-after
+      - peer-certificate-chain-not-before
+      - peer-certificate-chain-serial-number
+      - peer-certificate-chain-signature-algorithm
+      - peer-certificate-chain-signature-bytes
+      - peer-certificate-chain-subject-dn
       - ping-one-pass-through-authentication-auth-failure-reason
       - ping-one-pass-through-authentication-mapped-id
       - ping-one-pass-through-authentication-updated-local-user-password
@@ -17983,7 +18036,6 @@ components:
       - product-name
       - protocol
       - referral-urls
-      - remote-assurance-level
       - remote-assurance-satisfied
       - replace-certificate-certificate-decode-error
       - replace-certificate-certificate-source
@@ -17997,22 +18049,28 @@ components:
       - requester-dn
       - requester-ip-address
       - response-control-oids
-      - response-delayed-by-assurance
       - result-code-name
       - result-code-value
       - search-base-dn
       - search-deref-policy
       - search-entries-returned
       - search-filter
+      - search-indexed
       - search-requested-attributes
       - search-result-entry-dn
       - search-result-entry-attributes
+      - search-scope-name
       - search-scope-value
       - search-size-limit
       - search-time-limit-seconds
       - search-types-only
-      - search-unindexed
+      - security-negotiation-properties
+      - security-negotiation-properties-name
+      - security-negotiation-properties-value
       - server-assurance-results
+      - server-assurance-results-replica-id
+      - server-assurance-results-replication-server-id
+      - server-assurance-results-result-code
       - servers-accessed
       - single-use-token-successful-delivery-mechanism
       - single-use-token-token-id
@@ -18023,6 +18081,7 @@ components:
       - target-port
       - target-protocol
       - thread-id
+      - timestamp
       - totp-shared-secret-authentication-id
       - totp-shared-secret-static-password-provided
       - triggered-by-connection-id
@@ -18038,7 +18097,7 @@ components:
       - yubikey-otp-device-static-password-provided
       - yubikey-otp-device-yubikey-public-id
       type: string
-    Enumlog-field-behavior-tokenizeValueComponentsFieldProp:
+    Enumlog-field-behavior-text-access-tokenizeValueComponentsFieldProp:
       description: The log fields whose values will include tokenized components.
       enum:
       - abandon-message-id
@@ -18296,20 +18355,7 @@ components:
       - yubikey-otp-device-static-password-provided
       - yubikey-otp-device-yubikey-public-id
       type: string
-    Enumlog-field-behavior-defaultBehaviorProp:
-      description: "The default behavior that the server should exhibit for fields\
-        \ for which no explicit behavior is defined. If no default behavior is defined,\
-        \ the server will fall back to using the default behavior configured for the\
-        \ syntax used for each log field."
-      enum:
-      - preserve
-      - omit
-      - redact-entire-value
-      - redact-value-components
-      - tokenize-entire-value
-      - tokenize-value-components
-      type: string
-    Enumlog-field-behavior-tokenizeEntireValueFieldProp:
+    Enumlog-field-behavior-text-access-tokenizeEntireValueFieldProp:
       description: "The log fields whose values should be completely tokenized in\
         \ log messages. The field name will be included, but the value will be replaced\
         \ with a token that does not reveal the actual value, but that is generated\
@@ -18570,7 +18616,639 @@ components:
       - yubikey-otp-device-static-password-provided
       - yubikey-otp-device-yubikey-public-id
       type: string
-    Enumlog-field-behavior-omitFieldProp:
+    Enumlog-field-behavior-json-formatted-access-tokenizeEntireValueFieldProp:
+      description: "The log fields whose values should be completely tokenized in\
+        \ log messages. The field name will be included, but the value will be replaced\
+        \ with a token that does not reveal the actual value, but that is generated\
+        \ from the value."
+      enum:
+      - abandon-message-id
+      - add-attributes
+      - add-entry-dn
+      - add-undelete-from-dn
+      - additional-info
+      - administrative-operation
+      - assured-replication-requirements
+      - assured-replication-requirements-altered-by-request-control
+      - assured-replication-requirements-local-assurance-level
+      - assured-replication-requirements-remote-assurance-level
+      - assured-replication-requirements-response-delayed-by-assurance
+      - assured-replication-requirements-assurance-timeout-millis
+      - authorization-dn
+      - auto-authenticated-as
+      - bind-authentication-dn
+      - bind-authentication-failure-reason
+      - bind-authentication-failure-reason-id
+      - bind-authentication-failure-reason-message
+      - bind-authentication-failure-reason-name
+      - bind-authentication-type
+      - bind-authorization-dn
+      - bind-dn
+      - bind-protocol-version
+      - bind-retired-password-used
+      - bind-sasl-mechanism
+      - change-to-soft-deleted-entry
+      - cipher
+      - client-connection-policy
+      - collect-support-data-comment
+      - collect-support-data-encrypted
+      - collect-support-data-include-binary-files
+      - collect-support-data-include-expensive-data
+      - collect-support-data-include-extension-source
+      - collect-support-data-include-replication-state-dump
+      - collect-support-data-jstack-count
+      - collect-support-data-log-duration
+      - collect-support-data-log-file-head-collection-size-kb
+      - collect-support-data-log-file-tail-collection-size-kb
+      - collect-support-data-log-time-window
+      - collect-support-data-report-count
+      - collect-support-data-report-interval-seconds
+      - collect-support-data-security-level
+      - collect-support-data-use-sequential-mode
+      - compare-assertion-value
+      - compare-attribute-name
+      - compare-entry-dn
+      - connect-from-address
+      - connect-from-port
+      - connect-to-address
+      - connect-to-port
+      - connection-id
+      - delete-entry-dn
+      - delete-soft-deleted-entry-dn
+      - deliver-otp-authentication-id
+      - deliver-otp-preferred-delivery-mechanisms
+      - deliver-password-reset-token-dn
+      - deliver-password-reset-token-preferred-delivery-mechanisms
+      - deliver-password-reset-token-successful-delivery-mechanism
+      - deliver-password-reset-token-unsuccessful-delivery-mechanisms
+      - diagnostic-message
+      - disconnect-message
+      - disconnect-reason
+      - entry-rebalancing-admin-action-message
+      - entry-rebalancing-base-dn
+      - entry-rebalancing-entries-added-to-target
+      - entry-rebalancing-entries-deleted-from-source
+      - entry-rebalancing-entries-read-from-source
+      - entry-rebalancing-error-message
+      - entry-rebalancing-operation-id
+      - entry-rebalancing-size-limit
+      - entry-rebalancing-source-backend-set
+      - entry-rebalancing-source-server
+      - entry-rebalancing-source-server-address
+      - entry-rebalancing-source-server-altered
+      - entry-rebalancing-source-server-port
+      - entry-rebalancing-target-backend-set
+      - entry-rebalancing-target-server
+      - entry-rebalancing-target-server-address
+      - entry-rebalancing-target-server-altered
+      - entry-rebalancing-target-server-port
+      - export-reversible-passwords-backend-id
+      - export-reversible-passwords-encryption-settings-definition-id
+      - export-reversible-passwords-entries-excluded-not-matching-filter
+      - export-reversible-passwords-entries-excluded-without-passwords
+      - export-reversible-passwords-entries-exported-with-non-reversible-passwords
+      - export-reversible-passwords-entries-exported-with-reversible-passwords
+      - export-reversible-passwords-entries-exported-without-passwords
+      - export-reversible-passwords-export-non-reversible-passwords
+      - export-reversible-passwords-export-only-entries-with-passwords
+      - export-reversible-passwords-filter
+      - export-reversible-passwords-include-virtual-attributes
+      - export-reversible-passwords-output-file
+      - export-reversible-passwords-total-entries-examined
+      - export-reversible-passwords-total-entries-excluded
+      - export-reversible-passwords-total-entries-exported
+      - extended-request-oid
+      - extended-request-type
+      - extended-response-oid
+      - extended-response-type
+      - externally-processed-bind-authentication-id
+      - externally-processed-bind-auth-failure-reason
+      - externally-processed-bind-end-client-ip-address
+      - externally-processed-bind-external-mechanism-name
+      - externally-processed-bind-was-password-based
+      - externally-processed-bind-was-secure
+      - externally-processed-bind-was-successful
+      - generate-password-num-passwords
+      - generate-password-max-validation-attempts
+      - generate-password-password-generator
+      - generate-password-password-policy
+      - get-supported-otp-delivery-mechanisms-dn
+      - gssapi-bind-qop
+      - gssapi-bind-requested-authentication-id
+      - gssapi-bind-requested-authorization-id
+      - indexes-with-keys-accessed-exceeding-entry-limit
+      - indexes-with-keys-accessed-near-entry-limit
+      - instance-name
+      - inter-server-bind-connection-privileges
+      - inter-server-bind-connection-purpose
+      - inter-server-bind-source-certificate-subject
+      - inter-server-control-forwarded-client-connection-policy
+      - inter-server-request-controls
+      - inter-server-request-controls-component-name
+      - inter-server-request-controls-operation-purpose
+      - inter-server-request-controls-properties
+      - inter-server-request-controls-properties-name
+      - inter-server-request-controls-properties-value
+      - intermediate-client-request-control
+      - intermediate-client-request-control-client-identity
+      - intermediate-client-request-control-client-name
+      - intermediate-client-request-control-downstream-client-address
+      - intermediate-client-request-control-downstream-client-secure
+      - intermediate-client-request-control-downstream-request
+      - intermediate-client-request-control-request-id
+      - intermediate-client-request-control-session-id
+      - intermediate-client-response-control
+      - intermediate-client-response-control-response-id
+      - intermediate-client-response-control-server-name
+      - intermediate-client-response-control-session-id
+      - intermediate-client-response-control-upstream-response
+      - intermediate-client-response-control-upstream-server-address
+      - intermediate-client-response-control-upstream-server-secure
+      - intermediate-response-name
+      - intermediate-response-oid
+      - intermediate-response-value
+      - intermediate-responses-returned
+      - ldap-client-decode-error-message
+      - local-assurance-satisfied
+      - log-type
+      - matched-dn
+      - message-id
+      - message-type
+      - missing-privileges
+      - moddn-delete-old-rdn
+      - moddn-entry-dn
+      - moddn-new-rdn
+      - moddn-new-superior-dn
+      - modify-attributes
+      - modify-entry-dn
+      - multi-update-connection-id
+      - multi-update-first-failed-operation
+      - multi-update-first-failed-operation-error-message
+      - multi-update-first-failed-operation-result-code
+      - multi-update-operation-id
+      - non-critical-json-formatted-request-control-decode-errors
+      - non-critical-request-controls-ignored-due-to-acl
+      - oauthbearer-bind-access-token-client-id
+      - oauthbearer-bind-access-token-expiration-time
+      - oauthbearer-bind-access-token-identifier
+      - oauthbearer-bind-access-token-identity-mapper
+      - oauthbearer-bind-access-token-is-active
+      - oauthbearer-bind-access-token-issued-at
+      - oauthbearer-bind-access-token-issuer
+      - oauthbearer-bind-access-token-not-before
+      - oauthbearer-bind-access-token-owner
+      - oauthbearer-bind-access-token-scope
+      - oauthbearer-bind-access-token-subject
+      - oauthbearer-bind-access-token-type
+      - oauthbearer-bind-access-token-username
+      - oauthbearer-bind-access-token-validator
+      - oauthbearer-bind-authorization-error-code
+      - oauthbearer-bind-authorization-id
+      - oauthbearer-bind-id-token-client-id
+      - oauthbearer-bind-id-token-expiration-time
+      - oauthbearer-bind-id-token-identifier
+      - oauthbearer-bind-id-token-identity-mapper
+      - oauthbearer-bind-id-token-is-active
+      - oauthbearer-bind-id-token-issued-at
+      - oauthbearer-bind-id-token-issuer
+      - oauthbearer-bind-id-token-not-before
+      - oauthbearer-bind-id-token-owner
+      - oauthbearer-bind-id-token-subject
+      - oauthbearer-bind-id-token-type
+      - oauthbearer-bind-id-token-username
+      - oauthbearer-bind-id-token-validator
+      - operation-id
+      - operation-oauth-scopes
+      - operation-purpose
+      - operation-purpose-application-name
+      - operation-purpose-application-version
+      - operation-purpose-code-location
+      - operation-purpose-request-purpose
+      - operation-type
+      - origin
+      - origin-details
+      - origin-details-name
+      - origin-details-value
+      - pass-through-authentication-mapped-dn
+      - pass-through-authentication-succeeded
+      - pass-through-authentication-updated-local-password
+      - password-modify-grace-login-used
+      - password-modify-target-entry
+      - password-modify-used-password-reset-token
+      - password-policy-state-entry-dn
+      - password-update-behavior-allow-pre-encoded-password
+      - password-update-behavior-ignore-minimum-password-age
+      - password-update-behavior-ignore-password-history
+      - password-update-behavior-is-self-change
+      - password-update-behavior-must-change-password
+      - password-update-behavior-password-storage-scheme
+      - password-update-behavior-skip-password-validation
+      - peer-certificate-chain
+      - peer-certificate-chain-certificate-bytes
+      - peer-certificate-chain-certificate-string
+      - peer-certificate-chain-certificate-type
+      - peer-certificate-chain-issuer-subject-dn
+      - peer-certificate-chain-not-after
+      - peer-certificate-chain-not-before
+      - peer-certificate-chain-serial-number
+      - peer-certificate-chain-signature-algorithm
+      - peer-certificate-chain-signature-bytes
+      - peer-certificate-chain-subject-dn
+      - ping-one-pass-through-authentication-auth-failure-reason
+      - ping-one-pass-through-authentication-mapped-id
+      - ping-one-pass-through-authentication-updated-local-user-password
+      - pluggable-pass-through-authentication-failure-reason
+      - pluggable-pass-through-authentication-mapped-user-identifier
+      - pluggable-pass-through-authentication-result-code
+      - pluggable-pass-through-authentication-updated-local-user-password
+      - pre-authorization-used-privileges
+      - processing-time-millis
+      - product-name
+      - protocol
+      - referral-urls
+      - remote-assurance-satisfied
+      - replace-certificate-certificate-decode-error
+      - replace-certificate-certificate-source
+      - replace-certificate-key-store-error
+      - replace-certificate-key-store-path
+      - replace-certificate-private-key-decode-error
+      - replace-certificate-request-decode-error
+      - replace-certificate-tool-error
+      - replication-change-id
+      - request-control-oids
+      - requester-dn
+      - requester-ip-address
+      - response-control-oids
+      - result-code-name
+      - result-code-value
+      - search-base-dn
+      - search-deref-policy
+      - search-entries-returned
+      - search-filter
+      - search-indexed
+      - search-requested-attributes
+      - search-result-entry-dn
+      - search-result-entry-attributes
+      - search-scope-name
+      - search-scope-value
+      - search-size-limit
+      - search-time-limit-seconds
+      - search-types-only
+      - security-negotiation-properties
+      - security-negotiation-properties-name
+      - security-negotiation-properties-value
+      - server-assurance-results
+      - server-assurance-results-replica-id
+      - server-assurance-results-replication-server-id
+      - server-assurance-results-result-code
+      - servers-accessed
+      - single-use-token-successful-delivery-mechanism
+      - single-use-token-token-id
+      - single-use-token-unsuccessful-delivery-mechanisms
+      - single-use-token-user-dn
+      - startup-id
+      - target-host
+      - target-port
+      - target-protocol
+      - thread-id
+      - timestamp
+      - totp-shared-secret-authentication-id
+      - totp-shared-secret-static-password-provided
+      - triggered-by-connection-id
+      - triggered-by-operation-id
+      - uncached-data-accessed
+      - uniqueness-request-control
+      - used-privileges
+      - using-admin-session-worker-thread
+      - work-queue-wait-time-millis
+      - yubikey-otp-bind-authentication-id
+      - yubikey-otp-bind-authorization-id
+      - yubikey-otp-device-authentication-id
+      - yubikey-otp-device-static-password-provided
+      - yubikey-otp-device-yubikey-public-id
+      type: string
+    Enumlog-field-behavior-json-formatted-access-redactValueComponentsFieldProp:
+      description: The log fields whose values will include redacted components.
+      enum:
+      - abandon-message-id
+      - add-attributes
+      - add-entry-dn
+      - add-undelete-from-dn
+      - additional-info
+      - administrative-operation
+      - assured-replication-requirements
+      - assured-replication-requirements-altered-by-request-control
+      - assured-replication-requirements-local-assurance-level
+      - assured-replication-requirements-remote-assurance-level
+      - assured-replication-requirements-response-delayed-by-assurance
+      - assured-replication-requirements-assurance-timeout-millis
+      - authorization-dn
+      - auto-authenticated-as
+      - bind-authentication-dn
+      - bind-authentication-failure-reason
+      - bind-authentication-failure-reason-id
+      - bind-authentication-failure-reason-message
+      - bind-authentication-failure-reason-name
+      - bind-authentication-type
+      - bind-authorization-dn
+      - bind-dn
+      - bind-protocol-version
+      - bind-retired-password-used
+      - bind-sasl-mechanism
+      - change-to-soft-deleted-entry
+      - cipher
+      - client-connection-policy
+      - collect-support-data-comment
+      - collect-support-data-encrypted
+      - collect-support-data-include-binary-files
+      - collect-support-data-include-expensive-data
+      - collect-support-data-include-extension-source
+      - collect-support-data-include-replication-state-dump
+      - collect-support-data-jstack-count
+      - collect-support-data-log-duration
+      - collect-support-data-log-file-head-collection-size-kb
+      - collect-support-data-log-file-tail-collection-size-kb
+      - collect-support-data-log-time-window
+      - collect-support-data-report-count
+      - collect-support-data-report-interval-seconds
+      - collect-support-data-security-level
+      - collect-support-data-use-sequential-mode
+      - compare-assertion-value
+      - compare-attribute-name
+      - compare-entry-dn
+      - connect-from-address
+      - connect-from-port
+      - connect-to-address
+      - connect-to-port
+      - connection-id
+      - delete-entry-dn
+      - delete-soft-deleted-entry-dn
+      - deliver-otp-authentication-id
+      - deliver-otp-preferred-delivery-mechanisms
+      - deliver-password-reset-token-dn
+      - deliver-password-reset-token-preferred-delivery-mechanisms
+      - deliver-password-reset-token-successful-delivery-mechanism
+      - deliver-password-reset-token-unsuccessful-delivery-mechanisms
+      - diagnostic-message
+      - disconnect-message
+      - disconnect-reason
+      - entry-rebalancing-admin-action-message
+      - entry-rebalancing-base-dn
+      - entry-rebalancing-entries-added-to-target
+      - entry-rebalancing-entries-deleted-from-source
+      - entry-rebalancing-entries-read-from-source
+      - entry-rebalancing-error-message
+      - entry-rebalancing-operation-id
+      - entry-rebalancing-size-limit
+      - entry-rebalancing-source-backend-set
+      - entry-rebalancing-source-server
+      - entry-rebalancing-source-server-address
+      - entry-rebalancing-source-server-altered
+      - entry-rebalancing-source-server-port
+      - entry-rebalancing-target-backend-set
+      - entry-rebalancing-target-server
+      - entry-rebalancing-target-server-address
+      - entry-rebalancing-target-server-altered
+      - entry-rebalancing-target-server-port
+      - export-reversible-passwords-backend-id
+      - export-reversible-passwords-encryption-settings-definition-id
+      - export-reversible-passwords-entries-excluded-not-matching-filter
+      - export-reversible-passwords-entries-excluded-without-passwords
+      - export-reversible-passwords-entries-exported-with-non-reversible-passwords
+      - export-reversible-passwords-entries-exported-with-reversible-passwords
+      - export-reversible-passwords-entries-exported-without-passwords
+      - export-reversible-passwords-export-non-reversible-passwords
+      - export-reversible-passwords-export-only-entries-with-passwords
+      - export-reversible-passwords-filter
+      - export-reversible-passwords-include-virtual-attributes
+      - export-reversible-passwords-output-file
+      - export-reversible-passwords-total-entries-examined
+      - export-reversible-passwords-total-entries-excluded
+      - export-reversible-passwords-total-entries-exported
+      - extended-request-oid
+      - extended-request-type
+      - extended-response-oid
+      - extended-response-type
+      - externally-processed-bind-authentication-id
+      - externally-processed-bind-auth-failure-reason
+      - externally-processed-bind-end-client-ip-address
+      - externally-processed-bind-external-mechanism-name
+      - externally-processed-bind-was-password-based
+      - externally-processed-bind-was-secure
+      - externally-processed-bind-was-successful
+      - generate-password-num-passwords
+      - generate-password-max-validation-attempts
+      - generate-password-password-generator
+      - generate-password-password-policy
+      - get-supported-otp-delivery-mechanisms-dn
+      - gssapi-bind-qop
+      - gssapi-bind-requested-authentication-id
+      - gssapi-bind-requested-authorization-id
+      - indexes-with-keys-accessed-exceeding-entry-limit
+      - indexes-with-keys-accessed-near-entry-limit
+      - instance-name
+      - inter-server-bind-connection-privileges
+      - inter-server-bind-connection-purpose
+      - inter-server-bind-source-certificate-subject
+      - inter-server-control-forwarded-client-connection-policy
+      - inter-server-request-controls
+      - inter-server-request-controls-component-name
+      - inter-server-request-controls-operation-purpose
+      - inter-server-request-controls-properties
+      - inter-server-request-controls-properties-name
+      - inter-server-request-controls-properties-value
+      - intermediate-client-request-control
+      - intermediate-client-request-control-client-identity
+      - intermediate-client-request-control-client-name
+      - intermediate-client-request-control-downstream-client-address
+      - intermediate-client-request-control-downstream-client-secure
+      - intermediate-client-request-control-downstream-request
+      - intermediate-client-request-control-request-id
+      - intermediate-client-request-control-session-id
+      - intermediate-client-response-control
+      - intermediate-client-response-control-response-id
+      - intermediate-client-response-control-server-name
+      - intermediate-client-response-control-session-id
+      - intermediate-client-response-control-upstream-response
+      - intermediate-client-response-control-upstream-server-address
+      - intermediate-client-response-control-upstream-server-secure
+      - intermediate-response-name
+      - intermediate-response-oid
+      - intermediate-response-value
+      - intermediate-responses-returned
+      - ldap-client-decode-error-message
+      - local-assurance-satisfied
+      - log-type
+      - matched-dn
+      - message-id
+      - message-type
+      - missing-privileges
+      - moddn-delete-old-rdn
+      - moddn-entry-dn
+      - moddn-new-rdn
+      - moddn-new-superior-dn
+      - modify-attributes
+      - modify-entry-dn
+      - multi-update-connection-id
+      - multi-update-first-failed-operation
+      - multi-update-first-failed-operation-error-message
+      - multi-update-first-failed-operation-result-code
+      - multi-update-operation-id
+      - non-critical-json-formatted-request-control-decode-errors
+      - non-critical-request-controls-ignored-due-to-acl
+      - oauthbearer-bind-access-token-client-id
+      - oauthbearer-bind-access-token-expiration-time
+      - oauthbearer-bind-access-token-identifier
+      - oauthbearer-bind-access-token-identity-mapper
+      - oauthbearer-bind-access-token-is-active
+      - oauthbearer-bind-access-token-issued-at
+      - oauthbearer-bind-access-token-issuer
+      - oauthbearer-bind-access-token-not-before
+      - oauthbearer-bind-access-token-owner
+      - oauthbearer-bind-access-token-scope
+      - oauthbearer-bind-access-token-subject
+      - oauthbearer-bind-access-token-type
+      - oauthbearer-bind-access-token-username
+      - oauthbearer-bind-access-token-validator
+      - oauthbearer-bind-authorization-error-code
+      - oauthbearer-bind-authorization-id
+      - oauthbearer-bind-id-token-client-id
+      - oauthbearer-bind-id-token-expiration-time
+      - oauthbearer-bind-id-token-identifier
+      - oauthbearer-bind-id-token-identity-mapper
+      - oauthbearer-bind-id-token-is-active
+      - oauthbearer-bind-id-token-issued-at
+      - oauthbearer-bind-id-token-issuer
+      - oauthbearer-bind-id-token-not-before
+      - oauthbearer-bind-id-token-owner
+      - oauthbearer-bind-id-token-subject
+      - oauthbearer-bind-id-token-type
+      - oauthbearer-bind-id-token-username
+      - oauthbearer-bind-id-token-validator
+      - operation-id
+      - operation-oauth-scopes
+      - operation-purpose
+      - operation-purpose-application-name
+      - operation-purpose-application-version
+      - operation-purpose-code-location
+      - operation-purpose-request-purpose
+      - operation-type
+      - origin
+      - origin-details
+      - origin-details-name
+      - origin-details-value
+      - pass-through-authentication-mapped-dn
+      - pass-through-authentication-succeeded
+      - pass-through-authentication-updated-local-password
+      - password-modify-grace-login-used
+      - password-modify-target-entry
+      - password-modify-used-password-reset-token
+      - password-policy-state-entry-dn
+      - password-update-behavior-allow-pre-encoded-password
+      - password-update-behavior-ignore-minimum-password-age
+      - password-update-behavior-ignore-password-history
+      - password-update-behavior-is-self-change
+      - password-update-behavior-must-change-password
+      - password-update-behavior-password-storage-scheme
+      - password-update-behavior-skip-password-validation
+      - peer-certificate-chain
+      - peer-certificate-chain-certificate-bytes
+      - peer-certificate-chain-certificate-string
+      - peer-certificate-chain-certificate-type
+      - peer-certificate-chain-issuer-subject-dn
+      - peer-certificate-chain-not-after
+      - peer-certificate-chain-not-before
+      - peer-certificate-chain-serial-number
+      - peer-certificate-chain-signature-algorithm
+      - peer-certificate-chain-signature-bytes
+      - peer-certificate-chain-subject-dn
+      - ping-one-pass-through-authentication-auth-failure-reason
+      - ping-one-pass-through-authentication-mapped-id
+      - ping-one-pass-through-authentication-updated-local-user-password
+      - pluggable-pass-through-authentication-failure-reason
+      - pluggable-pass-through-authentication-mapped-user-identifier
+      - pluggable-pass-through-authentication-result-code
+      - pluggable-pass-through-authentication-updated-local-user-password
+      - pre-authorization-used-privileges
+      - processing-time-millis
+      - product-name
+      - protocol
+      - referral-urls
+      - remote-assurance-satisfied
+      - replace-certificate-certificate-decode-error
+      - replace-certificate-certificate-source
+      - replace-certificate-key-store-error
+      - replace-certificate-key-store-path
+      - replace-certificate-private-key-decode-error
+      - replace-certificate-request-decode-error
+      - replace-certificate-tool-error
+      - replication-change-id
+      - request-control-oids
+      - requester-dn
+      - requester-ip-address
+      - response-control-oids
+      - result-code-name
+      - result-code-value
+      - search-base-dn
+      - search-deref-policy
+      - search-entries-returned
+      - search-filter
+      - search-indexed
+      - search-requested-attributes
+      - search-result-entry-dn
+      - search-result-entry-attributes
+      - search-scope-name
+      - search-scope-value
+      - search-size-limit
+      - search-time-limit-seconds
+      - search-types-only
+      - security-negotiation-properties
+      - security-negotiation-properties-name
+      - security-negotiation-properties-value
+      - server-assurance-results
+      - server-assurance-results-replica-id
+      - server-assurance-results-replication-server-id
+      - server-assurance-results-result-code
+      - servers-accessed
+      - single-use-token-successful-delivery-mechanism
+      - single-use-token-token-id
+      - single-use-token-unsuccessful-delivery-mechanisms
+      - single-use-token-user-dn
+      - startup-id
+      - target-host
+      - target-port
+      - target-protocol
+      - thread-id
+      - timestamp
+      - totp-shared-secret-authentication-id
+      - totp-shared-secret-static-password-provided
+      - triggered-by-connection-id
+      - triggered-by-operation-id
+      - uncached-data-accessed
+      - uniqueness-request-control
+      - used-privileges
+      - using-admin-session-worker-thread
+      - work-queue-wait-time-millis
+      - yubikey-otp-bind-authentication-id
+      - yubikey-otp-bind-authorization-id
+      - yubikey-otp-device-authentication-id
+      - yubikey-otp-device-static-password-provided
+      - yubikey-otp-device-yubikey-public-id
+      type: string
+    Enumlog-field-behavior-defaultBehaviorProp:
+      description: "The default behavior that the server should exhibit for fields\
+        \ for which no explicit behavior is defined. If no default behavior is defined,\
+        \ the server will fall back to using the default behavior configured for the\
+        \ syntax used for each log field."
+      enum:
+      - preserve
+      - omit
+      - redact-entire-value
+      - redact-value-components
+      - tokenize-entire-value
+      - tokenize-value-components
+      type: string
+    Enumlog-field-behavior-text-access-omitFieldProp:
       description: The log fields that should be omitted entirely from log messages.
         Neither the field name nor value will be included.
       enum:
@@ -18829,7 +19507,265 @@ components:
       - yubikey-otp-device-static-password-provided
       - yubikey-otp-device-yubikey-public-id
       type: string
-    Enumlog-field-behavior-redactEntireValueFieldProp:
+    Enumlog-field-behavior-text-access-redactValueComponentsFieldProp:
+      description: The log fields whose values will include redacted components.
+      enum:
+      - abandon-message-id
+      - add-attributes
+      - add-entry-dn
+      - add-undelete-from-dn
+      - additional-info
+      - administrative-operation
+      - assurance-timeout-millis
+      - authorization-dn
+      - auto-authenticated-as
+      - bind-authentication-dn
+      - bind-authentication-failure-id
+      - bind-authentication-failure-name
+      - bind-authentication-failure-reason
+      - bind-authentication-type
+      - bind-authorization-dn
+      - bind-dn
+      - bind-protocol-version
+      - bind-retired-password-used
+      - bind-sasl-mechanism
+      - change-to-soft-deleted-entry
+      - cipher
+      - client-connection-policy
+      - collect-support-data-comment
+      - collect-support-data-encrypted
+      - collect-support-data-include-binary-files
+      - collect-support-data-include-expensive-data
+      - collect-support-data-include-extension-source
+      - collect-support-data-include-replication-state-dump
+      - collect-support-data-jstack-count
+      - collect-support-data-log-duration
+      - collect-support-data-log-file-head-collection-size-kb
+      - collect-support-data-log-file-tail-collection-size-kb
+      - collect-support-data-log-time-window
+      - collect-support-data-report-count
+      - collect-support-data-report-interval-seconds
+      - collect-support-data-security-level
+      - collect-support-data-use-sequential-mode
+      - compare-assertion-value
+      - compare-attribute-name
+      - compare-entry-dn
+      - connect-from-address
+      - connect-from-port
+      - connect-to-address
+      - connect-to-port
+      - connection-id
+      - delete-entry-dn
+      - delete-soft-deleted-entry-dn
+      - deliver-otp-authentication-id
+      - deliver-otp-preferred-delivery-mechanisms
+      - deliver-password-reset-token-dn
+      - deliver-password-reset-token-preferred-delivery-mechanisms
+      - deliver-password-reset-token-successful-delivery-mechanism
+      - deliver-password-reset-token-unsuccessful-delivery-mechanisms
+      - diagnostic-message
+      - disconnect-message
+      - disconnect-reason
+      - entry-rebalancing-admin-action-message
+      - entry-rebalancing-base-dn
+      - entry-rebalancing-entries-added-to-target
+      - entry-rebalancing-entries-deleted-from-source
+      - entry-rebalancing-entries-read-from-source
+      - entry-rebalancing-error-message
+      - entry-rebalancing-operation-id
+      - entry-rebalancing-size-limit
+      - entry-rebalancing-source-backend-set
+      - entry-rebalancing-source-server
+      - entry-rebalancing-source-server-altered
+      - entry-rebalancing-target-backend-set
+      - entry-rebalancing-target-server
+      - entry-rebalancing-target-server-altered
+      - export-reversible-passwords-backend-id
+      - export-reversible-passwords-encryption-settings-definition-id
+      - export-reversible-passwords-entries-excluded-not-matching-filter
+      - export-reversible-passwords-entries-excluded-without-passwords
+      - export-reversible-passwords-entries-exported-with-non-reversible-passwords
+      - export-reversible-passwords-entries-exported-with-reversible-passwords
+      - export-reversible-passwords-entries-exported-without-passwords
+      - export-reversible-passwords-export-non-reversible-passwords
+      - export-reversible-passwords-export-only-entries-with-passwords
+      - export-reversible-passwords-filter
+      - export-reversible-passwords-include-virtual-attributes
+      - export-reversible-passwords-output-file
+      - export-reversible-passwords-total-entries-examined
+      - export-reversible-passwords-total-entries-excluded
+      - export-reversible-passwords-total-entries-exported
+      - extended-request-oid
+      - extended-request-type
+      - extended-response-oid
+      - extended-response-type
+      - externally-processed-bind-authentication-id
+      - externally-processed-bind-auth-failure-reason
+      - externally-processed-bind-end-client-ip-address
+      - externally-processed-bind-external-mechanism-name
+      - externally-processed-bind-was-password-based
+      - externally-processed-bind-was-secure
+      - externally-processed-bind-was-successful
+      - generate-password-num-passwords
+      - generate-password-max-validation-attempts
+      - generate-password-password-generator
+      - generate-password-password-policy
+      - get-supported-otp-delivery-mechanisms-dn
+      - gssapi-bind-qop
+      - gssapi-bind-requested-authentication-id
+      - gssapi-bind-requested-authorization-id
+      - indexes-with-keys-accessed-exceeding-entry-limit
+      - indexes-with-keys-accessed-near-entry-limit
+      - instance-name
+      - inter-server-bind-connection-privileges
+      - inter-server-bind-connection-purpose
+      - inter-server-bind-source-certificate-subject
+      - inter-server-component
+      - inter-server-control-forwarded-client-connection-policy
+      - inter-server-properties
+      - inter-server-operation-purpose
+      - intermediate-client-request
+      - intermediate-client-result
+      - intermediate-response-name
+      - intermediate-response-oid
+      - intermediate-response-value
+      - intermediate-responses-returned
+      - issuer-certificate-subject-dn
+      - ldap-client-decode-error-message
+      - local-assurance-level
+      - local-assurance-satisfied
+      - matched-dn
+      - message-id
+      - missing-privileges
+      - moddn-delete-old-rdn
+      - moddn-entry-dn
+      - moddn-new-rdn
+      - moddn-new-superior-dn
+      - modify-attributes
+      - modify-entry-dn
+      - multi-update-connection-id
+      - multi-update-first-failed-operation
+      - multi-update-first-failed-operation-error-message
+      - multi-update-first-failed-operation-result-code
+      - multi-update-operation-id
+      - non-critical-json-formatted-request-control-decode-errors
+      - non-critical-request-controls-ignored-due-to-acl
+      - oauthbearer-bind-access-token-client-id
+      - oauthbearer-bind-access-token-expiration-time
+      - oauthbearer-bind-access-token-identifier
+      - oauthbearer-bind-access-token-identity-mapper
+      - oauthbearer-bind-access-token-is-active
+      - oauthbearer-bind-access-token-issued-at
+      - oauthbearer-bind-access-token-issuer
+      - oauthbearer-bind-access-token-not-before
+      - oauthbearer-bind-access-token-owner
+      - oauthbearer-bind-access-token-scope
+      - oauthbearer-bind-access-token-subject
+      - oauthbearer-bind-access-token-type
+      - oauthbearer-bind-access-token-username
+      - oauthbearer-bind-access-token-validator
+      - oauthbearer-bind-authorization-error-code
+      - oauthbearer-bind-authorization-id
+      - oauthbearer-bind-id-token-client-id
+      - oauthbearer-bind-id-token-expiration-time
+      - oauthbearer-bind-id-token-identifier
+      - oauthbearer-bind-id-token-identity-mapper
+      - oauthbearer-bind-id-token-is-active
+      - oauthbearer-bind-id-token-issued-at
+      - oauthbearer-bind-id-token-issuer
+      - oauthbearer-bind-id-token-not-before
+      - oauthbearer-bind-id-token-owner
+      - oauthbearer-bind-id-token-subject
+      - oauthbearer-bind-id-token-type
+      - oauthbearer-bind-id-token-username
+      - oauthbearer-bind-id-token-validator
+      - operation-id
+      - operation-oauth-scopes
+      - operation-purpose
+      - origin
+      - pass-through-authentication-mapped-dn
+      - pass-through-authentication-succeeded
+      - pass-through-authentication-updated-local-password
+      - password-modify-grace-login-used
+      - password-modify-target-entry
+      - password-modify-used-password-reset-token
+      - password-policy-state-entry-dn
+      - password-update-behavior-allow-pre-encoded-password
+      - password-update-behavior-ignore-minimum-password-age
+      - password-update-behavior-ignore-password-history
+      - password-update-behavior-is-self-change
+      - password-update-behavior-must-change-password
+      - password-update-behavior-password-storage-scheme
+      - password-update-behavior-skip-password-validation
+      - peer-certificate-subject-dn
+      - ping-one-pass-through-authentication-auth-failure-reason
+      - ping-one-pass-through-authentication-mapped-id
+      - ping-one-pass-through-authentication-updated-local-user-password
+      - pluggable-pass-through-authentication-failure-reason
+      - pluggable-pass-through-authentication-mapped-user-identifier
+      - pluggable-pass-through-authentication-result-code
+      - pluggable-pass-through-authentication-updated-local-user-password
+      - pre-authorization-used-privileges
+      - processing-time-millis
+      - product-name
+      - protocol
+      - referral-urls
+      - remote-assurance-level
+      - remote-assurance-satisfied
+      - replace-certificate-certificate-decode-error
+      - replace-certificate-certificate-source
+      - replace-certificate-key-store-error
+      - replace-certificate-key-store-path
+      - replace-certificate-private-key-decode-error
+      - replace-certificate-request-decode-error
+      - replace-certificate-tool-error
+      - replication-change-id
+      - request-control-oids
+      - requester-dn
+      - requester-ip-address
+      - response-control-oids
+      - response-delayed-by-assurance
+      - result-code-name
+      - result-code-value
+      - search-base-dn
+      - search-deref-policy
+      - search-entries-returned
+      - search-filter
+      - search-requested-attributes
+      - search-result-entry-dn
+      - search-result-entry-attributes
+      - search-scope-value
+      - search-size-limit
+      - search-time-limit-seconds
+      - search-types-only
+      - search-unindexed
+      - server-assurance-results
+      - servers-accessed
+      - single-use-token-successful-delivery-mechanism
+      - single-use-token-token-id
+      - single-use-token-unsuccessful-delivery-mechanisms
+      - single-use-token-user-dn
+      - startup-id
+      - target-host
+      - target-port
+      - target-protocol
+      - thread-id
+      - totp-shared-secret-authentication-id
+      - totp-shared-secret-static-password-provided
+      - triggered-by-connection-id
+      - triggered-by-operation-id
+      - uncached-data-accessed
+      - uniqueness-request-control
+      - used-privileges
+      - using-admin-session-worker-thread
+      - work-queue-wait-time-millis
+      - yubikey-otp-bind-authentication-id
+      - yubikey-otp-bind-authorization-id
+      - yubikey-otp-device-authentication-id
+      - yubikey-otp-device-static-password-provided
+      - yubikey-otp-device-yubikey-public-id
+      type: string
+    Enumlog-field-behavior-text-access-redactEntireValueFieldProp:
       description: "The log fields whose values should be completely redacted in log\
         \ messages. The field name will be included, but with a fixed value that does\
         \ not reflect the actual value for the field."
@@ -19089,6 +20025,935 @@ components:
       - yubikey-otp-device-static-password-provided
       - yubikey-otp-device-yubikey-public-id
       type: string
+    Enumlog-field-behavior-json-formatted-access-preserveFieldProp:
+      description: "The log fields whose values should be logged with the intended\
+        \ value. The values for these fields will be preserved, although they may\
+        \ be sanitized for parsability or safety purposes (for example, to escape\
+        \ special characters in the value), and values that are too long may be truncated."
+      enum:
+      - abandon-message-id
+      - add-attributes
+      - add-entry-dn
+      - add-undelete-from-dn
+      - additional-info
+      - administrative-operation
+      - assured-replication-requirements
+      - assured-replication-requirements-altered-by-request-control
+      - assured-replication-requirements-local-assurance-level
+      - assured-replication-requirements-remote-assurance-level
+      - assured-replication-requirements-response-delayed-by-assurance
+      - assured-replication-requirements-assurance-timeout-millis
+      - authorization-dn
+      - auto-authenticated-as
+      - bind-authentication-dn
+      - bind-authentication-failure-reason
+      - bind-authentication-failure-reason-id
+      - bind-authentication-failure-reason-message
+      - bind-authentication-failure-reason-name
+      - bind-authentication-type
+      - bind-authorization-dn
+      - bind-dn
+      - bind-protocol-version
+      - bind-retired-password-used
+      - bind-sasl-mechanism
+      - change-to-soft-deleted-entry
+      - cipher
+      - client-connection-policy
+      - collect-support-data-comment
+      - collect-support-data-encrypted
+      - collect-support-data-include-binary-files
+      - collect-support-data-include-expensive-data
+      - collect-support-data-include-extension-source
+      - collect-support-data-include-replication-state-dump
+      - collect-support-data-jstack-count
+      - collect-support-data-log-duration
+      - collect-support-data-log-file-head-collection-size-kb
+      - collect-support-data-log-file-tail-collection-size-kb
+      - collect-support-data-log-time-window
+      - collect-support-data-report-count
+      - collect-support-data-report-interval-seconds
+      - collect-support-data-security-level
+      - collect-support-data-use-sequential-mode
+      - compare-assertion-value
+      - compare-attribute-name
+      - compare-entry-dn
+      - connect-from-address
+      - connect-from-port
+      - connect-to-address
+      - connect-to-port
+      - connection-id
+      - delete-entry-dn
+      - delete-soft-deleted-entry-dn
+      - deliver-otp-authentication-id
+      - deliver-otp-preferred-delivery-mechanisms
+      - deliver-password-reset-token-dn
+      - deliver-password-reset-token-preferred-delivery-mechanisms
+      - deliver-password-reset-token-successful-delivery-mechanism
+      - deliver-password-reset-token-unsuccessful-delivery-mechanisms
+      - diagnostic-message
+      - disconnect-message
+      - disconnect-reason
+      - entry-rebalancing-admin-action-message
+      - entry-rebalancing-base-dn
+      - entry-rebalancing-entries-added-to-target
+      - entry-rebalancing-entries-deleted-from-source
+      - entry-rebalancing-entries-read-from-source
+      - entry-rebalancing-error-message
+      - entry-rebalancing-operation-id
+      - entry-rebalancing-size-limit
+      - entry-rebalancing-source-backend-set
+      - entry-rebalancing-source-server
+      - entry-rebalancing-source-server-address
+      - entry-rebalancing-source-server-altered
+      - entry-rebalancing-source-server-port
+      - entry-rebalancing-target-backend-set
+      - entry-rebalancing-target-server
+      - entry-rebalancing-target-server-address
+      - entry-rebalancing-target-server-altered
+      - entry-rebalancing-target-server-port
+      - export-reversible-passwords-backend-id
+      - export-reversible-passwords-encryption-settings-definition-id
+      - export-reversible-passwords-entries-excluded-not-matching-filter
+      - export-reversible-passwords-entries-excluded-without-passwords
+      - export-reversible-passwords-entries-exported-with-non-reversible-passwords
+      - export-reversible-passwords-entries-exported-with-reversible-passwords
+      - export-reversible-passwords-entries-exported-without-passwords
+      - export-reversible-passwords-export-non-reversible-passwords
+      - export-reversible-passwords-export-only-entries-with-passwords
+      - export-reversible-passwords-filter
+      - export-reversible-passwords-include-virtual-attributes
+      - export-reversible-passwords-output-file
+      - export-reversible-passwords-total-entries-examined
+      - export-reversible-passwords-total-entries-excluded
+      - export-reversible-passwords-total-entries-exported
+      - extended-request-oid
+      - extended-request-type
+      - extended-response-oid
+      - extended-response-type
+      - externally-processed-bind-authentication-id
+      - externally-processed-bind-auth-failure-reason
+      - externally-processed-bind-end-client-ip-address
+      - externally-processed-bind-external-mechanism-name
+      - externally-processed-bind-was-password-based
+      - externally-processed-bind-was-secure
+      - externally-processed-bind-was-successful
+      - generate-password-num-passwords
+      - generate-password-max-validation-attempts
+      - generate-password-password-generator
+      - generate-password-password-policy
+      - get-supported-otp-delivery-mechanisms-dn
+      - gssapi-bind-qop
+      - gssapi-bind-requested-authentication-id
+      - gssapi-bind-requested-authorization-id
+      - indexes-with-keys-accessed-exceeding-entry-limit
+      - indexes-with-keys-accessed-near-entry-limit
+      - instance-name
+      - inter-server-bind-connection-privileges
+      - inter-server-bind-connection-purpose
+      - inter-server-bind-source-certificate-subject
+      - inter-server-control-forwarded-client-connection-policy
+      - inter-server-request-controls
+      - inter-server-request-controls-component-name
+      - inter-server-request-controls-operation-purpose
+      - inter-server-request-controls-properties
+      - inter-server-request-controls-properties-name
+      - inter-server-request-controls-properties-value
+      - intermediate-client-request-control
+      - intermediate-client-request-control-client-identity
+      - intermediate-client-request-control-client-name
+      - intermediate-client-request-control-downstream-client-address
+      - intermediate-client-request-control-downstream-client-secure
+      - intermediate-client-request-control-downstream-request
+      - intermediate-client-request-control-request-id
+      - intermediate-client-request-control-session-id
+      - intermediate-client-response-control
+      - intermediate-client-response-control-response-id
+      - intermediate-client-response-control-server-name
+      - intermediate-client-response-control-session-id
+      - intermediate-client-response-control-upstream-response
+      - intermediate-client-response-control-upstream-server-address
+      - intermediate-client-response-control-upstream-server-secure
+      - intermediate-response-name
+      - intermediate-response-oid
+      - intermediate-response-value
+      - intermediate-responses-returned
+      - ldap-client-decode-error-message
+      - local-assurance-satisfied
+      - log-type
+      - matched-dn
+      - message-id
+      - message-type
+      - missing-privileges
+      - moddn-delete-old-rdn
+      - moddn-entry-dn
+      - moddn-new-rdn
+      - moddn-new-superior-dn
+      - modify-attributes
+      - modify-entry-dn
+      - multi-update-connection-id
+      - multi-update-first-failed-operation
+      - multi-update-first-failed-operation-error-message
+      - multi-update-first-failed-operation-result-code
+      - multi-update-operation-id
+      - non-critical-json-formatted-request-control-decode-errors
+      - non-critical-request-controls-ignored-due-to-acl
+      - oauthbearer-bind-access-token-client-id
+      - oauthbearer-bind-access-token-expiration-time
+      - oauthbearer-bind-access-token-identifier
+      - oauthbearer-bind-access-token-identity-mapper
+      - oauthbearer-bind-access-token-is-active
+      - oauthbearer-bind-access-token-issued-at
+      - oauthbearer-bind-access-token-issuer
+      - oauthbearer-bind-access-token-not-before
+      - oauthbearer-bind-access-token-owner
+      - oauthbearer-bind-access-token-scope
+      - oauthbearer-bind-access-token-subject
+      - oauthbearer-bind-access-token-type
+      - oauthbearer-bind-access-token-username
+      - oauthbearer-bind-access-token-validator
+      - oauthbearer-bind-authorization-error-code
+      - oauthbearer-bind-authorization-id
+      - oauthbearer-bind-id-token-client-id
+      - oauthbearer-bind-id-token-expiration-time
+      - oauthbearer-bind-id-token-identifier
+      - oauthbearer-bind-id-token-identity-mapper
+      - oauthbearer-bind-id-token-is-active
+      - oauthbearer-bind-id-token-issued-at
+      - oauthbearer-bind-id-token-issuer
+      - oauthbearer-bind-id-token-not-before
+      - oauthbearer-bind-id-token-owner
+      - oauthbearer-bind-id-token-subject
+      - oauthbearer-bind-id-token-type
+      - oauthbearer-bind-id-token-username
+      - oauthbearer-bind-id-token-validator
+      - operation-id
+      - operation-oauth-scopes
+      - operation-purpose
+      - operation-purpose-application-name
+      - operation-purpose-application-version
+      - operation-purpose-code-location
+      - operation-purpose-request-purpose
+      - operation-type
+      - origin
+      - origin-details
+      - origin-details-name
+      - origin-details-value
+      - pass-through-authentication-mapped-dn
+      - pass-through-authentication-succeeded
+      - pass-through-authentication-updated-local-password
+      - password-modify-grace-login-used
+      - password-modify-target-entry
+      - password-modify-used-password-reset-token
+      - password-policy-state-entry-dn
+      - password-update-behavior-allow-pre-encoded-password
+      - password-update-behavior-ignore-minimum-password-age
+      - password-update-behavior-ignore-password-history
+      - password-update-behavior-is-self-change
+      - password-update-behavior-must-change-password
+      - password-update-behavior-password-storage-scheme
+      - password-update-behavior-skip-password-validation
+      - peer-certificate-chain
+      - peer-certificate-chain-certificate-bytes
+      - peer-certificate-chain-certificate-string
+      - peer-certificate-chain-certificate-type
+      - peer-certificate-chain-issuer-subject-dn
+      - peer-certificate-chain-not-after
+      - peer-certificate-chain-not-before
+      - peer-certificate-chain-serial-number
+      - peer-certificate-chain-signature-algorithm
+      - peer-certificate-chain-signature-bytes
+      - peer-certificate-chain-subject-dn
+      - ping-one-pass-through-authentication-auth-failure-reason
+      - ping-one-pass-through-authentication-mapped-id
+      - ping-one-pass-through-authentication-updated-local-user-password
+      - pluggable-pass-through-authentication-failure-reason
+      - pluggable-pass-through-authentication-mapped-user-identifier
+      - pluggable-pass-through-authentication-result-code
+      - pluggable-pass-through-authentication-updated-local-user-password
+      - pre-authorization-used-privileges
+      - processing-time-millis
+      - product-name
+      - protocol
+      - referral-urls
+      - remote-assurance-satisfied
+      - replace-certificate-certificate-decode-error
+      - replace-certificate-certificate-source
+      - replace-certificate-key-store-error
+      - replace-certificate-key-store-path
+      - replace-certificate-private-key-decode-error
+      - replace-certificate-request-decode-error
+      - replace-certificate-tool-error
+      - replication-change-id
+      - request-control-oids
+      - requester-dn
+      - requester-ip-address
+      - response-control-oids
+      - result-code-name
+      - result-code-value
+      - search-base-dn
+      - search-deref-policy
+      - search-entries-returned
+      - search-filter
+      - search-indexed
+      - search-requested-attributes
+      - search-result-entry-dn
+      - search-result-entry-attributes
+      - search-scope-name
+      - search-scope-value
+      - search-size-limit
+      - search-time-limit-seconds
+      - search-types-only
+      - security-negotiation-properties
+      - security-negotiation-properties-name
+      - security-negotiation-properties-value
+      - server-assurance-results
+      - server-assurance-results-replica-id
+      - server-assurance-results-replication-server-id
+      - server-assurance-results-result-code
+      - servers-accessed
+      - single-use-token-successful-delivery-mechanism
+      - single-use-token-token-id
+      - single-use-token-unsuccessful-delivery-mechanisms
+      - single-use-token-user-dn
+      - startup-id
+      - target-host
+      - target-port
+      - target-protocol
+      - thread-id
+      - timestamp
+      - totp-shared-secret-authentication-id
+      - totp-shared-secret-static-password-provided
+      - triggered-by-connection-id
+      - triggered-by-operation-id
+      - uncached-data-accessed
+      - uniqueness-request-control
+      - used-privileges
+      - using-admin-session-worker-thread
+      - work-queue-wait-time-millis
+      - yubikey-otp-bind-authentication-id
+      - yubikey-otp-bind-authorization-id
+      - yubikey-otp-device-authentication-id
+      - yubikey-otp-device-static-password-provided
+      - yubikey-otp-device-yubikey-public-id
+      type: string
+    Enumlog-field-behavior-json-formatted-access-tokenizeValueComponentsFieldProp:
+      description: The log fields whose values will include tokenized components.
+      enum:
+      - abandon-message-id
+      - add-attributes
+      - add-entry-dn
+      - add-undelete-from-dn
+      - additional-info
+      - administrative-operation
+      - assured-replication-requirements
+      - assured-replication-requirements-altered-by-request-control
+      - assured-replication-requirements-local-assurance-level
+      - assured-replication-requirements-remote-assurance-level
+      - assured-replication-requirements-response-delayed-by-assurance
+      - assured-replication-requirements-assurance-timeout-millis
+      - authorization-dn
+      - auto-authenticated-as
+      - bind-authentication-dn
+      - bind-authentication-failure-reason
+      - bind-authentication-failure-reason-id
+      - bind-authentication-failure-reason-message
+      - bind-authentication-failure-reason-name
+      - bind-authentication-type
+      - bind-authorization-dn
+      - bind-dn
+      - bind-protocol-version
+      - bind-retired-password-used
+      - bind-sasl-mechanism
+      - change-to-soft-deleted-entry
+      - cipher
+      - client-connection-policy
+      - collect-support-data-comment
+      - collect-support-data-encrypted
+      - collect-support-data-include-binary-files
+      - collect-support-data-include-expensive-data
+      - collect-support-data-include-extension-source
+      - collect-support-data-include-replication-state-dump
+      - collect-support-data-jstack-count
+      - collect-support-data-log-duration
+      - collect-support-data-log-file-head-collection-size-kb
+      - collect-support-data-log-file-tail-collection-size-kb
+      - collect-support-data-log-time-window
+      - collect-support-data-report-count
+      - collect-support-data-report-interval-seconds
+      - collect-support-data-security-level
+      - collect-support-data-use-sequential-mode
+      - compare-assertion-value
+      - compare-attribute-name
+      - compare-entry-dn
+      - connect-from-address
+      - connect-from-port
+      - connect-to-address
+      - connect-to-port
+      - connection-id
+      - delete-entry-dn
+      - delete-soft-deleted-entry-dn
+      - deliver-otp-authentication-id
+      - deliver-otp-preferred-delivery-mechanisms
+      - deliver-password-reset-token-dn
+      - deliver-password-reset-token-preferred-delivery-mechanisms
+      - deliver-password-reset-token-successful-delivery-mechanism
+      - deliver-password-reset-token-unsuccessful-delivery-mechanisms
+      - diagnostic-message
+      - disconnect-message
+      - disconnect-reason
+      - entry-rebalancing-admin-action-message
+      - entry-rebalancing-base-dn
+      - entry-rebalancing-entries-added-to-target
+      - entry-rebalancing-entries-deleted-from-source
+      - entry-rebalancing-entries-read-from-source
+      - entry-rebalancing-error-message
+      - entry-rebalancing-operation-id
+      - entry-rebalancing-size-limit
+      - entry-rebalancing-source-backend-set
+      - entry-rebalancing-source-server
+      - entry-rebalancing-source-server-address
+      - entry-rebalancing-source-server-altered
+      - entry-rebalancing-source-server-port
+      - entry-rebalancing-target-backend-set
+      - entry-rebalancing-target-server
+      - entry-rebalancing-target-server-address
+      - entry-rebalancing-target-server-altered
+      - entry-rebalancing-target-server-port
+      - export-reversible-passwords-backend-id
+      - export-reversible-passwords-encryption-settings-definition-id
+      - export-reversible-passwords-entries-excluded-not-matching-filter
+      - export-reversible-passwords-entries-excluded-without-passwords
+      - export-reversible-passwords-entries-exported-with-non-reversible-passwords
+      - export-reversible-passwords-entries-exported-with-reversible-passwords
+      - export-reversible-passwords-entries-exported-without-passwords
+      - export-reversible-passwords-export-non-reversible-passwords
+      - export-reversible-passwords-export-only-entries-with-passwords
+      - export-reversible-passwords-filter
+      - export-reversible-passwords-include-virtual-attributes
+      - export-reversible-passwords-output-file
+      - export-reversible-passwords-total-entries-examined
+      - export-reversible-passwords-total-entries-excluded
+      - export-reversible-passwords-total-entries-exported
+      - extended-request-oid
+      - extended-request-type
+      - extended-response-oid
+      - extended-response-type
+      - externally-processed-bind-authentication-id
+      - externally-processed-bind-auth-failure-reason
+      - externally-processed-bind-end-client-ip-address
+      - externally-processed-bind-external-mechanism-name
+      - externally-processed-bind-was-password-based
+      - externally-processed-bind-was-secure
+      - externally-processed-bind-was-successful
+      - generate-password-num-passwords
+      - generate-password-max-validation-attempts
+      - generate-password-password-generator
+      - generate-password-password-policy
+      - get-supported-otp-delivery-mechanisms-dn
+      - gssapi-bind-qop
+      - gssapi-bind-requested-authentication-id
+      - gssapi-bind-requested-authorization-id
+      - indexes-with-keys-accessed-exceeding-entry-limit
+      - indexes-with-keys-accessed-near-entry-limit
+      - instance-name
+      - inter-server-bind-connection-privileges
+      - inter-server-bind-connection-purpose
+      - inter-server-bind-source-certificate-subject
+      - inter-server-control-forwarded-client-connection-policy
+      - inter-server-request-controls
+      - inter-server-request-controls-component-name
+      - inter-server-request-controls-operation-purpose
+      - inter-server-request-controls-properties
+      - inter-server-request-controls-properties-name
+      - inter-server-request-controls-properties-value
+      - intermediate-client-request-control
+      - intermediate-client-request-control-client-identity
+      - intermediate-client-request-control-client-name
+      - intermediate-client-request-control-downstream-client-address
+      - intermediate-client-request-control-downstream-client-secure
+      - intermediate-client-request-control-downstream-request
+      - intermediate-client-request-control-request-id
+      - intermediate-client-request-control-session-id
+      - intermediate-client-response-control
+      - intermediate-client-response-control-response-id
+      - intermediate-client-response-control-server-name
+      - intermediate-client-response-control-session-id
+      - intermediate-client-response-control-upstream-response
+      - intermediate-client-response-control-upstream-server-address
+      - intermediate-client-response-control-upstream-server-secure
+      - intermediate-response-name
+      - intermediate-response-oid
+      - intermediate-response-value
+      - intermediate-responses-returned
+      - ldap-client-decode-error-message
+      - local-assurance-satisfied
+      - log-type
+      - matched-dn
+      - message-id
+      - message-type
+      - missing-privileges
+      - moddn-delete-old-rdn
+      - moddn-entry-dn
+      - moddn-new-rdn
+      - moddn-new-superior-dn
+      - modify-attributes
+      - modify-entry-dn
+      - multi-update-connection-id
+      - multi-update-first-failed-operation
+      - multi-update-first-failed-operation-error-message
+      - multi-update-first-failed-operation-result-code
+      - multi-update-operation-id
+      - non-critical-json-formatted-request-control-decode-errors
+      - non-critical-request-controls-ignored-due-to-acl
+      - oauthbearer-bind-access-token-client-id
+      - oauthbearer-bind-access-token-expiration-time
+      - oauthbearer-bind-access-token-identifier
+      - oauthbearer-bind-access-token-identity-mapper
+      - oauthbearer-bind-access-token-is-active
+      - oauthbearer-bind-access-token-issued-at
+      - oauthbearer-bind-access-token-issuer
+      - oauthbearer-bind-access-token-not-before
+      - oauthbearer-bind-access-token-owner
+      - oauthbearer-bind-access-token-scope
+      - oauthbearer-bind-access-token-subject
+      - oauthbearer-bind-access-token-type
+      - oauthbearer-bind-access-token-username
+      - oauthbearer-bind-access-token-validator
+      - oauthbearer-bind-authorization-error-code
+      - oauthbearer-bind-authorization-id
+      - oauthbearer-bind-id-token-client-id
+      - oauthbearer-bind-id-token-expiration-time
+      - oauthbearer-bind-id-token-identifier
+      - oauthbearer-bind-id-token-identity-mapper
+      - oauthbearer-bind-id-token-is-active
+      - oauthbearer-bind-id-token-issued-at
+      - oauthbearer-bind-id-token-issuer
+      - oauthbearer-bind-id-token-not-before
+      - oauthbearer-bind-id-token-owner
+      - oauthbearer-bind-id-token-subject
+      - oauthbearer-bind-id-token-type
+      - oauthbearer-bind-id-token-username
+      - oauthbearer-bind-id-token-validator
+      - operation-id
+      - operation-oauth-scopes
+      - operation-purpose
+      - operation-purpose-application-name
+      - operation-purpose-application-version
+      - operation-purpose-code-location
+      - operation-purpose-request-purpose
+      - operation-type
+      - origin
+      - origin-details
+      - origin-details-name
+      - origin-details-value
+      - pass-through-authentication-mapped-dn
+      - pass-through-authentication-succeeded
+      - pass-through-authentication-updated-local-password
+      - password-modify-grace-login-used
+      - password-modify-target-entry
+      - password-modify-used-password-reset-token
+      - password-policy-state-entry-dn
+      - password-update-behavior-allow-pre-encoded-password
+      - password-update-behavior-ignore-minimum-password-age
+      - password-update-behavior-ignore-password-history
+      - password-update-behavior-is-self-change
+      - password-update-behavior-must-change-password
+      - password-update-behavior-password-storage-scheme
+      - password-update-behavior-skip-password-validation
+      - peer-certificate-chain
+      - peer-certificate-chain-certificate-bytes
+      - peer-certificate-chain-certificate-string
+      - peer-certificate-chain-certificate-type
+      - peer-certificate-chain-issuer-subject-dn
+      - peer-certificate-chain-not-after
+      - peer-certificate-chain-not-before
+      - peer-certificate-chain-serial-number
+      - peer-certificate-chain-signature-algorithm
+      - peer-certificate-chain-signature-bytes
+      - peer-certificate-chain-subject-dn
+      - ping-one-pass-through-authentication-auth-failure-reason
+      - ping-one-pass-through-authentication-mapped-id
+      - ping-one-pass-through-authentication-updated-local-user-password
+      - pluggable-pass-through-authentication-failure-reason
+      - pluggable-pass-through-authentication-mapped-user-identifier
+      - pluggable-pass-through-authentication-result-code
+      - pluggable-pass-through-authentication-updated-local-user-password
+      - pre-authorization-used-privileges
+      - processing-time-millis
+      - product-name
+      - protocol
+      - referral-urls
+      - remote-assurance-satisfied
+      - replace-certificate-certificate-decode-error
+      - replace-certificate-certificate-source
+      - replace-certificate-key-store-error
+      - replace-certificate-key-store-path
+      - replace-certificate-private-key-decode-error
+      - replace-certificate-request-decode-error
+      - replace-certificate-tool-error
+      - replication-change-id
+      - request-control-oids
+      - requester-dn
+      - requester-ip-address
+      - response-control-oids
+      - result-code-name
+      - result-code-value
+      - search-base-dn
+      - search-deref-policy
+      - search-entries-returned
+      - search-filter
+      - search-indexed
+      - search-requested-attributes
+      - search-result-entry-dn
+      - search-result-entry-attributes
+      - search-scope-name
+      - search-scope-value
+      - search-size-limit
+      - search-time-limit-seconds
+      - search-types-only
+      - security-negotiation-properties
+      - security-negotiation-properties-name
+      - security-negotiation-properties-value
+      - server-assurance-results
+      - server-assurance-results-replica-id
+      - server-assurance-results-replication-server-id
+      - server-assurance-results-result-code
+      - servers-accessed
+      - single-use-token-successful-delivery-mechanism
+      - single-use-token-token-id
+      - single-use-token-unsuccessful-delivery-mechanisms
+      - single-use-token-user-dn
+      - startup-id
+      - target-host
+      - target-port
+      - target-protocol
+      - thread-id
+      - timestamp
+      - totp-shared-secret-authentication-id
+      - totp-shared-secret-static-password-provided
+      - triggered-by-connection-id
+      - triggered-by-operation-id
+      - uncached-data-accessed
+      - uniqueness-request-control
+      - used-privileges
+      - using-admin-session-worker-thread
+      - work-queue-wait-time-millis
+      - yubikey-otp-bind-authentication-id
+      - yubikey-otp-bind-authorization-id
+      - yubikey-otp-device-authentication-id
+      - yubikey-otp-device-static-password-provided
+      - yubikey-otp-device-yubikey-public-id
+      type: string
+    Enumlog-field-behavior-json-formatted-access-redactEntireValueFieldProp:
+      description: "The log fields whose values should be completely redacted in log\
+        \ messages. The field name will be included, but with a fixed value that does\
+        \ not reflect the actual value for the field."
+      enum:
+      - abandon-message-id
+      - add-attributes
+      - add-entry-dn
+      - add-undelete-from-dn
+      - additional-info
+      - administrative-operation
+      - assured-replication-requirements
+      - assured-replication-requirements-altered-by-request-control
+      - assured-replication-requirements-local-assurance-level
+      - assured-replication-requirements-remote-assurance-level
+      - assured-replication-requirements-response-delayed-by-assurance
+      - assured-replication-requirements-assurance-timeout-millis
+      - authorization-dn
+      - auto-authenticated-as
+      - bind-authentication-dn
+      - bind-authentication-failure-reason
+      - bind-authentication-failure-reason-id
+      - bind-authentication-failure-reason-message
+      - bind-authentication-failure-reason-name
+      - bind-authentication-type
+      - bind-authorization-dn
+      - bind-dn
+      - bind-protocol-version
+      - bind-retired-password-used
+      - bind-sasl-mechanism
+      - change-to-soft-deleted-entry
+      - cipher
+      - client-connection-policy
+      - collect-support-data-comment
+      - collect-support-data-encrypted
+      - collect-support-data-include-binary-files
+      - collect-support-data-include-expensive-data
+      - collect-support-data-include-extension-source
+      - collect-support-data-include-replication-state-dump
+      - collect-support-data-jstack-count
+      - collect-support-data-log-duration
+      - collect-support-data-log-file-head-collection-size-kb
+      - collect-support-data-log-file-tail-collection-size-kb
+      - collect-support-data-log-time-window
+      - collect-support-data-report-count
+      - collect-support-data-report-interval-seconds
+      - collect-support-data-security-level
+      - collect-support-data-use-sequential-mode
+      - compare-assertion-value
+      - compare-attribute-name
+      - compare-entry-dn
+      - connect-from-address
+      - connect-from-port
+      - connect-to-address
+      - connect-to-port
+      - connection-id
+      - delete-entry-dn
+      - delete-soft-deleted-entry-dn
+      - deliver-otp-authentication-id
+      - deliver-otp-preferred-delivery-mechanisms
+      - deliver-password-reset-token-dn
+      - deliver-password-reset-token-preferred-delivery-mechanisms
+      - deliver-password-reset-token-successful-delivery-mechanism
+      - deliver-password-reset-token-unsuccessful-delivery-mechanisms
+      - diagnostic-message
+      - disconnect-message
+      - disconnect-reason
+      - entry-rebalancing-admin-action-message
+      - entry-rebalancing-base-dn
+      - entry-rebalancing-entries-added-to-target
+      - entry-rebalancing-entries-deleted-from-source
+      - entry-rebalancing-entries-read-from-source
+      - entry-rebalancing-error-message
+      - entry-rebalancing-operation-id
+      - entry-rebalancing-size-limit
+      - entry-rebalancing-source-backend-set
+      - entry-rebalancing-source-server
+      - entry-rebalancing-source-server-address
+      - entry-rebalancing-source-server-altered
+      - entry-rebalancing-source-server-port
+      - entry-rebalancing-target-backend-set
+      - entry-rebalancing-target-server
+      - entry-rebalancing-target-server-address
+      - entry-rebalancing-target-server-altered
+      - entry-rebalancing-target-server-port
+      - export-reversible-passwords-backend-id
+      - export-reversible-passwords-encryption-settings-definition-id
+      - export-reversible-passwords-entries-excluded-not-matching-filter
+      - export-reversible-passwords-entries-excluded-without-passwords
+      - export-reversible-passwords-entries-exported-with-non-reversible-passwords
+      - export-reversible-passwords-entries-exported-with-reversible-passwords
+      - export-reversible-passwords-entries-exported-without-passwords
+      - export-reversible-passwords-export-non-reversible-passwords
+      - export-reversible-passwords-export-only-entries-with-passwords
+      - export-reversible-passwords-filter
+      - export-reversible-passwords-include-virtual-attributes
+      - export-reversible-passwords-output-file
+      - export-reversible-passwords-total-entries-examined
+      - export-reversible-passwords-total-entries-excluded
+      - export-reversible-passwords-total-entries-exported
+      - extended-request-oid
+      - extended-request-type
+      - extended-response-oid
+      - extended-response-type
+      - externally-processed-bind-authentication-id
+      - externally-processed-bind-auth-failure-reason
+      - externally-processed-bind-end-client-ip-address
+      - externally-processed-bind-external-mechanism-name
+      - externally-processed-bind-was-password-based
+      - externally-processed-bind-was-secure
+      - externally-processed-bind-was-successful
+      - generate-password-num-passwords
+      - generate-password-max-validation-attempts
+      - generate-password-password-generator
+      - generate-password-password-policy
+      - get-supported-otp-delivery-mechanisms-dn
+      - gssapi-bind-qop
+      - gssapi-bind-requested-authentication-id
+      - gssapi-bind-requested-authorization-id
+      - indexes-with-keys-accessed-exceeding-entry-limit
+      - indexes-with-keys-accessed-near-entry-limit
+      - instance-name
+      - inter-server-bind-connection-privileges
+      - inter-server-bind-connection-purpose
+      - inter-server-bind-source-certificate-subject
+      - inter-server-control-forwarded-client-connection-policy
+      - inter-server-request-controls
+      - inter-server-request-controls-component-name
+      - inter-server-request-controls-operation-purpose
+      - inter-server-request-controls-properties
+      - inter-server-request-controls-properties-name
+      - inter-server-request-controls-properties-value
+      - intermediate-client-request-control
+      - intermediate-client-request-control-client-identity
+      - intermediate-client-request-control-client-name
+      - intermediate-client-request-control-downstream-client-address
+      - intermediate-client-request-control-downstream-client-secure
+      - intermediate-client-request-control-downstream-request
+      - intermediate-client-request-control-request-id
+      - intermediate-client-request-control-session-id
+      - intermediate-client-response-control
+      - intermediate-client-response-control-response-id
+      - intermediate-client-response-control-server-name
+      - intermediate-client-response-control-session-id
+      - intermediate-client-response-control-upstream-response
+      - intermediate-client-response-control-upstream-server-address
+      - intermediate-client-response-control-upstream-server-secure
+      - intermediate-response-name
+      - intermediate-response-oid
+      - intermediate-response-value
+      - intermediate-responses-returned
+      - ldap-client-decode-error-message
+      - local-assurance-satisfied
+      - log-type
+      - matched-dn
+      - message-id
+      - message-type
+      - missing-privileges
+      - moddn-delete-old-rdn
+      - moddn-entry-dn
+      - moddn-new-rdn
+      - moddn-new-superior-dn
+      - modify-attributes
+      - modify-entry-dn
+      - multi-update-connection-id
+      - multi-update-first-failed-operation
+      - multi-update-first-failed-operation-error-message
+      - multi-update-first-failed-operation-result-code
+      - multi-update-operation-id
+      - non-critical-json-formatted-request-control-decode-errors
+      - non-critical-request-controls-ignored-due-to-acl
+      - oauthbearer-bind-access-token-client-id
+      - oauthbearer-bind-access-token-expiration-time
+      - oauthbearer-bind-access-token-identifier
+      - oauthbearer-bind-access-token-identity-mapper
+      - oauthbearer-bind-access-token-is-active
+      - oauthbearer-bind-access-token-issued-at
+      - oauthbearer-bind-access-token-issuer
+      - oauthbearer-bind-access-token-not-before
+      - oauthbearer-bind-access-token-owner
+      - oauthbearer-bind-access-token-scope
+      - oauthbearer-bind-access-token-subject
+      - oauthbearer-bind-access-token-type
+      - oauthbearer-bind-access-token-username
+      - oauthbearer-bind-access-token-validator
+      - oauthbearer-bind-authorization-error-code
+      - oauthbearer-bind-authorization-id
+      - oauthbearer-bind-id-token-client-id
+      - oauthbearer-bind-id-token-expiration-time
+      - oauthbearer-bind-id-token-identifier
+      - oauthbearer-bind-id-token-identity-mapper
+      - oauthbearer-bind-id-token-is-active
+      - oauthbearer-bind-id-token-issued-at
+      - oauthbearer-bind-id-token-issuer
+      - oauthbearer-bind-id-token-not-before
+      - oauthbearer-bind-id-token-owner
+      - oauthbearer-bind-id-token-subject
+      - oauthbearer-bind-id-token-type
+      - oauthbearer-bind-id-token-username
+      - oauthbearer-bind-id-token-validator
+      - operation-id
+      - operation-oauth-scopes
+      - operation-purpose
+      - operation-purpose-application-name
+      - operation-purpose-application-version
+      - operation-purpose-code-location
+      - operation-purpose-request-purpose
+      - operation-type
+      - origin
+      - origin-details
+      - origin-details-name
+      - origin-details-value
+      - pass-through-authentication-mapped-dn
+      - pass-through-authentication-succeeded
+      - pass-through-authentication-updated-local-password
+      - password-modify-grace-login-used
+      - password-modify-target-entry
+      - password-modify-used-password-reset-token
+      - password-policy-state-entry-dn
+      - password-update-behavior-allow-pre-encoded-password
+      - password-update-behavior-ignore-minimum-password-age
+      - password-update-behavior-ignore-password-history
+      - password-update-behavior-is-self-change
+      - password-update-behavior-must-change-password
+      - password-update-behavior-password-storage-scheme
+      - password-update-behavior-skip-password-validation
+      - peer-certificate-chain
+      - peer-certificate-chain-certificate-bytes
+      - peer-certificate-chain-certificate-string
+      - peer-certificate-chain-certificate-type
+      - peer-certificate-chain-issuer-subject-dn
+      - peer-certificate-chain-not-after
+      - peer-certificate-chain-not-before
+      - peer-certificate-chain-serial-number
+      - peer-certificate-chain-signature-algorithm
+      - peer-certificate-chain-signature-bytes
+      - peer-certificate-chain-subject-dn
+      - ping-one-pass-through-authentication-auth-failure-reason
+      - ping-one-pass-through-authentication-mapped-id
+      - ping-one-pass-through-authentication-updated-local-user-password
+      - pluggable-pass-through-authentication-failure-reason
+      - pluggable-pass-through-authentication-mapped-user-identifier
+      - pluggable-pass-through-authentication-result-code
+      - pluggable-pass-through-authentication-updated-local-user-password
+      - pre-authorization-used-privileges
+      - processing-time-millis
+      - product-name
+      - protocol
+      - referral-urls
+      - remote-assurance-satisfied
+      - replace-certificate-certificate-decode-error
+      - replace-certificate-certificate-source
+      - replace-certificate-key-store-error
+      - replace-certificate-key-store-path
+      - replace-certificate-private-key-decode-error
+      - replace-certificate-request-decode-error
+      - replace-certificate-tool-error
+      - replication-change-id
+      - request-control-oids
+      - requester-dn
+      - requester-ip-address
+      - response-control-oids
+      - result-code-name
+      - result-code-value
+      - search-base-dn
+      - search-deref-policy
+      - search-entries-returned
+      - search-filter
+      - search-indexed
+      - search-requested-attributes
+      - search-result-entry-dn
+      - search-result-entry-attributes
+      - search-scope-name
+      - search-scope-value
+      - search-size-limit
+      - search-time-limit-seconds
+      - search-types-only
+      - security-negotiation-properties
+      - security-negotiation-properties-name
+      - security-negotiation-properties-value
+      - server-assurance-results
+      - server-assurance-results-replica-id
+      - server-assurance-results-replication-server-id
+      - server-assurance-results-result-code
+      - servers-accessed
+      - single-use-token-successful-delivery-mechanism
+      - single-use-token-token-id
+      - single-use-token-unsuccessful-delivery-mechanisms
+      - single-use-token-user-dn
+      - startup-id
+      - target-host
+      - target-port
+      - target-protocol
+      - thread-id
+      - timestamp
+      - totp-shared-secret-authentication-id
+      - totp-shared-secret-static-password-provided
+      - triggered-by-connection-id
+      - triggered-by-operation-id
+      - uncached-data-accessed
+      - uniqueness-request-control
+      - used-privileges
+      - using-admin-session-worker-thread
+      - work-queue-wait-time-millis
+      - yubikey-otp-bind-authentication-id
+      - yubikey-otp-bind-authorization-id
+      - yubikey-otp-device-authentication-id
+      - yubikey-otp-device-static-password-provided
+      - yubikey-otp-device-yubikey-public-id
+      type: string
     proxy-server-instance-response:
       allOf:
       - $ref: '#/components/schemas/meta'
@@ -19185,14 +21050,6 @@ components:
       - ssl
       - starttls
       type: string
-    Enumserver-instance-listener-connectionSecurityProp:
-      description: Specifies the mechanism to use for securing connections to the
-        server.
-      enum:
-      - none
-      - ssl
-      - starttls
-      type: string
     Enumserver-instance-listener-purposeProp:
       description: Identifies the purpose of this Server Instance Listener.
       enum:
@@ -19203,6 +21060,21 @@ components:
       enum:
       - simple
       - sasl-plain
+      type: string
+    Enumserver-instance-listener-ldap-connectionSecurityProp:
+      description: Specifies the mechanism to use for securing connections to the
+        server.
+      enum:
+      - none
+      - ssl
+      - starttls
+      type: string
+    Enumserver-instance-listener-http-connectionSecurityProp:
+      description: Specifies the mechanism to use for securing connections to the
+        server.
+      enum:
+      - none
+      - ssl
       type: string
     Enuminter-server-authentication-info-purposeProp:
       description: Identifies the purpose of this Inter Server Authentication Info.
@@ -21162,7 +23034,7 @@ components:
           type: array
         operationType:
           items:
-            $ref: '#/components/schemas/Enumrequest-criteria-operationTypeProp'
+            $ref: '#/components/schemas/Enumrequest-criteria-root-dse-operationTypeProp'
           type: array
         description:
           description: A description for this Request Criteria
@@ -21193,7 +23065,7 @@ components:
           type: array
         operationType:
           items:
-            $ref: '#/components/schemas/Enumrequest-criteria-operationTypeProp'
+            $ref: '#/components/schemas/Enumrequest-criteria-simple-operationTypeProp'
           type: array
         operationOrigin:
           items:
@@ -21525,7 +23397,7 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:request-criteria:third-party
       type: string
-    Enumrequest-criteria-operationTypeProp:
+    Enumrequest-criteria-root-dse-operationTypeProp:
       description: The types of operations that may be matched by this Root DSE Request
         Criteria.
       enum:
@@ -21543,6 +23415,21 @@ components:
       - "true"
       - "false"
       - any
+      type: string
+    Enumrequest-criteria-simple-operationTypeProp:
+      description: Specifies the operation type(s) for operations that should be included
+        in this Simple Request Criteria.
+      enum:
+      - abandon
+      - add
+      - bind
+      - compare
+      - delete
+      - extended
+      - modify
+      - modify-dn
+      - search
+      - unbind
       type: string
     Enumrequest-criteria-includedSearchScopeProp:
       description: Specifies the search scope values included in this Simple Request
@@ -28315,7 +30202,7 @@ components:
             form so that it is possible to revert the changes if desired.
           type: boolean
         softDeleteEntryAuditBehavior:
-          $ref: '#/components/schemas/Enumlog-publisher-softDeleteEntryAuditBehaviorProp'
+          $ref: '#/components/schemas/Enumlog-publisher-syslog-json-audit-softDeleteEntryAuditBehaviorProp'
         includeOperationPurposeRequestControl:
           description: Indicates whether to include information about any operation
             purpose request control that may have been included in the request.
@@ -30046,7 +31933,7 @@ components:
             form so that it is possible to revert the changes if desired.
           type: boolean
         softDeleteEntryAuditBehavior:
-          $ref: '#/components/schemas/Enumlog-publisher-softDeleteEntryAuditBehaviorProp'
+          $ref: '#/components/schemas/Enumlog-publisher-file-based-json-audit-softDeleteEntryAuditBehaviorProp'
         includeOperationPurposeRequestControl:
           description: Indicates whether to include information about any operation
             purpose request control that may have been included in the request.
@@ -31832,7 +33719,7 @@ components:
             form so that it is possible to revert the changes if desired.
           type: boolean
         softDeleteEntryAuditBehavior:
-          $ref: '#/components/schemas/Enumlog-publisher-softDeleteEntryAuditBehaviorProp'
+          $ref: '#/components/schemas/Enumlog-publisher-file-based-audit-softDeleteEntryAuditBehaviorProp'
         includeRequestControls:
           description: Indicates whether log messages for operation requests should
             include a list of the OIDs of any controls included in the request.
@@ -32918,7 +34805,7 @@ components:
             form so that it is possible to revert the changes if desired.
           type: boolean
         softDeleteEntryAuditBehavior:
-          $ref: '#/components/schemas/Enumlog-publisher-softDeleteEntryAuditBehaviorProp'
+          $ref: '#/components/schemas/Enumlog-publisher-console-json-audit-softDeleteEntryAuditBehaviorProp'
         includeOperationPurposeRequestControl:
           description: Indicates whether to include information about any operation
             purpose request control that may have been included in the request.
@@ -33912,41 +35799,26 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:debug-target
       type: string
-    Enumlog-publisher-httpMessageTypeProp:
-      description: Specifies the HTTP message types which can be logged.
+    Enumlog-publisher-syslog-json-audit-softDeleteEntryAuditBehaviorProp:
+      description: Specifies the audit behavior for delete and modify operations on
+        soft-deleted entries.
       enum:
-      - request
-      - response
+      - included
+      - excluded
       type: string
-    Enumlog-publisher-debugMessageTypeProp:
-      description: Specifies the debug message types which can be logged. Note that
-        enabling these may result in sensitive information being logged.
+    Enumlog-publisher-file-based-json-audit-softDeleteEntryAuditBehaviorProp:
+      description: Specifies the audit behavior for delete and modify operations on
+        soft-deleted entries.
       enum:
-      - http-full-request-and-response
-      - ldap-external-server-request
-      - server-sdk-extension
-      - store-adapter-mapping
-      - store-adapter-processing
-      - access-token-validator-request-and-response
-      - access-token-validator-processing
-      - id-token-validator-request-and-response
-      - id-token-validator-processing
-      - consent-service-request-and-response
-      - gateway-request-and-response
-      - policy-request-and-response
+      - included
+      - excluded
       type: string
-    Enumlog-publisher-directoryRESTAPIMessageTypeProp:
-      description: Specifies the Directory REST API message types which can be logged.
+    Enumlog-publisher-file-based-audit-softDeleteEntryAuditBehaviorProp:
+      description: Specifies the audit behavior for delete and modify operations on
+        soft-deleted entries.
       enum:
-      - error
-      type: string
-    Enumlog-publisher-extensionMessageTypeProp:
-      description: Specifies the Server SDK extension message types that can be logged.
-      enum:
-      - error
-      - warning
-      - notice
-      - info
+      - commented
+      - uncommented
       type: string
     Enumlog-publisher-defaultDebugLevelProp:
       description: The lowest severity level of debug messages to log when none of
@@ -33977,13 +35849,6 @@ components:
       enum:
       - seconds
       - milliseconds
-      type: string
-    Enumlog-publisher-softDeleteEntryAuditBehaviorProp:
-      description: Specifies the audit behavior for delete and modify operations on
-        soft-deleted entries.
-      enum:
-      - included
-      - excluded
       type: string
     Enumlog-publisher-scimMessageTypeProp:
       description: Specifies the SCIM message types which can be logged.
@@ -34019,35 +35884,6 @@ components:
       - header-names
       - header-names-and-values
       type: string
-    Enumlog-publisher-syslogFacilityProp:
-      description: The syslog facility to use for the messages that are logged by
-        this Syslog JSON Audit Log Publisher.
-      enum:
-      - user-level-messages
-      - system-daemons
-      - security-and-authorization
-      - security-and-authorization-alternative
-      - log-audit
-      - log-alert
-      - local-use-0
-      - local-use-1
-      - local-use-2
-      - local-use-3
-      - local-use-4
-      - local-use-5
-      - local-use-6
-      - local-use-7
-      - kernel-messages
-      - mail-system
-      - syslogd-internal-messages
-      - line-printer
-      - network-news
-      - uucp
-      - clock-daemon
-      - ftp-daemon
-      - ntp-daemon
-      - clock-daemon-alternative
-      type: string
     Enumlog-publisher-outputLocationProp:
       description: Specifies the output stream to which JSON-formatted error log messages
         should be written.
@@ -34061,47 +35897,6 @@ components:
       enum:
       - none
       - gzip
-      type: string
-    Enumlog-publisher-loggingErrorBehaviorProp:
-      description: Specifies the behavior that the server should exhibit if an error
-        occurs during logging processing.
-      enum:
-      - standard-error
-      - lockdown-mode
-      type: string
-    Enumdebug-target-debugCategoryProp:
-      description: Specifies the debug message categories to be logged.
-      enum:
-      - caught
-      - constructor
-      - data
-      - database-access
-      - enter
-      - exit
-      - message
-      - protocol
-      - thrown
-      type: string
-    Enumlog-publisher-consentMessageTypeProp:
-      description: Specifies the consent message types that can be logged.
-      enum:
-      - consent-created
-      - consent-updated
-      - consent-deleted
-      - consent-retrieved
-      - consent-search
-      - definition-created
-      - definition-updated
-      - definition-deleted
-      - definition-retrieved
-      - definition-search
-      - localization-created
-      - localization-updated
-      - localization-deleted
-      - localization-retrieved
-      - localization-search
-      - error
-      - audit
       type: string
     Enumdebug-target-debugLevelProp:
       description: Specifies the lowest severity level of debug messages to log.
@@ -34160,6 +35955,119 @@ components:
       - message
       - protocol
       - thrown
+      type: string
+    Enumlog-publisher-httpMessageTypeProp:
+      description: Specifies the HTTP message types which can be logged.
+      enum:
+      - request
+      - response
+      type: string
+    Enumlog-publisher-debugMessageTypeProp:
+      description: Specifies the debug message types which can be logged. Note that
+        enabling these may result in sensitive information being logged.
+      enum:
+      - http-full-request-and-response
+      - ldap-external-server-request
+      - server-sdk-extension
+      - store-adapter-mapping
+      - store-adapter-processing
+      - access-token-validator-request-and-response
+      - access-token-validator-processing
+      - id-token-validator-request-and-response
+      - id-token-validator-processing
+      - consent-service-request-and-response
+      - gateway-request-and-response
+      - policy-request-and-response
+      type: string
+    Enumlog-publisher-directoryRESTAPIMessageTypeProp:
+      description: Specifies the Directory REST API message types which can be logged.
+      enum:
+      - error
+      type: string
+    Enumlog-publisher-extensionMessageTypeProp:
+      description: Specifies the Server SDK extension message types that can be logged.
+      enum:
+      - error
+      - warning
+      - notice
+      - info
+      type: string
+    Enumlog-publisher-syslogFacilityProp:
+      description: The syslog facility to use for the messages that are logged by
+        this Syslog JSON Audit Log Publisher.
+      enum:
+      - user-level-messages
+      - system-daemons
+      - security-and-authorization
+      - security-and-authorization-alternative
+      - log-audit
+      - log-alert
+      - local-use-0
+      - local-use-1
+      - local-use-2
+      - local-use-3
+      - local-use-4
+      - local-use-5
+      - local-use-6
+      - local-use-7
+      - kernel-messages
+      - mail-system
+      - syslogd-internal-messages
+      - line-printer
+      - network-news
+      - uucp
+      - clock-daemon
+      - ftp-daemon
+      - ntp-daemon
+      - clock-daemon-alternative
+      type: string
+    Enumlog-publisher-loggingErrorBehaviorProp:
+      description: Specifies the behavior that the server should exhibit if an error
+        occurs during logging processing.
+      enum:
+      - standard-error
+      - lockdown-mode
+      type: string
+    Enumdebug-target-debugCategoryProp:
+      description: Specifies the debug message categories to be logged.
+      enum:
+      - caught
+      - constructor
+      - data
+      - database-access
+      - enter
+      - exit
+      - message
+      - protocol
+      - thrown
+      type: string
+    Enumlog-publisher-consentMessageTypeProp:
+      description: Specifies the consent message types that can be logged.
+      enum:
+      - consent-created
+      - consent-updated
+      - consent-deleted
+      - consent-retrieved
+      - consent-search
+      - definition-created
+      - definition-updated
+      - definition-deleted
+      - definition-retrieved
+      - definition-search
+      - localization-created
+      - localization-updated
+      - localization-deleted
+      - localization-retrieved
+      - localization-search
+      - error
+      - audit
+      type: string
+    Enumlog-publisher-console-json-audit-softDeleteEntryAuditBehaviorProp:
+      description: Specifies the audit behavior for delete and modify operations on
+        soft-deleted entries.
+      enum:
+      - included
+      - excluded
       type: string
     add-replication-assurance-policy-request:
       allOf:
@@ -43042,7 +44950,7 @@ components:
           type: array
         allowedMIMEType:
           items:
-            $ref: '#/components/schemas/Enumdelegated-admin-attribute-allowedMIMETypeProp'
+            $ref: '#/components/schemas/Enumdelegated-admin-attribute-certificate-allowedMIMETypeProp'
           type: array
         description:
           description: A description for this Delegated Admin Attribute
@@ -43111,7 +45019,7 @@ components:
           type: array
         allowedMIMEType:
           items:
-            $ref: '#/components/schemas/Enumdelegated-admin-attribute-allowedMIMETypeProp'
+            $ref: '#/components/schemas/Enumdelegated-admin-attribute-photo-allowedMIMETypeProp'
           type: array
         description:
           description: A description for this Delegated Admin Attribute
@@ -43278,14 +45186,7 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:delegated-admin-correlated-rest-resource
       type: string
-    Enumdelegated-admin-attribute-mutabilityProp:
-      description: Specifies the circumstances under which the values of the attribute
-        can be written.
-      enum:
-      - read-only
-      - read-write
-      type: string
-    Enumdelegated-admin-attribute-allowedMIMETypeProp:
+    Enumdelegated-admin-attribute-certificate-allowedMIMETypeProp:
       description: "The list of file types allowed to be uploaded. If no types are\
         \ specified, then all types will be allowed."
       enum:
@@ -43301,6 +45202,22 @@ components:
       - pem
       - pfx
       - spc
+      type: string
+    Enumdelegated-admin-attribute-mutabilityProp:
+      description: Specifies the circumstances under which the values of the attribute
+        can be written.
+      enum:
+      - read-only
+      - read-write
+      type: string
+    Enumdelegated-admin-attribute-photo-allowedMIMETypeProp:
+      description: "The list of file types allowed to be uploaded. If no types are\
+        \ specified, then all types will be allowed."
+      enum:
+      - gif
+      - jpeg
+      - jpg
+      - png
       type: string
     Enumdelegated-admin-attribute-attributePresentationProp:
       description: Indicates how the attribute is presented to the user of the app.
@@ -47429,7 +49346,7 @@ components:
         serverInfo:
           $ref: '#/components/schemas/Enumplugin-serverInfoProp'
         perApplicationLDAPStats:
-          $ref: '#/components/schemas/Enumplugin-perApplicationLDAPStatsProp'
+          $ref: '#/components/schemas/Enumplugin-stats-collector-perApplicationLDAPStatsProp'
         ldapChangelogInfo:
           $ref: '#/components/schemas/Enumplugin-ldapChangelogInfoProp'
         statusSummaryInfo:
@@ -48557,7 +50474,7 @@ components:
           description: The TCP port number on which the LDAP server is listening.
           type: integer
         connectionSecurity:
-          $ref: '#/components/schemas/Enumserver-instance-listener-connectionSecurityProp'
+          $ref: '#/components/schemas/Enumserver-instance-listener-ldap-connectionSecurityProp'
         listenerCertificate:
           description: "The public component of the certificate that the listener\
             \ is expected to present to clients. When establishing a connection to\
@@ -48592,7 +50509,7 @@ components:
           description: The TCP port number on which the HTTP server is listening.
           type: integer
         connectionSecurity:
-          $ref: '#/components/schemas/Enumserver-instance-listener-connectionSecurityProp'
+          $ref: '#/components/schemas/Enumserver-instance-listener-http-connectionSecurityProp'
         purpose:
           items:
             $ref: '#/components/schemas/Enumserver-instance-listener-purposeProp'
