@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Id** | **string** | Name of the Request Criteria | 
 **Schemas** | [**[]EnumthirdPartyRequestCriteriaSchemaUrn**](EnumthirdPartyRequestCriteriaSchemaUrn.md) |  | 
-**OperationType** | Pointer to [**[]EnumrequestCriteriaOperationTypeProp**](EnumrequestCriteriaOperationTypeProp.md) |  | [optional] 
+**OperationType** | Pointer to [**[]EnumrequestCriteriaSimpleOperationTypeProp**](EnumrequestCriteriaSimpleOperationTypeProp.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Request Criteria | [optional] 
 **OperationOrigin** | Pointer to [**[]EnumrequestCriteriaOperationOriginProp**](EnumrequestCriteriaOperationOriginProp.md) |  | [optional] 
 **ConnectionCriteria** | Pointer to **string** | Specifies a connection criteria object that must match the associated client connection for operations included in this Simple Request Criteria. | [optional] 
@@ -155,20 +155,20 @@ SetSchemas sets Schemas field to given value.
 
 ### GetOperationType
 
-`func (o *AddRequestCriteria200Response) GetOperationType() []EnumrequestCriteriaOperationTypeProp`
+`func (o *AddRequestCriteria200Response) GetOperationType() []EnumrequestCriteriaSimpleOperationTypeProp`
 
 GetOperationType returns the OperationType field if non-nil, zero value otherwise.
 
 ### GetOperationTypeOk
 
-`func (o *AddRequestCriteria200Response) GetOperationTypeOk() (*[]EnumrequestCriteriaOperationTypeProp, bool)`
+`func (o *AddRequestCriteria200Response) GetOperationTypeOk() (*[]EnumrequestCriteriaSimpleOperationTypeProp, bool)`
 
 GetOperationTypeOk returns a tuple with the OperationType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOperationType
 
-`func (o *AddRequestCriteria200Response) SetOperationType(v []EnumrequestCriteriaOperationTypeProp)`
+`func (o *AddRequestCriteria200Response) SetOperationType(v []EnumrequestCriteriaSimpleOperationTypeProp)`
 
 SetOperationType sets OperationType field to given value.
 

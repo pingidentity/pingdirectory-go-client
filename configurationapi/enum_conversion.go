@@ -3002,26 +3002,6 @@ func StringPointerEnumdelayRecurringTaskSchemaUrn(value *EnumdelayRecurringTaskS
 	return &s
 }
 
-func (e EnumdelegatedAdminAttributeAllowedMIMETypeProp) String() string {
-	return string(e)
-}
-
-func StringSliceEnumdelegatedAdminAttributeAllowedMIMETypeProp(values []EnumdelegatedAdminAttributeAllowedMIMETypeProp) []string {
-	stringSlice := make([]string, len(values))
-	for i := 0; i < len(values); i++ {
-		stringSlice[i] = string(values[i])
-	}
-	return stringSlice
-}
-
-func StringPointerEnumdelegatedAdminAttributeAllowedMIMETypeProp(value *EnumdelegatedAdminAttributeAllowedMIMETypeProp) *string {
-	if value == nil {
-		return nil
-	}
-	s := value.String()
-	return &s
-}
-
 func (e EnumdelegatedAdminAttributeAttributePresentationProp) String() string {
 	return string(e)
 }
@@ -3062,6 +3042,26 @@ func StringPointerEnumdelegatedAdminAttributeCategorySchemaUrn(value *Enumdelega
 	return &s
 }
 
+func (e EnumdelegatedAdminAttributeCertificateAllowedMIMETypeProp) String() string {
+	return string(e)
+}
+
+func StringSliceEnumdelegatedAdminAttributeCertificateAllowedMIMETypeProp(values []EnumdelegatedAdminAttributeCertificateAllowedMIMETypeProp) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumdelegatedAdminAttributeCertificateAllowedMIMETypeProp(value *EnumdelegatedAdminAttributeCertificateAllowedMIMETypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumdelegatedAdminAttributeMutabilityProp) String() string {
 	return string(e)
 }
@@ -3075,6 +3075,26 @@ func StringSliceEnumdelegatedAdminAttributeMutabilityProp(values []Enumdelegated
 }
 
 func StringPointerEnumdelegatedAdminAttributeMutabilityProp(value *EnumdelegatedAdminAttributeMutabilityProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
+func (e EnumdelegatedAdminAttributePhotoAllowedMIMETypeProp) String() string {
+	return string(e)
+}
+
+func StringSliceEnumdelegatedAdminAttributePhotoAllowedMIMETypeProp(values []EnumdelegatedAdminAttributePhotoAllowedMIMETypeProp) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumdelegatedAdminAttributePhotoAllowedMIMETypeProp(value *EnumdelegatedAdminAttributePhotoAllowedMIMETypeProp) *string {
 	if value == nil {
 		return nil
 	}
@@ -7042,11 +7062,11 @@ func StringPointerEnumlogFieldBehaviorDefaultBehaviorProp(value *EnumlogFieldBeh
 	return &s
 }
 
-func (e EnumlogFieldBehaviorOmitFieldProp) String() string {
+func (e EnumlogFieldBehaviorJsonFormattedAccessOmitFieldProp) String() string {
 	return string(e)
 }
 
-func StringSliceEnumlogFieldBehaviorOmitFieldProp(values []EnumlogFieldBehaviorOmitFieldProp) []string {
+func StringSliceEnumlogFieldBehaviorJsonFormattedAccessOmitFieldProp(values []EnumlogFieldBehaviorJsonFormattedAccessOmitFieldProp) []string {
 	stringSlice := make([]string, len(values))
 	for i := 0; i < len(values); i++ {
 		stringSlice[i] = string(values[i])
@@ -7054,7 +7074,7 @@ func StringSliceEnumlogFieldBehaviorOmitFieldProp(values []EnumlogFieldBehaviorO
 	return stringSlice
 }
 
-func StringPointerEnumlogFieldBehaviorOmitFieldProp(value *EnumlogFieldBehaviorOmitFieldProp) *string {
+func StringPointerEnumlogFieldBehaviorJsonFormattedAccessOmitFieldProp(value *EnumlogFieldBehaviorJsonFormattedAccessOmitFieldProp) *string {
 	if value == nil {
 		return nil
 	}
@@ -7062,11 +7082,11 @@ func StringPointerEnumlogFieldBehaviorOmitFieldProp(value *EnumlogFieldBehaviorO
 	return &s
 }
 
-func (e EnumlogFieldBehaviorPreserveFieldProp) String() string {
+func (e EnumlogFieldBehaviorJsonFormattedAccessPreserveFieldProp) String() string {
 	return string(e)
 }
 
-func StringSliceEnumlogFieldBehaviorPreserveFieldProp(values []EnumlogFieldBehaviorPreserveFieldProp) []string {
+func StringSliceEnumlogFieldBehaviorJsonFormattedAccessPreserveFieldProp(values []EnumlogFieldBehaviorJsonFormattedAccessPreserveFieldProp) []string {
 	stringSlice := make([]string, len(values))
 	for i := 0; i < len(values); i++ {
 		stringSlice[i] = string(values[i])
@@ -7074,7 +7094,7 @@ func StringSliceEnumlogFieldBehaviorPreserveFieldProp(values []EnumlogFieldBehav
 	return stringSlice
 }
 
-func StringPointerEnumlogFieldBehaviorPreserveFieldProp(value *EnumlogFieldBehaviorPreserveFieldProp) *string {
+func StringPointerEnumlogFieldBehaviorJsonFormattedAccessPreserveFieldProp(value *EnumlogFieldBehaviorJsonFormattedAccessPreserveFieldProp) *string {
 	if value == nil {
 		return nil
 	}
@@ -7082,11 +7102,11 @@ func StringPointerEnumlogFieldBehaviorPreserveFieldProp(value *EnumlogFieldBehav
 	return &s
 }
 
-func (e EnumlogFieldBehaviorRedactEntireValueFieldProp) String() string {
+func (e EnumlogFieldBehaviorJsonFormattedAccessRedactEntireValueFieldProp) String() string {
 	return string(e)
 }
 
-func StringSliceEnumlogFieldBehaviorRedactEntireValueFieldProp(values []EnumlogFieldBehaviorRedactEntireValueFieldProp) []string {
+func StringSliceEnumlogFieldBehaviorJsonFormattedAccessRedactEntireValueFieldProp(values []EnumlogFieldBehaviorJsonFormattedAccessRedactEntireValueFieldProp) []string {
 	stringSlice := make([]string, len(values))
 	for i := 0; i < len(values); i++ {
 		stringSlice[i] = string(values[i])
@@ -7094,7 +7114,7 @@ func StringSliceEnumlogFieldBehaviorRedactEntireValueFieldProp(values []EnumlogF
 	return stringSlice
 }
 
-func StringPointerEnumlogFieldBehaviorRedactEntireValueFieldProp(value *EnumlogFieldBehaviorRedactEntireValueFieldProp) *string {
+func StringPointerEnumlogFieldBehaviorJsonFormattedAccessRedactEntireValueFieldProp(value *EnumlogFieldBehaviorJsonFormattedAccessRedactEntireValueFieldProp) *string {
 	if value == nil {
 		return nil
 	}
@@ -7102,11 +7122,11 @@ func StringPointerEnumlogFieldBehaviorRedactEntireValueFieldProp(value *EnumlogF
 	return &s
 }
 
-func (e EnumlogFieldBehaviorRedactValueComponentsFieldProp) String() string {
+func (e EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp) String() string {
 	return string(e)
 }
 
-func StringSliceEnumlogFieldBehaviorRedactValueComponentsFieldProp(values []EnumlogFieldBehaviorRedactValueComponentsFieldProp) []string {
+func StringSliceEnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp(values []EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp) []string {
 	stringSlice := make([]string, len(values))
 	for i := 0; i < len(values); i++ {
 		stringSlice[i] = string(values[i])
@@ -7114,7 +7134,7 @@ func StringSliceEnumlogFieldBehaviorRedactValueComponentsFieldProp(values []Enum
 	return stringSlice
 }
 
-func StringPointerEnumlogFieldBehaviorRedactValueComponentsFieldProp(value *EnumlogFieldBehaviorRedactValueComponentsFieldProp) *string {
+func StringPointerEnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp(value *EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp) *string {
 	if value == nil {
 		return nil
 	}
@@ -7122,11 +7142,11 @@ func StringPointerEnumlogFieldBehaviorRedactValueComponentsFieldProp(value *Enum
 	return &s
 }
 
-func (e EnumlogFieldBehaviorTokenizeEntireValueFieldProp) String() string {
+func (e EnumlogFieldBehaviorJsonFormattedAccessTokenizeEntireValueFieldProp) String() string {
 	return string(e)
 }
 
-func StringSliceEnumlogFieldBehaviorTokenizeEntireValueFieldProp(values []EnumlogFieldBehaviorTokenizeEntireValueFieldProp) []string {
+func StringSliceEnumlogFieldBehaviorJsonFormattedAccessTokenizeEntireValueFieldProp(values []EnumlogFieldBehaviorJsonFormattedAccessTokenizeEntireValueFieldProp) []string {
 	stringSlice := make([]string, len(values))
 	for i := 0; i < len(values); i++ {
 		stringSlice[i] = string(values[i])
@@ -7134,7 +7154,7 @@ func StringSliceEnumlogFieldBehaviorTokenizeEntireValueFieldProp(values []Enumlo
 	return stringSlice
 }
 
-func StringPointerEnumlogFieldBehaviorTokenizeEntireValueFieldProp(value *EnumlogFieldBehaviorTokenizeEntireValueFieldProp) *string {
+func StringPointerEnumlogFieldBehaviorJsonFormattedAccessTokenizeEntireValueFieldProp(value *EnumlogFieldBehaviorJsonFormattedAccessTokenizeEntireValueFieldProp) *string {
 	if value == nil {
 		return nil
 	}
@@ -7142,11 +7162,11 @@ func StringPointerEnumlogFieldBehaviorTokenizeEntireValueFieldProp(value *Enumlo
 	return &s
 }
 
-func (e EnumlogFieldBehaviorTokenizeValueComponentsFieldProp) String() string {
+func (e EnumlogFieldBehaviorJsonFormattedAccessTokenizeValueComponentsFieldProp) String() string {
 	return string(e)
 }
 
-func StringSliceEnumlogFieldBehaviorTokenizeValueComponentsFieldProp(values []EnumlogFieldBehaviorTokenizeValueComponentsFieldProp) []string {
+func StringSliceEnumlogFieldBehaviorJsonFormattedAccessTokenizeValueComponentsFieldProp(values []EnumlogFieldBehaviorJsonFormattedAccessTokenizeValueComponentsFieldProp) []string {
 	stringSlice := make([]string, len(values))
 	for i := 0; i < len(values); i++ {
 		stringSlice[i] = string(values[i])
@@ -7154,7 +7174,127 @@ func StringSliceEnumlogFieldBehaviorTokenizeValueComponentsFieldProp(values []En
 	return stringSlice
 }
 
-func StringPointerEnumlogFieldBehaviorTokenizeValueComponentsFieldProp(value *EnumlogFieldBehaviorTokenizeValueComponentsFieldProp) *string {
+func StringPointerEnumlogFieldBehaviorJsonFormattedAccessTokenizeValueComponentsFieldProp(value *EnumlogFieldBehaviorJsonFormattedAccessTokenizeValueComponentsFieldProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
+func (e EnumlogFieldBehaviorTextAccessOmitFieldProp) String() string {
+	return string(e)
+}
+
+func StringSliceEnumlogFieldBehaviorTextAccessOmitFieldProp(values []EnumlogFieldBehaviorTextAccessOmitFieldProp) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumlogFieldBehaviorTextAccessOmitFieldProp(value *EnumlogFieldBehaviorTextAccessOmitFieldProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
+func (e EnumlogFieldBehaviorTextAccessPreserveFieldProp) String() string {
+	return string(e)
+}
+
+func StringSliceEnumlogFieldBehaviorTextAccessPreserveFieldProp(values []EnumlogFieldBehaviorTextAccessPreserveFieldProp) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumlogFieldBehaviorTextAccessPreserveFieldProp(value *EnumlogFieldBehaviorTextAccessPreserveFieldProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
+func (e EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp) String() string {
+	return string(e)
+}
+
+func StringSliceEnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp(values []EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp(value *EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
+func (e EnumlogFieldBehaviorTextAccessRedactValueComponentsFieldProp) String() string {
+	return string(e)
+}
+
+func StringSliceEnumlogFieldBehaviorTextAccessRedactValueComponentsFieldProp(values []EnumlogFieldBehaviorTextAccessRedactValueComponentsFieldProp) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumlogFieldBehaviorTextAccessRedactValueComponentsFieldProp(value *EnumlogFieldBehaviorTextAccessRedactValueComponentsFieldProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
+func (e EnumlogFieldBehaviorTextAccessTokenizeEntireValueFieldProp) String() string {
+	return string(e)
+}
+
+func StringSliceEnumlogFieldBehaviorTextAccessTokenizeEntireValueFieldProp(values []EnumlogFieldBehaviorTextAccessTokenizeEntireValueFieldProp) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumlogFieldBehaviorTextAccessTokenizeEntireValueFieldProp(value *EnumlogFieldBehaviorTextAccessTokenizeEntireValueFieldProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
+func (e EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp) String() string {
+	return string(e)
+}
+
+func StringSliceEnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp(values []EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp(value *EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp) *string {
 	if value == nil {
 		return nil
 	}
@@ -7235,6 +7375,26 @@ func StringSliceEnumlogPublisherConsentMessageTypeProp(values []EnumlogPublisher
 }
 
 func StringPointerEnumlogPublisherConsentMessageTypeProp(value *EnumlogPublisherConsentMessageTypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
+func (e EnumlogPublisherConsoleJsonAuditSoftDeleteEntryAuditBehaviorProp) String() string {
+	return string(e)
+}
+
+func StringSliceEnumlogPublisherConsoleJsonAuditSoftDeleteEntryAuditBehaviorProp(values []EnumlogPublisherConsoleJsonAuditSoftDeleteEntryAuditBehaviorProp) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumlogPublisherConsoleJsonAuditSoftDeleteEntryAuditBehaviorProp(value *EnumlogPublisherConsoleJsonAuditSoftDeleteEntryAuditBehaviorProp) *string {
 	if value == nil {
 		return nil
 	}
@@ -7355,6 +7515,46 @@ func StringSliceEnumlogPublisherExtensionMessageTypeProp(values []EnumlogPublish
 }
 
 func StringPointerEnumlogPublisherExtensionMessageTypeProp(value *EnumlogPublisherExtensionMessageTypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
+func (e EnumlogPublisherFileBasedAuditSoftDeleteEntryAuditBehaviorProp) String() string {
+	return string(e)
+}
+
+func StringSliceEnumlogPublisherFileBasedAuditSoftDeleteEntryAuditBehaviorProp(values []EnumlogPublisherFileBasedAuditSoftDeleteEntryAuditBehaviorProp) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumlogPublisherFileBasedAuditSoftDeleteEntryAuditBehaviorProp(value *EnumlogPublisherFileBasedAuditSoftDeleteEntryAuditBehaviorProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
+func (e EnumlogPublisherFileBasedJsonAuditSoftDeleteEntryAuditBehaviorProp) String() string {
+	return string(e)
+}
+
+func StringSliceEnumlogPublisherFileBasedJsonAuditSoftDeleteEntryAuditBehaviorProp(values []EnumlogPublisherFileBasedJsonAuditSoftDeleteEntryAuditBehaviorProp) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumlogPublisherFileBasedJsonAuditSoftDeleteEntryAuditBehaviorProp(value *EnumlogPublisherFileBasedJsonAuditSoftDeleteEntryAuditBehaviorProp) *string {
 	if value == nil {
 		return nil
 	}
@@ -7522,26 +7722,6 @@ func StringPointerEnumlogPublisherScimMessageTypeProp(value *EnumlogPublisherSci
 	return &s
 }
 
-func (e EnumlogPublisherSoftDeleteEntryAuditBehaviorProp) String() string {
-	return string(e)
-}
-
-func StringSliceEnumlogPublisherSoftDeleteEntryAuditBehaviorProp(values []EnumlogPublisherSoftDeleteEntryAuditBehaviorProp) []string {
-	stringSlice := make([]string, len(values))
-	for i := 0; i < len(values); i++ {
-		stringSlice[i] = string(values[i])
-	}
-	return stringSlice
-}
-
-func StringPointerEnumlogPublisherSoftDeleteEntryAuditBehaviorProp(value *EnumlogPublisherSoftDeleteEntryAuditBehaviorProp) *string {
-	if value == nil {
-		return nil
-	}
-	s := value.String()
-	return &s
-}
-
 func (e EnumlogPublisherSyslogFacilityProp) String() string {
 	return string(e)
 }
@@ -7555,6 +7735,26 @@ func StringSliceEnumlogPublisherSyslogFacilityProp(values []EnumlogPublisherSysl
 }
 
 func StringPointerEnumlogPublisherSyslogFacilityProp(value *EnumlogPublisherSyslogFacilityProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
+func (e EnumlogPublisherSyslogJsonAuditSoftDeleteEntryAuditBehaviorProp) String() string {
+	return string(e)
+}
+
+func StringSliceEnumlogPublisherSyslogJsonAuditSoftDeleteEntryAuditBehaviorProp(values []EnumlogPublisherSyslogJsonAuditSoftDeleteEntryAuditBehaviorProp) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumlogPublisherSyslogJsonAuditSoftDeleteEntryAuditBehaviorProp(value *EnumlogPublisherSyslogJsonAuditSoftDeleteEntryAuditBehaviorProp) *string {
 	if value == nil {
 		return nil
 	}
@@ -9382,11 +9582,11 @@ func StringPointerEnumpluginOperationTypeProp(value *EnumpluginOperationTypeProp
 	return &s
 }
 
-func (e EnumpluginPerApplicationLDAPStatsProp) String() string {
+func (e EnumpluginPeriodicStatsLoggerPerApplicationLDAPStatsProp) String() string {
 	return string(e)
 }
 
-func StringSliceEnumpluginPerApplicationLDAPStatsProp(values []EnumpluginPerApplicationLDAPStatsProp) []string {
+func StringSliceEnumpluginPeriodicStatsLoggerPerApplicationLDAPStatsProp(values []EnumpluginPeriodicStatsLoggerPerApplicationLDAPStatsProp) []string {
 	stringSlice := make([]string, len(values))
 	for i := 0; i < len(values); i++ {
 		stringSlice[i] = string(values[i])
@@ -9394,7 +9594,7 @@ func StringSliceEnumpluginPerApplicationLDAPStatsProp(values []EnumpluginPerAppl
 	return stringSlice
 }
 
-func StringPointerEnumpluginPerApplicationLDAPStatsProp(value *EnumpluginPerApplicationLDAPStatsProp) *string {
+func StringPointerEnumpluginPeriodicStatsLoggerPerApplicationLDAPStatsProp(value *EnumpluginPeriodicStatsLoggerPerApplicationLDAPStatsProp) *string {
 	if value == nil {
 		return nil
 	}
@@ -9575,6 +9775,26 @@ func StringSliceEnumpluginSourceAttributeRemovalBehaviorProp(values []Enumplugin
 }
 
 func StringPointerEnumpluginSourceAttributeRemovalBehaviorProp(value *EnumpluginSourceAttributeRemovalBehaviorProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
+func (e EnumpluginStatsCollectorPerApplicationLDAPStatsProp) String() string {
+	return string(e)
+}
+
+func StringSliceEnumpluginStatsCollectorPerApplicationLDAPStatsProp(values []EnumpluginStatsCollectorPerApplicationLDAPStatsProp) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumpluginStatsCollectorPerApplicationLDAPStatsProp(value *EnumpluginStatsCollectorPerApplicationLDAPStatsProp) *string {
 	if value == nil {
 		return nil
 	}
@@ -10402,11 +10622,11 @@ func StringPointerEnumrequestCriteriaOperationOriginProp(value *EnumrequestCrite
 	return &s
 }
 
-func (e EnumrequestCriteriaOperationTypeProp) String() string {
+func (e EnumrequestCriteriaRootDseOperationTypeProp) String() string {
 	return string(e)
 }
 
-func StringSliceEnumrequestCriteriaOperationTypeProp(values []EnumrequestCriteriaOperationTypeProp) []string {
+func StringSliceEnumrequestCriteriaRootDseOperationTypeProp(values []EnumrequestCriteriaRootDseOperationTypeProp) []string {
 	stringSlice := make([]string, len(values))
 	for i := 0; i < len(values); i++ {
 		stringSlice[i] = string(values[i])
@@ -10414,7 +10634,27 @@ func StringSliceEnumrequestCriteriaOperationTypeProp(values []EnumrequestCriteri
 	return stringSlice
 }
 
-func StringPointerEnumrequestCriteriaOperationTypeProp(value *EnumrequestCriteriaOperationTypeProp) *string {
+func StringPointerEnumrequestCriteriaRootDseOperationTypeProp(value *EnumrequestCriteriaRootDseOperationTypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
+func (e EnumrequestCriteriaSimpleOperationTypeProp) String() string {
+	return string(e)
+}
+
+func StringSliceEnumrequestCriteriaSimpleOperationTypeProp(values []EnumrequestCriteriaSimpleOperationTypeProp) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumrequestCriteriaSimpleOperationTypeProp(value *EnumrequestCriteriaSimpleOperationTypeProp) *string {
 	if value == nil {
 		return nil
 	}
@@ -11622,11 +11862,11 @@ func StringPointerEnumserverGroupSchemaUrn(value *EnumserverGroupSchemaUrn) *str
 	return &s
 }
 
-func (e EnumserverInstanceListenerConnectionSecurityProp) String() string {
+func (e EnumserverInstanceListenerHttpConnectionSecurityProp) String() string {
 	return string(e)
 }
 
-func StringSliceEnumserverInstanceListenerConnectionSecurityProp(values []EnumserverInstanceListenerConnectionSecurityProp) []string {
+func StringSliceEnumserverInstanceListenerHttpConnectionSecurityProp(values []EnumserverInstanceListenerHttpConnectionSecurityProp) []string {
 	stringSlice := make([]string, len(values))
 	for i := 0; i < len(values); i++ {
 		stringSlice[i] = string(values[i])
@@ -11634,7 +11874,27 @@ func StringSliceEnumserverInstanceListenerConnectionSecurityProp(values []Enumse
 	return stringSlice
 }
 
-func StringPointerEnumserverInstanceListenerConnectionSecurityProp(value *EnumserverInstanceListenerConnectionSecurityProp) *string {
+func StringPointerEnumserverInstanceListenerHttpConnectionSecurityProp(value *EnumserverInstanceListenerHttpConnectionSecurityProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
+func (e EnumserverInstanceListenerLdapConnectionSecurityProp) String() string {
+	return string(e)
+}
+
+func StringSliceEnumserverInstanceListenerLdapConnectionSecurityProp(values []EnumserverInstanceListenerLdapConnectionSecurityProp) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumserverInstanceListenerLdapConnectionSecurityProp(value *EnumserverInstanceListenerLdapConnectionSecurityProp) *string {
 	if value == nil {
 		return nil
 	}

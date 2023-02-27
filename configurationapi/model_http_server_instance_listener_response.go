@@ -27,9 +27,9 @@ type HttpServerInstanceListenerResponse struct {
 	// If the server is listening on a particular address different from the hostname, then this property may be used to specify the address on which to listen for connections from HTTP clients.
 	ListenAddress *string `json:"listenAddress,omitempty"`
 	// The TCP port number on which the HTTP server is listening.
-	ServerHTTPPort     *int32                                            `json:"serverHTTPPort,omitempty"`
-	ConnectionSecurity *EnumserverInstanceListenerConnectionSecurityProp `json:"connectionSecurity,omitempty"`
-	Purpose            []EnumserverInstanceListenerPurposeProp           `json:"purpose,omitempty"`
+	ServerHTTPPort     *int32                                                `json:"serverHTTPPort,omitempty"`
+	ConnectionSecurity *EnumserverInstanceListenerHttpConnectionSecurityProp `json:"connectionSecurity,omitempty"`
+	Purpose            []EnumserverInstanceListenerPurposeProp               `json:"purpose,omitempty"`
 }
 
 // NewHttpServerInstanceListenerResponse instantiates a new HttpServerInstanceListenerResponse object
@@ -228,9 +228,9 @@ func (o *HttpServerInstanceListenerResponse) SetServerHTTPPort(v int32) {
 }
 
 // GetConnectionSecurity returns the ConnectionSecurity field value if set, zero value otherwise.
-func (o *HttpServerInstanceListenerResponse) GetConnectionSecurity() EnumserverInstanceListenerConnectionSecurityProp {
+func (o *HttpServerInstanceListenerResponse) GetConnectionSecurity() EnumserverInstanceListenerHttpConnectionSecurityProp {
 	if o == nil || IsNil(o.ConnectionSecurity) {
-		var ret EnumserverInstanceListenerConnectionSecurityProp
+		var ret EnumserverInstanceListenerHttpConnectionSecurityProp
 		return ret
 	}
 	return *o.ConnectionSecurity
@@ -238,7 +238,7 @@ func (o *HttpServerInstanceListenerResponse) GetConnectionSecurity() EnumserverI
 
 // GetConnectionSecurityOk returns a tuple with the ConnectionSecurity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HttpServerInstanceListenerResponse) GetConnectionSecurityOk() (*EnumserverInstanceListenerConnectionSecurityProp, bool) {
+func (o *HttpServerInstanceListenerResponse) GetConnectionSecurityOk() (*EnumserverInstanceListenerHttpConnectionSecurityProp, bool) {
 	if o == nil || IsNil(o.ConnectionSecurity) {
 		return nil, false
 	}
@@ -254,8 +254,8 @@ func (o *HttpServerInstanceListenerResponse) HasConnectionSecurity() bool {
 	return false
 }
 
-// SetConnectionSecurity gets a reference to the given EnumserverInstanceListenerConnectionSecurityProp and assigns it to the ConnectionSecurity field.
-func (o *HttpServerInstanceListenerResponse) SetConnectionSecurity(v EnumserverInstanceListenerConnectionSecurityProp) {
+// SetConnectionSecurity gets a reference to the given EnumserverInstanceListenerHttpConnectionSecurityProp and assigns it to the ConnectionSecurity field.
+func (o *HttpServerInstanceListenerResponse) SetConnectionSecurity(v EnumserverInstanceListenerHttpConnectionSecurityProp) {
 	o.ConnectionSecurity = &v
 }
 

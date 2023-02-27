@@ -20,9 +20,9 @@ var _ MappedNullable = &AddCertificateDelegatedAdminAttributeRequest{}
 // AddCertificateDelegatedAdminAttributeRequest struct for AddCertificateDelegatedAdminAttributeRequest
 type AddCertificateDelegatedAdminAttributeRequest struct {
 	// Specifies the name or OID of the LDAP attribute type.
-	AttributeType   string                                            `json:"attributeType"`
-	Schemas         []EnumcertificateDelegatedAdminAttributeSchemaUrn `json:"schemas"`
-	AllowedMIMEType []EnumdelegatedAdminAttributeAllowedMIMETypeProp  `json:"allowedMIMEType,omitempty"`
+	AttributeType   string                                                      `json:"attributeType"`
+	Schemas         []EnumcertificateDelegatedAdminAttributeSchemaUrn           `json:"schemas"`
+	AllowedMIMEType []EnumdelegatedAdminAttributeCertificateAllowedMIMETypeProp `json:"allowedMIMEType,omitempty"`
 	// A description for this Delegated Admin Attribute
 	Description *string `json:"description,omitempty"`
 	// A human readable display name for this Delegated Admin Attribute.
@@ -110,9 +110,9 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) SetSchemas(v []Enumcertif
 }
 
 // GetAllowedMIMEType returns the AllowedMIMEType field value if set, zero value otherwise.
-func (o *AddCertificateDelegatedAdminAttributeRequest) GetAllowedMIMEType() []EnumdelegatedAdminAttributeAllowedMIMETypeProp {
+func (o *AddCertificateDelegatedAdminAttributeRequest) GetAllowedMIMEType() []EnumdelegatedAdminAttributeCertificateAllowedMIMETypeProp {
 	if o == nil || IsNil(o.AllowedMIMEType) {
-		var ret []EnumdelegatedAdminAttributeAllowedMIMETypeProp
+		var ret []EnumdelegatedAdminAttributeCertificateAllowedMIMETypeProp
 		return ret
 	}
 	return o.AllowedMIMEType
@@ -120,7 +120,7 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) GetAllowedMIMEType() []En
 
 // GetAllowedMIMETypeOk returns a tuple with the AllowedMIMEType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCertificateDelegatedAdminAttributeRequest) GetAllowedMIMETypeOk() ([]EnumdelegatedAdminAttributeAllowedMIMETypeProp, bool) {
+func (o *AddCertificateDelegatedAdminAttributeRequest) GetAllowedMIMETypeOk() ([]EnumdelegatedAdminAttributeCertificateAllowedMIMETypeProp, bool) {
 	if o == nil || IsNil(o.AllowedMIMEType) {
 		return nil, false
 	}
@@ -136,8 +136,8 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) HasAllowedMIMEType() bool
 	return false
 }
 
-// SetAllowedMIMEType gets a reference to the given []EnumdelegatedAdminAttributeAllowedMIMETypeProp and assigns it to the AllowedMIMEType field.
-func (o *AddCertificateDelegatedAdminAttributeRequest) SetAllowedMIMEType(v []EnumdelegatedAdminAttributeAllowedMIMETypeProp) {
+// SetAllowedMIMEType gets a reference to the given []EnumdelegatedAdminAttributeCertificateAllowedMIMETypeProp and assigns it to the AllowedMIMEType field.
+func (o *AddCertificateDelegatedAdminAttributeRequest) SetAllowedMIMEType(v []EnumdelegatedAdminAttributeCertificateAllowedMIMETypeProp) {
 	o.AllowedMIMEType = v
 }
 

@@ -22,9 +22,9 @@ type PhotoDelegatedAdminAttributeResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Delegated Admin Attribute
-	Id              string                                           `json:"id"`
-	Schemas         []EnumphotoDelegatedAdminAttributeSchemaUrn      `json:"schemas"`
-	AllowedMIMEType []EnumdelegatedAdminAttributeAllowedMIMETypeProp `json:"allowedMIMEType,omitempty"`
+	Id              string                                                `json:"id"`
+	Schemas         []EnumphotoDelegatedAdminAttributeSchemaUrn           `json:"schemas"`
+	AllowedMIMEType []EnumdelegatedAdminAttributePhotoAllowedMIMETypeProp `json:"allowedMIMEType,omitempty"`
 	// A description for this Delegated Admin Attribute
 	Description *string `json:"description,omitempty"`
 	// Specifies the name or OID of the LDAP attribute type.
@@ -182,9 +182,9 @@ func (o *PhotoDelegatedAdminAttributeResponse) SetSchemas(v []EnumphotoDelegated
 }
 
 // GetAllowedMIMEType returns the AllowedMIMEType field value if set, zero value otherwise.
-func (o *PhotoDelegatedAdminAttributeResponse) GetAllowedMIMEType() []EnumdelegatedAdminAttributeAllowedMIMETypeProp {
+func (o *PhotoDelegatedAdminAttributeResponse) GetAllowedMIMEType() []EnumdelegatedAdminAttributePhotoAllowedMIMETypeProp {
 	if o == nil || IsNil(o.AllowedMIMEType) {
-		var ret []EnumdelegatedAdminAttributeAllowedMIMETypeProp
+		var ret []EnumdelegatedAdminAttributePhotoAllowedMIMETypeProp
 		return ret
 	}
 	return o.AllowedMIMEType
@@ -192,7 +192,7 @@ func (o *PhotoDelegatedAdminAttributeResponse) GetAllowedMIMEType() []Enumdelega
 
 // GetAllowedMIMETypeOk returns a tuple with the AllowedMIMEType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PhotoDelegatedAdminAttributeResponse) GetAllowedMIMETypeOk() ([]EnumdelegatedAdminAttributeAllowedMIMETypeProp, bool) {
+func (o *PhotoDelegatedAdminAttributeResponse) GetAllowedMIMETypeOk() ([]EnumdelegatedAdminAttributePhotoAllowedMIMETypeProp, bool) {
 	if o == nil || IsNil(o.AllowedMIMEType) {
 		return nil, false
 	}
@@ -208,8 +208,8 @@ func (o *PhotoDelegatedAdminAttributeResponse) HasAllowedMIMEType() bool {
 	return false
 }
 
-// SetAllowedMIMEType gets a reference to the given []EnumdelegatedAdminAttributeAllowedMIMETypeProp and assigns it to the AllowedMIMEType field.
-func (o *PhotoDelegatedAdminAttributeResponse) SetAllowedMIMEType(v []EnumdelegatedAdminAttributeAllowedMIMETypeProp) {
+// SetAllowedMIMEType gets a reference to the given []EnumdelegatedAdminAttributePhotoAllowedMIMETypeProp and assigns it to the AllowedMIMEType field.
+func (o *PhotoDelegatedAdminAttributeResponse) SetAllowedMIMEType(v []EnumdelegatedAdminAttributePhotoAllowedMIMETypeProp) {
 	o.AllowedMIMEType = v
 }
 

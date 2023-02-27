@@ -186,7 +186,7 @@ components:
         operationType:
           type: array
           items:
-            $ref: '#/components/schemas/Enumrequest-criteria-operationTypeProp'
+            $ref: '#/components/schemas/Enumrequest-criteria-root-dse-operationTypeProp'
         description:
           type: string
           description: >-
@@ -230,7 +230,7 @@ components:
         operationType:
           type: array
           items:
-            $ref: '#/components/schemas/Enumrequest-criteria-operationTypeProp'
+            $ref: '#/components/schemas/Enumrequest-criteria-simple-operationTypeProp'
         operationOrigin:
           type: array
           items:
@@ -506,7 +506,7 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:request-criteria:third-party"
-    Enumrequest-criteria-operationTypeProp:
+    Enumrequest-criteria-root-dse-operationTypeProp:
       type: string
       enum:
       - "compare"
@@ -524,6 +524,21 @@ components:
       - "any"
       description: >-
           Indicates whether operations being processed using a dedicated administrative session worker thread should be included in this Simple Request Criteria.
+    Enumrequest-criteria-simple-operationTypeProp:
+      type: string
+      enum:
+      - "abandon"
+      - "add"
+      - "bind"
+      - "compare"
+      - "delete"
+      - "extended"
+      - "modify"
+      - "modify-dn"
+      - "search"
+      - "unbind"
+      description: >-
+          Specifies the operation type(s) for operations that should be included in this Simple Request Criteria.
     Enumrequest-criteria-includedSearchScopeProp:
       type: string
       enum:

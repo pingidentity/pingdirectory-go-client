@@ -22,10 +22,10 @@ type SimpleRequestCriteriaResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Request Criteria
-	Id              string                                   `json:"id"`
-	Schemas         []EnumsimpleRequestCriteriaSchemaUrn     `json:"schemas"`
-	OperationType   []EnumrequestCriteriaOperationTypeProp   `json:"operationType,omitempty"`
-	OperationOrigin []EnumrequestCriteriaOperationOriginProp `json:"operationOrigin,omitempty"`
+	Id              string                                       `json:"id"`
+	Schemas         []EnumsimpleRequestCriteriaSchemaUrn         `json:"schemas"`
+	OperationType   []EnumrequestCriteriaSimpleOperationTypeProp `json:"operationType,omitempty"`
+	OperationOrigin []EnumrequestCriteriaOperationOriginProp     `json:"operationOrigin,omitempty"`
 	// Specifies a connection criteria object that must match the associated client connection for operations included in this Simple Request Criteria.
 	ConnectionCriteria *string `json:"connectionCriteria,omitempty"`
 	// Specifies the OID of a control that must be present in the request from the client for operations included in this Simple Request Criteria. If any control OIDs are provided, then the request must contain all of those controls.
@@ -211,9 +211,9 @@ func (o *SimpleRequestCriteriaResponse) SetSchemas(v []EnumsimpleRequestCriteria
 }
 
 // GetOperationType returns the OperationType field value if set, zero value otherwise.
-func (o *SimpleRequestCriteriaResponse) GetOperationType() []EnumrequestCriteriaOperationTypeProp {
+func (o *SimpleRequestCriteriaResponse) GetOperationType() []EnumrequestCriteriaSimpleOperationTypeProp {
 	if o == nil || IsNil(o.OperationType) {
-		var ret []EnumrequestCriteriaOperationTypeProp
+		var ret []EnumrequestCriteriaSimpleOperationTypeProp
 		return ret
 	}
 	return o.OperationType
@@ -221,7 +221,7 @@ func (o *SimpleRequestCriteriaResponse) GetOperationType() []EnumrequestCriteria
 
 // GetOperationTypeOk returns a tuple with the OperationType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SimpleRequestCriteriaResponse) GetOperationTypeOk() ([]EnumrequestCriteriaOperationTypeProp, bool) {
+func (o *SimpleRequestCriteriaResponse) GetOperationTypeOk() ([]EnumrequestCriteriaSimpleOperationTypeProp, bool) {
 	if o == nil || IsNil(o.OperationType) {
 		return nil, false
 	}
@@ -237,8 +237,8 @@ func (o *SimpleRequestCriteriaResponse) HasOperationType() bool {
 	return false
 }
 
-// SetOperationType gets a reference to the given []EnumrequestCriteriaOperationTypeProp and assigns it to the OperationType field.
-func (o *SimpleRequestCriteriaResponse) SetOperationType(v []EnumrequestCriteriaOperationTypeProp) {
+// SetOperationType gets a reference to the given []EnumrequestCriteriaSimpleOperationTypeProp and assigns it to the OperationType field.
+func (o *SimpleRequestCriteriaResponse) SetOperationType(v []EnumrequestCriteriaSimpleOperationTypeProp) {
 	o.OperationType = v
 }
 

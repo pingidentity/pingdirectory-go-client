@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AttributeType** | **string** | Specifies the name or OID of the LDAP attribute type. | 
 **Schemas** | [**[]EnumphotoDelegatedAdminAttributeSchemaUrn**](EnumphotoDelegatedAdminAttributeSchemaUrn.md) |  | 
-**AllowedMIMEType** | Pointer to [**[]EnumdelegatedAdminAttributeAllowedMIMETypeProp**](EnumdelegatedAdminAttributeAllowedMIMETypeProp.md) |  | [optional] 
+**AllowedMIMEType** | Pointer to [**[]EnumdelegatedAdminAttributePhotoAllowedMIMETypeProp**](EnumdelegatedAdminAttributePhotoAllowedMIMETypeProp.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Delegated Admin Attribute | [optional] 
 **DisplayName** | **string** | A human readable display name for this Delegated Admin Attribute. | 
 **Mutability** | Pointer to [**EnumdelegatedAdminAttributeMutabilityProp**](EnumdelegatedAdminAttributeMutabilityProp.md) |  | [optional] 
@@ -78,20 +78,20 @@ SetSchemas sets Schemas field to given value.
 
 ### GetAllowedMIMEType
 
-`func (o *AddPhotoDelegatedAdminAttributeRequest) GetAllowedMIMEType() []EnumdelegatedAdminAttributeAllowedMIMETypeProp`
+`func (o *AddPhotoDelegatedAdminAttributeRequest) GetAllowedMIMEType() []EnumdelegatedAdminAttributePhotoAllowedMIMETypeProp`
 
 GetAllowedMIMEType returns the AllowedMIMEType field if non-nil, zero value otherwise.
 
 ### GetAllowedMIMETypeOk
 
-`func (o *AddPhotoDelegatedAdminAttributeRequest) GetAllowedMIMETypeOk() (*[]EnumdelegatedAdminAttributeAllowedMIMETypeProp, bool)`
+`func (o *AddPhotoDelegatedAdminAttributeRequest) GetAllowedMIMETypeOk() (*[]EnumdelegatedAdminAttributePhotoAllowedMIMETypeProp, bool)`
 
 GetAllowedMIMETypeOk returns a tuple with the AllowedMIMEType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowedMIMEType
 
-`func (o *AddPhotoDelegatedAdminAttributeRequest) SetAllowedMIMEType(v []EnumdelegatedAdminAttributeAllowedMIMETypeProp)`
+`func (o *AddPhotoDelegatedAdminAttributeRequest) SetAllowedMIMEType(v []EnumdelegatedAdminAttributePhotoAllowedMIMETypeProp)`
 
 SetAllowedMIMEType sets AllowedMIMEType field to given value.
 

@@ -6,17 +6,17 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BehaviorName** | **string** | Name of the new Log Field Behavior | 
 **Schemas** | [**[]EnumtextAccessLogFieldBehaviorSchemaUrn**](EnumtextAccessLogFieldBehaviorSchemaUrn.md) |  | 
-**PreserveField** | Pointer to [**[]EnumlogFieldBehaviorPreserveFieldProp**](EnumlogFieldBehaviorPreserveFieldProp.md) |  | [optional] 
+**PreserveField** | Pointer to [**[]EnumlogFieldBehaviorTextAccessPreserveFieldProp**](EnumlogFieldBehaviorTextAccessPreserveFieldProp.md) |  | [optional] 
 **PreserveFieldName** | Pointer to **[]string** | The names of any custom fields whose values should be preserved. This should generally only be used for fields that are not available through the preserve-field property (for example, custom log fields defined in Server SDK extensions). | [optional] 
-**OmitField** | Pointer to [**[]EnumlogFieldBehaviorOmitFieldProp**](EnumlogFieldBehaviorOmitFieldProp.md) |  | [optional] 
+**OmitField** | Pointer to [**[]EnumlogFieldBehaviorTextAccessOmitFieldProp**](EnumlogFieldBehaviorTextAccessOmitFieldProp.md) |  | [optional] 
 **OmitFieldName** | Pointer to **[]string** | The names of any custom fields that should be omitted from log messages. This should generally only be used for fields that are not available through the omit-field property (for example, custom log fields defined in Server SDK extensions). | [optional] 
-**RedactEntireValueField** | Pointer to [**[]EnumlogFieldBehaviorRedactEntireValueFieldProp**](EnumlogFieldBehaviorRedactEntireValueFieldProp.md) |  | [optional] 
+**RedactEntireValueField** | Pointer to [**[]EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp**](EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp.md) |  | [optional] 
 **RedactEntireValueFieldName** | Pointer to **[]string** | The names of any custom fields whose values should be completely redacted. This should generally only be used for fields that are not available through the redact-entire-value-field property (for example, custom log fields defined in Server SDK extensions). | [optional] 
-**RedactValueComponentsField** | Pointer to [**[]EnumlogFieldBehaviorRedactValueComponentsFieldProp**](EnumlogFieldBehaviorRedactValueComponentsFieldProp.md) |  | [optional] 
+**RedactValueComponentsField** | Pointer to [**[]EnumlogFieldBehaviorTextAccessRedactValueComponentsFieldProp**](EnumlogFieldBehaviorTextAccessRedactValueComponentsFieldProp.md) |  | [optional] 
 **RedactValueComponentsFieldName** | Pointer to **[]string** | The names of any custom fields for which to redact components within the value. This should generally only be used for fields that are not available through the redact-value-components-field property (for example, custom log fields defined in Server SDK extensions). | [optional] 
-**TokenizeEntireValueField** | Pointer to [**[]EnumlogFieldBehaviorTokenizeEntireValueFieldProp**](EnumlogFieldBehaviorTokenizeEntireValueFieldProp.md) |  | [optional] 
+**TokenizeEntireValueField** | Pointer to [**[]EnumlogFieldBehaviorTextAccessTokenizeEntireValueFieldProp**](EnumlogFieldBehaviorTextAccessTokenizeEntireValueFieldProp.md) |  | [optional] 
 **TokenizeEntireValueFieldName** | Pointer to **[]string** | The names of any custom fields whose values should be completely tokenized. This should generally only be used for fields that are not available through the tokenize-entire-value-field property (for example, custom log fields defined in Server SDK extensions). | [optional] 
-**TokenizeValueComponentsField** | Pointer to [**[]EnumlogFieldBehaviorTokenizeValueComponentsFieldProp**](EnumlogFieldBehaviorTokenizeValueComponentsFieldProp.md) |  | [optional] 
+**TokenizeValueComponentsField** | Pointer to [**[]EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp**](EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp.md) |  | [optional] 
 **TokenizeValueComponentsFieldName** | Pointer to **[]string** | The names of any custom fields for which to tokenize components within the value. This should generally only be used for fields that are not available through the tokenize-value-components-field property (for example, custom log fields defined in Server SDK extensions). | [optional] 
 **Description** | Pointer to **string** | A description for this Log Field Behavior | [optional] 
 **DefaultBehavior** | Pointer to [**EnumlogFieldBehaviorDefaultBehaviorProp**](EnumlogFieldBehaviorDefaultBehaviorProp.md) |  | [optional] 
@@ -82,20 +82,20 @@ SetSchemas sets Schemas field to given value.
 
 ### GetPreserveField
 
-`func (o *AddTextAccessLogFieldBehaviorRequest) GetPreserveField() []EnumlogFieldBehaviorPreserveFieldProp`
+`func (o *AddTextAccessLogFieldBehaviorRequest) GetPreserveField() []EnumlogFieldBehaviorTextAccessPreserveFieldProp`
 
 GetPreserveField returns the PreserveField field if non-nil, zero value otherwise.
 
 ### GetPreserveFieldOk
 
-`func (o *AddTextAccessLogFieldBehaviorRequest) GetPreserveFieldOk() (*[]EnumlogFieldBehaviorPreserveFieldProp, bool)`
+`func (o *AddTextAccessLogFieldBehaviorRequest) GetPreserveFieldOk() (*[]EnumlogFieldBehaviorTextAccessPreserveFieldProp, bool)`
 
 GetPreserveFieldOk returns a tuple with the PreserveField field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPreserveField
 
-`func (o *AddTextAccessLogFieldBehaviorRequest) SetPreserveField(v []EnumlogFieldBehaviorPreserveFieldProp)`
+`func (o *AddTextAccessLogFieldBehaviorRequest) SetPreserveField(v []EnumlogFieldBehaviorTextAccessPreserveFieldProp)`
 
 SetPreserveField sets PreserveField field to given value.
 
@@ -132,20 +132,20 @@ HasPreserveFieldName returns a boolean if a field has been set.
 
 ### GetOmitField
 
-`func (o *AddTextAccessLogFieldBehaviorRequest) GetOmitField() []EnumlogFieldBehaviorOmitFieldProp`
+`func (o *AddTextAccessLogFieldBehaviorRequest) GetOmitField() []EnumlogFieldBehaviorTextAccessOmitFieldProp`
 
 GetOmitField returns the OmitField field if non-nil, zero value otherwise.
 
 ### GetOmitFieldOk
 
-`func (o *AddTextAccessLogFieldBehaviorRequest) GetOmitFieldOk() (*[]EnumlogFieldBehaviorOmitFieldProp, bool)`
+`func (o *AddTextAccessLogFieldBehaviorRequest) GetOmitFieldOk() (*[]EnumlogFieldBehaviorTextAccessOmitFieldProp, bool)`
 
 GetOmitFieldOk returns a tuple with the OmitField field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOmitField
 
-`func (o *AddTextAccessLogFieldBehaviorRequest) SetOmitField(v []EnumlogFieldBehaviorOmitFieldProp)`
+`func (o *AddTextAccessLogFieldBehaviorRequest) SetOmitField(v []EnumlogFieldBehaviorTextAccessOmitFieldProp)`
 
 SetOmitField sets OmitField field to given value.
 
@@ -182,20 +182,20 @@ HasOmitFieldName returns a boolean if a field has been set.
 
 ### GetRedactEntireValueField
 
-`func (o *AddTextAccessLogFieldBehaviorRequest) GetRedactEntireValueField() []EnumlogFieldBehaviorRedactEntireValueFieldProp`
+`func (o *AddTextAccessLogFieldBehaviorRequest) GetRedactEntireValueField() []EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp`
 
 GetRedactEntireValueField returns the RedactEntireValueField field if non-nil, zero value otherwise.
 
 ### GetRedactEntireValueFieldOk
 
-`func (o *AddTextAccessLogFieldBehaviorRequest) GetRedactEntireValueFieldOk() (*[]EnumlogFieldBehaviorRedactEntireValueFieldProp, bool)`
+`func (o *AddTextAccessLogFieldBehaviorRequest) GetRedactEntireValueFieldOk() (*[]EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp, bool)`
 
 GetRedactEntireValueFieldOk returns a tuple with the RedactEntireValueField field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRedactEntireValueField
 
-`func (o *AddTextAccessLogFieldBehaviorRequest) SetRedactEntireValueField(v []EnumlogFieldBehaviorRedactEntireValueFieldProp)`
+`func (o *AddTextAccessLogFieldBehaviorRequest) SetRedactEntireValueField(v []EnumlogFieldBehaviorTextAccessRedactEntireValueFieldProp)`
 
 SetRedactEntireValueField sets RedactEntireValueField field to given value.
 
@@ -232,20 +232,20 @@ HasRedactEntireValueFieldName returns a boolean if a field has been set.
 
 ### GetRedactValueComponentsField
 
-`func (o *AddTextAccessLogFieldBehaviorRequest) GetRedactValueComponentsField() []EnumlogFieldBehaviorRedactValueComponentsFieldProp`
+`func (o *AddTextAccessLogFieldBehaviorRequest) GetRedactValueComponentsField() []EnumlogFieldBehaviorTextAccessRedactValueComponentsFieldProp`
 
 GetRedactValueComponentsField returns the RedactValueComponentsField field if non-nil, zero value otherwise.
 
 ### GetRedactValueComponentsFieldOk
 
-`func (o *AddTextAccessLogFieldBehaviorRequest) GetRedactValueComponentsFieldOk() (*[]EnumlogFieldBehaviorRedactValueComponentsFieldProp, bool)`
+`func (o *AddTextAccessLogFieldBehaviorRequest) GetRedactValueComponentsFieldOk() (*[]EnumlogFieldBehaviorTextAccessRedactValueComponentsFieldProp, bool)`
 
 GetRedactValueComponentsFieldOk returns a tuple with the RedactValueComponentsField field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRedactValueComponentsField
 
-`func (o *AddTextAccessLogFieldBehaviorRequest) SetRedactValueComponentsField(v []EnumlogFieldBehaviorRedactValueComponentsFieldProp)`
+`func (o *AddTextAccessLogFieldBehaviorRequest) SetRedactValueComponentsField(v []EnumlogFieldBehaviorTextAccessRedactValueComponentsFieldProp)`
 
 SetRedactValueComponentsField sets RedactValueComponentsField field to given value.
 
@@ -282,20 +282,20 @@ HasRedactValueComponentsFieldName returns a boolean if a field has been set.
 
 ### GetTokenizeEntireValueField
 
-`func (o *AddTextAccessLogFieldBehaviorRequest) GetTokenizeEntireValueField() []EnumlogFieldBehaviorTokenizeEntireValueFieldProp`
+`func (o *AddTextAccessLogFieldBehaviorRequest) GetTokenizeEntireValueField() []EnumlogFieldBehaviorTextAccessTokenizeEntireValueFieldProp`
 
 GetTokenizeEntireValueField returns the TokenizeEntireValueField field if non-nil, zero value otherwise.
 
 ### GetTokenizeEntireValueFieldOk
 
-`func (o *AddTextAccessLogFieldBehaviorRequest) GetTokenizeEntireValueFieldOk() (*[]EnumlogFieldBehaviorTokenizeEntireValueFieldProp, bool)`
+`func (o *AddTextAccessLogFieldBehaviorRequest) GetTokenizeEntireValueFieldOk() (*[]EnumlogFieldBehaviorTextAccessTokenizeEntireValueFieldProp, bool)`
 
 GetTokenizeEntireValueFieldOk returns a tuple with the TokenizeEntireValueField field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenizeEntireValueField
 
-`func (o *AddTextAccessLogFieldBehaviorRequest) SetTokenizeEntireValueField(v []EnumlogFieldBehaviorTokenizeEntireValueFieldProp)`
+`func (o *AddTextAccessLogFieldBehaviorRequest) SetTokenizeEntireValueField(v []EnumlogFieldBehaviorTextAccessTokenizeEntireValueFieldProp)`
 
 SetTokenizeEntireValueField sets TokenizeEntireValueField field to given value.
 
@@ -332,20 +332,20 @@ HasTokenizeEntireValueFieldName returns a boolean if a field has been set.
 
 ### GetTokenizeValueComponentsField
 
-`func (o *AddTextAccessLogFieldBehaviorRequest) GetTokenizeValueComponentsField() []EnumlogFieldBehaviorTokenizeValueComponentsFieldProp`
+`func (o *AddTextAccessLogFieldBehaviorRequest) GetTokenizeValueComponentsField() []EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp`
 
 GetTokenizeValueComponentsField returns the TokenizeValueComponentsField field if non-nil, zero value otherwise.
 
 ### GetTokenizeValueComponentsFieldOk
 
-`func (o *AddTextAccessLogFieldBehaviorRequest) GetTokenizeValueComponentsFieldOk() (*[]EnumlogFieldBehaviorTokenizeValueComponentsFieldProp, bool)`
+`func (o *AddTextAccessLogFieldBehaviorRequest) GetTokenizeValueComponentsFieldOk() (*[]EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp, bool)`
 
 GetTokenizeValueComponentsFieldOk returns a tuple with the TokenizeValueComponentsField field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTokenizeValueComponentsField
 
-`func (o *AddTextAccessLogFieldBehaviorRequest) SetTokenizeValueComponentsField(v []EnumlogFieldBehaviorTokenizeValueComponentsFieldProp)`
+`func (o *AddTextAccessLogFieldBehaviorRequest) SetTokenizeValueComponentsField(v []EnumlogFieldBehaviorTextAccessTokenizeValueComponentsFieldProp)`
 
 SetTokenizeValueComponentsField sets TokenizeValueComponentsField field to given value.
 

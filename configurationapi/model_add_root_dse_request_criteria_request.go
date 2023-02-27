@@ -20,9 +20,9 @@ var _ MappedNullable = &AddRootDseRequestCriteriaRequest{}
 // AddRootDseRequestCriteriaRequest struct for AddRootDseRequestCriteriaRequest
 type AddRootDseRequestCriteriaRequest struct {
 	// Name of the new Request Criteria
-	CriteriaName  string                                 `json:"criteriaName"`
-	Schemas       []EnumrootDseRequestCriteriaSchemaUrn  `json:"schemas"`
-	OperationType []EnumrequestCriteriaOperationTypeProp `json:"operationType,omitempty"`
+	CriteriaName  string                                        `json:"criteriaName"`
+	Schemas       []EnumrootDseRequestCriteriaSchemaUrn         `json:"schemas"`
+	OperationType []EnumrequestCriteriaRootDseOperationTypeProp `json:"operationType,omitempty"`
 	// A description for this Request Criteria
 	Description *string `json:"description,omitempty"`
 }
@@ -95,9 +95,9 @@ func (o *AddRootDseRequestCriteriaRequest) SetSchemas(v []EnumrootDseRequestCrit
 }
 
 // GetOperationType returns the OperationType field value if set, zero value otherwise.
-func (o *AddRootDseRequestCriteriaRequest) GetOperationType() []EnumrequestCriteriaOperationTypeProp {
+func (o *AddRootDseRequestCriteriaRequest) GetOperationType() []EnumrequestCriteriaRootDseOperationTypeProp {
 	if o == nil || IsNil(o.OperationType) {
-		var ret []EnumrequestCriteriaOperationTypeProp
+		var ret []EnumrequestCriteriaRootDseOperationTypeProp
 		return ret
 	}
 	return o.OperationType
@@ -105,7 +105,7 @@ func (o *AddRootDseRequestCriteriaRequest) GetOperationType() []EnumrequestCrite
 
 // GetOperationTypeOk returns a tuple with the OperationType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddRootDseRequestCriteriaRequest) GetOperationTypeOk() ([]EnumrequestCriteriaOperationTypeProp, bool) {
+func (o *AddRootDseRequestCriteriaRequest) GetOperationTypeOk() ([]EnumrequestCriteriaRootDseOperationTypeProp, bool) {
 	if o == nil || IsNil(o.OperationType) {
 		return nil, false
 	}
@@ -121,8 +121,8 @@ func (o *AddRootDseRequestCriteriaRequest) HasOperationType() bool {
 	return false
 }
 
-// SetOperationType gets a reference to the given []EnumrequestCriteriaOperationTypeProp and assigns it to the OperationType field.
-func (o *AddRootDseRequestCriteriaRequest) SetOperationType(v []EnumrequestCriteriaOperationTypeProp) {
+// SetOperationType gets a reference to the given []EnumrequestCriteriaRootDseOperationTypeProp and assigns it to the OperationType field.
+func (o *AddRootDseRequestCriteriaRequest) SetOperationType(v []EnumrequestCriteriaRootDseOperationTypeProp) {
 	o.OperationType = v
 }
 

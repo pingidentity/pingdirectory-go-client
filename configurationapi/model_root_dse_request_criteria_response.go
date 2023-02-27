@@ -22,9 +22,9 @@ type RootDseRequestCriteriaResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Request Criteria
-	Id            string                                 `json:"id"`
-	Schemas       []EnumrootDseRequestCriteriaSchemaUrn  `json:"schemas"`
-	OperationType []EnumrequestCriteriaOperationTypeProp `json:"operationType,omitempty"`
+	Id            string                                        `json:"id"`
+	Schemas       []EnumrootDseRequestCriteriaSchemaUrn         `json:"schemas"`
+	OperationType []EnumrequestCriteriaRootDseOperationTypeProp `json:"operationType,omitempty"`
 	// A description for this Request Criteria
 	Description *string `json:"description,omitempty"`
 }
@@ -161,9 +161,9 @@ func (o *RootDseRequestCriteriaResponse) SetSchemas(v []EnumrootDseRequestCriter
 }
 
 // GetOperationType returns the OperationType field value if set, zero value otherwise.
-func (o *RootDseRequestCriteriaResponse) GetOperationType() []EnumrequestCriteriaOperationTypeProp {
+func (o *RootDseRequestCriteriaResponse) GetOperationType() []EnumrequestCriteriaRootDseOperationTypeProp {
 	if o == nil || IsNil(o.OperationType) {
-		var ret []EnumrequestCriteriaOperationTypeProp
+		var ret []EnumrequestCriteriaRootDseOperationTypeProp
 		return ret
 	}
 	return o.OperationType
@@ -171,7 +171,7 @@ func (o *RootDseRequestCriteriaResponse) GetOperationType() []EnumrequestCriteri
 
 // GetOperationTypeOk returns a tuple with the OperationType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RootDseRequestCriteriaResponse) GetOperationTypeOk() ([]EnumrequestCriteriaOperationTypeProp, bool) {
+func (o *RootDseRequestCriteriaResponse) GetOperationTypeOk() ([]EnumrequestCriteriaRootDseOperationTypeProp, bool) {
 	if o == nil || IsNil(o.OperationType) {
 		return nil, false
 	}
@@ -187,8 +187,8 @@ func (o *RootDseRequestCriteriaResponse) HasOperationType() bool {
 	return false
 }
 
-// SetOperationType gets a reference to the given []EnumrequestCriteriaOperationTypeProp and assigns it to the OperationType field.
-func (o *RootDseRequestCriteriaResponse) SetOperationType(v []EnumrequestCriteriaOperationTypeProp) {
+// SetOperationType gets a reference to the given []EnumrequestCriteriaRootDseOperationTypeProp and assigns it to the OperationType field.
+func (o *RootDseRequestCriteriaResponse) SetOperationType(v []EnumrequestCriteriaRootDseOperationTypeProp) {
 	o.OperationType = v
 }
 

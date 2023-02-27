@@ -27,12 +27,12 @@ type StatsCollectorPluginResponse struct {
 	// The duration between statistics collections. Setting this value too small can have an impact on performance. This value should be a multiple of collection-interval.
 	SampleInterval string `json:"sampleInterval"`
 	// Some of the calculated statistics, such as the average and maximum queue sizes, can use multiple samples within a log interval. This value controls how often samples are gathered, and setting this value too small can have an adverse impact on performance.
-	CollectionInterval      string                                 `json:"collectionInterval"`
-	LdapInfo                *EnumpluginLdapInfoProp                `json:"ldapInfo,omitempty"`
-	ServerInfo              *EnumpluginServerInfoProp              `json:"serverInfo,omitempty"`
-	PerApplicationLDAPStats *EnumpluginPerApplicationLDAPStatsProp `json:"perApplicationLDAPStats,omitempty"`
-	LdapChangelogInfo       *EnumpluginLdapChangelogInfoProp       `json:"ldapChangelogInfo,omitempty"`
-	StatusSummaryInfo       *EnumpluginStatusSummaryInfoProp       `json:"statusSummaryInfo,omitempty"`
+	CollectionInterval      string                                               `json:"collectionInterval"`
+	LdapInfo                *EnumpluginLdapInfoProp                              `json:"ldapInfo,omitempty"`
+	ServerInfo              *EnumpluginServerInfoProp                            `json:"serverInfo,omitempty"`
+	PerApplicationLDAPStats *EnumpluginStatsCollectorPerApplicationLDAPStatsProp `json:"perApplicationLDAPStats,omitempty"`
+	LdapChangelogInfo       *EnumpluginLdapChangelogInfoProp                     `json:"ldapChangelogInfo,omitempty"`
+	StatusSummaryInfo       *EnumpluginStatusSummaryInfoProp                     `json:"statusSummaryInfo,omitempty"`
 	// Indicates whether this plugin should store metric samples on disk for use by the Data Metrics Server. If the Stats Collector Plugin is only being used to collect metrics for one or more StatsD Monitoring Endpoints, then this can be set to false to prevent unnecessary I/O.
 	GenerateCollectorFiles *bool                             `json:"generateCollectorFiles,omitempty"`
 	LocalDBBackendInfo     *EnumpluginLocalDBBackendInfoProp `json:"localDBBackendInfo,omitempty"`
@@ -294,9 +294,9 @@ func (o *StatsCollectorPluginResponse) SetServerInfo(v EnumpluginServerInfoProp)
 }
 
 // GetPerApplicationLDAPStats returns the PerApplicationLDAPStats field value if set, zero value otherwise.
-func (o *StatsCollectorPluginResponse) GetPerApplicationLDAPStats() EnumpluginPerApplicationLDAPStatsProp {
+func (o *StatsCollectorPluginResponse) GetPerApplicationLDAPStats() EnumpluginStatsCollectorPerApplicationLDAPStatsProp {
 	if o == nil || IsNil(o.PerApplicationLDAPStats) {
-		var ret EnumpluginPerApplicationLDAPStatsProp
+		var ret EnumpluginStatsCollectorPerApplicationLDAPStatsProp
 		return ret
 	}
 	return *o.PerApplicationLDAPStats
@@ -304,7 +304,7 @@ func (o *StatsCollectorPluginResponse) GetPerApplicationLDAPStats() EnumpluginPe
 
 // GetPerApplicationLDAPStatsOk returns a tuple with the PerApplicationLDAPStats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StatsCollectorPluginResponse) GetPerApplicationLDAPStatsOk() (*EnumpluginPerApplicationLDAPStatsProp, bool) {
+func (o *StatsCollectorPluginResponse) GetPerApplicationLDAPStatsOk() (*EnumpluginStatsCollectorPerApplicationLDAPStatsProp, bool) {
 	if o == nil || IsNil(o.PerApplicationLDAPStats) {
 		return nil, false
 	}
@@ -320,8 +320,8 @@ func (o *StatsCollectorPluginResponse) HasPerApplicationLDAPStats() bool {
 	return false
 }
 
-// SetPerApplicationLDAPStats gets a reference to the given EnumpluginPerApplicationLDAPStatsProp and assigns it to the PerApplicationLDAPStats field.
-func (o *StatsCollectorPluginResponse) SetPerApplicationLDAPStats(v EnumpluginPerApplicationLDAPStatsProp) {
+// SetPerApplicationLDAPStats gets a reference to the given EnumpluginStatsCollectorPerApplicationLDAPStatsProp and assigns it to the PerApplicationLDAPStats field.
+func (o *StatsCollectorPluginResponse) SetPerApplicationLDAPStats(v EnumpluginStatsCollectorPerApplicationLDAPStatsProp) {
 	o.PerApplicationLDAPStats = &v
 }
 

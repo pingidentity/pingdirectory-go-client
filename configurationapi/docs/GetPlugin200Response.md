@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **CollectionInterval** | **string** | Some of the calculated statistics, such as the average and maximum queue sizes, can use multiple samples within a log interval. This value controls how often samples are gathered. It should be a multiple of the log-interval. | 
 **LdapInfo** | Pointer to [**EnumpluginLdapInfoProp**](EnumpluginLdapInfoProp.md) |  | [optional] 
 **ServerInfo** | Pointer to [**EnumpluginServerInfoProp**](EnumpluginServerInfoProp.md) |  | [optional] 
-**PerApplicationLDAPStats** | Pointer to [**EnumpluginPerApplicationLDAPStatsProp**](EnumpluginPerApplicationLDAPStatsProp.md) |  | [optional] 
+**PerApplicationLDAPStats** | Pointer to [**EnumpluginPeriodicStatsLoggerPerApplicationLDAPStatsProp**](EnumpluginPeriodicStatsLoggerPerApplicationLDAPStatsProp.md) |  | [optional] 
 **LdapChangelogInfo** | Pointer to [**EnumpluginLdapChangelogInfoProp**](EnumpluginLdapChangelogInfoProp.md) |  | [optional] 
 **StatusSummaryInfo** | Pointer to [**EnumpluginStatusSummaryInfoProp**](EnumpluginStatusSummaryInfoProp.md) |  | [optional] 
 **GenerateCollectorFiles** | Pointer to **bool** | Indicates whether this plugin should store metric samples on disk for use by the Data Metrics Server. If the Stats Collector Plugin is only being used to collect metrics for one or more StatsD Monitoring Endpoints, then this can be set to false to prevent unnecessary I/O. | [optional] 
@@ -552,20 +552,20 @@ HasServerInfo returns a boolean if a field has been set.
 
 ### GetPerApplicationLDAPStats
 
-`func (o *GetPlugin200Response) GetPerApplicationLDAPStats() EnumpluginPerApplicationLDAPStatsProp`
+`func (o *GetPlugin200Response) GetPerApplicationLDAPStats() EnumpluginPeriodicStatsLoggerPerApplicationLDAPStatsProp`
 
 GetPerApplicationLDAPStats returns the PerApplicationLDAPStats field if non-nil, zero value otherwise.
 
 ### GetPerApplicationLDAPStatsOk
 
-`func (o *GetPlugin200Response) GetPerApplicationLDAPStatsOk() (*EnumpluginPerApplicationLDAPStatsProp, bool)`
+`func (o *GetPlugin200Response) GetPerApplicationLDAPStatsOk() (*EnumpluginPeriodicStatsLoggerPerApplicationLDAPStatsProp, bool)`
 
 GetPerApplicationLDAPStatsOk returns a tuple with the PerApplicationLDAPStats field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPerApplicationLDAPStats
 
-`func (o *GetPlugin200Response) SetPerApplicationLDAPStats(v EnumpluginPerApplicationLDAPStatsProp)`
+`func (o *GetPlugin200Response) SetPerApplicationLDAPStats(v EnumpluginPeriodicStatsLoggerPerApplicationLDAPStatsProp)`
 
 SetPerApplicationLDAPStats sets PerApplicationLDAPStats field to given value.
 
