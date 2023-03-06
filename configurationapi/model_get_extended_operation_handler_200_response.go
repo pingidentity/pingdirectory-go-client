@@ -20,6 +20,7 @@ type GetExtendedOperationHandler200Response struct {
 	BatchedTransactionsExtendedOperationHandlerResponse               *BatchedTransactionsExtendedOperationHandlerResponse
 	CancelExtendedOperationHandlerResponse                            *CancelExtendedOperationHandlerResponse
 	CollectSupportDataExtendedOperationHandlerResponse                *CollectSupportDataExtendedOperationHandlerResponse
+	CustomExtendedOperationHandlerResponse                            *CustomExtendedOperationHandlerResponse
 	DeliverOtpExtendedOperationHandlerResponse                        *DeliverOtpExtendedOperationHandlerResponse
 	DeliverPasswordResetTokenExtendedOperationHandlerResponse         *DeliverPasswordResetTokenExtendedOperationHandlerResponse
 	ExportReversiblePasswordsExtendedOperationHandlerResponse         *ExportReversiblePasswordsExtendedOperationHandlerResponse
@@ -58,6 +59,13 @@ func CancelExtendedOperationHandlerResponseAsGetExtendedOperationHandler200Respo
 func CollectSupportDataExtendedOperationHandlerResponseAsGetExtendedOperationHandler200Response(v *CollectSupportDataExtendedOperationHandlerResponse) GetExtendedOperationHandler200Response {
 	return GetExtendedOperationHandler200Response{
 		CollectSupportDataExtendedOperationHandlerResponse: v,
+	}
+}
+
+// CustomExtendedOperationHandlerResponseAsGetExtendedOperationHandler200Response is a convenience function that returns CustomExtendedOperationHandlerResponse wrapped in GetExtendedOperationHandler200Response
+func CustomExtendedOperationHandlerResponseAsGetExtendedOperationHandler200Response(v *CustomExtendedOperationHandlerResponse) GetExtendedOperationHandler200Response {
+	return GetExtendedOperationHandler200Response{
+		CustomExtendedOperationHandlerResponse: v,
 	}
 }
 
@@ -228,6 +236,19 @@ func (dst *GetExtendedOperationHandler200Response) UnmarshalJSON(data []byte) er
 		}
 	} else {
 		dst.CollectSupportDataExtendedOperationHandlerResponse = nil
+	}
+
+	// try to unmarshal data into CustomExtendedOperationHandlerResponse
+	err = newStrictDecoder(data).Decode(&dst.CustomExtendedOperationHandlerResponse)
+	if err == nil {
+		jsonCustomExtendedOperationHandlerResponse, _ := json.Marshal(dst.CustomExtendedOperationHandlerResponse)
+		if string(jsonCustomExtendedOperationHandlerResponse) == "{}" { // empty struct
+			dst.CustomExtendedOperationHandlerResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.CustomExtendedOperationHandlerResponse = nil
 	}
 
 	// try to unmarshal data into DeliverOtpExtendedOperationHandlerResponse
@@ -469,6 +490,7 @@ func (dst *GetExtendedOperationHandler200Response) UnmarshalJSON(data []byte) er
 		dst.BatchedTransactionsExtendedOperationHandlerResponse = nil
 		dst.CancelExtendedOperationHandlerResponse = nil
 		dst.CollectSupportDataExtendedOperationHandlerResponse = nil
+		dst.CustomExtendedOperationHandlerResponse = nil
 		dst.DeliverOtpExtendedOperationHandlerResponse = nil
 		dst.DeliverPasswordResetTokenExtendedOperationHandlerResponse = nil
 		dst.ExportReversiblePasswordsExtendedOperationHandlerResponse = nil
@@ -508,6 +530,10 @@ func (src GetExtendedOperationHandler200Response) MarshalJSON() ([]byte, error) 
 
 	if src.CollectSupportDataExtendedOperationHandlerResponse != nil {
 		return json.Marshal(&src.CollectSupportDataExtendedOperationHandlerResponse)
+	}
+
+	if src.CustomExtendedOperationHandlerResponse != nil {
+		return json.Marshal(&src.CustomExtendedOperationHandlerResponse)
 	}
 
 	if src.DeliverOtpExtendedOperationHandlerResponse != nil {
@@ -600,6 +626,10 @@ func (obj *GetExtendedOperationHandler200Response) GetActualInstance() interface
 
 	if obj.CollectSupportDataExtendedOperationHandlerResponse != nil {
 		return obj.CollectSupportDataExtendedOperationHandlerResponse
+	}
+
+	if obj.CustomExtendedOperationHandlerResponse != nil {
+		return obj.CustomExtendedOperationHandlerResponse
 	}
 
 	if obj.DeliverOtpExtendedOperationHandlerResponse != nil {

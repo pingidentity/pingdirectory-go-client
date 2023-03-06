@@ -278,6 +278,7 @@ paths:
               schema:
                 oneOf:
                 - $ref: '#/components/schemas/velocity-tools-velocity-context-provider-response'
+                - $ref: '#/components/schemas/custom-velocity-context-provider-response'
                 - $ref: '#/components/schemas/third-party-velocity-context-provider-response'
         "401":
           description: Requestor cannot be authenticated
@@ -324,6 +325,7 @@ paths:
               schema:
                 oneOf:
                 - $ref: '#/components/schemas/velocity-tools-velocity-context-provider-response'
+                - $ref: '#/components/schemas/custom-velocity-context-provider-response'
                 - $ref: '#/components/schemas/third-party-velocity-context-provider-response'
         "401":
           description: Requestor cannot be authenticated
@@ -1538,6 +1540,57 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:velocity-context-provider:velocity-tools"
+    custom-velocity-context-provider-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumcustom-velocity-context-providerSchemaUrn'
+          id:
+            description: Name of the Velocity Context Provider
+            type: string
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether this Velocity Context Provider is enabled. If set to 'false' this Velocity Context Provider will not contribute context content for any requests.
+          objectScope:
+            $ref: '#/components/schemas/Enumvelocity-context-provider-objectScopeProp'
+          includedView:
+            type: array
+            items:
+              type: string
+            description: >-
+                The name of a view for which this Velocity Context Provider will contribute content.
+          excludedView:
+            type: array
+            items:
+              type: string
+            description: >-
+                The name of a view for which this Velocity Context Provider will not contribute content.
+          httpMethod:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the set of HTTP methods handled by this Velocity Context Provider, which will perform actions necessary to fulfill the request before updating the context for the response. The values of this property are not case-sensitive.
+          responseHeader:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies HTTP header fields and values added to response headers for template page requests to which this Velocity Context Provider contributes content.
+        required:
+        - schemas
+        - id
+    Enumcustom-velocity-context-providerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:velocity-context-provider:custom"
     add-third-party-velocity-context-provider-request:
       allOf:
       - type: object

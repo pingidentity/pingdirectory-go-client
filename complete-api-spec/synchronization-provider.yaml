@@ -29,7 +29,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/replication-synchronization-provider-response'
+                oneOf:
+                - $ref: '#/components/schemas/replication-synchronization-provider-response'
+                - $ref: '#/components/schemas/custom-synchronization-provider-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -65,7 +67,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/replication-synchronization-provider-response'
+                oneOf:
+                - $ref: '#/components/schemas/replication-synchronization-provider-response'
+                - $ref: '#/components/schemas/custom-synchronization-provider-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -175,6 +179,9 @@ components:
             maxItems: 1
             items:
               $ref: '#/components/schemas/Enumreplication-synchronization-providerSchemaUrn'
+          id:
+            description: Name of the Synchronization Provider
+            type: string
           numUpdateReplayThreads:
             type: integer
             description: >-
@@ -188,11 +195,43 @@ components:
             description: >-
                 Indicates whether the Synchronization Provider is enabled for use.
         required:
+        - schemas
         - enabled
+        - id
     Enumreplication-synchronization-providerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:synchronization-provider:replication"
+    custom-synchronization-provider-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumcustom-synchronization-providerSchemaUrn'
+          id:
+            description: Name of the Synchronization Provider
+            type: string
+          description:
+            type: string
+            description: >-
+                A description for this Synchronization Provider
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Synchronization Provider is enabled for use.
+        required:
+        - schemas
+        - enabled
+        - id
+    Enumcustom-synchronization-providerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:synchronization-provider:custom"
     replication-domain-response:
       allOf:
       - $ref: '#/components/schemas/meta'

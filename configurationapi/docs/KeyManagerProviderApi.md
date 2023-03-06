@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ## GetKeyManagerProvider
 
-> AddKeyManagerProvider200Response GetKeyManagerProvider(ctx, keyManagerProviderName).Execute()
+> GetKeyManagerProvider200Response GetKeyManagerProvider(ctx, keyManagerProviderName).Execute()
 
 Returns a single Key Manager Provider
 
@@ -169,7 +169,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KeyManagerProviderApi.GetKeyManagerProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetKeyManagerProvider`: AddKeyManagerProvider200Response
+    // response from `GetKeyManagerProvider`: GetKeyManagerProvider200Response
     fmt.Fprintf(os.Stdout, "Response from `KeyManagerProviderApi.GetKeyManagerProvider`: %v\n", resp)
 }
 ```
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AddKeyManagerProvider200Response**](AddKeyManagerProvider200Response.md)
+[**GetKeyManagerProvider200Response**](GetKeyManagerProvider200Response.md)
 
 ### Authorization
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 
 ## UpdateKeyManagerProvider
 
-> AddKeyManagerProvider200Response UpdateKeyManagerProvider(ctx, keyManagerProviderName).UpdateRequest(updateRequest).Execute()
+> GetKeyManagerProvider200Response UpdateKeyManagerProvider(ctx, keyManagerProviderName).UpdateRequest(updateRequest).Execute()
 
 Update an existing Key Manager Provider by name
 
@@ -238,7 +238,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KeyManagerProviderApi.UpdateKeyManagerProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateKeyManagerProvider`: AddKeyManagerProvider200Response
+    // response from `UpdateKeyManagerProvider`: GetKeyManagerProvider200Response
     fmt.Fprintf(os.Stdout, "Response from `KeyManagerProviderApi.UpdateKeyManagerProvider`: %v\n", resp)
 }
 ```
@@ -263,7 +263,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AddKeyManagerProvider200Response**](AddKeyManagerProvider200Response.md)
+[**GetKeyManagerProvider200Response**](GetKeyManagerProvider200Response.md)
 
 ### Authorization
 

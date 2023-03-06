@@ -2702,6 +2702,86 @@ func StringPointerEnumcurrentTimeVirtualAttributeSchemaUrn(value *EnumcurrentTim
 	return &s
 }
 
+func (e EnumcustomAlertHandlerSchemaUrn) String() string {
+	return string(e)
+}
+
+func StringSliceEnumcustomAlertHandlerSchemaUrn(values []EnumcustomAlertHandlerSchemaUrn) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumcustomAlertHandlerSchemaUrn(value *EnumcustomAlertHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
+func (e EnumcustomBackendSchemaUrn) String() string {
+	return string(e)
+}
+
+func StringSliceEnumcustomBackendSchemaUrn(values []EnumcustomBackendSchemaUrn) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumcustomBackendSchemaUrn(value *EnumcustomBackendSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
+func (e EnumcustomExtendedOperationHandlerSchemaUrn) String() string {
+	return string(e)
+}
+
+func StringSliceEnumcustomExtendedOperationHandlerSchemaUrn(values []EnumcustomExtendedOperationHandlerSchemaUrn) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumcustomExtendedOperationHandlerSchemaUrn(value *EnumcustomExtendedOperationHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
+func (e EnumcustomKeyManagerProviderSchemaUrn) String() string {
+	return string(e)
+}
+
+func StringSliceEnumcustomKeyManagerProviderSchemaUrn(values []EnumcustomKeyManagerProviderSchemaUrn) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumcustomKeyManagerProviderSchemaUrn(value *EnumcustomKeyManagerProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumcustomLoggedStatsSchemaUrn) String() string {
 	return string(e)
 }
@@ -2735,6 +2815,126 @@ func StringSliceEnumcustomLoggedStatsStatisticTypeProp(values []EnumcustomLogged
 }
 
 func StringPointerEnumcustomLoggedStatsStatisticTypeProp(value *EnumcustomLoggedStatsStatisticTypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
+func (e EnumcustomMonitorProviderSchemaUrn) String() string {
+	return string(e)
+}
+
+func StringSliceEnumcustomMonitorProviderSchemaUrn(values []EnumcustomMonitorProviderSchemaUrn) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumcustomMonitorProviderSchemaUrn(value *EnumcustomMonitorProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
+func (e EnumcustomPasswordValidatorSchemaUrn) String() string {
+	return string(e)
+}
+
+func StringSliceEnumcustomPasswordValidatorSchemaUrn(values []EnumcustomPasswordValidatorSchemaUrn) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumcustomPasswordValidatorSchemaUrn(value *EnumcustomPasswordValidatorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
+func (e EnumcustomPluginSchemaUrn) String() string {
+	return string(e)
+}
+
+func StringSliceEnumcustomPluginSchemaUrn(values []EnumcustomPluginSchemaUrn) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumcustomPluginSchemaUrn(value *EnumcustomPluginSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
+func (e EnumcustomSynchronizationProviderSchemaUrn) String() string {
+	return string(e)
+}
+
+func StringSliceEnumcustomSynchronizationProviderSchemaUrn(values []EnumcustomSynchronizationProviderSchemaUrn) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumcustomSynchronizationProviderSchemaUrn(value *EnumcustomSynchronizationProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
+func (e EnumcustomVelocityContextProviderSchemaUrn) String() string {
+	return string(e)
+}
+
+func StringSliceEnumcustomVelocityContextProviderSchemaUrn(values []EnumcustomVelocityContextProviderSchemaUrn) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumcustomVelocityContextProviderSchemaUrn(value *EnumcustomVelocityContextProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
+func (e EnumcustomVirtualAttributeSchemaUrn) String() string {
+	return string(e)
+}
+
+func StringSliceEnumcustomVirtualAttributeSchemaUrn(values []EnumcustomVirtualAttributeSchemaUrn) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumcustomVirtualAttributeSchemaUrn(value *EnumcustomVirtualAttributeSchemaUrn) *string {
 	if value == nil {
 		return nil
 	}

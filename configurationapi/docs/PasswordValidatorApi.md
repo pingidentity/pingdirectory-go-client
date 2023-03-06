@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ## GetPasswordValidator
 
-> AddPasswordValidator200Response GetPasswordValidator(ctx, passwordValidatorName).Execute()
+> GetPasswordValidator200Response GetPasswordValidator(ctx, passwordValidatorName).Execute()
 
 Returns a single Password Validator
 
@@ -169,7 +169,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PasswordValidatorApi.GetPasswordValidator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetPasswordValidator`: AddPasswordValidator200Response
+    // response from `GetPasswordValidator`: GetPasswordValidator200Response
     fmt.Fprintf(os.Stdout, "Response from `PasswordValidatorApi.GetPasswordValidator`: %v\n", resp)
 }
 ```
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AddPasswordValidator200Response**](AddPasswordValidator200Response.md)
+[**GetPasswordValidator200Response**](GetPasswordValidator200Response.md)
 
 ### Authorization
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 
 ## UpdatePasswordValidator
 
-> AddPasswordValidator200Response UpdatePasswordValidator(ctx, passwordValidatorName).UpdateRequest(updateRequest).Execute()
+> GetPasswordValidator200Response UpdatePasswordValidator(ctx, passwordValidatorName).UpdateRequest(updateRequest).Execute()
 
 Update an existing Password Validator by name
 
@@ -238,7 +238,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PasswordValidatorApi.UpdatePasswordValidator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdatePasswordValidator`: AddPasswordValidator200Response
+    // response from `UpdatePasswordValidator`: GetPasswordValidator200Response
     fmt.Fprintf(os.Stdout, "Response from `PasswordValidatorApi.UpdatePasswordValidator`: %v\n", resp)
 }
 ```
@@ -263,7 +263,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AddPasswordValidator200Response**](AddPasswordValidator200Response.md)
+[**GetPasswordValidator200Response**](GetPasswordValidator200Response.md)
 
 ### Authorization
 
