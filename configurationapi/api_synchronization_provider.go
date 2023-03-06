@@ -28,7 +28,7 @@ type ApiGetSynchronizationProviderRequest struct {
 	synchronizationProviderName string
 }
 
-func (r ApiGetSynchronizationProviderRequest) Execute() (*ReplicationSynchronizationProviderResponse, *http.Response, error) {
+func (r ApiGetSynchronizationProviderRequest) Execute() (*GetSynchronizationProvider200Response, *http.Response, error) {
 	return r.ApiService.GetSynchronizationProviderExecute(r)
 }
 
@@ -49,13 +49,13 @@ func (a *SynchronizationProviderApiService) GetSynchronizationProvider(ctx conte
 
 // Execute executes the request
 //
-//	@return ReplicationSynchronizationProviderResponse
-func (a *SynchronizationProviderApiService) GetSynchronizationProviderExecute(r ApiGetSynchronizationProviderRequest) (*ReplicationSynchronizationProviderResponse, *http.Response, error) {
+//	@return GetSynchronizationProvider200Response
+func (a *SynchronizationProviderApiService) GetSynchronizationProviderExecute(r ApiGetSynchronizationProviderRequest) (*GetSynchronizationProvider200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ReplicationSynchronizationProviderResponse
+		localVarReturnValue *GetSynchronizationProvider200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SynchronizationProviderApiService.GetSynchronizationProvider")
@@ -137,7 +137,7 @@ func (r ApiUpdateSynchronizationProviderRequest) UpdateRequest(updateRequest Upd
 	return r
 }
 
-func (r ApiUpdateSynchronizationProviderRequest) Execute() (*ReplicationSynchronizationProviderResponse, *http.Response, error) {
+func (r ApiUpdateSynchronizationProviderRequest) Execute() (*GetSynchronizationProvider200Response, *http.Response, error) {
 	return r.ApiService.UpdateSynchronizationProviderExecute(r)
 }
 
@@ -158,13 +158,13 @@ func (a *SynchronizationProviderApiService) UpdateSynchronizationProvider(ctx co
 
 // Execute executes the request
 //
-//	@return ReplicationSynchronizationProviderResponse
-func (a *SynchronizationProviderApiService) UpdateSynchronizationProviderExecute(r ApiUpdateSynchronizationProviderRequest) (*ReplicationSynchronizationProviderResponse, *http.Response, error) {
+//	@return GetSynchronizationProvider200Response
+func (a *SynchronizationProviderApiService) UpdateSynchronizationProviderExecute(r ApiUpdateSynchronizationProviderRequest) (*GetSynchronizationProvider200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ReplicationSynchronizationProviderResponse
+		localVarReturnValue *GetSynchronizationProvider200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SynchronizationProviderApiService.UpdateSynchronizationProvider")

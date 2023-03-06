@@ -228,7 +228,7 @@ type ApiGetPasswordValidatorRequest struct {
 	passwordValidatorName string
 }
 
-func (r ApiGetPasswordValidatorRequest) Execute() (*AddPasswordValidator200Response, *http.Response, error) {
+func (r ApiGetPasswordValidatorRequest) Execute() (*GetPasswordValidator200Response, *http.Response, error) {
 	return r.ApiService.GetPasswordValidatorExecute(r)
 }
 
@@ -249,13 +249,13 @@ func (a *PasswordValidatorApiService) GetPasswordValidator(ctx context.Context, 
 
 // Execute executes the request
 //
-//	@return AddPasswordValidator200Response
-func (a *PasswordValidatorApiService) GetPasswordValidatorExecute(r ApiGetPasswordValidatorRequest) (*AddPasswordValidator200Response, *http.Response, error) {
+//	@return GetPasswordValidator200Response
+func (a *PasswordValidatorApiService) GetPasswordValidatorExecute(r ApiGetPasswordValidatorRequest) (*GetPasswordValidator200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AddPasswordValidator200Response
+		localVarReturnValue *GetPasswordValidator200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordValidatorApiService.GetPasswordValidator")
@@ -337,7 +337,7 @@ func (r ApiUpdatePasswordValidatorRequest) UpdateRequest(updateRequest UpdateReq
 	return r
 }
 
-func (r ApiUpdatePasswordValidatorRequest) Execute() (*AddPasswordValidator200Response, *http.Response, error) {
+func (r ApiUpdatePasswordValidatorRequest) Execute() (*GetPasswordValidator200Response, *http.Response, error) {
 	return r.ApiService.UpdatePasswordValidatorExecute(r)
 }
 
@@ -358,13 +358,13 @@ func (a *PasswordValidatorApiService) UpdatePasswordValidator(ctx context.Contex
 
 // Execute executes the request
 //
-//	@return AddPasswordValidator200Response
-func (a *PasswordValidatorApiService) UpdatePasswordValidatorExecute(r ApiUpdatePasswordValidatorRequest) (*AddPasswordValidator200Response, *http.Response, error) {
+//	@return GetPasswordValidator200Response
+func (a *PasswordValidatorApiService) UpdatePasswordValidatorExecute(r ApiUpdatePasswordValidatorRequest) (*GetPasswordValidator200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AddPasswordValidator200Response
+		localVarReturnValue *GetPasswordValidator200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordValidatorApiService.UpdatePasswordValidator")

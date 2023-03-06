@@ -19,6 +19,7 @@ import (
 type GetVirtualAttribute200Response struct {
 	ConstructedVirtualAttributeResponse             *ConstructedVirtualAttributeResponse
 	CurrentTimeVirtualAttributeResponse             *CurrentTimeVirtualAttributeResponse
+	CustomVirtualAttributeResponse                  *CustomVirtualAttributeResponse
 	DnJoinVirtualAttributeResponse                  *DnJoinVirtualAttributeResponse
 	EntryChecksumVirtualAttributeResponse           *EntryChecksumVirtualAttributeResponse
 	EntryDnVirtualAttributeResponse                 *EntryDnVirtualAttributeResponse
@@ -52,6 +53,13 @@ func ConstructedVirtualAttributeResponseAsGetVirtualAttribute200Response(v *Cons
 func CurrentTimeVirtualAttributeResponseAsGetVirtualAttribute200Response(v *CurrentTimeVirtualAttributeResponse) GetVirtualAttribute200Response {
 	return GetVirtualAttribute200Response{
 		CurrentTimeVirtualAttributeResponse: v,
+	}
+}
+
+// CustomVirtualAttributeResponseAsGetVirtualAttribute200Response is a convenience function that returns CustomVirtualAttributeResponse wrapped in GetVirtualAttribute200Response
+func CustomVirtualAttributeResponseAsGetVirtualAttribute200Response(v *CustomVirtualAttributeResponse) GetVirtualAttribute200Response {
+	return GetVirtualAttribute200Response{
+		CustomVirtualAttributeResponse: v,
 	}
 }
 
@@ -223,6 +231,19 @@ func (dst *GetVirtualAttribute200Response) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.CurrentTimeVirtualAttributeResponse = nil
+	}
+
+	// try to unmarshal data into CustomVirtualAttributeResponse
+	err = newStrictDecoder(data).Decode(&dst.CustomVirtualAttributeResponse)
+	if err == nil {
+		jsonCustomVirtualAttributeResponse, _ := json.Marshal(dst.CustomVirtualAttributeResponse)
+		if string(jsonCustomVirtualAttributeResponse) == "{}" { // empty struct
+			dst.CustomVirtualAttributeResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.CustomVirtualAttributeResponse = nil
 	}
 
 	// try to unmarshal data into DnJoinVirtualAttributeResponse
@@ -489,6 +510,7 @@ func (dst *GetVirtualAttribute200Response) UnmarshalJSON(data []byte) error {
 		// reset to nil
 		dst.ConstructedVirtualAttributeResponse = nil
 		dst.CurrentTimeVirtualAttributeResponse = nil
+		dst.CustomVirtualAttributeResponse = nil
 		dst.DnJoinVirtualAttributeResponse = nil
 		dst.EntryChecksumVirtualAttributeResponse = nil
 		dst.EntryDnVirtualAttributeResponse = nil
@@ -526,6 +548,10 @@ func (src GetVirtualAttribute200Response) MarshalJSON() ([]byte, error) {
 
 	if src.CurrentTimeVirtualAttributeResponse != nil {
 		return json.Marshal(&src.CurrentTimeVirtualAttributeResponse)
+	}
+
+	if src.CustomVirtualAttributeResponse != nil {
+		return json.Marshal(&src.CustomVirtualAttributeResponse)
 	}
 
 	if src.DnJoinVirtualAttributeResponse != nil {
@@ -622,6 +648,10 @@ func (obj *GetVirtualAttribute200Response) GetActualInstance() interface{} {
 
 	if obj.CurrentTimeVirtualAttributeResponse != nil {
 		return obj.CurrentTimeVirtualAttributeResponse
+	}
+
+	if obj.CustomVirtualAttributeResponse != nil {
+		return obj.CustomVirtualAttributeResponse
 	}
 
 	if obj.DnJoinVirtualAttributeResponse != nil {

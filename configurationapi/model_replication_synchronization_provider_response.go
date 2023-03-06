@@ -21,7 +21,9 @@ var _ MappedNullable = &ReplicationSynchronizationProviderResponse{}
 type ReplicationSynchronizationProviderResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas                                       []EnumreplicationSynchronizationProviderSchemaUrn  `json:"schemas,omitempty"`
+	Schemas                                       []EnumreplicationSynchronizationProviderSchemaUrn  `json:"schemas"`
+	// Name of the Synchronization Provider
+	Id string `json:"id"`
 	// Specifies the number of update replay threads.
 	NumUpdateReplayThreads *int32 `json:"numUpdateReplayThreads,omitempty"`
 	// A description for this Synchronization Provider
@@ -34,8 +36,10 @@ type ReplicationSynchronizationProviderResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewReplicationSynchronizationProviderResponse(enabled bool) *ReplicationSynchronizationProviderResponse {
+func NewReplicationSynchronizationProviderResponse(schemas []EnumreplicationSynchronizationProviderSchemaUrn, id string, enabled bool) *ReplicationSynchronizationProviderResponse {
 	this := ReplicationSynchronizationProviderResponse{}
+	this.Schemas = schemas
+	this.Id = id
 	this.Enabled = enabled
 	return &this
 }
@@ -112,36 +116,52 @@ func (o *ReplicationSynchronizationProviderResponse) SetUrnpingidentityschemasco
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
-// GetSchemas returns the Schemas field value if set, zero value otherwise.
+// GetSchemas returns the Schemas field value
 func (o *ReplicationSynchronizationProviderResponse) GetSchemas() []EnumreplicationSynchronizationProviderSchemaUrn {
-	if o == nil || IsNil(o.Schemas) {
+	if o == nil {
 		var ret []EnumreplicationSynchronizationProviderSchemaUrn
 		return ret
 	}
+
 	return o.Schemas
 }
 
-// GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
+// GetSchemasOk returns a tuple with the Schemas field value
 // and a boolean to check if the value has been set.
 func (o *ReplicationSynchronizationProviderResponse) GetSchemasOk() ([]EnumreplicationSynchronizationProviderSchemaUrn, bool) {
-	if o == nil || IsNil(o.Schemas) {
+	if o == nil {
 		return nil, false
 	}
 	return o.Schemas, true
 }
 
-// HasSchemas returns a boolean if a field has been set.
-func (o *ReplicationSynchronizationProviderResponse) HasSchemas() bool {
-	if o != nil && !IsNil(o.Schemas) {
-		return true
-	}
-
-	return false
-}
-
-// SetSchemas gets a reference to the given []EnumreplicationSynchronizationProviderSchemaUrn and assigns it to the Schemas field.
+// SetSchemas sets field value
 func (o *ReplicationSynchronizationProviderResponse) SetSchemas(v []EnumreplicationSynchronizationProviderSchemaUrn) {
 	o.Schemas = v
+}
+
+// GetId returns the Id field value
+func (o *ReplicationSynchronizationProviderResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ReplicationSynchronizationProviderResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ReplicationSynchronizationProviderResponse) SetId(v string) {
+	o.Id = v
 }
 
 // GetNumUpdateReplayThreads returns the NumUpdateReplayThreads field value if set, zero value otherwise.
@@ -248,9 +268,8 @@ func (o ReplicationSynchronizationProviderResponse) ToMap() (map[string]interfac
 	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
-	if !IsNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
 	if !IsNil(o.NumUpdateReplayThreads) {
 		toSerialize["numUpdateReplayThreads"] = o.NumUpdateReplayThreads
 	}

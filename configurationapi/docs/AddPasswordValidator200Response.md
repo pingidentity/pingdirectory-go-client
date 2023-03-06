@@ -21,8 +21,9 @@ Name | Type | Description | Notes
 **TestAttributeValueSubstringOfPassword** | Pointer to **bool** | Indicates whether to reject any proposed password in which a value in one of the match attributes in the target user&#39;s entry is a substring of that password. | [optional] 
 **MinimumAttributeValueLengthForSubstringMatches** | Pointer to **int32** | The minimum length that an attribute value must have for it to be considered when rejecting passwords that contain the value of another attribute as a substring. | [optional] 
 **TestReversedPassword** | **bool** | Indicates whether this password validator is to test the reversed value of the provided password as well as the order in which it was given. | 
-**DictionaryFile** | **string** | Specifies the path to the file containing a list of words that cannot be used as passwords. | 
+**MaxConsecutiveLength** | **int32** | Specifies the maximum number of times that any character can appear consecutively in a password value. | 
 **CaseSensitiveValidation** | **bool** | Indicates whether this password validator should treat password characters in a case-sensitive manner. | 
+**DictionaryFile** | **string** | Specifies the path to the file containing a list of words that cannot be used as passwords. | 
 **IgnoreLeadingNonAlphabeticCharacters** | Pointer to **bool** | Indicates whether to ignore any digits, symbols, or other non-alphabetic characters that may appear at the beginning of a proposed password. | [optional] 
 **IgnoreTrailingNonAlphabeticCharacters** | Pointer to **bool** | Indicates whether to ignore any digits, symbols, or other non-alphabetic characters that may appear at the end of a proposed password. | [optional] 
 **StripDiacriticalMarks** | Pointer to **bool** | Indicates whether to strip characters of any diacritical marks (like accents, cedillas, circumflexes, diaereses, tildes, and umlauts) they may contain. Any characters with a diacritical mark would be replaced with a base version | [optional] 
@@ -44,7 +45,6 @@ Name | Type | Description | Notes
 **MatchPattern** | **string** | The regular expression to use for this password validator. | 
 **MatchBehavior** | [**EnumpasswordValidatorMatchBehaviorProp**](EnumpasswordValidatorMatchBehaviorProp.md) |  | 
 **MinUniqueCharacters** | **int32** | Specifies the minimum number of unique characters that a password will be allowed to contain. | 
-**MaxConsecutiveLength** | **int32** | Specifies the maximum number of times that any character can appear consecutively in a password value. | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Password Validator. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Password Validator. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 
@@ -52,7 +52,7 @@ Name | Type | Description | Notes
 
 ### NewAddPasswordValidator200Response
 
-`func NewAddPasswordValidator200Response(id string, schemas []EnumthirdPartyPasswordValidatorSchemaUrn, characterSet []string, allowUnclassifiedCharacters bool, enabled bool, minPasswordDifference int32, testReversedPassword bool, dictionaryFile string, caseSensitiveValidation bool, assumedPasswordGuessesPerSecond string, minimumAcceptableTimeToExhaustSearchSpace string, scriptClass string, pwnedPasswordsBaseURL string, invokeForAdd bool, invokeForSelfChange bool, invokeForAdminReset bool, acceptPasswordOnServiceError bool, matchPattern string, matchBehavior EnumpasswordValidatorMatchBehaviorProp, minUniqueCharacters int32, maxConsecutiveLength int32, extensionClass string, ) *AddPasswordValidator200Response`
+`func NewAddPasswordValidator200Response(id string, schemas []EnumthirdPartyPasswordValidatorSchemaUrn, characterSet []string, allowUnclassifiedCharacters bool, enabled bool, minPasswordDifference int32, testReversedPassword bool, maxConsecutiveLength int32, caseSensitiveValidation bool, dictionaryFile string, assumedPasswordGuessesPerSecond string, minimumAcceptableTimeToExhaustSearchSpace string, scriptClass string, pwnedPasswordsBaseURL string, invokeForAdd bool, invokeForSelfChange bool, invokeForAdminReset bool, acceptPasswordOnServiceError bool, matchPattern string, matchBehavior EnumpasswordValidatorMatchBehaviorProp, minUniqueCharacters int32, extensionClass string, ) *AddPasswordValidator200Response`
 
 NewAddPasswordValidator200Response instantiates a new AddPasswordValidator200Response object
 This constructor will assign default values to properties that have it defined,
@@ -457,24 +457,24 @@ and a boolean to check if the value has been set.
 SetTestReversedPassword sets TestReversedPassword field to given value.
 
 
-### GetDictionaryFile
+### GetMaxConsecutiveLength
 
-`func (o *AddPasswordValidator200Response) GetDictionaryFile() string`
+`func (o *AddPasswordValidator200Response) GetMaxConsecutiveLength() int32`
 
-GetDictionaryFile returns the DictionaryFile field if non-nil, zero value otherwise.
+GetMaxConsecutiveLength returns the MaxConsecutiveLength field if non-nil, zero value otherwise.
 
-### GetDictionaryFileOk
+### GetMaxConsecutiveLengthOk
 
-`func (o *AddPasswordValidator200Response) GetDictionaryFileOk() (*string, bool)`
+`func (o *AddPasswordValidator200Response) GetMaxConsecutiveLengthOk() (*int32, bool)`
 
-GetDictionaryFileOk returns a tuple with the DictionaryFile field if it's non-nil, zero value otherwise
+GetMaxConsecutiveLengthOk returns a tuple with the MaxConsecutiveLength field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDictionaryFile
+### SetMaxConsecutiveLength
 
-`func (o *AddPasswordValidator200Response) SetDictionaryFile(v string)`
+`func (o *AddPasswordValidator200Response) SetMaxConsecutiveLength(v int32)`
 
-SetDictionaryFile sets DictionaryFile field to given value.
+SetMaxConsecutiveLength sets MaxConsecutiveLength field to given value.
 
 
 ### GetCaseSensitiveValidation
@@ -495,6 +495,26 @@ and a boolean to check if the value has been set.
 `func (o *AddPasswordValidator200Response) SetCaseSensitiveValidation(v bool)`
 
 SetCaseSensitiveValidation sets CaseSensitiveValidation field to given value.
+
+
+### GetDictionaryFile
+
+`func (o *AddPasswordValidator200Response) GetDictionaryFile() string`
+
+GetDictionaryFile returns the DictionaryFile field if non-nil, zero value otherwise.
+
+### GetDictionaryFileOk
+
+`func (o *AddPasswordValidator200Response) GetDictionaryFileOk() (*string, bool)`
+
+GetDictionaryFileOk returns a tuple with the DictionaryFile field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDictionaryFile
+
+`func (o *AddPasswordValidator200Response) SetDictionaryFile(v string)`
+
+SetDictionaryFile sets DictionaryFile field to given value.
 
 
 ### GetIgnoreLeadingNonAlphabeticCharacters
@@ -965,26 +985,6 @@ and a boolean to check if the value has been set.
 `func (o *AddPasswordValidator200Response) SetMinUniqueCharacters(v int32)`
 
 SetMinUniqueCharacters sets MinUniqueCharacters field to given value.
-
-
-### GetMaxConsecutiveLength
-
-`func (o *AddPasswordValidator200Response) GetMaxConsecutiveLength() int32`
-
-GetMaxConsecutiveLength returns the MaxConsecutiveLength field if non-nil, zero value otherwise.
-
-### GetMaxConsecutiveLengthOk
-
-`func (o *AddPasswordValidator200Response) GetMaxConsecutiveLengthOk() (*int32, bool)`
-
-GetMaxConsecutiveLengthOk returns a tuple with the MaxConsecutiveLength field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMaxConsecutiveLength
-
-`func (o *AddPasswordValidator200Response) SetMaxConsecutiveLength(v int32)`
-
-SetMaxConsecutiveLength sets MaxConsecutiveLength field to given value.
 
 
 ### GetExtensionClass

@@ -209,6 +209,7 @@ paths:
                 - $ref: '#/components/schemas/monitor-history-plugin-response'
                 - $ref: '#/components/schemas/referral-on-update-plugin-response'
                 - $ref: '#/components/schemas/simple-to-external-bind-plugin-response'
+                - $ref: '#/components/schemas/custom-plugin-response'
                 - $ref: '#/components/schemas/snmp-subagent-plugin-response'
                 - $ref: '#/components/schemas/password-policy-import-plugin-response'
                 - $ref: '#/components/schemas/profiler-plugin-response'
@@ -281,6 +282,7 @@ paths:
                 - $ref: '#/components/schemas/monitor-history-plugin-response'
                 - $ref: '#/components/schemas/referral-on-update-plugin-response'
                 - $ref: '#/components/schemas/simple-to-external-bind-plugin-response'
+                - $ref: '#/components/schemas/custom-plugin-response'
                 - $ref: '#/components/schemas/snmp-subagent-plugin-response'
                 - $ref: '#/components/schemas/password-policy-import-plugin-response'
                 - $ref: '#/components/schemas/profiler-plugin-response'
@@ -2326,6 +2328,45 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:plugin:simple-to-external-bind"
+    custom-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumcustom-pluginSchemaUrn'
+          id:
+            description: Name of the Plugin
+            type: string
+          description:
+            type: string
+            description: >-
+                A description for this Plugin
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the plug-in is enabled for use.
+          pluginType:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+          invokeForInternalOperations:
+            type: boolean
+            description: >-
+                Indicates whether the plug-in should be invoked for internal operations.
+        required:
+        - schemas
+        - enabled
+        - pluginType
+        - id
+    Enumcustom-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:custom"
     add-snmp-subagent-plugin-request:
       allOf:
       - type: object
