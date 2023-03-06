@@ -237,7 +237,7 @@ type ApiGetVelocityContextProviderRequest struct {
 	httpServletExtensionName    string
 }
 
-func (r ApiGetVelocityContextProviderRequest) Execute() (*AddVelocityContextProvider200Response, *http.Response, error) {
+func (r ApiGetVelocityContextProviderRequest) Execute() (*GetVelocityContextProvider200Response, *http.Response, error) {
 	return r.ApiService.GetVelocityContextProviderExecute(r)
 }
 
@@ -260,13 +260,13 @@ func (a *VelocityContextProviderApiService) GetVelocityContextProvider(ctx conte
 
 // Execute executes the request
 //
-//	@return AddVelocityContextProvider200Response
-func (a *VelocityContextProviderApiService) GetVelocityContextProviderExecute(r ApiGetVelocityContextProviderRequest) (*AddVelocityContextProvider200Response, *http.Response, error) {
+//	@return GetVelocityContextProvider200Response
+func (a *VelocityContextProviderApiService) GetVelocityContextProviderExecute(r ApiGetVelocityContextProviderRequest) (*GetVelocityContextProvider200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AddVelocityContextProvider200Response
+		localVarReturnValue *GetVelocityContextProvider200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VelocityContextProviderApiService.GetVelocityContextProvider")
@@ -350,7 +350,7 @@ func (r ApiUpdateVelocityContextProviderRequest) UpdateRequest(updateRequest Upd
 	return r
 }
 
-func (r ApiUpdateVelocityContextProviderRequest) Execute() (*AddVelocityContextProvider200Response, *http.Response, error) {
+func (r ApiUpdateVelocityContextProviderRequest) Execute() (*GetVelocityContextProvider200Response, *http.Response, error) {
 	return r.ApiService.UpdateVelocityContextProviderExecute(r)
 }
 
@@ -373,13 +373,13 @@ func (a *VelocityContextProviderApiService) UpdateVelocityContextProvider(ctx co
 
 // Execute executes the request
 //
-//	@return AddVelocityContextProvider200Response
-func (a *VelocityContextProviderApiService) UpdateVelocityContextProviderExecute(r ApiUpdateVelocityContextProviderRequest) (*AddVelocityContextProvider200Response, *http.Response, error) {
+//	@return GetVelocityContextProvider200Response
+func (a *VelocityContextProviderApiService) UpdateVelocityContextProviderExecute(r ApiUpdateVelocityContextProviderRequest) (*GetVelocityContextProvider200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AddVelocityContextProvider200Response
+		localVarReturnValue *GetVelocityContextProvider200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VelocityContextProviderApiService.UpdateVelocityContextProvider")

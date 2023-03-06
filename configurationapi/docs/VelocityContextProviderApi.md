@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ## GetVelocityContextProvider
 
-> AddVelocityContextProvider200Response GetVelocityContextProvider(ctx, velocityContextProviderName, httpServletExtensionName).Execute()
+> GetVelocityContextProvider200Response GetVelocityContextProvider(ctx, velocityContextProviderName, httpServletExtensionName).Execute()
 
 Returns a single Velocity Context Provider
 
@@ -179,7 +179,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `VelocityContextProviderApi.GetVelocityContextProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetVelocityContextProvider`: AddVelocityContextProvider200Response
+    // response from `GetVelocityContextProvider`: GetVelocityContextProvider200Response
     fmt.Fprintf(os.Stdout, "Response from `VelocityContextProviderApi.GetVelocityContextProvider`: %v\n", resp)
 }
 ```
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AddVelocityContextProvider200Response**](AddVelocityContextProvider200Response.md)
+[**GetVelocityContextProvider200Response**](GetVelocityContextProvider200Response.md)
 
 ### Authorization
 
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 ## UpdateVelocityContextProvider
 
-> AddVelocityContextProvider200Response UpdateVelocityContextProvider(ctx, velocityContextProviderName, httpServletExtensionName).UpdateRequest(updateRequest).Execute()
+> GetVelocityContextProvider200Response UpdateVelocityContextProvider(ctx, velocityContextProviderName, httpServletExtensionName).UpdateRequest(updateRequest).Execute()
 
 Update an existing Velocity Context Provider by name
 
@@ -251,7 +251,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `VelocityContextProviderApi.UpdateVelocityContextProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateVelocityContextProvider`: AddVelocityContextProvider200Response
+    // response from `UpdateVelocityContextProvider`: GetVelocityContextProvider200Response
     fmt.Fprintf(os.Stdout, "Response from `VelocityContextProviderApi.UpdateVelocityContextProvider`: %v\n", resp)
 }
 ```
@@ -278,7 +278,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AddVelocityContextProvider200Response**](AddVelocityContextProvider200Response.md)
+[**GetVelocityContextProvider200Response**](GetVelocityContextProvider200Response.md)
 
 ### Authorization
 

@@ -2878,7 +2878,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/replication-synchronization-provider-response'
+                $ref: '#/components/schemas/get_synchronization_provider_200_response'
           description: Successful operation
         "401":
           description: Requestor cannot be authenticated
@@ -2914,7 +2914,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/replication-synchronization-provider-response'
+                $ref: '#/components/schemas/get_synchronization_provider_200_response'
           description: Successful operation
         "401":
           description: Requestor cannot be authenticated
@@ -6688,7 +6688,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/add_password_validator_200_response'
+                $ref: '#/components/schemas/get_password_validator_200_response'
           description: Successful operation
         "401":
           description: Requestor cannot be authenticated
@@ -6724,7 +6724,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/add_password_validator_200_response'
+                $ref: '#/components/schemas/get_password_validator_200_response'
           description: Successful operation
         "401":
           description: Requestor cannot be authenticated
@@ -8021,7 +8021,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/add_key_manager_provider_200_response'
+                $ref: '#/components/schemas/get_key_manager_provider_200_response'
           description: Successful operation
         "401":
           description: Requestor cannot be authenticated
@@ -8057,7 +8057,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/add_key_manager_provider_200_response'
+                $ref: '#/components/schemas/get_key_manager_provider_200_response'
           description: Successful operation
         "401":
           description: Requestor cannot be authenticated
@@ -10006,7 +10006,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/add_velocity_context_provider_200_response'
+                $ref: '#/components/schemas/get_velocity_context_provider_200_response'
           description: Successful operation
         "401":
           description: Requestor cannot be authenticated
@@ -10050,7 +10050,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/add_velocity_context_provider_200_response'
+                $ref: '#/components/schemas/get_velocity_context_provider_200_response'
           description: Successful operation
         "401":
           description: Requestor cannot be authenticated
@@ -15061,6 +15061,14 @@ components:
     Enumsimple-to-external-bind-pluginSchemaUrn:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:plugin:simple-to-external-bind
+      type: string
+    custom-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/custom_plugin_response_allOf'
+    Enumcustom-pluginSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:plugin:custom
       type: string
     add-snmp-subagent-plugin-request:
       allOf:
@@ -21846,6 +21854,14 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:synchronization-provider:replication
       type: string
+    custom-synchronization-provider-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/custom_synchronization_provider_response_allOf'
+    Enumcustom-synchronization-providerSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:synchronization-provider:custom
+      type: string
     replication-domain-response:
       allOf:
       - $ref: '#/components/schemas/meta'
@@ -23755,6 +23771,14 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:password-modify
       type: string
+    custom-extended-operation-handler-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/custom_extended_operation_handler_response_allOf'
+    Enumcustom-extended-operation-handlerSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:custom
+      type: string
     add-collect-support-data-extended-operation-handler-request:
       allOf:
       - $ref: '#/components/schemas/add_validate_totp_password_extended_operation_handler_request_allOf'
@@ -25537,6 +25561,14 @@ components:
     Enumgroovy-scripted-alert-handlerSchemaUrn:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:alert-handler:groovy-scripted
+      type: string
+    custom-alert-handler-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/custom_alert_handler_response_allOf'
+    Enumcustom-alert-handlerSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:alert-handler:custom
       type: string
     add-snmp-alert-handler-request:
       allOf:
@@ -28394,6 +28426,74 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:password-validator:attribute-value
       type: string
+    custom-password-validator-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/custom_password_validator_response_allOf'
+    Enumcustom-password-validatorSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:password-validator:custom
+      type: string
+    add-repeated-characters-password-validator-request:
+      allOf:
+      - $ref: '#/components/schemas/add_character_set_password_validator_request_allOf'
+      - $ref: '#/components/schemas/repeated-characters-password-validator-shared'
+    repeated-characters-password-validator-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/character_set_password_validator_response_allOf'
+      - $ref: '#/components/schemas/repeated-characters-password-validator-shared'
+    repeated-characters-password-validator-shared:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumrepeated-characters-password-validatorSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        maxConsecutiveLength:
+          description: Specifies the maximum number of times that any character can
+            appear consecutively in a password value.
+          type: integer
+        caseSensitiveValidation:
+          description: Indicates whether this password validator should treat password
+            characters in a case-sensitive manner.
+          type: boolean
+        characterSet:
+          description: "Specifies a set of characters that should be considered equivalent\
+            \ for the purpose of this password validator. This can be used, for example,\
+            \ to ensure that passwords contain no more than three consecutive digits."
+          items:
+            type: string
+          type: array
+        description:
+          description: A description for this Password Validator
+          type: string
+        enabled:
+          description: Indicates whether the password validator is enabled for use.
+          type: boolean
+        validatorRequirementDescription:
+          description: "Specifies a message that can be used to describe the requirements\
+            \ imposed by this password validator to end users. If a value is provided\
+            \ for this property, then it will override any description that may have\
+            \ otherwise been generated by the validator."
+          type: string
+        validatorFailureMessage:
+          description: "Specifies a message that may be provided to the end user in\
+            \ the event that a proposed password is rejected by this validator. If\
+            \ a value is provided for this property, then it will override any failure\
+            \ message that may have otherwise been generated by the validator."
+          type: string
+      required:
+      - caseSensitiveValidation
+      - enabled
+      - maxConsecutiveLength
+      - schemas
+      type: object
+    Enumrepeated-characters-password-validatorSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:password-validator:repeated-characters
+      type: string
     add-dictionary-password-validator-request:
       allOf:
       - $ref: '#/components/schemas/add_character_set_password_validator_request_allOf'
@@ -28836,66 +28936,6 @@ components:
     Enumunique-characters-password-validatorSchemaUrn:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:password-validator:unique-characters
-      type: string
-    add-repeated-characters-password-validator-request:
-      allOf:
-      - $ref: '#/components/schemas/add_character_set_password_validator_request_allOf'
-      - $ref: '#/components/schemas/repeated-characters-password-validator-shared'
-    repeated-characters-password-validator-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - $ref: '#/components/schemas/character_set_password_validator_response_allOf'
-      - $ref: '#/components/schemas/repeated-characters-password-validator-shared'
-    repeated-characters-password-validator-shared:
-      properties:
-        schemas:
-          items:
-            $ref: '#/components/schemas/Enumrepeated-characters-password-validatorSchemaUrn'
-          maxItems: 1
-          minItems: 1
-          type: array
-        maxConsecutiveLength:
-          description: Specifies the maximum number of times that any character can
-            appear consecutively in a password value.
-          type: integer
-        caseSensitiveValidation:
-          description: Indicates whether this password validator should treat password
-            characters in a case-sensitive manner.
-          type: boolean
-        characterSet:
-          description: "Specifies a set of characters that should be considered equivalent\
-            \ for the purpose of this password validator. This can be used, for example,\
-            \ to ensure that passwords contain no more than three consecutive digits."
-          items:
-            type: string
-          type: array
-        description:
-          description: A description for this Password Validator
-          type: string
-        enabled:
-          description: Indicates whether the password validator is enabled for use.
-          type: boolean
-        validatorRequirementDescription:
-          description: "Specifies a message that can be used to describe the requirements\
-            \ imposed by this password validator to end users. If a value is provided\
-            \ for this property, then it will override any description that may have\
-            \ otherwise been generated by the validator."
-          type: string
-        validatorFailureMessage:
-          description: "Specifies a message that may be provided to the end user in\
-            \ the event that a proposed password is rejected by this validator. If\
-            \ a value is provided for this property, then it will override any failure\
-            \ message that may have otherwise been generated by the validator."
-          type: string
-      required:
-      - caseSensitiveValidation
-      - enabled
-      - maxConsecutiveLength
-      - schemas
-      type: object
-    Enumrepeated-characters-password-validatorSchemaUrn:
-      enum:
-      - urn:pingidentity:schemas:configuration:2.0:password-validator:repeated-characters
       type: string
     add-third-party-password-validator-request:
       allOf:
@@ -36229,6 +36269,14 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:key-manager-provider:file-based
       type: string
+    custom-key-manager-provider-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/custom_key_manager_provider_response_allOf'
+    Enumcustom-key-manager-providerSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:key-manager-provider:custom
+      type: string
     add-pkcs11-key-manager-provider-request:
       allOf:
       - $ref: '#/components/schemas/add_file_based_key_manager_provider_request_allOf'
@@ -38213,6 +38261,14 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:monitor-provider:system-info
       type: string
+    custom-monitor-provider-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/custom_monitor_provider_response_allOf'
+    Enumcustom-monitor-providerSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:monitor-provider:custom
+      type: string
     active-operations-monitor-provider-response:
       allOf:
       - $ref: '#/components/schemas/meta'
@@ -38508,6 +38564,14 @@ components:
     Enumtrust-store-backendSchemaUrn:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:backend:trust-store
+      type: string
+    custom-backend-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/custom_backend_response_allOf'
+    Enumcustom-backendSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:backend:custom
       type: string
     changelog-backend-response:
       allOf:
@@ -40410,6 +40474,14 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:velocity-context-provider:velocity-tools
       type: string
+    custom-velocity-context-provider-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/custom_velocity_context_provider_response_allOf'
+    Enumcustom-velocity-context-providerSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:velocity-context-provider:custom
+      type: string
     add-third-party-velocity-context-provider-request:
       allOf:
       - $ref: '#/components/schemas/add_velocity_tools_velocity_context_provider_request_allOf'
@@ -41308,6 +41380,14 @@ components:
     Enumis-member-of-virtual-attributeSchemaUrn:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:virtual-attribute:is-member-of
+      type: string
+    custom-virtual-attribute-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/custom_virtual_attribute_response_allOf'
+    Enumcustom-virtual-attributeSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:virtual-attribute:custom
       type: string
     num-subordinates-virtual-attribute-response:
       allOf:
@@ -47616,6 +47696,7 @@ components:
       - $ref: '#/components/schemas/monitor-history-plugin-response'
       - $ref: '#/components/schemas/referral-on-update-plugin-response'
       - $ref: '#/components/schemas/simple-to-external-bind-plugin-response'
+      - $ref: '#/components/schemas/custom-plugin-response'
       - $ref: '#/components/schemas/snmp-subagent-plugin-response'
       - $ref: '#/components/schemas/password-policy-import-plugin-response'
       - $ref: '#/components/schemas/profiler-plugin-response'
@@ -47717,6 +47798,10 @@ components:
       - $ref: '#/components/schemas/groovy-scripted-uncached-attribute-criteria-response'
       - $ref: '#/components/schemas/simple-uncached-attribute-criteria-response'
       - $ref: '#/components/schemas/third-party-uncached-attribute-criteria-response'
+    get_synchronization_provider_200_response:
+      oneOf:
+      - $ref: '#/components/schemas/replication-synchronization-provider-response'
+      - $ref: '#/components/schemas/custom-synchronization-provider-response'
     add_connection_criteria_request:
       oneOf:
       - $ref: '#/components/schemas/add-simple-connection-criteria-request'
@@ -47797,6 +47882,7 @@ components:
       - $ref: '#/components/schemas/multi-update-extended-operation-handler-response'
       - $ref: '#/components/schemas/notification-subscription-extended-operation-handler-response'
       - $ref: '#/components/schemas/password-modify-extended-operation-handler-response'
+      - $ref: '#/components/schemas/custom-extended-operation-handler-response'
       - $ref: '#/components/schemas/collect-support-data-extended-operation-handler-response'
       - $ref: '#/components/schemas/export-reversible-passwords-extended-operation-handler-response'
       - $ref: '#/components/schemas/batched-transactions-extended-operation-handler-response'
@@ -47887,6 +47973,7 @@ components:
       - $ref: '#/components/schemas/smtp-alert-handler-response'
       - $ref: '#/components/schemas/jmx-alert-handler-response'
       - $ref: '#/components/schemas/groovy-scripted-alert-handler-response'
+      - $ref: '#/components/schemas/custom-alert-handler-response'
       - $ref: '#/components/schemas/snmp-alert-handler-response'
       - $ref: '#/components/schemas/twilio-alert-handler-response'
       - $ref: '#/components/schemas/error-log-alert-handler-response'
@@ -47954,6 +48041,7 @@ components:
       - $ref: '#/components/schemas/add-character-set-password-validator-request'
       - $ref: '#/components/schemas/add-similarity-based-password-validator-request'
       - $ref: '#/components/schemas/add-attribute-value-password-validator-request'
+      - $ref: '#/components/schemas/add-repeated-characters-password-validator-request'
       - $ref: '#/components/schemas/add-dictionary-password-validator-request'
       - $ref: '#/components/schemas/add-haystack-password-validator-request'
       - $ref: '#/components/schemas/add-groovy-scripted-password-validator-request'
@@ -47961,13 +48049,13 @@ components:
       - $ref: '#/components/schemas/add-length-based-password-validator-request'
       - $ref: '#/components/schemas/add-regular-expression-password-validator-request'
       - $ref: '#/components/schemas/add-unique-characters-password-validator-request'
-      - $ref: '#/components/schemas/add-repeated-characters-password-validator-request'
       - $ref: '#/components/schemas/add-third-party-password-validator-request'
     add_password_validator_200_response:
       oneOf:
       - $ref: '#/components/schemas/character-set-password-validator-response'
       - $ref: '#/components/schemas/similarity-based-password-validator-response'
       - $ref: '#/components/schemas/attribute-value-password-validator-response'
+      - $ref: '#/components/schemas/repeated-characters-password-validator-response'
       - $ref: '#/components/schemas/dictionary-password-validator-response'
       - $ref: '#/components/schemas/haystack-password-validator-response'
       - $ref: '#/components/schemas/groovy-scripted-password-validator-response'
@@ -47975,7 +48063,21 @@ components:
       - $ref: '#/components/schemas/length-based-password-validator-response'
       - $ref: '#/components/schemas/regular-expression-password-validator-response'
       - $ref: '#/components/schemas/unique-characters-password-validator-response'
+      - $ref: '#/components/schemas/third-party-password-validator-response'
+    get_password_validator_200_response:
+      oneOf:
+      - $ref: '#/components/schemas/character-set-password-validator-response'
+      - $ref: '#/components/schemas/similarity-based-password-validator-response'
+      - $ref: '#/components/schemas/attribute-value-password-validator-response'
+      - $ref: '#/components/schemas/custom-password-validator-response'
       - $ref: '#/components/schemas/repeated-characters-password-validator-response'
+      - $ref: '#/components/schemas/dictionary-password-validator-response'
+      - $ref: '#/components/schemas/haystack-password-validator-response'
+      - $ref: '#/components/schemas/groovy-scripted-password-validator-response'
+      - $ref: '#/components/schemas/pwned-passwords-password-validator-response'
+      - $ref: '#/components/schemas/length-based-password-validator-response'
+      - $ref: '#/components/schemas/regular-expression-password-validator-response'
+      - $ref: '#/components/schemas/unique-characters-password-validator-response'
       - $ref: '#/components/schemas/third-party-password-validator-response'
     add_connection_handler_request:
       oneOf:
@@ -48158,6 +48260,12 @@ components:
       - $ref: '#/components/schemas/file-based-key-manager-provider-response'
       - $ref: '#/components/schemas/pkcs11-key-manager-provider-response'
       - $ref: '#/components/schemas/third-party-key-manager-provider-response'
+    get_key_manager_provider_200_response:
+      oneOf:
+      - $ref: '#/components/schemas/file-based-key-manager-provider-response'
+      - $ref: '#/components/schemas/custom-key-manager-provider-response'
+      - $ref: '#/components/schemas/pkcs11-key-manager-provider-response'
+      - $ref: '#/components/schemas/third-party-key-manager-provider-response'
     add_external_server_request:
       oneOf:
       - $ref: '#/components/schemas/add-smtp-external-server-request'
@@ -48214,6 +48322,7 @@ components:
       - $ref: '#/components/schemas/stack-trace-monitor-provider-response'
       - $ref: '#/components/schemas/disk-space-usage-monitor-provider-response'
       - $ref: '#/components/schemas/system-info-monitor-provider-response'
+      - $ref: '#/components/schemas/custom-monitor-provider-response'
       - $ref: '#/components/schemas/active-operations-monitor-provider-response'
       - $ref: '#/components/schemas/ssl-context-monitor-provider-response'
       - $ref: '#/components/schemas/client-connection-monitor-provider-response'
@@ -48243,6 +48352,7 @@ components:
       - $ref: '#/components/schemas/encryption-settings-backend-response'
       - $ref: '#/components/schemas/ldif-backend-response'
       - $ref: '#/components/schemas/trust-store-backend-response'
+      - $ref: '#/components/schemas/custom-backend-response'
       - $ref: '#/components/schemas/changelog-backend-response'
       - $ref: '#/components/schemas/monitor-backend-response'
       - $ref: '#/components/schemas/local-db-backend-response'
@@ -48320,6 +48430,11 @@ components:
       oneOf:
       - $ref: '#/components/schemas/velocity-tools-velocity-context-provider-response'
       - $ref: '#/components/schemas/third-party-velocity-context-provider-response'
+    get_velocity_context_provider_200_response:
+      oneOf:
+      - $ref: '#/components/schemas/velocity-tools-velocity-context-provider-response'
+      - $ref: '#/components/schemas/custom-velocity-context-provider-response'
+      - $ref: '#/components/schemas/third-party-velocity-context-provider-response'
     get_matching_rule_200_response:
       oneOf:
       - $ref: '#/components/schemas/ordering-matching-rule-response'
@@ -48364,6 +48479,7 @@ components:
       - $ref: '#/components/schemas/member-of-server-group-virtual-attribute-response'
       - $ref: '#/components/schemas/constructed-virtual-attribute-response'
       - $ref: '#/components/schemas/is-member-of-virtual-attribute-response'
+      - $ref: '#/components/schemas/custom-virtual-attribute-response'
       - $ref: '#/components/schemas/num-subordinates-virtual-attribute-response'
       - $ref: '#/components/schemas/reverse-dn-join-virtual-attribute-response'
       - $ref: '#/components/schemas/identify-references-virtual-attribute-response'
@@ -49637,6 +49753,38 @@ components:
       - schemas
       type: object
       example: null
+    custom_plugin_response_allOf:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumcustom-pluginSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        id:
+          description: Name of the Plugin
+          type: string
+        description:
+          description: A description for this Plugin
+          type: string
+        enabled:
+          description: Indicates whether the plug-in is enabled for use.
+          type: boolean
+        pluginType:
+          items:
+            $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+          type: array
+        invokeForInternalOperations:
+          description: Indicates whether the plug-in should be invoked for internal
+            operations.
+          type: boolean
+      required:
+      - enabled
+      - id
+      - pluginType
+      - schemas
+      type: object
+      example: null
     password_policy_import_plugin_response_allOf:
       properties:
         schemas:
@@ -50760,6 +50908,9 @@ components:
           maxItems: 1
           minItems: 1
           type: array
+        id:
+          description: Name of the Synchronization Provider
+          type: string
         numUpdateReplayThreads:
           description: Specifies the number of update replay threads.
           type: integer
@@ -50772,6 +50923,32 @@ components:
           type: boolean
       required:
       - enabled
+      - id
+      - schemas
+      type: object
+      example: null
+    custom_synchronization_provider_response_allOf:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumcustom-synchronization-providerSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        id:
+          description: Name of the Synchronization Provider
+          type: string
+        description:
+          description: A description for this Synchronization Provider
+          type: string
+        enabled:
+          description: Indicates whether the Synchronization Provider is enabled for
+            use.
+          type: boolean
+      required:
+      - enabled
+      - id
+      - schemas
       type: object
       example: null
     replication_domain_response_allOf:
@@ -51174,6 +51351,31 @@ components:
       - enabled
       - id
       - identityMapper
+      - schemas
+      type: object
+      example: null
+    custom_extended_operation_handler_response_allOf:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumcustom-extended-operation-handlerSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        id:
+          description: Name of the Extended Operation Handler
+          type: string
+        description:
+          description: A description for this Extended Operation Handler
+          type: string
+        enabled:
+          description: "Indicates whether the Extended Operation Handler is enabled\
+            \ (that is, whether the types of extended operations are allowed in the\
+            \ server)."
+          type: boolean
+      required:
+      - enabled
+      - id
       - schemas
       type: object
       example: null
@@ -51622,6 +51824,48 @@ components:
       - id
       type: object
       example: null
+    custom_alert_handler_response_allOf:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumcustom-alert-handlerSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        id:
+          description: Name of the Alert Handler
+          type: string
+        description:
+          description: A description for this Alert Handler
+          type: string
+        enabled:
+          description: Indicates whether the Alert Handler is enabled.
+          type: boolean
+        asynchronous:
+          description: "Indicates whether the server should attempt to invoke this\
+            \ Alert Handler in a background thread so that any potentially-expensive\
+            \ processing (e.g., performing network communication to deliver the alert\
+            \ notification) will not delay whatever processing the server was performing\
+            \ when the alert was generated."
+          type: boolean
+        enabledAlertSeverity:
+          items:
+            $ref: '#/components/schemas/Enumalert-handler-enabledAlertSeverityProp'
+          type: array
+        enabledAlertType:
+          items:
+            $ref: '#/components/schemas/Enumalert-handler-enabledAlertTypeProp'
+          type: array
+        disabledAlertType:
+          items:
+            $ref: '#/components/schemas/Enumalert-handler-disabledAlertTypeProp'
+          type: array
+      required:
+      - enabled
+      - id
+      - schemas
+      type: object
+      example: null
     license_response_allOf:
       properties:
         schemas:
@@ -52004,6 +52248,41 @@ components:
           type: string
       required:
       - id
+      type: object
+      example: null
+    custom_password_validator_response_allOf:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumcustom-password-validatorSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        id:
+          description: Name of the Password Validator
+          type: string
+        description:
+          description: A description for this Password Validator
+          type: string
+        enabled:
+          description: Indicates whether the password validator is enabled for use.
+          type: boolean
+        validatorRequirementDescription:
+          description: "Specifies a message that can be used to describe the requirements\
+            \ imposed by this password validator to end users. If a value is provided\
+            \ for this property, then it will override any description that may have\
+            \ otherwise been generated by the validator."
+          type: string
+        validatorFailureMessage:
+          description: "Specifies a message that may be provided to the end user in\
+            \ the event that a proposed password is rejected by this validator. If\
+            \ a value is provided for this property, then it will override any failure\
+            \ message that may have otherwise been generated by the validator."
+          type: string
+      required:
+      - enabled
+      - id
+      - schemas
       type: object
       example: null
     alarm_manager_response_allOf:
@@ -52611,6 +52890,29 @@ components:
       - id
       type: object
       example: null
+    custom_key_manager_provider_response_allOf:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumcustom-key-manager-providerSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        id:
+          description: Name of the Key Manager Provider
+          type: string
+        description:
+          description: A description for this Key Manager Provider
+          type: string
+        enabled:
+          description: Indicates whether the Key Manager Provider is enabled for use.
+          type: boolean
+      required:
+      - enabled
+      - id
+      - schemas
+      type: object
+      example: null
     add_smtp_external_server_request_allOf:
       properties:
         serverName:
@@ -52899,6 +53201,29 @@ components:
         schemas:
           items:
             $ref: '#/components/schemas/Enumsystem-info-monitor-providerSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        id:
+          description: Name of the Monitor Provider
+          type: string
+        description:
+          description: A description for this Monitor Provider
+          type: string
+        enabled:
+          description: Indicates whether the Monitor Provider is enabled for use.
+          type: boolean
+      required:
+      - enabled
+      - id
+      - schemas
+      type: object
+      example: null
+    custom_monitor_provider_response_allOf:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumcustom-monitor-providerSchemaUrn'
           maxItems: 1
           minItems: 1
           type: array
@@ -53464,6 +53789,58 @@ components:
       - id
       - schemas
       - trustStoreFile
+      - writabilityMode
+      type: object
+      example: null
+    custom_backend_response_allOf:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumcustom-backendSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        id:
+          description: Name of the Backend
+          type: string
+        backendID:
+          description: Specifies a name to identify the associated backend.
+          type: string
+        description:
+          description: A description for this Backend
+          type: string
+        enabled:
+          description: Indicates whether the backend is enabled in the server.
+          type: boolean
+        baseDN:
+          description: Specifies the base DN(s) for the data that the backend handles.
+          items:
+            type: string
+          type: array
+        writabilityMode:
+          $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
+        setDegradedAlertWhenDisabled:
+          description: Determines whether the Directory Server enters a DEGRADED state
+            (and sends a corresponding alert) when this Backend is disabled.
+          type: boolean
+        returnUnavailableWhenDisabled:
+          description: Determines whether any LDAP operation that would use this Backend
+            is to return UNAVAILABLE when this Backend is disabled.
+          type: boolean
+        backupFilePermissions:
+          description: Specifies the permissions that should be applied to files and
+            directories created by a backup of the backend.
+          type: string
+        notificationManager:
+          description: Specifies a notification manager for changes resulting from
+            operations processed through this Backend
+          type: string
+      required:
+      - backendID
+      - baseDN
+      - enabled
+      - id
+      - schemas
       - writabilityMode
       type: object
       example: null
@@ -55307,6 +55684,56 @@ components:
       - id
       type: object
       example: null
+    custom_velocity_context_provider_response_allOf:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumcustom-velocity-context-providerSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        id:
+          description: Name of the Velocity Context Provider
+          type: string
+        enabled:
+          description: Indicates whether this Velocity Context Provider is enabled.
+            If set to 'false' this Velocity Context Provider will not contribute context
+            content for any requests.
+          type: boolean
+        objectScope:
+          $ref: '#/components/schemas/Enumvelocity-context-provider-objectScopeProp'
+        includedView:
+          description: The name of a view for which this Velocity Context Provider
+            will contribute content.
+          items:
+            type: string
+          type: array
+        excludedView:
+          description: The name of a view for which this Velocity Context Provider
+            will not contribute content.
+          items:
+            type: string
+          type: array
+        httpMethod:
+          description: "Specifies the set of HTTP methods handled by this Velocity\
+            \ Context Provider, which will perform actions necessary to fulfill the\
+            \ request before updating the context for the response. The values of\
+            \ this property are not case-sensitive."
+          items:
+            type: string
+          type: array
+        responseHeader:
+          description: Specifies HTTP header fields and values added to response headers
+            for template page requests to which this Velocity Context Provider contributes
+            content.
+          items:
+            type: string
+          type: array
+      required:
+      - id
+      - schemas
+      type: object
+      example: null
     add_velocity_template_loader_request_allOf:
       properties:
         loaderName:
@@ -55599,6 +56026,83 @@ components:
           items:
             type: string
           type: array
+        requireExplicitRequestByName:
+          description: Indicates whether attributes of this type must be explicitly
+            included by name in the list of requested attributes. Note that this will
+            only apply to virtual attributes which are associated with an attribute
+            type that is operational. It will be ignored for virtual attributes associated
+            with a non-operational attribute type.
+          type: boolean
+        multipleVirtualAttributeEvaluationOrderIndex:
+          description: Specifies the order in which virtual attribute definitions
+            for the same attribute type will be evaluated when generating values for
+            an entry.
+          type: integer
+        multipleVirtualAttributeMergeBehavior:
+          $ref: '#/components/schemas/Enumvirtual-attribute-multipleVirtualAttributeMergeBehaviorProp'
+        allowIndexConflicts:
+          description: Indicates whether the server should allow creating or altering
+            this virtual attribute definition even if it conflicts with one or more
+            indexes defined in the server.
+          type: boolean
+      required:
+      - attributeType
+      - enabled
+      - id
+      - schemas
+      type: object
+      example: null
+    custom_virtual_attribute_response_allOf:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumcustom-virtual-attributeSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        id:
+          description: Name of the Virtual Attribute
+          type: string
+        description:
+          description: A description for this Virtual Attribute
+          type: string
+        enabled:
+          description: Indicates whether the Virtual Attribute is enabled for use.
+          type: boolean
+        attributeType:
+          description: Specifies the attribute type for the attribute whose values
+            are to be dynamically assigned by the virtual attribute.
+          type: string
+        baseDN:
+          description: Specifies the base DNs for the branches containing entries
+            that are eligible to use this virtual attribute.
+          items:
+            type: string
+          type: array
+        groupDN:
+          description: Specifies the DNs of the groups whose members can be eligible
+            to use this virtual attribute.
+          items:
+            type: string
+          type: array
+        filter:
+          description: Specifies the search filters to be applied against entries
+            to determine if the virtual attribute is to be generated for those entries.
+          items:
+            type: string
+          type: array
+        clientConnectionPolicy:
+          description: "Specifies a set of client connection policies for which this\
+            \ Virtual Attribute should be generated. If this is undefined, then this\
+            \ Virtual Attribute will always be generated. If it is associated with\
+            \ one or more client connection policies, then this Virtual Attribute\
+            \ will be generated only for operations requested by clients assigned\
+            \ to one of those client connection policies."
+          items:
+            type: string
+          type: array
+        conflictBehavior:
+          $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
         requireExplicitRequestByName:
           description: Indicates whether attributes of this type must be explicitly
             included by name in the list of requested attributes. Note that this will

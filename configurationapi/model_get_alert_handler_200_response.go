@@ -17,6 +17,7 @@ import (
 
 // GetAlertHandler200Response - struct for GetAlertHandler200Response
 type GetAlertHandler200Response struct {
+	CustomAlertHandlerResponse         *CustomAlertHandlerResponse
 	ErrorLogAlertHandlerResponse       *ErrorLogAlertHandlerResponse
 	ExecAlertHandlerResponse           *ExecAlertHandlerResponse
 	GroovyScriptedAlertHandlerResponse *GroovyScriptedAlertHandlerResponse
@@ -27,6 +28,13 @@ type GetAlertHandler200Response struct {
 	SnmpSubAgentAlertHandlerResponse   *SnmpSubAgentAlertHandlerResponse
 	ThirdPartyAlertHandlerResponse     *ThirdPartyAlertHandlerResponse
 	TwilioAlertHandlerResponse         *TwilioAlertHandlerResponse
+}
+
+// CustomAlertHandlerResponseAsGetAlertHandler200Response is a convenience function that returns CustomAlertHandlerResponse wrapped in GetAlertHandler200Response
+func CustomAlertHandlerResponseAsGetAlertHandler200Response(v *CustomAlertHandlerResponse) GetAlertHandler200Response {
+	return GetAlertHandler200Response{
+		CustomAlertHandlerResponse: v,
+	}
 }
 
 // ErrorLogAlertHandlerResponseAsGetAlertHandler200Response is a convenience function that returns ErrorLogAlertHandlerResponse wrapped in GetAlertHandler200Response
@@ -103,6 +111,19 @@ func TwilioAlertHandlerResponseAsGetAlertHandler200Response(v *TwilioAlertHandle
 func (dst *GetAlertHandler200Response) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
+	// try to unmarshal data into CustomAlertHandlerResponse
+	err = newStrictDecoder(data).Decode(&dst.CustomAlertHandlerResponse)
+	if err == nil {
+		jsonCustomAlertHandlerResponse, _ := json.Marshal(dst.CustomAlertHandlerResponse)
+		if string(jsonCustomAlertHandlerResponse) == "{}" { // empty struct
+			dst.CustomAlertHandlerResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.CustomAlertHandlerResponse = nil
+	}
+
 	// try to unmarshal data into ErrorLogAlertHandlerResponse
 	err = newStrictDecoder(data).Decode(&dst.ErrorLogAlertHandlerResponse)
 	if err == nil {
@@ -235,6 +256,7 @@ func (dst *GetAlertHandler200Response) UnmarshalJSON(data []byte) error {
 
 	if match > 1 { // more than 1 match
 		// reset to nil
+		dst.CustomAlertHandlerResponse = nil
 		dst.ErrorLogAlertHandlerResponse = nil
 		dst.ExecAlertHandlerResponse = nil
 		dst.GroovyScriptedAlertHandlerResponse = nil
@@ -256,6 +278,10 @@ func (dst *GetAlertHandler200Response) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src GetAlertHandler200Response) MarshalJSON() ([]byte, error) {
+	if src.CustomAlertHandlerResponse != nil {
+		return json.Marshal(&src.CustomAlertHandlerResponse)
+	}
+
 	if src.ErrorLogAlertHandlerResponse != nil {
 		return json.Marshal(&src.ErrorLogAlertHandlerResponse)
 	}
@@ -304,6 +330,10 @@ func (obj *GetAlertHandler200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
+	if obj.CustomAlertHandlerResponse != nil {
+		return obj.CustomAlertHandlerResponse
+	}
+
 	if obj.ErrorLogAlertHandlerResponse != nil {
 		return obj.ErrorLogAlertHandlerResponse
 	}

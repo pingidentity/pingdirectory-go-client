@@ -109,6 +109,7 @@ paths:
                 - $ref: '#/components/schemas/smtp-alert-handler-response'
                 - $ref: '#/components/schemas/jmx-alert-handler-response'
                 - $ref: '#/components/schemas/groovy-scripted-alert-handler-response'
+                - $ref: '#/components/schemas/custom-alert-handler-response'
                 - $ref: '#/components/schemas/snmp-alert-handler-response'
                 - $ref: '#/components/schemas/twilio-alert-handler-response'
                 - $ref: '#/components/schemas/error-log-alert-handler-response'
@@ -155,6 +156,7 @@ paths:
                 - $ref: '#/components/schemas/smtp-alert-handler-response'
                 - $ref: '#/components/schemas/jmx-alert-handler-response'
                 - $ref: '#/components/schemas/groovy-scripted-alert-handler-response'
+                - $ref: '#/components/schemas/custom-alert-handler-response'
                 - $ref: '#/components/schemas/snmp-alert-handler-response'
                 - $ref: '#/components/schemas/twilio-alert-handler-response'
                 - $ref: '#/components/schemas/error-log-alert-handler-response'
@@ -446,6 +448,52 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:alert-handler:groovy-scripted"
+    custom-alert-handler-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumcustom-alert-handlerSchemaUrn'
+          id:
+            description: Name of the Alert Handler
+            type: string
+          description:
+            type: string
+            description: >-
+                A description for this Alert Handler
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Alert Handler is enabled.
+          asynchronous:
+            type: boolean
+            description: >-
+                Indicates whether the server should attempt to invoke this Alert Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver the alert notification) will not delay whatever processing the server was performing when the alert was generated.
+          enabledAlertSeverity:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enumalert-handler-enabledAlertSeverityProp'
+          enabledAlertType:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enumalert-handler-enabledAlertTypeProp'
+          disabledAlertType:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enumalert-handler-disabledAlertTypeProp'
+        required:
+        - schemas
+        - enabled
+        - id
+    Enumcustom-alert-handlerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:alert-handler:custom"
     add-snmp-alert-handler-request:
       allOf:
       - type: object

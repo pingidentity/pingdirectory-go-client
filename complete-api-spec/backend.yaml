@@ -93,6 +93,7 @@ paths:
                 - $ref: '#/components/schemas/encryption-settings-backend-response'
                 - $ref: '#/components/schemas/ldif-backend-response'
                 - $ref: '#/components/schemas/trust-store-backend-response'
+                - $ref: '#/components/schemas/custom-backend-response'
                 - $ref: '#/components/schemas/changelog-backend-response'
                 - $ref: '#/components/schemas/monitor-backend-response'
                 - $ref: '#/components/schemas/local-db-backend-response'
@@ -142,6 +143,7 @@ paths:
                 - $ref: '#/components/schemas/encryption-settings-backend-response'
                 - $ref: '#/components/schemas/ldif-backend-response'
                 - $ref: '#/components/schemas/trust-store-backend-response'
+                - $ref: '#/components/schemas/custom-backend-response'
                 - $ref: '#/components/schemas/changelog-backend-response'
                 - $ref: '#/components/schemas/monitor-backend-response'
                 - $ref: '#/components/schemas/local-db-backend-response'
@@ -991,6 +993,67 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:backend:trust-store"
+    custom-backend-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumcustom-backendSchemaUrn'
+          id:
+            description: Name of the Backend
+            type: string
+          backendID:
+            type: string
+            description: >-
+                Specifies a name to identify the associated backend.
+          description:
+            type: string
+            description: >-
+                A description for this Backend
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the backend is enabled in the server.
+          baseDN:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the base DN(s) for the data that the backend handles.
+          writabilityMode:
+            $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
+          setDegradedAlertWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
+          returnUnavailableWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
+          backupFilePermissions:
+            type: string
+            description: >-
+                Specifies the permissions that should be applied to files and directories created by a backup of the backend.
+          notificationManager:
+            type: string
+            description: >-
+                Specifies a notification manager for changes resulting from operations processed through this Backend
+        required:
+        - schemas
+        - backendID
+        - enabled
+        - baseDN
+        - writabilityMode
+        - id
+    Enumcustom-backendSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:backend:custom"
     changelog-backend-response:
       allOf:
       - $ref: '#/components/schemas/meta'

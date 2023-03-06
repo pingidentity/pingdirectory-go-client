@@ -19,6 +19,7 @@ import (
 type GetMonitorProvider200Response struct {
 	ActiveOperationsMonitorProviderResponse *ActiveOperationsMonitorProviderResponse
 	ClientConnectionMonitorProviderResponse *ClientConnectionMonitorProviderResponse
+	CustomMonitorProviderResponse           *CustomMonitorProviderResponse
 	DiskSpaceUsageMonitorProviderResponse   *DiskSpaceUsageMonitorProviderResponse
 	GeneralMonitorProviderResponse          *GeneralMonitorProviderResponse
 	HostSystemMonitorProviderResponse       *HostSystemMonitorProviderResponse
@@ -41,6 +42,13 @@ func ActiveOperationsMonitorProviderResponseAsGetMonitorProvider200Response(v *A
 func ClientConnectionMonitorProviderResponseAsGetMonitorProvider200Response(v *ClientConnectionMonitorProviderResponse) GetMonitorProvider200Response {
 	return GetMonitorProvider200Response{
 		ClientConnectionMonitorProviderResponse: v,
+	}
+}
+
+// CustomMonitorProviderResponseAsGetMonitorProvider200Response is a convenience function that returns CustomMonitorProviderResponse wrapped in GetMonitorProvider200Response
+func CustomMonitorProviderResponseAsGetMonitorProvider200Response(v *CustomMonitorProviderResponse) GetMonitorProvider200Response {
+	return GetMonitorProvider200Response{
+		CustomMonitorProviderResponse: v,
 	}
 }
 
@@ -135,6 +143,19 @@ func (dst *GetMonitorProvider200Response) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.ClientConnectionMonitorProviderResponse = nil
+	}
+
+	// try to unmarshal data into CustomMonitorProviderResponse
+	err = newStrictDecoder(data).Decode(&dst.CustomMonitorProviderResponse)
+	if err == nil {
+		jsonCustomMonitorProviderResponse, _ := json.Marshal(dst.CustomMonitorProviderResponse)
+		if string(jsonCustomMonitorProviderResponse) == "{}" { // empty struct
+			dst.CustomMonitorProviderResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.CustomMonitorProviderResponse = nil
 	}
 
 	// try to unmarshal data into DiskSpaceUsageMonitorProviderResponse
@@ -258,6 +279,7 @@ func (dst *GetMonitorProvider200Response) UnmarshalJSON(data []byte) error {
 		// reset to nil
 		dst.ActiveOperationsMonitorProviderResponse = nil
 		dst.ClientConnectionMonitorProviderResponse = nil
+		dst.CustomMonitorProviderResponse = nil
 		dst.DiskSpaceUsageMonitorProviderResponse = nil
 		dst.GeneralMonitorProviderResponse = nil
 		dst.HostSystemMonitorProviderResponse = nil
@@ -284,6 +306,10 @@ func (src GetMonitorProvider200Response) MarshalJSON() ([]byte, error) {
 
 	if src.ClientConnectionMonitorProviderResponse != nil {
 		return json.Marshal(&src.ClientConnectionMonitorProviderResponse)
+	}
+
+	if src.CustomMonitorProviderResponse != nil {
+		return json.Marshal(&src.CustomMonitorProviderResponse)
 	}
 
 	if src.DiskSpaceUsageMonitorProviderResponse != nil {
@@ -336,6 +362,10 @@ func (obj *GetMonitorProvider200Response) GetActualInstance() interface{} {
 
 	if obj.ClientConnectionMonitorProviderResponse != nil {
 		return obj.ClientConnectionMonitorProviderResponse
+	}
+
+	if obj.CustomMonitorProviderResponse != nil {
+		return obj.CustomMonitorProviderResponse
 	}
 
 	if obj.DiskSpaceUsageMonitorProviderResponse != nil {

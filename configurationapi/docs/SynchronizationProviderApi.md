@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GetSynchronizationProvider
 
-> ReplicationSynchronizationProviderResponse GetSynchronizationProvider(ctx, synchronizationProviderName).Execute()
+> GetSynchronizationProvider200Response GetSynchronizationProvider(ctx, synchronizationProviderName).Execute()
 
 Returns a single Synchronization Provider
 
@@ -37,7 +37,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SynchronizationProviderApi.GetSynchronizationProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetSynchronizationProvider`: ReplicationSynchronizationProviderResponse
+    // response from `GetSynchronizationProvider`: GetSynchronizationProvider200Response
     fmt.Fprintf(os.Stdout, "Response from `SynchronizationProviderApi.GetSynchronizationProvider`: %v\n", resp)
 }
 ```
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ReplicationSynchronizationProviderResponse**](ReplicationSynchronizationProviderResponse.md)
+[**GetSynchronizationProvider200Response**](GetSynchronizationProvider200Response.md)
 
 ### Authorization
 
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ## UpdateSynchronizationProvider
 
-> ReplicationSynchronizationProviderResponse UpdateSynchronizationProvider(ctx, synchronizationProviderName).UpdateRequest(updateRequest).Execute()
+> GetSynchronizationProvider200Response UpdateSynchronizationProvider(ctx, synchronizationProviderName).UpdateRequest(updateRequest).Execute()
 
 Update an existing Synchronization Provider by name
 
@@ -106,7 +106,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SynchronizationProviderApi.UpdateSynchronizationProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateSynchronizationProvider`: ReplicationSynchronizationProviderResponse
+    // response from `UpdateSynchronizationProvider`: GetSynchronizationProvider200Response
     fmt.Fprintf(os.Stdout, "Response from `SynchronizationProviderApi.UpdateSynchronizationProvider`: %v\n", resp)
 }
 ```
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ReplicationSynchronizationProviderResponse**](ReplicationSynchronizationProviderResponse.md)
+[**GetSynchronizationProvider200Response**](GetSynchronizationProvider200Response.md)
 
 ### Authorization
 

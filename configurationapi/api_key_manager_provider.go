@@ -228,7 +228,7 @@ type ApiGetKeyManagerProviderRequest struct {
 	keyManagerProviderName string
 }
 
-func (r ApiGetKeyManagerProviderRequest) Execute() (*AddKeyManagerProvider200Response, *http.Response, error) {
+func (r ApiGetKeyManagerProviderRequest) Execute() (*GetKeyManagerProvider200Response, *http.Response, error) {
 	return r.ApiService.GetKeyManagerProviderExecute(r)
 }
 
@@ -249,13 +249,13 @@ func (a *KeyManagerProviderApiService) GetKeyManagerProvider(ctx context.Context
 
 // Execute executes the request
 //
-//	@return AddKeyManagerProvider200Response
-func (a *KeyManagerProviderApiService) GetKeyManagerProviderExecute(r ApiGetKeyManagerProviderRequest) (*AddKeyManagerProvider200Response, *http.Response, error) {
+//	@return GetKeyManagerProvider200Response
+func (a *KeyManagerProviderApiService) GetKeyManagerProviderExecute(r ApiGetKeyManagerProviderRequest) (*GetKeyManagerProvider200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AddKeyManagerProvider200Response
+		localVarReturnValue *GetKeyManagerProvider200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyManagerProviderApiService.GetKeyManagerProvider")
@@ -337,7 +337,7 @@ func (r ApiUpdateKeyManagerProviderRequest) UpdateRequest(updateRequest UpdateRe
 	return r
 }
 
-func (r ApiUpdateKeyManagerProviderRequest) Execute() (*AddKeyManagerProvider200Response, *http.Response, error) {
+func (r ApiUpdateKeyManagerProviderRequest) Execute() (*GetKeyManagerProvider200Response, *http.Response, error) {
 	return r.ApiService.UpdateKeyManagerProviderExecute(r)
 }
 
@@ -358,13 +358,13 @@ func (a *KeyManagerProviderApiService) UpdateKeyManagerProvider(ctx context.Cont
 
 // Execute executes the request
 //
-//	@return AddKeyManagerProvider200Response
-func (a *KeyManagerProviderApiService) UpdateKeyManagerProviderExecute(r ApiUpdateKeyManagerProviderRequest) (*AddKeyManagerProvider200Response, *http.Response, error) {
+//	@return GetKeyManagerProvider200Response
+func (a *KeyManagerProviderApiService) UpdateKeyManagerProviderExecute(r ApiUpdateKeyManagerProviderRequest) (*GetKeyManagerProvider200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AddKeyManagerProvider200Response
+		localVarReturnValue *GetKeyManagerProvider200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyManagerProviderApiService.UpdateKeyManagerProvider")

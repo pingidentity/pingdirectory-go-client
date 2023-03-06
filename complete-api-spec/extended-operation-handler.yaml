@@ -110,6 +110,7 @@ paths:
                 - $ref: '#/components/schemas/multi-update-extended-operation-handler-response'
                 - $ref: '#/components/schemas/notification-subscription-extended-operation-handler-response'
                 - $ref: '#/components/schemas/password-modify-extended-operation-handler-response'
+                - $ref: '#/components/schemas/custom-extended-operation-handler-response'
                 - $ref: '#/components/schemas/collect-support-data-extended-operation-handler-response'
                 - $ref: '#/components/schemas/export-reversible-passwords-extended-operation-handler-response'
                 - $ref: '#/components/schemas/batched-transactions-extended-operation-handler-response'
@@ -167,6 +168,7 @@ paths:
                 - $ref: '#/components/schemas/multi-update-extended-operation-handler-response'
                 - $ref: '#/components/schemas/notification-subscription-extended-operation-handler-response'
                 - $ref: '#/components/schemas/password-modify-extended-operation-handler-response'
+                - $ref: '#/components/schemas/custom-extended-operation-handler-response'
                 - $ref: '#/components/schemas/collect-support-data-extended-operation-handler-response'
                 - $ref: '#/components/schemas/export-reversible-passwords-extended-operation-handler-response'
                 - $ref: '#/components/schemas/batched-transactions-extended-operation-handler-response'
@@ -472,6 +474,36 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:password-modify"
+    custom-extended-operation-handler-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumcustom-extended-operation-handlerSchemaUrn'
+          id:
+            description: Name of the Extended Operation Handler
+            type: string
+          description:
+            type: string
+            description: >-
+                A description for this Extended Operation Handler
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
+        required:
+        - schemas
+        - enabled
+        - id
+    Enumcustom-extended-operation-handlerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:custom"
     add-collect-support-data-extended-operation-handler-request:
       allOf:
       - type: object

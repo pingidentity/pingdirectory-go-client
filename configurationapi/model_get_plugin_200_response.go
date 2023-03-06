@@ -24,6 +24,7 @@ type GetPlugin200Response struct {
 	CleanUpExpiredPingfederatePersistentSessionsPluginResponse     *CleanUpExpiredPingfederatePersistentSessionsPluginResponse
 	CleanUpInactivePingfederatePersistentSessionsPluginResponse    *CleanUpInactivePingfederatePersistentSessionsPluginResponse
 	ComposedAttributePluginResponse                                *ComposedAttributePluginResponse
+	CustomPluginResponse                                           *CustomPluginResponse
 	DelayPluginResponse                                            *DelayPluginResponse
 	DnMapperPluginResponse                                         *DnMapperPluginResponse
 	EncryptAttributeValuesPluginResponse                           *EncryptAttributeValuesPluginResponse
@@ -101,6 +102,13 @@ func CleanUpInactivePingfederatePersistentSessionsPluginResponseAsGetPlugin200Re
 func ComposedAttributePluginResponseAsGetPlugin200Response(v *ComposedAttributePluginResponse) GetPlugin200Response {
 	return GetPlugin200Response{
 		ComposedAttributePluginResponse: v,
+	}
+}
+
+// CustomPluginResponseAsGetPlugin200Response is a convenience function that returns CustomPluginResponse wrapped in GetPlugin200Response
+func CustomPluginResponseAsGetPlugin200Response(v *CustomPluginResponse) GetPlugin200Response {
+	return GetPlugin200Response{
+		CustomPluginResponse: v,
 	}
 }
 
@@ -400,6 +408,19 @@ func (dst *GetPlugin200Response) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.ComposedAttributePluginResponse = nil
+	}
+
+	// try to unmarshal data into CustomPluginResponse
+	err = newStrictDecoder(data).Decode(&dst.CustomPluginResponse)
+	if err == nil {
+		jsonCustomPluginResponse, _ := json.Marshal(dst.CustomPluginResponse)
+		if string(jsonCustomPluginResponse) == "{}" { // empty struct
+			dst.CustomPluginResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.CustomPluginResponse = nil
 	}
 
 	// try to unmarshal data into DelayPluginResponse
@@ -788,6 +809,7 @@ func (dst *GetPlugin200Response) UnmarshalJSON(data []byte) error {
 		dst.CleanUpExpiredPingfederatePersistentSessionsPluginResponse = nil
 		dst.CleanUpInactivePingfederatePersistentSessionsPluginResponse = nil
 		dst.ComposedAttributePluginResponse = nil
+		dst.CustomPluginResponse = nil
 		dst.DelayPluginResponse = nil
 		dst.DnMapperPluginResponse = nil
 		dst.EncryptAttributeValuesPluginResponse = nil
@@ -854,6 +876,10 @@ func (src GetPlugin200Response) MarshalJSON() ([]byte, error) {
 
 	if src.ComposedAttributePluginResponse != nil {
 		return json.Marshal(&src.ComposedAttributePluginResponse)
+	}
+
+	if src.CustomPluginResponse != nil {
+		return json.Marshal(&src.CustomPluginResponse)
 	}
 
 	if src.DelayPluginResponse != nil {
@@ -1006,6 +1032,10 @@ func (obj *GetPlugin200Response) GetActualInstance() interface{} {
 
 	if obj.ComposedAttributePluginResponse != nil {
 		return obj.ComposedAttributePluginResponse
+	}
+
+	if obj.CustomPluginResponse != nil {
+		return obj.CustomPluginResponse
 	}
 
 	if obj.DelayPluginResponse != nil {
