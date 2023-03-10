@@ -182,19 +182,35 @@ components:
           sizeLimit:
             type: integer
             description: >-
-                Specifies the maximum number of entries that the Directory Server should return to the client during a search operation.
+                Specifies the maximum number of entries that the Directory Server should return to clients by default when processing a search operation.
+          unauthenticatedSizeLimit:
+            type: integer
+            description: >-
+                The size limit value that will apply for connections from unauthenticated clients. If this is not specified, then the value of the size-limit property will be applied for both authenticated and unauthenticated connections.
           timeLimit:
             type: string
             description: >-
                 Specifies the maximum length of time that the Directory Server should be allowed to spend processing a search operation.
+          unauthenticatedTimeLimit:
+            type: string
+            description: >-
+                The time limit value that will apply for connections from unauthenticated clients. If this is not specified, then the value of the time-limit property will be applied for both authenticated and unauthenticated connections.
           idleTimeLimit:
             type: string
             description: >-
                 Specifies the maximum length of time that a client connection may remain established since its last completed operation.
+          unauthenticatedIdleTimeLimit:
+            type: string
+            description: >-
+                The idle-time-limit limit value that will apply for connections from unauthenticated clients. If this is not specified, then the value of the idle-time-limit property will be applied for both authenticated and unauthenticated connections.
           lookthroughLimit:
             type: integer
             description: >-
                 Specifies the maximum number of entries that the Directory Server should "look through" in the course of processing a search request.
+          unauthenticatedLookthroughLimit:
+            type: integer
+            description: >-
+                The lookthrough limit value that will apply for connections from unauthenticated clients. If this is not specified, then the value of the lookthrough-limit property will be applied for both authenticated and unauthenticated connections.
           ldapJoinSizeLimit:
             type: integer
             description: >-

@@ -20,6 +20,9 @@ type AddPasswordStorageScheme200Response struct {
 	Aes256PasswordStorageSchemeResponse               *Aes256PasswordStorageSchemeResponse
 	AmazonSecretsManagerPasswordStorageSchemeResponse *AmazonSecretsManagerPasswordStorageSchemeResponse
 	Argon2PasswordStorageSchemeResponse               *Argon2PasswordStorageSchemeResponse
+	Argon2dPasswordStorageSchemeResponse              *Argon2dPasswordStorageSchemeResponse
+	Argon2iPasswordStorageSchemeResponse              *Argon2iPasswordStorageSchemeResponse
+	Argon2idPasswordStorageSchemeResponse             *Argon2idPasswordStorageSchemeResponse
 	AzureKeyVaultPasswordStorageSchemeResponse        *AzureKeyVaultPasswordStorageSchemeResponse
 	BcryptPasswordStorageSchemeResponse               *BcryptPasswordStorageSchemeResponse
 	ConjurPasswordStorageSchemeResponse               *ConjurPasswordStorageSchemeResponse
@@ -49,6 +52,27 @@ func AmazonSecretsManagerPasswordStorageSchemeResponseAsAddPasswordStorageScheme
 func Argon2PasswordStorageSchemeResponseAsAddPasswordStorageScheme200Response(v *Argon2PasswordStorageSchemeResponse) AddPasswordStorageScheme200Response {
 	return AddPasswordStorageScheme200Response{
 		Argon2PasswordStorageSchemeResponse: v,
+	}
+}
+
+// Argon2dPasswordStorageSchemeResponseAsAddPasswordStorageScheme200Response is a convenience function that returns Argon2dPasswordStorageSchemeResponse wrapped in AddPasswordStorageScheme200Response
+func Argon2dPasswordStorageSchemeResponseAsAddPasswordStorageScheme200Response(v *Argon2dPasswordStorageSchemeResponse) AddPasswordStorageScheme200Response {
+	return AddPasswordStorageScheme200Response{
+		Argon2dPasswordStorageSchemeResponse: v,
+	}
+}
+
+// Argon2iPasswordStorageSchemeResponseAsAddPasswordStorageScheme200Response is a convenience function that returns Argon2iPasswordStorageSchemeResponse wrapped in AddPasswordStorageScheme200Response
+func Argon2iPasswordStorageSchemeResponseAsAddPasswordStorageScheme200Response(v *Argon2iPasswordStorageSchemeResponse) AddPasswordStorageScheme200Response {
+	return AddPasswordStorageScheme200Response{
+		Argon2iPasswordStorageSchemeResponse: v,
+	}
+}
+
+// Argon2idPasswordStorageSchemeResponseAsAddPasswordStorageScheme200Response is a convenience function that returns Argon2idPasswordStorageSchemeResponse wrapped in AddPasswordStorageScheme200Response
+func Argon2idPasswordStorageSchemeResponseAsAddPasswordStorageScheme200Response(v *Argon2idPasswordStorageSchemeResponse) AddPasswordStorageScheme200Response {
+	return AddPasswordStorageScheme200Response{
+		Argon2idPasswordStorageSchemeResponse: v,
 	}
 }
 
@@ -156,6 +180,45 @@ func (dst *AddPasswordStorageScheme200Response) UnmarshalJSON(data []byte) error
 		}
 	} else {
 		dst.Argon2PasswordStorageSchemeResponse = nil
+	}
+
+	// try to unmarshal data into Argon2dPasswordStorageSchemeResponse
+	err = newStrictDecoder(data).Decode(&dst.Argon2dPasswordStorageSchemeResponse)
+	if err == nil {
+		jsonArgon2dPasswordStorageSchemeResponse, _ := json.Marshal(dst.Argon2dPasswordStorageSchemeResponse)
+		if string(jsonArgon2dPasswordStorageSchemeResponse) == "{}" { // empty struct
+			dst.Argon2dPasswordStorageSchemeResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.Argon2dPasswordStorageSchemeResponse = nil
+	}
+
+	// try to unmarshal data into Argon2iPasswordStorageSchemeResponse
+	err = newStrictDecoder(data).Decode(&dst.Argon2iPasswordStorageSchemeResponse)
+	if err == nil {
+		jsonArgon2iPasswordStorageSchemeResponse, _ := json.Marshal(dst.Argon2iPasswordStorageSchemeResponse)
+		if string(jsonArgon2iPasswordStorageSchemeResponse) == "{}" { // empty struct
+			dst.Argon2iPasswordStorageSchemeResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.Argon2iPasswordStorageSchemeResponse = nil
+	}
+
+	// try to unmarshal data into Argon2idPasswordStorageSchemeResponse
+	err = newStrictDecoder(data).Decode(&dst.Argon2idPasswordStorageSchemeResponse)
+	if err == nil {
+		jsonArgon2idPasswordStorageSchemeResponse, _ := json.Marshal(dst.Argon2idPasswordStorageSchemeResponse)
+		if string(jsonArgon2idPasswordStorageSchemeResponse) == "{}" { // empty struct
+			dst.Argon2idPasswordStorageSchemeResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.Argon2idPasswordStorageSchemeResponse = nil
 	}
 
 	// try to unmarshal data into AzureKeyVaultPasswordStorageSchemeResponse
@@ -280,6 +343,9 @@ func (dst *AddPasswordStorageScheme200Response) UnmarshalJSON(data []byte) error
 		dst.Aes256PasswordStorageSchemeResponse = nil
 		dst.AmazonSecretsManagerPasswordStorageSchemeResponse = nil
 		dst.Argon2PasswordStorageSchemeResponse = nil
+		dst.Argon2dPasswordStorageSchemeResponse = nil
+		dst.Argon2iPasswordStorageSchemeResponse = nil
+		dst.Argon2idPasswordStorageSchemeResponse = nil
 		dst.AzureKeyVaultPasswordStorageSchemeResponse = nil
 		dst.BcryptPasswordStorageSchemeResponse = nil
 		dst.ConjurPasswordStorageSchemeResponse = nil
@@ -310,6 +376,18 @@ func (src AddPasswordStorageScheme200Response) MarshalJSON() ([]byte, error) {
 
 	if src.Argon2PasswordStorageSchemeResponse != nil {
 		return json.Marshal(&src.Argon2PasswordStorageSchemeResponse)
+	}
+
+	if src.Argon2dPasswordStorageSchemeResponse != nil {
+		return json.Marshal(&src.Argon2dPasswordStorageSchemeResponse)
+	}
+
+	if src.Argon2iPasswordStorageSchemeResponse != nil {
+		return json.Marshal(&src.Argon2iPasswordStorageSchemeResponse)
+	}
+
+	if src.Argon2idPasswordStorageSchemeResponse != nil {
+		return json.Marshal(&src.Argon2idPasswordStorageSchemeResponse)
 	}
 
 	if src.AzureKeyVaultPasswordStorageSchemeResponse != nil {
@@ -366,6 +444,18 @@ func (obj *AddPasswordStorageScheme200Response) GetActualInstance() interface{} 
 
 	if obj.Argon2PasswordStorageSchemeResponse != nil {
 		return obj.Argon2PasswordStorageSchemeResponse
+	}
+
+	if obj.Argon2dPasswordStorageSchemeResponse != nil {
+		return obj.Argon2dPasswordStorageSchemeResponse
+	}
+
+	if obj.Argon2iPasswordStorageSchemeResponse != nil {
+		return obj.Argon2iPasswordStorageSchemeResponse
+	}
+
+	if obj.Argon2idPasswordStorageSchemeResponse != nil {
+		return obj.Argon2idPasswordStorageSchemeResponse
 	}
 
 	if obj.AzureKeyVaultPasswordStorageSchemeResponse != nil {

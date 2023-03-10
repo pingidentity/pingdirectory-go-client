@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MechanismName** | **string** | Name of the new OTP Delivery Mechanism | 
 **Schemas** | [**[]EnumtwilioOtpDeliveryMechanismSchemaUrn**](EnumtwilioOtpDeliveryMechanismSchemaUrn.md) |  | 
+**HttpProxyExternalServer** | Pointer to **string** | A reference to an HTTP proxy server that should be used for requests sent to the Twilio service. | [optional] 
 **TwilioAccountSID** | **string** | The unique identifier assigned to the Twilio account that will be used. | 
 **TwilioAuthToken** | Pointer to **string** | The auth token for the Twilio account that will be used. | [optional] 
 **TwilioAuthTokenPassphraseProvider** | Pointer to **string** | The passphrase provider that may be used to obtain the auth token for the Twilio account that will be used. | [optional] 
@@ -76,6 +77,31 @@ and a boolean to check if the value has been set.
 
 SetSchemas sets Schemas field to given value.
 
+
+### GetHttpProxyExternalServer
+
+`func (o *AddTwilioOtpDeliveryMechanismRequest) GetHttpProxyExternalServer() string`
+
+GetHttpProxyExternalServer returns the HttpProxyExternalServer field if non-nil, zero value otherwise.
+
+### GetHttpProxyExternalServerOk
+
+`func (o *AddTwilioOtpDeliveryMechanismRequest) GetHttpProxyExternalServerOk() (*string, bool)`
+
+GetHttpProxyExternalServerOk returns a tuple with the HttpProxyExternalServer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHttpProxyExternalServer
+
+`func (o *AddTwilioOtpDeliveryMechanismRequest) SetHttpProxyExternalServer(v string)`
+
+SetHttpProxyExternalServer sets HttpProxyExternalServer field to given value.
+
+### HasHttpProxyExternalServer
+
+`func (o *AddTwilioOtpDeliveryMechanismRequest) HasHttpProxyExternalServer() bool`
+
+HasHttpProxyExternalServer returns a boolean if a field has been set.
 
 ### GetTwilioAccountSID
 

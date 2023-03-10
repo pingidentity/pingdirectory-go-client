@@ -311,6 +311,10 @@ components:
               type: string
             description: >-
                 The base URL of the validation server to use to verify one-time passwords. You should only need to change the value if you wish to use your own validation server instead of using one of the Yubico servers. The server must use the YubiKey Validation Protocol version 2.0.
+          httpProxyExternalServer:
+            type: string
+            description: >-
+                A reference to an HTTP proxy server that should be used for requests sent to the YubiKey validation service.
           identityMapper:
             type: string
             description: >-

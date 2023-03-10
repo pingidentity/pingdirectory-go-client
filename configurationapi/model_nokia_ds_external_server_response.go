@@ -38,9 +38,9 @@ type NokiaDsExternalServerResponse struct {
 	// The login password for the specified user.
 	Password *string `json:"password,omitempty"`
 	// The passphrase provider to use to obtain the login password for the specified user.
-	PassphraseProvider   *string                                    `json:"passphraseProvider,omitempty"`
-	ConnectionSecurity   EnumexternalServerConnectionSecurityProp   `json:"connectionSecurity"`
-	AuthenticationMethod EnumexternalServerAuthenticationMethodProp `json:"authenticationMethod"`
+	PassphraseProvider   *string                                           `json:"passphraseProvider,omitempty"`
+	ConnectionSecurity   EnumexternalServerConnectionSecurityProp          `json:"connectionSecurity"`
+	AuthenticationMethod EnumexternalServerNokiaDsAuthenticationMethodProp `json:"authenticationMethod"`
 	// Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
 	HealthCheckConnectTimeout *string `json:"healthCheckConnectTimeout,omitempty"`
 	// Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections.
@@ -70,7 +70,7 @@ type NokiaDsExternalServerResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNokiaDsExternalServerResponse(id string, schemas []EnumnokiaDsExternalServerSchemaUrn, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, serverHostName string, serverPort int32, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerAuthenticationMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string) *NokiaDsExternalServerResponse {
+func NewNokiaDsExternalServerResponse(id string, schemas []EnumnokiaDsExternalServerSchemaUrn, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, serverHostName string, serverPort int32, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerNokiaDsAuthenticationMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string) *NokiaDsExternalServerResponse {
 	this := NokiaDsExternalServerResponse{}
 	this.Id = id
 	this.Schemas = schemas
@@ -462,9 +462,9 @@ func (o *NokiaDsExternalServerResponse) SetConnectionSecurity(v EnumexternalServ
 }
 
 // GetAuthenticationMethod returns the AuthenticationMethod field value
-func (o *NokiaDsExternalServerResponse) GetAuthenticationMethod() EnumexternalServerAuthenticationMethodProp {
+func (o *NokiaDsExternalServerResponse) GetAuthenticationMethod() EnumexternalServerNokiaDsAuthenticationMethodProp {
 	if o == nil {
-		var ret EnumexternalServerAuthenticationMethodProp
+		var ret EnumexternalServerNokiaDsAuthenticationMethodProp
 		return ret
 	}
 
@@ -473,7 +473,7 @@ func (o *NokiaDsExternalServerResponse) GetAuthenticationMethod() EnumexternalSe
 
 // GetAuthenticationMethodOk returns a tuple with the AuthenticationMethod field value
 // and a boolean to check if the value has been set.
-func (o *NokiaDsExternalServerResponse) GetAuthenticationMethodOk() (*EnumexternalServerAuthenticationMethodProp, bool) {
+func (o *NokiaDsExternalServerResponse) GetAuthenticationMethodOk() (*EnumexternalServerNokiaDsAuthenticationMethodProp, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -481,7 +481,7 @@ func (o *NokiaDsExternalServerResponse) GetAuthenticationMethodOk() (*Enumextern
 }
 
 // SetAuthenticationMethod sets field value
-func (o *NokiaDsExternalServerResponse) SetAuthenticationMethod(v EnumexternalServerAuthenticationMethodProp) {
+func (o *NokiaDsExternalServerResponse) SetAuthenticationMethod(v EnumexternalServerNokiaDsAuthenticationMethodProp) {
 	o.AuthenticationMethod = v
 }
 

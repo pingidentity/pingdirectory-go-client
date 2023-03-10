@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **DigestAlgorithm** | Pointer to **string** | Specifies the preferred message digest algorithm for the Directory Server. | [optional] 
 **MacAlgorithm** | Pointer to **string** | Specifies the preferred MAC algorithm for the Directory Server. | [optional] 
 **MacKeyLength** | Pointer to **int32** | Specifies the key length in bits for the preferred MAC algorithm. | [optional] 
+**SigningEncryptionSettingsID** | Pointer to **string** | The ID of the encryption settings definition to use for generating digital signatures. If this is not specified, then the server&#39;s preferred encryption settings definition will be used. | [optional] 
 **CipherTransformation** | Pointer to **string** | Specifies the cipher for the Directory Server using the syntax algorithm/mode/padding. | [optional] 
 **CipherKeyLength** | Pointer to **int32** | Specifies the key length in bits for the preferred cipher. | [optional] 
 **KeyWrappingTransformation** | Pointer to **string** | The preferred key wrapping transformation for the Directory Server. This value must be the same for all server instances in a replication topology. | [optional] 
@@ -189,6 +190,31 @@ SetMacKeyLength sets MacKeyLength field to given value.
 `func (o *CryptoManagerResponse) HasMacKeyLength() bool`
 
 HasMacKeyLength returns a boolean if a field has been set.
+
+### GetSigningEncryptionSettingsID
+
+`func (o *CryptoManagerResponse) GetSigningEncryptionSettingsID() string`
+
+GetSigningEncryptionSettingsID returns the SigningEncryptionSettingsID field if non-nil, zero value otherwise.
+
+### GetSigningEncryptionSettingsIDOk
+
+`func (o *CryptoManagerResponse) GetSigningEncryptionSettingsIDOk() (*string, bool)`
+
+GetSigningEncryptionSettingsIDOk returns a tuple with the SigningEncryptionSettingsID field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSigningEncryptionSettingsID
+
+`func (o *CryptoManagerResponse) SetSigningEncryptionSettingsID(v string)`
+
+SetSigningEncryptionSettingsID sets SigningEncryptionSettingsID field to given value.
+
+### HasSigningEncryptionSettingsID
+
+`func (o *CryptoManagerResponse) HasSigningEncryptionSettingsID() bool`
+
+HasSigningEncryptionSettingsID returns a boolean if a field has been set.
 
 ### GetCipherTransformation
 

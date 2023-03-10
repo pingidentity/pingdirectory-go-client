@@ -181,6 +181,10 @@ components:
           maxItems: 1
           items:
             $ref: '#/components/schemas/Enumtwilio-otp-delivery-mechanismSchemaUrn'
+        httpProxyExternalServer:
+          type: string
+          description: >-
+              A reference to an HTTP proxy server that should be used for requests sent to the Twilio service.
         twilioAccountSID:
           type: string
           description: >-

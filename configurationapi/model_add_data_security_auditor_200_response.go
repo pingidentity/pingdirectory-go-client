@@ -17,19 +17,47 @@ import (
 
 // AddDataSecurityAuditor200Response - struct for AddDataSecurityAuditor200Response
 type AddDataSecurityAuditor200Response struct {
-	AccessControlDataSecurityAuditorResponse         *AccessControlDataSecurityAuditorResponse
-	DisabledAccountDataSecurityAuditorResponse       *DisabledAccountDataSecurityAuditorResponse
-	ExpiredPasswordDataSecurityAuditorResponse       *ExpiredPasswordDataSecurityAuditorResponse
-	LockedAccountDataSecurityAuditorResponse         *LockedAccountDataSecurityAuditorResponse
-	MultiplePasswordDataSecurityAuditorResponse      *MultiplePasswordDataSecurityAuditorResponse
-	PrivilegeDataSecurityAuditorResponse             *PrivilegeDataSecurityAuditorResponse
-	WeaklyEncodedPasswordDataSecurityAuditorResponse *WeaklyEncodedPasswordDataSecurityAuditorResponse
+	AccessControlDataSecurityAuditorResponse                   *AccessControlDataSecurityAuditorResponse
+	AccountUsabilityIssuesDataSecurityAuditorResponse          *AccountUsabilityIssuesDataSecurityAuditorResponse
+	AccountValidityWindowDataSecurityAuditorResponse           *AccountValidityWindowDataSecurityAuditorResponse
+	DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse *DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse
+	DisabledAccountDataSecurityAuditorResponse                 *DisabledAccountDataSecurityAuditorResponse
+	ExpiredPasswordDataSecurityAuditorResponse                 *ExpiredPasswordDataSecurityAuditorResponse
+	FilterDataSecurityAuditorResponse                          *FilterDataSecurityAuditorResponse
+	IdleAccountDataSecurityAuditorResponse                     *IdleAccountDataSecurityAuditorResponse
+	LockedAccountDataSecurityAuditorResponse                   *LockedAccountDataSecurityAuditorResponse
+	MultiplePasswordDataSecurityAuditorResponse                *MultiplePasswordDataSecurityAuditorResponse
+	NonexistentPasswordPolicyDataSecurityAuditorResponse       *NonexistentPasswordPolicyDataSecurityAuditorResponse
+	PrivilegeDataSecurityAuditorResponse                       *PrivilegeDataSecurityAuditorResponse
+	ThirdPartyDataSecurityAuditorResponse                      *ThirdPartyDataSecurityAuditorResponse
+	WeaklyEncodedPasswordDataSecurityAuditorResponse           *WeaklyEncodedPasswordDataSecurityAuditorResponse
 }
 
 // AccessControlDataSecurityAuditorResponseAsAddDataSecurityAuditor200Response is a convenience function that returns AccessControlDataSecurityAuditorResponse wrapped in AddDataSecurityAuditor200Response
 func AccessControlDataSecurityAuditorResponseAsAddDataSecurityAuditor200Response(v *AccessControlDataSecurityAuditorResponse) AddDataSecurityAuditor200Response {
 	return AddDataSecurityAuditor200Response{
 		AccessControlDataSecurityAuditorResponse: v,
+	}
+}
+
+// AccountUsabilityIssuesDataSecurityAuditorResponseAsAddDataSecurityAuditor200Response is a convenience function that returns AccountUsabilityIssuesDataSecurityAuditorResponse wrapped in AddDataSecurityAuditor200Response
+func AccountUsabilityIssuesDataSecurityAuditorResponseAsAddDataSecurityAuditor200Response(v *AccountUsabilityIssuesDataSecurityAuditorResponse) AddDataSecurityAuditor200Response {
+	return AddDataSecurityAuditor200Response{
+		AccountUsabilityIssuesDataSecurityAuditorResponse: v,
+	}
+}
+
+// AccountValidityWindowDataSecurityAuditorResponseAsAddDataSecurityAuditor200Response is a convenience function that returns AccountValidityWindowDataSecurityAuditorResponse wrapped in AddDataSecurityAuditor200Response
+func AccountValidityWindowDataSecurityAuditorResponseAsAddDataSecurityAuditor200Response(v *AccountValidityWindowDataSecurityAuditorResponse) AddDataSecurityAuditor200Response {
+	return AddDataSecurityAuditor200Response{
+		AccountValidityWindowDataSecurityAuditorResponse: v,
+	}
+}
+
+// DeprecatedPasswordStorageSchemeDataSecurityAuditorResponseAsAddDataSecurityAuditor200Response is a convenience function that returns DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse wrapped in AddDataSecurityAuditor200Response
+func DeprecatedPasswordStorageSchemeDataSecurityAuditorResponseAsAddDataSecurityAuditor200Response(v *DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse) AddDataSecurityAuditor200Response {
+	return AddDataSecurityAuditor200Response{
+		DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse: v,
 	}
 }
 
@@ -47,6 +75,20 @@ func ExpiredPasswordDataSecurityAuditorResponseAsAddDataSecurityAuditor200Respon
 	}
 }
 
+// FilterDataSecurityAuditorResponseAsAddDataSecurityAuditor200Response is a convenience function that returns FilterDataSecurityAuditorResponse wrapped in AddDataSecurityAuditor200Response
+func FilterDataSecurityAuditorResponseAsAddDataSecurityAuditor200Response(v *FilterDataSecurityAuditorResponse) AddDataSecurityAuditor200Response {
+	return AddDataSecurityAuditor200Response{
+		FilterDataSecurityAuditorResponse: v,
+	}
+}
+
+// IdleAccountDataSecurityAuditorResponseAsAddDataSecurityAuditor200Response is a convenience function that returns IdleAccountDataSecurityAuditorResponse wrapped in AddDataSecurityAuditor200Response
+func IdleAccountDataSecurityAuditorResponseAsAddDataSecurityAuditor200Response(v *IdleAccountDataSecurityAuditorResponse) AddDataSecurityAuditor200Response {
+	return AddDataSecurityAuditor200Response{
+		IdleAccountDataSecurityAuditorResponse: v,
+	}
+}
+
 // LockedAccountDataSecurityAuditorResponseAsAddDataSecurityAuditor200Response is a convenience function that returns LockedAccountDataSecurityAuditorResponse wrapped in AddDataSecurityAuditor200Response
 func LockedAccountDataSecurityAuditorResponseAsAddDataSecurityAuditor200Response(v *LockedAccountDataSecurityAuditorResponse) AddDataSecurityAuditor200Response {
 	return AddDataSecurityAuditor200Response{
@@ -61,10 +103,24 @@ func MultiplePasswordDataSecurityAuditorResponseAsAddDataSecurityAuditor200Respo
 	}
 }
 
+// NonexistentPasswordPolicyDataSecurityAuditorResponseAsAddDataSecurityAuditor200Response is a convenience function that returns NonexistentPasswordPolicyDataSecurityAuditorResponse wrapped in AddDataSecurityAuditor200Response
+func NonexistentPasswordPolicyDataSecurityAuditorResponseAsAddDataSecurityAuditor200Response(v *NonexistentPasswordPolicyDataSecurityAuditorResponse) AddDataSecurityAuditor200Response {
+	return AddDataSecurityAuditor200Response{
+		NonexistentPasswordPolicyDataSecurityAuditorResponse: v,
+	}
+}
+
 // PrivilegeDataSecurityAuditorResponseAsAddDataSecurityAuditor200Response is a convenience function that returns PrivilegeDataSecurityAuditorResponse wrapped in AddDataSecurityAuditor200Response
 func PrivilegeDataSecurityAuditorResponseAsAddDataSecurityAuditor200Response(v *PrivilegeDataSecurityAuditorResponse) AddDataSecurityAuditor200Response {
 	return AddDataSecurityAuditor200Response{
 		PrivilegeDataSecurityAuditorResponse: v,
+	}
+}
+
+// ThirdPartyDataSecurityAuditorResponseAsAddDataSecurityAuditor200Response is a convenience function that returns ThirdPartyDataSecurityAuditorResponse wrapped in AddDataSecurityAuditor200Response
+func ThirdPartyDataSecurityAuditorResponseAsAddDataSecurityAuditor200Response(v *ThirdPartyDataSecurityAuditorResponse) AddDataSecurityAuditor200Response {
+	return AddDataSecurityAuditor200Response{
+		ThirdPartyDataSecurityAuditorResponse: v,
 	}
 }
 
@@ -90,6 +146,45 @@ func (dst *AddDataSecurityAuditor200Response) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.AccessControlDataSecurityAuditorResponse = nil
+	}
+
+	// try to unmarshal data into AccountUsabilityIssuesDataSecurityAuditorResponse
+	err = newStrictDecoder(data).Decode(&dst.AccountUsabilityIssuesDataSecurityAuditorResponse)
+	if err == nil {
+		jsonAccountUsabilityIssuesDataSecurityAuditorResponse, _ := json.Marshal(dst.AccountUsabilityIssuesDataSecurityAuditorResponse)
+		if string(jsonAccountUsabilityIssuesDataSecurityAuditorResponse) == "{}" { // empty struct
+			dst.AccountUsabilityIssuesDataSecurityAuditorResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.AccountUsabilityIssuesDataSecurityAuditorResponse = nil
+	}
+
+	// try to unmarshal data into AccountValidityWindowDataSecurityAuditorResponse
+	err = newStrictDecoder(data).Decode(&dst.AccountValidityWindowDataSecurityAuditorResponse)
+	if err == nil {
+		jsonAccountValidityWindowDataSecurityAuditorResponse, _ := json.Marshal(dst.AccountValidityWindowDataSecurityAuditorResponse)
+		if string(jsonAccountValidityWindowDataSecurityAuditorResponse) == "{}" { // empty struct
+			dst.AccountValidityWindowDataSecurityAuditorResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.AccountValidityWindowDataSecurityAuditorResponse = nil
+	}
+
+	// try to unmarshal data into DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse
+	err = newStrictDecoder(data).Decode(&dst.DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse)
+	if err == nil {
+		jsonDeprecatedPasswordStorageSchemeDataSecurityAuditorResponse, _ := json.Marshal(dst.DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse)
+		if string(jsonDeprecatedPasswordStorageSchemeDataSecurityAuditorResponse) == "{}" { // empty struct
+			dst.DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse = nil
 	}
 
 	// try to unmarshal data into DisabledAccountDataSecurityAuditorResponse
@@ -118,6 +213,32 @@ func (dst *AddDataSecurityAuditor200Response) UnmarshalJSON(data []byte) error {
 		dst.ExpiredPasswordDataSecurityAuditorResponse = nil
 	}
 
+	// try to unmarshal data into FilterDataSecurityAuditorResponse
+	err = newStrictDecoder(data).Decode(&dst.FilterDataSecurityAuditorResponse)
+	if err == nil {
+		jsonFilterDataSecurityAuditorResponse, _ := json.Marshal(dst.FilterDataSecurityAuditorResponse)
+		if string(jsonFilterDataSecurityAuditorResponse) == "{}" { // empty struct
+			dst.FilterDataSecurityAuditorResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.FilterDataSecurityAuditorResponse = nil
+	}
+
+	// try to unmarshal data into IdleAccountDataSecurityAuditorResponse
+	err = newStrictDecoder(data).Decode(&dst.IdleAccountDataSecurityAuditorResponse)
+	if err == nil {
+		jsonIdleAccountDataSecurityAuditorResponse, _ := json.Marshal(dst.IdleAccountDataSecurityAuditorResponse)
+		if string(jsonIdleAccountDataSecurityAuditorResponse) == "{}" { // empty struct
+			dst.IdleAccountDataSecurityAuditorResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.IdleAccountDataSecurityAuditorResponse = nil
+	}
+
 	// try to unmarshal data into LockedAccountDataSecurityAuditorResponse
 	err = newStrictDecoder(data).Decode(&dst.LockedAccountDataSecurityAuditorResponse)
 	if err == nil {
@@ -144,6 +265,19 @@ func (dst *AddDataSecurityAuditor200Response) UnmarshalJSON(data []byte) error {
 		dst.MultiplePasswordDataSecurityAuditorResponse = nil
 	}
 
+	// try to unmarshal data into NonexistentPasswordPolicyDataSecurityAuditorResponse
+	err = newStrictDecoder(data).Decode(&dst.NonexistentPasswordPolicyDataSecurityAuditorResponse)
+	if err == nil {
+		jsonNonexistentPasswordPolicyDataSecurityAuditorResponse, _ := json.Marshal(dst.NonexistentPasswordPolicyDataSecurityAuditorResponse)
+		if string(jsonNonexistentPasswordPolicyDataSecurityAuditorResponse) == "{}" { // empty struct
+			dst.NonexistentPasswordPolicyDataSecurityAuditorResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.NonexistentPasswordPolicyDataSecurityAuditorResponse = nil
+	}
+
 	// try to unmarshal data into PrivilegeDataSecurityAuditorResponse
 	err = newStrictDecoder(data).Decode(&dst.PrivilegeDataSecurityAuditorResponse)
 	if err == nil {
@@ -155,6 +289,19 @@ func (dst *AddDataSecurityAuditor200Response) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.PrivilegeDataSecurityAuditorResponse = nil
+	}
+
+	// try to unmarshal data into ThirdPartyDataSecurityAuditorResponse
+	err = newStrictDecoder(data).Decode(&dst.ThirdPartyDataSecurityAuditorResponse)
+	if err == nil {
+		jsonThirdPartyDataSecurityAuditorResponse, _ := json.Marshal(dst.ThirdPartyDataSecurityAuditorResponse)
+		if string(jsonThirdPartyDataSecurityAuditorResponse) == "{}" { // empty struct
+			dst.ThirdPartyDataSecurityAuditorResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.ThirdPartyDataSecurityAuditorResponse = nil
 	}
 
 	// try to unmarshal data into WeaklyEncodedPasswordDataSecurityAuditorResponse
@@ -173,11 +320,18 @@ func (dst *AddDataSecurityAuditor200Response) UnmarshalJSON(data []byte) error {
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.AccessControlDataSecurityAuditorResponse = nil
+		dst.AccountUsabilityIssuesDataSecurityAuditorResponse = nil
+		dst.AccountValidityWindowDataSecurityAuditorResponse = nil
+		dst.DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse = nil
 		dst.DisabledAccountDataSecurityAuditorResponse = nil
 		dst.ExpiredPasswordDataSecurityAuditorResponse = nil
+		dst.FilterDataSecurityAuditorResponse = nil
+		dst.IdleAccountDataSecurityAuditorResponse = nil
 		dst.LockedAccountDataSecurityAuditorResponse = nil
 		dst.MultiplePasswordDataSecurityAuditorResponse = nil
+		dst.NonexistentPasswordPolicyDataSecurityAuditorResponse = nil
 		dst.PrivilegeDataSecurityAuditorResponse = nil
+		dst.ThirdPartyDataSecurityAuditorResponse = nil
 		dst.WeaklyEncodedPasswordDataSecurityAuditorResponse = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(AddDataSecurityAuditor200Response)")
@@ -194,12 +348,32 @@ func (src AddDataSecurityAuditor200Response) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.AccessControlDataSecurityAuditorResponse)
 	}
 
+	if src.AccountUsabilityIssuesDataSecurityAuditorResponse != nil {
+		return json.Marshal(&src.AccountUsabilityIssuesDataSecurityAuditorResponse)
+	}
+
+	if src.AccountValidityWindowDataSecurityAuditorResponse != nil {
+		return json.Marshal(&src.AccountValidityWindowDataSecurityAuditorResponse)
+	}
+
+	if src.DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse != nil {
+		return json.Marshal(&src.DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse)
+	}
+
 	if src.DisabledAccountDataSecurityAuditorResponse != nil {
 		return json.Marshal(&src.DisabledAccountDataSecurityAuditorResponse)
 	}
 
 	if src.ExpiredPasswordDataSecurityAuditorResponse != nil {
 		return json.Marshal(&src.ExpiredPasswordDataSecurityAuditorResponse)
+	}
+
+	if src.FilterDataSecurityAuditorResponse != nil {
+		return json.Marshal(&src.FilterDataSecurityAuditorResponse)
+	}
+
+	if src.IdleAccountDataSecurityAuditorResponse != nil {
+		return json.Marshal(&src.IdleAccountDataSecurityAuditorResponse)
 	}
 
 	if src.LockedAccountDataSecurityAuditorResponse != nil {
@@ -210,8 +384,16 @@ func (src AddDataSecurityAuditor200Response) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.MultiplePasswordDataSecurityAuditorResponse)
 	}
 
+	if src.NonexistentPasswordPolicyDataSecurityAuditorResponse != nil {
+		return json.Marshal(&src.NonexistentPasswordPolicyDataSecurityAuditorResponse)
+	}
+
 	if src.PrivilegeDataSecurityAuditorResponse != nil {
 		return json.Marshal(&src.PrivilegeDataSecurityAuditorResponse)
+	}
+
+	if src.ThirdPartyDataSecurityAuditorResponse != nil {
+		return json.Marshal(&src.ThirdPartyDataSecurityAuditorResponse)
 	}
 
 	if src.WeaklyEncodedPasswordDataSecurityAuditorResponse != nil {
@@ -230,12 +412,32 @@ func (obj *AddDataSecurityAuditor200Response) GetActualInstance() interface{} {
 		return obj.AccessControlDataSecurityAuditorResponse
 	}
 
+	if obj.AccountUsabilityIssuesDataSecurityAuditorResponse != nil {
+		return obj.AccountUsabilityIssuesDataSecurityAuditorResponse
+	}
+
+	if obj.AccountValidityWindowDataSecurityAuditorResponse != nil {
+		return obj.AccountValidityWindowDataSecurityAuditorResponse
+	}
+
+	if obj.DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse != nil {
+		return obj.DeprecatedPasswordStorageSchemeDataSecurityAuditorResponse
+	}
+
 	if obj.DisabledAccountDataSecurityAuditorResponse != nil {
 		return obj.DisabledAccountDataSecurityAuditorResponse
 	}
 
 	if obj.ExpiredPasswordDataSecurityAuditorResponse != nil {
 		return obj.ExpiredPasswordDataSecurityAuditorResponse
+	}
+
+	if obj.FilterDataSecurityAuditorResponse != nil {
+		return obj.FilterDataSecurityAuditorResponse
+	}
+
+	if obj.IdleAccountDataSecurityAuditorResponse != nil {
+		return obj.IdleAccountDataSecurityAuditorResponse
 	}
 
 	if obj.LockedAccountDataSecurityAuditorResponse != nil {
@@ -246,8 +448,16 @@ func (obj *AddDataSecurityAuditor200Response) GetActualInstance() interface{} {
 		return obj.MultiplePasswordDataSecurityAuditorResponse
 	}
 
+	if obj.NonexistentPasswordPolicyDataSecurityAuditorResponse != nil {
+		return obj.NonexistentPasswordPolicyDataSecurityAuditorResponse
+	}
+
 	if obj.PrivilegeDataSecurityAuditorResponse != nil {
 		return obj.PrivilegeDataSecurityAuditorResponse
+	}
+
+	if obj.ThirdPartyDataSecurityAuditorResponse != nil {
+		return obj.ThirdPartyDataSecurityAuditorResponse
 	}
 
 	if obj.WeaklyEncodedPasswordDataSecurityAuditorResponse != nil {

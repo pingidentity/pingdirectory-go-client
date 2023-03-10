@@ -22,6 +22,8 @@ type AddTwilioOtpDeliveryMechanismRequest struct {
 	// Name of the new OTP Delivery Mechanism
 	MechanismName string                                    `json:"mechanismName"`
 	Schemas       []EnumtwilioOtpDeliveryMechanismSchemaUrn `json:"schemas"`
+	// A reference to an HTTP proxy server that should be used for requests sent to the Twilio service.
+	HttpProxyExternalServer *string `json:"httpProxyExternalServer,omitempty"`
 	// The unique identifier assigned to the Twilio account that will be used.
 	TwilioAccountSID string `json:"twilioAccountSID"`
 	// The auth token for the Twilio account that will be used.
@@ -114,6 +116,38 @@ func (o *AddTwilioOtpDeliveryMechanismRequest) GetSchemasOk() ([]EnumtwilioOtpDe
 // SetSchemas sets field value
 func (o *AddTwilioOtpDeliveryMechanismRequest) SetSchemas(v []EnumtwilioOtpDeliveryMechanismSchemaUrn) {
 	o.Schemas = v
+}
+
+// GetHttpProxyExternalServer returns the HttpProxyExternalServer field value if set, zero value otherwise.
+func (o *AddTwilioOtpDeliveryMechanismRequest) GetHttpProxyExternalServer() string {
+	if o == nil || IsNil(o.HttpProxyExternalServer) {
+		var ret string
+		return ret
+	}
+	return *o.HttpProxyExternalServer
+}
+
+// GetHttpProxyExternalServerOk returns a tuple with the HttpProxyExternalServer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddTwilioOtpDeliveryMechanismRequest) GetHttpProxyExternalServerOk() (*string, bool) {
+	if o == nil || IsNil(o.HttpProxyExternalServer) {
+		return nil, false
+	}
+	return o.HttpProxyExternalServer, true
+}
+
+// HasHttpProxyExternalServer returns a boolean if a field has been set.
+func (o *AddTwilioOtpDeliveryMechanismRequest) HasHttpProxyExternalServer() bool {
+	if o != nil && !IsNil(o.HttpProxyExternalServer) {
+		return true
+	}
+
+	return false
+}
+
+// SetHttpProxyExternalServer gets a reference to the given string and assigns it to the HttpProxyExternalServer field.
+func (o *AddTwilioOtpDeliveryMechanismRequest) SetHttpProxyExternalServer(v string) {
+	o.HttpProxyExternalServer = &v
 }
 
 // GetTwilioAccountSID returns the TwilioAccountSID field value
@@ -456,6 +490,9 @@ func (o AddTwilioOtpDeliveryMechanismRequest) ToMap() (map[string]interface{}, e
 	toSerialize := map[string]interface{}{}
 	toSerialize["mechanismName"] = o.MechanismName
 	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.HttpProxyExternalServer) {
+		toSerialize["httpProxyExternalServer"] = o.HttpProxyExternalServer
+	}
 	toSerialize["twilioAccountSID"] = o.TwilioAccountSID
 	if !IsNil(o.TwilioAuthToken) {
 		toSerialize["twilioAuthToken"] = o.TwilioAuthToken

@@ -38,9 +38,9 @@ type NokiaProxyServerExternalServerResponse struct {
 	// The login password for the specified user.
 	Password *string `json:"password,omitempty"`
 	// The passphrase provider to use to obtain the login password for the specified user.
-	PassphraseProvider   *string                                    `json:"passphraseProvider,omitempty"`
-	ConnectionSecurity   EnumexternalServerConnectionSecurityProp   `json:"connectionSecurity"`
-	AuthenticationMethod EnumexternalServerAuthenticationMethodProp `json:"authenticationMethod"`
+	PassphraseProvider   *string                                                    `json:"passphraseProvider,omitempty"`
+	ConnectionSecurity   EnumexternalServerConnectionSecurityProp                   `json:"connectionSecurity"`
+	AuthenticationMethod EnumexternalServerNokiaProxyServerAuthenticationMethodProp `json:"authenticationMethod"`
 	// Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
 	HealthCheckConnectTimeout *string `json:"healthCheckConnectTimeout,omitempty"`
 	// Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections.
@@ -70,7 +70,7 @@ type NokiaProxyServerExternalServerResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNokiaProxyServerExternalServerResponse(id string, schemas []EnumnokiaProxyServerExternalServerSchemaUrn, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, serverHostName string, serverPort int32, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerAuthenticationMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string) *NokiaProxyServerExternalServerResponse {
+func NewNokiaProxyServerExternalServerResponse(id string, schemas []EnumnokiaProxyServerExternalServerSchemaUrn, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, serverHostName string, serverPort int32, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerNokiaProxyServerAuthenticationMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string) *NokiaProxyServerExternalServerResponse {
 	this := NokiaProxyServerExternalServerResponse{}
 	this.Id = id
 	this.Schemas = schemas
@@ -462,9 +462,9 @@ func (o *NokiaProxyServerExternalServerResponse) SetConnectionSecurity(v Enumext
 }
 
 // GetAuthenticationMethod returns the AuthenticationMethod field value
-func (o *NokiaProxyServerExternalServerResponse) GetAuthenticationMethod() EnumexternalServerAuthenticationMethodProp {
+func (o *NokiaProxyServerExternalServerResponse) GetAuthenticationMethod() EnumexternalServerNokiaProxyServerAuthenticationMethodProp {
 	if o == nil {
-		var ret EnumexternalServerAuthenticationMethodProp
+		var ret EnumexternalServerNokiaProxyServerAuthenticationMethodProp
 		return ret
 	}
 
@@ -473,7 +473,7 @@ func (o *NokiaProxyServerExternalServerResponse) GetAuthenticationMethod() Enume
 
 // GetAuthenticationMethodOk returns a tuple with the AuthenticationMethod field value
 // and a boolean to check if the value has been set.
-func (o *NokiaProxyServerExternalServerResponse) GetAuthenticationMethodOk() (*EnumexternalServerAuthenticationMethodProp, bool) {
+func (o *NokiaProxyServerExternalServerResponse) GetAuthenticationMethodOk() (*EnumexternalServerNokiaProxyServerAuthenticationMethodProp, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -481,7 +481,7 @@ func (o *NokiaProxyServerExternalServerResponse) GetAuthenticationMethodOk() (*E
 }
 
 // SetAuthenticationMethod sets field value
-func (o *NokiaProxyServerExternalServerResponse) SetAuthenticationMethod(v EnumexternalServerAuthenticationMethodProp) {
+func (o *NokiaProxyServerExternalServerResponse) SetAuthenticationMethod(v EnumexternalServerNokiaProxyServerAuthenticationMethodProp) {
 	o.AuthenticationMethod = v
 }
 

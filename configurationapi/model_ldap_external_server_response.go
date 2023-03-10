@@ -35,10 +35,10 @@ type LdapExternalServerResponse struct {
 	// The login password for the specified user.
 	Password *string `json:"password,omitempty"`
 	// The passphrase provider to use to obtain the login password for the specified user.
-	PassphraseProvider      *string                                       `json:"passphraseProvider,omitempty"`
-	ConnectionSecurity      EnumexternalServerConnectionSecurityProp      `json:"connectionSecurity"`
-	AuthenticationMethod    EnumexternalServerAuthenticationMethodProp    `json:"authenticationMethod"`
-	VerifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp `json:"verifyCredentialsMethod"`
+	PassphraseProvider      *string                                        `json:"passphraseProvider,omitempty"`
+	ConnectionSecurity      EnumexternalServerConnectionSecurityProp       `json:"connectionSecurity"`
+	AuthenticationMethod    EnumexternalServerLdapAuthenticationMethodProp `json:"authenticationMethod"`
+	VerifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp  `json:"verifyCredentialsMethod"`
 	// Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
 	HealthCheckConnectTimeout *string `json:"healthCheckConnectTimeout,omitempty"`
 	// Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections.
@@ -68,7 +68,7 @@ type LdapExternalServerResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLdapExternalServerResponse(id string, schemas []EnumldapExternalServerSchemaUrn, serverHostName string, serverPort int32, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerAuthenticationMethodProp, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string) *LdapExternalServerResponse {
+func NewLdapExternalServerResponse(id string, schemas []EnumldapExternalServerSchemaUrn, serverHostName string, serverPort int32, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerLdapAuthenticationMethodProp, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string) *LdapExternalServerResponse {
 	this := LdapExternalServerResponse{}
 	this.Id = id
 	this.Schemas = schemas
@@ -404,9 +404,9 @@ func (o *LdapExternalServerResponse) SetConnectionSecurity(v EnumexternalServerC
 }
 
 // GetAuthenticationMethod returns the AuthenticationMethod field value
-func (o *LdapExternalServerResponse) GetAuthenticationMethod() EnumexternalServerAuthenticationMethodProp {
+func (o *LdapExternalServerResponse) GetAuthenticationMethod() EnumexternalServerLdapAuthenticationMethodProp {
 	if o == nil {
-		var ret EnumexternalServerAuthenticationMethodProp
+		var ret EnumexternalServerLdapAuthenticationMethodProp
 		return ret
 	}
 
@@ -415,7 +415,7 @@ func (o *LdapExternalServerResponse) GetAuthenticationMethod() EnumexternalServe
 
 // GetAuthenticationMethodOk returns a tuple with the AuthenticationMethod field value
 // and a boolean to check if the value has been set.
-func (o *LdapExternalServerResponse) GetAuthenticationMethodOk() (*EnumexternalServerAuthenticationMethodProp, bool) {
+func (o *LdapExternalServerResponse) GetAuthenticationMethodOk() (*EnumexternalServerLdapAuthenticationMethodProp, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -423,7 +423,7 @@ func (o *LdapExternalServerResponse) GetAuthenticationMethodOk() (*EnumexternalS
 }
 
 // SetAuthenticationMethod sets field value
-func (o *LdapExternalServerResponse) SetAuthenticationMethod(v EnumexternalServerAuthenticationMethodProp) {
+func (o *LdapExternalServerResponse) SetAuthenticationMethod(v EnumexternalServerLdapAuthenticationMethodProp) {
 	o.AuthenticationMethod = v
 }
 

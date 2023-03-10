@@ -26,6 +26,7 @@ paths:
               - $ref: '#/components/schemas/add-jdbc-external-server-request'
               - $ref: '#/components/schemas/add-syslog-external-server-request'
               - $ref: '#/components/schemas/add-ping-identity-proxy-server-external-server-request'
+              - $ref: '#/components/schemas/add-http-proxy-external-server-request'
               - $ref: '#/components/schemas/add-nokia-proxy-server-external-server-request'
               - $ref: '#/components/schemas/add-opendj-external-server-request'
               - $ref: '#/components/schemas/add-ldap-external-server-request'
@@ -51,6 +52,7 @@ paths:
                 - $ref: '#/components/schemas/jdbc-external-server-response'
                 - $ref: '#/components/schemas/syslog-external-server-response'
                 - $ref: '#/components/schemas/ping-identity-proxy-server-external-server-response'
+                - $ref: '#/components/schemas/http-proxy-external-server-response'
                 - $ref: '#/components/schemas/nokia-proxy-server-external-server-response'
                 - $ref: '#/components/schemas/opendj-external-server-response'
                 - $ref: '#/components/schemas/ldap-external-server-response'
@@ -126,6 +128,7 @@ paths:
                 - $ref: '#/components/schemas/jdbc-external-server-response'
                 - $ref: '#/components/schemas/syslog-external-server-response'
                 - $ref: '#/components/schemas/ping-identity-proxy-server-external-server-response'
+                - $ref: '#/components/schemas/http-proxy-external-server-response'
                 - $ref: '#/components/schemas/nokia-proxy-server-external-server-response'
                 - $ref: '#/components/schemas/opendj-external-server-response'
                 - $ref: '#/components/schemas/ldap-external-server-response'
@@ -178,6 +181,7 @@ paths:
                 - $ref: '#/components/schemas/jdbc-external-server-response'
                 - $ref: '#/components/schemas/syslog-external-server-response'
                 - $ref: '#/components/schemas/ping-identity-proxy-server-external-server-response'
+                - $ref: '#/components/schemas/http-proxy-external-server-response'
                 - $ref: '#/components/schemas/nokia-proxy-server-external-server-response'
                 - $ref: '#/components/schemas/opendj-external-server-response'
                 - $ref: '#/components/schemas/ldap-external-server-response'
@@ -347,7 +351,7 @@ components:
         connectionSecurity:
           $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
         authenticationMethod:
-          $ref: '#/components/schemas/Enumexternal-server-authenticationMethodProp'
+          $ref: '#/components/schemas/Enumexternal-server-nokia-ds-authenticationMethodProp'
         healthCheckConnectTimeout:
           type: string
           description: >-
@@ -475,7 +479,7 @@ components:
         connectionSecurity:
           $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
         authenticationMethod:
-          $ref: '#/components/schemas/Enumexternal-server-authenticationMethodProp'
+          $ref: '#/components/schemas/Enumexternal-server-ping-identity-ds-authenticationMethodProp'
         healthCheckConnectTimeout:
           type: string
           description: >-
@@ -597,7 +601,7 @@ components:
         connectionSecurity:
           $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
         authenticationMethod:
-          $ref: '#/components/schemas/Enumexternal-server-authenticationMethodProp'
+          $ref: '#/components/schemas/Enumexternal-server-active-directory-authenticationMethodProp'
         verifyCredentialsMethod:
           $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
         healthCheckConnectTimeout:
@@ -883,7 +887,7 @@ components:
         connectionSecurity:
           $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
         authenticationMethod:
-          $ref: '#/components/schemas/Enumexternal-server-authenticationMethodProp'
+          $ref: '#/components/schemas/Enumexternal-server-ping-identity-proxy-server-authenticationMethodProp'
         healthCheckConnectTimeout:
           type: string
           description: >-
@@ -939,6 +943,64 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:external-server:ping-identity-proxy-server"
+    add-http-proxy-external-server-request:
+      allOf:
+      - type: object
+        properties:
+          serverName:
+            description: Name of the new External Server
+            type: string
+        required:
+        - serverName
+      - $ref: '#/components/schemas/http-proxy-external-server-shared'
+    http-proxy-external-server-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the External Server
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/http-proxy-external-server-shared'
+    http-proxy-external-server-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumhttp-proxy-external-serverSchemaUrn'
+        serverHostName:
+          type: string
+          description: >-
+              The host name or IP address of the HTTP Proxy External Server.
+        serverPort:
+          type: integer
+          description: >-
+              The port on which the HTTP Proxy External Server is listening for connections.
+        basicAuthenticationUsername:
+          type: string
+          description: >-
+              The username to use to authenticate to the HTTP Proxy External Server.
+        basicAuthenticationPassphraseProvider:
+          type: string
+          description: >-
+              A passphrase provider that provides access to the password to use to authenticate to the HTTP Proxy External Server.
+        description:
+          type: string
+          description: >-
+              A description for this External Server
+      required:
+      - schemas
+      - serverHostName
+      - serverPort
+    Enumhttp-proxy-external-serverSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:external-server:http-proxy"
     add-nokia-proxy-server-external-server-request:
       allOf:
       - type: object
@@ -1011,7 +1073,7 @@ components:
         connectionSecurity:
           $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
         authenticationMethod:
-          $ref: '#/components/schemas/Enumexternal-server-authenticationMethodProp'
+          $ref: '#/components/schemas/Enumexternal-server-nokia-proxy-server-authenticationMethodProp'
         healthCheckConnectTimeout:
           type: string
           description: >-
@@ -1133,7 +1195,7 @@ components:
         connectionSecurity:
           $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
         authenticationMethod:
-          $ref: '#/components/schemas/Enumexternal-server-authenticationMethodProp'
+          $ref: '#/components/schemas/Enumexternal-server-opendj-authenticationMethodProp'
         verifyCredentialsMethod:
           $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
         healthCheckConnectTimeout:
@@ -1257,7 +1319,7 @@ components:
         connectionSecurity:
           $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
         authenticationMethod:
-          $ref: '#/components/schemas/Enumexternal-server-authenticationMethodProp'
+          $ref: '#/components/schemas/Enumexternal-server-ldap-authenticationMethodProp'
         verifyCredentialsMethod:
           $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
         healthCheckConnectTimeout:
@@ -1502,7 +1564,7 @@ components:
         connectionSecurity:
           $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
         authenticationMethod:
-          $ref: '#/components/schemas/Enumexternal-server-authenticationMethodProp'
+          $ref: '#/components/schemas/Enumexternal-server-oracle-unified-directory-authenticationMethodProp'
         verifyCredentialsMethod:
           $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
         healthCheckConnectTimeout:
@@ -1660,15 +1722,21 @@ components:
           maxItems: 1
           items:
             $ref: '#/components/schemas/Enumamazon-aws-external-serverSchemaUrn'
+        httpProxyExternalServer:
+          type: string
+          description: >-
+              A reference to an HTTP proxy server that should be used for requests sent to the AWS service.
+        authenticationMethod:
+          $ref: '#/components/schemas/Enumexternal-server-amazon-aws-authenticationMethodProp'
         awsAccessKeyID:
           type: string
           description: >-
-              The access key ID that will be used if authentication should use an access key. If this is provided, then an aws-secret-access-key must also be provided. If this is not provided, then no aws-secret-access-key may be configured, and the server must be running in an EC2 instance that is configured with an IAM role with permission to perform the necessary operations.
+              The access key ID that will be used if authentication should use an access key. If this is provided, then an aws-secret-access-key must also be provided.
         awsSecretAccessKey:
           type: string
           format: password
           description: >-
-              The secret access key that will be used if authentication should use an access key. If this is provided, then an aws-access-key-id must also be provided. If this is not provided, then no aws-access-key-id may be configured, and the server must be running in an EC2 instance that is configured with an IAM role with permission to perform the necessary operations.
+              The secret access key that will be used if authentication should use an access key. If this is provided, then an aws-access-key-id must also be provided.
         awsRegionName:
           type: string
           description: >-
@@ -1749,15 +1817,25 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:external-server:vault"
-    Enumexternal-server-smtpSecurityProp:
+    Enumexternal-server-opendj-authenticationMethodProp:
       type: string
       enum:
       - "none"
-      - "starttls"
-      - "ssl"
+      - "simple"
+      - "external"
+      - "inter-server"
       description: >-
-          This property specifies type of connection security to use when connecting to the outgoing mail server.
-    Enumexternal-server-authenticationMethodProp:
+          The mechanism to use to authenticate to the target server.
+    Enumexternal-server-nokia-proxy-server-authenticationMethodProp:
+      type: string
+      enum:
+      - "none"
+      - "simple"
+      - "external"
+      - "inter-server"
+      description: >-
+          The mechanism to use to authenticate to the target server.
+    Enumexternal-server-ldap-authenticationMethodProp:
       type: string
       enum:
       - "none"
@@ -1866,6 +1944,33 @@ components:
       - "bind-on-existing-connections"
       description: >-
           The mechanism to use to verify user credentials while ensuring that the ability to process other operations is not impacted by an alternate authorization identity.
+    Enumexternal-server-ping-identity-ds-authenticationMethodProp:
+      type: string
+      enum:
+      - "none"
+      - "simple"
+      - "external"
+      - "inter-server"
+      description: >-
+          The mechanism to use to authenticate to the target server.
+    Enumexternal-server-ping-identity-proxy-server-authenticationMethodProp:
+      type: string
+      enum:
+      - "none"
+      - "simple"
+      - "external"
+      - "inter-server"
+      description: >-
+          The mechanism to use to authenticate to the target server.
+    Enumexternal-server-active-directory-authenticationMethodProp:
+      type: string
+      enum:
+      - "none"
+      - "simple"
+      - "external"
+      - "inter-server"
+      description: >-
+          The mechanism to use to authenticate to the target server.
     Enumexternal-server-transactionIsolationLevelProp:
       type: string
       enum:
@@ -1890,6 +1995,41 @@ components:
       - "strict"
       description: >-
           The mechanism for checking if the hostname in the PingOne ID Token Validator's base-url value matches the name(s) stored inside the X.509 certificate presented by PingOne.
+    Enumexternal-server-smtpSecurityProp:
+      type: string
+      enum:
+      - "none"
+      - "starttls"
+      - "ssl"
+      description: >-
+          This property specifies type of connection security to use when connecting to the outgoing mail server.
+    Enumexternal-server-oracle-unified-directory-authenticationMethodProp:
+      type: string
+      enum:
+      - "none"
+      - "simple"
+      - "external"
+      - "inter-server"
+      description: >-
+          The mechanism to use to authenticate to the target server.
+    Enumexternal-server-amazon-aws-authenticationMethodProp:
+      type: string
+      enum:
+      - "default-provider-chain"
+      - "access-key"
+      - "iam-role"
+      - "irsa-role"
+      description: >-
+          The mechanism to use to authenticate to AWS.
+    Enumexternal-server-nokia-ds-authenticationMethodProp:
+      type: string
+      enum:
+      - "none"
+      - "simple"
+      - "external"
+      - "inter-server"
+      description: >-
+          The mechanism to use to authenticate to the target server.
     updateRequest:
       type: object
       properties:

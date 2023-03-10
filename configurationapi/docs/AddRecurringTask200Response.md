@@ -63,6 +63,12 @@ Name | Type | Description | Notes
 **ExcludeBackendID** | Pointer to **[]string** | The backend ID for a backend to be excluded from the export. | [optional] 
 **RetainPreviousLDIFExportCount** | Pointer to **int32** | The minimum number of previous LDIF exports that should be preserved after a new export completes successfully. | [optional] 
 **RetainPreviousLDIFExportAge** | Pointer to **string** | The minimum age of previous LDIF exports that should be preserved after a new export completes successfully. | [optional] 
+**BaseOutputDirectory** | **string** | The base directory below which generated reports will be written. Each invocation of the audit-data-security task will create a new subdirectory below this base directory whose name is a timestamp indicating when the report was generated. | 
+**DataSecurityAuditor** | Pointer to **[]string** | The set of data security auditors that should be invoked. If no auditors are specified, then all auditors defined in the configuration will be used. | [optional] 
+**Backend** | Pointer to **[]string** | The set of backends that should be examined. If no backends are specified, then all backends that support this functionality will be included. | [optional] 
+**IncludeFilter** | Pointer to **[]string** | A filter that will be used to identify entries that may be included in the generated report. If multiple filters are specified, then any entry that matches at least one of the filters will be included. If no filters are specified, then all entries will be included. | [optional] 
+**RetainPreviousReportCount** | Pointer to **int32** | The minimum number of previous reports that should be preserved after a new report is generated. | [optional] 
+**RetainPreviousReportAge** | Pointer to **string** | The minimum age of previous reports that should be preserved after a new report completes successfully. | [optional] 
 **CommandPath** | **string** | The absolute path to the command to execute. It must be an absolute path, the corresponding file must exist, and it must be listed in the config/exec-command-whitelist.txt file. | 
 **CommandArguments** | Pointer to **string** | A string containing the arguments to provide to the command. If the command should be run without arguments, this property should be left undefined. If there should be multiple arguments, then they should be separated with spaces. | [optional] 
 **CommandOutputFileBaseName** | Pointer to **string** | The path and base name for a file to which the command output (both standard output and standard error) should be written. This may be left undefined if the command output should not be recorded into a file. | [optional] 
@@ -84,7 +90,7 @@ Name | Type | Description | Notes
 
 ### NewAddRecurringTask200Response
 
-`func NewAddRecurringTask200Response(id string, schemas []EnumthirdPartyRecurringTaskSchemaUrn, profileDirectory string, backupDirectory string, taskJavaClass string, taskObjectClass []string, outputDirectory string, ldifDirectory string, commandPath string, targetDirectory string, filenamePattern string, timestampFormat EnumrecurringTaskTimestampFormatProp, extensionClass string, ) *AddRecurringTask200Response`
+`func NewAddRecurringTask200Response(id string, schemas []EnumthirdPartyRecurringTaskSchemaUrn, profileDirectory string, backupDirectory string, taskJavaClass string, taskObjectClass []string, outputDirectory string, ldifDirectory string, baseOutputDirectory string, commandPath string, targetDirectory string, filenamePattern string, timestampFormat EnumrecurringTaskTimestampFormatProp, extensionClass string, ) *AddRecurringTask200Response`
 
 NewAddRecurringTask200Response instantiates a new AddRecurringTask200Response object
 This constructor will assign default values to properties that have it defined,
@@ -1533,6 +1539,151 @@ SetRetainPreviousLDIFExportAge sets RetainPreviousLDIFExportAge field to given v
 `func (o *AddRecurringTask200Response) HasRetainPreviousLDIFExportAge() bool`
 
 HasRetainPreviousLDIFExportAge returns a boolean if a field has been set.
+
+### GetBaseOutputDirectory
+
+`func (o *AddRecurringTask200Response) GetBaseOutputDirectory() string`
+
+GetBaseOutputDirectory returns the BaseOutputDirectory field if non-nil, zero value otherwise.
+
+### GetBaseOutputDirectoryOk
+
+`func (o *AddRecurringTask200Response) GetBaseOutputDirectoryOk() (*string, bool)`
+
+GetBaseOutputDirectoryOk returns a tuple with the BaseOutputDirectory field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBaseOutputDirectory
+
+`func (o *AddRecurringTask200Response) SetBaseOutputDirectory(v string)`
+
+SetBaseOutputDirectory sets BaseOutputDirectory field to given value.
+
+
+### GetDataSecurityAuditor
+
+`func (o *AddRecurringTask200Response) GetDataSecurityAuditor() []string`
+
+GetDataSecurityAuditor returns the DataSecurityAuditor field if non-nil, zero value otherwise.
+
+### GetDataSecurityAuditorOk
+
+`func (o *AddRecurringTask200Response) GetDataSecurityAuditorOk() (*[]string, bool)`
+
+GetDataSecurityAuditorOk returns a tuple with the DataSecurityAuditor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDataSecurityAuditor
+
+`func (o *AddRecurringTask200Response) SetDataSecurityAuditor(v []string)`
+
+SetDataSecurityAuditor sets DataSecurityAuditor field to given value.
+
+### HasDataSecurityAuditor
+
+`func (o *AddRecurringTask200Response) HasDataSecurityAuditor() bool`
+
+HasDataSecurityAuditor returns a boolean if a field has been set.
+
+### GetBackend
+
+`func (o *AddRecurringTask200Response) GetBackend() []string`
+
+GetBackend returns the Backend field if non-nil, zero value otherwise.
+
+### GetBackendOk
+
+`func (o *AddRecurringTask200Response) GetBackendOk() (*[]string, bool)`
+
+GetBackendOk returns a tuple with the Backend field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBackend
+
+`func (o *AddRecurringTask200Response) SetBackend(v []string)`
+
+SetBackend sets Backend field to given value.
+
+### HasBackend
+
+`func (o *AddRecurringTask200Response) HasBackend() bool`
+
+HasBackend returns a boolean if a field has been set.
+
+### GetIncludeFilter
+
+`func (o *AddRecurringTask200Response) GetIncludeFilter() []string`
+
+GetIncludeFilter returns the IncludeFilter field if non-nil, zero value otherwise.
+
+### GetIncludeFilterOk
+
+`func (o *AddRecurringTask200Response) GetIncludeFilterOk() (*[]string, bool)`
+
+GetIncludeFilterOk returns a tuple with the IncludeFilter field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeFilter
+
+`func (o *AddRecurringTask200Response) SetIncludeFilter(v []string)`
+
+SetIncludeFilter sets IncludeFilter field to given value.
+
+### HasIncludeFilter
+
+`func (o *AddRecurringTask200Response) HasIncludeFilter() bool`
+
+HasIncludeFilter returns a boolean if a field has been set.
+
+### GetRetainPreviousReportCount
+
+`func (o *AddRecurringTask200Response) GetRetainPreviousReportCount() int32`
+
+GetRetainPreviousReportCount returns the RetainPreviousReportCount field if non-nil, zero value otherwise.
+
+### GetRetainPreviousReportCountOk
+
+`func (o *AddRecurringTask200Response) GetRetainPreviousReportCountOk() (*int32, bool)`
+
+GetRetainPreviousReportCountOk returns a tuple with the RetainPreviousReportCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRetainPreviousReportCount
+
+`func (o *AddRecurringTask200Response) SetRetainPreviousReportCount(v int32)`
+
+SetRetainPreviousReportCount sets RetainPreviousReportCount field to given value.
+
+### HasRetainPreviousReportCount
+
+`func (o *AddRecurringTask200Response) HasRetainPreviousReportCount() bool`
+
+HasRetainPreviousReportCount returns a boolean if a field has been set.
+
+### GetRetainPreviousReportAge
+
+`func (o *AddRecurringTask200Response) GetRetainPreviousReportAge() string`
+
+GetRetainPreviousReportAge returns the RetainPreviousReportAge field if non-nil, zero value otherwise.
+
+### GetRetainPreviousReportAgeOk
+
+`func (o *AddRecurringTask200Response) GetRetainPreviousReportAgeOk() (*string, bool)`
+
+GetRetainPreviousReportAgeOk returns a tuple with the RetainPreviousReportAge field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRetainPreviousReportAge
+
+`func (o *AddRecurringTask200Response) SetRetainPreviousReportAge(v string)`
+
+SetRetainPreviousReportAge sets RetainPreviousReportAge field to given value.
+
+### HasRetainPreviousReportAge
+
+`func (o *AddRecurringTask200Response) HasRetainPreviousReportAge() bool`
+
+HasRetainPreviousReportAge returns a boolean if a field has been set.
 
 ### GetCommandPath
 

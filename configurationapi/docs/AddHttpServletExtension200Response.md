@@ -13,29 +13,23 @@ Name | Type | Description | Notes
 **CrossOriginPolicy** | Pointer to **string** | The cross-origin request policy to use for the HTTP Servlet Extension. | [optional] 
 **ResponseHeader** | Pointer to **[]string** | Specifies HTTP header fields and values added to response headers for all requests. | [optional] 
 **CorrelationIDResponseHeader** | Pointer to **string** | Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are \&quot;Correlation-Id\&quot;, \&quot;X-Amzn-Trace-Id\&quot;, and \&quot;X-Request-Id\&quot;. | [optional] 
-**ScriptClass** | **string** | The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted HTTP Servlet Extension. | 
-**ScriptArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Scripted HTTP Servlet Extension. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
-**BaseContextPath** | **string** | The context path to use to access the SCIM interface. The value must start with a forward slash and must represent a valid HTTP context path. | 
+**BaseContextPath** | **string** | Specifies the base context path that should be used by HTTP clients to reference content. The value must start with a forward slash and must represent a valid HTTP context path. | 
 **AvailableStatusCode** | **int32** | Specifies the HTTP status code that the servlet should return if the server considers itself to be available. | 
 **DegradedStatusCode** | **int32** | Specifies the HTTP status code that the servlet should return if the server considers itself to be degraded. | 
 **UnavailableStatusCode** | **int32** | Specifies the HTTP status code that the servlet should return if the server considers itself to be unavailable. | 
 **OverrideStatusCode** | Pointer to **int32** | Specifies a HTTP status code that the servlet should always return, regardless of the server&#39;s availability. If this value is defined, it will override the availability-based return codes. | [optional] 
 **IncludeResponseBody** | Pointer to **bool** | Indicates whether the response should include a body that is a JSON object. | [optional] 
 **AdditionalResponseContents** | Pointer to **string** | A JSON-formatted string containing additional fields to be returned in the response body. For example, an additional-response-contents value of &#39;{ \&quot;key\&quot;: \&quot;value\&quot; }&#39; would add the key and value to the root of the JSON response body. | [optional] 
-**DocumentRootDirectory** | **string** | Specifies the path to the directory on the local filesystem containing the files to be served by this File Server HTTP Servlet Extension. The path must exist, and it must be a directory. | 
-**EnableDirectoryIndexing** | Pointer to **bool** | Indicates whether to generate a default HTML page with a listing of available files if the requested path refers to a directory rather than a file, and that directory does not contain an index file. | [optional] 
-**IndexFile** | Pointer to **[]string** | Specifies the name of a file whose contents may be returned to the client if the requested path refers to a directory rather than a file. | [optional] 
-**MimeTypesFile** | Pointer to **string** | Specifies the path to a file that contains MIME type mappings that will be used to determine the appropriate value to return for the Content-Type header based on the extension of the requested file. | [optional] 
-**DefaultMIMEType** | Pointer to **string** | Specifies the default MIME type to use for the Content-Type header when a mapping cannot be found. | [optional] 
-**RequireAuthentication** | Pointer to **bool** | Indicates whether the servlet extension should only accept requests from authenticated clients. | [optional] 
-**AllowedAuthenticationType** | Pointer to [**[]EnumhttpServletExtensionAllowedAuthenticationTypeProp**](EnumhttpServletExtensionAllowedAuthenticationTypeProp.md) |  | [optional] 
-**AccessTokenValidator** | Pointer to **[]string** | The access token validators that may be used to verify the authenticity of an OAuth 2.0 bearer token. | [optional] 
-**IdTokenValidator** | Pointer to **[]string** | The ID token validators that may be used to verify the authenticity of an of an OpenID Connect ID token. | [optional] 
-**RequireFileServletAccessPrivilege** | Pointer to **bool** | Indicates whether the servlet extension should only accept requests from authenticated clients that have the file-servlet-access privilege. | [optional] 
-**RequireGroup** | Pointer to **[]string** | The DN of a group whose members will be permitted to access to the associated files. If multiple group DNs are configured, then anyone who is a member of at least one of those groups will be granted access. | [optional] 
-**IdentityMapper** | Pointer to **string** | Specifies the name of the identity mapper that is to be used to match the username included in the HTTP Basic authentication header to the corresponding user in the directory. | [optional] 
+**IncludeInstanceNameLabel** | Pointer to **bool** | Indicates whether generated metrics should include an \&quot;instance\&quot; label whose value is the instance name for this Directory Server instance. | [optional] 
+**IncludeProductNameLabel** | Pointer to **bool** | Indicates whether generated metrics should include a \&quot;product\&quot; label whose value is the product name for this Directory Server instance. | [optional] 
+**IncludeLocationNameLabel** | Pointer to **bool** | Indicates whether generated metrics should include a \&quot;location\&quot; label whose value is the location name for this Directory Server instance. | [optional] 
+**AlwaysIncludeMonitorEntryNameLabel** | Pointer to **bool** | Indicates whether generated metrics should always include a \&quot;monitor_entry\&quot; label whose value is the name of the monitor entry from which the metric was obtained. | [optional] 
+**IncludeMonitorObjectClassNameLabel** | Pointer to **bool** | Indicates whether generated metrics should include a \&quot;monitor_object_class\&quot; label whose value is the name of the object class for the monitor entry from which the metric was obtained. | [optional] 
+**IncludeMonitorAttributeNameLabel** | Pointer to **bool** | Indicates whether generated metrics should include a \&quot;monitor_attribute\&quot; label whose value is the name of the monitor attribute from which the metric was obtained. | [optional] 
+**LabelNameValuePair** | Pointer to **[]string** | A set of name-value pairs for labels that should be included in all metrics exposed by this Directory Server instance. | [optional] 
 **OAuthTokenHandler** | Pointer to **string** | Specifies the OAuth Token Handler implementation that should be used to validate OAuth 2.0 bearer tokens when they are included in a SCIM request. | [optional] 
 **BasicAuthEnabled** | Pointer to **bool** | Enables HTTP Basic authentication, using a username and password. | [optional] 
+**IdentityMapper** | Pointer to **string** | The identity mapper that will be used to identify the entry with which a username is associated. | [optional] 
 **ResourceMappingFile** | Pointer to **string** | The path to an XML file defining the resources supported by the SCIM interface and the SCIM-to-LDAP attribute mappings to use. | [optional] 
 **IncludeLDAPObjectclass** | Pointer to **[]string** | Specifies the LDAP object classes that should be exposed directly as SCIM resources. | [optional] 
 **ExcludeLDAPObjectclass** | Pointer to **[]string** | Specifies the LDAP object classes that should be not be exposed directly as SCIM resources. | [optional] 
@@ -52,6 +46,19 @@ Name | Type | Description | Notes
 **DebugLevel** | [**EnumhttpServletExtensionDebugLevelProp**](EnumhttpServletExtensionDebugLevelProp.md) |  | 
 **DebugType** | [**[]EnumhttpServletExtensionDebugTypeProp**](EnumhttpServletExtensionDebugTypeProp.md) |  | 
 **IncludeStackTrace** | **bool** | Indicates whether a stack trace of the thread which called the debug method should be included in debug log messages. | 
+**ScriptClass** | **string** | The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted HTTP Servlet Extension. | 
+**ScriptArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Scripted HTTP Servlet Extension. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
+**DocumentRootDirectory** | **string** | Specifies the path to the directory on the local filesystem containing the files to be served by this File Server HTTP Servlet Extension. The path must exist, and it must be a directory. | 
+**EnableDirectoryIndexing** | Pointer to **bool** | Indicates whether to generate a default HTML page with a listing of available files if the requested path refers to a directory rather than a file, and that directory does not contain an index file. | [optional] 
+**IndexFile** | Pointer to **[]string** | Specifies the name of a file whose contents may be returned to the client if the requested path refers to a directory rather than a file. | [optional] 
+**MimeTypesFile** | Pointer to **string** | Specifies the path to a file that contains MIME type mappings that will be used to determine the appropriate value to return for the Content-Type header based on the extension of the requested file. | [optional] 
+**DefaultMIMEType** | Pointer to **string** | Specifies the default MIME type to use for the Content-Type header when a mapping cannot be found. | [optional] 
+**RequireAuthentication** | Pointer to **bool** | Indicates whether the servlet extension should only accept requests from authenticated clients. | [optional] 
+**AllowedAuthenticationType** | Pointer to [**[]EnumhttpServletExtensionAllowedAuthenticationTypeProp**](EnumhttpServletExtensionAllowedAuthenticationTypeProp.md) |  | [optional] 
+**AccessTokenValidator** | Pointer to **[]string** | The access token validators that may be used to verify the authenticity of an OAuth 2.0 bearer token. | [optional] 
+**IdTokenValidator** | Pointer to **[]string** | The ID token validators that may be used to verify the authenticity of an of an OpenID Connect ID token. | [optional] 
+**RequireFileServletAccessPrivilege** | Pointer to **bool** | Indicates whether the servlet extension should only accept requests from authenticated clients that have the file-servlet-access privilege. | [optional] 
+**RequireGroup** | Pointer to **[]string** | The DN of a group whose members will be permitted to access to the associated files. If multiple group DNs are configured, then anyone who is a member of at least one of those groups will be granted access. | [optional] 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party HTTP Servlet Extension. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party HTTP Servlet Extension. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 
@@ -59,7 +66,7 @@ Name | Type | Description | Notes
 
 ### NewAddHttpServletExtension200Response
 
-`func NewAddHttpServletExtension200Response(id string, schemas []EnumthirdPartyHttpServletExtensionSchemaUrn, scriptClass string, baseContextPath string, availableStatusCode int32, degradedStatusCode int32, unavailableStatusCode int32, documentRootDirectory string, temporaryDirectory string, temporaryDirectoryPermissions string, debugLevel EnumhttpServletExtensionDebugLevelProp, debugType []EnumhttpServletExtensionDebugTypeProp, includeStackTrace bool, extensionClass string, ) *AddHttpServletExtension200Response`
+`func NewAddHttpServletExtension200Response(id string, schemas []EnumthirdPartyHttpServletExtensionSchemaUrn, baseContextPath string, availableStatusCode int32, degradedStatusCode int32, unavailableStatusCode int32, temporaryDirectory string, temporaryDirectoryPermissions string, debugLevel EnumhttpServletExtensionDebugLevelProp, debugType []EnumhttpServletExtensionDebugTypeProp, includeStackTrace bool, scriptClass string, documentRootDirectory string, extensionClass string, ) *AddHttpServletExtension200Response`
 
 NewAddHttpServletExtension200Response instantiates a new AddHttpServletExtension200Response object
 This constructor will assign default values to properties that have it defined,
@@ -289,51 +296,6 @@ SetCorrelationIDResponseHeader sets CorrelationIDResponseHeader field to given v
 
 HasCorrelationIDResponseHeader returns a boolean if a field has been set.
 
-### GetScriptClass
-
-`func (o *AddHttpServletExtension200Response) GetScriptClass() string`
-
-GetScriptClass returns the ScriptClass field if non-nil, zero value otherwise.
-
-### GetScriptClassOk
-
-`func (o *AddHttpServletExtension200Response) GetScriptClassOk() (*string, bool)`
-
-GetScriptClassOk returns a tuple with the ScriptClass field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetScriptClass
-
-`func (o *AddHttpServletExtension200Response) SetScriptClass(v string)`
-
-SetScriptClass sets ScriptClass field to given value.
-
-
-### GetScriptArgument
-
-`func (o *AddHttpServletExtension200Response) GetScriptArgument() []string`
-
-GetScriptArgument returns the ScriptArgument field if non-nil, zero value otherwise.
-
-### GetScriptArgumentOk
-
-`func (o *AddHttpServletExtension200Response) GetScriptArgumentOk() (*[]string, bool)`
-
-GetScriptArgumentOk returns a tuple with the ScriptArgument field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetScriptArgument
-
-`func (o *AddHttpServletExtension200Response) SetScriptArgument(v []string)`
-
-SetScriptArgument sets ScriptArgument field to given value.
-
-### HasScriptArgument
-
-`func (o *AddHttpServletExtension200Response) HasScriptArgument() bool`
-
-HasScriptArgument returns a boolean if a field has been set.
-
 ### GetBaseContextPath
 
 `func (o *AddHttpServletExtension200Response) GetBaseContextPath() string`
@@ -489,300 +451,180 @@ SetAdditionalResponseContents sets AdditionalResponseContents field to given val
 
 HasAdditionalResponseContents returns a boolean if a field has been set.
 
-### GetDocumentRootDirectory
+### GetIncludeInstanceNameLabel
 
-`func (o *AddHttpServletExtension200Response) GetDocumentRootDirectory() string`
+`func (o *AddHttpServletExtension200Response) GetIncludeInstanceNameLabel() bool`
 
-GetDocumentRootDirectory returns the DocumentRootDirectory field if non-nil, zero value otherwise.
+GetIncludeInstanceNameLabel returns the IncludeInstanceNameLabel field if non-nil, zero value otherwise.
 
-### GetDocumentRootDirectoryOk
+### GetIncludeInstanceNameLabelOk
 
-`func (o *AddHttpServletExtension200Response) GetDocumentRootDirectoryOk() (*string, bool)`
+`func (o *AddHttpServletExtension200Response) GetIncludeInstanceNameLabelOk() (*bool, bool)`
 
-GetDocumentRootDirectoryOk returns a tuple with the DocumentRootDirectory field if it's non-nil, zero value otherwise
+GetIncludeInstanceNameLabelOk returns a tuple with the IncludeInstanceNameLabel field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDocumentRootDirectory
+### SetIncludeInstanceNameLabel
 
-`func (o *AddHttpServletExtension200Response) SetDocumentRootDirectory(v string)`
+`func (o *AddHttpServletExtension200Response) SetIncludeInstanceNameLabel(v bool)`
 
-SetDocumentRootDirectory sets DocumentRootDirectory field to given value.
+SetIncludeInstanceNameLabel sets IncludeInstanceNameLabel field to given value.
 
+### HasIncludeInstanceNameLabel
 
-### GetEnableDirectoryIndexing
+`func (o *AddHttpServletExtension200Response) HasIncludeInstanceNameLabel() bool`
 
-`func (o *AddHttpServletExtension200Response) GetEnableDirectoryIndexing() bool`
+HasIncludeInstanceNameLabel returns a boolean if a field has been set.
 
-GetEnableDirectoryIndexing returns the EnableDirectoryIndexing field if non-nil, zero value otherwise.
+### GetIncludeProductNameLabel
 
-### GetEnableDirectoryIndexingOk
+`func (o *AddHttpServletExtension200Response) GetIncludeProductNameLabel() bool`
 
-`func (o *AddHttpServletExtension200Response) GetEnableDirectoryIndexingOk() (*bool, bool)`
+GetIncludeProductNameLabel returns the IncludeProductNameLabel field if non-nil, zero value otherwise.
 
-GetEnableDirectoryIndexingOk returns a tuple with the EnableDirectoryIndexing field if it's non-nil, zero value otherwise
+### GetIncludeProductNameLabelOk
+
+`func (o *AddHttpServletExtension200Response) GetIncludeProductNameLabelOk() (*bool, bool)`
+
+GetIncludeProductNameLabelOk returns a tuple with the IncludeProductNameLabel field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetEnableDirectoryIndexing
+### SetIncludeProductNameLabel
 
-`func (o *AddHttpServletExtension200Response) SetEnableDirectoryIndexing(v bool)`
+`func (o *AddHttpServletExtension200Response) SetIncludeProductNameLabel(v bool)`
 
-SetEnableDirectoryIndexing sets EnableDirectoryIndexing field to given value.
+SetIncludeProductNameLabel sets IncludeProductNameLabel field to given value.
 
-### HasEnableDirectoryIndexing
+### HasIncludeProductNameLabel
 
-`func (o *AddHttpServletExtension200Response) HasEnableDirectoryIndexing() bool`
+`func (o *AddHttpServletExtension200Response) HasIncludeProductNameLabel() bool`
 
-HasEnableDirectoryIndexing returns a boolean if a field has been set.
+HasIncludeProductNameLabel returns a boolean if a field has been set.
 
-### GetIndexFile
+### GetIncludeLocationNameLabel
 
-`func (o *AddHttpServletExtension200Response) GetIndexFile() []string`
+`func (o *AddHttpServletExtension200Response) GetIncludeLocationNameLabel() bool`
 
-GetIndexFile returns the IndexFile field if non-nil, zero value otherwise.
+GetIncludeLocationNameLabel returns the IncludeLocationNameLabel field if non-nil, zero value otherwise.
 
-### GetIndexFileOk
+### GetIncludeLocationNameLabelOk
 
-`func (o *AddHttpServletExtension200Response) GetIndexFileOk() (*[]string, bool)`
+`func (o *AddHttpServletExtension200Response) GetIncludeLocationNameLabelOk() (*bool, bool)`
 
-GetIndexFileOk returns a tuple with the IndexFile field if it's non-nil, zero value otherwise
+GetIncludeLocationNameLabelOk returns a tuple with the IncludeLocationNameLabel field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetIndexFile
+### SetIncludeLocationNameLabel
 
-`func (o *AddHttpServletExtension200Response) SetIndexFile(v []string)`
+`func (o *AddHttpServletExtension200Response) SetIncludeLocationNameLabel(v bool)`
 
-SetIndexFile sets IndexFile field to given value.
+SetIncludeLocationNameLabel sets IncludeLocationNameLabel field to given value.
 
-### HasIndexFile
+### HasIncludeLocationNameLabel
 
-`func (o *AddHttpServletExtension200Response) HasIndexFile() bool`
+`func (o *AddHttpServletExtension200Response) HasIncludeLocationNameLabel() bool`
 
-HasIndexFile returns a boolean if a field has been set.
+HasIncludeLocationNameLabel returns a boolean if a field has been set.
 
-### GetMimeTypesFile
+### GetAlwaysIncludeMonitorEntryNameLabel
 
-`func (o *AddHttpServletExtension200Response) GetMimeTypesFile() string`
+`func (o *AddHttpServletExtension200Response) GetAlwaysIncludeMonitorEntryNameLabel() bool`
 
-GetMimeTypesFile returns the MimeTypesFile field if non-nil, zero value otherwise.
+GetAlwaysIncludeMonitorEntryNameLabel returns the AlwaysIncludeMonitorEntryNameLabel field if non-nil, zero value otherwise.
 
-### GetMimeTypesFileOk
+### GetAlwaysIncludeMonitorEntryNameLabelOk
 
-`func (o *AddHttpServletExtension200Response) GetMimeTypesFileOk() (*string, bool)`
+`func (o *AddHttpServletExtension200Response) GetAlwaysIncludeMonitorEntryNameLabelOk() (*bool, bool)`
 
-GetMimeTypesFileOk returns a tuple with the MimeTypesFile field if it's non-nil, zero value otherwise
+GetAlwaysIncludeMonitorEntryNameLabelOk returns a tuple with the AlwaysIncludeMonitorEntryNameLabel field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMimeTypesFile
+### SetAlwaysIncludeMonitorEntryNameLabel
 
-`func (o *AddHttpServletExtension200Response) SetMimeTypesFile(v string)`
+`func (o *AddHttpServletExtension200Response) SetAlwaysIncludeMonitorEntryNameLabel(v bool)`
 
-SetMimeTypesFile sets MimeTypesFile field to given value.
+SetAlwaysIncludeMonitorEntryNameLabel sets AlwaysIncludeMonitorEntryNameLabel field to given value.
 
-### HasMimeTypesFile
+### HasAlwaysIncludeMonitorEntryNameLabel
 
-`func (o *AddHttpServletExtension200Response) HasMimeTypesFile() bool`
+`func (o *AddHttpServletExtension200Response) HasAlwaysIncludeMonitorEntryNameLabel() bool`
 
-HasMimeTypesFile returns a boolean if a field has been set.
+HasAlwaysIncludeMonitorEntryNameLabel returns a boolean if a field has been set.
 
-### GetDefaultMIMEType
+### GetIncludeMonitorObjectClassNameLabel
 
-`func (o *AddHttpServletExtension200Response) GetDefaultMIMEType() string`
+`func (o *AddHttpServletExtension200Response) GetIncludeMonitorObjectClassNameLabel() bool`
 
-GetDefaultMIMEType returns the DefaultMIMEType field if non-nil, zero value otherwise.
+GetIncludeMonitorObjectClassNameLabel returns the IncludeMonitorObjectClassNameLabel field if non-nil, zero value otherwise.
 
-### GetDefaultMIMETypeOk
+### GetIncludeMonitorObjectClassNameLabelOk
 
-`func (o *AddHttpServletExtension200Response) GetDefaultMIMETypeOk() (*string, bool)`
+`func (o *AddHttpServletExtension200Response) GetIncludeMonitorObjectClassNameLabelOk() (*bool, bool)`
 
-GetDefaultMIMETypeOk returns a tuple with the DefaultMIMEType field if it's non-nil, zero value otherwise
+GetIncludeMonitorObjectClassNameLabelOk returns a tuple with the IncludeMonitorObjectClassNameLabel field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDefaultMIMEType
+### SetIncludeMonitorObjectClassNameLabel
 
-`func (o *AddHttpServletExtension200Response) SetDefaultMIMEType(v string)`
+`func (o *AddHttpServletExtension200Response) SetIncludeMonitorObjectClassNameLabel(v bool)`
 
-SetDefaultMIMEType sets DefaultMIMEType field to given value.
+SetIncludeMonitorObjectClassNameLabel sets IncludeMonitorObjectClassNameLabel field to given value.
 
-### HasDefaultMIMEType
+### HasIncludeMonitorObjectClassNameLabel
 
-`func (o *AddHttpServletExtension200Response) HasDefaultMIMEType() bool`
+`func (o *AddHttpServletExtension200Response) HasIncludeMonitorObjectClassNameLabel() bool`
 
-HasDefaultMIMEType returns a boolean if a field has been set.
+HasIncludeMonitorObjectClassNameLabel returns a boolean if a field has been set.
 
-### GetRequireAuthentication
+### GetIncludeMonitorAttributeNameLabel
 
-`func (o *AddHttpServletExtension200Response) GetRequireAuthentication() bool`
+`func (o *AddHttpServletExtension200Response) GetIncludeMonitorAttributeNameLabel() bool`
 
-GetRequireAuthentication returns the RequireAuthentication field if non-nil, zero value otherwise.
+GetIncludeMonitorAttributeNameLabel returns the IncludeMonitorAttributeNameLabel field if non-nil, zero value otherwise.
 
-### GetRequireAuthenticationOk
+### GetIncludeMonitorAttributeNameLabelOk
 
-`func (o *AddHttpServletExtension200Response) GetRequireAuthenticationOk() (*bool, bool)`
+`func (o *AddHttpServletExtension200Response) GetIncludeMonitorAttributeNameLabelOk() (*bool, bool)`
 
-GetRequireAuthenticationOk returns a tuple with the RequireAuthentication field if it's non-nil, zero value otherwise
+GetIncludeMonitorAttributeNameLabelOk returns a tuple with the IncludeMonitorAttributeNameLabel field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRequireAuthentication
+### SetIncludeMonitorAttributeNameLabel
 
-`func (o *AddHttpServletExtension200Response) SetRequireAuthentication(v bool)`
+`func (o *AddHttpServletExtension200Response) SetIncludeMonitorAttributeNameLabel(v bool)`
 
-SetRequireAuthentication sets RequireAuthentication field to given value.
+SetIncludeMonitorAttributeNameLabel sets IncludeMonitorAttributeNameLabel field to given value.
 
-### HasRequireAuthentication
+### HasIncludeMonitorAttributeNameLabel
 
-`func (o *AddHttpServletExtension200Response) HasRequireAuthentication() bool`
+`func (o *AddHttpServletExtension200Response) HasIncludeMonitorAttributeNameLabel() bool`
 
-HasRequireAuthentication returns a boolean if a field has been set.
+HasIncludeMonitorAttributeNameLabel returns a boolean if a field has been set.
 
-### GetAllowedAuthenticationType
+### GetLabelNameValuePair
 
-`func (o *AddHttpServletExtension200Response) GetAllowedAuthenticationType() []EnumhttpServletExtensionAllowedAuthenticationTypeProp`
+`func (o *AddHttpServletExtension200Response) GetLabelNameValuePair() []string`
 
-GetAllowedAuthenticationType returns the AllowedAuthenticationType field if non-nil, zero value otherwise.
+GetLabelNameValuePair returns the LabelNameValuePair field if non-nil, zero value otherwise.
 
-### GetAllowedAuthenticationTypeOk
+### GetLabelNameValuePairOk
 
-`func (o *AddHttpServletExtension200Response) GetAllowedAuthenticationTypeOk() (*[]EnumhttpServletExtensionAllowedAuthenticationTypeProp, bool)`
+`func (o *AddHttpServletExtension200Response) GetLabelNameValuePairOk() (*[]string, bool)`
 
-GetAllowedAuthenticationTypeOk returns a tuple with the AllowedAuthenticationType field if it's non-nil, zero value otherwise
+GetLabelNameValuePairOk returns a tuple with the LabelNameValuePair field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAllowedAuthenticationType
+### SetLabelNameValuePair
 
-`func (o *AddHttpServletExtension200Response) SetAllowedAuthenticationType(v []EnumhttpServletExtensionAllowedAuthenticationTypeProp)`
+`func (o *AddHttpServletExtension200Response) SetLabelNameValuePair(v []string)`
 
-SetAllowedAuthenticationType sets AllowedAuthenticationType field to given value.
+SetLabelNameValuePair sets LabelNameValuePair field to given value.
 
-### HasAllowedAuthenticationType
+### HasLabelNameValuePair
 
-`func (o *AddHttpServletExtension200Response) HasAllowedAuthenticationType() bool`
+`func (o *AddHttpServletExtension200Response) HasLabelNameValuePair() bool`
 
-HasAllowedAuthenticationType returns a boolean if a field has been set.
-
-### GetAccessTokenValidator
-
-`func (o *AddHttpServletExtension200Response) GetAccessTokenValidator() []string`
-
-GetAccessTokenValidator returns the AccessTokenValidator field if non-nil, zero value otherwise.
-
-### GetAccessTokenValidatorOk
-
-`func (o *AddHttpServletExtension200Response) GetAccessTokenValidatorOk() (*[]string, bool)`
-
-GetAccessTokenValidatorOk returns a tuple with the AccessTokenValidator field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAccessTokenValidator
-
-`func (o *AddHttpServletExtension200Response) SetAccessTokenValidator(v []string)`
-
-SetAccessTokenValidator sets AccessTokenValidator field to given value.
-
-### HasAccessTokenValidator
-
-`func (o *AddHttpServletExtension200Response) HasAccessTokenValidator() bool`
-
-HasAccessTokenValidator returns a boolean if a field has been set.
-
-### GetIdTokenValidator
-
-`func (o *AddHttpServletExtension200Response) GetIdTokenValidator() []string`
-
-GetIdTokenValidator returns the IdTokenValidator field if non-nil, zero value otherwise.
-
-### GetIdTokenValidatorOk
-
-`func (o *AddHttpServletExtension200Response) GetIdTokenValidatorOk() (*[]string, bool)`
-
-GetIdTokenValidatorOk returns a tuple with the IdTokenValidator field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIdTokenValidator
-
-`func (o *AddHttpServletExtension200Response) SetIdTokenValidator(v []string)`
-
-SetIdTokenValidator sets IdTokenValidator field to given value.
-
-### HasIdTokenValidator
-
-`func (o *AddHttpServletExtension200Response) HasIdTokenValidator() bool`
-
-HasIdTokenValidator returns a boolean if a field has been set.
-
-### GetRequireFileServletAccessPrivilege
-
-`func (o *AddHttpServletExtension200Response) GetRequireFileServletAccessPrivilege() bool`
-
-GetRequireFileServletAccessPrivilege returns the RequireFileServletAccessPrivilege field if non-nil, zero value otherwise.
-
-### GetRequireFileServletAccessPrivilegeOk
-
-`func (o *AddHttpServletExtension200Response) GetRequireFileServletAccessPrivilegeOk() (*bool, bool)`
-
-GetRequireFileServletAccessPrivilegeOk returns a tuple with the RequireFileServletAccessPrivilege field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRequireFileServletAccessPrivilege
-
-`func (o *AddHttpServletExtension200Response) SetRequireFileServletAccessPrivilege(v bool)`
-
-SetRequireFileServletAccessPrivilege sets RequireFileServletAccessPrivilege field to given value.
-
-### HasRequireFileServletAccessPrivilege
-
-`func (o *AddHttpServletExtension200Response) HasRequireFileServletAccessPrivilege() bool`
-
-HasRequireFileServletAccessPrivilege returns a boolean if a field has been set.
-
-### GetRequireGroup
-
-`func (o *AddHttpServletExtension200Response) GetRequireGroup() []string`
-
-GetRequireGroup returns the RequireGroup field if non-nil, zero value otherwise.
-
-### GetRequireGroupOk
-
-`func (o *AddHttpServletExtension200Response) GetRequireGroupOk() (*[]string, bool)`
-
-GetRequireGroupOk returns a tuple with the RequireGroup field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRequireGroup
-
-`func (o *AddHttpServletExtension200Response) SetRequireGroup(v []string)`
-
-SetRequireGroup sets RequireGroup field to given value.
-
-### HasRequireGroup
-
-`func (o *AddHttpServletExtension200Response) HasRequireGroup() bool`
-
-HasRequireGroup returns a boolean if a field has been set.
-
-### GetIdentityMapper
-
-`func (o *AddHttpServletExtension200Response) GetIdentityMapper() string`
-
-GetIdentityMapper returns the IdentityMapper field if non-nil, zero value otherwise.
-
-### GetIdentityMapperOk
-
-`func (o *AddHttpServletExtension200Response) GetIdentityMapperOk() (*string, bool)`
-
-GetIdentityMapperOk returns a tuple with the IdentityMapper field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIdentityMapper
-
-`func (o *AddHttpServletExtension200Response) SetIdentityMapper(v string)`
-
-SetIdentityMapper sets IdentityMapper field to given value.
-
-### HasIdentityMapper
-
-`func (o *AddHttpServletExtension200Response) HasIdentityMapper() bool`
-
-HasIdentityMapper returns a boolean if a field has been set.
+HasLabelNameValuePair returns a boolean if a field has been set.
 
 ### GetOAuthTokenHandler
 
@@ -833,6 +675,31 @@ SetBasicAuthEnabled sets BasicAuthEnabled field to given value.
 `func (o *AddHttpServletExtension200Response) HasBasicAuthEnabled() bool`
 
 HasBasicAuthEnabled returns a boolean if a field has been set.
+
+### GetIdentityMapper
+
+`func (o *AddHttpServletExtension200Response) GetIdentityMapper() string`
+
+GetIdentityMapper returns the IdentityMapper field if non-nil, zero value otherwise.
+
+### GetIdentityMapperOk
+
+`func (o *AddHttpServletExtension200Response) GetIdentityMapperOk() (*string, bool)`
+
+GetIdentityMapperOk returns a tuple with the IdentityMapper field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIdentityMapper
+
+`func (o *AddHttpServletExtension200Response) SetIdentityMapper(v string)`
+
+SetIdentityMapper sets IdentityMapper field to given value.
+
+### HasIdentityMapper
+
+`func (o *AddHttpServletExtension200Response) HasIdentityMapper() bool`
+
+HasIdentityMapper returns a boolean if a field has been set.
 
 ### GetResourceMappingFile
 
@@ -1208,6 +1075,321 @@ and a boolean to check if the value has been set.
 
 SetIncludeStackTrace sets IncludeStackTrace field to given value.
 
+
+### GetScriptClass
+
+`func (o *AddHttpServletExtension200Response) GetScriptClass() string`
+
+GetScriptClass returns the ScriptClass field if non-nil, zero value otherwise.
+
+### GetScriptClassOk
+
+`func (o *AddHttpServletExtension200Response) GetScriptClassOk() (*string, bool)`
+
+GetScriptClassOk returns a tuple with the ScriptClass field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetScriptClass
+
+`func (o *AddHttpServletExtension200Response) SetScriptClass(v string)`
+
+SetScriptClass sets ScriptClass field to given value.
+
+
+### GetScriptArgument
+
+`func (o *AddHttpServletExtension200Response) GetScriptArgument() []string`
+
+GetScriptArgument returns the ScriptArgument field if non-nil, zero value otherwise.
+
+### GetScriptArgumentOk
+
+`func (o *AddHttpServletExtension200Response) GetScriptArgumentOk() (*[]string, bool)`
+
+GetScriptArgumentOk returns a tuple with the ScriptArgument field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetScriptArgument
+
+`func (o *AddHttpServletExtension200Response) SetScriptArgument(v []string)`
+
+SetScriptArgument sets ScriptArgument field to given value.
+
+### HasScriptArgument
+
+`func (o *AddHttpServletExtension200Response) HasScriptArgument() bool`
+
+HasScriptArgument returns a boolean if a field has been set.
+
+### GetDocumentRootDirectory
+
+`func (o *AddHttpServletExtension200Response) GetDocumentRootDirectory() string`
+
+GetDocumentRootDirectory returns the DocumentRootDirectory field if non-nil, zero value otherwise.
+
+### GetDocumentRootDirectoryOk
+
+`func (o *AddHttpServletExtension200Response) GetDocumentRootDirectoryOk() (*string, bool)`
+
+GetDocumentRootDirectoryOk returns a tuple with the DocumentRootDirectory field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDocumentRootDirectory
+
+`func (o *AddHttpServletExtension200Response) SetDocumentRootDirectory(v string)`
+
+SetDocumentRootDirectory sets DocumentRootDirectory field to given value.
+
+
+### GetEnableDirectoryIndexing
+
+`func (o *AddHttpServletExtension200Response) GetEnableDirectoryIndexing() bool`
+
+GetEnableDirectoryIndexing returns the EnableDirectoryIndexing field if non-nil, zero value otherwise.
+
+### GetEnableDirectoryIndexingOk
+
+`func (o *AddHttpServletExtension200Response) GetEnableDirectoryIndexingOk() (*bool, bool)`
+
+GetEnableDirectoryIndexingOk returns a tuple with the EnableDirectoryIndexing field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableDirectoryIndexing
+
+`func (o *AddHttpServletExtension200Response) SetEnableDirectoryIndexing(v bool)`
+
+SetEnableDirectoryIndexing sets EnableDirectoryIndexing field to given value.
+
+### HasEnableDirectoryIndexing
+
+`func (o *AddHttpServletExtension200Response) HasEnableDirectoryIndexing() bool`
+
+HasEnableDirectoryIndexing returns a boolean if a field has been set.
+
+### GetIndexFile
+
+`func (o *AddHttpServletExtension200Response) GetIndexFile() []string`
+
+GetIndexFile returns the IndexFile field if non-nil, zero value otherwise.
+
+### GetIndexFileOk
+
+`func (o *AddHttpServletExtension200Response) GetIndexFileOk() (*[]string, bool)`
+
+GetIndexFileOk returns a tuple with the IndexFile field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIndexFile
+
+`func (o *AddHttpServletExtension200Response) SetIndexFile(v []string)`
+
+SetIndexFile sets IndexFile field to given value.
+
+### HasIndexFile
+
+`func (o *AddHttpServletExtension200Response) HasIndexFile() bool`
+
+HasIndexFile returns a boolean if a field has been set.
+
+### GetMimeTypesFile
+
+`func (o *AddHttpServletExtension200Response) GetMimeTypesFile() string`
+
+GetMimeTypesFile returns the MimeTypesFile field if non-nil, zero value otherwise.
+
+### GetMimeTypesFileOk
+
+`func (o *AddHttpServletExtension200Response) GetMimeTypesFileOk() (*string, bool)`
+
+GetMimeTypesFileOk returns a tuple with the MimeTypesFile field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMimeTypesFile
+
+`func (o *AddHttpServletExtension200Response) SetMimeTypesFile(v string)`
+
+SetMimeTypesFile sets MimeTypesFile field to given value.
+
+### HasMimeTypesFile
+
+`func (o *AddHttpServletExtension200Response) HasMimeTypesFile() bool`
+
+HasMimeTypesFile returns a boolean if a field has been set.
+
+### GetDefaultMIMEType
+
+`func (o *AddHttpServletExtension200Response) GetDefaultMIMEType() string`
+
+GetDefaultMIMEType returns the DefaultMIMEType field if non-nil, zero value otherwise.
+
+### GetDefaultMIMETypeOk
+
+`func (o *AddHttpServletExtension200Response) GetDefaultMIMETypeOk() (*string, bool)`
+
+GetDefaultMIMETypeOk returns a tuple with the DefaultMIMEType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultMIMEType
+
+`func (o *AddHttpServletExtension200Response) SetDefaultMIMEType(v string)`
+
+SetDefaultMIMEType sets DefaultMIMEType field to given value.
+
+### HasDefaultMIMEType
+
+`func (o *AddHttpServletExtension200Response) HasDefaultMIMEType() bool`
+
+HasDefaultMIMEType returns a boolean if a field has been set.
+
+### GetRequireAuthentication
+
+`func (o *AddHttpServletExtension200Response) GetRequireAuthentication() bool`
+
+GetRequireAuthentication returns the RequireAuthentication field if non-nil, zero value otherwise.
+
+### GetRequireAuthenticationOk
+
+`func (o *AddHttpServletExtension200Response) GetRequireAuthenticationOk() (*bool, bool)`
+
+GetRequireAuthenticationOk returns a tuple with the RequireAuthentication field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequireAuthentication
+
+`func (o *AddHttpServletExtension200Response) SetRequireAuthentication(v bool)`
+
+SetRequireAuthentication sets RequireAuthentication field to given value.
+
+### HasRequireAuthentication
+
+`func (o *AddHttpServletExtension200Response) HasRequireAuthentication() bool`
+
+HasRequireAuthentication returns a boolean if a field has been set.
+
+### GetAllowedAuthenticationType
+
+`func (o *AddHttpServletExtension200Response) GetAllowedAuthenticationType() []EnumhttpServletExtensionAllowedAuthenticationTypeProp`
+
+GetAllowedAuthenticationType returns the AllowedAuthenticationType field if non-nil, zero value otherwise.
+
+### GetAllowedAuthenticationTypeOk
+
+`func (o *AddHttpServletExtension200Response) GetAllowedAuthenticationTypeOk() (*[]EnumhttpServletExtensionAllowedAuthenticationTypeProp, bool)`
+
+GetAllowedAuthenticationTypeOk returns a tuple with the AllowedAuthenticationType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowedAuthenticationType
+
+`func (o *AddHttpServletExtension200Response) SetAllowedAuthenticationType(v []EnumhttpServletExtensionAllowedAuthenticationTypeProp)`
+
+SetAllowedAuthenticationType sets AllowedAuthenticationType field to given value.
+
+### HasAllowedAuthenticationType
+
+`func (o *AddHttpServletExtension200Response) HasAllowedAuthenticationType() bool`
+
+HasAllowedAuthenticationType returns a boolean if a field has been set.
+
+### GetAccessTokenValidator
+
+`func (o *AddHttpServletExtension200Response) GetAccessTokenValidator() []string`
+
+GetAccessTokenValidator returns the AccessTokenValidator field if non-nil, zero value otherwise.
+
+### GetAccessTokenValidatorOk
+
+`func (o *AddHttpServletExtension200Response) GetAccessTokenValidatorOk() (*[]string, bool)`
+
+GetAccessTokenValidatorOk returns a tuple with the AccessTokenValidator field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccessTokenValidator
+
+`func (o *AddHttpServletExtension200Response) SetAccessTokenValidator(v []string)`
+
+SetAccessTokenValidator sets AccessTokenValidator field to given value.
+
+### HasAccessTokenValidator
+
+`func (o *AddHttpServletExtension200Response) HasAccessTokenValidator() bool`
+
+HasAccessTokenValidator returns a boolean if a field has been set.
+
+### GetIdTokenValidator
+
+`func (o *AddHttpServletExtension200Response) GetIdTokenValidator() []string`
+
+GetIdTokenValidator returns the IdTokenValidator field if non-nil, zero value otherwise.
+
+### GetIdTokenValidatorOk
+
+`func (o *AddHttpServletExtension200Response) GetIdTokenValidatorOk() (*[]string, bool)`
+
+GetIdTokenValidatorOk returns a tuple with the IdTokenValidator field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIdTokenValidator
+
+`func (o *AddHttpServletExtension200Response) SetIdTokenValidator(v []string)`
+
+SetIdTokenValidator sets IdTokenValidator field to given value.
+
+### HasIdTokenValidator
+
+`func (o *AddHttpServletExtension200Response) HasIdTokenValidator() bool`
+
+HasIdTokenValidator returns a boolean if a field has been set.
+
+### GetRequireFileServletAccessPrivilege
+
+`func (o *AddHttpServletExtension200Response) GetRequireFileServletAccessPrivilege() bool`
+
+GetRequireFileServletAccessPrivilege returns the RequireFileServletAccessPrivilege field if non-nil, zero value otherwise.
+
+### GetRequireFileServletAccessPrivilegeOk
+
+`func (o *AddHttpServletExtension200Response) GetRequireFileServletAccessPrivilegeOk() (*bool, bool)`
+
+GetRequireFileServletAccessPrivilegeOk returns a tuple with the RequireFileServletAccessPrivilege field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequireFileServletAccessPrivilege
+
+`func (o *AddHttpServletExtension200Response) SetRequireFileServletAccessPrivilege(v bool)`
+
+SetRequireFileServletAccessPrivilege sets RequireFileServletAccessPrivilege field to given value.
+
+### HasRequireFileServletAccessPrivilege
+
+`func (o *AddHttpServletExtension200Response) HasRequireFileServletAccessPrivilege() bool`
+
+HasRequireFileServletAccessPrivilege returns a boolean if a field has been set.
+
+### GetRequireGroup
+
+`func (o *AddHttpServletExtension200Response) GetRequireGroup() []string`
+
+GetRequireGroup returns the RequireGroup field if non-nil, zero value otherwise.
+
+### GetRequireGroupOk
+
+`func (o *AddHttpServletExtension200Response) GetRequireGroupOk() (*[]string, bool)`
+
+GetRequireGroupOk returns a tuple with the RequireGroup field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequireGroup
+
+`func (o *AddHttpServletExtension200Response) SetRequireGroup(v []string)`
+
+SetRequireGroup sets RequireGroup field to given value.
+
+### HasRequireGroup
+
+`func (o *AddHttpServletExtension200Response) HasRequireGroup() bool`
+
+HasRequireGroup returns a boolean if a field has been set.
 
 ### GetExtensionClass
 

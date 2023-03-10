@@ -607,6 +607,10 @@ components:
           type: boolean
           description: >-
               Indicates whether the server should attempt to invoke this Twilio Alert Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver the alert notification) will not delay whatever processing the server was performing when the alert was generated.
+        httpProxyExternalServer:
+          type: string
+          description: >-
+              A reference to an HTTP proxy server that should be used for requests sent to the Twilio service.
         twilioAccountSID:
           type: string
           description: >-

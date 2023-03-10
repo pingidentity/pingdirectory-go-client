@@ -85,6 +85,10 @@ components:
             type: integer
             description: >-
                 Specifies the key length in bits for the preferred MAC algorithm.
+          signingEncryptionSettingsID:
+            type: string
+            description: >-
+                The ID of the encryption settings definition to use for generating digital signatures. If this is not specified, then the server's preferred encryption settings definition will be used.
           cipherTransformation:
             type: string
             description: >-

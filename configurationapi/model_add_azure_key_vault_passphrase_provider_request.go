@@ -26,6 +26,8 @@ type AddAzureKeyVaultPassphraseProviderRequest struct {
 	KeyVaultURI string `json:"keyVaultURI"`
 	// The mechanism used to authenticate to the Azure service.
 	AzureAuthenticationMethod string `json:"azureAuthenticationMethod"`
+	// A reference to an HTTP proxy server that should be used for requests sent to the Azure service.
+	HttpProxyExternalServer *string `json:"httpProxyExternalServer,omitempty"`
 	// The name of the secret to retrieve.
 	SecretName string `json:"secretName"`
 	// The maximum length of time that the passphrase provider may cache the passphrase that has been read from Azure Key Vault. A value of zero seconds indicates that the provider should always attempt to read the passphrase from the Azure service.
@@ -155,6 +157,38 @@ func (o *AddAzureKeyVaultPassphraseProviderRequest) SetAzureAuthenticationMethod
 	o.AzureAuthenticationMethod = v
 }
 
+// GetHttpProxyExternalServer returns the HttpProxyExternalServer field value if set, zero value otherwise.
+func (o *AddAzureKeyVaultPassphraseProviderRequest) GetHttpProxyExternalServer() string {
+	if o == nil || IsNil(o.HttpProxyExternalServer) {
+		var ret string
+		return ret
+	}
+	return *o.HttpProxyExternalServer
+}
+
+// GetHttpProxyExternalServerOk returns a tuple with the HttpProxyExternalServer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddAzureKeyVaultPassphraseProviderRequest) GetHttpProxyExternalServerOk() (*string, bool) {
+	if o == nil || IsNil(o.HttpProxyExternalServer) {
+		return nil, false
+	}
+	return o.HttpProxyExternalServer, true
+}
+
+// HasHttpProxyExternalServer returns a boolean if a field has been set.
+func (o *AddAzureKeyVaultPassphraseProviderRequest) HasHttpProxyExternalServer() bool {
+	if o != nil && !IsNil(o.HttpProxyExternalServer) {
+		return true
+	}
+
+	return false
+}
+
+// SetHttpProxyExternalServer gets a reference to the given string and assigns it to the HttpProxyExternalServer field.
+func (o *AddAzureKeyVaultPassphraseProviderRequest) SetHttpProxyExternalServer(v string) {
+	o.HttpProxyExternalServer = &v
+}
+
 // GetSecretName returns the SecretName field value
 func (o *AddAzureKeyVaultPassphraseProviderRequest) GetSecretName() string {
 	if o == nil {
@@ -281,6 +315,9 @@ func (o AddAzureKeyVaultPassphraseProviderRequest) ToMap() (map[string]interface
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["keyVaultURI"] = o.KeyVaultURI
 	toSerialize["azureAuthenticationMethod"] = o.AzureAuthenticationMethod
+	if !IsNil(o.HttpProxyExternalServer) {
+		toSerialize["httpProxyExternalServer"] = o.HttpProxyExternalServer
+	}
 	toSerialize["secretName"] = o.SecretName
 	if !IsNil(o.MaxCacheDuration) {
 		toSerialize["maxCacheDuration"] = o.MaxCacheDuration

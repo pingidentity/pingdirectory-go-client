@@ -33,10 +33,10 @@ type AddLdapExternalServerRequest struct {
 	// The login password for the specified user.
 	Password *string `json:"password,omitempty"`
 	// The passphrase provider to use to obtain the login password for the specified user.
-	PassphraseProvider      *string                                        `json:"passphraseProvider,omitempty"`
-	ConnectionSecurity      *EnumexternalServerConnectionSecurityProp      `json:"connectionSecurity,omitempty"`
-	AuthenticationMethod    *EnumexternalServerAuthenticationMethodProp    `json:"authenticationMethod,omitempty"`
-	VerifyCredentialsMethod *EnumexternalServerVerifyCredentialsMethodProp `json:"verifyCredentialsMethod,omitempty"`
+	PassphraseProvider      *string                                         `json:"passphraseProvider,omitempty"`
+	ConnectionSecurity      *EnumexternalServerConnectionSecurityProp       `json:"connectionSecurity,omitempty"`
+	AuthenticationMethod    *EnumexternalServerLdapAuthenticationMethodProp `json:"authenticationMethod,omitempty"`
+	VerifyCredentialsMethod *EnumexternalServerVerifyCredentialsMethodProp  `json:"verifyCredentialsMethod,omitempty"`
 	// Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
 	HealthCheckConnectTimeout *string `json:"healthCheckConnectTimeout,omitempty"`
 	// Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections.
@@ -347,9 +347,9 @@ func (o *AddLdapExternalServerRequest) SetConnectionSecurity(v EnumexternalServe
 }
 
 // GetAuthenticationMethod returns the AuthenticationMethod field value if set, zero value otherwise.
-func (o *AddLdapExternalServerRequest) GetAuthenticationMethod() EnumexternalServerAuthenticationMethodProp {
+func (o *AddLdapExternalServerRequest) GetAuthenticationMethod() EnumexternalServerLdapAuthenticationMethodProp {
 	if o == nil || IsNil(o.AuthenticationMethod) {
-		var ret EnumexternalServerAuthenticationMethodProp
+		var ret EnumexternalServerLdapAuthenticationMethodProp
 		return ret
 	}
 	return *o.AuthenticationMethod
@@ -357,7 +357,7 @@ func (o *AddLdapExternalServerRequest) GetAuthenticationMethod() EnumexternalSer
 
 // GetAuthenticationMethodOk returns a tuple with the AuthenticationMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddLdapExternalServerRequest) GetAuthenticationMethodOk() (*EnumexternalServerAuthenticationMethodProp, bool) {
+func (o *AddLdapExternalServerRequest) GetAuthenticationMethodOk() (*EnumexternalServerLdapAuthenticationMethodProp, bool) {
 	if o == nil || IsNil(o.AuthenticationMethod) {
 		return nil, false
 	}
@@ -373,8 +373,8 @@ func (o *AddLdapExternalServerRequest) HasAuthenticationMethod() bool {
 	return false
 }
 
-// SetAuthenticationMethod gets a reference to the given EnumexternalServerAuthenticationMethodProp and assigns it to the AuthenticationMethod field.
-func (o *AddLdapExternalServerRequest) SetAuthenticationMethod(v EnumexternalServerAuthenticationMethodProp) {
+// SetAuthenticationMethod gets a reference to the given EnumexternalServerLdapAuthenticationMethodProp and assigns it to the AuthenticationMethod field.
+func (o *AddLdapExternalServerRequest) SetAuthenticationMethod(v EnumexternalServerLdapAuthenticationMethodProp) {
 	o.AuthenticationMethod = &v
 }
 

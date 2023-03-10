@@ -24,9 +24,12 @@ type AmazonAwsExternalServerResponse struct {
 	// Name of the External Server
 	Id      string                                 `json:"id"`
 	Schemas []EnumamazonAwsExternalServerSchemaUrn `json:"schemas"`
-	// The access key ID that will be used if authentication should use an access key. If this is provided, then an aws-secret-access-key must also be provided. If this is not provided, then no aws-secret-access-key may be configured, and the server must be running in an EC2 instance that is configured with an IAM role with permission to perform the necessary operations.
+	// A reference to an HTTP proxy server that should be used for requests sent to the AWS service.
+	HttpProxyExternalServer *string                                              `json:"httpProxyExternalServer,omitempty"`
+	AuthenticationMethod    *EnumexternalServerAmazonAwsAuthenticationMethodProp `json:"authenticationMethod,omitempty"`
+	// The access key ID that will be used if authentication should use an access key. If this is provided, then an aws-secret-access-key must also be provided.
 	AwsAccessKeyID *string `json:"awsAccessKeyID,omitempty"`
-	// The secret access key that will be used if authentication should use an access key. If this is provided, then an aws-access-key-id must also be provided. If this is not provided, then no aws-access-key-id may be configured, and the server must be running in an EC2 instance that is configured with an IAM role with permission to perform the necessary operations.
+	// The secret access key that will be used if authentication should use an access key. If this is provided, then an aws-access-key-id must also be provided.
 	AwsSecretAccessKey *string `json:"awsSecretAccessKey,omitempty"`
 	// The name of the AWS region containing the resources that will be accessed.
 	AwsRegionName string `json:"awsRegionName"`
@@ -164,6 +167,70 @@ func (o *AmazonAwsExternalServerResponse) GetSchemasOk() ([]EnumamazonAwsExterna
 // SetSchemas sets field value
 func (o *AmazonAwsExternalServerResponse) SetSchemas(v []EnumamazonAwsExternalServerSchemaUrn) {
 	o.Schemas = v
+}
+
+// GetHttpProxyExternalServer returns the HttpProxyExternalServer field value if set, zero value otherwise.
+func (o *AmazonAwsExternalServerResponse) GetHttpProxyExternalServer() string {
+	if o == nil || IsNil(o.HttpProxyExternalServer) {
+		var ret string
+		return ret
+	}
+	return *o.HttpProxyExternalServer
+}
+
+// GetHttpProxyExternalServerOk returns a tuple with the HttpProxyExternalServer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AmazonAwsExternalServerResponse) GetHttpProxyExternalServerOk() (*string, bool) {
+	if o == nil || IsNil(o.HttpProxyExternalServer) {
+		return nil, false
+	}
+	return o.HttpProxyExternalServer, true
+}
+
+// HasHttpProxyExternalServer returns a boolean if a field has been set.
+func (o *AmazonAwsExternalServerResponse) HasHttpProxyExternalServer() bool {
+	if o != nil && !IsNil(o.HttpProxyExternalServer) {
+		return true
+	}
+
+	return false
+}
+
+// SetHttpProxyExternalServer gets a reference to the given string and assigns it to the HttpProxyExternalServer field.
+func (o *AmazonAwsExternalServerResponse) SetHttpProxyExternalServer(v string) {
+	o.HttpProxyExternalServer = &v
+}
+
+// GetAuthenticationMethod returns the AuthenticationMethod field value if set, zero value otherwise.
+func (o *AmazonAwsExternalServerResponse) GetAuthenticationMethod() EnumexternalServerAmazonAwsAuthenticationMethodProp {
+	if o == nil || IsNil(o.AuthenticationMethod) {
+		var ret EnumexternalServerAmazonAwsAuthenticationMethodProp
+		return ret
+	}
+	return *o.AuthenticationMethod
+}
+
+// GetAuthenticationMethodOk returns a tuple with the AuthenticationMethod field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AmazonAwsExternalServerResponse) GetAuthenticationMethodOk() (*EnumexternalServerAmazonAwsAuthenticationMethodProp, bool) {
+	if o == nil || IsNil(o.AuthenticationMethod) {
+		return nil, false
+	}
+	return o.AuthenticationMethod, true
+}
+
+// HasAuthenticationMethod returns a boolean if a field has been set.
+func (o *AmazonAwsExternalServerResponse) HasAuthenticationMethod() bool {
+	if o != nil && !IsNil(o.AuthenticationMethod) {
+		return true
+	}
+
+	return false
+}
+
+// SetAuthenticationMethod gets a reference to the given EnumexternalServerAmazonAwsAuthenticationMethodProp and assigns it to the AuthenticationMethod field.
+func (o *AmazonAwsExternalServerResponse) SetAuthenticationMethod(v EnumexternalServerAmazonAwsAuthenticationMethodProp) {
+	o.AuthenticationMethod = &v
 }
 
 // GetAwsAccessKeyID returns the AwsAccessKeyID field value if set, zero value otherwise.
@@ -304,6 +371,12 @@ func (o AmazonAwsExternalServerResponse) ToMap() (map[string]interface{}, error)
 	}
 	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.HttpProxyExternalServer) {
+		toSerialize["httpProxyExternalServer"] = o.HttpProxyExternalServer
+	}
+	if !IsNil(o.AuthenticationMethod) {
+		toSerialize["authenticationMethod"] = o.AuthenticationMethod
+	}
 	if !IsNil(o.AwsAccessKeyID) {
 		toSerialize["awsAccessKeyID"] = o.AwsAccessKeyID
 	}
