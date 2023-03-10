@@ -20,6 +20,9 @@ type AddPasswordStorageSchemeRequest struct {
 	AddAes256PasswordStorageSchemeRequest               *AddAes256PasswordStorageSchemeRequest
 	AddAmazonSecretsManagerPasswordStorageSchemeRequest *AddAmazonSecretsManagerPasswordStorageSchemeRequest
 	AddArgon2PasswordStorageSchemeRequest               *AddArgon2PasswordStorageSchemeRequest
+	AddArgon2dPasswordStorageSchemeRequest              *AddArgon2dPasswordStorageSchemeRequest
+	AddArgon2iPasswordStorageSchemeRequest              *AddArgon2iPasswordStorageSchemeRequest
+	AddArgon2idPasswordStorageSchemeRequest             *AddArgon2idPasswordStorageSchemeRequest
 	AddAzureKeyVaultPasswordStorageSchemeRequest        *AddAzureKeyVaultPasswordStorageSchemeRequest
 	AddBcryptPasswordStorageSchemeRequest               *AddBcryptPasswordStorageSchemeRequest
 	AddConjurPasswordStorageSchemeRequest               *AddConjurPasswordStorageSchemeRequest
@@ -49,6 +52,27 @@ func AddAmazonSecretsManagerPasswordStorageSchemeRequestAsAddPasswordStorageSche
 func AddArgon2PasswordStorageSchemeRequestAsAddPasswordStorageSchemeRequest(v *AddArgon2PasswordStorageSchemeRequest) AddPasswordStorageSchemeRequest {
 	return AddPasswordStorageSchemeRequest{
 		AddArgon2PasswordStorageSchemeRequest: v,
+	}
+}
+
+// AddArgon2dPasswordStorageSchemeRequestAsAddPasswordStorageSchemeRequest is a convenience function that returns AddArgon2dPasswordStorageSchemeRequest wrapped in AddPasswordStorageSchemeRequest
+func AddArgon2dPasswordStorageSchemeRequestAsAddPasswordStorageSchemeRequest(v *AddArgon2dPasswordStorageSchemeRequest) AddPasswordStorageSchemeRequest {
+	return AddPasswordStorageSchemeRequest{
+		AddArgon2dPasswordStorageSchemeRequest: v,
+	}
+}
+
+// AddArgon2iPasswordStorageSchemeRequestAsAddPasswordStorageSchemeRequest is a convenience function that returns AddArgon2iPasswordStorageSchemeRequest wrapped in AddPasswordStorageSchemeRequest
+func AddArgon2iPasswordStorageSchemeRequestAsAddPasswordStorageSchemeRequest(v *AddArgon2iPasswordStorageSchemeRequest) AddPasswordStorageSchemeRequest {
+	return AddPasswordStorageSchemeRequest{
+		AddArgon2iPasswordStorageSchemeRequest: v,
+	}
+}
+
+// AddArgon2idPasswordStorageSchemeRequestAsAddPasswordStorageSchemeRequest is a convenience function that returns AddArgon2idPasswordStorageSchemeRequest wrapped in AddPasswordStorageSchemeRequest
+func AddArgon2idPasswordStorageSchemeRequestAsAddPasswordStorageSchemeRequest(v *AddArgon2idPasswordStorageSchemeRequest) AddPasswordStorageSchemeRequest {
+	return AddPasswordStorageSchemeRequest{
+		AddArgon2idPasswordStorageSchemeRequest: v,
 	}
 }
 
@@ -156,6 +180,45 @@ func (dst *AddPasswordStorageSchemeRequest) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.AddArgon2PasswordStorageSchemeRequest = nil
+	}
+
+	// try to unmarshal data into AddArgon2dPasswordStorageSchemeRequest
+	err = newStrictDecoder(data).Decode(&dst.AddArgon2dPasswordStorageSchemeRequest)
+	if err == nil {
+		jsonAddArgon2dPasswordStorageSchemeRequest, _ := json.Marshal(dst.AddArgon2dPasswordStorageSchemeRequest)
+		if string(jsonAddArgon2dPasswordStorageSchemeRequest) == "{}" { // empty struct
+			dst.AddArgon2dPasswordStorageSchemeRequest = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.AddArgon2dPasswordStorageSchemeRequest = nil
+	}
+
+	// try to unmarshal data into AddArgon2iPasswordStorageSchemeRequest
+	err = newStrictDecoder(data).Decode(&dst.AddArgon2iPasswordStorageSchemeRequest)
+	if err == nil {
+		jsonAddArgon2iPasswordStorageSchemeRequest, _ := json.Marshal(dst.AddArgon2iPasswordStorageSchemeRequest)
+		if string(jsonAddArgon2iPasswordStorageSchemeRequest) == "{}" { // empty struct
+			dst.AddArgon2iPasswordStorageSchemeRequest = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.AddArgon2iPasswordStorageSchemeRequest = nil
+	}
+
+	// try to unmarshal data into AddArgon2idPasswordStorageSchemeRequest
+	err = newStrictDecoder(data).Decode(&dst.AddArgon2idPasswordStorageSchemeRequest)
+	if err == nil {
+		jsonAddArgon2idPasswordStorageSchemeRequest, _ := json.Marshal(dst.AddArgon2idPasswordStorageSchemeRequest)
+		if string(jsonAddArgon2idPasswordStorageSchemeRequest) == "{}" { // empty struct
+			dst.AddArgon2idPasswordStorageSchemeRequest = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.AddArgon2idPasswordStorageSchemeRequest = nil
 	}
 
 	// try to unmarshal data into AddAzureKeyVaultPasswordStorageSchemeRequest
@@ -280,6 +343,9 @@ func (dst *AddPasswordStorageSchemeRequest) UnmarshalJSON(data []byte) error {
 		dst.AddAes256PasswordStorageSchemeRequest = nil
 		dst.AddAmazonSecretsManagerPasswordStorageSchemeRequest = nil
 		dst.AddArgon2PasswordStorageSchemeRequest = nil
+		dst.AddArgon2dPasswordStorageSchemeRequest = nil
+		dst.AddArgon2iPasswordStorageSchemeRequest = nil
+		dst.AddArgon2idPasswordStorageSchemeRequest = nil
 		dst.AddAzureKeyVaultPasswordStorageSchemeRequest = nil
 		dst.AddBcryptPasswordStorageSchemeRequest = nil
 		dst.AddConjurPasswordStorageSchemeRequest = nil
@@ -310,6 +376,18 @@ func (src AddPasswordStorageSchemeRequest) MarshalJSON() ([]byte, error) {
 
 	if src.AddArgon2PasswordStorageSchemeRequest != nil {
 		return json.Marshal(&src.AddArgon2PasswordStorageSchemeRequest)
+	}
+
+	if src.AddArgon2dPasswordStorageSchemeRequest != nil {
+		return json.Marshal(&src.AddArgon2dPasswordStorageSchemeRequest)
+	}
+
+	if src.AddArgon2iPasswordStorageSchemeRequest != nil {
+		return json.Marshal(&src.AddArgon2iPasswordStorageSchemeRequest)
+	}
+
+	if src.AddArgon2idPasswordStorageSchemeRequest != nil {
+		return json.Marshal(&src.AddArgon2idPasswordStorageSchemeRequest)
 	}
 
 	if src.AddAzureKeyVaultPasswordStorageSchemeRequest != nil {
@@ -366,6 +444,18 @@ func (obj *AddPasswordStorageSchemeRequest) GetActualInstance() interface{} {
 
 	if obj.AddArgon2PasswordStorageSchemeRequest != nil {
 		return obj.AddArgon2PasswordStorageSchemeRequest
+	}
+
+	if obj.AddArgon2dPasswordStorageSchemeRequest != nil {
+		return obj.AddArgon2dPasswordStorageSchemeRequest
+	}
+
+	if obj.AddArgon2iPasswordStorageSchemeRequest != nil {
+		return obj.AddArgon2iPasswordStorageSchemeRequest
+	}
+
+	if obj.AddArgon2idPasswordStorageSchemeRequest != nil {
+		return obj.AddArgon2idPasswordStorageSchemeRequest
 	}
 
 	if obj.AddAzureKeyVaultPasswordStorageSchemeRequest != nil {

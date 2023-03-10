@@ -52,6 +52,7 @@ Name | Type | Description | Notes
 **OAuthClientSecret** | Pointer to **string** | Specifies the OAuth Client Secret used to authenticate connections to the PingOne API. | [optional] 
 **OAuthClientSecretPassphraseProvider** | Pointer to **string** | Specifies a passphrase provider that can be used to obtain the OAuth Client Secret used to authenticate connections to the PingOne API. | [optional] 
 **EnvironmentID** | **string** | Specifies the PingOne Environment that will be associated with this PingOne Pass Through Authentication Plugin. | 
+**HttpProxyExternalServer** | Pointer to **string** | A reference to an HTTP proxy server that should be used for requests sent to the PingOne service. | [optional] 
 **IncludedLocalEntryBaseDN** | Pointer to **[]string** | The base DNs for the local users whose authentication attempts may be passed through to the external authentication service. | [optional] 
 **ConnectionCriteria** | Pointer to **string** | A reference to connection criteria that will be used to indicate which bind requests should be passed through to the external authentication service. | [optional] 
 **TryLocalBind** | **bool** | Indicates whether to attempt the bind in the local server first and only send the request to the external authentication service if the local bind attempt fails, or to only attempt the bind in the external service. | 
@@ -1279,6 +1280,31 @@ and a boolean to check if the value has been set.
 
 SetEnvironmentID sets EnvironmentID field to given value.
 
+
+### GetHttpProxyExternalServer
+
+`func (o *GetPlugin200Response) GetHttpProxyExternalServer() string`
+
+GetHttpProxyExternalServer returns the HttpProxyExternalServer field if non-nil, zero value otherwise.
+
+### GetHttpProxyExternalServerOk
+
+`func (o *GetPlugin200Response) GetHttpProxyExternalServerOk() (*string, bool)`
+
+GetHttpProxyExternalServerOk returns a tuple with the HttpProxyExternalServer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHttpProxyExternalServer
+
+`func (o *GetPlugin200Response) SetHttpProxyExternalServer(v string)`
+
+SetHttpProxyExternalServer sets HttpProxyExternalServer field to given value.
+
+### HasHttpProxyExternalServer
+
+`func (o *GetPlugin200Response) HasHttpProxyExternalServer() bool`
+
+HasHttpProxyExternalServer returns a boolean if a field has been set.
 
 ### GetIncludedLocalEntryBaseDN
 

@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **Password** | Pointer to **string** | The login password for the specified user. | [optional] 
 **PassphraseProvider** | Pointer to **string** | The passphrase provider to use to obtain the login password for the specified user. | [optional] 
 **ConnectionSecurity** | [**EnumexternalServerConnectionSecurityProp**](EnumexternalServerConnectionSecurityProp.md) |  | 
-**AuthenticationMethod** | [**EnumexternalServerAuthenticationMethodProp**](EnumexternalServerAuthenticationMethodProp.md) |  | 
+**AuthenticationMethod** | [**EnumexternalServerOpendjAuthenticationMethodProp**](EnumexternalServerOpendjAuthenticationMethodProp.md) |  | 
 **VerifyCredentialsMethod** | [**EnumexternalServerVerifyCredentialsMethodProp**](EnumexternalServerVerifyCredentialsMethodProp.md) |  | 
 **HealthCheckConnectTimeout** | Pointer to **string** | Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable. | [optional] 
 **MaxConnectionAge** | **string** | Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections. | 
@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 
 ### NewOpendjExternalServerResponse
 
-`func NewOpendjExternalServerResponse(id string, schemas []EnumopendjExternalServerSchemaUrn, serverHostName string, serverPort int32, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerAuthenticationMethodProp, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string, ) *OpendjExternalServerResponse`
+`func NewOpendjExternalServerResponse(id string, schemas []EnumopendjExternalServerSchemaUrn, serverHostName string, serverPort int32, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerOpendjAuthenticationMethodProp, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string, ) *OpendjExternalServerResponse`
 
 NewOpendjExternalServerResponse instantiates a new OpendjExternalServerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -301,20 +301,20 @@ SetConnectionSecurity sets ConnectionSecurity field to given value.
 
 ### GetAuthenticationMethod
 
-`func (o *OpendjExternalServerResponse) GetAuthenticationMethod() EnumexternalServerAuthenticationMethodProp`
+`func (o *OpendjExternalServerResponse) GetAuthenticationMethod() EnumexternalServerOpendjAuthenticationMethodProp`
 
 GetAuthenticationMethod returns the AuthenticationMethod field if non-nil, zero value otherwise.
 
 ### GetAuthenticationMethodOk
 
-`func (o *OpendjExternalServerResponse) GetAuthenticationMethodOk() (*EnumexternalServerAuthenticationMethodProp, bool)`
+`func (o *OpendjExternalServerResponse) GetAuthenticationMethodOk() (*EnumexternalServerOpendjAuthenticationMethodProp, bool)`
 
 GetAuthenticationMethodOk returns a tuple with the AuthenticationMethod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthenticationMethod
 
-`func (o *OpendjExternalServerResponse) SetAuthenticationMethod(v EnumexternalServerAuthenticationMethodProp)`
+`func (o *OpendjExternalServerResponse) SetAuthenticationMethod(v EnumexternalServerOpendjAuthenticationMethodProp)`
 
 SetAuthenticationMethod sets AuthenticationMethod field to given value.
 

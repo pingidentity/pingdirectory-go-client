@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **Password** | Pointer to **string** | The login password for the specified user. | [optional] 
 **PassphraseProvider** | Pointer to **string** | The passphrase provider to use to obtain the login password for the specified user. | [optional] 
 **ConnectionSecurity** | Pointer to [**EnumexternalServerConnectionSecurityProp**](EnumexternalServerConnectionSecurityProp.md) |  | [optional] 
-**AuthenticationMethod** | Pointer to [**EnumexternalServerAuthenticationMethodProp**](EnumexternalServerAuthenticationMethodProp.md) |  | [optional] 
+**AuthenticationMethod** | Pointer to [**EnumexternalServerNokiaProxyServerAuthenticationMethodProp**](EnumexternalServerNokiaProxyServerAuthenticationMethodProp.md) |  | [optional] 
 **HealthCheckConnectTimeout** | Pointer to **string** | Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable. | [optional] 
 **MaxConnectionAge** | Pointer to **string** | Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections. | [optional] 
 **MinExpiredConnectionDisconnectInterval** | Pointer to **string** | Specifies the minimum length of time that should pass between connection closures as a result of the connections being established for longer than the maximum connection age. This may help avoid cases in which a large number of connections are closed and re-established in a short period of time because of the maximum connection age. | [optional] 
@@ -310,20 +310,20 @@ HasConnectionSecurity returns a boolean if a field has been set.
 
 ### GetAuthenticationMethod
 
-`func (o *AddNokiaProxyServerExternalServerRequest) GetAuthenticationMethod() EnumexternalServerAuthenticationMethodProp`
+`func (o *AddNokiaProxyServerExternalServerRequest) GetAuthenticationMethod() EnumexternalServerNokiaProxyServerAuthenticationMethodProp`
 
 GetAuthenticationMethod returns the AuthenticationMethod field if non-nil, zero value otherwise.
 
 ### GetAuthenticationMethodOk
 
-`func (o *AddNokiaProxyServerExternalServerRequest) GetAuthenticationMethodOk() (*EnumexternalServerAuthenticationMethodProp, bool)`
+`func (o *AddNokiaProxyServerExternalServerRequest) GetAuthenticationMethodOk() (*EnumexternalServerNokiaProxyServerAuthenticationMethodProp, bool)`
 
 GetAuthenticationMethodOk returns a tuple with the AuthenticationMethod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthenticationMethod
 
-`func (o *AddNokiaProxyServerExternalServerRequest) SetAuthenticationMethod(v EnumexternalServerAuthenticationMethodProp)`
+`func (o *AddNokiaProxyServerExternalServerRequest) SetAuthenticationMethod(v EnumexternalServerNokiaProxyServerAuthenticationMethodProp)`
 
 SetAuthenticationMethod sets AuthenticationMethod field to given value.
 

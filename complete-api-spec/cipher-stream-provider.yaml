@@ -360,6 +360,10 @@ components:
           type: string
           description: >-
               The mechanism used to authenticate to the Azure service.
+        httpProxyExternalServer:
+          type: string
+          description: >-
+              A reference to an HTTP proxy server that should be used for requests sent to the Azure service.
         secretName:
           type: string
           description: >-

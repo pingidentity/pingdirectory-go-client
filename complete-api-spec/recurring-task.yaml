@@ -27,6 +27,7 @@ paths:
               - $ref: '#/components/schemas/add-collect-support-data-recurring-task-request'
               - $ref: '#/components/schemas/add-ldif-export-recurring-task-request'
               - $ref: '#/components/schemas/add-enter-lockdown-mode-recurring-task-request'
+              - $ref: '#/components/schemas/add-audit-data-security-recurring-task-request'
               - $ref: '#/components/schemas/add-exec-recurring-task-request'
               - $ref: '#/components/schemas/add-file-retention-recurring-task-request'
               - $ref: '#/components/schemas/add-third-party-recurring-task-request'
@@ -47,6 +48,7 @@ paths:
                 - $ref: '#/components/schemas/collect-support-data-recurring-task-response'
                 - $ref: '#/components/schemas/ldif-export-recurring-task-response'
                 - $ref: '#/components/schemas/enter-lockdown-mode-recurring-task-response'
+                - $ref: '#/components/schemas/audit-data-security-recurring-task-response'
                 - $ref: '#/components/schemas/exec-recurring-task-response'
                 - $ref: '#/components/schemas/file-retention-recurring-task-response'
                 - $ref: '#/components/schemas/third-party-recurring-task-response'
@@ -117,6 +119,7 @@ paths:
                 - $ref: '#/components/schemas/collect-support-data-recurring-task-response'
                 - $ref: '#/components/schemas/ldif-export-recurring-task-response'
                 - $ref: '#/components/schemas/enter-lockdown-mode-recurring-task-response'
+                - $ref: '#/components/schemas/audit-data-security-recurring-task-response'
                 - $ref: '#/components/schemas/exec-recurring-task-response'
                 - $ref: '#/components/schemas/file-retention-recurring-task-response'
                 - $ref: '#/components/schemas/third-party-recurring-task-response'
@@ -164,6 +167,7 @@ paths:
                 - $ref: '#/components/schemas/collect-support-data-recurring-task-response'
                 - $ref: '#/components/schemas/ldif-export-recurring-task-response'
                 - $ref: '#/components/schemas/enter-lockdown-mode-recurring-task-response'
+                - $ref: '#/components/schemas/audit-data-security-recurring-task-response'
                 - $ref: '#/components/schemas/exec-recurring-task-response'
                 - $ref: '#/components/schemas/file-retention-recurring-task-response'
                 - $ref: '#/components/schemas/third-party-recurring-task-response'
@@ -1005,6 +1009,112 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:recurring-task:enter-lockdown-mode"
+    add-audit-data-security-recurring-task-request:
+      allOf:
+      - type: object
+        properties:
+          taskName:
+            description: Name of the new Recurring Task
+            type: string
+        required:
+        - taskName
+      - $ref: '#/components/schemas/audit-data-security-recurring-task-shared'
+    audit-data-security-recurring-task-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Recurring Task
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/audit-data-security-recurring-task-shared'
+      required:
+      - baseOutputDirectory
+    audit-data-security-recurring-task-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumaudit-data-security-recurring-taskSchemaUrn'
+        baseOutputDirectory:
+          type: string
+          description: >-
+              The base directory below which generated reports will be written. Each invocation of the audit-data-security task will create a new subdirectory below this base directory whose name is a timestamp indicating when the report was generated.
+        dataSecurityAuditor:
+          type: array
+          items:
+            type: string
+          description: >-
+              The set of data security auditors that should be invoked. If no auditors are specified, then all auditors defined in the configuration will be used.
+        backend:
+          type: array
+          items:
+            type: string
+          description: >-
+              The set of backends that should be examined. If no backends are specified, then all backends that support this functionality will be included.
+        includeFilter:
+          type: array
+          items:
+            type: string
+          description: >-
+              A filter that will be used to identify entries that may be included in the generated report. If multiple filters are specified, then any entry that matches at least one of the filters will be included. If no filters are specified, then all entries will be included.
+        retainPreviousReportCount:
+          type: integer
+          description: >-
+              The minimum number of previous reports that should be preserved after a new report is generated.
+        retainPreviousReportAge:
+          type: string
+          description: >-
+              The minimum age of previous reports that should be preserved after a new report completes successfully.
+        description:
+          type: string
+          description: >-
+              A description for this Recurring Task
+        cancelOnTaskDependencyFailure:
+          type: boolean
+          description: >-
+              Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running).
+        emailOnStart:
+          type: array
+          items:
+            type: string
+          description: >-
+              The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        emailOnSuccess:
+          type: array
+          items:
+            type: string
+          description: >-
+              The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        emailOnFailure:
+          type: array
+          items:
+            type: string
+          description: >-
+              The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        alertOnStart:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running.
+        alertOnSuccess:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task completes successfully.
+        alertOnFailure:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
+      required:
+      - schemas
+    Enumaudit-data-security-recurring-taskSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:recurring-task:audit-data-security"
     add-exec-recurring-task-request:
       allOf:
       - type: object

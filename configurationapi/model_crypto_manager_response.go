@@ -28,6 +28,8 @@ type CryptoManagerResponse struct {
 	MacAlgorithm *string `json:"macAlgorithm,omitempty"`
 	// Specifies the key length in bits for the preferred MAC algorithm.
 	MacKeyLength *int32 `json:"macKeyLength,omitempty"`
+	// The ID of the encryption settings definition to use for generating digital signatures. If this is not specified, then the server's preferred encryption settings definition will be used.
+	SigningEncryptionSettingsID *string `json:"signingEncryptionSettingsID,omitempty"`
 	// Specifies the cipher for the Directory Server using the syntax algorithm/mode/padding.
 	CipherTransformation *string `json:"cipherTransformation,omitempty"`
 	// Specifies the key length in bits for the preferred cipher.
@@ -257,6 +259,38 @@ func (o *CryptoManagerResponse) HasMacKeyLength() bool {
 // SetMacKeyLength gets a reference to the given int32 and assigns it to the MacKeyLength field.
 func (o *CryptoManagerResponse) SetMacKeyLength(v int32) {
 	o.MacKeyLength = &v
+}
+
+// GetSigningEncryptionSettingsID returns the SigningEncryptionSettingsID field value if set, zero value otherwise.
+func (o *CryptoManagerResponse) GetSigningEncryptionSettingsID() string {
+	if o == nil || IsNil(o.SigningEncryptionSettingsID) {
+		var ret string
+		return ret
+	}
+	return *o.SigningEncryptionSettingsID
+}
+
+// GetSigningEncryptionSettingsIDOk returns a tuple with the SigningEncryptionSettingsID field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CryptoManagerResponse) GetSigningEncryptionSettingsIDOk() (*string, bool) {
+	if o == nil || IsNil(o.SigningEncryptionSettingsID) {
+		return nil, false
+	}
+	return o.SigningEncryptionSettingsID, true
+}
+
+// HasSigningEncryptionSettingsID returns a boolean if a field has been set.
+func (o *CryptoManagerResponse) HasSigningEncryptionSettingsID() bool {
+	if o != nil && !IsNil(o.SigningEncryptionSettingsID) {
+		return true
+	}
+
+	return false
+}
+
+// SetSigningEncryptionSettingsID gets a reference to the given string and assigns it to the SigningEncryptionSettingsID field.
+func (o *CryptoManagerResponse) SetSigningEncryptionSettingsID(v string) {
+	o.SigningEncryptionSettingsID = &v
 }
 
 // GetCipherTransformation returns the CipherTransformation field value if set, zero value otherwise.
@@ -606,6 +640,9 @@ func (o CryptoManagerResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.MacKeyLength) {
 		toSerialize["macKeyLength"] = o.MacKeyLength
+	}
+	if !IsNil(o.SigningEncryptionSettingsID) {
+		toSerialize["signingEncryptionSettingsID"] = o.SigningEncryptionSettingsID
 	}
 	if !IsNil(o.CipherTransformation) {
 		toSerialize["cipherTransformation"] = o.CipherTransformation

@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **ObscuredValue** | **string** | The value to be stored in an obscured form. | 
 **KeyVaultURI** | **string** | The URI that identifies the Azure Key Vault from which the secret is to be retrieved. | 
 **AzureAuthenticationMethod** | **string** | The mechanism used to authenticate to the Azure service. | 
+**HttpProxyExternalServer** | Pointer to **string** | A reference to an HTTP proxy server that should be used for requests sent to the Azure service. | [optional] 
 **SecretName** | **string** | The name of the secret to retrieve. | 
 **PasswordFile** | **string** | The path to the file containing the passphrase. | 
 **ConjurExternalServer** | **string** | An external server definition with information needed to connect and authenticate to the Conjur instance containing the passphrase. | 
@@ -398,6 +399,31 @@ and a boolean to check if the value has been set.
 
 SetAzureAuthenticationMethod sets AzureAuthenticationMethod field to given value.
 
+
+### GetHttpProxyExternalServer
+
+`func (o *AddPassphraseProvider200Response) GetHttpProxyExternalServer() string`
+
+GetHttpProxyExternalServer returns the HttpProxyExternalServer field if non-nil, zero value otherwise.
+
+### GetHttpProxyExternalServerOk
+
+`func (o *AddPassphraseProvider200Response) GetHttpProxyExternalServerOk() (*string, bool)`
+
+GetHttpProxyExternalServerOk returns a tuple with the HttpProxyExternalServer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHttpProxyExternalServer
+
+`func (o *AddPassphraseProvider200Response) SetHttpProxyExternalServer(v string)`
+
+SetHttpProxyExternalServer sets HttpProxyExternalServer field to given value.
+
+### HasHttpProxyExternalServer
+
+`func (o *AddPassphraseProvider200Response) HasHttpProxyExternalServer() bool`
+
+HasHttpProxyExternalServer returns a boolean if a field has been set.
 
 ### GetSecretName
 

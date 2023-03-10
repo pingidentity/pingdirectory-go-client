@@ -204,6 +204,8 @@ type APIClient struct {
 
 	PluginRootApi *PluginRootApiService
 
+	PrometheusMonitorAttributeMetricApi *PrometheusMonitorAttributeMetricApiService
+
 	RecurringTaskApi *RecurringTaskApiService
 
 	RecurringTaskChainApi *RecurringTaskChainApiService
@@ -369,6 +371,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.PasswordValidatorApi = (*PasswordValidatorApiService)(&c.common)
 	c.PluginApi = (*PluginApiService)(&c.common)
 	c.PluginRootApi = (*PluginRootApiService)(&c.common)
+	c.PrometheusMonitorAttributeMetricApi = (*PrometheusMonitorAttributeMetricApiService)(&c.common)
 	c.RecurringTaskApi = (*RecurringTaskApiService)(&c.common)
 	c.RecurringTaskChainApi = (*RecurringTaskChainApiService)(&c.common)
 	c.ReplicationAssurancePolicyApi = (*ReplicationAssurancePolicyApiService)(&c.common)

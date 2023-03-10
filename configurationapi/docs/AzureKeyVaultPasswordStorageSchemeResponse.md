@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumazureKeyVaultPasswordStorageSchemeSchemaUrn**](EnumazureKeyVaultPasswordStorageSchemeSchemaUrn.md) |  | 
 **KeyVaultURI** | **string** | The URI that identifies the Azure Key Vault from which the secret is to be retrieved. | 
 **AzureAuthenticationMethod** | **string** | The mechanism used to authenticate to the Azure service. | 
+**HttpProxyExternalServer** | Pointer to **string** | A reference to an HTTP proxy server that should be used for requests sent to the Azure service. | [optional] 
 **Description** | Pointer to **string** | A description for this Password Storage Scheme | [optional] 
 **Enabled** | **bool** | Indicates whether the Password Storage Scheme is enabled for use. | 
 
@@ -161,6 +162,31 @@ and a boolean to check if the value has been set.
 
 SetAzureAuthenticationMethod sets AzureAuthenticationMethod field to given value.
 
+
+### GetHttpProxyExternalServer
+
+`func (o *AzureKeyVaultPasswordStorageSchemeResponse) GetHttpProxyExternalServer() string`
+
+GetHttpProxyExternalServer returns the HttpProxyExternalServer field if non-nil, zero value otherwise.
+
+### GetHttpProxyExternalServerOk
+
+`func (o *AzureKeyVaultPasswordStorageSchemeResponse) GetHttpProxyExternalServerOk() (*string, bool)`
+
+GetHttpProxyExternalServerOk returns a tuple with the HttpProxyExternalServer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHttpProxyExternalServer
+
+`func (o *AzureKeyVaultPasswordStorageSchemeResponse) SetHttpProxyExternalServer(v string)`
+
+SetHttpProxyExternalServer sets HttpProxyExternalServer field to given value.
+
+### HasHttpProxyExternalServer
+
+`func (o *AzureKeyVaultPasswordStorageSchemeResponse) HasHttpProxyExternalServer() bool`
+
+HasHttpProxyExternalServer returns a boolean if a field has been set.
 
 ### GetDescription
 

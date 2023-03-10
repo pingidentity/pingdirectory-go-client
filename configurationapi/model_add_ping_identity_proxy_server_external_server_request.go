@@ -36,9 +36,9 @@ type AddPingIdentityProxyServerExternalServerRequest struct {
 	// The login password for the specified user.
 	Password *string `json:"password,omitempty"`
 	// The passphrase provider to use to obtain the login password for the specified user.
-	PassphraseProvider   *string                                     `json:"passphraseProvider,omitempty"`
-	ConnectionSecurity   *EnumexternalServerConnectionSecurityProp   `json:"connectionSecurity,omitempty"`
-	AuthenticationMethod *EnumexternalServerAuthenticationMethodProp `json:"authenticationMethod,omitempty"`
+	PassphraseProvider   *string                                                            `json:"passphraseProvider,omitempty"`
+	ConnectionSecurity   *EnumexternalServerConnectionSecurityProp                          `json:"connectionSecurity,omitempty"`
+	AuthenticationMethod *EnumexternalServerPingIdentityProxyServerAuthenticationMethodProp `json:"authenticationMethod,omitempty"`
 	// Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
 	HealthCheckConnectTimeout *string `json:"healthCheckConnectTimeout,omitempty"`
 	// Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections.
@@ -413,9 +413,9 @@ func (o *AddPingIdentityProxyServerExternalServerRequest) SetConnectionSecurity(
 }
 
 // GetAuthenticationMethod returns the AuthenticationMethod field value if set, zero value otherwise.
-func (o *AddPingIdentityProxyServerExternalServerRequest) GetAuthenticationMethod() EnumexternalServerAuthenticationMethodProp {
+func (o *AddPingIdentityProxyServerExternalServerRequest) GetAuthenticationMethod() EnumexternalServerPingIdentityProxyServerAuthenticationMethodProp {
 	if o == nil || IsNil(o.AuthenticationMethod) {
-		var ret EnumexternalServerAuthenticationMethodProp
+		var ret EnumexternalServerPingIdentityProxyServerAuthenticationMethodProp
 		return ret
 	}
 	return *o.AuthenticationMethod
@@ -423,7 +423,7 @@ func (o *AddPingIdentityProxyServerExternalServerRequest) GetAuthenticationMetho
 
 // GetAuthenticationMethodOk returns a tuple with the AuthenticationMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddPingIdentityProxyServerExternalServerRequest) GetAuthenticationMethodOk() (*EnumexternalServerAuthenticationMethodProp, bool) {
+func (o *AddPingIdentityProxyServerExternalServerRequest) GetAuthenticationMethodOk() (*EnumexternalServerPingIdentityProxyServerAuthenticationMethodProp, bool) {
 	if o == nil || IsNil(o.AuthenticationMethod) {
 		return nil, false
 	}
@@ -439,8 +439,8 @@ func (o *AddPingIdentityProxyServerExternalServerRequest) HasAuthenticationMetho
 	return false
 }
 
-// SetAuthenticationMethod gets a reference to the given EnumexternalServerAuthenticationMethodProp and assigns it to the AuthenticationMethod field.
-func (o *AddPingIdentityProxyServerExternalServerRequest) SetAuthenticationMethod(v EnumexternalServerAuthenticationMethodProp) {
+// SetAuthenticationMethod gets a reference to the given EnumexternalServerPingIdentityProxyServerAuthenticationMethodProp and assigns it to the AuthenticationMethod field.
+func (o *AddPingIdentityProxyServerExternalServerRequest) SetAuthenticationMethod(v EnumexternalServerPingIdentityProxyServerAuthenticationMethodProp) {
 	o.AuthenticationMethod = &v
 }
 

@@ -20,10 +20,11 @@ paths:
             schema:
               oneOf:
               - $ref: '#/components/schemas/add-quickstart-http-servlet-extension-request'
-              - $ref: '#/components/schemas/add-groovy-scripted-http-servlet-extension-request'
               - $ref: '#/components/schemas/add-availability-state-http-servlet-extension-request'
-              - $ref: '#/components/schemas/add-file-server-http-servlet-extension-request'
+              - $ref: '#/components/schemas/add-prometheus-monitoring-http-servlet-extension-request'
               - $ref: '#/components/schemas/add-ldap-mapped-scim-http-servlet-extension-request'
+              - $ref: '#/components/schemas/add-groovy-scripted-http-servlet-extension-request'
+              - $ref: '#/components/schemas/add-file-server-http-servlet-extension-request'
               - $ref: '#/components/schemas/add-third-party-http-servlet-extension-request'
         description: Create a new HTTP Servlet Extension in the config
         required: true
@@ -35,10 +36,11 @@ paths:
               schema:
                 oneOf:
                 - $ref: '#/components/schemas/quickstart-http-servlet-extension-response'
-                - $ref: '#/components/schemas/groovy-scripted-http-servlet-extension-response'
                 - $ref: '#/components/schemas/availability-state-http-servlet-extension-response'
-                - $ref: '#/components/schemas/file-server-http-servlet-extension-response'
+                - $ref: '#/components/schemas/prometheus-monitoring-http-servlet-extension-response'
                 - $ref: '#/components/schemas/ldap-mapped-scim-http-servlet-extension-response'
+                - $ref: '#/components/schemas/groovy-scripted-http-servlet-extension-response'
+                - $ref: '#/components/schemas/file-server-http-servlet-extension-response'
                 - $ref: '#/components/schemas/third-party-http-servlet-extension-response'
         "401":
           description: Requestor cannot be authenticated
@@ -101,15 +103,16 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/delegated-admin-http-servlet-extension-response'
                 - $ref: '#/components/schemas/quickstart-http-servlet-extension-response'
-                - $ref: '#/components/schemas/groovy-scripted-http-servlet-extension-response'
                 - $ref: '#/components/schemas/availability-state-http-servlet-extension-response'
-                - $ref: '#/components/schemas/file-server-http-servlet-extension-response'
+                - $ref: '#/components/schemas/prometheus-monitoring-http-servlet-extension-response'
                 - $ref: '#/components/schemas/velocity-http-servlet-extension-response'
                 - $ref: '#/components/schemas/consent-http-servlet-extension-response'
+                - $ref: '#/components/schemas/ldap-mapped-scim-http-servlet-extension-response'
+                - $ref: '#/components/schemas/groovy-scripted-http-servlet-extension-response'
+                - $ref: '#/components/schemas/file-server-http-servlet-extension-response'
                 - $ref: '#/components/schemas/config-http-servlet-extension-response'
                 - $ref: '#/components/schemas/scim2-http-servlet-extension-response'
                 - $ref: '#/components/schemas/directory-rest-api-http-servlet-extension-response'
-                - $ref: '#/components/schemas/ldap-mapped-scim-http-servlet-extension-response'
                 - $ref: '#/components/schemas/third-party-http-servlet-extension-response'
         "401":
           description: Requestor cannot be authenticated
@@ -149,15 +152,16 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/delegated-admin-http-servlet-extension-response'
                 - $ref: '#/components/schemas/quickstart-http-servlet-extension-response'
-                - $ref: '#/components/schemas/groovy-scripted-http-servlet-extension-response'
                 - $ref: '#/components/schemas/availability-state-http-servlet-extension-response'
-                - $ref: '#/components/schemas/file-server-http-servlet-extension-response'
+                - $ref: '#/components/schemas/prometheus-monitoring-http-servlet-extension-response'
                 - $ref: '#/components/schemas/velocity-http-servlet-extension-response'
                 - $ref: '#/components/schemas/consent-http-servlet-extension-response'
+                - $ref: '#/components/schemas/ldap-mapped-scim-http-servlet-extension-response'
+                - $ref: '#/components/schemas/groovy-scripted-http-servlet-extension-response'
+                - $ref: '#/components/schemas/file-server-http-servlet-extension-response'
                 - $ref: '#/components/schemas/config-http-servlet-extension-response'
                 - $ref: '#/components/schemas/scim2-http-servlet-extension-response'
                 - $ref: '#/components/schemas/directory-rest-api-http-servlet-extension-response'
-                - $ref: '#/components/schemas/ldap-mapped-scim-http-servlet-extension-response'
                 - $ref: '#/components/schemas/third-party-http-servlet-extension-response'
         "401":
           description: Requestor cannot be authenticated
@@ -171,6 +175,164 @@ paths:
       - basicAuth: []
       tags:
       - http-servlet-extension
+  /http-servlet-extensions/{http-servlet-extension-name}/prometheus-monitor-attribute-metrics:
+    post:
+      summary: Add a new Prometheus Monitor Attribute Metric to the config
+      operationId: add-prometheus-monitor-attribute-metric
+      parameters:
+      - description: Name of the HTTP Servlet Extension
+        explode: false
+        in: path
+        name: http-servlet-extension-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-prometheus-monitor-attribute-metric-request'
+        description: Create a new Prometheus Monitor Attribute Metric in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/prometheus-monitor-attribute-metric-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Prometheus Monitor Attribute Metric already exists
+      security:
+      - basicAuth: []
+      tags:
+      - prometheus-monitor-attribute-metric
+  /http-servlet-extensions/{http-servlet-extension-name}/prometheus-monitor-attribute-metrics/{prometheus-monitor-attribute-metric-name}:
+    delete:
+      summary: Delete a Prometheus Monitor Attribute Metric
+      operationId: delete-prometheus-monitor-attribute-metric
+      parameters:
+      - description: Name of the Prometheus Monitor Attribute Metric
+        explode: false
+        in: path
+        name: prometheus-monitor-attribute-metric-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the HTTP Servlet Extension
+        explode: false
+        in: path
+        name: http-servlet-extension-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Prometheus Monitor Attribute Metric does not exist
+        "409":
+          description: The Prometheus Monitor Attribute Metric cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - prometheus-monitor-attribute-metric
+    get:
+      summary: Returns a single Prometheus Monitor Attribute Metric
+      operationId: get-prometheus-monitor-attribute-metric
+      parameters:
+      - description: Name of the Prometheus Monitor Attribute Metric
+        explode: false
+        in: path
+        name: prometheus-monitor-attribute-metric-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the HTTP Servlet Extension
+        explode: false
+        in: path
+        name: http-servlet-extension-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/prometheus-monitor-attribute-metric-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Prometheus Monitor Attribute Metric does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - prometheus-monitor-attribute-metric
+    patch:
+      summary: Update an existing Prometheus Monitor Attribute Metric by name
+      operationId: update-prometheus-monitor-attribute-metric
+      parameters:
+      - description: Name of the Prometheus Monitor Attribute Metric
+        explode: false
+        in: path
+        name: prometheus-monitor-attribute-metric-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the HTTP Servlet Extension
+        explode: false
+        in: path
+        name: http-servlet-extension-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing Prometheus Monitor Attribute Metric
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/prometheus-monitor-attribute-metric-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Prometheus Monitor Attribute Metric does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - prometheus-monitor-attribute-metric
   /http-servlet-extensions/{http-servlet-extension-name}/velocity-context-providers:
     post:
       summary: Add a new Velocity Context Provider to the config
@@ -618,71 +780,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:quickstart"
-    add-groovy-scripted-http-servlet-extension-request:
-      allOf:
-      - type: object
-        properties:
-          extensionName:
-            description: Name of the new HTTP Servlet Extension
-            type: string
-        required:
-        - extensionName
-      - $ref: '#/components/schemas/groovy-scripted-http-servlet-extension-shared'
-    groovy-scripted-http-servlet-extension-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - type: object
-        properties:
-          id:
-            description: Name of the HTTP Servlet Extension
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/groovy-scripted-http-servlet-extension-shared'
-    groovy-scripted-http-servlet-extension-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumgroovy-scripted-http-servlet-extensionSchemaUrn'
-        scriptClass:
-          type: string
-          description: >-
-              The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted HTTP Servlet Extension.
-        scriptArgument:
-          type: array
-          items:
-            type: string
-          description: >-
-              The set of arguments used to customize the behavior for the Scripted HTTP Servlet Extension. Each configuration property should be given in the form 'name=value'.
-        description:
-          type: string
-          description: >-
-              A description for this HTTP Servlet Extension
-        crossOriginPolicy:
-          type: string
-          description: >-
-              The cross-origin request policy to use for the HTTP Servlet Extension.
-        responseHeader:
-          type: array
-          items:
-            type: string
-          description: >-
-              Specifies HTTP header fields and values added to response headers for all requests.
-        correlationIDResponseHeader:
-          type: string
-          description: >-
-              Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
-      required:
-      - schemas
-      - scriptClass
-    Enumgroovy-scripted-http-servlet-extensionSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:groovy-scripted"
     add-availability-state-http-servlet-extension-request:
       allOf:
       - type: object
@@ -769,7 +866,7 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:availability-state"
-    add-file-server-http-servlet-extension-request:
+    add-prometheus-monitoring-http-servlet-extension-request:
       allOf:
       - type: object
         properties:
@@ -778,8 +875,8 @@ components:
             type: string
         required:
         - extensionName
-      - $ref: '#/components/schemas/file-server-http-servlet-extension-shared'
-    file-server-http-servlet-extension-response:
+      - $ref: '#/components/schemas/prometheus-monitoring-http-servlet-extension-shared'
+    prometheus-monitoring-http-servlet-extension-response:
       allOf:
       - $ref: '#/components/schemas/meta'
       - type: object
@@ -789,8 +886,10 @@ components:
             type: string
         required:
         - id
-      - $ref: '#/components/schemas/file-server-http-servlet-extension-shared'
-    file-server-http-servlet-extension-shared:
+      - $ref: '#/components/schemas/prometheus-monitoring-http-servlet-extension-shared'
+      required:
+      - baseContextPath
+    prometheus-monitoring-http-servlet-extension-shared:
       type: object
       properties:
         schemas:
@@ -798,67 +897,41 @@ components:
           minItems: 1
           maxItems: 1
           items:
-            $ref: '#/components/schemas/Enumfile-server-http-servlet-extensionSchemaUrn'
+            $ref: '#/components/schemas/Enumprometheus-monitoring-http-servlet-extensionSchemaUrn'
         baseContextPath:
           type: string
           description: >-
-              Specifies the base context path that should be used by HTTP clients to reference content. The value must start with a forward slash and must represent a valid HTTP context path.
-        documentRootDirectory:
-          type: string
-          description: >-
-              Specifies the path to the directory on the local filesystem containing the files to be served by this File Server HTTP Servlet Extension. The path must exist, and it must be a directory.
-        enableDirectoryIndexing:
+              Specifies the base context path that HTTP clients should use to access this servlet. The value must start with a forward slash and must represent a valid HTTP context path.
+        includeInstanceNameLabel:
           type: boolean
           description: >-
-              Indicates whether to generate a default HTML page with a listing of available files if the requested path refers to a directory rather than a file, and that directory does not contain an index file.
-        indexFile:
-          type: array
-          items:
-            type: string
-          description: >-
-              Specifies the name of a file whose contents may be returned to the client if the requested path refers to a directory rather than a file.
-        mimeTypesFile:
-          type: string
-          description: >-
-              Specifies the path to a file that contains MIME type mappings that will be used to determine the appropriate value to return for the Content-Type header based on the extension of the requested file.
-        defaultMIMEType:
-          type: string
-          description: >-
-              Specifies the default MIME type to use for the Content-Type header when a mapping cannot be found.
-        requireAuthentication:
+              Indicates whether generated metrics should include an "instance" label whose value is the instance name for this Directory Server instance.
+        includeProductNameLabel:
           type: boolean
           description: >-
-              Indicates whether the servlet extension should only accept requests from authenticated clients.
-        allowedAuthenticationType:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enumhttp-servlet-extension-allowedAuthenticationTypeProp'
-        accessTokenValidator:
-          type: array
-          items:
-            type: string
-          description: >-
-              The access token validators that may be used to verify the authenticity of an OAuth 2.0 bearer token.
-        idTokenValidator:
-          type: array
-          items:
-            type: string
-          description: >-
-              The ID token validators that may be used to verify the authenticity of an of an OpenID Connect ID token.
-        requireFileServletAccessPrivilege:
+              Indicates whether generated metrics should include a "product" label whose value is the product name for this Directory Server instance.
+        includeLocationNameLabel:
           type: boolean
           description: >-
-              Indicates whether the servlet extension should only accept requests from authenticated clients that have the file-servlet-access privilege.
-        requireGroup:
+              Indicates whether generated metrics should include a "location" label whose value is the location name for this Directory Server instance.
+        alwaysIncludeMonitorEntryNameLabel:
+          type: boolean
+          description: >-
+              Indicates whether generated metrics should always include a "monitor_entry" label whose value is the name of the monitor entry from which the metric was obtained.
+        includeMonitorObjectClassNameLabel:
+          type: boolean
+          description: >-
+              Indicates whether generated metrics should include a "monitor_object_class" label whose value is the name of the object class for the monitor entry from which the metric was obtained.
+        includeMonitorAttributeNameLabel:
+          type: boolean
+          description: >-
+              Indicates whether generated metrics should include a "monitor_attribute" label whose value is the name of the monitor attribute from which the metric was obtained.
+        labelNameValuePair:
           type: array
           items:
             type: string
           description: >-
-              The DN of a group whose members will be permitted to access to the associated files. If multiple group DNs are configured, then anyone who is a member of at least one of those groups will be granted access.
-        identityMapper:
-          type: string
-          description: >-
-              The identity mapper that will be used to identify the entry with which a username is associated.
+              A set of name-value pairs for labels that should be included in all metrics exposed by this Directory Server instance.
         description:
           type: string
           description: >-
@@ -879,12 +952,10 @@ components:
               Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
       required:
       - schemas
-      - baseContextPath
-      - documentRootDirectory
-    Enumfile-server-http-servlet-extensionSchemaUrn:
+    Enumprometheus-monitoring-http-servlet-extensionSchemaUrn:
       type: string
       enum:
-      - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:file-server"
+      - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:prometheus-monitoring"
     velocity-http-servlet-extension-response:
       allOf:
       - $ref: '#/components/schemas/meta'
@@ -1047,6 +1118,334 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:consent"
+    add-ldap-mapped-scim-http-servlet-extension-request:
+      allOf:
+      - type: object
+        properties:
+          extensionName:
+            description: Name of the new HTTP Servlet Extension
+            type: string
+        required:
+        - extensionName
+      - $ref: '#/components/schemas/ldap-mapped-scim-http-servlet-extension-shared'
+    ldap-mapped-scim-http-servlet-extension-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the HTTP Servlet Extension
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/ldap-mapped-scim-http-servlet-extension-shared'
+      required:
+      - baseContextPath
+      - temporaryDirectory
+      - temporaryDirectoryPermissions
+      - debugLevel
+      - debugType
+      - includeStackTrace
+    ldap-mapped-scim-http-servlet-extension-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumldap-mapped-scim-http-servlet-extensionSchemaUrn'
+        OAuthTokenHandler:
+          type: string
+          description: >-
+              Specifies the OAuth Token Handler implementation that should be used to validate OAuth 2.0 bearer tokens when they are included in a SCIM request.
+        basicAuthEnabled:
+          type: boolean
+          description: >-
+              Enables HTTP Basic authentication, using a username and password.
+        identityMapper:
+          type: string
+          description: >-
+              Specifies the name of the identity mapper that is to be used to match the username included in the HTTP Basic authentication header to the corresponding user in the directory.
+        resourceMappingFile:
+          type: string
+          description: >-
+              The path to an XML file defining the resources supported by the SCIM interface and the SCIM-to-LDAP attribute mappings to use.
+        includeLDAPObjectclass:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies the LDAP object classes that should be exposed directly as SCIM resources.
+        excludeLDAPObjectclass:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies the LDAP object classes that should be not be exposed directly as SCIM resources.
+        includeLDAPBaseDN:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies the base DNs for the branches of the DIT that should be exposed via the Identity Access API.
+        excludeLDAPBaseDN:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies the base DNs for the branches of the DIT that should not be exposed via the Identity Access API.
+        entityTagLDAPAttribute:
+          type: string
+          description: >-
+              Specifies the LDAP attribute whose value should be used as the entity tag value to enable SCIM resource versioning support.
+        baseContextPath:
+          type: string
+          description: >-
+              The context path to use to access the SCIM interface. The value must start with a forward slash and must represent a valid HTTP context path.
+        temporaryDirectory:
+          type: string
+          description: >-
+              Specifies the location of the directory that is used to create temporary files containing SCIM request data.
+        temporaryDirectoryPermissions:
+          type: string
+          description: >-
+              Specifies the permissions that should be applied to the directory that is used to create temporary files.
+        maxResults:
+          type: integer
+          description: >-
+              The maximum number of resources that are returned in a response.
+        bulkMaxOperations:
+          type: integer
+          description: >-
+              The maximum number of operations that are permitted in a bulk request.
+        bulkMaxPayloadSize:
+          type: string
+          description: >-
+              The maximum payload size in bytes of a bulk request.
+        bulkMaxConcurrentRequests:
+          type: integer
+          description: >-
+              The maximum number of bulk requests that may be processed concurrently by the server. Any bulk request that would cause this limit to be exceeded is rejected with HTTP status code 503.
+        debugEnabled:
+          type: boolean
+          description: >-
+              Enables debug logging of the SCIM SDK. Debug messages will be forwarded to the Directory Server debug logger with the scope of com.unboundid.directory.server.extensions.scim.SCIMHTTPServletExtension.
+        debugLevel:
+          $ref: '#/components/schemas/Enumhttp-servlet-extension-debugLevelProp'
+        debugType:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumhttp-servlet-extension-debugTypeProp'
+        includeStackTrace:
+          type: boolean
+          description: >-
+              Indicates whether a stack trace of the thread which called the debug method should be included in debug log messages.
+        description:
+          type: string
+          description: >-
+              A description for this HTTP Servlet Extension
+        crossOriginPolicy:
+          type: string
+          description: >-
+              The cross-origin request policy to use for the HTTP Servlet Extension.
+        responseHeader:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies HTTP header fields and values added to response headers for all requests.
+        correlationIDResponseHeader:
+          type: string
+          description: >-
+              Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
+      required:
+      - schemas
+    Enumldap-mapped-scim-http-servlet-extensionSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:ldap-mapped-scim"
+    add-groovy-scripted-http-servlet-extension-request:
+      allOf:
+      - type: object
+        properties:
+          extensionName:
+            description: Name of the new HTTP Servlet Extension
+            type: string
+        required:
+        - extensionName
+      - $ref: '#/components/schemas/groovy-scripted-http-servlet-extension-shared'
+    groovy-scripted-http-servlet-extension-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the HTTP Servlet Extension
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/groovy-scripted-http-servlet-extension-shared'
+    groovy-scripted-http-servlet-extension-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumgroovy-scripted-http-servlet-extensionSchemaUrn'
+        scriptClass:
+          type: string
+          description: >-
+              The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted HTTP Servlet Extension.
+        scriptArgument:
+          type: array
+          items:
+            type: string
+          description: >-
+              The set of arguments used to customize the behavior for the Scripted HTTP Servlet Extension. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: >-
+              A description for this HTTP Servlet Extension
+        crossOriginPolicy:
+          type: string
+          description: >-
+              The cross-origin request policy to use for the HTTP Servlet Extension.
+        responseHeader:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies HTTP header fields and values added to response headers for all requests.
+        correlationIDResponseHeader:
+          type: string
+          description: >-
+              Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
+      required:
+      - schemas
+      - scriptClass
+    Enumgroovy-scripted-http-servlet-extensionSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:groovy-scripted"
+    add-file-server-http-servlet-extension-request:
+      allOf:
+      - type: object
+        properties:
+          extensionName:
+            description: Name of the new HTTP Servlet Extension
+            type: string
+        required:
+        - extensionName
+      - $ref: '#/components/schemas/file-server-http-servlet-extension-shared'
+    file-server-http-servlet-extension-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the HTTP Servlet Extension
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/file-server-http-servlet-extension-shared'
+    file-server-http-servlet-extension-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumfile-server-http-servlet-extensionSchemaUrn'
+        baseContextPath:
+          type: string
+          description: >-
+              Specifies the base context path that should be used by HTTP clients to reference content. The value must start with a forward slash and must represent a valid HTTP context path.
+        documentRootDirectory:
+          type: string
+          description: >-
+              Specifies the path to the directory on the local filesystem containing the files to be served by this File Server HTTP Servlet Extension. The path must exist, and it must be a directory.
+        enableDirectoryIndexing:
+          type: boolean
+          description: >-
+              Indicates whether to generate a default HTML page with a listing of available files if the requested path refers to a directory rather than a file, and that directory does not contain an index file.
+        indexFile:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies the name of a file whose contents may be returned to the client if the requested path refers to a directory rather than a file.
+        mimeTypesFile:
+          type: string
+          description: >-
+              Specifies the path to a file that contains MIME type mappings that will be used to determine the appropriate value to return for the Content-Type header based on the extension of the requested file.
+        defaultMIMEType:
+          type: string
+          description: >-
+              Specifies the default MIME type to use for the Content-Type header when a mapping cannot be found.
+        requireAuthentication:
+          type: boolean
+          description: >-
+              Indicates whether the servlet extension should only accept requests from authenticated clients.
+        allowedAuthenticationType:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumhttp-servlet-extension-allowedAuthenticationTypeProp'
+        accessTokenValidator:
+          type: array
+          items:
+            type: string
+          description: >-
+              The access token validators that may be used to verify the authenticity of an OAuth 2.0 bearer token.
+        idTokenValidator:
+          type: array
+          items:
+            type: string
+          description: >-
+              The ID token validators that may be used to verify the authenticity of an of an OpenID Connect ID token.
+        requireFileServletAccessPrivilege:
+          type: boolean
+          description: >-
+              Indicates whether the servlet extension should only accept requests from authenticated clients that have the file-servlet-access privilege.
+        requireGroup:
+          type: array
+          items:
+            type: string
+          description: >-
+              The DN of a group whose members will be permitted to access to the associated files. If multiple group DNs are configured, then anyone who is a member of at least one of those groups will be granted access.
+        identityMapper:
+          type: string
+          description: >-
+              The identity mapper that will be used to identify the entry with which a username is associated.
+        description:
+          type: string
+          description: >-
+              A description for this HTTP Servlet Extension
+        crossOriginPolicy:
+          type: string
+          description: >-
+              The cross-origin request policy to use for the HTTP Servlet Extension.
+        responseHeader:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies HTTP header fields and values added to response headers for all requests.
+        correlationIDResponseHeader:
+          type: string
+          description: >-
+              Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
+      required:
+      - schemas
+      - baseContextPath
+      - documentRootDirectory
+    Enumfile-server-http-servlet-extensionSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:file-server"
     config-http-servlet-extension-response:
       allOf:
       - $ref: '#/components/schemas/meta'
@@ -1250,153 +1649,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:directory-rest-api"
-    add-ldap-mapped-scim-http-servlet-extension-request:
-      allOf:
-      - type: object
-        properties:
-          extensionName:
-            description: Name of the new HTTP Servlet Extension
-            type: string
-        required:
-        - extensionName
-      - $ref: '#/components/schemas/ldap-mapped-scim-http-servlet-extension-shared'
-    ldap-mapped-scim-http-servlet-extension-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - type: object
-        properties:
-          id:
-            description: Name of the HTTP Servlet Extension
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/ldap-mapped-scim-http-servlet-extension-shared'
-      required:
-      - baseContextPath
-      - temporaryDirectory
-      - temporaryDirectoryPermissions
-      - debugLevel
-      - debugType
-      - includeStackTrace
-    ldap-mapped-scim-http-servlet-extension-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumldap-mapped-scim-http-servlet-extensionSchemaUrn'
-        OAuthTokenHandler:
-          type: string
-          description: >-
-              Specifies the OAuth Token Handler implementation that should be used to validate OAuth 2.0 bearer tokens when they are included in a SCIM request.
-        basicAuthEnabled:
-          type: boolean
-          description: >-
-              Enables HTTP Basic authentication, using a username and password.
-        identityMapper:
-          type: string
-          description: >-
-              Specifies the name of the identity mapper that is to be used to match the username included in the HTTP Basic authentication header to the corresponding user in the directory.
-        resourceMappingFile:
-          type: string
-          description: >-
-              The path to an XML file defining the resources supported by the SCIM interface and the SCIM-to-LDAP attribute mappings to use.
-        includeLDAPObjectclass:
-          type: array
-          items:
-            type: string
-          description: >-
-              Specifies the LDAP object classes that should be exposed directly as SCIM resources.
-        excludeLDAPObjectclass:
-          type: array
-          items:
-            type: string
-          description: >-
-              Specifies the LDAP object classes that should be not be exposed directly as SCIM resources.
-        includeLDAPBaseDN:
-          type: array
-          items:
-            type: string
-          description: >-
-              Specifies the base DNs for the branches of the DIT that should be exposed via the Identity Access API.
-        excludeLDAPBaseDN:
-          type: array
-          items:
-            type: string
-          description: >-
-              Specifies the base DNs for the branches of the DIT that should not be exposed via the Identity Access API.
-        entityTagLDAPAttribute:
-          type: string
-          description: >-
-              Specifies the LDAP attribute whose value should be used as the entity tag value to enable SCIM resource versioning support.
-        baseContextPath:
-          type: string
-          description: >-
-              The context path to use to access the SCIM interface. The value must start with a forward slash and must represent a valid HTTP context path.
-        temporaryDirectory:
-          type: string
-          description: >-
-              Specifies the location of the directory that is used to create temporary files containing SCIM request data.
-        temporaryDirectoryPermissions:
-          type: string
-          description: >-
-              Specifies the permissions that should be applied to the directory that is used to create temporary files.
-        maxResults:
-          type: integer
-          description: >-
-              The maximum number of resources that are returned in a response.
-        bulkMaxOperations:
-          type: integer
-          description: >-
-              The maximum number of operations that are permitted in a bulk request.
-        bulkMaxPayloadSize:
-          type: string
-          description: >-
-              The maximum payload size in bytes of a bulk request.
-        bulkMaxConcurrentRequests:
-          type: integer
-          description: >-
-              The maximum number of bulk requests that may be processed concurrently by the server. Any bulk request that would cause this limit to be exceeded is rejected with HTTP status code 503.
-        debugEnabled:
-          type: boolean
-          description: >-
-              Enables debug logging of the SCIM SDK. Debug messages will be forwarded to the Directory Server debug logger with the scope of com.unboundid.directory.server.extensions.scim.SCIMHTTPServletExtension.
-        debugLevel:
-          $ref: '#/components/schemas/Enumhttp-servlet-extension-debugLevelProp'
-        debugType:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enumhttp-servlet-extension-debugTypeProp'
-        includeStackTrace:
-          type: boolean
-          description: >-
-              Indicates whether a stack trace of the thread which called the debug method should be included in debug log messages.
-        description:
-          type: string
-          description: >-
-              A description for this HTTP Servlet Extension
-        crossOriginPolicy:
-          type: string
-          description: >-
-              The cross-origin request policy to use for the HTTP Servlet Extension.
-        responseHeader:
-          type: array
-          items:
-            type: string
-          description: >-
-              Specifies HTTP header fields and values added to response headers for all requests.
-        correlationIDResponseHeader:
-          type: string
-          description: >-
-              Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
-      required:
-      - schemas
-    Enumldap-mapped-scim-http-servlet-extensionSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:ldap-mapped-scim"
     add-third-party-http-servlet-extension-request:
       allOf:
       - type: object
@@ -1462,6 +1714,73 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:third-party"
+    add-prometheus-monitor-attribute-metric-request:
+      allOf:
+      - type: object
+        properties:
+          metricName:
+            description: Name of the new Prometheus Monitor Attribute Metric
+            type: string
+        required:
+        - metricName
+      - $ref: '#/components/schemas/prometheus-monitor-attribute-metric-shared'
+    prometheus-monitor-attribute-metric-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Prometheus Monitor Attribute Metric
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/prometheus-monitor-attribute-metric-shared'
+    prometheus-monitor-attribute-metric-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumprometheus-monitor-attribute-metricSchemaUrn'
+        metricName:
+          type: string
+          description: >-
+              The name that will be used in the metric to be consumed by Prometheus.
+        monitorAttributeName:
+          type: string
+          description: >-
+              The name of the monitor attribute that contains the numeric value to be published.
+        monitorObjectClassName:
+          type: string
+          description: >-
+              The name of the object class for monitor entries that contain the monitor attribute.
+        metricType:
+          $ref: '#/components/schemas/Enumprometheus-monitor-attribute-metric-metricTypeProp'
+        filter:
+          type: string
+          description: >-
+              A filter that may be used to restrict the set of monitor entries for which the metric should be generated.
+        metricDescription:
+          type: string
+          description: >-
+              A human-readable description that should be published as part of the metric definition.
+        labelNameValuePair:
+          type: array
+          items:
+            type: string
+          description: >-
+              A set of name-value pairs for labels that should be included in the published metric for the target attribute.
+      required:
+      - metricName
+      - monitorAttributeName
+      - monitorObjectClassName
+      - metricType
+    Enumprometheus-monitor-attribute-metricSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:prometheus-monitor-attribute-metric"
     add-velocity-tools-velocity-context-provider-request:
       allOf:
       - type: object
@@ -1746,6 +2065,13 @@ components:
       - "id-token"
       description: >-
           The types of authentication that may be used to authenticate to the file servlet.
+    Enumprometheus-monitor-attribute-metric-metricTypeProp:
+      type: string
+      enum:
+      - "counter"
+      - "gauge"
+      description: >-
+          The metric type that should be used for the value of the specified monitor attribute.
     Enumhttp-servlet-extension-mapAccessTokensToLocalUsersProp:
       type: string
       enum:

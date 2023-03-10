@@ -32,6 +32,8 @@ type UnboundidYubikeyOtpSaslMechanismHandlerResponse struct {
 	YubikeyAPIKeyPassphraseProvider *string `json:"yubikeyAPIKeyPassphraseProvider,omitempty"`
 	// The base URL of the validation server to use to verify one-time passwords. You should only need to change the value if you wish to use your own validation server instead of using one of the Yubico servers. The server must use the YubiKey Validation Protocol version 2.0.
 	YubikeyValidationServerBaseURL []string `json:"yubikeyValidationServerBaseURL"`
+	// A reference to an HTTP proxy server that should be used for requests sent to the YubiKey validation service.
+	HttpProxyExternalServer *string `json:"httpProxyExternalServer,omitempty"`
 	// The identity mapper that should be used to identify the user(s) targeted in the authentication and/or authorization identities contained in the bind request. This will only be used for \"u:\"-style identities.
 	IdentityMapper string `json:"identityMapper"`
 	// Indicates whether a user will be required to provide a static password when authenticating via the UNBOUNDID-YUBIKEY-OTP SASL mechanism.
@@ -300,6 +302,38 @@ func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) SetYubikeyValidationSe
 	o.YubikeyValidationServerBaseURL = v
 }
 
+// GetHttpProxyExternalServer returns the HttpProxyExternalServer field value if set, zero value otherwise.
+func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetHttpProxyExternalServer() string {
+	if o == nil || IsNil(o.HttpProxyExternalServer) {
+		var ret string
+		return ret
+	}
+	return *o.HttpProxyExternalServer
+}
+
+// GetHttpProxyExternalServerOk returns a tuple with the HttpProxyExternalServer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetHttpProxyExternalServerOk() (*string, bool) {
+	if o == nil || IsNil(o.HttpProxyExternalServer) {
+		return nil, false
+	}
+	return o.HttpProxyExternalServer, true
+}
+
+// HasHttpProxyExternalServer returns a boolean if a field has been set.
+func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) HasHttpProxyExternalServer() bool {
+	if o != nil && !IsNil(o.HttpProxyExternalServer) {
+		return true
+	}
+
+	return false
+}
+
+// SetHttpProxyExternalServer gets a reference to the given string and assigns it to the HttpProxyExternalServer field.
+func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) SetHttpProxyExternalServer(v string) {
+	o.HttpProxyExternalServer = &v
+}
+
 // GetIdentityMapper returns the IdentityMapper field value
 func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetIdentityMapper() string {
 	if o == nil {
@@ -504,6 +538,9 @@ func (o UnboundidYubikeyOtpSaslMechanismHandlerResponse) ToMap() (map[string]int
 		toSerialize["yubikeyAPIKeyPassphraseProvider"] = o.YubikeyAPIKeyPassphraseProvider
 	}
 	toSerialize["yubikeyValidationServerBaseURL"] = o.YubikeyValidationServerBaseURL
+	if !IsNil(o.HttpProxyExternalServer) {
+		toSerialize["httpProxyExternalServer"] = o.HttpProxyExternalServer
+	}
 	toSerialize["identityMapper"] = o.IdentityMapper
 	if !IsNil(o.RequireStaticPassword) {
 		toSerialize["requireStaticPassword"] = o.RequireStaticPassword

@@ -26,6 +26,8 @@ type AddAzureKeyVaultCipherStreamProviderRequest struct {
 	KeyVaultURI string `json:"keyVaultURI"`
 	// The mechanism used to authenticate to the Azure service.
 	AzureAuthenticationMethod string `json:"azureAuthenticationMethod"`
+	// A reference to an HTTP proxy server that should be used for requests sent to the Azure service.
+	HttpProxyExternalServer *string `json:"httpProxyExternalServer,omitempty"`
 	// The name of the secret to retrieve.
 	SecretName string `json:"secretName"`
 	// The path to a file that will hold metadata about the encryption performed by this Azure Key Vault Cipher Stream Provider.
@@ -155,6 +157,38 @@ func (o *AddAzureKeyVaultCipherStreamProviderRequest) SetAzureAuthenticationMeth
 	o.AzureAuthenticationMethod = v
 }
 
+// GetHttpProxyExternalServer returns the HttpProxyExternalServer field value if set, zero value otherwise.
+func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetHttpProxyExternalServer() string {
+	if o == nil || IsNil(o.HttpProxyExternalServer) {
+		var ret string
+		return ret
+	}
+	return *o.HttpProxyExternalServer
+}
+
+// GetHttpProxyExternalServerOk returns a tuple with the HttpProxyExternalServer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetHttpProxyExternalServerOk() (*string, bool) {
+	if o == nil || IsNil(o.HttpProxyExternalServer) {
+		return nil, false
+	}
+	return o.HttpProxyExternalServer, true
+}
+
+// HasHttpProxyExternalServer returns a boolean if a field has been set.
+func (o *AddAzureKeyVaultCipherStreamProviderRequest) HasHttpProxyExternalServer() bool {
+	if o != nil && !IsNil(o.HttpProxyExternalServer) {
+		return true
+	}
+
+	return false
+}
+
+// SetHttpProxyExternalServer gets a reference to the given string and assigns it to the HttpProxyExternalServer field.
+func (o *AddAzureKeyVaultCipherStreamProviderRequest) SetHttpProxyExternalServer(v string) {
+	o.HttpProxyExternalServer = &v
+}
+
 // GetSecretName returns the SecretName field value
 func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetSecretName() string {
 	if o == nil {
@@ -281,6 +315,9 @@ func (o AddAzureKeyVaultCipherStreamProviderRequest) ToMap() (map[string]interfa
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["keyVaultURI"] = o.KeyVaultURI
 	toSerialize["azureAuthenticationMethod"] = o.AzureAuthenticationMethod
+	if !IsNil(o.HttpProxyExternalServer) {
+		toSerialize["httpProxyExternalServer"] = o.HttpProxyExternalServer
+	}
 	toSerialize["secretName"] = o.SecretName
 	if !IsNil(o.EncryptionMetadataFile) {
 		toSerialize["encryptionMetadataFile"] = o.EncryptionMetadataFile

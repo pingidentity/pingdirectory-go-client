@@ -33,10 +33,14 @@ Name | Type | Description | Notes
 **AllowedInsecureTLSProtocol** | Pointer to [**[]EnumglobalConfigurationAllowedInsecureTLSProtocolProp**](EnumglobalConfigurationAllowedInsecureTLSProtocolProp.md) |  | [optional] 
 **AllowInsecureLocalJMXConnections** | Pointer to **bool** | Indicates that processes attaching to this server&#39;s local JVM are allowed to access internal data through JMX without the authentication requirements that remote JMX connections are subject to. Please review and understand the data that this option will expose (such as cn&#x3D;monitor) to client applications to ensure there are no security concerns. | [optional] 
 **DefaultInternalOperationClientConnectionPolicy** | Pointer to **string** | Specifies the client connection policy that will be used by default for internal operations. | [optional] 
-**SizeLimit** | Pointer to **int32** | Specifies the maximum number of entries that the Directory Server should return to the client during a search operation. | [optional] 
+**SizeLimit** | Pointer to **int32** | Specifies the maximum number of entries that the Directory Server should return to clients by default when processing a search operation. | [optional] 
+**UnauthenticatedSizeLimit** | Pointer to **int32** | The size limit value that will apply for connections from unauthenticated clients. If this is not specified, then the value of the size-limit property will be applied for both authenticated and unauthenticated connections. | [optional] 
 **TimeLimit** | Pointer to **string** | Specifies the maximum length of time that the Directory Server should be allowed to spend processing a search operation. | [optional] 
+**UnauthenticatedTimeLimit** | Pointer to **string** | The time limit value that will apply for connections from unauthenticated clients. If this is not specified, then the value of the time-limit property will be applied for both authenticated and unauthenticated connections. | [optional] 
 **IdleTimeLimit** | Pointer to **string** | Specifies the maximum length of time that a client connection may remain established since its last completed operation. | [optional] 
+**UnauthenticatedIdleTimeLimit** | Pointer to **string** | The idle-time-limit limit value that will apply for connections from unauthenticated clients. If this is not specified, then the value of the idle-time-limit property will be applied for both authenticated and unauthenticated connections. | [optional] 
 **LookthroughLimit** | Pointer to **int32** | Specifies the maximum number of entries that the Directory Server should \&quot;look through\&quot; in the course of processing a search request. | [optional] 
+**UnauthenticatedLookthroughLimit** | Pointer to **int32** | The lookthrough limit value that will apply for connections from unauthenticated clients. If this is not specified, then the value of the lookthrough-limit property will be applied for both authenticated and unauthenticated connections. | [optional] 
 **LdapJoinSizeLimit** | Pointer to **int32** | Specifies the maximum number of entries that may be directly joined with any individual search result entry. | [optional] 
 **MaximumConcurrentConnections** | Pointer to **int32** | Specifies the maximum number of LDAP client connections which may be established to this Directory Server at the same time. | [optional] 
 **MaximumConcurrentConnectionsPerIPAddress** | Pointer to **int32** | Specifies the maximum number of LDAP client connections originating from the same IP address which may be established to this Directory Server at the same time. | [optional] 
@@ -847,6 +851,31 @@ SetSizeLimit sets SizeLimit field to given value.
 
 HasSizeLimit returns a boolean if a field has been set.
 
+### GetUnauthenticatedSizeLimit
+
+`func (o *GlobalConfigurationResponse) GetUnauthenticatedSizeLimit() int32`
+
+GetUnauthenticatedSizeLimit returns the UnauthenticatedSizeLimit field if non-nil, zero value otherwise.
+
+### GetUnauthenticatedSizeLimitOk
+
+`func (o *GlobalConfigurationResponse) GetUnauthenticatedSizeLimitOk() (*int32, bool)`
+
+GetUnauthenticatedSizeLimitOk returns a tuple with the UnauthenticatedSizeLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUnauthenticatedSizeLimit
+
+`func (o *GlobalConfigurationResponse) SetUnauthenticatedSizeLimit(v int32)`
+
+SetUnauthenticatedSizeLimit sets UnauthenticatedSizeLimit field to given value.
+
+### HasUnauthenticatedSizeLimit
+
+`func (o *GlobalConfigurationResponse) HasUnauthenticatedSizeLimit() bool`
+
+HasUnauthenticatedSizeLimit returns a boolean if a field has been set.
+
 ### GetTimeLimit
 
 `func (o *GlobalConfigurationResponse) GetTimeLimit() string`
@@ -871,6 +900,31 @@ SetTimeLimit sets TimeLimit field to given value.
 `func (o *GlobalConfigurationResponse) HasTimeLimit() bool`
 
 HasTimeLimit returns a boolean if a field has been set.
+
+### GetUnauthenticatedTimeLimit
+
+`func (o *GlobalConfigurationResponse) GetUnauthenticatedTimeLimit() string`
+
+GetUnauthenticatedTimeLimit returns the UnauthenticatedTimeLimit field if non-nil, zero value otherwise.
+
+### GetUnauthenticatedTimeLimitOk
+
+`func (o *GlobalConfigurationResponse) GetUnauthenticatedTimeLimitOk() (*string, bool)`
+
+GetUnauthenticatedTimeLimitOk returns a tuple with the UnauthenticatedTimeLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUnauthenticatedTimeLimit
+
+`func (o *GlobalConfigurationResponse) SetUnauthenticatedTimeLimit(v string)`
+
+SetUnauthenticatedTimeLimit sets UnauthenticatedTimeLimit field to given value.
+
+### HasUnauthenticatedTimeLimit
+
+`func (o *GlobalConfigurationResponse) HasUnauthenticatedTimeLimit() bool`
+
+HasUnauthenticatedTimeLimit returns a boolean if a field has been set.
 
 ### GetIdleTimeLimit
 
@@ -897,6 +951,31 @@ SetIdleTimeLimit sets IdleTimeLimit field to given value.
 
 HasIdleTimeLimit returns a boolean if a field has been set.
 
+### GetUnauthenticatedIdleTimeLimit
+
+`func (o *GlobalConfigurationResponse) GetUnauthenticatedIdleTimeLimit() string`
+
+GetUnauthenticatedIdleTimeLimit returns the UnauthenticatedIdleTimeLimit field if non-nil, zero value otherwise.
+
+### GetUnauthenticatedIdleTimeLimitOk
+
+`func (o *GlobalConfigurationResponse) GetUnauthenticatedIdleTimeLimitOk() (*string, bool)`
+
+GetUnauthenticatedIdleTimeLimitOk returns a tuple with the UnauthenticatedIdleTimeLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUnauthenticatedIdleTimeLimit
+
+`func (o *GlobalConfigurationResponse) SetUnauthenticatedIdleTimeLimit(v string)`
+
+SetUnauthenticatedIdleTimeLimit sets UnauthenticatedIdleTimeLimit field to given value.
+
+### HasUnauthenticatedIdleTimeLimit
+
+`func (o *GlobalConfigurationResponse) HasUnauthenticatedIdleTimeLimit() bool`
+
+HasUnauthenticatedIdleTimeLimit returns a boolean if a field has been set.
+
 ### GetLookthroughLimit
 
 `func (o *GlobalConfigurationResponse) GetLookthroughLimit() int32`
@@ -921,6 +1000,31 @@ SetLookthroughLimit sets LookthroughLimit field to given value.
 `func (o *GlobalConfigurationResponse) HasLookthroughLimit() bool`
 
 HasLookthroughLimit returns a boolean if a field has been set.
+
+### GetUnauthenticatedLookthroughLimit
+
+`func (o *GlobalConfigurationResponse) GetUnauthenticatedLookthroughLimit() int32`
+
+GetUnauthenticatedLookthroughLimit returns the UnauthenticatedLookthroughLimit field if non-nil, zero value otherwise.
+
+### GetUnauthenticatedLookthroughLimitOk
+
+`func (o *GlobalConfigurationResponse) GetUnauthenticatedLookthroughLimitOk() (*int32, bool)`
+
+GetUnauthenticatedLookthroughLimitOk returns a tuple with the UnauthenticatedLookthroughLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUnauthenticatedLookthroughLimit
+
+`func (o *GlobalConfigurationResponse) SetUnauthenticatedLookthroughLimit(v int32)`
+
+SetUnauthenticatedLookthroughLimit sets UnauthenticatedLookthroughLimit field to given value.
+
+### HasUnauthenticatedLookthroughLimit
+
+`func (o *GlobalConfigurationResponse) HasUnauthenticatedLookthroughLimit() bool`
+
+HasUnauthenticatedLookthroughLimit returns a boolean if a field has been set.
 
 ### GetLdapJoinSizeLimit
 

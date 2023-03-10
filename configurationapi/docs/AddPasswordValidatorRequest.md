@@ -32,6 +32,7 @@ Name | Type | Description | Notes
 **ScriptClass** | **string** | The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Password Validator. | 
 **ScriptArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Scripted Password Validator. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **PwnedPasswordsBaseURL** | Pointer to **string** | The base URL for requests used to interact with the Pwned Passwords service. The first five characters of the hexadecimal representation of the unsalted SHA-1 digest of a proposed password will be appended to this base URL to construct the HTTP GET request used to obtain information about potential matches. | [optional] 
+**HttpProxyExternalServer** | Pointer to **string** | A reference to an HTTP proxy server that should be used for requests sent to the Pwned Passwords service. | [optional] 
 **InvokeForAdd** | Pointer to **bool** | Indicates whether this password validator should be used to validate clear-text passwords provided in LDAP add requests. | [optional] 
 **InvokeForSelfChange** | Pointer to **bool** | Indicates whether this password validator should be used to validate clear-text passwords provided by an end user in the course of changing their own password. | [optional] 
 **InvokeForAdminReset** | Pointer to **bool** | Indicates whether this password validator should be used to validate clear-text passwords provided by administrators when changing the password for another user. | [optional] 
@@ -714,6 +715,31 @@ SetPwnedPasswordsBaseURL sets PwnedPasswordsBaseURL field to given value.
 `func (o *AddPasswordValidatorRequest) HasPwnedPasswordsBaseURL() bool`
 
 HasPwnedPasswordsBaseURL returns a boolean if a field has been set.
+
+### GetHttpProxyExternalServer
+
+`func (o *AddPasswordValidatorRequest) GetHttpProxyExternalServer() string`
+
+GetHttpProxyExternalServer returns the HttpProxyExternalServer field if non-nil, zero value otherwise.
+
+### GetHttpProxyExternalServerOk
+
+`func (o *AddPasswordValidatorRequest) GetHttpProxyExternalServerOk() (*string, bool)`
+
+GetHttpProxyExternalServerOk returns a tuple with the HttpProxyExternalServer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHttpProxyExternalServer
+
+`func (o *AddPasswordValidatorRequest) SetHttpProxyExternalServer(v string)`
+
+SetHttpProxyExternalServer sets HttpProxyExternalServer field to given value.
+
+### HasHttpProxyExternalServer
+
+`func (o *AddPasswordValidatorRequest) HasHttpProxyExternalServer() bool`
+
+HasHttpProxyExternalServer returns a boolean if a field has been set.
 
 ### GetInvokeForAdd
 

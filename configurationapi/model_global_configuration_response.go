@@ -72,14 +72,22 @@ type GlobalConfigurationResponse struct {
 	AllowInsecureLocalJMXConnections *bool `json:"allowInsecureLocalJMXConnections,omitempty"`
 	// Specifies the client connection policy that will be used by default for internal operations.
 	DefaultInternalOperationClientConnectionPolicy *string `json:"defaultInternalOperationClientConnectionPolicy,omitempty"`
-	// Specifies the maximum number of entries that the Directory Server should return to the client during a search operation.
+	// Specifies the maximum number of entries that the Directory Server should return to clients by default when processing a search operation.
 	SizeLimit *int32 `json:"sizeLimit,omitempty"`
+	// The size limit value that will apply for connections from unauthenticated clients. If this is not specified, then the value of the size-limit property will be applied for both authenticated and unauthenticated connections.
+	UnauthenticatedSizeLimit *int32 `json:"unauthenticatedSizeLimit,omitempty"`
 	// Specifies the maximum length of time that the Directory Server should be allowed to spend processing a search operation.
 	TimeLimit *string `json:"timeLimit,omitempty"`
+	// The time limit value that will apply for connections from unauthenticated clients. If this is not specified, then the value of the time-limit property will be applied for both authenticated and unauthenticated connections.
+	UnauthenticatedTimeLimit *string `json:"unauthenticatedTimeLimit,omitempty"`
 	// Specifies the maximum length of time that a client connection may remain established since its last completed operation.
 	IdleTimeLimit *string `json:"idleTimeLimit,omitempty"`
+	// The idle-time-limit limit value that will apply for connections from unauthenticated clients. If this is not specified, then the value of the idle-time-limit property will be applied for both authenticated and unauthenticated connections.
+	UnauthenticatedIdleTimeLimit *string `json:"unauthenticatedIdleTimeLimit,omitempty"`
 	// Specifies the maximum number of entries that the Directory Server should \"look through\" in the course of processing a search request.
 	LookthroughLimit *int32 `json:"lookthroughLimit,omitempty"`
+	// The lookthrough limit value that will apply for connections from unauthenticated clients. If this is not specified, then the value of the lookthrough-limit property will be applied for both authenticated and unauthenticated connections.
+	UnauthenticatedLookthroughLimit *int32 `json:"unauthenticatedLookthroughLimit,omitempty"`
 	// Specifies the maximum number of entries that may be directly joined with any individual search result entry.
 	LdapJoinSizeLimit *int32 `json:"ldapJoinSizeLimit,omitempty"`
 	// Specifies the maximum number of LDAP client connections which may be established to this Directory Server at the same time.
@@ -1151,6 +1159,38 @@ func (o *GlobalConfigurationResponse) SetSizeLimit(v int32) {
 	o.SizeLimit = &v
 }
 
+// GetUnauthenticatedSizeLimit returns the UnauthenticatedSizeLimit field value if set, zero value otherwise.
+func (o *GlobalConfigurationResponse) GetUnauthenticatedSizeLimit() int32 {
+	if o == nil || IsNil(o.UnauthenticatedSizeLimit) {
+		var ret int32
+		return ret
+	}
+	return *o.UnauthenticatedSizeLimit
+}
+
+// GetUnauthenticatedSizeLimitOk returns a tuple with the UnauthenticatedSizeLimit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GlobalConfigurationResponse) GetUnauthenticatedSizeLimitOk() (*int32, bool) {
+	if o == nil || IsNil(o.UnauthenticatedSizeLimit) {
+		return nil, false
+	}
+	return o.UnauthenticatedSizeLimit, true
+}
+
+// HasUnauthenticatedSizeLimit returns a boolean if a field has been set.
+func (o *GlobalConfigurationResponse) HasUnauthenticatedSizeLimit() bool {
+	if o != nil && !IsNil(o.UnauthenticatedSizeLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetUnauthenticatedSizeLimit gets a reference to the given int32 and assigns it to the UnauthenticatedSizeLimit field.
+func (o *GlobalConfigurationResponse) SetUnauthenticatedSizeLimit(v int32) {
+	o.UnauthenticatedSizeLimit = &v
+}
+
 // GetTimeLimit returns the TimeLimit field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetTimeLimit() string {
 	if o == nil || IsNil(o.TimeLimit) {
@@ -1181,6 +1221,38 @@ func (o *GlobalConfigurationResponse) HasTimeLimit() bool {
 // SetTimeLimit gets a reference to the given string and assigns it to the TimeLimit field.
 func (o *GlobalConfigurationResponse) SetTimeLimit(v string) {
 	o.TimeLimit = &v
+}
+
+// GetUnauthenticatedTimeLimit returns the UnauthenticatedTimeLimit field value if set, zero value otherwise.
+func (o *GlobalConfigurationResponse) GetUnauthenticatedTimeLimit() string {
+	if o == nil || IsNil(o.UnauthenticatedTimeLimit) {
+		var ret string
+		return ret
+	}
+	return *o.UnauthenticatedTimeLimit
+}
+
+// GetUnauthenticatedTimeLimitOk returns a tuple with the UnauthenticatedTimeLimit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GlobalConfigurationResponse) GetUnauthenticatedTimeLimitOk() (*string, bool) {
+	if o == nil || IsNil(o.UnauthenticatedTimeLimit) {
+		return nil, false
+	}
+	return o.UnauthenticatedTimeLimit, true
+}
+
+// HasUnauthenticatedTimeLimit returns a boolean if a field has been set.
+func (o *GlobalConfigurationResponse) HasUnauthenticatedTimeLimit() bool {
+	if o != nil && !IsNil(o.UnauthenticatedTimeLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetUnauthenticatedTimeLimit gets a reference to the given string and assigns it to the UnauthenticatedTimeLimit field.
+func (o *GlobalConfigurationResponse) SetUnauthenticatedTimeLimit(v string) {
+	o.UnauthenticatedTimeLimit = &v
 }
 
 // GetIdleTimeLimit returns the IdleTimeLimit field value if set, zero value otherwise.
@@ -1215,6 +1287,38 @@ func (o *GlobalConfigurationResponse) SetIdleTimeLimit(v string) {
 	o.IdleTimeLimit = &v
 }
 
+// GetUnauthenticatedIdleTimeLimit returns the UnauthenticatedIdleTimeLimit field value if set, zero value otherwise.
+func (o *GlobalConfigurationResponse) GetUnauthenticatedIdleTimeLimit() string {
+	if o == nil || IsNil(o.UnauthenticatedIdleTimeLimit) {
+		var ret string
+		return ret
+	}
+	return *o.UnauthenticatedIdleTimeLimit
+}
+
+// GetUnauthenticatedIdleTimeLimitOk returns a tuple with the UnauthenticatedIdleTimeLimit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GlobalConfigurationResponse) GetUnauthenticatedIdleTimeLimitOk() (*string, bool) {
+	if o == nil || IsNil(o.UnauthenticatedIdleTimeLimit) {
+		return nil, false
+	}
+	return o.UnauthenticatedIdleTimeLimit, true
+}
+
+// HasUnauthenticatedIdleTimeLimit returns a boolean if a field has been set.
+func (o *GlobalConfigurationResponse) HasUnauthenticatedIdleTimeLimit() bool {
+	if o != nil && !IsNil(o.UnauthenticatedIdleTimeLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetUnauthenticatedIdleTimeLimit gets a reference to the given string and assigns it to the UnauthenticatedIdleTimeLimit field.
+func (o *GlobalConfigurationResponse) SetUnauthenticatedIdleTimeLimit(v string) {
+	o.UnauthenticatedIdleTimeLimit = &v
+}
+
 // GetLookthroughLimit returns the LookthroughLimit field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetLookthroughLimit() int32 {
 	if o == nil || IsNil(o.LookthroughLimit) {
@@ -1245,6 +1349,38 @@ func (o *GlobalConfigurationResponse) HasLookthroughLimit() bool {
 // SetLookthroughLimit gets a reference to the given int32 and assigns it to the LookthroughLimit field.
 func (o *GlobalConfigurationResponse) SetLookthroughLimit(v int32) {
 	o.LookthroughLimit = &v
+}
+
+// GetUnauthenticatedLookthroughLimit returns the UnauthenticatedLookthroughLimit field value if set, zero value otherwise.
+func (o *GlobalConfigurationResponse) GetUnauthenticatedLookthroughLimit() int32 {
+	if o == nil || IsNil(o.UnauthenticatedLookthroughLimit) {
+		var ret int32
+		return ret
+	}
+	return *o.UnauthenticatedLookthroughLimit
+}
+
+// GetUnauthenticatedLookthroughLimitOk returns a tuple with the UnauthenticatedLookthroughLimit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GlobalConfigurationResponse) GetUnauthenticatedLookthroughLimitOk() (*int32, bool) {
+	if o == nil || IsNil(o.UnauthenticatedLookthroughLimit) {
+		return nil, false
+	}
+	return o.UnauthenticatedLookthroughLimit, true
+}
+
+// HasUnauthenticatedLookthroughLimit returns a boolean if a field has been set.
+func (o *GlobalConfigurationResponse) HasUnauthenticatedLookthroughLimit() bool {
+	if o != nil && !IsNil(o.UnauthenticatedLookthroughLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetUnauthenticatedLookthroughLimit gets a reference to the given int32 and assigns it to the UnauthenticatedLookthroughLimit field.
+func (o *GlobalConfigurationResponse) SetUnauthenticatedLookthroughLimit(v int32) {
+	o.UnauthenticatedLookthroughLimit = &v
 }
 
 // GetLdapJoinSizeLimit returns the LdapJoinSizeLimit field value if set, zero value otherwise.
@@ -3021,14 +3157,26 @@ func (o GlobalConfigurationResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SizeLimit) {
 		toSerialize["sizeLimit"] = o.SizeLimit
 	}
+	if !IsNil(o.UnauthenticatedSizeLimit) {
+		toSerialize["unauthenticatedSizeLimit"] = o.UnauthenticatedSizeLimit
+	}
 	if !IsNil(o.TimeLimit) {
 		toSerialize["timeLimit"] = o.TimeLimit
+	}
+	if !IsNil(o.UnauthenticatedTimeLimit) {
+		toSerialize["unauthenticatedTimeLimit"] = o.UnauthenticatedTimeLimit
 	}
 	if !IsNil(o.IdleTimeLimit) {
 		toSerialize["idleTimeLimit"] = o.IdleTimeLimit
 	}
+	if !IsNil(o.UnauthenticatedIdleTimeLimit) {
+		toSerialize["unauthenticatedIdleTimeLimit"] = o.UnauthenticatedIdleTimeLimit
+	}
 	if !IsNil(o.LookthroughLimit) {
 		toSerialize["lookthroughLimit"] = o.LookthroughLimit
+	}
+	if !IsNil(o.UnauthenticatedLookthroughLimit) {
+		toSerialize["unauthenticatedLookthroughLimit"] = o.UnauthenticatedLookthroughLimit
 	}
 	if !IsNil(o.LdapJoinSizeLimit) {
 		toSerialize["ldapJoinSizeLimit"] = o.LdapJoinSizeLimit

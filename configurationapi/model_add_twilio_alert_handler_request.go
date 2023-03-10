@@ -24,6 +24,8 @@ type AddTwilioAlertHandlerRequest struct {
 	Schemas     []EnumtwilioAlertHandlerSchemaUrn `json:"schemas"`
 	// Indicates whether the server should attempt to invoke this Twilio Alert Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver the alert notification) will not delay whatever processing the server was performing when the alert was generated.
 	Asynchronous *bool `json:"asynchronous,omitempty"`
+	// A reference to an HTTP proxy server that should be used for requests sent to the Twilio service.
+	HttpProxyExternalServer *string `json:"httpProxyExternalServer,omitempty"`
 	// The unique identifier assigned to the Twilio account that will be used.
 	TwilioAccountSID string `json:"twilioAccountSID"`
 	// The auth token for the Twilio account that will be used.
@@ -145,6 +147,38 @@ func (o *AddTwilioAlertHandlerRequest) HasAsynchronous() bool {
 // SetAsynchronous gets a reference to the given bool and assigns it to the Asynchronous field.
 func (o *AddTwilioAlertHandlerRequest) SetAsynchronous(v bool) {
 	o.Asynchronous = &v
+}
+
+// GetHttpProxyExternalServer returns the HttpProxyExternalServer field value if set, zero value otherwise.
+func (o *AddTwilioAlertHandlerRequest) GetHttpProxyExternalServer() string {
+	if o == nil || IsNil(o.HttpProxyExternalServer) {
+		var ret string
+		return ret
+	}
+	return *o.HttpProxyExternalServer
+}
+
+// GetHttpProxyExternalServerOk returns a tuple with the HttpProxyExternalServer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddTwilioAlertHandlerRequest) GetHttpProxyExternalServerOk() (*string, bool) {
+	if o == nil || IsNil(o.HttpProxyExternalServer) {
+		return nil, false
+	}
+	return o.HttpProxyExternalServer, true
+}
+
+// HasHttpProxyExternalServer returns a boolean if a field has been set.
+func (o *AddTwilioAlertHandlerRequest) HasHttpProxyExternalServer() bool {
+	if o != nil && !IsNil(o.HttpProxyExternalServer) {
+		return true
+	}
+
+	return false
+}
+
+// SetHttpProxyExternalServer gets a reference to the given string and assigns it to the HttpProxyExternalServer field.
+func (o *AddTwilioAlertHandlerRequest) SetHttpProxyExternalServer(v string) {
+	o.HttpProxyExternalServer = &v
 }
 
 // GetTwilioAccountSID returns the TwilioAccountSID field value
@@ -481,6 +515,9 @@ func (o AddTwilioAlertHandlerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Asynchronous) {
 		toSerialize["asynchronous"] = o.Asynchronous
+	}
+	if !IsNil(o.HttpProxyExternalServer) {
+		toSerialize["httpProxyExternalServer"] = o.HttpProxyExternalServer
 	}
 	toSerialize["twilioAccountSID"] = o.TwilioAccountSID
 	if !IsNil(o.TwilioAuthToken) {

@@ -21,6 +21,7 @@ type AddExternalServerRequest struct {
 	AddAmazonAwsExternalServerRequest               *AddAmazonAwsExternalServerRequest
 	AddConjurExternalServerRequest                  *AddConjurExternalServerRequest
 	AddHttpExternalServerRequest                    *AddHttpExternalServerRequest
+	AddHttpProxyExternalServerRequest               *AddHttpProxyExternalServerRequest
 	AddJdbcExternalServerRequest                    *AddJdbcExternalServerRequest
 	AddLdapExternalServerRequest                    *AddLdapExternalServerRequest
 	AddNokiaDsExternalServerRequest                 *AddNokiaDsExternalServerRequest
@@ -60,6 +61,13 @@ func AddConjurExternalServerRequestAsAddExternalServerRequest(v *AddConjurExtern
 func AddHttpExternalServerRequestAsAddExternalServerRequest(v *AddHttpExternalServerRequest) AddExternalServerRequest {
 	return AddExternalServerRequest{
 		AddHttpExternalServerRequest: v,
+	}
+}
+
+// AddHttpProxyExternalServerRequestAsAddExternalServerRequest is a convenience function that returns AddHttpProxyExternalServerRequest wrapped in AddExternalServerRequest
+func AddHttpProxyExternalServerRequestAsAddExternalServerRequest(v *AddHttpProxyExternalServerRequest) AddExternalServerRequest {
+	return AddExternalServerRequest{
+		AddHttpProxyExternalServerRequest: v,
 	}
 }
 
@@ -201,6 +209,19 @@ func (dst *AddExternalServerRequest) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.AddHttpExternalServerRequest = nil
+	}
+
+	// try to unmarshal data into AddHttpProxyExternalServerRequest
+	err = newStrictDecoder(data).Decode(&dst.AddHttpProxyExternalServerRequest)
+	if err == nil {
+		jsonAddHttpProxyExternalServerRequest, _ := json.Marshal(dst.AddHttpProxyExternalServerRequest)
+		if string(jsonAddHttpProxyExternalServerRequest) == "{}" { // empty struct
+			dst.AddHttpProxyExternalServerRequest = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.AddHttpProxyExternalServerRequest = nil
 	}
 
 	// try to unmarshal data into AddJdbcExternalServerRequest
@@ -365,6 +386,7 @@ func (dst *AddExternalServerRequest) UnmarshalJSON(data []byte) error {
 		dst.AddAmazonAwsExternalServerRequest = nil
 		dst.AddConjurExternalServerRequest = nil
 		dst.AddHttpExternalServerRequest = nil
+		dst.AddHttpProxyExternalServerRequest = nil
 		dst.AddJdbcExternalServerRequest = nil
 		dst.AddLdapExternalServerRequest = nil
 		dst.AddNokiaDsExternalServerRequest = nil
@@ -402,6 +424,10 @@ func (src AddExternalServerRequest) MarshalJSON() ([]byte, error) {
 
 	if src.AddHttpExternalServerRequest != nil {
 		return json.Marshal(&src.AddHttpExternalServerRequest)
+	}
+
+	if src.AddHttpProxyExternalServerRequest != nil {
+		return json.Marshal(&src.AddHttpProxyExternalServerRequest)
 	}
 
 	if src.AddJdbcExternalServerRequest != nil {
@@ -474,6 +500,10 @@ func (obj *AddExternalServerRequest) GetActualInstance() interface{} {
 
 	if obj.AddHttpExternalServerRequest != nil {
 		return obj.AddHttpExternalServerRequest
+	}
+
+	if obj.AddHttpProxyExternalServerRequest != nil {
+		return obj.AddHttpProxyExternalServerRequest
 	}
 
 	if obj.AddJdbcExternalServerRequest != nil {

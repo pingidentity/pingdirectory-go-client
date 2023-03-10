@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **EncryptionMetadataFile** | Pointer to **string** | The path to a file that will hold metadata about the encryption performed by this PKCS11 Cipher Stream Provider. | [optional] 
 **KeyVaultURI** | **string** | The URI that identifies the Azure Key Vault from which the secret is to be retrieved. | 
 **AzureAuthenticationMethod** | **string** | The mechanism used to authenticate to the Azure service. | 
+**HttpProxyExternalServer** | Pointer to **string** | A reference to an HTTP proxy server that should be used for requests sent to the Azure service. | [optional] 
 **SecretName** | **string** | The name of the secret to retrieve. | 
 **PasswordFile** | **string** | The path to the file containing the password to use when generating ciphers. | 
 **WaitForPasswordFile** | Pointer to **bool** | Indicates whether the server should wait for the password file to become available if it does not exist. | [optional] 
@@ -443,6 +444,31 @@ and a boolean to check if the value has been set.
 
 SetAzureAuthenticationMethod sets AzureAuthenticationMethod field to given value.
 
+
+### GetHttpProxyExternalServer
+
+`func (o *AddCipherStreamProviderRequest) GetHttpProxyExternalServer() string`
+
+GetHttpProxyExternalServer returns the HttpProxyExternalServer field if non-nil, zero value otherwise.
+
+### GetHttpProxyExternalServerOk
+
+`func (o *AddCipherStreamProviderRequest) GetHttpProxyExternalServerOk() (*string, bool)`
+
+GetHttpProxyExternalServerOk returns a tuple with the HttpProxyExternalServer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHttpProxyExternalServer
+
+`func (o *AddCipherStreamProviderRequest) SetHttpProxyExternalServer(v string)`
+
+SetHttpProxyExternalServer sets HttpProxyExternalServer field to given value.
+
+### HasHttpProxyExternalServer
+
+`func (o *AddCipherStreamProviderRequest) HasHttpProxyExternalServer() bool`
+
+HasHttpProxyExternalServer returns a boolean if a field has been set.
 
 ### GetSecretName
 

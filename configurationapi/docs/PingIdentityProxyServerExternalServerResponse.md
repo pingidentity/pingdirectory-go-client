@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **Password** | Pointer to **string** | The login password for the specified user. | [optional] 
 **PassphraseProvider** | Pointer to **string** | The passphrase provider to use to obtain the login password for the specified user. | [optional] 
 **ConnectionSecurity** | [**EnumexternalServerConnectionSecurityProp**](EnumexternalServerConnectionSecurityProp.md) |  | 
-**AuthenticationMethod** | [**EnumexternalServerAuthenticationMethodProp**](EnumexternalServerAuthenticationMethodProp.md) |  | 
+**AuthenticationMethod** | [**EnumexternalServerPingIdentityProxyServerAuthenticationMethodProp**](EnumexternalServerPingIdentityProxyServerAuthenticationMethodProp.md) |  | 
 **HealthCheckConnectTimeout** | Pointer to **string** | Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable. | [optional] 
 **MaxConnectionAge** | **string** | Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections. | 
 **MinExpiredConnectionDisconnectInterval** | Pointer to **string** | Specifies the minimum length of time that should pass between connection closures as a result of the connections being established for longer than the maximum connection age. This may help avoid cases in which a large number of connections are closed and re-established in a short period of time because of the maximum connection age. | [optional] 
@@ -35,7 +35,7 @@ Name | Type | Description | Notes
 
 ### NewPingIdentityProxyServerExternalServerResponse
 
-`func NewPingIdentityProxyServerExternalServerResponse(id string, schemas []EnumpingIdentityProxyServerExternalServerSchemaUrn, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, serverHostName string, serverPort int32, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerAuthenticationMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string, ) *PingIdentityProxyServerExternalServerResponse`
+`func NewPingIdentityProxyServerExternalServerResponse(id string, schemas []EnumpingIdentityProxyServerExternalServerSchemaUrn, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, serverHostName string, serverPort int32, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerPingIdentityProxyServerAuthenticationMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string, ) *PingIdentityProxyServerExternalServerResponse`
 
 NewPingIdentityProxyServerExternalServerResponse instantiates a new PingIdentityProxyServerExternalServerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -347,20 +347,20 @@ SetConnectionSecurity sets ConnectionSecurity field to given value.
 
 ### GetAuthenticationMethod
 
-`func (o *PingIdentityProxyServerExternalServerResponse) GetAuthenticationMethod() EnumexternalServerAuthenticationMethodProp`
+`func (o *PingIdentityProxyServerExternalServerResponse) GetAuthenticationMethod() EnumexternalServerPingIdentityProxyServerAuthenticationMethodProp`
 
 GetAuthenticationMethod returns the AuthenticationMethod field if non-nil, zero value otherwise.
 
 ### GetAuthenticationMethodOk
 
-`func (o *PingIdentityProxyServerExternalServerResponse) GetAuthenticationMethodOk() (*EnumexternalServerAuthenticationMethodProp, bool)`
+`func (o *PingIdentityProxyServerExternalServerResponse) GetAuthenticationMethodOk() (*EnumexternalServerPingIdentityProxyServerAuthenticationMethodProp, bool)`
 
 GetAuthenticationMethodOk returns a tuple with the AuthenticationMethod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthenticationMethod
 
-`func (o *PingIdentityProxyServerExternalServerResponse) SetAuthenticationMethod(v EnumexternalServerAuthenticationMethodProp)`
+`func (o *PingIdentityProxyServerExternalServerResponse) SetAuthenticationMethod(v EnumexternalServerPingIdentityProxyServerAuthenticationMethodProp)`
 
 SetAuthenticationMethod sets AuthenticationMethod field to given value.
 

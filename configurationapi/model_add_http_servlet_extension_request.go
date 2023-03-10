@@ -17,12 +17,13 @@ import (
 
 // AddHttpServletExtensionRequest - struct for AddHttpServletExtensionRequest
 type AddHttpServletExtensionRequest struct {
-	AddAvailabilityStateHttpServletExtensionRequest *AddAvailabilityStateHttpServletExtensionRequest
-	AddFileServerHttpServletExtensionRequest        *AddFileServerHttpServletExtensionRequest
-	AddGroovyScriptedHttpServletExtensionRequest    *AddGroovyScriptedHttpServletExtensionRequest
-	AddLdapMappedScimHttpServletExtensionRequest    *AddLdapMappedScimHttpServletExtensionRequest
-	AddQuickstartHttpServletExtensionRequest        *AddQuickstartHttpServletExtensionRequest
-	AddThirdPartyHttpServletExtensionRequest        *AddThirdPartyHttpServletExtensionRequest
+	AddAvailabilityStateHttpServletExtensionRequest    *AddAvailabilityStateHttpServletExtensionRequest
+	AddFileServerHttpServletExtensionRequest           *AddFileServerHttpServletExtensionRequest
+	AddGroovyScriptedHttpServletExtensionRequest       *AddGroovyScriptedHttpServletExtensionRequest
+	AddLdapMappedScimHttpServletExtensionRequest       *AddLdapMappedScimHttpServletExtensionRequest
+	AddPrometheusMonitoringHttpServletExtensionRequest *AddPrometheusMonitoringHttpServletExtensionRequest
+	AddQuickstartHttpServletExtensionRequest           *AddQuickstartHttpServletExtensionRequest
+	AddThirdPartyHttpServletExtensionRequest           *AddThirdPartyHttpServletExtensionRequest
 }
 
 // AddAvailabilityStateHttpServletExtensionRequestAsAddHttpServletExtensionRequest is a convenience function that returns AddAvailabilityStateHttpServletExtensionRequest wrapped in AddHttpServletExtensionRequest
@@ -50,6 +51,13 @@ func AddGroovyScriptedHttpServletExtensionRequestAsAddHttpServletExtensionReques
 func AddLdapMappedScimHttpServletExtensionRequestAsAddHttpServletExtensionRequest(v *AddLdapMappedScimHttpServletExtensionRequest) AddHttpServletExtensionRequest {
 	return AddHttpServletExtensionRequest{
 		AddLdapMappedScimHttpServletExtensionRequest: v,
+	}
+}
+
+// AddPrometheusMonitoringHttpServletExtensionRequestAsAddHttpServletExtensionRequest is a convenience function that returns AddPrometheusMonitoringHttpServletExtensionRequest wrapped in AddHttpServletExtensionRequest
+func AddPrometheusMonitoringHttpServletExtensionRequestAsAddHttpServletExtensionRequest(v *AddPrometheusMonitoringHttpServletExtensionRequest) AddHttpServletExtensionRequest {
+	return AddHttpServletExtensionRequest{
+		AddPrometheusMonitoringHttpServletExtensionRequest: v,
 	}
 }
 
@@ -123,6 +131,19 @@ func (dst *AddHttpServletExtensionRequest) UnmarshalJSON(data []byte) error {
 		dst.AddLdapMappedScimHttpServletExtensionRequest = nil
 	}
 
+	// try to unmarshal data into AddPrometheusMonitoringHttpServletExtensionRequest
+	err = newStrictDecoder(data).Decode(&dst.AddPrometheusMonitoringHttpServletExtensionRequest)
+	if err == nil {
+		jsonAddPrometheusMonitoringHttpServletExtensionRequest, _ := json.Marshal(dst.AddPrometheusMonitoringHttpServletExtensionRequest)
+		if string(jsonAddPrometheusMonitoringHttpServletExtensionRequest) == "{}" { // empty struct
+			dst.AddPrometheusMonitoringHttpServletExtensionRequest = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.AddPrometheusMonitoringHttpServletExtensionRequest = nil
+	}
+
 	// try to unmarshal data into AddQuickstartHttpServletExtensionRequest
 	err = newStrictDecoder(data).Decode(&dst.AddQuickstartHttpServletExtensionRequest)
 	if err == nil {
@@ -155,6 +176,7 @@ func (dst *AddHttpServletExtensionRequest) UnmarshalJSON(data []byte) error {
 		dst.AddFileServerHttpServletExtensionRequest = nil
 		dst.AddGroovyScriptedHttpServletExtensionRequest = nil
 		dst.AddLdapMappedScimHttpServletExtensionRequest = nil
+		dst.AddPrometheusMonitoringHttpServletExtensionRequest = nil
 		dst.AddQuickstartHttpServletExtensionRequest = nil
 		dst.AddThirdPartyHttpServletExtensionRequest = nil
 
@@ -182,6 +204,10 @@ func (src AddHttpServletExtensionRequest) MarshalJSON() ([]byte, error) {
 
 	if src.AddLdapMappedScimHttpServletExtensionRequest != nil {
 		return json.Marshal(&src.AddLdapMappedScimHttpServletExtensionRequest)
+	}
+
+	if src.AddPrometheusMonitoringHttpServletExtensionRequest != nil {
+		return json.Marshal(&src.AddPrometheusMonitoringHttpServletExtensionRequest)
 	}
 
 	if src.AddQuickstartHttpServletExtensionRequest != nil {
@@ -214,6 +240,10 @@ func (obj *AddHttpServletExtensionRequest) GetActualInstance() interface{} {
 
 	if obj.AddLdapMappedScimHttpServletExtensionRequest != nil {
 		return obj.AddLdapMappedScimHttpServletExtensionRequest
+	}
+
+	if obj.AddPrometheusMonitoringHttpServletExtensionRequest != nil {
+		return obj.AddPrometheusMonitoringHttpServletExtensionRequest
 	}
 
 	if obj.AddQuickstartHttpServletExtensionRequest != nil {

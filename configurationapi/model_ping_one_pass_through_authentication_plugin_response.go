@@ -36,6 +36,8 @@ type PingOnePassThroughAuthenticationPluginResponse struct {
 	OAuthClientSecretPassphraseProvider *string `json:"OAuthClientSecretPassphraseProvider,omitempty"`
 	// Specifies the PingOne Environment that will be associated with this PingOne Pass Through Authentication Plugin.
 	EnvironmentID string `json:"environmentID"`
+	// A reference to an HTTP proxy server that should be used for requests sent to the PingOne service.
+	HttpProxyExternalServer *string `json:"httpProxyExternalServer,omitempty"`
 	// The base DNs for the local users whose authentication attempts may be passed through to the PingOne service.
 	IncludedLocalEntryBaseDN []string `json:"includedLocalEntryBaseDN,omitempty"`
 	// A reference to connection criteria that will be used to indicate which bind requests should be passed through to the PingOne service.
@@ -363,6 +365,38 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetEnvironmentIDOk() (*
 // SetEnvironmentID sets field value
 func (o *PingOnePassThroughAuthenticationPluginResponse) SetEnvironmentID(v string) {
 	o.EnvironmentID = v
+}
+
+// GetHttpProxyExternalServer returns the HttpProxyExternalServer field value if set, zero value otherwise.
+func (o *PingOnePassThroughAuthenticationPluginResponse) GetHttpProxyExternalServer() string {
+	if o == nil || IsNil(o.HttpProxyExternalServer) {
+		var ret string
+		return ret
+	}
+	return *o.HttpProxyExternalServer
+}
+
+// GetHttpProxyExternalServerOk returns a tuple with the HttpProxyExternalServer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PingOnePassThroughAuthenticationPluginResponse) GetHttpProxyExternalServerOk() (*string, bool) {
+	if o == nil || IsNil(o.HttpProxyExternalServer) {
+		return nil, false
+	}
+	return o.HttpProxyExternalServer, true
+}
+
+// HasHttpProxyExternalServer returns a boolean if a field has been set.
+func (o *PingOnePassThroughAuthenticationPluginResponse) HasHttpProxyExternalServer() bool {
+	if o != nil && !IsNil(o.HttpProxyExternalServer) {
+		return true
+	}
+
+	return false
+}
+
+// SetHttpProxyExternalServer gets a reference to the given string and assigns it to the HttpProxyExternalServer field.
+func (o *PingOnePassThroughAuthenticationPluginResponse) SetHttpProxyExternalServer(v string) {
+	o.HttpProxyExternalServer = &v
 }
 
 // GetIncludedLocalEntryBaseDN returns the IncludedLocalEntryBaseDN field value if set, zero value otherwise.
@@ -849,6 +883,9 @@ func (o PingOnePassThroughAuthenticationPluginResponse) ToMap() (map[string]inte
 		toSerialize["OAuthClientSecretPassphraseProvider"] = o.OAuthClientSecretPassphraseProvider
 	}
 	toSerialize["environmentID"] = o.EnvironmentID
+	if !IsNil(o.HttpProxyExternalServer) {
+		toSerialize["httpProxyExternalServer"] = o.HttpProxyExternalServer
+	}
 	if !IsNil(o.IncludedLocalEntryBaseDN) {
 		toSerialize["includedLocalEntryBaseDN"] = o.IncludedLocalEntryBaseDN
 	}

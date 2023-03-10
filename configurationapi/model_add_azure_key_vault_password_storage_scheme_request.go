@@ -26,6 +26,8 @@ type AddAzureKeyVaultPasswordStorageSchemeRequest struct {
 	KeyVaultURI string `json:"keyVaultURI"`
 	// The mechanism used to authenticate to the Azure service.
 	AzureAuthenticationMethod string `json:"azureAuthenticationMethod"`
+	// A reference to an HTTP proxy server that should be used for requests sent to the Azure service.
+	HttpProxyExternalServer *string `json:"httpProxyExternalServer,omitempty"`
 	// A description for this Password Storage Scheme
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Password Storage Scheme is enabled for use.
@@ -150,6 +152,38 @@ func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) SetAzureAuthenticationMet
 	o.AzureAuthenticationMethod = v
 }
 
+// GetHttpProxyExternalServer returns the HttpProxyExternalServer field value if set, zero value otherwise.
+func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) GetHttpProxyExternalServer() string {
+	if o == nil || IsNil(o.HttpProxyExternalServer) {
+		var ret string
+		return ret
+	}
+	return *o.HttpProxyExternalServer
+}
+
+// GetHttpProxyExternalServerOk returns a tuple with the HttpProxyExternalServer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) GetHttpProxyExternalServerOk() (*string, bool) {
+	if o == nil || IsNil(o.HttpProxyExternalServer) {
+		return nil, false
+	}
+	return o.HttpProxyExternalServer, true
+}
+
+// HasHttpProxyExternalServer returns a boolean if a field has been set.
+func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) HasHttpProxyExternalServer() bool {
+	if o != nil && !IsNil(o.HttpProxyExternalServer) {
+		return true
+	}
+
+	return false
+}
+
+// SetHttpProxyExternalServer gets a reference to the given string and assigns it to the HttpProxyExternalServer field.
+func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) SetHttpProxyExternalServer(v string) {
+	o.HttpProxyExternalServer = &v
+}
+
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) GetDescription() string {
 	if o == nil || IsNil(o.Description) {
@@ -220,6 +254,9 @@ func (o AddAzureKeyVaultPasswordStorageSchemeRequest) ToMap() (map[string]interf
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["keyVaultURI"] = o.KeyVaultURI
 	toSerialize["azureAuthenticationMethod"] = o.AzureAuthenticationMethod
+	if !IsNil(o.HttpProxyExternalServer) {
+		toSerialize["httpProxyExternalServer"] = o.HttpProxyExternalServer
+	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}

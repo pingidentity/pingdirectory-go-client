@@ -1209,6 +1209,10 @@ components:
           type: string
           description: >-
               Specifies the PingOne Environment that will be associated with this PingOne Pass Through Authentication Plugin.
+        httpProxyExternalServer:
+          type: string
+          description: >-
+              A reference to an HTTP proxy server that should be used for requests sent to the PingOne service.
         includedLocalEntryBaseDN:
           type: array
           items:

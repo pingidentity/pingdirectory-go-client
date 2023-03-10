@@ -17,6 +17,7 @@ import (
 
 // AddRecurringTask200Response - struct for AddRecurringTask200Response
 type AddRecurringTask200Response struct {
+	AuditDataSecurityRecurringTaskResponse     *AuditDataSecurityRecurringTaskResponse
 	BackupRecurringTaskResponse                *BackupRecurringTaskResponse
 	CollectSupportDataRecurringTaskResponse    *CollectSupportDataRecurringTaskResponse
 	DelayRecurringTaskResponse                 *DelayRecurringTaskResponse
@@ -28,6 +29,13 @@ type AddRecurringTask200Response struct {
 	LeaveLockdownModeRecurringTaskResponse     *LeaveLockdownModeRecurringTaskResponse
 	StaticallyDefinedRecurringTaskResponse     *StaticallyDefinedRecurringTaskResponse
 	ThirdPartyRecurringTaskResponse            *ThirdPartyRecurringTaskResponse
+}
+
+// AuditDataSecurityRecurringTaskResponseAsAddRecurringTask200Response is a convenience function that returns AuditDataSecurityRecurringTaskResponse wrapped in AddRecurringTask200Response
+func AuditDataSecurityRecurringTaskResponseAsAddRecurringTask200Response(v *AuditDataSecurityRecurringTaskResponse) AddRecurringTask200Response {
+	return AddRecurringTask200Response{
+		AuditDataSecurityRecurringTaskResponse: v,
+	}
 }
 
 // BackupRecurringTaskResponseAsAddRecurringTask200Response is a convenience function that returns BackupRecurringTaskResponse wrapped in AddRecurringTask200Response
@@ -111,6 +119,19 @@ func ThirdPartyRecurringTaskResponseAsAddRecurringTask200Response(v *ThirdPartyR
 func (dst *AddRecurringTask200Response) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
+	// try to unmarshal data into AuditDataSecurityRecurringTaskResponse
+	err = newStrictDecoder(data).Decode(&dst.AuditDataSecurityRecurringTaskResponse)
+	if err == nil {
+		jsonAuditDataSecurityRecurringTaskResponse, _ := json.Marshal(dst.AuditDataSecurityRecurringTaskResponse)
+		if string(jsonAuditDataSecurityRecurringTaskResponse) == "{}" { // empty struct
+			dst.AuditDataSecurityRecurringTaskResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.AuditDataSecurityRecurringTaskResponse = nil
+	}
+
 	// try to unmarshal data into BackupRecurringTaskResponse
 	err = newStrictDecoder(data).Decode(&dst.BackupRecurringTaskResponse)
 	if err == nil {
@@ -256,6 +277,7 @@ func (dst *AddRecurringTask200Response) UnmarshalJSON(data []byte) error {
 
 	if match > 1 { // more than 1 match
 		// reset to nil
+		dst.AuditDataSecurityRecurringTaskResponse = nil
 		dst.BackupRecurringTaskResponse = nil
 		dst.CollectSupportDataRecurringTaskResponse = nil
 		dst.DelayRecurringTaskResponse = nil
@@ -278,6 +300,10 @@ func (dst *AddRecurringTask200Response) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src AddRecurringTask200Response) MarshalJSON() ([]byte, error) {
+	if src.AuditDataSecurityRecurringTaskResponse != nil {
+		return json.Marshal(&src.AuditDataSecurityRecurringTaskResponse)
+	}
+
 	if src.BackupRecurringTaskResponse != nil {
 		return json.Marshal(&src.BackupRecurringTaskResponse)
 	}
@@ -330,6 +356,10 @@ func (obj *AddRecurringTask200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
+	if obj.AuditDataSecurityRecurringTaskResponse != nil {
+		return obj.AuditDataSecurityRecurringTaskResponse
+	}
+
 	if obj.BackupRecurringTaskResponse != nil {
 		return obj.BackupRecurringTaskResponse
 	}

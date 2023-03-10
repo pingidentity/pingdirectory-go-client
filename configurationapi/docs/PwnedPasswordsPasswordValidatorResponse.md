@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Id** | **string** | Name of the Password Validator | 
 **Schemas** | [**[]EnumpwnedPasswordsPasswordValidatorSchemaUrn**](EnumpwnedPasswordsPasswordValidatorSchemaUrn.md) |  | 
 **PwnedPasswordsBaseURL** | **string** | The base URL for requests used to interact with the Pwned Passwords service. The first five characters of the hexadecimal representation of the unsalted SHA-1 digest of a proposed password will be appended to this base URL to construct the HTTP GET request used to obtain information about potential matches. | 
+**HttpProxyExternalServer** | Pointer to **string** | A reference to an HTTP proxy server that should be used for requests sent to the Pwned Passwords service. | [optional] 
 **InvokeForAdd** | **bool** | Indicates whether this password validator should be used to validate clear-text passwords provided in LDAP add requests. | 
 **InvokeForSelfChange** | **bool** | Indicates whether this password validator should be used to validate clear-text passwords provided by an end user in the course of changing their own password. | 
 **InvokeForAdminReset** | **bool** | Indicates whether this password validator should be used to validate clear-text passwords provided by administrators when changing the password for another user. | 
@@ -148,6 +149,31 @@ and a boolean to check if the value has been set.
 
 SetPwnedPasswordsBaseURL sets PwnedPasswordsBaseURL field to given value.
 
+
+### GetHttpProxyExternalServer
+
+`func (o *PwnedPasswordsPasswordValidatorResponse) GetHttpProxyExternalServer() string`
+
+GetHttpProxyExternalServer returns the HttpProxyExternalServer field if non-nil, zero value otherwise.
+
+### GetHttpProxyExternalServerOk
+
+`func (o *PwnedPasswordsPasswordValidatorResponse) GetHttpProxyExternalServerOk() (*string, bool)`
+
+GetHttpProxyExternalServerOk returns a tuple with the HttpProxyExternalServer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHttpProxyExternalServer
+
+`func (o *PwnedPasswordsPasswordValidatorResponse) SetHttpProxyExternalServer(v string)`
+
+SetHttpProxyExternalServer sets HttpProxyExternalServer field to given value.
+
+### HasHttpProxyExternalServer
+
+`func (o *PwnedPasswordsPasswordValidatorResponse) HasHttpProxyExternalServer() bool`
+
+HasHttpProxyExternalServer returns a boolean if a field has been set.
 
 ### GetInvokeForAdd
 

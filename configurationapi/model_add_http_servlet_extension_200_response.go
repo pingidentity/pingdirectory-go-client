@@ -17,12 +17,13 @@ import (
 
 // AddHttpServletExtension200Response - struct for AddHttpServletExtension200Response
 type AddHttpServletExtension200Response struct {
-	AvailabilityStateHttpServletExtensionResponse *AvailabilityStateHttpServletExtensionResponse
-	FileServerHttpServletExtensionResponse        *FileServerHttpServletExtensionResponse
-	GroovyScriptedHttpServletExtensionResponse    *GroovyScriptedHttpServletExtensionResponse
-	LdapMappedScimHttpServletExtensionResponse    *LdapMappedScimHttpServletExtensionResponse
-	QuickstartHttpServletExtensionResponse        *QuickstartHttpServletExtensionResponse
-	ThirdPartyHttpServletExtensionResponse        *ThirdPartyHttpServletExtensionResponse
+	AvailabilityStateHttpServletExtensionResponse    *AvailabilityStateHttpServletExtensionResponse
+	FileServerHttpServletExtensionResponse           *FileServerHttpServletExtensionResponse
+	GroovyScriptedHttpServletExtensionResponse       *GroovyScriptedHttpServletExtensionResponse
+	LdapMappedScimHttpServletExtensionResponse       *LdapMappedScimHttpServletExtensionResponse
+	PrometheusMonitoringHttpServletExtensionResponse *PrometheusMonitoringHttpServletExtensionResponse
+	QuickstartHttpServletExtensionResponse           *QuickstartHttpServletExtensionResponse
+	ThirdPartyHttpServletExtensionResponse           *ThirdPartyHttpServletExtensionResponse
 }
 
 // AvailabilityStateHttpServletExtensionResponseAsAddHttpServletExtension200Response is a convenience function that returns AvailabilityStateHttpServletExtensionResponse wrapped in AddHttpServletExtension200Response
@@ -50,6 +51,13 @@ func GroovyScriptedHttpServletExtensionResponseAsAddHttpServletExtension200Respo
 func LdapMappedScimHttpServletExtensionResponseAsAddHttpServletExtension200Response(v *LdapMappedScimHttpServletExtensionResponse) AddHttpServletExtension200Response {
 	return AddHttpServletExtension200Response{
 		LdapMappedScimHttpServletExtensionResponse: v,
+	}
+}
+
+// PrometheusMonitoringHttpServletExtensionResponseAsAddHttpServletExtension200Response is a convenience function that returns PrometheusMonitoringHttpServletExtensionResponse wrapped in AddHttpServletExtension200Response
+func PrometheusMonitoringHttpServletExtensionResponseAsAddHttpServletExtension200Response(v *PrometheusMonitoringHttpServletExtensionResponse) AddHttpServletExtension200Response {
+	return AddHttpServletExtension200Response{
+		PrometheusMonitoringHttpServletExtensionResponse: v,
 	}
 }
 
@@ -123,6 +131,19 @@ func (dst *AddHttpServletExtension200Response) UnmarshalJSON(data []byte) error 
 		dst.LdapMappedScimHttpServletExtensionResponse = nil
 	}
 
+	// try to unmarshal data into PrometheusMonitoringHttpServletExtensionResponse
+	err = newStrictDecoder(data).Decode(&dst.PrometheusMonitoringHttpServletExtensionResponse)
+	if err == nil {
+		jsonPrometheusMonitoringHttpServletExtensionResponse, _ := json.Marshal(dst.PrometheusMonitoringHttpServletExtensionResponse)
+		if string(jsonPrometheusMonitoringHttpServletExtensionResponse) == "{}" { // empty struct
+			dst.PrometheusMonitoringHttpServletExtensionResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.PrometheusMonitoringHttpServletExtensionResponse = nil
+	}
+
 	// try to unmarshal data into QuickstartHttpServletExtensionResponse
 	err = newStrictDecoder(data).Decode(&dst.QuickstartHttpServletExtensionResponse)
 	if err == nil {
@@ -155,6 +176,7 @@ func (dst *AddHttpServletExtension200Response) UnmarshalJSON(data []byte) error 
 		dst.FileServerHttpServletExtensionResponse = nil
 		dst.GroovyScriptedHttpServletExtensionResponse = nil
 		dst.LdapMappedScimHttpServletExtensionResponse = nil
+		dst.PrometheusMonitoringHttpServletExtensionResponse = nil
 		dst.QuickstartHttpServletExtensionResponse = nil
 		dst.ThirdPartyHttpServletExtensionResponse = nil
 
@@ -182,6 +204,10 @@ func (src AddHttpServletExtension200Response) MarshalJSON() ([]byte, error) {
 
 	if src.LdapMappedScimHttpServletExtensionResponse != nil {
 		return json.Marshal(&src.LdapMappedScimHttpServletExtensionResponse)
+	}
+
+	if src.PrometheusMonitoringHttpServletExtensionResponse != nil {
+		return json.Marshal(&src.PrometheusMonitoringHttpServletExtensionResponse)
 	}
 
 	if src.QuickstartHttpServletExtensionResponse != nil {
@@ -214,6 +240,10 @@ func (obj *AddHttpServletExtension200Response) GetActualInstance() interface{} {
 
 	if obj.LdapMappedScimHttpServletExtensionResponse != nil {
 		return obj.LdapMappedScimHttpServletExtensionResponse
+	}
+
+	if obj.PrometheusMonitoringHttpServletExtensionResponse != nil {
+		return obj.PrometheusMonitoringHttpServletExtensionResponse
 	}
 
 	if obj.QuickstartHttpServletExtensionResponse != nil {

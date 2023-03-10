@@ -26,6 +26,8 @@ type PwnedPasswordsPasswordValidatorResponse struct {
 	Schemas []EnumpwnedPasswordsPasswordValidatorSchemaUrn `json:"schemas"`
 	// The base URL for requests used to interact with the Pwned Passwords service. The first five characters of the hexadecimal representation of the unsalted SHA-1 digest of a proposed password will be appended to this base URL to construct the HTTP GET request used to obtain information about potential matches.
 	PwnedPasswordsBaseURL string `json:"pwnedPasswordsBaseURL"`
+	// A reference to an HTTP proxy server that should be used for requests sent to the Pwned Passwords service.
+	HttpProxyExternalServer *string `json:"httpProxyExternalServer,omitempty"`
 	// Indicates whether this password validator should be used to validate clear-text passwords provided in LDAP add requests.
 	InvokeForAdd bool `json:"invokeForAdd"`
 	// Indicates whether this password validator should be used to validate clear-text passwords provided by an end user in the course of changing their own password.
@@ -207,6 +209,38 @@ func (o *PwnedPasswordsPasswordValidatorResponse) GetPwnedPasswordsBaseURLOk() (
 // SetPwnedPasswordsBaseURL sets field value
 func (o *PwnedPasswordsPasswordValidatorResponse) SetPwnedPasswordsBaseURL(v string) {
 	o.PwnedPasswordsBaseURL = v
+}
+
+// GetHttpProxyExternalServer returns the HttpProxyExternalServer field value if set, zero value otherwise.
+func (o *PwnedPasswordsPasswordValidatorResponse) GetHttpProxyExternalServer() string {
+	if o == nil || IsNil(o.HttpProxyExternalServer) {
+		var ret string
+		return ret
+	}
+	return *o.HttpProxyExternalServer
+}
+
+// GetHttpProxyExternalServerOk returns a tuple with the HttpProxyExternalServer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PwnedPasswordsPasswordValidatorResponse) GetHttpProxyExternalServerOk() (*string, bool) {
+	if o == nil || IsNil(o.HttpProxyExternalServer) {
+		return nil, false
+	}
+	return o.HttpProxyExternalServer, true
+}
+
+// HasHttpProxyExternalServer returns a boolean if a field has been set.
+func (o *PwnedPasswordsPasswordValidatorResponse) HasHttpProxyExternalServer() bool {
+	if o != nil && !IsNil(o.HttpProxyExternalServer) {
+		return true
+	}
+
+	return false
+}
+
+// SetHttpProxyExternalServer gets a reference to the given string and assigns it to the HttpProxyExternalServer field.
+func (o *PwnedPasswordsPasswordValidatorResponse) SetHttpProxyExternalServer(v string) {
+	o.HttpProxyExternalServer = &v
 }
 
 // GetInvokeForAdd returns the InvokeForAdd field value
@@ -508,6 +542,9 @@ func (o PwnedPasswordsPasswordValidatorResponse) ToMap() (map[string]interface{}
 	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["pwnedPasswordsBaseURL"] = o.PwnedPasswordsBaseURL
+	if !IsNil(o.HttpProxyExternalServer) {
+		toSerialize["httpProxyExternalServer"] = o.HttpProxyExternalServer
+	}
 	toSerialize["invokeForAdd"] = o.InvokeForAdd
 	toSerialize["invokeForSelfChange"] = o.InvokeForSelfChange
 	toSerialize["invokeForAdminReset"] = o.InvokeForAdminReset

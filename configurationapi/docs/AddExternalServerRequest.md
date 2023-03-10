@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **ServerName** | **string** | Name of the new External Server | 
 **Schemas** | [**[]EnumvaultExternalServerSchemaUrn**](EnumvaultExternalServerSchemaUrn.md) |  | 
 **ServerHostName** | **string** | The host name or IP address of the target LDAP server. | 
-**ServerPort** | Pointer to **int32** | The port number on which the server listens for requests. | [optional] 
+**ServerPort** | **int32** | The port number on which the server listens for requests. | 
 **SmtpSecurity** | Pointer to [**EnumexternalServerSmtpSecurityProp**](EnumexternalServerSmtpSecurityProp.md) |  | [optional] 
 **UserName** | Pointer to **string** | The name of the login account to use when connecting to the database server. | [optional] 
 **Password** | Pointer to **string** | The login password for the specified user. | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **Location** | Pointer to **string** | Specifies the location for the LDAP External Server. | [optional] 
 **BindDN** | Pointer to **string** | The DN to use to bind to the target LDAP server if simple authentication is required. | [optional] 
 **ConnectionSecurity** | Pointer to [**EnumexternalServerConnectionSecurityProp**](EnumexternalServerConnectionSecurityProp.md) |  | [optional] 
-**AuthenticationMethod** | Pointer to [**EnumexternalServerAuthenticationMethodProp**](EnumexternalServerAuthenticationMethodProp.md) |  | [optional] 
+**AuthenticationMethod** | Pointer to [**EnumexternalServerAmazonAwsAuthenticationMethodProp**](EnumexternalServerAmazonAwsAuthenticationMethodProp.md) |  | [optional] 
 **HealthCheckConnectTimeout** | Pointer to **string** | Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable. | [optional] 
 **MaxConnectionAge** | Pointer to **string** | Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections. | [optional] 
 **MinExpiredConnectionDisconnectInterval** | Pointer to **string** | Specifies the minimum length of time that should pass between connection closures as a result of the connections being established for longer than the maximum connection age. This may help avoid cases in which a large number of connections are closed and re-established in a short period of time because of the maximum connection age. | [optional] 
@@ -40,6 +40,8 @@ Name | Type | Description | Notes
 **JdbcConnectionProperties** | Pointer to **[]string** | Specifies the connection properties for the JDBC datasource. | [optional] 
 **TransactionIsolationLevel** | Pointer to [**EnumexternalServerTransactionIsolationLevelProp**](EnumexternalServerTransactionIsolationLevelProp.md) |  | [optional] 
 **TransportMechanism** | [**EnumexternalServerTransportMechanismProp**](EnumexternalServerTransportMechanismProp.md) |  | 
+**BasicAuthenticationUsername** | Pointer to **string** | The username to use to authenticate to the HTTP Proxy External Server. | [optional] 
+**BasicAuthenticationPassphraseProvider** | Pointer to **string** | A passphrase provider that provides access to the password to use to authenticate to the HTTP Proxy External Server. | [optional] 
 **HostnameVerificationMethod** | Pointer to [**EnumexternalServerHostnameVerificationMethodProp**](EnumexternalServerHostnameVerificationMethodProp.md) |  | [optional] 
 **ResponseTimeout** | Pointer to **string** | Specifies the maximum length of time to wait for response data to be read from an established connection before aborting a request to the server. | [optional] 
 **BaseURL** | **string** | The base URL of the external server, optionally including port number, for example \&quot;https://externalService:9031\&quot;. | 
@@ -50,8 +52,9 @@ Name | Type | Description | Notes
 **TrustStoreFile** | Pointer to **string** | The path to a file containing the information needed to trust the certificate presented by the Vault servers. | [optional] 
 **TrustStorePin** | Pointer to **string** | The passphrase needed to access the contents of the trust store. This is only required if a trust store file is required, and if that trust store requires a PIN to access its contents. | [optional] 
 **TrustStoreType** | Pointer to **string** | The store type for the specified trust store file. The value should likely be one of \&quot;JKS\&quot;, \&quot;PKCS12\&quot;, or \&quot;BCFKS\&quot;. | [optional] 
-**AwsAccessKeyID** | Pointer to **string** | The access key ID that will be used if authentication should use an access key. If this is provided, then an aws-secret-access-key must also be provided. If this is not provided, then no aws-secret-access-key may be configured, and the server must be running in an EC2 instance that is configured with an IAM role with permission to perform the necessary operations. | [optional] 
-**AwsSecretAccessKey** | Pointer to **string** | The secret access key that will be used if authentication should use an access key. If this is provided, then an aws-access-key-id must also be provided. If this is not provided, then no aws-access-key-id may be configured, and the server must be running in an EC2 instance that is configured with an IAM role with permission to perform the necessary operations. | [optional] 
+**HttpProxyExternalServer** | Pointer to **string** | A reference to an HTTP proxy server that should be used for requests sent to the AWS service. | [optional] 
+**AwsAccessKeyID** | Pointer to **string** | The access key ID that will be used if authentication should use an access key. If this is provided, then an aws-secret-access-key must also be provided. | [optional] 
+**AwsSecretAccessKey** | Pointer to **string** | The secret access key that will be used if authentication should use an access key. If this is provided, then an aws-access-key-id must also be provided. | [optional] 
 **AwsRegionName** | **string** | The name of the AWS region containing the resources that will be accessed. | 
 **VaultServerBaseURI** | **[]string** | The base URL needed to access the Vault server. The base URL should consist of the protocol (\&quot;http\&quot; or \&quot;https\&quot;), the server address (resolvable name or IP address), and the port number. For example, \&quot;https://vault.example.com:8200/\&quot;. | 
 **VaultAuthenticationMethod** | **string** | The mechanism used to authenticate to the Vault server. | 
@@ -60,7 +63,7 @@ Name | Type | Description | Notes
 
 ### NewAddExternalServerRequest
 
-`func NewAddExternalServerRequest(serverName string, schemas []EnumvaultExternalServerSchemaUrn, serverHostName string, jdbcDriverType EnumexternalServerJdbcDriverTypeProp, transportMechanism EnumexternalServerTransportMechanismProp, baseURL string, conjurServerBaseURI []string, conjurAuthenticationMethod string, conjurAccountName string, awsRegionName string, vaultServerBaseURI []string, vaultAuthenticationMethod string, ) *AddExternalServerRequest`
+`func NewAddExternalServerRequest(serverName string, schemas []EnumvaultExternalServerSchemaUrn, serverHostName string, serverPort int32, jdbcDriverType EnumexternalServerJdbcDriverTypeProp, transportMechanism EnumexternalServerTransportMechanismProp, baseURL string, conjurServerBaseURI []string, conjurAuthenticationMethod string, conjurAccountName string, awsRegionName string, vaultServerBaseURI []string, vaultAuthenticationMethod string, ) *AddExternalServerRequest`
 
 NewAddExternalServerRequest instantiates a new AddExternalServerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -154,11 +157,6 @@ and a boolean to check if the value has been set.
 
 SetServerPort sets ServerPort field to given value.
 
-### HasServerPort
-
-`func (o *AddExternalServerRequest) HasServerPort() bool`
-
-HasServerPort returns a boolean if a field has been set.
 
 ### GetSmtpSecurity
 
@@ -462,20 +460,20 @@ HasConnectionSecurity returns a boolean if a field has been set.
 
 ### GetAuthenticationMethod
 
-`func (o *AddExternalServerRequest) GetAuthenticationMethod() EnumexternalServerAuthenticationMethodProp`
+`func (o *AddExternalServerRequest) GetAuthenticationMethod() EnumexternalServerAmazonAwsAuthenticationMethodProp`
 
 GetAuthenticationMethod returns the AuthenticationMethod field if non-nil, zero value otherwise.
 
 ### GetAuthenticationMethodOk
 
-`func (o *AddExternalServerRequest) GetAuthenticationMethodOk() (*EnumexternalServerAuthenticationMethodProp, bool)`
+`func (o *AddExternalServerRequest) GetAuthenticationMethodOk() (*EnumexternalServerAmazonAwsAuthenticationMethodProp, bool)`
 
 GetAuthenticationMethodOk returns a tuple with the AuthenticationMethod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthenticationMethod
 
-`func (o *AddExternalServerRequest) SetAuthenticationMethod(v EnumexternalServerAuthenticationMethodProp)`
+`func (o *AddExternalServerRequest) SetAuthenticationMethod(v EnumexternalServerAmazonAwsAuthenticationMethodProp)`
 
 SetAuthenticationMethod sets AuthenticationMethod field to given value.
 
@@ -950,6 +948,56 @@ and a boolean to check if the value has been set.
 SetTransportMechanism sets TransportMechanism field to given value.
 
 
+### GetBasicAuthenticationUsername
+
+`func (o *AddExternalServerRequest) GetBasicAuthenticationUsername() string`
+
+GetBasicAuthenticationUsername returns the BasicAuthenticationUsername field if non-nil, zero value otherwise.
+
+### GetBasicAuthenticationUsernameOk
+
+`func (o *AddExternalServerRequest) GetBasicAuthenticationUsernameOk() (*string, bool)`
+
+GetBasicAuthenticationUsernameOk returns a tuple with the BasicAuthenticationUsername field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBasicAuthenticationUsername
+
+`func (o *AddExternalServerRequest) SetBasicAuthenticationUsername(v string)`
+
+SetBasicAuthenticationUsername sets BasicAuthenticationUsername field to given value.
+
+### HasBasicAuthenticationUsername
+
+`func (o *AddExternalServerRequest) HasBasicAuthenticationUsername() bool`
+
+HasBasicAuthenticationUsername returns a boolean if a field has been set.
+
+### GetBasicAuthenticationPassphraseProvider
+
+`func (o *AddExternalServerRequest) GetBasicAuthenticationPassphraseProvider() string`
+
+GetBasicAuthenticationPassphraseProvider returns the BasicAuthenticationPassphraseProvider field if non-nil, zero value otherwise.
+
+### GetBasicAuthenticationPassphraseProviderOk
+
+`func (o *AddExternalServerRequest) GetBasicAuthenticationPassphraseProviderOk() (*string, bool)`
+
+GetBasicAuthenticationPassphraseProviderOk returns a tuple with the BasicAuthenticationPassphraseProvider field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBasicAuthenticationPassphraseProvider
+
+`func (o *AddExternalServerRequest) SetBasicAuthenticationPassphraseProvider(v string)`
+
+SetBasicAuthenticationPassphraseProvider sets BasicAuthenticationPassphraseProvider field to given value.
+
+### HasBasicAuthenticationPassphraseProvider
+
+`func (o *AddExternalServerRequest) HasBasicAuthenticationPassphraseProvider() bool`
+
+HasBasicAuthenticationPassphraseProvider returns a boolean if a field has been set.
+
 ### GetHostnameVerificationMethod
 
 `func (o *AddExternalServerRequest) GetHostnameVerificationMethod() EnumexternalServerHostnameVerificationMethodProp`
@@ -1179,6 +1227,31 @@ SetTrustStoreType sets TrustStoreType field to given value.
 `func (o *AddExternalServerRequest) HasTrustStoreType() bool`
 
 HasTrustStoreType returns a boolean if a field has been set.
+
+### GetHttpProxyExternalServer
+
+`func (o *AddExternalServerRequest) GetHttpProxyExternalServer() string`
+
+GetHttpProxyExternalServer returns the HttpProxyExternalServer field if non-nil, zero value otherwise.
+
+### GetHttpProxyExternalServerOk
+
+`func (o *AddExternalServerRequest) GetHttpProxyExternalServerOk() (*string, bool)`
+
+GetHttpProxyExternalServerOk returns a tuple with the HttpProxyExternalServer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHttpProxyExternalServer
+
+`func (o *AddExternalServerRequest) SetHttpProxyExternalServer(v string)`
+
+SetHttpProxyExternalServer sets HttpProxyExternalServer field to given value.
+
+### HasHttpProxyExternalServer
+
+`func (o *AddExternalServerRequest) HasHttpProxyExternalServer() bool`
+
+HasHttpProxyExternalServer returns a boolean if a field has been set.
 
 ### GetAwsAccessKeyID
 
