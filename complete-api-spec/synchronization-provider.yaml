@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access synchronization-providers
   name: synchronization-provider
@@ -170,7 +170,6 @@ components:
   schemas:
     replication-synchronization-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -180,8 +179,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumreplication-synchronization-providerSchemaUrn'
           id:
-            description: Name of the Synchronization Provider
             type: string
+            description: >-
+                Name of the Synchronization Provider
           numUpdateReplayThreads:
             type: integer
             description: >-
@@ -194,17 +194,17 @@ components:
             type: boolean
             description: >-
                 Indicates whether the Synchronization Provider is enabled for use.
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumreplication-synchronization-providerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:synchronization-provider:replication"
     custom-synchronization-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -214,8 +214,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumcustom-synchronization-providerSchemaUrn'
           id:
-            description: Name of the Synchronization Provider
             type: string
+            description: >-
+                Name of the Synchronization Provider
           description:
             type: string
             description: >-
@@ -224,17 +225,17 @@ components:
             type: boolean
             description: >-
                 Indicates whether the Synchronization Provider is enabled for use.
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumcustom-synchronization-providerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:synchronization-provider:custom"
     replication-domain-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -275,9 +276,10 @@ components:
             type: string
             description: >-
                 Defines how long to wait before retrying certain operations, specifically operations that might have failed because they depend on an operation from a different server that has not yet replicated to this instance.
-        required:
-        - serverID
-        - baseDN
+      - $ref: '#/components/schemas/meta'
+      required:
+      - serverID
+      - baseDN
     Enumreplication-domainSchemaUrn:
       type: string
       enum:

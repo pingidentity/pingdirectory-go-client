@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access external-servers
   name: external-server
@@ -205,27 +205,37 @@ paths:
       - external-server
 components:
   schemas:
+    Enumexternal-server-smtpSecurityProp:
+      type: string
+      enum:
+      - "none"
+      - "starttls"
+      - "ssl"
+      description: >-
+          This property specifies type of connection security to use when connecting to the outgoing mail server.
     add-smtp-external-server-request:
       allOf:
       - type: object
         properties:
           serverName:
-            description: Name of the new External Server
             type: string
-        required:
-        - serverName
+            description: >-
+                Name of the new External Server
       - $ref: '#/components/schemas/smtp-external-server-shared'
+      required:
+      - serverName
     smtp-external-server-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the External Server
             type: string
-        required:
-        - id
+            description: >-
+                Name of the External Server
       - $ref: '#/components/schemas/smtp-external-server-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     smtp-external-server-shared:
       type: object
       properties:
@@ -245,6 +255,8 @@ components:
               The port number where the smtp server listens for requests.
         smtpSecurity:
           $ref: '#/components/schemas/Enumexternal-server-smtpSecurityProp'
+          description: >-
+              This property specifies type of connection security to use when connecting to the outgoing mail server.
         userName:
           type: string
           description: >-
@@ -279,1571 +291,14 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:external-server:smtp"
-    add-nokia-ds-external-server-request:
-      allOf:
-      - type: object
-        properties:
-          serverName:
-            description: Name of the new External Server
-            type: string
-        required:
-        - serverName
-      - $ref: '#/components/schemas/nokia-ds-external-server-shared'
-    nokia-ds-external-server-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - type: object
-        properties:
-          id:
-            description: Name of the External Server
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/nokia-ds-external-server-shared'
-      required:
-      - verifyCredentialsMethod
-      - serverPort
-      - connectionSecurity
-      - authenticationMethod
-      - maxConnectionAge
-      - connectTimeout
-      - maxResponseSize
-    nokia-ds-external-server-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumnokia-ds-external-serverSchemaUrn'
-        verifyCredentialsMethod:
-          $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
-        useAdministrativeOperationControl:
-          type: boolean
-          description: >-
-              Indicates whether to include the administrative operation request control in requests sent to this server which are intended for administrative operations (e.g., health checking) rather than requests directly from clients.
-        serverHostName:
-          type: string
-          description: >-
-              The host name or IP address of the target LDAP server.
-        serverPort:
-          type: integer
-          description: >-
-              The port number on which the server listens for requests.
-        location:
-          type: string
-          description: >-
-              Specifies the location for the LDAP External Server.
-        bindDN:
-          type: string
-          description: >-
-              The DN to use to bind to the target LDAP server if simple authentication is required.
-        password:
-          type: string
-          format: password
-          description: >-
-              The login password for the specified user.
-        passphraseProvider:
-          type: string
-          description: >-
-              The passphrase provider to use to obtain the login password for the specified user.
-        connectionSecurity:
-          $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
-        authenticationMethod:
-          $ref: '#/components/schemas/Enumexternal-server-nokia-ds-authenticationMethodProp'
-        healthCheckConnectTimeout:
-          type: string
-          description: >-
-              Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
-        maxConnectionAge:
-          type: string
-          description: >-
-              Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections.
-        minExpiredConnectionDisconnectInterval:
-          type: string
-          description: >-
-              Specifies the minimum length of time that should pass between connection closures as a result of the connections being established for longer than the maximum connection age. This may help avoid cases in which a large number of connections are closed and re-established in a short period of time because of the maximum connection age.
-        connectTimeout:
-          type: string
-          description: >-
-              Specifies the maximum length of time to wait for a connection to be established before giving up and considering the server unavailable.
-        maxResponseSize:
-          type: string
-          description: >-
-              Specifies the maximum response size that should be supported for messages received from the LDAP external server.
-        keyManagerProvider:
-          type: string
-          description: >-
-              The key manager provider to use if SSL or StartTLS is to be used for connection-level security. When specifying a value for this property (except when using the Null key manager provider) you must ensure that the external server trusts this server's public certificate by adding this server's public certificate to the external server's trust store.
-        trustManagerProvider:
-          type: string
-          description: >-
-              The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
-        initialConnections:
-          type: integer
-          description: >-
-              The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
-        maxConnections:
-          type: integer
-          description: >-
-              The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
-        defunctConnectionResultCode:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
-        abandonOnTimeout:
-          type: boolean
-          description: >-
-              Indicates whether to send an abandon request for an operation for which a response timeout is encountered. A request which has timed out on one server may be retried on another server regardless of whether an abandon request is sent, but if the initial attempt is not abandoned then a long-running operation may unnecessarily continue to consume processing resources on the initial server.
-        description:
-          type: string
-          description: >-
-              A description for this External Server
-      required:
-      - schemas
-      - serverHostName
-    Enumnokia-ds-external-serverSchemaUrn:
+    Enumexternal-server-verifyCredentialsMethodProp:
       type: string
       enum:
-      - "urn:pingidentity:schemas:configuration:2.0:external-server:nokia-ds"
-    add-ping-identity-ds-external-server-request:
-      allOf:
-      - type: object
-        properties:
-          serverName:
-            description: Name of the new External Server
-            type: string
-        required:
-        - serverName
-      - $ref: '#/components/schemas/ping-identity-ds-external-server-shared'
-    ping-identity-ds-external-server-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - type: object
-        properties:
-          id:
-            description: Name of the External Server
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/ping-identity-ds-external-server-shared'
-      required:
-      - verifyCredentialsMethod
-      - serverPort
-      - connectionSecurity
-      - authenticationMethod
-      - maxConnectionAge
-      - connectTimeout
-      - maxResponseSize
-    ping-identity-ds-external-server-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumping-identity-ds-external-serverSchemaUrn'
-        verifyCredentialsMethod:
-          $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
-        useAdministrativeOperationControl:
-          type: boolean
-          description: >-
-              Indicates whether to include the administrative operation request control in requests sent to this server which are intended for administrative operations (e.g., health checking) rather than requests directly from clients.
-        serverHostName:
-          type: string
-          description: >-
-              The host name or IP address of the target LDAP server.
-        serverPort:
-          type: integer
-          description: >-
-              The port number on which the server listens for requests.
-        location:
-          type: string
-          description: >-
-              Specifies the location for the LDAP External Server.
-        bindDN:
-          type: string
-          description: >-
-              The DN to use to bind to the target LDAP server if simple authentication is required.
-        password:
-          type: string
-          format: password
-          description: >-
-              The login password for the specified user.
-        passphraseProvider:
-          type: string
-          description: >-
-              The passphrase provider to use to obtain the login password for the specified user.
-        connectionSecurity:
-          $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
-        authenticationMethod:
-          $ref: '#/components/schemas/Enumexternal-server-ping-identity-ds-authenticationMethodProp'
-        healthCheckConnectTimeout:
-          type: string
-          description: >-
-              Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
-        maxConnectionAge:
-          type: string
-          description: >-
-              Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections.
-        minExpiredConnectionDisconnectInterval:
-          type: string
-          description: >-
-              Specifies the minimum length of time that should pass between connection closures as a result of the connections being established for longer than the maximum connection age. This may help avoid cases in which a large number of connections are closed and re-established in a short period of time because of the maximum connection age.
-        connectTimeout:
-          type: string
-          description: >-
-              Specifies the maximum length of time to wait for a connection to be established before giving up and considering the server unavailable.
-        maxResponseSize:
-          type: string
-          description: >-
-              Specifies the maximum response size that should be supported for messages received from the LDAP external server.
-        keyManagerProvider:
-          type: string
-          description: >-
-              The key manager provider to use if SSL or StartTLS is to be used for connection-level security. When specifying a value for this property (except when using the Null key manager provider) you must ensure that the external server trusts this server's public certificate by adding this server's public certificate to the external server's trust store.
-        trustManagerProvider:
-          type: string
-          description: >-
-              The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
-        initialConnections:
-          type: integer
-          description: >-
-              The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
-        maxConnections:
-          type: integer
-          description: >-
-              The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
-        defunctConnectionResultCode:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
-        abandonOnTimeout:
-          type: boolean
-          description: >-
-              Indicates whether to send an abandon request for an operation for which a response timeout is encountered. A request which has timed out on one server may be retried on another server regardless of whether an abandon request is sent, but if the initial attempt is not abandoned then a long-running operation may unnecessarily continue to consume processing resources on the initial server.
-        description:
-          type: string
-          description: >-
-              A description for this External Server
-      required:
-      - schemas
-      - serverHostName
-    Enumping-identity-ds-external-serverSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:external-server:ping-identity-ds"
-    add-active-directory-external-server-request:
-      allOf:
-      - type: object
-        properties:
-          serverName:
-            description: Name of the new External Server
-            type: string
-        required:
-        - serverName
-      - $ref: '#/components/schemas/active-directory-external-server-shared'
-    active-directory-external-server-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - type: object
-        properties:
-          id:
-            description: Name of the External Server
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/active-directory-external-server-shared'
-      required:
-      - serverPort
-      - connectionSecurity
-      - authenticationMethod
-      - verifyCredentialsMethod
-      - maxConnectionAge
-      - connectTimeout
-      - maxResponseSize
-    active-directory-external-server-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumactive-directory-external-serverSchemaUrn'
-        bindDN:
-          type: string
-          description: >-
-              The DN to use to bind to the target LDAP server if simple authentication is required. The authentication identity can also be specified in User-Principal-Name (UPN) format.
-        serverHostName:
-          type: string
-          description: >-
-              The host name or IP address of the target LDAP server.
-        serverPort:
-          type: integer
-          description: >-
-              The port number on which the server listens for requests.
-        location:
-          type: string
-          description: >-
-              Specifies the location for the LDAP External Server.
-        password:
-          type: string
-          format: password
-          description: >-
-              The login password for the specified user.
-        passphraseProvider:
-          type: string
-          description: >-
-              The passphrase provider to use to obtain the login password for the specified user.
-        connectionSecurity:
-          $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
-        authenticationMethod:
-          $ref: '#/components/schemas/Enumexternal-server-active-directory-authenticationMethodProp'
-        verifyCredentialsMethod:
-          $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
-        healthCheckConnectTimeout:
-          type: string
-          description: >-
-              Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
-        maxConnectionAge:
-          type: string
-          description: >-
-              Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections.
-        minExpiredConnectionDisconnectInterval:
-          type: string
-          description: >-
-              Specifies the minimum length of time that should pass between connection closures as a result of the connections being established for longer than the maximum connection age. This may help avoid cases in which a large number of connections are closed and re-established in a short period of time because of the maximum connection age.
-        connectTimeout:
-          type: string
-          description: >-
-              Specifies the maximum length of time to wait for a connection to be established before giving up and considering the server unavailable.
-        maxResponseSize:
-          type: string
-          description: >-
-              Specifies the maximum response size that should be supported for messages received from the LDAP external server.
-        keyManagerProvider:
-          type: string
-          description: >-
-              The key manager provider to use if SSL or StartTLS is to be used for connection-level security. When specifying a value for this property (except when using the Null key manager provider) you must ensure that the external server trusts this server's public certificate by adding this server's public certificate to the external server's trust store.
-        trustManagerProvider:
-          type: string
-          description: >-
-              The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
-        initialConnections:
-          type: integer
-          description: >-
-              The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
-        maxConnections:
-          type: integer
-          description: >-
-              The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
-        defunctConnectionResultCode:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
-        abandonOnTimeout:
-          type: boolean
-          description: >-
-              Indicates whether to send an abandon request for an operation for which a response timeout is encountered. A request which has timed out on one server may be retried on another server regardless of whether an abandon request is sent, but if the initial attempt is not abandoned then a long-running operation may unnecessarily continue to consume processing resources on the initial server.
-        description:
-          type: string
-          description: >-
-              A description for this External Server
-      required:
-      - schemas
-      - serverHostName
-    Enumactive-directory-external-serverSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:external-server:active-directory"
-    add-jdbc-external-server-request:
-      allOf:
-      - type: object
-        properties:
-          serverName:
-            description: Name of the new External Server
-            type: string
-        required:
-        - serverName
-      - $ref: '#/components/schemas/jdbc-external-server-shared'
-    jdbc-external-server-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - type: object
-        properties:
-          id:
-            description: Name of the External Server
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/jdbc-external-server-shared'
-    jdbc-external-server-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumjdbc-external-serverSchemaUrn'
-        jdbcDriverType:
-          $ref: '#/components/schemas/Enumexternal-server-jdbcDriverTypeProp'
-        jdbcDriverURL:
-          type: string
-          description: >-
-              Specify the complete JDBC URL which will be used instead of the automatic URL format. You must select type 'other' for the jdbc-driver-type.
-        databaseName:
-          type: string
-          description: >-
-              Specifies which database to connect to. This is ignored if jdbc-driver-url is specified.
-        serverHostName:
-          type: string
-          description: >-
-              The host name of the database server. This is ignored if jdbc-driver-url is specified.
-        serverPort:
-          type: integer
-          description: >-
-              The port number where the database server listens for requests. This is ignored if jdbc-driver-url is specified
-        userName:
-          type: string
-          description: >-
-              The name of the login account to use when connecting to the database server.
-        password:
-          type: string
-          format: password
-          description: >-
-              The login password for the specified user name.
-        passphraseProvider:
-          type: string
-          description: >-
-              The passphrase provider to use to obtain the login password for the specified user.
-        validationQuery:
-          type: string
-          description: >-
-              The SQL query that will be used to validate connections to the database before making them available to the Directory Server.
-        validationQueryTimeout:
-          type: string
-          description: >-
-              Specifies the amount of time to wait for a response from the database when executing the validation query, if one is set. If the timeout is exceeded, the Directory Server will drop the connection and obtain a new one. A value of zero indicates no timeout.
-        jdbcConnectionProperties:
-          type: array
-          items:
-            type: string
-          description: >-
-              Specifies the connection properties for the JDBC datasource.
-        transactionIsolationLevel:
-          $ref: '#/components/schemas/Enumexternal-server-transactionIsolationLevelProp'
-        description:
-          type: string
-          description: >-
-              A description for this External Server
-      required:
-      - schemas
-      - jdbcDriverType
-    Enumjdbc-external-serverSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:external-server:jdbc"
-    add-syslog-external-server-request:
-      allOf:
-      - type: object
-        properties:
-          serverName:
-            description: Name of the new External Server
-            type: string
-        required:
-        - serverName
-      - $ref: '#/components/schemas/syslog-external-server-shared'
-    syslog-external-server-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - type: object
-        properties:
-          id:
-            description: Name of the External Server
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/syslog-external-server-shared'
-      required:
-      - connectTimeout
-      - maxConnectionAge
-      - trustManagerProvider
-    syslog-external-server-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumsyslog-external-serverSchemaUrn'
-        serverHostName:
-          type: string
-          description: >-
-              The address of the syslog server.
-        serverPort:
-          type: integer
-          description: >-
-              The port on which the syslog server accepts connections.
-        transportMechanism:
-          $ref: '#/components/schemas/Enumexternal-server-transportMechanismProp'
-        connectTimeout:
-          type: string
-          description: >-
-              Specifies the maximum length of time to wait for a connection to be established before giving up and considering the server unavailable. This will only be used when communicating with the syslog server over TCP (with or without TLS encryption).
-        maxConnectionAge:
-          type: string
-          description: >-
-              The maximum length of time that TCP connections should remain established. This will be ignored for UDP-based connections. A zero duration indicates that no maximum age will be imposed.
-        trustManagerProvider:
-          type: string
-          description: >-
-              A trust manager provider that will be used to determine whether to trust the certificate chain presented by the syslog server when communication is encrypted with TLS. This property will be ignored when not using TLS encryption.
-        description:
-          type: string
-          description: >-
-              A description for this External Server
-      required:
-      - schemas
-      - serverHostName
-      - transportMechanism
-    Enumsyslog-external-serverSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:external-server:syslog"
-    add-ping-identity-proxy-server-external-server-request:
-      allOf:
-      - type: object
-        properties:
-          serverName:
-            description: Name of the new External Server
-            type: string
-        required:
-        - serverName
-      - $ref: '#/components/schemas/ping-identity-proxy-server-external-server-shared'
-    ping-identity-proxy-server-external-server-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - type: object
-        properties:
-          id:
-            description: Name of the External Server
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/ping-identity-proxy-server-external-server-shared'
-      required:
-      - verifyCredentialsMethod
-      - serverPort
-      - connectionSecurity
-      - authenticationMethod
-      - maxConnectionAge
-      - connectTimeout
-      - maxResponseSize
-    ping-identity-proxy-server-external-server-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumping-identity-proxy-server-external-serverSchemaUrn'
-        verifyCredentialsMethod:
-          $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
-        useAdministrativeOperationControl:
-          type: boolean
-          description: >-
-              Indicates whether to include the administrative operation request control in requests sent to this server which are intended for administrative operations (e.g., health checking) rather than requests directly from clients.
-        serverHostName:
-          type: string
-          description: >-
-              The host name or IP address of the target LDAP server.
-        serverPort:
-          type: integer
-          description: >-
-              The port number on which the server listens for requests.
-        location:
-          type: string
-          description: >-
-              Specifies the location for the LDAP External Server.
-        bindDN:
-          type: string
-          description: >-
-              The DN to use to bind to the target LDAP server if simple authentication is required.
-        password:
-          type: string
-          format: password
-          description: >-
-              The login password for the specified user.
-        passphraseProvider:
-          type: string
-          description: >-
-              The passphrase provider to use to obtain the login password for the specified user.
-        connectionSecurity:
-          $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
-        authenticationMethod:
-          $ref: '#/components/schemas/Enumexternal-server-ping-identity-proxy-server-authenticationMethodProp'
-        healthCheckConnectTimeout:
-          type: string
-          description: >-
-              Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
-        maxConnectionAge:
-          type: string
-          description: >-
-              Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections.
-        minExpiredConnectionDisconnectInterval:
-          type: string
-          description: >-
-              Specifies the minimum length of time that should pass between connection closures as a result of the connections being established for longer than the maximum connection age. This may help avoid cases in which a large number of connections are closed and re-established in a short period of time because of the maximum connection age.
-        connectTimeout:
-          type: string
-          description: >-
-              Specifies the maximum length of time to wait for a connection to be established before giving up and considering the server unavailable.
-        maxResponseSize:
-          type: string
-          description: >-
-              Specifies the maximum response size that should be supported for messages received from the LDAP external server.
-        keyManagerProvider:
-          type: string
-          description: >-
-              The key manager provider to use if SSL or StartTLS is to be used for connection-level security. When specifying a value for this property (except when using the Null key manager provider) you must ensure that the external server trusts this server's public certificate by adding this server's public certificate to the external server's trust store.
-        trustManagerProvider:
-          type: string
-          description: >-
-              The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
-        initialConnections:
-          type: integer
-          description: >-
-              The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
-        maxConnections:
-          type: integer
-          description: >-
-              The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
-        defunctConnectionResultCode:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
-        abandonOnTimeout:
-          type: boolean
-          description: >-
-              Indicates whether to send an abandon request for an operation for which a response timeout is encountered. A request which has timed out on one server may be retried on another server regardless of whether an abandon request is sent, but if the initial attempt is not abandoned then a long-running operation may unnecessarily continue to consume processing resources on the initial server.
-        description:
-          type: string
-          description: >-
-              A description for this External Server
-      required:
-      - schemas
-      - serverHostName
-    Enumping-identity-proxy-server-external-serverSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:external-server:ping-identity-proxy-server"
-    add-http-proxy-external-server-request:
-      allOf:
-      - type: object
-        properties:
-          serverName:
-            description: Name of the new External Server
-            type: string
-        required:
-        - serverName
-      - $ref: '#/components/schemas/http-proxy-external-server-shared'
-    http-proxy-external-server-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - type: object
-        properties:
-          id:
-            description: Name of the External Server
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/http-proxy-external-server-shared'
-    http-proxy-external-server-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumhttp-proxy-external-serverSchemaUrn'
-        serverHostName:
-          type: string
-          description: >-
-              The host name or IP address of the HTTP Proxy External Server.
-        serverPort:
-          type: integer
-          description: >-
-              The port on which the HTTP Proxy External Server is listening for connections.
-        basicAuthenticationUsername:
-          type: string
-          description: >-
-              The username to use to authenticate to the HTTP Proxy External Server.
-        basicAuthenticationPassphraseProvider:
-          type: string
-          description: >-
-              A passphrase provider that provides access to the password to use to authenticate to the HTTP Proxy External Server.
-        description:
-          type: string
-          description: >-
-              A description for this External Server
-      required:
-      - schemas
-      - serverHostName
-      - serverPort
-    Enumhttp-proxy-external-serverSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:external-server:http-proxy"
-    add-nokia-proxy-server-external-server-request:
-      allOf:
-      - type: object
-        properties:
-          serverName:
-            description: Name of the new External Server
-            type: string
-        required:
-        - serverName
-      - $ref: '#/components/schemas/nokia-proxy-server-external-server-shared'
-    nokia-proxy-server-external-server-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - type: object
-        properties:
-          id:
-            description: Name of the External Server
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/nokia-proxy-server-external-server-shared'
-      required:
-      - verifyCredentialsMethod
-      - serverPort
-      - connectionSecurity
-      - authenticationMethod
-      - maxConnectionAge
-      - connectTimeout
-      - maxResponseSize
-    nokia-proxy-server-external-server-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumnokia-proxy-server-external-serverSchemaUrn'
-        verifyCredentialsMethod:
-          $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
-        useAdministrativeOperationControl:
-          type: boolean
-          description: >-
-              Indicates whether to include the administrative operation request control in requests sent to this server which are intended for administrative operations (e.g., health checking) rather than requests directly from clients.
-        serverHostName:
-          type: string
-          description: >-
-              The host name or IP address of the target LDAP server.
-        serverPort:
-          type: integer
-          description: >-
-              The port number on which the server listens for requests.
-        location:
-          type: string
-          description: >-
-              Specifies the location for the LDAP External Server.
-        bindDN:
-          type: string
-          description: >-
-              The DN to use to bind to the target LDAP server if simple authentication is required.
-        password:
-          type: string
-          format: password
-          description: >-
-              The login password for the specified user.
-        passphraseProvider:
-          type: string
-          description: >-
-              The passphrase provider to use to obtain the login password for the specified user.
-        connectionSecurity:
-          $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
-        authenticationMethod:
-          $ref: '#/components/schemas/Enumexternal-server-nokia-proxy-server-authenticationMethodProp'
-        healthCheckConnectTimeout:
-          type: string
-          description: >-
-              Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
-        maxConnectionAge:
-          type: string
-          description: >-
-              Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections.
-        minExpiredConnectionDisconnectInterval:
-          type: string
-          description: >-
-              Specifies the minimum length of time that should pass between connection closures as a result of the connections being established for longer than the maximum connection age. This may help avoid cases in which a large number of connections are closed and re-established in a short period of time because of the maximum connection age.
-        connectTimeout:
-          type: string
-          description: >-
-              Specifies the maximum length of time to wait for a connection to be established before giving up and considering the server unavailable.
-        maxResponseSize:
-          type: string
-          description: >-
-              Specifies the maximum response size that should be supported for messages received from the LDAP external server.
-        keyManagerProvider:
-          type: string
-          description: >-
-              The key manager provider to use if SSL or StartTLS is to be used for connection-level security. When specifying a value for this property (except when using the Null key manager provider) you must ensure that the external server trusts this server's public certificate by adding this server's public certificate to the external server's trust store.
-        trustManagerProvider:
-          type: string
-          description: >-
-              The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
-        initialConnections:
-          type: integer
-          description: >-
-              The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
-        maxConnections:
-          type: integer
-          description: >-
-              The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
-        defunctConnectionResultCode:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
-        abandonOnTimeout:
-          type: boolean
-          description: >-
-              Indicates whether to send an abandon request for an operation for which a response timeout is encountered. A request which has timed out on one server may be retried on another server regardless of whether an abandon request is sent, but if the initial attempt is not abandoned then a long-running operation may unnecessarily continue to consume processing resources on the initial server.
-        description:
-          type: string
-          description: >-
-              A description for this External Server
-      required:
-      - schemas
-      - serverHostName
-    Enumnokia-proxy-server-external-serverSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:external-server:nokia-proxy-server"
-    add-opendj-external-server-request:
-      allOf:
-      - type: object
-        properties:
-          serverName:
-            description: Name of the new External Server
-            type: string
-        required:
-        - serverName
-      - $ref: '#/components/schemas/opendj-external-server-shared'
-    opendj-external-server-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - type: object
-        properties:
-          id:
-            description: Name of the External Server
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/opendj-external-server-shared'
-      required:
-      - serverPort
-      - connectionSecurity
-      - authenticationMethod
-      - verifyCredentialsMethod
-      - maxConnectionAge
-      - connectTimeout
-      - maxResponseSize
-    opendj-external-server-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumopendj-external-serverSchemaUrn'
-        serverHostName:
-          type: string
-          description: >-
-              The host name or IP address of the target LDAP server.
-        serverPort:
-          type: integer
-          description: >-
-              The port number on which the server listens for requests.
-        location:
-          type: string
-          description: >-
-              Specifies the location for the LDAP External Server.
-        bindDN:
-          type: string
-          description: >-
-              The DN to use to bind to the target LDAP server if simple authentication is required.
-        password:
-          type: string
-          format: password
-          description: >-
-              The login password for the specified user.
-        passphraseProvider:
-          type: string
-          description: >-
-              The passphrase provider to use to obtain the login password for the specified user.
-        connectionSecurity:
-          $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
-        authenticationMethod:
-          $ref: '#/components/schemas/Enumexternal-server-opendj-authenticationMethodProp'
-        verifyCredentialsMethod:
-          $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
-        healthCheckConnectTimeout:
-          type: string
-          description: >-
-              Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
-        maxConnectionAge:
-          type: string
-          description: >-
-              Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections.
-        minExpiredConnectionDisconnectInterval:
-          type: string
-          description: >-
-              Specifies the minimum length of time that should pass between connection closures as a result of the connections being established for longer than the maximum connection age. This may help avoid cases in which a large number of connections are closed and re-established in a short period of time because of the maximum connection age.
-        connectTimeout:
-          type: string
-          description: >-
-              Specifies the maximum length of time to wait for a connection to be established before giving up and considering the server unavailable.
-        maxResponseSize:
-          type: string
-          description: >-
-              Specifies the maximum response size that should be supported for messages received from the LDAP external server.
-        keyManagerProvider:
-          type: string
-          description: >-
-              The key manager provider to use if SSL or StartTLS is to be used for connection-level security. When specifying a value for this property (except when using the Null key manager provider) you must ensure that the external server trusts this server's public certificate by adding this server's public certificate to the external server's trust store.
-        trustManagerProvider:
-          type: string
-          description: >-
-              The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
-        initialConnections:
-          type: integer
-          description: >-
-              The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
-        maxConnections:
-          type: integer
-          description: >-
-              The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
-        defunctConnectionResultCode:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
-        abandonOnTimeout:
-          type: boolean
-          description: >-
-              Indicates whether to send an abandon request for an operation for which a response timeout is encountered. A request which has timed out on one server may be retried on another server regardless of whether an abandon request is sent, but if the initial attempt is not abandoned then a long-running operation may unnecessarily continue to consume processing resources on the initial server.
-        description:
-          type: string
-          description: >-
-              A description for this External Server
-      required:
-      - schemas
-      - serverHostName
-    Enumopendj-external-serverSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:external-server:opendj"
-    add-ldap-external-server-request:
-      allOf:
-      - type: object
-        properties:
-          serverName:
-            description: Name of the new External Server
-            type: string
-        required:
-        - serverName
-      - $ref: '#/components/schemas/ldap-external-server-shared'
-    ldap-external-server-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - type: object
-        properties:
-          id:
-            description: Name of the External Server
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/ldap-external-server-shared'
-      required:
-      - serverPort
-      - connectionSecurity
-      - authenticationMethod
-      - verifyCredentialsMethod
-      - maxConnectionAge
-      - connectTimeout
-      - maxResponseSize
-    ldap-external-server-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumldap-external-serverSchemaUrn'
-        serverHostName:
-          type: string
-          description: >-
-              The host name or IP address of the target LDAP server.
-        serverPort:
-          type: integer
-          description: >-
-              The port number on which the server listens for requests.
-        location:
-          type: string
-          description: >-
-              Specifies the location for the LDAP External Server.
-        bindDN:
-          type: string
-          description: >-
-              The DN to use to bind to the target LDAP server if simple authentication is required.
-        password:
-          type: string
-          format: password
-          description: >-
-              The login password for the specified user.
-        passphraseProvider:
-          type: string
-          description: >-
-              The passphrase provider to use to obtain the login password for the specified user.
-        connectionSecurity:
-          $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
-        authenticationMethod:
-          $ref: '#/components/schemas/Enumexternal-server-ldap-authenticationMethodProp'
-        verifyCredentialsMethod:
-          $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
-        healthCheckConnectTimeout:
-          type: string
-          description: >-
-              Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
-        maxConnectionAge:
-          type: string
-          description: >-
-              Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections.
-        minExpiredConnectionDisconnectInterval:
-          type: string
-          description: >-
-              Specifies the minimum length of time that should pass between connection closures as a result of the connections being established for longer than the maximum connection age. This may help avoid cases in which a large number of connections are closed and re-established in a short period of time because of the maximum connection age.
-        connectTimeout:
-          type: string
-          description: >-
-              Specifies the maximum length of time to wait for a connection to be established before giving up and considering the server unavailable.
-        maxResponseSize:
-          type: string
-          description: >-
-              Specifies the maximum response size that should be supported for messages received from the LDAP external server.
-        keyManagerProvider:
-          type: string
-          description: >-
-              The key manager provider to use if SSL or StartTLS is to be used for connection-level security. When specifying a value for this property (except when using the Null key manager provider) you must ensure that the external server trusts this server's public certificate by adding this server's public certificate to the external server's trust store.
-        trustManagerProvider:
-          type: string
-          description: >-
-              The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
-        initialConnections:
-          type: integer
-          description: >-
-              The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
-        maxConnections:
-          type: integer
-          description: >-
-              The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
-        defunctConnectionResultCode:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
-        abandonOnTimeout:
-          type: boolean
-          description: >-
-              Indicates whether to send an abandon request for an operation for which a response timeout is encountered. A request which has timed out on one server may be retried on another server regardless of whether an abandon request is sent, but if the initial attempt is not abandoned then a long-running operation may unnecessarily continue to consume processing resources on the initial server.
-        description:
-          type: string
-          description: >-
-              A description for this External Server
-      required:
-      - schemas
-      - serverHostName
-    Enumldap-external-serverSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:external-server:ldap"
-    add-ping-one-http-external-server-request:
-      allOf:
-      - type: object
-        properties:
-          serverName:
-            description: Name of the new External Server
-            type: string
-        required:
-        - serverName
-      - $ref: '#/components/schemas/ping-one-http-external-server-shared'
-    ping-one-http-external-server-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - type: object
-        properties:
-          id:
-            description: Name of the External Server
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/ping-one-http-external-server-shared'
-    ping-one-http-external-server-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumping-one-http-external-serverSchemaUrn'
-        hostnameVerificationMethod:
-          $ref: '#/components/schemas/Enumexternal-server-hostnameVerificationMethodProp'
-        trustManagerProvider:
-          type: string
-          description: >-
-              The trust manager provider to use for HTTPS connection-level security.
-        connectTimeout:
-          type: string
-          description: >-
-              Specifies the maximum length of time to wait for a connection to be established before aborting a request to PingOne.
-        responseTimeout:
-          type: string
-          description: >-
-              Specifies the maximum length of time to wait for response data to be read from an established connection before aborting a request to PingOne.
-        description:
-          type: string
-          description: >-
-              A description for this External Server
-      required:
-      - schemas
-    Enumping-one-http-external-serverSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:external-server:ping-one-http"
-    add-http-external-server-request:
-      allOf:
-      - type: object
-        properties:
-          serverName:
-            description: Name of the new External Server
-            type: string
-        required:
-        - serverName
-      - $ref: '#/components/schemas/http-external-server-shared'
-    http-external-server-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - type: object
-        properties:
-          id:
-            description: Name of the External Server
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/http-external-server-shared'
-    http-external-server-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumhttp-external-serverSchemaUrn'
-        baseURL:
-          type: string
-          description: >-
-              The base URL of the external server, optionally including port number, for example "https://externalService:9031".
-        hostnameVerificationMethod:
-          $ref: '#/components/schemas/Enumexternal-server-hostnameVerificationMethodProp'
-        keyManagerProvider:
-          type: string
-          description: >-
-              The key manager provider to use if SSL (HTTPS) is to be used for connection-level security. When specifying a value for this property (except when using the Null key manager provider) you must ensure that the external server trusts this server's public certificate by adding this server's public certificate to the external server's trust store.
-        trustManagerProvider:
-          type: string
-          description: >-
-              The trust manager provider to use if SSL (HTTPS) is to be used for connection-level security.
-        sslCertNickname:
-          type: string
-          description: >-
-              The certificate alias within the keystore to use if SSL (HTTPS) is to be used for connection-level security. When specifying a value for this property you must ensure that the external server trusts this server's public certificate by adding this server's public certificate to the external server's trust store.
-        connectTimeout:
-          type: string
-          description: >-
-              Specifies the maximum length of time to wait for a connection to be established before aborting a request to the server.
-        responseTimeout:
-          type: string
-          description: >-
-              Specifies the maximum length of time to wait for response data to be read from an established connection before aborting a request to the server.
-        description:
-          type: string
-          description: >-
-              A description for this External Server
-      required:
-      - schemas
-      - baseURL
-    Enumhttp-external-serverSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:external-server:http"
-    add-oracle-unified-directory-external-server-request:
-      allOf:
-      - type: object
-        properties:
-          serverName:
-            description: Name of the new External Server
-            type: string
-        required:
-        - serverName
-      - $ref: '#/components/schemas/oracle-unified-directory-external-server-shared'
-    oracle-unified-directory-external-server-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - type: object
-        properties:
-          id:
-            description: Name of the External Server
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/oracle-unified-directory-external-server-shared'
-      required:
-      - serverPort
-      - connectionSecurity
-      - authenticationMethod
-      - verifyCredentialsMethod
-      - maxConnectionAge
-      - connectTimeout
-      - maxResponseSize
-    oracle-unified-directory-external-server-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumoracle-unified-directory-external-serverSchemaUrn'
-        serverHostName:
-          type: string
-          description: >-
-              The host name or IP address of the target LDAP server.
-        serverPort:
-          type: integer
-          description: >-
-              The port number on which the server listens for requests.
-        location:
-          type: string
-          description: >-
-              Specifies the location for the LDAP External Server.
-        bindDN:
-          type: string
-          description: >-
-              The DN to use to bind to the target LDAP server if simple authentication is required.
-        password:
-          type: string
-          format: password
-          description: >-
-              The login password for the specified user.
-        passphraseProvider:
-          type: string
-          description: >-
-              The passphrase provider to use to obtain the login password for the specified user.
-        connectionSecurity:
-          $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
-        authenticationMethod:
-          $ref: '#/components/schemas/Enumexternal-server-oracle-unified-directory-authenticationMethodProp'
-        verifyCredentialsMethod:
-          $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
-        healthCheckConnectTimeout:
-          type: string
-          description: >-
-              Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
-        maxConnectionAge:
-          type: string
-          description: >-
-              Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections.
-        minExpiredConnectionDisconnectInterval:
-          type: string
-          description: >-
-              Specifies the minimum length of time that should pass between connection closures as a result of the connections being established for longer than the maximum connection age. This may help avoid cases in which a large number of connections are closed and re-established in a short period of time because of the maximum connection age.
-        connectTimeout:
-          type: string
-          description: >-
-              Specifies the maximum length of time to wait for a connection to be established before giving up and considering the server unavailable.
-        maxResponseSize:
-          type: string
-          description: >-
-              Specifies the maximum response size that should be supported for messages received from the LDAP external server.
-        keyManagerProvider:
-          type: string
-          description: >-
-              The key manager provider to use if SSL or StartTLS is to be used for connection-level security. When specifying a value for this property (except when using the Null key manager provider) you must ensure that the external server trusts this server's public certificate by adding this server's public certificate to the external server's trust store.
-        trustManagerProvider:
-          type: string
-          description: >-
-              The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
-        initialConnections:
-          type: integer
-          description: >-
-              The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
-        maxConnections:
-          type: integer
-          description: >-
-              The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
-        defunctConnectionResultCode:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
-        abandonOnTimeout:
-          type: boolean
-          description: >-
-              Indicates whether to send an abandon request for an operation for which a response timeout is encountered. A request which has timed out on one server may be retried on another server regardless of whether an abandon request is sent, but if the initial attempt is not abandoned then a long-running operation may unnecessarily continue to consume processing resources on the initial server.
-        description:
-          type: string
-          description: >-
-              A description for this External Server
-      required:
-      - schemas
-      - serverHostName
-    Enumoracle-unified-directory-external-serverSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:external-server:oracle-unified-directory"
-    add-conjur-external-server-request:
-      allOf:
-      - type: object
-        properties:
-          serverName:
-            description: Name of the new External Server
-            type: string
-        required:
-        - serverName
-      - $ref: '#/components/schemas/conjur-external-server-shared'
-    conjur-external-server-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - type: object
-        properties:
-          id:
-            description: Name of the External Server
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/conjur-external-server-shared'
-    conjur-external-server-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumconjur-external-serverSchemaUrn'
-        conjurServerBaseURI:
-          type: array
-          items:
-            type: string
-          description: >-
-              The base URL needed to access the CyberArk Conjur server. The base URL should consist of the protocol ("http" or "https"), the server address (resolvable name or IP address), and the port number. For example, "https://conjur.example.com:8443/".
-        conjurAuthenticationMethod:
-          type: string
-          description: >-
-              The mechanism used to authenticate to the Conjur server.
-        conjurAccountName:
-          type: string
-          description: >-
-              The name of the account with which the desired secrets are associated.
-        trustStoreFile:
-          type: string
-          description: >-
-              The path to a file containing the information needed to trust the certificate presented by the Conjur servers.
-        trustStorePin:
-          type: string
-          format: password
-          description: >-
-              The PIN needed to access the contents of the trust store. This is only required if a trust store file is required, and if that trust store requires a PIN to access its contents.
-        trustStoreType:
-          type: string
-          description: >-
-              The store type for the specified trust store file. The value should likely be one of "JKS", "PKCS12", or "BCFKS".
-        description:
-          type: string
-          description: >-
-              A description for this External Server
-      required:
-      - schemas
-      - conjurServerBaseURI
-      - conjurAuthenticationMethod
-      - conjurAccountName
-    Enumconjur-external-serverSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:external-server:conjur"
-    add-amazon-aws-external-server-request:
-      allOf:
-      - type: object
-        properties:
-          serverName:
-            description: Name of the new External Server
-            type: string
-        required:
-        - serverName
-      - $ref: '#/components/schemas/amazon-aws-external-server-shared'
-    amazon-aws-external-server-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - type: object
-        properties:
-          id:
-            description: Name of the External Server
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/amazon-aws-external-server-shared'
-    amazon-aws-external-server-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumamazon-aws-external-serverSchemaUrn'
-        httpProxyExternalServer:
-          type: string
-          description: >-
-              A reference to an HTTP proxy server that should be used for requests sent to the AWS service.
-        authenticationMethod:
-          $ref: '#/components/schemas/Enumexternal-server-amazon-aws-authenticationMethodProp'
-        awsAccessKeyID:
-          type: string
-          description: >-
-              The access key ID that will be used if authentication should use an access key. If this is provided, then an aws-secret-access-key must also be provided.
-        awsSecretAccessKey:
-          type: string
-          format: password
-          description: >-
-              The secret access key that will be used if authentication should use an access key. If this is provided, then an aws-access-key-id must also be provided.
-        awsRegionName:
-          type: string
-          description: >-
-              The name of the AWS region containing the resources that will be accessed.
-        description:
-          type: string
-          description: >-
-              A description for this External Server
-      required:
-      - schemas
-      - awsRegionName
-    Enumamazon-aws-external-serverSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:external-server:amazon-aws"
-    add-vault-external-server-request:
-      allOf:
-      - type: object
-        properties:
-          serverName:
-            description: Name of the new External Server
-            type: string
-        required:
-        - serverName
-      - $ref: '#/components/schemas/vault-external-server-shared'
-    vault-external-server-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - type: object
-        properties:
-          id:
-            description: Name of the External Server
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/vault-external-server-shared'
-    vault-external-server-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumvault-external-serverSchemaUrn'
-        vaultServerBaseURI:
-          type: array
-          items:
-            type: string
-          description: >-
-              The base URL needed to access the Vault server. The base URL should consist of the protocol ("http" or "https"), the server address (resolvable name or IP address), and the port number. For example, "https://vault.example.com:8200/".
-        vaultAuthenticationMethod:
-          type: string
-          description: >-
-              The mechanism used to authenticate to the Vault server.
-        trustStoreFile:
-          type: string
-          description: >-
-              The path to a file containing the information needed to trust the certificate presented by the Vault servers.
-        trustStorePin:
-          type: string
-          format: password
-          description: >-
-              The passphrase needed to access the contents of the trust store. This is only required if a trust store file is required, and if that trust store requires a PIN to access its contents.
-        trustStoreType:
-          type: string
-          description: >-
-              The store type for the specified trust store file. The value should likely be one of "JKS", "PKCS12", or "BCFKS".
-        description:
-          type: string
-          description: >-
-              A description for this External Server
-      required:
-      - schemas
-      - vaultServerBaseURI
-      - vaultAuthenticationMethod
-    Enumvault-external-serverSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:external-server:vault"
-    Enumexternal-server-opendj-authenticationMethodProp:
-      type: string
-      enum:
-      - "none"
-      - "simple"
-      - "external"
-      - "inter-server"
+      - "separate-connections"
+      - "retain-identity-control"
+      - "bind-on-existing-connections"
       description: >-
-          The mechanism to use to authenticate to the target server.
-    Enumexternal-server-nokia-proxy-server-authenticationMethodProp:
-      type: string
-      enum:
-      - "none"
-      - "simple"
-      - "external"
-      - "inter-server"
-      description: >-
-          The mechanism to use to authenticate to the target server.
-    Enumexternal-server-ldap-authenticationMethodProp:
-      type: string
-      enum:
-      - "none"
-      - "simple"
-      - "external"
-      - "inter-server"
-      description: >-
-          The mechanism to use to authenticate to the target server.
+          The mechanism to use to verify user credentials while ensuring that the ability to process other operations is not impacted by an alternate authorization identity.
     Enumexternal-server-connectionSecurityProp:
       type: string
       enum:
@@ -1852,6 +307,15 @@ components:
       - "starttls"
       description: >-
           The mechanism to use to secure communication with the directory server.
+    Enumexternal-server-nokia-ds-authenticationMethodProp:
+      type: string
+      enum:
+      - "none"
+      - "simple"
+      - "external"
+      - "inter-server"
+      description: >-
+          The mechanism to use to authenticate to the target server.
     Enumexternal-server-defunctConnectionResultCodeProp:
       type: string
       enum:
@@ -1924,6 +388,431 @@ components:
       - "interactive-transaction-aborted"
       description: >-
           Specifies the operation result code values that should cause the associated connection should be considered defunct. If an operation fails with one of these result codes, then it will be terminated and an attempt will be made to establish a new connection in its place.
+    add-nokia-ds-external-server-request:
+      allOf:
+      - type: object
+        properties:
+          serverName:
+            type: string
+            description: >-
+                Name of the new External Server
+      - $ref: '#/components/schemas/nokia-ds-external-server-shared'
+      required:
+      - serverName
+    nokia-ds-external-server-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the External Server
+      - $ref: '#/components/schemas/nokia-ds-external-server-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - verifyCredentialsMethod
+      - serverPort
+      - connectionSecurity
+      - authenticationMethod
+      - maxConnectionAge
+      - connectTimeout
+      - maxResponseSize
+    nokia-ds-external-server-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumnokia-ds-external-serverSchemaUrn'
+        verifyCredentialsMethod:
+          $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
+          description: >-
+              The mechanism to use to verify user credentials while ensuring that the ability to process other operations is not impacted by an alternate authorization identity.
+        useAdministrativeOperationControl:
+          type: boolean
+          description: >-
+              Indicates whether to include the administrative operation request control in requests sent to this server which are intended for administrative operations (e.g., health checking) rather than requests directly from clients.
+        serverHostName:
+          type: string
+          description: >-
+              The host name or IP address of the target LDAP server.
+        serverPort:
+          type: integer
+          description: >-
+              The port number on which the server listens for requests.
+        location:
+          type: string
+          description: >-
+              Specifies the location for the LDAP External Server.
+        bindDN:
+          type: string
+          description: >-
+              The DN to use to bind to the target LDAP server if simple authentication is required.
+        password:
+          type: string
+          format: password
+          description: >-
+              The login password for the specified user.
+        passphraseProvider:
+          type: string
+          description: >-
+              The passphrase provider to use to obtain the login password for the specified user.
+        connectionSecurity:
+          $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
+          description: >-
+              The mechanism to use to secure communication with the directory server.
+        authenticationMethod:
+          $ref: '#/components/schemas/Enumexternal-server-nokia-ds-authenticationMethodProp'
+          description: >-
+              The mechanism to use to authenticate to the target server.
+        healthCheckConnectTimeout:
+          type: string
+          description: >-
+              Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
+        maxConnectionAge:
+          type: string
+          description: >-
+              Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections.
+        minExpiredConnectionDisconnectInterval:
+          type: string
+          description: >-
+              Specifies the minimum length of time that should pass between connection closures as a result of the connections being established for longer than the maximum connection age. This may help avoid cases in which a large number of connections are closed and re-established in a short period of time because of the maximum connection age.
+        connectTimeout:
+          type: string
+          description: >-
+              Specifies the maximum length of time to wait for a connection to be established before giving up and considering the server unavailable.
+        maxResponseSize:
+          type: string
+          description: >-
+              Specifies the maximum response size that should be supported for messages received from the LDAP external server.
+        keyManagerProvider:
+          type: string
+          description: >-
+              The key manager provider to use if SSL or StartTLS is to be used for connection-level security. When specifying a value for this property (except when using the Null key manager provider) you must ensure that the external server trusts this server's public certificate by adding this server's public certificate to the external server's trust store.
+        trustManagerProvider:
+          type: string
+          description: >-
+              The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
+        initialConnections:
+          type: integer
+          description: >-
+              The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
+        maxConnections:
+          type: integer
+          description: >-
+              The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
+        defunctConnectionResultCode:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
+          description: >-
+              Specifies the operation result code values that should cause the associated connection should be considered defunct. If an operation fails with one of these result codes, then it will be terminated and an attempt will be made to establish a new connection in its place.
+        abandonOnTimeout:
+          type: boolean
+          description: >-
+              Indicates whether to send an abandon request for an operation for which a response timeout is encountered. A request which has timed out on one server may be retried on another server regardless of whether an abandon request is sent, but if the initial attempt is not abandoned then a long-running operation may unnecessarily continue to consume processing resources on the initial server.
+        description:
+          type: string
+          description: >-
+              A description for this External Server
+      required:
+      - schemas
+      - serverHostName
+    Enumnokia-ds-external-serverSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:external-server:nokia-ds"
+    Enumexternal-server-ping-identity-ds-authenticationMethodProp:
+      type: string
+      enum:
+      - "none"
+      - "simple"
+      - "external"
+      - "inter-server"
+      description: >-
+          The mechanism to use to authenticate to the target server.
+    add-ping-identity-ds-external-server-request:
+      allOf:
+      - type: object
+        properties:
+          serverName:
+            type: string
+            description: >-
+                Name of the new External Server
+      - $ref: '#/components/schemas/ping-identity-ds-external-server-shared'
+      required:
+      - serverName
+    ping-identity-ds-external-server-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the External Server
+      - $ref: '#/components/schemas/ping-identity-ds-external-server-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - verifyCredentialsMethod
+      - serverPort
+      - connectionSecurity
+      - authenticationMethod
+      - maxConnectionAge
+      - connectTimeout
+      - maxResponseSize
+    ping-identity-ds-external-server-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumping-identity-ds-external-serverSchemaUrn'
+        verifyCredentialsMethod:
+          $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
+          description: >-
+              The mechanism to use to verify user credentials while ensuring that the ability to process other operations is not impacted by an alternate authorization identity.
+        useAdministrativeOperationControl:
+          type: boolean
+          description: >-
+              Indicates whether to include the administrative operation request control in requests sent to this server which are intended for administrative operations (e.g., health checking) rather than requests directly from clients.
+        serverHostName:
+          type: string
+          description: >-
+              The host name or IP address of the target LDAP server.
+        serverPort:
+          type: integer
+          description: >-
+              The port number on which the server listens for requests.
+        location:
+          type: string
+          description: >-
+              Specifies the location for the LDAP External Server.
+        bindDN:
+          type: string
+          description: >-
+              The DN to use to bind to the target LDAP server if simple authentication is required.
+        password:
+          type: string
+          format: password
+          description: >-
+              The login password for the specified user.
+        passphraseProvider:
+          type: string
+          description: >-
+              The passphrase provider to use to obtain the login password for the specified user.
+        connectionSecurity:
+          $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
+          description: >-
+              The mechanism to use to secure communication with the directory server.
+        authenticationMethod:
+          $ref: '#/components/schemas/Enumexternal-server-ping-identity-ds-authenticationMethodProp'
+          description: >-
+              The mechanism to use to authenticate to the target server.
+        healthCheckConnectTimeout:
+          type: string
+          description: >-
+              Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
+        maxConnectionAge:
+          type: string
+          description: >-
+              Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections.
+        minExpiredConnectionDisconnectInterval:
+          type: string
+          description: >-
+              Specifies the minimum length of time that should pass between connection closures as a result of the connections being established for longer than the maximum connection age. This may help avoid cases in which a large number of connections are closed and re-established in a short period of time because of the maximum connection age.
+        connectTimeout:
+          type: string
+          description: >-
+              Specifies the maximum length of time to wait for a connection to be established before giving up and considering the server unavailable.
+        maxResponseSize:
+          type: string
+          description: >-
+              Specifies the maximum response size that should be supported for messages received from the LDAP external server.
+        keyManagerProvider:
+          type: string
+          description: >-
+              The key manager provider to use if SSL or StartTLS is to be used for connection-level security. When specifying a value for this property (except when using the Null key manager provider) you must ensure that the external server trusts this server's public certificate by adding this server's public certificate to the external server's trust store.
+        trustManagerProvider:
+          type: string
+          description: >-
+              The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
+        initialConnections:
+          type: integer
+          description: >-
+              The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
+        maxConnections:
+          type: integer
+          description: >-
+              The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
+        defunctConnectionResultCode:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
+          description: >-
+              Specifies the operation result code values that should cause the associated connection should be considered defunct. If an operation fails with one of these result codes, then it will be terminated and an attempt will be made to establish a new connection in its place.
+        abandonOnTimeout:
+          type: boolean
+          description: >-
+              Indicates whether to send an abandon request for an operation for which a response timeout is encountered. A request which has timed out on one server may be retried on another server regardless of whether an abandon request is sent, but if the initial attempt is not abandoned then a long-running operation may unnecessarily continue to consume processing resources on the initial server.
+        description:
+          type: string
+          description: >-
+              A description for this External Server
+      required:
+      - schemas
+      - serverHostName
+    Enumping-identity-ds-external-serverSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:external-server:ping-identity-ds"
+    Enumexternal-server-active-directory-authenticationMethodProp:
+      type: string
+      enum:
+      - "none"
+      - "simple"
+      - "external"
+      - "inter-server"
+      description: >-
+          The mechanism to use to authenticate to the target server.
+    add-active-directory-external-server-request:
+      allOf:
+      - type: object
+        properties:
+          serverName:
+            type: string
+            description: >-
+                Name of the new External Server
+      - $ref: '#/components/schemas/active-directory-external-server-shared'
+      required:
+      - serverName
+    active-directory-external-server-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the External Server
+      - $ref: '#/components/schemas/active-directory-external-server-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - serverPort
+      - connectionSecurity
+      - authenticationMethod
+      - verifyCredentialsMethod
+      - maxConnectionAge
+      - connectTimeout
+      - maxResponseSize
+    active-directory-external-server-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumactive-directory-external-serverSchemaUrn'
+        bindDN:
+          type: string
+          description: >-
+              The DN to use to bind to the target LDAP server if simple authentication is required. The authentication identity can also be specified in User-Principal-Name (UPN) format.
+        serverHostName:
+          type: string
+          description: >-
+              The host name or IP address of the target LDAP server.
+        serverPort:
+          type: integer
+          description: >-
+              The port number on which the server listens for requests.
+        location:
+          type: string
+          description: >-
+              Specifies the location for the LDAP External Server.
+        password:
+          type: string
+          format: password
+          description: >-
+              The login password for the specified user.
+        passphraseProvider:
+          type: string
+          description: >-
+              The passphrase provider to use to obtain the login password for the specified user.
+        connectionSecurity:
+          $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
+          description: >-
+              The mechanism to use to secure communication with the directory server.
+        authenticationMethod:
+          $ref: '#/components/schemas/Enumexternal-server-active-directory-authenticationMethodProp'
+          description: >-
+              The mechanism to use to authenticate to the target server.
+        verifyCredentialsMethod:
+          $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
+          description: >-
+              The mechanism to use to verify user credentials while ensuring that the ability to process other operations is not impacted by an alternate authorization identity.
+        healthCheckConnectTimeout:
+          type: string
+          description: >-
+              Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
+        maxConnectionAge:
+          type: string
+          description: >-
+              Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections.
+        minExpiredConnectionDisconnectInterval:
+          type: string
+          description: >-
+              Specifies the minimum length of time that should pass between connection closures as a result of the connections being established for longer than the maximum connection age. This may help avoid cases in which a large number of connections are closed and re-established in a short period of time because of the maximum connection age.
+        connectTimeout:
+          type: string
+          description: >-
+              Specifies the maximum length of time to wait for a connection to be established before giving up and considering the server unavailable.
+        maxResponseSize:
+          type: string
+          description: >-
+              Specifies the maximum response size that should be supported for messages received from the LDAP external server.
+        keyManagerProvider:
+          type: string
+          description: >-
+              The key manager provider to use if SSL or StartTLS is to be used for connection-level security. When specifying a value for this property (except when using the Null key manager provider) you must ensure that the external server trusts this server's public certificate by adding this server's public certificate to the external server's trust store.
+        trustManagerProvider:
+          type: string
+          description: >-
+              The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
+        initialConnections:
+          type: integer
+          description: >-
+              The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
+        maxConnections:
+          type: integer
+          description: >-
+              The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
+        defunctConnectionResultCode:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
+          description: >-
+              Specifies the operation result code values that should cause the associated connection should be considered defunct. If an operation fails with one of these result codes, then it will be terminated and an attempt will be made to establish a new connection in its place.
+        abandonOnTimeout:
+          type: boolean
+          description: >-
+              Indicates whether to send an abandon request for an operation for which a response timeout is encountered. A request which has timed out on one server may be retried on another server regardless of whether an abandon request is sent, but if the initial attempt is not abandoned then a long-running operation may unnecessarily continue to consume processing resources on the initial server.
+        description:
+          type: string
+          description: >-
+              A description for this External Server
+      required:
+      - schemas
+      - serverHostName
+    Enumactive-directory-external-serverSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:external-server:active-directory"
     Enumexternal-server-jdbcDriverTypeProp:
       type: string
       enum:
@@ -1936,41 +825,6 @@ components:
       - "other"
       description: >-
           Specifies a supported database driver type. The driver class will be automatically selected based on this selection. We highly recommend using a JDBC 4 driver that is suitable for the current Java platform.
-    Enumexternal-server-verifyCredentialsMethodProp:
-      type: string
-      enum:
-      - "separate-connections"
-      - "retain-identity-control"
-      - "bind-on-existing-connections"
-      description: >-
-          The mechanism to use to verify user credentials while ensuring that the ability to process other operations is not impacted by an alternate authorization identity.
-    Enumexternal-server-ping-identity-ds-authenticationMethodProp:
-      type: string
-      enum:
-      - "none"
-      - "simple"
-      - "external"
-      - "inter-server"
-      description: >-
-          The mechanism to use to authenticate to the target server.
-    Enumexternal-server-ping-identity-proxy-server-authenticationMethodProp:
-      type: string
-      enum:
-      - "none"
-      - "simple"
-      - "external"
-      - "inter-server"
-      description: >-
-          The mechanism to use to authenticate to the target server.
-    Enumexternal-server-active-directory-authenticationMethodProp:
-      type: string
-      enum:
-      - "none"
-      - "simple"
-      - "external"
-      - "inter-server"
-      description: >-
-          The mechanism to use to authenticate to the target server.
     Enumexternal-server-transactionIsolationLevelProp:
       type: string
       enum:
@@ -1980,6 +834,100 @@ components:
       - "serializable"
       description: >-
           This property specifies the default transaction isolation level for connections to this JDBC External Server.
+    add-jdbc-external-server-request:
+      allOf:
+      - type: object
+        properties:
+          serverName:
+            type: string
+            description: >-
+                Name of the new External Server
+      - $ref: '#/components/schemas/jdbc-external-server-shared'
+      required:
+      - serverName
+    jdbc-external-server-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the External Server
+      - $ref: '#/components/schemas/jdbc-external-server-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    jdbc-external-server-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumjdbc-external-serverSchemaUrn'
+        jdbcDriverType:
+          $ref: '#/components/schemas/Enumexternal-server-jdbcDriverTypeProp'
+          description: >-
+              Specifies a supported database driver type. The driver class will be automatically selected based on this selection. We highly recommend using a JDBC 4 driver that is suitable for the current Java platform.
+        jdbcDriverURL:
+          type: string
+          description: >-
+              Specify the complete JDBC URL which will be used instead of the automatic URL format. You must select type 'other' for the jdbc-driver-type.
+        databaseName:
+          type: string
+          description: >-
+              Specifies which database to connect to. This is ignored if jdbc-driver-url is specified.
+        serverHostName:
+          type: string
+          description: >-
+              The host name of the database server. This is ignored if jdbc-driver-url is specified.
+        serverPort:
+          type: integer
+          description: >-
+              The port number where the database server listens for requests. This is ignored if jdbc-driver-url is specified
+        userName:
+          type: string
+          description: >-
+              The name of the login account to use when connecting to the database server.
+        password:
+          type: string
+          format: password
+          description: >-
+              The login password for the specified user name.
+        passphraseProvider:
+          type: string
+          description: >-
+              The passphrase provider to use to obtain the login password for the specified user.
+        validationQuery:
+          type: string
+          description: >-
+              The SQL query that will be used to validate connections to the database before making them available to the Directory Server.
+        validationQueryTimeout:
+          type: string
+          description: >-
+              Specifies the amount of time to wait for a response from the database when executing the validation query, if one is set. If the timeout is exceeded, the Directory Server will drop the connection and obtain a new one. A value of zero indicates no timeout.
+        jdbcConnectionProperties:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies the connection properties for the JDBC datasource.
+        transactionIsolationLevel:
+          $ref: '#/components/schemas/Enumexternal-server-transactionIsolationLevelProp'
+          description: >-
+              This property specifies the default transaction isolation level for connections to this JDBC External Server.
+        description:
+          type: string
+          description: >-
+              A description for this External Server
+      required:
+      - schemas
+      - jdbcDriverType
+    Enumjdbc-external-serverSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:external-server:jdbc"
     Enumexternal-server-transportMechanismProp:
       type: string
       enum:
@@ -1988,6 +936,713 @@ components:
       - "tls-encrypted-tcp"
       description: >-
           The transport mechanism that should be used when communicating with the syslog server.
+    add-syslog-external-server-request:
+      allOf:
+      - type: object
+        properties:
+          serverName:
+            type: string
+            description: >-
+                Name of the new External Server
+      - $ref: '#/components/schemas/syslog-external-server-shared'
+      required:
+      - serverName
+    syslog-external-server-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the External Server
+      - $ref: '#/components/schemas/syslog-external-server-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - connectTimeout
+      - maxConnectionAge
+      - trustManagerProvider
+    syslog-external-server-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumsyslog-external-serverSchemaUrn'
+        serverHostName:
+          type: string
+          description: >-
+              The address of the syslog server.
+        serverPort:
+          type: integer
+          description: >-
+              The port on which the syslog server accepts connections.
+        transportMechanism:
+          $ref: '#/components/schemas/Enumexternal-server-transportMechanismProp'
+          description: >-
+              The transport mechanism that should be used when communicating with the syslog server.
+        connectTimeout:
+          type: string
+          description: >-
+              Specifies the maximum length of time to wait for a connection to be established before giving up and considering the server unavailable. This will only be used when communicating with the syslog server over TCP (with or without TLS encryption).
+        maxConnectionAge:
+          type: string
+          description: >-
+              The maximum length of time that TCP connections should remain established. This will be ignored for UDP-based connections. A zero duration indicates that no maximum age will be imposed.
+        trustManagerProvider:
+          type: string
+          description: >-
+              A trust manager provider that will be used to determine whether to trust the certificate chain presented by the syslog server when communication is encrypted with TLS. This property will be ignored when not using TLS encryption.
+        description:
+          type: string
+          description: >-
+              A description for this External Server
+      required:
+      - schemas
+      - serverHostName
+      - transportMechanism
+    Enumsyslog-external-serverSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:external-server:syslog"
+    Enumexternal-server-ping-identity-proxy-server-authenticationMethodProp:
+      type: string
+      enum:
+      - "none"
+      - "simple"
+      - "external"
+      - "inter-server"
+      description: >-
+          The mechanism to use to authenticate to the target server.
+    add-ping-identity-proxy-server-external-server-request:
+      allOf:
+      - type: object
+        properties:
+          serverName:
+            type: string
+            description: >-
+                Name of the new External Server
+      - $ref: '#/components/schemas/ping-identity-proxy-server-external-server-shared'
+      required:
+      - serverName
+    ping-identity-proxy-server-external-server-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the External Server
+      - $ref: '#/components/schemas/ping-identity-proxy-server-external-server-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - verifyCredentialsMethod
+      - serverPort
+      - connectionSecurity
+      - authenticationMethod
+      - maxConnectionAge
+      - connectTimeout
+      - maxResponseSize
+    ping-identity-proxy-server-external-server-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumping-identity-proxy-server-external-serverSchemaUrn'
+        verifyCredentialsMethod:
+          $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
+          description: >-
+              The mechanism to use to verify user credentials while ensuring that the ability to process other operations is not impacted by an alternate authorization identity.
+        useAdministrativeOperationControl:
+          type: boolean
+          description: >-
+              Indicates whether to include the administrative operation request control in requests sent to this server which are intended for administrative operations (e.g., health checking) rather than requests directly from clients.
+        serverHostName:
+          type: string
+          description: >-
+              The host name or IP address of the target LDAP server.
+        serverPort:
+          type: integer
+          description: >-
+              The port number on which the server listens for requests.
+        location:
+          type: string
+          description: >-
+              Specifies the location for the LDAP External Server.
+        bindDN:
+          type: string
+          description: >-
+              The DN to use to bind to the target LDAP server if simple authentication is required.
+        password:
+          type: string
+          format: password
+          description: >-
+              The login password for the specified user.
+        passphraseProvider:
+          type: string
+          description: >-
+              The passphrase provider to use to obtain the login password for the specified user.
+        connectionSecurity:
+          $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
+          description: >-
+              The mechanism to use to secure communication with the directory server.
+        authenticationMethod:
+          $ref: '#/components/schemas/Enumexternal-server-ping-identity-proxy-server-authenticationMethodProp'
+          description: >-
+              The mechanism to use to authenticate to the target server.
+        healthCheckConnectTimeout:
+          type: string
+          description: >-
+              Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
+        maxConnectionAge:
+          type: string
+          description: >-
+              Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections.
+        minExpiredConnectionDisconnectInterval:
+          type: string
+          description: >-
+              Specifies the minimum length of time that should pass between connection closures as a result of the connections being established for longer than the maximum connection age. This may help avoid cases in which a large number of connections are closed and re-established in a short period of time because of the maximum connection age.
+        connectTimeout:
+          type: string
+          description: >-
+              Specifies the maximum length of time to wait for a connection to be established before giving up and considering the server unavailable.
+        maxResponseSize:
+          type: string
+          description: >-
+              Specifies the maximum response size that should be supported for messages received from the LDAP external server.
+        keyManagerProvider:
+          type: string
+          description: >-
+              The key manager provider to use if SSL or StartTLS is to be used for connection-level security. When specifying a value for this property (except when using the Null key manager provider) you must ensure that the external server trusts this server's public certificate by adding this server's public certificate to the external server's trust store.
+        trustManagerProvider:
+          type: string
+          description: >-
+              The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
+        initialConnections:
+          type: integer
+          description: >-
+              The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
+        maxConnections:
+          type: integer
+          description: >-
+              The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
+        defunctConnectionResultCode:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
+          description: >-
+              Specifies the operation result code values that should cause the associated connection should be considered defunct. If an operation fails with one of these result codes, then it will be terminated and an attempt will be made to establish a new connection in its place.
+        abandonOnTimeout:
+          type: boolean
+          description: >-
+              Indicates whether to send an abandon request for an operation for which a response timeout is encountered. A request which has timed out on one server may be retried on another server regardless of whether an abandon request is sent, but if the initial attempt is not abandoned then a long-running operation may unnecessarily continue to consume processing resources on the initial server.
+        description:
+          type: string
+          description: >-
+              A description for this External Server
+      required:
+      - schemas
+      - serverHostName
+    Enumping-identity-proxy-server-external-serverSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:external-server:ping-identity-proxy-server"
+    add-http-proxy-external-server-request:
+      allOf:
+      - type: object
+        properties:
+          serverName:
+            type: string
+            description: >-
+                Name of the new External Server
+      - $ref: '#/components/schemas/http-proxy-external-server-shared'
+      required:
+      - serverName
+    http-proxy-external-server-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the External Server
+      - $ref: '#/components/schemas/http-proxy-external-server-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    http-proxy-external-server-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumhttp-proxy-external-serverSchemaUrn'
+        serverHostName:
+          type: string
+          description: >-
+              The host name or IP address of the HTTP Proxy External Server.
+        serverPort:
+          type: integer
+          description: >-
+              The port on which the HTTP Proxy External Server is listening for connections.
+        basicAuthenticationUsername:
+          type: string
+          description: >-
+              The username to use to authenticate to the HTTP Proxy External Server.
+        basicAuthenticationPassphraseProvider:
+          type: string
+          description: >-
+              A passphrase provider that provides access to the password to use to authenticate to the HTTP Proxy External Server.
+        description:
+          type: string
+          description: >-
+              A description for this External Server
+      required:
+      - schemas
+      - serverHostName
+      - serverPort
+    Enumhttp-proxy-external-serverSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:external-server:http-proxy"
+    Enumexternal-server-nokia-proxy-server-authenticationMethodProp:
+      type: string
+      enum:
+      - "none"
+      - "simple"
+      - "external"
+      - "inter-server"
+      description: >-
+          The mechanism to use to authenticate to the target server.
+    add-nokia-proxy-server-external-server-request:
+      allOf:
+      - type: object
+        properties:
+          serverName:
+            type: string
+            description: >-
+                Name of the new External Server
+      - $ref: '#/components/schemas/nokia-proxy-server-external-server-shared'
+      required:
+      - serverName
+    nokia-proxy-server-external-server-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the External Server
+      - $ref: '#/components/schemas/nokia-proxy-server-external-server-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - verifyCredentialsMethod
+      - serverPort
+      - connectionSecurity
+      - authenticationMethod
+      - maxConnectionAge
+      - connectTimeout
+      - maxResponseSize
+    nokia-proxy-server-external-server-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumnokia-proxy-server-external-serverSchemaUrn'
+        verifyCredentialsMethod:
+          $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
+          description: >-
+              The mechanism to use to verify user credentials while ensuring that the ability to process other operations is not impacted by an alternate authorization identity.
+        useAdministrativeOperationControl:
+          type: boolean
+          description: >-
+              Indicates whether to include the administrative operation request control in requests sent to this server which are intended for administrative operations (e.g., health checking) rather than requests directly from clients.
+        serverHostName:
+          type: string
+          description: >-
+              The host name or IP address of the target LDAP server.
+        serverPort:
+          type: integer
+          description: >-
+              The port number on which the server listens for requests.
+        location:
+          type: string
+          description: >-
+              Specifies the location for the LDAP External Server.
+        bindDN:
+          type: string
+          description: >-
+              The DN to use to bind to the target LDAP server if simple authentication is required.
+        password:
+          type: string
+          format: password
+          description: >-
+              The login password for the specified user.
+        passphraseProvider:
+          type: string
+          description: >-
+              The passphrase provider to use to obtain the login password for the specified user.
+        connectionSecurity:
+          $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
+          description: >-
+              The mechanism to use to secure communication with the directory server.
+        authenticationMethod:
+          $ref: '#/components/schemas/Enumexternal-server-nokia-proxy-server-authenticationMethodProp'
+          description: >-
+              The mechanism to use to authenticate to the target server.
+        healthCheckConnectTimeout:
+          type: string
+          description: >-
+              Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
+        maxConnectionAge:
+          type: string
+          description: >-
+              Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections.
+        minExpiredConnectionDisconnectInterval:
+          type: string
+          description: >-
+              Specifies the minimum length of time that should pass between connection closures as a result of the connections being established for longer than the maximum connection age. This may help avoid cases in which a large number of connections are closed and re-established in a short period of time because of the maximum connection age.
+        connectTimeout:
+          type: string
+          description: >-
+              Specifies the maximum length of time to wait for a connection to be established before giving up and considering the server unavailable.
+        maxResponseSize:
+          type: string
+          description: >-
+              Specifies the maximum response size that should be supported for messages received from the LDAP external server.
+        keyManagerProvider:
+          type: string
+          description: >-
+              The key manager provider to use if SSL or StartTLS is to be used for connection-level security. When specifying a value for this property (except when using the Null key manager provider) you must ensure that the external server trusts this server's public certificate by adding this server's public certificate to the external server's trust store.
+        trustManagerProvider:
+          type: string
+          description: >-
+              The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
+        initialConnections:
+          type: integer
+          description: >-
+              The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
+        maxConnections:
+          type: integer
+          description: >-
+              The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
+        defunctConnectionResultCode:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
+          description: >-
+              Specifies the operation result code values that should cause the associated connection should be considered defunct. If an operation fails with one of these result codes, then it will be terminated and an attempt will be made to establish a new connection in its place.
+        abandonOnTimeout:
+          type: boolean
+          description: >-
+              Indicates whether to send an abandon request for an operation for which a response timeout is encountered. A request which has timed out on one server may be retried on another server regardless of whether an abandon request is sent, but if the initial attempt is not abandoned then a long-running operation may unnecessarily continue to consume processing resources on the initial server.
+        description:
+          type: string
+          description: >-
+              A description for this External Server
+      required:
+      - schemas
+      - serverHostName
+    Enumnokia-proxy-server-external-serverSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:external-server:nokia-proxy-server"
+    Enumexternal-server-opendj-authenticationMethodProp:
+      type: string
+      enum:
+      - "none"
+      - "simple"
+      - "external"
+      - "inter-server"
+      description: >-
+          The mechanism to use to authenticate to the target server.
+    add-opendj-external-server-request:
+      allOf:
+      - type: object
+        properties:
+          serverName:
+            type: string
+            description: >-
+                Name of the new External Server
+      - $ref: '#/components/schemas/opendj-external-server-shared'
+      required:
+      - serverName
+    opendj-external-server-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the External Server
+      - $ref: '#/components/schemas/opendj-external-server-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - serverPort
+      - connectionSecurity
+      - authenticationMethod
+      - verifyCredentialsMethod
+      - maxConnectionAge
+      - connectTimeout
+      - maxResponseSize
+    opendj-external-server-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumopendj-external-serverSchemaUrn'
+        serverHostName:
+          type: string
+          description: >-
+              The host name or IP address of the target LDAP server.
+        serverPort:
+          type: integer
+          description: >-
+              The port number on which the server listens for requests.
+        location:
+          type: string
+          description: >-
+              Specifies the location for the LDAP External Server.
+        bindDN:
+          type: string
+          description: >-
+              The DN to use to bind to the target LDAP server if simple authentication is required.
+        password:
+          type: string
+          format: password
+          description: >-
+              The login password for the specified user.
+        passphraseProvider:
+          type: string
+          description: >-
+              The passphrase provider to use to obtain the login password for the specified user.
+        connectionSecurity:
+          $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
+          description: >-
+              The mechanism to use to secure communication with the directory server.
+        authenticationMethod:
+          $ref: '#/components/schemas/Enumexternal-server-opendj-authenticationMethodProp'
+          description: >-
+              The mechanism to use to authenticate to the target server.
+        verifyCredentialsMethod:
+          $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
+          description: >-
+              The mechanism to use to verify user credentials while ensuring that the ability to process other operations is not impacted by an alternate authorization identity.
+        healthCheckConnectTimeout:
+          type: string
+          description: >-
+              Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
+        maxConnectionAge:
+          type: string
+          description: >-
+              Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections.
+        minExpiredConnectionDisconnectInterval:
+          type: string
+          description: >-
+              Specifies the minimum length of time that should pass between connection closures as a result of the connections being established for longer than the maximum connection age. This may help avoid cases in which a large number of connections are closed and re-established in a short period of time because of the maximum connection age.
+        connectTimeout:
+          type: string
+          description: >-
+              Specifies the maximum length of time to wait for a connection to be established before giving up and considering the server unavailable.
+        maxResponseSize:
+          type: string
+          description: >-
+              Specifies the maximum response size that should be supported for messages received from the LDAP external server.
+        keyManagerProvider:
+          type: string
+          description: >-
+              The key manager provider to use if SSL or StartTLS is to be used for connection-level security. When specifying a value for this property (except when using the Null key manager provider) you must ensure that the external server trusts this server's public certificate by adding this server's public certificate to the external server's trust store.
+        trustManagerProvider:
+          type: string
+          description: >-
+              The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
+        initialConnections:
+          type: integer
+          description: >-
+              The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
+        maxConnections:
+          type: integer
+          description: >-
+              The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
+        defunctConnectionResultCode:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
+          description: >-
+              Specifies the operation result code values that should cause the associated connection should be considered defunct. If an operation fails with one of these result codes, then it will be terminated and an attempt will be made to establish a new connection in its place.
+        abandonOnTimeout:
+          type: boolean
+          description: >-
+              Indicates whether to send an abandon request for an operation for which a response timeout is encountered. A request which has timed out on one server may be retried on another server regardless of whether an abandon request is sent, but if the initial attempt is not abandoned then a long-running operation may unnecessarily continue to consume processing resources on the initial server.
+        description:
+          type: string
+          description: >-
+              A description for this External Server
+      required:
+      - schemas
+      - serverHostName
+    Enumopendj-external-serverSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:external-server:opendj"
+    Enumexternal-server-ldap-authenticationMethodProp:
+      type: string
+      enum:
+      - "none"
+      - "simple"
+      - "external"
+      - "inter-server"
+      description: >-
+          The mechanism to use to authenticate to the target server.
+    add-ldap-external-server-request:
+      allOf:
+      - type: object
+        properties:
+          serverName:
+            type: string
+            description: >-
+                Name of the new External Server
+      - $ref: '#/components/schemas/ldap-external-server-shared'
+      required:
+      - serverName
+    ldap-external-server-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the External Server
+      - $ref: '#/components/schemas/ldap-external-server-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - serverPort
+      - connectionSecurity
+      - authenticationMethod
+      - verifyCredentialsMethod
+      - maxConnectionAge
+      - connectTimeout
+      - maxResponseSize
+    ldap-external-server-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumldap-external-serverSchemaUrn'
+        serverHostName:
+          type: string
+          description: >-
+              The host name or IP address of the target LDAP server.
+        serverPort:
+          type: integer
+          description: >-
+              The port number on which the server listens for requests.
+        location:
+          type: string
+          description: >-
+              Specifies the location for the LDAP External Server.
+        bindDN:
+          type: string
+          description: >-
+              The DN to use to bind to the target LDAP server if simple authentication is required.
+        password:
+          type: string
+          format: password
+          description: >-
+              The login password for the specified user.
+        passphraseProvider:
+          type: string
+          description: >-
+              The passphrase provider to use to obtain the login password for the specified user.
+        connectionSecurity:
+          $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
+          description: >-
+              The mechanism to use to secure communication with the directory server.
+        authenticationMethod:
+          $ref: '#/components/schemas/Enumexternal-server-ldap-authenticationMethodProp'
+          description: >-
+              The mechanism to use to authenticate to the target server.
+        verifyCredentialsMethod:
+          $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
+          description: >-
+              The mechanism to use to verify user credentials while ensuring that the ability to process other operations is not impacted by an alternate authorization identity.
+        healthCheckConnectTimeout:
+          type: string
+          description: >-
+              Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
+        maxConnectionAge:
+          type: string
+          description: >-
+              Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections.
+        minExpiredConnectionDisconnectInterval:
+          type: string
+          description: >-
+              Specifies the minimum length of time that should pass between connection closures as a result of the connections being established for longer than the maximum connection age. This may help avoid cases in which a large number of connections are closed and re-established in a short period of time because of the maximum connection age.
+        connectTimeout:
+          type: string
+          description: >-
+              Specifies the maximum length of time to wait for a connection to be established before giving up and considering the server unavailable.
+        maxResponseSize:
+          type: string
+          description: >-
+              Specifies the maximum response size that should be supported for messages received from the LDAP external server.
+        keyManagerProvider:
+          type: string
+          description: >-
+              The key manager provider to use if SSL or StartTLS is to be used for connection-level security. When specifying a value for this property (except when using the Null key manager provider) you must ensure that the external server trusts this server's public certificate by adding this server's public certificate to the external server's trust store.
+        trustManagerProvider:
+          type: string
+          description: >-
+              The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
+        initialConnections:
+          type: integer
+          description: >-
+              The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
+        maxConnections:
+          type: integer
+          description: >-
+              The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
+        defunctConnectionResultCode:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
+          description: >-
+              Specifies the operation result code values that should cause the associated connection should be considered defunct. If an operation fails with one of these result codes, then it will be terminated and an attempt will be made to establish a new connection in its place.
+        abandonOnTimeout:
+          type: boolean
+          description: >-
+              Indicates whether to send an abandon request for an operation for which a response timeout is encountered. A request which has timed out on one server may be retried on another server regardless of whether an abandon request is sent, but if the initial attempt is not abandoned then a long-running operation may unnecessarily continue to consume processing resources on the initial server.
+        description:
+          type: string
+          description: >-
+              A description for this External Server
+      required:
+      - schemas
+      - serverHostName
+    Enumldap-external-serverSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:external-server:ldap"
     Enumexternal-server-hostnameVerificationMethodProp:
       type: string
       enum:
@@ -1995,14 +1650,135 @@ components:
       - "strict"
       description: >-
           The mechanism for checking if the hostname in the PingOne ID Token Validator's base-url value matches the name(s) stored inside the X.509 certificate presented by PingOne.
-    Enumexternal-server-smtpSecurityProp:
+    add-ping-one-http-external-server-request:
+      allOf:
+      - type: object
+        properties:
+          serverName:
+            type: string
+            description: >-
+                Name of the new External Server
+      - $ref: '#/components/schemas/ping-one-http-external-server-shared'
+      required:
+      - serverName
+    ping-one-http-external-server-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the External Server
+      - $ref: '#/components/schemas/ping-one-http-external-server-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    ping-one-http-external-server-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumping-one-http-external-serverSchemaUrn'
+        hostnameVerificationMethod:
+          $ref: '#/components/schemas/Enumexternal-server-hostnameVerificationMethodProp'
+          description: >-
+              The mechanism for checking if the hostname in the PingOne ID Token Validator's base-url value matches the name(s) stored inside the X.509 certificate presented by PingOne.
+        trustManagerProvider:
+          type: string
+          description: >-
+              The trust manager provider to use for HTTPS connection-level security.
+        connectTimeout:
+          type: string
+          description: >-
+              Specifies the maximum length of time to wait for a connection to be established before aborting a request to PingOne.
+        responseTimeout:
+          type: string
+          description: >-
+              Specifies the maximum length of time to wait for response data to be read from an established connection before aborting a request to PingOne.
+        description:
+          type: string
+          description: >-
+              A description for this External Server
+      required:
+      - schemas
+    Enumping-one-http-external-serverSchemaUrn:
       type: string
       enum:
-      - "none"
-      - "starttls"
-      - "ssl"
-      description: >-
-          This property specifies type of connection security to use when connecting to the outgoing mail server.
+      - "urn:pingidentity:schemas:configuration:2.0:external-server:ping-one-http"
+    add-http-external-server-request:
+      allOf:
+      - type: object
+        properties:
+          serverName:
+            type: string
+            description: >-
+                Name of the new External Server
+      - $ref: '#/components/schemas/http-external-server-shared'
+      required:
+      - serverName
+    http-external-server-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the External Server
+      - $ref: '#/components/schemas/http-external-server-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    http-external-server-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumhttp-external-serverSchemaUrn'
+        baseURL:
+          type: string
+          description: >-
+              The base URL of the external server, optionally including port number, for example "https://externalService:9031".
+        hostnameVerificationMethod:
+          $ref: '#/components/schemas/Enumexternal-server-hostnameVerificationMethodProp'
+          description: >-
+              The mechanism for checking if the hostname of the HTTP External Server matches the name(s) stored inside the server's X.509 certificate. This is only applicable if SSL is being used for connection security.
+        keyManagerProvider:
+          type: string
+          description: >-
+              The key manager provider to use if SSL (HTTPS) is to be used for connection-level security. When specifying a value for this property (except when using the Null key manager provider) you must ensure that the external server trusts this server's public certificate by adding this server's public certificate to the external server's trust store.
+        trustManagerProvider:
+          type: string
+          description: >-
+              The trust manager provider to use if SSL (HTTPS) is to be used for connection-level security.
+        sslCertNickname:
+          type: string
+          description: >-
+              The certificate alias within the keystore to use if SSL (HTTPS) is to be used for connection-level security. When specifying a value for this property you must ensure that the external server trusts this server's public certificate by adding this server's public certificate to the external server's trust store.
+        connectTimeout:
+          type: string
+          description: >-
+              Specifies the maximum length of time to wait for a connection to be established before aborting a request to the server.
+        responseTimeout:
+          type: string
+          description: >-
+              Specifies the maximum length of time to wait for response data to be read from an established connection before aborting a request to the server.
+        description:
+          type: string
+          description: >-
+              A description for this External Server
+      required:
+      - schemas
+      - baseURL
+    Enumhttp-external-serverSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:external-server:http"
     Enumexternal-server-oracle-unified-directory-authenticationMethodProp:
       type: string
       enum:
@@ -2012,6 +1788,211 @@ components:
       - "inter-server"
       description: >-
           The mechanism to use to authenticate to the target server.
+    add-oracle-unified-directory-external-server-request:
+      allOf:
+      - type: object
+        properties:
+          serverName:
+            type: string
+            description: >-
+                Name of the new External Server
+      - $ref: '#/components/schemas/oracle-unified-directory-external-server-shared'
+      required:
+      - serverName
+    oracle-unified-directory-external-server-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the External Server
+      - $ref: '#/components/schemas/oracle-unified-directory-external-server-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - serverPort
+      - connectionSecurity
+      - authenticationMethod
+      - verifyCredentialsMethod
+      - maxConnectionAge
+      - connectTimeout
+      - maxResponseSize
+    oracle-unified-directory-external-server-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumoracle-unified-directory-external-serverSchemaUrn'
+        serverHostName:
+          type: string
+          description: >-
+              The host name or IP address of the target LDAP server.
+        serverPort:
+          type: integer
+          description: >-
+              The port number on which the server listens for requests.
+        location:
+          type: string
+          description: >-
+              Specifies the location for the LDAP External Server.
+        bindDN:
+          type: string
+          description: >-
+              The DN to use to bind to the target LDAP server if simple authentication is required.
+        password:
+          type: string
+          format: password
+          description: >-
+              The login password for the specified user.
+        passphraseProvider:
+          type: string
+          description: >-
+              The passphrase provider to use to obtain the login password for the specified user.
+        connectionSecurity:
+          $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
+          description: >-
+              The mechanism to use to secure communication with the directory server.
+        authenticationMethod:
+          $ref: '#/components/schemas/Enumexternal-server-oracle-unified-directory-authenticationMethodProp'
+          description: >-
+              The mechanism to use to authenticate to the target server.
+        verifyCredentialsMethod:
+          $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
+          description: >-
+              The mechanism to use to verify user credentials while ensuring that the ability to process other operations is not impacted by an alternate authorization identity.
+        healthCheckConnectTimeout:
+          type: string
+          description: >-
+              Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
+        maxConnectionAge:
+          type: string
+          description: >-
+              Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections.
+        minExpiredConnectionDisconnectInterval:
+          type: string
+          description: >-
+              Specifies the minimum length of time that should pass between connection closures as a result of the connections being established for longer than the maximum connection age. This may help avoid cases in which a large number of connections are closed and re-established in a short period of time because of the maximum connection age.
+        connectTimeout:
+          type: string
+          description: >-
+              Specifies the maximum length of time to wait for a connection to be established before giving up and considering the server unavailable.
+        maxResponseSize:
+          type: string
+          description: >-
+              Specifies the maximum response size that should be supported for messages received from the LDAP external server.
+        keyManagerProvider:
+          type: string
+          description: >-
+              The key manager provider to use if SSL or StartTLS is to be used for connection-level security. When specifying a value for this property (except when using the Null key manager provider) you must ensure that the external server trusts this server's public certificate by adding this server's public certificate to the external server's trust store.
+        trustManagerProvider:
+          type: string
+          description: >-
+              The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
+        initialConnections:
+          type: integer
+          description: >-
+              The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
+        maxConnections:
+          type: integer
+          description: >-
+              The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
+        defunctConnectionResultCode:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
+          description: >-
+              Specifies the operation result code values that should cause the associated connection should be considered defunct. If an operation fails with one of these result codes, then it will be terminated and an attempt will be made to establish a new connection in its place.
+        abandonOnTimeout:
+          type: boolean
+          description: >-
+              Indicates whether to send an abandon request for an operation for which a response timeout is encountered. A request which has timed out on one server may be retried on another server regardless of whether an abandon request is sent, but if the initial attempt is not abandoned then a long-running operation may unnecessarily continue to consume processing resources on the initial server.
+        description:
+          type: string
+          description: >-
+              A description for this External Server
+      required:
+      - schemas
+      - serverHostName
+    Enumoracle-unified-directory-external-serverSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:external-server:oracle-unified-directory"
+    add-conjur-external-server-request:
+      allOf:
+      - type: object
+        properties:
+          serverName:
+            type: string
+            description: >-
+                Name of the new External Server
+      - $ref: '#/components/schemas/conjur-external-server-shared'
+      required:
+      - serverName
+    conjur-external-server-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the External Server
+      - $ref: '#/components/schemas/conjur-external-server-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    conjur-external-server-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumconjur-external-serverSchemaUrn'
+        conjurServerBaseURI:
+          type: array
+          items:
+            type: string
+          description: >-
+              The base URL needed to access the CyberArk Conjur server. The base URL should consist of the protocol ("http" or "https"), the server address (resolvable name or IP address), and the port number. For example, "https://conjur.example.com:8443/".
+        conjurAuthenticationMethod:
+          type: string
+          description: >-
+              The mechanism used to authenticate to the Conjur server.
+        conjurAccountName:
+          type: string
+          description: >-
+              The name of the account with which the desired secrets are associated.
+        trustStoreFile:
+          type: string
+          description: >-
+              The path to a file containing the information needed to trust the certificate presented by the Conjur servers.
+        trustStorePin:
+          type: string
+          format: password
+          description: >-
+              The PIN needed to access the contents of the trust store. This is only required if a trust store file is required, and if that trust store requires a PIN to access its contents.
+        trustStoreType:
+          type: string
+          description: >-
+              The store type for the specified trust store file. The value should likely be one of "JKS", "PKCS12", or "BCFKS".
+        description:
+          type: string
+          description: >-
+              A description for this External Server
+      required:
+      - schemas
+      - conjurServerBaseURI
+      - conjurAuthenticationMethod
+      - conjurAccountName
+    Enumconjur-external-serverSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:external-server:conjur"
     Enumexternal-server-amazon-aws-authenticationMethodProp:
       type: string
       enum:
@@ -2021,15 +2002,137 @@ components:
       - "irsa-role"
       description: >-
           The mechanism to use to authenticate to AWS.
-    Enumexternal-server-nokia-ds-authenticationMethodProp:
+    add-amazon-aws-external-server-request:
+      allOf:
+      - type: object
+        properties:
+          serverName:
+            type: string
+            description: >-
+                Name of the new External Server
+      - $ref: '#/components/schemas/amazon-aws-external-server-shared'
+      required:
+      - serverName
+    amazon-aws-external-server-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the External Server
+      - $ref: '#/components/schemas/amazon-aws-external-server-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    amazon-aws-external-server-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumamazon-aws-external-serverSchemaUrn'
+        httpProxyExternalServer:
+          type: string
+          description: >-
+              A reference to an HTTP proxy server that should be used for requests sent to the AWS service.
+        authenticationMethod:
+          $ref: '#/components/schemas/Enumexternal-server-amazon-aws-authenticationMethodProp'
+          description: >-
+              The mechanism to use to authenticate to AWS.
+        awsAccessKeyID:
+          type: string
+          description: >-
+              The access key ID that will be used if authentication should use an access key. If this is provided, then an aws-secret-access-key must also be provided.
+        awsSecretAccessKey:
+          type: string
+          format: password
+          description: >-
+              The secret access key that will be used if authentication should use an access key. If this is provided, then an aws-access-key-id must also be provided.
+        awsRegionName:
+          type: string
+          description: >-
+              The name of the AWS region containing the resources that will be accessed.
+        description:
+          type: string
+          description: >-
+              A description for this External Server
+      required:
+      - schemas
+      - awsRegionName
+    Enumamazon-aws-external-serverSchemaUrn:
       type: string
       enum:
-      - "none"
-      - "simple"
-      - "external"
-      - "inter-server"
-      description: >-
-          The mechanism to use to authenticate to the target server.
+      - "urn:pingidentity:schemas:configuration:2.0:external-server:amazon-aws"
+    add-vault-external-server-request:
+      allOf:
+      - type: object
+        properties:
+          serverName:
+            type: string
+            description: >-
+                Name of the new External Server
+      - $ref: '#/components/schemas/vault-external-server-shared'
+      required:
+      - serverName
+    vault-external-server-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the External Server
+      - $ref: '#/components/schemas/vault-external-server-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    vault-external-server-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumvault-external-serverSchemaUrn'
+        vaultServerBaseURI:
+          type: array
+          items:
+            type: string
+          description: >-
+              The base URL needed to access the Vault server. The base URL should consist of the protocol ("http" or "https"), the server address (resolvable name or IP address), and the port number. For example, "https://vault.example.com:8200/".
+        vaultAuthenticationMethod:
+          type: string
+          description: >-
+              The mechanism used to authenticate to the Vault server.
+        trustStoreFile:
+          type: string
+          description: >-
+              The path to a file containing the information needed to trust the certificate presented by the Vault servers.
+        trustStorePin:
+          type: string
+          format: password
+          description: >-
+              The passphrase needed to access the contents of the trust store. This is only required if a trust store file is required, and if that trust store requires a PIN to access its contents.
+        trustStoreType:
+          type: string
+          description: >-
+              The store type for the specified trust store file. The value should likely be one of "JKS", "PKCS12", or "BCFKS".
+        description:
+          type: string
+          description: >-
+              A description for this External Server
+      required:
+      - schemas
+      - vaultServerBaseURI
+      - vaultAuthenticationMethod
+    Enumvault-external-serverSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:external-server:vault"
     updateRequest:
       type: object
       properties:

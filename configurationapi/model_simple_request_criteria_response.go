@@ -19,13 +19,13 @@ var _ MappedNullable = &SimpleRequestCriteriaResponse{}
 
 // SimpleRequestCriteriaResponse struct for SimpleRequestCriteriaResponse
 type SimpleRequestCriteriaResponse struct {
-	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
-	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Request Criteria
-	Id              string                                       `json:"id"`
-	Schemas         []EnumsimpleRequestCriteriaSchemaUrn         `json:"schemas"`
-	OperationType   []EnumrequestCriteriaSimpleOperationTypeProp `json:"operationType,omitempty"`
-	OperationOrigin []EnumrequestCriteriaOperationOriginProp     `json:"operationOrigin,omitempty"`
+	Id      string                               `json:"id"`
+	Schemas []EnumsimpleRequestCriteriaSchemaUrn `json:"schemas"`
+	// Specifies the operation type(s) for operations that should be included in this Simple Request Criteria.
+	OperationType []EnumrequestCriteriaSimpleOperationTypeProp `json:"operationType,omitempty"`
+	// Specifies the origin for operations to be included in this Simple Request Criteria. If no values are provided, then the operation origin will not be taken into consideration when determining whether an operation matches this Simple Request Criteria.
+	OperationOrigin []EnumrequestCriteriaOperationOriginProp `json:"operationOrigin,omitempty"`
 	// Specifies a connection criteria object that must match the associated client connection for operations included in this Simple Request Criteria.
 	ConnectionCriteria *string `json:"connectionCriteria,omitempty"`
 	// Specifies the OID of a control that must be present in the request from the client for operations included in this Simple Request Criteria. If any control OIDs are provided, then the request must contain all of those controls.
@@ -55,8 +55,9 @@ type SimpleRequestCriteriaResponse struct {
 	// Specifies the DN of a group in which the user associated with the target entry should not be a member for requests included in this Simple Request Criteria. This will only be taken into account for add, simple bind, compare, delete, modify, modify DN, and search operations. It will be ignored for abandon, SASL bind, extended, and unbind operations. If any group DNs are provided, then the target entry must not be a member of at least one of those groups (that is, the target entry may be a member of zero or more of those groups, but not all of them).
 	NotAllIncludedTargetEntryGroupDN []string `json:"notAllIncludedTargetEntryGroupDN,omitempty"`
 	// Specifies the DN of a group in which the user associated with the target entry must not be a member for requests included in this Simple Request Criteria. This will only be taken into account for add, simple bind, compare, delete, modify, modify DN, and search operations. It will be ignored for abandon, SASL bind, extended, and unbind operations. If any group DNs are provided, then the target entry must not be a member of any of those groups.
-	NoneIncludedTargetEntryGroupDN []string                                `json:"noneIncludedTargetEntryGroupDN,omitempty"`
-	TargetBindType                 []EnumrequestCriteriaTargetBindTypeProp `json:"targetBindType,omitempty"`
+	NoneIncludedTargetEntryGroupDN []string `json:"noneIncludedTargetEntryGroupDN,omitempty"`
+	// Specifies the authentication type for bind requests included in this Simple Request Criteria. This will only be taken into account for bind operations and will be ignored for any other type of operation. If no values are provided, then the authentication type will not be considered when determining whether the request should be included in this Simple Request Criteria.
+	TargetBindType []EnumrequestCriteriaTargetBindTypeProp `json:"targetBindType,omitempty"`
 	// Specifies the name of a SASL mechanism for bind requests included in this Simple Request Criteria. This will only be taken into account for SASL bind operations and will be ignored for other types of operations and for bind operations that do not use SASL authentication.
 	IncludedTargetSASLMechanism []string `json:"includedTargetSASLMechanism,omitempty"`
 	// Specifies the name of a SASL mechanism for bind requests excluded from this Simple Request Criteria. This will only be taken into account for SASL bind operations and will be ignored for other types of operations and for bind operations that do not use SASL authentication.
@@ -68,7 +69,8 @@ type SimpleRequestCriteriaResponse struct {
 	// Specifies the request OID for extended requests included in this Simple Request Criteria. This will only be taken into account for extended requests and will be ignored for all other types of requests.
 	IncludedExtendedOperationOID []string `json:"includedExtendedOperationOID,omitempty"`
 	// Specifies the request OID for extended requests excluded from this Simple Request Criteria. This will only be taken into account for extended requests and will be ignored for all other types of requests.
-	ExcludedExtendedOperationOID           []string                                                       `json:"excludedExtendedOperationOID,omitempty"`
+	ExcludedExtendedOperationOID []string `json:"excludedExtendedOperationOID,omitempty"`
+	// Specifies the search scope values included in this Simple Request Criteria. This will only be taken into account for search requests and will be ignored for all other types of requests.
 	IncludedSearchScope                    []EnumrequestCriteriaIncludedSearchScopeProp                   `json:"includedSearchScope,omitempty"`
 	UsingAdministrativeSessionWorkerThread *EnumrequestCriteriaUsingAdministrativeSessionWorkerThreadProp `json:"usingAdministrativeSessionWorkerThread,omitempty"`
 	// Specifies an application name for requests included in this Simple Request Criteria.
@@ -76,7 +78,9 @@ type SimpleRequestCriteriaResponse struct {
 	// Specifies an application name for requests excluded from this Simple Request Criteria.
 	ExcludedApplicationName []string `json:"excludedApplicationName,omitempty"`
 	// A description for this Request Criteria
-	Description *string `json:"description,omitempty"`
+	Description                                   *string                                            `json:"description,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 }
 
 // NewSimpleRequestCriteriaResponse instantiates a new SimpleRequestCriteriaResponse object
@@ -96,70 +100,6 @@ func NewSimpleRequestCriteriaResponse(id string, schemas []EnumsimpleRequestCrit
 func NewSimpleRequestCriteriaResponseWithDefaults() *SimpleRequestCriteriaResponse {
 	this := SimpleRequestCriteriaResponse{}
 	return &this
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *SimpleRequestCriteriaResponse) GetMeta() MetaMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret MetaMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SimpleRequestCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// HasMeta returns a boolean if a field has been set.
-func (o *SimpleRequestCriteriaResponse) HasMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
-}
-
-// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
-func (o *SimpleRequestCriteriaResponse) SetMeta(v MetaMeta) {
-	o.Meta = &v
-}
-
-// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
-func (o *SimpleRequestCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		var ret MetaUrnPingidentitySchemasConfigurationMessages20
-		return ret
-	}
-	return *o.Urnpingidentityschemasconfigurationmessages20
-}
-
-// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SimpleRequestCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		return nil, false
-	}
-	return o.Urnpingidentityschemasconfigurationmessages20, true
-}
-
-// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
-func (o *SimpleRequestCriteriaResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		return true
-	}
-
-	return false
-}
-
-// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
-func (o *SimpleRequestCriteriaResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
-	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
 // GetId returns the Id field value
@@ -1138,6 +1078,70 @@ func (o *SimpleRequestCriteriaResponse) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *SimpleRequestCriteriaResponse) GetMeta() MetaMeta {
+	if o == nil || IsNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SimpleRequestCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || IsNil(o.Meta) {
+		return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *SimpleRequestCriteriaResponse) HasMeta() bool {
+	if o != nil && !IsNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *SimpleRequestCriteriaResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
+func (o *SimpleRequestCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		var ret MetaUrnPingidentitySchemasConfigurationMessages20
+		return ret
+	}
+	return *o.Urnpingidentityschemasconfigurationmessages20
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SimpleRequestCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return nil, false
+	}
+	return o.Urnpingidentityschemasconfigurationmessages20, true
+}
+
+// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+func (o *SimpleRequestCriteriaResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
+func (o *SimpleRequestCriteriaResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
+	o.Urnpingidentityschemasconfigurationmessages20 = &v
+}
+
 func (o SimpleRequestCriteriaResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1148,12 +1152,6 @@ func (o SimpleRequestCriteriaResponse) MarshalJSON() ([]byte, error) {
 
 func (o SimpleRequestCriteriaResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
 	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.OperationType) {
@@ -1242,6 +1240,12 @@ func (o SimpleRequestCriteriaResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
 	return toSerialize, nil
 }

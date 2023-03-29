@@ -23,8 +23,9 @@ type AddReplaceCertificateExtendedOperationHandlerRequest struct {
 	HandlerName string                                                    `json:"handlerName"`
 	Schemas     []EnumreplaceCertificateExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// Indicates whether clients should be allowed to directly provide a new listener or inter-server certificate chain in the extended request.
-	AllowRemotelyProvidedCertificates *bool                                              `json:"allowRemotelyProvidedCertificates,omitempty"`
-	AllowedOperation                  []EnumextendedOperationHandlerAllowedOperationProp `json:"allowedOperation,omitempty"`
+	AllowRemotelyProvidedCertificates *bool `json:"allowRemotelyProvidedCertificates,omitempty"`
+	// The types of replace certificate operations that clients will be allowed to request.
+	AllowedOperation []EnumextendedOperationHandlerAllowedOperationProp `json:"allowedOperation,omitempty"`
 	// A set of criteria that client connections must satisfy before they will be allowed to request the associated extended operations.
 	ConnectionCriteria *string `json:"connectionCriteria,omitempty"`
 	// A set of criteria that the extended requests must satisfy before they will be processed by the server.

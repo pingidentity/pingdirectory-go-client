@@ -22,7 +22,8 @@ type AddUniqueAttributePluginRequest struct {
 	// Name of the new Plugin
 	PluginName string                               `json:"pluginName"`
 	Schemas    []EnumuniqueAttributePluginSchemaUrn `json:"schemas"`
-	PluginType []EnumpluginPluginTypeProp           `json:"pluginType,omitempty"`
+	// Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
+	PluginType []EnumpluginPluginTypeProp `json:"pluginType,omitempty"`
 	// Specifies the type of attributes to check for value uniqueness.
 	Type                      []string                                 `json:"type"`
 	MultipleAttributeBehavior *EnumpluginMultipleAttributeBehaviorProp `json:"multipleAttributeBehavior,omitempty"`

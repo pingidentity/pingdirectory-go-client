@@ -19,8 +19,6 @@ var _ MappedNullable = &LocalDbBackendResponse{}
 
 // LocalDbBackendResponse struct for LocalDbBackendResponse
 type LocalDbBackendResponse struct {
-	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
-	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Backend
 	Id                        string                                    `json:"id"`
 	Schemas                   []EnumlocalDbBackendSchemaUrn             `json:"schemas"`
@@ -74,14 +72,17 @@ type LocalDbBackendResponse struct {
 	Id2childrenCacheMode *EnumbackendId2childrenCacheModeProp `json:"id2childrenCacheMode,omitempty"`
 	Id2subtreeCacheMode  *EnumbackendId2subtreeCacheModeProp  `json:"id2subtreeCacheMode,omitempty"`
 	Dn2uriCacheMode      *EnumbackendDn2uriCacheModeProp      `json:"dn2uriCacheMode,omitempty"`
-	PrimeMethod          []EnumbackendPrimeMethodProp         `json:"primeMethod,omitempty"`
+	// Specifies the method that should be used to prime caches with data for this backend.
+	PrimeMethod []EnumbackendPrimeMethodProp `json:"primeMethod,omitempty"`
 	// Specifies the number of threads to use when priming. At present, this applies only to the preload and cursor-across-indexes prime methods.
 	PrimeThreadCount *int32 `json:"primeThreadCount,omitempty"`
 	// Specifies the maximum length of time that the backend prime should be allowed to run. A duration of zero seconds indicates that there should not be a time limit.
 	PrimeTimeLimit *string `json:"primeTimeLimit,omitempty"`
 	// Indicates whether to prime all indexes associated with this backend, or to only prime the specified set of indexes (as configured with the system-index-to-prime property for the system indexes, and the prime-index property in the attribute index definition for attribute indexes).
-	PrimeAllIndexes                     *bool                                                `json:"primeAllIndexes,omitempty"`
-	SystemIndexToPrime                  []EnumbackendSystemIndexToPrimeProp                  `json:"systemIndexToPrime,omitempty"`
+	PrimeAllIndexes *bool `json:"primeAllIndexes,omitempty"`
+	// Specifies which system index(es) should be primed when the backend is initialized.
+	SystemIndexToPrime []EnumbackendSystemIndexToPrimeProp `json:"systemIndexToPrime,omitempty"`
+	// Specifies the system index(es) for which internal database nodes only (i.e., the database keys but not values) should be primed when the backend is initialized.
 	SystemIndexToPrimeInternalNodesOnly []EnumbackendSystemIndexToPrimeInternalNodesOnlyProp `json:"systemIndexToPrimeInternalNodesOnly,omitempty"`
 	// Indicates whether to attempt to perform the prime using a background thread if possible. If background priming is enabled, then the Directory Server may be allowed to accept client connections and process requests while the prime is in progress.
 	BackgroundPrime *bool `json:"backgroundPrime,omitempty"`
@@ -126,7 +127,9 @@ type LocalDbBackendResponse struct {
 	// Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
 	ReturnUnavailableWhenDisabled *bool `json:"returnUnavailableWhenDisabled,omitempty"`
 	// Specifies a notification manager for changes resulting from operations processed through this Backend
-	NotificationManager *string `json:"notificationManager,omitempty"`
+	NotificationManager                           *string                                            `json:"notificationManager,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 }
 
 // NewLocalDbBackendResponse instantiates a new LocalDbBackendResponse object
@@ -152,70 +155,6 @@ func NewLocalDbBackendResponse(id string, schemas []EnumlocalDbBackendSchemaUrn,
 func NewLocalDbBackendResponseWithDefaults() *LocalDbBackendResponse {
 	this := LocalDbBackendResponse{}
 	return &this
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *LocalDbBackendResponse) GetMeta() MetaMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret MetaMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LocalDbBackendResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// HasMeta returns a boolean if a field has been set.
-func (o *LocalDbBackendResponse) HasMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
-}
-
-// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
-func (o *LocalDbBackendResponse) SetMeta(v MetaMeta) {
-	o.Meta = &v
-}
-
-// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
-func (o *LocalDbBackendResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		var ret MetaUrnPingidentitySchemasConfigurationMessages20
-		return ret
-	}
-	return *o.Urnpingidentityschemasconfigurationmessages20
-}
-
-// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LocalDbBackendResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		return nil, false
-	}
-	return o.Urnpingidentityschemasconfigurationmessages20, true
-}
-
-// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
-func (o *LocalDbBackendResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		return true
-	}
-
-	return false
-}
-
-// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
-func (o *LocalDbBackendResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
-	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
 // GetId returns the Id field value
@@ -2074,6 +2013,70 @@ func (o *LocalDbBackendResponse) SetNotificationManager(v string) {
 	o.NotificationManager = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *LocalDbBackendResponse) GetMeta() MetaMeta {
+	if o == nil || IsNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LocalDbBackendResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || IsNil(o.Meta) {
+		return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *LocalDbBackendResponse) HasMeta() bool {
+	if o != nil && !IsNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *LocalDbBackendResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
+func (o *LocalDbBackendResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		var ret MetaUrnPingidentitySchemasConfigurationMessages20
+		return ret
+	}
+	return *o.Urnpingidentityschemasconfigurationmessages20
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LocalDbBackendResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return nil, false
+	}
+	return o.Urnpingidentityschemasconfigurationmessages20, true
+}
+
+// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+func (o *LocalDbBackendResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
+func (o *LocalDbBackendResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
+	o.Urnpingidentityschemasconfigurationmessages20 = &v
+}
+
 func (o LocalDbBackendResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -2084,12 +2087,6 @@ func (o LocalDbBackendResponse) MarshalJSON() ([]byte, error) {
 
 func (o LocalDbBackendResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
 	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.UncachedId2entryCacheMode) {
@@ -2253,6 +2250,12 @@ func (o LocalDbBackendResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.NotificationManager) {
 		toSerialize["notificationManager"] = o.NotificationManager
+	}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
 	return toSerialize, nil
 }

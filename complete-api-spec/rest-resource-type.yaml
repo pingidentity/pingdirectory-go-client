@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access rest-resource-types
   name: rest-resource-type
@@ -482,22 +482,24 @@ components:
       - type: object
         properties:
           typeName:
-            description: Name of the new REST Resource Type
             type: string
-        required:
-        - typeName
+            description: >-
+                Name of the new REST Resource Type
       - $ref: '#/components/schemas/user-rest-resource-type-shared'
+      required:
+      - typeName
     user-rest-resource-type-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the REST Resource Type
             type: string
-        required:
-        - id
+            description: >-
+                Name of the REST Resource Type
       - $ref: '#/components/schemas/user-rest-resource-type-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     user-rest-resource-type-shared:
       type: object
       properties:
@@ -618,22 +620,24 @@ components:
       - type: object
         properties:
           typeName:
-            description: Name of the new REST Resource Type
             type: string
-        required:
-        - typeName
+            description: >-
+                Name of the new REST Resource Type
       - $ref: '#/components/schemas/generic-rest-resource-type-shared'
+      required:
+      - typeName
     generic-rest-resource-type-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the REST Resource Type
             type: string
-        required:
-        - id
+            description: >-
+                Name of the REST Resource Type
       - $ref: '#/components/schemas/generic-rest-resource-type-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     generic-rest-resource-type-shared:
       type: object
       properties:
@@ -746,22 +750,24 @@ components:
       - type: object
         properties:
           typeName:
-            description: Name of the new REST Resource Type
             type: string
-        required:
-        - typeName
+            description: >-
+                Name of the new REST Resource Type
       - $ref: '#/components/schemas/group-rest-resource-type-shared'
+      required:
+      - typeName
     group-rest-resource-type-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the REST Resource Type
             type: string
-        required:
-        - id
+            description: >-
+                Name of the REST Resource Type
       - $ref: '#/components/schemas/group-rest-resource-type-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     group-rest-resource-type-shared:
       type: object
       properties:
@@ -869,28 +875,60 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:rest-resource-type:group"
+    Enumdelegated-admin-attribute-certificate-allowedMIMETypeProp:
+      type: string
+      enum:
+      - "cer"
+      - "crt"
+      - "der"
+      - "key"
+      - "p7b"
+      - "p7c"
+      - "p8"
+      - "p10"
+      - "p12"
+      - "pem"
+      - "pfx"
+      - "spc"
+      description: >-
+          The list of file types allowed to be uploaded. If no types are specified, then all types will be allowed.
+    Enumdelegated-admin-attribute-mutabilityProp:
+      type: string
+      enum:
+      - "read-only"
+      - "read-write"
+      description: >-
+          Specifies the circumstances under which the values of the attribute can be written.
+    Enumdelegated-admin-attribute-attributePresentationProp:
+      type: string
+      enum:
+      - "default"
+      - "custom"
+      description: >-
+          Indicates how the attribute is presented to the user of the app.
     add-certificate-delegated-admin-attribute-request:
       allOf:
       - type: object
         properties:
           attributeType:
-            description: Name of the new Delegated Admin Attribute
             type: string
-        required:
-        - attributeType
+            description: >-
+                Name of the new Delegated Admin Attribute
       - $ref: '#/components/schemas/certificate-delegated-admin-attribute-shared'
+      required:
+      - attributeType
     certificate-delegated-admin-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Delegated Admin Attribute
             type: string
-        required:
-        - id
+            description: >-
+                Name of the REST Resource Type
       - $ref: '#/components/schemas/certificate-delegated-admin-attribute-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - mutability
       - multiValued
       - displayOrderIndex
@@ -907,6 +945,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumdelegated-admin-attribute-certificate-allowedMIMETypeProp'
+          description: >-
+              The list of file types allowed to be uploaded. If no types are specified, then all types will be allowed.
         description:
           type: string
           description: >-
@@ -921,6 +961,8 @@ components:
               A human readable display name for this Delegated Admin Attribute.
         mutability:
           $ref: '#/components/schemas/Enumdelegated-admin-attribute-mutabilityProp'
+          description: >-
+              Specifies the circumstances under which the values of the attribute can be written.
         multiValued:
           type: boolean
           description: >-
@@ -939,6 +981,8 @@ components:
               For LDAP attributes with DN syntax, specifies what kind of resource is referenced.
         attributePresentation:
           $ref: '#/components/schemas/Enumdelegated-admin-attribute-attributePresentationProp'
+          description: >-
+              Indicates how the attribute is presented to the user of the app.
         dateTimeFormat:
           type: string
           description: >-
@@ -951,28 +995,38 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:delegated-admin-attribute:certificate"
+    Enumdelegated-admin-attribute-photo-allowedMIMETypeProp:
+      type: string
+      enum:
+      - "gif"
+      - "jpeg"
+      - "jpg"
+      - "png"
+      description: >-
+          The list of file types allowed to be uploaded. If no types are specified, then all types will be allowed.
     add-photo-delegated-admin-attribute-request:
       allOf:
       - type: object
         properties:
           attributeType:
-            description: Name of the new Delegated Admin Attribute
             type: string
-        required:
-        - attributeType
+            description: >-
+                Name of the new Delegated Admin Attribute
       - $ref: '#/components/schemas/photo-delegated-admin-attribute-shared'
+      required:
+      - attributeType
     photo-delegated-admin-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Delegated Admin Attribute
             type: string
-        required:
-        - id
+            description: >-
+                Name of the REST Resource Type
       - $ref: '#/components/schemas/photo-delegated-admin-attribute-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - mutability
       - multiValued
       - displayOrderIndex
@@ -989,6 +1043,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumdelegated-admin-attribute-photo-allowedMIMETypeProp'
+          description: >-
+              The list of file types allowed to be uploaded. If no types are specified, then all types will be allowed.
         description:
           type: string
           description: >-
@@ -1003,6 +1059,8 @@ components:
               A human readable display name for this Delegated Admin Attribute.
         mutability:
           $ref: '#/components/schemas/Enumdelegated-admin-attribute-mutabilityProp'
+          description: >-
+              Specifies the circumstances under which the values of the attribute can be written.
         multiValued:
           type: boolean
           description: >-
@@ -1021,6 +1079,8 @@ components:
               For LDAP attributes with DN syntax, specifies what kind of resource is referenced.
         attributePresentation:
           $ref: '#/components/schemas/Enumdelegated-admin-attribute-attributePresentationProp'
+          description: >-
+              Indicates how the attribute is presented to the user of the app.
         dateTimeFormat:
           type: string
           description: >-
@@ -1038,23 +1098,24 @@ components:
       - type: object
         properties:
           attributeType:
-            description: Name of the new Delegated Admin Attribute
             type: string
-        required:
-        - attributeType
+            description: >-
+                Name of the new Delegated Admin Attribute
       - $ref: '#/components/schemas/generic-delegated-admin-attribute-shared'
+      required:
+      - attributeType
     generic-delegated-admin-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Delegated Admin Attribute
             type: string
-        required:
-        - id
+            description: >-
+                Name of the REST Resource Type
       - $ref: '#/components/schemas/generic-delegated-admin-attribute-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - mutability
       - multiValued
       - includeInSummary
@@ -1082,6 +1143,8 @@ components:
               A human readable display name for this Delegated Admin Attribute.
         mutability:
           $ref: '#/components/schemas/Enumdelegated-admin-attribute-mutabilityProp'
+          description: >-
+              Specifies the circumstances under which the values of the attribute can be written.
         multiValued:
           type: boolean
           description: >-
@@ -1104,6 +1167,8 @@ components:
               For LDAP attributes with DN syntax, specifies what kind of resource is referenced.
         attributePresentation:
           $ref: '#/components/schemas/Enumdelegated-admin-attribute-attributePresentationProp'
+          description: >-
+              Indicates how the attribute is presented to the user of the app.
         dateTimeFormat:
           type: string
           description: >-
@@ -1121,22 +1186,24 @@ components:
       - type: object
         properties:
           resourceName:
-            description: Name of the new Delegated Admin Correlated REST Resource
             type: string
-        required:
-        - resourceName
+            description: >-
+                Name of the new Delegated Admin Correlated REST Resource
       - $ref: '#/components/schemas/delegated-admin-correlated-rest-resource-shared'
+      required:
+      - resourceName
     delegated-admin-correlated-rest-resource-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Delegated Admin Correlated REST Resource
             type: string
-        required:
-        - id
+            description: >-
+                Name of the REST Resource Type
       - $ref: '#/components/schemas/delegated-admin-correlated-rest-resource-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     delegated-admin-correlated-rest-resource-shared:
       type: object
       properties:
@@ -1175,46 +1242,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:delegated-admin-correlated-rest-resource"
-    Enumdelegated-admin-attribute-certificate-allowedMIMETypeProp:
-      type: string
-      enum:
-      - "cer"
-      - "crt"
-      - "der"
-      - "key"
-      - "p7b"
-      - "p7c"
-      - "p8"
-      - "p10"
-      - "p12"
-      - "pem"
-      - "pfx"
-      - "spc"
-      description: >-
-          The list of file types allowed to be uploaded. If no types are specified, then all types will be allowed.
-    Enumdelegated-admin-attribute-mutabilityProp:
-      type: string
-      enum:
-      - "read-only"
-      - "read-write"
-      description: >-
-          Specifies the circumstances under which the values of the attribute can be written.
-    Enumdelegated-admin-attribute-photo-allowedMIMETypeProp:
-      type: string
-      enum:
-      - "gif"
-      - "jpeg"
-      - "jpg"
-      - "png"
-      description: >-
-          The list of file types allowed to be uploaded. If no types are specified, then all types will be allowed.
-    Enumdelegated-admin-attribute-attributePresentationProp:
-      type: string
-      enum:
-      - "default"
-      - "custom"
-      description: >-
-          Indicates how the attribute is presented to the user of the app.
     updateRequest:
       type: object
       properties:

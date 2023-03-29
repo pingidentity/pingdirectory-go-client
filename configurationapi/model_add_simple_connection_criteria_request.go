@@ -33,8 +33,9 @@ type AddSimpleConnectionCriteriaRequest struct {
 	// Specifies the name of a communication protocol that should be used by clients included in this Simple Connection Criteria.
 	IncludedProtocol []string `json:"includedProtocol,omitempty"`
 	// Specifies the name of a communication protocol that should be used by clients excluded from this Simple Connection Criteria.
-	ExcludedProtocol            []string                                               `json:"excludedProtocol,omitempty"`
-	CommunicationSecurityLevel  *EnumconnectionCriteriaCommunicationSecurityLevelProp  `json:"communicationSecurityLevel,omitempty"`
+	ExcludedProtocol           []string                                              `json:"excludedProtocol,omitempty"`
+	CommunicationSecurityLevel *EnumconnectionCriteriaCommunicationSecurityLevelProp `json:"communicationSecurityLevel,omitempty"`
+	// Specifies the authentication types for client connections that may be included in this Simple Connection Criteria.
 	UserAuthType                []EnumconnectionCriteriaUserAuthTypeProp               `json:"userAuthType,omitempty"`
 	AuthenticationSecurityLevel *EnumconnectionCriteriaAuthenticationSecurityLevelProp `json:"authenticationSecurityLevel,omitempty"`
 	// Specifies the name of a SASL mechanism that should be used by clients included in this Simple Connection Criteria. This will only be taken into account for client connections that have authenticated to the server using a SASL mechanism and will be ignored for unauthenticated client connections and for client connections that authenticated using some other method (e.g., those performing simple or internal authentication).
@@ -60,11 +61,15 @@ type AddSimpleConnectionCriteriaRequest struct {
 	// Specifies a search filter that should not match the entry of the authenticated user for clients included in this Simple Connection Criteria. If any filters are provided, then at least one of those filters must not match the authenticated user entry (that is, the user entry may match zero or more of those filters, but not all of them). This will only be taken into account for client connections that have authenticated to the server and will be ignored for unauthenticated client connections.
 	NotAllIncludedUserFilter []string `json:"notAllIncludedUserFilter,omitempty"`
 	// Specifies a search filter that must not match the entry of the authenticated user for clients included in this Simple Connection Criteria. If any filters are provided, then none of those filters may match the authenticated user entry. This will only be taken into account for client connections that have authenticated to the server and will be ignored for unauthenticated client connections.
-	NoneIncludedUserFilter      []string                                                `json:"noneIncludedUserFilter,omitempty"`
-	AllIncludedUserPrivilege    []EnumconnectionCriteriaAllIncludedUserPrivilegeProp    `json:"allIncludedUserPrivilege,omitempty"`
-	AnyIncludedUserPrivilege    []EnumconnectionCriteriaAnyIncludedUserPrivilegeProp    `json:"anyIncludedUserPrivilege,omitempty"`
+	NoneIncludedUserFilter []string `json:"noneIncludedUserFilter,omitempty"`
+	// Specifies the name of a privilege that must be held by the authenticated user for clients included in this Simple Connection Criteria. If any privilege names are provided, then the authenticated user must have all of those privileges. This will only be taken into account for client connections that have authenticated to the server and will be ignored for unauthenticated client connections.
+	AllIncludedUserPrivilege []EnumconnectionCriteriaAllIncludedUserPrivilegeProp `json:"allIncludedUserPrivilege,omitempty"`
+	// Specifies the name of a privilege that may be held by the authenticated user for clients included in this Simple Connection Criteria. If any privilege names are provided, then the authenticated user must have at least one of those privileges. This will only be taken into account for client connections that have authenticated to the server and will be ignored for unauthenticated client connections.
+	AnyIncludedUserPrivilege []EnumconnectionCriteriaAnyIncludedUserPrivilegeProp `json:"anyIncludedUserPrivilege,omitempty"`
+	// Specifies the name of a privilege that should not be held by the authenticated user for clients included in this Simple Connection Criteria. If any privilege names are provided, then the authenticated user must not have at least one of those privileges (that is, the user may hold zero or more of those privileges, but not all of them). This will only be taken into account for client connections that have authenticated to the server and will be ignored for unauthenticated client connections.
 	NotAllIncludedUserPrivilege []EnumconnectionCriteriaNotAllIncludedUserPrivilegeProp `json:"notAllIncludedUserPrivilege,omitempty"`
-	NoneIncludedUserPrivilege   []EnumconnectionCriteriaNoneIncludedUserPrivilegeProp   `json:"noneIncludedUserPrivilege,omitempty"`
+	// Specifies the name of a privilege that must not be held by the authenticated user for clients included in this Simple Connection Criteria. If any privilege names are provided, then the authenticated user must not have any of those privileges. This will only be taken into account for client connections that have authenticated to the server and will be ignored for unauthenticated client connections.
+	NoneIncludedUserPrivilege []EnumconnectionCriteriaNoneIncludedUserPrivilegeProp `json:"noneIncludedUserPrivilege,omitempty"`
 	// A description for this Connection Criteria
 	Description *string `json:"description,omitempty"`
 }

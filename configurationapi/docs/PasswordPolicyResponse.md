@@ -4,8 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
-**Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Id** | **string** | Name of the Password Policy | 
 **Schemas** | Pointer to [**[]EnumpasswordPolicySchemaUrn**](EnumpasswordPolicySchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Password Policy | [optional] 
@@ -42,9 +40,9 @@ Name | Type | Description | Notes
 **IdleLockoutInterval** | Pointer to **string** | Specifies the maximum length of time that an account may remain idle (that is, the associated user does not authenticate to the server) before that user is locked out. | [optional] 
 **AllowUserPasswordChanges** | Pointer to **bool** | Indicates whether users can change their own passwords. | [optional] 
 **PasswordChangeRequiresCurrentPassword** | Pointer to **bool** | Indicates whether user password changes must use the password modify extended operation and must include the user&#39;s current password before the change is allowed. | [optional] 
-**PasswordRetirementBehavior** | Pointer to [**[]EnumpasswordPolicyPasswordRetirementBehaviorProp**](EnumpasswordPolicyPasswordRetirementBehaviorProp.md) |  | [optional] 
+**PasswordRetirementBehavior** | Pointer to [**[]EnumpasswordPolicyPasswordRetirementBehaviorProp**](EnumpasswordPolicyPasswordRetirementBehaviorProp.md) | Specifies the conditions under which the server may retire a user&#39;s current password in the course of setting a new password for that user (whether via a modify operation or a password modify extended operation). | [optional] 
 **MaxRetiredPasswordAge** | Pointer to **string** | Specifies the maximum length of time that a retired password should be considered valid and may be used to authenticate to the server. | [optional] 
-**AllowedPasswordResetTokenUseCondition** | Pointer to [**[]EnumpasswordPolicyAllowedPasswordResetTokenUseConditionProp**](EnumpasswordPolicyAllowedPasswordResetTokenUseConditionProp.md) |  | [optional] 
+**AllowedPasswordResetTokenUseCondition** | Pointer to [**[]EnumpasswordPolicyAllowedPasswordResetTokenUseConditionProp**](EnumpasswordPolicyAllowedPasswordResetTokenUseConditionProp.md) | The set of conditions under which a user governed by this Password Policy will be permitted to generate a password reset token via the deliver password reset token extended operation, and to use that token in lieu of the current password via the password modify extended operation. | [optional] 
 **ForceChangeOnAdd** | Pointer to **bool** | Indicates whether users are forced to change their passwords upon first authenticating to the Directory Server after their account has been created. | [optional] 
 **ForceChangeOnReset** | Pointer to **bool** | Indicates whether users are forced to change their passwords if they are reset by an administrator. If a user&#39;s password is changed by any other user, that is considered an administrative password reset. | [optional] 
 **MaxPasswordResetAge** | Pointer to **string** | Specifies the maximum length of time that users have to change passwords after they have been reset by an administrator before they become locked. | [optional] 
@@ -58,6 +56,8 @@ Name | Type | Description | Notes
 **LastLoginTimeAttribute** | Pointer to **string** | Specifies the name or OID of the attribute type that is used to hold the last login time for users with the associated password policy. | [optional] 
 **LastLoginTimeFormat** | Pointer to **string** | Specifies the format string that is used to generate the last login time value for users with the associated password policy. Last login time values will be written using the UTC (also known as GMT, or Greenwich Mean Time) time zone. | [optional] 
 **PreviousLastLoginTimeFormat** | Pointer to **[]string** | Specifies the format string(s) that might have been used with the last login time at any point in the past for users associated with the password policy. | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
+**Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 
 ## Methods
 
@@ -77,56 +77,6 @@ will change when the set of required properties is changed
 NewPasswordPolicyResponseWithDefaults instantiates a new PasswordPolicyResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetMeta
-
-`func (o *PasswordPolicyResponse) GetMeta() MetaMeta`
-
-GetMeta returns the Meta field if non-nil, zero value otherwise.
-
-### GetMetaOk
-
-`func (o *PasswordPolicyResponse) GetMetaOk() (*MetaMeta, bool)`
-
-GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMeta
-
-`func (o *PasswordPolicyResponse) SetMeta(v MetaMeta)`
-
-SetMeta sets Meta field to given value.
-
-### HasMeta
-
-`func (o *PasswordPolicyResponse) HasMeta() bool`
-
-HasMeta returns a boolean if a field has been set.
-
-### GetUrnpingidentityschemasconfigurationmessages20
-
-`func (o *PasswordPolicyResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20`
-
-GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field if non-nil, zero value otherwise.
-
-### GetUrnpingidentityschemasconfigurationmessages20Ok
-
-`func (o *PasswordPolicyResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool)`
-
-GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUrnpingidentityschemasconfigurationmessages20
-
-`func (o *PasswordPolicyResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20)`
-
-SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconfigurationmessages20 field to given value.
-
-### HasUrnpingidentityschemasconfigurationmessages20
-
-`func (o *PasswordPolicyResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
-
-HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 
 ### GetId
 
@@ -1412,6 +1362,56 @@ SetPreviousLastLoginTimeFormat sets PreviousLastLoginTimeFormat field to given v
 `func (o *PasswordPolicyResponse) HasPreviousLastLoginTimeFormat() bool`
 
 HasPreviousLastLoginTimeFormat returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *PasswordPolicyResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *PasswordPolicyResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *PasswordPolicyResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *PasswordPolicyResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
+
+### GetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *PasswordPolicyResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20`
+
+GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field if non-nil, zero value otherwise.
+
+### GetUrnpingidentityschemasconfigurationmessages20Ok
+
+`func (o *PasswordPolicyResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool)`
+
+GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *PasswordPolicyResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20)`
+
+SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconfigurationmessages20 field to given value.
+
+### HasUrnpingidentityschemasconfigurationmessages20
+
+`func (o *PasswordPolicyResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
+
+HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

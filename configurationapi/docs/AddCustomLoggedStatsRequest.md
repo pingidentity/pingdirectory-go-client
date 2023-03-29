@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **IncludeFilter** | Pointer to **string** | An optional LDAP filter that can be used restrict which monitor entries are used to produce the output. | [optional] 
 **AttributeToLog** | **[]string** | Specifies the attributes on the monitor entries that should be included in the output. | 
 **ColumnName** | Pointer to **[]string** | Optionally, specifies an explicit name for each column header instead of having these names automatically generated from the monitored attribute name. | [optional] 
-**StatisticType** | [**[]EnumcustomLoggedStatsStatisticTypeProp**](EnumcustomLoggedStatsStatisticTypeProp.md) |  | 
+**StatisticType** | [**[]EnumcustomLoggedStatsStatisticTypeProp**](EnumcustomLoggedStatsStatisticTypeProp.md) | Specifies the type of statistic to include in the output for each monitored attribute. | 
 **HeaderPrefix** | Pointer to **string** | An optional prefix that is included in the header before the column name. | [optional] 
 **HeaderPrefixAttribute** | Pointer to **string** | An optional attribute from the monitor entry that is included as a prefix before the column name in the column header. | [optional] 
 **RegexPattern** | Pointer to **string** | An optional regular expression pattern, that when used in conjunction with regex-replacement, can alter the value of the attribute being monitored. | [optional] 

@@ -22,7 +22,8 @@ type AddInternalSearchRatePluginRequest struct {
 	// Name of the new Plugin
 	PluginName string                                  `json:"pluginName"`
 	Schemas    []EnuminternalSearchRatePluginSchemaUrn `json:"schemas"`
-	PluginType []EnumpluginPluginTypeProp              `json:"pluginType,omitempty"`
+	// Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
+	PluginType []EnumpluginPluginTypeProp `json:"pluginType,omitempty"`
 	// Specifies the number of concurrent threads that should be used to process the search operations.
 	NumThreads *int32 `json:"numThreads,omitempty"`
 	// Specifies the base DN to use for the searches to perform.

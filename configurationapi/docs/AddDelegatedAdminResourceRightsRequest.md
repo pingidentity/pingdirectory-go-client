@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Schemas** | Pointer to [**[]EnumdelegatedAdminResourceRightsSchemaUrn**](EnumdelegatedAdminResourceRightsSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Delegated Admin Resource Rights | [optional] 
 **Enabled** | **bool** | Indicates whether these Delegated Admin Resource Rights are enabled. | 
-**AdminPermission** | Pointer to [**[]EnumdelegatedAdminResourceRightsAdminPermissionProp**](EnumdelegatedAdminResourceRightsAdminPermissionProp.md) |  | [optional] 
+**AdminPermission** | Pointer to [**[]EnumdelegatedAdminResourceRightsAdminPermissionProp**](EnumdelegatedAdminResourceRightsAdminPermissionProp.md) | Specifies administrator(s) permissions. | [optional] 
 **AdminScope** | Pointer to [**EnumdelegatedAdminResourceRightsAdminScopeProp**](EnumdelegatedAdminResourceRightsAdminScopeProp.md) |  | [optional] 
 **ResourceSubtree** | Pointer to **[]string** | Specifies subtrees within the search base whose entries can be managed by the administrator(s). The admin-scope must be set to resources-in-specific-subtrees. | [optional] 
 **ResourcesInGroup** | Pointer to **[]string** | Specifies groups whose members can be managed by the administrator(s). The admin-scope must be set to resources-in-specific-groups. | [optional] 

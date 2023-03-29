@@ -45,8 +45,9 @@ type AddRootDnUserRequest struct {
 	// Specifies the user's pager telephone number. This is stored in the pager LDAP attribute.
 	PagerTelephoneNumber []string `json:"pagerTelephoneNumber,omitempty"`
 	// Indicates whether this User should be automatically granted the set of privileges defined in the default-root-privilege-name property of the Root DN configuration object.
-	InheritDefaultRootPrivileges *bool                         `json:"inheritDefaultRootPrivileges,omitempty"`
-	Privilege                    []EnumrootDnUserPrivilegeProp `json:"privilege,omitempty"`
+	InheritDefaultRootPrivileges *bool `json:"inheritDefaultRootPrivileges,omitempty"`
+	// Privileges that are either explicitly granted or revoked from the root user. Privileges can be revoked by including a minus sign (-) before the privilege name. This is stored in the ds-privilege-name LDAP attribute.
+	Privilege []EnumrootDnUserPrivilegeProp `json:"privilege,omitempty"`
 	// Specifies the maximum number of entries that the server may return to the user in response to any single search request. A value of 0 indicates no limit should be enforced. This is stored in the ds-rlim-size-limit LDAP attribute.
 	SearchResultEntryLimit *int32 `json:"searchResultEntryLimit,omitempty"`
 	// Specifies the maximum length of time (in seconds) that the server may spend processing any single search request. A value of 0 indicates no limit should be enforced. This is stored in the ds-rlim-time-limit LDAP attribute.

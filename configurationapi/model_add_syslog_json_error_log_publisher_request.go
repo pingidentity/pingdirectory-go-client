@@ -20,9 +20,10 @@ var _ MappedNullable = &AddSyslogJsonErrorLogPublisherRequest{}
 // AddSyslogJsonErrorLogPublisherRequest struct for AddSyslogJsonErrorLogPublisherRequest
 type AddSyslogJsonErrorLogPublisherRequest struct {
 	// Name of the new Log Publisher
-	PublisherName   string                                     `json:"publisherName"`
-	Schemas         []EnumsyslogJsonErrorLogPublisherSchemaUrn `json:"schemas"`
-	DefaultSeverity []EnumlogPublisherDefaultSeverityProp      `json:"defaultSeverity,omitempty"`
+	PublisherName string                                     `json:"publisherName"`
+	Schemas       []EnumsyslogJsonErrorLogPublisherSchemaUrn `json:"schemas"`
+	// Specifies the default severity levels for the logger.
+	DefaultSeverity []EnumlogPublisherDefaultSeverityProp `json:"defaultSeverity,omitempty"`
 	// The syslog server to which messages should be sent.
 	SyslogExternalServer []string                            `json:"syslogExternalServer"`
 	SyslogFacility       *EnumlogPublisherSyslogFacilityProp `json:"syslogFacility,omitempty"`

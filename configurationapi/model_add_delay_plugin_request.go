@@ -22,6 +22,7 @@ type AddDelayPluginRequest struct {
 	// Name of the new Plugin
 	PluginName string                     `json:"pluginName"`
 	Schemas    []EnumdelayPluginSchemaUrn `json:"schemas"`
+	// Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
 	PluginType []EnumpluginPluginTypeProp `json:"pluginType,omitempty"`
 	// The delay to inject for operations matching the associated criteria.
 	Delay string `json:"delay"`

@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access soft-delete-policies
   name: soft-delete-policy
@@ -142,22 +142,24 @@ components:
       - type: object
         properties:
           policyName:
-            description: Name of the new Soft Delete Policy
             type: string
-        required:
-        - policyName
+            description: >-
+                Name of the new Soft Delete Policy
       - $ref: '#/components/schemas/soft-delete-policy-shared'
+      required:
+      - policyName
     soft-delete-policy-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Soft Delete Policy
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Soft Delete Policy
       - $ref: '#/components/schemas/soft-delete-policy-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     soft-delete-policy-shared:
       type: object
       properties:

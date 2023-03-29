@@ -19,9 +19,7 @@ var _ MappedNullable = &GlobalConfigurationResponse{}
 
 // GlobalConfigurationResponse struct for GlobalConfigurationResponse
 type GlobalConfigurationResponse struct {
-	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
-	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas                                       []EnumglobalConfigurationSchemaUrn                 `json:"schemas,omitempty"`
+	Schemas []EnumglobalConfigurationSchemaUrn `json:"schemas,omitempty"`
 	// Specifies a name that may be used to uniquely identify this Directory Server instance among other instances in the environment.
 	InstanceName string `json:"instanceName"`
 	// Specifies the location for this Directory Server. Operations performed which involve communication with other servers may prefer servers in the same location to help ensure low-latency responses.
@@ -57,8 +55,9 @@ type GlobalConfigurationResponse struct {
 	// A set of criteria that may be used to match LDAP requests that may be permitted over an unauthenticated connection even if reject-unauthenticated-requests is true. Note that some types of requests will always be permitted, including bind, StartTLS, and start administrative session requests.
 	AllowedUnauthenticatedRequestCriteria *string `json:"allowedUnauthenticatedRequestCriteria,omitempty"`
 	// Indicates whether the Directory Server should reject any simple bind request that contains a DN but no password.
-	BindWithDNRequiresPassword *bool                                          `json:"bindWithDNRequiresPassword,omitempty"`
-	DisabledPrivilege          []EnumglobalConfigurationDisabledPrivilegeProp `json:"disabledPrivilege,omitempty"`
+	BindWithDNRequiresPassword *bool `json:"bindWithDNRequiresPassword,omitempty"`
+	// Specifies the name of a privilege that should not be evaluated by the server.
+	DisabledPrivilege []EnumglobalConfigurationDisabledPrivilegeProp `json:"disabledPrivilege,omitempty"`
 	// Specifies the name of the password policy that is in effect for users whose entries do not specify an alternate password policy (either via a real or virtual attribute).
 	DefaultPasswordPolicy string `json:"defaultPasswordPolicy"`
 	// Specifies the maximum number of password policies that are defined in the user data (that is, outside of the configuration) that the server should cache in memory for faster access. A value of zero indicates that the server should not cache any user data password policies.
@@ -66,7 +65,8 @@ type GlobalConfigurationResponse struct {
 	// Specifies the name of the identity mapper to map authorization ID values (using the \"u:\" form) provided in the proxied authorization control to the corresponding user entry.
 	ProxiedAuthorizationIdentityMapper string `json:"proxiedAuthorizationIdentityMapper"`
 	// Indicates whether the digest should always be verified whenever an entry containing a digest is decoded. If this is \"true\", then if a digest exists, it will always be verified. Otherwise, the digest will be written when encoding entries but ignored when decoding entries but may still be available for other verification processing.
-	VerifyEntryDigests         *bool                                                   `json:"verifyEntryDigests,omitempty"`
+	VerifyEntryDigests *bool `json:"verifyEntryDigests,omitempty"`
+	// Specifies a set of TLS protocols that will be permitted for use in the server even though there may be known vulnerabilities that could cause their use to be unsafe in some conditions. Enabling support for insecure TLS protocols is discouraged, and is generally recommended only as a short-term measure to permit legacy clients to interact with the server until they can be updated to support more secure communication protocols.
 	AllowedInsecureTLSProtocol []EnumglobalConfigurationAllowedInsecureTLSProtocolProp `json:"allowedInsecureTLSProtocol,omitempty"`
 	// Indicates that processes attaching to this server's local JVM are allowed to access internal data through JMX without the authentication requirements that remote JMX connections are subject to. Please review and understand the data that this option will expose (such as cn=monitor) to client applications to ensure there are no security concerns.
 	AllowInsecureLocalJMXConnections *bool `json:"allowInsecureLocalJMXConnections,omitempty"`
@@ -108,8 +108,9 @@ type GlobalConfigurationResponse struct {
 	AllowAttributeNameExceptions   *bool                                                      `json:"allowAttributeNameExceptions,omitempty"`
 	InvalidAttributeSyntaxBehavior *EnumglobalConfigurationInvalidAttributeSyntaxBehaviorProp `json:"invalidAttributeSyntaxBehavior,omitempty"`
 	// Specifies a set of attribute types for which the server will permit values that do not conform to the associated attribute syntax.
-	PermitSyntaxViolationsForAttribute                             []string                                                                                    `json:"permitSyntaxViolationsForAttribute,omitempty"`
-	SingleStructuralObjectclassBehavior                            *EnumglobalConfigurationSingleStructuralObjectclassBehaviorProp                             `json:"singleStructuralObjectclassBehavior,omitempty"`
+	PermitSyntaxViolationsForAttribute  []string                                                        `json:"permitSyntaxViolationsForAttribute,omitempty"`
+	SingleStructuralObjectclassBehavior *EnumglobalConfigurationSingleStructuralObjectclassBehaviorProp `json:"singleStructuralObjectclassBehavior,omitempty"`
+	// Specifies the operational attribute types that are defined in the schema with the NO-USER-MODIFICATION constraint that the server will allow to be altered if the associated request contains the ignore NO-USER-MODIFICATION request control.
 	AttributesModifiableWithIgnoreNoUserModificationRequestControl []EnumglobalConfigurationAttributesModifiableWithIgnoreNoUserModificationRequestControlProp `json:"attributesModifiableWithIgnoreNoUserModificationRequestControl,omitempty"`
 	// The maximum allowed size that the server.out log file will be allowed to have. If a write would cause the file to exceed this size, then the current file will be rotated out of place and a new empty file will be created and the message written to it.
 	MaximumServerOutLogFileSize *string `json:"maximumServerOutLogFileSize,omitempty"`
@@ -190,7 +191,9 @@ type GlobalConfigurationResponse struct {
 	TrackedApplication []string                                     `json:"trackedApplication,omitempty"`
 	JmxValueBehavior   *EnumglobalConfigurationJmxValueBehaviorProp `json:"jmxValueBehavior,omitempty"`
 	// When set to true, the server will use its original, non-standard JMX MBean names for the monitoring MBeans. These include RDN keys of \"Rdn1\" and \"Rdn2\" instead of the recommended \"type\" and \"name\" keys. This should option should only be enabled for installations that have monitoring infrastructure that depends on the old keys.
-	JmxUseLegacyMbeanNames *bool `json:"jmxUseLegacyMbeanNames,omitempty"`
+	JmxUseLegacyMbeanNames                        *bool                                              `json:"jmxUseLegacyMbeanNames,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 }
 
 // NewGlobalConfigurationResponse instantiates a new GlobalConfigurationResponse object
@@ -221,70 +224,6 @@ func NewGlobalConfigurationResponse(instanceName string, defaultPasswordPolicy s
 func NewGlobalConfigurationResponseWithDefaults() *GlobalConfigurationResponse {
 	this := GlobalConfigurationResponse{}
 	return &this
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *GlobalConfigurationResponse) GetMeta() MetaMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret MetaMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GlobalConfigurationResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// HasMeta returns a boolean if a field has been set.
-func (o *GlobalConfigurationResponse) HasMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
-}
-
-// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
-func (o *GlobalConfigurationResponse) SetMeta(v MetaMeta) {
-	o.Meta = &v
-}
-
-// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
-func (o *GlobalConfigurationResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		var ret MetaUrnPingidentitySchemasConfigurationMessages20
-		return ret
-	}
-	return *o.Urnpingidentityschemasconfigurationmessages20
-}
-
-// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GlobalConfigurationResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		return nil, false
-	}
-	return o.Urnpingidentityschemasconfigurationmessages20, true
-}
-
-// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
-func (o *GlobalConfigurationResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		return true
-	}
-
-	return false
-}
-
-// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
-func (o *GlobalConfigurationResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
-	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
@@ -3063,6 +3002,70 @@ func (o *GlobalConfigurationResponse) SetJmxUseLegacyMbeanNames(v bool) {
 	o.JmxUseLegacyMbeanNames = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *GlobalConfigurationResponse) GetMeta() MetaMeta {
+	if o == nil || IsNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GlobalConfigurationResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || IsNil(o.Meta) {
+		return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *GlobalConfigurationResponse) HasMeta() bool {
+	if o != nil && !IsNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *GlobalConfigurationResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
+func (o *GlobalConfigurationResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		var ret MetaUrnPingidentitySchemasConfigurationMessages20
+		return ret
+	}
+	return *o.Urnpingidentityschemasconfigurationmessages20
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GlobalConfigurationResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return nil, false
+	}
+	return o.Urnpingidentityschemasconfigurationmessages20, true
+}
+
+// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+func (o *GlobalConfigurationResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
+func (o *GlobalConfigurationResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
+	o.Urnpingidentityschemasconfigurationmessages20 = &v
+}
+
 func (o GlobalConfigurationResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -3073,12 +3076,6 @@ func (o GlobalConfigurationResponse) MarshalJSON() ([]byte, error) {
 
 func (o GlobalConfigurationResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
@@ -3322,6 +3319,12 @@ func (o GlobalConfigurationResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.JmxUseLegacyMbeanNames) {
 		toSerialize["jmxUseLegacyMbeanNames"] = o.JmxUseLegacyMbeanNames
+	}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
 	return toSerialize, nil
 }

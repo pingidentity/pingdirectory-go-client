@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access the Consent Service
   name: consent-service
@@ -64,7 +64,6 @@ components:
   schemas:
     consent-service-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -113,8 +112,9 @@ components:
             type: string
             description: >-
                 A string or URI that identifies the Consent Service in the context of OAuth2 authorization.
-        required:
-        - enabled
+      - $ref: '#/components/schemas/meta'
+      required:
+      - enabled
     Enumconsent-serviceSchemaUrn:
       type: string
       enum:

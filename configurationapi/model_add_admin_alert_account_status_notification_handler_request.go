@@ -20,8 +20,9 @@ var _ MappedNullable = &AddAdminAlertAccountStatusNotificationHandlerRequest{}
 // AddAdminAlertAccountStatusNotificationHandlerRequest struct for AddAdminAlertAccountStatusNotificationHandlerRequest
 type AddAdminAlertAccountStatusNotificationHandlerRequest struct {
 	// Name of the new Account Status Notification Handler
-	HandlerName                   string                                                                  `json:"handlerName"`
-	Schemas                       []EnumadminAlertAccountStatusNotificationHandlerSchemaUrn               `json:"schemas"`
+	HandlerName string                                                    `json:"handlerName"`
+	Schemas     []EnumadminAlertAccountStatusNotificationHandlerSchemaUrn `json:"schemas"`
+	// The types of account status notifications that should result in administrative alerts.
 	AccountStatusNotificationType []EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp `json:"accountStatusNotificationType"`
 	// A description for this Account Status Notification Handler
 	Description *string `json:"description,omitempty"`

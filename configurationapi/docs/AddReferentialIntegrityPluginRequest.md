@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnumreferentialIntegrityPluginSchemaUrn**](EnumreferentialIntegrityPluginSchemaUrn.md) |  | 
-**PluginType** | Pointer to [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | [optional] 
+**PluginType** | Pointer to [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) | Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked. | [optional] 
 **AttributeType** | **[]string** | Specifies the attribute types for which referential integrity is to be maintained. | 
 **BaseDN** | Pointer to **[]string** | Specifies the base DN that limits the scope within which referential integrity is maintained. | [optional] 
 **LogFile** | Pointer to **string** | Specifies the log file location where the update records are written when the plug-in is in background-mode processing. | [optional] 

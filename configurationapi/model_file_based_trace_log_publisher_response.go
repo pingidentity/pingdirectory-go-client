@@ -19,8 +19,6 @@ var _ MappedNullable = &FileBasedTraceLogPublisherResponse{}
 
 // FileBasedTraceLogPublisherResponse struct for FileBasedTraceLogPublisherResponse
 type FileBasedTraceLogPublisherResponse struct {
-	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
-	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Log Publisher
 	Id      string                                    `json:"id"`
 	Schemas []EnumfileBasedTraceLogPublisherSchemaUrn `json:"schemas"`
@@ -52,15 +50,23 @@ type FileBasedTraceLogPublisherResponse struct {
 	// The maximum number of log records that can be stored in the asynchronous queue.
 	QueueSize *int32 `json:"queueSize,omitempty"`
 	// Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written.
-	MaxStringLength                 *int32                                                `json:"maxStringLength,omitempty"`
-	DebugMessageType                []EnumlogPublisherDebugMessageTypeProp                `json:"debugMessageType,omitempty"`
-	HttpMessageType                 []EnumlogPublisherHttpMessageTypeProp                 `json:"httpMessageType,omitempty"`
+	MaxStringLength *int32 `json:"maxStringLength,omitempty"`
+	// Specifies the debug message types which can be logged. Note that enabling these may result in sensitive information being logged.
+	DebugMessageType []EnumlogPublisherDebugMessageTypeProp `json:"debugMessageType,omitempty"`
+	// Specifies the HTTP message types which can be logged.
+	HttpMessageType []EnumlogPublisherHttpMessageTypeProp `json:"httpMessageType,omitempty"`
+	// Specifies the access token validator message types that can be logged.
 	AccessTokenValidatorMessageType []EnumlogPublisherAccessTokenValidatorMessageTypeProp `json:"accessTokenValidatorMessageType,omitempty"`
-	IdTokenValidatorMessageType     []EnumlogPublisherIdTokenValidatorMessageTypeProp     `json:"idTokenValidatorMessageType,omitempty"`
-	ScimMessageType                 []EnumlogPublisherScimMessageTypeProp                 `json:"scimMessageType,omitempty"`
-	ConsentMessageType              []EnumlogPublisherConsentMessageTypeProp              `json:"consentMessageType,omitempty"`
-	DirectoryRESTAPIMessageType     []EnumlogPublisherDirectoryRESTAPIMessageTypeProp     `json:"directoryRESTAPIMessageType,omitempty"`
-	ExtensionMessageType            []EnumlogPublisherExtensionMessageTypeProp            `json:"extensionMessageType,omitempty"`
+	// Specifies the ID token validator message types that can be logged.
+	IdTokenValidatorMessageType []EnumlogPublisherIdTokenValidatorMessageTypeProp `json:"idTokenValidatorMessageType,omitempty"`
+	// Specifies the SCIM message types which can be logged.
+	ScimMessageType []EnumlogPublisherScimMessageTypeProp `json:"scimMessageType,omitempty"`
+	// Specifies the consent message types that can be logged.
+	ConsentMessageType []EnumlogPublisherConsentMessageTypeProp `json:"consentMessageType,omitempty"`
+	// Specifies the Directory REST API message types which can be logged.
+	DirectoryRESTAPIMessageType []EnumlogPublisherDirectoryRESTAPIMessageTypeProp `json:"directoryRESTAPIMessageType,omitempty"`
+	// Specifies the Server SDK extension message types that can be logged.
+	ExtensionMessageType []EnumlogPublisherExtensionMessageTypeProp `json:"extensionMessageType,omitempty"`
 	// Specifies a set of HTTP request URL paths to determine whether log messages are included for a HTTP request. Log messages are included for a HTTP request if the request path does not match any exclude-path-pattern, and the request path does match an include-path-pattern (or no include-path-pattern is specified).
 	IncludePathPattern []string `json:"includePathPattern,omitempty"`
 	// Specifies a set of HTTP request URL paths to determine whether log messages are excluded for a HTTP request. Log messages are included for a HTTP request if the request path does not match any exclude-path-pattern, and the request path does match an include-path-pattern (or no include-path-pattern is specified).
@@ -68,8 +74,10 @@ type FileBasedTraceLogPublisherResponse struct {
 	// A description for this Log Publisher
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Log Publisher is enabled for use.
-	Enabled              bool                                      `json:"enabled"`
-	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
+	Enabled                                       bool                                               `json:"enabled"`
+	LoggingErrorBehavior                          *EnumlogPublisherLoggingErrorBehaviorProp          `json:"loggingErrorBehavior,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 }
 
 // NewFileBasedTraceLogPublisherResponse instantiates a new FileBasedTraceLogPublisherResponse object
@@ -95,70 +103,6 @@ func NewFileBasedTraceLogPublisherResponse(id string, schemas []EnumfileBasedTra
 func NewFileBasedTraceLogPublisherResponseWithDefaults() *FileBasedTraceLogPublisherResponse {
 	this := FileBasedTraceLogPublisherResponse{}
 	return &this
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *FileBasedTraceLogPublisherResponse) GetMeta() MetaMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret MetaMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *FileBasedTraceLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// HasMeta returns a boolean if a field has been set.
-func (o *FileBasedTraceLogPublisherResponse) HasMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
-}
-
-// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
-func (o *FileBasedTraceLogPublisherResponse) SetMeta(v MetaMeta) {
-	o.Meta = &v
-}
-
-// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
-func (o *FileBasedTraceLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		var ret MetaUrnPingidentitySchemasConfigurationMessages20
-		return ret
-	}
-	return *o.Urnpingidentityschemasconfigurationmessages20
-}
-
-// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *FileBasedTraceLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		return nil, false
-	}
-	return o.Urnpingidentityschemasconfigurationmessages20, true
-}
-
-// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
-func (o *FileBasedTraceLogPublisherResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		return true
-	}
-
-	return false
-}
-
-// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
-func (o *FileBasedTraceLogPublisherResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
-	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
 // GetId returns the Id field value
@@ -1057,6 +1001,70 @@ func (o *FileBasedTraceLogPublisherResponse) SetLoggingErrorBehavior(v EnumlogPu
 	o.LoggingErrorBehavior = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *FileBasedTraceLogPublisherResponse) GetMeta() MetaMeta {
+	if o == nil || IsNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *FileBasedTraceLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || IsNil(o.Meta) {
+		return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *FileBasedTraceLogPublisherResponse) HasMeta() bool {
+	if o != nil && !IsNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *FileBasedTraceLogPublisherResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
+func (o *FileBasedTraceLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		var ret MetaUrnPingidentitySchemasConfigurationMessages20
+		return ret
+	}
+	return *o.Urnpingidentityschemasconfigurationmessages20
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *FileBasedTraceLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return nil, false
+	}
+	return o.Urnpingidentityschemasconfigurationmessages20, true
+}
+
+// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+func (o *FileBasedTraceLogPublisherResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
+func (o *FileBasedTraceLogPublisherResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
+	o.Urnpingidentityschemasconfigurationmessages20 = &v
+}
+
 func (o FileBasedTraceLogPublisherResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1067,12 +1075,6 @@ func (o FileBasedTraceLogPublisherResponse) MarshalJSON() ([]byte, error) {
 
 func (o FileBasedTraceLogPublisherResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
 	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["logFile"] = o.LogFile
@@ -1146,6 +1148,12 @@ func (o FileBasedTraceLogPublisherResponse) ToMap() (map[string]interface{}, err
 	toSerialize["enabled"] = o.Enabled
 	if !IsNil(o.LoggingErrorBehavior) {
 		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
 	return toSerialize, nil
 }

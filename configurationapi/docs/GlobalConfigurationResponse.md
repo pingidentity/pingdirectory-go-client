@@ -4,8 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
-**Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | Pointer to [**[]EnumglobalConfigurationSchemaUrn**](EnumglobalConfigurationSchemaUrn.md) |  | [optional] 
 **InstanceName** | **string** | Specifies a name that may be used to uniquely identify this Directory Server instance among other instances in the environment. | 
 **Location** | Pointer to **string** | Specifies the location for this Directory Server. Operations performed which involve communication with other servers may prefer servers in the same location to help ensure low-latency responses. | [optional] 
@@ -25,12 +23,12 @@ Name | Type | Description | Notes
 **RejectUnauthenticatedRequests** | Pointer to **bool** | Indicates whether the Directory Server should reject any LDAP request (other than bind or StartTLS requests) received from a client that has not yet been authenticated, whose last authentication attempt was unsuccessful, or whose last authentication attempt used anonymous authentication. | [optional] 
 **AllowedUnauthenticatedRequestCriteria** | Pointer to **string** | A set of criteria that may be used to match LDAP requests that may be permitted over an unauthenticated connection even if reject-unauthenticated-requests is true. Note that some types of requests will always be permitted, including bind, StartTLS, and start administrative session requests. | [optional] 
 **BindWithDNRequiresPassword** | Pointer to **bool** | Indicates whether the Directory Server should reject any simple bind request that contains a DN but no password. | [optional] 
-**DisabledPrivilege** | Pointer to [**[]EnumglobalConfigurationDisabledPrivilegeProp**](EnumglobalConfigurationDisabledPrivilegeProp.md) |  | [optional] 
+**DisabledPrivilege** | Pointer to [**[]EnumglobalConfigurationDisabledPrivilegeProp**](EnumglobalConfigurationDisabledPrivilegeProp.md) | Specifies the name of a privilege that should not be evaluated by the server. | [optional] 
 **DefaultPasswordPolicy** | **string** | Specifies the name of the password policy that is in effect for users whose entries do not specify an alternate password policy (either via a real or virtual attribute). | 
 **MaximumUserDataPasswordPoliciesToCache** | Pointer to **int32** | Specifies the maximum number of password policies that are defined in the user data (that is, outside of the configuration) that the server should cache in memory for faster access. A value of zero indicates that the server should not cache any user data password policies. | [optional] 
 **ProxiedAuthorizationIdentityMapper** | **string** | Specifies the name of the identity mapper to map authorization ID values (using the \&quot;u:\&quot; form) provided in the proxied authorization control to the corresponding user entry. | 
 **VerifyEntryDigests** | Pointer to **bool** | Indicates whether the digest should always be verified whenever an entry containing a digest is decoded. If this is \&quot;true\&quot;, then if a digest exists, it will always be verified. Otherwise, the digest will be written when encoding entries but ignored when decoding entries but may still be available for other verification processing. | [optional] 
-**AllowedInsecureTLSProtocol** | Pointer to [**[]EnumglobalConfigurationAllowedInsecureTLSProtocolProp**](EnumglobalConfigurationAllowedInsecureTLSProtocolProp.md) |  | [optional] 
+**AllowedInsecureTLSProtocol** | Pointer to [**[]EnumglobalConfigurationAllowedInsecureTLSProtocolProp**](EnumglobalConfigurationAllowedInsecureTLSProtocolProp.md) | Specifies a set of TLS protocols that will be permitted for use in the server even though there may be known vulnerabilities that could cause their use to be unsafe in some conditions. Enabling support for insecure TLS protocols is discouraged, and is generally recommended only as a short-term measure to permit legacy clients to interact with the server until they can be updated to support more secure communication protocols. | [optional] 
 **AllowInsecureLocalJMXConnections** | Pointer to **bool** | Indicates that processes attaching to this server&#39;s local JVM are allowed to access internal data through JMX without the authentication requirements that remote JMX connections are subject to. Please review and understand the data that this option will expose (such as cn&#x3D;monitor) to client applications to ensure there are no security concerns. | [optional] 
 **DefaultInternalOperationClientConnectionPolicy** | Pointer to **string** | Specifies the client connection policy that will be used by default for internal operations. | [optional] 
 **SizeLimit** | Pointer to **int32** | Specifies the maximum number of entries that the Directory Server should return to clients by default when processing a search operation. | [optional] 
@@ -53,7 +51,7 @@ Name | Type | Description | Notes
 **InvalidAttributeSyntaxBehavior** | Pointer to [**EnumglobalConfigurationInvalidAttributeSyntaxBehaviorProp**](EnumglobalConfigurationInvalidAttributeSyntaxBehaviorProp.md) |  | [optional] 
 **PermitSyntaxViolationsForAttribute** | Pointer to **[]string** | Specifies a set of attribute types for which the server will permit values that do not conform to the associated attribute syntax. | [optional] 
 **SingleStructuralObjectclassBehavior** | Pointer to [**EnumglobalConfigurationSingleStructuralObjectclassBehaviorProp**](EnumglobalConfigurationSingleStructuralObjectclassBehaviorProp.md) |  | [optional] 
-**AttributesModifiableWithIgnoreNoUserModificationRequestControl** | Pointer to [**[]EnumglobalConfigurationAttributesModifiableWithIgnoreNoUserModificationRequestControlProp**](EnumglobalConfigurationAttributesModifiableWithIgnoreNoUserModificationRequestControlProp.md) |  | [optional] 
+**AttributesModifiableWithIgnoreNoUserModificationRequestControl** | Pointer to [**[]EnumglobalConfigurationAttributesModifiableWithIgnoreNoUserModificationRequestControlProp**](EnumglobalConfigurationAttributesModifiableWithIgnoreNoUserModificationRequestControlProp.md) | Specifies the operational attribute types that are defined in the schema with the NO-USER-MODIFICATION constraint that the server will allow to be altered if the associated request contains the ignore NO-USER-MODIFICATION request control. | [optional] 
 **MaximumServerOutLogFileSize** | Pointer to **string** | The maximum allowed size that the server.out log file will be allowed to have. If a write would cause the file to exceed this size, then the current file will be rotated out of place and a new empty file will be created and the message written to it. | [optional] 
 **MaximumServerOutLogFileCount** | Pointer to **int32** | The maximum number of server.out log files (including the current active log file) that should be retained. When rotating the log file, if the total number of files exceeds this count, then the oldest file(s) will be removed so that the total number of log files is within this limit. | [optional] 
 **StartupErrorLoggerOutputLocation** | Pointer to [**EnumglobalConfigurationStartupErrorLoggerOutputLocationProp**](EnumglobalConfigurationStartupErrorLoggerOutputLocationProp.md) |  | [optional] 
@@ -96,6 +94,8 @@ Name | Type | Description | Notes
 **TrackedApplication** | Pointer to **[]string** | Specifies criteria for identifying specific applications that access the server to enable tracking throughput and latency of LDAP operations issued by an application. | [optional] 
 **JmxValueBehavior** | Pointer to [**EnumglobalConfigurationJmxValueBehaviorProp**](EnumglobalConfigurationJmxValueBehaviorProp.md) |  | [optional] 
 **JmxUseLegacyMbeanNames** | Pointer to **bool** | When set to true, the server will use its original, non-standard JMX MBean names for the monitoring MBeans. These include RDN keys of \&quot;Rdn1\&quot; and \&quot;Rdn2\&quot; instead of the recommended \&quot;type\&quot; and \&quot;name\&quot; keys. This should option should only be enabled for installations that have monitoring infrastructure that depends on the old keys. | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
+**Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 
 ## Methods
 
@@ -115,56 +115,6 @@ will change when the set of required properties is changed
 NewGlobalConfigurationResponseWithDefaults instantiates a new GlobalConfigurationResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetMeta
-
-`func (o *GlobalConfigurationResponse) GetMeta() MetaMeta`
-
-GetMeta returns the Meta field if non-nil, zero value otherwise.
-
-### GetMetaOk
-
-`func (o *GlobalConfigurationResponse) GetMetaOk() (*MetaMeta, bool)`
-
-GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMeta
-
-`func (o *GlobalConfigurationResponse) SetMeta(v MetaMeta)`
-
-SetMeta sets Meta field to given value.
-
-### HasMeta
-
-`func (o *GlobalConfigurationResponse) HasMeta() bool`
-
-HasMeta returns a boolean if a field has been set.
-
-### GetUrnpingidentityschemasconfigurationmessages20
-
-`func (o *GlobalConfigurationResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20`
-
-GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field if non-nil, zero value otherwise.
-
-### GetUrnpingidentityschemasconfigurationmessages20Ok
-
-`func (o *GlobalConfigurationResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool)`
-
-GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUrnpingidentityschemasconfigurationmessages20
-
-`func (o *GlobalConfigurationResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20)`
-
-SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconfigurationmessages20 field to given value.
-
-### HasUrnpingidentityschemasconfigurationmessages20
-
-`func (o *GlobalConfigurationResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
-
-HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 
 ### GetSchemas
 
@@ -2350,6 +2300,56 @@ SetJmxUseLegacyMbeanNames sets JmxUseLegacyMbeanNames field to given value.
 `func (o *GlobalConfigurationResponse) HasJmxUseLegacyMbeanNames() bool`
 
 HasJmxUseLegacyMbeanNames returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *GlobalConfigurationResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *GlobalConfigurationResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *GlobalConfigurationResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *GlobalConfigurationResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
+
+### GetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *GlobalConfigurationResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20`
+
+GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field if non-nil, zero value otherwise.
+
+### GetUrnpingidentityschemasconfigurationmessages20Ok
+
+`func (o *GlobalConfigurationResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool)`
+
+GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *GlobalConfigurationResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20)`
+
+SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconfigurationmessages20 field to given value.
+
+### HasUrnpingidentityschemasconfigurationmessages20
+
+`func (o *GlobalConfigurationResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
+
+HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -33,10 +33,13 @@ type AddPeriodicStatsLoggerPluginRequest struct {
 	// This property controls whether a value in the output is shown as empty if the value is zero.
 	EmptyInsteadOfZero *bool `json:"emptyInsteadOfZero,omitempty"`
 	// The number of lines to log between logging the header line that summarizes the columns in the table.
-	LinesBetweenHeader      *int32                                                    `json:"linesBetweenHeader,omitempty"`
-	IncludedLDAPStat        []EnumpluginIncludedLDAPStatProp                          `json:"includedLDAPStat,omitempty"`
-	IncludedResourceStat    []EnumpluginIncludedResourceStatProp                      `json:"includedResourceStat,omitempty"`
-	HistogramFormat         *EnumpluginHistogramFormatProp                            `json:"histogramFormat,omitempty"`
+	LinesBetweenHeader *int32 `json:"linesBetweenHeader,omitempty"`
+	// Specifies the types of statistics related to LDAP connections and operation processing that should be included in the output.
+	IncludedLDAPStat []EnumpluginIncludedLDAPStatProp `json:"includedLDAPStat,omitempty"`
+	// Specifies whether statistics related to resource utilization such as JVM memory.
+	IncludedResourceStat []EnumpluginIncludedResourceStatProp `json:"includedResourceStat,omitempty"`
+	HistogramFormat      *EnumpluginHistogramFormatProp       `json:"histogramFormat,omitempty"`
+	// Specifies the operation type(s) to use when outputting the response time histogram data. The order of the operations here determines the order of the columns in the output. Use the per-application-ldap-stats setting to further control this.
 	HistogramOpType         []EnumpluginHistogramOpTypeProp                           `json:"histogramOpType,omitempty"`
 	PerApplicationLDAPStats *EnumpluginPeriodicStatsLoggerPerApplicationLDAPStatsProp `json:"perApplicationLDAPStats,omitempty"`
 	StatusSummaryInfo       *EnumpluginStatusSummaryInfoProp                          `json:"statusSummaryInfo,omitempty"`
@@ -59,7 +62,8 @@ type AddPeriodicStatsLoggerPluginRequest struct {
 	LocalDBBackendInfo   *EnumpluginLocalDBBackendInfoProp   `json:"localDBBackendInfo,omitempty"`
 	ReplicationInfo      *EnumpluginReplicationInfoProp      `json:"replicationInfo,omitempty"`
 	EntryCacheInfo       *EnumpluginEntryCacheInfoProp       `json:"entryCacheInfo,omitempty"`
-	HostInfo             []EnumpluginHostInfoProp            `json:"hostInfo,omitempty"`
+	// Specifies the level of detail to include about the host system resource utilization including CPU, memory, disk and network activity.
+	HostInfo []EnumpluginHostInfoProp `json:"hostInfo,omitempty"`
 	// If statistics should not be included for all applications, this property names the subset of applications that should be included.
 	IncludedLDAPApplication []string `json:"includedLDAPApplication,omitempty"`
 	// A description for this Plugin

@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access the Plugin Root
   name: plugin-root
@@ -471,7 +471,6 @@ components:
   schemas:
     plugin-root-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -680,13 +679,24 @@ components:
             type: string
             description: >-
                 Specifies the order in which intermediate response plug-ins are to be loaded and invoked.
+      - $ref: '#/components/schemas/meta'
     Enumplugin-rootSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:plugin-root"
+    Enumplugin-operationTypeProp:
+      type: string
+      enum:
+      - "add"
+      - "bind"
+      - "compare"
+      - "modify"
+      - "modify-dn"
+      - "search"
+      description: >-
+          Specifies the types of operations that should result in access time updates.
     last-access-time-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -696,8 +706,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumlast-access-time-pluginSchemaUrn'
           id:
-            description: Name of the Plugin
             type: string
+            description: >-
+                Name of the Plugin Root
           maxUpdateFrequency:
             type: string
             description: >-
@@ -706,6 +717,8 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Enumplugin-operationTypeProp'
+            description: >-
+                Specifies the types of operations that should result in access time updates.
           invokeForFailedBinds:
             type: boolean
             description: >-
@@ -730,17 +743,91 @@ components:
             type: boolean
             description: >-
                 Indicates whether the plug-in is enabled for use.
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumlast-access-time-pluginSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:plugin:last-access-time"
+    Enumplugin-ldapInfoProp:
+      type: string
+      enum:
+      - "none"
+      - "basic"
+      - "extended"
+      description: >-
+          Specifies the level of detail to include about the LDAP connection handlers.
+    Enumplugin-serverInfoProp:
+      type: string
+      enum:
+      - "none"
+      - "basic"
+      - "extended"
+      description: >-
+          Specifies whether statistics related to resource utilization such as JVM memory and CPU/Network/Disk utilization.
+    Enumplugin-stats-collector-perApplicationLDAPStatsProp:
+      type: string
+      enum:
+      - "aggregate-only"
+      - "per-application-only"
+      description: >-
+          Controls whether per application LDAP statistics are included in the output for selected LDAP operation statistics.
+    Enumplugin-ldapChangelogInfoProp:
+      type: string
+      enum:
+      - "none"
+      - "basic"
+      - "extended"
+      - "verbose"
+      description: >-
+          Specifies the level of detail to include for the LDAP changelog.
+    Enumplugin-statusSummaryInfoProp:
+      type: string
+      enum:
+      - "none"
+      - "basic"
+      - "verbose"
+      description: >-
+          Specifies the level of detail to include about the status summary monitor entry.
+    Enumplugin-localDBBackendInfoProp:
+      type: string
+      enum:
+      - "none"
+      - "basic"
+      - "extended"
+      - "verbose"
+      description: >-
+          Specifies the level of detail to include about the Local DB Backends.
+    Enumplugin-replicationInfoProp:
+      type: string
+      enum:
+      - "none"
+      - "basic"
+      - "extended"
+      - "verbose"
+      description: >-
+          Specifies the level of detail to include about replication.
+    Enumplugin-entryCacheInfoProp:
+      type: string
+      enum:
+      - "none"
+      - "basic"
+      - "extended"
+      description: >-
+          Specifies the level of detail to include for each entry cache.
+    Enumplugin-hostInfoProp:
+      type: string
+      enum:
+      - "cpu"
+      - "disk"
+      - "network"
+      description: >-
+          Specifies the level of detail to include about the host system resource utilization including CPU, memory, disk and network activity.
     stats-collector-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -750,8 +837,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumstats-collector-pluginSchemaUrn'
           id:
-            description: Name of the Plugin
             type: string
+            description: >-
+                Name of the Plugin Root
           sampleInterval:
             type: string
             description: >-
@@ -762,28 +850,46 @@ components:
                 Some of the calculated statistics, such as the average and maximum queue sizes, can use multiple samples within a log interval. This value controls how often samples are gathered, and setting this value too small can have an adverse impact on performance.
           ldapInfo:
             $ref: '#/components/schemas/Enumplugin-ldapInfoProp'
+            description: >-
+                Specifies the level of detail to include about the LDAP connection handlers.
           serverInfo:
             $ref: '#/components/schemas/Enumplugin-serverInfoProp'
+            description: >-
+                Specifies whether statistics related to resource utilization such as JVM memory and CPU/Network/Disk utilization.
           perApplicationLDAPStats:
             $ref: '#/components/schemas/Enumplugin-stats-collector-perApplicationLDAPStatsProp'
+            description: >-
+                Controls whether per application LDAP statistics are included in the output for selected LDAP operation statistics.
           ldapChangelogInfo:
             $ref: '#/components/schemas/Enumplugin-ldapChangelogInfoProp'
+            description: >-
+                Specifies the level of detail to include for the LDAP changelog.
           statusSummaryInfo:
             $ref: '#/components/schemas/Enumplugin-statusSummaryInfoProp'
+            description: >-
+                Specifies the level of detail to include about the status summary monitor entry.
           generateCollectorFiles:
             type: boolean
             description: >-
                 Indicates whether this plugin should store metric samples on disk for use by the Data Metrics Server. If the Stats Collector Plugin is only being used to collect metrics for one or more StatsD Monitoring Endpoints, then this can be set to false to prevent unnecessary I/O.
           localDBBackendInfo:
             $ref: '#/components/schemas/Enumplugin-localDBBackendInfoProp'
+            description: >-
+                Specifies the level of detail to include about the Local DB Backends.
           replicationInfo:
             $ref: '#/components/schemas/Enumplugin-replicationInfoProp'
+            description: >-
+                Specifies the level of detail to include about replication.
           entryCacheInfo:
             $ref: '#/components/schemas/Enumplugin-entryCacheInfoProp'
+            description: >-
+                Specifies the level of detail to include for each entry cache.
           hostInfo:
             type: array
             items:
               $ref: '#/components/schemas/Enumplugin-hostInfoProp'
+            description: >-
+                Specifies the level of detail to include about the host system resource utilization including CPU, memory, disk and network activity.
           includedLDAPApplication:
             type: array
             items:
@@ -798,38 +904,103 @@ components:
             type: boolean
             description: >-
                 Indicates whether the plug-in is enabled for use.
-        required:
-        - schemas
-        - sampleInterval
-        - collectionInterval
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - sampleInterval
+      - collectionInterval
+      - enabled
     Enumstats-collector-pluginSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:plugin:stats-collector"
+    Enumplugin-pluginTypeProp:
+      type: string
+      enum:
+      - "startup"
+      - "shutdown"
+      - "postconnect"
+      - "postdisconnect"
+      - "ldifimport"
+      - "ldifexport"
+      - "preparseabandon"
+      - "preparseadd"
+      - "preparsebind"
+      - "preparsecompare"
+      - "preparsedelete"
+      - "preparseextended"
+      - "preparsemodify"
+      - "preparsemodifydn"
+      - "preparsesearch"
+      - "preparseunbind"
+      - "preoperationadd"
+      - "preoperationbind"
+      - "preoperationcompare"
+      - "preoperationdelete"
+      - "preoperationextended"
+      - "preoperationmodify"
+      - "preoperationmodifydn"
+      - "preoperationsearch"
+      - "postoperationabandon"
+      - "postoperationadd"
+      - "postoperationbind"
+      - "postoperationcompare"
+      - "postoperationdelete"
+      - "postoperationextended"
+      - "postoperationmodify"
+      - "postoperationmodifydn"
+      - "postoperationsearch"
+      - "postoperationunbind"
+      - "preresponseadd"
+      - "preresponsebind"
+      - "preresponsecompare"
+      - "preresponsedelete"
+      - "preresponseextended"
+      - "preresponsemodify"
+      - "preresponsemodifydn"
+      - "preresponsesearch"
+      - "postresponseadd"
+      - "postresponsebind"
+      - "postresponsecompare"
+      - "postresponsedelete"
+      - "postresponseextended"
+      - "postresponsemodify"
+      - "postresponsemodifydn"
+      - "postresponsesearch"
+      - "postsynchronizationadd"
+      - "postsynchronizationdelete"
+      - "postsynchronizationmodify"
+      - "postsynchronizationmodifydn"
+      - "searchresultentry"
+      - "searchresultreference"
+      - "subordinatemodifydn"
+      - "intermediateresponse"
+      description: >-
+          Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
     add-internal-search-rate-plugin-request:
       allOf:
       - type: object
         properties:
           pluginName:
-            description: Name of the new Plugin
             type: string
-        required:
-        - pluginName
+            description: >-
+                Name of the new Plugin
       - $ref: '#/components/schemas/internal-search-rate-plugin-shared'
+      required:
+      - pluginName
     internal-search-rate-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Plugin
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Plugin Root
       - $ref: '#/components/schemas/internal-search-rate-plugin-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - pluginType
       - numThreads
     internal-search-rate-plugin-shared:
@@ -845,6 +1016,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+          description: >-
+              Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
         numThreads:
           type: integer
           description: >-
@@ -895,22 +1068,24 @@ components:
       - type: object
         properties:
           pluginName:
-            description: Name of the new Plugin
             type: string
-        required:
-        - pluginName
+            description: >-
+                Name of the new Plugin
       - $ref: '#/components/schemas/modifiable-password-policy-state-plugin-shared'
+      required:
+      - pluginName
     modifiable-password-policy-state-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Plugin
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Plugin Root
       - $ref: '#/components/schemas/modifiable-password-policy-state-plugin-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     modifiable-password-policy-state-plugin-shared:
       type: object
       properties:
@@ -952,23 +1127,24 @@ components:
       - type: object
         properties:
           pluginName:
-            description: Name of the new Plugin
             type: string
-        required:
-        - pluginName
+            description: >-
+                Name of the new Plugin
       - $ref: '#/components/schemas/seven-bit-clean-plugin-shared'
+      required:
+      - pluginName
     seven-bit-clean-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Plugin
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Plugin Root
       - $ref: '#/components/schemas/seven-bit-clean-plugin-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - pluginType
       - attributeType
     seven-bit-clean-plugin-shared:
@@ -984,6 +1160,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+          description: >-
+              Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
         attributeType:
           type: array
           items:
@@ -1020,23 +1198,24 @@ components:
       - type: object
         properties:
           pluginName:
-            description: Name of the new Plugin
             type: string
-        required:
-        - pluginName
+            description: >-
+                Name of the new Plugin
       - $ref: '#/components/schemas/clean-up-expired-pingfederate-persistent-access-grants-plugin-shared'
+      required:
+      - pluginName
     clean-up-expired-pingfederate-persistent-access-grants-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Plugin
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Plugin Root
       - $ref: '#/components/schemas/clean-up-expired-pingfederate-persistent-access-grants-plugin-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - pollingInterval
       - maxUpdatesPerSecond
       - numDeleteThreads
@@ -1080,28 +1259,41 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:plugin:clean-up-expired-pingfederate-persistent-access-grants"
+    Enumplugin-invokeGCDayOfWeekProp:
+      type: string
+      enum:
+      - "sunday"
+      - "monday"
+      - "tuesday"
+      - "wednesday"
+      - "thursday"
+      - "friday"
+      - "saturday"
+      description: >-
+          Specifies the days of the week which the Periodic GC Plugin should run. If no values are provided, then the plugin will run every day at the specified time.
     add-periodic-gc-plugin-request:
       allOf:
       - type: object
         properties:
           pluginName:
-            description: Name of the new Plugin
             type: string
-        required:
-        - pluginName
+            description: >-
+                Name of the new Plugin
       - $ref: '#/components/schemas/periodic-gc-plugin-shared'
+      required:
+      - pluginName
     periodic-gc-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Plugin
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Plugin Root
       - $ref: '#/components/schemas/periodic-gc-plugin-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - pluginType
     periodic-gc-plugin-shared:
       type: object
@@ -1116,10 +1308,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+          description: >-
+              Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
         invokeGCDayOfWeek:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-invokeGCDayOfWeekProp'
+          description: >-
+              Specifies the days of the week which the Periodic GC Plugin should run. If no values are provided, then the plugin will run every day at the specified time.
         invokeGCTimeUtc:
           type: array
           items:
@@ -1154,27 +1350,40 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:plugin:periodic-gc"
+    Enumplugin-ignoredPasswordPolicyStateErrorConditionProp:
+      type: string
+      enum:
+      - "temporarily-locked-due-to-failures"
+      - "permanently-locked-due-to-failures"
+      - "locked-due-to-idle-interval"
+      - "locked-due-to-maximum-reset-age"
+      - "locked-due-to-validation-failure"
+      - "password-is-expired"
+      description: >-
+          A set of password policy state error conditions that should not be enforced when authentication succeeds when attempted in the PingOne service. This option can only be used if try-local-bind is true.
     add-ping-one-pass-through-authentication-plugin-request:
       allOf:
       - type: object
         properties:
           pluginName:
-            description: Name of the new Plugin
             type: string
-        required:
-        - pluginName
+            description: >-
+                Name of the new Plugin
       - $ref: '#/components/schemas/ping-one-pass-through-authentication-plugin-shared'
+      required:
+      - pluginName
     ping-one-pass-through-authentication-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Plugin
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Plugin Root
       - $ref: '#/components/schemas/ping-one-pass-through-authentication-plugin-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     ping-one-pass-through-authentication-plugin-shared:
       type: object
       properties:
@@ -1251,6 +1460,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-ignoredPasswordPolicyStateErrorConditionProp'
+          description: >-
+              A set of password policy state error conditions that should not be enforced when authentication succeeds when attempted in the PingOne service. This option can only be used if try-local-bind is true.
         userMappingLocalAttribute:
           type: array
           items:
@@ -1294,7 +1505,6 @@ components:
       - "urn:pingidentity:schemas:configuration:2.0:plugin:ping-one-pass-through-authentication"
     changelog-password-encryption-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -1304,8 +1514,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumchangelog-password-encryption-pluginSchemaUrn'
           id:
-            description: Name of the Plugin
             type: string
+            description: >-
+                Name of the Plugin Root
           changelogPasswordEncryptionKey:
             type: string
             format: password
@@ -1319,6 +1530,8 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+            description: >-
+                Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
           description:
             type: string
             description: >-
@@ -1331,18 +1544,18 @@ components:
             type: boolean
             description: >-
                 Indicates whether the plug-in should be invoked for internal operations.
-        required:
-        - schemas
-        - pluginType
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - pluginType
+      - enabled
     Enumchangelog-password-encryption-pluginSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:plugin:changelog-password-encryption"
     processing-time-histogram-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -1352,12 +1565,15 @@ components:
             items:
               $ref: '#/components/schemas/Enumprocessing-time-histogram-pluginSchemaUrn'
           id:
-            description: Name of the Plugin
             type: string
+            description: >-
+                Name of the Plugin Root
           pluginType:
             type: array
             items:
               $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+            description: >-
+                Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
           histogramCategoryBoundary:
             type: array
             items:
@@ -1384,37 +1600,49 @@ components:
             type: boolean
             description: >-
                 Indicates whether the plug-in should be invoked for internal operations.
-        required:
-        - schemas
-        - pluginType
-        - histogramCategoryBoundary
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - pluginType
+      - histogramCategoryBoundary
+      - enabled
     Enumprocessing-time-histogram-pluginSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:plugin:processing-time-histogram"
+    Enumplugin-scopeProp:
+      type: string
+      enum:
+      - "base"
+      - "one"
+      - "sub"
+      - "subordinate-subtree"
+      description: >-
+          The scope to use for the search.
     add-search-shutdown-plugin-request:
       allOf:
       - type: object
         properties:
           pluginName:
-            description: Name of the new Plugin
             type: string
-        required:
-        - pluginName
+            description: >-
+                Name of the new Plugin
       - $ref: '#/components/schemas/search-shutdown-plugin-shared'
+      required:
+      - pluginName
     search-shutdown-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Plugin
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Plugin Root
       - $ref: '#/components/schemas/search-shutdown-plugin-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     search-shutdown-plugin-shared:
       type: object
       properties:
@@ -1430,6 +1658,8 @@ components:
               The base DN to use for the search.
         scope:
           $ref: '#/components/schemas/Enumplugin-scopeProp'
+          description: >-
+              The scope to use for the search.
         filter:
           type: string
           description: >-
@@ -1466,28 +1696,96 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:plugin:search-shutdown"
+    Enumplugin-includedLDAPStatProp:
+      type: string
+      enum:
+      - "active-operations"
+      - "num-connections"
+      - "op-count-and-latency"
+      - "work-queue"
+      - "ldap-protocol"
+      description: >-
+          Specifies the types of statistics related to LDAP connections and operation processing that should be included in the output.
+    Enumplugin-includedResourceStatProp:
+      type: string
+      enum:
+      - "memory-utilization"
+      description: >-
+          Specifies whether statistics related to resource utilization such as JVM memory.
+    Enumplugin-histogramFormatProp:
+      type: string
+      enum:
+      - "count"
+      - "aggregate-percentage"
+      description: >-
+          The format of the data in the processing time histogram.
+    Enumplugin-histogramOpTypeProp:
+      type: string
+      enum:
+      - "all"
+      - "add"
+      - "bind"
+      - "compare"
+      - "delete"
+      - "extended"
+      - "modify"
+      - "modify-dn"
+      - "search"
+      description: >-
+          Specifies the operation type(s) to use when outputting the response time histogram data. The order of the operations here determines the order of the columns in the output. Use the per-application-ldap-stats setting to further control this.
+    Enumplugin-periodic-stats-logger-perApplicationLDAPStatsProp:
+      type: string
+      enum:
+      - "aggregate-only"
+      - "per-application-only"
+      - "per-application-and-aggregate"
+      description: >-
+          Controls whether per application LDAP statistics are included in the output for selected LDAP operation statistics.
+    Enumplugin-gaugeInfoProp:
+      type: string
+      enum:
+      - "none"
+      - "basic"
+      - "extended"
+      description: >-
+          Specifies the level of detail to include for Gauges.
+    Enumplugin-logFileFormatProp:
+      type: string
+      enum:
+      - "csv"
+      - "json"
+      description: >-
+          Specifies the format to use when logging server statistics.
+    Enumplugin-loggingErrorBehaviorProp:
+      type: string
+      enum:
+      - "standard-error"
+      - "lockdown-mode"
+      description: >-
+          Specifies the behavior that the server should exhibit if an error occurs during logging processing.
     add-periodic-stats-logger-plugin-request:
       allOf:
       - type: object
         properties:
           pluginName:
-            description: Name of the new Plugin
             type: string
-        required:
-        - pluginName
+            description: >-
+                Name of the new Plugin
       - $ref: '#/components/schemas/periodic-stats-logger-plugin-shared'
+      required:
+      - pluginName
     periodic-stats-logger-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Plugin
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Plugin Root
       - $ref: '#/components/schemas/periodic-stats-logger-plugin-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - logInterval
       - collectionInterval
       - suppressIfIdle
@@ -1533,26 +1831,44 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-includedLDAPStatProp'
+          description: >-
+              Specifies the types of statistics related to LDAP connections and operation processing that should be included in the output.
         includedResourceStat:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-includedResourceStatProp'
+          description: >-
+              Specifies whether statistics related to resource utilization such as JVM memory.
         histogramFormat:
           $ref: '#/components/schemas/Enumplugin-histogramFormatProp'
+          description: >-
+              The format of the data in the processing time histogram.
         histogramOpType:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-histogramOpTypeProp'
+          description: >-
+              Specifies the operation type(s) to use when outputting the response time histogram data. The order of the operations here determines the order of the columns in the output. Use the per-application-ldap-stats setting to further control this.
         perApplicationLDAPStats:
           $ref: '#/components/schemas/Enumplugin-periodic-stats-logger-perApplicationLDAPStatsProp'
+          description: >-
+              Controls whether per application LDAP statistics are included in the output for selected LDAP operation statistics.
         statusSummaryInfo:
           $ref: '#/components/schemas/Enumplugin-statusSummaryInfoProp'
+          description: >-
+              Specifies the level of detail to include about the status summary monitor entry.
         ldapChangelogInfo:
           $ref: '#/components/schemas/Enumplugin-ldapChangelogInfoProp'
+          description: >-
+              Specifies the level of detail to include for the LDAP changelog.
         gaugeInfo:
           $ref: '#/components/schemas/Enumplugin-gaugeInfoProp'
+          description: >-
+              Specifies the level of detail to include for Gauges.
         logFileFormat:
           $ref: '#/components/schemas/Enumplugin-logFileFormatProp'
+          description: >-
+              Specifies the format to use when logging server statistics.
         logFile:
           type: string
           description: >-
@@ -1585,16 +1901,26 @@ components:
               The retention policy to use for the Periodic Stats Logger Plugin .
         loggingErrorBehavior:
           $ref: '#/components/schemas/Enumplugin-loggingErrorBehaviorProp'
+          description: >-
+              Specifies the behavior that the server should exhibit if an error occurs during logging processing.
         localDBBackendInfo:
           $ref: '#/components/schemas/Enumplugin-localDBBackendInfoProp'
+          description: >-
+              Specifies the level of detail to include about the Local DB Backends.
         replicationInfo:
           $ref: '#/components/schemas/Enumplugin-replicationInfoProp'
+          description: >-
+              Specifies the level of detail to include about replication.
         entryCacheInfo:
           $ref: '#/components/schemas/Enumplugin-entryCacheInfoProp'
+          description: >-
+              Specifies the level of detail to include for each entry cache.
         hostInfo:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-hostInfoProp'
+          description: >-
+              Specifies the level of detail to include about the host system resource utilization including CPU, memory, disk and network activity.
         includedLDAPApplication:
           type: array
           items:
@@ -1617,28 +1943,45 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:plugin:periodic-stats-logger"
+    Enumplugin-datetimeFormatProp:
+      type: string
+      enum:
+      - "generalized-time"
+      - "java-system-time-millis"
+      - "custom"
+      description: >-
+          Specifies the format of the datetime stored within the entry that determines when data should be purged.
+    Enumplugin-purgeBehaviorProp:
+      type: string
+      enum:
+      - "delete-entries"
+      - "subtree-delete-entries"
+      - "delete-json-attribute-values"
+      description: >-
+          Specifies whether to delete expired entries or attribute values. By default entries are deleted.
     add-purge-expired-data-plugin-request:
       allOf:
       - type: object
         properties:
           pluginName:
-            description: Name of the new Plugin
             type: string
-        required:
-        - pluginName
+            description: >-
+                Name of the new Plugin
       - $ref: '#/components/schemas/purge-expired-data-plugin-shared'
+      required:
+      - pluginName
     purge-expired-data-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Plugin
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Plugin Root
       - $ref: '#/components/schemas/purge-expired-data-plugin-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - datetimeFormat
       - pollingInterval
       - maxUpdatesPerSecond
@@ -1662,6 +2005,8 @@ components:
               The top-level JSON field within the configured datetime-attribute that determines when data should be deleted. This could store the expiration time, or it could store the creation time and the expiration-offset property specifies the duration before data is deleted.
         datetimeFormat:
           $ref: '#/components/schemas/Enumplugin-datetimeFormatProp'
+          description: >-
+              Specifies the format of the datetime stored within the entry that determines when data should be purged.
         customDatetimeFormat:
           type: string
           description: >-
@@ -1676,6 +2021,8 @@ components:
               The duration to wait after the value specified in datetime-attribute (and optionally datetime-json-field) before purging the data.
         purgeBehavior:
           $ref: '#/components/schemas/Enumplugin-purgeBehaviorProp'
+          description: >-
+              Specifies whether to delete expired entries or attribute values. By default entries are deleted.
         baseDN:
           type: string
           description: >-
@@ -1719,7 +2066,6 @@ components:
       - "urn:pingidentity:schemas:configuration:2.0:plugin:purge-expired-data"
     change-subscription-notification-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -1729,12 +2075,15 @@ components:
             items:
               $ref: '#/components/schemas/Enumchange-subscription-notification-pluginSchemaUrn'
           id:
-            description: Name of the Plugin
             type: string
+            description: >-
+                Name of the Plugin Root
           pluginType:
             type: array
             items:
               $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+            description: >-
+                Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
           description:
             type: string
             description: >-
@@ -1747,11 +2096,12 @@ components:
             type: boolean
             description: >-
                 Indicates whether the plug-in should be invoked for internal operations.
-        required:
-        - schemas
-        - pluginType
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - pluginType
+      - enabled
     Enumchange-subscription-notification-pluginSchemaUrn:
       type: string
       enum:
@@ -1761,23 +2111,24 @@ components:
       - type: object
         properties:
           pluginName:
-            description: Name of the new Plugin
             type: string
-        required:
-        - pluginName
+            description: >-
+                Name of the new Plugin
       - $ref: '#/components/schemas/sub-operation-timing-plugin-shared'
+      required:
+      - pluginName
     sub-operation-timing-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Plugin
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Plugin Root
       - $ref: '#/components/schemas/sub-operation-timing-plugin-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - pluginType
       - numMostExpensivePhasesShown
     sub-operation-timing-plugin-shared:
@@ -1793,6 +2144,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+          description: >-
+              Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
         requestCriteria:
           type: string
           description: >-
@@ -1825,22 +2178,24 @@ components:
       - type: object
         properties:
           pluginName:
-            description: Name of the new Plugin
             type: string
-        required:
-        - pluginName
+            description: >-
+                Name of the new Plugin
       - $ref: '#/components/schemas/third-party-plugin-shared'
+      required:
+      - pluginName
     third-party-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Plugin
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Plugin Root
       - $ref: '#/components/schemas/third-party-plugin-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     third-party-plugin-shared:
       type: object
       properties:
@@ -1876,6 +2231,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+          description: >-
+              Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
         invokeForInternalOperations:
           type: boolean
           description: >-
@@ -1889,9 +2246,18 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:plugin:third-party"
+    Enumplugin-attributeTypeProp:
+      type: string
+      enum:
+      - "ds-auth-totp-shared-secret"
+      - "ds-auth-totp-last-password-used"
+      - "ds-auth-delivered-otp"
+      - "ds-auth-password-reset-token"
+      - "ds-auth-single-use-token"
+      description: >-
+          The attribute types whose values should be encrypted.
     encrypt-attribute-values-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -1901,16 +2267,21 @@ components:
             items:
               $ref: '#/components/schemas/Enumencrypt-attribute-values-pluginSchemaUrn'
           id:
-            description: Name of the Plugin
             type: string
+            description: >-
+                Name of the Plugin Root
           pluginType:
             type: array
             items:
               $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+            description: >-
+                Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
           attributeType:
             type: array
             items:
               $ref: '#/components/schemas/Enumplugin-attributeTypeProp'
+            description: >-
+                The attribute types whose values should be encrypted.
           encryptionSettingsDefinitionID:
             type: string
             description: >-
@@ -1927,38 +2298,48 @@ components:
             type: boolean
             description: >-
                 Indicates whether the plug-in should be invoked for internal operations.
-        required:
-        - schemas
-        - pluginType
-        - attributeType
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - pluginType
+      - attributeType
+      - enabled
     Enumencrypt-attribute-values-pluginSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:plugin:encrypt-attribute-values"
+    Enumplugin-serverAccessModeProp:
+      type: string
+      enum:
+      - "round-robin"
+      - "failover-on-unavailable"
+      - "failover-on-any-failure"
+      description: >-
+          Specifies the manner in which external servers should be used for pass-through authentication attempts if multiple servers are defined.
     add-pass-through-authentication-plugin-request:
       allOf:
       - type: object
         properties:
           pluginName:
-            description: Name of the new Plugin
             type: string
-        required:
-        - pluginName
+            description: >-
+                Name of the new Plugin
       - $ref: '#/components/schemas/pass-through-authentication-plugin-shared'
+      required:
+      - pluginName
     pass-through-authentication-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Plugin
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Plugin Root
       - $ref: '#/components/schemas/pass-through-authentication-plugin-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - pluginType
       - tryLocalBind
       - overrideLocalPassword
@@ -1979,6 +2360,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+          description: >-
+              Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
         server:
           type: array
           items:
@@ -2003,6 +2386,8 @@ components:
               Indicates whether updates to the local password value should accept passwords that do not meet password policy constraints.
         serverAccessMode:
           $ref: '#/components/schemas/Enumplugin-serverAccessModeProp'
+          description: >-
+              Specifies the manner in which external servers should be used for pass-through authentication attempts if multiple servers are defined.
         includedLocalEntryBaseDN:
           type: array
           items:
@@ -2068,23 +2453,24 @@ components:
       - type: object
         properties:
           pluginName:
-            description: Name of the new Plugin
             type: string
-        required:
-        - pluginName
+            description: >-
+                Name of the new Plugin
       - $ref: '#/components/schemas/dn-mapper-plugin-shared'
+      required:
+      - pluginName
     dn-mapper-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Plugin
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Plugin Root
       - $ref: '#/components/schemas/dn-mapper-plugin-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - pluginType
       - enableAttributeMapping
       - enableControlMapping
@@ -2102,6 +2488,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+          description: >-
+              Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
         sourceDN:
           type: string
           description: >-
@@ -2151,7 +2539,6 @@ components:
       - "urn:pingidentity:schemas:configuration:2.0:plugin:dn-mapper"
     monitor-history-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -2161,8 +2548,9 @@ components:
             items:
               $ref: '#/components/schemas/Enummonitor-history-pluginSchemaUrn'
           id:
-            description: Name of the Plugin
             type: string
+            description: >-
+                Name of the Plugin Root
           logInterval:
             type: string
             description: >-
@@ -2177,6 +2565,8 @@ components:
                 The UNIX permissions of the log files created by this Monitor History Plugin.
           loggingErrorBehavior:
             $ref: '#/components/schemas/Enumplugin-loggingErrorBehaviorProp'
+            description: >-
+                Specifies the behavior that the server should exhibit if an error occurs during logging processing.
           retentionPolicy:
             type: array
             items:
@@ -2199,14 +2589,15 @@ components:
             type: boolean
             description: >-
                 Indicates whether the plug-in is enabled for use.
-        required:
-        - schemas
-        - logInterval
-        - logFile
-        - logFilePermissions
-        - retentionPolicy
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - logInterval
+      - logFile
+      - logFilePermissions
+      - retentionPolicy
+      - enabled
     Enummonitor-history-pluginSchemaUrn:
       type: string
       enum:
@@ -2216,23 +2607,24 @@ components:
       - type: object
         properties:
           pluginName:
-            description: Name of the new Plugin
             type: string
-        required:
-        - pluginName
+            description: >-
+                Name of the new Plugin
       - $ref: '#/components/schemas/referral-on-update-plugin-shared'
+      required:
+      - pluginName
     referral-on-update-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Plugin
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Plugin Root
       - $ref: '#/components/schemas/referral-on-update-plugin-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - pluginType
     referral-on-update-plugin-shared:
       type: object
@@ -2247,6 +2639,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+          description: >-
+              Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
         referralBaseURL:
           type: array
           items:
@@ -2284,22 +2678,24 @@ components:
       - type: object
         properties:
           pluginName:
-            description: Name of the new Plugin
             type: string
-        required:
-        - pluginName
+            description: >-
+                Name of the new Plugin
       - $ref: '#/components/schemas/simple-to-external-bind-plugin-shared'
+      required:
+      - pluginName
     simple-to-external-bind-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Plugin
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Plugin Root
       - $ref: '#/components/schemas/simple-to-external-bind-plugin-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     simple-to-external-bind-plugin-shared:
       type: object
       properties:
@@ -2334,7 +2730,6 @@ components:
       - "urn:pingidentity:schemas:configuration:2.0:plugin:simple-to-external-bind"
     custom-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -2344,8 +2739,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumcustom-pluginSchemaUrn'
           id:
-            description: Name of the Plugin
             type: string
+            description: >-
+                Name of the Plugin Root
           description:
             type: string
             description: >-
@@ -2358,15 +2754,18 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+            description: >-
+                Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
           invokeForInternalOperations:
             type: boolean
             description: >-
                 Indicates whether the plug-in should be invoked for internal operations.
-        required:
-        - schemas
-        - enabled
-        - pluginType
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
+      - pluginType
     Enumcustom-pluginSchemaUrn:
       type: string
       enum:
@@ -2376,23 +2775,24 @@ components:
       - type: object
         properties:
           pluginName:
-            description: Name of the new Plugin
             type: string
-        required:
-        - pluginName
+            description: >-
+                Name of the new Plugin
       - $ref: '#/components/schemas/snmp-subagent-plugin-shared'
+      required:
+      - pluginName
     snmp-subagent-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Plugin
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Plugin Root
       - $ref: '#/components/schemas/snmp-subagent-plugin-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - agentxAddress
       - agentxPort
     snmp-subagent-plugin-shared:
@@ -2453,7 +2853,6 @@ components:
       - "urn:pingidentity:schemas:configuration:2.0:plugin:snmp-subagent"
     password-policy-import-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -2463,8 +2862,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumpassword-policy-import-pluginSchemaUrn'
           id:
-            description: Name of the Plugin
             type: string
+            description: >-
+                Name of the Plugin Root
           invokeForInternalOperations:
             type: boolean
             description: >-
@@ -2489,17 +2889,26 @@ components:
             type: boolean
             description: >-
                 Indicates whether the plug-in is enabled for use.
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumpassword-policy-import-pluginSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:plugin:password-policy-import"
+    Enumplugin-profileActionProp:
+      type: string
+      enum:
+      - "none"
+      - "start"
+      - "stop"
+      - "cancel"
+      description: >-
+          Specifies the action that should be taken by the profiler.
     profiler-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -2509,8 +2918,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumprofiler-pluginSchemaUrn'
           id:
-            description: Name of the Plugin
             type: string
+            description: >-
+                Name of the Plugin Root
           profileSampleInterval:
             type: string
             description: >-
@@ -2525,6 +2935,8 @@ components:
                 Indicates whether the profiler plug-in is to start collecting data automatically when the Directory Server is started.
           profileAction:
             $ref: '#/components/schemas/Enumplugin-profileActionProp'
+            description: >-
+                Specifies the action that should be taken by the profiler.
           description:
             type: string
             description: >-
@@ -2533,13 +2945,14 @@ components:
             type: boolean
             description: >-
                 Indicates whether the plug-in is enabled for use.
-        required:
-        - schemas
-        - profileSampleInterval
-        - profileDirectory
-        - enableProfilingOnStartup
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - profileSampleInterval
+      - profileDirectory
+      - enableProfilingOnStartup
+      - enabled
     Enumprofiler-pluginSchemaUrn:
       type: string
       enum:
@@ -2549,23 +2962,24 @@ components:
       - type: object
         properties:
           pluginName:
-            description: Name of the new Plugin
             type: string
-        required:
-        - pluginName
+            description: >-
+                Name of the new Plugin
       - $ref: '#/components/schemas/clean-up-inactive-pingfederate-persistent-sessions-plugin-shared'
+      required:
+      - pluginName
     clean-up-inactive-pingfederate-persistent-sessions-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Plugin
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Plugin Root
       - $ref: '#/components/schemas/clean-up-inactive-pingfederate-persistent-sessions-plugin-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - pollingInterval
       - maxUpdatesPerSecond
       - numDeleteThreads
@@ -2614,28 +3028,103 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:plugin:clean-up-inactive-pingfederate-persistent-sessions"
+    Enumplugin-multipleValuePatternBehaviorProp:
+      type: string
+      enum:
+      - "use-first-non-rejected-value-pattern-with-non-empty-values-but-may-reject"
+      - "use-first-non-rejected-value-pattern-with-non-empty-values-and-never-reject"
+      - "use-first-rejection-or-first-value-pattern-with-non-empty-values"
+      - "use-all-non-rejected-value-patterns-with-non-empty-values-but-may-reject"
+      - "use-all-non-rejected-value-patterns-with-non-empty-values-and-never-reject"
+      - "use-first-rejection-or-all-value-patterns-with-non-empty-values"
+      description: >-
+          The behavior to exhibit if the plugin is configured with multiple value patterns.
+    Enumplugin-multiValuedAttributeBehaviorProp:
+      type: string
+      enum:
+      - "use-first-value"
+      - "reject-entries-with-any-multivalued-source-attribute"
+      - "use-all-values-if-possible-but-reject-if-not"
+      - "use-all-values-if-possible-but-only-first-value-if-not"
+      description: >-
+          The behavior to exhibit for source attributes that have multiple values.
+    Enumplugin-targetAttributeExistsDuringInitialPopulationBehaviorProp:
+      type: string
+      enum:
+      - "preserve-existing-values"
+      - "overwrite-existing-values"
+      - "merge-existing-and-composed-values"
+      - "reject-existing-values-in-add-but-preserve-in-ldif-import"
+      - "reject-existing-values-in-add-but-overwrite-in-ldif-import"
+      - "reject-existing-values-in-add-but-merge-in-ldif-import"
+      description: >-
+          The behavior to exhibit if the target attribute exists when initially populating the entry with composed values (whether during an LDIF import, an add operation, or an invocation of the populate composed attribute values task).
+    Enumplugin-updateSourceAttributeBehaviorProp:
+      type: string
+      enum:
+      - "replace-composed-values"
+      - "replace-all-values"
+      - "preserve-existing-values"
+      description: >-
+          The behavior to exhibit for modify and modify DN operations that update one or more of the source attributes used in any of the value patterns.
+    Enumplugin-sourceAttributeRemovalBehaviorProp:
+      type: string
+      enum:
+      - "preserve-non-composed-values"
+      - "preserve-all-values"
+      - "remove-all-values-but-preserve-all-if-required"
+      - "remove-all-values-but-preserve-non-composed-if-required"
+      description: >-
+          The behavior to exhibit for modify and modify DN operations that update an entry to remove source attributes in such a way that this plugin would no longer generate any composed values for that entry.
+    Enumplugin-updateTargetAttributeBehaviorProp:
+      type: string
+      enum:
+      - "always-allow"
+      - "allow-only-for-non-composed-values"
+      - "never-allow"
+      description: >-
+          The behavior to exhibit for modify and modify DN operations that attempt to update the set of values for the target attribute.
+    Enumplugin-updatedEntryNewlyMatchesCriteriaBehaviorProp:
+      type: string
+      enum:
+      - "preserve-existing-values-without-composing-new-values"
+      - "preserve-existing-values-or-compose-new-values"
+      - "preserve-existing-values-and-compose-new-values"
+      - "compose-new-values-without-preserving-existing-values"
+      description: >-
+          The behavior to exhibit for modify or modify DN operations that update an entry that previously did not satisfy either the base DN or filter criteria, but now do satisfy that criteria.
+    Enumplugin-updatedEntryNoLongerMatchesCriteriaBehaviorProp:
+      type: string
+      enum:
+      - "preserve-all-values"
+      - "preserve-non-composed-values"
+      - "remove-all-values-but-preserve-all-if-required"
+      - "remove-all-values-but-preserve-non-composed-if-required"
+      description: >-
+          The behavior to exhibit for modify or modify DN operations that update an entry that previously satisfied the base DN and filter criteria, but now no longer satisfies that criteria.
     add-composed-attribute-plugin-request:
       allOf:
       - type: object
         properties:
           pluginName:
-            description: Name of the new Plugin
             type: string
-        required:
-        - pluginName
+            description: >-
+                Name of the new Plugin
       - $ref: '#/components/schemas/composed-attribute-plugin-shared'
+      required:
+      - pluginName
     composed-attribute-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Plugin
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Plugin Root
       - $ref: '#/components/schemas/composed-attribute-plugin-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - pluginType
     composed-attribute-plugin-shared:
       type: object
@@ -2650,6 +3139,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+          description: >-
+              Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
         attributeType:
           type: string
           description: >-
@@ -2662,16 +3153,28 @@ components:
               Specifies a pattern for constructing the values to use for the target attribute type.
         multipleValuePatternBehavior:
           $ref: '#/components/schemas/Enumplugin-multipleValuePatternBehaviorProp'
+          description: >-
+              The behavior to exhibit if the plugin is configured with multiple value patterns.
         multiValuedAttributeBehavior:
           $ref: '#/components/schemas/Enumplugin-multiValuedAttributeBehaviorProp'
+          description: >-
+              The behavior to exhibit for source attributes that have multiple values.
         targetAttributeExistsDuringInitialPopulationBehavior:
           $ref: '#/components/schemas/Enumplugin-targetAttributeExistsDuringInitialPopulationBehaviorProp'
+          description: >-
+              The behavior to exhibit if the target attribute exists when initially populating the entry with composed values (whether during an LDIF import, an add operation, or an invocation of the populate composed attribute values task).
         updateSourceAttributeBehavior:
           $ref: '#/components/schemas/Enumplugin-updateSourceAttributeBehaviorProp'
+          description: >-
+              The behavior to exhibit for modify and modify DN operations that update one or more of the source attributes used in any of the value patterns.
         sourceAttributeRemovalBehavior:
           $ref: '#/components/schemas/Enumplugin-sourceAttributeRemovalBehaviorProp'
+          description: >-
+              The behavior to exhibit for modify and modify DN operations that update an entry to remove source attributes in such a way that this plugin would no longer generate any composed values for that entry.
         updateTargetAttributeBehavior:
           $ref: '#/components/schemas/Enumplugin-updateTargetAttributeBehaviorProp'
+          description: >-
+              The behavior to exhibit for modify and modify DN operations that attempt to update the set of values for the target attribute.
         includeBaseDN:
           type: array
           items:
@@ -2698,8 +3201,12 @@ components:
               The set of search filters that identify entries for which composed values will not be generated.
         updatedEntryNewlyMatchesCriteriaBehavior:
           $ref: '#/components/schemas/Enumplugin-updatedEntryNewlyMatchesCriteriaBehaviorProp'
+          description: >-
+              The behavior to exhibit for modify or modify DN operations that update an entry that previously did not satisfy either the base DN or filter criteria, but now do satisfy that criteria.
         updatedEntryNoLongerMatchesCriteriaBehavior:
           $ref: '#/components/schemas/Enumplugin-updatedEntryNoLongerMatchesCriteriaBehaviorProp'
+          description: >-
+              The behavior to exhibit for modify or modify DN operations that update an entry that previously satisfied the base DN and filter criteria, but now no longer satisfies that criteria.
         description:
           type: string
           description: >-
@@ -2723,7 +3230,6 @@ components:
       - "urn:pingidentity:schemas:configuration:2.0:plugin:composed-attribute"
     ldap-result-code-tracker-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -2733,12 +3239,15 @@ components:
             items:
               $ref: '#/components/schemas/Enumldap-result-code-tracker-pluginSchemaUrn'
           id:
-            description: Name of the Plugin
             type: string
+            description: >-
+                Name of the Plugin Root
           pluginType:
             type: array
             items:
               $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+            description: >-
+                Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
           description:
             type: string
             description: >-
@@ -2751,11 +3260,12 @@ components:
             type: boolean
             description: >-
                 Indicates whether the plug-in should be invoked for internal operations.
-        required:
-        - schemas
-        - pluginType
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - pluginType
+      - enabled
     Enumldap-result-code-tracker-pluginSchemaUrn:
       type: string
       enum:
@@ -2765,23 +3275,24 @@ components:
       - type: object
         properties:
           pluginName:
-            description: Name of the new Plugin
             type: string
-        required:
-        - pluginName
+            description: >-
+                Name of the new Plugin
       - $ref: '#/components/schemas/attribute-mapper-plugin-shared'
+      required:
+      - pluginName
     attribute-mapper-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Plugin
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Plugin Root
       - $ref: '#/components/schemas/attribute-mapper-plugin-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - pluginType
       - enableControlMapping
       - alwaysMapResponses
@@ -2798,6 +3309,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+          description: >-
+              Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
         sourceAttribute:
           type: string
           description: >-
@@ -2840,23 +3353,24 @@ components:
       - type: object
         properties:
           pluginName:
-            description: Name of the new Plugin
             type: string
-        required:
-        - pluginName
+            description: >-
+                Name of the new Plugin
       - $ref: '#/components/schemas/delay-plugin-shared'
+      required:
+      - pluginName
     delay-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Plugin
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Plugin Root
       - $ref: '#/components/schemas/delay-plugin-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - pluginType
     delay-plugin-shared:
       type: object
@@ -2871,6 +3385,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+          description: >-
+              Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
         delay:
           type: string
           description: >-
@@ -2908,23 +3424,24 @@ components:
       - type: object
         properties:
           pluginName:
-            description: Name of the new Plugin
             type: string
-        required:
-        - pluginName
+            description: >-
+                Name of the new Plugin
       - $ref: '#/components/schemas/clean-up-expired-pingfederate-persistent-sessions-plugin-shared'
+      required:
+      - pluginName
     clean-up-expired-pingfederate-persistent-sessions-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Plugin
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Plugin Root
       - $ref: '#/components/schemas/clean-up-expired-pingfederate-persistent-sessions-plugin-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - pollingInterval
       - maxUpdatesPerSecond
       - numDeleteThreads
@@ -2973,22 +3490,24 @@ components:
       - type: object
         properties:
           pluginName:
-            description: Name of the new Plugin
             type: string
-        required:
-        - pluginName
+            description: >-
+                Name of the new Plugin
       - $ref: '#/components/schemas/groovy-scripted-plugin-shared'
+      required:
+      - pluginName
     groovy-scripted-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Plugin
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Plugin Root
       - $ref: '#/components/schemas/groovy-scripted-plugin-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     groovy-scripted-plugin-shared:
       type: object
       properties:
@@ -3024,6 +3543,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+          description: >-
+              Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
         invokeForInternalOperations:
           type: boolean
           description: >-
@@ -3039,7 +3560,6 @@ components:
       - "urn:pingidentity:schemas:configuration:2.0:plugin:groovy-scripted"
     last-mod-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -3049,12 +3569,15 @@ components:
             items:
               $ref: '#/components/schemas/Enumlast-mod-pluginSchemaUrn'
           id:
-            description: Name of the Plugin
             type: string
+            description: >-
+                Name of the Plugin Root
           pluginType:
             type: array
             items:
               $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+            description: >-
+                Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
           includeAttribute:
             type: array
             items:
@@ -3079,11 +3602,12 @@ components:
             type: boolean
             description: >-
                 Indicates whether the plug-in should be invoked for internal operations.
-        required:
-        - schemas
-        - pluginType
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - pluginType
+      - enabled
     Enumlast-mod-pluginSchemaUrn:
       type: string
       enum:
@@ -3093,22 +3617,24 @@ components:
       - type: object
         properties:
           pluginName:
-            description: Name of the new Plugin
             type: string
-        required:
-        - pluginName
+            description: >-
+                Name of the new Plugin
       - $ref: '#/components/schemas/pluggable-pass-through-authentication-plugin-shared'
+      required:
+      - pluginName
     pluggable-pass-through-authentication-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Plugin
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Plugin Root
       - $ref: '#/components/schemas/pluggable-pass-through-authentication-plugin-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     pluggable-pass-through-authentication-plugin-shared:
       type: object
       properties:
@@ -3160,6 +3686,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-ignoredPasswordPolicyStateErrorConditionProp'
+          description: >-
+              A set of password policy state error conditions that should not be enforced when authentication succeeds when attempted in the external service. This option can only be used if try-local-bind is true.
         description:
           type: string
           description: >-
@@ -3185,23 +3713,24 @@ components:
       - type: object
         properties:
           pluginName:
-            description: Name of the new Plugin
             type: string
-        required:
-        - pluginName
+            description: >-
+                Name of the new Plugin
       - $ref: '#/components/schemas/referential-integrity-plugin-shared'
+      required:
+      - pluginName
     referential-integrity-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Plugin
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Plugin Root
       - $ref: '#/components/schemas/referential-integrity-plugin-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - pluginType
     referential-integrity-plugin-shared:
       type: object
@@ -3216,6 +3745,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+          description: >-
+              Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
         attributeType:
           type: array
           items:
@@ -3256,28 +3787,37 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:plugin:referential-integrity"
+    Enumplugin-multipleAttributeBehaviorProp:
+      type: string
+      enum:
+      - "unique-within-each-attribute"
+      - "unique-across-all-attributes-including-in-same-entry"
+      - "unique-across-all-attributes-except-in-same-entry"
+      description: >-
+          The behavior to exhibit if multiple attribute types are specified.
     add-unique-attribute-plugin-request:
       allOf:
       - type: object
         properties:
           pluginName:
-            description: Name of the new Plugin
             type: string
-        required:
-        - pluginName
+            description: >-
+                Name of the new Plugin
       - $ref: '#/components/schemas/unique-attribute-plugin-shared'
+      required:
+      - pluginName
     unique-attribute-plugin-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Plugin
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Plugin Root
       - $ref: '#/components/schemas/unique-attribute-plugin-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - pluginType
     unique-attribute-plugin-shared:
       type: object
@@ -3292,6 +3832,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+          description: >-
+              Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
         type:
           type: array
           items:
@@ -3300,6 +3842,8 @@ components:
               Specifies the type of attributes to check for value uniqueness.
         multipleAttributeBehavior:
           $ref: '#/components/schemas/Enumplugin-multipleAttributeBehaviorProp'
+          description: >-
+              The behavior to exhibit if multiple attribute types are specified.
         baseDN:
           type: array
           items:
@@ -3334,28 +3878,39 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:plugin:unique-attribute"
+    Enumcustom-logged-stats-statisticTypeProp:
+      type: string
+      enum:
+      - "raw"
+      - "counter"
+      - "average"
+      - "minimum"
+      - "maximum"
+      description: >-
+          Specifies the type of statistic to include in the output for each monitored attribute.
     add-custom-logged-stats-request:
       allOf:
       - type: object
         properties:
           statsName:
-            description: Name of the new Custom Logged Stats
             type: string
-        required:
-        - statsName
+            description: >-
+                Name of the new Custom Logged Stats
       - $ref: '#/components/schemas/custom-logged-stats-shared'
+      required:
+      - statsName
     custom-logged-stats-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Custom Logged Stats
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Plugin Root
       - $ref: '#/components/schemas/custom-logged-stats-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - enabled
     custom-logged-stats-shared:
       type: object
@@ -3398,6 +3953,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumcustom-logged-stats-statisticTypeProp'
+          description: >-
+              Specifies the type of statistic to include in the output for each monitored attribute.
         headerPrefix:
           type: string
           description: >-
@@ -3438,388 +3995,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:custom-logged-stats"
-    Enumplugin-ldapInfoProp:
-      type: string
-      enum:
-      - "none"
-      - "basic"
-      - "extended"
-      description: >-
-          Specifies the level of detail to include about the LDAP connection handlers.
-    Enumplugin-histogramOpTypeProp:
-      type: string
-      enum:
-      - "all"
-      - "add"
-      - "bind"
-      - "compare"
-      - "delete"
-      - "extended"
-      - "modify"
-      - "modify-dn"
-      - "search"
-      description: >-
-          Specifies the operation type(s) to use when outputting the response time histogram data. The order of the operations here determines the order of the columns in the output. Use the per-application-ldap-stats setting to further control this.
-    Enumplugin-logFileFormatProp:
-      type: string
-      enum:
-      - "csv"
-      - "json"
-      description: >-
-          Specifies the format to use when logging server statistics.
-    Enumplugin-multiValuedAttributeBehaviorProp:
-      type: string
-      enum:
-      - "use-first-value"
-      - "reject-entries-with-any-multivalued-source-attribute"
-      - "use-all-values-if-possible-but-reject-if-not"
-      - "use-all-values-if-possible-but-only-first-value-if-not"
-      description: >-
-          The behavior to exhibit for source attributes that have multiple values.
-    Enumplugin-periodic-stats-logger-perApplicationLDAPStatsProp:
-      type: string
-      enum:
-      - "aggregate-only"
-      - "per-application-only"
-      - "per-application-and-aggregate"
-      description: >-
-          Controls whether per application LDAP statistics are included in the output for selected LDAP operation statistics.
-    Enumplugin-updatedEntryNoLongerMatchesCriteriaBehaviorProp:
-      type: string
-      enum:
-      - "preserve-all-values"
-      - "preserve-non-composed-values"
-      - "remove-all-values-but-preserve-all-if-required"
-      - "remove-all-values-but-preserve-non-composed-if-required"
-      description: >-
-          The behavior to exhibit for modify or modify DN operations that update an entry that previously satisfied the base DN and filter criteria, but now no longer satisfies that criteria.
-    Enumplugin-profileActionProp:
-      type: string
-      enum:
-      - "none"
-      - "start"
-      - "stop"
-      - "cancel"
-      description: >-
-          Specifies the action that should be taken by the profiler.
-    Enumplugin-targetAttributeExistsDuringInitialPopulationBehaviorProp:
-      type: string
-      enum:
-      - "preserve-existing-values"
-      - "overwrite-existing-values"
-      - "merge-existing-and-composed-values"
-      - "reject-existing-values-in-add-but-preserve-in-ldif-import"
-      - "reject-existing-values-in-add-but-overwrite-in-ldif-import"
-      - "reject-existing-values-in-add-but-merge-in-ldif-import"
-      description: >-
-          The behavior to exhibit if the target attribute exists when initially populating the entry with composed values (whether during an LDIF import, an add operation, or an invocation of the populate composed attribute values task).
-    Enumplugin-statusSummaryInfoProp:
-      type: string
-      enum:
-      - "none"
-      - "basic"
-      - "verbose"
-      description: >-
-          Specifies the level of detail to include about the status summary monitor entry.
-    Enumplugin-ignoredPasswordPolicyStateErrorConditionProp:
-      type: string
-      enum:
-      - "temporarily-locked-due-to-failures"
-      - "permanently-locked-due-to-failures"
-      - "locked-due-to-idle-interval"
-      - "locked-due-to-maximum-reset-age"
-      - "locked-due-to-validation-failure"
-      - "password-is-expired"
-      description: >-
-          A set of password policy state error conditions that should not be enforced when authentication succeeds when attempted in the PingOne service. This option can only be used if try-local-bind is true.
-    Enumplugin-multipleAttributeBehaviorProp:
-      type: string
-      enum:
-      - "unique-within-each-attribute"
-      - "unique-across-all-attributes-including-in-same-entry"
-      - "unique-across-all-attributes-except-in-same-entry"
-      description: >-
-          The behavior to exhibit if multiple attribute types are specified.
-    Enumplugin-hostInfoProp:
-      type: string
-      enum:
-      - "cpu"
-      - "disk"
-      - "network"
-      description: >-
-          Specifies the level of detail to include about the host system resource utilization including CPU, memory, disk and network activity.
-    Enumplugin-updatedEntryNewlyMatchesCriteriaBehaviorProp:
-      type: string
-      enum:
-      - "preserve-existing-values-without-composing-new-values"
-      - "preserve-existing-values-or-compose-new-values"
-      - "preserve-existing-values-and-compose-new-values"
-      - "compose-new-values-without-preserving-existing-values"
-      description: >-
-          The behavior to exhibit for modify or modify DN operations that update an entry that previously did not satisfy either the base DN or filter criteria, but now do satisfy that criteria.
-    Enumcustom-logged-stats-statisticTypeProp:
-      type: string
-      enum:
-      - "raw"
-      - "counter"
-      - "average"
-      - "minimum"
-      - "maximum"
-      description: >-
-          Specifies the type of statistic to include in the output for each monitored attribute.
-    Enumplugin-invokeGCDayOfWeekProp:
-      type: string
-      enum:
-      - "sunday"
-      - "monday"
-      - "tuesday"
-      - "wednesday"
-      - "thursday"
-      - "friday"
-      - "saturday"
-      description: >-
-          Specifies the days of the week which the Periodic GC Plugin should run. If no values are provided, then the plugin will run every day at the specified time.
-    Enumplugin-ldapChangelogInfoProp:
-      type: string
-      enum:
-      - "none"
-      - "basic"
-      - "extended"
-      - "verbose"
-      description: >-
-          Specifies the level of detail to include for the LDAP changelog.
-    Enumplugin-multipleValuePatternBehaviorProp:
-      type: string
-      enum:
-      - "use-first-non-rejected-value-pattern-with-non-empty-values-but-may-reject"
-      - "use-first-non-rejected-value-pattern-with-non-empty-values-and-never-reject"
-      - "use-first-rejection-or-first-value-pattern-with-non-empty-values"
-      - "use-all-non-rejected-value-patterns-with-non-empty-values-but-may-reject"
-      - "use-all-non-rejected-value-patterns-with-non-empty-values-and-never-reject"
-      - "use-first-rejection-or-all-value-patterns-with-non-empty-values"
-      description: >-
-          The behavior to exhibit if the plugin is configured with multiple value patterns.
-    Enumplugin-scopeProp:
-      type: string
-      enum:
-      - "base"
-      - "one"
-      - "sub"
-      - "subordinate-subtree"
-      description: >-
-          The scope to use for the search.
-    Enumplugin-includedLDAPStatProp:
-      type: string
-      enum:
-      - "active-operations"
-      - "num-connections"
-      - "op-count-and-latency"
-      - "work-queue"
-      - "ldap-protocol"
-      description: >-
-          Specifies the types of statistics related to LDAP connections and operation processing that should be included in the output.
-    Enumplugin-includedResourceStatProp:
-      type: string
-      enum:
-      - "memory-utilization"
-      description: >-
-          Specifies whether statistics related to resource utilization such as JVM memory.
-    Enumplugin-purgeBehaviorProp:
-      type: string
-      enum:
-      - "delete-entries"
-      - "subtree-delete-entries"
-      - "delete-json-attribute-values"
-      description: >-
-          Specifies whether to delete expired entries or attribute values. By default entries are deleted.
-    Enumplugin-serverAccessModeProp:
-      type: string
-      enum:
-      - "round-robin"
-      - "failover-on-unavailable"
-      - "failover-on-any-failure"
-      description: >-
-          Specifies the manner in which external servers should be used for pass-through authentication attempts if multiple servers are defined.
-    Enumplugin-operationTypeProp:
-      type: string
-      enum:
-      - "add"
-      - "bind"
-      - "compare"
-      - "modify"
-      - "modify-dn"
-      - "search"
-      description: >-
-          Specifies the types of operations that should result in access time updates.
-    Enumplugin-serverInfoProp:
-      type: string
-      enum:
-      - "none"
-      - "basic"
-      - "extended"
-      description: >-
-          Specifies whether statistics related to resource utilization such as JVM memory and CPU/Network/Disk utilization.
-    Enumplugin-histogramFormatProp:
-      type: string
-      enum:
-      - "count"
-      - "aggregate-percentage"
-      description: >-
-          The format of the data in the processing time histogram.
-    Enumplugin-localDBBackendInfoProp:
-      type: string
-      enum:
-      - "none"
-      - "basic"
-      - "extended"
-      - "verbose"
-      description: >-
-          Specifies the level of detail to include about the Local DB Backends.
-    Enumplugin-gaugeInfoProp:
-      type: string
-      enum:
-      - "none"
-      - "basic"
-      - "extended"
-      description: >-
-          Specifies the level of detail to include for Gauges.
-    Enumplugin-loggingErrorBehaviorProp:
-      type: string
-      enum:
-      - "standard-error"
-      - "lockdown-mode"
-      description: >-
-          Specifies the behavior that the server should exhibit if an error occurs during logging processing.
-    Enumplugin-entryCacheInfoProp:
-      type: string
-      enum:
-      - "none"
-      - "basic"
-      - "extended"
-      description: >-
-          Specifies the level of detail to include for each entry cache.
-    Enumplugin-datetimeFormatProp:
-      type: string
-      enum:
-      - "generalized-time"
-      - "java-system-time-millis"
-      - "custom"
-      description: >-
-          Specifies the format of the datetime stored within the entry that determines when data should be purged.
-    Enumplugin-attributeTypeProp:
-      type: string
-      enum:
-      - "ds-auth-totp-shared-secret"
-      - "ds-auth-totp-last-password-used"
-      - "ds-auth-delivered-otp"
-      - "ds-auth-password-reset-token"
-      - "ds-auth-single-use-token"
-      description: >-
-          The attribute types whose values should be encrypted.
-    Enumplugin-replicationInfoProp:
-      type: string
-      enum:
-      - "none"
-      - "basic"
-      - "extended"
-      - "verbose"
-      description: >-
-          Specifies the level of detail to include about replication.
-    Enumplugin-pluginTypeProp:
-      type: string
-      enum:
-      - "startup"
-      - "shutdown"
-      - "postconnect"
-      - "postdisconnect"
-      - "ldifimport"
-      - "ldifexport"
-      - "preparseabandon"
-      - "preparseadd"
-      - "preparsebind"
-      - "preparsecompare"
-      - "preparsedelete"
-      - "preparseextended"
-      - "preparsemodify"
-      - "preparsemodifydn"
-      - "preparsesearch"
-      - "preparseunbind"
-      - "preoperationadd"
-      - "preoperationbind"
-      - "preoperationcompare"
-      - "preoperationdelete"
-      - "preoperationextended"
-      - "preoperationmodify"
-      - "preoperationmodifydn"
-      - "preoperationsearch"
-      - "postoperationabandon"
-      - "postoperationadd"
-      - "postoperationbind"
-      - "postoperationcompare"
-      - "postoperationdelete"
-      - "postoperationextended"
-      - "postoperationmodify"
-      - "postoperationmodifydn"
-      - "postoperationsearch"
-      - "postoperationunbind"
-      - "preresponseadd"
-      - "preresponsebind"
-      - "preresponsecompare"
-      - "preresponsedelete"
-      - "preresponseextended"
-      - "preresponsemodify"
-      - "preresponsemodifydn"
-      - "preresponsesearch"
-      - "postresponseadd"
-      - "postresponsebind"
-      - "postresponsecompare"
-      - "postresponsedelete"
-      - "postresponseextended"
-      - "postresponsemodify"
-      - "postresponsemodifydn"
-      - "postresponsesearch"
-      - "postsynchronizationadd"
-      - "postsynchronizationdelete"
-      - "postsynchronizationmodify"
-      - "postsynchronizationmodifydn"
-      - "searchresultentry"
-      - "searchresultreference"
-      - "subordinatemodifydn"
-      - "intermediateresponse"
-      description: >-
-          Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
-    Enumplugin-sourceAttributeRemovalBehaviorProp:
-      type: string
-      enum:
-      - "preserve-non-composed-values"
-      - "preserve-all-values"
-      - "remove-all-values-but-preserve-all-if-required"
-      - "remove-all-values-but-preserve-non-composed-if-required"
-      description: >-
-          The behavior to exhibit for modify and modify DN operations that update an entry to remove source attributes in such a way that this plugin would no longer generate any composed values for that entry.
-    Enumplugin-updateTargetAttributeBehaviorProp:
-      type: string
-      enum:
-      - "always-allow"
-      - "allow-only-for-non-composed-values"
-      - "never-allow"
-      description: >-
-          The behavior to exhibit for modify and modify DN operations that attempt to update the set of values for the target attribute.
-    Enumplugin-stats-collector-perApplicationLDAPStatsProp:
-      type: string
-      enum:
-      - "aggregate-only"
-      - "per-application-only"
-      description: >-
-          Controls whether per application LDAP statistics are included in the output for selected LDAP operation statistics.
-    Enumplugin-updateSourceAttributeBehaviorProp:
-      type: string
-      enum:
-      - "replace-composed-values"
-      - "replace-all-values"
-      - "preserve-existing-values"
-      description: >-
-          The behavior to exhibit for modify and modify DN operations that update one or more of the source attributes used in any of the value patterns.
     updateRequest:
       type: object
       properties:

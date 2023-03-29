@@ -4,8 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
-**Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Id** | **string** | Name of the Client Connection Policy | 
 **Schemas** | Pointer to [**[]EnumclientConnectionPolicySchemaUrn**](EnumclientConnectionPolicySchemaUrn.md) |  | [optional] 
 **PolicyID** | **string** | Specifies a name which uniquely identifies this Client Connection Policy in the server. | 
@@ -19,17 +17,17 @@ Name | Type | Description | Notes
 **ResultCodeMap** | Pointer to **string** | Specifies the result code map that should be used for clients associated with this Client Connection Policy. If a value is defined for this property, then it will override any result code map referenced in the global configuration. | [optional] 
 **IncludedBackendBaseDN** | Pointer to **[]string** | Specifies the set of backend base DNs for which subtree views should be included in this Client Connection Policy. | [optional] 
 **ExcludedBackendBaseDN** | Pointer to **[]string** | Specifies the set of backend base DNs for which subtree views should be excluded from this Client Connection Policy. | [optional] 
-**AllowedOperation** | [**[]EnumclientConnectionPolicyAllowedOperationProp**](EnumclientConnectionPolicyAllowedOperationProp.md) |  | 
+**AllowedOperation** | [**[]EnumclientConnectionPolicyAllowedOperationProp**](EnumclientConnectionPolicyAllowedOperationProp.md) | Specifies the types of operations that clients associated with this Client Connection Policy will be allowed to request. | 
 **RequiredOperationRequestCriteria** | Pointer to **string** | Specifies a request criteria object that will be required to match all requests submitted by clients associated with this Client Connection Policy. If a client submits a request that does not satisfy this request criteria object, then that request will be rejected. | [optional] 
 **ProhibitedOperationRequestCriteria** | Pointer to **string** | Specifies a request criteria object that must not match any requests submitted by clients associated with this Client Connection Policy. If a client submits a request that satisfies this request criteria object, then that request will be rejected. | [optional] 
 **AllowedRequestControl** | Pointer to **[]string** | Specifies the OIDs of the controls that clients associated with this Client Connection Policy will be allowed to include in requests. | [optional] 
 **DeniedRequestControl** | Pointer to **[]string** | Specifies the OIDs of the controls that clients associated with this Client Connection Policy will not be allowed to include in requests. | [optional] 
 **AllowedExtendedOperation** | Pointer to **[]string** | Specifies the OIDs of the extended operations that clients associated with this Client Connection Policy will be allowed to request. | [optional] 
 **DeniedExtendedOperation** | Pointer to **[]string** | Specifies the OIDs of the extended operations that clients associated with this Client Connection Policy will not be allowed to request. | [optional] 
-**AllowedAuthType** | [**[]EnumclientConnectionPolicyAllowedAuthTypeProp**](EnumclientConnectionPolicyAllowedAuthTypeProp.md) |  | 
+**AllowedAuthType** | [**[]EnumclientConnectionPolicyAllowedAuthTypeProp**](EnumclientConnectionPolicyAllowedAuthTypeProp.md) | Specifies the types of authentication that clients associated with this Client Connection Policy will be allowed to request. | 
 **AllowedSASLMechanism** | Pointer to **[]string** | Specifies the names of the SASL mechanisms that clients associated with this Client Connection Policy will be allowed to request. | [optional] 
 **DeniedSASLMechanism** | Pointer to **[]string** | Specifies the names of the SASL mechanisms that clients associated with this Client Connection Policy will not be allowed to request. | [optional] 
-**AllowedFilterType** | Pointer to [**[]EnumclientConnectionPolicyAllowedFilterTypeProp**](EnumclientConnectionPolicyAllowedFilterTypeProp.md) |  | [optional] 
+**AllowedFilterType** | Pointer to [**[]EnumclientConnectionPolicyAllowedFilterTypeProp**](EnumclientConnectionPolicyAllowedFilterTypeProp.md) | Specifies the types of filter components that may be included in search requests from clients associated with this Client Connection Policy which have a non-baseObject scope. | [optional] 
 **AllowUnindexedSearches** | Pointer to **bool** | Indicates whether clients will be allowed to request search operations that cannot be efficiently processed using the set of indexes defined in the corresponding backend. Note that even if this is false, some clients may be able to request unindexed searches if the allow-unindexed-searches-with-control property has a value of true and the necessary conditions are satisfied. | [optional] 
 **AllowUnindexedSearchesWithControl** | Pointer to **bool** | Indicates whether clients will be allowed to request search operations that cannot be efficiently processed using the set of indexes defined in the corresponding backend, as long as the search request also includes the permit unindexed search request control and the requester has the unindexed-search-with-control privilege (or that privilege is disabled in the global configuration). | [optional] 
 **MinimumSubstringLength** | Pointer to **int32** | Specifies the minimum number of consecutive bytes that must be present in any subInitial, subAny, or subFinal element of a substring filter component (i.e., the minimum number of consecutive bytes between wildcard characters in a substring filter). Any attempt to use a substring search with an element containing fewer than this number of bytes will be rejected. | [optional] 
@@ -49,6 +47,8 @@ Name | Type | Description | Notes
 **MaximumSearchLookthroughLimit** | Pointer to **int32** | Specifies the maximum number of entries that may be examined by a backend in the course of processing a search requested by clients associated with this Client Connection Policy. | [optional] 
 **MaximumLDAPJoinSizeLimit** | Pointer to **int32** | Specifies the maximum number of entries that may be joined with any single search result entry for a search request performed by a client associated with this Client Connection Policy. | [optional] 
 **MaximumSortSizeLimitWithoutVLVIndex** | Pointer to **int32** | Specifies the maximum number of entries that the server will attempt to sort without the benefit of a VLV index. A value of zero indicates that no limit should be enforced. | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
+**Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 
 ## Methods
 
@@ -68,56 +68,6 @@ will change when the set of required properties is changed
 NewClientConnectionPolicyResponseWithDefaults instantiates a new ClientConnectionPolicyResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetMeta
-
-`func (o *ClientConnectionPolicyResponse) GetMeta() MetaMeta`
-
-GetMeta returns the Meta field if non-nil, zero value otherwise.
-
-### GetMetaOk
-
-`func (o *ClientConnectionPolicyResponse) GetMetaOk() (*MetaMeta, bool)`
-
-GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMeta
-
-`func (o *ClientConnectionPolicyResponse) SetMeta(v MetaMeta)`
-
-SetMeta sets Meta field to given value.
-
-### HasMeta
-
-`func (o *ClientConnectionPolicyResponse) HasMeta() bool`
-
-HasMeta returns a boolean if a field has been set.
-
-### GetUrnpingidentityschemasconfigurationmessages20
-
-`func (o *ClientConnectionPolicyResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20`
-
-GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field if non-nil, zero value otherwise.
-
-### GetUrnpingidentityschemasconfigurationmessages20Ok
-
-`func (o *ClientConnectionPolicyResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool)`
-
-GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUrnpingidentityschemasconfigurationmessages20
-
-`func (o *ClientConnectionPolicyResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20)`
-
-SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconfigurationmessages20 field to given value.
-
-### HasUrnpingidentityschemasconfigurationmessages20
-
-`func (o *ClientConnectionPolicyResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
-
-HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 
 ### GetId
 
@@ -1163,6 +1113,56 @@ SetMaximumSortSizeLimitWithoutVLVIndex sets MaximumSortSizeLimitWithoutVLVIndex 
 `func (o *ClientConnectionPolicyResponse) HasMaximumSortSizeLimitWithoutVLVIndex() bool`
 
 HasMaximumSortSizeLimitWithoutVLVIndex returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *ClientConnectionPolicyResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *ClientConnectionPolicyResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *ClientConnectionPolicyResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *ClientConnectionPolicyResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
+
+### GetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *ClientConnectionPolicyResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20`
+
+GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field if non-nil, zero value otherwise.
+
+### GetUrnpingidentityschemasconfigurationmessages20Ok
+
+`func (o *ClientConnectionPolicyResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool)`
+
+GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *ClientConnectionPolicyResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20)`
+
+SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconfigurationmessages20 field to given value.
+
+### HasUrnpingidentityschemasconfigurationmessages20
+
+`func (o *ClientConnectionPolicyResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
+
+HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

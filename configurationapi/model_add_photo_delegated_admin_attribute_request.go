@@ -20,8 +20,9 @@ var _ MappedNullable = &AddPhotoDelegatedAdminAttributeRequest{}
 // AddPhotoDelegatedAdminAttributeRequest struct for AddPhotoDelegatedAdminAttributeRequest
 type AddPhotoDelegatedAdminAttributeRequest struct {
 	// Specifies the name or OID of the LDAP attribute type.
-	AttributeType   string                                                `json:"attributeType"`
-	Schemas         []EnumphotoDelegatedAdminAttributeSchemaUrn           `json:"schemas"`
+	AttributeType string                                      `json:"attributeType"`
+	Schemas       []EnumphotoDelegatedAdminAttributeSchemaUrn `json:"schemas"`
+	// The list of file types allowed to be uploaded. If no types are specified, then all types will be allowed.
 	AllowedMIMEType []EnumdelegatedAdminAttributePhotoAllowedMIMETypeProp `json:"allowedMIMEType,omitempty"`
 	// A description for this Delegated Admin Attribute
 	Description *string `json:"description,omitempty"`

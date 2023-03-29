@@ -25,7 +25,8 @@ type AddGroovyScriptedErrorLogPublisherRequest struct {
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Error Log Publisher.
 	ScriptClass string `json:"scriptClass"`
 	// The set of arguments used to customize the behavior for the Scripted Error Log Publisher. Each configuration property should be given in the form 'name=value'.
-	ScriptArgument  []string                              `json:"scriptArgument,omitempty"`
+	ScriptArgument []string `json:"scriptArgument,omitempty"`
+	// Specifies the default severity levels for the logger.
 	DefaultSeverity []EnumlogPublisherDefaultSeverityProp `json:"defaultSeverity,omitempty"`
 	// Specifies the override severity levels for the logger based on the category of the messages.
 	OverrideSeverity []string `json:"overrideSeverity,omitempty"`

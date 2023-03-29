@@ -19,8 +19,6 @@ var _ MappedNullable = &ClientConnectionPolicyResponse{}
 
 // ClientConnectionPolicyResponse struct for ClientConnectionPolicyResponse
 type ClientConnectionPolicyResponse struct {
-	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
-	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Client Connection Policy
 	Id      string                                `json:"id"`
 	Schemas []EnumclientConnectionPolicySchemaUrn `json:"schemas,omitempty"`
@@ -45,8 +43,9 @@ type ClientConnectionPolicyResponse struct {
 	// Specifies the set of backend base DNs for which subtree views should be included in this Client Connection Policy.
 	IncludedBackendBaseDN []string `json:"includedBackendBaseDN,omitempty"`
 	// Specifies the set of backend base DNs for which subtree views should be excluded from this Client Connection Policy.
-	ExcludedBackendBaseDN []string                                         `json:"excludedBackendBaseDN,omitempty"`
-	AllowedOperation      []EnumclientConnectionPolicyAllowedOperationProp `json:"allowedOperation"`
+	ExcludedBackendBaseDN []string `json:"excludedBackendBaseDN,omitempty"`
+	// Specifies the types of operations that clients associated with this Client Connection Policy will be allowed to request.
+	AllowedOperation []EnumclientConnectionPolicyAllowedOperationProp `json:"allowedOperation"`
 	// Specifies a request criteria object that will be required to match all requests submitted by clients associated with this Client Connection Policy. If a client submits a request that does not satisfy this request criteria object, then that request will be rejected.
 	RequiredOperationRequestCriteria *string `json:"requiredOperationRequestCriteria,omitempty"`
 	// Specifies a request criteria object that must not match any requests submitted by clients associated with this Client Connection Policy. If a client submits a request that satisfies this request criteria object, then that request will be rejected.
@@ -58,13 +57,15 @@ type ClientConnectionPolicyResponse struct {
 	// Specifies the OIDs of the extended operations that clients associated with this Client Connection Policy will be allowed to request.
 	AllowedExtendedOperation []string `json:"allowedExtendedOperation,omitempty"`
 	// Specifies the OIDs of the extended operations that clients associated with this Client Connection Policy will not be allowed to request.
-	DeniedExtendedOperation []string                                        `json:"deniedExtendedOperation,omitempty"`
-	AllowedAuthType         []EnumclientConnectionPolicyAllowedAuthTypeProp `json:"allowedAuthType"`
+	DeniedExtendedOperation []string `json:"deniedExtendedOperation,omitempty"`
+	// Specifies the types of authentication that clients associated with this Client Connection Policy will be allowed to request.
+	AllowedAuthType []EnumclientConnectionPolicyAllowedAuthTypeProp `json:"allowedAuthType"`
 	// Specifies the names of the SASL mechanisms that clients associated with this Client Connection Policy will be allowed to request.
 	AllowedSASLMechanism []string `json:"allowedSASLMechanism,omitempty"`
 	// Specifies the names of the SASL mechanisms that clients associated with this Client Connection Policy will not be allowed to request.
-	DeniedSASLMechanism []string                                          `json:"deniedSASLMechanism,omitempty"`
-	AllowedFilterType   []EnumclientConnectionPolicyAllowedFilterTypeProp `json:"allowedFilterType,omitempty"`
+	DeniedSASLMechanism []string `json:"deniedSASLMechanism,omitempty"`
+	// Specifies the types of filter components that may be included in search requests from clients associated with this Client Connection Policy which have a non-baseObject scope.
+	AllowedFilterType []EnumclientConnectionPolicyAllowedFilterTypeProp `json:"allowedFilterType,omitempty"`
 	// Indicates whether clients will be allowed to request search operations that cannot be efficiently processed using the set of indexes defined in the corresponding backend. Note that even if this is false, some clients may be able to request unindexed searches if the allow-unindexed-searches-with-control property has a value of true and the necessary conditions are satisfied.
 	AllowUnindexedSearches *bool `json:"allowUnindexedSearches,omitempty"`
 	// Indicates whether clients will be allowed to request search operations that cannot be efficiently processed using the set of indexes defined in the corresponding backend, as long as the search request also includes the permit unindexed search request control and the requester has the unindexed-search-with-control privilege (or that privilege is disabled in the global configuration).
@@ -99,7 +100,9 @@ type ClientConnectionPolicyResponse struct {
 	// Specifies the maximum number of entries that may be joined with any single search result entry for a search request performed by a client associated with this Client Connection Policy.
 	MaximumLDAPJoinSizeLimit *int32 `json:"maximumLDAPJoinSizeLimit,omitempty"`
 	// Specifies the maximum number of entries that the server will attempt to sort without the benefit of a VLV index. A value of zero indicates that no limit should be enforced.
-	MaximumSortSizeLimitWithoutVLVIndex *int32 `json:"maximumSortSizeLimitWithoutVLVIndex,omitempty"`
+	MaximumSortSizeLimitWithoutVLVIndex           *int32                                             `json:"maximumSortSizeLimitWithoutVLVIndex,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 }
 
 // NewClientConnectionPolicyResponse instantiates a new ClientConnectionPolicyResponse object
@@ -123,70 +126,6 @@ func NewClientConnectionPolicyResponse(id string, policyID string, enabled bool,
 func NewClientConnectionPolicyResponseWithDefaults() *ClientConnectionPolicyResponse {
 	this := ClientConnectionPolicyResponse{}
 	return &this
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ClientConnectionPolicyResponse) GetMeta() MetaMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret MetaMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClientConnectionPolicyResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// HasMeta returns a boolean if a field has been set.
-func (o *ClientConnectionPolicyResponse) HasMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
-}
-
-// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
-func (o *ClientConnectionPolicyResponse) SetMeta(v MetaMeta) {
-	o.Meta = &v
-}
-
-// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
-func (o *ClientConnectionPolicyResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		var ret MetaUrnPingidentitySchemasConfigurationMessages20
-		return ret
-	}
-	return *o.Urnpingidentityschemasconfigurationmessages20
-}
-
-// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClientConnectionPolicyResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		return nil, false
-	}
-	return o.Urnpingidentityschemasconfigurationmessages20, true
-}
-
-// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
-func (o *ClientConnectionPolicyResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		return true
-	}
-
-	return false
-}
-
-// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
-func (o *ClientConnectionPolicyResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
-	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
 // GetId returns the Id field value
@@ -1517,6 +1456,70 @@ func (o *ClientConnectionPolicyResponse) SetMaximumSortSizeLimitWithoutVLVIndex(
 	o.MaximumSortSizeLimitWithoutVLVIndex = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *ClientConnectionPolicyResponse) GetMeta() MetaMeta {
+	if o == nil || IsNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientConnectionPolicyResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || IsNil(o.Meta) {
+		return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *ClientConnectionPolicyResponse) HasMeta() bool {
+	if o != nil && !IsNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *ClientConnectionPolicyResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
+func (o *ClientConnectionPolicyResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		var ret MetaUrnPingidentitySchemasConfigurationMessages20
+		return ret
+	}
+	return *o.Urnpingidentityschemasconfigurationmessages20
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientConnectionPolicyResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return nil, false
+	}
+	return o.Urnpingidentityschemasconfigurationmessages20, true
+}
+
+// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+func (o *ClientConnectionPolicyResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
+func (o *ClientConnectionPolicyResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
+	o.Urnpingidentityschemasconfigurationmessages20 = &v
+}
+
 func (o ClientConnectionPolicyResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -1527,12 +1530,6 @@ func (o ClientConnectionPolicyResponse) MarshalJSON() ([]byte, error) {
 
 func (o ClientConnectionPolicyResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
 	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
@@ -1649,6 +1646,12 @@ func (o ClientConnectionPolicyResponse) ToMap() (map[string]interface{}, error) 
 	}
 	if !IsNil(o.MaximumSortSizeLimitWithoutVLVIndex) {
 		toSerialize["maximumSortSizeLimitWithoutVLVIndex"] = o.MaximumSortSizeLimitWithoutVLVIndex
+	}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
 	return toSerialize, nil
 }

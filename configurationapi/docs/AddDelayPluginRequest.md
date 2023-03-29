@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnumdelayPluginSchemaUrn**](EnumdelayPluginSchemaUrn.md) |  | 
-**PluginType** | Pointer to [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | [optional] 
+**PluginType** | Pointer to [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) | Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked. | [optional] 
 **Delay** | **string** | The delay to inject for operations matching the associated criteria. | 
 **ConnectionCriteria** | Pointer to **string** | Specifies a set of connection criteria used to indicate that only operations from clients matching this criteria should be subject to the configured delay. | [optional] 
 **RequestCriteria** | Pointer to **string** | Specifies a set of request criteria used to indicate that only operations for requests matching this criteria should be subject to the configured delay. | [optional] 

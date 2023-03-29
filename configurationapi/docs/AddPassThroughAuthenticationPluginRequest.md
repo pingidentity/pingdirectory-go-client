@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnumpassThroughAuthenticationPluginSchemaUrn**](EnumpassThroughAuthenticationPluginSchemaUrn.md) |  | 
-**PluginType** | Pointer to [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | [optional] 
+**PluginType** | Pointer to [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) | Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked. | [optional] 
 **Server** | **[]string** | Specifies the LDAP external server(s) to which authentication attempts should be forwarded. | 
 **TryLocalBind** | Pointer to **bool** | Indicates whether the bind attempt should first be attempted against the local server. Depending on the value of the override-local-password property, the bind attempt may then be attempted against a remote server if the local bind fails. | [optional] 
 **OverrideLocalPassword** | Pointer to **bool** | Indicates whether the bind attempt should be attempted against a remote server in the event that the local bind fails but the local password is present. | [optional] 

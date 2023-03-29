@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access scim-schemas
   name: scim-schema
@@ -490,22 +490,24 @@ components:
       - type: object
         properties:
           schemaName:
-            description: Name of the new SCIM Schema
             type: string
-        required:
-        - schemaName
+            description: >-
+                Name of the new SCIM Schema
       - $ref: '#/components/schemas/scim-schema-shared'
+      required:
+      - schemaName
     scim-schema-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the SCIM Schema
             type: string
-        required:
-        - id
+            description: >-
+                Name of the SCIM Schema
       - $ref: '#/components/schemas/scim-schema-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     scim-schema-shared:
       type: object
       properties:
@@ -533,28 +535,60 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:scim-schema"
+    Enumscim-attribute-typeProp:
+      type: string
+      enum:
+      - "string"
+      - "boolean"
+      - "datetime"
+      - "decimal"
+      - "integer"
+      - "binary"
+      - "reference"
+      - "complex"
+      description: >-
+          Specifies the data type for this attribute.
+    Enumscim-attribute-mutabilityProp:
+      type: string
+      enum:
+      - "read-only"
+      - "read-write"
+      - "immutable"
+      - "write-only"
+      description: >-
+          Specifies the circumstances under which the values of the attribute can be written.
+    Enumscim-attribute-returnedProp:
+      type: string
+      enum:
+      - "by-default"
+      - "upon-request"
+      - "always"
+      - "never"
+      description: >-
+          Specifies the circumstances under which the values of the attribute are returned in response to a request.
     add-scim-attribute-request:
       allOf:
       - type: object
         properties:
           attributeName:
-            description: Name of the new SCIM Attribute
             type: string
-        required:
-        - attributeName
+            description: >-
+                Name of the new SCIM Attribute
       - $ref: '#/components/schemas/scim-attribute-shared'
+      required:
+      - attributeName
     scim-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the SCIM Attribute
             type: string
-        required:
-        - id
+            description: >-
+                Name of the SCIM Schema
       - $ref: '#/components/schemas/scim-attribute-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - type
       - required
       - caseExact
@@ -580,6 +614,8 @@ components:
               The name of the attribute.
         type:
           $ref: '#/components/schemas/Enumscim-attribute-typeProp'
+          description: >-
+              Specifies the data type for this attribute.
         required:
           type: boolean
           description: >-
@@ -600,8 +636,12 @@ components:
               Specifies the suggested canonical type values for the attribute.
         mutability:
           $ref: '#/components/schemas/Enumscim-attribute-mutabilityProp'
+          description: >-
+              Specifies the circumstances under which the values of the attribute can be written.
         returned:
           $ref: '#/components/schemas/Enumscim-attribute-returnedProp'
+          description: >-
+              Specifies the circumstances under which the values of the attribute are returned in response to a request.
         referenceType:
           type: array
           items:
@@ -614,28 +654,59 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:scim-attribute"
+    Enumscim-subattribute-typeProp:
+      type: string
+      enum:
+      - "string"
+      - "boolean"
+      - "datetime"
+      - "decimal"
+      - "integer"
+      - "binary"
+      - "reference"
+      description: >-
+          Specifies the data type for this sub-attribute.
+    Enumscim-subattribute-mutabilityProp:
+      type: string
+      enum:
+      - "read-only"
+      - "read-write"
+      - "immutable"
+      - "write-only"
+      description: >-
+          Specifies the circumstances under which the values of the sub-attribute can be written.
+    Enumscim-subattribute-returnedProp:
+      type: string
+      enum:
+      - "by-default"
+      - "upon-request"
+      - "always"
+      - "never"
+      description: >-
+          Specifies the circumstances under which the values of the sub-attribute are returned in response to a request.
     add-scim-subattribute-request:
       allOf:
       - type: object
         properties:
           subattributeName:
-            description: Name of the new SCIM Subattribute
             type: string
-        required:
-        - subattributeName
+            description: >-
+                Name of the new SCIM Subattribute
       - $ref: '#/components/schemas/scim-subattribute-shared'
+      required:
+      - subattributeName
     scim-subattribute-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the SCIM Subattribute
             type: string
-        required:
-        - id
+            description: >-
+                Name of the SCIM Schema
       - $ref: '#/components/schemas/scim-subattribute-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - type
       - required
       - caseExact
@@ -657,6 +728,8 @@ components:
               A description for this SCIM Subattribute
         type:
           $ref: '#/components/schemas/Enumscim-subattribute-typeProp'
+          description: >-
+              Specifies the data type for this sub-attribute.
         required:
           type: boolean
           description: >-
@@ -677,8 +750,12 @@ components:
               Specifies the suggested canonical type values for the sub-attribute.
         mutability:
           $ref: '#/components/schemas/Enumscim-subattribute-mutabilityProp'
+          description: >-
+              Specifies the circumstances under which the values of the sub-attribute can be written.
         returned:
           $ref: '#/components/schemas/Enumscim-subattribute-returnedProp'
+          description: >-
+              Specifies the circumstances under which the values of the sub-attribute are returned in response to a request.
         referenceType:
           type: array
           items:
@@ -689,67 +766,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:scim-subattribute"
-    Enumscim-attribute-typeProp:
-      type: string
-      enum:
-      - "string"
-      - "boolean"
-      - "datetime"
-      - "decimal"
-      - "integer"
-      - "binary"
-      - "reference"
-      - "complex"
-      description: >-
-          Specifies the data type for this attribute.
-    Enumscim-attribute-returnedProp:
-      type: string
-      enum:
-      - "by-default"
-      - "upon-request"
-      - "always"
-      - "never"
-      description: >-
-          Specifies the circumstances under which the values of the attribute are returned in response to a request.
-    Enumscim-attribute-mutabilityProp:
-      type: string
-      enum:
-      - "read-only"
-      - "read-write"
-      - "immutable"
-      - "write-only"
-      description: >-
-          Specifies the circumstances under which the values of the attribute can be written.
-    Enumscim-subattribute-mutabilityProp:
-      type: string
-      enum:
-      - "read-only"
-      - "read-write"
-      - "immutable"
-      - "write-only"
-      description: >-
-          Specifies the circumstances under which the values of the sub-attribute can be written.
-    Enumscim-subattribute-typeProp:
-      type: string
-      enum:
-      - "string"
-      - "boolean"
-      - "datetime"
-      - "decimal"
-      - "integer"
-      - "binary"
-      - "reference"
-      description: >-
-          Specifies the data type for this sub-attribute.
-    Enumscim-subattribute-returnedProp:
-      type: string
-      enum:
-      - "by-default"
-      - "upon-request"
-      - "always"
-      - "never"
-      description: >-
-          Specifies the circumstances under which the values of the sub-attribute are returned in response to a request.
     updateRequest:
       type: object
       properties:

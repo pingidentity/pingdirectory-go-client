@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access log-field-syntaxes
   name: log-field-syntax
@@ -86,9 +86,19 @@ paths:
       - log-field-syntax
 components:
   schemas:
+    Enumlog-field-syntax-defaultBehaviorProp:
+      type: string
+      enum:
+      - "preserve"
+      - "omit"
+      - "redact-entire-value"
+      - "redact-value-components"
+      - "tokenize-entire-value"
+      - "tokenize-value-components"
+      description: >-
+          The default behavior that the server should exhibit when logging fields with this syntax. This may be overridden on a per-field basis.
     json-log-field-syntax-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -98,8 +108,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumjson-log-field-syntaxSchemaUrn'
           id:
-            description: Name of the Log Field Syntax
             type: string
+            description: >-
+                Name of the Log Field Syntax
           includedSensitiveField:
             type: array
             items:
@@ -118,16 +129,18 @@ components:
                 A description for this Log Field Syntax
           defaultBehavior:
             $ref: '#/components/schemas/Enumlog-field-syntax-defaultBehaviorProp'
-        required:
-        - schemas
-        - id
+            description: >-
+                The default behavior that the server should exhibit when logging fields with this syntax. This may be overridden on a per-field basis.
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
     Enumjson-log-field-syntaxSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:log-field-syntax:json"
     attribute-based-log-field-syntax-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -137,8 +150,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumattribute-based-log-field-syntaxSchemaUrn'
           id:
-            description: Name of the Log Field Syntax
             type: string
+            description: >-
+                Name of the Log Field Syntax
           includedSensitiveAttribute:
             type: array
             items:
@@ -157,16 +171,18 @@ components:
                 A description for this Log Field Syntax
           defaultBehavior:
             $ref: '#/components/schemas/Enumlog-field-syntax-defaultBehaviorProp'
-        required:
-        - schemas
-        - id
+            description: >-
+                The default behavior that the server should exhibit when logging fields with this syntax. This may be overridden on a per-field basis.
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
     Enumattribute-based-log-field-syntaxSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:log-field-syntax:attribute-based"
     generic-log-field-syntax-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -176,32 +192,25 @@ components:
             items:
               $ref: '#/components/schemas/Enumgeneric-log-field-syntaxSchemaUrn'
           id:
-            description: Name of the Log Field Syntax
             type: string
+            description: >-
+                Name of the Log Field Syntax
           description:
             type: string
             description: >-
                 A description for this Log Field Syntax
           defaultBehavior:
             $ref: '#/components/schemas/Enumlog-field-syntax-defaultBehaviorProp'
-        required:
-        - schemas
-        - id
+            description: >-
+                The default behavior that the server should exhibit when logging fields with this syntax. This may be overridden on a per-field basis.
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
     Enumgeneric-log-field-syntaxSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:log-field-syntax:generic"
-    Enumlog-field-syntax-defaultBehaviorProp:
-      type: string
-      enum:
-      - "preserve"
-      - "omit"
-      - "redact-entire-value"
-      - "redact-value-components"
-      - "tokenize-entire-value"
-      - "tokenize-value-components"
-      description: >-
-          The default behavior that the server should exhibit when logging fields with this syntax. This may be overridden on a per-field basis.
     updateRequest:
       type: object
       properties:

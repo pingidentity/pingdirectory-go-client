@@ -19,32 +19,38 @@ var _ MappedNullable = &JsonFormattedAccessLogFieldBehaviorResponse{}
 
 // JsonFormattedAccessLogFieldBehaviorResponse struct for JsonFormattedAccessLogFieldBehaviorResponse
 type JsonFormattedAccessLogFieldBehaviorResponse struct {
-	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
-	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Log Field Behavior
-	Id            string                                                     `json:"id"`
-	Schemas       []EnumjsonFormattedAccessLogFieldBehaviorSchemaUrn         `json:"schemas"`
+	Id      string                                             `json:"id"`
+	Schemas []EnumjsonFormattedAccessLogFieldBehaviorSchemaUrn `json:"schemas"`
+	// The log fields whose values should be logged with the intended value. The values for these fields will be preserved, although they may be sanitized for parsability or safety purposes (for example, to escape special characters in the value), and values that are too long may be truncated.
 	PreserveField []EnumlogFieldBehaviorJsonFormattedAccessPreserveFieldProp `json:"preserveField,omitempty"`
 	// The names of any custom fields whose values should be preserved. This should generally only be used for fields that are not available through the preserve-field property (for example, custom log fields defined in Server SDK extensions).
-	PreserveFieldName []string                                               `json:"preserveFieldName,omitempty"`
-	OmitField         []EnumlogFieldBehaviorJsonFormattedAccessOmitFieldProp `json:"omitField,omitempty"`
+	PreserveFieldName []string `json:"preserveFieldName,omitempty"`
+	// The log fields that should be omitted entirely from log messages. Neither the field name nor value will be included.
+	OmitField []EnumlogFieldBehaviorJsonFormattedAccessOmitFieldProp `json:"omitField,omitempty"`
 	// The names of any custom fields that should be omitted from log messages. This should generally only be used for fields that are not available through the omit-field property (for example, custom log fields defined in Server SDK extensions).
-	OmitFieldName          []string                                                            `json:"omitFieldName,omitempty"`
+	OmitFieldName []string `json:"omitFieldName,omitempty"`
+	// The log fields whose values should be completely redacted in log messages. The field name will be included, but with a fixed value that does not reflect the actual value for the field.
 	RedactEntireValueField []EnumlogFieldBehaviorJsonFormattedAccessRedactEntireValueFieldProp `json:"redactEntireValueField,omitempty"`
 	// The names of any custom fields whose values should be completely redacted. This should generally only be used for fields that are not available through the redact-entire-value-field property (for example, custom log fields defined in Server SDK extensions).
-	RedactEntireValueFieldName []string                                                                `json:"redactEntireValueFieldName,omitempty"`
+	RedactEntireValueFieldName []string `json:"redactEntireValueFieldName,omitempty"`
+	// The log fields whose values will include redacted components.
 	RedactValueComponentsField []EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp `json:"redactValueComponentsField,omitempty"`
 	// The names of any custom fields for which to redact components within the value. This should generally only be used for fields that are not available through the redact-value-components-field property (for example, custom log fields defined in Server SDK extensions).
-	RedactValueComponentsFieldName []string                                                              `json:"redactValueComponentsFieldName,omitempty"`
-	TokenizeEntireValueField       []EnumlogFieldBehaviorJsonFormattedAccessTokenizeEntireValueFieldProp `json:"tokenizeEntireValueField,omitempty"`
+	RedactValueComponentsFieldName []string `json:"redactValueComponentsFieldName,omitempty"`
+	// The log fields whose values should be completely tokenized in log messages. The field name will be included, but the value will be replaced with a token that does not reveal the actual value, but that is generated from the value.
+	TokenizeEntireValueField []EnumlogFieldBehaviorJsonFormattedAccessTokenizeEntireValueFieldProp `json:"tokenizeEntireValueField,omitempty"`
 	// The names of any custom fields whose values should be completely tokenized. This should generally only be used for fields that are not available through the tokenize-entire-value-field property (for example, custom log fields defined in Server SDK extensions).
-	TokenizeEntireValueFieldName []string                                                                  `json:"tokenizeEntireValueFieldName,omitempty"`
+	TokenizeEntireValueFieldName []string `json:"tokenizeEntireValueFieldName,omitempty"`
+	// The log fields whose values will include tokenized components.
 	TokenizeValueComponentsField []EnumlogFieldBehaviorJsonFormattedAccessTokenizeValueComponentsFieldProp `json:"tokenizeValueComponentsField,omitempty"`
 	// The names of any custom fields for which to tokenize components within the value. This should generally only be used for fields that are not available through the tokenize-value-components-field property (for example, custom log fields defined in Server SDK extensions).
 	TokenizeValueComponentsFieldName []string `json:"tokenizeValueComponentsFieldName,omitempty"`
 	// A description for this Log Field Behavior
-	Description     *string                                  `json:"description,omitempty"`
-	DefaultBehavior *EnumlogFieldBehaviorDefaultBehaviorProp `json:"defaultBehavior,omitempty"`
+	Description                                   *string                                            `json:"description,omitempty"`
+	DefaultBehavior                               *EnumlogFieldBehaviorDefaultBehaviorProp           `json:"defaultBehavior,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 }
 
 // NewJsonFormattedAccessLogFieldBehaviorResponse instantiates a new JsonFormattedAccessLogFieldBehaviorResponse object
@@ -64,70 +70,6 @@ func NewJsonFormattedAccessLogFieldBehaviorResponse(id string, schemas []Enumjso
 func NewJsonFormattedAccessLogFieldBehaviorResponseWithDefaults() *JsonFormattedAccessLogFieldBehaviorResponse {
 	this := JsonFormattedAccessLogFieldBehaviorResponse{}
 	return &this
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetMeta() MetaMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret MetaMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// HasMeta returns a boolean if a field has been set.
-func (o *JsonFormattedAccessLogFieldBehaviorResponse) HasMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
-}
-
-// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
-func (o *JsonFormattedAccessLogFieldBehaviorResponse) SetMeta(v MetaMeta) {
-	o.Meta = &v
-}
-
-// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
-func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		var ret MetaUrnPingidentitySchemasConfigurationMessages20
-		return ret
-	}
-	return *o.Urnpingidentityschemasconfigurationmessages20
-}
-
-// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		return nil, false
-	}
-	return o.Urnpingidentityschemasconfigurationmessages20, true
-}
-
-// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
-func (o *JsonFormattedAccessLogFieldBehaviorResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		return true
-	}
-
-	return false
-}
-
-// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
-func (o *JsonFormattedAccessLogFieldBehaviorResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
-	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
 // GetId returns the Id field value
@@ -626,6 +568,70 @@ func (o *JsonFormattedAccessLogFieldBehaviorResponse) SetDefaultBehavior(v Enuml
 	o.DefaultBehavior = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetMeta() MetaMeta {
+	if o == nil || IsNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || IsNil(o.Meta) {
+		return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *JsonFormattedAccessLogFieldBehaviorResponse) HasMeta() bool {
+	if o != nil && !IsNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *JsonFormattedAccessLogFieldBehaviorResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
+func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		var ret MetaUrnPingidentitySchemasConfigurationMessages20
+		return ret
+	}
+	return *o.Urnpingidentityschemasconfigurationmessages20
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return nil, false
+	}
+	return o.Urnpingidentityschemasconfigurationmessages20, true
+}
+
+// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+func (o *JsonFormattedAccessLogFieldBehaviorResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
+func (o *JsonFormattedAccessLogFieldBehaviorResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
+	o.Urnpingidentityschemasconfigurationmessages20 = &v
+}
+
 func (o JsonFormattedAccessLogFieldBehaviorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -636,12 +642,6 @@ func (o JsonFormattedAccessLogFieldBehaviorResponse) MarshalJSON() ([]byte, erro
 
 func (o JsonFormattedAccessLogFieldBehaviorResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
 	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.PreserveField) {
@@ -685,6 +685,12 @@ func (o JsonFormattedAccessLogFieldBehaviorResponse) ToMap() (map[string]interfa
 	}
 	if !IsNil(o.DefaultBehavior) {
 		toSerialize["defaultBehavior"] = o.DefaultBehavior
+	}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
 	return toSerialize, nil
 }

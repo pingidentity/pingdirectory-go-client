@@ -20,11 +20,13 @@ var _ MappedNullable = &AddReplicationAssuranceResultCriteriaRequest{}
 // AddReplicationAssuranceResultCriteriaRequest struct for AddReplicationAssuranceResultCriteriaRequest
 type AddReplicationAssuranceResultCriteriaRequest struct {
 	// Name of the new Result Criteria
-	CriteriaName             string                                            `json:"criteriaName"`
-	Schemas                  []EnumreplicationAssuranceResultCriteriaSchemaUrn `json:"schemas"`
-	LocalAssuranceLevel      []EnumresultCriteriaLocalAssuranceLevelProp       `json:"localAssuranceLevel,omitempty"`
-	RemoteAssuranceLevel     []EnumresultCriteriaRemoteAssuranceLevelProp      `json:"remoteAssuranceLevel,omitempty"`
-	AssuranceTimeoutCriteria *EnumresultCriteriaAssuranceTimeoutCriteriaProp   `json:"assuranceTimeoutCriteria,omitempty"`
+	CriteriaName string                                            `json:"criteriaName"`
+	Schemas      []EnumreplicationAssuranceResultCriteriaSchemaUrn `json:"schemas"`
+	// The local assurance level values that will be allowed to match this Replication Assurance Result Criteria.
+	LocalAssuranceLevel []EnumresultCriteriaLocalAssuranceLevelProp `json:"localAssuranceLevel,omitempty"`
+	// The local assurance level values that will be allowed to match this Replication Assurance Result Criteria.
+	RemoteAssuranceLevel     []EnumresultCriteriaRemoteAssuranceLevelProp    `json:"remoteAssuranceLevel,omitempty"`
+	AssuranceTimeoutCriteria *EnumresultCriteriaAssuranceTimeoutCriteriaProp `json:"assuranceTimeoutCriteria,omitempty"`
 	// The value to use for performing matching based on the assurance timeout. This will be ignored if the assurance-timeout-criteria is \"any\".
 	AssuranceTimeoutValue             *string                                                  `json:"assuranceTimeoutValue,omitempty"`
 	ResponseDelayedByAssurance        *EnumresultCriteriaResponseDelayedByAssuranceProp        `json:"responseDelayedByAssurance,omitempty"`

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **HandlerName** | **string** | Name of the new Account Status Notification Handler | 
 **Schemas** | [**[]EnumerrorLogAccountStatusNotificationHandlerSchemaUrn**](EnumerrorLogAccountStatusNotificationHandlerSchemaUrn.md) |  | 
-**AccountStatusNotificationType** | [**[]EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp**](EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp.md) |  | 
+**AccountStatusNotificationType** | [**[]EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp**](EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp.md) | Indicates which types of event can trigger an account status notification. | 
 **Description** | Pointer to **string** | A description for this Account Status Notification Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the Account Status Notification Handler is enabled. Only enabled handlers are invoked whenever a related event occurs in the server. | 
 **Asynchronous** | Pointer to **bool** | Indicates whether the server should attempt to invoke this Account Status Notification Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver a message) will not delay processing for the operation that triggered the notification. | [optional] 

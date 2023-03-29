@@ -72,14 +72,17 @@ type AddLocalDbBackendRequest struct {
 	Id2childrenCacheMode *EnumbackendId2childrenCacheModeProp `json:"id2childrenCacheMode,omitempty"`
 	Id2subtreeCacheMode  *EnumbackendId2subtreeCacheModeProp  `json:"id2subtreeCacheMode,omitempty"`
 	Dn2uriCacheMode      *EnumbackendDn2uriCacheModeProp      `json:"dn2uriCacheMode,omitempty"`
-	PrimeMethod          []EnumbackendPrimeMethodProp         `json:"primeMethod,omitempty"`
+	// Specifies the method that should be used to prime caches with data for this backend.
+	PrimeMethod []EnumbackendPrimeMethodProp `json:"primeMethod,omitempty"`
 	// Specifies the number of threads to use when priming. At present, this applies only to the preload and cursor-across-indexes prime methods.
 	PrimeThreadCount *int32 `json:"primeThreadCount,omitempty"`
 	// Specifies the maximum length of time that the backend prime should be allowed to run. A duration of zero seconds indicates that there should not be a time limit.
 	PrimeTimeLimit *string `json:"primeTimeLimit,omitempty"`
 	// Indicates whether to prime all indexes associated with this backend, or to only prime the specified set of indexes (as configured with the system-index-to-prime property for the system indexes, and the prime-index property in the attribute index definition for attribute indexes).
-	PrimeAllIndexes                     *bool                                                `json:"primeAllIndexes,omitempty"`
-	SystemIndexToPrime                  []EnumbackendSystemIndexToPrimeProp                  `json:"systemIndexToPrime,omitempty"`
+	PrimeAllIndexes *bool `json:"primeAllIndexes,omitempty"`
+	// Specifies which system index(es) should be primed when the backend is initialized.
+	SystemIndexToPrime []EnumbackendSystemIndexToPrimeProp `json:"systemIndexToPrime,omitempty"`
+	// Specifies the system index(es) for which internal database nodes only (i.e., the database keys but not values) should be primed when the backend is initialized.
 	SystemIndexToPrimeInternalNodesOnly []EnumbackendSystemIndexToPrimeInternalNodesOnlyProp `json:"systemIndexToPrimeInternalNodesOnly,omitempty"`
 	// Indicates whether to attempt to perform the prime using a background thread if possible. If background priming is enabled, then the Directory Server may be allowed to accept client connections and process requests while the prime is in progress.
 	BackgroundPrime *bool `json:"backgroundPrime,omitempty"`

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **HandlerName** | **string** | Name of the new Extended Operation Handler | 
 **Schemas** | [**[]EnumreplaceCertificateExtendedOperationHandlerSchemaUrn**](EnumreplaceCertificateExtendedOperationHandlerSchemaUrn.md) |  | 
 **AllowRemotelyProvidedCertificates** | Pointer to **bool** | Indicates whether clients should be allowed to directly provide a new listener or inter-server certificate chain in the extended request. | [optional] 
-**AllowedOperation** | Pointer to [**[]EnumextendedOperationHandlerAllowedOperationProp**](EnumextendedOperationHandlerAllowedOperationProp.md) |  | [optional] 
+**AllowedOperation** | Pointer to [**[]EnumextendedOperationHandlerAllowedOperationProp**](EnumextendedOperationHandlerAllowedOperationProp.md) | The types of replace certificate operations that clients will be allowed to request. | [optional] 
 **ConnectionCriteria** | Pointer to **string** | A set of criteria that client connections must satisfy before they will be allowed to request the associated extended operations. | [optional] 
 **RequestCriteria** | Pointer to **string** | A set of criteria that the extended requests must satisfy before they will be processed by the server. | [optional] 
 **Description** | Pointer to **string** | A description for this Extended Operation Handler | [optional] 

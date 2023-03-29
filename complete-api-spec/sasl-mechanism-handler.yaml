@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access sasl-mechanism-handlers
   name: sasl-mechanism-handler
@@ -178,22 +178,24 @@ components:
       - type: object
         properties:
           handlerName:
-            description: Name of the new SASL Mechanism Handler
             type: string
-        required:
-        - handlerName
+            description: >-
+                Name of the new SASL Mechanism Handler
       - $ref: '#/components/schemas/unboundid-ms-chap-v2-sasl-mechanism-handler-shared'
+      required:
+      - handlerName
     unboundid-ms-chap-v2-sasl-mechanism-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the SASL Mechanism Handler
             type: string
-        required:
-        - id
+            description: >-
+                Name of the SASL Mechanism Handler
       - $ref: '#/components/schemas/unboundid-ms-chap-v2-sasl-mechanism-handler-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     unboundid-ms-chap-v2-sasl-mechanism-handler-shared:
       type: object
       properties:
@@ -225,7 +227,6 @@ components:
       - "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:unboundid-ms-chap-v2"
     unboundid-totp-sasl-mechanism-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -235,8 +236,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumunboundid-totp-sasl-mechanism-handlerSchemaUrn'
           id:
-            description: Name of the SASL Mechanism Handler
             type: string
+            description: >-
+                Name of the SASL Mechanism Handler
           identityMapper:
             type: string
             description: >-
@@ -269,18 +271,18 @@ components:
             type: boolean
             description: >-
                 Indicates whether the SASL mechanism handler is enabled for use.
-        required:
-        - schemas
-        - identityMapper
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - identityMapper
+      - enabled
     Enumunboundid-totp-sasl-mechanism-handlerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:unboundid-totp"
     unboundid-yubikey-otp-sasl-mechanism-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -290,8 +292,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumunboundid-yubikey-otp-sasl-mechanism-handlerSchemaUrn'
           id:
-            description: Name of the SASL Mechanism Handler
             type: string
+            description: >-
+                Name of the SASL Mechanism Handler
           yubikeyClientID:
             type: string
             description: >-
@@ -339,19 +342,27 @@ components:
             type: boolean
             description: >-
                 Indicates whether the SASL mechanism handler is enabled for use.
-        required:
-        - schemas
-        - yubikeyValidationServerBaseURL
-        - identityMapper
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - yubikeyValidationServerBaseURL
+      - identityMapper
+      - enabled
     Enumunboundid-yubikey-otp-sasl-mechanism-handlerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:unboundid-yubikey-otp"
+    Enumsasl-mechanism-handler-certificateValidationPolicyProp:
+      type: string
+      enum:
+      - "always"
+      - "ifpresent"
+      - "never"
+      description: >-
+          Indicates whether to attempt to validate the peer certificate against a certificate held in the user's entry.
     external-sasl-mechanism-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -361,10 +372,13 @@ components:
             items:
               $ref: '#/components/schemas/Enumexternal-sasl-mechanism-handlerSchemaUrn'
           id:
-            description: Name of the SASL Mechanism Handler
             type: string
+            description: >-
+                Name of the SASL Mechanism Handler
           certificateValidationPolicy:
             $ref: '#/components/schemas/Enumsasl-mechanism-handler-certificateValidationPolicyProp'
+            description: >-
+                Indicates whether to attempt to validate the peer certificate against a certificate held in the user's entry.
           certificateAttribute:
             type: string
             description: >-
@@ -381,19 +395,19 @@ components:
             type: boolean
             description: >-
                 Indicates whether the SASL mechanism handler is enabled for use.
-        required:
-        - schemas
-        - certificateValidationPolicy
-        - certificateMapper
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - certificateValidationPolicy
+      - certificateMapper
+      - enabled
     Enumexternal-sasl-mechanism-handlerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:external"
     digest-md5-sasl-mechanism-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -403,8 +417,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumdigest-md5-sasl-mechanism-handlerSchemaUrn'
           id:
-            description: Name of the SASL Mechanism Handler
             type: string
+            description: >-
+                Name of the SASL Mechanism Handler
           realm:
             type: string
             description: >-
@@ -425,18 +440,18 @@ components:
             type: boolean
             description: >-
                 Indicates whether the SASL mechanism handler is enabled for use.
-        required:
-        - schemas
-        - identityMapper
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - identityMapper
+      - enabled
     Enumdigest-md5-sasl-mechanism-handlerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:digest-md5"
     plain-sasl-mechanism-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -446,8 +461,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumplain-sasl-mechanism-handlerSchemaUrn'
           id:
-            description: Name of the SASL Mechanism Handler
             type: string
+            description: >-
+                Name of the SASL Mechanism Handler
           identityMapper:
             type: string
             description: >-
@@ -460,11 +476,12 @@ components:
             type: boolean
             description: >-
                 Indicates whether the SASL mechanism handler is enabled for use.
-        required:
-        - schemas
-        - identityMapper
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - identityMapper
+      - enabled
     Enumplain-sasl-mechanism-handlerSchemaUrn:
       type: string
       enum:
@@ -474,23 +491,24 @@ components:
       - type: object
         properties:
           handlerName:
-            description: Name of the new SASL Mechanism Handler
             type: string
-        required:
-        - handlerName
+            description: >-
+                Name of the new SASL Mechanism Handler
       - $ref: '#/components/schemas/unboundid-delivered-otp-sasl-mechanism-handler-shared'
+      required:
+      - handlerName
     unboundid-delivered-otp-sasl-mechanism-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the SASL Mechanism Handler
             type: string
-        required:
-        - id
+            description: >-
+                Name of the SASL Mechanism Handler
       - $ref: '#/components/schemas/unboundid-delivered-otp-sasl-mechanism-handler-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - otpValidityDuration
     unboundid-delivered-otp-sasl-mechanism-handler-shared:
       type: object
@@ -527,7 +545,6 @@ components:
       - "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:unboundid-delivered-otp"
     unboundid-external-auth-sasl-mechanism-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -537,8 +554,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumunboundid-external-auth-sasl-mechanism-handlerSchemaUrn'
           id:
-            description: Name of the SASL Mechanism Handler
             type: string
+            description: >-
+                Name of the SASL Mechanism Handler
           identityMapper:
             type: string
             description: >-
@@ -551,18 +569,18 @@ components:
             type: boolean
             description: >-
                 Indicates whether the SASL mechanism handler is enabled for use.
-        required:
-        - schemas
-        - identityMapper
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - identityMapper
+      - enabled
     Enumunboundid-external-auth-sasl-mechanism-handlerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:unboundid-external-auth"
     anonymous-sasl-mechanism-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -572,8 +590,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumanonymous-sasl-mechanism-handlerSchemaUrn'
           id:
-            description: Name of the SASL Mechanism Handler
             type: string
+            description: >-
+                Name of the SASL Mechanism Handler
           description:
             type: string
             description: >-
@@ -582,17 +601,17 @@ components:
             type: boolean
             description: >-
                 Indicates whether the SASL mechanism handler is enabled for use.
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumanonymous-sasl-mechanism-handlerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:anonymous"
     cram-md5-sasl-mechanism-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -602,8 +621,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumcram-md5-sasl-mechanism-handlerSchemaUrn'
           id:
-            description: Name of the SASL Mechanism Handler
             type: string
+            description: >-
+                Name of the SASL Mechanism Handler
           identityMapper:
             type: string
             description: >-
@@ -616,36 +636,47 @@ components:
             type: boolean
             description: >-
                 Indicates whether the SASL mechanism handler is enabled for use.
-        required:
-        - schemas
-        - identityMapper
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - identityMapper
+      - enabled
     Enumcram-md5-sasl-mechanism-handlerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:cram-md5"
+    Enumsasl-mechanism-handler-validateAccessTokenWhenIDTokenIsAlsoProvidedProp:
+      type: string
+      enum:
+      - "validate-only-the-id-token"
+      - "validate-both-tokens-but-only-map-the-id-token"
+      - "validate-and-map-both-tokens"
+      description: >-
+          Indicates whether to validate the OAuth access token in addition to the OpenID Connect ID token in OAUTHBEARER bind requests that contain both types of tokens.
     add-oauth-bearer-sasl-mechanism-handler-request:
       allOf:
       - type: object
         properties:
           handlerName:
-            description: Name of the new SASL Mechanism Handler
             type: string
-        required:
-        - handlerName
+            description: >-
+                Name of the new SASL Mechanism Handler
       - $ref: '#/components/schemas/oauth-bearer-sasl-mechanism-handler-shared'
+      required:
+      - handlerName
     oauth-bearer-sasl-mechanism-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the SASL Mechanism Handler
             type: string
-        required:
-        - id
+            description: >-
+                Name of the SASL Mechanism Handler
       - $ref: '#/components/schemas/oauth-bearer-sasl-mechanism-handler-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     oauth-bearer-sasl-mechanism-handler-shared:
       type: object
       properties:
@@ -673,6 +704,8 @@ components:
               Indicates whether bind requests will be required to have both an OAuth access token (in the "auth" element of the bind request) and an OpenID Connect ID token (in the "pingidentityidtoken" element of the bind request).
         validateAccessTokenWhenIDTokenIsAlsoProvided:
           $ref: '#/components/schemas/Enumsasl-mechanism-handler-validateAccessTokenWhenIDTokenIsAlsoProvidedProp'
+          description: >-
+              Indicates whether to validate the OAuth access token in addition to the OpenID Connect ID token in OAUTHBEARER bind requests that contain both types of tokens.
         alternateAuthorizationIdentityMapper:
           type: string
           description: >-
@@ -710,7 +743,6 @@ components:
       - "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:oauth-bearer"
     unboundid-certificate-plus-password-sasl-mechanism-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -720,8 +752,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumunboundid-certificate-plus-password-sasl-mechanism-handlerSchemaUrn'
           id:
-            description: Name of the SASL Mechanism Handler
             type: string
+            description: >-
+                Name of the SASL Mechanism Handler
           certificateMapper:
             type: string
             description: >-
@@ -734,18 +767,33 @@ components:
             type: boolean
             description: >-
                 Indicates whether the SASL mechanism handler is enabled for use.
-        required:
-        - schemas
-        - certificateMapper
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - certificateMapper
+      - enabled
     Enumunboundid-certificate-plus-password-sasl-mechanism-handlerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:unboundid-certificate-plus-password"
+    Enumsasl-mechanism-handler-allowedQualityOfProtectionProp:
+      type: string
+      enum:
+      - "auth"
+      - "auth-int"
+      - "auth-conf"
+      description: >-
+          Specifies the supported quality of protection (QoP) levels that clients will be permitted to request when performing GSSAPI authentication.
+    Enumsasl-mechanism-handler-gssapiRoleProp:
+      type: string
+      enum:
+      - "acceptor"
+      - "initiator"
+      description: >-
+          Specifies the role that should be declared for the server in the generated JAAS configuration file.
     gssapi-sasl-mechanism-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -755,8 +803,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumgssapi-sasl-mechanism-handlerSchemaUrn'
           id:
-            description: Name of the SASL Mechanism Handler
             type: string
+            description: >-
+                Name of the SASL Mechanism Handler
           realm:
             type: string
             description: >-
@@ -781,6 +830,8 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Enumsasl-mechanism-handler-allowedQualityOfProtectionProp'
+            description: >-
+                Specifies the supported quality of protection (QoP) levels that clients will be permitted to request when performing GSSAPI authentication.
           identityMapper:
             type: string
             description: >-
@@ -795,6 +846,8 @@ components:
                 Specifies the Kerberos service principal that the Directory Server will use to identify itself to the KDC.
           gssapiRole:
             $ref: '#/components/schemas/Enumsasl-mechanism-handler-gssapiRoleProp'
+            description: >-
+                Specifies the role that should be declared for the server in the generated JAAS configuration file.
           jaasConfigFile:
             type: string
             description: >-
@@ -811,11 +864,12 @@ components:
             type: boolean
             description: >-
                 Indicates whether the SASL mechanism handler is enabled for use.
-        required:
-        - schemas
-        - identityMapper
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - identityMapper
+      - enabled
     Enumgssapi-sasl-mechanism-handlerSchemaUrn:
       type: string
       enum:
@@ -825,22 +879,24 @@ components:
       - type: object
         properties:
           handlerName:
-            description: Name of the new SASL Mechanism Handler
             type: string
-        required:
-        - handlerName
+            description: >-
+                Name of the new SASL Mechanism Handler
       - $ref: '#/components/schemas/third-party-sasl-mechanism-handler-shared'
+      required:
+      - handlerName
     third-party-sasl-mechanism-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the SASL Mechanism Handler
             type: string
-        required:
-        - id
+            description: >-
+                Name of the SASL Mechanism Handler
       - $ref: '#/components/schemas/third-party-sasl-mechanism-handler-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     third-party-sasl-mechanism-handler-shared:
       type: object
       properties:
@@ -880,37 +936,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:third-party"
-    Enumsasl-mechanism-handler-certificateValidationPolicyProp:
-      type: string
-      enum:
-      - "always"
-      - "ifpresent"
-      - "never"
-      description: >-
-          Indicates whether to attempt to validate the peer certificate against a certificate held in the user's entry.
-    Enumsasl-mechanism-handler-allowedQualityOfProtectionProp:
-      type: string
-      enum:
-      - "auth"
-      - "auth-int"
-      - "auth-conf"
-      description: >-
-          Specifies the supported quality of protection (QoP) levels that clients will be permitted to request when performing GSSAPI authentication.
-    Enumsasl-mechanism-handler-gssapiRoleProp:
-      type: string
-      enum:
-      - "acceptor"
-      - "initiator"
-      description: >-
-          Specifies the role that should be declared for the server in the generated JAAS configuration file.
-    Enumsasl-mechanism-handler-validateAccessTokenWhenIDTokenIsAlsoProvidedProp:
-      type: string
-      enum:
-      - "validate-only-the-id-token"
-      - "validate-both-tokens-but-only-map-the-id-token"
-      - "validate-and-map-both-tokens"
-      description: >-
-          Indicates whether to validate the OAuth access token in addition to the OpenID Connect ID token in OAUTHBEARER bind requests that contain both types of tokens.
     updateRequest:
       type: object
       properties:

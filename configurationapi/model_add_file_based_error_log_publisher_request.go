@@ -62,7 +62,8 @@ type AddFileBasedErrorLogPublisherRequest struct {
 	// Specifies the interval at which to check whether the log files need to be rotated.
 	TimeInterval       *string                                 `json:"timeInterval,omitempty"`
 	TimestampPrecision *EnumlogPublisherTimestampPrecisionProp `json:"timestampPrecision,omitempty"`
-	DefaultSeverity    []EnumlogPublisherDefaultSeverityProp   `json:"defaultSeverity,omitempty"`
+	// Specifies the default severity levels for the logger.
+	DefaultSeverity []EnumlogPublisherDefaultSeverityProp `json:"defaultSeverity,omitempty"`
 	// Specifies the override severity levels for the logger based on the category of the messages.
 	OverrideSeverity []string `json:"overrideSeverity,omitempty"`
 	// A description for this Log Publisher

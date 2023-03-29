@@ -33,7 +33,8 @@ type AddCustomLoggedStatsRequest struct {
 	// Specifies the attributes on the monitor entries that should be included in the output.
 	AttributeToLog []string `json:"attributeToLog"`
 	// Optionally, specifies an explicit name for each column header instead of having these names automatically generated from the monitored attribute name.
-	ColumnName    []string                                 `json:"columnName,omitempty"`
+	ColumnName []string `json:"columnName,omitempty"`
+	// Specifies the type of statistic to include in the output for each monitored attribute.
 	StatisticType []EnumcustomLoggedStatsStatisticTypeProp `json:"statisticType"`
 	// An optional prefix that is included in the header before the column name.
 	HeaderPrefix *string `json:"headerPrefix,omitempty"`

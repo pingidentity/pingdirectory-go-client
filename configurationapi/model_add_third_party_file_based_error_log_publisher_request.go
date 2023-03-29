@@ -54,7 +54,8 @@ type AddThirdPartyFileBasedErrorLogPublisherRequest struct {
 	// The maximum number of log records that can be stored in the asynchronous queue.
 	QueueSize *int32 `json:"queueSize,omitempty"`
 	// Specifies the interval at which to check whether the log files need to be rotated.
-	TimeInterval    *string                               `json:"timeInterval,omitempty"`
+	TimeInterval *string `json:"timeInterval,omitempty"`
+	// Specifies the default severity levels for the logger.
 	DefaultSeverity []EnumlogPublisherDefaultSeverityProp `json:"defaultSeverity,omitempty"`
 	// Specifies the override severity levels for the logger based on the category of the messages.
 	OverrideSeverity []string `json:"overrideSeverity,omitempty"`

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnumsevenBitCleanPluginSchemaUrn**](EnumsevenBitCleanPluginSchemaUrn.md) |  | 
-**PluginType** | Pointer to [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | [optional] 
+**PluginType** | Pointer to [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) | Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked. | [optional] 
 **AttributeType** | Pointer to **[]string** | Specifies the name or OID of an attribute type for which values should be checked to ensure that they are 7-bit clean. | [optional] 
 **BaseDN** | Pointer to **[]string** | Specifies the base DN below which the checking is performed. | [optional] 
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
