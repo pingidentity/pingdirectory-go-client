@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access uncached-attribute-criteria
   name: uncached-attribute-criteria
@@ -158,22 +158,24 @@ components:
       - type: object
         properties:
           criteriaName:
-            description: Name of the new Uncached Attribute Criteria
             type: string
-        required:
-        - criteriaName
+            description: >-
+                Name of the new Uncached Attribute Criteria
       - $ref: '#/components/schemas/default-uncached-attribute-criteria-shared'
+      required:
+      - criteriaName
     default-uncached-attribute-criteria-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Uncached Attribute Criteria
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Uncached Attribute Criteria
       - $ref: '#/components/schemas/default-uncached-attribute-criteria-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     default-uncached-attribute-criteria-shared:
       type: object
       properties:
@@ -203,22 +205,24 @@ components:
       - type: object
         properties:
           criteriaName:
-            description: Name of the new Uncached Attribute Criteria
             type: string
-        required:
-        - criteriaName
+            description: >-
+                Name of the new Uncached Attribute Criteria
       - $ref: '#/components/schemas/groovy-scripted-uncached-attribute-criteria-shared'
+      required:
+      - criteriaName
     groovy-scripted-uncached-attribute-criteria-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Uncached Attribute Criteria
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Uncached Attribute Criteria
       - $ref: '#/components/schemas/groovy-scripted-uncached-attribute-criteria-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     groovy-scripted-uncached-attribute-criteria-shared:
       type: object
       properties:
@@ -259,22 +263,24 @@ components:
       - type: object
         properties:
           criteriaName:
-            description: Name of the new Uncached Attribute Criteria
             type: string
-        required:
-        - criteriaName
+            description: >-
+                Name of the new Uncached Attribute Criteria
       - $ref: '#/components/schemas/simple-uncached-attribute-criteria-shared'
+      required:
+      - criteriaName
     simple-uncached-attribute-criteria-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Uncached Attribute Criteria
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Uncached Attribute Criteria
       - $ref: '#/components/schemas/simple-uncached-attribute-criteria-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     simple-uncached-attribute-criteria-shared:
       type: object
       properties:
@@ -319,22 +325,24 @@ components:
       - type: object
         properties:
           criteriaName:
-            description: Name of the new Uncached Attribute Criteria
             type: string
-        required:
-        - criteriaName
+            description: >-
+                Name of the new Uncached Attribute Criteria
       - $ref: '#/components/schemas/third-party-uncached-attribute-criteria-shared'
+      required:
+      - criteriaName
     third-party-uncached-attribute-criteria-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Uncached Attribute Criteria
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Uncached Attribute Criteria
       - $ref: '#/components/schemas/third-party-uncached-attribute-criteria-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     third-party-uncached-attribute-criteria-shared:
       type: object
       properties:

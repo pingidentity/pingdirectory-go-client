@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access attribute-syntaxes
   name: attribute-syntax
@@ -112,7 +112,6 @@ components:
   schemas:
     attribute-type-description-attribute-syntax-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -122,8 +121,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumattribute-type-description-attribute-syntaxSchemaUrn'
           id:
-            description: Name of the Attribute Syntax
             type: string
+            description: >-
+                Name of the Attribute Syntax
           stripSyntaxMinUpperBound:
             type: boolean
             description: >-
@@ -136,17 +136,17 @@ components:
             type: boolean
             description: >-
                 Indicates whether values of this attribute are required to have a "binary" transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including ";binary" (e.g., "userCertificate;binary").
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumattribute-type-description-attribute-syntaxSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:attribute-type-description"
     directory-string-attribute-syntax-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -156,8 +156,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumdirectory-string-attribute-syntaxSchemaUrn'
           id:
-            description: Name of the Attribute Syntax
             type: string
+            description: >-
+                Name of the Attribute Syntax
           allowZeroLengthValues:
             type: boolean
             description: >-
@@ -170,17 +171,17 @@ components:
             type: boolean
             description: >-
                 Indicates whether values of this attribute are required to have a "binary" transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including ";binary" (e.g., "userCertificate;binary").
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumdirectory-string-attribute-syntaxSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:directory-string"
     telephone-number-attribute-syntax-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -190,8 +191,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumtelephone-number-attribute-syntaxSchemaUrn'
           id:
-            description: Name of the Attribute Syntax
             type: string
+            description: >-
+                Name of the Attribute Syntax
           strictFormat:
             type: boolean
             description: >-
@@ -204,17 +206,17 @@ components:
             type: boolean
             description: >-
                 Indicates whether values of this attribute are required to have a "binary" transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including ";binary" (e.g., "userCertificate;binary").
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumtelephone-number-attribute-syntaxSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:telephone-number"
     distinguished-name-attribute-syntax-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -224,8 +226,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumdistinguished-name-attribute-syntaxSchemaUrn'
           id:
-            description: Name of the Attribute Syntax
             type: string
+            description: >-
+                Name of the Attribute Syntax
           enableCompaction:
             type: boolean
             description: >-
@@ -250,17 +253,17 @@ components:
             type: boolean
             description: >-
                 Indicates whether values of this attribute are required to have a "binary" transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including ";binary" (e.g., "userCertificate;binary").
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumdistinguished-name-attribute-syntaxSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:distinguished-name"
     generalized-time-attribute-syntax-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -270,8 +273,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumgeneralized-time-attribute-syntaxSchemaUrn'
           id:
-            description: Name of the Attribute Syntax
             type: string
+            description: >-
+                Name of the Attribute Syntax
           enableCompaction:
             type: boolean
             description: >-
@@ -296,17 +300,17 @@ components:
             type: boolean
             description: >-
                 Indicates whether values of this attribute are required to have a "binary" transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including ";binary" (e.g., "userCertificate;binary").
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumgeneralized-time-attribute-syntaxSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:generalized-time"
     integer-attribute-syntax-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -316,8 +320,9 @@ components:
             items:
               $ref: '#/components/schemas/Enuminteger-attribute-syntaxSchemaUrn'
           id:
-            description: Name of the Attribute Syntax
             type: string
+            description: >-
+                Name of the Attribute Syntax
           enableCompaction:
             type: boolean
             description: >-
@@ -342,17 +347,17 @@ components:
             type: boolean
             description: >-
                 Indicates whether values of this attribute are required to have a "binary" transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including ";binary" (e.g., "userCertificate;binary").
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enuminteger-attribute-syntaxSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:integer"
     uuid-attribute-syntax-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -362,8 +367,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumuuid-attribute-syntaxSchemaUrn'
           id:
-            description: Name of the Attribute Syntax
             type: string
+            description: >-
+                Name of the Attribute Syntax
           enableCompaction:
             type: boolean
             description: >-
@@ -388,17 +394,17 @@ components:
             type: boolean
             description: >-
                 Indicates whether values of this attribute are required to have a "binary" transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including ";binary" (e.g., "userCertificate;binary").
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumuuid-attribute-syntaxSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:uuid"
     generic-attribute-syntax-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -408,8 +414,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumgeneric-attribute-syntaxSchemaUrn'
           id:
-            description: Name of the Attribute Syntax
             type: string
+            description: >-
+                Name of the Attribute Syntax
           enabled:
             type: boolean
             description: >-
@@ -418,17 +425,17 @@ components:
             type: boolean
             description: >-
                 Indicates whether values of this attribute are required to have a "binary" transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including ";binary" (e.g., "userCertificate;binary").
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumgeneric-attribute-syntaxSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:generic"
     json-object-attribute-syntax-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -438,8 +445,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumjson-object-attribute-syntaxSchemaUrn'
           id:
-            description: Name of the Attribute Syntax
             type: string
+            description: >-
+                Name of the Attribute Syntax
           enabled:
             type: boolean
             description: >-
@@ -448,17 +456,17 @@ components:
             type: boolean
             description: >-
                 Indicates whether values of this attribute are required to have a "binary" transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including ";binary" (e.g., "userCertificate;binary").
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumjson-object-attribute-syntaxSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:json-object"
     user-password-attribute-syntax-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -468,8 +476,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumuser-password-attribute-syntaxSchemaUrn'
           id:
-            description: Name of the Attribute Syntax
             type: string
+            description: >-
+                Name of the Attribute Syntax
           enableCompaction:
             type: boolean
             description: >-
@@ -494,17 +503,17 @@ components:
             type: boolean
             description: >-
                 Indicates whether values of this attribute are required to have a "binary" transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including ";binary" (e.g., "userCertificate;binary").
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumuser-password-attribute-syntaxSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:user-password"
     boolean-attribute-syntax-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -514,8 +523,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumboolean-attribute-syntaxSchemaUrn'
           id:
-            description: Name of the Attribute Syntax
             type: string
+            description: >-
+                Name of the Attribute Syntax
           enableCompaction:
             type: boolean
             description: >-
@@ -540,17 +550,17 @@ components:
             type: boolean
             description: >-
                 Indicates whether values of this attribute are required to have a "binary" transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including ";binary" (e.g., "userCertificate;binary").
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumboolean-attribute-syntaxSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:boolean"
     hex-string-attribute-syntax-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -560,8 +570,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumhex-string-attribute-syntaxSchemaUrn'
           id:
-            description: Name of the Attribute Syntax
             type: string
+            description: >-
+                Name of the Attribute Syntax
           enabled:
             type: boolean
             description: >-
@@ -570,17 +581,17 @@ components:
             type: boolean
             description: >-
                 Indicates whether values of this attribute are required to have a "binary" transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including ";binary" (e.g., "userCertificate;binary").
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumhex-string-attribute-syntaxSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:hex-string"
     bit-string-attribute-syntax-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -590,8 +601,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumbit-string-attribute-syntaxSchemaUrn'
           id:
-            description: Name of the Attribute Syntax
             type: string
+            description: >-
+                Name of the Attribute Syntax
           enableCompaction:
             type: boolean
             description: >-
@@ -616,17 +628,17 @@ components:
             type: boolean
             description: >-
                 Indicates whether values of this attribute are required to have a "binary" transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including ";binary" (e.g., "userCertificate;binary").
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumbit-string-attribute-syntaxSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:bit-string"
     ldap-url-attribute-syntax-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -636,8 +648,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumldap-url-attribute-syntaxSchemaUrn'
           id:
-            description: Name of the Attribute Syntax
             type: string
+            description: >-
+                Name of the Attribute Syntax
           strictFormat:
             type: boolean
             description: >-
@@ -650,17 +663,17 @@ components:
             type: boolean
             description: >-
                 Indicates whether values of this attribute are required to have a "binary" transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including ";binary" (e.g., "userCertificate;binary").
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumldap-url-attribute-syntaxSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:ldap-url"
     name-and-optional-uid-attribute-syntax-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -670,8 +683,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumname-and-optional-uid-attribute-syntaxSchemaUrn'
           id:
-            description: Name of the Attribute Syntax
             type: string
+            description: >-
+                Name of the Attribute Syntax
           enableCompaction:
             type: boolean
             description: >-
@@ -696,10 +710,11 @@ components:
             type: boolean
             description: >-
                 Indicates whether values of this attribute are required to have a "binary" transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including ";binary" (e.g., "userCertificate;binary").
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumname-and-optional-uid-attribute-syntaxSchemaUrn:
       type: string
       enum:

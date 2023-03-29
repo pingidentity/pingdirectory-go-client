@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access search-reference-criteria
   name: search-reference-criteria
@@ -154,22 +154,24 @@ components:
       - type: object
         properties:
           criteriaName:
-            description: Name of the new Search Reference Criteria
             type: string
-        required:
-        - criteriaName
+            description: >-
+                Name of the new Search Reference Criteria
       - $ref: '#/components/schemas/simple-search-reference-criteria-shared'
+      required:
+      - criteriaName
     simple-search-reference-criteria-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Search Reference Criteria
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Search Reference Criteria
       - $ref: '#/components/schemas/simple-search-reference-criteria-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     simple-search-reference-criteria-shared:
       type: object
       properties:
@@ -222,22 +224,24 @@ components:
       - type: object
         properties:
           criteriaName:
-            description: Name of the new Search Reference Criteria
             type: string
-        required:
-        - criteriaName
+            description: >-
+                Name of the new Search Reference Criteria
       - $ref: '#/components/schemas/aggregate-search-reference-criteria-shared'
+      required:
+      - criteriaName
     aggregate-search-reference-criteria-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Search Reference Criteria
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Search Reference Criteria
       - $ref: '#/components/schemas/aggregate-search-reference-criteria-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     aggregate-search-reference-criteria-shared:
       type: object
       properties:
@@ -286,22 +290,24 @@ components:
       - type: object
         properties:
           criteriaName:
-            description: Name of the new Search Reference Criteria
             type: string
-        required:
-        - criteriaName
+            description: >-
+                Name of the new Search Reference Criteria
       - $ref: '#/components/schemas/third-party-search-reference-criteria-shared'
+      required:
+      - criteriaName
     third-party-search-reference-criteria-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Search Reference Criteria
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Search Reference Criteria
       - $ref: '#/components/schemas/third-party-search-reference-criteria-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     third-party-search-reference-criteria-shared:
       type: object
       properties:

@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access delegated-admin-attribute-categories
   name: delegated-admin-attribute-category
@@ -142,22 +142,24 @@ components:
       - type: object
         properties:
           displayName:
-            description: Name of the new Delegated Admin Attribute Category
             type: string
-        required:
-        - displayName
+            description: >-
+                Name of the new Delegated Admin Attribute Category
       - $ref: '#/components/schemas/delegated-admin-attribute-category-shared'
+      required:
+      - displayName
     delegated-admin-attribute-category-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Delegated Admin Attribute Category
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Delegated Admin Attribute Category
       - $ref: '#/components/schemas/delegated-admin-attribute-category-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     delegated-admin-attribute-category-shared:
       type: object
       properties:

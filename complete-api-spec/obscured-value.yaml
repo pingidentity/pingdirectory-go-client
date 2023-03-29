@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access obscured-values
   name: obscured-value
@@ -142,22 +142,24 @@ components:
       - type: object
         properties:
           valueName:
-            description: Name of the new Obscured Value
             type: string
-        required:
-        - valueName
+            description: >-
+                Name of the new Obscured Value
       - $ref: '#/components/schemas/obscured-value-shared'
+      required:
+      - valueName
     obscured-value-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Obscured Value
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Obscured Value
       - $ref: '#/components/schemas/obscured-value-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     obscured-value-shared:
       type: object
       properties:

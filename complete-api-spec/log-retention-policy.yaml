@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access log-retention-policies
   name: log-retention-policy
@@ -162,22 +162,24 @@ components:
       - type: object
         properties:
           policyName:
-            description: Name of the new Log Retention Policy
             type: string
-        required:
-        - policyName
+            description: >-
+                Name of the new Log Retention Policy
       - $ref: '#/components/schemas/time-limit-log-retention-policy-shared'
+      required:
+      - policyName
     time-limit-log-retention-policy-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Retention Policy
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Retention Policy
       - $ref: '#/components/schemas/time-limit-log-retention-policy-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     time-limit-log-retention-policy-shared:
       type: object
       properties:
@@ -207,22 +209,24 @@ components:
       - type: object
         properties:
           policyName:
-            description: Name of the new Log Retention Policy
             type: string
-        required:
-        - policyName
+            description: >-
+                Name of the new Log Retention Policy
       - $ref: '#/components/schemas/never-delete-log-retention-policy-shared'
+      required:
+      - policyName
     never-delete-log-retention-policy-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Retention Policy
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Retention Policy
       - $ref: '#/components/schemas/never-delete-log-retention-policy-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     never-delete-log-retention-policy-shared:
       type: object
       properties:
@@ -247,22 +251,24 @@ components:
       - type: object
         properties:
           policyName:
-            description: Name of the new Log Retention Policy
             type: string
-        required:
-        - policyName
+            description: >-
+                Name of the new Log Retention Policy
       - $ref: '#/components/schemas/file-count-log-retention-policy-shared'
+      required:
+      - policyName
     file-count-log-retention-policy-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Retention Policy
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Retention Policy
       - $ref: '#/components/schemas/file-count-log-retention-policy-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     file-count-log-retention-policy-shared:
       type: object
       properties:
@@ -292,22 +298,24 @@ components:
       - type: object
         properties:
           policyName:
-            description: Name of the new Log Retention Policy
             type: string
-        required:
-        - policyName
+            description: >-
+                Name of the new Log Retention Policy
       - $ref: '#/components/schemas/free-disk-space-log-retention-policy-shared'
+      required:
+      - policyName
     free-disk-space-log-retention-policy-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Retention Policy
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Retention Policy
       - $ref: '#/components/schemas/free-disk-space-log-retention-policy-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     free-disk-space-log-retention-policy-shared:
       type: object
       properties:
@@ -337,22 +345,24 @@ components:
       - type: object
         properties:
           policyName:
-            description: Name of the new Log Retention Policy
             type: string
-        required:
-        - policyName
+            description: >-
+                Name of the new Log Retention Policy
       - $ref: '#/components/schemas/size-limit-log-retention-policy-shared'
+      required:
+      - policyName
     size-limit-log-retention-policy-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Retention Policy
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Retention Policy
       - $ref: '#/components/schemas/size-limit-log-retention-policy-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     size-limit-log-retention-policy-shared:
       type: object
       properties:

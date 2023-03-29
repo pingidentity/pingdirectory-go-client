@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access consent-definitions
   name: consent-definition
@@ -300,22 +300,24 @@ components:
       - type: object
         properties:
           definitionName:
-            description: Name of the new Consent Definition
             type: string
-        required:
-        - definitionName
+            description: >-
+                Name of the new Consent Definition
       - $ref: '#/components/schemas/consent-definition-shared'
+      required:
+      - definitionName
     consent-definition-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Consent Definition
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Consent Definition
       - $ref: '#/components/schemas/consent-definition-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     consent-definition-shared:
       type: object
       properties:
@@ -354,22 +356,24 @@ components:
       - type: object
         properties:
           localizationName:
-            description: Name of the new Consent Definition Localization
             type: string
-        required:
-        - localizationName
+            description: >-
+                Name of the new Consent Definition Localization
       - $ref: '#/components/schemas/consent-definition-localization-shared'
+      required:
+      - localizationName
     consent-definition-localization-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Consent Definition Localization
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Consent Definition
       - $ref: '#/components/schemas/consent-definition-localization-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     consent-definition-localization-shared:
       type: object
       properties:

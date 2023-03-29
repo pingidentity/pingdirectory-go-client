@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access server-instances
   name: server-instance
@@ -450,9 +450,26 @@ paths:
       - inter-server-authentication-info
 components:
   schemas:
+    Enumserver-instance-serverInstanceTypeProp:
+      type: string
+      enum:
+      - "ds"
+      - "proxy"
+      - "authorize"
+      - "metrics"
+      - "sync"
+      description: >-
+          Specifies the type of server installation.
+    Enumserver-instance-preferredSecurityProp:
+      type: string
+      enum:
+      - "none"
+      - "ssl"
+      - "starttls"
+      description: >-
+          Specifies the preferred mechanism to use for securing connections to the server.
     proxy-server-instance-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -462,8 +479,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumproxy-server-instanceSchemaUrn'
           id:
-            description: Name of the Server Instance
             type: string
+            description: >-
+                Name of the Server Instance
           serverInstanceType:
             $ref: '#/components/schemas/Enumserver-instance-serverInstanceTypeProp'
           serverInstanceName:
@@ -550,19 +568,19 @@ components:
               type: string
             description: >-
                 The set of groups of which this server is a member.
-        required:
-        - schemas
-        - serverInstanceName
-        - clusterName
-        - serverVersion
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - serverInstanceName
+      - clusterName
+      - serverVersion
     Enumproxy-server-instanceSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:server-instance:proxy"
     metrics-engine-server-instance-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -572,8 +590,9 @@ components:
             items:
               $ref: '#/components/schemas/Enummetrics-engine-server-instanceSchemaUrn'
           id:
-            description: Name of the Server Instance
             type: string
+            description: >-
+                Name of the Server Instance
           serverInstanceType:
             $ref: '#/components/schemas/Enumserver-instance-serverInstanceTypeProp'
           serverInstanceName:
@@ -660,19 +679,19 @@ components:
               type: string
             description: >-
                 The set of groups of which this server is a member.
-        required:
-        - schemas
-        - serverInstanceName
-        - clusterName
-        - serverVersion
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - serverInstanceName
+      - clusterName
+      - serverVersion
     Enummetrics-engine-server-instanceSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:server-instance:metrics-engine"
     authorize-server-instance-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -682,8 +701,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumauthorize-server-instanceSchemaUrn'
           id:
-            description: Name of the Server Instance
             type: string
+            description: >-
+                Name of the Server Instance
           serverInstanceType:
             $ref: '#/components/schemas/Enumserver-instance-serverInstanceTypeProp'
           serverInstanceName:
@@ -770,19 +790,19 @@ components:
               type: string
             description: >-
                 The set of groups of which this server is a member.
-        required:
-        - schemas
-        - serverInstanceName
-        - clusterName
-        - serverVersion
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - serverInstanceName
+      - clusterName
+      - serverVersion
     Enumauthorize-server-instanceSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:server-instance:authorize"
     directory-server-instance-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -792,8 +812,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumdirectory-server-instanceSchemaUrn'
           id:
-            description: Name of the Server Instance
             type: string
+            description: >-
+                Name of the Server Instance
           serverInstanceType:
             $ref: '#/components/schemas/Enumserver-instance-serverInstanceTypeProp'
           replicationSetName:
@@ -890,19 +911,19 @@ components:
               type: string
             description: >-
                 The set of groups of which this server is a member.
-        required:
-        - schemas
-        - serverInstanceName
-        - clusterName
-        - serverVersion
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - serverInstanceName
+      - clusterName
+      - serverVersion
     Enumdirectory-server-instanceSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:server-instance:directory"
     sync-server-instance-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -912,8 +933,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumsync-server-instanceSchemaUrn'
           id:
-            description: Name of the Server Instance
             type: string
+            description: >-
+                Name of the Server Instance
           serverInstanceType:
             $ref: '#/components/schemas/Enumserver-instance-serverInstanceTypeProp'
           serverInstanceName:
@@ -1000,19 +1022,33 @@ components:
               type: string
             description: >-
                 The set of groups of which this server is a member.
-        required:
-        - schemas
-        - serverInstanceName
-        - clusterName
-        - serverVersion
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - serverInstanceName
+      - clusterName
+      - serverVersion
     Enumsync-server-instanceSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:server-instance:sync"
+    Enumserver-instance-listener-ldap-connectionSecurityProp:
+      type: string
+      enum:
+      - "none"
+      - "ssl"
+      - "starttls"
+      description: >-
+          Specifies the mechanism to use for securing connections to the server.
+    Enumserver-instance-listener-purposeProp:
+      type: string
+      enum:
+      - "mirrored-config"
+      description: >-
+          Identifies the purpose of this Server Instance Listener.
     ldap-server-instance-listener-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -1022,8 +1058,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumldap-server-instance-listenerSchemaUrn'
           id:
-            description: Name of the Server Instance Listener
             type: string
+            description: >-
+                Name of the Server Instance
           serverLDAPPort:
             type: integer
             description: >-
@@ -1038,16 +1075,23 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Enumserver-instance-listener-purposeProp'
-        required:
-        - schemas
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
     Enumldap-server-instance-listenerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:server-instance-listener:ldap"
+    Enumserver-instance-listener-http-connectionSecurityProp:
+      type: string
+      enum:
+      - "none"
+      - "ssl"
+      description: >-
+          Specifies the mechanism to use for securing connections to the server.
     http-server-instance-listener-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -1057,8 +1101,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumhttp-server-instance-listenerSchemaUrn'
           id:
-            description: Name of the Server Instance Listener
             type: string
+            description: >-
+                Name of the Server Instance
           listenAddress:
             type: string
             description: >-
@@ -1073,16 +1118,16 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Enumserver-instance-listener-purposeProp'
-        required:
-        - schemas
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
     Enumhttp-server-instance-listenerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:server-instance-listener:http"
     mac-secret-key-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -1113,16 +1158,16 @@ components:
             type: integer
             description: >-
                 The length of the key in bits.
-        required:
-        - keyID
-        - keyLengthBits
+      - $ref: '#/components/schemas/meta'
+      required:
+      - keyID
+      - keyLengthBits
     Enummac-secret-keySchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:mac-secret-key"
     cipher-secret-key-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -1157,16 +1202,29 @@ components:
             type: integer
             description: >-
                 The length of the key in bits.
-        required:
-        - keyID
-        - keyLengthBits
+      - $ref: '#/components/schemas/meta'
+      required:
+      - keyID
+      - keyLengthBits
     Enumcipher-secret-keySchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:cipher-secret-key"
+    Enuminter-server-authentication-info-authenticationTypeProp:
+      type: string
+      enum:
+      - "simple"
+      - "sasl-plain"
+      description: >-
+          Identifies the type of password authentication that will be used.
+    Enuminter-server-authentication-info-purposeProp:
+      type: string
+      enum:
+      - "mirrored-config"
+      description: >-
+          Identifies the purpose of this Inter Server Authentication Info.
     password-inter-server-authentication-info-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -1176,8 +1234,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumpassword-inter-server-authentication-infoSchemaUrn'
           id:
-            description: Name of the Inter Server Authentication Info
             type: string
+            description: >-
+                Name of the Server Instance
           authenticationType:
             $ref: '#/components/schemas/Enuminter-server-authentication-info-authenticationTypeProp'
           bindDN:
@@ -1197,17 +1256,17 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Enuminter-server-authentication-info-purposeProp'
-        required:
-        - schemas
-        - password
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - password
     Enumpassword-inter-server-authentication-infoSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:inter-server-authentication-info:password"
     certificate-inter-server-authentication-info-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -1217,71 +1276,21 @@ components:
             items:
               $ref: '#/components/schemas/Enumcertificate-inter-server-authentication-infoSchemaUrn'
           id:
-            description: Name of the Inter Server Authentication Info
             type: string
+            description: >-
+                Name of the Server Instance
           purpose:
             type: array
             items:
               $ref: '#/components/schemas/Enuminter-server-authentication-info-purposeProp'
-        required:
-        - schemas
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
     Enumcertificate-inter-server-authentication-infoSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:inter-server-authentication-info:certificate"
-    Enumserver-instance-preferredSecurityProp:
-      type: string
-      enum:
-      - "none"
-      - "ssl"
-      - "starttls"
-      description: >-
-          Specifies the preferred mechanism to use for securing connections to the server.
-    Enumserver-instance-listener-purposeProp:
-      type: string
-      enum:
-      - "mirrored-config"
-      description: >-
-          Identifies the purpose of this Server Instance Listener.
-    Enuminter-server-authentication-info-authenticationTypeProp:
-      type: string
-      enum:
-      - "simple"
-      - "sasl-plain"
-      description: >-
-          Identifies the type of password authentication that will be used.
-    Enumserver-instance-listener-ldap-connectionSecurityProp:
-      type: string
-      enum:
-      - "none"
-      - "ssl"
-      - "starttls"
-      description: >-
-          Specifies the mechanism to use for securing connections to the server.
-    Enumserver-instance-listener-http-connectionSecurityProp:
-      type: string
-      enum:
-      - "none"
-      - "ssl"
-      description: >-
-          Specifies the mechanism to use for securing connections to the server.
-    Enuminter-server-authentication-info-purposeProp:
-      type: string
-      enum:
-      - "mirrored-config"
-      description: >-
-          Identifies the purpose of this Inter Server Authentication Info.
-    Enumserver-instance-serverInstanceTypeProp:
-      type: string
-      enum:
-      - "ds"
-      - "proxy"
-      - "authorize"
-      - "metrics"
-      - "sync"
-      description: >-
-          Specifies the type of server installation.
     updateRequest:
       type: object
       properties:

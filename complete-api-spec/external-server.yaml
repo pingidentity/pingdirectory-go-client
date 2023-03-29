@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access external-servers
   name: external-server
@@ -201,27 +201,37 @@ paths:
       - external-server
 components:
   schemas:
+    Enumexternal-server-smtpSecurityProp:
+      type: string
+      enum:
+      - "none"
+      - "starttls"
+      - "ssl"
+      description: >-
+          This property specifies type of connection security to use when connecting to the outgoing mail server.
     add-smtp-external-server-request:
       allOf:
       - type: object
         properties:
           serverName:
-            description: Name of the new External Server
             type: string
-        required:
-        - serverName
+            description: >-
+                Name of the new External Server
       - $ref: '#/components/schemas/smtp-external-server-shared'
+      required:
+      - serverName
     smtp-external-server-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the External Server
             type: string
-        required:
-        - id
+            description: >-
+                Name of the External Server
       - $ref: '#/components/schemas/smtp-external-server-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     smtp-external-server-shared:
       type: object
       properties:
@@ -275,28 +285,126 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:external-server:smtp"
+    Enumexternal-server-verifyCredentialsMethodProp:
+      type: string
+      enum:
+      - "separate-connections"
+      - "retain-identity-control"
+      - "bind-on-existing-connections"
+      description: >-
+          The mechanism to use to verify user credentials while ensuring that the ability to process other operations is not impacted by an alternate authorization identity.
+    Enumexternal-server-connectionSecurityProp:
+      type: string
+      enum:
+      - "none"
+      - "ssl"
+      - "starttls"
+      description: >-
+          The mechanism to use to secure communication with the directory server.
+    Enumexternal-server-authenticationMethodProp:
+      type: string
+      enum:
+      - "none"
+      - "simple"
+      - "external"
+      - "inter-server"
+      description: >-
+          The mechanism to use to authenticate to the target server.
+    Enumexternal-server-defunctConnectionResultCodeProp:
+      type: string
+      enum:
+      - "success"
+      - "operations-error"
+      - "protocol-error"
+      - "time-limit-exceeded"
+      - "size-limit-exceeded"
+      - "compare-false"
+      - "compare-true"
+      - "auth-method-not-supported"
+      - "strong-auth-required"
+      - "referral"
+      - "admin-limit-exceeded"
+      - "unavailable-critical-extension"
+      - "confidentiality-required"
+      - "sasl-bind-in-progress"
+      - "no-such-attribute"
+      - "undefined-attribute-type"
+      - "inappropriate-matching"
+      - "constraint-violation"
+      - "attribute-or-value-exists"
+      - "invalid-attribute-syntax"
+      - "no-such-object"
+      - "alias-problem"
+      - "invalid-dn-syntax"
+      - "alias-dereferencing-problem"
+      - "inappropriate-authentication"
+      - "invalid-credentials"
+      - "insufficient-access-rights"
+      - "busy"
+      - "unavailable"
+      - "unwilling-to-perform"
+      - "loop-detect"
+      - "sort-control-missing"
+      - "offset-range-error"
+      - "naming-violation"
+      - "object-class-violation"
+      - "not-allowed-on-nonleaf"
+      - "not-allowed-on-rdn"
+      - "entry-already-exists"
+      - "object-class-mods-prohibited"
+      - "affects-multiple-dsas"
+      - "virtual-list-view-error"
+      - "other"
+      - "server-down"
+      - "local-error"
+      - "encoding-error"
+      - "decoding-error"
+      - "timeout"
+      - "auth-unknown"
+      - "filter-error"
+      - "user-canceled"
+      - "param-error"
+      - "no-memory"
+      - "connect-error"
+      - "not-supported"
+      - "control-not-found"
+      - "no-results-returned"
+      - "more-results-to-return"
+      - "client-loop"
+      - "referral-limit-exceeded"
+      - "canceled"
+      - "no-such-operation"
+      - "too-late"
+      - "cannot-cancel"
+      - "assertion-failed"
+      - "authorization-denied"
+      - "no-operation"
+      - "interactive-transaction-aborted"
+      description: >-
+          Specifies the operation result code values that should cause the associated connection should be considered defunct. If an operation fails with one of these result codes, then it will be terminated and an attempt will be made to establish a new connection in its place.
     add-nokia-ds-external-server-request:
       allOf:
       - type: object
         properties:
           serverName:
-            description: Name of the new External Server
             type: string
-        required:
-        - serverName
+            description: >-
+                Name of the new External Server
       - $ref: '#/components/schemas/nokia-ds-external-server-shared'
+      required:
+      - serverName
     nokia-ds-external-server-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the External Server
             type: string
-        required:
-        - id
+            description: >-
+                Name of the External Server
       - $ref: '#/components/schemas/nokia-ds-external-server-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - verifyCredentialsMethod
       - serverPort
       - connectionSecurity
@@ -408,23 +516,24 @@ components:
       - type: object
         properties:
           serverName:
-            description: Name of the new External Server
             type: string
-        required:
-        - serverName
+            description: >-
+                Name of the new External Server
       - $ref: '#/components/schemas/ping-identity-ds-external-server-shared'
+      required:
+      - serverName
     ping-identity-ds-external-server-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the External Server
             type: string
-        required:
-        - id
+            description: >-
+                Name of the External Server
       - $ref: '#/components/schemas/ping-identity-ds-external-server-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - verifyCredentialsMethod
       - serverPort
       - connectionSecurity
@@ -536,23 +645,24 @@ components:
       - type: object
         properties:
           serverName:
-            description: Name of the new External Server
             type: string
-        required:
-        - serverName
+            description: >-
+                Name of the new External Server
       - $ref: '#/components/schemas/active-directory-external-server-shared'
+      required:
+      - serverName
     active-directory-external-server-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the External Server
             type: string
-        required:
-        - id
+            description: >-
+                Name of the External Server
       - $ref: '#/components/schemas/active-directory-external-server-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - serverPort
       - connectionSecurity
       - authenticationMethod
@@ -655,27 +765,50 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:external-server:active-directory"
+    Enumexternal-server-jdbcDriverTypeProp:
+      type: string
+      enum:
+      - "oraclethin"
+      - "oracleoci"
+      - "mysql"
+      - "db2"
+      - "sqlserver"
+      - "postgres"
+      - "other"
+      description: >-
+          Specifies a supported database driver type. The driver class will be automatically selected based on this selection. We highly recommend using a JDBC 4 driver that is suitable for the current Java platform.
+    Enumexternal-server-transactionIsolationLevelProp:
+      type: string
+      enum:
+      - "read-committed"
+      - "read-uncommitted"
+      - "repeatable-read"
+      - "serializable"
+      description: >-
+          This property specifies the default transaction isolation level for connections to this JDBC External Server.
     add-jdbc-external-server-request:
       allOf:
       - type: object
         properties:
           serverName:
-            description: Name of the new External Server
             type: string
-        required:
-        - serverName
+            description: >-
+                Name of the new External Server
       - $ref: '#/components/schemas/jdbc-external-server-shared'
+      required:
+      - serverName
     jdbc-external-server-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the External Server
             type: string
-        required:
-        - id
+            description: >-
+                Name of the External Server
       - $ref: '#/components/schemas/jdbc-external-server-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     jdbc-external-server-shared:
       type: object
       properties:
@@ -743,28 +876,37 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:external-server:jdbc"
+    Enumexternal-server-transportMechanismProp:
+      type: string
+      enum:
+      - "unencrypted-udp"
+      - "unencrypted-tcp"
+      - "tls-encrypted-tcp"
+      description: >-
+          The transport mechanism that should be used when communicating with the syslog server.
     add-syslog-external-server-request:
       allOf:
       - type: object
         properties:
           serverName:
-            description: Name of the new External Server
             type: string
-        required:
-        - serverName
+            description: >-
+                Name of the new External Server
       - $ref: '#/components/schemas/syslog-external-server-shared'
+      required:
+      - serverName
     syslog-external-server-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the External Server
             type: string
-        required:
-        - id
+            description: >-
+                Name of the External Server
       - $ref: '#/components/schemas/syslog-external-server-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - connectTimeout
       - maxConnectionAge
       - trustManagerProvider
@@ -816,23 +958,24 @@ components:
       - type: object
         properties:
           serverName:
-            description: Name of the new External Server
             type: string
-        required:
-        - serverName
+            description: >-
+                Name of the new External Server
       - $ref: '#/components/schemas/ping-identity-proxy-server-external-server-shared'
+      required:
+      - serverName
     ping-identity-proxy-server-external-server-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the External Server
             type: string
-        required:
-        - id
+            description: >-
+                Name of the External Server
       - $ref: '#/components/schemas/ping-identity-proxy-server-external-server-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - verifyCredentialsMethod
       - serverPort
       - connectionSecurity
@@ -944,23 +1087,24 @@ components:
       - type: object
         properties:
           serverName:
-            description: Name of the new External Server
             type: string
-        required:
-        - serverName
+            description: >-
+                Name of the new External Server
       - $ref: '#/components/schemas/nokia-proxy-server-external-server-shared'
+      required:
+      - serverName
     nokia-proxy-server-external-server-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the External Server
             type: string
-        required:
-        - id
+            description: >-
+                Name of the External Server
       - $ref: '#/components/schemas/nokia-proxy-server-external-server-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - verifyCredentialsMethod
       - serverPort
       - connectionSecurity
@@ -1072,23 +1216,24 @@ components:
       - type: object
         properties:
           serverName:
-            description: Name of the new External Server
             type: string
-        required:
-        - serverName
+            description: >-
+                Name of the new External Server
       - $ref: '#/components/schemas/opendj-external-server-shared'
+      required:
+      - serverName
     opendj-external-server-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the External Server
             type: string
-        required:
-        - id
+            description: >-
+                Name of the External Server
       - $ref: '#/components/schemas/opendj-external-server-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - serverPort
       - connectionSecurity
       - authenticationMethod
@@ -1196,23 +1341,24 @@ components:
       - type: object
         properties:
           serverName:
-            description: Name of the new External Server
             type: string
-        required:
-        - serverName
+            description: >-
+                Name of the new External Server
       - $ref: '#/components/schemas/ldap-external-server-shared'
+      required:
+      - serverName
     ldap-external-server-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the External Server
             type: string
-        required:
-        - id
+            description: >-
+                Name of the External Server
       - $ref: '#/components/schemas/ldap-external-server-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - serverPort
       - connectionSecurity
       - authenticationMethod
@@ -1315,27 +1461,36 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:external-server:ldap"
+    Enumexternal-server-hostnameVerificationMethodProp:
+      type: string
+      enum:
+      - "allow-all"
+      - "strict"
+      description: >-
+          The mechanism for checking if the hostname in the PingOne ID Token Validator's base-url value matches the name(s) stored inside the X.509 certificate presented by PingOne.
     add-ping-one-http-external-server-request:
       allOf:
       - type: object
         properties:
           serverName:
-            description: Name of the new External Server
             type: string
-        required:
-        - serverName
+            description: >-
+                Name of the new External Server
       - $ref: '#/components/schemas/ping-one-http-external-server-shared'
+      required:
+      - serverName
     ping-one-http-external-server-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the External Server
             type: string
-        required:
-        - id
+            description: >-
+                Name of the External Server
       - $ref: '#/components/schemas/ping-one-http-external-server-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     ping-one-http-external-server-shared:
       type: object
       properties:
@@ -1374,22 +1529,24 @@ components:
       - type: object
         properties:
           serverName:
-            description: Name of the new External Server
             type: string
-        required:
-        - serverName
+            description: >-
+                Name of the new External Server
       - $ref: '#/components/schemas/http-external-server-shared'
+      required:
+      - serverName
     http-external-server-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the External Server
             type: string
-        required:
-        - id
+            description: >-
+                Name of the External Server
       - $ref: '#/components/schemas/http-external-server-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     http-external-server-shared:
       type: object
       properties:
@@ -1441,23 +1598,24 @@ components:
       - type: object
         properties:
           serverName:
-            description: Name of the new External Server
             type: string
-        required:
-        - serverName
+            description: >-
+                Name of the new External Server
       - $ref: '#/components/schemas/oracle-unified-directory-external-server-shared'
+      required:
+      - serverName
     oracle-unified-directory-external-server-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the External Server
             type: string
-        required:
-        - id
+            description: >-
+                Name of the External Server
       - $ref: '#/components/schemas/oracle-unified-directory-external-server-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - serverPort
       - connectionSecurity
       - authenticationMethod
@@ -1565,22 +1723,24 @@ components:
       - type: object
         properties:
           serverName:
-            description: Name of the new External Server
             type: string
-        required:
-        - serverName
+            description: >-
+                Name of the new External Server
       - $ref: '#/components/schemas/conjur-external-server-shared'
+      required:
+      - serverName
     conjur-external-server-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the External Server
             type: string
-        required:
-        - id
+            description: >-
+                Name of the External Server
       - $ref: '#/components/schemas/conjur-external-server-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     conjur-external-server-shared:
       type: object
       properties:
@@ -1635,22 +1795,24 @@ components:
       - type: object
         properties:
           serverName:
-            description: Name of the new External Server
             type: string
-        required:
-        - serverName
+            description: >-
+                Name of the new External Server
       - $ref: '#/components/schemas/amazon-aws-external-server-shared'
+      required:
+      - serverName
     amazon-aws-external-server-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the External Server
             type: string
-        required:
-        - id
+            description: >-
+                Name of the External Server
       - $ref: '#/components/schemas/amazon-aws-external-server-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     amazon-aws-external-server-shared:
       type: object
       properties:
@@ -1689,22 +1851,24 @@ components:
       - type: object
         properties:
           serverName:
-            description: Name of the new External Server
             type: string
-        required:
-        - serverName
+            description: >-
+                Name of the new External Server
       - $ref: '#/components/schemas/vault-external-server-shared'
+      required:
+      - serverName
     vault-external-server-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the External Server
             type: string
-        required:
-        - id
+            description: >-
+                Name of the External Server
       - $ref: '#/components/schemas/vault-external-server-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     vault-external-server-shared:
       type: object
       properties:
@@ -1749,147 +1913,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:external-server:vault"
-    Enumexternal-server-smtpSecurityProp:
-      type: string
-      enum:
-      - "none"
-      - "starttls"
-      - "ssl"
-      description: >-
-          This property specifies type of connection security to use when connecting to the outgoing mail server.
-    Enumexternal-server-authenticationMethodProp:
-      type: string
-      enum:
-      - "none"
-      - "simple"
-      - "external"
-      - "inter-server"
-      description: >-
-          The mechanism to use to authenticate to the target server.
-    Enumexternal-server-connectionSecurityProp:
-      type: string
-      enum:
-      - "none"
-      - "ssl"
-      - "starttls"
-      description: >-
-          The mechanism to use to secure communication with the directory server.
-    Enumexternal-server-defunctConnectionResultCodeProp:
-      type: string
-      enum:
-      - "success"
-      - "operations-error"
-      - "protocol-error"
-      - "time-limit-exceeded"
-      - "size-limit-exceeded"
-      - "compare-false"
-      - "compare-true"
-      - "auth-method-not-supported"
-      - "strong-auth-required"
-      - "referral"
-      - "admin-limit-exceeded"
-      - "unavailable-critical-extension"
-      - "confidentiality-required"
-      - "sasl-bind-in-progress"
-      - "no-such-attribute"
-      - "undefined-attribute-type"
-      - "inappropriate-matching"
-      - "constraint-violation"
-      - "attribute-or-value-exists"
-      - "invalid-attribute-syntax"
-      - "no-such-object"
-      - "alias-problem"
-      - "invalid-dn-syntax"
-      - "alias-dereferencing-problem"
-      - "inappropriate-authentication"
-      - "invalid-credentials"
-      - "insufficient-access-rights"
-      - "busy"
-      - "unavailable"
-      - "unwilling-to-perform"
-      - "loop-detect"
-      - "sort-control-missing"
-      - "offset-range-error"
-      - "naming-violation"
-      - "object-class-violation"
-      - "not-allowed-on-nonleaf"
-      - "not-allowed-on-rdn"
-      - "entry-already-exists"
-      - "object-class-mods-prohibited"
-      - "affects-multiple-dsas"
-      - "virtual-list-view-error"
-      - "other"
-      - "server-down"
-      - "local-error"
-      - "encoding-error"
-      - "decoding-error"
-      - "timeout"
-      - "auth-unknown"
-      - "filter-error"
-      - "user-canceled"
-      - "param-error"
-      - "no-memory"
-      - "connect-error"
-      - "not-supported"
-      - "control-not-found"
-      - "no-results-returned"
-      - "more-results-to-return"
-      - "client-loop"
-      - "referral-limit-exceeded"
-      - "canceled"
-      - "no-such-operation"
-      - "too-late"
-      - "cannot-cancel"
-      - "assertion-failed"
-      - "authorization-denied"
-      - "no-operation"
-      - "interactive-transaction-aborted"
-      description: >-
-          Specifies the operation result code values that should cause the associated connection should be considered defunct. If an operation fails with one of these result codes, then it will be terminated and an attempt will be made to establish a new connection in its place.
-    Enumexternal-server-jdbcDriverTypeProp:
-      type: string
-      enum:
-      - "oraclethin"
-      - "oracleoci"
-      - "mysql"
-      - "db2"
-      - "sqlserver"
-      - "postgres"
-      - "other"
-      description: >-
-          Specifies a supported database driver type. The driver class will be automatically selected based on this selection. We highly recommend using a JDBC 4 driver that is suitable for the current Java platform.
-    Enumexternal-server-verifyCredentialsMethodProp:
-      type: string
-      enum:
-      - "separate-connections"
-      - "retain-identity-control"
-      - "bind-on-existing-connections"
-      description: >-
-          The mechanism to use to verify user credentials while ensuring that the ability to process other operations is not impacted by an alternate authorization identity.
-    Enumexternal-server-transactionIsolationLevelProp:
-      type: string
-      enum:
-      - "read-committed"
-      - "read-uncommitted"
-      - "repeatable-read"
-      - "serializable"
-      description: >-
-          This property specifies the default transaction isolation level for connections to this JDBC External Server.
-    Enumexternal-server-transportMechanismProp:
-      type: string
-      enum:
-      - "unencrypted-udp"
-      - "unencrypted-tcp"
-      - "tls-encrypted-tcp"
-      description: >-
-          The transport mechanism that should be used when communicating with the syslog server.
-    Enumexternal-server-hostnameVerificationMethodProp:
-      type: string
-      enum:
-      - "allow-all"
-      - "strict"
-      description: >-
-          The mechanism for checking if the hostname in the PingOne ID Token Validator's base-url value matches the name(s) stored inside the X.509 certificate presented by PingOne.
     updateRequest:
       type: object
       properties:

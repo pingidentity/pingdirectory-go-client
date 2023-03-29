@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access the Access Control Handler
   name: access-control-handler
@@ -62,9 +62,28 @@ paths:
       - access-control-handler
 components:
   schemas:
+    Enumaccess-control-handler-allowedBindControlProp:
+      type: string
+      enum:
+      - "administrative-operation"
+      - "authorization-identity"
+      - "get-authorization-entry"
+      - "get-backend-set-id"
+      - "get-password-policy-state-issues"
+      - "get-recent-login-history"
+      - "get-server-id"
+      - "get-user-resource-limits"
+      - "intermediate-client"
+      - "operation-purpose"
+      - "password-policy"
+      - "retain-identity"
+      - "route-to-backend-set"
+      - "route-to-server"
+      - "suppress-operational-attribute-update"
+      description: >-
+          Specifies a set of controls that clients should be allowed to include in bind requests. As bind requests are evaluated as the unauthenticated user, any controls included in this set will be permitted for any bind attempt. If you wish to grant permission for any bind controls not listed here, then the allowed-bind-control-oid property may be used to accomplish that.
     dsee-compat-access-control-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -93,32 +112,13 @@ components:
             type: boolean
             description: >-
                 Indicates whether this Access Control Handler is enabled. If set to FALSE, then no access control is enforced, and any client (including unauthenticated or anonymous clients) could be allowed to perform any operation if not subject to other restrictions, such as those enforced by the privilege subsystem.
-        required:
-        - enabled
+      - $ref: '#/components/schemas/meta'
+      required:
+      - enabled
     Enumdsee-compat-access-control-handlerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:access-control-handler:dsee-compat"
-    Enumaccess-control-handler-allowedBindControlProp:
-      type: string
-      enum:
-      - "administrative-operation"
-      - "authorization-identity"
-      - "get-authorization-entry"
-      - "get-backend-set-id"
-      - "get-password-policy-state-issues"
-      - "get-recent-login-history"
-      - "get-server-id"
-      - "get-user-resource-limits"
-      - "intermediate-client"
-      - "operation-purpose"
-      - "password-policy"
-      - "retain-identity"
-      - "route-to-backend-set"
-      - "route-to-server"
-      - "suppress-operational-attribute-update"
-      description: >-
-          Specifies a set of controls that clients should be allowed to include in bind requests. As bind requests are evaluated as the unauthenticated user, any controls included in this set will be permitted for any bind attempt. If you wish to grant permission for any bind controls not listed here, then the allowed-bind-control-oid property may be used to accomplish that.
     updateRequest:
       type: object
       properties:

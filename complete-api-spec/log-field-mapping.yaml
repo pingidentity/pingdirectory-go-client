@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access log-field-mappings
   name: log-field-mapping
@@ -150,22 +150,24 @@ components:
       - type: object
         properties:
           mappingName:
-            description: Name of the new Log Field Mapping
             type: string
-        required:
-        - mappingName
+            description: >-
+                Name of the new Log Field Mapping
       - $ref: '#/components/schemas/access-log-field-mapping-shared'
+      required:
+      - mappingName
     access-log-field-mapping-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Field Mapping
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Field Mapping
       - $ref: '#/components/schemas/access-log-field-mapping-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     access-log-field-mapping-shared:
       type: object
       properties:
@@ -398,22 +400,24 @@ components:
       - type: object
         properties:
           mappingName:
-            description: Name of the new Log Field Mapping
             type: string
-        required:
-        - mappingName
+            description: >-
+                Name of the new Log Field Mapping
       - $ref: '#/components/schemas/error-log-field-mapping-shared'
+      required:
+      - mappingName
     error-log-field-mapping-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Field Mapping
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Field Mapping
       - $ref: '#/components/schemas/error-log-field-mapping-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     error-log-field-mapping-shared:
       type: object
       properties:

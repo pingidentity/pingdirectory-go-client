@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access access-token-validators
   name: access-token-validator
@@ -158,23 +158,24 @@ components:
       - type: object
         properties:
           validatorName:
-            description: Name of the new Access Token Validator
             type: string
-        required:
-        - validatorName
+            description: >-
+                Name of the new Access Token Validator
       - $ref: '#/components/schemas/ping-federate-access-token-validator-shared'
+      required:
+      - validatorName
     ping-federate-access-token-validator-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Access Token Validator
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Access Token Validator
       - $ref: '#/components/schemas/ping-federate-access-token-validator-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - evaluationOrderIndex
     ping-federate-access-token-validator-shared:
       type: object
@@ -242,28 +243,58 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:access-token-validator:ping-federate"
+    Enumaccess-token-validator-allowedSigningAlgorithmProp:
+      type: string
+      enum:
+      - "RS256"
+      - "RS384"
+      - "RS512"
+      - "ES256"
+      - "ES384"
+      - "ES512"
+      description: >-
+          Specifies an allow list of JWT signing algorithms that will be accepted by the JWT Access Token Validator.
+    Enumaccess-token-validator-allowedKeyEncryptionAlgorithmProp:
+      type: string
+      enum:
+      - "RSA_OAEP"
+      - "ECDH_ES"
+      - "ECDH_ES_A128KW"
+      - "ECDH_ES_A192KW"
+      - "ECDH_ES_A256KW"
+      description: >-
+          Specifies an allow list of JWT key encryption algorithms that will be accepted by the JWT Access Token Validator. This setting is only used if encryption-key-pair is set.
+    Enumaccess-token-validator-allowedContentEncryptionAlgorithmProp:
+      type: string
+      enum:
+      - "A128CBC_HS256"
+      - "A192CBC_HS384"
+      - "A256CBC_HS512"
+      description: >-
+          Specifies an allow list of JWT content encryption algorithms that will be accepted by the JWT Access Token Validator.
     add-jwt-access-token-validator-request:
       allOf:
       - type: object
         properties:
           validatorName:
-            description: Name of the new Access Token Validator
             type: string
-        required:
-        - validatorName
+            description: >-
+                Name of the new Access Token Validator
       - $ref: '#/components/schemas/jwt-access-token-validator-shared'
+      required:
+      - validatorName
     jwt-access-token-validator-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Access Token Validator
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Access Token Validator
       - $ref: '#/components/schemas/jwt-access-token-validator-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - allowedSigningAlgorithm
       - allowedKeyEncryptionAlgorithm
       - allowedContentEncryptionAlgorithm
@@ -351,23 +382,24 @@ components:
       - type: object
         properties:
           validatorName:
-            description: Name of the new Access Token Validator
             type: string
-        required:
-        - validatorName
+            description: >-
+                Name of the new Access Token Validator
       - $ref: '#/components/schemas/mock-access-token-validator-shared'
+      required:
+      - validatorName
     mock-access-token-validator-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Access Token Validator
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Access Token Validator
       - $ref: '#/components/schemas/mock-access-token-validator-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - evaluationOrderIndex
     mock-access-token-validator-shared:
       type: object
@@ -418,22 +450,24 @@ components:
       - type: object
         properties:
           validatorName:
-            description: Name of the new Access Token Validator
             type: string
-        required:
-        - validatorName
+            description: >-
+                Name of the new Access Token Validator
       - $ref: '#/components/schemas/third-party-access-token-validator-shared'
+      required:
+      - validatorName
     third-party-access-token-validator-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Access Token Validator
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Access Token Validator
       - $ref: '#/components/schemas/third-party-access-token-validator-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     third-party-access-token-validator-shared:
       type: object
       properties:
@@ -482,35 +516,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:access-token-validator:third-party"
-    Enumaccess-token-validator-allowedContentEncryptionAlgorithmProp:
-      type: string
-      enum:
-      - "A128CBC_HS256"
-      - "A192CBC_HS384"
-      - "A256CBC_HS512"
-      description: >-
-          Specifies an allow list of JWT content encryption algorithms that will be accepted by the JWT Access Token Validator.
-    Enumaccess-token-validator-allowedKeyEncryptionAlgorithmProp:
-      type: string
-      enum:
-      - "RSA_OAEP"
-      - "ECDH_ES"
-      - "ECDH_ES_A128KW"
-      - "ECDH_ES_A192KW"
-      - "ECDH_ES_A256KW"
-      description: >-
-          Specifies an allow list of JWT key encryption algorithms that will be accepted by the JWT Access Token Validator. This setting is only used if encryption-key-pair is set.
-    Enumaccess-token-validator-allowedSigningAlgorithmProp:
-      type: string
-      enum:
-      - "RS256"
-      - "RS384"
-      - "RS512"
-      - "ES256"
-      - "ES384"
-      - "ES512"
-      description: >-
-          Specifies an allow list of JWT signing algorithms that will be accepted by the JWT Access Token Validator.
     updateRequest:
       type: object
       properties:

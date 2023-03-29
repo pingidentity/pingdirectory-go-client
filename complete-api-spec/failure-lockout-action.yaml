@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access failure-lockout-actions
   name: failure-lockout-action
@@ -154,22 +154,24 @@ components:
       - type: object
         properties:
           actionName:
-            description: Name of the new Failure Lockout Action
             type: string
-        required:
-        - actionName
+            description: >-
+                Name of the new Failure Lockout Action
       - $ref: '#/components/schemas/delay-bind-response-failure-lockout-action-shared'
+      required:
+      - actionName
     delay-bind-response-failure-lockout-action-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Failure Lockout Action
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Failure Lockout Action
       - $ref: '#/components/schemas/delay-bind-response-failure-lockout-action-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     delay-bind-response-failure-lockout-action-shared:
       type: object
       properties:
@@ -207,22 +209,24 @@ components:
       - type: object
         properties:
           actionName:
-            description: Name of the new Failure Lockout Action
             type: string
-        required:
-        - actionName
+            description: >-
+                Name of the new Failure Lockout Action
       - $ref: '#/components/schemas/no-operation-failure-lockout-action-shared'
+      required:
+      - actionName
     no-operation-failure-lockout-action-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Failure Lockout Action
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Failure Lockout Action
       - $ref: '#/components/schemas/no-operation-failure-lockout-action-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     no-operation-failure-lockout-action-shared:
       type: object
       properties:
@@ -251,22 +255,24 @@ components:
       - type: object
         properties:
           actionName:
-            description: Name of the new Failure Lockout Action
             type: string
-        required:
-        - actionName
+            description: >-
+                Name of the new Failure Lockout Action
       - $ref: '#/components/schemas/lock-account-failure-lockout-action-shared'
+      required:
+      - actionName
     lock-account-failure-lockout-action-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Failure Lockout Action
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Failure Lockout Action
       - $ref: '#/components/schemas/lock-account-failure-lockout-action-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     lock-account-failure-lockout-action-shared:
       type: object
       properties:

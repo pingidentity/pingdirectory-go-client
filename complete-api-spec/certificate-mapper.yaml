@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access certificate-mappers
   name: certificate-mapper
@@ -166,22 +166,24 @@ components:
       - type: object
         properties:
           mapperName:
-            description: Name of the new Certificate Mapper
             type: string
-        required:
-        - mapperName
+            description: >-
+                Name of the new Certificate Mapper
       - $ref: '#/components/schemas/subject-equals-dn-certificate-mapper-shared'
+      required:
+      - mapperName
     subject-equals-dn-certificate-mapper-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Certificate Mapper
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Certificate Mapper
       - $ref: '#/components/schemas/subject-equals-dn-certificate-mapper-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     subject-equals-dn-certificate-mapper-shared:
       type: object
       properties:
@@ -211,23 +213,24 @@ components:
       - type: object
         properties:
           mapperName:
-            description: Name of the new Certificate Mapper
             type: string
-        required:
-        - mapperName
+            description: >-
+                Name of the new Certificate Mapper
       - $ref: '#/components/schemas/subject-dn-to-user-attribute-certificate-mapper-shared'
+      required:
+      - mapperName
     subject-dn-to-user-attribute-certificate-mapper-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Certificate Mapper
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Certificate Mapper
       - $ref: '#/components/schemas/subject-dn-to-user-attribute-certificate-mapper-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - subjectAttribute
     subject-dn-to-user-attribute-certificate-mapper-shared:
       type: object
@@ -268,22 +271,24 @@ components:
       - type: object
         properties:
           mapperName:
-            description: Name of the new Certificate Mapper
             type: string
-        required:
-        - mapperName
+            description: >-
+                Name of the new Certificate Mapper
       - $ref: '#/components/schemas/groovy-scripted-certificate-mapper-shared'
+      required:
+      - mapperName
     groovy-scripted-certificate-mapper-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Certificate Mapper
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Certificate Mapper
       - $ref: '#/components/schemas/groovy-scripted-certificate-mapper-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     groovy-scripted-certificate-mapper-shared:
       type: object
       properties:
@@ -324,22 +329,24 @@ components:
       - type: object
         properties:
           mapperName:
-            description: Name of the new Certificate Mapper
             type: string
-        required:
-        - mapperName
+            description: >-
+                Name of the new Certificate Mapper
       - $ref: '#/components/schemas/subject-attribute-to-user-attribute-certificate-mapper-shared'
+      required:
+      - mapperName
     subject-attribute-to-user-attribute-certificate-mapper-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Certificate Mapper
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Certificate Mapper
       - $ref: '#/components/schemas/subject-attribute-to-user-attribute-certificate-mapper-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     subject-attribute-to-user-attribute-certificate-mapper-shared:
       type: object
       properties:
@@ -377,28 +384,37 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:certificate-mapper:subject-attribute-to-user-attribute"
+    Enumcertificate-mapper-fingerprintAlgorithmProp:
+      type: string
+      enum:
+      - "md5"
+      - "sha1"
+      - "sha256"
+      description: >-
+          Specifies the name of the digest algorithm to compute the fingerprint of client certificates.
     add-fingerprint-certificate-mapper-request:
       allOf:
       - type: object
         properties:
           mapperName:
-            description: Name of the new Certificate Mapper
             type: string
-        required:
-        - mapperName
+            description: >-
+                Name of the new Certificate Mapper
       - $ref: '#/components/schemas/fingerprint-certificate-mapper-shared'
+      required:
+      - mapperName
     fingerprint-certificate-mapper-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Certificate Mapper
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Certificate Mapper
       - $ref: '#/components/schemas/fingerprint-certificate-mapper-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - fingerprintAttribute
     fingerprint-certificate-mapper-shared:
       type: object
@@ -442,22 +458,24 @@ components:
       - type: object
         properties:
           mapperName:
-            description: Name of the new Certificate Mapper
             type: string
-        required:
-        - mapperName
+            description: >-
+                Name of the new Certificate Mapper
       - $ref: '#/components/schemas/third-party-certificate-mapper-shared'
+      required:
+      - mapperName
     third-party-certificate-mapper-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Certificate Mapper
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Certificate Mapper
       - $ref: '#/components/schemas/third-party-certificate-mapper-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     third-party-certificate-mapper-shared:
       type: object
       properties:
@@ -493,14 +511,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:certificate-mapper:third-party"
-    Enumcertificate-mapper-fingerprintAlgorithmProp:
-      type: string
-      enum:
-      - "md5"
-      - "sha1"
-      - "sha256"
-      description: >-
-          Specifies the name of the digest algorithm to compute the fingerprint of client certificates.
     updateRequest:
       type: object
       properties:

@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access connection-handlers
   name: connection-handler
@@ -158,22 +158,24 @@ components:
       - type: object
         properties:
           handlerName:
-            description: Name of the new Connection Handler
             type: string
-        required:
-        - handlerName
+            description: >-
+                Name of the new Connection Handler
       - $ref: '#/components/schemas/jmx-connection-handler-shared'
+      required:
+      - handlerName
     jmx-connection-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Connection Handler
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Connection Handler
       - $ref: '#/components/schemas/jmx-connection-handler-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     jmx-connection-handler-shared:
       type: object
       properties:
@@ -227,27 +229,37 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:connection-handler:jmx"
+    Enumconnection-handler-sslClientAuthPolicyProp:
+      type: string
+      enum:
+      - "disabled"
+      - "optional"
+      - "required"
+      description: >-
+          Specifies the policy that the LDAP Connection Handler should use regarding client SSL certificates.
     add-ldap-connection-handler-request:
       allOf:
       - type: object
         properties:
           handlerName:
-            description: Name of the new Connection Handler
             type: string
-        required:
-        - handlerName
+            description: >-
+                Name of the new Connection Handler
       - $ref: '#/components/schemas/ldap-connection-handler-shared'
+      required:
+      - handlerName
     ldap-connection-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Connection Handler
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Connection Handler
       - $ref: '#/components/schemas/ldap-connection-handler-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     ldap-connection-handler-shared:
       type: object
       properties:
@@ -386,23 +398,24 @@ components:
       - type: object
         properties:
           handlerName:
-            description: Name of the new Connection Handler
             type: string
-        required:
-        - handlerName
+            description: >-
+                Name of the new Connection Handler
       - $ref: '#/components/schemas/ldif-connection-handler-shared'
+      required:
+      - handlerName
     ldif-connection-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Connection Handler
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Connection Handler
       - $ref: '#/components/schemas/ldif-connection-handler-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - ldifDirectory
       - pollInterval
     ldif-connection-handler-shared:
@@ -454,22 +467,24 @@ components:
       - type: object
         properties:
           handlerName:
-            description: Name of the new Connection Handler
             type: string
-        required:
-        - handlerName
+            description: >-
+                Name of the new Connection Handler
       - $ref: '#/components/schemas/http-connection-handler-shared'
+      required:
+      - handlerName
     http-connection-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Connection Handler
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Connection Handler
       - $ref: '#/components/schemas/http-connection-handler-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     http-connection-handler-shared:
       type: object
       properties:
@@ -611,14 +626,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:connection-handler:http"
-    Enumconnection-handler-sslClientAuthPolicyProp:
-      type: string
-      enum:
-      - "disabled"
-      - "optional"
-      - "required"
-      description: >-
-          Specifies the policy that the LDAP Connection Handler should use regarding client SSL certificates.
     updateRequest:
       type: object
       properties:

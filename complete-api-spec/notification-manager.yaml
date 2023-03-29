@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access notification-managers
   name: notification-manager
@@ -137,28 +137,37 @@ paths:
       - notification-manager
 components:
   schemas:
+    Enumnotification-manager-transactionNotificationProp:
+      type: string
+      enum:
+      - "individual"
+      - "matched-operations"
+      - "all-operations"
+      description: >-
+          Specifies how the operations in an external transaction (e.g. a multi-update extended operation or an LDAP transaction) are notified for this Notification Manager.
     add-third-party-notification-manager-request:
       allOf:
       - type: object
         properties:
           managerName:
-            description: Name of the new Notification Manager
             type: string
-        required:
-        - managerName
+            description: >-
+                Name of the new Notification Manager
       - $ref: '#/components/schemas/third-party-notification-manager-shared'
+      required:
+      - managerName
     third-party-notification-manager-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Notification Manager
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Notification Manager
       - $ref: '#/components/schemas/third-party-notification-manager-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - transactionNotification
     third-party-notification-manager-shared:
       type: object
@@ -205,14 +214,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:notification-manager:third-party"
-    Enumnotification-manager-transactionNotificationProp:
-      type: string
-      enum:
-      - "individual"
-      - "matched-operations"
-      - "all-operations"
-      description: >-
-          Specifies how the operations in an external transaction (e.g. a multi-update extended operation or an LDAP transaction) are notified for this Notification Manager.
     updateRequest:
       type: object
       properties:

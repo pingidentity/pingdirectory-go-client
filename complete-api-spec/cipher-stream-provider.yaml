@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access cipher-stream-providers
   name: cipher-stream-provider
@@ -178,23 +178,24 @@ components:
       - type: object
         properties:
           providerName:
-            description: Name of the new Cipher Stream Provider
             type: string
-        required:
-        - providerName
+            description: >-
+                Name of the new Cipher Stream Provider
       - $ref: '#/components/schemas/amazon-key-management-service-cipher-stream-provider-shared'
+      required:
+      - providerName
     amazon-key-management-service-cipher-stream-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Cipher Stream Provider
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Cipher Stream Provider
       - $ref: '#/components/schemas/amazon-key-management-service-cipher-stream-provider-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - encryptedPassphraseFile
     amazon-key-management-service-cipher-stream-provider-shared:
       type: object
@@ -251,23 +252,24 @@ components:
       - type: object
         properties:
           providerName:
-            description: Name of the new Cipher Stream Provider
             type: string
-        required:
-        - providerName
+            description: >-
+                Name of the new Cipher Stream Provider
       - $ref: '#/components/schemas/amazon-secrets-manager-cipher-stream-provider-shared'
+      required:
+      - providerName
     amazon-secrets-manager-cipher-stream-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Cipher Stream Provider
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Cipher Stream Provider
       - $ref: '#/components/schemas/amazon-secrets-manager-cipher-stream-provider-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - encryptionMetadataFile
     amazon-secrets-manager-cipher-stream-provider-shared:
       type: object
@@ -325,23 +327,24 @@ components:
       - type: object
         properties:
           providerName:
-            description: Name of the new Cipher Stream Provider
             type: string
-        required:
-        - providerName
+            description: >-
+                Name of the new Cipher Stream Provider
       - $ref: '#/components/schemas/azure-key-vault-cipher-stream-provider-shared'
+      required:
+      - providerName
     azure-key-vault-cipher-stream-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Cipher Stream Provider
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Cipher Stream Provider
       - $ref: '#/components/schemas/azure-key-vault-cipher-stream-provider-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - encryptionMetadataFile
     azure-key-vault-cipher-stream-provider-shared:
       type: object
@@ -391,22 +394,24 @@ components:
       - type: object
         properties:
           providerName:
-            description: Name of the new Cipher Stream Provider
             type: string
-        required:
-        - providerName
+            description: >-
+                Name of the new Cipher Stream Provider
       - $ref: '#/components/schemas/file-based-cipher-stream-provider-shared'
+      required:
+      - providerName
     file-based-cipher-stream-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Cipher Stream Provider
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Cipher Stream Provider
       - $ref: '#/components/schemas/file-based-cipher-stream-provider-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     file-based-cipher-stream-provider-shared:
       type: object
       properties:
@@ -445,22 +450,24 @@ components:
       - type: object
         properties:
           providerName:
-            description: Name of the new Cipher Stream Provider
             type: string
-        required:
-        - providerName
+            description: >-
+                Name of the new Cipher Stream Provider
       - $ref: '#/components/schemas/wait-for-passphrase-cipher-stream-provider-shared'
+      required:
+      - providerName
     wait-for-passphrase-cipher-stream-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Cipher Stream Provider
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Cipher Stream Provider
       - $ref: '#/components/schemas/wait-for-passphrase-cipher-stream-provider-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     wait-for-passphrase-cipher-stream-provider-shared:
       type: object
       properties:
@@ -490,23 +497,24 @@ components:
       - type: object
         properties:
           providerName:
-            description: Name of the new Cipher Stream Provider
             type: string
-        required:
-        - providerName
+            description: >-
+                Name of the new Cipher Stream Provider
       - $ref: '#/components/schemas/conjur-cipher-stream-provider-shared'
+      required:
+      - providerName
     conjur-cipher-stream-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Cipher Stream Provider
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Cipher Stream Provider
       - $ref: '#/components/schemas/conjur-cipher-stream-provider-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - encryptionMetadataFile
     conjur-cipher-stream-provider-shared:
       type: object
@@ -551,23 +559,24 @@ components:
       - type: object
         properties:
           providerName:
-            description: Name of the new Cipher Stream Provider
             type: string
-        required:
-        - providerName
+            description: >-
+                Name of the new Cipher Stream Provider
       - $ref: '#/components/schemas/pkcs11-cipher-stream-provider-shared'
+      required:
+      - providerName
     pkcs11-cipher-stream-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Cipher Stream Provider
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Cipher Stream Provider
       - $ref: '#/components/schemas/pkcs11-cipher-stream-provider-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - encryptionMetadataFile
     pkcs11-cipher-stream-provider-shared:
       type: object
@@ -632,23 +641,24 @@ components:
       - type: object
         properties:
           providerName:
-            description: Name of the new Cipher Stream Provider
             type: string
-        required:
-        - providerName
+            description: >-
+                Name of the new Cipher Stream Provider
       - $ref: '#/components/schemas/vault-cipher-stream-provider-shared'
+      required:
+      - providerName
     vault-cipher-stream-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Cipher Stream Provider
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Cipher Stream Provider
       - $ref: '#/components/schemas/vault-cipher-stream-provider-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - vaultEncryptionMetadataFile
     vault-cipher-stream-provider-shared:
       type: object
@@ -720,22 +730,24 @@ components:
       - type: object
         properties:
           providerName:
-            description: Name of the new Cipher Stream Provider
             type: string
-        required:
-        - providerName
+            description: >-
+                Name of the new Cipher Stream Provider
       - $ref: '#/components/schemas/third-party-cipher-stream-provider-shared'
+      required:
+      - providerName
     third-party-cipher-stream-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Cipher Stream Provider
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Cipher Stream Provider
       - $ref: '#/components/schemas/third-party-cipher-stream-provider-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     third-party-cipher-stream-provider-shared:
       type: object
       properties:

@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access change-subscription-handlers
   name: change-subscription-handler
@@ -154,22 +154,24 @@ components:
       - type: object
         properties:
           handlerName:
-            description: Name of the new Change Subscription Handler
             type: string
-        required:
-        - handlerName
+            description: >-
+                Name of the new Change Subscription Handler
       - $ref: '#/components/schemas/groovy-scripted-change-subscription-handler-shared'
+      required:
+      - handlerName
     groovy-scripted-change-subscription-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Change Subscription Handler
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Change Subscription Handler
       - $ref: '#/components/schemas/groovy-scripted-change-subscription-handler-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     groovy-scripted-change-subscription-handler-shared:
       type: object
       properties:
@@ -216,23 +218,24 @@ components:
       - type: object
         properties:
           handlerName:
-            description: Name of the new Change Subscription Handler
             type: string
-        required:
-        - handlerName
+            description: >-
+                Name of the new Change Subscription Handler
       - $ref: '#/components/schemas/logging-change-subscription-handler-shared'
+      required:
+      - handlerName
     logging-change-subscription-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Change Subscription Handler
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Change Subscription Handler
       - $ref: '#/components/schemas/logging-change-subscription-handler-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - logFile
     logging-change-subscription-handler-shared:
       type: object
@@ -273,22 +276,24 @@ components:
       - type: object
         properties:
           handlerName:
-            description: Name of the new Change Subscription Handler
             type: string
-        required:
-        - handlerName
+            description: >-
+                Name of the new Change Subscription Handler
       - $ref: '#/components/schemas/third-party-change-subscription-handler-shared'
+      required:
+      - handlerName
     third-party-change-subscription-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Change Subscription Handler
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Change Subscription Handler
       - $ref: '#/components/schemas/third-party-change-subscription-handler-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     third-party-change-subscription-handler-shared:
       type: object
       properties:

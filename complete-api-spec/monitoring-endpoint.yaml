@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access monitoring-endpoints
   name: monitoring-endpoint
@@ -137,28 +137,37 @@ paths:
       - monitoring-endpoint
 components:
   schemas:
+    Enummonitoring-endpoint-connectionTypeProp:
+      type: string
+      enum:
+      - "unencrypted-udp"
+      - "unencrypted-tcp"
+      - "ssl-over-tcp"
+      description: >-
+          Specifies the protocol and security that this StatsD Monitoring Endpoint should use to connect to the configured endpoint.
     add-statsd-monitoring-endpoint-request:
       allOf:
       - type: object
         properties:
           endpointName:
-            description: Name of the new Monitoring Endpoint
             type: string
-        required:
-        - endpointName
+            description: >-
+                Name of the new Monitoring Endpoint
       - $ref: '#/components/schemas/statsd-monitoring-endpoint-shared'
+      required:
+      - endpointName
     statsd-monitoring-endpoint-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Monitoring Endpoint
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Monitoring Endpoint
       - $ref: '#/components/schemas/statsd-monitoring-endpoint-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - serverPort
       - connectionType
     statsd-monitoring-endpoint-shared:
@@ -201,14 +210,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:monitoring-endpoint:statsd"
-    Enummonitoring-endpoint-connectionTypeProp:
-      type: string
-      enum:
-      - "unencrypted-udp"
-      - "unencrypted-tcp"
-      - "ssl-over-tcp"
-      description: >-
-          Specifies the protocol and security that this StatsD Monitoring Endpoint should use to connect to the configured endpoint.
     updateRequest:
       type: object
       properties:

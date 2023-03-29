@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access request-criteria
   name: request-criteria
@@ -153,27 +153,39 @@ paths:
       - request-criteria
 components:
   schemas:
+    Enumrequest-criteria-root-dse-operationTypeProp:
+      type: string
+      enum:
+      - "compare"
+      - "base-object-search"
+      - "single-level-search"
+      - "whole-subtree-search"
+      - "subordinate-subtree-search"
+      description: >-
+          The types of operations that may be matched by this Root DSE Request Criteria.
     add-root-dse-request-criteria-request:
       allOf:
       - type: object
         properties:
           criteriaName:
-            description: Name of the new Request Criteria
             type: string
-        required:
-        - criteriaName
+            description: >-
+                Name of the new Request Criteria
       - $ref: '#/components/schemas/root-dse-request-criteria-shared'
+      required:
+      - criteriaName
     root-dse-request-criteria-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Request Criteria
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Request Criteria
       - $ref: '#/components/schemas/root-dse-request-criteria-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     root-dse-request-criteria-shared:
       type: object
       properties:
@@ -197,27 +209,76 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:request-criteria:root-dse"
+    Enumrequest-criteria-simple-operationTypeProp:
+      type: string
+      enum:
+      - "abandon"
+      - "add"
+      - "bind"
+      - "compare"
+      - "delete"
+      - "extended"
+      - "modify"
+      - "modify-dn"
+      - "search"
+      - "unbind"
+      description: >-
+          Specifies the operation type(s) for operations that should be included in this Simple Request Criteria.
+    Enumrequest-criteria-operationOriginProp:
+      type: string
+      enum:
+      - "external-request"
+      - "internal-operation"
+      - "replicated-operation"
+      description: >-
+          Specifies the origin for operations to be included in this Simple Request Criteria. If no values are provided, then the operation origin will not be taken into consideration when determining whether an operation matches this Simple Request Criteria.
+    Enumrequest-criteria-targetBindTypeProp:
+      type: string
+      enum:
+      - "simple"
+      - "sasl"
+      description: >-
+          Specifies the authentication type for bind requests included in this Simple Request Criteria. This will only be taken into account for bind operations and will be ignored for any other type of operation. If no values are provided, then the authentication type will not be considered when determining whether the request should be included in this Simple Request Criteria.
+    Enumrequest-criteria-includedSearchScopeProp:
+      type: string
+      enum:
+      - "base-object"
+      - "single-level"
+      - "whole-subtree"
+      - "subordinate-subtree"
+      description: >-
+          Specifies the search scope values included in this Simple Request Criteria. This will only be taken into account for search requests and will be ignored for all other types of requests.
+    Enumrequest-criteria-usingAdministrativeSessionWorkerThreadProp:
+      type: string
+      enum:
+      - "true"
+      - "false"
+      - "any"
+      description: >-
+          Indicates whether operations being processed using a dedicated administrative session worker thread should be included in this Simple Request Criteria.
     add-simple-request-criteria-request:
       allOf:
       - type: object
         properties:
           criteriaName:
-            description: Name of the new Request Criteria
             type: string
-        required:
-        - criteriaName
+            description: >-
+                Name of the new Request Criteria
       - $ref: '#/components/schemas/simple-request-criteria-shared'
+      required:
+      - criteriaName
     simple-request-criteria-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Request Criteria
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Request Criteria
       - $ref: '#/components/schemas/simple-request-criteria-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     simple-request-criteria-shared:
       type: object
       properties:
@@ -396,22 +457,24 @@ components:
       - type: object
         properties:
           criteriaName:
-            description: Name of the new Request Criteria
             type: string
-        required:
-        - criteriaName
+            description: >-
+                Name of the new Request Criteria
       - $ref: '#/components/schemas/aggregate-request-criteria-shared'
+      required:
+      - criteriaName
     aggregate-request-criteria-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Request Criteria
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Request Criteria
       - $ref: '#/components/schemas/aggregate-request-criteria-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     aggregate-request-criteria-shared:
       type: object
       properties:
@@ -460,22 +523,24 @@ components:
       - type: object
         properties:
           criteriaName:
-            description: Name of the new Request Criteria
             type: string
-        required:
-        - criteriaName
+            description: >-
+                Name of the new Request Criteria
       - $ref: '#/components/schemas/third-party-request-criteria-shared'
+      required:
+      - criteriaName
     third-party-request-criteria-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Request Criteria
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Request Criteria
       - $ref: '#/components/schemas/third-party-request-criteria-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     third-party-request-criteria-shared:
       type: object
       properties:
@@ -506,63 +571,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:request-criteria:third-party"
-    Enumrequest-criteria-root-dse-operationTypeProp:
-      type: string
-      enum:
-      - "compare"
-      - "base-object-search"
-      - "single-level-search"
-      - "whole-subtree-search"
-      - "subordinate-subtree-search"
-      description: >-
-          The types of operations that may be matched by this Root DSE Request Criteria.
-    Enumrequest-criteria-usingAdministrativeSessionWorkerThreadProp:
-      type: string
-      enum:
-      - "true"
-      - "false"
-      - "any"
-      description: >-
-          Indicates whether operations being processed using a dedicated administrative session worker thread should be included in this Simple Request Criteria.
-    Enumrequest-criteria-simple-operationTypeProp:
-      type: string
-      enum:
-      - "abandon"
-      - "add"
-      - "bind"
-      - "compare"
-      - "delete"
-      - "extended"
-      - "modify"
-      - "modify-dn"
-      - "search"
-      - "unbind"
-      description: >-
-          Specifies the operation type(s) for operations that should be included in this Simple Request Criteria.
-    Enumrequest-criteria-includedSearchScopeProp:
-      type: string
-      enum:
-      - "base-object"
-      - "single-level"
-      - "whole-subtree"
-      - "subordinate-subtree"
-      description: >-
-          Specifies the search scope values included in this Simple Request Criteria. This will only be taken into account for search requests and will be ignored for all other types of requests.
-    Enumrequest-criteria-targetBindTypeProp:
-      type: string
-      enum:
-      - "simple"
-      - "sasl"
-      description: >-
-          Specifies the authentication type for bind requests included in this Simple Request Criteria. This will only be taken into account for bind operations and will be ignored for any other type of operation. If no values are provided, then the authentication type will not be considered when determining whether the request should be included in this Simple Request Criteria.
-    Enumrequest-criteria-operationOriginProp:
-      type: string
-      enum:
-      - "external-request"
-      - "internal-operation"
-      - "replicated-operation"
-      description: >-
-          Specifies the origin for operations to be included in this Simple Request Criteria. If no values are provided, then the operation origin will not be taken into consideration when determining whether an operation matches this Simple Request Criteria.
     updateRequest:
       type: object
       properties:

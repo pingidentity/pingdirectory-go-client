@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access connection-criteria
   name: connection-criteria
@@ -149,27 +149,234 @@ paths:
       - connection-criteria
 components:
   schemas:
+    Enumconnection-criteria-communicationSecurityLevelProp:
+      type: string
+      enum:
+      - "any"
+      - "secure-only"
+      - "insecure-only"
+      description: >-
+          Indicates whether this Simple Connection Criteria should require or allow clients using a secure communication channel.
+    Enumconnection-criteria-userAuthTypeProp:
+      type: string
+      enum:
+      - "none"
+      - "simple"
+      - "sasl"
+      - "internal"
+      description: >-
+          Specifies the authentication types for client connections that may be included in this Simple Connection Criteria.
+    Enumconnection-criteria-authenticationSecurityLevelProp:
+      type: string
+      enum:
+      - "any"
+      - "secure-only"
+      - "insecure-only"
+      description: >-
+          Indicates whether this Simple Connection Criteria should require or allow clients that authenticated using a secure manner. This will only be taken into account for client connections that have authenticated to the server and will be ignored for unauthenticated client connections.
+    Enumconnection-criteria-allIncludedUserPrivilegeProp:
+      type: string
+      enum:
+      - "audit-data-security"
+      - "bypass-acl"
+      - "bypass-read-acl"
+      - "modify-acl"
+      - "config-read"
+      - "config-write"
+      - "jmx-read"
+      - "jmx-write"
+      - "jmx-notify"
+      - "ldif-import"
+      - "ldif-export"
+      - "backend-backup"
+      - "backend-restore"
+      - "server-shutdown"
+      - "server-restart"
+      - "proxied-auth"
+      - "disconnect-client"
+      - "password-reset"
+      - "update-schema"
+      - "privilege-change"
+      - "unindexed-search"
+      - "unindexed-search-with-control"
+      - "bypass-pw-policy"
+      - "lockdown-mode"
+      - "stream-values"
+      - "third-party-task"
+      - "use-admin-session"
+      - "soft-delete-read"
+      - "metrics-read"
+      - "remote-log-read"
+      - "manage-topology"
+      - "permit-get-password-policy-state-issues"
+      - "permit-proxied-mschapv2-details"
+      - "permit-externally-processed-authentication"
+      - "permit-export-reversible-passwords"
+      - "permit-forwarding-client-connection-policy"
+      - "exec-task"
+      - "collect-support-data"
+      - "file-servlet-access"
+      - "permit-replace-certificate-request"
+      description: >-
+          Specifies the name of a privilege that must be held by the authenticated user for clients included in this Simple Connection Criteria. If any privilege names are provided, then the authenticated user must have all of those privileges. This will only be taken into account for client connections that have authenticated to the server and will be ignored for unauthenticated client connections.
+    Enumconnection-criteria-anyIncludedUserPrivilegeProp:
+      type: string
+      enum:
+      - "audit-data-security"
+      - "bypass-acl"
+      - "bypass-read-acl"
+      - "modify-acl"
+      - "config-read"
+      - "config-write"
+      - "jmx-read"
+      - "jmx-write"
+      - "jmx-notify"
+      - "ldif-import"
+      - "ldif-export"
+      - "backend-backup"
+      - "backend-restore"
+      - "server-shutdown"
+      - "server-restart"
+      - "proxied-auth"
+      - "disconnect-client"
+      - "password-reset"
+      - "update-schema"
+      - "privilege-change"
+      - "unindexed-search"
+      - "unindexed-search-with-control"
+      - "bypass-pw-policy"
+      - "lockdown-mode"
+      - "stream-values"
+      - "third-party-task"
+      - "use-admin-session"
+      - "soft-delete-read"
+      - "metrics-read"
+      - "remote-log-read"
+      - "manage-topology"
+      - "permit-get-password-policy-state-issues"
+      - "permit-proxied-mschapv2-details"
+      - "permit-externally-processed-authentication"
+      - "permit-export-reversible-passwords"
+      - "permit-forwarding-client-connection-policy"
+      - "exec-task"
+      - "collect-support-data"
+      - "file-servlet-access"
+      - "permit-replace-certificate-request"
+      description: >-
+          Specifies the name of a privilege that may be held by the authenticated user for clients included in this Simple Connection Criteria. If any privilege names are provided, then the authenticated user must have at least one of those privileges. This will only be taken into account for client connections that have authenticated to the server and will be ignored for unauthenticated client connections.
+    Enumconnection-criteria-notAllIncludedUserPrivilegeProp:
+      type: string
+      enum:
+      - "audit-data-security"
+      - "bypass-acl"
+      - "bypass-read-acl"
+      - "modify-acl"
+      - "config-read"
+      - "config-write"
+      - "jmx-read"
+      - "jmx-write"
+      - "jmx-notify"
+      - "ldif-import"
+      - "ldif-export"
+      - "backend-backup"
+      - "backend-restore"
+      - "server-shutdown"
+      - "server-restart"
+      - "proxied-auth"
+      - "disconnect-client"
+      - "password-reset"
+      - "update-schema"
+      - "privilege-change"
+      - "unindexed-search"
+      - "unindexed-search-with-control"
+      - "bypass-pw-policy"
+      - "lockdown-mode"
+      - "stream-values"
+      - "third-party-task"
+      - "use-admin-session"
+      - "soft-delete-read"
+      - "metrics-read"
+      - "remote-log-read"
+      - "manage-topology"
+      - "permit-get-password-policy-state-issues"
+      - "permit-proxied-mschapv2-details"
+      - "permit-externally-processed-authentication"
+      - "permit-export-reversible-passwords"
+      - "permit-forwarding-client-connection-policy"
+      - "exec-task"
+      - "collect-support-data"
+      - "file-servlet-access"
+      - "permit-replace-certificate-request"
+      description: >-
+          Specifies the name of a privilege that should not be held by the authenticated user for clients included in this Simple Connection Criteria. If any privilege names are provided, then the authenticated user must not have at least one of those privileges (that is, the user may hold zero or more of those privileges, but not all of them). This will only be taken into account for client connections that have authenticated to the server and will be ignored for unauthenticated client connections.
+    Enumconnection-criteria-noneIncludedUserPrivilegeProp:
+      type: string
+      enum:
+      - "audit-data-security"
+      - "bypass-acl"
+      - "bypass-read-acl"
+      - "modify-acl"
+      - "config-read"
+      - "config-write"
+      - "jmx-read"
+      - "jmx-write"
+      - "jmx-notify"
+      - "ldif-import"
+      - "ldif-export"
+      - "backend-backup"
+      - "backend-restore"
+      - "server-shutdown"
+      - "server-restart"
+      - "proxied-auth"
+      - "disconnect-client"
+      - "password-reset"
+      - "update-schema"
+      - "privilege-change"
+      - "unindexed-search"
+      - "unindexed-search-with-control"
+      - "bypass-pw-policy"
+      - "lockdown-mode"
+      - "stream-values"
+      - "third-party-task"
+      - "use-admin-session"
+      - "soft-delete-read"
+      - "metrics-read"
+      - "remote-log-read"
+      - "manage-topology"
+      - "permit-get-password-policy-state-issues"
+      - "permit-proxied-mschapv2-details"
+      - "permit-externally-processed-authentication"
+      - "permit-export-reversible-passwords"
+      - "permit-forwarding-client-connection-policy"
+      - "exec-task"
+      - "collect-support-data"
+      - "file-servlet-access"
+      - "permit-replace-certificate-request"
+      description: >-
+          Specifies the name of a privilege that must not be held by the authenticated user for clients included in this Simple Connection Criteria. If any privilege names are provided, then the authenticated user must not have any of those privileges. This will only be taken into account for client connections that have authenticated to the server and will be ignored for unauthenticated client connections.
     add-simple-connection-criteria-request:
       allOf:
       - type: object
         properties:
           criteriaName:
-            description: Name of the new Connection Criteria
             type: string
-        required:
-        - criteriaName
+            description: >-
+                Name of the new Connection Criteria
       - $ref: '#/components/schemas/simple-connection-criteria-shared'
+      required:
+      - criteriaName
     simple-connection-criteria-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Connection Criteria
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Connection Criteria
       - $ref: '#/components/schemas/simple-connection-criteria-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     simple-connection-criteria-shared:
       type: object
       properties:
@@ -326,22 +533,24 @@ components:
       - type: object
         properties:
           criteriaName:
-            description: Name of the new Connection Criteria
             type: string
-        required:
-        - criteriaName
+            description: >-
+                Name of the new Connection Criteria
       - $ref: '#/components/schemas/aggregate-connection-criteria-shared'
+      required:
+      - criteriaName
     aggregate-connection-criteria-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Connection Criteria
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Connection Criteria
       - $ref: '#/components/schemas/aggregate-connection-criteria-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     aggregate-connection-criteria-shared:
       type: object
       properties:
@@ -390,22 +599,24 @@ components:
       - type: object
         properties:
           criteriaName:
-            description: Name of the new Connection Criteria
             type: string
-        required:
-        - criteriaName
+            description: >-
+                Name of the new Connection Criteria
       - $ref: '#/components/schemas/third-party-connection-criteria-shared'
+      required:
+      - criteriaName
     third-party-connection-criteria-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Connection Criteria
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Connection Criteria
       - $ref: '#/components/schemas/third-party-connection-criteria-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     third-party-connection-criteria-shared:
       type: object
       properties:
@@ -436,211 +647,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:connection-criteria:third-party"
-    Enumconnection-criteria-userAuthTypeProp:
-      type: string
-      enum:
-      - "none"
-      - "simple"
-      - "sasl"
-      - "internal"
-      description: >-
-          Specifies the authentication types for client connections that may be included in this Simple Connection Criteria.
-    Enumconnection-criteria-noneIncludedUserPrivilegeProp:
-      type: string
-      enum:
-      - "audit-data-security"
-      - "bypass-acl"
-      - "bypass-read-acl"
-      - "modify-acl"
-      - "config-read"
-      - "config-write"
-      - "jmx-read"
-      - "jmx-write"
-      - "jmx-notify"
-      - "ldif-import"
-      - "ldif-export"
-      - "backend-backup"
-      - "backend-restore"
-      - "server-shutdown"
-      - "server-restart"
-      - "proxied-auth"
-      - "disconnect-client"
-      - "password-reset"
-      - "update-schema"
-      - "privilege-change"
-      - "unindexed-search"
-      - "unindexed-search-with-control"
-      - "bypass-pw-policy"
-      - "lockdown-mode"
-      - "stream-values"
-      - "third-party-task"
-      - "use-admin-session"
-      - "soft-delete-read"
-      - "metrics-read"
-      - "remote-log-read"
-      - "manage-topology"
-      - "permit-get-password-policy-state-issues"
-      - "permit-proxied-mschapv2-details"
-      - "permit-externally-processed-authentication"
-      - "permit-export-reversible-passwords"
-      - "permit-forwarding-client-connection-policy"
-      - "exec-task"
-      - "collect-support-data"
-      - "file-servlet-access"
-      - "permit-replace-certificate-request"
-      description: >-
-          Specifies the name of a privilege that must not be held by the authenticated user for clients included in this Simple Connection Criteria. If any privilege names are provided, then the authenticated user must not have any of those privileges. This will only be taken into account for client connections that have authenticated to the server and will be ignored for unauthenticated client connections.
-    Enumconnection-criteria-authenticationSecurityLevelProp:
-      type: string
-      enum:
-      - "any"
-      - "secure-only"
-      - "insecure-only"
-      description: >-
-          Indicates whether this Simple Connection Criteria should require or allow clients that authenticated using a secure manner. This will only be taken into account for client connections that have authenticated to the server and will be ignored for unauthenticated client connections.
-    Enumconnection-criteria-allIncludedUserPrivilegeProp:
-      type: string
-      enum:
-      - "audit-data-security"
-      - "bypass-acl"
-      - "bypass-read-acl"
-      - "modify-acl"
-      - "config-read"
-      - "config-write"
-      - "jmx-read"
-      - "jmx-write"
-      - "jmx-notify"
-      - "ldif-import"
-      - "ldif-export"
-      - "backend-backup"
-      - "backend-restore"
-      - "server-shutdown"
-      - "server-restart"
-      - "proxied-auth"
-      - "disconnect-client"
-      - "password-reset"
-      - "update-schema"
-      - "privilege-change"
-      - "unindexed-search"
-      - "unindexed-search-with-control"
-      - "bypass-pw-policy"
-      - "lockdown-mode"
-      - "stream-values"
-      - "third-party-task"
-      - "use-admin-session"
-      - "soft-delete-read"
-      - "metrics-read"
-      - "remote-log-read"
-      - "manage-topology"
-      - "permit-get-password-policy-state-issues"
-      - "permit-proxied-mschapv2-details"
-      - "permit-externally-processed-authentication"
-      - "permit-export-reversible-passwords"
-      - "permit-forwarding-client-connection-policy"
-      - "exec-task"
-      - "collect-support-data"
-      - "file-servlet-access"
-      - "permit-replace-certificate-request"
-      description: >-
-          Specifies the name of a privilege that must be held by the authenticated user for clients included in this Simple Connection Criteria. If any privilege names are provided, then the authenticated user must have all of those privileges. This will only be taken into account for client connections that have authenticated to the server and will be ignored for unauthenticated client connections.
-    Enumconnection-criteria-anyIncludedUserPrivilegeProp:
-      type: string
-      enum:
-      - "audit-data-security"
-      - "bypass-acl"
-      - "bypass-read-acl"
-      - "modify-acl"
-      - "config-read"
-      - "config-write"
-      - "jmx-read"
-      - "jmx-write"
-      - "jmx-notify"
-      - "ldif-import"
-      - "ldif-export"
-      - "backend-backup"
-      - "backend-restore"
-      - "server-shutdown"
-      - "server-restart"
-      - "proxied-auth"
-      - "disconnect-client"
-      - "password-reset"
-      - "update-schema"
-      - "privilege-change"
-      - "unindexed-search"
-      - "unindexed-search-with-control"
-      - "bypass-pw-policy"
-      - "lockdown-mode"
-      - "stream-values"
-      - "third-party-task"
-      - "use-admin-session"
-      - "soft-delete-read"
-      - "metrics-read"
-      - "remote-log-read"
-      - "manage-topology"
-      - "permit-get-password-policy-state-issues"
-      - "permit-proxied-mschapv2-details"
-      - "permit-externally-processed-authentication"
-      - "permit-export-reversible-passwords"
-      - "permit-forwarding-client-connection-policy"
-      - "exec-task"
-      - "collect-support-data"
-      - "file-servlet-access"
-      - "permit-replace-certificate-request"
-      description: >-
-          Specifies the name of a privilege that may be held by the authenticated user for clients included in this Simple Connection Criteria. If any privilege names are provided, then the authenticated user must have at least one of those privileges. This will only be taken into account for client connections that have authenticated to the server and will be ignored for unauthenticated client connections.
-    Enumconnection-criteria-communicationSecurityLevelProp:
-      type: string
-      enum:
-      - "any"
-      - "secure-only"
-      - "insecure-only"
-      description: >-
-          Indicates whether this Simple Connection Criteria should require or allow clients using a secure communication channel.
-    Enumconnection-criteria-notAllIncludedUserPrivilegeProp:
-      type: string
-      enum:
-      - "audit-data-security"
-      - "bypass-acl"
-      - "bypass-read-acl"
-      - "modify-acl"
-      - "config-read"
-      - "config-write"
-      - "jmx-read"
-      - "jmx-write"
-      - "jmx-notify"
-      - "ldif-import"
-      - "ldif-export"
-      - "backend-backup"
-      - "backend-restore"
-      - "server-shutdown"
-      - "server-restart"
-      - "proxied-auth"
-      - "disconnect-client"
-      - "password-reset"
-      - "update-schema"
-      - "privilege-change"
-      - "unindexed-search"
-      - "unindexed-search-with-control"
-      - "bypass-pw-policy"
-      - "lockdown-mode"
-      - "stream-values"
-      - "third-party-task"
-      - "use-admin-session"
-      - "soft-delete-read"
-      - "metrics-read"
-      - "remote-log-read"
-      - "manage-topology"
-      - "permit-get-password-policy-state-issues"
-      - "permit-proxied-mschapv2-details"
-      - "permit-externally-processed-authentication"
-      - "permit-export-reversible-passwords"
-      - "permit-forwarding-client-connection-policy"
-      - "exec-task"
-      - "collect-support-data"
-      - "file-servlet-access"
-      - "permit-replace-certificate-request"
-      description: >-
-          Specifies the name of a privilege that should not be held by the authenticated user for clients included in this Simple Connection Criteria. If any privilege names are provided, then the authenticated user must not have at least one of those privileges (that is, the user may hold zero or more of those privileges, but not all of them). This will only be taken into account for client connections that have authenticated to the server and will be ignored for unauthenticated client connections.
     updateRequest:
       type: object
       properties:

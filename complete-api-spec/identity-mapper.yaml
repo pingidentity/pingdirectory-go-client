@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access identity-mappers
   name: identity-mapper
@@ -162,23 +162,24 @@ components:
       - type: object
         properties:
           mapperName:
-            description: Name of the new Identity Mapper
             type: string
-        required:
-        - mapperName
+            description: >-
+                Name of the new Identity Mapper
       - $ref: '#/components/schemas/exact-match-identity-mapper-shared'
+      required:
+      - mapperName
     exact-match-identity-mapper-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Identity Mapper
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Identity Mapper
       - $ref: '#/components/schemas/exact-match-identity-mapper-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - matchAttribute
     exact-match-identity-mapper-shared:
       type: object
@@ -225,22 +226,24 @@ components:
       - type: object
         properties:
           mapperName:
-            description: Name of the new Identity Mapper
             type: string
-        required:
-        - mapperName
+            description: >-
+                Name of the new Identity Mapper
       - $ref: '#/components/schemas/groovy-scripted-identity-mapper-shared'
+      required:
+      - mapperName
     groovy-scripted-identity-mapper-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Identity Mapper
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Identity Mapper
       - $ref: '#/components/schemas/groovy-scripted-identity-mapper-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     groovy-scripted-identity-mapper-shared:
       type: object
       properties:
@@ -281,23 +284,24 @@ components:
       - type: object
         properties:
           mapperName:
-            description: Name of the new Identity Mapper
             type: string
-        required:
-        - mapperName
+            description: >-
+                Name of the new Identity Mapper
       - $ref: '#/components/schemas/regular-expression-identity-mapper-shared'
+      required:
+      - mapperName
     regular-expression-identity-mapper-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Identity Mapper
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Identity Mapper
       - $ref: '#/components/schemas/regular-expression-identity-mapper-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - matchAttribute
     regular-expression-identity-mapper-shared:
       type: object
@@ -353,22 +357,24 @@ components:
       - type: object
         properties:
           mapperName:
-            description: Name of the new Identity Mapper
             type: string
-        required:
-        - mapperName
+            description: >-
+                Name of the new Identity Mapper
       - $ref: '#/components/schemas/aggregate-identity-mapper-shared'
+      required:
+      - mapperName
     aggregate-identity-mapper-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Identity Mapper
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Identity Mapper
       - $ref: '#/components/schemas/aggregate-identity-mapper-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     aggregate-identity-mapper-shared:
       type: object
       properties:
@@ -410,22 +416,24 @@ components:
       - type: object
         properties:
           mapperName:
-            description: Name of the new Identity Mapper
             type: string
-        required:
-        - mapperName
+            description: >-
+                Name of the new Identity Mapper
       - $ref: '#/components/schemas/third-party-identity-mapper-shared'
+      required:
+      - mapperName
     third-party-identity-mapper-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Identity Mapper
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Identity Mapper
       - $ref: '#/components/schemas/third-party-identity-mapper-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     third-party-identity-mapper-shared:
       type: object
       properties:

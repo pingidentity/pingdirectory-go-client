@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access azure-authentication-methods
   name: azure-authentication-method
@@ -154,22 +154,24 @@ components:
       - type: object
         properties:
           methodName:
-            description: Name of the new Azure Authentication Method
             type: string
-        required:
-        - methodName
+            description: >-
+                Name of the new Azure Authentication Method
       - $ref: '#/components/schemas/default-azure-authentication-method-shared'
+      required:
+      - methodName
     default-azure-authentication-method-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Azure Authentication Method
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Azure Authentication Method
       - $ref: '#/components/schemas/default-azure-authentication-method-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     default-azure-authentication-method-shared:
       type: object
       properties:
@@ -202,22 +204,24 @@ components:
       - type: object
         properties:
           methodName:
-            description: Name of the new Azure Authentication Method
             type: string
-        required:
-        - methodName
+            description: >-
+                Name of the new Azure Authentication Method
       - $ref: '#/components/schemas/client-secret-azure-authentication-method-shared'
+      required:
+      - methodName
     client-secret-azure-authentication-method-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Azure Authentication Method
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Azure Authentication Method
       - $ref: '#/components/schemas/client-secret-azure-authentication-method-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     client-secret-azure-authentication-method-shared:
       type: object
       properties:
@@ -258,22 +262,24 @@ components:
       - type: object
         properties:
           methodName:
-            description: Name of the new Azure Authentication Method
             type: string
-        required:
-        - methodName
+            description: >-
+                Name of the new Azure Authentication Method
       - $ref: '#/components/schemas/username-password-azure-authentication-method-shared'
+      required:
+      - methodName
     username-password-azure-authentication-method-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Azure Authentication Method
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Azure Authentication Method
       - $ref: '#/components/schemas/username-password-azure-authentication-method-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     username-password-azure-authentication-method-shared:
       type: object
       properties:

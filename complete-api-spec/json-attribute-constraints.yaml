@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access json-attribute-constraints
   name: json-attribute-constraints
@@ -300,22 +300,24 @@ components:
       - type: object
         properties:
           attributeType:
-            description: Name of the new JSON Attribute Constraints
             type: string
-        required:
-        - attributeType
+            description: >-
+                Name of the new JSON Attribute Constraints
       - $ref: '#/components/schemas/json-attribute-constraints-shared'
+      required:
+      - attributeType
     json-attribute-constraints-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the JSON Attribute Constraints
             type: string
-        required:
-        - id
+            description: >-
+                Name of the JSON Attribute Constraints
       - $ref: '#/components/schemas/json-attribute-constraints-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     json-attribute-constraints-shared:
       type: object
       properties:
@@ -347,27 +349,57 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:json-attribute-constraints"
+    Enumjson-field-constraints-valueTypeProp:
+      type: string
+      enum:
+      - "any"
+      - "boolean"
+      - "integer"
+      - "null"
+      - "number"
+      - "object"
+      - "string"
+      description: >-
+          The data type that will be required for values of the target field.
+    Enumjson-field-constraints-isArrayProp:
+      type: string
+      enum:
+      - "required"
+      - "optional"
+      - "prohibited"
+      description: >-
+          Indicates whether the value of the target field may be an array of values rather than a single value. If this property is set to "required" or "optional", then the constraints defined for this field will be applied to each element of the array.
+    Enumjson-field-constraints-cacheModeProp:
+      type: string
+      enum:
+      - "cache-keys-and-values"
+      - "cache-keys-only"
+      - "no-caching"
+      description: >-
+          Specifies the behavior that the server should exhibit when caching data for the associated JSON index. This can be useful in environments in which the system does not have enough memory to fully cache the entire data set, as it makes it possible to prioritize which data is the most important to keep in memory.
     add-json-field-constraints-request:
       allOf:
       - type: object
         properties:
           jsonField:
-            description: Name of the new JSON Field Constraints
             type: string
-        required:
-        - jsonField
+            description: >-
+                Name of the new JSON Field Constraints
       - $ref: '#/components/schemas/json-field-constraints-shared'
+      required:
+      - jsonField
     json-field-constraints-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the JSON Field Constraints
             type: string
-        required:
-        - id
+            description: >-
+                Name of the JSON Attribute Constraints
       - $ref: '#/components/schemas/json-field-constraints-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     json-field-constraints-shared:
       type: object
       properties:
@@ -462,34 +494,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:json-field-constraints"
-    Enumjson-field-constraints-valueTypeProp:
-      type: string
-      enum:
-      - "any"
-      - "boolean"
-      - "integer"
-      - "null"
-      - "number"
-      - "object"
-      - "string"
-      description: >-
-          The data type that will be required for values of the target field.
-    Enumjson-field-constraints-cacheModeProp:
-      type: string
-      enum:
-      - "cache-keys-and-values"
-      - "cache-keys-only"
-      - "no-caching"
-      description: >-
-          Specifies the behavior that the server should exhibit when caching data for the associated JSON index. This can be useful in environments in which the system does not have enough memory to fully cache the entire data set, as it makes it possible to prioritize which data is the most important to keep in memory.
-    Enumjson-field-constraints-isArrayProp:
-      type: string
-      enum:
-      - "required"
-      - "optional"
-      - "prohibited"
-      description: >-
-          Indicates whether the value of the target field may be an array of values rather than a single value. If this property is set to "required" or "optional", then the constraints defined for this field will be applied to each element of the array.
     updateRequest:
       type: object
       properties:

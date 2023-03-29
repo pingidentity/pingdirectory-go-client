@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access pass-through-authentication-handlers
   name: pass-through-authentication-handler
@@ -145,28 +145,37 @@ paths:
       - pass-through-authentication-handler
 components:
   schemas:
+    Enumpass-through-authentication-handler-serverAccessModeProp:
+      type: string
+      enum:
+      - "round-robin"
+      - "failover-on-unavailable"
+      - "failover-on-any-failure"
+      description: >-
+          Specifies the manner in which external servers should be used for pass-through authentication attempts if multiple servers are defined.
     add-ldap-pass-through-authentication-handler-request:
       allOf:
       - type: object
         properties:
           handlerName:
-            description: Name of the new Pass Through Authentication Handler
             type: string
-        required:
-        - handlerName
+            description: >-
+                Name of the new Pass Through Authentication Handler
       - $ref: '#/components/schemas/ldap-pass-through-authentication-handler-shared'
+      required:
+      - handlerName
     ldap-pass-through-authentication-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Pass Through Authentication Handler
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Pass Through Authentication Handler
       - $ref: '#/components/schemas/ldap-pass-through-authentication-handler-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - serverAccessMode
       - initialConnections
       - maxConnections
@@ -245,22 +254,24 @@ components:
       - type: object
         properties:
           handlerName:
-            description: Name of the new Pass Through Authentication Handler
             type: string
-        required:
-        - handlerName
+            description: >-
+                Name of the new Pass Through Authentication Handler
       - $ref: '#/components/schemas/third-party-pass-through-authentication-handler-shared'
+      required:
+      - handlerName
     third-party-pass-through-authentication-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Pass Through Authentication Handler
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Pass Through Authentication Handler
       - $ref: '#/components/schemas/third-party-pass-through-authentication-handler-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     third-party-pass-through-authentication-handler-shared:
       type: object
       properties:
@@ -291,14 +302,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:pass-through-authentication-handler:third-party"
-    Enumpass-through-authentication-handler-serverAccessModeProp:
-      type: string
-      enum:
-      - "round-robin"
-      - "failover-on-unavailable"
-      - "failover-on-any-failure"
-      description: >-
-          Specifies the manner in which external servers should be used for pass-through authentication attempts if multiple servers are defined.
     updateRequest:
       type: object
       properties:

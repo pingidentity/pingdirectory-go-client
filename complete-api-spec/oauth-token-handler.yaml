@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access oauth-token-handlers
   name: oauth-token-handler
@@ -150,22 +150,24 @@ components:
       - type: object
         properties:
           handlerName:
-            description: Name of the new OAuth Token Handler
             type: string
-        required:
-        - handlerName
+            description: >-
+                Name of the new OAuth Token Handler
       - $ref: '#/components/schemas/groovy-scripted-oauth-token-handler-shared'
+      required:
+      - handlerName
     groovy-scripted-oauth-token-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the OAuth Token Handler
             type: string
-        required:
-        - id
+            description: >-
+                Name of the OAuth Token Handler
       - $ref: '#/components/schemas/groovy-scripted-oauth-token-handler-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     groovy-scripted-oauth-token-handler-shared:
       type: object
       properties:
@@ -201,22 +203,24 @@ components:
       - type: object
         properties:
           handlerName:
-            description: Name of the new OAuth Token Handler
             type: string
-        required:
-        - handlerName
+            description: >-
+                Name of the new OAuth Token Handler
       - $ref: '#/components/schemas/third-party-oauth-token-handler-shared'
+      required:
+      - handlerName
     third-party-oauth-token-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the OAuth Token Handler
             type: string
-        required:
-        - id
+            description: >-
+                Name of the OAuth Token Handler
       - $ref: '#/components/schemas/third-party-oauth-token-handler-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     third-party-oauth-token-handler-shared:
       type: object
       properties:

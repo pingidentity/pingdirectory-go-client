@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access topology-admin-users
   name: topology-admin-user
@@ -137,28 +137,122 @@ paths:
       - topology-admin-user
 components:
   schemas:
+    Enumtopology-admin-user-privilegeProp:
+      type: string
+      enum:
+      - "audit-data-security"
+      - "-audit-data-security"
+      - "bypass-acl"
+      - "-bypass-acl"
+      - "bypass-read-acl"
+      - "-bypass-read-acl"
+      - "modify-acl"
+      - "-modify-acl"
+      - "config-read"
+      - "-config-read"
+      - "config-write"
+      - "-config-write"
+      - "jmx-read"
+      - "-jmx-read"
+      - "jmx-write"
+      - "-jmx-write"
+      - "jmx-notify"
+      - "-jmx-notify"
+      - "ldif-import"
+      - "-ldif-import"
+      - "ldif-export"
+      - "-ldif-export"
+      - "backend-backup"
+      - "-backend-backup"
+      - "backend-restore"
+      - "-backend-restore"
+      - "server-shutdown"
+      - "-server-shutdown"
+      - "server-restart"
+      - "-server-restart"
+      - "proxied-auth"
+      - "-proxied-auth"
+      - "disconnect-client"
+      - "-disconnect-client"
+      - "password-reset"
+      - "-password-reset"
+      - "update-schema"
+      - "-update-schema"
+      - "privilege-change"
+      - "-privilege-change"
+      - "unindexed-search"
+      - "-unindexed-search"
+      - "unindexed-search-with-control"
+      - "-unindexed-search-with-control"
+      - "bypass-pw-policy"
+      - "-bypass-pw-policy"
+      - "lockdown-mode"
+      - "-lockdown-mode"
+      - "stream-values"
+      - "-stream-values"
+      - "third-party-task"
+      - "-third-party-task"
+      - "use-admin-session"
+      - "-use-admin-session"
+      - "soft-delete-read"
+      - "-soft-delete-read"
+      - "metrics-read"
+      - "-metrics-read"
+      - "remote-log-read"
+      - "-remote-log-read"
+      - "manage-topology"
+      - "-manage-topology"
+      - "permit-get-password-policy-state-issues"
+      - "-permit-get-password-policy-state-issues"
+      - "permit-proxied-mschapv2-details"
+      - "-permit-proxied-mschapv2-details"
+      - "permit-externally-processed-authentication"
+      - "-permit-externally-processed-authentication"
+      - "permit-export-reversible-passwords"
+      - "-permit-export-reversible-passwords"
+      - "permit-forwarding-client-connection-policy"
+      - "-permit-forwarding-client-connection-policy"
+      - "exec-task"
+      - "-exec-task"
+      - "collect-support-data"
+      - "-collect-support-data"
+      - "file-servlet-access"
+      - "-file-servlet-access"
+      - "permit-replace-certificate-request"
+      - "-permit-replace-certificate-request"
+      description: >-
+          Privileges that are either explicitly granted or revoked from the root user. Privileges can be revoked by including a minus sign (-) before the privilege name. This is stored in the ds-privilege-name LDAP attribute.
+    Enumtopology-admin-user-isProxyableProp:
+      type: string
+      enum:
+      - "allowed"
+      - "prohibited"
+      - "required"
+      description: >-
+          This can be used to indicate whether the User can be used as an alternate authorization identity (using the proxied authorization v1 or v2 control, the intermediate client control, or a SASL mechanism that allows specifying an alternate authorization identity).
     add-topology-admin-user-request:
       allOf:
       - type: object
         properties:
           userName:
-            description: Name of the new Topology Admin User
             type: string
-        required:
-        - userName
+            description: >-
+                Name of the new Topology Admin User
       - $ref: '#/components/schemas/topology-admin-user-shared'
+      required:
+      - userName
     topology-admin-user-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Topology Admin User
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Topology Admin User
       - $ref: '#/components/schemas/topology-admin-user-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - inheritDefaultRootPrivileges
       - searchResultEntryLimit
       - timeLimitSeconds
@@ -345,99 +439,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:topology-admin-user"
-    Enumtopology-admin-user-isProxyableProp:
-      type: string
-      enum:
-      - "allowed"
-      - "prohibited"
-      - "required"
-      description: >-
-          This can be used to indicate whether the User can be used as an alternate authorization identity (using the proxied authorization v1 or v2 control, the intermediate client control, or a SASL mechanism that allows specifying an alternate authorization identity).
-    Enumtopology-admin-user-privilegeProp:
-      type: string
-      enum:
-      - "audit-data-security"
-      - "-audit-data-security"
-      - "bypass-acl"
-      - "-bypass-acl"
-      - "bypass-read-acl"
-      - "-bypass-read-acl"
-      - "modify-acl"
-      - "-modify-acl"
-      - "config-read"
-      - "-config-read"
-      - "config-write"
-      - "-config-write"
-      - "jmx-read"
-      - "-jmx-read"
-      - "jmx-write"
-      - "-jmx-write"
-      - "jmx-notify"
-      - "-jmx-notify"
-      - "ldif-import"
-      - "-ldif-import"
-      - "ldif-export"
-      - "-ldif-export"
-      - "backend-backup"
-      - "-backend-backup"
-      - "backend-restore"
-      - "-backend-restore"
-      - "server-shutdown"
-      - "-server-shutdown"
-      - "server-restart"
-      - "-server-restart"
-      - "proxied-auth"
-      - "-proxied-auth"
-      - "disconnect-client"
-      - "-disconnect-client"
-      - "password-reset"
-      - "-password-reset"
-      - "update-schema"
-      - "-update-schema"
-      - "privilege-change"
-      - "-privilege-change"
-      - "unindexed-search"
-      - "-unindexed-search"
-      - "unindexed-search-with-control"
-      - "-unindexed-search-with-control"
-      - "bypass-pw-policy"
-      - "-bypass-pw-policy"
-      - "lockdown-mode"
-      - "-lockdown-mode"
-      - "stream-values"
-      - "-stream-values"
-      - "third-party-task"
-      - "-third-party-task"
-      - "use-admin-session"
-      - "-use-admin-session"
-      - "soft-delete-read"
-      - "-soft-delete-read"
-      - "metrics-read"
-      - "-metrics-read"
-      - "remote-log-read"
-      - "-remote-log-read"
-      - "manage-topology"
-      - "-manage-topology"
-      - "permit-get-password-policy-state-issues"
-      - "-permit-get-password-policy-state-issues"
-      - "permit-proxied-mschapv2-details"
-      - "-permit-proxied-mschapv2-details"
-      - "permit-externally-processed-authentication"
-      - "-permit-externally-processed-authentication"
-      - "permit-export-reversible-passwords"
-      - "-permit-export-reversible-passwords"
-      - "permit-forwarding-client-connection-policy"
-      - "-permit-forwarding-client-connection-policy"
-      - "exec-task"
-      - "-exec-task"
-      - "collect-support-data"
-      - "-collect-support-data"
-      - "file-servlet-access"
-      - "-file-servlet-access"
-      - "permit-replace-certificate-request"
-      - "-permit-replace-certificate-request"
-      description: >-
-          Privileges that are either explicitly granted or revoked from the root user. Privileges can be revoked by including a minus sign (-) before the privilege name. This is stored in the ds-privilege-name LDAP attribute.
     updateRequest:
       type: object
       properties:

@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access server-groups
   name: server-group
@@ -142,22 +142,24 @@ components:
       - type: object
         properties:
           groupName:
-            description: Name of the new Server Group
             type: string
-        required:
-        - groupName
+            description: >-
+                Name of the new Server Group
       - $ref: '#/components/schemas/server-group-shared'
+      required:
+      - groupName
     server-group-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Server Group
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Server Group
       - $ref: '#/components/schemas/server-group-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     server-group-shared:
       type: object
       properties:

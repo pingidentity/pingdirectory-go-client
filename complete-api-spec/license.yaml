@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access the License
   name: license
@@ -64,7 +64,6 @@ components:
   schemas:
     license-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -77,6 +76,7 @@ components:
             type: string
             description: >-
                 License key enabling use of Directory Server, Directory Proxy Server, Data Sync Server, and Data Metrics Server products.
+      - $ref: '#/components/schemas/meta'
     EnumlicenseSchemaUrn:
       type: string
       enum:

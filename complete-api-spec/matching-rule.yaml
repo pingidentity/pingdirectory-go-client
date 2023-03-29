@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access matching-rules
   name: matching-rule
@@ -92,7 +92,6 @@ components:
   schemas:
     ordering-matching-rule-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -102,23 +101,24 @@ components:
             items:
               $ref: '#/components/schemas/Enumordering-matching-ruleSchemaUrn'
           id:
-            description: Name of the Matching Rule
             type: string
+            description: >-
+                Name of the Matching Rule
           enabled:
             type: boolean
             description: >-
                 Indicates whether the Matching Rule is enabled for use.
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumordering-matching-ruleSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:matching-rule:ordering"
     approximate-matching-rule-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -128,23 +128,24 @@ components:
             items:
               $ref: '#/components/schemas/Enumapproximate-matching-ruleSchemaUrn'
           id:
-            description: Name of the Matching Rule
             type: string
+            description: >-
+                Name of the Matching Rule
           enabled:
             type: boolean
             description: >-
                 Indicates whether the Matching Rule is enabled for use.
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumapproximate-matching-ruleSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:matching-rule:approximate"
     equality-matching-rule-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -154,23 +155,24 @@ components:
             items:
               $ref: '#/components/schemas/Enumequality-matching-ruleSchemaUrn'
           id:
-            description: Name of the Matching Rule
             type: string
+            description: >-
+                Name of the Matching Rule
           enabled:
             type: boolean
             description: >-
                 Indicates whether the Matching Rule is enabled for use.
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumequality-matching-ruleSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:matching-rule:equality"
     substring-matching-rule-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -180,23 +182,24 @@ components:
             items:
               $ref: '#/components/schemas/Enumsubstring-matching-ruleSchemaUrn'
           id:
-            description: Name of the Matching Rule
             type: string
+            description: >-
+                Name of the Matching Rule
           enabled:
             type: boolean
             description: >-
                 Indicates whether the Matching Rule is enabled for use.
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumsubstring-matching-ruleSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:matching-rule:substring"
     generic-matching-rule-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -206,16 +209,18 @@ components:
             items:
               $ref: '#/components/schemas/Enumgeneric-matching-ruleSchemaUrn'
           id:
-            description: Name of the Matching Rule
             type: string
+            description: >-
+                Name of the Matching Rule
           enabled:
             type: boolean
             description: >-
                 Indicates whether the Matching Rule is enabled for use.
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumgeneric-matching-ruleSchemaUrn:
       type: string
       enum:

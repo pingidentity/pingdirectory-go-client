@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access search-entry-criteria
   name: search-entry-criteria
@@ -154,22 +154,24 @@ components:
       - type: object
         properties:
           criteriaName:
-            description: Name of the new Search Entry Criteria
             type: string
-        required:
-        - criteriaName
+            description: >-
+                Name of the new Search Entry Criteria
       - $ref: '#/components/schemas/simple-search-entry-criteria-shared'
+      required:
+      - criteriaName
     simple-search-entry-criteria-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Search Entry Criteria
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Search Entry Criteria
       - $ref: '#/components/schemas/simple-search-entry-criteria-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     simple-search-entry-criteria-shared:
       type: object
       properties:
@@ -282,22 +284,24 @@ components:
       - type: object
         properties:
           criteriaName:
-            description: Name of the new Search Entry Criteria
             type: string
-        required:
-        - criteriaName
+            description: >-
+                Name of the new Search Entry Criteria
       - $ref: '#/components/schemas/aggregate-search-entry-criteria-shared'
+      required:
+      - criteriaName
     aggregate-search-entry-criteria-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Search Entry Criteria
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Search Entry Criteria
       - $ref: '#/components/schemas/aggregate-search-entry-criteria-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     aggregate-search-entry-criteria-shared:
       type: object
       properties:
@@ -346,22 +350,24 @@ components:
       - type: object
         properties:
           criteriaName:
-            description: Name of the new Search Entry Criteria
             type: string
-        required:
-        - criteriaName
+            description: >-
+                Name of the new Search Entry Criteria
       - $ref: '#/components/schemas/third-party-search-entry-criteria-shared'
+      required:
+      - criteriaName
     third-party-search-entry-criteria-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Search Entry Criteria
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Search Entry Criteria
       - $ref: '#/components/schemas/third-party-search-entry-criteria-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     third-party-search-entry-criteria-shared:
       type: object
       properties:

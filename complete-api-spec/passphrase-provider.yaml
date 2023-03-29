@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
 tags:
 - description: Access passphrase-providers
   name: passphrase-provider
@@ -174,22 +174,24 @@ components:
       - type: object
         properties:
           providerName:
-            description: Name of the new Passphrase Provider
             type: string
-        required:
-        - providerName
+            description: >-
+                Name of the new Passphrase Provider
       - $ref: '#/components/schemas/environment-variable-passphrase-provider-shared'
+      required:
+      - providerName
     environment-variable-passphrase-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Passphrase Provider
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Passphrase Provider
       - $ref: '#/components/schemas/environment-variable-passphrase-provider-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     environment-variable-passphrase-provider-shared:
       type: object
       properties:
@@ -224,22 +226,24 @@ components:
       - type: object
         properties:
           providerName:
-            description: Name of the new Passphrase Provider
             type: string
-        required:
-        - providerName
+            description: >-
+                Name of the new Passphrase Provider
       - $ref: '#/components/schemas/amazon-secrets-manager-passphrase-provider-shared'
+      required:
+      - providerName
     amazon-secrets-manager-passphrase-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Passphrase Provider
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Passphrase Provider
       - $ref: '#/components/schemas/amazon-secrets-manager-passphrase-provider-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     amazon-secrets-manager-passphrase-provider-shared:
       type: object
       properties:
@@ -296,22 +300,24 @@ components:
       - type: object
         properties:
           providerName:
-            description: Name of the new Passphrase Provider
             type: string
-        required:
-        - providerName
+            description: >-
+                Name of the new Passphrase Provider
       - $ref: '#/components/schemas/obscured-value-passphrase-provider-shared'
+      required:
+      - providerName
     obscured-value-passphrase-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Passphrase Provider
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Passphrase Provider
       - $ref: '#/components/schemas/obscured-value-passphrase-provider-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     obscured-value-passphrase-provider-shared:
       type: object
       properties:
@@ -347,22 +353,24 @@ components:
       - type: object
         properties:
           providerName:
-            description: Name of the new Passphrase Provider
             type: string
-        required:
-        - providerName
+            description: >-
+                Name of the new Passphrase Provider
       - $ref: '#/components/schemas/azure-key-vault-passphrase-provider-shared'
+      required:
+      - providerName
     azure-key-vault-passphrase-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Passphrase Provider
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Passphrase Provider
       - $ref: '#/components/schemas/azure-key-vault-passphrase-provider-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     azure-key-vault-passphrase-provider-shared:
       type: object
       properties:
@@ -411,22 +419,24 @@ components:
       - type: object
         properties:
           providerName:
-            description: Name of the new Passphrase Provider
             type: string
-        required:
-        - providerName
+            description: >-
+                Name of the new Passphrase Provider
       - $ref: '#/components/schemas/file-based-passphrase-provider-shared'
+      required:
+      - providerName
     file-based-passphrase-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Passphrase Provider
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Passphrase Provider
       - $ref: '#/components/schemas/file-based-passphrase-provider-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     file-based-passphrase-provider-shared:
       type: object
       properties:
@@ -465,22 +475,24 @@ components:
       - type: object
         properties:
           providerName:
-            description: Name of the new Passphrase Provider
             type: string
-        required:
-        - providerName
+            description: >-
+                Name of the new Passphrase Provider
       - $ref: '#/components/schemas/conjur-passphrase-provider-shared'
+      required:
+      - providerName
     conjur-passphrase-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Passphrase Provider
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Passphrase Provider
       - $ref: '#/components/schemas/conjur-passphrase-provider-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     conjur-passphrase-provider-shared:
       type: object
       properties:
@@ -524,22 +536,24 @@ components:
       - type: object
         properties:
           providerName:
-            description: Name of the new Passphrase Provider
             type: string
-        required:
-        - providerName
+            description: >-
+                Name of the new Passphrase Provider
       - $ref: '#/components/schemas/vault-passphrase-provider-shared'
+      required:
+      - providerName
     vault-passphrase-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Passphrase Provider
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Passphrase Provider
       - $ref: '#/components/schemas/vault-passphrase-provider-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     vault-passphrase-provider-shared:
       type: object
       properties:
@@ -588,22 +602,24 @@ components:
       - type: object
         properties:
           providerName:
-            description: Name of the new Passphrase Provider
             type: string
-        required:
-        - providerName
+            description: >-
+                Name of the new Passphrase Provider
       - $ref: '#/components/schemas/third-party-passphrase-provider-shared'
+      required:
+      - providerName
     third-party-passphrase-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Passphrase Provider
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Passphrase Provider
       - $ref: '#/components/schemas/third-party-passphrase-provider-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     third-party-passphrase-provider-shared:
       type: object
       properties:
