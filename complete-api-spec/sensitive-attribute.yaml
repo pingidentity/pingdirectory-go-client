@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access sensitive-attributes
   name: sensitive-attribute
@@ -137,27 +137,69 @@ paths:
       - sensitive-attribute
 components:
   schemas:
+    Enumsensitive-attribute-allowInReturnedEntriesProp:
+      type: string
+      enum:
+      - "allow"
+      - "suppress"
+      - "secure-only"
+      description: >-
+          Indicates whether sensitive attributes should be included in entries returned to the client. This includes not only search result entries, but also other forms including in the values of controls like the pre-read, post-read, get authorization entry, and LDAP join response controls.
+    Enumsensitive-attribute-allowInFilterProp:
+      type: string
+      enum:
+      - "allow"
+      - "reject"
+      - "secure-only"
+      description: >-
+          Indicates whether clients will be allowed to include sensitive attributes in search filters. This also includes filters that may be used in other forms, including assertion and LDAP join request controls.
+    Enumsensitive-attribute-allowInAddProp:
+      type: string
+      enum:
+      - "allow"
+      - "reject"
+      - "secure-only"
+      description: >-
+          Indicates whether clients will be allowed to include sensitive attributes in add requests.
+    Enumsensitive-attribute-allowInCompareProp:
+      type: string
+      enum:
+      - "allow"
+      - "reject"
+      - "secure-only"
+      description: >-
+          Indicates whether clients will be allowed to target sensitive attributes with compare requests.
+    Enumsensitive-attribute-allowInModifyProp:
+      type: string
+      enum:
+      - "allow"
+      - "reject"
+      - "secure-only"
+      description: >-
+          Indicates whether clients will be allowed to target sensitive attributes with modify requests.
     add-sensitive-attribute-request:
       allOf:
       - type: object
         properties:
           attributeName:
-            description: Name of the new Sensitive Attribute
             type: string
-        required:
-        - attributeName
+            description: >-
+                Name of the new Sensitive Attribute
       - $ref: '#/components/schemas/sensitive-attribute-shared'
+      required:
+      - attributeName
     sensitive-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Sensitive Attribute
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Sensitive Attribute
       - $ref: '#/components/schemas/sensitive-attribute-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     sensitive-attribute-shared:
       type: object
       properties:
@@ -197,46 +239,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:sensitive-attribute"
-    Enumsensitive-attribute-allowInAddProp:
-      type: string
-      enum:
-      - "allow"
-      - "reject"
-      - "secure-only"
-      description: >-
-          Indicates whether clients will be allowed to include sensitive attributes in add requests.
-    Enumsensitive-attribute-allowInReturnedEntriesProp:
-      type: string
-      enum:
-      - "allow"
-      - "suppress"
-      - "secure-only"
-      description: >-
-          Indicates whether sensitive attributes should be included in entries returned to the client. This includes not only search result entries, but also other forms including in the values of controls like the pre-read, post-read, get authorization entry, and LDAP join response controls.
-    Enumsensitive-attribute-allowInFilterProp:
-      type: string
-      enum:
-      - "allow"
-      - "reject"
-      - "secure-only"
-      description: >-
-          Indicates whether clients will be allowed to include sensitive attributes in search filters. This also includes filters that may be used in other forms, including assertion and LDAP join request controls.
-    Enumsensitive-attribute-allowInModifyProp:
-      type: string
-      enum:
-      - "allow"
-      - "reject"
-      - "secure-only"
-      description: >-
-          Indicates whether clients will be allowed to target sensitive attributes with modify requests.
-    Enumsensitive-attribute-allowInCompareProp:
-      type: string
-      enum:
-      - "allow"
-      - "reject"
-      - "secure-only"
-      description: >-
-          Indicates whether clients will be allowed to target sensitive attributes with compare requests.
     updateRequest:
       type: object
       properties:

@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access the Root DN
   name: root-dn
@@ -187,9 +187,53 @@ paths:
       - root-dn-user
 components:
   schemas:
+    Enumroot-dn-defaultRootPrivilegeNameProp:
+      type: string
+      enum:
+      - "audit-data-security"
+      - "bypass-acl"
+      - "bypass-read-acl"
+      - "modify-acl"
+      - "config-read"
+      - "config-write"
+      - "jmx-read"
+      - "jmx-write"
+      - "jmx-notify"
+      - "ldif-import"
+      - "ldif-export"
+      - "backend-backup"
+      - "backend-restore"
+      - "server-shutdown"
+      - "server-restart"
+      - "proxied-auth"
+      - "disconnect-client"
+      - "password-reset"
+      - "update-schema"
+      - "privilege-change"
+      - "unindexed-search"
+      - "unindexed-search-with-control"
+      - "bypass-pw-policy"
+      - "lockdown-mode"
+      - "stream-values"
+      - "third-party-task"
+      - "use-admin-session"
+      - "soft-delete-read"
+      - "metrics-read"
+      - "remote-log-read"
+      - "manage-topology"
+      - "permit-get-password-policy-state-issues"
+      - "permit-proxied-mschapv2-details"
+      - "permit-externally-processed-authentication"
+      - "permit-export-reversible-passwords"
+      - "permit-forwarding-client-connection-policy"
+      - "exec-task"
+      - "collect-support-data"
+      - "file-servlet-access"
+      - "permit-replace-certificate-request"
+      description: >-
+          Specifies the names of the privileges that root users will be granted by default.
     root-dn-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -202,32 +246,127 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Enumroot-dn-defaultRootPrivilegeNameProp'
+      - $ref: '#/components/schemas/meta'
     Enumroot-dnSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:root-dn"
+    Enumroot-dn-user-privilegeProp:
+      type: string
+      enum:
+      - "audit-data-security"
+      - "-audit-data-security"
+      - "bypass-acl"
+      - "-bypass-acl"
+      - "bypass-read-acl"
+      - "-bypass-read-acl"
+      - "modify-acl"
+      - "-modify-acl"
+      - "config-read"
+      - "-config-read"
+      - "config-write"
+      - "-config-write"
+      - "jmx-read"
+      - "-jmx-read"
+      - "jmx-write"
+      - "-jmx-write"
+      - "jmx-notify"
+      - "-jmx-notify"
+      - "ldif-import"
+      - "-ldif-import"
+      - "ldif-export"
+      - "-ldif-export"
+      - "backend-backup"
+      - "-backend-backup"
+      - "backend-restore"
+      - "-backend-restore"
+      - "server-shutdown"
+      - "-server-shutdown"
+      - "server-restart"
+      - "-server-restart"
+      - "proxied-auth"
+      - "-proxied-auth"
+      - "disconnect-client"
+      - "-disconnect-client"
+      - "password-reset"
+      - "-password-reset"
+      - "update-schema"
+      - "-update-schema"
+      - "privilege-change"
+      - "-privilege-change"
+      - "unindexed-search"
+      - "-unindexed-search"
+      - "unindexed-search-with-control"
+      - "-unindexed-search-with-control"
+      - "bypass-pw-policy"
+      - "-bypass-pw-policy"
+      - "lockdown-mode"
+      - "-lockdown-mode"
+      - "stream-values"
+      - "-stream-values"
+      - "third-party-task"
+      - "-third-party-task"
+      - "use-admin-session"
+      - "-use-admin-session"
+      - "soft-delete-read"
+      - "-soft-delete-read"
+      - "metrics-read"
+      - "-metrics-read"
+      - "remote-log-read"
+      - "-remote-log-read"
+      - "manage-topology"
+      - "-manage-topology"
+      - "permit-get-password-policy-state-issues"
+      - "-permit-get-password-policy-state-issues"
+      - "permit-proxied-mschapv2-details"
+      - "-permit-proxied-mschapv2-details"
+      - "permit-externally-processed-authentication"
+      - "-permit-externally-processed-authentication"
+      - "permit-export-reversible-passwords"
+      - "-permit-export-reversible-passwords"
+      - "permit-forwarding-client-connection-policy"
+      - "-permit-forwarding-client-connection-policy"
+      - "exec-task"
+      - "-exec-task"
+      - "collect-support-data"
+      - "-collect-support-data"
+      - "file-servlet-access"
+      - "-file-servlet-access"
+      - "permit-replace-certificate-request"
+      - "-permit-replace-certificate-request"
+      description: >-
+          Privileges that are either explicitly granted or revoked from the root user. Privileges can be revoked by including a minus sign (-) before the privilege name. This is stored in the ds-privilege-name LDAP attribute.
+    Enumroot-dn-user-isProxyableProp:
+      type: string
+      enum:
+      - "allowed"
+      - "prohibited"
+      - "required"
+      description: >-
+          This can be used to indicate whether the User can be used as an alternate authorization identity (using the proxied authorization v1 or v2 control, the intermediate client control, or a SASL mechanism that allows specifying an alternate authorization identity).
     add-root-dn-user-request:
       allOf:
       - type: object
         properties:
           userName:
-            description: Name of the new Root DN User
             type: string
-        required:
-        - userName
+            description: >-
+                Name of the new Root DN User
       - $ref: '#/components/schemas/root-dn-user-shared'
+      required:
+      - userName
     root-dn-user-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Root DN User
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Root DN
       - $ref: '#/components/schemas/root-dn-user-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - inheritDefaultRootPrivileges
       - searchResultEntryLimit
       - timeLimitSeconds
@@ -414,144 +553,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:root-dn-user"
-    Enumroot-dn-user-isProxyableProp:
-      type: string
-      enum:
-      - "allowed"
-      - "prohibited"
-      - "required"
-      description: >-
-          This can be used to indicate whether the User can be used as an alternate authorization identity (using the proxied authorization v1 or v2 control, the intermediate client control, or a SASL mechanism that allows specifying an alternate authorization identity).
-    Enumroot-dn-defaultRootPrivilegeNameProp:
-      type: string
-      enum:
-      - "audit-data-security"
-      - "bypass-acl"
-      - "bypass-read-acl"
-      - "modify-acl"
-      - "config-read"
-      - "config-write"
-      - "jmx-read"
-      - "jmx-write"
-      - "jmx-notify"
-      - "ldif-import"
-      - "ldif-export"
-      - "backend-backup"
-      - "backend-restore"
-      - "server-shutdown"
-      - "server-restart"
-      - "proxied-auth"
-      - "disconnect-client"
-      - "password-reset"
-      - "update-schema"
-      - "privilege-change"
-      - "unindexed-search"
-      - "unindexed-search-with-control"
-      - "bypass-pw-policy"
-      - "lockdown-mode"
-      - "stream-values"
-      - "third-party-task"
-      - "use-admin-session"
-      - "soft-delete-read"
-      - "metrics-read"
-      - "remote-log-read"
-      - "manage-topology"
-      - "permit-get-password-policy-state-issues"
-      - "permit-proxied-mschapv2-details"
-      - "permit-externally-processed-authentication"
-      - "permit-export-reversible-passwords"
-      - "permit-forwarding-client-connection-policy"
-      - "exec-task"
-      - "collect-support-data"
-      - "file-servlet-access"
-      - "permit-replace-certificate-request"
-      description: >-
-          Specifies the names of the privileges that root users will be granted by default.
-    Enumroot-dn-user-privilegeProp:
-      type: string
-      enum:
-      - "audit-data-security"
-      - "-audit-data-security"
-      - "bypass-acl"
-      - "-bypass-acl"
-      - "bypass-read-acl"
-      - "-bypass-read-acl"
-      - "modify-acl"
-      - "-modify-acl"
-      - "config-read"
-      - "-config-read"
-      - "config-write"
-      - "-config-write"
-      - "jmx-read"
-      - "-jmx-read"
-      - "jmx-write"
-      - "-jmx-write"
-      - "jmx-notify"
-      - "-jmx-notify"
-      - "ldif-import"
-      - "-ldif-import"
-      - "ldif-export"
-      - "-ldif-export"
-      - "backend-backup"
-      - "-backend-backup"
-      - "backend-restore"
-      - "-backend-restore"
-      - "server-shutdown"
-      - "-server-shutdown"
-      - "server-restart"
-      - "-server-restart"
-      - "proxied-auth"
-      - "-proxied-auth"
-      - "disconnect-client"
-      - "-disconnect-client"
-      - "password-reset"
-      - "-password-reset"
-      - "update-schema"
-      - "-update-schema"
-      - "privilege-change"
-      - "-privilege-change"
-      - "unindexed-search"
-      - "-unindexed-search"
-      - "unindexed-search-with-control"
-      - "-unindexed-search-with-control"
-      - "bypass-pw-policy"
-      - "-bypass-pw-policy"
-      - "lockdown-mode"
-      - "-lockdown-mode"
-      - "stream-values"
-      - "-stream-values"
-      - "third-party-task"
-      - "-third-party-task"
-      - "use-admin-session"
-      - "-use-admin-session"
-      - "soft-delete-read"
-      - "-soft-delete-read"
-      - "metrics-read"
-      - "-metrics-read"
-      - "remote-log-read"
-      - "-remote-log-read"
-      - "manage-topology"
-      - "-manage-topology"
-      - "permit-get-password-policy-state-issues"
-      - "-permit-get-password-policy-state-issues"
-      - "permit-proxied-mschapv2-details"
-      - "-permit-proxied-mschapv2-details"
-      - "permit-externally-processed-authentication"
-      - "-permit-externally-processed-authentication"
-      - "permit-export-reversible-passwords"
-      - "-permit-export-reversible-passwords"
-      - "permit-forwarding-client-connection-policy"
-      - "-permit-forwarding-client-connection-policy"
-      - "exec-task"
-      - "-exec-task"
-      - "collect-support-data"
-      - "-collect-support-data"
-      - "file-servlet-access"
-      - "-file-servlet-access"
-      - "permit-replace-certificate-request"
-      - "-permit-replace-certificate-request"
-      description: >-
-          Privileges that are either explicitly granted or revoked from the root user. Privileges can be revoked by including a minus sign (-) before the privilege name. This is stored in the ds-privilege-name LDAP attribute.
     updateRequest:
       type: object
       properties:

@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access recurring-task-chains
   name: recurring-task-chain
@@ -137,127 +137,23 @@ paths:
       - recurring-task-chain
 components:
   schemas:
-    add-recurring-task-chain-request:
-      allOf:
-      - type: object
-        properties:
-          chainName:
-            description: Name of the new Recurring Task Chain
-            type: string
-        required:
-        - chainName
-      - $ref: '#/components/schemas/recurring-task-chain-shared'
-    recurring-task-chain-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - type: object
-        properties:
-          id:
-            description: Name of the Recurring Task Chain
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/recurring-task-chain-shared'
-      required:
-      - enabled
-      - scheduledMonth
-    recurring-task-chain-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumrecurring-task-chainSchemaUrn'
-        description:
-          type: string
-          description: >-
-              A description for this Recurring Task Chain
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether this Recurring Task Chain is enabled for use. Recurring Task Chains that are disabled will not have any new instances scheduled, but instances that are already scheduled will be preserved. Those instances may be manually canceled if desired.
-        recurringTask:
-          type: array
-          items:
-            type: string
-          description: >-
-              The set of recurring tasks that make up this chain. At least one value must be provided. If multiple values are given, then the task instances will be invoked in the order in which they are listed.
-        scheduledMonth:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enumrecurring-task-chain-scheduledMonthProp'
-        scheduledDateSelectionType:
-          $ref: '#/components/schemas/Enumrecurring-task-chain-scheduledDateSelectionTypeProp'
-        scheduledDayOfTheWeek:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enumrecurring-task-chain-scheduledDayOfTheWeekProp'
-        scheduledDayOfTheMonth:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enumrecurring-task-chain-scheduledDayOfTheMonthProp'
-        scheduledTimeOfDay:
-          type: array
-          items:
-            type: string
-          description: >-
-              The time of day at which instances of the Recurring Task Chain should be eligible to start running. Values should be in the format HH:MM (where HH is a two-digit representation of the hour of the day, between 00 and 23, inclusive), and MM is a two-digit representation of the minute of the hour (between 00 and 59, inclusive). Alternately, the value can be in the form *:MM, which indicates that the task should be eligible to start at the specified minute of every hour. At least one value must be provided, but multiple values may be given to indicate multiple start times within the same day.
-        timeZone:
-          type: string
-          description: >-
-              The time zone that will be used to interpret the scheduled-time-of-day values. If no value is provided, then the JVM's default time zone will be used.
-        interruptedByShutdownBehavior:
-          $ref: '#/components/schemas/Enumrecurring-task-chain-interruptedByShutdownBehaviorProp'
-        serverOfflineAtStartTimeBehavior:
-          $ref: '#/components/schemas/Enumrecurring-task-chain-serverOfflineAtStartTimeBehaviorProp'
-      required:
-      - recurringTask
-      - scheduledDateSelectionType
-      - scheduledTimeOfDay
-    Enumrecurring-task-chainSchemaUrn:
+    Enumrecurring-task-chain-scheduledMonthProp:
       type: string
       enum:
-      - "urn:pingidentity:schemas:configuration:2.0:recurring-task-chain"
-    Enumrecurring-task-chain-scheduledDayOfTheMonthProp:
-      type: string
-      enum:
-      - "day-01"
-      - "day-02"
-      - "day-03"
-      - "day-04"
-      - "day-05"
-      - "day-06"
-      - "day-07"
-      - "day-08"
-      - "day-09"
-      - "day-10"
-      - "day-11"
-      - "day-12"
-      - "day-13"
-      - "day-14"
-      - "day-15"
-      - "day-16"
-      - "day-17"
-      - "day-18"
-      - "day-19"
-      - "day-20"
-      - "day-21"
-      - "day-22"
-      - "day-23"
-      - "day-24"
-      - "day-25"
-      - "day-26"
-      - "day-27"
-      - "day-28"
-      - "day-29"
-      - "day-30"
-      - "day-31"
-      - "next-to-last-day-of-the-month"
-      - "last-day-of-the-month"
+      - "january"
+      - "february"
+      - "march"
+      - "april"
+      - "may"
+      - "june"
+      - "july"
+      - "august"
+      - "september"
+      - "october"
+      - "november"
+      - "december"
       description: >-
-          The specific days of the month on which instances of this Recurring Task Chain may be scheduled to start. If the scheduled-day-selection-type property has a value of selected-days-of-the-month, then this property must have one or more values; otherwise, it must be left undefined.
+          The months of the year in which instances of this Recurring Task Chain may be scheduled to start.
     Enumrecurring-task-chain-scheduledDateSelectionTypeProp:
       type: string
       enum:
@@ -320,6 +216,44 @@ components:
       - "last-saturday-of-the-month"
       description: >-
           The specific days of the week on which instances of this Recurring Task Chain may be scheduled to start. If the scheduled-day-selection-type property has a value of selected-days-of-the-week, then this property must have one or more values; otherwise, it must be left undefined.
+    Enumrecurring-task-chain-scheduledDayOfTheMonthProp:
+      type: string
+      enum:
+      - "day-01"
+      - "day-02"
+      - "day-03"
+      - "day-04"
+      - "day-05"
+      - "day-06"
+      - "day-07"
+      - "day-08"
+      - "day-09"
+      - "day-10"
+      - "day-11"
+      - "day-12"
+      - "day-13"
+      - "day-14"
+      - "day-15"
+      - "day-16"
+      - "day-17"
+      - "day-18"
+      - "day-19"
+      - "day-20"
+      - "day-21"
+      - "day-22"
+      - "day-23"
+      - "day-24"
+      - "day-25"
+      - "day-26"
+      - "day-27"
+      - "day-28"
+      - "day-29"
+      - "day-30"
+      - "day-31"
+      - "next-to-last-day-of-the-month"
+      - "last-day-of-the-month"
+      description: >-
+          The specific days of the month on which instances of this Recurring Task Chain may be scheduled to start. If the scheduled-day-selection-type property has a value of selected-days-of-the-month, then this property must have one or more values; otherwise, it must be left undefined.
     Enumrecurring-task-chain-interruptedByShutdownBehaviorProp:
       type: string
       enum:
@@ -327,23 +261,6 @@ components:
       - "cancel-only-interrupted-task-but-preserve-dependencies"
       description: >-
           Specifies the behavior that the server should exhibit if it is shut down or abnormally terminated while an instance of this Recurring Task Chain is running.
-    Enumrecurring-task-chain-scheduledMonthProp:
-      type: string
-      enum:
-      - "january"
-      - "february"
-      - "march"
-      - "april"
-      - "may"
-      - "june"
-      - "july"
-      - "august"
-      - "september"
-      - "october"
-      - "november"
-      - "december"
-      description: >-
-          The months of the year in which instances of this Recurring Task Chain may be scheduled to start.
     Enumrecurring-task-chain-serverOfflineAtStartTimeBehaviorProp:
       type: string
       enum:
@@ -351,6 +268,90 @@ components:
       - "cancel-iteration-and-wait-for-next-scheduled-start-time"
       description: >-
           Specifies the behavior that the server should exhibit if it is offline when the start time arrives for the tasks in this Recurring Task Chain.
+    add-recurring-task-chain-request:
+      allOf:
+      - type: object
+        properties:
+          chainName:
+            type: string
+            description: >-
+                Name of the new Recurring Task Chain
+      - $ref: '#/components/schemas/recurring-task-chain-shared'
+      required:
+      - chainName
+    recurring-task-chain-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the Recurring Task Chain
+      - $ref: '#/components/schemas/recurring-task-chain-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - enabled
+      - scheduledMonth
+    recurring-task-chain-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumrecurring-task-chainSchemaUrn'
+        description:
+          type: string
+          description: >-
+              A description for this Recurring Task Chain
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether this Recurring Task Chain is enabled for use. Recurring Task Chains that are disabled will not have any new instances scheduled, but instances that are already scheduled will be preserved. Those instances may be manually canceled if desired.
+        recurringTask:
+          type: array
+          items:
+            type: string
+          description: >-
+              The set of recurring tasks that make up this chain. At least one value must be provided. If multiple values are given, then the task instances will be invoked in the order in which they are listed.
+        scheduledMonth:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumrecurring-task-chain-scheduledMonthProp'
+        scheduledDateSelectionType:
+          $ref: '#/components/schemas/Enumrecurring-task-chain-scheduledDateSelectionTypeProp'
+        scheduledDayOfTheWeek:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumrecurring-task-chain-scheduledDayOfTheWeekProp'
+        scheduledDayOfTheMonth:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumrecurring-task-chain-scheduledDayOfTheMonthProp'
+        scheduledTimeOfDay:
+          type: array
+          items:
+            type: string
+          description: >-
+              The time of day at which instances of the Recurring Task Chain should be eligible to start running. Values should be in the format HH:MM (where HH is a two-digit representation of the hour of the day, between 00 and 23, inclusive), and MM is a two-digit representation of the minute of the hour (between 00 and 59, inclusive). Alternately, the value can be in the form *:MM, which indicates that the task should be eligible to start at the specified minute of every hour. At least one value must be provided, but multiple values may be given to indicate multiple start times within the same day.
+        timeZone:
+          type: string
+          description: >-
+              The time zone that will be used to interpret the scheduled-time-of-day values. If no value is provided, then the JVM's default time zone will be used.
+        interruptedByShutdownBehavior:
+          $ref: '#/components/schemas/Enumrecurring-task-chain-interruptedByShutdownBehaviorProp'
+        serverOfflineAtStartTimeBehavior:
+          $ref: '#/components/schemas/Enumrecurring-task-chain-serverOfflineAtStartTimeBehaviorProp'
+      required:
+      - recurringTask
+      - scheduledDateSelectionType
+      - scheduledTimeOfDay
+    Enumrecurring-task-chainSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:recurring-task-chain"
     updateRequest:
       type: object
       properties:

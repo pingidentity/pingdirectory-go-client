@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access data-security-auditors
   name: data-security-auditor
@@ -193,28 +193,38 @@ paths:
       - data-security-auditor
 components:
   schemas:
+    Enumdata-security-auditor-auditSeverityProp:
+      type: string
+      enum:
+      - "error"
+      - "warning"
+      - "notice"
+      - "verbose"
+      description: >-
+          Specifies the severity of events to include in the report.
     add-expired-password-data-security-auditor-request:
       allOf:
       - type: object
         properties:
           auditorName:
-            description: Name of the new Data Security Auditor
             type: string
-        required:
-        - auditorName
+            description: >-
+                Name of the new Data Security Auditor
       - $ref: '#/components/schemas/expired-password-data-security-auditor-shared'
+      required:
+      - auditorName
     expired-password-data-security-auditor-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Data Security Auditor
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Data Security Auditor
       - $ref: '#/components/schemas/expired-password-data-security-auditor-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - reportFile
       - enabled
     expired-password-data-security-auditor-shared:
@@ -263,23 +273,24 @@ components:
       - type: object
         properties:
           auditorName:
-            description: Name of the new Data Security Auditor
             type: string
-        required:
-        - auditorName
+            description: >-
+                Name of the new Data Security Auditor
       - $ref: '#/components/schemas/idle-account-data-security-auditor-shared'
+      required:
+      - auditorName
     idle-account-data-security-auditor-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Data Security Auditor
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Data Security Auditor
       - $ref: '#/components/schemas/idle-account-data-security-auditor-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - reportFile
       - enabled
     idle-account-data-security-auditor-shared:
@@ -341,23 +352,24 @@ components:
       - type: object
         properties:
           auditorName:
-            description: Name of the new Data Security Auditor
             type: string
-        required:
-        - auditorName
+            description: >-
+                Name of the new Data Security Auditor
       - $ref: '#/components/schemas/disabled-account-data-security-auditor-shared'
+      required:
+      - auditorName
     disabled-account-data-security-auditor-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Data Security Auditor
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Data Security Auditor
       - $ref: '#/components/schemas/disabled-account-data-security-auditor-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - reportFile
       - enabled
     disabled-account-data-security-auditor-shared:
@@ -397,28 +409,38 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:data-security-auditor:disabled-account"
+    Enumdata-security-auditor-weakCryptEncodingProp:
+      type: string
+      enum:
+      - "crypt"
+      - "md5"
+      - "sha-2-256"
+      - "sha-2-512"
+      description: >-
+          Reporting on users with passwords encoded using the Crypt Password Storage scheme may be further limited by selecting one or more encoding mechanisms that are considered weak.
     add-weakly-encoded-password-data-security-auditor-request:
       allOf:
       - type: object
         properties:
           auditorName:
-            description: Name of the new Data Security Auditor
             type: string
-        required:
-        - auditorName
+            description: >-
+                Name of the new Data Security Auditor
       - $ref: '#/components/schemas/weakly-encoded-password-data-security-auditor-shared'
+      required:
+      - auditorName
     weakly-encoded-password-data-security-auditor-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Data Security Auditor
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Data Security Auditor
       - $ref: '#/components/schemas/weakly-encoded-password-data-security-auditor-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - reportFile
       - weakPasswordStorageScheme
       - enabled
@@ -469,28 +491,71 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:data-security-auditor:weakly-encoded-password"
+    Enumdata-security-auditor-includePrivilegeProp:
+      type: string
+      enum:
+      - "audit-data-security"
+      - "bypass-acl"
+      - "bypass-read-acl"
+      - "modify-acl"
+      - "config-read"
+      - "config-write"
+      - "jmx-read"
+      - "jmx-write"
+      - "jmx-notify"
+      - "ldif-import"
+      - "ldif-export"
+      - "backend-backup"
+      - "backend-restore"
+      - "server-shutdown"
+      - "server-restart"
+      - "proxied-auth"
+      - "disconnect-client"
+      - "password-reset"
+      - "update-schema"
+      - "privilege-change"
+      - "unindexed-search"
+      - "unindexed-search-with-control"
+      - "bypass-pw-policy"
+      - "lockdown-mode"
+      - "stream-values"
+      - "third-party-task"
+      - "soft-delete-read"
+      - "metrics-read"
+      - "remote-log-read"
+      - "manage-topology"
+      - "permit-get-password-policy-state-issues"
+      - "permit-proxied-mschapv2-details"
+      - "permit-forwarding-client-connection-policy"
+      - "exec-task"
+      - "collect-support-data"
+      - "file-servlet-access"
+      - "permit-replace-certificate-request"
+      description: >-
+          If defined, only entries with the specified privileges will be reported. By default, entries with any privilege assigned will be reported.
     add-privilege-data-security-auditor-request:
       allOf:
       - type: object
         properties:
           auditorName:
-            description: Name of the new Data Security Auditor
             type: string
-        required:
-        - auditorName
+            description: >-
+                Name of the new Data Security Auditor
       - $ref: '#/components/schemas/privilege-data-security-auditor-shared'
+      required:
+      - auditorName
     privilege-data-security-auditor-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Data Security Auditor
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Data Security Auditor
       - $ref: '#/components/schemas/privilege-data-security-auditor-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - reportFile
       - enabled
     privilege-data-security-auditor-shared:
@@ -539,23 +604,24 @@ components:
       - type: object
         properties:
           auditorName:
-            description: Name of the new Data Security Auditor
             type: string
-        required:
-        - auditorName
+            description: >-
+                Name of the new Data Security Auditor
       - $ref: '#/components/schemas/account-usability-issues-data-security-auditor-shared'
+      required:
+      - auditorName
     account-usability-issues-data-security-auditor-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Data Security Auditor
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Data Security Auditor
       - $ref: '#/components/schemas/account-usability-issues-data-security-auditor-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - reportFile
       - enabled
     account-usability-issues-data-security-auditor-shared:
@@ -600,23 +666,24 @@ components:
       - type: object
         properties:
           auditorName:
-            description: Name of the new Data Security Auditor
             type: string
-        required:
-        - auditorName
+            description: >-
+                Name of the new Data Security Auditor
       - $ref: '#/components/schemas/locked-account-data-security-auditor-shared'
+      required:
+      - auditorName
     locked-account-data-security-auditor-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Data Security Auditor
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Data Security Auditor
       - $ref: '#/components/schemas/locked-account-data-security-auditor-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - reportFile
       - enabled
     locked-account-data-security-auditor-shared:
@@ -665,23 +732,24 @@ components:
       - type: object
         properties:
           auditorName:
-            description: Name of the new Data Security Auditor
             type: string
-        required:
-        - auditorName
+            description: >-
+                Name of the new Data Security Auditor
       - $ref: '#/components/schemas/filter-data-security-auditor-shared'
+      required:
+      - auditorName
     filter-data-security-auditor-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Data Security Auditor
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Data Security Auditor
       - $ref: '#/components/schemas/filter-data-security-auditor-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - enabled
     filter-data-security-auditor-shared:
       type: object
@@ -733,23 +801,24 @@ components:
       - type: object
         properties:
           auditorName:
-            description: Name of the new Data Security Auditor
             type: string
-        required:
-        - auditorName
+            description: >-
+                Name of the new Data Security Auditor
       - $ref: '#/components/schemas/account-validity-window-data-security-auditor-shared'
+      required:
+      - auditorName
     account-validity-window-data-security-auditor-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Data Security Auditor
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Data Security Auditor
       - $ref: '#/components/schemas/account-validity-window-data-security-auditor-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - reportFile
       - enabled
     account-validity-window-data-security-auditor-shared:
@@ -798,23 +867,24 @@ components:
       - type: object
         properties:
           auditorName:
-            description: Name of the new Data Security Auditor
             type: string
-        required:
-        - auditorName
+            description: >-
+                Name of the new Data Security Auditor
       - $ref: '#/components/schemas/multiple-password-data-security-auditor-shared'
+      required:
+      - auditorName
     multiple-password-data-security-auditor-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Data Security Auditor
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Data Security Auditor
       - $ref: '#/components/schemas/multiple-password-data-security-auditor-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - reportFile
       - enabled
     multiple-password-data-security-auditor-shared:
@@ -859,23 +929,24 @@ components:
       - type: object
         properties:
           auditorName:
-            description: Name of the new Data Security Auditor
             type: string
-        required:
-        - auditorName
+            description: >-
+                Name of the new Data Security Auditor
       - $ref: '#/components/schemas/deprecated-password-storage-scheme-data-security-auditor-shared'
+      required:
+      - auditorName
     deprecated-password-storage-scheme-data-security-auditor-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Data Security Auditor
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Data Security Auditor
       - $ref: '#/components/schemas/deprecated-password-storage-scheme-data-security-auditor-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - reportFile
       - enabled
     deprecated-password-storage-scheme-data-security-auditor-shared:
@@ -920,23 +991,24 @@ components:
       - type: object
         properties:
           auditorName:
-            description: Name of the new Data Security Auditor
             type: string
-        required:
-        - auditorName
+            description: >-
+                Name of the new Data Security Auditor
       - $ref: '#/components/schemas/nonexistent-password-policy-data-security-auditor-shared'
+      required:
+      - auditorName
     nonexistent-password-policy-data-security-auditor-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Data Security Auditor
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Data Security Auditor
       - $ref: '#/components/schemas/nonexistent-password-policy-data-security-auditor-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - reportFile
       - enabled
     nonexistent-password-policy-data-security-auditor-shared:
@@ -981,23 +1053,24 @@ components:
       - type: object
         properties:
           auditorName:
-            description: Name of the new Data Security Auditor
             type: string
-        required:
-        - auditorName
+            description: >-
+                Name of the new Data Security Auditor
       - $ref: '#/components/schemas/access-control-data-security-auditor-shared'
+      required:
+      - auditorName
     access-control-data-security-auditor-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Data Security Auditor
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Data Security Auditor
       - $ref: '#/components/schemas/access-control-data-security-auditor-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - reportFile
       - enabled
     access-control-data-security-auditor-shared:
@@ -1042,23 +1115,24 @@ components:
       - type: object
         properties:
           auditorName:
-            description: Name of the new Data Security Auditor
             type: string
-        required:
-        - auditorName
+            description: >-
+                Name of the new Data Security Auditor
       - $ref: '#/components/schemas/third-party-data-security-auditor-shared'
+      required:
+      - auditorName
     third-party-data-security-auditor-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Data Security Auditor
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Data Security Auditor
       - $ref: '#/components/schemas/third-party-data-security-auditor-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - enabled
     third-party-data-security-auditor-shared:
       type: object
@@ -1109,66 +1183,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:data-security-auditor:third-party"
-    Enumdata-security-auditor-auditSeverityProp:
-      type: string
-      enum:
-      - "error"
-      - "warning"
-      - "notice"
-      - "verbose"
-      description: >-
-          Specifies the severity of events to include in the report.
-    Enumdata-security-auditor-includePrivilegeProp:
-      type: string
-      enum:
-      - "audit-data-security"
-      - "bypass-acl"
-      - "bypass-read-acl"
-      - "modify-acl"
-      - "config-read"
-      - "config-write"
-      - "jmx-read"
-      - "jmx-write"
-      - "jmx-notify"
-      - "ldif-import"
-      - "ldif-export"
-      - "backend-backup"
-      - "backend-restore"
-      - "server-shutdown"
-      - "server-restart"
-      - "proxied-auth"
-      - "disconnect-client"
-      - "password-reset"
-      - "update-schema"
-      - "privilege-change"
-      - "unindexed-search"
-      - "unindexed-search-with-control"
-      - "bypass-pw-policy"
-      - "lockdown-mode"
-      - "stream-values"
-      - "third-party-task"
-      - "soft-delete-read"
-      - "metrics-read"
-      - "remote-log-read"
-      - "manage-topology"
-      - "permit-get-password-policy-state-issues"
-      - "permit-proxied-mschapv2-details"
-      - "permit-forwarding-client-connection-policy"
-      - "exec-task"
-      - "collect-support-data"
-      - "file-servlet-access"
-      - "permit-replace-certificate-request"
-      description: >-
-          If defined, only entries with the specified privileges will be reported. By default, entries with any privilege assigned will be reported.
-    Enumdata-security-auditor-weakCryptEncodingProp:
-      type: string
-      enum:
-      - "crypt"
-      - "md5"
-      - "sha-2-256"
-      - "sha-2-512"
-      description: >-
-          Reporting on users with passwords encoded using the Crypt Password Storage scheme may be further limited by selecting one or more encoding mechanisms that are considered weak.
     updateRequest:
       type: object
       properties:

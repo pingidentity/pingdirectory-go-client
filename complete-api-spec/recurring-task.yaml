@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access recurring-tasks
   name: recurring-task
@@ -190,22 +190,24 @@ components:
       - type: object
         properties:
           taskName:
-            description: Name of the new Recurring Task
             type: string
-        required:
-        - taskName
+            description: >-
+                Name of the new Recurring Task
       - $ref: '#/components/schemas/generate-server-profile-recurring-task-shared'
+      required:
+      - taskName
     generate-server-profile-recurring-task-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Recurring Task
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Recurring Task
       - $ref: '#/components/schemas/generate-server-profile-recurring-task-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     generate-server-profile-recurring-task-shared:
       type: object
       properties:
@@ -283,22 +285,24 @@ components:
       - type: object
         properties:
           taskName:
-            description: Name of the new Recurring Task
             type: string
-        required:
-        - taskName
+            description: >-
+                Name of the new Recurring Task
       - $ref: '#/components/schemas/leave-lockdown-mode-recurring-task-shared'
+      required:
+      - taskName
     leave-lockdown-mode-recurring-task-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Recurring Task
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Recurring Task
       - $ref: '#/components/schemas/leave-lockdown-mode-recurring-task-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     leave-lockdown-mode-recurring-task-shared:
       type: object
       properties:
@@ -361,23 +365,24 @@ components:
       - type: object
         properties:
           taskName:
-            description: Name of the new Recurring Task
             type: string
-        required:
-        - taskName
+            description: >-
+                Name of the new Recurring Task
       - $ref: '#/components/schemas/backup-recurring-task-shared'
+      required:
+      - taskName
     backup-recurring-task-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Recurring Task
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Recurring Task
       - $ref: '#/components/schemas/backup-recurring-task-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - backupDirectory
     backup-recurring-task-shared:
       type: object
@@ -476,27 +481,37 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:recurring-task:backup"
+    Enumrecurring-task-taskReturnStateIfTimeoutIsEncounteredProp:
+      type: string
+      enum:
+      - "stopped-by-error"
+      - "completed-with-errors"
+      - "completed-successfully"
+      description: >-
+          The return state to use if a timeout is encountered while waiting for the server work queue to become idle (if the duration-to-wait-for-work-queue-idle property has a value), or if the time specified by the duration-to-wait-for-search-to-return-entries elapses without the associated search returning any entries.
     add-delay-recurring-task-request:
       allOf:
       - type: object
         properties:
           taskName:
-            description: Name of the new Recurring Task
             type: string
-        required:
-        - taskName
+            description: >-
+                Name of the new Recurring Task
       - $ref: '#/components/schemas/delay-recurring-task-shared'
+      required:
+      - taskName
     delay-recurring-task-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Recurring Task
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Recurring Task
       - $ref: '#/components/schemas/delay-recurring-task-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     delay-recurring-task-shared:
       type: object
       properties:
@@ -583,22 +598,24 @@ components:
       - type: object
         properties:
           taskName:
-            description: Name of the new Recurring Task
             type: string
-        required:
-        - taskName
+            description: >-
+                Name of the new Recurring Task
       - $ref: '#/components/schemas/statically-defined-recurring-task-shared'
+      required:
+      - taskName
     statically-defined-recurring-task-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Recurring Task
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Recurring Task
       - $ref: '#/components/schemas/statically-defined-recurring-task-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     statically-defined-recurring-task-shared:
       type: object
       properties:
@@ -670,27 +687,37 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:recurring-task:statically-defined"
+    Enumrecurring-task-securityLevelProp:
+      type: string
+      enum:
+      - "none"
+      - "obscure-secrets"
+      - "maximum"
+      description: >-
+          The security level to use when deciding which information to include in or exclude from the support data archive, and which included data should be obscured or redacted.
     add-collect-support-data-recurring-task-request:
       allOf:
       - type: object
         properties:
           taskName:
-            description: Name of the new Recurring Task
             type: string
-        required:
-        - taskName
+            description: >-
+                Name of the new Recurring Task
       - $ref: '#/components/schemas/collect-support-data-recurring-task-shared'
+      required:
+      - taskName
     collect-support-data-recurring-task-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Recurring Task
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Recurring Task
       - $ref: '#/components/schemas/collect-support-data-recurring-task-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     collect-support-data-recurring-task-shared:
       type: object
       properties:
@@ -816,23 +843,24 @@ components:
       - type: object
         properties:
           taskName:
-            description: Name of the new Recurring Task
             type: string
-        required:
-        - taskName
+            description: >-
+                Name of the new Recurring Task
       - $ref: '#/components/schemas/ldif-export-recurring-task-shared'
+      required:
+      - taskName
     ldif-export-recurring-task-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Recurring Task
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Recurring Task
       - $ref: '#/components/schemas/ldif-export-recurring-task-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - ldifDirectory
     ldif-export-recurring-task-shared:
       type: object
@@ -936,22 +964,24 @@ components:
       - type: object
         properties:
           taskName:
-            description: Name of the new Recurring Task
             type: string
-        required:
-        - taskName
+            description: >-
+                Name of the new Recurring Task
       - $ref: '#/components/schemas/enter-lockdown-mode-recurring-task-shared'
+      required:
+      - taskName
     enter-lockdown-mode-recurring-task-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Recurring Task
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Recurring Task
       - $ref: '#/components/schemas/enter-lockdown-mode-recurring-task-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     enter-lockdown-mode-recurring-task-shared:
       type: object
       properties:
@@ -1014,23 +1044,24 @@ components:
       - type: object
         properties:
           taskName:
-            description: Name of the new Recurring Task
             type: string
-        required:
-        - taskName
+            description: >-
+                Name of the new Recurring Task
       - $ref: '#/components/schemas/audit-data-security-recurring-task-shared'
+      required:
+      - taskName
     audit-data-security-recurring-task-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Recurring Task
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Recurring Task
       - $ref: '#/components/schemas/audit-data-security-recurring-task-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - baseOutputDirectory
     audit-data-security-recurring-task-shared:
       type: object
@@ -1115,27 +1146,37 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:recurring-task:audit-data-security"
+    Enumrecurring-task-taskCompletionStateForNonzeroExitCodeProp:
+      type: string
+      enum:
+      - "stopped-by-error"
+      - "completed-with-errors"
+      - "completed-successfully"
+      description: >-
+          The final task state that a task instance should have if the task executes the specified command and that command completes with a nonzero exit code, which generally means that the command did not complete successfully.
     add-exec-recurring-task-request:
       allOf:
       - type: object
         properties:
           taskName:
-            description: Name of the new Recurring Task
             type: string
-        required:
-        - taskName
+            description: >-
+                Name of the new Recurring Task
       - $ref: '#/components/schemas/exec-recurring-task-shared'
+      required:
+      - taskName
     exec-recurring-task-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Recurring Task
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Recurring Task
       - $ref: '#/components/schemas/exec-recurring-task-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     exec-recurring-task-shared:
       type: object
       properties:
@@ -1220,27 +1261,41 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:recurring-task:exec"
+    Enumrecurring-task-timestampFormatProp:
+      type: string
+      enum:
+      - "generalized-time-utc-with-milliseconds"
+      - "generalized-time-utc-with-seconds"
+      - "generalized-time-utc-with-minutes"
+      - "local-time-with-milliseconds"
+      - "local-time-with-seconds"
+      - "local-time-with-minutes"
+      - "local-date"
+      description: >-
+          The format to use for the timestamp represented by the "${timestamp}" token in the filename pattern.
     add-file-retention-recurring-task-request:
       allOf:
       - type: object
         properties:
           taskName:
-            description: Name of the new Recurring Task
             type: string
-        required:
-        - taskName
+            description: >-
+                Name of the new Recurring Task
       - $ref: '#/components/schemas/file-retention-recurring-task-shared'
+      required:
+      - taskName
     file-retention-recurring-task-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Recurring Task
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Recurring Task
       - $ref: '#/components/schemas/file-retention-recurring-task-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     file-retention-recurring-task-shared:
       type: object
       properties:
@@ -1324,22 +1379,24 @@ components:
       - type: object
         properties:
           taskName:
-            description: Name of the new Recurring Task
             type: string
-        required:
-        - taskName
+            description: >-
+                Name of the new Recurring Task
       - $ref: '#/components/schemas/third-party-recurring-task-shared'
+      required:
+      - taskName
     third-party-recurring-task-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Recurring Task
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Recurring Task
       - $ref: '#/components/schemas/third-party-recurring-task-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     third-party-recurring-task-shared:
       type: object
       properties:
@@ -1404,42 +1461,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:recurring-task:third-party"
-    Enumrecurring-task-securityLevelProp:
-      type: string
-      enum:
-      - "none"
-      - "obscure-secrets"
-      - "maximum"
-      description: >-
-          The security level to use when deciding which information to include in or exclude from the support data archive, and which included data should be obscured or redacted.
-    Enumrecurring-task-taskCompletionStateForNonzeroExitCodeProp:
-      type: string
-      enum:
-      - "stopped-by-error"
-      - "completed-with-errors"
-      - "completed-successfully"
-      description: >-
-          The final task state that a task instance should have if the task executes the specified command and that command completes with a nonzero exit code, which generally means that the command did not complete successfully.
-    Enumrecurring-task-timestampFormatProp:
-      type: string
-      enum:
-      - "generalized-time-utc-with-milliseconds"
-      - "generalized-time-utc-with-seconds"
-      - "generalized-time-utc-with-minutes"
-      - "local-time-with-milliseconds"
-      - "local-time-with-seconds"
-      - "local-time-with-minutes"
-      - "local-date"
-      description: >-
-          The format to use for the timestamp represented by the "${timestamp}" token in the filename pattern.
-    Enumrecurring-task-taskReturnStateIfTimeoutIsEncounteredProp:
-      type: string
-      enum:
-      - "stopped-by-error"
-      - "completed-with-errors"
-      - "completed-successfully"
-      description: >-
-          The return state to use if a timeout is encountered while waiting for the server work queue to become idle (if the duration-to-wait-for-work-queue-idle property has a value), or if the time specified by the duration-to-wait-for-search-to-return-entries elapses without the associated search returning any entries.
     updateRequest:
       type: object
       properties:

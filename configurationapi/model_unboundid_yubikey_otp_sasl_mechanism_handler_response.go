@@ -19,9 +19,7 @@ var _ MappedNullable = &UnboundidYubikeyOtpSaslMechanismHandlerResponse{}
 
 // UnboundidYubikeyOtpSaslMechanismHandlerResponse struct for UnboundidYubikeyOtpSaslMechanismHandlerResponse
 type UnboundidYubikeyOtpSaslMechanismHandlerResponse struct {
-	Meta                                          *MetaMeta                                              `json:"meta,omitempty"`
-	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20     `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas                                       []EnumunboundidYubikeyOtpSaslMechanismHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumunboundidYubikeyOtpSaslMechanismHandlerSchemaUrn `json:"schemas"`
 	// Name of the SASL Mechanism Handler
 	Id string `json:"id"`
 	// The client ID to include in requests to the YubiKey validation server. A client ID and API key may be obtained for free from https://upgrade.yubico.com/getapikey/.
@@ -45,7 +43,9 @@ type UnboundidYubikeyOtpSaslMechanismHandlerResponse struct {
 	// A description for this SASL Mechanism Handler
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the SASL mechanism handler is enabled for use.
-	Enabled bool `json:"enabled"`
+	Enabled                                       bool                                               `json:"enabled"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 }
 
 // NewUnboundidYubikeyOtpSaslMechanismHandlerResponse instantiates a new UnboundidYubikeyOtpSaslMechanismHandlerResponse object
@@ -68,70 +68,6 @@ func NewUnboundidYubikeyOtpSaslMechanismHandlerResponse(schemas []EnumunboundidY
 func NewUnboundidYubikeyOtpSaslMechanismHandlerResponseWithDefaults() *UnboundidYubikeyOtpSaslMechanismHandlerResponse {
 	this := UnboundidYubikeyOtpSaslMechanismHandlerResponse{}
 	return &this
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetMeta() MetaMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret MetaMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// HasMeta returns a boolean if a field has been set.
-func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) HasMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
-}
-
-// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
-func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) SetMeta(v MetaMeta) {
-	o.Meta = &v
-}
-
-// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
-func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		var ret MetaUrnPingidentitySchemasConfigurationMessages20
-		return ret
-	}
-	return *o.Urnpingidentityschemasconfigurationmessages20
-}
-
-// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		return nil, false
-	}
-	return o.Urnpingidentityschemasconfigurationmessages20, true
-}
-
-// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
-func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		return true
-	}
-
-	return false
-}
-
-// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
-func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
-	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
 // GetSchemas returns the Schemas field value
@@ -510,6 +446,70 @@ func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetMeta() MetaMeta {
+	if o == nil || IsNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || IsNil(o.Meta) {
+		return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) HasMeta() bool {
+	if o != nil && !IsNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
+func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		var ret MetaUrnPingidentitySchemasConfigurationMessages20
+		return ret
+	}
+	return *o.Urnpingidentityschemasconfigurationmessages20
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return nil, false
+	}
+	return o.Urnpingidentityschemasconfigurationmessages20, true
+}
+
+// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
+func (o *UnboundidYubikeyOtpSaslMechanismHandlerResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
+	o.Urnpingidentityschemasconfigurationmessages20 = &v
+}
+
 func (o UnboundidYubikeyOtpSaslMechanismHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -520,12 +520,6 @@ func (o UnboundidYubikeyOtpSaslMechanismHandlerResponse) MarshalJSON() ([]byte, 
 
 func (o UnboundidYubikeyOtpSaslMechanismHandlerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["id"] = o.Id
 	if !IsNil(o.YubikeyClientID) {
@@ -555,6 +549,12 @@ func (o UnboundidYubikeyOtpSaslMechanismHandlerResponse) ToMap() (map[string]int
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
 	return toSerialize, nil
 }
 

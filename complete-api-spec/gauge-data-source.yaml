@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access gauge-data-sources
   name: gauge-data-source
@@ -150,22 +150,24 @@ components:
       - type: object
         properties:
           sourceName:
-            description: Name of the new Gauge Data Source
             type: string
-        required:
-        - sourceName
+            description: >-
+                Name of the new Gauge Data Source
       - $ref: '#/components/schemas/indicator-gauge-data-source-shared'
+      required:
+      - sourceName
     indicator-gauge-data-source-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Gauge Data Source
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Gauge Data Source
       - $ref: '#/components/schemas/indicator-gauge-data-source-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     indicator-gauge-data-source-shared:
       type: object
       properties:
@@ -215,28 +217,45 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:gauge-data-source:indicator"
+    Enumgauge-data-source-dataOrientationProp:
+      type: string
+      enum:
+      - "lower-is-better"
+      - "higher-is-better"
+      description: >-
+          Indicates whether a higher or lower value is a more severe condition.
+    Enumgauge-data-source-statisticTypeProp:
+      type: string
+      enum:
+      - "count-per-second"
+      - "average"
+      - "minimum"
+      - "maximum"
+      description: >-
+          Specifies the type of statistic to include in the output for the monitored attribute.
     add-numeric-gauge-data-source-request:
       allOf:
       - type: object
         properties:
           sourceName:
-            description: Name of the new Gauge Data Source
             type: string
-        required:
-        - sourceName
+            description: >-
+                Name of the new Gauge Data Source
       - $ref: '#/components/schemas/numeric-gauge-data-source-shared'
+      required:
+      - sourceName
     numeric-gauge-data-source-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Gauge Data Source
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Gauge Data Source
       - $ref: '#/components/schemas/numeric-gauge-data-source-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - statisticType
     numeric-gauge-data-source-shared:
       type: object
@@ -303,22 +322,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:gauge-data-source:numeric"
-    Enumgauge-data-source-dataOrientationProp:
-      type: string
-      enum:
-      - "lower-is-better"
-      - "higher-is-better"
-      description: >-
-          Indicates whether a higher or lower value is a more severe condition.
-    Enumgauge-data-source-statisticTypeProp:
-      type: string
-      enum:
-      - "count-per-second"
-      - "average"
-      - "minimum"
-      - "maximum"
-      description: >-
-          Specifies the type of statistic to include in the output for the monitored attribute.
     updateRequest:
       type: object
       properties:

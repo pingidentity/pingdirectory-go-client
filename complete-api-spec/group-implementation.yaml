@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access group-implementations
   name: group-implementation
@@ -88,7 +88,6 @@ components:
   schemas:
     static-group-implementation-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -98,8 +97,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumstatic-group-implementationSchemaUrn'
           id:
-            description: Name of the Group Implementation
             type: string
+            description: >-
+                Name of the Group Implementation
           description:
             type: string
             description: >-
@@ -108,17 +108,17 @@ components:
             type: boolean
             description: >-
                 Indicates whether the Group Implementation is enabled.
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumstatic-group-implementationSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:group-implementation:static"
     virtual-static-group-implementation-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -128,8 +128,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumvirtual-static-group-implementationSchemaUrn'
           id:
-            description: Name of the Group Implementation
             type: string
+            description: >-
+                Name of the Group Implementation
           description:
             type: string
             description: >-
@@ -138,17 +139,17 @@ components:
             type: boolean
             description: >-
                 Indicates whether the Group Implementation is enabled.
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumvirtual-static-group-implementationSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:group-implementation:virtual-static"
     dynamic-group-implementation-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -158,8 +159,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumdynamic-group-implementationSchemaUrn'
           id:
-            description: Name of the Group Implementation
             type: string
+            description: >-
+                Name of the Group Implementation
           description:
             type: string
             description: >-
@@ -168,10 +170,11 @@ components:
             type: boolean
             description: >-
                 Indicates whether the Group Implementation is enabled.
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumdynamic-group-implementationSchemaUrn:
       type: string
       enum:

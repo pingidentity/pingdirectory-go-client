@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access the Alarm Manager
   name: alarm-manager
@@ -62,9 +62,33 @@ paths:
       - alarm-manager
 components:
   schemas:
+    Enumalarm-manager-defaultGaugeAlertLevelProp:
+      type: string
+      enum:
+      - "always"
+      - "warning-and-above"
+      - "minor-and-above"
+      - "major-and-above"
+      - "critical-only"
+      - "never"
+      description: >-
+          Specifies the level at which alerts are sent for alarms raised by the Alarm Manager.
+    Enumalarm-manager-generatedAlertTypesProp:
+      type: string
+      enum:
+      - "standard"
+      - "alarm"
+      description: >-
+          Indicates what kind of alert types should be generated.
+    Enumalarm-manager-suppressedAlarmProp:
+      type: string
+      enum:
+      - "no-enabled-alert-handlers"
+      - "pdp-unavailable"
+      description: >-
+          Specifies the names of the alarm alert types that should be suppressed. If the condition that triggers an alarm in this list occurs, then the alarm will not be raised and no alerts will be generated. Only a subset of alarms can be suppressed in this way. Alarms triggered by a gauge can be disabled by disabling the gauge.
     alarm-manager-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -83,38 +107,14 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Enumalarm-manager-suppressedAlarmProp'
-        required:
-        - defaultGaugeAlertLevel
-        - generatedAlertTypes
+      - $ref: '#/components/schemas/meta'
+      required:
+      - defaultGaugeAlertLevel
+      - generatedAlertTypes
     Enumalarm-managerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:alarm-manager"
-    Enumalarm-manager-defaultGaugeAlertLevelProp:
-      type: string
-      enum:
-      - "always"
-      - "warning-and-above"
-      - "minor-and-above"
-      - "major-and-above"
-      - "critical-only"
-      - "never"
-      description: >-
-          Specifies the level at which alerts are sent for alarms raised by the Alarm Manager.
-    Enumalarm-manager-suppressedAlarmProp:
-      type: string
-      enum:
-      - "no-enabled-alert-handlers"
-      - "pdp-unavailable"
-      description: >-
-          Specifies the names of the alarm alert types that should be suppressed. If the condition that triggers an alarm in this list occurs, then the alarm will not be raised and no alerts will be generated. Only a subset of alarms can be suppressed in this way. Alarms triggered by a gauge can be disabled by disabling the gauge.
-    Enumalarm-manager-generatedAlertTypesProp:
-      type: string
-      enum:
-      - "standard"
-      - "alarm"
-      description: >-
-          Indicates what kind of alert types should be generated.
     updateRequest:
       type: object
       properties:
