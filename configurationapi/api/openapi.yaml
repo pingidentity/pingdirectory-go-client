@@ -13832,8 +13832,6 @@ components:
           minItems: 1
           type: array
         allowedSigningAlgorithm:
-          description: Specifies an allow list of JWT signing algorithms that will
-            be accepted by the OpenID Connect ID Token Validator.
           items:
             $ref: '#/components/schemas/Enumid-token-validator-allowedSigningAlgorithmProp'
           type: array
@@ -14245,8 +14243,6 @@ components:
           minItems: 1
           type: array
         pluginType:
-          description: "Specifies the set of plug-in types for the plug-in, which\
-            \ specifies the times at which the plug-in is invoked."
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
           type: array
@@ -14366,8 +14362,6 @@ components:
           minItems: 1
           type: array
         pluginType:
-          description: "Specifies the set of plug-in types for the plug-in, which\
-            \ specifies the times at which the plug-in is invoked."
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
           type: array
@@ -14495,15 +14489,10 @@ components:
           minItems: 1
           type: array
         pluginType:
-          description: "Specifies the set of plug-in types for the plug-in, which\
-            \ specifies the times at which the plug-in is invoked."
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
           type: array
         invokeGCDayOfWeek:
-          description: "Specifies the days of the week which the Periodic GC Plugin\
-            \ should run. If no values are provided, then the plugin will run every\
-            \ day at the specified time."
           items:
             $ref: '#/components/schemas/Enumplugin-invokeGCDayOfWeekProp'
           type: array
@@ -14647,9 +14636,6 @@ components:
             failed validation if the user attempted to set it directly.
           type: boolean
         ignoredPasswordPolicyStateErrorCondition:
-          description: A set of password policy state error conditions that should
-            not be enforced when authentication succeeds when attempted in the PingOne
-            service. This option can only be used if try-local-bind is true.
           items:
             $ref: '#/components/schemas/Enumplugin-ignoredPasswordPolicyStateErrorConditionProp'
           type: array
@@ -14926,24 +14912,16 @@ components:
             that summarizes the columns in the table.
           type: integer
         includedLDAPStat:
-          description: Specifies the types of statistics related to LDAP connections
-            and operation processing that should be included in the output.
           items:
             $ref: '#/components/schemas/Enumplugin-includedLDAPStatProp'
           type: array
         includedResourceStat:
-          description: Specifies whether statistics related to resource utilization
-            such as JVM memory.
           items:
             $ref: '#/components/schemas/Enumplugin-includedResourceStatProp'
           type: array
         histogramFormat:
           $ref: '#/components/schemas/Enumplugin-histogramFormatProp'
         histogramOpType:
-          description: Specifies the operation type(s) to use when outputting the
-            response time histogram data. The order of the operations here determines
-            the order of the columns in the output. Use the per-application-ldap-stats
-            setting to further control this.
           items:
             $ref: '#/components/schemas/Enumplugin-histogramOpTypeProp'
           type: array
@@ -14996,8 +14974,6 @@ components:
         entryCacheInfo:
           $ref: '#/components/schemas/Enumplugin-entryCacheInfoProp'
         hostInfo:
-          description: "Specifies the level of detail to include about the host system\
-            \ resource utilization including CPU, memory, disk and network activity."
           items:
             $ref: '#/components/schemas/Enumplugin-hostInfoProp'
           type: array
@@ -15175,8 +15151,6 @@ components:
           minItems: 1
           type: array
         pluginType:
-          description: "Specifies the set of plug-in types for the plug-in, which\
-            \ specifies the times at which the plug-in is invoked."
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
           type: array
@@ -15251,8 +15225,6 @@ components:
           description: Indicates whether the plug-in is enabled for use.
           type: boolean
         pluginType:
-          description: "Specifies the set of plug-in types for the plug-in, which\
-            \ specifies the times at which the plug-in is invoked."
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
           type: array
@@ -15330,8 +15302,6 @@ components:
           minItems: 1
           type: array
         pluginType:
-          description: "Specifies the set of plug-in types for the plug-in, which\
-            \ specifies the times at which the plug-in is invoked."
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
           type: array
@@ -15473,8 +15443,6 @@ components:
           minItems: 1
           type: array
         pluginType:
-          description: "Specifies the set of plug-in types for the plug-in, which\
-            \ specifies the times at which the plug-in is invoked."
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
           type: array
@@ -15572,8 +15540,6 @@ components:
           minItems: 1
           type: array
         pluginType:
-          description: "Specifies the set of plug-in types for the plug-in, which\
-            \ specifies the times at which the plug-in is invoked."
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
           type: array
@@ -15939,8 +15905,6 @@ components:
           minItems: 1
           type: array
         pluginType:
-          description: "Specifies the set of plug-in types for the plug-in, which\
-            \ specifies the times at which the plug-in is invoked."
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
           type: array
@@ -16051,8 +16015,6 @@ components:
           minItems: 1
           type: array
         pluginType:
-          description: "Specifies the set of plug-in types for the plug-in, which\
-            \ specifies the times at which the plug-in is invoked."
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
           type: array
@@ -16124,8 +16086,6 @@ components:
           minItems: 1
           type: array
         pluginType:
-          description: "Specifies the set of plug-in types for the plug-in, which\
-            \ specifies the times at which the plug-in is invoked."
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
           type: array
@@ -16265,8 +16225,6 @@ components:
           description: Indicates whether the plug-in is enabled for use.
           type: boolean
         pluginType:
-          description: "Specifies the set of plug-in types for the plug-in, which\
-            \ specifies the times at which the plug-in is invoked."
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
           type: array
@@ -16370,9 +16328,6 @@ components:
             failed validation if the user attempted to set it directly.
           type: boolean
         ignoredPasswordPolicyStateErrorCondition:
-          description: A set of password policy state error conditions that should
-            not be enforced when authentication succeeds when attempted in the external
-            service. This option can only be used if try-local-bind is true.
           items:
             $ref: '#/components/schemas/Enumplugin-ignoredPasswordPolicyStateErrorConditionProp'
           type: array
@@ -16418,8 +16373,6 @@ components:
           minItems: 1
           type: array
         pluginType:
-          description: "Specifies the set of plug-in types for the plug-in, which\
-            \ specifies the times at which the plug-in is invoked."
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
           type: array
@@ -16492,8 +16445,6 @@ components:
           minItems: 1
           type: array
         pluginType:
-          description: "Specifies the set of plug-in types for the plug-in, which\
-            \ specifies the times at which the plug-in is invoked."
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
           type: array
@@ -16597,8 +16548,6 @@ components:
             type: string
           type: array
         statisticType:
-          description: Specifies the type of statistic to include in the output for
-            each monitored attribute.
           items:
             $ref: '#/components/schemas/Enumcustom-logged-stats-statisticTypeProp'
           type: array
@@ -16888,8 +16837,6 @@ components:
           minItems: 1
           type: array
         allowedSigningAlgorithm:
-          description: Specifies an allow list of JWT signing algorithms that will
-            be accepted by the JWT Access Token Validator.
           items:
             $ref: '#/components/schemas/Enumaccess-token-validator-allowedSigningAlgorithmProp'
           type: array
@@ -16916,15 +16863,10 @@ components:
             \ to the Authorization Server that is issuing access tokens."
           type: string
         allowedKeyEncryptionAlgorithm:
-          description: Specifies an allow list of JWT key encryption algorithms that
-            will be accepted by the JWT Access Token Validator. This setting is only
-            used if encryption-key-pair is set.
           items:
             $ref: '#/components/schemas/Enumaccess-token-validator-allowedKeyEncryptionAlgorithmProp'
           type: array
         allowedContentEncryptionAlgorithm:
-          description: Specifies an allow list of JWT content encryption algorithms
-            that will be accepted by the JWT Access Token Validator.
           items:
             $ref: '#/components/schemas/Enumaccess-token-validator-allowedContentEncryptionAlgorithmProp'
           type: array
@@ -19386,11 +19328,6 @@ components:
           minItems: 1
           type: array
         preserveField:
-          description: "The log fields whose values should be logged with the intended\
-            \ value. The values for these fields will be preserved, although they\
-            \ may be sanitized for parsability or safety purposes (for example, to\
-            \ escape special characters in the value), and values that are too long\
-            \ may be truncated."
           items:
             $ref: '#/components/schemas/Enumlog-field-behavior-text-access-preserveFieldProp'
           type: array
@@ -19403,8 +19340,6 @@ components:
             type: string
           type: array
         omitField:
-          description: The log fields that should be omitted entirely from log messages.
-            Neither the field name nor value will be included.
           items:
             $ref: '#/components/schemas/Enumlog-field-behavior-text-access-omitFieldProp'
           type: array
@@ -19417,9 +19352,6 @@ components:
             type: string
           type: array
         redactEntireValueField:
-          description: "The log fields whose values should be completely redacted\
-            \ in log messages. The field name will be included, but with a fixed value\
-            \ that does not reflect the actual value for the field."
           items:
             $ref: '#/components/schemas/Enumlog-field-behavior-text-access-redactEntireValueFieldProp'
           type: array
@@ -19432,7 +19364,6 @@ components:
             type: string
           type: array
         redactValueComponentsField:
-          description: The log fields whose values will include redacted components.
           items:
             $ref: '#/components/schemas/Enumlog-field-behavior-text-access-redactValueComponentsFieldProp'
           type: array
@@ -19445,10 +19376,6 @@ components:
             type: string
           type: array
         tokenizeEntireValueField:
-          description: "The log fields whose values should be completely tokenized\
-            \ in log messages. The field name will be included, but the value will\
-            \ be replaced with a token that does not reveal the actual value, but\
-            \ that is generated from the value."
           items:
             $ref: '#/components/schemas/Enumlog-field-behavior-text-access-tokenizeEntireValueFieldProp'
           type: array
@@ -19461,7 +19388,6 @@ components:
             type: string
           type: array
         tokenizeValueComponentsField:
-          description: The log fields whose values will include tokenized components.
           items:
             $ref: '#/components/schemas/Enumlog-field-behavior-text-access-tokenizeValueComponentsFieldProp'
           type: array
@@ -21364,11 +21290,6 @@ components:
           minItems: 1
           type: array
         preserveField:
-          description: "The log fields whose values should be logged with the intended\
-            \ value. The values for these fields will be preserved, although they\
-            \ may be sanitized for parsability or safety purposes (for example, to\
-            \ escape special characters in the value), and values that are too long\
-            \ may be truncated."
           items:
             $ref: '#/components/schemas/Enumlog-field-behavior-json-formatted-access-preserveFieldProp'
           type: array
@@ -21381,8 +21302,6 @@ components:
             type: string
           type: array
         omitField:
-          description: The log fields that should be omitted entirely from log messages.
-            Neither the field name nor value will be included.
           items:
             $ref: '#/components/schemas/Enumlog-field-behavior-json-formatted-access-omitFieldProp'
           type: array
@@ -21395,9 +21314,6 @@ components:
             type: string
           type: array
         redactEntireValueField:
-          description: "The log fields whose values should be completely redacted\
-            \ in log messages. The field name will be included, but with a fixed value\
-            \ that does not reflect the actual value for the field."
           items:
             $ref: '#/components/schemas/Enumlog-field-behavior-json-formatted-access-redactEntireValueFieldProp'
           type: array
@@ -21410,7 +21326,6 @@ components:
             type: string
           type: array
         redactValueComponentsField:
-          description: The log fields whose values will include redacted components.
           items:
             $ref: '#/components/schemas/Enumlog-field-behavior-json-formatted-access-redactValueComponentsFieldProp'
           type: array
@@ -21423,10 +21338,6 @@ components:
             type: string
           type: array
         tokenizeEntireValueField:
-          description: "The log fields whose values should be completely tokenized\
-            \ in log messages. The field name will be included, but the value will\
-            \ be replaced with a token that does not reveal the actual value, but\
-            \ that is generated from the value."
           items:
             $ref: '#/components/schemas/Enumlog-field-behavior-json-formatted-access-tokenizeEntireValueFieldProp'
           type: array
@@ -21439,7 +21350,6 @@ components:
             type: string
           type: array
         tokenizeValueComponentsField:
-          description: The log fields whose values will include tokenized components.
           items:
             $ref: '#/components/schemas/Enumlog-field-behavior-json-formatted-access-tokenizeValueComponentsFieldProp'
           type: array
@@ -22009,10 +21919,6 @@ components:
             before the change is allowed.
           type: boolean
         passwordRetirementBehavior:
-          description: Specifies the conditions under which the server may retire
-            a user's current password in the course of setting a new password for
-            that user (whether via a modify operation or a password modify extended
-            operation).
           items:
             $ref: '#/components/schemas/Enumpassword-policy-passwordRetirementBehaviorProp'
           type: array
@@ -22021,11 +21927,6 @@ components:
             should be considered valid and may be used to authenticate to the server.
           type: string
         allowedPasswordResetTokenUseCondition:
-          description: "The set of conditions under which a user governed by this\
-            \ Password Policy will be permitted to generate a password reset token\
-            \ via the deliver password reset token extended operation, and to use\
-            \ that token in lieu of the current password via the password modify extended\
-            \ operation."
           items:
             $ref: '#/components/schemas/Enumpassword-policy-allowedPasswordResetTokenUseConditionProp'
           type: array
@@ -22194,7 +22095,6 @@ components:
             Resource Rights.
           type: string
         adminPermission:
-          description: Specifies administrator(s) permissions.
           items:
             $ref: '#/components/schemas/Enumdelegated-admin-resource-rights-adminPermissionProp'
           type: array
@@ -22768,8 +22668,6 @@ components:
         communicationSecurityLevel:
           $ref: '#/components/schemas/Enumconnection-criteria-communicationSecurityLevelProp'
         userAuthType:
-          description: Specifies the authentication types for client connections that
-            may be included in this Simple Connection Criteria.
           items:
             $ref: '#/components/schemas/Enumconnection-criteria-userAuthTypeProp'
           type: array
@@ -22918,43 +22816,18 @@ components:
             type: string
           type: array
         allIncludedUserPrivilege:
-          description: "Specifies the name of a privilege that must be held by the\
-            \ authenticated user for clients included in this Simple Connection Criteria.\
-            \ If any privilege names are provided, then the authenticated user must\
-            \ have all of those privileges. This will only be taken into account for\
-            \ client connections that have authenticated to the server and will be\
-            \ ignored for unauthenticated client connections."
           items:
             $ref: '#/components/schemas/Enumconnection-criteria-allIncludedUserPrivilegeProp'
           type: array
         anyIncludedUserPrivilege:
-          description: "Specifies the name of a privilege that may be held by the\
-            \ authenticated user for clients included in this Simple Connection Criteria.\
-            \ If any privilege names are provided, then the authenticated user must\
-            \ have at least one of those privileges. This will only be taken into\
-            \ account for client connections that have authenticated to the server\
-            \ and will be ignored for unauthenticated client connections."
           items:
             $ref: '#/components/schemas/Enumconnection-criteria-anyIncludedUserPrivilegeProp'
           type: array
         notAllIncludedUserPrivilege:
-          description: "Specifies the name of a privilege that should not be held\
-            \ by the authenticated user for clients included in this Simple Connection\
-            \ Criteria. If any privilege names are provided, then the authenticated\
-            \ user must not have at least one of those privileges (that is, the user\
-            \ may hold zero or more of those privileges, but not all of them). This\
-            \ will only be taken into account for client connections that have authenticated\
-            \ to the server and will be ignored for unauthenticated client connections."
           items:
             $ref: '#/components/schemas/Enumconnection-criteria-notAllIncludedUserPrivilegeProp'
           type: array
         noneIncludedUserPrivilege:
-          description: "Specifies the name of a privilege that must not be held by\
-            \ the authenticated user for clients included in this Simple Connection\
-            \ Criteria. If any privilege names are provided, then the authenticated\
-            \ user must not have any of those privileges. This will only be taken\
-            \ into account for client connections that have authenticated to the server\
-            \ and will be ignored for unauthenticated client connections."
           items:
             $ref: '#/components/schemas/Enumconnection-criteria-noneIncludedUserPrivilegeProp'
           type: array
@@ -23324,10 +23197,6 @@ components:
             of the Root DN configuration object.
           type: boolean
         privilege:
-          description: Privileges that are either explicitly granted or revoked from
-            the root user. Privileges can be revoked by including a minus sign (-)
-            before the privilege name. This is stored in the ds-privilege-name LDAP
-            attribute.
           items:
             $ref: '#/components/schemas/Enumroot-dn-user-privilegeProp'
           type: array
@@ -23743,8 +23612,6 @@ components:
           minItems: 1
           type: array
         operationType:
-          description: The types of operations that may be matched by this Root DSE
-            Request Criteria.
           items:
             $ref: '#/components/schemas/Enumrequest-criteria-root-dse-operationTypeProp'
           type: array
@@ -23834,16 +23701,10 @@ components:
           minItems: 1
           type: array
         operationType:
-          description: Specifies the operation type(s) for operations that should
-            be included in this Simple Request Criteria.
           items:
             $ref: '#/components/schemas/Enumrequest-criteria-simple-operationTypeProp'
           type: array
         operationOrigin:
-          description: "Specifies the origin for operations to be included in this\
-            \ Simple Request Criteria. If no values are provided, then the operation\
-            \ origin will not be taken into consideration when determining whether\
-            \ an operation matches this Simple Request Criteria."
           items:
             $ref: '#/components/schemas/Enumrequest-criteria-operationOriginProp'
           type: array
@@ -23991,12 +23852,6 @@ components:
             type: string
           type: array
         targetBindType:
-          description: "Specifies the authentication type for bind requests included\
-            \ in this Simple Request Criteria. This will only be taken into account\
-            \ for bind operations and will be ignored for any other type of operation.\
-            \ If no values are provided, then the authentication type will not be\
-            \ considered when determining whether the request should be included in\
-            \ this Simple Request Criteria."
           items:
             $ref: '#/components/schemas/Enumrequest-criteria-targetBindTypeProp'
           type: array
@@ -24049,9 +23904,6 @@ components:
             type: string
           type: array
         includedSearchScope:
-          description: Specifies the search scope values included in this Simple Request
-            Criteria. This will only be taken into account for search requests and
-            will be ignored for all other types of requests.
           items:
             $ref: '#/components/schemas/Enumrequest-criteria-includedSearchScopeProp'
           type: array
@@ -24471,8 +24323,6 @@ components:
             a new listener or inter-server certificate chain in the extended request.
           type: boolean
         allowedOperation:
-          description: The types of replace certificate operations that clients will
-            be allowed to request.
           items:
             $ref: '#/components/schemas/Enumextended-operation-handler-allowedOperationProp'
           type: array
@@ -25708,26 +25558,16 @@ components:
             type: string
           type: array
         scheduledMonth:
-          description: The months of the year in which instances of this Recurring
-            Task Chain may be scheduled to start.
           items:
             $ref: '#/components/schemas/Enumrecurring-task-chain-scheduledMonthProp'
           type: array
         scheduledDateSelectionType:
           $ref: '#/components/schemas/Enumrecurring-task-chain-scheduledDateSelectionTypeProp'
         scheduledDayOfTheWeek:
-          description: "The specific days of the week on which instances of this Recurring\
-            \ Task Chain may be scheduled to start. If the scheduled-day-selection-type\
-            \ property has a value of selected-days-of-the-week, then this property\
-            \ must have one or more values; otherwise, it must be left undefined."
           items:
             $ref: '#/components/schemas/Enumrecurring-task-chain-scheduledDayOfTheWeekProp'
           type: array
         scheduledDayOfTheMonth:
-          description: "The specific days of the month on which instances of this\
-            \ Recurring Task Chain may be scheduled to start. If the scheduled-day-selection-type\
-            \ property has a value of selected-days-of-the-month, then this property\
-            \ must have one or more values; otherwise, it must be left undefined."
           items:
             $ref: '#/components/schemas/Enumrecurring-task-chain-scheduledDayOfTheMonthProp'
           type: array
@@ -26754,21 +26594,14 @@ components:
           description: Indicates whether the Alert Handler is enabled.
           type: boolean
         enabledAlertSeverity:
-          description: "Specifies the alert severities for which this alert handler\
-            \ should be used. If no values are provided, then this alert handler will\
-            \ be enabled for alerts with any severity."
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertSeverityProp'
           type: array
         enabledAlertType:
-          description: Specifies the names of the alert types that are enabled for
-            this alert handler.
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertTypeProp'
           type: array
         disabledAlertType:
-          description: Specifies the names of the alert types that are disabled for
-            this alert handler.
           items:
             $ref: '#/components/schemas/Enumalert-handler-disabledAlertTypeProp'
           type: array
@@ -26817,21 +26650,14 @@ components:
           description: Indicates whether the Alert Handler is enabled.
           type: boolean
         enabledAlertSeverity:
-          description: "Specifies the alert severities for which this alert handler\
-            \ should be used. If no values are provided, then this alert handler will\
-            \ be enabled for alerts with any severity."
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertSeverityProp'
           type: array
         enabledAlertType:
-          description: Specifies the names of the alert types that are enabled for
-            this alert handler.
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertTypeProp'
           type: array
         disabledAlertType:
-          description: Specifies the names of the alert types that are disabled for
-            this alert handler.
           items:
             $ref: '#/components/schemas/Enumalert-handler-disabledAlertTypeProp'
           type: array
@@ -26889,21 +26715,14 @@ components:
             \ when the alert was generated."
           type: boolean
         enabledAlertSeverity:
-          description: "Specifies the alert severities for which this alert handler\
-            \ should be used. If no values are provided, then this alert handler will\
-            \ be enabled for alerts with any severity."
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertSeverityProp'
           type: array
         enabledAlertType:
-          description: Specifies the names of the alert types that are enabled for
-            this alert handler.
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertTypeProp'
           type: array
         disabledAlertType:
-          description: Specifies the names of the alert types that are disabled for
-            this alert handler.
           items:
             $ref: '#/components/schemas/Enumalert-handler-disabledAlertTypeProp'
           type: array
@@ -26977,21 +26796,14 @@ components:
           description: Indicates whether the Alert Handler is enabled.
           type: boolean
         enabledAlertSeverity:
-          description: "Specifies the alert severities for which this alert handler\
-            \ should be used. If no values are provided, then this alert handler will\
-            \ be enabled for alerts with any severity."
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertSeverityProp'
           type: array
         enabledAlertType:
-          description: Specifies the names of the alert types that are enabled for
-            this alert handler.
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertTypeProp'
           type: array
         disabledAlertType:
-          description: Specifies the names of the alert types that are disabled for
-            this alert handler.
           items:
             $ref: '#/components/schemas/Enumalert-handler-disabledAlertTypeProp'
           type: array
@@ -27076,21 +26888,14 @@ components:
           description: Indicates whether the Alert Handler is enabled.
           type: boolean
         enabledAlertSeverity:
-          description: "Specifies the alert severities for which this alert handler\
-            \ should be used. If no values are provided, then this alert handler will\
-            \ be enabled for alerts with any severity."
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertSeverityProp'
           type: array
         enabledAlertType:
-          description: Specifies the names of the alert types that are enabled for
-            this alert handler.
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertTypeProp'
           type: array
         disabledAlertType:
-          description: Specifies the names of the alert types that are disabled for
-            this alert handler.
           items:
             $ref: '#/components/schemas/Enumalert-handler-disabledAlertTypeProp'
           type: array
@@ -27140,21 +26945,14 @@ components:
             \ when the alert was generated."
           type: boolean
         enabledAlertSeverity:
-          description: "Specifies the alert severities for which this alert handler\
-            \ should be used. If no values are provided, then this alert handler will\
-            \ be enabled for alerts with any severity."
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertSeverityProp'
           type: array
         enabledAlertType:
-          description: Specifies the names of the alert types that are enabled for
-            this alert handler.
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertTypeProp'
           type: array
         disabledAlertType:
-          description: Specifies the names of the alert types that are disabled for
-            this alert handler.
           items:
             $ref: '#/components/schemas/Enumalert-handler-disabledAlertTypeProp'
           type: array
@@ -27201,21 +26999,14 @@ components:
           description: Indicates whether the Alert Handler is enabled.
           type: boolean
         enabledAlertSeverity:
-          description: "Specifies the alert severities for which this alert handler\
-            \ should be used. If no values are provided, then this alert handler will\
-            \ be enabled for alerts with any severity."
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertSeverityProp'
           type: array
         enabledAlertType:
-          description: Specifies the names of the alert types that are enabled for
-            this alert handler.
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertTypeProp'
           type: array
         disabledAlertType:
-          description: Specifies the names of the alert types that are disabled for
-            this alert handler.
           items:
             $ref: '#/components/schemas/Enumalert-handler-disabledAlertTypeProp'
           type: array
@@ -27266,21 +27057,14 @@ components:
           description: Indicates whether the Alert Handler is enabled.
           type: boolean
         enabledAlertSeverity:
-          description: "Specifies the alert severities for which this alert handler\
-            \ should be used. If no values are provided, then this alert handler will\
-            \ be enabled for alerts with any severity."
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertSeverityProp'
           type: array
         enabledAlertType:
-          description: Specifies the names of the alert types that are enabled for
-            this alert handler.
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertTypeProp'
           type: array
         disabledAlertType:
-          description: Specifies the names of the alert types that are disabled for
-            this alert handler.
           items:
             $ref: '#/components/schemas/Enumalert-handler-disabledAlertTypeProp'
           type: array
@@ -27339,21 +27123,14 @@ components:
             \ when the alert was generated."
           type: boolean
         enabledAlertSeverity:
-          description: "Specifies the alert severities for which this alert handler\
-            \ should be used. If no values are provided, then this alert handler will\
-            \ be enabled for alerts with any severity."
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertSeverityProp'
           type: array
         enabledAlertType:
-          description: Specifies the names of the alert types that are enabled for
-            this alert handler.
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertTypeProp'
           type: array
         disabledAlertType:
-          description: Specifies the names of the alert types that are disabled for
-            this alert handler.
           items:
             $ref: '#/components/schemas/Enumalert-handler-disabledAlertTypeProp'
           type: array
@@ -28260,8 +28037,6 @@ components:
           minItems: 1
           type: array
         accountStatusNotificationType:
-          description: The types of account status notifications that should result
-            in administrative alerts.
           items:
             $ref: '#/components/schemas/Enumaccount-status-notification-handler-accountStatusNotificationTypeProp'
           type: array
@@ -28320,8 +28095,6 @@ components:
           minItems: 1
           type: array
         accountStatusNotificationType:
-          description: Indicates which types of event can trigger an account status
-            notification.
           items:
             $ref: '#/components/schemas/Enumaccount-status-notification-handler-accountStatusNotificationTypeProp'
           type: array
@@ -29054,10 +28827,6 @@ components:
             of the Root DN configuration object.
           type: boolean
         privilege:
-          description: Privileges that are either explicitly granted or revoked from
-            the root user. Privileges can be revoked by including a minus sign (-)
-            before the privilege name. This is stored in the ds-privilege-name LDAP
-            attribute.
           items:
             $ref: '#/components/schemas/Enumtopology-admin-user-privilegeProp'
           type: array
@@ -31756,7 +31525,6 @@ components:
             asynchronous queue.
           type: integer
         defaultSeverity:
-          description: Specifies the default severity levels for the logger.
           items:
             $ref: '#/components/schemas/Enumlog-publisher-defaultSeverityProp'
           type: array
@@ -32627,47 +32395,34 @@ components:
             This can help prevent extremely long log messages from being written.
           type: integer
         debugMessageType:
-          description: Specifies the debug message types which can be logged. Note
-            that enabling these may result in sensitive information being logged.
           items:
             $ref: '#/components/schemas/Enumlog-publisher-debugMessageTypeProp'
           type: array
         httpMessageType:
-          description: Specifies the HTTP message types which can be logged.
           items:
             $ref: '#/components/schemas/Enumlog-publisher-httpMessageTypeProp'
           type: array
         accessTokenValidatorMessageType:
-          description: Specifies the access token validator message types that can
-            be logged.
           items:
             $ref: '#/components/schemas/Enumlog-publisher-accessTokenValidatorMessageTypeProp'
           type: array
         idTokenValidatorMessageType:
-          description: Specifies the ID token validator message types that can be
-            logged.
           items:
             $ref: '#/components/schemas/Enumlog-publisher-idTokenValidatorMessageTypeProp'
           type: array
         scimMessageType:
-          description: Specifies the SCIM message types which can be logged.
           items:
             $ref: '#/components/schemas/Enumlog-publisher-scimMessageTypeProp'
           type: array
         consentMessageType:
-          description: Specifies the consent message types that can be logged.
           items:
             $ref: '#/components/schemas/Enumlog-publisher-consentMessageTypeProp'
           type: array
         directoryRESTAPIMessageType:
-          description: Specifies the Directory REST API message types which can be
-            logged.
           items:
             $ref: '#/components/schemas/Enumlog-publisher-directoryRESTAPIMessageTypeProp'
           type: array
         extensionMessageType:
-          description: Specifies the Server SDK extension message types that can be
-            logged.
           items:
             $ref: '#/components/schemas/Enumlog-publisher-extensionMessageTypeProp'
           type: array
@@ -32743,7 +32498,6 @@ components:
             asynchronous queue.
           type: integer
         defaultSeverity:
-          description: Specifies the default severity levels for the logger.
           items:
             $ref: '#/components/schemas/Enumlog-publisher-defaultSeverityProp'
           type: array
@@ -33058,7 +32812,6 @@ components:
           minItems: 1
           type: array
         defaultSeverity:
-          description: Specifies the default severity levels for the logger.
           items:
             $ref: '#/components/schemas/Enumlog-publisher-defaultSeverityProp'
           type: array
@@ -33725,8 +33478,6 @@ components:
         defaultDebugLevel:
           $ref: '#/components/schemas/Enumlog-publisher-defaultDebugLevelProp'
         defaultDebugCategory:
-          description: The debug message categories to be logged when none of the
-            defined targets match the message.
           items:
             $ref: '#/components/schemas/Enumlog-publisher-defaultDebugCategoryProp'
           type: array
@@ -33885,7 +33636,6 @@ components:
         timestampPrecision:
           $ref: '#/components/schemas/Enumlog-publisher-timestampPrecisionProp'
         defaultSeverity:
-          description: Specifies the default severity levels for the logger.
           items:
             $ref: '#/components/schemas/Enumlog-publisher-defaultSeverityProp'
           type: array
@@ -33945,7 +33695,6 @@ components:
             type: string
           type: array
         defaultSeverity:
-          description: Specifies the default severity levels for the logger.
           items:
             $ref: '#/components/schemas/Enumlog-publisher-defaultSeverityProp'
           type: array
@@ -35591,7 +35340,6 @@ components:
             \ log."
           type: boolean
         defaultSeverity:
-          description: Specifies the default severity levels for the logger.
           items:
             $ref: '#/components/schemas/Enumlog-publisher-defaultSeverityProp'
           type: array
@@ -35917,7 +35665,6 @@ components:
             need to be rotated.
           type: string
         defaultSeverity:
-          description: Specifies the default severity levels for the logger.
           items:
             $ref: '#/components/schemas/Enumlog-publisher-defaultSeverityProp'
           type: array
@@ -36417,7 +36164,6 @@ components:
             need to be rotated.
           type: string
         defaultSeverity:
-          description: Specifies the default severity levels for the logger.
           items:
             $ref: '#/components/schemas/Enumlog-publisher-defaultSeverityProp'
           type: array
@@ -37075,7 +36821,6 @@ components:
             type: string
           type: array
         defaultSeverity:
-          description: Specifies the default severity levels for the logger.
           items:
             $ref: '#/components/schemas/Enumlog-publisher-defaultSeverityProp'
           type: array
@@ -37332,7 +37077,6 @@ components:
           minItems: 1
           type: array
         defaultSeverity:
-          description: Specifies the default severity levels for the logger.
           items:
             $ref: '#/components/schemas/Enumlog-publisher-defaultSeverityProp'
           type: array
@@ -37510,7 +37254,6 @@ components:
         debugLevel:
           $ref: '#/components/schemas/Enumdebug-target-debugLevelProp'
         debugCategory:
-          description: Specifies the debug message categories to be logged.
           items:
             $ref: '#/components/schemas/Enumdebug-target-debugCategoryProp'
           type: array
@@ -38108,10 +37851,6 @@ components:
             threads. This will be ignored when using a thread-local connection pool.
           type: integer
         defunctConnectionResultCode:
-          description: "Specifies the operation result code values that should cause\
-            \ the associated connection should be considered defunct. If an operation\
-            \ fails with one of these result codes, then it will be terminated and\
-            \ an attempt will be made to establish a new connection in its place."
           items:
             $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
           type: array
@@ -38253,10 +37992,6 @@ components:
             threads. This will be ignored when using a thread-local connection pool.
           type: integer
         defunctConnectionResultCode:
-          description: "Specifies the operation result code values that should cause\
-            \ the associated connection should be considered defunct. If an operation\
-            \ fails with one of these result codes, then it will be terminated and\
-            \ an attempt will be made to establish a new connection in its place."
           items:
             $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
           type: array
@@ -38393,10 +38128,6 @@ components:
             threads. This will be ignored when using a thread-local connection pool.
           type: integer
         defunctConnectionResultCode:
-          description: "Specifies the operation result code values that should cause\
-            \ the associated connection should be considered defunct. If an operation\
-            \ fails with one of these result codes, then it will be terminated and\
-            \ an attempt will be made to establish a new connection in its place."
           items:
             $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
           type: array
@@ -38708,10 +38439,6 @@ components:
             threads. This will be ignored when using a thread-local connection pool.
           type: integer
         defunctConnectionResultCode:
-          description: "Specifies the operation result code values that should cause\
-            \ the associated connection should be considered defunct. If an operation\
-            \ fails with one of these result codes, then it will be terminated and\
-            \ an attempt will be made to establish a new connection in its place."
           items:
             $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
           type: array
@@ -38901,10 +38628,6 @@ components:
             threads. This will be ignored when using a thread-local connection pool.
           type: integer
         defunctConnectionResultCode:
-          description: "Specifies the operation result code values that should cause\
-            \ the associated connection should be considered defunct. If an operation\
-            \ fails with one of these result codes, then it will be terminated and\
-            \ an attempt will be made to establish a new connection in its place."
           items:
             $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
           type: array
@@ -39040,10 +38763,6 @@ components:
             threads. This will be ignored when using a thread-local connection pool.
           type: integer
         defunctConnectionResultCode:
-          description: "Specifies the operation result code values that should cause\
-            \ the associated connection should be considered defunct. If an operation\
-            \ fails with one of these result codes, then it will be terminated and\
-            \ an attempt will be made to establish a new connection in its place."
           items:
             $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
           type: array
@@ -39179,10 +38898,6 @@ components:
             threads. This will be ignored when using a thread-local connection pool.
           type: integer
         defunctConnectionResultCode:
-          description: "Specifies the operation result code values that should cause\
-            \ the associated connection should be considered defunct. If an operation\
-            \ fails with one of these result codes, then it will be terminated and\
-            \ an attempt will be made to establish a new connection in its place."
           items:
             $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
           type: array
@@ -39437,10 +39152,6 @@ components:
             threads. This will be ignored when using a thread-local connection pool.
           type: integer
         defunctConnectionResultCode:
-          description: "Specifies the operation result code values that should cause\
-            \ the associated connection should be considered defunct. If an operation\
-            \ fails with one of these result codes, then it will be terminated and\
-            \ an attempt will be made to establish a new connection in its place."
           items:
             $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
           type: array
@@ -40732,8 +40443,6 @@ components:
         dn2uriCacheMode:
           $ref: '#/components/schemas/Enumbackend-dn2uriCacheModeProp'
         primeMethod:
-          description: Specifies the method that should be used to prime caches with
-            data for this backend.
           items:
             $ref: '#/components/schemas/Enumbackend-primeMethodProp'
           type: array
@@ -40754,15 +40463,10 @@ components:
             \ indexes)."
           type: boolean
         systemIndexToPrime:
-          description: Specifies which system index(es) should be primed when the
-            backend is initialized.
           items:
             $ref: '#/components/schemas/Enumbackend-systemIndexToPrimeProp'
           type: array
         systemIndexToPrimeInternalNodesOnly:
-          description: "Specifies the system index(es) for which internal database\
-            \ nodes only (i.e., the database keys but not values) should be primed\
-            \ when the backend is initialized."
           items:
             $ref: '#/components/schemas/Enumbackend-systemIndexToPrimeInternalNodesOnlyProp'
           type: array
@@ -41357,8 +41061,6 @@ components:
             index entry limit.
           type: boolean
         indexType:
-          description: Specifies the type(s) of indexing that should be performed
-            for the associated attribute.
           items:
             $ref: '#/components/schemas/Enumlocal-db-index-indexTypeProp'
           type: array
@@ -42190,7 +41892,6 @@ components:
         debugLevel:
           $ref: '#/components/schemas/Enumhttp-servlet-extension-debugLevelProp'
         debugType:
-          description: The types of debug messages that should be logged.
           items:
             $ref: '#/components/schemas/Enumhttp-servlet-extension-debugTypeProp'
           type: array
@@ -42346,8 +42047,6 @@ components:
             requests from authenticated clients.
           type: boolean
         allowedAuthenticationType:
-          description: The types of authentication that may be used to authenticate
-            to the file servlet.
           items:
             $ref: '#/components/schemas/Enumhttp-servlet-extension-allowedAuthenticationTypeProp'
           type: array
@@ -43007,8 +42706,6 @@ components:
             type: string
           type: array
         allowedOperation:
-          description: Specifies the types of operations that clients associated with
-            this Client Connection Policy will be allowed to request.
           items:
             $ref: '#/components/schemas/Enumclient-connection-policy-allowedOperationProp'
           type: array
@@ -43049,8 +42746,6 @@ components:
             type: string
           type: array
         allowedAuthType:
-          description: Specifies the types of authentication that clients associated
-            with this Client Connection Policy will be allowed to request.
           items:
             $ref: '#/components/schemas/Enumclient-connection-policy-allowedAuthTypeProp'
           type: array
@@ -43067,9 +42762,6 @@ components:
             type: string
           type: array
         allowedFilterType:
-          description: Specifies the types of filter components that may be included
-            in search requests from clients associated with this Client Connection
-            Policy which have a non-baseObject scope.
           items:
             $ref: '#/components/schemas/Enumclient-connection-policy-allowedFilterTypeProp'
           type: array
@@ -45141,9 +44833,6 @@ components:
         resultCodeCriteria:
           $ref: '#/components/schemas/Enumresult-criteria-resultCodeCriteriaProp'
         resultCodeValue:
-          description: Specifies the operation result code values for results included
-            in this Simple Result Criteria. This will only be taken into account if
-            the "result-code-criteria" property has a value of "selected-result-codes".
           items:
             $ref: '#/components/schemas/Enumresult-criteria-resultCodeValueProp'
           type: array
@@ -45203,26 +44892,12 @@ components:
         usedAnyPrivilege:
           $ref: '#/components/schemas/Enumresult-criteria-usedAnyPrivilegeProp'
         usedPrivilege:
-          description: "Specifies the name of a privilege that must have been used\
-            \ during the processing for operations included in this Simple Result\
-            \ Criteria. If any privilege names are provided, then the associated operation\
-            \ must have used at least one of those privileges. If no privilege names\
-            \ were provided, then the set of privileges used will not be considered\
-            \ when determining whether an operation should be included in this Simple\
-            \ Result Criteria."
           items:
             $ref: '#/components/schemas/Enumresult-criteria-usedPrivilegeProp'
           type: array
         missingAnyPrivilege:
           $ref: '#/components/schemas/Enumresult-criteria-missingAnyPrivilegeProp'
         missingPrivilege:
-          description: "Specifies the name of a privilege that must have been missing\
-            \ during the processing for operations included in this Simple Result\
-            \ Criteria. If any privilege names are provided, then the associated operation\
-            \ must have been missing at least one of those privileges. If no privilege\
-            \ names were provided, then the set of privileges missing will not be\
-            \ considered when determining whether an operation should be included\
-            \ in this Simple Result Criteria."
           items:
             $ref: '#/components/schemas/Enumresult-criteria-missingPrivilegeProp'
           type: array
@@ -45490,14 +45165,10 @@ components:
           minItems: 1
           type: array
         localAssuranceLevel:
-          description: The local assurance level values that will be allowed to match
-            this Replication Assurance Result Criteria.
           items:
             $ref: '#/components/schemas/Enumresult-criteria-localAssuranceLevelProp'
           type: array
         remoteAssuranceLevel:
-          description: The local assurance level values that will be allowed to match
-            this Replication Assurance Result Criteria.
           items:
             $ref: '#/components/schemas/Enumresult-criteria-remoteAssuranceLevelProp'
           type: array
@@ -47568,8 +47239,6 @@ components:
           minItems: 1
           type: array
         allowedMIMEType:
-          description: "The list of file types allowed to be uploaded. If no types\
-            \ are specified, then all types will be allowed."
           items:
             $ref: '#/components/schemas/Enumdelegated-admin-attribute-certificate-allowedMIMETypeProp'
           type: array
@@ -47651,8 +47320,6 @@ components:
           minItems: 1
           type: array
         allowedMIMEType:
-          description: "The list of file types allowed to be uploaded. If no types\
-            \ are specified, then all types will be allowed."
           items:
             $ref: '#/components/schemas/Enumdelegated-admin-attribute-photo-allowedMIMETypeProp'
           type: array
@@ -48456,9 +48123,6 @@ components:
             type: string
           type: array
         weakCryptEncoding:
-          description: Reporting on users with passwords encoded using the Crypt Password
-            Storage scheme may be further limited by selecting one or more encoding
-            mechanisms that are considered weak.
           items:
             $ref: '#/components/schemas/Enumdata-security-auditor-weakCryptEncodingProp'
           type: array
@@ -48558,9 +48222,6 @@ components:
           description: Specifies the name of the detailed report file.
           type: string
         includePrivilege:
-          description: "If defined, only entries with the specified privileges will\
-            \ be reported. By default, entries with any privilege assigned will be\
-            \ reported."
           items:
             $ref: '#/components/schemas/Enumdata-security-auditor-includePrivilegeProp'
           type: array
@@ -52205,8 +51866,6 @@ components:
             bind request that contains a DN but no password.
           type: boolean
         disabledPrivilege:
-          description: Specifies the name of a privilege that should not be evaluated
-            by the server.
           items:
             $ref: '#/components/schemas/Enumglobal-configuration-disabledPrivilegeProp'
           type: array
@@ -52234,13 +51893,6 @@ components:
             \ may still be available for other verification processing."
           type: boolean
         allowedInsecureTLSProtocol:
-          description: "Specifies a set of TLS protocols that will be permitted for\
-            \ use in the server even though there may be known vulnerabilities that\
-            \ could cause their use to be unsafe in some conditions. Enabling support\
-            \ for insecure TLS protocols is discouraged, and is generally recommended\
-            \ only as a short-term measure to permit legacy clients to interact with\
-            \ the server until they can be updated to support more secure communication\
-            \ protocols."
           items:
             $ref: '#/components/schemas/Enumglobal-configuration-allowedInsecureTLSProtocolProp'
           type: array
@@ -52350,10 +52002,6 @@ components:
         singleStructuralObjectclassBehavior:
           $ref: '#/components/schemas/Enumglobal-configuration-singleStructuralObjectclassBehaviorProp'
         attributesModifiableWithIgnoreNoUserModificationRequestControl:
-          description: Specifies the operational attribute types that are defined
-            in the schema with the NO-USER-MODIFICATION constraint that the server
-            will allow to be altered if the associated request contains the ignore
-            NO-USER-MODIFICATION request control.
           items:
             $ref: '#/components/schemas/Enumglobal-configuration-attributesModifiableWithIgnoreNoUserModificationRequestControlProp'
           type: array
@@ -52822,8 +52470,6 @@ components:
             internal write operations processed in the server.
           type: string
         operationType:
-          description: Specifies the types of operations that should result in access
-            time updates.
           items:
             $ref: '#/components/schemas/Enumplugin-operationTypeProp'
           type: array
@@ -52900,8 +52546,6 @@ components:
         entryCacheInfo:
           $ref: '#/components/schemas/Enumplugin-entryCacheInfoProp'
         hostInfo:
-          description: "Specifies the level of detail to include about the host system\
-            \ resource utilization including CPU, memory, disk and network activity."
           items:
             $ref: '#/components/schemas/Enumplugin-hostInfoProp'
           type: array
@@ -52960,8 +52604,6 @@ components:
             property) in the Global Sync Configuration in the Data Sync Server.
           type: string
         pluginType:
-          description: "Specifies the set of plug-in types for the plug-in, which\
-            \ specifies the times at which the plug-in is invoked."
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
           type: array
@@ -52989,8 +52631,6 @@ components:
           description: Name of the Plugin Root
           type: string
         pluginType:
-          description: "Specifies the set of plug-in types for the plug-in, which\
-            \ specifies the times at which the plug-in is invoked."
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
           type: array
@@ -53035,8 +52675,6 @@ components:
           description: Name of the Plugin Root
           type: string
         pluginType:
-          description: "Specifies the set of plug-in types for the plug-in, which\
-            \ specifies the times at which the plug-in is invoked."
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
           type: array
@@ -53064,13 +52702,10 @@ components:
           description: Name of the Plugin Root
           type: string
         pluginType:
-          description: "Specifies the set of plug-in types for the plug-in, which\
-            \ specifies the times at which the plug-in is invoked."
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
           type: array
         attributeType:
-          description: The attribute types whose values should be encrypted.
           items:
             $ref: '#/components/schemas/Enumplugin-attributeTypeProp'
           type: array
@@ -53162,8 +52797,6 @@ components:
           description: Indicates whether the plug-in is enabled for use.
           type: boolean
         pluginType:
-          description: "Specifies the set of plug-in types for the plug-in, which\
-            \ specifies the times at which the plug-in is invoked."
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
           type: array
@@ -53258,8 +52891,6 @@ components:
           description: Name of the Plugin Root
           type: string
         pluginType:
-          description: "Specifies the set of plug-in types for the plug-in, which\
-            \ specifies the times at which the plug-in is invoked."
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
           type: array
@@ -53287,8 +52918,6 @@ components:
           description: Name of the Plugin Root
           type: string
         pluginType:
-          description: "Specifies the set of plug-in types for the plug-in, which\
-            \ specifies the times at which the plug-in is invoked."
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
           type: array
@@ -53933,7 +53562,6 @@ components:
             \ this server, only the certificate(s) listed here will be trusted."
           type: string
         purpose:
-          description: Identifies the purpose of this Server Instance Listener.
           items:
             $ref: '#/components/schemas/Enumserver-instance-listener-purposeProp'
           type: array
@@ -53961,7 +53589,6 @@ components:
         connectionSecurity:
           $ref: '#/components/schemas/Enumserver-instance-listener-http-connectionSecurityProp'
         purpose:
-          description: Identifies the purpose of this Server Instance Listener.
           items:
             $ref: '#/components/schemas/Enumserver-instance-listener-purposeProp'
           type: array
@@ -54057,8 +53684,6 @@ components:
           format: password
           type: string
         purpose:
-          description: Identifies the purpose of this Inter Server Authentication
-            Info.
           items:
             $ref: '#/components/schemas/Enuminter-server-authentication-info-purposeProp'
           type: array
@@ -54076,8 +53701,6 @@ components:
           description: Name of the Server Instance
           type: string
         purpose:
-          description: Identifies the purpose of this Inter Server Authentication
-            Info.
           items:
             $ref: '#/components/schemas/Enuminter-server-authentication-info-purposeProp'
           type: array
@@ -54273,8 +53896,6 @@ components:
           minItems: 1
           type: array
         defaultRootPrivilegeName:
-          description: Specifies the names of the privileges that root users will
-            be granted by default.
           items:
             $ref: '#/components/schemas/Enumroot-dn-defaultRootPrivilegeNameProp'
           type: array
@@ -54867,12 +54488,6 @@ components:
             type: string
           type: array
         allowedBindControl:
-          description: "Specifies a set of controls that clients should be allowed\
-            \ to include in bind requests. As bind requests are evaluated as the unauthenticated\
-            \ user, any controls included in this set will be permitted for any bind\
-            \ attempt. If you wish to grant permission for any bind controls not listed\
-            \ here, then the allowed-bind-control-oid property may be used to accomplish\
-            \ that."
           items:
             $ref: '#/components/schemas/Enumaccess-control-handler-allowedBindControlProp'
           type: array
@@ -54921,21 +54536,14 @@ components:
             \ when the alert was generated."
           type: boolean
         enabledAlertSeverity:
-          description: "Specifies the alert severities for which this alert handler\
-            \ should be used. If no values are provided, then this alert handler will\
-            \ be enabled for alerts with any severity."
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertSeverityProp'
           type: array
         enabledAlertType:
-          description: Specifies the names of the alert types that are enabled for
-            this alert handler.
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertTypeProp'
           type: array
         disabledAlertType:
-          description: Specifies the names of the alert types that are disabled for
-            this alert handler.
           items:
             $ref: '#/components/schemas/Enumalert-handler-disabledAlertTypeProp'
           type: array
@@ -54980,21 +54588,14 @@ components:
             \ when the alert was generated."
           type: boolean
         enabledAlertSeverity:
-          description: "Specifies the alert severities for which this alert handler\
-            \ should be used. If no values are provided, then this alert handler will\
-            \ be enabled for alerts with any severity."
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertSeverityProp'
           type: array
         enabledAlertType:
-          description: Specifies the names of the alert types that are enabled for
-            this alert handler.
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertTypeProp'
           type: array
         disabledAlertType:
-          description: Specifies the names of the alert types that are disabled for
-            this alert handler.
           items:
             $ref: '#/components/schemas/Enumalert-handler-disabledAlertTypeProp'
           type: array
@@ -55204,7 +54805,6 @@ components:
         debugLevel:
           $ref: '#/components/schemas/Enumldap-sdk-debug-logger-debugLevelProp'
         debugType:
-          description: The types of debug messages that should be logged.
           items:
             $ref: '#/components/schemas/Enumldap-sdk-debug-logger-debugTypeProp'
           type: array
@@ -55360,16 +54960,10 @@ components:
         defaultGaugeAlertLevel:
           $ref: '#/components/schemas/Enumalarm-manager-defaultGaugeAlertLevelProp'
         generatedAlertTypes:
-          description: Indicates what kind of alert types should be generated.
           items:
             $ref: '#/components/schemas/Enumalarm-manager-generatedAlertTypesProp'
           type: array
         suppressedAlarm:
-          description: "Specifies the names of the alarm alert types that should be\
-            \ suppressed. If the condition that triggers an alarm in this list occurs,\
-            \ then the alarm will not be raised and no alerts will be generated. Only\
-            \ a subset of alarms can be suppressed in this way. Alarms triggered by\
-            \ a gauge can be disabled by disabling the gauge."
           items:
             $ref: '#/components/schemas/Enumalarm-manager-suppressedAlarmProp'
           type: array
@@ -55600,7 +55194,6 @@ components:
             for use.
           type: boolean
         defaultSeverity:
-          description: Specifies the default severity levels for the logger.
           items:
             $ref: '#/components/schemas/Enumlog-publisher-defaultSeverityProp'
           type: array
@@ -56881,8 +56474,6 @@ components:
             to be able to revert the changes if desired.
           type: boolean
         includeVirtualAttributes:
-          description: Specifies the changelog entry elements (if any) in which virtual
-            attributes should be included.
           items:
             $ref: '#/components/schemas/Enumbackend-includeVirtualAttributesProp'
           type: array
@@ -56896,8 +56487,6 @@ components:
         reportExcludedChangelogAttributes:
           $ref: '#/components/schemas/Enumbackend-reportExcludedChangelogAttributesProp'
         softDeleteEntryIncludedOperation:
-          description: Specifies which operations performed on soft-deleted entries
-            will appear in the changelog.
           items:
             $ref: '#/components/schemas/Enumbackend-softDeleteEntryIncludedOperationProp'
           type: array
@@ -57160,10 +56749,6 @@ components:
             \ this maximum."
           type: integer
         disabledAlertType:
-          description: Specifies the names of the alert types that should not be added
-            to the backend. This can be used to suppress high volume alerts that might
-            trigger hitting the max-alerts limit sooner than desired. Disabled alert
-            types will not be sent out over persistent searches on this backend.
           items:
             $ref: '#/components/schemas/Enumbackend-disabledAlertTypeProp'
           type: array
@@ -58259,7 +57844,6 @@ components:
         debugLevel:
           $ref: '#/components/schemas/Enumhttp-servlet-extension-debugLevelProp'
         debugType:
-          description: The types of debug messages that should be logged.
           items:
             $ref: '#/components/schemas/Enumhttp-servlet-extension-debugTypeProp'
           type: array
@@ -58351,11 +57935,6 @@ components:
             type: string
           type: array
         allowedControl:
-          description: Specifies the names of any request controls that should be
-            allowed by the Directory REST API. Any request that contains a critical
-            control not in this list will be rejected. Any non-critical request control
-            which is not supported by the Directory REST API will be removed from
-            the request.
           items:
             $ref: '#/components/schemas/Enumhttp-servlet-extension-allowedControlProp'
           type: array
@@ -59670,8 +59249,6 @@ components:
             the system.
           type: string
         allowedQualityOfProtection:
-          description: Specifies the supported quality of protection (QoP) levels
-            that clients will be permitted to request when performing GSSAPI authentication.
           items:
             $ref: '#/components/schemas/Enumsasl-mechanism-handler-allowedQualityOfProtectionProp'
           type: array

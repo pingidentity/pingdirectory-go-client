@@ -189,8 +189,6 @@ components:
               Specifies the port number of the endpoint where metric data should be sent.
         connectionType:
           $ref: '#/components/schemas/Enummonitoring-endpoint-connectionTypeProp'
-          description: >-
-              Specifies the protocol and security that this StatsD Monitoring Endpoint should use to connect to the configured endpoint.
         trustManagerProvider:
           type: string
           description: >-

@@ -183,8 +183,6 @@ components:
             $ref: '#/components/schemas/Enumkey-pairSchemaUrn'
         keyAlgorithm:
           $ref: '#/components/schemas/Enumkey-pair-keyAlgorithmProp'
-          description: >-
-              The algorithm name and the length in bits of the key, e.g. RSA_2048.
         selfSignedCertificateValidity:
           type: string
           description: >-

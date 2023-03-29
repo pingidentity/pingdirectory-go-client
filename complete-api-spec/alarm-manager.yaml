@@ -99,20 +99,14 @@ components:
               $ref: '#/components/schemas/Enumalarm-managerSchemaUrn'
           defaultGaugeAlertLevel:
             $ref: '#/components/schemas/Enumalarm-manager-defaultGaugeAlertLevelProp'
-            description: >-
-                Specifies the level at which alerts are sent for alarms raised by the Alarm Manager.
           generatedAlertTypes:
             type: array
             items:
               $ref: '#/components/schemas/Enumalarm-manager-generatedAlertTypesProp'
-            description: >-
-                Indicates what kind of alert types should be generated.
           suppressedAlarm:
             type: array
             items:
               $ref: '#/components/schemas/Enumalarm-manager-suppressedAlarmProp'
-            description: >-
-                Specifies the names of the alarm alert types that should be suppressed. If the condition that triggers an alarm in this list occurs, then the alarm will not be raised and no alerts will be generated. Only a subset of alarms can be suppressed in this way. Alarms triggered by a gauge can be disabled by disabling the gauge.
       - $ref: '#/components/schemas/meta'
       required:
       - defaultGaugeAlertLevel

@@ -20,11 +20,9 @@ var _ MappedNullable = &AddPeriodicGcPluginRequest{}
 // AddPeriodicGcPluginRequest struct for AddPeriodicGcPluginRequest
 type AddPeriodicGcPluginRequest struct {
 	// Name of the new Plugin
-	PluginName string                          `json:"pluginName"`
-	Schemas    []EnumperiodicGcPluginSchemaUrn `json:"schemas"`
-	// Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
-	PluginType []EnumpluginPluginTypeProp `json:"pluginType,omitempty"`
-	// Specifies the days of the week which the Periodic GC Plugin should run. If no values are provided, then the plugin will run every day at the specified time.
+	PluginName        string                            `json:"pluginName"`
+	Schemas           []EnumperiodicGcPluginSchemaUrn   `json:"schemas"`
+	PluginType        []EnumpluginPluginTypeProp        `json:"pluginType,omitempty"`
 	InvokeGCDayOfWeek []EnumpluginInvokeGCDayOfWeekProp `json:"invokeGCDayOfWeek,omitempty"`
 	// Specifies the times of the day at which garbage collection may be explicitly invoked. The times should be specified in \"HH:MM\" format, with \"HH\" as a two-digit numeric value between 00 and 23 representing the hour of the day, and MM as a two-digit numeric value between 00 and 59 representing the minute of the hour. All times will be interpreted in the UTC time zone.
 	InvokeGCTimeUtc []string `json:"invokeGCTimeUtc"`

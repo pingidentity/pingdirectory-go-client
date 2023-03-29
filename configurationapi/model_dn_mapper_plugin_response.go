@@ -20,10 +20,9 @@ var _ MappedNullable = &DnMapperPluginResponse{}
 // DnMapperPluginResponse struct for DnMapperPluginResponse
 type DnMapperPluginResponse struct {
 	// Name of the Plugin Root
-	Id      string                        `json:"id"`
-	Schemas []EnumdnMapperPluginSchemaUrn `json:"schemas"`
-	// Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
-	PluginType []EnumpluginPluginTypeProp `json:"pluginType"`
+	Id         string                        `json:"id"`
+	Schemas    []EnumdnMapperPluginSchemaUrn `json:"schemas"`
+	PluginType []EnumpluginPluginTypeProp    `json:"pluginType"`
 	// Specifies the source DN that may appear in client requests which should be remapped to the target DN. Note that the source DN must not be equal to the target DN.
 	SourceDN string `json:"sourceDN"`
 	// Specifies the DN to which the source DN should be mapped. Note that the target DN must not be equal to the source DN.

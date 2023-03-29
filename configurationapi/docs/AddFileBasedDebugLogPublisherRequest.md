@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **TimeInterval** | Pointer to **string** | Specifies the interval at which to check whether the log files need to be rotated. | [optional] 
 **TimestampPrecision** | Pointer to [**EnumlogPublisherTimestampPrecisionProp**](EnumlogPublisherTimestampPrecisionProp.md) |  | [optional] 
 **DefaultDebugLevel** | Pointer to [**EnumlogPublisherDefaultDebugLevelProp**](EnumlogPublisherDefaultDebugLevelProp.md) |  | [optional] 
-**DefaultDebugCategory** | Pointer to [**[]EnumlogPublisherDefaultDebugCategoryProp**](EnumlogPublisherDefaultDebugCategoryProp.md) | The debug message categories to be logged when none of the defined targets match the message. | [optional] 
+**DefaultDebugCategory** | Pointer to [**[]EnumlogPublisherDefaultDebugCategoryProp**](EnumlogPublisherDefaultDebugCategoryProp.md) |  | [optional] 
 **DefaultOmitMethodEntryArguments** | Pointer to **bool** | Indicates whether to include method arguments in debug messages logged by default. | [optional] 
 **DefaultOmitMethodReturnValue** | Pointer to **bool** | Indicates whether to include the return value in debug messages logged by default. | [optional] 
 **DefaultIncludeThrowableCause** | Pointer to **bool** | Indicates whether to include the cause of exceptions in exception thrown and caught messages logged by default. | [optional] 

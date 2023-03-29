@@ -102,8 +102,6 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Enumaccess-control-handler-allowedBindControlProp'
-            description: >-
-                Specifies a set of controls that clients should be allowed to include in bind requests. As bind requests are evaluated as the unauthenticated user, any controls included in this set will be permitted for any bind attempt. If you wish to grant permission for any bind controls not listed here, then the allowed-bind-control-oid property may be used to accomplish that.
           allowedBindControlOID:
             type: array
             items:

@@ -202,8 +202,6 @@ components:
               Specifies the DN of the entry below which subscription data is stored for this Notification Manager. This needs to be in the backend that has the data to be notified on, and must not be the same entry as the backend base DN. The subscription base DN entry does not need to exist as it will be created by the server.
         transactionNotification:
           $ref: '#/components/schemas/Enumnotification-manager-transactionNotificationProp'
-          description: >-
-              Specifies how the operations in an external transaction (e.g. a multi-update extended operation or an LDAP transaction) are notified for this Notification Manager.
         monitorEntriesEnabled:
           type: boolean
           description: >-

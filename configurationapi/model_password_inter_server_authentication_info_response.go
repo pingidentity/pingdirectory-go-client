@@ -28,8 +28,7 @@ type PasswordInterServerAuthenticationInfoResponse struct {
 	// The username that should be used for the bind request.
 	Username *string `json:"username,omitempty"`
 	// The password for the username or bind-dn.
-	Password string `json:"password"`
-	// Identifies the purpose of this Inter Server Authentication Info.
+	Password                                      string                                             `json:"password"`
 	Purpose                                       []EnuminterServerAuthenticationInfoPurposeProp     `json:"purpose,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`

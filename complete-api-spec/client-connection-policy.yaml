@@ -301,8 +301,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumclient-connection-policy-allowedOperationProp'
-          description: >-
-              Specifies the types of operations that clients associated with this Client Connection Policy will be allowed to request.
         requiredOperationRequestCriteria:
           type: string
           description: >-
@@ -339,8 +337,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumclient-connection-policy-allowedAuthTypeProp'
-          description: >-
-              Specifies the types of authentication that clients associated with this Client Connection Policy will be allowed to request.
         allowedSASLMechanism:
           type: array
           items:
@@ -357,8 +353,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumclient-connection-policy-allowedFilterTypeProp'
-          description: >-
-              Specifies the types of filter components that may be included in search requests from clients associated with this Client Connection Policy which have a non-baseObject scope.
         allowUnindexedSearches:
           type: boolean
           description: >-
@@ -397,8 +391,6 @@ components:
               Specifies the maximum length of time that the server should wait for an outstanding operation to complete before rejecting a new request received when the maximum number of outstanding operations are already in progress on that connection. If an existing outstanding operation on the connection completes before this time, then the operation will be processed. Otherwise, the operation will be rejected with a "busy" result.
         maximumConcurrentOperationsPerConnectionExceededBehavior:
           $ref: '#/components/schemas/Enumclient-connection-policy-maximumConcurrentOperationsPerConnectionExceededBehaviorProp'
-          description: >-
-              Specifies the behavior that the Directory Server should exhibit if a client attempts to invoke more concurrent operations on a single connection than allowed by the maximum-concurrent-operations-per-connection property.
         maximumConnectionOperationRate:
           type: array
           items:
@@ -407,8 +399,6 @@ components:
               Specifies the maximum rate at which a client associated with this Client Connection Policy may issue requests to the Directory Server. If any client attempts to request operations at a rate higher than this limit, then the server will exhibit the behavior described in the connection-operation-rate-exceeded-behavior property.
         connectionOperationRateExceededBehavior:
           $ref: '#/components/schemas/Enumclient-connection-policy-connectionOperationRateExceededBehaviorProp'
-          description: >-
-              Specifies the behavior that the Directory Server should exhibit if a client connection attempts to exceed a rate defined in the maximum-connection-operation-rate property. If the configured behavior is one that will reject requested operations, then that behavior will persist until the end of the corresponding interval. The server will resume allowing that client to perform operations when that interval expires, as long as no other operation rate limits have been exceeded.
         maximumPolicyOperationRate:
           type: array
           items:
@@ -417,8 +407,6 @@ components:
               Specifies the maximum rate at which all clients associated with this Client Connection Policy, as a collective set, may issue requests to the Directory Server. If this limit is exceeded, then the server will exhibit the behavior described in the policy-operation-rate-exceeded-behavior property.
         policyOperationRateExceededBehavior:
           $ref: '#/components/schemas/Enumclient-connection-policy-policyOperationRateExceededBehaviorProp'
-          description: >-
-              Specifies the behavior that the Directory Server should exhibit if a client connection attempts to exceed a rate defined in the maximum-policy-operation-rate property. If the configured behavior is one that will reject requested operations, then that behavior will persist until the end of the corresponding interval. The server will resume allowing clients associated with this Client Connection Policy to perform operations when that interval expires, as long as no other operation rate limits have been exceeded.
         maximumSearchSizeLimit:
           type: integer
           description: >-

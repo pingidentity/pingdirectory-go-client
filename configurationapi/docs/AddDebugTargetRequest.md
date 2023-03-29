@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Schemas** | Pointer to [**[]EnumdebugTargetSchemaUrn**](EnumdebugTargetSchemaUrn.md) |  | [optional] 
 **DebugScope** | **string** | Specifies the fully-qualified Java package, class, or method affected by the settings in this target definition. Use the number character (#) to separate the class name and the method name (that is, com.unboundid.directory.server.core.DirectoryServer#startUp). | 
 **DebugLevel** | [**EnumdebugTargetDebugLevelProp**](EnumdebugTargetDebugLevelProp.md) |  | 
-**DebugCategory** | Pointer to [**[]EnumdebugTargetDebugCategoryProp**](EnumdebugTargetDebugCategoryProp.md) | Specifies the debug message categories to be logged. | [optional] 
+**DebugCategory** | Pointer to [**[]EnumdebugTargetDebugCategoryProp**](EnumdebugTargetDebugCategoryProp.md) |  | [optional] 
 **OmitMethodEntryArguments** | Pointer to **bool** | Specifies the property to indicate whether to include method arguments in debug messages. | [optional] 
 **OmitMethodReturnValue** | Pointer to **bool** | Specifies the property to indicate whether to include the return value in debug messages. | [optional] 
 **IncludeThrowableCause** | Pointer to **bool** | Specifies the property to indicate whether to include the cause of exceptions in exception thrown and caught messages. | [optional] 

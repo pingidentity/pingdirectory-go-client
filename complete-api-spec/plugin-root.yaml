@@ -717,8 +717,6 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Enumplugin-operationTypeProp'
-            description: >-
-                Specifies the types of operations that should result in access time updates.
           invokeForFailedBinds:
             type: boolean
             description: >-
@@ -850,46 +848,28 @@ components:
                 Some of the calculated statistics, such as the average and maximum queue sizes, can use multiple samples within a log interval. This value controls how often samples are gathered, and setting this value too small can have an adverse impact on performance.
           ldapInfo:
             $ref: '#/components/schemas/Enumplugin-ldapInfoProp'
-            description: >-
-                Specifies the level of detail to include about the LDAP connection handlers.
           serverInfo:
             $ref: '#/components/schemas/Enumplugin-serverInfoProp'
-            description: >-
-                Specifies whether statistics related to resource utilization such as JVM memory and CPU/Network/Disk utilization.
           perApplicationLDAPStats:
             $ref: '#/components/schemas/Enumplugin-stats-collector-perApplicationLDAPStatsProp'
-            description: >-
-                Controls whether per application LDAP statistics are included in the output for selected LDAP operation statistics.
           ldapChangelogInfo:
             $ref: '#/components/schemas/Enumplugin-ldapChangelogInfoProp'
-            description: >-
-                Specifies the level of detail to include for the LDAP changelog.
           statusSummaryInfo:
             $ref: '#/components/schemas/Enumplugin-statusSummaryInfoProp'
-            description: >-
-                Specifies the level of detail to include about the status summary monitor entry.
           generateCollectorFiles:
             type: boolean
             description: >-
                 Indicates whether this plugin should store metric samples on disk for use by the Data Metrics Server. If the Stats Collector Plugin is only being used to collect metrics for one or more StatsD Monitoring Endpoints, then this can be set to false to prevent unnecessary I/O.
           localDBBackendInfo:
             $ref: '#/components/schemas/Enumplugin-localDBBackendInfoProp'
-            description: >-
-                Specifies the level of detail to include about the Local DB Backends.
           replicationInfo:
             $ref: '#/components/schemas/Enumplugin-replicationInfoProp'
-            description: >-
-                Specifies the level of detail to include about replication.
           entryCacheInfo:
             $ref: '#/components/schemas/Enumplugin-entryCacheInfoProp'
-            description: >-
-                Specifies the level of detail to include for each entry cache.
           hostInfo:
             type: array
             items:
               $ref: '#/components/schemas/Enumplugin-hostInfoProp'
-            description: >-
-                Specifies the level of detail to include about the host system resource utilization including CPU, memory, disk and network activity.
           includedLDAPApplication:
             type: array
             items:
@@ -1016,8 +996,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
-          description: >-
-              Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
         numThreads:
           type: integer
           description: >-
@@ -1160,8 +1138,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
-          description: >-
-              Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
         attributeType:
           type: array
           items:
@@ -1308,14 +1284,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
-          description: >-
-              Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
         invokeGCDayOfWeek:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-invokeGCDayOfWeekProp'
-          description: >-
-              Specifies the days of the week which the Periodic GC Plugin should run. If no values are provided, then the plugin will run every day at the specified time.
         invokeGCTimeUtc:
           type: array
           items:
@@ -1460,8 +1432,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-ignoredPasswordPolicyStateErrorConditionProp'
-          description: >-
-              A set of password policy state error conditions that should not be enforced when authentication succeeds when attempted in the PingOne service. This option can only be used if try-local-bind is true.
         userMappingLocalAttribute:
           type: array
           items:
@@ -1530,8 +1500,6 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
-            description: >-
-                Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
           description:
             type: string
             description: >-
@@ -1572,8 +1540,6 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
-            description: >-
-                Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
           histogramCategoryBoundary:
             type: array
             items:
@@ -1658,8 +1624,6 @@ components:
               The base DN to use for the search.
         scope:
           $ref: '#/components/schemas/Enumplugin-scopeProp'
-          description: >-
-              The scope to use for the search.
         filter:
           type: string
           description: >-
@@ -1831,44 +1795,26 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-includedLDAPStatProp'
-          description: >-
-              Specifies the types of statistics related to LDAP connections and operation processing that should be included in the output.
         includedResourceStat:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-includedResourceStatProp'
-          description: >-
-              Specifies whether statistics related to resource utilization such as JVM memory.
         histogramFormat:
           $ref: '#/components/schemas/Enumplugin-histogramFormatProp'
-          description: >-
-              The format of the data in the processing time histogram.
         histogramOpType:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-histogramOpTypeProp'
-          description: >-
-              Specifies the operation type(s) to use when outputting the response time histogram data. The order of the operations here determines the order of the columns in the output. Use the per-application-ldap-stats setting to further control this.
         perApplicationLDAPStats:
           $ref: '#/components/schemas/Enumplugin-periodic-stats-logger-perApplicationLDAPStatsProp'
-          description: >-
-              Controls whether per application LDAP statistics are included in the output for selected LDAP operation statistics.
         statusSummaryInfo:
           $ref: '#/components/schemas/Enumplugin-statusSummaryInfoProp'
-          description: >-
-              Specifies the level of detail to include about the status summary monitor entry.
         ldapChangelogInfo:
           $ref: '#/components/schemas/Enumplugin-ldapChangelogInfoProp'
-          description: >-
-              Specifies the level of detail to include for the LDAP changelog.
         gaugeInfo:
           $ref: '#/components/schemas/Enumplugin-gaugeInfoProp'
-          description: >-
-              Specifies the level of detail to include for Gauges.
         logFileFormat:
           $ref: '#/components/schemas/Enumplugin-logFileFormatProp'
-          description: >-
-              Specifies the format to use when logging server statistics.
         logFile:
           type: string
           description: >-
@@ -1901,26 +1847,16 @@ components:
               The retention policy to use for the Periodic Stats Logger Plugin .
         loggingErrorBehavior:
           $ref: '#/components/schemas/Enumplugin-loggingErrorBehaviorProp'
-          description: >-
-              Specifies the behavior that the server should exhibit if an error occurs during logging processing.
         localDBBackendInfo:
           $ref: '#/components/schemas/Enumplugin-localDBBackendInfoProp'
-          description: >-
-              Specifies the level of detail to include about the Local DB Backends.
         replicationInfo:
           $ref: '#/components/schemas/Enumplugin-replicationInfoProp'
-          description: >-
-              Specifies the level of detail to include about replication.
         entryCacheInfo:
           $ref: '#/components/schemas/Enumplugin-entryCacheInfoProp'
-          description: >-
-              Specifies the level of detail to include for each entry cache.
         hostInfo:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-hostInfoProp'
-          description: >-
-              Specifies the level of detail to include about the host system resource utilization including CPU, memory, disk and network activity.
         includedLDAPApplication:
           type: array
           items:
@@ -2005,8 +1941,6 @@ components:
               The top-level JSON field within the configured datetime-attribute that determines when data should be deleted. This could store the expiration time, or it could store the creation time and the expiration-offset property specifies the duration before data is deleted.
         datetimeFormat:
           $ref: '#/components/schemas/Enumplugin-datetimeFormatProp'
-          description: >-
-              Specifies the format of the datetime stored within the entry that determines when data should be purged.
         customDatetimeFormat:
           type: string
           description: >-
@@ -2021,8 +1955,6 @@ components:
               The duration to wait after the value specified in datetime-attribute (and optionally datetime-json-field) before purging the data.
         purgeBehavior:
           $ref: '#/components/schemas/Enumplugin-purgeBehaviorProp'
-          description: >-
-              Specifies whether to delete expired entries or attribute values. By default entries are deleted.
         baseDN:
           type: string
           description: >-
@@ -2082,8 +2014,6 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
-            description: >-
-                Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
           description:
             type: string
             description: >-
@@ -2144,8 +2074,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
-          description: >-
-              Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
         requestCriteria:
           type: string
           description: >-
@@ -2231,8 +2159,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
-          description: >-
-              Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
         invokeForInternalOperations:
           type: boolean
           description: >-
@@ -2274,14 +2200,10 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
-            description: >-
-                Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
           attributeType:
             type: array
             items:
               $ref: '#/components/schemas/Enumplugin-attributeTypeProp'
-            description: >-
-                The attribute types whose values should be encrypted.
           encryptionSettingsDefinitionID:
             type: string
             description: >-
@@ -2360,8 +2282,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
-          description: >-
-              Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
         server:
           type: array
           items:
@@ -2386,8 +2306,6 @@ components:
               Indicates whether updates to the local password value should accept passwords that do not meet password policy constraints.
         serverAccessMode:
           $ref: '#/components/schemas/Enumplugin-serverAccessModeProp'
-          description: >-
-              Specifies the manner in which external servers should be used for pass-through authentication attempts if multiple servers are defined.
         includedLocalEntryBaseDN:
           type: array
           items:
@@ -2488,8 +2406,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
-          description: >-
-              Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
         sourceDN:
           type: string
           description: >-
@@ -2565,8 +2481,6 @@ components:
                 The UNIX permissions of the log files created by this Monitor History Plugin.
           loggingErrorBehavior:
             $ref: '#/components/schemas/Enumplugin-loggingErrorBehaviorProp'
-            description: >-
-                Specifies the behavior that the server should exhibit if an error occurs during logging processing.
           retentionPolicy:
             type: array
             items:
@@ -2639,8 +2553,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
-          description: >-
-              Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
         referralBaseURL:
           type: array
           items:
@@ -2754,8 +2666,6 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
-            description: >-
-                Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
           invokeForInternalOperations:
             type: boolean
             description: >-
@@ -2935,8 +2845,6 @@ components:
                 Indicates whether the profiler plug-in is to start collecting data automatically when the Directory Server is started.
           profileAction:
             $ref: '#/components/schemas/Enumplugin-profileActionProp'
-            description: >-
-                Specifies the action that should be taken by the profiler.
           description:
             type: string
             description: >-
@@ -3139,8 +3047,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
-          description: >-
-              Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
         attributeType:
           type: string
           description: >-
@@ -3153,28 +3059,16 @@ components:
               Specifies a pattern for constructing the values to use for the target attribute type.
         multipleValuePatternBehavior:
           $ref: '#/components/schemas/Enumplugin-multipleValuePatternBehaviorProp'
-          description: >-
-              The behavior to exhibit if the plugin is configured with multiple value patterns.
         multiValuedAttributeBehavior:
           $ref: '#/components/schemas/Enumplugin-multiValuedAttributeBehaviorProp'
-          description: >-
-              The behavior to exhibit for source attributes that have multiple values.
         targetAttributeExistsDuringInitialPopulationBehavior:
           $ref: '#/components/schemas/Enumplugin-targetAttributeExistsDuringInitialPopulationBehaviorProp'
-          description: >-
-              The behavior to exhibit if the target attribute exists when initially populating the entry with composed values (whether during an LDIF import, an add operation, or an invocation of the populate composed attribute values task).
         updateSourceAttributeBehavior:
           $ref: '#/components/schemas/Enumplugin-updateSourceAttributeBehaviorProp'
-          description: >-
-              The behavior to exhibit for modify and modify DN operations that update one or more of the source attributes used in any of the value patterns.
         sourceAttributeRemovalBehavior:
           $ref: '#/components/schemas/Enumplugin-sourceAttributeRemovalBehaviorProp'
-          description: >-
-              The behavior to exhibit for modify and modify DN operations that update an entry to remove source attributes in such a way that this plugin would no longer generate any composed values for that entry.
         updateTargetAttributeBehavior:
           $ref: '#/components/schemas/Enumplugin-updateTargetAttributeBehaviorProp'
-          description: >-
-              The behavior to exhibit for modify and modify DN operations that attempt to update the set of values for the target attribute.
         includeBaseDN:
           type: array
           items:
@@ -3201,12 +3095,8 @@ components:
               The set of search filters that identify entries for which composed values will not be generated.
         updatedEntryNewlyMatchesCriteriaBehavior:
           $ref: '#/components/schemas/Enumplugin-updatedEntryNewlyMatchesCriteriaBehaviorProp'
-          description: >-
-              The behavior to exhibit for modify or modify DN operations that update an entry that previously did not satisfy either the base DN or filter criteria, but now do satisfy that criteria.
         updatedEntryNoLongerMatchesCriteriaBehavior:
           $ref: '#/components/schemas/Enumplugin-updatedEntryNoLongerMatchesCriteriaBehaviorProp'
-          description: >-
-              The behavior to exhibit for modify or modify DN operations that update an entry that previously satisfied the base DN and filter criteria, but now no longer satisfies that criteria.
         description:
           type: string
           description: >-
@@ -3246,8 +3136,6 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
-            description: >-
-                Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
           description:
             type: string
             description: >-
@@ -3309,8 +3197,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
-          description: >-
-              Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
         sourceAttribute:
           type: string
           description: >-
@@ -3385,8 +3271,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
-          description: >-
-              Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
         delay:
           type: string
           description: >-
@@ -3543,8 +3427,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
-          description: >-
-              Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
         invokeForInternalOperations:
           type: boolean
           description: >-
@@ -3576,8 +3458,6 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
-            description: >-
-                Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
           includeAttribute:
             type: array
             items:
@@ -3686,8 +3566,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-ignoredPasswordPolicyStateErrorConditionProp'
-          description: >-
-              A set of password policy state error conditions that should not be enforced when authentication succeeds when attempted in the external service. This option can only be used if try-local-bind is true.
         description:
           type: string
           description: >-
@@ -3745,8 +3623,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
-          description: >-
-              Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
         attributeType:
           type: array
           items:
@@ -3832,8 +3708,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
-          description: >-
-              Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
         type:
           type: array
           items:
@@ -3842,8 +3716,6 @@ components:
               Specifies the type of attributes to check for value uniqueness.
         multipleAttributeBehavior:
           $ref: '#/components/schemas/Enumplugin-multipleAttributeBehaviorProp'
-          description: >-
-              The behavior to exhibit if multiple attribute types are specified.
         baseDN:
           type: array
           items:
@@ -3953,8 +3825,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumcustom-logged-stats-statisticTypeProp'
-          description: >-
-              Specifies the type of statistic to include in the output for each monitored attribute.
         headerPrefix:
           type: string
           description: >-

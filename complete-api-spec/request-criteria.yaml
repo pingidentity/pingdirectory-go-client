@@ -199,8 +199,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumrequest-criteria-root-dse-operationTypeProp'
-          description: >-
-              The types of operations that may be matched by this Root DSE Request Criteria.
         description:
           type: string
           description: >-
@@ -294,14 +292,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumrequest-criteria-simple-operationTypeProp'
-          description: >-
-              Specifies the operation type(s) for operations that should be included in this Simple Request Criteria.
         operationOrigin:
           type: array
           items:
             $ref: '#/components/schemas/Enumrequest-criteria-operationOriginProp'
-          description: >-
-              Specifies the origin for operations to be included in this Simple Request Criteria. If no values are provided, then the operation origin will not be taken into consideration when determining whether an operation matches this Simple Request Criteria.
         connectionCriteria:
           type: string
           description: >-
@@ -394,8 +388,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumrequest-criteria-targetBindTypeProp'
-          description: >-
-              Specifies the authentication type for bind requests included in this Simple Request Criteria. This will only be taken into account for bind operations and will be ignored for any other type of operation. If no values are provided, then the authentication type will not be considered when determining whether the request should be included in this Simple Request Criteria.
         includedTargetSASLMechanism:
           type: array
           items:
@@ -436,12 +428,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumrequest-criteria-includedSearchScopeProp'
-          description: >-
-              Specifies the search scope values included in this Simple Request Criteria. This will only be taken into account for search requests and will be ignored for all other types of requests.
         usingAdministrativeSessionWorkerThread:
           $ref: '#/components/schemas/Enumrequest-criteria-usingAdministrativeSessionWorkerThreadProp'
-          description: >-
-              Indicates whether operations being processed using a dedicated administrative session worker thread should be included in this Simple Request Criteria.
         includedApplicationName:
           type: array
           items:

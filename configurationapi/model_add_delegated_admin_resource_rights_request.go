@@ -25,8 +25,7 @@ type AddDelegatedAdminResourceRightsRequest struct {
 	// A description for this Delegated Admin Resource Rights
 	Description *string `json:"description,omitempty"`
 	// Indicates whether these Delegated Admin Resource Rights are enabled.
-	Enabled bool `json:"enabled"`
-	// Specifies administrator(s) permissions.
+	Enabled         bool                                                  `json:"enabled"`
 	AdminPermission []EnumdelegatedAdminResourceRightsAdminPermissionProp `json:"adminPermission,omitempty"`
 	AdminScope      *EnumdelegatedAdminResourceRightsAdminScopeProp       `json:"adminScope,omitempty"`
 	// Specifies subtrees within the search base whose entries can be managed by the administrator(s). The admin-scope must be set to resources-in-specific-subtrees.

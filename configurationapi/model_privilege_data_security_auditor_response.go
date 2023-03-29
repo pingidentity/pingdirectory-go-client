@@ -23,8 +23,7 @@ type PrivilegeDataSecurityAuditorResponse struct {
 	Id      string                                      `json:"id"`
 	Schemas []EnumprivilegeDataSecurityAuditorSchemaUrn `json:"schemas"`
 	// Specifies the name of the detailed report file.
-	ReportFile string `json:"reportFile"`
-	// If defined, only entries with the specified privileges will be reported. By default, entries with any privilege assigned will be reported.
+	ReportFile       string                                        `json:"reportFile"`
 	IncludePrivilege []EnumdataSecurityAuditorIncludePrivilegeProp `json:"includePrivilege,omitempty"`
 	// Indicates whether the Data Security Auditor is enabled for use.
 	Enabled bool `json:"enabled"`

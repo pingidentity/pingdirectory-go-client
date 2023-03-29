@@ -19,8 +19,7 @@ var _ MappedNullable = &RootDnResponse{}
 
 // RootDnResponse struct for RootDnResponse
 type RootDnResponse struct {
-	Schemas []EnumrootDnSchemaUrn `json:"schemas,omitempty"`
-	// Specifies the names of the privileges that root users will be granted by default.
+	Schemas                                       []EnumrootDnSchemaUrn                              `json:"schemas,omitempty"`
 	DefaultRootPrivilegeName                      []EnumrootDnDefaultRootPrivilegeNameProp           `json:"defaultRootPrivilegeName,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`

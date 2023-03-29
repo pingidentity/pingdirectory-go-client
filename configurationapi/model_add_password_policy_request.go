@@ -86,12 +86,10 @@ type AddPasswordPolicyRequest struct {
 	// Indicates whether users can change their own passwords.
 	AllowUserPasswordChanges *bool `json:"allowUserPasswordChanges,omitempty"`
 	// Indicates whether user password changes must use the password modify extended operation and must include the user's current password before the change is allowed.
-	PasswordChangeRequiresCurrentPassword *bool `json:"passwordChangeRequiresCurrentPassword,omitempty"`
-	// Specifies the conditions under which the server may retire a user's current password in the course of setting a new password for that user (whether via a modify operation or a password modify extended operation).
-	PasswordRetirementBehavior []EnumpasswordPolicyPasswordRetirementBehaviorProp `json:"passwordRetirementBehavior,omitempty"`
+	PasswordChangeRequiresCurrentPassword *bool                                              `json:"passwordChangeRequiresCurrentPassword,omitempty"`
+	PasswordRetirementBehavior            []EnumpasswordPolicyPasswordRetirementBehaviorProp `json:"passwordRetirementBehavior,omitempty"`
 	// Specifies the maximum length of time that a retired password should be considered valid and may be used to authenticate to the server.
-	MaxRetiredPasswordAge *string `json:"maxRetiredPasswordAge,omitempty"`
-	// The set of conditions under which a user governed by this Password Policy will be permitted to generate a password reset token via the deliver password reset token extended operation, and to use that token in lieu of the current password via the password modify extended operation.
+	MaxRetiredPasswordAge                 *string                                                       `json:"maxRetiredPasswordAge,omitempty"`
 	AllowedPasswordResetTokenUseCondition []EnumpasswordPolicyAllowedPasswordResetTokenUseConditionProp `json:"allowedPasswordResetTokenUseCondition,omitempty"`
 	// Indicates whether users are forced to change their passwords upon first authenticating to the Directory Server after their account has been created.
 	ForceChangeOnAdd *bool `json:"forceChangeOnAdd,omitempty"`

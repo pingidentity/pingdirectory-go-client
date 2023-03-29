@@ -19,11 +19,9 @@ var _ MappedNullable = &AlarmManagerResponse{}
 
 // AlarmManagerResponse struct for AlarmManagerResponse
 type AlarmManagerResponse struct {
-	Schemas                []EnumalarmManagerSchemaUrn                `json:"schemas,omitempty"`
-	DefaultGaugeAlertLevel EnumalarmManagerDefaultGaugeAlertLevelProp `json:"defaultGaugeAlertLevel"`
-	// Indicates what kind of alert types should be generated.
-	GeneratedAlertTypes []EnumalarmManagerGeneratedAlertTypesProp `json:"generatedAlertTypes"`
-	// Specifies the names of the alarm alert types that should be suppressed. If the condition that triggers an alarm in this list occurs, then the alarm will not be raised and no alerts will be generated. Only a subset of alarms can be suppressed in this way. Alarms triggered by a gauge can be disabled by disabling the gauge.
+	Schemas                                       []EnumalarmManagerSchemaUrn                        `json:"schemas,omitempty"`
+	DefaultGaugeAlertLevel                        EnumalarmManagerDefaultGaugeAlertLevelProp         `json:"defaultGaugeAlertLevel"`
+	GeneratedAlertTypes                           []EnumalarmManagerGeneratedAlertTypesProp          `json:"generatedAlertTypes"`
 	SuppressedAlarm                               []EnumalarmManagerSuppressedAlarmProp              `json:"suppressedAlarm,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`

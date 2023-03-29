@@ -20,9 +20,8 @@ var _ MappedNullable = &AddOpenidConnectIdTokenValidatorRequest{}
 // AddOpenidConnectIdTokenValidatorRequest struct for AddOpenidConnectIdTokenValidatorRequest
 type AddOpenidConnectIdTokenValidatorRequest struct {
 	// Name of the new ID Token Validator
-	ValidatorName string                                       `json:"validatorName"`
-	Schemas       []EnumopenidConnectIdTokenValidatorSchemaUrn `json:"schemas"`
-	// Specifies an allow list of JWT signing algorithms that will be accepted by the OpenID Connect ID Token Validator.
+	ValidatorName           string                                            `json:"validatorName"`
+	Schemas                 []EnumopenidConnectIdTokenValidatorSchemaUrn      `json:"schemas"`
 	AllowedSigningAlgorithm []EnumidTokenValidatorAllowedSigningAlgorithmProp `json:"allowedSigningAlgorithm"`
 	// Specifies the locally stored certificates that may be used to validate the signature of an incoming ID token. This property may be specified if a JWKS endpoint should not be used to retrieve public signing keys.
 	SigningCertificate []string `json:"signingCertificate,omitempty"`

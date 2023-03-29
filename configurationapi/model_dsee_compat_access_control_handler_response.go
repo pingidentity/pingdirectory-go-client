@@ -21,8 +21,7 @@ var _ MappedNullable = &DseeCompatAccessControlHandlerResponse{}
 type DseeCompatAccessControlHandlerResponse struct {
 	Schemas []EnumdseeCompatAccessControlHandlerSchemaUrn `json:"schemas,omitempty"`
 	// Defines global access control rules.
-	GlobalACI []string `json:"globalACI,omitempty"`
-	// Specifies a set of controls that clients should be allowed to include in bind requests. As bind requests are evaluated as the unauthenticated user, any controls included in this set will be permitted for any bind attempt. If you wish to grant permission for any bind controls not listed here, then the allowed-bind-control-oid property may be used to accomplish that.
+	GlobalACI          []string                                         `json:"globalACI,omitempty"`
 	AllowedBindControl []EnumaccessControlHandlerAllowedBindControlProp `json:"allowedBindControl,omitempty"`
 	// Specifies the OIDs of any additional controls (not covered by the allowed-bind-control property) that should be permitted in bind requests.
 	AllowedBindControlOID []string `json:"allowedBindControlOID,omitempty"`

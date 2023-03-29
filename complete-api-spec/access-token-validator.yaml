@@ -312,8 +312,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumaccess-token-validator-allowedSigningAlgorithmProp'
-          description: >-
-              Specifies an allow list of JWT signing algorithms that will be accepted by the JWT Access Token Validator.
         signingCertificate:
           type: array
           items:
@@ -332,14 +330,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumaccess-token-validator-allowedKeyEncryptionAlgorithmProp'
-          description: >-
-              Specifies an allow list of JWT key encryption algorithms that will be accepted by the JWT Access Token Validator. This setting is only used if encryption-key-pair is set.
         allowedContentEncryptionAlgorithm:
           type: array
           items:
             $ref: '#/components/schemas/Enumaccess-token-validator-allowedContentEncryptionAlgorithmProp'
-          description: >-
-              Specifies an allow list of JWT content encryption algorithms that will be accepted by the JWT Access Token Validator.
         clockSkewGracePeriod:
           type: string
           description: >-

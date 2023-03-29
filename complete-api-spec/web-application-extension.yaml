@@ -228,8 +228,6 @@ components:
                 The path to the log file for the web application.
           complexity:
             $ref: '#/components/schemas/Enumweb-application-extension-complexityProp'
-            description: >-
-                Specifies the maximum complexity level for managed configuration elements.
           description:
             type: string
             description: >-

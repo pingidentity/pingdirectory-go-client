@@ -20,9 +20,8 @@ var _ MappedNullable = &AddErrorLogAccountStatusNotificationHandlerRequest{}
 // AddErrorLogAccountStatusNotificationHandlerRequest struct for AddErrorLogAccountStatusNotificationHandlerRequest
 type AddErrorLogAccountStatusNotificationHandlerRequest struct {
 	// Name of the new Account Status Notification Handler
-	HandlerName string                                                  `json:"handlerName"`
-	Schemas     []EnumerrorLogAccountStatusNotificationHandlerSchemaUrn `json:"schemas"`
-	// Indicates which types of event can trigger an account status notification.
+	HandlerName                   string                                                                  `json:"handlerName"`
+	Schemas                       []EnumerrorLogAccountStatusNotificationHandlerSchemaUrn                 `json:"schemas"`
 	AccountStatusNotificationType []EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp `json:"accountStatusNotificationType"`
 	// A description for this Account Status Notification Handler
 	Description *string `json:"description,omitempty"`

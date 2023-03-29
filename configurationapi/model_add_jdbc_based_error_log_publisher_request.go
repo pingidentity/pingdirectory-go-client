@@ -29,8 +29,7 @@ type AddJdbcBasedErrorLogPublisherRequest struct {
 	// The table name to log entries to the database server.
 	LogTableName *string `json:"logTableName,omitempty"`
 	// The maximum number of log records that can be stored in the asynchronous queue.
-	QueueSize *int32 `json:"queueSize,omitempty"`
-	// Specifies the default severity levels for the logger.
+	QueueSize       *int32                                `json:"queueSize,omitempty"`
 	DefaultSeverity []EnumlogPublisherDefaultSeverityProp `json:"defaultSeverity,omitempty"`
 	// Specifies the override severity levels for the logger based on the category of the messages.
 	OverrideSeverity []string `json:"overrideSeverity,omitempty"`

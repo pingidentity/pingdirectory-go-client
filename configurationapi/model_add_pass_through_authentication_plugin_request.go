@@ -22,8 +22,7 @@ type AddPassThroughAuthenticationPluginRequest struct {
 	// Name of the new Plugin
 	PluginName string                                         `json:"pluginName"`
 	Schemas    []EnumpassThroughAuthenticationPluginSchemaUrn `json:"schemas"`
-	// Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
-	PluginType []EnumpluginPluginTypeProp `json:"pluginType,omitempty"`
+	PluginType []EnumpluginPluginTypeProp                     `json:"pluginType,omitempty"`
 	// Specifies the LDAP external server(s) to which authentication attempts should be forwarded.
 	Server []string `json:"server"`
 	// Indicates whether the bind attempt should first be attempted against the local server. Depending on the value of the override-local-password property, the bind attempt may then be attempted against a remote server if the local bind fails.

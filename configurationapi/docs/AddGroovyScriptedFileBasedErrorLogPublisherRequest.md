@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **BufferSize** | Pointer to **string** | Specifies the log file buffer size. | [optional] 
 **QueueSize** | Pointer to **int32** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
 **TimeInterval** | Pointer to **string** | Specifies the interval at which to check whether the log files need to be rotated. | [optional] 
-**DefaultSeverity** | Pointer to [**[]EnumlogPublisherDefaultSeverityProp**](EnumlogPublisherDefaultSeverityProp.md) | Specifies the default severity levels for the logger. | [optional] 
+**DefaultSeverity** | Pointer to [**[]EnumlogPublisherDefaultSeverityProp**](EnumlogPublisherDefaultSeverityProp.md) |  | [optional] 
 **OverrideSeverity** | Pointer to **[]string** | Specifies the override severity levels for the logger based on the category of the messages. | [optional] 
 **Description** | Pointer to **string** | A description for this Log Publisher | [optional] 
 **Enabled** | **bool** | Indicates whether the Log Publisher is enabled for use. | 

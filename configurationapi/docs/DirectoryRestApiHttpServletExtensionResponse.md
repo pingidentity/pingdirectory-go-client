@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **SchemasEndpointObjectclass** | Pointer to **[]string** | The list of object classes which will be returned by the schemas endpoint. | [optional] 
 **DefaultOperationalAttribute** | Pointer to **[]string** | A set of operational attributes that will be returned with entries by default. | [optional] 
 **RejectExpansionAttribute** | Pointer to **[]string** | A set of attributes which the client is not allowed to provide for the expand query parameters. This should be used for attributes that could either have a large number of values or that reference entries that are very large like groups. | [optional] 
-**AllowedControl** | Pointer to [**[]EnumhttpServletExtensionAllowedControlProp**](EnumhttpServletExtensionAllowedControlProp.md) | Specifies the names of any request controls that should be allowed by the Directory REST API. Any request that contains a critical control not in this list will be rejected. Any non-critical request control which is not supported by the Directory REST API will be removed from the request. | [optional] 
+**AllowedControl** | Pointer to [**[]EnumhttpServletExtensionAllowedControlProp**](EnumhttpServletExtensionAllowedControlProp.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this HTTP Servlet Extension | [optional] 
 **CrossOriginPolicy** | Pointer to **string** | The cross-origin request policy to use for the HTTP Servlet Extension. | [optional] 
 **ResponseHeader** | Pointer to **[]string** | Specifies HTTP header fields and values added to response headers for all requests. | [optional] 

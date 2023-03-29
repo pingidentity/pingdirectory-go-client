@@ -29,9 +29,8 @@ type AddLocalDbIndexRequest struct {
 	// Specifies, for substring indexes, the maximum number of entries that are allowed to match a given index key before that particular index key is no longer maintained. Setting a large limit can dramatically increase the database size on disk and have a big impact on server performance if the indexed attribute is modified frequently. When a very large limit is required, creating a dedicated composite index with an index-filter-pattern of (attr=*?*) will give the best balance between search and update performance.
 	SubstringIndexEntryLimit *int32 `json:"substringIndexEntryLimit,omitempty"`
 	// Indicates whether to continue to maintain a count of the number of matching entries for an index key even after that count exceeds the index entry limit.
-	MaintainMatchCountForKeysExceedingEntryLimit *bool `json:"maintainMatchCountForKeysExceedingEntryLimit,omitempty"`
-	// Specifies the type(s) of indexing that should be performed for the associated attribute.
-	IndexType []EnumlocalDbIndexIndexTypeProp `json:"indexType"`
+	MaintainMatchCountForKeysExceedingEntryLimit *bool                           `json:"maintainMatchCountForKeysExceedingEntryLimit,omitempty"`
+	IndexType                                    []EnumlocalDbIndexIndexTypeProp `json:"indexType"`
 	// The length of substrings in a substring index.
 	SubstringLength *int32 `json:"substringLength,omitempty"`
 	// If this option is enabled and this index's backend is configured to prime indexes, then this index will be loaded at startup.

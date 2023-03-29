@@ -419,16 +419,12 @@ components:
               The full name of the JSON field to which these constraints apply.
         valueType:
           $ref: '#/components/schemas/Enumjson-field-constraints-valueTypeProp'
-          description: >-
-              The data type that will be required for values of the target field.
         isRequired:
           type: boolean
           description: >-
               Indicates whether the target field must be present in JSON objects stored as values of the associated attribute type.
         isArray:
           $ref: '#/components/schemas/Enumjson-field-constraints-isArrayProp'
-          description: >-
-              Indicates whether the value of the target field may be an array of values rather than a single value. If this property is set to "required" or "optional", then the constraints defined for this field will be applied to each element of the array.
         allowNullValue:
           type: boolean
           description: >-
@@ -451,8 +447,6 @@ components:
               Indicates whether backends that support database priming should load the contents of the associated JSON index into memory whenever the backend is opened.
         cacheMode:
           $ref: '#/components/schemas/Enumjson-field-constraints-cacheModeProp'
-          description: >-
-              Specifies the behavior that the server should exhibit when caching data for the associated JSON index. This can be useful in environments in which the system does not have enough memory to fully cache the entire data set, as it makes it possible to prioritize which data is the most important to keep in memory.
         tokenizeValues:
           type: boolean
           description: >-

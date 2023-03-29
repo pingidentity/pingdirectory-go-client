@@ -320,24 +320,16 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumrecurring-task-chain-scheduledMonthProp'
-          description: >-
-              The months of the year in which instances of this Recurring Task Chain may be scheduled to start.
         scheduledDateSelectionType:
           $ref: '#/components/schemas/Enumrecurring-task-chain-scheduledDateSelectionTypeProp'
-          description: >-
-              The mechanism used to determine the dates on which instances of this Recurring Task Chain may be scheduled to start.
         scheduledDayOfTheWeek:
           type: array
           items:
             $ref: '#/components/schemas/Enumrecurring-task-chain-scheduledDayOfTheWeekProp'
-          description: >-
-              The specific days of the week on which instances of this Recurring Task Chain may be scheduled to start. If the scheduled-day-selection-type property has a value of selected-days-of-the-week, then this property must have one or more values; otherwise, it must be left undefined.
         scheduledDayOfTheMonth:
           type: array
           items:
             $ref: '#/components/schemas/Enumrecurring-task-chain-scheduledDayOfTheMonthProp'
-          description: >-
-              The specific days of the month on which instances of this Recurring Task Chain may be scheduled to start. If the scheduled-day-selection-type property has a value of selected-days-of-the-month, then this property must have one or more values; otherwise, it must be left undefined.
         scheduledTimeOfDay:
           type: array
           items:
@@ -350,12 +342,8 @@ components:
               The time zone that will be used to interpret the scheduled-time-of-day values. If no value is provided, then the JVM's default time zone will be used.
         interruptedByShutdownBehavior:
           $ref: '#/components/schemas/Enumrecurring-task-chain-interruptedByShutdownBehaviorProp'
-          description: >-
-              Specifies the behavior that the server should exhibit if it is shut down or abnormally terminated while an instance of this Recurring Task Chain is running.
         serverOfflineAtStartTimeBehavior:
           $ref: '#/components/schemas/Enumrecurring-task-chain-serverOfflineAtStartTimeBehaviorProp'
-          description: >-
-              Specifies the behavior that the server should exhibit if it is offline when the start time arrives for the tasks in this Recurring Task Chain.
       required:
       - recurringTask
       - scheduledDateSelectionType

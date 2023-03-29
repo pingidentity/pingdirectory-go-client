@@ -69,14 +69,12 @@ type ChangelogBackendResponse struct {
 	// Specifies whether values of creatorsName, createTimestamp, modifiersName and modifyTimestamp attributes will be written to changelog entries.
 	WriteLastmodAttributes *bool `json:"writeLastmodAttributes,omitempty"`
 	// Specifies whether the changelog should provide enough information to be able to revert the changes if desired.
-	UseReversibleForm *bool `json:"useReversibleForm,omitempty"`
-	// Specifies the changelog entry elements (if any) in which virtual attributes should be included.
+	UseReversibleForm        *bool                                     `json:"useReversibleForm,omitempty"`
 	IncludeVirtualAttributes []EnumbackendIncludeVirtualAttributesProp `json:"includeVirtualAttributes,omitempty"`
 	// Indicates whether the contents of changelog entries should be subject to access control and sensitive attribute evaluation such that the contents of attributes like changes, deletedEntryAttrs, ds-changelog-entry-key-attr-values, ds-changelog-before-values, and ds-changelog-after-values may be altered based on attributes the user can see in the target entry.
 	ApplyAccessControlsToChangelogEntryContents *bool                                             `json:"applyAccessControlsToChangelogEntryContents,omitempty"`
 	ReportExcludedChangelogAttributes           *EnumbackendReportExcludedChangelogAttributesProp `json:"reportExcludedChangelogAttributes,omitempty"`
-	// Specifies which operations performed on soft-deleted entries will appear in the changelog.
-	SoftDeleteEntryIncludedOperation []EnumbackendSoftDeleteEntryIncludedOperationProp `json:"softDeleteEntryIncludedOperation,omitempty"`
+	SoftDeleteEntryIncludedOperation            []EnumbackendSoftDeleteEntryIncludedOperationProp `json:"softDeleteEntryIncludedOperation,omitempty"`
 	// Specifies a name to identify the associated backend.
 	BackendID string `json:"backendID"`
 	// A description for this Backend

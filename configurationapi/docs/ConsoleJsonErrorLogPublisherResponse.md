@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumconsoleJsonErrorLogPublisherSchemaUrn**](EnumconsoleJsonErrorLogPublisherSchemaUrn.md) |  | 
 **Id** | **string** | Name of the Log Publisher | 
 **Enabled** | **bool** | Indicates whether the Console JSON Error Log Publisher is enabled for use. | 
-**DefaultSeverity** | Pointer to [**[]EnumlogPublisherDefaultSeverityProp**](EnumlogPublisherDefaultSeverityProp.md) | Specifies the default severity levels for the logger. | [optional] 
+**DefaultSeverity** | Pointer to [**[]EnumlogPublisherDefaultSeverityProp**](EnumlogPublisherDefaultSeverityProp.md) |  | [optional] 
 **WriteMultiLineMessages** | Pointer to **bool** | Indicates whether the JSON objects should be formatted to span multiple lines with a single element on each line. The multi-line format is potentially more user friendly (if administrators may need to look at the log files), but each message will be larger because of the additional spaces and end-of-line markers. | [optional] 
 **OutputLocation** | Pointer to [**EnumlogPublisherOutputLocationProp**](EnumlogPublisherOutputLocationProp.md) |  | [optional] 
 **IncludeProductName** | Pointer to **bool** | Indicates whether log messages should include the product name for the Directory Server. | [optional] 

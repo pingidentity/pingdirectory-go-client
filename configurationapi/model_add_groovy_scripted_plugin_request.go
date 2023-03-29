@@ -31,8 +31,7 @@ type AddGroovyScriptedPluginRequest struct {
 	// A description for this Plugin
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the plug-in is enabled for use.
-	Enabled bool `json:"enabled"`
-	// Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
+	Enabled    bool                       `json:"enabled"`
 	PluginType []EnumpluginPluginTypeProp `json:"pluginType"`
 	// Indicates whether the plug-in should be invoked for internal operations.
 	InvokeForInternalOperations *bool `json:"invokeForInternalOperations,omitempty"`

@@ -51,9 +51,8 @@ type PingOnePassThroughAuthenticationPluginResponse struct {
 	// This is the DN of the user that will be used to overwrite the user's local password if update-local-password is set. The DN put here should be added to 'ignore-changes-by-dn' in the appropriate Sync Source.
 	UpdateLocalPasswordDN *string `json:"updateLocalPasswordDN,omitempty"`
 	// Indicates whether to overwrite the user's local password even if the password used to authenticate to the PingOne service would have failed validation if the user attempted to set it directly.
-	AllowLaxPassThroughAuthenticationPasswords *bool `json:"allowLaxPassThroughAuthenticationPasswords,omitempty"`
-	// A set of password policy state error conditions that should not be enforced when authentication succeeds when attempted in the PingOne service. This option can only be used if try-local-bind is true.
-	IgnoredPasswordPolicyStateErrorCondition []EnumpluginIgnoredPasswordPolicyStateErrorConditionProp `json:"ignoredPasswordPolicyStateErrorCondition,omitempty"`
+	AllowLaxPassThroughAuthenticationPasswords *bool                                                    `json:"allowLaxPassThroughAuthenticationPasswords,omitempty"`
+	IgnoredPasswordPolicyStateErrorCondition   []EnumpluginIgnoredPasswordPolicyStateErrorConditionProp `json:"ignoredPasswordPolicyStateErrorCondition,omitempty"`
 	// The names of the attributes in the local user entry whose values must match the values of the corresponding fields in the PingOne service.
 	UserMappingLocalAttribute []string `json:"userMappingLocalAttribute"`
 	// The names of the fields in the PingOne service whose values must match the values of the corresponding attributes in the local user entry, as specified in the user-mapping-local-attribute property.

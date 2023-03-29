@@ -340,8 +340,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumextended-operation-handler-allowedOperationProp'
-          description: >-
-              The types of replace certificate operations that clients will be allowed to request.
         connectionCriteria:
           type: string
           description: >-

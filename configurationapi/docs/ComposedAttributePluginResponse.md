@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | Name of the Plugin Root | 
 **Schemas** | [**[]EnumcomposedAttributePluginSchemaUrn**](EnumcomposedAttributePluginSchemaUrn.md) |  | 
-**PluginType** | [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) | Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked. | 
+**PluginType** | [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | 
 **AttributeType** | **string** | The name or OID of the attribute type for which values are to be generated. | 
 **ValuePattern** | **[]string** | Specifies a pattern for constructing the values to use for the target attribute type. | 
 **MultipleValuePatternBehavior** | Pointer to [**EnumpluginMultipleValuePatternBehaviorProp**](EnumpluginMultipleValuePatternBehaviorProp.md) |  | [optional] 

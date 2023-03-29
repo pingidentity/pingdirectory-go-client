@@ -27,10 +27,9 @@ type DelegatedAdminResourceRightsResponse struct {
 	// Indicates whether these Delegated Admin Resource Rights are enabled.
 	Enabled bool `json:"enabled"`
 	// Specifies the resource type applicable to these Delegated Admin Resource Rights.
-	RestResourceType string `json:"restResourceType"`
-	// Specifies administrator(s) permissions.
-	AdminPermission []EnumdelegatedAdminResourceRightsAdminPermissionProp `json:"adminPermission,omitempty"`
-	AdminScope      *EnumdelegatedAdminResourceRightsAdminScopeProp       `json:"adminScope,omitempty"`
+	RestResourceType string                                                `json:"restResourceType"`
+	AdminPermission  []EnumdelegatedAdminResourceRightsAdminPermissionProp `json:"adminPermission,omitempty"`
+	AdminScope       *EnumdelegatedAdminResourceRightsAdminScopeProp       `json:"adminScope,omitempty"`
 	// Specifies subtrees within the search base whose entries can be managed by the administrator(s). The admin-scope must be set to resources-in-specific-subtrees.
 	ResourceSubtree []string `json:"resourceSubtree,omitempty"`
 	// Specifies groups whose members can be managed by the administrator(s). The admin-scope must be set to resources-in-specific-groups.

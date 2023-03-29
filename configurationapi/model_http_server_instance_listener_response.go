@@ -25,12 +25,11 @@ type HttpServerInstanceListenerResponse struct {
 	// If the server is listening on a particular address different from the hostname, then this property may be used to specify the address on which to listen for connections from HTTP clients.
 	ListenAddress *string `json:"listenAddress,omitempty"`
 	// The TCP port number on which the HTTP server is listening.
-	ServerHTTPPort     *int32                                                `json:"serverHTTPPort,omitempty"`
-	ConnectionSecurity *EnumserverInstanceListenerHttpConnectionSecurityProp `json:"connectionSecurity,omitempty"`
-	// Identifies the purpose of this Server Instance Listener.
-	Purpose                                       []EnumserverInstanceListenerPurposeProp            `json:"purpose,omitempty"`
-	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
-	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	ServerHTTPPort                                *int32                                                `json:"serverHTTPPort,omitempty"`
+	ConnectionSecurity                            *EnumserverInstanceListenerHttpConnectionSecurityProp `json:"connectionSecurity,omitempty"`
+	Purpose                                       []EnumserverInstanceListenerPurposeProp               `json:"purpose,omitempty"`
+	Meta                                          *MetaMeta                                             `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20    `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 }
 
 // NewHttpServerInstanceListenerResponse instantiates a new HttpServerInstanceListenerResponse object

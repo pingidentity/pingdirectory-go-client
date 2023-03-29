@@ -674,8 +674,6 @@ components:
                 Specifies the base DN(s) for the data that the backend handles.
           writabilityMode:
             $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
-            description: >-
-                Specifies the behavior that the backend should use when processing write operations.
           schemaEntryDN:
             type: array
             items:
@@ -755,8 +753,6 @@ components:
                 Specifies the base DN(s) for the data that the backend handles.
           writabilityMode:
             $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
-            description: >-
-                Specifies the behavior that the backend should use when processing write operations.
           backupDirectory:
             type: array
             items:
@@ -871,8 +867,6 @@ components:
                 Name of the Backend
           writabilityMode:
             $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
-            description: >-
-                Specifies the behavior that the backend should use when processing write operations.
           isPrivateBackend:
             type: boolean
             description: >-
@@ -954,8 +948,6 @@ components:
                 Specifies the base DN(s) for the data that the backend handles.
           writabilityMode:
             $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
-            description: >-
-                Specifies the behavior that the backend should use when processing write operations.
           trustStoreFile:
             type: string
             description: >-
@@ -1048,8 +1040,6 @@ components:
                 Specifies the base DN(s) for the data that the backend handles.
           writabilityMode:
             $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
-            description: >-
-                Specifies the behavior that the backend should use when processing write operations.
           setDegradedAlertWhenDisabled:
             type: boolean
             description: >-
@@ -1242,22 +1232,16 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Enumbackend-includeVirtualAttributesProp'
-            description: >-
-                Specifies the changelog entry elements (if any) in which virtual attributes should be included.
           applyAccessControlsToChangelogEntryContents:
             type: boolean
             description: >-
                 Indicates whether the contents of changelog entries should be subject to access control and sensitive attribute evaluation such that the contents of attributes like changes, deletedEntryAttrs, ds-changelog-entry-key-attr-values, ds-changelog-before-values, and ds-changelog-after-values may be altered based on attributes the user can see in the target entry.
           reportExcludedChangelogAttributes:
             $ref: '#/components/schemas/Enumbackend-reportExcludedChangelogAttributesProp'
-            description: >-
-                Indicates whether changelog entries that have been altered by applying access controls should include additional information about any attributes that may have been removed.
           softDeleteEntryIncludedOperation:
             type: array
             items:
               $ref: '#/components/schemas/Enumbackend-softDeleteEntryIncludedOperationProp'
-            description: >-
-                Specifies which operations performed on soft-deleted entries will appear in the changelog.
           backendID:
             type: string
             description: >-
@@ -1526,8 +1510,6 @@ components:
             $ref: '#/components/schemas/Enumlocal-db-backendSchemaUrn'
         uncachedId2entryCacheMode:
           $ref: '#/components/schemas/Enumbackend-uncachedId2entryCacheModeProp'
-          description: >-
-              Specifies the cache mode that should be used when accessing the records in the uncached-id2entry database, which provides a way to store complete or partial encoded entries with a different (and presumably less memory-intensive) cache mode than records written to id2entry.
         uncachedAttributeCriteria:
           type: string
           description: >-
@@ -1538,8 +1520,6 @@ components:
               The criteria that will be used to identify entries that should be written into the uncached-id2entry database rather than the id2entry database.
         writabilityMode:
           $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
-          description: >-
-              Specifies the behavior that the backend should use when processing write operations.
         setDegradedAlertForUntrustedIndex:
           type: boolean
           description: >-
@@ -1622,34 +1602,20 @@ components:
               Specifies the percentage of JVM memory to allocate to the database cache.
         defaultCacheMode:
           $ref: '#/components/schemas/Enumbackend-defaultCacheModeProp'
-          description: >-
-              Specifies the cache mode that should be used for any database for which the cache mode is not explicitly specified. This includes the id2entry database, which stores encoded entries, and all attribute indexes.
         id2entryCacheMode:
           $ref: '#/components/schemas/Enumbackend-id2entryCacheModeProp'
-          description: >-
-              Specifies the cache mode that should be used when accessing the records in the id2entry database, which provides a mapping between entry IDs and entry contents. Consider configuring uncached entries or uncached attributes in lieu of changing from the "cache-keys-and-values" default value.
         dn2idCacheMode:
           $ref: '#/components/schemas/Enumbackend-dn2idCacheModeProp'
-          description: >-
-              Specifies the cache mode that should be used when accessing the records in the dn2id database, which provides a mapping between normalized entry DNs and the corresponding entry IDs.
         id2childrenCacheMode:
           $ref: '#/components/schemas/Enumbackend-id2childrenCacheModeProp'
-          description: >-
-              Specifies the cache mode that should be used when accessing the records in the id2children database, which provides a mapping between the entry ID of a particular entry and the entry IDs of all of its immediate children. This index may be used when performing searches with a single-level scope if the search filter cannot be resolved to a small enough candidate list. The size of this database directly depends on the number of entries that have children.
         id2subtreeCacheMode:
           $ref: '#/components/schemas/Enumbackend-id2subtreeCacheModeProp'
-          description: >-
-              Specifies the cache mode that should be used when accessing the records in the id2subtree database, which provides a mapping between the entry ID of a particular entry and the entry IDs of all of its children to any depth. This index may be used when performing searches with a whole-subtree or subordinate-subtree scope if the search filter cannot be resolved to a small enough candidate list. The size of this database directly depends on the number of entries that have children.
         dn2uriCacheMode:
           $ref: '#/components/schemas/Enumbackend-dn2uriCacheModeProp'
-          description: >-
-              Specifies the cache mode that should be used when accessing the records in the dn2uri database, which provides a mapping between a normalized entry DN and a set of referral URLs contained in the associated smart referral entry.
         primeMethod:
           type: array
           items:
             $ref: '#/components/schemas/Enumbackend-primeMethodProp'
-          description: >-
-              Specifies the method that should be used to prime caches with data for this backend.
         primeThreadCount:
           type: integer
           description: >-
@@ -1666,14 +1632,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumbackend-systemIndexToPrimeProp'
-          description: >-
-              Specifies which system index(es) should be primed when the backend is initialized.
         systemIndexToPrimeInternalNodesOnly:
           type: array
           items:
             $ref: '#/components/schemas/Enumbackend-systemIndexToPrimeInternalNodesOnlyProp'
-          description: >-
-              Specifies the system index(es) for which internal database nodes only (i.e., the database keys but not values) should be primed when the backend is initialized.
         backgroundPrime:
           type: boolean
           description: >-
@@ -1720,12 +1682,8 @@ components:
               Specifies the number of times that the server should retry an attempted operation in the backend if a deadlock results from two concurrent requests that interfere with each other in a conflicting manner.
         externalTxnDefaultBackendLockBehavior:
           $ref: '#/components/schemas/Enumbackend-externalTxnDefaultBackendLockBehaviorProp'
-          description: >-
-              Specifies the default behavior that should be exhibited by external transactions (e.g., an LDAP transaction or an atomic multi-update operation) with regard to acquiring an exclusive lock in this backend.
         singleWriterLockBehavior:
           $ref: '#/components/schemas/Enumbackend-singleWriterLockBehaviorProp'
-          description: >-
-              Specifies the condition under which to acquire a single-writer lock to ensure that the associated operation will be the only write in progress at the time the lock is held. The single-writer lock can help avoid problems that result from database lock conflicts that arise between two write operations being processed at the same time in the same backend. This will not have any effect on the read operations processed while the write is in progress.
         subtreeDeleteSizeLimit:
           type: integer
           description: >-
@@ -1803,8 +1761,6 @@ components:
                 Specifies the base DN(s) for the data that the backend handles.
           writabilityMode:
             $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
-            description: >-
-                Specifies the behavior that the backend should use when processing write operations.
           insignificantConfigArchiveAttribute:
             type: array
             items:
@@ -1885,8 +1841,6 @@ components:
                 Specifies the base DN(s) for the data that the backend handles.
           writabilityMode:
             $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
-            description: >-
-                Specifies the behavior that the backend should use when processing write operations.
           taskBackingFile:
             type: string
             description: >-
@@ -2172,12 +2126,8 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Enumbackend-disabledAlertTypeProp'
-            description: >-
-                Specifies the names of the alert types that should not be added to the backend. This can be used to suppress high volume alerts that might trigger hitting the max-alerts limit sooner than desired. Disabled alert types will not be sent out over persistent searches on this backend.
           writabilityMode:
             $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
-            description: >-
-                Specifies the behavior that the backend should use when processing write operations.
           description:
             type: string
             description: >-
@@ -2254,8 +2204,6 @@ components:
                 Specifies the maximum number of alarms that should be retained. If more alarms than this configured maximum are generated within the alarm retention time, then the oldest alarms will be purged to achieve this maximum. Only alarms at normal severity will be purged.
           writabilityMode:
             $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
-            description: >-
-                Specifies the behavior that the backend should use when processing write operations.
           description:
             type: string
             description: >-
@@ -2340,8 +2288,6 @@ components:
                 Indicates whether the backend is enabled in the server.
           writabilityMode:
             $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
-            description: >-
-                Specifies the behavior that the backend should use when processing write operations.
           returnUnavailableWhenDisabled:
             type: boolean
             description: >-
@@ -2430,8 +2376,6 @@ components:
               Indicates whether to only prime the internal nodes of the index database, rather than priming both internal and leaf nodes.
         cacheMode:
           $ref: '#/components/schemas/Enumlocal-db-composite-index-cacheModeProp'
-          description: >-
-              The behavior that the server should exhibit when storing information from this index in the database cache.
       required:
       - indexFilterPattern
     Enumlocal-db-composite-indexSchemaUrn:
@@ -2498,8 +2442,6 @@ components:
               Specifies the base DN used in the search query that is being indexed.
         scope:
           $ref: '#/components/schemas/Enumlocal-db-vlv-index-scopeProp'
-          description: >-
-              Specifies the LDAP scope of the query that is being indexed.
         filter:
           type: string
           description: >-
@@ -2518,8 +2460,6 @@ components:
               Specifies the number of entry IDs to store in a single sorted set before it must be split.
         cacheMode:
           $ref: '#/components/schemas/Enumlocal-db-vlv-index-cacheModeProp'
-          description: >-
-              Specifies the cache mode that should be used when accessing the records in the database for this index.
       required:
       - baseDN
       - scope
@@ -2605,8 +2545,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumlocal-db-index-indexTypeProp'
-          description: >-
-              Specifies the type(s) of indexing that should be performed for the associated attribute.
         substringLength:
           type: integer
           description: >-
@@ -2631,8 +2569,6 @@ components:
               Indicates whether to maintain a separate equality index for the associated attribute without any filter, in addition to maintaining an index for each equality index filter that is defined. If this is false, then the attribute will not be indexed for equality by itself but only in conjunction with the defined equality index filters.
         cacheMode:
           $ref: '#/components/schemas/Enumlocal-db-index-cacheModeProp'
-          description: >-
-              Specifies the cache mode that should be used when accessing the records in the database for this index. This controls how much database cache memory can be consumed by this index.
       required:
       - attribute
       - indexType

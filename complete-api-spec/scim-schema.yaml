@@ -614,8 +614,6 @@ components:
               The name of the attribute.
         type:
           $ref: '#/components/schemas/Enumscim-attribute-typeProp'
-          description: >-
-              Specifies the data type for this attribute.
         required:
           type: boolean
           description: >-
@@ -636,12 +634,8 @@ components:
               Specifies the suggested canonical type values for the attribute.
         mutability:
           $ref: '#/components/schemas/Enumscim-attribute-mutabilityProp'
-          description: >-
-              Specifies the circumstances under which the values of the attribute can be written.
         returned:
           $ref: '#/components/schemas/Enumscim-attribute-returnedProp'
-          description: >-
-              Specifies the circumstances under which the values of the attribute are returned in response to a request.
         referenceType:
           type: array
           items:
@@ -728,8 +722,6 @@ components:
               A description for this SCIM Subattribute
         type:
           $ref: '#/components/schemas/Enumscim-subattribute-typeProp'
-          description: >-
-              Specifies the data type for this sub-attribute.
         required:
           type: boolean
           description: >-
@@ -750,12 +742,8 @@ components:
               Specifies the suggested canonical type values for the sub-attribute.
         mutability:
           $ref: '#/components/schemas/Enumscim-subattribute-mutabilityProp'
-          description: >-
-              Specifies the circumstances under which the values of the sub-attribute can be written.
         returned:
           $ref: '#/components/schemas/Enumscim-subattribute-returnedProp'
-          description: >-
-              Specifies the circumstances under which the values of the sub-attribute are returned in response to a request.
         referenceType:
           type: array
           items:

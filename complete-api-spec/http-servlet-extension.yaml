@@ -1262,14 +1262,10 @@ components:
               Enables debug logging of the SCIM SDK. Debug messages will be forwarded to the Directory Server debug logger with the scope of com.unboundid.directory.server.extensions.scim.SCIMHTTPServletExtension.
         debugLevel:
           $ref: '#/components/schemas/Enumhttp-servlet-extension-debugLevelProp'
-          description: >-
-              The minimum debug level that should be used for messages to be logged.
         debugType:
           type: array
           items:
             $ref: '#/components/schemas/Enumhttp-servlet-extension-debugTypeProp'
-          description: >-
-              The types of debug messages that should be logged.
         includeStackTrace:
           type: boolean
           description: >-
@@ -1439,8 +1435,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumhttp-servlet-extension-allowedAuthenticationTypeProp'
-          description: >-
-              The types of authentication that may be used to authenticate to the file servlet.
         accessTokenValidator:
           type: array
           items:
@@ -1571,22 +1565,16 @@ components:
                 If specified, the Access Token Validator(s) that may be used to validate access tokens for requests submitted to this SCIM2 HTTP Servlet Extension.
           mapAccessTokensToLocalUsers:
             $ref: '#/components/schemas/Enumhttp-servlet-extension-mapAccessTokensToLocalUsersProp'
-            description: >-
-                Indicates whether the SCIM2 servlet should attempt to map the presented access token to a local user.
           debugEnabled:
             type: boolean
             description: >-
                 Enables debug logging of the SCIM 2.0 SDK. Debug messages will be forwarded to the Directory Server debug logger with the scope of com.unboundid.directory.broker.http.scim2.extension.SCIM2HTTPServletExtension.
           debugLevel:
             $ref: '#/components/schemas/Enumhttp-servlet-extension-debugLevelProp'
-            description: >-
-                The minimum debug level that should be used for messages to be logged.
           debugType:
             type: array
             items:
               $ref: '#/components/schemas/Enumhttp-servlet-extension-debugTypeProp'
-            description: >-
-                The types of debug messages that should be logged.
           includeStackTrace:
             type: boolean
             description: >-
@@ -1721,8 +1709,6 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Enumhttp-servlet-extension-allowedControlProp'
-            description: >-
-                Specifies the names of any request controls that should be allowed by the Directory REST API. Any request that contains a critical control not in this list will be rejected. Any non-critical request control which is not supported by the Directory REST API will be removed from the request.
           description:
             type: string
             description: >-
@@ -1869,8 +1855,6 @@ components:
               The name of the object class for monitor entries that contain the monitor attribute.
         metricType:
           $ref: '#/components/schemas/Enumprometheus-monitor-attribute-metric-metricTypeProp'
-          description: >-
-              The metric type that should be used for the value of the specified monitor attribute.
         filter:
           type: string
           description: >-
@@ -1958,8 +1942,6 @@ components:
               Indicates whether this Velocity Context Provider is enabled. If set to 'false' this Velocity Context Provider will not contribute context content for any requests.
         objectScope:
           $ref: '#/components/schemas/Enumvelocity-context-provider-objectScopeProp'
-          description: >-
-              Scope for context objects contributed by this Velocity Context Provider. Must be either 'request' or 'session' or 'application'.
         includedView:
           type: array
           items:
@@ -2004,8 +1986,6 @@ components:
                 Indicates whether this Velocity Context Provider is enabled. If set to 'false' this Velocity Context Provider will not contribute context content for any requests.
           objectScope:
             $ref: '#/components/schemas/Enumvelocity-context-provider-objectScopeProp'
-            description: >-
-                Scope for context objects contributed by this Velocity Context Provider. Must be either 'request' or 'session' or 'application'.
           includedView:
             type: array
             items:
@@ -2086,8 +2066,6 @@ components:
               Indicates whether this Velocity Context Provider is enabled. If set to 'false' this Velocity Context Provider will not contribute context content for any requests.
         objectScope:
           $ref: '#/components/schemas/Enumvelocity-context-provider-objectScopeProp'
-          description: >-
-              Scope for context objects contributed by this Velocity Context Provider. Must be either 'request' or 'session' or 'application'.
         includedView:
           type: array
           items:

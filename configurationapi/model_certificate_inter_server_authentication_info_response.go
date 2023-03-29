@@ -21,8 +21,7 @@ var _ MappedNullable = &CertificateInterServerAuthenticationInfoResponse{}
 type CertificateInterServerAuthenticationInfoResponse struct {
 	Schemas []EnumcertificateInterServerAuthenticationInfoSchemaUrn `json:"schemas"`
 	// Name of the Server Instance
-	Id string `json:"id"`
-	// Identifies the purpose of this Inter Server Authentication Info.
+	Id                                            string                                             `json:"id"`
 	Purpose                                       []EnuminterServerAuthenticationInfoPurposeProp     `json:"purpose,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`

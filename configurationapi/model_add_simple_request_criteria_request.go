@@ -20,12 +20,10 @@ var _ MappedNullable = &AddSimpleRequestCriteriaRequest{}
 // AddSimpleRequestCriteriaRequest struct for AddSimpleRequestCriteriaRequest
 type AddSimpleRequestCriteriaRequest struct {
 	// Name of the new Request Criteria
-	CriteriaName string                               `json:"criteriaName"`
-	Schemas      []EnumsimpleRequestCriteriaSchemaUrn `json:"schemas"`
-	// Specifies the operation type(s) for operations that should be included in this Simple Request Criteria.
-	OperationType []EnumrequestCriteriaSimpleOperationTypeProp `json:"operationType,omitempty"`
-	// Specifies the origin for operations to be included in this Simple Request Criteria. If no values are provided, then the operation origin will not be taken into consideration when determining whether an operation matches this Simple Request Criteria.
-	OperationOrigin []EnumrequestCriteriaOperationOriginProp `json:"operationOrigin,omitempty"`
+	CriteriaName    string                                       `json:"criteriaName"`
+	Schemas         []EnumsimpleRequestCriteriaSchemaUrn         `json:"schemas"`
+	OperationType   []EnumrequestCriteriaSimpleOperationTypeProp `json:"operationType,omitempty"`
+	OperationOrigin []EnumrequestCriteriaOperationOriginProp     `json:"operationOrigin,omitempty"`
 	// Specifies a connection criteria object that must match the associated client connection for operations included in this Simple Request Criteria.
 	ConnectionCriteria *string `json:"connectionCriteria,omitempty"`
 	// Specifies the OID of a control that must be present in the request from the client for operations included in this Simple Request Criteria. If any control OIDs are provided, then the request must contain all of those controls.
@@ -55,9 +53,8 @@ type AddSimpleRequestCriteriaRequest struct {
 	// Specifies the DN of a group in which the user associated with the target entry should not be a member for requests included in this Simple Request Criteria. This will only be taken into account for add, simple bind, compare, delete, modify, modify DN, and search operations. It will be ignored for abandon, SASL bind, extended, and unbind operations. If any group DNs are provided, then the target entry must not be a member of at least one of those groups (that is, the target entry may be a member of zero or more of those groups, but not all of them).
 	NotAllIncludedTargetEntryGroupDN []string `json:"notAllIncludedTargetEntryGroupDN,omitempty"`
 	// Specifies the DN of a group in which the user associated with the target entry must not be a member for requests included in this Simple Request Criteria. This will only be taken into account for add, simple bind, compare, delete, modify, modify DN, and search operations. It will be ignored for abandon, SASL bind, extended, and unbind operations. If any group DNs are provided, then the target entry must not be a member of any of those groups.
-	NoneIncludedTargetEntryGroupDN []string `json:"noneIncludedTargetEntryGroupDN,omitempty"`
-	// Specifies the authentication type for bind requests included in this Simple Request Criteria. This will only be taken into account for bind operations and will be ignored for any other type of operation. If no values are provided, then the authentication type will not be considered when determining whether the request should be included in this Simple Request Criteria.
-	TargetBindType []EnumrequestCriteriaTargetBindTypeProp `json:"targetBindType,omitempty"`
+	NoneIncludedTargetEntryGroupDN []string                                `json:"noneIncludedTargetEntryGroupDN,omitempty"`
+	TargetBindType                 []EnumrequestCriteriaTargetBindTypeProp `json:"targetBindType,omitempty"`
 	// Specifies the name of a SASL mechanism for bind requests included in this Simple Request Criteria. This will only be taken into account for SASL bind operations and will be ignored for other types of operations and for bind operations that do not use SASL authentication.
 	IncludedTargetSASLMechanism []string `json:"includedTargetSASLMechanism,omitempty"`
 	// Specifies the name of a SASL mechanism for bind requests excluded from this Simple Request Criteria. This will only be taken into account for SASL bind operations and will be ignored for other types of operations and for bind operations that do not use SASL authentication.
@@ -69,8 +66,7 @@ type AddSimpleRequestCriteriaRequest struct {
 	// Specifies the request OID for extended requests included in this Simple Request Criteria. This will only be taken into account for extended requests and will be ignored for all other types of requests.
 	IncludedExtendedOperationOID []string `json:"includedExtendedOperationOID,omitempty"`
 	// Specifies the request OID for extended requests excluded from this Simple Request Criteria. This will only be taken into account for extended requests and will be ignored for all other types of requests.
-	ExcludedExtendedOperationOID []string `json:"excludedExtendedOperationOID,omitempty"`
-	// Specifies the search scope values included in this Simple Request Criteria. This will only be taken into account for search requests and will be ignored for all other types of requests.
+	ExcludedExtendedOperationOID           []string                                                       `json:"excludedExtendedOperationOID,omitempty"`
 	IncludedSearchScope                    []EnumrequestCriteriaIncludedSearchScopeProp                   `json:"includedSearchScope,omitempty"`
 	UsingAdministrativeSessionWorkerThread *EnumrequestCriteriaUsingAdministrativeSessionWorkerThreadProp `json:"usingAdministrativeSessionWorkerThread,omitempty"`
 	// Specifies an application name for requests included in this Simple Request Criteria.

@@ -445,8 +445,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumid-token-validator-allowedSigningAlgorithmProp'
-          description: >-
-              Specifies an allow list of JWT signing algorithms that will be accepted by the OpenID Connect ID Token Validator.
         signingCertificate:
           type: array
           items:
@@ -604,8 +602,6 @@ components:
             $ref: '#/components/schemas/Enumboolean-token-claim-validationSchemaUrn'
         requiredValue:
           $ref: '#/components/schemas/Enumtoken-claim-validation-requiredValueProp'
-          description: >-
-              Specifies the boolean claim's required value.
         description:
           type: string
           description: >-

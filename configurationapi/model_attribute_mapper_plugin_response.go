@@ -20,10 +20,9 @@ var _ MappedNullable = &AttributeMapperPluginResponse{}
 // AttributeMapperPluginResponse struct for AttributeMapperPluginResponse
 type AttributeMapperPluginResponse struct {
 	// Name of the Plugin Root
-	Id      string                               `json:"id"`
-	Schemas []EnumattributeMapperPluginSchemaUrn `json:"schemas"`
-	// Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
-	PluginType []EnumpluginPluginTypeProp `json:"pluginType"`
+	Id         string                               `json:"id"`
+	Schemas    []EnumattributeMapperPluginSchemaUrn `json:"schemas"`
+	PluginType []EnumpluginPluginTypeProp           `json:"pluginType"`
 	// Specifies the source attribute type that may appear in client requests which should be remapped to the target attribute. Note that the source attribute type must be defined in the server schema and must not be equal to the target attribute type.
 	SourceAttribute string `json:"sourceAttribute"`
 	// Specifies the target attribute type to which the source attribute type should be mapped. Note that the target attribute type must be defined in the server schema and must not be equal to the source attribute type.

@@ -268,12 +268,8 @@ components:
             $ref: '#/components/schemas/Enumnumeric-gauge-data-sourceSchemaUrn'
         dataOrientation:
           $ref: '#/components/schemas/Enumgauge-data-source-dataOrientationProp'
-          description: >-
-              Indicates whether a higher or lower value is a more severe condition.
         statisticType:
           $ref: '#/components/schemas/Enumgauge-data-source-statisticTypeProp'
-          description: >-
-              Specifies the type of statistic to include in the output for the monitored attribute.
         divideValueBy:
           type: number
           description: >-

@@ -392,8 +392,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumaccount-status-notification-handler-accountStatusNotificationTypeProp'
-          description: >-
-              The types of account status notifications that should result in administrative alerts.
         description:
           type: string
           description: >-
@@ -458,8 +456,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumaccount-status-notification-handler-accountStatusNotificationTypeProp'
-          description: >-
-              Indicates which types of event can trigger an account status notification.
         description:
           type: string
           description: >-

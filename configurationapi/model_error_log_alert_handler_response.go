@@ -27,12 +27,9 @@ type ErrorLogAlertHandlerResponse struct {
 	// Indicates whether the Alert Handler is enabled.
 	Enabled bool `json:"enabled"`
 	// Indicates whether the server should attempt to invoke this Alert Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver the alert notification) will not delay whatever processing the server was performing when the alert was generated.
-	Asynchronous *bool `json:"asynchronous,omitempty"`
-	// Specifies the alert severities for which this alert handler should be used. If no values are provided, then this alert handler will be enabled for alerts with any severity.
-	EnabledAlertSeverity []EnumalertHandlerEnabledAlertSeverityProp `json:"enabledAlertSeverity,omitempty"`
-	// Specifies the names of the alert types that are enabled for this alert handler.
-	EnabledAlertType []EnumalertHandlerEnabledAlertTypeProp `json:"enabledAlertType,omitempty"`
-	// Specifies the names of the alert types that are disabled for this alert handler.
+	Asynchronous                                  *bool                                              `json:"asynchronous,omitempty"`
+	EnabledAlertSeverity                          []EnumalertHandlerEnabledAlertSeverityProp         `json:"enabledAlertSeverity,omitempty"`
+	EnabledAlertType                              []EnumalertHandlerEnabledAlertTypeProp             `json:"enabledAlertType,omitempty"`
 	DisabledAlertType                             []EnumalertHandlerDisabledAlertTypeProp            `json:"disabledAlertType,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`

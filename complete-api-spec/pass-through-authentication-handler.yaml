@@ -196,8 +196,6 @@ components:
               Specifies the LDAP external server(s) to which authentication attempts should be forwarded.
         serverAccessMode:
           $ref: '#/components/schemas/Enumpass-through-authentication-handler-serverAccessModeProp'
-          description: >-
-              Specifies the manner in which external servers should be used for pass-through authentication attempts if multiple servers are defined.
         dnMap:
           type: array
           items:

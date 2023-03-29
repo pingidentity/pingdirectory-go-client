@@ -39,9 +39,8 @@ type DirectoryRestApiHttpServletExtensionResponse struct {
 	// A set of operational attributes that will be returned with entries by default.
 	DefaultOperationalAttribute []string `json:"defaultOperationalAttribute,omitempty"`
 	// A set of attributes which the client is not allowed to provide for the expand query parameters. This should be used for attributes that could either have a large number of values or that reference entries that are very large like groups.
-	RejectExpansionAttribute []string `json:"rejectExpansionAttribute,omitempty"`
-	// Specifies the names of any request controls that should be allowed by the Directory REST API. Any request that contains a critical control not in this list will be rejected. Any non-critical request control which is not supported by the Directory REST API will be removed from the request.
-	AllowedControl []EnumhttpServletExtensionAllowedControlProp `json:"allowedControl,omitempty"`
+	RejectExpansionAttribute []string                                     `json:"rejectExpansionAttribute,omitempty"`
+	AllowedControl           []EnumhttpServletExtensionAllowedControlProp `json:"allowedControl,omitempty"`
 	// A description for this HTTP Servlet Extension
 	Description *string `json:"description,omitempty"`
 	// The cross-origin request policy to use for the HTTP Servlet Extension.

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AttributeType** | **string** | Specifies the name or OID of the LDAP attribute type. | 
 **Schemas** | [**[]EnumcertificateDelegatedAdminAttributeSchemaUrn**](EnumcertificateDelegatedAdminAttributeSchemaUrn.md) |  | 
-**AllowedMIMEType** | Pointer to [**[]EnumdelegatedAdminAttributeCertificateAllowedMIMETypeProp**](EnumdelegatedAdminAttributeCertificateAllowedMIMETypeProp.md) | The list of file types allowed to be uploaded. If no types are specified, then all types will be allowed. | [optional] 
+**AllowedMIMEType** | Pointer to [**[]EnumdelegatedAdminAttributeCertificateAllowedMIMETypeProp**](EnumdelegatedAdminAttributeCertificateAllowedMIMETypeProp.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Delegated Admin Attribute | [optional] 
 **DisplayName** | **string** | A human readable display name for this Delegated Admin Attribute. | 
 **Mutability** | Pointer to [**EnumdelegatedAdminAttributeMutabilityProp**](EnumdelegatedAdminAttributeMutabilityProp.md) |  | [optional] 

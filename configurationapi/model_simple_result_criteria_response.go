@@ -23,9 +23,8 @@ type SimpleResultCriteriaResponse struct {
 	Id      string                              `json:"id"`
 	Schemas []EnumsimpleResultCriteriaSchemaUrn `json:"schemas"`
 	// Specifies a request criteria object that must match the associated request for operations included in this Simple Result Criteria.
-	RequestCriteria    *string                                   `json:"requestCriteria,omitempty"`
-	ResultCodeCriteria *EnumresultCriteriaResultCodeCriteriaProp `json:"resultCodeCriteria,omitempty"`
-	// Specifies the operation result code values for results included in this Simple Result Criteria. This will only be taken into account if the \"result-code-criteria\" property has a value of \"selected-result-codes\".
+	RequestCriteria        *string                                       `json:"requestCriteria,omitempty"`
+	ResultCodeCriteria     *EnumresultCriteriaResultCodeCriteriaProp     `json:"resultCodeCriteria,omitempty"`
 	ResultCodeValue        []EnumresultCriteriaResultCodeValueProp       `json:"resultCodeValue,omitempty"`
 	ProcessingTimeCriteria *EnumresultCriteriaProcessingTimeCriteriaProp `json:"processingTimeCriteria,omitempty"`
 	// Specifies the boundary value to use for the operation processing time when determining whether to include that operation in this Simple Result Criteria. This will be ignored if the \"processing-time-criteria\" property has a value of \"any\".
@@ -41,13 +40,11 @@ type SimpleResultCriteriaResponse struct {
 	// Specifies the OID of a control that should not be present in the response to the client for operations included in this Simple Result Criteria. If any control OIDs are provided, then the response must not contain at least one of those controls (that is, the response may contain zero or more of those controls, but not all of them).
 	NotAllIncludedResponseControl []string `json:"notAllIncludedResponseControl,omitempty"`
 	// Specifies the OID of a control that must not be present in the response to the client for operations included in this Simple Result Criteria. If any control OIDs are provided, then the response must not contain any of those controls.
-	NoneIncludedResponseControl []string                                    `json:"noneIncludedResponseControl,omitempty"`
-	UsedAlternateAuthzid        *EnumresultCriteriaUsedAlternateAuthzidProp `json:"usedAlternateAuthzid,omitempty"`
-	UsedAnyPrivilege            *EnumresultCriteriaUsedAnyPrivilegeProp     `json:"usedAnyPrivilege,omitempty"`
-	// Specifies the name of a privilege that must have been used during the processing for operations included in this Simple Result Criteria. If any privilege names are provided, then the associated operation must have used at least one of those privileges. If no privilege names were provided, then the set of privileges used will not be considered when determining whether an operation should be included in this Simple Result Criteria.
-	UsedPrivilege       []EnumresultCriteriaUsedPrivilegeProp      `json:"usedPrivilege,omitempty"`
-	MissingAnyPrivilege *EnumresultCriteriaMissingAnyPrivilegeProp `json:"missingAnyPrivilege,omitempty"`
-	// Specifies the name of a privilege that must have been missing during the processing for operations included in this Simple Result Criteria. If any privilege names are provided, then the associated operation must have been missing at least one of those privileges. If no privilege names were provided, then the set of privileges missing will not be considered when determining whether an operation should be included in this Simple Result Criteria.
+	NoneIncludedResponseControl []string                                           `json:"noneIncludedResponseControl,omitempty"`
+	UsedAlternateAuthzid        *EnumresultCriteriaUsedAlternateAuthzidProp        `json:"usedAlternateAuthzid,omitempty"`
+	UsedAnyPrivilege            *EnumresultCriteriaUsedAnyPrivilegeProp            `json:"usedAnyPrivilege,omitempty"`
+	UsedPrivilege               []EnumresultCriteriaUsedPrivilegeProp              `json:"usedPrivilege,omitempty"`
+	MissingAnyPrivilege         *EnumresultCriteriaMissingAnyPrivilegeProp         `json:"missingAnyPrivilege,omitempty"`
 	MissingPrivilege            []EnumresultCriteriaMissingPrivilegeProp           `json:"missingPrivilege,omitempty"`
 	RetiredPasswordUsedForBind  *EnumresultCriteriaRetiredPasswordUsedForBindProp  `json:"retiredPasswordUsedForBind,omitempty"`
 	SearchEntryReturnedCriteria *EnumresultCriteriaSearchEntryReturnedCriteriaProp `json:"searchEntryReturnedCriteria,omitempty"`

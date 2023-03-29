@@ -22,8 +22,7 @@ type AddSevenBitCleanPluginRequest struct {
 	// Name of the new Plugin
 	PluginName string                             `json:"pluginName"`
 	Schemas    []EnumsevenBitCleanPluginSchemaUrn `json:"schemas"`
-	// Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
-	PluginType []EnumpluginPluginTypeProp `json:"pluginType,omitempty"`
+	PluginType []EnumpluginPluginTypeProp         `json:"pluginType,omitempty"`
 	// Specifies the name or OID of an attribute type for which values should be checked to ensure that they are 7-bit clean.
 	AttributeType []string `json:"attributeType,omitempty"`
 	// Specifies the base DN below which the checking is performed.

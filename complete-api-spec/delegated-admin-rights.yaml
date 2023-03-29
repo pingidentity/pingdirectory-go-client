@@ -420,12 +420,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumdelegated-admin-resource-rights-adminPermissionProp'
-          description: >-
-              Specifies administrator(s) permissions.
         adminScope:
           $ref: '#/components/schemas/Enumdelegated-admin-resource-rights-adminScopeProp'
-          description: >-
-              Specifies the scope of these Delegated Admin Resource Rights.
         resourceSubtree:
           type: array
           items:

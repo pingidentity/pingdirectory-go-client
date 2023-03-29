@@ -31,8 +31,7 @@ type GssapiSaslMechanismHandlerResponse struct {
 	// Specifies whether or not to allow a null value for the server-fqdn.
 	AllowNullServerFqdn *bool `json:"allowNullServerFqdn,omitempty"`
 	// Specifies the DNS-resolvable fully-qualified domain name for the system.
-	ServerFqdn *string `json:"serverFqdn,omitempty"`
-	// Specifies the supported quality of protection (QoP) levels that clients will be permitted to request when performing GSSAPI authentication.
+	ServerFqdn                 *string                                                  `json:"serverFqdn,omitempty"`
 	AllowedQualityOfProtection []EnumsaslMechanismHandlerAllowedQualityOfProtectionProp `json:"allowedQualityOfProtection,omitempty"`
 	// Specifies the name of the identity mapper that is to be used with this SASL mechanism handler to match the Kerberos principal included in the SASL bind request to the corresponding user in the directory.
 	IdentityMapper string `json:"identityMapper"`

@@ -23,9 +23,8 @@ type DebugTargetResponse struct {
 	Id      string                     `json:"id"`
 	Schemas []EnumdebugTargetSchemaUrn `json:"schemas,omitempty"`
 	// Specifies the fully-qualified Java package, class, or method affected by the settings in this target definition. Use the number character (#) to separate the class name and the method name (that is, com.unboundid.directory.server.core.DirectoryServer#startUp).
-	DebugScope string                        `json:"debugScope"`
-	DebugLevel EnumdebugTargetDebugLevelProp `json:"debugLevel"`
-	// Specifies the debug message categories to be logged.
+	DebugScope    string                             `json:"debugScope"`
+	DebugLevel    EnumdebugTargetDebugLevelProp      `json:"debugLevel"`
 	DebugCategory []EnumdebugTargetDebugCategoryProp `json:"debugCategory,omitempty"`
 	// Specifies the property to indicate whether to include method arguments in debug messages.
 	OmitMethodEntryArguments *bool `json:"omitMethodEntryArguments,omitempty"`

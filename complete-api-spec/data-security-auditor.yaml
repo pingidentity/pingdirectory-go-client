@@ -262,8 +262,6 @@ components:
               Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
         auditSeverity:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
-          description: >-
-              Specifies the severity of events to include in the report.
       required:
       - schemas
     Enumexpired-password-data-security-auditorSchemaUrn:
@@ -342,8 +340,6 @@ components:
               Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
         auditSeverity:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
-          description: >-
-              Specifies the severity of events to include in the report.
       required:
       - schemas
       - idleAccountWarningInterval
@@ -407,8 +403,6 @@ components:
               Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
         auditSeverity:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
-          description: >-
-              Specifies the severity of events to include in the report.
       required:
       - schemas
     Enumdisabled-account-data-security-auditorSchemaUrn:
@@ -473,8 +467,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumdata-security-auditor-weakCryptEncodingProp'
-          description: >-
-              Reporting on users with passwords encoded using the Crypt Password Storage scheme may be further limited by selecting one or more encoding mechanisms that are considered weak.
         enabled:
           type: boolean
           description: >-
@@ -493,8 +485,6 @@ components:
               Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
         auditSeverity:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
-          description: >-
-              Specifies the severity of events to include in the report.
       required:
       - schemas
     Enumweakly-encoded-password-data-security-auditorSchemaUrn:
@@ -585,8 +575,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumdata-security-auditor-includePrivilegeProp'
-          description: >-
-              If defined, only entries with the specified privileges will be reported. By default, entries with any privilege assigned will be reported.
         enabled:
           type: boolean
           description: >-
@@ -605,8 +593,6 @@ components:
               Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
         auditSeverity:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
-          description: >-
-              Specifies the severity of events to include in the report.
       required:
       - schemas
     Enumprivilege-data-security-auditorSchemaUrn:
@@ -669,8 +655,6 @@ components:
               Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
         auditSeverity:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
-          description: >-
-              Specifies the severity of events to include in the report.
       required:
       - schemas
     Enumaccount-usability-issues-data-security-auditorSchemaUrn:
@@ -737,8 +721,6 @@ components:
               Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
         auditSeverity:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
-          description: >-
-              Specifies the severity of events to include in the report.
       required:
       - schemas
     Enumlocked-account-data-security-auditorSchemaUrn:
@@ -806,8 +788,6 @@ components:
               Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
         auditSeverity:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
-          description: >-
-              Specifies the severity of events to include in the report.
       required:
       - schemas
       - reportFile
@@ -876,8 +856,6 @@ components:
               Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
         auditSeverity:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
-          description: >-
-              Specifies the severity of events to include in the report.
       required:
       - schemas
     Enumaccount-validity-window-data-security-auditorSchemaUrn:
@@ -940,8 +918,6 @@ components:
               Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
         auditSeverity:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
-          description: >-
-              Specifies the severity of events to include in the report.
       required:
       - schemas
     Enummultiple-password-data-security-auditorSchemaUrn:
@@ -1004,8 +980,6 @@ components:
               Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
         auditSeverity:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
-          description: >-
-              Specifies the severity of events to include in the report.
       required:
       - schemas
     Enumdeprecated-password-storage-scheme-data-security-auditorSchemaUrn:
@@ -1068,8 +1042,6 @@ components:
               Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
         auditSeverity:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
-          description: >-
-              Specifies the severity of events to include in the report.
       required:
       - schemas
     Enumnonexistent-password-policy-data-security-auditorSchemaUrn:
@@ -1132,8 +1104,6 @@ components:
               Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
         auditSeverity:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
-          description: >-
-              Specifies the severity of events to include in the report.
       required:
       - schemas
     Enumaccess-control-data-security-auditorSchemaUrn:
@@ -1205,8 +1175,6 @@ components:
               Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
         auditSeverity:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
-          description: >-
-              Specifies the severity of events to include in the report.
       required:
       - schemas
       - extensionClass

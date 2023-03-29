@@ -25,9 +25,8 @@ type AddThirdPartyErrorLogPublisherRequest struct {
 	// The fully-qualified name of the Java class providing the logic for the Third Party Error Log Publisher.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Error Log Publisher. Each configuration property should be given in the form 'name=value'.
-	ExtensionArgument []string `json:"extensionArgument,omitempty"`
-	// Specifies the default severity levels for the logger.
-	DefaultSeverity []EnumlogPublisherDefaultSeverityProp `json:"defaultSeverity,omitempty"`
+	ExtensionArgument []string                              `json:"extensionArgument,omitempty"`
+	DefaultSeverity   []EnumlogPublisherDefaultSeverityProp `json:"defaultSeverity,omitempty"`
 	// Specifies the override severity levels for the logger based on the category of the messages.
 	OverrideSeverity []string `json:"overrideSeverity,omitempty"`
 	// A description for this Log Publisher

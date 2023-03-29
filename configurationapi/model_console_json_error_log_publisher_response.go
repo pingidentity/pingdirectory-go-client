@@ -23,8 +23,7 @@ type ConsoleJsonErrorLogPublisherResponse struct {
 	// Name of the Log Publisher
 	Id string `json:"id"`
 	// Indicates whether the Console JSON Error Log Publisher is enabled for use.
-	Enabled bool `json:"enabled"`
-	// Specifies the default severity levels for the logger.
+	Enabled         bool                                  `json:"enabled"`
 	DefaultSeverity []EnumlogPublisherDefaultSeverityProp `json:"defaultSeverity,omitempty"`
 	// Indicates whether the JSON objects should be formatted to span multiple lines with a single element on each line. The multi-line format is potentially more user friendly (if administrators may need to look at the log files), but each message will be larger because of the additional spaces and end-of-line markers.
 	WriteMultiLineMessages *bool                               `json:"writeMultiLineMessages,omitempty"`

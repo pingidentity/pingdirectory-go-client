@@ -1746,8 +1746,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumlog-field-behavior-text-access-preserveFieldProp'
-          description: >-
-              The log fields whose values should be logged with the intended value. The values for these fields will be preserved, although they may be sanitized for parsability or safety purposes (for example, to escape special characters in the value), and values that are too long may be truncated.
         preserveFieldName:
           type: array
           items:
@@ -1758,8 +1756,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumlog-field-behavior-text-access-omitFieldProp'
-          description: >-
-              The log fields that should be omitted entirely from log messages. Neither the field name nor value will be included.
         omitFieldName:
           type: array
           items:
@@ -1770,8 +1766,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumlog-field-behavior-text-access-redactEntireValueFieldProp'
-          description: >-
-              The log fields whose values should be completely redacted in log messages. The field name will be included, but with a fixed value that does not reflect the actual value for the field.
         redactEntireValueFieldName:
           type: array
           items:
@@ -1782,8 +1776,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumlog-field-behavior-text-access-redactValueComponentsFieldProp'
-          description: >-
-              The log fields whose values will include redacted components.
         redactValueComponentsFieldName:
           type: array
           items:
@@ -1794,8 +1786,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumlog-field-behavior-text-access-tokenizeEntireValueFieldProp'
-          description: >-
-              The log fields whose values should be completely tokenized in log messages. The field name will be included, but the value will be replaced with a token that does not reveal the actual value, but that is generated from the value.
         tokenizeEntireValueFieldName:
           type: array
           items:
@@ -1806,8 +1796,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumlog-field-behavior-text-access-tokenizeValueComponentsFieldProp'
-          description: >-
-              The log fields whose values will include tokenized components.
         tokenizeValueComponentsFieldName:
           type: array
           items:
@@ -1820,8 +1808,6 @@ components:
               A description for this Log Field Behavior
         defaultBehavior:
           $ref: '#/components/schemas/Enumlog-field-behavior-defaultBehaviorProp'
-          description: >-
-              The default behavior that the server should exhibit for fields for which no explicit behavior is defined. If no default behavior is defined, the server will fall back to using the default behavior configured for the syntax used for each log field.
       required:
       - schemas
     Enumtext-access-log-field-behaviorSchemaUrn:
@@ -3718,8 +3704,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumlog-field-behavior-json-formatted-access-preserveFieldProp'
-          description: >-
-              The log fields whose values should be logged with the intended value. The values for these fields will be preserved, although they may be sanitized for parsability or safety purposes (for example, to escape special characters in the value), and values that are too long may be truncated.
         preserveFieldName:
           type: array
           items:
@@ -3730,8 +3714,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumlog-field-behavior-json-formatted-access-omitFieldProp'
-          description: >-
-              The log fields that should be omitted entirely from log messages. Neither the field name nor value will be included.
         omitFieldName:
           type: array
           items:
@@ -3742,8 +3724,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumlog-field-behavior-json-formatted-access-redactEntireValueFieldProp'
-          description: >-
-              The log fields whose values should be completely redacted in log messages. The field name will be included, but with a fixed value that does not reflect the actual value for the field.
         redactEntireValueFieldName:
           type: array
           items:
@@ -3754,8 +3734,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumlog-field-behavior-json-formatted-access-redactValueComponentsFieldProp'
-          description: >-
-              The log fields whose values will include redacted components.
         redactValueComponentsFieldName:
           type: array
           items:
@@ -3766,8 +3744,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumlog-field-behavior-json-formatted-access-tokenizeEntireValueFieldProp'
-          description: >-
-              The log fields whose values should be completely tokenized in log messages. The field name will be included, but the value will be replaced with a token that does not reveal the actual value, but that is generated from the value.
         tokenizeEntireValueFieldName:
           type: array
           items:
@@ -3778,8 +3754,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumlog-field-behavior-json-formatted-access-tokenizeValueComponentsFieldProp'
-          description: >-
-              The log fields whose values will include tokenized components.
         tokenizeValueComponentsFieldName:
           type: array
           items:
@@ -3792,8 +3766,6 @@ components:
               A description for this Log Field Behavior
         defaultBehavior:
           $ref: '#/components/schemas/Enumlog-field-behavior-defaultBehaviorProp'
-          description: >-
-              The default behavior that the server should exhibit for fields for which no explicit behavior is defined. If no default behavior is defined, the server will fall back to using the default behavior configured for the syntax used for each log field.
       required:
       - schemas
     Enumjson-formatted-access-log-field-behaviorSchemaUrn:

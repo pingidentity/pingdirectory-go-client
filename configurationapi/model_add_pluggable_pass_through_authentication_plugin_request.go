@@ -39,9 +39,8 @@ type AddPluggablePassThroughAuthenticationPluginRequest struct {
 	// The DN of the authorization identity that will be used when updating the user's local password if update-local-password is true. This is primarily intended for use if the Data Sync Server will be used to synchronize passwords between the local server and the external service, and in that case, the DN used here should also be added to the ignore-changes-by-dn property in the appropriate Sync Source object in the Data Sync Server configuration.
 	UpdateLocalPasswordDN *string `json:"updateLocalPasswordDN,omitempty"`
 	// Indicates whether to overwrite the user's local password even if the password used to authenticate to the external service would have failed validation if the user attempted to set it directly.
-	AllowLaxPassThroughAuthenticationPasswords *bool `json:"allowLaxPassThroughAuthenticationPasswords,omitempty"`
-	// A set of password policy state error conditions that should not be enforced when authentication succeeds when attempted in the external service. This option can only be used if try-local-bind is true.
-	IgnoredPasswordPolicyStateErrorCondition []EnumpluginIgnoredPasswordPolicyStateErrorConditionProp `json:"ignoredPasswordPolicyStateErrorCondition,omitempty"`
+	AllowLaxPassThroughAuthenticationPasswords *bool                                                    `json:"allowLaxPassThroughAuthenticationPasswords,omitempty"`
+	IgnoredPasswordPolicyStateErrorCondition   []EnumpluginIgnoredPasswordPolicyStateErrorConditionProp `json:"ignoredPasswordPolicyStateErrorCondition,omitempty"`
 	// A description for this Plugin
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the plug-in is enabled for use.

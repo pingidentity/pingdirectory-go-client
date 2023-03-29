@@ -27,14 +27,11 @@ type RecurringTaskChainResponse struct {
 	// Indicates whether this Recurring Task Chain is enabled for use. Recurring Task Chains that are disabled will not have any new instances scheduled, but instances that are already scheduled will be preserved. Those instances may be manually canceled if desired.
 	Enabled bool `json:"enabled"`
 	// The set of recurring tasks that make up this chain. At least one value must be provided. If multiple values are given, then the task instances will be invoked in the order in which they are listed.
-	RecurringTask []string `json:"recurringTask"`
-	// The months of the year in which instances of this Recurring Task Chain may be scheduled to start.
+	RecurringTask              []string                                             `json:"recurringTask"`
 	ScheduledMonth             []EnumrecurringTaskChainScheduledMonthProp           `json:"scheduledMonth"`
 	ScheduledDateSelectionType EnumrecurringTaskChainScheduledDateSelectionTypeProp `json:"scheduledDateSelectionType"`
-	// The specific days of the week on which instances of this Recurring Task Chain may be scheduled to start. If the scheduled-day-selection-type property has a value of selected-days-of-the-week, then this property must have one or more values; otherwise, it must be left undefined.
-	ScheduledDayOfTheWeek []EnumrecurringTaskChainScheduledDayOfTheWeekProp `json:"scheduledDayOfTheWeek,omitempty"`
-	// The specific days of the month on which instances of this Recurring Task Chain may be scheduled to start. If the scheduled-day-selection-type property has a value of selected-days-of-the-month, then this property must have one or more values; otherwise, it must be left undefined.
-	ScheduledDayOfTheMonth []EnumrecurringTaskChainScheduledDayOfTheMonthProp `json:"scheduledDayOfTheMonth,omitempty"`
+	ScheduledDayOfTheWeek      []EnumrecurringTaskChainScheduledDayOfTheWeekProp    `json:"scheduledDayOfTheWeek,omitempty"`
+	ScheduledDayOfTheMonth     []EnumrecurringTaskChainScheduledDayOfTheMonthProp   `json:"scheduledDayOfTheMonth,omitempty"`
 	// The time of day at which instances of the Recurring Task Chain should be eligible to start running. Values should be in the format HH:MM (where HH is a two-digit representation of the hour of the day, between 00 and 23, inclusive), and MM is a two-digit representation of the minute of the hour (between 00 and 59, inclusive). Alternately, the value can be in the form *:MM, which indicates that the task should be eligible to start at the specified minute of every hour. At least one value must be provided, but multiple values may be given to indicate multiple start times within the same day.
 	ScheduledTimeOfDay []string `json:"scheduledTimeOfDay"`
 	// The time zone that will be used to interpret the scheduled-time-of-day values. If no value is provided, then the JVM's default time zone will be used.

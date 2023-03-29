@@ -26,8 +26,7 @@ type LdapServerInstanceListenerResponse struct {
 	ServerLDAPPort     *int32                                                `json:"serverLDAPPort,omitempty"`
 	ConnectionSecurity *EnumserverInstanceListenerLdapConnectionSecurityProp `json:"connectionSecurity,omitempty"`
 	// The public component of the certificate that the listener is expected to present to clients. When establishing a connection to this server, only the certificate(s) listed here will be trusted.
-	ListenerCertificate *string `json:"listenerCertificate,omitempty"`
-	// Identifies the purpose of this Server Instance Listener.
+	ListenerCertificate                           *string                                            `json:"listenerCertificate,omitempty"`
 	Purpose                                       []EnumserverInstanceListenerPurposeProp            `json:"purpose,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **ListenAddress** | Pointer to **string** | If the server is listening on a particular address different from the hostname, then this property may be used to specify the address on which to listen for connections from HTTP clients. | [optional] 
 **ServerHTTPPort** | Pointer to **int32** | The TCP port number on which the HTTP server is listening. | [optional] 
 **ConnectionSecurity** | Pointer to [**EnumserverInstanceListenerHttpConnectionSecurityProp**](EnumserverInstanceListenerHttpConnectionSecurityProp.md) |  | [optional] 
-**Purpose** | Pointer to [**[]EnumserverInstanceListenerPurposeProp**](EnumserverInstanceListenerPurposeProp.md) | Identifies the purpose of this Server Instance Listener. | [optional] 
+**Purpose** | Pointer to [**[]EnumserverInstanceListenerPurposeProp**](EnumserverInstanceListenerPurposeProp.md) |  | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 

@@ -23,9 +23,8 @@ type LastAccessTimePluginResponse struct {
 	// Name of the Plugin Root
 	Id string `json:"id"`
 	// Specifies the maximum frequency with which last access time values should be written for an entry. This may help limit the rate of internal write operations processed in the server.
-	MaxUpdateFrequency *string `json:"maxUpdateFrequency,omitempty"`
-	// Specifies the types of operations that should result in access time updates.
-	OperationType []EnumpluginOperationTypeProp `json:"operationType,omitempty"`
+	MaxUpdateFrequency *string                       `json:"maxUpdateFrequency,omitempty"`
+	OperationType      []EnumpluginOperationTypeProp `json:"operationType,omitempty"`
 	// Indicates whether to update the last access time for an entry targeted by a bind operation if the bind is unsuccessful.
 	InvokeForFailedBinds *bool `json:"invokeForFailedBinds,omitempty"`
 	// Specifies the maximum number of entries that should be updated in a search operation. Only search result entries actually returned to the client may have their last access time updated, but because a single search operation may return a very large number of entries, the plugin will only update entries if no more than a specified number of entries are updated.

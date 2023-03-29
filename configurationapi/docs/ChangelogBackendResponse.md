@@ -30,10 +30,10 @@ Name | Type | Description | Notes
 **ChangelogMaxBeforeAfterValues** | Pointer to **int32** | This controls whether all attribute values for a modified attribute (even those values that have not changed) will be included in the changelog entry. If the number of attribute values does not exceed this limit, then all values for the modified attribute will be included in the changelog entry. | [optional] 
 **WriteLastmodAttributes** | Pointer to **bool** | Specifies whether values of creatorsName, createTimestamp, modifiersName and modifyTimestamp attributes will be written to changelog entries. | [optional] 
 **UseReversibleForm** | Pointer to **bool** | Specifies whether the changelog should provide enough information to be able to revert the changes if desired. | [optional] 
-**IncludeVirtualAttributes** | Pointer to [**[]EnumbackendIncludeVirtualAttributesProp**](EnumbackendIncludeVirtualAttributesProp.md) | Specifies the changelog entry elements (if any) in which virtual attributes should be included. | [optional] 
+**IncludeVirtualAttributes** | Pointer to [**[]EnumbackendIncludeVirtualAttributesProp**](EnumbackendIncludeVirtualAttributesProp.md) |  | [optional] 
 **ApplyAccessControlsToChangelogEntryContents** | Pointer to **bool** | Indicates whether the contents of changelog entries should be subject to access control and sensitive attribute evaluation such that the contents of attributes like changes, deletedEntryAttrs, ds-changelog-entry-key-attr-values, ds-changelog-before-values, and ds-changelog-after-values may be altered based on attributes the user can see in the target entry. | [optional] 
 **ReportExcludedChangelogAttributes** | Pointer to [**EnumbackendReportExcludedChangelogAttributesProp**](EnumbackendReportExcludedChangelogAttributesProp.md) |  | [optional] 
-**SoftDeleteEntryIncludedOperation** | Pointer to [**[]EnumbackendSoftDeleteEntryIncludedOperationProp**](EnumbackendSoftDeleteEntryIncludedOperationProp.md) | Specifies which operations performed on soft-deleted entries will appear in the changelog. | [optional] 
+**SoftDeleteEntryIncludedOperation** | Pointer to [**[]EnumbackendSoftDeleteEntryIncludedOperationProp**](EnumbackendSoftDeleteEntryIncludedOperationProp.md) |  | [optional] 
 **BackendID** | **string** | Specifies a name to identify the associated backend. | 
 **Description** | Pointer to **string** | A description for this Backend | [optional] 
 **Enabled** | **bool** | Indicates whether the backend is enabled in the server. | 

@@ -36,8 +36,7 @@ type StatsCollectorPluginResponse struct {
 	LocalDBBackendInfo     *EnumpluginLocalDBBackendInfoProp `json:"localDBBackendInfo,omitempty"`
 	ReplicationInfo        *EnumpluginReplicationInfoProp    `json:"replicationInfo,omitempty"`
 	EntryCacheInfo         *EnumpluginEntryCacheInfoProp     `json:"entryCacheInfo,omitempty"`
-	// Specifies the level of detail to include about the host system resource utilization including CPU, memory, disk and network activity.
-	HostInfo []EnumpluginHostInfoProp `json:"hostInfo,omitempty"`
+	HostInfo               []EnumpluginHostInfoProp          `json:"hostInfo,omitempty"`
 	// If statistics should not be included for all applications, this property names the subset of applications that should be included.
 	IncludedLDAPApplication []string `json:"includedLDAPApplication,omitempty"`
 	// A description for this Plugin

@@ -484,8 +484,6 @@ components:
                 Name of the Server Instance
           serverInstanceType:
             $ref: '#/components/schemas/Enumserver-instance-serverInstanceTypeProp'
-            description: >-
-                Specifies the type of server installation.
           serverInstanceName:
             type: string
             description: >-
@@ -554,8 +552,6 @@ components:
                 The TCP port on which this server is listening for JMX secure connections.
           preferredSecurity:
             $ref: '#/components/schemas/Enumserver-instance-preferredSecurityProp'
-            description: >-
-                Specifies the preferred mechanism to use for securing connections to the server.
           startTLSEnabled:
             type: boolean
             description: >-
@@ -599,8 +595,6 @@ components:
                 Name of the Server Instance
           serverInstanceType:
             $ref: '#/components/schemas/Enumserver-instance-serverInstanceTypeProp'
-            description: >-
-                Specifies the type of server installation.
           serverInstanceName:
             type: string
             description: >-
@@ -669,8 +663,6 @@ components:
                 The TCP port on which this server is listening for JMX secure connections.
           preferredSecurity:
             $ref: '#/components/schemas/Enumserver-instance-preferredSecurityProp'
-            description: >-
-                Specifies the preferred mechanism to use for securing connections to the server.
           startTLSEnabled:
             type: boolean
             description: >-
@@ -714,8 +706,6 @@ components:
                 Name of the Server Instance
           serverInstanceType:
             $ref: '#/components/schemas/Enumserver-instance-serverInstanceTypeProp'
-            description: >-
-                Specifies the type of server installation.
           serverInstanceName:
             type: string
             description: >-
@@ -784,8 +774,6 @@ components:
                 The TCP port on which this server is listening for JMX secure connections.
           preferredSecurity:
             $ref: '#/components/schemas/Enumserver-instance-preferredSecurityProp'
-            description: >-
-                Specifies the preferred mechanism to use for securing connections to the server.
           startTLSEnabled:
             type: boolean
             description: >-
@@ -829,8 +817,6 @@ components:
                 Name of the Server Instance
           serverInstanceType:
             $ref: '#/components/schemas/Enumserver-instance-serverInstanceTypeProp'
-            description: >-
-                Specifies the type of server installation.
           replicationSetName:
             type: string
             description: >-
@@ -909,8 +895,6 @@ components:
                 The TCP port on which this server is listening for JMX secure connections.
           preferredSecurity:
             $ref: '#/components/schemas/Enumserver-instance-preferredSecurityProp'
-            description: >-
-                Specifies the preferred mechanism to use for securing connections to the server.
           startTLSEnabled:
             type: boolean
             description: >-
@@ -954,8 +938,6 @@ components:
                 Name of the Server Instance
           serverInstanceType:
             $ref: '#/components/schemas/Enumserver-instance-serverInstanceTypeProp'
-            description: >-
-                Specifies the type of server installation.
           serverInstanceName:
             type: string
             description: >-
@@ -1024,8 +1006,6 @@ components:
                 The TCP port on which this server is listening for JMX secure connections.
           preferredSecurity:
             $ref: '#/components/schemas/Enumserver-instance-preferredSecurityProp'
-            description: >-
-                Specifies the preferred mechanism to use for securing connections to the server.
           startTLSEnabled:
             type: boolean
             description: >-
@@ -1087,8 +1067,6 @@ components:
                 The TCP port number on which the LDAP server is listening.
           connectionSecurity:
             $ref: '#/components/schemas/Enumserver-instance-listener-ldap-connectionSecurityProp'
-            description: >-
-                Specifies the mechanism to use for securing connections to the server.
           listenerCertificate:
             type: string
             description: >-
@@ -1097,8 +1075,6 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Enumserver-instance-listener-purposeProp'
-            description: >-
-                Identifies the purpose of this Server Instance Listener.
       - $ref: '#/components/schemas/meta'
       required:
       - id
@@ -1138,14 +1114,10 @@ components:
                 The TCP port number on which the HTTP server is listening.
           connectionSecurity:
             $ref: '#/components/schemas/Enumserver-instance-listener-http-connectionSecurityProp'
-            description: >-
-                Specifies the mechanism to use for securing connections to the server.
           purpose:
             type: array
             items:
               $ref: '#/components/schemas/Enumserver-instance-listener-purposeProp'
-            description: >-
-                Identifies the purpose of this Server Instance Listener.
       - $ref: '#/components/schemas/meta'
       required:
       - id
@@ -1267,8 +1239,6 @@ components:
                 Name of the Server Instance
           authenticationType:
             $ref: '#/components/schemas/Enuminter-server-authentication-info-authenticationTypeProp'
-            description: >-
-                Identifies the type of password authentication that will be used.
           bindDN:
             type: string
             description: >-
@@ -1286,8 +1256,6 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Enuminter-server-authentication-info-purposeProp'
-            description: >-
-                Identifies the purpose of this Inter Server Authentication Info.
       - $ref: '#/components/schemas/meta'
       required:
       - id
@@ -1315,8 +1283,6 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Enuminter-server-authentication-info-purposeProp'
-            description: >-
-                Identifies the purpose of this Inter Server Authentication Info.
       - $ref: '#/components/schemas/meta'
       required:
       - id

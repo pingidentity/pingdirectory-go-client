@@ -945,8 +945,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumdelegated-admin-attribute-certificate-allowedMIMETypeProp'
-          description: >-
-              The list of file types allowed to be uploaded. If no types are specified, then all types will be allowed.
         description:
           type: string
           description: >-
@@ -961,8 +959,6 @@ components:
               A human readable display name for this Delegated Admin Attribute.
         mutability:
           $ref: '#/components/schemas/Enumdelegated-admin-attribute-mutabilityProp'
-          description: >-
-              Specifies the circumstances under which the values of the attribute can be written.
         multiValued:
           type: boolean
           description: >-
@@ -981,8 +977,6 @@ components:
               For LDAP attributes with DN syntax, specifies what kind of resource is referenced.
         attributePresentation:
           $ref: '#/components/schemas/Enumdelegated-admin-attribute-attributePresentationProp'
-          description: >-
-              Indicates how the attribute is presented to the user of the app.
         dateTimeFormat:
           type: string
           description: >-
@@ -1043,8 +1037,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumdelegated-admin-attribute-photo-allowedMIMETypeProp'
-          description: >-
-              The list of file types allowed to be uploaded. If no types are specified, then all types will be allowed.
         description:
           type: string
           description: >-
@@ -1059,8 +1051,6 @@ components:
               A human readable display name for this Delegated Admin Attribute.
         mutability:
           $ref: '#/components/schemas/Enumdelegated-admin-attribute-mutabilityProp'
-          description: >-
-              Specifies the circumstances under which the values of the attribute can be written.
         multiValued:
           type: boolean
           description: >-
@@ -1079,8 +1069,6 @@ components:
               For LDAP attributes with DN syntax, specifies what kind of resource is referenced.
         attributePresentation:
           $ref: '#/components/schemas/Enumdelegated-admin-attribute-attributePresentationProp'
-          description: >-
-              Indicates how the attribute is presented to the user of the app.
         dateTimeFormat:
           type: string
           description: >-
@@ -1143,8 +1131,6 @@ components:
               A human readable display name for this Delegated Admin Attribute.
         mutability:
           $ref: '#/components/schemas/Enumdelegated-admin-attribute-mutabilityProp'
-          description: >-
-              Specifies the circumstances under which the values of the attribute can be written.
         multiValued:
           type: boolean
           description: >-
@@ -1167,8 +1153,6 @@ components:
               For LDAP attributes with DN syntax, specifies what kind of resource is referenced.
         attributePresentation:
           $ref: '#/components/schemas/Enumdelegated-admin-attribute-attributePresentationProp'
-          description: >-
-              Indicates how the attribute is presented to the user of the app.
         dateTimeFormat:
           type: string
           description: >-

@@ -55,9 +55,8 @@ type GlobalConfigurationResponse struct {
 	// A set of criteria that may be used to match LDAP requests that may be permitted over an unauthenticated connection even if reject-unauthenticated-requests is true. Note that some types of requests will always be permitted, including bind, StartTLS, and start administrative session requests.
 	AllowedUnauthenticatedRequestCriteria *string `json:"allowedUnauthenticatedRequestCriteria,omitempty"`
 	// Indicates whether the Directory Server should reject any simple bind request that contains a DN but no password.
-	BindWithDNRequiresPassword *bool `json:"bindWithDNRequiresPassword,omitempty"`
-	// Specifies the name of a privilege that should not be evaluated by the server.
-	DisabledPrivilege []EnumglobalConfigurationDisabledPrivilegeProp `json:"disabledPrivilege,omitempty"`
+	BindWithDNRequiresPassword *bool                                          `json:"bindWithDNRequiresPassword,omitempty"`
+	DisabledPrivilege          []EnumglobalConfigurationDisabledPrivilegeProp `json:"disabledPrivilege,omitempty"`
 	// Specifies the name of the password policy that is in effect for users whose entries do not specify an alternate password policy (either via a real or virtual attribute).
 	DefaultPasswordPolicy string `json:"defaultPasswordPolicy"`
 	// Specifies the maximum number of password policies that are defined in the user data (that is, outside of the configuration) that the server should cache in memory for faster access. A value of zero indicates that the server should not cache any user data password policies.
@@ -65,8 +64,7 @@ type GlobalConfigurationResponse struct {
 	// Specifies the name of the identity mapper to map authorization ID values (using the \"u:\" form) provided in the proxied authorization control to the corresponding user entry.
 	ProxiedAuthorizationIdentityMapper string `json:"proxiedAuthorizationIdentityMapper"`
 	// Indicates whether the digest should always be verified whenever an entry containing a digest is decoded. If this is \"true\", then if a digest exists, it will always be verified. Otherwise, the digest will be written when encoding entries but ignored when decoding entries but may still be available for other verification processing.
-	VerifyEntryDigests *bool `json:"verifyEntryDigests,omitempty"`
-	// Specifies a set of TLS protocols that will be permitted for use in the server even though there may be known vulnerabilities that could cause their use to be unsafe in some conditions. Enabling support for insecure TLS protocols is discouraged, and is generally recommended only as a short-term measure to permit legacy clients to interact with the server until they can be updated to support more secure communication protocols.
+	VerifyEntryDigests         *bool                                                   `json:"verifyEntryDigests,omitempty"`
 	AllowedInsecureTLSProtocol []EnumglobalConfigurationAllowedInsecureTLSProtocolProp `json:"allowedInsecureTLSProtocol,omitempty"`
 	// Indicates that processes attaching to this server's local JVM are allowed to access internal data through JMX without the authentication requirements that remote JMX connections are subject to. Please review and understand the data that this option will expose (such as cn=monitor) to client applications to ensure there are no security concerns.
 	AllowInsecureLocalJMXConnections *bool `json:"allowInsecureLocalJMXConnections,omitempty"`
@@ -108,9 +106,8 @@ type GlobalConfigurationResponse struct {
 	AllowAttributeNameExceptions   *bool                                                      `json:"allowAttributeNameExceptions,omitempty"`
 	InvalidAttributeSyntaxBehavior *EnumglobalConfigurationInvalidAttributeSyntaxBehaviorProp `json:"invalidAttributeSyntaxBehavior,omitempty"`
 	// Specifies a set of attribute types for which the server will permit values that do not conform to the associated attribute syntax.
-	PermitSyntaxViolationsForAttribute  []string                                                        `json:"permitSyntaxViolationsForAttribute,omitempty"`
-	SingleStructuralObjectclassBehavior *EnumglobalConfigurationSingleStructuralObjectclassBehaviorProp `json:"singleStructuralObjectclassBehavior,omitempty"`
-	// Specifies the operational attribute types that are defined in the schema with the NO-USER-MODIFICATION constraint that the server will allow to be altered if the associated request contains the ignore NO-USER-MODIFICATION request control.
+	PermitSyntaxViolationsForAttribute                             []string                                                                                    `json:"permitSyntaxViolationsForAttribute,omitempty"`
+	SingleStructuralObjectclassBehavior                            *EnumglobalConfigurationSingleStructuralObjectclassBehaviorProp                             `json:"singleStructuralObjectclassBehavior,omitempty"`
 	AttributesModifiableWithIgnoreNoUserModificationRequestControl []EnumglobalConfigurationAttributesModifiableWithIgnoreNoUserModificationRequestControlProp `json:"attributesModifiableWithIgnoreNoUserModificationRequestControl,omitempty"`
 	// The maximum allowed size that the server.out log file will be allowed to have. If a write would cause the file to exceed this size, then the current file will be rotated out of place and a new empty file will be created and the message written to it.
 	MaximumServerOutLogFileSize *string `json:"maximumServerOutLogFileSize,omitempty"`

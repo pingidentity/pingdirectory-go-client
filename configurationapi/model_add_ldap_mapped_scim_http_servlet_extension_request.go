@@ -57,8 +57,7 @@ type AddLdapMappedScimHttpServletExtensionRequest struct {
 	// Enables debug logging of the SCIM SDK. Debug messages will be forwarded to the Directory Server debug logger with the scope of com.unboundid.directory.server.extensions.scim.SCIMHTTPServletExtension.
 	DebugEnabled *bool                                   `json:"debugEnabled,omitempty"`
 	DebugLevel   *EnumhttpServletExtensionDebugLevelProp `json:"debugLevel,omitempty"`
-	// The types of debug messages that should be logged.
-	DebugType []EnumhttpServletExtensionDebugTypeProp `json:"debugType,omitempty"`
+	DebugType    []EnumhttpServletExtensionDebugTypeProp `json:"debugType,omitempty"`
 	// Indicates whether a stack trace of the thread which called the debug method should be included in debug log messages.
 	IncludeStackTrace *bool `json:"includeStackTrace,omitempty"`
 	// A description for this HTTP Servlet Extension

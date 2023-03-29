@@ -27,13 +27,10 @@ type AddJmxAlertHandlerRequest struct {
 	// A description for this Alert Handler
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Alert Handler is enabled.
-	Enabled bool `json:"enabled"`
-	// Specifies the alert severities for which this alert handler should be used. If no values are provided, then this alert handler will be enabled for alerts with any severity.
+	Enabled              bool                                       `json:"enabled"`
 	EnabledAlertSeverity []EnumalertHandlerEnabledAlertSeverityProp `json:"enabledAlertSeverity,omitempty"`
-	// Specifies the names of the alert types that are enabled for this alert handler.
-	EnabledAlertType []EnumalertHandlerEnabledAlertTypeProp `json:"enabledAlertType,omitempty"`
-	// Specifies the names of the alert types that are disabled for this alert handler.
-	DisabledAlertType []EnumalertHandlerDisabledAlertTypeProp `json:"disabledAlertType,omitempty"`
+	EnabledAlertType     []EnumalertHandlerEnabledAlertTypeProp     `json:"enabledAlertType,omitempty"`
+	DisabledAlertType    []EnumalertHandlerDisabledAlertTypeProp    `json:"disabledAlertType,omitempty"`
 }
 
 // NewAddJmxAlertHandlerRequest instantiates a new AddJmxAlertHandlerRequest object

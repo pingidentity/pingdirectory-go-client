@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CriteriaName** | **string** | Name of the new Result Criteria | 
 **Schemas** | [**[]EnumreplicationAssuranceResultCriteriaSchemaUrn**](EnumreplicationAssuranceResultCriteriaSchemaUrn.md) |  | 
-**LocalAssuranceLevel** | Pointer to [**[]EnumresultCriteriaLocalAssuranceLevelProp**](EnumresultCriteriaLocalAssuranceLevelProp.md) | The local assurance level values that will be allowed to match this Replication Assurance Result Criteria. | [optional] 
-**RemoteAssuranceLevel** | Pointer to [**[]EnumresultCriteriaRemoteAssuranceLevelProp**](EnumresultCriteriaRemoteAssuranceLevelProp.md) | The local assurance level values that will be allowed to match this Replication Assurance Result Criteria. | [optional] 
+**LocalAssuranceLevel** | Pointer to [**[]EnumresultCriteriaLocalAssuranceLevelProp**](EnumresultCriteriaLocalAssuranceLevelProp.md) |  | [optional] 
+**RemoteAssuranceLevel** | Pointer to [**[]EnumresultCriteriaRemoteAssuranceLevelProp**](EnumresultCriteriaRemoteAssuranceLevelProp.md) |  | [optional] 
 **AssuranceTimeoutCriteria** | Pointer to [**EnumresultCriteriaAssuranceTimeoutCriteriaProp**](EnumresultCriteriaAssuranceTimeoutCriteriaProp.md) |  | [optional] 
 **AssuranceTimeoutValue** | Pointer to **string** | The value to use for performing matching based on the assurance timeout. This will be ignored if the assurance-timeout-criteria is \&quot;any\&quot;. | [optional] 
 **ResponseDelayedByAssurance** | Pointer to [**EnumresultCriteriaResponseDelayedByAssuranceProp**](EnumresultCriteriaResponseDelayedByAssuranceProp.md) |  | [optional] 

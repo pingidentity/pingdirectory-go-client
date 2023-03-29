@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | Pointer to [**[]EnumdseeCompatAccessControlHandlerSchemaUrn**](EnumdseeCompatAccessControlHandlerSchemaUrn.md) |  | [optional] 
 **GlobalACI** | Pointer to **[]string** | Defines global access control rules. | [optional] 
-**AllowedBindControl** | Pointer to [**[]EnumaccessControlHandlerAllowedBindControlProp**](EnumaccessControlHandlerAllowedBindControlProp.md) | Specifies a set of controls that clients should be allowed to include in bind requests. As bind requests are evaluated as the unauthenticated user, any controls included in this set will be permitted for any bind attempt. If you wish to grant permission for any bind controls not listed here, then the allowed-bind-control-oid property may be used to accomplish that. | [optional] 
+**AllowedBindControl** | Pointer to [**[]EnumaccessControlHandlerAllowedBindControlProp**](EnumaccessControlHandlerAllowedBindControlProp.md) |  | [optional] 
 **AllowedBindControlOID** | Pointer to **[]string** | Specifies the OIDs of any additional controls (not covered by the allowed-bind-control property) that should be permitted in bind requests. | [optional] 
 **Enabled** | **bool** | Indicates whether this Access Control Handler is enabled. If set to FALSE, then no access control is enforced, and any client (including unauthenticated or anonymous clients) could be allowed to perform any operation if not subject to other restrictions, such as those enforced by the privilege subsystem. | 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 

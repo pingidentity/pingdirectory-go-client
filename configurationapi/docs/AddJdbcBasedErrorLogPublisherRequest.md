@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **LogFieldMapping** | **string** | The log field mapping associates loggable fields to database column names. The table name is not part of this mapping. | 
 **LogTableName** | Pointer to **string** | The table name to log entries to the database server. | [optional] 
 **QueueSize** | Pointer to **int32** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
-**DefaultSeverity** | Pointer to [**[]EnumlogPublisherDefaultSeverityProp**](EnumlogPublisherDefaultSeverityProp.md) | Specifies the default severity levels for the logger. | [optional] 
+**DefaultSeverity** | Pointer to [**[]EnumlogPublisherDefaultSeverityProp**](EnumlogPublisherDefaultSeverityProp.md) |  | [optional] 
 **OverrideSeverity** | Pointer to **[]string** | Specifies the override severity levels for the logger based on the category of the messages. | [optional] 
 **Description** | Pointer to **string** | A description for this Log Publisher | [optional] 
 **Enabled** | **bool** | Indicates whether the Log Publisher is enabled for use. | 

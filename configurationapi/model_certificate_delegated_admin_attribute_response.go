@@ -20,9 +20,8 @@ var _ MappedNullable = &CertificateDelegatedAdminAttributeResponse{}
 // CertificateDelegatedAdminAttributeResponse struct for CertificateDelegatedAdminAttributeResponse
 type CertificateDelegatedAdminAttributeResponse struct {
 	// Name of the REST Resource Type
-	Id      string                                            `json:"id"`
-	Schemas []EnumcertificateDelegatedAdminAttributeSchemaUrn `json:"schemas"`
-	// The list of file types allowed to be uploaded. If no types are specified, then all types will be allowed.
+	Id              string                                                      `json:"id"`
+	Schemas         []EnumcertificateDelegatedAdminAttributeSchemaUrn           `json:"schemas"`
 	AllowedMIMEType []EnumdelegatedAdminAttributeCertificateAllowedMIMETypeProp `json:"allowedMIMEType,omitempty"`
 	// A description for this Delegated Admin Attribute
 	Description *string `json:"description,omitempty"`

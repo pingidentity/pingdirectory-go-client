@@ -50,23 +50,15 @@ type AddFileBasedTraceLogPublisherRequest struct {
 	// The maximum number of log records that can be stored in the asynchronous queue.
 	QueueSize *int32 `json:"queueSize,omitempty"`
 	// Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written.
-	MaxStringLength *int32 `json:"maxStringLength,omitempty"`
-	// Specifies the debug message types which can be logged. Note that enabling these may result in sensitive information being logged.
-	DebugMessageType []EnumlogPublisherDebugMessageTypeProp `json:"debugMessageType,omitempty"`
-	// Specifies the HTTP message types which can be logged.
-	HttpMessageType []EnumlogPublisherHttpMessageTypeProp `json:"httpMessageType,omitempty"`
-	// Specifies the access token validator message types that can be logged.
+	MaxStringLength                 *int32                                                `json:"maxStringLength,omitempty"`
+	DebugMessageType                []EnumlogPublisherDebugMessageTypeProp                `json:"debugMessageType,omitempty"`
+	HttpMessageType                 []EnumlogPublisherHttpMessageTypeProp                 `json:"httpMessageType,omitempty"`
 	AccessTokenValidatorMessageType []EnumlogPublisherAccessTokenValidatorMessageTypeProp `json:"accessTokenValidatorMessageType,omitempty"`
-	// Specifies the ID token validator message types that can be logged.
-	IdTokenValidatorMessageType []EnumlogPublisherIdTokenValidatorMessageTypeProp `json:"idTokenValidatorMessageType,omitempty"`
-	// Specifies the SCIM message types which can be logged.
-	ScimMessageType []EnumlogPublisherScimMessageTypeProp `json:"scimMessageType,omitempty"`
-	// Specifies the consent message types that can be logged.
-	ConsentMessageType []EnumlogPublisherConsentMessageTypeProp `json:"consentMessageType,omitempty"`
-	// Specifies the Directory REST API message types which can be logged.
-	DirectoryRESTAPIMessageType []EnumlogPublisherDirectoryRESTAPIMessageTypeProp `json:"directoryRESTAPIMessageType,omitempty"`
-	// Specifies the Server SDK extension message types that can be logged.
-	ExtensionMessageType []EnumlogPublisherExtensionMessageTypeProp `json:"extensionMessageType,omitempty"`
+	IdTokenValidatorMessageType     []EnumlogPublisherIdTokenValidatorMessageTypeProp     `json:"idTokenValidatorMessageType,omitempty"`
+	ScimMessageType                 []EnumlogPublisherScimMessageTypeProp                 `json:"scimMessageType,omitempty"`
+	ConsentMessageType              []EnumlogPublisherConsentMessageTypeProp              `json:"consentMessageType,omitempty"`
+	DirectoryRESTAPIMessageType     []EnumlogPublisherDirectoryRESTAPIMessageTypeProp     `json:"directoryRESTAPIMessageType,omitempty"`
+	ExtensionMessageType            []EnumlogPublisherExtensionMessageTypeProp            `json:"extensionMessageType,omitempty"`
 	// Specifies a set of HTTP request URL paths to determine whether log messages are included for a HTTP request. Log messages are included for a HTTP request if the request path does not match any exclude-path-pattern, and the request path does match an include-path-pattern (or no include-path-pattern is specified).
 	IncludePathPattern []string `json:"includePathPattern,omitempty"`
 	// Specifies a set of HTTP request URL paths to determine whether log messages are excluded for a HTTP request. Log messages are included for a HTTP request if the request path does not match any exclude-path-pattern, and the request path does match an include-path-pattern (or no include-path-pattern is specified).

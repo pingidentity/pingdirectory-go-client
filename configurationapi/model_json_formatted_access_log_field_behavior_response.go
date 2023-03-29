@@ -20,29 +20,23 @@ var _ MappedNullable = &JsonFormattedAccessLogFieldBehaviorResponse{}
 // JsonFormattedAccessLogFieldBehaviorResponse struct for JsonFormattedAccessLogFieldBehaviorResponse
 type JsonFormattedAccessLogFieldBehaviorResponse struct {
 	// Name of the Log Field Behavior
-	Id      string                                             `json:"id"`
-	Schemas []EnumjsonFormattedAccessLogFieldBehaviorSchemaUrn `json:"schemas"`
-	// The log fields whose values should be logged with the intended value. The values for these fields will be preserved, although they may be sanitized for parsability or safety purposes (for example, to escape special characters in the value), and values that are too long may be truncated.
+	Id            string                                                     `json:"id"`
+	Schemas       []EnumjsonFormattedAccessLogFieldBehaviorSchemaUrn         `json:"schemas"`
 	PreserveField []EnumlogFieldBehaviorJsonFormattedAccessPreserveFieldProp `json:"preserveField,omitempty"`
 	// The names of any custom fields whose values should be preserved. This should generally only be used for fields that are not available through the preserve-field property (for example, custom log fields defined in Server SDK extensions).
-	PreserveFieldName []string `json:"preserveFieldName,omitempty"`
-	// The log fields that should be omitted entirely from log messages. Neither the field name nor value will be included.
-	OmitField []EnumlogFieldBehaviorJsonFormattedAccessOmitFieldProp `json:"omitField,omitempty"`
+	PreserveFieldName []string                                               `json:"preserveFieldName,omitempty"`
+	OmitField         []EnumlogFieldBehaviorJsonFormattedAccessOmitFieldProp `json:"omitField,omitempty"`
 	// The names of any custom fields that should be omitted from log messages. This should generally only be used for fields that are not available through the omit-field property (for example, custom log fields defined in Server SDK extensions).
-	OmitFieldName []string `json:"omitFieldName,omitempty"`
-	// The log fields whose values should be completely redacted in log messages. The field name will be included, but with a fixed value that does not reflect the actual value for the field.
+	OmitFieldName          []string                                                            `json:"omitFieldName,omitempty"`
 	RedactEntireValueField []EnumlogFieldBehaviorJsonFormattedAccessRedactEntireValueFieldProp `json:"redactEntireValueField,omitempty"`
 	// The names of any custom fields whose values should be completely redacted. This should generally only be used for fields that are not available through the redact-entire-value-field property (for example, custom log fields defined in Server SDK extensions).
-	RedactEntireValueFieldName []string `json:"redactEntireValueFieldName,omitempty"`
-	// The log fields whose values will include redacted components.
+	RedactEntireValueFieldName []string                                                                `json:"redactEntireValueFieldName,omitempty"`
 	RedactValueComponentsField []EnumlogFieldBehaviorJsonFormattedAccessRedactValueComponentsFieldProp `json:"redactValueComponentsField,omitempty"`
 	// The names of any custom fields for which to redact components within the value. This should generally only be used for fields that are not available through the redact-value-components-field property (for example, custom log fields defined in Server SDK extensions).
-	RedactValueComponentsFieldName []string `json:"redactValueComponentsFieldName,omitempty"`
-	// The log fields whose values should be completely tokenized in log messages. The field name will be included, but the value will be replaced with a token that does not reveal the actual value, but that is generated from the value.
-	TokenizeEntireValueField []EnumlogFieldBehaviorJsonFormattedAccessTokenizeEntireValueFieldProp `json:"tokenizeEntireValueField,omitempty"`
+	RedactValueComponentsFieldName []string                                                              `json:"redactValueComponentsFieldName,omitempty"`
+	TokenizeEntireValueField       []EnumlogFieldBehaviorJsonFormattedAccessTokenizeEntireValueFieldProp `json:"tokenizeEntireValueField,omitempty"`
 	// The names of any custom fields whose values should be completely tokenized. This should generally only be used for fields that are not available through the tokenize-entire-value-field property (for example, custom log fields defined in Server SDK extensions).
-	TokenizeEntireValueFieldName []string `json:"tokenizeEntireValueFieldName,omitempty"`
-	// The log fields whose values will include tokenized components.
+	TokenizeEntireValueFieldName []string                                                                  `json:"tokenizeEntireValueFieldName,omitempty"`
 	TokenizeValueComponentsField []EnumlogFieldBehaviorJsonFormattedAccessTokenizeValueComponentsFieldProp `json:"tokenizeValueComponentsField,omitempty"`
 	// The names of any custom fields for which to tokenize components within the value. This should generally only be used for fields that are not available through the tokenize-value-components-field property (for example, custom log fields defined in Server SDK extensions).
 	TokenizeValueComponentsFieldName []string `json:"tokenizeValueComponentsFieldName,omitempty"`

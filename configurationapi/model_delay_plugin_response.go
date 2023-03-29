@@ -20,9 +20,8 @@ var _ MappedNullable = &DelayPluginResponse{}
 // DelayPluginResponse struct for DelayPluginResponse
 type DelayPluginResponse struct {
 	// Name of the Plugin Root
-	Id      string                     `json:"id"`
-	Schemas []EnumdelayPluginSchemaUrn `json:"schemas"`
-	// Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
+	Id         string                     `json:"id"`
+	Schemas    []EnumdelayPluginSchemaUrn `json:"schemas"`
 	PluginType []EnumpluginPluginTypeProp `json:"pluginType"`
 	// The delay to inject for operations matching the associated criteria.
 	Delay string `json:"delay"`

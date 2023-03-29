@@ -20,19 +20,16 @@ var _ MappedNullable = &AddJwtAccessTokenValidatorRequest{}
 // AddJwtAccessTokenValidatorRequest struct for AddJwtAccessTokenValidatorRequest
 type AddJwtAccessTokenValidatorRequest struct {
 	// Name of the new Access Token Validator
-	ValidatorName string                                 `json:"validatorName"`
-	Schemas       []EnumjwtAccessTokenValidatorSchemaUrn `json:"schemas"`
-	// Specifies an allow list of JWT signing algorithms that will be accepted by the JWT Access Token Validator.
+	ValidatorName           string                                                `json:"validatorName"`
+	Schemas                 []EnumjwtAccessTokenValidatorSchemaUrn                `json:"schemas"`
 	AllowedSigningAlgorithm []EnumaccessTokenValidatorAllowedSigningAlgorithmProp `json:"allowedSigningAlgorithm,omitempty"`
 	// Specifies the locally stored certificates that may be used to validate the signature of an incoming JWT access token. If this property is specified, the JWT Access Token Validator will not use a JWKS endpoint to retrieve public keys.
 	SigningCertificate []string `json:"signingCertificate,omitempty"`
 	// The relative path to JWKS endpoint from which to retrieve one or more public signing keys that may be used to validate the signature of an incoming JWT access token. This path is relative to the base_url property defined for the validator's external authorization server. If jwks-endpoint-path is specified, the JWT Access Token Validator will not consult locally stored certificates for validating token signatures.
 	JwksEndpointPath *string `json:"jwksEndpointPath,omitempty"`
 	// The public-private key pair that is used to encrypt the JWT payload. If specified, the JWT Access Token Validator will use the private key to decrypt the JWT payload, and the public key must be exported to the Authorization Server that is issuing access tokens.
-	EncryptionKeyPair *string `json:"encryptionKeyPair,omitempty"`
-	// Specifies an allow list of JWT key encryption algorithms that will be accepted by the JWT Access Token Validator. This setting is only used if encryption-key-pair is set.
-	AllowedKeyEncryptionAlgorithm []EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp `json:"allowedKeyEncryptionAlgorithm,omitempty"`
-	// Specifies an allow list of JWT content encryption algorithms that will be accepted by the JWT Access Token Validator.
+	EncryptionKeyPair                 *string                                                         `json:"encryptionKeyPair,omitempty"`
+	AllowedKeyEncryptionAlgorithm     []EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp     `json:"allowedKeyEncryptionAlgorithm,omitempty"`
 	AllowedContentEncryptionAlgorithm []EnumaccessTokenValidatorAllowedContentEncryptionAlgorithmProp `json:"allowedContentEncryptionAlgorithm,omitempty"`
 	// Specifies the amount of clock skew that is tolerated by the JWT Access Token Validator when evaluating whether a token is within its valid time interval. The duration specified by this parameter will be subtracted from the token's not-before (nbf) time and added to the token's expiration (exp) time, if present, to allow for any time difference between the local server's clock and the token issuer's clock.
 	ClockSkewGracePeriod *string `json:"clockSkewGracePeriod,omitempty"`

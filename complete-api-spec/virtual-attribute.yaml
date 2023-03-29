@@ -259,8 +259,6 @@ components:
             $ref: '#/components/schemas/Enummirror-virtual-attributeSchemaUrn'
         conflictBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
-          description: >-
-              Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute.
         sourceAttribute:
           type: string
           description: >-
@@ -323,8 +321,6 @@ components:
               Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
         multipleVirtualAttributeMergeBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-multipleVirtualAttributeMergeBehaviorProp'
-          description: >-
-              Specifies the behavior that will be exhibited for cases in which multiple virtual attribute definitions apply to the same multivalued attribute type. This will be ignored for single-valued attribute types.
         allowIndexConflicts:
           type: boolean
           description: >-
@@ -354,8 +350,6 @@ components:
                 Name of the Virtual Attribute
           conflictBehavior:
             $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
-            description: >-
-                Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute.
           attributeType:
             type: string
             description: >-
@@ -412,8 +406,6 @@ components:
                 Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
           multipleVirtualAttributeMergeBehavior:
             $ref: '#/components/schemas/Enumvirtual-attribute-multipleVirtualAttributeMergeBehaviorProp'
-            description: >-
-                Specifies the behavior that will be exhibited for cases in which multiple virtual attribute definitions apply to the same multivalued attribute type. This will be ignored for single-valued attribute types.
           allowIndexConflicts:
             type: boolean
             description: >-
@@ -444,8 +436,6 @@ components:
                 Name of the Virtual Attribute
           conflictBehavior:
             $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
-            description: >-
-                Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute.
           attributeType:
             type: string
             description: >-
@@ -492,8 +482,6 @@ components:
                 Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
           multipleVirtualAttributeMergeBehavior:
             $ref: '#/components/schemas/Enumvirtual-attribute-multipleVirtualAttributeMergeBehaviorProp'
-            description: >-
-                Specifies the behavior that will be exhibited for cases in which multiple virtual attribute definitions apply to the same multivalued attribute type. This will be ignored for single-valued attribute types.
           allowIndexConflicts:
             type: boolean
             description: >-
@@ -584,8 +572,6 @@ components:
               Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
         conflictBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
-          description: >-
-              Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute.
         requireExplicitRequestByName:
           type: boolean
           description: >-
@@ -596,8 +582,6 @@ components:
               Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
         multipleVirtualAttributeMergeBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-multipleVirtualAttributeMergeBehaviorProp'
-          description: >-
-              Specifies the behavior that will be exhibited for cases in which multiple virtual attribute definitions apply to the same multivalued attribute type. This will be ignored for single-valued attribute types.
         allowIndexConflicts:
           type: boolean
           description: >-
@@ -654,8 +638,6 @@ components:
             $ref: '#/components/schemas/Enumis-member-of-virtual-attributeSchemaUrn'
         conflictBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
-          description: >-
-              Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute.
         attributeType:
           type: string
           description: >-
@@ -670,8 +652,6 @@ components:
               A search filter that will be used to identify which groups should be included in the values of the virtual attribute. With no value defined (which is the default behavior), all groups that contain the target user will be included.
         rewriteSearchFilters:
           $ref: '#/components/schemas/Enumvirtual-attribute-rewriteSearchFiltersProp'
-          description: >-
-              Search filters that include Is Member Of Virtual Attribute searches on dynamic groups can be updated to include the dynamic group filter in the search filter itself. This can allow the backend to more efficiently process the search filter by using attribute indexes sooner in the search processing.
         description:
           type: string
           description: >-
@@ -714,8 +694,6 @@ components:
               Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
         multipleVirtualAttributeMergeBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-multipleVirtualAttributeMergeBehaviorProp'
-          description: >-
-              Specifies the behavior that will be exhibited for cases in which multiple virtual attribute definitions apply to the same multivalued attribute type. This will be ignored for single-valued attribute types.
         allowIndexConflicts:
           type: boolean
           description: >-
@@ -779,8 +757,6 @@ components:
                 Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
           conflictBehavior:
             $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
-            description: >-
-                Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute.
           requireExplicitRequestByName:
             type: boolean
             description: >-
@@ -791,8 +767,6 @@ components:
                 Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
           multipleVirtualAttributeMergeBehavior:
             $ref: '#/components/schemas/Enumvirtual-attribute-multipleVirtualAttributeMergeBehaviorProp'
-            description: >-
-                Specifies the behavior that will be exhibited for cases in which multiple virtual attribute definitions apply to the same multivalued attribute type. This will be ignored for single-valued attribute types.
           allowIndexConflicts:
             type: boolean
             description: >-
@@ -823,8 +797,6 @@ components:
                 Name of the Virtual Attribute
           conflictBehavior:
             $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
-            description: >-
-                Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute.
           attributeType:
             type: string
             description: >-
@@ -871,8 +843,6 @@ components:
                 Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
           multipleVirtualAttributeMergeBehavior:
             $ref: '#/components/schemas/Enumvirtual-attribute-multipleVirtualAttributeMergeBehaviorProp'
-            description: >-
-                Specifies the behavior that will be exhibited for cases in which multiple virtual attribute definitions apply to the same multivalued attribute type. This will be ignored for single-valued attribute types.
           allowIndexConflicts:
             type: boolean
             description: >-
@@ -942,16 +912,12 @@ components:
               The attribute in related entries whose set of values must contain the DN of the search result entry to be joined with that entry.
         joinBaseDNType:
           $ref: '#/components/schemas/Enumvirtual-attribute-joinBaseDNTypeProp'
-          description: >-
-              Specifies how server should determine the base DN for the internal searches used to identify joined entries.
         joinCustomBaseDN:
           type: string
           description: >-
               The fixed, administrator-specified base DN for the internal searches used to identify joined entries.
         joinScope:
           $ref: '#/components/schemas/Enumvirtual-attribute-joinScopeProp'
-          description: >-
-              The scope for searches used to identify joined entries.
         joinSizeLimit:
           type: integer
           description: >-
@@ -1004,8 +970,6 @@ components:
               Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
         conflictBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
-          description: >-
-              Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute.
         requireExplicitRequestByName:
           type: boolean
           description: >-
@@ -1016,8 +980,6 @@ components:
               Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
         multipleVirtualAttributeMergeBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-multipleVirtualAttributeMergeBehaviorProp'
-          description: >-
-              Specifies the behavior that will be exhibited for cases in which multiple virtual attribute definitions apply to the same multivalued attribute type. This will be ignored for single-valued attribute types.
         allowIndexConflicts:
           type: boolean
           description: >-
@@ -1114,8 +1076,6 @@ components:
               Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
         conflictBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
-          description: >-
-              Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute.
         requireExplicitRequestByName:
           type: boolean
           description: >-
@@ -1126,8 +1086,6 @@ components:
               Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
         multipleVirtualAttributeMergeBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-multipleVirtualAttributeMergeBehaviorProp'
-          description: >-
-              Specifies the behavior that will be exhibited for cases in which multiple virtual attribute definitions apply to the same multivalued attribute type. This will be ignored for single-valued attribute types.
         allowIndexConflicts:
           type: boolean
           description: >-
@@ -1217,8 +1175,6 @@ components:
               Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
         conflictBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
-          description: >-
-              Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute.
         requireExplicitRequestByName:
           type: boolean
           description: >-
@@ -1229,8 +1185,6 @@ components:
               Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
         multipleVirtualAttributeMergeBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-multipleVirtualAttributeMergeBehaviorProp'
-          description: >-
-              Specifies the behavior that will be exhibited for cases in which multiple virtual attribute definitions apply to the same multivalued attribute type. This will be ignored for single-valued attribute types.
         allowIndexConflicts:
           type: boolean
           description: >-
@@ -1260,8 +1214,6 @@ components:
                 Name of the Virtual Attribute
           conflictBehavior:
             $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
-            description: >-
-                Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute.
           attributeType:
             type: string
             description: >-
@@ -1316,8 +1268,6 @@ components:
                 Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
           multipleVirtualAttributeMergeBehavior:
             $ref: '#/components/schemas/Enumvirtual-attribute-multipleVirtualAttributeMergeBehaviorProp'
-            description: >-
-                Specifies the behavior that will be exhibited for cases in which multiple virtual attribute definitions apply to the same multivalued attribute type. This will be ignored for single-valued attribute types.
           allowIndexConflicts:
             type: boolean
             description: >-
@@ -1392,8 +1342,6 @@ components:
                 Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
           multipleVirtualAttributeMergeBehavior:
             $ref: '#/components/schemas/Enumvirtual-attribute-multipleVirtualAttributeMergeBehaviorProp'
-            description: >-
-                Specifies the behavior that will be exhibited for cases in which multiple virtual attribute definitions apply to the same multivalued attribute type. This will be ignored for single-valued attribute types.
           allowIndexConflicts:
             type: boolean
             description: >-
@@ -1444,8 +1392,6 @@ components:
             $ref: '#/components/schemas/Enumentry-dn-virtual-attributeSchemaUrn'
         conflictBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
-          description: >-
-              Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute.
         attributeType:
           type: string
           description: >-
@@ -1492,8 +1438,6 @@ components:
               Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
         multipleVirtualAttributeMergeBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-multipleVirtualAttributeMergeBehaviorProp'
-          description: >-
-              Specifies the behavior that will be exhibited for cases in which multiple virtual attribute definitions apply to the same multivalued attribute type. This will be ignored for single-valued attribute types.
         allowIndexConflicts:
           type: boolean
           description: >-
@@ -1521,8 +1465,6 @@ components:
                 Name of the Virtual Attribute
           conflictBehavior:
             $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
-            description: >-
-                Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute.
           attributeType:
             type: string
             description: >-
@@ -1569,8 +1511,6 @@ components:
                 Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
           multipleVirtualAttributeMergeBehavior:
             $ref: '#/components/schemas/Enumvirtual-attribute-multipleVirtualAttributeMergeBehaviorProp'
-            description: >-
-                Specifies the behavior that will be exhibited for cases in which multiple virtual attribute definitions apply to the same multivalued attribute type. This will be ignored for single-valued attribute types.
           allowIndexConflicts:
             type: boolean
             description: >-
@@ -1631,16 +1571,12 @@ components:
               Indicates whether joined entries will be required to have all values for the source attribute, or only at least one of its values.
         joinBaseDNType:
           $ref: '#/components/schemas/Enumvirtual-attribute-joinBaseDNTypeProp'
-          description: >-
-              Specifies how server should determine the base DN for the internal searches used to identify joined entries.
         joinCustomBaseDN:
           type: string
           description: >-
               The fixed, administrator-specified base DN for the internal searches used to identify joined entries.
         joinScope:
           $ref: '#/components/schemas/Enumvirtual-attribute-joinScopeProp'
-          description: >-
-              The scope for searches used to identify joined entries.
         joinSizeLimit:
           type: integer
           description: >-
@@ -1693,8 +1629,6 @@ components:
               Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
         conflictBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
-          description: >-
-              Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute.
         requireExplicitRequestByName:
           type: boolean
           description: >-
@@ -1705,8 +1639,6 @@ components:
               Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
         multipleVirtualAttributeMergeBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-multipleVirtualAttributeMergeBehaviorProp'
-          description: >-
-              Specifies the behavior that will be exhibited for cases in which multiple virtual attribute definitions apply to the same multivalued attribute type. This will be ignored for single-valued attribute types.
         allowIndexConflicts:
           type: boolean
           description: >-
@@ -1802,8 +1734,6 @@ components:
               Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
         conflictBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
-          description: >-
-              Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute.
         requireExplicitRequestByName:
           type: boolean
           description: >-
@@ -1814,8 +1744,6 @@ components:
               Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
         multipleVirtualAttributeMergeBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-multipleVirtualAttributeMergeBehaviorProp'
-          description: >-
-              Specifies the behavior that will be exhibited for cases in which multiple virtual attribute definitions apply to the same multivalued attribute type. This will be ignored for single-valued attribute types.
         allowIndexConflicts:
           type: boolean
           description: >-
@@ -1845,8 +1773,6 @@ components:
                 Name of the Virtual Attribute
           conflictBehavior:
             $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
-            description: >-
-                Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute.
           attributeType:
             type: string
             description: >-
@@ -1893,8 +1819,6 @@ components:
                 Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
           multipleVirtualAttributeMergeBehavior:
             $ref: '#/components/schemas/Enumvirtual-attribute-multipleVirtualAttributeMergeBehaviorProp'
-            description: >-
-                Specifies the behavior that will be exhibited for cases in which multiple virtual attribute definitions apply to the same multivalued attribute type. This will be ignored for single-valued attribute types.
           allowIndexConflicts:
             type: boolean
             description: >-
@@ -1975,8 +1899,6 @@ components:
             $ref: '#/components/schemas/Enummember-virtual-attributeSchemaUrn'
         conflictBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
-          description: >-
-              Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute.
         allowRetrievingMembership:
           type: boolean
           description: >-
@@ -2031,8 +1953,6 @@ components:
               Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
         multipleVirtualAttributeMergeBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-multipleVirtualAttributeMergeBehaviorProp'
-          description: >-
-              Specifies the behavior that will be exhibited for cases in which multiple virtual attribute definitions apply to the same multivalued attribute type. This will be ignored for single-valued attribute types.
       required:
       - schemas
       - enabled
@@ -2136,8 +2056,6 @@ components:
                 Name of the Virtual Attribute
           conflictBehavior:
             $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
-            description: >-
-                Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute.
           attributeType:
             type: string
             description: >-
@@ -2184,8 +2102,6 @@ components:
                 Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
           multipleVirtualAttributeMergeBehavior:
             $ref: '#/components/schemas/Enumvirtual-attribute-multipleVirtualAttributeMergeBehaviorProp'
-            description: >-
-                Specifies the behavior that will be exhibited for cases in which multiple virtual attribute definitions apply to the same multivalued attribute type. This will be ignored for single-valued attribute types.
           allowIndexConflicts:
             type: boolean
             description: >-
@@ -2238,16 +2154,12 @@ components:
               The attribute whose values are the DNs of the entries to be joined with the search result entry.
         joinBaseDNType:
           $ref: '#/components/schemas/Enumvirtual-attribute-joinBaseDNTypeProp'
-          description: >-
-              Specifies how server should determine the base DN for the internal searches used to identify joined entries.
         joinCustomBaseDN:
           type: string
           description: >-
               The fixed, administrator-specified base DN for the internal searches used to identify joined entries.
         joinScope:
           $ref: '#/components/schemas/Enumvirtual-attribute-joinScopeProp'
-          description: >-
-              The scope for searches used to identify joined entries.
         joinSizeLimit:
           type: integer
           description: >-
@@ -2300,8 +2212,6 @@ components:
               Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
         conflictBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
-          description: >-
-              Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute.
         requireExplicitRequestByName:
           type: boolean
           description: >-
@@ -2312,8 +2222,6 @@ components:
               Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
         multipleVirtualAttributeMergeBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-multipleVirtualAttributeMergeBehaviorProp'
-          description: >-
-              Specifies the behavior that will be exhibited for cases in which multiple virtual attribute definitions apply to the same multivalued attribute type. This will be ignored for single-valued attribute types.
         allowIndexConflicts:
           type: boolean
           description: >-
@@ -2408,8 +2316,6 @@ components:
               Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
         conflictBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
-          description: >-
-              Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute.
         requireExplicitRequestByName:
           type: boolean
           description: >-
@@ -2420,8 +2326,6 @@ components:
               Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
         multipleVirtualAttributeMergeBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-multipleVirtualAttributeMergeBehaviorProp'
-          description: >-
-              Specifies the behavior that will be exhibited for cases in which multiple virtual attribute definitions apply to the same multivalued attribute type. This will be ignored for single-valued attribute types.
         allowIndexConflicts:
           type: boolean
           description: >-

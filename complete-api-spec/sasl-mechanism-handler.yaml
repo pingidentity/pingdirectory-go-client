@@ -377,8 +377,6 @@ components:
                 Name of the SASL Mechanism Handler
           certificateValidationPolicy:
             $ref: '#/components/schemas/Enumsasl-mechanism-handler-certificateValidationPolicyProp'
-            description: >-
-                Indicates whether to attempt to validate the peer certificate against a certificate held in the user's entry.
           certificateAttribute:
             type: string
             description: >-
@@ -704,8 +702,6 @@ components:
               Indicates whether bind requests will be required to have both an OAuth access token (in the "auth" element of the bind request) and an OpenID Connect ID token (in the "pingidentityidtoken" element of the bind request).
         validateAccessTokenWhenIDTokenIsAlsoProvided:
           $ref: '#/components/schemas/Enumsasl-mechanism-handler-validateAccessTokenWhenIDTokenIsAlsoProvidedProp'
-          description: >-
-              Indicates whether to validate the OAuth access token in addition to the OpenID Connect ID token in OAUTHBEARER bind requests that contain both types of tokens.
         alternateAuthorizationIdentityMapper:
           type: string
           description: >-
@@ -830,8 +826,6 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Enumsasl-mechanism-handler-allowedQualityOfProtectionProp'
-            description: >-
-                Specifies the supported quality of protection (QoP) levels that clients will be permitted to request when performing GSSAPI authentication.
           identityMapper:
             type: string
             description: >-
@@ -846,8 +840,6 @@ components:
                 Specifies the Kerberos service principal that the Directory Server will use to identify itself to the KDC.
           gssapiRole:
             $ref: '#/components/schemas/Enumsasl-mechanism-handler-gssapiRoleProp'
-            description: >-
-                Specifies the role that should be declared for the server in the generated JAAS configuration file.
           jaasConfigFile:
             type: string
             description: >-

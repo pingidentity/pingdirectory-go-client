@@ -50,10 +50,9 @@ type AddFileBasedDebugLogPublisherRequest struct {
 	// The maximum number of log records that can be stored in the asynchronous queue.
 	QueueSize *int32 `json:"queueSize,omitempty"`
 	// Specifies the interval at which to check whether the log files need to be rotated.
-	TimeInterval       *string                                 `json:"timeInterval,omitempty"`
-	TimestampPrecision *EnumlogPublisherTimestampPrecisionProp `json:"timestampPrecision,omitempty"`
-	DefaultDebugLevel  *EnumlogPublisherDefaultDebugLevelProp  `json:"defaultDebugLevel,omitempty"`
-	// The debug message categories to be logged when none of the defined targets match the message.
+	TimeInterval         *string                                    `json:"timeInterval,omitempty"`
+	TimestampPrecision   *EnumlogPublisherTimestampPrecisionProp    `json:"timestampPrecision,omitempty"`
+	DefaultDebugLevel    *EnumlogPublisherDefaultDebugLevelProp     `json:"defaultDebugLevel,omitempty"`
 	DefaultDebugCategory []EnumlogPublisherDefaultDebugCategoryProp `json:"defaultDebugCategory,omitempty"`
 	// Indicates whether to include method arguments in debug messages logged by default.
 	DefaultOmitMethodEntryArguments *bool `json:"defaultOmitMethodEntryArguments,omitempty"`

@@ -43,9 +43,8 @@ type AddClientConnectionPolicyRequest struct {
 	// Specifies the set of backend base DNs for which subtree views should be included in this Client Connection Policy.
 	IncludedBackendBaseDN []string `json:"includedBackendBaseDN,omitempty"`
 	// Specifies the set of backend base DNs for which subtree views should be excluded from this Client Connection Policy.
-	ExcludedBackendBaseDN []string `json:"excludedBackendBaseDN,omitempty"`
-	// Specifies the types of operations that clients associated with this Client Connection Policy will be allowed to request.
-	AllowedOperation []EnumclientConnectionPolicyAllowedOperationProp `json:"allowedOperation,omitempty"`
+	ExcludedBackendBaseDN []string                                         `json:"excludedBackendBaseDN,omitempty"`
+	AllowedOperation      []EnumclientConnectionPolicyAllowedOperationProp `json:"allowedOperation,omitempty"`
 	// Specifies a request criteria object that will be required to match all requests submitted by clients associated with this Client Connection Policy. If a client submits a request that does not satisfy this request criteria object, then that request will be rejected.
 	RequiredOperationRequestCriteria *string `json:"requiredOperationRequestCriteria,omitempty"`
 	// Specifies a request criteria object that must not match any requests submitted by clients associated with this Client Connection Policy. If a client submits a request that satisfies this request criteria object, then that request will be rejected.
@@ -57,15 +56,13 @@ type AddClientConnectionPolicyRequest struct {
 	// Specifies the OIDs of the extended operations that clients associated with this Client Connection Policy will be allowed to request.
 	AllowedExtendedOperation []string `json:"allowedExtendedOperation,omitempty"`
 	// Specifies the OIDs of the extended operations that clients associated with this Client Connection Policy will not be allowed to request.
-	DeniedExtendedOperation []string `json:"deniedExtendedOperation,omitempty"`
-	// Specifies the types of authentication that clients associated with this Client Connection Policy will be allowed to request.
-	AllowedAuthType []EnumclientConnectionPolicyAllowedAuthTypeProp `json:"allowedAuthType,omitempty"`
+	DeniedExtendedOperation []string                                        `json:"deniedExtendedOperation,omitempty"`
+	AllowedAuthType         []EnumclientConnectionPolicyAllowedAuthTypeProp `json:"allowedAuthType,omitempty"`
 	// Specifies the names of the SASL mechanisms that clients associated with this Client Connection Policy will be allowed to request.
 	AllowedSASLMechanism []string `json:"allowedSASLMechanism,omitempty"`
 	// Specifies the names of the SASL mechanisms that clients associated with this Client Connection Policy will not be allowed to request.
-	DeniedSASLMechanism []string `json:"deniedSASLMechanism,omitempty"`
-	// Specifies the types of filter components that may be included in search requests from clients associated with this Client Connection Policy which have a non-baseObject scope.
-	AllowedFilterType []EnumclientConnectionPolicyAllowedFilterTypeProp `json:"allowedFilterType,omitempty"`
+	DeniedSASLMechanism []string                                          `json:"deniedSASLMechanism,omitempty"`
+	AllowedFilterType   []EnumclientConnectionPolicyAllowedFilterTypeProp `json:"allowedFilterType,omitempty"`
 	// Indicates whether clients will be allowed to request search operations that cannot be efficiently processed using the set of indexes defined in the corresponding backend. Note that even if this is false, some clients may be able to request unindexed searches if the allow-unindexed-searches-with-control property has a value of true and the necessary conditions are satisfied.
 	AllowUnindexedSearches *bool `json:"allowUnindexedSearches,omitempty"`
 	// Indicates whether clients will be allowed to request search operations that cannot be efficiently processed using the set of indexes defined in the corresponding backend, as long as the search request also includes the permit unindexed search request control and the requester has the unindexed-search-with-control privilege (or that privilege is disabled in the global configuration).

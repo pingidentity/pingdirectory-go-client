@@ -20,10 +20,9 @@ var _ MappedNullable = &ComposedAttributePluginResponse{}
 // ComposedAttributePluginResponse struct for ComposedAttributePluginResponse
 type ComposedAttributePluginResponse struct {
 	// Name of the Plugin Root
-	Id      string                                 `json:"id"`
-	Schemas []EnumcomposedAttributePluginSchemaUrn `json:"schemas"`
-	// Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
-	PluginType []EnumpluginPluginTypeProp `json:"pluginType"`
+	Id         string                                 `json:"id"`
+	Schemas    []EnumcomposedAttributePluginSchemaUrn `json:"schemas"`
+	PluginType []EnumpluginPluginTypeProp             `json:"pluginType"`
 	// The name or OID of the attribute type for which values are to be generated.
 	AttributeType string `json:"attributeType"`
 	// Specifies a pattern for constructing the values to use for the target attribute type.

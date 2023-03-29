@@ -21,8 +21,7 @@ var _ MappedNullable = &ChangeSubscriptionNotificationPluginResponse{}
 type ChangeSubscriptionNotificationPluginResponse struct {
 	Schemas []EnumchangeSubscriptionNotificationPluginSchemaUrn `json:"schemas"`
 	// Name of the Plugin Root
-	Id string `json:"id"`
-	// Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
+	Id         string                     `json:"id"`
 	PluginType []EnumpluginPluginTypeProp `json:"pluginType"`
 	// A description for this Plugin
 	Description *string `json:"description,omitempty"`

@@ -14,9 +14,9 @@ Name | Type | Description | Notes
 **IncludeMonitorDataFilter** | Pointer to **string** | Include monitor entries that match this filter. | [optional] 
 **Description** | Pointer to **string** | A description for this Alert Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the Alert Handler is enabled. | 
-**EnabledAlertSeverity** | Pointer to [**[]EnumalertHandlerEnabledAlertSeverityProp**](EnumalertHandlerEnabledAlertSeverityProp.md) | Specifies the alert severities for which this alert handler should be used. If no values are provided, then this alert handler will be enabled for alerts with any severity. | [optional] 
-**EnabledAlertType** | Pointer to [**[]EnumalertHandlerEnabledAlertTypeProp**](EnumalertHandlerEnabledAlertTypeProp.md) | Specifies the names of the alert types that are enabled for this alert handler. | [optional] 
-**DisabledAlertType** | Pointer to [**[]EnumalertHandlerDisabledAlertTypeProp**](EnumalertHandlerDisabledAlertTypeProp.md) | Specifies the names of the alert types that are disabled for this alert handler. | [optional] 
+**EnabledAlertSeverity** | Pointer to [**[]EnumalertHandlerEnabledAlertSeverityProp**](EnumalertHandlerEnabledAlertSeverityProp.md) |  | [optional] 
+**EnabledAlertType** | Pointer to [**[]EnumalertHandlerEnabledAlertTypeProp**](EnumalertHandlerEnabledAlertTypeProp.md) |  | [optional] 
+**DisabledAlertType** | Pointer to [**[]EnumalertHandlerDisabledAlertTypeProp**](EnumalertHandlerDisabledAlertTypeProp.md) |  | [optional] 
 **ScriptClass** | **string** | The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Alert Handler. | 
 **ScriptArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Scripted Alert Handler. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **ServerHostName** | **string** | Specifies the address of the SNMP agent to which traps will be sent. | 

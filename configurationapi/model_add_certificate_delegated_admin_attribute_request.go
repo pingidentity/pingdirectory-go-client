@@ -20,9 +20,8 @@ var _ MappedNullable = &AddCertificateDelegatedAdminAttributeRequest{}
 // AddCertificateDelegatedAdminAttributeRequest struct for AddCertificateDelegatedAdminAttributeRequest
 type AddCertificateDelegatedAdminAttributeRequest struct {
 	// Specifies the name or OID of the LDAP attribute type.
-	AttributeType string                                            `json:"attributeType"`
-	Schemas       []EnumcertificateDelegatedAdminAttributeSchemaUrn `json:"schemas"`
-	// The list of file types allowed to be uploaded. If no types are specified, then all types will be allowed.
+	AttributeType   string                                                      `json:"attributeType"`
+	Schemas         []EnumcertificateDelegatedAdminAttributeSchemaUrn           `json:"schemas"`
 	AllowedMIMEType []EnumdelegatedAdminAttributeCertificateAllowedMIMETypeProp `json:"allowedMIMEType,omitempty"`
 	// A description for this Delegated Admin Attribute
 	Description *string `json:"description,omitempty"`

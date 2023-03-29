@@ -20,10 +20,9 @@ var _ MappedNullable = &SubOperationTimingPluginResponse{}
 // SubOperationTimingPluginResponse struct for SubOperationTimingPluginResponse
 type SubOperationTimingPluginResponse struct {
 	// Name of the Plugin Root
-	Id      string                                  `json:"id"`
-	Schemas []EnumsubOperationTimingPluginSchemaUrn `json:"schemas"`
-	// Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
-	PluginType []EnumpluginPluginTypeProp `json:"pluginType"`
+	Id         string                                  `json:"id"`
+	Schemas    []EnumsubOperationTimingPluginSchemaUrn `json:"schemas"`
+	PluginType []EnumpluginPluginTypeProp              `json:"pluginType"`
 	// Specifies a set of request criteria used to indicate that only operations for requests matching this criteria should be counted when aggregating timing data.
 	RequestCriteria *string `json:"requestCriteria,omitempty"`
 	// This controls how many of the most expensive phases are included per operation type in the monitor entry.

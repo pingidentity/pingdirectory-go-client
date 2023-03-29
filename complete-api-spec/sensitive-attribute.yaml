@@ -225,24 +225,14 @@ components:
               Indicates whether to automatically include any server-generated operational attributes that may contain sensitive data.
         allowInReturnedEntries:
           $ref: '#/components/schemas/Enumsensitive-attribute-allowInReturnedEntriesProp'
-          description: >-
-              Indicates whether sensitive attributes should be included in entries returned to the client. This includes not only search result entries, but also other forms including in the values of controls like the pre-read, post-read, get authorization entry, and LDAP join response controls.
         allowInFilter:
           $ref: '#/components/schemas/Enumsensitive-attribute-allowInFilterProp'
-          description: >-
-              Indicates whether clients will be allowed to include sensitive attributes in search filters. This also includes filters that may be used in other forms, including assertion and LDAP join request controls.
         allowInAdd:
           $ref: '#/components/schemas/Enumsensitive-attribute-allowInAddProp'
-          description: >-
-              Indicates whether clients will be allowed to include sensitive attributes in add requests.
         allowInCompare:
           $ref: '#/components/schemas/Enumsensitive-attribute-allowInCompareProp'
-          description: >-
-              Indicates whether clients will be allowed to target sensitive attributes with compare requests.
         allowInModify:
           $ref: '#/components/schemas/Enumsensitive-attribute-allowInModifyProp'
-          description: >-
-              Indicates whether clients will be allowed to target sensitive attributes with modify requests.
       required:
       - attributeType
     Enumsensitive-attributeSchemaUrn:

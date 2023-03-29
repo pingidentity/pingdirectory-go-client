@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | Pointer to [**[]EnumrootDnSchemaUrn**](EnumrootDnSchemaUrn.md) |  | [optional] 
-**DefaultRootPrivilegeName** | Pointer to [**[]EnumrootDnDefaultRootPrivilegeNameProp**](EnumrootDnDefaultRootPrivilegeNameProp.md) | Specifies the names of the privileges that root users will be granted by default. | [optional] 
+**DefaultRootPrivilegeName** | Pointer to [**[]EnumrootDnDefaultRootPrivilegeNameProp**](EnumrootDnDefaultRootPrivilegeNameProp.md) |  | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 

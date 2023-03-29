@@ -20,10 +20,9 @@ var _ MappedNullable = &ReferentialIntegrityPluginResponse{}
 // ReferentialIntegrityPluginResponse struct for ReferentialIntegrityPluginResponse
 type ReferentialIntegrityPluginResponse struct {
 	// Name of the Plugin Root
-	Id      string                                    `json:"id"`
-	Schemas []EnumreferentialIntegrityPluginSchemaUrn `json:"schemas"`
-	// Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
-	PluginType []EnumpluginPluginTypeProp `json:"pluginType"`
+	Id         string                                    `json:"id"`
+	Schemas    []EnumreferentialIntegrityPluginSchemaUrn `json:"schemas"`
+	PluginType []EnumpluginPluginTypeProp                `json:"pluginType"`
 	// Specifies the attribute types for which referential integrity is to be maintained.
 	AttributeType []string `json:"attributeType"`
 	// Specifies the base DN that limits the scope within which referential integrity is maintained.

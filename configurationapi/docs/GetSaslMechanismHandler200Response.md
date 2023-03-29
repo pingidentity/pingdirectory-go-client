@@ -39,7 +39,7 @@ Name | Type | Description | Notes
 **KdcAddress** | Pointer to **string** | Specifies the address of the KDC that is to be used for Kerberos processing. | [optional] 
 **Keytab** | Pointer to **string** | Specifies the keytab file that should be used for Kerberos processing. | [optional] 
 **AllowNullServerFqdn** | Pointer to **bool** | Specifies whether or not to allow a null value for the server-fqdn. | [optional] 
-**AllowedQualityOfProtection** | Pointer to [**[]EnumsaslMechanismHandlerAllowedQualityOfProtectionProp**](EnumsaslMechanismHandlerAllowedQualityOfProtectionProp.md) | Specifies the supported quality of protection (QoP) levels that clients will be permitted to request when performing GSSAPI authentication. | [optional] 
+**AllowedQualityOfProtection** | Pointer to [**[]EnumsaslMechanismHandlerAllowedQualityOfProtectionProp**](EnumsaslMechanismHandlerAllowedQualityOfProtectionProp.md) |  | [optional] 
 **KerberosServicePrincipal** | Pointer to **string** | Specifies the Kerberos service principal that the Directory Server will use to identify itself to the KDC. | [optional] 
 **GssapiRole** | Pointer to [**EnumsaslMechanismHandlerGssapiRoleProp**](EnumsaslMechanismHandlerGssapiRoleProp.md) |  | [optional] 
 **JaasConfigFile** | Pointer to **string** | Specifies the path to a JAAS (Java Authentication and Authorization Service) configuration file that provides the information that the JVM should use for Kerberos processing. | [optional] 

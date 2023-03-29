@@ -28,10 +28,9 @@ type Scim2HttpServletExtensionResponse struct {
 	AccessTokenValidator        []string                                                 `json:"accessTokenValidator,omitempty"`
 	MapAccessTokensToLocalUsers *EnumhttpServletExtensionMapAccessTokensToLocalUsersProp `json:"mapAccessTokensToLocalUsers,omitempty"`
 	// Enables debug logging of the SCIM 2.0 SDK. Debug messages will be forwarded to the Directory Server debug logger with the scope of com.unboundid.directory.broker.http.scim2.extension.SCIM2HTTPServletExtension.
-	DebugEnabled *bool                                  `json:"debugEnabled,omitempty"`
-	DebugLevel   EnumhttpServletExtensionDebugLevelProp `json:"debugLevel"`
-	// The types of debug messages that should be logged.
-	DebugType []EnumhttpServletExtensionDebugTypeProp `json:"debugType"`
+	DebugEnabled *bool                                   `json:"debugEnabled,omitempty"`
+	DebugLevel   EnumhttpServletExtensionDebugLevelProp  `json:"debugLevel"`
+	DebugType    []EnumhttpServletExtensionDebugTypeProp `json:"debugType"`
 	// Indicates whether a stack trace of the thread which called the debug method should be included in debug log messages.
 	IncludeStackTrace bool `json:"includeStackTrace"`
 	// Indicates whether the SCIM2 HTTP Servlet Extension will generate a Swagger specification document.

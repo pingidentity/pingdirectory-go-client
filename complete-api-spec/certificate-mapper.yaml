@@ -431,8 +431,6 @@ components:
               Specifies the attribute in which to look for the fingerprint.
         fingerprintAlgorithm:
           $ref: '#/components/schemas/Enumcertificate-mapper-fingerprintAlgorithmProp'
-          description: >-
-              Specifies the name of the digest algorithm to compute the fingerprint of client certificates.
         userBaseDN:
           type: array
           items:

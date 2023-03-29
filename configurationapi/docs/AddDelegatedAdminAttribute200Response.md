@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | Name of the REST Resource Type | 
 **Schemas** | [**[]EnumgenericDelegatedAdminAttributeSchemaUrn**](EnumgenericDelegatedAdminAttributeSchemaUrn.md) |  | 
-**AllowedMIMEType** | Pointer to [**[]EnumdelegatedAdminAttributePhotoAllowedMIMETypeProp**](EnumdelegatedAdminAttributePhotoAllowedMIMETypeProp.md) | The list of file types allowed to be uploaded. If no types are specified, then all types will be allowed. | [optional] 
+**AllowedMIMEType** | Pointer to [**[]EnumdelegatedAdminAttributePhotoAllowedMIMETypeProp**](EnumdelegatedAdminAttributePhotoAllowedMIMETypeProp.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Delegated Admin Attribute | [optional] 
 **AttributeType** | **string** | Specifies the name or OID of the LDAP attribute type. | 
 **DisplayName** | **string** | A human readable display name for this Delegated Admin Attribute. | 

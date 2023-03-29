@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnuminternalSearchRatePluginSchemaUrn**](EnuminternalSearchRatePluginSchemaUrn.md) |  | 
-**PluginType** | Pointer to [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) | Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked. | [optional] 
+**PluginType** | Pointer to [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | [optional] 
 **NumThreads** | Pointer to **int32** | Specifies the number of concurrent threads that should be used to process the search operations. | [optional] 
 **BaseDN** | **string** | Specifies the base DN to use for the searches to perform. | 
 **LowerBound** | Pointer to **int32** | Specifies the lower bound for the numeric value which will be inserted into the search filter. | [optional] 

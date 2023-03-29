@@ -25,9 +25,8 @@ type WeaklyEncodedPasswordDataSecurityAuditorResponse struct {
 	// Specifies the name of the detailed report file.
 	ReportFile string `json:"reportFile"`
 	// The password storage schemes that are considered weak. Users with any of the specified password storage schemes will be included in the report.
-	WeakPasswordStorageScheme []string `json:"weakPasswordStorageScheme"`
-	// Reporting on users with passwords encoded using the Crypt Password Storage scheme may be further limited by selecting one or more encoding mechanisms that are considered weak.
-	WeakCryptEncoding []EnumdataSecurityAuditorWeakCryptEncodingProp `json:"weakCryptEncoding,omitempty"`
+	WeakPasswordStorageScheme []string                                       `json:"weakPasswordStorageScheme"`
+	WeakCryptEncoding         []EnumdataSecurityAuditorWeakCryptEncodingProp `json:"weakCryptEncoding,omitempty"`
 	// Indicates whether the Data Security Auditor is enabled for use.
 	Enabled bool `json:"enabled"`
 	// Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.

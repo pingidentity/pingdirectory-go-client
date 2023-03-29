@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | [**[]EnumencryptAttributeValuesPluginSchemaUrn**](EnumencryptAttributeValuesPluginSchemaUrn.md) |  | 
 **Id** | **string** | Name of the Plugin Root | 
-**PluginType** | [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) | Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked. | 
-**AttributeType** | [**[]EnumpluginAttributeTypeProp**](EnumpluginAttributeTypeProp.md) | The attribute types whose values should be encrypted. | 
+**PluginType** | [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | 
+**AttributeType** | [**[]EnumpluginAttributeTypeProp**](EnumpluginAttributeTypeProp.md) |  | 
 **EncryptionSettingsDefinitionID** | Pointer to **string** | Specifies the ID of the encryption settings definition that should be used to encrypt the data. If this is not provided, the server&#39;s preferred encryption settings definition will be used. The \&quot;encryption-settings list\&quot; command can be used to obtain a list of the encryption settings definitions available in the server. | [optional] 
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 

@@ -255,8 +255,6 @@ components:
               The port number where the smtp server listens for requests.
         smtpSecurity:
           $ref: '#/components/schemas/Enumexternal-server-smtpSecurityProp'
-          description: >-
-              This property specifies type of connection security to use when connecting to the outgoing mail server.
         userName:
           type: string
           description: >-
@@ -429,8 +427,6 @@ components:
             $ref: '#/components/schemas/Enumnokia-ds-external-serverSchemaUrn'
         verifyCredentialsMethod:
           $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
-          description: >-
-              The mechanism to use to verify user credentials while ensuring that the ability to process other operations is not impacted by an alternate authorization identity.
         useAdministrativeOperationControl:
           type: boolean
           description: >-
@@ -462,12 +458,8 @@ components:
               The passphrase provider to use to obtain the login password for the specified user.
         connectionSecurity:
           $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
-          description: >-
-              The mechanism to use to secure communication with the directory server.
         authenticationMethod:
           $ref: '#/components/schemas/Enumexternal-server-nokia-ds-authenticationMethodProp'
-          description: >-
-              The mechanism to use to authenticate to the target server.
         healthCheckConnectTimeout:
           type: string
           description: >-
@@ -508,8 +500,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
-          description: >-
-              Specifies the operation result code values that should cause the associated connection should be considered defunct. If an operation fails with one of these result codes, then it will be terminated and an attempt will be made to establish a new connection in its place.
         abandonOnTimeout:
           type: boolean
           description: >-
@@ -575,8 +565,6 @@ components:
             $ref: '#/components/schemas/Enumping-identity-ds-external-serverSchemaUrn'
         verifyCredentialsMethod:
           $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
-          description: >-
-              The mechanism to use to verify user credentials while ensuring that the ability to process other operations is not impacted by an alternate authorization identity.
         useAdministrativeOperationControl:
           type: boolean
           description: >-
@@ -608,12 +596,8 @@ components:
               The passphrase provider to use to obtain the login password for the specified user.
         connectionSecurity:
           $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
-          description: >-
-              The mechanism to use to secure communication with the directory server.
         authenticationMethod:
           $ref: '#/components/schemas/Enumexternal-server-ping-identity-ds-authenticationMethodProp'
-          description: >-
-              The mechanism to use to authenticate to the target server.
         healthCheckConnectTimeout:
           type: string
           description: >-
@@ -654,8 +638,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
-          description: >-
-              Specifies the operation result code values that should cause the associated connection should be considered defunct. If an operation fails with one of these result codes, then it will be terminated and an attempt will be made to establish a new connection in its place.
         abandonOnTimeout:
           type: boolean
           description: >-
@@ -746,16 +728,10 @@ components:
               The passphrase provider to use to obtain the login password for the specified user.
         connectionSecurity:
           $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
-          description: >-
-              The mechanism to use to secure communication with the directory server.
         authenticationMethod:
           $ref: '#/components/schemas/Enumexternal-server-active-directory-authenticationMethodProp'
-          description: >-
-              The mechanism to use to authenticate to the target server.
         verifyCredentialsMethod:
           $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
-          description: >-
-              The mechanism to use to verify user credentials while ensuring that the ability to process other operations is not impacted by an alternate authorization identity.
         healthCheckConnectTimeout:
           type: string
           description: >-
@@ -796,8 +772,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
-          description: >-
-              Specifies the operation result code values that should cause the associated connection should be considered defunct. If an operation fails with one of these result codes, then it will be terminated and an attempt will be made to establish a new connection in its place.
         abandonOnTimeout:
           type: boolean
           description: >-
@@ -868,8 +842,6 @@ components:
             $ref: '#/components/schemas/Enumjdbc-external-serverSchemaUrn'
         jdbcDriverType:
           $ref: '#/components/schemas/Enumexternal-server-jdbcDriverTypeProp'
-          description: >-
-              Specifies a supported database driver type. The driver class will be automatically selected based on this selection. We highly recommend using a JDBC 4 driver that is suitable for the current Java platform.
         jdbcDriverURL:
           type: string
           description: >-
@@ -915,8 +887,6 @@ components:
               Specifies the connection properties for the JDBC datasource.
         transactionIsolationLevel:
           $ref: '#/components/schemas/Enumexternal-server-transactionIsolationLevelProp'
-          description: >-
-              This property specifies the default transaction isolation level for connections to this JDBC External Server.
         description:
           type: string
           description: >-
@@ -981,8 +951,6 @@ components:
               The port on which the syslog server accepts connections.
         transportMechanism:
           $ref: '#/components/schemas/Enumexternal-server-transportMechanismProp'
-          description: >-
-              The transport mechanism that should be used when communicating with the syslog server.
         connectTimeout:
           type: string
           description: >-
@@ -1057,8 +1025,6 @@ components:
             $ref: '#/components/schemas/Enumping-identity-proxy-server-external-serverSchemaUrn'
         verifyCredentialsMethod:
           $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
-          description: >-
-              The mechanism to use to verify user credentials while ensuring that the ability to process other operations is not impacted by an alternate authorization identity.
         useAdministrativeOperationControl:
           type: boolean
           description: >-
@@ -1090,12 +1056,8 @@ components:
               The passphrase provider to use to obtain the login password for the specified user.
         connectionSecurity:
           $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
-          description: >-
-              The mechanism to use to secure communication with the directory server.
         authenticationMethod:
           $ref: '#/components/schemas/Enumexternal-server-ping-identity-proxy-server-authenticationMethodProp'
-          description: >-
-              The mechanism to use to authenticate to the target server.
         healthCheckConnectTimeout:
           type: string
           description: >-
@@ -1136,8 +1098,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
-          description: >-
-              Specifies the operation result code values that should cause the associated connection should be considered defunct. If an operation fails with one of these result codes, then it will be terminated and an attempt will be made to establish a new connection in its place.
         abandonOnTimeout:
           type: boolean
           description: >-
@@ -1263,8 +1223,6 @@ components:
             $ref: '#/components/schemas/Enumnokia-proxy-server-external-serverSchemaUrn'
         verifyCredentialsMethod:
           $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
-          description: >-
-              The mechanism to use to verify user credentials while ensuring that the ability to process other operations is not impacted by an alternate authorization identity.
         useAdministrativeOperationControl:
           type: boolean
           description: >-
@@ -1296,12 +1254,8 @@ components:
               The passphrase provider to use to obtain the login password for the specified user.
         connectionSecurity:
           $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
-          description: >-
-              The mechanism to use to secure communication with the directory server.
         authenticationMethod:
           $ref: '#/components/schemas/Enumexternal-server-nokia-proxy-server-authenticationMethodProp'
-          description: >-
-              The mechanism to use to authenticate to the target server.
         healthCheckConnectTimeout:
           type: string
           description: >-
@@ -1342,8 +1296,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
-          description: >-
-              Specifies the operation result code values that should cause the associated connection should be considered defunct. If an operation fails with one of these result codes, then it will be terminated and an attempt will be made to establish a new connection in its place.
         abandonOnTimeout:
           type: boolean
           description: >-
@@ -1434,16 +1386,10 @@ components:
               The passphrase provider to use to obtain the login password for the specified user.
         connectionSecurity:
           $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
-          description: >-
-              The mechanism to use to secure communication with the directory server.
         authenticationMethod:
           $ref: '#/components/schemas/Enumexternal-server-opendj-authenticationMethodProp'
-          description: >-
-              The mechanism to use to authenticate to the target server.
         verifyCredentialsMethod:
           $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
-          description: >-
-              The mechanism to use to verify user credentials while ensuring that the ability to process other operations is not impacted by an alternate authorization identity.
         healthCheckConnectTimeout:
           type: string
           description: >-
@@ -1484,8 +1430,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
-          description: >-
-              Specifies the operation result code values that should cause the associated connection should be considered defunct. If an operation fails with one of these result codes, then it will be terminated and an attempt will be made to establish a new connection in its place.
         abandonOnTimeout:
           type: boolean
           description: >-
@@ -1576,16 +1520,10 @@ components:
               The passphrase provider to use to obtain the login password for the specified user.
         connectionSecurity:
           $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
-          description: >-
-              The mechanism to use to secure communication with the directory server.
         authenticationMethod:
           $ref: '#/components/schemas/Enumexternal-server-ldap-authenticationMethodProp'
-          description: >-
-              The mechanism to use to authenticate to the target server.
         verifyCredentialsMethod:
           $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
-          description: >-
-              The mechanism to use to verify user credentials while ensuring that the ability to process other operations is not impacted by an alternate authorization identity.
         healthCheckConnectTimeout:
           type: string
           description: >-
@@ -1626,8 +1564,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
-          description: >-
-              Specifies the operation result code values that should cause the associated connection should be considered defunct. If an operation fails with one of these result codes, then it will be terminated and an attempt will be made to establish a new connection in its place.
         abandonOnTimeout:
           type: boolean
           description: >-
@@ -1684,8 +1620,6 @@ components:
             $ref: '#/components/schemas/Enumping-one-http-external-serverSchemaUrn'
         hostnameVerificationMethod:
           $ref: '#/components/schemas/Enumexternal-server-hostnameVerificationMethodProp'
-          description: >-
-              The mechanism for checking if the hostname in the PingOne ID Token Validator's base-url value matches the name(s) stored inside the X.509 certificate presented by PingOne.
         trustManagerProvider:
           type: string
           description: >-
@@ -1746,8 +1680,6 @@ components:
               The base URL of the external server, optionally including port number, for example "https://externalService:9031".
         hostnameVerificationMethod:
           $ref: '#/components/schemas/Enumexternal-server-hostnameVerificationMethodProp'
-          description: >-
-              The mechanism for checking if the hostname of the HTTP External Server matches the name(s) stored inside the server's X.509 certificate. This is only applicable if SSL is being used for connection security.
         keyManagerProvider:
           type: string
           description: >-
@@ -1854,16 +1786,10 @@ components:
               The passphrase provider to use to obtain the login password for the specified user.
         connectionSecurity:
           $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
-          description: >-
-              The mechanism to use to secure communication with the directory server.
         authenticationMethod:
           $ref: '#/components/schemas/Enumexternal-server-oracle-unified-directory-authenticationMethodProp'
-          description: >-
-              The mechanism to use to authenticate to the target server.
         verifyCredentialsMethod:
           $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
-          description: >-
-              The mechanism to use to verify user credentials while ensuring that the ability to process other operations is not impacted by an alternate authorization identity.
         healthCheckConnectTimeout:
           type: string
           description: >-
@@ -1904,8 +1830,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
-          description: >-
-              Specifies the operation result code values that should cause the associated connection should be considered defunct. If an operation fails with one of these result codes, then it will be terminated and an attempt will be made to establish a new connection in its place.
         abandonOnTimeout:
           type: boolean
           description: >-
@@ -2040,8 +1964,6 @@ components:
               A reference to an HTTP proxy server that should be used for requests sent to the AWS service.
         authenticationMethod:
           $ref: '#/components/schemas/Enumexternal-server-amazon-aws-authenticationMethodProp'
-          description: >-
-              The mechanism to use to authenticate to AWS.
         awsAccessKeyID:
           type: string
           description: >-

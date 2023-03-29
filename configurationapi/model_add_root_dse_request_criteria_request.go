@@ -20,9 +20,8 @@ var _ MappedNullable = &AddRootDseRequestCriteriaRequest{}
 // AddRootDseRequestCriteriaRequest struct for AddRootDseRequestCriteriaRequest
 type AddRootDseRequestCriteriaRequest struct {
 	// Name of the new Request Criteria
-	CriteriaName string                                `json:"criteriaName"`
-	Schemas      []EnumrootDseRequestCriteriaSchemaUrn `json:"schemas"`
-	// The types of operations that may be matched by this Root DSE Request Criteria.
+	CriteriaName  string                                        `json:"criteriaName"`
+	Schemas       []EnumrootDseRequestCriteriaSchemaUrn         `json:"schemas"`
 	OperationType []EnumrequestCriteriaRootDseOperationTypeProp `json:"operationType,omitempty"`
 	// A description for this Request Criteria
 	Description *string `json:"description,omitempty"`

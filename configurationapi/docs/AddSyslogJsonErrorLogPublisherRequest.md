@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PublisherName** | **string** | Name of the new Log Publisher | 
 **Schemas** | [**[]EnumsyslogJsonErrorLogPublisherSchemaUrn**](EnumsyslogJsonErrorLogPublisherSchemaUrn.md) |  | 
-**DefaultSeverity** | Pointer to [**[]EnumlogPublisherDefaultSeverityProp**](EnumlogPublisherDefaultSeverityProp.md) | Specifies the default severity levels for the logger. | [optional] 
+**DefaultSeverity** | Pointer to [**[]EnumlogPublisherDefaultSeverityProp**](EnumlogPublisherDefaultSeverityProp.md) |  | [optional] 
 **SyslogExternalServer** | **[]string** | The syslog server to which messages should be sent. | 
 **SyslogFacility** | Pointer to [**EnumlogPublisherSyslogFacilityProp**](EnumlogPublisherSyslogFacilityProp.md) |  | [optional] 
 **SyslogSeverity** | Pointer to [**EnumlogPublisherSyslogSeverityProp**](EnumlogPublisherSyslogSeverityProp.md) |  | [optional] 

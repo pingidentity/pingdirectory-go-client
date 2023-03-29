@@ -55,10 +55,9 @@ type LdapMappedScimHttpServletExtensionResponse struct {
 	// The maximum number of bulk requests that may be processed concurrently by the server. Any bulk request that would cause this limit to be exceeded is rejected with HTTP status code 503.
 	BulkMaxConcurrentRequests *int32 `json:"bulkMaxConcurrentRequests,omitempty"`
 	// Enables debug logging of the SCIM SDK. Debug messages will be forwarded to the Directory Server debug logger with the scope of com.unboundid.directory.server.extensions.scim.SCIMHTTPServletExtension.
-	DebugEnabled *bool                                  `json:"debugEnabled,omitempty"`
-	DebugLevel   EnumhttpServletExtensionDebugLevelProp `json:"debugLevel"`
-	// The types of debug messages that should be logged.
-	DebugType []EnumhttpServletExtensionDebugTypeProp `json:"debugType"`
+	DebugEnabled *bool                                   `json:"debugEnabled,omitempty"`
+	DebugLevel   EnumhttpServletExtensionDebugLevelProp  `json:"debugLevel"`
+	DebugType    []EnumhttpServletExtensionDebugTypeProp `json:"debugType"`
 	// Indicates whether a stack trace of the thread which called the debug method should be included in debug log messages.
 	IncludeStackTrace bool `json:"includeStackTrace"`
 	// A description for this HTTP Servlet Extension

@@ -31,8 +31,7 @@ type AlertBackendResponse struct {
 	// Specifies the maximum length of time that information about generated alerts should be maintained before they will be purged.
 	AlertRetentionTime string `json:"alertRetentionTime"`
 	// Specifies the maximum number of alerts that should be retained. If more alerts than this configured maximum are generated within the alert retention time, then the oldest alerts will be purged to achieve this maximum.
-	MaxAlerts *int32 `json:"maxAlerts,omitempty"`
-	// Specifies the names of the alert types that should not be added to the backend. This can be used to suppress high volume alerts that might trigger hitting the max-alerts limit sooner than desired. Disabled alert types will not be sent out over persistent searches on this backend.
+	MaxAlerts         *int32                             `json:"maxAlerts,omitempty"`
 	DisabledAlertType []EnumbackendDisabledAlertTypeProp `json:"disabledAlertType,omitempty"`
 	WritabilityMode   EnumbackendWritabilityModeProp     `json:"writabilityMode"`
 	// A description for this Backend

@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | Pointer to [**[]EnumalarmManagerSchemaUrn**](EnumalarmManagerSchemaUrn.md) |  | [optional] 
 **DefaultGaugeAlertLevel** | [**EnumalarmManagerDefaultGaugeAlertLevelProp**](EnumalarmManagerDefaultGaugeAlertLevelProp.md) |  | 
-**GeneratedAlertTypes** | [**[]EnumalarmManagerGeneratedAlertTypesProp**](EnumalarmManagerGeneratedAlertTypesProp.md) | Indicates what kind of alert types should be generated. | 
-**SuppressedAlarm** | Pointer to [**[]EnumalarmManagerSuppressedAlarmProp**](EnumalarmManagerSuppressedAlarmProp.md) | Specifies the names of the alarm alert types that should be suppressed. If the condition that triggers an alarm in this list occurs, then the alarm will not be raised and no alerts will be generated. Only a subset of alarms can be suppressed in this way. Alarms triggered by a gauge can be disabled by disabling the gauge. | [optional] 
+**GeneratedAlertTypes** | [**[]EnumalarmManagerGeneratedAlertTypesProp**](EnumalarmManagerGeneratedAlertTypesProp.md) |  | 
+**SuppressedAlarm** | Pointer to [**[]EnumalarmManagerSuppressedAlarmProp**](EnumalarmManagerSuppressedAlarmProp.md) |  | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 

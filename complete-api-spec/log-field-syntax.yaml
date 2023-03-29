@@ -129,8 +129,6 @@ components:
                 A description for this Log Field Syntax
           defaultBehavior:
             $ref: '#/components/schemas/Enumlog-field-syntax-defaultBehaviorProp'
-            description: >-
-                The default behavior that the server should exhibit when logging fields with this syntax. This may be overridden on a per-field basis.
       - $ref: '#/components/schemas/meta'
       required:
       - id
@@ -171,8 +169,6 @@ components:
                 A description for this Log Field Syntax
           defaultBehavior:
             $ref: '#/components/schemas/Enumlog-field-syntax-defaultBehaviorProp'
-            description: >-
-                The default behavior that the server should exhibit when logging fields with this syntax. This may be overridden on a per-field basis.
       - $ref: '#/components/schemas/meta'
       required:
       - id
@@ -201,8 +197,6 @@ components:
                 A description for this Log Field Syntax
           defaultBehavior:
             $ref: '#/components/schemas/Enumlog-field-syntax-defaultBehaviorProp'
-            description: >-
-                The default behavior that the server should exhibit when logging fields with this syntax. This may be overridden on a per-field basis.
       - $ref: '#/components/schemas/meta'
       required:
       - id

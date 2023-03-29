@@ -594,12 +594,8 @@ components:
                 Name of the Alert Handler
           outputLocation:
             $ref: '#/components/schemas/Enumalert-handler-outputLocationProp'
-            description: >-
-                The location to which alert messages will be written.
           outputFormat:
             $ref: '#/components/schemas/Enumalert-handler-outputFormatProp'
-            description: >-
-                The format to use when writing the alert messages.
           description:
             type: string
             description: >-
@@ -616,20 +612,14 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Enumalert-handler-enabledAlertSeverityProp'
-            description: >-
-                Specifies the alert severities for which this alert handler should be used. If no values are provided, then this alert handler will be enabled for alerts with any severity.
           enabledAlertType:
             type: array
             items:
               $ref: '#/components/schemas/Enumalert-handler-enabledAlertTypeProp'
-            description: >-
-                Specifies the names of the alert types that are enabled for this alert handler.
           disabledAlertType:
             type: array
             items:
               $ref: '#/components/schemas/Enumalert-handler-disabledAlertTypeProp'
-            description: >-
-                Specifies the names of the alert types that are disabled for this alert handler.
       - $ref: '#/components/schemas/meta'
       required:
       - id
@@ -711,20 +701,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertSeverityProp'
-          description: >-
-              Specifies the alert severities for which this alert handler should be used. If no values are provided, then this alert handler will be enabled for alerts with any severity.
         enabledAlertType:
           type: array
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertTypeProp'
-          description: >-
-              Specifies the names of the alert types that are enabled for this alert handler.
         disabledAlertType:
           type: array
           items:
             $ref: '#/components/schemas/Enumalert-handler-disabledAlertTypeProp'
-          description: >-
-              Specifies the names of the alert types that are disabled for this alert handler.
       required:
       - schemas
       - senderAddress
@@ -782,20 +766,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertSeverityProp'
-          description: >-
-              Specifies the alert severities for which this alert handler should be used. If no values are provided, then this alert handler will be enabled for alerts with any severity.
         enabledAlertType:
           type: array
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertTypeProp'
-          description: >-
-              Specifies the names of the alert types that are enabled for this alert handler.
         disabledAlertType:
           type: array
           items:
             $ref: '#/components/schemas/Enumalert-handler-disabledAlertTypeProp'
-          description: >-
-              Specifies the names of the alert types that are disabled for this alert handler.
       required:
       - schemas
       - enabled
@@ -861,20 +839,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertSeverityProp'
-          description: >-
-              Specifies the alert severities for which this alert handler should be used. If no values are provided, then this alert handler will be enabled for alerts with any severity.
         enabledAlertType:
           type: array
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertTypeProp'
-          description: >-
-              Specifies the names of the alert types that are enabled for this alert handler.
         disabledAlertType:
           type: array
           items:
             $ref: '#/components/schemas/Enumalert-handler-disabledAlertTypeProp'
-          description: >-
-              Specifies the names of the alert types that are disabled for this alert handler.
       required:
       - schemas
       - scriptClass
@@ -913,20 +885,14 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Enumalert-handler-enabledAlertSeverityProp'
-            description: >-
-                Specifies the alert severities for which this alert handler should be used. If no values are provided, then this alert handler will be enabled for alerts with any severity.
           enabledAlertType:
             type: array
             items:
               $ref: '#/components/schemas/Enumalert-handler-enabledAlertTypeProp'
-            description: >-
-                Specifies the names of the alert types that are enabled for this alert handler.
           disabledAlertType:
             type: array
             items:
               $ref: '#/components/schemas/Enumalert-handler-disabledAlertTypeProp'
-            description: >-
-                Specifies the names of the alert types that are disabled for this alert handler.
       - $ref: '#/components/schemas/meta'
       required:
       - id
@@ -998,20 +964,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertSeverityProp'
-          description: >-
-              Specifies the alert severities for which this alert handler should be used. If no values are provided, then this alert handler will be enabled for alerts with any severity.
         enabledAlertType:
           type: array
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertTypeProp'
-          description: >-
-              Specifies the names of the alert types that are enabled for this alert handler.
         disabledAlertType:
           type: array
           items:
             $ref: '#/components/schemas/Enumalert-handler-disabledAlertTypeProp'
-          description: >-
-              Specifies the names of the alert types that are disabled for this alert handler.
       required:
       - schemas
       - serverHostName
@@ -1095,8 +1055,6 @@ components:
               The phone number to which alert notifications should be delivered.
         longMessageBehavior:
           $ref: '#/components/schemas/Enumalert-handler-longMessageBehaviorProp'
-          description: >-
-              The behavior to use for alert messages that are longer than the 160-character size limit for SMS messages.
         description:
           type: string
           description: >-
@@ -1109,20 +1067,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertSeverityProp'
-          description: >-
-              Specifies the alert severities for which this alert handler should be used. If no values are provided, then this alert handler will be enabled for alerts with any severity.
         enabledAlertType:
           type: array
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertTypeProp'
-          description: >-
-              Specifies the names of the alert types that are enabled for this alert handler.
         disabledAlertType:
           type: array
           items:
             $ref: '#/components/schemas/Enumalert-handler-disabledAlertTypeProp'
-          description: >-
-              Specifies the names of the alert types that are disabled for this alert handler.
       required:
       - schemas
       - twilioAccountSID
@@ -1181,20 +1133,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertSeverityProp'
-          description: >-
-              Specifies the alert severities for which this alert handler should be used. If no values are provided, then this alert handler will be enabled for alerts with any severity.
         enabledAlertType:
           type: array
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertTypeProp'
-          description: >-
-              Specifies the names of the alert types that are enabled for this alert handler.
         disabledAlertType:
           type: array
           items:
             $ref: '#/components/schemas/Enumalert-handler-disabledAlertTypeProp'
-          description: >-
-              Specifies the names of the alert types that are disabled for this alert handler.
       required:
       - schemas
       - enabled
@@ -1250,20 +1196,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertSeverityProp'
-          description: >-
-              Specifies the alert severities for which this alert handler should be used. If no values are provided, then this alert handler will be enabled for alerts with any severity.
         enabledAlertType:
           type: array
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertTypeProp'
-          description: >-
-              Specifies the names of the alert types that are enabled for this alert handler.
         disabledAlertType:
           type: array
           items:
             $ref: '#/components/schemas/Enumalert-handler-disabledAlertTypeProp'
-          description: >-
-              Specifies the names of the alert types that are disabled for this alert handler.
       required:
       - schemas
       - enabled
@@ -1323,20 +1263,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertSeverityProp'
-          description: >-
-              Specifies the alert severities for which this alert handler should be used. If no values are provided, then this alert handler will be enabled for alerts with any severity.
         enabledAlertType:
           type: array
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertTypeProp'
-          description: >-
-              Specifies the names of the alert types that are enabled for this alert handler.
         disabledAlertType:
           type: array
           items:
             $ref: '#/components/schemas/Enumalert-handler-disabledAlertTypeProp'
-          description: >-
-              Specifies the names of the alert types that are disabled for this alert handler.
       required:
       - schemas
       - command
@@ -1403,20 +1337,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertSeverityProp'
-          description: >-
-              Specifies the alert severities for which this alert handler should be used. If no values are provided, then this alert handler will be enabled for alerts with any severity.
         enabledAlertType:
           type: array
           items:
             $ref: '#/components/schemas/Enumalert-handler-enabledAlertTypeProp'
-          description: >-
-              Specifies the names of the alert types that are enabled for this alert handler.
         disabledAlertType:
           type: array
           items:
             $ref: '#/components/schemas/Enumalert-handler-disabledAlertTypeProp'
-          description: >-
-              Specifies the names of the alert types that are disabled for this alert handler.
       required:
       - schemas
       - extensionClass

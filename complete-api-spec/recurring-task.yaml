@@ -549,8 +549,6 @@ components:
               The maximum length of time that the server will continue to perform internal searches using the criteria from the ldap-url-for-search-expected-to-return-entries property.
         taskReturnStateIfTimeoutIsEncountered:
           $ref: '#/components/schemas/Enumrecurring-task-taskReturnStateIfTimeoutIsEncounteredProp'
-          description: >-
-              The return state to use if a timeout is encountered while waiting for the server work queue to become idle (if the duration-to-wait-for-work-queue-idle property has a value), or if the time specified by the duration-to-wait-for-search-to-return-entries elapses without the associated search returning any entries.
         description:
           type: string
           description: >-
@@ -759,8 +757,6 @@ components:
               Indicates whether to capture support data information sequentially rather than in parallel. Capturing data in sequential mode may reduce the amount of memory that the tool requires to operate, at the cost of taking longer to run.
         securityLevel:
           $ref: '#/components/schemas/Enumrecurring-task-securityLevelProp'
-          description: >-
-              The security level to use when deciding which information to include in or exclude from the support data archive, and which included data should be obscured or redacted.
         jstackCount:
           type: integer
           description: >-
@@ -1216,8 +1212,6 @@ components:
               Indicates whether the command's output (both standard output and standard error) should be recorded in the server's error log.
         taskCompletionStateForNonzeroExitCode:
           $ref: '#/components/schemas/Enumrecurring-task-taskCompletionStateForNonzeroExitCodeProp'
-          description: >-
-              The final task state that a task instance should have if the task executes the specified command and that command completes with a nonzero exit code, which generally means that the command did not complete successfully.
         workingDirectory:
           type: string
           description: >-
@@ -1321,8 +1315,6 @@ components:
               A pattern that specifies the names of the files to examine. The pattern may contain zero or more asterisks as wildcards, where each wildcard matches zero or more characters. It may also contain at most one occurrence of the special string "${timestamp}", which will match a timestamp with the format specified using the timestamp-format property. All other characters in the pattern will be treated literally.
         timestampFormat:
           $ref: '#/components/schemas/Enumrecurring-task-timestampFormatProp'
-          description: >-
-              The format to use for the timestamp represented by the "${timestamp}" token in the filename pattern.
         retainFileCount:
           type: integer
           description: >-

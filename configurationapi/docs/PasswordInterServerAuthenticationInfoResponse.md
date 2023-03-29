@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **BindDN** | Pointer to **string** | A DN of the username that should be used for the bind request. | [optional] 
 **Username** | Pointer to **string** | The username that should be used for the bind request. | [optional] 
 **Password** | **string** | The password for the username or bind-dn. | 
-**Purpose** | Pointer to [**[]EnuminterServerAuthenticationInfoPurposeProp**](EnuminterServerAuthenticationInfoPurposeProp.md) | Identifies the purpose of this Inter Server Authentication Info. | [optional] 
+**Purpose** | Pointer to [**[]EnuminterServerAuthenticationInfoPurposeProp**](EnuminterServerAuthenticationInfoPurposeProp.md) |  | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 

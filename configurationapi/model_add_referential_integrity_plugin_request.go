@@ -22,8 +22,7 @@ type AddReferentialIntegrityPluginRequest struct {
 	// Name of the new Plugin
 	PluginName string                                    `json:"pluginName"`
 	Schemas    []EnumreferentialIntegrityPluginSchemaUrn `json:"schemas"`
-	// Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
-	PluginType []EnumpluginPluginTypeProp `json:"pluginType,omitempty"`
+	PluginType []EnumpluginPluginTypeProp                `json:"pluginType,omitempty"`
 	// Specifies the attribute types for which referential integrity is to be maintained.
 	AttributeType []string `json:"attributeType"`
 	// Specifies the base DN that limits the scope within which referential integrity is maintained.

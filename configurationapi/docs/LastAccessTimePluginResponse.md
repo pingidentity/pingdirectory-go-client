@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumlastAccessTimePluginSchemaUrn**](EnumlastAccessTimePluginSchemaUrn.md) |  | 
 **Id** | **string** | Name of the Plugin Root | 
 **MaxUpdateFrequency** | Pointer to **string** | Specifies the maximum frequency with which last access time values should be written for an entry. This may help limit the rate of internal write operations processed in the server. | [optional] 
-**OperationType** | Pointer to [**[]EnumpluginOperationTypeProp**](EnumpluginOperationTypeProp.md) | Specifies the types of operations that should result in access time updates. | [optional] 
+**OperationType** | Pointer to [**[]EnumpluginOperationTypeProp**](EnumpluginOperationTypeProp.md) |  | [optional] 
 **InvokeForFailedBinds** | Pointer to **bool** | Indicates whether to update the last access time for an entry targeted by a bind operation if the bind is unsuccessful. | [optional] 
 **MaxSearchResultEntriesToUpdate** | Pointer to **int32** | Specifies the maximum number of entries that should be updated in a search operation. Only search result entries actually returned to the client may have their last access time updated, but because a single search operation may return a very large number of entries, the plugin will only update entries if no more than a specified number of entries are updated. | [optional] 
 **RequestCriteria** | Pointer to **string** | Specifies a set of request criteria that may be used to indicate whether to apply access time updates for the associated operation. | [optional] 

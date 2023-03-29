@@ -35,8 +35,7 @@ type AddFileServerHttpServletExtensionRequest struct {
 	// Specifies the default MIME type to use for the Content-Type header when a mapping cannot be found.
 	DefaultMIMEType *string `json:"defaultMIMEType,omitempty"`
 	// Indicates whether the servlet extension should only accept requests from authenticated clients.
-	RequireAuthentication *bool `json:"requireAuthentication,omitempty"`
-	// The types of authentication that may be used to authenticate to the file servlet.
+	RequireAuthentication     *bool                                                   `json:"requireAuthentication,omitempty"`
 	AllowedAuthenticationType []EnumhttpServletExtensionAllowedAuthenticationTypeProp `json:"allowedAuthenticationType,omitempty"`
 	// The access token validators that may be used to verify the authenticity of an OAuth 2.0 bearer token.
 	AccessTokenValidator []string `json:"accessTokenValidator,omitempty"`

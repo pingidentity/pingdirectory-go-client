@@ -424,18 +424,12 @@ components:
               Specifies the name of a communication protocol that should be used by clients excluded from this Simple Connection Criteria.
         communicationSecurityLevel:
           $ref: '#/components/schemas/Enumconnection-criteria-communicationSecurityLevelProp'
-          description: >-
-              Indicates whether this Simple Connection Criteria should require or allow clients using a secure communication channel.
         userAuthType:
           type: array
           items:
             $ref: '#/components/schemas/Enumconnection-criteria-userAuthTypeProp'
-          description: >-
-              Specifies the authentication types for client connections that may be included in this Simple Connection Criteria.
         authenticationSecurityLevel:
           $ref: '#/components/schemas/Enumconnection-criteria-authenticationSecurityLevelProp'
-          description: >-
-              Indicates whether this Simple Connection Criteria should require or allow clients that authenticated using a secure manner. This will only be taken into account for client connections that have authenticated to the server and will be ignored for unauthenticated client connections.
         includedUserSASLMechanism:
           type: array
           items:
@@ -512,26 +506,18 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Enumconnection-criteria-allIncludedUserPrivilegeProp'
-          description: >-
-              Specifies the name of a privilege that must be held by the authenticated user for clients included in this Simple Connection Criteria. If any privilege names are provided, then the authenticated user must have all of those privileges. This will only be taken into account for client connections that have authenticated to the server and will be ignored for unauthenticated client connections.
         anyIncludedUserPrivilege:
           type: array
           items:
             $ref: '#/components/schemas/Enumconnection-criteria-anyIncludedUserPrivilegeProp'
-          description: >-
-              Specifies the name of a privilege that may be held by the authenticated user for clients included in this Simple Connection Criteria. If any privilege names are provided, then the authenticated user must have at least one of those privileges. This will only be taken into account for client connections that have authenticated to the server and will be ignored for unauthenticated client connections.
         notAllIncludedUserPrivilege:
           type: array
           items:
             $ref: '#/components/schemas/Enumconnection-criteria-notAllIncludedUserPrivilegeProp'
-          description: >-
-              Specifies the name of a privilege that should not be held by the authenticated user for clients included in this Simple Connection Criteria. If any privilege names are provided, then the authenticated user must not have at least one of those privileges (that is, the user may hold zero or more of those privileges, but not all of them). This will only be taken into account for client connections that have authenticated to the server and will be ignored for unauthenticated client connections.
         noneIncludedUserPrivilege:
           type: array
           items:
             $ref: '#/components/schemas/Enumconnection-criteria-noneIncludedUserPrivilegeProp'
-          description: >-
-              Specifies the name of a privilege that must not be held by the authenticated user for clients included in this Simple Connection Criteria. If any privilege names are provided, then the authenticated user must not have any of those privileges. This will only be taken into account for client connections that have authenticated to the server and will be ignored for unauthenticated client connections.
         description:
           type: string
           description: >-

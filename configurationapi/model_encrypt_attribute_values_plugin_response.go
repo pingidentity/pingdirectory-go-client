@@ -21,10 +21,8 @@ var _ MappedNullable = &EncryptAttributeValuesPluginResponse{}
 type EncryptAttributeValuesPluginResponse struct {
 	Schemas []EnumencryptAttributeValuesPluginSchemaUrn `json:"schemas"`
 	// Name of the Plugin Root
-	Id string `json:"id"`
-	// Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
-	PluginType []EnumpluginPluginTypeProp `json:"pluginType"`
-	// The attribute types whose values should be encrypted.
+	Id            string                        `json:"id"`
+	PluginType    []EnumpluginPluginTypeProp    `json:"pluginType"`
 	AttributeType []EnumpluginAttributeTypeProp `json:"attributeType"`
 	// Specifies the ID of the encryption settings definition that should be used to encrypt the data. If this is not provided, the server's preferred encryption settings definition will be used. The \"encryption-settings list\" command can be used to obtain a list of the encryption settings definitions available in the server.
 	EncryptionSettingsDefinitionID *string `json:"encryptionSettingsDefinitionID,omitempty"`
