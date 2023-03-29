@@ -19,8 +19,6 @@ var _ MappedNullable = &OpenidConnectIdTokenValidatorResponse{}
 
 // OpenidConnectIdTokenValidatorResponse struct for OpenidConnectIdTokenValidatorResponse
 type OpenidConnectIdTokenValidatorResponse struct {
-	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
-	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the ID Token Validator
 	Id                      string                                            `json:"id"`
 	Schemas                 []EnumopenidConnectIdTokenValidatorSchemaUrn      `json:"schemas"`
@@ -46,7 +44,9 @@ type OpenidConnectIdTokenValidatorResponse struct {
 	// How often the ID Token Validator should refresh its cache of JWKS token signing keys.
 	JwksCacheDuration *string `json:"jwksCacheDuration,omitempty"`
 	// When multiple ID Token Validators are defined for a single Directory Server, this property determines the order in which the ID Token Validators are consulted. Values of this property must be unique among all ID Token Validators defined within Directory Server but not necessarily contiguous. ID Token Validators with lower values will be evaluated first to determine if they are able to validate the ID token.
-	EvaluationOrderIndex int32 `json:"evaluationOrderIndex"`
+	EvaluationOrderIndex                          int32                                              `json:"evaluationOrderIndex"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 }
 
 // NewOpenidConnectIdTokenValidatorResponse instantiates a new OpenidConnectIdTokenValidatorResponse object
@@ -71,70 +71,6 @@ func NewOpenidConnectIdTokenValidatorResponse(id string, schemas []EnumopenidCon
 func NewOpenidConnectIdTokenValidatorResponseWithDefaults() *OpenidConnectIdTokenValidatorResponse {
 	this := OpenidConnectIdTokenValidatorResponse{}
 	return &this
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *OpenidConnectIdTokenValidatorResponse) GetMeta() MetaMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret MetaMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *OpenidConnectIdTokenValidatorResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// HasMeta returns a boolean if a field has been set.
-func (o *OpenidConnectIdTokenValidatorResponse) HasMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
-}
-
-// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
-func (o *OpenidConnectIdTokenValidatorResponse) SetMeta(v MetaMeta) {
-	o.Meta = &v
-}
-
-// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
-func (o *OpenidConnectIdTokenValidatorResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		var ret MetaUrnPingidentitySchemasConfigurationMessages20
-		return ret
-	}
-	return *o.Urnpingidentityschemasconfigurationmessages20
-}
-
-// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *OpenidConnectIdTokenValidatorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		return nil, false
-	}
-	return o.Urnpingidentityschemasconfigurationmessages20, true
-}
-
-// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
-func (o *OpenidConnectIdTokenValidatorResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		return true
-	}
-
-	return false
-}
-
-// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
-func (o *OpenidConnectIdTokenValidatorResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
-	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
 // GetId returns the Id field value
@@ -529,6 +465,70 @@ func (o *OpenidConnectIdTokenValidatorResponse) SetEvaluationOrderIndex(v int32)
 	o.EvaluationOrderIndex = v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *OpenidConnectIdTokenValidatorResponse) GetMeta() MetaMeta {
+	if o == nil || IsNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OpenidConnectIdTokenValidatorResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || IsNil(o.Meta) {
+		return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *OpenidConnectIdTokenValidatorResponse) HasMeta() bool {
+	if o != nil && !IsNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *OpenidConnectIdTokenValidatorResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
+func (o *OpenidConnectIdTokenValidatorResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		var ret MetaUrnPingidentitySchemasConfigurationMessages20
+		return ret
+	}
+	return *o.Urnpingidentityschemasconfigurationmessages20
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OpenidConnectIdTokenValidatorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return nil, false
+	}
+	return o.Urnpingidentityschemasconfigurationmessages20, true
+}
+
+// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+func (o *OpenidConnectIdTokenValidatorResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
+func (o *OpenidConnectIdTokenValidatorResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
+	o.Urnpingidentityschemasconfigurationmessages20 = &v
+}
+
 func (o OpenidConnectIdTokenValidatorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -539,12 +539,6 @@ func (o OpenidConnectIdTokenValidatorResponse) MarshalJSON() ([]byte, error) {
 
 func (o OpenidConnectIdTokenValidatorResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
 	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["allowedSigningAlgorithm"] = o.AllowedSigningAlgorithm
@@ -573,6 +567,12 @@ func (o OpenidConnectIdTokenValidatorResponse) ToMap() (map[string]interface{}, 
 		toSerialize["jwksCacheDuration"] = o.JwksCacheDuration
 	}
 	toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
 	return toSerialize, nil
 }
 

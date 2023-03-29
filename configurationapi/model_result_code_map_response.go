@@ -19,8 +19,6 @@ var _ MappedNullable = &ResultCodeMapResponse{}
 
 // ResultCodeMapResponse struct for ResultCodeMapResponse
 type ResultCodeMapResponse struct {
-	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
-	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Result Code Map
 	Id      string                       `json:"id"`
 	Schemas []EnumresultCodeMapSchemaUrn `json:"schemas,omitempty"`
@@ -33,7 +31,9 @@ type ResultCodeMapResponse struct {
 	// Specifies the result code that should be returned if a password-based bind attempt fails because the target user entry does not have a password.
 	BindMissingPasswordResultCode *int32 `json:"bindMissingPasswordResultCode,omitempty"`
 	// Specifies the result code that should be returned if a generic error occurs within the server.
-	ServerErrorResultCode *int32 `json:"serverErrorResultCode,omitempty"`
+	ServerErrorResultCode                         *int32                                             `json:"serverErrorResultCode,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 }
 
 // NewResultCodeMapResponse instantiates a new ResultCodeMapResponse object
@@ -52,70 +52,6 @@ func NewResultCodeMapResponse(id string) *ResultCodeMapResponse {
 func NewResultCodeMapResponseWithDefaults() *ResultCodeMapResponse {
 	this := ResultCodeMapResponse{}
 	return &this
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ResultCodeMapResponse) GetMeta() MetaMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret MetaMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ResultCodeMapResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// HasMeta returns a boolean if a field has been set.
-func (o *ResultCodeMapResponse) HasMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
-}
-
-// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
-func (o *ResultCodeMapResponse) SetMeta(v MetaMeta) {
-	o.Meta = &v
-}
-
-// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
-func (o *ResultCodeMapResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		var ret MetaUrnPingidentitySchemasConfigurationMessages20
-		return ret
-	}
-	return *o.Urnpingidentityschemasconfigurationmessages20
-}
-
-// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ResultCodeMapResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		return nil, false
-	}
-	return o.Urnpingidentityschemasconfigurationmessages20, true
-}
-
-// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
-func (o *ResultCodeMapResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		return true
-	}
-
-	return false
-}
-
-// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
-func (o *ResultCodeMapResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
-	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
 // GetId returns the Id field value
@@ -334,6 +270,70 @@ func (o *ResultCodeMapResponse) SetServerErrorResultCode(v int32) {
 	o.ServerErrorResultCode = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *ResultCodeMapResponse) GetMeta() MetaMeta {
+	if o == nil || IsNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ResultCodeMapResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || IsNil(o.Meta) {
+		return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *ResultCodeMapResponse) HasMeta() bool {
+	if o != nil && !IsNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *ResultCodeMapResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
+func (o *ResultCodeMapResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		var ret MetaUrnPingidentitySchemasConfigurationMessages20
+		return ret
+	}
+	return *o.Urnpingidentityschemasconfigurationmessages20
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ResultCodeMapResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return nil, false
+	}
+	return o.Urnpingidentityschemasconfigurationmessages20, true
+}
+
+// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+func (o *ResultCodeMapResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
+func (o *ResultCodeMapResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
+	o.Urnpingidentityschemasconfigurationmessages20 = &v
+}
+
 func (o ResultCodeMapResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -344,12 +344,6 @@ func (o ResultCodeMapResponse) MarshalJSON() ([]byte, error) {
 
 func (o ResultCodeMapResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
 	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
@@ -368,6 +362,12 @@ func (o ResultCodeMapResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ServerErrorResultCode) {
 		toSerialize["serverErrorResultCode"] = o.ServerErrorResultCode
+	}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
 	return toSerialize, nil
 }

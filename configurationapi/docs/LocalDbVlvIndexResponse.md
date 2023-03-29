@@ -4,9 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
-**Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
-**Id** | **string** | Name of the Local DB VLV Index | 
+**Id** | **string** | Name of the Backend | 
 **Schemas** | Pointer to [**[]EnumlocalDbVlvIndexSchemaUrn**](EnumlocalDbVlvIndexSchemaUrn.md) |  | [optional] 
 **BaseDN** | **string** | Specifies the base DN used in the search query that is being indexed. | 
 **Scope** | [**EnumlocalDbVlvIndexScopeProp**](EnumlocalDbVlvIndexScopeProp.md) |  | 
@@ -15,6 +13,8 @@ Name | Type | Description | Notes
 **Name** | **string** | Specifies a unique name for this VLV index. | 
 **MaxBlockSize** | Pointer to **int32** | Specifies the number of entry IDs to store in a single sorted set before it must be split. | [optional] 
 **CacheMode** | Pointer to [**EnumlocalDbVlvIndexCacheModeProp**](EnumlocalDbVlvIndexCacheModeProp.md) |  | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
+**Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 
 ## Methods
 
@@ -34,56 +34,6 @@ will change when the set of required properties is changed
 NewLocalDbVlvIndexResponseWithDefaults instantiates a new LocalDbVlvIndexResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetMeta
-
-`func (o *LocalDbVlvIndexResponse) GetMeta() MetaMeta`
-
-GetMeta returns the Meta field if non-nil, zero value otherwise.
-
-### GetMetaOk
-
-`func (o *LocalDbVlvIndexResponse) GetMetaOk() (*MetaMeta, bool)`
-
-GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMeta
-
-`func (o *LocalDbVlvIndexResponse) SetMeta(v MetaMeta)`
-
-SetMeta sets Meta field to given value.
-
-### HasMeta
-
-`func (o *LocalDbVlvIndexResponse) HasMeta() bool`
-
-HasMeta returns a boolean if a field has been set.
-
-### GetUrnpingidentityschemasconfigurationmessages20
-
-`func (o *LocalDbVlvIndexResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20`
-
-GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field if non-nil, zero value otherwise.
-
-### GetUrnpingidentityschemasconfigurationmessages20Ok
-
-`func (o *LocalDbVlvIndexResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool)`
-
-GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUrnpingidentityschemasconfigurationmessages20
-
-`func (o *LocalDbVlvIndexResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20)`
-
-SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconfigurationmessages20 field to given value.
-
-### HasUrnpingidentityschemasconfigurationmessages20
-
-`func (o *LocalDbVlvIndexResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
-
-HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 
 ### GetId
 
@@ -279,6 +229,56 @@ SetCacheMode sets CacheMode field to given value.
 `func (o *LocalDbVlvIndexResponse) HasCacheMode() bool`
 
 HasCacheMode returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *LocalDbVlvIndexResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *LocalDbVlvIndexResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *LocalDbVlvIndexResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *LocalDbVlvIndexResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
+
+### GetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *LocalDbVlvIndexResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20`
+
+GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field if non-nil, zero value otherwise.
+
+### GetUrnpingidentityschemasconfigurationmessages20Ok
+
+`func (o *LocalDbVlvIndexResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool)`
+
+GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *LocalDbVlvIndexResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20)`
+
+SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconfigurationmessages20 field to given value.
+
+### HasUrnpingidentityschemasconfigurationmessages20
+
+`func (o *LocalDbVlvIndexResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
+
+HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

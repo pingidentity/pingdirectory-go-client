@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access the HTTP Configuration
   name: http-configuration
@@ -64,7 +64,6 @@ components:
   schemas:
     http-configuration-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -77,6 +76,7 @@ components:
             type: boolean
             description: >-
                 Indicates whether exceptions thrown by servlet or web application extensions will be included in the resulting error page response. Stack traces can be helpful in diagnosing application errors, but in production they may reveal information that might be useful to a malicious attacker.
+      - $ref: '#/components/schemas/meta'
     Enumhttp-configurationSchemaUrn:
       type: string
       enum:

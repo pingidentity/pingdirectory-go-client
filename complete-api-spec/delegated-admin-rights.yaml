@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access delegated-admin-rights
   name: delegated-admin-rights
@@ -300,22 +300,24 @@ components:
       - type: object
         properties:
           rightsName:
-            description: Name of the new Delegated Admin Rights
             type: string
-        required:
-        - rightsName
+            description: >-
+                Name of the new Delegated Admin Rights
       - $ref: '#/components/schemas/delegated-admin-rights-shared'
+      required:
+      - rightsName
     delegated-admin-rights-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Delegated Admin Rights
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Delegated Admin Rights
       - $ref: '#/components/schemas/delegated-admin-rights-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     delegated-admin-rights-shared:
       type: object
       properties:
@@ -347,27 +349,52 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:delegated-admin-rights"
+    Enumdelegated-admin-resource-rights-adminPermissionProp:
+      type: string
+      enum:
+      - "create"
+      - "read"
+      - "reference"
+      - "update"
+      - "update-profile"
+      - "reset-password"
+      - "delete"
+      - "manage-group-membership"
+      - "download"
+      - "upload"
+      description: >-
+          Specifies administrator(s) permissions.
+    Enumdelegated-admin-resource-rights-adminScopeProp:
+      type: string
+      enum:
+      - "resources-in-specific-groups"
+      - "resources-in-specific-subtrees"
+      - "all-resources-in-base"
+      description: >-
+          Specifies the scope of these Delegated Admin Resource Rights.
     add-delegated-admin-resource-rights-request:
       allOf:
       - type: object
         properties:
           restResourceType:
-            description: Name of the new Delegated Admin Resource Rights
             type: string
-        required:
-        - restResourceType
+            description: >-
+                Name of the new Delegated Admin Resource Rights
       - $ref: '#/components/schemas/delegated-admin-resource-rights-shared'
+      required:
+      - restResourceType
     delegated-admin-resource-rights-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Delegated Admin Resource Rights
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Delegated Admin Rights
       - $ref: '#/components/schemas/delegated-admin-resource-rights-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     delegated-admin-resource-rights-shared:
       type: object
       properties:
@@ -414,29 +441,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:delegated-admin-resource-rights"
-    Enumdelegated-admin-resource-rights-adminPermissionProp:
-      type: string
-      enum:
-      - "create"
-      - "read"
-      - "reference"
-      - "update"
-      - "update-profile"
-      - "reset-password"
-      - "delete"
-      - "manage-group-membership"
-      - "download"
-      - "upload"
-      description: >-
-          Specifies administrator(s) permissions.
-    Enumdelegated-admin-resource-rights-adminScopeProp:
-      type: string
-      enum:
-      - "resources-in-specific-groups"
-      - "resources-in-specific-subtrees"
-      - "all-resources-in-base"
-      description: >-
-          Specifies the scope of these Delegated Admin Resource Rights.
     updateRequest:
       type: object
       properties:

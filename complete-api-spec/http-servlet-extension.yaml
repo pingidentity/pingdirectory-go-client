@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access http-servlet-extensions
   name: http-servlet-extension
@@ -663,7 +663,6 @@ components:
   schemas:
     delegated-admin-http-servlet-extension-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -673,8 +672,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumdelegated-admin-http-servlet-extensionSchemaUrn'
           id:
-            description: Name of the HTTP Servlet Extension
             type: string
+            description: >-
+                Name of the HTTP Servlet Extension
           basicAuthEnabled:
             type: boolean
             description: >-
@@ -715,9 +715,10 @@ components:
             type: string
             description: >-
                 Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
-        required:
-        - schemas
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
     Enumdelegated-admin-http-servlet-extensionSchemaUrn:
       type: string
       enum:
@@ -727,22 +728,24 @@ components:
       - type: object
         properties:
           extensionName:
-            description: Name of the new HTTP Servlet Extension
             type: string
-        required:
-        - extensionName
+            description: >-
+                Name of the new HTTP Servlet Extension
       - $ref: '#/components/schemas/quickstart-http-servlet-extension-shared'
+      required:
+      - extensionName
     quickstart-http-servlet-extension-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the HTTP Servlet Extension
             type: string
-        required:
-        - id
+            description: >-
+                Name of the HTTP Servlet Extension
       - $ref: '#/components/schemas/quickstart-http-servlet-extension-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     quickstart-http-servlet-extension-shared:
       type: object
       properties:
@@ -785,22 +788,24 @@ components:
       - type: object
         properties:
           extensionName:
-            description: Name of the new HTTP Servlet Extension
             type: string
-        required:
-        - extensionName
+            description: >-
+                Name of the new HTTP Servlet Extension
       - $ref: '#/components/schemas/availability-state-http-servlet-extension-shared'
+      required:
+      - extensionName
     availability-state-http-servlet-extension-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the HTTP Servlet Extension
             type: string
-        required:
-        - id
+            description: >-
+                Name of the HTTP Servlet Extension
       - $ref: '#/components/schemas/availability-state-http-servlet-extension-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     availability-state-http-servlet-extension-shared:
       type: object
       properties:
@@ -871,23 +876,24 @@ components:
       - type: object
         properties:
           extensionName:
-            description: Name of the new HTTP Servlet Extension
             type: string
-        required:
-        - extensionName
+            description: >-
+                Name of the new HTTP Servlet Extension
       - $ref: '#/components/schemas/prometheus-monitoring-http-servlet-extension-shared'
+      required:
+      - extensionName
     prometheus-monitoring-http-servlet-extension-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the HTTP Servlet Extension
             type: string
-        required:
-        - id
+            description: >-
+                Name of the HTTP Servlet Extension
       - $ref: '#/components/schemas/prometheus-monitoring-http-servlet-extension-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - baseContextPath
     prometheus-monitoring-http-servlet-extension-shared:
       type: object
@@ -958,7 +964,6 @@ components:
       - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:prometheus-monitoring"
     velocity-http-servlet-extension-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -968,8 +973,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumvelocity-http-servlet-extensionSchemaUrn'
           id:
-            description: Name of the HTTP Servlet Extension
             type: string
+            description: >-
+                Name of the HTTP Servlet Extension
           baseContextPath:
             type: string
             description: >-
@@ -1052,18 +1058,18 @@ components:
             type: string
             description: >-
                 Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
-        required:
-        - schemas
-        - baseContextPath
-        - templateDirectory
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - baseContextPath
+      - templateDirectory
     Enumvelocity-http-servlet-extensionSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:velocity"
     consent-http-servlet-extension-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -1073,8 +1079,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumconsent-http-servlet-extensionSchemaUrn'
           id:
-            description: Name of the HTTP Servlet Extension
             type: string
+            description: >-
+                Name of the HTTP Servlet Extension
           bearerTokenAuthEnabled:
             type: boolean
             description: >-
@@ -1111,35 +1118,57 @@ components:
             type: string
             description: >-
                 Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
-        required:
-        - schemas
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
     Enumconsent-http-servlet-extensionSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:consent"
+    Enumhttp-servlet-extension-debugLevelProp:
+      type: string
+      enum:
+      - "severe"
+      - "warning"
+      - "info"
+      - "config"
+      - "fine"
+      - "finer"
+      - "finest"
+      description: >-
+          The minimum debug level that should be used for messages to be logged.
+    Enumhttp-servlet-extension-debugTypeProp:
+      type: string
+      enum:
+      - "coding-error"
+      - "exception"
+      - "other"
+      description: >-
+          The types of debug messages that should be logged.
     add-ldap-mapped-scim-http-servlet-extension-request:
       allOf:
       - type: object
         properties:
           extensionName:
-            description: Name of the new HTTP Servlet Extension
             type: string
-        required:
-        - extensionName
+            description: >-
+                Name of the new HTTP Servlet Extension
       - $ref: '#/components/schemas/ldap-mapped-scim-http-servlet-extension-shared'
+      required:
+      - extensionName
     ldap-mapped-scim-http-servlet-extension-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the HTTP Servlet Extension
             type: string
-        required:
-        - id
+            description: >-
+                Name of the HTTP Servlet Extension
       - $ref: '#/components/schemas/ldap-mapped-scim-http-servlet-extension-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - baseContextPath
       - temporaryDirectory
       - temporaryDirectoryPermissions
@@ -1270,22 +1299,24 @@ components:
       - type: object
         properties:
           extensionName:
-            description: Name of the new HTTP Servlet Extension
             type: string
-        required:
-        - extensionName
+            description: >-
+                Name of the new HTTP Servlet Extension
       - $ref: '#/components/schemas/groovy-scripted-http-servlet-extension-shared'
+      required:
+      - extensionName
     groovy-scripted-http-servlet-extension-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the HTTP Servlet Extension
             type: string
-        required:
-        - id
+            description: >-
+                Name of the HTTP Servlet Extension
       - $ref: '#/components/schemas/groovy-scripted-http-servlet-extension-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     groovy-scripted-http-servlet-extension-shared:
       type: object
       properties:
@@ -1330,27 +1361,37 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:groovy-scripted"
+    Enumhttp-servlet-extension-allowedAuthenticationTypeProp:
+      type: string
+      enum:
+      - "basic"
+      - "access-token"
+      - "id-token"
+      description: >-
+          The types of authentication that may be used to authenticate to the file servlet.
     add-file-server-http-servlet-extension-request:
       allOf:
       - type: object
         properties:
           extensionName:
-            description: Name of the new HTTP Servlet Extension
             type: string
-        required:
-        - extensionName
+            description: >-
+                Name of the new HTTP Servlet Extension
       - $ref: '#/components/schemas/file-server-http-servlet-extension-shared'
+      required:
+      - extensionName
     file-server-http-servlet-extension-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the HTTP Servlet Extension
             type: string
-        required:
-        - id
+            description: >-
+                Name of the HTTP Servlet Extension
       - $ref: '#/components/schemas/file-server-http-servlet-extension-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     file-server-http-servlet-extension-shared:
       type: object
       properties:
@@ -1448,7 +1489,6 @@ components:
       - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:file-server"
     config-http-servlet-extension-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -1458,8 +1498,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumconfig-http-servlet-extensionSchemaUrn'
           id:
-            description: Name of the HTTP Servlet Extension
             type: string
+            description: >-
+                Name of the HTTP Servlet Extension
           identityMapper:
             type: string
             description: >-
@@ -1482,16 +1523,24 @@ components:
             type: string
             description: >-
                 Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
-        required:
-        - schemas
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
     Enumconfig-http-servlet-extensionSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:config"
+    Enumhttp-servlet-extension-mapAccessTokensToLocalUsersProp:
+      type: string
+      enum:
+      - "disabled"
+      - "optional"
+      - "required"
+      description: >-
+          Indicates whether the SCIM2 servlet should attempt to map the presented access token to a local user.
     scim2-http-servlet-extension-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -1501,8 +1550,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumscim2-http-servlet-extensionSchemaUrn'
           id:
-            description: Name of the HTTP Servlet Extension
             type: string
+            description: >-
+                Name of the HTTP Servlet Extension
           baseContextPath:
             type: string
             description: >-
@@ -1551,20 +1601,54 @@ components:
             type: string
             description: >-
                 Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
-        required:
-        - schemas
-        - baseContextPath
-        - debugLevel
-        - debugType
-        - includeStackTrace
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - baseContextPath
+      - debugLevel
+      - debugType
+      - includeStackTrace
     Enumscim2-http-servlet-extensionSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:scim2"
+    Enumhttp-servlet-extension-allowedControlProp:
+      type: string
+      enum:
+      - "assertion"
+      - "assured-replication"
+      - "exclude-branch"
+      - "generate-password"
+      - "get-effective-rights"
+      - "ignore-no-user-modification"
+      - "intermediate-client"
+      - "join"
+      - "manage-dsa-it"
+      - "matched-values"
+      - "matching-entry-count"
+      - "name-with-entryuuid"
+      - "no-op"
+      - "operation-purpose"
+      - "password-update-behavior"
+      - "password-validation-details"
+      - "permissive-modify"
+      - "permit-unindexed-search"
+      - "post-read"
+      - "pre-read"
+      - "proxied-authorization-v1"
+      - "proxied-authorization-v2"
+      - "purge-password"
+      - "real-attributes-only"
+      - "reject-unindexed-search"
+      - "retire-password"
+      - "suppress-referential-integrity"
+      - "uniqueness"
+      - "virtual-attributes-only"
+      description: >-
+          Specifies the names of any request controls that should be allowed by the Directory REST API. Any request that contains a critical control not in this list will be rejected. Any non-critical request control which is not supported by the Directory REST API will be removed from the request.
     directory-rest-api-http-servlet-extension-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -1574,8 +1658,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumdirectory-rest-api-http-servlet-extensionSchemaUrn'
           id:
-            description: Name of the HTTP Servlet Extension
             type: string
+            description: >-
+                Name of the HTTP Servlet Extension
           basicAuthEnabled:
             type: boolean
             description: >-
@@ -1642,9 +1727,10 @@ components:
             type: string
             description: >-
                 Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
-        required:
-        - schemas
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
     Enumdirectory-rest-api-http-servlet-extensionSchemaUrn:
       type: string
       enum:
@@ -1654,22 +1740,24 @@ components:
       - type: object
         properties:
           extensionName:
-            description: Name of the new HTTP Servlet Extension
             type: string
-        required:
-        - extensionName
+            description: >-
+                Name of the new HTTP Servlet Extension
       - $ref: '#/components/schemas/third-party-http-servlet-extension-shared'
+      required:
+      - extensionName
     third-party-http-servlet-extension-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the HTTP Servlet Extension
             type: string
-        required:
-        - id
+            description: >-
+                Name of the HTTP Servlet Extension
       - $ref: '#/components/schemas/third-party-http-servlet-extension-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     third-party-http-servlet-extension-shared:
       type: object
       properties:
@@ -1714,27 +1802,36 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:third-party"
+    Enumprometheus-monitor-attribute-metric-metricTypeProp:
+      type: string
+      enum:
+      - "counter"
+      - "gauge"
+      description: >-
+          The metric type that should be used for the value of the specified monitor attribute.
     add-prometheus-monitor-attribute-metric-request:
       allOf:
       - type: object
         properties:
           metricName:
-            description: Name of the new Prometheus Monitor Attribute Metric
             type: string
-        required:
-        - metricName
+            description: >-
+                Name of the new Prometheus Monitor Attribute Metric
       - $ref: '#/components/schemas/prometheus-monitor-attribute-metric-shared'
+      required:
+      - metricName
     prometheus-monitor-attribute-metric-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Prometheus Monitor Attribute Metric
             type: string
-        required:
-        - id
+            description: >-
+                Name of the HTTP Servlet Extension
       - $ref: '#/components/schemas/prometheus-monitor-attribute-metric-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     prometheus-monitor-attribute-metric-shared:
       type: object
       properties:
@@ -1781,27 +1878,37 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:prometheus-monitor-attribute-metric"
+    Enumvelocity-context-provider-objectScopeProp:
+      type: string
+      enum:
+      - "application"
+      - "session"
+      - "request"
+      description: >-
+          Scope for context objects contributed by this Velocity Context Provider. Must be either 'request' or 'session' or 'application'.
     add-velocity-tools-velocity-context-provider-request:
       allOf:
       - type: object
         properties:
           providerName:
-            description: Name of the new Velocity Context Provider
             type: string
-        required:
-        - providerName
+            description: >-
+                Name of the new Velocity Context Provider
       - $ref: '#/components/schemas/velocity-tools-velocity-context-provider-shared'
+      required:
+      - providerName
     velocity-tools-velocity-context-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Velocity Context Provider
             type: string
-        required:
-        - id
+            description: >-
+                Name of the HTTP Servlet Extension
       - $ref: '#/components/schemas/velocity-tools-velocity-context-provider-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     velocity-tools-velocity-context-provider-shared:
       type: object
       properties:
@@ -1861,7 +1968,6 @@ components:
       - "urn:pingidentity:schemas:configuration:2.0:velocity-context-provider:velocity-tools"
     custom-velocity-context-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -1871,8 +1977,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumcustom-velocity-context-providerSchemaUrn'
           id:
-            description: Name of the Velocity Context Provider
             type: string
+            description: >-
+                Name of the HTTP Servlet Extension
           enabled:
             type: boolean
             description: >-
@@ -1903,9 +2010,10 @@ components:
               type: string
             description: >-
                 Specifies HTTP header fields and values added to response headers for template page requests to which this Velocity Context Provider contributes content.
-        required:
-        - schemas
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
     Enumcustom-velocity-context-providerSchemaUrn:
       type: string
       enum:
@@ -1915,22 +2023,24 @@ components:
       - type: object
         properties:
           providerName:
-            description: Name of the new Velocity Context Provider
             type: string
-        required:
-        - providerName
+            description: >-
+                Name of the new Velocity Context Provider
       - $ref: '#/components/schemas/third-party-velocity-context-provider-shared'
+      required:
+      - providerName
     third-party-velocity-context-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Velocity Context Provider
             type: string
-        required:
-        - id
+            description: >-
+                Name of the HTTP Servlet Extension
       - $ref: '#/components/schemas/third-party-velocity-context-provider-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     third-party-velocity-context-provider-shared:
       type: object
       properties:
@@ -1992,23 +2102,24 @@ components:
       - type: object
         properties:
           loaderName:
-            description: Name of the new Velocity Template Loader
             type: string
-        required:
-        - loaderName
+            description: >-
+                Name of the new Velocity Template Loader
       - $ref: '#/components/schemas/velocity-template-loader-shared'
+      required:
+      - loaderName
     velocity-template-loader-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Velocity Template Loader
             type: string
-        required:
-        - id
+            description: >-
+                Name of the HTTP Servlet Extension
       - $ref: '#/components/schemas/velocity-template-loader-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - evaluationOrderIndex
     velocity-template-loader-shared:
       type: object
@@ -2049,91 +2160,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:velocity-template-loader"
-    Enumhttp-servlet-extension-debugTypeProp:
-      type: string
-      enum:
-      - "coding-error"
-      - "exception"
-      - "other"
-      description: >-
-          The types of debug messages that should be logged.
-    Enumhttp-servlet-extension-allowedAuthenticationTypeProp:
-      type: string
-      enum:
-      - "basic"
-      - "access-token"
-      - "id-token"
-      description: >-
-          The types of authentication that may be used to authenticate to the file servlet.
-    Enumprometheus-monitor-attribute-metric-metricTypeProp:
-      type: string
-      enum:
-      - "counter"
-      - "gauge"
-      description: >-
-          The metric type that should be used for the value of the specified monitor attribute.
-    Enumhttp-servlet-extension-mapAccessTokensToLocalUsersProp:
-      type: string
-      enum:
-      - "disabled"
-      - "optional"
-      - "required"
-      description: >-
-          Indicates whether the SCIM2 servlet should attempt to map the presented access token to a local user.
-    Enumvelocity-context-provider-objectScopeProp:
-      type: string
-      enum:
-      - "application"
-      - "session"
-      - "request"
-      description: >-
-          Scope for context objects contributed by this Velocity Context Provider. Must be either 'request' or 'session' or 'application'.
-    Enumhttp-servlet-extension-debugLevelProp:
-      type: string
-      enum:
-      - "severe"
-      - "warning"
-      - "info"
-      - "config"
-      - "fine"
-      - "finer"
-      - "finest"
-      description: >-
-          The minimum debug level that should be used for messages to be logged.
-    Enumhttp-servlet-extension-allowedControlProp:
-      type: string
-      enum:
-      - "assertion"
-      - "assured-replication"
-      - "exclude-branch"
-      - "generate-password"
-      - "get-effective-rights"
-      - "ignore-no-user-modification"
-      - "intermediate-client"
-      - "join"
-      - "manage-dsa-it"
-      - "matched-values"
-      - "matching-entry-count"
-      - "name-with-entryuuid"
-      - "no-op"
-      - "operation-purpose"
-      - "password-update-behavior"
-      - "password-validation-details"
-      - "permissive-modify"
-      - "permit-unindexed-search"
-      - "post-read"
-      - "pre-read"
-      - "proxied-authorization-v1"
-      - "proxied-authorization-v2"
-      - "purge-password"
-      - "real-attributes-only"
-      - "reject-unindexed-search"
-      - "retire-password"
-      - "suppress-referential-integrity"
-      - "uniqueness"
-      - "virtual-attributes-only"
-      description: >-
-          Specifies the names of any request controls that should be allowed by the Directory REST API. Any request that contains a critical control not in this list will be rejected. Any non-critical request control which is not supported by the Directory REST API will be removed from the request.
     updateRequest:
       type: object
       properties:

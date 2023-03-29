@@ -4,9 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
-**Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
-**Id** | **string** | Name of the Velocity Context Provider | 
+**Id** | **string** | Name of the HTTP Servlet Extension | 
 **Schemas** | [**[]EnumvelocityToolsVelocityContextProviderSchemaUrn**](EnumvelocityToolsVelocityContextProviderSchemaUrn.md) |  | 
 **RequestTool** | Pointer to **[]string** | The fully-qualified name of a Velocity Tool class that will be initialized for each request. May optionally include a path to a properties file used to configure this tool separated from the class name by a semi-colon (;). The path may absolute or relative to the server root. | [optional] 
 **SessionTool** | Pointer to **[]string** | The fully-qualified name of a Velocity Tool class that will be initialized for each session. May optionally include a path to a properties file used to configure this tool separated from the class name by a semi-colon (;). The path may absolute or relative to the server root. | [optional] 
@@ -16,6 +14,8 @@ Name | Type | Description | Notes
 **IncludedView** | Pointer to **[]string** | The name of a view for which this Velocity Context Provider will contribute content. | [optional] 
 **ExcludedView** | Pointer to **[]string** | The name of a view for which this Velocity Context Provider will not contribute content. | [optional] 
 **ResponseHeader** | Pointer to **[]string** | Specifies HTTP header fields and values added to response headers for template page requests to which this Velocity Context Provider contributes content. | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
+**Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 
 ## Methods
 
@@ -35,56 +35,6 @@ will change when the set of required properties is changed
 NewVelocityToolsVelocityContextProviderResponseWithDefaults instantiates a new VelocityToolsVelocityContextProviderResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetMeta
-
-`func (o *VelocityToolsVelocityContextProviderResponse) GetMeta() MetaMeta`
-
-GetMeta returns the Meta field if non-nil, zero value otherwise.
-
-### GetMetaOk
-
-`func (o *VelocityToolsVelocityContextProviderResponse) GetMetaOk() (*MetaMeta, bool)`
-
-GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMeta
-
-`func (o *VelocityToolsVelocityContextProviderResponse) SetMeta(v MetaMeta)`
-
-SetMeta sets Meta field to given value.
-
-### HasMeta
-
-`func (o *VelocityToolsVelocityContextProviderResponse) HasMeta() bool`
-
-HasMeta returns a boolean if a field has been set.
-
-### GetUrnpingidentityschemasconfigurationmessages20
-
-`func (o *VelocityToolsVelocityContextProviderResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20`
-
-GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field if non-nil, zero value otherwise.
-
-### GetUrnpingidentityschemasconfigurationmessages20Ok
-
-`func (o *VelocityToolsVelocityContextProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool)`
-
-GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUrnpingidentityschemasconfigurationmessages20
-
-`func (o *VelocityToolsVelocityContextProviderResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20)`
-
-SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconfigurationmessages20 field to given value.
-
-### HasUrnpingidentityschemasconfigurationmessages20
-
-`func (o *VelocityToolsVelocityContextProviderResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
-
-HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 
 ### GetId
 
@@ -325,6 +275,56 @@ SetResponseHeader sets ResponseHeader field to given value.
 `func (o *VelocityToolsVelocityContextProviderResponse) HasResponseHeader() bool`
 
 HasResponseHeader returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *VelocityToolsVelocityContextProviderResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *VelocityToolsVelocityContextProviderResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *VelocityToolsVelocityContextProviderResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *VelocityToolsVelocityContextProviderResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
+
+### GetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *VelocityToolsVelocityContextProviderResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20`
+
+GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field if non-nil, zero value otherwise.
+
+### GetUrnpingidentityschemasconfigurationmessages20Ok
+
+`func (o *VelocityToolsVelocityContextProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool)`
+
+GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *VelocityToolsVelocityContextProviderResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20)`
+
+SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconfigurationmessages20 field to given value.
+
+### HasUrnpingidentityschemasconfigurationmessages20
+
+`func (o *VelocityToolsVelocityContextProviderResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
+
+HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

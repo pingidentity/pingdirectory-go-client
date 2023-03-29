@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access replication-assurance-policies
   name: replication-assurance-policy
@@ -137,28 +137,46 @@ paths:
       - replication-assurance-policy
 components:
   schemas:
+    Enumreplication-assurance-policy-localLevelProp:
+      type: string
+      enum:
+      - "none"
+      - "received-any-server"
+      - "processed-all-servers"
+      description: >-
+          Specifies the assurance level used to replicate to local servers. A local server is defined as one with the same value for the location setting in the global configuration.  The local-level must be set to an assurance level at least as strict as the remote-level. In other words, if remote-level is set to "received-any-remote-location" or "received-all-remote-locations", then local-level must be either "received-any-server" or "processed-all-servers". If remote-level is "processed-all-remote-servers", then local-level must be "processed-all-servers".
+    Enumreplication-assurance-policy-remoteLevelProp:
+      type: string
+      enum:
+      - "none"
+      - "received-any-remote-location"
+      - "received-all-remote-locations"
+      - "processed-all-remote-servers"
+      description: >-
+          Specifies the assurance level used to replicate to remote servers. A remote server is defined as one with a different value for the location setting in the global configuration.
     add-replication-assurance-policy-request:
       allOf:
       - type: object
         properties:
           policyName:
-            description: Name of the new Replication Assurance Policy
             type: string
-        required:
-        - policyName
+            description: >-
+                Name of the new Replication Assurance Policy
       - $ref: '#/components/schemas/replication-assurance-policy-shared'
+      required:
+      - policyName
     replication-assurance-policy-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Replication Assurance Policy
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Replication Assurance Policy
       - $ref: '#/components/schemas/replication-assurance-policy-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - enabled
       - localLevel
       - remoteLevel
@@ -206,23 +224,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:replication-assurance-policy"
-    Enumreplication-assurance-policy-localLevelProp:
-      type: string
-      enum:
-      - "none"
-      - "received-any-server"
-      - "processed-all-servers"
-      description: >-
-          Specifies the assurance level used to replicate to local servers. A local server is defined as one with the same value for the location setting in the global configuration.  The local-level must be set to an assurance level at least as strict as the remote-level. In other words, if remote-level is set to "received-any-remote-location" or "received-all-remote-locations", then local-level must be either "received-any-server" or "processed-all-servers". If remote-level is "processed-all-remote-servers", then local-level must be "processed-all-servers".
-    Enumreplication-assurance-policy-remoteLevelProp:
-      type: string
-      enum:
-      - "none"
-      - "received-any-remote-location"
-      - "received-all-remote-locations"
-      - "processed-all-remote-servers"
-      description: >-
-          Specifies the assurance level used to replicate to remote servers. A remote server is defined as one with a different value for the location setting in the global configuration.
     updateRequest:
       type: object
       properties:

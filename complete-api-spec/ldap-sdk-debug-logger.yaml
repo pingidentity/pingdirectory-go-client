@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access the LDAP SDK Debug Logger
   name: ldap-sdk-debug-logger
@@ -62,9 +62,54 @@ paths:
       - ldap-sdk-debug-logger
 components:
   schemas:
+    Enumldap-sdk-debug-logger-debugLevelProp:
+      type: string
+      enum:
+      - "severe"
+      - "warning"
+      - "info"
+      - "config"
+      - "fine"
+      - "finer"
+      - "finest"
+      description: >-
+          The minimum debug level that should be used for messages to be logged.
+    Enumldap-sdk-debug-logger-debugTypeProp:
+      type: string
+      enum:
+      - "asn1"
+      - "coding-error"
+      - "connect"
+      - "exception"
+      - "ldap"
+      - "ldif"
+      - "monitor"
+      - "other"
+      description: >-
+          The types of debug messages that should be logged.
+    Enumldap-sdk-debug-logger-compressionMechanismProp:
+      type: string
+      enum:
+      - "none"
+      - "gzip"
+      description: >-
+          Specifies the type of compression (if any) to use for log files that are written.
+    Enumldap-sdk-debug-logger-timestampPrecisionProp:
+      type: string
+      enum:
+      - "seconds"
+      - "milliseconds"
+      description: >-
+          Specifies the smallest time unit to be included in timestamps.
+    Enumldap-sdk-debug-logger-loggingErrorBehaviorProp:
+      type: string
+      enum:
+      - "standard-error"
+      - "lockdown-mode"
+      description: >-
+          Specifies the behavior that the server should exhibit if an error occurs during logging processing.
     ldap-sdk-debug-logger-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -159,66 +204,21 @@ components:
             $ref: '#/components/schemas/Enumldap-sdk-debug-logger-timestampPrecisionProp'
           loggingErrorBehavior:
             $ref: '#/components/schemas/Enumldap-sdk-debug-logger-loggingErrorBehaviorProp'
-        required:
-        - enabled
-        - logFile
-        - debugLevel
-        - debugType
-        - includeStackTrace
-        - logFilePermissions
-        - asynchronous
-        - rotationPolicy
-        - retentionPolicy
+      - $ref: '#/components/schemas/meta'
+      required:
+      - enabled
+      - logFile
+      - debugLevel
+      - debugType
+      - includeStackTrace
+      - logFilePermissions
+      - asynchronous
+      - rotationPolicy
+      - retentionPolicy
     Enumldap-sdk-debug-loggerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:ldap-sdk-debug-logger"
-    Enumldap-sdk-debug-logger-compressionMechanismProp:
-      type: string
-      enum:
-      - "none"
-      - "gzip"
-      description: >-
-          Specifies the type of compression (if any) to use for log files that are written.
-    Enumldap-sdk-debug-logger-timestampPrecisionProp:
-      type: string
-      enum:
-      - "seconds"
-      - "milliseconds"
-      description: >-
-          Specifies the smallest time unit to be included in timestamps.
-    Enumldap-sdk-debug-logger-loggingErrorBehaviorProp:
-      type: string
-      enum:
-      - "standard-error"
-      - "lockdown-mode"
-      description: >-
-          Specifies the behavior that the server should exhibit if an error occurs during logging processing.
-    Enumldap-sdk-debug-logger-debugLevelProp:
-      type: string
-      enum:
-      - "severe"
-      - "warning"
-      - "info"
-      - "config"
-      - "fine"
-      - "finer"
-      - "finest"
-      description: >-
-          The minimum debug level that should be used for messages to be logged.
-    Enumldap-sdk-debug-logger-debugTypeProp:
-      type: string
-      enum:
-      - "asn1"
-      - "coding-error"
-      - "connect"
-      - "exception"
-      - "ldap"
-      - "ldif"
-      - "monitor"
-      - "other"
-      description: >-
-          The types of debug messages that should be logged.
     updateRequest:
       type: object
       properties:

@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access web-application-extensions
   name: web-application-extension
@@ -142,9 +142,17 @@ paths:
       - web-application-extension
 components:
   schemas:
+    Enumweb-application-extension-complexityProp:
+      type: string
+      enum:
+      - "basic"
+      - "standard"
+      - "advanced"
+      - "expert"
+      description: >-
+          Specifies the maximum complexity level for managed configuration elements.
     console-web-application-extension-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -154,8 +162,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumconsole-web-application-extensionSchemaUrn'
           id:
-            description: Name of the Web Application Extension
             type: string
+            description: >-
+                Name of the Web Application Extension
           ssoEnabled:
             type: boolean
             description: >-
@@ -249,10 +258,11 @@ components:
               type: string
             description: >-
                 Specifies an initialization parameter to pass into the web application during startup.
-        required:
-        - schemas
-        - baseContextPath
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - baseContextPath
     Enumconsole-web-application-extensionSchemaUrn:
       type: string
       enum:
@@ -262,22 +272,24 @@ components:
       - type: object
         properties:
           extensionName:
-            description: Name of the new Web Application Extension
             type: string
-        required:
-        - extensionName
+            description: >-
+                Name of the new Web Application Extension
       - $ref: '#/components/schemas/generic-web-application-extension-shared'
+      required:
+      - extensionName
     generic-web-application-extension-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Web Application Extension
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Web Application Extension
       - $ref: '#/components/schemas/generic-web-application-extension-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     generic-web-application-extension-shared:
       type: object
       properties:
@@ -324,15 +336,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:web-application-extension:generic"
-    Enumweb-application-extension-complexityProp:
-      type: string
-      enum:
-      - "basic"
-      - "standard"
-      - "advanced"
-      - "expert"
-      description: >-
-          Specifies the maximum complexity level for managed configuration elements.
     updateRequest:
       type: object
       properties:

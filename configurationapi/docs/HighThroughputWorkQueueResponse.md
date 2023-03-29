@@ -4,8 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
-**Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | Pointer to [**[]EnumhighThroughputWorkQueueSchemaUrn**](EnumhighThroughputWorkQueueSchemaUrn.md) |  | [optional] 
 **NumWorkerThreads** | Pointer to **int32** | Specifies the total number of worker threads that should be used within the server in order to process requested operations. The worker threads will be split evenly across all of the configured queues. | [optional] 
 **NumWriteWorkerThreads** | Pointer to **int32** | Specifies the number of worker threads that should be used within the server to process write (add, delete, modify, and modify DN) operations. If this is specified, then separate sets of worker threads will be used for processing read and write operations, and the value of the num-worker-threads property will reflect the number of threads to use to process read operations. | [optional] 
@@ -19,6 +17,8 @@ Name | Type | Description | Notes
 **ExpensiveOperationCheckInterval** | Pointer to **string** | The interval that the work queue should use when checking for potentially expensive operations. If at least expensive-operation-minimum-concurrent-count worker threads are found to be processing the same operation on two consecutive polls separated by this time interval (i.e., the worker thread has been processing that operation for at least this length of time, and potentially up to twice this length of time), then a stack trace of all running threads will be written to a file for analysis to provide potentially useful information that may help better understand the reason it is taking so long. It may be that the operation is simply an expensive one to process, but there may be other external factors (e.g., a database checkpoint, a log rotation, lock contention, etc.) that could be to blame. This option is primarily intended for debugging purposes and should generally be used under the direction of Ping Identity support. | [optional] 
 **ExpensiveOperationMinimumConcurrentCount** | Pointer to **int32** | The minimum number of concurrent expensive operations that should be detected to trigger dumping stack traces for all threads. If at least this number of worker threads are seen processing the same operations in two consecutive intervals, then the server will dump a stack trace of all threads to a file. This option is primarily intended for debugging purposes and should generally be used under the direction of Ping Identity support. | [optional] 
 **ExpensiveOperationMinimumDumpInterval** | Pointer to **string** | The minimum length of time that should be required to pass after dumping stack trace information for all threads before the server should be allowed to create a second dump. This will help prevent the server from dumping stack traces too frequently and eventually consuming all available disk space with stack trace log output. This option is primarily intended for debugging purposes and should generally be used under the direction of Ping Identity support. | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
+**Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 
 ## Methods
 
@@ -38,56 +38,6 @@ will change when the set of required properties is changed
 NewHighThroughputWorkQueueResponseWithDefaults instantiates a new HighThroughputWorkQueueResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetMeta
-
-`func (o *HighThroughputWorkQueueResponse) GetMeta() MetaMeta`
-
-GetMeta returns the Meta field if non-nil, zero value otherwise.
-
-### GetMetaOk
-
-`func (o *HighThroughputWorkQueueResponse) GetMetaOk() (*MetaMeta, bool)`
-
-GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMeta
-
-`func (o *HighThroughputWorkQueueResponse) SetMeta(v MetaMeta)`
-
-SetMeta sets Meta field to given value.
-
-### HasMeta
-
-`func (o *HighThroughputWorkQueueResponse) HasMeta() bool`
-
-HasMeta returns a boolean if a field has been set.
-
-### GetUrnpingidentityschemasconfigurationmessages20
-
-`func (o *HighThroughputWorkQueueResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20`
-
-GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field if non-nil, zero value otherwise.
-
-### GetUrnpingidentityschemasconfigurationmessages20Ok
-
-`func (o *HighThroughputWorkQueueResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool)`
-
-GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUrnpingidentityschemasconfigurationmessages20
-
-`func (o *HighThroughputWorkQueueResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20)`
-
-SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconfigurationmessages20 field to given value.
-
-### HasUrnpingidentityschemasconfigurationmessages20
-
-`func (o *HighThroughputWorkQueueResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
-
-HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 
 ### GetSchemas
 
@@ -413,6 +363,56 @@ SetExpensiveOperationMinimumDumpInterval sets ExpensiveOperationMinimumDumpInter
 `func (o *HighThroughputWorkQueueResponse) HasExpensiveOperationMinimumDumpInterval() bool`
 
 HasExpensiveOperationMinimumDumpInterval returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *HighThroughputWorkQueueResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *HighThroughputWorkQueueResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *HighThroughputWorkQueueResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *HighThroughputWorkQueueResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
+
+### GetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *HighThroughputWorkQueueResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20`
+
+GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field if non-nil, zero value otherwise.
+
+### GetUrnpingidentityschemasconfigurationmessages20Ok
+
+`func (o *HighThroughputWorkQueueResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool)`
+
+GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *HighThroughputWorkQueueResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20)`
+
+SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconfigurationmessages20 field to given value.
+
+### HasUrnpingidentityschemasconfigurationmessages20
+
+`func (o *HighThroughputWorkQueueResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
+
+HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

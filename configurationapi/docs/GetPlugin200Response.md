@@ -4,10 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
-**Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumuniqueAttributePluginSchemaUrn**](EnumuniqueAttributePluginSchemaUrn.md) |  | 
-**Id** | **string** | Name of the Plugin | 
+**Id** | **string** | Name of the Plugin Root | 
 **MaxUpdateFrequency** | Pointer to **string** | Specifies the maximum frequency with which last access time values should be written for an entry. This may help limit the rate of internal write operations processed in the server. | [optional] 
 **OperationType** | Pointer to [**[]EnumpluginOperationTypeProp**](EnumpluginOperationTypeProp.md) |  | [optional] 
 **InvokeForFailedBinds** | Pointer to **bool** | Indicates whether to update the last access time for an entry targeted by a bind operation if the bind is unsuccessful. | [optional] 
@@ -16,6 +14,8 @@ Name | Type | Description | Notes
 **InvokeForInternalOperations** | Pointer to **bool** | Indicates whether the plug-in should be invoked for internal operations. | [optional] 
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
+**Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **SampleInterval** | **string** | The duration between statistics collections. Setting this value too small can have an impact on performance. This value should be a multiple of collection-interval. | 
 **CollectionInterval** | **string** | Some of the calculated statistics, such as the average and maximum queue sizes, can use multiple samples within a log interval. This value controls how often samples are gathered. It should be a multiple of the log-interval. | 
 **LdapInfo** | Pointer to [**EnumpluginLdapInfoProp**](EnumpluginLdapInfoProp.md) |  | [optional] 
@@ -175,56 +175,6 @@ will change when the set of required properties is changed
 NewGetPlugin200ResponseWithDefaults instantiates a new GetPlugin200Response object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetMeta
-
-`func (o *GetPlugin200Response) GetMeta() MetaMeta`
-
-GetMeta returns the Meta field if non-nil, zero value otherwise.
-
-### GetMetaOk
-
-`func (o *GetPlugin200Response) GetMetaOk() (*MetaMeta, bool)`
-
-GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMeta
-
-`func (o *GetPlugin200Response) SetMeta(v MetaMeta)`
-
-SetMeta sets Meta field to given value.
-
-### HasMeta
-
-`func (o *GetPlugin200Response) HasMeta() bool`
-
-HasMeta returns a boolean if a field has been set.
-
-### GetUrnpingidentityschemasconfigurationmessages20
-
-`func (o *GetPlugin200Response) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20`
-
-GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field if non-nil, zero value otherwise.
-
-### GetUrnpingidentityschemasconfigurationmessages20Ok
-
-`func (o *GetPlugin200Response) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool)`
-
-GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUrnpingidentityschemasconfigurationmessages20
-
-`func (o *GetPlugin200Response) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20)`
-
-SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconfigurationmessages20 field to given value.
-
-### HasUrnpingidentityschemasconfigurationmessages20
-
-`func (o *GetPlugin200Response) HasUrnpingidentityschemasconfigurationmessages20() bool`
-
-HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 
 ### GetSchemas
 
@@ -460,6 +410,56 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
+
+### GetMeta
+
+`func (o *GetPlugin200Response) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *GetPlugin200Response) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *GetPlugin200Response) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *GetPlugin200Response) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
+
+### GetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *GetPlugin200Response) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20`
+
+GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field if non-nil, zero value otherwise.
+
+### GetUrnpingidentityschemasconfigurationmessages20Ok
+
+`func (o *GetPlugin200Response) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool)`
+
+GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *GetPlugin200Response) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20)`
+
+SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconfigurationmessages20 field to given value.
+
+### HasUrnpingidentityschemasconfigurationmessages20
+
+`func (o *GetPlugin200Response) HasUrnpingidentityschemasconfigurationmessages20() bool`
+
+HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 
 ### GetSampleInterval
 

@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access uncached-entry-criteria
   name: uncached-entry-criteria
@@ -162,22 +162,24 @@ components:
       - type: object
         properties:
           criteriaName:
-            description: Name of the new Uncached Entry Criteria
             type: string
-        required:
-        - criteriaName
+            description: >-
+                Name of the new Uncached Entry Criteria
       - $ref: '#/components/schemas/default-uncached-entry-criteria-shared'
+      required:
+      - criteriaName
     default-uncached-entry-criteria-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Uncached Entry Criteria
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Uncached Entry Criteria
       - $ref: '#/components/schemas/default-uncached-entry-criteria-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     default-uncached-entry-criteria-shared:
       type: object
       properties:
@@ -207,22 +209,24 @@ components:
       - type: object
         properties:
           criteriaName:
-            description: Name of the new Uncached Entry Criteria
             type: string
-        required:
-        - criteriaName
+            description: >-
+                Name of the new Uncached Entry Criteria
       - $ref: '#/components/schemas/last-access-time-uncached-entry-criteria-shared'
+      required:
+      - criteriaName
     last-access-time-uncached-entry-criteria-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Uncached Entry Criteria
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Uncached Entry Criteria
       - $ref: '#/components/schemas/last-access-time-uncached-entry-criteria-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     last-access-time-uncached-entry-criteria-shared:
       type: object
       properties:
@@ -257,23 +261,24 @@ components:
       - type: object
         properties:
           criteriaName:
-            description: Name of the new Uncached Entry Criteria
             type: string
-        required:
-        - criteriaName
+            description: >-
+                Name of the new Uncached Entry Criteria
       - $ref: '#/components/schemas/filter-based-uncached-entry-criteria-shared'
+      required:
+      - criteriaName
     filter-based-uncached-entry-criteria-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Uncached Entry Criteria
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Uncached Entry Criteria
       - $ref: '#/components/schemas/filter-based-uncached-entry-criteria-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - filterIdentifiesUncachedEntries
     filter-based-uncached-entry-criteria-shared:
       type: object
@@ -313,22 +318,24 @@ components:
       - type: object
         properties:
           criteriaName:
-            description: Name of the new Uncached Entry Criteria
             type: string
-        required:
-        - criteriaName
+            description: >-
+                Name of the new Uncached Entry Criteria
       - $ref: '#/components/schemas/groovy-scripted-uncached-entry-criteria-shared'
+      required:
+      - criteriaName
     groovy-scripted-uncached-entry-criteria-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Uncached Entry Criteria
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Uncached Entry Criteria
       - $ref: '#/components/schemas/groovy-scripted-uncached-entry-criteria-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     groovy-scripted-uncached-entry-criteria-shared:
       type: object
       properties:
@@ -369,22 +376,24 @@ components:
       - type: object
         properties:
           criteriaName:
-            description: Name of the new Uncached Entry Criteria
             type: string
-        required:
-        - criteriaName
+            description: >-
+                Name of the new Uncached Entry Criteria
       - $ref: '#/components/schemas/third-party-uncached-entry-criteria-shared'
+      required:
+      - criteriaName
     third-party-uncached-entry-criteria-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Uncached Entry Criteria
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Uncached Entry Criteria
       - $ref: '#/components/schemas/third-party-uncached-entry-criteria-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     third-party-uncached-entry-criteria-shared:
       type: object
       properties:

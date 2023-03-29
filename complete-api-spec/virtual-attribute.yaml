@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access virtual-attributes
   name: virtual-attribute
@@ -209,27 +209,45 @@ paths:
       - virtual-attribute
 components:
   schemas:
+    Enumvirtual-attribute-conflictBehaviorProp:
+      type: string
+      enum:
+      - "real-overrides-virtual"
+      - "virtual-overrides-real"
+      - "merge-real-and-virtual"
+      description: >-
+          Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute.
+    Enumvirtual-attribute-multipleVirtualAttributeMergeBehaviorProp:
+      type: string
+      enum:
+      - "use-first-definition"
+      - "use-only-definitions-with-the-lowest-evaluation-order-index"
+      - "use-all-definitions"
+      description: >-
+          Specifies the behavior that will be exhibited for cases in which multiple virtual attribute definitions apply to the same multivalued attribute type. This will be ignored for single-valued attribute types.
     add-mirror-virtual-attribute-request:
       allOf:
       - type: object
         properties:
           name:
-            description: Name of the new Virtual Attribute
             type: string
-        required:
-        - name
+            description: >-
+                Name of the new Virtual Attribute
       - $ref: '#/components/schemas/mirror-virtual-attribute-shared'
+      required:
+      - name
     mirror-virtual-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Virtual Attribute
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Virtual Attribute
       - $ref: '#/components/schemas/mirror-virtual-attribute-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     mirror-virtual-attribute-shared:
       type: object
       properties:
@@ -318,7 +336,6 @@ components:
       - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:mirror"
     entry-checksum-virtual-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -328,8 +345,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumentry-checksum-virtual-attributeSchemaUrn'
           id:
-            description: Name of the Virtual Attribute
             type: string
+            description: >-
+                Name of the Virtual Attribute
           conflictBehavior:
             $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
           attributeType:
@@ -392,18 +410,18 @@ components:
             type: boolean
             description: >-
                 Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
-        required:
-        - schemas
-        - attributeType
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - attributeType
+      - enabled
     Enumentry-checksum-virtual-attributeSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:entry-checksum"
     member-of-server-group-virtual-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -413,8 +431,9 @@ components:
             items:
               $ref: '#/components/schemas/Enummember-of-server-group-virtual-attributeSchemaUrn'
           id:
-            description: Name of the Virtual Attribute
             type: string
+            description: >-
+                Name of the Virtual Attribute
           conflictBehavior:
             $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
           attributeType:
@@ -467,11 +486,12 @@ components:
             type: boolean
             description: >-
                 Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
-        required:
-        - schemas
-        - attributeType
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - attributeType
+      - enabled
     Enummember-of-server-group-virtual-attributeSchemaUrn:
       type: string
       enum:
@@ -481,22 +501,24 @@ components:
       - type: object
         properties:
           name:
-            description: Name of the new Virtual Attribute
             type: string
-        required:
-        - name
+            description: >-
+                Name of the new Virtual Attribute
       - $ref: '#/components/schemas/constructed-virtual-attribute-shared'
+      required:
+      - name
     constructed-virtual-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Virtual Attribute
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Virtual Attribute
       - $ref: '#/components/schemas/constructed-virtual-attribute-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     constructed-virtual-attribute-shared:
       type: object
       properties:
@@ -573,28 +595,37 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:constructed"
+    Enumvirtual-attribute-rewriteSearchFiltersProp:
+      type: string
+      enum:
+      - "always"
+      - "within-group-scope"
+      - "never"
+      description: >-
+          Search filters that include Is Member Of Virtual Attribute searches on dynamic groups can be updated to include the dynamic group filter in the search filter itself. This can allow the backend to more efficiently process the search filter by using attribute indexes sooner in the search processing.
     add-is-member-of-virtual-attribute-request:
       allOf:
       - type: object
         properties:
           name:
-            description: Name of the new Virtual Attribute
             type: string
-        required:
-        - name
+            description: >-
+                Name of the new Virtual Attribute
       - $ref: '#/components/schemas/is-member-of-virtual-attribute-shared'
+      required:
+      - name
     is-member-of-virtual-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Virtual Attribute
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Virtual Attribute
       - $ref: '#/components/schemas/is-member-of-virtual-attribute-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - attributeType
     is-member-of-virtual-attribute-shared:
       type: object
@@ -676,7 +707,6 @@ components:
       - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:is-member-of"
     custom-virtual-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -686,8 +716,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumcustom-virtual-attributeSchemaUrn'
           id:
-            description: Name of the Virtual Attribute
             type: string
+            description: >-
+                Name of the Virtual Attribute
           description:
             type: string
             description: >-
@@ -740,18 +771,18 @@ components:
             type: boolean
             description: >-
                 Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
-        required:
-        - schemas
-        - enabled
-        - attributeType
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
+      - attributeType
     Enumcustom-virtual-attributeSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:custom"
     num-subordinates-virtual-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -761,8 +792,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumnum-subordinates-virtual-attributeSchemaUrn'
           id:
-            description: Name of the Virtual Attribute
             type: string
+            description: >-
+                Name of the Virtual Attribute
           conflictBehavior:
             $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
           attributeType:
@@ -815,36 +847,56 @@ components:
             type: boolean
             description: >-
                 Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
-        required:
-        - schemas
-        - attributeType
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - attributeType
+      - enabled
     Enumnum-subordinates-virtual-attributeSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:num-subordinates"
+    Enumvirtual-attribute-joinBaseDNTypeProp:
+      type: string
+      enum:
+      - "use-search-base-dn"
+      - "use-source-entry-dn"
+      - "use-custom-base-dn"
+      description: >-
+          Specifies how server should determine the base DN for the internal searches used to identify joined entries.
+    Enumvirtual-attribute-joinScopeProp:
+      type: string
+      enum:
+      - "base-object"
+      - "single-level"
+      - "whole-subtree"
+      - "subordinate-subtree"
+      description: >-
+          The scope for searches used to identify joined entries.
     add-reverse-dn-join-virtual-attribute-request:
       allOf:
       - type: object
         properties:
           name:
-            description: Name of the new Virtual Attribute
             type: string
-        required:
-        - name
+            description: >-
+                Name of the new Virtual Attribute
       - $ref: '#/components/schemas/reverse-dn-join-virtual-attribute-shared'
+      required:
+      - name
     reverse-dn-join-virtual-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Virtual Attribute
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Virtual Attribute
       - $ref: '#/components/schemas/reverse-dn-join-virtual-attribute-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     reverse-dn-join-virtual-attribute-shared:
       type: object
       properties:
@@ -947,22 +999,24 @@ components:
       - type: object
         properties:
           name:
-            description: Name of the new Virtual Attribute
             type: string
-        required:
-        - name
+            description: >-
+                Name of the new Virtual Attribute
       - $ref: '#/components/schemas/identify-references-virtual-attribute-shared'
+      required:
+      - name
     identify-references-virtual-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Virtual Attribute
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Virtual Attribute
       - $ref: '#/components/schemas/identify-references-virtual-attribute-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     identify-references-virtual-attribute-shared:
       type: object
       properties:
@@ -1050,22 +1104,24 @@ components:
       - type: object
         properties:
           name:
-            description: Name of the new Virtual Attribute
             type: string
-        required:
-        - name
+            description: >-
+                Name of the new Virtual Attribute
       - $ref: '#/components/schemas/user-defined-virtual-attribute-shared'
+      required:
+      - name
     user-defined-virtual-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Virtual Attribute
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Virtual Attribute
       - $ref: '#/components/schemas/user-defined-virtual-attribute-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     user-defined-virtual-attribute-shared:
       type: object
       properties:
@@ -1144,7 +1200,6 @@ components:
       - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:user-defined"
     current-time-virtual-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -1154,8 +1209,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumcurrent-time-virtual-attributeSchemaUrn'
           id:
-            description: Name of the Virtual Attribute
             type: string
+            description: >-
+                Name of the Virtual Attribute
           conflictBehavior:
             $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
           attributeType:
@@ -1216,18 +1272,18 @@ components:
             type: boolean
             description: >-
                 Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
-        required:
-        - schemas
-        - attributeType
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - attributeType
+      - enabled
     Enumcurrent-time-virtual-attributeSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:current-time"
     short-unique-id-virtual-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -1237,8 +1293,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumshort-unique-id-virtual-attributeSchemaUrn'
           id:
-            description: Name of the Virtual Attribute
             type: string
+            description: >-
+                Name of the Virtual Attribute
           sequenceNumberAttribute:
             type: string
             description: >-
@@ -1289,12 +1346,13 @@ components:
             type: boolean
             description: >-
                 Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
-        required:
-        - schemas
-        - sequenceNumberAttribute
-        - enabled
-        - attributeType
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - sequenceNumberAttribute
+      - enabled
+      - attributeType
     Enumshort-unique-id-virtual-attributeSchemaUrn:
       type: string
       enum:
@@ -1304,23 +1362,24 @@ components:
       - type: object
         properties:
           name:
-            description: Name of the new Virtual Attribute
             type: string
-        required:
-        - name
+            description: >-
+                Name of the new Virtual Attribute
       - $ref: '#/components/schemas/entry-dn-virtual-attribute-shared'
+      required:
+      - name
     entry-dn-virtual-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Virtual Attribute
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Virtual Attribute
       - $ref: '#/components/schemas/entry-dn-virtual-attribute-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - attributeType
     entry-dn-virtual-attribute-shared:
       type: object
@@ -1392,7 +1451,6 @@ components:
       - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:entry-dn"
     has-subordinates-virtual-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -1402,8 +1460,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumhas-subordinates-virtual-attributeSchemaUrn'
           id:
-            description: Name of the Virtual Attribute
             type: string
+            description: >-
+                Name of the Virtual Attribute
           conflictBehavior:
             $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
           attributeType:
@@ -1456,11 +1515,12 @@ components:
             type: boolean
             description: >-
                 Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
-        required:
-        - schemas
-        - attributeType
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - attributeType
+      - enabled
     Enumhas-subordinates-virtual-attributeSchemaUrn:
       type: string
       enum:
@@ -1470,22 +1530,24 @@ components:
       - type: object
         properties:
           name:
-            description: Name of the new Virtual Attribute
             type: string
-        required:
-        - name
+            description: >-
+                Name of the new Virtual Attribute
       - $ref: '#/components/schemas/equality-join-virtual-attribute-shared'
+      required:
+      - name
     equality-join-virtual-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Virtual Attribute
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Virtual Attribute
       - $ref: '#/components/schemas/equality-join-virtual-attribute-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     equality-join-virtual-attribute-shared:
       type: object
       properties:
@@ -1597,22 +1659,24 @@ components:
       - type: object
         properties:
           name:
-            description: Name of the new Virtual Attribute
             type: string
-        required:
-        - name
+            description: >-
+                Name of the new Virtual Attribute
       - $ref: '#/components/schemas/groovy-scripted-virtual-attribute-shared'
+      required:
+      - name
     groovy-scripted-virtual-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Virtual Attribute
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Virtual Attribute
       - $ref: '#/components/schemas/groovy-scripted-virtual-attribute-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     groovy-scripted-virtual-attribute-shared:
       type: object
       properties:
@@ -1695,7 +1759,6 @@ components:
       - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:groovy-scripted"
     instance-name-virtual-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -1705,8 +1768,9 @@ components:
             items:
               $ref: '#/components/schemas/Enuminstance-name-virtual-attributeSchemaUrn'
           id:
-            description: Name of the Virtual Attribute
             type: string
+            description: >-
+                Name of the Virtual Attribute
           conflictBehavior:
             $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
           attributeType:
@@ -1759,18 +1823,18 @@ components:
             type: boolean
             description: >-
                 Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
-        required:
-        - schemas
-        - attributeType
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - attributeType
+      - enabled
     Enuminstance-name-virtual-attributeSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:instance-name"
     replication-state-detail-virtual-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -1780,8 +1844,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumreplication-state-detail-virtual-attributeSchemaUrn'
           id:
-            description: Name of the Virtual Attribute
             type: string
+            description: >-
+                Name of the Virtual Attribute
           enabled:
             type: boolean
             description: >-
@@ -1790,10 +1855,11 @@ components:
             type: boolean
             description: >-
                 Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumreplication-state-detail-virtual-attributeSchemaUrn:
       type: string
       enum:
@@ -1803,23 +1869,24 @@ components:
       - type: object
         properties:
           name:
-            description: Name of the new Virtual Attribute
             type: string
-        required:
-        - name
+            description: >-
+                Name of the new Virtual Attribute
       - $ref: '#/components/schemas/member-virtual-attribute-shared'
+      required:
+      - name
     member-virtual-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Virtual Attribute
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Virtual Attribute
       - $ref: '#/components/schemas/member-virtual-attribute-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - allowRetrievingMembership
     member-virtual-attribute-shared:
       type: object
@@ -1899,22 +1966,24 @@ components:
       - type: object
         properties:
           name:
-            description: Name of the new Virtual Attribute
             type: string
-        required:
-        - name
+            description: >-
+                Name of the new Virtual Attribute
       - $ref: '#/components/schemas/password-policy-state-json-virtual-attribute-shared'
+      required:
+      - name
     password-policy-state-json-virtual-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Virtual Attribute
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Virtual Attribute
       - $ref: '#/components/schemas/password-policy-state-json-virtual-attribute-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     password-policy-state-json-virtual-attribute-shared:
       type: object
       properties:
@@ -1973,7 +2042,6 @@ components:
       - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:password-policy-state-json"
     subschema-subentry-virtual-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -1983,8 +2051,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumsubschema-subentry-virtual-attributeSchemaUrn'
           id:
-            description: Name of the Virtual Attribute
             type: string
+            description: >-
+                Name of the Virtual Attribute
           conflictBehavior:
             $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
           attributeType:
@@ -2037,11 +2106,12 @@ components:
             type: boolean
             description: >-
                 Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
-        required:
-        - schemas
-        - attributeType
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - attributeType
+      - enabled
     Enumsubschema-subentry-virtual-attributeSchemaUrn:
       type: string
       enum:
@@ -2051,22 +2121,24 @@ components:
       - type: object
         properties:
           name:
-            description: Name of the new Virtual Attribute
             type: string
-        required:
-        - name
+            description: >-
+                Name of the new Virtual Attribute
       - $ref: '#/components/schemas/dn-join-virtual-attribute-shared'
+      required:
+      - name
     dn-join-virtual-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Virtual Attribute
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Virtual Attribute
       - $ref: '#/components/schemas/dn-join-virtual-attribute-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     dn-join-virtual-attribute-shared:
       type: object
       properties:
@@ -2169,22 +2241,24 @@ components:
       - type: object
         properties:
           name:
-            description: Name of the new Virtual Attribute
             type: string
-        required:
-        - name
+            description: >-
+                Name of the new Virtual Attribute
       - $ref: '#/components/schemas/third-party-virtual-attribute-shared'
+      required:
+      - name
     third-party-virtual-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Virtual Attribute
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Virtual Attribute
       - $ref: '#/components/schemas/third-party-virtual-attribute-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     third-party-virtual-attribute-shared:
       type: object
       properties:
@@ -2265,47 +2339,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:third-party"
-    Enumvirtual-attribute-joinScopeProp:
-      type: string
-      enum:
-      - "base-object"
-      - "single-level"
-      - "whole-subtree"
-      - "subordinate-subtree"
-      description: >-
-          The scope for searches used to identify joined entries.
-    Enumvirtual-attribute-rewriteSearchFiltersProp:
-      type: string
-      enum:
-      - "always"
-      - "within-group-scope"
-      - "never"
-      description: >-
-          Search filters that include Is Member Of Virtual Attribute searches on dynamic groups can be updated to include the dynamic group filter in the search filter itself. This can allow the backend to more efficiently process the search filter by using attribute indexes sooner in the search processing.
-    Enumvirtual-attribute-multipleVirtualAttributeMergeBehaviorProp:
-      type: string
-      enum:
-      - "use-first-definition"
-      - "use-only-definitions-with-the-lowest-evaluation-order-index"
-      - "use-all-definitions"
-      description: >-
-          Specifies the behavior that will be exhibited for cases in which multiple virtual attribute definitions apply to the same multivalued attribute type. This will be ignored for single-valued attribute types.
-    Enumvirtual-attribute-conflictBehaviorProp:
-      type: string
-      enum:
-      - "real-overrides-virtual"
-      - "virtual-overrides-real"
-      - "merge-real-and-virtual"
-      description: >-
-          Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute.
-    Enumvirtual-attribute-joinBaseDNTypeProp:
-      type: string
-      enum:
-      - "use-search-base-dn"
-      - "use-source-entry-dn"
-      - "use-custom-base-dn"
-      description: >-
-          Specifies how server should determine the base DN for the internal searches used to identify joined entries.
     updateRequest:
       type: object
       properties:

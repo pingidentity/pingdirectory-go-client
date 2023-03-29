@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access result-criteria
   name: result-criteria
@@ -153,27 +153,273 @@ paths:
       - result-criteria
 components:
   schemas:
+    Enumresult-criteria-resultCodeCriteriaProp:
+      type: string
+      enum:
+      - "all-result-codes"
+      - "non-failure-result-codes"
+      - "failure-result-codes"
+      - "selected-result-codes"
+      description: >-
+          Specifies which operation result codes are allowed for operations included in this Simple Result Criteria.
+    Enumresult-criteria-resultCodeValueProp:
+      type: string
+      enum:
+      - "success"
+      - "operations-error"
+      - "protocol-error"
+      - "time-limit-exceeded"
+      - "size-limit-exceeded"
+      - "compare-false"
+      - "compare-true"
+      - "auth-method-not-supported"
+      - "strong-auth-required"
+      - "referral"
+      - "admin-limit-exceeded"
+      - "unavailable-critical-extension"
+      - "confidentiality-required"
+      - "sasl-bind-in-progress"
+      - "no-such-attribute"
+      - "undefined-attribute-type"
+      - "inappropriate-matching"
+      - "constraint-violation"
+      - "attribute-or-value-exists"
+      - "invalid-attribute-syntax"
+      - "no-such-object"
+      - "alias-problem"
+      - "invalid-dn-syntax"
+      - "alias-dereferencing-problem"
+      - "inappropriate-authentication"
+      - "invalid-credentials"
+      - "insufficient-access-rights"
+      - "busy"
+      - "unavailable"
+      - "unwilling-to-perform"
+      - "loop-detect"
+      - "sort-control-missing"
+      - "offset-range-error"
+      - "naming-violation"
+      - "objectclass-violation"
+      - "not-allowed-on-nonleaf"
+      - "not-allowed-on-rdn"
+      - "entry-already-exists"
+      - "objectclass-mods-prohibited"
+      - "affects-multiple-dsas"
+      - "virtual-list-view-error"
+      - "other"
+      - "canceled"
+      - "no-such-operation"
+      - "too-late"
+      - "cannot-cancel"
+      - "assertion-failed"
+      - "authorization-denied"
+      - "no-operation"
+      - "interactive-transaction-aborted"
+      - "database-lock-conflict"
+      - "mirrored-subtree-digest-mismatch"
+      - "token-delivery-mechanism-unavailable"
+      - "token-delivery-attempt-failed"
+      - "token-delivery-invalid-recipient-id"
+      - "token-delivery-invalid-account-state"
+      description: >-
+          Specifies the operation result code values for results included in this Simple Result Criteria. This will only be taken into account if the "result-code-criteria" property has a value of "selected-result-codes".
+    Enumresult-criteria-processingTimeCriteriaProp:
+      type: string
+      enum:
+      - "any"
+      - "less-than-or-equal-to"
+      - "greater-than-or-equal-to"
+      description: >-
+          Indicates whether the time required to process the operation should be taken into consideration when determining whether to include the operation in this Simple Result Criteria. If the processing time should be taken into account, then the "processing-time-value" property should contain the boundary value.
+    Enumresult-criteria-queueTimeCriteriaProp:
+      type: string
+      enum:
+      - "any"
+      - "less-than-or-equal-to"
+      - "greater-than-or-equal-to"
+      description: >-
+          Indicates whether the time the operation was required to wait on the work queue should be taken into consideration when determining whether to include the operation in this Simple Result Criteria. If the queue time should be taken into account, then the "queue-time-value" property should contain the boundary value. This property should only be given a value other than "any" if the work queue has been configured to monitor the time operations have spent on the work queue.
+    Enumresult-criteria-referralReturnedProp:
+      type: string
+      enum:
+      - "required"
+      - "prohibited"
+      - "optional"
+      description: >-
+          Indicates whether operation results which include one or more referral URLs should be included in this Simple Result Criteria. If no value is provided, then whether an operation includes any referral URLs will not be considered when determining whether it matches this Simple Result Criteria.
+    Enumresult-criteria-usedAlternateAuthzidProp:
+      type: string
+      enum:
+      - "required"
+      - "prohibited"
+      - "optional"
+      description: >-
+          Indicates whether operation results in which the associated operation used an authorization identity that is different from the authentication identity (e.g., as the result of using a proxied authorization control) should be included in this Simple Result Criteria. If no value is provided, then whether an operation used an alternate authorization identity will not be considered when determining whether it matches this Simple Result Criteria.
+    Enumresult-criteria-usedAnyPrivilegeProp:
+      type: string
+      enum:
+      - "required"
+      - "prohibited"
+      - "optional"
+      description: >-
+          Indicates whether operations in which one or more privileges were used should be included in this Simple Result Criteria. If no value is provided, then whether an operation used any privileges will not be considered when determining whether it matches this Simple Result Criteria.
+    Enumresult-criteria-usedPrivilegeProp:
+      type: string
+      enum:
+      - "audit-data-security"
+      - "bypass-acl"
+      - "bypass-read-acl"
+      - "modify-acl"
+      - "config-read"
+      - "config-write"
+      - "jmx-read"
+      - "jmx-write"
+      - "jmx-notify"
+      - "ldif-import"
+      - "ldif-export"
+      - "backend-backup"
+      - "backend-restore"
+      - "server-shutdown"
+      - "server-restart"
+      - "proxied-auth"
+      - "disconnect-client"
+      - "password-reset"
+      - "update-schema"
+      - "privilege-change"
+      - "unindexed-search"
+      - "unindexed-search-with-control"
+      - "bypass-pw-policy"
+      - "lockdown-mode"
+      - "stream-values"
+      - "third-party-task"
+      - "use-admin-session"
+      - "soft-delete-read"
+      - "metrics-read"
+      - "remote-log-read"
+      - "manage-topology"
+      - "permit-get-password-policy-state-issues"
+      - "permit-proxied-mschapv2-details"
+      - "permit-externally-processed-authentication"
+      - "permit-export-reversible-passwords"
+      - "permit-forwarding-client-connection-policy"
+      - "exec-task"
+      - "collect-support-data"
+      - "file-servlet-access"
+      - "permit-replace-certificate-request"
+      description: >-
+          Specifies the name of a privilege that must have been used during the processing for operations included in this Simple Result Criteria. If any privilege names are provided, then the associated operation must have used at least one of those privileges. If no privilege names were provided, then the set of privileges used will not be considered when determining whether an operation should be included in this Simple Result Criteria.
+    Enumresult-criteria-missingAnyPrivilegeProp:
+      type: string
+      enum:
+      - "required"
+      - "prohibited"
+      - "optional"
+      description: >-
+          Indicates whether operations in which one or more privileges were missing should be included in this Simple Result Criteria. If no value is provided, then whether there were any missing privileges will not be considered when determining whether an operation matches this Simple Result Criteria.
+    Enumresult-criteria-missingPrivilegeProp:
+      type: string
+      enum:
+      - "audit-data-security"
+      - "bypass-acl"
+      - "bypass-read-acl"
+      - "modify-acl"
+      - "config-read"
+      - "config-write"
+      - "jmx-read"
+      - "jmx-write"
+      - "jmx-notify"
+      - "ldif-import"
+      - "ldif-export"
+      - "backend-backup"
+      - "backend-restore"
+      - "server-shutdown"
+      - "server-restart"
+      - "proxied-auth"
+      - "disconnect-client"
+      - "password-reset"
+      - "update-schema"
+      - "privilege-change"
+      - "unindexed-search"
+      - "unindexed-search-with-control"
+      - "bypass-pw-policy"
+      - "lockdown-mode"
+      - "stream-values"
+      - "third-party-task"
+      - "use-admin-session"
+      - "soft-delete-read"
+      - "metrics-read"
+      - "remote-log-read"
+      - "manage-topology"
+      - "permit-get-password-policy-state-issues"
+      - "permit-proxied-mschapv2-details"
+      - "permit-externally-processed-authentication"
+      - "permit-export-reversible-passwords"
+      - "permit-forwarding-client-connection-policy"
+      - "exec-task"
+      - "collect-support-data"
+      - "file-servlet-access"
+      - "permit-replace-certificate-request"
+      description: >-
+          Specifies the name of a privilege that must have been missing during the processing for operations included in this Simple Result Criteria. If any privilege names are provided, then the associated operation must have been missing at least one of those privileges. If no privilege names were provided, then the set of privileges missing will not be considered when determining whether an operation should be included in this Simple Result Criteria.
+    Enumresult-criteria-retiredPasswordUsedForBindProp:
+      type: string
+      enum:
+      - "any"
+      - "retired-password-used"
+      - "retired-password-not-used"
+      description: >-
+          Indicates whether the use of a retired password for authentication should be considered when determining whether a bind operation should be included in this Simple Result Criteria. This will be ignored for all operations other than bind.
+    Enumresult-criteria-searchEntryReturnedCriteriaProp:
+      type: string
+      enum:
+      - "any"
+      - "equal-to"
+      - "not-equal-to"
+      - "less-than-or-equal-to"
+      - "greater-than-or-equal-to"
+      description: >-
+          Indicates whether the number of entries returned should be considered when determining whether a search operation should be included in this Simple Result Criteria. This will be ignored for all operations other than search.
+    Enumresult-criteria-searchReferenceReturnedCriteriaProp:
+      type: string
+      enum:
+      - "any"
+      - "equal-to"
+      - "not-equal-to"
+      - "less-than-or-equal-to"
+      - "greater-than-or-equal-to"
+      description: >-
+          Indicates whether the number of references returned should be considered when determining whether a search operation should be included in this Simple Result Criteria. This will be ignored for all operations other than search.
+    Enumresult-criteria-searchIndexedCriteriaProp:
+      type: string
+      enum:
+      - "any"
+      - "indexed"
+      - "unindexed"
+      description: >-
+          Indicates whether a search operation should be matched by this Simple Result Criteria based on whether it is considered indexed by the server. This will be ignored for all operations other than search.
     add-simple-result-criteria-request:
       allOf:
       - type: object
         properties:
           criteriaName:
-            description: Name of the new Result Criteria
             type: string
-        required:
-        - criteriaName
+            description: >-
+                Name of the new Result Criteria
       - $ref: '#/components/schemas/simple-result-criteria-shared'
+      required:
+      - criteriaName
     simple-result-criteria-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Result Criteria
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Result Criteria
       - $ref: '#/components/schemas/simple-result-criteria-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     simple-result-criteria-shared:
       type: object
       properties:
@@ -312,22 +558,24 @@ components:
       - type: object
         properties:
           criteriaName:
-            description: Name of the new Result Criteria
             type: string
-        required:
-        - criteriaName
+            description: >-
+                Name of the new Result Criteria
       - $ref: '#/components/schemas/aggregate-result-criteria-shared'
+      required:
+      - criteriaName
     aggregate-result-criteria-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Result Criteria
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Result Criteria
       - $ref: '#/components/schemas/aggregate-result-criteria-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     aggregate-result-criteria-shared:
       type: object
       properties:
@@ -371,28 +619,86 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:result-criteria:aggregate"
+    Enumresult-criteria-localAssuranceLevelProp:
+      type: string
+      enum:
+      - "none"
+      - "received-any-server"
+      - "processed-all-servers"
+      description: >-
+          The local assurance level values that will be allowed to match this Replication Assurance Result Criteria.
+    Enumresult-criteria-remoteAssuranceLevelProp:
+      type: string
+      enum:
+      - "none"
+      - "received-any-remote-location"
+      - "received-all-remote-locations"
+      - "processed-all-remote-servers"
+      description: >-
+          The local assurance level values that will be allowed to match this Replication Assurance Result Criteria.
+    Enumresult-criteria-assuranceTimeoutCriteriaProp:
+      type: string
+      enum:
+      - "any"
+      - "less-than-or-equal-to"
+      - "greater-than-or-equal-to"
+      description: >-
+          The criteria to use when performing matching based on the assurance timeout.
+    Enumresult-criteria-responseDelayedByAssuranceProp:
+      type: string
+      enum:
+      - "any"
+      - "true"
+      - "false"
+      description: >-
+          Indicates whether this Replication Assurance Result Criteria should match operations based on whether the response to the client was delayed by assurance processing.
+    Enumresult-criteria-assuranceBehaviorAlteredByControlProp:
+      type: string
+      enum:
+      - "any"
+      - "true"
+      - "false"
+      description: >-
+          Indicates whether this Replication Assurance Result Criteria should match operations based on whether the assurance requirements were altered by a control included in the request from the client.
+    Enumresult-criteria-assuranceSatisfiedProp:
+      type: string
+      enum:
+      - "any"
+      - "both-satisfied"
+      - "either-satisfied"
+      - "at-least-local-satisfied"
+      - "at-least-remote-satisfied"
+      - "only-local-satisfied"
+      - "only-remote-satisfied"
+      - "either-not-satisfied"
+      - "at-least-local-not-satisfied"
+      - "at-least-remote-not-satisfied"
+      - "neither-satisfied"
+      description: >-
+          Indicates whether this Replication Assurance Result Criteria should match operations based on whether the assurance requirements have been satisfied.
     add-replication-assurance-result-criteria-request:
       allOf:
       - type: object
         properties:
           criteriaName:
-            description: Name of the new Result Criteria
             type: string
-        required:
-        - criteriaName
+            description: >-
+                Name of the new Result Criteria
       - $ref: '#/components/schemas/replication-assurance-result-criteria-shared'
+      required:
+      - criteriaName
     replication-assurance-result-criteria-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Result Criteria
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Result Criteria
       - $ref: '#/components/schemas/replication-assurance-result-criteria-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - localAssuranceLevel
       - remoteAssuranceLevel
     replication-assurance-result-criteria-shared:
@@ -439,22 +745,24 @@ components:
       - type: object
         properties:
           criteriaName:
-            description: Name of the new Result Criteria
             type: string
-        required:
-        - criteriaName
+            description: >-
+                Name of the new Result Criteria
       - $ref: '#/components/schemas/third-party-result-criteria-shared'
+      required:
+      - criteriaName
     third-party-result-criteria-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Result Criteria
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Result Criteria
       - $ref: '#/components/schemas/third-party-result-criteria-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     third-party-result-criteria-shared:
       type: object
       properties:
@@ -485,307 +793,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:result-criteria:third-party"
-    Enumresult-criteria-resultCodeValueProp:
-      type: string
-      enum:
-      - "success"
-      - "operations-error"
-      - "protocol-error"
-      - "time-limit-exceeded"
-      - "size-limit-exceeded"
-      - "compare-false"
-      - "compare-true"
-      - "auth-method-not-supported"
-      - "strong-auth-required"
-      - "referral"
-      - "admin-limit-exceeded"
-      - "unavailable-critical-extension"
-      - "confidentiality-required"
-      - "sasl-bind-in-progress"
-      - "no-such-attribute"
-      - "undefined-attribute-type"
-      - "inappropriate-matching"
-      - "constraint-violation"
-      - "attribute-or-value-exists"
-      - "invalid-attribute-syntax"
-      - "no-such-object"
-      - "alias-problem"
-      - "invalid-dn-syntax"
-      - "alias-dereferencing-problem"
-      - "inappropriate-authentication"
-      - "invalid-credentials"
-      - "insufficient-access-rights"
-      - "busy"
-      - "unavailable"
-      - "unwilling-to-perform"
-      - "loop-detect"
-      - "sort-control-missing"
-      - "offset-range-error"
-      - "naming-violation"
-      - "objectclass-violation"
-      - "not-allowed-on-nonleaf"
-      - "not-allowed-on-rdn"
-      - "entry-already-exists"
-      - "objectclass-mods-prohibited"
-      - "affects-multiple-dsas"
-      - "virtual-list-view-error"
-      - "other"
-      - "canceled"
-      - "no-such-operation"
-      - "too-late"
-      - "cannot-cancel"
-      - "assertion-failed"
-      - "authorization-denied"
-      - "no-operation"
-      - "interactive-transaction-aborted"
-      - "database-lock-conflict"
-      - "mirrored-subtree-digest-mismatch"
-      - "token-delivery-mechanism-unavailable"
-      - "token-delivery-attempt-failed"
-      - "token-delivery-invalid-recipient-id"
-      - "token-delivery-invalid-account-state"
-      description: >-
-          Specifies the operation result code values for results included in this Simple Result Criteria. This will only be taken into account if the "result-code-criteria" property has a value of "selected-result-codes".
-    Enumresult-criteria-referralReturnedProp:
-      type: string
-      enum:
-      - "required"
-      - "prohibited"
-      - "optional"
-      description: >-
-          Indicates whether operation results which include one or more referral URLs should be included in this Simple Result Criteria. If no value is provided, then whether an operation includes any referral URLs will not be considered when determining whether it matches this Simple Result Criteria.
-    Enumresult-criteria-missingAnyPrivilegeProp:
-      type: string
-      enum:
-      - "required"
-      - "prohibited"
-      - "optional"
-      description: >-
-          Indicates whether operations in which one or more privileges were missing should be included in this Simple Result Criteria. If no value is provided, then whether there were any missing privileges will not be considered when determining whether an operation matches this Simple Result Criteria.
-    Enumresult-criteria-searchReferenceReturnedCriteriaProp:
-      type: string
-      enum:
-      - "any"
-      - "equal-to"
-      - "not-equal-to"
-      - "less-than-or-equal-to"
-      - "greater-than-or-equal-to"
-      description: >-
-          Indicates whether the number of references returned should be considered when determining whether a search operation should be included in this Simple Result Criteria. This will be ignored for all operations other than search.
-    Enumresult-criteria-queueTimeCriteriaProp:
-      type: string
-      enum:
-      - "any"
-      - "less-than-or-equal-to"
-      - "greater-than-or-equal-to"
-      description: >-
-          Indicates whether the time the operation was required to wait on the work queue should be taken into consideration when determining whether to include the operation in this Simple Result Criteria. If the queue time should be taken into account, then the "queue-time-value" property should contain the boundary value. This property should only be given a value other than "any" if the work queue has been configured to monitor the time operations have spent on the work queue.
-    Enumresult-criteria-usedAlternateAuthzidProp:
-      type: string
-      enum:
-      - "required"
-      - "prohibited"
-      - "optional"
-      description: >-
-          Indicates whether operation results in which the associated operation used an authorization identity that is different from the authentication identity (e.g., as the result of using a proxied authorization control) should be included in this Simple Result Criteria. If no value is provided, then whether an operation used an alternate authorization identity will not be considered when determining whether it matches this Simple Result Criteria.
-    Enumresult-criteria-searchIndexedCriteriaProp:
-      type: string
-      enum:
-      - "any"
-      - "indexed"
-      - "unindexed"
-      description: >-
-          Indicates whether a search operation should be matched by this Simple Result Criteria based on whether it is considered indexed by the server. This will be ignored for all operations other than search.
-    Enumresult-criteria-assuranceTimeoutCriteriaProp:
-      type: string
-      enum:
-      - "any"
-      - "less-than-or-equal-to"
-      - "greater-than-or-equal-to"
-      description: >-
-          The criteria to use when performing matching based on the assurance timeout.
-    Enumresult-criteria-resultCodeCriteriaProp:
-      type: string
-      enum:
-      - "all-result-codes"
-      - "non-failure-result-codes"
-      - "failure-result-codes"
-      - "selected-result-codes"
-      description: >-
-          Specifies which operation result codes are allowed for operations included in this Simple Result Criteria.
-    Enumresult-criteria-missingPrivilegeProp:
-      type: string
-      enum:
-      - "audit-data-security"
-      - "bypass-acl"
-      - "bypass-read-acl"
-      - "modify-acl"
-      - "config-read"
-      - "config-write"
-      - "jmx-read"
-      - "jmx-write"
-      - "jmx-notify"
-      - "ldif-import"
-      - "ldif-export"
-      - "backend-backup"
-      - "backend-restore"
-      - "server-shutdown"
-      - "server-restart"
-      - "proxied-auth"
-      - "disconnect-client"
-      - "password-reset"
-      - "update-schema"
-      - "privilege-change"
-      - "unindexed-search"
-      - "unindexed-search-with-control"
-      - "bypass-pw-policy"
-      - "lockdown-mode"
-      - "stream-values"
-      - "third-party-task"
-      - "use-admin-session"
-      - "soft-delete-read"
-      - "metrics-read"
-      - "remote-log-read"
-      - "manage-topology"
-      - "permit-get-password-policy-state-issues"
-      - "permit-proxied-mschapv2-details"
-      - "permit-externally-processed-authentication"
-      - "permit-export-reversible-passwords"
-      - "permit-forwarding-client-connection-policy"
-      - "exec-task"
-      - "collect-support-data"
-      - "file-servlet-access"
-      - "permit-replace-certificate-request"
-      description: >-
-          Specifies the name of a privilege that must have been missing during the processing for operations included in this Simple Result Criteria. If any privilege names are provided, then the associated operation must have been missing at least one of those privileges. If no privilege names were provided, then the set of privileges missing will not be considered when determining whether an operation should be included in this Simple Result Criteria.
-    Enumresult-criteria-responseDelayedByAssuranceProp:
-      type: string
-      enum:
-      - "any"
-      - "true"
-      - "false"
-      description: >-
-          Indicates whether this Replication Assurance Result Criteria should match operations based on whether the response to the client was delayed by assurance processing.
-    Enumresult-criteria-usedAnyPrivilegeProp:
-      type: string
-      enum:
-      - "required"
-      - "prohibited"
-      - "optional"
-      description: >-
-          Indicates whether operations in which one or more privileges were used should be included in this Simple Result Criteria. If no value is provided, then whether an operation used any privileges will not be considered when determining whether it matches this Simple Result Criteria.
-    Enumresult-criteria-remoteAssuranceLevelProp:
-      type: string
-      enum:
-      - "none"
-      - "received-any-remote-location"
-      - "received-all-remote-locations"
-      - "processed-all-remote-servers"
-      description: >-
-          The local assurance level values that will be allowed to match this Replication Assurance Result Criteria.
-    Enumresult-criteria-retiredPasswordUsedForBindProp:
-      type: string
-      enum:
-      - "any"
-      - "retired-password-used"
-      - "retired-password-not-used"
-      description: >-
-          Indicates whether the use of a retired password for authentication should be considered when determining whether a bind operation should be included in this Simple Result Criteria. This will be ignored for all operations other than bind.
-    Enumresult-criteria-searchEntryReturnedCriteriaProp:
-      type: string
-      enum:
-      - "any"
-      - "equal-to"
-      - "not-equal-to"
-      - "less-than-or-equal-to"
-      - "greater-than-or-equal-to"
-      description: >-
-          Indicates whether the number of entries returned should be considered when determining whether a search operation should be included in this Simple Result Criteria. This will be ignored for all operations other than search.
-    Enumresult-criteria-assuranceSatisfiedProp:
-      type: string
-      enum:
-      - "any"
-      - "both-satisfied"
-      - "either-satisfied"
-      - "at-least-local-satisfied"
-      - "at-least-remote-satisfied"
-      - "only-local-satisfied"
-      - "only-remote-satisfied"
-      - "either-not-satisfied"
-      - "at-least-local-not-satisfied"
-      - "at-least-remote-not-satisfied"
-      - "neither-satisfied"
-      description: >-
-          Indicates whether this Replication Assurance Result Criteria should match operations based on whether the assurance requirements have been satisfied.
-    Enumresult-criteria-assuranceBehaviorAlteredByControlProp:
-      type: string
-      enum:
-      - "any"
-      - "true"
-      - "false"
-      description: >-
-          Indicates whether this Replication Assurance Result Criteria should match operations based on whether the assurance requirements were altered by a control included in the request from the client.
-    Enumresult-criteria-processingTimeCriteriaProp:
-      type: string
-      enum:
-      - "any"
-      - "less-than-or-equal-to"
-      - "greater-than-or-equal-to"
-      description: >-
-          Indicates whether the time required to process the operation should be taken into consideration when determining whether to include the operation in this Simple Result Criteria. If the processing time should be taken into account, then the "processing-time-value" property should contain the boundary value.
-    Enumresult-criteria-usedPrivilegeProp:
-      type: string
-      enum:
-      - "audit-data-security"
-      - "bypass-acl"
-      - "bypass-read-acl"
-      - "modify-acl"
-      - "config-read"
-      - "config-write"
-      - "jmx-read"
-      - "jmx-write"
-      - "jmx-notify"
-      - "ldif-import"
-      - "ldif-export"
-      - "backend-backup"
-      - "backend-restore"
-      - "server-shutdown"
-      - "server-restart"
-      - "proxied-auth"
-      - "disconnect-client"
-      - "password-reset"
-      - "update-schema"
-      - "privilege-change"
-      - "unindexed-search"
-      - "unindexed-search-with-control"
-      - "bypass-pw-policy"
-      - "lockdown-mode"
-      - "stream-values"
-      - "third-party-task"
-      - "use-admin-session"
-      - "soft-delete-read"
-      - "metrics-read"
-      - "remote-log-read"
-      - "manage-topology"
-      - "permit-get-password-policy-state-issues"
-      - "permit-proxied-mschapv2-details"
-      - "permit-externally-processed-authentication"
-      - "permit-export-reversible-passwords"
-      - "permit-forwarding-client-connection-policy"
-      - "exec-task"
-      - "collect-support-data"
-      - "file-servlet-access"
-      - "permit-replace-certificate-request"
-      description: >-
-          Specifies the name of a privilege that must have been used during the processing for operations included in this Simple Result Criteria. If any privilege names are provided, then the associated operation must have used at least one of those privileges. If no privilege names were provided, then the set of privileges used will not be considered when determining whether an operation should be included in this Simple Result Criteria.
-    Enumresult-criteria-localAssuranceLevelProp:
-      type: string
-      enum:
-      - "none"
-      - "received-any-server"
-      - "processed-all-servers"
-      description: >-
-          The local assurance level values that will be allowed to match this Replication Assurance Result Criteria.
     updateRequest:
       type: object
       properties:

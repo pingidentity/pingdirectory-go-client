@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
-**Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Id** | **string** | Name of the JSON Attribute Constraints | 
 **Schemas** | Pointer to [**[]EnumjsonAttributeConstraintsSchemaUrn**](EnumjsonAttributeConstraintsSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this JSON Attribute Constraints | [optional] 
 **Enabled** | Pointer to **bool** | Indicates whether this JSON Attribute Constraints is enabled. | [optional] 
 **AttributeType** | **string** | The name or OID of the LDAP attribute type whose values will be subject to the associated field constraints. This attribute type must be defined in the server schema, and it must have a \&quot;JSON object\&quot; syntax. | 
 **AllowUnnamedFields** | Pointer to **bool** | Indicates whether JSON objects stored as values of attributes with the associated attribute-type will be permitted to include fields for which there is no subordinate json-field-constraints definition. If unnamed fields are allowed, then no constraints will be imposed on the values of those fields. However, if unnamed fields are not allowed, then the server will reject any attempt to store a JSON object with a field for which there is no corresponding json-fields-constraints definition. | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
+**Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 
 ## Methods
 
@@ -31,56 +31,6 @@ will change when the set of required properties is changed
 NewJsonAttributeConstraintsResponseWithDefaults instantiates a new JsonAttributeConstraintsResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetMeta
-
-`func (o *JsonAttributeConstraintsResponse) GetMeta() MetaMeta`
-
-GetMeta returns the Meta field if non-nil, zero value otherwise.
-
-### GetMetaOk
-
-`func (o *JsonAttributeConstraintsResponse) GetMetaOk() (*MetaMeta, bool)`
-
-GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMeta
-
-`func (o *JsonAttributeConstraintsResponse) SetMeta(v MetaMeta)`
-
-SetMeta sets Meta field to given value.
-
-### HasMeta
-
-`func (o *JsonAttributeConstraintsResponse) HasMeta() bool`
-
-HasMeta returns a boolean if a field has been set.
-
-### GetUrnpingidentityschemasconfigurationmessages20
-
-`func (o *JsonAttributeConstraintsResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20`
-
-GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field if non-nil, zero value otherwise.
-
-### GetUrnpingidentityschemasconfigurationmessages20Ok
-
-`func (o *JsonAttributeConstraintsResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool)`
-
-GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUrnpingidentityschemasconfigurationmessages20
-
-`func (o *JsonAttributeConstraintsResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20)`
-
-SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconfigurationmessages20 field to given value.
-
-### HasUrnpingidentityschemasconfigurationmessages20
-
-`func (o *JsonAttributeConstraintsResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
-
-HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 
 ### GetId
 
@@ -221,6 +171,56 @@ SetAllowUnnamedFields sets AllowUnnamedFields field to given value.
 `func (o *JsonAttributeConstraintsResponse) HasAllowUnnamedFields() bool`
 
 HasAllowUnnamedFields returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *JsonAttributeConstraintsResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *JsonAttributeConstraintsResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *JsonAttributeConstraintsResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *JsonAttributeConstraintsResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
+
+### GetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *JsonAttributeConstraintsResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20`
+
+GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field if non-nil, zero value otherwise.
+
+### GetUrnpingidentityschemasconfigurationmessages20Ok
+
+`func (o *JsonAttributeConstraintsResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool)`
+
+GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *JsonAttributeConstraintsResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20)`
+
+SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconfigurationmessages20 field to given value.
+
+### HasUrnpingidentityschemasconfigurationmessages20
+
+`func (o *JsonAttributeConstraintsResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
+
+HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

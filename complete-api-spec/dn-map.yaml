@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access dn-maps
   name: dn-map
@@ -142,22 +142,24 @@ components:
       - type: object
         properties:
           mapName:
-            description: Name of the new DN Map
             type: string
-        required:
-        - mapName
+            description: >-
+                Name of the new DN Map
       - $ref: '#/components/schemas/dn-map-shared'
+      required:
+      - mapName
     dn-map-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the DN Map
             type: string
-        required:
-        - id
+            description: >-
+                Name of the DN Map
       - $ref: '#/components/schemas/dn-map-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     dn-map-shared:
       type: object
       properties:

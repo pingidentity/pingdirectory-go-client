@@ -19,9 +19,7 @@ var _ MappedNullable = &ThirdPartyVelocityContextProviderResponse{}
 
 // ThirdPartyVelocityContextProviderResponse struct for ThirdPartyVelocityContextProviderResponse
 type ThirdPartyVelocityContextProviderResponse struct {
-	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
-	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	// Name of the Velocity Context Provider
+	// Name of the HTTP Servlet Extension
 	Id      string                                           `json:"id"`
 	Schemas []EnumthirdPartyVelocityContextProviderSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Velocity Context Provider.
@@ -38,7 +36,9 @@ type ThirdPartyVelocityContextProviderResponse struct {
 	// Specifies the set of HTTP methods handled by this Velocity Context Provider, which will perform actions necessary to fulfill the request before updating the context for the response. The values of this property are not case-sensitive.
 	HttpMethod []string `json:"httpMethod,omitempty"`
 	// Specifies HTTP header fields and values added to response headers for template page requests to which this Velocity Context Provider contributes content.
-	ResponseHeader []string `json:"responseHeader,omitempty"`
+	ResponseHeader                                []string                                           `json:"responseHeader,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 }
 
 // NewThirdPartyVelocityContextProviderResponse instantiates a new ThirdPartyVelocityContextProviderResponse object
@@ -59,70 +59,6 @@ func NewThirdPartyVelocityContextProviderResponse(id string, schemas []Enumthird
 func NewThirdPartyVelocityContextProviderResponseWithDefaults() *ThirdPartyVelocityContextProviderResponse {
 	this := ThirdPartyVelocityContextProviderResponse{}
 	return &this
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ThirdPartyVelocityContextProviderResponse) GetMeta() MetaMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret MetaMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ThirdPartyVelocityContextProviderResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// HasMeta returns a boolean if a field has been set.
-func (o *ThirdPartyVelocityContextProviderResponse) HasMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
-}
-
-// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
-func (o *ThirdPartyVelocityContextProviderResponse) SetMeta(v MetaMeta) {
-	o.Meta = &v
-}
-
-// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
-func (o *ThirdPartyVelocityContextProviderResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		var ret MetaUrnPingidentitySchemasConfigurationMessages20
-		return ret
-	}
-	return *o.Urnpingidentityschemasconfigurationmessages20
-}
-
-// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ThirdPartyVelocityContextProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		return nil, false
-	}
-	return o.Urnpingidentityschemasconfigurationmessages20, true
-}
-
-// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
-func (o *ThirdPartyVelocityContextProviderResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		return true
-	}
-
-	return false
-}
-
-// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
-func (o *ThirdPartyVelocityContextProviderResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
-	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
 // GetId returns the Id field value
@@ -421,6 +357,70 @@ func (o *ThirdPartyVelocityContextProviderResponse) SetResponseHeader(v []string
 	o.ResponseHeader = v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *ThirdPartyVelocityContextProviderResponse) GetMeta() MetaMeta {
+	if o == nil || IsNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ThirdPartyVelocityContextProviderResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || IsNil(o.Meta) {
+		return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *ThirdPartyVelocityContextProviderResponse) HasMeta() bool {
+	if o != nil && !IsNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *ThirdPartyVelocityContextProviderResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
+func (o *ThirdPartyVelocityContextProviderResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		var ret MetaUrnPingidentitySchemasConfigurationMessages20
+		return ret
+	}
+	return *o.Urnpingidentityschemasconfigurationmessages20
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ThirdPartyVelocityContextProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return nil, false
+	}
+	return o.Urnpingidentityschemasconfigurationmessages20, true
+}
+
+// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+func (o *ThirdPartyVelocityContextProviderResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
+func (o *ThirdPartyVelocityContextProviderResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
+	o.Urnpingidentityschemasconfigurationmessages20 = &v
+}
+
 func (o ThirdPartyVelocityContextProviderResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -431,12 +431,6 @@ func (o ThirdPartyVelocityContextProviderResponse) MarshalJSON() ([]byte, error)
 
 func (o ThirdPartyVelocityContextProviderResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
 	toSerialize["id"] = o.Id
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
@@ -460,6 +454,12 @@ func (o ThirdPartyVelocityContextProviderResponse) ToMap() (map[string]interface
 	}
 	if !IsNil(o.ResponseHeader) {
 		toSerialize["responseHeader"] = o.ResponseHeader
+	}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
 	return toSerialize, nil
 }

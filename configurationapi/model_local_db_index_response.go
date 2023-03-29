@@ -19,9 +19,7 @@ var _ MappedNullable = &LocalDbIndexResponse{}
 
 // LocalDbIndexResponse struct for LocalDbIndexResponse
 type LocalDbIndexResponse struct {
-	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
-	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	// Name of the Local DB Index
+	// Name of the Backend
 	Id      string                      `json:"id"`
 	Schemas []EnumlocalDbIndexSchemaUrn `json:"schemas,omitempty"`
 	// Specifies the name of the attribute for which the index is to be maintained.
@@ -42,8 +40,10 @@ type LocalDbIndexResponse struct {
 	// A search filter that may be used in conjunction with an equality component for the associated attribute type. If an equality index filter is defined, then an additional equality index will be maintained for the associated attribute, but only for entries which match the provided filter. Further, the index will be used only for searches containing an equality component with the associated attribute type ANDed with this filter.
 	EqualityIndexFilter []string `json:"equalityIndexFilter,omitempty"`
 	// Indicates whether to maintain a separate equality index for the associated attribute without any filter, in addition to maintaining an index for each equality index filter that is defined. If this is false, then the attribute will not be indexed for equality by itself but only in conjunction with the defined equality index filters.
-	MaintainEqualityIndexWithoutFilter *bool                          `json:"maintainEqualityIndexWithoutFilter,omitempty"`
-	CacheMode                          *EnumlocalDbIndexCacheModeProp `json:"cacheMode,omitempty"`
+	MaintainEqualityIndexWithoutFilter            *bool                                              `json:"maintainEqualityIndexWithoutFilter,omitempty"`
+	CacheMode                                     *EnumlocalDbIndexCacheModeProp                     `json:"cacheMode,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 }
 
 // NewLocalDbIndexResponse instantiates a new LocalDbIndexResponse object
@@ -64,70 +64,6 @@ func NewLocalDbIndexResponse(id string, attribute string, indexType []EnumlocalD
 func NewLocalDbIndexResponseWithDefaults() *LocalDbIndexResponse {
 	this := LocalDbIndexResponse{}
 	return &this
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *LocalDbIndexResponse) GetMeta() MetaMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret MetaMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LocalDbIndexResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// HasMeta returns a boolean if a field has been set.
-func (o *LocalDbIndexResponse) HasMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
-}
-
-// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
-func (o *LocalDbIndexResponse) SetMeta(v MetaMeta) {
-	o.Meta = &v
-}
-
-// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
-func (o *LocalDbIndexResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		var ret MetaUrnPingidentitySchemasConfigurationMessages20
-		return ret
-	}
-	return *o.Urnpingidentityschemasconfigurationmessages20
-}
-
-// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LocalDbIndexResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		return nil, false
-	}
-	return o.Urnpingidentityschemasconfigurationmessages20, true
-}
-
-// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
-func (o *LocalDbIndexResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		return true
-	}
-
-	return false
-}
-
-// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
-func (o *LocalDbIndexResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
-	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
 // GetId returns the Id field value
@@ -522,6 +458,70 @@ func (o *LocalDbIndexResponse) SetCacheMode(v EnumlocalDbIndexCacheModeProp) {
 	o.CacheMode = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *LocalDbIndexResponse) GetMeta() MetaMeta {
+	if o == nil || IsNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LocalDbIndexResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || IsNil(o.Meta) {
+		return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *LocalDbIndexResponse) HasMeta() bool {
+	if o != nil && !IsNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *LocalDbIndexResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
+func (o *LocalDbIndexResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		var ret MetaUrnPingidentitySchemasConfigurationMessages20
+		return ret
+	}
+	return *o.Urnpingidentityschemasconfigurationmessages20
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LocalDbIndexResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return nil, false
+	}
+	return o.Urnpingidentityschemasconfigurationmessages20, true
+}
+
+// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+func (o *LocalDbIndexResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
+func (o *LocalDbIndexResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
+	o.Urnpingidentityschemasconfigurationmessages20 = &v
+}
+
 func (o LocalDbIndexResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -532,12 +532,6 @@ func (o LocalDbIndexResponse) MarshalJSON() ([]byte, error) {
 
 func (o LocalDbIndexResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
 	toSerialize["id"] = o.Id
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
@@ -570,6 +564,12 @@ func (o LocalDbIndexResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.CacheMode) {
 		toSerialize["cacheMode"] = o.CacheMode
+	}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
 	return toSerialize, nil
 }

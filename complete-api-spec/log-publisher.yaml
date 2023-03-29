@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access log-publishers
   name: log-publisher
@@ -443,28 +443,85 @@ paths:
       - debug-target
 components:
   schemas:
+    Enumlog-publisher-syslogFacilityProp:
+      type: string
+      enum:
+      - "user-level-messages"
+      - "system-daemons"
+      - "security-and-authorization"
+      - "security-and-authorization-alternative"
+      - "log-audit"
+      - "log-alert"
+      - "local-use-0"
+      - "local-use-1"
+      - "local-use-2"
+      - "local-use-3"
+      - "local-use-4"
+      - "local-use-5"
+      - "local-use-6"
+      - "local-use-7"
+      - "kernel-messages"
+      - "mail-system"
+      - "syslogd-internal-messages"
+      - "line-printer"
+      - "network-news"
+      - "uucp"
+      - "clock-daemon"
+      - "ftp-daemon"
+      - "ntp-daemon"
+      - "clock-daemon-alternative"
+      description: >-
+          The syslog facility to use for the messages that are logged by this Syslog JSON Audit Log Publisher.
+    Enumlog-publisher-syslogSeverityProp:
+      type: string
+      enum:
+      - "emergency"
+      - "alert"
+      - "critical"
+      - "error"
+      - "warning"
+      - "notice"
+      - "informational"
+      - "debug"
+      description: >-
+          The syslog severity to use for the messages that are logged by this Syslog JSON Audit Log Publisher.
+    Enumlog-publisher-syslog-json-audit-softDeleteEntryAuditBehaviorProp:
+      type: string
+      enum:
+      - "included"
+      - "excluded"
+      description: >-
+          Specifies the audit behavior for delete and modify operations on soft-deleted entries.
+    Enumlog-publisher-loggingErrorBehaviorProp:
+      type: string
+      enum:
+      - "standard-error"
+      - "lockdown-mode"
+      description: >-
+          Specifies the behavior that the server should exhibit if an error occurs during logging processing.
     add-syslog-json-audit-log-publisher-request:
       allOf:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/syslog-json-audit-log-publisher-shared'
+      required:
+      - publisherName
     syslog-json-audit-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/syslog-json-audit-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - syslogFacility
       - syslogSeverity
     syslog-json-audit-log-publisher-shared:
@@ -606,28 +663,44 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:log-publisher:syslog-json-audit"
+    Enumlog-publisher-defaultSeverityProp:
+      type: string
+      enum:
+      - "all"
+      - "none"
+      - "fatal-error"
+      - "info"
+      - "mild-error"
+      - "mild-warning"
+      - "notice"
+      - "severe-error"
+      - "severe-warning"
+      - "debug"
+      description: >-
+          Specifies the default severity levels for the logger.
     add-syslog-based-error-log-publisher-request:
       allOf:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/syslog-based-error-log-publisher-shared'
+      required:
+      - publisherName
     syslog-based-error-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/syslog-based-error-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - serverHostName
       - serverPort
       - syslogFacility
@@ -692,28 +765,36 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:log-publisher:syslog-based-error"
+    Enumlog-publisher-compressionMechanismProp:
+      type: string
+      enum:
+      - "none"
+      - "gzip"
+      description: >-
+          Specifies the type of compression (if any) to use for log files that are written.
     add-third-party-file-based-access-log-publisher-request:
       allOf:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/third-party-file-based-access-log-publisher-shared'
+      required:
+      - publisherName
     third-party-file-based-access-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/third-party-file-based-access-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - logFilePermissions
       - rotationPolicy
       - retentionPolicy
@@ -893,23 +974,24 @@ components:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/operation-timing-access-log-publisher-shared'
+      required:
+      - publisherName
     operation-timing-access-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/operation-timing-access-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - logFilePermissions
       - rotationPolicy
       - retentionPolicy
@@ -1074,22 +1156,24 @@ components:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/third-party-http-operation-log-publisher-shared'
+      required:
+      - publisherName
     third-party-http-operation-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/third-party-http-operation-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     third-party-http-operation-log-publisher-shared:
       type: object
       properties:
@@ -1132,23 +1216,24 @@ components:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/admin-alert-access-log-publisher-shared'
+      required:
+      - publisherName
     admin-alert-access-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/admin-alert-access-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - asynchronous
     admin-alert-access-log-publisher-shared:
       type: object
@@ -1344,28 +1429,120 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:log-publisher:admin-alert-access"
+    Enumlog-publisher-debugMessageTypeProp:
+      type: string
+      enum:
+      - "http-full-request-and-response"
+      - "ldap-external-server-request"
+      - "server-sdk-extension"
+      - "store-adapter-mapping"
+      - "store-adapter-processing"
+      - "access-token-validator-request-and-response"
+      - "access-token-validator-processing"
+      - "id-token-validator-request-and-response"
+      - "id-token-validator-processing"
+      - "consent-service-request-and-response"
+      - "gateway-request-and-response"
+      - "policy-request-and-response"
+      description: >-
+          Specifies the debug message types which can be logged. Note that enabling these may result in sensitive information being logged.
+    Enumlog-publisher-httpMessageTypeProp:
+      type: string
+      enum:
+      - "request"
+      - "response"
+      description: >-
+          Specifies the HTTP message types which can be logged.
+    Enumlog-publisher-accessTokenValidatorMessageTypeProp:
+      type: string
+      enum:
+      - "subject-lookup"
+      - "external-server-request"
+      - "external-server-response"
+      - "validation"
+      - "error"
+      description: >-
+          Specifies the access token validator message types that can be logged.
+    Enumlog-publisher-idTokenValidatorMessageTypeProp:
+      type: string
+      enum:
+      - "external-server-request"
+      - "external-server-response"
+      - "validation"
+      - "warning"
+      - "error"
+      description: >-
+          Specifies the ID token validator message types that can be logged.
+    Enumlog-publisher-scimMessageTypeProp:
+      type: string
+      enum:
+      - "request"
+      - "result"
+      - "internal-request"
+      - "internal-result"
+      - "error"
+      description: >-
+          Specifies the SCIM message types which can be logged.
+    Enumlog-publisher-consentMessageTypeProp:
+      type: string
+      enum:
+      - "consent-created"
+      - "consent-updated"
+      - "consent-deleted"
+      - "consent-retrieved"
+      - "consent-search"
+      - "definition-created"
+      - "definition-updated"
+      - "definition-deleted"
+      - "definition-retrieved"
+      - "definition-search"
+      - "localization-created"
+      - "localization-updated"
+      - "localization-deleted"
+      - "localization-retrieved"
+      - "localization-search"
+      - "error"
+      - "audit"
+      description: >-
+          Specifies the consent message types that can be logged.
+    Enumlog-publisher-directoryRESTAPIMessageTypeProp:
+      type: string
+      enum:
+      - "error"
+      description: >-
+          Specifies the Directory REST API message types which can be logged.
+    Enumlog-publisher-extensionMessageTypeProp:
+      type: string
+      enum:
+      - "error"
+      - "warning"
+      - "notice"
+      - "info"
+      description: >-
+          Specifies the Server SDK extension message types that can be logged.
     add-file-based-trace-log-publisher-request:
       allOf:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/file-based-trace-log-publisher-shared'
+      required:
+      - publisherName
     file-based-trace-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/file-based-trace-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - logFilePermissions
       - rotationPolicy
       - retentionPolicy
@@ -1510,23 +1687,24 @@ components:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/jdbc-based-error-log-publisher-shared'
+      required:
+      - publisherName
     jdbc-based-error-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/jdbc-based-error-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - logTableName
     jdbc-based-error-log-publisher-shared:
       type: object
@@ -1587,23 +1765,24 @@ components:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/jdbc-based-access-log-publisher-shared'
+      required:
+      - publisherName
     jdbc-based-access-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/jdbc-based-access-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - logTableName
     jdbc-based-access-log-publisher-shared:
       type: object
@@ -1722,23 +1901,24 @@ components:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/common-log-file-http-operation-log-publisher-shared'
+      required:
+      - publisherName
     common-log-file-http-operation-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/common-log-file-http-operation-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - logFilePermissions
       - rotationPolicy
       - retentionPolicy
@@ -1834,9 +2014,15 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:log-publisher:common-log-file-http-operation"
+    Enumlog-publisher-outputLocationProp:
+      type: string
+      enum:
+      - "standard-output"
+      - "standard-error"
+      description: >-
+          Specifies the output stream to which JSON-formatted error log messages should be written.
     console-json-error-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -1846,8 +2032,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumconsole-json-error-log-publisherSchemaUrn'
           id:
-            description: Name of the Log Publisher
             type: string
+            description: >-
+                Name of the Log Publisher
           enabled:
             type: boolean
             description: >-
@@ -1894,36 +2081,45 @@ components:
                 A description for this Log Publisher
           loggingErrorBehavior:
             $ref: '#/components/schemas/Enumlog-publisher-loggingErrorBehaviorProp'
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumconsole-json-error-log-publisherSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:log-publisher:console-json-error"
+    Enumlog-publisher-timestampPrecisionProp:
+      type: string
+      enum:
+      - "seconds"
+      - "milliseconds"
+      description: >-
+          Specifies the smallest time unit to be included in timestamps.
     add-syslog-text-error-log-publisher-request:
       allOf:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/syslog-text-error-log-publisher-shared'
+      required:
+      - publisherName
     syslog-text-error-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/syslog-text-error-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - syslogFacility
     syslog-text-error-log-publisher-shared:
       type: object
@@ -2011,23 +2207,24 @@ components:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/syslog-based-access-log-publisher-shared'
+      required:
+      - publisherName
     syslog-based-access-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/syslog-based-access-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - serverHostName
       - serverPort
       - syslogFacility
@@ -2238,28 +2435,36 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:log-publisher:syslog-based-access"
+    Enumlog-publisher-file-based-json-audit-softDeleteEntryAuditBehaviorProp:
+      type: string
+      enum:
+      - "included"
+      - "excluded"
+      description: >-
+          Specifies the audit behavior for delete and modify operations on soft-deleted entries.
     add-file-based-json-audit-log-publisher-request:
       allOf:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/file-based-json-audit-log-publisher-shared'
+      required:
+      - publisherName
     file-based-json-audit-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/file-based-json-audit-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - logFilePermissions
       - rotationPolicy
       - retentionPolicy
@@ -2445,28 +2650,54 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:log-publisher:file-based-json-audit"
+    Enumlog-publisher-defaultDebugLevelProp:
+      type: string
+      enum:
+      - "disabled"
+      - "error"
+      - "warning"
+      - "info"
+      - "verbose"
+      - "all"
+      description: >-
+          The lowest severity level of debug messages to log when none of the defined targets match the message.
+    Enumlog-publisher-defaultDebugCategoryProp:
+      type: string
+      enum:
+      - "caught"
+      - "constructor"
+      - "data"
+      - "database-access"
+      - "enter"
+      - "exit"
+      - "message"
+      - "protocol"
+      - "thrown"
+      description: >-
+          The debug message categories to be logged when none of the defined targets match the message.
     add-file-based-debug-log-publisher-request:
       allOf:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/file-based-debug-log-publisher-shared'
+      required:
+      - publisherName
     file-based-debug-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/file-based-debug-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - logFilePermissions
       - rotationPolicy
       - retentionPolicy
@@ -2592,23 +2823,24 @@ components:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/file-based-error-log-publisher-shared'
+      required:
+      - publisherName
     file-based-error-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/file-based-error-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - logFilePermissions
       - rotationPolicy
       - retentionPolicy
@@ -2741,22 +2973,24 @@ components:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/third-party-error-log-publisher-shared'
+      required:
+      - publisherName
     third-party-error-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/third-party-error-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     third-party-error-log-publisher-shared:
       type: object
       properties:
@@ -2809,23 +3043,24 @@ components:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/syslog-text-access-log-publisher-shared'
+      required:
+      - publisherName
     syslog-text-access-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/syslog-text-access-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - syslogFacility
       - syslogSeverity
       - asynchronous
@@ -3044,28 +3279,53 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:log-publisher:syslog-text-access"
+    Enumlog-publisher-logRequestHeadersProp:
+      type: string
+      enum:
+      - "none"
+      - "header-names"
+      - "header-names-and-values"
+      description: >-
+          Indicates whether request log messages should include information about HTTP headers included in the request.
+    Enumlog-publisher-logResponseHeadersProp:
+      type: string
+      enum:
+      - "none"
+      - "header-names"
+      - "header-names-and-values"
+      description: >-
+          Indicates whether response log messages should include information about HTTP headers included in the response.
+    Enumlog-publisher-logRequestParametersProp:
+      type: string
+      enum:
+      - "none"
+      - "parameter-names"
+      - "parameter-names-and-values"
+      description: >-
+          Indicates what (if any) information about request parameters should be included in request log messages. Note that this will only be used for requests with a method other than GET, since GET request parameters will be included in the request URL.
     add-detailed-http-operation-log-publisher-request:
       allOf:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/detailed-http-operation-log-publisher-shared'
+      required:
+      - publisherName
     detailed-http-operation-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/detailed-http-operation-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - logFilePermissions
       - rotationPolicy
       - retentionPolicy
@@ -3242,23 +3502,24 @@ components:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/json-access-log-publisher-shared'
+      required:
+      - publisherName
     json-access-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/json-access-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - logFilePermissions
       - rotationPolicy
       - retentionPolicy
@@ -3519,23 +3780,24 @@ components:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/debug-access-log-publisher-shared'
+      required:
+      - publisherName
     debug-access-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/debug-access-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - logFilePermissions
       - rotationPolicy
       - retentionPolicy
@@ -3722,23 +3984,24 @@ components:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/syslog-json-http-operation-log-publisher-shared'
+      required:
+      - publisherName
     syslog-json-http-operation-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/syslog-json-http-operation-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - syslogFacility
       - syslogSeverity
     syslog-json-http-operation-log-publisher-shared:
@@ -3871,22 +4134,24 @@ components:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/third-party-access-log-publisher-shared'
+      required:
+      - publisherName
     third-party-access-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/third-party-access-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     third-party-access-log-publisher-shared:
       type: object
       properties:
@@ -3992,28 +4257,36 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:log-publisher:third-party-access"
+    Enumlog-publisher-file-based-audit-softDeleteEntryAuditBehaviorProp:
+      type: string
+      enum:
+      - "commented"
+      - "uncommented"
+      description: >-
+          Specifies the audit behavior for delete and modify operations on soft-deleted entries.
     add-file-based-audit-log-publisher-request:
       allOf:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/file-based-audit-log-publisher-shared'
+      required:
+      - publisherName
     file-based-audit-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/file-based-audit-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - logFilePermissions
       - rotationPolicy
       - retentionPolicy
@@ -4202,23 +4475,24 @@ components:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/json-error-log-publisher-shared'
+      required:
+      - publisherName
     json-error-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/json-error-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - logFilePermissions
       - rotationPolicy
       - retentionPolicy
@@ -4353,23 +4627,24 @@ components:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/groovy-scripted-file-based-access-log-publisher-shared'
+      required:
+      - publisherName
     groovy-scripted-file-based-access-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/groovy-scripted-file-based-access-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - logFilePermissions
       - rotationPolicy
       - retentionPolicy
@@ -4549,23 +4824,24 @@ components:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/groovy-scripted-file-based-error-log-publisher-shared'
+      required:
+      - publisherName
     groovy-scripted-file-based-error-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/groovy-scripted-file-based-error-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - logFilePermissions
       - rotationPolicy
       - retentionPolicy
@@ -4687,23 +4963,24 @@ components:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/syslog-json-access-log-publisher-shared'
+      required:
+      - publisherName
     syslog-json-access-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/syslog-json-access-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - syslogFacility
       - syslogSeverity
     syslog-json-access-log-publisher-shared:
@@ -4916,22 +5193,24 @@ components:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/groovy-scripted-access-log-publisher-shared'
+      required:
+      - publisherName
     groovy-scripted-access-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/groovy-scripted-access-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     groovy-scripted-access-log-publisher-shared:
       type: object
       properties:
@@ -5042,23 +5321,24 @@ components:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/third-party-file-based-error-log-publisher-shared'
+      required:
+      - publisherName
     third-party-file-based-error-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/third-party-file-based-error-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - logFilePermissions
       - rotationPolicy
       - retentionPolicy
@@ -5175,27 +5455,36 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:log-publisher:third-party-file-based-error"
+    Enumlog-publisher-console-json-audit-softDeleteEntryAuditBehaviorProp:
+      type: string
+      enum:
+      - "included"
+      - "excluded"
+      description: >-
+          Specifies the audit behavior for delete and modify operations on soft-deleted entries.
     add-console-json-audit-log-publisher-request:
       allOf:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/console-json-audit-log-publisher-shared'
+      required:
+      - publisherName
     console-json-audit-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/console-json-audit-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     console-json-audit-log-publisher-shared:
       type: object
       properties:
@@ -5319,22 +5608,24 @@ components:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/console-json-http-operation-log-publisher-shared'
+      required:
+      - publisherName
     console-json-http-operation-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/console-json-http-operation-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     console-json-http-operation-log-publisher-shared:
       type: object
       properties:
@@ -5441,7 +5732,6 @@ components:
       - "urn:pingidentity:schemas:configuration:2.0:log-publisher:console-json-http-operation"
     console-json-access-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -5451,8 +5741,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumconsole-json-access-log-publisherSchemaUrn'
           id:
-            description: Name of the Log Publisher
             type: string
+            description: >-
+                Name of the Log Publisher
           enabled:
             type: boolean
             description: >-
@@ -5621,10 +5912,11 @@ components:
                 A description for this Log Publisher
           loggingErrorBehavior:
             $ref: '#/components/schemas/Enumlog-publisher-loggingErrorBehaviorProp'
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumconsole-json-access-log-publisherSchemaUrn:
       type: string
       enum:
@@ -5634,23 +5926,24 @@ components:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/file-based-access-log-publisher-shared'
+      required:
+      - publisherName
     file-based-access-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/file-based-access-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - logFilePermissions
       - rotationPolicy
       - retentionPolicy
@@ -5909,22 +6202,24 @@ components:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/groovy-scripted-error-log-publisher-shared'
+      required:
+      - publisherName
     groovy-scripted-error-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/groovy-scripted-error-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     groovy-scripted-error-log-publisher-shared:
       type: object
       properties:
@@ -5977,23 +6272,24 @@ components:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/file-based-json-http-operation-log-publisher-shared'
+      required:
+      - publisherName
     file-based-json-http-operation-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/file-based-json-http-operation-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - logFilePermissions
       - rotationPolicy
       - retentionPolicy
@@ -6170,23 +6466,24 @@ components:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/syslog-json-error-log-publisher-shared'
+      required:
+      - publisherName
     syslog-json-error-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/syslog-json-error-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - syslogFacility
     syslog-json-error-log-publisher-shared:
       type: object
@@ -6272,22 +6569,24 @@ components:
       - type: object
         properties:
           publisherName:
-            description: Name of the new Log Publisher
             type: string
-        required:
-        - publisherName
+            description: >-
+                Name of the new Log Publisher
       - $ref: '#/components/schemas/groovy-scripted-http-operation-log-publisher-shared'
+      required:
+      - publisherName
     groovy-scripted-http-operation-log-publisher-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Publisher
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/groovy-scripted-http-operation-log-publisher-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     groovy-scripted-http-operation-log-publisher-shared:
       type: object
       properties:
@@ -6325,27 +6624,54 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:log-publisher:groovy-scripted-http-operation"
+    Enumdebug-target-debugLevelProp:
+      type: string
+      enum:
+      - "disabled"
+      - "error"
+      - "warning"
+      - "info"
+      - "verbose"
+      - "all"
+      description: >-
+          Specifies the lowest severity level of debug messages to log.
+    Enumdebug-target-debugCategoryProp:
+      type: string
+      enum:
+      - "caught"
+      - "constructor"
+      - "data"
+      - "database-access"
+      - "enter"
+      - "exit"
+      - "message"
+      - "protocol"
+      - "thrown"
+      description: >-
+          Specifies the debug message categories to be logged.
     add-debug-target-request:
       allOf:
       - type: object
         properties:
           targetName:
-            description: Name of the new Debug Target
             type: string
-        required:
-        - targetName
+            description: >-
+                Name of the new Debug Target
       - $ref: '#/components/schemas/debug-target-shared'
+      required:
+      - targetName
     debug-target-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Debug Target
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Publisher
       - $ref: '#/components/schemas/debug-target-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     debug-target-shared:
       type: object
       properties:
@@ -6392,284 +6718,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:debug-target"
-    Enumlog-publisher-syslog-json-audit-softDeleteEntryAuditBehaviorProp:
-      type: string
-      enum:
-      - "included"
-      - "excluded"
-      description: >-
-          Specifies the audit behavior for delete and modify operations on soft-deleted entries.
-    Enumlog-publisher-file-based-json-audit-softDeleteEntryAuditBehaviorProp:
-      type: string
-      enum:
-      - "included"
-      - "excluded"
-      description: >-
-          Specifies the audit behavior for delete and modify operations on soft-deleted entries.
-    Enumlog-publisher-file-based-audit-softDeleteEntryAuditBehaviorProp:
-      type: string
-      enum:
-      - "commented"
-      - "uncommented"
-      description: >-
-          Specifies the audit behavior for delete and modify operations on soft-deleted entries.
-    Enumlog-publisher-defaultDebugLevelProp:
-      type: string
-      enum:
-      - "disabled"
-      - "error"
-      - "warning"
-      - "info"
-      - "verbose"
-      - "all"
-      description: >-
-          The lowest severity level of debug messages to log when none of the defined targets match the message.
-    Enumlog-publisher-syslogSeverityProp:
-      type: string
-      enum:
-      - "emergency"
-      - "alert"
-      - "critical"
-      - "error"
-      - "warning"
-      - "notice"
-      - "informational"
-      - "debug"
-      description: >-
-          The syslog severity to use for the messages that are logged by this Syslog JSON Audit Log Publisher.
-    Enumlog-publisher-timestampPrecisionProp:
-      type: string
-      enum:
-      - "seconds"
-      - "milliseconds"
-      description: >-
-          Specifies the smallest time unit to be included in timestamps.
-    Enumlog-publisher-scimMessageTypeProp:
-      type: string
-      enum:
-      - "request"
-      - "result"
-      - "internal-request"
-      - "internal-result"
-      - "error"
-      description: >-
-          Specifies the SCIM message types which can be logged.
-    Enumlog-publisher-logRequestHeadersProp:
-      type: string
-      enum:
-      - "none"
-      - "header-names"
-      - "header-names-and-values"
-      description: >-
-          Indicates whether request log messages should include information about HTTP headers included in the request.
-    Enumlog-publisher-idTokenValidatorMessageTypeProp:
-      type: string
-      enum:
-      - "external-server-request"
-      - "external-server-response"
-      - "validation"
-      - "warning"
-      - "error"
-      description: >-
-          Specifies the ID token validator message types that can be logged.
-    Enumlog-publisher-logResponseHeadersProp:
-      type: string
-      enum:
-      - "none"
-      - "header-names"
-      - "header-names-and-values"
-      description: >-
-          Indicates whether response log messages should include information about HTTP headers included in the response.
-    Enumlog-publisher-outputLocationProp:
-      type: string
-      enum:
-      - "standard-output"
-      - "standard-error"
-      description: >-
-          Specifies the output stream to which JSON-formatted error log messages should be written.
-    Enumlog-publisher-compressionMechanismProp:
-      type: string
-      enum:
-      - "none"
-      - "gzip"
-      description: >-
-          Specifies the type of compression (if any) to use for log files that are written.
-    Enumdebug-target-debugLevelProp:
-      type: string
-      enum:
-      - "disabled"
-      - "error"
-      - "warning"
-      - "info"
-      - "verbose"
-      - "all"
-      description: >-
-          Specifies the lowest severity level of debug messages to log.
-    Enumlog-publisher-logRequestParametersProp:
-      type: string
-      enum:
-      - "none"
-      - "parameter-names"
-      - "parameter-names-and-values"
-      description: >-
-          Indicates what (if any) information about request parameters should be included in request log messages. Note that this will only be used for requests with a method other than GET, since GET request parameters will be included in the request URL.
-    Enumlog-publisher-accessTokenValidatorMessageTypeProp:
-      type: string
-      enum:
-      - "subject-lookup"
-      - "external-server-request"
-      - "external-server-response"
-      - "validation"
-      - "error"
-      description: >-
-          Specifies the access token validator message types that can be logged.
-    Enumlog-publisher-defaultSeverityProp:
-      type: string
-      enum:
-      - "all"
-      - "none"
-      - "fatal-error"
-      - "info"
-      - "mild-error"
-      - "mild-warning"
-      - "notice"
-      - "severe-error"
-      - "severe-warning"
-      - "debug"
-      description: >-
-          Specifies the default severity levels for the logger.
-    Enumlog-publisher-defaultDebugCategoryProp:
-      type: string
-      enum:
-      - "caught"
-      - "constructor"
-      - "data"
-      - "database-access"
-      - "enter"
-      - "exit"
-      - "message"
-      - "protocol"
-      - "thrown"
-      description: >-
-          The debug message categories to be logged when none of the defined targets match the message.
-    Enumlog-publisher-httpMessageTypeProp:
-      type: string
-      enum:
-      - "request"
-      - "response"
-      description: >-
-          Specifies the HTTP message types which can be logged.
-    Enumlog-publisher-debugMessageTypeProp:
-      type: string
-      enum:
-      - "http-full-request-and-response"
-      - "ldap-external-server-request"
-      - "server-sdk-extension"
-      - "store-adapter-mapping"
-      - "store-adapter-processing"
-      - "access-token-validator-request-and-response"
-      - "access-token-validator-processing"
-      - "id-token-validator-request-and-response"
-      - "id-token-validator-processing"
-      - "consent-service-request-and-response"
-      - "gateway-request-and-response"
-      - "policy-request-and-response"
-      description: >-
-          Specifies the debug message types which can be logged. Note that enabling these may result in sensitive information being logged.
-    Enumlog-publisher-directoryRESTAPIMessageTypeProp:
-      type: string
-      enum:
-      - "error"
-      description: >-
-          Specifies the Directory REST API message types which can be logged.
-    Enumlog-publisher-extensionMessageTypeProp:
-      type: string
-      enum:
-      - "error"
-      - "warning"
-      - "notice"
-      - "info"
-      description: >-
-          Specifies the Server SDK extension message types that can be logged.
-    Enumlog-publisher-syslogFacilityProp:
-      type: string
-      enum:
-      - "user-level-messages"
-      - "system-daemons"
-      - "security-and-authorization"
-      - "security-and-authorization-alternative"
-      - "log-audit"
-      - "log-alert"
-      - "local-use-0"
-      - "local-use-1"
-      - "local-use-2"
-      - "local-use-3"
-      - "local-use-4"
-      - "local-use-5"
-      - "local-use-6"
-      - "local-use-7"
-      - "kernel-messages"
-      - "mail-system"
-      - "syslogd-internal-messages"
-      - "line-printer"
-      - "network-news"
-      - "uucp"
-      - "clock-daemon"
-      - "ftp-daemon"
-      - "ntp-daemon"
-      - "clock-daemon-alternative"
-      description: >-
-          The syslog facility to use for the messages that are logged by this Syslog JSON Audit Log Publisher.
-    Enumlog-publisher-loggingErrorBehaviorProp:
-      type: string
-      enum:
-      - "standard-error"
-      - "lockdown-mode"
-      description: >-
-          Specifies the behavior that the server should exhibit if an error occurs during logging processing.
-    Enumdebug-target-debugCategoryProp:
-      type: string
-      enum:
-      - "caught"
-      - "constructor"
-      - "data"
-      - "database-access"
-      - "enter"
-      - "exit"
-      - "message"
-      - "protocol"
-      - "thrown"
-      description: >-
-          Specifies the debug message categories to be logged.
-    Enumlog-publisher-consentMessageTypeProp:
-      type: string
-      enum:
-      - "consent-created"
-      - "consent-updated"
-      - "consent-deleted"
-      - "consent-retrieved"
-      - "consent-search"
-      - "definition-created"
-      - "definition-updated"
-      - "definition-deleted"
-      - "definition-retrieved"
-      - "definition-search"
-      - "localization-created"
-      - "localization-updated"
-      - "localization-deleted"
-      - "localization-retrieved"
-      - "localization-search"
-      - "error"
-      - "audit"
-      description: >-
-          Specifies the consent message types that can be logged.
-    Enumlog-publisher-console-json-audit-softDeleteEntryAuditBehaviorProp:
-      type: string
-      enum:
-      - "included"
-      - "excluded"
-      description: >-
-          Specifies the audit behavior for delete and modify operations on soft-deleted entries.
     updateRequest:
       type: object
       properties:

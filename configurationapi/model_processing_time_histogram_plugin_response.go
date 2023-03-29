@@ -19,10 +19,8 @@ var _ MappedNullable = &ProcessingTimeHistogramPluginResponse{}
 
 // ProcessingTimeHistogramPluginResponse struct for ProcessingTimeHistogramPluginResponse
 type ProcessingTimeHistogramPluginResponse struct {
-	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
-	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas                                       []EnumprocessingTimeHistogramPluginSchemaUrn       `json:"schemas"`
-	// Name of the Plugin
+	Schemas []EnumprocessingTimeHistogramPluginSchemaUrn `json:"schemas"`
+	// Name of the Plugin Root
 	Id         string                     `json:"id"`
 	PluginType []EnumpluginPluginTypeProp `json:"pluginType"`
 	// Specifies the boundary values that will be used to separate the processing times into categories. Values should be specified as durations, and all values must be greater than zero.
@@ -36,7 +34,9 @@ type ProcessingTimeHistogramPluginResponse struct {
 	// Indicates whether the plug-in is enabled for use.
 	Enabled bool `json:"enabled"`
 	// Indicates whether the plug-in should be invoked for internal operations.
-	InvokeForInternalOperations *bool `json:"invokeForInternalOperations,omitempty"`
+	InvokeForInternalOperations                   *bool                                              `json:"invokeForInternalOperations,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 }
 
 // NewProcessingTimeHistogramPluginResponse instantiates a new ProcessingTimeHistogramPluginResponse object
@@ -59,70 +59,6 @@ func NewProcessingTimeHistogramPluginResponse(schemas []EnumprocessingTimeHistog
 func NewProcessingTimeHistogramPluginResponseWithDefaults() *ProcessingTimeHistogramPluginResponse {
 	this := ProcessingTimeHistogramPluginResponse{}
 	return &this
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ProcessingTimeHistogramPluginResponse) GetMeta() MetaMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret MetaMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ProcessingTimeHistogramPluginResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// HasMeta returns a boolean if a field has been set.
-func (o *ProcessingTimeHistogramPluginResponse) HasMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
-}
-
-// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
-func (o *ProcessingTimeHistogramPluginResponse) SetMeta(v MetaMeta) {
-	o.Meta = &v
-}
-
-// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
-func (o *ProcessingTimeHistogramPluginResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		var ret MetaUrnPingidentitySchemasConfigurationMessages20
-		return ret
-	}
-	return *o.Urnpingidentityschemasconfigurationmessages20
-}
-
-// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ProcessingTimeHistogramPluginResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		return nil, false
-	}
-	return o.Urnpingidentityschemasconfigurationmessages20, true
-}
-
-// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
-func (o *ProcessingTimeHistogramPluginResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		return true
-	}
-
-	return false
-}
-
-// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
-func (o *ProcessingTimeHistogramPluginResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
-	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
 // GetSchemas returns the Schemas field value
@@ -373,6 +309,70 @@ func (o *ProcessingTimeHistogramPluginResponse) SetInvokeForInternalOperations(v
 	o.InvokeForInternalOperations = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *ProcessingTimeHistogramPluginResponse) GetMeta() MetaMeta {
+	if o == nil || IsNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ProcessingTimeHistogramPluginResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || IsNil(o.Meta) {
+		return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *ProcessingTimeHistogramPluginResponse) HasMeta() bool {
+	if o != nil && !IsNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *ProcessingTimeHistogramPluginResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
+func (o *ProcessingTimeHistogramPluginResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		var ret MetaUrnPingidentitySchemasConfigurationMessages20
+		return ret
+	}
+	return *o.Urnpingidentityschemasconfigurationmessages20
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ProcessingTimeHistogramPluginResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return nil, false
+	}
+	return o.Urnpingidentityschemasconfigurationmessages20, true
+}
+
+// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+func (o *ProcessingTimeHistogramPluginResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
+func (o *ProcessingTimeHistogramPluginResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
+	o.Urnpingidentityschemasconfigurationmessages20 = &v
+}
+
 func (o ProcessingTimeHistogramPluginResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -383,12 +383,6 @@ func (o ProcessingTimeHistogramPluginResponse) MarshalJSON() ([]byte, error) {
 
 func (o ProcessingTimeHistogramPluginResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["id"] = o.Id
 	toSerialize["pluginType"] = o.PluginType
@@ -405,6 +399,12 @@ func (o ProcessingTimeHistogramPluginResponse) ToMap() (map[string]interface{}, 
 	toSerialize["enabled"] = o.Enabled
 	if !IsNil(o.InvokeForInternalOperations) {
 		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
+	}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
 	return toSerialize, nil
 }

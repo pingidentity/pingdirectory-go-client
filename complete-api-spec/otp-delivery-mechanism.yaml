@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access otp-delivery-mechanisms
   name: otp-delivery-mechanism
@@ -154,23 +154,24 @@ components:
       - type: object
         properties:
           mechanismName:
-            description: Name of the new OTP Delivery Mechanism
             type: string
-        required:
-        - mechanismName
+            description: >-
+                Name of the new OTP Delivery Mechanism
       - $ref: '#/components/schemas/twilio-otp-delivery-mechanism-shared'
+      required:
+      - mechanismName
     twilio-otp-delivery-mechanism-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the OTP Delivery Mechanism
             type: string
-        required:
-        - id
+            description: >-
+                Name of the OTP Delivery Mechanism
       - $ref: '#/components/schemas/twilio-otp-delivery-mechanism-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - phoneNumberAttributeType
     twilio-otp-delivery-mechanism-shared:
       type: object
@@ -246,23 +247,24 @@ components:
       - type: object
         properties:
           mechanismName:
-            description: Name of the new OTP Delivery Mechanism
             type: string
-        required:
-        - mechanismName
+            description: >-
+                Name of the new OTP Delivery Mechanism
       - $ref: '#/components/schemas/email-otp-delivery-mechanism-shared'
+      required:
+      - mechanismName
     email-otp-delivery-mechanism-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the OTP Delivery Mechanism
             type: string
-        required:
-        - id
+            description: >-
+                Name of the OTP Delivery Mechanism
       - $ref: '#/components/schemas/email-otp-delivery-mechanism-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - emailAddressAttributeType
       - messageSubject
     email-otp-delivery-mechanism-shared:
@@ -323,22 +325,24 @@ components:
       - type: object
         properties:
           mechanismName:
-            description: Name of the new OTP Delivery Mechanism
             type: string
-        required:
-        - mechanismName
+            description: >-
+                Name of the new OTP Delivery Mechanism
       - $ref: '#/components/schemas/third-party-otp-delivery-mechanism-shared'
+      required:
+      - mechanismName
     third-party-otp-delivery-mechanism-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the OTP Delivery Mechanism
             type: string
-        required:
-        - id
+            description: >-
+                Name of the OTP Delivery Mechanism
       - $ref: '#/components/schemas/third-party-otp-delivery-mechanism-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     third-party-otp-delivery-mechanism-shared:
       type: object
       properties:

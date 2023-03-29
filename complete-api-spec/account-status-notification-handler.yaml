@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access account-status-notification-handlers
   name: account-status-notification-handler
@@ -166,23 +166,24 @@ components:
       - type: object
         properties:
           handlerName:
-            description: Name of the new Account Status Notification Handler
             type: string
-        required:
-        - handlerName
+            description: >-
+                Name of the new Account Status Notification Handler
       - $ref: '#/components/schemas/smtp-account-status-notification-handler-shared'
+      required:
+      - handlerName
     smtp-account-status-notification-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Account Status Notification Handler
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Account Status Notification Handler
       - $ref: '#/components/schemas/smtp-account-status-notification-handler-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - sendMessageWithoutEndUserAddress
     smtp-account-status-notification-handler-shared:
       type: object
@@ -268,22 +269,24 @@ components:
       - type: object
         properties:
           handlerName:
-            description: Name of the new Account Status Notification Handler
             type: string
-        required:
-        - handlerName
+            description: >-
+                Name of the new Account Status Notification Handler
       - $ref: '#/components/schemas/groovy-scripted-account-status-notification-handler-shared'
+      required:
+      - handlerName
     groovy-scripted-account-status-notification-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Account Status Notification Handler
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Account Status Notification Handler
       - $ref: '#/components/schemas/groovy-scripted-account-status-notification-handler-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     groovy-scripted-account-status-notification-handler-shared:
       type: object
       properties:
@@ -331,27 +334,51 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:account-status-notification-handler:groovy-scripted"
+    Enumaccount-status-notification-handler-accountStatusNotificationTypeProp:
+      type: string
+      enum:
+      - "account-temporarily-locked"
+      - "account-permanently-locked"
+      - "account-unlocked"
+      - "account-idle-locked"
+      - "account-reset-locked"
+      - "account-disabled"
+      - "account-enabled"
+      - "account-not-yet-active"
+      - "account-expired"
+      - "password-expired"
+      - "password-expiring"
+      - "password-reset"
+      - "password-changed"
+      - "account-created"
+      - "account-updated"
+      - "bind-password-failed-validation"
+      - "must-change-password"
+      description: >-
+          The types of account status notifications that should result in administrative alerts.
     add-admin-alert-account-status-notification-handler-request:
       allOf:
       - type: object
         properties:
           handlerName:
-            description: Name of the new Account Status Notification Handler
             type: string
-        required:
-        - handlerName
+            description: >-
+                Name of the new Account Status Notification Handler
       - $ref: '#/components/schemas/admin-alert-account-status-notification-handler-shared'
+      required:
+      - handlerName
     admin-alert-account-status-notification-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Account Status Notification Handler
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Account Status Notification Handler
       - $ref: '#/components/schemas/admin-alert-account-status-notification-handler-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     admin-alert-account-status-notification-handler-shared:
       type: object
       properties:
@@ -398,22 +425,24 @@ components:
       - type: object
         properties:
           handlerName:
-            description: Name of the new Account Status Notification Handler
             type: string
-        required:
-        - handlerName
+            description: >-
+                Name of the new Account Status Notification Handler
       - $ref: '#/components/schemas/error-log-account-status-notification-handler-shared'
+      required:
+      - handlerName
     error-log-account-status-notification-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Account Status Notification Handler
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Account Status Notification Handler
       - $ref: '#/components/schemas/error-log-account-status-notification-handler-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     error-log-account-status-notification-handler-shared:
       type: object
       properties:
@@ -460,22 +489,24 @@ components:
       - type: object
         properties:
           handlerName:
-            description: Name of the new Account Status Notification Handler
             type: string
-        required:
-        - handlerName
+            description: >-
+                Name of the new Account Status Notification Handler
       - $ref: '#/components/schemas/multi-part-email-account-status-notification-handler-shared'
+      required:
+      - handlerName
     multi-part-email-account-status-notification-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Account Status Notification Handler
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Account Status Notification Handler
       - $ref: '#/components/schemas/multi-part-email-account-status-notification-handler-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     multi-part-email-account-status-notification-handler-shared:
       type: object
       properties:
@@ -585,22 +616,24 @@ components:
       - type: object
         properties:
           handlerName:
-            description: Name of the new Account Status Notification Handler
             type: string
-        required:
-        - handlerName
+            description: >-
+                Name of the new Account Status Notification Handler
       - $ref: '#/components/schemas/third-party-account-status-notification-handler-shared'
+      required:
+      - handlerName
     third-party-account-status-notification-handler-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Account Status Notification Handler
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Account Status Notification Handler
       - $ref: '#/components/schemas/third-party-account-status-notification-handler-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     third-party-account-status-notification-handler-shared:
       type: object
       properties:
@@ -648,28 +681,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:account-status-notification-handler:third-party"
-    Enumaccount-status-notification-handler-accountStatusNotificationTypeProp:
-      type: string
-      enum:
-      - "account-temporarily-locked"
-      - "account-permanently-locked"
-      - "account-unlocked"
-      - "account-idle-locked"
-      - "account-reset-locked"
-      - "account-disabled"
-      - "account-enabled"
-      - "account-not-yet-active"
-      - "account-expired"
-      - "password-expired"
-      - "password-expiring"
-      - "password-reset"
-      - "password-changed"
-      - "account-created"
-      - "account-updated"
-      - "bind-password-failed-validation"
-      - "must-change-password"
-      description: >-
-          The types of account status notifications that should result in administrative alerts.
     updateRequest:
       type: object
       properties:

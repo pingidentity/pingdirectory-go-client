@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access log-rotation-policies
   name: log-rotation-policy
@@ -158,22 +158,24 @@ components:
       - type: object
         properties:
           policyName:
-            description: Name of the new Log Rotation Policy
             type: string
-        required:
-        - policyName
+            description: >-
+                Name of the new Log Rotation Policy
       - $ref: '#/components/schemas/time-limit-log-rotation-policy-shared'
+      required:
+      - policyName
     time-limit-log-rotation-policy-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Rotation Policy
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Rotation Policy
       - $ref: '#/components/schemas/time-limit-log-rotation-policy-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     time-limit-log-rotation-policy-shared:
       type: object
       properties:
@@ -203,22 +205,24 @@ components:
       - type: object
         properties:
           policyName:
-            description: Name of the new Log Rotation Policy
             type: string
-        required:
-        - policyName
+            description: >-
+                Name of the new Log Rotation Policy
       - $ref: '#/components/schemas/fixed-time-log-rotation-policy-shared'
+      required:
+      - policyName
     fixed-time-log-rotation-policy-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Rotation Policy
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Rotation Policy
       - $ref: '#/components/schemas/fixed-time-log-rotation-policy-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     fixed-time-log-rotation-policy-shared:
       type: object
       properties:
@@ -250,22 +254,24 @@ components:
       - type: object
         properties:
           policyName:
-            description: Name of the new Log Rotation Policy
             type: string
-        required:
-        - policyName
+            description: >-
+                Name of the new Log Rotation Policy
       - $ref: '#/components/schemas/never-rotate-log-rotation-policy-shared'
+      required:
+      - policyName
     never-rotate-log-rotation-policy-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Rotation Policy
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Rotation Policy
       - $ref: '#/components/schemas/never-rotate-log-rotation-policy-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     never-rotate-log-rotation-policy-shared:
       type: object
       properties:
@@ -290,22 +296,24 @@ components:
       - type: object
         properties:
           policyName:
-            description: Name of the new Log Rotation Policy
             type: string
-        required:
-        - policyName
+            description: >-
+                Name of the new Log Rotation Policy
       - $ref: '#/components/schemas/size-limit-log-rotation-policy-shared'
+      required:
+      - policyName
     size-limit-log-rotation-policy-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log Rotation Policy
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log Rotation Policy
       - $ref: '#/components/schemas/size-limit-log-rotation-policy-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     size-limit-log-rotation-policy-shared:
       type: object
       properties:

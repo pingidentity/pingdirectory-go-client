@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access id-token-validators
   name: id-token-validator
@@ -320,23 +320,24 @@ components:
       - type: object
         properties:
           validatorName:
-            description: Name of the new ID Token Validator
             type: string
-        required:
-        - validatorName
+            description: >-
+                Name of the new ID Token Validator
       - $ref: '#/components/schemas/ping-one-id-token-validator-shared'
+      required:
+      - validatorName
     ping-one-id-token-validator-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the ID Token Validator
             type: string
-        required:
-        - id
+            description: >-
+                Name of the ID Token Validator
       - $ref: '#/components/schemas/ping-one-id-token-validator-shared'
+      - $ref: '#/components/schemas/meta'
       required:
+      - id
       - OpenIDConnectProvider
     ping-one-id-token-validator-shared:
       type: object
@@ -397,27 +398,40 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:id-token-validator:ping-one"
+    Enumid-token-validator-allowedSigningAlgorithmProp:
+      type: string
+      enum:
+      - "RS256"
+      - "RS384"
+      - "RS512"
+      - "ES256"
+      - "ES384"
+      - "ES512"
+      description: >-
+          Specifies an allow list of JWT signing algorithms that will be accepted by the OpenID Connect ID Token Validator.
     add-openid-connect-id-token-validator-request:
       allOf:
       - type: object
         properties:
           validatorName:
-            description: Name of the new ID Token Validator
             type: string
-        required:
-        - validatorName
+            description: >-
+                Name of the new ID Token Validator
       - $ref: '#/components/schemas/openid-connect-id-token-validator-shared'
+      required:
+      - validatorName
     openid-connect-id-token-validator-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the ID Token Validator
             type: string
-        required:
-        - id
+            description: >-
+                Name of the ID Token Validator
       - $ref: '#/components/schemas/openid-connect-id-token-validator-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     openid-connect-id-token-validator-shared:
       type: object
       properties:
@@ -493,22 +507,24 @@ components:
       - type: object
         properties:
           validationName:
-            description: Name of the new Token Claim Validation
             type: string
-        required:
-        - validationName
+            description: >-
+                Name of the new Token Claim Validation
       - $ref: '#/components/schemas/string-array-token-claim-validation-shared'
+      required:
+      - validationName
     string-array-token-claim-validation-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Token Claim Validation
             type: string
-        required:
-        - id
+            description: >-
+                Name of the ID Token Validator
       - $ref: '#/components/schemas/string-array-token-claim-validation-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     string-array-token-claim-validation-shared:
       type: object
       properties:
@@ -545,27 +561,36 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:token-claim-validation:string-array"
+    Enumtoken-claim-validation-requiredValueProp:
+      type: string
+      enum:
+      - "true"
+      - "false"
+      description: >-
+          Specifies the boolean claim's required value.
     add-boolean-token-claim-validation-request:
       allOf:
       - type: object
         properties:
           validationName:
-            description: Name of the new Token Claim Validation
             type: string
-        required:
-        - validationName
+            description: >-
+                Name of the new Token Claim Validation
       - $ref: '#/components/schemas/boolean-token-claim-validation-shared'
+      required:
+      - validationName
     boolean-token-claim-validation-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Token Claim Validation
             type: string
-        required:
-        - id
+            description: >-
+                Name of the ID Token Validator
       - $ref: '#/components/schemas/boolean-token-claim-validation-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     boolean-token-claim-validation-shared:
       type: object
       properties:
@@ -598,22 +623,24 @@ components:
       - type: object
         properties:
           validationName:
-            description: Name of the new Token Claim Validation
             type: string
-        required:
-        - validationName
+            description: >-
+                Name of the new Token Claim Validation
       - $ref: '#/components/schemas/string-token-claim-validation-shared'
+      required:
+      - validationName
     string-token-claim-validation-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Token Claim Validation
             type: string
-        required:
-        - id
+            description: >-
+                Name of the ID Token Validator
       - $ref: '#/components/schemas/string-token-claim-validation-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     string-token-claim-validation-shared:
       type: object
       properties:
@@ -645,24 +672,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:token-claim-validation:string"
-    Enumid-token-validator-allowedSigningAlgorithmProp:
-      type: string
-      enum:
-      - "RS256"
-      - "RS384"
-      - "RS512"
-      - "ES256"
-      - "ES384"
-      - "ES512"
-      description: >-
-          Specifies an allow list of JWT signing algorithms that will be accepted by the OpenID Connect ID Token Validator.
-    Enumtoken-claim-validation-requiredValueProp:
-      type: string
-      enum:
-      - "true"
-      - "false"
-      description: >-
-          Specifies the boolean claim's required value.
     updateRequest:
       type: object
       properties:

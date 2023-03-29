@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access log-file-rotation-listeners
   name: log-file-rotation-listener
@@ -154,22 +154,24 @@ components:
       - type: object
         properties:
           listenerName:
-            description: Name of the new Log File Rotation Listener
             type: string
-        required:
-        - listenerName
+            description: >-
+                Name of the new Log File Rotation Listener
       - $ref: '#/components/schemas/summarize-log-file-rotation-listener-shared'
+      required:
+      - listenerName
     summarize-log-file-rotation-listener-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log File Rotation Listener
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log File Rotation Listener
       - $ref: '#/components/schemas/summarize-log-file-rotation-listener-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     summarize-log-file-rotation-listener-shared:
       type: object
       properties:
@@ -203,22 +205,24 @@ components:
       - type: object
         properties:
           listenerName:
-            description: Name of the new Log File Rotation Listener
             type: string
-        required:
-        - listenerName
+            description: >-
+                Name of the new Log File Rotation Listener
       - $ref: '#/components/schemas/copy-log-file-rotation-listener-shared'
+      required:
+      - listenerName
     copy-log-file-rotation-listener-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log File Rotation Listener
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log File Rotation Listener
       - $ref: '#/components/schemas/copy-log-file-rotation-listener-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     copy-log-file-rotation-listener-shared:
       type: object
       properties:
@@ -257,22 +261,24 @@ components:
       - type: object
         properties:
           listenerName:
-            description: Name of the new Log File Rotation Listener
             type: string
-        required:
-        - listenerName
+            description: >-
+                Name of the new Log File Rotation Listener
       - $ref: '#/components/schemas/third-party-log-file-rotation-listener-shared'
+      required:
+      - listenerName
     third-party-log-file-rotation-listener-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Log File Rotation Listener
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Log File Rotation Listener
       - $ref: '#/components/schemas/third-party-log-file-rotation-listener-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     third-party-log-file-rotation-listener-shared:
       type: object
       properties:

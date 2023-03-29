@@ -19,9 +19,7 @@ var _ MappedNullable = &UnboundidCertificatePlusPasswordSaslMechanismHandlerResp
 
 // UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse struct for UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse
 type UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse struct {
-	Meta                                          *MetaMeta                                                           `json:"meta,omitempty"`
-	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20                  `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas                                       []EnumunboundidCertificatePlusPasswordSaslMechanismHandlerSchemaUrn `json:"schemas"`
+	Schemas []EnumunboundidCertificatePlusPasswordSaslMechanismHandlerSchemaUrn `json:"schemas"`
 	// Name of the SASL Mechanism Handler
 	Id string `json:"id"`
 	// The certificate mapper that will be used to identify the target user based on the certificate that was presented to the server.
@@ -29,7 +27,9 @@ type UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse struct {
 	// A description for this SASL Mechanism Handler
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the SASL mechanism handler is enabled for use.
-	Enabled bool `json:"enabled"`
+	Enabled                                       bool                                               `json:"enabled"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 }
 
 // NewUnboundidCertificatePlusPasswordSaslMechanismHandlerResponse instantiates a new UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse object
@@ -51,70 +51,6 @@ func NewUnboundidCertificatePlusPasswordSaslMechanismHandlerResponse(schemas []E
 func NewUnboundidCertificatePlusPasswordSaslMechanismHandlerResponseWithDefaults() *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse {
 	this := UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse{}
 	return &this
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) GetMeta() MetaMeta {
-	if o == nil || IsNil(o.Meta) {
-		var ret MetaMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || IsNil(o.Meta) {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// HasMeta returns a boolean if a field has been set.
-func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) HasMeta() bool {
-	if o != nil && !IsNil(o.Meta) {
-		return true
-	}
-
-	return false
-}
-
-// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
-func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) SetMeta(v MetaMeta) {
-	o.Meta = &v
-}
-
-// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
-func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		var ret MetaUrnPingidentitySchemasConfigurationMessages20
-		return ret
-	}
-	return *o.Urnpingidentityschemasconfigurationmessages20
-}
-
-// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		return nil, false
-	}
-	return o.Urnpingidentityschemasconfigurationmessages20, true
-}
-
-// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
-func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		return true
-	}
-
-	return false
-}
-
-// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
-func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
-	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
 // GetSchemas returns the Schemas field value
@@ -245,6 +181,70 @@ func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) SetEnable
 	o.Enabled = v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) GetMeta() MetaMeta {
+	if o == nil || IsNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || IsNil(o.Meta) {
+		return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) HasMeta() bool {
+	if o != nil && !IsNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
+func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		var ret MetaUrnPingidentitySchemasConfigurationMessages20
+		return ret
+	}
+	return *o.Urnpingidentityschemasconfigurationmessages20
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return nil, false
+	}
+	return o.Urnpingidentityschemasconfigurationmessages20, true
+}
+
+// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
+func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
+	o.Urnpingidentityschemasconfigurationmessages20 = &v
+}
+
 func (o UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -255,12 +255,6 @@ func (o UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) MarshalJSO
 
 func (o UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
 	toSerialize["schemas"] = o.Schemas
 	toSerialize["id"] = o.Id
 	toSerialize["certificateMapper"] = o.CertificateMapper
@@ -268,6 +262,12 @@ func (o UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) ToMap() (m
 		toSerialize["description"] = o.Description
 	}
 	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
 	return toSerialize, nil
 }
 

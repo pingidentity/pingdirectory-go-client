@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access entry-caches
   name: entry-cache
@@ -142,22 +142,24 @@ components:
       - type: object
         properties:
           cacheName:
-            description: Name of the new Entry Cache
             type: string
-        required:
-        - cacheName
+            description: >-
+                Name of the new Entry Cache
       - $ref: '#/components/schemas/fifo-entry-cache-shared'
+      required:
+      - cacheName
     fifo-entry-cache-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Entry Cache
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Entry Cache
       - $ref: '#/components/schemas/fifo-entry-cache-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     fifo-entry-cache-shared:
       type: object
       properties:

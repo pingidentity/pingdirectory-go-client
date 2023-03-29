@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
 tags:
 - description: Access monitor-providers
   name: monitor-provider
@@ -164,7 +164,6 @@ components:
   schemas:
     general-monitor-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -174,8 +173,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumgeneral-monitor-providerSchemaUrn'
           id:
-            description: Name of the Monitor Provider
             type: string
+            description: >-
+                Name of the Monitor Provider
           description:
             type: string
             description: >-
@@ -184,17 +184,17 @@ components:
             type: boolean
             description: >-
                 Indicates whether the Monitor Provider is enabled for use.
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumgeneral-monitor-providerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:general"
     memory-usage-monitor-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -204,8 +204,9 @@ components:
             items:
               $ref: '#/components/schemas/Enummemory-usage-monitor-providerSchemaUrn'
           id:
-            description: Name of the Monitor Provider
             type: string
+            description: >-
+                Name of the Monitor Provider
           description:
             type: string
             description: >-
@@ -214,17 +215,17 @@ components:
             type: boolean
             description: >-
                 Indicates whether the Monitor Provider is enabled for use.
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enummemory-usage-monitor-providerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:memory-usage"
     stack-trace-monitor-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -234,8 +235,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumstack-trace-monitor-providerSchemaUrn'
           id:
-            description: Name of the Monitor Provider
             type: string
+            description: >-
+                Name of the Monitor Provider
           description:
             type: string
             description: >-
@@ -244,17 +246,17 @@ components:
             type: boolean
             description: >-
                 Indicates whether the Monitor Provider is enabled for use.
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumstack-trace-monitor-providerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:stack-trace"
     disk-space-usage-monitor-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -264,8 +266,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumdisk-space-usage-monitor-providerSchemaUrn'
           id:
-            description: Name of the Monitor Provider
             type: string
+            description: >-
+                Name of the Monitor Provider
           lowSpaceWarningSizeThreshold:
             type: string
             description: >-
@@ -302,18 +305,18 @@ components:
             type: boolean
             description: >-
                 Indicates whether the Monitor Provider is enabled for use.
-        required:
-        - schemas
-        - alertFrequency
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - alertFrequency
+      - enabled
     Enumdisk-space-usage-monitor-providerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:disk-space-usage"
     system-info-monitor-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -323,8 +326,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumsystem-info-monitor-providerSchemaUrn'
           id:
-            description: Name of the Monitor Provider
             type: string
+            description: >-
+                Name of the Monitor Provider
           description:
             type: string
             description: >-
@@ -333,17 +337,17 @@ components:
             type: boolean
             description: >-
                 Indicates whether the Monitor Provider is enabled for use.
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumsystem-info-monitor-providerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:system-info"
     custom-monitor-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -353,8 +357,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumcustom-monitor-providerSchemaUrn'
           id:
-            description: Name of the Monitor Provider
             type: string
+            description: >-
+                Name of the Monitor Provider
           description:
             type: string
             description: >-
@@ -363,17 +368,17 @@ components:
             type: boolean
             description: >-
                 Indicates whether the Monitor Provider is enabled for use.
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumcustom-monitor-providerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:custom"
     active-operations-monitor-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -383,8 +388,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumactive-operations-monitor-providerSchemaUrn'
           id:
-            description: Name of the Monitor Provider
             type: string
+            description: >-
+                Name of the Monitor Provider
           description:
             type: string
             description: >-
@@ -393,17 +399,17 @@ components:
             type: boolean
             description: >-
                 Indicates whether the Monitor Provider is enabled for use.
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumactive-operations-monitor-providerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:active-operations"
     ssl-context-monitor-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -413,8 +419,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumssl-context-monitor-providerSchemaUrn'
           id:
-            description: Name of the Monitor Provider
             type: string
+            description: >-
+                Name of the Monitor Provider
           description:
             type: string
             description: >-
@@ -423,17 +430,17 @@ components:
             type: boolean
             description: >-
                 Indicates whether the Monitor Provider is enabled for use.
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumssl-context-monitor-providerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:ssl-context"
     client-connection-monitor-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -443,8 +450,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumclient-connection-monitor-providerSchemaUrn'
           id:
-            description: Name of the Monitor Provider
             type: string
+            description: >-
+                Name of the Monitor Provider
           description:
             type: string
             description: >-
@@ -453,17 +461,17 @@ components:
             type: boolean
             description: >-
                 Indicates whether the Monitor Provider is enabled for use.
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumclient-connection-monitor-providerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:client-connection"
     version-monitor-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -473,8 +481,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumversion-monitor-providerSchemaUrn'
           id:
-            description: Name of the Monitor Provider
             type: string
+            description: >-
+                Name of the Monitor Provider
           description:
             type: string
             description: >-
@@ -483,17 +492,17 @@ components:
             type: boolean
             description: >-
                 Indicates whether the Monitor Provider is enabled for use.
-        required:
-        - schemas
-        - enabled
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
     Enumversion-monitor-providerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:version"
     host-system-monitor-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           schemas:
@@ -503,8 +512,9 @@ components:
             items:
               $ref: '#/components/schemas/Enumhost-system-monitor-providerSchemaUrn'
           id:
-            description: Name of the Monitor Provider
             type: string
+            description: >-
+                Name of the Monitor Provider
           enabled:
             type: boolean
             description: >-
@@ -529,11 +539,12 @@ components:
             type: string
             description: >-
                 A description for this Monitor Provider
-        required:
-        - schemas
-        - enabled
-        - systemUtilizationMonitorLogDirectory
-        - id
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
+      - systemUtilizationMonitorLogDirectory
     Enumhost-system-monitor-providerSchemaUrn:
       type: string
       enum:
@@ -543,22 +554,24 @@ components:
       - type: object
         properties:
           providerName:
-            description: Name of the new Monitor Provider
             type: string
-        required:
-        - providerName
+            description: >-
+                Name of the new Monitor Provider
       - $ref: '#/components/schemas/third-party-monitor-provider-shared'
+      required:
+      - providerName
     third-party-monitor-provider-response:
       allOf:
-      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
-            description: Name of the Monitor Provider
             type: string
-        required:
-        - id
+            description: >-
+                Name of the Monitor Provider
       - $ref: '#/components/schemas/third-party-monitor-provider-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
     third-party-monitor-provider-shared:
       type: object
       properties:
