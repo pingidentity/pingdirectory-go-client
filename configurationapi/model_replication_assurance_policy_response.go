@@ -27,7 +27,7 @@ type ReplicationAssurancePolicyResponse struct {
 	// Indicates whether this Replication Assurance Policy is enabled for use in the server. If a Replication Assurance Policy is disabled, then no new operations will be associated with it.
 	Enabled bool `json:"enabled"`
 	// When multiple Replication Assurance Policies are defined, this property determines the evaluation order for finding a Replication Assurance Policy match against an operation. Policies are evaluated based on this index from least to greatest. Values of this property must be unique but not necessarily contiguous.
-	EvaluationOrderIndex int32                                         `json:"evaluationOrderIndex"`
+	EvaluationOrderIndex int64                                         `json:"evaluationOrderIndex"`
 	LocalLevel           EnumreplicationAssurancePolicyLocalLevelProp  `json:"localLevel"`
 	RemoteLevel          EnumreplicationAssurancePolicyRemoteLevelProp `json:"remoteLevel"`
 	// Specifies the maximum length of time to wait for the replication assurance requirements to be met before timing out and replying to the client.
@@ -44,7 +44,7 @@ type ReplicationAssurancePolicyResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewReplicationAssurancePolicyResponse(id string, enabled bool, evaluationOrderIndex int32, localLevel EnumreplicationAssurancePolicyLocalLevelProp, remoteLevel EnumreplicationAssurancePolicyRemoteLevelProp, timeout string) *ReplicationAssurancePolicyResponse {
+func NewReplicationAssurancePolicyResponse(id string, enabled bool, evaluationOrderIndex int64, localLevel EnumreplicationAssurancePolicyLocalLevelProp, remoteLevel EnumreplicationAssurancePolicyRemoteLevelProp, timeout string) *ReplicationAssurancePolicyResponse {
 	this := ReplicationAssurancePolicyResponse{}
 	this.Id = id
 	this.Enabled = enabled
@@ -176,9 +176,9 @@ func (o *ReplicationAssurancePolicyResponse) SetEnabled(v bool) {
 }
 
 // GetEvaluationOrderIndex returns the EvaluationOrderIndex field value
-func (o *ReplicationAssurancePolicyResponse) GetEvaluationOrderIndex() int32 {
+func (o *ReplicationAssurancePolicyResponse) GetEvaluationOrderIndex() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -187,7 +187,7 @@ func (o *ReplicationAssurancePolicyResponse) GetEvaluationOrderIndex() int32 {
 
 // GetEvaluationOrderIndexOk returns a tuple with the EvaluationOrderIndex field value
 // and a boolean to check if the value has been set.
-func (o *ReplicationAssurancePolicyResponse) GetEvaluationOrderIndexOk() (*int32, bool) {
+func (o *ReplicationAssurancePolicyResponse) GetEvaluationOrderIndexOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -195,7 +195,7 @@ func (o *ReplicationAssurancePolicyResponse) GetEvaluationOrderIndexOk() (*int32
 }
 
 // SetEvaluationOrderIndex sets field value
-func (o *ReplicationAssurancePolicyResponse) SetEvaluationOrderIndex(v int32) {
+func (o *ReplicationAssurancePolicyResponse) SetEvaluationOrderIndex(v int64) {
 	o.EvaluationOrderIndex = v
 }
 

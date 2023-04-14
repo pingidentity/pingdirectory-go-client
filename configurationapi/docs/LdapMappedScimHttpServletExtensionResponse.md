@@ -18,10 +18,10 @@ Name | Type | Description | Notes
 **BaseContextPath** | **string** | The context path to use to access the SCIM interface. The value must start with a forward slash and must represent a valid HTTP context path. | 
 **TemporaryDirectory** | **string** | Specifies the location of the directory that is used to create temporary files containing SCIM request data. | 
 **TemporaryDirectoryPermissions** | **string** | Specifies the permissions that should be applied to the directory that is used to create temporary files. | 
-**MaxResults** | Pointer to **int32** | The maximum number of resources that are returned in a response. | [optional] 
-**BulkMaxOperations** | Pointer to **int32** | The maximum number of operations that are permitted in a bulk request. | [optional] 
+**MaxResults** | Pointer to **int64** | The maximum number of resources that are returned in a response. | [optional] 
+**BulkMaxOperations** | Pointer to **int64** | The maximum number of operations that are permitted in a bulk request. | [optional] 
 **BulkMaxPayloadSize** | Pointer to **string** | The maximum payload size in bytes of a bulk request. | [optional] 
-**BulkMaxConcurrentRequests** | Pointer to **int32** | The maximum number of bulk requests that may be processed concurrently by the server. Any bulk request that would cause this limit to be exceeded is rejected with HTTP status code 503. | [optional] 
+**BulkMaxConcurrentRequests** | Pointer to **int64** | The maximum number of bulk requests that may be processed concurrently by the server. Any bulk request that would cause this limit to be exceeded is rejected with HTTP status code 503. | [optional] 
 **DebugEnabled** | Pointer to **bool** | Enables debug logging of the SCIM SDK. Debug messages will be forwarded to the Directory Server debug logger with the scope of com.unboundid.directory.server.extensions.scim.SCIMHTTPServletExtension. | [optional] 
 **DebugLevel** | [**EnumhttpServletExtensionDebugLevelProp**](EnumhttpServletExtensionDebugLevelProp.md) |  | 
 **DebugType** | [**[]EnumhttpServletExtensionDebugTypeProp**](EnumhttpServletExtensionDebugTypeProp.md) |  | 
@@ -379,20 +379,20 @@ SetTemporaryDirectoryPermissions sets TemporaryDirectoryPermissions field to giv
 
 ### GetMaxResults
 
-`func (o *LdapMappedScimHttpServletExtensionResponse) GetMaxResults() int32`
+`func (o *LdapMappedScimHttpServletExtensionResponse) GetMaxResults() int64`
 
 GetMaxResults returns the MaxResults field if non-nil, zero value otherwise.
 
 ### GetMaxResultsOk
 
-`func (o *LdapMappedScimHttpServletExtensionResponse) GetMaxResultsOk() (*int32, bool)`
+`func (o *LdapMappedScimHttpServletExtensionResponse) GetMaxResultsOk() (*int64, bool)`
 
 GetMaxResultsOk returns a tuple with the MaxResults field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxResults
 
-`func (o *LdapMappedScimHttpServletExtensionResponse) SetMaxResults(v int32)`
+`func (o *LdapMappedScimHttpServletExtensionResponse) SetMaxResults(v int64)`
 
 SetMaxResults sets MaxResults field to given value.
 
@@ -404,20 +404,20 @@ HasMaxResults returns a boolean if a field has been set.
 
 ### GetBulkMaxOperations
 
-`func (o *LdapMappedScimHttpServletExtensionResponse) GetBulkMaxOperations() int32`
+`func (o *LdapMappedScimHttpServletExtensionResponse) GetBulkMaxOperations() int64`
 
 GetBulkMaxOperations returns the BulkMaxOperations field if non-nil, zero value otherwise.
 
 ### GetBulkMaxOperationsOk
 
-`func (o *LdapMappedScimHttpServletExtensionResponse) GetBulkMaxOperationsOk() (*int32, bool)`
+`func (o *LdapMappedScimHttpServletExtensionResponse) GetBulkMaxOperationsOk() (*int64, bool)`
 
 GetBulkMaxOperationsOk returns a tuple with the BulkMaxOperations field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBulkMaxOperations
 
-`func (o *LdapMappedScimHttpServletExtensionResponse) SetBulkMaxOperations(v int32)`
+`func (o *LdapMappedScimHttpServletExtensionResponse) SetBulkMaxOperations(v int64)`
 
 SetBulkMaxOperations sets BulkMaxOperations field to given value.
 
@@ -454,20 +454,20 @@ HasBulkMaxPayloadSize returns a boolean if a field has been set.
 
 ### GetBulkMaxConcurrentRequests
 
-`func (o *LdapMappedScimHttpServletExtensionResponse) GetBulkMaxConcurrentRequests() int32`
+`func (o *LdapMappedScimHttpServletExtensionResponse) GetBulkMaxConcurrentRequests() int64`
 
 GetBulkMaxConcurrentRequests returns the BulkMaxConcurrentRequests field if non-nil, zero value otherwise.
 
 ### GetBulkMaxConcurrentRequestsOk
 
-`func (o *LdapMappedScimHttpServletExtensionResponse) GetBulkMaxConcurrentRequestsOk() (*int32, bool)`
+`func (o *LdapMappedScimHttpServletExtensionResponse) GetBulkMaxConcurrentRequestsOk() (*int64, bool)`
 
 GetBulkMaxConcurrentRequestsOk returns a tuple with the BulkMaxConcurrentRequests field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBulkMaxConcurrentRequests
 
-`func (o *LdapMappedScimHttpServletExtensionResponse) SetBulkMaxConcurrentRequests(v int32)`
+`func (o *LdapMappedScimHttpServletExtensionResponse) SetBulkMaxConcurrentRequests(v int64)`
 
 SetBulkMaxConcurrentRequests sets BulkMaxConcurrentRequests field to given value.
 

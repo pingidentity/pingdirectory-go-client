@@ -31,7 +31,7 @@ type SyslogTextAccessLogPublisherResponse struct {
 	// The application name that will be included in syslog messages that are logged by this Syslog Text Access Log Publisher.
 	SyslogMessageApplicationName *string `json:"syslogMessageApplicationName,omitempty"`
 	// The maximum number of log records that can be stored in the asynchronous queue.
-	QueueSize *int32 `json:"queueSize,omitempty"`
+	QueueSize *int64 `json:"queueSize,omitempty"`
 	// Indicates whether to log information about connections established to the server.
 	LogConnects *bool `json:"logConnects,omitempty"`
 	// Indicates whether to log information about connections that have been closed by the client or terminated by the server.
@@ -95,7 +95,7 @@ type SyslogTextAccessLogPublisherResponse struct {
 	// Indicates whether to log information about the replication change ID.
 	IncludeReplicationChangeID *bool `json:"includeReplicationChangeID,omitempty"`
 	// Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written.
-	MaxStringLength    *int32                                  `json:"maxStringLength,omitempty"`
+	MaxStringLength    *int64                                  `json:"maxStringLength,omitempty"`
 	TimestampPrecision *EnumlogPublisherTimestampPrecisionProp `json:"timestampPrecision,omitempty"`
 	// Indicates whether to use generified version of certain message strings, including diagnostic messages, additional information messages, authentication failure reasons, and disconnect messages. Generified versions of those strings may use placeholders (like %s for a string or %d for an integer) rather than the version of the string with those placeholders replaced with specific values.
 	GenerifyMessageStringsWhenPossible *bool `json:"generifyMessageStringsWhenPossible,omitempty"`
@@ -333,9 +333,9 @@ func (o *SyslogTextAccessLogPublisherResponse) SetSyslogMessageApplicationName(v
 }
 
 // GetQueueSize returns the QueueSize field value if set, zero value otherwise.
-func (o *SyslogTextAccessLogPublisherResponse) GetQueueSize() int32 {
+func (o *SyslogTextAccessLogPublisherResponse) GetQueueSize() int64 {
 	if o == nil || IsNil(o.QueueSize) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.QueueSize
@@ -343,7 +343,7 @@ func (o *SyslogTextAccessLogPublisherResponse) GetQueueSize() int32 {
 
 // GetQueueSizeOk returns a tuple with the QueueSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SyslogTextAccessLogPublisherResponse) GetQueueSizeOk() (*int32, bool) {
+func (o *SyslogTextAccessLogPublisherResponse) GetQueueSizeOk() (*int64, bool) {
 	if o == nil || IsNil(o.QueueSize) {
 		return nil, false
 	}
@@ -359,8 +359,8 @@ func (o *SyslogTextAccessLogPublisherResponse) HasQueueSize() bool {
 	return false
 }
 
-// SetQueueSize gets a reference to the given int32 and assigns it to the QueueSize field.
-func (o *SyslogTextAccessLogPublisherResponse) SetQueueSize(v int32) {
+// SetQueueSize gets a reference to the given int64 and assigns it to the QueueSize field.
+func (o *SyslogTextAccessLogPublisherResponse) SetQueueSize(v int64) {
 	o.QueueSize = &v
 }
 
@@ -1357,9 +1357,9 @@ func (o *SyslogTextAccessLogPublisherResponse) SetIncludeReplicationChangeID(v b
 }
 
 // GetMaxStringLength returns the MaxStringLength field value if set, zero value otherwise.
-func (o *SyslogTextAccessLogPublisherResponse) GetMaxStringLength() int32 {
+func (o *SyslogTextAccessLogPublisherResponse) GetMaxStringLength() int64 {
 	if o == nil || IsNil(o.MaxStringLength) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxStringLength
@@ -1367,7 +1367,7 @@ func (o *SyslogTextAccessLogPublisherResponse) GetMaxStringLength() int32 {
 
 // GetMaxStringLengthOk returns a tuple with the MaxStringLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SyslogTextAccessLogPublisherResponse) GetMaxStringLengthOk() (*int32, bool) {
+func (o *SyslogTextAccessLogPublisherResponse) GetMaxStringLengthOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxStringLength) {
 		return nil, false
 	}
@@ -1383,8 +1383,8 @@ func (o *SyslogTextAccessLogPublisherResponse) HasMaxStringLength() bool {
 	return false
 }
 
-// SetMaxStringLength gets a reference to the given int32 and assigns it to the MaxStringLength field.
-func (o *SyslogTextAccessLogPublisherResponse) SetMaxStringLength(v int32) {
+// SetMaxStringLength gets a reference to the given int64 and assigns it to the MaxStringLength field.
+func (o *SyslogTextAccessLogPublisherResponse) SetMaxStringLength(v int64) {
 	o.MaxStringLength = &v
 }
 

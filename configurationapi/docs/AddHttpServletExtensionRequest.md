@@ -14,10 +14,10 @@ Name | Type | Description | Notes
 **ScriptClass** | **string** | The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted HTTP Servlet Extension. | 
 **ScriptArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Scripted HTTP Servlet Extension. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **BaseContextPath** | **string** | The context path to use to access the SCIM interface. The value must start with a forward slash and must represent a valid HTTP context path. | 
-**AvailableStatusCode** | **int32** | Specifies the HTTP status code that the servlet should return if the server considers itself to be available. | 
-**DegradedStatusCode** | **int32** | Specifies the HTTP status code that the servlet should return if the server considers itself to be degraded. | 
-**UnavailableStatusCode** | **int32** | Specifies the HTTP status code that the servlet should return if the server considers itself to be unavailable. | 
-**OverrideStatusCode** | Pointer to **int32** | Specifies a HTTP status code that the servlet should always return, regardless of the server&#39;s availability. If this value is defined, it will override the availability-based return codes. | [optional] 
+**AvailableStatusCode** | **int64** | Specifies the HTTP status code that the servlet should return if the server considers itself to be available. | 
+**DegradedStatusCode** | **int64** | Specifies the HTTP status code that the servlet should return if the server considers itself to be degraded. | 
+**UnavailableStatusCode** | **int64** | Specifies the HTTP status code that the servlet should return if the server considers itself to be unavailable. | 
+**OverrideStatusCode** | Pointer to **int64** | Specifies a HTTP status code that the servlet should always return, regardless of the server&#39;s availability. If this value is defined, it will override the availability-based return codes. | [optional] 
 **IncludeResponseBody** | Pointer to **bool** | Indicates whether the response should include a body that is a JSON object. | [optional] 
 **AdditionalResponseContents** | Pointer to **string** | A JSON-formatted string containing additional fields to be returned in the response body. For example, an additional-response-contents value of &#39;{ \&quot;key\&quot;: \&quot;value\&quot; }&#39; would add the key and value to the root of the JSON response body. | [optional] 
 **DocumentRootDirectory** | **string** | Specifies the path to the directory on the local filesystem containing the files to be served by this File Server HTTP Servlet Extension. The path must exist, and it must be a directory. | 
@@ -42,10 +42,10 @@ Name | Type | Description | Notes
 **EntityTagLDAPAttribute** | Pointer to **string** | Specifies the LDAP attribute whose value should be used as the entity tag value to enable SCIM resource versioning support. | [optional] 
 **TemporaryDirectory** | Pointer to **string** | Specifies the location of the directory that is used to create temporary files containing SCIM request data. | [optional] 
 **TemporaryDirectoryPermissions** | Pointer to **string** | Specifies the permissions that should be applied to the directory that is used to create temporary files. | [optional] 
-**MaxResults** | Pointer to **int32** | The maximum number of resources that are returned in a response. | [optional] 
-**BulkMaxOperations** | Pointer to **int32** | The maximum number of operations that are permitted in a bulk request. | [optional] 
+**MaxResults** | Pointer to **int64** | The maximum number of resources that are returned in a response. | [optional] 
+**BulkMaxOperations** | Pointer to **int64** | The maximum number of operations that are permitted in a bulk request. | [optional] 
 **BulkMaxPayloadSize** | Pointer to **string** | The maximum payload size in bytes of a bulk request. | [optional] 
-**BulkMaxConcurrentRequests** | Pointer to **int32** | The maximum number of bulk requests that may be processed concurrently by the server. Any bulk request that would cause this limit to be exceeded is rejected with HTTP status code 503. | [optional] 
+**BulkMaxConcurrentRequests** | Pointer to **int64** | The maximum number of bulk requests that may be processed concurrently by the server. Any bulk request that would cause this limit to be exceeded is rejected with HTTP status code 503. | [optional] 
 **DebugEnabled** | Pointer to **bool** | Enables debug logging of the SCIM SDK. Debug messages will be forwarded to the Directory Server debug logger with the scope of com.unboundid.directory.server.extensions.scim.SCIMHTTPServletExtension. | [optional] 
 **DebugLevel** | Pointer to [**EnumhttpServletExtensionDebugLevelProp**](EnumhttpServletExtensionDebugLevelProp.md) |  | [optional] 
 **DebugType** | Pointer to [**[]EnumhttpServletExtensionDebugTypeProp**](EnumhttpServletExtensionDebugTypeProp.md) |  | [optional] 
@@ -57,7 +57,7 @@ Name | Type | Description | Notes
 
 ### NewAddHttpServletExtensionRequest
 
-`func NewAddHttpServletExtensionRequest(extensionName string, schemas []EnumthirdPartyHttpServletExtensionSchemaUrn, scriptClass string, baseContextPath string, availableStatusCode int32, degradedStatusCode int32, unavailableStatusCode int32, documentRootDirectory string, extensionClass string, ) *AddHttpServletExtensionRequest`
+`func NewAddHttpServletExtensionRequest(extensionName string, schemas []EnumthirdPartyHttpServletExtensionSchemaUrn, scriptClass string, baseContextPath string, availableStatusCode int64, degradedStatusCode int64, unavailableStatusCode int64, documentRootDirectory string, extensionClass string, ) *AddHttpServletExtensionRequest`
 
 NewAddHttpServletExtensionRequest instantiates a new AddHttpServletExtensionRequest object
 This constructor will assign default values to properties that have it defined,
@@ -304,80 +304,80 @@ SetBaseContextPath sets BaseContextPath field to given value.
 
 ### GetAvailableStatusCode
 
-`func (o *AddHttpServletExtensionRequest) GetAvailableStatusCode() int32`
+`func (o *AddHttpServletExtensionRequest) GetAvailableStatusCode() int64`
 
 GetAvailableStatusCode returns the AvailableStatusCode field if non-nil, zero value otherwise.
 
 ### GetAvailableStatusCodeOk
 
-`func (o *AddHttpServletExtensionRequest) GetAvailableStatusCodeOk() (*int32, bool)`
+`func (o *AddHttpServletExtensionRequest) GetAvailableStatusCodeOk() (*int64, bool)`
 
 GetAvailableStatusCodeOk returns a tuple with the AvailableStatusCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAvailableStatusCode
 
-`func (o *AddHttpServletExtensionRequest) SetAvailableStatusCode(v int32)`
+`func (o *AddHttpServletExtensionRequest) SetAvailableStatusCode(v int64)`
 
 SetAvailableStatusCode sets AvailableStatusCode field to given value.
 
 
 ### GetDegradedStatusCode
 
-`func (o *AddHttpServletExtensionRequest) GetDegradedStatusCode() int32`
+`func (o *AddHttpServletExtensionRequest) GetDegradedStatusCode() int64`
 
 GetDegradedStatusCode returns the DegradedStatusCode field if non-nil, zero value otherwise.
 
 ### GetDegradedStatusCodeOk
 
-`func (o *AddHttpServletExtensionRequest) GetDegradedStatusCodeOk() (*int32, bool)`
+`func (o *AddHttpServletExtensionRequest) GetDegradedStatusCodeOk() (*int64, bool)`
 
 GetDegradedStatusCodeOk returns a tuple with the DegradedStatusCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDegradedStatusCode
 
-`func (o *AddHttpServletExtensionRequest) SetDegradedStatusCode(v int32)`
+`func (o *AddHttpServletExtensionRequest) SetDegradedStatusCode(v int64)`
 
 SetDegradedStatusCode sets DegradedStatusCode field to given value.
 
 
 ### GetUnavailableStatusCode
 
-`func (o *AddHttpServletExtensionRequest) GetUnavailableStatusCode() int32`
+`func (o *AddHttpServletExtensionRequest) GetUnavailableStatusCode() int64`
 
 GetUnavailableStatusCode returns the UnavailableStatusCode field if non-nil, zero value otherwise.
 
 ### GetUnavailableStatusCodeOk
 
-`func (o *AddHttpServletExtensionRequest) GetUnavailableStatusCodeOk() (*int32, bool)`
+`func (o *AddHttpServletExtensionRequest) GetUnavailableStatusCodeOk() (*int64, bool)`
 
 GetUnavailableStatusCodeOk returns a tuple with the UnavailableStatusCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUnavailableStatusCode
 
-`func (o *AddHttpServletExtensionRequest) SetUnavailableStatusCode(v int32)`
+`func (o *AddHttpServletExtensionRequest) SetUnavailableStatusCode(v int64)`
 
 SetUnavailableStatusCode sets UnavailableStatusCode field to given value.
 
 
 ### GetOverrideStatusCode
 
-`func (o *AddHttpServletExtensionRequest) GetOverrideStatusCode() int32`
+`func (o *AddHttpServletExtensionRequest) GetOverrideStatusCode() int64`
 
 GetOverrideStatusCode returns the OverrideStatusCode field if non-nil, zero value otherwise.
 
 ### GetOverrideStatusCodeOk
 
-`func (o *AddHttpServletExtensionRequest) GetOverrideStatusCodeOk() (*int32, bool)`
+`func (o *AddHttpServletExtensionRequest) GetOverrideStatusCodeOk() (*int64, bool)`
 
 GetOverrideStatusCodeOk returns a tuple with the OverrideStatusCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOverrideStatusCode
 
-`func (o *AddHttpServletExtensionRequest) SetOverrideStatusCode(v int32)`
+`func (o *AddHttpServletExtensionRequest) SetOverrideStatusCode(v int64)`
 
 SetOverrideStatusCode sets OverrideStatusCode field to given value.
 
@@ -984,20 +984,20 @@ HasTemporaryDirectoryPermissions returns a boolean if a field has been set.
 
 ### GetMaxResults
 
-`func (o *AddHttpServletExtensionRequest) GetMaxResults() int32`
+`func (o *AddHttpServletExtensionRequest) GetMaxResults() int64`
 
 GetMaxResults returns the MaxResults field if non-nil, zero value otherwise.
 
 ### GetMaxResultsOk
 
-`func (o *AddHttpServletExtensionRequest) GetMaxResultsOk() (*int32, bool)`
+`func (o *AddHttpServletExtensionRequest) GetMaxResultsOk() (*int64, bool)`
 
 GetMaxResultsOk returns a tuple with the MaxResults field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxResults
 
-`func (o *AddHttpServletExtensionRequest) SetMaxResults(v int32)`
+`func (o *AddHttpServletExtensionRequest) SetMaxResults(v int64)`
 
 SetMaxResults sets MaxResults field to given value.
 
@@ -1009,20 +1009,20 @@ HasMaxResults returns a boolean if a field has been set.
 
 ### GetBulkMaxOperations
 
-`func (o *AddHttpServletExtensionRequest) GetBulkMaxOperations() int32`
+`func (o *AddHttpServletExtensionRequest) GetBulkMaxOperations() int64`
 
 GetBulkMaxOperations returns the BulkMaxOperations field if non-nil, zero value otherwise.
 
 ### GetBulkMaxOperationsOk
 
-`func (o *AddHttpServletExtensionRequest) GetBulkMaxOperationsOk() (*int32, bool)`
+`func (o *AddHttpServletExtensionRequest) GetBulkMaxOperationsOk() (*int64, bool)`
 
 GetBulkMaxOperationsOk returns a tuple with the BulkMaxOperations field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBulkMaxOperations
 
-`func (o *AddHttpServletExtensionRequest) SetBulkMaxOperations(v int32)`
+`func (o *AddHttpServletExtensionRequest) SetBulkMaxOperations(v int64)`
 
 SetBulkMaxOperations sets BulkMaxOperations field to given value.
 
@@ -1059,20 +1059,20 @@ HasBulkMaxPayloadSize returns a boolean if a field has been set.
 
 ### GetBulkMaxConcurrentRequests
 
-`func (o *AddHttpServletExtensionRequest) GetBulkMaxConcurrentRequests() int32`
+`func (o *AddHttpServletExtensionRequest) GetBulkMaxConcurrentRequests() int64`
 
 GetBulkMaxConcurrentRequests returns the BulkMaxConcurrentRequests field if non-nil, zero value otherwise.
 
 ### GetBulkMaxConcurrentRequestsOk
 
-`func (o *AddHttpServletExtensionRequest) GetBulkMaxConcurrentRequestsOk() (*int32, bool)`
+`func (o *AddHttpServletExtensionRequest) GetBulkMaxConcurrentRequestsOk() (*int64, bool)`
 
 GetBulkMaxConcurrentRequestsOk returns a tuple with the BulkMaxConcurrentRequests field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBulkMaxConcurrentRequests
 
-`func (o *AddHttpServletExtensionRequest) SetBulkMaxConcurrentRequests(v int32)`
+`func (o *AddHttpServletExtensionRequest) SetBulkMaxConcurrentRequests(v int64)`
 
 SetBulkMaxConcurrentRequests sets BulkMaxConcurrentRequests field to given value.
 

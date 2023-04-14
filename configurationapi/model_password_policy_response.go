@@ -53,7 +53,7 @@ type PasswordPolicyResponse struct {
 	// Specifies the name of the password generator that is used with the associated password policy.
 	PasswordGenerator *string `json:"passwordGenerator,omitempty"`
 	// Specifies the maximum number of former passwords to maintain in the password history.
-	PasswordHistoryCount *int32 `json:"passwordHistoryCount,omitempty"`
+	PasswordHistoryCount *int64 `json:"passwordHistoryCount,omitempty"`
 	// Specifies the maximum length of time that passwords remain in the password history.
 	PasswordHistoryDuration *string `json:"passwordHistoryDuration,omitempty"`
 	// Specifies the minimum length of time after a password change before the user is allowed to change the password again.
@@ -68,11 +68,11 @@ type PasswordPolicyResponse struct {
 	// Indicates whether a user whose password is expired is still allowed to change that password using the password modify extended operation.
 	AllowExpiredPasswordChanges *bool `json:"allowExpiredPasswordChanges,omitempty"`
 	// Specifies the number of grace logins that a user is allowed after the account has expired to allow that user to choose a new password.
-	GraceLoginCount *int32 `json:"graceLoginCount,omitempty"`
+	GraceLoginCount *int64 `json:"graceLoginCount,omitempty"`
 	// Specifies the time by which all users with the associated password policy must change their passwords.
 	RequireChangeByTime *string `json:"requireChangeByTime,omitempty"`
 	// Specifies the maximum number of authentication failures that a user is allowed before the account is locked out.
-	LockoutFailureCount *int32 `json:"lockoutFailureCount,omitempty"`
+	LockoutFailureCount *int64 `json:"lockoutFailureCount,omitempty"`
 	// Specifies the length of time that an account is locked after too many authentication failures.
 	LockoutDuration *string `json:"lockoutDuration,omitempty"`
 	// Specifies the length of time before an authentication failure is no longer counted against a user for the purposes of account lockout.
@@ -100,11 +100,11 @@ type PasswordPolicyResponse struct {
 	// Indicates whether passwords set by administrators are allowed to bypass the password validation process that is required for user password changes.
 	SkipValidationForAdministrators *bool `json:"skipValidationForAdministrators,omitempty"`
 	// The maximum number of successful authentication attempts to include in the recent login history for each account.
-	MaximumRecentLoginHistorySuccessfulAuthenticationCount *int32 `json:"maximumRecentLoginHistorySuccessfulAuthenticationCount,omitempty"`
+	MaximumRecentLoginHistorySuccessfulAuthenticationCount *int64 `json:"maximumRecentLoginHistorySuccessfulAuthenticationCount,omitempty"`
 	// The maximum age of successful authentication attempts to include in the recent login history for each account.
 	MaximumRecentLoginHistorySuccessfulAuthenticationDuration *string `json:"maximumRecentLoginHistorySuccessfulAuthenticationDuration,omitempty"`
 	// The maximum number of failed authentication attempts to include in the recent login history for each account.
-	MaximumRecentLoginHistoryFailedAuthenticationCount *int32 `json:"maximumRecentLoginHistoryFailedAuthenticationCount,omitempty"`
+	MaximumRecentLoginHistoryFailedAuthenticationCount *int64 `json:"maximumRecentLoginHistoryFailedAuthenticationCount,omitempty"`
 	// The maximum age of failed authentication attempts to include in the recent login history for each account.
 	MaximumRecentLoginHistoryFailedAuthenticationDuration *string                                                         `json:"maximumRecentLoginHistoryFailedAuthenticationDuration,omitempty"`
 	RecentLoginHistorySimilarAttemptBehavior              *EnumpasswordPolicyRecentLoginHistorySimilarAttemptBehaviorProp `json:"recentLoginHistorySimilarAttemptBehavior,omitempty"`
@@ -693,9 +693,9 @@ func (o *PasswordPolicyResponse) SetPasswordGenerator(v string) {
 }
 
 // GetPasswordHistoryCount returns the PasswordHistoryCount field value if set, zero value otherwise.
-func (o *PasswordPolicyResponse) GetPasswordHistoryCount() int32 {
+func (o *PasswordPolicyResponse) GetPasswordHistoryCount() int64 {
 	if o == nil || IsNil(o.PasswordHistoryCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.PasswordHistoryCount
@@ -703,7 +703,7 @@ func (o *PasswordPolicyResponse) GetPasswordHistoryCount() int32 {
 
 // GetPasswordHistoryCountOk returns a tuple with the PasswordHistoryCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PasswordPolicyResponse) GetPasswordHistoryCountOk() (*int32, bool) {
+func (o *PasswordPolicyResponse) GetPasswordHistoryCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.PasswordHistoryCount) {
 		return nil, false
 	}
@@ -719,8 +719,8 @@ func (o *PasswordPolicyResponse) HasPasswordHistoryCount() bool {
 	return false
 }
 
-// SetPasswordHistoryCount gets a reference to the given int32 and assigns it to the PasswordHistoryCount field.
-func (o *PasswordPolicyResponse) SetPasswordHistoryCount(v int32) {
+// SetPasswordHistoryCount gets a reference to the given int64 and assigns it to the PasswordHistoryCount field.
+func (o *PasswordPolicyResponse) SetPasswordHistoryCount(v int64) {
 	o.PasswordHistoryCount = &v
 }
 
@@ -949,9 +949,9 @@ func (o *PasswordPolicyResponse) SetAllowExpiredPasswordChanges(v bool) {
 }
 
 // GetGraceLoginCount returns the GraceLoginCount field value if set, zero value otherwise.
-func (o *PasswordPolicyResponse) GetGraceLoginCount() int32 {
+func (o *PasswordPolicyResponse) GetGraceLoginCount() int64 {
 	if o == nil || IsNil(o.GraceLoginCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.GraceLoginCount
@@ -959,7 +959,7 @@ func (o *PasswordPolicyResponse) GetGraceLoginCount() int32 {
 
 // GetGraceLoginCountOk returns a tuple with the GraceLoginCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PasswordPolicyResponse) GetGraceLoginCountOk() (*int32, bool) {
+func (o *PasswordPolicyResponse) GetGraceLoginCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.GraceLoginCount) {
 		return nil, false
 	}
@@ -975,8 +975,8 @@ func (o *PasswordPolicyResponse) HasGraceLoginCount() bool {
 	return false
 }
 
-// SetGraceLoginCount gets a reference to the given int32 and assigns it to the GraceLoginCount field.
-func (o *PasswordPolicyResponse) SetGraceLoginCount(v int32) {
+// SetGraceLoginCount gets a reference to the given int64 and assigns it to the GraceLoginCount field.
+func (o *PasswordPolicyResponse) SetGraceLoginCount(v int64) {
 	o.GraceLoginCount = &v
 }
 
@@ -1013,9 +1013,9 @@ func (o *PasswordPolicyResponse) SetRequireChangeByTime(v string) {
 }
 
 // GetLockoutFailureCount returns the LockoutFailureCount field value if set, zero value otherwise.
-func (o *PasswordPolicyResponse) GetLockoutFailureCount() int32 {
+func (o *PasswordPolicyResponse) GetLockoutFailureCount() int64 {
 	if o == nil || IsNil(o.LockoutFailureCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.LockoutFailureCount
@@ -1023,7 +1023,7 @@ func (o *PasswordPolicyResponse) GetLockoutFailureCount() int32 {
 
 // GetLockoutFailureCountOk returns a tuple with the LockoutFailureCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PasswordPolicyResponse) GetLockoutFailureCountOk() (*int32, bool) {
+func (o *PasswordPolicyResponse) GetLockoutFailureCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.LockoutFailureCount) {
 		return nil, false
 	}
@@ -1039,8 +1039,8 @@ func (o *PasswordPolicyResponse) HasLockoutFailureCount() bool {
 	return false
 }
 
-// SetLockoutFailureCount gets a reference to the given int32 and assigns it to the LockoutFailureCount field.
-func (o *PasswordPolicyResponse) SetLockoutFailureCount(v int32) {
+// SetLockoutFailureCount gets a reference to the given int64 and assigns it to the LockoutFailureCount field.
+func (o *PasswordPolicyResponse) SetLockoutFailureCount(v int64) {
 	o.LockoutFailureCount = &v
 }
 
@@ -1493,9 +1493,9 @@ func (o *PasswordPolicyResponse) SetSkipValidationForAdministrators(v bool) {
 }
 
 // GetMaximumRecentLoginHistorySuccessfulAuthenticationCount returns the MaximumRecentLoginHistorySuccessfulAuthenticationCount field value if set, zero value otherwise.
-func (o *PasswordPolicyResponse) GetMaximumRecentLoginHistorySuccessfulAuthenticationCount() int32 {
+func (o *PasswordPolicyResponse) GetMaximumRecentLoginHistorySuccessfulAuthenticationCount() int64 {
 	if o == nil || IsNil(o.MaximumRecentLoginHistorySuccessfulAuthenticationCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaximumRecentLoginHistorySuccessfulAuthenticationCount
@@ -1503,7 +1503,7 @@ func (o *PasswordPolicyResponse) GetMaximumRecentLoginHistorySuccessfulAuthentic
 
 // GetMaximumRecentLoginHistorySuccessfulAuthenticationCountOk returns a tuple with the MaximumRecentLoginHistorySuccessfulAuthenticationCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PasswordPolicyResponse) GetMaximumRecentLoginHistorySuccessfulAuthenticationCountOk() (*int32, bool) {
+func (o *PasswordPolicyResponse) GetMaximumRecentLoginHistorySuccessfulAuthenticationCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaximumRecentLoginHistorySuccessfulAuthenticationCount) {
 		return nil, false
 	}
@@ -1519,8 +1519,8 @@ func (o *PasswordPolicyResponse) HasMaximumRecentLoginHistorySuccessfulAuthentic
 	return false
 }
 
-// SetMaximumRecentLoginHistorySuccessfulAuthenticationCount gets a reference to the given int32 and assigns it to the MaximumRecentLoginHistorySuccessfulAuthenticationCount field.
-func (o *PasswordPolicyResponse) SetMaximumRecentLoginHistorySuccessfulAuthenticationCount(v int32) {
+// SetMaximumRecentLoginHistorySuccessfulAuthenticationCount gets a reference to the given int64 and assigns it to the MaximumRecentLoginHistorySuccessfulAuthenticationCount field.
+func (o *PasswordPolicyResponse) SetMaximumRecentLoginHistorySuccessfulAuthenticationCount(v int64) {
 	o.MaximumRecentLoginHistorySuccessfulAuthenticationCount = &v
 }
 
@@ -1557,9 +1557,9 @@ func (o *PasswordPolicyResponse) SetMaximumRecentLoginHistorySuccessfulAuthentic
 }
 
 // GetMaximumRecentLoginHistoryFailedAuthenticationCount returns the MaximumRecentLoginHistoryFailedAuthenticationCount field value if set, zero value otherwise.
-func (o *PasswordPolicyResponse) GetMaximumRecentLoginHistoryFailedAuthenticationCount() int32 {
+func (o *PasswordPolicyResponse) GetMaximumRecentLoginHistoryFailedAuthenticationCount() int64 {
 	if o == nil || IsNil(o.MaximumRecentLoginHistoryFailedAuthenticationCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaximumRecentLoginHistoryFailedAuthenticationCount
@@ -1567,7 +1567,7 @@ func (o *PasswordPolicyResponse) GetMaximumRecentLoginHistoryFailedAuthenticatio
 
 // GetMaximumRecentLoginHistoryFailedAuthenticationCountOk returns a tuple with the MaximumRecentLoginHistoryFailedAuthenticationCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PasswordPolicyResponse) GetMaximumRecentLoginHistoryFailedAuthenticationCountOk() (*int32, bool) {
+func (o *PasswordPolicyResponse) GetMaximumRecentLoginHistoryFailedAuthenticationCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaximumRecentLoginHistoryFailedAuthenticationCount) {
 		return nil, false
 	}
@@ -1583,8 +1583,8 @@ func (o *PasswordPolicyResponse) HasMaximumRecentLoginHistoryFailedAuthenticatio
 	return false
 }
 
-// SetMaximumRecentLoginHistoryFailedAuthenticationCount gets a reference to the given int32 and assigns it to the MaximumRecentLoginHistoryFailedAuthenticationCount field.
-func (o *PasswordPolicyResponse) SetMaximumRecentLoginHistoryFailedAuthenticationCount(v int32) {
+// SetMaximumRecentLoginHistoryFailedAuthenticationCount gets a reference to the given int64 and assigns it to the MaximumRecentLoginHistoryFailedAuthenticationCount field.
+func (o *PasswordPolicyResponse) SetMaximumRecentLoginHistoryFailedAuthenticationCount(v int64) {
 	o.MaximumRecentLoginHistoryFailedAuthenticationCount = &v
 }
 

@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **OverrideSeverity** | Pointer to [**EnumgaugeOverrideSeverityProp**](EnumgaugeOverrideSeverityProp.md) |  | [optional] 
 **AlertLevel** | Pointer to [**EnumgaugeAlertLevelProp**](EnumgaugeAlertLevelProp.md) |  | [optional] 
 **UpdateInterval** | Pointer to **string** | The frequency with which this Gauge is updated. | [optional] 
-**SamplesPerUpdateInterval** | Pointer to **int32** | Indicates the number of times the monitor data source value will be collected during the update interval. | [optional] 
+**SamplesPerUpdateInterval** | Pointer to **int64** | Indicates the number of times the monitor data source value will be collected during the update interval. | [optional] 
 **IncludeResource** | Pointer to **[]string** | Specifies set of resources to be monitored. | [optional] 
 **ExcludeResource** | Pointer to **[]string** | Specifies resources to exclude from being monitored. | [optional] 
 **ServerUnavailableSeverityLevel** | Pointer to [**EnumgaugeServerUnavailableSeverityLevelProp**](EnumgaugeServerUnavailableSeverityLevelProp.md) |  | [optional] 
@@ -325,20 +325,20 @@ HasUpdateInterval returns a boolean if a field has been set.
 
 ### GetSamplesPerUpdateInterval
 
-`func (o *IndicatorGaugeResponse) GetSamplesPerUpdateInterval() int32`
+`func (o *IndicatorGaugeResponse) GetSamplesPerUpdateInterval() int64`
 
 GetSamplesPerUpdateInterval returns the SamplesPerUpdateInterval field if non-nil, zero value otherwise.
 
 ### GetSamplesPerUpdateIntervalOk
 
-`func (o *IndicatorGaugeResponse) GetSamplesPerUpdateIntervalOk() (*int32, bool)`
+`func (o *IndicatorGaugeResponse) GetSamplesPerUpdateIntervalOk() (*int64, bool)`
 
 GetSamplesPerUpdateIntervalOk returns a tuple with the SamplesPerUpdateInterval field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSamplesPerUpdateInterval
 
-`func (o *IndicatorGaugeResponse) SetSamplesPerUpdateInterval(v int32)`
+`func (o *IndicatorGaugeResponse) SetSamplesPerUpdateInterval(v int64)`
 
 SetSamplesPerUpdateInterval sets SamplesPerUpdateInterval field to given value.
 

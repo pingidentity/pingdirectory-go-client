@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **TimeInterval** | Pointer to **string** | Specifies the interval at which to check whether the log files need to be rotated. | [optional] 
 **AutoFlush** | Pointer to **bool** | Specifies whether to flush the writer after every log record. | [optional] 
 **Asynchronous** | **bool** | Indicates whether the LDAP SDK Debug Logger will publish records asynchronously. | 
-**QueueSize** | Pointer to **int32** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
+**QueueSize** | Pointer to **int64** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
 **BufferSize** | Pointer to **string** | Specifies the log file buffer size. | [optional] 
 **Append** | Pointer to **bool** | Specifies whether to append to existing log files. | [optional] 
 **RotationPolicy** | **[]string** | The rotation policy to use for the LDAP SDK Debug Logger . | 
@@ -291,20 +291,20 @@ SetAsynchronous sets Asynchronous field to given value.
 
 ### GetQueueSize
 
-`func (o *LdapSdkDebugLoggerResponse) GetQueueSize() int32`
+`func (o *LdapSdkDebugLoggerResponse) GetQueueSize() int64`
 
 GetQueueSize returns the QueueSize field if non-nil, zero value otherwise.
 
 ### GetQueueSizeOk
 
-`func (o *LdapSdkDebugLoggerResponse) GetQueueSizeOk() (*int32, bool)`
+`func (o *LdapSdkDebugLoggerResponse) GetQueueSizeOk() (*int64, bool)`
 
 GetQueueSizeOk returns a tuple with the QueueSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQueueSize
 
-`func (o *LdapSdkDebugLoggerResponse) SetQueueSize(v int32)`
+`func (o *LdapSdkDebugLoggerResponse) SetQueueSize(v int64)`
 
 SetQueueSize sets QueueSize field to given value.
 

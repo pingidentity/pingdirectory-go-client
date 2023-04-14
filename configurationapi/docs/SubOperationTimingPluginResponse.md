@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumsubOperationTimingPluginSchemaUrn**](EnumsubOperationTimingPluginSchemaUrn.md) |  | 
 **PluginType** | [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | 
 **RequestCriteria** | Pointer to **string** | Specifies a set of request criteria used to indicate that only operations for requests matching this criteria should be counted when aggregating timing data. | [optional] 
-**NumMostExpensivePhasesShown** | **int32** | This controls how many of the most expensive phases are included per operation type in the monitor entry. | 
+**NumMostExpensivePhasesShown** | **int64** | This controls how many of the most expensive phases are included per operation type in the monitor entry. | 
 **InvokeForInternalOperations** | Pointer to **bool** | Indicates whether the plug-in should be invoked for internal operations. | [optional] 
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewSubOperationTimingPluginResponse
 
-`func NewSubOperationTimingPluginResponse(id string, schemas []EnumsubOperationTimingPluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, numMostExpensivePhasesShown int32, enabled bool, ) *SubOperationTimingPluginResponse`
+`func NewSubOperationTimingPluginResponse(id string, schemas []EnumsubOperationTimingPluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, numMostExpensivePhasesShown int64, enabled bool, ) *SubOperationTimingPluginResponse`
 
 NewSubOperationTimingPluginResponse instantiates a new SubOperationTimingPluginResponse object
 This constructor will assign default values to properties that have it defined,
@@ -121,20 +121,20 @@ HasRequestCriteria returns a boolean if a field has been set.
 
 ### GetNumMostExpensivePhasesShown
 
-`func (o *SubOperationTimingPluginResponse) GetNumMostExpensivePhasesShown() int32`
+`func (o *SubOperationTimingPluginResponse) GetNumMostExpensivePhasesShown() int64`
 
 GetNumMostExpensivePhasesShown returns the NumMostExpensivePhasesShown field if non-nil, zero value otherwise.
 
 ### GetNumMostExpensivePhasesShownOk
 
-`func (o *SubOperationTimingPluginResponse) GetNumMostExpensivePhasesShownOk() (*int32, bool)`
+`func (o *SubOperationTimingPluginResponse) GetNumMostExpensivePhasesShownOk() (*int64, bool)`
 
 GetNumMostExpensivePhasesShownOk returns a tuple with the NumMostExpensivePhasesShown field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNumMostExpensivePhasesShown
 
-`func (o *SubOperationTimingPluginResponse) SetNumMostExpensivePhasesShown(v int32)`
+`func (o *SubOperationTimingPluginResponse) SetNumMostExpensivePhasesShown(v int64)`
 
 SetNumMostExpensivePhasesShown sets NumMostExpensivePhasesShown field to given value.
 

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | A description for this Local DB Composite Index | [optional] 
 **IndexFilterPattern** | **string** | A filter pattern that identifies which entries to include in the index. | 
 **IndexBaseDNPattern** | Pointer to **string** | An optional base DN pattern that identifies portions of the DIT in which entries to index may exist. | [optional] 
-**IndexEntryLimit** | Pointer to **int32** | The maximum number of entries that any single index key will be allowed to match before the server stops maintaining the ID set for that index key. | [optional] 
+**IndexEntryLimit** | Pointer to **int64** | The maximum number of entries that any single index key will be allowed to match before the server stops maintaining the ID set for that index key. | [optional] 
 **PrimeIndex** | Pointer to **bool** | Indicates whether the server should load the contents of this index into memory when the backend is being opened. | [optional] 
 **PrimeInternalNodesOnly** | Pointer to **bool** | Indicates whether to only prime the internal nodes of the index database, rather than priming both internal and leaf nodes. | [optional] 
 **CacheMode** | Pointer to [**EnumlocalDbCompositeIndexCacheModeProp**](EnumlocalDbCompositeIndexCacheModeProp.md) |  | [optional] 
@@ -150,20 +150,20 @@ HasIndexBaseDNPattern returns a boolean if a field has been set.
 
 ### GetIndexEntryLimit
 
-`func (o *AddLocalDbCompositeIndexRequest) GetIndexEntryLimit() int32`
+`func (o *AddLocalDbCompositeIndexRequest) GetIndexEntryLimit() int64`
 
 GetIndexEntryLimit returns the IndexEntryLimit field if non-nil, zero value otherwise.
 
 ### GetIndexEntryLimitOk
 
-`func (o *AddLocalDbCompositeIndexRequest) GetIndexEntryLimitOk() (*int32, bool)`
+`func (o *AddLocalDbCompositeIndexRequest) GetIndexEntryLimitOk() (*int64, bool)`
 
 GetIndexEntryLimitOk returns a tuple with the IndexEntryLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIndexEntryLimit
 
-`func (o *AddLocalDbCompositeIndexRequest) SetIndexEntryLimit(v int32)`
+`func (o *AddLocalDbCompositeIndexRequest) SetIndexEntryLimit(v int64)`
 
 SetIndexEntryLimit sets IndexEntryLimit field to given value.
 

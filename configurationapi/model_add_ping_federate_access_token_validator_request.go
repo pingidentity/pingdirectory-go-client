@@ -35,7 +35,7 @@ type AddPingFederateAccessTokenValidatorRequest struct {
 	// How often the Access Token Validator should refresh its stored value of the PingFederate server's token introspection endpoint.
 	EndpointCacheRefresh *string `json:"endpointCacheRefresh,omitempty"`
 	// When multiple Ping Federate Access Token Validators are defined for a single Directory Server, this property determines the evaluation order for determining the correct validator class for an access token received by the Directory Server. Values of this property must be unique among all Ping Federate Access Token Validators defined within Directory Server but not necessarily contiguous. Ping Federate Access Token Validators with a smaller value will be evaluated first to determine if they are able to validate the access token.
-	EvaluationOrderIndex *int32 `json:"evaluationOrderIndex,omitempty"`
+	EvaluationOrderIndex *int64 `json:"evaluationOrderIndex,omitempty"`
 	// Specifies the external server that will be used to aid in validating access tokens. In most cases this will be the Authorization Server that minted the token.
 	AuthorizationServer *string `json:"authorizationServer,omitempty"`
 	// Specifies the name of the Identity Mapper that should be used for associating user entries with Bearer token subject names. The claim name from which to obtain the subject (i.e. the currently logged-in user) may be configured using the subject-claim-name property.
@@ -302,9 +302,9 @@ func (o *AddPingFederateAccessTokenValidatorRequest) SetEndpointCacheRefresh(v s
 }
 
 // GetEvaluationOrderIndex returns the EvaluationOrderIndex field value if set, zero value otherwise.
-func (o *AddPingFederateAccessTokenValidatorRequest) GetEvaluationOrderIndex() int32 {
+func (o *AddPingFederateAccessTokenValidatorRequest) GetEvaluationOrderIndex() int64 {
 	if o == nil || IsNil(o.EvaluationOrderIndex) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.EvaluationOrderIndex
@@ -312,7 +312,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetEvaluationOrderIndex() i
 
 // GetEvaluationOrderIndexOk returns a tuple with the EvaluationOrderIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddPingFederateAccessTokenValidatorRequest) GetEvaluationOrderIndexOk() (*int32, bool) {
+func (o *AddPingFederateAccessTokenValidatorRequest) GetEvaluationOrderIndexOk() (*int64, bool) {
 	if o == nil || IsNil(o.EvaluationOrderIndex) {
 		return nil, false
 	}
@@ -328,8 +328,8 @@ func (o *AddPingFederateAccessTokenValidatorRequest) HasEvaluationOrderIndex() b
 	return false
 }
 
-// SetEvaluationOrderIndex gets a reference to the given int32 and assigns it to the EvaluationOrderIndex field.
-func (o *AddPingFederateAccessTokenValidatorRequest) SetEvaluationOrderIndex(v int32) {
+// SetEvaluationOrderIndex gets a reference to the given int64 and assigns it to the EvaluationOrderIndex field.
+func (o *AddPingFederateAccessTokenValidatorRequest) SetEvaluationOrderIndex(v int64) {
 	o.EvaluationOrderIndex = &v
 }
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **string** | Name of the External Server | 
 **Schemas** | [**[]EnumsyslogExternalServerSchemaUrn**](EnumsyslogExternalServerSchemaUrn.md) |  | 
 **ServerHostName** | **string** | The address of the syslog server. | 
-**ServerPort** | Pointer to **int32** | The port on which the syslog server accepts connections. | [optional] 
+**ServerPort** | Pointer to **int64** | The port on which the syslog server accepts connections. | [optional] 
 **TransportMechanism** | [**EnumexternalServerTransportMechanismProp**](EnumexternalServerTransportMechanismProp.md) |  | 
 **ConnectTimeout** | **string** | Specifies the maximum length of time to wait for a connection to be established before giving up and considering the server unavailable. This will only be used when communicating with the syslog server over TCP (with or without TLS encryption). | 
 **MaxConnectionAge** | **string** | The maximum length of time that TCP connections should remain established. This will be ignored for UDP-based connections. A zero duration indicates that no maximum age will be imposed. | 
@@ -97,20 +97,20 @@ SetServerHostName sets ServerHostName field to given value.
 
 ### GetServerPort
 
-`func (o *SyslogExternalServerResponse) GetServerPort() int32`
+`func (o *SyslogExternalServerResponse) GetServerPort() int64`
 
 GetServerPort returns the ServerPort field if non-nil, zero value otherwise.
 
 ### GetServerPortOk
 
-`func (o *SyslogExternalServerResponse) GetServerPortOk() (*int32, bool)`
+`func (o *SyslogExternalServerResponse) GetServerPortOk() (*int64, bool)`
 
 GetServerPortOk returns a tuple with the ServerPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerPort
 
-`func (o *SyslogExternalServerResponse) SetServerPort(v int32)`
+`func (o *SyslogExternalServerResponse) SetServerPort(v int64)`
 
 SetServerPort sets ServerPort field to given value.
 

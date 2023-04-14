@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 **Id** | **string** | Name of the Result Code Map | 
 **Schemas** | Pointer to [**[]EnumresultCodeMapSchemaUrn**](EnumresultCodeMapSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Result Code Map | [optional] 
-**BindAccountLockedResultCode** | Pointer to **int32** | Specifies the result code that should be returned if a bind attempt fails because the user&#39;s account is locked as a result of too many failed authentication attempts. | [optional] 
-**BindMissingUserResultCode** | Pointer to **int32** | Specifies the result code that should be returned if a bind attempt fails because the target user entry does not exist in the server. | [optional] 
-**BindMissingPasswordResultCode** | Pointer to **int32** | Specifies the result code that should be returned if a password-based bind attempt fails because the target user entry does not have a password. | [optional] 
-**ServerErrorResultCode** | Pointer to **int32** | Specifies the result code that should be returned if a generic error occurs within the server. | [optional] 
+**BindAccountLockedResultCode** | Pointer to **int64** | Specifies the result code that should be returned if a bind attempt fails because the user&#39;s account is locked as a result of too many failed authentication attempts. | [optional] 
+**BindMissingUserResultCode** | Pointer to **int64** | Specifies the result code that should be returned if a bind attempt fails because the target user entry does not exist in the server. | [optional] 
+**BindMissingPasswordResultCode** | Pointer to **int64** | Specifies the result code that should be returned if a password-based bind attempt fails because the target user entry does not have a password. | [optional] 
+**ServerErrorResultCode** | Pointer to **int64** | Specifies the result code that should be returned if a generic error occurs within the server. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 
@@ -105,20 +105,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetBindAccountLockedResultCode
 
-`func (o *ResultCodeMapResponse) GetBindAccountLockedResultCode() int32`
+`func (o *ResultCodeMapResponse) GetBindAccountLockedResultCode() int64`
 
 GetBindAccountLockedResultCode returns the BindAccountLockedResultCode field if non-nil, zero value otherwise.
 
 ### GetBindAccountLockedResultCodeOk
 
-`func (o *ResultCodeMapResponse) GetBindAccountLockedResultCodeOk() (*int32, bool)`
+`func (o *ResultCodeMapResponse) GetBindAccountLockedResultCodeOk() (*int64, bool)`
 
 GetBindAccountLockedResultCodeOk returns a tuple with the BindAccountLockedResultCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBindAccountLockedResultCode
 
-`func (o *ResultCodeMapResponse) SetBindAccountLockedResultCode(v int32)`
+`func (o *ResultCodeMapResponse) SetBindAccountLockedResultCode(v int64)`
 
 SetBindAccountLockedResultCode sets BindAccountLockedResultCode field to given value.
 
@@ -130,20 +130,20 @@ HasBindAccountLockedResultCode returns a boolean if a field has been set.
 
 ### GetBindMissingUserResultCode
 
-`func (o *ResultCodeMapResponse) GetBindMissingUserResultCode() int32`
+`func (o *ResultCodeMapResponse) GetBindMissingUserResultCode() int64`
 
 GetBindMissingUserResultCode returns the BindMissingUserResultCode field if non-nil, zero value otherwise.
 
 ### GetBindMissingUserResultCodeOk
 
-`func (o *ResultCodeMapResponse) GetBindMissingUserResultCodeOk() (*int32, bool)`
+`func (o *ResultCodeMapResponse) GetBindMissingUserResultCodeOk() (*int64, bool)`
 
 GetBindMissingUserResultCodeOk returns a tuple with the BindMissingUserResultCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBindMissingUserResultCode
 
-`func (o *ResultCodeMapResponse) SetBindMissingUserResultCode(v int32)`
+`func (o *ResultCodeMapResponse) SetBindMissingUserResultCode(v int64)`
 
 SetBindMissingUserResultCode sets BindMissingUserResultCode field to given value.
 
@@ -155,20 +155,20 @@ HasBindMissingUserResultCode returns a boolean if a field has been set.
 
 ### GetBindMissingPasswordResultCode
 
-`func (o *ResultCodeMapResponse) GetBindMissingPasswordResultCode() int32`
+`func (o *ResultCodeMapResponse) GetBindMissingPasswordResultCode() int64`
 
 GetBindMissingPasswordResultCode returns the BindMissingPasswordResultCode field if non-nil, zero value otherwise.
 
 ### GetBindMissingPasswordResultCodeOk
 
-`func (o *ResultCodeMapResponse) GetBindMissingPasswordResultCodeOk() (*int32, bool)`
+`func (o *ResultCodeMapResponse) GetBindMissingPasswordResultCodeOk() (*int64, bool)`
 
 GetBindMissingPasswordResultCodeOk returns a tuple with the BindMissingPasswordResultCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBindMissingPasswordResultCode
 
-`func (o *ResultCodeMapResponse) SetBindMissingPasswordResultCode(v int32)`
+`func (o *ResultCodeMapResponse) SetBindMissingPasswordResultCode(v int64)`
 
 SetBindMissingPasswordResultCode sets BindMissingPasswordResultCode field to given value.
 
@@ -180,20 +180,20 @@ HasBindMissingPasswordResultCode returns a boolean if a field has been set.
 
 ### GetServerErrorResultCode
 
-`func (o *ResultCodeMapResponse) GetServerErrorResultCode() int32`
+`func (o *ResultCodeMapResponse) GetServerErrorResultCode() int64`
 
 GetServerErrorResultCode returns the ServerErrorResultCode field if non-nil, zero value otherwise.
 
 ### GetServerErrorResultCodeOk
 
-`func (o *ResultCodeMapResponse) GetServerErrorResultCodeOk() (*int32, bool)`
+`func (o *ResultCodeMapResponse) GetServerErrorResultCodeOk() (*int64, bool)`
 
 GetServerErrorResultCodeOk returns a tuple with the ServerErrorResultCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerErrorResultCode
 
-`func (o *ResultCodeMapResponse) SetServerErrorResultCode(v int32)`
+`func (o *ResultCodeMapResponse) SetServerErrorResultCode(v int64)`
 
 SetServerErrorResultCode sets ServerErrorResultCode field to given value.
 

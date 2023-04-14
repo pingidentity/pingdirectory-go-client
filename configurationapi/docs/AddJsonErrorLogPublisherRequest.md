@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **Asynchronous** | Pointer to **bool** | Indicates whether the JSON Error Log Publisher will publish records asynchronously. | [optional] 
 **AutoFlush** | Pointer to **bool** | Specifies whether to flush the writer after every log record. | [optional] 
 **BufferSize** | Pointer to **string** | Specifies the log file buffer size. | [optional] 
-**QueueSize** | Pointer to **int32** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
+**QueueSize** | Pointer to **int64** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
 **TimeInterval** | Pointer to **string** | Specifies the interval at which to check whether the log files need to be rotated. | [optional] 
 **WriteMultiLineMessages** | Pointer to **bool** | Indicates whether the JSON objects should be formatted to span multiple lines with a single element on each line. The multi-line format is potentially more user friendly (if administrators may need to look at the log files), but each message will be larger because of the additional spaces and end-of-line markers. | [optional] 
 **IncludeProductName** | Pointer to **bool** | Indicates whether log messages should include the product name for the Directory Server. | [optional] 
@@ -414,20 +414,20 @@ HasBufferSize returns a boolean if a field has been set.
 
 ### GetQueueSize
 
-`func (o *AddJsonErrorLogPublisherRequest) GetQueueSize() int32`
+`func (o *AddJsonErrorLogPublisherRequest) GetQueueSize() int64`
 
 GetQueueSize returns the QueueSize field if non-nil, zero value otherwise.
 
 ### GetQueueSizeOk
 
-`func (o *AddJsonErrorLogPublisherRequest) GetQueueSizeOk() (*int32, bool)`
+`func (o *AddJsonErrorLogPublisherRequest) GetQueueSizeOk() (*int64, bool)`
 
 GetQueueSizeOk returns a tuple with the QueueSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQueueSize
 
-`func (o *AddJsonErrorLogPublisherRequest) SetQueueSize(v int32)`
+`func (o *AddJsonErrorLogPublisherRequest) SetQueueSize(v int64)`
 
 SetQueueSize sets QueueSize field to given value.
 

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **ScriptClass** | **string** | The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Uncached Attribute Criteria. | 
 **ScriptArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Scripted Uncached Attribute Criteria. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **AttributeType** | **[]string** | Specifies the attribute types for attributes that may be written to the uncached-id2entry database. | 
-**MinValueCount** | Pointer to **int32** | Specifies the minimum number of values that an attribute must have before it will be written into the uncached-id2entry database. | [optional] 
+**MinValueCount** | Pointer to **int64** | Specifies the minimum number of values that an attribute must have before it will be written into the uncached-id2entry database. | [optional] 
 **MinTotalValueSize** | Pointer to **string** | Specifies the minimum total value size (i.e., the sum of the sizes of all values) that an attribute must have before it will be written into the uncached-id2entry database. | [optional] 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Uncached Attribute Criteria. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Uncached Attribute Criteria. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
@@ -187,20 +187,20 @@ SetAttributeType sets AttributeType field to given value.
 
 ### GetMinValueCount
 
-`func (o *AddUncachedAttributeCriteriaRequest) GetMinValueCount() int32`
+`func (o *AddUncachedAttributeCriteriaRequest) GetMinValueCount() int64`
 
 GetMinValueCount returns the MinValueCount field if non-nil, zero value otherwise.
 
 ### GetMinValueCountOk
 
-`func (o *AddUncachedAttributeCriteriaRequest) GetMinValueCountOk() (*int32, bool)`
+`func (o *AddUncachedAttributeCriteriaRequest) GetMinValueCountOk() (*int64, bool)`
 
 GetMinValueCountOk returns a tuple with the MinValueCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinValueCount
 
-`func (o *AddUncachedAttributeCriteriaRequest) SetMinValueCount(v int32)`
+`func (o *AddUncachedAttributeCriteriaRequest) SetMinValueCount(v int64)`
 
 SetMinValueCount sets MinValueCount field to given value.
 

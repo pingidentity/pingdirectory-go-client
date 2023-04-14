@@ -27,7 +27,7 @@ type AddSnmpAlertHandlerRequest struct {
 	// Specifies the address of the SNMP agent to which traps will be sent.
 	ServerHostName string `json:"serverHostName"`
 	// Specifies the port number of the SNMP agent to which traps will be sent.
-	ServerPort *int32 `json:"serverPort,omitempty"`
+	ServerPort *int64 `json:"serverPort,omitempty"`
 	// Specifies the name of the community to which the traps will be sent.
 	CommunityName *string `json:"communityName,omitempty"`
 	// A description for this Alert Handler
@@ -165,9 +165,9 @@ func (o *AddSnmpAlertHandlerRequest) SetServerHostName(v string) {
 }
 
 // GetServerPort returns the ServerPort field value if set, zero value otherwise.
-func (o *AddSnmpAlertHandlerRequest) GetServerPort() int32 {
+func (o *AddSnmpAlertHandlerRequest) GetServerPort() int64 {
 	if o == nil || IsNil(o.ServerPort) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ServerPort
@@ -175,7 +175,7 @@ func (o *AddSnmpAlertHandlerRequest) GetServerPort() int32 {
 
 // GetServerPortOk returns a tuple with the ServerPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddSnmpAlertHandlerRequest) GetServerPortOk() (*int32, bool) {
+func (o *AddSnmpAlertHandlerRequest) GetServerPortOk() (*int64, bool) {
 	if o == nil || IsNil(o.ServerPort) {
 		return nil, false
 	}
@@ -191,8 +191,8 @@ func (o *AddSnmpAlertHandlerRequest) HasServerPort() bool {
 	return false
 }
 
-// SetServerPort gets a reference to the given int32 and assigns it to the ServerPort field.
-func (o *AddSnmpAlertHandlerRequest) SetServerPort(v int32) {
+// SetServerPort gets a reference to the given int64 and assigns it to the ServerPort field.
+func (o *AddSnmpAlertHandlerRequest) SetServerPort(v int64) {
 	o.ServerPort = &v
 }
 

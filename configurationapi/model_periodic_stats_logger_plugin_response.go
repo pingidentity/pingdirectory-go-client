@@ -33,7 +33,7 @@ type PeriodicStatsLoggerPluginResponse struct {
 	// This property controls whether a value in the output is shown as empty if the value is zero.
 	EmptyInsteadOfZero *bool `json:"emptyInsteadOfZero,omitempty"`
 	// The number of lines to log between logging the header line that summarizes the columns in the table.
-	LinesBetweenHeader      int32                                                     `json:"linesBetweenHeader"`
+	LinesBetweenHeader      int64                                                     `json:"linesBetweenHeader"`
 	IncludedLDAPStat        []EnumpluginIncludedLDAPStatProp                          `json:"includedLDAPStat,omitempty"`
 	IncludedResourceStat    []EnumpluginIncludedResourceStatProp                      `json:"includedResourceStat,omitempty"`
 	HistogramFormat         EnumpluginHistogramFormatProp                             `json:"histogramFormat"`
@@ -74,7 +74,7 @@ type PeriodicStatsLoggerPluginResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPeriodicStatsLoggerPluginResponse(id string, schemas []EnumperiodicStatsLoggerPluginSchemaUrn, logInterval string, collectionInterval string, suppressIfIdle bool, linesBetweenHeader int32, histogramFormat EnumpluginHistogramFormatProp, logFile string, logFilePermissions string, rotationPolicy []string, retentionPolicy []string, enabled bool) *PeriodicStatsLoggerPluginResponse {
+func NewPeriodicStatsLoggerPluginResponse(id string, schemas []EnumperiodicStatsLoggerPluginSchemaUrn, logInterval string, collectionInterval string, suppressIfIdle bool, linesBetweenHeader int64, histogramFormat EnumpluginHistogramFormatProp, logFile string, logFilePermissions string, rotationPolicy []string, retentionPolicy []string, enabled bool) *PeriodicStatsLoggerPluginResponse {
 	this := PeriodicStatsLoggerPluginResponse{}
 	this.Id = id
 	this.Schemas = schemas
@@ -284,9 +284,9 @@ func (o *PeriodicStatsLoggerPluginResponse) SetEmptyInsteadOfZero(v bool) {
 }
 
 // GetLinesBetweenHeader returns the LinesBetweenHeader field value
-func (o *PeriodicStatsLoggerPluginResponse) GetLinesBetweenHeader() int32 {
+func (o *PeriodicStatsLoggerPluginResponse) GetLinesBetweenHeader() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -295,7 +295,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetLinesBetweenHeader() int32 {
 
 // GetLinesBetweenHeaderOk returns a tuple with the LinesBetweenHeader field value
 // and a boolean to check if the value has been set.
-func (o *PeriodicStatsLoggerPluginResponse) GetLinesBetweenHeaderOk() (*int32, bool) {
+func (o *PeriodicStatsLoggerPluginResponse) GetLinesBetweenHeaderOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -303,7 +303,7 @@ func (o *PeriodicStatsLoggerPluginResponse) GetLinesBetweenHeaderOk() (*int32, b
 }
 
 // SetLinesBetweenHeader sets field value
-func (o *PeriodicStatsLoggerPluginResponse) SetLinesBetweenHeader(v int32) {
+func (o *PeriodicStatsLoggerPluginResponse) SetLinesBetweenHeader(v int64) {
 	o.LinesBetweenHeader = v
 }
 

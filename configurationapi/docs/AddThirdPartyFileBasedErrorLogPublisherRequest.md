@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **Asynchronous** | Pointer to **bool** | Indicates whether the Third Party File Based Error Log Publisher will publish records asynchronously. | [optional] 
 **AutoFlush** | Pointer to **bool** | Specifies whether to flush the writer after every log record. | [optional] 
 **BufferSize** | Pointer to **string** | Specifies the log file buffer size. | [optional] 
-**QueueSize** | Pointer to **int32** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
+**QueueSize** | Pointer to **int64** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
 **TimeInterval** | Pointer to **string** | Specifies the interval at which to check whether the log files need to be rotated. | [optional] 
 **DefaultSeverity** | Pointer to [**[]EnumlogPublisherDefaultSeverityProp**](EnumlogPublisherDefaultSeverityProp.md) |  | [optional] 
 **OverrideSeverity** | Pointer to **[]string** | Specifies the override severity levels for the logger based on the category of the messages. | [optional] 
@@ -455,20 +455,20 @@ HasBufferSize returns a boolean if a field has been set.
 
 ### GetQueueSize
 
-`func (o *AddThirdPartyFileBasedErrorLogPublisherRequest) GetQueueSize() int32`
+`func (o *AddThirdPartyFileBasedErrorLogPublisherRequest) GetQueueSize() int64`
 
 GetQueueSize returns the QueueSize field if non-nil, zero value otherwise.
 
 ### GetQueueSizeOk
 
-`func (o *AddThirdPartyFileBasedErrorLogPublisherRequest) GetQueueSizeOk() (*int32, bool)`
+`func (o *AddThirdPartyFileBasedErrorLogPublisherRequest) GetQueueSizeOk() (*int64, bool)`
 
 GetQueueSizeOk returns a tuple with the QueueSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQueueSize
 
-`func (o *AddThirdPartyFileBasedErrorLogPublisherRequest) SetQueueSize(v int32)`
+`func (o *AddThirdPartyFileBasedErrorLogPublisherRequest) SetQueueSize(v int64)`
 
 SetQueueSize sets QueueSize field to given value.
 

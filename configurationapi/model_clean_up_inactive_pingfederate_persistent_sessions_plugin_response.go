@@ -27,13 +27,13 @@ type CleanUpInactivePingfederatePersistentSessionsPluginResponse struct {
 	// This specifies how often the plugin should check for expired data. It also controls the offset of peer servers (see the peer-server-priority-index for more information).
 	PollingInterval string `json:"pollingInterval"`
 	// In a replicated environment, this determines the order in which peer servers should attempt to purge data.
-	PeerServerPriorityIndex *int32 `json:"peerServerPriorityIndex,omitempty"`
+	PeerServerPriorityIndex *int64 `json:"peerServerPriorityIndex,omitempty"`
 	// Only entries located within the subtree specified by this base DN are eligible for purging.
 	BaseDN *string `json:"baseDN,omitempty"`
 	// This setting smooths out the performance impact on the server by throttling the purging to the specified maximum number of updates per second. To avoid a large backlog, this value should be set comfortably above the average rate that expired data is generated. When purge-behavior is set to subtree-delete-entries, then deletion of the entire subtree is considered a single update for the purposes of throttling.
-	MaxUpdatesPerSecond int32 `json:"maxUpdatesPerSecond"`
+	MaxUpdatesPerSecond int64 `json:"maxUpdatesPerSecond"`
 	// The number of threads used to delete expired entries.
-	NumDeleteThreads int32 `json:"numDeleteThreads"`
+	NumDeleteThreads int64 `json:"numDeleteThreads"`
 	// Indicates whether the plug-in is enabled for use.
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -44,7 +44,7 @@ type CleanUpInactivePingfederatePersistentSessionsPluginResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCleanUpInactivePingfederatePersistentSessionsPluginResponse(id string, schemas []EnumcleanUpInactivePingfederatePersistentSessionsPluginSchemaUrn, expirationOffset string, pollingInterval string, maxUpdatesPerSecond int32, numDeleteThreads int32, enabled bool) *CleanUpInactivePingfederatePersistentSessionsPluginResponse {
+func NewCleanUpInactivePingfederatePersistentSessionsPluginResponse(id string, schemas []EnumcleanUpInactivePingfederatePersistentSessionsPluginSchemaUrn, expirationOffset string, pollingInterval string, maxUpdatesPerSecond int64, numDeleteThreads int64, enabled bool) *CleanUpInactivePingfederatePersistentSessionsPluginResponse {
 	this := CleanUpInactivePingfederatePersistentSessionsPluginResponse{}
 	this.Id = id
 	this.Schemas = schemas
@@ -161,9 +161,9 @@ func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) SetPolling
 }
 
 // GetPeerServerPriorityIndex returns the PeerServerPriorityIndex field value if set, zero value otherwise.
-func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) GetPeerServerPriorityIndex() int32 {
+func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) GetPeerServerPriorityIndex() int64 {
 	if o == nil || IsNil(o.PeerServerPriorityIndex) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.PeerServerPriorityIndex
@@ -171,7 +171,7 @@ func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) GetPeerSer
 
 // GetPeerServerPriorityIndexOk returns a tuple with the PeerServerPriorityIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) GetPeerServerPriorityIndexOk() (*int32, bool) {
+func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) GetPeerServerPriorityIndexOk() (*int64, bool) {
 	if o == nil || IsNil(o.PeerServerPriorityIndex) {
 		return nil, false
 	}
@@ -187,8 +187,8 @@ func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) HasPeerSer
 	return false
 }
 
-// SetPeerServerPriorityIndex gets a reference to the given int32 and assigns it to the PeerServerPriorityIndex field.
-func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) SetPeerServerPriorityIndex(v int32) {
+// SetPeerServerPriorityIndex gets a reference to the given int64 and assigns it to the PeerServerPriorityIndex field.
+func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) SetPeerServerPriorityIndex(v int64) {
 	o.PeerServerPriorityIndex = &v
 }
 
@@ -225,9 +225,9 @@ func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) SetBaseDN(
 }
 
 // GetMaxUpdatesPerSecond returns the MaxUpdatesPerSecond field value
-func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) GetMaxUpdatesPerSecond() int32 {
+func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) GetMaxUpdatesPerSecond() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -236,7 +236,7 @@ func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) GetMaxUpda
 
 // GetMaxUpdatesPerSecondOk returns a tuple with the MaxUpdatesPerSecond field value
 // and a boolean to check if the value has been set.
-func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) GetMaxUpdatesPerSecondOk() (*int32, bool) {
+func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) GetMaxUpdatesPerSecondOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -244,14 +244,14 @@ func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) GetMaxUpda
 }
 
 // SetMaxUpdatesPerSecond sets field value
-func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) SetMaxUpdatesPerSecond(v int32) {
+func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) SetMaxUpdatesPerSecond(v int64) {
 	o.MaxUpdatesPerSecond = v
 }
 
 // GetNumDeleteThreads returns the NumDeleteThreads field value
-func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) GetNumDeleteThreads() int32 {
+func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) GetNumDeleteThreads() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -260,7 +260,7 @@ func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) GetNumDele
 
 // GetNumDeleteThreadsOk returns a tuple with the NumDeleteThreads field value
 // and a boolean to check if the value has been set.
-func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) GetNumDeleteThreadsOk() (*int32, bool) {
+func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) GetNumDeleteThreadsOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -268,7 +268,7 @@ func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) GetNumDele
 }
 
 // SetNumDeleteThreads sets field value
-func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) SetNumDeleteThreads(v int32) {
+func (o *CleanUpInactivePingfederatePersistentSessionsPluginResponse) SetNumDeleteThreads(v int64) {
 	o.NumDeleteThreads = v
 }
 

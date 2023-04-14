@@ -13,9 +13,9 @@ Name | Type | Description | Notes
 **Encrypt** | Pointer to **bool** | Indicates whether to encrypt the LDIF data as it exported. | [optional] 
 **EncryptionSettingsDefinitionID** | Pointer to **string** | The ID of an encryption settings definition to use to obtain the LDIF export encryption key. | [optional] 
 **Sign** | Pointer to **bool** | Indicates whether to cryptographically sign the exported data, which will make it possible to detect whether the LDIF data has been altered since it was exported. | [optional] 
-**RetainPreviousLDIFExportCount** | Pointer to **int32** | The minimum number of previous LDIF exports that should be preserved after a new export completes successfully. | [optional] 
+**RetainPreviousLDIFExportCount** | Pointer to **int64** | The minimum number of previous LDIF exports that should be preserved after a new export completes successfully. | [optional] 
 **RetainPreviousLDIFExportAge** | Pointer to **string** | The minimum age of previous LDIF exports that should be preserved after a new export completes successfully. | [optional] 
-**MaxMegabytesPerSecond** | Pointer to **int32** | The maximum rate, in megabytes per second, at which LDIF exports should be written. | [optional] 
+**MaxMegabytesPerSecond** | Pointer to **int64** | The maximum rate, in megabytes per second, at which LDIF exports should be written. | [optional] 
 **Description** | Pointer to **string** | A description for this Recurring Task | [optional] 
 **CancelOnTaskDependencyFailure** | Pointer to **bool** | Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running). | [optional] 
 **EmailOnStart** | Pointer to **[]string** | The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration. | [optional] 
@@ -258,20 +258,20 @@ HasSign returns a boolean if a field has been set.
 
 ### GetRetainPreviousLDIFExportCount
 
-`func (o *LdifExportRecurringTaskResponse) GetRetainPreviousLDIFExportCount() int32`
+`func (o *LdifExportRecurringTaskResponse) GetRetainPreviousLDIFExportCount() int64`
 
 GetRetainPreviousLDIFExportCount returns the RetainPreviousLDIFExportCount field if non-nil, zero value otherwise.
 
 ### GetRetainPreviousLDIFExportCountOk
 
-`func (o *LdifExportRecurringTaskResponse) GetRetainPreviousLDIFExportCountOk() (*int32, bool)`
+`func (o *LdifExportRecurringTaskResponse) GetRetainPreviousLDIFExportCountOk() (*int64, bool)`
 
 GetRetainPreviousLDIFExportCountOk returns a tuple with the RetainPreviousLDIFExportCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRetainPreviousLDIFExportCount
 
-`func (o *LdifExportRecurringTaskResponse) SetRetainPreviousLDIFExportCount(v int32)`
+`func (o *LdifExportRecurringTaskResponse) SetRetainPreviousLDIFExportCount(v int64)`
 
 SetRetainPreviousLDIFExportCount sets RetainPreviousLDIFExportCount field to given value.
 
@@ -308,20 +308,20 @@ HasRetainPreviousLDIFExportAge returns a boolean if a field has been set.
 
 ### GetMaxMegabytesPerSecond
 
-`func (o *LdifExportRecurringTaskResponse) GetMaxMegabytesPerSecond() int32`
+`func (o *LdifExportRecurringTaskResponse) GetMaxMegabytesPerSecond() int64`
 
 GetMaxMegabytesPerSecond returns the MaxMegabytesPerSecond field if non-nil, zero value otherwise.
 
 ### GetMaxMegabytesPerSecondOk
 
-`func (o *LdifExportRecurringTaskResponse) GetMaxMegabytesPerSecondOk() (*int32, bool)`
+`func (o *LdifExportRecurringTaskResponse) GetMaxMegabytesPerSecondOk() (*int64, bool)`
 
 GetMaxMegabytesPerSecondOk returns a tuple with the MaxMegabytesPerSecond field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxMegabytesPerSecond
 
-`func (o *LdifExportRecurringTaskResponse) SetMaxMegabytesPerSecond(v int32)`
+`func (o *LdifExportRecurringTaskResponse) SetMaxMegabytesPerSecond(v int64)`
 
 SetMaxMegabytesPerSecond sets MaxMegabytesPerSecond field to given value.
 

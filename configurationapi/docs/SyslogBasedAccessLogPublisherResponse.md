@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumsyslogBasedAccessLogPublisherSchemaUrn**](EnumsyslogBasedAccessLogPublisherSchemaUrn.md) |  | 
 **Enabled** | **bool** | Indicates whether the Syslog Based Access Log Publisher is enabled for use. | 
 **ServerHostName** | **string** | Specifies the hostname or IP address of the syslogd host to log to. It is highly recommend to use localhost. | 
-**ServerPort** | **int32** | Specifies the port number of the syslogd host to log to. | 
-**SyslogFacility** | **int32** | Specifies the syslog facility to use for this Syslog Based Access Log Publisher | 
-**MaxStringLength** | Pointer to **int32** | Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written. | [optional] 
+**ServerPort** | **int64** | Specifies the port number of the syslogd host to log to. | 
+**SyslogFacility** | **int64** | Specifies the syslog facility to use for this Syslog Based Access Log Publisher | 
+**MaxStringLength** | Pointer to **int64** | Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written. | [optional] 
 **LogConnects** | Pointer to **bool** | Indicates whether to log information about connections established to the server. | [optional] 
 **LogDisconnects** | Pointer to **bool** | Indicates whether to log information about connections that have been closed by the client or terminated by the server. | [optional] 
 **LogRequests** | Pointer to **bool** | Indicates whether to log information about requests received from clients. | [optional] 
@@ -36,7 +36,7 @@ Name | Type | Description | Notes
 **GenerifyMessageStringsWhenPossible** | Pointer to **bool** | Indicates whether to use generified version of certain message strings, including diagnostic messages, additional information messages, authentication failure reasons, and disconnect messages. Generified versions of those strings may use placeholders (like %s for a string or %d for an integer) rather than the version of the string with those placeholders replaced with specific values. | [optional] 
 **Asynchronous** | **bool** | Indicates whether the Writer Based Access Log Publisher will publish records asynchronously. | 
 **AutoFlush** | Pointer to **bool** | Specifies whether to flush the writer after every log record. | [optional] 
-**QueueSize** | Pointer to **int32** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
+**QueueSize** | Pointer to **int64** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
 **LogFieldBehavior** | Pointer to **string** | The behavior to use for determining which fields to log and whether to transform the values of those fields in any way. | [optional] 
 **LogSecurityNegotiation** | Pointer to **bool** | Indicates whether to log information about the result of any security negotiation (e.g., SSL handshake) processing that has been performed. | [optional] 
 **LogClientCertificates** | Pointer to **bool** | Indicates whether to log information about any client certificates presented to the server. | [optional] 
@@ -61,7 +61,7 @@ Name | Type | Description | Notes
 
 ### NewSyslogBasedAccessLogPublisherResponse
 
-`func NewSyslogBasedAccessLogPublisherResponse(id string, schemas []EnumsyslogBasedAccessLogPublisherSchemaUrn, enabled bool, serverHostName string, serverPort int32, syslogFacility int32, asynchronous bool, ) *SyslogBasedAccessLogPublisherResponse`
+`func NewSyslogBasedAccessLogPublisherResponse(id string, schemas []EnumsyslogBasedAccessLogPublisherSchemaUrn, enabled bool, serverHostName string, serverPort int64, syslogFacility int64, asynchronous bool, ) *SyslogBasedAccessLogPublisherResponse`
 
 NewSyslogBasedAccessLogPublisherResponse instantiates a new SyslogBasedAccessLogPublisherResponse object
 This constructor will assign default values to properties that have it defined,
@@ -158,60 +158,60 @@ SetServerHostName sets ServerHostName field to given value.
 
 ### GetServerPort
 
-`func (o *SyslogBasedAccessLogPublisherResponse) GetServerPort() int32`
+`func (o *SyslogBasedAccessLogPublisherResponse) GetServerPort() int64`
 
 GetServerPort returns the ServerPort field if non-nil, zero value otherwise.
 
 ### GetServerPortOk
 
-`func (o *SyslogBasedAccessLogPublisherResponse) GetServerPortOk() (*int32, bool)`
+`func (o *SyslogBasedAccessLogPublisherResponse) GetServerPortOk() (*int64, bool)`
 
 GetServerPortOk returns a tuple with the ServerPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerPort
 
-`func (o *SyslogBasedAccessLogPublisherResponse) SetServerPort(v int32)`
+`func (o *SyslogBasedAccessLogPublisherResponse) SetServerPort(v int64)`
 
 SetServerPort sets ServerPort field to given value.
 
 
 ### GetSyslogFacility
 
-`func (o *SyslogBasedAccessLogPublisherResponse) GetSyslogFacility() int32`
+`func (o *SyslogBasedAccessLogPublisherResponse) GetSyslogFacility() int64`
 
 GetSyslogFacility returns the SyslogFacility field if non-nil, zero value otherwise.
 
 ### GetSyslogFacilityOk
 
-`func (o *SyslogBasedAccessLogPublisherResponse) GetSyslogFacilityOk() (*int32, bool)`
+`func (o *SyslogBasedAccessLogPublisherResponse) GetSyslogFacilityOk() (*int64, bool)`
 
 GetSyslogFacilityOk returns a tuple with the SyslogFacility field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSyslogFacility
 
-`func (o *SyslogBasedAccessLogPublisherResponse) SetSyslogFacility(v int32)`
+`func (o *SyslogBasedAccessLogPublisherResponse) SetSyslogFacility(v int64)`
 
 SetSyslogFacility sets SyslogFacility field to given value.
 
 
 ### GetMaxStringLength
 
-`func (o *SyslogBasedAccessLogPublisherResponse) GetMaxStringLength() int32`
+`func (o *SyslogBasedAccessLogPublisherResponse) GetMaxStringLength() int64`
 
 GetMaxStringLength returns the MaxStringLength field if non-nil, zero value otherwise.
 
 ### GetMaxStringLengthOk
 
-`func (o *SyslogBasedAccessLogPublisherResponse) GetMaxStringLengthOk() (*int32, bool)`
+`func (o *SyslogBasedAccessLogPublisherResponse) GetMaxStringLengthOk() (*int64, bool)`
 
 GetMaxStringLengthOk returns a tuple with the MaxStringLength field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxStringLength
 
-`func (o *SyslogBasedAccessLogPublisherResponse) SetMaxStringLength(v int32)`
+`func (o *SyslogBasedAccessLogPublisherResponse) SetMaxStringLength(v int64)`
 
 SetMaxStringLength sets MaxStringLength field to given value.
 
@@ -843,20 +843,20 @@ HasAutoFlush returns a boolean if a field has been set.
 
 ### GetQueueSize
 
-`func (o *SyslogBasedAccessLogPublisherResponse) GetQueueSize() int32`
+`func (o *SyslogBasedAccessLogPublisherResponse) GetQueueSize() int64`
 
 GetQueueSize returns the QueueSize field if non-nil, zero value otherwise.
 
 ### GetQueueSizeOk
 
-`func (o *SyslogBasedAccessLogPublisherResponse) GetQueueSizeOk() (*int32, bool)`
+`func (o *SyslogBasedAccessLogPublisherResponse) GetQueueSizeOk() (*int64, bool)`
 
 GetQueueSizeOk returns a tuple with the QueueSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQueueSize
 
-`func (o *SyslogBasedAccessLogPublisherResponse) SetQueueSize(v int32)`
+`func (o *SyslogBasedAccessLogPublisherResponse) SetQueueSize(v int64)`
 
 SetQueueSize sets QueueSize field to given value.
 

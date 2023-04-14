@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 **ExtensionName** | **string** | Name of the new HTTP Servlet Extension | 
 **Schemas** | [**[]EnumavailabilityStateHttpServletExtensionSchemaUrn**](EnumavailabilityStateHttpServletExtensionSchemaUrn.md) |  | 
 **BaseContextPath** | **string** | Specifies the base context path that HTTP clients should use to access this servlet. The value must start with a forward slash and must represent a valid HTTP context path. | 
-**AvailableStatusCode** | **int32** | Specifies the HTTP status code that the servlet should return if the server considers itself to be available. | 
-**DegradedStatusCode** | **int32** | Specifies the HTTP status code that the servlet should return if the server considers itself to be degraded. | 
-**UnavailableStatusCode** | **int32** | Specifies the HTTP status code that the servlet should return if the server considers itself to be unavailable. | 
-**OverrideStatusCode** | Pointer to **int32** | Specifies a HTTP status code that the servlet should always return, regardless of the server&#39;s availability. If this value is defined, it will override the availability-based return codes. | [optional] 
+**AvailableStatusCode** | **int64** | Specifies the HTTP status code that the servlet should return if the server considers itself to be available. | 
+**DegradedStatusCode** | **int64** | Specifies the HTTP status code that the servlet should return if the server considers itself to be degraded. | 
+**UnavailableStatusCode** | **int64** | Specifies the HTTP status code that the servlet should return if the server considers itself to be unavailable. | 
+**OverrideStatusCode** | Pointer to **int64** | Specifies a HTTP status code that the servlet should always return, regardless of the server&#39;s availability. If this value is defined, it will override the availability-based return codes. | [optional] 
 **IncludeResponseBody** | Pointer to **bool** | Indicates whether the response should include a body that is a JSON object. | [optional] 
 **AdditionalResponseContents** | Pointer to **string** | A JSON-formatted string containing additional fields to be returned in the response body. For example, an additional-response-contents value of &#39;{ \&quot;key\&quot;: \&quot;value\&quot; }&#39; would add the key and value to the root of the JSON response body. | [optional] 
 **Description** | Pointer to **string** | A description for this HTTP Servlet Extension | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewAddAvailabilityStateHttpServletExtensionRequest
 
-`func NewAddAvailabilityStateHttpServletExtensionRequest(extensionName string, schemas []EnumavailabilityStateHttpServletExtensionSchemaUrn, baseContextPath string, availableStatusCode int32, degradedStatusCode int32, unavailableStatusCode int32, ) *AddAvailabilityStateHttpServletExtensionRequest`
+`func NewAddAvailabilityStateHttpServletExtensionRequest(extensionName string, schemas []EnumavailabilityStateHttpServletExtensionSchemaUrn, baseContextPath string, availableStatusCode int64, degradedStatusCode int64, unavailableStatusCode int64, ) *AddAvailabilityStateHttpServletExtensionRequest`
 
 NewAddAvailabilityStateHttpServletExtensionRequest instantiates a new AddAvailabilityStateHttpServletExtensionRequest object
 This constructor will assign default values to properties that have it defined,
@@ -99,80 +99,80 @@ SetBaseContextPath sets BaseContextPath field to given value.
 
 ### GetAvailableStatusCode
 
-`func (o *AddAvailabilityStateHttpServletExtensionRequest) GetAvailableStatusCode() int32`
+`func (o *AddAvailabilityStateHttpServletExtensionRequest) GetAvailableStatusCode() int64`
 
 GetAvailableStatusCode returns the AvailableStatusCode field if non-nil, zero value otherwise.
 
 ### GetAvailableStatusCodeOk
 
-`func (o *AddAvailabilityStateHttpServletExtensionRequest) GetAvailableStatusCodeOk() (*int32, bool)`
+`func (o *AddAvailabilityStateHttpServletExtensionRequest) GetAvailableStatusCodeOk() (*int64, bool)`
 
 GetAvailableStatusCodeOk returns a tuple with the AvailableStatusCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAvailableStatusCode
 
-`func (o *AddAvailabilityStateHttpServletExtensionRequest) SetAvailableStatusCode(v int32)`
+`func (o *AddAvailabilityStateHttpServletExtensionRequest) SetAvailableStatusCode(v int64)`
 
 SetAvailableStatusCode sets AvailableStatusCode field to given value.
 
 
 ### GetDegradedStatusCode
 
-`func (o *AddAvailabilityStateHttpServletExtensionRequest) GetDegradedStatusCode() int32`
+`func (o *AddAvailabilityStateHttpServletExtensionRequest) GetDegradedStatusCode() int64`
 
 GetDegradedStatusCode returns the DegradedStatusCode field if non-nil, zero value otherwise.
 
 ### GetDegradedStatusCodeOk
 
-`func (o *AddAvailabilityStateHttpServletExtensionRequest) GetDegradedStatusCodeOk() (*int32, bool)`
+`func (o *AddAvailabilityStateHttpServletExtensionRequest) GetDegradedStatusCodeOk() (*int64, bool)`
 
 GetDegradedStatusCodeOk returns a tuple with the DegradedStatusCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDegradedStatusCode
 
-`func (o *AddAvailabilityStateHttpServletExtensionRequest) SetDegradedStatusCode(v int32)`
+`func (o *AddAvailabilityStateHttpServletExtensionRequest) SetDegradedStatusCode(v int64)`
 
 SetDegradedStatusCode sets DegradedStatusCode field to given value.
 
 
 ### GetUnavailableStatusCode
 
-`func (o *AddAvailabilityStateHttpServletExtensionRequest) GetUnavailableStatusCode() int32`
+`func (o *AddAvailabilityStateHttpServletExtensionRequest) GetUnavailableStatusCode() int64`
 
 GetUnavailableStatusCode returns the UnavailableStatusCode field if non-nil, zero value otherwise.
 
 ### GetUnavailableStatusCodeOk
 
-`func (o *AddAvailabilityStateHttpServletExtensionRequest) GetUnavailableStatusCodeOk() (*int32, bool)`
+`func (o *AddAvailabilityStateHttpServletExtensionRequest) GetUnavailableStatusCodeOk() (*int64, bool)`
 
 GetUnavailableStatusCodeOk returns a tuple with the UnavailableStatusCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUnavailableStatusCode
 
-`func (o *AddAvailabilityStateHttpServletExtensionRequest) SetUnavailableStatusCode(v int32)`
+`func (o *AddAvailabilityStateHttpServletExtensionRequest) SetUnavailableStatusCode(v int64)`
 
 SetUnavailableStatusCode sets UnavailableStatusCode field to given value.
 
 
 ### GetOverrideStatusCode
 
-`func (o *AddAvailabilityStateHttpServletExtensionRequest) GetOverrideStatusCode() int32`
+`func (o *AddAvailabilityStateHttpServletExtensionRequest) GetOverrideStatusCode() int64`
 
 GetOverrideStatusCode returns the OverrideStatusCode field if non-nil, zero value otherwise.
 
 ### GetOverrideStatusCodeOk
 
-`func (o *AddAvailabilityStateHttpServletExtensionRequest) GetOverrideStatusCodeOk() (*int32, bool)`
+`func (o *AddAvailabilityStateHttpServletExtensionRequest) GetOverrideStatusCodeOk() (*int64, bool)`
 
 GetOverrideStatusCodeOk returns a tuple with the OverrideStatusCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOverrideStatusCode
 
-`func (o *AddAvailabilityStateHttpServletExtensionRequest) SetOverrideStatusCode(v int32)`
+`func (o *AddAvailabilityStateHttpServletExtensionRequest) SetOverrideStatusCode(v int64)`
 
 SetOverrideStatusCode sets OverrideStatusCode field to given value.
 

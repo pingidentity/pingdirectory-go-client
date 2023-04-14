@@ -27,9 +27,9 @@ type SnmpSubagentPluginResponse struct {
 	// The hostname or IP address of the SNMP master agent.
 	AgentxAddress string `json:"agentxAddress"`
 	// The port number on which the SNMP master agent will be contacted.
-	AgentxPort int32 `json:"agentxPort"`
+	AgentxPort int64 `json:"agentxPort"`
 	// The number of worker threads to use to handle SNMP requests.
-	NumWorkerThreads *int32 `json:"numWorkerThreads,omitempty"`
+	NumWorkerThreads *int64 `json:"numWorkerThreads,omitempty"`
 	// Specifies the maximum amount of time to wait for a session to the master agent to be established.
 	SessionTimeout *string `json:"sessionTimeout,omitempty"`
 	// The maximum amount of time to wait between attempts to establish a connection to the master agent.
@@ -50,7 +50,7 @@ type SnmpSubagentPluginResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSnmpSubagentPluginResponse(id string, schemas []EnumsnmpSubagentPluginSchemaUrn, agentxAddress string, agentxPort int32, enabled bool) *SnmpSubagentPluginResponse {
+func NewSnmpSubagentPluginResponse(id string, schemas []EnumsnmpSubagentPluginSchemaUrn, agentxAddress string, agentxPort int64, enabled bool) *SnmpSubagentPluginResponse {
 	this := SnmpSubagentPluginResponse{}
 	this.Id = id
 	this.Schemas = schemas
@@ -173,9 +173,9 @@ func (o *SnmpSubagentPluginResponse) SetAgentxAddress(v string) {
 }
 
 // GetAgentxPort returns the AgentxPort field value
-func (o *SnmpSubagentPluginResponse) GetAgentxPort() int32 {
+func (o *SnmpSubagentPluginResponse) GetAgentxPort() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -184,7 +184,7 @@ func (o *SnmpSubagentPluginResponse) GetAgentxPort() int32 {
 
 // GetAgentxPortOk returns a tuple with the AgentxPort field value
 // and a boolean to check if the value has been set.
-func (o *SnmpSubagentPluginResponse) GetAgentxPortOk() (*int32, bool) {
+func (o *SnmpSubagentPluginResponse) GetAgentxPortOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -192,14 +192,14 @@ func (o *SnmpSubagentPluginResponse) GetAgentxPortOk() (*int32, bool) {
 }
 
 // SetAgentxPort sets field value
-func (o *SnmpSubagentPluginResponse) SetAgentxPort(v int32) {
+func (o *SnmpSubagentPluginResponse) SetAgentxPort(v int64) {
 	o.AgentxPort = v
 }
 
 // GetNumWorkerThreads returns the NumWorkerThreads field value if set, zero value otherwise.
-func (o *SnmpSubagentPluginResponse) GetNumWorkerThreads() int32 {
+func (o *SnmpSubagentPluginResponse) GetNumWorkerThreads() int64 {
 	if o == nil || IsNil(o.NumWorkerThreads) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.NumWorkerThreads
@@ -207,7 +207,7 @@ func (o *SnmpSubagentPluginResponse) GetNumWorkerThreads() int32 {
 
 // GetNumWorkerThreadsOk returns a tuple with the NumWorkerThreads field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SnmpSubagentPluginResponse) GetNumWorkerThreadsOk() (*int32, bool) {
+func (o *SnmpSubagentPluginResponse) GetNumWorkerThreadsOk() (*int64, bool) {
 	if o == nil || IsNil(o.NumWorkerThreads) {
 		return nil, false
 	}
@@ -223,8 +223,8 @@ func (o *SnmpSubagentPluginResponse) HasNumWorkerThreads() bool {
 	return false
 }
 
-// SetNumWorkerThreads gets a reference to the given int32 and assigns it to the NumWorkerThreads field.
-func (o *SnmpSubagentPluginResponse) SetNumWorkerThreads(v int32) {
+// SetNumWorkerThreads gets a reference to the given int64 and assigns it to the NumWorkerThreads field.
+func (o *SnmpSubagentPluginResponse) SetNumWorkerThreads(v int64) {
 	o.NumWorkerThreads = &v
 }
 

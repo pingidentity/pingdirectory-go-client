@@ -25,7 +25,7 @@ type AddLdapConnectionHandlerRequest struct {
 	// Specifies the address or set of addresses on which this LDAP Connection Handler should listen for connections from LDAP clients.
 	ListenAddress []string `json:"listenAddress,omitempty"`
 	// Specifies the port number on which the LDAP Connection Handler will listen for connections from clients.
-	ListenPort int32 `json:"listenPort"`
+	ListenPort int64 `json:"listenPort"`
 	// Indicates whether the LDAP Connection Handler should use SSL.
 	UseSSL *bool `json:"useSSL,omitempty"`
 	// Indicates whether clients are allowed to use StartTLS.
@@ -47,14 +47,14 @@ type AddLdapConnectionHandlerRequest struct {
 	// Specifies the size of the largest LDAP request message that will be allowed by this LDAP Connection handler.
 	MaxRequestSize *string `json:"maxRequestSize,omitempty"`
 	// Specifies the maximum number of threads that are used to process cancel and abandon requests from clients.
-	MaxCancelHandlers *int32 `json:"maxCancelHandlers,omitempty"`
+	MaxCancelHandlers *int64 `json:"maxCancelHandlers,omitempty"`
 	// Specifies the number of threads that are used to accept new client connections, and to perform any initial preparation on those connections that may be needed before the connection can be used to read requests and send responses.
-	NumAcceptHandlers *int32 `json:"numAcceptHandlers,omitempty"`
+	NumAcceptHandlers *int64 `json:"numAcceptHandlers,omitempty"`
 	// Specifies the number of request handlers that are used to read requests from clients.
-	NumRequestHandlers  *int32                                        `json:"numRequestHandlers,omitempty"`
+	NumRequestHandlers  *int64                                        `json:"numRequestHandlers,omitempty"`
 	SslClientAuthPolicy *EnumconnectionHandlerSslClientAuthPolicyProp `json:"sslClientAuthPolicy,omitempty"`
 	// Specifies the maximum number of pending connection attempts that are allowed to queue up in the accept backlog before the server starts rejecting new connection attempts.
-	AcceptBacklog *int32 `json:"acceptBacklog,omitempty"`
+	AcceptBacklog *int64 `json:"acceptBacklog,omitempty"`
 	// Specifies the names of the SSL protocols that are allowed for use in SSL or StartTLS communication. The set of supported ssl protocols can be viewed via the ssl context monitor entry.
 	SslProtocol []string `json:"sslProtocol,omitempty"`
 	// Specifies the names of the SSL cipher suites that are allowed for use in SSL or StartTLS communication. The set of supported cipher suites can be viewed via the ssl context monitor entry.
@@ -81,7 +81,7 @@ type AddLdapConnectionHandlerRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddLdapConnectionHandlerRequest(handlerName string, schemas []EnumldapConnectionHandlerSchemaUrn, listenPort int32, enabled bool) *AddLdapConnectionHandlerRequest {
+func NewAddLdapConnectionHandlerRequest(handlerName string, schemas []EnumldapConnectionHandlerSchemaUrn, listenPort int64, enabled bool) *AddLdapConnectionHandlerRequest {
 	this := AddLdapConnectionHandlerRequest{}
 	this.HandlerName = handlerName
 	this.Schemas = schemas
@@ -179,9 +179,9 @@ func (o *AddLdapConnectionHandlerRequest) SetListenAddress(v []string) {
 }
 
 // GetListenPort returns the ListenPort field value
-func (o *AddLdapConnectionHandlerRequest) GetListenPort() int32 {
+func (o *AddLdapConnectionHandlerRequest) GetListenPort() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -190,7 +190,7 @@ func (o *AddLdapConnectionHandlerRequest) GetListenPort() int32 {
 
 // GetListenPortOk returns a tuple with the ListenPort field value
 // and a boolean to check if the value has been set.
-func (o *AddLdapConnectionHandlerRequest) GetListenPortOk() (*int32, bool) {
+func (o *AddLdapConnectionHandlerRequest) GetListenPortOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -198,7 +198,7 @@ func (o *AddLdapConnectionHandlerRequest) GetListenPortOk() (*int32, bool) {
 }
 
 // SetListenPort sets field value
-func (o *AddLdapConnectionHandlerRequest) SetListenPort(v int32) {
+func (o *AddLdapConnectionHandlerRequest) SetListenPort(v int64) {
 	o.ListenPort = v
 }
 
@@ -523,9 +523,9 @@ func (o *AddLdapConnectionHandlerRequest) SetMaxRequestSize(v string) {
 }
 
 // GetMaxCancelHandlers returns the MaxCancelHandlers field value if set, zero value otherwise.
-func (o *AddLdapConnectionHandlerRequest) GetMaxCancelHandlers() int32 {
+func (o *AddLdapConnectionHandlerRequest) GetMaxCancelHandlers() int64 {
 	if o == nil || IsNil(o.MaxCancelHandlers) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxCancelHandlers
@@ -533,7 +533,7 @@ func (o *AddLdapConnectionHandlerRequest) GetMaxCancelHandlers() int32 {
 
 // GetMaxCancelHandlersOk returns a tuple with the MaxCancelHandlers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddLdapConnectionHandlerRequest) GetMaxCancelHandlersOk() (*int32, bool) {
+func (o *AddLdapConnectionHandlerRequest) GetMaxCancelHandlersOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxCancelHandlers) {
 		return nil, false
 	}
@@ -549,15 +549,15 @@ func (o *AddLdapConnectionHandlerRequest) HasMaxCancelHandlers() bool {
 	return false
 }
 
-// SetMaxCancelHandlers gets a reference to the given int32 and assigns it to the MaxCancelHandlers field.
-func (o *AddLdapConnectionHandlerRequest) SetMaxCancelHandlers(v int32) {
+// SetMaxCancelHandlers gets a reference to the given int64 and assigns it to the MaxCancelHandlers field.
+func (o *AddLdapConnectionHandlerRequest) SetMaxCancelHandlers(v int64) {
 	o.MaxCancelHandlers = &v
 }
 
 // GetNumAcceptHandlers returns the NumAcceptHandlers field value if set, zero value otherwise.
-func (o *AddLdapConnectionHandlerRequest) GetNumAcceptHandlers() int32 {
+func (o *AddLdapConnectionHandlerRequest) GetNumAcceptHandlers() int64 {
 	if o == nil || IsNil(o.NumAcceptHandlers) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.NumAcceptHandlers
@@ -565,7 +565,7 @@ func (o *AddLdapConnectionHandlerRequest) GetNumAcceptHandlers() int32 {
 
 // GetNumAcceptHandlersOk returns a tuple with the NumAcceptHandlers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddLdapConnectionHandlerRequest) GetNumAcceptHandlersOk() (*int32, bool) {
+func (o *AddLdapConnectionHandlerRequest) GetNumAcceptHandlersOk() (*int64, bool) {
 	if o == nil || IsNil(o.NumAcceptHandlers) {
 		return nil, false
 	}
@@ -581,15 +581,15 @@ func (o *AddLdapConnectionHandlerRequest) HasNumAcceptHandlers() bool {
 	return false
 }
 
-// SetNumAcceptHandlers gets a reference to the given int32 and assigns it to the NumAcceptHandlers field.
-func (o *AddLdapConnectionHandlerRequest) SetNumAcceptHandlers(v int32) {
+// SetNumAcceptHandlers gets a reference to the given int64 and assigns it to the NumAcceptHandlers field.
+func (o *AddLdapConnectionHandlerRequest) SetNumAcceptHandlers(v int64) {
 	o.NumAcceptHandlers = &v
 }
 
 // GetNumRequestHandlers returns the NumRequestHandlers field value if set, zero value otherwise.
-func (o *AddLdapConnectionHandlerRequest) GetNumRequestHandlers() int32 {
+func (o *AddLdapConnectionHandlerRequest) GetNumRequestHandlers() int64 {
 	if o == nil || IsNil(o.NumRequestHandlers) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.NumRequestHandlers
@@ -597,7 +597,7 @@ func (o *AddLdapConnectionHandlerRequest) GetNumRequestHandlers() int32 {
 
 // GetNumRequestHandlersOk returns a tuple with the NumRequestHandlers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddLdapConnectionHandlerRequest) GetNumRequestHandlersOk() (*int32, bool) {
+func (o *AddLdapConnectionHandlerRequest) GetNumRequestHandlersOk() (*int64, bool) {
 	if o == nil || IsNil(o.NumRequestHandlers) {
 		return nil, false
 	}
@@ -613,8 +613,8 @@ func (o *AddLdapConnectionHandlerRequest) HasNumRequestHandlers() bool {
 	return false
 }
 
-// SetNumRequestHandlers gets a reference to the given int32 and assigns it to the NumRequestHandlers field.
-func (o *AddLdapConnectionHandlerRequest) SetNumRequestHandlers(v int32) {
+// SetNumRequestHandlers gets a reference to the given int64 and assigns it to the NumRequestHandlers field.
+func (o *AddLdapConnectionHandlerRequest) SetNumRequestHandlers(v int64) {
 	o.NumRequestHandlers = &v
 }
 
@@ -651,9 +651,9 @@ func (o *AddLdapConnectionHandlerRequest) SetSslClientAuthPolicy(v Enumconnectio
 }
 
 // GetAcceptBacklog returns the AcceptBacklog field value if set, zero value otherwise.
-func (o *AddLdapConnectionHandlerRequest) GetAcceptBacklog() int32 {
+func (o *AddLdapConnectionHandlerRequest) GetAcceptBacklog() int64 {
 	if o == nil || IsNil(o.AcceptBacklog) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AcceptBacklog
@@ -661,7 +661,7 @@ func (o *AddLdapConnectionHandlerRequest) GetAcceptBacklog() int32 {
 
 // GetAcceptBacklogOk returns a tuple with the AcceptBacklog field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddLdapConnectionHandlerRequest) GetAcceptBacklogOk() (*int32, bool) {
+func (o *AddLdapConnectionHandlerRequest) GetAcceptBacklogOk() (*int64, bool) {
 	if o == nil || IsNil(o.AcceptBacklog) {
 		return nil, false
 	}
@@ -677,8 +677,8 @@ func (o *AddLdapConnectionHandlerRequest) HasAcceptBacklog() bool {
 	return false
 }
 
-// SetAcceptBacklog gets a reference to the given int32 and assigns it to the AcceptBacklog field.
-func (o *AddLdapConnectionHandlerRequest) SetAcceptBacklog(v int32) {
+// SetAcceptBacklog gets a reference to the given int64 and assigns it to the AcceptBacklog field.
+func (o *AddLdapConnectionHandlerRequest) SetAcceptBacklog(v int64) {
 	o.AcceptBacklog = &v
 }
 

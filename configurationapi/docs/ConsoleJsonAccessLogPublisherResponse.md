@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 **IncludeResponseControls** | Pointer to **bool** | Indicates whether log messages for operation results should include a list of the OIDs of any controls included in the result. | [optional] 
 **IncludeReplicationChangeID** | Pointer to **bool** | Indicates whether to log information about the replication change ID. | [optional] 
 **GenerifyMessageStringsWhenPossible** | Pointer to **bool** | Indicates whether to use generified version of certain message strings, including diagnostic messages, additional information messages, authentication failure reasons, and disconnect messages. Generified versions of those strings may use placeholders (like %s for a string or %d for an integer) rather than the version of the string with those placeholders replaced with specific values. | [optional] 
-**MaxStringLength** | Pointer to **int32** | Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written. | [optional] 
+**MaxStringLength** | Pointer to **int64** | Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written. | [optional] 
 **LogFieldBehavior** | Pointer to **string** | The behavior to use for determining which fields to log and whether to transform the values of those fields in any way. | [optional] 
 **LogConnects** | Pointer to **bool** | Indicates whether to log information about connections established to the server. | [optional] 
 **LogDisconnects** | Pointer to **bool** | Indicates whether to log information about connections that have been closed by the client or terminated by the server. | [optional] 
@@ -658,20 +658,20 @@ HasGenerifyMessageStringsWhenPossible returns a boolean if a field has been set.
 
 ### GetMaxStringLength
 
-`func (o *ConsoleJsonAccessLogPublisherResponse) GetMaxStringLength() int32`
+`func (o *ConsoleJsonAccessLogPublisherResponse) GetMaxStringLength() int64`
 
 GetMaxStringLength returns the MaxStringLength field if non-nil, zero value otherwise.
 
 ### GetMaxStringLengthOk
 
-`func (o *ConsoleJsonAccessLogPublisherResponse) GetMaxStringLengthOk() (*int32, bool)`
+`func (o *ConsoleJsonAccessLogPublisherResponse) GetMaxStringLengthOk() (*int64, bool)`
 
 GetMaxStringLengthOk returns a tuple with the MaxStringLength field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxStringLength
 
-`func (o *ConsoleJsonAccessLogPublisherResponse) SetMaxStringLength(v int32)`
+`func (o *ConsoleJsonAccessLogPublisherResponse) SetMaxStringLength(v int64)`
 
 SetMaxStringLength sets MaxStringLength field to given value.
 

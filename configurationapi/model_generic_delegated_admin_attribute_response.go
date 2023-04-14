@@ -36,7 +36,7 @@ type GenericDelegatedAdminAttributeResponse struct {
 	// Specifies which attribute category this attribute belongs to.
 	AttributeCategory *string `json:"attributeCategory,omitempty"`
 	// This property determines a display order for attributes within a given attribute category. Attributes are ordered within their category based on this index from least to greatest.
-	DisplayOrderIndex int32 `json:"displayOrderIndex"`
+	DisplayOrderIndex int64 `json:"displayOrderIndex"`
 	// For LDAP attributes with DN syntax, specifies what kind of resource is referenced.
 	ReferenceResourceType *string                                               `json:"referenceResourceType,omitempty"`
 	AttributePresentation *EnumdelegatedAdminAttributeAttributePresentationProp `json:"attributePresentation,omitempty"`
@@ -50,7 +50,7 @@ type GenericDelegatedAdminAttributeResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGenericDelegatedAdminAttributeResponse(id string, schemas []EnumgenericDelegatedAdminAttributeSchemaUrn, attributeType string, displayName string, mutability EnumdelegatedAdminAttributeMutabilityProp, multiValued bool, includeInSummary bool, displayOrderIndex int32) *GenericDelegatedAdminAttributeResponse {
+func NewGenericDelegatedAdminAttributeResponse(id string, schemas []EnumgenericDelegatedAdminAttributeSchemaUrn, attributeType string, displayName string, mutability EnumdelegatedAdminAttributeMutabilityProp, multiValued bool, includeInSummary bool, displayOrderIndex int64) *GenericDelegatedAdminAttributeResponse {
 	this := GenericDelegatedAdminAttributeResponse{}
 	this.Id = id
 	this.Schemas = schemas
@@ -304,9 +304,9 @@ func (o *GenericDelegatedAdminAttributeResponse) SetAttributeCategory(v string) 
 }
 
 // GetDisplayOrderIndex returns the DisplayOrderIndex field value
-func (o *GenericDelegatedAdminAttributeResponse) GetDisplayOrderIndex() int32 {
+func (o *GenericDelegatedAdminAttributeResponse) GetDisplayOrderIndex() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -315,7 +315,7 @@ func (o *GenericDelegatedAdminAttributeResponse) GetDisplayOrderIndex() int32 {
 
 // GetDisplayOrderIndexOk returns a tuple with the DisplayOrderIndex field value
 // and a boolean to check if the value has been set.
-func (o *GenericDelegatedAdminAttributeResponse) GetDisplayOrderIndexOk() (*int32, bool) {
+func (o *GenericDelegatedAdminAttributeResponse) GetDisplayOrderIndexOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -323,7 +323,7 @@ func (o *GenericDelegatedAdminAttributeResponse) GetDisplayOrderIndexOk() (*int3
 }
 
 // SetDisplayOrderIndex sets field value
-func (o *GenericDelegatedAdminAttributeResponse) SetDisplayOrderIndex(v int32) {
+func (o *GenericDelegatedAdminAttributeResponse) SetDisplayOrderIndex(v int64) {
 	o.DisplayOrderIndex = v
 }
 

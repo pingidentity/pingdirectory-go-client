@@ -32,7 +32,7 @@ type AddLocalDbVlvIndexRequest struct {
 	// Specifies a unique name for this VLV index.
 	Name string `json:"name"`
 	// Specifies the number of entry IDs to store in a single sorted set before it must be split.
-	MaxBlockSize *int32                            `json:"maxBlockSize,omitempty"`
+	MaxBlockSize *int64                            `json:"maxBlockSize,omitempty"`
 	CacheMode    *EnumlocalDbVlvIndexCacheModeProp `json:"cacheMode,omitempty"`
 }
 
@@ -236,9 +236,9 @@ func (o *AddLocalDbVlvIndexRequest) SetName(v string) {
 }
 
 // GetMaxBlockSize returns the MaxBlockSize field value if set, zero value otherwise.
-func (o *AddLocalDbVlvIndexRequest) GetMaxBlockSize() int32 {
+func (o *AddLocalDbVlvIndexRequest) GetMaxBlockSize() int64 {
 	if o == nil || IsNil(o.MaxBlockSize) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxBlockSize
@@ -246,7 +246,7 @@ func (o *AddLocalDbVlvIndexRequest) GetMaxBlockSize() int32 {
 
 // GetMaxBlockSizeOk returns a tuple with the MaxBlockSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddLocalDbVlvIndexRequest) GetMaxBlockSizeOk() (*int32, bool) {
+func (o *AddLocalDbVlvIndexRequest) GetMaxBlockSizeOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxBlockSize) {
 		return nil, false
 	}
@@ -262,8 +262,8 @@ func (o *AddLocalDbVlvIndexRequest) HasMaxBlockSize() bool {
 	return false
 }
 
-// SetMaxBlockSize gets a reference to the given int32 and assigns it to the MaxBlockSize field.
-func (o *AddLocalDbVlvIndexRequest) SetMaxBlockSize(v int32) {
+// SetMaxBlockSize gets a reference to the given int64 and assigns it to the MaxBlockSize field.
+func (o *AddLocalDbVlvIndexRequest) SetMaxBlockSize(v int64) {
 	o.MaxBlockSize = &v
 }
 

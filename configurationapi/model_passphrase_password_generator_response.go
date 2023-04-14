@@ -25,9 +25,9 @@ type PassphrasePasswordGeneratorResponse struct {
 	// The path to the dictionary file that will be used to obtain the words for use in generated passwords.
 	DictionaryFile string `json:"dictionaryFile"`
 	// The minimum number of characters that generated passwords will be required to have.
-	MinimumPasswordCharacters *int32 `json:"minimumPasswordCharacters,omitempty"`
+	MinimumPasswordCharacters *int64 `json:"minimumPasswordCharacters,omitempty"`
 	// The minimum number of words that must be concatenated in the course of generating a password.
-	MinimumPasswordWords *int32 `json:"minimumPasswordWords,omitempty"`
+	MinimumPasswordWords *int64 `json:"minimumPasswordWords,omitempty"`
 	// Indicates whether to capitalize each word used in the generated password.
 	CapitalizeWords *bool `json:"capitalizeWords,omitempty"`
 	// A description for this Password Generator
@@ -132,9 +132,9 @@ func (o *PassphrasePasswordGeneratorResponse) SetDictionaryFile(v string) {
 }
 
 // GetMinimumPasswordCharacters returns the MinimumPasswordCharacters field value if set, zero value otherwise.
-func (o *PassphrasePasswordGeneratorResponse) GetMinimumPasswordCharacters() int32 {
+func (o *PassphrasePasswordGeneratorResponse) GetMinimumPasswordCharacters() int64 {
 	if o == nil || IsNil(o.MinimumPasswordCharacters) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MinimumPasswordCharacters
@@ -142,7 +142,7 @@ func (o *PassphrasePasswordGeneratorResponse) GetMinimumPasswordCharacters() int
 
 // GetMinimumPasswordCharactersOk returns a tuple with the MinimumPasswordCharacters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PassphrasePasswordGeneratorResponse) GetMinimumPasswordCharactersOk() (*int32, bool) {
+func (o *PassphrasePasswordGeneratorResponse) GetMinimumPasswordCharactersOk() (*int64, bool) {
 	if o == nil || IsNil(o.MinimumPasswordCharacters) {
 		return nil, false
 	}
@@ -158,15 +158,15 @@ func (o *PassphrasePasswordGeneratorResponse) HasMinimumPasswordCharacters() boo
 	return false
 }
 
-// SetMinimumPasswordCharacters gets a reference to the given int32 and assigns it to the MinimumPasswordCharacters field.
-func (o *PassphrasePasswordGeneratorResponse) SetMinimumPasswordCharacters(v int32) {
+// SetMinimumPasswordCharacters gets a reference to the given int64 and assigns it to the MinimumPasswordCharacters field.
+func (o *PassphrasePasswordGeneratorResponse) SetMinimumPasswordCharacters(v int64) {
 	o.MinimumPasswordCharacters = &v
 }
 
 // GetMinimumPasswordWords returns the MinimumPasswordWords field value if set, zero value otherwise.
-func (o *PassphrasePasswordGeneratorResponse) GetMinimumPasswordWords() int32 {
+func (o *PassphrasePasswordGeneratorResponse) GetMinimumPasswordWords() int64 {
 	if o == nil || IsNil(o.MinimumPasswordWords) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MinimumPasswordWords
@@ -174,7 +174,7 @@ func (o *PassphrasePasswordGeneratorResponse) GetMinimumPasswordWords() int32 {
 
 // GetMinimumPasswordWordsOk returns a tuple with the MinimumPasswordWords field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PassphrasePasswordGeneratorResponse) GetMinimumPasswordWordsOk() (*int32, bool) {
+func (o *PassphrasePasswordGeneratorResponse) GetMinimumPasswordWordsOk() (*int64, bool) {
 	if o == nil || IsNil(o.MinimumPasswordWords) {
 		return nil, false
 	}
@@ -190,8 +190,8 @@ func (o *PassphrasePasswordGeneratorResponse) HasMinimumPasswordWords() bool {
 	return false
 }
 
-// SetMinimumPasswordWords gets a reference to the given int32 and assigns it to the MinimumPasswordWords field.
-func (o *PassphrasePasswordGeneratorResponse) SetMinimumPasswordWords(v int32) {
+// SetMinimumPasswordWords gets a reference to the given int64 and assigns it to the MinimumPasswordWords field.
+func (o *PassphrasePasswordGeneratorResponse) SetMinimumPasswordWords(v int64) {
 	o.MinimumPasswordWords = &v
 }
 

@@ -28,7 +28,7 @@ type AddNokiaDsExternalServerRequest struct {
 	// The host name or IP address of the target LDAP server.
 	ServerHostName string `json:"serverHostName"`
 	// The port number on which the server listens for requests.
-	ServerPort *int32 `json:"serverPort,omitempty"`
+	ServerPort *int64 `json:"serverPort,omitempty"`
 	// Specifies the location for the LDAP External Server.
 	Location *string `json:"location,omitempty"`
 	// The DN to use to bind to the target LDAP server if simple authentication is required.
@@ -54,9 +54,9 @@ type AddNokiaDsExternalServerRequest struct {
 	// The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
 	TrustManagerProvider *string `json:"trustManagerProvider,omitempty"`
 	// The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
-	InitialConnections *int32 `json:"initialConnections,omitempty"`
+	InitialConnections *int64 `json:"initialConnections,omitempty"`
 	// The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
-	MaxConnections              *int32                                              `json:"maxConnections,omitempty"`
+	MaxConnections              *int64                                              `json:"maxConnections,omitempty"`
 	DefunctConnectionResultCode []EnumexternalServerDefunctConnectionResultCodeProp `json:"defunctConnectionResultCode,omitempty"`
 	// Indicates whether to send an abandon request for an operation for which a response timeout is encountered. A request which has timed out on one server may be retried on another server regardless of whether an abandon request is sent, but if the initial attempt is not abandoned then a long-running operation may unnecessarily continue to consume processing resources on the initial server.
 	AbandonOnTimeout *bool `json:"abandonOnTimeout,omitempty"`
@@ -221,9 +221,9 @@ func (o *AddNokiaDsExternalServerRequest) SetServerHostName(v string) {
 }
 
 // GetServerPort returns the ServerPort field value if set, zero value otherwise.
-func (o *AddNokiaDsExternalServerRequest) GetServerPort() int32 {
+func (o *AddNokiaDsExternalServerRequest) GetServerPort() int64 {
 	if o == nil || IsNil(o.ServerPort) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ServerPort
@@ -231,7 +231,7 @@ func (o *AddNokiaDsExternalServerRequest) GetServerPort() int32 {
 
 // GetServerPortOk returns a tuple with the ServerPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddNokiaDsExternalServerRequest) GetServerPortOk() (*int32, bool) {
+func (o *AddNokiaDsExternalServerRequest) GetServerPortOk() (*int64, bool) {
 	if o == nil || IsNil(o.ServerPort) {
 		return nil, false
 	}
@@ -247,8 +247,8 @@ func (o *AddNokiaDsExternalServerRequest) HasServerPort() bool {
 	return false
 }
 
-// SetServerPort gets a reference to the given int32 and assigns it to the ServerPort field.
-func (o *AddNokiaDsExternalServerRequest) SetServerPort(v int32) {
+// SetServerPort gets a reference to the given int64 and assigns it to the ServerPort field.
+func (o *AddNokiaDsExternalServerRequest) SetServerPort(v int64) {
 	o.ServerPort = &v
 }
 
@@ -669,9 +669,9 @@ func (o *AddNokiaDsExternalServerRequest) SetTrustManagerProvider(v string) {
 }
 
 // GetInitialConnections returns the InitialConnections field value if set, zero value otherwise.
-func (o *AddNokiaDsExternalServerRequest) GetInitialConnections() int32 {
+func (o *AddNokiaDsExternalServerRequest) GetInitialConnections() int64 {
 	if o == nil || IsNil(o.InitialConnections) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.InitialConnections
@@ -679,7 +679,7 @@ func (o *AddNokiaDsExternalServerRequest) GetInitialConnections() int32 {
 
 // GetInitialConnectionsOk returns a tuple with the InitialConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddNokiaDsExternalServerRequest) GetInitialConnectionsOk() (*int32, bool) {
+func (o *AddNokiaDsExternalServerRequest) GetInitialConnectionsOk() (*int64, bool) {
 	if o == nil || IsNil(o.InitialConnections) {
 		return nil, false
 	}
@@ -695,15 +695,15 @@ func (o *AddNokiaDsExternalServerRequest) HasInitialConnections() bool {
 	return false
 }
 
-// SetInitialConnections gets a reference to the given int32 and assigns it to the InitialConnections field.
-func (o *AddNokiaDsExternalServerRequest) SetInitialConnections(v int32) {
+// SetInitialConnections gets a reference to the given int64 and assigns it to the InitialConnections field.
+func (o *AddNokiaDsExternalServerRequest) SetInitialConnections(v int64) {
 	o.InitialConnections = &v
 }
 
 // GetMaxConnections returns the MaxConnections field value if set, zero value otherwise.
-func (o *AddNokiaDsExternalServerRequest) GetMaxConnections() int32 {
+func (o *AddNokiaDsExternalServerRequest) GetMaxConnections() int64 {
 	if o == nil || IsNil(o.MaxConnections) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxConnections
@@ -711,7 +711,7 @@ func (o *AddNokiaDsExternalServerRequest) GetMaxConnections() int32 {
 
 // GetMaxConnectionsOk returns a tuple with the MaxConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddNokiaDsExternalServerRequest) GetMaxConnectionsOk() (*int32, bool) {
+func (o *AddNokiaDsExternalServerRequest) GetMaxConnectionsOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxConnections) {
 		return nil, false
 	}
@@ -727,8 +727,8 @@ func (o *AddNokiaDsExternalServerRequest) HasMaxConnections() bool {
 	return false
 }
 
-// SetMaxConnections gets a reference to the given int32 and assigns it to the MaxConnections field.
-func (o *AddNokiaDsExternalServerRequest) SetMaxConnections(v int32) {
+// SetMaxConnections gets a reference to the given int64 and assigns it to the MaxConnections field.
+func (o *AddNokiaDsExternalServerRequest) SetMaxConnections(v int64) {
 	o.MaxConnections = &v
 }
 

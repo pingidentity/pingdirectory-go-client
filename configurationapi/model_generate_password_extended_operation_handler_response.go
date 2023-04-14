@@ -27,9 +27,9 @@ type GeneratePasswordExtendedOperationHandlerResponse struct {
 	// The default password generator that will be used if the selected password policy is not configured with a password generator.
 	DefaultPasswordGenerator string `json:"defaultPasswordGenerator"`
 	// The maximum number of passwords that may be generated and returned to the client for a single request.
-	MaximumPasswordsPerRequest *int32 `json:"maximumPasswordsPerRequest,omitempty"`
+	MaximumPasswordsPerRequest *int64 `json:"maximumPasswordsPerRequest,omitempty"`
 	// The maximum number of attempts that the server may use to generate a password that passes validation.
-	MaximumValidationAttemptsPerPassword *int32 `json:"maximumValidationAttemptsPerPassword,omitempty"`
+	MaximumValidationAttemptsPerPassword *int64 `json:"maximumValidationAttemptsPerPassword,omitempty"`
 	// A description for this Extended Operation Handler
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
@@ -164,9 +164,9 @@ func (o *GeneratePasswordExtendedOperationHandlerResponse) SetDefaultPasswordGen
 }
 
 // GetMaximumPasswordsPerRequest returns the MaximumPasswordsPerRequest field value if set, zero value otherwise.
-func (o *GeneratePasswordExtendedOperationHandlerResponse) GetMaximumPasswordsPerRequest() int32 {
+func (o *GeneratePasswordExtendedOperationHandlerResponse) GetMaximumPasswordsPerRequest() int64 {
 	if o == nil || IsNil(o.MaximumPasswordsPerRequest) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaximumPasswordsPerRequest
@@ -174,7 +174,7 @@ func (o *GeneratePasswordExtendedOperationHandlerResponse) GetMaximumPasswordsPe
 
 // GetMaximumPasswordsPerRequestOk returns a tuple with the MaximumPasswordsPerRequest field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GeneratePasswordExtendedOperationHandlerResponse) GetMaximumPasswordsPerRequestOk() (*int32, bool) {
+func (o *GeneratePasswordExtendedOperationHandlerResponse) GetMaximumPasswordsPerRequestOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaximumPasswordsPerRequest) {
 		return nil, false
 	}
@@ -190,15 +190,15 @@ func (o *GeneratePasswordExtendedOperationHandlerResponse) HasMaximumPasswordsPe
 	return false
 }
 
-// SetMaximumPasswordsPerRequest gets a reference to the given int32 and assigns it to the MaximumPasswordsPerRequest field.
-func (o *GeneratePasswordExtendedOperationHandlerResponse) SetMaximumPasswordsPerRequest(v int32) {
+// SetMaximumPasswordsPerRequest gets a reference to the given int64 and assigns it to the MaximumPasswordsPerRequest field.
+func (o *GeneratePasswordExtendedOperationHandlerResponse) SetMaximumPasswordsPerRequest(v int64) {
 	o.MaximumPasswordsPerRequest = &v
 }
 
 // GetMaximumValidationAttemptsPerPassword returns the MaximumValidationAttemptsPerPassword field value if set, zero value otherwise.
-func (o *GeneratePasswordExtendedOperationHandlerResponse) GetMaximumValidationAttemptsPerPassword() int32 {
+func (o *GeneratePasswordExtendedOperationHandlerResponse) GetMaximumValidationAttemptsPerPassword() int64 {
 	if o == nil || IsNil(o.MaximumValidationAttemptsPerPassword) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaximumValidationAttemptsPerPassword
@@ -206,7 +206,7 @@ func (o *GeneratePasswordExtendedOperationHandlerResponse) GetMaximumValidationA
 
 // GetMaximumValidationAttemptsPerPasswordOk returns a tuple with the MaximumValidationAttemptsPerPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GeneratePasswordExtendedOperationHandlerResponse) GetMaximumValidationAttemptsPerPasswordOk() (*int32, bool) {
+func (o *GeneratePasswordExtendedOperationHandlerResponse) GetMaximumValidationAttemptsPerPasswordOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaximumValidationAttemptsPerPassword) {
 		return nil, false
 	}
@@ -222,8 +222,8 @@ func (o *GeneratePasswordExtendedOperationHandlerResponse) HasMaximumValidationA
 	return false
 }
 
-// SetMaximumValidationAttemptsPerPassword gets a reference to the given int32 and assigns it to the MaximumValidationAttemptsPerPassword field.
-func (o *GeneratePasswordExtendedOperationHandlerResponse) SetMaximumValidationAttemptsPerPassword(v int32) {
+// SetMaximumValidationAttemptsPerPassword gets a reference to the given int64 and assigns it to the MaximumValidationAttemptsPerPassword field.
+func (o *GeneratePasswordExtendedOperationHandlerResponse) SetMaximumValidationAttemptsPerPassword(v int64) {
 	o.MaximumValidationAttemptsPerPassword = &v
 }
 

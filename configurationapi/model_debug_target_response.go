@@ -33,7 +33,7 @@ type DebugTargetResponse struct {
 	// Specifies the property to indicate whether to include the cause of exceptions in exception thrown and caught messages.
 	IncludeThrowableCause *bool `json:"includeThrowableCause,omitempty"`
 	// Specifies the property to indicate the number of stack frames to include in the stack trace for method entry and exception thrown messages.
-	ThrowableStackFrames *int32 `json:"throwableStackFrames,omitempty"`
+	ThrowableStackFrames *int64 `json:"throwableStackFrames,omitempty"`
 	// A description for this Debug Target
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -293,9 +293,9 @@ func (o *DebugTargetResponse) SetIncludeThrowableCause(v bool) {
 }
 
 // GetThrowableStackFrames returns the ThrowableStackFrames field value if set, zero value otherwise.
-func (o *DebugTargetResponse) GetThrowableStackFrames() int32 {
+func (o *DebugTargetResponse) GetThrowableStackFrames() int64 {
 	if o == nil || IsNil(o.ThrowableStackFrames) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ThrowableStackFrames
@@ -303,7 +303,7 @@ func (o *DebugTargetResponse) GetThrowableStackFrames() int32 {
 
 // GetThrowableStackFramesOk returns a tuple with the ThrowableStackFrames field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DebugTargetResponse) GetThrowableStackFramesOk() (*int32, bool) {
+func (o *DebugTargetResponse) GetThrowableStackFramesOk() (*int64, bool) {
 	if o == nil || IsNil(o.ThrowableStackFrames) {
 		return nil, false
 	}
@@ -319,8 +319,8 @@ func (o *DebugTargetResponse) HasThrowableStackFrames() bool {
 	return false
 }
 
-// SetThrowableStackFrames gets a reference to the given int32 and assigns it to the ThrowableStackFrames field.
-func (o *DebugTargetResponse) SetThrowableStackFrames(v int32) {
+// SetThrowableStackFrames gets a reference to the given int64 and assigns it to the ThrowableStackFrames field.
+func (o *DebugTargetResponse) SetThrowableStackFrames(v int64) {
 	o.ThrowableStackFrames = &v
 }
 

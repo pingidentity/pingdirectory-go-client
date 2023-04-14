@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **SharedSecretAttributeType** | Pointer to **string** | The name or OID of the attribute that will be used to hold the shared secret key used during TOTP processing. | [optional] 
 **TimeIntervalDuration** | Pointer to **string** | The duration of the time interval used for TOTP processing. | [optional] 
-**AdjacentIntervalsToCheck** | Pointer to **int32** | The number of adjacent time intervals (both before and after the current time) that should be checked when performing authentication. | [optional] 
+**AdjacentIntervalsToCheck** | Pointer to **int64** | The number of adjacent time intervals (both before and after the current time) that should be checked when performing authentication. | [optional] 
 **RequireStaticPassword** | Pointer to **bool** | Indicates whether a user will be required to provide a static password when authenticating via the UNBOUNDID-YUBIKEY-OTP SASL mechanism. | [optional] 
 **PreventTOTPReuse** | Pointer to **bool** | Indicates whether to prevent clients from re-using TOTP passwords. | [optional] 
 **YubikeyClientID** | Pointer to **string** | The client ID to include in requests to the YubiKey validation server. A client ID and API key may be obtained for free from https://upgrade.yubico.com/getapikey/. | [optional] 
@@ -272,20 +272,20 @@ HasTimeIntervalDuration returns a boolean if a field has been set.
 
 ### GetAdjacentIntervalsToCheck
 
-`func (o *GetSaslMechanismHandler200Response) GetAdjacentIntervalsToCheck() int32`
+`func (o *GetSaslMechanismHandler200Response) GetAdjacentIntervalsToCheck() int64`
 
 GetAdjacentIntervalsToCheck returns the AdjacentIntervalsToCheck field if non-nil, zero value otherwise.
 
 ### GetAdjacentIntervalsToCheckOk
 
-`func (o *GetSaslMechanismHandler200Response) GetAdjacentIntervalsToCheckOk() (*int32, bool)`
+`func (o *GetSaslMechanismHandler200Response) GetAdjacentIntervalsToCheckOk() (*int64, bool)`
 
 GetAdjacentIntervalsToCheckOk returns a tuple with the AdjacentIntervalsToCheck field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAdjacentIntervalsToCheck
 
-`func (o *GetSaslMechanismHandler200Response) SetAdjacentIntervalsToCheck(v int32)`
+`func (o *GetSaslMechanismHandler200Response) SetAdjacentIntervalsToCheck(v int64)`
 
 SetAdjacentIntervalsToCheck sets AdjacentIntervalsToCheck field to given value.
 

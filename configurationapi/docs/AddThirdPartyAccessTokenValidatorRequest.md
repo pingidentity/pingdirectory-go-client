@@ -12,13 +12,13 @@ Name | Type | Description | Notes
 **SubjectClaimName** | Pointer to **string** | The name of the token claim that contains the subject, i.e. the logged-in user in an access token. This property goes hand-in-hand with the identity-mapper property and tells the Identity Mapper which field to use to look up the user entry on the server. | [optional] 
 **Description** | Pointer to **string** | A description for this Access Token Validator | [optional] 
 **Enabled** | **bool** | Indicates whether this Access Token Validator is enabled for use in Directory Server. | 
-**EvaluationOrderIndex** | **int32** | When multiple Access Token Validators are defined for a single Directory Server, this property determines the evaluation order for determining the correct validator class for an access token received by the Directory Server. Values of this property must be unique among all Access Token Validators defined within Directory Server but not necessarily contiguous. Access Token Validators with a smaller value will be evaluated first to determine if they are able to validate the access token. | 
+**EvaluationOrderIndex** | **int64** | When multiple Access Token Validators are defined for a single Directory Server, this property determines the evaluation order for determining the correct validator class for an access token received by the Directory Server. Values of this property must be unique among all Access Token Validators defined within Directory Server but not necessarily contiguous. Access Token Validators with a smaller value will be evaluated first to determine if they are able to validate the access token. | 
 
 ## Methods
 
 ### NewAddThirdPartyAccessTokenValidatorRequest
 
-`func NewAddThirdPartyAccessTokenValidatorRequest(validatorName string, schemas []EnumthirdPartyAccessTokenValidatorSchemaUrn, extensionClass string, enabled bool, evaluationOrderIndex int32, ) *AddThirdPartyAccessTokenValidatorRequest`
+`func NewAddThirdPartyAccessTokenValidatorRequest(validatorName string, schemas []EnumthirdPartyAccessTokenValidatorSchemaUrn, extensionClass string, enabled bool, evaluationOrderIndex int64, ) *AddThirdPartyAccessTokenValidatorRequest`
 
 NewAddThirdPartyAccessTokenValidatorRequest instantiates a new AddThirdPartyAccessTokenValidatorRequest object
 This constructor will assign default values to properties that have it defined,
@@ -215,20 +215,20 @@ SetEnabled sets Enabled field to given value.
 
 ### GetEvaluationOrderIndex
 
-`func (o *AddThirdPartyAccessTokenValidatorRequest) GetEvaluationOrderIndex() int32`
+`func (o *AddThirdPartyAccessTokenValidatorRequest) GetEvaluationOrderIndex() int64`
 
 GetEvaluationOrderIndex returns the EvaluationOrderIndex field if non-nil, zero value otherwise.
 
 ### GetEvaluationOrderIndexOk
 
-`func (o *AddThirdPartyAccessTokenValidatorRequest) GetEvaluationOrderIndexOk() (*int32, bool)`
+`func (o *AddThirdPartyAccessTokenValidatorRequest) GetEvaluationOrderIndexOk() (*int64, bool)`
 
 GetEvaluationOrderIndexOk returns a tuple with the EvaluationOrderIndex field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvaluationOrderIndex
 
-`func (o *AddThirdPartyAccessTokenValidatorRequest) SetEvaluationOrderIndex(v int32)`
+`func (o *AddThirdPartyAccessTokenValidatorRequest) SetEvaluationOrderIndex(v int64)`
 
 SetEvaluationOrderIndex sets EvaluationOrderIndex field to given value.
 

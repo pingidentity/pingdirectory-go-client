@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **MaxUpdateFrequency** | Pointer to **string** | Specifies the maximum frequency with which last access time values should be written for an entry. This may help limit the rate of internal write operations processed in the server. | [optional] 
 **OperationType** | Pointer to [**[]EnumpluginOperationTypeProp**](EnumpluginOperationTypeProp.md) |  | [optional] 
 **InvokeForFailedBinds** | Pointer to **bool** | Indicates whether to update the last access time for an entry targeted by a bind operation if the bind is unsuccessful. | [optional] 
-**MaxSearchResultEntriesToUpdate** | Pointer to **int32** | Specifies the maximum number of entries that should be updated in a search operation. Only search result entries actually returned to the client may have their last access time updated, but because a single search operation may return a very large number of entries, the plugin will only update entries if no more than a specified number of entries are updated. | [optional] 
+**MaxSearchResultEntriesToUpdate** | Pointer to **int64** | Specifies the maximum number of entries that should be updated in a search operation. Only search result entries actually returned to the client may have their last access time updated, but because a single search operation may return a very large number of entries, the plugin will only update entries if no more than a specified number of entries are updated. | [optional] 
 **RequestCriteria** | Pointer to **string** | A reference to request criteria that will be used to indicate which bind requests should be passed through to the external authentication service. | [optional] 
 **InvokeForInternalOperations** | Pointer to **bool** | Indicates whether the plug-in should be invoked for internal operations. | [optional] 
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
@@ -30,18 +30,18 @@ Name | Type | Description | Notes
 **HostInfo** | Pointer to [**[]EnumpluginHostInfoProp**](EnumpluginHostInfoProp.md) |  | [optional] 
 **IncludedLDAPApplication** | Pointer to **[]string** | If statistics should not be included for all applications, this property names the subset of applications that should be included. | [optional] 
 **PluginType** | [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | 
-**NumThreads** | **int32** | Specifies the number of concurrent threads that should be used to process the search operations. | 
+**NumThreads** | **int64** | Specifies the number of concurrent threads that should be used to process the search operations. | 
 **BaseDN** | **[]string** | Specifies a base DN within which the attribute must be unique. | 
-**LowerBound** | Pointer to **int32** | Specifies the lower bound for the numeric value which will be inserted into the search filter. | [optional] 
-**UpperBound** | Pointer to **int32** | Specifies the upper bound for the numeric value which will be inserted into the search filter. | [optional] 
+**LowerBound** | Pointer to **int64** | Specifies the lower bound for the numeric value which will be inserted into the search filter. | [optional] 
+**UpperBound** | Pointer to **int64** | Specifies the upper bound for the numeric value which will be inserted into the search filter. | [optional] 
 **FilterPrefix** | **string** | Specifies a prefix which will be used in front of the randomly-selected numeric value in all search filters used. If no upper bound is defined, then this should contain the entire filter string. | 
 **FilterSuffix** | Pointer to **string** | Specifies a suffix which will be used after of the randomly-selected numeric value in all search filters used. If no upper bound is defined, then this should be omitted. | [optional] 
 **Filter** | **string** | Specifies the search filter to apply to determine if attribute uniqueness is enforced for the matching entries. | 
 **AttributeType** | **[]string** | Specifies the attribute types for which referential integrity is to be maintained. | 
 **PollingInterval** | **string** | This specifies how often the plugin should check for expired data. It also controls the offset of peer servers (see the peer-server-priority-index for more information). | 
-**PeerServerPriorityIndex** | Pointer to **int32** | In a replicated environment, this determines the order in which peer servers should attempt to purge data. | [optional] 
-**MaxUpdatesPerSecond** | **int32** | This setting smooths out the performance impact on the server by throttling the purging to the specified maximum number of updates per second. To avoid a large backlog, this value should be set comfortably above the average rate that expired data is generated. When purge-behavior is set to subtree-delete-entries, then deletion of the entire subtree is considered a single update for the purposes of throttling. | 
-**NumDeleteThreads** | **int32** | The number of threads used to delete expired entries. | 
+**PeerServerPriorityIndex** | Pointer to **int64** | In a replicated environment, this determines the order in which peer servers should attempt to purge data. | [optional] 
+**MaxUpdatesPerSecond** | **int64** | This setting smooths out the performance impact on the server by throttling the purging to the specified maximum number of updates per second. To avoid a large backlog, this value should be set comfortably above the average rate that expired data is generated. When purge-behavior is set to subtree-delete-entries, then deletion of the entire subtree is considered a single update for the purposes of throttling. | 
+**NumDeleteThreads** | **int64** | The number of threads used to delete expired entries. | 
 **InvokeGCDayOfWeek** | Pointer to [**[]EnumpluginInvokeGCDayOfWeekProp**](EnumpluginInvokeGCDayOfWeekProp.md) |  | [optional] 
 **InvokeGCTimeUtc** | **[]string** | Specifies the times of the day at which garbage collection may be explicitly invoked. The times should be specified in \&quot;HH:MM\&quot; format, with \&quot;HH\&quot; as a two-digit numeric value between 00 and 23 representing the hour of the day, and MM as a two-digit numeric value between 00 and 59 representing the minute of the hour. All times will be interpreted in the UTC time zone. | 
 **DelayAfterAlert** | Pointer to **string** | Specifies the length of time that the Directory Server should wait after sending the \&quot;force-gc-starting\&quot; administrative alert before actually invoking the garbage collection processing. | [optional] 
@@ -76,7 +76,7 @@ Name | Type | Description | Notes
 **SuppressIfIdle** | **bool** | If the server is idle during the specified interval, then do not log any output if this property is set to true. The server is idle if during the interval, no new connections were established, no operations were processed, and no operations are pending. | 
 **HeaderPrefixPerColumn** | Pointer to **bool** | This property controls whether the header prefix, which applies to a group of columns, appears at the start of each column header or only the first column in a group. | [optional] 
 **EmptyInsteadOfZero** | Pointer to **bool** | This property controls whether a value in the output is shown as empty if the value is zero. | [optional] 
-**LinesBetweenHeader** | **int32** | The number of lines to log between logging the header line that summarizes the columns in the table. | 
+**LinesBetweenHeader** | **int64** | The number of lines to log between logging the header line that summarizes the columns in the table. | 
 **IncludedLDAPStat** | Pointer to [**[]EnumpluginIncludedLDAPStatProp**](EnumpluginIncludedLDAPStatProp.md) |  | [optional] 
 **IncludedResourceStat** | Pointer to [**[]EnumpluginIncludedResourceStatProp**](EnumpluginIncludedResourceStatProp.md) |  | [optional] 
 **HistogramFormat** | [**EnumpluginHistogramFormatProp**](EnumpluginHistogramFormatProp.md) |  | 
@@ -97,7 +97,7 @@ Name | Type | Description | Notes
 **CustomTimezone** | Pointer to **string** | Specifies the time zone to use when generating a date string using the configured custom-datetime-format value. The provided value must be accepted by java.util.TimeZone.getTimeZone. | [optional] 
 **ExpirationOffset** | **string** | Sessions whose last activity timestamp is older than this offset will be removed. | 
 **PurgeBehavior** | Pointer to [**EnumpluginPurgeBehaviorProp**](EnumpluginPurgeBehaviorProp.md) |  | [optional] 
-**NumMostExpensivePhasesShown** | **int32** | This controls how many of the most expensive phases are included per operation type in the monitor entry. | 
+**NumMostExpensivePhasesShown** | **int64** | This controls how many of the most expensive phases are included per operation type in the monitor entry. | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Plugin. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Plugin. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **EncryptionSettingsDefinitionID** | Pointer to **string** | Specifies the ID of the encryption settings definition that should be used to encrypt the data. If this is not provided, the server&#39;s preferred encryption settings definition will be used. The \&quot;encryption-settings list\&quot; command can be used to obtain a list of the encryption settings definitions available in the server. | [optional] 
@@ -107,8 +107,8 @@ Name | Type | Description | Notes
 **BindDNPattern** | Pointer to **string** | A pattern to use to construct the bind DN for the simple bind request to send to the remote server. This may consist of a combination of static text and attribute values and other directives enclosed in curly braces.  For example, the value \&quot;cn&#x3D;{cn},ou&#x3D;People,dc&#x3D;example,dc&#x3D;com\&quot; indicates that the remote bind DN should be constructed from the text \&quot;cn&#x3D;\&quot; followed by the value of the local entry&#39;s cn attribute followed by the text \&quot;ou&#x3D;People,dc&#x3D;example,dc&#x3D;com\&quot;. If an attribute contains the value to use as the bind DN for pass-through authentication, then the pattern may simply be the name of that attribute in curly braces (e.g., if the seeAlso attribute contains the bind DN for the target user, then a bind DN pattern of \&quot;{seeAlso}\&quot; would be appropriate).  Note that a bind DN pattern can be used to construct a bind DN that is not actually a valid LDAP distinguished name. For example, if authentication is being passed through to a Microsoft Active Directory server, then a bind DN pattern could be used to construct a user principal name (UPN) as an alternative to a distinguished name. | [optional] 
 **SearchBaseDN** | Pointer to **string** | The base DN to use when searching for the user entry using a filter constructed from the pattern defined in the search-filter-pattern property. If no base DN is specified, the null DN will be used as the search base DN. | [optional] 
 **SearchFilterPattern** | Pointer to **string** | A pattern to use to construct a filter to use when searching an external server for the entry of the user as whom to bind. For example, \&quot;(mail&#x3D;{uid:ldapFilterEscape}@example.com)\&quot; would construct a search filter to search for a user whose entry in the local server contains a uid attribute whose value appears before \&quot;@example.com\&quot; in the mail attribute in the external server. Note that the \&quot;ldapFilterEscape\&quot; modifier should almost always be used with attributes specified in the pattern. | [optional] 
-**InitialConnections** | **int32** | Specifies the initial number of connections to establish to each external server against which authentication may be attempted. | 
-**MaxConnections** | **int32** | Specifies the maximum number of connections to maintain to each external server against which authentication may be attempted. This value must be greater than or equal to the value for the initial-connections property. | 
+**InitialConnections** | **int64** | Specifies the initial number of connections to establish to each external server against which authentication may be attempted. | 
+**MaxConnections** | **int64** | Specifies the maximum number of connections to maintain to each external server against which authentication may be attempted. This value must be greater than or equal to the value for the initial-connections property. | 
 **SourceDN** | **string** | Specifies the source DN that may appear in client requests which should be remapped to the target DN. Note that the source DN must not be equal to the target DN. | 
 **TargetDN** | **string** | Specifies the DN to which the source DN should be mapped. Note that the target DN must not be equal to the source DN. | 
 **EnableAttributeMapping** | **bool** | Indicates whether DN mapping should be applied to the values of attributes with appropriate syntaxes. | 
@@ -120,8 +120,8 @@ Name | Type | Description | Notes
 **ReferralBaseURL** | **[]string** | Specifies the base URL to use for the referrals generated by this plugin. It should include only the scheme, address, and port to use to communicate with the target server (e.g., \&quot;ldap://server.example.com:389/\&quot;). | 
 **ContextName** | Pointer to **string** | The SNMP context name for this sub-agent. The context name must not be longer than 30 ASCII characters. Each server in a topology must have a unique SNMP context name. | [optional] 
 **AgentxAddress** | **string** | The hostname or IP address of the SNMP master agent. | 
-**AgentxPort** | **int32** | The port number on which the SNMP master agent will be contacted. | 
-**NumWorkerThreads** | Pointer to **int32** | The number of worker threads to use to handle SNMP requests. | [optional] 
+**AgentxPort** | **int64** | The port number on which the SNMP master agent will be contacted. | 
+**NumWorkerThreads** | Pointer to **int64** | The number of worker threads to use to handle SNMP requests. | [optional] 
 **SessionTimeout** | Pointer to **string** | Specifies the maximum amount of time to wait for a session to the master agent to be established. | [optional] 
 **ConnectRetryMaxWait** | Pointer to **string** | The maximum amount of time to wait between attempts to establish a connection to the master agent. | [optional] 
 **PingInterval** | Pointer to **string** | The amount of time between consecutive pings sent by the sub-agent on its connection to the master agent. A value of zero disables the sending of pings by the sub-agent. | [optional] 
@@ -160,7 +160,7 @@ Name | Type | Description | Notes
 
 ### NewGetPlugin200Response
 
-`func NewGetPlugin200Response(schemas []EnumuniqueAttributePluginSchemaUrn, id string, enabled bool, sampleInterval string, collectionInterval string, pluginType []EnumpluginPluginTypeProp, numThreads int32, baseDN []string, filterPrefix string, filter string, attributeType []string, pollingInterval string, maxUpdatesPerSecond int32, numDeleteThreads int32, invokeGCTimeUtc []string, apiURL string, authURL string, oAuthClientID string, environmentID string, tryLocalBind bool, overrideLocalPassword bool, updateLocalPassword bool, userMappingLocalAttribute []string, userMappingRemoteJSONField []string, histogramCategoryBoundary []string, scope EnumpluginScopeProp, outputFile string, logInterval string, suppressIfIdle bool, linesBetweenHeader int32, histogramFormat EnumpluginHistogramFormatProp, logFile string, logFilePermissions string, rotationPolicy []string, retentionPolicy []string, datetimeAttribute string, datetimeFormat EnumpluginDatetimeFormatProp, expirationOffset string, numMostExpensivePhasesShown int32, extensionClass string, server []string, serverAccessMode EnumpluginServerAccessModeProp, initialConnections int32, maxConnections int32, sourceDN string, targetDN string, enableAttributeMapping bool, enableControlMapping bool, alwaysMapResponses bool, referralBaseURL []string, agentxAddress string, agentxPort int32, profileSampleInterval string, profileDirectory string, enableProfilingOnStartup bool, valuePattern []string, sourceAttribute string, targetAttribute string, delay string, scriptClass string, passThroughAuthenticationHandler string, type_ []string, ) *GetPlugin200Response`
+`func NewGetPlugin200Response(schemas []EnumuniqueAttributePluginSchemaUrn, id string, enabled bool, sampleInterval string, collectionInterval string, pluginType []EnumpluginPluginTypeProp, numThreads int64, baseDN []string, filterPrefix string, filter string, attributeType []string, pollingInterval string, maxUpdatesPerSecond int64, numDeleteThreads int64, invokeGCTimeUtc []string, apiURL string, authURL string, oAuthClientID string, environmentID string, tryLocalBind bool, overrideLocalPassword bool, updateLocalPassword bool, userMappingLocalAttribute []string, userMappingRemoteJSONField []string, histogramCategoryBoundary []string, scope EnumpluginScopeProp, outputFile string, logInterval string, suppressIfIdle bool, linesBetweenHeader int64, histogramFormat EnumpluginHistogramFormatProp, logFile string, logFilePermissions string, rotationPolicy []string, retentionPolicy []string, datetimeAttribute string, datetimeFormat EnumpluginDatetimeFormatProp, expirationOffset string, numMostExpensivePhasesShown int64, extensionClass string, server []string, serverAccessMode EnumpluginServerAccessModeProp, initialConnections int64, maxConnections int64, sourceDN string, targetDN string, enableAttributeMapping bool, enableControlMapping bool, alwaysMapResponses bool, referralBaseURL []string, agentxAddress string, agentxPort int64, profileSampleInterval string, profileDirectory string, enableProfilingOnStartup bool, valuePattern []string, sourceAttribute string, targetAttribute string, delay string, scriptClass string, passThroughAuthenticationHandler string, type_ []string, ) *GetPlugin200Response`
 
 NewGetPlugin200Response instantiates a new GetPlugin200Response object
 This constructor will assign default values to properties that have it defined,
@@ -292,20 +292,20 @@ HasInvokeForFailedBinds returns a boolean if a field has been set.
 
 ### GetMaxSearchResultEntriesToUpdate
 
-`func (o *GetPlugin200Response) GetMaxSearchResultEntriesToUpdate() int32`
+`func (o *GetPlugin200Response) GetMaxSearchResultEntriesToUpdate() int64`
 
 GetMaxSearchResultEntriesToUpdate returns the MaxSearchResultEntriesToUpdate field if non-nil, zero value otherwise.
 
 ### GetMaxSearchResultEntriesToUpdateOk
 
-`func (o *GetPlugin200Response) GetMaxSearchResultEntriesToUpdateOk() (*int32, bool)`
+`func (o *GetPlugin200Response) GetMaxSearchResultEntriesToUpdateOk() (*int64, bool)`
 
 GetMaxSearchResultEntriesToUpdateOk returns a tuple with the MaxSearchResultEntriesToUpdate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxSearchResultEntriesToUpdate
 
-`func (o *GetPlugin200Response) SetMaxSearchResultEntriesToUpdate(v int32)`
+`func (o *GetPlugin200Response) SetMaxSearchResultEntriesToUpdate(v int64)`
 
 SetMaxSearchResultEntriesToUpdate sets MaxSearchResultEntriesToUpdate field to given value.
 
@@ -797,20 +797,20 @@ SetPluginType sets PluginType field to given value.
 
 ### GetNumThreads
 
-`func (o *GetPlugin200Response) GetNumThreads() int32`
+`func (o *GetPlugin200Response) GetNumThreads() int64`
 
 GetNumThreads returns the NumThreads field if non-nil, zero value otherwise.
 
 ### GetNumThreadsOk
 
-`func (o *GetPlugin200Response) GetNumThreadsOk() (*int32, bool)`
+`func (o *GetPlugin200Response) GetNumThreadsOk() (*int64, bool)`
 
 GetNumThreadsOk returns a tuple with the NumThreads field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNumThreads
 
-`func (o *GetPlugin200Response) SetNumThreads(v int32)`
+`func (o *GetPlugin200Response) SetNumThreads(v int64)`
 
 SetNumThreads sets NumThreads field to given value.
 
@@ -837,20 +837,20 @@ SetBaseDN sets BaseDN field to given value.
 
 ### GetLowerBound
 
-`func (o *GetPlugin200Response) GetLowerBound() int32`
+`func (o *GetPlugin200Response) GetLowerBound() int64`
 
 GetLowerBound returns the LowerBound field if non-nil, zero value otherwise.
 
 ### GetLowerBoundOk
 
-`func (o *GetPlugin200Response) GetLowerBoundOk() (*int32, bool)`
+`func (o *GetPlugin200Response) GetLowerBoundOk() (*int64, bool)`
 
 GetLowerBoundOk returns a tuple with the LowerBound field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLowerBound
 
-`func (o *GetPlugin200Response) SetLowerBound(v int32)`
+`func (o *GetPlugin200Response) SetLowerBound(v int64)`
 
 SetLowerBound sets LowerBound field to given value.
 
@@ -862,20 +862,20 @@ HasLowerBound returns a boolean if a field has been set.
 
 ### GetUpperBound
 
-`func (o *GetPlugin200Response) GetUpperBound() int32`
+`func (o *GetPlugin200Response) GetUpperBound() int64`
 
 GetUpperBound returns the UpperBound field if non-nil, zero value otherwise.
 
 ### GetUpperBoundOk
 
-`func (o *GetPlugin200Response) GetUpperBoundOk() (*int32, bool)`
+`func (o *GetPlugin200Response) GetUpperBoundOk() (*int64, bool)`
 
 GetUpperBoundOk returns a tuple with the UpperBound field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpperBound
 
-`func (o *GetPlugin200Response) SetUpperBound(v int32)`
+`func (o *GetPlugin200Response) SetUpperBound(v int64)`
 
 SetUpperBound sets UpperBound field to given value.
 
@@ -992,20 +992,20 @@ SetPollingInterval sets PollingInterval field to given value.
 
 ### GetPeerServerPriorityIndex
 
-`func (o *GetPlugin200Response) GetPeerServerPriorityIndex() int32`
+`func (o *GetPlugin200Response) GetPeerServerPriorityIndex() int64`
 
 GetPeerServerPriorityIndex returns the PeerServerPriorityIndex field if non-nil, zero value otherwise.
 
 ### GetPeerServerPriorityIndexOk
 
-`func (o *GetPlugin200Response) GetPeerServerPriorityIndexOk() (*int32, bool)`
+`func (o *GetPlugin200Response) GetPeerServerPriorityIndexOk() (*int64, bool)`
 
 GetPeerServerPriorityIndexOk returns a tuple with the PeerServerPriorityIndex field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPeerServerPriorityIndex
 
-`func (o *GetPlugin200Response) SetPeerServerPriorityIndex(v int32)`
+`func (o *GetPlugin200Response) SetPeerServerPriorityIndex(v int64)`
 
 SetPeerServerPriorityIndex sets PeerServerPriorityIndex field to given value.
 
@@ -1017,40 +1017,40 @@ HasPeerServerPriorityIndex returns a boolean if a field has been set.
 
 ### GetMaxUpdatesPerSecond
 
-`func (o *GetPlugin200Response) GetMaxUpdatesPerSecond() int32`
+`func (o *GetPlugin200Response) GetMaxUpdatesPerSecond() int64`
 
 GetMaxUpdatesPerSecond returns the MaxUpdatesPerSecond field if non-nil, zero value otherwise.
 
 ### GetMaxUpdatesPerSecondOk
 
-`func (o *GetPlugin200Response) GetMaxUpdatesPerSecondOk() (*int32, bool)`
+`func (o *GetPlugin200Response) GetMaxUpdatesPerSecondOk() (*int64, bool)`
 
 GetMaxUpdatesPerSecondOk returns a tuple with the MaxUpdatesPerSecond field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxUpdatesPerSecond
 
-`func (o *GetPlugin200Response) SetMaxUpdatesPerSecond(v int32)`
+`func (o *GetPlugin200Response) SetMaxUpdatesPerSecond(v int64)`
 
 SetMaxUpdatesPerSecond sets MaxUpdatesPerSecond field to given value.
 
 
 ### GetNumDeleteThreads
 
-`func (o *GetPlugin200Response) GetNumDeleteThreads() int32`
+`func (o *GetPlugin200Response) GetNumDeleteThreads() int64`
 
 GetNumDeleteThreads returns the NumDeleteThreads field if non-nil, zero value otherwise.
 
 ### GetNumDeleteThreadsOk
 
-`func (o *GetPlugin200Response) GetNumDeleteThreadsOk() (*int32, bool)`
+`func (o *GetPlugin200Response) GetNumDeleteThreadsOk() (*int64, bool)`
 
 GetNumDeleteThreadsOk returns a tuple with the NumDeleteThreads field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNumDeleteThreads
 
-`func (o *GetPlugin200Response) SetNumDeleteThreads(v int32)`
+`func (o *GetPlugin200Response) SetNumDeleteThreads(v int64)`
 
 SetNumDeleteThreads sets NumDeleteThreads field to given value.
 
@@ -1832,20 +1832,20 @@ HasEmptyInsteadOfZero returns a boolean if a field has been set.
 
 ### GetLinesBetweenHeader
 
-`func (o *GetPlugin200Response) GetLinesBetweenHeader() int32`
+`func (o *GetPlugin200Response) GetLinesBetweenHeader() int64`
 
 GetLinesBetweenHeader returns the LinesBetweenHeader field if non-nil, zero value otherwise.
 
 ### GetLinesBetweenHeaderOk
 
-`func (o *GetPlugin200Response) GetLinesBetweenHeaderOk() (*int32, bool)`
+`func (o *GetPlugin200Response) GetLinesBetweenHeaderOk() (*int64, bool)`
 
 GetLinesBetweenHeaderOk returns a tuple with the LinesBetweenHeader field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinesBetweenHeader
 
-`func (o *GetPlugin200Response) SetLinesBetweenHeader(v int32)`
+`func (o *GetPlugin200Response) SetLinesBetweenHeader(v int64)`
 
 SetLinesBetweenHeader sets LinesBetweenHeader field to given value.
 
@@ -2312,20 +2312,20 @@ HasPurgeBehavior returns a boolean if a field has been set.
 
 ### GetNumMostExpensivePhasesShown
 
-`func (o *GetPlugin200Response) GetNumMostExpensivePhasesShown() int32`
+`func (o *GetPlugin200Response) GetNumMostExpensivePhasesShown() int64`
 
 GetNumMostExpensivePhasesShown returns the NumMostExpensivePhasesShown field if non-nil, zero value otherwise.
 
 ### GetNumMostExpensivePhasesShownOk
 
-`func (o *GetPlugin200Response) GetNumMostExpensivePhasesShownOk() (*int32, bool)`
+`func (o *GetPlugin200Response) GetNumMostExpensivePhasesShownOk() (*int64, bool)`
 
 GetNumMostExpensivePhasesShownOk returns a tuple with the NumMostExpensivePhasesShown field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNumMostExpensivePhasesShown
 
-`func (o *GetPlugin200Response) SetNumMostExpensivePhasesShown(v int32)`
+`func (o *GetPlugin200Response) SetNumMostExpensivePhasesShown(v int64)`
 
 SetNumMostExpensivePhasesShown sets NumMostExpensivePhasesShown field to given value.
 
@@ -2542,40 +2542,40 @@ HasSearchFilterPattern returns a boolean if a field has been set.
 
 ### GetInitialConnections
 
-`func (o *GetPlugin200Response) GetInitialConnections() int32`
+`func (o *GetPlugin200Response) GetInitialConnections() int64`
 
 GetInitialConnections returns the InitialConnections field if non-nil, zero value otherwise.
 
 ### GetInitialConnectionsOk
 
-`func (o *GetPlugin200Response) GetInitialConnectionsOk() (*int32, bool)`
+`func (o *GetPlugin200Response) GetInitialConnectionsOk() (*int64, bool)`
 
 GetInitialConnectionsOk returns a tuple with the InitialConnections field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInitialConnections
 
-`func (o *GetPlugin200Response) SetInitialConnections(v int32)`
+`func (o *GetPlugin200Response) SetInitialConnections(v int64)`
 
 SetInitialConnections sets InitialConnections field to given value.
 
 
 ### GetMaxConnections
 
-`func (o *GetPlugin200Response) GetMaxConnections() int32`
+`func (o *GetPlugin200Response) GetMaxConnections() int64`
 
 GetMaxConnections returns the MaxConnections field if non-nil, zero value otherwise.
 
 ### GetMaxConnectionsOk
 
-`func (o *GetPlugin200Response) GetMaxConnectionsOk() (*int32, bool)`
+`func (o *GetPlugin200Response) GetMaxConnectionsOk() (*int64, bool)`
 
 GetMaxConnectionsOk returns a tuple with the MaxConnections field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxConnections
 
-`func (o *GetPlugin200Response) SetMaxConnections(v int32)`
+`func (o *GetPlugin200Response) SetMaxConnections(v int64)`
 
 SetMaxConnections sets MaxConnections field to given value.
 
@@ -2822,40 +2822,40 @@ SetAgentxAddress sets AgentxAddress field to given value.
 
 ### GetAgentxPort
 
-`func (o *GetPlugin200Response) GetAgentxPort() int32`
+`func (o *GetPlugin200Response) GetAgentxPort() int64`
 
 GetAgentxPort returns the AgentxPort field if non-nil, zero value otherwise.
 
 ### GetAgentxPortOk
 
-`func (o *GetPlugin200Response) GetAgentxPortOk() (*int32, bool)`
+`func (o *GetPlugin200Response) GetAgentxPortOk() (*int64, bool)`
 
 GetAgentxPortOk returns a tuple with the AgentxPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAgentxPort
 
-`func (o *GetPlugin200Response) SetAgentxPort(v int32)`
+`func (o *GetPlugin200Response) SetAgentxPort(v int64)`
 
 SetAgentxPort sets AgentxPort field to given value.
 
 
 ### GetNumWorkerThreads
 
-`func (o *GetPlugin200Response) GetNumWorkerThreads() int32`
+`func (o *GetPlugin200Response) GetNumWorkerThreads() int64`
 
 GetNumWorkerThreads returns the NumWorkerThreads field if non-nil, zero value otherwise.
 
 ### GetNumWorkerThreadsOk
 
-`func (o *GetPlugin200Response) GetNumWorkerThreadsOk() (*int32, bool)`
+`func (o *GetPlugin200Response) GetNumWorkerThreadsOk() (*int64, bool)`
 
 GetNumWorkerThreadsOk returns a tuple with the NumWorkerThreads field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNumWorkerThreads
 
-`func (o *GetPlugin200Response) SetNumWorkerThreads(v int32)`
+`func (o *GetPlugin200Response) SetNumWorkerThreads(v int64)`
 
 SetNumWorkerThreads sets NumWorkerThreads field to given value.
 

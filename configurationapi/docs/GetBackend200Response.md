@@ -30,11 +30,11 @@ Name | Type | Description | Notes
 **TrustStorePinPassphraseProvider** | Pointer to **string** | The passphrase provider to use to obtain the clear-text PIN needed to access the Trust Store Backend. | [optional] 
 **DbDirectory** | **string** | Specifies the path to the filesystem directory that is used to hold the Berkeley DB Java Edition database files containing the data for this backend. The files for this backend are stored in a sub-directory named after the backend-id. | 
 **DbDirectoryPermissions** | Pointer to **string** | Specifies the permissions that should be applied to the directory containing the backend database files and to directories and files created during backup or LDIF export of the backend. | [optional] 
-**DbCachePercent** | Pointer to **int32** | Specifies the percentage of JVM memory to allocate to the database cache. | [optional] 
+**DbCachePercent** | Pointer to **int64** | Specifies the percentage of JVM memory to allocate to the database cache. | [optional] 
 **JeProperty** | Pointer to **[]string** | Specifies the database and environment properties for the Berkeley DB Java Edition database serving the data for this backend. | [optional] 
-**ChangelogWriteBatchSize** | Pointer to **int32** | Specifies the number of changelog entries written in a single database transaction. | [optional] 
-**ChangelogPurgeBatchSize** | Pointer to **int32** | Specifies the number of changelog entries purged in a single database transaction. | [optional] 
-**ChangelogWriteQueueCapacity** | Pointer to **int32** | Specifies the capacity of the changelog write queue in number of changes. | [optional] 
+**ChangelogWriteBatchSize** | Pointer to **int64** | Specifies the number of changelog entries written in a single database transaction. | [optional] 
+**ChangelogPurgeBatchSize** | Pointer to **int64** | Specifies the number of changelog entries purged in a single database transaction. | [optional] 
+**ChangelogWriteQueueCapacity** | Pointer to **int64** | Specifies the capacity of the changelog write queue in number of changes. | [optional] 
 **IndexIncludeAttribute** | Pointer to **[]string** | Specifies which attribute types are to be specifically included in the set of attribute indexes maintained on the changelog. If this property does not have any values then no attribute types are indexed. | [optional] 
 **IndexExcludeAttribute** | Pointer to **[]string** | Specifies which attribute types are to be specifically excluded from the set of attribute indexes maintained on the changelog. This property is useful when the index-include-attribute property contains one of the special values \&quot;*\&quot; and \&quot;+\&quot;. | [optional] 
 **ChangelogMaximumAge** | **string** | Changes are guaranteed to be maintained in the changelog database for at least this duration. Setting target-database-size can allow additional changes to be maintained up to the configured size on disk. | 
@@ -48,7 +48,7 @@ Name | Type | Description | Notes
 **ChangelogDeletedEntryIncludeAttribute** | Pointer to **[]string** | Specifies a set of attribute types that should be included in a changelog entry for DELETE operations. | [optional] 
 **ChangelogDeletedEntryExcludeAttribute** | Pointer to **[]string** | Specifies a set of attribute types that should be excluded from a changelog entry for DELETE operations. | [optional] 
 **ChangelogIncludeKeyAttribute** | Pointer to **[]string** | Specifies which attribute types will be included in a changelog entry on every change. | [optional] 
-**ChangelogMaxBeforeAfterValues** | Pointer to **int32** | This controls whether all attribute values for a modified attribute (even those values that have not changed) will be included in the changelog entry. If the number of attribute values does not exceed this limit, then all values for the modified attribute will be included in the changelog entry. | [optional] 
+**ChangelogMaxBeforeAfterValues** | Pointer to **int64** | This controls whether all attribute values for a modified attribute (even those values that have not changed) will be included in the changelog entry. If the number of attribute values does not exceed this limit, then all values for the modified attribute will be included in the changelog entry. | [optional] 
 **WriteLastmodAttributes** | Pointer to **bool** | Specifies whether values of creatorsName, createTimestamp, modifiersName and modifyTimestamp attributes will be written to changelog entries. | [optional] 
 **UseReversibleForm** | Pointer to **bool** | Specifies whether the changelog should provide enough information to be able to revert the changes if desired. | [optional] 
 **IncludeVirtualAttributes** | Pointer to [**[]EnumbackendIncludeVirtualAttributesProp**](EnumbackendIncludeVirtualAttributesProp.md) |  | [optional] 
@@ -64,9 +64,9 @@ Name | Type | Description | Notes
 **CompactCommonParentDN** | Pointer to **[]string** | Provides a DN of an entry that may be the parent for a large number of entries in the backend. This may be used to help increase the space efficiency when encoding entries for storage. | [optional] 
 **CompressEntries** | Pointer to **bool** | Indicates whether the backend should attempt to compress entries before storing them in the database. | [optional] 
 **HashEntries** | Pointer to **bool** | Indicates whether to calculate and store a message digest of the entry contents along with the entry data, in order to provide a means of verifying the integrity of the entry data. | [optional] 
-**DbNumCleanerThreads** | Pointer to **int32** | Specifies the number of threads that the backend should maintain to keep the database log files at or near the desired utilization. A value of zero indicates that the number of cleaner threads should be automatically configured based on the number of available CPUs. | [optional] 
-**DbCleanerMinUtilization** | Pointer to **int32** | Specifies the minimum percentage of \&quot;live\&quot; data that the database cleaner attempts to keep in database log files. | [optional] 
-**DbEvictorCriticalPercentage** | Pointer to **int32** | Specifies the percentage over the configured maximum that the database cache is allowed to grow. It is recommended to set this value slightly above zero when the database is too large to fully cache in memory. In this case, a dedicated background evictor thread is used to perform evictions once the cache fills up reducing the possibility that server threads are blocked. | [optional] 
+**DbNumCleanerThreads** | Pointer to **int64** | Specifies the number of threads that the backend should maintain to keep the database log files at or near the desired utilization. A value of zero indicates that the number of cleaner threads should be automatically configured based on the number of available CPUs. | [optional] 
+**DbCleanerMinUtilization** | Pointer to **int64** | Specifies the minimum percentage of \&quot;live\&quot; data that the database cleaner attempts to keep in database log files. | [optional] 
+**DbEvictorCriticalPercentage** | Pointer to **int64** | Specifies the percentage over the configured maximum that the database cache is allowed to grow. It is recommended to set this value slightly above zero when the database is too large to fully cache in memory. In this case, a dedicated background evictor thread is used to perform evictions once the cache fills up reducing the possibility that server threads are blocked. | [optional] 
 **DbCheckpointerWakeupInterval** | Pointer to **string** | Specifies the maximum length of time that should pass between checkpoints. | [optional] 
 **DbBackgroundSyncInterval** | Pointer to **string** | Specifies the interval to use when performing background synchronous writes in the database environment in order to smooth overall write performance and increase data durability. A value of \&quot;0 s\&quot; will disable background synchronous writes. | [optional] 
 **DbUseThreadLocalHandles** | Pointer to **bool** | Indicates whether to use thread-local database handles to reduce contention in the backend. | [optional] 
@@ -79,41 +79,41 @@ Name | Type | Description | Notes
 **Id2subtreeCacheMode** | Pointer to [**EnumbackendId2subtreeCacheModeProp**](EnumbackendId2subtreeCacheModeProp.md) |  | [optional] 
 **Dn2uriCacheMode** | Pointer to [**EnumbackendDn2uriCacheModeProp**](EnumbackendDn2uriCacheModeProp.md) |  | [optional] 
 **PrimeMethod** | Pointer to [**[]EnumbackendPrimeMethodProp**](EnumbackendPrimeMethodProp.md) |  | [optional] 
-**PrimeThreadCount** | Pointer to **int32** | Specifies the number of threads to use when priming. At present, this applies only to the preload and cursor-across-indexes prime methods. | [optional] 
+**PrimeThreadCount** | Pointer to **int64** | Specifies the number of threads to use when priming. At present, this applies only to the preload and cursor-across-indexes prime methods. | [optional] 
 **PrimeTimeLimit** | Pointer to **string** | Specifies the maximum length of time that the backend prime should be allowed to run. A duration of zero seconds indicates that there should not be a time limit. | [optional] 
 **PrimeAllIndexes** | Pointer to **bool** | Indicates whether to prime all indexes associated with this backend, or to only prime the specified set of indexes (as configured with the system-index-to-prime property for the system indexes, and the prime-index property in the attribute index definition for attribute indexes). | [optional] 
 **SystemIndexToPrime** | Pointer to [**[]EnumbackendSystemIndexToPrimeProp**](EnumbackendSystemIndexToPrimeProp.md) |  | [optional] 
 **SystemIndexToPrimeInternalNodesOnly** | Pointer to [**[]EnumbackendSystemIndexToPrimeInternalNodesOnlyProp**](EnumbackendSystemIndexToPrimeInternalNodesOnlyProp.md) |  | [optional] 
 **BackgroundPrime** | Pointer to **bool** | Indicates whether to attempt to perform the prime using a background thread if possible. If background priming is enabled, then the Directory Server may be allowed to accept client connections and process requests while the prime is in progress. | [optional] 
-**IndexEntryLimit** | Pointer to **int32** | Specifies the maximum number of entries that are allowed to match a given index key before that particular index key is no longer maintained. | [optional] 
-**CompositeIndexEntryLimit** | Pointer to **int32** | Specifies the maximum number of entries that are allowed to match a given composite index key before that particular composite index key is no longer maintained. | [optional] 
-**Id2childrenIndexEntryLimit** | Pointer to **int32** | Specifies the maximum number of entry IDs to maintain for each entry in the id2children system index (which keeps track of the immediate children for an entry, to assist in otherwise unindexed searches with a single-level scope). A value of 0 means there is no limit, however this could have a big impact on database size on disk and on server performance. | [optional] 
-**Id2subtreeIndexEntryLimit** | Pointer to **int32** | Specifies the maximum number of entry IDs to maintain for each entry in the id2subtree system index (which keeps track of all descendants below an entry, to assist in otherwise unindexed searches with a whole-subtree or subordinate subtree scope). A value of 0 means there is no limit, however this could have a big impact on database size on disk and on server performance. | [optional] 
+**IndexEntryLimit** | Pointer to **int64** | Specifies the maximum number of entries that are allowed to match a given index key before that particular index key is no longer maintained. | [optional] 
+**CompositeIndexEntryLimit** | Pointer to **int64** | Specifies the maximum number of entries that are allowed to match a given composite index key before that particular composite index key is no longer maintained. | [optional] 
+**Id2childrenIndexEntryLimit** | Pointer to **int64** | Specifies the maximum number of entry IDs to maintain for each entry in the id2children system index (which keeps track of the immediate children for an entry, to assist in otherwise unindexed searches with a single-level scope). A value of 0 means there is no limit, however this could have a big impact on database size on disk and on server performance. | [optional] 
+**Id2subtreeIndexEntryLimit** | Pointer to **int64** | Specifies the maximum number of entry IDs to maintain for each entry in the id2subtree system index (which keeps track of all descendants below an entry, to assist in otherwise unindexed searches with a whole-subtree or subordinate subtree scope). A value of 0 means there is no limit, however this could have a big impact on database size on disk and on server performance. | [optional] 
 **ImportTempDirectory** | **string** | Specifies the location of the directory that is used to hold temporary information during the index post-processing phase of an LDIF import. | 
-**ImportThreadCount** | Pointer to **int32** | Specifies the number of threads to use for concurrent processing during an LDIF import. | [optional] 
-**ExportThreadCount** | Pointer to **int32** | Specifies the number of threads to use for concurrently retrieving and encoding entries during an LDIF export. | [optional] 
-**DbImportCachePercent** | Pointer to **int32** | The percentage of JVM memory to allocate to the database cache during import operations. | [optional] 
+**ImportThreadCount** | Pointer to **int64** | Specifies the number of threads to use for concurrent processing during an LDIF import. | [optional] 
+**ExportThreadCount** | Pointer to **int64** | Specifies the number of threads to use for concurrently retrieving and encoding entries during an LDIF export. | [optional] 
+**DbImportCachePercent** | Pointer to **int64** | The percentage of JVM memory to allocate to the database cache during import operations. | [optional] 
 **DbTxnWriteNoSync** | Pointer to **bool** | Indicates whether the database should synchronously flush data as it is written to disk. | [optional] 
-**DeadlockRetryLimit** | Pointer to **int32** | Specifies the number of times that the server should retry an attempted operation in the backend if a deadlock results from two concurrent requests that interfere with each other in a conflicting manner. | [optional] 
+**DeadlockRetryLimit** | Pointer to **int64** | Specifies the number of times that the server should retry an attempted operation in the backend if a deadlock results from two concurrent requests that interfere with each other in a conflicting manner. | [optional] 
 **ExternalTxnDefaultBackendLockBehavior** | Pointer to [**EnumbackendExternalTxnDefaultBackendLockBehaviorProp**](EnumbackendExternalTxnDefaultBackendLockBehaviorProp.md) |  | [optional] 
 **SingleWriterLockBehavior** | Pointer to [**EnumbackendSingleWriterLockBehaviorProp**](EnumbackendSingleWriterLockBehaviorProp.md) |  | [optional] 
-**SubtreeDeleteSizeLimit** | Pointer to **int32** | Specifies the maximum number of entries that may be deleted from the backend when using the subtree delete control. | [optional] 
-**NumRecentChanges** | Pointer to **int32** | Specifies the number of recent LDAP entry changes per replica for which the backend keeps a record to allow replication to recover in the event that the server is abruptly terminated. Increasing this value can lead to an increased peak server modification rate as well as increased replication throughput. | [optional] 
+**SubtreeDeleteSizeLimit** | Pointer to **int64** | Specifies the maximum number of entries that may be deleted from the backend when using the subtree delete control. | [optional] 
+**NumRecentChanges** | Pointer to **int64** | Specifies the number of recent LDAP entry changes per replica for which the backend keeps a record to allow replication to recover in the event that the server is abruptly terminated. Increasing this value can lead to an increased peak server modification rate as well as increased replication throughput. | [optional] 
 **OfflineProcessDatabaseOpenTimeout** | Pointer to **string** | Specifies a timeout duration which will be used for opening the database environment by an offline process, such as export-ldif. | [optional] 
 **InsignificantConfigArchiveAttribute** | Pointer to **[]string** | The name or OID of an attribute type that is considered insignificant for the purpose of maintaining the configuration archive. | [optional] 
 **MirroredSubtreePeerPollingInterval** | Pointer to **string** | Tells the server component that is responsible for mirroring configuration data across a topology of servers the maximum amount of time to wait before polling the peer servers in the topology to determine if there are any changes in the topology. Mirrored data includes meta-data about the servers in the topology as well as cluster-wide configuration data. | [optional] 
 **MirroredSubtreeEntryUpdateTimeout** | Pointer to **string** | Tells the server component that is responsible for mirroring configuration data across a topology of servers the maximum amount of time to wait for an update operation (add, delete, modify and modify-dn) on an entry to be applied on all servers in the topology. Mirrored data includes meta-data about the servers in the topology as well as cluster-wide configuration data. | [optional] 
 **MirroredSubtreeSearchTimeout** | Pointer to **string** | Tells the server component that is responsible for mirroring configuration data across a topology of servers the maximum amount of time to wait for a search operation to complete. Mirrored data includes meta-data about the servers in the topology as well as cluster-wide configuration data. Search requests that take longer than this timeout will be canceled and considered failures. | [optional] 
 **TaskBackingFile** | **string** | Specifies the path to the backing file for storing information about the tasks configured in the server. | 
-**MaximumInitialTaskLogMessagesToRetain** | Pointer to **int32** | The maximum number of log messages to retain in each task entry from the beginning of the processing for that task. If too many messages are logged during task processing, then retaining only a limited number of messages from the beginning and/or end of task processing can reduce the amount of memory that the server consumes by caching information about currently-active and recently-completed tasks. | [optional] 
-**MaximumFinalTaskLogMessagesToRetain** | Pointer to **int32** | The maximum number of log messages to retain in each task entry from the end of the processing for that task. If too many messages are logged during task processing, then retaining only a limited number of messages from the beginning and/or end of task processing can reduce the amount of memory that the server consumes by caching information about currently-active and recently-completed tasks. | [optional] 
+**MaximumInitialTaskLogMessagesToRetain** | Pointer to **int64** | The maximum number of log messages to retain in each task entry from the beginning of the processing for that task. If too many messages are logged during task processing, then retaining only a limited number of messages from the beginning and/or end of task processing can reduce the amount of memory that the server consumes by caching information about currently-active and recently-completed tasks. | [optional] 
+**MaximumFinalTaskLogMessagesToRetain** | Pointer to **int64** | The maximum number of log messages to retain in each task entry from the end of the processing for that task. If too many messages are logged during task processing, then retaining only a limited number of messages from the beginning and/or end of task processing can reduce the amount of memory that the server consumes by caching information about currently-active and recently-completed tasks. | [optional] 
 **TaskRetentionTime** | Pointer to **string** | Specifies the length of time that task entries should be retained after processing on the associated task has been completed. | [optional] 
 **NotificationSenderAddress** | Pointer to **string** | Specifies the email address to use as the sender address (that is, the \&quot;From:\&quot; address) for notification mail messages generated when a task completes execution. | [optional] 
 **AlertRetentionTime** | **string** | Specifies the maximum length of time that information about generated alerts should be maintained before they will be purged. | 
-**MaxAlerts** | Pointer to **int32** | Specifies the maximum number of alerts that should be retained. If more alerts than this configured maximum are generated within the alert retention time, then the oldest alerts will be purged to achieve this maximum. | [optional] 
+**MaxAlerts** | Pointer to **int64** | Specifies the maximum number of alerts that should be retained. If more alerts than this configured maximum are generated within the alert retention time, then the oldest alerts will be purged to achieve this maximum. | [optional] 
 **DisabledAlertType** | Pointer to [**[]EnumbackendDisabledAlertTypeProp**](EnumbackendDisabledAlertTypeProp.md) |  | [optional] 
 **AlarmRetentionTime** | **string** | Specifies the maximum length of time that information about raised alarms should be maintained before they will be purged. | 
-**MaxAlarms** | Pointer to **int32** | Specifies the maximum number of alarms that should be retained. If more alarms than this configured maximum are generated within the alarm retention time, then the oldest alarms will be purged to achieve this maximum. Only alarms at normal severity will be purged. | [optional] 
+**MaxAlarms** | Pointer to **int64** | Specifies the maximum number of alarms that should be retained. If more alarms than this configured maximum are generated within the alarm retention time, then the oldest alarms will be purged to achieve this maximum. Only alarms at normal severity will be purged. | [optional] 
 **StorageDir** | **string** | Specifies the path to the directory that will be used to store queued samples. | 
 **MetricsDir** | **string** | Specifies the path to the directory that contains metric definitions. | 
 **SampleFlushInterval** | Pointer to **string** | Period when samples are flushed to disk. | [optional] 
@@ -735,20 +735,20 @@ HasDbDirectoryPermissions returns a boolean if a field has been set.
 
 ### GetDbCachePercent
 
-`func (o *GetBackend200Response) GetDbCachePercent() int32`
+`func (o *GetBackend200Response) GetDbCachePercent() int64`
 
 GetDbCachePercent returns the DbCachePercent field if non-nil, zero value otherwise.
 
 ### GetDbCachePercentOk
 
-`func (o *GetBackend200Response) GetDbCachePercentOk() (*int32, bool)`
+`func (o *GetBackend200Response) GetDbCachePercentOk() (*int64, bool)`
 
 GetDbCachePercentOk returns a tuple with the DbCachePercent field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDbCachePercent
 
-`func (o *GetBackend200Response) SetDbCachePercent(v int32)`
+`func (o *GetBackend200Response) SetDbCachePercent(v int64)`
 
 SetDbCachePercent sets DbCachePercent field to given value.
 
@@ -785,20 +785,20 @@ HasJeProperty returns a boolean if a field has been set.
 
 ### GetChangelogWriteBatchSize
 
-`func (o *GetBackend200Response) GetChangelogWriteBatchSize() int32`
+`func (o *GetBackend200Response) GetChangelogWriteBatchSize() int64`
 
 GetChangelogWriteBatchSize returns the ChangelogWriteBatchSize field if non-nil, zero value otherwise.
 
 ### GetChangelogWriteBatchSizeOk
 
-`func (o *GetBackend200Response) GetChangelogWriteBatchSizeOk() (*int32, bool)`
+`func (o *GetBackend200Response) GetChangelogWriteBatchSizeOk() (*int64, bool)`
 
 GetChangelogWriteBatchSizeOk returns a tuple with the ChangelogWriteBatchSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChangelogWriteBatchSize
 
-`func (o *GetBackend200Response) SetChangelogWriteBatchSize(v int32)`
+`func (o *GetBackend200Response) SetChangelogWriteBatchSize(v int64)`
 
 SetChangelogWriteBatchSize sets ChangelogWriteBatchSize field to given value.
 
@@ -810,20 +810,20 @@ HasChangelogWriteBatchSize returns a boolean if a field has been set.
 
 ### GetChangelogPurgeBatchSize
 
-`func (o *GetBackend200Response) GetChangelogPurgeBatchSize() int32`
+`func (o *GetBackend200Response) GetChangelogPurgeBatchSize() int64`
 
 GetChangelogPurgeBatchSize returns the ChangelogPurgeBatchSize field if non-nil, zero value otherwise.
 
 ### GetChangelogPurgeBatchSizeOk
 
-`func (o *GetBackend200Response) GetChangelogPurgeBatchSizeOk() (*int32, bool)`
+`func (o *GetBackend200Response) GetChangelogPurgeBatchSizeOk() (*int64, bool)`
 
 GetChangelogPurgeBatchSizeOk returns a tuple with the ChangelogPurgeBatchSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChangelogPurgeBatchSize
 
-`func (o *GetBackend200Response) SetChangelogPurgeBatchSize(v int32)`
+`func (o *GetBackend200Response) SetChangelogPurgeBatchSize(v int64)`
 
 SetChangelogPurgeBatchSize sets ChangelogPurgeBatchSize field to given value.
 
@@ -835,20 +835,20 @@ HasChangelogPurgeBatchSize returns a boolean if a field has been set.
 
 ### GetChangelogWriteQueueCapacity
 
-`func (o *GetBackend200Response) GetChangelogWriteQueueCapacity() int32`
+`func (o *GetBackend200Response) GetChangelogWriteQueueCapacity() int64`
 
 GetChangelogWriteQueueCapacity returns the ChangelogWriteQueueCapacity field if non-nil, zero value otherwise.
 
 ### GetChangelogWriteQueueCapacityOk
 
-`func (o *GetBackend200Response) GetChangelogWriteQueueCapacityOk() (*int32, bool)`
+`func (o *GetBackend200Response) GetChangelogWriteQueueCapacityOk() (*int64, bool)`
 
 GetChangelogWriteQueueCapacityOk returns a tuple with the ChangelogWriteQueueCapacity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChangelogWriteQueueCapacity
 
-`func (o *GetBackend200Response) SetChangelogWriteQueueCapacity(v int32)`
+`func (o *GetBackend200Response) SetChangelogWriteQueueCapacity(v int64)`
 
 SetChangelogWriteQueueCapacity sets ChangelogWriteQueueCapacity field to given value.
 
@@ -1180,20 +1180,20 @@ HasChangelogIncludeKeyAttribute returns a boolean if a field has been set.
 
 ### GetChangelogMaxBeforeAfterValues
 
-`func (o *GetBackend200Response) GetChangelogMaxBeforeAfterValues() int32`
+`func (o *GetBackend200Response) GetChangelogMaxBeforeAfterValues() int64`
 
 GetChangelogMaxBeforeAfterValues returns the ChangelogMaxBeforeAfterValues field if non-nil, zero value otherwise.
 
 ### GetChangelogMaxBeforeAfterValuesOk
 
-`func (o *GetBackend200Response) GetChangelogMaxBeforeAfterValuesOk() (*int32, bool)`
+`func (o *GetBackend200Response) GetChangelogMaxBeforeAfterValuesOk() (*int64, bool)`
 
 GetChangelogMaxBeforeAfterValuesOk returns a tuple with the ChangelogMaxBeforeAfterValues field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChangelogMaxBeforeAfterValues
 
-`func (o *GetBackend200Response) SetChangelogMaxBeforeAfterValues(v int32)`
+`func (o *GetBackend200Response) SetChangelogMaxBeforeAfterValues(v int64)`
 
 SetChangelogMaxBeforeAfterValues sets ChangelogMaxBeforeAfterValues field to given value.
 
@@ -1580,20 +1580,20 @@ HasHashEntries returns a boolean if a field has been set.
 
 ### GetDbNumCleanerThreads
 
-`func (o *GetBackend200Response) GetDbNumCleanerThreads() int32`
+`func (o *GetBackend200Response) GetDbNumCleanerThreads() int64`
 
 GetDbNumCleanerThreads returns the DbNumCleanerThreads field if non-nil, zero value otherwise.
 
 ### GetDbNumCleanerThreadsOk
 
-`func (o *GetBackend200Response) GetDbNumCleanerThreadsOk() (*int32, bool)`
+`func (o *GetBackend200Response) GetDbNumCleanerThreadsOk() (*int64, bool)`
 
 GetDbNumCleanerThreadsOk returns a tuple with the DbNumCleanerThreads field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDbNumCleanerThreads
 
-`func (o *GetBackend200Response) SetDbNumCleanerThreads(v int32)`
+`func (o *GetBackend200Response) SetDbNumCleanerThreads(v int64)`
 
 SetDbNumCleanerThreads sets DbNumCleanerThreads field to given value.
 
@@ -1605,20 +1605,20 @@ HasDbNumCleanerThreads returns a boolean if a field has been set.
 
 ### GetDbCleanerMinUtilization
 
-`func (o *GetBackend200Response) GetDbCleanerMinUtilization() int32`
+`func (o *GetBackend200Response) GetDbCleanerMinUtilization() int64`
 
 GetDbCleanerMinUtilization returns the DbCleanerMinUtilization field if non-nil, zero value otherwise.
 
 ### GetDbCleanerMinUtilizationOk
 
-`func (o *GetBackend200Response) GetDbCleanerMinUtilizationOk() (*int32, bool)`
+`func (o *GetBackend200Response) GetDbCleanerMinUtilizationOk() (*int64, bool)`
 
 GetDbCleanerMinUtilizationOk returns a tuple with the DbCleanerMinUtilization field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDbCleanerMinUtilization
 
-`func (o *GetBackend200Response) SetDbCleanerMinUtilization(v int32)`
+`func (o *GetBackend200Response) SetDbCleanerMinUtilization(v int64)`
 
 SetDbCleanerMinUtilization sets DbCleanerMinUtilization field to given value.
 
@@ -1630,20 +1630,20 @@ HasDbCleanerMinUtilization returns a boolean if a field has been set.
 
 ### GetDbEvictorCriticalPercentage
 
-`func (o *GetBackend200Response) GetDbEvictorCriticalPercentage() int32`
+`func (o *GetBackend200Response) GetDbEvictorCriticalPercentage() int64`
 
 GetDbEvictorCriticalPercentage returns the DbEvictorCriticalPercentage field if non-nil, zero value otherwise.
 
 ### GetDbEvictorCriticalPercentageOk
 
-`func (o *GetBackend200Response) GetDbEvictorCriticalPercentageOk() (*int32, bool)`
+`func (o *GetBackend200Response) GetDbEvictorCriticalPercentageOk() (*int64, bool)`
 
 GetDbEvictorCriticalPercentageOk returns a tuple with the DbEvictorCriticalPercentage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDbEvictorCriticalPercentage
 
-`func (o *GetBackend200Response) SetDbEvictorCriticalPercentage(v int32)`
+`func (o *GetBackend200Response) SetDbEvictorCriticalPercentage(v int64)`
 
 SetDbEvictorCriticalPercentage sets DbEvictorCriticalPercentage field to given value.
 
@@ -1955,20 +1955,20 @@ HasPrimeMethod returns a boolean if a field has been set.
 
 ### GetPrimeThreadCount
 
-`func (o *GetBackend200Response) GetPrimeThreadCount() int32`
+`func (o *GetBackend200Response) GetPrimeThreadCount() int64`
 
 GetPrimeThreadCount returns the PrimeThreadCount field if non-nil, zero value otherwise.
 
 ### GetPrimeThreadCountOk
 
-`func (o *GetBackend200Response) GetPrimeThreadCountOk() (*int32, bool)`
+`func (o *GetBackend200Response) GetPrimeThreadCountOk() (*int64, bool)`
 
 GetPrimeThreadCountOk returns a tuple with the PrimeThreadCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrimeThreadCount
 
-`func (o *GetBackend200Response) SetPrimeThreadCount(v int32)`
+`func (o *GetBackend200Response) SetPrimeThreadCount(v int64)`
 
 SetPrimeThreadCount sets PrimeThreadCount field to given value.
 
@@ -2105,20 +2105,20 @@ HasBackgroundPrime returns a boolean if a field has been set.
 
 ### GetIndexEntryLimit
 
-`func (o *GetBackend200Response) GetIndexEntryLimit() int32`
+`func (o *GetBackend200Response) GetIndexEntryLimit() int64`
 
 GetIndexEntryLimit returns the IndexEntryLimit field if non-nil, zero value otherwise.
 
 ### GetIndexEntryLimitOk
 
-`func (o *GetBackend200Response) GetIndexEntryLimitOk() (*int32, bool)`
+`func (o *GetBackend200Response) GetIndexEntryLimitOk() (*int64, bool)`
 
 GetIndexEntryLimitOk returns a tuple with the IndexEntryLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIndexEntryLimit
 
-`func (o *GetBackend200Response) SetIndexEntryLimit(v int32)`
+`func (o *GetBackend200Response) SetIndexEntryLimit(v int64)`
 
 SetIndexEntryLimit sets IndexEntryLimit field to given value.
 
@@ -2130,20 +2130,20 @@ HasIndexEntryLimit returns a boolean if a field has been set.
 
 ### GetCompositeIndexEntryLimit
 
-`func (o *GetBackend200Response) GetCompositeIndexEntryLimit() int32`
+`func (o *GetBackend200Response) GetCompositeIndexEntryLimit() int64`
 
 GetCompositeIndexEntryLimit returns the CompositeIndexEntryLimit field if non-nil, zero value otherwise.
 
 ### GetCompositeIndexEntryLimitOk
 
-`func (o *GetBackend200Response) GetCompositeIndexEntryLimitOk() (*int32, bool)`
+`func (o *GetBackend200Response) GetCompositeIndexEntryLimitOk() (*int64, bool)`
 
 GetCompositeIndexEntryLimitOk returns a tuple with the CompositeIndexEntryLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCompositeIndexEntryLimit
 
-`func (o *GetBackend200Response) SetCompositeIndexEntryLimit(v int32)`
+`func (o *GetBackend200Response) SetCompositeIndexEntryLimit(v int64)`
 
 SetCompositeIndexEntryLimit sets CompositeIndexEntryLimit field to given value.
 
@@ -2155,20 +2155,20 @@ HasCompositeIndexEntryLimit returns a boolean if a field has been set.
 
 ### GetId2childrenIndexEntryLimit
 
-`func (o *GetBackend200Response) GetId2childrenIndexEntryLimit() int32`
+`func (o *GetBackend200Response) GetId2childrenIndexEntryLimit() int64`
 
 GetId2childrenIndexEntryLimit returns the Id2childrenIndexEntryLimit field if non-nil, zero value otherwise.
 
 ### GetId2childrenIndexEntryLimitOk
 
-`func (o *GetBackend200Response) GetId2childrenIndexEntryLimitOk() (*int32, bool)`
+`func (o *GetBackend200Response) GetId2childrenIndexEntryLimitOk() (*int64, bool)`
 
 GetId2childrenIndexEntryLimitOk returns a tuple with the Id2childrenIndexEntryLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId2childrenIndexEntryLimit
 
-`func (o *GetBackend200Response) SetId2childrenIndexEntryLimit(v int32)`
+`func (o *GetBackend200Response) SetId2childrenIndexEntryLimit(v int64)`
 
 SetId2childrenIndexEntryLimit sets Id2childrenIndexEntryLimit field to given value.
 
@@ -2180,20 +2180,20 @@ HasId2childrenIndexEntryLimit returns a boolean if a field has been set.
 
 ### GetId2subtreeIndexEntryLimit
 
-`func (o *GetBackend200Response) GetId2subtreeIndexEntryLimit() int32`
+`func (o *GetBackend200Response) GetId2subtreeIndexEntryLimit() int64`
 
 GetId2subtreeIndexEntryLimit returns the Id2subtreeIndexEntryLimit field if non-nil, zero value otherwise.
 
 ### GetId2subtreeIndexEntryLimitOk
 
-`func (o *GetBackend200Response) GetId2subtreeIndexEntryLimitOk() (*int32, bool)`
+`func (o *GetBackend200Response) GetId2subtreeIndexEntryLimitOk() (*int64, bool)`
 
 GetId2subtreeIndexEntryLimitOk returns a tuple with the Id2subtreeIndexEntryLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId2subtreeIndexEntryLimit
 
-`func (o *GetBackend200Response) SetId2subtreeIndexEntryLimit(v int32)`
+`func (o *GetBackend200Response) SetId2subtreeIndexEntryLimit(v int64)`
 
 SetId2subtreeIndexEntryLimit sets Id2subtreeIndexEntryLimit field to given value.
 
@@ -2225,20 +2225,20 @@ SetImportTempDirectory sets ImportTempDirectory field to given value.
 
 ### GetImportThreadCount
 
-`func (o *GetBackend200Response) GetImportThreadCount() int32`
+`func (o *GetBackend200Response) GetImportThreadCount() int64`
 
 GetImportThreadCount returns the ImportThreadCount field if non-nil, zero value otherwise.
 
 ### GetImportThreadCountOk
 
-`func (o *GetBackend200Response) GetImportThreadCountOk() (*int32, bool)`
+`func (o *GetBackend200Response) GetImportThreadCountOk() (*int64, bool)`
 
 GetImportThreadCountOk returns a tuple with the ImportThreadCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetImportThreadCount
 
-`func (o *GetBackend200Response) SetImportThreadCount(v int32)`
+`func (o *GetBackend200Response) SetImportThreadCount(v int64)`
 
 SetImportThreadCount sets ImportThreadCount field to given value.
 
@@ -2250,20 +2250,20 @@ HasImportThreadCount returns a boolean if a field has been set.
 
 ### GetExportThreadCount
 
-`func (o *GetBackend200Response) GetExportThreadCount() int32`
+`func (o *GetBackend200Response) GetExportThreadCount() int64`
 
 GetExportThreadCount returns the ExportThreadCount field if non-nil, zero value otherwise.
 
 ### GetExportThreadCountOk
 
-`func (o *GetBackend200Response) GetExportThreadCountOk() (*int32, bool)`
+`func (o *GetBackend200Response) GetExportThreadCountOk() (*int64, bool)`
 
 GetExportThreadCountOk returns a tuple with the ExportThreadCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExportThreadCount
 
-`func (o *GetBackend200Response) SetExportThreadCount(v int32)`
+`func (o *GetBackend200Response) SetExportThreadCount(v int64)`
 
 SetExportThreadCount sets ExportThreadCount field to given value.
 
@@ -2275,20 +2275,20 @@ HasExportThreadCount returns a boolean if a field has been set.
 
 ### GetDbImportCachePercent
 
-`func (o *GetBackend200Response) GetDbImportCachePercent() int32`
+`func (o *GetBackend200Response) GetDbImportCachePercent() int64`
 
 GetDbImportCachePercent returns the DbImportCachePercent field if non-nil, zero value otherwise.
 
 ### GetDbImportCachePercentOk
 
-`func (o *GetBackend200Response) GetDbImportCachePercentOk() (*int32, bool)`
+`func (o *GetBackend200Response) GetDbImportCachePercentOk() (*int64, bool)`
 
 GetDbImportCachePercentOk returns a tuple with the DbImportCachePercent field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDbImportCachePercent
 
-`func (o *GetBackend200Response) SetDbImportCachePercent(v int32)`
+`func (o *GetBackend200Response) SetDbImportCachePercent(v int64)`
 
 SetDbImportCachePercent sets DbImportCachePercent field to given value.
 
@@ -2325,20 +2325,20 @@ HasDbTxnWriteNoSync returns a boolean if a field has been set.
 
 ### GetDeadlockRetryLimit
 
-`func (o *GetBackend200Response) GetDeadlockRetryLimit() int32`
+`func (o *GetBackend200Response) GetDeadlockRetryLimit() int64`
 
 GetDeadlockRetryLimit returns the DeadlockRetryLimit field if non-nil, zero value otherwise.
 
 ### GetDeadlockRetryLimitOk
 
-`func (o *GetBackend200Response) GetDeadlockRetryLimitOk() (*int32, bool)`
+`func (o *GetBackend200Response) GetDeadlockRetryLimitOk() (*int64, bool)`
 
 GetDeadlockRetryLimitOk returns a tuple with the DeadlockRetryLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeadlockRetryLimit
 
-`func (o *GetBackend200Response) SetDeadlockRetryLimit(v int32)`
+`func (o *GetBackend200Response) SetDeadlockRetryLimit(v int64)`
 
 SetDeadlockRetryLimit sets DeadlockRetryLimit field to given value.
 
@@ -2400,20 +2400,20 @@ HasSingleWriterLockBehavior returns a boolean if a field has been set.
 
 ### GetSubtreeDeleteSizeLimit
 
-`func (o *GetBackend200Response) GetSubtreeDeleteSizeLimit() int32`
+`func (o *GetBackend200Response) GetSubtreeDeleteSizeLimit() int64`
 
 GetSubtreeDeleteSizeLimit returns the SubtreeDeleteSizeLimit field if non-nil, zero value otherwise.
 
 ### GetSubtreeDeleteSizeLimitOk
 
-`func (o *GetBackend200Response) GetSubtreeDeleteSizeLimitOk() (*int32, bool)`
+`func (o *GetBackend200Response) GetSubtreeDeleteSizeLimitOk() (*int64, bool)`
 
 GetSubtreeDeleteSizeLimitOk returns a tuple with the SubtreeDeleteSizeLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubtreeDeleteSizeLimit
 
-`func (o *GetBackend200Response) SetSubtreeDeleteSizeLimit(v int32)`
+`func (o *GetBackend200Response) SetSubtreeDeleteSizeLimit(v int64)`
 
 SetSubtreeDeleteSizeLimit sets SubtreeDeleteSizeLimit field to given value.
 
@@ -2425,20 +2425,20 @@ HasSubtreeDeleteSizeLimit returns a boolean if a field has been set.
 
 ### GetNumRecentChanges
 
-`func (o *GetBackend200Response) GetNumRecentChanges() int32`
+`func (o *GetBackend200Response) GetNumRecentChanges() int64`
 
 GetNumRecentChanges returns the NumRecentChanges field if non-nil, zero value otherwise.
 
 ### GetNumRecentChangesOk
 
-`func (o *GetBackend200Response) GetNumRecentChangesOk() (*int32, bool)`
+`func (o *GetBackend200Response) GetNumRecentChangesOk() (*int64, bool)`
 
 GetNumRecentChangesOk returns a tuple with the NumRecentChanges field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNumRecentChanges
 
-`func (o *GetBackend200Response) SetNumRecentChanges(v int32)`
+`func (o *GetBackend200Response) SetNumRecentChanges(v int64)`
 
 SetNumRecentChanges sets NumRecentChanges field to given value.
 
@@ -2595,20 +2595,20 @@ SetTaskBackingFile sets TaskBackingFile field to given value.
 
 ### GetMaximumInitialTaskLogMessagesToRetain
 
-`func (o *GetBackend200Response) GetMaximumInitialTaskLogMessagesToRetain() int32`
+`func (o *GetBackend200Response) GetMaximumInitialTaskLogMessagesToRetain() int64`
 
 GetMaximumInitialTaskLogMessagesToRetain returns the MaximumInitialTaskLogMessagesToRetain field if non-nil, zero value otherwise.
 
 ### GetMaximumInitialTaskLogMessagesToRetainOk
 
-`func (o *GetBackend200Response) GetMaximumInitialTaskLogMessagesToRetainOk() (*int32, bool)`
+`func (o *GetBackend200Response) GetMaximumInitialTaskLogMessagesToRetainOk() (*int64, bool)`
 
 GetMaximumInitialTaskLogMessagesToRetainOk returns a tuple with the MaximumInitialTaskLogMessagesToRetain field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaximumInitialTaskLogMessagesToRetain
 
-`func (o *GetBackend200Response) SetMaximumInitialTaskLogMessagesToRetain(v int32)`
+`func (o *GetBackend200Response) SetMaximumInitialTaskLogMessagesToRetain(v int64)`
 
 SetMaximumInitialTaskLogMessagesToRetain sets MaximumInitialTaskLogMessagesToRetain field to given value.
 
@@ -2620,20 +2620,20 @@ HasMaximumInitialTaskLogMessagesToRetain returns a boolean if a field has been s
 
 ### GetMaximumFinalTaskLogMessagesToRetain
 
-`func (o *GetBackend200Response) GetMaximumFinalTaskLogMessagesToRetain() int32`
+`func (o *GetBackend200Response) GetMaximumFinalTaskLogMessagesToRetain() int64`
 
 GetMaximumFinalTaskLogMessagesToRetain returns the MaximumFinalTaskLogMessagesToRetain field if non-nil, zero value otherwise.
 
 ### GetMaximumFinalTaskLogMessagesToRetainOk
 
-`func (o *GetBackend200Response) GetMaximumFinalTaskLogMessagesToRetainOk() (*int32, bool)`
+`func (o *GetBackend200Response) GetMaximumFinalTaskLogMessagesToRetainOk() (*int64, bool)`
 
 GetMaximumFinalTaskLogMessagesToRetainOk returns a tuple with the MaximumFinalTaskLogMessagesToRetain field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaximumFinalTaskLogMessagesToRetain
 
-`func (o *GetBackend200Response) SetMaximumFinalTaskLogMessagesToRetain(v int32)`
+`func (o *GetBackend200Response) SetMaximumFinalTaskLogMessagesToRetain(v int64)`
 
 SetMaximumFinalTaskLogMessagesToRetain sets MaximumFinalTaskLogMessagesToRetain field to given value.
 
@@ -2715,20 +2715,20 @@ SetAlertRetentionTime sets AlertRetentionTime field to given value.
 
 ### GetMaxAlerts
 
-`func (o *GetBackend200Response) GetMaxAlerts() int32`
+`func (o *GetBackend200Response) GetMaxAlerts() int64`
 
 GetMaxAlerts returns the MaxAlerts field if non-nil, zero value otherwise.
 
 ### GetMaxAlertsOk
 
-`func (o *GetBackend200Response) GetMaxAlertsOk() (*int32, bool)`
+`func (o *GetBackend200Response) GetMaxAlertsOk() (*int64, bool)`
 
 GetMaxAlertsOk returns a tuple with the MaxAlerts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxAlerts
 
-`func (o *GetBackend200Response) SetMaxAlerts(v int32)`
+`func (o *GetBackend200Response) SetMaxAlerts(v int64)`
 
 SetMaxAlerts sets MaxAlerts field to given value.
 
@@ -2785,20 +2785,20 @@ SetAlarmRetentionTime sets AlarmRetentionTime field to given value.
 
 ### GetMaxAlarms
 
-`func (o *GetBackend200Response) GetMaxAlarms() int32`
+`func (o *GetBackend200Response) GetMaxAlarms() int64`
 
 GetMaxAlarms returns the MaxAlarms field if non-nil, zero value otherwise.
 
 ### GetMaxAlarmsOk
 
-`func (o *GetBackend200Response) GetMaxAlarmsOk() (*int32, bool)`
+`func (o *GetBackend200Response) GetMaxAlarmsOk() (*int64, bool)`
 
 GetMaxAlarmsOk returns a tuple with the MaxAlarms field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxAlarms
 
-`func (o *GetBackend200Response) SetMaxAlarms(v int32)`
+`func (o *GetBackend200Response) SetMaxAlarms(v int64)`
 
 SetMaxAlarms sets MaxAlarms field to given value.
 

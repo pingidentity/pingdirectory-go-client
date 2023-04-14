@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **AccessTokenValidator** | Pointer to **[]string** | If specified, the Access Token Validator(s) that may be used to validate access tokens for requests submitted to this Directory REST API HTTP Servlet Extension. | [optional] 
 **AccessTokenScope** | Pointer to **string** | The name of a scope that must be present in an access token accepted by the Directory REST API HTTP Servlet Extension. | [optional] 
 **Audience** | Pointer to **string** | A string or URI that identifies the Directory REST API HTTP Servlet Extension in the context of OAuth2 authorization. | [optional] 
-**MaxPageSize** | Pointer to **int32** | The maximum number of entries to be returned in one page of search results. | [optional] 
+**MaxPageSize** | Pointer to **int64** | The maximum number of entries to be returned in one page of search results. | [optional] 
 **SchemasEndpointObjectclass** | Pointer to **[]string** | The list of object classes which will be returned by the schemas endpoint. | [optional] 
 **DefaultOperationalAttribute** | Pointer to **[]string** | A set of operational attributes that will be returned with entries by default. | [optional] 
 **RejectExpansionAttribute** | Pointer to **[]string** | A set of attributes which the client is not allowed to provide for the expand query parameters. This should be used for attributes that could either have a large number of values or that reference entries that are very large like groups. | [optional] 
@@ -209,20 +209,20 @@ HasAudience returns a boolean if a field has been set.
 
 ### GetMaxPageSize
 
-`func (o *DirectoryRestApiHttpServletExtensionResponse) GetMaxPageSize() int32`
+`func (o *DirectoryRestApiHttpServletExtensionResponse) GetMaxPageSize() int64`
 
 GetMaxPageSize returns the MaxPageSize field if non-nil, zero value otherwise.
 
 ### GetMaxPageSizeOk
 
-`func (o *DirectoryRestApiHttpServletExtensionResponse) GetMaxPageSizeOk() (*int32, bool)`
+`func (o *DirectoryRestApiHttpServletExtensionResponse) GetMaxPageSizeOk() (*int64, bool)`
 
 GetMaxPageSizeOk returns a tuple with the MaxPageSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxPageSize
 
-`func (o *DirectoryRestApiHttpServletExtensionResponse) SetMaxPageSize(v int32)`
+`func (o *DirectoryRestApiHttpServletExtensionResponse) SetMaxPageSize(v int64)`
 
 SetMaxPageSize sets MaxPageSize field to given value.
 

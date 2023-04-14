@@ -33,7 +33,7 @@ type DirectoryRestApiHttpServletExtensionResponse struct {
 	// A string or URI that identifies the Directory REST API HTTP Servlet Extension in the context of OAuth2 authorization.
 	Audience *string `json:"audience,omitempty"`
 	// The maximum number of entries to be returned in one page of search results.
-	MaxPageSize *int32 `json:"maxPageSize,omitempty"`
+	MaxPageSize *int64 `json:"maxPageSize,omitempty"`
 	// The list of object classes which will be returned by the schemas endpoint.
 	SchemasEndpointObjectclass []string `json:"schemasEndpointObjectclass,omitempty"`
 	// A set of operational attributes that will be returned with entries by default.
@@ -281,9 +281,9 @@ func (o *DirectoryRestApiHttpServletExtensionResponse) SetAudience(v string) {
 }
 
 // GetMaxPageSize returns the MaxPageSize field value if set, zero value otherwise.
-func (o *DirectoryRestApiHttpServletExtensionResponse) GetMaxPageSize() int32 {
+func (o *DirectoryRestApiHttpServletExtensionResponse) GetMaxPageSize() int64 {
 	if o == nil || IsNil(o.MaxPageSize) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxPageSize
@@ -291,7 +291,7 @@ func (o *DirectoryRestApiHttpServletExtensionResponse) GetMaxPageSize() int32 {
 
 // GetMaxPageSizeOk returns a tuple with the MaxPageSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DirectoryRestApiHttpServletExtensionResponse) GetMaxPageSizeOk() (*int32, bool) {
+func (o *DirectoryRestApiHttpServletExtensionResponse) GetMaxPageSizeOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxPageSize) {
 		return nil, false
 	}
@@ -307,8 +307,8 @@ func (o *DirectoryRestApiHttpServletExtensionResponse) HasMaxPageSize() bool {
 	return false
 }
 
-// SetMaxPageSize gets a reference to the given int32 and assigns it to the MaxPageSize field.
-func (o *DirectoryRestApiHttpServletExtensionResponse) SetMaxPageSize(v int32) {
+// SetMaxPageSize gets a reference to the given int64 and assigns it to the MaxPageSize field.
+func (o *DirectoryRestApiHttpServletExtensionResponse) SetMaxPageSize(v int64) {
 	o.MaxPageSize = &v
 }
 

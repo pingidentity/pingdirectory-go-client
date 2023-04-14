@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 **PluginName** | **string** | Name of the new Plugin | 
 **Schemas** | [**[]EnuminternalSearchRatePluginSchemaUrn**](EnuminternalSearchRatePluginSchemaUrn.md) |  | 
 **PluginType** | Pointer to [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | [optional] 
-**NumThreads** | Pointer to **int32** | Specifies the number of concurrent threads that should be used to process the search operations. | [optional] 
+**NumThreads** | Pointer to **int64** | Specifies the number of concurrent threads that should be used to process the search operations. | [optional] 
 **BaseDN** | **string** | Specifies the base DN to use for the searches to perform. | 
-**LowerBound** | Pointer to **int32** | Specifies the lower bound for the numeric value which will be inserted into the search filter. | [optional] 
-**UpperBound** | Pointer to **int32** | Specifies the upper bound for the numeric value which will be inserted into the search filter. | [optional] 
+**LowerBound** | Pointer to **int64** | Specifies the lower bound for the numeric value which will be inserted into the search filter. | [optional] 
+**UpperBound** | Pointer to **int64** | Specifies the upper bound for the numeric value which will be inserted into the search filter. | [optional] 
 **FilterPrefix** | **string** | Specifies a prefix which will be used in front of the randomly-selected numeric value in all search filters used. If no upper bound is defined, then this should contain the entire filter string. | 
 **FilterSuffix** | Pointer to **string** | Specifies a suffix which will be used after of the randomly-selected numeric value in all search filters used. If no upper bound is defined, then this should be omitted. | [optional] 
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
@@ -103,20 +103,20 @@ HasPluginType returns a boolean if a field has been set.
 
 ### GetNumThreads
 
-`func (o *AddInternalSearchRatePluginRequest) GetNumThreads() int32`
+`func (o *AddInternalSearchRatePluginRequest) GetNumThreads() int64`
 
 GetNumThreads returns the NumThreads field if non-nil, zero value otherwise.
 
 ### GetNumThreadsOk
 
-`func (o *AddInternalSearchRatePluginRequest) GetNumThreadsOk() (*int32, bool)`
+`func (o *AddInternalSearchRatePluginRequest) GetNumThreadsOk() (*int64, bool)`
 
 GetNumThreadsOk returns a tuple with the NumThreads field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNumThreads
 
-`func (o *AddInternalSearchRatePluginRequest) SetNumThreads(v int32)`
+`func (o *AddInternalSearchRatePluginRequest) SetNumThreads(v int64)`
 
 SetNumThreads sets NumThreads field to given value.
 
@@ -148,20 +148,20 @@ SetBaseDN sets BaseDN field to given value.
 
 ### GetLowerBound
 
-`func (o *AddInternalSearchRatePluginRequest) GetLowerBound() int32`
+`func (o *AddInternalSearchRatePluginRequest) GetLowerBound() int64`
 
 GetLowerBound returns the LowerBound field if non-nil, zero value otherwise.
 
 ### GetLowerBoundOk
 
-`func (o *AddInternalSearchRatePluginRequest) GetLowerBoundOk() (*int32, bool)`
+`func (o *AddInternalSearchRatePluginRequest) GetLowerBoundOk() (*int64, bool)`
 
 GetLowerBoundOk returns a tuple with the LowerBound field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLowerBound
 
-`func (o *AddInternalSearchRatePluginRequest) SetLowerBound(v int32)`
+`func (o *AddInternalSearchRatePluginRequest) SetLowerBound(v int64)`
 
 SetLowerBound sets LowerBound field to given value.
 
@@ -173,20 +173,20 @@ HasLowerBound returns a boolean if a field has been set.
 
 ### GetUpperBound
 
-`func (o *AddInternalSearchRatePluginRequest) GetUpperBound() int32`
+`func (o *AddInternalSearchRatePluginRequest) GetUpperBound() int64`
 
 GetUpperBound returns the UpperBound field if non-nil, zero value otherwise.
 
 ### GetUpperBoundOk
 
-`func (o *AddInternalSearchRatePluginRequest) GetUpperBoundOk() (*int32, bool)`
+`func (o *AddInternalSearchRatePluginRequest) GetUpperBoundOk() (*int64, bool)`
 
 GetUpperBoundOk returns a tuple with the UpperBound field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpperBound
 
-`func (o *AddInternalSearchRatePluginRequest) SetUpperBound(v int32)`
+`func (o *AddInternalSearchRatePluginRequest) SetUpperBound(v int64)`
 
 SetUpperBound sets UpperBound field to given value.
 

@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 **SchemeName** | **string** | Name of the new Password Storage Scheme | 
 **Schemas** | [**[]Enumpbkdf2PasswordStorageSchemeSchemaUrn**](Enumpbkdf2PasswordStorageSchemeSchemaUrn.md) |  | 
 **DigestAlgorithm** | Pointer to [**EnumpasswordStorageSchemeDigestAlgorithmProp**](EnumpasswordStorageSchemeDigestAlgorithmProp.md) |  | [optional] 
-**IterationCount** | Pointer to **int32** | Specifies the number of iterations to use when encoding passwords. The value must be greater than or equal to 1000. | [optional] 
-**SaltLengthBytes** | Pointer to **int32** | Specifies the number of bytes to use for the generated salt. The value must be greater than or equal to 8. | [optional] 
-**DerivedKeyLengthBytes** | Pointer to **int32** | Specifies the number of bytes to use for the derived key. The value must be greater than or equal to 8. | [optional] 
-**MaxPasswordLength** | Pointer to **int32** | Specifies the maximum allowed length, in bytes, for passwords encoded with this scheme, which can help mitigate denial of service attacks from clients that attempt to bind with very long passwords. | [optional] 
+**IterationCount** | Pointer to **int64** | Specifies the number of iterations to use when encoding passwords. The value must be greater than or equal to 1000. | [optional] 
+**SaltLengthBytes** | Pointer to **int64** | Specifies the number of bytes to use for the generated salt. The value must be greater than or equal to 8. | [optional] 
+**DerivedKeyLengthBytes** | Pointer to **int64** | Specifies the number of bytes to use for the derived key. The value must be greater than or equal to 8. | [optional] 
+**MaxPasswordLength** | Pointer to **int64** | Specifies the maximum allowed length, in bytes, for passwords encoded with this scheme, which can help mitigate denial of service attacks from clients that attempt to bind with very long passwords. | [optional] 
 **Description** | Pointer to **string** | A description for this Password Storage Scheme | [optional] 
 **Enabled** | **bool** | Indicates whether the Password Storage Scheme is enabled for use. | 
 
@@ -100,20 +100,20 @@ HasDigestAlgorithm returns a boolean if a field has been set.
 
 ### GetIterationCount
 
-`func (o *AddPbkdf2PasswordStorageSchemeRequest) GetIterationCount() int32`
+`func (o *AddPbkdf2PasswordStorageSchemeRequest) GetIterationCount() int64`
 
 GetIterationCount returns the IterationCount field if non-nil, zero value otherwise.
 
 ### GetIterationCountOk
 
-`func (o *AddPbkdf2PasswordStorageSchemeRequest) GetIterationCountOk() (*int32, bool)`
+`func (o *AddPbkdf2PasswordStorageSchemeRequest) GetIterationCountOk() (*int64, bool)`
 
 GetIterationCountOk returns a tuple with the IterationCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIterationCount
 
-`func (o *AddPbkdf2PasswordStorageSchemeRequest) SetIterationCount(v int32)`
+`func (o *AddPbkdf2PasswordStorageSchemeRequest) SetIterationCount(v int64)`
 
 SetIterationCount sets IterationCount field to given value.
 
@@ -125,20 +125,20 @@ HasIterationCount returns a boolean if a field has been set.
 
 ### GetSaltLengthBytes
 
-`func (o *AddPbkdf2PasswordStorageSchemeRequest) GetSaltLengthBytes() int32`
+`func (o *AddPbkdf2PasswordStorageSchemeRequest) GetSaltLengthBytes() int64`
 
 GetSaltLengthBytes returns the SaltLengthBytes field if non-nil, zero value otherwise.
 
 ### GetSaltLengthBytesOk
 
-`func (o *AddPbkdf2PasswordStorageSchemeRequest) GetSaltLengthBytesOk() (*int32, bool)`
+`func (o *AddPbkdf2PasswordStorageSchemeRequest) GetSaltLengthBytesOk() (*int64, bool)`
 
 GetSaltLengthBytesOk returns a tuple with the SaltLengthBytes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSaltLengthBytes
 
-`func (o *AddPbkdf2PasswordStorageSchemeRequest) SetSaltLengthBytes(v int32)`
+`func (o *AddPbkdf2PasswordStorageSchemeRequest) SetSaltLengthBytes(v int64)`
 
 SetSaltLengthBytes sets SaltLengthBytes field to given value.
 
@@ -150,20 +150,20 @@ HasSaltLengthBytes returns a boolean if a field has been set.
 
 ### GetDerivedKeyLengthBytes
 
-`func (o *AddPbkdf2PasswordStorageSchemeRequest) GetDerivedKeyLengthBytes() int32`
+`func (o *AddPbkdf2PasswordStorageSchemeRequest) GetDerivedKeyLengthBytes() int64`
 
 GetDerivedKeyLengthBytes returns the DerivedKeyLengthBytes field if non-nil, zero value otherwise.
 
 ### GetDerivedKeyLengthBytesOk
 
-`func (o *AddPbkdf2PasswordStorageSchemeRequest) GetDerivedKeyLengthBytesOk() (*int32, bool)`
+`func (o *AddPbkdf2PasswordStorageSchemeRequest) GetDerivedKeyLengthBytesOk() (*int64, bool)`
 
 GetDerivedKeyLengthBytesOk returns a tuple with the DerivedKeyLengthBytes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDerivedKeyLengthBytes
 
-`func (o *AddPbkdf2PasswordStorageSchemeRequest) SetDerivedKeyLengthBytes(v int32)`
+`func (o *AddPbkdf2PasswordStorageSchemeRequest) SetDerivedKeyLengthBytes(v int64)`
 
 SetDerivedKeyLengthBytes sets DerivedKeyLengthBytes field to given value.
 
@@ -175,20 +175,20 @@ HasDerivedKeyLengthBytes returns a boolean if a field has been set.
 
 ### GetMaxPasswordLength
 
-`func (o *AddPbkdf2PasswordStorageSchemeRequest) GetMaxPasswordLength() int32`
+`func (o *AddPbkdf2PasswordStorageSchemeRequest) GetMaxPasswordLength() int64`
 
 GetMaxPasswordLength returns the MaxPasswordLength field if non-nil, zero value otherwise.
 
 ### GetMaxPasswordLengthOk
 
-`func (o *AddPbkdf2PasswordStorageSchemeRequest) GetMaxPasswordLengthOk() (*int32, bool)`
+`func (o *AddPbkdf2PasswordStorageSchemeRequest) GetMaxPasswordLengthOk() (*int64, bool)`
 
 GetMaxPasswordLengthOk returns a tuple with the MaxPasswordLength field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxPasswordLength
 
-`func (o *AddPbkdf2PasswordStorageSchemeRequest) SetMaxPasswordLength(v int32)`
+`func (o *AddPbkdf2PasswordStorageSchemeRequest) SetMaxPasswordLength(v int64)`
 
 SetMaxPasswordLength sets MaxPasswordLength field to given value.
 

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Filter** | **string** | Specifies the LDAP filter used in the query that is being indexed. | 
 **SortOrder** | **string** | Specifies the names of the attributes that are used to sort the entries for the query being indexed. | 
 **Name** | **string** | Specifies a unique name for this VLV index. | 
-**MaxBlockSize** | Pointer to **int32** | Specifies the number of entry IDs to store in a single sorted set before it must be split. | [optional] 
+**MaxBlockSize** | Pointer to **int64** | Specifies the number of entry IDs to store in a single sorted set before it must be split. | [optional] 
 **CacheMode** | Pointer to [**EnumlocalDbVlvIndexCacheModeProp**](EnumlocalDbVlvIndexCacheModeProp.md) |  | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
@@ -182,20 +182,20 @@ SetName sets Name field to given value.
 
 ### GetMaxBlockSize
 
-`func (o *LocalDbVlvIndexResponse) GetMaxBlockSize() int32`
+`func (o *LocalDbVlvIndexResponse) GetMaxBlockSize() int64`
 
 GetMaxBlockSize returns the MaxBlockSize field if non-nil, zero value otherwise.
 
 ### GetMaxBlockSizeOk
 
-`func (o *LocalDbVlvIndexResponse) GetMaxBlockSizeOk() (*int32, bool)`
+`func (o *LocalDbVlvIndexResponse) GetMaxBlockSizeOk() (*int64, bool)`
 
 GetMaxBlockSizeOk returns a tuple with the MaxBlockSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxBlockSize
 
-`func (o *LocalDbVlvIndexResponse) SetMaxBlockSize(v int32)`
+`func (o *LocalDbVlvIndexResponse) SetMaxBlockSize(v int64)`
 
 SetMaxBlockSize sets MaxBlockSize field to given value.
 

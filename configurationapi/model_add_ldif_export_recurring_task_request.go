@@ -37,11 +37,11 @@ type AddLdifExportRecurringTaskRequest struct {
 	// Indicates whether to cryptographically sign the exported data, which will make it possible to detect whether the LDIF data has been altered since it was exported.
 	Sign *bool `json:"sign,omitempty"`
 	// The minimum number of previous LDIF exports that should be preserved after a new export completes successfully.
-	RetainPreviousLDIFExportCount *int32 `json:"retainPreviousLDIFExportCount,omitempty"`
+	RetainPreviousLDIFExportCount *int64 `json:"retainPreviousLDIFExportCount,omitempty"`
 	// The minimum age of previous LDIF exports that should be preserved after a new export completes successfully.
 	RetainPreviousLDIFExportAge *string `json:"retainPreviousLDIFExportAge,omitempty"`
 	// The maximum rate, in megabytes per second, at which LDIF exports should be written.
-	MaxMegabytesPerSecond *int32 `json:"maxMegabytesPerSecond,omitempty"`
+	MaxMegabytesPerSecond *int64 `json:"maxMegabytesPerSecond,omitempty"`
 	// A description for this Recurring Task
 	Description *string `json:"description,omitempty"`
 	// Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running).
@@ -352,9 +352,9 @@ func (o *AddLdifExportRecurringTaskRequest) SetSign(v bool) {
 }
 
 // GetRetainPreviousLDIFExportCount returns the RetainPreviousLDIFExportCount field value if set, zero value otherwise.
-func (o *AddLdifExportRecurringTaskRequest) GetRetainPreviousLDIFExportCount() int32 {
+func (o *AddLdifExportRecurringTaskRequest) GetRetainPreviousLDIFExportCount() int64 {
 	if o == nil || IsNil(o.RetainPreviousLDIFExportCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.RetainPreviousLDIFExportCount
@@ -362,7 +362,7 @@ func (o *AddLdifExportRecurringTaskRequest) GetRetainPreviousLDIFExportCount() i
 
 // GetRetainPreviousLDIFExportCountOk returns a tuple with the RetainPreviousLDIFExportCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddLdifExportRecurringTaskRequest) GetRetainPreviousLDIFExportCountOk() (*int32, bool) {
+func (o *AddLdifExportRecurringTaskRequest) GetRetainPreviousLDIFExportCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.RetainPreviousLDIFExportCount) {
 		return nil, false
 	}
@@ -378,8 +378,8 @@ func (o *AddLdifExportRecurringTaskRequest) HasRetainPreviousLDIFExportCount() b
 	return false
 }
 
-// SetRetainPreviousLDIFExportCount gets a reference to the given int32 and assigns it to the RetainPreviousLDIFExportCount field.
-func (o *AddLdifExportRecurringTaskRequest) SetRetainPreviousLDIFExportCount(v int32) {
+// SetRetainPreviousLDIFExportCount gets a reference to the given int64 and assigns it to the RetainPreviousLDIFExportCount field.
+func (o *AddLdifExportRecurringTaskRequest) SetRetainPreviousLDIFExportCount(v int64) {
 	o.RetainPreviousLDIFExportCount = &v
 }
 
@@ -416,9 +416,9 @@ func (o *AddLdifExportRecurringTaskRequest) SetRetainPreviousLDIFExportAge(v str
 }
 
 // GetMaxMegabytesPerSecond returns the MaxMegabytesPerSecond field value if set, zero value otherwise.
-func (o *AddLdifExportRecurringTaskRequest) GetMaxMegabytesPerSecond() int32 {
+func (o *AddLdifExportRecurringTaskRequest) GetMaxMegabytesPerSecond() int64 {
 	if o == nil || IsNil(o.MaxMegabytesPerSecond) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxMegabytesPerSecond
@@ -426,7 +426,7 @@ func (o *AddLdifExportRecurringTaskRequest) GetMaxMegabytesPerSecond() int32 {
 
 // GetMaxMegabytesPerSecondOk returns a tuple with the MaxMegabytesPerSecond field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddLdifExportRecurringTaskRequest) GetMaxMegabytesPerSecondOk() (*int32, bool) {
+func (o *AddLdifExportRecurringTaskRequest) GetMaxMegabytesPerSecondOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxMegabytesPerSecond) {
 		return nil, false
 	}
@@ -442,8 +442,8 @@ func (o *AddLdifExportRecurringTaskRequest) HasMaxMegabytesPerSecond() bool {
 	return false
 }
 
-// SetMaxMegabytesPerSecond gets a reference to the given int32 and assigns it to the MaxMegabytesPerSecond field.
-func (o *AddLdifExportRecurringTaskRequest) SetMaxMegabytesPerSecond(v int32) {
+// SetMaxMegabytesPerSecond gets a reference to the given int64 and assigns it to the MaxMegabytesPerSecond field.
+func (o *AddLdifExportRecurringTaskRequest) SetMaxMegabytesPerSecond(v int64) {
 	o.MaxMegabytesPerSecond = &v
 }
 

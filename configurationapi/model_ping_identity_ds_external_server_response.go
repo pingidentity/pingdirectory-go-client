@@ -28,7 +28,7 @@ type PingIdentityDsExternalServerResponse struct {
 	// The host name or IP address of the target LDAP server.
 	ServerHostName string `json:"serverHostName"`
 	// The port number on which the server listens for requests.
-	ServerPort int32 `json:"serverPort"`
+	ServerPort int64 `json:"serverPort"`
 	// Specifies the location for the LDAP External Server.
 	Location *string `json:"location,omitempty"`
 	// The DN to use to bind to the target LDAP server if simple authentication is required.
@@ -54,9 +54,9 @@ type PingIdentityDsExternalServerResponse struct {
 	// The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
 	TrustManagerProvider *string `json:"trustManagerProvider,omitempty"`
 	// The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
-	InitialConnections *int32 `json:"initialConnections,omitempty"`
+	InitialConnections *int64 `json:"initialConnections,omitempty"`
 	// The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
-	MaxConnections              *int32                                              `json:"maxConnections,omitempty"`
+	MaxConnections              *int64                                              `json:"maxConnections,omitempty"`
 	DefunctConnectionResultCode []EnumexternalServerDefunctConnectionResultCodeProp `json:"defunctConnectionResultCode,omitempty"`
 	// Indicates whether to send an abandon request for an operation for which a response timeout is encountered. A request which has timed out on one server may be retried on another server regardless of whether an abandon request is sent, but if the initial attempt is not abandoned then a long-running operation may unnecessarily continue to consume processing resources on the initial server.
 	AbandonOnTimeout *bool `json:"abandonOnTimeout,omitempty"`
@@ -70,7 +70,7 @@ type PingIdentityDsExternalServerResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPingIdentityDsExternalServerResponse(id string, schemas []EnumpingIdentityDsExternalServerSchemaUrn, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, serverHostName string, serverPort int32, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerAuthenticationMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string) *PingIdentityDsExternalServerResponse {
+func NewPingIdentityDsExternalServerResponse(id string, schemas []EnumpingIdentityDsExternalServerSchemaUrn, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, serverHostName string, serverPort int64, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerAuthenticationMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string) *PingIdentityDsExternalServerResponse {
 	this := PingIdentityDsExternalServerResponse{}
 	this.Id = id
 	this.Schemas = schemas
@@ -222,9 +222,9 @@ func (o *PingIdentityDsExternalServerResponse) SetServerHostName(v string) {
 }
 
 // GetServerPort returns the ServerPort field value
-func (o *PingIdentityDsExternalServerResponse) GetServerPort() int32 {
+func (o *PingIdentityDsExternalServerResponse) GetServerPort() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -233,7 +233,7 @@ func (o *PingIdentityDsExternalServerResponse) GetServerPort() int32 {
 
 // GetServerPortOk returns a tuple with the ServerPort field value
 // and a boolean to check if the value has been set.
-func (o *PingIdentityDsExternalServerResponse) GetServerPortOk() (*int32, bool) {
+func (o *PingIdentityDsExternalServerResponse) GetServerPortOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -241,7 +241,7 @@ func (o *PingIdentityDsExternalServerResponse) GetServerPortOk() (*int32, bool) 
 }
 
 // SetServerPort sets field value
-func (o *PingIdentityDsExternalServerResponse) SetServerPort(v int32) {
+func (o *PingIdentityDsExternalServerResponse) SetServerPort(v int64) {
 	o.ServerPort = v
 }
 
@@ -622,9 +622,9 @@ func (o *PingIdentityDsExternalServerResponse) SetTrustManagerProvider(v string)
 }
 
 // GetInitialConnections returns the InitialConnections field value if set, zero value otherwise.
-func (o *PingIdentityDsExternalServerResponse) GetInitialConnections() int32 {
+func (o *PingIdentityDsExternalServerResponse) GetInitialConnections() int64 {
 	if o == nil || IsNil(o.InitialConnections) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.InitialConnections
@@ -632,7 +632,7 @@ func (o *PingIdentityDsExternalServerResponse) GetInitialConnections() int32 {
 
 // GetInitialConnectionsOk returns a tuple with the InitialConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PingIdentityDsExternalServerResponse) GetInitialConnectionsOk() (*int32, bool) {
+func (o *PingIdentityDsExternalServerResponse) GetInitialConnectionsOk() (*int64, bool) {
 	if o == nil || IsNil(o.InitialConnections) {
 		return nil, false
 	}
@@ -648,15 +648,15 @@ func (o *PingIdentityDsExternalServerResponse) HasInitialConnections() bool {
 	return false
 }
 
-// SetInitialConnections gets a reference to the given int32 and assigns it to the InitialConnections field.
-func (o *PingIdentityDsExternalServerResponse) SetInitialConnections(v int32) {
+// SetInitialConnections gets a reference to the given int64 and assigns it to the InitialConnections field.
+func (o *PingIdentityDsExternalServerResponse) SetInitialConnections(v int64) {
 	o.InitialConnections = &v
 }
 
 // GetMaxConnections returns the MaxConnections field value if set, zero value otherwise.
-func (o *PingIdentityDsExternalServerResponse) GetMaxConnections() int32 {
+func (o *PingIdentityDsExternalServerResponse) GetMaxConnections() int64 {
 	if o == nil || IsNil(o.MaxConnections) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxConnections
@@ -664,7 +664,7 @@ func (o *PingIdentityDsExternalServerResponse) GetMaxConnections() int32 {
 
 // GetMaxConnectionsOk returns a tuple with the MaxConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PingIdentityDsExternalServerResponse) GetMaxConnectionsOk() (*int32, bool) {
+func (o *PingIdentityDsExternalServerResponse) GetMaxConnectionsOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxConnections) {
 		return nil, false
 	}
@@ -680,8 +680,8 @@ func (o *PingIdentityDsExternalServerResponse) HasMaxConnections() bool {
 	return false
 }
 
-// SetMaxConnections gets a reference to the given int32 and assigns it to the MaxConnections field.
-func (o *PingIdentityDsExternalServerResponse) SetMaxConnections(v int32) {
+// SetMaxConnections gets a reference to the given int64 and assigns it to the MaxConnections field.
+func (o *PingIdentityDsExternalServerResponse) SetMaxConnections(v int64) {
 	o.MaxConnections = &v
 }
 

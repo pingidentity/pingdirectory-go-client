@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    addFifoEntryCacheRequest := *openapiclient.NewAddFifoEntryCacheRequest("CacheName_example", false, int32(123)) // AddFifoEntryCacheRequest | Create a new Entry Cache in the config
+    addFifoEntryCacheRequest := *openapiclient.NewAddFifoEntryCacheRequest("CacheName_example", false, int64(123)) // AddFifoEntryCacheRequest | Create a new Entry Cache in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

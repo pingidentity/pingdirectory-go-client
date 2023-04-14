@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **SyslogSeverity** | Pointer to [**EnumlogPublisherSyslogSeverityProp**](EnumlogPublisherSyslogSeverityProp.md) |  | [optional] 
 **SyslogMessageHostName** | Pointer to **string** | The local host name that will be included in syslog messages that are logged by this Syslog JSON HTTP Operation Log Publisher. | [optional] 
 **SyslogMessageApplicationName** | Pointer to **string** | The application name that will be included in syslog messages that are logged by this Syslog JSON HTTP Operation Log Publisher. | [optional] 
-**QueueSize** | Pointer to **int32** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
+**QueueSize** | Pointer to **int64** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
 **LogRequests** | Pointer to **bool** | Indicates whether to record a log message with information about requests received from the client. | [optional] 
 **LogResults** | Pointer to **bool** | Indicates whether to record a log message with information about the result of processing a requested HTTP operation. | [optional] 
 **IncludeProductName** | Pointer to **bool** | Indicates whether log messages should include the product name for the Directory Server. | [optional] 
@@ -216,20 +216,20 @@ HasSyslogMessageApplicationName returns a boolean if a field has been set.
 
 ### GetQueueSize
 
-`func (o *AddSyslogJsonHttpOperationLogPublisherRequest) GetQueueSize() int32`
+`func (o *AddSyslogJsonHttpOperationLogPublisherRequest) GetQueueSize() int64`
 
 GetQueueSize returns the QueueSize field if non-nil, zero value otherwise.
 
 ### GetQueueSizeOk
 
-`func (o *AddSyslogJsonHttpOperationLogPublisherRequest) GetQueueSizeOk() (*int32, bool)`
+`func (o *AddSyslogJsonHttpOperationLogPublisherRequest) GetQueueSizeOk() (*int64, bool)`
 
 GetQueueSizeOk returns a tuple with the QueueSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQueueSize
 
-`func (o *AddSyslogJsonHttpOperationLogPublisherRequest) SetQueueSize(v int32)`
+`func (o *AddSyslogJsonHttpOperationLogPublisherRequest) SetQueueSize(v int64)`
 
 SetQueueSize sets QueueSize field to given value.
 

@@ -38,7 +38,7 @@ type JwtAccessTokenValidatorResponse struct {
 	// The name of the token claim that contains the scopes granted by the token.
 	ScopeClaimName *string `json:"scopeClaimName,omitempty"`
 	// When multiple JWT Access Token Validators are defined for a single Directory Server, this property determines the evaluation order for determining the correct validator class for an access token received by the Directory Server. Values of this property must be unique among all JWT Access Token Validators defined within Directory Server but not necessarily contiguous. JWT Access Token Validators with a smaller value will be evaluated first to determine if they are able to validate the access token.
-	EvaluationOrderIndex int32 `json:"evaluationOrderIndex"`
+	EvaluationOrderIndex int64 `json:"evaluationOrderIndex"`
 	// Specifies the external server that will be used to aid in validating access tokens. In most cases this will be the Authorization Server that minted the token.
 	AuthorizationServer *string `json:"authorizationServer,omitempty"`
 	// Specifies the name of the Identity Mapper that should be used for associating user entries with Bearer token subject names. The claim name from which to obtain the subject (i.e. the currently logged-in user) may be configured using the subject-claim-name property.
@@ -57,7 +57,7 @@ type JwtAccessTokenValidatorResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewJwtAccessTokenValidatorResponse(id string, schemas []EnumjwtAccessTokenValidatorSchemaUrn, allowedSigningAlgorithm []EnumaccessTokenValidatorAllowedSigningAlgorithmProp, allowedKeyEncryptionAlgorithm []EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp, allowedContentEncryptionAlgorithm []EnumaccessTokenValidatorAllowedContentEncryptionAlgorithmProp, evaluationOrderIndex int32, enabled bool) *JwtAccessTokenValidatorResponse {
+func NewJwtAccessTokenValidatorResponse(id string, schemas []EnumjwtAccessTokenValidatorSchemaUrn, allowedSigningAlgorithm []EnumaccessTokenValidatorAllowedSigningAlgorithmProp, allowedKeyEncryptionAlgorithm []EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp, allowedContentEncryptionAlgorithm []EnumaccessTokenValidatorAllowedContentEncryptionAlgorithmProp, evaluationOrderIndex int64, enabled bool) *JwtAccessTokenValidatorResponse {
 	this := JwtAccessTokenValidatorResponse{}
 	this.Id = id
 	this.Schemas = schemas
@@ -390,9 +390,9 @@ func (o *JwtAccessTokenValidatorResponse) SetScopeClaimName(v string) {
 }
 
 // GetEvaluationOrderIndex returns the EvaluationOrderIndex field value
-func (o *JwtAccessTokenValidatorResponse) GetEvaluationOrderIndex() int32 {
+func (o *JwtAccessTokenValidatorResponse) GetEvaluationOrderIndex() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -401,7 +401,7 @@ func (o *JwtAccessTokenValidatorResponse) GetEvaluationOrderIndex() int32 {
 
 // GetEvaluationOrderIndexOk returns a tuple with the EvaluationOrderIndex field value
 // and a boolean to check if the value has been set.
-func (o *JwtAccessTokenValidatorResponse) GetEvaluationOrderIndexOk() (*int32, bool) {
+func (o *JwtAccessTokenValidatorResponse) GetEvaluationOrderIndexOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -409,7 +409,7 @@ func (o *JwtAccessTokenValidatorResponse) GetEvaluationOrderIndexOk() (*int32, b
 }
 
 // SetEvaluationOrderIndex sets field value
-func (o *JwtAccessTokenValidatorResponse) SetEvaluationOrderIndex(v int32) {
+func (o *JwtAccessTokenValidatorResponse) SetEvaluationOrderIndex(v int64) {
 	o.EvaluationOrderIndex = v
 }
 

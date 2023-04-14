@@ -29,7 +29,7 @@ type UnboundidTotpSaslMechanismHandlerResponse struct {
 	// The duration of the time interval used for TOTP processing.
 	TimeIntervalDuration *string `json:"timeIntervalDuration,omitempty"`
 	// The number of adjacent time intervals (both before and after the current time) that should be checked when performing authentication.
-	AdjacentIntervalsToCheck *int32 `json:"adjacentIntervalsToCheck,omitempty"`
+	AdjacentIntervalsToCheck *int64 `json:"adjacentIntervalsToCheck,omitempty"`
 	// Indicates whether to require a static password (as might be held in the userPassword attribute, or whatever password attribute is defined in the password policy governing the user) in addition to the one-time password.
 	RequireStaticPassword *bool `json:"requireStaticPassword,omitempty"`
 	// Indicates whether to prevent clients from re-using TOTP passwords.
@@ -200,9 +200,9 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) SetTimeIntervalDuration(v st
 }
 
 // GetAdjacentIntervalsToCheck returns the AdjacentIntervalsToCheck field value if set, zero value otherwise.
-func (o *UnboundidTotpSaslMechanismHandlerResponse) GetAdjacentIntervalsToCheck() int32 {
+func (o *UnboundidTotpSaslMechanismHandlerResponse) GetAdjacentIntervalsToCheck() int64 {
 	if o == nil || IsNil(o.AdjacentIntervalsToCheck) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AdjacentIntervalsToCheck
@@ -210,7 +210,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) GetAdjacentIntervalsToCheck(
 
 // GetAdjacentIntervalsToCheckOk returns a tuple with the AdjacentIntervalsToCheck field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnboundidTotpSaslMechanismHandlerResponse) GetAdjacentIntervalsToCheckOk() (*int32, bool) {
+func (o *UnboundidTotpSaslMechanismHandlerResponse) GetAdjacentIntervalsToCheckOk() (*int64, bool) {
 	if o == nil || IsNil(o.AdjacentIntervalsToCheck) {
 		return nil, false
 	}
@@ -226,8 +226,8 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) HasAdjacentIntervalsToCheck(
 	return false
 }
 
-// SetAdjacentIntervalsToCheck gets a reference to the given int32 and assigns it to the AdjacentIntervalsToCheck field.
-func (o *UnboundidTotpSaslMechanismHandlerResponse) SetAdjacentIntervalsToCheck(v int32) {
+// SetAdjacentIntervalsToCheck gets a reference to the given int64 and assigns it to the AdjacentIntervalsToCheck field.
+func (o *UnboundidTotpSaslMechanismHandlerResponse) SetAdjacentIntervalsToCheck(v int64) {
 	o.AdjacentIntervalsToCheck = &v
 }
 

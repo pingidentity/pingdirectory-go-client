@@ -47,13 +47,13 @@ type AddLdapMappedScimHttpServletExtensionRequest struct {
 	// Specifies the permissions that should be applied to the directory that is used to create temporary files.
 	TemporaryDirectoryPermissions *string `json:"temporaryDirectoryPermissions,omitempty"`
 	// The maximum number of resources that are returned in a response.
-	MaxResults *int32 `json:"maxResults,omitempty"`
+	MaxResults *int64 `json:"maxResults,omitempty"`
 	// The maximum number of operations that are permitted in a bulk request.
-	BulkMaxOperations *int32 `json:"bulkMaxOperations,omitempty"`
+	BulkMaxOperations *int64 `json:"bulkMaxOperations,omitempty"`
 	// The maximum payload size in bytes of a bulk request.
 	BulkMaxPayloadSize *string `json:"bulkMaxPayloadSize,omitempty"`
 	// The maximum number of bulk requests that may be processed concurrently by the server. Any bulk request that would cause this limit to be exceeded is rejected with HTTP status code 503.
-	BulkMaxConcurrentRequests *int32 `json:"bulkMaxConcurrentRequests,omitempty"`
+	BulkMaxConcurrentRequests *int64 `json:"bulkMaxConcurrentRequests,omitempty"`
 	// Enables debug logging of the SCIM SDK. Debug messages will be forwarded to the Directory Server debug logger with the scope of com.unboundid.directory.server.extensions.scim.SCIMHTTPServletExtension.
 	DebugEnabled *bool                                   `json:"debugEnabled,omitempty"`
 	DebugLevel   *EnumhttpServletExtensionDebugLevelProp `json:"debugLevel,omitempty"`
@@ -522,9 +522,9 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) SetTemporaryDirectoryPerm
 }
 
 // GetMaxResults returns the MaxResults field value if set, zero value otherwise.
-func (o *AddLdapMappedScimHttpServletExtensionRequest) GetMaxResults() int32 {
+func (o *AddLdapMappedScimHttpServletExtensionRequest) GetMaxResults() int64 {
 	if o == nil || IsNil(o.MaxResults) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxResults
@@ -532,7 +532,7 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) GetMaxResults() int32 {
 
 // GetMaxResultsOk returns a tuple with the MaxResults field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddLdapMappedScimHttpServletExtensionRequest) GetMaxResultsOk() (*int32, bool) {
+func (o *AddLdapMappedScimHttpServletExtensionRequest) GetMaxResultsOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxResults) {
 		return nil, false
 	}
@@ -548,15 +548,15 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) HasMaxResults() bool {
 	return false
 }
 
-// SetMaxResults gets a reference to the given int32 and assigns it to the MaxResults field.
-func (o *AddLdapMappedScimHttpServletExtensionRequest) SetMaxResults(v int32) {
+// SetMaxResults gets a reference to the given int64 and assigns it to the MaxResults field.
+func (o *AddLdapMappedScimHttpServletExtensionRequest) SetMaxResults(v int64) {
 	o.MaxResults = &v
 }
 
 // GetBulkMaxOperations returns the BulkMaxOperations field value if set, zero value otherwise.
-func (o *AddLdapMappedScimHttpServletExtensionRequest) GetBulkMaxOperations() int32 {
+func (o *AddLdapMappedScimHttpServletExtensionRequest) GetBulkMaxOperations() int64 {
 	if o == nil || IsNil(o.BulkMaxOperations) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.BulkMaxOperations
@@ -564,7 +564,7 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) GetBulkMaxOperations() in
 
 // GetBulkMaxOperationsOk returns a tuple with the BulkMaxOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddLdapMappedScimHttpServletExtensionRequest) GetBulkMaxOperationsOk() (*int32, bool) {
+func (o *AddLdapMappedScimHttpServletExtensionRequest) GetBulkMaxOperationsOk() (*int64, bool) {
 	if o == nil || IsNil(o.BulkMaxOperations) {
 		return nil, false
 	}
@@ -580,8 +580,8 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) HasBulkMaxOperations() bo
 	return false
 }
 
-// SetBulkMaxOperations gets a reference to the given int32 and assigns it to the BulkMaxOperations field.
-func (o *AddLdapMappedScimHttpServletExtensionRequest) SetBulkMaxOperations(v int32) {
+// SetBulkMaxOperations gets a reference to the given int64 and assigns it to the BulkMaxOperations field.
+func (o *AddLdapMappedScimHttpServletExtensionRequest) SetBulkMaxOperations(v int64) {
 	o.BulkMaxOperations = &v
 }
 
@@ -618,9 +618,9 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) SetBulkMaxPayloadSize(v s
 }
 
 // GetBulkMaxConcurrentRequests returns the BulkMaxConcurrentRequests field value if set, zero value otherwise.
-func (o *AddLdapMappedScimHttpServletExtensionRequest) GetBulkMaxConcurrentRequests() int32 {
+func (o *AddLdapMappedScimHttpServletExtensionRequest) GetBulkMaxConcurrentRequests() int64 {
 	if o == nil || IsNil(o.BulkMaxConcurrentRequests) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.BulkMaxConcurrentRequests
@@ -628,7 +628,7 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) GetBulkMaxConcurrentReque
 
 // GetBulkMaxConcurrentRequestsOk returns a tuple with the BulkMaxConcurrentRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddLdapMappedScimHttpServletExtensionRequest) GetBulkMaxConcurrentRequestsOk() (*int32, bool) {
+func (o *AddLdapMappedScimHttpServletExtensionRequest) GetBulkMaxConcurrentRequestsOk() (*int64, bool) {
 	if o == nil || IsNil(o.BulkMaxConcurrentRequests) {
 		return nil, false
 	}
@@ -644,8 +644,8 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) HasBulkMaxConcurrentReque
 	return false
 }
 
-// SetBulkMaxConcurrentRequests gets a reference to the given int32 and assigns it to the BulkMaxConcurrentRequests field.
-func (o *AddLdapMappedScimHttpServletExtensionRequest) SetBulkMaxConcurrentRequests(v int32) {
+// SetBulkMaxConcurrentRequests gets a reference to the given int64 and assigns it to the BulkMaxConcurrentRequests field.
+func (o *AddLdapMappedScimHttpServletExtensionRequest) SetBulkMaxConcurrentRequests(v int64) {
 	o.BulkMaxConcurrentRequests = &v
 }
 

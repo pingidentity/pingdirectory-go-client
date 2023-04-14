@@ -25,7 +25,7 @@ type AddUserRestResourceTypeRequest struct {
 	// Specifies which attribute category the password belongs to.
 	PasswordAttributeCategory *string `json:"passwordAttributeCategory,omitempty"`
 	// This property determines the display order for the password within its attribute category. Attributes are ordered within their category based on this index from least to greatest.
-	PasswordDisplayOrderIndex *int32 `json:"passwordDisplayOrderIndex,omitempty"`
+	PasswordDisplayOrderIndex *int64 `json:"passwordDisplayOrderIndex,omitempty"`
 	// A description for this REST Resource Type
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the REST Resource Type is enabled.
@@ -59,9 +59,9 @@ type AddUserRestResourceTypeRequest struct {
 	// Specifies the name or OID of the LDAP attribute type which is the primary display attribute. This attribute type must be in the search filter pattern and must have a Delegated Admin Attribute definition.
 	PrimaryDisplayAttributeType *string `json:"primaryDisplayAttributeType,omitempty"`
 	// The maximum number of resources that may be returned from a search request.
-	DelegatedAdminSearchSizeLimit *int32 `json:"delegatedAdminSearchSizeLimit,omitempty"`
+	DelegatedAdminSearchSizeLimit *int64 `json:"delegatedAdminSearchSizeLimit,omitempty"`
 	// The maximum number of resources that may be included in a report.
-	DelegatedAdminReportSizeLimit *int32 `json:"delegatedAdminReportSizeLimit,omitempty"`
+	DelegatedAdminReportSizeLimit *int64 `json:"delegatedAdminReportSizeLimit,omitempty"`
 	// Specifies the name of the group member column that will be displayed in the Delegated Admin UI
 	MembersColumnName *string `json:"membersColumnName,omitempty"`
 	// Specifies the name of the group nonmember column that will be displayed in the Delegated Admin UI
@@ -172,9 +172,9 @@ func (o *AddUserRestResourceTypeRequest) SetPasswordAttributeCategory(v string) 
 }
 
 // GetPasswordDisplayOrderIndex returns the PasswordDisplayOrderIndex field value if set, zero value otherwise.
-func (o *AddUserRestResourceTypeRequest) GetPasswordDisplayOrderIndex() int32 {
+func (o *AddUserRestResourceTypeRequest) GetPasswordDisplayOrderIndex() int64 {
 	if o == nil || IsNil(o.PasswordDisplayOrderIndex) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.PasswordDisplayOrderIndex
@@ -182,7 +182,7 @@ func (o *AddUserRestResourceTypeRequest) GetPasswordDisplayOrderIndex() int32 {
 
 // GetPasswordDisplayOrderIndexOk returns a tuple with the PasswordDisplayOrderIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddUserRestResourceTypeRequest) GetPasswordDisplayOrderIndexOk() (*int32, bool) {
+func (o *AddUserRestResourceTypeRequest) GetPasswordDisplayOrderIndexOk() (*int64, bool) {
 	if o == nil || IsNil(o.PasswordDisplayOrderIndex) {
 		return nil, false
 	}
@@ -198,8 +198,8 @@ func (o *AddUserRestResourceTypeRequest) HasPasswordDisplayOrderIndex() bool {
 	return false
 }
 
-// SetPasswordDisplayOrderIndex gets a reference to the given int32 and assigns it to the PasswordDisplayOrderIndex field.
-func (o *AddUserRestResourceTypeRequest) SetPasswordDisplayOrderIndex(v int32) {
+// SetPasswordDisplayOrderIndex gets a reference to the given int64 and assigns it to the PasswordDisplayOrderIndex field.
+func (o *AddUserRestResourceTypeRequest) SetPasswordDisplayOrderIndex(v int64) {
 	o.PasswordDisplayOrderIndex = &v
 }
 
@@ -684,9 +684,9 @@ func (o *AddUserRestResourceTypeRequest) SetPrimaryDisplayAttributeType(v string
 }
 
 // GetDelegatedAdminSearchSizeLimit returns the DelegatedAdminSearchSizeLimit field value if set, zero value otherwise.
-func (o *AddUserRestResourceTypeRequest) GetDelegatedAdminSearchSizeLimit() int32 {
+func (o *AddUserRestResourceTypeRequest) GetDelegatedAdminSearchSizeLimit() int64 {
 	if o == nil || IsNil(o.DelegatedAdminSearchSizeLimit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DelegatedAdminSearchSizeLimit
@@ -694,7 +694,7 @@ func (o *AddUserRestResourceTypeRequest) GetDelegatedAdminSearchSizeLimit() int3
 
 // GetDelegatedAdminSearchSizeLimitOk returns a tuple with the DelegatedAdminSearchSizeLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddUserRestResourceTypeRequest) GetDelegatedAdminSearchSizeLimitOk() (*int32, bool) {
+func (o *AddUserRestResourceTypeRequest) GetDelegatedAdminSearchSizeLimitOk() (*int64, bool) {
 	if o == nil || IsNil(o.DelegatedAdminSearchSizeLimit) {
 		return nil, false
 	}
@@ -710,15 +710,15 @@ func (o *AddUserRestResourceTypeRequest) HasDelegatedAdminSearchSizeLimit() bool
 	return false
 }
 
-// SetDelegatedAdminSearchSizeLimit gets a reference to the given int32 and assigns it to the DelegatedAdminSearchSizeLimit field.
-func (o *AddUserRestResourceTypeRequest) SetDelegatedAdminSearchSizeLimit(v int32) {
+// SetDelegatedAdminSearchSizeLimit gets a reference to the given int64 and assigns it to the DelegatedAdminSearchSizeLimit field.
+func (o *AddUserRestResourceTypeRequest) SetDelegatedAdminSearchSizeLimit(v int64) {
 	o.DelegatedAdminSearchSizeLimit = &v
 }
 
 // GetDelegatedAdminReportSizeLimit returns the DelegatedAdminReportSizeLimit field value if set, zero value otherwise.
-func (o *AddUserRestResourceTypeRequest) GetDelegatedAdminReportSizeLimit() int32 {
+func (o *AddUserRestResourceTypeRequest) GetDelegatedAdminReportSizeLimit() int64 {
 	if o == nil || IsNil(o.DelegatedAdminReportSizeLimit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DelegatedAdminReportSizeLimit
@@ -726,7 +726,7 @@ func (o *AddUserRestResourceTypeRequest) GetDelegatedAdminReportSizeLimit() int3
 
 // GetDelegatedAdminReportSizeLimitOk returns a tuple with the DelegatedAdminReportSizeLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddUserRestResourceTypeRequest) GetDelegatedAdminReportSizeLimitOk() (*int32, bool) {
+func (o *AddUserRestResourceTypeRequest) GetDelegatedAdminReportSizeLimitOk() (*int64, bool) {
 	if o == nil || IsNil(o.DelegatedAdminReportSizeLimit) {
 		return nil, false
 	}
@@ -742,8 +742,8 @@ func (o *AddUserRestResourceTypeRequest) HasDelegatedAdminReportSizeLimit() bool
 	return false
 }
 
-// SetDelegatedAdminReportSizeLimit gets a reference to the given int32 and assigns it to the DelegatedAdminReportSizeLimit field.
-func (o *AddUserRestResourceTypeRequest) SetDelegatedAdminReportSizeLimit(v int32) {
+// SetDelegatedAdminReportSizeLimit gets a reference to the given int64 and assigns it to the DelegatedAdminReportSizeLimit field.
+func (o *AddUserRestResourceTypeRequest) SetDelegatedAdminReportSizeLimit(v int64) {
 	o.DelegatedAdminReportSizeLimit = &v
 }
 

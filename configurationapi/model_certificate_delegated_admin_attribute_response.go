@@ -35,7 +35,7 @@ type CertificateDelegatedAdminAttributeResponse struct {
 	// Specifies which attribute category this attribute belongs to.
 	AttributeCategory *string `json:"attributeCategory,omitempty"`
 	// This property determines a display order for attributes within a given attribute category. Attributes are ordered within their category based on this index from least to greatest.
-	DisplayOrderIndex int32 `json:"displayOrderIndex"`
+	DisplayOrderIndex int64 `json:"displayOrderIndex"`
 	// For LDAP attributes with DN syntax, specifies what kind of resource is referenced.
 	ReferenceResourceType *string                                               `json:"referenceResourceType,omitempty"`
 	AttributePresentation *EnumdelegatedAdminAttributeAttributePresentationProp `json:"attributePresentation,omitempty"`
@@ -49,7 +49,7 @@ type CertificateDelegatedAdminAttributeResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCertificateDelegatedAdminAttributeResponse(id string, schemas []EnumcertificateDelegatedAdminAttributeSchemaUrn, attributeType string, displayName string, mutability EnumdelegatedAdminAttributeMutabilityProp, multiValued bool, displayOrderIndex int32) *CertificateDelegatedAdminAttributeResponse {
+func NewCertificateDelegatedAdminAttributeResponse(id string, schemas []EnumcertificateDelegatedAdminAttributeSchemaUrn, attributeType string, displayName string, mutability EnumdelegatedAdminAttributeMutabilityProp, multiValued bool, displayOrderIndex int64) *CertificateDelegatedAdminAttributeResponse {
 	this := CertificateDelegatedAdminAttributeResponse{}
 	this.Id = id
 	this.Schemas = schemas
@@ -310,9 +310,9 @@ func (o *CertificateDelegatedAdminAttributeResponse) SetAttributeCategory(v stri
 }
 
 // GetDisplayOrderIndex returns the DisplayOrderIndex field value
-func (o *CertificateDelegatedAdminAttributeResponse) GetDisplayOrderIndex() int32 {
+func (o *CertificateDelegatedAdminAttributeResponse) GetDisplayOrderIndex() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -321,7 +321,7 @@ func (o *CertificateDelegatedAdminAttributeResponse) GetDisplayOrderIndex() int3
 
 // GetDisplayOrderIndexOk returns a tuple with the DisplayOrderIndex field value
 // and a boolean to check if the value has been set.
-func (o *CertificateDelegatedAdminAttributeResponse) GetDisplayOrderIndexOk() (*int32, bool) {
+func (o *CertificateDelegatedAdminAttributeResponse) GetDisplayOrderIndexOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -329,7 +329,7 @@ func (o *CertificateDelegatedAdminAttributeResponse) GetDisplayOrderIndexOk() (*
 }
 
 // SetDisplayOrderIndex sets field value
-func (o *CertificateDelegatedAdminAttributeResponse) SetDisplayOrderIndex(v int32) {
+func (o *CertificateDelegatedAdminAttributeResponse) SetDisplayOrderIndex(v int64) {
 	o.DisplayOrderIndex = v
 }
 

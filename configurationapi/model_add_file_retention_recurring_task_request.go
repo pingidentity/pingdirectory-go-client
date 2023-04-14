@@ -28,7 +28,7 @@ type AddFileRetentionRecurringTaskRequest struct {
 	FilenamePattern string                               `json:"filenamePattern"`
 	TimestampFormat EnumrecurringTaskTimestampFormatProp `json:"timestampFormat"`
 	// The minimum number of files matching the pattern that will be retained.
-	RetainFileCount *int32 `json:"retainFileCount,omitempty"`
+	RetainFileCount *int64 `json:"retainFileCount,omitempty"`
 	// The minimum age of files matching the pattern that will be retained.
 	RetainFileAge *string `json:"retainFileAge,omitempty"`
 	// The minimum aggregate size of files that will be retained. The size should be specified as an integer followed by a unit that is one of \"b\" or \"bytes\", \"kb\" or \"kilobytes\", \"mb\" or \"megabytes\", \"gb\" or \"gigabytes\", or \"tb\" or \"terabytes\". For example, a value of \"1 gb\" indicates that at least one gigabyte of files should be retained.
@@ -194,9 +194,9 @@ func (o *AddFileRetentionRecurringTaskRequest) SetTimestampFormat(v Enumrecurrin
 }
 
 // GetRetainFileCount returns the RetainFileCount field value if set, zero value otherwise.
-func (o *AddFileRetentionRecurringTaskRequest) GetRetainFileCount() int32 {
+func (o *AddFileRetentionRecurringTaskRequest) GetRetainFileCount() int64 {
 	if o == nil || IsNil(o.RetainFileCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.RetainFileCount
@@ -204,7 +204,7 @@ func (o *AddFileRetentionRecurringTaskRequest) GetRetainFileCount() int32 {
 
 // GetRetainFileCountOk returns a tuple with the RetainFileCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddFileRetentionRecurringTaskRequest) GetRetainFileCountOk() (*int32, bool) {
+func (o *AddFileRetentionRecurringTaskRequest) GetRetainFileCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.RetainFileCount) {
 		return nil, false
 	}
@@ -220,8 +220,8 @@ func (o *AddFileRetentionRecurringTaskRequest) HasRetainFileCount() bool {
 	return false
 }
 
-// SetRetainFileCount gets a reference to the given int32 and assigns it to the RetainFileCount field.
-func (o *AddFileRetentionRecurringTaskRequest) SetRetainFileCount(v int32) {
+// SetRetainFileCount gets a reference to the given int64 and assigns it to the RetainFileCount field.
+func (o *AddFileRetentionRecurringTaskRequest) SetRetainFileCount(v int64) {
 	o.RetainFileCount = &v
 }
 

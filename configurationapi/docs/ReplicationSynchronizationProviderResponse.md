@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | [**[]EnumreplicationSynchronizationProviderSchemaUrn**](EnumreplicationSynchronizationProviderSchemaUrn.md) |  | 
 **Id** | **string** | Name of the Synchronization Provider | 
-**NumUpdateReplayThreads** | Pointer to **int32** | Specifies the number of update replay threads. | [optional] 
+**NumUpdateReplayThreads** | Pointer to **int64** | Specifies the number of update replay threads. | [optional] 
 **Description** | Pointer to **string** | A description for this Synchronization Provider | [optional] 
 **Enabled** | **bool** | Indicates whether the Synchronization Provider is enabled for use. | 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
@@ -73,20 +73,20 @@ SetId sets Id field to given value.
 
 ### GetNumUpdateReplayThreads
 
-`func (o *ReplicationSynchronizationProviderResponse) GetNumUpdateReplayThreads() int32`
+`func (o *ReplicationSynchronizationProviderResponse) GetNumUpdateReplayThreads() int64`
 
 GetNumUpdateReplayThreads returns the NumUpdateReplayThreads field if non-nil, zero value otherwise.
 
 ### GetNumUpdateReplayThreadsOk
 
-`func (o *ReplicationSynchronizationProviderResponse) GetNumUpdateReplayThreadsOk() (*int32, bool)`
+`func (o *ReplicationSynchronizationProviderResponse) GetNumUpdateReplayThreadsOk() (*int64, bool)`
 
 GetNumUpdateReplayThreadsOk returns a tuple with the NumUpdateReplayThreads field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNumUpdateReplayThreads
 
-`func (o *ReplicationSynchronizationProviderResponse) SetNumUpdateReplayThreads(v int32)`
+`func (o *ReplicationSynchronizationProviderResponse) SetNumUpdateReplayThreads(v int64)`
 
 SetNumUpdateReplayThreads sets NumUpdateReplayThreads field to given value.
 

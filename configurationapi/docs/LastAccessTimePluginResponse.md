@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **MaxUpdateFrequency** | Pointer to **string** | Specifies the maximum frequency with which last access time values should be written for an entry. This may help limit the rate of internal write operations processed in the server. | [optional] 
 **OperationType** | Pointer to [**[]EnumpluginOperationTypeProp**](EnumpluginOperationTypeProp.md) |  | [optional] 
 **InvokeForFailedBinds** | Pointer to **bool** | Indicates whether to update the last access time for an entry targeted by a bind operation if the bind is unsuccessful. | [optional] 
-**MaxSearchResultEntriesToUpdate** | Pointer to **int32** | Specifies the maximum number of entries that should be updated in a search operation. Only search result entries actually returned to the client may have their last access time updated, but because a single search operation may return a very large number of entries, the plugin will only update entries if no more than a specified number of entries are updated. | [optional] 
+**MaxSearchResultEntriesToUpdate** | Pointer to **int64** | Specifies the maximum number of entries that should be updated in a search operation. Only search result entries actually returned to the client may have their last access time updated, but because a single search operation may return a very large number of entries, the plugin will only update entries if no more than a specified number of entries are updated. | [optional] 
 **RequestCriteria** | Pointer to **string** | Specifies a set of request criteria that may be used to indicate whether to apply access time updates for the associated operation. | [optional] 
 **InvokeForInternalOperations** | Pointer to **bool** | Indicates whether the plug-in should be invoked for internal operations. | [optional] 
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
@@ -153,20 +153,20 @@ HasInvokeForFailedBinds returns a boolean if a field has been set.
 
 ### GetMaxSearchResultEntriesToUpdate
 
-`func (o *LastAccessTimePluginResponse) GetMaxSearchResultEntriesToUpdate() int32`
+`func (o *LastAccessTimePluginResponse) GetMaxSearchResultEntriesToUpdate() int64`
 
 GetMaxSearchResultEntriesToUpdate returns the MaxSearchResultEntriesToUpdate field if non-nil, zero value otherwise.
 
 ### GetMaxSearchResultEntriesToUpdateOk
 
-`func (o *LastAccessTimePluginResponse) GetMaxSearchResultEntriesToUpdateOk() (*int32, bool)`
+`func (o *LastAccessTimePluginResponse) GetMaxSearchResultEntriesToUpdateOk() (*int64, bool)`
 
 GetMaxSearchResultEntriesToUpdateOk returns a tuple with the MaxSearchResultEntriesToUpdate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxSearchResultEntriesToUpdate
 
-`func (o *LastAccessTimePluginResponse) SetMaxSearchResultEntriesToUpdate(v int32)`
+`func (o *LastAccessTimePluginResponse) SetMaxSearchResultEntriesToUpdate(v int64)`
 
 SetMaxSearchResultEntriesToUpdate sets MaxSearchResultEntriesToUpdate field to given value.
 

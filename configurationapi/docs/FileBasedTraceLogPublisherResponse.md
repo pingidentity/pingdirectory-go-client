@@ -19,8 +19,8 @@ Name | Type | Description | Notes
 **BufferSize** | Pointer to **string** | Specifies the log file buffer size. | [optional] 
 **TimeInterval** | Pointer to **string** | Specifies the interval at which to check whether the log files need to be rotated. | [optional] 
 **Asynchronous** | **bool** | Indicates whether the Writer Based Trace Log Publisher will publish records asynchronously. | 
-**QueueSize** | Pointer to **int32** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
-**MaxStringLength** | Pointer to **int32** | Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written. | [optional] 
+**QueueSize** | Pointer to **int64** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
+**MaxStringLength** | Pointer to **int64** | Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written. | [optional] 
 **DebugMessageType** | Pointer to [**[]EnumlogPublisherDebugMessageTypeProp**](EnumlogPublisherDebugMessageTypeProp.md) |  | [optional] 
 **HttpMessageType** | Pointer to [**[]EnumlogPublisherHttpMessageTypeProp**](EnumlogPublisherHttpMessageTypeProp.md) |  | [optional] 
 **AccessTokenValidatorMessageType** | Pointer to [**[]EnumlogPublisherAccessTokenValidatorMessageTypeProp**](EnumlogPublisherAccessTokenValidatorMessageTypeProp.md) |  | [optional] 
@@ -398,20 +398,20 @@ SetAsynchronous sets Asynchronous field to given value.
 
 ### GetQueueSize
 
-`func (o *FileBasedTraceLogPublisherResponse) GetQueueSize() int32`
+`func (o *FileBasedTraceLogPublisherResponse) GetQueueSize() int64`
 
 GetQueueSize returns the QueueSize field if non-nil, zero value otherwise.
 
 ### GetQueueSizeOk
 
-`func (o *FileBasedTraceLogPublisherResponse) GetQueueSizeOk() (*int32, bool)`
+`func (o *FileBasedTraceLogPublisherResponse) GetQueueSizeOk() (*int64, bool)`
 
 GetQueueSizeOk returns a tuple with the QueueSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQueueSize
 
-`func (o *FileBasedTraceLogPublisherResponse) SetQueueSize(v int32)`
+`func (o *FileBasedTraceLogPublisherResponse) SetQueueSize(v int64)`
 
 SetQueueSize sets QueueSize field to given value.
 
@@ -423,20 +423,20 @@ HasQueueSize returns a boolean if a field has been set.
 
 ### GetMaxStringLength
 
-`func (o *FileBasedTraceLogPublisherResponse) GetMaxStringLength() int32`
+`func (o *FileBasedTraceLogPublisherResponse) GetMaxStringLength() int64`
 
 GetMaxStringLength returns the MaxStringLength field if non-nil, zero value otherwise.
 
 ### GetMaxStringLengthOk
 
-`func (o *FileBasedTraceLogPublisherResponse) GetMaxStringLengthOk() (*int32, bool)`
+`func (o *FileBasedTraceLogPublisherResponse) GetMaxStringLengthOk() (*int64, bool)`
 
 GetMaxStringLengthOk returns a tuple with the MaxStringLength field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxStringLength
 
-`func (o *FileBasedTraceLogPublisherResponse) SetMaxStringLength(v int32)`
+`func (o *FileBasedTraceLogPublisherResponse) SetMaxStringLength(v int64)`
 
 SetMaxStringLength sets MaxStringLength field to given value.
 

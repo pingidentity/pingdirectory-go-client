@@ -39,7 +39,7 @@ type ShortUniqueIdVirtualAttributeResponse struct {
 	// Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
 	ClientConnectionPolicy []string `json:"clientConnectionPolicy,omitempty"`
 	// Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
-	MultipleVirtualAttributeEvaluationOrderIndex *int32                                                         `json:"multipleVirtualAttributeEvaluationOrderIndex,omitempty"`
+	MultipleVirtualAttributeEvaluationOrderIndex *int64                                                         `json:"multipleVirtualAttributeEvaluationOrderIndex,omitempty"`
 	MultipleVirtualAttributeMergeBehavior        *EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp `json:"multipleVirtualAttributeMergeBehavior,omitempty"`
 	// Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
 	AllowIndexConflicts                           *bool                                              `json:"allowIndexConflicts,omitempty"`
@@ -350,9 +350,9 @@ func (o *ShortUniqueIdVirtualAttributeResponse) SetClientConnectionPolicy(v []st
 }
 
 // GetMultipleVirtualAttributeEvaluationOrderIndex returns the MultipleVirtualAttributeEvaluationOrderIndex field value if set, zero value otherwise.
-func (o *ShortUniqueIdVirtualAttributeResponse) GetMultipleVirtualAttributeEvaluationOrderIndex() int32 {
+func (o *ShortUniqueIdVirtualAttributeResponse) GetMultipleVirtualAttributeEvaluationOrderIndex() int64 {
 	if o == nil || IsNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MultipleVirtualAttributeEvaluationOrderIndex
@@ -360,7 +360,7 @@ func (o *ShortUniqueIdVirtualAttributeResponse) GetMultipleVirtualAttributeEvalu
 
 // GetMultipleVirtualAttributeEvaluationOrderIndexOk returns a tuple with the MultipleVirtualAttributeEvaluationOrderIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ShortUniqueIdVirtualAttributeResponse) GetMultipleVirtualAttributeEvaluationOrderIndexOk() (*int32, bool) {
+func (o *ShortUniqueIdVirtualAttributeResponse) GetMultipleVirtualAttributeEvaluationOrderIndexOk() (*int64, bool) {
 	if o == nil || IsNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
 		return nil, false
 	}
@@ -376,8 +376,8 @@ func (o *ShortUniqueIdVirtualAttributeResponse) HasMultipleVirtualAttributeEvalu
 	return false
 }
 
-// SetMultipleVirtualAttributeEvaluationOrderIndex gets a reference to the given int32 and assigns it to the MultipleVirtualAttributeEvaluationOrderIndex field.
-func (o *ShortUniqueIdVirtualAttributeResponse) SetMultipleVirtualAttributeEvaluationOrderIndex(v int32) {
+// SetMultipleVirtualAttributeEvaluationOrderIndex gets a reference to the given int64 and assigns it to the MultipleVirtualAttributeEvaluationOrderIndex field.
+func (o *ShortUniqueIdVirtualAttributeResponse) SetMultipleVirtualAttributeEvaluationOrderIndex(v int64) {
 	o.MultipleVirtualAttributeEvaluationOrderIndex = &v
 }
 

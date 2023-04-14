@@ -35,7 +35,7 @@ type AddJsonFieldConstraintsRequest struct {
 	// Indicates whether backends that support JSON indexing should maintain an index for values of the target field.
 	IndexValues *bool `json:"indexValues,omitempty"`
 	// The maximum number of entries that may contain a particular value for the target field before the server will stop maintaining the index for that value.
-	IndexEntryLimit *int32 `json:"indexEntryLimit,omitempty"`
+	IndexEntryLimit *int64 `json:"indexEntryLimit,omitempty"`
 	// Indicates whether backends that support database priming should load the contents of the associated JSON index into memory whenever the backend is opened.
 	PrimeIndex *bool                                  `json:"primeIndex,omitempty"`
 	CacheMode  *EnumjsonFieldConstraintsCacheModeProp `json:"cacheMode,omitempty"`
@@ -50,13 +50,13 @@ type AddJsonFieldConstraintsRequest struct {
 	// Specifies the largest numeric value that may be used as the value for the target field. If configured, then the server will reject any attempt to store a JSON object with a value for the target field that is greater than that maximum numeric value.
 	MaximumNumericValue *string `json:"maximumNumericValue,omitempty"`
 	// Specifies the smallest number of characters that may be present in string values of the target field. If configured, then the server will reject any attempt to store a JSON object with a value for the target field that is shorter than that minimum value length.
-	MinimumValueLength *int32 `json:"minimumValueLength,omitempty"`
+	MinimumValueLength *int64 `json:"minimumValueLength,omitempty"`
 	// Specifies the largest number of characters that may be present in string values of the target field. If configured, then the server will reject any attempt to store a JSON object with a value for the target field that is longer than that maximum value length.
-	MaximumValueLength *int32 `json:"maximumValueLength,omitempty"`
+	MaximumValueLength *int64 `json:"maximumValueLength,omitempty"`
 	// Specifies the smallest number of elements that may be present in an array of values for the target field. If configured, then the server will reject any attempt to store a JSON object with a value for the target field that is an array with fewer than this number of elements.
-	MinimumValueCount *int32 `json:"minimumValueCount,omitempty"`
+	MinimumValueCount *int64 `json:"minimumValueCount,omitempty"`
 	// Specifies the largest number of elements that may be present in an array of values for the target field. If configured, then the server will reject any attempt to store a JSON object with a value for the target field that is an array with more than this number of elements.
-	MaximumValueCount *int32 `json:"maximumValueCount,omitempty"`
+	MaximumValueCount *int64 `json:"maximumValueCount,omitempty"`
 }
 
 // NewAddJsonFieldConstraintsRequest instantiates a new AddJsonFieldConstraintsRequest object
@@ -351,9 +351,9 @@ func (o *AddJsonFieldConstraintsRequest) SetIndexValues(v bool) {
 }
 
 // GetIndexEntryLimit returns the IndexEntryLimit field value if set, zero value otherwise.
-func (o *AddJsonFieldConstraintsRequest) GetIndexEntryLimit() int32 {
+func (o *AddJsonFieldConstraintsRequest) GetIndexEntryLimit() int64 {
 	if o == nil || IsNil(o.IndexEntryLimit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.IndexEntryLimit
@@ -361,7 +361,7 @@ func (o *AddJsonFieldConstraintsRequest) GetIndexEntryLimit() int32 {
 
 // GetIndexEntryLimitOk returns a tuple with the IndexEntryLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddJsonFieldConstraintsRequest) GetIndexEntryLimitOk() (*int32, bool) {
+func (o *AddJsonFieldConstraintsRequest) GetIndexEntryLimitOk() (*int64, bool) {
 	if o == nil || IsNil(o.IndexEntryLimit) {
 		return nil, false
 	}
@@ -377,8 +377,8 @@ func (o *AddJsonFieldConstraintsRequest) HasIndexEntryLimit() bool {
 	return false
 }
 
-// SetIndexEntryLimit gets a reference to the given int32 and assigns it to the IndexEntryLimit field.
-func (o *AddJsonFieldConstraintsRequest) SetIndexEntryLimit(v int32) {
+// SetIndexEntryLimit gets a reference to the given int64 and assigns it to the IndexEntryLimit field.
+func (o *AddJsonFieldConstraintsRequest) SetIndexEntryLimit(v int64) {
 	o.IndexEntryLimit = &v
 }
 
@@ -607,9 +607,9 @@ func (o *AddJsonFieldConstraintsRequest) SetMaximumNumericValue(v string) {
 }
 
 // GetMinimumValueLength returns the MinimumValueLength field value if set, zero value otherwise.
-func (o *AddJsonFieldConstraintsRequest) GetMinimumValueLength() int32 {
+func (o *AddJsonFieldConstraintsRequest) GetMinimumValueLength() int64 {
 	if o == nil || IsNil(o.MinimumValueLength) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MinimumValueLength
@@ -617,7 +617,7 @@ func (o *AddJsonFieldConstraintsRequest) GetMinimumValueLength() int32 {
 
 // GetMinimumValueLengthOk returns a tuple with the MinimumValueLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddJsonFieldConstraintsRequest) GetMinimumValueLengthOk() (*int32, bool) {
+func (o *AddJsonFieldConstraintsRequest) GetMinimumValueLengthOk() (*int64, bool) {
 	if o == nil || IsNil(o.MinimumValueLength) {
 		return nil, false
 	}
@@ -633,15 +633,15 @@ func (o *AddJsonFieldConstraintsRequest) HasMinimumValueLength() bool {
 	return false
 }
 
-// SetMinimumValueLength gets a reference to the given int32 and assigns it to the MinimumValueLength field.
-func (o *AddJsonFieldConstraintsRequest) SetMinimumValueLength(v int32) {
+// SetMinimumValueLength gets a reference to the given int64 and assigns it to the MinimumValueLength field.
+func (o *AddJsonFieldConstraintsRequest) SetMinimumValueLength(v int64) {
 	o.MinimumValueLength = &v
 }
 
 // GetMaximumValueLength returns the MaximumValueLength field value if set, zero value otherwise.
-func (o *AddJsonFieldConstraintsRequest) GetMaximumValueLength() int32 {
+func (o *AddJsonFieldConstraintsRequest) GetMaximumValueLength() int64 {
 	if o == nil || IsNil(o.MaximumValueLength) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaximumValueLength
@@ -649,7 +649,7 @@ func (o *AddJsonFieldConstraintsRequest) GetMaximumValueLength() int32 {
 
 // GetMaximumValueLengthOk returns a tuple with the MaximumValueLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddJsonFieldConstraintsRequest) GetMaximumValueLengthOk() (*int32, bool) {
+func (o *AddJsonFieldConstraintsRequest) GetMaximumValueLengthOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaximumValueLength) {
 		return nil, false
 	}
@@ -665,15 +665,15 @@ func (o *AddJsonFieldConstraintsRequest) HasMaximumValueLength() bool {
 	return false
 }
 
-// SetMaximumValueLength gets a reference to the given int32 and assigns it to the MaximumValueLength field.
-func (o *AddJsonFieldConstraintsRequest) SetMaximumValueLength(v int32) {
+// SetMaximumValueLength gets a reference to the given int64 and assigns it to the MaximumValueLength field.
+func (o *AddJsonFieldConstraintsRequest) SetMaximumValueLength(v int64) {
 	o.MaximumValueLength = &v
 }
 
 // GetMinimumValueCount returns the MinimumValueCount field value if set, zero value otherwise.
-func (o *AddJsonFieldConstraintsRequest) GetMinimumValueCount() int32 {
+func (o *AddJsonFieldConstraintsRequest) GetMinimumValueCount() int64 {
 	if o == nil || IsNil(o.MinimumValueCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MinimumValueCount
@@ -681,7 +681,7 @@ func (o *AddJsonFieldConstraintsRequest) GetMinimumValueCount() int32 {
 
 // GetMinimumValueCountOk returns a tuple with the MinimumValueCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddJsonFieldConstraintsRequest) GetMinimumValueCountOk() (*int32, bool) {
+func (o *AddJsonFieldConstraintsRequest) GetMinimumValueCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.MinimumValueCount) {
 		return nil, false
 	}
@@ -697,15 +697,15 @@ func (o *AddJsonFieldConstraintsRequest) HasMinimumValueCount() bool {
 	return false
 }
 
-// SetMinimumValueCount gets a reference to the given int32 and assigns it to the MinimumValueCount field.
-func (o *AddJsonFieldConstraintsRequest) SetMinimumValueCount(v int32) {
+// SetMinimumValueCount gets a reference to the given int64 and assigns it to the MinimumValueCount field.
+func (o *AddJsonFieldConstraintsRequest) SetMinimumValueCount(v int64) {
 	o.MinimumValueCount = &v
 }
 
 // GetMaximumValueCount returns the MaximumValueCount field value if set, zero value otherwise.
-func (o *AddJsonFieldConstraintsRequest) GetMaximumValueCount() int32 {
+func (o *AddJsonFieldConstraintsRequest) GetMaximumValueCount() int64 {
 	if o == nil || IsNil(o.MaximumValueCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaximumValueCount
@@ -713,7 +713,7 @@ func (o *AddJsonFieldConstraintsRequest) GetMaximumValueCount() int32 {
 
 // GetMaximumValueCountOk returns a tuple with the MaximumValueCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddJsonFieldConstraintsRequest) GetMaximumValueCountOk() (*int32, bool) {
+func (o *AddJsonFieldConstraintsRequest) GetMaximumValueCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaximumValueCount) {
 		return nil, false
 	}
@@ -729,8 +729,8 @@ func (o *AddJsonFieldConstraintsRequest) HasMaximumValueCount() bool {
 	return false
 }
 
-// SetMaximumValueCount gets a reference to the given int32 and assigns it to the MaximumValueCount field.
-func (o *AddJsonFieldConstraintsRequest) SetMaximumValueCount(v int32) {
+// SetMaximumValueCount gets a reference to the given int64 and assigns it to the MaximumValueCount field.
+func (o *AddJsonFieldConstraintsRequest) SetMaximumValueCount(v int64) {
 	o.MaximumValueCount = &v
 }
 

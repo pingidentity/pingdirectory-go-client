@@ -27,7 +27,7 @@ type ConsentServiceResponse struct {
 	// The DN of an internal service account used by the Consent Service to make internal LDAP requests.
 	BindDN *string `json:"bindDN,omitempty"`
 	// The maximum number of consent resources that may be returned from a search request.
-	SearchSizeLimit *int32 `json:"searchSizeLimit,omitempty"`
+	SearchSizeLimit *int64 `json:"searchSizeLimit,omitempty"`
 	// If specified, the Identity Mapper(s) that may be used to map consent record subject and actor values to DNs. This is typically only needed if privileged API clients will be used.
 	ConsentRecordIdentityMapper []string `json:"consentRecordIdentityMapper,omitempty"`
 	// The set of account DNs that the Consent Service will consider to be privileged.
@@ -181,9 +181,9 @@ func (o *ConsentServiceResponse) SetBindDN(v string) {
 }
 
 // GetSearchSizeLimit returns the SearchSizeLimit field value if set, zero value otherwise.
-func (o *ConsentServiceResponse) GetSearchSizeLimit() int32 {
+func (o *ConsentServiceResponse) GetSearchSizeLimit() int64 {
 	if o == nil || IsNil(o.SearchSizeLimit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SearchSizeLimit
@@ -191,7 +191,7 @@ func (o *ConsentServiceResponse) GetSearchSizeLimit() int32 {
 
 // GetSearchSizeLimitOk returns a tuple with the SearchSizeLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ConsentServiceResponse) GetSearchSizeLimitOk() (*int32, bool) {
+func (o *ConsentServiceResponse) GetSearchSizeLimitOk() (*int64, bool) {
 	if o == nil || IsNil(o.SearchSizeLimit) {
 		return nil, false
 	}
@@ -207,8 +207,8 @@ func (o *ConsentServiceResponse) HasSearchSizeLimit() bool {
 	return false
 }
 
-// SetSearchSizeLimit gets a reference to the given int32 and assigns it to the SearchSizeLimit field.
-func (o *ConsentServiceResponse) SetSearchSizeLimit(v int32) {
+// SetSearchSizeLimit gets a reference to the given int64 and assigns it to the SearchSizeLimit field.
+func (o *ConsentServiceResponse) SetSearchSizeLimit(v int64) {
 	o.SearchSizeLimit = &v
 }
 

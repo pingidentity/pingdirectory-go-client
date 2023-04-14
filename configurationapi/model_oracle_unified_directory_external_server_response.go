@@ -25,7 +25,7 @@ type OracleUnifiedDirectoryExternalServerResponse struct {
 	// The host name or IP address of the target LDAP server.
 	ServerHostName string `json:"serverHostName"`
 	// The port number on which the server listens for requests.
-	ServerPort int32 `json:"serverPort"`
+	ServerPort int64 `json:"serverPort"`
 	// Specifies the location for the LDAP External Server.
 	Location *string `json:"location,omitempty"`
 	// The DN to use to bind to the target LDAP server if simple authentication is required.
@@ -52,9 +52,9 @@ type OracleUnifiedDirectoryExternalServerResponse struct {
 	// The trust manager provider to use if SSL or StartTLS is to be used for connection-level security.
 	TrustManagerProvider *string `json:"trustManagerProvider,omitempty"`
 	// The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
-	InitialConnections *int32 `json:"initialConnections,omitempty"`
+	InitialConnections *int64 `json:"initialConnections,omitempty"`
 	// The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
-	MaxConnections              *int32                                              `json:"maxConnections,omitempty"`
+	MaxConnections              *int64                                              `json:"maxConnections,omitempty"`
 	DefunctConnectionResultCode []EnumexternalServerDefunctConnectionResultCodeProp `json:"defunctConnectionResultCode,omitempty"`
 	// Indicates whether to send an abandon request for an operation for which a response timeout is encountered. A request which has timed out on one server may be retried on another server regardless of whether an abandon request is sent, but if the initial attempt is not abandoned then a long-running operation may unnecessarily continue to consume processing resources on the initial server.
 	AbandonOnTimeout *bool `json:"abandonOnTimeout,omitempty"`
@@ -68,7 +68,7 @@ type OracleUnifiedDirectoryExternalServerResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOracleUnifiedDirectoryExternalServerResponse(id string, schemas []EnumoracleUnifiedDirectoryExternalServerSchemaUrn, serverHostName string, serverPort int32, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerAuthenticationMethodProp, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string) *OracleUnifiedDirectoryExternalServerResponse {
+func NewOracleUnifiedDirectoryExternalServerResponse(id string, schemas []EnumoracleUnifiedDirectoryExternalServerSchemaUrn, serverHostName string, serverPort int64, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerAuthenticationMethodProp, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string) *OracleUnifiedDirectoryExternalServerResponse {
 	this := OracleUnifiedDirectoryExternalServerResponse{}
 	this.Id = id
 	this.Schemas = schemas
@@ -164,9 +164,9 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) SetServerHostName(v strin
 }
 
 // GetServerPort returns the ServerPort field value
-func (o *OracleUnifiedDirectoryExternalServerResponse) GetServerPort() int32 {
+func (o *OracleUnifiedDirectoryExternalServerResponse) GetServerPort() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -175,7 +175,7 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) GetServerPort() int32 {
 
 // GetServerPortOk returns a tuple with the ServerPort field value
 // and a boolean to check if the value has been set.
-func (o *OracleUnifiedDirectoryExternalServerResponse) GetServerPortOk() (*int32, bool) {
+func (o *OracleUnifiedDirectoryExternalServerResponse) GetServerPortOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -183,7 +183,7 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) GetServerPortOk() (*int32
 }
 
 // SetServerPort sets field value
-func (o *OracleUnifiedDirectoryExternalServerResponse) SetServerPort(v int32) {
+func (o *OracleUnifiedDirectoryExternalServerResponse) SetServerPort(v int64) {
 	o.ServerPort = v
 }
 
@@ -588,9 +588,9 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) SetTrustManagerProvider(v
 }
 
 // GetInitialConnections returns the InitialConnections field value if set, zero value otherwise.
-func (o *OracleUnifiedDirectoryExternalServerResponse) GetInitialConnections() int32 {
+func (o *OracleUnifiedDirectoryExternalServerResponse) GetInitialConnections() int64 {
 	if o == nil || IsNil(o.InitialConnections) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.InitialConnections
@@ -598,7 +598,7 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) GetInitialConnections() i
 
 // GetInitialConnectionsOk returns a tuple with the InitialConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OracleUnifiedDirectoryExternalServerResponse) GetInitialConnectionsOk() (*int32, bool) {
+func (o *OracleUnifiedDirectoryExternalServerResponse) GetInitialConnectionsOk() (*int64, bool) {
 	if o == nil || IsNil(o.InitialConnections) {
 		return nil, false
 	}
@@ -614,15 +614,15 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) HasInitialConnections() b
 	return false
 }
 
-// SetInitialConnections gets a reference to the given int32 and assigns it to the InitialConnections field.
-func (o *OracleUnifiedDirectoryExternalServerResponse) SetInitialConnections(v int32) {
+// SetInitialConnections gets a reference to the given int64 and assigns it to the InitialConnections field.
+func (o *OracleUnifiedDirectoryExternalServerResponse) SetInitialConnections(v int64) {
 	o.InitialConnections = &v
 }
 
 // GetMaxConnections returns the MaxConnections field value if set, zero value otherwise.
-func (o *OracleUnifiedDirectoryExternalServerResponse) GetMaxConnections() int32 {
+func (o *OracleUnifiedDirectoryExternalServerResponse) GetMaxConnections() int64 {
 	if o == nil || IsNil(o.MaxConnections) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxConnections
@@ -630,7 +630,7 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) GetMaxConnections() int32
 
 // GetMaxConnectionsOk returns a tuple with the MaxConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OracleUnifiedDirectoryExternalServerResponse) GetMaxConnectionsOk() (*int32, bool) {
+func (o *OracleUnifiedDirectoryExternalServerResponse) GetMaxConnectionsOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxConnections) {
 		return nil, false
 	}
@@ -646,8 +646,8 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) HasMaxConnections() bool 
 	return false
 }
 
-// SetMaxConnections gets a reference to the given int32 and assigns it to the MaxConnections field.
-func (o *OracleUnifiedDirectoryExternalServerResponse) SetMaxConnections(v int32) {
+// SetMaxConnections gets a reference to the given int64 and assigns it to the MaxConnections field.
+func (o *OracleUnifiedDirectoryExternalServerResponse) SetMaxConnections(v int64) {
 	o.MaxConnections = &v
 }
 

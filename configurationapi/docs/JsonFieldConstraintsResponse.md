@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **AllowNullValue** | Pointer to **bool** | Indicates whether the target field may have a value that is the JSON null value as an alternative to a value (or array of values) of the specified value-type. | [optional] 
 **AllowEmptyObject** | Pointer to **bool** | Indicates whether the target field may have a value that is an empty JSON object (i.e., a JSON object with zero fields). This may only be set to true if value-type property is set to object. | [optional] 
 **IndexValues** | Pointer to **bool** | Indicates whether backends that support JSON indexing should maintain an index for values of the target field. | [optional] 
-**IndexEntryLimit** | Pointer to **int32** | The maximum number of entries that may contain a particular value for the target field before the server will stop maintaining the index for that value. | [optional] 
+**IndexEntryLimit** | Pointer to **int64** | The maximum number of entries that may contain a particular value for the target field before the server will stop maintaining the index for that value. | [optional] 
 **PrimeIndex** | Pointer to **bool** | Indicates whether backends that support database priming should load the contents of the associated JSON index into memory whenever the backend is opened. | [optional] 
 **CacheMode** | Pointer to [**EnumjsonFieldConstraintsCacheModeProp**](EnumjsonFieldConstraintsCacheModeProp.md) |  | [optional] 
 **TokenizeValues** | Pointer to **bool** | Indicates whether the backend should attempt to assign a compact token for each distinct value for the target field in an attempt to reduce the encoded size of the field in JSON objects. These tokens would be assigned prior to using any from the token set used for automatic compaction of some JSON string values. | [optional] 
@@ -22,10 +22,10 @@ Name | Type | Description | Notes
 **AllowedValueRegularExpression** | Pointer to **[]string** | Specifies an explicit set of regular expressions that may be used to restrict the set of values that may be used for the target field. If a set of allowed value regular expressions is defined, then the server will reject any attempt to store a JSON object with a value for the target field that does not match at least one of those regular expressions. | [optional] 
 **MinimumNumericValue** | Pointer to **string** | Specifies the smallest numeric value that may be used as the value for the target field. If configured, then the server will reject any attempt to store a JSON object with a value for the target field that is less than that minimum numeric value. | [optional] 
 **MaximumNumericValue** | Pointer to **string** | Specifies the largest numeric value that may be used as the value for the target field. If configured, then the server will reject any attempt to store a JSON object with a value for the target field that is greater than that maximum numeric value. | [optional] 
-**MinimumValueLength** | Pointer to **int32** | Specifies the smallest number of characters that may be present in string values of the target field. If configured, then the server will reject any attempt to store a JSON object with a value for the target field that is shorter than that minimum value length. | [optional] 
-**MaximumValueLength** | Pointer to **int32** | Specifies the largest number of characters that may be present in string values of the target field. If configured, then the server will reject any attempt to store a JSON object with a value for the target field that is longer than that maximum value length. | [optional] 
-**MinimumValueCount** | Pointer to **int32** | Specifies the smallest number of elements that may be present in an array of values for the target field. If configured, then the server will reject any attempt to store a JSON object with a value for the target field that is an array with fewer than this number of elements. | [optional] 
-**MaximumValueCount** | Pointer to **int32** | Specifies the largest number of elements that may be present in an array of values for the target field. If configured, then the server will reject any attempt to store a JSON object with a value for the target field that is an array with more than this number of elements. | [optional] 
+**MinimumValueLength** | Pointer to **int64** | Specifies the smallest number of characters that may be present in string values of the target field. If configured, then the server will reject any attempt to store a JSON object with a value for the target field that is shorter than that minimum value length. | [optional] 
+**MaximumValueLength** | Pointer to **int64** | Specifies the largest number of characters that may be present in string values of the target field. If configured, then the server will reject any attempt to store a JSON object with a value for the target field that is longer than that maximum value length. | [optional] 
+**MinimumValueCount** | Pointer to **int64** | Specifies the smallest number of elements that may be present in an array of values for the target field. If configured, then the server will reject any attempt to store a JSON object with a value for the target field that is an array with fewer than this number of elements. | [optional] 
+**MaximumValueCount** | Pointer to **int64** | Specifies the largest number of elements that may be present in an array of values for the target field. If configured, then the server will reject any attempt to store a JSON object with a value for the target field that is an array with more than this number of elements. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 
@@ -285,20 +285,20 @@ HasIndexValues returns a boolean if a field has been set.
 
 ### GetIndexEntryLimit
 
-`func (o *JsonFieldConstraintsResponse) GetIndexEntryLimit() int32`
+`func (o *JsonFieldConstraintsResponse) GetIndexEntryLimit() int64`
 
 GetIndexEntryLimit returns the IndexEntryLimit field if non-nil, zero value otherwise.
 
 ### GetIndexEntryLimitOk
 
-`func (o *JsonFieldConstraintsResponse) GetIndexEntryLimitOk() (*int32, bool)`
+`func (o *JsonFieldConstraintsResponse) GetIndexEntryLimitOk() (*int64, bool)`
 
 GetIndexEntryLimitOk returns a tuple with the IndexEntryLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIndexEntryLimit
 
-`func (o *JsonFieldConstraintsResponse) SetIndexEntryLimit(v int32)`
+`func (o *JsonFieldConstraintsResponse) SetIndexEntryLimit(v int64)`
 
 SetIndexEntryLimit sets IndexEntryLimit field to given value.
 
@@ -485,20 +485,20 @@ HasMaximumNumericValue returns a boolean if a field has been set.
 
 ### GetMinimumValueLength
 
-`func (o *JsonFieldConstraintsResponse) GetMinimumValueLength() int32`
+`func (o *JsonFieldConstraintsResponse) GetMinimumValueLength() int64`
 
 GetMinimumValueLength returns the MinimumValueLength field if non-nil, zero value otherwise.
 
 ### GetMinimumValueLengthOk
 
-`func (o *JsonFieldConstraintsResponse) GetMinimumValueLengthOk() (*int32, bool)`
+`func (o *JsonFieldConstraintsResponse) GetMinimumValueLengthOk() (*int64, bool)`
 
 GetMinimumValueLengthOk returns a tuple with the MinimumValueLength field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinimumValueLength
 
-`func (o *JsonFieldConstraintsResponse) SetMinimumValueLength(v int32)`
+`func (o *JsonFieldConstraintsResponse) SetMinimumValueLength(v int64)`
 
 SetMinimumValueLength sets MinimumValueLength field to given value.
 
@@ -510,20 +510,20 @@ HasMinimumValueLength returns a boolean if a field has been set.
 
 ### GetMaximumValueLength
 
-`func (o *JsonFieldConstraintsResponse) GetMaximumValueLength() int32`
+`func (o *JsonFieldConstraintsResponse) GetMaximumValueLength() int64`
 
 GetMaximumValueLength returns the MaximumValueLength field if non-nil, zero value otherwise.
 
 ### GetMaximumValueLengthOk
 
-`func (o *JsonFieldConstraintsResponse) GetMaximumValueLengthOk() (*int32, bool)`
+`func (o *JsonFieldConstraintsResponse) GetMaximumValueLengthOk() (*int64, bool)`
 
 GetMaximumValueLengthOk returns a tuple with the MaximumValueLength field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaximumValueLength
 
-`func (o *JsonFieldConstraintsResponse) SetMaximumValueLength(v int32)`
+`func (o *JsonFieldConstraintsResponse) SetMaximumValueLength(v int64)`
 
 SetMaximumValueLength sets MaximumValueLength field to given value.
 
@@ -535,20 +535,20 @@ HasMaximumValueLength returns a boolean if a field has been set.
 
 ### GetMinimumValueCount
 
-`func (o *JsonFieldConstraintsResponse) GetMinimumValueCount() int32`
+`func (o *JsonFieldConstraintsResponse) GetMinimumValueCount() int64`
 
 GetMinimumValueCount returns the MinimumValueCount field if non-nil, zero value otherwise.
 
 ### GetMinimumValueCountOk
 
-`func (o *JsonFieldConstraintsResponse) GetMinimumValueCountOk() (*int32, bool)`
+`func (o *JsonFieldConstraintsResponse) GetMinimumValueCountOk() (*int64, bool)`
 
 GetMinimumValueCountOk returns a tuple with the MinimumValueCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinimumValueCount
 
-`func (o *JsonFieldConstraintsResponse) SetMinimumValueCount(v int32)`
+`func (o *JsonFieldConstraintsResponse) SetMinimumValueCount(v int64)`
 
 SetMinimumValueCount sets MinimumValueCount field to given value.
 
@@ -560,20 +560,20 @@ HasMinimumValueCount returns a boolean if a field has been set.
 
 ### GetMaximumValueCount
 
-`func (o *JsonFieldConstraintsResponse) GetMaximumValueCount() int32`
+`func (o *JsonFieldConstraintsResponse) GetMaximumValueCount() int64`
 
 GetMaximumValueCount returns the MaximumValueCount field if non-nil, zero value otherwise.
 
 ### GetMaximumValueCountOk
 
-`func (o *JsonFieldConstraintsResponse) GetMaximumValueCountOk() (*int32, bool)`
+`func (o *JsonFieldConstraintsResponse) GetMaximumValueCountOk() (*int64, bool)`
 
 GetMaximumValueCountOk returns a tuple with the MaximumValueCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaximumValueCount
 
-`func (o *JsonFieldConstraintsResponse) SetMaximumValueCount(v int32)`
+`func (o *JsonFieldConstraintsResponse) SetMaximumValueCount(v int64)`
 
 SetMaximumValueCount sets MaximumValueCount field to given value.
 

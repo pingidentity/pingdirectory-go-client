@@ -37,11 +37,11 @@ type AddBackupRecurringTaskRequest struct {
 	// Indicates whether to cryptographically sign backups, which will make it possible to detect whether the backup has been altered since it was created.
 	Sign *bool `json:"sign,omitempty"`
 	// The minimum number of previous full backups that should be preserved after a new backup completes successfully.
-	RetainPreviousFullBackupCount *int32 `json:"retainPreviousFullBackupCount,omitempty"`
+	RetainPreviousFullBackupCount *int64 `json:"retainPreviousFullBackupCount,omitempty"`
 	// The minimum age of previous full backups that should be preserved after a new backup completes successfully.
 	RetainPreviousFullBackupAge *string `json:"retainPreviousFullBackupAge,omitempty"`
 	// The maximum rate, in megabytes per second, at which backups should be written.
-	MaxMegabytesPerSecond *int32 `json:"maxMegabytesPerSecond,omitempty"`
+	MaxMegabytesPerSecond *int64 `json:"maxMegabytesPerSecond,omitempty"`
 	// A description for this Recurring Task
 	Description *string `json:"description,omitempty"`
 	// Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running).
@@ -352,9 +352,9 @@ func (o *AddBackupRecurringTaskRequest) SetSign(v bool) {
 }
 
 // GetRetainPreviousFullBackupCount returns the RetainPreviousFullBackupCount field value if set, zero value otherwise.
-func (o *AddBackupRecurringTaskRequest) GetRetainPreviousFullBackupCount() int32 {
+func (o *AddBackupRecurringTaskRequest) GetRetainPreviousFullBackupCount() int64 {
 	if o == nil || IsNil(o.RetainPreviousFullBackupCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.RetainPreviousFullBackupCount
@@ -362,7 +362,7 @@ func (o *AddBackupRecurringTaskRequest) GetRetainPreviousFullBackupCount() int32
 
 // GetRetainPreviousFullBackupCountOk returns a tuple with the RetainPreviousFullBackupCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddBackupRecurringTaskRequest) GetRetainPreviousFullBackupCountOk() (*int32, bool) {
+func (o *AddBackupRecurringTaskRequest) GetRetainPreviousFullBackupCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.RetainPreviousFullBackupCount) {
 		return nil, false
 	}
@@ -378,8 +378,8 @@ func (o *AddBackupRecurringTaskRequest) HasRetainPreviousFullBackupCount() bool 
 	return false
 }
 
-// SetRetainPreviousFullBackupCount gets a reference to the given int32 and assigns it to the RetainPreviousFullBackupCount field.
-func (o *AddBackupRecurringTaskRequest) SetRetainPreviousFullBackupCount(v int32) {
+// SetRetainPreviousFullBackupCount gets a reference to the given int64 and assigns it to the RetainPreviousFullBackupCount field.
+func (o *AddBackupRecurringTaskRequest) SetRetainPreviousFullBackupCount(v int64) {
 	o.RetainPreviousFullBackupCount = &v
 }
 
@@ -416,9 +416,9 @@ func (o *AddBackupRecurringTaskRequest) SetRetainPreviousFullBackupAge(v string)
 }
 
 // GetMaxMegabytesPerSecond returns the MaxMegabytesPerSecond field value if set, zero value otherwise.
-func (o *AddBackupRecurringTaskRequest) GetMaxMegabytesPerSecond() int32 {
+func (o *AddBackupRecurringTaskRequest) GetMaxMegabytesPerSecond() int64 {
 	if o == nil || IsNil(o.MaxMegabytesPerSecond) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxMegabytesPerSecond
@@ -426,7 +426,7 @@ func (o *AddBackupRecurringTaskRequest) GetMaxMegabytesPerSecond() int32 {
 
 // GetMaxMegabytesPerSecondOk returns a tuple with the MaxMegabytesPerSecond field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddBackupRecurringTaskRequest) GetMaxMegabytesPerSecondOk() (*int32, bool) {
+func (o *AddBackupRecurringTaskRequest) GetMaxMegabytesPerSecondOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxMegabytesPerSecond) {
 		return nil, false
 	}
@@ -442,8 +442,8 @@ func (o *AddBackupRecurringTaskRequest) HasMaxMegabytesPerSecond() bool {
 	return false
 }
 
-// SetMaxMegabytesPerSecond gets a reference to the given int32 and assigns it to the MaxMegabytesPerSecond field.
-func (o *AddBackupRecurringTaskRequest) SetMaxMegabytesPerSecond(v int32) {
+// SetMaxMegabytesPerSecond gets a reference to the given int64 and assigns it to the MaxMegabytesPerSecond field.
+func (o *AddBackupRecurringTaskRequest) SetMaxMegabytesPerSecond(v int64) {
 	o.MaxMegabytesPerSecond = &v
 }
 

@@ -43,7 +43,7 @@ type SyslogTextErrorLogPublisherResponse struct {
 	GenerifyMessageStringsWhenPossible *bool                                   `json:"generifyMessageStringsWhenPossible,omitempty"`
 	TimestampPrecision                 *EnumlogPublisherTimestampPrecisionProp `json:"timestampPrecision,omitempty"`
 	// The maximum number of log records that can be stored in the asynchronous queue.
-	QueueSize *int32 `json:"queueSize,omitempty"`
+	QueueSize *int64 `json:"queueSize,omitempty"`
 	// Specifies the override severity levels for the logger based on the category of the messages.
 	OverrideSeverity []string `json:"overrideSeverity,omitempty"`
 	// A description for this Log Publisher
@@ -494,9 +494,9 @@ func (o *SyslogTextErrorLogPublisherResponse) SetTimestampPrecision(v EnumlogPub
 }
 
 // GetQueueSize returns the QueueSize field value if set, zero value otherwise.
-func (o *SyslogTextErrorLogPublisherResponse) GetQueueSize() int32 {
+func (o *SyslogTextErrorLogPublisherResponse) GetQueueSize() int64 {
 	if o == nil || IsNil(o.QueueSize) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.QueueSize
@@ -504,7 +504,7 @@ func (o *SyslogTextErrorLogPublisherResponse) GetQueueSize() int32 {
 
 // GetQueueSizeOk returns a tuple with the QueueSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SyslogTextErrorLogPublisherResponse) GetQueueSizeOk() (*int32, bool) {
+func (o *SyslogTextErrorLogPublisherResponse) GetQueueSizeOk() (*int64, bool) {
 	if o == nil || IsNil(o.QueueSize) {
 		return nil, false
 	}
@@ -520,8 +520,8 @@ func (o *SyslogTextErrorLogPublisherResponse) HasQueueSize() bool {
 	return false
 }
 
-// SetQueueSize gets a reference to the given int32 and assigns it to the QueueSize field.
-func (o *SyslogTextErrorLogPublisherResponse) SetQueueSize(v int32) {
+// SetQueueSize gets a reference to the given int64 and assigns it to the QueueSize field.
+func (o *SyslogTextErrorLogPublisherResponse) SetQueueSize(v int64) {
 	o.QueueSize = &v
 }
 

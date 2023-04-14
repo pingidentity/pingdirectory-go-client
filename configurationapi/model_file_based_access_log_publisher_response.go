@@ -97,9 +97,9 @@ type FileBasedAccessLogPublisherResponse struct {
 	// Specifies whether to flush the writer after every log record.
 	AutoFlush *bool `json:"autoFlush,omitempty"`
 	// Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written.
-	MaxStringLength *int32 `json:"maxStringLength,omitempty"`
+	MaxStringLength *int64 `json:"maxStringLength,omitempty"`
 	// The maximum number of log records that can be stored in the asynchronous queue.
-	QueueSize *int32 `json:"queueSize,omitempty"`
+	QueueSize *int64 `json:"queueSize,omitempty"`
 	// The behavior to use for determining which fields to log and whether to transform the values of those fields in any way.
 	LogFieldBehavior *string `json:"logFieldBehavior,omitempty"`
 	// Indicates whether to log information about the result of any security negotiation (e.g., SSL handshake) processing that has been performed.
@@ -1389,9 +1389,9 @@ func (o *FileBasedAccessLogPublisherResponse) SetAutoFlush(v bool) {
 }
 
 // GetMaxStringLength returns the MaxStringLength field value if set, zero value otherwise.
-func (o *FileBasedAccessLogPublisherResponse) GetMaxStringLength() int32 {
+func (o *FileBasedAccessLogPublisherResponse) GetMaxStringLength() int64 {
 	if o == nil || IsNil(o.MaxStringLength) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxStringLength
@@ -1399,7 +1399,7 @@ func (o *FileBasedAccessLogPublisherResponse) GetMaxStringLength() int32 {
 
 // GetMaxStringLengthOk returns a tuple with the MaxStringLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FileBasedAccessLogPublisherResponse) GetMaxStringLengthOk() (*int32, bool) {
+func (o *FileBasedAccessLogPublisherResponse) GetMaxStringLengthOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxStringLength) {
 		return nil, false
 	}
@@ -1415,15 +1415,15 @@ func (o *FileBasedAccessLogPublisherResponse) HasMaxStringLength() bool {
 	return false
 }
 
-// SetMaxStringLength gets a reference to the given int32 and assigns it to the MaxStringLength field.
-func (o *FileBasedAccessLogPublisherResponse) SetMaxStringLength(v int32) {
+// SetMaxStringLength gets a reference to the given int64 and assigns it to the MaxStringLength field.
+func (o *FileBasedAccessLogPublisherResponse) SetMaxStringLength(v int64) {
 	o.MaxStringLength = &v
 }
 
 // GetQueueSize returns the QueueSize field value if set, zero value otherwise.
-func (o *FileBasedAccessLogPublisherResponse) GetQueueSize() int32 {
+func (o *FileBasedAccessLogPublisherResponse) GetQueueSize() int64 {
 	if o == nil || IsNil(o.QueueSize) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.QueueSize
@@ -1431,7 +1431,7 @@ func (o *FileBasedAccessLogPublisherResponse) GetQueueSize() int32 {
 
 // GetQueueSizeOk returns a tuple with the QueueSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FileBasedAccessLogPublisherResponse) GetQueueSizeOk() (*int32, bool) {
+func (o *FileBasedAccessLogPublisherResponse) GetQueueSizeOk() (*int64, bool) {
 	if o == nil || IsNil(o.QueueSize) {
 		return nil, false
 	}
@@ -1447,8 +1447,8 @@ func (o *FileBasedAccessLogPublisherResponse) HasQueueSize() bool {
 	return false
 }
 
-// SetQueueSize gets a reference to the given int32 and assigns it to the QueueSize field.
-func (o *FileBasedAccessLogPublisherResponse) SetQueueSize(v int32) {
+// SetQueueSize gets a reference to the given int64 and assigns it to the QueueSize field.
+func (o *FileBasedAccessLogPublisherResponse) SetQueueSize(v int64) {
 	o.QueueSize = &v
 }
 

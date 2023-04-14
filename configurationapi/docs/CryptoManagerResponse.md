@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **Schemas** | Pointer to [**[]EnumcryptoManagerSchemaUrn**](EnumcryptoManagerSchemaUrn.md) |  | [optional] 
 **DigestAlgorithm** | Pointer to **string** | Specifies the preferred message digest algorithm for the Directory Server. | [optional] 
 **MacAlgorithm** | Pointer to **string** | Specifies the preferred MAC algorithm for the Directory Server. | [optional] 
-**MacKeyLength** | Pointer to **int32** | Specifies the key length in bits for the preferred MAC algorithm. | [optional] 
+**MacKeyLength** | Pointer to **int64** | Specifies the key length in bits for the preferred MAC algorithm. | [optional] 
 **CipherTransformation** | Pointer to **string** | Specifies the cipher for the Directory Server using the syntax algorithm/mode/padding. | [optional] 
-**CipherKeyLength** | Pointer to **int32** | Specifies the key length in bits for the preferred cipher. | [optional] 
+**CipherKeyLength** | Pointer to **int64** | Specifies the key length in bits for the preferred cipher. | [optional] 
 **KeyWrappingTransformation** | Pointer to **string** | The preferred key wrapping transformation for the Directory Server. This value must be the same for all server instances in a replication topology. | [optional] 
 **SslProtocol** | Pointer to **[]string** | Specifies the names of TLS protocols that are allowed for use in secure communication. | [optional] 
 **SslCipherSuite** | Pointer to **[]string** | Specifies the names of the TLS cipher suites that are allowed for use in secure communication. | [optional] 
@@ -117,20 +117,20 @@ HasMacAlgorithm returns a boolean if a field has been set.
 
 ### GetMacKeyLength
 
-`func (o *CryptoManagerResponse) GetMacKeyLength() int32`
+`func (o *CryptoManagerResponse) GetMacKeyLength() int64`
 
 GetMacKeyLength returns the MacKeyLength field if non-nil, zero value otherwise.
 
 ### GetMacKeyLengthOk
 
-`func (o *CryptoManagerResponse) GetMacKeyLengthOk() (*int32, bool)`
+`func (o *CryptoManagerResponse) GetMacKeyLengthOk() (*int64, bool)`
 
 GetMacKeyLengthOk returns a tuple with the MacKeyLength field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMacKeyLength
 
-`func (o *CryptoManagerResponse) SetMacKeyLength(v int32)`
+`func (o *CryptoManagerResponse) SetMacKeyLength(v int64)`
 
 SetMacKeyLength sets MacKeyLength field to given value.
 
@@ -167,20 +167,20 @@ HasCipherTransformation returns a boolean if a field has been set.
 
 ### GetCipherKeyLength
 
-`func (o *CryptoManagerResponse) GetCipherKeyLength() int32`
+`func (o *CryptoManagerResponse) GetCipherKeyLength() int64`
 
 GetCipherKeyLength returns the CipherKeyLength field if non-nil, zero value otherwise.
 
 ### GetCipherKeyLengthOk
 
-`func (o *CryptoManagerResponse) GetCipherKeyLengthOk() (*int32, bool)`
+`func (o *CryptoManagerResponse) GetCipherKeyLengthOk() (*int64, bool)`
 
 GetCipherKeyLengthOk returns a tuple with the CipherKeyLength field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCipherKeyLength
 
-`func (o *CryptoManagerResponse) SetCipherKeyLength(v int32)`
+`func (o *CryptoManagerResponse) SetCipherKeyLength(v int64)`
 
 SetCipherKeyLength sets CipherKeyLength field to given value.
 

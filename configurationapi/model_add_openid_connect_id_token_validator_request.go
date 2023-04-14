@@ -44,14 +44,14 @@ type AddOpenidConnectIdTokenValidatorRequest struct {
 	// How often the ID Token Validator should refresh its cache of JWKS token signing keys.
 	JwksCacheDuration *string `json:"jwksCacheDuration,omitempty"`
 	// When multiple ID Token Validators are defined for a single Directory Server, this property determines the order in which the ID Token Validators are consulted. Values of this property must be unique among all ID Token Validators defined within Directory Server but not necessarily contiguous. ID Token Validators with lower values will be evaluated first to determine if they are able to validate the ID token.
-	EvaluationOrderIndex int32 `json:"evaluationOrderIndex"`
+	EvaluationOrderIndex int64 `json:"evaluationOrderIndex"`
 }
 
 // NewAddOpenidConnectIdTokenValidatorRequest instantiates a new AddOpenidConnectIdTokenValidatorRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddOpenidConnectIdTokenValidatorRequest(validatorName string, schemas []EnumopenidConnectIdTokenValidatorSchemaUrn, allowedSigningAlgorithm []EnumidTokenValidatorAllowedSigningAlgorithmProp, enabled bool, identityMapper string, issuerURL string, evaluationOrderIndex int32) *AddOpenidConnectIdTokenValidatorRequest {
+func NewAddOpenidConnectIdTokenValidatorRequest(validatorName string, schemas []EnumopenidConnectIdTokenValidatorSchemaUrn, allowedSigningAlgorithm []EnumidTokenValidatorAllowedSigningAlgorithmProp, enabled bool, identityMapper string, issuerURL string, evaluationOrderIndex int64) *AddOpenidConnectIdTokenValidatorRequest {
 	this := AddOpenidConnectIdTokenValidatorRequest{}
 	this.ValidatorName = validatorName
 	this.Schemas = schemas
@@ -440,9 +440,9 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) SetJwksCacheDuration(v string)
 }
 
 // GetEvaluationOrderIndex returns the EvaluationOrderIndex field value
-func (o *AddOpenidConnectIdTokenValidatorRequest) GetEvaluationOrderIndex() int32 {
+func (o *AddOpenidConnectIdTokenValidatorRequest) GetEvaluationOrderIndex() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -451,7 +451,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) GetEvaluationOrderIndex() int3
 
 // GetEvaluationOrderIndexOk returns a tuple with the EvaluationOrderIndex field value
 // and a boolean to check if the value has been set.
-func (o *AddOpenidConnectIdTokenValidatorRequest) GetEvaluationOrderIndexOk() (*int32, bool) {
+func (o *AddOpenidConnectIdTokenValidatorRequest) GetEvaluationOrderIndexOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -459,7 +459,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) GetEvaluationOrderIndexOk() (*
 }
 
 // SetEvaluationOrderIndex sets field value
-func (o *AddOpenidConnectIdTokenValidatorRequest) SetEvaluationOrderIndex(v int32) {
+func (o *AddOpenidConnectIdTokenValidatorRequest) SetEvaluationOrderIndex(v int64) {
 	o.EvaluationOrderIndex = v
 }
 

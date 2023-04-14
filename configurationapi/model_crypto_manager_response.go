@@ -25,11 +25,11 @@ type CryptoManagerResponse struct {
 	// Specifies the preferred MAC algorithm for the Directory Server.
 	MacAlgorithm *string `json:"macAlgorithm,omitempty"`
 	// Specifies the key length in bits for the preferred MAC algorithm.
-	MacKeyLength *int32 `json:"macKeyLength,omitempty"`
+	MacKeyLength *int64 `json:"macKeyLength,omitempty"`
 	// Specifies the cipher for the Directory Server using the syntax algorithm/mode/padding.
 	CipherTransformation *string `json:"cipherTransformation,omitempty"`
 	// Specifies the key length in bits for the preferred cipher.
-	CipherKeyLength *int32 `json:"cipherKeyLength,omitempty"`
+	CipherKeyLength *int64 `json:"cipherKeyLength,omitempty"`
 	// The preferred key wrapping transformation for the Directory Server. This value must be the same for all server instances in a replication topology.
 	KeyWrappingTransformation *string `json:"keyWrappingTransformation,omitempty"`
 	// Specifies the names of TLS protocols that are allowed for use in secure communication.
@@ -164,9 +164,9 @@ func (o *CryptoManagerResponse) SetMacAlgorithm(v string) {
 }
 
 // GetMacKeyLength returns the MacKeyLength field value if set, zero value otherwise.
-func (o *CryptoManagerResponse) GetMacKeyLength() int32 {
+func (o *CryptoManagerResponse) GetMacKeyLength() int64 {
 	if o == nil || IsNil(o.MacKeyLength) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MacKeyLength
@@ -174,7 +174,7 @@ func (o *CryptoManagerResponse) GetMacKeyLength() int32 {
 
 // GetMacKeyLengthOk returns a tuple with the MacKeyLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CryptoManagerResponse) GetMacKeyLengthOk() (*int32, bool) {
+func (o *CryptoManagerResponse) GetMacKeyLengthOk() (*int64, bool) {
 	if o == nil || IsNil(o.MacKeyLength) {
 		return nil, false
 	}
@@ -190,8 +190,8 @@ func (o *CryptoManagerResponse) HasMacKeyLength() bool {
 	return false
 }
 
-// SetMacKeyLength gets a reference to the given int32 and assigns it to the MacKeyLength field.
-func (o *CryptoManagerResponse) SetMacKeyLength(v int32) {
+// SetMacKeyLength gets a reference to the given int64 and assigns it to the MacKeyLength field.
+func (o *CryptoManagerResponse) SetMacKeyLength(v int64) {
 	o.MacKeyLength = &v
 }
 
@@ -228,9 +228,9 @@ func (o *CryptoManagerResponse) SetCipherTransformation(v string) {
 }
 
 // GetCipherKeyLength returns the CipherKeyLength field value if set, zero value otherwise.
-func (o *CryptoManagerResponse) GetCipherKeyLength() int32 {
+func (o *CryptoManagerResponse) GetCipherKeyLength() int64 {
 	if o == nil || IsNil(o.CipherKeyLength) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CipherKeyLength
@@ -238,7 +238,7 @@ func (o *CryptoManagerResponse) GetCipherKeyLength() int32 {
 
 // GetCipherKeyLengthOk returns a tuple with the CipherKeyLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CryptoManagerResponse) GetCipherKeyLengthOk() (*int32, bool) {
+func (o *CryptoManagerResponse) GetCipherKeyLengthOk() (*int64, bool) {
 	if o == nil || IsNil(o.CipherKeyLength) {
 		return nil, false
 	}
@@ -254,8 +254,8 @@ func (o *CryptoManagerResponse) HasCipherKeyLength() bool {
 	return false
 }
 
-// SetCipherKeyLength gets a reference to the given int32 and assigns it to the CipherKeyLength field.
-func (o *CryptoManagerResponse) SetCipherKeyLength(v int32) {
+// SetCipherKeyLength gets a reference to the given int64 and assigns it to the CipherKeyLength field.
+func (o *CryptoManagerResponse) SetCipherKeyLength(v int64) {
 	o.CipherKeyLength = &v
 }
 

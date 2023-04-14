@@ -48,7 +48,7 @@ type FileBasedDebugLogPublisherResponse struct {
 	// Specifies the log file buffer size.
 	BufferSize *string `json:"bufferSize,omitempty"`
 	// The maximum number of log records that can be stored in the asynchronous queue.
-	QueueSize *int32 `json:"queueSize,omitempty"`
+	QueueSize *int64 `json:"queueSize,omitempty"`
 	// Specifies the interval at which to check whether the log files need to be rotated.
 	TimeInterval         *string                                    `json:"timeInterval,omitempty"`
 	TimestampPrecision   *EnumlogPublisherTimestampPrecisionProp    `json:"timestampPrecision,omitempty"`
@@ -61,7 +61,7 @@ type FileBasedDebugLogPublisherResponse struct {
 	// Indicates whether to include the cause of exceptions in exception thrown and caught messages logged by default.
 	DefaultIncludeThrowableCause *bool `json:"defaultIncludeThrowableCause,omitempty"`
 	// Indicates the number of stack frames to include in the stack trace for method entry and exception thrown messages.
-	DefaultThrowableStackFrames *int32 `json:"defaultThrowableStackFrames,omitempty"`
+	DefaultThrowableStackFrames *int64 `json:"defaultThrowableStackFrames,omitempty"`
 	// A description for this Log Publisher
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Log Publisher is enabled for use.
@@ -522,9 +522,9 @@ func (o *FileBasedDebugLogPublisherResponse) SetBufferSize(v string) {
 }
 
 // GetQueueSize returns the QueueSize field value if set, zero value otherwise.
-func (o *FileBasedDebugLogPublisherResponse) GetQueueSize() int32 {
+func (o *FileBasedDebugLogPublisherResponse) GetQueueSize() int64 {
 	if o == nil || IsNil(o.QueueSize) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.QueueSize
@@ -532,7 +532,7 @@ func (o *FileBasedDebugLogPublisherResponse) GetQueueSize() int32 {
 
 // GetQueueSizeOk returns a tuple with the QueueSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FileBasedDebugLogPublisherResponse) GetQueueSizeOk() (*int32, bool) {
+func (o *FileBasedDebugLogPublisherResponse) GetQueueSizeOk() (*int64, bool) {
 	if o == nil || IsNil(o.QueueSize) {
 		return nil, false
 	}
@@ -548,8 +548,8 @@ func (o *FileBasedDebugLogPublisherResponse) HasQueueSize() bool {
 	return false
 }
 
-// SetQueueSize gets a reference to the given int32 and assigns it to the QueueSize field.
-func (o *FileBasedDebugLogPublisherResponse) SetQueueSize(v int32) {
+// SetQueueSize gets a reference to the given int64 and assigns it to the QueueSize field.
+func (o *FileBasedDebugLogPublisherResponse) SetQueueSize(v int64) {
 	o.QueueSize = &v
 }
 
@@ -770,9 +770,9 @@ func (o *FileBasedDebugLogPublisherResponse) SetDefaultIncludeThrowableCause(v b
 }
 
 // GetDefaultThrowableStackFrames returns the DefaultThrowableStackFrames field value if set, zero value otherwise.
-func (o *FileBasedDebugLogPublisherResponse) GetDefaultThrowableStackFrames() int32 {
+func (o *FileBasedDebugLogPublisherResponse) GetDefaultThrowableStackFrames() int64 {
 	if o == nil || IsNil(o.DefaultThrowableStackFrames) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DefaultThrowableStackFrames
@@ -780,7 +780,7 @@ func (o *FileBasedDebugLogPublisherResponse) GetDefaultThrowableStackFrames() in
 
 // GetDefaultThrowableStackFramesOk returns a tuple with the DefaultThrowableStackFrames field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FileBasedDebugLogPublisherResponse) GetDefaultThrowableStackFramesOk() (*int32, bool) {
+func (o *FileBasedDebugLogPublisherResponse) GetDefaultThrowableStackFramesOk() (*int64, bool) {
 	if o == nil || IsNil(o.DefaultThrowableStackFrames) {
 		return nil, false
 	}
@@ -796,8 +796,8 @@ func (o *FileBasedDebugLogPublisherResponse) HasDefaultThrowableStackFrames() bo
 	return false
 }
 
-// SetDefaultThrowableStackFrames gets a reference to the given int32 and assigns it to the DefaultThrowableStackFrames field.
-func (o *FileBasedDebugLogPublisherResponse) SetDefaultThrowableStackFrames(v int32) {
+// SetDefaultThrowableStackFrames gets a reference to the given int64 and assigns it to the DefaultThrowableStackFrames field.
+func (o *FileBasedDebugLogPublisherResponse) SetDefaultThrowableStackFrames(v int64) {
 	o.DefaultThrowableStackFrames = &v
 }
 

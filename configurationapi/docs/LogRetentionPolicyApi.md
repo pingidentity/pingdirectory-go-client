@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    addLogRetentionPolicyRequest := openapiclient.add_log_retention_policy_request{AddFileCountLogRetentionPolicyRequest: openapiclient.NewAddFileCountLogRetentionPolicyRequest("PolicyName_example", []openapiclient.EnumfileCountLogRetentionPolicySchemaUrn{openapiclient.Enumfile-count-log-retention-policySchemaUrn("urn:pingidentity:schemas:configuration:2.0:log-retention-policy:file-count")}, int32(123))} // AddLogRetentionPolicyRequest | Create a new Log Retention Policy in the config
+    addLogRetentionPolicyRequest := openapiclient.add_log_retention_policy_request{AddFileCountLogRetentionPolicyRequest: openapiclient.NewAddFileCountLogRetentionPolicyRequest("PolicyName_example", []openapiclient.EnumfileCountLogRetentionPolicySchemaUrn{openapiclient.Enumfile-count-log-retention-policySchemaUrn("urn:pingidentity:schemas:configuration:2.0:log-retention-policy:file-count")}, int64(123))} // AddLogRetentionPolicyRequest | Create a new Log Retention Policy in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

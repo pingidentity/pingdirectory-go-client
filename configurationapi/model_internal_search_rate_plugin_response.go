@@ -24,13 +24,13 @@ type InternalSearchRatePluginResponse struct {
 	Schemas    []EnuminternalSearchRatePluginSchemaUrn `json:"schemas"`
 	PluginType []EnumpluginPluginTypeProp              `json:"pluginType"`
 	// Specifies the number of concurrent threads that should be used to process the search operations.
-	NumThreads int32 `json:"numThreads"`
+	NumThreads int64 `json:"numThreads"`
 	// Specifies the base DN to use for the searches to perform.
 	BaseDN string `json:"baseDN"`
 	// Specifies the lower bound for the numeric value which will be inserted into the search filter.
-	LowerBound *int32 `json:"lowerBound,omitempty"`
+	LowerBound *int64 `json:"lowerBound,omitempty"`
 	// Specifies the upper bound for the numeric value which will be inserted into the search filter.
-	UpperBound *int32 `json:"upperBound,omitempty"`
+	UpperBound *int64 `json:"upperBound,omitempty"`
 	// Specifies a prefix which will be used in front of the randomly-selected numeric value in all search filters used. If no upper bound is defined, then this should contain the entire filter string.
 	FilterPrefix string `json:"filterPrefix"`
 	// Specifies a suffix which will be used after of the randomly-selected numeric value in all search filters used. If no upper bound is defined, then this should be omitted.
@@ -49,7 +49,7 @@ type InternalSearchRatePluginResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInternalSearchRatePluginResponse(id string, schemas []EnuminternalSearchRatePluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, numThreads int32, baseDN string, filterPrefix string, enabled bool) *InternalSearchRatePluginResponse {
+func NewInternalSearchRatePluginResponse(id string, schemas []EnuminternalSearchRatePluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, numThreads int64, baseDN string, filterPrefix string, enabled bool) *InternalSearchRatePluginResponse {
 	this := InternalSearchRatePluginResponse{}
 	this.Id = id
 	this.Schemas = schemas
@@ -142,9 +142,9 @@ func (o *InternalSearchRatePluginResponse) SetPluginType(v []EnumpluginPluginTyp
 }
 
 // GetNumThreads returns the NumThreads field value
-func (o *InternalSearchRatePluginResponse) GetNumThreads() int32 {
+func (o *InternalSearchRatePluginResponse) GetNumThreads() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -153,7 +153,7 @@ func (o *InternalSearchRatePluginResponse) GetNumThreads() int32 {
 
 // GetNumThreadsOk returns a tuple with the NumThreads field value
 // and a boolean to check if the value has been set.
-func (o *InternalSearchRatePluginResponse) GetNumThreadsOk() (*int32, bool) {
+func (o *InternalSearchRatePluginResponse) GetNumThreadsOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -161,7 +161,7 @@ func (o *InternalSearchRatePluginResponse) GetNumThreadsOk() (*int32, bool) {
 }
 
 // SetNumThreads sets field value
-func (o *InternalSearchRatePluginResponse) SetNumThreads(v int32) {
+func (o *InternalSearchRatePluginResponse) SetNumThreads(v int64) {
 	o.NumThreads = v
 }
 
@@ -190,9 +190,9 @@ func (o *InternalSearchRatePluginResponse) SetBaseDN(v string) {
 }
 
 // GetLowerBound returns the LowerBound field value if set, zero value otherwise.
-func (o *InternalSearchRatePluginResponse) GetLowerBound() int32 {
+func (o *InternalSearchRatePluginResponse) GetLowerBound() int64 {
 	if o == nil || IsNil(o.LowerBound) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.LowerBound
@@ -200,7 +200,7 @@ func (o *InternalSearchRatePluginResponse) GetLowerBound() int32 {
 
 // GetLowerBoundOk returns a tuple with the LowerBound field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InternalSearchRatePluginResponse) GetLowerBoundOk() (*int32, bool) {
+func (o *InternalSearchRatePluginResponse) GetLowerBoundOk() (*int64, bool) {
 	if o == nil || IsNil(o.LowerBound) {
 		return nil, false
 	}
@@ -216,15 +216,15 @@ func (o *InternalSearchRatePluginResponse) HasLowerBound() bool {
 	return false
 }
 
-// SetLowerBound gets a reference to the given int32 and assigns it to the LowerBound field.
-func (o *InternalSearchRatePluginResponse) SetLowerBound(v int32) {
+// SetLowerBound gets a reference to the given int64 and assigns it to the LowerBound field.
+func (o *InternalSearchRatePluginResponse) SetLowerBound(v int64) {
 	o.LowerBound = &v
 }
 
 // GetUpperBound returns the UpperBound field value if set, zero value otherwise.
-func (o *InternalSearchRatePluginResponse) GetUpperBound() int32 {
+func (o *InternalSearchRatePluginResponse) GetUpperBound() int64 {
 	if o == nil || IsNil(o.UpperBound) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.UpperBound
@@ -232,7 +232,7 @@ func (o *InternalSearchRatePluginResponse) GetUpperBound() int32 {
 
 // GetUpperBoundOk returns a tuple with the UpperBound field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InternalSearchRatePluginResponse) GetUpperBoundOk() (*int32, bool) {
+func (o *InternalSearchRatePluginResponse) GetUpperBoundOk() (*int64, bool) {
 	if o == nil || IsNil(o.UpperBound) {
 		return nil, false
 	}
@@ -248,8 +248,8 @@ func (o *InternalSearchRatePluginResponse) HasUpperBound() bool {
 	return false
 }
 
-// SetUpperBound gets a reference to the given int32 and assigns it to the UpperBound field.
-func (o *InternalSearchRatePluginResponse) SetUpperBound(v int32) {
+// SetUpperBound gets a reference to the given int64 and assigns it to the UpperBound field.
+func (o *InternalSearchRatePluginResponse) SetUpperBound(v int64) {
 	o.UpperBound = &v
 }
 

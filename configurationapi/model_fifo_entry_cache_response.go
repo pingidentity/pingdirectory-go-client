@@ -23,9 +23,9 @@ type FifoEntryCacheResponse struct {
 	Id      string                        `json:"id"`
 	Schemas []EnumfifoEntryCacheSchemaUrn `json:"schemas,omitempty"`
 	// Specifies the maximum amount of memory, as a percentage of the total maximum JVM heap size, that this cache should occupy when full. If the amount of memory the cache is using is greater than this amount, then an attempt to put a new entry in the cache will be ignored and will cause the oldest entry to be purged.
-	MaxMemoryPercent *int32 `json:"maxMemoryPercent,omitempty"`
+	MaxMemoryPercent *int64 `json:"maxMemoryPercent,omitempty"`
 	// Specifies the maximum number of entries that will be allowed in the cache. Once the cache reaches this size, then adding new entries will cause existing entries to be purged, starting with the oldest.
-	MaxEntries *int32 `json:"maxEntries,omitempty"`
+	MaxEntries *int64 `json:"maxEntries,omitempty"`
 	// Specifies that the cache should only store entries which are accessed much more frequently than the average entry. The cache will observe attempts to place entries in the cache and compare an entry's accesses to the average entry's.
 	OnlyCacheFrequentlyAccessed *bool `json:"onlyCacheFrequentlyAccessed,omitempty"`
 	// The set of filters that define the entries that should be included in the cache.
@@ -33,7 +33,7 @@ type FifoEntryCacheResponse struct {
 	// The set of filters that define the entries that should be excluded from the cache.
 	ExcludeFilter []string `json:"excludeFilter,omitempty"`
 	// Specifies the minimum number of attribute values (optionally across a specified subset of attributes as defined in the min-cache-entry-attributes property) for entries that should be held in the cache. Entries with fewer than this number of attribute values will be excluded from the cache.
-	MinCacheEntryValueCount *int32 `json:"minCacheEntryValueCount,omitempty"`
+	MinCacheEntryValueCount *int64 `json:"minCacheEntryValueCount,omitempty"`
 	// Specifies the names of the attribute types for which the min-cache-entry-value-count property should apply. If no attribute types are specified, then all user attributes will be examined.
 	MinCacheEntryAttribute []string `json:"minCacheEntryAttribute,omitempty"`
 	// A description for this Entry Cache
@@ -41,7 +41,7 @@ type FifoEntryCacheResponse struct {
 	// Indicates whether the Entry Cache is enabled.
 	Enabled bool `json:"enabled"`
 	// Specifies the cache level in the cache order if more than one instance of the cache is configured.
-	CacheLevel int32 `json:"cacheLevel"`
+	CacheLevel int64 `json:"cacheLevel"`
 	// Indicates whether the entry cache should be updated with entries that have been returned to the client during the course of processing an unindexed search.
 	CacheUnindexedSearchResults                   *bool                                              `json:"cacheUnindexedSearchResults,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -52,7 +52,7 @@ type FifoEntryCacheResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFifoEntryCacheResponse(id string, enabled bool, cacheLevel int32) *FifoEntryCacheResponse {
+func NewFifoEntryCacheResponse(id string, enabled bool, cacheLevel int64) *FifoEntryCacheResponse {
 	this := FifoEntryCacheResponse{}
 	this.Id = id
 	this.Enabled = enabled
@@ -125,9 +125,9 @@ func (o *FifoEntryCacheResponse) SetSchemas(v []EnumfifoEntryCacheSchemaUrn) {
 }
 
 // GetMaxMemoryPercent returns the MaxMemoryPercent field value if set, zero value otherwise.
-func (o *FifoEntryCacheResponse) GetMaxMemoryPercent() int32 {
+func (o *FifoEntryCacheResponse) GetMaxMemoryPercent() int64 {
 	if o == nil || IsNil(o.MaxMemoryPercent) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxMemoryPercent
@@ -135,7 +135,7 @@ func (o *FifoEntryCacheResponse) GetMaxMemoryPercent() int32 {
 
 // GetMaxMemoryPercentOk returns a tuple with the MaxMemoryPercent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FifoEntryCacheResponse) GetMaxMemoryPercentOk() (*int32, bool) {
+func (o *FifoEntryCacheResponse) GetMaxMemoryPercentOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxMemoryPercent) {
 		return nil, false
 	}
@@ -151,15 +151,15 @@ func (o *FifoEntryCacheResponse) HasMaxMemoryPercent() bool {
 	return false
 }
 
-// SetMaxMemoryPercent gets a reference to the given int32 and assigns it to the MaxMemoryPercent field.
-func (o *FifoEntryCacheResponse) SetMaxMemoryPercent(v int32) {
+// SetMaxMemoryPercent gets a reference to the given int64 and assigns it to the MaxMemoryPercent field.
+func (o *FifoEntryCacheResponse) SetMaxMemoryPercent(v int64) {
 	o.MaxMemoryPercent = &v
 }
 
 // GetMaxEntries returns the MaxEntries field value if set, zero value otherwise.
-func (o *FifoEntryCacheResponse) GetMaxEntries() int32 {
+func (o *FifoEntryCacheResponse) GetMaxEntries() int64 {
 	if o == nil || IsNil(o.MaxEntries) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxEntries
@@ -167,7 +167,7 @@ func (o *FifoEntryCacheResponse) GetMaxEntries() int32 {
 
 // GetMaxEntriesOk returns a tuple with the MaxEntries field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FifoEntryCacheResponse) GetMaxEntriesOk() (*int32, bool) {
+func (o *FifoEntryCacheResponse) GetMaxEntriesOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxEntries) {
 		return nil, false
 	}
@@ -183,8 +183,8 @@ func (o *FifoEntryCacheResponse) HasMaxEntries() bool {
 	return false
 }
 
-// SetMaxEntries gets a reference to the given int32 and assigns it to the MaxEntries field.
-func (o *FifoEntryCacheResponse) SetMaxEntries(v int32) {
+// SetMaxEntries gets a reference to the given int64 and assigns it to the MaxEntries field.
+func (o *FifoEntryCacheResponse) SetMaxEntries(v int64) {
 	o.MaxEntries = &v
 }
 
@@ -285,9 +285,9 @@ func (o *FifoEntryCacheResponse) SetExcludeFilter(v []string) {
 }
 
 // GetMinCacheEntryValueCount returns the MinCacheEntryValueCount field value if set, zero value otherwise.
-func (o *FifoEntryCacheResponse) GetMinCacheEntryValueCount() int32 {
+func (o *FifoEntryCacheResponse) GetMinCacheEntryValueCount() int64 {
 	if o == nil || IsNil(o.MinCacheEntryValueCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MinCacheEntryValueCount
@@ -295,7 +295,7 @@ func (o *FifoEntryCacheResponse) GetMinCacheEntryValueCount() int32 {
 
 // GetMinCacheEntryValueCountOk returns a tuple with the MinCacheEntryValueCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FifoEntryCacheResponse) GetMinCacheEntryValueCountOk() (*int32, bool) {
+func (o *FifoEntryCacheResponse) GetMinCacheEntryValueCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.MinCacheEntryValueCount) {
 		return nil, false
 	}
@@ -311,8 +311,8 @@ func (o *FifoEntryCacheResponse) HasMinCacheEntryValueCount() bool {
 	return false
 }
 
-// SetMinCacheEntryValueCount gets a reference to the given int32 and assigns it to the MinCacheEntryValueCount field.
-func (o *FifoEntryCacheResponse) SetMinCacheEntryValueCount(v int32) {
+// SetMinCacheEntryValueCount gets a reference to the given int64 and assigns it to the MinCacheEntryValueCount field.
+func (o *FifoEntryCacheResponse) SetMinCacheEntryValueCount(v int64) {
 	o.MinCacheEntryValueCount = &v
 }
 
@@ -405,9 +405,9 @@ func (o *FifoEntryCacheResponse) SetEnabled(v bool) {
 }
 
 // GetCacheLevel returns the CacheLevel field value
-func (o *FifoEntryCacheResponse) GetCacheLevel() int32 {
+func (o *FifoEntryCacheResponse) GetCacheLevel() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -416,7 +416,7 @@ func (o *FifoEntryCacheResponse) GetCacheLevel() int32 {
 
 // GetCacheLevelOk returns a tuple with the CacheLevel field value
 // and a boolean to check if the value has been set.
-func (o *FifoEntryCacheResponse) GetCacheLevelOk() (*int32, bool) {
+func (o *FifoEntryCacheResponse) GetCacheLevelOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -424,7 +424,7 @@ func (o *FifoEntryCacheResponse) GetCacheLevelOk() (*int32, bool) {
 }
 
 // SetCacheLevel sets field value
-func (o *FifoEntryCacheResponse) SetCacheLevel(v int32) {
+func (o *FifoEntryCacheResponse) SetCacheLevel(v int64) {
 	o.CacheLevel = v
 }
 

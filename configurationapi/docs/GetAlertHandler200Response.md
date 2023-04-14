@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **ScriptClass** | **string** | The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Alert Handler. | 
 **ScriptArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Scripted Alert Handler. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **ServerHostName** | **string** | Specifies the address of the SNMP agent to which traps will be sent. | 
-**ServerPort** | **int32** | Specifies the port number of the SNMP agent to which traps will be sent. | 
+**ServerPort** | **int64** | Specifies the port number of the SNMP agent to which traps will be sent. | 
 **CommunityName** | **string** | Specifies the name of the community to which the traps will be sent. | 
 **TwilioAccountSID** | **string** | The unique identifier assigned to the Twilio account that will be used. | 
 **TwilioAuthToken** | Pointer to **string** | The auth token for the Twilio account that will be used. | [optional] 
@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 
 ### NewGetAlertHandler200Response
 
-`func NewGetAlertHandler200Response(schemas []EnumthirdPartyAlertHandlerSchemaUrn, id string, enabled bool, senderAddress string, recipientAddress []string, messageSubject string, messageBody string, scriptClass string, serverHostName string, serverPort int32, communityName string, twilioAccountSID string, senderPhoneNumber []string, recipientPhoneNumber []string, longMessageBehavior EnumalertHandlerLongMessageBehaviorProp, command string, extensionClass string, ) *GetAlertHandler200Response`
+`func NewGetAlertHandler200Response(schemas []EnumthirdPartyAlertHandlerSchemaUrn, id string, enabled bool, senderAddress string, recipientAddress []string, messageSubject string, messageBody string, scriptClass string, serverHostName string, serverPort int64, communityName string, twilioAccountSID string, senderPhoneNumber []string, recipientPhoneNumber []string, longMessageBehavior EnumalertHandlerLongMessageBehaviorProp, command string, extensionClass string, ) *GetAlertHandler200Response`
 
 NewGetAlertHandler200Response instantiates a new GetAlertHandler200Response object
 This constructor will assign default values to properties that have it defined,
@@ -512,20 +512,20 @@ SetServerHostName sets ServerHostName field to given value.
 
 ### GetServerPort
 
-`func (o *GetAlertHandler200Response) GetServerPort() int32`
+`func (o *GetAlertHandler200Response) GetServerPort() int64`
 
 GetServerPort returns the ServerPort field if non-nil, zero value otherwise.
 
 ### GetServerPortOk
 
-`func (o *GetAlertHandler200Response) GetServerPortOk() (*int32, bool)`
+`func (o *GetAlertHandler200Response) GetServerPortOk() (*int64, bool)`
 
 GetServerPortOk returns a tuple with the ServerPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerPort
 
-`func (o *GetAlertHandler200Response) SetServerPort(v int32)`
+`func (o *GetAlertHandler200Response) SetServerPort(v int64)`
 
 SetServerPort sets ServerPort field to given value.
 

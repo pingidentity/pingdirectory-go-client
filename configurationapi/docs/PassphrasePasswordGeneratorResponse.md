@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **Id** | **string** | Name of the Password Generator | 
 **Schemas** | [**[]EnumpassphrasePasswordGeneratorSchemaUrn**](EnumpassphrasePasswordGeneratorSchemaUrn.md) |  | 
 **DictionaryFile** | **string** | The path to the dictionary file that will be used to obtain the words for use in generated passwords. | 
-**MinimumPasswordCharacters** | Pointer to **int32** | The minimum number of characters that generated passwords will be required to have. | [optional] 
-**MinimumPasswordWords** | Pointer to **int32** | The minimum number of words that must be concatenated in the course of generating a password. | [optional] 
+**MinimumPasswordCharacters** | Pointer to **int64** | The minimum number of characters that generated passwords will be required to have. | [optional] 
+**MinimumPasswordWords** | Pointer to **int64** | The minimum number of words that must be concatenated in the course of generating a password. | [optional] 
 **CapitalizeWords** | Pointer to **bool** | Indicates whether to capitalize each word used in the generated password. | [optional] 
 **Description** | Pointer to **string** | A description for this Password Generator | [optional] 
 **Enabled** | **bool** | Indicates whether the Password Generator is enabled for use. | 
@@ -96,20 +96,20 @@ SetDictionaryFile sets DictionaryFile field to given value.
 
 ### GetMinimumPasswordCharacters
 
-`func (o *PassphrasePasswordGeneratorResponse) GetMinimumPasswordCharacters() int32`
+`func (o *PassphrasePasswordGeneratorResponse) GetMinimumPasswordCharacters() int64`
 
 GetMinimumPasswordCharacters returns the MinimumPasswordCharacters field if non-nil, zero value otherwise.
 
 ### GetMinimumPasswordCharactersOk
 
-`func (o *PassphrasePasswordGeneratorResponse) GetMinimumPasswordCharactersOk() (*int32, bool)`
+`func (o *PassphrasePasswordGeneratorResponse) GetMinimumPasswordCharactersOk() (*int64, bool)`
 
 GetMinimumPasswordCharactersOk returns a tuple with the MinimumPasswordCharacters field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinimumPasswordCharacters
 
-`func (o *PassphrasePasswordGeneratorResponse) SetMinimumPasswordCharacters(v int32)`
+`func (o *PassphrasePasswordGeneratorResponse) SetMinimumPasswordCharacters(v int64)`
 
 SetMinimumPasswordCharacters sets MinimumPasswordCharacters field to given value.
 
@@ -121,20 +121,20 @@ HasMinimumPasswordCharacters returns a boolean if a field has been set.
 
 ### GetMinimumPasswordWords
 
-`func (o *PassphrasePasswordGeneratorResponse) GetMinimumPasswordWords() int32`
+`func (o *PassphrasePasswordGeneratorResponse) GetMinimumPasswordWords() int64`
 
 GetMinimumPasswordWords returns the MinimumPasswordWords field if non-nil, zero value otherwise.
 
 ### GetMinimumPasswordWordsOk
 
-`func (o *PassphrasePasswordGeneratorResponse) GetMinimumPasswordWordsOk() (*int32, bool)`
+`func (o *PassphrasePasswordGeneratorResponse) GetMinimumPasswordWordsOk() (*int64, bool)`
 
 GetMinimumPasswordWordsOk returns a tuple with the MinimumPasswordWords field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinimumPasswordWords
 
-`func (o *PassphrasePasswordGeneratorResponse) SetMinimumPasswordWords(v int32)`
+`func (o *PassphrasePasswordGeneratorResponse) SetMinimumPasswordWords(v int64)`
 
 SetMinimumPasswordWords sets MinimumPasswordWords field to given value.
 

@@ -30,7 +30,7 @@ type AddJdbcExternalServerRequest struct {
 	// The host name of the database server. This is ignored if jdbc-driver-url is specified.
 	ServerHostName *string `json:"serverHostName,omitempty"`
 	// The port number where the database server listens for requests. This is ignored if jdbc-driver-url is specified
-	ServerPort *int32 `json:"serverPort,omitempty"`
+	ServerPort *int64 `json:"serverPort,omitempty"`
 	// The name of the login account to use when connecting to the database server.
 	UserName *string `json:"userName,omitempty"`
 	// The login password for the specified user name.
@@ -237,9 +237,9 @@ func (o *AddJdbcExternalServerRequest) SetServerHostName(v string) {
 }
 
 // GetServerPort returns the ServerPort field value if set, zero value otherwise.
-func (o *AddJdbcExternalServerRequest) GetServerPort() int32 {
+func (o *AddJdbcExternalServerRequest) GetServerPort() int64 {
 	if o == nil || IsNil(o.ServerPort) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ServerPort
@@ -247,7 +247,7 @@ func (o *AddJdbcExternalServerRequest) GetServerPort() int32 {
 
 // GetServerPortOk returns a tuple with the ServerPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddJdbcExternalServerRequest) GetServerPortOk() (*int32, bool) {
+func (o *AddJdbcExternalServerRequest) GetServerPortOk() (*int64, bool) {
 	if o == nil || IsNil(o.ServerPort) {
 		return nil, false
 	}
@@ -263,8 +263,8 @@ func (o *AddJdbcExternalServerRequest) HasServerPort() bool {
 	return false
 }
 
-// SetServerPort gets a reference to the given int32 and assigns it to the ServerPort field.
-func (o *AddJdbcExternalServerRequest) SetServerPort(v int32) {
+// SetServerPort gets a reference to the given int64 and assigns it to the ServerPort field.
+func (o *AddJdbcExternalServerRequest) SetServerPort(v int64) {
 	o.ServerPort = &v
 }
 

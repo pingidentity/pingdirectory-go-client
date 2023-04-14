@@ -29,7 +29,7 @@ type AddAttributeValuePasswordValidatorRequest struct {
 	// Indicates whether to reject any proposed password in which a value in one of the match attributes in the target user's entry is a substring of that password.
 	TestAttributeValueSubstringOfPassword *bool `json:"testAttributeValueSubstringOfPassword,omitempty"`
 	// The minimum length that an attribute value must have for it to be considered when rejecting passwords that contain the value of another attribute as a substring.
-	MinimumAttributeValueLengthForSubstringMatches *int32 `json:"minimumAttributeValueLengthForSubstringMatches,omitempty"`
+	MinimumAttributeValueLengthForSubstringMatches *int64 `json:"minimumAttributeValueLengthForSubstringMatches,omitempty"`
 	// Indicates whether to perform matching against the reversed value of the provided password in addition to the order in which it was given.
 	TestReversedPassword bool `json:"testReversedPassword"`
 	// A description for this Password Validator
@@ -208,9 +208,9 @@ func (o *AddAttributeValuePasswordValidatorRequest) SetTestAttributeValueSubstri
 }
 
 // GetMinimumAttributeValueLengthForSubstringMatches returns the MinimumAttributeValueLengthForSubstringMatches field value if set, zero value otherwise.
-func (o *AddAttributeValuePasswordValidatorRequest) GetMinimumAttributeValueLengthForSubstringMatches() int32 {
+func (o *AddAttributeValuePasswordValidatorRequest) GetMinimumAttributeValueLengthForSubstringMatches() int64 {
 	if o == nil || IsNil(o.MinimumAttributeValueLengthForSubstringMatches) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MinimumAttributeValueLengthForSubstringMatches
@@ -218,7 +218,7 @@ func (o *AddAttributeValuePasswordValidatorRequest) GetMinimumAttributeValueLeng
 
 // GetMinimumAttributeValueLengthForSubstringMatchesOk returns a tuple with the MinimumAttributeValueLengthForSubstringMatches field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddAttributeValuePasswordValidatorRequest) GetMinimumAttributeValueLengthForSubstringMatchesOk() (*int32, bool) {
+func (o *AddAttributeValuePasswordValidatorRequest) GetMinimumAttributeValueLengthForSubstringMatchesOk() (*int64, bool) {
 	if o == nil || IsNil(o.MinimumAttributeValueLengthForSubstringMatches) {
 		return nil, false
 	}
@@ -234,8 +234,8 @@ func (o *AddAttributeValuePasswordValidatorRequest) HasMinimumAttributeValueLeng
 	return false
 }
 
-// SetMinimumAttributeValueLengthForSubstringMatches gets a reference to the given int32 and assigns it to the MinimumAttributeValueLengthForSubstringMatches field.
-func (o *AddAttributeValuePasswordValidatorRequest) SetMinimumAttributeValueLengthForSubstringMatches(v int32) {
+// SetMinimumAttributeValueLengthForSubstringMatches gets a reference to the given int64 and assigns it to the MinimumAttributeValueLengthForSubstringMatches field.
+func (o *AddAttributeValuePasswordValidatorRequest) SetMinimumAttributeValueLengthForSubstringMatches(v int64) {
 	o.MinimumAttributeValueLengthForSubstringMatches = &v
 }
 

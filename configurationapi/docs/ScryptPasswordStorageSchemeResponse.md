@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | Name of the Password Storage Scheme | 
 **Schemas** | [**[]EnumscryptPasswordStorageSchemeSchemaUrn**](EnumscryptPasswordStorageSchemeSchemaUrn.md) |  | 
-**ScryptCpuMemoryCostFactorExponent** | Pointer to **int32** | Specifies the exponent that should be used for the CPU/memory cost factor. The cost factor must be a power of two, so the value of this property represents the power to which two is raised. The CPU/memory cost factor specifies the number of iterations required for encoding the password, and also affects the amount of memory required during processing. A higher cost factor requires more processing and more memory to generate a password, which makes attacks against the password more expensive. | [optional] 
-**ScryptBlockSize** | Pointer to **int32** | Specifies the block size for the digest that will be used in the course of encoding passwords. Increasing the block size while keeping the CPU/memory cost factor constant will increase the amount of memory required to encode a password, but it also increases the ratio of sequential memory access to random memory access (and sequential memory access is generally faster than random memory access). | [optional] 
-**ScryptParallelizationParameter** | Pointer to **int32** | Specifies the number of times that scrypt has to perform the entire encoding process to produce the final result. | [optional] 
-**MaxPasswordLength** | Pointer to **int32** | Specifies the maximum allowed length, in bytes, for passwords encoded with this scheme, which can help mitigate denial of service attacks from clients that attempt to bind with very long passwords. | [optional] 
+**ScryptCpuMemoryCostFactorExponent** | Pointer to **int64** | Specifies the exponent that should be used for the CPU/memory cost factor. The cost factor must be a power of two, so the value of this property represents the power to which two is raised. The CPU/memory cost factor specifies the number of iterations required for encoding the password, and also affects the amount of memory required during processing. A higher cost factor requires more processing and more memory to generate a password, which makes attacks against the password more expensive. | [optional] 
+**ScryptBlockSize** | Pointer to **int64** | Specifies the block size for the digest that will be used in the course of encoding passwords. Increasing the block size while keeping the CPU/memory cost factor constant will increase the amount of memory required to encode a password, but it also increases the ratio of sequential memory access to random memory access (and sequential memory access is generally faster than random memory access). | [optional] 
+**ScryptParallelizationParameter** | Pointer to **int64** | Specifies the number of times that scrypt has to perform the entire encoding process to produce the final result. | [optional] 
+**MaxPasswordLength** | Pointer to **int64** | Specifies the maximum allowed length, in bytes, for passwords encoded with this scheme, which can help mitigate denial of service attacks from clients that attempt to bind with very long passwords. | [optional] 
 **Description** | Pointer to **string** | A description for this Password Storage Scheme | [optional] 
 **Enabled** | **bool** | Indicates whether the Password Storage Scheme is enabled for use. | 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
@@ -76,20 +76,20 @@ SetSchemas sets Schemas field to given value.
 
 ### GetScryptCpuMemoryCostFactorExponent
 
-`func (o *ScryptPasswordStorageSchemeResponse) GetScryptCpuMemoryCostFactorExponent() int32`
+`func (o *ScryptPasswordStorageSchemeResponse) GetScryptCpuMemoryCostFactorExponent() int64`
 
 GetScryptCpuMemoryCostFactorExponent returns the ScryptCpuMemoryCostFactorExponent field if non-nil, zero value otherwise.
 
 ### GetScryptCpuMemoryCostFactorExponentOk
 
-`func (o *ScryptPasswordStorageSchemeResponse) GetScryptCpuMemoryCostFactorExponentOk() (*int32, bool)`
+`func (o *ScryptPasswordStorageSchemeResponse) GetScryptCpuMemoryCostFactorExponentOk() (*int64, bool)`
 
 GetScryptCpuMemoryCostFactorExponentOk returns a tuple with the ScryptCpuMemoryCostFactorExponent field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetScryptCpuMemoryCostFactorExponent
 
-`func (o *ScryptPasswordStorageSchemeResponse) SetScryptCpuMemoryCostFactorExponent(v int32)`
+`func (o *ScryptPasswordStorageSchemeResponse) SetScryptCpuMemoryCostFactorExponent(v int64)`
 
 SetScryptCpuMemoryCostFactorExponent sets ScryptCpuMemoryCostFactorExponent field to given value.
 
@@ -101,20 +101,20 @@ HasScryptCpuMemoryCostFactorExponent returns a boolean if a field has been set.
 
 ### GetScryptBlockSize
 
-`func (o *ScryptPasswordStorageSchemeResponse) GetScryptBlockSize() int32`
+`func (o *ScryptPasswordStorageSchemeResponse) GetScryptBlockSize() int64`
 
 GetScryptBlockSize returns the ScryptBlockSize field if non-nil, zero value otherwise.
 
 ### GetScryptBlockSizeOk
 
-`func (o *ScryptPasswordStorageSchemeResponse) GetScryptBlockSizeOk() (*int32, bool)`
+`func (o *ScryptPasswordStorageSchemeResponse) GetScryptBlockSizeOk() (*int64, bool)`
 
 GetScryptBlockSizeOk returns a tuple with the ScryptBlockSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetScryptBlockSize
 
-`func (o *ScryptPasswordStorageSchemeResponse) SetScryptBlockSize(v int32)`
+`func (o *ScryptPasswordStorageSchemeResponse) SetScryptBlockSize(v int64)`
 
 SetScryptBlockSize sets ScryptBlockSize field to given value.
 
@@ -126,20 +126,20 @@ HasScryptBlockSize returns a boolean if a field has been set.
 
 ### GetScryptParallelizationParameter
 
-`func (o *ScryptPasswordStorageSchemeResponse) GetScryptParallelizationParameter() int32`
+`func (o *ScryptPasswordStorageSchemeResponse) GetScryptParallelizationParameter() int64`
 
 GetScryptParallelizationParameter returns the ScryptParallelizationParameter field if non-nil, zero value otherwise.
 
 ### GetScryptParallelizationParameterOk
 
-`func (o *ScryptPasswordStorageSchemeResponse) GetScryptParallelizationParameterOk() (*int32, bool)`
+`func (o *ScryptPasswordStorageSchemeResponse) GetScryptParallelizationParameterOk() (*int64, bool)`
 
 GetScryptParallelizationParameterOk returns a tuple with the ScryptParallelizationParameter field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetScryptParallelizationParameter
 
-`func (o *ScryptPasswordStorageSchemeResponse) SetScryptParallelizationParameter(v int32)`
+`func (o *ScryptPasswordStorageSchemeResponse) SetScryptParallelizationParameter(v int64)`
 
 SetScryptParallelizationParameter sets ScryptParallelizationParameter field to given value.
 
@@ -151,20 +151,20 @@ HasScryptParallelizationParameter returns a boolean if a field has been set.
 
 ### GetMaxPasswordLength
 
-`func (o *ScryptPasswordStorageSchemeResponse) GetMaxPasswordLength() int32`
+`func (o *ScryptPasswordStorageSchemeResponse) GetMaxPasswordLength() int64`
 
 GetMaxPasswordLength returns the MaxPasswordLength field if non-nil, zero value otherwise.
 
 ### GetMaxPasswordLengthOk
 
-`func (o *ScryptPasswordStorageSchemeResponse) GetMaxPasswordLengthOk() (*int32, bool)`
+`func (o *ScryptPasswordStorageSchemeResponse) GetMaxPasswordLengthOk() (*int64, bool)`
 
 GetMaxPasswordLengthOk returns a tuple with the MaxPasswordLength field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxPasswordLength
 
-`func (o *ScryptPasswordStorageSchemeResponse) SetMaxPasswordLength(v int32)`
+`func (o *ScryptPasswordStorageSchemeResponse) SetMaxPasswordLength(v int64)`
 
 SetMaxPasswordLength sets MaxPasswordLength field to given value.
 

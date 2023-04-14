@@ -47,13 +47,13 @@ type LdapMappedScimHttpServletExtensionResponse struct {
 	// Specifies the permissions that should be applied to the directory that is used to create temporary files.
 	TemporaryDirectoryPermissions string `json:"temporaryDirectoryPermissions"`
 	// The maximum number of resources that are returned in a response.
-	MaxResults *int32 `json:"maxResults,omitempty"`
+	MaxResults *int64 `json:"maxResults,omitempty"`
 	// The maximum number of operations that are permitted in a bulk request.
-	BulkMaxOperations *int32 `json:"bulkMaxOperations,omitempty"`
+	BulkMaxOperations *int64 `json:"bulkMaxOperations,omitempty"`
 	// The maximum payload size in bytes of a bulk request.
 	BulkMaxPayloadSize *string `json:"bulkMaxPayloadSize,omitempty"`
 	// The maximum number of bulk requests that may be processed concurrently by the server. Any bulk request that would cause this limit to be exceeded is rejected with HTTP status code 503.
-	BulkMaxConcurrentRequests *int32 `json:"bulkMaxConcurrentRequests,omitempty"`
+	BulkMaxConcurrentRequests *int64 `json:"bulkMaxConcurrentRequests,omitempty"`
 	// Enables debug logging of the SCIM SDK. Debug messages will be forwarded to the Directory Server debug logger with the scope of com.unboundid.directory.server.extensions.scim.SCIMHTTPServletExtension.
 	DebugEnabled *bool                                   `json:"debugEnabled,omitempty"`
 	DebugLevel   EnumhttpServletExtensionDebugLevelProp  `json:"debugLevel"`
@@ -506,9 +506,9 @@ func (o *LdapMappedScimHttpServletExtensionResponse) SetTemporaryDirectoryPermis
 }
 
 // GetMaxResults returns the MaxResults field value if set, zero value otherwise.
-func (o *LdapMappedScimHttpServletExtensionResponse) GetMaxResults() int32 {
+func (o *LdapMappedScimHttpServletExtensionResponse) GetMaxResults() int64 {
 	if o == nil || IsNil(o.MaxResults) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxResults
@@ -516,7 +516,7 @@ func (o *LdapMappedScimHttpServletExtensionResponse) GetMaxResults() int32 {
 
 // GetMaxResultsOk returns a tuple with the MaxResults field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LdapMappedScimHttpServletExtensionResponse) GetMaxResultsOk() (*int32, bool) {
+func (o *LdapMappedScimHttpServletExtensionResponse) GetMaxResultsOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxResults) {
 		return nil, false
 	}
@@ -532,15 +532,15 @@ func (o *LdapMappedScimHttpServletExtensionResponse) HasMaxResults() bool {
 	return false
 }
 
-// SetMaxResults gets a reference to the given int32 and assigns it to the MaxResults field.
-func (o *LdapMappedScimHttpServletExtensionResponse) SetMaxResults(v int32) {
+// SetMaxResults gets a reference to the given int64 and assigns it to the MaxResults field.
+func (o *LdapMappedScimHttpServletExtensionResponse) SetMaxResults(v int64) {
 	o.MaxResults = &v
 }
 
 // GetBulkMaxOperations returns the BulkMaxOperations field value if set, zero value otherwise.
-func (o *LdapMappedScimHttpServletExtensionResponse) GetBulkMaxOperations() int32 {
+func (o *LdapMappedScimHttpServletExtensionResponse) GetBulkMaxOperations() int64 {
 	if o == nil || IsNil(o.BulkMaxOperations) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.BulkMaxOperations
@@ -548,7 +548,7 @@ func (o *LdapMappedScimHttpServletExtensionResponse) GetBulkMaxOperations() int3
 
 // GetBulkMaxOperationsOk returns a tuple with the BulkMaxOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LdapMappedScimHttpServletExtensionResponse) GetBulkMaxOperationsOk() (*int32, bool) {
+func (o *LdapMappedScimHttpServletExtensionResponse) GetBulkMaxOperationsOk() (*int64, bool) {
 	if o == nil || IsNil(o.BulkMaxOperations) {
 		return nil, false
 	}
@@ -564,8 +564,8 @@ func (o *LdapMappedScimHttpServletExtensionResponse) HasBulkMaxOperations() bool
 	return false
 }
 
-// SetBulkMaxOperations gets a reference to the given int32 and assigns it to the BulkMaxOperations field.
-func (o *LdapMappedScimHttpServletExtensionResponse) SetBulkMaxOperations(v int32) {
+// SetBulkMaxOperations gets a reference to the given int64 and assigns it to the BulkMaxOperations field.
+func (o *LdapMappedScimHttpServletExtensionResponse) SetBulkMaxOperations(v int64) {
 	o.BulkMaxOperations = &v
 }
 
@@ -602,9 +602,9 @@ func (o *LdapMappedScimHttpServletExtensionResponse) SetBulkMaxPayloadSize(v str
 }
 
 // GetBulkMaxConcurrentRequests returns the BulkMaxConcurrentRequests field value if set, zero value otherwise.
-func (o *LdapMappedScimHttpServletExtensionResponse) GetBulkMaxConcurrentRequests() int32 {
+func (o *LdapMappedScimHttpServletExtensionResponse) GetBulkMaxConcurrentRequests() int64 {
 	if o == nil || IsNil(o.BulkMaxConcurrentRequests) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.BulkMaxConcurrentRequests
@@ -612,7 +612,7 @@ func (o *LdapMappedScimHttpServletExtensionResponse) GetBulkMaxConcurrentRequest
 
 // GetBulkMaxConcurrentRequestsOk returns a tuple with the BulkMaxConcurrentRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LdapMappedScimHttpServletExtensionResponse) GetBulkMaxConcurrentRequestsOk() (*int32, bool) {
+func (o *LdapMappedScimHttpServletExtensionResponse) GetBulkMaxConcurrentRequestsOk() (*int64, bool) {
 	if o == nil || IsNil(o.BulkMaxConcurrentRequests) {
 		return nil, false
 	}
@@ -628,8 +628,8 @@ func (o *LdapMappedScimHttpServletExtensionResponse) HasBulkMaxConcurrentRequest
 	return false
 }
 
-// SetBulkMaxConcurrentRequests gets a reference to the given int32 and assigns it to the BulkMaxConcurrentRequests field.
-func (o *LdapMappedScimHttpServletExtensionResponse) SetBulkMaxConcurrentRequests(v int32) {
+// SetBulkMaxConcurrentRequests gets a reference to the given int64 and assigns it to the BulkMaxConcurrentRequests field.
+func (o *LdapMappedScimHttpServletExtensionResponse) SetBulkMaxConcurrentRequests(v int64) {
 	o.BulkMaxConcurrentRequests = &v
 }
 

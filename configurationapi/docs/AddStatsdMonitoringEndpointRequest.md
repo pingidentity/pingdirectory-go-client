@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **EndpointName** | **string** | Name of the new Monitoring Endpoint | 
 **Schemas** | Pointer to [**[]EnumstatsdMonitoringEndpointSchemaUrn**](EnumstatsdMonitoringEndpointSchemaUrn.md) |  | [optional] 
 **Hostname** | **string** | The name of the host where this StatsD Monitoring Endpoint should send metric data. | 
-**ServerPort** | Pointer to **int32** | Specifies the port number of the endpoint where metric data should be sent. | [optional] 
+**ServerPort** | Pointer to **int64** | Specifies the port number of the endpoint where metric data should be sent. | [optional] 
 **ConnectionType** | Pointer to [**EnummonitoringEndpointConnectionTypeProp**](EnummonitoringEndpointConnectionTypeProp.md) |  | [optional] 
 **TrustManagerProvider** | Pointer to **string** | The trust manager provider to use if SSL over TCP is to be used for connection-level security. | [optional] 
 **AdditionalTags** | Pointer to **[]string** | Specifies any optional additional tags to include in StatsD messages. Any additional tags will be appended to the end of each StatsD message, separated by commas. Tags should be written in a [key]:[value] format (\&quot;host:server1\&quot;, for example). | [optional] 
@@ -99,20 +99,20 @@ SetHostname sets Hostname field to given value.
 
 ### GetServerPort
 
-`func (o *AddStatsdMonitoringEndpointRequest) GetServerPort() int32`
+`func (o *AddStatsdMonitoringEndpointRequest) GetServerPort() int64`
 
 GetServerPort returns the ServerPort field if non-nil, zero value otherwise.
 
 ### GetServerPortOk
 
-`func (o *AddStatsdMonitoringEndpointRequest) GetServerPortOk() (*int32, bool)`
+`func (o *AddStatsdMonitoringEndpointRequest) GetServerPortOk() (*int64, bool)`
 
 GetServerPortOk returns a tuple with the ServerPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerPort
 
-`func (o *AddStatsdMonitoringEndpointRequest) SetServerPort(v int32)`
+`func (o *AddStatsdMonitoringEndpointRequest) SetServerPort(v int64)`
 
 SetServerPort sets ServerPort field to given value.
 

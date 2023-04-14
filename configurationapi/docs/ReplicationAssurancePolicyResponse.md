@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Schemas** | Pointer to [**[]EnumreplicationAssurancePolicySchemaUrn**](EnumreplicationAssurancePolicySchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | Description of the Replication Assurance Policy. | [optional] 
 **Enabled** | **bool** | Indicates whether this Replication Assurance Policy is enabled for use in the server. If a Replication Assurance Policy is disabled, then no new operations will be associated with it. | 
-**EvaluationOrderIndex** | **int32** | When multiple Replication Assurance Policies are defined, this property determines the evaluation order for finding a Replication Assurance Policy match against an operation. Policies are evaluated based on this index from least to greatest. Values of this property must be unique but not necessarily contiguous. | 
+**EvaluationOrderIndex** | **int64** | When multiple Replication Assurance Policies are defined, this property determines the evaluation order for finding a Replication Assurance Policy match against an operation. Policies are evaluated based on this index from least to greatest. Values of this property must be unique but not necessarily contiguous. | 
 **LocalLevel** | [**EnumreplicationAssurancePolicyLocalLevelProp**](EnumreplicationAssurancePolicyLocalLevelProp.md) |  | 
 **RemoteLevel** | [**EnumreplicationAssurancePolicyRemoteLevelProp**](EnumreplicationAssurancePolicyRemoteLevelProp.md) |  | 
 **Timeout** | **string** | Specifies the maximum length of time to wait for the replication assurance requirements to be met before timing out and replying to the client. | 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewReplicationAssurancePolicyResponse
 
-`func NewReplicationAssurancePolicyResponse(id string, enabled bool, evaluationOrderIndex int32, localLevel EnumreplicationAssurancePolicyLocalLevelProp, remoteLevel EnumreplicationAssurancePolicyRemoteLevelProp, timeout string, ) *ReplicationAssurancePolicyResponse`
+`func NewReplicationAssurancePolicyResponse(id string, enabled bool, evaluationOrderIndex int64, localLevel EnumreplicationAssurancePolicyLocalLevelProp, remoteLevel EnumreplicationAssurancePolicyRemoteLevelProp, timeout string, ) *ReplicationAssurancePolicyResponse`
 
 NewReplicationAssurancePolicyResponse instantiates a new ReplicationAssurancePolicyResponse object
 This constructor will assign default values to properties that have it defined,
@@ -128,20 +128,20 @@ SetEnabled sets Enabled field to given value.
 
 ### GetEvaluationOrderIndex
 
-`func (o *ReplicationAssurancePolicyResponse) GetEvaluationOrderIndex() int32`
+`func (o *ReplicationAssurancePolicyResponse) GetEvaluationOrderIndex() int64`
 
 GetEvaluationOrderIndex returns the EvaluationOrderIndex field if non-nil, zero value otherwise.
 
 ### GetEvaluationOrderIndexOk
 
-`func (o *ReplicationAssurancePolicyResponse) GetEvaluationOrderIndexOk() (*int32, bool)`
+`func (o *ReplicationAssurancePolicyResponse) GetEvaluationOrderIndexOk() (*int64, bool)`
 
 GetEvaluationOrderIndexOk returns a tuple with the EvaluationOrderIndex field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvaluationOrderIndex
 
-`func (o *ReplicationAssurancePolicyResponse) SetEvaluationOrderIndex(v int32)`
+`func (o *ReplicationAssurancePolicyResponse) SetEvaluationOrderIndex(v int64)`
 
 SetEvaluationOrderIndex sets EvaluationOrderIndex field to given value.
 

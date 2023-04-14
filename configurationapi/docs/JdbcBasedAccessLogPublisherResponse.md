@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Server** | **string** | The JDBC-based Database Server to use for a connection. | 
 **LogFieldMapping** | **string** | The log field mapping associates loggable fields to database column names. The table name is not part of this mapping. | 
 **LogTableName** | **string** | The table name to log entries to the database server. | 
-**QueueSize** | Pointer to **int32** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
+**QueueSize** | Pointer to **int64** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
 **LogConnects** | Pointer to **bool** | Indicates whether to log information about connections established to the server. | [optional] 
 **LogDisconnects** | Pointer to **bool** | Indicates whether to log information about connections that have been closed by the client or terminated by the server. | [optional] 
 **LogSecurityNegotiation** | Pointer to **bool** | Indicates whether to log information about the result of any security negotiation (e.g., SSL handshake) processing that has been performed. | [optional] 
@@ -154,20 +154,20 @@ SetLogTableName sets LogTableName field to given value.
 
 ### GetQueueSize
 
-`func (o *JdbcBasedAccessLogPublisherResponse) GetQueueSize() int32`
+`func (o *JdbcBasedAccessLogPublisherResponse) GetQueueSize() int64`
 
 GetQueueSize returns the QueueSize field if non-nil, zero value otherwise.
 
 ### GetQueueSizeOk
 
-`func (o *JdbcBasedAccessLogPublisherResponse) GetQueueSizeOk() (*int32, bool)`
+`func (o *JdbcBasedAccessLogPublisherResponse) GetQueueSizeOk() (*int64, bool)`
 
 GetQueueSizeOk returns a tuple with the QueueSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQueueSize
 
-`func (o *JdbcBasedAccessLogPublisherResponse) SetQueueSize(v int32)`
+`func (o *JdbcBasedAccessLogPublisherResponse) SetQueueSize(v int64)`
 
 SetQueueSize sets QueueSize field to given value.
 

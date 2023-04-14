@@ -32,7 +32,7 @@ type SyslogJsonErrorLogPublisherResponse struct {
 	// The application name that will be included in syslog messages that are logged by this Syslog JSON Error Log Publisher.
 	SyslogMessageApplicationName *string `json:"syslogMessageApplicationName,omitempty"`
 	// The maximum number of log records that can be stored in the asynchronous queue.
-	QueueSize *int32 `json:"queueSize,omitempty"`
+	QueueSize *int64 `json:"queueSize,omitempty"`
 	// Indicates whether log messages should include the product name for the Directory Server.
 	IncludeProductName *bool `json:"includeProductName,omitempty"`
 	// Indicates whether log messages should include the instance name for the Directory Server.
@@ -301,9 +301,9 @@ func (o *SyslogJsonErrorLogPublisherResponse) SetSyslogMessageApplicationName(v 
 }
 
 // GetQueueSize returns the QueueSize field value if set, zero value otherwise.
-func (o *SyslogJsonErrorLogPublisherResponse) GetQueueSize() int32 {
+func (o *SyslogJsonErrorLogPublisherResponse) GetQueueSize() int64 {
 	if o == nil || IsNil(o.QueueSize) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.QueueSize
@@ -311,7 +311,7 @@ func (o *SyslogJsonErrorLogPublisherResponse) GetQueueSize() int32 {
 
 // GetQueueSizeOk returns a tuple with the QueueSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SyslogJsonErrorLogPublisherResponse) GetQueueSizeOk() (*int32, bool) {
+func (o *SyslogJsonErrorLogPublisherResponse) GetQueueSizeOk() (*int64, bool) {
 	if o == nil || IsNil(o.QueueSize) {
 		return nil, false
 	}
@@ -327,8 +327,8 @@ func (o *SyslogJsonErrorLogPublisherResponse) HasQueueSize() bool {
 	return false
 }
 
-// SetQueueSize gets a reference to the given int32 and assigns it to the QueueSize field.
-func (o *SyslogJsonErrorLogPublisherResponse) SetQueueSize(v int32) {
+// SetQueueSize gets a reference to the given int64 and assigns it to the QueueSize field.
+func (o *SyslogJsonErrorLogPublisherResponse) SetQueueSize(v int64) {
 	o.QueueSize = &v
 }
 

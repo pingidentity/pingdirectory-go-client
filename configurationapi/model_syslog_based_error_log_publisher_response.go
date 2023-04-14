@@ -27,15 +27,15 @@ type SyslogBasedErrorLogPublisherResponse struct {
 	// Specifies the hostname or IP address of the syslogd host to log to. It is highly recommend to use localhost.
 	ServerHostName string `json:"serverHostName"`
 	// Specifies the port number of the syslogd host to log to.
-	ServerPort int32 `json:"serverPort"`
+	ServerPort int64 `json:"serverPort"`
 	// Specifies the syslog facility to use for this Syslog Based Error Log Publisher
-	SyslogFacility int32 `json:"syslogFacility"`
+	SyslogFacility int64 `json:"syslogFacility"`
 	// Specifies whether to flush the writer after every log record.
 	AutoFlush *bool `json:"autoFlush,omitempty"`
 	// Indicates whether the Syslog Based Error Log Publisher will publish records asynchronously.
 	Asynchronous bool `json:"asynchronous"`
 	// The maximum number of log records that can be stored in the asynchronous queue.
-	QueueSize       *int32                                `json:"queueSize,omitempty"`
+	QueueSize       *int64                                `json:"queueSize,omitempty"`
 	DefaultSeverity []EnumlogPublisherDefaultSeverityProp `json:"defaultSeverity,omitempty"`
 	// Specifies the override severity levels for the logger based on the category of the messages.
 	OverrideSeverity []string `json:"overrideSeverity,omitempty"`
@@ -50,7 +50,7 @@ type SyslogBasedErrorLogPublisherResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSyslogBasedErrorLogPublisherResponse(id string, schemas []EnumsyslogBasedErrorLogPublisherSchemaUrn, enabled bool, serverHostName string, serverPort int32, syslogFacility int32, asynchronous bool) *SyslogBasedErrorLogPublisherResponse {
+func NewSyslogBasedErrorLogPublisherResponse(id string, schemas []EnumsyslogBasedErrorLogPublisherSchemaUrn, enabled bool, serverHostName string, serverPort int64, syslogFacility int64, asynchronous bool) *SyslogBasedErrorLogPublisherResponse {
 	this := SyslogBasedErrorLogPublisherResponse{}
 	this.Id = id
 	this.Schemas = schemas
@@ -167,9 +167,9 @@ func (o *SyslogBasedErrorLogPublisherResponse) SetServerHostName(v string) {
 }
 
 // GetServerPort returns the ServerPort field value
-func (o *SyslogBasedErrorLogPublisherResponse) GetServerPort() int32 {
+func (o *SyslogBasedErrorLogPublisherResponse) GetServerPort() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -178,7 +178,7 @@ func (o *SyslogBasedErrorLogPublisherResponse) GetServerPort() int32 {
 
 // GetServerPortOk returns a tuple with the ServerPort field value
 // and a boolean to check if the value has been set.
-func (o *SyslogBasedErrorLogPublisherResponse) GetServerPortOk() (*int32, bool) {
+func (o *SyslogBasedErrorLogPublisherResponse) GetServerPortOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -186,14 +186,14 @@ func (o *SyslogBasedErrorLogPublisherResponse) GetServerPortOk() (*int32, bool) 
 }
 
 // SetServerPort sets field value
-func (o *SyslogBasedErrorLogPublisherResponse) SetServerPort(v int32) {
+func (o *SyslogBasedErrorLogPublisherResponse) SetServerPort(v int64) {
 	o.ServerPort = v
 }
 
 // GetSyslogFacility returns the SyslogFacility field value
-func (o *SyslogBasedErrorLogPublisherResponse) GetSyslogFacility() int32 {
+func (o *SyslogBasedErrorLogPublisherResponse) GetSyslogFacility() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -202,7 +202,7 @@ func (o *SyslogBasedErrorLogPublisherResponse) GetSyslogFacility() int32 {
 
 // GetSyslogFacilityOk returns a tuple with the SyslogFacility field value
 // and a boolean to check if the value has been set.
-func (o *SyslogBasedErrorLogPublisherResponse) GetSyslogFacilityOk() (*int32, bool) {
+func (o *SyslogBasedErrorLogPublisherResponse) GetSyslogFacilityOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -210,7 +210,7 @@ func (o *SyslogBasedErrorLogPublisherResponse) GetSyslogFacilityOk() (*int32, bo
 }
 
 // SetSyslogFacility sets field value
-func (o *SyslogBasedErrorLogPublisherResponse) SetSyslogFacility(v int32) {
+func (o *SyslogBasedErrorLogPublisherResponse) SetSyslogFacility(v int64) {
 	o.SyslogFacility = v
 }
 
@@ -271,9 +271,9 @@ func (o *SyslogBasedErrorLogPublisherResponse) SetAsynchronous(v bool) {
 }
 
 // GetQueueSize returns the QueueSize field value if set, zero value otherwise.
-func (o *SyslogBasedErrorLogPublisherResponse) GetQueueSize() int32 {
+func (o *SyslogBasedErrorLogPublisherResponse) GetQueueSize() int64 {
 	if o == nil || IsNil(o.QueueSize) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.QueueSize
@@ -281,7 +281,7 @@ func (o *SyslogBasedErrorLogPublisherResponse) GetQueueSize() int32 {
 
 // GetQueueSizeOk returns a tuple with the QueueSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SyslogBasedErrorLogPublisherResponse) GetQueueSizeOk() (*int32, bool) {
+func (o *SyslogBasedErrorLogPublisherResponse) GetQueueSizeOk() (*int64, bool) {
 	if o == nil || IsNil(o.QueueSize) {
 		return nil, false
 	}
@@ -297,8 +297,8 @@ func (o *SyslogBasedErrorLogPublisherResponse) HasQueueSize() bool {
 	return false
 }
 
-// SetQueueSize gets a reference to the given int32 and assigns it to the QueueSize field.
-func (o *SyslogBasedErrorLogPublisherResponse) SetQueueSize(v int32) {
+// SetQueueSize gets a reference to the given int64 and assigns it to the QueueSize field.
+func (o *SyslogBasedErrorLogPublisherResponse) SetQueueSize(v int64) {
 	o.QueueSize = &v
 }
 

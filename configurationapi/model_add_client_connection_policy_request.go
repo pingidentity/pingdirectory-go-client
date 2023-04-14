@@ -29,7 +29,7 @@ type AddClientConnectionPolicyRequest struct {
 	// Indicates whether this Client Connection Policy is enabled for use in the server. If a Client Connection Policy is disabled, then no new client connections will be associated with it.
 	Enabled bool `json:"enabled"`
 	// Specifies the order in which Client Connection Policy definitions will be evaluated. A Client Connection Policy with a lower index will be evaluated before one with a higher index, and the first Client Connection Policy evaluated which may apply to a client connection will be used for that connection. Each Client Connection Policy must be assigned a unique evaluation order index value.
-	EvaluationOrderIndex int32 `json:"evaluationOrderIndex"`
+	EvaluationOrderIndex int64 `json:"evaluationOrderIndex"`
 	// Specifies a set of connection criteria that must match the associated client connection for it to be associated with this Client Connection Policy.
 	ConnectionCriteria *string `json:"connectionCriteria,omitempty"`
 	// Indicates whether any client connection for which this Client Connection Policy is selected should be terminated. This makes it possible to define fine-grained criteria for clients that should not be allowed to connect to this Directory Server.
@@ -68,17 +68,17 @@ type AddClientConnectionPolicyRequest struct {
 	// Indicates whether clients will be allowed to request search operations that cannot be efficiently processed using the set of indexes defined in the corresponding backend, as long as the search request also includes the permit unindexed search request control and the requester has the unindexed-search-with-control privilege (or that privilege is disabled in the global configuration).
 	AllowUnindexedSearchesWithControl *bool `json:"allowUnindexedSearchesWithControl,omitempty"`
 	// Specifies the minimum number of consecutive bytes that must be present in any subInitial, subAny, or subFinal element of a substring filter component (i.e., the minimum number of consecutive bytes between wildcard characters in a substring filter). Any attempt to use a substring search with an element containing fewer than this number of bytes will be rejected.
-	MinimumSubstringLength *int32 `json:"minimumSubstringLength,omitempty"`
+	MinimumSubstringLength *int64 `json:"minimumSubstringLength,omitempty"`
 	// Specifies the maximum number of client connections which may be associated with this Client Connection Policy at any given time.
-	MaximumConcurrentConnections *int32 `json:"maximumConcurrentConnections,omitempty"`
+	MaximumConcurrentConnections *int64 `json:"maximumConcurrentConnections,omitempty"`
 	// Specifies the maximum length of time that a connection associated with this Client Connection Policy may be established. Any connection which is associated with this Client Connection Policy and has been established for longer than this period of time may be terminated.
 	MaximumConnectionDuration *string `json:"maximumConnectionDuration,omitempty"`
 	// Specifies the maximum length of time that a connection associated with this Client Connection Policy may remain established after the completion of the last operation processed on that connection. Any new operation requested on the connection will reset this timer. Any connection associated with this Client Connection Policy which has been idle for longer than this length of time may be terminated.
 	MaximumIdleConnectionDuration *string `json:"maximumIdleConnectionDuration,omitempty"`
 	// Specifies the maximum number of operations that may be requested by any client connection associated with this Client Connection Policy. If an attempt is made to process more than this number of operations on a client connection, then that connection will be terminated.
-	MaximumOperationCountPerConnection *int32 `json:"maximumOperationCountPerConnection,omitempty"`
+	MaximumOperationCountPerConnection *int64 `json:"maximumOperationCountPerConnection,omitempty"`
 	// Specifies the maximum number of concurrent operations that can be in progress for any connection. This can help prevent a single client connection from monopolizing server processing resources by sending a large number of concurrent asynchronous requests. A value of zero indicates that no limit will be placed on the number of concurrent requests for a single client.
-	MaximumConcurrentOperationsPerConnection *int32 `json:"maximumConcurrentOperationsPerConnection,omitempty"`
+	MaximumConcurrentOperationsPerConnection *int64 `json:"maximumConcurrentOperationsPerConnection,omitempty"`
 	// Specifies the maximum length of time that the server should wait for an outstanding operation to complete before rejecting a new request received when the maximum number of outstanding operations are already in progress on that connection. If an existing outstanding operation on the connection completes before this time, then the operation will be processed. Otherwise, the operation will be rejected with a \"busy\" result.
 	MaximumConcurrentOperationWaitTimeBeforeRejecting        *string                                                                                 `json:"maximumConcurrentOperationWaitTimeBeforeRejecting,omitempty"`
 	MaximumConcurrentOperationsPerConnectionExceededBehavior *EnumclientConnectionPolicyMaximumConcurrentOperationsPerConnectionExceededBehaviorProp `json:"maximumConcurrentOperationsPerConnectionExceededBehavior,omitempty"`
@@ -89,22 +89,22 @@ type AddClientConnectionPolicyRequest struct {
 	MaximumPolicyOperationRate          []string                                                           `json:"maximumPolicyOperationRate,omitempty"`
 	PolicyOperationRateExceededBehavior *EnumclientConnectionPolicyPolicyOperationRateExceededBehaviorProp `json:"policyOperationRateExceededBehavior,omitempty"`
 	// Specifies the maximum number of entries that may be returned for a search performed by a client associated with this Client Connection Policy.
-	MaximumSearchSizeLimit *int32 `json:"maximumSearchSizeLimit,omitempty"`
+	MaximumSearchSizeLimit *int64 `json:"maximumSearchSizeLimit,omitempty"`
 	// Specifies the maximum length of time that the server should spend processing search operations requested by clients associated with this Client Connection Policy.
 	MaximumSearchTimeLimit *string `json:"maximumSearchTimeLimit,omitempty"`
 	// Specifies the maximum number of entries that may be examined by a backend in the course of processing a search requested by clients associated with this Client Connection Policy.
-	MaximumSearchLookthroughLimit *int32 `json:"maximumSearchLookthroughLimit,omitempty"`
+	MaximumSearchLookthroughLimit *int64 `json:"maximumSearchLookthroughLimit,omitempty"`
 	// Specifies the maximum number of entries that may be joined with any single search result entry for a search request performed by a client associated with this Client Connection Policy.
-	MaximumLDAPJoinSizeLimit *int32 `json:"maximumLDAPJoinSizeLimit,omitempty"`
+	MaximumLDAPJoinSizeLimit *int64 `json:"maximumLDAPJoinSizeLimit,omitempty"`
 	// Specifies the maximum number of entries that the server will attempt to sort without the benefit of a VLV index. A value of zero indicates that no limit should be enforced.
-	MaximumSortSizeLimitWithoutVLVIndex *int32 `json:"maximumSortSizeLimitWithoutVLVIndex,omitempty"`
+	MaximumSortSizeLimitWithoutVLVIndex *int64 `json:"maximumSortSizeLimitWithoutVLVIndex,omitempty"`
 }
 
 // NewAddClientConnectionPolicyRequest instantiates a new AddClientConnectionPolicyRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddClientConnectionPolicyRequest(policyName string, policyID string, enabled bool, evaluationOrderIndex int32) *AddClientConnectionPolicyRequest {
+func NewAddClientConnectionPolicyRequest(policyName string, policyID string, enabled bool, evaluationOrderIndex int64) *AddClientConnectionPolicyRequest {
 	this := AddClientConnectionPolicyRequest{}
 	this.PolicyName = policyName
 	this.PolicyID = policyID
@@ -258,9 +258,9 @@ func (o *AddClientConnectionPolicyRequest) SetEnabled(v bool) {
 }
 
 // GetEvaluationOrderIndex returns the EvaluationOrderIndex field value
-func (o *AddClientConnectionPolicyRequest) GetEvaluationOrderIndex() int32 {
+func (o *AddClientConnectionPolicyRequest) GetEvaluationOrderIndex() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -269,7 +269,7 @@ func (o *AddClientConnectionPolicyRequest) GetEvaluationOrderIndex() int32 {
 
 // GetEvaluationOrderIndexOk returns a tuple with the EvaluationOrderIndex field value
 // and a boolean to check if the value has been set.
-func (o *AddClientConnectionPolicyRequest) GetEvaluationOrderIndexOk() (*int32, bool) {
+func (o *AddClientConnectionPolicyRequest) GetEvaluationOrderIndexOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -277,7 +277,7 @@ func (o *AddClientConnectionPolicyRequest) GetEvaluationOrderIndexOk() (*int32, 
 }
 
 // SetEvaluationOrderIndex sets field value
-func (o *AddClientConnectionPolicyRequest) SetEvaluationOrderIndex(v int32) {
+func (o *AddClientConnectionPolicyRequest) SetEvaluationOrderIndex(v int64) {
 	o.EvaluationOrderIndex = v
 }
 
@@ -922,9 +922,9 @@ func (o *AddClientConnectionPolicyRequest) SetAllowUnindexedSearchesWithControl(
 }
 
 // GetMinimumSubstringLength returns the MinimumSubstringLength field value if set, zero value otherwise.
-func (o *AddClientConnectionPolicyRequest) GetMinimumSubstringLength() int32 {
+func (o *AddClientConnectionPolicyRequest) GetMinimumSubstringLength() int64 {
 	if o == nil || IsNil(o.MinimumSubstringLength) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MinimumSubstringLength
@@ -932,7 +932,7 @@ func (o *AddClientConnectionPolicyRequest) GetMinimumSubstringLength() int32 {
 
 // GetMinimumSubstringLengthOk returns a tuple with the MinimumSubstringLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddClientConnectionPolicyRequest) GetMinimumSubstringLengthOk() (*int32, bool) {
+func (o *AddClientConnectionPolicyRequest) GetMinimumSubstringLengthOk() (*int64, bool) {
 	if o == nil || IsNil(o.MinimumSubstringLength) {
 		return nil, false
 	}
@@ -948,15 +948,15 @@ func (o *AddClientConnectionPolicyRequest) HasMinimumSubstringLength() bool {
 	return false
 }
 
-// SetMinimumSubstringLength gets a reference to the given int32 and assigns it to the MinimumSubstringLength field.
-func (o *AddClientConnectionPolicyRequest) SetMinimumSubstringLength(v int32) {
+// SetMinimumSubstringLength gets a reference to the given int64 and assigns it to the MinimumSubstringLength field.
+func (o *AddClientConnectionPolicyRequest) SetMinimumSubstringLength(v int64) {
 	o.MinimumSubstringLength = &v
 }
 
 // GetMaximumConcurrentConnections returns the MaximumConcurrentConnections field value if set, zero value otherwise.
-func (o *AddClientConnectionPolicyRequest) GetMaximumConcurrentConnections() int32 {
+func (o *AddClientConnectionPolicyRequest) GetMaximumConcurrentConnections() int64 {
 	if o == nil || IsNil(o.MaximumConcurrentConnections) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaximumConcurrentConnections
@@ -964,7 +964,7 @@ func (o *AddClientConnectionPolicyRequest) GetMaximumConcurrentConnections() int
 
 // GetMaximumConcurrentConnectionsOk returns a tuple with the MaximumConcurrentConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddClientConnectionPolicyRequest) GetMaximumConcurrentConnectionsOk() (*int32, bool) {
+func (o *AddClientConnectionPolicyRequest) GetMaximumConcurrentConnectionsOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaximumConcurrentConnections) {
 		return nil, false
 	}
@@ -980,8 +980,8 @@ func (o *AddClientConnectionPolicyRequest) HasMaximumConcurrentConnections() boo
 	return false
 }
 
-// SetMaximumConcurrentConnections gets a reference to the given int32 and assigns it to the MaximumConcurrentConnections field.
-func (o *AddClientConnectionPolicyRequest) SetMaximumConcurrentConnections(v int32) {
+// SetMaximumConcurrentConnections gets a reference to the given int64 and assigns it to the MaximumConcurrentConnections field.
+func (o *AddClientConnectionPolicyRequest) SetMaximumConcurrentConnections(v int64) {
 	o.MaximumConcurrentConnections = &v
 }
 
@@ -1050,9 +1050,9 @@ func (o *AddClientConnectionPolicyRequest) SetMaximumIdleConnectionDuration(v st
 }
 
 // GetMaximumOperationCountPerConnection returns the MaximumOperationCountPerConnection field value if set, zero value otherwise.
-func (o *AddClientConnectionPolicyRequest) GetMaximumOperationCountPerConnection() int32 {
+func (o *AddClientConnectionPolicyRequest) GetMaximumOperationCountPerConnection() int64 {
 	if o == nil || IsNil(o.MaximumOperationCountPerConnection) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaximumOperationCountPerConnection
@@ -1060,7 +1060,7 @@ func (o *AddClientConnectionPolicyRequest) GetMaximumOperationCountPerConnection
 
 // GetMaximumOperationCountPerConnectionOk returns a tuple with the MaximumOperationCountPerConnection field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddClientConnectionPolicyRequest) GetMaximumOperationCountPerConnectionOk() (*int32, bool) {
+func (o *AddClientConnectionPolicyRequest) GetMaximumOperationCountPerConnectionOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaximumOperationCountPerConnection) {
 		return nil, false
 	}
@@ -1076,15 +1076,15 @@ func (o *AddClientConnectionPolicyRequest) HasMaximumOperationCountPerConnection
 	return false
 }
 
-// SetMaximumOperationCountPerConnection gets a reference to the given int32 and assigns it to the MaximumOperationCountPerConnection field.
-func (o *AddClientConnectionPolicyRequest) SetMaximumOperationCountPerConnection(v int32) {
+// SetMaximumOperationCountPerConnection gets a reference to the given int64 and assigns it to the MaximumOperationCountPerConnection field.
+func (o *AddClientConnectionPolicyRequest) SetMaximumOperationCountPerConnection(v int64) {
 	o.MaximumOperationCountPerConnection = &v
 }
 
 // GetMaximumConcurrentOperationsPerConnection returns the MaximumConcurrentOperationsPerConnection field value if set, zero value otherwise.
-func (o *AddClientConnectionPolicyRequest) GetMaximumConcurrentOperationsPerConnection() int32 {
+func (o *AddClientConnectionPolicyRequest) GetMaximumConcurrentOperationsPerConnection() int64 {
 	if o == nil || IsNil(o.MaximumConcurrentOperationsPerConnection) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaximumConcurrentOperationsPerConnection
@@ -1092,7 +1092,7 @@ func (o *AddClientConnectionPolicyRequest) GetMaximumConcurrentOperationsPerConn
 
 // GetMaximumConcurrentOperationsPerConnectionOk returns a tuple with the MaximumConcurrentOperationsPerConnection field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddClientConnectionPolicyRequest) GetMaximumConcurrentOperationsPerConnectionOk() (*int32, bool) {
+func (o *AddClientConnectionPolicyRequest) GetMaximumConcurrentOperationsPerConnectionOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaximumConcurrentOperationsPerConnection) {
 		return nil, false
 	}
@@ -1108,8 +1108,8 @@ func (o *AddClientConnectionPolicyRequest) HasMaximumConcurrentOperationsPerConn
 	return false
 }
 
-// SetMaximumConcurrentOperationsPerConnection gets a reference to the given int32 and assigns it to the MaximumConcurrentOperationsPerConnection field.
-func (o *AddClientConnectionPolicyRequest) SetMaximumConcurrentOperationsPerConnection(v int32) {
+// SetMaximumConcurrentOperationsPerConnection gets a reference to the given int64 and assigns it to the MaximumConcurrentOperationsPerConnection field.
+func (o *AddClientConnectionPolicyRequest) SetMaximumConcurrentOperationsPerConnection(v int64) {
 	o.MaximumConcurrentOperationsPerConnection = &v
 }
 
@@ -1306,9 +1306,9 @@ func (o *AddClientConnectionPolicyRequest) SetPolicyOperationRateExceededBehavio
 }
 
 // GetMaximumSearchSizeLimit returns the MaximumSearchSizeLimit field value if set, zero value otherwise.
-func (o *AddClientConnectionPolicyRequest) GetMaximumSearchSizeLimit() int32 {
+func (o *AddClientConnectionPolicyRequest) GetMaximumSearchSizeLimit() int64 {
 	if o == nil || IsNil(o.MaximumSearchSizeLimit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaximumSearchSizeLimit
@@ -1316,7 +1316,7 @@ func (o *AddClientConnectionPolicyRequest) GetMaximumSearchSizeLimit() int32 {
 
 // GetMaximumSearchSizeLimitOk returns a tuple with the MaximumSearchSizeLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddClientConnectionPolicyRequest) GetMaximumSearchSizeLimitOk() (*int32, bool) {
+func (o *AddClientConnectionPolicyRequest) GetMaximumSearchSizeLimitOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaximumSearchSizeLimit) {
 		return nil, false
 	}
@@ -1332,8 +1332,8 @@ func (o *AddClientConnectionPolicyRequest) HasMaximumSearchSizeLimit() bool {
 	return false
 }
 
-// SetMaximumSearchSizeLimit gets a reference to the given int32 and assigns it to the MaximumSearchSizeLimit field.
-func (o *AddClientConnectionPolicyRequest) SetMaximumSearchSizeLimit(v int32) {
+// SetMaximumSearchSizeLimit gets a reference to the given int64 and assigns it to the MaximumSearchSizeLimit field.
+func (o *AddClientConnectionPolicyRequest) SetMaximumSearchSizeLimit(v int64) {
 	o.MaximumSearchSizeLimit = &v
 }
 
@@ -1370,9 +1370,9 @@ func (o *AddClientConnectionPolicyRequest) SetMaximumSearchTimeLimit(v string) {
 }
 
 // GetMaximumSearchLookthroughLimit returns the MaximumSearchLookthroughLimit field value if set, zero value otherwise.
-func (o *AddClientConnectionPolicyRequest) GetMaximumSearchLookthroughLimit() int32 {
+func (o *AddClientConnectionPolicyRequest) GetMaximumSearchLookthroughLimit() int64 {
 	if o == nil || IsNil(o.MaximumSearchLookthroughLimit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaximumSearchLookthroughLimit
@@ -1380,7 +1380,7 @@ func (o *AddClientConnectionPolicyRequest) GetMaximumSearchLookthroughLimit() in
 
 // GetMaximumSearchLookthroughLimitOk returns a tuple with the MaximumSearchLookthroughLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddClientConnectionPolicyRequest) GetMaximumSearchLookthroughLimitOk() (*int32, bool) {
+func (o *AddClientConnectionPolicyRequest) GetMaximumSearchLookthroughLimitOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaximumSearchLookthroughLimit) {
 		return nil, false
 	}
@@ -1396,15 +1396,15 @@ func (o *AddClientConnectionPolicyRequest) HasMaximumSearchLookthroughLimit() bo
 	return false
 }
 
-// SetMaximumSearchLookthroughLimit gets a reference to the given int32 and assigns it to the MaximumSearchLookthroughLimit field.
-func (o *AddClientConnectionPolicyRequest) SetMaximumSearchLookthroughLimit(v int32) {
+// SetMaximumSearchLookthroughLimit gets a reference to the given int64 and assigns it to the MaximumSearchLookthroughLimit field.
+func (o *AddClientConnectionPolicyRequest) SetMaximumSearchLookthroughLimit(v int64) {
 	o.MaximumSearchLookthroughLimit = &v
 }
 
 // GetMaximumLDAPJoinSizeLimit returns the MaximumLDAPJoinSizeLimit field value if set, zero value otherwise.
-func (o *AddClientConnectionPolicyRequest) GetMaximumLDAPJoinSizeLimit() int32 {
+func (o *AddClientConnectionPolicyRequest) GetMaximumLDAPJoinSizeLimit() int64 {
 	if o == nil || IsNil(o.MaximumLDAPJoinSizeLimit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaximumLDAPJoinSizeLimit
@@ -1412,7 +1412,7 @@ func (o *AddClientConnectionPolicyRequest) GetMaximumLDAPJoinSizeLimit() int32 {
 
 // GetMaximumLDAPJoinSizeLimitOk returns a tuple with the MaximumLDAPJoinSizeLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddClientConnectionPolicyRequest) GetMaximumLDAPJoinSizeLimitOk() (*int32, bool) {
+func (o *AddClientConnectionPolicyRequest) GetMaximumLDAPJoinSizeLimitOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaximumLDAPJoinSizeLimit) {
 		return nil, false
 	}
@@ -1428,15 +1428,15 @@ func (o *AddClientConnectionPolicyRequest) HasMaximumLDAPJoinSizeLimit() bool {
 	return false
 }
 
-// SetMaximumLDAPJoinSizeLimit gets a reference to the given int32 and assigns it to the MaximumLDAPJoinSizeLimit field.
-func (o *AddClientConnectionPolicyRequest) SetMaximumLDAPJoinSizeLimit(v int32) {
+// SetMaximumLDAPJoinSizeLimit gets a reference to the given int64 and assigns it to the MaximumLDAPJoinSizeLimit field.
+func (o *AddClientConnectionPolicyRequest) SetMaximumLDAPJoinSizeLimit(v int64) {
 	o.MaximumLDAPJoinSizeLimit = &v
 }
 
 // GetMaximumSortSizeLimitWithoutVLVIndex returns the MaximumSortSizeLimitWithoutVLVIndex field value if set, zero value otherwise.
-func (o *AddClientConnectionPolicyRequest) GetMaximumSortSizeLimitWithoutVLVIndex() int32 {
+func (o *AddClientConnectionPolicyRequest) GetMaximumSortSizeLimitWithoutVLVIndex() int64 {
 	if o == nil || IsNil(o.MaximumSortSizeLimitWithoutVLVIndex) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaximumSortSizeLimitWithoutVLVIndex
@@ -1444,7 +1444,7 @@ func (o *AddClientConnectionPolicyRequest) GetMaximumSortSizeLimitWithoutVLVInde
 
 // GetMaximumSortSizeLimitWithoutVLVIndexOk returns a tuple with the MaximumSortSizeLimitWithoutVLVIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddClientConnectionPolicyRequest) GetMaximumSortSizeLimitWithoutVLVIndexOk() (*int32, bool) {
+func (o *AddClientConnectionPolicyRequest) GetMaximumSortSizeLimitWithoutVLVIndexOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaximumSortSizeLimitWithoutVLVIndex) {
 		return nil, false
 	}
@@ -1460,8 +1460,8 @@ func (o *AddClientConnectionPolicyRequest) HasMaximumSortSizeLimitWithoutVLVInde
 	return false
 }
 
-// SetMaximumSortSizeLimitWithoutVLVIndex gets a reference to the given int32 and assigns it to the MaximumSortSizeLimitWithoutVLVIndex field.
-func (o *AddClientConnectionPolicyRequest) SetMaximumSortSizeLimitWithoutVLVIndex(v int32) {
+// SetMaximumSortSizeLimitWithoutVLVIndex gets a reference to the given int64 and assigns it to the MaximumSortSizeLimitWithoutVLVIndex field.
+func (o *AddClientConnectionPolicyRequest) SetMaximumSortSizeLimitWithoutVLVIndex(v int64) {
 	o.MaximumSortSizeLimitWithoutVLVIndex = &v
 }
 

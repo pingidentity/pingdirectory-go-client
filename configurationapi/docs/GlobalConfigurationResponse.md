@@ -25,23 +25,23 @@ Name | Type | Description | Notes
 **BindWithDNRequiresPassword** | Pointer to **bool** | Indicates whether the Directory Server should reject any simple bind request that contains a DN but no password. | [optional] 
 **DisabledPrivilege** | Pointer to [**[]EnumglobalConfigurationDisabledPrivilegeProp**](EnumglobalConfigurationDisabledPrivilegeProp.md) |  | [optional] 
 **DefaultPasswordPolicy** | **string** | Specifies the name of the password policy that is in effect for users whose entries do not specify an alternate password policy (either via a real or virtual attribute). | 
-**MaximumUserDataPasswordPoliciesToCache** | Pointer to **int32** | Specifies the maximum number of password policies that are defined in the user data (that is, outside of the configuration) that the server should cache in memory for faster access. A value of zero indicates that the server should not cache any user data password policies. | [optional] 
+**MaximumUserDataPasswordPoliciesToCache** | Pointer to **int64** | Specifies the maximum number of password policies that are defined in the user data (that is, outside of the configuration) that the server should cache in memory for faster access. A value of zero indicates that the server should not cache any user data password policies. | [optional] 
 **ProxiedAuthorizationIdentityMapper** | **string** | Specifies the name of the identity mapper to map authorization ID values (using the \&quot;u:\&quot; form) provided in the proxied authorization control to the corresponding user entry. | 
 **VerifyEntryDigests** | Pointer to **bool** | Indicates whether the digest should always be verified whenever an entry containing a digest is decoded. If this is \&quot;true\&quot;, then if a digest exists, it will always be verified. Otherwise, the digest will be written when encoding entries but ignored when decoding entries but may still be available for other verification processing. | [optional] 
 **AllowedInsecureTLSProtocol** | Pointer to [**[]EnumglobalConfigurationAllowedInsecureTLSProtocolProp**](EnumglobalConfigurationAllowedInsecureTLSProtocolProp.md) |  | [optional] 
 **AllowInsecureLocalJMXConnections** | Pointer to **bool** | Indicates that processes attaching to this server&#39;s local JVM are allowed to access internal data through JMX without the authentication requirements that remote JMX connections are subject to. Please review and understand the data that this option will expose (such as cn&#x3D;monitor) to client applications to ensure there are no security concerns. | [optional] 
 **DefaultInternalOperationClientConnectionPolicy** | Pointer to **string** | Specifies the client connection policy that will be used by default for internal operations. | [optional] 
-**SizeLimit** | Pointer to **int32** | Specifies the maximum number of entries that the Directory Server should return to the client during a search operation. | [optional] 
+**SizeLimit** | Pointer to **int64** | Specifies the maximum number of entries that the Directory Server should return to the client during a search operation. | [optional] 
 **TimeLimit** | Pointer to **string** | Specifies the maximum length of time that the Directory Server should be allowed to spend processing a search operation. | [optional] 
 **IdleTimeLimit** | Pointer to **string** | Specifies the maximum length of time that a client connection may remain established since its last completed operation. | [optional] 
-**LookthroughLimit** | Pointer to **int32** | Specifies the maximum number of entries that the Directory Server should \&quot;look through\&quot; in the course of processing a search request. | [optional] 
-**LdapJoinSizeLimit** | Pointer to **int32** | Specifies the maximum number of entries that may be directly joined with any individual search result entry. | [optional] 
-**MaximumConcurrentConnections** | Pointer to **int32** | Specifies the maximum number of LDAP client connections which may be established to this Directory Server at the same time. | [optional] 
-**MaximumConcurrentConnectionsPerIPAddress** | Pointer to **int32** | Specifies the maximum number of LDAP client connections originating from the same IP address which may be established to this Directory Server at the same time. | [optional] 
-**MaximumConcurrentConnectionsPerBindDN** | Pointer to **int32** | Specifies the maximum number of LDAP client connections which may be established to this Directory Server at the same time and authenticated as the same user. | [optional] 
-**MaximumConcurrentUnindexedSearches** | Pointer to **int32** | Specifies the maximum number of unindexed searches that may be in progress in this backend at any given time. Any unindexed searches requested while the maximum number of unindexed searches are already being processed will be rejected. A value of zero indicates that no limit will be enforced. | [optional] 
-**MaximumAttributesPerAddRequest** | Pointer to **int32** | Specifies the maximum number of attributes that may be included in an add request. This property does not impose any limit on the number of values that an attribute may have. | [optional] 
-**MaximumModificationsPerModifyRequest** | Pointer to **int32** | Specifies the maximum number of modifications that may be included in a modify request. This property does not impose any limit on the number of attribute values that a modification may have. | [optional] 
+**LookthroughLimit** | Pointer to **int64** | Specifies the maximum number of entries that the Directory Server should \&quot;look through\&quot; in the course of processing a search request. | [optional] 
+**LdapJoinSizeLimit** | Pointer to **int64** | Specifies the maximum number of entries that may be directly joined with any individual search result entry. | [optional] 
+**MaximumConcurrentConnections** | Pointer to **int64** | Specifies the maximum number of LDAP client connections which may be established to this Directory Server at the same time. | [optional] 
+**MaximumConcurrentConnectionsPerIPAddress** | Pointer to **int64** | Specifies the maximum number of LDAP client connections originating from the same IP address which may be established to this Directory Server at the same time. | [optional] 
+**MaximumConcurrentConnectionsPerBindDN** | Pointer to **int64** | Specifies the maximum number of LDAP client connections which may be established to this Directory Server at the same time and authenticated as the same user. | [optional] 
+**MaximumConcurrentUnindexedSearches** | Pointer to **int64** | Specifies the maximum number of unindexed searches that may be in progress in this backend at any given time. Any unindexed searches requested while the maximum number of unindexed searches are already being processed will be rejected. A value of zero indicates that no limit will be enforced. | [optional] 
+**MaximumAttributesPerAddRequest** | Pointer to **int64** | Specifies the maximum number of attributes that may be included in an add request. This property does not impose any limit on the number of values that an attribute may have. | [optional] 
+**MaximumModificationsPerModifyRequest** | Pointer to **int64** | Specifies the maximum number of modifications that may be included in a modify request. This property does not impose any limit on the number of attribute values that a modification may have. | [optional] 
 **BackgroundThreadForEachPersistentSearch** | Pointer to **bool** | Indicates whether the server should use a separate background thread for each persistent search. | [optional] 
 **AllowAttributeNameExceptions** | Pointer to **bool** | Indicates whether the Directory Server should allow underscores in attribute names and allow attribute names to begin with numeric digits (both of which are violations of the LDAP standards). | [optional] 
 **InvalidAttributeSyntaxBehavior** | Pointer to [**EnumglobalConfigurationInvalidAttributeSyntaxBehaviorProp**](EnumglobalConfigurationInvalidAttributeSyntaxBehaviorProp.md) |  | [optional] 
@@ -49,16 +49,16 @@ Name | Type | Description | Notes
 **SingleStructuralObjectclassBehavior** | Pointer to [**EnumglobalConfigurationSingleStructuralObjectclassBehaviorProp**](EnumglobalConfigurationSingleStructuralObjectclassBehaviorProp.md) |  | [optional] 
 **AttributesModifiableWithIgnoreNoUserModificationRequestControl** | Pointer to [**[]EnumglobalConfigurationAttributesModifiableWithIgnoreNoUserModificationRequestControlProp**](EnumglobalConfigurationAttributesModifiableWithIgnoreNoUserModificationRequestControlProp.md) |  | [optional] 
 **MaximumServerOutLogFileSize** | Pointer to **string** | The maximum allowed size that the server.out log file will be allowed to have. If a write would cause the file to exceed this size, then the current file will be rotated out of place and a new empty file will be created and the message written to it. | [optional] 
-**MaximumServerOutLogFileCount** | Pointer to **int32** | The maximum number of server.out log files (including the current active log file) that should be retained. When rotating the log file, if the total number of files exceeds this count, then the oldest file(s) will be removed so that the total number of log files is within this limit. | [optional] 
+**MaximumServerOutLogFileCount** | Pointer to **int64** | The maximum number of server.out log files (including the current active log file) that should be retained. When rotating the log file, if the total number of files exceeds this count, then the oldest file(s) will be removed so that the total number of log files is within this limit. | [optional] 
 **StartupErrorLoggerOutputLocation** | Pointer to [**EnumglobalConfigurationStartupErrorLoggerOutputLocationProp**](EnumglobalConfigurationStartupErrorLoggerOutputLocationProp.md) |  | [optional] 
 **ExitOnJVMError** | Pointer to **bool** | Indicates whether the Directory Server should be shut down if a severe error is raised (e.g., an out of memory error) which may prevent the JVM from continuing to run properly. | [optional] 
-**ServerErrorResultCode** | Pointer to **int32** | Specifies the numeric value of the result code when request processing fails due to an internal server error. | [optional] 
+**ServerErrorResultCode** | Pointer to **int64** | Specifies the numeric value of the result code when request processing fails due to an internal server error. | [optional] 
 **ResultCodeMap** | Pointer to **string** | Specifies a result code map that should be used for clients that do not have a map associated with their client connection policy. If the associated client connection policy has a result code map, then that map will be used instead. If no map is associated either with the client connection policy or the global configuration, then an internal default will be used. | [optional] 
 **ReturnBindErrorMessages** | Pointer to **bool** | Indicates whether responses for failed bind operations should include a message string providing the reason for the authentication failure. | [optional] 
 **NotifyAbandonedOperations** | Pointer to **bool** | Indicates whether the Directory Server should send a response to any operation that is interrupted via an abandon request. | [optional] 
-**DuplicateErrorLogLimit** | **int32** | Specifies the maximum number of duplicate error log messages that should be logged in the time window specified by the duplicate-error-log-time-limit property. | 
+**DuplicateErrorLogLimit** | **int64** | Specifies the maximum number of duplicate error log messages that should be logged in the time window specified by the duplicate-error-log-time-limit property. | 
 **DuplicateErrorLogTimeLimit** | **string** | Specifies the length of time that must expire before duplicate log messages above the duplicate-error-log-limit threshold are logged again to the error log. | 
-**DuplicateAlertLimit** | **int32** | Specifies the maximum number of duplicate alert messages that should be sent via the administrative alert framework in the time window specified by the duplicate-alert-time-limit property. | 
+**DuplicateAlertLimit** | **int64** | Specifies the maximum number of duplicate alert messages that should be sent via the administrative alert framework in the time window specified by the duplicate-alert-time-limit property. | 
 **DuplicateAlertTimeLimit** | **string** | Specifies the length of time that must expire before duplicate messages are sent via the administrative alert framework. | 
 **WritabilityMode** | Pointer to [**EnumglobalConfigurationWritabilityModeProp**](EnumglobalConfigurationWritabilityModeProp.md) |  | [optional] 
 **UnrecoverableDatabaseErrorMode** | Pointer to [**EnumglobalConfigurationUnrecoverableDatabaseErrorModeProp**](EnumglobalConfigurationUnrecoverableDatabaseErrorModeProp.md) |  | [optional] 
@@ -70,16 +70,16 @@ Name | Type | Description | Notes
 **WarnForBackendsWithMultipleBaseDns** | Pointer to **bool** | Indicates whether the server should issue a warning when enabling a backend that contains multiple base DNs. | [optional] 
 **ForcedGCPrimeDuration** | Pointer to **string** | Specifies the minimum length of time required for backend or request processor initialization that will trigger the server to force an explicit garbage collection. A value of \&quot;0 seconds\&quot; indicates that the server should never invoke an explicit garbage collection regardless of the length of time required to initialize the server backends. | [optional] 
 **ReplicationSetName** | Pointer to **string** | The name of the replication set assigned to this Directory Server. Restricted domains are only replicated within instances using the same replication set name. | [optional] 
-**StartupMinReplicationBacklogCount** | **int32** | The number of outstanding changes any replica can have before the Directory Server will start accepting connections. The Directory Server may never accept connections if this setting is too low. If you are unsure which value to use, you can use the number of expected updates within a five second interval. | 
-**ReplicationBacklogCountAlertThreshold** | **int32** | An alert is sent when the number of outstanding replication changes for the Directory Server has exceeded this threshold for longer than the replication backlog duration alert threshold. | 
+**StartupMinReplicationBacklogCount** | **int64** | The number of outstanding changes any replica can have before the Directory Server will start accepting connections. The Directory Server may never accept connections if this setting is too low. If you are unsure which value to use, you can use the number of expected updates within a five second interval. | 
+**ReplicationBacklogCountAlertThreshold** | **int64** | An alert is sent when the number of outstanding replication changes for the Directory Server has exceeded this threshold for longer than the replication backlog duration alert threshold. | 
 **ReplicationBacklogDurationAlertThreshold** | **string** | An alert is sent when the number of outstanding replication changes for the Directory Server has exceeded the replication backlog count alert threshold for longer than this duration. | 
 **ReplicationAssuranceSourceTimeoutSuspendDuration** | **string** | The amount of time a replication assurance source (i.e. a peer Directory Server) will be suspended from assurance requirements on this Directory Server if it experiences an assurance timeout. | 
-**ReplicationAssuranceSourceBacklogFastStartThreshold** | **int32** | The maximum number of replication backlog updates a replication assurance source (i.e. a peer Directory Server) can have and be immediately recognized as an available assurance source by this Directory Server. | 
-**ReplicationHistoryLimit** | Pointer to **int32** | Specifies the size limit for historical information. | [optional] 
+**ReplicationAssuranceSourceBacklogFastStartThreshold** | **int64** | The maximum number of replication backlog updates a replication assurance source (i.e. a peer Directory Server) can have and be immediately recognized as an available assurance source by this Directory Server. | 
+**ReplicationHistoryLimit** | Pointer to **int64** | Specifies the size limit for historical information. | [optional] 
 **AllowInheritedReplicationOfSubordinateBackends** | **bool** | Allow replication to be inherited by subordinate/child backends. | 
 **ReplicationPurgeObsoleteReplicas** | Pointer to **bool** | Indicates whether state about obsolete replicas is automatically purged. | [optional] 
 **SmtpServer** | Pointer to **[]string** | Specifies the set of servers that will be used to send email messages. The order in which the servers are listed indicates the order in which the Directory Server will attempt to use them in the course of sending a message. The first attempt will always go to the server at the top of the list, and servers further down the list will only be used if none of the servers listed above it were able to successfully send the message. | [optional] 
-**MaxSMTPConnectionCount** | Pointer to **int32** | The maximum number of SMTP connections that will be maintained for delivering email messages. | [optional] 
+**MaxSMTPConnectionCount** | Pointer to **int64** | The maximum number of SMTP connections that will be maintained for delivering email messages. | [optional] 
 **MaxSMTPConnectionAge** | Pointer to **string** | The maximum length of time that a connection to an SMTP server should be considered valid. | [optional] 
 **SmtpConnectionHealthCheckInterval** | Pointer to **string** | The length of time between checks to ensure that available SMTP connections are still valid. | [optional] 
 **AllowedTask** | Pointer to **[]string** | Specifies the fully-qualified name of a Java class that may be invoked in the server. | [optional] 
@@ -97,7 +97,7 @@ Name | Type | Description | Notes
 
 ### NewGlobalConfigurationResponse
 
-`func NewGlobalConfigurationResponse(instanceName string, defaultPasswordPolicy string, proxiedAuthorizationIdentityMapper string, duplicateErrorLogLimit int32, duplicateErrorLogTimeLimit string, duplicateAlertLimit int32, duplicateAlertTimeLimit string, startupMinReplicationBacklogCount int32, replicationBacklogCountAlertThreshold int32, replicationBacklogDurationAlertThreshold string, replicationAssuranceSourceTimeoutSuspendDuration string, replicationAssuranceSourceBacklogFastStartThreshold int32, allowInheritedReplicationOfSubordinateBackends bool, ) *GlobalConfigurationResponse`
+`func NewGlobalConfigurationResponse(instanceName string, defaultPasswordPolicy string, proxiedAuthorizationIdentityMapper string, duplicateErrorLogLimit int64, duplicateErrorLogTimeLimit string, duplicateAlertLimit int64, duplicateAlertTimeLimit string, startupMinReplicationBacklogCount int64, replicationBacklogCountAlertThreshold int64, replicationBacklogDurationAlertThreshold string, replicationAssuranceSourceTimeoutSuspendDuration string, replicationAssuranceSourceBacklogFastStartThreshold int64, allowInheritedReplicationOfSubordinateBackends bool, ) *GlobalConfigurationResponse`
 
 NewGlobalConfigurationResponse instantiates a new GlobalConfigurationResponse object
 This constructor will assign default values to properties that have it defined,
@@ -629,20 +629,20 @@ SetDefaultPasswordPolicy sets DefaultPasswordPolicy field to given value.
 
 ### GetMaximumUserDataPasswordPoliciesToCache
 
-`func (o *GlobalConfigurationResponse) GetMaximumUserDataPasswordPoliciesToCache() int32`
+`func (o *GlobalConfigurationResponse) GetMaximumUserDataPasswordPoliciesToCache() int64`
 
 GetMaximumUserDataPasswordPoliciesToCache returns the MaximumUserDataPasswordPoliciesToCache field if non-nil, zero value otherwise.
 
 ### GetMaximumUserDataPasswordPoliciesToCacheOk
 
-`func (o *GlobalConfigurationResponse) GetMaximumUserDataPasswordPoliciesToCacheOk() (*int32, bool)`
+`func (o *GlobalConfigurationResponse) GetMaximumUserDataPasswordPoliciesToCacheOk() (*int64, bool)`
 
 GetMaximumUserDataPasswordPoliciesToCacheOk returns a tuple with the MaximumUserDataPasswordPoliciesToCache field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaximumUserDataPasswordPoliciesToCache
 
-`func (o *GlobalConfigurationResponse) SetMaximumUserDataPasswordPoliciesToCache(v int32)`
+`func (o *GlobalConfigurationResponse) SetMaximumUserDataPasswordPoliciesToCache(v int64)`
 
 SetMaximumUserDataPasswordPoliciesToCache sets MaximumUserDataPasswordPoliciesToCache field to given value.
 
@@ -774,20 +774,20 @@ HasDefaultInternalOperationClientConnectionPolicy returns a boolean if a field h
 
 ### GetSizeLimit
 
-`func (o *GlobalConfigurationResponse) GetSizeLimit() int32`
+`func (o *GlobalConfigurationResponse) GetSizeLimit() int64`
 
 GetSizeLimit returns the SizeLimit field if non-nil, zero value otherwise.
 
 ### GetSizeLimitOk
 
-`func (o *GlobalConfigurationResponse) GetSizeLimitOk() (*int32, bool)`
+`func (o *GlobalConfigurationResponse) GetSizeLimitOk() (*int64, bool)`
 
 GetSizeLimitOk returns a tuple with the SizeLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSizeLimit
 
-`func (o *GlobalConfigurationResponse) SetSizeLimit(v int32)`
+`func (o *GlobalConfigurationResponse) SetSizeLimit(v int64)`
 
 SetSizeLimit sets SizeLimit field to given value.
 
@@ -849,20 +849,20 @@ HasIdleTimeLimit returns a boolean if a field has been set.
 
 ### GetLookthroughLimit
 
-`func (o *GlobalConfigurationResponse) GetLookthroughLimit() int32`
+`func (o *GlobalConfigurationResponse) GetLookthroughLimit() int64`
 
 GetLookthroughLimit returns the LookthroughLimit field if non-nil, zero value otherwise.
 
 ### GetLookthroughLimitOk
 
-`func (o *GlobalConfigurationResponse) GetLookthroughLimitOk() (*int32, bool)`
+`func (o *GlobalConfigurationResponse) GetLookthroughLimitOk() (*int64, bool)`
 
 GetLookthroughLimitOk returns a tuple with the LookthroughLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLookthroughLimit
 
-`func (o *GlobalConfigurationResponse) SetLookthroughLimit(v int32)`
+`func (o *GlobalConfigurationResponse) SetLookthroughLimit(v int64)`
 
 SetLookthroughLimit sets LookthroughLimit field to given value.
 
@@ -874,20 +874,20 @@ HasLookthroughLimit returns a boolean if a field has been set.
 
 ### GetLdapJoinSizeLimit
 
-`func (o *GlobalConfigurationResponse) GetLdapJoinSizeLimit() int32`
+`func (o *GlobalConfigurationResponse) GetLdapJoinSizeLimit() int64`
 
 GetLdapJoinSizeLimit returns the LdapJoinSizeLimit field if non-nil, zero value otherwise.
 
 ### GetLdapJoinSizeLimitOk
 
-`func (o *GlobalConfigurationResponse) GetLdapJoinSizeLimitOk() (*int32, bool)`
+`func (o *GlobalConfigurationResponse) GetLdapJoinSizeLimitOk() (*int64, bool)`
 
 GetLdapJoinSizeLimitOk returns a tuple with the LdapJoinSizeLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLdapJoinSizeLimit
 
-`func (o *GlobalConfigurationResponse) SetLdapJoinSizeLimit(v int32)`
+`func (o *GlobalConfigurationResponse) SetLdapJoinSizeLimit(v int64)`
 
 SetLdapJoinSizeLimit sets LdapJoinSizeLimit field to given value.
 
@@ -899,20 +899,20 @@ HasLdapJoinSizeLimit returns a boolean if a field has been set.
 
 ### GetMaximumConcurrentConnections
 
-`func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnections() int32`
+`func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnections() int64`
 
 GetMaximumConcurrentConnections returns the MaximumConcurrentConnections field if non-nil, zero value otherwise.
 
 ### GetMaximumConcurrentConnectionsOk
 
-`func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsOk() (*int32, bool)`
+`func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsOk() (*int64, bool)`
 
 GetMaximumConcurrentConnectionsOk returns a tuple with the MaximumConcurrentConnections field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaximumConcurrentConnections
 
-`func (o *GlobalConfigurationResponse) SetMaximumConcurrentConnections(v int32)`
+`func (o *GlobalConfigurationResponse) SetMaximumConcurrentConnections(v int64)`
 
 SetMaximumConcurrentConnections sets MaximumConcurrentConnections field to given value.
 
@@ -924,20 +924,20 @@ HasMaximumConcurrentConnections returns a boolean if a field has been set.
 
 ### GetMaximumConcurrentConnectionsPerIPAddress
 
-`func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsPerIPAddress() int32`
+`func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsPerIPAddress() int64`
 
 GetMaximumConcurrentConnectionsPerIPAddress returns the MaximumConcurrentConnectionsPerIPAddress field if non-nil, zero value otherwise.
 
 ### GetMaximumConcurrentConnectionsPerIPAddressOk
 
-`func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsPerIPAddressOk() (*int32, bool)`
+`func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsPerIPAddressOk() (*int64, bool)`
 
 GetMaximumConcurrentConnectionsPerIPAddressOk returns a tuple with the MaximumConcurrentConnectionsPerIPAddress field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaximumConcurrentConnectionsPerIPAddress
 
-`func (o *GlobalConfigurationResponse) SetMaximumConcurrentConnectionsPerIPAddress(v int32)`
+`func (o *GlobalConfigurationResponse) SetMaximumConcurrentConnectionsPerIPAddress(v int64)`
 
 SetMaximumConcurrentConnectionsPerIPAddress sets MaximumConcurrentConnectionsPerIPAddress field to given value.
 
@@ -949,20 +949,20 @@ HasMaximumConcurrentConnectionsPerIPAddress returns a boolean if a field has bee
 
 ### GetMaximumConcurrentConnectionsPerBindDN
 
-`func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsPerBindDN() int32`
+`func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsPerBindDN() int64`
 
 GetMaximumConcurrentConnectionsPerBindDN returns the MaximumConcurrentConnectionsPerBindDN field if non-nil, zero value otherwise.
 
 ### GetMaximumConcurrentConnectionsPerBindDNOk
 
-`func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsPerBindDNOk() (*int32, bool)`
+`func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsPerBindDNOk() (*int64, bool)`
 
 GetMaximumConcurrentConnectionsPerBindDNOk returns a tuple with the MaximumConcurrentConnectionsPerBindDN field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaximumConcurrentConnectionsPerBindDN
 
-`func (o *GlobalConfigurationResponse) SetMaximumConcurrentConnectionsPerBindDN(v int32)`
+`func (o *GlobalConfigurationResponse) SetMaximumConcurrentConnectionsPerBindDN(v int64)`
 
 SetMaximumConcurrentConnectionsPerBindDN sets MaximumConcurrentConnectionsPerBindDN field to given value.
 
@@ -974,20 +974,20 @@ HasMaximumConcurrentConnectionsPerBindDN returns a boolean if a field has been s
 
 ### GetMaximumConcurrentUnindexedSearches
 
-`func (o *GlobalConfigurationResponse) GetMaximumConcurrentUnindexedSearches() int32`
+`func (o *GlobalConfigurationResponse) GetMaximumConcurrentUnindexedSearches() int64`
 
 GetMaximumConcurrentUnindexedSearches returns the MaximumConcurrentUnindexedSearches field if non-nil, zero value otherwise.
 
 ### GetMaximumConcurrentUnindexedSearchesOk
 
-`func (o *GlobalConfigurationResponse) GetMaximumConcurrentUnindexedSearchesOk() (*int32, bool)`
+`func (o *GlobalConfigurationResponse) GetMaximumConcurrentUnindexedSearchesOk() (*int64, bool)`
 
 GetMaximumConcurrentUnindexedSearchesOk returns a tuple with the MaximumConcurrentUnindexedSearches field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaximumConcurrentUnindexedSearches
 
-`func (o *GlobalConfigurationResponse) SetMaximumConcurrentUnindexedSearches(v int32)`
+`func (o *GlobalConfigurationResponse) SetMaximumConcurrentUnindexedSearches(v int64)`
 
 SetMaximumConcurrentUnindexedSearches sets MaximumConcurrentUnindexedSearches field to given value.
 
@@ -999,20 +999,20 @@ HasMaximumConcurrentUnindexedSearches returns a boolean if a field has been set.
 
 ### GetMaximumAttributesPerAddRequest
 
-`func (o *GlobalConfigurationResponse) GetMaximumAttributesPerAddRequest() int32`
+`func (o *GlobalConfigurationResponse) GetMaximumAttributesPerAddRequest() int64`
 
 GetMaximumAttributesPerAddRequest returns the MaximumAttributesPerAddRequest field if non-nil, zero value otherwise.
 
 ### GetMaximumAttributesPerAddRequestOk
 
-`func (o *GlobalConfigurationResponse) GetMaximumAttributesPerAddRequestOk() (*int32, bool)`
+`func (o *GlobalConfigurationResponse) GetMaximumAttributesPerAddRequestOk() (*int64, bool)`
 
 GetMaximumAttributesPerAddRequestOk returns a tuple with the MaximumAttributesPerAddRequest field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaximumAttributesPerAddRequest
 
-`func (o *GlobalConfigurationResponse) SetMaximumAttributesPerAddRequest(v int32)`
+`func (o *GlobalConfigurationResponse) SetMaximumAttributesPerAddRequest(v int64)`
 
 SetMaximumAttributesPerAddRequest sets MaximumAttributesPerAddRequest field to given value.
 
@@ -1024,20 +1024,20 @@ HasMaximumAttributesPerAddRequest returns a boolean if a field has been set.
 
 ### GetMaximumModificationsPerModifyRequest
 
-`func (o *GlobalConfigurationResponse) GetMaximumModificationsPerModifyRequest() int32`
+`func (o *GlobalConfigurationResponse) GetMaximumModificationsPerModifyRequest() int64`
 
 GetMaximumModificationsPerModifyRequest returns the MaximumModificationsPerModifyRequest field if non-nil, zero value otherwise.
 
 ### GetMaximumModificationsPerModifyRequestOk
 
-`func (o *GlobalConfigurationResponse) GetMaximumModificationsPerModifyRequestOk() (*int32, bool)`
+`func (o *GlobalConfigurationResponse) GetMaximumModificationsPerModifyRequestOk() (*int64, bool)`
 
 GetMaximumModificationsPerModifyRequestOk returns a tuple with the MaximumModificationsPerModifyRequest field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaximumModificationsPerModifyRequest
 
-`func (o *GlobalConfigurationResponse) SetMaximumModificationsPerModifyRequest(v int32)`
+`func (o *GlobalConfigurationResponse) SetMaximumModificationsPerModifyRequest(v int64)`
 
 SetMaximumModificationsPerModifyRequest sets MaximumModificationsPerModifyRequest field to given value.
 
@@ -1224,20 +1224,20 @@ HasMaximumServerOutLogFileSize returns a boolean if a field has been set.
 
 ### GetMaximumServerOutLogFileCount
 
-`func (o *GlobalConfigurationResponse) GetMaximumServerOutLogFileCount() int32`
+`func (o *GlobalConfigurationResponse) GetMaximumServerOutLogFileCount() int64`
 
 GetMaximumServerOutLogFileCount returns the MaximumServerOutLogFileCount field if non-nil, zero value otherwise.
 
 ### GetMaximumServerOutLogFileCountOk
 
-`func (o *GlobalConfigurationResponse) GetMaximumServerOutLogFileCountOk() (*int32, bool)`
+`func (o *GlobalConfigurationResponse) GetMaximumServerOutLogFileCountOk() (*int64, bool)`
 
 GetMaximumServerOutLogFileCountOk returns a tuple with the MaximumServerOutLogFileCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaximumServerOutLogFileCount
 
-`func (o *GlobalConfigurationResponse) SetMaximumServerOutLogFileCount(v int32)`
+`func (o *GlobalConfigurationResponse) SetMaximumServerOutLogFileCount(v int64)`
 
 SetMaximumServerOutLogFileCount sets MaximumServerOutLogFileCount field to given value.
 
@@ -1299,20 +1299,20 @@ HasExitOnJVMError returns a boolean if a field has been set.
 
 ### GetServerErrorResultCode
 
-`func (o *GlobalConfigurationResponse) GetServerErrorResultCode() int32`
+`func (o *GlobalConfigurationResponse) GetServerErrorResultCode() int64`
 
 GetServerErrorResultCode returns the ServerErrorResultCode field if non-nil, zero value otherwise.
 
 ### GetServerErrorResultCodeOk
 
-`func (o *GlobalConfigurationResponse) GetServerErrorResultCodeOk() (*int32, bool)`
+`func (o *GlobalConfigurationResponse) GetServerErrorResultCodeOk() (*int64, bool)`
 
 GetServerErrorResultCodeOk returns a tuple with the ServerErrorResultCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerErrorResultCode
 
-`func (o *GlobalConfigurationResponse) SetServerErrorResultCode(v int32)`
+`func (o *GlobalConfigurationResponse) SetServerErrorResultCode(v int64)`
 
 SetServerErrorResultCode sets ServerErrorResultCode field to given value.
 
@@ -1399,20 +1399,20 @@ HasNotifyAbandonedOperations returns a boolean if a field has been set.
 
 ### GetDuplicateErrorLogLimit
 
-`func (o *GlobalConfigurationResponse) GetDuplicateErrorLogLimit() int32`
+`func (o *GlobalConfigurationResponse) GetDuplicateErrorLogLimit() int64`
 
 GetDuplicateErrorLogLimit returns the DuplicateErrorLogLimit field if non-nil, zero value otherwise.
 
 ### GetDuplicateErrorLogLimitOk
 
-`func (o *GlobalConfigurationResponse) GetDuplicateErrorLogLimitOk() (*int32, bool)`
+`func (o *GlobalConfigurationResponse) GetDuplicateErrorLogLimitOk() (*int64, bool)`
 
 GetDuplicateErrorLogLimitOk returns a tuple with the DuplicateErrorLogLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDuplicateErrorLogLimit
 
-`func (o *GlobalConfigurationResponse) SetDuplicateErrorLogLimit(v int32)`
+`func (o *GlobalConfigurationResponse) SetDuplicateErrorLogLimit(v int64)`
 
 SetDuplicateErrorLogLimit sets DuplicateErrorLogLimit field to given value.
 
@@ -1439,20 +1439,20 @@ SetDuplicateErrorLogTimeLimit sets DuplicateErrorLogTimeLimit field to given val
 
 ### GetDuplicateAlertLimit
 
-`func (o *GlobalConfigurationResponse) GetDuplicateAlertLimit() int32`
+`func (o *GlobalConfigurationResponse) GetDuplicateAlertLimit() int64`
 
 GetDuplicateAlertLimit returns the DuplicateAlertLimit field if non-nil, zero value otherwise.
 
 ### GetDuplicateAlertLimitOk
 
-`func (o *GlobalConfigurationResponse) GetDuplicateAlertLimitOk() (*int32, bool)`
+`func (o *GlobalConfigurationResponse) GetDuplicateAlertLimitOk() (*int64, bool)`
 
 GetDuplicateAlertLimitOk returns a tuple with the DuplicateAlertLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDuplicateAlertLimit
 
-`func (o *GlobalConfigurationResponse) SetDuplicateAlertLimit(v int32)`
+`func (o *GlobalConfigurationResponse) SetDuplicateAlertLimit(v int64)`
 
 SetDuplicateAlertLimit sets DuplicateAlertLimit field to given value.
 
@@ -1729,40 +1729,40 @@ HasReplicationSetName returns a boolean if a field has been set.
 
 ### GetStartupMinReplicationBacklogCount
 
-`func (o *GlobalConfigurationResponse) GetStartupMinReplicationBacklogCount() int32`
+`func (o *GlobalConfigurationResponse) GetStartupMinReplicationBacklogCount() int64`
 
 GetStartupMinReplicationBacklogCount returns the StartupMinReplicationBacklogCount field if non-nil, zero value otherwise.
 
 ### GetStartupMinReplicationBacklogCountOk
 
-`func (o *GlobalConfigurationResponse) GetStartupMinReplicationBacklogCountOk() (*int32, bool)`
+`func (o *GlobalConfigurationResponse) GetStartupMinReplicationBacklogCountOk() (*int64, bool)`
 
 GetStartupMinReplicationBacklogCountOk returns a tuple with the StartupMinReplicationBacklogCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStartupMinReplicationBacklogCount
 
-`func (o *GlobalConfigurationResponse) SetStartupMinReplicationBacklogCount(v int32)`
+`func (o *GlobalConfigurationResponse) SetStartupMinReplicationBacklogCount(v int64)`
 
 SetStartupMinReplicationBacklogCount sets StartupMinReplicationBacklogCount field to given value.
 
 
 ### GetReplicationBacklogCountAlertThreshold
 
-`func (o *GlobalConfigurationResponse) GetReplicationBacklogCountAlertThreshold() int32`
+`func (o *GlobalConfigurationResponse) GetReplicationBacklogCountAlertThreshold() int64`
 
 GetReplicationBacklogCountAlertThreshold returns the ReplicationBacklogCountAlertThreshold field if non-nil, zero value otherwise.
 
 ### GetReplicationBacklogCountAlertThresholdOk
 
-`func (o *GlobalConfigurationResponse) GetReplicationBacklogCountAlertThresholdOk() (*int32, bool)`
+`func (o *GlobalConfigurationResponse) GetReplicationBacklogCountAlertThresholdOk() (*int64, bool)`
 
 GetReplicationBacklogCountAlertThresholdOk returns a tuple with the ReplicationBacklogCountAlertThreshold field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReplicationBacklogCountAlertThreshold
 
-`func (o *GlobalConfigurationResponse) SetReplicationBacklogCountAlertThreshold(v int32)`
+`func (o *GlobalConfigurationResponse) SetReplicationBacklogCountAlertThreshold(v int64)`
 
 SetReplicationBacklogCountAlertThreshold sets ReplicationBacklogCountAlertThreshold field to given value.
 
@@ -1809,40 +1809,40 @@ SetReplicationAssuranceSourceTimeoutSuspendDuration sets ReplicationAssuranceSou
 
 ### GetReplicationAssuranceSourceBacklogFastStartThreshold
 
-`func (o *GlobalConfigurationResponse) GetReplicationAssuranceSourceBacklogFastStartThreshold() int32`
+`func (o *GlobalConfigurationResponse) GetReplicationAssuranceSourceBacklogFastStartThreshold() int64`
 
 GetReplicationAssuranceSourceBacklogFastStartThreshold returns the ReplicationAssuranceSourceBacklogFastStartThreshold field if non-nil, zero value otherwise.
 
 ### GetReplicationAssuranceSourceBacklogFastStartThresholdOk
 
-`func (o *GlobalConfigurationResponse) GetReplicationAssuranceSourceBacklogFastStartThresholdOk() (*int32, bool)`
+`func (o *GlobalConfigurationResponse) GetReplicationAssuranceSourceBacklogFastStartThresholdOk() (*int64, bool)`
 
 GetReplicationAssuranceSourceBacklogFastStartThresholdOk returns a tuple with the ReplicationAssuranceSourceBacklogFastStartThreshold field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReplicationAssuranceSourceBacklogFastStartThreshold
 
-`func (o *GlobalConfigurationResponse) SetReplicationAssuranceSourceBacklogFastStartThreshold(v int32)`
+`func (o *GlobalConfigurationResponse) SetReplicationAssuranceSourceBacklogFastStartThreshold(v int64)`
 
 SetReplicationAssuranceSourceBacklogFastStartThreshold sets ReplicationAssuranceSourceBacklogFastStartThreshold field to given value.
 
 
 ### GetReplicationHistoryLimit
 
-`func (o *GlobalConfigurationResponse) GetReplicationHistoryLimit() int32`
+`func (o *GlobalConfigurationResponse) GetReplicationHistoryLimit() int64`
 
 GetReplicationHistoryLimit returns the ReplicationHistoryLimit field if non-nil, zero value otherwise.
 
 ### GetReplicationHistoryLimitOk
 
-`func (o *GlobalConfigurationResponse) GetReplicationHistoryLimitOk() (*int32, bool)`
+`func (o *GlobalConfigurationResponse) GetReplicationHistoryLimitOk() (*int64, bool)`
 
 GetReplicationHistoryLimitOk returns a tuple with the ReplicationHistoryLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReplicationHistoryLimit
 
-`func (o *GlobalConfigurationResponse) SetReplicationHistoryLimit(v int32)`
+`func (o *GlobalConfigurationResponse) SetReplicationHistoryLimit(v int64)`
 
 SetReplicationHistoryLimit sets ReplicationHistoryLimit field to given value.
 
@@ -1924,20 +1924,20 @@ HasSmtpServer returns a boolean if a field has been set.
 
 ### GetMaxSMTPConnectionCount
 
-`func (o *GlobalConfigurationResponse) GetMaxSMTPConnectionCount() int32`
+`func (o *GlobalConfigurationResponse) GetMaxSMTPConnectionCount() int64`
 
 GetMaxSMTPConnectionCount returns the MaxSMTPConnectionCount field if non-nil, zero value otherwise.
 
 ### GetMaxSMTPConnectionCountOk
 
-`func (o *GlobalConfigurationResponse) GetMaxSMTPConnectionCountOk() (*int32, bool)`
+`func (o *GlobalConfigurationResponse) GetMaxSMTPConnectionCountOk() (*int64, bool)`
 
 GetMaxSMTPConnectionCountOk returns a tuple with the MaxSMTPConnectionCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxSMTPConnectionCount
 
-`func (o *GlobalConfigurationResponse) SetMaxSMTPConnectionCount(v int32)`
+`func (o *GlobalConfigurationResponse) SetMaxSMTPConnectionCount(v int64)`
 
 SetMaxSMTPConnectionCount sets MaxSMTPConnectionCount field to given value.
 

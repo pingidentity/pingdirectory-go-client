@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **ClientConnectionPolicy** | Pointer to **[]string** | Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies. | [optional] 
 **ConflictBehavior** | Pointer to [**EnumvirtualAttributeConflictBehaviorProp**](EnumvirtualAttributeConflictBehaviorProp.md) |  | [optional] 
 **RequireExplicitRequestByName** | Pointer to **bool** | Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type. | [optional] 
-**MultipleVirtualAttributeEvaluationOrderIndex** | Pointer to **int32** | Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry. | [optional] 
+**MultipleVirtualAttributeEvaluationOrderIndex** | Pointer to **int64** | Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry. | [optional] 
 **MultipleVirtualAttributeMergeBehavior** | Pointer to [**EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp**](EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp.md) |  | [optional] 
 **AllowIndexConflicts** | Pointer to **bool** | Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
@@ -344,20 +344,20 @@ HasRequireExplicitRequestByName returns a boolean if a field has been set.
 
 ### GetMultipleVirtualAttributeEvaluationOrderIndex
 
-`func (o *IdentifyReferencesVirtualAttributeResponse) GetMultipleVirtualAttributeEvaluationOrderIndex() int32`
+`func (o *IdentifyReferencesVirtualAttributeResponse) GetMultipleVirtualAttributeEvaluationOrderIndex() int64`
 
 GetMultipleVirtualAttributeEvaluationOrderIndex returns the MultipleVirtualAttributeEvaluationOrderIndex field if non-nil, zero value otherwise.
 
 ### GetMultipleVirtualAttributeEvaluationOrderIndexOk
 
-`func (o *IdentifyReferencesVirtualAttributeResponse) GetMultipleVirtualAttributeEvaluationOrderIndexOk() (*int32, bool)`
+`func (o *IdentifyReferencesVirtualAttributeResponse) GetMultipleVirtualAttributeEvaluationOrderIndexOk() (*int64, bool)`
 
 GetMultipleVirtualAttributeEvaluationOrderIndexOk returns a tuple with the MultipleVirtualAttributeEvaluationOrderIndex field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMultipleVirtualAttributeEvaluationOrderIndex
 
-`func (o *IdentifyReferencesVirtualAttributeResponse) SetMultipleVirtualAttributeEvaluationOrderIndex(v int32)`
+`func (o *IdentifyReferencesVirtualAttributeResponse) SetMultipleVirtualAttributeEvaluationOrderIndex(v int64)`
 
 SetMultipleVirtualAttributeEvaluationOrderIndex sets MultipleVirtualAttributeEvaluationOrderIndex field to given value.
 

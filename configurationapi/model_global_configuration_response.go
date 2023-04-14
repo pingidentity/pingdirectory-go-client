@@ -60,7 +60,7 @@ type GlobalConfigurationResponse struct {
 	// Specifies the name of the password policy that is in effect for users whose entries do not specify an alternate password policy (either via a real or virtual attribute).
 	DefaultPasswordPolicy string `json:"defaultPasswordPolicy"`
 	// Specifies the maximum number of password policies that are defined in the user data (that is, outside of the configuration) that the server should cache in memory for faster access. A value of zero indicates that the server should not cache any user data password policies.
-	MaximumUserDataPasswordPoliciesToCache *int32 `json:"maximumUserDataPasswordPoliciesToCache,omitempty"`
+	MaximumUserDataPasswordPoliciesToCache *int64 `json:"maximumUserDataPasswordPoliciesToCache,omitempty"`
 	// Specifies the name of the identity mapper to map authorization ID values (using the \"u:\" form) provided in the proxied authorization control to the corresponding user entry.
 	ProxiedAuthorizationIdentityMapper string `json:"proxiedAuthorizationIdentityMapper"`
 	// Indicates whether the digest should always be verified whenever an entry containing a digest is decoded. If this is \"true\", then if a digest exists, it will always be verified. Otherwise, the digest will be written when encoding entries but ignored when decoding entries but may still be available for other verification processing.
@@ -71,27 +71,27 @@ type GlobalConfigurationResponse struct {
 	// Specifies the client connection policy that will be used by default for internal operations.
 	DefaultInternalOperationClientConnectionPolicy *string `json:"defaultInternalOperationClientConnectionPolicy,omitempty"`
 	// Specifies the maximum number of entries that the Directory Server should return to the client during a search operation.
-	SizeLimit *int32 `json:"sizeLimit,omitempty"`
+	SizeLimit *int64 `json:"sizeLimit,omitempty"`
 	// Specifies the maximum length of time that the Directory Server should be allowed to spend processing a search operation.
 	TimeLimit *string `json:"timeLimit,omitempty"`
 	// Specifies the maximum length of time that a client connection may remain established since its last completed operation.
 	IdleTimeLimit *string `json:"idleTimeLimit,omitempty"`
 	// Specifies the maximum number of entries that the Directory Server should \"look through\" in the course of processing a search request.
-	LookthroughLimit *int32 `json:"lookthroughLimit,omitempty"`
+	LookthroughLimit *int64 `json:"lookthroughLimit,omitempty"`
 	// Specifies the maximum number of entries that may be directly joined with any individual search result entry.
-	LdapJoinSizeLimit *int32 `json:"ldapJoinSizeLimit,omitempty"`
+	LdapJoinSizeLimit *int64 `json:"ldapJoinSizeLimit,omitempty"`
 	// Specifies the maximum number of LDAP client connections which may be established to this Directory Server at the same time.
-	MaximumConcurrentConnections *int32 `json:"maximumConcurrentConnections,omitempty"`
+	MaximumConcurrentConnections *int64 `json:"maximumConcurrentConnections,omitempty"`
 	// Specifies the maximum number of LDAP client connections originating from the same IP address which may be established to this Directory Server at the same time.
-	MaximumConcurrentConnectionsPerIPAddress *int32 `json:"maximumConcurrentConnectionsPerIPAddress,omitempty"`
+	MaximumConcurrentConnectionsPerIPAddress *int64 `json:"maximumConcurrentConnectionsPerIPAddress,omitempty"`
 	// Specifies the maximum number of LDAP client connections which may be established to this Directory Server at the same time and authenticated as the same user.
-	MaximumConcurrentConnectionsPerBindDN *int32 `json:"maximumConcurrentConnectionsPerBindDN,omitempty"`
+	MaximumConcurrentConnectionsPerBindDN *int64 `json:"maximumConcurrentConnectionsPerBindDN,omitempty"`
 	// Specifies the maximum number of unindexed searches that may be in progress in this backend at any given time. Any unindexed searches requested while the maximum number of unindexed searches are already being processed will be rejected. A value of zero indicates that no limit will be enforced.
-	MaximumConcurrentUnindexedSearches *int32 `json:"maximumConcurrentUnindexedSearches,omitempty"`
+	MaximumConcurrentUnindexedSearches *int64 `json:"maximumConcurrentUnindexedSearches,omitempty"`
 	// Specifies the maximum number of attributes that may be included in an add request. This property does not impose any limit on the number of values that an attribute may have.
-	MaximumAttributesPerAddRequest *int32 `json:"maximumAttributesPerAddRequest,omitempty"`
+	MaximumAttributesPerAddRequest *int64 `json:"maximumAttributesPerAddRequest,omitempty"`
 	// Specifies the maximum number of modifications that may be included in a modify request. This property does not impose any limit on the number of attribute values that a modification may have.
-	MaximumModificationsPerModifyRequest *int32 `json:"maximumModificationsPerModifyRequest,omitempty"`
+	MaximumModificationsPerModifyRequest *int64 `json:"maximumModificationsPerModifyRequest,omitempty"`
 	// Indicates whether the server should use a separate background thread for each persistent search.
 	BackgroundThreadForEachPersistentSearch *bool `json:"backgroundThreadForEachPersistentSearch,omitempty"`
 	// Indicates whether the Directory Server should allow underscores in attribute names and allow attribute names to begin with numeric digits (both of which are violations of the LDAP standards).
@@ -104,12 +104,12 @@ type GlobalConfigurationResponse struct {
 	// The maximum allowed size that the server.out log file will be allowed to have. If a write would cause the file to exceed this size, then the current file will be rotated out of place and a new empty file will be created and the message written to it.
 	MaximumServerOutLogFileSize *string `json:"maximumServerOutLogFileSize,omitempty"`
 	// The maximum number of server.out log files (including the current active log file) that should be retained. When rotating the log file, if the total number of files exceeds this count, then the oldest file(s) will be removed so that the total number of log files is within this limit.
-	MaximumServerOutLogFileCount     *int32                                                       `json:"maximumServerOutLogFileCount,omitempty"`
+	MaximumServerOutLogFileCount     *int64                                                       `json:"maximumServerOutLogFileCount,omitempty"`
 	StartupErrorLoggerOutputLocation *EnumglobalConfigurationStartupErrorLoggerOutputLocationProp `json:"startupErrorLoggerOutputLocation,omitempty"`
 	// Indicates whether the Directory Server should be shut down if a severe error is raised (e.g., an out of memory error) which may prevent the JVM from continuing to run properly.
 	ExitOnJVMError *bool `json:"exitOnJVMError,omitempty"`
 	// Specifies the numeric value of the result code when request processing fails due to an internal server error.
-	ServerErrorResultCode *int32 `json:"serverErrorResultCode,omitempty"`
+	ServerErrorResultCode *int64 `json:"serverErrorResultCode,omitempty"`
 	// Specifies a result code map that should be used for clients that do not have a map associated with their client connection policy. If the associated client connection policy has a result code map, then that map will be used instead. If no map is associated either with the client connection policy or the global configuration, then an internal default will be used.
 	ResultCodeMap *string `json:"resultCodeMap,omitempty"`
 	// Indicates whether responses for failed bind operations should include a message string providing the reason for the authentication failure.
@@ -117,11 +117,11 @@ type GlobalConfigurationResponse struct {
 	// Indicates whether the Directory Server should send a response to any operation that is interrupted via an abandon request.
 	NotifyAbandonedOperations *bool `json:"notifyAbandonedOperations,omitempty"`
 	// Specifies the maximum number of duplicate error log messages that should be logged in the time window specified by the duplicate-error-log-time-limit property.
-	DuplicateErrorLogLimit int32 `json:"duplicateErrorLogLimit"`
+	DuplicateErrorLogLimit int64 `json:"duplicateErrorLogLimit"`
 	// Specifies the length of time that must expire before duplicate log messages above the duplicate-error-log-limit threshold are logged again to the error log.
 	DuplicateErrorLogTimeLimit string `json:"duplicateErrorLogTimeLimit"`
 	// Specifies the maximum number of duplicate alert messages that should be sent via the administrative alert framework in the time window specified by the duplicate-alert-time-limit property.
-	DuplicateAlertLimit int32 `json:"duplicateAlertLimit"`
+	DuplicateAlertLimit int64 `json:"duplicateAlertLimit"`
 	// Specifies the length of time that must expire before duplicate messages are sent via the administrative alert framework.
 	DuplicateAlertTimeLimit        string                                                     `json:"duplicateAlertTimeLimit"`
 	WritabilityMode                *EnumglobalConfigurationWritabilityModeProp                `json:"writabilityMode,omitempty"`
@@ -143,17 +143,17 @@ type GlobalConfigurationResponse struct {
 	// The name of the replication set assigned to this Directory Server. Restricted domains are only replicated within instances using the same replication set name.
 	ReplicationSetName *string `json:"replicationSetName,omitempty"`
 	// The number of outstanding changes any replica can have before the Directory Server will start accepting connections. The Directory Server may never accept connections if this setting is too low. If you are unsure which value to use, you can use the number of expected updates within a five second interval.
-	StartupMinReplicationBacklogCount int32 `json:"startupMinReplicationBacklogCount"`
+	StartupMinReplicationBacklogCount int64 `json:"startupMinReplicationBacklogCount"`
 	// An alert is sent when the number of outstanding replication changes for the Directory Server has exceeded this threshold for longer than the replication backlog duration alert threshold.
-	ReplicationBacklogCountAlertThreshold int32 `json:"replicationBacklogCountAlertThreshold"`
+	ReplicationBacklogCountAlertThreshold int64 `json:"replicationBacklogCountAlertThreshold"`
 	// An alert is sent when the number of outstanding replication changes for the Directory Server has exceeded the replication backlog count alert threshold for longer than this duration.
 	ReplicationBacklogDurationAlertThreshold string `json:"replicationBacklogDurationAlertThreshold"`
 	// The amount of time a replication assurance source (i.e. a peer Directory Server) will be suspended from assurance requirements on this Directory Server if it experiences an assurance timeout.
 	ReplicationAssuranceSourceTimeoutSuspendDuration string `json:"replicationAssuranceSourceTimeoutSuspendDuration"`
 	// The maximum number of replication backlog updates a replication assurance source (i.e. a peer Directory Server) can have and be immediately recognized as an available assurance source by this Directory Server.
-	ReplicationAssuranceSourceBacklogFastStartThreshold int32 `json:"replicationAssuranceSourceBacklogFastStartThreshold"`
+	ReplicationAssuranceSourceBacklogFastStartThreshold int64 `json:"replicationAssuranceSourceBacklogFastStartThreshold"`
 	// Specifies the size limit for historical information.
-	ReplicationHistoryLimit *int32 `json:"replicationHistoryLimit,omitempty"`
+	ReplicationHistoryLimit *int64 `json:"replicationHistoryLimit,omitempty"`
 	// Allow replication to be inherited by subordinate/child backends.
 	AllowInheritedReplicationOfSubordinateBackends bool `json:"allowInheritedReplicationOfSubordinateBackends"`
 	// Indicates whether state about obsolete replicas is automatically purged.
@@ -161,7 +161,7 @@ type GlobalConfigurationResponse struct {
 	// Specifies the set of servers that will be used to send email messages. The order in which the servers are listed indicates the order in which the Directory Server will attempt to use them in the course of sending a message. The first attempt will always go to the server at the top of the list, and servers further down the list will only be used if none of the servers listed above it were able to successfully send the message.
 	SmtpServer []string `json:"smtpServer,omitempty"`
 	// The maximum number of SMTP connections that will be maintained for delivering email messages.
-	MaxSMTPConnectionCount *int32 `json:"maxSMTPConnectionCount,omitempty"`
+	MaxSMTPConnectionCount *int64 `json:"maxSMTPConnectionCount,omitempty"`
 	// The maximum length of time that a connection to an SMTP server should be considered valid.
 	MaxSMTPConnectionAge *string `json:"maxSMTPConnectionAge,omitempty"`
 	// The length of time between checks to ensure that available SMTP connections are still valid.
@@ -189,7 +189,7 @@ type GlobalConfigurationResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGlobalConfigurationResponse(instanceName string, defaultPasswordPolicy string, proxiedAuthorizationIdentityMapper string, duplicateErrorLogLimit int32, duplicateErrorLogTimeLimit string, duplicateAlertLimit int32, duplicateAlertTimeLimit string, startupMinReplicationBacklogCount int32, replicationBacklogCountAlertThreshold int32, replicationBacklogDurationAlertThreshold string, replicationAssuranceSourceTimeoutSuspendDuration string, replicationAssuranceSourceBacklogFastStartThreshold int32, allowInheritedReplicationOfSubordinateBackends bool) *GlobalConfigurationResponse {
+func NewGlobalConfigurationResponse(instanceName string, defaultPasswordPolicy string, proxiedAuthorizationIdentityMapper string, duplicateErrorLogLimit int64, duplicateErrorLogTimeLimit string, duplicateAlertLimit int64, duplicateAlertTimeLimit string, startupMinReplicationBacklogCount int64, replicationBacklogCountAlertThreshold int64, replicationBacklogDurationAlertThreshold string, replicationAssuranceSourceTimeoutSuspendDuration string, replicationAssuranceSourceBacklogFastStartThreshold int64, allowInheritedReplicationOfSubordinateBackends bool) *GlobalConfigurationResponse {
 	this := GlobalConfigurationResponse{}
 	this.InstanceName = instanceName
 	this.DefaultPasswordPolicy = defaultPasswordPolicy
@@ -872,9 +872,9 @@ func (o *GlobalConfigurationResponse) SetDefaultPasswordPolicy(v string) {
 }
 
 // GetMaximumUserDataPasswordPoliciesToCache returns the MaximumUserDataPasswordPoliciesToCache field value if set, zero value otherwise.
-func (o *GlobalConfigurationResponse) GetMaximumUserDataPasswordPoliciesToCache() int32 {
+func (o *GlobalConfigurationResponse) GetMaximumUserDataPasswordPoliciesToCache() int64 {
 	if o == nil || IsNil(o.MaximumUserDataPasswordPoliciesToCache) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaximumUserDataPasswordPoliciesToCache
@@ -882,7 +882,7 @@ func (o *GlobalConfigurationResponse) GetMaximumUserDataPasswordPoliciesToCache(
 
 // GetMaximumUserDataPasswordPoliciesToCacheOk returns a tuple with the MaximumUserDataPasswordPoliciesToCache field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GlobalConfigurationResponse) GetMaximumUserDataPasswordPoliciesToCacheOk() (*int32, bool) {
+func (o *GlobalConfigurationResponse) GetMaximumUserDataPasswordPoliciesToCacheOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaximumUserDataPasswordPoliciesToCache) {
 		return nil, false
 	}
@@ -898,8 +898,8 @@ func (o *GlobalConfigurationResponse) HasMaximumUserDataPasswordPoliciesToCache(
 	return false
 }
 
-// SetMaximumUserDataPasswordPoliciesToCache gets a reference to the given int32 and assigns it to the MaximumUserDataPasswordPoliciesToCache field.
-func (o *GlobalConfigurationResponse) SetMaximumUserDataPasswordPoliciesToCache(v int32) {
+// SetMaximumUserDataPasswordPoliciesToCache gets a reference to the given int64 and assigns it to the MaximumUserDataPasswordPoliciesToCache field.
+func (o *GlobalConfigurationResponse) SetMaximumUserDataPasswordPoliciesToCache(v int64) {
 	o.MaximumUserDataPasswordPoliciesToCache = &v
 }
 
@@ -1056,9 +1056,9 @@ func (o *GlobalConfigurationResponse) SetDefaultInternalOperationClientConnectio
 }
 
 // GetSizeLimit returns the SizeLimit field value if set, zero value otherwise.
-func (o *GlobalConfigurationResponse) GetSizeLimit() int32 {
+func (o *GlobalConfigurationResponse) GetSizeLimit() int64 {
 	if o == nil || IsNil(o.SizeLimit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SizeLimit
@@ -1066,7 +1066,7 @@ func (o *GlobalConfigurationResponse) GetSizeLimit() int32 {
 
 // GetSizeLimitOk returns a tuple with the SizeLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GlobalConfigurationResponse) GetSizeLimitOk() (*int32, bool) {
+func (o *GlobalConfigurationResponse) GetSizeLimitOk() (*int64, bool) {
 	if o == nil || IsNil(o.SizeLimit) {
 		return nil, false
 	}
@@ -1082,8 +1082,8 @@ func (o *GlobalConfigurationResponse) HasSizeLimit() bool {
 	return false
 }
 
-// SetSizeLimit gets a reference to the given int32 and assigns it to the SizeLimit field.
-func (o *GlobalConfigurationResponse) SetSizeLimit(v int32) {
+// SetSizeLimit gets a reference to the given int64 and assigns it to the SizeLimit field.
+func (o *GlobalConfigurationResponse) SetSizeLimit(v int64) {
 	o.SizeLimit = &v
 }
 
@@ -1152,9 +1152,9 @@ func (o *GlobalConfigurationResponse) SetIdleTimeLimit(v string) {
 }
 
 // GetLookthroughLimit returns the LookthroughLimit field value if set, zero value otherwise.
-func (o *GlobalConfigurationResponse) GetLookthroughLimit() int32 {
+func (o *GlobalConfigurationResponse) GetLookthroughLimit() int64 {
 	if o == nil || IsNil(o.LookthroughLimit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.LookthroughLimit
@@ -1162,7 +1162,7 @@ func (o *GlobalConfigurationResponse) GetLookthroughLimit() int32 {
 
 // GetLookthroughLimitOk returns a tuple with the LookthroughLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GlobalConfigurationResponse) GetLookthroughLimitOk() (*int32, bool) {
+func (o *GlobalConfigurationResponse) GetLookthroughLimitOk() (*int64, bool) {
 	if o == nil || IsNil(o.LookthroughLimit) {
 		return nil, false
 	}
@@ -1178,15 +1178,15 @@ func (o *GlobalConfigurationResponse) HasLookthroughLimit() bool {
 	return false
 }
 
-// SetLookthroughLimit gets a reference to the given int32 and assigns it to the LookthroughLimit field.
-func (o *GlobalConfigurationResponse) SetLookthroughLimit(v int32) {
+// SetLookthroughLimit gets a reference to the given int64 and assigns it to the LookthroughLimit field.
+func (o *GlobalConfigurationResponse) SetLookthroughLimit(v int64) {
 	o.LookthroughLimit = &v
 }
 
 // GetLdapJoinSizeLimit returns the LdapJoinSizeLimit field value if set, zero value otherwise.
-func (o *GlobalConfigurationResponse) GetLdapJoinSizeLimit() int32 {
+func (o *GlobalConfigurationResponse) GetLdapJoinSizeLimit() int64 {
 	if o == nil || IsNil(o.LdapJoinSizeLimit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.LdapJoinSizeLimit
@@ -1194,7 +1194,7 @@ func (o *GlobalConfigurationResponse) GetLdapJoinSizeLimit() int32 {
 
 // GetLdapJoinSizeLimitOk returns a tuple with the LdapJoinSizeLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GlobalConfigurationResponse) GetLdapJoinSizeLimitOk() (*int32, bool) {
+func (o *GlobalConfigurationResponse) GetLdapJoinSizeLimitOk() (*int64, bool) {
 	if o == nil || IsNil(o.LdapJoinSizeLimit) {
 		return nil, false
 	}
@@ -1210,15 +1210,15 @@ func (o *GlobalConfigurationResponse) HasLdapJoinSizeLimit() bool {
 	return false
 }
 
-// SetLdapJoinSizeLimit gets a reference to the given int32 and assigns it to the LdapJoinSizeLimit field.
-func (o *GlobalConfigurationResponse) SetLdapJoinSizeLimit(v int32) {
+// SetLdapJoinSizeLimit gets a reference to the given int64 and assigns it to the LdapJoinSizeLimit field.
+func (o *GlobalConfigurationResponse) SetLdapJoinSizeLimit(v int64) {
 	o.LdapJoinSizeLimit = &v
 }
 
 // GetMaximumConcurrentConnections returns the MaximumConcurrentConnections field value if set, zero value otherwise.
-func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnections() int32 {
+func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnections() int64 {
 	if o == nil || IsNil(o.MaximumConcurrentConnections) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaximumConcurrentConnections
@@ -1226,7 +1226,7 @@ func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnections() int32 {
 
 // GetMaximumConcurrentConnectionsOk returns a tuple with the MaximumConcurrentConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsOk() (*int32, bool) {
+func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaximumConcurrentConnections) {
 		return nil, false
 	}
@@ -1242,15 +1242,15 @@ func (o *GlobalConfigurationResponse) HasMaximumConcurrentConnections() bool {
 	return false
 }
 
-// SetMaximumConcurrentConnections gets a reference to the given int32 and assigns it to the MaximumConcurrentConnections field.
-func (o *GlobalConfigurationResponse) SetMaximumConcurrentConnections(v int32) {
+// SetMaximumConcurrentConnections gets a reference to the given int64 and assigns it to the MaximumConcurrentConnections field.
+func (o *GlobalConfigurationResponse) SetMaximumConcurrentConnections(v int64) {
 	o.MaximumConcurrentConnections = &v
 }
 
 // GetMaximumConcurrentConnectionsPerIPAddress returns the MaximumConcurrentConnectionsPerIPAddress field value if set, zero value otherwise.
-func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsPerIPAddress() int32 {
+func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsPerIPAddress() int64 {
 	if o == nil || IsNil(o.MaximumConcurrentConnectionsPerIPAddress) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaximumConcurrentConnectionsPerIPAddress
@@ -1258,7 +1258,7 @@ func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsPerIPAddres
 
 // GetMaximumConcurrentConnectionsPerIPAddressOk returns a tuple with the MaximumConcurrentConnectionsPerIPAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsPerIPAddressOk() (*int32, bool) {
+func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsPerIPAddressOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaximumConcurrentConnectionsPerIPAddress) {
 		return nil, false
 	}
@@ -1274,15 +1274,15 @@ func (o *GlobalConfigurationResponse) HasMaximumConcurrentConnectionsPerIPAddres
 	return false
 }
 
-// SetMaximumConcurrentConnectionsPerIPAddress gets a reference to the given int32 and assigns it to the MaximumConcurrentConnectionsPerIPAddress field.
-func (o *GlobalConfigurationResponse) SetMaximumConcurrentConnectionsPerIPAddress(v int32) {
+// SetMaximumConcurrentConnectionsPerIPAddress gets a reference to the given int64 and assigns it to the MaximumConcurrentConnectionsPerIPAddress field.
+func (o *GlobalConfigurationResponse) SetMaximumConcurrentConnectionsPerIPAddress(v int64) {
 	o.MaximumConcurrentConnectionsPerIPAddress = &v
 }
 
 // GetMaximumConcurrentConnectionsPerBindDN returns the MaximumConcurrentConnectionsPerBindDN field value if set, zero value otherwise.
-func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsPerBindDN() int32 {
+func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsPerBindDN() int64 {
 	if o == nil || IsNil(o.MaximumConcurrentConnectionsPerBindDN) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaximumConcurrentConnectionsPerBindDN
@@ -1290,7 +1290,7 @@ func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsPerBindDN()
 
 // GetMaximumConcurrentConnectionsPerBindDNOk returns a tuple with the MaximumConcurrentConnectionsPerBindDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsPerBindDNOk() (*int32, bool) {
+func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsPerBindDNOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaximumConcurrentConnectionsPerBindDN) {
 		return nil, false
 	}
@@ -1306,15 +1306,15 @@ func (o *GlobalConfigurationResponse) HasMaximumConcurrentConnectionsPerBindDN()
 	return false
 }
 
-// SetMaximumConcurrentConnectionsPerBindDN gets a reference to the given int32 and assigns it to the MaximumConcurrentConnectionsPerBindDN field.
-func (o *GlobalConfigurationResponse) SetMaximumConcurrentConnectionsPerBindDN(v int32) {
+// SetMaximumConcurrentConnectionsPerBindDN gets a reference to the given int64 and assigns it to the MaximumConcurrentConnectionsPerBindDN field.
+func (o *GlobalConfigurationResponse) SetMaximumConcurrentConnectionsPerBindDN(v int64) {
 	o.MaximumConcurrentConnectionsPerBindDN = &v
 }
 
 // GetMaximumConcurrentUnindexedSearches returns the MaximumConcurrentUnindexedSearches field value if set, zero value otherwise.
-func (o *GlobalConfigurationResponse) GetMaximumConcurrentUnindexedSearches() int32 {
+func (o *GlobalConfigurationResponse) GetMaximumConcurrentUnindexedSearches() int64 {
 	if o == nil || IsNil(o.MaximumConcurrentUnindexedSearches) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaximumConcurrentUnindexedSearches
@@ -1322,7 +1322,7 @@ func (o *GlobalConfigurationResponse) GetMaximumConcurrentUnindexedSearches() in
 
 // GetMaximumConcurrentUnindexedSearchesOk returns a tuple with the MaximumConcurrentUnindexedSearches field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GlobalConfigurationResponse) GetMaximumConcurrentUnindexedSearchesOk() (*int32, bool) {
+func (o *GlobalConfigurationResponse) GetMaximumConcurrentUnindexedSearchesOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaximumConcurrentUnindexedSearches) {
 		return nil, false
 	}
@@ -1338,15 +1338,15 @@ func (o *GlobalConfigurationResponse) HasMaximumConcurrentUnindexedSearches() bo
 	return false
 }
 
-// SetMaximumConcurrentUnindexedSearches gets a reference to the given int32 and assigns it to the MaximumConcurrentUnindexedSearches field.
-func (o *GlobalConfigurationResponse) SetMaximumConcurrentUnindexedSearches(v int32) {
+// SetMaximumConcurrentUnindexedSearches gets a reference to the given int64 and assigns it to the MaximumConcurrentUnindexedSearches field.
+func (o *GlobalConfigurationResponse) SetMaximumConcurrentUnindexedSearches(v int64) {
 	o.MaximumConcurrentUnindexedSearches = &v
 }
 
 // GetMaximumAttributesPerAddRequest returns the MaximumAttributesPerAddRequest field value if set, zero value otherwise.
-func (o *GlobalConfigurationResponse) GetMaximumAttributesPerAddRequest() int32 {
+func (o *GlobalConfigurationResponse) GetMaximumAttributesPerAddRequest() int64 {
 	if o == nil || IsNil(o.MaximumAttributesPerAddRequest) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaximumAttributesPerAddRequest
@@ -1354,7 +1354,7 @@ func (o *GlobalConfigurationResponse) GetMaximumAttributesPerAddRequest() int32 
 
 // GetMaximumAttributesPerAddRequestOk returns a tuple with the MaximumAttributesPerAddRequest field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GlobalConfigurationResponse) GetMaximumAttributesPerAddRequestOk() (*int32, bool) {
+func (o *GlobalConfigurationResponse) GetMaximumAttributesPerAddRequestOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaximumAttributesPerAddRequest) {
 		return nil, false
 	}
@@ -1370,15 +1370,15 @@ func (o *GlobalConfigurationResponse) HasMaximumAttributesPerAddRequest() bool {
 	return false
 }
 
-// SetMaximumAttributesPerAddRequest gets a reference to the given int32 and assigns it to the MaximumAttributesPerAddRequest field.
-func (o *GlobalConfigurationResponse) SetMaximumAttributesPerAddRequest(v int32) {
+// SetMaximumAttributesPerAddRequest gets a reference to the given int64 and assigns it to the MaximumAttributesPerAddRequest field.
+func (o *GlobalConfigurationResponse) SetMaximumAttributesPerAddRequest(v int64) {
 	o.MaximumAttributesPerAddRequest = &v
 }
 
 // GetMaximumModificationsPerModifyRequest returns the MaximumModificationsPerModifyRequest field value if set, zero value otherwise.
-func (o *GlobalConfigurationResponse) GetMaximumModificationsPerModifyRequest() int32 {
+func (o *GlobalConfigurationResponse) GetMaximumModificationsPerModifyRequest() int64 {
 	if o == nil || IsNil(o.MaximumModificationsPerModifyRequest) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaximumModificationsPerModifyRequest
@@ -1386,7 +1386,7 @@ func (o *GlobalConfigurationResponse) GetMaximumModificationsPerModifyRequest() 
 
 // GetMaximumModificationsPerModifyRequestOk returns a tuple with the MaximumModificationsPerModifyRequest field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GlobalConfigurationResponse) GetMaximumModificationsPerModifyRequestOk() (*int32, bool) {
+func (o *GlobalConfigurationResponse) GetMaximumModificationsPerModifyRequestOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaximumModificationsPerModifyRequest) {
 		return nil, false
 	}
@@ -1402,8 +1402,8 @@ func (o *GlobalConfigurationResponse) HasMaximumModificationsPerModifyRequest() 
 	return false
 }
 
-// SetMaximumModificationsPerModifyRequest gets a reference to the given int32 and assigns it to the MaximumModificationsPerModifyRequest field.
-func (o *GlobalConfigurationResponse) SetMaximumModificationsPerModifyRequest(v int32) {
+// SetMaximumModificationsPerModifyRequest gets a reference to the given int64 and assigns it to the MaximumModificationsPerModifyRequest field.
+func (o *GlobalConfigurationResponse) SetMaximumModificationsPerModifyRequest(v int64) {
 	o.MaximumModificationsPerModifyRequest = &v
 }
 
@@ -1632,9 +1632,9 @@ func (o *GlobalConfigurationResponse) SetMaximumServerOutLogFileSize(v string) {
 }
 
 // GetMaximumServerOutLogFileCount returns the MaximumServerOutLogFileCount field value if set, zero value otherwise.
-func (o *GlobalConfigurationResponse) GetMaximumServerOutLogFileCount() int32 {
+func (o *GlobalConfigurationResponse) GetMaximumServerOutLogFileCount() int64 {
 	if o == nil || IsNil(o.MaximumServerOutLogFileCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaximumServerOutLogFileCount
@@ -1642,7 +1642,7 @@ func (o *GlobalConfigurationResponse) GetMaximumServerOutLogFileCount() int32 {
 
 // GetMaximumServerOutLogFileCountOk returns a tuple with the MaximumServerOutLogFileCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GlobalConfigurationResponse) GetMaximumServerOutLogFileCountOk() (*int32, bool) {
+func (o *GlobalConfigurationResponse) GetMaximumServerOutLogFileCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaximumServerOutLogFileCount) {
 		return nil, false
 	}
@@ -1658,8 +1658,8 @@ func (o *GlobalConfigurationResponse) HasMaximumServerOutLogFileCount() bool {
 	return false
 }
 
-// SetMaximumServerOutLogFileCount gets a reference to the given int32 and assigns it to the MaximumServerOutLogFileCount field.
-func (o *GlobalConfigurationResponse) SetMaximumServerOutLogFileCount(v int32) {
+// SetMaximumServerOutLogFileCount gets a reference to the given int64 and assigns it to the MaximumServerOutLogFileCount field.
+func (o *GlobalConfigurationResponse) SetMaximumServerOutLogFileCount(v int64) {
 	o.MaximumServerOutLogFileCount = &v
 }
 
@@ -1728,9 +1728,9 @@ func (o *GlobalConfigurationResponse) SetExitOnJVMError(v bool) {
 }
 
 // GetServerErrorResultCode returns the ServerErrorResultCode field value if set, zero value otherwise.
-func (o *GlobalConfigurationResponse) GetServerErrorResultCode() int32 {
+func (o *GlobalConfigurationResponse) GetServerErrorResultCode() int64 {
 	if o == nil || IsNil(o.ServerErrorResultCode) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ServerErrorResultCode
@@ -1738,7 +1738,7 @@ func (o *GlobalConfigurationResponse) GetServerErrorResultCode() int32 {
 
 // GetServerErrorResultCodeOk returns a tuple with the ServerErrorResultCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GlobalConfigurationResponse) GetServerErrorResultCodeOk() (*int32, bool) {
+func (o *GlobalConfigurationResponse) GetServerErrorResultCodeOk() (*int64, bool) {
 	if o == nil || IsNil(o.ServerErrorResultCode) {
 		return nil, false
 	}
@@ -1754,8 +1754,8 @@ func (o *GlobalConfigurationResponse) HasServerErrorResultCode() bool {
 	return false
 }
 
-// SetServerErrorResultCode gets a reference to the given int32 and assigns it to the ServerErrorResultCode field.
-func (o *GlobalConfigurationResponse) SetServerErrorResultCode(v int32) {
+// SetServerErrorResultCode gets a reference to the given int64 and assigns it to the ServerErrorResultCode field.
+func (o *GlobalConfigurationResponse) SetServerErrorResultCode(v int64) {
 	o.ServerErrorResultCode = &v
 }
 
@@ -1856,9 +1856,9 @@ func (o *GlobalConfigurationResponse) SetNotifyAbandonedOperations(v bool) {
 }
 
 // GetDuplicateErrorLogLimit returns the DuplicateErrorLogLimit field value
-func (o *GlobalConfigurationResponse) GetDuplicateErrorLogLimit() int32 {
+func (o *GlobalConfigurationResponse) GetDuplicateErrorLogLimit() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -1867,7 +1867,7 @@ func (o *GlobalConfigurationResponse) GetDuplicateErrorLogLimit() int32 {
 
 // GetDuplicateErrorLogLimitOk returns a tuple with the DuplicateErrorLogLimit field value
 // and a boolean to check if the value has been set.
-func (o *GlobalConfigurationResponse) GetDuplicateErrorLogLimitOk() (*int32, bool) {
+func (o *GlobalConfigurationResponse) GetDuplicateErrorLogLimitOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -1875,7 +1875,7 @@ func (o *GlobalConfigurationResponse) GetDuplicateErrorLogLimitOk() (*int32, boo
 }
 
 // SetDuplicateErrorLogLimit sets field value
-func (o *GlobalConfigurationResponse) SetDuplicateErrorLogLimit(v int32) {
+func (o *GlobalConfigurationResponse) SetDuplicateErrorLogLimit(v int64) {
 	o.DuplicateErrorLogLimit = v
 }
 
@@ -1904,9 +1904,9 @@ func (o *GlobalConfigurationResponse) SetDuplicateErrorLogTimeLimit(v string) {
 }
 
 // GetDuplicateAlertLimit returns the DuplicateAlertLimit field value
-func (o *GlobalConfigurationResponse) GetDuplicateAlertLimit() int32 {
+func (o *GlobalConfigurationResponse) GetDuplicateAlertLimit() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -1915,7 +1915,7 @@ func (o *GlobalConfigurationResponse) GetDuplicateAlertLimit() int32 {
 
 // GetDuplicateAlertLimitOk returns a tuple with the DuplicateAlertLimit field value
 // and a boolean to check if the value has been set.
-func (o *GlobalConfigurationResponse) GetDuplicateAlertLimitOk() (*int32, bool) {
+func (o *GlobalConfigurationResponse) GetDuplicateAlertLimitOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -1923,7 +1923,7 @@ func (o *GlobalConfigurationResponse) GetDuplicateAlertLimitOk() (*int32, bool) 
 }
 
 // SetDuplicateAlertLimit sets field value
-func (o *GlobalConfigurationResponse) SetDuplicateAlertLimit(v int32) {
+func (o *GlobalConfigurationResponse) SetDuplicateAlertLimit(v int64) {
 	o.DuplicateAlertLimit = v
 }
 
@@ -2272,9 +2272,9 @@ func (o *GlobalConfigurationResponse) SetReplicationSetName(v string) {
 }
 
 // GetStartupMinReplicationBacklogCount returns the StartupMinReplicationBacklogCount field value
-func (o *GlobalConfigurationResponse) GetStartupMinReplicationBacklogCount() int32 {
+func (o *GlobalConfigurationResponse) GetStartupMinReplicationBacklogCount() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -2283,7 +2283,7 @@ func (o *GlobalConfigurationResponse) GetStartupMinReplicationBacklogCount() int
 
 // GetStartupMinReplicationBacklogCountOk returns a tuple with the StartupMinReplicationBacklogCount field value
 // and a boolean to check if the value has been set.
-func (o *GlobalConfigurationResponse) GetStartupMinReplicationBacklogCountOk() (*int32, bool) {
+func (o *GlobalConfigurationResponse) GetStartupMinReplicationBacklogCountOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -2291,14 +2291,14 @@ func (o *GlobalConfigurationResponse) GetStartupMinReplicationBacklogCountOk() (
 }
 
 // SetStartupMinReplicationBacklogCount sets field value
-func (o *GlobalConfigurationResponse) SetStartupMinReplicationBacklogCount(v int32) {
+func (o *GlobalConfigurationResponse) SetStartupMinReplicationBacklogCount(v int64) {
 	o.StartupMinReplicationBacklogCount = v
 }
 
 // GetReplicationBacklogCountAlertThreshold returns the ReplicationBacklogCountAlertThreshold field value
-func (o *GlobalConfigurationResponse) GetReplicationBacklogCountAlertThreshold() int32 {
+func (o *GlobalConfigurationResponse) GetReplicationBacklogCountAlertThreshold() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -2307,7 +2307,7 @@ func (o *GlobalConfigurationResponse) GetReplicationBacklogCountAlertThreshold()
 
 // GetReplicationBacklogCountAlertThresholdOk returns a tuple with the ReplicationBacklogCountAlertThreshold field value
 // and a boolean to check if the value has been set.
-func (o *GlobalConfigurationResponse) GetReplicationBacklogCountAlertThresholdOk() (*int32, bool) {
+func (o *GlobalConfigurationResponse) GetReplicationBacklogCountAlertThresholdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -2315,7 +2315,7 @@ func (o *GlobalConfigurationResponse) GetReplicationBacklogCountAlertThresholdOk
 }
 
 // SetReplicationBacklogCountAlertThreshold sets field value
-func (o *GlobalConfigurationResponse) SetReplicationBacklogCountAlertThreshold(v int32) {
+func (o *GlobalConfigurationResponse) SetReplicationBacklogCountAlertThreshold(v int64) {
 	o.ReplicationBacklogCountAlertThreshold = v
 }
 
@@ -2368,9 +2368,9 @@ func (o *GlobalConfigurationResponse) SetReplicationAssuranceSourceTimeoutSuspen
 }
 
 // GetReplicationAssuranceSourceBacklogFastStartThreshold returns the ReplicationAssuranceSourceBacklogFastStartThreshold field value
-func (o *GlobalConfigurationResponse) GetReplicationAssuranceSourceBacklogFastStartThreshold() int32 {
+func (o *GlobalConfigurationResponse) GetReplicationAssuranceSourceBacklogFastStartThreshold() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -2379,7 +2379,7 @@ func (o *GlobalConfigurationResponse) GetReplicationAssuranceSourceBacklogFastSt
 
 // GetReplicationAssuranceSourceBacklogFastStartThresholdOk returns a tuple with the ReplicationAssuranceSourceBacklogFastStartThreshold field value
 // and a boolean to check if the value has been set.
-func (o *GlobalConfigurationResponse) GetReplicationAssuranceSourceBacklogFastStartThresholdOk() (*int32, bool) {
+func (o *GlobalConfigurationResponse) GetReplicationAssuranceSourceBacklogFastStartThresholdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -2387,14 +2387,14 @@ func (o *GlobalConfigurationResponse) GetReplicationAssuranceSourceBacklogFastSt
 }
 
 // SetReplicationAssuranceSourceBacklogFastStartThreshold sets field value
-func (o *GlobalConfigurationResponse) SetReplicationAssuranceSourceBacklogFastStartThreshold(v int32) {
+func (o *GlobalConfigurationResponse) SetReplicationAssuranceSourceBacklogFastStartThreshold(v int64) {
 	o.ReplicationAssuranceSourceBacklogFastStartThreshold = v
 }
 
 // GetReplicationHistoryLimit returns the ReplicationHistoryLimit field value if set, zero value otherwise.
-func (o *GlobalConfigurationResponse) GetReplicationHistoryLimit() int32 {
+func (o *GlobalConfigurationResponse) GetReplicationHistoryLimit() int64 {
 	if o == nil || IsNil(o.ReplicationHistoryLimit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ReplicationHistoryLimit
@@ -2402,7 +2402,7 @@ func (o *GlobalConfigurationResponse) GetReplicationHistoryLimit() int32 {
 
 // GetReplicationHistoryLimitOk returns a tuple with the ReplicationHistoryLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GlobalConfigurationResponse) GetReplicationHistoryLimitOk() (*int32, bool) {
+func (o *GlobalConfigurationResponse) GetReplicationHistoryLimitOk() (*int64, bool) {
 	if o == nil || IsNil(o.ReplicationHistoryLimit) {
 		return nil, false
 	}
@@ -2418,8 +2418,8 @@ func (o *GlobalConfigurationResponse) HasReplicationHistoryLimit() bool {
 	return false
 }
 
-// SetReplicationHistoryLimit gets a reference to the given int32 and assigns it to the ReplicationHistoryLimit field.
-func (o *GlobalConfigurationResponse) SetReplicationHistoryLimit(v int32) {
+// SetReplicationHistoryLimit gets a reference to the given int64 and assigns it to the ReplicationHistoryLimit field.
+func (o *GlobalConfigurationResponse) SetReplicationHistoryLimit(v int64) {
 	o.ReplicationHistoryLimit = &v
 }
 
@@ -2512,9 +2512,9 @@ func (o *GlobalConfigurationResponse) SetSmtpServer(v []string) {
 }
 
 // GetMaxSMTPConnectionCount returns the MaxSMTPConnectionCount field value if set, zero value otherwise.
-func (o *GlobalConfigurationResponse) GetMaxSMTPConnectionCount() int32 {
+func (o *GlobalConfigurationResponse) GetMaxSMTPConnectionCount() int64 {
 	if o == nil || IsNil(o.MaxSMTPConnectionCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxSMTPConnectionCount
@@ -2522,7 +2522,7 @@ func (o *GlobalConfigurationResponse) GetMaxSMTPConnectionCount() int32 {
 
 // GetMaxSMTPConnectionCountOk returns a tuple with the MaxSMTPConnectionCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GlobalConfigurationResponse) GetMaxSMTPConnectionCountOk() (*int32, bool) {
+func (o *GlobalConfigurationResponse) GetMaxSMTPConnectionCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxSMTPConnectionCount) {
 		return nil, false
 	}
@@ -2538,8 +2538,8 @@ func (o *GlobalConfigurationResponse) HasMaxSMTPConnectionCount() bool {
 	return false
 }
 
-// SetMaxSMTPConnectionCount gets a reference to the given int32 and assigns it to the MaxSMTPConnectionCount field.
-func (o *GlobalConfigurationResponse) SetMaxSMTPConnectionCount(v int32) {
+// SetMaxSMTPConnectionCount gets a reference to the given int64 and assigns it to the MaxSMTPConnectionCount field.
+func (o *GlobalConfigurationResponse) SetMaxSMTPConnectionCount(v int64) {
 	o.MaxSMTPConnectionCount = &v
 }
 

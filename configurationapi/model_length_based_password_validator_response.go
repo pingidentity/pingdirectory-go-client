@@ -23,9 +23,9 @@ type LengthBasedPasswordValidatorResponse struct {
 	Id      string                                      `json:"id"`
 	Schemas []EnumlengthBasedPasswordValidatorSchemaUrn `json:"schemas"`
 	// Specifies the maximum number of characters that can be included in a proposed password.
-	MaxPasswordLength *int32 `json:"maxPasswordLength,omitempty"`
+	MaxPasswordLength *int64 `json:"maxPasswordLength,omitempty"`
 	// Specifies the minimum number of characters that must be included in a proposed password.
-	MinPasswordLength *int32 `json:"minPasswordLength,omitempty"`
+	MinPasswordLength *int64 `json:"minPasswordLength,omitempty"`
 	// A description for this Password Validator
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the password validator is enabled for use.
@@ -107,9 +107,9 @@ func (o *LengthBasedPasswordValidatorResponse) SetSchemas(v []EnumlengthBasedPas
 }
 
 // GetMaxPasswordLength returns the MaxPasswordLength field value if set, zero value otherwise.
-func (o *LengthBasedPasswordValidatorResponse) GetMaxPasswordLength() int32 {
+func (o *LengthBasedPasswordValidatorResponse) GetMaxPasswordLength() int64 {
 	if o == nil || IsNil(o.MaxPasswordLength) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxPasswordLength
@@ -117,7 +117,7 @@ func (o *LengthBasedPasswordValidatorResponse) GetMaxPasswordLength() int32 {
 
 // GetMaxPasswordLengthOk returns a tuple with the MaxPasswordLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LengthBasedPasswordValidatorResponse) GetMaxPasswordLengthOk() (*int32, bool) {
+func (o *LengthBasedPasswordValidatorResponse) GetMaxPasswordLengthOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxPasswordLength) {
 		return nil, false
 	}
@@ -133,15 +133,15 @@ func (o *LengthBasedPasswordValidatorResponse) HasMaxPasswordLength() bool {
 	return false
 }
 
-// SetMaxPasswordLength gets a reference to the given int32 and assigns it to the MaxPasswordLength field.
-func (o *LengthBasedPasswordValidatorResponse) SetMaxPasswordLength(v int32) {
+// SetMaxPasswordLength gets a reference to the given int64 and assigns it to the MaxPasswordLength field.
+func (o *LengthBasedPasswordValidatorResponse) SetMaxPasswordLength(v int64) {
 	o.MaxPasswordLength = &v
 }
 
 // GetMinPasswordLength returns the MinPasswordLength field value if set, zero value otherwise.
-func (o *LengthBasedPasswordValidatorResponse) GetMinPasswordLength() int32 {
+func (o *LengthBasedPasswordValidatorResponse) GetMinPasswordLength() int64 {
 	if o == nil || IsNil(o.MinPasswordLength) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MinPasswordLength
@@ -149,7 +149,7 @@ func (o *LengthBasedPasswordValidatorResponse) GetMinPasswordLength() int32 {
 
 // GetMinPasswordLengthOk returns a tuple with the MinPasswordLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LengthBasedPasswordValidatorResponse) GetMinPasswordLengthOk() (*int32, bool) {
+func (o *LengthBasedPasswordValidatorResponse) GetMinPasswordLengthOk() (*int64, bool) {
 	if o == nil || IsNil(o.MinPasswordLength) {
 		return nil, false
 	}
@@ -165,8 +165,8 @@ func (o *LengthBasedPasswordValidatorResponse) HasMinPasswordLength() bool {
 	return false
 }
 
-// SetMinPasswordLength gets a reference to the given int32 and assigns it to the MinPasswordLength field.
-func (o *LengthBasedPasswordValidatorResponse) SetMinPasswordLength(v int32) {
+// SetMinPasswordLength gets a reference to the given int64 and assigns it to the MinPasswordLength field.
+func (o *LengthBasedPasswordValidatorResponse) SetMinPasswordLength(v int64) {
 	o.MinPasswordLength = &v
 }
 

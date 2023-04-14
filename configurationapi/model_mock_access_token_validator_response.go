@@ -27,7 +27,7 @@ type MockAccessTokenValidatorResponse struct {
 	// The name of the token claim that contains the scopes granted by the token.
 	ScopeClaimName *string `json:"scopeClaimName,omitempty"`
 	// When multiple Mock Access Token Validators are defined for a single Directory Server, this property determines the evaluation order for determining the correct validator class for an access token received by the Directory Server. Values of this property must be unique among all Mock Access Token Validators defined within Directory Server but not necessarily contiguous. Mock Access Token Validators with a smaller value will be evaluated first to determine if they are able to validate the access token.
-	EvaluationOrderIndex int32 `json:"evaluationOrderIndex"`
+	EvaluationOrderIndex int64 `json:"evaluationOrderIndex"`
 	// Specifies the name of the Identity Mapper that should be used for associating user entries with Bearer token subject names. The claim name from which to obtain the subject (i.e. the currently logged-in user) may be configured using the subject-claim-name property.
 	IdentityMapper *string `json:"identityMapper,omitempty"`
 	// The name of the token claim that contains the subject, i.e. the logged-in user in an access token. This property goes hand-in-hand with the identity-mapper property and tells the Identity Mapper which field to use to look up the user entry on the server.
@@ -44,7 +44,7 @@ type MockAccessTokenValidatorResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMockAccessTokenValidatorResponse(id string, schemas []EnummockAccessTokenValidatorSchemaUrn, evaluationOrderIndex int32, enabled bool) *MockAccessTokenValidatorResponse {
+func NewMockAccessTokenValidatorResponse(id string, schemas []EnummockAccessTokenValidatorSchemaUrn, evaluationOrderIndex int64, enabled bool) *MockAccessTokenValidatorResponse {
 	this := MockAccessTokenValidatorResponse{}
 	this.Id = id
 	this.Schemas = schemas
@@ -174,9 +174,9 @@ func (o *MockAccessTokenValidatorResponse) SetScopeClaimName(v string) {
 }
 
 // GetEvaluationOrderIndex returns the EvaluationOrderIndex field value
-func (o *MockAccessTokenValidatorResponse) GetEvaluationOrderIndex() int32 {
+func (o *MockAccessTokenValidatorResponse) GetEvaluationOrderIndex() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -185,7 +185,7 @@ func (o *MockAccessTokenValidatorResponse) GetEvaluationOrderIndex() int32 {
 
 // GetEvaluationOrderIndexOk returns a tuple with the EvaluationOrderIndex field value
 // and a boolean to check if the value has been set.
-func (o *MockAccessTokenValidatorResponse) GetEvaluationOrderIndexOk() (*int32, bool) {
+func (o *MockAccessTokenValidatorResponse) GetEvaluationOrderIndexOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -193,7 +193,7 @@ func (o *MockAccessTokenValidatorResponse) GetEvaluationOrderIndexOk() (*int32, 
 }
 
 // SetEvaluationOrderIndex sets field value
-func (o *MockAccessTokenValidatorResponse) SetEvaluationOrderIndex(v int32) {
+func (o *MockAccessTokenValidatorResponse) SetEvaluationOrderIndex(v int64) {
 	o.EvaluationOrderIndex = v
 }
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **string** | Name of the External Server | 
 **Schemas** | [**[]EnumvaultExternalServerSchemaUrn**](EnumvaultExternalServerSchemaUrn.md) |  | 
 **ServerHostName** | **string** | The host name or IP address of the target LDAP server. | 
-**ServerPort** | **int32** | The port number on which the server listens for requests. | 
+**ServerPort** | **int64** | The port number on which the server listens for requests. | 
 **SmtpSecurity** | Pointer to [**EnumexternalServerSmtpSecurityProp**](EnumexternalServerSmtpSecurityProp.md) |  | [optional] 
 **UserName** | Pointer to **string** | The name of the login account to use when connecting to the database server. | [optional] 
 **Password** | Pointer to **string** | The login password for the specified user. | [optional] 
@@ -30,8 +30,8 @@ Name | Type | Description | Notes
 **MaxResponseSize** | **string** | Specifies the maximum response size that should be supported for messages received from the LDAP external server. | 
 **KeyManagerProvider** | Pointer to **string** | The key manager provider to use if SSL or StartTLS is to be used for connection-level security. When specifying a value for this property (except when using the Null key manager provider) you must ensure that the external server trusts this server&#39;s public certificate by adding this server&#39;s public certificate to the external server&#39;s trust store. | [optional] 
 **TrustManagerProvider** | **string** | The trust manager provider to use if SSL or StartTLS is to be used for connection-level security. | 
-**InitialConnections** | Pointer to **int32** | The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool. | [optional] 
-**MaxConnections** | Pointer to **int32** | The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool. | [optional] 
+**InitialConnections** | Pointer to **int64** | The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool. | [optional] 
+**MaxConnections** | Pointer to **int64** | The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool. | [optional] 
 **DefunctConnectionResultCode** | Pointer to [**[]EnumexternalServerDefunctConnectionResultCodeProp**](EnumexternalServerDefunctConnectionResultCodeProp.md) |  | [optional] 
 **AbandonOnTimeout** | Pointer to **bool** | Indicates whether to send an abandon request for an operation for which a response timeout is encountered. A request which has timed out on one server may be retried on another server regardless of whether an abandon request is sent, but if the initial attempt is not abandoned then a long-running operation may unnecessarily continue to consume processing resources on the initial server. | [optional] 
 **JdbcDriverType** | [**EnumexternalServerJdbcDriverTypeProp**](EnumexternalServerJdbcDriverTypeProp.md) |  | 
@@ -62,7 +62,7 @@ Name | Type | Description | Notes
 
 ### NewAddExternalServer200Response
 
-`func NewAddExternalServer200Response(id string, schemas []EnumvaultExternalServerSchemaUrn, serverHostName string, serverPort int32, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerAuthenticationMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string, trustManagerProvider string, jdbcDriverType EnumexternalServerJdbcDriverTypeProp, transportMechanism EnumexternalServerTransportMechanismProp, baseURL string, conjurServerBaseURI []string, conjurAuthenticationMethod string, conjurAccountName string, awsRegionName string, vaultServerBaseURI []string, vaultAuthenticationMethod string, ) *AddExternalServer200Response`
+`func NewAddExternalServer200Response(id string, schemas []EnumvaultExternalServerSchemaUrn, serverHostName string, serverPort int64, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerAuthenticationMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string, trustManagerProvider string, jdbcDriverType EnumexternalServerJdbcDriverTypeProp, transportMechanism EnumexternalServerTransportMechanismProp, baseURL string, conjurServerBaseURI []string, conjurAuthenticationMethod string, conjurAccountName string, awsRegionName string, vaultServerBaseURI []string, vaultAuthenticationMethod string, ) *AddExternalServer200Response`
 
 NewAddExternalServer200Response instantiates a new AddExternalServer200Response object
 This constructor will assign default values to properties that have it defined,
@@ -139,20 +139,20 @@ SetServerHostName sets ServerHostName field to given value.
 
 ### GetServerPort
 
-`func (o *AddExternalServer200Response) GetServerPort() int32`
+`func (o *AddExternalServer200Response) GetServerPort() int64`
 
 GetServerPort returns the ServerPort field if non-nil, zero value otherwise.
 
 ### GetServerPortOk
 
-`func (o *AddExternalServer200Response) GetServerPortOk() (*int32, bool)`
+`func (o *AddExternalServer200Response) GetServerPortOk() (*int64, bool)`
 
 GetServerPortOk returns a tuple with the ServerPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerPort
 
-`func (o *AddExternalServer200Response) SetServerPort(v int32)`
+`func (o *AddExternalServer200Response) SetServerPort(v int64)`
 
 SetServerPort sets ServerPort field to given value.
 
@@ -674,20 +674,20 @@ SetTrustManagerProvider sets TrustManagerProvider field to given value.
 
 ### GetInitialConnections
 
-`func (o *AddExternalServer200Response) GetInitialConnections() int32`
+`func (o *AddExternalServer200Response) GetInitialConnections() int64`
 
 GetInitialConnections returns the InitialConnections field if non-nil, zero value otherwise.
 
 ### GetInitialConnectionsOk
 
-`func (o *AddExternalServer200Response) GetInitialConnectionsOk() (*int32, bool)`
+`func (o *AddExternalServer200Response) GetInitialConnectionsOk() (*int64, bool)`
 
 GetInitialConnectionsOk returns a tuple with the InitialConnections field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInitialConnections
 
-`func (o *AddExternalServer200Response) SetInitialConnections(v int32)`
+`func (o *AddExternalServer200Response) SetInitialConnections(v int64)`
 
 SetInitialConnections sets InitialConnections field to given value.
 
@@ -699,20 +699,20 @@ HasInitialConnections returns a boolean if a field has been set.
 
 ### GetMaxConnections
 
-`func (o *AddExternalServer200Response) GetMaxConnections() int32`
+`func (o *AddExternalServer200Response) GetMaxConnections() int64`
 
 GetMaxConnections returns the MaxConnections field if non-nil, zero value otherwise.
 
 ### GetMaxConnectionsOk
 
-`func (o *AddExternalServer200Response) GetMaxConnectionsOk() (*int32, bool)`
+`func (o *AddExternalServer200Response) GetMaxConnectionsOk() (*int64, bool)`
 
 GetMaxConnectionsOk returns a tuple with the MaxConnections field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxConnections
 
-`func (o *AddExternalServer200Response) SetMaxConnections(v int32)`
+`func (o *AddExternalServer200Response) SetMaxConnections(v int64)`
 
 SetMaxConnections sets MaxConnections field to given value.
 

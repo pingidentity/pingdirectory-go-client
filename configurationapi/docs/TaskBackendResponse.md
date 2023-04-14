@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **BaseDN** | **[]string** | Specifies the base DN(s) for the data that the backend handles. | 
 **WritabilityMode** | [**EnumbackendWritabilityModeProp**](EnumbackendWritabilityModeProp.md) |  | 
 **TaskBackingFile** | **string** | Specifies the path to the backing file for storing information about the tasks configured in the server. | 
-**MaximumInitialTaskLogMessagesToRetain** | Pointer to **int32** | The maximum number of log messages to retain in each task entry from the beginning of the processing for that task. If too many messages are logged during task processing, then retaining only a limited number of messages from the beginning and/or end of task processing can reduce the amount of memory that the server consumes by caching information about currently-active and recently-completed tasks. | [optional] 
-**MaximumFinalTaskLogMessagesToRetain** | Pointer to **int32** | The maximum number of log messages to retain in each task entry from the end of the processing for that task. If too many messages are logged during task processing, then retaining only a limited number of messages from the beginning and/or end of task processing can reduce the amount of memory that the server consumes by caching information about currently-active and recently-completed tasks. | [optional] 
+**MaximumInitialTaskLogMessagesToRetain** | Pointer to **int64** | The maximum number of log messages to retain in each task entry from the beginning of the processing for that task. If too many messages are logged during task processing, then retaining only a limited number of messages from the beginning and/or end of task processing can reduce the amount of memory that the server consumes by caching information about currently-active and recently-completed tasks. | [optional] 
+**MaximumFinalTaskLogMessagesToRetain** | Pointer to **int64** | The maximum number of log messages to retain in each task entry from the end of the processing for that task. If too many messages are logged during task processing, then retaining only a limited number of messages from the beginning and/or end of task processing can reduce the amount of memory that the server consumes by caching information about currently-active and recently-completed tasks. | [optional] 
 **TaskRetentionTime** | Pointer to **string** | Specifies the length of time that task entries should be retained after processing on the associated task has been completed. | [optional] 
 **NotificationSenderAddress** | Pointer to **string** | Specifies the email address to use as the sender address (that is, the \&quot;From:\&quot; address) for notification mail messages generated when a task completes execution. | [optional] 
 **Description** | Pointer to **string** | A description for this Backend | [optional] 
@@ -164,20 +164,20 @@ SetTaskBackingFile sets TaskBackingFile field to given value.
 
 ### GetMaximumInitialTaskLogMessagesToRetain
 
-`func (o *TaskBackendResponse) GetMaximumInitialTaskLogMessagesToRetain() int32`
+`func (o *TaskBackendResponse) GetMaximumInitialTaskLogMessagesToRetain() int64`
 
 GetMaximumInitialTaskLogMessagesToRetain returns the MaximumInitialTaskLogMessagesToRetain field if non-nil, zero value otherwise.
 
 ### GetMaximumInitialTaskLogMessagesToRetainOk
 
-`func (o *TaskBackendResponse) GetMaximumInitialTaskLogMessagesToRetainOk() (*int32, bool)`
+`func (o *TaskBackendResponse) GetMaximumInitialTaskLogMessagesToRetainOk() (*int64, bool)`
 
 GetMaximumInitialTaskLogMessagesToRetainOk returns a tuple with the MaximumInitialTaskLogMessagesToRetain field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaximumInitialTaskLogMessagesToRetain
 
-`func (o *TaskBackendResponse) SetMaximumInitialTaskLogMessagesToRetain(v int32)`
+`func (o *TaskBackendResponse) SetMaximumInitialTaskLogMessagesToRetain(v int64)`
 
 SetMaximumInitialTaskLogMessagesToRetain sets MaximumInitialTaskLogMessagesToRetain field to given value.
 
@@ -189,20 +189,20 @@ HasMaximumInitialTaskLogMessagesToRetain returns a boolean if a field has been s
 
 ### GetMaximumFinalTaskLogMessagesToRetain
 
-`func (o *TaskBackendResponse) GetMaximumFinalTaskLogMessagesToRetain() int32`
+`func (o *TaskBackendResponse) GetMaximumFinalTaskLogMessagesToRetain() int64`
 
 GetMaximumFinalTaskLogMessagesToRetain returns the MaximumFinalTaskLogMessagesToRetain field if non-nil, zero value otherwise.
 
 ### GetMaximumFinalTaskLogMessagesToRetainOk
 
-`func (o *TaskBackendResponse) GetMaximumFinalTaskLogMessagesToRetainOk() (*int32, bool)`
+`func (o *TaskBackendResponse) GetMaximumFinalTaskLogMessagesToRetainOk() (*int64, bool)`
 
 GetMaximumFinalTaskLogMessagesToRetainOk returns a tuple with the MaximumFinalTaskLogMessagesToRetain field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaximumFinalTaskLogMessagesToRetain
 
-`func (o *TaskBackendResponse) SetMaximumFinalTaskLogMessagesToRetain(v int32)`
+`func (o *TaskBackendResponse) SetMaximumFinalTaskLogMessagesToRetain(v int64)`
 
 SetMaximumFinalTaskLogMessagesToRetain sets MaximumFinalTaskLogMessagesToRetain field to given value.
 

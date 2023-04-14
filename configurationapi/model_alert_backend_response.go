@@ -31,7 +31,7 @@ type AlertBackendResponse struct {
 	// Specifies the maximum length of time that information about generated alerts should be maintained before they will be purged.
 	AlertRetentionTime string `json:"alertRetentionTime"`
 	// Specifies the maximum number of alerts that should be retained. If more alerts than this configured maximum are generated within the alert retention time, then the oldest alerts will be purged to achieve this maximum.
-	MaxAlerts         *int32                             `json:"maxAlerts,omitempty"`
+	MaxAlerts         *int64                             `json:"maxAlerts,omitempty"`
 	DisabledAlertType []EnumbackendDisabledAlertTypeProp `json:"disabledAlertType,omitempty"`
 	WritabilityMode   EnumbackendWritabilityModeProp     `json:"writabilityMode"`
 	// A description for this Backend
@@ -220,9 +220,9 @@ func (o *AlertBackendResponse) SetAlertRetentionTime(v string) {
 }
 
 // GetMaxAlerts returns the MaxAlerts field value if set, zero value otherwise.
-func (o *AlertBackendResponse) GetMaxAlerts() int32 {
+func (o *AlertBackendResponse) GetMaxAlerts() int64 {
 	if o == nil || IsNil(o.MaxAlerts) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxAlerts
@@ -230,7 +230,7 @@ func (o *AlertBackendResponse) GetMaxAlerts() int32 {
 
 // GetMaxAlertsOk returns a tuple with the MaxAlerts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlertBackendResponse) GetMaxAlertsOk() (*int32, bool) {
+func (o *AlertBackendResponse) GetMaxAlertsOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxAlerts) {
 		return nil, false
 	}
@@ -246,8 +246,8 @@ func (o *AlertBackendResponse) HasMaxAlerts() bool {
 	return false
 }
 
-// SetMaxAlerts gets a reference to the given int32 and assigns it to the MaxAlerts field.
-func (o *AlertBackendResponse) SetMaxAlerts(v int32) {
+// SetMaxAlerts gets a reference to the given int64 and assigns it to the MaxAlerts field.
+func (o *AlertBackendResponse) SetMaxAlerts(v int64) {
 	o.MaxAlerts = &v
 }
 
