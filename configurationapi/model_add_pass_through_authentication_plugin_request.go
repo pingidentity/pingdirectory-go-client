@@ -49,9 +49,9 @@ type AddPassThroughAuthenticationPluginRequest struct {
 	// A pattern to use to construct a filter to use when searching an external server for the entry of the user as whom to bind. For example, \"(mail={uid:ldapFilterEscape}@example.com)\" would construct a search filter to search for a user whose entry in the local server contains a uid attribute whose value appears before \"@example.com\" in the mail attribute in the external server. Note that the \"ldapFilterEscape\" modifier should almost always be used with attributes specified in the pattern.
 	SearchFilterPattern *string `json:"searchFilterPattern,omitempty"`
 	// Specifies the initial number of connections to establish to each external server against which authentication may be attempted.
-	InitialConnections *int32 `json:"initialConnections,omitempty"`
+	InitialConnections *int64 `json:"initialConnections,omitempty"`
 	// Specifies the maximum number of connections to maintain to each external server against which authentication may be attempted. This value must be greater than or equal to the value for the initial-connections property.
-	MaxConnections *int32 `json:"maxConnections,omitempty"`
+	MaxConnections *int64 `json:"maxConnections,omitempty"`
 	// A description for this Plugin
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the plug-in is enabled for use.
@@ -570,9 +570,9 @@ func (o *AddPassThroughAuthenticationPluginRequest) SetSearchFilterPattern(v str
 }
 
 // GetInitialConnections returns the InitialConnections field value if set, zero value otherwise.
-func (o *AddPassThroughAuthenticationPluginRequest) GetInitialConnections() int32 {
+func (o *AddPassThroughAuthenticationPluginRequest) GetInitialConnections() int64 {
 	if o == nil || IsNil(o.InitialConnections) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.InitialConnections
@@ -580,7 +580,7 @@ func (o *AddPassThroughAuthenticationPluginRequest) GetInitialConnections() int3
 
 // GetInitialConnectionsOk returns a tuple with the InitialConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddPassThroughAuthenticationPluginRequest) GetInitialConnectionsOk() (*int32, bool) {
+func (o *AddPassThroughAuthenticationPluginRequest) GetInitialConnectionsOk() (*int64, bool) {
 	if o == nil || IsNil(o.InitialConnections) {
 		return nil, false
 	}
@@ -596,15 +596,15 @@ func (o *AddPassThroughAuthenticationPluginRequest) HasInitialConnections() bool
 	return false
 }
 
-// SetInitialConnections gets a reference to the given int32 and assigns it to the InitialConnections field.
-func (o *AddPassThroughAuthenticationPluginRequest) SetInitialConnections(v int32) {
+// SetInitialConnections gets a reference to the given int64 and assigns it to the InitialConnections field.
+func (o *AddPassThroughAuthenticationPluginRequest) SetInitialConnections(v int64) {
 	o.InitialConnections = &v
 }
 
 // GetMaxConnections returns the MaxConnections field value if set, zero value otherwise.
-func (o *AddPassThroughAuthenticationPluginRequest) GetMaxConnections() int32 {
+func (o *AddPassThroughAuthenticationPluginRequest) GetMaxConnections() int64 {
 	if o == nil || IsNil(o.MaxConnections) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxConnections
@@ -612,7 +612,7 @@ func (o *AddPassThroughAuthenticationPluginRequest) GetMaxConnections() int32 {
 
 // GetMaxConnectionsOk returns a tuple with the MaxConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddPassThroughAuthenticationPluginRequest) GetMaxConnectionsOk() (*int32, bool) {
+func (o *AddPassThroughAuthenticationPluginRequest) GetMaxConnectionsOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxConnections) {
 		return nil, false
 	}
@@ -628,8 +628,8 @@ func (o *AddPassThroughAuthenticationPluginRequest) HasMaxConnections() bool {
 	return false
 }
 
-// SetMaxConnections gets a reference to the given int32 and assigns it to the MaxConnections field.
-func (o *AddPassThroughAuthenticationPluginRequest) SetMaxConnections(v int32) {
+// SetMaxConnections gets a reference to the given int64 and assigns it to the MaxConnections field.
+func (o *AddPassThroughAuthenticationPluginRequest) SetMaxConnections(v int64) {
 	o.MaxConnections = &v
 }
 

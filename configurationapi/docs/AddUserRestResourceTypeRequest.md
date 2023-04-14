@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **TypeName** | **string** | Name of the new REST Resource Type | 
 **Schemas** | [**[]EnumuserRestResourceTypeSchemaUrn**](EnumuserRestResourceTypeSchemaUrn.md) |  | 
 **PasswordAttributeCategory** | Pointer to **string** | Specifies which attribute category the password belongs to. | [optional] 
-**PasswordDisplayOrderIndex** | Pointer to **int32** | This property determines the display order for the password within its attribute category. Attributes are ordered within their category based on this index from least to greatest. | [optional] 
+**PasswordDisplayOrderIndex** | Pointer to **int64** | This property determines the display order for the password within its attribute category. Attributes are ordered within their category based on this index from least to greatest. | [optional] 
 **Description** | Pointer to **string** | A description for this REST Resource Type | [optional] 
 **Enabled** | **bool** | Indicates whether the REST Resource Type is enabled. | 
 **ResourceEndpoint** | **string** | The HTTP addressable endpoint of this REST Resource Type relative to a REST API base URL. Do not include a leading &#39;/&#39;. | 
@@ -24,8 +24,8 @@ Name | Type | Description | Notes
 **DisplayName** | Pointer to **string** | A human readable display name for this REST Resource Type. | [optional] 
 **SearchFilterPattern** | Pointer to **string** | Specifies the LDAP filter that should be used when searching for resources matching provided search text. All attribute types in the filter pattern referencing the search text must have a Delegated Admin Attribute definition. | [optional] 
 **PrimaryDisplayAttributeType** | Pointer to **string** | Specifies the name or OID of the LDAP attribute type which is the primary display attribute. This attribute type must be in the search filter pattern and must have a Delegated Admin Attribute definition. | [optional] 
-**DelegatedAdminSearchSizeLimit** | Pointer to **int32** | The maximum number of resources that may be returned from a search request. | [optional] 
-**DelegatedAdminReportSizeLimit** | Pointer to **int32** | The maximum number of resources that may be included in a report. | [optional] 
+**DelegatedAdminSearchSizeLimit** | Pointer to **int64** | The maximum number of resources that may be returned from a search request. | [optional] 
+**DelegatedAdminReportSizeLimit** | Pointer to **int64** | The maximum number of resources that may be included in a report. | [optional] 
 **MembersColumnName** | Pointer to **string** | Specifies the name of the group member column that will be displayed in the Delegated Admin UI | [optional] 
 **NonmembersColumnName** | Pointer to **string** | Specifies the name of the group nonmember column that will be displayed in the Delegated Admin UI | [optional] 
 
@@ -115,20 +115,20 @@ HasPasswordAttributeCategory returns a boolean if a field has been set.
 
 ### GetPasswordDisplayOrderIndex
 
-`func (o *AddUserRestResourceTypeRequest) GetPasswordDisplayOrderIndex() int32`
+`func (o *AddUserRestResourceTypeRequest) GetPasswordDisplayOrderIndex() int64`
 
 GetPasswordDisplayOrderIndex returns the PasswordDisplayOrderIndex field if non-nil, zero value otherwise.
 
 ### GetPasswordDisplayOrderIndexOk
 
-`func (o *AddUserRestResourceTypeRequest) GetPasswordDisplayOrderIndexOk() (*int32, bool)`
+`func (o *AddUserRestResourceTypeRequest) GetPasswordDisplayOrderIndexOk() (*int64, bool)`
 
 GetPasswordDisplayOrderIndexOk returns a tuple with the PasswordDisplayOrderIndex field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPasswordDisplayOrderIndex
 
-`func (o *AddUserRestResourceTypeRequest) SetPasswordDisplayOrderIndex(v int32)`
+`func (o *AddUserRestResourceTypeRequest) SetPasswordDisplayOrderIndex(v int64)`
 
 SetPasswordDisplayOrderIndex sets PasswordDisplayOrderIndex field to given value.
 
@@ -520,20 +520,20 @@ HasPrimaryDisplayAttributeType returns a boolean if a field has been set.
 
 ### GetDelegatedAdminSearchSizeLimit
 
-`func (o *AddUserRestResourceTypeRequest) GetDelegatedAdminSearchSizeLimit() int32`
+`func (o *AddUserRestResourceTypeRequest) GetDelegatedAdminSearchSizeLimit() int64`
 
 GetDelegatedAdminSearchSizeLimit returns the DelegatedAdminSearchSizeLimit field if non-nil, zero value otherwise.
 
 ### GetDelegatedAdminSearchSizeLimitOk
 
-`func (o *AddUserRestResourceTypeRequest) GetDelegatedAdminSearchSizeLimitOk() (*int32, bool)`
+`func (o *AddUserRestResourceTypeRequest) GetDelegatedAdminSearchSizeLimitOk() (*int64, bool)`
 
 GetDelegatedAdminSearchSizeLimitOk returns a tuple with the DelegatedAdminSearchSizeLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDelegatedAdminSearchSizeLimit
 
-`func (o *AddUserRestResourceTypeRequest) SetDelegatedAdminSearchSizeLimit(v int32)`
+`func (o *AddUserRestResourceTypeRequest) SetDelegatedAdminSearchSizeLimit(v int64)`
 
 SetDelegatedAdminSearchSizeLimit sets DelegatedAdminSearchSizeLimit field to given value.
 
@@ -545,20 +545,20 @@ HasDelegatedAdminSearchSizeLimit returns a boolean if a field has been set.
 
 ### GetDelegatedAdminReportSizeLimit
 
-`func (o *AddUserRestResourceTypeRequest) GetDelegatedAdminReportSizeLimit() int32`
+`func (o *AddUserRestResourceTypeRequest) GetDelegatedAdminReportSizeLimit() int64`
 
 GetDelegatedAdminReportSizeLimit returns the DelegatedAdminReportSizeLimit field if non-nil, zero value otherwise.
 
 ### GetDelegatedAdminReportSizeLimitOk
 
-`func (o *AddUserRestResourceTypeRequest) GetDelegatedAdminReportSizeLimitOk() (*int32, bool)`
+`func (o *AddUserRestResourceTypeRequest) GetDelegatedAdminReportSizeLimitOk() (*int64, bool)`
 
 GetDelegatedAdminReportSizeLimitOk returns a tuple with the DelegatedAdminReportSizeLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDelegatedAdminReportSizeLimit
 
-`func (o *AddUserRestResourceTypeRequest) SetDelegatedAdminReportSizeLimit(v int32)`
+`func (o *AddUserRestResourceTypeRequest) SetDelegatedAdminReportSizeLimit(v int64)`
 
 SetDelegatedAdminReportSizeLimit sets DelegatedAdminReportSizeLimit field to given value.
 

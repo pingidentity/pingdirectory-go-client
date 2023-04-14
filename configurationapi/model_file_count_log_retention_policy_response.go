@@ -23,7 +23,7 @@ type FileCountLogRetentionPolicyResponse struct {
 	Id      string                                     `json:"id"`
 	Schemas []EnumfileCountLogRetentionPolicySchemaUrn `json:"schemas"`
 	// Specifies the number of archived log files to retain before the oldest ones are cleaned.
-	NumberOfFiles int32 `json:"numberOfFiles"`
+	NumberOfFiles int64 `json:"numberOfFiles"`
 	// A description for this Log Retention Policy
 	Description                                   *string                                            `json:"description,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -34,7 +34,7 @@ type FileCountLogRetentionPolicyResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFileCountLogRetentionPolicyResponse(id string, schemas []EnumfileCountLogRetentionPolicySchemaUrn, numberOfFiles int32) *FileCountLogRetentionPolicyResponse {
+func NewFileCountLogRetentionPolicyResponse(id string, schemas []EnumfileCountLogRetentionPolicySchemaUrn, numberOfFiles int64) *FileCountLogRetentionPolicyResponse {
 	this := FileCountLogRetentionPolicyResponse{}
 	this.Id = id
 	this.Schemas = schemas
@@ -99,9 +99,9 @@ func (o *FileCountLogRetentionPolicyResponse) SetSchemas(v []EnumfileCountLogRet
 }
 
 // GetNumberOfFiles returns the NumberOfFiles field value
-func (o *FileCountLogRetentionPolicyResponse) GetNumberOfFiles() int32 {
+func (o *FileCountLogRetentionPolicyResponse) GetNumberOfFiles() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -110,7 +110,7 @@ func (o *FileCountLogRetentionPolicyResponse) GetNumberOfFiles() int32 {
 
 // GetNumberOfFilesOk returns a tuple with the NumberOfFiles field value
 // and a boolean to check if the value has been set.
-func (o *FileCountLogRetentionPolicyResponse) GetNumberOfFilesOk() (*int32, bool) {
+func (o *FileCountLogRetentionPolicyResponse) GetNumberOfFilesOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -118,7 +118,7 @@ func (o *FileCountLogRetentionPolicyResponse) GetNumberOfFilesOk() (*int32, bool
 }
 
 // SetNumberOfFiles sets field value
-func (o *FileCountLogRetentionPolicyResponse) SetNumberOfFiles(v int32) {
+func (o *FileCountLogRetentionPolicyResponse) SetNumberOfFiles(v int64) {
 	o.NumberOfFiles = v
 }
 

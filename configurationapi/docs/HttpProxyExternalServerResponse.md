@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **string** | Name of the External Server | 
 **Schemas** | [**[]EnumhttpProxyExternalServerSchemaUrn**](EnumhttpProxyExternalServerSchemaUrn.md) |  | 
 **ServerHostName** | **string** | The host name or IP address of the HTTP Proxy External Server. | 
-**ServerPort** | **int32** | The port on which the HTTP Proxy External Server is listening for connections. | 
+**ServerPort** | **int64** | The port on which the HTTP Proxy External Server is listening for connections. | 
 **BasicAuthenticationUsername** | Pointer to **string** | The username to use to authenticate to the HTTP Proxy External Server. | [optional] 
 **BasicAuthenticationPassphraseProvider** | Pointer to **string** | A passphrase provider that provides access to the password to use to authenticate to the HTTP Proxy External Server. | [optional] 
 **Description** | Pointer to **string** | A description for this External Server | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewHttpProxyExternalServerResponse
 
-`func NewHttpProxyExternalServerResponse(id string, schemas []EnumhttpProxyExternalServerSchemaUrn, serverHostName string, serverPort int32, ) *HttpProxyExternalServerResponse`
+`func NewHttpProxyExternalServerResponse(id string, schemas []EnumhttpProxyExternalServerSchemaUrn, serverHostName string, serverPort int64, ) *HttpProxyExternalServerResponse`
 
 NewHttpProxyExternalServerResponse instantiates a new HttpProxyExternalServerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -95,20 +95,20 @@ SetServerHostName sets ServerHostName field to given value.
 
 ### GetServerPort
 
-`func (o *HttpProxyExternalServerResponse) GetServerPort() int32`
+`func (o *HttpProxyExternalServerResponse) GetServerPort() int64`
 
 GetServerPort returns the ServerPort field if non-nil, zero value otherwise.
 
 ### GetServerPortOk
 
-`func (o *HttpProxyExternalServerResponse) GetServerPortOk() (*int32, bool)`
+`func (o *HttpProxyExternalServerResponse) GetServerPortOk() (*int64, bool)`
 
 GetServerPortOk returns a tuple with the ServerPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerPort
 
-`func (o *HttpProxyExternalServerResponse) SetServerPort(v int32)`
+`func (o *HttpProxyExternalServerResponse) SetServerPort(v int64)`
 
 SetServerPort sets ServerPort field to given value.
 

@@ -49,10 +49,10 @@ type AddSimpleResultCriteriaRequest struct {
 	RetiredPasswordUsedForBind  *EnumresultCriteriaRetiredPasswordUsedForBindProp  `json:"retiredPasswordUsedForBind,omitempty"`
 	SearchEntryReturnedCriteria *EnumresultCriteriaSearchEntryReturnedCriteriaProp `json:"searchEntryReturnedCriteria,omitempty"`
 	// Specifies the target number of entries returned for use when determining whether a search operation should be included in this Simple Result Criteria. This will be ignored for all operations other than search, and it will be ignored for search operations if the \"search-entry-criteria\" property has a value of \"any\".
-	SearchEntryReturnedCount        *int32                                                 `json:"searchEntryReturnedCount,omitempty"`
+	SearchEntryReturnedCount        *int64                                                 `json:"searchEntryReturnedCount,omitempty"`
 	SearchReferenceReturnedCriteria *EnumresultCriteriaSearchReferenceReturnedCriteriaProp `json:"searchReferenceReturnedCriteria,omitempty"`
 	// Specifies the target number of references returned for use when determining whether a search operation should be included in this Simple Result Criteria. This will be ignored for all operations other than search, and it will be ignored for search operations if the \"search-reference-criteria\" property has a value of \"any\".
-	SearchReferenceReturnedCount *int32                                       `json:"searchReferenceReturnedCount,omitempty"`
+	SearchReferenceReturnedCount *int64                                       `json:"searchReferenceReturnedCount,omitempty"`
 	SearchIndexedCriteria        *EnumresultCriteriaSearchIndexedCriteriaProp `json:"searchIndexedCriteria,omitempty"`
 	// Specifies a base DN below which authorization user entries may exist for operations included in this Simple Result Criteria. The authorization user could be the currently authenticated user on the connection (the user that performed the Bind operation), or different if proxied authorization was used to request that the operation be performed under the authorization of another user (as is the case for operations that come through a Directory Proxy Server). This property will be ignored for operations where no authentication or authorization has been performed.
 	IncludedAuthzUserBaseDN []string `json:"includedAuthzUserBaseDN,omitempty"`
@@ -746,9 +746,9 @@ func (o *AddSimpleResultCriteriaRequest) SetSearchEntryReturnedCriteria(v Enumre
 }
 
 // GetSearchEntryReturnedCount returns the SearchEntryReturnedCount field value if set, zero value otherwise.
-func (o *AddSimpleResultCriteriaRequest) GetSearchEntryReturnedCount() int32 {
+func (o *AddSimpleResultCriteriaRequest) GetSearchEntryReturnedCount() int64 {
 	if o == nil || IsNil(o.SearchEntryReturnedCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SearchEntryReturnedCount
@@ -756,7 +756,7 @@ func (o *AddSimpleResultCriteriaRequest) GetSearchEntryReturnedCount() int32 {
 
 // GetSearchEntryReturnedCountOk returns a tuple with the SearchEntryReturnedCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddSimpleResultCriteriaRequest) GetSearchEntryReturnedCountOk() (*int32, bool) {
+func (o *AddSimpleResultCriteriaRequest) GetSearchEntryReturnedCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.SearchEntryReturnedCount) {
 		return nil, false
 	}
@@ -772,8 +772,8 @@ func (o *AddSimpleResultCriteriaRequest) HasSearchEntryReturnedCount() bool {
 	return false
 }
 
-// SetSearchEntryReturnedCount gets a reference to the given int32 and assigns it to the SearchEntryReturnedCount field.
-func (o *AddSimpleResultCriteriaRequest) SetSearchEntryReturnedCount(v int32) {
+// SetSearchEntryReturnedCount gets a reference to the given int64 and assigns it to the SearchEntryReturnedCount field.
+func (o *AddSimpleResultCriteriaRequest) SetSearchEntryReturnedCount(v int64) {
 	o.SearchEntryReturnedCount = &v
 }
 
@@ -810,9 +810,9 @@ func (o *AddSimpleResultCriteriaRequest) SetSearchReferenceReturnedCriteria(v En
 }
 
 // GetSearchReferenceReturnedCount returns the SearchReferenceReturnedCount field value if set, zero value otherwise.
-func (o *AddSimpleResultCriteriaRequest) GetSearchReferenceReturnedCount() int32 {
+func (o *AddSimpleResultCriteriaRequest) GetSearchReferenceReturnedCount() int64 {
 	if o == nil || IsNil(o.SearchReferenceReturnedCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SearchReferenceReturnedCount
@@ -820,7 +820,7 @@ func (o *AddSimpleResultCriteriaRequest) GetSearchReferenceReturnedCount() int32
 
 // GetSearchReferenceReturnedCountOk returns a tuple with the SearchReferenceReturnedCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddSimpleResultCriteriaRequest) GetSearchReferenceReturnedCountOk() (*int32, bool) {
+func (o *AddSimpleResultCriteriaRequest) GetSearchReferenceReturnedCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.SearchReferenceReturnedCount) {
 		return nil, false
 	}
@@ -836,8 +836,8 @@ func (o *AddSimpleResultCriteriaRequest) HasSearchReferenceReturnedCount() bool 
 	return false
 }
 
-// SetSearchReferenceReturnedCount gets a reference to the given int32 and assigns it to the SearchReferenceReturnedCount field.
-func (o *AddSimpleResultCriteriaRequest) SetSearchReferenceReturnedCount(v int32) {
+// SetSearchReferenceReturnedCount gets a reference to the given int64 and assigns it to the SearchReferenceReturnedCount field.
+func (o *AddSimpleResultCriteriaRequest) SetSearchReferenceReturnedCount(v int64) {
 	o.SearchReferenceReturnedCount = &v
 }
 

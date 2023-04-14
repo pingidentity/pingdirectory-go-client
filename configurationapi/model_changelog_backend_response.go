@@ -29,15 +29,15 @@ type ChangelogBackendResponse struct {
 	// Specifies the permissions that should be applied to the directory containing the backend database files and to directories and files created during backup of the backend.
 	DbDirectoryPermissions *string `json:"dbDirectoryPermissions,omitempty"`
 	// Specifies the percentage of JVM memory to allocate to the changelog database cache.
-	DbCachePercent *int32 `json:"dbCachePercent,omitempty"`
+	DbCachePercent *int64 `json:"dbCachePercent,omitempty"`
 	// Specifies the database and environment properties for the Berkeley DB Java Edition database for this changelog backend.
 	JeProperty []string `json:"jeProperty,omitempty"`
 	// Specifies the number of changelog entries written in a single database transaction.
-	ChangelogWriteBatchSize *int32 `json:"changelogWriteBatchSize,omitempty"`
+	ChangelogWriteBatchSize *int64 `json:"changelogWriteBatchSize,omitempty"`
 	// Specifies the number of changelog entries purged in a single database transaction.
-	ChangelogPurgeBatchSize *int32 `json:"changelogPurgeBatchSize,omitempty"`
+	ChangelogPurgeBatchSize *int64 `json:"changelogPurgeBatchSize,omitempty"`
 	// Specifies the capacity of the changelog write queue in number of changes.
-	ChangelogWriteQueueCapacity *int32 `json:"changelogWriteQueueCapacity,omitempty"`
+	ChangelogWriteQueueCapacity *int64 `json:"changelogWriteQueueCapacity,omitempty"`
 	// Specifies which attribute types are to be specifically included in the set of attribute indexes maintained on the changelog. If this property does not have any values then no attribute types are indexed.
 	IndexIncludeAttribute []string `json:"indexIncludeAttribute,omitempty"`
 	// Specifies which attribute types are to be specifically excluded from the set of attribute indexes maintained on the changelog. This property is useful when the index-include-attribute property contains one of the special values \"*\" and \"+\".
@@ -65,7 +65,7 @@ type ChangelogBackendResponse struct {
 	// Specifies which attribute types will be included in a changelog entry on every change.
 	ChangelogIncludeKeyAttribute []string `json:"changelogIncludeKeyAttribute,omitempty"`
 	// This controls whether all attribute values for a modified attribute (even those values that have not changed) will be included in the changelog entry. If the number of attribute values does not exceed this limit, then all values for the modified attribute will be included in the changelog entry.
-	ChangelogMaxBeforeAfterValues *int32 `json:"changelogMaxBeforeAfterValues,omitempty"`
+	ChangelogMaxBeforeAfterValues *int64 `json:"changelogMaxBeforeAfterValues,omitempty"`
 	// Specifies whether values of creatorsName, createTimestamp, modifiersName and modifyTimestamp attributes will be written to changelog entries.
 	WriteLastmodAttributes *bool `json:"writeLastmodAttributes,omitempty"`
 	// Specifies whether the changelog should provide enough information to be able to revert the changes if desired.
@@ -251,9 +251,9 @@ func (o *ChangelogBackendResponse) SetDbDirectoryPermissions(v string) {
 }
 
 // GetDbCachePercent returns the DbCachePercent field value if set, zero value otherwise.
-func (o *ChangelogBackendResponse) GetDbCachePercent() int32 {
+func (o *ChangelogBackendResponse) GetDbCachePercent() int64 {
 	if o == nil || IsNil(o.DbCachePercent) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DbCachePercent
@@ -261,7 +261,7 @@ func (o *ChangelogBackendResponse) GetDbCachePercent() int32 {
 
 // GetDbCachePercentOk returns a tuple with the DbCachePercent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ChangelogBackendResponse) GetDbCachePercentOk() (*int32, bool) {
+func (o *ChangelogBackendResponse) GetDbCachePercentOk() (*int64, bool) {
 	if o == nil || IsNil(o.DbCachePercent) {
 		return nil, false
 	}
@@ -277,8 +277,8 @@ func (o *ChangelogBackendResponse) HasDbCachePercent() bool {
 	return false
 }
 
-// SetDbCachePercent gets a reference to the given int32 and assigns it to the DbCachePercent field.
-func (o *ChangelogBackendResponse) SetDbCachePercent(v int32) {
+// SetDbCachePercent gets a reference to the given int64 and assigns it to the DbCachePercent field.
+func (o *ChangelogBackendResponse) SetDbCachePercent(v int64) {
 	o.DbCachePercent = &v
 }
 
@@ -315,9 +315,9 @@ func (o *ChangelogBackendResponse) SetJeProperty(v []string) {
 }
 
 // GetChangelogWriteBatchSize returns the ChangelogWriteBatchSize field value if set, zero value otherwise.
-func (o *ChangelogBackendResponse) GetChangelogWriteBatchSize() int32 {
+func (o *ChangelogBackendResponse) GetChangelogWriteBatchSize() int64 {
 	if o == nil || IsNil(o.ChangelogWriteBatchSize) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ChangelogWriteBatchSize
@@ -325,7 +325,7 @@ func (o *ChangelogBackendResponse) GetChangelogWriteBatchSize() int32 {
 
 // GetChangelogWriteBatchSizeOk returns a tuple with the ChangelogWriteBatchSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ChangelogBackendResponse) GetChangelogWriteBatchSizeOk() (*int32, bool) {
+func (o *ChangelogBackendResponse) GetChangelogWriteBatchSizeOk() (*int64, bool) {
 	if o == nil || IsNil(o.ChangelogWriteBatchSize) {
 		return nil, false
 	}
@@ -341,15 +341,15 @@ func (o *ChangelogBackendResponse) HasChangelogWriteBatchSize() bool {
 	return false
 }
 
-// SetChangelogWriteBatchSize gets a reference to the given int32 and assigns it to the ChangelogWriteBatchSize field.
-func (o *ChangelogBackendResponse) SetChangelogWriteBatchSize(v int32) {
+// SetChangelogWriteBatchSize gets a reference to the given int64 and assigns it to the ChangelogWriteBatchSize field.
+func (o *ChangelogBackendResponse) SetChangelogWriteBatchSize(v int64) {
 	o.ChangelogWriteBatchSize = &v
 }
 
 // GetChangelogPurgeBatchSize returns the ChangelogPurgeBatchSize field value if set, zero value otherwise.
-func (o *ChangelogBackendResponse) GetChangelogPurgeBatchSize() int32 {
+func (o *ChangelogBackendResponse) GetChangelogPurgeBatchSize() int64 {
 	if o == nil || IsNil(o.ChangelogPurgeBatchSize) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ChangelogPurgeBatchSize
@@ -357,7 +357,7 @@ func (o *ChangelogBackendResponse) GetChangelogPurgeBatchSize() int32 {
 
 // GetChangelogPurgeBatchSizeOk returns a tuple with the ChangelogPurgeBatchSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ChangelogBackendResponse) GetChangelogPurgeBatchSizeOk() (*int32, bool) {
+func (o *ChangelogBackendResponse) GetChangelogPurgeBatchSizeOk() (*int64, bool) {
 	if o == nil || IsNil(o.ChangelogPurgeBatchSize) {
 		return nil, false
 	}
@@ -373,15 +373,15 @@ func (o *ChangelogBackendResponse) HasChangelogPurgeBatchSize() bool {
 	return false
 }
 
-// SetChangelogPurgeBatchSize gets a reference to the given int32 and assigns it to the ChangelogPurgeBatchSize field.
-func (o *ChangelogBackendResponse) SetChangelogPurgeBatchSize(v int32) {
+// SetChangelogPurgeBatchSize gets a reference to the given int64 and assigns it to the ChangelogPurgeBatchSize field.
+func (o *ChangelogBackendResponse) SetChangelogPurgeBatchSize(v int64) {
 	o.ChangelogPurgeBatchSize = &v
 }
 
 // GetChangelogWriteQueueCapacity returns the ChangelogWriteQueueCapacity field value if set, zero value otherwise.
-func (o *ChangelogBackendResponse) GetChangelogWriteQueueCapacity() int32 {
+func (o *ChangelogBackendResponse) GetChangelogWriteQueueCapacity() int64 {
 	if o == nil || IsNil(o.ChangelogWriteQueueCapacity) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ChangelogWriteQueueCapacity
@@ -389,7 +389,7 @@ func (o *ChangelogBackendResponse) GetChangelogWriteQueueCapacity() int32 {
 
 // GetChangelogWriteQueueCapacityOk returns a tuple with the ChangelogWriteQueueCapacity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ChangelogBackendResponse) GetChangelogWriteQueueCapacityOk() (*int32, bool) {
+func (o *ChangelogBackendResponse) GetChangelogWriteQueueCapacityOk() (*int64, bool) {
 	if o == nil || IsNil(o.ChangelogWriteQueueCapacity) {
 		return nil, false
 	}
@@ -405,8 +405,8 @@ func (o *ChangelogBackendResponse) HasChangelogWriteQueueCapacity() bool {
 	return false
 }
 
-// SetChangelogWriteQueueCapacity gets a reference to the given int32 and assigns it to the ChangelogWriteQueueCapacity field.
-func (o *ChangelogBackendResponse) SetChangelogWriteQueueCapacity(v int32) {
+// SetChangelogWriteQueueCapacity gets a reference to the given int64 and assigns it to the ChangelogWriteQueueCapacity field.
+func (o *ChangelogBackendResponse) SetChangelogWriteQueueCapacity(v int64) {
 	o.ChangelogWriteQueueCapacity = &v
 }
 
@@ -819,9 +819,9 @@ func (o *ChangelogBackendResponse) SetChangelogIncludeKeyAttribute(v []string) {
 }
 
 // GetChangelogMaxBeforeAfterValues returns the ChangelogMaxBeforeAfterValues field value if set, zero value otherwise.
-func (o *ChangelogBackendResponse) GetChangelogMaxBeforeAfterValues() int32 {
+func (o *ChangelogBackendResponse) GetChangelogMaxBeforeAfterValues() int64 {
 	if o == nil || IsNil(o.ChangelogMaxBeforeAfterValues) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ChangelogMaxBeforeAfterValues
@@ -829,7 +829,7 @@ func (o *ChangelogBackendResponse) GetChangelogMaxBeforeAfterValues() int32 {
 
 // GetChangelogMaxBeforeAfterValuesOk returns a tuple with the ChangelogMaxBeforeAfterValues field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ChangelogBackendResponse) GetChangelogMaxBeforeAfterValuesOk() (*int32, bool) {
+func (o *ChangelogBackendResponse) GetChangelogMaxBeforeAfterValuesOk() (*int64, bool) {
 	if o == nil || IsNil(o.ChangelogMaxBeforeAfterValues) {
 		return nil, false
 	}
@@ -845,8 +845,8 @@ func (o *ChangelogBackendResponse) HasChangelogMaxBeforeAfterValues() bool {
 	return false
 }
 
-// SetChangelogMaxBeforeAfterValues gets a reference to the given int32 and assigns it to the ChangelogMaxBeforeAfterValues field.
-func (o *ChangelogBackendResponse) SetChangelogMaxBeforeAfterValues(v int32) {
+// SetChangelogMaxBeforeAfterValues gets a reference to the given int64 and assigns it to the ChangelogMaxBeforeAfterValues field.
+func (o *ChangelogBackendResponse) SetChangelogMaxBeforeAfterValues(v int64) {
 	o.ChangelogMaxBeforeAfterValues = &v
 }
 

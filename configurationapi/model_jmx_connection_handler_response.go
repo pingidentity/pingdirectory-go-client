@@ -23,7 +23,7 @@ type JmxConnectionHandlerResponse struct {
 	Id      string                              `json:"id"`
 	Schemas []EnumjmxConnectionHandlerSchemaUrn `json:"schemas"`
 	// Specifies the port number on which the JMX Connection Handler will listen for connections from clients.
-	ListenPort int32 `json:"listenPort"`
+	ListenPort int64 `json:"listenPort"`
 	// Indicates whether the JMX Connection Handler should use SSL.
 	UseSSL *bool `json:"useSSL,omitempty"`
 	// Specifies the nickname (also called the alias) of the certificate that the JMX Connection Handler should use when performing SSL communication.
@@ -46,7 +46,7 @@ type JmxConnectionHandlerResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewJmxConnectionHandlerResponse(id string, schemas []EnumjmxConnectionHandlerSchemaUrn, listenPort int32, enabled bool) *JmxConnectionHandlerResponse {
+func NewJmxConnectionHandlerResponse(id string, schemas []EnumjmxConnectionHandlerSchemaUrn, listenPort int64, enabled bool) *JmxConnectionHandlerResponse {
 	this := JmxConnectionHandlerResponse{}
 	this.Id = id
 	this.Schemas = schemas
@@ -112,9 +112,9 @@ func (o *JmxConnectionHandlerResponse) SetSchemas(v []EnumjmxConnectionHandlerSc
 }
 
 // GetListenPort returns the ListenPort field value
-func (o *JmxConnectionHandlerResponse) GetListenPort() int32 {
+func (o *JmxConnectionHandlerResponse) GetListenPort() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -123,7 +123,7 @@ func (o *JmxConnectionHandlerResponse) GetListenPort() int32 {
 
 // GetListenPortOk returns a tuple with the ListenPort field value
 // and a boolean to check if the value has been set.
-func (o *JmxConnectionHandlerResponse) GetListenPortOk() (*int32, bool) {
+func (o *JmxConnectionHandlerResponse) GetListenPortOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -131,7 +131,7 @@ func (o *JmxConnectionHandlerResponse) GetListenPortOk() (*int32, bool) {
 }
 
 // SetListenPort sets field value
-func (o *JmxConnectionHandlerResponse) SetListenPort(v int32) {
+func (o *JmxConnectionHandlerResponse) SetListenPort(v int64) {
 	o.ListenPort = v
 }
 

@@ -49,9 +49,9 @@ type PassThroughAuthenticationPluginResponse struct {
 	// A pattern to use to construct a filter to use when searching an external server for the entry of the user as whom to bind. For example, \"(mail={uid:ldapFilterEscape}@example.com)\" would construct a search filter to search for a user whose entry in the local server contains a uid attribute whose value appears before \"@example.com\" in the mail attribute in the external server. Note that the \"ldapFilterEscape\" modifier should almost always be used with attributes specified in the pattern.
 	SearchFilterPattern *string `json:"searchFilterPattern,omitempty"`
 	// Specifies the initial number of connections to establish to each external server against which authentication may be attempted.
-	InitialConnections int32 `json:"initialConnections"`
+	InitialConnections int64 `json:"initialConnections"`
 	// Specifies the maximum number of connections to maintain to each external server against which authentication may be attempted. This value must be greater than or equal to the value for the initial-connections property.
-	MaxConnections int32 `json:"maxConnections"`
+	MaxConnections int64 `json:"maxConnections"`
 	// A description for this Plugin
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the plug-in is enabled for use.
@@ -66,7 +66,7 @@ type PassThroughAuthenticationPluginResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPassThroughAuthenticationPluginResponse(id string, schemas []EnumpassThroughAuthenticationPluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, server []string, tryLocalBind bool, overrideLocalPassword bool, updateLocalPassword bool, serverAccessMode EnumpluginServerAccessModeProp, initialConnections int32, maxConnections int32, enabled bool) *PassThroughAuthenticationPluginResponse {
+func NewPassThroughAuthenticationPluginResponse(id string, schemas []EnumpassThroughAuthenticationPluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, server []string, tryLocalBind bool, overrideLocalPassword bool, updateLocalPassword bool, serverAccessMode EnumpluginServerAccessModeProp, initialConnections int64, maxConnections int64, enabled bool) *PassThroughAuthenticationPluginResponse {
 	this := PassThroughAuthenticationPluginResponse{}
 	this.Id = id
 	this.Schemas = schemas
@@ -539,9 +539,9 @@ func (o *PassThroughAuthenticationPluginResponse) SetSearchFilterPattern(v strin
 }
 
 // GetInitialConnections returns the InitialConnections field value
-func (o *PassThroughAuthenticationPluginResponse) GetInitialConnections() int32 {
+func (o *PassThroughAuthenticationPluginResponse) GetInitialConnections() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -550,7 +550,7 @@ func (o *PassThroughAuthenticationPluginResponse) GetInitialConnections() int32 
 
 // GetInitialConnectionsOk returns a tuple with the InitialConnections field value
 // and a boolean to check if the value has been set.
-func (o *PassThroughAuthenticationPluginResponse) GetInitialConnectionsOk() (*int32, bool) {
+func (o *PassThroughAuthenticationPluginResponse) GetInitialConnectionsOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -558,14 +558,14 @@ func (o *PassThroughAuthenticationPluginResponse) GetInitialConnectionsOk() (*in
 }
 
 // SetInitialConnections sets field value
-func (o *PassThroughAuthenticationPluginResponse) SetInitialConnections(v int32) {
+func (o *PassThroughAuthenticationPluginResponse) SetInitialConnections(v int64) {
 	o.InitialConnections = v
 }
 
 // GetMaxConnections returns the MaxConnections field value
-func (o *PassThroughAuthenticationPluginResponse) GetMaxConnections() int32 {
+func (o *PassThroughAuthenticationPluginResponse) GetMaxConnections() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -574,7 +574,7 @@ func (o *PassThroughAuthenticationPluginResponse) GetMaxConnections() int32 {
 
 // GetMaxConnectionsOk returns a tuple with the MaxConnections field value
 // and a boolean to check if the value has been set.
-func (o *PassThroughAuthenticationPluginResponse) GetMaxConnectionsOk() (*int32, bool) {
+func (o *PassThroughAuthenticationPluginResponse) GetMaxConnectionsOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -582,7 +582,7 @@ func (o *PassThroughAuthenticationPluginResponse) GetMaxConnectionsOk() (*int32,
 }
 
 // SetMaxConnections sets field value
-func (o *PassThroughAuthenticationPluginResponse) SetMaxConnections(v int32) {
+func (o *PassThroughAuthenticationPluginResponse) SetMaxConnections(v int64) {
 	o.MaxConnections = v
 }
 

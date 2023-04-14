@@ -48,7 +48,7 @@ type FileBasedJsonAuditLogPublisherResponse struct {
 	// Specifies the log file buffer size.
 	BufferSize *string `json:"bufferSize,omitempty"`
 	// The maximum number of log records that can be stored in the asynchronous queue.
-	QueueSize *int32 `json:"queueSize,omitempty"`
+	QueueSize *int64 `json:"queueSize,omitempty"`
 	// Specifies the interval at which to check whether the log files need to be rotated.
 	TimeInterval *string `json:"timeInterval,omitempty"`
 	// Indicates whether the JSON objects should use a multi-line representation (with each object field and array value on its own line) that may be easier for administrators to read, but each message will be larger (because of additional spaces and end-of-line markers), and it may be more difficult to consume and parse through some text-oriented tools.
@@ -553,9 +553,9 @@ func (o *FileBasedJsonAuditLogPublisherResponse) SetBufferSize(v string) {
 }
 
 // GetQueueSize returns the QueueSize field value if set, zero value otherwise.
-func (o *FileBasedJsonAuditLogPublisherResponse) GetQueueSize() int32 {
+func (o *FileBasedJsonAuditLogPublisherResponse) GetQueueSize() int64 {
 	if o == nil || IsNil(o.QueueSize) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.QueueSize
@@ -563,7 +563,7 @@ func (o *FileBasedJsonAuditLogPublisherResponse) GetQueueSize() int32 {
 
 // GetQueueSizeOk returns a tuple with the QueueSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FileBasedJsonAuditLogPublisherResponse) GetQueueSizeOk() (*int32, bool) {
+func (o *FileBasedJsonAuditLogPublisherResponse) GetQueueSizeOk() (*int64, bool) {
 	if o == nil || IsNil(o.QueueSize) {
 		return nil, false
 	}
@@ -579,8 +579,8 @@ func (o *FileBasedJsonAuditLogPublisherResponse) HasQueueSize() bool {
 	return false
 }
 
-// SetQueueSize gets a reference to the given int32 and assigns it to the QueueSize field.
-func (o *FileBasedJsonAuditLogPublisherResponse) SetQueueSize(v int32) {
+// SetQueueSize gets a reference to the given int64 and assigns it to the QueueSize field.
+func (o *FileBasedJsonAuditLogPublisherResponse) SetQueueSize(v int64) {
 	o.QueueSize = &v
 }
 

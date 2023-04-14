@@ -29,7 +29,7 @@ type MacSecretKeyResponse struct {
 	// The symmetric key that is used for both encryption of plain text and decryption of cipher text. This stores the secret key for each server instance encrypted with that server's inter-server certificate.
 	SymmetricKey []string `json:"symmetricKey,omitempty"`
 	// The length of the key in bits.
-	KeyLengthBits                                 int32                                              `json:"keyLengthBits"`
+	KeyLengthBits                                 int64                                              `json:"keyLengthBits"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 }
@@ -38,7 +38,7 @@ type MacSecretKeyResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMacSecretKeyResponse(keyID string, keyLengthBits int32) *MacSecretKeyResponse {
+func NewMacSecretKeyResponse(keyID string, keyLengthBits int64) *MacSecretKeyResponse {
 	this := MacSecretKeyResponse{}
 	this.KeyID = keyID
 	this.KeyLengthBits = keyLengthBits
@@ -206,9 +206,9 @@ func (o *MacSecretKeyResponse) SetSymmetricKey(v []string) {
 }
 
 // GetKeyLengthBits returns the KeyLengthBits field value
-func (o *MacSecretKeyResponse) GetKeyLengthBits() int32 {
+func (o *MacSecretKeyResponse) GetKeyLengthBits() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -217,7 +217,7 @@ func (o *MacSecretKeyResponse) GetKeyLengthBits() int32 {
 
 // GetKeyLengthBitsOk returns a tuple with the KeyLengthBits field value
 // and a boolean to check if the value has been set.
-func (o *MacSecretKeyResponse) GetKeyLengthBitsOk() (*int32, bool) {
+func (o *MacSecretKeyResponse) GetKeyLengthBitsOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -225,7 +225,7 @@ func (o *MacSecretKeyResponse) GetKeyLengthBitsOk() (*int32, bool) {
 }
 
 // SetKeyLengthBits sets field value
-func (o *MacSecretKeyResponse) SetKeyLengthBits(v int32) {
+func (o *MacSecretKeyResponse) SetKeyLengthBits(v int64) {
 	o.KeyLengthBits = v
 }
 

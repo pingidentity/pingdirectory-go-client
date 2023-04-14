@@ -37,8 +37,8 @@ Name | Type | Description | Notes
 **Asynchronous** | **bool** | Indicates whether the Detailed HTTP Operation Log Publisher will publish records asynchronously. | 
 **AutoFlush** | Pointer to **bool** | Specifies whether to flush the writer after every log record. | [optional] 
 **BufferSize** | Pointer to **string** | Specifies the log file buffer size. | [optional] 
-**MaxStringLength** | Pointer to **int32** | Specifies the maximum length of any individual string that should be logged. If a log message includes a string longer than this number of characters, it will be truncated. A value of zero indicates that no truncation will be used. | [optional] 
-**QueueSize** | Pointer to **int32** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
+**MaxStringLength** | Pointer to **int64** | Specifies the maximum length of any individual string that should be logged. If a log message includes a string longer than this number of characters, it will be truncated. A value of zero indicates that no truncation will be used. | [optional] 
+**QueueSize** | Pointer to **int64** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
 **TimeInterval** | Pointer to **string** | Specifies the interval at which to check whether the log files need to be rotated. | [optional] 
 **Description** | Pointer to **string** | A description for this Log Publisher | [optional] 
 **Enabled** | **bool** | Indicates whether the Log Publisher is enabled for use. | 
@@ -857,20 +857,20 @@ HasBufferSize returns a boolean if a field has been set.
 
 ### GetMaxStringLength
 
-`func (o *DetailedHttpOperationLogPublisherResponse) GetMaxStringLength() int32`
+`func (o *DetailedHttpOperationLogPublisherResponse) GetMaxStringLength() int64`
 
 GetMaxStringLength returns the MaxStringLength field if non-nil, zero value otherwise.
 
 ### GetMaxStringLengthOk
 
-`func (o *DetailedHttpOperationLogPublisherResponse) GetMaxStringLengthOk() (*int32, bool)`
+`func (o *DetailedHttpOperationLogPublisherResponse) GetMaxStringLengthOk() (*int64, bool)`
 
 GetMaxStringLengthOk returns a tuple with the MaxStringLength field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxStringLength
 
-`func (o *DetailedHttpOperationLogPublisherResponse) SetMaxStringLength(v int32)`
+`func (o *DetailedHttpOperationLogPublisherResponse) SetMaxStringLength(v int64)`
 
 SetMaxStringLength sets MaxStringLength field to given value.
 
@@ -882,20 +882,20 @@ HasMaxStringLength returns a boolean if a field has been set.
 
 ### GetQueueSize
 
-`func (o *DetailedHttpOperationLogPublisherResponse) GetQueueSize() int32`
+`func (o *DetailedHttpOperationLogPublisherResponse) GetQueueSize() int64`
 
 GetQueueSize returns the QueueSize field if non-nil, zero value otherwise.
 
 ### GetQueueSizeOk
 
-`func (o *DetailedHttpOperationLogPublisherResponse) GetQueueSizeOk() (*int32, bool)`
+`func (o *DetailedHttpOperationLogPublisherResponse) GetQueueSizeOk() (*int64, bool)`
 
 GetQueueSizeOk returns a tuple with the QueueSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQueueSize
 
-`func (o *DetailedHttpOperationLogPublisherResponse) SetQueueSize(v int32)`
+`func (o *DetailedHttpOperationLogPublisherResponse) SetQueueSize(v int64)`
 
 SetQueueSize sets QueueSize field to given value.
 

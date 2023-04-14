@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    addHttpServletExtensionRequest := openapiclient.add_http_servlet_extension_request{AddAvailabilityStateHttpServletExtensionRequest: openapiclient.NewAddAvailabilityStateHttpServletExtensionRequest("ExtensionName_example", []openapiclient.EnumavailabilityStateHttpServletExtensionSchemaUrn{openapiclient.Enumavailability-state-http-servlet-extensionSchemaUrn("urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:availability-state")}, "BaseContextPath_example", int32(123), int32(123), int32(123))} // AddHttpServletExtensionRequest | Create a new HTTP Servlet Extension in the config
+    addHttpServletExtensionRequest := openapiclient.add_http_servlet_extension_request{AddAvailabilityStateHttpServletExtensionRequest: openapiclient.NewAddAvailabilityStateHttpServletExtensionRequest("ExtensionName_example", []openapiclient.EnumavailabilityStateHttpServletExtensionSchemaUrn{openapiclient.Enumavailability-state-http-servlet-extensionSchemaUrn("urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:availability-state")}, "BaseContextPath_example", int64(123), int64(123), int64(123))} // AddHttpServletExtensionRequest | Create a new HTTP Servlet Extension in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

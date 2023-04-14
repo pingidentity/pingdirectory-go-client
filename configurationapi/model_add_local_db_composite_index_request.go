@@ -29,7 +29,7 @@ type AddLocalDbCompositeIndexRequest struct {
 	// An optional base DN pattern that identifies portions of the DIT in which entries to index may exist.
 	IndexBaseDNPattern *string `json:"indexBaseDNPattern,omitempty"`
 	// The maximum number of entries that any single index key will be allowed to match before the server stops maintaining the ID set for that index key.
-	IndexEntryLimit *int32 `json:"indexEntryLimit,omitempty"`
+	IndexEntryLimit *int64 `json:"indexEntryLimit,omitempty"`
 	// Indicates whether the server should load the contents of this index into memory when the backend is being opened.
 	PrimeIndex *bool `json:"primeIndex,omitempty"`
 	// Indicates whether to only prime the internal nodes of the index database, rather than priming both internal and leaf nodes.
@@ -201,9 +201,9 @@ func (o *AddLocalDbCompositeIndexRequest) SetIndexBaseDNPattern(v string) {
 }
 
 // GetIndexEntryLimit returns the IndexEntryLimit field value if set, zero value otherwise.
-func (o *AddLocalDbCompositeIndexRequest) GetIndexEntryLimit() int32 {
+func (o *AddLocalDbCompositeIndexRequest) GetIndexEntryLimit() int64 {
 	if o == nil || IsNil(o.IndexEntryLimit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.IndexEntryLimit
@@ -211,7 +211,7 @@ func (o *AddLocalDbCompositeIndexRequest) GetIndexEntryLimit() int32 {
 
 // GetIndexEntryLimitOk returns a tuple with the IndexEntryLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddLocalDbCompositeIndexRequest) GetIndexEntryLimitOk() (*int32, bool) {
+func (o *AddLocalDbCompositeIndexRequest) GetIndexEntryLimitOk() (*int64, bool) {
 	if o == nil || IsNil(o.IndexEntryLimit) {
 		return nil, false
 	}
@@ -227,8 +227,8 @@ func (o *AddLocalDbCompositeIndexRequest) HasIndexEntryLimit() bool {
 	return false
 }
 
-// SetIndexEntryLimit gets a reference to the given int32 and assigns it to the IndexEntryLimit field.
-func (o *AddLocalDbCompositeIndexRequest) SetIndexEntryLimit(v int32) {
+// SetIndexEntryLimit gets a reference to the given int64 and assigns it to the IndexEntryLimit field.
+func (o *AddLocalDbCompositeIndexRequest) SetIndexEntryLimit(v int64) {
 	o.IndexEntryLimit = &v
 }
 

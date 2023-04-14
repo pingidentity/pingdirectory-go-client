@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ValidatorName** | **string** | Name of the new Password Validator | 
 **Schemas** | [**[]EnumrepeatedCharactersPasswordValidatorSchemaUrn**](EnumrepeatedCharactersPasswordValidatorSchemaUrn.md) |  | 
-**MaxConsecutiveLength** | **int32** | Specifies the maximum number of times that any character can appear consecutively in a password value. | 
+**MaxConsecutiveLength** | **int64** | Specifies the maximum number of times that any character can appear consecutively in a password value. | 
 **CaseSensitiveValidation** | **bool** | Indicates whether this password validator should treat password characters in a case-sensitive manner. | 
 **CharacterSet** | Pointer to **[]string** | Specifies a set of characters that should be considered equivalent for the purpose of this password validator. This can be used, for example, to ensure that passwords contain no more than three consecutive digits. | [optional] 
 **Description** | Pointer to **string** | A description for this Password Validator | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewAddRepeatedCharactersPasswordValidatorRequest
 
-`func NewAddRepeatedCharactersPasswordValidatorRequest(validatorName string, schemas []EnumrepeatedCharactersPasswordValidatorSchemaUrn, maxConsecutiveLength int32, caseSensitiveValidation bool, enabled bool, ) *AddRepeatedCharactersPasswordValidatorRequest`
+`func NewAddRepeatedCharactersPasswordValidatorRequest(validatorName string, schemas []EnumrepeatedCharactersPasswordValidatorSchemaUrn, maxConsecutiveLength int64, caseSensitiveValidation bool, enabled bool, ) *AddRepeatedCharactersPasswordValidatorRequest`
 
 NewAddRepeatedCharactersPasswordValidatorRequest instantiates a new AddRepeatedCharactersPasswordValidatorRequest object
 This constructor will assign default values to properties that have it defined,
@@ -75,20 +75,20 @@ SetSchemas sets Schemas field to given value.
 
 ### GetMaxConsecutiveLength
 
-`func (o *AddRepeatedCharactersPasswordValidatorRequest) GetMaxConsecutiveLength() int32`
+`func (o *AddRepeatedCharactersPasswordValidatorRequest) GetMaxConsecutiveLength() int64`
 
 GetMaxConsecutiveLength returns the MaxConsecutiveLength field if non-nil, zero value otherwise.
 
 ### GetMaxConsecutiveLengthOk
 
-`func (o *AddRepeatedCharactersPasswordValidatorRequest) GetMaxConsecutiveLengthOk() (*int32, bool)`
+`func (o *AddRepeatedCharactersPasswordValidatorRequest) GetMaxConsecutiveLengthOk() (*int64, bool)`
 
 GetMaxConsecutiveLengthOk returns a tuple with the MaxConsecutiveLength field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxConsecutiveLength
 
-`func (o *AddRepeatedCharactersPasswordValidatorRequest) SetMaxConsecutiveLength(v int32)`
+`func (o *AddRepeatedCharactersPasswordValidatorRequest) SetMaxConsecutiveLength(v int64)`
 
 SetMaxConsecutiveLength sets MaxConsecutiveLength field to given value.
 

@@ -16,9 +16,9 @@ Name | Type | Description | Notes
 **BaseDN** | Pointer to **string** | Only entries located within the subtree specified by this base DN are eligible for purging. | [optional] 
 **Filter** | Pointer to **string** | Only entries that match this LDAP filter will be eligible for having data purged. | [optional] 
 **PollingInterval** | **string** | This specifies how often the plugin should check for expired data. It also controls the offset of peer servers (see the peer-server-priority-index for more information). | 
-**MaxUpdatesPerSecond** | **int32** | This setting smooths out the performance impact on the server by throttling the purging to the specified maximum number of updates per second. To avoid a large backlog, this value should be set comfortably above the average rate that expired data is generated. When purge-behavior is set to subtree-delete-entries, then deletion of the entire subtree is considered a single update for the purposes of throttling. | 
-**PeerServerPriorityIndex** | Pointer to **int32** | In a replicated environment, this determines the order in which peer servers should attempt to purge data. | [optional] 
-**NumDeleteThreads** | **int32** | The number of threads used to delete expired entries. | 
+**MaxUpdatesPerSecond** | **int64** | This setting smooths out the performance impact on the server by throttling the purging to the specified maximum number of updates per second. To avoid a large backlog, this value should be set comfortably above the average rate that expired data is generated. When purge-behavior is set to subtree-delete-entries, then deletion of the entire subtree is considered a single update for the purposes of throttling. | 
+**PeerServerPriorityIndex** | Pointer to **int64** | In a replicated environment, this determines the order in which peer servers should attempt to purge data. | [optional] 
+**NumDeleteThreads** | **int64** | The number of threads used to delete expired entries. | 
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 
 ### NewPurgeExpiredDataPluginResponse
 
-`func NewPurgeExpiredDataPluginResponse(id string, schemas []EnumpurgeExpiredDataPluginSchemaUrn, datetimeAttribute string, datetimeFormat EnumpluginDatetimeFormatProp, expirationOffset string, pollingInterval string, maxUpdatesPerSecond int32, numDeleteThreads int32, enabled bool, ) *PurgeExpiredDataPluginResponse`
+`func NewPurgeExpiredDataPluginResponse(id string, schemas []EnumpurgeExpiredDataPluginSchemaUrn, datetimeAttribute string, datetimeFormat EnumpluginDatetimeFormatProp, expirationOffset string, pollingInterval string, maxUpdatesPerSecond int64, numDeleteThreads int64, enabled bool, ) *PurgeExpiredDataPluginResponse`
 
 NewPurgeExpiredDataPluginResponse instantiates a new PurgeExpiredDataPluginResponse object
 This constructor will assign default values to properties that have it defined,
@@ -315,40 +315,40 @@ SetPollingInterval sets PollingInterval field to given value.
 
 ### GetMaxUpdatesPerSecond
 
-`func (o *PurgeExpiredDataPluginResponse) GetMaxUpdatesPerSecond() int32`
+`func (o *PurgeExpiredDataPluginResponse) GetMaxUpdatesPerSecond() int64`
 
 GetMaxUpdatesPerSecond returns the MaxUpdatesPerSecond field if non-nil, zero value otherwise.
 
 ### GetMaxUpdatesPerSecondOk
 
-`func (o *PurgeExpiredDataPluginResponse) GetMaxUpdatesPerSecondOk() (*int32, bool)`
+`func (o *PurgeExpiredDataPluginResponse) GetMaxUpdatesPerSecondOk() (*int64, bool)`
 
 GetMaxUpdatesPerSecondOk returns a tuple with the MaxUpdatesPerSecond field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxUpdatesPerSecond
 
-`func (o *PurgeExpiredDataPluginResponse) SetMaxUpdatesPerSecond(v int32)`
+`func (o *PurgeExpiredDataPluginResponse) SetMaxUpdatesPerSecond(v int64)`
 
 SetMaxUpdatesPerSecond sets MaxUpdatesPerSecond field to given value.
 
 
 ### GetPeerServerPriorityIndex
 
-`func (o *PurgeExpiredDataPluginResponse) GetPeerServerPriorityIndex() int32`
+`func (o *PurgeExpiredDataPluginResponse) GetPeerServerPriorityIndex() int64`
 
 GetPeerServerPriorityIndex returns the PeerServerPriorityIndex field if non-nil, zero value otherwise.
 
 ### GetPeerServerPriorityIndexOk
 
-`func (o *PurgeExpiredDataPluginResponse) GetPeerServerPriorityIndexOk() (*int32, bool)`
+`func (o *PurgeExpiredDataPluginResponse) GetPeerServerPriorityIndexOk() (*int64, bool)`
 
 GetPeerServerPriorityIndexOk returns a tuple with the PeerServerPriorityIndex field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPeerServerPriorityIndex
 
-`func (o *PurgeExpiredDataPluginResponse) SetPeerServerPriorityIndex(v int32)`
+`func (o *PurgeExpiredDataPluginResponse) SetPeerServerPriorityIndex(v int64)`
 
 SetPeerServerPriorityIndex sets PeerServerPriorityIndex field to given value.
 
@@ -360,20 +360,20 @@ HasPeerServerPriorityIndex returns a boolean if a field has been set.
 
 ### GetNumDeleteThreads
 
-`func (o *PurgeExpiredDataPluginResponse) GetNumDeleteThreads() int32`
+`func (o *PurgeExpiredDataPluginResponse) GetNumDeleteThreads() int64`
 
 GetNumDeleteThreads returns the NumDeleteThreads field if non-nil, zero value otherwise.
 
 ### GetNumDeleteThreadsOk
 
-`func (o *PurgeExpiredDataPluginResponse) GetNumDeleteThreadsOk() (*int32, bool)`
+`func (o *PurgeExpiredDataPluginResponse) GetNumDeleteThreadsOk() (*int64, bool)`
 
 GetNumDeleteThreadsOk returns a tuple with the NumDeleteThreads field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNumDeleteThreads
 
-`func (o *PurgeExpiredDataPluginResponse) SetNumDeleteThreads(v int32)`
+`func (o *PurgeExpiredDataPluginResponse) SetNumDeleteThreads(v int64)`
 
 SetNumDeleteThreads sets NumDeleteThreads field to given value.
 

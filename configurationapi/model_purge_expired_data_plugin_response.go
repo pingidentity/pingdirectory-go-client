@@ -41,11 +41,11 @@ type PurgeExpiredDataPluginResponse struct {
 	// This specifies how often the plugin should check for expired data. It also controls the offset of peer servers (see the peer-server-priority-index for more information).
 	PollingInterval string `json:"pollingInterval"`
 	// This setting smooths out the performance impact on the server by throttling the purging to the specified maximum number of updates per second. To avoid a large backlog, this value should be set comfortably above the average rate that expired data is generated. When purge-behavior is set to subtree-delete-entries, then deletion of the entire subtree is considered a single update for the purposes of throttling.
-	MaxUpdatesPerSecond int32 `json:"maxUpdatesPerSecond"`
+	MaxUpdatesPerSecond int64 `json:"maxUpdatesPerSecond"`
 	// In a replicated environment, this determines the order in which peer servers should attempt to purge data.
-	PeerServerPriorityIndex *int32 `json:"peerServerPriorityIndex,omitempty"`
+	PeerServerPriorityIndex *int64 `json:"peerServerPriorityIndex,omitempty"`
 	// The number of threads used to delete expired entries.
-	NumDeleteThreads int32 `json:"numDeleteThreads"`
+	NumDeleteThreads int64 `json:"numDeleteThreads"`
 	// A description for this Plugin
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the plug-in is enabled for use.
@@ -58,7 +58,7 @@ type PurgeExpiredDataPluginResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPurgeExpiredDataPluginResponse(id string, schemas []EnumpurgeExpiredDataPluginSchemaUrn, datetimeAttribute string, datetimeFormat EnumpluginDatetimeFormatProp, expirationOffset string, pollingInterval string, maxUpdatesPerSecond int32, numDeleteThreads int32, enabled bool) *PurgeExpiredDataPluginResponse {
+func NewPurgeExpiredDataPluginResponse(id string, schemas []EnumpurgeExpiredDataPluginSchemaUrn, datetimeAttribute string, datetimeFormat EnumpluginDatetimeFormatProp, expirationOffset string, pollingInterval string, maxUpdatesPerSecond int64, numDeleteThreads int64, enabled bool) *PurgeExpiredDataPluginResponse {
 	this := PurgeExpiredDataPluginResponse{}
 	this.Id = id
 	this.Schemas = schemas
@@ -417,9 +417,9 @@ func (o *PurgeExpiredDataPluginResponse) SetPollingInterval(v string) {
 }
 
 // GetMaxUpdatesPerSecond returns the MaxUpdatesPerSecond field value
-func (o *PurgeExpiredDataPluginResponse) GetMaxUpdatesPerSecond() int32 {
+func (o *PurgeExpiredDataPluginResponse) GetMaxUpdatesPerSecond() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -428,7 +428,7 @@ func (o *PurgeExpiredDataPluginResponse) GetMaxUpdatesPerSecond() int32 {
 
 // GetMaxUpdatesPerSecondOk returns a tuple with the MaxUpdatesPerSecond field value
 // and a boolean to check if the value has been set.
-func (o *PurgeExpiredDataPluginResponse) GetMaxUpdatesPerSecondOk() (*int32, bool) {
+func (o *PurgeExpiredDataPluginResponse) GetMaxUpdatesPerSecondOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -436,14 +436,14 @@ func (o *PurgeExpiredDataPluginResponse) GetMaxUpdatesPerSecondOk() (*int32, boo
 }
 
 // SetMaxUpdatesPerSecond sets field value
-func (o *PurgeExpiredDataPluginResponse) SetMaxUpdatesPerSecond(v int32) {
+func (o *PurgeExpiredDataPluginResponse) SetMaxUpdatesPerSecond(v int64) {
 	o.MaxUpdatesPerSecond = v
 }
 
 // GetPeerServerPriorityIndex returns the PeerServerPriorityIndex field value if set, zero value otherwise.
-func (o *PurgeExpiredDataPluginResponse) GetPeerServerPriorityIndex() int32 {
+func (o *PurgeExpiredDataPluginResponse) GetPeerServerPriorityIndex() int64 {
 	if o == nil || IsNil(o.PeerServerPriorityIndex) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.PeerServerPriorityIndex
@@ -451,7 +451,7 @@ func (o *PurgeExpiredDataPluginResponse) GetPeerServerPriorityIndex() int32 {
 
 // GetPeerServerPriorityIndexOk returns a tuple with the PeerServerPriorityIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PurgeExpiredDataPluginResponse) GetPeerServerPriorityIndexOk() (*int32, bool) {
+func (o *PurgeExpiredDataPluginResponse) GetPeerServerPriorityIndexOk() (*int64, bool) {
 	if o == nil || IsNil(o.PeerServerPriorityIndex) {
 		return nil, false
 	}
@@ -467,15 +467,15 @@ func (o *PurgeExpiredDataPluginResponse) HasPeerServerPriorityIndex() bool {
 	return false
 }
 
-// SetPeerServerPriorityIndex gets a reference to the given int32 and assigns it to the PeerServerPriorityIndex field.
-func (o *PurgeExpiredDataPluginResponse) SetPeerServerPriorityIndex(v int32) {
+// SetPeerServerPriorityIndex gets a reference to the given int64 and assigns it to the PeerServerPriorityIndex field.
+func (o *PurgeExpiredDataPluginResponse) SetPeerServerPriorityIndex(v int64) {
 	o.PeerServerPriorityIndex = &v
 }
 
 // GetNumDeleteThreads returns the NumDeleteThreads field value
-func (o *PurgeExpiredDataPluginResponse) GetNumDeleteThreads() int32 {
+func (o *PurgeExpiredDataPluginResponse) GetNumDeleteThreads() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -484,7 +484,7 @@ func (o *PurgeExpiredDataPluginResponse) GetNumDeleteThreads() int32 {
 
 // GetNumDeleteThreadsOk returns a tuple with the NumDeleteThreads field value
 // and a boolean to check if the value has been set.
-func (o *PurgeExpiredDataPluginResponse) GetNumDeleteThreadsOk() (*int32, bool) {
+func (o *PurgeExpiredDataPluginResponse) GetNumDeleteThreadsOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -492,7 +492,7 @@ func (o *PurgeExpiredDataPluginResponse) GetNumDeleteThreadsOk() (*int32, bool) 
 }
 
 // SetNumDeleteThreads sets field value
-func (o *PurgeExpiredDataPluginResponse) SetNumDeleteThreads(v int32) {
+func (o *PurgeExpiredDataPluginResponse) SetNumDeleteThreads(v int64) {
 	o.NumDeleteThreads = v
 }
 

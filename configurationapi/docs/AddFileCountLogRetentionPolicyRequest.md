@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PolicyName** | **string** | Name of the new Log Retention Policy | 
 **Schemas** | [**[]EnumfileCountLogRetentionPolicySchemaUrn**](EnumfileCountLogRetentionPolicySchemaUrn.md) |  | 
-**NumberOfFiles** | **int32** | Specifies the number of archived log files to retain before the oldest ones are cleaned. | 
+**NumberOfFiles** | **int64** | Specifies the number of archived log files to retain before the oldest ones are cleaned. | 
 **Description** | Pointer to **string** | A description for this Log Retention Policy | [optional] 
 
 ## Methods
 
 ### NewAddFileCountLogRetentionPolicyRequest
 
-`func NewAddFileCountLogRetentionPolicyRequest(policyName string, schemas []EnumfileCountLogRetentionPolicySchemaUrn, numberOfFiles int32, ) *AddFileCountLogRetentionPolicyRequest`
+`func NewAddFileCountLogRetentionPolicyRequest(policyName string, schemas []EnumfileCountLogRetentionPolicySchemaUrn, numberOfFiles int64, ) *AddFileCountLogRetentionPolicyRequest`
 
 NewAddFileCountLogRetentionPolicyRequest instantiates a new AddFileCountLogRetentionPolicyRequest object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetSchemas sets Schemas field to given value.
 
 ### GetNumberOfFiles
 
-`func (o *AddFileCountLogRetentionPolicyRequest) GetNumberOfFiles() int32`
+`func (o *AddFileCountLogRetentionPolicyRequest) GetNumberOfFiles() int64`
 
 GetNumberOfFiles returns the NumberOfFiles field if non-nil, zero value otherwise.
 
 ### GetNumberOfFilesOk
 
-`func (o *AddFileCountLogRetentionPolicyRequest) GetNumberOfFilesOk() (*int32, bool)`
+`func (o *AddFileCountLogRetentionPolicyRequest) GetNumberOfFilesOk() (*int64, bool)`
 
 GetNumberOfFilesOk returns a tuple with the NumberOfFiles field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNumberOfFiles
 
-`func (o *AddFileCountLogRetentionPolicyRequest) SetNumberOfFiles(v int32)`
+`func (o *AddFileCountLogRetentionPolicyRequest) SetNumberOfFiles(v int64)`
 
 SetNumberOfFiles sets NumberOfFiles field to given value.
 

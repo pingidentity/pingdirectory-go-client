@@ -48,9 +48,9 @@ type FileBasedTraceLogPublisherResponse struct {
 	// Indicates whether the Writer Based Trace Log Publisher will publish records asynchronously.
 	Asynchronous bool `json:"asynchronous"`
 	// The maximum number of log records that can be stored in the asynchronous queue.
-	QueueSize *int32 `json:"queueSize,omitempty"`
+	QueueSize *int64 `json:"queueSize,omitempty"`
 	// Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written.
-	MaxStringLength                 *int32                                                `json:"maxStringLength,omitempty"`
+	MaxStringLength                 *int64                                                `json:"maxStringLength,omitempty"`
 	DebugMessageType                []EnumlogPublisherDebugMessageTypeProp                `json:"debugMessageType,omitempty"`
 	HttpMessageType                 []EnumlogPublisherHttpMessageTypeProp                 `json:"httpMessageType,omitempty"`
 	AccessTokenValidatorMessageType []EnumlogPublisherAccessTokenValidatorMessageTypeProp `json:"accessTokenValidatorMessageType,omitempty"`
@@ -522,9 +522,9 @@ func (o *FileBasedTraceLogPublisherResponse) SetAsynchronous(v bool) {
 }
 
 // GetQueueSize returns the QueueSize field value if set, zero value otherwise.
-func (o *FileBasedTraceLogPublisherResponse) GetQueueSize() int32 {
+func (o *FileBasedTraceLogPublisherResponse) GetQueueSize() int64 {
 	if o == nil || IsNil(o.QueueSize) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.QueueSize
@@ -532,7 +532,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetQueueSize() int32 {
 
 // GetQueueSizeOk returns a tuple with the QueueSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FileBasedTraceLogPublisherResponse) GetQueueSizeOk() (*int32, bool) {
+func (o *FileBasedTraceLogPublisherResponse) GetQueueSizeOk() (*int64, bool) {
 	if o == nil || IsNil(o.QueueSize) {
 		return nil, false
 	}
@@ -548,15 +548,15 @@ func (o *FileBasedTraceLogPublisherResponse) HasQueueSize() bool {
 	return false
 }
 
-// SetQueueSize gets a reference to the given int32 and assigns it to the QueueSize field.
-func (o *FileBasedTraceLogPublisherResponse) SetQueueSize(v int32) {
+// SetQueueSize gets a reference to the given int64 and assigns it to the QueueSize field.
+func (o *FileBasedTraceLogPublisherResponse) SetQueueSize(v int64) {
 	o.QueueSize = &v
 }
 
 // GetMaxStringLength returns the MaxStringLength field value if set, zero value otherwise.
-func (o *FileBasedTraceLogPublisherResponse) GetMaxStringLength() int32 {
+func (o *FileBasedTraceLogPublisherResponse) GetMaxStringLength() int64 {
 	if o == nil || IsNil(o.MaxStringLength) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxStringLength
@@ -564,7 +564,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetMaxStringLength() int32 {
 
 // GetMaxStringLengthOk returns a tuple with the MaxStringLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FileBasedTraceLogPublisherResponse) GetMaxStringLengthOk() (*int32, bool) {
+func (o *FileBasedTraceLogPublisherResponse) GetMaxStringLengthOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxStringLength) {
 		return nil, false
 	}
@@ -580,8 +580,8 @@ func (o *FileBasedTraceLogPublisherResponse) HasMaxStringLength() bool {
 	return false
 }
 
-// SetMaxStringLength gets a reference to the given int32 and assigns it to the MaxStringLength field.
-func (o *FileBasedTraceLogPublisherResponse) SetMaxStringLength(v int32) {
+// SetMaxStringLength gets a reference to the given int64 and assigns it to the MaxStringLength field.
+func (o *FileBasedTraceLogPublisherResponse) SetMaxStringLength(v int64) {
 	o.MaxStringLength = &v
 }
 

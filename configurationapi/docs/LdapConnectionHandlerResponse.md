@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **string** | Name of the Connection Handler | 
 **Schemas** | [**[]EnumldapConnectionHandlerSchemaUrn**](EnumldapConnectionHandlerSchemaUrn.md) |  | 
 **ListenAddress** | Pointer to **[]string** | Specifies the address or set of addresses on which this LDAP Connection Handler should listen for connections from LDAP clients. | [optional] 
-**ListenPort** | **int32** | Specifies the port number on which the LDAP Connection Handler will listen for connections from clients. | 
+**ListenPort** | **int64** | Specifies the port number on which the LDAP Connection Handler will listen for connections from clients. | 
 **UseSSL** | Pointer to **bool** | Indicates whether the LDAP Connection Handler should use SSL. | [optional] 
 **AllowStartTLS** | Pointer to **bool** | Indicates whether clients are allowed to use StartTLS. | [optional] 
 **SslCertNickname** | Pointer to **string** | Specifies the nickname (also called the alias) of the certificate that the LDAP Connection Handler should use when performing SSL communication. | [optional] 
@@ -18,11 +18,11 @@ Name | Type | Description | Notes
 **SendRejectionNotice** | Pointer to **bool** | Indicates whether the LDAP Connection Handler should send a notice of disconnection extended response message to the client if a new connection is rejected for some reason. | [optional] 
 **FailedBindResponseDelay** | Pointer to **string** | Specifies the length of time that the server should delay the response to non-successful bind operations. A value of zero milliseconds indicates that non-successful bind operations should not be delayed. | [optional] 
 **MaxRequestSize** | Pointer to **string** | Specifies the size of the largest LDAP request message that will be allowed by this LDAP Connection handler. | [optional] 
-**MaxCancelHandlers** | Pointer to **int32** | Specifies the maximum number of threads that are used to process cancel and abandon requests from clients. | [optional] 
-**NumAcceptHandlers** | Pointer to **int32** | Specifies the number of threads that are used to accept new client connections, and to perform any initial preparation on those connections that may be needed before the connection can be used to read requests and send responses. | [optional] 
-**NumRequestHandlers** | Pointer to **int32** | Specifies the number of request handlers that are used to read requests from clients. | [optional] 
+**MaxCancelHandlers** | Pointer to **int64** | Specifies the maximum number of threads that are used to process cancel and abandon requests from clients. | [optional] 
+**NumAcceptHandlers** | Pointer to **int64** | Specifies the number of threads that are used to accept new client connections, and to perform any initial preparation on those connections that may be needed before the connection can be used to read requests and send responses. | [optional] 
+**NumRequestHandlers** | Pointer to **int64** | Specifies the number of request handlers that are used to read requests from clients. | [optional] 
 **SslClientAuthPolicy** | Pointer to [**EnumconnectionHandlerSslClientAuthPolicyProp**](EnumconnectionHandlerSslClientAuthPolicyProp.md) |  | [optional] 
-**AcceptBacklog** | Pointer to **int32** | Specifies the maximum number of pending connection attempts that are allowed to queue up in the accept backlog before the server starts rejecting new connection attempts. | [optional] 
+**AcceptBacklog** | Pointer to **int64** | Specifies the maximum number of pending connection attempts that are allowed to queue up in the accept backlog before the server starts rejecting new connection attempts. | [optional] 
 **SslProtocol** | Pointer to **[]string** | Specifies the names of the SSL protocols that are allowed for use in SSL or StartTLS communication. The set of supported ssl protocols can be viewed via the ssl context monitor entry. | [optional] 
 **SslCipherSuite** | Pointer to **[]string** | Specifies the names of the SSL cipher suites that are allowed for use in SSL or StartTLS communication. The set of supported cipher suites can be viewed via the ssl context monitor entry. | [optional] 
 **MaxBlockedWriteTimeLimit** | Pointer to **string** | Specifies the maximum length of time that attempts to write data to LDAP clients should be allowed to block. | [optional] 
@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 
 ### NewLdapConnectionHandlerResponse
 
-`func NewLdapConnectionHandlerResponse(id string, schemas []EnumldapConnectionHandlerSchemaUrn, listenPort int32, enabled bool, ) *LdapConnectionHandlerResponse`
+`func NewLdapConnectionHandlerResponse(id string, schemas []EnumldapConnectionHandlerSchemaUrn, listenPort int64, enabled bool, ) *LdapConnectionHandlerResponse`
 
 NewLdapConnectionHandlerResponse instantiates a new LdapConnectionHandlerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -122,20 +122,20 @@ HasListenAddress returns a boolean if a field has been set.
 
 ### GetListenPort
 
-`func (o *LdapConnectionHandlerResponse) GetListenPort() int32`
+`func (o *LdapConnectionHandlerResponse) GetListenPort() int64`
 
 GetListenPort returns the ListenPort field if non-nil, zero value otherwise.
 
 ### GetListenPortOk
 
-`func (o *LdapConnectionHandlerResponse) GetListenPortOk() (*int32, bool)`
+`func (o *LdapConnectionHandlerResponse) GetListenPortOk() (*int64, bool)`
 
 GetListenPortOk returns a tuple with the ListenPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetListenPort
 
-`func (o *LdapConnectionHandlerResponse) SetListenPort(v int32)`
+`func (o *LdapConnectionHandlerResponse) SetListenPort(v int64)`
 
 SetListenPort sets ListenPort field to given value.
 
@@ -392,20 +392,20 @@ HasMaxRequestSize returns a boolean if a field has been set.
 
 ### GetMaxCancelHandlers
 
-`func (o *LdapConnectionHandlerResponse) GetMaxCancelHandlers() int32`
+`func (o *LdapConnectionHandlerResponse) GetMaxCancelHandlers() int64`
 
 GetMaxCancelHandlers returns the MaxCancelHandlers field if non-nil, zero value otherwise.
 
 ### GetMaxCancelHandlersOk
 
-`func (o *LdapConnectionHandlerResponse) GetMaxCancelHandlersOk() (*int32, bool)`
+`func (o *LdapConnectionHandlerResponse) GetMaxCancelHandlersOk() (*int64, bool)`
 
 GetMaxCancelHandlersOk returns a tuple with the MaxCancelHandlers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxCancelHandlers
 
-`func (o *LdapConnectionHandlerResponse) SetMaxCancelHandlers(v int32)`
+`func (o *LdapConnectionHandlerResponse) SetMaxCancelHandlers(v int64)`
 
 SetMaxCancelHandlers sets MaxCancelHandlers field to given value.
 
@@ -417,20 +417,20 @@ HasMaxCancelHandlers returns a boolean if a field has been set.
 
 ### GetNumAcceptHandlers
 
-`func (o *LdapConnectionHandlerResponse) GetNumAcceptHandlers() int32`
+`func (o *LdapConnectionHandlerResponse) GetNumAcceptHandlers() int64`
 
 GetNumAcceptHandlers returns the NumAcceptHandlers field if non-nil, zero value otherwise.
 
 ### GetNumAcceptHandlersOk
 
-`func (o *LdapConnectionHandlerResponse) GetNumAcceptHandlersOk() (*int32, bool)`
+`func (o *LdapConnectionHandlerResponse) GetNumAcceptHandlersOk() (*int64, bool)`
 
 GetNumAcceptHandlersOk returns a tuple with the NumAcceptHandlers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNumAcceptHandlers
 
-`func (o *LdapConnectionHandlerResponse) SetNumAcceptHandlers(v int32)`
+`func (o *LdapConnectionHandlerResponse) SetNumAcceptHandlers(v int64)`
 
 SetNumAcceptHandlers sets NumAcceptHandlers field to given value.
 
@@ -442,20 +442,20 @@ HasNumAcceptHandlers returns a boolean if a field has been set.
 
 ### GetNumRequestHandlers
 
-`func (o *LdapConnectionHandlerResponse) GetNumRequestHandlers() int32`
+`func (o *LdapConnectionHandlerResponse) GetNumRequestHandlers() int64`
 
 GetNumRequestHandlers returns the NumRequestHandlers field if non-nil, zero value otherwise.
 
 ### GetNumRequestHandlersOk
 
-`func (o *LdapConnectionHandlerResponse) GetNumRequestHandlersOk() (*int32, bool)`
+`func (o *LdapConnectionHandlerResponse) GetNumRequestHandlersOk() (*int64, bool)`
 
 GetNumRequestHandlersOk returns a tuple with the NumRequestHandlers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNumRequestHandlers
 
-`func (o *LdapConnectionHandlerResponse) SetNumRequestHandlers(v int32)`
+`func (o *LdapConnectionHandlerResponse) SetNumRequestHandlers(v int64)`
 
 SetNumRequestHandlers sets NumRequestHandlers field to given value.
 
@@ -492,20 +492,20 @@ HasSslClientAuthPolicy returns a boolean if a field has been set.
 
 ### GetAcceptBacklog
 
-`func (o *LdapConnectionHandlerResponse) GetAcceptBacklog() int32`
+`func (o *LdapConnectionHandlerResponse) GetAcceptBacklog() int64`
 
 GetAcceptBacklog returns the AcceptBacklog field if non-nil, zero value otherwise.
 
 ### GetAcceptBacklogOk
 
-`func (o *LdapConnectionHandlerResponse) GetAcceptBacklogOk() (*int32, bool)`
+`func (o *LdapConnectionHandlerResponse) GetAcceptBacklogOk() (*int64, bool)`
 
 GetAcceptBacklogOk returns a tuple with the AcceptBacklog field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAcceptBacklog
 
-`func (o *LdapConnectionHandlerResponse) SetAcceptBacklog(v int32)`
+`func (o *LdapConnectionHandlerResponse) SetAcceptBacklog(v int64)`
 
 SetAcceptBacklog sets AcceptBacklog field to given value.
 

@@ -47,11 +47,11 @@ type LocalDbBackendResponse struct {
 	// Indicates whether to calculate and store a message digest of the entry contents along with the entry data, in order to provide a means of verifying the integrity of the entry data.
 	HashEntries *bool `json:"hashEntries,omitempty"`
 	// Specifies the number of threads that the backend should maintain to keep the database log files at or near the desired utilization. A value of zero indicates that the number of cleaner threads should be automatically configured based on the number of available CPUs.
-	DbNumCleanerThreads *int32 `json:"dbNumCleanerThreads,omitempty"`
+	DbNumCleanerThreads *int64 `json:"dbNumCleanerThreads,omitempty"`
 	// Specifies the minimum percentage of \"live\" data that the database cleaner attempts to keep in database log files.
-	DbCleanerMinUtilization *int32 `json:"dbCleanerMinUtilization,omitempty"`
+	DbCleanerMinUtilization *int64 `json:"dbCleanerMinUtilization,omitempty"`
 	// Specifies the percentage over the configured maximum that the database cache is allowed to grow. It is recommended to set this value slightly above zero when the database is too large to fully cache in memory. In this case, a dedicated background evictor thread is used to perform evictions once the cache fills up reducing the possibility that server threads are blocked.
-	DbEvictorCriticalPercentage *int32 `json:"dbEvictorCriticalPercentage,omitempty"`
+	DbEvictorCriticalPercentage *int64 `json:"dbEvictorCriticalPercentage,omitempty"`
 	// Specifies the maximum length of time that should pass between checkpoints.
 	DbCheckpointerWakeupInterval *string `json:"dbCheckpointerWakeupInterval,omitempty"`
 	// Specifies the interval to use when performing background synchronous writes in the database environment in order to smooth overall write performance and increase data durability. A value of \"0 s\" will disable background synchronous writes.
@@ -65,7 +65,7 @@ type LocalDbBackendResponse struct {
 	// Specifies the database and environment properties for the Berkeley DB Java Edition database serving the data for this backend.
 	JeProperty []string `json:"jeProperty,omitempty"`
 	// Specifies the percentage of JVM memory to allocate to the database cache.
-	DbCachePercent       *int32                               `json:"dbCachePercent,omitempty"`
+	DbCachePercent       *int64                               `json:"dbCachePercent,omitempty"`
 	DefaultCacheMode     *EnumbackendDefaultCacheModeProp     `json:"defaultCacheMode,omitempty"`
 	Id2entryCacheMode    *EnumbackendId2entryCacheModeProp    `json:"id2entryCacheMode,omitempty"`
 	Dn2idCacheMode       *EnumbackendDn2idCacheModeProp       `json:"dn2idCacheMode,omitempty"`
@@ -74,7 +74,7 @@ type LocalDbBackendResponse struct {
 	Dn2uriCacheMode      *EnumbackendDn2uriCacheModeProp      `json:"dn2uriCacheMode,omitempty"`
 	PrimeMethod          []EnumbackendPrimeMethodProp         `json:"primeMethod,omitempty"`
 	// Specifies the number of threads to use when priming. At present, this applies only to the preload and cursor-across-indexes prime methods.
-	PrimeThreadCount *int32 `json:"primeThreadCount,omitempty"`
+	PrimeThreadCount *int64 `json:"primeThreadCount,omitempty"`
 	// Specifies the maximum length of time that the backend prime should be allowed to run. A duration of zero seconds indicates that there should not be a time limit.
 	PrimeTimeLimit *string `json:"primeTimeLimit,omitempty"`
 	// Indicates whether to prime all indexes associated with this backend, or to only prime the specified set of indexes (as configured with the system-index-to-prime property for the system indexes, and the prime-index property in the attribute index definition for attribute indexes).
@@ -84,31 +84,31 @@ type LocalDbBackendResponse struct {
 	// Indicates whether to attempt to perform the prime using a background thread if possible. If background priming is enabled, then the Directory Server may be allowed to accept client connections and process requests while the prime is in progress.
 	BackgroundPrime *bool `json:"backgroundPrime,omitempty"`
 	// Specifies the maximum number of entries that are allowed to match a given index key before that particular index key is no longer maintained.
-	IndexEntryLimit *int32 `json:"indexEntryLimit,omitempty"`
+	IndexEntryLimit *int64 `json:"indexEntryLimit,omitempty"`
 	// Specifies the maximum number of entries that are allowed to match a given composite index key before that particular composite index key is no longer maintained.
-	CompositeIndexEntryLimit *int32 `json:"compositeIndexEntryLimit,omitempty"`
+	CompositeIndexEntryLimit *int64 `json:"compositeIndexEntryLimit,omitempty"`
 	// Specifies the maximum number of entry IDs to maintain for each entry in the id2children system index (which keeps track of the immediate children for an entry, to assist in otherwise unindexed searches with a single-level scope). A value of 0 means there is no limit, however this could have a big impact on database size on disk and on server performance.
-	Id2childrenIndexEntryLimit *int32 `json:"id2childrenIndexEntryLimit,omitempty"`
+	Id2childrenIndexEntryLimit *int64 `json:"id2childrenIndexEntryLimit,omitempty"`
 	// Specifies the maximum number of entry IDs to maintain for each entry in the id2subtree system index (which keeps track of all descendants below an entry, to assist in otherwise unindexed searches with a whole-subtree or subordinate subtree scope). A value of 0 means there is no limit, however this could have a big impact on database size on disk and on server performance.
-	Id2subtreeIndexEntryLimit *int32 `json:"id2subtreeIndexEntryLimit,omitempty"`
+	Id2subtreeIndexEntryLimit *int64 `json:"id2subtreeIndexEntryLimit,omitempty"`
 	// Specifies the location of the directory that is used to hold temporary information during the index post-processing phase of an LDIF import.
 	ImportTempDirectory string `json:"importTempDirectory"`
 	// Specifies the number of threads to use for concurrent processing during an LDIF import.
-	ImportThreadCount *int32 `json:"importThreadCount,omitempty"`
+	ImportThreadCount *int64 `json:"importThreadCount,omitempty"`
 	// Specifies the number of threads to use for concurrently retrieving and encoding entries during an LDIF export.
-	ExportThreadCount *int32 `json:"exportThreadCount,omitempty"`
+	ExportThreadCount *int64 `json:"exportThreadCount,omitempty"`
 	// The percentage of JVM memory to allocate to the database cache during import operations.
-	DbImportCachePercent *int32 `json:"dbImportCachePercent,omitempty"`
+	DbImportCachePercent *int64 `json:"dbImportCachePercent,omitempty"`
 	// Indicates whether the database should synchronously flush data as it is written to disk.
 	DbTxnWriteNoSync *bool `json:"dbTxnWriteNoSync,omitempty"`
 	// Specifies the number of times that the server should retry an attempted operation in the backend if a deadlock results from two concurrent requests that interfere with each other in a conflicting manner.
-	DeadlockRetryLimit                    *int32                                                `json:"deadlockRetryLimit,omitempty"`
+	DeadlockRetryLimit                    *int64                                                `json:"deadlockRetryLimit,omitempty"`
 	ExternalTxnDefaultBackendLockBehavior *EnumbackendExternalTxnDefaultBackendLockBehaviorProp `json:"externalTxnDefaultBackendLockBehavior,omitempty"`
 	SingleWriterLockBehavior              *EnumbackendSingleWriterLockBehaviorProp              `json:"singleWriterLockBehavior,omitempty"`
 	// Specifies the maximum number of entries that may be deleted from the backend when using the subtree delete control.
-	SubtreeDeleteSizeLimit *int32 `json:"subtreeDeleteSizeLimit,omitempty"`
+	SubtreeDeleteSizeLimit *int64 `json:"subtreeDeleteSizeLimit,omitempty"`
 	// Specifies the number of recent LDAP entry changes per replica for which the backend keeps a record to allow replication to recover in the event that the server is abruptly terminated. Increasing this value can lead to an increased peak server modification rate as well as increased replication throughput.
-	NumRecentChanges *int32 `json:"numRecentChanges,omitempty"`
+	NumRecentChanges *int64 `json:"numRecentChanges,omitempty"`
 	// Specifies a timeout duration which will be used for opening the database environment by an offline process, such as export-ldif.
 	OfflineProcessDatabaseOpenTimeout *string `json:"offlineProcessDatabaseOpenTimeout,omitempty"`
 	// Specifies a name to identify the associated backend.
@@ -603,9 +603,9 @@ func (o *LocalDbBackendResponse) SetHashEntries(v bool) {
 }
 
 // GetDbNumCleanerThreads returns the DbNumCleanerThreads field value if set, zero value otherwise.
-func (o *LocalDbBackendResponse) GetDbNumCleanerThreads() int32 {
+func (o *LocalDbBackendResponse) GetDbNumCleanerThreads() int64 {
 	if o == nil || IsNil(o.DbNumCleanerThreads) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DbNumCleanerThreads
@@ -613,7 +613,7 @@ func (o *LocalDbBackendResponse) GetDbNumCleanerThreads() int32 {
 
 // GetDbNumCleanerThreadsOk returns a tuple with the DbNumCleanerThreads field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LocalDbBackendResponse) GetDbNumCleanerThreadsOk() (*int32, bool) {
+func (o *LocalDbBackendResponse) GetDbNumCleanerThreadsOk() (*int64, bool) {
 	if o == nil || IsNil(o.DbNumCleanerThreads) {
 		return nil, false
 	}
@@ -629,15 +629,15 @@ func (o *LocalDbBackendResponse) HasDbNumCleanerThreads() bool {
 	return false
 }
 
-// SetDbNumCleanerThreads gets a reference to the given int32 and assigns it to the DbNumCleanerThreads field.
-func (o *LocalDbBackendResponse) SetDbNumCleanerThreads(v int32) {
+// SetDbNumCleanerThreads gets a reference to the given int64 and assigns it to the DbNumCleanerThreads field.
+func (o *LocalDbBackendResponse) SetDbNumCleanerThreads(v int64) {
 	o.DbNumCleanerThreads = &v
 }
 
 // GetDbCleanerMinUtilization returns the DbCleanerMinUtilization field value if set, zero value otherwise.
-func (o *LocalDbBackendResponse) GetDbCleanerMinUtilization() int32 {
+func (o *LocalDbBackendResponse) GetDbCleanerMinUtilization() int64 {
 	if o == nil || IsNil(o.DbCleanerMinUtilization) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DbCleanerMinUtilization
@@ -645,7 +645,7 @@ func (o *LocalDbBackendResponse) GetDbCleanerMinUtilization() int32 {
 
 // GetDbCleanerMinUtilizationOk returns a tuple with the DbCleanerMinUtilization field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LocalDbBackendResponse) GetDbCleanerMinUtilizationOk() (*int32, bool) {
+func (o *LocalDbBackendResponse) GetDbCleanerMinUtilizationOk() (*int64, bool) {
 	if o == nil || IsNil(o.DbCleanerMinUtilization) {
 		return nil, false
 	}
@@ -661,15 +661,15 @@ func (o *LocalDbBackendResponse) HasDbCleanerMinUtilization() bool {
 	return false
 }
 
-// SetDbCleanerMinUtilization gets a reference to the given int32 and assigns it to the DbCleanerMinUtilization field.
-func (o *LocalDbBackendResponse) SetDbCleanerMinUtilization(v int32) {
+// SetDbCleanerMinUtilization gets a reference to the given int64 and assigns it to the DbCleanerMinUtilization field.
+func (o *LocalDbBackendResponse) SetDbCleanerMinUtilization(v int64) {
 	o.DbCleanerMinUtilization = &v
 }
 
 // GetDbEvictorCriticalPercentage returns the DbEvictorCriticalPercentage field value if set, zero value otherwise.
-func (o *LocalDbBackendResponse) GetDbEvictorCriticalPercentage() int32 {
+func (o *LocalDbBackendResponse) GetDbEvictorCriticalPercentage() int64 {
 	if o == nil || IsNil(o.DbEvictorCriticalPercentage) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DbEvictorCriticalPercentage
@@ -677,7 +677,7 @@ func (o *LocalDbBackendResponse) GetDbEvictorCriticalPercentage() int32 {
 
 // GetDbEvictorCriticalPercentageOk returns a tuple with the DbEvictorCriticalPercentage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LocalDbBackendResponse) GetDbEvictorCriticalPercentageOk() (*int32, bool) {
+func (o *LocalDbBackendResponse) GetDbEvictorCriticalPercentageOk() (*int64, bool) {
 	if o == nil || IsNil(o.DbEvictorCriticalPercentage) {
 		return nil, false
 	}
@@ -693,8 +693,8 @@ func (o *LocalDbBackendResponse) HasDbEvictorCriticalPercentage() bool {
 	return false
 }
 
-// SetDbEvictorCriticalPercentage gets a reference to the given int32 and assigns it to the DbEvictorCriticalPercentage field.
-func (o *LocalDbBackendResponse) SetDbEvictorCriticalPercentage(v int32) {
+// SetDbEvictorCriticalPercentage gets a reference to the given int64 and assigns it to the DbEvictorCriticalPercentage field.
+func (o *LocalDbBackendResponse) SetDbEvictorCriticalPercentage(v int64) {
 	o.DbEvictorCriticalPercentage = &v
 }
 
@@ -891,9 +891,9 @@ func (o *LocalDbBackendResponse) SetJeProperty(v []string) {
 }
 
 // GetDbCachePercent returns the DbCachePercent field value if set, zero value otherwise.
-func (o *LocalDbBackendResponse) GetDbCachePercent() int32 {
+func (o *LocalDbBackendResponse) GetDbCachePercent() int64 {
 	if o == nil || IsNil(o.DbCachePercent) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DbCachePercent
@@ -901,7 +901,7 @@ func (o *LocalDbBackendResponse) GetDbCachePercent() int32 {
 
 // GetDbCachePercentOk returns a tuple with the DbCachePercent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LocalDbBackendResponse) GetDbCachePercentOk() (*int32, bool) {
+func (o *LocalDbBackendResponse) GetDbCachePercentOk() (*int64, bool) {
 	if o == nil || IsNil(o.DbCachePercent) {
 		return nil, false
 	}
@@ -917,8 +917,8 @@ func (o *LocalDbBackendResponse) HasDbCachePercent() bool {
 	return false
 }
 
-// SetDbCachePercent gets a reference to the given int32 and assigns it to the DbCachePercent field.
-func (o *LocalDbBackendResponse) SetDbCachePercent(v int32) {
+// SetDbCachePercent gets a reference to the given int64 and assigns it to the DbCachePercent field.
+func (o *LocalDbBackendResponse) SetDbCachePercent(v int64) {
 	o.DbCachePercent = &v
 }
 
@@ -1147,9 +1147,9 @@ func (o *LocalDbBackendResponse) SetPrimeMethod(v []EnumbackendPrimeMethodProp) 
 }
 
 // GetPrimeThreadCount returns the PrimeThreadCount field value if set, zero value otherwise.
-func (o *LocalDbBackendResponse) GetPrimeThreadCount() int32 {
+func (o *LocalDbBackendResponse) GetPrimeThreadCount() int64 {
 	if o == nil || IsNil(o.PrimeThreadCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.PrimeThreadCount
@@ -1157,7 +1157,7 @@ func (o *LocalDbBackendResponse) GetPrimeThreadCount() int32 {
 
 // GetPrimeThreadCountOk returns a tuple with the PrimeThreadCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LocalDbBackendResponse) GetPrimeThreadCountOk() (*int32, bool) {
+func (o *LocalDbBackendResponse) GetPrimeThreadCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.PrimeThreadCount) {
 		return nil, false
 	}
@@ -1173,8 +1173,8 @@ func (o *LocalDbBackendResponse) HasPrimeThreadCount() bool {
 	return false
 }
 
-// SetPrimeThreadCount gets a reference to the given int32 and assigns it to the PrimeThreadCount field.
-func (o *LocalDbBackendResponse) SetPrimeThreadCount(v int32) {
+// SetPrimeThreadCount gets a reference to the given int64 and assigns it to the PrimeThreadCount field.
+func (o *LocalDbBackendResponse) SetPrimeThreadCount(v int64) {
 	o.PrimeThreadCount = &v
 }
 
@@ -1339,9 +1339,9 @@ func (o *LocalDbBackendResponse) SetBackgroundPrime(v bool) {
 }
 
 // GetIndexEntryLimit returns the IndexEntryLimit field value if set, zero value otherwise.
-func (o *LocalDbBackendResponse) GetIndexEntryLimit() int32 {
+func (o *LocalDbBackendResponse) GetIndexEntryLimit() int64 {
 	if o == nil || IsNil(o.IndexEntryLimit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.IndexEntryLimit
@@ -1349,7 +1349,7 @@ func (o *LocalDbBackendResponse) GetIndexEntryLimit() int32 {
 
 // GetIndexEntryLimitOk returns a tuple with the IndexEntryLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LocalDbBackendResponse) GetIndexEntryLimitOk() (*int32, bool) {
+func (o *LocalDbBackendResponse) GetIndexEntryLimitOk() (*int64, bool) {
 	if o == nil || IsNil(o.IndexEntryLimit) {
 		return nil, false
 	}
@@ -1365,15 +1365,15 @@ func (o *LocalDbBackendResponse) HasIndexEntryLimit() bool {
 	return false
 }
 
-// SetIndexEntryLimit gets a reference to the given int32 and assigns it to the IndexEntryLimit field.
-func (o *LocalDbBackendResponse) SetIndexEntryLimit(v int32) {
+// SetIndexEntryLimit gets a reference to the given int64 and assigns it to the IndexEntryLimit field.
+func (o *LocalDbBackendResponse) SetIndexEntryLimit(v int64) {
 	o.IndexEntryLimit = &v
 }
 
 // GetCompositeIndexEntryLimit returns the CompositeIndexEntryLimit field value if set, zero value otherwise.
-func (o *LocalDbBackendResponse) GetCompositeIndexEntryLimit() int32 {
+func (o *LocalDbBackendResponse) GetCompositeIndexEntryLimit() int64 {
 	if o == nil || IsNil(o.CompositeIndexEntryLimit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CompositeIndexEntryLimit
@@ -1381,7 +1381,7 @@ func (o *LocalDbBackendResponse) GetCompositeIndexEntryLimit() int32 {
 
 // GetCompositeIndexEntryLimitOk returns a tuple with the CompositeIndexEntryLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LocalDbBackendResponse) GetCompositeIndexEntryLimitOk() (*int32, bool) {
+func (o *LocalDbBackendResponse) GetCompositeIndexEntryLimitOk() (*int64, bool) {
 	if o == nil || IsNil(o.CompositeIndexEntryLimit) {
 		return nil, false
 	}
@@ -1397,15 +1397,15 @@ func (o *LocalDbBackendResponse) HasCompositeIndexEntryLimit() bool {
 	return false
 }
 
-// SetCompositeIndexEntryLimit gets a reference to the given int32 and assigns it to the CompositeIndexEntryLimit field.
-func (o *LocalDbBackendResponse) SetCompositeIndexEntryLimit(v int32) {
+// SetCompositeIndexEntryLimit gets a reference to the given int64 and assigns it to the CompositeIndexEntryLimit field.
+func (o *LocalDbBackendResponse) SetCompositeIndexEntryLimit(v int64) {
 	o.CompositeIndexEntryLimit = &v
 }
 
 // GetId2childrenIndexEntryLimit returns the Id2childrenIndexEntryLimit field value if set, zero value otherwise.
-func (o *LocalDbBackendResponse) GetId2childrenIndexEntryLimit() int32 {
+func (o *LocalDbBackendResponse) GetId2childrenIndexEntryLimit() int64 {
 	if o == nil || IsNil(o.Id2childrenIndexEntryLimit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id2childrenIndexEntryLimit
@@ -1413,7 +1413,7 @@ func (o *LocalDbBackendResponse) GetId2childrenIndexEntryLimit() int32 {
 
 // GetId2childrenIndexEntryLimitOk returns a tuple with the Id2childrenIndexEntryLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LocalDbBackendResponse) GetId2childrenIndexEntryLimitOk() (*int32, bool) {
+func (o *LocalDbBackendResponse) GetId2childrenIndexEntryLimitOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id2childrenIndexEntryLimit) {
 		return nil, false
 	}
@@ -1429,15 +1429,15 @@ func (o *LocalDbBackendResponse) HasId2childrenIndexEntryLimit() bool {
 	return false
 }
 
-// SetId2childrenIndexEntryLimit gets a reference to the given int32 and assigns it to the Id2childrenIndexEntryLimit field.
-func (o *LocalDbBackendResponse) SetId2childrenIndexEntryLimit(v int32) {
+// SetId2childrenIndexEntryLimit gets a reference to the given int64 and assigns it to the Id2childrenIndexEntryLimit field.
+func (o *LocalDbBackendResponse) SetId2childrenIndexEntryLimit(v int64) {
 	o.Id2childrenIndexEntryLimit = &v
 }
 
 // GetId2subtreeIndexEntryLimit returns the Id2subtreeIndexEntryLimit field value if set, zero value otherwise.
-func (o *LocalDbBackendResponse) GetId2subtreeIndexEntryLimit() int32 {
+func (o *LocalDbBackendResponse) GetId2subtreeIndexEntryLimit() int64 {
 	if o == nil || IsNil(o.Id2subtreeIndexEntryLimit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id2subtreeIndexEntryLimit
@@ -1445,7 +1445,7 @@ func (o *LocalDbBackendResponse) GetId2subtreeIndexEntryLimit() int32 {
 
 // GetId2subtreeIndexEntryLimitOk returns a tuple with the Id2subtreeIndexEntryLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LocalDbBackendResponse) GetId2subtreeIndexEntryLimitOk() (*int32, bool) {
+func (o *LocalDbBackendResponse) GetId2subtreeIndexEntryLimitOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id2subtreeIndexEntryLimit) {
 		return nil, false
 	}
@@ -1461,8 +1461,8 @@ func (o *LocalDbBackendResponse) HasId2subtreeIndexEntryLimit() bool {
 	return false
 }
 
-// SetId2subtreeIndexEntryLimit gets a reference to the given int32 and assigns it to the Id2subtreeIndexEntryLimit field.
-func (o *LocalDbBackendResponse) SetId2subtreeIndexEntryLimit(v int32) {
+// SetId2subtreeIndexEntryLimit gets a reference to the given int64 and assigns it to the Id2subtreeIndexEntryLimit field.
+func (o *LocalDbBackendResponse) SetId2subtreeIndexEntryLimit(v int64) {
 	o.Id2subtreeIndexEntryLimit = &v
 }
 
@@ -1491,9 +1491,9 @@ func (o *LocalDbBackendResponse) SetImportTempDirectory(v string) {
 }
 
 // GetImportThreadCount returns the ImportThreadCount field value if set, zero value otherwise.
-func (o *LocalDbBackendResponse) GetImportThreadCount() int32 {
+func (o *LocalDbBackendResponse) GetImportThreadCount() int64 {
 	if o == nil || IsNil(o.ImportThreadCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ImportThreadCount
@@ -1501,7 +1501,7 @@ func (o *LocalDbBackendResponse) GetImportThreadCount() int32 {
 
 // GetImportThreadCountOk returns a tuple with the ImportThreadCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LocalDbBackendResponse) GetImportThreadCountOk() (*int32, bool) {
+func (o *LocalDbBackendResponse) GetImportThreadCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.ImportThreadCount) {
 		return nil, false
 	}
@@ -1517,15 +1517,15 @@ func (o *LocalDbBackendResponse) HasImportThreadCount() bool {
 	return false
 }
 
-// SetImportThreadCount gets a reference to the given int32 and assigns it to the ImportThreadCount field.
-func (o *LocalDbBackendResponse) SetImportThreadCount(v int32) {
+// SetImportThreadCount gets a reference to the given int64 and assigns it to the ImportThreadCount field.
+func (o *LocalDbBackendResponse) SetImportThreadCount(v int64) {
 	o.ImportThreadCount = &v
 }
 
 // GetExportThreadCount returns the ExportThreadCount field value if set, zero value otherwise.
-func (o *LocalDbBackendResponse) GetExportThreadCount() int32 {
+func (o *LocalDbBackendResponse) GetExportThreadCount() int64 {
 	if o == nil || IsNil(o.ExportThreadCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ExportThreadCount
@@ -1533,7 +1533,7 @@ func (o *LocalDbBackendResponse) GetExportThreadCount() int32 {
 
 // GetExportThreadCountOk returns a tuple with the ExportThreadCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LocalDbBackendResponse) GetExportThreadCountOk() (*int32, bool) {
+func (o *LocalDbBackendResponse) GetExportThreadCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.ExportThreadCount) {
 		return nil, false
 	}
@@ -1549,15 +1549,15 @@ func (o *LocalDbBackendResponse) HasExportThreadCount() bool {
 	return false
 }
 
-// SetExportThreadCount gets a reference to the given int32 and assigns it to the ExportThreadCount field.
-func (o *LocalDbBackendResponse) SetExportThreadCount(v int32) {
+// SetExportThreadCount gets a reference to the given int64 and assigns it to the ExportThreadCount field.
+func (o *LocalDbBackendResponse) SetExportThreadCount(v int64) {
 	o.ExportThreadCount = &v
 }
 
 // GetDbImportCachePercent returns the DbImportCachePercent field value if set, zero value otherwise.
-func (o *LocalDbBackendResponse) GetDbImportCachePercent() int32 {
+func (o *LocalDbBackendResponse) GetDbImportCachePercent() int64 {
 	if o == nil || IsNil(o.DbImportCachePercent) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DbImportCachePercent
@@ -1565,7 +1565,7 @@ func (o *LocalDbBackendResponse) GetDbImportCachePercent() int32 {
 
 // GetDbImportCachePercentOk returns a tuple with the DbImportCachePercent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LocalDbBackendResponse) GetDbImportCachePercentOk() (*int32, bool) {
+func (o *LocalDbBackendResponse) GetDbImportCachePercentOk() (*int64, bool) {
 	if o == nil || IsNil(o.DbImportCachePercent) {
 		return nil, false
 	}
@@ -1581,8 +1581,8 @@ func (o *LocalDbBackendResponse) HasDbImportCachePercent() bool {
 	return false
 }
 
-// SetDbImportCachePercent gets a reference to the given int32 and assigns it to the DbImportCachePercent field.
-func (o *LocalDbBackendResponse) SetDbImportCachePercent(v int32) {
+// SetDbImportCachePercent gets a reference to the given int64 and assigns it to the DbImportCachePercent field.
+func (o *LocalDbBackendResponse) SetDbImportCachePercent(v int64) {
 	o.DbImportCachePercent = &v
 }
 
@@ -1619,9 +1619,9 @@ func (o *LocalDbBackendResponse) SetDbTxnWriteNoSync(v bool) {
 }
 
 // GetDeadlockRetryLimit returns the DeadlockRetryLimit field value if set, zero value otherwise.
-func (o *LocalDbBackendResponse) GetDeadlockRetryLimit() int32 {
+func (o *LocalDbBackendResponse) GetDeadlockRetryLimit() int64 {
 	if o == nil || IsNil(o.DeadlockRetryLimit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DeadlockRetryLimit
@@ -1629,7 +1629,7 @@ func (o *LocalDbBackendResponse) GetDeadlockRetryLimit() int32 {
 
 // GetDeadlockRetryLimitOk returns a tuple with the DeadlockRetryLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LocalDbBackendResponse) GetDeadlockRetryLimitOk() (*int32, bool) {
+func (o *LocalDbBackendResponse) GetDeadlockRetryLimitOk() (*int64, bool) {
 	if o == nil || IsNil(o.DeadlockRetryLimit) {
 		return nil, false
 	}
@@ -1645,8 +1645,8 @@ func (o *LocalDbBackendResponse) HasDeadlockRetryLimit() bool {
 	return false
 }
 
-// SetDeadlockRetryLimit gets a reference to the given int32 and assigns it to the DeadlockRetryLimit field.
-func (o *LocalDbBackendResponse) SetDeadlockRetryLimit(v int32) {
+// SetDeadlockRetryLimit gets a reference to the given int64 and assigns it to the DeadlockRetryLimit field.
+func (o *LocalDbBackendResponse) SetDeadlockRetryLimit(v int64) {
 	o.DeadlockRetryLimit = &v
 }
 
@@ -1715,9 +1715,9 @@ func (o *LocalDbBackendResponse) SetSingleWriterLockBehavior(v EnumbackendSingle
 }
 
 // GetSubtreeDeleteSizeLimit returns the SubtreeDeleteSizeLimit field value if set, zero value otherwise.
-func (o *LocalDbBackendResponse) GetSubtreeDeleteSizeLimit() int32 {
+func (o *LocalDbBackendResponse) GetSubtreeDeleteSizeLimit() int64 {
 	if o == nil || IsNil(o.SubtreeDeleteSizeLimit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SubtreeDeleteSizeLimit
@@ -1725,7 +1725,7 @@ func (o *LocalDbBackendResponse) GetSubtreeDeleteSizeLimit() int32 {
 
 // GetSubtreeDeleteSizeLimitOk returns a tuple with the SubtreeDeleteSizeLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LocalDbBackendResponse) GetSubtreeDeleteSizeLimitOk() (*int32, bool) {
+func (o *LocalDbBackendResponse) GetSubtreeDeleteSizeLimitOk() (*int64, bool) {
 	if o == nil || IsNil(o.SubtreeDeleteSizeLimit) {
 		return nil, false
 	}
@@ -1741,15 +1741,15 @@ func (o *LocalDbBackendResponse) HasSubtreeDeleteSizeLimit() bool {
 	return false
 }
 
-// SetSubtreeDeleteSizeLimit gets a reference to the given int32 and assigns it to the SubtreeDeleteSizeLimit field.
-func (o *LocalDbBackendResponse) SetSubtreeDeleteSizeLimit(v int32) {
+// SetSubtreeDeleteSizeLimit gets a reference to the given int64 and assigns it to the SubtreeDeleteSizeLimit field.
+func (o *LocalDbBackendResponse) SetSubtreeDeleteSizeLimit(v int64) {
 	o.SubtreeDeleteSizeLimit = &v
 }
 
 // GetNumRecentChanges returns the NumRecentChanges field value if set, zero value otherwise.
-func (o *LocalDbBackendResponse) GetNumRecentChanges() int32 {
+func (o *LocalDbBackendResponse) GetNumRecentChanges() int64 {
 	if o == nil || IsNil(o.NumRecentChanges) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.NumRecentChanges
@@ -1757,7 +1757,7 @@ func (o *LocalDbBackendResponse) GetNumRecentChanges() int32 {
 
 // GetNumRecentChangesOk returns a tuple with the NumRecentChanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LocalDbBackendResponse) GetNumRecentChangesOk() (*int32, bool) {
+func (o *LocalDbBackendResponse) GetNumRecentChangesOk() (*int64, bool) {
 	if o == nil || IsNil(o.NumRecentChanges) {
 		return nil, false
 	}
@@ -1773,8 +1773,8 @@ func (o *LocalDbBackendResponse) HasNumRecentChanges() bool {
 	return false
 }
 
-// SetNumRecentChanges gets a reference to the given int32 and assigns it to the NumRecentChanges field.
-func (o *LocalDbBackendResponse) SetNumRecentChanges(v int32) {
+// SetNumRecentChanges gets a reference to the given int64 and assigns it to the NumRecentChanges field.
+func (o *LocalDbBackendResponse) SetNumRecentChanges(v int64) {
 	o.NumRecentChanges = &v
 }
 

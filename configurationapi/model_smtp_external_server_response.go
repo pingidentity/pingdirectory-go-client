@@ -25,7 +25,7 @@ type SmtpExternalServerResponse struct {
 	// The host name of the smtp server.
 	ServerHostName string `json:"serverHostName"`
 	// The port number where the smtp server listens for requests.
-	ServerPort   *int32                              `json:"serverPort,omitempty"`
+	ServerPort   *int64                              `json:"serverPort,omitempty"`
 	SmtpSecurity *EnumexternalServerSmtpSecurityProp `json:"smtpSecurity,omitempty"`
 	// The name of the login account to use when connecting to the smtp server. Both username and password must be supplied if this attribute is set.
 	UserName *string `json:"userName,omitempty"`
@@ -136,9 +136,9 @@ func (o *SmtpExternalServerResponse) SetServerHostName(v string) {
 }
 
 // GetServerPort returns the ServerPort field value if set, zero value otherwise.
-func (o *SmtpExternalServerResponse) GetServerPort() int32 {
+func (o *SmtpExternalServerResponse) GetServerPort() int64 {
 	if o == nil || IsNil(o.ServerPort) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ServerPort
@@ -146,7 +146,7 @@ func (o *SmtpExternalServerResponse) GetServerPort() int32 {
 
 // GetServerPortOk returns a tuple with the ServerPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SmtpExternalServerResponse) GetServerPortOk() (*int32, bool) {
+func (o *SmtpExternalServerResponse) GetServerPortOk() (*int64, bool) {
 	if o == nil || IsNil(o.ServerPort) {
 		return nil, false
 	}
@@ -162,8 +162,8 @@ func (o *SmtpExternalServerResponse) HasServerPort() bool {
 	return false
 }
 
-// SetServerPort gets a reference to the given int32 and assigns it to the ServerPort field.
-func (o *SmtpExternalServerResponse) SetServerPort(v int32) {
+// SetServerPort gets a reference to the given int64 and assigns it to the ServerPort field.
+func (o *SmtpExternalServerResponse) SetServerPort(v int64) {
 	o.ServerPort = &v
 }
 

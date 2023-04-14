@@ -9,11 +9,11 @@ Name | Type | Description | Notes
 **BaseDN** | **[]string** | Specifies the base DN(s) for the data that the backend handles. | 
 **DbDirectory** | Pointer to **string** | Specifies the path to the filesystem directory that is used to hold the Berkeley DB Java Edition database files containing the data for this backend. The files for this backend are stored in a sub-directory named after the backend-id. | [optional] 
 **DbDirectoryPermissions** | Pointer to **string** | Specifies the permissions that should be applied to the directory containing the backend database files and to directories and files created during backup of the backend. | [optional] 
-**DbCachePercent** | Pointer to **int32** | Specifies the percentage of JVM memory to allocate to the changelog database cache. | [optional] 
+**DbCachePercent** | Pointer to **int64** | Specifies the percentage of JVM memory to allocate to the changelog database cache. | [optional] 
 **JeProperty** | Pointer to **[]string** | Specifies the database and environment properties for the Berkeley DB Java Edition database for this changelog backend. | [optional] 
-**ChangelogWriteBatchSize** | Pointer to **int32** | Specifies the number of changelog entries written in a single database transaction. | [optional] 
-**ChangelogPurgeBatchSize** | Pointer to **int32** | Specifies the number of changelog entries purged in a single database transaction. | [optional] 
-**ChangelogWriteQueueCapacity** | Pointer to **int32** | Specifies the capacity of the changelog write queue in number of changes. | [optional] 
+**ChangelogWriteBatchSize** | Pointer to **int64** | Specifies the number of changelog entries written in a single database transaction. | [optional] 
+**ChangelogPurgeBatchSize** | Pointer to **int64** | Specifies the number of changelog entries purged in a single database transaction. | [optional] 
+**ChangelogWriteQueueCapacity** | Pointer to **int64** | Specifies the capacity of the changelog write queue in number of changes. | [optional] 
 **IndexIncludeAttribute** | Pointer to **[]string** | Specifies which attribute types are to be specifically included in the set of attribute indexes maintained on the changelog. If this property does not have any values then no attribute types are indexed. | [optional] 
 **IndexExcludeAttribute** | Pointer to **[]string** | Specifies which attribute types are to be specifically excluded from the set of attribute indexes maintained on the changelog. This property is useful when the index-include-attribute property contains one of the special values \&quot;*\&quot; and \&quot;+\&quot;. | [optional] 
 **ChangelogMaximumAge** | **string** | Changes are guaranteed to be maintained in the changelog database for at least this duration. Setting target-database-size can allow additional changes to be maintained up to the configured size on disk. | 
@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **ChangelogDeletedEntryIncludeAttribute** | Pointer to **[]string** | Specifies a set of attribute types that should be included in a changelog entry for DELETE operations. | [optional] 
 **ChangelogDeletedEntryExcludeAttribute** | Pointer to **[]string** | Specifies a set of attribute types that should be excluded from a changelog entry for DELETE operations. | [optional] 
 **ChangelogIncludeKeyAttribute** | Pointer to **[]string** | Specifies which attribute types will be included in a changelog entry on every change. | [optional] 
-**ChangelogMaxBeforeAfterValues** | Pointer to **int32** | This controls whether all attribute values for a modified attribute (even those values that have not changed) will be included in the changelog entry. If the number of attribute values does not exceed this limit, then all values for the modified attribute will be included in the changelog entry. | [optional] 
+**ChangelogMaxBeforeAfterValues** | Pointer to **int64** | This controls whether all attribute values for a modified attribute (even those values that have not changed) will be included in the changelog entry. If the number of attribute values does not exceed this limit, then all values for the modified attribute will be included in the changelog entry. | [optional] 
 **WriteLastmodAttributes** | Pointer to **bool** | Specifies whether values of creatorsName, createTimestamp, modifiersName and modifyTimestamp attributes will be written to changelog entries. | [optional] 
 **UseReversibleForm** | Pointer to **bool** | Specifies whether the changelog should provide enough information to be able to revert the changes if desired. | [optional] 
 **IncludeVirtualAttributes** | Pointer to [**[]EnumbackendIncludeVirtualAttributesProp**](EnumbackendIncludeVirtualAttributesProp.md) |  | [optional] 
@@ -174,20 +174,20 @@ HasDbDirectoryPermissions returns a boolean if a field has been set.
 
 ### GetDbCachePercent
 
-`func (o *ChangelogBackendResponse) GetDbCachePercent() int32`
+`func (o *ChangelogBackendResponse) GetDbCachePercent() int64`
 
 GetDbCachePercent returns the DbCachePercent field if non-nil, zero value otherwise.
 
 ### GetDbCachePercentOk
 
-`func (o *ChangelogBackendResponse) GetDbCachePercentOk() (*int32, bool)`
+`func (o *ChangelogBackendResponse) GetDbCachePercentOk() (*int64, bool)`
 
 GetDbCachePercentOk returns a tuple with the DbCachePercent field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDbCachePercent
 
-`func (o *ChangelogBackendResponse) SetDbCachePercent(v int32)`
+`func (o *ChangelogBackendResponse) SetDbCachePercent(v int64)`
 
 SetDbCachePercent sets DbCachePercent field to given value.
 
@@ -224,20 +224,20 @@ HasJeProperty returns a boolean if a field has been set.
 
 ### GetChangelogWriteBatchSize
 
-`func (o *ChangelogBackendResponse) GetChangelogWriteBatchSize() int32`
+`func (o *ChangelogBackendResponse) GetChangelogWriteBatchSize() int64`
 
 GetChangelogWriteBatchSize returns the ChangelogWriteBatchSize field if non-nil, zero value otherwise.
 
 ### GetChangelogWriteBatchSizeOk
 
-`func (o *ChangelogBackendResponse) GetChangelogWriteBatchSizeOk() (*int32, bool)`
+`func (o *ChangelogBackendResponse) GetChangelogWriteBatchSizeOk() (*int64, bool)`
 
 GetChangelogWriteBatchSizeOk returns a tuple with the ChangelogWriteBatchSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChangelogWriteBatchSize
 
-`func (o *ChangelogBackendResponse) SetChangelogWriteBatchSize(v int32)`
+`func (o *ChangelogBackendResponse) SetChangelogWriteBatchSize(v int64)`
 
 SetChangelogWriteBatchSize sets ChangelogWriteBatchSize field to given value.
 
@@ -249,20 +249,20 @@ HasChangelogWriteBatchSize returns a boolean if a field has been set.
 
 ### GetChangelogPurgeBatchSize
 
-`func (o *ChangelogBackendResponse) GetChangelogPurgeBatchSize() int32`
+`func (o *ChangelogBackendResponse) GetChangelogPurgeBatchSize() int64`
 
 GetChangelogPurgeBatchSize returns the ChangelogPurgeBatchSize field if non-nil, zero value otherwise.
 
 ### GetChangelogPurgeBatchSizeOk
 
-`func (o *ChangelogBackendResponse) GetChangelogPurgeBatchSizeOk() (*int32, bool)`
+`func (o *ChangelogBackendResponse) GetChangelogPurgeBatchSizeOk() (*int64, bool)`
 
 GetChangelogPurgeBatchSizeOk returns a tuple with the ChangelogPurgeBatchSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChangelogPurgeBatchSize
 
-`func (o *ChangelogBackendResponse) SetChangelogPurgeBatchSize(v int32)`
+`func (o *ChangelogBackendResponse) SetChangelogPurgeBatchSize(v int64)`
 
 SetChangelogPurgeBatchSize sets ChangelogPurgeBatchSize field to given value.
 
@@ -274,20 +274,20 @@ HasChangelogPurgeBatchSize returns a boolean if a field has been set.
 
 ### GetChangelogWriteQueueCapacity
 
-`func (o *ChangelogBackendResponse) GetChangelogWriteQueueCapacity() int32`
+`func (o *ChangelogBackendResponse) GetChangelogWriteQueueCapacity() int64`
 
 GetChangelogWriteQueueCapacity returns the ChangelogWriteQueueCapacity field if non-nil, zero value otherwise.
 
 ### GetChangelogWriteQueueCapacityOk
 
-`func (o *ChangelogBackendResponse) GetChangelogWriteQueueCapacityOk() (*int32, bool)`
+`func (o *ChangelogBackendResponse) GetChangelogWriteQueueCapacityOk() (*int64, bool)`
 
 GetChangelogWriteQueueCapacityOk returns a tuple with the ChangelogWriteQueueCapacity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChangelogWriteQueueCapacity
 
-`func (o *ChangelogBackendResponse) SetChangelogWriteQueueCapacity(v int32)`
+`func (o *ChangelogBackendResponse) SetChangelogWriteQueueCapacity(v int64)`
 
 SetChangelogWriteQueueCapacity sets ChangelogWriteQueueCapacity field to given value.
 
@@ -619,20 +619,20 @@ HasChangelogIncludeKeyAttribute returns a boolean if a field has been set.
 
 ### GetChangelogMaxBeforeAfterValues
 
-`func (o *ChangelogBackendResponse) GetChangelogMaxBeforeAfterValues() int32`
+`func (o *ChangelogBackendResponse) GetChangelogMaxBeforeAfterValues() int64`
 
 GetChangelogMaxBeforeAfterValues returns the ChangelogMaxBeforeAfterValues field if non-nil, zero value otherwise.
 
 ### GetChangelogMaxBeforeAfterValuesOk
 
-`func (o *ChangelogBackendResponse) GetChangelogMaxBeforeAfterValuesOk() (*int32, bool)`
+`func (o *ChangelogBackendResponse) GetChangelogMaxBeforeAfterValuesOk() (*int64, bool)`
 
 GetChangelogMaxBeforeAfterValuesOk returns a tuple with the ChangelogMaxBeforeAfterValues field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChangelogMaxBeforeAfterValues
 
-`func (o *ChangelogBackendResponse) SetChangelogMaxBeforeAfterValues(v int32)`
+`func (o *ChangelogBackendResponse) SetChangelogMaxBeforeAfterValues(v int64)`
 
 SetChangelogMaxBeforeAfterValues sets ChangelogMaxBeforeAfterValues field to given value.
 

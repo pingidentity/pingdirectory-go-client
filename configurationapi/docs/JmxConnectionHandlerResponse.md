@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | Name of the Connection Handler | 
 **Schemas** | [**[]EnumjmxConnectionHandlerSchemaUrn**](EnumjmxConnectionHandlerSchemaUrn.md) |  | 
-**ListenPort** | **int32** | Specifies the port number on which the JMX Connection Handler will listen for connections from clients. | 
+**ListenPort** | **int64** | Specifies the port number on which the JMX Connection Handler will listen for connections from clients. | 
 **UseSSL** | Pointer to **bool** | Indicates whether the JMX Connection Handler should use SSL. | [optional] 
 **SslCertNickname** | Pointer to **string** | Specifies the nickname (also called the alias) of the certificate that the JMX Connection Handler should use when performing SSL communication. | [optional] 
 **KeyManagerProvider** | Pointer to **string** | Specifies the name of the key manager that should be used with this JMX Connection Handler . | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewJmxConnectionHandlerResponse
 
-`func NewJmxConnectionHandlerResponse(id string, schemas []EnumjmxConnectionHandlerSchemaUrn, listenPort int32, enabled bool, ) *JmxConnectionHandlerResponse`
+`func NewJmxConnectionHandlerResponse(id string, schemas []EnumjmxConnectionHandlerSchemaUrn, listenPort int64, enabled bool, ) *JmxConnectionHandlerResponse`
 
 NewJmxConnectionHandlerResponse instantiates a new JmxConnectionHandlerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -78,20 +78,20 @@ SetSchemas sets Schemas field to given value.
 
 ### GetListenPort
 
-`func (o *JmxConnectionHandlerResponse) GetListenPort() int32`
+`func (o *JmxConnectionHandlerResponse) GetListenPort() int64`
 
 GetListenPort returns the ListenPort field if non-nil, zero value otherwise.
 
 ### GetListenPortOk
 
-`func (o *JmxConnectionHandlerResponse) GetListenPortOk() (*int32, bool)`
+`func (o *JmxConnectionHandlerResponse) GetListenPortOk() (*int64, bool)`
 
 GetListenPortOk returns a tuple with the ListenPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetListenPort
 
-`func (o *JmxConnectionHandlerResponse) SetListenPort(v int32)`
+`func (o *JmxConnectionHandlerResponse) SetListenPort(v int64)`
 
 SetListenPort sets ListenPort field to given value.
 

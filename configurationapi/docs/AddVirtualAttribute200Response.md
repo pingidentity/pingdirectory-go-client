@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **Filter** | Pointer to **[]string** | Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries. | [optional] 
 **ClientConnectionPolicy** | Pointer to **[]string** | Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies. | [optional] 
 **RequireExplicitRequestByName** | Pointer to **bool** | Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type. | [optional] 
-**MultipleVirtualAttributeEvaluationOrderIndex** | Pointer to **int32** | Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry. | [optional] 
+**MultipleVirtualAttributeEvaluationOrderIndex** | Pointer to **int64** | Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry. | [optional] 
 **MultipleVirtualAttributeMergeBehavior** | Pointer to [**EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp**](EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp.md) |  | [optional] 
 **AllowIndexConflicts** | Pointer to **bool** | Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 **JoinBaseDNType** | [**EnumvirtualAttributeJoinBaseDNTypeProp**](EnumvirtualAttributeJoinBaseDNTypeProp.md) |  | 
 **JoinCustomBaseDN** | Pointer to **string** | The fixed, administrator-specified base DN for the internal searches used to identify joined entries. | [optional] 
 **JoinScope** | Pointer to [**EnumvirtualAttributeJoinScopeProp**](EnumvirtualAttributeJoinScopeProp.md) |  | [optional] 
-**JoinSizeLimit** | Pointer to **int32** | The maximum number of entries that may be joined with the source entry, which also corresponds to the maximum number of values that the virtual attribute provider will generate for an entry. | [optional] 
+**JoinSizeLimit** | Pointer to **int64** | The maximum number of entries that may be joined with the source entry, which also corresponds to the maximum number of values that the virtual attribute provider will generate for an entry. | [optional] 
 **JoinFilter** | Pointer to **string** | An optional filter that specifies additional criteria for identifying joined entries. If a join-filter value is specified, then only entries matching that filter (in addition to satisfying the other join criteria) will be joined with the search result entry. | [optional] 
 **JoinAttribute** | Pointer to **[]string** | An optional set of the names of the attributes to include with joined entries. | [optional] 
 **ReferencedByAttribute** | **[]string** | The name or OID of an attribute type whose values will be searched for references to the target entry. The attribute type must be defined in the server schema, must have a syntax of either \&quot;distinguished name\&quot; or \&quot;name and optional UID\&quot;, and must be indexed for equality. | 
@@ -418,20 +418,20 @@ HasRequireExplicitRequestByName returns a boolean if a field has been set.
 
 ### GetMultipleVirtualAttributeEvaluationOrderIndex
 
-`func (o *AddVirtualAttribute200Response) GetMultipleVirtualAttributeEvaluationOrderIndex() int32`
+`func (o *AddVirtualAttribute200Response) GetMultipleVirtualAttributeEvaluationOrderIndex() int64`
 
 GetMultipleVirtualAttributeEvaluationOrderIndex returns the MultipleVirtualAttributeEvaluationOrderIndex field if non-nil, zero value otherwise.
 
 ### GetMultipleVirtualAttributeEvaluationOrderIndexOk
 
-`func (o *AddVirtualAttribute200Response) GetMultipleVirtualAttributeEvaluationOrderIndexOk() (*int32, bool)`
+`func (o *AddVirtualAttribute200Response) GetMultipleVirtualAttributeEvaluationOrderIndexOk() (*int64, bool)`
 
 GetMultipleVirtualAttributeEvaluationOrderIndexOk returns a tuple with the MultipleVirtualAttributeEvaluationOrderIndex field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMultipleVirtualAttributeEvaluationOrderIndex
 
-`func (o *AddVirtualAttribute200Response) SetMultipleVirtualAttributeEvaluationOrderIndex(v int32)`
+`func (o *AddVirtualAttribute200Response) SetMultipleVirtualAttributeEvaluationOrderIndex(v int64)`
 
 SetMultipleVirtualAttributeEvaluationOrderIndex sets MultipleVirtualAttributeEvaluationOrderIndex field to given value.
 
@@ -728,20 +728,20 @@ HasJoinScope returns a boolean if a field has been set.
 
 ### GetJoinSizeLimit
 
-`func (o *AddVirtualAttribute200Response) GetJoinSizeLimit() int32`
+`func (o *AddVirtualAttribute200Response) GetJoinSizeLimit() int64`
 
 GetJoinSizeLimit returns the JoinSizeLimit field if non-nil, zero value otherwise.
 
 ### GetJoinSizeLimitOk
 
-`func (o *AddVirtualAttribute200Response) GetJoinSizeLimitOk() (*int32, bool)`
+`func (o *AddVirtualAttribute200Response) GetJoinSizeLimitOk() (*int64, bool)`
 
 GetJoinSizeLimitOk returns a tuple with the JoinSizeLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetJoinSizeLimit
 
-`func (o *AddVirtualAttribute200Response) SetJoinSizeLimit(v int32)`
+`func (o *AddVirtualAttribute200Response) SetJoinSizeLimit(v int64)`
 
 SetJoinSizeLimit sets JoinSizeLimit field to given value.
 

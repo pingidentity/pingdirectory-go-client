@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **string** | Name of the External Server | 
 **Schemas** | [**[]EnumsmtpExternalServerSchemaUrn**](EnumsmtpExternalServerSchemaUrn.md) |  | 
 **ServerHostName** | **string** | The host name of the smtp server. | 
-**ServerPort** | Pointer to **int32** | The port number where the smtp server listens for requests. | [optional] 
+**ServerPort** | Pointer to **int64** | The port number where the smtp server listens for requests. | [optional] 
 **SmtpSecurity** | Pointer to [**EnumexternalServerSmtpSecurityProp**](EnumexternalServerSmtpSecurityProp.md) |  | [optional] 
 **UserName** | Pointer to **string** | The name of the login account to use when connecting to the smtp server. Both username and password must be supplied if this attribute is set. | [optional] 
 **Password** | Pointer to **string** | The login password for the specified user name. Both username and password must be supplied if this attribute is set. | [optional] 
@@ -99,20 +99,20 @@ SetServerHostName sets ServerHostName field to given value.
 
 ### GetServerPort
 
-`func (o *SmtpExternalServerResponse) GetServerPort() int32`
+`func (o *SmtpExternalServerResponse) GetServerPort() int64`
 
 GetServerPort returns the ServerPort field if non-nil, zero value otherwise.
 
 ### GetServerPortOk
 
-`func (o *SmtpExternalServerResponse) GetServerPortOk() (*int32, bool)`
+`func (o *SmtpExternalServerResponse) GetServerPortOk() (*int64, bool)`
 
 GetServerPortOk returns a tuple with the ServerPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerPort
 
-`func (o *SmtpExternalServerResponse) SetServerPort(v int32)`
+`func (o *SmtpExternalServerResponse) SetServerPort(v int64)`
 
 SetServerPort sets ServerPort field to given value.
 

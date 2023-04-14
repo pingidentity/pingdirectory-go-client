@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumvalidateTotpPasswordExtendedOperationHandlerSchemaUrn**](EnumvalidateTotpPasswordExtendedOperationHandlerSchemaUrn.md) |  | 
 **SharedSecretAttributeType** | Pointer to **string** | The name or OID of the attribute that will be used to hold the shared secret key used during TOTP processing. | [optional] 
 **TimeIntervalDuration** | Pointer to **string** | The duration of the time interval used for TOTP processing. | [optional] 
-**AdjacentIntervalsToCheck** | Pointer to **int32** | The number of adjacent time intervals (both before and after the current time) that should be checked when performing authentication. | [optional] 
+**AdjacentIntervalsToCheck** | Pointer to **int64** | The number of adjacent time intervals (both before and after the current time) that should be checked when performing authentication. | [optional] 
 **PreventTOTPReuse** | Pointer to **bool** | Indicates whether to prevent clients from re-using TOTP passwords. | [optional] 
 **Description** | Pointer to **string** | A description for this Extended Operation Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server). | 
@@ -126,20 +126,20 @@ HasTimeIntervalDuration returns a boolean if a field has been set.
 
 ### GetAdjacentIntervalsToCheck
 
-`func (o *ValidateTotpPasswordExtendedOperationHandlerResponse) GetAdjacentIntervalsToCheck() int32`
+`func (o *ValidateTotpPasswordExtendedOperationHandlerResponse) GetAdjacentIntervalsToCheck() int64`
 
 GetAdjacentIntervalsToCheck returns the AdjacentIntervalsToCheck field if non-nil, zero value otherwise.
 
 ### GetAdjacentIntervalsToCheckOk
 
-`func (o *ValidateTotpPasswordExtendedOperationHandlerResponse) GetAdjacentIntervalsToCheckOk() (*int32, bool)`
+`func (o *ValidateTotpPasswordExtendedOperationHandlerResponse) GetAdjacentIntervalsToCheckOk() (*int64, bool)`
 
 GetAdjacentIntervalsToCheckOk returns a tuple with the AdjacentIntervalsToCheck field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAdjacentIntervalsToCheck
 
-`func (o *ValidateTotpPasswordExtendedOperationHandlerResponse) SetAdjacentIntervalsToCheck(v int32)`
+`func (o *ValidateTotpPasswordExtendedOperationHandlerResponse) SetAdjacentIntervalsToCheck(v int64)`
 
 SetAdjacentIntervalsToCheck sets AdjacentIntervalsToCheck field to given value.
 

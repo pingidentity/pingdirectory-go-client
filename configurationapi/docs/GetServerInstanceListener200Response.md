@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | [**[]EnumhttpServerInstanceListenerSchemaUrn**](EnumhttpServerInstanceListenerSchemaUrn.md) |  | 
 **Id** | **string** | Name of the Server Instance | 
-**ServerLDAPPort** | Pointer to **int32** | The TCP port number on which the LDAP server is listening. | [optional] 
+**ServerLDAPPort** | Pointer to **int64** | The TCP port number on which the LDAP server is listening. | [optional] 
 **ConnectionSecurity** | Pointer to [**EnumserverInstanceListenerHttpConnectionSecurityProp**](EnumserverInstanceListenerHttpConnectionSecurityProp.md) |  | [optional] 
 **ListenerCertificate** | Pointer to **string** | The public component of the certificate that the listener is expected to present to clients. When establishing a connection to this server, only the certificate(s) listed here will be trusted. | [optional] 
 **Purpose** | Pointer to [**[]EnumserverInstanceListenerPurposeProp**](EnumserverInstanceListenerPurposeProp.md) |  | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **ListenAddress** | Pointer to **string** | If the server is listening on a particular address different from the hostname, then this property may be used to specify the address on which to listen for connections from HTTP clients. | [optional] 
-**ServerHTTPPort** | Pointer to **int32** | The TCP port number on which the HTTP server is listening. | [optional] 
+**ServerHTTPPort** | Pointer to **int64** | The TCP port number on which the HTTP server is listening. | [optional] 
 
 ## Methods
 
@@ -76,20 +76,20 @@ SetId sets Id field to given value.
 
 ### GetServerLDAPPort
 
-`func (o *GetServerInstanceListener200Response) GetServerLDAPPort() int32`
+`func (o *GetServerInstanceListener200Response) GetServerLDAPPort() int64`
 
 GetServerLDAPPort returns the ServerLDAPPort field if non-nil, zero value otherwise.
 
 ### GetServerLDAPPortOk
 
-`func (o *GetServerInstanceListener200Response) GetServerLDAPPortOk() (*int32, bool)`
+`func (o *GetServerInstanceListener200Response) GetServerLDAPPortOk() (*int64, bool)`
 
 GetServerLDAPPortOk returns a tuple with the ServerLDAPPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerLDAPPort
 
-`func (o *GetServerInstanceListener200Response) SetServerLDAPPort(v int32)`
+`func (o *GetServerInstanceListener200Response) SetServerLDAPPort(v int64)`
 
 SetServerLDAPPort sets ServerLDAPPort field to given value.
 
@@ -251,20 +251,20 @@ HasListenAddress returns a boolean if a field has been set.
 
 ### GetServerHTTPPort
 
-`func (o *GetServerInstanceListener200Response) GetServerHTTPPort() int32`
+`func (o *GetServerInstanceListener200Response) GetServerHTTPPort() int64`
 
 GetServerHTTPPort returns the ServerHTTPPort field if non-nil, zero value otherwise.
 
 ### GetServerHTTPPortOk
 
-`func (o *GetServerInstanceListener200Response) GetServerHTTPPortOk() (*int32, bool)`
+`func (o *GetServerInstanceListener200Response) GetServerHTTPPortOk() (*int64, bool)`
 
 GetServerHTTPPortOk returns a tuple with the ServerHTTPPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerHTTPPort
 
-`func (o *GetServerInstanceListener200Response) SetServerHTTPPort(v int32)`
+`func (o *GetServerInstanceListener200Response) SetServerHTTPPort(v int64)`
 
 SetServerHTTPPort sets ServerHTTPPort field to given value.
 

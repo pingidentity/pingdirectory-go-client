@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    addDelegatedAdminAttributeCategoryRequest := *openapiclient.NewAddDelegatedAdminAttributeCategoryRequest("DisplayName_example", int32(123)) // AddDelegatedAdminAttributeCategoryRequest | Create a new Delegated Admin Attribute Category in the config
+    addDelegatedAdminAttributeCategoryRequest := *openapiclient.NewAddDelegatedAdminAttributeCategoryRequest("DisplayName_example", int64(123)) // AddDelegatedAdminAttributeCategoryRequest | Create a new Delegated Admin Attribute Category in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

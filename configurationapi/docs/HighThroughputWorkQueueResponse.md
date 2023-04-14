@@ -5,17 +5,17 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | Pointer to [**[]EnumhighThroughputWorkQueueSchemaUrn**](EnumhighThroughputWorkQueueSchemaUrn.md) |  | [optional] 
-**NumWorkerThreads** | Pointer to **int32** | Specifies the total number of worker threads that should be used within the server in order to process requested operations. The worker threads will be split evenly across all of the configured queues. | [optional] 
-**NumWriteWorkerThreads** | Pointer to **int32** | Specifies the number of worker threads that should be used within the server to process write (add, delete, modify, and modify DN) operations. If this is specified, then separate sets of worker threads will be used for processing read and write operations, and the value of the num-worker-threads property will reflect the number of threads to use to process read operations. | [optional] 
-**NumAdministrativeSessionWorkerThreads** | Pointer to **int32** | Specifies the number of worker threads that should be used to process operations as part of an administrative session. These threads may be reserved only for special use by management applications like dsconfig, the administration console, and other administrative tools, so that these applications may be used to diagnose problems and take any necessary corrective action even if all \&quot;normal\&quot; worker threads are busy processing other requests. | [optional] 
-**NumQueues** | Pointer to **int32** | Specifies the number of blocking queues that should be maintained. A value of zero indicates that the server should attempt to automatically select an optimal value (one queue for every two worker threads). | [optional] 
-**NumWriteQueues** | Pointer to **int32** | Specifies the number of blocking queues that should be maintained for write operations. This will only be used if a value is specified for the num-write-worker-threads property, in which case the num-queues property will specify the number of queues for read operations. Otherwise, all operations will be processed by a common set of worker threads and the value of the num-queues property will specify the number of queues for all types of operations. | [optional] 
-**MaxWorkQueueCapacity** | Pointer to **int32** | Specifies the maximum number of pending operations that may be held in any of the queues at any given time. The total number of pending requests may be as large as this value times the total number of queues. | [optional] 
+**NumWorkerThreads** | Pointer to **int64** | Specifies the total number of worker threads that should be used within the server in order to process requested operations. The worker threads will be split evenly across all of the configured queues. | [optional] 
+**NumWriteWorkerThreads** | Pointer to **int64** | Specifies the number of worker threads that should be used within the server to process write (add, delete, modify, and modify DN) operations. If this is specified, then separate sets of worker threads will be used for processing read and write operations, and the value of the num-worker-threads property will reflect the number of threads to use to process read operations. | [optional] 
+**NumAdministrativeSessionWorkerThreads** | Pointer to **int64** | Specifies the number of worker threads that should be used to process operations as part of an administrative session. These threads may be reserved only for special use by management applications like dsconfig, the administration console, and other administrative tools, so that these applications may be used to diagnose problems and take any necessary corrective action even if all \&quot;normal\&quot; worker threads are busy processing other requests. | [optional] 
+**NumQueues** | Pointer to **int64** | Specifies the number of blocking queues that should be maintained. A value of zero indicates that the server should attempt to automatically select an optimal value (one queue for every two worker threads). | [optional] 
+**NumWriteQueues** | Pointer to **int64** | Specifies the number of blocking queues that should be maintained for write operations. This will only be used if a value is specified for the num-write-worker-threads property, in which case the num-queues property will specify the number of queues for read operations. Otherwise, all operations will be processed by a common set of worker threads and the value of the num-queues property will specify the number of queues for all types of operations. | [optional] 
+**MaxWorkQueueCapacity** | Pointer to **int64** | Specifies the maximum number of pending operations that may be held in any of the queues at any given time. The total number of pending requests may be as large as this value times the total number of queues. | [optional] 
 **MaxOfferTime** | Pointer to **string** | Specifies the maximum length of time that the connection handler should be allowed to wait to enqueue a request if the work queue is full. If the attempt to enqueue an operation does not succeed within this period of time, then the operation will be rejected and an error response will be returned to the client. A value of zero indicates that operations should be rejected immediately if the work queue is already at its maximum capacity. | [optional] 
 **MonitorQueueTime** | Pointer to **bool** | Indicates whether the work queue should monitor the length of time that operations are held in the queue. When enabled the queue time will be included with access log messages as \&quot;qtime\&quot; in milliseconds. | [optional] 
 **MaxQueueTime** | Pointer to **string** | Specifies the maximum length of time that an operation should be allowed to wait on the work queue. If an operation has been waiting on the queue longer than this period of time, then it will receive an immediate failure result rather than being processed once it has been handed off to a worker thread. A value of zero seconds indicates that there should not be any maximum queue time imposed. This setting will only be used if the monitor-queue-time property has a value of true. | [optional] 
 **ExpensiveOperationCheckInterval** | Pointer to **string** | The interval that the work queue should use when checking for potentially expensive operations. If at least expensive-operation-minimum-concurrent-count worker threads are found to be processing the same operation on two consecutive polls separated by this time interval (i.e., the worker thread has been processing that operation for at least this length of time, and potentially up to twice this length of time), then a stack trace of all running threads will be written to a file for analysis to provide potentially useful information that may help better understand the reason it is taking so long. It may be that the operation is simply an expensive one to process, but there may be other external factors (e.g., a database checkpoint, a log rotation, lock contention, etc.) that could be to blame. This option is primarily intended for debugging purposes and should generally be used under the direction of Ping Identity support. | [optional] 
-**ExpensiveOperationMinimumConcurrentCount** | Pointer to **int32** | The minimum number of concurrent expensive operations that should be detected to trigger dumping stack traces for all threads. If at least this number of worker threads are seen processing the same operations in two consecutive intervals, then the server will dump a stack trace of all threads to a file. This option is primarily intended for debugging purposes and should generally be used under the direction of Ping Identity support. | [optional] 
+**ExpensiveOperationMinimumConcurrentCount** | Pointer to **int64** | The minimum number of concurrent expensive operations that should be detected to trigger dumping stack traces for all threads. If at least this number of worker threads are seen processing the same operations in two consecutive intervals, then the server will dump a stack trace of all threads to a file. This option is primarily intended for debugging purposes and should generally be used under the direction of Ping Identity support. | [optional] 
 **ExpensiveOperationMinimumDumpInterval** | Pointer to **string** | The minimum length of time that should be required to pass after dumping stack trace information for all threads before the server should be allowed to create a second dump. This will help prevent the server from dumping stack traces too frequently and eventually consuming all available disk space with stack trace log output. This option is primarily intended for debugging purposes and should generally be used under the direction of Ping Identity support. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
@@ -66,20 +66,20 @@ HasSchemas returns a boolean if a field has been set.
 
 ### GetNumWorkerThreads
 
-`func (o *HighThroughputWorkQueueResponse) GetNumWorkerThreads() int32`
+`func (o *HighThroughputWorkQueueResponse) GetNumWorkerThreads() int64`
 
 GetNumWorkerThreads returns the NumWorkerThreads field if non-nil, zero value otherwise.
 
 ### GetNumWorkerThreadsOk
 
-`func (o *HighThroughputWorkQueueResponse) GetNumWorkerThreadsOk() (*int32, bool)`
+`func (o *HighThroughputWorkQueueResponse) GetNumWorkerThreadsOk() (*int64, bool)`
 
 GetNumWorkerThreadsOk returns a tuple with the NumWorkerThreads field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNumWorkerThreads
 
-`func (o *HighThroughputWorkQueueResponse) SetNumWorkerThreads(v int32)`
+`func (o *HighThroughputWorkQueueResponse) SetNumWorkerThreads(v int64)`
 
 SetNumWorkerThreads sets NumWorkerThreads field to given value.
 
@@ -91,20 +91,20 @@ HasNumWorkerThreads returns a boolean if a field has been set.
 
 ### GetNumWriteWorkerThreads
 
-`func (o *HighThroughputWorkQueueResponse) GetNumWriteWorkerThreads() int32`
+`func (o *HighThroughputWorkQueueResponse) GetNumWriteWorkerThreads() int64`
 
 GetNumWriteWorkerThreads returns the NumWriteWorkerThreads field if non-nil, zero value otherwise.
 
 ### GetNumWriteWorkerThreadsOk
 
-`func (o *HighThroughputWorkQueueResponse) GetNumWriteWorkerThreadsOk() (*int32, bool)`
+`func (o *HighThroughputWorkQueueResponse) GetNumWriteWorkerThreadsOk() (*int64, bool)`
 
 GetNumWriteWorkerThreadsOk returns a tuple with the NumWriteWorkerThreads field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNumWriteWorkerThreads
 
-`func (o *HighThroughputWorkQueueResponse) SetNumWriteWorkerThreads(v int32)`
+`func (o *HighThroughputWorkQueueResponse) SetNumWriteWorkerThreads(v int64)`
 
 SetNumWriteWorkerThreads sets NumWriteWorkerThreads field to given value.
 
@@ -116,20 +116,20 @@ HasNumWriteWorkerThreads returns a boolean if a field has been set.
 
 ### GetNumAdministrativeSessionWorkerThreads
 
-`func (o *HighThroughputWorkQueueResponse) GetNumAdministrativeSessionWorkerThreads() int32`
+`func (o *HighThroughputWorkQueueResponse) GetNumAdministrativeSessionWorkerThreads() int64`
 
 GetNumAdministrativeSessionWorkerThreads returns the NumAdministrativeSessionWorkerThreads field if non-nil, zero value otherwise.
 
 ### GetNumAdministrativeSessionWorkerThreadsOk
 
-`func (o *HighThroughputWorkQueueResponse) GetNumAdministrativeSessionWorkerThreadsOk() (*int32, bool)`
+`func (o *HighThroughputWorkQueueResponse) GetNumAdministrativeSessionWorkerThreadsOk() (*int64, bool)`
 
 GetNumAdministrativeSessionWorkerThreadsOk returns a tuple with the NumAdministrativeSessionWorkerThreads field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNumAdministrativeSessionWorkerThreads
 
-`func (o *HighThroughputWorkQueueResponse) SetNumAdministrativeSessionWorkerThreads(v int32)`
+`func (o *HighThroughputWorkQueueResponse) SetNumAdministrativeSessionWorkerThreads(v int64)`
 
 SetNumAdministrativeSessionWorkerThreads sets NumAdministrativeSessionWorkerThreads field to given value.
 
@@ -141,20 +141,20 @@ HasNumAdministrativeSessionWorkerThreads returns a boolean if a field has been s
 
 ### GetNumQueues
 
-`func (o *HighThroughputWorkQueueResponse) GetNumQueues() int32`
+`func (o *HighThroughputWorkQueueResponse) GetNumQueues() int64`
 
 GetNumQueues returns the NumQueues field if non-nil, zero value otherwise.
 
 ### GetNumQueuesOk
 
-`func (o *HighThroughputWorkQueueResponse) GetNumQueuesOk() (*int32, bool)`
+`func (o *HighThroughputWorkQueueResponse) GetNumQueuesOk() (*int64, bool)`
 
 GetNumQueuesOk returns a tuple with the NumQueues field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNumQueues
 
-`func (o *HighThroughputWorkQueueResponse) SetNumQueues(v int32)`
+`func (o *HighThroughputWorkQueueResponse) SetNumQueues(v int64)`
 
 SetNumQueues sets NumQueues field to given value.
 
@@ -166,20 +166,20 @@ HasNumQueues returns a boolean if a field has been set.
 
 ### GetNumWriteQueues
 
-`func (o *HighThroughputWorkQueueResponse) GetNumWriteQueues() int32`
+`func (o *HighThroughputWorkQueueResponse) GetNumWriteQueues() int64`
 
 GetNumWriteQueues returns the NumWriteQueues field if non-nil, zero value otherwise.
 
 ### GetNumWriteQueuesOk
 
-`func (o *HighThroughputWorkQueueResponse) GetNumWriteQueuesOk() (*int32, bool)`
+`func (o *HighThroughputWorkQueueResponse) GetNumWriteQueuesOk() (*int64, bool)`
 
 GetNumWriteQueuesOk returns a tuple with the NumWriteQueues field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNumWriteQueues
 
-`func (o *HighThroughputWorkQueueResponse) SetNumWriteQueues(v int32)`
+`func (o *HighThroughputWorkQueueResponse) SetNumWriteQueues(v int64)`
 
 SetNumWriteQueues sets NumWriteQueues field to given value.
 
@@ -191,20 +191,20 @@ HasNumWriteQueues returns a boolean if a field has been set.
 
 ### GetMaxWorkQueueCapacity
 
-`func (o *HighThroughputWorkQueueResponse) GetMaxWorkQueueCapacity() int32`
+`func (o *HighThroughputWorkQueueResponse) GetMaxWorkQueueCapacity() int64`
 
 GetMaxWorkQueueCapacity returns the MaxWorkQueueCapacity field if non-nil, zero value otherwise.
 
 ### GetMaxWorkQueueCapacityOk
 
-`func (o *HighThroughputWorkQueueResponse) GetMaxWorkQueueCapacityOk() (*int32, bool)`
+`func (o *HighThroughputWorkQueueResponse) GetMaxWorkQueueCapacityOk() (*int64, bool)`
 
 GetMaxWorkQueueCapacityOk returns a tuple with the MaxWorkQueueCapacity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxWorkQueueCapacity
 
-`func (o *HighThroughputWorkQueueResponse) SetMaxWorkQueueCapacity(v int32)`
+`func (o *HighThroughputWorkQueueResponse) SetMaxWorkQueueCapacity(v int64)`
 
 SetMaxWorkQueueCapacity sets MaxWorkQueueCapacity field to given value.
 
@@ -316,20 +316,20 @@ HasExpensiveOperationCheckInterval returns a boolean if a field has been set.
 
 ### GetExpensiveOperationMinimumConcurrentCount
 
-`func (o *HighThroughputWorkQueueResponse) GetExpensiveOperationMinimumConcurrentCount() int32`
+`func (o *HighThroughputWorkQueueResponse) GetExpensiveOperationMinimumConcurrentCount() int64`
 
 GetExpensiveOperationMinimumConcurrentCount returns the ExpensiveOperationMinimumConcurrentCount field if non-nil, zero value otherwise.
 
 ### GetExpensiveOperationMinimumConcurrentCountOk
 
-`func (o *HighThroughputWorkQueueResponse) GetExpensiveOperationMinimumConcurrentCountOk() (*int32, bool)`
+`func (o *HighThroughputWorkQueueResponse) GetExpensiveOperationMinimumConcurrentCountOk() (*int64, bool)`
 
 GetExpensiveOperationMinimumConcurrentCountOk returns a tuple with the ExpensiveOperationMinimumConcurrentCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExpensiveOperationMinimumConcurrentCount
 
-`func (o *HighThroughputWorkQueueResponse) SetExpensiveOperationMinimumConcurrentCount(v int32)`
+`func (o *HighThroughputWorkQueueResponse) SetExpensiveOperationMinimumConcurrentCount(v int64)`
 
 SetExpensiveOperationMinimumConcurrentCount sets ExpensiveOperationMinimumConcurrentCount field to given value.
 

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnummockAccessTokenValidatorSchemaUrn**](EnummockAccessTokenValidatorSchemaUrn.md) |  | 
 **ClientIDClaimName** | Pointer to **string** | The name of the token claim that contains the OAuth2 client ID. | [optional] 
 **ScopeClaimName** | Pointer to **string** | The name of the token claim that contains the scopes granted by the token. | [optional] 
-**EvaluationOrderIndex** | **int32** | When multiple Mock Access Token Validators are defined for a single Directory Server, this property determines the evaluation order for determining the correct validator class for an access token received by the Directory Server. Values of this property must be unique among all Mock Access Token Validators defined within Directory Server but not necessarily contiguous. Mock Access Token Validators with a smaller value will be evaluated first to determine if they are able to validate the access token. | 
+**EvaluationOrderIndex** | **int64** | When multiple Mock Access Token Validators are defined for a single Directory Server, this property determines the evaluation order for determining the correct validator class for an access token received by the Directory Server. Values of this property must be unique among all Mock Access Token Validators defined within Directory Server but not necessarily contiguous. Mock Access Token Validators with a smaller value will be evaluated first to determine if they are able to validate the access token. | 
 **IdentityMapper** | Pointer to **string** | Specifies the name of the Identity Mapper that should be used for associating user entries with Bearer token subject names. The claim name from which to obtain the subject (i.e. the currently logged-in user) may be configured using the subject-claim-name property. | [optional] 
 **SubjectClaimName** | Pointer to **string** | The name of the token claim that contains the subject, i.e. the logged-in user in an access token. This property goes hand-in-hand with the identity-mapper property and tells the Identity Mapper which field to use to look up the user entry on the server. | [optional] 
 **Description** | Pointer to **string** | A description for this Access Token Validator | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewMockAccessTokenValidatorResponse
 
-`func NewMockAccessTokenValidatorResponse(id string, schemas []EnummockAccessTokenValidatorSchemaUrn, evaluationOrderIndex int32, enabled bool, ) *MockAccessTokenValidatorResponse`
+`func NewMockAccessTokenValidatorResponse(id string, schemas []EnummockAccessTokenValidatorSchemaUrn, evaluationOrderIndex int64, enabled bool, ) *MockAccessTokenValidatorResponse`
 
 NewMockAccessTokenValidatorResponse instantiates a new MockAccessTokenValidatorResponse object
 This constructor will assign default values to properties that have it defined,
@@ -127,20 +127,20 @@ HasScopeClaimName returns a boolean if a field has been set.
 
 ### GetEvaluationOrderIndex
 
-`func (o *MockAccessTokenValidatorResponse) GetEvaluationOrderIndex() int32`
+`func (o *MockAccessTokenValidatorResponse) GetEvaluationOrderIndex() int64`
 
 GetEvaluationOrderIndex returns the EvaluationOrderIndex field if non-nil, zero value otherwise.
 
 ### GetEvaluationOrderIndexOk
 
-`func (o *MockAccessTokenValidatorResponse) GetEvaluationOrderIndexOk() (*int32, bool)`
+`func (o *MockAccessTokenValidatorResponse) GetEvaluationOrderIndexOk() (*int64, bool)`
 
 GetEvaluationOrderIndexOk returns a tuple with the EvaluationOrderIndex field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvaluationOrderIndex
 
-`func (o *MockAccessTokenValidatorResponse) SetEvaluationOrderIndex(v int32)`
+`func (o *MockAccessTokenValidatorResponse) SetEvaluationOrderIndex(v int64)`
 
 SetEvaluationOrderIndex sets EvaluationOrderIndex field to given value.
 

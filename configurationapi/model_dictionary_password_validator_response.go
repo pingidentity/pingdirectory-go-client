@@ -37,7 +37,7 @@ type DictionaryPasswordValidatorResponse struct {
 	// Provides a set of character substitutions that can be applied to the proposed password when checking to see if it is in the provided dictionary. Each mapping should consist of a single character followed by a colon and a list of the alternative characters that may be used in place of that character.
 	AlternativePasswordCharacterMapping []string `json:"alternativePasswordCharacterMapping,omitempty"`
 	// The maximum allowed percent of a proposed password that any single dictionary word is allowed to comprise. A value of 100 indicates that a proposed password will only be rejected if the dictionary contains the entire proposed password (after any configured transformations have been applied).
-	MaximumAllowedPercentOfPassword *int32 `json:"maximumAllowedPercentOfPassword,omitempty"`
+	MaximumAllowedPercentOfPassword *int64 `json:"maximumAllowedPercentOfPassword,omitempty"`
 	// A description for this Password Validator
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the password validator is enabled for use.
@@ -322,9 +322,9 @@ func (o *DictionaryPasswordValidatorResponse) SetAlternativePasswordCharacterMap
 }
 
 // GetMaximumAllowedPercentOfPassword returns the MaximumAllowedPercentOfPassword field value if set, zero value otherwise.
-func (o *DictionaryPasswordValidatorResponse) GetMaximumAllowedPercentOfPassword() int32 {
+func (o *DictionaryPasswordValidatorResponse) GetMaximumAllowedPercentOfPassword() int64 {
 	if o == nil || IsNil(o.MaximumAllowedPercentOfPassword) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaximumAllowedPercentOfPassword
@@ -332,7 +332,7 @@ func (o *DictionaryPasswordValidatorResponse) GetMaximumAllowedPercentOfPassword
 
 // GetMaximumAllowedPercentOfPasswordOk returns a tuple with the MaximumAllowedPercentOfPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DictionaryPasswordValidatorResponse) GetMaximumAllowedPercentOfPasswordOk() (*int32, bool) {
+func (o *DictionaryPasswordValidatorResponse) GetMaximumAllowedPercentOfPasswordOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaximumAllowedPercentOfPassword) {
 		return nil, false
 	}
@@ -348,8 +348,8 @@ func (o *DictionaryPasswordValidatorResponse) HasMaximumAllowedPercentOfPassword
 	return false
 }
 
-// SetMaximumAllowedPercentOfPassword gets a reference to the given int32 and assigns it to the MaximumAllowedPercentOfPassword field.
-func (o *DictionaryPasswordValidatorResponse) SetMaximumAllowedPercentOfPassword(v int32) {
+// SetMaximumAllowedPercentOfPassword gets a reference to the given int64 and assigns it to the MaximumAllowedPercentOfPassword field.
+func (o *DictionaryPasswordValidatorResponse) SetMaximumAllowedPercentOfPassword(v int64) {
 	o.MaximumAllowedPercentOfPassword = &v
 }
 

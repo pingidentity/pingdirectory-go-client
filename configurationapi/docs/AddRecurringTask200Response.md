@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumthirdPartyRecurringTaskSchemaUrn**](EnumthirdPartyRecurringTaskSchemaUrn.md) |  | 
 **ProfileDirectory** | **string** | The directory in which the generated server profiles will be placed. The files will be named with the pattern \&quot;server-profile-{timestamp}.zip\&quot;, where \&quot;{timestamp}\&quot; represents the time that the profile was generated. | 
 **IncludePath** | Pointer to **[]string** | An optional set of additional paths to files within the instance root that should be included in the generated server profile. All paths must be within the instance root, and relative paths will be relative to the instance root. | [optional] 
-**RetainPreviousProfileCount** | Pointer to **int32** | The minimum number of previous server profile zip files that should be preserved after a new profile is generated. | [optional] 
+**RetainPreviousProfileCount** | Pointer to **int64** | The minimum number of previous server profile zip files that should be preserved after a new profile is generated. | [optional] 
 **RetainPreviousProfileAge** | Pointer to **string** | The minimum age of previous server profile zip files that should be preserved after a new profile is generated. | [optional] 
 **Description** | Pointer to **string** | A description for this Recurring Task | [optional] 
 **CancelOnTaskDependencyFailure** | Pointer to **bool** | Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running). | [optional] 
@@ -28,9 +28,9 @@ Name | Type | Description | Notes
 **Encrypt** | Pointer to **bool** | Indicates whether to encrypt the LDIF data as it exported. | [optional] 
 **EncryptionSettingsDefinitionID** | Pointer to **string** | The ID of an encryption settings definition to use to obtain the LDIF export encryption key. | [optional] 
 **Sign** | Pointer to **bool** | Indicates whether to cryptographically sign the exported data, which will make it possible to detect whether the LDIF data has been altered since it was exported. | [optional] 
-**RetainPreviousFullBackupCount** | Pointer to **int32** | The minimum number of previous full backups that should be preserved after a new backup completes successfully. | [optional] 
+**RetainPreviousFullBackupCount** | Pointer to **int64** | The minimum number of previous full backups that should be preserved after a new backup completes successfully. | [optional] 
 **RetainPreviousFullBackupAge** | Pointer to **string** | The minimum age of previous full backups that should be preserved after a new backup completes successfully. | [optional] 
-**MaxMegabytesPerSecond** | Pointer to **int32** | The maximum rate, in megabytes per second, at which LDIF exports should be written. | [optional] 
+**MaxMegabytesPerSecond** | Pointer to **int64** | The maximum rate, in megabytes per second, at which LDIF exports should be written. | [optional] 
 **SleepDuration** | Pointer to **string** | The length of time to sleep before the task completes. | [optional] 
 **DurationToWaitForWorkQueueIdle** | Pointer to **string** | Indicates that task should wait for up to the specified length of time for the work queue to report that all worker threads are idle and there are no pending operations. Note that this primarily monitors operations that use worker threads, which does not include internal operations (for example, those invoked by extensions), and may not include requests from non-LDAP clients (for example, HTTP-based clients). | [optional] 
 **LdapURLForSearchExpectedToReturnEntries** | Pointer to **[]string** | An LDAP URL that provides the criteria for a search request that is expected to return at least one entry. The search will be performed internally, and only the base DN, scope, and filter from the URL will be used; any host, port, or requested attributes included in the URL will be ignored. | [optional] 
@@ -49,30 +49,30 @@ Name | Type | Description | Notes
 **IncludeExtensionSource** | Pointer to **bool** | Indicates whether the support data archive should include the source code (if available) for any third-party extensions that may be installed in the server. | [optional] 
 **UseSequentialMode** | Pointer to **bool** | Indicates whether to capture support data information sequentially rather than in parallel. Capturing data in sequential mode may reduce the amount of memory that the tool requires to operate, at the cost of taking longer to run. | [optional] 
 **SecurityLevel** | Pointer to [**EnumrecurringTaskSecurityLevelProp**](EnumrecurringTaskSecurityLevelProp.md) |  | [optional] 
-**JstackCount** | Pointer to **int32** | The number of times to invoke the jstack utility to obtain a stack trace of all threads running in the JVM. A value of zero indicates that the jstack utility should not be invoked. | [optional] 
-**ReportCount** | Pointer to **int32** | The number of intervals of data to collect from tools that use sample-based reporting, like vmstat, iostat, and mpstat. A value of zero indicates that these kinds of tools should not be used to collect any information. | [optional] 
-**ReportIntervalSeconds** | Pointer to **int32** | The duration (in seconds) between each interval of data to collect from tools that use sample-based reporting, like vmstat, iostat, and mpstat. | [optional] 
+**JstackCount** | Pointer to **int64** | The number of times to invoke the jstack utility to obtain a stack trace of all threads running in the JVM. A value of zero indicates that the jstack utility should not be invoked. | [optional] 
+**ReportCount** | Pointer to **int64** | The number of intervals of data to collect from tools that use sample-based reporting, like vmstat, iostat, and mpstat. A value of zero indicates that these kinds of tools should not be used to collect any information. | [optional] 
+**ReportIntervalSeconds** | Pointer to **int64** | The duration (in seconds) between each interval of data to collect from tools that use sample-based reporting, like vmstat, iostat, and mpstat. | [optional] 
 **LogDuration** | Pointer to **string** | The maximum age (leading up to the time the collect-support-data tool was invoked) for log content to include in the support data archive. | [optional] 
 **LogFileHeadCollectionSize** | Pointer to **string** | The amount of data to collect from the beginning of each log file included in the support data archive. | [optional] 
 **LogFileTailCollectionSize** | Pointer to **string** | The amount of data to collect from the end of each log file included in the support data archive. | [optional] 
 **Comment** | Pointer to **string** | An optional comment to include in a README file within the support data archive. | [optional] 
-**RetainPreviousSupportDataArchiveCount** | Pointer to **int32** | The minimum number of previous support data archives that should be preserved after a new archive is generated. | [optional] 
+**RetainPreviousSupportDataArchiveCount** | Pointer to **int64** | The minimum number of previous support data archives that should be preserved after a new archive is generated. | [optional] 
 **RetainPreviousSupportDataArchiveAge** | Pointer to **string** | The minimum age of previous support data archives that should be preserved after a new archive is generated. | [optional] 
 **LdifDirectory** | **string** | The directory in which LDIF export files will be placed. The directory must already exist. | 
 **BackendID** | Pointer to **[]string** | The backend ID for a backend to be exported. | [optional] 
 **ExcludeBackendID** | Pointer to **[]string** | The backend ID for a backend to be excluded from the export. | [optional] 
-**RetainPreviousLDIFExportCount** | Pointer to **int32** | The minimum number of previous LDIF exports that should be preserved after a new export completes successfully. | [optional] 
+**RetainPreviousLDIFExportCount** | Pointer to **int64** | The minimum number of previous LDIF exports that should be preserved after a new export completes successfully. | [optional] 
 **RetainPreviousLDIFExportAge** | Pointer to **string** | The minimum age of previous LDIF exports that should be preserved after a new export completes successfully. | [optional] 
 **BaseOutputDirectory** | **string** | The base directory below which generated reports will be written. Each invocation of the audit-data-security task will create a new subdirectory below this base directory whose name is a timestamp indicating when the report was generated. | 
 **DataSecurityAuditor** | Pointer to **[]string** | The set of data security auditors that should be invoked. If no auditors are specified, then all auditors defined in the configuration will be used. | [optional] 
 **Backend** | Pointer to **[]string** | The set of backends that should be examined. If no backends are specified, then all backends that support this functionality will be included. | [optional] 
 **IncludeFilter** | Pointer to **[]string** | A filter that will be used to identify entries that may be included in the generated report. If multiple filters are specified, then any entry that matches at least one of the filters will be included. If no filters are specified, then all entries will be included. | [optional] 
-**RetainPreviousReportCount** | Pointer to **int32** | The minimum number of previous reports that should be preserved after a new report is generated. | [optional] 
+**RetainPreviousReportCount** | Pointer to **int64** | The minimum number of previous reports that should be preserved after a new report is generated. | [optional] 
 **RetainPreviousReportAge** | Pointer to **string** | The minimum age of previous reports that should be preserved after a new report completes successfully. | [optional] 
 **CommandPath** | **string** | The absolute path to the command to execute. It must be an absolute path, the corresponding file must exist, and it must be listed in the config/exec-command-whitelist.txt file. | 
 **CommandArguments** | Pointer to **string** | A string containing the arguments to provide to the command. If the command should be run without arguments, this property should be left undefined. If there should be multiple arguments, then they should be separated with spaces. | [optional] 
 **CommandOutputFileBaseName** | Pointer to **string** | The path and base name for a file to which the command output (both standard output and standard error) should be written. This may be left undefined if the command output should not be recorded into a file. | [optional] 
-**RetainPreviousOutputFileCount** | Pointer to **int32** | The minimum number of previous command output files that should be preserved after a new instance of the command is invoked. | [optional] 
+**RetainPreviousOutputFileCount** | Pointer to **int64** | The minimum number of previous command output files that should be preserved after a new instance of the command is invoked. | [optional] 
 **RetainPreviousOutputFileAge** | Pointer to **string** | The minimum age of previous command output files that should be preserved after a new instance of the command is invoked. | [optional] 
 **LogCommandOutput** | Pointer to **bool** | Indicates whether the command&#39;s output (both standard output and standard error) should be recorded in the server&#39;s error log. | [optional] 
 **TaskCompletionStateForNonzeroExitCode** | Pointer to [**EnumrecurringTaskTaskCompletionStateForNonzeroExitCodeProp**](EnumrecurringTaskTaskCompletionStateForNonzeroExitCodeProp.md) |  | [optional] 
@@ -80,7 +80,7 @@ Name | Type | Description | Notes
 **TargetDirectory** | **string** | The path to the directory containing the files to examine. The directory must exist. | 
 **FilenamePattern** | **string** | A pattern that specifies the names of the files to examine. The pattern may contain zero or more asterisks as wildcards, where each wildcard matches zero or more characters. It may also contain at most one occurrence of the special string \&quot;${timestamp}\&quot;, which will match a timestamp with the format specified using the timestamp-format property. All other characters in the pattern will be treated literally. | 
 **TimestampFormat** | [**EnumrecurringTaskTimestampFormatProp**](EnumrecurringTaskTimestampFormatProp.md) |  | 
-**RetainFileCount** | Pointer to **int32** | The minimum number of files matching the pattern that will be retained. | [optional] 
+**RetainFileCount** | Pointer to **int64** | The minimum number of files matching the pattern that will be retained. | [optional] 
 **RetainFileAge** | Pointer to **string** | The minimum age of files matching the pattern that will be retained. | [optional] 
 **RetainAggregateFileSize** | Pointer to **string** | The minimum aggregate size of files that will be retained. The size should be specified as an integer followed by a unit that is one of \&quot;b\&quot; or \&quot;bytes\&quot;, \&quot;kb\&quot; or \&quot;kilobytes\&quot;, \&quot;mb\&quot; or \&quot;megabytes\&quot;, \&quot;gb\&quot; or \&quot;gigabytes\&quot;, or \&quot;tb\&quot; or \&quot;terabytes\&quot;. For example, a value of \&quot;1 gb\&quot; indicates that at least one gigabyte of files should be retained. | [optional] 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Recurring Task. | 
@@ -192,20 +192,20 @@ HasIncludePath returns a boolean if a field has been set.
 
 ### GetRetainPreviousProfileCount
 
-`func (o *AddRecurringTask200Response) GetRetainPreviousProfileCount() int32`
+`func (o *AddRecurringTask200Response) GetRetainPreviousProfileCount() int64`
 
 GetRetainPreviousProfileCount returns the RetainPreviousProfileCount field if non-nil, zero value otherwise.
 
 ### GetRetainPreviousProfileCountOk
 
-`func (o *AddRecurringTask200Response) GetRetainPreviousProfileCountOk() (*int32, bool)`
+`func (o *AddRecurringTask200Response) GetRetainPreviousProfileCountOk() (*int64, bool)`
 
 GetRetainPreviousProfileCountOk returns a tuple with the RetainPreviousProfileCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRetainPreviousProfileCount
 
-`func (o *AddRecurringTask200Response) SetRetainPreviousProfileCount(v int32)`
+`func (o *AddRecurringTask200Response) SetRetainPreviousProfileCount(v int64)`
 
 SetRetainPreviousProfileCount sets RetainPreviousProfileCount field to given value.
 
@@ -687,20 +687,20 @@ HasSign returns a boolean if a field has been set.
 
 ### GetRetainPreviousFullBackupCount
 
-`func (o *AddRecurringTask200Response) GetRetainPreviousFullBackupCount() int32`
+`func (o *AddRecurringTask200Response) GetRetainPreviousFullBackupCount() int64`
 
 GetRetainPreviousFullBackupCount returns the RetainPreviousFullBackupCount field if non-nil, zero value otherwise.
 
 ### GetRetainPreviousFullBackupCountOk
 
-`func (o *AddRecurringTask200Response) GetRetainPreviousFullBackupCountOk() (*int32, bool)`
+`func (o *AddRecurringTask200Response) GetRetainPreviousFullBackupCountOk() (*int64, bool)`
 
 GetRetainPreviousFullBackupCountOk returns a tuple with the RetainPreviousFullBackupCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRetainPreviousFullBackupCount
 
-`func (o *AddRecurringTask200Response) SetRetainPreviousFullBackupCount(v int32)`
+`func (o *AddRecurringTask200Response) SetRetainPreviousFullBackupCount(v int64)`
 
 SetRetainPreviousFullBackupCount sets RetainPreviousFullBackupCount field to given value.
 
@@ -737,20 +737,20 @@ HasRetainPreviousFullBackupAge returns a boolean if a field has been set.
 
 ### GetMaxMegabytesPerSecond
 
-`func (o *AddRecurringTask200Response) GetMaxMegabytesPerSecond() int32`
+`func (o *AddRecurringTask200Response) GetMaxMegabytesPerSecond() int64`
 
 GetMaxMegabytesPerSecond returns the MaxMegabytesPerSecond field if non-nil, zero value otherwise.
 
 ### GetMaxMegabytesPerSecondOk
 
-`func (o *AddRecurringTask200Response) GetMaxMegabytesPerSecondOk() (*int32, bool)`
+`func (o *AddRecurringTask200Response) GetMaxMegabytesPerSecondOk() (*int64, bool)`
 
 GetMaxMegabytesPerSecondOk returns a tuple with the MaxMegabytesPerSecond field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxMegabytesPerSecond
 
-`func (o *AddRecurringTask200Response) SetMaxMegabytesPerSecond(v int32)`
+`func (o *AddRecurringTask200Response) SetMaxMegabytesPerSecond(v int64)`
 
 SetMaxMegabytesPerSecond sets MaxMegabytesPerSecond field to given value.
 
@@ -1197,20 +1197,20 @@ HasSecurityLevel returns a boolean if a field has been set.
 
 ### GetJstackCount
 
-`func (o *AddRecurringTask200Response) GetJstackCount() int32`
+`func (o *AddRecurringTask200Response) GetJstackCount() int64`
 
 GetJstackCount returns the JstackCount field if non-nil, zero value otherwise.
 
 ### GetJstackCountOk
 
-`func (o *AddRecurringTask200Response) GetJstackCountOk() (*int32, bool)`
+`func (o *AddRecurringTask200Response) GetJstackCountOk() (*int64, bool)`
 
 GetJstackCountOk returns a tuple with the JstackCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetJstackCount
 
-`func (o *AddRecurringTask200Response) SetJstackCount(v int32)`
+`func (o *AddRecurringTask200Response) SetJstackCount(v int64)`
 
 SetJstackCount sets JstackCount field to given value.
 
@@ -1222,20 +1222,20 @@ HasJstackCount returns a boolean if a field has been set.
 
 ### GetReportCount
 
-`func (o *AddRecurringTask200Response) GetReportCount() int32`
+`func (o *AddRecurringTask200Response) GetReportCount() int64`
 
 GetReportCount returns the ReportCount field if non-nil, zero value otherwise.
 
 ### GetReportCountOk
 
-`func (o *AddRecurringTask200Response) GetReportCountOk() (*int32, bool)`
+`func (o *AddRecurringTask200Response) GetReportCountOk() (*int64, bool)`
 
 GetReportCountOk returns a tuple with the ReportCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReportCount
 
-`func (o *AddRecurringTask200Response) SetReportCount(v int32)`
+`func (o *AddRecurringTask200Response) SetReportCount(v int64)`
 
 SetReportCount sets ReportCount field to given value.
 
@@ -1247,20 +1247,20 @@ HasReportCount returns a boolean if a field has been set.
 
 ### GetReportIntervalSeconds
 
-`func (o *AddRecurringTask200Response) GetReportIntervalSeconds() int32`
+`func (o *AddRecurringTask200Response) GetReportIntervalSeconds() int64`
 
 GetReportIntervalSeconds returns the ReportIntervalSeconds field if non-nil, zero value otherwise.
 
 ### GetReportIntervalSecondsOk
 
-`func (o *AddRecurringTask200Response) GetReportIntervalSecondsOk() (*int32, bool)`
+`func (o *AddRecurringTask200Response) GetReportIntervalSecondsOk() (*int64, bool)`
 
 GetReportIntervalSecondsOk returns a tuple with the ReportIntervalSeconds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReportIntervalSeconds
 
-`func (o *AddRecurringTask200Response) SetReportIntervalSeconds(v int32)`
+`func (o *AddRecurringTask200Response) SetReportIntervalSeconds(v int64)`
 
 SetReportIntervalSeconds sets ReportIntervalSeconds field to given value.
 
@@ -1372,20 +1372,20 @@ HasComment returns a boolean if a field has been set.
 
 ### GetRetainPreviousSupportDataArchiveCount
 
-`func (o *AddRecurringTask200Response) GetRetainPreviousSupportDataArchiveCount() int32`
+`func (o *AddRecurringTask200Response) GetRetainPreviousSupportDataArchiveCount() int64`
 
 GetRetainPreviousSupportDataArchiveCount returns the RetainPreviousSupportDataArchiveCount field if non-nil, zero value otherwise.
 
 ### GetRetainPreviousSupportDataArchiveCountOk
 
-`func (o *AddRecurringTask200Response) GetRetainPreviousSupportDataArchiveCountOk() (*int32, bool)`
+`func (o *AddRecurringTask200Response) GetRetainPreviousSupportDataArchiveCountOk() (*int64, bool)`
 
 GetRetainPreviousSupportDataArchiveCountOk returns a tuple with the RetainPreviousSupportDataArchiveCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRetainPreviousSupportDataArchiveCount
 
-`func (o *AddRecurringTask200Response) SetRetainPreviousSupportDataArchiveCount(v int32)`
+`func (o *AddRecurringTask200Response) SetRetainPreviousSupportDataArchiveCount(v int64)`
 
 SetRetainPreviousSupportDataArchiveCount sets RetainPreviousSupportDataArchiveCount field to given value.
 
@@ -1492,20 +1492,20 @@ HasExcludeBackendID returns a boolean if a field has been set.
 
 ### GetRetainPreviousLDIFExportCount
 
-`func (o *AddRecurringTask200Response) GetRetainPreviousLDIFExportCount() int32`
+`func (o *AddRecurringTask200Response) GetRetainPreviousLDIFExportCount() int64`
 
 GetRetainPreviousLDIFExportCount returns the RetainPreviousLDIFExportCount field if non-nil, zero value otherwise.
 
 ### GetRetainPreviousLDIFExportCountOk
 
-`func (o *AddRecurringTask200Response) GetRetainPreviousLDIFExportCountOk() (*int32, bool)`
+`func (o *AddRecurringTask200Response) GetRetainPreviousLDIFExportCountOk() (*int64, bool)`
 
 GetRetainPreviousLDIFExportCountOk returns a tuple with the RetainPreviousLDIFExportCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRetainPreviousLDIFExportCount
 
-`func (o *AddRecurringTask200Response) SetRetainPreviousLDIFExportCount(v int32)`
+`func (o *AddRecurringTask200Response) SetRetainPreviousLDIFExportCount(v int64)`
 
 SetRetainPreviousLDIFExportCount sets RetainPreviousLDIFExportCount field to given value.
 
@@ -1637,20 +1637,20 @@ HasIncludeFilter returns a boolean if a field has been set.
 
 ### GetRetainPreviousReportCount
 
-`func (o *AddRecurringTask200Response) GetRetainPreviousReportCount() int32`
+`func (o *AddRecurringTask200Response) GetRetainPreviousReportCount() int64`
 
 GetRetainPreviousReportCount returns the RetainPreviousReportCount field if non-nil, zero value otherwise.
 
 ### GetRetainPreviousReportCountOk
 
-`func (o *AddRecurringTask200Response) GetRetainPreviousReportCountOk() (*int32, bool)`
+`func (o *AddRecurringTask200Response) GetRetainPreviousReportCountOk() (*int64, bool)`
 
 GetRetainPreviousReportCountOk returns a tuple with the RetainPreviousReportCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRetainPreviousReportCount
 
-`func (o *AddRecurringTask200Response) SetRetainPreviousReportCount(v int32)`
+`func (o *AddRecurringTask200Response) SetRetainPreviousReportCount(v int64)`
 
 SetRetainPreviousReportCount sets RetainPreviousReportCount field to given value.
 
@@ -1757,20 +1757,20 @@ HasCommandOutputFileBaseName returns a boolean if a field has been set.
 
 ### GetRetainPreviousOutputFileCount
 
-`func (o *AddRecurringTask200Response) GetRetainPreviousOutputFileCount() int32`
+`func (o *AddRecurringTask200Response) GetRetainPreviousOutputFileCount() int64`
 
 GetRetainPreviousOutputFileCount returns the RetainPreviousOutputFileCount field if non-nil, zero value otherwise.
 
 ### GetRetainPreviousOutputFileCountOk
 
-`func (o *AddRecurringTask200Response) GetRetainPreviousOutputFileCountOk() (*int32, bool)`
+`func (o *AddRecurringTask200Response) GetRetainPreviousOutputFileCountOk() (*int64, bool)`
 
 GetRetainPreviousOutputFileCountOk returns a tuple with the RetainPreviousOutputFileCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRetainPreviousOutputFileCount
 
-`func (o *AddRecurringTask200Response) SetRetainPreviousOutputFileCount(v int32)`
+`func (o *AddRecurringTask200Response) SetRetainPreviousOutputFileCount(v int64)`
 
 SetRetainPreviousOutputFileCount sets RetainPreviousOutputFileCount field to given value.
 
@@ -1942,20 +1942,20 @@ SetTimestampFormat sets TimestampFormat field to given value.
 
 ### GetRetainFileCount
 
-`func (o *AddRecurringTask200Response) GetRetainFileCount() int32`
+`func (o *AddRecurringTask200Response) GetRetainFileCount() int64`
 
 GetRetainFileCount returns the RetainFileCount field if non-nil, zero value otherwise.
 
 ### GetRetainFileCountOk
 
-`func (o *AddRecurringTask200Response) GetRetainFileCountOk() (*int32, bool)`
+`func (o *AddRecurringTask200Response) GetRetainFileCountOk() (*int64, bool)`
 
 GetRetainFileCountOk returns a tuple with the RetainFileCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRetainFileCount
 
-`func (o *AddRecurringTask200Response) SetRetainFileCount(v int32)`
+`func (o *AddRecurringTask200Response) SetRetainFileCount(v int64)`
 
 SetRetainFileCount sets RetainFileCount field to given value.
 

@@ -23,7 +23,7 @@ type CipherSecretKeyResponse struct {
 	// The algorithm name used to produce this cipher, e.g. AES/CBC/PKCS5Padding.
 	CipherTransformationName *string `json:"cipherTransformationName,omitempty"`
 	// The initialization vector length of the cipher in bits.
-	InitializationVectorLengthBits *int32 `json:"initializationVectorLengthBits,omitempty"`
+	InitializationVectorLengthBits *int64 `json:"initializationVectorLengthBits,omitempty"`
 	// The unique system-generated identifier for the Secret Key.
 	KeyID string `json:"keyID"`
 	// If the key is compromised, an administrator may set this flag to immediately trigger the creation of a new secret key. After the new key is generated, the value of this property will be reset to false.
@@ -31,7 +31,7 @@ type CipherSecretKeyResponse struct {
 	// The symmetric key that is used for both encryption of plain text and decryption of cipher text. This stores the secret key for each server instance encrypted with that server's inter-server certificate.
 	SymmetricKey []string `json:"symmetricKey,omitempty"`
 	// The length of the key in bits.
-	KeyLengthBits                                 int32                                              `json:"keyLengthBits"`
+	KeyLengthBits                                 int64                                              `json:"keyLengthBits"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 }
@@ -40,7 +40,7 @@ type CipherSecretKeyResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCipherSecretKeyResponse(keyID string, keyLengthBits int32) *CipherSecretKeyResponse {
+func NewCipherSecretKeyResponse(keyID string, keyLengthBits int64) *CipherSecretKeyResponse {
 	this := CipherSecretKeyResponse{}
 	this.KeyID = keyID
 	this.KeyLengthBits = keyLengthBits
@@ -120,9 +120,9 @@ func (o *CipherSecretKeyResponse) SetCipherTransformationName(v string) {
 }
 
 // GetInitializationVectorLengthBits returns the InitializationVectorLengthBits field value if set, zero value otherwise.
-func (o *CipherSecretKeyResponse) GetInitializationVectorLengthBits() int32 {
+func (o *CipherSecretKeyResponse) GetInitializationVectorLengthBits() int64 {
 	if o == nil || IsNil(o.InitializationVectorLengthBits) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.InitializationVectorLengthBits
@@ -130,7 +130,7 @@ func (o *CipherSecretKeyResponse) GetInitializationVectorLengthBits() int32 {
 
 // GetInitializationVectorLengthBitsOk returns a tuple with the InitializationVectorLengthBits field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CipherSecretKeyResponse) GetInitializationVectorLengthBitsOk() (*int32, bool) {
+func (o *CipherSecretKeyResponse) GetInitializationVectorLengthBitsOk() (*int64, bool) {
 	if o == nil || IsNil(o.InitializationVectorLengthBits) {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *CipherSecretKeyResponse) HasInitializationVectorLengthBits() bool {
 	return false
 }
 
-// SetInitializationVectorLengthBits gets a reference to the given int32 and assigns it to the InitializationVectorLengthBits field.
-func (o *CipherSecretKeyResponse) SetInitializationVectorLengthBits(v int32) {
+// SetInitializationVectorLengthBits gets a reference to the given int64 and assigns it to the InitializationVectorLengthBits field.
+func (o *CipherSecretKeyResponse) SetInitializationVectorLengthBits(v int64) {
 	o.InitializationVectorLengthBits = &v
 }
 
@@ -240,9 +240,9 @@ func (o *CipherSecretKeyResponse) SetSymmetricKey(v []string) {
 }
 
 // GetKeyLengthBits returns the KeyLengthBits field value
-func (o *CipherSecretKeyResponse) GetKeyLengthBits() int32 {
+func (o *CipherSecretKeyResponse) GetKeyLengthBits() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -251,7 +251,7 @@ func (o *CipherSecretKeyResponse) GetKeyLengthBits() int32 {
 
 // GetKeyLengthBitsOk returns a tuple with the KeyLengthBits field value
 // and a boolean to check if the value has been set.
-func (o *CipherSecretKeyResponse) GetKeyLengthBitsOk() (*int32, bool) {
+func (o *CipherSecretKeyResponse) GetKeyLengthBitsOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -259,7 +259,7 @@ func (o *CipherSecretKeyResponse) GetKeyLengthBitsOk() (*int32, bool) {
 }
 
 // SetKeyLengthBits sets field value
-func (o *CipherSecretKeyResponse) SetKeyLengthBits(v int32) {
+func (o *CipherSecretKeyResponse) SetKeyLengthBits(v int64) {
 	o.KeyLengthBits = v
 }
 

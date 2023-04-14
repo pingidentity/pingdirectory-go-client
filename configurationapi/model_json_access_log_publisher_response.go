@@ -56,7 +56,7 @@ type JsonAccessLogPublisherResponse struct {
 	// Specifies the log file buffer size.
 	BufferSize *string `json:"bufferSize,omitempty"`
 	// The maximum number of log records that can be stored in the asynchronous queue.
-	QueueSize *int32 `json:"queueSize,omitempty"`
+	QueueSize *int64 `json:"queueSize,omitempty"`
 	// Specifies the interval at which to check whether the log files need to be rotated.
 	TimeInterval *string `json:"timeInterval,omitempty"`
 	// Indicates whether the JSON objects should be formatted to span multiple lines with a single element on each line. The multi-line format is potentially more user friendly (if administrators may need to look at the log files), but each message will be larger because of the additional spaces and end-of-line markers.
@@ -100,7 +100,7 @@ type JsonAccessLogPublisherResponse struct {
 	// Indicates whether to use generified version of certain message strings, including diagnostic messages, additional information messages, authentication failure reasons, and disconnect messages. Generified versions of those strings may use placeholders (like %s for a string or %d for an integer) rather than the version of the string with those placeholders replaced with specific values.
 	GenerifyMessageStringsWhenPossible *bool `json:"generifyMessageStringsWhenPossible,omitempty"`
 	// Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written.
-	MaxStringLength *int32 `json:"maxStringLength,omitempty"`
+	MaxStringLength *int64 `json:"maxStringLength,omitempty"`
 	// The behavior to use for determining which fields to log and whether to transform the values of those fields in any way.
 	LogFieldBehavior *string `json:"logFieldBehavior,omitempty"`
 	// Indicates whether to log information about the result of any security negotiation (e.g., SSL handshake) processing that has been performed.
@@ -718,9 +718,9 @@ func (o *JsonAccessLogPublisherResponse) SetBufferSize(v string) {
 }
 
 // GetQueueSize returns the QueueSize field value if set, zero value otherwise.
-func (o *JsonAccessLogPublisherResponse) GetQueueSize() int32 {
+func (o *JsonAccessLogPublisherResponse) GetQueueSize() int64 {
 	if o == nil || IsNil(o.QueueSize) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.QueueSize
@@ -728,7 +728,7 @@ func (o *JsonAccessLogPublisherResponse) GetQueueSize() int32 {
 
 // GetQueueSizeOk returns a tuple with the QueueSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *JsonAccessLogPublisherResponse) GetQueueSizeOk() (*int32, bool) {
+func (o *JsonAccessLogPublisherResponse) GetQueueSizeOk() (*int64, bool) {
 	if o == nil || IsNil(o.QueueSize) {
 		return nil, false
 	}
@@ -744,8 +744,8 @@ func (o *JsonAccessLogPublisherResponse) HasQueueSize() bool {
 	return false
 }
 
-// SetQueueSize gets a reference to the given int32 and assigns it to the QueueSize field.
-func (o *JsonAccessLogPublisherResponse) SetQueueSize(v int32) {
+// SetQueueSize gets a reference to the given int64 and assigns it to the QueueSize field.
+func (o *JsonAccessLogPublisherResponse) SetQueueSize(v int64) {
 	o.QueueSize = &v
 }
 
@@ -1422,9 +1422,9 @@ func (o *JsonAccessLogPublisherResponse) SetGenerifyMessageStringsWhenPossible(v
 }
 
 // GetMaxStringLength returns the MaxStringLength field value if set, zero value otherwise.
-func (o *JsonAccessLogPublisherResponse) GetMaxStringLength() int32 {
+func (o *JsonAccessLogPublisherResponse) GetMaxStringLength() int64 {
 	if o == nil || IsNil(o.MaxStringLength) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxStringLength
@@ -1432,7 +1432,7 @@ func (o *JsonAccessLogPublisherResponse) GetMaxStringLength() int32 {
 
 // GetMaxStringLengthOk returns a tuple with the MaxStringLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *JsonAccessLogPublisherResponse) GetMaxStringLengthOk() (*int32, bool) {
+func (o *JsonAccessLogPublisherResponse) GetMaxStringLengthOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxStringLength) {
 		return nil, false
 	}
@@ -1448,8 +1448,8 @@ func (o *JsonAccessLogPublisherResponse) HasMaxStringLength() bool {
 	return false
 }
 
-// SetMaxStringLength gets a reference to the given int32 and assigns it to the MaxStringLength field.
-func (o *JsonAccessLogPublisherResponse) SetMaxStringLength(v int32) {
+// SetMaxStringLength gets a reference to the given int64 and assigns it to the MaxStringLength field.
+func (o *JsonAccessLogPublisherResponse) SetMaxStringLength(v int64) {
 	o.MaxStringLength = &v
 }
 

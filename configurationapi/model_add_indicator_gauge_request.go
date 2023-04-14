@@ -41,7 +41,7 @@ type AddIndicatorGaugeRequest struct {
 	// The frequency with which this Gauge is updated.
 	UpdateInterval *string `json:"updateInterval,omitempty"`
 	// Indicates the number of times the monitor data source value will be collected during the update interval.
-	SamplesPerUpdateInterval *int32 `json:"samplesPerUpdateInterval,omitempty"`
+	SamplesPerUpdateInterval *int64 `json:"samplesPerUpdateInterval,omitempty"`
 	// Specifies set of resources to be monitored.
 	IncludeResource []string `json:"includeResource,omitempty"`
 	// Specifies resources to exclude from being monitored.
@@ -431,9 +431,9 @@ func (o *AddIndicatorGaugeRequest) SetUpdateInterval(v string) {
 }
 
 // GetSamplesPerUpdateInterval returns the SamplesPerUpdateInterval field value if set, zero value otherwise.
-func (o *AddIndicatorGaugeRequest) GetSamplesPerUpdateInterval() int32 {
+func (o *AddIndicatorGaugeRequest) GetSamplesPerUpdateInterval() int64 {
 	if o == nil || IsNil(o.SamplesPerUpdateInterval) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SamplesPerUpdateInterval
@@ -441,7 +441,7 @@ func (o *AddIndicatorGaugeRequest) GetSamplesPerUpdateInterval() int32 {
 
 // GetSamplesPerUpdateIntervalOk returns a tuple with the SamplesPerUpdateInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddIndicatorGaugeRequest) GetSamplesPerUpdateIntervalOk() (*int32, bool) {
+func (o *AddIndicatorGaugeRequest) GetSamplesPerUpdateIntervalOk() (*int64, bool) {
 	if o == nil || IsNil(o.SamplesPerUpdateInterval) {
 		return nil, false
 	}
@@ -457,8 +457,8 @@ func (o *AddIndicatorGaugeRequest) HasSamplesPerUpdateInterval() bool {
 	return false
 }
 
-// SetSamplesPerUpdateInterval gets a reference to the given int32 and assigns it to the SamplesPerUpdateInterval field.
-func (o *AddIndicatorGaugeRequest) SetSamplesPerUpdateInterval(v int32) {
+// SetSamplesPerUpdateInterval gets a reference to the given int64 and assigns it to the SamplesPerUpdateInterval field.
+func (o *AddIndicatorGaugeRequest) SetSamplesPerUpdateInterval(v int64) {
 	o.SamplesPerUpdateInterval = &v
 }
 

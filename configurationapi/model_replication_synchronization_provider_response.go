@@ -23,7 +23,7 @@ type ReplicationSynchronizationProviderResponse struct {
 	// Name of the Synchronization Provider
 	Id string `json:"id"`
 	// Specifies the number of update replay threads.
-	NumUpdateReplayThreads *int32 `json:"numUpdateReplayThreads,omitempty"`
+	NumUpdateReplayThreads *int64 `json:"numUpdateReplayThreads,omitempty"`
 	// A description for this Synchronization Provider
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Synchronization Provider is enabled for use.
@@ -101,9 +101,9 @@ func (o *ReplicationSynchronizationProviderResponse) SetId(v string) {
 }
 
 // GetNumUpdateReplayThreads returns the NumUpdateReplayThreads field value if set, zero value otherwise.
-func (o *ReplicationSynchronizationProviderResponse) GetNumUpdateReplayThreads() int32 {
+func (o *ReplicationSynchronizationProviderResponse) GetNumUpdateReplayThreads() int64 {
 	if o == nil || IsNil(o.NumUpdateReplayThreads) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.NumUpdateReplayThreads
@@ -111,7 +111,7 @@ func (o *ReplicationSynchronizationProviderResponse) GetNumUpdateReplayThreads()
 
 // GetNumUpdateReplayThreadsOk returns a tuple with the NumUpdateReplayThreads field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReplicationSynchronizationProviderResponse) GetNumUpdateReplayThreadsOk() (*int32, bool) {
+func (o *ReplicationSynchronizationProviderResponse) GetNumUpdateReplayThreadsOk() (*int64, bool) {
 	if o == nil || IsNil(o.NumUpdateReplayThreads) {
 		return nil, false
 	}
@@ -127,8 +127,8 @@ func (o *ReplicationSynchronizationProviderResponse) HasNumUpdateReplayThreads()
 	return false
 }
 
-// SetNumUpdateReplayThreads gets a reference to the given int32 and assigns it to the NumUpdateReplayThreads field.
-func (o *ReplicationSynchronizationProviderResponse) SetNumUpdateReplayThreads(v int32) {
+// SetNumUpdateReplayThreads gets a reference to the given int64 and assigns it to the NumUpdateReplayThreads field.
+func (o *ReplicationSynchronizationProviderResponse) SetNumUpdateReplayThreads(v int64) {
 	o.NumUpdateReplayThreads = &v
 }
 

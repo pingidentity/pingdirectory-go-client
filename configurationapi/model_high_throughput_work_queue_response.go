@@ -21,17 +21,17 @@ var _ MappedNullable = &HighThroughputWorkQueueResponse{}
 type HighThroughputWorkQueueResponse struct {
 	Schemas []EnumhighThroughputWorkQueueSchemaUrn `json:"schemas,omitempty"`
 	// Specifies the total number of worker threads that should be used within the server in order to process requested operations. The worker threads will be split evenly across all of the configured queues.
-	NumWorkerThreads *int32 `json:"numWorkerThreads,omitempty"`
+	NumWorkerThreads *int64 `json:"numWorkerThreads,omitempty"`
 	// Specifies the number of worker threads that should be used within the server to process write (add, delete, modify, and modify DN) operations. If this is specified, then separate sets of worker threads will be used for processing read and write operations, and the value of the num-worker-threads property will reflect the number of threads to use to process read operations.
-	NumWriteWorkerThreads *int32 `json:"numWriteWorkerThreads,omitempty"`
+	NumWriteWorkerThreads *int64 `json:"numWriteWorkerThreads,omitempty"`
 	// Specifies the number of worker threads that should be used to process operations as part of an administrative session. These threads may be reserved only for special use by management applications like dsconfig, the administration console, and other administrative tools, so that these applications may be used to diagnose problems and take any necessary corrective action even if all \"normal\" worker threads are busy processing other requests.
-	NumAdministrativeSessionWorkerThreads *int32 `json:"numAdministrativeSessionWorkerThreads,omitempty"`
+	NumAdministrativeSessionWorkerThreads *int64 `json:"numAdministrativeSessionWorkerThreads,omitempty"`
 	// Specifies the number of blocking queues that should be maintained. A value of zero indicates that the server should attempt to automatically select an optimal value (one queue for every two worker threads).
-	NumQueues *int32 `json:"numQueues,omitempty"`
+	NumQueues *int64 `json:"numQueues,omitempty"`
 	// Specifies the number of blocking queues that should be maintained for write operations. This will only be used if a value is specified for the num-write-worker-threads property, in which case the num-queues property will specify the number of queues for read operations. Otherwise, all operations will be processed by a common set of worker threads and the value of the num-queues property will specify the number of queues for all types of operations.
-	NumWriteQueues *int32 `json:"numWriteQueues,omitempty"`
+	NumWriteQueues *int64 `json:"numWriteQueues,omitempty"`
 	// Specifies the maximum number of pending operations that may be held in any of the queues at any given time. The total number of pending requests may be as large as this value times the total number of queues.
-	MaxWorkQueueCapacity *int32 `json:"maxWorkQueueCapacity,omitempty"`
+	MaxWorkQueueCapacity *int64 `json:"maxWorkQueueCapacity,omitempty"`
 	// Specifies the maximum length of time that the connection handler should be allowed to wait to enqueue a request if the work queue is full. If the attempt to enqueue an operation does not succeed within this period of time, then the operation will be rejected and an error response will be returned to the client. A value of zero indicates that operations should be rejected immediately if the work queue is already at its maximum capacity.
 	MaxOfferTime *string `json:"maxOfferTime,omitempty"`
 	// Indicates whether the work queue should monitor the length of time that operations are held in the queue. When enabled the queue time will be included with access log messages as \"qtime\" in milliseconds.
@@ -41,7 +41,7 @@ type HighThroughputWorkQueueResponse struct {
 	// The interval that the work queue should use when checking for potentially expensive operations. If at least expensive-operation-minimum-concurrent-count worker threads are found to be processing the same operation on two consecutive polls separated by this time interval (i.e., the worker thread has been processing that operation for at least this length of time, and potentially up to twice this length of time), then a stack trace of all running threads will be written to a file for analysis to provide potentially useful information that may help better understand the reason it is taking so long. It may be that the operation is simply an expensive one to process, but there may be other external factors (e.g., a database checkpoint, a log rotation, lock contention, etc.) that could be to blame. This option is primarily intended for debugging purposes and should generally be used under the direction of Ping Identity support.
 	ExpensiveOperationCheckInterval *string `json:"expensiveOperationCheckInterval,omitempty"`
 	// The minimum number of concurrent expensive operations that should be detected to trigger dumping stack traces for all threads. If at least this number of worker threads are seen processing the same operations in two consecutive intervals, then the server will dump a stack trace of all threads to a file. This option is primarily intended for debugging purposes and should generally be used under the direction of Ping Identity support.
-	ExpensiveOperationMinimumConcurrentCount *int32 `json:"expensiveOperationMinimumConcurrentCount,omitempty"`
+	ExpensiveOperationMinimumConcurrentCount *int64 `json:"expensiveOperationMinimumConcurrentCount,omitempty"`
 	// The minimum length of time that should be required to pass after dumping stack trace information for all threads before the server should be allowed to create a second dump. This will help prevent the server from dumping stack traces too frequently and eventually consuming all available disk space with stack trace log output. This option is primarily intended for debugging purposes and should generally be used under the direction of Ping Identity support.
 	ExpensiveOperationMinimumDumpInterval         *string                                            `json:"expensiveOperationMinimumDumpInterval,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -98,9 +98,9 @@ func (o *HighThroughputWorkQueueResponse) SetSchemas(v []EnumhighThroughputWorkQ
 }
 
 // GetNumWorkerThreads returns the NumWorkerThreads field value if set, zero value otherwise.
-func (o *HighThroughputWorkQueueResponse) GetNumWorkerThreads() int32 {
+func (o *HighThroughputWorkQueueResponse) GetNumWorkerThreads() int64 {
 	if o == nil || IsNil(o.NumWorkerThreads) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.NumWorkerThreads
@@ -108,7 +108,7 @@ func (o *HighThroughputWorkQueueResponse) GetNumWorkerThreads() int32 {
 
 // GetNumWorkerThreadsOk returns a tuple with the NumWorkerThreads field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HighThroughputWorkQueueResponse) GetNumWorkerThreadsOk() (*int32, bool) {
+func (o *HighThroughputWorkQueueResponse) GetNumWorkerThreadsOk() (*int64, bool) {
 	if o == nil || IsNil(o.NumWorkerThreads) {
 		return nil, false
 	}
@@ -124,15 +124,15 @@ func (o *HighThroughputWorkQueueResponse) HasNumWorkerThreads() bool {
 	return false
 }
 
-// SetNumWorkerThreads gets a reference to the given int32 and assigns it to the NumWorkerThreads field.
-func (o *HighThroughputWorkQueueResponse) SetNumWorkerThreads(v int32) {
+// SetNumWorkerThreads gets a reference to the given int64 and assigns it to the NumWorkerThreads field.
+func (o *HighThroughputWorkQueueResponse) SetNumWorkerThreads(v int64) {
 	o.NumWorkerThreads = &v
 }
 
 // GetNumWriteWorkerThreads returns the NumWriteWorkerThreads field value if set, zero value otherwise.
-func (o *HighThroughputWorkQueueResponse) GetNumWriteWorkerThreads() int32 {
+func (o *HighThroughputWorkQueueResponse) GetNumWriteWorkerThreads() int64 {
 	if o == nil || IsNil(o.NumWriteWorkerThreads) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.NumWriteWorkerThreads
@@ -140,7 +140,7 @@ func (o *HighThroughputWorkQueueResponse) GetNumWriteWorkerThreads() int32 {
 
 // GetNumWriteWorkerThreadsOk returns a tuple with the NumWriteWorkerThreads field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HighThroughputWorkQueueResponse) GetNumWriteWorkerThreadsOk() (*int32, bool) {
+func (o *HighThroughputWorkQueueResponse) GetNumWriteWorkerThreadsOk() (*int64, bool) {
 	if o == nil || IsNil(o.NumWriteWorkerThreads) {
 		return nil, false
 	}
@@ -156,15 +156,15 @@ func (o *HighThroughputWorkQueueResponse) HasNumWriteWorkerThreads() bool {
 	return false
 }
 
-// SetNumWriteWorkerThreads gets a reference to the given int32 and assigns it to the NumWriteWorkerThreads field.
-func (o *HighThroughputWorkQueueResponse) SetNumWriteWorkerThreads(v int32) {
+// SetNumWriteWorkerThreads gets a reference to the given int64 and assigns it to the NumWriteWorkerThreads field.
+func (o *HighThroughputWorkQueueResponse) SetNumWriteWorkerThreads(v int64) {
 	o.NumWriteWorkerThreads = &v
 }
 
 // GetNumAdministrativeSessionWorkerThreads returns the NumAdministrativeSessionWorkerThreads field value if set, zero value otherwise.
-func (o *HighThroughputWorkQueueResponse) GetNumAdministrativeSessionWorkerThreads() int32 {
+func (o *HighThroughputWorkQueueResponse) GetNumAdministrativeSessionWorkerThreads() int64 {
 	if o == nil || IsNil(o.NumAdministrativeSessionWorkerThreads) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.NumAdministrativeSessionWorkerThreads
@@ -172,7 +172,7 @@ func (o *HighThroughputWorkQueueResponse) GetNumAdministrativeSessionWorkerThrea
 
 // GetNumAdministrativeSessionWorkerThreadsOk returns a tuple with the NumAdministrativeSessionWorkerThreads field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HighThroughputWorkQueueResponse) GetNumAdministrativeSessionWorkerThreadsOk() (*int32, bool) {
+func (o *HighThroughputWorkQueueResponse) GetNumAdministrativeSessionWorkerThreadsOk() (*int64, bool) {
 	if o == nil || IsNil(o.NumAdministrativeSessionWorkerThreads) {
 		return nil, false
 	}
@@ -188,15 +188,15 @@ func (o *HighThroughputWorkQueueResponse) HasNumAdministrativeSessionWorkerThrea
 	return false
 }
 
-// SetNumAdministrativeSessionWorkerThreads gets a reference to the given int32 and assigns it to the NumAdministrativeSessionWorkerThreads field.
-func (o *HighThroughputWorkQueueResponse) SetNumAdministrativeSessionWorkerThreads(v int32) {
+// SetNumAdministrativeSessionWorkerThreads gets a reference to the given int64 and assigns it to the NumAdministrativeSessionWorkerThreads field.
+func (o *HighThroughputWorkQueueResponse) SetNumAdministrativeSessionWorkerThreads(v int64) {
 	o.NumAdministrativeSessionWorkerThreads = &v
 }
 
 // GetNumQueues returns the NumQueues field value if set, zero value otherwise.
-func (o *HighThroughputWorkQueueResponse) GetNumQueues() int32 {
+func (o *HighThroughputWorkQueueResponse) GetNumQueues() int64 {
 	if o == nil || IsNil(o.NumQueues) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.NumQueues
@@ -204,7 +204,7 @@ func (o *HighThroughputWorkQueueResponse) GetNumQueues() int32 {
 
 // GetNumQueuesOk returns a tuple with the NumQueues field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HighThroughputWorkQueueResponse) GetNumQueuesOk() (*int32, bool) {
+func (o *HighThroughputWorkQueueResponse) GetNumQueuesOk() (*int64, bool) {
 	if o == nil || IsNil(o.NumQueues) {
 		return nil, false
 	}
@@ -220,15 +220,15 @@ func (o *HighThroughputWorkQueueResponse) HasNumQueues() bool {
 	return false
 }
 
-// SetNumQueues gets a reference to the given int32 and assigns it to the NumQueues field.
-func (o *HighThroughputWorkQueueResponse) SetNumQueues(v int32) {
+// SetNumQueues gets a reference to the given int64 and assigns it to the NumQueues field.
+func (o *HighThroughputWorkQueueResponse) SetNumQueues(v int64) {
 	o.NumQueues = &v
 }
 
 // GetNumWriteQueues returns the NumWriteQueues field value if set, zero value otherwise.
-func (o *HighThroughputWorkQueueResponse) GetNumWriteQueues() int32 {
+func (o *HighThroughputWorkQueueResponse) GetNumWriteQueues() int64 {
 	if o == nil || IsNil(o.NumWriteQueues) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.NumWriteQueues
@@ -236,7 +236,7 @@ func (o *HighThroughputWorkQueueResponse) GetNumWriteQueues() int32 {
 
 // GetNumWriteQueuesOk returns a tuple with the NumWriteQueues field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HighThroughputWorkQueueResponse) GetNumWriteQueuesOk() (*int32, bool) {
+func (o *HighThroughputWorkQueueResponse) GetNumWriteQueuesOk() (*int64, bool) {
 	if o == nil || IsNil(o.NumWriteQueues) {
 		return nil, false
 	}
@@ -252,15 +252,15 @@ func (o *HighThroughputWorkQueueResponse) HasNumWriteQueues() bool {
 	return false
 }
 
-// SetNumWriteQueues gets a reference to the given int32 and assigns it to the NumWriteQueues field.
-func (o *HighThroughputWorkQueueResponse) SetNumWriteQueues(v int32) {
+// SetNumWriteQueues gets a reference to the given int64 and assigns it to the NumWriteQueues field.
+func (o *HighThroughputWorkQueueResponse) SetNumWriteQueues(v int64) {
 	o.NumWriteQueues = &v
 }
 
 // GetMaxWorkQueueCapacity returns the MaxWorkQueueCapacity field value if set, zero value otherwise.
-func (o *HighThroughputWorkQueueResponse) GetMaxWorkQueueCapacity() int32 {
+func (o *HighThroughputWorkQueueResponse) GetMaxWorkQueueCapacity() int64 {
 	if o == nil || IsNil(o.MaxWorkQueueCapacity) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxWorkQueueCapacity
@@ -268,7 +268,7 @@ func (o *HighThroughputWorkQueueResponse) GetMaxWorkQueueCapacity() int32 {
 
 // GetMaxWorkQueueCapacityOk returns a tuple with the MaxWorkQueueCapacity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HighThroughputWorkQueueResponse) GetMaxWorkQueueCapacityOk() (*int32, bool) {
+func (o *HighThroughputWorkQueueResponse) GetMaxWorkQueueCapacityOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxWorkQueueCapacity) {
 		return nil, false
 	}
@@ -284,8 +284,8 @@ func (o *HighThroughputWorkQueueResponse) HasMaxWorkQueueCapacity() bool {
 	return false
 }
 
-// SetMaxWorkQueueCapacity gets a reference to the given int32 and assigns it to the MaxWorkQueueCapacity field.
-func (o *HighThroughputWorkQueueResponse) SetMaxWorkQueueCapacity(v int32) {
+// SetMaxWorkQueueCapacity gets a reference to the given int64 and assigns it to the MaxWorkQueueCapacity field.
+func (o *HighThroughputWorkQueueResponse) SetMaxWorkQueueCapacity(v int64) {
 	o.MaxWorkQueueCapacity = &v
 }
 
@@ -418,9 +418,9 @@ func (o *HighThroughputWorkQueueResponse) SetExpensiveOperationCheckInterval(v s
 }
 
 // GetExpensiveOperationMinimumConcurrentCount returns the ExpensiveOperationMinimumConcurrentCount field value if set, zero value otherwise.
-func (o *HighThroughputWorkQueueResponse) GetExpensiveOperationMinimumConcurrentCount() int32 {
+func (o *HighThroughputWorkQueueResponse) GetExpensiveOperationMinimumConcurrentCount() int64 {
 	if o == nil || IsNil(o.ExpensiveOperationMinimumConcurrentCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ExpensiveOperationMinimumConcurrentCount
@@ -428,7 +428,7 @@ func (o *HighThroughputWorkQueueResponse) GetExpensiveOperationMinimumConcurrent
 
 // GetExpensiveOperationMinimumConcurrentCountOk returns a tuple with the ExpensiveOperationMinimumConcurrentCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HighThroughputWorkQueueResponse) GetExpensiveOperationMinimumConcurrentCountOk() (*int32, bool) {
+func (o *HighThroughputWorkQueueResponse) GetExpensiveOperationMinimumConcurrentCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.ExpensiveOperationMinimumConcurrentCount) {
 		return nil, false
 	}
@@ -444,8 +444,8 @@ func (o *HighThroughputWorkQueueResponse) HasExpensiveOperationMinimumConcurrent
 	return false
 }
 
-// SetExpensiveOperationMinimumConcurrentCount gets a reference to the given int32 and assigns it to the ExpensiveOperationMinimumConcurrentCount field.
-func (o *HighThroughputWorkQueueResponse) SetExpensiveOperationMinimumConcurrentCount(v int32) {
+// SetExpensiveOperationMinimumConcurrentCount gets a reference to the given int64 and assigns it to the ExpensiveOperationMinimumConcurrentCount field.
+func (o *HighThroughputWorkQueueResponse) SetExpensiveOperationMinimumConcurrentCount(v int64) {
 	o.ExpensiveOperationMinimumConcurrentCount = &v
 }
 

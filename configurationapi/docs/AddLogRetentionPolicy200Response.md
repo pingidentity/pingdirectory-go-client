@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | A description for this Log Retention Policy | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
-**NumberOfFiles** | **int32** | Specifies the number of archived log files to retain before the oldest ones are cleaned. | 
+**NumberOfFiles** | **int64** | Specifies the number of archived log files to retain before the oldest ones are cleaned. | 
 **FreeDiskSpace** | **string** | Specifies the minimum amount of free disk space that should be available on the file system on which the archived log files are stored. | 
 **DiskSpaceUsed** | **string** | Specifies the maximum total disk space used by the log files. | 
 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewAddLogRetentionPolicy200Response
 
-`func NewAddLogRetentionPolicy200Response(id string, schemas []EnumsizeLimitLogRetentionPolicySchemaUrn, retainDuration string, numberOfFiles int32, freeDiskSpace string, diskSpaceUsed string, ) *AddLogRetentionPolicy200Response`
+`func NewAddLogRetentionPolicy200Response(id string, schemas []EnumsizeLimitLogRetentionPolicySchemaUrn, retainDuration string, numberOfFiles int64, freeDiskSpace string, diskSpaceUsed string, ) *AddLogRetentionPolicy200Response`
 
 NewAddLogRetentionPolicy200Response instantiates a new AddLogRetentionPolicy200Response object
 This constructor will assign default values to properties that have it defined,
@@ -170,20 +170,20 @@ HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field ha
 
 ### GetNumberOfFiles
 
-`func (o *AddLogRetentionPolicy200Response) GetNumberOfFiles() int32`
+`func (o *AddLogRetentionPolicy200Response) GetNumberOfFiles() int64`
 
 GetNumberOfFiles returns the NumberOfFiles field if non-nil, zero value otherwise.
 
 ### GetNumberOfFilesOk
 
-`func (o *AddLogRetentionPolicy200Response) GetNumberOfFilesOk() (*int32, bool)`
+`func (o *AddLogRetentionPolicy200Response) GetNumberOfFilesOk() (*int64, bool)`
 
 GetNumberOfFilesOk returns a tuple with the NumberOfFiles field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNumberOfFiles
 
-`func (o *AddLogRetentionPolicy200Response) SetNumberOfFiles(v int32)`
+`func (o *AddLogRetentionPolicy200Response) SetNumberOfFiles(v int64)`
 
 SetNumberOfFiles sets NumberOfFiles field to given value.
 

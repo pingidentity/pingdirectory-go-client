@@ -27,7 +27,7 @@ type SnmpAlertHandlerResponse struct {
 	// Specifies the address of the SNMP agent to which traps will be sent.
 	ServerHostName string `json:"serverHostName"`
 	// Specifies the port number of the SNMP agent to which traps will be sent.
-	ServerPort int32 `json:"serverPort"`
+	ServerPort int64 `json:"serverPort"`
 	// Specifies the name of the community to which the traps will be sent.
 	CommunityName string `json:"communityName"`
 	// A description for this Alert Handler
@@ -45,7 +45,7 @@ type SnmpAlertHandlerResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSnmpAlertHandlerResponse(id string, schemas []EnumsnmpAlertHandlerSchemaUrn, serverHostName string, serverPort int32, communityName string, enabled bool) *SnmpAlertHandlerResponse {
+func NewSnmpAlertHandlerResponse(id string, schemas []EnumsnmpAlertHandlerSchemaUrn, serverHostName string, serverPort int64, communityName string, enabled bool) *SnmpAlertHandlerResponse {
 	this := SnmpAlertHandlerResponse{}
 	this.Id = id
 	this.Schemas = schemas
@@ -169,9 +169,9 @@ func (o *SnmpAlertHandlerResponse) SetServerHostName(v string) {
 }
 
 // GetServerPort returns the ServerPort field value
-func (o *SnmpAlertHandlerResponse) GetServerPort() int32 {
+func (o *SnmpAlertHandlerResponse) GetServerPort() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -180,7 +180,7 @@ func (o *SnmpAlertHandlerResponse) GetServerPort() int32 {
 
 // GetServerPortOk returns a tuple with the ServerPort field value
 // and a boolean to check if the value has been set.
-func (o *SnmpAlertHandlerResponse) GetServerPortOk() (*int32, bool) {
+func (o *SnmpAlertHandlerResponse) GetServerPortOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -188,7 +188,7 @@ func (o *SnmpAlertHandlerResponse) GetServerPortOk() (*int32, bool) {
 }
 
 // SetServerPort sets field value
-func (o *SnmpAlertHandlerResponse) SetServerPort(v int32) {
+func (o *SnmpAlertHandlerResponse) SetServerPort(v int64) {
 	o.ServerPort = v
 }
 

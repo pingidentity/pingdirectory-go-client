@@ -40,7 +40,7 @@ type HasSubordinatesVirtualAttributeResponse struct {
 	// Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
 	RequireExplicitRequestByName *bool `json:"requireExplicitRequestByName,omitempty"`
 	// Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
-	MultipleVirtualAttributeEvaluationOrderIndex *int32                                                         `json:"multipleVirtualAttributeEvaluationOrderIndex,omitempty"`
+	MultipleVirtualAttributeEvaluationOrderIndex *int64                                                         `json:"multipleVirtualAttributeEvaluationOrderIndex,omitempty"`
 	MultipleVirtualAttributeMergeBehavior        *EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp `json:"multipleVirtualAttributeMergeBehavior,omitempty"`
 	// Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
 	AllowIndexConflicts                           *bool                                              `json:"allowIndexConflicts,omitempty"`
@@ -390,9 +390,9 @@ func (o *HasSubordinatesVirtualAttributeResponse) SetRequireExplicitRequestByNam
 }
 
 // GetMultipleVirtualAttributeEvaluationOrderIndex returns the MultipleVirtualAttributeEvaluationOrderIndex field value if set, zero value otherwise.
-func (o *HasSubordinatesVirtualAttributeResponse) GetMultipleVirtualAttributeEvaluationOrderIndex() int32 {
+func (o *HasSubordinatesVirtualAttributeResponse) GetMultipleVirtualAttributeEvaluationOrderIndex() int64 {
 	if o == nil || IsNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MultipleVirtualAttributeEvaluationOrderIndex
@@ -400,7 +400,7 @@ func (o *HasSubordinatesVirtualAttributeResponse) GetMultipleVirtualAttributeEva
 
 // GetMultipleVirtualAttributeEvaluationOrderIndexOk returns a tuple with the MultipleVirtualAttributeEvaluationOrderIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HasSubordinatesVirtualAttributeResponse) GetMultipleVirtualAttributeEvaluationOrderIndexOk() (*int32, bool) {
+func (o *HasSubordinatesVirtualAttributeResponse) GetMultipleVirtualAttributeEvaluationOrderIndexOk() (*int64, bool) {
 	if o == nil || IsNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
 		return nil, false
 	}
@@ -416,8 +416,8 @@ func (o *HasSubordinatesVirtualAttributeResponse) HasMultipleVirtualAttributeEva
 	return false
 }
 
-// SetMultipleVirtualAttributeEvaluationOrderIndex gets a reference to the given int32 and assigns it to the MultipleVirtualAttributeEvaluationOrderIndex field.
-func (o *HasSubordinatesVirtualAttributeResponse) SetMultipleVirtualAttributeEvaluationOrderIndex(v int32) {
+// SetMultipleVirtualAttributeEvaluationOrderIndex gets a reference to the given int64 and assigns it to the MultipleVirtualAttributeEvaluationOrderIndex field.
+func (o *HasSubordinatesVirtualAttributeResponse) SetMultipleVirtualAttributeEvaluationOrderIndex(v int64) {
 	o.MultipleVirtualAttributeEvaluationOrderIndex = &v
 }
 

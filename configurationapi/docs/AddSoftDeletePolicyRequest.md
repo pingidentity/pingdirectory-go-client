@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **AutoSoftDeleteConnectionCriteria** | Pointer to **string** | Connection criteria used to automatically identify a delete operation for processing as a soft delete request. | [optional] 
 **AutoSoftDeleteRequestCriteria** | Pointer to **string** | Request criteria used to automatically identify a delete operation for processing as a soft delete request. | [optional] 
 **SoftDeleteRetentionTime** | Pointer to **string** | Specifies the maximum length of time that soft delete entries are retained before they are eligible to purged automatically. | [optional] 
-**SoftDeleteRetainNumberOfEntries** | Pointer to **int32** | Specifies the number of soft deleted entries to retain before the oldest entries are purged. | [optional] 
+**SoftDeleteRetainNumberOfEntries** | Pointer to **int64** | Specifies the number of soft deleted entries to retain before the oldest entries are purged. | [optional] 
 
 ## Methods
 
@@ -178,20 +178,20 @@ HasSoftDeleteRetentionTime returns a boolean if a field has been set.
 
 ### GetSoftDeleteRetainNumberOfEntries
 
-`func (o *AddSoftDeletePolicyRequest) GetSoftDeleteRetainNumberOfEntries() int32`
+`func (o *AddSoftDeletePolicyRequest) GetSoftDeleteRetainNumberOfEntries() int64`
 
 GetSoftDeleteRetainNumberOfEntries returns the SoftDeleteRetainNumberOfEntries field if non-nil, zero value otherwise.
 
 ### GetSoftDeleteRetainNumberOfEntriesOk
 
-`func (o *AddSoftDeletePolicyRequest) GetSoftDeleteRetainNumberOfEntriesOk() (*int32, bool)`
+`func (o *AddSoftDeletePolicyRequest) GetSoftDeleteRetainNumberOfEntriesOk() (*int64, bool)`
 
 GetSoftDeleteRetainNumberOfEntriesOk returns a tuple with the SoftDeleteRetainNumberOfEntries field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSoftDeleteRetainNumberOfEntries
 
-`func (o *AddSoftDeletePolicyRequest) SetSoftDeleteRetainNumberOfEntries(v int32)`
+`func (o *AddSoftDeletePolicyRequest) SetSoftDeleteRetainNumberOfEntries(v int64)`
 
 SetSoftDeleteRetainNumberOfEntries sets SoftDeleteRetainNumberOfEntries field to given value.
 

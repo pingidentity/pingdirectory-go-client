@@ -7,11 +7,11 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumdiskSpaceUsageMonitorProviderSchemaUrn**](EnumdiskSpaceUsageMonitorProviderSchemaUrn.md) |  | 
 **Id** | **string** | Name of the Monitor Provider | 
 **LowSpaceWarningSizeThreshold** | Pointer to **string** | Specifies the low space warning threshold value as an absolute amount of space. If the amount of usable disk space drops below this amount, then the Directory Server will begin generating warning alert notifications. | [optional] 
-**LowSpaceWarningPercentThreshold** | Pointer to **int32** | Specifies the low space warning threshold value as a percentage of total space. If the amount of usable disk space drops below this amount, then the Directory Server will begin generating warning alert notifications. | [optional] 
+**LowSpaceWarningPercentThreshold** | Pointer to **int64** | Specifies the low space warning threshold value as a percentage of total space. If the amount of usable disk space drops below this amount, then the Directory Server will begin generating warning alert notifications. | [optional] 
 **LowSpaceErrorSizeThreshold** | Pointer to **string** | Specifies the low space error threshold value as an absolute amount of space. If the amount of usable disk space drops below this amount, then the Directory Server will start rejecting operations requested by non-root users. | [optional] 
-**LowSpaceErrorPercentThreshold** | Pointer to **int32** | Specifies the low space error threshold value as a percentage of total space. If the amount of usable disk space drops below this amount, then the Directory Server will start rejecting operations requested by non-root users. | [optional] 
+**LowSpaceErrorPercentThreshold** | Pointer to **int64** | Specifies the low space error threshold value as a percentage of total space. If the amount of usable disk space drops below this amount, then the Directory Server will start rejecting operations requested by non-root users. | [optional] 
 **OutOfSpaceErrorSizeThreshold** | Pointer to **string** | Specifies the out of space error threshold value as an absolute amount of space. If the amount of usable disk space drops below this amount, then the Directory Server will shut itself down to avoid problems that may occur from complete exhaustion of usable space. | [optional] 
-**OutOfSpaceErrorPercentThreshold** | Pointer to **int32** | Specifies the out of space error threshold value as a percentage of total space. If the amount of usable disk space drops below this amount, then the Directory Server will shut itself down to avoid problems that may occur from complete exhaustion of usable space. | [optional] 
+**OutOfSpaceErrorPercentThreshold** | Pointer to **int64** | Specifies the out of space error threshold value as a percentage of total space. If the amount of usable disk space drops below this amount, then the Directory Server will shut itself down to avoid problems that may occur from complete exhaustion of usable space. | [optional] 
 **AlertFrequency** | **string** | Specifies the length of time between administrative alerts generated in response to lack of usable disk space. Administrative alerts will be generated whenever the amount of usable space drops below any threshold, and they will also be generated at regular intervals as long as the amount of usable space remains below the threshold value. A value of zero indicates that alerts should only be generated when the amount of usable space drops below a configured threshold. | 
 **Description** | Pointer to **string** | A description for this Monitor Provider | [optional] 
 **Enabled** | **bool** | Indicates whether the Monitor Provider is enabled for use. | 
@@ -104,20 +104,20 @@ HasLowSpaceWarningSizeThreshold returns a boolean if a field has been set.
 
 ### GetLowSpaceWarningPercentThreshold
 
-`func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceWarningPercentThreshold() int32`
+`func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceWarningPercentThreshold() int64`
 
 GetLowSpaceWarningPercentThreshold returns the LowSpaceWarningPercentThreshold field if non-nil, zero value otherwise.
 
 ### GetLowSpaceWarningPercentThresholdOk
 
-`func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceWarningPercentThresholdOk() (*int32, bool)`
+`func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceWarningPercentThresholdOk() (*int64, bool)`
 
 GetLowSpaceWarningPercentThresholdOk returns a tuple with the LowSpaceWarningPercentThreshold field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLowSpaceWarningPercentThreshold
 
-`func (o *DiskSpaceUsageMonitorProviderResponse) SetLowSpaceWarningPercentThreshold(v int32)`
+`func (o *DiskSpaceUsageMonitorProviderResponse) SetLowSpaceWarningPercentThreshold(v int64)`
 
 SetLowSpaceWarningPercentThreshold sets LowSpaceWarningPercentThreshold field to given value.
 
@@ -154,20 +154,20 @@ HasLowSpaceErrorSizeThreshold returns a boolean if a field has been set.
 
 ### GetLowSpaceErrorPercentThreshold
 
-`func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceErrorPercentThreshold() int32`
+`func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceErrorPercentThreshold() int64`
 
 GetLowSpaceErrorPercentThreshold returns the LowSpaceErrorPercentThreshold field if non-nil, zero value otherwise.
 
 ### GetLowSpaceErrorPercentThresholdOk
 
-`func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceErrorPercentThresholdOk() (*int32, bool)`
+`func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceErrorPercentThresholdOk() (*int64, bool)`
 
 GetLowSpaceErrorPercentThresholdOk returns a tuple with the LowSpaceErrorPercentThreshold field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLowSpaceErrorPercentThreshold
 
-`func (o *DiskSpaceUsageMonitorProviderResponse) SetLowSpaceErrorPercentThreshold(v int32)`
+`func (o *DiskSpaceUsageMonitorProviderResponse) SetLowSpaceErrorPercentThreshold(v int64)`
 
 SetLowSpaceErrorPercentThreshold sets LowSpaceErrorPercentThreshold field to given value.
 
@@ -204,20 +204,20 @@ HasOutOfSpaceErrorSizeThreshold returns a boolean if a field has been set.
 
 ### GetOutOfSpaceErrorPercentThreshold
 
-`func (o *DiskSpaceUsageMonitorProviderResponse) GetOutOfSpaceErrorPercentThreshold() int32`
+`func (o *DiskSpaceUsageMonitorProviderResponse) GetOutOfSpaceErrorPercentThreshold() int64`
 
 GetOutOfSpaceErrorPercentThreshold returns the OutOfSpaceErrorPercentThreshold field if non-nil, zero value otherwise.
 
 ### GetOutOfSpaceErrorPercentThresholdOk
 
-`func (o *DiskSpaceUsageMonitorProviderResponse) GetOutOfSpaceErrorPercentThresholdOk() (*int32, bool)`
+`func (o *DiskSpaceUsageMonitorProviderResponse) GetOutOfSpaceErrorPercentThresholdOk() (*int64, bool)`
 
 GetOutOfSpaceErrorPercentThresholdOk returns a tuple with the OutOfSpaceErrorPercentThreshold field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOutOfSpaceErrorPercentThreshold
 
-`func (o *DiskSpaceUsageMonitorProviderResponse) SetOutOfSpaceErrorPercentThreshold(v int32)`
+`func (o *DiskSpaceUsageMonitorProviderResponse) SetOutOfSpaceErrorPercentThreshold(v int64)`
 
 SetOutOfSpaceErrorPercentThreshold sets OutOfSpaceErrorPercentThreshold field to given value.
 

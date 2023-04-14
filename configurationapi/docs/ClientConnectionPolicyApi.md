@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    addClientConnectionPolicyRequest := *openapiclient.NewAddClientConnectionPolicyRequest("PolicyName_example", "PolicyID_example", false, int32(123)) // AddClientConnectionPolicyRequest | Create a new Client Connection Policy in the config
+    addClientConnectionPolicyRequest := *openapiclient.NewAddClientConnectionPolicyRequest("PolicyName_example", "PolicyID_example", false, int64(123)) // AddClientConnectionPolicyRequest | Create a new Client Connection Policy in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

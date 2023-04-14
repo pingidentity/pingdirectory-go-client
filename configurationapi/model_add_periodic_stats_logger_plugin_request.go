@@ -33,7 +33,7 @@ type AddPeriodicStatsLoggerPluginRequest struct {
 	// This property controls whether a value in the output is shown as empty if the value is zero.
 	EmptyInsteadOfZero *bool `json:"emptyInsteadOfZero,omitempty"`
 	// The number of lines to log between logging the header line that summarizes the columns in the table.
-	LinesBetweenHeader      *int32                                                    `json:"linesBetweenHeader,omitempty"`
+	LinesBetweenHeader      *int64                                                    `json:"linesBetweenHeader,omitempty"`
 	IncludedLDAPStat        []EnumpluginIncludedLDAPStatProp                          `json:"includedLDAPStat,omitempty"`
 	IncludedResourceStat    []EnumpluginIncludedResourceStatProp                      `json:"includedResourceStat,omitempty"`
 	HistogramFormat         *EnumpluginHistogramFormatProp                            `json:"histogramFormat,omitempty"`
@@ -298,9 +298,9 @@ func (o *AddPeriodicStatsLoggerPluginRequest) SetEmptyInsteadOfZero(v bool) {
 }
 
 // GetLinesBetweenHeader returns the LinesBetweenHeader field value if set, zero value otherwise.
-func (o *AddPeriodicStatsLoggerPluginRequest) GetLinesBetweenHeader() int32 {
+func (o *AddPeriodicStatsLoggerPluginRequest) GetLinesBetweenHeader() int64 {
 	if o == nil || IsNil(o.LinesBetweenHeader) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.LinesBetweenHeader
@@ -308,7 +308,7 @@ func (o *AddPeriodicStatsLoggerPluginRequest) GetLinesBetweenHeader() int32 {
 
 // GetLinesBetweenHeaderOk returns a tuple with the LinesBetweenHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddPeriodicStatsLoggerPluginRequest) GetLinesBetweenHeaderOk() (*int32, bool) {
+func (o *AddPeriodicStatsLoggerPluginRequest) GetLinesBetweenHeaderOk() (*int64, bool) {
 	if o == nil || IsNil(o.LinesBetweenHeader) {
 		return nil, false
 	}
@@ -324,8 +324,8 @@ func (o *AddPeriodicStatsLoggerPluginRequest) HasLinesBetweenHeader() bool {
 	return false
 }
 
-// SetLinesBetweenHeader gets a reference to the given int32 and assigns it to the LinesBetweenHeader field.
-func (o *AddPeriodicStatsLoggerPluginRequest) SetLinesBetweenHeader(v int32) {
+// SetLinesBetweenHeader gets a reference to the given int64 and assigns it to the LinesBetweenHeader field.
+func (o *AddPeriodicStatsLoggerPluginRequest) SetLinesBetweenHeader(v int64) {
 	o.LinesBetweenHeader = &v
 }
 

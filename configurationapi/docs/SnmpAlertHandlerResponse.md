@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumsnmpAlertHandlerSchemaUrn**](EnumsnmpAlertHandlerSchemaUrn.md) |  | 
 **Asynchronous** | Pointer to **bool** | Indicates whether the server should attempt to invoke this SNMP Alert Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver the alert notification) will not delay whatever processing the server was performing when the alert was generated. | [optional] 
 **ServerHostName** | **string** | Specifies the address of the SNMP agent to which traps will be sent. | 
-**ServerPort** | **int32** | Specifies the port number of the SNMP agent to which traps will be sent. | 
+**ServerPort** | **int64** | Specifies the port number of the SNMP agent to which traps will be sent. | 
 **CommunityName** | **string** | Specifies the name of the community to which the traps will be sent. | 
 **Description** | Pointer to **string** | A description for this Alert Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the Alert Handler is enabled. | 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewSnmpAlertHandlerResponse
 
-`func NewSnmpAlertHandlerResponse(id string, schemas []EnumsnmpAlertHandlerSchemaUrn, serverHostName string, serverPort int32, communityName string, enabled bool, ) *SnmpAlertHandlerResponse`
+`func NewSnmpAlertHandlerResponse(id string, schemas []EnumsnmpAlertHandlerSchemaUrn, serverHostName string, serverPort int64, communityName string, enabled bool, ) *SnmpAlertHandlerResponse`
 
 NewSnmpAlertHandlerResponse instantiates a new SnmpAlertHandlerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -124,20 +124,20 @@ SetServerHostName sets ServerHostName field to given value.
 
 ### GetServerPort
 
-`func (o *SnmpAlertHandlerResponse) GetServerPort() int32`
+`func (o *SnmpAlertHandlerResponse) GetServerPort() int64`
 
 GetServerPort returns the ServerPort field if non-nil, zero value otherwise.
 
 ### GetServerPortOk
 
-`func (o *SnmpAlertHandlerResponse) GetServerPortOk() (*int32, bool)`
+`func (o *SnmpAlertHandlerResponse) GetServerPortOk() (*int64, bool)`
 
 GetServerPortOk returns a tuple with the ServerPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerPort
 
-`func (o *SnmpAlertHandlerResponse) SetServerPort(v int32)`
+`func (o *SnmpAlertHandlerResponse) SetServerPort(v int64)`
 
 SetServerPort sets ServerPort field to given value.
 

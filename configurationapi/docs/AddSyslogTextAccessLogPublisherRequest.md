@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **SyslogSeverity** | Pointer to [**EnumlogPublisherSyslogSeverityProp**](EnumlogPublisherSyslogSeverityProp.md) |  | [optional] 
 **SyslogMessageHostName** | Pointer to **string** | The local host name that will be included in syslog messages that are logged by this Syslog Text Access Log Publisher. | [optional] 
 **SyslogMessageApplicationName** | Pointer to **string** | The application name that will be included in syslog messages that are logged by this Syslog Text Access Log Publisher. | [optional] 
-**QueueSize** | Pointer to **int32** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
+**QueueSize** | Pointer to **int64** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
 **LogConnects** | Pointer to **bool** | Indicates whether to log information about connections established to the server. | [optional] 
 **LogDisconnects** | Pointer to **bool** | Indicates whether to log information about connections that have been closed by the client or terminated by the server. | [optional] 
 **LogSecurityNegotiation** | Pointer to **bool** | Indicates whether to log information about the result of any security negotiation (e.g., SSL handshake) processing that has been performed. | [optional] 
@@ -43,7 +43,7 @@ Name | Type | Description | Notes
 **IncludeRequestControls** | Pointer to **bool** | Indicates whether log messages for operation requests should include a list of the OIDs of any controls included in the request. | [optional] 
 **IncludeResponseControls** | Pointer to **bool** | Indicates whether log messages for operation results should include a list of the OIDs of any controls included in the result. | [optional] 
 **IncludeReplicationChangeID** | Pointer to **bool** | Indicates whether to log information about the replication change ID. | [optional] 
-**MaxStringLength** | Pointer to **int32** | Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written. | [optional] 
+**MaxStringLength** | Pointer to **int64** | Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written. | [optional] 
 **TimestampPrecision** | Pointer to [**EnumlogPublisherTimestampPrecisionProp**](EnumlogPublisherTimestampPrecisionProp.md) |  | [optional] 
 **GenerifyMessageStringsWhenPossible** | Pointer to **bool** | Indicates whether to use generified version of certain message strings, including diagnostic messages, additional information messages, authentication failure reasons, and disconnect messages. Generified versions of those strings may use placeholders (like %s for a string or %d for an integer) rather than the version of the string with those placeholders replaced with specific values. | [optional] 
 **Asynchronous** | Pointer to **bool** | Indicates whether the Writer Based Access Log Publisher will publish records asynchronously. | [optional] 
@@ -239,20 +239,20 @@ HasSyslogMessageApplicationName returns a boolean if a field has been set.
 
 ### GetQueueSize
 
-`func (o *AddSyslogTextAccessLogPublisherRequest) GetQueueSize() int32`
+`func (o *AddSyslogTextAccessLogPublisherRequest) GetQueueSize() int64`
 
 GetQueueSize returns the QueueSize field if non-nil, zero value otherwise.
 
 ### GetQueueSizeOk
 
-`func (o *AddSyslogTextAccessLogPublisherRequest) GetQueueSizeOk() (*int32, bool)`
+`func (o *AddSyslogTextAccessLogPublisherRequest) GetQueueSizeOk() (*int64, bool)`
 
 GetQueueSizeOk returns a tuple with the QueueSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQueueSize
 
-`func (o *AddSyslogTextAccessLogPublisherRequest) SetQueueSize(v int32)`
+`func (o *AddSyslogTextAccessLogPublisherRequest) SetQueueSize(v int64)`
 
 SetQueueSize sets QueueSize field to given value.
 
@@ -1039,20 +1039,20 @@ HasIncludeReplicationChangeID returns a boolean if a field has been set.
 
 ### GetMaxStringLength
 
-`func (o *AddSyslogTextAccessLogPublisherRequest) GetMaxStringLength() int32`
+`func (o *AddSyslogTextAccessLogPublisherRequest) GetMaxStringLength() int64`
 
 GetMaxStringLength returns the MaxStringLength field if non-nil, zero value otherwise.
 
 ### GetMaxStringLengthOk
 
-`func (o *AddSyslogTextAccessLogPublisherRequest) GetMaxStringLengthOk() (*int32, bool)`
+`func (o *AddSyslogTextAccessLogPublisherRequest) GetMaxStringLengthOk() (*int64, bool)`
 
 GetMaxStringLengthOk returns a tuple with the MaxStringLength field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxStringLength
 
-`func (o *AddSyslogTextAccessLogPublisherRequest) SetMaxStringLength(v int32)`
+`func (o *AddSyslogTextAccessLogPublisherRequest) SetMaxStringLength(v int64)`
 
 SetMaxStringLength sets MaxStringLength field to given value.
 

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumsubOperationTimingPluginSchemaUrn**](EnumsubOperationTimingPluginSchemaUrn.md) |  | 
 **PluginType** | Pointer to [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | [optional] 
 **RequestCriteria** | Pointer to **string** | Specifies a set of request criteria used to indicate that only operations for requests matching this criteria should be counted when aggregating timing data. | [optional] 
-**NumMostExpensivePhasesShown** | Pointer to **int32** | This controls how many of the most expensive phases are included per operation type in the monitor entry. | [optional] 
+**NumMostExpensivePhasesShown** | Pointer to **int64** | This controls how many of the most expensive phases are included per operation type in the monitor entry. | [optional] 
 **InvokeForInternalOperations** | Pointer to **bool** | Indicates whether the plug-in should be invoked for internal operations. | [optional] 
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
@@ -124,20 +124,20 @@ HasRequestCriteria returns a boolean if a field has been set.
 
 ### GetNumMostExpensivePhasesShown
 
-`func (o *AddSubOperationTimingPluginRequest) GetNumMostExpensivePhasesShown() int32`
+`func (o *AddSubOperationTimingPluginRequest) GetNumMostExpensivePhasesShown() int64`
 
 GetNumMostExpensivePhasesShown returns the NumMostExpensivePhasesShown field if non-nil, zero value otherwise.
 
 ### GetNumMostExpensivePhasesShownOk
 
-`func (o *AddSubOperationTimingPluginRequest) GetNumMostExpensivePhasesShownOk() (*int32, bool)`
+`func (o *AddSubOperationTimingPluginRequest) GetNumMostExpensivePhasesShownOk() (*int64, bool)`
 
 GetNumMostExpensivePhasesShownOk returns a tuple with the NumMostExpensivePhasesShown field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNumMostExpensivePhasesShown
 
-`func (o *AddSubOperationTimingPluginRequest) SetNumMostExpensivePhasesShown(v int32)`
+`func (o *AddSubOperationTimingPluginRequest) SetNumMostExpensivePhasesShown(v int64)`
 
 SetNumMostExpensivePhasesShown sets NumMostExpensivePhasesShown field to given value.
 

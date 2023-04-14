@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **OmitMethodEntryArguments** | Pointer to **bool** | Specifies the property to indicate whether to include method arguments in debug messages. | [optional] 
 **OmitMethodReturnValue** | Pointer to **bool** | Specifies the property to indicate whether to include the return value in debug messages. | [optional] 
 **IncludeThrowableCause** | Pointer to **bool** | Specifies the property to indicate whether to include the cause of exceptions in exception thrown and caught messages. | [optional] 
-**ThrowableStackFrames** | Pointer to **int32** | Specifies the property to indicate the number of stack frames to include in the stack trace for method entry and exception thrown messages. | [optional] 
+**ThrowableStackFrames** | Pointer to **int64** | Specifies the property to indicate the number of stack frames to include in the stack trace for method entry and exception thrown messages. | [optional] 
 **Description** | Pointer to **string** | A description for this Debug Target | [optional] 
 
 ## Methods
@@ -221,20 +221,20 @@ HasIncludeThrowableCause returns a boolean if a field has been set.
 
 ### GetThrowableStackFrames
 
-`func (o *AddDebugTargetRequest) GetThrowableStackFrames() int32`
+`func (o *AddDebugTargetRequest) GetThrowableStackFrames() int64`
 
 GetThrowableStackFrames returns the ThrowableStackFrames field if non-nil, zero value otherwise.
 
 ### GetThrowableStackFramesOk
 
-`func (o *AddDebugTargetRequest) GetThrowableStackFramesOk() (*int32, bool)`
+`func (o *AddDebugTargetRequest) GetThrowableStackFramesOk() (*int64, bool)`
 
 GetThrowableStackFramesOk returns a tuple with the ThrowableStackFrames field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetThrowableStackFrames
 
-`func (o *AddDebugTargetRequest) SetThrowableStackFrames(v int32)`
+`func (o *AddDebugTargetRequest) SetThrowableStackFrames(v int64)`
 
 SetThrowableStackFrames sets ThrowableStackFrames field to given value.
 

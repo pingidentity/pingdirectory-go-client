@@ -6,11 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | Name of the Password Storage Scheme | 
 **Schemas** | [**[]Enumargon2PasswordStorageSchemeSchemaUrn**](Enumargon2PasswordStorageSchemeSchemaUrn.md) |  | 
-**IterationCount** | **int32** | The number of rounds of cryptographic processing required in the course of encoding each password. | 
-**ParallelismFactor** | **int32** | The number of concurrent threads that will be used in the course of encoding each password. | 
-**MemoryUsageKb** | **int32** | The number of kilobytes of memory that must be used in the course of encoding each password. | 
-**SaltLengthBytes** | **int32** | The number of bytes to use for the generated salt. | 
-**DerivedKeyLengthBytes** | **int32** | The number of bytes to use for the derived key. The value must be greater than or equal to 8 and less than or equal to 512. | 
+**IterationCount** | **int64** | The number of rounds of cryptographic processing required in the course of encoding each password. | 
+**ParallelismFactor** | **int64** | The number of concurrent threads that will be used in the course of encoding each password. | 
+**MemoryUsageKb** | **int64** | The number of kilobytes of memory that must be used in the course of encoding each password. | 
+**SaltLengthBytes** | **int64** | The number of bytes to use for the generated salt. | 
+**DerivedKeyLengthBytes** | **int64** | The number of bytes to use for the derived key. The value must be greater than or equal to 8 and less than or equal to 512. | 
 **Description** | Pointer to **string** | A description for this Password Storage Scheme | [optional] 
 **Enabled** | **bool** | Indicates whether the Password Storage Scheme is enabled for use. | 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewArgon2PasswordStorageSchemeResponse
 
-`func NewArgon2PasswordStorageSchemeResponse(id string, schemas []Enumargon2PasswordStorageSchemeSchemaUrn, iterationCount int32, parallelismFactor int32, memoryUsageKb int32, saltLengthBytes int32, derivedKeyLengthBytes int32, enabled bool, ) *Argon2PasswordStorageSchemeResponse`
+`func NewArgon2PasswordStorageSchemeResponse(id string, schemas []Enumargon2PasswordStorageSchemeSchemaUrn, iterationCount int64, parallelismFactor int64, memoryUsageKb int64, saltLengthBytes int64, derivedKeyLengthBytes int64, enabled bool, ) *Argon2PasswordStorageSchemeResponse`
 
 NewArgon2PasswordStorageSchemeResponse instantiates a new Argon2PasswordStorageSchemeResponse object
 This constructor will assign default values to properties that have it defined,
@@ -77,100 +77,100 @@ SetSchemas sets Schemas field to given value.
 
 ### GetIterationCount
 
-`func (o *Argon2PasswordStorageSchemeResponse) GetIterationCount() int32`
+`func (o *Argon2PasswordStorageSchemeResponse) GetIterationCount() int64`
 
 GetIterationCount returns the IterationCount field if non-nil, zero value otherwise.
 
 ### GetIterationCountOk
 
-`func (o *Argon2PasswordStorageSchemeResponse) GetIterationCountOk() (*int32, bool)`
+`func (o *Argon2PasswordStorageSchemeResponse) GetIterationCountOk() (*int64, bool)`
 
 GetIterationCountOk returns a tuple with the IterationCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIterationCount
 
-`func (o *Argon2PasswordStorageSchemeResponse) SetIterationCount(v int32)`
+`func (o *Argon2PasswordStorageSchemeResponse) SetIterationCount(v int64)`
 
 SetIterationCount sets IterationCount field to given value.
 
 
 ### GetParallelismFactor
 
-`func (o *Argon2PasswordStorageSchemeResponse) GetParallelismFactor() int32`
+`func (o *Argon2PasswordStorageSchemeResponse) GetParallelismFactor() int64`
 
 GetParallelismFactor returns the ParallelismFactor field if non-nil, zero value otherwise.
 
 ### GetParallelismFactorOk
 
-`func (o *Argon2PasswordStorageSchemeResponse) GetParallelismFactorOk() (*int32, bool)`
+`func (o *Argon2PasswordStorageSchemeResponse) GetParallelismFactorOk() (*int64, bool)`
 
 GetParallelismFactorOk returns a tuple with the ParallelismFactor field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetParallelismFactor
 
-`func (o *Argon2PasswordStorageSchemeResponse) SetParallelismFactor(v int32)`
+`func (o *Argon2PasswordStorageSchemeResponse) SetParallelismFactor(v int64)`
 
 SetParallelismFactor sets ParallelismFactor field to given value.
 
 
 ### GetMemoryUsageKb
 
-`func (o *Argon2PasswordStorageSchemeResponse) GetMemoryUsageKb() int32`
+`func (o *Argon2PasswordStorageSchemeResponse) GetMemoryUsageKb() int64`
 
 GetMemoryUsageKb returns the MemoryUsageKb field if non-nil, zero value otherwise.
 
 ### GetMemoryUsageKbOk
 
-`func (o *Argon2PasswordStorageSchemeResponse) GetMemoryUsageKbOk() (*int32, bool)`
+`func (o *Argon2PasswordStorageSchemeResponse) GetMemoryUsageKbOk() (*int64, bool)`
 
 GetMemoryUsageKbOk returns a tuple with the MemoryUsageKb field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMemoryUsageKb
 
-`func (o *Argon2PasswordStorageSchemeResponse) SetMemoryUsageKb(v int32)`
+`func (o *Argon2PasswordStorageSchemeResponse) SetMemoryUsageKb(v int64)`
 
 SetMemoryUsageKb sets MemoryUsageKb field to given value.
 
 
 ### GetSaltLengthBytes
 
-`func (o *Argon2PasswordStorageSchemeResponse) GetSaltLengthBytes() int32`
+`func (o *Argon2PasswordStorageSchemeResponse) GetSaltLengthBytes() int64`
 
 GetSaltLengthBytes returns the SaltLengthBytes field if non-nil, zero value otherwise.
 
 ### GetSaltLengthBytesOk
 
-`func (o *Argon2PasswordStorageSchemeResponse) GetSaltLengthBytesOk() (*int32, bool)`
+`func (o *Argon2PasswordStorageSchemeResponse) GetSaltLengthBytesOk() (*int64, bool)`
 
 GetSaltLengthBytesOk returns a tuple with the SaltLengthBytes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSaltLengthBytes
 
-`func (o *Argon2PasswordStorageSchemeResponse) SetSaltLengthBytes(v int32)`
+`func (o *Argon2PasswordStorageSchemeResponse) SetSaltLengthBytes(v int64)`
 
 SetSaltLengthBytes sets SaltLengthBytes field to given value.
 
 
 ### GetDerivedKeyLengthBytes
 
-`func (o *Argon2PasswordStorageSchemeResponse) GetDerivedKeyLengthBytes() int32`
+`func (o *Argon2PasswordStorageSchemeResponse) GetDerivedKeyLengthBytes() int64`
 
 GetDerivedKeyLengthBytes returns the DerivedKeyLengthBytes field if non-nil, zero value otherwise.
 
 ### GetDerivedKeyLengthBytesOk
 
-`func (o *Argon2PasswordStorageSchemeResponse) GetDerivedKeyLengthBytesOk() (*int32, bool)`
+`func (o *Argon2PasswordStorageSchemeResponse) GetDerivedKeyLengthBytesOk() (*int64, bool)`
 
 GetDerivedKeyLengthBytesOk returns a tuple with the DerivedKeyLengthBytes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDerivedKeyLengthBytes
 
-`func (o *Argon2PasswordStorageSchemeResponse) SetDerivedKeyLengthBytes(v int32)`
+`func (o *Argon2PasswordStorageSchemeResponse) SetDerivedKeyLengthBytes(v int64)`
 
 SetDerivedKeyLengthBytes sets DerivedKeyLengthBytes field to given value.
 

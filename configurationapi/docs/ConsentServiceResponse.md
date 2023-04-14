@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Enabled** | **bool** | Indicates whether the Consent Service is enabled. | 
 **BaseDN** | Pointer to **string** | The base DN under which consent records are stored. | [optional] 
 **BindDN** | Pointer to **string** | The DN of an internal service account used by the Consent Service to make internal LDAP requests. | [optional] 
-**SearchSizeLimit** | Pointer to **int32** | The maximum number of consent resources that may be returned from a search request. | [optional] 
+**SearchSizeLimit** | Pointer to **int64** | The maximum number of consent resources that may be returned from a search request. | [optional] 
 **ConsentRecordIdentityMapper** | Pointer to **[]string** | If specified, the Identity Mapper(s) that may be used to map consent record subject and actor values to DNs. This is typically only needed if privileged API clients will be used. | [optional] 
 **ServiceAccountDN** | Pointer to **[]string** | The set of account DNs that the Consent Service will consider to be privileged. | [optional] 
 **UnprivilegedConsentScope** | Pointer to **string** | The name of a scope that must be present in an access token accepted by the Consent Service for unprivileged clients. | [optional] 
@@ -133,20 +133,20 @@ HasBindDN returns a boolean if a field has been set.
 
 ### GetSearchSizeLimit
 
-`func (o *ConsentServiceResponse) GetSearchSizeLimit() int32`
+`func (o *ConsentServiceResponse) GetSearchSizeLimit() int64`
 
 GetSearchSizeLimit returns the SearchSizeLimit field if non-nil, zero value otherwise.
 
 ### GetSearchSizeLimitOk
 
-`func (o *ConsentServiceResponse) GetSearchSizeLimitOk() (*int32, bool)`
+`func (o *ConsentServiceResponse) GetSearchSizeLimitOk() (*int64, bool)`
 
 GetSearchSizeLimitOk returns a tuple with the SearchSizeLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSearchSizeLimit
 
-`func (o *ConsentServiceResponse) SetSearchSizeLimit(v int32)`
+`func (o *ConsentServiceResponse) SetSearchSizeLimit(v int64)`
 
 SetSearchSizeLimit sets SearchSizeLimit field to given value.
 

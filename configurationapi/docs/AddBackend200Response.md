@@ -19,16 +19,16 @@ Name | Type | Description | Notes
 **CompactCommonParentDN** | Pointer to **[]string** | Provides a DN of an entry that may be the parent for a large number of entries in the backend. This may be used to help increase the space efficiency when encoding entries for storage. | [optional] 
 **CompressEntries** | Pointer to **bool** | Indicates whether the backend should attempt to compress entries before storing them in the database. | [optional] 
 **HashEntries** | Pointer to **bool** | Indicates whether to calculate and store a message digest of the entry contents along with the entry data, in order to provide a means of verifying the integrity of the entry data. | [optional] 
-**DbNumCleanerThreads** | Pointer to **int32** | Specifies the number of threads that the backend should maintain to keep the database log files at or near the desired utilization. A value of zero indicates that the number of cleaner threads should be automatically configured based on the number of available CPUs. | [optional] 
-**DbCleanerMinUtilization** | Pointer to **int32** | Specifies the minimum percentage of \&quot;live\&quot; data that the database cleaner attempts to keep in database log files. | [optional] 
-**DbEvictorCriticalPercentage** | Pointer to **int32** | Specifies the percentage over the configured maximum that the database cache is allowed to grow. It is recommended to set this value slightly above zero when the database is too large to fully cache in memory. In this case, a dedicated background evictor thread is used to perform evictions once the cache fills up reducing the possibility that server threads are blocked. | [optional] 
+**DbNumCleanerThreads** | Pointer to **int64** | Specifies the number of threads that the backend should maintain to keep the database log files at or near the desired utilization. A value of zero indicates that the number of cleaner threads should be automatically configured based on the number of available CPUs. | [optional] 
+**DbCleanerMinUtilization** | Pointer to **int64** | Specifies the minimum percentage of \&quot;live\&quot; data that the database cleaner attempts to keep in database log files. | [optional] 
+**DbEvictorCriticalPercentage** | Pointer to **int64** | Specifies the percentage over the configured maximum that the database cache is allowed to grow. It is recommended to set this value slightly above zero when the database is too large to fully cache in memory. In this case, a dedicated background evictor thread is used to perform evictions once the cache fills up reducing the possibility that server threads are blocked. | [optional] 
 **DbCheckpointerWakeupInterval** | Pointer to **string** | Specifies the maximum length of time that should pass between checkpoints. | [optional] 
 **DbBackgroundSyncInterval** | Pointer to **string** | Specifies the interval to use when performing background synchronous writes in the database environment in order to smooth overall write performance and increase data durability. A value of \&quot;0 s\&quot; will disable background synchronous writes. | [optional] 
 **DbUseThreadLocalHandles** | Pointer to **bool** | Indicates whether to use thread-local database handles to reduce contention in the backend. | [optional] 
 **DbLogFileMax** | Pointer to **string** | Specifies the maximum size for a database log file. | [optional] 
 **DbLoggingLevel** | Pointer to **string** | Specifies the log level that should be used by the database when it is writing information into the je.info file. | [optional] 
 **JeProperty** | Pointer to **[]string** | Specifies the database and environment properties for the Berkeley DB Java Edition database serving the data for this backend. | [optional] 
-**DbCachePercent** | Pointer to **int32** | Specifies the percentage of JVM memory to allocate to the database cache. | [optional] 
+**DbCachePercent** | Pointer to **int64** | Specifies the percentage of JVM memory to allocate to the database cache. | [optional] 
 **DefaultCacheMode** | Pointer to [**EnumbackendDefaultCacheModeProp**](EnumbackendDefaultCacheModeProp.md) |  | [optional] 
 **Id2entryCacheMode** | Pointer to [**EnumbackendId2entryCacheModeProp**](EnumbackendId2entryCacheModeProp.md) |  | [optional] 
 **Dn2idCacheMode** | Pointer to [**EnumbackendDn2idCacheModeProp**](EnumbackendDn2idCacheModeProp.md) |  | [optional] 
@@ -36,26 +36,26 @@ Name | Type | Description | Notes
 **Id2subtreeCacheMode** | Pointer to [**EnumbackendId2subtreeCacheModeProp**](EnumbackendId2subtreeCacheModeProp.md) |  | [optional] 
 **Dn2uriCacheMode** | Pointer to [**EnumbackendDn2uriCacheModeProp**](EnumbackendDn2uriCacheModeProp.md) |  | [optional] 
 **PrimeMethod** | Pointer to [**[]EnumbackendPrimeMethodProp**](EnumbackendPrimeMethodProp.md) |  | [optional] 
-**PrimeThreadCount** | Pointer to **int32** | Specifies the number of threads to use when priming. At present, this applies only to the preload and cursor-across-indexes prime methods. | [optional] 
+**PrimeThreadCount** | Pointer to **int64** | Specifies the number of threads to use when priming. At present, this applies only to the preload and cursor-across-indexes prime methods. | [optional] 
 **PrimeTimeLimit** | Pointer to **string** | Specifies the maximum length of time that the backend prime should be allowed to run. A duration of zero seconds indicates that there should not be a time limit. | [optional] 
 **PrimeAllIndexes** | Pointer to **bool** | Indicates whether to prime all indexes associated with this backend, or to only prime the specified set of indexes (as configured with the system-index-to-prime property for the system indexes, and the prime-index property in the attribute index definition for attribute indexes). | [optional] 
 **SystemIndexToPrime** | Pointer to [**[]EnumbackendSystemIndexToPrimeProp**](EnumbackendSystemIndexToPrimeProp.md) |  | [optional] 
 **SystemIndexToPrimeInternalNodesOnly** | Pointer to [**[]EnumbackendSystemIndexToPrimeInternalNodesOnlyProp**](EnumbackendSystemIndexToPrimeInternalNodesOnlyProp.md) |  | [optional] 
 **BackgroundPrime** | Pointer to **bool** | Indicates whether to attempt to perform the prime using a background thread if possible. If background priming is enabled, then the Directory Server may be allowed to accept client connections and process requests while the prime is in progress. | [optional] 
-**IndexEntryLimit** | Pointer to **int32** | Specifies the maximum number of entries that are allowed to match a given index key before that particular index key is no longer maintained. | [optional] 
-**CompositeIndexEntryLimit** | Pointer to **int32** | Specifies the maximum number of entries that are allowed to match a given composite index key before that particular composite index key is no longer maintained. | [optional] 
-**Id2childrenIndexEntryLimit** | Pointer to **int32** | Specifies the maximum number of entry IDs to maintain for each entry in the id2children system index (which keeps track of the immediate children for an entry, to assist in otherwise unindexed searches with a single-level scope). A value of 0 means there is no limit, however this could have a big impact on database size on disk and on server performance. | [optional] 
-**Id2subtreeIndexEntryLimit** | Pointer to **int32** | Specifies the maximum number of entry IDs to maintain for each entry in the id2subtree system index (which keeps track of all descendants below an entry, to assist in otherwise unindexed searches with a whole-subtree or subordinate subtree scope). A value of 0 means there is no limit, however this could have a big impact on database size on disk and on server performance. | [optional] 
+**IndexEntryLimit** | Pointer to **int64** | Specifies the maximum number of entries that are allowed to match a given index key before that particular index key is no longer maintained. | [optional] 
+**CompositeIndexEntryLimit** | Pointer to **int64** | Specifies the maximum number of entries that are allowed to match a given composite index key before that particular composite index key is no longer maintained. | [optional] 
+**Id2childrenIndexEntryLimit** | Pointer to **int64** | Specifies the maximum number of entry IDs to maintain for each entry in the id2children system index (which keeps track of the immediate children for an entry, to assist in otherwise unindexed searches with a single-level scope). A value of 0 means there is no limit, however this could have a big impact on database size on disk and on server performance. | [optional] 
+**Id2subtreeIndexEntryLimit** | Pointer to **int64** | Specifies the maximum number of entry IDs to maintain for each entry in the id2subtree system index (which keeps track of all descendants below an entry, to assist in otherwise unindexed searches with a whole-subtree or subordinate subtree scope). A value of 0 means there is no limit, however this could have a big impact on database size on disk and on server performance. | [optional] 
 **ImportTempDirectory** | **string** | Specifies the location of the directory that is used to hold temporary information during the index post-processing phase of an LDIF import. | 
-**ImportThreadCount** | Pointer to **int32** | Specifies the number of threads to use for concurrent processing during an LDIF import. | [optional] 
-**ExportThreadCount** | Pointer to **int32** | Specifies the number of threads to use for concurrently retrieving and encoding entries during an LDIF export. | [optional] 
-**DbImportCachePercent** | Pointer to **int32** | The percentage of JVM memory to allocate to the database cache during import operations. | [optional] 
+**ImportThreadCount** | Pointer to **int64** | Specifies the number of threads to use for concurrent processing during an LDIF import. | [optional] 
+**ExportThreadCount** | Pointer to **int64** | Specifies the number of threads to use for concurrently retrieving and encoding entries during an LDIF export. | [optional] 
+**DbImportCachePercent** | Pointer to **int64** | The percentage of JVM memory to allocate to the database cache during import operations. | [optional] 
 **DbTxnWriteNoSync** | Pointer to **bool** | Indicates whether the database should synchronously flush data as it is written to disk. | [optional] 
-**DeadlockRetryLimit** | Pointer to **int32** | Specifies the number of times that the server should retry an attempted operation in the backend if a deadlock results from two concurrent requests that interfere with each other in a conflicting manner. | [optional] 
+**DeadlockRetryLimit** | Pointer to **int64** | Specifies the number of times that the server should retry an attempted operation in the backend if a deadlock results from two concurrent requests that interfere with each other in a conflicting manner. | [optional] 
 **ExternalTxnDefaultBackendLockBehavior** | Pointer to [**EnumbackendExternalTxnDefaultBackendLockBehaviorProp**](EnumbackendExternalTxnDefaultBackendLockBehaviorProp.md) |  | [optional] 
 **SingleWriterLockBehavior** | Pointer to [**EnumbackendSingleWriterLockBehaviorProp**](EnumbackendSingleWriterLockBehaviorProp.md) |  | [optional] 
-**SubtreeDeleteSizeLimit** | Pointer to **int32** | Specifies the maximum number of entries that may be deleted from the backend when using the subtree delete control. | [optional] 
-**NumRecentChanges** | Pointer to **int32** | Specifies the number of recent LDAP entry changes per replica for which the backend keeps a record to allow replication to recover in the event that the server is abruptly terminated. Increasing this value can lead to an increased peak server modification rate as well as increased replication throughput. | [optional] 
+**SubtreeDeleteSizeLimit** | Pointer to **int64** | Specifies the maximum number of entries that may be deleted from the backend when using the subtree delete control. | [optional] 
+**NumRecentChanges** | Pointer to **int64** | Specifies the number of recent LDAP entry changes per replica for which the backend keeps a record to allow replication to recover in the event that the server is abruptly terminated. Increasing this value can lead to an increased peak server modification rate as well as increased replication throughput. | [optional] 
 **OfflineProcessDatabaseOpenTimeout** | Pointer to **string** | Specifies a timeout duration which will be used for opening the database environment by an offline process, such as export-ldif. | [optional] 
 **BackendID** | **string** | Specifies a name to identify the associated backend. | 
 **Description** | Pointer to **string** | A description for this Backend | [optional] 
@@ -443,20 +443,20 @@ HasHashEntries returns a boolean if a field has been set.
 
 ### GetDbNumCleanerThreads
 
-`func (o *AddBackend200Response) GetDbNumCleanerThreads() int32`
+`func (o *AddBackend200Response) GetDbNumCleanerThreads() int64`
 
 GetDbNumCleanerThreads returns the DbNumCleanerThreads field if non-nil, zero value otherwise.
 
 ### GetDbNumCleanerThreadsOk
 
-`func (o *AddBackend200Response) GetDbNumCleanerThreadsOk() (*int32, bool)`
+`func (o *AddBackend200Response) GetDbNumCleanerThreadsOk() (*int64, bool)`
 
 GetDbNumCleanerThreadsOk returns a tuple with the DbNumCleanerThreads field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDbNumCleanerThreads
 
-`func (o *AddBackend200Response) SetDbNumCleanerThreads(v int32)`
+`func (o *AddBackend200Response) SetDbNumCleanerThreads(v int64)`
 
 SetDbNumCleanerThreads sets DbNumCleanerThreads field to given value.
 
@@ -468,20 +468,20 @@ HasDbNumCleanerThreads returns a boolean if a field has been set.
 
 ### GetDbCleanerMinUtilization
 
-`func (o *AddBackend200Response) GetDbCleanerMinUtilization() int32`
+`func (o *AddBackend200Response) GetDbCleanerMinUtilization() int64`
 
 GetDbCleanerMinUtilization returns the DbCleanerMinUtilization field if non-nil, zero value otherwise.
 
 ### GetDbCleanerMinUtilizationOk
 
-`func (o *AddBackend200Response) GetDbCleanerMinUtilizationOk() (*int32, bool)`
+`func (o *AddBackend200Response) GetDbCleanerMinUtilizationOk() (*int64, bool)`
 
 GetDbCleanerMinUtilizationOk returns a tuple with the DbCleanerMinUtilization field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDbCleanerMinUtilization
 
-`func (o *AddBackend200Response) SetDbCleanerMinUtilization(v int32)`
+`func (o *AddBackend200Response) SetDbCleanerMinUtilization(v int64)`
 
 SetDbCleanerMinUtilization sets DbCleanerMinUtilization field to given value.
 
@@ -493,20 +493,20 @@ HasDbCleanerMinUtilization returns a boolean if a field has been set.
 
 ### GetDbEvictorCriticalPercentage
 
-`func (o *AddBackend200Response) GetDbEvictorCriticalPercentage() int32`
+`func (o *AddBackend200Response) GetDbEvictorCriticalPercentage() int64`
 
 GetDbEvictorCriticalPercentage returns the DbEvictorCriticalPercentage field if non-nil, zero value otherwise.
 
 ### GetDbEvictorCriticalPercentageOk
 
-`func (o *AddBackend200Response) GetDbEvictorCriticalPercentageOk() (*int32, bool)`
+`func (o *AddBackend200Response) GetDbEvictorCriticalPercentageOk() (*int64, bool)`
 
 GetDbEvictorCriticalPercentageOk returns a tuple with the DbEvictorCriticalPercentage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDbEvictorCriticalPercentage
 
-`func (o *AddBackend200Response) SetDbEvictorCriticalPercentage(v int32)`
+`func (o *AddBackend200Response) SetDbEvictorCriticalPercentage(v int64)`
 
 SetDbEvictorCriticalPercentage sets DbEvictorCriticalPercentage field to given value.
 
@@ -668,20 +668,20 @@ HasJeProperty returns a boolean if a field has been set.
 
 ### GetDbCachePercent
 
-`func (o *AddBackend200Response) GetDbCachePercent() int32`
+`func (o *AddBackend200Response) GetDbCachePercent() int64`
 
 GetDbCachePercent returns the DbCachePercent field if non-nil, zero value otherwise.
 
 ### GetDbCachePercentOk
 
-`func (o *AddBackend200Response) GetDbCachePercentOk() (*int32, bool)`
+`func (o *AddBackend200Response) GetDbCachePercentOk() (*int64, bool)`
 
 GetDbCachePercentOk returns a tuple with the DbCachePercent field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDbCachePercent
 
-`func (o *AddBackend200Response) SetDbCachePercent(v int32)`
+`func (o *AddBackend200Response) SetDbCachePercent(v int64)`
 
 SetDbCachePercent sets DbCachePercent field to given value.
 
@@ -868,20 +868,20 @@ HasPrimeMethod returns a boolean if a field has been set.
 
 ### GetPrimeThreadCount
 
-`func (o *AddBackend200Response) GetPrimeThreadCount() int32`
+`func (o *AddBackend200Response) GetPrimeThreadCount() int64`
 
 GetPrimeThreadCount returns the PrimeThreadCount field if non-nil, zero value otherwise.
 
 ### GetPrimeThreadCountOk
 
-`func (o *AddBackend200Response) GetPrimeThreadCountOk() (*int32, bool)`
+`func (o *AddBackend200Response) GetPrimeThreadCountOk() (*int64, bool)`
 
 GetPrimeThreadCountOk returns a tuple with the PrimeThreadCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrimeThreadCount
 
-`func (o *AddBackend200Response) SetPrimeThreadCount(v int32)`
+`func (o *AddBackend200Response) SetPrimeThreadCount(v int64)`
 
 SetPrimeThreadCount sets PrimeThreadCount field to given value.
 
@@ -1018,20 +1018,20 @@ HasBackgroundPrime returns a boolean if a field has been set.
 
 ### GetIndexEntryLimit
 
-`func (o *AddBackend200Response) GetIndexEntryLimit() int32`
+`func (o *AddBackend200Response) GetIndexEntryLimit() int64`
 
 GetIndexEntryLimit returns the IndexEntryLimit field if non-nil, zero value otherwise.
 
 ### GetIndexEntryLimitOk
 
-`func (o *AddBackend200Response) GetIndexEntryLimitOk() (*int32, bool)`
+`func (o *AddBackend200Response) GetIndexEntryLimitOk() (*int64, bool)`
 
 GetIndexEntryLimitOk returns a tuple with the IndexEntryLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIndexEntryLimit
 
-`func (o *AddBackend200Response) SetIndexEntryLimit(v int32)`
+`func (o *AddBackend200Response) SetIndexEntryLimit(v int64)`
 
 SetIndexEntryLimit sets IndexEntryLimit field to given value.
 
@@ -1043,20 +1043,20 @@ HasIndexEntryLimit returns a boolean if a field has been set.
 
 ### GetCompositeIndexEntryLimit
 
-`func (o *AddBackend200Response) GetCompositeIndexEntryLimit() int32`
+`func (o *AddBackend200Response) GetCompositeIndexEntryLimit() int64`
 
 GetCompositeIndexEntryLimit returns the CompositeIndexEntryLimit field if non-nil, zero value otherwise.
 
 ### GetCompositeIndexEntryLimitOk
 
-`func (o *AddBackend200Response) GetCompositeIndexEntryLimitOk() (*int32, bool)`
+`func (o *AddBackend200Response) GetCompositeIndexEntryLimitOk() (*int64, bool)`
 
 GetCompositeIndexEntryLimitOk returns a tuple with the CompositeIndexEntryLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCompositeIndexEntryLimit
 
-`func (o *AddBackend200Response) SetCompositeIndexEntryLimit(v int32)`
+`func (o *AddBackend200Response) SetCompositeIndexEntryLimit(v int64)`
 
 SetCompositeIndexEntryLimit sets CompositeIndexEntryLimit field to given value.
 
@@ -1068,20 +1068,20 @@ HasCompositeIndexEntryLimit returns a boolean if a field has been set.
 
 ### GetId2childrenIndexEntryLimit
 
-`func (o *AddBackend200Response) GetId2childrenIndexEntryLimit() int32`
+`func (o *AddBackend200Response) GetId2childrenIndexEntryLimit() int64`
 
 GetId2childrenIndexEntryLimit returns the Id2childrenIndexEntryLimit field if non-nil, zero value otherwise.
 
 ### GetId2childrenIndexEntryLimitOk
 
-`func (o *AddBackend200Response) GetId2childrenIndexEntryLimitOk() (*int32, bool)`
+`func (o *AddBackend200Response) GetId2childrenIndexEntryLimitOk() (*int64, bool)`
 
 GetId2childrenIndexEntryLimitOk returns a tuple with the Id2childrenIndexEntryLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId2childrenIndexEntryLimit
 
-`func (o *AddBackend200Response) SetId2childrenIndexEntryLimit(v int32)`
+`func (o *AddBackend200Response) SetId2childrenIndexEntryLimit(v int64)`
 
 SetId2childrenIndexEntryLimit sets Id2childrenIndexEntryLimit field to given value.
 
@@ -1093,20 +1093,20 @@ HasId2childrenIndexEntryLimit returns a boolean if a field has been set.
 
 ### GetId2subtreeIndexEntryLimit
 
-`func (o *AddBackend200Response) GetId2subtreeIndexEntryLimit() int32`
+`func (o *AddBackend200Response) GetId2subtreeIndexEntryLimit() int64`
 
 GetId2subtreeIndexEntryLimit returns the Id2subtreeIndexEntryLimit field if non-nil, zero value otherwise.
 
 ### GetId2subtreeIndexEntryLimitOk
 
-`func (o *AddBackend200Response) GetId2subtreeIndexEntryLimitOk() (*int32, bool)`
+`func (o *AddBackend200Response) GetId2subtreeIndexEntryLimitOk() (*int64, bool)`
 
 GetId2subtreeIndexEntryLimitOk returns a tuple with the Id2subtreeIndexEntryLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId2subtreeIndexEntryLimit
 
-`func (o *AddBackend200Response) SetId2subtreeIndexEntryLimit(v int32)`
+`func (o *AddBackend200Response) SetId2subtreeIndexEntryLimit(v int64)`
 
 SetId2subtreeIndexEntryLimit sets Id2subtreeIndexEntryLimit field to given value.
 
@@ -1138,20 +1138,20 @@ SetImportTempDirectory sets ImportTempDirectory field to given value.
 
 ### GetImportThreadCount
 
-`func (o *AddBackend200Response) GetImportThreadCount() int32`
+`func (o *AddBackend200Response) GetImportThreadCount() int64`
 
 GetImportThreadCount returns the ImportThreadCount field if non-nil, zero value otherwise.
 
 ### GetImportThreadCountOk
 
-`func (o *AddBackend200Response) GetImportThreadCountOk() (*int32, bool)`
+`func (o *AddBackend200Response) GetImportThreadCountOk() (*int64, bool)`
 
 GetImportThreadCountOk returns a tuple with the ImportThreadCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetImportThreadCount
 
-`func (o *AddBackend200Response) SetImportThreadCount(v int32)`
+`func (o *AddBackend200Response) SetImportThreadCount(v int64)`
 
 SetImportThreadCount sets ImportThreadCount field to given value.
 
@@ -1163,20 +1163,20 @@ HasImportThreadCount returns a boolean if a field has been set.
 
 ### GetExportThreadCount
 
-`func (o *AddBackend200Response) GetExportThreadCount() int32`
+`func (o *AddBackend200Response) GetExportThreadCount() int64`
 
 GetExportThreadCount returns the ExportThreadCount field if non-nil, zero value otherwise.
 
 ### GetExportThreadCountOk
 
-`func (o *AddBackend200Response) GetExportThreadCountOk() (*int32, bool)`
+`func (o *AddBackend200Response) GetExportThreadCountOk() (*int64, bool)`
 
 GetExportThreadCountOk returns a tuple with the ExportThreadCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExportThreadCount
 
-`func (o *AddBackend200Response) SetExportThreadCount(v int32)`
+`func (o *AddBackend200Response) SetExportThreadCount(v int64)`
 
 SetExportThreadCount sets ExportThreadCount field to given value.
 
@@ -1188,20 +1188,20 @@ HasExportThreadCount returns a boolean if a field has been set.
 
 ### GetDbImportCachePercent
 
-`func (o *AddBackend200Response) GetDbImportCachePercent() int32`
+`func (o *AddBackend200Response) GetDbImportCachePercent() int64`
 
 GetDbImportCachePercent returns the DbImportCachePercent field if non-nil, zero value otherwise.
 
 ### GetDbImportCachePercentOk
 
-`func (o *AddBackend200Response) GetDbImportCachePercentOk() (*int32, bool)`
+`func (o *AddBackend200Response) GetDbImportCachePercentOk() (*int64, bool)`
 
 GetDbImportCachePercentOk returns a tuple with the DbImportCachePercent field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDbImportCachePercent
 
-`func (o *AddBackend200Response) SetDbImportCachePercent(v int32)`
+`func (o *AddBackend200Response) SetDbImportCachePercent(v int64)`
 
 SetDbImportCachePercent sets DbImportCachePercent field to given value.
 
@@ -1238,20 +1238,20 @@ HasDbTxnWriteNoSync returns a boolean if a field has been set.
 
 ### GetDeadlockRetryLimit
 
-`func (o *AddBackend200Response) GetDeadlockRetryLimit() int32`
+`func (o *AddBackend200Response) GetDeadlockRetryLimit() int64`
 
 GetDeadlockRetryLimit returns the DeadlockRetryLimit field if non-nil, zero value otherwise.
 
 ### GetDeadlockRetryLimitOk
 
-`func (o *AddBackend200Response) GetDeadlockRetryLimitOk() (*int32, bool)`
+`func (o *AddBackend200Response) GetDeadlockRetryLimitOk() (*int64, bool)`
 
 GetDeadlockRetryLimitOk returns a tuple with the DeadlockRetryLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeadlockRetryLimit
 
-`func (o *AddBackend200Response) SetDeadlockRetryLimit(v int32)`
+`func (o *AddBackend200Response) SetDeadlockRetryLimit(v int64)`
 
 SetDeadlockRetryLimit sets DeadlockRetryLimit field to given value.
 
@@ -1313,20 +1313,20 @@ HasSingleWriterLockBehavior returns a boolean if a field has been set.
 
 ### GetSubtreeDeleteSizeLimit
 
-`func (o *AddBackend200Response) GetSubtreeDeleteSizeLimit() int32`
+`func (o *AddBackend200Response) GetSubtreeDeleteSizeLimit() int64`
 
 GetSubtreeDeleteSizeLimit returns the SubtreeDeleteSizeLimit field if non-nil, zero value otherwise.
 
 ### GetSubtreeDeleteSizeLimitOk
 
-`func (o *AddBackend200Response) GetSubtreeDeleteSizeLimitOk() (*int32, bool)`
+`func (o *AddBackend200Response) GetSubtreeDeleteSizeLimitOk() (*int64, bool)`
 
 GetSubtreeDeleteSizeLimitOk returns a tuple with the SubtreeDeleteSizeLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubtreeDeleteSizeLimit
 
-`func (o *AddBackend200Response) SetSubtreeDeleteSizeLimit(v int32)`
+`func (o *AddBackend200Response) SetSubtreeDeleteSizeLimit(v int64)`
 
 SetSubtreeDeleteSizeLimit sets SubtreeDeleteSizeLimit field to given value.
 
@@ -1338,20 +1338,20 @@ HasSubtreeDeleteSizeLimit returns a boolean if a field has been set.
 
 ### GetNumRecentChanges
 
-`func (o *AddBackend200Response) GetNumRecentChanges() int32`
+`func (o *AddBackend200Response) GetNumRecentChanges() int64`
 
 GetNumRecentChanges returns the NumRecentChanges field if non-nil, zero value otherwise.
 
 ### GetNumRecentChangesOk
 
-`func (o *AddBackend200Response) GetNumRecentChangesOk() (*int32, bool)`
+`func (o *AddBackend200Response) GetNumRecentChangesOk() (*int64, bool)`
 
 GetNumRecentChangesOk returns a tuple with the NumRecentChanges field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNumRecentChanges
 
-`func (o *AddBackend200Response) SetNumRecentChanges(v int32)`
+`func (o *AddBackend200Response) SetNumRecentChanges(v int64)`
 
 SetNumRecentChanges sets NumRecentChanges field to given value.
 

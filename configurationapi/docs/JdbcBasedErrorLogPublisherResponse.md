@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Server** | **string** | The JDBC-based Database Server to use for a connection. | 
 **LogFieldMapping** | **string** | The log field mapping associates loggable fields to database column names. The table name is not part of this mapping. | 
 **LogTableName** | **string** | The table name to log entries to the database server. | 
-**QueueSize** | Pointer to **int32** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
+**QueueSize** | Pointer to **int64** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
 **DefaultSeverity** | Pointer to [**[]EnumlogPublisherDefaultSeverityProp**](EnumlogPublisherDefaultSeverityProp.md) |  | [optional] 
 **OverrideSeverity** | Pointer to **[]string** | Specifies the override severity levels for the logger based on the category of the messages. | [optional] 
 **Description** | Pointer to **string** | A description for this Log Publisher | [optional] 
@@ -139,20 +139,20 @@ SetLogTableName sets LogTableName field to given value.
 
 ### GetQueueSize
 
-`func (o *JdbcBasedErrorLogPublisherResponse) GetQueueSize() int32`
+`func (o *JdbcBasedErrorLogPublisherResponse) GetQueueSize() int64`
 
 GetQueueSize returns the QueueSize field if non-nil, zero value otherwise.
 
 ### GetQueueSizeOk
 
-`func (o *JdbcBasedErrorLogPublisherResponse) GetQueueSizeOk() (*int32, bool)`
+`func (o *JdbcBasedErrorLogPublisherResponse) GetQueueSizeOk() (*int64, bool)`
 
 GetQueueSizeOk returns a tuple with the QueueSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQueueSize
 
-`func (o *JdbcBasedErrorLogPublisherResponse) SetQueueSize(v int32)`
+`func (o *JdbcBasedErrorLogPublisherResponse) SetQueueSize(v int64)`
 
 SetQueueSize sets QueueSize field to given value.
 

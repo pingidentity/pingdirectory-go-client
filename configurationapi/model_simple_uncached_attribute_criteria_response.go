@@ -25,7 +25,7 @@ type SimpleUncachedAttributeCriteriaResponse struct {
 	// Specifies the attribute types for attributes that may be written to the uncached-id2entry database.
 	AttributeType []string `json:"attributeType"`
 	// Specifies the minimum number of values that an attribute must have before it will be written into the uncached-id2entry database.
-	MinValueCount *int32 `json:"minValueCount,omitempty"`
+	MinValueCount *int64 `json:"minValueCount,omitempty"`
 	// Specifies the minimum total value size (i.e., the sum of the sizes of all values) that an attribute must have before it will be written into the uncached-id2entry database.
 	MinTotalValueSize *string `json:"minTotalValueSize,omitempty"`
 	// A description for this Uncached Attribute Criteria
@@ -130,9 +130,9 @@ func (o *SimpleUncachedAttributeCriteriaResponse) SetAttributeType(v []string) {
 }
 
 // GetMinValueCount returns the MinValueCount field value if set, zero value otherwise.
-func (o *SimpleUncachedAttributeCriteriaResponse) GetMinValueCount() int32 {
+func (o *SimpleUncachedAttributeCriteriaResponse) GetMinValueCount() int64 {
 	if o == nil || IsNil(o.MinValueCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MinValueCount
@@ -140,7 +140,7 @@ func (o *SimpleUncachedAttributeCriteriaResponse) GetMinValueCount() int32 {
 
 // GetMinValueCountOk returns a tuple with the MinValueCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SimpleUncachedAttributeCriteriaResponse) GetMinValueCountOk() (*int32, bool) {
+func (o *SimpleUncachedAttributeCriteriaResponse) GetMinValueCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.MinValueCount) {
 		return nil, false
 	}
@@ -156,8 +156,8 @@ func (o *SimpleUncachedAttributeCriteriaResponse) HasMinValueCount() bool {
 	return false
 }
 
-// SetMinValueCount gets a reference to the given int32 and assigns it to the MinValueCount field.
-func (o *SimpleUncachedAttributeCriteriaResponse) SetMinValueCount(v int32) {
+// SetMinValueCount gets a reference to the given int64 and assigns it to the MinValueCount field.
+func (o *SimpleUncachedAttributeCriteriaResponse) SetMinValueCount(v int64) {
 	o.MinValueCount = &v
 }
 

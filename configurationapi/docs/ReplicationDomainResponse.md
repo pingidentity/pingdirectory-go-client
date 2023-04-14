@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | Pointer to [**[]EnumreplicationDomainSchemaUrn**](EnumreplicationDomainSchemaUrn.md) |  | [optional] 
-**ServerID** | **int32** | Specifies a unique identifier for the Directory Server within the Replication Domain. | 
+**ServerID** | **int64** | Specifies a unique identifier for the Directory Server within the Replication Domain. | 
 **BaseDN** | **string** | Specifies the base DN of the replicated data. | 
-**WindowSize** | Pointer to **int32** | Specifies the maximum number of replication updates the Directory Server can have outstanding from the Replication Server. | [optional] 
+**WindowSize** | Pointer to **int64** | Specifies the maximum number of replication updates the Directory Server can have outstanding from the Replication Server. | [optional] 
 **HeartbeatInterval** | Pointer to **string** | Specifies the heartbeat interval that the Directory Server will use when communicating with Replication Servers. | [optional] 
 **SyncHistPurgeDelay** | Pointer to **string** | The time in seconds after which historical information used in replication conflict resolution is purged. The information is removed from entries when they are modified after the purge delay has elapsed. | [optional] 
 **Restricted** | Pointer to **bool** | When set to true, changes are only replicated with server instances that belong to the same replication set. | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewReplicationDomainResponse
 
-`func NewReplicationDomainResponse(serverID int32, baseDN string, ) *ReplicationDomainResponse`
+`func NewReplicationDomainResponse(serverID int64, baseDN string, ) *ReplicationDomainResponse`
 
 NewReplicationDomainResponse instantiates a new ReplicationDomainResponse object
 This constructor will assign default values to properties that have it defined,
@@ -62,20 +62,20 @@ HasSchemas returns a boolean if a field has been set.
 
 ### GetServerID
 
-`func (o *ReplicationDomainResponse) GetServerID() int32`
+`func (o *ReplicationDomainResponse) GetServerID() int64`
 
 GetServerID returns the ServerID field if non-nil, zero value otherwise.
 
 ### GetServerIDOk
 
-`func (o *ReplicationDomainResponse) GetServerIDOk() (*int32, bool)`
+`func (o *ReplicationDomainResponse) GetServerIDOk() (*int64, bool)`
 
 GetServerIDOk returns a tuple with the ServerID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerID
 
-`func (o *ReplicationDomainResponse) SetServerID(v int32)`
+`func (o *ReplicationDomainResponse) SetServerID(v int64)`
 
 SetServerID sets ServerID field to given value.
 
@@ -102,20 +102,20 @@ SetBaseDN sets BaseDN field to given value.
 
 ### GetWindowSize
 
-`func (o *ReplicationDomainResponse) GetWindowSize() int32`
+`func (o *ReplicationDomainResponse) GetWindowSize() int64`
 
 GetWindowSize returns the WindowSize field if non-nil, zero value otherwise.
 
 ### GetWindowSizeOk
 
-`func (o *ReplicationDomainResponse) GetWindowSizeOk() (*int32, bool)`
+`func (o *ReplicationDomainResponse) GetWindowSizeOk() (*int64, bool)`
 
 GetWindowSizeOk returns a tuple with the WindowSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWindowSize
 
-`func (o *ReplicationDomainResponse) SetWindowSize(v int32)`
+`func (o *ReplicationDomainResponse) SetWindowSize(v int64)`
 
 SetWindowSize sets WindowSize field to given value.
 

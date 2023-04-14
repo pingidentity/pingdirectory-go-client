@@ -6,11 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | Pointer to [**[]EnumcipherSecretKeySchemaUrn**](EnumcipherSecretKeySchemaUrn.md) |  | [optional] 
 **CipherTransformationName** | Pointer to **string** | The algorithm name used to produce this cipher, e.g. AES/CBC/PKCS5Padding. | [optional] 
-**InitializationVectorLengthBits** | Pointer to **int32** | The initialization vector length of the cipher in bits. | [optional] 
+**InitializationVectorLengthBits** | Pointer to **int64** | The initialization vector length of the cipher in bits. | [optional] 
 **KeyID** | **string** | The unique system-generated identifier for the Secret Key. | 
 **IsCompromised** | Pointer to **bool** | If the key is compromised, an administrator may set this flag to immediately trigger the creation of a new secret key. After the new key is generated, the value of this property will be reset to false. | [optional] 
 **SymmetricKey** | Pointer to **[]string** | The symmetric key that is used for both encryption of plain text and decryption of cipher text. This stores the secret key for each server instance encrypted with that server&#39;s inter-server certificate. | [optional] 
-**KeyLengthBits** | **int32** | The length of the key in bits. | 
+**KeyLengthBits** | **int64** | The length of the key in bits. | 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewCipherSecretKeyResponse
 
-`func NewCipherSecretKeyResponse(keyID string, keyLengthBits int32, ) *CipherSecretKeyResponse`
+`func NewCipherSecretKeyResponse(keyID string, keyLengthBits int64, ) *CipherSecretKeyResponse`
 
 NewCipherSecretKeyResponse instantiates a new CipherSecretKeyResponse object
 This constructor will assign default values to properties that have it defined,
@@ -85,20 +85,20 @@ HasCipherTransformationName returns a boolean if a field has been set.
 
 ### GetInitializationVectorLengthBits
 
-`func (o *CipherSecretKeyResponse) GetInitializationVectorLengthBits() int32`
+`func (o *CipherSecretKeyResponse) GetInitializationVectorLengthBits() int64`
 
 GetInitializationVectorLengthBits returns the InitializationVectorLengthBits field if non-nil, zero value otherwise.
 
 ### GetInitializationVectorLengthBitsOk
 
-`func (o *CipherSecretKeyResponse) GetInitializationVectorLengthBitsOk() (*int32, bool)`
+`func (o *CipherSecretKeyResponse) GetInitializationVectorLengthBitsOk() (*int64, bool)`
 
 GetInitializationVectorLengthBitsOk returns a tuple with the InitializationVectorLengthBits field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInitializationVectorLengthBits
 
-`func (o *CipherSecretKeyResponse) SetInitializationVectorLengthBits(v int32)`
+`func (o *CipherSecretKeyResponse) SetInitializationVectorLengthBits(v int64)`
 
 SetInitializationVectorLengthBits sets InitializationVectorLengthBits field to given value.
 
@@ -180,20 +180,20 @@ HasSymmetricKey returns a boolean if a field has been set.
 
 ### GetKeyLengthBits
 
-`func (o *CipherSecretKeyResponse) GetKeyLengthBits() int32`
+`func (o *CipherSecretKeyResponse) GetKeyLengthBits() int64`
 
 GetKeyLengthBits returns the KeyLengthBits field if non-nil, zero value otherwise.
 
 ### GetKeyLengthBitsOk
 
-`func (o *CipherSecretKeyResponse) GetKeyLengthBitsOk() (*int32, bool)`
+`func (o *CipherSecretKeyResponse) GetKeyLengthBitsOk() (*int64, bool)`
 
 GetKeyLengthBitsOk returns a tuple with the KeyLengthBits field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyLengthBits
 
-`func (o *CipherSecretKeyResponse) SetKeyLengthBits(v int32)`
+`func (o *CipherSecretKeyResponse) SetKeyLengthBits(v int64)`
 
 SetKeyLengthBits sets KeyLengthBits field to given value.
 

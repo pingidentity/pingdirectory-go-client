@@ -48,7 +48,7 @@ type AddCommonLogFileHttpOperationLogPublisherRequest struct {
 	// Specifies the log file buffer size.
 	BufferSize *string `json:"bufferSize,omitempty"`
 	// The maximum number of log records that can be stored in the asynchronous queue.
-	QueueSize *int32 `json:"queueSize,omitempty"`
+	QueueSize *int64 `json:"queueSize,omitempty"`
 	// Specifies the interval at which to check whether the log files need to be rotated.
 	TimeInterval *string `json:"timeInterval,omitempty"`
 	// A description for this Log Publisher
@@ -536,9 +536,9 @@ func (o *AddCommonLogFileHttpOperationLogPublisherRequest) SetBufferSize(v strin
 }
 
 // GetQueueSize returns the QueueSize field value if set, zero value otherwise.
-func (o *AddCommonLogFileHttpOperationLogPublisherRequest) GetQueueSize() int32 {
+func (o *AddCommonLogFileHttpOperationLogPublisherRequest) GetQueueSize() int64 {
 	if o == nil || IsNil(o.QueueSize) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.QueueSize
@@ -546,7 +546,7 @@ func (o *AddCommonLogFileHttpOperationLogPublisherRequest) GetQueueSize() int32 
 
 // GetQueueSizeOk returns a tuple with the QueueSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCommonLogFileHttpOperationLogPublisherRequest) GetQueueSizeOk() (*int32, bool) {
+func (o *AddCommonLogFileHttpOperationLogPublisherRequest) GetQueueSizeOk() (*int64, bool) {
 	if o == nil || IsNil(o.QueueSize) {
 		return nil, false
 	}
@@ -562,8 +562,8 @@ func (o *AddCommonLogFileHttpOperationLogPublisherRequest) HasQueueSize() bool {
 	return false
 }
 
-// SetQueueSize gets a reference to the given int32 and assigns it to the QueueSize field.
-func (o *AddCommonLogFileHttpOperationLogPublisherRequest) SetQueueSize(v int32) {
+// SetQueueSize gets a reference to the given int64 and assigns it to the QueueSize field.
+func (o *AddCommonLogFileHttpOperationLogPublisherRequest) SetQueueSize(v int64) {
 	o.QueueSize = &v
 }
 

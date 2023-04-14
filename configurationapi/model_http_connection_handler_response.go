@@ -25,7 +25,7 @@ type HttpConnectionHandlerResponse struct {
 	// Specifies the address on which to listen for connections from HTTP clients. If no value is defined, the server will listen on all addresses on all interfaces.
 	ListenAddress *string `json:"listenAddress,omitempty"`
 	// Specifies the port number on which the HTTP Connection Handler will listen for connections from clients.
-	ListenPort int32 `json:"listenPort"`
+	ListenPort int64 `json:"listenPort"`
 	// Indicates whether the HTTP Connection Handler should use SSL.
 	UseSSL *bool `json:"useSSL,omitempty"`
 	// Specifies the nickname (also called the alias) of the certificate that the HTTP Connection Handler should use when performing SSL communication.
@@ -45,17 +45,17 @@ type HttpConnectionHandlerResponse struct {
 	// Specifies the trust manager provider that will be used to validate any certificates presented by HTTPS clients.
 	TrustManagerProvider *string `json:"trustManagerProvider,omitempty"`
 	// Specifies the number of threads that will be used for accepting connections and reading requests from clients.
-	NumRequestHandlers *int32 `json:"numRequestHandlers,omitempty"`
+	NumRequestHandlers *int64 `json:"numRequestHandlers,omitempty"`
 	// Indicates whether to enable statistics collection for this connection handler.
 	KeepStats *bool `json:"keepStats,omitempty"`
 	// Specifies the number of concurrent outstanding connection attempts that the connection handler should allow. The default value should be acceptable in most cases, but it may need to be increased in environments that may attempt to establish large numbers of connections simultaneously.
-	AcceptBacklog *int32 `json:"acceptBacklog,omitempty"`
+	AcceptBacklog *int64 `json:"acceptBacklog,omitempty"`
 	// Indicates whether the server should attempt to reuse socket descriptors. This may be useful in environments with a high rate of connection establishment and termination.
 	AllowTCPReuseAddress *bool `json:"allowTCPReuseAddress,omitempty"`
 	// Specifies the maximum idle time for a connection. The max idle time is applied when waiting for a new request to be received on a connection, when reading the headers and content of a request, or when writing the headers and content of a response.
 	IdleTimeLimit *string `json:"idleTimeLimit,omitempty"`
 	// Specifies the number of connections, which if exceeded, places this handler in a low resource state where a different idle time limit is applied on the connections.
-	LowResourcesConnectionThreshold *int32 `json:"lowResourcesConnectionThreshold,omitempty"`
+	LowResourcesConnectionThreshold *int64 `json:"lowResourcesConnectionThreshold,omitempty"`
 	// Specifies the maximum idle time for a connection when this handler is in a low resource state as defined by low-resource-connections. The max idle time is applied when waiting for a new request to be received on a connection, when reading the headers and content of a request, or when writing the headers and content of a response.
 	LowResourcesIdleTimeLimit *string `json:"lowResourcesIdleTimeLimit,omitempty"`
 	// Determines whether request form parameters submitted in multipart/ form-data (RFC 2388) format should be processed as request parameters.
@@ -63,7 +63,7 @@ type HttpConnectionHandlerResponse struct {
 	// Indicates whether to use \"Forwarded\" and \"X-Forwarded-*\" request headers to override corresponding HTTP request information available during request processing.
 	UseForwardedHeaders *bool `json:"useForwardedHeaders,omitempty"`
 	// Specifies the maximum buffer size of an http request including the request uri and all of the request headers.
-	HttpRequestHeaderSize *int32 `json:"httpRequestHeaderSize,omitempty"`
+	HttpRequestHeaderSize *int64 `json:"httpRequestHeaderSize,omitempty"`
 	// Specifies HTTP header fields and values added to response headers for all requests.
 	ResponseHeader []string `json:"responseHeader,omitempty"`
 	// If enabled, a correlation ID header will be added to outgoing HTTP responses.
@@ -85,7 +85,7 @@ type HttpConnectionHandlerResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewHttpConnectionHandlerResponse(id string, schemas []EnumhttpConnectionHandlerSchemaUrn, listenPort int32, enabled bool) *HttpConnectionHandlerResponse {
+func NewHttpConnectionHandlerResponse(id string, schemas []EnumhttpConnectionHandlerSchemaUrn, listenPort int64, enabled bool) *HttpConnectionHandlerResponse {
 	this := HttpConnectionHandlerResponse{}
 	this.Id = id
 	this.Schemas = schemas
@@ -183,9 +183,9 @@ func (o *HttpConnectionHandlerResponse) SetListenAddress(v string) {
 }
 
 // GetListenPort returns the ListenPort field value
-func (o *HttpConnectionHandlerResponse) GetListenPort() int32 {
+func (o *HttpConnectionHandlerResponse) GetListenPort() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -194,7 +194,7 @@ func (o *HttpConnectionHandlerResponse) GetListenPort() int32 {
 
 // GetListenPortOk returns a tuple with the ListenPort field value
 // and a boolean to check if the value has been set.
-func (o *HttpConnectionHandlerResponse) GetListenPortOk() (*int32, bool) {
+func (o *HttpConnectionHandlerResponse) GetListenPortOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -202,7 +202,7 @@ func (o *HttpConnectionHandlerResponse) GetListenPortOk() (*int32, bool) {
 }
 
 // SetListenPort sets field value
-func (o *HttpConnectionHandlerResponse) SetListenPort(v int32) {
+func (o *HttpConnectionHandlerResponse) SetListenPort(v int64) {
 	o.ListenPort = v
 }
 
@@ -495,9 +495,9 @@ func (o *HttpConnectionHandlerResponse) SetTrustManagerProvider(v string) {
 }
 
 // GetNumRequestHandlers returns the NumRequestHandlers field value if set, zero value otherwise.
-func (o *HttpConnectionHandlerResponse) GetNumRequestHandlers() int32 {
+func (o *HttpConnectionHandlerResponse) GetNumRequestHandlers() int64 {
 	if o == nil || IsNil(o.NumRequestHandlers) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.NumRequestHandlers
@@ -505,7 +505,7 @@ func (o *HttpConnectionHandlerResponse) GetNumRequestHandlers() int32 {
 
 // GetNumRequestHandlersOk returns a tuple with the NumRequestHandlers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HttpConnectionHandlerResponse) GetNumRequestHandlersOk() (*int32, bool) {
+func (o *HttpConnectionHandlerResponse) GetNumRequestHandlersOk() (*int64, bool) {
 	if o == nil || IsNil(o.NumRequestHandlers) {
 		return nil, false
 	}
@@ -521,8 +521,8 @@ func (o *HttpConnectionHandlerResponse) HasNumRequestHandlers() bool {
 	return false
 }
 
-// SetNumRequestHandlers gets a reference to the given int32 and assigns it to the NumRequestHandlers field.
-func (o *HttpConnectionHandlerResponse) SetNumRequestHandlers(v int32) {
+// SetNumRequestHandlers gets a reference to the given int64 and assigns it to the NumRequestHandlers field.
+func (o *HttpConnectionHandlerResponse) SetNumRequestHandlers(v int64) {
 	o.NumRequestHandlers = &v
 }
 
@@ -559,9 +559,9 @@ func (o *HttpConnectionHandlerResponse) SetKeepStats(v bool) {
 }
 
 // GetAcceptBacklog returns the AcceptBacklog field value if set, zero value otherwise.
-func (o *HttpConnectionHandlerResponse) GetAcceptBacklog() int32 {
+func (o *HttpConnectionHandlerResponse) GetAcceptBacklog() int64 {
 	if o == nil || IsNil(o.AcceptBacklog) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AcceptBacklog
@@ -569,7 +569,7 @@ func (o *HttpConnectionHandlerResponse) GetAcceptBacklog() int32 {
 
 // GetAcceptBacklogOk returns a tuple with the AcceptBacklog field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HttpConnectionHandlerResponse) GetAcceptBacklogOk() (*int32, bool) {
+func (o *HttpConnectionHandlerResponse) GetAcceptBacklogOk() (*int64, bool) {
 	if o == nil || IsNil(o.AcceptBacklog) {
 		return nil, false
 	}
@@ -585,8 +585,8 @@ func (o *HttpConnectionHandlerResponse) HasAcceptBacklog() bool {
 	return false
 }
 
-// SetAcceptBacklog gets a reference to the given int32 and assigns it to the AcceptBacklog field.
-func (o *HttpConnectionHandlerResponse) SetAcceptBacklog(v int32) {
+// SetAcceptBacklog gets a reference to the given int64 and assigns it to the AcceptBacklog field.
+func (o *HttpConnectionHandlerResponse) SetAcceptBacklog(v int64) {
 	o.AcceptBacklog = &v
 }
 
@@ -655,9 +655,9 @@ func (o *HttpConnectionHandlerResponse) SetIdleTimeLimit(v string) {
 }
 
 // GetLowResourcesConnectionThreshold returns the LowResourcesConnectionThreshold field value if set, zero value otherwise.
-func (o *HttpConnectionHandlerResponse) GetLowResourcesConnectionThreshold() int32 {
+func (o *HttpConnectionHandlerResponse) GetLowResourcesConnectionThreshold() int64 {
 	if o == nil || IsNil(o.LowResourcesConnectionThreshold) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.LowResourcesConnectionThreshold
@@ -665,7 +665,7 @@ func (o *HttpConnectionHandlerResponse) GetLowResourcesConnectionThreshold() int
 
 // GetLowResourcesConnectionThresholdOk returns a tuple with the LowResourcesConnectionThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HttpConnectionHandlerResponse) GetLowResourcesConnectionThresholdOk() (*int32, bool) {
+func (o *HttpConnectionHandlerResponse) GetLowResourcesConnectionThresholdOk() (*int64, bool) {
 	if o == nil || IsNil(o.LowResourcesConnectionThreshold) {
 		return nil, false
 	}
@@ -681,8 +681,8 @@ func (o *HttpConnectionHandlerResponse) HasLowResourcesConnectionThreshold() boo
 	return false
 }
 
-// SetLowResourcesConnectionThreshold gets a reference to the given int32 and assigns it to the LowResourcesConnectionThreshold field.
-func (o *HttpConnectionHandlerResponse) SetLowResourcesConnectionThreshold(v int32) {
+// SetLowResourcesConnectionThreshold gets a reference to the given int64 and assigns it to the LowResourcesConnectionThreshold field.
+func (o *HttpConnectionHandlerResponse) SetLowResourcesConnectionThreshold(v int64) {
 	o.LowResourcesConnectionThreshold = &v
 }
 
@@ -783,9 +783,9 @@ func (o *HttpConnectionHandlerResponse) SetUseForwardedHeaders(v bool) {
 }
 
 // GetHttpRequestHeaderSize returns the HttpRequestHeaderSize field value if set, zero value otherwise.
-func (o *HttpConnectionHandlerResponse) GetHttpRequestHeaderSize() int32 {
+func (o *HttpConnectionHandlerResponse) GetHttpRequestHeaderSize() int64 {
 	if o == nil || IsNil(o.HttpRequestHeaderSize) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.HttpRequestHeaderSize
@@ -793,7 +793,7 @@ func (o *HttpConnectionHandlerResponse) GetHttpRequestHeaderSize() int32 {
 
 // GetHttpRequestHeaderSizeOk returns a tuple with the HttpRequestHeaderSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HttpConnectionHandlerResponse) GetHttpRequestHeaderSizeOk() (*int32, bool) {
+func (o *HttpConnectionHandlerResponse) GetHttpRequestHeaderSizeOk() (*int64, bool) {
 	if o == nil || IsNil(o.HttpRequestHeaderSize) {
 		return nil, false
 	}
@@ -809,8 +809,8 @@ func (o *HttpConnectionHandlerResponse) HasHttpRequestHeaderSize() bool {
 	return false
 }
 
-// SetHttpRequestHeaderSize gets a reference to the given int32 and assigns it to the HttpRequestHeaderSize field.
-func (o *HttpConnectionHandlerResponse) SetHttpRequestHeaderSize(v int32) {
+// SetHttpRequestHeaderSize gets a reference to the given int64 and assigns it to the HttpRequestHeaderSize field.
+func (o *HttpConnectionHandlerResponse) SetHttpRequestHeaderSize(v int64) {
 	o.HttpRequestHeaderSize = &v
 }
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumsaltedMd5PasswordStorageSchemeSchemaUrn**](EnumsaltedMd5PasswordStorageSchemeSchemaUrn.md) |  | 
 **Id** | **string** | Name of the Password Storage Scheme | 
 **Enabled** | **bool** | Indicates whether the Salted MD5 Password Storage Scheme is enabled for use. | 
-**SaltLengthBytes** | Pointer to **int32** | Specifies the number of bytes to use for the generated salt. | [optional] 
+**SaltLengthBytes** | Pointer to **int64** | Specifies the number of bytes to use for the generated salt. | [optional] 
 **Description** | Pointer to **string** | A description for this Password Storage Scheme | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
@@ -93,20 +93,20 @@ SetEnabled sets Enabled field to given value.
 
 ### GetSaltLengthBytes
 
-`func (o *SaltedMd5PasswordStorageSchemeResponse) GetSaltLengthBytes() int32`
+`func (o *SaltedMd5PasswordStorageSchemeResponse) GetSaltLengthBytes() int64`
 
 GetSaltLengthBytes returns the SaltLengthBytes field if non-nil, zero value otherwise.
 
 ### GetSaltLengthBytesOk
 
-`func (o *SaltedMd5PasswordStorageSchemeResponse) GetSaltLengthBytesOk() (*int32, bool)`
+`func (o *SaltedMd5PasswordStorageSchemeResponse) GetSaltLengthBytesOk() (*int64, bool)`
 
 GetSaltLengthBytesOk returns a tuple with the SaltLengthBytes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSaltLengthBytes
 
-`func (o *SaltedMd5PasswordStorageSchemeResponse) SetSaltLengthBytes(v int32)`
+`func (o *SaltedMd5PasswordStorageSchemeResponse) SetSaltLengthBytes(v int64)`
 
 SetSaltLengthBytes sets SaltLengthBytes field to given value.
 

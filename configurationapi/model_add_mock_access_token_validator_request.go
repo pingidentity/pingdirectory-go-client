@@ -27,7 +27,7 @@ type AddMockAccessTokenValidatorRequest struct {
 	// The name of the token claim that contains the scopes granted by the token.
 	ScopeClaimName *string `json:"scopeClaimName,omitempty"`
 	// When multiple Mock Access Token Validators are defined for a single Directory Server, this property determines the evaluation order for determining the correct validator class for an access token received by the Directory Server. Values of this property must be unique among all Mock Access Token Validators defined within Directory Server but not necessarily contiguous. Mock Access Token Validators with a smaller value will be evaluated first to determine if they are able to validate the access token.
-	EvaluationOrderIndex *int32 `json:"evaluationOrderIndex,omitempty"`
+	EvaluationOrderIndex *int64 `json:"evaluationOrderIndex,omitempty"`
 	// Specifies the name of the Identity Mapper that should be used for associating user entries with Bearer token subject names. The claim name from which to obtain the subject (i.e. the currently logged-in user) may be configured using the subject-claim-name property.
 	IdentityMapper *string `json:"identityMapper,omitempty"`
 	// The name of the token claim that contains the subject, i.e. the logged-in user in an access token. This property goes hand-in-hand with the identity-mapper property and tells the Identity Mapper which field to use to look up the user entry on the server.
@@ -171,9 +171,9 @@ func (o *AddMockAccessTokenValidatorRequest) SetScopeClaimName(v string) {
 }
 
 // GetEvaluationOrderIndex returns the EvaluationOrderIndex field value if set, zero value otherwise.
-func (o *AddMockAccessTokenValidatorRequest) GetEvaluationOrderIndex() int32 {
+func (o *AddMockAccessTokenValidatorRequest) GetEvaluationOrderIndex() int64 {
 	if o == nil || IsNil(o.EvaluationOrderIndex) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.EvaluationOrderIndex
@@ -181,7 +181,7 @@ func (o *AddMockAccessTokenValidatorRequest) GetEvaluationOrderIndex() int32 {
 
 // GetEvaluationOrderIndexOk returns a tuple with the EvaluationOrderIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddMockAccessTokenValidatorRequest) GetEvaluationOrderIndexOk() (*int32, bool) {
+func (o *AddMockAccessTokenValidatorRequest) GetEvaluationOrderIndexOk() (*int64, bool) {
 	if o == nil || IsNil(o.EvaluationOrderIndex) {
 		return nil, false
 	}
@@ -197,8 +197,8 @@ func (o *AddMockAccessTokenValidatorRequest) HasEvaluationOrderIndex() bool {
 	return false
 }
 
-// SetEvaluationOrderIndex gets a reference to the given int32 and assigns it to the EvaluationOrderIndex field.
-func (o *AddMockAccessTokenValidatorRequest) SetEvaluationOrderIndex(v int32) {
+// SetEvaluationOrderIndex gets a reference to the given int64 and assigns it to the EvaluationOrderIndex field.
+func (o *AddMockAccessTokenValidatorRequest) SetEvaluationOrderIndex(v int64) {
 	o.EvaluationOrderIndex = &v
 }
 

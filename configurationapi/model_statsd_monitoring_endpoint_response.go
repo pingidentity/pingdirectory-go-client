@@ -25,7 +25,7 @@ type StatsdMonitoringEndpointResponse struct {
 	// The name of the host where this StatsD Monitoring Endpoint should send metric data.
 	Hostname string `json:"hostname"`
 	// Specifies the port number of the endpoint where metric data should be sent.
-	ServerPort     int32                                    `json:"serverPort"`
+	ServerPort     int64                                    `json:"serverPort"`
 	ConnectionType EnummonitoringEndpointConnectionTypeProp `json:"connectionType"`
 	// The trust manager provider to use if SSL over TCP is to be used for connection-level security.
 	TrustManagerProvider *string `json:"trustManagerProvider,omitempty"`
@@ -41,7 +41,7 @@ type StatsdMonitoringEndpointResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStatsdMonitoringEndpointResponse(id string, hostname string, serverPort int32, connectionType EnummonitoringEndpointConnectionTypeProp, enabled bool) *StatsdMonitoringEndpointResponse {
+func NewStatsdMonitoringEndpointResponse(id string, hostname string, serverPort int64, connectionType EnummonitoringEndpointConnectionTypeProp, enabled bool) *StatsdMonitoringEndpointResponse {
 	this := StatsdMonitoringEndpointResponse{}
 	this.Id = id
 	this.Hostname = hostname
@@ -140,9 +140,9 @@ func (o *StatsdMonitoringEndpointResponse) SetHostname(v string) {
 }
 
 // GetServerPort returns the ServerPort field value
-func (o *StatsdMonitoringEndpointResponse) GetServerPort() int32 {
+func (o *StatsdMonitoringEndpointResponse) GetServerPort() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -151,7 +151,7 @@ func (o *StatsdMonitoringEndpointResponse) GetServerPort() int32 {
 
 // GetServerPortOk returns a tuple with the ServerPort field value
 // and a boolean to check if the value has been set.
-func (o *StatsdMonitoringEndpointResponse) GetServerPortOk() (*int32, bool) {
+func (o *StatsdMonitoringEndpointResponse) GetServerPortOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -159,7 +159,7 @@ func (o *StatsdMonitoringEndpointResponse) GetServerPortOk() (*int32, bool) {
 }
 
 // SetServerPort sets field value
-func (o *StatsdMonitoringEndpointResponse) SetServerPort(v int32) {
+func (o *StatsdMonitoringEndpointResponse) SetServerPort(v int64) {
 	o.ServerPort = v
 }
 

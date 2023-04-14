@@ -30,9 +30,9 @@ type TaskBackendResponse struct {
 	// Specifies the path to the backing file for storing information about the tasks configured in the server.
 	TaskBackingFile string `json:"taskBackingFile"`
 	// The maximum number of log messages to retain in each task entry from the beginning of the processing for that task. If too many messages are logged during task processing, then retaining only a limited number of messages from the beginning and/or end of task processing can reduce the amount of memory that the server consumes by caching information about currently-active and recently-completed tasks.
-	MaximumInitialTaskLogMessagesToRetain *int32 `json:"maximumInitialTaskLogMessagesToRetain,omitempty"`
+	MaximumInitialTaskLogMessagesToRetain *int64 `json:"maximumInitialTaskLogMessagesToRetain,omitempty"`
 	// The maximum number of log messages to retain in each task entry from the end of the processing for that task. If too many messages are logged during task processing, then retaining only a limited number of messages from the beginning and/or end of task processing can reduce the amount of memory that the server consumes by caching information about currently-active and recently-completed tasks.
-	MaximumFinalTaskLogMessagesToRetain *int32 `json:"maximumFinalTaskLogMessagesToRetain,omitempty"`
+	MaximumFinalTaskLogMessagesToRetain *int64 `json:"maximumFinalTaskLogMessagesToRetain,omitempty"`
 	// Specifies the length of time that task entries should be retained after processing on the associated task has been completed.
 	TaskRetentionTime *string `json:"taskRetentionTime,omitempty"`
 	// Specifies the email address to use as the sender address (that is, the \"From:\" address) for notification mail messages generated when a task completes execution.
@@ -222,9 +222,9 @@ func (o *TaskBackendResponse) SetTaskBackingFile(v string) {
 }
 
 // GetMaximumInitialTaskLogMessagesToRetain returns the MaximumInitialTaskLogMessagesToRetain field value if set, zero value otherwise.
-func (o *TaskBackendResponse) GetMaximumInitialTaskLogMessagesToRetain() int32 {
+func (o *TaskBackendResponse) GetMaximumInitialTaskLogMessagesToRetain() int64 {
 	if o == nil || IsNil(o.MaximumInitialTaskLogMessagesToRetain) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaximumInitialTaskLogMessagesToRetain
@@ -232,7 +232,7 @@ func (o *TaskBackendResponse) GetMaximumInitialTaskLogMessagesToRetain() int32 {
 
 // GetMaximumInitialTaskLogMessagesToRetainOk returns a tuple with the MaximumInitialTaskLogMessagesToRetain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TaskBackendResponse) GetMaximumInitialTaskLogMessagesToRetainOk() (*int32, bool) {
+func (o *TaskBackendResponse) GetMaximumInitialTaskLogMessagesToRetainOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaximumInitialTaskLogMessagesToRetain) {
 		return nil, false
 	}
@@ -248,15 +248,15 @@ func (o *TaskBackendResponse) HasMaximumInitialTaskLogMessagesToRetain() bool {
 	return false
 }
 
-// SetMaximumInitialTaskLogMessagesToRetain gets a reference to the given int32 and assigns it to the MaximumInitialTaskLogMessagesToRetain field.
-func (o *TaskBackendResponse) SetMaximumInitialTaskLogMessagesToRetain(v int32) {
+// SetMaximumInitialTaskLogMessagesToRetain gets a reference to the given int64 and assigns it to the MaximumInitialTaskLogMessagesToRetain field.
+func (o *TaskBackendResponse) SetMaximumInitialTaskLogMessagesToRetain(v int64) {
 	o.MaximumInitialTaskLogMessagesToRetain = &v
 }
 
 // GetMaximumFinalTaskLogMessagesToRetain returns the MaximumFinalTaskLogMessagesToRetain field value if set, zero value otherwise.
-func (o *TaskBackendResponse) GetMaximumFinalTaskLogMessagesToRetain() int32 {
+func (o *TaskBackendResponse) GetMaximumFinalTaskLogMessagesToRetain() int64 {
 	if o == nil || IsNil(o.MaximumFinalTaskLogMessagesToRetain) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaximumFinalTaskLogMessagesToRetain
@@ -264,7 +264,7 @@ func (o *TaskBackendResponse) GetMaximumFinalTaskLogMessagesToRetain() int32 {
 
 // GetMaximumFinalTaskLogMessagesToRetainOk returns a tuple with the MaximumFinalTaskLogMessagesToRetain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TaskBackendResponse) GetMaximumFinalTaskLogMessagesToRetainOk() (*int32, bool) {
+func (o *TaskBackendResponse) GetMaximumFinalTaskLogMessagesToRetainOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaximumFinalTaskLogMessagesToRetain) {
 		return nil, false
 	}
@@ -280,8 +280,8 @@ func (o *TaskBackendResponse) HasMaximumFinalTaskLogMessagesToRetain() bool {
 	return false
 }
 
-// SetMaximumFinalTaskLogMessagesToRetain gets a reference to the given int32 and assigns it to the MaximumFinalTaskLogMessagesToRetain field.
-func (o *TaskBackendResponse) SetMaximumFinalTaskLogMessagesToRetain(v int32) {
+// SetMaximumFinalTaskLogMessagesToRetain gets a reference to the given int64 and assigns it to the MaximumFinalTaskLogMessagesToRetain field.
+func (o *TaskBackendResponse) SetMaximumFinalTaskLogMessagesToRetain(v int64) {
 	o.MaximumFinalTaskLogMessagesToRetain = &v
 }
 

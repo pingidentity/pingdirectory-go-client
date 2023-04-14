@@ -38,23 +38,23 @@ type SyncServerInstanceResponse struct {
 	// The public component of the certificate used by this instance to protect inter-server communication and to perform server-specific encryption. This will generally be managed by the server and should only be altered by administrators under explicit direction from Ping Identity support personnel.
 	InterServerCertificate *string `json:"interServerCertificate,omitempty"`
 	// The TCP port on which this server is listening for LDAP connections.
-	LdapPort *int32 `json:"ldapPort,omitempty"`
+	LdapPort *int64 `json:"ldapPort,omitempty"`
 	// The TCP port on which this server is listening for LDAP secure connections.
-	LdapsPort *int32 `json:"ldapsPort,omitempty"`
+	LdapsPort *int64 `json:"ldapsPort,omitempty"`
 	// The TCP port on which this server is listening for HTTP connections.
-	HttpPort *int32 `json:"httpPort,omitempty"`
+	HttpPort *int64 `json:"httpPort,omitempty"`
 	// The TCP port on which this server is listening for HTTPS connections.
-	HttpsPort *int32 `json:"httpsPort,omitempty"`
+	HttpsPort *int64 `json:"httpsPort,omitempty"`
 	// The replication TCP port.
-	ReplicationPort *int32 `json:"replicationPort,omitempty"`
+	ReplicationPort *int64 `json:"replicationPort,omitempty"`
 	// Specifies a unique identifier for the replication server on this server instance.
-	ReplicationServerID *int32 `json:"replicationServerID,omitempty"`
+	ReplicationServerID *int64 `json:"replicationServerID,omitempty"`
 	// Specifies a unique identifier for the Directory Server within the replication domain.
-	ReplicationDomainServerID []int32 `json:"replicationDomainServerID,omitempty"`
+	ReplicationDomainServerID []int64 `json:"replicationDomainServerID,omitempty"`
 	// The TCP port on which this server is listening for JMX connections.
-	JmxPort *int32 `json:"jmxPort,omitempty"`
+	JmxPort *int64 `json:"jmxPort,omitempty"`
 	// The TCP port on which this server is listening for JMX secure connections.
-	JmxsPort          *int32                                   `json:"jmxsPort,omitempty"`
+	JmxsPort          *int64                                   `json:"jmxsPort,omitempty"`
 	PreferredSecurity *EnumserverInstancePreferredSecurityProp `json:"preferredSecurity,omitempty"`
 	// Indicates whether StartTLS is enabled on this server.
 	StartTLSEnabled *bool `json:"startTLSEnabled,omitempty"`
@@ -369,9 +369,9 @@ func (o *SyncServerInstanceResponse) SetInterServerCertificate(v string) {
 }
 
 // GetLdapPort returns the LdapPort field value if set, zero value otherwise.
-func (o *SyncServerInstanceResponse) GetLdapPort() int32 {
+func (o *SyncServerInstanceResponse) GetLdapPort() int64 {
 	if o == nil || IsNil(o.LdapPort) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.LdapPort
@@ -379,7 +379,7 @@ func (o *SyncServerInstanceResponse) GetLdapPort() int32 {
 
 // GetLdapPortOk returns a tuple with the LdapPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SyncServerInstanceResponse) GetLdapPortOk() (*int32, bool) {
+func (o *SyncServerInstanceResponse) GetLdapPortOk() (*int64, bool) {
 	if o == nil || IsNil(o.LdapPort) {
 		return nil, false
 	}
@@ -395,15 +395,15 @@ func (o *SyncServerInstanceResponse) HasLdapPort() bool {
 	return false
 }
 
-// SetLdapPort gets a reference to the given int32 and assigns it to the LdapPort field.
-func (o *SyncServerInstanceResponse) SetLdapPort(v int32) {
+// SetLdapPort gets a reference to the given int64 and assigns it to the LdapPort field.
+func (o *SyncServerInstanceResponse) SetLdapPort(v int64) {
 	o.LdapPort = &v
 }
 
 // GetLdapsPort returns the LdapsPort field value if set, zero value otherwise.
-func (o *SyncServerInstanceResponse) GetLdapsPort() int32 {
+func (o *SyncServerInstanceResponse) GetLdapsPort() int64 {
 	if o == nil || IsNil(o.LdapsPort) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.LdapsPort
@@ -411,7 +411,7 @@ func (o *SyncServerInstanceResponse) GetLdapsPort() int32 {
 
 // GetLdapsPortOk returns a tuple with the LdapsPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SyncServerInstanceResponse) GetLdapsPortOk() (*int32, bool) {
+func (o *SyncServerInstanceResponse) GetLdapsPortOk() (*int64, bool) {
 	if o == nil || IsNil(o.LdapsPort) {
 		return nil, false
 	}
@@ -427,15 +427,15 @@ func (o *SyncServerInstanceResponse) HasLdapsPort() bool {
 	return false
 }
 
-// SetLdapsPort gets a reference to the given int32 and assigns it to the LdapsPort field.
-func (o *SyncServerInstanceResponse) SetLdapsPort(v int32) {
+// SetLdapsPort gets a reference to the given int64 and assigns it to the LdapsPort field.
+func (o *SyncServerInstanceResponse) SetLdapsPort(v int64) {
 	o.LdapsPort = &v
 }
 
 // GetHttpPort returns the HttpPort field value if set, zero value otherwise.
-func (o *SyncServerInstanceResponse) GetHttpPort() int32 {
+func (o *SyncServerInstanceResponse) GetHttpPort() int64 {
 	if o == nil || IsNil(o.HttpPort) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.HttpPort
@@ -443,7 +443,7 @@ func (o *SyncServerInstanceResponse) GetHttpPort() int32 {
 
 // GetHttpPortOk returns a tuple with the HttpPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SyncServerInstanceResponse) GetHttpPortOk() (*int32, bool) {
+func (o *SyncServerInstanceResponse) GetHttpPortOk() (*int64, bool) {
 	if o == nil || IsNil(o.HttpPort) {
 		return nil, false
 	}
@@ -459,15 +459,15 @@ func (o *SyncServerInstanceResponse) HasHttpPort() bool {
 	return false
 }
 
-// SetHttpPort gets a reference to the given int32 and assigns it to the HttpPort field.
-func (o *SyncServerInstanceResponse) SetHttpPort(v int32) {
+// SetHttpPort gets a reference to the given int64 and assigns it to the HttpPort field.
+func (o *SyncServerInstanceResponse) SetHttpPort(v int64) {
 	o.HttpPort = &v
 }
 
 // GetHttpsPort returns the HttpsPort field value if set, zero value otherwise.
-func (o *SyncServerInstanceResponse) GetHttpsPort() int32 {
+func (o *SyncServerInstanceResponse) GetHttpsPort() int64 {
 	if o == nil || IsNil(o.HttpsPort) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.HttpsPort
@@ -475,7 +475,7 @@ func (o *SyncServerInstanceResponse) GetHttpsPort() int32 {
 
 // GetHttpsPortOk returns a tuple with the HttpsPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SyncServerInstanceResponse) GetHttpsPortOk() (*int32, bool) {
+func (o *SyncServerInstanceResponse) GetHttpsPortOk() (*int64, bool) {
 	if o == nil || IsNil(o.HttpsPort) {
 		return nil, false
 	}
@@ -491,15 +491,15 @@ func (o *SyncServerInstanceResponse) HasHttpsPort() bool {
 	return false
 }
 
-// SetHttpsPort gets a reference to the given int32 and assigns it to the HttpsPort field.
-func (o *SyncServerInstanceResponse) SetHttpsPort(v int32) {
+// SetHttpsPort gets a reference to the given int64 and assigns it to the HttpsPort field.
+func (o *SyncServerInstanceResponse) SetHttpsPort(v int64) {
 	o.HttpsPort = &v
 }
 
 // GetReplicationPort returns the ReplicationPort field value if set, zero value otherwise.
-func (o *SyncServerInstanceResponse) GetReplicationPort() int32 {
+func (o *SyncServerInstanceResponse) GetReplicationPort() int64 {
 	if o == nil || IsNil(o.ReplicationPort) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ReplicationPort
@@ -507,7 +507,7 @@ func (o *SyncServerInstanceResponse) GetReplicationPort() int32 {
 
 // GetReplicationPortOk returns a tuple with the ReplicationPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SyncServerInstanceResponse) GetReplicationPortOk() (*int32, bool) {
+func (o *SyncServerInstanceResponse) GetReplicationPortOk() (*int64, bool) {
 	if o == nil || IsNil(o.ReplicationPort) {
 		return nil, false
 	}
@@ -523,15 +523,15 @@ func (o *SyncServerInstanceResponse) HasReplicationPort() bool {
 	return false
 }
 
-// SetReplicationPort gets a reference to the given int32 and assigns it to the ReplicationPort field.
-func (o *SyncServerInstanceResponse) SetReplicationPort(v int32) {
+// SetReplicationPort gets a reference to the given int64 and assigns it to the ReplicationPort field.
+func (o *SyncServerInstanceResponse) SetReplicationPort(v int64) {
 	o.ReplicationPort = &v
 }
 
 // GetReplicationServerID returns the ReplicationServerID field value if set, zero value otherwise.
-func (o *SyncServerInstanceResponse) GetReplicationServerID() int32 {
+func (o *SyncServerInstanceResponse) GetReplicationServerID() int64 {
 	if o == nil || IsNil(o.ReplicationServerID) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ReplicationServerID
@@ -539,7 +539,7 @@ func (o *SyncServerInstanceResponse) GetReplicationServerID() int32 {
 
 // GetReplicationServerIDOk returns a tuple with the ReplicationServerID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SyncServerInstanceResponse) GetReplicationServerIDOk() (*int32, bool) {
+func (o *SyncServerInstanceResponse) GetReplicationServerIDOk() (*int64, bool) {
 	if o == nil || IsNil(o.ReplicationServerID) {
 		return nil, false
 	}
@@ -555,15 +555,15 @@ func (o *SyncServerInstanceResponse) HasReplicationServerID() bool {
 	return false
 }
 
-// SetReplicationServerID gets a reference to the given int32 and assigns it to the ReplicationServerID field.
-func (o *SyncServerInstanceResponse) SetReplicationServerID(v int32) {
+// SetReplicationServerID gets a reference to the given int64 and assigns it to the ReplicationServerID field.
+func (o *SyncServerInstanceResponse) SetReplicationServerID(v int64) {
 	o.ReplicationServerID = &v
 }
 
 // GetReplicationDomainServerID returns the ReplicationDomainServerID field value if set, zero value otherwise.
-func (o *SyncServerInstanceResponse) GetReplicationDomainServerID() []int32 {
+func (o *SyncServerInstanceResponse) GetReplicationDomainServerID() []int64 {
 	if o == nil || IsNil(o.ReplicationDomainServerID) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.ReplicationDomainServerID
@@ -571,7 +571,7 @@ func (o *SyncServerInstanceResponse) GetReplicationDomainServerID() []int32 {
 
 // GetReplicationDomainServerIDOk returns a tuple with the ReplicationDomainServerID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SyncServerInstanceResponse) GetReplicationDomainServerIDOk() ([]int32, bool) {
+func (o *SyncServerInstanceResponse) GetReplicationDomainServerIDOk() ([]int64, bool) {
 	if o == nil || IsNil(o.ReplicationDomainServerID) {
 		return nil, false
 	}
@@ -587,15 +587,15 @@ func (o *SyncServerInstanceResponse) HasReplicationDomainServerID() bool {
 	return false
 }
 
-// SetReplicationDomainServerID gets a reference to the given []int32 and assigns it to the ReplicationDomainServerID field.
-func (o *SyncServerInstanceResponse) SetReplicationDomainServerID(v []int32) {
+// SetReplicationDomainServerID gets a reference to the given []int64 and assigns it to the ReplicationDomainServerID field.
+func (o *SyncServerInstanceResponse) SetReplicationDomainServerID(v []int64) {
 	o.ReplicationDomainServerID = v
 }
 
 // GetJmxPort returns the JmxPort field value if set, zero value otherwise.
-func (o *SyncServerInstanceResponse) GetJmxPort() int32 {
+func (o *SyncServerInstanceResponse) GetJmxPort() int64 {
 	if o == nil || IsNil(o.JmxPort) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.JmxPort
@@ -603,7 +603,7 @@ func (o *SyncServerInstanceResponse) GetJmxPort() int32 {
 
 // GetJmxPortOk returns a tuple with the JmxPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SyncServerInstanceResponse) GetJmxPortOk() (*int32, bool) {
+func (o *SyncServerInstanceResponse) GetJmxPortOk() (*int64, bool) {
 	if o == nil || IsNil(o.JmxPort) {
 		return nil, false
 	}
@@ -619,15 +619,15 @@ func (o *SyncServerInstanceResponse) HasJmxPort() bool {
 	return false
 }
 
-// SetJmxPort gets a reference to the given int32 and assigns it to the JmxPort field.
-func (o *SyncServerInstanceResponse) SetJmxPort(v int32) {
+// SetJmxPort gets a reference to the given int64 and assigns it to the JmxPort field.
+func (o *SyncServerInstanceResponse) SetJmxPort(v int64) {
 	o.JmxPort = &v
 }
 
 // GetJmxsPort returns the JmxsPort field value if set, zero value otherwise.
-func (o *SyncServerInstanceResponse) GetJmxsPort() int32 {
+func (o *SyncServerInstanceResponse) GetJmxsPort() int64 {
 	if o == nil || IsNil(o.JmxsPort) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.JmxsPort
@@ -635,7 +635,7 @@ func (o *SyncServerInstanceResponse) GetJmxsPort() int32 {
 
 // GetJmxsPortOk returns a tuple with the JmxsPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SyncServerInstanceResponse) GetJmxsPortOk() (*int32, bool) {
+func (o *SyncServerInstanceResponse) GetJmxsPortOk() (*int64, bool) {
 	if o == nil || IsNil(o.JmxsPort) {
 		return nil, false
 	}
@@ -651,8 +651,8 @@ func (o *SyncServerInstanceResponse) HasJmxsPort() bool {
 	return false
 }
 
-// SetJmxsPort gets a reference to the given int32 and assigns it to the JmxsPort field.
-func (o *SyncServerInstanceResponse) SetJmxsPort(v int32) {
+// SetJmxsPort gets a reference to the given int64 and assigns it to the JmxsPort field.
+func (o *SyncServerInstanceResponse) SetJmxsPort(v int64) {
 	o.JmxsPort = &v
 }
 

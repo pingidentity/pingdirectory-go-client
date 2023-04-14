@@ -25,14 +25,14 @@ type AddDelegatedAdminAttributeCategoryRequest struct {
 	// A description for this Delegated Admin Attribute Category
 	Description *string `json:"description,omitempty"`
 	// Delegated Admin Attribute Categories are ordered for display based on this index from least to greatest.
-	DisplayOrderIndex int32 `json:"displayOrderIndex"`
+	DisplayOrderIndex int64 `json:"displayOrderIndex"`
 }
 
 // NewAddDelegatedAdminAttributeCategoryRequest instantiates a new AddDelegatedAdminAttributeCategoryRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddDelegatedAdminAttributeCategoryRequest(displayName string, displayOrderIndex int32) *AddDelegatedAdminAttributeCategoryRequest {
+func NewAddDelegatedAdminAttributeCategoryRequest(displayName string, displayOrderIndex int64) *AddDelegatedAdminAttributeCategoryRequest {
 	this := AddDelegatedAdminAttributeCategoryRequest{}
 	this.DisplayName = displayName
 	this.DisplayOrderIndex = displayOrderIndex
@@ -136,9 +136,9 @@ func (o *AddDelegatedAdminAttributeCategoryRequest) SetDescription(v string) {
 }
 
 // GetDisplayOrderIndex returns the DisplayOrderIndex field value
-func (o *AddDelegatedAdminAttributeCategoryRequest) GetDisplayOrderIndex() int32 {
+func (o *AddDelegatedAdminAttributeCategoryRequest) GetDisplayOrderIndex() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -147,7 +147,7 @@ func (o *AddDelegatedAdminAttributeCategoryRequest) GetDisplayOrderIndex() int32
 
 // GetDisplayOrderIndexOk returns a tuple with the DisplayOrderIndex field value
 // and a boolean to check if the value has been set.
-func (o *AddDelegatedAdminAttributeCategoryRequest) GetDisplayOrderIndexOk() (*int32, bool) {
+func (o *AddDelegatedAdminAttributeCategoryRequest) GetDisplayOrderIndexOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -155,7 +155,7 @@ func (o *AddDelegatedAdminAttributeCategoryRequest) GetDisplayOrderIndexOk() (*i
 }
 
 // SetDisplayOrderIndex sets field value
-func (o *AddDelegatedAdminAttributeCategoryRequest) SetDisplayOrderIndex(v int32) {
+func (o *AddDelegatedAdminAttributeCategoryRequest) SetDisplayOrderIndex(v int64) {
 	o.DisplayOrderIndex = v
 }
 

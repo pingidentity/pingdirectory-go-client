@@ -39,7 +39,7 @@ type LdapSdkDebugLoggerResponse struct {
 	// Indicates whether the LDAP SDK Debug Logger will publish records asynchronously.
 	Asynchronous bool `json:"asynchronous"`
 	// The maximum number of log records that can be stored in the asynchronous queue.
-	QueueSize *int32 `json:"queueSize,omitempty"`
+	QueueSize *int64 `json:"queueSize,omitempty"`
 	// Specifies the log file buffer size.
 	BufferSize *string `json:"bufferSize,omitempty"`
 	// Specifies whether to append to existing log files.
@@ -386,9 +386,9 @@ func (o *LdapSdkDebugLoggerResponse) SetAsynchronous(v bool) {
 }
 
 // GetQueueSize returns the QueueSize field value if set, zero value otherwise.
-func (o *LdapSdkDebugLoggerResponse) GetQueueSize() int32 {
+func (o *LdapSdkDebugLoggerResponse) GetQueueSize() int64 {
 	if o == nil || IsNil(o.QueueSize) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.QueueSize
@@ -396,7 +396,7 @@ func (o *LdapSdkDebugLoggerResponse) GetQueueSize() int32 {
 
 // GetQueueSizeOk returns a tuple with the QueueSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LdapSdkDebugLoggerResponse) GetQueueSizeOk() (*int32, bool) {
+func (o *LdapSdkDebugLoggerResponse) GetQueueSizeOk() (*int64, bool) {
 	if o == nil || IsNil(o.QueueSize) {
 		return nil, false
 	}
@@ -412,8 +412,8 @@ func (o *LdapSdkDebugLoggerResponse) HasQueueSize() bool {
 	return false
 }
 
-// SetQueueSize gets a reference to the given int32 and assigns it to the QueueSize field.
-func (o *LdapSdkDebugLoggerResponse) SetQueueSize(v int32) {
+// SetQueueSize gets a reference to the given int64 and assigns it to the QueueSize field.
+func (o *LdapSdkDebugLoggerResponse) SetQueueSize(v int64) {
 	o.QueueSize = &v
 }
 

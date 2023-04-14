@@ -34,9 +34,9 @@ type AddLdapPassThroughAuthenticationHandlerRequest struct {
 	// A pattern to use to construct a filter to use when searching an external server for the entry of the user as whom to bind. For example, \"(mail={uid:ldapFilterEscape}@example.com)\" would construct a search filter to search for a user whose entry in the local server contains a uid attribute whose value appears before \"@example.com\" in the mail attribute in the external server. Note that the \"ldapFilterEscape\" modifier should almost always be used with attributes specified in the pattern.
 	SearchFilterPattern *string `json:"searchFilterPattern,omitempty"`
 	// Specifies the initial number of connections to establish to each external server against which authentication may be attempted.
-	InitialConnections *int32 `json:"initialConnections,omitempty"`
+	InitialConnections *int64 `json:"initialConnections,omitempty"`
 	// Specifies the maximum number of connections to maintain to each external server against which authentication may be attempted. This value must be greater than or equal to the value for the initial-connections property.
-	MaxConnections *int32 `json:"maxConnections,omitempty"`
+	MaxConnections *int64 `json:"maxConnections,omitempty"`
 	// Indicates whether to take server locations into account when prioritizing the servers to use for pass-through authentication attempts.
 	UseLocation *bool `json:"useLocation,omitempty"`
 	// The maximum length of time to wait for a response from an external server in the same location as this Directory Server before considering it unavailable.
@@ -302,9 +302,9 @@ func (o *AddLdapPassThroughAuthenticationHandlerRequest) SetSearchFilterPattern(
 }
 
 // GetInitialConnections returns the InitialConnections field value if set, zero value otherwise.
-func (o *AddLdapPassThroughAuthenticationHandlerRequest) GetInitialConnections() int32 {
+func (o *AddLdapPassThroughAuthenticationHandlerRequest) GetInitialConnections() int64 {
 	if o == nil || IsNil(o.InitialConnections) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.InitialConnections
@@ -312,7 +312,7 @@ func (o *AddLdapPassThroughAuthenticationHandlerRequest) GetInitialConnections()
 
 // GetInitialConnectionsOk returns a tuple with the InitialConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddLdapPassThroughAuthenticationHandlerRequest) GetInitialConnectionsOk() (*int32, bool) {
+func (o *AddLdapPassThroughAuthenticationHandlerRequest) GetInitialConnectionsOk() (*int64, bool) {
 	if o == nil || IsNil(o.InitialConnections) {
 		return nil, false
 	}
@@ -328,15 +328,15 @@ func (o *AddLdapPassThroughAuthenticationHandlerRequest) HasInitialConnections()
 	return false
 }
 
-// SetInitialConnections gets a reference to the given int32 and assigns it to the InitialConnections field.
-func (o *AddLdapPassThroughAuthenticationHandlerRequest) SetInitialConnections(v int32) {
+// SetInitialConnections gets a reference to the given int64 and assigns it to the InitialConnections field.
+func (o *AddLdapPassThroughAuthenticationHandlerRequest) SetInitialConnections(v int64) {
 	o.InitialConnections = &v
 }
 
 // GetMaxConnections returns the MaxConnections field value if set, zero value otherwise.
-func (o *AddLdapPassThroughAuthenticationHandlerRequest) GetMaxConnections() int32 {
+func (o *AddLdapPassThroughAuthenticationHandlerRequest) GetMaxConnections() int64 {
 	if o == nil || IsNil(o.MaxConnections) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxConnections
@@ -344,7 +344,7 @@ func (o *AddLdapPassThroughAuthenticationHandlerRequest) GetMaxConnections() int
 
 // GetMaxConnectionsOk returns a tuple with the MaxConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddLdapPassThroughAuthenticationHandlerRequest) GetMaxConnectionsOk() (*int32, bool) {
+func (o *AddLdapPassThroughAuthenticationHandlerRequest) GetMaxConnectionsOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxConnections) {
 		return nil, false
 	}
@@ -360,8 +360,8 @@ func (o *AddLdapPassThroughAuthenticationHandlerRequest) HasMaxConnections() boo
 	return false
 }
 
-// SetMaxConnections gets a reference to the given int32 and assigns it to the MaxConnections field.
-func (o *AddLdapPassThroughAuthenticationHandlerRequest) SetMaxConnections(v int32) {
+// SetMaxConnections gets a reference to the given int64 and assigns it to the MaxConnections field.
+func (o *AddLdapPassThroughAuthenticationHandlerRequest) SetMaxConnections(v int64) {
 	o.MaxConnections = &v
 }
 

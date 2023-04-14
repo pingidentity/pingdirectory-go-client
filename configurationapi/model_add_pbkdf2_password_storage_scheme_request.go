@@ -24,13 +24,13 @@ type AddPbkdf2PasswordStorageSchemeRequest struct {
 	Schemas         []Enumpbkdf2PasswordStorageSchemeSchemaUrn    `json:"schemas"`
 	DigestAlgorithm *EnumpasswordStorageSchemeDigestAlgorithmProp `json:"digestAlgorithm,omitempty"`
 	// Specifies the number of iterations to use when encoding passwords. The value must be greater than or equal to 1000.
-	IterationCount *int32 `json:"iterationCount,omitempty"`
+	IterationCount *int64 `json:"iterationCount,omitempty"`
 	// Specifies the number of bytes to use for the generated salt. The value must be greater than or equal to 8.
-	SaltLengthBytes *int32 `json:"saltLengthBytes,omitempty"`
+	SaltLengthBytes *int64 `json:"saltLengthBytes,omitempty"`
 	// Specifies the number of bytes to use for the derived key. The value must be greater than or equal to 8.
-	DerivedKeyLengthBytes *int32 `json:"derivedKeyLengthBytes,omitempty"`
+	DerivedKeyLengthBytes *int64 `json:"derivedKeyLengthBytes,omitempty"`
 	// Specifies the maximum allowed length, in bytes, for passwords encoded with this scheme, which can help mitigate denial of service attacks from clients that attempt to bind with very long passwords.
-	MaxPasswordLength *int32 `json:"maxPasswordLength,omitempty"`
+	MaxPasswordLength *int64 `json:"maxPasswordLength,omitempty"`
 	// A description for this Password Storage Scheme
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Password Storage Scheme is enabled for use.
@@ -138,9 +138,9 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) SetDigestAlgorithm(v Enumpasswor
 }
 
 // GetIterationCount returns the IterationCount field value if set, zero value otherwise.
-func (o *AddPbkdf2PasswordStorageSchemeRequest) GetIterationCount() int32 {
+func (o *AddPbkdf2PasswordStorageSchemeRequest) GetIterationCount() int64 {
 	if o == nil || IsNil(o.IterationCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.IterationCount
@@ -148,7 +148,7 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) GetIterationCount() int32 {
 
 // GetIterationCountOk returns a tuple with the IterationCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddPbkdf2PasswordStorageSchemeRequest) GetIterationCountOk() (*int32, bool) {
+func (o *AddPbkdf2PasswordStorageSchemeRequest) GetIterationCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.IterationCount) {
 		return nil, false
 	}
@@ -164,15 +164,15 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) HasIterationCount() bool {
 	return false
 }
 
-// SetIterationCount gets a reference to the given int32 and assigns it to the IterationCount field.
-func (o *AddPbkdf2PasswordStorageSchemeRequest) SetIterationCount(v int32) {
+// SetIterationCount gets a reference to the given int64 and assigns it to the IterationCount field.
+func (o *AddPbkdf2PasswordStorageSchemeRequest) SetIterationCount(v int64) {
 	o.IterationCount = &v
 }
 
 // GetSaltLengthBytes returns the SaltLengthBytes field value if set, zero value otherwise.
-func (o *AddPbkdf2PasswordStorageSchemeRequest) GetSaltLengthBytes() int32 {
+func (o *AddPbkdf2PasswordStorageSchemeRequest) GetSaltLengthBytes() int64 {
 	if o == nil || IsNil(o.SaltLengthBytes) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SaltLengthBytes
@@ -180,7 +180,7 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) GetSaltLengthBytes() int32 {
 
 // GetSaltLengthBytesOk returns a tuple with the SaltLengthBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddPbkdf2PasswordStorageSchemeRequest) GetSaltLengthBytesOk() (*int32, bool) {
+func (o *AddPbkdf2PasswordStorageSchemeRequest) GetSaltLengthBytesOk() (*int64, bool) {
 	if o == nil || IsNil(o.SaltLengthBytes) {
 		return nil, false
 	}
@@ -196,15 +196,15 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) HasSaltLengthBytes() bool {
 	return false
 }
 
-// SetSaltLengthBytes gets a reference to the given int32 and assigns it to the SaltLengthBytes field.
-func (o *AddPbkdf2PasswordStorageSchemeRequest) SetSaltLengthBytes(v int32) {
+// SetSaltLengthBytes gets a reference to the given int64 and assigns it to the SaltLengthBytes field.
+func (o *AddPbkdf2PasswordStorageSchemeRequest) SetSaltLengthBytes(v int64) {
 	o.SaltLengthBytes = &v
 }
 
 // GetDerivedKeyLengthBytes returns the DerivedKeyLengthBytes field value if set, zero value otherwise.
-func (o *AddPbkdf2PasswordStorageSchemeRequest) GetDerivedKeyLengthBytes() int32 {
+func (o *AddPbkdf2PasswordStorageSchemeRequest) GetDerivedKeyLengthBytes() int64 {
 	if o == nil || IsNil(o.DerivedKeyLengthBytes) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DerivedKeyLengthBytes
@@ -212,7 +212,7 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) GetDerivedKeyLengthBytes() int32
 
 // GetDerivedKeyLengthBytesOk returns a tuple with the DerivedKeyLengthBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddPbkdf2PasswordStorageSchemeRequest) GetDerivedKeyLengthBytesOk() (*int32, bool) {
+func (o *AddPbkdf2PasswordStorageSchemeRequest) GetDerivedKeyLengthBytesOk() (*int64, bool) {
 	if o == nil || IsNil(o.DerivedKeyLengthBytes) {
 		return nil, false
 	}
@@ -228,15 +228,15 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) HasDerivedKeyLengthBytes() bool 
 	return false
 }
 
-// SetDerivedKeyLengthBytes gets a reference to the given int32 and assigns it to the DerivedKeyLengthBytes field.
-func (o *AddPbkdf2PasswordStorageSchemeRequest) SetDerivedKeyLengthBytes(v int32) {
+// SetDerivedKeyLengthBytes gets a reference to the given int64 and assigns it to the DerivedKeyLengthBytes field.
+func (o *AddPbkdf2PasswordStorageSchemeRequest) SetDerivedKeyLengthBytes(v int64) {
 	o.DerivedKeyLengthBytes = &v
 }
 
 // GetMaxPasswordLength returns the MaxPasswordLength field value if set, zero value otherwise.
-func (o *AddPbkdf2PasswordStorageSchemeRequest) GetMaxPasswordLength() int32 {
+func (o *AddPbkdf2PasswordStorageSchemeRequest) GetMaxPasswordLength() int64 {
 	if o == nil || IsNil(o.MaxPasswordLength) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxPasswordLength
@@ -244,7 +244,7 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) GetMaxPasswordLength() int32 {
 
 // GetMaxPasswordLengthOk returns a tuple with the MaxPasswordLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddPbkdf2PasswordStorageSchemeRequest) GetMaxPasswordLengthOk() (*int32, bool) {
+func (o *AddPbkdf2PasswordStorageSchemeRequest) GetMaxPasswordLengthOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxPasswordLength) {
 		return nil, false
 	}
@@ -260,8 +260,8 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) HasMaxPasswordLength() bool {
 	return false
 }
 
-// SetMaxPasswordLength gets a reference to the given int32 and assigns it to the MaxPasswordLength field.
-func (o *AddPbkdf2PasswordStorageSchemeRequest) SetMaxPasswordLength(v int32) {
+// SetMaxPasswordLength gets a reference to the given int64 and assigns it to the MaxPasswordLength field.
+func (o *AddPbkdf2PasswordStorageSchemeRequest) SetMaxPasswordLength(v int64) {
 	o.MaxPasswordLength = &v
 }
 

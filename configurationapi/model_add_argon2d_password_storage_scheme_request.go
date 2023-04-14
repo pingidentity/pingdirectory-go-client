@@ -23,15 +23,15 @@ type AddArgon2dPasswordStorageSchemeRequest struct {
 	SchemeName string                                      `json:"schemeName"`
 	Schemas    []Enumargon2dPasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// The number of rounds of cryptographic processing required in the course of encoding each password.
-	IterationCount int32 `json:"iterationCount"`
+	IterationCount int64 `json:"iterationCount"`
 	// The number of concurrent threads that will be used in the course of encoding each password.
-	ParallelismFactor int32 `json:"parallelismFactor"`
+	ParallelismFactor int64 `json:"parallelismFactor"`
 	// The number of kilobytes of memory that must be used in the course of encoding each password.
-	MemoryUsageKb int32 `json:"memoryUsageKb"`
+	MemoryUsageKb int64 `json:"memoryUsageKb"`
 	// The number of bytes to use for the generated salt.
-	SaltLengthBytes int32 `json:"saltLengthBytes"`
+	SaltLengthBytes int64 `json:"saltLengthBytes"`
 	// The number of bytes to use for the derived key. The value must be greater than or equal to 8 and less than or equal to 512.
-	DerivedKeyLengthBytes int32 `json:"derivedKeyLengthBytes"`
+	DerivedKeyLengthBytes int64 `json:"derivedKeyLengthBytes"`
 	// A description for this Password Storage Scheme
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Password Storage Scheme is enabled for use.
@@ -42,7 +42,7 @@ type AddArgon2dPasswordStorageSchemeRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddArgon2dPasswordStorageSchemeRequest(schemeName string, schemas []Enumargon2dPasswordStorageSchemeSchemaUrn, iterationCount int32, parallelismFactor int32, memoryUsageKb int32, saltLengthBytes int32, derivedKeyLengthBytes int32, enabled bool) *AddArgon2dPasswordStorageSchemeRequest {
+func NewAddArgon2dPasswordStorageSchemeRequest(schemeName string, schemas []Enumargon2dPasswordStorageSchemeSchemaUrn, iterationCount int64, parallelismFactor int64, memoryUsageKb int64, saltLengthBytes int64, derivedKeyLengthBytes int64, enabled bool) *AddArgon2dPasswordStorageSchemeRequest {
 	this := AddArgon2dPasswordStorageSchemeRequest{}
 	this.SchemeName = schemeName
 	this.Schemas = schemas
@@ -112,9 +112,9 @@ func (o *AddArgon2dPasswordStorageSchemeRequest) SetSchemas(v []Enumargon2dPassw
 }
 
 // GetIterationCount returns the IterationCount field value
-func (o *AddArgon2dPasswordStorageSchemeRequest) GetIterationCount() int32 {
+func (o *AddArgon2dPasswordStorageSchemeRequest) GetIterationCount() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -123,7 +123,7 @@ func (o *AddArgon2dPasswordStorageSchemeRequest) GetIterationCount() int32 {
 
 // GetIterationCountOk returns a tuple with the IterationCount field value
 // and a boolean to check if the value has been set.
-func (o *AddArgon2dPasswordStorageSchemeRequest) GetIterationCountOk() (*int32, bool) {
+func (o *AddArgon2dPasswordStorageSchemeRequest) GetIterationCountOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -131,14 +131,14 @@ func (o *AddArgon2dPasswordStorageSchemeRequest) GetIterationCountOk() (*int32, 
 }
 
 // SetIterationCount sets field value
-func (o *AddArgon2dPasswordStorageSchemeRequest) SetIterationCount(v int32) {
+func (o *AddArgon2dPasswordStorageSchemeRequest) SetIterationCount(v int64) {
 	o.IterationCount = v
 }
 
 // GetParallelismFactor returns the ParallelismFactor field value
-func (o *AddArgon2dPasswordStorageSchemeRequest) GetParallelismFactor() int32 {
+func (o *AddArgon2dPasswordStorageSchemeRequest) GetParallelismFactor() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -147,7 +147,7 @@ func (o *AddArgon2dPasswordStorageSchemeRequest) GetParallelismFactor() int32 {
 
 // GetParallelismFactorOk returns a tuple with the ParallelismFactor field value
 // and a boolean to check if the value has been set.
-func (o *AddArgon2dPasswordStorageSchemeRequest) GetParallelismFactorOk() (*int32, bool) {
+func (o *AddArgon2dPasswordStorageSchemeRequest) GetParallelismFactorOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -155,14 +155,14 @@ func (o *AddArgon2dPasswordStorageSchemeRequest) GetParallelismFactorOk() (*int3
 }
 
 // SetParallelismFactor sets field value
-func (o *AddArgon2dPasswordStorageSchemeRequest) SetParallelismFactor(v int32) {
+func (o *AddArgon2dPasswordStorageSchemeRequest) SetParallelismFactor(v int64) {
 	o.ParallelismFactor = v
 }
 
 // GetMemoryUsageKb returns the MemoryUsageKb field value
-func (o *AddArgon2dPasswordStorageSchemeRequest) GetMemoryUsageKb() int32 {
+func (o *AddArgon2dPasswordStorageSchemeRequest) GetMemoryUsageKb() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -171,7 +171,7 @@ func (o *AddArgon2dPasswordStorageSchemeRequest) GetMemoryUsageKb() int32 {
 
 // GetMemoryUsageKbOk returns a tuple with the MemoryUsageKb field value
 // and a boolean to check if the value has been set.
-func (o *AddArgon2dPasswordStorageSchemeRequest) GetMemoryUsageKbOk() (*int32, bool) {
+func (o *AddArgon2dPasswordStorageSchemeRequest) GetMemoryUsageKbOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -179,14 +179,14 @@ func (o *AddArgon2dPasswordStorageSchemeRequest) GetMemoryUsageKbOk() (*int32, b
 }
 
 // SetMemoryUsageKb sets field value
-func (o *AddArgon2dPasswordStorageSchemeRequest) SetMemoryUsageKb(v int32) {
+func (o *AddArgon2dPasswordStorageSchemeRequest) SetMemoryUsageKb(v int64) {
 	o.MemoryUsageKb = v
 }
 
 // GetSaltLengthBytes returns the SaltLengthBytes field value
-func (o *AddArgon2dPasswordStorageSchemeRequest) GetSaltLengthBytes() int32 {
+func (o *AddArgon2dPasswordStorageSchemeRequest) GetSaltLengthBytes() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -195,7 +195,7 @@ func (o *AddArgon2dPasswordStorageSchemeRequest) GetSaltLengthBytes() int32 {
 
 // GetSaltLengthBytesOk returns a tuple with the SaltLengthBytes field value
 // and a boolean to check if the value has been set.
-func (o *AddArgon2dPasswordStorageSchemeRequest) GetSaltLengthBytesOk() (*int32, bool) {
+func (o *AddArgon2dPasswordStorageSchemeRequest) GetSaltLengthBytesOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -203,14 +203,14 @@ func (o *AddArgon2dPasswordStorageSchemeRequest) GetSaltLengthBytesOk() (*int32,
 }
 
 // SetSaltLengthBytes sets field value
-func (o *AddArgon2dPasswordStorageSchemeRequest) SetSaltLengthBytes(v int32) {
+func (o *AddArgon2dPasswordStorageSchemeRequest) SetSaltLengthBytes(v int64) {
 	o.SaltLengthBytes = v
 }
 
 // GetDerivedKeyLengthBytes returns the DerivedKeyLengthBytes field value
-func (o *AddArgon2dPasswordStorageSchemeRequest) GetDerivedKeyLengthBytes() int32 {
+func (o *AddArgon2dPasswordStorageSchemeRequest) GetDerivedKeyLengthBytes() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -219,7 +219,7 @@ func (o *AddArgon2dPasswordStorageSchemeRequest) GetDerivedKeyLengthBytes() int3
 
 // GetDerivedKeyLengthBytesOk returns a tuple with the DerivedKeyLengthBytes field value
 // and a boolean to check if the value has been set.
-func (o *AddArgon2dPasswordStorageSchemeRequest) GetDerivedKeyLengthBytesOk() (*int32, bool) {
+func (o *AddArgon2dPasswordStorageSchemeRequest) GetDerivedKeyLengthBytesOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -227,7 +227,7 @@ func (o *AddArgon2dPasswordStorageSchemeRequest) GetDerivedKeyLengthBytesOk() (*
 }
 
 // SetDerivedKeyLengthBytes sets field value
-func (o *AddArgon2dPasswordStorageSchemeRequest) SetDerivedKeyLengthBytes(v int32) {
+func (o *AddArgon2dPasswordStorageSchemeRequest) SetDerivedKeyLengthBytes(v int64) {
 	o.DerivedKeyLengthBytes = v
 }
 

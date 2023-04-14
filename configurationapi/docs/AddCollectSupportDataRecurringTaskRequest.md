@@ -14,14 +14,14 @@ Name | Type | Description | Notes
 **IncludeExtensionSource** | Pointer to **bool** | Indicates whether the support data archive should include the source code (if available) for any third-party extensions that may be installed in the server. | [optional] 
 **UseSequentialMode** | Pointer to **bool** | Indicates whether to capture support data information sequentially rather than in parallel. Capturing data in sequential mode may reduce the amount of memory that the tool requires to operate, at the cost of taking longer to run. | [optional] 
 **SecurityLevel** | Pointer to [**EnumrecurringTaskSecurityLevelProp**](EnumrecurringTaskSecurityLevelProp.md) |  | [optional] 
-**JstackCount** | Pointer to **int32** | The number of times to invoke the jstack utility to obtain a stack trace of all threads running in the JVM. A value of zero indicates that the jstack utility should not be invoked. | [optional] 
-**ReportCount** | Pointer to **int32** | The number of intervals of data to collect from tools that use sample-based reporting, like vmstat, iostat, and mpstat. A value of zero indicates that these kinds of tools should not be used to collect any information. | [optional] 
-**ReportIntervalSeconds** | Pointer to **int32** | The duration (in seconds) between each interval of data to collect from tools that use sample-based reporting, like vmstat, iostat, and mpstat. | [optional] 
+**JstackCount** | Pointer to **int64** | The number of times to invoke the jstack utility to obtain a stack trace of all threads running in the JVM. A value of zero indicates that the jstack utility should not be invoked. | [optional] 
+**ReportCount** | Pointer to **int64** | The number of intervals of data to collect from tools that use sample-based reporting, like vmstat, iostat, and mpstat. A value of zero indicates that these kinds of tools should not be used to collect any information. | [optional] 
+**ReportIntervalSeconds** | Pointer to **int64** | The duration (in seconds) between each interval of data to collect from tools that use sample-based reporting, like vmstat, iostat, and mpstat. | [optional] 
 **LogDuration** | Pointer to **string** | The maximum age (leading up to the time the collect-support-data tool was invoked) for log content to include in the support data archive. | [optional] 
 **LogFileHeadCollectionSize** | Pointer to **string** | The amount of data to collect from the beginning of each log file included in the support data archive. | [optional] 
 **LogFileTailCollectionSize** | Pointer to **string** | The amount of data to collect from the end of each log file included in the support data archive. | [optional] 
 **Comment** | Pointer to **string** | An optional comment to include in a README file within the support data archive. | [optional] 
-**RetainPreviousSupportDataArchiveCount** | Pointer to **int32** | The minimum number of previous support data archives that should be preserved after a new archive is generated. | [optional] 
+**RetainPreviousSupportDataArchiveCount** | Pointer to **int64** | The minimum number of previous support data archives that should be preserved after a new archive is generated. | [optional] 
 **RetainPreviousSupportDataArchiveAge** | Pointer to **string** | The minimum age of previous support data archives that should be preserved after a new archive is generated. | [optional] 
 **Description** | Pointer to **string** | A description for this Recurring Task | [optional] 
 **CancelOnTaskDependencyFailure** | Pointer to **bool** | Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running). | [optional] 
@@ -288,20 +288,20 @@ HasSecurityLevel returns a boolean if a field has been set.
 
 ### GetJstackCount
 
-`func (o *AddCollectSupportDataRecurringTaskRequest) GetJstackCount() int32`
+`func (o *AddCollectSupportDataRecurringTaskRequest) GetJstackCount() int64`
 
 GetJstackCount returns the JstackCount field if non-nil, zero value otherwise.
 
 ### GetJstackCountOk
 
-`func (o *AddCollectSupportDataRecurringTaskRequest) GetJstackCountOk() (*int32, bool)`
+`func (o *AddCollectSupportDataRecurringTaskRequest) GetJstackCountOk() (*int64, bool)`
 
 GetJstackCountOk returns a tuple with the JstackCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetJstackCount
 
-`func (o *AddCollectSupportDataRecurringTaskRequest) SetJstackCount(v int32)`
+`func (o *AddCollectSupportDataRecurringTaskRequest) SetJstackCount(v int64)`
 
 SetJstackCount sets JstackCount field to given value.
 
@@ -313,20 +313,20 @@ HasJstackCount returns a boolean if a field has been set.
 
 ### GetReportCount
 
-`func (o *AddCollectSupportDataRecurringTaskRequest) GetReportCount() int32`
+`func (o *AddCollectSupportDataRecurringTaskRequest) GetReportCount() int64`
 
 GetReportCount returns the ReportCount field if non-nil, zero value otherwise.
 
 ### GetReportCountOk
 
-`func (o *AddCollectSupportDataRecurringTaskRequest) GetReportCountOk() (*int32, bool)`
+`func (o *AddCollectSupportDataRecurringTaskRequest) GetReportCountOk() (*int64, bool)`
 
 GetReportCountOk returns a tuple with the ReportCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReportCount
 
-`func (o *AddCollectSupportDataRecurringTaskRequest) SetReportCount(v int32)`
+`func (o *AddCollectSupportDataRecurringTaskRequest) SetReportCount(v int64)`
 
 SetReportCount sets ReportCount field to given value.
 
@@ -338,20 +338,20 @@ HasReportCount returns a boolean if a field has been set.
 
 ### GetReportIntervalSeconds
 
-`func (o *AddCollectSupportDataRecurringTaskRequest) GetReportIntervalSeconds() int32`
+`func (o *AddCollectSupportDataRecurringTaskRequest) GetReportIntervalSeconds() int64`
 
 GetReportIntervalSeconds returns the ReportIntervalSeconds field if non-nil, zero value otherwise.
 
 ### GetReportIntervalSecondsOk
 
-`func (o *AddCollectSupportDataRecurringTaskRequest) GetReportIntervalSecondsOk() (*int32, bool)`
+`func (o *AddCollectSupportDataRecurringTaskRequest) GetReportIntervalSecondsOk() (*int64, bool)`
 
 GetReportIntervalSecondsOk returns a tuple with the ReportIntervalSeconds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReportIntervalSeconds
 
-`func (o *AddCollectSupportDataRecurringTaskRequest) SetReportIntervalSeconds(v int32)`
+`func (o *AddCollectSupportDataRecurringTaskRequest) SetReportIntervalSeconds(v int64)`
 
 SetReportIntervalSeconds sets ReportIntervalSeconds field to given value.
 
@@ -463,20 +463,20 @@ HasComment returns a boolean if a field has been set.
 
 ### GetRetainPreviousSupportDataArchiveCount
 
-`func (o *AddCollectSupportDataRecurringTaskRequest) GetRetainPreviousSupportDataArchiveCount() int32`
+`func (o *AddCollectSupportDataRecurringTaskRequest) GetRetainPreviousSupportDataArchiveCount() int64`
 
 GetRetainPreviousSupportDataArchiveCount returns the RetainPreviousSupportDataArchiveCount field if non-nil, zero value otherwise.
 
 ### GetRetainPreviousSupportDataArchiveCountOk
 
-`func (o *AddCollectSupportDataRecurringTaskRequest) GetRetainPreviousSupportDataArchiveCountOk() (*int32, bool)`
+`func (o *AddCollectSupportDataRecurringTaskRequest) GetRetainPreviousSupportDataArchiveCountOk() (*int64, bool)`
 
 GetRetainPreviousSupportDataArchiveCountOk returns a tuple with the RetainPreviousSupportDataArchiveCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRetainPreviousSupportDataArchiveCount
 
-`func (o *AddCollectSupportDataRecurringTaskRequest) SetRetainPreviousSupportDataArchiveCount(v int32)`
+`func (o *AddCollectSupportDataRecurringTaskRequest) SetRetainPreviousSupportDataArchiveCount(v int64)`
 
 SetRetainPreviousSupportDataArchiveCount sets RetainPreviousSupportDataArchiveCount field to given value.
 

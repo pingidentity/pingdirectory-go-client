@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **JdbcDriverURL** | Pointer to **string** | Specify the complete JDBC URL which will be used instead of the automatic URL format. You must select type &#39;other&#39; for the jdbc-driver-type. | [optional] 
 **DatabaseName** | Pointer to **string** | Specifies which database to connect to. This is ignored if jdbc-driver-url is specified. | [optional] 
 **ServerHostName** | Pointer to **string** | The host name of the database server. This is ignored if jdbc-driver-url is specified. | [optional] 
-**ServerPort** | Pointer to **int32** | The port number where the database server listens for requests. This is ignored if jdbc-driver-url is specified | [optional] 
+**ServerPort** | Pointer to **int64** | The port number where the database server listens for requests. This is ignored if jdbc-driver-url is specified | [optional] 
 **UserName** | Pointer to **string** | The name of the login account to use when connecting to the database server. | [optional] 
 **Password** | Pointer to **string** | The login password for the specified user name. | [optional] 
 **PassphraseProvider** | Pointer to **string** | The passphrase provider to use to obtain the login password for the specified user. | [optional] 
@@ -176,20 +176,20 @@ HasServerHostName returns a boolean if a field has been set.
 
 ### GetServerPort
 
-`func (o *AddJdbcExternalServerRequest) GetServerPort() int32`
+`func (o *AddJdbcExternalServerRequest) GetServerPort() int64`
 
 GetServerPort returns the ServerPort field if non-nil, zero value otherwise.
 
 ### GetServerPortOk
 
-`func (o *AddJdbcExternalServerRequest) GetServerPortOk() (*int32, bool)`
+`func (o *AddJdbcExternalServerRequest) GetServerPortOk() (*int64, bool)`
 
 GetServerPortOk returns a tuple with the ServerPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerPort
 
-`func (o *AddJdbcExternalServerRequest) SetServerPort(v int32)`
+`func (o *AddJdbcExternalServerRequest) SetServerPort(v int64)`
 
 SetServerPort sets ServerPort field to given value.
 

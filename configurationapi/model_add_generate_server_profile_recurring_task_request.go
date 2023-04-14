@@ -27,7 +27,7 @@ type AddGenerateServerProfileRecurringTaskRequest struct {
 	// An optional set of additional paths to files within the instance root that should be included in the generated server profile. All paths must be within the instance root, and relative paths will be relative to the instance root.
 	IncludePath []string `json:"includePath,omitempty"`
 	// The minimum number of previous server profile zip files that should be preserved after a new profile is generated.
-	RetainPreviousProfileCount *int32 `json:"retainPreviousProfileCount,omitempty"`
+	RetainPreviousProfileCount *int64 `json:"retainPreviousProfileCount,omitempty"`
 	// The minimum age of previous server profile zip files that should be preserved after a new profile is generated.
 	RetainPreviousProfileAge *string `json:"retainPreviousProfileAge,omitempty"`
 	// A description for this Recurring Task
@@ -173,9 +173,9 @@ func (o *AddGenerateServerProfileRecurringTaskRequest) SetIncludePath(v []string
 }
 
 // GetRetainPreviousProfileCount returns the RetainPreviousProfileCount field value if set, zero value otherwise.
-func (o *AddGenerateServerProfileRecurringTaskRequest) GetRetainPreviousProfileCount() int32 {
+func (o *AddGenerateServerProfileRecurringTaskRequest) GetRetainPreviousProfileCount() int64 {
 	if o == nil || IsNil(o.RetainPreviousProfileCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.RetainPreviousProfileCount
@@ -183,7 +183,7 @@ func (o *AddGenerateServerProfileRecurringTaskRequest) GetRetainPreviousProfileC
 
 // GetRetainPreviousProfileCountOk returns a tuple with the RetainPreviousProfileCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddGenerateServerProfileRecurringTaskRequest) GetRetainPreviousProfileCountOk() (*int32, bool) {
+func (o *AddGenerateServerProfileRecurringTaskRequest) GetRetainPreviousProfileCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.RetainPreviousProfileCount) {
 		return nil, false
 	}
@@ -199,8 +199,8 @@ func (o *AddGenerateServerProfileRecurringTaskRequest) HasRetainPreviousProfileC
 	return false
 }
 
-// SetRetainPreviousProfileCount gets a reference to the given int32 and assigns it to the RetainPreviousProfileCount field.
-func (o *AddGenerateServerProfileRecurringTaskRequest) SetRetainPreviousProfileCount(v int32) {
+// SetRetainPreviousProfileCount gets a reference to the given int64 and assigns it to the RetainPreviousProfileCount field.
+func (o *AddGenerateServerProfileRecurringTaskRequest) SetRetainPreviousProfileCount(v int64) {
 	o.RetainPreviousProfileCount = &v
 }
 

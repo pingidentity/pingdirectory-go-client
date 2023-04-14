@@ -25,14 +25,14 @@ type LocalDbIndexResponse struct {
 	// Specifies the name of the attribute for which the index is to be maintained.
 	Attribute string `json:"attribute"`
 	// Specifies the maximum number of entries that are allowed to match a given index key before that particular index key is no longer maintained.
-	IndexEntryLimit *int32 `json:"indexEntryLimit,omitempty"`
+	IndexEntryLimit *int64 `json:"indexEntryLimit,omitempty"`
 	// Specifies, for substring indexes, the maximum number of entries that are allowed to match a given index key before that particular index key is no longer maintained. Setting a large limit can dramatically increase the database size on disk and have a big impact on server performance if the indexed attribute is modified frequently. When a very large limit is required, creating a dedicated composite index with an index-filter-pattern of (attr=*?*) will give the best balance between search and update performance.
-	SubstringIndexEntryLimit *int32 `json:"substringIndexEntryLimit,omitempty"`
+	SubstringIndexEntryLimit *int64 `json:"substringIndexEntryLimit,omitempty"`
 	// Indicates whether to continue to maintain a count of the number of matching entries for an index key even after that count exceeds the index entry limit.
 	MaintainMatchCountForKeysExceedingEntryLimit *bool                           `json:"maintainMatchCountForKeysExceedingEntryLimit,omitempty"`
 	IndexType                                    []EnumlocalDbIndexIndexTypeProp `json:"indexType"`
 	// The length of substrings in a substring index.
-	SubstringLength *int32 `json:"substringLength,omitempty"`
+	SubstringLength *int64 `json:"substringLength,omitempty"`
 	// If this option is enabled and this index's backend is configured to prime indexes, then this index will be loaded at startup.
 	PrimeIndex *bool `json:"primeIndex,omitempty"`
 	// If this option is enabled and this index's backend is configured to prime indexes using the preload method, then only the internal database nodes (i.e., the database keys but not values) should be primed when the backend is initialized.
@@ -147,9 +147,9 @@ func (o *LocalDbIndexResponse) SetAttribute(v string) {
 }
 
 // GetIndexEntryLimit returns the IndexEntryLimit field value if set, zero value otherwise.
-func (o *LocalDbIndexResponse) GetIndexEntryLimit() int32 {
+func (o *LocalDbIndexResponse) GetIndexEntryLimit() int64 {
 	if o == nil || IsNil(o.IndexEntryLimit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.IndexEntryLimit
@@ -157,7 +157,7 @@ func (o *LocalDbIndexResponse) GetIndexEntryLimit() int32 {
 
 // GetIndexEntryLimitOk returns a tuple with the IndexEntryLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LocalDbIndexResponse) GetIndexEntryLimitOk() (*int32, bool) {
+func (o *LocalDbIndexResponse) GetIndexEntryLimitOk() (*int64, bool) {
 	if o == nil || IsNil(o.IndexEntryLimit) {
 		return nil, false
 	}
@@ -173,15 +173,15 @@ func (o *LocalDbIndexResponse) HasIndexEntryLimit() bool {
 	return false
 }
 
-// SetIndexEntryLimit gets a reference to the given int32 and assigns it to the IndexEntryLimit field.
-func (o *LocalDbIndexResponse) SetIndexEntryLimit(v int32) {
+// SetIndexEntryLimit gets a reference to the given int64 and assigns it to the IndexEntryLimit field.
+func (o *LocalDbIndexResponse) SetIndexEntryLimit(v int64) {
 	o.IndexEntryLimit = &v
 }
 
 // GetSubstringIndexEntryLimit returns the SubstringIndexEntryLimit field value if set, zero value otherwise.
-func (o *LocalDbIndexResponse) GetSubstringIndexEntryLimit() int32 {
+func (o *LocalDbIndexResponse) GetSubstringIndexEntryLimit() int64 {
 	if o == nil || IsNil(o.SubstringIndexEntryLimit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SubstringIndexEntryLimit
@@ -189,7 +189,7 @@ func (o *LocalDbIndexResponse) GetSubstringIndexEntryLimit() int32 {
 
 // GetSubstringIndexEntryLimitOk returns a tuple with the SubstringIndexEntryLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LocalDbIndexResponse) GetSubstringIndexEntryLimitOk() (*int32, bool) {
+func (o *LocalDbIndexResponse) GetSubstringIndexEntryLimitOk() (*int64, bool) {
 	if o == nil || IsNil(o.SubstringIndexEntryLimit) {
 		return nil, false
 	}
@@ -205,8 +205,8 @@ func (o *LocalDbIndexResponse) HasSubstringIndexEntryLimit() bool {
 	return false
 }
 
-// SetSubstringIndexEntryLimit gets a reference to the given int32 and assigns it to the SubstringIndexEntryLimit field.
-func (o *LocalDbIndexResponse) SetSubstringIndexEntryLimit(v int32) {
+// SetSubstringIndexEntryLimit gets a reference to the given int64 and assigns it to the SubstringIndexEntryLimit field.
+func (o *LocalDbIndexResponse) SetSubstringIndexEntryLimit(v int64) {
 	o.SubstringIndexEntryLimit = &v
 }
 
@@ -267,9 +267,9 @@ func (o *LocalDbIndexResponse) SetIndexType(v []EnumlocalDbIndexIndexTypeProp) {
 }
 
 // GetSubstringLength returns the SubstringLength field value if set, zero value otherwise.
-func (o *LocalDbIndexResponse) GetSubstringLength() int32 {
+func (o *LocalDbIndexResponse) GetSubstringLength() int64 {
 	if o == nil || IsNil(o.SubstringLength) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SubstringLength
@@ -277,7 +277,7 @@ func (o *LocalDbIndexResponse) GetSubstringLength() int32 {
 
 // GetSubstringLengthOk returns a tuple with the SubstringLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LocalDbIndexResponse) GetSubstringLengthOk() (*int32, bool) {
+func (o *LocalDbIndexResponse) GetSubstringLengthOk() (*int64, bool) {
 	if o == nil || IsNil(o.SubstringLength) {
 		return nil, false
 	}
@@ -293,8 +293,8 @@ func (o *LocalDbIndexResponse) HasSubstringLength() bool {
 	return false
 }
 
-// SetSubstringLength gets a reference to the given int32 and assigns it to the SubstringLength field.
-func (o *LocalDbIndexResponse) SetSubstringLength(v int32) {
+// SetSubstringLength gets a reference to the given int64 and assigns it to the SubstringLength field.
+func (o *LocalDbIndexResponse) SetSubstringLength(v int64) {
 	o.SubstringLength = &v
 }
 

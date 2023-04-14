@@ -27,7 +27,7 @@ type AddReplicationAssurancePolicyRequest struct {
 	// Indicates whether this Replication Assurance Policy is enabled for use in the server. If a Replication Assurance Policy is disabled, then no new operations will be associated with it.
 	Enabled *bool `json:"enabled,omitempty"`
 	// When multiple Replication Assurance Policies are defined, this property determines the evaluation order for finding a Replication Assurance Policy match against an operation. Policies are evaluated based on this index from least to greatest. Values of this property must be unique but not necessarily contiguous.
-	EvaluationOrderIndex int32                                          `json:"evaluationOrderIndex"`
+	EvaluationOrderIndex int64                                          `json:"evaluationOrderIndex"`
 	LocalLevel           *EnumreplicationAssurancePolicyLocalLevelProp  `json:"localLevel,omitempty"`
 	RemoteLevel          *EnumreplicationAssurancePolicyRemoteLevelProp `json:"remoteLevel,omitempty"`
 	// Specifies the maximum length of time to wait for the replication assurance requirements to be met before timing out and replying to the client.
@@ -42,7 +42,7 @@ type AddReplicationAssurancePolicyRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddReplicationAssurancePolicyRequest(policyName string, evaluationOrderIndex int32, timeout string) *AddReplicationAssurancePolicyRequest {
+func NewAddReplicationAssurancePolicyRequest(policyName string, evaluationOrderIndex int64, timeout string) *AddReplicationAssurancePolicyRequest {
 	this := AddReplicationAssurancePolicyRequest{}
 	this.PolicyName = policyName
 	this.EvaluationOrderIndex = evaluationOrderIndex
@@ -179,9 +179,9 @@ func (o *AddReplicationAssurancePolicyRequest) SetEnabled(v bool) {
 }
 
 // GetEvaluationOrderIndex returns the EvaluationOrderIndex field value
-func (o *AddReplicationAssurancePolicyRequest) GetEvaluationOrderIndex() int32 {
+func (o *AddReplicationAssurancePolicyRequest) GetEvaluationOrderIndex() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -190,7 +190,7 @@ func (o *AddReplicationAssurancePolicyRequest) GetEvaluationOrderIndex() int32 {
 
 // GetEvaluationOrderIndexOk returns a tuple with the EvaluationOrderIndex field value
 // and a boolean to check if the value has been set.
-func (o *AddReplicationAssurancePolicyRequest) GetEvaluationOrderIndexOk() (*int32, bool) {
+func (o *AddReplicationAssurancePolicyRequest) GetEvaluationOrderIndexOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -198,7 +198,7 @@ func (o *AddReplicationAssurancePolicyRequest) GetEvaluationOrderIndexOk() (*int
 }
 
 // SetEvaluationOrderIndex sets field value
-func (o *AddReplicationAssurancePolicyRequest) SetEvaluationOrderIndex(v int32) {
+func (o *AddReplicationAssurancePolicyRequest) SetEvaluationOrderIndex(v int64) {
 	o.EvaluationOrderIndex = v
 }
 

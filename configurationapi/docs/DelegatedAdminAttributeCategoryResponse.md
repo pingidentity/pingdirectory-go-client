@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Schemas** | Pointer to [**[]EnumdelegatedAdminAttributeCategorySchemaUrn**](EnumdelegatedAdminAttributeCategorySchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Delegated Admin Attribute Category | [optional] 
 **DisplayName** | **string** | A human readable display name for this Delegated Admin Attribute Category. | 
-**DisplayOrderIndex** | **int32** | Delegated Admin Attribute Categories are ordered for display based on this index from least to greatest. | 
+**DisplayOrderIndex** | **int64** | Delegated Admin Attribute Categories are ordered for display based on this index from least to greatest. | 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewDelegatedAdminAttributeCategoryResponse
 
-`func NewDelegatedAdminAttributeCategoryResponse(id string, displayName string, displayOrderIndex int32, ) *DelegatedAdminAttributeCategoryResponse`
+`func NewDelegatedAdminAttributeCategoryResponse(id string, displayName string, displayOrderIndex int64, ) *DelegatedAdminAttributeCategoryResponse`
 
 NewDelegatedAdminAttributeCategoryResponse instantiates a new DelegatedAdminAttributeCategoryResponse object
 This constructor will assign default values to properties that have it defined,
@@ -123,20 +123,20 @@ SetDisplayName sets DisplayName field to given value.
 
 ### GetDisplayOrderIndex
 
-`func (o *DelegatedAdminAttributeCategoryResponse) GetDisplayOrderIndex() int32`
+`func (o *DelegatedAdminAttributeCategoryResponse) GetDisplayOrderIndex() int64`
 
 GetDisplayOrderIndex returns the DisplayOrderIndex field if non-nil, zero value otherwise.
 
 ### GetDisplayOrderIndexOk
 
-`func (o *DelegatedAdminAttributeCategoryResponse) GetDisplayOrderIndexOk() (*int32, bool)`
+`func (o *DelegatedAdminAttributeCategoryResponse) GetDisplayOrderIndexOk() (*int64, bool)`
 
 GetDisplayOrderIndexOk returns a tuple with the DisplayOrderIndex field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDisplayOrderIndex
 
-`func (o *DelegatedAdminAttributeCategoryResponse) SetDisplayOrderIndex(v int32)`
+`func (o *DelegatedAdminAttributeCategoryResponse) SetDisplayOrderIndex(v int64)`
 
 SetDisplayOrderIndex sets DisplayOrderIndex field to given value.
 

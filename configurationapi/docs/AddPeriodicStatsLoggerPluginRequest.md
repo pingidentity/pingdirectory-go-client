@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **SuppressIfIdle** | Pointer to **bool** | If the server is idle during the specified interval, then do not log any output if this property is set to true. The server is idle if during the interval, no new connections were established, no operations were processed, and no operations are pending. | [optional] 
 **HeaderPrefixPerColumn** | Pointer to **bool** | This property controls whether the header prefix, which applies to a group of columns, appears at the start of each column header or only the first column in a group. | [optional] 
 **EmptyInsteadOfZero** | Pointer to **bool** | This property controls whether a value in the output is shown as empty if the value is zero. | [optional] 
-**LinesBetweenHeader** | Pointer to **int32** | The number of lines to log between logging the header line that summarizes the columns in the table. | [optional] 
+**LinesBetweenHeader** | Pointer to **int64** | The number of lines to log between logging the header line that summarizes the columns in the table. | [optional] 
 **IncludedLDAPStat** | Pointer to [**[]EnumpluginIncludedLDAPStatProp**](EnumpluginIncludedLDAPStatProp.md) |  | [optional] 
 **IncludedResourceStat** | Pointer to [**[]EnumpluginIncludedResourceStatProp**](EnumpluginIncludedResourceStatProp.md) |  | [optional] 
 **HistogramFormat** | Pointer to [**EnumpluginHistogramFormatProp**](EnumpluginHistogramFormatProp.md) |  | [optional] 
@@ -222,20 +222,20 @@ HasEmptyInsteadOfZero returns a boolean if a field has been set.
 
 ### GetLinesBetweenHeader
 
-`func (o *AddPeriodicStatsLoggerPluginRequest) GetLinesBetweenHeader() int32`
+`func (o *AddPeriodicStatsLoggerPluginRequest) GetLinesBetweenHeader() int64`
 
 GetLinesBetweenHeader returns the LinesBetweenHeader field if non-nil, zero value otherwise.
 
 ### GetLinesBetweenHeaderOk
 
-`func (o *AddPeriodicStatsLoggerPluginRequest) GetLinesBetweenHeaderOk() (*int32, bool)`
+`func (o *AddPeriodicStatsLoggerPluginRequest) GetLinesBetweenHeaderOk() (*int64, bool)`
 
 GetLinesBetweenHeaderOk returns a tuple with the LinesBetweenHeader field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinesBetweenHeader
 
-`func (o *AddPeriodicStatsLoggerPluginRequest) SetLinesBetweenHeader(v int32)`
+`func (o *AddPeriodicStatsLoggerPluginRequest) SetLinesBetweenHeader(v int64)`
 
 SetLinesBetweenHeader sets LinesBetweenHeader field to given value.
 

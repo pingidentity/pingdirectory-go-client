@@ -26,7 +26,7 @@ type SubOperationTimingPluginResponse struct {
 	// Specifies a set of request criteria used to indicate that only operations for requests matching this criteria should be counted when aggregating timing data.
 	RequestCriteria *string `json:"requestCriteria,omitempty"`
 	// This controls how many of the most expensive phases are included per operation type in the monitor entry.
-	NumMostExpensivePhasesShown int32 `json:"numMostExpensivePhasesShown"`
+	NumMostExpensivePhasesShown int64 `json:"numMostExpensivePhasesShown"`
 	// Indicates whether the plug-in should be invoked for internal operations.
 	InvokeForInternalOperations *bool `json:"invokeForInternalOperations,omitempty"`
 	// A description for this Plugin
@@ -41,7 +41,7 @@ type SubOperationTimingPluginResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSubOperationTimingPluginResponse(id string, schemas []EnumsubOperationTimingPluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, numMostExpensivePhasesShown int32, enabled bool) *SubOperationTimingPluginResponse {
+func NewSubOperationTimingPluginResponse(id string, schemas []EnumsubOperationTimingPluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, numMostExpensivePhasesShown int64, enabled bool) *SubOperationTimingPluginResponse {
 	this := SubOperationTimingPluginResponse{}
 	this.Id = id
 	this.Schemas = schemas
@@ -164,9 +164,9 @@ func (o *SubOperationTimingPluginResponse) SetRequestCriteria(v string) {
 }
 
 // GetNumMostExpensivePhasesShown returns the NumMostExpensivePhasesShown field value
-func (o *SubOperationTimingPluginResponse) GetNumMostExpensivePhasesShown() int32 {
+func (o *SubOperationTimingPluginResponse) GetNumMostExpensivePhasesShown() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -175,7 +175,7 @@ func (o *SubOperationTimingPluginResponse) GetNumMostExpensivePhasesShown() int3
 
 // GetNumMostExpensivePhasesShownOk returns a tuple with the NumMostExpensivePhasesShown field value
 // and a boolean to check if the value has been set.
-func (o *SubOperationTimingPluginResponse) GetNumMostExpensivePhasesShownOk() (*int32, bool) {
+func (o *SubOperationTimingPluginResponse) GetNumMostExpensivePhasesShownOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -183,7 +183,7 @@ func (o *SubOperationTimingPluginResponse) GetNumMostExpensivePhasesShownOk() (*
 }
 
 // SetNumMostExpensivePhasesShown sets field value
-func (o *SubOperationTimingPluginResponse) SetNumMostExpensivePhasesShown(v int32) {
+func (o *SubOperationTimingPluginResponse) SetNumMostExpensivePhasesShown(v int64) {
 	o.NumMostExpensivePhasesShown = v
 }
 

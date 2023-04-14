@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumgenerateServerProfileRecurringTaskSchemaUrn**](EnumgenerateServerProfileRecurringTaskSchemaUrn.md) |  | 
 **ProfileDirectory** | **string** | The directory in which the generated server profiles will be placed. The files will be named with the pattern \&quot;server-profile-{timestamp}.zip\&quot;, where \&quot;{timestamp}\&quot; represents the time that the profile was generated. | 
 **IncludePath** | Pointer to **[]string** | An optional set of additional paths to files within the instance root that should be included in the generated server profile. All paths must be within the instance root, and relative paths will be relative to the instance root. | [optional] 
-**RetainPreviousProfileCount** | Pointer to **int32** | The minimum number of previous server profile zip files that should be preserved after a new profile is generated. | [optional] 
+**RetainPreviousProfileCount** | Pointer to **int64** | The minimum number of previous server profile zip files that should be preserved after a new profile is generated. | [optional] 
 **RetainPreviousProfileAge** | Pointer to **string** | The minimum age of previous server profile zip files that should be preserved after a new profile is generated. | [optional] 
 **Description** | Pointer to **string** | A description for this Recurring Task | [optional] 
 **CancelOnTaskDependencyFailure** | Pointer to **bool** | Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running). | [optional] 
@@ -127,20 +127,20 @@ HasIncludePath returns a boolean if a field has been set.
 
 ### GetRetainPreviousProfileCount
 
-`func (o *GenerateServerProfileRecurringTaskResponse) GetRetainPreviousProfileCount() int32`
+`func (o *GenerateServerProfileRecurringTaskResponse) GetRetainPreviousProfileCount() int64`
 
 GetRetainPreviousProfileCount returns the RetainPreviousProfileCount field if non-nil, zero value otherwise.
 
 ### GetRetainPreviousProfileCountOk
 
-`func (o *GenerateServerProfileRecurringTaskResponse) GetRetainPreviousProfileCountOk() (*int32, bool)`
+`func (o *GenerateServerProfileRecurringTaskResponse) GetRetainPreviousProfileCountOk() (*int64, bool)`
 
 GetRetainPreviousProfileCountOk returns a tuple with the RetainPreviousProfileCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRetainPreviousProfileCount
 
-`func (o *GenerateServerProfileRecurringTaskResponse) SetRetainPreviousProfileCount(v int32)`
+`func (o *GenerateServerProfileRecurringTaskResponse) SetRetainPreviousProfileCount(v int64)`
 
 SetRetainPreviousProfileCount sets RetainPreviousProfileCount field to given value.
 

@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **MinimumBindPasswordValidationFrequency** | Pointer to **string** | Indicates how frequently password validation should be performed during bind operations for each user to whom this password policy is assigned. | [optional] 
 **BindPasswordValidationFailureAction** | Pointer to [**EnumpasswordPolicyBindPasswordValidationFailureActionProp**](EnumpasswordPolicyBindPasswordValidationFailureActionProp.md) |  | [optional] 
 **PasswordGenerator** | Pointer to **string** | Specifies the name of the password generator that is used with the associated password policy. | [optional] 
-**PasswordHistoryCount** | Pointer to **int32** | Specifies the maximum number of former passwords to maintain in the password history. | [optional] 
+**PasswordHistoryCount** | Pointer to **int64** | Specifies the maximum number of former passwords to maintain in the password history. | [optional] 
 **PasswordHistoryDuration** | Pointer to **string** | Specifies the maximum length of time that passwords remain in the password history. | [optional] 
 **MinPasswordAge** | Pointer to **string** | Specifies the minimum length of time after a password change before the user is allowed to change the password again. | [optional] 
 **MaxPasswordAge** | Pointer to **string** | Specifies the maximum length of time that a user can continue using the same password before it must be changed (that is, the password expiration interval). | [optional] 
@@ -30,9 +30,9 @@ Name | Type | Description | Notes
 **ExpirePasswordsWithoutWarning** | Pointer to **bool** | Indicates whether the Directory Server allows a user&#39;s password to expire even if that user has never seen an expiration warning notification. | [optional] 
 **ReturnPasswordExpirationControls** | Pointer to [**EnumpasswordPolicyReturnPasswordExpirationControlsProp**](EnumpasswordPolicyReturnPasswordExpirationControlsProp.md) |  | [optional] 
 **AllowExpiredPasswordChanges** | Pointer to **bool** | Indicates whether a user whose password is expired is still allowed to change that password using the password modify extended operation. | [optional] 
-**GraceLoginCount** | Pointer to **int32** | Specifies the number of grace logins that a user is allowed after the account has expired to allow that user to choose a new password. | [optional] 
+**GraceLoginCount** | Pointer to **int64** | Specifies the number of grace logins that a user is allowed after the account has expired to allow that user to choose a new password. | [optional] 
 **RequireChangeByTime** | Pointer to **string** | Specifies the time by which all users with the associated password policy must change their passwords. | [optional] 
-**LockoutFailureCount** | Pointer to **int32** | Specifies the maximum number of authentication failures that a user is allowed before the account is locked out. | [optional] 
+**LockoutFailureCount** | Pointer to **int64** | Specifies the maximum number of authentication failures that a user is allowed before the account is locked out. | [optional] 
 **LockoutDuration** | Pointer to **string** | Specifies the length of time that an account is locked after too many authentication failures. | [optional] 
 **LockoutFailureExpirationInterval** | Pointer to **string** | Specifies the length of time before an authentication failure is no longer counted against a user for the purposes of account lockout. | [optional] 
 **IgnoreDuplicatePasswordFailures** | Pointer to **bool** | Indicates whether to ignore subsequent authentication failures using the same password as an earlier failed authentication attempt (within the time frame defined by the lockout failure expiration interval). If this option is \&quot;true\&quot;, then multiple failed attempts using the same password will be considered only a single failure. If this option is \&quot;false\&quot;, then any failure will be tracked regardless of whether it used the same password as an earlier attempt. | [optional] 
@@ -47,9 +47,9 @@ Name | Type | Description | Notes
 **ForceChangeOnReset** | Pointer to **bool** | Indicates whether users are forced to change their passwords if they are reset by an administrator. If a user&#39;s password is changed by any other user, that is considered an administrative password reset. | [optional] 
 **MaxPasswordResetAge** | Pointer to **string** | Specifies the maximum length of time that users have to change passwords after they have been reset by an administrator before they become locked. | [optional] 
 **SkipValidationForAdministrators** | Pointer to **bool** | Indicates whether passwords set by administrators are allowed to bypass the password validation process that is required for user password changes. | [optional] 
-**MaximumRecentLoginHistorySuccessfulAuthenticationCount** | Pointer to **int32** | The maximum number of successful authentication attempts to include in the recent login history for each account. | [optional] 
+**MaximumRecentLoginHistorySuccessfulAuthenticationCount** | Pointer to **int64** | The maximum number of successful authentication attempts to include in the recent login history for each account. | [optional] 
 **MaximumRecentLoginHistorySuccessfulAuthenticationDuration** | Pointer to **string** | The maximum age of successful authentication attempts to include in the recent login history for each account. | [optional] 
-**MaximumRecentLoginHistoryFailedAuthenticationCount** | Pointer to **int32** | The maximum number of failed authentication attempts to include in the recent login history for each account. | [optional] 
+**MaximumRecentLoginHistoryFailedAuthenticationCount** | Pointer to **int64** | The maximum number of failed authentication attempts to include in the recent login history for each account. | [optional] 
 **MaximumRecentLoginHistoryFailedAuthenticationDuration** | Pointer to **string** | The maximum age of failed authentication attempts to include in the recent login history for each account. | [optional] 
 **RecentLoginHistorySimilarAttemptBehavior** | Pointer to [**EnumpasswordPolicyRecentLoginHistorySimilarAttemptBehaviorProp**](EnumpasswordPolicyRecentLoginHistorySimilarAttemptBehaviorProp.md) |  | [optional] 
 **LastLoginIPAddressAttribute** | Pointer to **string** | Specifies the name or OID of the attribute type that is used to hold the IP address of the client from which the user last authenticated. | [optional] 
@@ -515,20 +515,20 @@ HasPasswordGenerator returns a boolean if a field has been set.
 
 ### GetPasswordHistoryCount
 
-`func (o *PasswordPolicyResponse) GetPasswordHistoryCount() int32`
+`func (o *PasswordPolicyResponse) GetPasswordHistoryCount() int64`
 
 GetPasswordHistoryCount returns the PasswordHistoryCount field if non-nil, zero value otherwise.
 
 ### GetPasswordHistoryCountOk
 
-`func (o *PasswordPolicyResponse) GetPasswordHistoryCountOk() (*int32, bool)`
+`func (o *PasswordPolicyResponse) GetPasswordHistoryCountOk() (*int64, bool)`
 
 GetPasswordHistoryCountOk returns a tuple with the PasswordHistoryCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPasswordHistoryCount
 
-`func (o *PasswordPolicyResponse) SetPasswordHistoryCount(v int32)`
+`func (o *PasswordPolicyResponse) SetPasswordHistoryCount(v int64)`
 
 SetPasswordHistoryCount sets PasswordHistoryCount field to given value.
 
@@ -715,20 +715,20 @@ HasAllowExpiredPasswordChanges returns a boolean if a field has been set.
 
 ### GetGraceLoginCount
 
-`func (o *PasswordPolicyResponse) GetGraceLoginCount() int32`
+`func (o *PasswordPolicyResponse) GetGraceLoginCount() int64`
 
 GetGraceLoginCount returns the GraceLoginCount field if non-nil, zero value otherwise.
 
 ### GetGraceLoginCountOk
 
-`func (o *PasswordPolicyResponse) GetGraceLoginCountOk() (*int32, bool)`
+`func (o *PasswordPolicyResponse) GetGraceLoginCountOk() (*int64, bool)`
 
 GetGraceLoginCountOk returns a tuple with the GraceLoginCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGraceLoginCount
 
-`func (o *PasswordPolicyResponse) SetGraceLoginCount(v int32)`
+`func (o *PasswordPolicyResponse) SetGraceLoginCount(v int64)`
 
 SetGraceLoginCount sets GraceLoginCount field to given value.
 
@@ -765,20 +765,20 @@ HasRequireChangeByTime returns a boolean if a field has been set.
 
 ### GetLockoutFailureCount
 
-`func (o *PasswordPolicyResponse) GetLockoutFailureCount() int32`
+`func (o *PasswordPolicyResponse) GetLockoutFailureCount() int64`
 
 GetLockoutFailureCount returns the LockoutFailureCount field if non-nil, zero value otherwise.
 
 ### GetLockoutFailureCountOk
 
-`func (o *PasswordPolicyResponse) GetLockoutFailureCountOk() (*int32, bool)`
+`func (o *PasswordPolicyResponse) GetLockoutFailureCountOk() (*int64, bool)`
 
 GetLockoutFailureCountOk returns a tuple with the LockoutFailureCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLockoutFailureCount
 
-`func (o *PasswordPolicyResponse) SetLockoutFailureCount(v int32)`
+`func (o *PasswordPolicyResponse) SetLockoutFailureCount(v int64)`
 
 SetLockoutFailureCount sets LockoutFailureCount field to given value.
 
@@ -1140,20 +1140,20 @@ HasSkipValidationForAdministrators returns a boolean if a field has been set.
 
 ### GetMaximumRecentLoginHistorySuccessfulAuthenticationCount
 
-`func (o *PasswordPolicyResponse) GetMaximumRecentLoginHistorySuccessfulAuthenticationCount() int32`
+`func (o *PasswordPolicyResponse) GetMaximumRecentLoginHistorySuccessfulAuthenticationCount() int64`
 
 GetMaximumRecentLoginHistorySuccessfulAuthenticationCount returns the MaximumRecentLoginHistorySuccessfulAuthenticationCount field if non-nil, zero value otherwise.
 
 ### GetMaximumRecentLoginHistorySuccessfulAuthenticationCountOk
 
-`func (o *PasswordPolicyResponse) GetMaximumRecentLoginHistorySuccessfulAuthenticationCountOk() (*int32, bool)`
+`func (o *PasswordPolicyResponse) GetMaximumRecentLoginHistorySuccessfulAuthenticationCountOk() (*int64, bool)`
 
 GetMaximumRecentLoginHistorySuccessfulAuthenticationCountOk returns a tuple with the MaximumRecentLoginHistorySuccessfulAuthenticationCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaximumRecentLoginHistorySuccessfulAuthenticationCount
 
-`func (o *PasswordPolicyResponse) SetMaximumRecentLoginHistorySuccessfulAuthenticationCount(v int32)`
+`func (o *PasswordPolicyResponse) SetMaximumRecentLoginHistorySuccessfulAuthenticationCount(v int64)`
 
 SetMaximumRecentLoginHistorySuccessfulAuthenticationCount sets MaximumRecentLoginHistorySuccessfulAuthenticationCount field to given value.
 
@@ -1190,20 +1190,20 @@ HasMaximumRecentLoginHistorySuccessfulAuthenticationDuration returns a boolean i
 
 ### GetMaximumRecentLoginHistoryFailedAuthenticationCount
 
-`func (o *PasswordPolicyResponse) GetMaximumRecentLoginHistoryFailedAuthenticationCount() int32`
+`func (o *PasswordPolicyResponse) GetMaximumRecentLoginHistoryFailedAuthenticationCount() int64`
 
 GetMaximumRecentLoginHistoryFailedAuthenticationCount returns the MaximumRecentLoginHistoryFailedAuthenticationCount field if non-nil, zero value otherwise.
 
 ### GetMaximumRecentLoginHistoryFailedAuthenticationCountOk
 
-`func (o *PasswordPolicyResponse) GetMaximumRecentLoginHistoryFailedAuthenticationCountOk() (*int32, bool)`
+`func (o *PasswordPolicyResponse) GetMaximumRecentLoginHistoryFailedAuthenticationCountOk() (*int64, bool)`
 
 GetMaximumRecentLoginHistoryFailedAuthenticationCountOk returns a tuple with the MaximumRecentLoginHistoryFailedAuthenticationCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaximumRecentLoginHistoryFailedAuthenticationCount
 
-`func (o *PasswordPolicyResponse) SetMaximumRecentLoginHistoryFailedAuthenticationCount(v int32)`
+`func (o *PasswordPolicyResponse) SetMaximumRecentLoginHistoryFailedAuthenticationCount(v int64)`
 
 SetMaximumRecentLoginHistoryFailedAuthenticationCount sets MaximumRecentLoginHistoryFailedAuthenticationCount field to given value.
 

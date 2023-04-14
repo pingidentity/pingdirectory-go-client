@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumactiveDirectoryExternalServerSchemaUrn**](EnumactiveDirectoryExternalServerSchemaUrn.md) |  | 
 **BindDN** | Pointer to **string** | The DN to use to bind to the target LDAP server if simple authentication is required. The authentication identity can also be specified in User-Principal-Name (UPN) format. | [optional] 
 **ServerHostName** | **string** | The host name or IP address of the target LDAP server. | 
-**ServerPort** | **int32** | The port number on which the server listens for requests. | 
+**ServerPort** | **int64** | The port number on which the server listens for requests. | 
 **Location** | Pointer to **string** | Specifies the location for the LDAP External Server. | [optional] 
 **Password** | Pointer to **string** | The login password for the specified user. | [optional] 
 **PassphraseProvider** | Pointer to **string** | The passphrase provider to use to obtain the login password for the specified user. | [optional] 
@@ -22,8 +22,8 @@ Name | Type | Description | Notes
 **MaxResponseSize** | **string** | Specifies the maximum response size that should be supported for messages received from the LDAP external server. | 
 **KeyManagerProvider** | Pointer to **string** | The key manager provider to use if SSL or StartTLS is to be used for connection-level security. When specifying a value for this property (except when using the Null key manager provider) you must ensure that the external server trusts this server&#39;s public certificate by adding this server&#39;s public certificate to the external server&#39;s trust store. | [optional] 
 **TrustManagerProvider** | Pointer to **string** | The trust manager provider to use if SSL or StartTLS is to be used for connection-level security. | [optional] 
-**InitialConnections** | Pointer to **int32** | The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool. | [optional] 
-**MaxConnections** | Pointer to **int32** | The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool. | [optional] 
+**InitialConnections** | Pointer to **int64** | The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool. | [optional] 
+**MaxConnections** | Pointer to **int64** | The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool. | [optional] 
 **DefunctConnectionResultCode** | Pointer to [**[]EnumexternalServerDefunctConnectionResultCodeProp**](EnumexternalServerDefunctConnectionResultCodeProp.md) |  | [optional] 
 **AbandonOnTimeout** | Pointer to **bool** | Indicates whether to send an abandon request for an operation for which a response timeout is encountered. A request which has timed out on one server may be retried on another server regardless of whether an abandon request is sent, but if the initial attempt is not abandoned then a long-running operation may unnecessarily continue to consume processing resources on the initial server. | [optional] 
 **Description** | Pointer to **string** | A description for this External Server | [optional] 
@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 
 ### NewActiveDirectoryExternalServerResponse
 
-`func NewActiveDirectoryExternalServerResponse(id string, schemas []EnumactiveDirectoryExternalServerSchemaUrn, serverHostName string, serverPort int32, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerActiveDirectoryAuthenticationMethodProp, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string, ) *ActiveDirectoryExternalServerResponse`
+`func NewActiveDirectoryExternalServerResponse(id string, schemas []EnumactiveDirectoryExternalServerSchemaUrn, serverHostName string, serverPort int64, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerActiveDirectoryAuthenticationMethodProp, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string, ) *ActiveDirectoryExternalServerResponse`
 
 NewActiveDirectoryExternalServerResponse instantiates a new ActiveDirectoryExternalServerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -136,20 +136,20 @@ SetServerHostName sets ServerHostName field to given value.
 
 ### GetServerPort
 
-`func (o *ActiveDirectoryExternalServerResponse) GetServerPort() int32`
+`func (o *ActiveDirectoryExternalServerResponse) GetServerPort() int64`
 
 GetServerPort returns the ServerPort field if non-nil, zero value otherwise.
 
 ### GetServerPortOk
 
-`func (o *ActiveDirectoryExternalServerResponse) GetServerPortOk() (*int32, bool)`
+`func (o *ActiveDirectoryExternalServerResponse) GetServerPortOk() (*int64, bool)`
 
 GetServerPortOk returns a tuple with the ServerPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerPort
 
-`func (o *ActiveDirectoryExternalServerResponse) SetServerPort(v int32)`
+`func (o *ActiveDirectoryExternalServerResponse) SetServerPort(v int64)`
 
 SetServerPort sets ServerPort field to given value.
 
@@ -451,20 +451,20 @@ HasTrustManagerProvider returns a boolean if a field has been set.
 
 ### GetInitialConnections
 
-`func (o *ActiveDirectoryExternalServerResponse) GetInitialConnections() int32`
+`func (o *ActiveDirectoryExternalServerResponse) GetInitialConnections() int64`
 
 GetInitialConnections returns the InitialConnections field if non-nil, zero value otherwise.
 
 ### GetInitialConnectionsOk
 
-`func (o *ActiveDirectoryExternalServerResponse) GetInitialConnectionsOk() (*int32, bool)`
+`func (o *ActiveDirectoryExternalServerResponse) GetInitialConnectionsOk() (*int64, bool)`
 
 GetInitialConnectionsOk returns a tuple with the InitialConnections field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInitialConnections
 
-`func (o *ActiveDirectoryExternalServerResponse) SetInitialConnections(v int32)`
+`func (o *ActiveDirectoryExternalServerResponse) SetInitialConnections(v int64)`
 
 SetInitialConnections sets InitialConnections field to given value.
 
@@ -476,20 +476,20 @@ HasInitialConnections returns a boolean if a field has been set.
 
 ### GetMaxConnections
 
-`func (o *ActiveDirectoryExternalServerResponse) GetMaxConnections() int32`
+`func (o *ActiveDirectoryExternalServerResponse) GetMaxConnections() int64`
 
 GetMaxConnections returns the MaxConnections field if non-nil, zero value otherwise.
 
 ### GetMaxConnectionsOk
 
-`func (o *ActiveDirectoryExternalServerResponse) GetMaxConnectionsOk() (*int32, bool)`
+`func (o *ActiveDirectoryExternalServerResponse) GetMaxConnectionsOk() (*int64, bool)`
 
 GetMaxConnectionsOk returns a tuple with the MaxConnections field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxConnections
 
-`func (o *ActiveDirectoryExternalServerResponse) SetMaxConnections(v int32)`
+`func (o *ActiveDirectoryExternalServerResponse) SetMaxConnections(v int64)`
 
 SetMaxConnections sets MaxConnections field to given value.
 

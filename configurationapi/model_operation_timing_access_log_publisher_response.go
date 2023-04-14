@@ -56,7 +56,7 @@ type OperationTimingAccessLogPublisherResponse struct {
 	// The minimum processing time (i.e., \"etime\") for operations that should be logged by this Operation Timing Access Log Publisher
 	MinIncludedOperationProcessingTime *string `json:"minIncludedOperationProcessingTime,omitempty"`
 	// The minimum length of time in nanoseconds that an operation phase should take before it is included in a log message.
-	MinIncludedPhaseTimeNanos *int32 `json:"minIncludedPhaseTimeNanos,omitempty"`
+	MinIncludedPhaseTimeNanos *int64 `json:"minIncludedPhaseTimeNanos,omitempty"`
 	// Indicates whether the Operation Timing Access Log Publisher will publish records asynchronously.
 	Asynchronous bool `json:"asynchronous"`
 	// Specifies whether to flush the writer after every log record.
@@ -64,9 +64,9 @@ type OperationTimingAccessLogPublisherResponse struct {
 	// Specifies the log file buffer size.
 	BufferSize *string `json:"bufferSize,omitempty"`
 	// Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written.
-	MaxStringLength *int32 `json:"maxStringLength,omitempty"`
+	MaxStringLength *int64 `json:"maxStringLength,omitempty"`
 	// The maximum number of log records that can be stored in the asynchronous queue.
-	QueueSize *int32 `json:"queueSize,omitempty"`
+	QueueSize *int64 `json:"queueSize,omitempty"`
 	// Specifies the interval at which to check whether the log files need to be rotated.
 	TimeInterval *string `json:"timeInterval,omitempty"`
 	// Indicates whether to log information about the result of any security negotiation (e.g., SSL handshake) processing that has been performed.
@@ -678,9 +678,9 @@ func (o *OperationTimingAccessLogPublisherResponse) SetMinIncludedOperationProce
 }
 
 // GetMinIncludedPhaseTimeNanos returns the MinIncludedPhaseTimeNanos field value if set, zero value otherwise.
-func (o *OperationTimingAccessLogPublisherResponse) GetMinIncludedPhaseTimeNanos() int32 {
+func (o *OperationTimingAccessLogPublisherResponse) GetMinIncludedPhaseTimeNanos() int64 {
 	if o == nil || IsNil(o.MinIncludedPhaseTimeNanos) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MinIncludedPhaseTimeNanos
@@ -688,7 +688,7 @@ func (o *OperationTimingAccessLogPublisherResponse) GetMinIncludedPhaseTimeNanos
 
 // GetMinIncludedPhaseTimeNanosOk returns a tuple with the MinIncludedPhaseTimeNanos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OperationTimingAccessLogPublisherResponse) GetMinIncludedPhaseTimeNanosOk() (*int32, bool) {
+func (o *OperationTimingAccessLogPublisherResponse) GetMinIncludedPhaseTimeNanosOk() (*int64, bool) {
 	if o == nil || IsNil(o.MinIncludedPhaseTimeNanos) {
 		return nil, false
 	}
@@ -704,8 +704,8 @@ func (o *OperationTimingAccessLogPublisherResponse) HasMinIncludedPhaseTimeNanos
 	return false
 }
 
-// SetMinIncludedPhaseTimeNanos gets a reference to the given int32 and assigns it to the MinIncludedPhaseTimeNanos field.
-func (o *OperationTimingAccessLogPublisherResponse) SetMinIncludedPhaseTimeNanos(v int32) {
+// SetMinIncludedPhaseTimeNanos gets a reference to the given int64 and assigns it to the MinIncludedPhaseTimeNanos field.
+func (o *OperationTimingAccessLogPublisherResponse) SetMinIncludedPhaseTimeNanos(v int64) {
 	o.MinIncludedPhaseTimeNanos = &v
 }
 
@@ -798,9 +798,9 @@ func (o *OperationTimingAccessLogPublisherResponse) SetBufferSize(v string) {
 }
 
 // GetMaxStringLength returns the MaxStringLength field value if set, zero value otherwise.
-func (o *OperationTimingAccessLogPublisherResponse) GetMaxStringLength() int32 {
+func (o *OperationTimingAccessLogPublisherResponse) GetMaxStringLength() int64 {
 	if o == nil || IsNil(o.MaxStringLength) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxStringLength
@@ -808,7 +808,7 @@ func (o *OperationTimingAccessLogPublisherResponse) GetMaxStringLength() int32 {
 
 // GetMaxStringLengthOk returns a tuple with the MaxStringLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OperationTimingAccessLogPublisherResponse) GetMaxStringLengthOk() (*int32, bool) {
+func (o *OperationTimingAccessLogPublisherResponse) GetMaxStringLengthOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxStringLength) {
 		return nil, false
 	}
@@ -824,15 +824,15 @@ func (o *OperationTimingAccessLogPublisherResponse) HasMaxStringLength() bool {
 	return false
 }
 
-// SetMaxStringLength gets a reference to the given int32 and assigns it to the MaxStringLength field.
-func (o *OperationTimingAccessLogPublisherResponse) SetMaxStringLength(v int32) {
+// SetMaxStringLength gets a reference to the given int64 and assigns it to the MaxStringLength field.
+func (o *OperationTimingAccessLogPublisherResponse) SetMaxStringLength(v int64) {
 	o.MaxStringLength = &v
 }
 
 // GetQueueSize returns the QueueSize field value if set, zero value otherwise.
-func (o *OperationTimingAccessLogPublisherResponse) GetQueueSize() int32 {
+func (o *OperationTimingAccessLogPublisherResponse) GetQueueSize() int64 {
 	if o == nil || IsNil(o.QueueSize) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.QueueSize
@@ -840,7 +840,7 @@ func (o *OperationTimingAccessLogPublisherResponse) GetQueueSize() int32 {
 
 // GetQueueSizeOk returns a tuple with the QueueSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OperationTimingAccessLogPublisherResponse) GetQueueSizeOk() (*int32, bool) {
+func (o *OperationTimingAccessLogPublisherResponse) GetQueueSizeOk() (*int64, bool) {
 	if o == nil || IsNil(o.QueueSize) {
 		return nil, false
 	}
@@ -856,8 +856,8 @@ func (o *OperationTimingAccessLogPublisherResponse) HasQueueSize() bool {
 	return false
 }
 
-// SetQueueSize gets a reference to the given int32 and assigns it to the QueueSize field.
-func (o *OperationTimingAccessLogPublisherResponse) SetQueueSize(v int32) {
+// SetQueueSize gets a reference to the given int64 and assigns it to the QueueSize field.
+func (o *OperationTimingAccessLogPublisherResponse) SetQueueSize(v int64) {
 	o.QueueSize = &v
 }
 

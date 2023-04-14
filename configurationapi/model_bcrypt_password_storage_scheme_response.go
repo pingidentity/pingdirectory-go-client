@@ -23,7 +23,7 @@ type BcryptPasswordStorageSchemeResponse struct {
 	Id      string                                     `json:"id"`
 	Schemas []EnumbcryptPasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// Specifies the cost factor to use when encoding passwords with Bcrypt. A higher cost factor requires more processing to generate a password, which makes attacks against the password more expensive.
-	BcryptCostFactor *int32 `json:"bcryptCostFactor,omitempty"`
+	BcryptCostFactor *int64 `json:"bcryptCostFactor,omitempty"`
 	// A description for this Password Storage Scheme
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Password Storage Scheme is enabled for use.
@@ -101,9 +101,9 @@ func (o *BcryptPasswordStorageSchemeResponse) SetSchemas(v []EnumbcryptPasswordS
 }
 
 // GetBcryptCostFactor returns the BcryptCostFactor field value if set, zero value otherwise.
-func (o *BcryptPasswordStorageSchemeResponse) GetBcryptCostFactor() int32 {
+func (o *BcryptPasswordStorageSchemeResponse) GetBcryptCostFactor() int64 {
 	if o == nil || IsNil(o.BcryptCostFactor) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.BcryptCostFactor
@@ -111,7 +111,7 @@ func (o *BcryptPasswordStorageSchemeResponse) GetBcryptCostFactor() int32 {
 
 // GetBcryptCostFactorOk returns a tuple with the BcryptCostFactor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BcryptPasswordStorageSchemeResponse) GetBcryptCostFactorOk() (*int32, bool) {
+func (o *BcryptPasswordStorageSchemeResponse) GetBcryptCostFactorOk() (*int64, bool) {
 	if o == nil || IsNil(o.BcryptCostFactor) {
 		return nil, false
 	}
@@ -127,8 +127,8 @@ func (o *BcryptPasswordStorageSchemeResponse) HasBcryptCostFactor() bool {
 	return false
 }
 
-// SetBcryptCostFactor gets a reference to the given int32 and assigns it to the BcryptCostFactor field.
-func (o *BcryptPasswordStorageSchemeResponse) SetBcryptCostFactor(v int32) {
+// SetBcryptCostFactor gets a reference to the given int64 and assigns it to the BcryptCostFactor field.
+func (o *BcryptPasswordStorageSchemeResponse) SetBcryptCostFactor(v int64) {
 	o.BcryptCostFactor = &v
 }
 

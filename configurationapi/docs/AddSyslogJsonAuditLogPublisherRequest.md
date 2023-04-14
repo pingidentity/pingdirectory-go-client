@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **SyslogSeverity** | Pointer to [**EnumlogPublisherSyslogSeverityProp**](EnumlogPublisherSyslogSeverityProp.md) |  | [optional] 
 **SyslogMessageHostName** | Pointer to **string** | The local host name that will be included in syslog messages that are logged by this Syslog JSON Audit Log Publisher. | [optional] 
 **SyslogMessageApplicationName** | Pointer to **string** | The application name that will be included in syslog messages that are logged by this Syslog JSON Audit Log Publisher. | [optional] 
-**QueueSize** | Pointer to **int32** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
+**QueueSize** | Pointer to **int64** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
 **WriteMultiLineMessages** | Pointer to **bool** | Indicates whether the JSON objects should use a multi-line representation (with each object field and array value on its own line) that may be easier for administrators to read, but each message will be larger (because of additional spaces and end-of-line markers), and it may be more difficult to consume and parse through some text-oriented tools. | [optional] 
 **UseReversibleForm** | Pointer to **bool** | Indicates whether the audit log should be written in reversible form so that it is possible to revert the changes if desired. | [optional] 
 **SoftDeleteEntryAuditBehavior** | Pointer to [**EnumlogPublisherSyslogJsonAuditSoftDeleteEntryAuditBehaviorProp**](EnumlogPublisherSyslogJsonAuditSoftDeleteEntryAuditBehaviorProp.md) |  | [optional] 
@@ -219,20 +219,20 @@ HasSyslogMessageApplicationName returns a boolean if a field has been set.
 
 ### GetQueueSize
 
-`func (o *AddSyslogJsonAuditLogPublisherRequest) GetQueueSize() int32`
+`func (o *AddSyslogJsonAuditLogPublisherRequest) GetQueueSize() int64`
 
 GetQueueSize returns the QueueSize field if non-nil, zero value otherwise.
 
 ### GetQueueSizeOk
 
-`func (o *AddSyslogJsonAuditLogPublisherRequest) GetQueueSizeOk() (*int32, bool)`
+`func (o *AddSyslogJsonAuditLogPublisherRequest) GetQueueSizeOk() (*int64, bool)`
 
 GetQueueSizeOk returns a tuple with the QueueSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQueueSize
 
-`func (o *AddSyslogJsonAuditLogPublisherRequest) SetQueueSize(v int32)`
+`func (o *AddSyslogJsonAuditLogPublisherRequest) SetQueueSize(v int64)`
 
 SetQueueSize sets QueueSize field to given value.
 

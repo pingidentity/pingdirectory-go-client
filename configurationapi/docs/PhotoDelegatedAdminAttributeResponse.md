@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Mutability** | [**EnumdelegatedAdminAttributeMutabilityProp**](EnumdelegatedAdminAttributeMutabilityProp.md) |  | 
 **MultiValued** | **bool** | Indicates whether this Delegated Admin Attribute may have multiple values. | 
 **AttributeCategory** | Pointer to **string** | Specifies which attribute category this attribute belongs to. | [optional] 
-**DisplayOrderIndex** | **int32** | This property determines a display order for attributes within a given attribute category. Attributes are ordered within their category based on this index from least to greatest. | 
+**DisplayOrderIndex** | **int64** | This property determines a display order for attributes within a given attribute category. Attributes are ordered within their category based on this index from least to greatest. | 
 **ReferenceResourceType** | Pointer to **string** | For LDAP attributes with DN syntax, specifies what kind of resource is referenced. | [optional] 
 **AttributePresentation** | Pointer to [**EnumdelegatedAdminAttributeAttributePresentationProp**](EnumdelegatedAdminAttributeAttributePresentationProp.md) |  | [optional] 
 **DateTimeFormat** | Pointer to **string** | Specifies the format string that is used to present a date and/or time value to the user of the app. This property only applies to LDAP attribute types whose LDAP syntax is GeneralizedTime and is ignored if the attribute type has any other syntax. | [optional] 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 
 ### NewPhotoDelegatedAdminAttributeResponse
 
-`func NewPhotoDelegatedAdminAttributeResponse(id string, schemas []EnumphotoDelegatedAdminAttributeSchemaUrn, attributeType string, displayName string, mutability EnumdelegatedAdminAttributeMutabilityProp, multiValued bool, displayOrderIndex int32, ) *PhotoDelegatedAdminAttributeResponse`
+`func NewPhotoDelegatedAdminAttributeResponse(id string, schemas []EnumphotoDelegatedAdminAttributeSchemaUrn, attributeType string, displayName string, mutability EnumdelegatedAdminAttributeMutabilityProp, multiValued bool, displayOrderIndex int64, ) *PhotoDelegatedAdminAttributeResponse`
 
 NewPhotoDelegatedAdminAttributeResponse instantiates a new PhotoDelegatedAdminAttributeResponse object
 This constructor will assign default values to properties that have it defined,
@@ -236,20 +236,20 @@ HasAttributeCategory returns a boolean if a field has been set.
 
 ### GetDisplayOrderIndex
 
-`func (o *PhotoDelegatedAdminAttributeResponse) GetDisplayOrderIndex() int32`
+`func (o *PhotoDelegatedAdminAttributeResponse) GetDisplayOrderIndex() int64`
 
 GetDisplayOrderIndex returns the DisplayOrderIndex field if non-nil, zero value otherwise.
 
 ### GetDisplayOrderIndexOk
 
-`func (o *PhotoDelegatedAdminAttributeResponse) GetDisplayOrderIndexOk() (*int32, bool)`
+`func (o *PhotoDelegatedAdminAttributeResponse) GetDisplayOrderIndexOk() (*int64, bool)`
 
 GetDisplayOrderIndexOk returns a tuple with the DisplayOrderIndex field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDisplayOrderIndex
 
-`func (o *PhotoDelegatedAdminAttributeResponse) SetDisplayOrderIndex(v int32)`
+`func (o *PhotoDelegatedAdminAttributeResponse) SetDisplayOrderIndex(v int64)`
 
 SetDisplayOrderIndex sets DisplayOrderIndex field to given value.
 

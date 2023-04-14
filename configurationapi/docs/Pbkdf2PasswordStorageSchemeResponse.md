@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 **Id** | **string** | Name of the Password Storage Scheme | 
 **Schemas** | [**[]Enumpbkdf2PasswordStorageSchemeSchemaUrn**](Enumpbkdf2PasswordStorageSchemeSchemaUrn.md) |  | 
 **DigestAlgorithm** | Pointer to [**EnumpasswordStorageSchemeDigestAlgorithmProp**](EnumpasswordStorageSchemeDigestAlgorithmProp.md) |  | [optional] 
-**IterationCount** | **int32** | Specifies the number of iterations to use when encoding passwords. The value must be greater than or equal to 1000. | 
-**SaltLengthBytes** | **int32** | Specifies the number of bytes to use for the generated salt. The value must be greater than or equal to 8. | 
-**DerivedKeyLengthBytes** | **int32** | Specifies the number of bytes to use for the derived key. The value must be greater than or equal to 8. | 
-**MaxPasswordLength** | Pointer to **int32** | Specifies the maximum allowed length, in bytes, for passwords encoded with this scheme, which can help mitigate denial of service attacks from clients that attempt to bind with very long passwords. | [optional] 
+**IterationCount** | **int64** | Specifies the number of iterations to use when encoding passwords. The value must be greater than or equal to 1000. | 
+**SaltLengthBytes** | **int64** | Specifies the number of bytes to use for the generated salt. The value must be greater than or equal to 8. | 
+**DerivedKeyLengthBytes** | **int64** | Specifies the number of bytes to use for the derived key. The value must be greater than or equal to 8. | 
+**MaxPasswordLength** | Pointer to **int64** | Specifies the maximum allowed length, in bytes, for passwords encoded with this scheme, which can help mitigate denial of service attacks from clients that attempt to bind with very long passwords. | [optional] 
 **Description** | Pointer to **string** | A description for this Password Storage Scheme | [optional] 
 **Enabled** | **bool** | Indicates whether the Password Storage Scheme is enabled for use. | 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewPbkdf2PasswordStorageSchemeResponse
 
-`func NewPbkdf2PasswordStorageSchemeResponse(id string, schemas []Enumpbkdf2PasswordStorageSchemeSchemaUrn, iterationCount int32, saltLengthBytes int32, derivedKeyLengthBytes int32, enabled bool, ) *Pbkdf2PasswordStorageSchemeResponse`
+`func NewPbkdf2PasswordStorageSchemeResponse(id string, schemas []Enumpbkdf2PasswordStorageSchemeSchemaUrn, iterationCount int64, saltLengthBytes int64, derivedKeyLengthBytes int64, enabled bool, ) *Pbkdf2PasswordStorageSchemeResponse`
 
 NewPbkdf2PasswordStorageSchemeResponse instantiates a new Pbkdf2PasswordStorageSchemeResponse object
 This constructor will assign default values to properties that have it defined,
@@ -102,80 +102,80 @@ HasDigestAlgorithm returns a boolean if a field has been set.
 
 ### GetIterationCount
 
-`func (o *Pbkdf2PasswordStorageSchemeResponse) GetIterationCount() int32`
+`func (o *Pbkdf2PasswordStorageSchemeResponse) GetIterationCount() int64`
 
 GetIterationCount returns the IterationCount field if non-nil, zero value otherwise.
 
 ### GetIterationCountOk
 
-`func (o *Pbkdf2PasswordStorageSchemeResponse) GetIterationCountOk() (*int32, bool)`
+`func (o *Pbkdf2PasswordStorageSchemeResponse) GetIterationCountOk() (*int64, bool)`
 
 GetIterationCountOk returns a tuple with the IterationCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIterationCount
 
-`func (o *Pbkdf2PasswordStorageSchemeResponse) SetIterationCount(v int32)`
+`func (o *Pbkdf2PasswordStorageSchemeResponse) SetIterationCount(v int64)`
 
 SetIterationCount sets IterationCount field to given value.
 
 
 ### GetSaltLengthBytes
 
-`func (o *Pbkdf2PasswordStorageSchemeResponse) GetSaltLengthBytes() int32`
+`func (o *Pbkdf2PasswordStorageSchemeResponse) GetSaltLengthBytes() int64`
 
 GetSaltLengthBytes returns the SaltLengthBytes field if non-nil, zero value otherwise.
 
 ### GetSaltLengthBytesOk
 
-`func (o *Pbkdf2PasswordStorageSchemeResponse) GetSaltLengthBytesOk() (*int32, bool)`
+`func (o *Pbkdf2PasswordStorageSchemeResponse) GetSaltLengthBytesOk() (*int64, bool)`
 
 GetSaltLengthBytesOk returns a tuple with the SaltLengthBytes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSaltLengthBytes
 
-`func (o *Pbkdf2PasswordStorageSchemeResponse) SetSaltLengthBytes(v int32)`
+`func (o *Pbkdf2PasswordStorageSchemeResponse) SetSaltLengthBytes(v int64)`
 
 SetSaltLengthBytes sets SaltLengthBytes field to given value.
 
 
 ### GetDerivedKeyLengthBytes
 
-`func (o *Pbkdf2PasswordStorageSchemeResponse) GetDerivedKeyLengthBytes() int32`
+`func (o *Pbkdf2PasswordStorageSchemeResponse) GetDerivedKeyLengthBytes() int64`
 
 GetDerivedKeyLengthBytes returns the DerivedKeyLengthBytes field if non-nil, zero value otherwise.
 
 ### GetDerivedKeyLengthBytesOk
 
-`func (o *Pbkdf2PasswordStorageSchemeResponse) GetDerivedKeyLengthBytesOk() (*int32, bool)`
+`func (o *Pbkdf2PasswordStorageSchemeResponse) GetDerivedKeyLengthBytesOk() (*int64, bool)`
 
 GetDerivedKeyLengthBytesOk returns a tuple with the DerivedKeyLengthBytes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDerivedKeyLengthBytes
 
-`func (o *Pbkdf2PasswordStorageSchemeResponse) SetDerivedKeyLengthBytes(v int32)`
+`func (o *Pbkdf2PasswordStorageSchemeResponse) SetDerivedKeyLengthBytes(v int64)`
 
 SetDerivedKeyLengthBytes sets DerivedKeyLengthBytes field to given value.
 
 
 ### GetMaxPasswordLength
 
-`func (o *Pbkdf2PasswordStorageSchemeResponse) GetMaxPasswordLength() int32`
+`func (o *Pbkdf2PasswordStorageSchemeResponse) GetMaxPasswordLength() int64`
 
 GetMaxPasswordLength returns the MaxPasswordLength field if non-nil, zero value otherwise.
 
 ### GetMaxPasswordLengthOk
 
-`func (o *Pbkdf2PasswordStorageSchemeResponse) GetMaxPasswordLengthOk() (*int32, bool)`
+`func (o *Pbkdf2PasswordStorageSchemeResponse) GetMaxPasswordLengthOk() (*int64, bool)`
 
 GetMaxPasswordLengthOk returns a tuple with the MaxPasswordLength field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxPasswordLength
 
-`func (o *Pbkdf2PasswordStorageSchemeResponse) SetMaxPasswordLength(v int32)`
+`func (o *Pbkdf2PasswordStorageSchemeResponse) SetMaxPasswordLength(v int64)`
 
 SetMaxPasswordLength sets MaxPasswordLength field to given value.
 
