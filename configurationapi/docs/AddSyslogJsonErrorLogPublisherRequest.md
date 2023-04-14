@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **SyslogSeverity** | Pointer to [**EnumlogPublisherSyslogSeverityProp**](EnumlogPublisherSyslogSeverityProp.md) |  | [optional] 
 **SyslogMessageHostName** | Pointer to **string** | The local host name that will be included in syslog messages that are logged by this Syslog JSON Error Log Publisher. | [optional] 
 **SyslogMessageApplicationName** | Pointer to **string** | The application name that will be included in syslog messages that are logged by this Syslog JSON Error Log Publisher. | [optional] 
-**QueueSize** | Pointer to **int32** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
+**QueueSize** | Pointer to **int64** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
 **IncludeProductName** | Pointer to **bool** | Indicates whether log messages should include the product name for the Directory Server. | [optional] 
 **IncludeInstanceName** | Pointer to **bool** | Indicates whether log messages should include the instance name for the Directory Server. | [optional] 
 **IncludeStartupID** | Pointer to **bool** | Indicates whether log messages should include the startup ID for the Directory Server, which is a value assigned to the server instance at startup and may be used to identify when the server has been restarted. | [optional] 
@@ -229,20 +229,20 @@ HasSyslogMessageApplicationName returns a boolean if a field has been set.
 
 ### GetQueueSize
 
-`func (o *AddSyslogJsonErrorLogPublisherRequest) GetQueueSize() int32`
+`func (o *AddSyslogJsonErrorLogPublisherRequest) GetQueueSize() int64`
 
 GetQueueSize returns the QueueSize field if non-nil, zero value otherwise.
 
 ### GetQueueSizeOk
 
-`func (o *AddSyslogJsonErrorLogPublisherRequest) GetQueueSizeOk() (*int32, bool)`
+`func (o *AddSyslogJsonErrorLogPublisherRequest) GetQueueSizeOk() (*int64, bool)`
 
 GetQueueSizeOk returns a tuple with the QueueSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQueueSize
 
-`func (o *AddSyslogJsonErrorLogPublisherRequest) SetQueueSize(v int32)`
+`func (o *AddSyslogJsonErrorLogPublisherRequest) SetQueueSize(v int64)`
 
 SetQueueSize sets QueueSize field to given value.
 

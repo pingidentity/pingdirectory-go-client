@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumsizeLimitLogRetentionPolicySchemaUrn**](EnumsizeLimitLogRetentionPolicySchemaUrn.md) |  | 
 **RetainDuration** | **string** | Specifies the desired minimum length of time that each log file should be retained. | 
 **Description** | Pointer to **string** | A description for this Log Retention Policy | [optional] 
-**NumberOfFiles** | **int32** | Specifies the number of archived log files to retain before the oldest ones are cleaned. | 
+**NumberOfFiles** | **int64** | Specifies the number of archived log files to retain before the oldest ones are cleaned. | 
 **FreeDiskSpace** | **string** | Specifies the minimum amount of free disk space that should be available on the file system on which the archived log files are stored. | 
 **DiskSpaceUsed** | **string** | Specifies the maximum total disk space used by the log files. | 
 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewAddLogRetentionPolicyRequest
 
-`func NewAddLogRetentionPolicyRequest(policyName string, schemas []EnumsizeLimitLogRetentionPolicySchemaUrn, retainDuration string, numberOfFiles int32, freeDiskSpace string, diskSpaceUsed string, ) *AddLogRetentionPolicyRequest`
+`func NewAddLogRetentionPolicyRequest(policyName string, schemas []EnumsizeLimitLogRetentionPolicySchemaUrn, retainDuration string, numberOfFiles int64, freeDiskSpace string, diskSpaceUsed string, ) *AddLogRetentionPolicyRequest`
 
 NewAddLogRetentionPolicyRequest instantiates a new AddLogRetentionPolicyRequest object
 This constructor will assign default values to properties that have it defined,
@@ -118,20 +118,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetNumberOfFiles
 
-`func (o *AddLogRetentionPolicyRequest) GetNumberOfFiles() int32`
+`func (o *AddLogRetentionPolicyRequest) GetNumberOfFiles() int64`
 
 GetNumberOfFiles returns the NumberOfFiles field if non-nil, zero value otherwise.
 
 ### GetNumberOfFilesOk
 
-`func (o *AddLogRetentionPolicyRequest) GetNumberOfFilesOk() (*int32, bool)`
+`func (o *AddLogRetentionPolicyRequest) GetNumberOfFilesOk() (*int64, bool)`
 
 GetNumberOfFilesOk returns a tuple with the NumberOfFiles field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNumberOfFiles
 
-`func (o *AddLogRetentionPolicyRequest) SetNumberOfFiles(v int32)`
+`func (o *AddLogRetentionPolicyRequest) SetNumberOfFiles(v int64)`
 
 SetNumberOfFiles sets NumberOfFiles field to given value.
 

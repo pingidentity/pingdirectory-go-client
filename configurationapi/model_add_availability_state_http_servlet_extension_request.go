@@ -25,13 +25,13 @@ type AddAvailabilityStateHttpServletExtensionRequest struct {
 	// Specifies the base context path that HTTP clients should use to access this servlet. The value must start with a forward slash and must represent a valid HTTP context path.
 	BaseContextPath string `json:"baseContextPath"`
 	// Specifies the HTTP status code that the servlet should return if the server considers itself to be available.
-	AvailableStatusCode int32 `json:"availableStatusCode"`
+	AvailableStatusCode int64 `json:"availableStatusCode"`
 	// Specifies the HTTP status code that the servlet should return if the server considers itself to be degraded.
-	DegradedStatusCode int32 `json:"degradedStatusCode"`
+	DegradedStatusCode int64 `json:"degradedStatusCode"`
 	// Specifies the HTTP status code that the servlet should return if the server considers itself to be unavailable.
-	UnavailableStatusCode int32 `json:"unavailableStatusCode"`
+	UnavailableStatusCode int64 `json:"unavailableStatusCode"`
 	// Specifies a HTTP status code that the servlet should always return, regardless of the server's availability. If this value is defined, it will override the availability-based return codes.
-	OverrideStatusCode *int32 `json:"overrideStatusCode,omitempty"`
+	OverrideStatusCode *int64 `json:"overrideStatusCode,omitempty"`
 	// Indicates whether the response should include a body that is a JSON object.
 	IncludeResponseBody *bool `json:"includeResponseBody,omitempty"`
 	// A JSON-formatted string containing additional fields to be returned in the response body. For example, an additional-response-contents value of '{ \"key\": \"value\" }' would add the key and value to the root of the JSON response body.
@@ -50,7 +50,7 @@ type AddAvailabilityStateHttpServletExtensionRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddAvailabilityStateHttpServletExtensionRequest(extensionName string, schemas []EnumavailabilityStateHttpServletExtensionSchemaUrn, baseContextPath string, availableStatusCode int32, degradedStatusCode int32, unavailableStatusCode int32) *AddAvailabilityStateHttpServletExtensionRequest {
+func NewAddAvailabilityStateHttpServletExtensionRequest(extensionName string, schemas []EnumavailabilityStateHttpServletExtensionSchemaUrn, baseContextPath string, availableStatusCode int64, degradedStatusCode int64, unavailableStatusCode int64) *AddAvailabilityStateHttpServletExtensionRequest {
 	this := AddAvailabilityStateHttpServletExtensionRequest{}
 	this.ExtensionName = extensionName
 	this.Schemas = schemas
@@ -142,9 +142,9 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) SetBaseContextPath(v s
 }
 
 // GetAvailableStatusCode returns the AvailableStatusCode field value
-func (o *AddAvailabilityStateHttpServletExtensionRequest) GetAvailableStatusCode() int32 {
+func (o *AddAvailabilityStateHttpServletExtensionRequest) GetAvailableStatusCode() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -153,7 +153,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetAvailableStatusCode
 
 // GetAvailableStatusCodeOk returns a tuple with the AvailableStatusCode field value
 // and a boolean to check if the value has been set.
-func (o *AddAvailabilityStateHttpServletExtensionRequest) GetAvailableStatusCodeOk() (*int32, bool) {
+func (o *AddAvailabilityStateHttpServletExtensionRequest) GetAvailableStatusCodeOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -161,14 +161,14 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetAvailableStatusCode
 }
 
 // SetAvailableStatusCode sets field value
-func (o *AddAvailabilityStateHttpServletExtensionRequest) SetAvailableStatusCode(v int32) {
+func (o *AddAvailabilityStateHttpServletExtensionRequest) SetAvailableStatusCode(v int64) {
 	o.AvailableStatusCode = v
 }
 
 // GetDegradedStatusCode returns the DegradedStatusCode field value
-func (o *AddAvailabilityStateHttpServletExtensionRequest) GetDegradedStatusCode() int32 {
+func (o *AddAvailabilityStateHttpServletExtensionRequest) GetDegradedStatusCode() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -177,7 +177,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetDegradedStatusCode(
 
 // GetDegradedStatusCodeOk returns a tuple with the DegradedStatusCode field value
 // and a boolean to check if the value has been set.
-func (o *AddAvailabilityStateHttpServletExtensionRequest) GetDegradedStatusCodeOk() (*int32, bool) {
+func (o *AddAvailabilityStateHttpServletExtensionRequest) GetDegradedStatusCodeOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -185,14 +185,14 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetDegradedStatusCodeO
 }
 
 // SetDegradedStatusCode sets field value
-func (o *AddAvailabilityStateHttpServletExtensionRequest) SetDegradedStatusCode(v int32) {
+func (o *AddAvailabilityStateHttpServletExtensionRequest) SetDegradedStatusCode(v int64) {
 	o.DegradedStatusCode = v
 }
 
 // GetUnavailableStatusCode returns the UnavailableStatusCode field value
-func (o *AddAvailabilityStateHttpServletExtensionRequest) GetUnavailableStatusCode() int32 {
+func (o *AddAvailabilityStateHttpServletExtensionRequest) GetUnavailableStatusCode() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -201,7 +201,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetUnavailableStatusCo
 
 // GetUnavailableStatusCodeOk returns a tuple with the UnavailableStatusCode field value
 // and a boolean to check if the value has been set.
-func (o *AddAvailabilityStateHttpServletExtensionRequest) GetUnavailableStatusCodeOk() (*int32, bool) {
+func (o *AddAvailabilityStateHttpServletExtensionRequest) GetUnavailableStatusCodeOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -209,14 +209,14 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetUnavailableStatusCo
 }
 
 // SetUnavailableStatusCode sets field value
-func (o *AddAvailabilityStateHttpServletExtensionRequest) SetUnavailableStatusCode(v int32) {
+func (o *AddAvailabilityStateHttpServletExtensionRequest) SetUnavailableStatusCode(v int64) {
 	o.UnavailableStatusCode = v
 }
 
 // GetOverrideStatusCode returns the OverrideStatusCode field value if set, zero value otherwise.
-func (o *AddAvailabilityStateHttpServletExtensionRequest) GetOverrideStatusCode() int32 {
+func (o *AddAvailabilityStateHttpServletExtensionRequest) GetOverrideStatusCode() int64 {
 	if o == nil || IsNil(o.OverrideStatusCode) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OverrideStatusCode
@@ -224,7 +224,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetOverrideStatusCode(
 
 // GetOverrideStatusCodeOk returns a tuple with the OverrideStatusCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddAvailabilityStateHttpServletExtensionRequest) GetOverrideStatusCodeOk() (*int32, bool) {
+func (o *AddAvailabilityStateHttpServletExtensionRequest) GetOverrideStatusCodeOk() (*int64, bool) {
 	if o == nil || IsNil(o.OverrideStatusCode) {
 		return nil, false
 	}
@@ -240,8 +240,8 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) HasOverrideStatusCode(
 	return false
 }
 
-// SetOverrideStatusCode gets a reference to the given int32 and assigns it to the OverrideStatusCode field.
-func (o *AddAvailabilityStateHttpServletExtensionRequest) SetOverrideStatusCode(v int32) {
+// SetOverrideStatusCode gets a reference to the given int64 and assigns it to the OverrideStatusCode field.
+func (o *AddAvailabilityStateHttpServletExtensionRequest) SetOverrideStatusCode(v int64) {
 	o.OverrideStatusCode = &v
 }
 

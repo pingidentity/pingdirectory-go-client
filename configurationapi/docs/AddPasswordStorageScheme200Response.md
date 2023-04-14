@@ -6,39 +6,39 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | Name of the Password Storage Scheme | 
 **Schemas** | [**[]EnumscryptPasswordStorageSchemeSchemaUrn**](EnumscryptPasswordStorageSchemeSchemaUrn.md) |  | 
-**IterationCount** | **int32** | Specifies the number of iterations to use when encoding passwords. The value must be greater than or equal to 1000. | 
-**ParallelismFactor** | **int32** | The number of concurrent threads that will be used in the course of encoding each password. | 
-**MemoryUsageKb** | **int32** | The number of kilobytes of memory that must be used in the course of encoding each password. | 
-**SaltLengthBytes** | **int32** | Specifies the number of bytes to use for the generated salt. The value must be greater than or equal to 8. | 
-**DerivedKeyLengthBytes** | **int32** | Specifies the number of bytes to use for the derived key. The value must be greater than or equal to 8. | 
+**IterationCount** | **int64** | Specifies the number of iterations to use when encoding passwords. The value must be greater than or equal to 1000. | 
+**ParallelismFactor** | **int64** | The number of concurrent threads that will be used in the course of encoding each password. | 
+**MemoryUsageKb** | **int64** | The number of kilobytes of memory that must be used in the course of encoding each password. | 
+**SaltLengthBytes** | **int64** | Specifies the number of bytes to use for the generated salt. The value must be greater than or equal to 8. | 
+**DerivedKeyLengthBytes** | **int64** | Specifies the number of bytes to use for the derived key. The value must be greater than or equal to 8. | 
 **Description** | Pointer to **string** | A description for this Password Storage Scheme | [optional] 
 **Enabled** | **bool** | Indicates whether the Password Storage Scheme is enabled for use. | 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **PasswordEncodingMechanism** | Pointer to [**EnumpasswordStorageSchemePasswordEncodingMechanismProp**](EnumpasswordStorageSchemePasswordEncodingMechanismProp.md) |  | [optional] 
-**NumDigestRounds** | Pointer to **int32** | Specifies the number of digest rounds to use for the SHA-2 encodings. This will not be used for the legacy or MD5-based encodings. | [optional] 
-**MaxPasswordLength** | Pointer to **int32** | Specifies the maximum allowed length, in bytes, for passwords encoded with this scheme, which can help mitigate denial of service attacks from clients that attempt to bind with very long passwords. | [optional] 
+**NumDigestRounds** | Pointer to **int64** | Specifies the number of digest rounds to use for the SHA-2 encodings. This will not be used for the legacy or MD5-based encodings. | [optional] 
+**MaxPasswordLength** | Pointer to **int64** | Specifies the maximum allowed length, in bytes, for passwords encoded with this scheme, which can help mitigate denial of service attacks from clients that attempt to bind with very long passwords. | [optional] 
 **VaultExternalServer** | **string** | An external server definition with information needed to connect and authenticate to the Vault instance containing the passphrase. | 
 **DefaultField** | Pointer to **string** | The default name of the field in JSON objects contained in the AWS Secrets Manager service that contains the password for the target user. | [optional] 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Enhanced Password Storage Scheme. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Enhanced Password Storage Scheme. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **DigestAlgorithm** | Pointer to [**EnumpasswordStorageSchemeDigestAlgorithmProp**](EnumpasswordStorageSchemeDigestAlgorithmProp.md) |  | [optional] 
 **EncryptionSettingsDefinitionID** | Pointer to **string** | The identifier for the encryption settings definition that should be used to derive the encryption key to use when encrypting new passwords. If this is not provided, the server&#39;s preferred encryption settings definition will be used. | [optional] 
-**BcryptCostFactor** | Pointer to **int32** | Specifies the cost factor to use when encoding passwords with Bcrypt. A higher cost factor requires more processing to generate a password, which makes attacks against the password more expensive. | [optional] 
+**BcryptCostFactor** | Pointer to **int64** | Specifies the cost factor to use when encoding passwords with Bcrypt. A higher cost factor requires more processing to generate a password, which makes attacks against the password more expensive. | [optional] 
 **AwsExternalServer** | **string** | The external server with information to use when interacting with the AWS Secrets Manager service. | 
 **KeyVaultURI** | **string** | The URI that identifies the Azure Key Vault from which the secret is to be retrieved. | 
 **AzureAuthenticationMethod** | **string** | The mechanism used to authenticate to the Azure service. | 
 **HttpProxyExternalServer** | Pointer to **string** | A reference to an HTTP proxy server that should be used for requests sent to the Azure service. | [optional] 
 **ConjurExternalServer** | **string** | An external server definition with information needed to connect and authenticate to the Conjur instance containing user passwords. | 
-**ScryptCpuMemoryCostFactorExponent** | Pointer to **int32** | Specifies the exponent that should be used for the CPU/memory cost factor. The cost factor must be a power of two, so the value of this property represents the power to which two is raised. The CPU/memory cost factor specifies the number of iterations required for encoding the password, and also affects the amount of memory required during processing. A higher cost factor requires more processing and more memory to generate a password, which makes attacks against the password more expensive. | [optional] 
-**ScryptBlockSize** | Pointer to **int32** | Specifies the block size for the digest that will be used in the course of encoding passwords. Increasing the block size while keeping the CPU/memory cost factor constant will increase the amount of memory required to encode a password, but it also increases the ratio of sequential memory access to random memory access (and sequential memory access is generally faster than random memory access). | [optional] 
-**ScryptParallelizationParameter** | Pointer to **int32** | Specifies the number of times that scrypt has to perform the entire encoding process to produce the final result. | [optional] 
+**ScryptCpuMemoryCostFactorExponent** | Pointer to **int64** | Specifies the exponent that should be used for the CPU/memory cost factor. The cost factor must be a power of two, so the value of this property represents the power to which two is raised. The CPU/memory cost factor specifies the number of iterations required for encoding the password, and also affects the amount of memory required during processing. A higher cost factor requires more processing and more memory to generate a password, which makes attacks against the password more expensive. | [optional] 
+**ScryptBlockSize** | Pointer to **int64** | Specifies the block size for the digest that will be used in the course of encoding passwords. Increasing the block size while keeping the CPU/memory cost factor constant will increase the amount of memory required to encode a password, but it also increases the ratio of sequential memory access to random memory access (and sequential memory access is generally faster than random memory access). | [optional] 
+**ScryptParallelizationParameter** | Pointer to **int64** | Specifies the number of times that scrypt has to perform the entire encoding process to produce the final result. | [optional] 
 
 ## Methods
 
 ### NewAddPasswordStorageScheme200Response
 
-`func NewAddPasswordStorageScheme200Response(id string, schemas []EnumscryptPasswordStorageSchemeSchemaUrn, iterationCount int32, parallelismFactor int32, memoryUsageKb int32, saltLengthBytes int32, derivedKeyLengthBytes int32, enabled bool, vaultExternalServer string, extensionClass string, awsExternalServer string, keyVaultURI string, azureAuthenticationMethod string, conjurExternalServer string, ) *AddPasswordStorageScheme200Response`
+`func NewAddPasswordStorageScheme200Response(id string, schemas []EnumscryptPasswordStorageSchemeSchemaUrn, iterationCount int64, parallelismFactor int64, memoryUsageKb int64, saltLengthBytes int64, derivedKeyLengthBytes int64, enabled bool, vaultExternalServer string, extensionClass string, awsExternalServer string, keyVaultURI string, azureAuthenticationMethod string, conjurExternalServer string, ) *AddPasswordStorageScheme200Response`
 
 NewAddPasswordStorageScheme200Response instantiates a new AddPasswordStorageScheme200Response object
 This constructor will assign default values to properties that have it defined,
@@ -95,100 +95,100 @@ SetSchemas sets Schemas field to given value.
 
 ### GetIterationCount
 
-`func (o *AddPasswordStorageScheme200Response) GetIterationCount() int32`
+`func (o *AddPasswordStorageScheme200Response) GetIterationCount() int64`
 
 GetIterationCount returns the IterationCount field if non-nil, zero value otherwise.
 
 ### GetIterationCountOk
 
-`func (o *AddPasswordStorageScheme200Response) GetIterationCountOk() (*int32, bool)`
+`func (o *AddPasswordStorageScheme200Response) GetIterationCountOk() (*int64, bool)`
 
 GetIterationCountOk returns a tuple with the IterationCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIterationCount
 
-`func (o *AddPasswordStorageScheme200Response) SetIterationCount(v int32)`
+`func (o *AddPasswordStorageScheme200Response) SetIterationCount(v int64)`
 
 SetIterationCount sets IterationCount field to given value.
 
 
 ### GetParallelismFactor
 
-`func (o *AddPasswordStorageScheme200Response) GetParallelismFactor() int32`
+`func (o *AddPasswordStorageScheme200Response) GetParallelismFactor() int64`
 
 GetParallelismFactor returns the ParallelismFactor field if non-nil, zero value otherwise.
 
 ### GetParallelismFactorOk
 
-`func (o *AddPasswordStorageScheme200Response) GetParallelismFactorOk() (*int32, bool)`
+`func (o *AddPasswordStorageScheme200Response) GetParallelismFactorOk() (*int64, bool)`
 
 GetParallelismFactorOk returns a tuple with the ParallelismFactor field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetParallelismFactor
 
-`func (o *AddPasswordStorageScheme200Response) SetParallelismFactor(v int32)`
+`func (o *AddPasswordStorageScheme200Response) SetParallelismFactor(v int64)`
 
 SetParallelismFactor sets ParallelismFactor field to given value.
 
 
 ### GetMemoryUsageKb
 
-`func (o *AddPasswordStorageScheme200Response) GetMemoryUsageKb() int32`
+`func (o *AddPasswordStorageScheme200Response) GetMemoryUsageKb() int64`
 
 GetMemoryUsageKb returns the MemoryUsageKb field if non-nil, zero value otherwise.
 
 ### GetMemoryUsageKbOk
 
-`func (o *AddPasswordStorageScheme200Response) GetMemoryUsageKbOk() (*int32, bool)`
+`func (o *AddPasswordStorageScheme200Response) GetMemoryUsageKbOk() (*int64, bool)`
 
 GetMemoryUsageKbOk returns a tuple with the MemoryUsageKb field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMemoryUsageKb
 
-`func (o *AddPasswordStorageScheme200Response) SetMemoryUsageKb(v int32)`
+`func (o *AddPasswordStorageScheme200Response) SetMemoryUsageKb(v int64)`
 
 SetMemoryUsageKb sets MemoryUsageKb field to given value.
 
 
 ### GetSaltLengthBytes
 
-`func (o *AddPasswordStorageScheme200Response) GetSaltLengthBytes() int32`
+`func (o *AddPasswordStorageScheme200Response) GetSaltLengthBytes() int64`
 
 GetSaltLengthBytes returns the SaltLengthBytes field if non-nil, zero value otherwise.
 
 ### GetSaltLengthBytesOk
 
-`func (o *AddPasswordStorageScheme200Response) GetSaltLengthBytesOk() (*int32, bool)`
+`func (o *AddPasswordStorageScheme200Response) GetSaltLengthBytesOk() (*int64, bool)`
 
 GetSaltLengthBytesOk returns a tuple with the SaltLengthBytes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSaltLengthBytes
 
-`func (o *AddPasswordStorageScheme200Response) SetSaltLengthBytes(v int32)`
+`func (o *AddPasswordStorageScheme200Response) SetSaltLengthBytes(v int64)`
 
 SetSaltLengthBytes sets SaltLengthBytes field to given value.
 
 
 ### GetDerivedKeyLengthBytes
 
-`func (o *AddPasswordStorageScheme200Response) GetDerivedKeyLengthBytes() int32`
+`func (o *AddPasswordStorageScheme200Response) GetDerivedKeyLengthBytes() int64`
 
 GetDerivedKeyLengthBytes returns the DerivedKeyLengthBytes field if non-nil, zero value otherwise.
 
 ### GetDerivedKeyLengthBytesOk
 
-`func (o *AddPasswordStorageScheme200Response) GetDerivedKeyLengthBytesOk() (*int32, bool)`
+`func (o *AddPasswordStorageScheme200Response) GetDerivedKeyLengthBytesOk() (*int64, bool)`
 
 GetDerivedKeyLengthBytesOk returns a tuple with the DerivedKeyLengthBytes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDerivedKeyLengthBytes
 
-`func (o *AddPasswordStorageScheme200Response) SetDerivedKeyLengthBytes(v int32)`
+`func (o *AddPasswordStorageScheme200Response) SetDerivedKeyLengthBytes(v int64)`
 
 SetDerivedKeyLengthBytes sets DerivedKeyLengthBytes field to given value.
 
@@ -315,20 +315,20 @@ HasPasswordEncodingMechanism returns a boolean if a field has been set.
 
 ### GetNumDigestRounds
 
-`func (o *AddPasswordStorageScheme200Response) GetNumDigestRounds() int32`
+`func (o *AddPasswordStorageScheme200Response) GetNumDigestRounds() int64`
 
 GetNumDigestRounds returns the NumDigestRounds field if non-nil, zero value otherwise.
 
 ### GetNumDigestRoundsOk
 
-`func (o *AddPasswordStorageScheme200Response) GetNumDigestRoundsOk() (*int32, bool)`
+`func (o *AddPasswordStorageScheme200Response) GetNumDigestRoundsOk() (*int64, bool)`
 
 GetNumDigestRoundsOk returns a tuple with the NumDigestRounds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNumDigestRounds
 
-`func (o *AddPasswordStorageScheme200Response) SetNumDigestRounds(v int32)`
+`func (o *AddPasswordStorageScheme200Response) SetNumDigestRounds(v int64)`
 
 SetNumDigestRounds sets NumDigestRounds field to given value.
 
@@ -340,20 +340,20 @@ HasNumDigestRounds returns a boolean if a field has been set.
 
 ### GetMaxPasswordLength
 
-`func (o *AddPasswordStorageScheme200Response) GetMaxPasswordLength() int32`
+`func (o *AddPasswordStorageScheme200Response) GetMaxPasswordLength() int64`
 
 GetMaxPasswordLength returns the MaxPasswordLength field if non-nil, zero value otherwise.
 
 ### GetMaxPasswordLengthOk
 
-`func (o *AddPasswordStorageScheme200Response) GetMaxPasswordLengthOk() (*int32, bool)`
+`func (o *AddPasswordStorageScheme200Response) GetMaxPasswordLengthOk() (*int64, bool)`
 
 GetMaxPasswordLengthOk returns a tuple with the MaxPasswordLength field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxPasswordLength
 
-`func (o *AddPasswordStorageScheme200Response) SetMaxPasswordLength(v int32)`
+`func (o *AddPasswordStorageScheme200Response) SetMaxPasswordLength(v int64)`
 
 SetMaxPasswordLength sets MaxPasswordLength field to given value.
 
@@ -505,20 +505,20 @@ HasEncryptionSettingsDefinitionID returns a boolean if a field has been set.
 
 ### GetBcryptCostFactor
 
-`func (o *AddPasswordStorageScheme200Response) GetBcryptCostFactor() int32`
+`func (o *AddPasswordStorageScheme200Response) GetBcryptCostFactor() int64`
 
 GetBcryptCostFactor returns the BcryptCostFactor field if non-nil, zero value otherwise.
 
 ### GetBcryptCostFactorOk
 
-`func (o *AddPasswordStorageScheme200Response) GetBcryptCostFactorOk() (*int32, bool)`
+`func (o *AddPasswordStorageScheme200Response) GetBcryptCostFactorOk() (*int64, bool)`
 
 GetBcryptCostFactorOk returns a tuple with the BcryptCostFactor field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBcryptCostFactor
 
-`func (o *AddPasswordStorageScheme200Response) SetBcryptCostFactor(v int32)`
+`func (o *AddPasswordStorageScheme200Response) SetBcryptCostFactor(v int64)`
 
 SetBcryptCostFactor sets BcryptCostFactor field to given value.
 
@@ -635,20 +635,20 @@ SetConjurExternalServer sets ConjurExternalServer field to given value.
 
 ### GetScryptCpuMemoryCostFactorExponent
 
-`func (o *AddPasswordStorageScheme200Response) GetScryptCpuMemoryCostFactorExponent() int32`
+`func (o *AddPasswordStorageScheme200Response) GetScryptCpuMemoryCostFactorExponent() int64`
 
 GetScryptCpuMemoryCostFactorExponent returns the ScryptCpuMemoryCostFactorExponent field if non-nil, zero value otherwise.
 
 ### GetScryptCpuMemoryCostFactorExponentOk
 
-`func (o *AddPasswordStorageScheme200Response) GetScryptCpuMemoryCostFactorExponentOk() (*int32, bool)`
+`func (o *AddPasswordStorageScheme200Response) GetScryptCpuMemoryCostFactorExponentOk() (*int64, bool)`
 
 GetScryptCpuMemoryCostFactorExponentOk returns a tuple with the ScryptCpuMemoryCostFactorExponent field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetScryptCpuMemoryCostFactorExponent
 
-`func (o *AddPasswordStorageScheme200Response) SetScryptCpuMemoryCostFactorExponent(v int32)`
+`func (o *AddPasswordStorageScheme200Response) SetScryptCpuMemoryCostFactorExponent(v int64)`
 
 SetScryptCpuMemoryCostFactorExponent sets ScryptCpuMemoryCostFactorExponent field to given value.
 
@@ -660,20 +660,20 @@ HasScryptCpuMemoryCostFactorExponent returns a boolean if a field has been set.
 
 ### GetScryptBlockSize
 
-`func (o *AddPasswordStorageScheme200Response) GetScryptBlockSize() int32`
+`func (o *AddPasswordStorageScheme200Response) GetScryptBlockSize() int64`
 
 GetScryptBlockSize returns the ScryptBlockSize field if non-nil, zero value otherwise.
 
 ### GetScryptBlockSizeOk
 
-`func (o *AddPasswordStorageScheme200Response) GetScryptBlockSizeOk() (*int32, bool)`
+`func (o *AddPasswordStorageScheme200Response) GetScryptBlockSizeOk() (*int64, bool)`
 
 GetScryptBlockSizeOk returns a tuple with the ScryptBlockSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetScryptBlockSize
 
-`func (o *AddPasswordStorageScheme200Response) SetScryptBlockSize(v int32)`
+`func (o *AddPasswordStorageScheme200Response) SetScryptBlockSize(v int64)`
 
 SetScryptBlockSize sets ScryptBlockSize field to given value.
 
@@ -685,20 +685,20 @@ HasScryptBlockSize returns a boolean if a field has been set.
 
 ### GetScryptParallelizationParameter
 
-`func (o *AddPasswordStorageScheme200Response) GetScryptParallelizationParameter() int32`
+`func (o *AddPasswordStorageScheme200Response) GetScryptParallelizationParameter() int64`
 
 GetScryptParallelizationParameter returns the ScryptParallelizationParameter field if non-nil, zero value otherwise.
 
 ### GetScryptParallelizationParameterOk
 
-`func (o *AddPasswordStorageScheme200Response) GetScryptParallelizationParameterOk() (*int32, bool)`
+`func (o *AddPasswordStorageScheme200Response) GetScryptParallelizationParameterOk() (*int64, bool)`
 
 GetScryptParallelizationParameterOk returns a tuple with the ScryptParallelizationParameter field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetScryptParallelizationParameter
 
-`func (o *AddPasswordStorageScheme200Response) SetScryptParallelizationParameter(v int32)`
+`func (o *AddPasswordStorageScheme200Response) SetScryptParallelizationParameter(v int64)`
 
 SetScryptParallelizationParameter sets ScryptParallelizationParameter field to given value.
 

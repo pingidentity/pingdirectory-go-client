@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumsnmpSubagentPluginSchemaUrn**](EnumsnmpSubagentPluginSchemaUrn.md) |  | 
 **ContextName** | Pointer to **string** | The SNMP context name for this sub-agent. The context name must not be longer than 30 ASCII characters. Each server in a topology must have a unique SNMP context name. | [optional] 
 **AgentxAddress** | **string** | The hostname or IP address of the SNMP master agent. | 
-**AgentxPort** | **int32** | The port number on which the SNMP master agent will be contacted. | 
-**NumWorkerThreads** | Pointer to **int32** | The number of worker threads to use to handle SNMP requests. | [optional] 
+**AgentxPort** | **int64** | The port number on which the SNMP master agent will be contacted. | 
+**NumWorkerThreads** | Pointer to **int64** | The number of worker threads to use to handle SNMP requests. | [optional] 
 **SessionTimeout** | Pointer to **string** | Specifies the maximum amount of time to wait for a session to the master agent to be established. | [optional] 
 **ConnectRetryMaxWait** | Pointer to **string** | The maximum amount of time to wait between attempts to establish a connection to the master agent. | [optional] 
 **PingInterval** | Pointer to **string** | The amount of time between consecutive pings sent by the sub-agent on its connection to the master agent. A value of zero disables the sending of pings by the sub-agent. | [optional] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewSnmpSubagentPluginResponse
 
-`func NewSnmpSubagentPluginResponse(id string, schemas []EnumsnmpSubagentPluginSchemaUrn, agentxAddress string, agentxPort int32, enabled bool, ) *SnmpSubagentPluginResponse`
+`func NewSnmpSubagentPluginResponse(id string, schemas []EnumsnmpSubagentPluginSchemaUrn, agentxAddress string, agentxPort int64, enabled bool, ) *SnmpSubagentPluginResponse`
 
 NewSnmpSubagentPluginResponse instantiates a new SnmpSubagentPluginResponse object
 This constructor will assign default values to properties that have it defined,
@@ -125,40 +125,40 @@ SetAgentxAddress sets AgentxAddress field to given value.
 
 ### GetAgentxPort
 
-`func (o *SnmpSubagentPluginResponse) GetAgentxPort() int32`
+`func (o *SnmpSubagentPluginResponse) GetAgentxPort() int64`
 
 GetAgentxPort returns the AgentxPort field if non-nil, zero value otherwise.
 
 ### GetAgentxPortOk
 
-`func (o *SnmpSubagentPluginResponse) GetAgentxPortOk() (*int32, bool)`
+`func (o *SnmpSubagentPluginResponse) GetAgentxPortOk() (*int64, bool)`
 
 GetAgentxPortOk returns a tuple with the AgentxPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAgentxPort
 
-`func (o *SnmpSubagentPluginResponse) SetAgentxPort(v int32)`
+`func (o *SnmpSubagentPluginResponse) SetAgentxPort(v int64)`
 
 SetAgentxPort sets AgentxPort field to given value.
 
 
 ### GetNumWorkerThreads
 
-`func (o *SnmpSubagentPluginResponse) GetNumWorkerThreads() int32`
+`func (o *SnmpSubagentPluginResponse) GetNumWorkerThreads() int64`
 
 GetNumWorkerThreads returns the NumWorkerThreads field if non-nil, zero value otherwise.
 
 ### GetNumWorkerThreadsOk
 
-`func (o *SnmpSubagentPluginResponse) GetNumWorkerThreadsOk() (*int32, bool)`
+`func (o *SnmpSubagentPluginResponse) GetNumWorkerThreadsOk() (*int64, bool)`
 
 GetNumWorkerThreadsOk returns a tuple with the NumWorkerThreads field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNumWorkerThreads
 
-`func (o *SnmpSubagentPluginResponse) SetNumWorkerThreads(v int32)`
+`func (o *SnmpSubagentPluginResponse) SetNumWorkerThreads(v int64)`
 
 SetNumWorkerThreads sets NumWorkerThreads field to given value.
 

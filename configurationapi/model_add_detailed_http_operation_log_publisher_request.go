@@ -81,9 +81,9 @@ type AddDetailedHttpOperationLogPublisherRequest struct {
 	// Specifies the log file buffer size.
 	BufferSize *string `json:"bufferSize,omitempty"`
 	// Specifies the maximum length of any individual string that should be logged. If a log message includes a string longer than this number of characters, it will be truncated. A value of zero indicates that no truncation will be used.
-	MaxStringLength *int32 `json:"maxStringLength,omitempty"`
+	MaxStringLength *int64 `json:"maxStringLength,omitempty"`
 	// The maximum number of log records that can be stored in the asynchronous queue.
-	QueueSize *int32 `json:"queueSize,omitempty"`
+	QueueSize *int64 `json:"queueSize,omitempty"`
 	// Specifies the interval at which to check whether the log files need to be rotated.
 	TimeInterval *string `json:"timeInterval,omitempty"`
 	// A description for this Log Publisher
@@ -1147,9 +1147,9 @@ func (o *AddDetailedHttpOperationLogPublisherRequest) SetBufferSize(v string) {
 }
 
 // GetMaxStringLength returns the MaxStringLength field value if set, zero value otherwise.
-func (o *AddDetailedHttpOperationLogPublisherRequest) GetMaxStringLength() int32 {
+func (o *AddDetailedHttpOperationLogPublisherRequest) GetMaxStringLength() int64 {
 	if o == nil || IsNil(o.MaxStringLength) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxStringLength
@@ -1157,7 +1157,7 @@ func (o *AddDetailedHttpOperationLogPublisherRequest) GetMaxStringLength() int32
 
 // GetMaxStringLengthOk returns a tuple with the MaxStringLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddDetailedHttpOperationLogPublisherRequest) GetMaxStringLengthOk() (*int32, bool) {
+func (o *AddDetailedHttpOperationLogPublisherRequest) GetMaxStringLengthOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxStringLength) {
 		return nil, false
 	}
@@ -1173,15 +1173,15 @@ func (o *AddDetailedHttpOperationLogPublisherRequest) HasMaxStringLength() bool 
 	return false
 }
 
-// SetMaxStringLength gets a reference to the given int32 and assigns it to the MaxStringLength field.
-func (o *AddDetailedHttpOperationLogPublisherRequest) SetMaxStringLength(v int32) {
+// SetMaxStringLength gets a reference to the given int64 and assigns it to the MaxStringLength field.
+func (o *AddDetailedHttpOperationLogPublisherRequest) SetMaxStringLength(v int64) {
 	o.MaxStringLength = &v
 }
 
 // GetQueueSize returns the QueueSize field value if set, zero value otherwise.
-func (o *AddDetailedHttpOperationLogPublisherRequest) GetQueueSize() int32 {
+func (o *AddDetailedHttpOperationLogPublisherRequest) GetQueueSize() int64 {
 	if o == nil || IsNil(o.QueueSize) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.QueueSize
@@ -1189,7 +1189,7 @@ func (o *AddDetailedHttpOperationLogPublisherRequest) GetQueueSize() int32 {
 
 // GetQueueSizeOk returns a tuple with the QueueSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddDetailedHttpOperationLogPublisherRequest) GetQueueSizeOk() (*int32, bool) {
+func (o *AddDetailedHttpOperationLogPublisherRequest) GetQueueSizeOk() (*int64, bool) {
 	if o == nil || IsNil(o.QueueSize) {
 		return nil, false
 	}
@@ -1205,8 +1205,8 @@ func (o *AddDetailedHttpOperationLogPublisherRequest) HasQueueSize() bool {
 	return false
 }
 
-// SetQueueSize gets a reference to the given int32 and assigns it to the QueueSize field.
-func (o *AddDetailedHttpOperationLogPublisherRequest) SetQueueSize(v int32) {
+// SetQueueSize gets a reference to the given int64 and assigns it to the QueueSize field.
+func (o *AddDetailedHttpOperationLogPublisherRequest) SetQueueSize(v int64) {
 	o.QueueSize = &v
 }
 

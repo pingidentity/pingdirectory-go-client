@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **SuppressIfIdle** | **bool** | If the server is idle during the specified interval, then do not log any output if this property is set to true. The server is idle if during the interval, no new connections were established, no operations were processed, and no operations are pending. | 
 **HeaderPrefixPerColumn** | Pointer to **bool** | This property controls whether the header prefix, which applies to a group of columns, appears at the start of each column header or only the first column in a group. | [optional] 
 **EmptyInsteadOfZero** | Pointer to **bool** | This property controls whether a value in the output is shown as empty if the value is zero. | [optional] 
-**LinesBetweenHeader** | **int32** | The number of lines to log between logging the header line that summarizes the columns in the table. | 
+**LinesBetweenHeader** | **int64** | The number of lines to log between logging the header line that summarizes the columns in the table. | 
 **IncludedLDAPStat** | Pointer to [**[]EnumpluginIncludedLDAPStatProp**](EnumpluginIncludedLDAPStatProp.md) |  | [optional] 
 **IncludedResourceStat** | Pointer to [**[]EnumpluginIncludedResourceStatProp**](EnumpluginIncludedResourceStatProp.md) |  | [optional] 
 **HistogramFormat** | [**EnumpluginHistogramFormatProp**](EnumpluginHistogramFormatProp.md) |  | 
@@ -42,7 +42,7 @@ Name | Type | Description | Notes
 
 ### NewPeriodicStatsLoggerPluginResponse
 
-`func NewPeriodicStatsLoggerPluginResponse(id string, schemas []EnumperiodicStatsLoggerPluginSchemaUrn, logInterval string, collectionInterval string, suppressIfIdle bool, linesBetweenHeader int32, histogramFormat EnumpluginHistogramFormatProp, logFile string, logFilePermissions string, rotationPolicy []string, retentionPolicy []string, enabled bool, ) *PeriodicStatsLoggerPluginResponse`
+`func NewPeriodicStatsLoggerPluginResponse(id string, schemas []EnumperiodicStatsLoggerPluginSchemaUrn, logInterval string, collectionInterval string, suppressIfIdle bool, linesBetweenHeader int64, histogramFormat EnumpluginHistogramFormatProp, logFile string, logFilePermissions string, rotationPolicy []string, retentionPolicy []string, enabled bool, ) *PeriodicStatsLoggerPluginResponse`
 
 NewPeriodicStatsLoggerPluginResponse instantiates a new PeriodicStatsLoggerPluginResponse object
 This constructor will assign default values to properties that have it defined,
@@ -209,20 +209,20 @@ HasEmptyInsteadOfZero returns a boolean if a field has been set.
 
 ### GetLinesBetweenHeader
 
-`func (o *PeriodicStatsLoggerPluginResponse) GetLinesBetweenHeader() int32`
+`func (o *PeriodicStatsLoggerPluginResponse) GetLinesBetweenHeader() int64`
 
 GetLinesBetweenHeader returns the LinesBetweenHeader field if non-nil, zero value otherwise.
 
 ### GetLinesBetweenHeaderOk
 
-`func (o *PeriodicStatsLoggerPluginResponse) GetLinesBetweenHeaderOk() (*int32, bool)`
+`func (o *PeriodicStatsLoggerPluginResponse) GetLinesBetweenHeaderOk() (*int64, bool)`
 
 GetLinesBetweenHeaderOk returns a tuple with the LinesBetweenHeader field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinesBetweenHeader
 
-`func (o *PeriodicStatsLoggerPluginResponse) SetLinesBetweenHeader(v int32)`
+`func (o *PeriodicStatsLoggerPluginResponse) SetLinesBetweenHeader(v int64)`
 
 SetLinesBetweenHeader sets LinesBetweenHeader field to given value.
 

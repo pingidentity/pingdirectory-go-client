@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **LoaderName** | **string** | Name of the new Velocity Template Loader | 
 **Schemas** | Pointer to [**[]EnumvelocityTemplateLoaderSchemaUrn**](EnumvelocityTemplateLoaderSchemaUrn.md) |  | [optional] 
 **Enabled** | Pointer to **bool** | Indicates whether this Velocity Template Loader is enabled. | [optional] 
-**EvaluationOrderIndex** | Pointer to **int32** | This property determines the evaluation order for determining the correct Velocity Template Loader to load a template for generating content for a particular request. | [optional] 
+**EvaluationOrderIndex** | Pointer to **int64** | This property determines the evaluation order for determining the correct Velocity Template Loader to load a template for generating content for a particular request. | [optional] 
 **MimeTypeMatcher** | **string** | Specifies a media type for matching Accept request-header values. | 
 **MimeType** | Pointer to **string** | Specifies a the value that will be used in the response&#39;s Content-Type header that indicates the type of content to return. | [optional] 
 **TemplateSuffix** | Pointer to **string** | Specifies the suffix to append to the requested resource name when searching for the template file with which to form a response. | [optional] 
@@ -104,20 +104,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetEvaluationOrderIndex
 
-`func (o *AddVelocityTemplateLoaderRequest) GetEvaluationOrderIndex() int32`
+`func (o *AddVelocityTemplateLoaderRequest) GetEvaluationOrderIndex() int64`
 
 GetEvaluationOrderIndex returns the EvaluationOrderIndex field if non-nil, zero value otherwise.
 
 ### GetEvaluationOrderIndexOk
 
-`func (o *AddVelocityTemplateLoaderRequest) GetEvaluationOrderIndexOk() (*int32, bool)`
+`func (o *AddVelocityTemplateLoaderRequest) GetEvaluationOrderIndexOk() (*int64, bool)`
 
 GetEvaluationOrderIndexOk returns a tuple with the EvaluationOrderIndex field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvaluationOrderIndex
 
-`func (o *AddVelocityTemplateLoaderRequest) SetEvaluationOrderIndex(v int32)`
+`func (o *AddVelocityTemplateLoaderRequest) SetEvaluationOrderIndex(v int64)`
 
 SetEvaluationOrderIndex sets EvaluationOrderIndex field to given value.
 

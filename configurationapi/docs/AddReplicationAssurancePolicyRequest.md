@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Schemas** | Pointer to [**[]EnumreplicationAssurancePolicySchemaUrn**](EnumreplicationAssurancePolicySchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | Description of the Replication Assurance Policy. | [optional] 
 **Enabled** | Pointer to **bool** | Indicates whether this Replication Assurance Policy is enabled for use in the server. If a Replication Assurance Policy is disabled, then no new operations will be associated with it. | [optional] 
-**EvaluationOrderIndex** | **int32** | When multiple Replication Assurance Policies are defined, this property determines the evaluation order for finding a Replication Assurance Policy match against an operation. Policies are evaluated based on this index from least to greatest. Values of this property must be unique but not necessarily contiguous. | 
+**EvaluationOrderIndex** | **int64** | When multiple Replication Assurance Policies are defined, this property determines the evaluation order for finding a Replication Assurance Policy match against an operation. Policies are evaluated based on this index from least to greatest. Values of this property must be unique but not necessarily contiguous. | 
 **LocalLevel** | Pointer to [**EnumreplicationAssurancePolicyLocalLevelProp**](EnumreplicationAssurancePolicyLocalLevelProp.md) |  | [optional] 
 **RemoteLevel** | Pointer to [**EnumreplicationAssurancePolicyRemoteLevelProp**](EnumreplicationAssurancePolicyRemoteLevelProp.md) |  | [optional] 
 **Timeout** | **string** | Specifies the maximum length of time to wait for the replication assurance requirements to be met before timing out and replying to the client. | 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewAddReplicationAssurancePolicyRequest
 
-`func NewAddReplicationAssurancePolicyRequest(policyName string, evaluationOrderIndex int32, timeout string, ) *AddReplicationAssurancePolicyRequest`
+`func NewAddReplicationAssurancePolicyRequest(policyName string, evaluationOrderIndex int64, timeout string, ) *AddReplicationAssurancePolicyRequest`
 
 NewAddReplicationAssurancePolicyRequest instantiates a new AddReplicationAssurancePolicyRequest object
 This constructor will assign default values to properties that have it defined,
@@ -131,20 +131,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetEvaluationOrderIndex
 
-`func (o *AddReplicationAssurancePolicyRequest) GetEvaluationOrderIndex() int32`
+`func (o *AddReplicationAssurancePolicyRequest) GetEvaluationOrderIndex() int64`
 
 GetEvaluationOrderIndex returns the EvaluationOrderIndex field if non-nil, zero value otherwise.
 
 ### GetEvaluationOrderIndexOk
 
-`func (o *AddReplicationAssurancePolicyRequest) GetEvaluationOrderIndexOk() (*int32, bool)`
+`func (o *AddReplicationAssurancePolicyRequest) GetEvaluationOrderIndexOk() (*int64, bool)`
 
 GetEvaluationOrderIndexOk returns a tuple with the EvaluationOrderIndex field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvaluationOrderIndex
 
-`func (o *AddReplicationAssurancePolicyRequest) SetEvaluationOrderIndex(v int32)`
+`func (o *AddReplicationAssurancePolicyRequest) SetEvaluationOrderIndex(v int64)`
 
 SetEvaluationOrderIndex sets EvaluationOrderIndex field to given value.
 

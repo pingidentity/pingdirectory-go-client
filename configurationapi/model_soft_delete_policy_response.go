@@ -31,7 +31,7 @@ type SoftDeletePolicyResponse struct {
 	// Specifies the maximum length of time that soft delete entries are retained before they are eligible to purged automatically.
 	SoftDeleteRetentionTime *string `json:"softDeleteRetentionTime,omitempty"`
 	// Specifies the number of soft deleted entries to retain before the oldest entries are purged.
-	SoftDeleteRetainNumberOfEntries               *int32                                             `json:"softDeleteRetainNumberOfEntries,omitempty"`
+	SoftDeleteRetainNumberOfEntries               *int64                                             `json:"softDeleteRetainNumberOfEntries,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 }
@@ -239,9 +239,9 @@ func (o *SoftDeletePolicyResponse) SetSoftDeleteRetentionTime(v string) {
 }
 
 // GetSoftDeleteRetainNumberOfEntries returns the SoftDeleteRetainNumberOfEntries field value if set, zero value otherwise.
-func (o *SoftDeletePolicyResponse) GetSoftDeleteRetainNumberOfEntries() int32 {
+func (o *SoftDeletePolicyResponse) GetSoftDeleteRetainNumberOfEntries() int64 {
 	if o == nil || IsNil(o.SoftDeleteRetainNumberOfEntries) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SoftDeleteRetainNumberOfEntries
@@ -249,7 +249,7 @@ func (o *SoftDeletePolicyResponse) GetSoftDeleteRetainNumberOfEntries() int32 {
 
 // GetSoftDeleteRetainNumberOfEntriesOk returns a tuple with the SoftDeleteRetainNumberOfEntries field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SoftDeletePolicyResponse) GetSoftDeleteRetainNumberOfEntriesOk() (*int32, bool) {
+func (o *SoftDeletePolicyResponse) GetSoftDeleteRetainNumberOfEntriesOk() (*int64, bool) {
 	if o == nil || IsNil(o.SoftDeleteRetainNumberOfEntries) {
 		return nil, false
 	}
@@ -265,8 +265,8 @@ func (o *SoftDeletePolicyResponse) HasSoftDeleteRetainNumberOfEntries() bool {
 	return false
 }
 
-// SetSoftDeleteRetainNumberOfEntries gets a reference to the given int32 and assigns it to the SoftDeleteRetainNumberOfEntries field.
-func (o *SoftDeletePolicyResponse) SetSoftDeleteRetainNumberOfEntries(v int32) {
+// SetSoftDeleteRetainNumberOfEntries gets a reference to the given int64 and assigns it to the SoftDeleteRetainNumberOfEntries field.
+func (o *SoftDeletePolicyResponse) SetSoftDeleteRetainNumberOfEntries(v int64) {
 	o.SoftDeleteRetainNumberOfEntries = &v
 }
 

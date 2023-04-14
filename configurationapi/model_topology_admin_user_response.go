@@ -48,13 +48,13 @@ type TopologyAdminUserResponse struct {
 	InheritDefaultRootPrivileges bool                                 `json:"inheritDefaultRootPrivileges"`
 	Privilege                    []EnumtopologyAdminUserPrivilegeProp `json:"privilege,omitempty"`
 	// Specifies the maximum number of entries that the server may return to the user in response to any single search request. A value of 0 indicates no limit should be enforced. This is stored in the ds-rlim-size-limit LDAP attribute.
-	SearchResultEntryLimit int32 `json:"searchResultEntryLimit"`
+	SearchResultEntryLimit int64 `json:"searchResultEntryLimit"`
 	// Specifies the maximum length of time (in seconds) that the server may spend processing any single search request. A value of 0 indicates no limit should be enforced. This is stored in the ds-rlim-time-limit LDAP attribute.
-	TimeLimitSeconds int32 `json:"timeLimitSeconds"`
+	TimeLimitSeconds int64 `json:"timeLimitSeconds"`
 	// Specifies the maximum number of candidate entries that the server may examine in the course of processing any single search request. A value of 0 indicates no limit should be enforced. This is stored in the ds-rlim-lookthrough-limit LDAP attribute.
-	LookThroughEntryLimit int32 `json:"lookThroughEntryLimit"`
+	LookThroughEntryLimit int64 `json:"lookThroughEntryLimit"`
 	// Specifies the maximum length of time (in seconds) that a connection authenticated as this user may remain established without issuing any requests. A value of 0 indicates no limit should be enforced. This is stored in the ds-rlim-idle-time-limit LDAP attribute.
-	IdleTimeLimitSeconds int32 `json:"idleTimeLimitSeconds"`
+	IdleTimeLimitSeconds int64 `json:"idleTimeLimitSeconds"`
 	// Specifies the password policy for the user. This is stored in the ds-pwp-password-policy-dn LDAP attribute.
 	PasswordPolicy string `json:"passwordPolicy"`
 	// Specifies whether the root user account should be disabled. A disabled account is not permitted to authenticate, nor can it be used as an authorization identity. This is stored in the ds-pwp-account-disabled LDAP attribute.
@@ -94,7 +94,7 @@ type TopologyAdminUserResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTopologyAdminUserResponse(id string, inheritDefaultRootPrivileges bool, searchResultEntryLimit int32, timeLimitSeconds int32, lookThroughEntryLimit int32, idleTimeLimitSeconds int32, passwordPolicy string, requireSecureAuthentication bool, requireSecureConnections bool) *TopologyAdminUserResponse {
+func NewTopologyAdminUserResponse(id string, inheritDefaultRootPrivileges bool, searchResultEntryLimit int64, timeLimitSeconds int64, lookThroughEntryLimit int64, idleTimeLimitSeconds int64, passwordPolicy string, requireSecureAuthentication bool, requireSecureConnections bool) *TopologyAdminUserResponse {
 	this := TopologyAdminUserResponse{}
 	this.Id = id
 	this.InheritDefaultRootPrivileges = inheritDefaultRootPrivileges
@@ -581,9 +581,9 @@ func (o *TopologyAdminUserResponse) SetPrivilege(v []EnumtopologyAdminUserPrivil
 }
 
 // GetSearchResultEntryLimit returns the SearchResultEntryLimit field value
-func (o *TopologyAdminUserResponse) GetSearchResultEntryLimit() int32 {
+func (o *TopologyAdminUserResponse) GetSearchResultEntryLimit() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -592,7 +592,7 @@ func (o *TopologyAdminUserResponse) GetSearchResultEntryLimit() int32 {
 
 // GetSearchResultEntryLimitOk returns a tuple with the SearchResultEntryLimit field value
 // and a boolean to check if the value has been set.
-func (o *TopologyAdminUserResponse) GetSearchResultEntryLimitOk() (*int32, bool) {
+func (o *TopologyAdminUserResponse) GetSearchResultEntryLimitOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -600,14 +600,14 @@ func (o *TopologyAdminUserResponse) GetSearchResultEntryLimitOk() (*int32, bool)
 }
 
 // SetSearchResultEntryLimit sets field value
-func (o *TopologyAdminUserResponse) SetSearchResultEntryLimit(v int32) {
+func (o *TopologyAdminUserResponse) SetSearchResultEntryLimit(v int64) {
 	o.SearchResultEntryLimit = v
 }
 
 // GetTimeLimitSeconds returns the TimeLimitSeconds field value
-func (o *TopologyAdminUserResponse) GetTimeLimitSeconds() int32 {
+func (o *TopologyAdminUserResponse) GetTimeLimitSeconds() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -616,7 +616,7 @@ func (o *TopologyAdminUserResponse) GetTimeLimitSeconds() int32 {
 
 // GetTimeLimitSecondsOk returns a tuple with the TimeLimitSeconds field value
 // and a boolean to check if the value has been set.
-func (o *TopologyAdminUserResponse) GetTimeLimitSecondsOk() (*int32, bool) {
+func (o *TopologyAdminUserResponse) GetTimeLimitSecondsOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -624,14 +624,14 @@ func (o *TopologyAdminUserResponse) GetTimeLimitSecondsOk() (*int32, bool) {
 }
 
 // SetTimeLimitSeconds sets field value
-func (o *TopologyAdminUserResponse) SetTimeLimitSeconds(v int32) {
+func (o *TopologyAdminUserResponse) SetTimeLimitSeconds(v int64) {
 	o.TimeLimitSeconds = v
 }
 
 // GetLookThroughEntryLimit returns the LookThroughEntryLimit field value
-func (o *TopologyAdminUserResponse) GetLookThroughEntryLimit() int32 {
+func (o *TopologyAdminUserResponse) GetLookThroughEntryLimit() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -640,7 +640,7 @@ func (o *TopologyAdminUserResponse) GetLookThroughEntryLimit() int32 {
 
 // GetLookThroughEntryLimitOk returns a tuple with the LookThroughEntryLimit field value
 // and a boolean to check if the value has been set.
-func (o *TopologyAdminUserResponse) GetLookThroughEntryLimitOk() (*int32, bool) {
+func (o *TopologyAdminUserResponse) GetLookThroughEntryLimitOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -648,14 +648,14 @@ func (o *TopologyAdminUserResponse) GetLookThroughEntryLimitOk() (*int32, bool) 
 }
 
 // SetLookThroughEntryLimit sets field value
-func (o *TopologyAdminUserResponse) SetLookThroughEntryLimit(v int32) {
+func (o *TopologyAdminUserResponse) SetLookThroughEntryLimit(v int64) {
 	o.LookThroughEntryLimit = v
 }
 
 // GetIdleTimeLimitSeconds returns the IdleTimeLimitSeconds field value
-func (o *TopologyAdminUserResponse) GetIdleTimeLimitSeconds() int32 {
+func (o *TopologyAdminUserResponse) GetIdleTimeLimitSeconds() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -664,7 +664,7 @@ func (o *TopologyAdminUserResponse) GetIdleTimeLimitSeconds() int32 {
 
 // GetIdleTimeLimitSecondsOk returns a tuple with the IdleTimeLimitSeconds field value
 // and a boolean to check if the value has been set.
-func (o *TopologyAdminUserResponse) GetIdleTimeLimitSecondsOk() (*int32, bool) {
+func (o *TopologyAdminUserResponse) GetIdleTimeLimitSecondsOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -672,7 +672,7 @@ func (o *TopologyAdminUserResponse) GetIdleTimeLimitSecondsOk() (*int32, bool) {
 }
 
 // SetIdleTimeLimitSeconds sets field value
-func (o *TopologyAdminUserResponse) SetIdleTimeLimitSeconds(v int32) {
+func (o *TopologyAdminUserResponse) SetIdleTimeLimitSeconds(v int64) {
 	o.IdleTimeLimitSeconds = v
 }
 

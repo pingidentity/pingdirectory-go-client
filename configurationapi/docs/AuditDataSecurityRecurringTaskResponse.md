@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **DataSecurityAuditor** | Pointer to **[]string** | The set of data security auditors that should be invoked. If no auditors are specified, then all auditors defined in the configuration will be used. | [optional] 
 **Backend** | Pointer to **[]string** | The set of backends that should be examined. If no backends are specified, then all backends that support this functionality will be included. | [optional] 
 **IncludeFilter** | Pointer to **[]string** | A filter that will be used to identify entries that may be included in the generated report. If multiple filters are specified, then any entry that matches at least one of the filters will be included. If no filters are specified, then all entries will be included. | [optional] 
-**RetainPreviousReportCount** | Pointer to **int32** | The minimum number of previous reports that should be preserved after a new report is generated. | [optional] 
+**RetainPreviousReportCount** | Pointer to **int64** | The minimum number of previous reports that should be preserved after a new report is generated. | [optional] 
 **RetainPreviousReportAge** | Pointer to **string** | The minimum age of previous reports that should be preserved after a new report completes successfully. | [optional] 
 **Description** | Pointer to **string** | A description for this Recurring Task | [optional] 
 **CancelOnTaskDependencyFailure** | Pointer to **bool** | Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running). | [optional] 
@@ -179,20 +179,20 @@ HasIncludeFilter returns a boolean if a field has been set.
 
 ### GetRetainPreviousReportCount
 
-`func (o *AuditDataSecurityRecurringTaskResponse) GetRetainPreviousReportCount() int32`
+`func (o *AuditDataSecurityRecurringTaskResponse) GetRetainPreviousReportCount() int64`
 
 GetRetainPreviousReportCount returns the RetainPreviousReportCount field if non-nil, zero value otherwise.
 
 ### GetRetainPreviousReportCountOk
 
-`func (o *AuditDataSecurityRecurringTaskResponse) GetRetainPreviousReportCountOk() (*int32, bool)`
+`func (o *AuditDataSecurityRecurringTaskResponse) GetRetainPreviousReportCountOk() (*int64, bool)`
 
 GetRetainPreviousReportCountOk returns a tuple with the RetainPreviousReportCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRetainPreviousReportCount
 
-`func (o *AuditDataSecurityRecurringTaskResponse) SetRetainPreviousReportCount(v int32)`
+`func (o *AuditDataSecurityRecurringTaskResponse) SetRetainPreviousReportCount(v int64)`
 
 SetRetainPreviousReportCount sets RetainPreviousReportCount field to given value.
 

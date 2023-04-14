@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ValidatorName** | **string** | Name of the new Password Validator | 
 **Schemas** | [**[]EnumuniqueCharactersPasswordValidatorSchemaUrn**](EnumuniqueCharactersPasswordValidatorSchemaUrn.md) |  | 
-**MinUniqueCharacters** | **int32** | Specifies the minimum number of unique characters that a password will be allowed to contain. | 
+**MinUniqueCharacters** | **int64** | Specifies the minimum number of unique characters that a password will be allowed to contain. | 
 **CaseSensitiveValidation** | **bool** | Indicates whether this password validator should treat password characters in a case-sensitive manner. | 
 **Description** | Pointer to **string** | A description for this Password Validator | [optional] 
 **Enabled** | **bool** | Indicates whether the password validator is enabled for use. | 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewAddUniqueCharactersPasswordValidatorRequest
 
-`func NewAddUniqueCharactersPasswordValidatorRequest(validatorName string, schemas []EnumuniqueCharactersPasswordValidatorSchemaUrn, minUniqueCharacters int32, caseSensitiveValidation bool, enabled bool, ) *AddUniqueCharactersPasswordValidatorRequest`
+`func NewAddUniqueCharactersPasswordValidatorRequest(validatorName string, schemas []EnumuniqueCharactersPasswordValidatorSchemaUrn, minUniqueCharacters int64, caseSensitiveValidation bool, enabled bool, ) *AddUniqueCharactersPasswordValidatorRequest`
 
 NewAddUniqueCharactersPasswordValidatorRequest instantiates a new AddUniqueCharactersPasswordValidatorRequest object
 This constructor will assign default values to properties that have it defined,
@@ -74,20 +74,20 @@ SetSchemas sets Schemas field to given value.
 
 ### GetMinUniqueCharacters
 
-`func (o *AddUniqueCharactersPasswordValidatorRequest) GetMinUniqueCharacters() int32`
+`func (o *AddUniqueCharactersPasswordValidatorRequest) GetMinUniqueCharacters() int64`
 
 GetMinUniqueCharacters returns the MinUniqueCharacters field if non-nil, zero value otherwise.
 
 ### GetMinUniqueCharactersOk
 
-`func (o *AddUniqueCharactersPasswordValidatorRequest) GetMinUniqueCharactersOk() (*int32, bool)`
+`func (o *AddUniqueCharactersPasswordValidatorRequest) GetMinUniqueCharactersOk() (*int64, bool)`
 
 GetMinUniqueCharactersOk returns a tuple with the MinUniqueCharacters field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinUniqueCharacters
 
-`func (o *AddUniqueCharactersPasswordValidatorRequest) SetMinUniqueCharacters(v int32)`
+`func (o *AddUniqueCharactersPasswordValidatorRequest) SetMinUniqueCharacters(v int64)`
 
 SetMinUniqueCharacters sets MinUniqueCharacters field to given value.
 

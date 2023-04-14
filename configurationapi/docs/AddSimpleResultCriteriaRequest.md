@@ -25,9 +25,9 @@ Name | Type | Description | Notes
 **MissingPrivilege** | Pointer to [**[]EnumresultCriteriaMissingPrivilegeProp**](EnumresultCriteriaMissingPrivilegeProp.md) |  | [optional] 
 **RetiredPasswordUsedForBind** | Pointer to [**EnumresultCriteriaRetiredPasswordUsedForBindProp**](EnumresultCriteriaRetiredPasswordUsedForBindProp.md) |  | [optional] 
 **SearchEntryReturnedCriteria** | Pointer to [**EnumresultCriteriaSearchEntryReturnedCriteriaProp**](EnumresultCriteriaSearchEntryReturnedCriteriaProp.md) |  | [optional] 
-**SearchEntryReturnedCount** | Pointer to **int32** | Specifies the target number of entries returned for use when determining whether a search operation should be included in this Simple Result Criteria. This will be ignored for all operations other than search, and it will be ignored for search operations if the \&quot;search-entry-criteria\&quot; property has a value of \&quot;any\&quot;. | [optional] 
+**SearchEntryReturnedCount** | Pointer to **int64** | Specifies the target number of entries returned for use when determining whether a search operation should be included in this Simple Result Criteria. This will be ignored for all operations other than search, and it will be ignored for search operations if the \&quot;search-entry-criteria\&quot; property has a value of \&quot;any\&quot;. | [optional] 
 **SearchReferenceReturnedCriteria** | Pointer to [**EnumresultCriteriaSearchReferenceReturnedCriteriaProp**](EnumresultCriteriaSearchReferenceReturnedCriteriaProp.md) |  | [optional] 
-**SearchReferenceReturnedCount** | Pointer to **int32** | Specifies the target number of references returned for use when determining whether a search operation should be included in this Simple Result Criteria. This will be ignored for all operations other than search, and it will be ignored for search operations if the \&quot;search-reference-criteria\&quot; property has a value of \&quot;any\&quot;. | [optional] 
+**SearchReferenceReturnedCount** | Pointer to **int64** | Specifies the target number of references returned for use when determining whether a search operation should be included in this Simple Result Criteria. This will be ignored for all operations other than search, and it will be ignored for search operations if the \&quot;search-reference-criteria\&quot; property has a value of \&quot;any\&quot;. | [optional] 
 **SearchIndexedCriteria** | Pointer to [**EnumresultCriteriaSearchIndexedCriteriaProp**](EnumresultCriteriaSearchIndexedCriteriaProp.md) |  | [optional] 
 **IncludedAuthzUserBaseDN** | Pointer to **[]string** | Specifies a base DN below which authorization user entries may exist for operations included in this Simple Result Criteria. The authorization user could be the currently authenticated user on the connection (the user that performed the Bind operation), or different if proxied authorization was used to request that the operation be performed under the authorization of another user (as is the case for operations that come through a Directory Proxy Server). This property will be ignored for operations where no authentication or authorization has been performed. | [optional] 
 **ExcludedAuthzUserBaseDN** | Pointer to **[]string** | Specifies a base DN below which authorization user entries may exist for operations excluded from this Simple Result Criteria. The authorization user could be the currently authenticated user on the connection (the user that performed the Bind operation), or different if proxied authorization was used to request that the operation be performed under the authorization of another user (as is the case for operations that come through a Directory Proxy Server). This property will be ignored for operations where no authentication or authorization has been performed. | [optional] 
@@ -573,20 +573,20 @@ HasSearchEntryReturnedCriteria returns a boolean if a field has been set.
 
 ### GetSearchEntryReturnedCount
 
-`func (o *AddSimpleResultCriteriaRequest) GetSearchEntryReturnedCount() int32`
+`func (o *AddSimpleResultCriteriaRequest) GetSearchEntryReturnedCount() int64`
 
 GetSearchEntryReturnedCount returns the SearchEntryReturnedCount field if non-nil, zero value otherwise.
 
 ### GetSearchEntryReturnedCountOk
 
-`func (o *AddSimpleResultCriteriaRequest) GetSearchEntryReturnedCountOk() (*int32, bool)`
+`func (o *AddSimpleResultCriteriaRequest) GetSearchEntryReturnedCountOk() (*int64, bool)`
 
 GetSearchEntryReturnedCountOk returns a tuple with the SearchEntryReturnedCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSearchEntryReturnedCount
 
-`func (o *AddSimpleResultCriteriaRequest) SetSearchEntryReturnedCount(v int32)`
+`func (o *AddSimpleResultCriteriaRequest) SetSearchEntryReturnedCount(v int64)`
 
 SetSearchEntryReturnedCount sets SearchEntryReturnedCount field to given value.
 
@@ -623,20 +623,20 @@ HasSearchReferenceReturnedCriteria returns a boolean if a field has been set.
 
 ### GetSearchReferenceReturnedCount
 
-`func (o *AddSimpleResultCriteriaRequest) GetSearchReferenceReturnedCount() int32`
+`func (o *AddSimpleResultCriteriaRequest) GetSearchReferenceReturnedCount() int64`
 
 GetSearchReferenceReturnedCount returns the SearchReferenceReturnedCount field if non-nil, zero value otherwise.
 
 ### GetSearchReferenceReturnedCountOk
 
-`func (o *AddSimpleResultCriteriaRequest) GetSearchReferenceReturnedCountOk() (*int32, bool)`
+`func (o *AddSimpleResultCriteriaRequest) GetSearchReferenceReturnedCountOk() (*int64, bool)`
 
 GetSearchReferenceReturnedCountOk returns a tuple with the SearchReferenceReturnedCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSearchReferenceReturnedCount
 
-`func (o *AddSimpleResultCriteriaRequest) SetSearchReferenceReturnedCount(v int32)`
+`func (o *AddSimpleResultCriteriaRequest) SetSearchReferenceReturnedCount(v int64)`
 
 SetSearchReferenceReturnedCount sets SearchReferenceReturnedCount field to given value.
 

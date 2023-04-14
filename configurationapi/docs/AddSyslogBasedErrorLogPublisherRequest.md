@@ -8,11 +8,11 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumsyslogBasedErrorLogPublisherSchemaUrn**](EnumsyslogBasedErrorLogPublisherSchemaUrn.md) |  | 
 **Enabled** | **bool** | Indicates whether the Syslog Based Error Log Publisher is enabled for use. | 
 **ServerHostName** | Pointer to **string** | Specifies the hostname or IP address of the syslogd host to log to. It is highly recommend to use localhost. | [optional] 
-**ServerPort** | Pointer to **int32** | Specifies the port number of the syslogd host to log to. | [optional] 
-**SyslogFacility** | Pointer to **int32** | Specifies the syslog facility to use for this Syslog Based Error Log Publisher | [optional] 
+**ServerPort** | Pointer to **int64** | Specifies the port number of the syslogd host to log to. | [optional] 
+**SyslogFacility** | Pointer to **int64** | Specifies the syslog facility to use for this Syslog Based Error Log Publisher | [optional] 
 **AutoFlush** | Pointer to **bool** | Specifies whether to flush the writer after every log record. | [optional] 
 **Asynchronous** | Pointer to **bool** | Indicates whether the Syslog Based Error Log Publisher will publish records asynchronously. | [optional] 
-**QueueSize** | Pointer to **int32** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
+**QueueSize** | Pointer to **int64** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
 **DefaultSeverity** | Pointer to [**[]EnumlogPublisherDefaultSeverityProp**](EnumlogPublisherDefaultSeverityProp.md) |  | [optional] 
 **OverrideSeverity** | Pointer to **[]string** | Specifies the override severity levels for the logger based on the category of the messages. | [optional] 
 **Description** | Pointer to **string** | A description for this Log Publisher | [optional] 
@@ -124,20 +124,20 @@ HasServerHostName returns a boolean if a field has been set.
 
 ### GetServerPort
 
-`func (o *AddSyslogBasedErrorLogPublisherRequest) GetServerPort() int32`
+`func (o *AddSyslogBasedErrorLogPublisherRequest) GetServerPort() int64`
 
 GetServerPort returns the ServerPort field if non-nil, zero value otherwise.
 
 ### GetServerPortOk
 
-`func (o *AddSyslogBasedErrorLogPublisherRequest) GetServerPortOk() (*int32, bool)`
+`func (o *AddSyslogBasedErrorLogPublisherRequest) GetServerPortOk() (*int64, bool)`
 
 GetServerPortOk returns a tuple with the ServerPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerPort
 
-`func (o *AddSyslogBasedErrorLogPublisherRequest) SetServerPort(v int32)`
+`func (o *AddSyslogBasedErrorLogPublisherRequest) SetServerPort(v int64)`
 
 SetServerPort sets ServerPort field to given value.
 
@@ -149,20 +149,20 @@ HasServerPort returns a boolean if a field has been set.
 
 ### GetSyslogFacility
 
-`func (o *AddSyslogBasedErrorLogPublisherRequest) GetSyslogFacility() int32`
+`func (o *AddSyslogBasedErrorLogPublisherRequest) GetSyslogFacility() int64`
 
 GetSyslogFacility returns the SyslogFacility field if non-nil, zero value otherwise.
 
 ### GetSyslogFacilityOk
 
-`func (o *AddSyslogBasedErrorLogPublisherRequest) GetSyslogFacilityOk() (*int32, bool)`
+`func (o *AddSyslogBasedErrorLogPublisherRequest) GetSyslogFacilityOk() (*int64, bool)`
 
 GetSyslogFacilityOk returns a tuple with the SyslogFacility field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSyslogFacility
 
-`func (o *AddSyslogBasedErrorLogPublisherRequest) SetSyslogFacility(v int32)`
+`func (o *AddSyslogBasedErrorLogPublisherRequest) SetSyslogFacility(v int64)`
 
 SetSyslogFacility sets SyslogFacility field to given value.
 
@@ -224,20 +224,20 @@ HasAsynchronous returns a boolean if a field has been set.
 
 ### GetQueueSize
 
-`func (o *AddSyslogBasedErrorLogPublisherRequest) GetQueueSize() int32`
+`func (o *AddSyslogBasedErrorLogPublisherRequest) GetQueueSize() int64`
 
 GetQueueSize returns the QueueSize field if non-nil, zero value otherwise.
 
 ### GetQueueSizeOk
 
-`func (o *AddSyslogBasedErrorLogPublisherRequest) GetQueueSizeOk() (*int32, bool)`
+`func (o *AddSyslogBasedErrorLogPublisherRequest) GetQueueSizeOk() (*int64, bool)`
 
 GetQueueSizeOk returns a tuple with the QueueSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQueueSize
 
-`func (o *AddSyslogBasedErrorLogPublisherRequest) SetQueueSize(v int32)`
+`func (o *AddSyslogBasedErrorLogPublisherRequest) SetQueueSize(v int64)`
 
 SetQueueSize sets QueueSize field to given value.
 

@@ -22,8 +22,8 @@ Name | Type | Description | Notes
 **DisplayName** | Pointer to **string** | A human readable display name for this REST Resource Type. | [optional] 
 **SearchFilterPattern** | Pointer to **string** | Specifies the LDAP filter that should be used when searching for resources matching provided search text. All attribute types in the filter pattern referencing the search text must have a Delegated Admin Attribute definition. | [optional] 
 **PrimaryDisplayAttributeType** | Pointer to **string** | Specifies the name or OID of the LDAP attribute type which is the primary display attribute. This attribute type must be in the search filter pattern and must have a Delegated Admin Attribute definition. | [optional] 
-**DelegatedAdminSearchSizeLimit** | Pointer to **int32** | The maximum number of resources that may be returned from a search request. | [optional] 
-**DelegatedAdminReportSizeLimit** | Pointer to **int32** | The maximum number of resources that may be included in a report. | [optional] 
+**DelegatedAdminSearchSizeLimit** | Pointer to **int64** | The maximum number of resources that may be returned from a search request. | [optional] 
+**DelegatedAdminReportSizeLimit** | Pointer to **int64** | The maximum number of resources that may be included in a report. | [optional] 
 **MembersColumnName** | Pointer to **string** | Specifies the name of the group member column that will be displayed in the Delegated Admin UI | [optional] 
 **NonmembersColumnName** | Pointer to **string** | Specifies the name of the group nonmember column that will be displayed in the Delegated Admin UI | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
@@ -470,20 +470,20 @@ HasPrimaryDisplayAttributeType returns a boolean if a field has been set.
 
 ### GetDelegatedAdminSearchSizeLimit
 
-`func (o *GenericRestResourceTypeResponse) GetDelegatedAdminSearchSizeLimit() int32`
+`func (o *GenericRestResourceTypeResponse) GetDelegatedAdminSearchSizeLimit() int64`
 
 GetDelegatedAdminSearchSizeLimit returns the DelegatedAdminSearchSizeLimit field if non-nil, zero value otherwise.
 
 ### GetDelegatedAdminSearchSizeLimitOk
 
-`func (o *GenericRestResourceTypeResponse) GetDelegatedAdminSearchSizeLimitOk() (*int32, bool)`
+`func (o *GenericRestResourceTypeResponse) GetDelegatedAdminSearchSizeLimitOk() (*int64, bool)`
 
 GetDelegatedAdminSearchSizeLimitOk returns a tuple with the DelegatedAdminSearchSizeLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDelegatedAdminSearchSizeLimit
 
-`func (o *GenericRestResourceTypeResponse) SetDelegatedAdminSearchSizeLimit(v int32)`
+`func (o *GenericRestResourceTypeResponse) SetDelegatedAdminSearchSizeLimit(v int64)`
 
 SetDelegatedAdminSearchSizeLimit sets DelegatedAdminSearchSizeLimit field to given value.
 
@@ -495,20 +495,20 @@ HasDelegatedAdminSearchSizeLimit returns a boolean if a field has been set.
 
 ### GetDelegatedAdminReportSizeLimit
 
-`func (o *GenericRestResourceTypeResponse) GetDelegatedAdminReportSizeLimit() int32`
+`func (o *GenericRestResourceTypeResponse) GetDelegatedAdminReportSizeLimit() int64`
 
 GetDelegatedAdminReportSizeLimit returns the DelegatedAdminReportSizeLimit field if non-nil, zero value otherwise.
 
 ### GetDelegatedAdminReportSizeLimitOk
 
-`func (o *GenericRestResourceTypeResponse) GetDelegatedAdminReportSizeLimitOk() (*int32, bool)`
+`func (o *GenericRestResourceTypeResponse) GetDelegatedAdminReportSizeLimitOk() (*int64, bool)`
 
 GetDelegatedAdminReportSizeLimitOk returns a tuple with the DelegatedAdminReportSizeLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDelegatedAdminReportSizeLimit
 
-`func (o *GenericRestResourceTypeResponse) SetDelegatedAdminReportSizeLimit(v int32)`
+`func (o *GenericRestResourceTypeResponse) SetDelegatedAdminReportSizeLimit(v int64)`
 
 SetDelegatedAdminReportSizeLimit sets DelegatedAdminReportSizeLimit field to given value.
 

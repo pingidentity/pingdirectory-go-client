@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **SchemeName** | **string** | Name of the new Password Storage Scheme | 
 **Schemas** | [**[]EnumcryptPasswordStorageSchemeSchemaUrn**](EnumcryptPasswordStorageSchemeSchemaUrn.md) |  | 
 **PasswordEncodingMechanism** | Pointer to [**EnumpasswordStorageSchemePasswordEncodingMechanismProp**](EnumpasswordStorageSchemePasswordEncodingMechanismProp.md) |  | [optional] 
-**NumDigestRounds** | Pointer to **int32** | Specifies the number of digest rounds to use for the SHA-2 encodings. This will not be used for the legacy or MD5-based encodings. | [optional] 
-**MaxPasswordLength** | Pointer to **int32** | Specifies the maximum allowed length, in bytes, for passwords encoded with this scheme, which can help mitigate denial of service attacks from clients that attempt to bind with very long passwords. | [optional] 
+**NumDigestRounds** | Pointer to **int64** | Specifies the number of digest rounds to use for the SHA-2 encodings. This will not be used for the legacy or MD5-based encodings. | [optional] 
+**MaxPasswordLength** | Pointer to **int64** | Specifies the maximum allowed length, in bytes, for passwords encoded with this scheme, which can help mitigate denial of service attacks from clients that attempt to bind with very long passwords. | [optional] 
 **Description** | Pointer to **string** | A description for this Password Storage Scheme | [optional] 
 **Enabled** | **bool** | Indicates whether the Password Storage Scheme is enabled for use. | 
 
@@ -98,20 +98,20 @@ HasPasswordEncodingMechanism returns a boolean if a field has been set.
 
 ### GetNumDigestRounds
 
-`func (o *AddCryptPasswordStorageSchemeRequest) GetNumDigestRounds() int32`
+`func (o *AddCryptPasswordStorageSchemeRequest) GetNumDigestRounds() int64`
 
 GetNumDigestRounds returns the NumDigestRounds field if non-nil, zero value otherwise.
 
 ### GetNumDigestRoundsOk
 
-`func (o *AddCryptPasswordStorageSchemeRequest) GetNumDigestRoundsOk() (*int32, bool)`
+`func (o *AddCryptPasswordStorageSchemeRequest) GetNumDigestRoundsOk() (*int64, bool)`
 
 GetNumDigestRoundsOk returns a tuple with the NumDigestRounds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNumDigestRounds
 
-`func (o *AddCryptPasswordStorageSchemeRequest) SetNumDigestRounds(v int32)`
+`func (o *AddCryptPasswordStorageSchemeRequest) SetNumDigestRounds(v int64)`
 
 SetNumDigestRounds sets NumDigestRounds field to given value.
 
@@ -123,20 +123,20 @@ HasNumDigestRounds returns a boolean if a field has been set.
 
 ### GetMaxPasswordLength
 
-`func (o *AddCryptPasswordStorageSchemeRequest) GetMaxPasswordLength() int32`
+`func (o *AddCryptPasswordStorageSchemeRequest) GetMaxPasswordLength() int64`
 
 GetMaxPasswordLength returns the MaxPasswordLength field if non-nil, zero value otherwise.
 
 ### GetMaxPasswordLengthOk
 
-`func (o *AddCryptPasswordStorageSchemeRequest) GetMaxPasswordLengthOk() (*int32, bool)`
+`func (o *AddCryptPasswordStorageSchemeRequest) GetMaxPasswordLengthOk() (*int64, bool)`
 
 GetMaxPasswordLengthOk returns a tuple with the MaxPasswordLength field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxPasswordLength
 
-`func (o *AddCryptPasswordStorageSchemeRequest) SetMaxPasswordLength(v int32)`
+`func (o *AddCryptPasswordStorageSchemeRequest) SetMaxPasswordLength(v int64)`
 
 SetMaxPasswordLength sets MaxPasswordLength field to given value.
 

@@ -23,7 +23,7 @@ type SaltedSha256PasswordStorageSchemeResponse struct {
 	// Name of the Password Storage Scheme
 	Id string `json:"id"`
 	// Specifies the number of bytes to use for the generated salt.
-	SaltLengthBytes *int32 `json:"saltLengthBytes,omitempty"`
+	SaltLengthBytes *int64 `json:"saltLengthBytes,omitempty"`
 	// A description for this Password Storage Scheme
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Password Storage Scheme is enabled for use.
@@ -101,9 +101,9 @@ func (o *SaltedSha256PasswordStorageSchemeResponse) SetId(v string) {
 }
 
 // GetSaltLengthBytes returns the SaltLengthBytes field value if set, zero value otherwise.
-func (o *SaltedSha256PasswordStorageSchemeResponse) GetSaltLengthBytes() int32 {
+func (o *SaltedSha256PasswordStorageSchemeResponse) GetSaltLengthBytes() int64 {
 	if o == nil || IsNil(o.SaltLengthBytes) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SaltLengthBytes
@@ -111,7 +111,7 @@ func (o *SaltedSha256PasswordStorageSchemeResponse) GetSaltLengthBytes() int32 {
 
 // GetSaltLengthBytesOk returns a tuple with the SaltLengthBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SaltedSha256PasswordStorageSchemeResponse) GetSaltLengthBytesOk() (*int32, bool) {
+func (o *SaltedSha256PasswordStorageSchemeResponse) GetSaltLengthBytesOk() (*int64, bool) {
 	if o == nil || IsNil(o.SaltLengthBytes) {
 		return nil, false
 	}
@@ -127,8 +127,8 @@ func (o *SaltedSha256PasswordStorageSchemeResponse) HasSaltLengthBytes() bool {
 	return false
 }
 
-// SetSaltLengthBytes gets a reference to the given int32 and assigns it to the SaltLengthBytes field.
-func (o *SaltedSha256PasswordStorageSchemeResponse) SetSaltLengthBytes(v int32) {
+// SetSaltLengthBytes gets a reference to the given int64 and assigns it to the SaltLengthBytes field.
+func (o *SaltedSha256PasswordStorageSchemeResponse) SetSaltLengthBytes(v int64) {
 	o.SaltLengthBytes = &v
 }
 

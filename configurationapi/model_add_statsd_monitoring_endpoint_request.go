@@ -25,7 +25,7 @@ type AddStatsdMonitoringEndpointRequest struct {
 	// The name of the host where this StatsD Monitoring Endpoint should send metric data.
 	Hostname string `json:"hostname"`
 	// Specifies the port number of the endpoint where metric data should be sent.
-	ServerPort     *int32                                    `json:"serverPort,omitempty"`
+	ServerPort     *int64                                    `json:"serverPort,omitempty"`
 	ConnectionType *EnummonitoringEndpointConnectionTypeProp `json:"connectionType,omitempty"`
 	// The trust manager provider to use if SSL over TCP is to be used for connection-level security.
 	TrustManagerProvider *string `json:"trustManagerProvider,omitempty"`
@@ -136,9 +136,9 @@ func (o *AddStatsdMonitoringEndpointRequest) SetHostname(v string) {
 }
 
 // GetServerPort returns the ServerPort field value if set, zero value otherwise.
-func (o *AddStatsdMonitoringEndpointRequest) GetServerPort() int32 {
+func (o *AddStatsdMonitoringEndpointRequest) GetServerPort() int64 {
 	if o == nil || IsNil(o.ServerPort) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ServerPort
@@ -146,7 +146,7 @@ func (o *AddStatsdMonitoringEndpointRequest) GetServerPort() int32 {
 
 // GetServerPortOk returns a tuple with the ServerPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddStatsdMonitoringEndpointRequest) GetServerPortOk() (*int32, bool) {
+func (o *AddStatsdMonitoringEndpointRequest) GetServerPortOk() (*int64, bool) {
 	if o == nil || IsNil(o.ServerPort) {
 		return nil, false
 	}
@@ -162,8 +162,8 @@ func (o *AddStatsdMonitoringEndpointRequest) HasServerPort() bool {
 	return false
 }
 
-// SetServerPort gets a reference to the given int32 and assigns it to the ServerPort field.
-func (o *AddStatsdMonitoringEndpointRequest) SetServerPort(v int32) {
+// SetServerPort gets a reference to the given int64 and assigns it to the ServerPort field.
+func (o *AddStatsdMonitoringEndpointRequest) SetServerPort(v int64) {
 	o.ServerPort = &v
 }
 

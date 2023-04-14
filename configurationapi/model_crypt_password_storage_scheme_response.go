@@ -24,9 +24,9 @@ type CryptPasswordStorageSchemeResponse struct {
 	Schemas                   []EnumcryptPasswordStorageSchemeSchemaUrn               `json:"schemas"`
 	PasswordEncodingMechanism *EnumpasswordStorageSchemePasswordEncodingMechanismProp `json:"passwordEncodingMechanism,omitempty"`
 	// Specifies the number of digest rounds to use for the SHA-2 encodings. This will not be used for the legacy or MD5-based encodings.
-	NumDigestRounds *int32 `json:"numDigestRounds,omitempty"`
+	NumDigestRounds *int64 `json:"numDigestRounds,omitempty"`
 	// Specifies the maximum allowed length, in bytes, for passwords encoded with this scheme, which can help mitigate denial of service attacks from clients that attempt to bind with very long passwords.
-	MaxPasswordLength *int32 `json:"maxPasswordLength,omitempty"`
+	MaxPasswordLength *int64 `json:"maxPasswordLength,omitempty"`
 	// A description for this Password Storage Scheme
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Password Storage Scheme is enabled for use.
@@ -136,9 +136,9 @@ func (o *CryptPasswordStorageSchemeResponse) SetPasswordEncodingMechanism(v Enum
 }
 
 // GetNumDigestRounds returns the NumDigestRounds field value if set, zero value otherwise.
-func (o *CryptPasswordStorageSchemeResponse) GetNumDigestRounds() int32 {
+func (o *CryptPasswordStorageSchemeResponse) GetNumDigestRounds() int64 {
 	if o == nil || IsNil(o.NumDigestRounds) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.NumDigestRounds
@@ -146,7 +146,7 @@ func (o *CryptPasswordStorageSchemeResponse) GetNumDigestRounds() int32 {
 
 // GetNumDigestRoundsOk returns a tuple with the NumDigestRounds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CryptPasswordStorageSchemeResponse) GetNumDigestRoundsOk() (*int32, bool) {
+func (o *CryptPasswordStorageSchemeResponse) GetNumDigestRoundsOk() (*int64, bool) {
 	if o == nil || IsNil(o.NumDigestRounds) {
 		return nil, false
 	}
@@ -162,15 +162,15 @@ func (o *CryptPasswordStorageSchemeResponse) HasNumDigestRounds() bool {
 	return false
 }
 
-// SetNumDigestRounds gets a reference to the given int32 and assigns it to the NumDigestRounds field.
-func (o *CryptPasswordStorageSchemeResponse) SetNumDigestRounds(v int32) {
+// SetNumDigestRounds gets a reference to the given int64 and assigns it to the NumDigestRounds field.
+func (o *CryptPasswordStorageSchemeResponse) SetNumDigestRounds(v int64) {
 	o.NumDigestRounds = &v
 }
 
 // GetMaxPasswordLength returns the MaxPasswordLength field value if set, zero value otherwise.
-func (o *CryptPasswordStorageSchemeResponse) GetMaxPasswordLength() int32 {
+func (o *CryptPasswordStorageSchemeResponse) GetMaxPasswordLength() int64 {
 	if o == nil || IsNil(o.MaxPasswordLength) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxPasswordLength
@@ -178,7 +178,7 @@ func (o *CryptPasswordStorageSchemeResponse) GetMaxPasswordLength() int32 {
 
 // GetMaxPasswordLengthOk returns a tuple with the MaxPasswordLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CryptPasswordStorageSchemeResponse) GetMaxPasswordLengthOk() (*int32, bool) {
+func (o *CryptPasswordStorageSchemeResponse) GetMaxPasswordLengthOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxPasswordLength) {
 		return nil, false
 	}
@@ -194,8 +194,8 @@ func (o *CryptPasswordStorageSchemeResponse) HasMaxPasswordLength() bool {
 	return false
 }
 
-// SetMaxPasswordLength gets a reference to the given int32 and assigns it to the MaxPasswordLength field.
-func (o *CryptPasswordStorageSchemeResponse) SetMaxPasswordLength(v int32) {
+// SetMaxPasswordLength gets a reference to the given int64 and assigns it to the MaxPasswordLength field.
+func (o *CryptPasswordStorageSchemeResponse) SetMaxPasswordLength(v int64) {
 	o.MaxPasswordLength = &v
 }
 

@@ -23,7 +23,7 @@ type AddRepeatedCharactersPasswordValidatorRequest struct {
 	ValidatorName string                                             `json:"validatorName"`
 	Schemas       []EnumrepeatedCharactersPasswordValidatorSchemaUrn `json:"schemas"`
 	// Specifies the maximum number of times that any character can appear consecutively in a password value.
-	MaxConsecutiveLength int32 `json:"maxConsecutiveLength"`
+	MaxConsecutiveLength int64 `json:"maxConsecutiveLength"`
 	// Indicates whether this password validator should treat password characters in a case-sensitive manner.
 	CaseSensitiveValidation bool `json:"caseSensitiveValidation"`
 	// Specifies a set of characters that should be considered equivalent for the purpose of this password validator. This can be used, for example, to ensure that passwords contain no more than three consecutive digits.
@@ -42,7 +42,7 @@ type AddRepeatedCharactersPasswordValidatorRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddRepeatedCharactersPasswordValidatorRequest(validatorName string, schemas []EnumrepeatedCharactersPasswordValidatorSchemaUrn, maxConsecutiveLength int32, caseSensitiveValidation bool, enabled bool) *AddRepeatedCharactersPasswordValidatorRequest {
+func NewAddRepeatedCharactersPasswordValidatorRequest(validatorName string, schemas []EnumrepeatedCharactersPasswordValidatorSchemaUrn, maxConsecutiveLength int64, caseSensitiveValidation bool, enabled bool) *AddRepeatedCharactersPasswordValidatorRequest {
 	this := AddRepeatedCharactersPasswordValidatorRequest{}
 	this.ValidatorName = validatorName
 	this.Schemas = schemas
@@ -109,9 +109,9 @@ func (o *AddRepeatedCharactersPasswordValidatorRequest) SetSchemas(v []Enumrepea
 }
 
 // GetMaxConsecutiveLength returns the MaxConsecutiveLength field value
-func (o *AddRepeatedCharactersPasswordValidatorRequest) GetMaxConsecutiveLength() int32 {
+func (o *AddRepeatedCharactersPasswordValidatorRequest) GetMaxConsecutiveLength() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -120,7 +120,7 @@ func (o *AddRepeatedCharactersPasswordValidatorRequest) GetMaxConsecutiveLength(
 
 // GetMaxConsecutiveLengthOk returns a tuple with the MaxConsecutiveLength field value
 // and a boolean to check if the value has been set.
-func (o *AddRepeatedCharactersPasswordValidatorRequest) GetMaxConsecutiveLengthOk() (*int32, bool) {
+func (o *AddRepeatedCharactersPasswordValidatorRequest) GetMaxConsecutiveLengthOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -128,7 +128,7 @@ func (o *AddRepeatedCharactersPasswordValidatorRequest) GetMaxConsecutiveLengthO
 }
 
 // SetMaxConsecutiveLength sets field value
-func (o *AddRepeatedCharactersPasswordValidatorRequest) SetMaxConsecutiveLength(v int32) {
+func (o *AddRepeatedCharactersPasswordValidatorRequest) SetMaxConsecutiveLength(v int64) {
 	o.MaxConsecutiveLength = v
 }
 

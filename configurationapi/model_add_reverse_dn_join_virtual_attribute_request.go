@@ -29,7 +29,7 @@ type AddReverseDnJoinVirtualAttributeRequest struct {
 	JoinCustomBaseDN *string                            `json:"joinCustomBaseDN,omitempty"`
 	JoinScope        *EnumvirtualAttributeJoinScopeProp `json:"joinScope,omitempty"`
 	// The maximum number of entries that may be joined with the source entry, which also corresponds to the maximum number of values that the virtual attribute provider will generate for an entry.
-	JoinSizeLimit *int32 `json:"joinSizeLimit,omitempty"`
+	JoinSizeLimit *int64 `json:"joinSizeLimit,omitempty"`
 	// An optional filter that specifies additional criteria for identifying joined entries. If a join-filter value is specified, then only entries matching that filter (in addition to satisfying the other join criteria) will be joined with the search result entry.
 	JoinFilter *string `json:"joinFilter,omitempty"`
 	// An optional set of the names of the attributes to include with joined entries.
@@ -52,7 +52,7 @@ type AddReverseDnJoinVirtualAttributeRequest struct {
 	// Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
 	RequireExplicitRequestByName *bool `json:"requireExplicitRequestByName,omitempty"`
 	// Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
-	MultipleVirtualAttributeEvaluationOrderIndex *int32                                                         `json:"multipleVirtualAttributeEvaluationOrderIndex,omitempty"`
+	MultipleVirtualAttributeEvaluationOrderIndex *int64                                                         `json:"multipleVirtualAttributeEvaluationOrderIndex,omitempty"`
 	MultipleVirtualAttributeMergeBehavior        *EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp `json:"multipleVirtualAttributeMergeBehavior,omitempty"`
 	// Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
 	AllowIndexConflicts *bool `json:"allowIndexConflicts,omitempty"`
@@ -242,9 +242,9 @@ func (o *AddReverseDnJoinVirtualAttributeRequest) SetJoinScope(v EnumvirtualAttr
 }
 
 // GetJoinSizeLimit returns the JoinSizeLimit field value if set, zero value otherwise.
-func (o *AddReverseDnJoinVirtualAttributeRequest) GetJoinSizeLimit() int32 {
+func (o *AddReverseDnJoinVirtualAttributeRequest) GetJoinSizeLimit() int64 {
 	if o == nil || IsNil(o.JoinSizeLimit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.JoinSizeLimit
@@ -252,7 +252,7 @@ func (o *AddReverseDnJoinVirtualAttributeRequest) GetJoinSizeLimit() int32 {
 
 // GetJoinSizeLimitOk returns a tuple with the JoinSizeLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddReverseDnJoinVirtualAttributeRequest) GetJoinSizeLimitOk() (*int32, bool) {
+func (o *AddReverseDnJoinVirtualAttributeRequest) GetJoinSizeLimitOk() (*int64, bool) {
 	if o == nil || IsNil(o.JoinSizeLimit) {
 		return nil, false
 	}
@@ -268,8 +268,8 @@ func (o *AddReverseDnJoinVirtualAttributeRequest) HasJoinSizeLimit() bool {
 	return false
 }
 
-// SetJoinSizeLimit gets a reference to the given int32 and assigns it to the JoinSizeLimit field.
-func (o *AddReverseDnJoinVirtualAttributeRequest) SetJoinSizeLimit(v int32) {
+// SetJoinSizeLimit gets a reference to the given int64 and assigns it to the JoinSizeLimit field.
+func (o *AddReverseDnJoinVirtualAttributeRequest) SetJoinSizeLimit(v int64) {
 	o.JoinSizeLimit = &v
 }
 
@@ -610,9 +610,9 @@ func (o *AddReverseDnJoinVirtualAttributeRequest) SetRequireExplicitRequestByNam
 }
 
 // GetMultipleVirtualAttributeEvaluationOrderIndex returns the MultipleVirtualAttributeEvaluationOrderIndex field value if set, zero value otherwise.
-func (o *AddReverseDnJoinVirtualAttributeRequest) GetMultipleVirtualAttributeEvaluationOrderIndex() int32 {
+func (o *AddReverseDnJoinVirtualAttributeRequest) GetMultipleVirtualAttributeEvaluationOrderIndex() int64 {
 	if o == nil || IsNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MultipleVirtualAttributeEvaluationOrderIndex
@@ -620,7 +620,7 @@ func (o *AddReverseDnJoinVirtualAttributeRequest) GetMultipleVirtualAttributeEva
 
 // GetMultipleVirtualAttributeEvaluationOrderIndexOk returns a tuple with the MultipleVirtualAttributeEvaluationOrderIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddReverseDnJoinVirtualAttributeRequest) GetMultipleVirtualAttributeEvaluationOrderIndexOk() (*int32, bool) {
+func (o *AddReverseDnJoinVirtualAttributeRequest) GetMultipleVirtualAttributeEvaluationOrderIndexOk() (*int64, bool) {
 	if o == nil || IsNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
 		return nil, false
 	}
@@ -636,8 +636,8 @@ func (o *AddReverseDnJoinVirtualAttributeRequest) HasMultipleVirtualAttributeEva
 	return false
 }
 
-// SetMultipleVirtualAttributeEvaluationOrderIndex gets a reference to the given int32 and assigns it to the MultipleVirtualAttributeEvaluationOrderIndex field.
-func (o *AddReverseDnJoinVirtualAttributeRequest) SetMultipleVirtualAttributeEvaluationOrderIndex(v int32) {
+// SetMultipleVirtualAttributeEvaluationOrderIndex gets a reference to the given int64 and assigns it to the MultipleVirtualAttributeEvaluationOrderIndex field.
+func (o *AddReverseDnJoinVirtualAttributeRequest) SetMultipleVirtualAttributeEvaluationOrderIndex(v int64) {
 	o.MultipleVirtualAttributeEvaluationOrderIndex = &v
 }
 

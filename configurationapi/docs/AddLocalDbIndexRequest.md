@@ -7,11 +7,11 @@ Name | Type | Description | Notes
 **IndexName** | **string** | Name of the new Local DB Index | 
 **Schemas** | Pointer to [**[]EnumlocalDbIndexSchemaUrn**](EnumlocalDbIndexSchemaUrn.md) |  | [optional] 
 **Attribute** | **string** | Specifies the name of the attribute for which the index is to be maintained. | 
-**IndexEntryLimit** | Pointer to **int32** | Specifies the maximum number of entries that are allowed to match a given index key before that particular index key is no longer maintained. | [optional] 
-**SubstringIndexEntryLimit** | Pointer to **int32** | Specifies, for substring indexes, the maximum number of entries that are allowed to match a given index key before that particular index key is no longer maintained. Setting a large limit can dramatically increase the database size on disk and have a big impact on server performance if the indexed attribute is modified frequently. When a very large limit is required, creating a dedicated composite index with an index-filter-pattern of (attr&#x3D;*?*) will give the best balance between search and update performance. | [optional] 
+**IndexEntryLimit** | Pointer to **int64** | Specifies the maximum number of entries that are allowed to match a given index key before that particular index key is no longer maintained. | [optional] 
+**SubstringIndexEntryLimit** | Pointer to **int64** | Specifies, for substring indexes, the maximum number of entries that are allowed to match a given index key before that particular index key is no longer maintained. Setting a large limit can dramatically increase the database size on disk and have a big impact on server performance if the indexed attribute is modified frequently. When a very large limit is required, creating a dedicated composite index with an index-filter-pattern of (attr&#x3D;*?*) will give the best balance between search and update performance. | [optional] 
 **MaintainMatchCountForKeysExceedingEntryLimit** | Pointer to **bool** | Indicates whether to continue to maintain a count of the number of matching entries for an index key even after that count exceeds the index entry limit. | [optional] 
 **IndexType** | [**[]EnumlocalDbIndexIndexTypeProp**](EnumlocalDbIndexIndexTypeProp.md) |  | 
-**SubstringLength** | Pointer to **int32** | The length of substrings in a substring index. | [optional] 
+**SubstringLength** | Pointer to **int64** | The length of substrings in a substring index. | [optional] 
 **PrimeIndex** | Pointer to **bool** | If this option is enabled and this index&#39;s backend is configured to prime indexes, then this index will be loaded at startup. | [optional] 
 **PrimeInternalNodesOnly** | Pointer to **bool** | If this option is enabled and this index&#39;s backend is configured to prime indexes using the preload method, then only the internal database nodes (i.e., the database keys but not values) should be primed when the backend is initialized. | [optional] 
 **EqualityIndexFilter** | Pointer to **[]string** | A search filter that may be used in conjunction with an equality component for the associated attribute type. If an equality index filter is defined, then an additional equality index will be maintained for the associated attribute, but only for entries which match the provided filter. Further, the index will be used only for searches containing an equality component with the associated attribute type ANDed with this filter. | [optional] 
@@ -104,20 +104,20 @@ SetAttribute sets Attribute field to given value.
 
 ### GetIndexEntryLimit
 
-`func (o *AddLocalDbIndexRequest) GetIndexEntryLimit() int32`
+`func (o *AddLocalDbIndexRequest) GetIndexEntryLimit() int64`
 
 GetIndexEntryLimit returns the IndexEntryLimit field if non-nil, zero value otherwise.
 
 ### GetIndexEntryLimitOk
 
-`func (o *AddLocalDbIndexRequest) GetIndexEntryLimitOk() (*int32, bool)`
+`func (o *AddLocalDbIndexRequest) GetIndexEntryLimitOk() (*int64, bool)`
 
 GetIndexEntryLimitOk returns a tuple with the IndexEntryLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIndexEntryLimit
 
-`func (o *AddLocalDbIndexRequest) SetIndexEntryLimit(v int32)`
+`func (o *AddLocalDbIndexRequest) SetIndexEntryLimit(v int64)`
 
 SetIndexEntryLimit sets IndexEntryLimit field to given value.
 
@@ -129,20 +129,20 @@ HasIndexEntryLimit returns a boolean if a field has been set.
 
 ### GetSubstringIndexEntryLimit
 
-`func (o *AddLocalDbIndexRequest) GetSubstringIndexEntryLimit() int32`
+`func (o *AddLocalDbIndexRequest) GetSubstringIndexEntryLimit() int64`
 
 GetSubstringIndexEntryLimit returns the SubstringIndexEntryLimit field if non-nil, zero value otherwise.
 
 ### GetSubstringIndexEntryLimitOk
 
-`func (o *AddLocalDbIndexRequest) GetSubstringIndexEntryLimitOk() (*int32, bool)`
+`func (o *AddLocalDbIndexRequest) GetSubstringIndexEntryLimitOk() (*int64, bool)`
 
 GetSubstringIndexEntryLimitOk returns a tuple with the SubstringIndexEntryLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubstringIndexEntryLimit
 
-`func (o *AddLocalDbIndexRequest) SetSubstringIndexEntryLimit(v int32)`
+`func (o *AddLocalDbIndexRequest) SetSubstringIndexEntryLimit(v int64)`
 
 SetSubstringIndexEntryLimit sets SubstringIndexEntryLimit field to given value.
 
@@ -199,20 +199,20 @@ SetIndexType sets IndexType field to given value.
 
 ### GetSubstringLength
 
-`func (o *AddLocalDbIndexRequest) GetSubstringLength() int32`
+`func (o *AddLocalDbIndexRequest) GetSubstringLength() int64`
 
 GetSubstringLength returns the SubstringLength field if non-nil, zero value otherwise.
 
 ### GetSubstringLengthOk
 
-`func (o *AddLocalDbIndexRequest) GetSubstringLengthOk() (*int32, bool)`
+`func (o *AddLocalDbIndexRequest) GetSubstringLengthOk() (*int64, bool)`
 
 GetSubstringLengthOk returns a tuple with the SubstringLength field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubstringLength
 
-`func (o *AddLocalDbIndexRequest) SetSubstringLength(v int32)`
+`func (o *AddLocalDbIndexRequest) SetSubstringLength(v int64)`
 
 SetSubstringLength sets SubstringLength field to given value.
 

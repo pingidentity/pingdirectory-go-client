@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **SharedSecretAttributeType** | Pointer to **string** | The name or OID of the attribute that will be used to hold the shared secret key used during TOTP processing. | [optional] 
 **TimeIntervalDuration** | Pointer to **string** | The duration of the time interval used for TOTP processing. | [optional] 
-**AdjacentIntervalsToCheck** | Pointer to **int32** | The number of adjacent time intervals (both before and after the current time) that should be checked when performing authentication. | [optional] 
+**AdjacentIntervalsToCheck** | Pointer to **int64** | The number of adjacent time intervals (both before and after the current time) that should be checked when performing authentication. | [optional] 
 **PreventTOTPReuse** | Pointer to **bool** | Indicates whether to prevent clients from re-using TOTP passwords. | [optional] 
 **AllowRemotelyProvidedCertificates** | Pointer to **bool** | Indicates whether clients should be allowed to directly provide a new listener or inter-server certificate chain in the extended request. | [optional] 
 **AllowedOperation** | Pointer to [**[]EnumextendedOperationHandlerAllowedOperationProp**](EnumextendedOperationHandlerAllowedOperationProp.md) |  | [optional] 
@@ -24,8 +24,8 @@ Name | Type | Description | Notes
 **DefaultSingleUseTokenValidityDuration** | Pointer to **string** | The default length of time that a single-use token will be considered valid by the server if the client doesn&#39;t specify a duration in the deliver single-use token request. | [optional] 
 **DefaultPasswordPolicy** | Pointer to **string** | The default password policy that should be used when generating and validating passwords if the request does not specify an alternate policy. If this is not provided, then this Generate Password Extended Operation Handler will use the default password policy defined in the global configuration. | [optional] 
 **DefaultPasswordGenerator** | **string** | The default password generator that will be used if the selected password policy is not configured with a password generator. | 
-**MaximumPasswordsPerRequest** | Pointer to **int32** | The maximum number of passwords that may be generated and returned to the client for a single request. | [optional] 
-**MaximumValidationAttemptsPerPassword** | Pointer to **int32** | The maximum number of attempts that the server may use to generate a password that passes validation. | [optional] 
+**MaximumPasswordsPerRequest** | Pointer to **int64** | The maximum number of passwords that may be generated and returned to the client for a single request. | [optional] 
+**MaximumValidationAttemptsPerPassword** | Pointer to **int64** | The maximum number of attempts that the server may use to generate a password that passes validation. | [optional] 
 **DefaultTokenDeliveryMechanism** | **[]string** | The set of delivery mechanisms that may be used to deliver password reset tokens to users for requests that do not specify one or more preferred delivery mechanisms. | 
 **PasswordResetTokenValidityDuration** | **string** | The maximum length of time that a password reset token should be considered valid. | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Extended Operation Handler. | 
@@ -237,20 +237,20 @@ HasTimeIntervalDuration returns a boolean if a field has been set.
 
 ### GetAdjacentIntervalsToCheck
 
-`func (o *GetExtendedOperationHandler200Response) GetAdjacentIntervalsToCheck() int32`
+`func (o *GetExtendedOperationHandler200Response) GetAdjacentIntervalsToCheck() int64`
 
 GetAdjacentIntervalsToCheck returns the AdjacentIntervalsToCheck field if non-nil, zero value otherwise.
 
 ### GetAdjacentIntervalsToCheckOk
 
-`func (o *GetExtendedOperationHandler200Response) GetAdjacentIntervalsToCheckOk() (*int32, bool)`
+`func (o *GetExtendedOperationHandler200Response) GetAdjacentIntervalsToCheckOk() (*int64, bool)`
 
 GetAdjacentIntervalsToCheckOk returns a tuple with the AdjacentIntervalsToCheck field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAdjacentIntervalsToCheck
 
-`func (o *GetExtendedOperationHandler200Response) SetAdjacentIntervalsToCheck(v int32)`
+`func (o *GetExtendedOperationHandler200Response) SetAdjacentIntervalsToCheck(v int64)`
 
 SetAdjacentIntervalsToCheck sets AdjacentIntervalsToCheck field to given value.
 
@@ -517,20 +517,20 @@ SetDefaultPasswordGenerator sets DefaultPasswordGenerator field to given value.
 
 ### GetMaximumPasswordsPerRequest
 
-`func (o *GetExtendedOperationHandler200Response) GetMaximumPasswordsPerRequest() int32`
+`func (o *GetExtendedOperationHandler200Response) GetMaximumPasswordsPerRequest() int64`
 
 GetMaximumPasswordsPerRequest returns the MaximumPasswordsPerRequest field if non-nil, zero value otherwise.
 
 ### GetMaximumPasswordsPerRequestOk
 
-`func (o *GetExtendedOperationHandler200Response) GetMaximumPasswordsPerRequestOk() (*int32, bool)`
+`func (o *GetExtendedOperationHandler200Response) GetMaximumPasswordsPerRequestOk() (*int64, bool)`
 
 GetMaximumPasswordsPerRequestOk returns a tuple with the MaximumPasswordsPerRequest field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaximumPasswordsPerRequest
 
-`func (o *GetExtendedOperationHandler200Response) SetMaximumPasswordsPerRequest(v int32)`
+`func (o *GetExtendedOperationHandler200Response) SetMaximumPasswordsPerRequest(v int64)`
 
 SetMaximumPasswordsPerRequest sets MaximumPasswordsPerRequest field to given value.
 
@@ -542,20 +542,20 @@ HasMaximumPasswordsPerRequest returns a boolean if a field has been set.
 
 ### GetMaximumValidationAttemptsPerPassword
 
-`func (o *GetExtendedOperationHandler200Response) GetMaximumValidationAttemptsPerPassword() int32`
+`func (o *GetExtendedOperationHandler200Response) GetMaximumValidationAttemptsPerPassword() int64`
 
 GetMaximumValidationAttemptsPerPassword returns the MaximumValidationAttemptsPerPassword field if non-nil, zero value otherwise.
 
 ### GetMaximumValidationAttemptsPerPasswordOk
 
-`func (o *GetExtendedOperationHandler200Response) GetMaximumValidationAttemptsPerPasswordOk() (*int32, bool)`
+`func (o *GetExtendedOperationHandler200Response) GetMaximumValidationAttemptsPerPasswordOk() (*int64, bool)`
 
 GetMaximumValidationAttemptsPerPasswordOk returns a tuple with the MaximumValidationAttemptsPerPassword field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaximumValidationAttemptsPerPassword
 
-`func (o *GetExtendedOperationHandler200Response) SetMaximumValidationAttemptsPerPassword(v int32)`
+`func (o *GetExtendedOperationHandler200Response) SetMaximumValidationAttemptsPerPassword(v int64)`
 
 SetMaximumValidationAttemptsPerPassword sets MaximumValidationAttemptsPerPassword field to given value.
 

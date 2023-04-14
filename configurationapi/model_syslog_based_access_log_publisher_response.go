@@ -27,11 +27,11 @@ type SyslogBasedAccessLogPublisherResponse struct {
 	// Specifies the hostname or IP address of the syslogd host to log to. It is highly recommend to use localhost.
 	ServerHostName string `json:"serverHostName"`
 	// Specifies the port number of the syslogd host to log to.
-	ServerPort int32 `json:"serverPort"`
+	ServerPort int64 `json:"serverPort"`
 	// Specifies the syslog facility to use for this Syslog Based Access Log Publisher
-	SyslogFacility int32 `json:"syslogFacility"`
+	SyslogFacility int64 `json:"syslogFacility"`
 	// Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written.
-	MaxStringLength *int32 `json:"maxStringLength,omitempty"`
+	MaxStringLength *int64 `json:"maxStringLength,omitempty"`
 	// Indicates whether to log information about connections established to the server.
 	LogConnects *bool `json:"logConnects,omitempty"`
 	// Indicates whether to log information about connections that have been closed by the client or terminated by the server.
@@ -83,7 +83,7 @@ type SyslogBasedAccessLogPublisherResponse struct {
 	// Specifies whether to flush the writer after every log record.
 	AutoFlush *bool `json:"autoFlush,omitempty"`
 	// The maximum number of log records that can be stored in the asynchronous queue.
-	QueueSize *int32 `json:"queueSize,omitempty"`
+	QueueSize *int64 `json:"queueSize,omitempty"`
 	// The behavior to use for determining which fields to log and whether to transform the values of those fields in any way.
 	LogFieldBehavior *string `json:"logFieldBehavior,omitempty"`
 	// Indicates whether to log information about the result of any security negotiation (e.g., SSL handshake) processing that has been performed.
@@ -125,7 +125,7 @@ type SyslogBasedAccessLogPublisherResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSyslogBasedAccessLogPublisherResponse(id string, schemas []EnumsyslogBasedAccessLogPublisherSchemaUrn, enabled bool, serverHostName string, serverPort int32, syslogFacility int32, asynchronous bool) *SyslogBasedAccessLogPublisherResponse {
+func NewSyslogBasedAccessLogPublisherResponse(id string, schemas []EnumsyslogBasedAccessLogPublisherSchemaUrn, enabled bool, serverHostName string, serverPort int64, syslogFacility int64, asynchronous bool) *SyslogBasedAccessLogPublisherResponse {
 	this := SyslogBasedAccessLogPublisherResponse{}
 	this.Id = id
 	this.Schemas = schemas
@@ -242,9 +242,9 @@ func (o *SyslogBasedAccessLogPublisherResponse) SetServerHostName(v string) {
 }
 
 // GetServerPort returns the ServerPort field value
-func (o *SyslogBasedAccessLogPublisherResponse) GetServerPort() int32 {
+func (o *SyslogBasedAccessLogPublisherResponse) GetServerPort() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -253,7 +253,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetServerPort() int32 {
 
 // GetServerPortOk returns a tuple with the ServerPort field value
 // and a boolean to check if the value has been set.
-func (o *SyslogBasedAccessLogPublisherResponse) GetServerPortOk() (*int32, bool) {
+func (o *SyslogBasedAccessLogPublisherResponse) GetServerPortOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -261,14 +261,14 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetServerPortOk() (*int32, bool)
 }
 
 // SetServerPort sets field value
-func (o *SyslogBasedAccessLogPublisherResponse) SetServerPort(v int32) {
+func (o *SyslogBasedAccessLogPublisherResponse) SetServerPort(v int64) {
 	o.ServerPort = v
 }
 
 // GetSyslogFacility returns the SyslogFacility field value
-func (o *SyslogBasedAccessLogPublisherResponse) GetSyslogFacility() int32 {
+func (o *SyslogBasedAccessLogPublisherResponse) GetSyslogFacility() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -277,7 +277,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetSyslogFacility() int32 {
 
 // GetSyslogFacilityOk returns a tuple with the SyslogFacility field value
 // and a boolean to check if the value has been set.
-func (o *SyslogBasedAccessLogPublisherResponse) GetSyslogFacilityOk() (*int32, bool) {
+func (o *SyslogBasedAccessLogPublisherResponse) GetSyslogFacilityOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -285,14 +285,14 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetSyslogFacilityOk() (*int32, b
 }
 
 // SetSyslogFacility sets field value
-func (o *SyslogBasedAccessLogPublisherResponse) SetSyslogFacility(v int32) {
+func (o *SyslogBasedAccessLogPublisherResponse) SetSyslogFacility(v int64) {
 	o.SyslogFacility = v
 }
 
 // GetMaxStringLength returns the MaxStringLength field value if set, zero value otherwise.
-func (o *SyslogBasedAccessLogPublisherResponse) GetMaxStringLength() int32 {
+func (o *SyslogBasedAccessLogPublisherResponse) GetMaxStringLength() int64 {
 	if o == nil || IsNil(o.MaxStringLength) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxStringLength
@@ -300,7 +300,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetMaxStringLength() int32 {
 
 // GetMaxStringLengthOk returns a tuple with the MaxStringLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SyslogBasedAccessLogPublisherResponse) GetMaxStringLengthOk() (*int32, bool) {
+func (o *SyslogBasedAccessLogPublisherResponse) GetMaxStringLengthOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxStringLength) {
 		return nil, false
 	}
@@ -316,8 +316,8 @@ func (o *SyslogBasedAccessLogPublisherResponse) HasMaxStringLength() bool {
 	return false
 }
 
-// SetMaxStringLength gets a reference to the given int32 and assigns it to the MaxStringLength field.
-func (o *SyslogBasedAccessLogPublisherResponse) SetMaxStringLength(v int32) {
+// SetMaxStringLength gets a reference to the given int64 and assigns it to the MaxStringLength field.
+func (o *SyslogBasedAccessLogPublisherResponse) SetMaxStringLength(v int64) {
 	o.MaxStringLength = &v
 }
 
@@ -1114,9 +1114,9 @@ func (o *SyslogBasedAccessLogPublisherResponse) SetAutoFlush(v bool) {
 }
 
 // GetQueueSize returns the QueueSize field value if set, zero value otherwise.
-func (o *SyslogBasedAccessLogPublisherResponse) GetQueueSize() int32 {
+func (o *SyslogBasedAccessLogPublisherResponse) GetQueueSize() int64 {
 	if o == nil || IsNil(o.QueueSize) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.QueueSize
@@ -1124,7 +1124,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetQueueSize() int32 {
 
 // GetQueueSizeOk returns a tuple with the QueueSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SyslogBasedAccessLogPublisherResponse) GetQueueSizeOk() (*int32, bool) {
+func (o *SyslogBasedAccessLogPublisherResponse) GetQueueSizeOk() (*int64, bool) {
 	if o == nil || IsNil(o.QueueSize) {
 		return nil, false
 	}
@@ -1140,8 +1140,8 @@ func (o *SyslogBasedAccessLogPublisherResponse) HasQueueSize() bool {
 	return false
 }
 
-// SetQueueSize gets a reference to the given int32 and assigns it to the QueueSize field.
-func (o *SyslogBasedAccessLogPublisherResponse) SetQueueSize(v int32) {
+// SetQueueSize gets a reference to the given int64 and assigns it to the QueueSize field.
+func (o *SyslogBasedAccessLogPublisherResponse) SetQueueSize(v int64) {
 	o.QueueSize = &v
 }
 

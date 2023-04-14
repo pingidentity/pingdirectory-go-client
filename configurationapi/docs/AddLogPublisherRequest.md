@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **SyslogSeverity** | Pointer to [**EnumlogPublisherSyslogSeverityProp**](EnumlogPublisherSyslogSeverityProp.md) |  | [optional] 
 **SyslogMessageHostName** | Pointer to **string** | The local host name that will be included in syslog messages that are logged by this Syslog JSON Error Log Publisher. | [optional] 
 **SyslogMessageApplicationName** | Pointer to **string** | The application name that will be included in syslog messages that are logged by this Syslog JSON Error Log Publisher. | [optional] 
-**QueueSize** | Pointer to **int32** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
+**QueueSize** | Pointer to **int64** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
 **WriteMultiLineMessages** | Pointer to **bool** | Indicates whether the JSON objects should use a multi-line representation (with each object field and array value on its own line) that may be easier for administrators to read, but each message will be larger (because of additional spaces and end-of-line markers), and it may be more difficult to consume and parse through some text-oriented tools. | [optional] 
 **UseReversibleForm** | Pointer to **bool** | Indicates whether the audit log should be written in reversible form so that it is possible to revert the changes if desired. | [optional] 
 **SoftDeleteEntryAuditBehavior** | Pointer to [**EnumlogPublisherConsoleJsonAuditSoftDeleteEntryAuditBehaviorProp**](EnumlogPublisherConsoleJsonAuditSoftDeleteEntryAuditBehaviorProp.md) |  | [optional] 
@@ -38,7 +38,7 @@ Name | Type | Description | Notes
 **Enabled** | **bool** | Indicates whether the Log Publisher is enabled for use. | 
 **LoggingErrorBehavior** | Pointer to [**EnumlogPublisherLoggingErrorBehaviorProp**](EnumlogPublisherLoggingErrorBehaviorProp.md) |  | [optional] 
 **ServerHostName** | Pointer to **string** | Specifies the hostname or IP address of the syslogd host to log to. It is highly recommend to use localhost. | [optional] 
-**ServerPort** | Pointer to **int32** | Specifies the port number of the syslogd host to log to. | [optional] 
+**ServerPort** | Pointer to **int64** | Specifies the port number of the syslogd host to log to. | [optional] 
 **AutoFlush** | Pointer to **bool** | Specifies whether to flush the writer after every log record. | [optional] 
 **Asynchronous** | Pointer to **bool** | Indicates whether the File Based JSON HTTP Operation Log Publisher will publish records asynchronously. | [optional] 
 **DefaultSeverity** | Pointer to [**[]EnumlogPublisherDefaultSeverityProp**](EnumlogPublisherDefaultSeverityProp.md) |  | [optional] 
@@ -69,8 +69,8 @@ Name | Type | Description | Notes
 **SearchEntryCriteria** | Pointer to **string** | Specifies a set of search entry criteria that must match the associated search result entry in order for that it to be logged by this Access Log Publisher. | [optional] 
 **SearchReferenceCriteria** | Pointer to **string** | Specifies a set of search reference criteria that must match the associated search result reference in order for that it to be logged by this Access Log Publisher. | [optional] 
 **MinIncludedOperationProcessingTime** | Pointer to **string** | The minimum processing time (i.e., \&quot;etime\&quot;) for operations that should be logged by this Operation Timing Access Log Publisher | [optional] 
-**MinIncludedPhaseTimeNanos** | Pointer to **int32** | The minimum length of time in nanoseconds that an operation phase should take before it is included in a log message. | [optional] 
-**MaxStringLength** | Pointer to **int32** | Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written. | [optional] 
+**MinIncludedPhaseTimeNanos** | Pointer to **int64** | The minimum length of time in nanoseconds that an operation phase should take before it is included in a log message. | [optional] 
+**MaxStringLength** | Pointer to **int64** | Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written. | [optional] 
 **IncludeRequestDetailsInResultMessages** | Pointer to **bool** | Indicates whether result log messages should include all of the elements of request log messages. This may be used to record a single message per operation with details about both the request and response. | [optional] 
 **LogAssuranceCompleted** | Pointer to **bool** | Indicates whether to log information about the result of replication assurance processing. | [optional] 
 **IncludeRequestDetailsInSearchEntryMessages** | Pointer to **bool** | Indicates whether log messages for search result entries should include information about the associated search request. | [optional] 
@@ -102,7 +102,7 @@ Name | Type | Description | Notes
 **DefaultOmitMethodEntryArguments** | Pointer to **bool** | Indicates whether to include method arguments in debug messages logged by default. | [optional] 
 **DefaultOmitMethodReturnValue** | Pointer to **bool** | Indicates whether to include the return value in debug messages logged by default. | [optional] 
 **DefaultIncludeThrowableCause** | Pointer to **bool** | Indicates whether to include the cause of exceptions in exception thrown and caught messages logged by default. | [optional] 
-**DefaultThrowableStackFrames** | Pointer to **int32** | Indicates the number of stack frames to include in the stack trace for method entry and exception thrown messages. | [optional] 
+**DefaultThrowableStackFrames** | Pointer to **int64** | Indicates the number of stack frames to include in the stack trace for method entry and exception thrown messages. | [optional] 
 **LogRequestHeaders** | Pointer to [**EnumlogPublisherLogRequestHeadersProp**](EnumlogPublisherLogRequestHeadersProp.md) |  | [optional] 
 **SuppressedRequestHeaderName** | Pointer to **[]string** | Specifies the case-insensitive names of request headers that should be omitted from log messages (e.g., for the purpose of brevity or security). This will only be used if the log-request-headers property has a value of true. | [optional] 
 **LogResponseHeaders** | Pointer to [**EnumlogPublisherLogResponseHeadersProp**](EnumlogPublisherLogResponseHeadersProp.md) |  | [optional] 
@@ -301,20 +301,20 @@ HasSyslogMessageApplicationName returns a boolean if a field has been set.
 
 ### GetQueueSize
 
-`func (o *AddLogPublisherRequest) GetQueueSize() int32`
+`func (o *AddLogPublisherRequest) GetQueueSize() int64`
 
 GetQueueSize returns the QueueSize field if non-nil, zero value otherwise.
 
 ### GetQueueSizeOk
 
-`func (o *AddLogPublisherRequest) GetQueueSizeOk() (*int32, bool)`
+`func (o *AddLogPublisherRequest) GetQueueSizeOk() (*int64, bool)`
 
 GetQueueSizeOk returns a tuple with the QueueSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQueueSize
 
-`func (o *AddLogPublisherRequest) SetQueueSize(v int32)`
+`func (o *AddLogPublisherRequest) SetQueueSize(v int64)`
 
 SetQueueSize sets QueueSize field to given value.
 
@@ -971,20 +971,20 @@ HasServerHostName returns a boolean if a field has been set.
 
 ### GetServerPort
 
-`func (o *AddLogPublisherRequest) GetServerPort() int32`
+`func (o *AddLogPublisherRequest) GetServerPort() int64`
 
 GetServerPort returns the ServerPort field if non-nil, zero value otherwise.
 
 ### GetServerPortOk
 
-`func (o *AddLogPublisherRequest) GetServerPortOk() (*int32, bool)`
+`func (o *AddLogPublisherRequest) GetServerPortOk() (*int64, bool)`
 
 GetServerPortOk returns a tuple with the ServerPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerPort
 
-`func (o *AddLogPublisherRequest) SetServerPort(v int32)`
+`func (o *AddLogPublisherRequest) SetServerPort(v int64)`
 
 SetServerPort sets ServerPort field to given value.
 
@@ -1736,20 +1736,20 @@ HasMinIncludedOperationProcessingTime returns a boolean if a field has been set.
 
 ### GetMinIncludedPhaseTimeNanos
 
-`func (o *AddLogPublisherRequest) GetMinIncludedPhaseTimeNanos() int32`
+`func (o *AddLogPublisherRequest) GetMinIncludedPhaseTimeNanos() int64`
 
 GetMinIncludedPhaseTimeNanos returns the MinIncludedPhaseTimeNanos field if non-nil, zero value otherwise.
 
 ### GetMinIncludedPhaseTimeNanosOk
 
-`func (o *AddLogPublisherRequest) GetMinIncludedPhaseTimeNanosOk() (*int32, bool)`
+`func (o *AddLogPublisherRequest) GetMinIncludedPhaseTimeNanosOk() (*int64, bool)`
 
 GetMinIncludedPhaseTimeNanosOk returns a tuple with the MinIncludedPhaseTimeNanos field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinIncludedPhaseTimeNanos
 
-`func (o *AddLogPublisherRequest) SetMinIncludedPhaseTimeNanos(v int32)`
+`func (o *AddLogPublisherRequest) SetMinIncludedPhaseTimeNanos(v int64)`
 
 SetMinIncludedPhaseTimeNanos sets MinIncludedPhaseTimeNanos field to given value.
 
@@ -1761,20 +1761,20 @@ HasMinIncludedPhaseTimeNanos returns a boolean if a field has been set.
 
 ### GetMaxStringLength
 
-`func (o *AddLogPublisherRequest) GetMaxStringLength() int32`
+`func (o *AddLogPublisherRequest) GetMaxStringLength() int64`
 
 GetMaxStringLength returns the MaxStringLength field if non-nil, zero value otherwise.
 
 ### GetMaxStringLengthOk
 
-`func (o *AddLogPublisherRequest) GetMaxStringLengthOk() (*int32, bool)`
+`func (o *AddLogPublisherRequest) GetMaxStringLengthOk() (*int64, bool)`
 
 GetMaxStringLengthOk returns a tuple with the MaxStringLength field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxStringLength
 
-`func (o *AddLogPublisherRequest) SetMaxStringLength(v int32)`
+`func (o *AddLogPublisherRequest) SetMaxStringLength(v int64)`
 
 SetMaxStringLength sets MaxStringLength field to given value.
 
@@ -2551,20 +2551,20 @@ HasDefaultIncludeThrowableCause returns a boolean if a field has been set.
 
 ### GetDefaultThrowableStackFrames
 
-`func (o *AddLogPublisherRequest) GetDefaultThrowableStackFrames() int32`
+`func (o *AddLogPublisherRequest) GetDefaultThrowableStackFrames() int64`
 
 GetDefaultThrowableStackFrames returns the DefaultThrowableStackFrames field if non-nil, zero value otherwise.
 
 ### GetDefaultThrowableStackFramesOk
 
-`func (o *AddLogPublisherRequest) GetDefaultThrowableStackFramesOk() (*int32, bool)`
+`func (o *AddLogPublisherRequest) GetDefaultThrowableStackFramesOk() (*int64, bool)`
 
 GetDefaultThrowableStackFramesOk returns a tuple with the DefaultThrowableStackFrames field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultThrowableStackFrames
 
-`func (o *AddLogPublisherRequest) SetDefaultThrowableStackFrames(v int32)`
+`func (o *AddLogPublisherRequest) SetDefaultThrowableStackFrames(v int64)`
 
 SetDefaultThrowableStackFrames sets DefaultThrowableStackFrames field to given value.
 

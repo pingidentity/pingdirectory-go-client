@@ -23,7 +23,7 @@ type AddSimilarityBasedPasswordValidatorRequest struct {
 	ValidatorName string                                          `json:"validatorName"`
 	Schemas       []EnumsimilarityBasedPasswordValidatorSchemaUrn `json:"schemas"`
 	// Specifies the minimum difference of new and old password.
-	MinPasswordDifference int32 `json:"minPasswordDifference"`
+	MinPasswordDifference int64 `json:"minPasswordDifference"`
 	// A description for this Password Validator
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the password validator is enabled for use.
@@ -38,7 +38,7 @@ type AddSimilarityBasedPasswordValidatorRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddSimilarityBasedPasswordValidatorRequest(validatorName string, schemas []EnumsimilarityBasedPasswordValidatorSchemaUrn, minPasswordDifference int32, enabled bool) *AddSimilarityBasedPasswordValidatorRequest {
+func NewAddSimilarityBasedPasswordValidatorRequest(validatorName string, schemas []EnumsimilarityBasedPasswordValidatorSchemaUrn, minPasswordDifference int64, enabled bool) *AddSimilarityBasedPasswordValidatorRequest {
 	this := AddSimilarityBasedPasswordValidatorRequest{}
 	this.ValidatorName = validatorName
 	this.Schemas = schemas
@@ -104,9 +104,9 @@ func (o *AddSimilarityBasedPasswordValidatorRequest) SetSchemas(v []Enumsimilari
 }
 
 // GetMinPasswordDifference returns the MinPasswordDifference field value
-func (o *AddSimilarityBasedPasswordValidatorRequest) GetMinPasswordDifference() int32 {
+func (o *AddSimilarityBasedPasswordValidatorRequest) GetMinPasswordDifference() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -115,7 +115,7 @@ func (o *AddSimilarityBasedPasswordValidatorRequest) GetMinPasswordDifference() 
 
 // GetMinPasswordDifferenceOk returns a tuple with the MinPasswordDifference field value
 // and a boolean to check if the value has been set.
-func (o *AddSimilarityBasedPasswordValidatorRequest) GetMinPasswordDifferenceOk() (*int32, bool) {
+func (o *AddSimilarityBasedPasswordValidatorRequest) GetMinPasswordDifferenceOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -123,7 +123,7 @@ func (o *AddSimilarityBasedPasswordValidatorRequest) GetMinPasswordDifferenceOk(
 }
 
 // SetMinPasswordDifference sets field value
-func (o *AddSimilarityBasedPasswordValidatorRequest) SetMinPasswordDifference(v int32) {
+func (o *AddSimilarityBasedPasswordValidatorRequest) SetMinPasswordDifference(v int64) {
 	o.MinPasswordDifference = v
 }
 

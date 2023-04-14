@@ -59,9 +59,9 @@ type AddGroupRestResourceTypeRequest struct {
 	// Specifies the name or OID of the LDAP attribute type which is the primary display attribute. This attribute type must be in the search filter pattern and must have a Delegated Admin Attribute definition.
 	PrimaryDisplayAttributeType *string `json:"primaryDisplayAttributeType,omitempty"`
 	// The maximum number of resources that may be returned from a search request.
-	DelegatedAdminSearchSizeLimit *int32 `json:"delegatedAdminSearchSizeLimit,omitempty"`
+	DelegatedAdminSearchSizeLimit *int64 `json:"delegatedAdminSearchSizeLimit,omitempty"`
 	// The maximum number of resources that may be included in a report.
-	DelegatedAdminReportSizeLimit *int32 `json:"delegatedAdminReportSizeLimit,omitempty"`
+	DelegatedAdminReportSizeLimit *int64 `json:"delegatedAdminReportSizeLimit,omitempty"`
 }
 
 // NewAddGroupRestResourceTypeRequest instantiates a new AddGroupRestResourceTypeRequest object
@@ -680,9 +680,9 @@ func (o *AddGroupRestResourceTypeRequest) SetPrimaryDisplayAttributeType(v strin
 }
 
 // GetDelegatedAdminSearchSizeLimit returns the DelegatedAdminSearchSizeLimit field value if set, zero value otherwise.
-func (o *AddGroupRestResourceTypeRequest) GetDelegatedAdminSearchSizeLimit() int32 {
+func (o *AddGroupRestResourceTypeRequest) GetDelegatedAdminSearchSizeLimit() int64 {
 	if o == nil || IsNil(o.DelegatedAdminSearchSizeLimit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DelegatedAdminSearchSizeLimit
@@ -690,7 +690,7 @@ func (o *AddGroupRestResourceTypeRequest) GetDelegatedAdminSearchSizeLimit() int
 
 // GetDelegatedAdminSearchSizeLimitOk returns a tuple with the DelegatedAdminSearchSizeLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddGroupRestResourceTypeRequest) GetDelegatedAdminSearchSizeLimitOk() (*int32, bool) {
+func (o *AddGroupRestResourceTypeRequest) GetDelegatedAdminSearchSizeLimitOk() (*int64, bool) {
 	if o == nil || IsNil(o.DelegatedAdminSearchSizeLimit) {
 		return nil, false
 	}
@@ -706,15 +706,15 @@ func (o *AddGroupRestResourceTypeRequest) HasDelegatedAdminSearchSizeLimit() boo
 	return false
 }
 
-// SetDelegatedAdminSearchSizeLimit gets a reference to the given int32 and assigns it to the DelegatedAdminSearchSizeLimit field.
-func (o *AddGroupRestResourceTypeRequest) SetDelegatedAdminSearchSizeLimit(v int32) {
+// SetDelegatedAdminSearchSizeLimit gets a reference to the given int64 and assigns it to the DelegatedAdminSearchSizeLimit field.
+func (o *AddGroupRestResourceTypeRequest) SetDelegatedAdminSearchSizeLimit(v int64) {
 	o.DelegatedAdminSearchSizeLimit = &v
 }
 
 // GetDelegatedAdminReportSizeLimit returns the DelegatedAdminReportSizeLimit field value if set, zero value otherwise.
-func (o *AddGroupRestResourceTypeRequest) GetDelegatedAdminReportSizeLimit() int32 {
+func (o *AddGroupRestResourceTypeRequest) GetDelegatedAdminReportSizeLimit() int64 {
 	if o == nil || IsNil(o.DelegatedAdminReportSizeLimit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DelegatedAdminReportSizeLimit
@@ -722,7 +722,7 @@ func (o *AddGroupRestResourceTypeRequest) GetDelegatedAdminReportSizeLimit() int
 
 // GetDelegatedAdminReportSizeLimitOk returns a tuple with the DelegatedAdminReportSizeLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddGroupRestResourceTypeRequest) GetDelegatedAdminReportSizeLimitOk() (*int32, bool) {
+func (o *AddGroupRestResourceTypeRequest) GetDelegatedAdminReportSizeLimitOk() (*int64, bool) {
 	if o == nil || IsNil(o.DelegatedAdminReportSizeLimit) {
 		return nil, false
 	}
@@ -738,8 +738,8 @@ func (o *AddGroupRestResourceTypeRequest) HasDelegatedAdminReportSizeLimit() boo
 	return false
 }
 
-// SetDelegatedAdminReportSizeLimit gets a reference to the given int32 and assigns it to the DelegatedAdminReportSizeLimit field.
-func (o *AddGroupRestResourceTypeRequest) SetDelegatedAdminReportSizeLimit(v int32) {
+// SetDelegatedAdminReportSizeLimit gets a reference to the given int64 and assigns it to the DelegatedAdminReportSizeLimit field.
+func (o *AddGroupRestResourceTypeRequest) SetDelegatedAdminReportSizeLimit(v int64) {
 	o.DelegatedAdminReportSizeLimit = &v
 }
 

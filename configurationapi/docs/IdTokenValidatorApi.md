@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    addIdTokenValidatorRequest := openapiclient.add_id_token_validator_request{AddOpenidConnectIdTokenValidatorRequest: openapiclient.NewAddOpenidConnectIdTokenValidatorRequest("ValidatorName_example", []openapiclient.EnumopenidConnectIdTokenValidatorSchemaUrn{openapiclient.Enumopenid-connect-id-token-validatorSchemaUrn("urn:pingidentity:schemas:configuration:2.0:id-token-validator:openid-connect")}, []openapiclient.EnumidTokenValidatorAllowedSigningAlgorithmProp{openapiclient.Enumid-token-validator-allowedSigningAlgorithmProp("RS256")}, false, "IdentityMapper_example", "IssuerURL_example", int32(123))} // AddIdTokenValidatorRequest | Create a new ID Token Validator in the config
+    addIdTokenValidatorRequest := openapiclient.add_id_token_validator_request{AddOpenidConnectIdTokenValidatorRequest: openapiclient.NewAddOpenidConnectIdTokenValidatorRequest("ValidatorName_example", []openapiclient.EnumopenidConnectIdTokenValidatorSchemaUrn{openapiclient.Enumopenid-connect-id-token-validatorSchemaUrn("urn:pingidentity:schemas:configuration:2.0:id-token-validator:openid-connect")}, []openapiclient.EnumidTokenValidatorAllowedSigningAlgorithmProp{openapiclient.Enumid-token-validator-allowedSigningAlgorithmProp("RS256")}, false, "IdentityMapper_example", "IssuerURL_example", int64(123))} // AddIdTokenValidatorRequest | Create a new ID Token Validator in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

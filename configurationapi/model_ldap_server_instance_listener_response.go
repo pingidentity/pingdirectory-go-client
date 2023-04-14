@@ -23,7 +23,7 @@ type LdapServerInstanceListenerResponse struct {
 	// Name of the Server Instance
 	Id string `json:"id"`
 	// The TCP port number on which the LDAP server is listening.
-	ServerLDAPPort     *int32                                                `json:"serverLDAPPort,omitempty"`
+	ServerLDAPPort     *int64                                                `json:"serverLDAPPort,omitempty"`
 	ConnectionSecurity *EnumserverInstanceListenerLdapConnectionSecurityProp `json:"connectionSecurity,omitempty"`
 	// The public component of the certificate that the listener is expected to present to clients. When establishing a connection to this server, only the certificate(s) listed here will be trusted.
 	ListenerCertificate                           *string                                            `json:"listenerCertificate,omitempty"`
@@ -100,9 +100,9 @@ func (o *LdapServerInstanceListenerResponse) SetId(v string) {
 }
 
 // GetServerLDAPPort returns the ServerLDAPPort field value if set, zero value otherwise.
-func (o *LdapServerInstanceListenerResponse) GetServerLDAPPort() int32 {
+func (o *LdapServerInstanceListenerResponse) GetServerLDAPPort() int64 {
 	if o == nil || IsNil(o.ServerLDAPPort) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ServerLDAPPort
@@ -110,7 +110,7 @@ func (o *LdapServerInstanceListenerResponse) GetServerLDAPPort() int32 {
 
 // GetServerLDAPPortOk returns a tuple with the ServerLDAPPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LdapServerInstanceListenerResponse) GetServerLDAPPortOk() (*int32, bool) {
+func (o *LdapServerInstanceListenerResponse) GetServerLDAPPortOk() (*int64, bool) {
 	if o == nil || IsNil(o.ServerLDAPPort) {
 		return nil, false
 	}
@@ -126,8 +126,8 @@ func (o *LdapServerInstanceListenerResponse) HasServerLDAPPort() bool {
 	return false
 }
 
-// SetServerLDAPPort gets a reference to the given int32 and assigns it to the ServerLDAPPort field.
-func (o *LdapServerInstanceListenerResponse) SetServerLDAPPort(v int32) {
+// SetServerLDAPPort gets a reference to the given int64 and assigns it to the ServerLDAPPort field.
+func (o *LdapServerInstanceListenerResponse) SetServerLDAPPort(v int64) {
 	o.ServerLDAPPort = &v
 }
 

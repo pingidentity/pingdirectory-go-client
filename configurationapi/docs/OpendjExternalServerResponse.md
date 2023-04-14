@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **string** | Name of the External Server | 
 **Schemas** | [**[]EnumopendjExternalServerSchemaUrn**](EnumopendjExternalServerSchemaUrn.md) |  | 
 **ServerHostName** | **string** | The host name or IP address of the target LDAP server. | 
-**ServerPort** | **int32** | The port number on which the server listens for requests. | 
+**ServerPort** | **int64** | The port number on which the server listens for requests. | 
 **Location** | Pointer to **string** | Specifies the location for the LDAP External Server. | [optional] 
 **BindDN** | Pointer to **string** | The DN to use to bind to the target LDAP server if simple authentication is required. | [optional] 
 **Password** | Pointer to **string** | The login password for the specified user. | [optional] 
@@ -22,8 +22,8 @@ Name | Type | Description | Notes
 **MaxResponseSize** | **string** | Specifies the maximum response size that should be supported for messages received from the LDAP external server. | 
 **KeyManagerProvider** | Pointer to **string** | The key manager provider to use if SSL or StartTLS is to be used for connection-level security. When specifying a value for this property (except when using the Null key manager provider) you must ensure that the external server trusts this server&#39;s public certificate by adding this server&#39;s public certificate to the external server&#39;s trust store. | [optional] 
 **TrustManagerProvider** | Pointer to **string** | The trust manager provider to use if SSL or StartTLS is to be used for connection-level security. | [optional] 
-**InitialConnections** | Pointer to **int32** | The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool. | [optional] 
-**MaxConnections** | Pointer to **int32** | The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool. | [optional] 
+**InitialConnections** | Pointer to **int64** | The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool. | [optional] 
+**MaxConnections** | Pointer to **int64** | The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool. | [optional] 
 **DefunctConnectionResultCode** | Pointer to [**[]EnumexternalServerDefunctConnectionResultCodeProp**](EnumexternalServerDefunctConnectionResultCodeProp.md) |  | [optional] 
 **AbandonOnTimeout** | Pointer to **bool** | Indicates whether to send an abandon request for an operation for which a response timeout is encountered. A request which has timed out on one server may be retried on another server regardless of whether an abandon request is sent, but if the initial attempt is not abandoned then a long-running operation may unnecessarily continue to consume processing resources on the initial server. | [optional] 
 **Description** | Pointer to **string** | A description for this External Server | [optional] 
@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 
 ### NewOpendjExternalServerResponse
 
-`func NewOpendjExternalServerResponse(id string, schemas []EnumopendjExternalServerSchemaUrn, serverHostName string, serverPort int32, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerOpendjAuthenticationMethodProp, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string, ) *OpendjExternalServerResponse`
+`func NewOpendjExternalServerResponse(id string, schemas []EnumopendjExternalServerSchemaUrn, serverHostName string, serverPort int64, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerOpendjAuthenticationMethodProp, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string, ) *OpendjExternalServerResponse`
 
 NewOpendjExternalServerResponse instantiates a new OpendjExternalServerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -111,20 +111,20 @@ SetServerHostName sets ServerHostName field to given value.
 
 ### GetServerPort
 
-`func (o *OpendjExternalServerResponse) GetServerPort() int32`
+`func (o *OpendjExternalServerResponse) GetServerPort() int64`
 
 GetServerPort returns the ServerPort field if non-nil, zero value otherwise.
 
 ### GetServerPortOk
 
-`func (o *OpendjExternalServerResponse) GetServerPortOk() (*int32, bool)`
+`func (o *OpendjExternalServerResponse) GetServerPortOk() (*int64, bool)`
 
 GetServerPortOk returns a tuple with the ServerPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerPort
 
-`func (o *OpendjExternalServerResponse) SetServerPort(v int32)`
+`func (o *OpendjExternalServerResponse) SetServerPort(v int64)`
 
 SetServerPort sets ServerPort field to given value.
 
@@ -451,20 +451,20 @@ HasTrustManagerProvider returns a boolean if a field has been set.
 
 ### GetInitialConnections
 
-`func (o *OpendjExternalServerResponse) GetInitialConnections() int32`
+`func (o *OpendjExternalServerResponse) GetInitialConnections() int64`
 
 GetInitialConnections returns the InitialConnections field if non-nil, zero value otherwise.
 
 ### GetInitialConnectionsOk
 
-`func (o *OpendjExternalServerResponse) GetInitialConnectionsOk() (*int32, bool)`
+`func (o *OpendjExternalServerResponse) GetInitialConnectionsOk() (*int64, bool)`
 
 GetInitialConnectionsOk returns a tuple with the InitialConnections field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInitialConnections
 
-`func (o *OpendjExternalServerResponse) SetInitialConnections(v int32)`
+`func (o *OpendjExternalServerResponse) SetInitialConnections(v int64)`
 
 SetInitialConnections sets InitialConnections field to given value.
 
@@ -476,20 +476,20 @@ HasInitialConnections returns a boolean if a field has been set.
 
 ### GetMaxConnections
 
-`func (o *OpendjExternalServerResponse) GetMaxConnections() int32`
+`func (o *OpendjExternalServerResponse) GetMaxConnections() int64`
 
 GetMaxConnections returns the MaxConnections field if non-nil, zero value otherwise.
 
 ### GetMaxConnectionsOk
 
-`func (o *OpendjExternalServerResponse) GetMaxConnectionsOk() (*int32, bool)`
+`func (o *OpendjExternalServerResponse) GetMaxConnectionsOk() (*int64, bool)`
 
 GetMaxConnectionsOk returns a tuple with the MaxConnections field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxConnections
 
-`func (o *OpendjExternalServerResponse) SetMaxConnections(v int32)`
+`func (o *OpendjExternalServerResponse) SetMaxConnections(v int64)`
 
 SetMaxConnections sets MaxConnections field to given value.
 

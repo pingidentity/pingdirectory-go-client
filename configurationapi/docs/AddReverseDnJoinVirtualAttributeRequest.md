@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **JoinBaseDNType** | [**EnumvirtualAttributeJoinBaseDNTypeProp**](EnumvirtualAttributeJoinBaseDNTypeProp.md) |  | 
 **JoinCustomBaseDN** | Pointer to **string** | The fixed, administrator-specified base DN for the internal searches used to identify joined entries. | [optional] 
 **JoinScope** | Pointer to [**EnumvirtualAttributeJoinScopeProp**](EnumvirtualAttributeJoinScopeProp.md) |  | [optional] 
-**JoinSizeLimit** | Pointer to **int32** | The maximum number of entries that may be joined with the source entry, which also corresponds to the maximum number of values that the virtual attribute provider will generate for an entry. | [optional] 
+**JoinSizeLimit** | Pointer to **int64** | The maximum number of entries that may be joined with the source entry, which also corresponds to the maximum number of values that the virtual attribute provider will generate for an entry. | [optional] 
 **JoinFilter** | Pointer to **string** | An optional filter that specifies additional criteria for identifying joined entries. If a join-filter value is specified, then only entries matching that filter (in addition to satisfying the other join criteria) will be joined with the search result entry. | [optional] 
 **JoinAttribute** | Pointer to **[]string** | An optional set of the names of the attributes to include with joined entries. | [optional] 
 **Description** | Pointer to **string** | A description for this Virtual Attribute | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **ClientConnectionPolicy** | Pointer to **[]string** | Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies. | [optional] 
 **ConflictBehavior** | Pointer to [**EnumvirtualAttributeConflictBehaviorProp**](EnumvirtualAttributeConflictBehaviorProp.md) |  | [optional] 
 **RequireExplicitRequestByName** | Pointer to **bool** | Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type. | [optional] 
-**MultipleVirtualAttributeEvaluationOrderIndex** | Pointer to **int32** | Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry. | [optional] 
+**MultipleVirtualAttributeEvaluationOrderIndex** | Pointer to **int64** | Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry. | [optional] 
 **MultipleVirtualAttributeMergeBehavior** | Pointer to [**EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp**](EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp.md) |  | [optional] 
 **AllowIndexConflicts** | Pointer to **bool** | Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server. | [optional] 
 
@@ -177,20 +177,20 @@ HasJoinScope returns a boolean if a field has been set.
 
 ### GetJoinSizeLimit
 
-`func (o *AddReverseDnJoinVirtualAttributeRequest) GetJoinSizeLimit() int32`
+`func (o *AddReverseDnJoinVirtualAttributeRequest) GetJoinSizeLimit() int64`
 
 GetJoinSizeLimit returns the JoinSizeLimit field if non-nil, zero value otherwise.
 
 ### GetJoinSizeLimitOk
 
-`func (o *AddReverseDnJoinVirtualAttributeRequest) GetJoinSizeLimitOk() (*int32, bool)`
+`func (o *AddReverseDnJoinVirtualAttributeRequest) GetJoinSizeLimitOk() (*int64, bool)`
 
 GetJoinSizeLimitOk returns a tuple with the JoinSizeLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetJoinSizeLimit
 
-`func (o *AddReverseDnJoinVirtualAttributeRequest) SetJoinSizeLimit(v int32)`
+`func (o *AddReverseDnJoinVirtualAttributeRequest) SetJoinSizeLimit(v int64)`
 
 SetJoinSizeLimit sets JoinSizeLimit field to given value.
 
@@ -467,20 +467,20 @@ HasRequireExplicitRequestByName returns a boolean if a field has been set.
 
 ### GetMultipleVirtualAttributeEvaluationOrderIndex
 
-`func (o *AddReverseDnJoinVirtualAttributeRequest) GetMultipleVirtualAttributeEvaluationOrderIndex() int32`
+`func (o *AddReverseDnJoinVirtualAttributeRequest) GetMultipleVirtualAttributeEvaluationOrderIndex() int64`
 
 GetMultipleVirtualAttributeEvaluationOrderIndex returns the MultipleVirtualAttributeEvaluationOrderIndex field if non-nil, zero value otherwise.
 
 ### GetMultipleVirtualAttributeEvaluationOrderIndexOk
 
-`func (o *AddReverseDnJoinVirtualAttributeRequest) GetMultipleVirtualAttributeEvaluationOrderIndexOk() (*int32, bool)`
+`func (o *AddReverseDnJoinVirtualAttributeRequest) GetMultipleVirtualAttributeEvaluationOrderIndexOk() (*int64, bool)`
 
 GetMultipleVirtualAttributeEvaluationOrderIndexOk returns a tuple with the MultipleVirtualAttributeEvaluationOrderIndex field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMultipleVirtualAttributeEvaluationOrderIndex
 
-`func (o *AddReverseDnJoinVirtualAttributeRequest) SetMultipleVirtualAttributeEvaluationOrderIndex(v int32)`
+`func (o *AddReverseDnJoinVirtualAttributeRequest) SetMultipleVirtualAttributeEvaluationOrderIndex(v int64)`
 
 SetMultipleVirtualAttributeEvaluationOrderIndex sets MultipleVirtualAttributeEvaluationOrderIndex field to given value.
 

@@ -23,13 +23,13 @@ type AddScryptPasswordStorageSchemeRequest struct {
 	SchemeName string                                     `json:"schemeName"`
 	Schemas    []EnumscryptPasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// Specifies the exponent that should be used for the CPU/memory cost factor. The cost factor must be a power of two, so the value of this property represents the power to which two is raised. The CPU/memory cost factor specifies the number of iterations required for encoding the password, and also affects the amount of memory required during processing. A higher cost factor requires more processing and more memory to generate a password, which makes attacks against the password more expensive.
-	ScryptCpuMemoryCostFactorExponent *int32 `json:"scryptCpuMemoryCostFactorExponent,omitempty"`
+	ScryptCpuMemoryCostFactorExponent *int64 `json:"scryptCpuMemoryCostFactorExponent,omitempty"`
 	// Specifies the block size for the digest that will be used in the course of encoding passwords. Increasing the block size while keeping the CPU/memory cost factor constant will increase the amount of memory required to encode a password, but it also increases the ratio of sequential memory access to random memory access (and sequential memory access is generally faster than random memory access).
-	ScryptBlockSize *int32 `json:"scryptBlockSize,omitempty"`
+	ScryptBlockSize *int64 `json:"scryptBlockSize,omitempty"`
 	// Specifies the number of times that scrypt has to perform the entire encoding process to produce the final result.
-	ScryptParallelizationParameter *int32 `json:"scryptParallelizationParameter,omitempty"`
+	ScryptParallelizationParameter *int64 `json:"scryptParallelizationParameter,omitempty"`
 	// Specifies the maximum allowed length, in bytes, for passwords encoded with this scheme, which can help mitigate denial of service attacks from clients that attempt to bind with very long passwords.
-	MaxPasswordLength *int32 `json:"maxPasswordLength,omitempty"`
+	MaxPasswordLength *int64 `json:"maxPasswordLength,omitempty"`
 	// A description for this Password Storage Scheme
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Password Storage Scheme is enabled for use.
@@ -105,9 +105,9 @@ func (o *AddScryptPasswordStorageSchemeRequest) SetSchemas(v []EnumscryptPasswor
 }
 
 // GetScryptCpuMemoryCostFactorExponent returns the ScryptCpuMemoryCostFactorExponent field value if set, zero value otherwise.
-func (o *AddScryptPasswordStorageSchemeRequest) GetScryptCpuMemoryCostFactorExponent() int32 {
+func (o *AddScryptPasswordStorageSchemeRequest) GetScryptCpuMemoryCostFactorExponent() int64 {
 	if o == nil || IsNil(o.ScryptCpuMemoryCostFactorExponent) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ScryptCpuMemoryCostFactorExponent
@@ -115,7 +115,7 @@ func (o *AddScryptPasswordStorageSchemeRequest) GetScryptCpuMemoryCostFactorExpo
 
 // GetScryptCpuMemoryCostFactorExponentOk returns a tuple with the ScryptCpuMemoryCostFactorExponent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddScryptPasswordStorageSchemeRequest) GetScryptCpuMemoryCostFactorExponentOk() (*int32, bool) {
+func (o *AddScryptPasswordStorageSchemeRequest) GetScryptCpuMemoryCostFactorExponentOk() (*int64, bool) {
 	if o == nil || IsNil(o.ScryptCpuMemoryCostFactorExponent) {
 		return nil, false
 	}
@@ -131,15 +131,15 @@ func (o *AddScryptPasswordStorageSchemeRequest) HasScryptCpuMemoryCostFactorExpo
 	return false
 }
 
-// SetScryptCpuMemoryCostFactorExponent gets a reference to the given int32 and assigns it to the ScryptCpuMemoryCostFactorExponent field.
-func (o *AddScryptPasswordStorageSchemeRequest) SetScryptCpuMemoryCostFactorExponent(v int32) {
+// SetScryptCpuMemoryCostFactorExponent gets a reference to the given int64 and assigns it to the ScryptCpuMemoryCostFactorExponent field.
+func (o *AddScryptPasswordStorageSchemeRequest) SetScryptCpuMemoryCostFactorExponent(v int64) {
 	o.ScryptCpuMemoryCostFactorExponent = &v
 }
 
 // GetScryptBlockSize returns the ScryptBlockSize field value if set, zero value otherwise.
-func (o *AddScryptPasswordStorageSchemeRequest) GetScryptBlockSize() int32 {
+func (o *AddScryptPasswordStorageSchemeRequest) GetScryptBlockSize() int64 {
 	if o == nil || IsNil(o.ScryptBlockSize) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ScryptBlockSize
@@ -147,7 +147,7 @@ func (o *AddScryptPasswordStorageSchemeRequest) GetScryptBlockSize() int32 {
 
 // GetScryptBlockSizeOk returns a tuple with the ScryptBlockSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddScryptPasswordStorageSchemeRequest) GetScryptBlockSizeOk() (*int32, bool) {
+func (o *AddScryptPasswordStorageSchemeRequest) GetScryptBlockSizeOk() (*int64, bool) {
 	if o == nil || IsNil(o.ScryptBlockSize) {
 		return nil, false
 	}
@@ -163,15 +163,15 @@ func (o *AddScryptPasswordStorageSchemeRequest) HasScryptBlockSize() bool {
 	return false
 }
 
-// SetScryptBlockSize gets a reference to the given int32 and assigns it to the ScryptBlockSize field.
-func (o *AddScryptPasswordStorageSchemeRequest) SetScryptBlockSize(v int32) {
+// SetScryptBlockSize gets a reference to the given int64 and assigns it to the ScryptBlockSize field.
+func (o *AddScryptPasswordStorageSchemeRequest) SetScryptBlockSize(v int64) {
 	o.ScryptBlockSize = &v
 }
 
 // GetScryptParallelizationParameter returns the ScryptParallelizationParameter field value if set, zero value otherwise.
-func (o *AddScryptPasswordStorageSchemeRequest) GetScryptParallelizationParameter() int32 {
+func (o *AddScryptPasswordStorageSchemeRequest) GetScryptParallelizationParameter() int64 {
 	if o == nil || IsNil(o.ScryptParallelizationParameter) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ScryptParallelizationParameter
@@ -179,7 +179,7 @@ func (o *AddScryptPasswordStorageSchemeRequest) GetScryptParallelizationParamete
 
 // GetScryptParallelizationParameterOk returns a tuple with the ScryptParallelizationParameter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddScryptPasswordStorageSchemeRequest) GetScryptParallelizationParameterOk() (*int32, bool) {
+func (o *AddScryptPasswordStorageSchemeRequest) GetScryptParallelizationParameterOk() (*int64, bool) {
 	if o == nil || IsNil(o.ScryptParallelizationParameter) {
 		return nil, false
 	}
@@ -195,15 +195,15 @@ func (o *AddScryptPasswordStorageSchemeRequest) HasScryptParallelizationParamete
 	return false
 }
 
-// SetScryptParallelizationParameter gets a reference to the given int32 and assigns it to the ScryptParallelizationParameter field.
-func (o *AddScryptPasswordStorageSchemeRequest) SetScryptParallelizationParameter(v int32) {
+// SetScryptParallelizationParameter gets a reference to the given int64 and assigns it to the ScryptParallelizationParameter field.
+func (o *AddScryptPasswordStorageSchemeRequest) SetScryptParallelizationParameter(v int64) {
 	o.ScryptParallelizationParameter = &v
 }
 
 // GetMaxPasswordLength returns the MaxPasswordLength field value if set, zero value otherwise.
-func (o *AddScryptPasswordStorageSchemeRequest) GetMaxPasswordLength() int32 {
+func (o *AddScryptPasswordStorageSchemeRequest) GetMaxPasswordLength() int64 {
 	if o == nil || IsNil(o.MaxPasswordLength) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxPasswordLength
@@ -211,7 +211,7 @@ func (o *AddScryptPasswordStorageSchemeRequest) GetMaxPasswordLength() int32 {
 
 // GetMaxPasswordLengthOk returns a tuple with the MaxPasswordLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddScryptPasswordStorageSchemeRequest) GetMaxPasswordLengthOk() (*int32, bool) {
+func (o *AddScryptPasswordStorageSchemeRequest) GetMaxPasswordLengthOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxPasswordLength) {
 		return nil, false
 	}
@@ -227,8 +227,8 @@ func (o *AddScryptPasswordStorageSchemeRequest) HasMaxPasswordLength() bool {
 	return false
 }
 
-// SetMaxPasswordLength gets a reference to the given int32 and assigns it to the MaxPasswordLength field.
-func (o *AddScryptPasswordStorageSchemeRequest) SetMaxPasswordLength(v int32) {
+// SetMaxPasswordLength gets a reference to the given int64 and assigns it to the MaxPasswordLength field.
+func (o *AddScryptPasswordStorageSchemeRequest) SetMaxPasswordLength(v int64) {
 	o.MaxPasswordLength = &v
 }
 

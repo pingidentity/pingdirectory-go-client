@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **SyslogSeverity** | Pointer to [**EnumlogPublisherSyslogSeverityProp**](EnumlogPublisherSyslogSeverityProp.md) |  | [optional] 
 **SyslogMessageHostName** | Pointer to **string** | The local host name that will be included in syslog messages that are logged by this Syslog JSON Access Log Publisher. | [optional] 
 **SyslogMessageApplicationName** | Pointer to **string** | The application name that will be included in syslog messages that are logged by this Syslog JSON Access Log Publisher. | [optional] 
-**QueueSize** | Pointer to **int32** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
+**QueueSize** | Pointer to **int64** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
 **LogConnects** | Pointer to **bool** | Indicates whether to log information about connections established to the server. | [optional] 
 **LogDisconnects** | Pointer to **bool** | Indicates whether to log information about connections that have been closed by the client or terminated by the server. | [optional] 
 **LogSecurityNegotiation** | Pointer to **bool** | Indicates whether to log information about the result of any security negotiation (e.g., SSL handshake) processing that has been performed. | [optional] 
@@ -44,7 +44,7 @@ Name | Type | Description | Notes
 **IncludeResponseControls** | Pointer to **bool** | Indicates whether log messages for operation results should include a list of the OIDs of any controls included in the result. | [optional] 
 **IncludeReplicationChangeID** | Pointer to **bool** | Indicates whether to log information about the replication change ID. | [optional] 
 **GenerifyMessageStringsWhenPossible** | Pointer to **bool** | Indicates whether to use generified version of certain message strings, including diagnostic messages, additional information messages, authentication failure reasons, and disconnect messages. Generified versions of those strings may use placeholders (like %s for a string or %d for an integer) rather than the version of the string with those placeholders replaced with specific values. | [optional] 
-**MaxStringLength** | Pointer to **int32** | Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written. | [optional] 
+**MaxStringLength** | Pointer to **int64** | Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written. | [optional] 
 **LogFieldBehavior** | Pointer to **string** | The behavior to use for determining which fields to log and whether to transform the values of those fields in any way. | [optional] 
 **ConnectionCriteria** | Pointer to **string** | Specifies a set of connection criteria that must match the associated client connection in order for a connect, disconnect, request, or result message to be logged. | [optional] 
 **RequestCriteria** | Pointer to **string** | Specifies a set of request criteria that must match the associated operation request in order for a request or result to be logged by this Access Log Publisher. | [optional] 
@@ -236,20 +236,20 @@ HasSyslogMessageApplicationName returns a boolean if a field has been set.
 
 ### GetQueueSize
 
-`func (o *AddSyslogJsonAccessLogPublisherRequest) GetQueueSize() int32`
+`func (o *AddSyslogJsonAccessLogPublisherRequest) GetQueueSize() int64`
 
 GetQueueSize returns the QueueSize field if non-nil, zero value otherwise.
 
 ### GetQueueSizeOk
 
-`func (o *AddSyslogJsonAccessLogPublisherRequest) GetQueueSizeOk() (*int32, bool)`
+`func (o *AddSyslogJsonAccessLogPublisherRequest) GetQueueSizeOk() (*int64, bool)`
 
 GetQueueSizeOk returns a tuple with the QueueSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQueueSize
 
-`func (o *AddSyslogJsonAccessLogPublisherRequest) SetQueueSize(v int32)`
+`func (o *AddSyslogJsonAccessLogPublisherRequest) SetQueueSize(v int64)`
 
 SetQueueSize sets QueueSize field to given value.
 
@@ -1061,20 +1061,20 @@ HasGenerifyMessageStringsWhenPossible returns a boolean if a field has been set.
 
 ### GetMaxStringLength
 
-`func (o *AddSyslogJsonAccessLogPublisherRequest) GetMaxStringLength() int32`
+`func (o *AddSyslogJsonAccessLogPublisherRequest) GetMaxStringLength() int64`
 
 GetMaxStringLength returns the MaxStringLength field if non-nil, zero value otherwise.
 
 ### GetMaxStringLengthOk
 
-`func (o *AddSyslogJsonAccessLogPublisherRequest) GetMaxStringLengthOk() (*int32, bool)`
+`func (o *AddSyslogJsonAccessLogPublisherRequest) GetMaxStringLengthOk() (*int64, bool)`
 
 GetMaxStringLengthOk returns a tuple with the MaxStringLength field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxStringLength
 
-`func (o *AddSyslogJsonAccessLogPublisherRequest) SetMaxStringLength(v int32)`
+`func (o *AddSyslogJsonAccessLogPublisherRequest) SetMaxStringLength(v int64)`
 
 SetMaxStringLength sets MaxStringLength field to given value.
 

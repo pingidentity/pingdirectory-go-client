@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 **Id** | **string** | Name of the Plugin Root | 
 **Schemas** | [**[]EnumcleanUpExpiredPingfederatePersistentSessionsPluginSchemaUrn**](EnumcleanUpExpiredPingfederatePersistentSessionsPluginSchemaUrn.md) |  | 
 **PollingInterval** | **string** | This specifies how often the plugin should check for expired data. It also controls the offset of peer servers (see the peer-server-priority-index for more information). | 
-**PeerServerPriorityIndex** | Pointer to **int32** | In a replicated environment, this determines the order in which peer servers should attempt to purge data. | [optional] 
+**PeerServerPriorityIndex** | Pointer to **int64** | In a replicated environment, this determines the order in which peer servers should attempt to purge data. | [optional] 
 **BaseDN** | Pointer to **string** | Only entries located within the subtree specified by this base DN are eligible for purging. | [optional] 
-**MaxUpdatesPerSecond** | **int32** | This setting smooths out the performance impact on the server by throttling the purging to the specified maximum number of updates per second. To avoid a large backlog, this value should be set comfortably above the average rate that expired data is generated. When purge-behavior is set to subtree-delete-entries, then deletion of the entire subtree is considered a single update for the purposes of throttling. | 
-**NumDeleteThreads** | **int32** | The number of threads used to delete expired entries. | 
+**MaxUpdatesPerSecond** | **int64** | This setting smooths out the performance impact on the server by throttling the purging to the specified maximum number of updates per second. To avoid a large backlog, this value should be set comfortably above the average rate that expired data is generated. When purge-behavior is set to subtree-delete-entries, then deletion of the entire subtree is considered a single update for the purposes of throttling. | 
+**NumDeleteThreads** | **int64** | The number of threads used to delete expired entries. | 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewCleanUpExpiredPingfederatePersistentSessionsPluginResponse
 
-`func NewCleanUpExpiredPingfederatePersistentSessionsPluginResponse(id string, schemas []EnumcleanUpExpiredPingfederatePersistentSessionsPluginSchemaUrn, pollingInterval string, maxUpdatesPerSecond int32, numDeleteThreads int32, enabled bool, ) *CleanUpExpiredPingfederatePersistentSessionsPluginResponse`
+`func NewCleanUpExpiredPingfederatePersistentSessionsPluginResponse(id string, schemas []EnumcleanUpExpiredPingfederatePersistentSessionsPluginSchemaUrn, pollingInterval string, maxUpdatesPerSecond int64, numDeleteThreads int64, enabled bool, ) *CleanUpExpiredPingfederatePersistentSessionsPluginResponse`
 
 NewCleanUpExpiredPingfederatePersistentSessionsPluginResponse instantiates a new CleanUpExpiredPingfederatePersistentSessionsPluginResponse object
 This constructor will assign default values to properties that have it defined,
@@ -96,20 +96,20 @@ SetPollingInterval sets PollingInterval field to given value.
 
 ### GetPeerServerPriorityIndex
 
-`func (o *CleanUpExpiredPingfederatePersistentSessionsPluginResponse) GetPeerServerPriorityIndex() int32`
+`func (o *CleanUpExpiredPingfederatePersistentSessionsPluginResponse) GetPeerServerPriorityIndex() int64`
 
 GetPeerServerPriorityIndex returns the PeerServerPriorityIndex field if non-nil, zero value otherwise.
 
 ### GetPeerServerPriorityIndexOk
 
-`func (o *CleanUpExpiredPingfederatePersistentSessionsPluginResponse) GetPeerServerPriorityIndexOk() (*int32, bool)`
+`func (o *CleanUpExpiredPingfederatePersistentSessionsPluginResponse) GetPeerServerPriorityIndexOk() (*int64, bool)`
 
 GetPeerServerPriorityIndexOk returns a tuple with the PeerServerPriorityIndex field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPeerServerPriorityIndex
 
-`func (o *CleanUpExpiredPingfederatePersistentSessionsPluginResponse) SetPeerServerPriorityIndex(v int32)`
+`func (o *CleanUpExpiredPingfederatePersistentSessionsPluginResponse) SetPeerServerPriorityIndex(v int64)`
 
 SetPeerServerPriorityIndex sets PeerServerPriorityIndex field to given value.
 
@@ -146,40 +146,40 @@ HasBaseDN returns a boolean if a field has been set.
 
 ### GetMaxUpdatesPerSecond
 
-`func (o *CleanUpExpiredPingfederatePersistentSessionsPluginResponse) GetMaxUpdatesPerSecond() int32`
+`func (o *CleanUpExpiredPingfederatePersistentSessionsPluginResponse) GetMaxUpdatesPerSecond() int64`
 
 GetMaxUpdatesPerSecond returns the MaxUpdatesPerSecond field if non-nil, zero value otherwise.
 
 ### GetMaxUpdatesPerSecondOk
 
-`func (o *CleanUpExpiredPingfederatePersistentSessionsPluginResponse) GetMaxUpdatesPerSecondOk() (*int32, bool)`
+`func (o *CleanUpExpiredPingfederatePersistentSessionsPluginResponse) GetMaxUpdatesPerSecondOk() (*int64, bool)`
 
 GetMaxUpdatesPerSecondOk returns a tuple with the MaxUpdatesPerSecond field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxUpdatesPerSecond
 
-`func (o *CleanUpExpiredPingfederatePersistentSessionsPluginResponse) SetMaxUpdatesPerSecond(v int32)`
+`func (o *CleanUpExpiredPingfederatePersistentSessionsPluginResponse) SetMaxUpdatesPerSecond(v int64)`
 
 SetMaxUpdatesPerSecond sets MaxUpdatesPerSecond field to given value.
 
 
 ### GetNumDeleteThreads
 
-`func (o *CleanUpExpiredPingfederatePersistentSessionsPluginResponse) GetNumDeleteThreads() int32`
+`func (o *CleanUpExpiredPingfederatePersistentSessionsPluginResponse) GetNumDeleteThreads() int64`
 
 GetNumDeleteThreads returns the NumDeleteThreads field if non-nil, zero value otherwise.
 
 ### GetNumDeleteThreadsOk
 
-`func (o *CleanUpExpiredPingfederatePersistentSessionsPluginResponse) GetNumDeleteThreadsOk() (*int32, bool)`
+`func (o *CleanUpExpiredPingfederatePersistentSessionsPluginResponse) GetNumDeleteThreadsOk() (*int64, bool)`
 
 GetNumDeleteThreadsOk returns a tuple with the NumDeleteThreads field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNumDeleteThreads
 
-`func (o *CleanUpExpiredPingfederatePersistentSessionsPluginResponse) SetNumDeleteThreads(v int32)`
+`func (o *CleanUpExpiredPingfederatePersistentSessionsPluginResponse) SetNumDeleteThreads(v int64)`
 
 SetNumDeleteThreads sets NumDeleteThreads field to given value.
 

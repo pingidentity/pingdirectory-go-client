@@ -44,8 +44,8 @@ Name | Type | Description | Notes
 **GenerifyMessageStringsWhenPossible** | Pointer to **bool** | Indicates whether to use generified version of certain message strings, including diagnostic messages, additional information messages, authentication failure reasons, and disconnect messages. Generified versions of those strings may use placeholders (like %s for a string or %d for an integer) rather than the version of the string with those placeholders replaced with specific values. | [optional] 
 **Asynchronous** | Pointer to **bool** | Indicates whether the Writer Based Access Log Publisher will publish records asynchronously. | [optional] 
 **AutoFlush** | Pointer to **bool** | Specifies whether to flush the writer after every log record. | [optional] 
-**MaxStringLength** | Pointer to **int32** | Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written. | [optional] 
-**QueueSize** | Pointer to **int32** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
+**MaxStringLength** | Pointer to **int64** | Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written. | [optional] 
+**QueueSize** | Pointer to **int64** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
 **LogFieldBehavior** | Pointer to **string** | The behavior to use for determining which fields to log and whether to transform the values of those fields in any way. | [optional] 
 **LogSecurityNegotiation** | Pointer to **bool** | Indicates whether to log information about the result of any security negotiation (e.g., SSL handshake) processing that has been performed. | [optional] 
 **LogClientCertificates** | Pointer to **bool** | Indicates whether to log information about any client certificates presented to the server. | [optional] 
@@ -1071,20 +1071,20 @@ HasAutoFlush returns a boolean if a field has been set.
 
 ### GetMaxStringLength
 
-`func (o *AddFileBasedAccessLogPublisherRequest) GetMaxStringLength() int32`
+`func (o *AddFileBasedAccessLogPublisherRequest) GetMaxStringLength() int64`
 
 GetMaxStringLength returns the MaxStringLength field if non-nil, zero value otherwise.
 
 ### GetMaxStringLengthOk
 
-`func (o *AddFileBasedAccessLogPublisherRequest) GetMaxStringLengthOk() (*int32, bool)`
+`func (o *AddFileBasedAccessLogPublisherRequest) GetMaxStringLengthOk() (*int64, bool)`
 
 GetMaxStringLengthOk returns a tuple with the MaxStringLength field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxStringLength
 
-`func (o *AddFileBasedAccessLogPublisherRequest) SetMaxStringLength(v int32)`
+`func (o *AddFileBasedAccessLogPublisherRequest) SetMaxStringLength(v int64)`
 
 SetMaxStringLength sets MaxStringLength field to given value.
 
@@ -1096,20 +1096,20 @@ HasMaxStringLength returns a boolean if a field has been set.
 
 ### GetQueueSize
 
-`func (o *AddFileBasedAccessLogPublisherRequest) GetQueueSize() int32`
+`func (o *AddFileBasedAccessLogPublisherRequest) GetQueueSize() int64`
 
 GetQueueSize returns the QueueSize field if non-nil, zero value otherwise.
 
 ### GetQueueSizeOk
 
-`func (o *AddFileBasedAccessLogPublisherRequest) GetQueueSizeOk() (*int32, bool)`
+`func (o *AddFileBasedAccessLogPublisherRequest) GetQueueSizeOk() (*int64, bool)`
 
 GetQueueSizeOk returns a tuple with the QueueSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQueueSize
 
-`func (o *AddFileBasedAccessLogPublisherRequest) SetQueueSize(v int32)`
+`func (o *AddFileBasedAccessLogPublisherRequest) SetQueueSize(v int64)`
 
 SetQueueSize sets QueueSize field to given value.
 

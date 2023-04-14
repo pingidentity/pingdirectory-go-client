@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **Asynchronous** | **bool** | Indicates whether the Third Party File Based Access Log Publisher will publish records asynchronously. | 
 **AutoFlush** | Pointer to **bool** | Specifies whether to flush the writer after every log record. | [optional] 
 **BufferSize** | Pointer to **string** | Specifies the log file buffer size. | [optional] 
-**QueueSize** | Pointer to **int32** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
+**QueueSize** | Pointer to **int64** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
 **TimeInterval** | Pointer to **string** | Specifies the interval at which to check whether the log files need to be rotated. | [optional] 
 **LogConnects** | Pointer to **bool** | Indicates whether to log information about connections established to the server. | [optional] 
 **LogDisconnects** | Pointer to **bool** | Indicates whether to log information about connections that have been closed by the client or terminated by the server. | [optional] 
@@ -452,20 +452,20 @@ HasBufferSize returns a boolean if a field has been set.
 
 ### GetQueueSize
 
-`func (o *ThirdPartyFileBasedAccessLogPublisherResponse) GetQueueSize() int32`
+`func (o *ThirdPartyFileBasedAccessLogPublisherResponse) GetQueueSize() int64`
 
 GetQueueSize returns the QueueSize field if non-nil, zero value otherwise.
 
 ### GetQueueSizeOk
 
-`func (o *ThirdPartyFileBasedAccessLogPublisherResponse) GetQueueSizeOk() (*int32, bool)`
+`func (o *ThirdPartyFileBasedAccessLogPublisherResponse) GetQueueSizeOk() (*int64, bool)`
 
 GetQueueSizeOk returns a tuple with the QueueSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQueueSize
 
-`func (o *ThirdPartyFileBasedAccessLogPublisherResponse) SetQueueSize(v int32)`
+`func (o *ThirdPartyFileBasedAccessLogPublisherResponse) SetQueueSize(v int64)`
 
 SetQueueSize sets QueueSize field to given value.
 

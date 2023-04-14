@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumhttpServerInstanceListenerSchemaUrn**](EnumhttpServerInstanceListenerSchemaUrn.md) |  | 
 **Id** | **string** | Name of the Server Instance | 
 **ListenAddress** | Pointer to **string** | If the server is listening on a particular address different from the hostname, then this property may be used to specify the address on which to listen for connections from HTTP clients. | [optional] 
-**ServerHTTPPort** | Pointer to **int32** | The TCP port number on which the HTTP server is listening. | [optional] 
+**ServerHTTPPort** | Pointer to **int64** | The TCP port number on which the HTTP server is listening. | [optional] 
 **ConnectionSecurity** | Pointer to [**EnumserverInstanceListenerHttpConnectionSecurityProp**](EnumserverInstanceListenerHttpConnectionSecurityProp.md) |  | [optional] 
 **Purpose** | Pointer to [**[]EnumserverInstanceListenerPurposeProp**](EnumserverInstanceListenerPurposeProp.md) |  | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
@@ -99,20 +99,20 @@ HasListenAddress returns a boolean if a field has been set.
 
 ### GetServerHTTPPort
 
-`func (o *HttpServerInstanceListenerResponse) GetServerHTTPPort() int32`
+`func (o *HttpServerInstanceListenerResponse) GetServerHTTPPort() int64`
 
 GetServerHTTPPort returns the ServerHTTPPort field if non-nil, zero value otherwise.
 
 ### GetServerHTTPPortOk
 
-`func (o *HttpServerInstanceListenerResponse) GetServerHTTPPortOk() (*int32, bool)`
+`func (o *HttpServerInstanceListenerResponse) GetServerHTTPPortOk() (*int64, bool)`
 
 GetServerHTTPPortOk returns a tuple with the ServerHTTPPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerHTTPPort
 
-`func (o *HttpServerInstanceListenerResponse) SetServerHTTPPort(v int32)`
+`func (o *HttpServerInstanceListenerResponse) SetServerHTTPPort(v int64)`
 
 SetServerHTTPPort sets ServerHTTPPort field to given value.
 

@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    addConnectionHandlerRequest := openapiclient.add_connection_handler_request{AddHttpConnectionHandlerRequest: openapiclient.NewAddHttpConnectionHandlerRequest("HandlerName_example", []openapiclient.EnumhttpConnectionHandlerSchemaUrn{openapiclient.Enumhttp-connection-handlerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:connection-handler:http")}, int32(123), false)} // AddConnectionHandlerRequest | Create a new Connection Handler in the config
+    addConnectionHandlerRequest := openapiclient.add_connection_handler_request{AddHttpConnectionHandlerRequest: openapiclient.NewAddHttpConnectionHandlerRequest("HandlerName_example", []openapiclient.EnumhttpConnectionHandlerSchemaUrn{openapiclient.Enumhttp-connection-handlerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:connection-handler:http")}, int64(123), false)} // AddConnectionHandlerRequest | Create a new Connection Handler in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

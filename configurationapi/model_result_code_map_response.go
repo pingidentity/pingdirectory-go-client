@@ -25,13 +25,13 @@ type ResultCodeMapResponse struct {
 	// A description for this Result Code Map
 	Description *string `json:"description,omitempty"`
 	// Specifies the result code that should be returned if a bind attempt fails because the user's account is locked as a result of too many failed authentication attempts.
-	BindAccountLockedResultCode *int32 `json:"bindAccountLockedResultCode,omitempty"`
+	BindAccountLockedResultCode *int64 `json:"bindAccountLockedResultCode,omitempty"`
 	// Specifies the result code that should be returned if a bind attempt fails because the target user entry does not exist in the server.
-	BindMissingUserResultCode *int32 `json:"bindMissingUserResultCode,omitempty"`
+	BindMissingUserResultCode *int64 `json:"bindMissingUserResultCode,omitempty"`
 	// Specifies the result code that should be returned if a password-based bind attempt fails because the target user entry does not have a password.
-	BindMissingPasswordResultCode *int32 `json:"bindMissingPasswordResultCode,omitempty"`
+	BindMissingPasswordResultCode *int64 `json:"bindMissingPasswordResultCode,omitempty"`
 	// Specifies the result code that should be returned if a generic error occurs within the server.
-	ServerErrorResultCode                         *int32                                             `json:"serverErrorResultCode,omitempty"`
+	ServerErrorResultCode                         *int64                                             `json:"serverErrorResultCode,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 }
@@ -143,9 +143,9 @@ func (o *ResultCodeMapResponse) SetDescription(v string) {
 }
 
 // GetBindAccountLockedResultCode returns the BindAccountLockedResultCode field value if set, zero value otherwise.
-func (o *ResultCodeMapResponse) GetBindAccountLockedResultCode() int32 {
+func (o *ResultCodeMapResponse) GetBindAccountLockedResultCode() int64 {
 	if o == nil || IsNil(o.BindAccountLockedResultCode) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.BindAccountLockedResultCode
@@ -153,7 +153,7 @@ func (o *ResultCodeMapResponse) GetBindAccountLockedResultCode() int32 {
 
 // GetBindAccountLockedResultCodeOk returns a tuple with the BindAccountLockedResultCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ResultCodeMapResponse) GetBindAccountLockedResultCodeOk() (*int32, bool) {
+func (o *ResultCodeMapResponse) GetBindAccountLockedResultCodeOk() (*int64, bool) {
 	if o == nil || IsNil(o.BindAccountLockedResultCode) {
 		return nil, false
 	}
@@ -169,15 +169,15 @@ func (o *ResultCodeMapResponse) HasBindAccountLockedResultCode() bool {
 	return false
 }
 
-// SetBindAccountLockedResultCode gets a reference to the given int32 and assigns it to the BindAccountLockedResultCode field.
-func (o *ResultCodeMapResponse) SetBindAccountLockedResultCode(v int32) {
+// SetBindAccountLockedResultCode gets a reference to the given int64 and assigns it to the BindAccountLockedResultCode field.
+func (o *ResultCodeMapResponse) SetBindAccountLockedResultCode(v int64) {
 	o.BindAccountLockedResultCode = &v
 }
 
 // GetBindMissingUserResultCode returns the BindMissingUserResultCode field value if set, zero value otherwise.
-func (o *ResultCodeMapResponse) GetBindMissingUserResultCode() int32 {
+func (o *ResultCodeMapResponse) GetBindMissingUserResultCode() int64 {
 	if o == nil || IsNil(o.BindMissingUserResultCode) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.BindMissingUserResultCode
@@ -185,7 +185,7 @@ func (o *ResultCodeMapResponse) GetBindMissingUserResultCode() int32 {
 
 // GetBindMissingUserResultCodeOk returns a tuple with the BindMissingUserResultCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ResultCodeMapResponse) GetBindMissingUserResultCodeOk() (*int32, bool) {
+func (o *ResultCodeMapResponse) GetBindMissingUserResultCodeOk() (*int64, bool) {
 	if o == nil || IsNil(o.BindMissingUserResultCode) {
 		return nil, false
 	}
@@ -201,15 +201,15 @@ func (o *ResultCodeMapResponse) HasBindMissingUserResultCode() bool {
 	return false
 }
 
-// SetBindMissingUserResultCode gets a reference to the given int32 and assigns it to the BindMissingUserResultCode field.
-func (o *ResultCodeMapResponse) SetBindMissingUserResultCode(v int32) {
+// SetBindMissingUserResultCode gets a reference to the given int64 and assigns it to the BindMissingUserResultCode field.
+func (o *ResultCodeMapResponse) SetBindMissingUserResultCode(v int64) {
 	o.BindMissingUserResultCode = &v
 }
 
 // GetBindMissingPasswordResultCode returns the BindMissingPasswordResultCode field value if set, zero value otherwise.
-func (o *ResultCodeMapResponse) GetBindMissingPasswordResultCode() int32 {
+func (o *ResultCodeMapResponse) GetBindMissingPasswordResultCode() int64 {
 	if o == nil || IsNil(o.BindMissingPasswordResultCode) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.BindMissingPasswordResultCode
@@ -217,7 +217,7 @@ func (o *ResultCodeMapResponse) GetBindMissingPasswordResultCode() int32 {
 
 // GetBindMissingPasswordResultCodeOk returns a tuple with the BindMissingPasswordResultCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ResultCodeMapResponse) GetBindMissingPasswordResultCodeOk() (*int32, bool) {
+func (o *ResultCodeMapResponse) GetBindMissingPasswordResultCodeOk() (*int64, bool) {
 	if o == nil || IsNil(o.BindMissingPasswordResultCode) {
 		return nil, false
 	}
@@ -233,15 +233,15 @@ func (o *ResultCodeMapResponse) HasBindMissingPasswordResultCode() bool {
 	return false
 }
 
-// SetBindMissingPasswordResultCode gets a reference to the given int32 and assigns it to the BindMissingPasswordResultCode field.
-func (o *ResultCodeMapResponse) SetBindMissingPasswordResultCode(v int32) {
+// SetBindMissingPasswordResultCode gets a reference to the given int64 and assigns it to the BindMissingPasswordResultCode field.
+func (o *ResultCodeMapResponse) SetBindMissingPasswordResultCode(v int64) {
 	o.BindMissingPasswordResultCode = &v
 }
 
 // GetServerErrorResultCode returns the ServerErrorResultCode field value if set, zero value otherwise.
-func (o *ResultCodeMapResponse) GetServerErrorResultCode() int32 {
+func (o *ResultCodeMapResponse) GetServerErrorResultCode() int64 {
 	if o == nil || IsNil(o.ServerErrorResultCode) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ServerErrorResultCode
@@ -249,7 +249,7 @@ func (o *ResultCodeMapResponse) GetServerErrorResultCode() int32 {
 
 // GetServerErrorResultCodeOk returns a tuple with the ServerErrorResultCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ResultCodeMapResponse) GetServerErrorResultCodeOk() (*int32, bool) {
+func (o *ResultCodeMapResponse) GetServerErrorResultCodeOk() (*int64, bool) {
 	if o == nil || IsNil(o.ServerErrorResultCode) {
 		return nil, false
 	}
@@ -265,8 +265,8 @@ func (o *ResultCodeMapResponse) HasServerErrorResultCode() bool {
 	return false
 }
 
-// SetServerErrorResultCode gets a reference to the given int32 and assigns it to the ServerErrorResultCode field.
-func (o *ResultCodeMapResponse) SetServerErrorResultCode(v int32) {
+// SetServerErrorResultCode gets a reference to the given int64 and assigns it to the ServerErrorResultCode field.
+func (o *ResultCodeMapResponse) SetServerErrorResultCode(v int64) {
 	o.ServerErrorResultCode = &v
 }
 

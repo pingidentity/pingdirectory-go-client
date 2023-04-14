@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **CommandPath** | **string** | The absolute path to the command to execute. It must be an absolute path, the corresponding file must exist, and it must be listed in the config/exec-command-whitelist.txt file. | 
 **CommandArguments** | Pointer to **string** | A string containing the arguments to provide to the command. If the command should be run without arguments, this property should be left undefined. If there should be multiple arguments, then they should be separated with spaces. | [optional] 
 **CommandOutputFileBaseName** | Pointer to **string** | The path and base name for a file to which the command output (both standard output and standard error) should be written. This may be left undefined if the command output should not be recorded into a file. | [optional] 
-**RetainPreviousOutputFileCount** | Pointer to **int32** | The minimum number of previous command output files that should be preserved after a new instance of the command is invoked. | [optional] 
+**RetainPreviousOutputFileCount** | Pointer to **int64** | The minimum number of previous command output files that should be preserved after a new instance of the command is invoked. | [optional] 
 **RetainPreviousOutputFileAge** | Pointer to **string** | The minimum age of previous command output files that should be preserved after a new instance of the command is invoked. | [optional] 
 **LogCommandOutput** | Pointer to **bool** | Indicates whether the command&#39;s output (both standard output and standard error) should be recorded in the server&#39;s error log. | [optional] 
 **TaskCompletionStateForNonzeroExitCode** | Pointer to [**EnumrecurringTaskTaskCompletionStateForNonzeroExitCodeProp**](EnumrecurringTaskTaskCompletionStateForNonzeroExitCodeProp.md) |  | [optional] 
@@ -154,20 +154,20 @@ HasCommandOutputFileBaseName returns a boolean if a field has been set.
 
 ### GetRetainPreviousOutputFileCount
 
-`func (o *AddExecRecurringTaskRequest) GetRetainPreviousOutputFileCount() int32`
+`func (o *AddExecRecurringTaskRequest) GetRetainPreviousOutputFileCount() int64`
 
 GetRetainPreviousOutputFileCount returns the RetainPreviousOutputFileCount field if non-nil, zero value otherwise.
 
 ### GetRetainPreviousOutputFileCountOk
 
-`func (o *AddExecRecurringTaskRequest) GetRetainPreviousOutputFileCountOk() (*int32, bool)`
+`func (o *AddExecRecurringTaskRequest) GetRetainPreviousOutputFileCountOk() (*int64, bool)`
 
 GetRetainPreviousOutputFileCountOk returns a tuple with the RetainPreviousOutputFileCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRetainPreviousOutputFileCount
 
-`func (o *AddExecRecurringTaskRequest) SetRetainPreviousOutputFileCount(v int32)`
+`func (o *AddExecRecurringTaskRequest) SetRetainPreviousOutputFileCount(v int64)`
 
 SetRetainPreviousOutputFileCount sets RetainPreviousOutputFileCount field to given value.
 

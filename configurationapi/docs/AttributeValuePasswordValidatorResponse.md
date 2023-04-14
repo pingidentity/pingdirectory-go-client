@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **MatchAttribute** | Pointer to **[]string** | Specifies the name(s) of the attribute(s) whose values should be checked to determine whether they match the provided password. If no values are provided, then the server checks if the proposed password matches the value of any user attribute in the target user&#39;s entry. | [optional] 
 **TestPasswordSubstringOfAttributeValue** | Pointer to **bool** | Indicates whether to reject any proposed password that is a substring of a value in one of the match attributes in the target user&#39;s entry. | [optional] 
 **TestAttributeValueSubstringOfPassword** | Pointer to **bool** | Indicates whether to reject any proposed password in which a value in one of the match attributes in the target user&#39;s entry is a substring of that password. | [optional] 
-**MinimumAttributeValueLengthForSubstringMatches** | Pointer to **int32** | The minimum length that an attribute value must have for it to be considered when rejecting passwords that contain the value of another attribute as a substring. | [optional] 
+**MinimumAttributeValueLengthForSubstringMatches** | Pointer to **int64** | The minimum length that an attribute value must have for it to be considered when rejecting passwords that contain the value of another attribute as a substring. | [optional] 
 **TestReversedPassword** | **bool** | Indicates whether to perform matching against the reversed value of the provided password in addition to the order in which it was given. | 
 **Description** | Pointer to **string** | A description for this Password Validator | [optional] 
 **Enabled** | **bool** | Indicates whether the password validator is enabled for use. | 
@@ -154,20 +154,20 @@ HasTestAttributeValueSubstringOfPassword returns a boolean if a field has been s
 
 ### GetMinimumAttributeValueLengthForSubstringMatches
 
-`func (o *AttributeValuePasswordValidatorResponse) GetMinimumAttributeValueLengthForSubstringMatches() int32`
+`func (o *AttributeValuePasswordValidatorResponse) GetMinimumAttributeValueLengthForSubstringMatches() int64`
 
 GetMinimumAttributeValueLengthForSubstringMatches returns the MinimumAttributeValueLengthForSubstringMatches field if non-nil, zero value otherwise.
 
 ### GetMinimumAttributeValueLengthForSubstringMatchesOk
 
-`func (o *AttributeValuePasswordValidatorResponse) GetMinimumAttributeValueLengthForSubstringMatchesOk() (*int32, bool)`
+`func (o *AttributeValuePasswordValidatorResponse) GetMinimumAttributeValueLengthForSubstringMatchesOk() (*int64, bool)`
 
 GetMinimumAttributeValueLengthForSubstringMatchesOk returns a tuple with the MinimumAttributeValueLengthForSubstringMatches field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinimumAttributeValueLengthForSubstringMatches
 
-`func (o *AttributeValuePasswordValidatorResponse) SetMinimumAttributeValueLengthForSubstringMatches(v int32)`
+`func (o *AttributeValuePasswordValidatorResponse) SetMinimumAttributeValueLengthForSubstringMatches(v int64)`
 
 SetMinimumAttributeValueLengthForSubstringMatches sets MinimumAttributeValueLengthForSubstringMatches field to given value.
 

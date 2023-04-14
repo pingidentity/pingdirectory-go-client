@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **BaseDN** | **[]string** | Specifies the base DN(s) for the data that the backend handles. | 
 **LdifFile** | **string** | Specifies the path to the LDIF file that serves as the backing file for this backend. | 
 **AlertRetentionTime** | **string** | Specifies the maximum length of time that information about generated alerts should be maintained before they will be purged. | 
-**MaxAlerts** | Pointer to **int32** | Specifies the maximum number of alerts that should be retained. If more alerts than this configured maximum are generated within the alert retention time, then the oldest alerts will be purged to achieve this maximum. | [optional] 
+**MaxAlerts** | Pointer to **int64** | Specifies the maximum number of alerts that should be retained. If more alerts than this configured maximum are generated within the alert retention time, then the oldest alerts will be purged to achieve this maximum. | [optional] 
 **DisabledAlertType** | Pointer to [**[]EnumbackendDisabledAlertTypeProp**](EnumbackendDisabledAlertTypeProp.md) |  | [optional] 
 **WritabilityMode** | [**EnumbackendWritabilityModeProp**](EnumbackendWritabilityModeProp.md) |  | 
 **Description** | Pointer to **string** | A description for this Backend | [optional] 
@@ -163,20 +163,20 @@ SetAlertRetentionTime sets AlertRetentionTime field to given value.
 
 ### GetMaxAlerts
 
-`func (o *AlertBackendResponse) GetMaxAlerts() int32`
+`func (o *AlertBackendResponse) GetMaxAlerts() int64`
 
 GetMaxAlerts returns the MaxAlerts field if non-nil, zero value otherwise.
 
 ### GetMaxAlertsOk
 
-`func (o *AlertBackendResponse) GetMaxAlertsOk() (*int32, bool)`
+`func (o *AlertBackendResponse) GetMaxAlertsOk() (*int64, bool)`
 
 GetMaxAlertsOk returns a tuple with the MaxAlerts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxAlerts
 
-`func (o *AlertBackendResponse) SetMaxAlerts(v int32)`
+`func (o *AlertBackendResponse) SetMaxAlerts(v int64)`
 
 SetMaxAlerts sets MaxAlerts field to given value.
 

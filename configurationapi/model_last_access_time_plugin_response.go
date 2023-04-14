@@ -28,7 +28,7 @@ type LastAccessTimePluginResponse struct {
 	// Indicates whether to update the last access time for an entry targeted by a bind operation if the bind is unsuccessful.
 	InvokeForFailedBinds *bool `json:"invokeForFailedBinds,omitempty"`
 	// Specifies the maximum number of entries that should be updated in a search operation. Only search result entries actually returned to the client may have their last access time updated, but because a single search operation may return a very large number of entries, the plugin will only update entries if no more than a specified number of entries are updated.
-	MaxSearchResultEntriesToUpdate *int32 `json:"maxSearchResultEntriesToUpdate,omitempty"`
+	MaxSearchResultEntriesToUpdate *int64 `json:"maxSearchResultEntriesToUpdate,omitempty"`
 	// Specifies a set of request criteria that may be used to indicate whether to apply access time updates for the associated operation.
 	RequestCriteria *string `json:"requestCriteria,omitempty"`
 	// Indicates whether the plug-in should be invoked for internal operations.
@@ -206,9 +206,9 @@ func (o *LastAccessTimePluginResponse) SetInvokeForFailedBinds(v bool) {
 }
 
 // GetMaxSearchResultEntriesToUpdate returns the MaxSearchResultEntriesToUpdate field value if set, zero value otherwise.
-func (o *LastAccessTimePluginResponse) GetMaxSearchResultEntriesToUpdate() int32 {
+func (o *LastAccessTimePluginResponse) GetMaxSearchResultEntriesToUpdate() int64 {
 	if o == nil || IsNil(o.MaxSearchResultEntriesToUpdate) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxSearchResultEntriesToUpdate
@@ -216,7 +216,7 @@ func (o *LastAccessTimePluginResponse) GetMaxSearchResultEntriesToUpdate() int32
 
 // GetMaxSearchResultEntriesToUpdateOk returns a tuple with the MaxSearchResultEntriesToUpdate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LastAccessTimePluginResponse) GetMaxSearchResultEntriesToUpdateOk() (*int32, bool) {
+func (o *LastAccessTimePluginResponse) GetMaxSearchResultEntriesToUpdateOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxSearchResultEntriesToUpdate) {
 		return nil, false
 	}
@@ -232,8 +232,8 @@ func (o *LastAccessTimePluginResponse) HasMaxSearchResultEntriesToUpdate() bool 
 	return false
 }
 
-// SetMaxSearchResultEntriesToUpdate gets a reference to the given int32 and assigns it to the MaxSearchResultEntriesToUpdate field.
-func (o *LastAccessTimePluginResponse) SetMaxSearchResultEntriesToUpdate(v int32) {
+// SetMaxSearchResultEntriesToUpdate gets a reference to the given int64 and assigns it to the MaxSearchResultEntriesToUpdate field.
+func (o *LastAccessTimePluginResponse) SetMaxSearchResultEntriesToUpdate(v int64) {
 	o.MaxSearchResultEntriesToUpdate = &v
 }
 

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **TargetDirectory** | **string** | The path to the directory containing the files to examine. The directory must exist. | 
 **FilenamePattern** | **string** | A pattern that specifies the names of the files to examine. The pattern may contain zero or more asterisks as wildcards, where each wildcard matches zero or more characters. It may also contain at most one occurrence of the special string \&quot;${timestamp}\&quot;, which will match a timestamp with the format specified using the timestamp-format property. All other characters in the pattern will be treated literally. | 
 **TimestampFormat** | [**EnumrecurringTaskTimestampFormatProp**](EnumrecurringTaskTimestampFormatProp.md) |  | 
-**RetainFileCount** | Pointer to **int32** | The minimum number of files matching the pattern that will be retained. | [optional] 
+**RetainFileCount** | Pointer to **int64** | The minimum number of files matching the pattern that will be retained. | [optional] 
 **RetainFileAge** | Pointer to **string** | The minimum age of files matching the pattern that will be retained. | [optional] 
 **RetainAggregateFileSize** | Pointer to **string** | The minimum aggregate size of files that will be retained. The size should be specified as an integer followed by a unit that is one of \&quot;b\&quot; or \&quot;bytes\&quot;, \&quot;kb\&quot; or \&quot;kilobytes\&quot;, \&quot;mb\&quot; or \&quot;megabytes\&quot;, \&quot;gb\&quot; or \&quot;gigabytes\&quot;, or \&quot;tb\&quot; or \&quot;terabytes\&quot;. For example, a value of \&quot;1 gb\&quot; indicates that at least one gigabyte of files should be retained. | [optional] 
 **Description** | Pointer to **string** | A description for this Recurring Task | [optional] 
@@ -142,20 +142,20 @@ SetTimestampFormat sets TimestampFormat field to given value.
 
 ### GetRetainFileCount
 
-`func (o *AddFileRetentionRecurringTaskRequest) GetRetainFileCount() int32`
+`func (o *AddFileRetentionRecurringTaskRequest) GetRetainFileCount() int64`
 
 GetRetainFileCount returns the RetainFileCount field if non-nil, zero value otherwise.
 
 ### GetRetainFileCountOk
 
-`func (o *AddFileRetentionRecurringTaskRequest) GetRetainFileCountOk() (*int32, bool)`
+`func (o *AddFileRetentionRecurringTaskRequest) GetRetainFileCountOk() (*int64, bool)`
 
 GetRetainFileCountOk returns a tuple with the RetainFileCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRetainFileCount
 
-`func (o *AddFileRetentionRecurringTaskRequest) SetRetainFileCount(v int32)`
+`func (o *AddFileRetentionRecurringTaskRequest) SetRetainFileCount(v int64)`
 
 SetRetainFileCount sets RetainFileCount field to given value.
 

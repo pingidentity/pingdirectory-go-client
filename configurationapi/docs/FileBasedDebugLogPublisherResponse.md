@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **Asynchronous** | **bool** | Indicates whether the File Based Debug Log Publisher will publish records asynchronously. | 
 **AutoFlush** | Pointer to **bool** | Specifies whether to flush the writer after every log record. | [optional] 
 **BufferSize** | Pointer to **string** | Specifies the log file buffer size. | [optional] 
-**QueueSize** | Pointer to **int32** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
+**QueueSize** | Pointer to **int64** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
 **TimeInterval** | Pointer to **string** | Specifies the interval at which to check whether the log files need to be rotated. | [optional] 
 **TimestampPrecision** | Pointer to [**EnumlogPublisherTimestampPrecisionProp**](EnumlogPublisherTimestampPrecisionProp.md) |  | [optional] 
 **DefaultDebugLevel** | [**EnumlogPublisherDefaultDebugLevelProp**](EnumlogPublisherDefaultDebugLevelProp.md) |  | 
@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **DefaultOmitMethodEntryArguments** | Pointer to **bool** | Indicates whether to include method arguments in debug messages logged by default. | [optional] 
 **DefaultOmitMethodReturnValue** | Pointer to **bool** | Indicates whether to include the return value in debug messages logged by default. | [optional] 
 **DefaultIncludeThrowableCause** | Pointer to **bool** | Indicates whether to include the cause of exceptions in exception thrown and caught messages logged by default. | [optional] 
-**DefaultThrowableStackFrames** | Pointer to **int32** | Indicates the number of stack frames to include in the stack trace for method entry and exception thrown messages. | [optional] 
+**DefaultThrowableStackFrames** | Pointer to **int64** | Indicates the number of stack frames to include in the stack trace for method entry and exception thrown messages. | [optional] 
 **Description** | Pointer to **string** | A description for this Log Publisher | [optional] 
 **Enabled** | **bool** | Indicates whether the Log Publisher is enabled for use. | 
 **LoggingErrorBehavior** | Pointer to [**EnumlogPublisherLoggingErrorBehaviorProp**](EnumlogPublisherLoggingErrorBehaviorProp.md) |  | [optional] 
@@ -395,20 +395,20 @@ HasBufferSize returns a boolean if a field has been set.
 
 ### GetQueueSize
 
-`func (o *FileBasedDebugLogPublisherResponse) GetQueueSize() int32`
+`func (o *FileBasedDebugLogPublisherResponse) GetQueueSize() int64`
 
 GetQueueSize returns the QueueSize field if non-nil, zero value otherwise.
 
 ### GetQueueSizeOk
 
-`func (o *FileBasedDebugLogPublisherResponse) GetQueueSizeOk() (*int32, bool)`
+`func (o *FileBasedDebugLogPublisherResponse) GetQueueSizeOk() (*int64, bool)`
 
 GetQueueSizeOk returns a tuple with the QueueSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQueueSize
 
-`func (o *FileBasedDebugLogPublisherResponse) SetQueueSize(v int32)`
+`func (o *FileBasedDebugLogPublisherResponse) SetQueueSize(v int64)`
 
 SetQueueSize sets QueueSize field to given value.
 
@@ -590,20 +590,20 @@ HasDefaultIncludeThrowableCause returns a boolean if a field has been set.
 
 ### GetDefaultThrowableStackFrames
 
-`func (o *FileBasedDebugLogPublisherResponse) GetDefaultThrowableStackFrames() int32`
+`func (o *FileBasedDebugLogPublisherResponse) GetDefaultThrowableStackFrames() int64`
 
 GetDefaultThrowableStackFrames returns the DefaultThrowableStackFrames field if non-nil, zero value otherwise.
 
 ### GetDefaultThrowableStackFramesOk
 
-`func (o *FileBasedDebugLogPublisherResponse) GetDefaultThrowableStackFramesOk() (*int32, bool)`
+`func (o *FileBasedDebugLogPublisherResponse) GetDefaultThrowableStackFramesOk() (*int64, bool)`
 
 GetDefaultThrowableStackFramesOk returns a tuple with the DefaultThrowableStackFrames field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultThrowableStackFrames
 
-`func (o *FileBasedDebugLogPublisherResponse) SetDefaultThrowableStackFrames(v int32)`
+`func (o *FileBasedDebugLogPublisherResponse) SetDefaultThrowableStackFrames(v int64)`
 
 SetDefaultThrowableStackFrames sets DefaultThrowableStackFrames field to given value.
 

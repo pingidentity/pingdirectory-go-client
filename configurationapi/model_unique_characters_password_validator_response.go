@@ -23,7 +23,7 @@ type UniqueCharactersPasswordValidatorResponse struct {
 	Id      string                                           `json:"id"`
 	Schemas []EnumuniqueCharactersPasswordValidatorSchemaUrn `json:"schemas"`
 	// Specifies the minimum number of unique characters that a password will be allowed to contain.
-	MinUniqueCharacters int32 `json:"minUniqueCharacters"`
+	MinUniqueCharacters int64 `json:"minUniqueCharacters"`
 	// Indicates whether this password validator should treat password characters in a case-sensitive manner.
 	CaseSensitiveValidation bool `json:"caseSensitiveValidation"`
 	// A description for this Password Validator
@@ -42,7 +42,7 @@ type UniqueCharactersPasswordValidatorResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUniqueCharactersPasswordValidatorResponse(id string, schemas []EnumuniqueCharactersPasswordValidatorSchemaUrn, minUniqueCharacters int32, caseSensitiveValidation bool, enabled bool) *UniqueCharactersPasswordValidatorResponse {
+func NewUniqueCharactersPasswordValidatorResponse(id string, schemas []EnumuniqueCharactersPasswordValidatorSchemaUrn, minUniqueCharacters int64, caseSensitiveValidation bool, enabled bool) *UniqueCharactersPasswordValidatorResponse {
 	this := UniqueCharactersPasswordValidatorResponse{}
 	this.Id = id
 	this.Schemas = schemas
@@ -109,9 +109,9 @@ func (o *UniqueCharactersPasswordValidatorResponse) SetSchemas(v []EnumuniqueCha
 }
 
 // GetMinUniqueCharacters returns the MinUniqueCharacters field value
-func (o *UniqueCharactersPasswordValidatorResponse) GetMinUniqueCharacters() int32 {
+func (o *UniqueCharactersPasswordValidatorResponse) GetMinUniqueCharacters() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -120,7 +120,7 @@ func (o *UniqueCharactersPasswordValidatorResponse) GetMinUniqueCharacters() int
 
 // GetMinUniqueCharactersOk returns a tuple with the MinUniqueCharacters field value
 // and a boolean to check if the value has been set.
-func (o *UniqueCharactersPasswordValidatorResponse) GetMinUniqueCharactersOk() (*int32, bool) {
+func (o *UniqueCharactersPasswordValidatorResponse) GetMinUniqueCharactersOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -128,7 +128,7 @@ func (o *UniqueCharactersPasswordValidatorResponse) GetMinUniqueCharactersOk() (
 }
 
 // SetMinUniqueCharacters sets field value
-func (o *UniqueCharactersPasswordValidatorResponse) SetMinUniqueCharacters(v int32) {
+func (o *UniqueCharactersPasswordValidatorResponse) SetMinUniqueCharacters(v int64) {
 	o.MinUniqueCharacters = v
 }
 

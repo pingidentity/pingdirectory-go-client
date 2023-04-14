@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **ServerName** | **string** | Name of the new External Server | 
 **Schemas** | [**[]EnumvaultExternalServerSchemaUrn**](EnumvaultExternalServerSchemaUrn.md) |  | 
 **ServerHostName** | **string** | The host name or IP address of the target LDAP server. | 
-**ServerPort** | **int32** | The port number on which the server listens for requests. | 
+**ServerPort** | **int64** | The port number on which the server listens for requests. | 
 **SmtpSecurity** | Pointer to [**EnumexternalServerSmtpSecurityProp**](EnumexternalServerSmtpSecurityProp.md) |  | [optional] 
 **UserName** | Pointer to **string** | The name of the login account to use when connecting to the database server. | [optional] 
 **Password** | Pointer to **string** | The login password for the specified user. | [optional] 
@@ -28,8 +28,8 @@ Name | Type | Description | Notes
 **MaxResponseSize** | Pointer to **string** | Specifies the maximum response size that should be supported for messages received from the LDAP external server. | [optional] 
 **KeyManagerProvider** | Pointer to **string** | The key manager provider to use if SSL or StartTLS is to be used for connection-level security. When specifying a value for this property (except when using the Null key manager provider) you must ensure that the external server trusts this server&#39;s public certificate by adding this server&#39;s public certificate to the external server&#39;s trust store. | [optional] 
 **TrustManagerProvider** | Pointer to **string** | The trust manager provider to use if SSL or StartTLS is to be used for connection-level security. | [optional] 
-**InitialConnections** | Pointer to **int32** | The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool. | [optional] 
-**MaxConnections** | Pointer to **int32** | The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool. | [optional] 
+**InitialConnections** | Pointer to **int64** | The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool. | [optional] 
+**MaxConnections** | Pointer to **int64** | The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool. | [optional] 
 **DefunctConnectionResultCode** | Pointer to [**[]EnumexternalServerDefunctConnectionResultCodeProp**](EnumexternalServerDefunctConnectionResultCodeProp.md) |  | [optional] 
 **AbandonOnTimeout** | Pointer to **bool** | Indicates whether to send an abandon request for an operation for which a response timeout is encountered. A request which has timed out on one server may be retried on another server regardless of whether an abandon request is sent, but if the initial attempt is not abandoned then a long-running operation may unnecessarily continue to consume processing resources on the initial server. | [optional] 
 **JdbcDriverType** | [**EnumexternalServerJdbcDriverTypeProp**](EnumexternalServerJdbcDriverTypeProp.md) |  | 
@@ -63,7 +63,7 @@ Name | Type | Description | Notes
 
 ### NewAddExternalServerRequest
 
-`func NewAddExternalServerRequest(serverName string, schemas []EnumvaultExternalServerSchemaUrn, serverHostName string, serverPort int32, jdbcDriverType EnumexternalServerJdbcDriverTypeProp, transportMechanism EnumexternalServerTransportMechanismProp, baseURL string, conjurServerBaseURI []string, conjurAuthenticationMethod string, conjurAccountName string, awsRegionName string, vaultServerBaseURI []string, vaultAuthenticationMethod string, ) *AddExternalServerRequest`
+`func NewAddExternalServerRequest(serverName string, schemas []EnumvaultExternalServerSchemaUrn, serverHostName string, serverPort int64, jdbcDriverType EnumexternalServerJdbcDriverTypeProp, transportMechanism EnumexternalServerTransportMechanismProp, baseURL string, conjurServerBaseURI []string, conjurAuthenticationMethod string, conjurAccountName string, awsRegionName string, vaultServerBaseURI []string, vaultAuthenticationMethod string, ) *AddExternalServerRequest`
 
 NewAddExternalServerRequest instantiates a new AddExternalServerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -140,20 +140,20 @@ SetServerHostName sets ServerHostName field to given value.
 
 ### GetServerPort
 
-`func (o *AddExternalServerRequest) GetServerPort() int32`
+`func (o *AddExternalServerRequest) GetServerPort() int64`
 
 GetServerPort returns the ServerPort field if non-nil, zero value otherwise.
 
 ### GetServerPortOk
 
-`func (o *AddExternalServerRequest) GetServerPortOk() (*int32, bool)`
+`func (o *AddExternalServerRequest) GetServerPortOk() (*int64, bool)`
 
 GetServerPortOk returns a tuple with the ServerPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerPort
 
-`func (o *AddExternalServerRequest) SetServerPort(v int32)`
+`func (o *AddExternalServerRequest) SetServerPort(v int64)`
 
 SetServerPort sets ServerPort field to given value.
 
@@ -660,20 +660,20 @@ HasTrustManagerProvider returns a boolean if a field has been set.
 
 ### GetInitialConnections
 
-`func (o *AddExternalServerRequest) GetInitialConnections() int32`
+`func (o *AddExternalServerRequest) GetInitialConnections() int64`
 
 GetInitialConnections returns the InitialConnections field if non-nil, zero value otherwise.
 
 ### GetInitialConnectionsOk
 
-`func (o *AddExternalServerRequest) GetInitialConnectionsOk() (*int32, bool)`
+`func (o *AddExternalServerRequest) GetInitialConnectionsOk() (*int64, bool)`
 
 GetInitialConnectionsOk returns a tuple with the InitialConnections field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInitialConnections
 
-`func (o *AddExternalServerRequest) SetInitialConnections(v int32)`
+`func (o *AddExternalServerRequest) SetInitialConnections(v int64)`
 
 SetInitialConnections sets InitialConnections field to given value.
 
@@ -685,20 +685,20 @@ HasInitialConnections returns a boolean if a field has been set.
 
 ### GetMaxConnections
 
-`func (o *AddExternalServerRequest) GetMaxConnections() int32`
+`func (o *AddExternalServerRequest) GetMaxConnections() int64`
 
 GetMaxConnections returns the MaxConnections field if non-nil, zero value otherwise.
 
 ### GetMaxConnectionsOk
 
-`func (o *AddExternalServerRequest) GetMaxConnectionsOk() (*int32, bool)`
+`func (o *AddExternalServerRequest) GetMaxConnectionsOk() (*int64, bool)`
 
 GetMaxConnectionsOk returns a tuple with the MaxConnections field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxConnections
 
-`func (o *AddExternalServerRequest) SetMaxConnections(v int32)`
+`func (o *AddExternalServerRequest) SetMaxConnections(v int64)`
 
 SetMaxConnections sets MaxConnections field to given value.
 

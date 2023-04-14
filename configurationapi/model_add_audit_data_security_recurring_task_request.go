@@ -31,7 +31,7 @@ type AddAuditDataSecurityRecurringTaskRequest struct {
 	// A filter that will be used to identify entries that may be included in the generated report. If multiple filters are specified, then any entry that matches at least one of the filters will be included. If no filters are specified, then all entries will be included.
 	IncludeFilter []string `json:"includeFilter,omitempty"`
 	// The minimum number of previous reports that should be preserved after a new report is generated.
-	RetainPreviousReportCount *int32 `json:"retainPreviousReportCount,omitempty"`
+	RetainPreviousReportCount *int64 `json:"retainPreviousReportCount,omitempty"`
 	// The minimum age of previous reports that should be preserved after a new report completes successfully.
 	RetainPreviousReportAge *string `json:"retainPreviousReportAge,omitempty"`
 	// A description for this Recurring Task
@@ -248,9 +248,9 @@ func (o *AddAuditDataSecurityRecurringTaskRequest) SetIncludeFilter(v []string) 
 }
 
 // GetRetainPreviousReportCount returns the RetainPreviousReportCount field value if set, zero value otherwise.
-func (o *AddAuditDataSecurityRecurringTaskRequest) GetRetainPreviousReportCount() int32 {
+func (o *AddAuditDataSecurityRecurringTaskRequest) GetRetainPreviousReportCount() int64 {
 	if o == nil || IsNil(o.RetainPreviousReportCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.RetainPreviousReportCount
@@ -258,7 +258,7 @@ func (o *AddAuditDataSecurityRecurringTaskRequest) GetRetainPreviousReportCount(
 
 // GetRetainPreviousReportCountOk returns a tuple with the RetainPreviousReportCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddAuditDataSecurityRecurringTaskRequest) GetRetainPreviousReportCountOk() (*int32, bool) {
+func (o *AddAuditDataSecurityRecurringTaskRequest) GetRetainPreviousReportCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.RetainPreviousReportCount) {
 		return nil, false
 	}
@@ -274,8 +274,8 @@ func (o *AddAuditDataSecurityRecurringTaskRequest) HasRetainPreviousReportCount(
 	return false
 }
 
-// SetRetainPreviousReportCount gets a reference to the given int32 and assigns it to the RetainPreviousReportCount field.
-func (o *AddAuditDataSecurityRecurringTaskRequest) SetRetainPreviousReportCount(v int32) {
+// SetRetainPreviousReportCount gets a reference to the given int64 and assigns it to the RetainPreviousReportCount field.
+func (o *AddAuditDataSecurityRecurringTaskRequest) SetRetainPreviousReportCount(v int64) {
 	o.RetainPreviousReportCount = &v
 }
 

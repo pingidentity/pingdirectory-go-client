@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | [**[]EnumldapServerInstanceListenerSchemaUrn**](EnumldapServerInstanceListenerSchemaUrn.md) |  | 
 **Id** | **string** | Name of the Server Instance | 
-**ServerLDAPPort** | Pointer to **int32** | The TCP port number on which the LDAP server is listening. | [optional] 
+**ServerLDAPPort** | Pointer to **int64** | The TCP port number on which the LDAP server is listening. | [optional] 
 **ConnectionSecurity** | Pointer to [**EnumserverInstanceListenerLdapConnectionSecurityProp**](EnumserverInstanceListenerLdapConnectionSecurityProp.md) |  | [optional] 
 **ListenerCertificate** | Pointer to **string** | The public component of the certificate that the listener is expected to present to clients. When establishing a connection to this server, only the certificate(s) listed here will be trusted. | [optional] 
 **Purpose** | Pointer to [**[]EnumserverInstanceListenerPurposeProp**](EnumserverInstanceListenerPurposeProp.md) |  | [optional] 
@@ -74,20 +74,20 @@ SetId sets Id field to given value.
 
 ### GetServerLDAPPort
 
-`func (o *LdapServerInstanceListenerResponse) GetServerLDAPPort() int32`
+`func (o *LdapServerInstanceListenerResponse) GetServerLDAPPort() int64`
 
 GetServerLDAPPort returns the ServerLDAPPort field if non-nil, zero value otherwise.
 
 ### GetServerLDAPPortOk
 
-`func (o *LdapServerInstanceListenerResponse) GetServerLDAPPortOk() (*int32, bool)`
+`func (o *LdapServerInstanceListenerResponse) GetServerLDAPPortOk() (*int64, bool)`
 
 GetServerLDAPPortOk returns a tuple with the ServerLDAPPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerLDAPPort
 
-`func (o *LdapServerInstanceListenerResponse) SetServerLDAPPort(v int32)`
+`func (o *LdapServerInstanceListenerResponse) SetServerLDAPPort(v int64)`
 
 SetServerLDAPPort sets ServerLDAPPort field to given value.
 

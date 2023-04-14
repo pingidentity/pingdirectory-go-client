@@ -27,7 +27,7 @@ type AddCharacterSetPasswordValidatorRequest struct {
 	// Indicates whether this password validator allows passwords to contain characters outside of any of the user-defined character sets.
 	AllowUnclassifiedCharacters bool `json:"allowUnclassifiedCharacters"`
 	// Specifies the minimum number of character sets that must be represented in a proposed password.
-	MinimumRequiredCharacterSets *int32 `json:"minimumRequiredCharacterSets,omitempty"`
+	MinimumRequiredCharacterSets *int64 `json:"minimumRequiredCharacterSets,omitempty"`
 	// A description for this Password Validator
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the password validator is enabled for use.
@@ -157,9 +157,9 @@ func (o *AddCharacterSetPasswordValidatorRequest) SetAllowUnclassifiedCharacters
 }
 
 // GetMinimumRequiredCharacterSets returns the MinimumRequiredCharacterSets field value if set, zero value otherwise.
-func (o *AddCharacterSetPasswordValidatorRequest) GetMinimumRequiredCharacterSets() int32 {
+func (o *AddCharacterSetPasswordValidatorRequest) GetMinimumRequiredCharacterSets() int64 {
 	if o == nil || IsNil(o.MinimumRequiredCharacterSets) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MinimumRequiredCharacterSets
@@ -167,7 +167,7 @@ func (o *AddCharacterSetPasswordValidatorRequest) GetMinimumRequiredCharacterSet
 
 // GetMinimumRequiredCharacterSetsOk returns a tuple with the MinimumRequiredCharacterSets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCharacterSetPasswordValidatorRequest) GetMinimumRequiredCharacterSetsOk() (*int32, bool) {
+func (o *AddCharacterSetPasswordValidatorRequest) GetMinimumRequiredCharacterSetsOk() (*int64, bool) {
 	if o == nil || IsNil(o.MinimumRequiredCharacterSets) {
 		return nil, false
 	}
@@ -183,8 +183,8 @@ func (o *AddCharacterSetPasswordValidatorRequest) HasMinimumRequiredCharacterSet
 	return false
 }
 
-// SetMinimumRequiredCharacterSets gets a reference to the given int32 and assigns it to the MinimumRequiredCharacterSets field.
-func (o *AddCharacterSetPasswordValidatorRequest) SetMinimumRequiredCharacterSets(v int32) {
+// SetMinimumRequiredCharacterSets gets a reference to the given int64 and assigns it to the MinimumRequiredCharacterSets field.
+func (o *AddCharacterSetPasswordValidatorRequest) SetMinimumRequiredCharacterSets(v int64) {
 	o.MinimumRequiredCharacterSets = &v
 }
 

@@ -25,7 +25,7 @@ type HttpServerInstanceListenerResponse struct {
 	// If the server is listening on a particular address different from the hostname, then this property may be used to specify the address on which to listen for connections from HTTP clients.
 	ListenAddress *string `json:"listenAddress,omitempty"`
 	// The TCP port number on which the HTTP server is listening.
-	ServerHTTPPort                                *int32                                                `json:"serverHTTPPort,omitempty"`
+	ServerHTTPPort                                *int64                                                `json:"serverHTTPPort,omitempty"`
 	ConnectionSecurity                            *EnumserverInstanceListenerHttpConnectionSecurityProp `json:"connectionSecurity,omitempty"`
 	Purpose                                       []EnumserverInstanceListenerPurposeProp               `json:"purpose,omitempty"`
 	Meta                                          *MetaMeta                                             `json:"meta,omitempty"`
@@ -132,9 +132,9 @@ func (o *HttpServerInstanceListenerResponse) SetListenAddress(v string) {
 }
 
 // GetServerHTTPPort returns the ServerHTTPPort field value if set, zero value otherwise.
-func (o *HttpServerInstanceListenerResponse) GetServerHTTPPort() int32 {
+func (o *HttpServerInstanceListenerResponse) GetServerHTTPPort() int64 {
 	if o == nil || IsNil(o.ServerHTTPPort) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ServerHTTPPort
@@ -142,7 +142,7 @@ func (o *HttpServerInstanceListenerResponse) GetServerHTTPPort() int32 {
 
 // GetServerHTTPPortOk returns a tuple with the ServerHTTPPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HttpServerInstanceListenerResponse) GetServerHTTPPortOk() (*int32, bool) {
+func (o *HttpServerInstanceListenerResponse) GetServerHTTPPortOk() (*int64, bool) {
 	if o == nil || IsNil(o.ServerHTTPPort) {
 		return nil, false
 	}
@@ -158,8 +158,8 @@ func (o *HttpServerInstanceListenerResponse) HasServerHTTPPort() bool {
 	return false
 }
 
-// SetServerHTTPPort gets a reference to the given int32 and assigns it to the ServerHTTPPort field.
-func (o *HttpServerInstanceListenerResponse) SetServerHTTPPort(v int32) {
+// SetServerHTTPPort gets a reference to the given int64 and assigns it to the ServerHTTPPort field.
+func (o *HttpServerInstanceListenerResponse) SetServerHTTPPort(v int64) {
 	o.ServerHTTPPort = &v
 }
 

@@ -38,11 +38,11 @@ type CollectSupportDataRecurringTaskResponse struct {
 	UseSequentialMode *bool                               `json:"useSequentialMode,omitempty"`
 	SecurityLevel     *EnumrecurringTaskSecurityLevelProp `json:"securityLevel,omitempty"`
 	// The number of times to invoke the jstack utility to obtain a stack trace of all threads running in the JVM. A value of zero indicates that the jstack utility should not be invoked.
-	JstackCount *int32 `json:"jstackCount,omitempty"`
+	JstackCount *int64 `json:"jstackCount,omitempty"`
 	// The number of intervals of data to collect from tools that use sample-based reporting, like vmstat, iostat, and mpstat. A value of zero indicates that these kinds of tools should not be used to collect any information.
-	ReportCount *int32 `json:"reportCount,omitempty"`
+	ReportCount *int64 `json:"reportCount,omitempty"`
 	// The duration (in seconds) between each interval of data to collect from tools that use sample-based reporting, like vmstat, iostat, and mpstat.
-	ReportIntervalSeconds *int32 `json:"reportIntervalSeconds,omitempty"`
+	ReportIntervalSeconds *int64 `json:"reportIntervalSeconds,omitempty"`
 	// The maximum age (leading up to the time the collect-support-data tool was invoked) for log content to include in the support data archive.
 	LogDuration *string `json:"logDuration,omitempty"`
 	// The amount of data to collect from the beginning of each log file included in the support data archive.
@@ -52,7 +52,7 @@ type CollectSupportDataRecurringTaskResponse struct {
 	// An optional comment to include in a README file within the support data archive.
 	Comment *string `json:"comment,omitempty"`
 	// The minimum number of previous support data archives that should be preserved after a new archive is generated.
-	RetainPreviousSupportDataArchiveCount *int32 `json:"retainPreviousSupportDataArchiveCount,omitempty"`
+	RetainPreviousSupportDataArchiveCount *int64 `json:"retainPreviousSupportDataArchiveCount,omitempty"`
 	// The minimum age of previous support data archives that should be preserved after a new archive is generated.
 	RetainPreviousSupportDataArchiveAge *string `json:"retainPreviousSupportDataArchiveAge,omitempty"`
 	// A description for this Recurring Task
@@ -392,9 +392,9 @@ func (o *CollectSupportDataRecurringTaskResponse) SetSecurityLevel(v Enumrecurri
 }
 
 // GetJstackCount returns the JstackCount field value if set, zero value otherwise.
-func (o *CollectSupportDataRecurringTaskResponse) GetJstackCount() int32 {
+func (o *CollectSupportDataRecurringTaskResponse) GetJstackCount() int64 {
 	if o == nil || IsNil(o.JstackCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.JstackCount
@@ -402,7 +402,7 @@ func (o *CollectSupportDataRecurringTaskResponse) GetJstackCount() int32 {
 
 // GetJstackCountOk returns a tuple with the JstackCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CollectSupportDataRecurringTaskResponse) GetJstackCountOk() (*int32, bool) {
+func (o *CollectSupportDataRecurringTaskResponse) GetJstackCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.JstackCount) {
 		return nil, false
 	}
@@ -418,15 +418,15 @@ func (o *CollectSupportDataRecurringTaskResponse) HasJstackCount() bool {
 	return false
 }
 
-// SetJstackCount gets a reference to the given int32 and assigns it to the JstackCount field.
-func (o *CollectSupportDataRecurringTaskResponse) SetJstackCount(v int32) {
+// SetJstackCount gets a reference to the given int64 and assigns it to the JstackCount field.
+func (o *CollectSupportDataRecurringTaskResponse) SetJstackCount(v int64) {
 	o.JstackCount = &v
 }
 
 // GetReportCount returns the ReportCount field value if set, zero value otherwise.
-func (o *CollectSupportDataRecurringTaskResponse) GetReportCount() int32 {
+func (o *CollectSupportDataRecurringTaskResponse) GetReportCount() int64 {
 	if o == nil || IsNil(o.ReportCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ReportCount
@@ -434,7 +434,7 @@ func (o *CollectSupportDataRecurringTaskResponse) GetReportCount() int32 {
 
 // GetReportCountOk returns a tuple with the ReportCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CollectSupportDataRecurringTaskResponse) GetReportCountOk() (*int32, bool) {
+func (o *CollectSupportDataRecurringTaskResponse) GetReportCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.ReportCount) {
 		return nil, false
 	}
@@ -450,15 +450,15 @@ func (o *CollectSupportDataRecurringTaskResponse) HasReportCount() bool {
 	return false
 }
 
-// SetReportCount gets a reference to the given int32 and assigns it to the ReportCount field.
-func (o *CollectSupportDataRecurringTaskResponse) SetReportCount(v int32) {
+// SetReportCount gets a reference to the given int64 and assigns it to the ReportCount field.
+func (o *CollectSupportDataRecurringTaskResponse) SetReportCount(v int64) {
 	o.ReportCount = &v
 }
 
 // GetReportIntervalSeconds returns the ReportIntervalSeconds field value if set, zero value otherwise.
-func (o *CollectSupportDataRecurringTaskResponse) GetReportIntervalSeconds() int32 {
+func (o *CollectSupportDataRecurringTaskResponse) GetReportIntervalSeconds() int64 {
 	if o == nil || IsNil(o.ReportIntervalSeconds) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ReportIntervalSeconds
@@ -466,7 +466,7 @@ func (o *CollectSupportDataRecurringTaskResponse) GetReportIntervalSeconds() int
 
 // GetReportIntervalSecondsOk returns a tuple with the ReportIntervalSeconds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CollectSupportDataRecurringTaskResponse) GetReportIntervalSecondsOk() (*int32, bool) {
+func (o *CollectSupportDataRecurringTaskResponse) GetReportIntervalSecondsOk() (*int64, bool) {
 	if o == nil || IsNil(o.ReportIntervalSeconds) {
 		return nil, false
 	}
@@ -482,8 +482,8 @@ func (o *CollectSupportDataRecurringTaskResponse) HasReportIntervalSeconds() boo
 	return false
 }
 
-// SetReportIntervalSeconds gets a reference to the given int32 and assigns it to the ReportIntervalSeconds field.
-func (o *CollectSupportDataRecurringTaskResponse) SetReportIntervalSeconds(v int32) {
+// SetReportIntervalSeconds gets a reference to the given int64 and assigns it to the ReportIntervalSeconds field.
+func (o *CollectSupportDataRecurringTaskResponse) SetReportIntervalSeconds(v int64) {
 	o.ReportIntervalSeconds = &v
 }
 
@@ -616,9 +616,9 @@ func (o *CollectSupportDataRecurringTaskResponse) SetComment(v string) {
 }
 
 // GetRetainPreviousSupportDataArchiveCount returns the RetainPreviousSupportDataArchiveCount field value if set, zero value otherwise.
-func (o *CollectSupportDataRecurringTaskResponse) GetRetainPreviousSupportDataArchiveCount() int32 {
+func (o *CollectSupportDataRecurringTaskResponse) GetRetainPreviousSupportDataArchiveCount() int64 {
 	if o == nil || IsNil(o.RetainPreviousSupportDataArchiveCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.RetainPreviousSupportDataArchiveCount
@@ -626,7 +626,7 @@ func (o *CollectSupportDataRecurringTaskResponse) GetRetainPreviousSupportDataAr
 
 // GetRetainPreviousSupportDataArchiveCountOk returns a tuple with the RetainPreviousSupportDataArchiveCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CollectSupportDataRecurringTaskResponse) GetRetainPreviousSupportDataArchiveCountOk() (*int32, bool) {
+func (o *CollectSupportDataRecurringTaskResponse) GetRetainPreviousSupportDataArchiveCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.RetainPreviousSupportDataArchiveCount) {
 		return nil, false
 	}
@@ -642,8 +642,8 @@ func (o *CollectSupportDataRecurringTaskResponse) HasRetainPreviousSupportDataAr
 	return false
 }
 
-// SetRetainPreviousSupportDataArchiveCount gets a reference to the given int32 and assigns it to the RetainPreviousSupportDataArchiveCount field.
-func (o *CollectSupportDataRecurringTaskResponse) SetRetainPreviousSupportDataArchiveCount(v int32) {
+// SetRetainPreviousSupportDataArchiveCount gets a reference to the given int64 and assigns it to the RetainPreviousSupportDataArchiveCount field.
+func (o *CollectSupportDataRecurringTaskResponse) SetRetainPreviousSupportDataArchiveCount(v int64) {
 	o.RetainPreviousSupportDataArchiveCount = &v
 }
 

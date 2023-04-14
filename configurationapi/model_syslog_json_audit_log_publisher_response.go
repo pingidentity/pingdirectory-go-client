@@ -31,7 +31,7 @@ type SyslogJsonAuditLogPublisherResponse struct {
 	// The application name that will be included in syslog messages that are logged by this Syslog JSON Audit Log Publisher.
 	SyslogMessageApplicationName *string `json:"syslogMessageApplicationName,omitempty"`
 	// The maximum number of log records that can be stored in the asynchronous queue.
-	QueueSize *int32 `json:"queueSize,omitempty"`
+	QueueSize *int64 `json:"queueSize,omitempty"`
 	// Indicates whether the JSON objects should use a multi-line representation (with each object field and array value on its own line) that may be easier for administrators to read, but each message will be larger (because of additional spaces and end-of-line markers), and it may be more difficult to consume and parse through some text-oriented tools.
 	WriteMultiLineMessages *bool `json:"writeMultiLineMessages,omitempty"`
 	// Indicates whether the audit log should be written in reversible form so that it is possible to revert the changes if desired.
@@ -292,9 +292,9 @@ func (o *SyslogJsonAuditLogPublisherResponse) SetSyslogMessageApplicationName(v 
 }
 
 // GetQueueSize returns the QueueSize field value if set, zero value otherwise.
-func (o *SyslogJsonAuditLogPublisherResponse) GetQueueSize() int32 {
+func (o *SyslogJsonAuditLogPublisherResponse) GetQueueSize() int64 {
 	if o == nil || IsNil(o.QueueSize) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.QueueSize
@@ -302,7 +302,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetQueueSize() int32 {
 
 // GetQueueSizeOk returns a tuple with the QueueSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SyslogJsonAuditLogPublisherResponse) GetQueueSizeOk() (*int32, bool) {
+func (o *SyslogJsonAuditLogPublisherResponse) GetQueueSizeOk() (*int64, bool) {
 	if o == nil || IsNil(o.QueueSize) {
 		return nil, false
 	}
@@ -318,8 +318,8 @@ func (o *SyslogJsonAuditLogPublisherResponse) HasQueueSize() bool {
 	return false
 }
 
-// SetQueueSize gets a reference to the given int32 and assigns it to the QueueSize field.
-func (o *SyslogJsonAuditLogPublisherResponse) SetQueueSize(v int32) {
+// SetQueueSize gets a reference to the given int64 and assigns it to the QueueSize field.
+func (o *SyslogJsonAuditLogPublisherResponse) SetQueueSize(v int64) {
 	o.QueueSize = &v
 }
 

@@ -35,7 +35,7 @@ type ThirdPartyAccessTokenValidatorResponse struct {
 	// Indicates whether this Access Token Validator is enabled for use in Directory Server.
 	Enabled bool `json:"enabled"`
 	// When multiple Access Token Validators are defined for a single Directory Server, this property determines the evaluation order for determining the correct validator class for an access token received by the Directory Server. Values of this property must be unique among all Access Token Validators defined within Directory Server but not necessarily contiguous. Access Token Validators with a smaller value will be evaluated first to determine if they are able to validate the access token.
-	EvaluationOrderIndex                          int32                                              `json:"evaluationOrderIndex"`
+	EvaluationOrderIndex                          int64                                              `json:"evaluationOrderIndex"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 }
@@ -44,7 +44,7 @@ type ThirdPartyAccessTokenValidatorResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewThirdPartyAccessTokenValidatorResponse(id string, schemas []EnumthirdPartyAccessTokenValidatorSchemaUrn, extensionClass string, enabled bool, evaluationOrderIndex int32) *ThirdPartyAccessTokenValidatorResponse {
+func NewThirdPartyAccessTokenValidatorResponse(id string, schemas []EnumthirdPartyAccessTokenValidatorSchemaUrn, extensionClass string, enabled bool, evaluationOrderIndex int64) *ThirdPartyAccessTokenValidatorResponse {
 	this := ThirdPartyAccessTokenValidatorResponse{}
 	this.Id = id
 	this.Schemas = schemas
@@ -287,9 +287,9 @@ func (o *ThirdPartyAccessTokenValidatorResponse) SetEnabled(v bool) {
 }
 
 // GetEvaluationOrderIndex returns the EvaluationOrderIndex field value
-func (o *ThirdPartyAccessTokenValidatorResponse) GetEvaluationOrderIndex() int32 {
+func (o *ThirdPartyAccessTokenValidatorResponse) GetEvaluationOrderIndex() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -298,7 +298,7 @@ func (o *ThirdPartyAccessTokenValidatorResponse) GetEvaluationOrderIndex() int32
 
 // GetEvaluationOrderIndexOk returns a tuple with the EvaluationOrderIndex field value
 // and a boolean to check if the value has been set.
-func (o *ThirdPartyAccessTokenValidatorResponse) GetEvaluationOrderIndexOk() (*int32, bool) {
+func (o *ThirdPartyAccessTokenValidatorResponse) GetEvaluationOrderIndexOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -306,7 +306,7 @@ func (o *ThirdPartyAccessTokenValidatorResponse) GetEvaluationOrderIndexOk() (*i
 }
 
 // SetEvaluationOrderIndex sets field value
-func (o *ThirdPartyAccessTokenValidatorResponse) SetEvaluationOrderIndex(v int32) {
+func (o *ThirdPartyAccessTokenValidatorResponse) SetEvaluationOrderIndex(v int64) {
 	o.EvaluationOrderIndex = v
 }
 

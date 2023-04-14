@@ -25,15 +25,15 @@ type DiskSpaceUsageMonitorProviderResponse struct {
 	// Specifies the low space warning threshold value as an absolute amount of space. If the amount of usable disk space drops below this amount, then the Directory Server will begin generating warning alert notifications.
 	LowSpaceWarningSizeThreshold *string `json:"lowSpaceWarningSizeThreshold,omitempty"`
 	// Specifies the low space warning threshold value as a percentage of total space. If the amount of usable disk space drops below this amount, then the Directory Server will begin generating warning alert notifications.
-	LowSpaceWarningPercentThreshold *int32 `json:"lowSpaceWarningPercentThreshold,omitempty"`
+	LowSpaceWarningPercentThreshold *int64 `json:"lowSpaceWarningPercentThreshold,omitempty"`
 	// Specifies the low space error threshold value as an absolute amount of space. If the amount of usable disk space drops below this amount, then the Directory Server will start rejecting operations requested by non-root users.
 	LowSpaceErrorSizeThreshold *string `json:"lowSpaceErrorSizeThreshold,omitempty"`
 	// Specifies the low space error threshold value as a percentage of total space. If the amount of usable disk space drops below this amount, then the Directory Server will start rejecting operations requested by non-root users.
-	LowSpaceErrorPercentThreshold *int32 `json:"lowSpaceErrorPercentThreshold,omitempty"`
+	LowSpaceErrorPercentThreshold *int64 `json:"lowSpaceErrorPercentThreshold,omitempty"`
 	// Specifies the out of space error threshold value as an absolute amount of space. If the amount of usable disk space drops below this amount, then the Directory Server will shut itself down to avoid problems that may occur from complete exhaustion of usable space.
 	OutOfSpaceErrorSizeThreshold *string `json:"outOfSpaceErrorSizeThreshold,omitempty"`
 	// Specifies the out of space error threshold value as a percentage of total space. If the amount of usable disk space drops below this amount, then the Directory Server will shut itself down to avoid problems that may occur from complete exhaustion of usable space.
-	OutOfSpaceErrorPercentThreshold *int32 `json:"outOfSpaceErrorPercentThreshold,omitempty"`
+	OutOfSpaceErrorPercentThreshold *int64 `json:"outOfSpaceErrorPercentThreshold,omitempty"`
 	// Specifies the length of time between administrative alerts generated in response to lack of usable disk space. Administrative alerts will be generated whenever the amount of usable space drops below any threshold, and they will also be generated at regular intervals as long as the amount of usable space remains below the threshold value. A value of zero indicates that alerts should only be generated when the amount of usable space drops below a configured threshold.
 	AlertFrequency string `json:"alertFrequency"`
 	// A description for this Monitor Provider
@@ -146,9 +146,9 @@ func (o *DiskSpaceUsageMonitorProviderResponse) SetLowSpaceWarningSizeThreshold(
 }
 
 // GetLowSpaceWarningPercentThreshold returns the LowSpaceWarningPercentThreshold field value if set, zero value otherwise.
-func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceWarningPercentThreshold() int32 {
+func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceWarningPercentThreshold() int64 {
 	if o == nil || IsNil(o.LowSpaceWarningPercentThreshold) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.LowSpaceWarningPercentThreshold
@@ -156,7 +156,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceWarningPercentThresho
 
 // GetLowSpaceWarningPercentThresholdOk returns a tuple with the LowSpaceWarningPercentThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceWarningPercentThresholdOk() (*int32, bool) {
+func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceWarningPercentThresholdOk() (*int64, bool) {
 	if o == nil || IsNil(o.LowSpaceWarningPercentThreshold) {
 		return nil, false
 	}
@@ -172,8 +172,8 @@ func (o *DiskSpaceUsageMonitorProviderResponse) HasLowSpaceWarningPercentThresho
 	return false
 }
 
-// SetLowSpaceWarningPercentThreshold gets a reference to the given int32 and assigns it to the LowSpaceWarningPercentThreshold field.
-func (o *DiskSpaceUsageMonitorProviderResponse) SetLowSpaceWarningPercentThreshold(v int32) {
+// SetLowSpaceWarningPercentThreshold gets a reference to the given int64 and assigns it to the LowSpaceWarningPercentThreshold field.
+func (o *DiskSpaceUsageMonitorProviderResponse) SetLowSpaceWarningPercentThreshold(v int64) {
 	o.LowSpaceWarningPercentThreshold = &v
 }
 
@@ -210,9 +210,9 @@ func (o *DiskSpaceUsageMonitorProviderResponse) SetLowSpaceErrorSizeThreshold(v 
 }
 
 // GetLowSpaceErrorPercentThreshold returns the LowSpaceErrorPercentThreshold field value if set, zero value otherwise.
-func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceErrorPercentThreshold() int32 {
+func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceErrorPercentThreshold() int64 {
 	if o == nil || IsNil(o.LowSpaceErrorPercentThreshold) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.LowSpaceErrorPercentThreshold
@@ -220,7 +220,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceErrorPercentThreshold
 
 // GetLowSpaceErrorPercentThresholdOk returns a tuple with the LowSpaceErrorPercentThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceErrorPercentThresholdOk() (*int32, bool) {
+func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceErrorPercentThresholdOk() (*int64, bool) {
 	if o == nil || IsNil(o.LowSpaceErrorPercentThreshold) {
 		return nil, false
 	}
@@ -236,8 +236,8 @@ func (o *DiskSpaceUsageMonitorProviderResponse) HasLowSpaceErrorPercentThreshold
 	return false
 }
 
-// SetLowSpaceErrorPercentThreshold gets a reference to the given int32 and assigns it to the LowSpaceErrorPercentThreshold field.
-func (o *DiskSpaceUsageMonitorProviderResponse) SetLowSpaceErrorPercentThreshold(v int32) {
+// SetLowSpaceErrorPercentThreshold gets a reference to the given int64 and assigns it to the LowSpaceErrorPercentThreshold field.
+func (o *DiskSpaceUsageMonitorProviderResponse) SetLowSpaceErrorPercentThreshold(v int64) {
 	o.LowSpaceErrorPercentThreshold = &v
 }
 
@@ -274,9 +274,9 @@ func (o *DiskSpaceUsageMonitorProviderResponse) SetOutOfSpaceErrorSizeThreshold(
 }
 
 // GetOutOfSpaceErrorPercentThreshold returns the OutOfSpaceErrorPercentThreshold field value if set, zero value otherwise.
-func (o *DiskSpaceUsageMonitorProviderResponse) GetOutOfSpaceErrorPercentThreshold() int32 {
+func (o *DiskSpaceUsageMonitorProviderResponse) GetOutOfSpaceErrorPercentThreshold() int64 {
 	if o == nil || IsNil(o.OutOfSpaceErrorPercentThreshold) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OutOfSpaceErrorPercentThreshold
@@ -284,7 +284,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetOutOfSpaceErrorPercentThresho
 
 // GetOutOfSpaceErrorPercentThresholdOk returns a tuple with the OutOfSpaceErrorPercentThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DiskSpaceUsageMonitorProviderResponse) GetOutOfSpaceErrorPercentThresholdOk() (*int32, bool) {
+func (o *DiskSpaceUsageMonitorProviderResponse) GetOutOfSpaceErrorPercentThresholdOk() (*int64, bool) {
 	if o == nil || IsNil(o.OutOfSpaceErrorPercentThreshold) {
 		return nil, false
 	}
@@ -300,8 +300,8 @@ func (o *DiskSpaceUsageMonitorProviderResponse) HasOutOfSpaceErrorPercentThresho
 	return false
 }
 
-// SetOutOfSpaceErrorPercentThreshold gets a reference to the given int32 and assigns it to the OutOfSpaceErrorPercentThreshold field.
-func (o *DiskSpaceUsageMonitorProviderResponse) SetOutOfSpaceErrorPercentThreshold(v int32) {
+// SetOutOfSpaceErrorPercentThreshold gets a reference to the given int64 and assigns it to the OutOfSpaceErrorPercentThreshold field.
+func (o *DiskSpaceUsageMonitorProviderResponse) SetOutOfSpaceErrorPercentThreshold(v int64) {
 	o.OutOfSpaceErrorPercentThreshold = &v
 }
 

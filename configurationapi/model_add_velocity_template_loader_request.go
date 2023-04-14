@@ -25,7 +25,7 @@ type AddVelocityTemplateLoaderRequest struct {
 	// Indicates whether this Velocity Template Loader is enabled.
 	Enabled *bool `json:"enabled,omitempty"`
 	// This property determines the evaluation order for determining the correct Velocity Template Loader to load a template for generating content for a particular request.
-	EvaluationOrderIndex *int32 `json:"evaluationOrderIndex,omitempty"`
+	EvaluationOrderIndex *int64 `json:"evaluationOrderIndex,omitempty"`
 	// Specifies a media type for matching Accept request-header values.
 	MimeTypeMatcher string `json:"mimeTypeMatcher"`
 	// Specifies a the value that will be used in the response's Content-Type header that indicates the type of content to return.
@@ -144,9 +144,9 @@ func (o *AddVelocityTemplateLoaderRequest) SetEnabled(v bool) {
 }
 
 // GetEvaluationOrderIndex returns the EvaluationOrderIndex field value if set, zero value otherwise.
-func (o *AddVelocityTemplateLoaderRequest) GetEvaluationOrderIndex() int32 {
+func (o *AddVelocityTemplateLoaderRequest) GetEvaluationOrderIndex() int64 {
 	if o == nil || IsNil(o.EvaluationOrderIndex) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.EvaluationOrderIndex
@@ -154,7 +154,7 @@ func (o *AddVelocityTemplateLoaderRequest) GetEvaluationOrderIndex() int32 {
 
 // GetEvaluationOrderIndexOk returns a tuple with the EvaluationOrderIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddVelocityTemplateLoaderRequest) GetEvaluationOrderIndexOk() (*int32, bool) {
+func (o *AddVelocityTemplateLoaderRequest) GetEvaluationOrderIndexOk() (*int64, bool) {
 	if o == nil || IsNil(o.EvaluationOrderIndex) {
 		return nil, false
 	}
@@ -170,8 +170,8 @@ func (o *AddVelocityTemplateLoaderRequest) HasEvaluationOrderIndex() bool {
 	return false
 }
 
-// SetEvaluationOrderIndex gets a reference to the given int32 and assigns it to the EvaluationOrderIndex field.
-func (o *AddVelocityTemplateLoaderRequest) SetEvaluationOrderIndex(v int32) {
+// SetEvaluationOrderIndex gets a reference to the given int64 and assigns it to the EvaluationOrderIndex field.
+func (o *AddVelocityTemplateLoaderRequest) SetEvaluationOrderIndex(v int64) {
 	o.EvaluationOrderIndex = &v
 }
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SchemeName** | **string** | Name of the new Password Storage Scheme | 
 **Schemas** | [**[]EnumbcryptPasswordStorageSchemeSchemaUrn**](EnumbcryptPasswordStorageSchemeSchemaUrn.md) |  | 
-**BcryptCostFactor** | Pointer to **int32** | Specifies the cost factor to use when encoding passwords with Bcrypt. A higher cost factor requires more processing to generate a password, which makes attacks against the password more expensive. | [optional] 
+**BcryptCostFactor** | Pointer to **int64** | Specifies the cost factor to use when encoding passwords with Bcrypt. A higher cost factor requires more processing to generate a password, which makes attacks against the password more expensive. | [optional] 
 **Description** | Pointer to **string** | A description for this Password Storage Scheme | [optional] 
 **Enabled** | **bool** | Indicates whether the Password Storage Scheme is enabled for use. | 
 
@@ -71,20 +71,20 @@ SetSchemas sets Schemas field to given value.
 
 ### GetBcryptCostFactor
 
-`func (o *AddBcryptPasswordStorageSchemeRequest) GetBcryptCostFactor() int32`
+`func (o *AddBcryptPasswordStorageSchemeRequest) GetBcryptCostFactor() int64`
 
 GetBcryptCostFactor returns the BcryptCostFactor field if non-nil, zero value otherwise.
 
 ### GetBcryptCostFactorOk
 
-`func (o *AddBcryptPasswordStorageSchemeRequest) GetBcryptCostFactorOk() (*int32, bool)`
+`func (o *AddBcryptPasswordStorageSchemeRequest) GetBcryptCostFactorOk() (*int64, bool)`
 
 GetBcryptCostFactorOk returns a tuple with the BcryptCostFactor field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBcryptCostFactor
 
-`func (o *AddBcryptPasswordStorageSchemeRequest) SetBcryptCostFactor(v int32)`
+`func (o *AddBcryptPasswordStorageSchemeRequest) SetBcryptCostFactor(v int64)`
 
 SetBcryptCostFactor sets BcryptCostFactor field to given value.
 

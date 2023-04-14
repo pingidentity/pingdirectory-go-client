@@ -8,10 +8,10 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumcleanUpInactivePingfederatePersistentSessionsPluginSchemaUrn**](EnumcleanUpInactivePingfederatePersistentSessionsPluginSchemaUrn.md) |  | 
 **ExpirationOffset** | **string** | Sessions whose last activity timestamp is older than this offset will be removed. | 
 **PollingInterval** | Pointer to **string** | This specifies how often the plugin should check for expired data. It also controls the offset of peer servers (see the peer-server-priority-index for more information). | [optional] 
-**PeerServerPriorityIndex** | Pointer to **int32** | In a replicated environment, this determines the order in which peer servers should attempt to purge data. | [optional] 
+**PeerServerPriorityIndex** | Pointer to **int64** | In a replicated environment, this determines the order in which peer servers should attempt to purge data. | [optional] 
 **BaseDN** | Pointer to **string** | Only entries located within the subtree specified by this base DN are eligible for purging. | [optional] 
-**MaxUpdatesPerSecond** | Pointer to **int32** | This setting smooths out the performance impact on the server by throttling the purging to the specified maximum number of updates per second. To avoid a large backlog, this value should be set comfortably above the average rate that expired data is generated. When purge-behavior is set to subtree-delete-entries, then deletion of the entire subtree is considered a single update for the purposes of throttling. | [optional] 
-**NumDeleteThreads** | Pointer to **int32** | The number of threads used to delete expired entries. | [optional] 
+**MaxUpdatesPerSecond** | Pointer to **int64** | This setting smooths out the performance impact on the server by throttling the purging to the specified maximum number of updates per second. To avoid a large backlog, this value should be set comfortably above the average rate that expired data is generated. When purge-behavior is set to subtree-delete-entries, then deletion of the entire subtree is considered a single update for the purposes of throttling. | [optional] 
+**NumDeleteThreads** | Pointer to **int64** | The number of threads used to delete expired entries. | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
 
 ## Methods
@@ -120,20 +120,20 @@ HasPollingInterval returns a boolean if a field has been set.
 
 ### GetPeerServerPriorityIndex
 
-`func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetPeerServerPriorityIndex() int32`
+`func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetPeerServerPriorityIndex() int64`
 
 GetPeerServerPriorityIndex returns the PeerServerPriorityIndex field if non-nil, zero value otherwise.
 
 ### GetPeerServerPriorityIndexOk
 
-`func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetPeerServerPriorityIndexOk() (*int32, bool)`
+`func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetPeerServerPriorityIndexOk() (*int64, bool)`
 
 GetPeerServerPriorityIndexOk returns a tuple with the PeerServerPriorityIndex field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPeerServerPriorityIndex
 
-`func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) SetPeerServerPriorityIndex(v int32)`
+`func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) SetPeerServerPriorityIndex(v int64)`
 
 SetPeerServerPriorityIndex sets PeerServerPriorityIndex field to given value.
 
@@ -170,20 +170,20 @@ HasBaseDN returns a boolean if a field has been set.
 
 ### GetMaxUpdatesPerSecond
 
-`func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetMaxUpdatesPerSecond() int32`
+`func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetMaxUpdatesPerSecond() int64`
 
 GetMaxUpdatesPerSecond returns the MaxUpdatesPerSecond field if non-nil, zero value otherwise.
 
 ### GetMaxUpdatesPerSecondOk
 
-`func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetMaxUpdatesPerSecondOk() (*int32, bool)`
+`func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetMaxUpdatesPerSecondOk() (*int64, bool)`
 
 GetMaxUpdatesPerSecondOk returns a tuple with the MaxUpdatesPerSecond field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxUpdatesPerSecond
 
-`func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) SetMaxUpdatesPerSecond(v int32)`
+`func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) SetMaxUpdatesPerSecond(v int64)`
 
 SetMaxUpdatesPerSecond sets MaxUpdatesPerSecond field to given value.
 
@@ -195,20 +195,20 @@ HasMaxUpdatesPerSecond returns a boolean if a field has been set.
 
 ### GetNumDeleteThreads
 
-`func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetNumDeleteThreads() int32`
+`func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetNumDeleteThreads() int64`
 
 GetNumDeleteThreads returns the NumDeleteThreads field if non-nil, zero value otherwise.
 
 ### GetNumDeleteThreadsOk
 
-`func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetNumDeleteThreadsOk() (*int32, bool)`
+`func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) GetNumDeleteThreadsOk() (*int64, bool)`
 
 GetNumDeleteThreadsOk returns a tuple with the NumDeleteThreads field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNumDeleteThreads
 
-`func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) SetNumDeleteThreads(v int32)`
+`func (o *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) SetNumDeleteThreads(v int64)`
 
 SetNumDeleteThreads sets NumDeleteThreads field to given value.
 

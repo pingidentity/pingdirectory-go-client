@@ -25,7 +25,7 @@ type VelocityTemplateLoaderResponse struct {
 	// Indicates whether this Velocity Template Loader is enabled.
 	Enabled *bool `json:"enabled,omitempty"`
 	// This property determines the evaluation order for determining the correct Velocity Template Loader to load a template for generating content for a particular request.
-	EvaluationOrderIndex int32 `json:"evaluationOrderIndex"`
+	EvaluationOrderIndex int64 `json:"evaluationOrderIndex"`
 	// Specifies a media type for matching Accept request-header values.
 	MimeTypeMatcher string `json:"mimeTypeMatcher"`
 	// Specifies a the value that will be used in the response's Content-Type header that indicates the type of content to return.
@@ -42,7 +42,7 @@ type VelocityTemplateLoaderResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVelocityTemplateLoaderResponse(id string, evaluationOrderIndex int32, mimeTypeMatcher string) *VelocityTemplateLoaderResponse {
+func NewVelocityTemplateLoaderResponse(id string, evaluationOrderIndex int64, mimeTypeMatcher string) *VelocityTemplateLoaderResponse {
 	this := VelocityTemplateLoaderResponse{}
 	this.Id = id
 	this.EvaluationOrderIndex = evaluationOrderIndex
@@ -147,9 +147,9 @@ func (o *VelocityTemplateLoaderResponse) SetEnabled(v bool) {
 }
 
 // GetEvaluationOrderIndex returns the EvaluationOrderIndex field value
-func (o *VelocityTemplateLoaderResponse) GetEvaluationOrderIndex() int32 {
+func (o *VelocityTemplateLoaderResponse) GetEvaluationOrderIndex() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -158,7 +158,7 @@ func (o *VelocityTemplateLoaderResponse) GetEvaluationOrderIndex() int32 {
 
 // GetEvaluationOrderIndexOk returns a tuple with the EvaluationOrderIndex field value
 // and a boolean to check if the value has been set.
-func (o *VelocityTemplateLoaderResponse) GetEvaluationOrderIndexOk() (*int32, bool) {
+func (o *VelocityTemplateLoaderResponse) GetEvaluationOrderIndexOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -166,7 +166,7 @@ func (o *VelocityTemplateLoaderResponse) GetEvaluationOrderIndexOk() (*int32, bo
 }
 
 // SetEvaluationOrderIndex sets field value
-func (o *VelocityTemplateLoaderResponse) SetEvaluationOrderIndex(v int32) {
+func (o *VelocityTemplateLoaderResponse) SetEvaluationOrderIndex(v int64) {
 	o.EvaluationOrderIndex = v
 }
 

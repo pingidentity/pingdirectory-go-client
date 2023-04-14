@@ -35,14 +35,14 @@ type AddThirdPartyAccessTokenValidatorRequest struct {
 	// Indicates whether this Access Token Validator is enabled for use in Directory Server.
 	Enabled bool `json:"enabled"`
 	// When multiple Access Token Validators are defined for a single Directory Server, this property determines the evaluation order for determining the correct validator class for an access token received by the Directory Server. Values of this property must be unique among all Access Token Validators defined within Directory Server but not necessarily contiguous. Access Token Validators with a smaller value will be evaluated first to determine if they are able to validate the access token.
-	EvaluationOrderIndex int32 `json:"evaluationOrderIndex"`
+	EvaluationOrderIndex int64 `json:"evaluationOrderIndex"`
 }
 
 // NewAddThirdPartyAccessTokenValidatorRequest instantiates a new AddThirdPartyAccessTokenValidatorRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddThirdPartyAccessTokenValidatorRequest(validatorName string, schemas []EnumthirdPartyAccessTokenValidatorSchemaUrn, extensionClass string, enabled bool, evaluationOrderIndex int32) *AddThirdPartyAccessTokenValidatorRequest {
+func NewAddThirdPartyAccessTokenValidatorRequest(validatorName string, schemas []EnumthirdPartyAccessTokenValidatorSchemaUrn, extensionClass string, enabled bool, evaluationOrderIndex int64) *AddThirdPartyAccessTokenValidatorRequest {
 	this := AddThirdPartyAccessTokenValidatorRequest{}
 	this.ValidatorName = validatorName
 	this.Schemas = schemas
@@ -285,9 +285,9 @@ func (o *AddThirdPartyAccessTokenValidatorRequest) SetEnabled(v bool) {
 }
 
 // GetEvaluationOrderIndex returns the EvaluationOrderIndex field value
-func (o *AddThirdPartyAccessTokenValidatorRequest) GetEvaluationOrderIndex() int32 {
+func (o *AddThirdPartyAccessTokenValidatorRequest) GetEvaluationOrderIndex() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -296,7 +296,7 @@ func (o *AddThirdPartyAccessTokenValidatorRequest) GetEvaluationOrderIndex() int
 
 // GetEvaluationOrderIndexOk returns a tuple with the EvaluationOrderIndex field value
 // and a boolean to check if the value has been set.
-func (o *AddThirdPartyAccessTokenValidatorRequest) GetEvaluationOrderIndexOk() (*int32, bool) {
+func (o *AddThirdPartyAccessTokenValidatorRequest) GetEvaluationOrderIndexOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -304,7 +304,7 @@ func (o *AddThirdPartyAccessTokenValidatorRequest) GetEvaluationOrderIndexOk() (
 }
 
 // SetEvaluationOrderIndex sets field value
-func (o *AddThirdPartyAccessTokenValidatorRequest) SetEvaluationOrderIndex(v int32) {
+func (o *AddThirdPartyAccessTokenValidatorRequest) SetEvaluationOrderIndex(v int64) {
 	o.EvaluationOrderIndex = v
 }
 

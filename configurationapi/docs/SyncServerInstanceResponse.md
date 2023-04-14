@@ -14,15 +14,15 @@ Name | Type | Description | Notes
 **ServerRoot** | Pointer to **string** | The file system path where this Server Instance is installed. | [optional] 
 **ServerVersion** | **string** | The version of the server. | 
 **InterServerCertificate** | Pointer to **string** | The public component of the certificate used by this instance to protect inter-server communication and to perform server-specific encryption. This will generally be managed by the server and should only be altered by administrators under explicit direction from Ping Identity support personnel. | [optional] 
-**LdapPort** | Pointer to **int32** | The TCP port on which this server is listening for LDAP connections. | [optional] 
-**LdapsPort** | Pointer to **int32** | The TCP port on which this server is listening for LDAP secure connections. | [optional] 
-**HttpPort** | Pointer to **int32** | The TCP port on which this server is listening for HTTP connections. | [optional] 
-**HttpsPort** | Pointer to **int32** | The TCP port on which this server is listening for HTTPS connections. | [optional] 
-**ReplicationPort** | Pointer to **int32** | The replication TCP port. | [optional] 
-**ReplicationServerID** | Pointer to **int32** | Specifies a unique identifier for the replication server on this server instance. | [optional] 
-**ReplicationDomainServerID** | Pointer to **[]int32** | Specifies a unique identifier for the Directory Server within the replication domain. | [optional] 
-**JmxPort** | Pointer to **int32** | The TCP port on which this server is listening for JMX connections. | [optional] 
-**JmxsPort** | Pointer to **int32** | The TCP port on which this server is listening for JMX secure connections. | [optional] 
+**LdapPort** | Pointer to **int64** | The TCP port on which this server is listening for LDAP connections. | [optional] 
+**LdapsPort** | Pointer to **int64** | The TCP port on which this server is listening for LDAP secure connections. | [optional] 
+**HttpPort** | Pointer to **int64** | The TCP port on which this server is listening for HTTP connections. | [optional] 
+**HttpsPort** | Pointer to **int64** | The TCP port on which this server is listening for HTTPS connections. | [optional] 
+**ReplicationPort** | Pointer to **int64** | The replication TCP port. | [optional] 
+**ReplicationServerID** | Pointer to **int64** | Specifies a unique identifier for the replication server on this server instance. | [optional] 
+**ReplicationDomainServerID** | Pointer to **[]int64** | Specifies a unique identifier for the Directory Server within the replication domain. | [optional] 
+**JmxPort** | Pointer to **int64** | The TCP port on which this server is listening for JMX connections. | [optional] 
+**JmxsPort** | Pointer to **int64** | The TCP port on which this server is listening for JMX secure connections. | [optional] 
 **PreferredSecurity** | Pointer to [**EnumserverInstancePreferredSecurityProp**](EnumserverInstancePreferredSecurityProp.md) |  | [optional] 
 **StartTLSEnabled** | Pointer to **bool** | Indicates whether StartTLS is enabled on this server. | [optional] 
 **BaseDN** | Pointer to **[]string** | The set of base DNs under the root DSE. | [optional] 
@@ -276,20 +276,20 @@ HasInterServerCertificate returns a boolean if a field has been set.
 
 ### GetLdapPort
 
-`func (o *SyncServerInstanceResponse) GetLdapPort() int32`
+`func (o *SyncServerInstanceResponse) GetLdapPort() int64`
 
 GetLdapPort returns the LdapPort field if non-nil, zero value otherwise.
 
 ### GetLdapPortOk
 
-`func (o *SyncServerInstanceResponse) GetLdapPortOk() (*int32, bool)`
+`func (o *SyncServerInstanceResponse) GetLdapPortOk() (*int64, bool)`
 
 GetLdapPortOk returns a tuple with the LdapPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLdapPort
 
-`func (o *SyncServerInstanceResponse) SetLdapPort(v int32)`
+`func (o *SyncServerInstanceResponse) SetLdapPort(v int64)`
 
 SetLdapPort sets LdapPort field to given value.
 
@@ -301,20 +301,20 @@ HasLdapPort returns a boolean if a field has been set.
 
 ### GetLdapsPort
 
-`func (o *SyncServerInstanceResponse) GetLdapsPort() int32`
+`func (o *SyncServerInstanceResponse) GetLdapsPort() int64`
 
 GetLdapsPort returns the LdapsPort field if non-nil, zero value otherwise.
 
 ### GetLdapsPortOk
 
-`func (o *SyncServerInstanceResponse) GetLdapsPortOk() (*int32, bool)`
+`func (o *SyncServerInstanceResponse) GetLdapsPortOk() (*int64, bool)`
 
 GetLdapsPortOk returns a tuple with the LdapsPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLdapsPort
 
-`func (o *SyncServerInstanceResponse) SetLdapsPort(v int32)`
+`func (o *SyncServerInstanceResponse) SetLdapsPort(v int64)`
 
 SetLdapsPort sets LdapsPort field to given value.
 
@@ -326,20 +326,20 @@ HasLdapsPort returns a boolean if a field has been set.
 
 ### GetHttpPort
 
-`func (o *SyncServerInstanceResponse) GetHttpPort() int32`
+`func (o *SyncServerInstanceResponse) GetHttpPort() int64`
 
 GetHttpPort returns the HttpPort field if non-nil, zero value otherwise.
 
 ### GetHttpPortOk
 
-`func (o *SyncServerInstanceResponse) GetHttpPortOk() (*int32, bool)`
+`func (o *SyncServerInstanceResponse) GetHttpPortOk() (*int64, bool)`
 
 GetHttpPortOk returns a tuple with the HttpPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHttpPort
 
-`func (o *SyncServerInstanceResponse) SetHttpPort(v int32)`
+`func (o *SyncServerInstanceResponse) SetHttpPort(v int64)`
 
 SetHttpPort sets HttpPort field to given value.
 
@@ -351,20 +351,20 @@ HasHttpPort returns a boolean if a field has been set.
 
 ### GetHttpsPort
 
-`func (o *SyncServerInstanceResponse) GetHttpsPort() int32`
+`func (o *SyncServerInstanceResponse) GetHttpsPort() int64`
 
 GetHttpsPort returns the HttpsPort field if non-nil, zero value otherwise.
 
 ### GetHttpsPortOk
 
-`func (o *SyncServerInstanceResponse) GetHttpsPortOk() (*int32, bool)`
+`func (o *SyncServerInstanceResponse) GetHttpsPortOk() (*int64, bool)`
 
 GetHttpsPortOk returns a tuple with the HttpsPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHttpsPort
 
-`func (o *SyncServerInstanceResponse) SetHttpsPort(v int32)`
+`func (o *SyncServerInstanceResponse) SetHttpsPort(v int64)`
 
 SetHttpsPort sets HttpsPort field to given value.
 
@@ -376,20 +376,20 @@ HasHttpsPort returns a boolean if a field has been set.
 
 ### GetReplicationPort
 
-`func (o *SyncServerInstanceResponse) GetReplicationPort() int32`
+`func (o *SyncServerInstanceResponse) GetReplicationPort() int64`
 
 GetReplicationPort returns the ReplicationPort field if non-nil, zero value otherwise.
 
 ### GetReplicationPortOk
 
-`func (o *SyncServerInstanceResponse) GetReplicationPortOk() (*int32, bool)`
+`func (o *SyncServerInstanceResponse) GetReplicationPortOk() (*int64, bool)`
 
 GetReplicationPortOk returns a tuple with the ReplicationPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReplicationPort
 
-`func (o *SyncServerInstanceResponse) SetReplicationPort(v int32)`
+`func (o *SyncServerInstanceResponse) SetReplicationPort(v int64)`
 
 SetReplicationPort sets ReplicationPort field to given value.
 
@@ -401,20 +401,20 @@ HasReplicationPort returns a boolean if a field has been set.
 
 ### GetReplicationServerID
 
-`func (o *SyncServerInstanceResponse) GetReplicationServerID() int32`
+`func (o *SyncServerInstanceResponse) GetReplicationServerID() int64`
 
 GetReplicationServerID returns the ReplicationServerID field if non-nil, zero value otherwise.
 
 ### GetReplicationServerIDOk
 
-`func (o *SyncServerInstanceResponse) GetReplicationServerIDOk() (*int32, bool)`
+`func (o *SyncServerInstanceResponse) GetReplicationServerIDOk() (*int64, bool)`
 
 GetReplicationServerIDOk returns a tuple with the ReplicationServerID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReplicationServerID
 
-`func (o *SyncServerInstanceResponse) SetReplicationServerID(v int32)`
+`func (o *SyncServerInstanceResponse) SetReplicationServerID(v int64)`
 
 SetReplicationServerID sets ReplicationServerID field to given value.
 
@@ -426,20 +426,20 @@ HasReplicationServerID returns a boolean if a field has been set.
 
 ### GetReplicationDomainServerID
 
-`func (o *SyncServerInstanceResponse) GetReplicationDomainServerID() []int32`
+`func (o *SyncServerInstanceResponse) GetReplicationDomainServerID() []int64`
 
 GetReplicationDomainServerID returns the ReplicationDomainServerID field if non-nil, zero value otherwise.
 
 ### GetReplicationDomainServerIDOk
 
-`func (o *SyncServerInstanceResponse) GetReplicationDomainServerIDOk() (*[]int32, bool)`
+`func (o *SyncServerInstanceResponse) GetReplicationDomainServerIDOk() (*[]int64, bool)`
 
 GetReplicationDomainServerIDOk returns a tuple with the ReplicationDomainServerID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReplicationDomainServerID
 
-`func (o *SyncServerInstanceResponse) SetReplicationDomainServerID(v []int32)`
+`func (o *SyncServerInstanceResponse) SetReplicationDomainServerID(v []int64)`
 
 SetReplicationDomainServerID sets ReplicationDomainServerID field to given value.
 
@@ -451,20 +451,20 @@ HasReplicationDomainServerID returns a boolean if a field has been set.
 
 ### GetJmxPort
 
-`func (o *SyncServerInstanceResponse) GetJmxPort() int32`
+`func (o *SyncServerInstanceResponse) GetJmxPort() int64`
 
 GetJmxPort returns the JmxPort field if non-nil, zero value otherwise.
 
 ### GetJmxPortOk
 
-`func (o *SyncServerInstanceResponse) GetJmxPortOk() (*int32, bool)`
+`func (o *SyncServerInstanceResponse) GetJmxPortOk() (*int64, bool)`
 
 GetJmxPortOk returns a tuple with the JmxPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetJmxPort
 
-`func (o *SyncServerInstanceResponse) SetJmxPort(v int32)`
+`func (o *SyncServerInstanceResponse) SetJmxPort(v int64)`
 
 SetJmxPort sets JmxPort field to given value.
 
@@ -476,20 +476,20 @@ HasJmxPort returns a boolean if a field has been set.
 
 ### GetJmxsPort
 
-`func (o *SyncServerInstanceResponse) GetJmxsPort() int32`
+`func (o *SyncServerInstanceResponse) GetJmxsPort() int64`
 
 GetJmxsPort returns the JmxsPort field if non-nil, zero value otherwise.
 
 ### GetJmxsPortOk
 
-`func (o *SyncServerInstanceResponse) GetJmxsPortOk() (*int32, bool)`
+`func (o *SyncServerInstanceResponse) GetJmxsPortOk() (*int64, bool)`
 
 GetJmxsPortOk returns a tuple with the JmxsPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetJmxsPort
 
-`func (o *SyncServerInstanceResponse) SetJmxsPort(v int32)`
+`func (o *SyncServerInstanceResponse) SetJmxsPort(v int64)`
 
 SetJmxsPort sets JmxsPort field to given value.
 

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **BaseDN** | **[]string** | Specifies the base DN(s) for the data that the backend handles. | 
 **LdifFile** | **string** | Specifies the path to the LDIF file that serves as the backing file for this backend. | 
 **AlarmRetentionTime** | **string** | Specifies the maximum length of time that information about raised alarms should be maintained before they will be purged. | 
-**MaxAlarms** | Pointer to **int32** | Specifies the maximum number of alarms that should be retained. If more alarms than this configured maximum are generated within the alarm retention time, then the oldest alarms will be purged to achieve this maximum. Only alarms at normal severity will be purged. | [optional] 
+**MaxAlarms** | Pointer to **int64** | Specifies the maximum number of alarms that should be retained. If more alarms than this configured maximum are generated within the alarm retention time, then the oldest alarms will be purged to achieve this maximum. Only alarms at normal severity will be purged. | [optional] 
 **WritabilityMode** | [**EnumbackendWritabilityModeProp**](EnumbackendWritabilityModeProp.md) |  | 
 **Description** | Pointer to **string** | A description for this Backend | [optional] 
 **Enabled** | **bool** | Indicates whether the backend is enabled in the server. | 
@@ -162,20 +162,20 @@ SetAlarmRetentionTime sets AlarmRetentionTime field to given value.
 
 ### GetMaxAlarms
 
-`func (o *AlarmBackendResponse) GetMaxAlarms() int32`
+`func (o *AlarmBackendResponse) GetMaxAlarms() int64`
 
 GetMaxAlarms returns the MaxAlarms field if non-nil, zero value otherwise.
 
 ### GetMaxAlarmsOk
 
-`func (o *AlarmBackendResponse) GetMaxAlarmsOk() (*int32, bool)`
+`func (o *AlarmBackendResponse) GetMaxAlarmsOk() (*int64, bool)`
 
 GetMaxAlarmsOk returns a tuple with the MaxAlarms field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxAlarms
 
-`func (o *AlarmBackendResponse) SetMaxAlarms(v int32)`
+`func (o *AlarmBackendResponse) SetMaxAlarms(v int64)`
 
 SetMaxAlarms sets MaxAlarms field to given value.
 

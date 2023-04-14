@@ -27,7 +27,7 @@ type AddValidateTotpPasswordExtendedOperationHandlerRequest struct {
 	// The duration of the time interval used for TOTP processing.
 	TimeIntervalDuration *string `json:"timeIntervalDuration,omitempty"`
 	// The number of adjacent time intervals (both before and after the current time) that should be checked when performing authentication.
-	AdjacentIntervalsToCheck *int32 `json:"adjacentIntervalsToCheck,omitempty"`
+	AdjacentIntervalsToCheck *int64 `json:"adjacentIntervalsToCheck,omitempty"`
 	// Indicates whether to prevent clients from re-using TOTP passwords.
 	PreventTOTPReuse *bool `json:"preventTOTPReuse,omitempty"`
 	// A description for this Extended Operation Handler
@@ -169,9 +169,9 @@ func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) SetTimeInterval
 }
 
 // GetAdjacentIntervalsToCheck returns the AdjacentIntervalsToCheck field value if set, zero value otherwise.
-func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetAdjacentIntervalsToCheck() int32 {
+func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetAdjacentIntervalsToCheck() int64 {
 	if o == nil || IsNil(o.AdjacentIntervalsToCheck) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AdjacentIntervalsToCheck
@@ -179,7 +179,7 @@ func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetAdjacentInte
 
 // GetAdjacentIntervalsToCheckOk returns a tuple with the AdjacentIntervalsToCheck field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetAdjacentIntervalsToCheckOk() (*int32, bool) {
+func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetAdjacentIntervalsToCheckOk() (*int64, bool) {
 	if o == nil || IsNil(o.AdjacentIntervalsToCheck) {
 		return nil, false
 	}
@@ -195,8 +195,8 @@ func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) HasAdjacentInte
 	return false
 }
 
-// SetAdjacentIntervalsToCheck gets a reference to the given int32 and assigns it to the AdjacentIntervalsToCheck field.
-func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) SetAdjacentIntervalsToCheck(v int32) {
+// SetAdjacentIntervalsToCheck gets a reference to the given int64 and assigns it to the AdjacentIntervalsToCheck field.
+func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) SetAdjacentIntervalsToCheck(v int64) {
 	o.AdjacentIntervalsToCheck = &v
 }
 

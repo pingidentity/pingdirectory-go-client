@@ -26,7 +26,7 @@ type AddSubOperationTimingPluginRequest struct {
 	// Specifies a set of request criteria used to indicate that only operations for requests matching this criteria should be counted when aggregating timing data.
 	RequestCriteria *string `json:"requestCriteria,omitempty"`
 	// This controls how many of the most expensive phases are included per operation type in the monitor entry.
-	NumMostExpensivePhasesShown *int32 `json:"numMostExpensivePhasesShown,omitempty"`
+	NumMostExpensivePhasesShown *int64 `json:"numMostExpensivePhasesShown,omitempty"`
 	// Indicates whether the plug-in should be invoked for internal operations.
 	InvokeForInternalOperations *bool `json:"invokeForInternalOperations,omitempty"`
 	// A description for this Plugin
@@ -168,9 +168,9 @@ func (o *AddSubOperationTimingPluginRequest) SetRequestCriteria(v string) {
 }
 
 // GetNumMostExpensivePhasesShown returns the NumMostExpensivePhasesShown field value if set, zero value otherwise.
-func (o *AddSubOperationTimingPluginRequest) GetNumMostExpensivePhasesShown() int32 {
+func (o *AddSubOperationTimingPluginRequest) GetNumMostExpensivePhasesShown() int64 {
 	if o == nil || IsNil(o.NumMostExpensivePhasesShown) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.NumMostExpensivePhasesShown
@@ -178,7 +178,7 @@ func (o *AddSubOperationTimingPluginRequest) GetNumMostExpensivePhasesShown() in
 
 // GetNumMostExpensivePhasesShownOk returns a tuple with the NumMostExpensivePhasesShown field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddSubOperationTimingPluginRequest) GetNumMostExpensivePhasesShownOk() (*int32, bool) {
+func (o *AddSubOperationTimingPluginRequest) GetNumMostExpensivePhasesShownOk() (*int64, bool) {
 	if o == nil || IsNil(o.NumMostExpensivePhasesShown) {
 		return nil, false
 	}
@@ -194,8 +194,8 @@ func (o *AddSubOperationTimingPluginRequest) HasNumMostExpensivePhasesShown() bo
 	return false
 }
 
-// SetNumMostExpensivePhasesShown gets a reference to the given int32 and assigns it to the NumMostExpensivePhasesShown field.
-func (o *AddSubOperationTimingPluginRequest) SetNumMostExpensivePhasesShown(v int32) {
+// SetNumMostExpensivePhasesShown gets a reference to the given int64 and assigns it to the NumMostExpensivePhasesShown field.
+func (o *AddSubOperationTimingPluginRequest) SetNumMostExpensivePhasesShown(v int64) {
 	o.NumMostExpensivePhasesShown = &v
 }
 

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **KeyID** | **string** | The unique system-generated identifier for the Secret Key. | 
 **IsCompromised** | Pointer to **bool** | If the key is compromised, an administrator may set this flag to immediately trigger the creation of a new secret key. After the new key is generated, the value of this property will be reset to false. | [optional] 
 **SymmetricKey** | Pointer to **[]string** | The symmetric key that is used for both encryption of plain text and decryption of cipher text. This stores the secret key for each server instance encrypted with that server&#39;s inter-server certificate. | [optional] 
-**KeyLengthBits** | **int32** | The length of the key in bits. | 
+**KeyLengthBits** | **int64** | The length of the key in bits. | 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewMacSecretKeyResponse
 
-`func NewMacSecretKeyResponse(keyID string, keyLengthBits int32, ) *MacSecretKeyResponse`
+`func NewMacSecretKeyResponse(keyID string, keyLengthBits int64, ) *MacSecretKeyResponse`
 
 NewMacSecretKeyResponse instantiates a new MacSecretKeyResponse object
 This constructor will assign default values to properties that have it defined,
@@ -154,20 +154,20 @@ HasSymmetricKey returns a boolean if a field has been set.
 
 ### GetKeyLengthBits
 
-`func (o *MacSecretKeyResponse) GetKeyLengthBits() int32`
+`func (o *MacSecretKeyResponse) GetKeyLengthBits() int64`
 
 GetKeyLengthBits returns the KeyLengthBits field if non-nil, zero value otherwise.
 
 ### GetKeyLengthBitsOk
 
-`func (o *MacSecretKeyResponse) GetKeyLengthBitsOk() (*int32, bool)`
+`func (o *MacSecretKeyResponse) GetKeyLengthBitsOk() (*int64, bool)`
 
 GetKeyLengthBitsOk returns a tuple with the KeyLengthBits field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyLengthBits
 
-`func (o *MacSecretKeyResponse) SetKeyLengthBits(v int32)`
+`func (o *MacSecretKeyResponse) SetKeyLengthBits(v int64)`
 
 SetKeyLengthBits sets KeyLengthBits field to given value.
 

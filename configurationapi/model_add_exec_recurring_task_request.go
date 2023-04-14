@@ -29,7 +29,7 @@ type AddExecRecurringTaskRequest struct {
 	// The path and base name for a file to which the command output (both standard output and standard error) should be written. This may be left undefined if the command output should not be recorded into a file.
 	CommandOutputFileBaseName *string `json:"commandOutputFileBaseName,omitempty"`
 	// The minimum number of previous command output files that should be preserved after a new instance of the command is invoked.
-	RetainPreviousOutputFileCount *int32 `json:"retainPreviousOutputFileCount,omitempty"`
+	RetainPreviousOutputFileCount *int64 `json:"retainPreviousOutputFileCount,omitempty"`
 	// The minimum age of previous command output files that should be preserved after a new instance of the command is invoked.
 	RetainPreviousOutputFileAge *string `json:"retainPreviousOutputFileAge,omitempty"`
 	// Indicates whether the command's output (both standard output and standard error) should be recorded in the server's error log.
@@ -212,9 +212,9 @@ func (o *AddExecRecurringTaskRequest) SetCommandOutputFileBaseName(v string) {
 }
 
 // GetRetainPreviousOutputFileCount returns the RetainPreviousOutputFileCount field value if set, zero value otherwise.
-func (o *AddExecRecurringTaskRequest) GetRetainPreviousOutputFileCount() int32 {
+func (o *AddExecRecurringTaskRequest) GetRetainPreviousOutputFileCount() int64 {
 	if o == nil || IsNil(o.RetainPreviousOutputFileCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.RetainPreviousOutputFileCount
@@ -222,7 +222,7 @@ func (o *AddExecRecurringTaskRequest) GetRetainPreviousOutputFileCount() int32 {
 
 // GetRetainPreviousOutputFileCountOk returns a tuple with the RetainPreviousOutputFileCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddExecRecurringTaskRequest) GetRetainPreviousOutputFileCountOk() (*int32, bool) {
+func (o *AddExecRecurringTaskRequest) GetRetainPreviousOutputFileCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.RetainPreviousOutputFileCount) {
 		return nil, false
 	}
@@ -238,8 +238,8 @@ func (o *AddExecRecurringTaskRequest) HasRetainPreviousOutputFileCount() bool {
 	return false
 }
 
-// SetRetainPreviousOutputFileCount gets a reference to the given int32 and assigns it to the RetainPreviousOutputFileCount field.
-func (o *AddExecRecurringTaskRequest) SetRetainPreviousOutputFileCount(v int32) {
+// SetRetainPreviousOutputFileCount gets a reference to the given int64 and assigns it to the RetainPreviousOutputFileCount field.
+func (o *AddExecRecurringTaskRequest) SetRetainPreviousOutputFileCount(v int64) {
 	o.RetainPreviousOutputFileCount = &v
 }
 

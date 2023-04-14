@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **Id** | **string** | Name of the Extended Operation Handler | 
 **DefaultPasswordPolicy** | Pointer to **string** | The default password policy that should be used when generating and validating passwords if the request does not specify an alternate policy. If this is not provided, then this Generate Password Extended Operation Handler will use the default password policy defined in the global configuration. | [optional] 
 **DefaultPasswordGenerator** | **string** | The default password generator that will be used if the selected password policy is not configured with a password generator. | 
-**MaximumPasswordsPerRequest** | Pointer to **int32** | The maximum number of passwords that may be generated and returned to the client for a single request. | [optional] 
-**MaximumValidationAttemptsPerPassword** | Pointer to **int32** | The maximum number of attempts that the server may use to generate a password that passes validation. | [optional] 
+**MaximumPasswordsPerRequest** | Pointer to **int64** | The maximum number of passwords that may be generated and returned to the client for a single request. | [optional] 
+**MaximumValidationAttemptsPerPassword** | Pointer to **int64** | The maximum number of attempts that the server may use to generate a password that passes validation. | [optional] 
 **Description** | Pointer to **string** | A description for this Extended Operation Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server). | 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
@@ -121,20 +121,20 @@ SetDefaultPasswordGenerator sets DefaultPasswordGenerator field to given value.
 
 ### GetMaximumPasswordsPerRequest
 
-`func (o *GeneratePasswordExtendedOperationHandlerResponse) GetMaximumPasswordsPerRequest() int32`
+`func (o *GeneratePasswordExtendedOperationHandlerResponse) GetMaximumPasswordsPerRequest() int64`
 
 GetMaximumPasswordsPerRequest returns the MaximumPasswordsPerRequest field if non-nil, zero value otherwise.
 
 ### GetMaximumPasswordsPerRequestOk
 
-`func (o *GeneratePasswordExtendedOperationHandlerResponse) GetMaximumPasswordsPerRequestOk() (*int32, bool)`
+`func (o *GeneratePasswordExtendedOperationHandlerResponse) GetMaximumPasswordsPerRequestOk() (*int64, bool)`
 
 GetMaximumPasswordsPerRequestOk returns a tuple with the MaximumPasswordsPerRequest field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaximumPasswordsPerRequest
 
-`func (o *GeneratePasswordExtendedOperationHandlerResponse) SetMaximumPasswordsPerRequest(v int32)`
+`func (o *GeneratePasswordExtendedOperationHandlerResponse) SetMaximumPasswordsPerRequest(v int64)`
 
 SetMaximumPasswordsPerRequest sets MaximumPasswordsPerRequest field to given value.
 
@@ -146,20 +146,20 @@ HasMaximumPasswordsPerRequest returns a boolean if a field has been set.
 
 ### GetMaximumValidationAttemptsPerPassword
 
-`func (o *GeneratePasswordExtendedOperationHandlerResponse) GetMaximumValidationAttemptsPerPassword() int32`
+`func (o *GeneratePasswordExtendedOperationHandlerResponse) GetMaximumValidationAttemptsPerPassword() int64`
 
 GetMaximumValidationAttemptsPerPassword returns the MaximumValidationAttemptsPerPassword field if non-nil, zero value otherwise.
 
 ### GetMaximumValidationAttemptsPerPasswordOk
 
-`func (o *GeneratePasswordExtendedOperationHandlerResponse) GetMaximumValidationAttemptsPerPasswordOk() (*int32, bool)`
+`func (o *GeneratePasswordExtendedOperationHandlerResponse) GetMaximumValidationAttemptsPerPasswordOk() (*int64, bool)`
 
 GetMaximumValidationAttemptsPerPasswordOk returns a tuple with the MaximumValidationAttemptsPerPassword field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaximumValidationAttemptsPerPassword
 
-`func (o *GeneratePasswordExtendedOperationHandlerResponse) SetMaximumValidationAttemptsPerPassword(v int32)`
+`func (o *GeneratePasswordExtendedOperationHandlerResponse) SetMaximumValidationAttemptsPerPassword(v int64)`
 
 SetMaximumValidationAttemptsPerPassword sets MaximumValidationAttemptsPerPassword field to given value.
 

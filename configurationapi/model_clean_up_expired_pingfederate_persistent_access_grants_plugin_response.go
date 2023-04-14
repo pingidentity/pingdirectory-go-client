@@ -25,13 +25,13 @@ type CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse struct {
 	// This specifies how often the plugin should check for expired data. It also controls the offset of peer servers (see the peer-server-priority-index for more information).
 	PollingInterval string `json:"pollingInterval"`
 	// In a replicated environment, this determines the order in which peer servers should attempt to purge data.
-	PeerServerPriorityIndex *int32 `json:"peerServerPriorityIndex,omitempty"`
+	PeerServerPriorityIndex *int64 `json:"peerServerPriorityIndex,omitempty"`
 	// Only entries located within the subtree specified by this base DN are eligible for purging.
 	BaseDN *string `json:"baseDN,omitempty"`
 	// This setting smooths out the performance impact on the server by throttling the purging to the specified maximum number of updates per second. To avoid a large backlog, this value should be set comfortably above the average rate that expired data is generated. When purge-behavior is set to subtree-delete-entries, then deletion of the entire subtree is considered a single update for the purposes of throttling.
-	MaxUpdatesPerSecond int32 `json:"maxUpdatesPerSecond"`
+	MaxUpdatesPerSecond int64 `json:"maxUpdatesPerSecond"`
 	// The number of threads used to delete expired entries.
-	NumDeleteThreads int32 `json:"numDeleteThreads"`
+	NumDeleteThreads int64 `json:"numDeleteThreads"`
 	// Indicates whether the plug-in is enabled for use.
 	Enabled                                       bool                                               `json:"enabled"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -42,7 +42,7 @@ type CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse(id string, schemas []EnumcleanUpExpiredPingfederatePersistentAccessGrantsPluginSchemaUrn, pollingInterval string, maxUpdatesPerSecond int32, numDeleteThreads int32, enabled bool) *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse {
+func NewCleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse(id string, schemas []EnumcleanUpExpiredPingfederatePersistentAccessGrantsPluginSchemaUrn, pollingInterval string, maxUpdatesPerSecond int64, numDeleteThreads int64, enabled bool) *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse {
 	this := CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse{}
 	this.Id = id
 	this.Schemas = schemas
@@ -134,9 +134,9 @@ func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) SetPoll
 }
 
 // GetPeerServerPriorityIndex returns the PeerServerPriorityIndex field value if set, zero value otherwise.
-func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) GetPeerServerPriorityIndex() int32 {
+func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) GetPeerServerPriorityIndex() int64 {
 	if o == nil || IsNil(o.PeerServerPriorityIndex) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.PeerServerPriorityIndex
@@ -144,7 +144,7 @@ func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) GetPeer
 
 // GetPeerServerPriorityIndexOk returns a tuple with the PeerServerPriorityIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) GetPeerServerPriorityIndexOk() (*int32, bool) {
+func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) GetPeerServerPriorityIndexOk() (*int64, bool) {
 	if o == nil || IsNil(o.PeerServerPriorityIndex) {
 		return nil, false
 	}
@@ -160,8 +160,8 @@ func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) HasPeer
 	return false
 }
 
-// SetPeerServerPriorityIndex gets a reference to the given int32 and assigns it to the PeerServerPriorityIndex field.
-func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) SetPeerServerPriorityIndex(v int32) {
+// SetPeerServerPriorityIndex gets a reference to the given int64 and assigns it to the PeerServerPriorityIndex field.
+func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) SetPeerServerPriorityIndex(v int64) {
 	o.PeerServerPriorityIndex = &v
 }
 
@@ -198,9 +198,9 @@ func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) SetBase
 }
 
 // GetMaxUpdatesPerSecond returns the MaxUpdatesPerSecond field value
-func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) GetMaxUpdatesPerSecond() int32 {
+func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) GetMaxUpdatesPerSecond() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -209,7 +209,7 @@ func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) GetMaxU
 
 // GetMaxUpdatesPerSecondOk returns a tuple with the MaxUpdatesPerSecond field value
 // and a boolean to check if the value has been set.
-func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) GetMaxUpdatesPerSecondOk() (*int32, bool) {
+func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) GetMaxUpdatesPerSecondOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -217,14 +217,14 @@ func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) GetMaxU
 }
 
 // SetMaxUpdatesPerSecond sets field value
-func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) SetMaxUpdatesPerSecond(v int32) {
+func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) SetMaxUpdatesPerSecond(v int64) {
 	o.MaxUpdatesPerSecond = v
 }
 
 // GetNumDeleteThreads returns the NumDeleteThreads field value
-func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) GetNumDeleteThreads() int32 {
+func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) GetNumDeleteThreads() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -233,7 +233,7 @@ func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) GetNumD
 
 // GetNumDeleteThreadsOk returns a tuple with the NumDeleteThreads field value
 // and a boolean to check if the value has been set.
-func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) GetNumDeleteThreadsOk() (*int32, bool) {
+func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) GetNumDeleteThreadsOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -241,7 +241,7 @@ func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) GetNumD
 }
 
 // SetNumDeleteThreads sets field value
-func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) SetNumDeleteThreads(v int32) {
+func (o *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse) SetNumDeleteThreads(v int64) {
 	o.NumDeleteThreads = v
 }
 

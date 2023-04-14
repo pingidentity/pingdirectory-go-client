@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **CriteriaName** | **string** | Name of the new Uncached Attribute Criteria | 
 **Schemas** | [**[]EnumsimpleUncachedAttributeCriteriaSchemaUrn**](EnumsimpleUncachedAttributeCriteriaSchemaUrn.md) |  | 
 **AttributeType** | **[]string** | Specifies the attribute types for attributes that may be written to the uncached-id2entry database. | 
-**MinValueCount** | Pointer to **int32** | Specifies the minimum number of values that an attribute must have before it will be written into the uncached-id2entry database. | [optional] 
+**MinValueCount** | Pointer to **int64** | Specifies the minimum number of values that an attribute must have before it will be written into the uncached-id2entry database. | [optional] 
 **MinTotalValueSize** | Pointer to **string** | Specifies the minimum total value size (i.e., the sum of the sizes of all values) that an attribute must have before it will be written into the uncached-id2entry database. | [optional] 
 **Description** | Pointer to **string** | A description for this Uncached Attribute Criteria | [optional] 
 **Enabled** | **bool** | Indicates whether this Uncached Attribute Criteria is enabled for use in the server. | 
@@ -93,20 +93,20 @@ SetAttributeType sets AttributeType field to given value.
 
 ### GetMinValueCount
 
-`func (o *AddSimpleUncachedAttributeCriteriaRequest) GetMinValueCount() int32`
+`func (o *AddSimpleUncachedAttributeCriteriaRequest) GetMinValueCount() int64`
 
 GetMinValueCount returns the MinValueCount field if non-nil, zero value otherwise.
 
 ### GetMinValueCountOk
 
-`func (o *AddSimpleUncachedAttributeCriteriaRequest) GetMinValueCountOk() (*int32, bool)`
+`func (o *AddSimpleUncachedAttributeCriteriaRequest) GetMinValueCountOk() (*int64, bool)`
 
 GetMinValueCountOk returns a tuple with the MinValueCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinValueCount
 
-`func (o *AddSimpleUncachedAttributeCriteriaRequest) SetMinValueCount(v int32)`
+`func (o *AddSimpleUncachedAttributeCriteriaRequest) SetMinValueCount(v int64)`
 
 SetMinValueCount sets MinValueCount field to given value.
 

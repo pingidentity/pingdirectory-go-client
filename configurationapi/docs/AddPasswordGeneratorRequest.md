@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **ScriptClass** | **string** | The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Password Generator. | 
 **ScriptArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Scripted Password Generator. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **DictionaryFile** | **string** | The path to the dictionary file that will be used to obtain the words for use in generated passwords. | 
-**MinimumPasswordCharacters** | Pointer to **int32** | The minimum number of characters that generated passwords will be required to have. | [optional] 
-**MinimumPasswordWords** | Pointer to **int32** | The minimum number of words that must be concatenated in the course of generating a password. | [optional] 
+**MinimumPasswordCharacters** | Pointer to **int64** | The minimum number of characters that generated passwords will be required to have. | [optional] 
+**MinimumPasswordWords** | Pointer to **int64** | The minimum number of words that must be concatenated in the course of generating a password. | [optional] 
 **CapitalizeWords** | Pointer to **bool** | Indicates whether to capitalize each word used in the generated password. | [optional] 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Password Generator. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Password Generator. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
@@ -230,20 +230,20 @@ SetDictionaryFile sets DictionaryFile field to given value.
 
 ### GetMinimumPasswordCharacters
 
-`func (o *AddPasswordGeneratorRequest) GetMinimumPasswordCharacters() int32`
+`func (o *AddPasswordGeneratorRequest) GetMinimumPasswordCharacters() int64`
 
 GetMinimumPasswordCharacters returns the MinimumPasswordCharacters field if non-nil, zero value otherwise.
 
 ### GetMinimumPasswordCharactersOk
 
-`func (o *AddPasswordGeneratorRequest) GetMinimumPasswordCharactersOk() (*int32, bool)`
+`func (o *AddPasswordGeneratorRequest) GetMinimumPasswordCharactersOk() (*int64, bool)`
 
 GetMinimumPasswordCharactersOk returns a tuple with the MinimumPasswordCharacters field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinimumPasswordCharacters
 
-`func (o *AddPasswordGeneratorRequest) SetMinimumPasswordCharacters(v int32)`
+`func (o *AddPasswordGeneratorRequest) SetMinimumPasswordCharacters(v int64)`
 
 SetMinimumPasswordCharacters sets MinimumPasswordCharacters field to given value.
 
@@ -255,20 +255,20 @@ HasMinimumPasswordCharacters returns a boolean if a field has been set.
 
 ### GetMinimumPasswordWords
 
-`func (o *AddPasswordGeneratorRequest) GetMinimumPasswordWords() int32`
+`func (o *AddPasswordGeneratorRequest) GetMinimumPasswordWords() int64`
 
 GetMinimumPasswordWords returns the MinimumPasswordWords field if non-nil, zero value otherwise.
 
 ### GetMinimumPasswordWordsOk
 
-`func (o *AddPasswordGeneratorRequest) GetMinimumPasswordWordsOk() (*int32, bool)`
+`func (o *AddPasswordGeneratorRequest) GetMinimumPasswordWordsOk() (*int64, bool)`
 
 GetMinimumPasswordWordsOk returns a tuple with the MinimumPasswordWords field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinimumPasswordWords
 
-`func (o *AddPasswordGeneratorRequest) SetMinimumPasswordWords(v int32)`
+`func (o *AddPasswordGeneratorRequest) SetMinimumPasswordWords(v int64)`
 
 SetMinimumPasswordWords sets MinimumPasswordWords field to given value.
 

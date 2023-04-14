@@ -25,7 +25,7 @@ type HttpProxyExternalServerResponse struct {
 	// The host name or IP address of the HTTP Proxy External Server.
 	ServerHostName string `json:"serverHostName"`
 	// The port on which the HTTP Proxy External Server is listening for connections.
-	ServerPort int32 `json:"serverPort"`
+	ServerPort int64 `json:"serverPort"`
 	// The username to use to authenticate to the HTTP Proxy External Server.
 	BasicAuthenticationUsername *string `json:"basicAuthenticationUsername,omitempty"`
 	// A passphrase provider that provides access to the password to use to authenticate to the HTTP Proxy External Server.
@@ -40,7 +40,7 @@ type HttpProxyExternalServerResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewHttpProxyExternalServerResponse(id string, schemas []EnumhttpProxyExternalServerSchemaUrn, serverHostName string, serverPort int32) *HttpProxyExternalServerResponse {
+func NewHttpProxyExternalServerResponse(id string, schemas []EnumhttpProxyExternalServerSchemaUrn, serverHostName string, serverPort int64) *HttpProxyExternalServerResponse {
 	this := HttpProxyExternalServerResponse{}
 	this.Id = id
 	this.Schemas = schemas
@@ -130,9 +130,9 @@ func (o *HttpProxyExternalServerResponse) SetServerHostName(v string) {
 }
 
 // GetServerPort returns the ServerPort field value
-func (o *HttpProxyExternalServerResponse) GetServerPort() int32 {
+func (o *HttpProxyExternalServerResponse) GetServerPort() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -141,7 +141,7 @@ func (o *HttpProxyExternalServerResponse) GetServerPort() int32 {
 
 // GetServerPortOk returns a tuple with the ServerPort field value
 // and a boolean to check if the value has been set.
-func (o *HttpProxyExternalServerResponse) GetServerPortOk() (*int32, bool) {
+func (o *HttpProxyExternalServerResponse) GetServerPortOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -149,7 +149,7 @@ func (o *HttpProxyExternalServerResponse) GetServerPortOk() (*int32, bool) {
 }
 
 // SetServerPort sets field value
-func (o *HttpProxyExternalServerResponse) SetServerPort(v int32) {
+func (o *HttpProxyExternalServerResponse) SetServerPort(v int64) {
 	o.ServerPort = v
 }
 

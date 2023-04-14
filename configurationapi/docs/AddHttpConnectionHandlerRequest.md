@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **HandlerName** | **string** | Name of the new Connection Handler | 
 **Schemas** | [**[]EnumhttpConnectionHandlerSchemaUrn**](EnumhttpConnectionHandlerSchemaUrn.md) |  | 
 **ListenAddress** | Pointer to **string** | Specifies the address on which to listen for connections from HTTP clients. If no value is defined, the server will listen on all addresses on all interfaces. | [optional] 
-**ListenPort** | **int32** | Specifies the port number on which the HTTP Connection Handler will listen for connections from clients. | 
+**ListenPort** | **int64** | Specifies the port number on which the HTTP Connection Handler will listen for connections from clients. | 
 **UseSSL** | Pointer to **bool** | Indicates whether the HTTP Connection Handler should use SSL. | [optional] 
 **SslCertNickname** | Pointer to **string** | Specifies the nickname (also called the alias) of the certificate that the HTTP Connection Handler should use when performing SSL communication. | [optional] 
 **HttpServletExtension** | Pointer to **[]string** | Specifies information about servlets that will be provided via this connection handler. | [optional] 
@@ -17,16 +17,16 @@ Name | Type | Description | Notes
 **SslCipherSuite** | Pointer to **[]string** | Specifies the names of the SSL cipher suites that are allowed for use in SSL communication. The set of supported cipher suites can be viewed via the ssl context monitor entry. | [optional] 
 **KeyManagerProvider** | Pointer to **string** | Specifies the key manager provider that will be used to obtain the certificate to present to HTTPS clients. | [optional] 
 **TrustManagerProvider** | Pointer to **string** | Specifies the trust manager provider that will be used to validate any certificates presented by HTTPS clients. | [optional] 
-**NumRequestHandlers** | Pointer to **int32** | Specifies the number of threads that will be used for accepting connections and reading requests from clients. | [optional] 
+**NumRequestHandlers** | Pointer to **int64** | Specifies the number of threads that will be used for accepting connections and reading requests from clients. | [optional] 
 **KeepStats** | Pointer to **bool** | Indicates whether to enable statistics collection for this connection handler. | [optional] 
-**AcceptBacklog** | Pointer to **int32** | Specifies the number of concurrent outstanding connection attempts that the connection handler should allow. The default value should be acceptable in most cases, but it may need to be increased in environments that may attempt to establish large numbers of connections simultaneously. | [optional] 
+**AcceptBacklog** | Pointer to **int64** | Specifies the number of concurrent outstanding connection attempts that the connection handler should allow. The default value should be acceptable in most cases, but it may need to be increased in environments that may attempt to establish large numbers of connections simultaneously. | [optional] 
 **AllowTCPReuseAddress** | Pointer to **bool** | Indicates whether the server should attempt to reuse socket descriptors. This may be useful in environments with a high rate of connection establishment and termination. | [optional] 
 **IdleTimeLimit** | Pointer to **string** | Specifies the maximum idle time for a connection. The max idle time is applied when waiting for a new request to be received on a connection, when reading the headers and content of a request, or when writing the headers and content of a response. | [optional] 
-**LowResourcesConnectionThreshold** | Pointer to **int32** | Specifies the number of connections, which if exceeded, places this handler in a low resource state where a different idle time limit is applied on the connections. | [optional] 
+**LowResourcesConnectionThreshold** | Pointer to **int64** | Specifies the number of connections, which if exceeded, places this handler in a low resource state where a different idle time limit is applied on the connections. | [optional] 
 **LowResourcesIdleTimeLimit** | Pointer to **string** | Specifies the maximum idle time for a connection when this handler is in a low resource state as defined by low-resource-connections. The max idle time is applied when waiting for a new request to be received on a connection, when reading the headers and content of a request, or when writing the headers and content of a response. | [optional] 
 **EnableMultipartMIMEParameters** | Pointer to **bool** | Determines whether request form parameters submitted in multipart/ form-data (RFC 2388) format should be processed as request parameters. | [optional] 
 **UseForwardedHeaders** | Pointer to **bool** | Indicates whether to use \&quot;Forwarded\&quot; and \&quot;X-Forwarded-*\&quot; request headers to override corresponding HTTP request information available during request processing. | [optional] 
-**HttpRequestHeaderSize** | Pointer to **int32** | Specifies the maximum buffer size of an http request including the request uri and all of the request headers. | [optional] 
+**HttpRequestHeaderSize** | Pointer to **int64** | Specifies the maximum buffer size of an http request including the request uri and all of the request headers. | [optional] 
 **ResponseHeader** | Pointer to **[]string** | Specifies HTTP header fields and values added to response headers for all requests. | [optional] 
 **UseCorrelationIDHeader** | Pointer to **bool** | If enabled, a correlation ID header will be added to outgoing HTTP responses. | [optional] 
 **CorrelationIDResponseHeader** | Pointer to **string** | Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are \&quot;Correlation-Id\&quot;, \&quot;X-Amzn-Trace-Id\&quot;, and \&quot;X-Request-Id\&quot;. | [optional] 
@@ -39,7 +39,7 @@ Name | Type | Description | Notes
 
 ### NewAddHttpConnectionHandlerRequest
 
-`func NewAddHttpConnectionHandlerRequest(handlerName string, schemas []EnumhttpConnectionHandlerSchemaUrn, listenPort int32, enabled bool, ) *AddHttpConnectionHandlerRequest`
+`func NewAddHttpConnectionHandlerRequest(handlerName string, schemas []EnumhttpConnectionHandlerSchemaUrn, listenPort int64, enabled bool, ) *AddHttpConnectionHandlerRequest`
 
 NewAddHttpConnectionHandlerRequest instantiates a new AddHttpConnectionHandlerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -121,20 +121,20 @@ HasListenAddress returns a boolean if a field has been set.
 
 ### GetListenPort
 
-`func (o *AddHttpConnectionHandlerRequest) GetListenPort() int32`
+`func (o *AddHttpConnectionHandlerRequest) GetListenPort() int64`
 
 GetListenPort returns the ListenPort field if non-nil, zero value otherwise.
 
 ### GetListenPortOk
 
-`func (o *AddHttpConnectionHandlerRequest) GetListenPortOk() (*int32, bool)`
+`func (o *AddHttpConnectionHandlerRequest) GetListenPortOk() (*int64, bool)`
 
 GetListenPortOk returns a tuple with the ListenPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetListenPort
 
-`func (o *AddHttpConnectionHandlerRequest) SetListenPort(v int32)`
+`func (o *AddHttpConnectionHandlerRequest) SetListenPort(v int64)`
 
 SetListenPort sets ListenPort field to given value.
 
@@ -366,20 +366,20 @@ HasTrustManagerProvider returns a boolean if a field has been set.
 
 ### GetNumRequestHandlers
 
-`func (o *AddHttpConnectionHandlerRequest) GetNumRequestHandlers() int32`
+`func (o *AddHttpConnectionHandlerRequest) GetNumRequestHandlers() int64`
 
 GetNumRequestHandlers returns the NumRequestHandlers field if non-nil, zero value otherwise.
 
 ### GetNumRequestHandlersOk
 
-`func (o *AddHttpConnectionHandlerRequest) GetNumRequestHandlersOk() (*int32, bool)`
+`func (o *AddHttpConnectionHandlerRequest) GetNumRequestHandlersOk() (*int64, bool)`
 
 GetNumRequestHandlersOk returns a tuple with the NumRequestHandlers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNumRequestHandlers
 
-`func (o *AddHttpConnectionHandlerRequest) SetNumRequestHandlers(v int32)`
+`func (o *AddHttpConnectionHandlerRequest) SetNumRequestHandlers(v int64)`
 
 SetNumRequestHandlers sets NumRequestHandlers field to given value.
 
@@ -416,20 +416,20 @@ HasKeepStats returns a boolean if a field has been set.
 
 ### GetAcceptBacklog
 
-`func (o *AddHttpConnectionHandlerRequest) GetAcceptBacklog() int32`
+`func (o *AddHttpConnectionHandlerRequest) GetAcceptBacklog() int64`
 
 GetAcceptBacklog returns the AcceptBacklog field if non-nil, zero value otherwise.
 
 ### GetAcceptBacklogOk
 
-`func (o *AddHttpConnectionHandlerRequest) GetAcceptBacklogOk() (*int32, bool)`
+`func (o *AddHttpConnectionHandlerRequest) GetAcceptBacklogOk() (*int64, bool)`
 
 GetAcceptBacklogOk returns a tuple with the AcceptBacklog field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAcceptBacklog
 
-`func (o *AddHttpConnectionHandlerRequest) SetAcceptBacklog(v int32)`
+`func (o *AddHttpConnectionHandlerRequest) SetAcceptBacklog(v int64)`
 
 SetAcceptBacklog sets AcceptBacklog field to given value.
 
@@ -491,20 +491,20 @@ HasIdleTimeLimit returns a boolean if a field has been set.
 
 ### GetLowResourcesConnectionThreshold
 
-`func (o *AddHttpConnectionHandlerRequest) GetLowResourcesConnectionThreshold() int32`
+`func (o *AddHttpConnectionHandlerRequest) GetLowResourcesConnectionThreshold() int64`
 
 GetLowResourcesConnectionThreshold returns the LowResourcesConnectionThreshold field if non-nil, zero value otherwise.
 
 ### GetLowResourcesConnectionThresholdOk
 
-`func (o *AddHttpConnectionHandlerRequest) GetLowResourcesConnectionThresholdOk() (*int32, bool)`
+`func (o *AddHttpConnectionHandlerRequest) GetLowResourcesConnectionThresholdOk() (*int64, bool)`
 
 GetLowResourcesConnectionThresholdOk returns a tuple with the LowResourcesConnectionThreshold field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLowResourcesConnectionThreshold
 
-`func (o *AddHttpConnectionHandlerRequest) SetLowResourcesConnectionThreshold(v int32)`
+`func (o *AddHttpConnectionHandlerRequest) SetLowResourcesConnectionThreshold(v int64)`
 
 SetLowResourcesConnectionThreshold sets LowResourcesConnectionThreshold field to given value.
 
@@ -591,20 +591,20 @@ HasUseForwardedHeaders returns a boolean if a field has been set.
 
 ### GetHttpRequestHeaderSize
 
-`func (o *AddHttpConnectionHandlerRequest) GetHttpRequestHeaderSize() int32`
+`func (o *AddHttpConnectionHandlerRequest) GetHttpRequestHeaderSize() int64`
 
 GetHttpRequestHeaderSize returns the HttpRequestHeaderSize field if non-nil, zero value otherwise.
 
 ### GetHttpRequestHeaderSizeOk
 
-`func (o *AddHttpConnectionHandlerRequest) GetHttpRequestHeaderSizeOk() (*int32, bool)`
+`func (o *AddHttpConnectionHandlerRequest) GetHttpRequestHeaderSizeOk() (*int64, bool)`
 
 GetHttpRequestHeaderSizeOk returns a tuple with the HttpRequestHeaderSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHttpRequestHeaderSize
 
-`func (o *AddHttpConnectionHandlerRequest) SetHttpRequestHeaderSize(v int32)`
+`func (o *AddHttpConnectionHandlerRequest) SetHttpRequestHeaderSize(v int64)`
 
 SetHttpRequestHeaderSize sets HttpRequestHeaderSize field to given value.
 

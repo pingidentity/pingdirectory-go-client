@@ -23,12 +23,12 @@ Name | Type | Description | Notes
 **IncludeRequesterIPAddress** | Pointer to **bool** | Indicates whether log messages for operation requests should include the IP address of the client that requested the operation. | [optional] 
 **IncludeRequesterDN** | Pointer to **bool** | Indicates whether log messages should include the DN of the authenticated user for the client connection on which the operation was requested. | [optional] 
 **MinIncludedOperationProcessingTime** | Pointer to **string** | The minimum processing time (i.e., \&quot;etime\&quot;) for operations that should be logged by this Operation Timing Access Log Publisher | [optional] 
-**MinIncludedPhaseTimeNanos** | Pointer to **int32** | The minimum length of time in nanoseconds that an operation phase should take before it is included in a log message. | [optional] 
+**MinIncludedPhaseTimeNanos** | Pointer to **int64** | The minimum length of time in nanoseconds that an operation phase should take before it is included in a log message. | [optional] 
 **Asynchronous** | **bool** | Indicates whether the Operation Timing Access Log Publisher will publish records asynchronously. | 
 **AutoFlush** | Pointer to **bool** | Specifies whether to flush the writer after every log record. | [optional] 
 **BufferSize** | Pointer to **string** | Specifies the log file buffer size. | [optional] 
-**MaxStringLength** | Pointer to **int32** | Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written. | [optional] 
-**QueueSize** | Pointer to **int32** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
+**MaxStringLength** | Pointer to **int64** | Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written. | [optional] 
+**QueueSize** | Pointer to **int64** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
 **TimeInterval** | Pointer to **string** | Specifies the interval at which to check whether the log files need to be rotated. | [optional] 
 **LogSecurityNegotiation** | Pointer to **bool** | Indicates whether to log information about the result of any security negotiation (e.g., SSL handshake) processing that has been performed. | [optional] 
 **LogIntermediateResponses** | Pointer to **bool** | Indicates whether to log information about intermediate responses sent to the client. | [optional] 
@@ -509,20 +509,20 @@ HasMinIncludedOperationProcessingTime returns a boolean if a field has been set.
 
 ### GetMinIncludedPhaseTimeNanos
 
-`func (o *OperationTimingAccessLogPublisherResponse) GetMinIncludedPhaseTimeNanos() int32`
+`func (o *OperationTimingAccessLogPublisherResponse) GetMinIncludedPhaseTimeNanos() int64`
 
 GetMinIncludedPhaseTimeNanos returns the MinIncludedPhaseTimeNanos field if non-nil, zero value otherwise.
 
 ### GetMinIncludedPhaseTimeNanosOk
 
-`func (o *OperationTimingAccessLogPublisherResponse) GetMinIncludedPhaseTimeNanosOk() (*int32, bool)`
+`func (o *OperationTimingAccessLogPublisherResponse) GetMinIncludedPhaseTimeNanosOk() (*int64, bool)`
 
 GetMinIncludedPhaseTimeNanosOk returns a tuple with the MinIncludedPhaseTimeNanos field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinIncludedPhaseTimeNanos
 
-`func (o *OperationTimingAccessLogPublisherResponse) SetMinIncludedPhaseTimeNanos(v int32)`
+`func (o *OperationTimingAccessLogPublisherResponse) SetMinIncludedPhaseTimeNanos(v int64)`
 
 SetMinIncludedPhaseTimeNanos sets MinIncludedPhaseTimeNanos field to given value.
 
@@ -604,20 +604,20 @@ HasBufferSize returns a boolean if a field has been set.
 
 ### GetMaxStringLength
 
-`func (o *OperationTimingAccessLogPublisherResponse) GetMaxStringLength() int32`
+`func (o *OperationTimingAccessLogPublisherResponse) GetMaxStringLength() int64`
 
 GetMaxStringLength returns the MaxStringLength field if non-nil, zero value otherwise.
 
 ### GetMaxStringLengthOk
 
-`func (o *OperationTimingAccessLogPublisherResponse) GetMaxStringLengthOk() (*int32, bool)`
+`func (o *OperationTimingAccessLogPublisherResponse) GetMaxStringLengthOk() (*int64, bool)`
 
 GetMaxStringLengthOk returns a tuple with the MaxStringLength field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxStringLength
 
-`func (o *OperationTimingAccessLogPublisherResponse) SetMaxStringLength(v int32)`
+`func (o *OperationTimingAccessLogPublisherResponse) SetMaxStringLength(v int64)`
 
 SetMaxStringLength sets MaxStringLength field to given value.
 
@@ -629,20 +629,20 @@ HasMaxStringLength returns a boolean if a field has been set.
 
 ### GetQueueSize
 
-`func (o *OperationTimingAccessLogPublisherResponse) GetQueueSize() int32`
+`func (o *OperationTimingAccessLogPublisherResponse) GetQueueSize() int64`
 
 GetQueueSize returns the QueueSize field if non-nil, zero value otherwise.
 
 ### GetQueueSizeOk
 
-`func (o *OperationTimingAccessLogPublisherResponse) GetQueueSizeOk() (*int32, bool)`
+`func (o *OperationTimingAccessLogPublisherResponse) GetQueueSizeOk() (*int64, bool)`
 
 GetQueueSizeOk returns a tuple with the QueueSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQueueSize
 
-`func (o *OperationTimingAccessLogPublisherResponse) SetQueueSize(v int32)`
+`func (o *OperationTimingAccessLogPublisherResponse) SetQueueSize(v int64)`
 
 SetQueueSize sets QueueSize field to given value.
 

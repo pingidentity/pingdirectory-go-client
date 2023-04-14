@@ -33,7 +33,7 @@ type AddCertificateDelegatedAdminAttributeRequest struct {
 	// Specifies which attribute category this attribute belongs to.
 	AttributeCategory *string `json:"attributeCategory,omitempty"`
 	// This property determines a display order for attributes within a given attribute category. Attributes are ordered within their category based on this index from least to greatest.
-	DisplayOrderIndex *int32 `json:"displayOrderIndex,omitempty"`
+	DisplayOrderIndex *int64 `json:"displayOrderIndex,omitempty"`
 	// For LDAP attributes with DN syntax, specifies what kind of resource is referenced.
 	ReferenceResourceType *string                                               `json:"referenceResourceType,omitempty"`
 	AttributePresentation *EnumdelegatedAdminAttributeAttributePresentationProp `json:"attributePresentation,omitempty"`
@@ -294,9 +294,9 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) SetAttributeCategory(v st
 }
 
 // GetDisplayOrderIndex returns the DisplayOrderIndex field value if set, zero value otherwise.
-func (o *AddCertificateDelegatedAdminAttributeRequest) GetDisplayOrderIndex() int32 {
+func (o *AddCertificateDelegatedAdminAttributeRequest) GetDisplayOrderIndex() int64 {
 	if o == nil || IsNil(o.DisplayOrderIndex) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DisplayOrderIndex
@@ -304,7 +304,7 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) GetDisplayOrderIndex() in
 
 // GetDisplayOrderIndexOk returns a tuple with the DisplayOrderIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCertificateDelegatedAdminAttributeRequest) GetDisplayOrderIndexOk() (*int32, bool) {
+func (o *AddCertificateDelegatedAdminAttributeRequest) GetDisplayOrderIndexOk() (*int64, bool) {
 	if o == nil || IsNil(o.DisplayOrderIndex) {
 		return nil, false
 	}
@@ -320,8 +320,8 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) HasDisplayOrderIndex() bo
 	return false
 }
 
-// SetDisplayOrderIndex gets a reference to the given int32 and assigns it to the DisplayOrderIndex field.
-func (o *AddCertificateDelegatedAdminAttributeRequest) SetDisplayOrderIndex(v int32) {
+// SetDisplayOrderIndex gets a reference to the given int64 and assigns it to the DisplayOrderIndex field.
+func (o *AddCertificateDelegatedAdminAttributeRequest) SetDisplayOrderIndex(v int64) {
 	o.DisplayOrderIndex = &v
 }
 

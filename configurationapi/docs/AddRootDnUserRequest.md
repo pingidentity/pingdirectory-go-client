@@ -19,10 +19,10 @@ Name | Type | Description | Notes
 **PagerTelephoneNumber** | Pointer to **[]string** | Specifies the user&#39;s pager telephone number. This is stored in the pager LDAP attribute. | [optional] 
 **InheritDefaultRootPrivileges** | Pointer to **bool** | Indicates whether this User should be automatically granted the set of privileges defined in the default-root-privilege-name property of the Root DN configuration object. | [optional] 
 **Privilege** | Pointer to [**[]EnumrootDnUserPrivilegeProp**](EnumrootDnUserPrivilegeProp.md) |  | [optional] 
-**SearchResultEntryLimit** | Pointer to **int32** | Specifies the maximum number of entries that the server may return to the user in response to any single search request. A value of 0 indicates no limit should be enforced. This is stored in the ds-rlim-size-limit LDAP attribute. | [optional] 
-**TimeLimitSeconds** | Pointer to **int32** | Specifies the maximum length of time (in seconds) that the server may spend processing any single search request. A value of 0 indicates no limit should be enforced. This is stored in the ds-rlim-time-limit LDAP attribute. | [optional] 
-**LookThroughEntryLimit** | Pointer to **int32** | Specifies the maximum number of candidate entries that the server may examine in the course of processing any single search request. A value of 0 indicates no limit should be enforced. This is stored in the ds-rlim-lookthrough-limit LDAP attribute. | [optional] 
-**IdleTimeLimitSeconds** | Pointer to **int32** | Specifies the maximum length of time (in seconds) that a connection authenticated as this user may remain established without issuing any requests. A value of 0 indicates no limit should be enforced. This is stored in the ds-rlim-idle-time-limit LDAP attribute. | [optional] 
+**SearchResultEntryLimit** | Pointer to **int64** | Specifies the maximum number of entries that the server may return to the user in response to any single search request. A value of 0 indicates no limit should be enforced. This is stored in the ds-rlim-size-limit LDAP attribute. | [optional] 
+**TimeLimitSeconds** | Pointer to **int64** | Specifies the maximum length of time (in seconds) that the server may spend processing any single search request. A value of 0 indicates no limit should be enforced. This is stored in the ds-rlim-time-limit LDAP attribute. | [optional] 
+**LookThroughEntryLimit** | Pointer to **int64** | Specifies the maximum number of candidate entries that the server may examine in the course of processing any single search request. A value of 0 indicates no limit should be enforced. This is stored in the ds-rlim-lookthrough-limit LDAP attribute. | [optional] 
+**IdleTimeLimitSeconds** | Pointer to **int64** | Specifies the maximum length of time (in seconds) that a connection authenticated as this user may remain established without issuing any requests. A value of 0 indicates no limit should be enforced. This is stored in the ds-rlim-idle-time-limit LDAP attribute. | [optional] 
 **PasswordPolicy** | Pointer to **string** | Specifies the password policy for the user. This is stored in the ds-pwp-password-policy-dn LDAP attribute. | [optional] 
 **Disabled** | Pointer to **bool** | Specifies whether the root user account should be disabled. A disabled account is not permitted to authenticate, nor can it be used as an authorization identity. This is stored in the ds-pwp-account-disabled LDAP attribute. | [optional] 
 **AccountActivationTime** | Pointer to **string** | Specifies the time, in generalized time format (e.g., &#39;20160101070000Z&#39;), that the root user account should become active. If an activation time is specified, the user will not be permitted to authenticate, nor can the account be used as an authorization identity, until the activation time has arrived. This is stored in the ds-pwp-account-activation-time LDAP attribute. | [optional] 
@@ -431,20 +431,20 @@ HasPrivilege returns a boolean if a field has been set.
 
 ### GetSearchResultEntryLimit
 
-`func (o *AddRootDnUserRequest) GetSearchResultEntryLimit() int32`
+`func (o *AddRootDnUserRequest) GetSearchResultEntryLimit() int64`
 
 GetSearchResultEntryLimit returns the SearchResultEntryLimit field if non-nil, zero value otherwise.
 
 ### GetSearchResultEntryLimitOk
 
-`func (o *AddRootDnUserRequest) GetSearchResultEntryLimitOk() (*int32, bool)`
+`func (o *AddRootDnUserRequest) GetSearchResultEntryLimitOk() (*int64, bool)`
 
 GetSearchResultEntryLimitOk returns a tuple with the SearchResultEntryLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSearchResultEntryLimit
 
-`func (o *AddRootDnUserRequest) SetSearchResultEntryLimit(v int32)`
+`func (o *AddRootDnUserRequest) SetSearchResultEntryLimit(v int64)`
 
 SetSearchResultEntryLimit sets SearchResultEntryLimit field to given value.
 
@@ -456,20 +456,20 @@ HasSearchResultEntryLimit returns a boolean if a field has been set.
 
 ### GetTimeLimitSeconds
 
-`func (o *AddRootDnUserRequest) GetTimeLimitSeconds() int32`
+`func (o *AddRootDnUserRequest) GetTimeLimitSeconds() int64`
 
 GetTimeLimitSeconds returns the TimeLimitSeconds field if non-nil, zero value otherwise.
 
 ### GetTimeLimitSecondsOk
 
-`func (o *AddRootDnUserRequest) GetTimeLimitSecondsOk() (*int32, bool)`
+`func (o *AddRootDnUserRequest) GetTimeLimitSecondsOk() (*int64, bool)`
 
 GetTimeLimitSecondsOk returns a tuple with the TimeLimitSeconds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTimeLimitSeconds
 
-`func (o *AddRootDnUserRequest) SetTimeLimitSeconds(v int32)`
+`func (o *AddRootDnUserRequest) SetTimeLimitSeconds(v int64)`
 
 SetTimeLimitSeconds sets TimeLimitSeconds field to given value.
 
@@ -481,20 +481,20 @@ HasTimeLimitSeconds returns a boolean if a field has been set.
 
 ### GetLookThroughEntryLimit
 
-`func (o *AddRootDnUserRequest) GetLookThroughEntryLimit() int32`
+`func (o *AddRootDnUserRequest) GetLookThroughEntryLimit() int64`
 
 GetLookThroughEntryLimit returns the LookThroughEntryLimit field if non-nil, zero value otherwise.
 
 ### GetLookThroughEntryLimitOk
 
-`func (o *AddRootDnUserRequest) GetLookThroughEntryLimitOk() (*int32, bool)`
+`func (o *AddRootDnUserRequest) GetLookThroughEntryLimitOk() (*int64, bool)`
 
 GetLookThroughEntryLimitOk returns a tuple with the LookThroughEntryLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLookThroughEntryLimit
 
-`func (o *AddRootDnUserRequest) SetLookThroughEntryLimit(v int32)`
+`func (o *AddRootDnUserRequest) SetLookThroughEntryLimit(v int64)`
 
 SetLookThroughEntryLimit sets LookThroughEntryLimit field to given value.
 
@@ -506,20 +506,20 @@ HasLookThroughEntryLimit returns a boolean if a field has been set.
 
 ### GetIdleTimeLimitSeconds
 
-`func (o *AddRootDnUserRequest) GetIdleTimeLimitSeconds() int32`
+`func (o *AddRootDnUserRequest) GetIdleTimeLimitSeconds() int64`
 
 GetIdleTimeLimitSeconds returns the IdleTimeLimitSeconds field if non-nil, zero value otherwise.
 
 ### GetIdleTimeLimitSecondsOk
 
-`func (o *AddRootDnUserRequest) GetIdleTimeLimitSecondsOk() (*int32, bool)`
+`func (o *AddRootDnUserRequest) GetIdleTimeLimitSecondsOk() (*int64, bool)`
 
 GetIdleTimeLimitSecondsOk returns a tuple with the IdleTimeLimitSeconds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIdleTimeLimitSeconds
 
-`func (o *AddRootDnUserRequest) SetIdleTimeLimitSeconds(v int32)`
+`func (o *AddRootDnUserRequest) SetIdleTimeLimitSeconds(v int64)`
 
 SetIdleTimeLimitSeconds sets IdleTimeLimitSeconds field to given value.
 

@@ -21,11 +21,11 @@ var _ MappedNullable = &ReplicationDomainResponse{}
 type ReplicationDomainResponse struct {
 	Schemas []EnumreplicationDomainSchemaUrn `json:"schemas,omitempty"`
 	// Specifies a unique identifier for the Directory Server within the Replication Domain.
-	ServerID int32 `json:"serverID"`
+	ServerID int64 `json:"serverID"`
 	// Specifies the base DN of the replicated data.
 	BaseDN string `json:"baseDN"`
 	// Specifies the maximum number of replication updates the Directory Server can have outstanding from the Replication Server.
-	WindowSize *int32 `json:"windowSize,omitempty"`
+	WindowSize *int64 `json:"windowSize,omitempty"`
 	// Specifies the heartbeat interval that the Directory Server will use when communicating with Replication Servers.
 	HeartbeatInterval *string `json:"heartbeatInterval,omitempty"`
 	// The time in seconds after which historical information used in replication conflict resolution is purged. The information is removed from entries when they are modified after the purge delay has elapsed.
@@ -44,7 +44,7 @@ type ReplicationDomainResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewReplicationDomainResponse(serverID int32, baseDN string) *ReplicationDomainResponse {
+func NewReplicationDomainResponse(serverID int64, baseDN string) *ReplicationDomainResponse {
 	this := ReplicationDomainResponse{}
 	this.ServerID = serverID
 	this.BaseDN = baseDN
@@ -92,9 +92,9 @@ func (o *ReplicationDomainResponse) SetSchemas(v []EnumreplicationDomainSchemaUr
 }
 
 // GetServerID returns the ServerID field value
-func (o *ReplicationDomainResponse) GetServerID() int32 {
+func (o *ReplicationDomainResponse) GetServerID() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -103,7 +103,7 @@ func (o *ReplicationDomainResponse) GetServerID() int32 {
 
 // GetServerIDOk returns a tuple with the ServerID field value
 // and a boolean to check if the value has been set.
-func (o *ReplicationDomainResponse) GetServerIDOk() (*int32, bool) {
+func (o *ReplicationDomainResponse) GetServerIDOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -111,7 +111,7 @@ func (o *ReplicationDomainResponse) GetServerIDOk() (*int32, bool) {
 }
 
 // SetServerID sets field value
-func (o *ReplicationDomainResponse) SetServerID(v int32) {
+func (o *ReplicationDomainResponse) SetServerID(v int64) {
 	o.ServerID = v
 }
 
@@ -140,9 +140,9 @@ func (o *ReplicationDomainResponse) SetBaseDN(v string) {
 }
 
 // GetWindowSize returns the WindowSize field value if set, zero value otherwise.
-func (o *ReplicationDomainResponse) GetWindowSize() int32 {
+func (o *ReplicationDomainResponse) GetWindowSize() int64 {
 	if o == nil || IsNil(o.WindowSize) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WindowSize
@@ -150,7 +150,7 @@ func (o *ReplicationDomainResponse) GetWindowSize() int32 {
 
 // GetWindowSizeOk returns a tuple with the WindowSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReplicationDomainResponse) GetWindowSizeOk() (*int32, bool) {
+func (o *ReplicationDomainResponse) GetWindowSizeOk() (*int64, bool) {
 	if o == nil || IsNil(o.WindowSize) {
 		return nil, false
 	}
@@ -166,8 +166,8 @@ func (o *ReplicationDomainResponse) HasWindowSize() bool {
 	return false
 }
 
-// SetWindowSize gets a reference to the given int32 and assigns it to the WindowSize field.
-func (o *ReplicationDomainResponse) SetWindowSize(v int32) {
+// SetWindowSize gets a reference to the given int64 and assigns it to the WindowSize field.
+func (o *ReplicationDomainResponse) SetWindowSize(v int64) {
 	o.WindowSize = &v
 }
 
