@@ -7,14 +7,14 @@ Name | Type | Description | Notes
 **Id** | **string** | Name of the Gauge | 
 **Schemas** | [**[]EnumnumericGaugeSchemaUrn**](EnumnumericGaugeSchemaUrn.md) |  | 
 **GaugeDataSource** | **string** | Specifies the source of data to use in determining this gauge&#39;s current severity. | 
-**CriticalValue** | Pointer to **float32** | A value that is used to determine whether the current monitored value indicates this gauge&#39;s severity should be &#39;critical&#39;. | [optional] 
-**CriticalExitValue** | Pointer to **float32** | A value that is used to determine whether the current monitored value indicates this gauge&#39;s severity should no longer be &#39;critical&#39;. | [optional] 
-**MajorValue** | Pointer to **float32** | A value that is used to determine whether the current monitored value indicates this gauge&#39;s severity should be &#39;major&#39;. | [optional] 
-**MajorExitValue** | Pointer to **float32** | A value that is used to determine whether the current monitored value indicates this gauge&#39;s severity should no longer be &#39;major&#39;. | [optional] 
-**MinorValue** | Pointer to **float32** | A value that is used to determine whether the current monitored value indicates this gauge&#39;s severity should be &#39;minor&#39;. | [optional] 
-**MinorExitValue** | Pointer to **float32** | A value that is used to determine whether the current monitored value indicates this gauge&#39;s severity should no longer be &#39;minor&#39;. | [optional] 
-**WarningValue** | Pointer to **float32** | A value that is used to determine whether the current monitored value indicates this gauge&#39;s severity should be &#39;warning&#39;. | [optional] 
-**WarningExitValue** | Pointer to **float32** | A value that is used to determine whether the current monitored value indicates this gauge&#39;s severity should no longer be &#39;warning&#39;. | [optional] 
+**CriticalValue** | Pointer to **float64** | A value that is used to determine whether the current monitored value indicates this gauge&#39;s severity should be &#39;critical&#39;. | [optional] 
+**CriticalExitValue** | Pointer to **float64** | A value that is used to determine whether the current monitored value indicates this gauge&#39;s severity should no longer be &#39;critical&#39;. | [optional] 
+**MajorValue** | Pointer to **float64** | A value that is used to determine whether the current monitored value indicates this gauge&#39;s severity should be &#39;major&#39;. | [optional] 
+**MajorExitValue** | Pointer to **float64** | A value that is used to determine whether the current monitored value indicates this gauge&#39;s severity should no longer be &#39;major&#39;. | [optional] 
+**MinorValue** | Pointer to **float64** | A value that is used to determine whether the current monitored value indicates this gauge&#39;s severity should be &#39;minor&#39;. | [optional] 
+**MinorExitValue** | Pointer to **float64** | A value that is used to determine whether the current monitored value indicates this gauge&#39;s severity should no longer be &#39;minor&#39;. | [optional] 
+**WarningValue** | Pointer to **float64** | A value that is used to determine whether the current monitored value indicates this gauge&#39;s severity should be &#39;warning&#39;. | [optional] 
+**WarningExitValue** | Pointer to **float64** | A value that is used to determine whether the current monitored value indicates this gauge&#39;s severity should no longer be &#39;warning&#39;. | [optional] 
 **Description** | Pointer to **string** | A description for this Gauge | [optional] 
 **Enabled** | **bool** | Indicates whether this Gauge is enabled. | 
 **OverrideSeverity** | Pointer to [**EnumgaugeOverrideSeverityProp**](EnumgaugeOverrideSeverityProp.md) |  | [optional] 
@@ -109,20 +109,20 @@ SetGaugeDataSource sets GaugeDataSource field to given value.
 
 ### GetCriticalValue
 
-`func (o *NumericGaugeResponse) GetCriticalValue() float32`
+`func (o *NumericGaugeResponse) GetCriticalValue() float64`
 
 GetCriticalValue returns the CriticalValue field if non-nil, zero value otherwise.
 
 ### GetCriticalValueOk
 
-`func (o *NumericGaugeResponse) GetCriticalValueOk() (*float32, bool)`
+`func (o *NumericGaugeResponse) GetCriticalValueOk() (*float64, bool)`
 
 GetCriticalValueOk returns a tuple with the CriticalValue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCriticalValue
 
-`func (o *NumericGaugeResponse) SetCriticalValue(v float32)`
+`func (o *NumericGaugeResponse) SetCriticalValue(v float64)`
 
 SetCriticalValue sets CriticalValue field to given value.
 
@@ -134,20 +134,20 @@ HasCriticalValue returns a boolean if a field has been set.
 
 ### GetCriticalExitValue
 
-`func (o *NumericGaugeResponse) GetCriticalExitValue() float32`
+`func (o *NumericGaugeResponse) GetCriticalExitValue() float64`
 
 GetCriticalExitValue returns the CriticalExitValue field if non-nil, zero value otherwise.
 
 ### GetCriticalExitValueOk
 
-`func (o *NumericGaugeResponse) GetCriticalExitValueOk() (*float32, bool)`
+`func (o *NumericGaugeResponse) GetCriticalExitValueOk() (*float64, bool)`
 
 GetCriticalExitValueOk returns a tuple with the CriticalExitValue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCriticalExitValue
 
-`func (o *NumericGaugeResponse) SetCriticalExitValue(v float32)`
+`func (o *NumericGaugeResponse) SetCriticalExitValue(v float64)`
 
 SetCriticalExitValue sets CriticalExitValue field to given value.
 
@@ -159,20 +159,20 @@ HasCriticalExitValue returns a boolean if a field has been set.
 
 ### GetMajorValue
 
-`func (o *NumericGaugeResponse) GetMajorValue() float32`
+`func (o *NumericGaugeResponse) GetMajorValue() float64`
 
 GetMajorValue returns the MajorValue field if non-nil, zero value otherwise.
 
 ### GetMajorValueOk
 
-`func (o *NumericGaugeResponse) GetMajorValueOk() (*float32, bool)`
+`func (o *NumericGaugeResponse) GetMajorValueOk() (*float64, bool)`
 
 GetMajorValueOk returns a tuple with the MajorValue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMajorValue
 
-`func (o *NumericGaugeResponse) SetMajorValue(v float32)`
+`func (o *NumericGaugeResponse) SetMajorValue(v float64)`
 
 SetMajorValue sets MajorValue field to given value.
 
@@ -184,20 +184,20 @@ HasMajorValue returns a boolean if a field has been set.
 
 ### GetMajorExitValue
 
-`func (o *NumericGaugeResponse) GetMajorExitValue() float32`
+`func (o *NumericGaugeResponse) GetMajorExitValue() float64`
 
 GetMajorExitValue returns the MajorExitValue field if non-nil, zero value otherwise.
 
 ### GetMajorExitValueOk
 
-`func (o *NumericGaugeResponse) GetMajorExitValueOk() (*float32, bool)`
+`func (o *NumericGaugeResponse) GetMajorExitValueOk() (*float64, bool)`
 
 GetMajorExitValueOk returns a tuple with the MajorExitValue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMajorExitValue
 
-`func (o *NumericGaugeResponse) SetMajorExitValue(v float32)`
+`func (o *NumericGaugeResponse) SetMajorExitValue(v float64)`
 
 SetMajorExitValue sets MajorExitValue field to given value.
 
@@ -209,20 +209,20 @@ HasMajorExitValue returns a boolean if a field has been set.
 
 ### GetMinorValue
 
-`func (o *NumericGaugeResponse) GetMinorValue() float32`
+`func (o *NumericGaugeResponse) GetMinorValue() float64`
 
 GetMinorValue returns the MinorValue field if non-nil, zero value otherwise.
 
 ### GetMinorValueOk
 
-`func (o *NumericGaugeResponse) GetMinorValueOk() (*float32, bool)`
+`func (o *NumericGaugeResponse) GetMinorValueOk() (*float64, bool)`
 
 GetMinorValueOk returns a tuple with the MinorValue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinorValue
 
-`func (o *NumericGaugeResponse) SetMinorValue(v float32)`
+`func (o *NumericGaugeResponse) SetMinorValue(v float64)`
 
 SetMinorValue sets MinorValue field to given value.
 
@@ -234,20 +234,20 @@ HasMinorValue returns a boolean if a field has been set.
 
 ### GetMinorExitValue
 
-`func (o *NumericGaugeResponse) GetMinorExitValue() float32`
+`func (o *NumericGaugeResponse) GetMinorExitValue() float64`
 
 GetMinorExitValue returns the MinorExitValue field if non-nil, zero value otherwise.
 
 ### GetMinorExitValueOk
 
-`func (o *NumericGaugeResponse) GetMinorExitValueOk() (*float32, bool)`
+`func (o *NumericGaugeResponse) GetMinorExitValueOk() (*float64, bool)`
 
 GetMinorExitValueOk returns a tuple with the MinorExitValue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinorExitValue
 
-`func (o *NumericGaugeResponse) SetMinorExitValue(v float32)`
+`func (o *NumericGaugeResponse) SetMinorExitValue(v float64)`
 
 SetMinorExitValue sets MinorExitValue field to given value.
 
@@ -259,20 +259,20 @@ HasMinorExitValue returns a boolean if a field has been set.
 
 ### GetWarningValue
 
-`func (o *NumericGaugeResponse) GetWarningValue() float32`
+`func (o *NumericGaugeResponse) GetWarningValue() float64`
 
 GetWarningValue returns the WarningValue field if non-nil, zero value otherwise.
 
 ### GetWarningValueOk
 
-`func (o *NumericGaugeResponse) GetWarningValueOk() (*float32, bool)`
+`func (o *NumericGaugeResponse) GetWarningValueOk() (*float64, bool)`
 
 GetWarningValueOk returns a tuple with the WarningValue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWarningValue
 
-`func (o *NumericGaugeResponse) SetWarningValue(v float32)`
+`func (o *NumericGaugeResponse) SetWarningValue(v float64)`
 
 SetWarningValue sets WarningValue field to given value.
 
@@ -284,20 +284,20 @@ HasWarningValue returns a boolean if a field has been set.
 
 ### GetWarningExitValue
 
-`func (o *NumericGaugeResponse) GetWarningExitValue() float32`
+`func (o *NumericGaugeResponse) GetWarningExitValue() float64`
 
 GetWarningExitValue returns the WarningExitValue field if non-nil, zero value otherwise.
 
 ### GetWarningExitValueOk
 
-`func (o *NumericGaugeResponse) GetWarningExitValueOk() (*float32, bool)`
+`func (o *NumericGaugeResponse) GetWarningExitValueOk() (*float64, bool)`
 
 GetWarningExitValueOk returns a tuple with the WarningExitValue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWarningExitValue
 
-`func (o *NumericGaugeResponse) SetWarningExitValue(v float32)`
+`func (o *NumericGaugeResponse) SetWarningExitValue(v float64)`
 
 SetWarningExitValue sets WarningExitValue field to given value.
 

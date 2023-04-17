@@ -25,21 +25,21 @@ type AddNumericGaugeRequest struct {
 	// Specifies the source of data to use in determining this gauge's current severity.
 	GaugeDataSource string `json:"gaugeDataSource"`
 	// A value that is used to determine whether the current monitored value indicates this gauge's severity should be 'critical'.
-	CriticalValue *float32 `json:"criticalValue,omitempty"`
+	CriticalValue *float64 `json:"criticalValue,omitempty"`
 	// A value that is used to determine whether the current monitored value indicates this gauge's severity should no longer be 'critical'.
-	CriticalExitValue *float32 `json:"criticalExitValue,omitempty"`
+	CriticalExitValue *float64 `json:"criticalExitValue,omitempty"`
 	// A value that is used to determine whether the current monitored value indicates this gauge's severity should be 'major'.
-	MajorValue *float32 `json:"majorValue,omitempty"`
+	MajorValue *float64 `json:"majorValue,omitempty"`
 	// A value that is used to determine whether the current monitored value indicates this gauge's severity should no longer be 'major'.
-	MajorExitValue *float32 `json:"majorExitValue,omitempty"`
+	MajorExitValue *float64 `json:"majorExitValue,omitempty"`
 	// A value that is used to determine whether the current monitored value indicates this gauge's severity should be 'minor'.
-	MinorValue *float32 `json:"minorValue,omitempty"`
+	MinorValue *float64 `json:"minorValue,omitempty"`
 	// A value that is used to determine whether the current monitored value indicates this gauge's severity should no longer be 'minor'.
-	MinorExitValue *float32 `json:"minorExitValue,omitempty"`
+	MinorExitValue *float64 `json:"minorExitValue,omitempty"`
 	// A value that is used to determine whether the current monitored value indicates this gauge's severity should be 'warning'.
-	WarningValue *float32 `json:"warningValue,omitempty"`
+	WarningValue *float64 `json:"warningValue,omitempty"`
 	// A value that is used to determine whether the current monitored value indicates this gauge's severity should no longer be 'warning'.
-	WarningExitValue *float32 `json:"warningExitValue,omitempty"`
+	WarningExitValue *float64 `json:"warningExitValue,omitempty"`
 	// A description for this Gauge
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Gauge is enabled.
@@ -151,9 +151,9 @@ func (o *AddNumericGaugeRequest) SetGaugeDataSource(v string) {
 }
 
 // GetCriticalValue returns the CriticalValue field value if set, zero value otherwise.
-func (o *AddNumericGaugeRequest) GetCriticalValue() float32 {
+func (o *AddNumericGaugeRequest) GetCriticalValue() float64 {
 	if o == nil || IsNil(o.CriticalValue) {
-		var ret float32
+		var ret float64
 		return ret
 	}
 	return *o.CriticalValue
@@ -161,7 +161,7 @@ func (o *AddNumericGaugeRequest) GetCriticalValue() float32 {
 
 // GetCriticalValueOk returns a tuple with the CriticalValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddNumericGaugeRequest) GetCriticalValueOk() (*float32, bool) {
+func (o *AddNumericGaugeRequest) GetCriticalValueOk() (*float64, bool) {
 	if o == nil || IsNil(o.CriticalValue) {
 		return nil, false
 	}
@@ -177,15 +177,15 @@ func (o *AddNumericGaugeRequest) HasCriticalValue() bool {
 	return false
 }
 
-// SetCriticalValue gets a reference to the given float32 and assigns it to the CriticalValue field.
-func (o *AddNumericGaugeRequest) SetCriticalValue(v float32) {
+// SetCriticalValue gets a reference to the given float64 and assigns it to the CriticalValue field.
+func (o *AddNumericGaugeRequest) SetCriticalValue(v float64) {
 	o.CriticalValue = &v
 }
 
 // GetCriticalExitValue returns the CriticalExitValue field value if set, zero value otherwise.
-func (o *AddNumericGaugeRequest) GetCriticalExitValue() float32 {
+func (o *AddNumericGaugeRequest) GetCriticalExitValue() float64 {
 	if o == nil || IsNil(o.CriticalExitValue) {
-		var ret float32
+		var ret float64
 		return ret
 	}
 	return *o.CriticalExitValue
@@ -193,7 +193,7 @@ func (o *AddNumericGaugeRequest) GetCriticalExitValue() float32 {
 
 // GetCriticalExitValueOk returns a tuple with the CriticalExitValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddNumericGaugeRequest) GetCriticalExitValueOk() (*float32, bool) {
+func (o *AddNumericGaugeRequest) GetCriticalExitValueOk() (*float64, bool) {
 	if o == nil || IsNil(o.CriticalExitValue) {
 		return nil, false
 	}
@@ -209,15 +209,15 @@ func (o *AddNumericGaugeRequest) HasCriticalExitValue() bool {
 	return false
 }
 
-// SetCriticalExitValue gets a reference to the given float32 and assigns it to the CriticalExitValue field.
-func (o *AddNumericGaugeRequest) SetCriticalExitValue(v float32) {
+// SetCriticalExitValue gets a reference to the given float64 and assigns it to the CriticalExitValue field.
+func (o *AddNumericGaugeRequest) SetCriticalExitValue(v float64) {
 	o.CriticalExitValue = &v
 }
 
 // GetMajorValue returns the MajorValue field value if set, zero value otherwise.
-func (o *AddNumericGaugeRequest) GetMajorValue() float32 {
+func (o *AddNumericGaugeRequest) GetMajorValue() float64 {
 	if o == nil || IsNil(o.MajorValue) {
-		var ret float32
+		var ret float64
 		return ret
 	}
 	return *o.MajorValue
@@ -225,7 +225,7 @@ func (o *AddNumericGaugeRequest) GetMajorValue() float32 {
 
 // GetMajorValueOk returns a tuple with the MajorValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddNumericGaugeRequest) GetMajorValueOk() (*float32, bool) {
+func (o *AddNumericGaugeRequest) GetMajorValueOk() (*float64, bool) {
 	if o == nil || IsNil(o.MajorValue) {
 		return nil, false
 	}
@@ -241,15 +241,15 @@ func (o *AddNumericGaugeRequest) HasMajorValue() bool {
 	return false
 }
 
-// SetMajorValue gets a reference to the given float32 and assigns it to the MajorValue field.
-func (o *AddNumericGaugeRequest) SetMajorValue(v float32) {
+// SetMajorValue gets a reference to the given float64 and assigns it to the MajorValue field.
+func (o *AddNumericGaugeRequest) SetMajorValue(v float64) {
 	o.MajorValue = &v
 }
 
 // GetMajorExitValue returns the MajorExitValue field value if set, zero value otherwise.
-func (o *AddNumericGaugeRequest) GetMajorExitValue() float32 {
+func (o *AddNumericGaugeRequest) GetMajorExitValue() float64 {
 	if o == nil || IsNil(o.MajorExitValue) {
-		var ret float32
+		var ret float64
 		return ret
 	}
 	return *o.MajorExitValue
@@ -257,7 +257,7 @@ func (o *AddNumericGaugeRequest) GetMajorExitValue() float32 {
 
 // GetMajorExitValueOk returns a tuple with the MajorExitValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddNumericGaugeRequest) GetMajorExitValueOk() (*float32, bool) {
+func (o *AddNumericGaugeRequest) GetMajorExitValueOk() (*float64, bool) {
 	if o == nil || IsNil(o.MajorExitValue) {
 		return nil, false
 	}
@@ -273,15 +273,15 @@ func (o *AddNumericGaugeRequest) HasMajorExitValue() bool {
 	return false
 }
 
-// SetMajorExitValue gets a reference to the given float32 and assigns it to the MajorExitValue field.
-func (o *AddNumericGaugeRequest) SetMajorExitValue(v float32) {
+// SetMajorExitValue gets a reference to the given float64 and assigns it to the MajorExitValue field.
+func (o *AddNumericGaugeRequest) SetMajorExitValue(v float64) {
 	o.MajorExitValue = &v
 }
 
 // GetMinorValue returns the MinorValue field value if set, zero value otherwise.
-func (o *AddNumericGaugeRequest) GetMinorValue() float32 {
+func (o *AddNumericGaugeRequest) GetMinorValue() float64 {
 	if o == nil || IsNil(o.MinorValue) {
-		var ret float32
+		var ret float64
 		return ret
 	}
 	return *o.MinorValue
@@ -289,7 +289,7 @@ func (o *AddNumericGaugeRequest) GetMinorValue() float32 {
 
 // GetMinorValueOk returns a tuple with the MinorValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddNumericGaugeRequest) GetMinorValueOk() (*float32, bool) {
+func (o *AddNumericGaugeRequest) GetMinorValueOk() (*float64, bool) {
 	if o == nil || IsNil(o.MinorValue) {
 		return nil, false
 	}
@@ -305,15 +305,15 @@ func (o *AddNumericGaugeRequest) HasMinorValue() bool {
 	return false
 }
 
-// SetMinorValue gets a reference to the given float32 and assigns it to the MinorValue field.
-func (o *AddNumericGaugeRequest) SetMinorValue(v float32) {
+// SetMinorValue gets a reference to the given float64 and assigns it to the MinorValue field.
+func (o *AddNumericGaugeRequest) SetMinorValue(v float64) {
 	o.MinorValue = &v
 }
 
 // GetMinorExitValue returns the MinorExitValue field value if set, zero value otherwise.
-func (o *AddNumericGaugeRequest) GetMinorExitValue() float32 {
+func (o *AddNumericGaugeRequest) GetMinorExitValue() float64 {
 	if o == nil || IsNil(o.MinorExitValue) {
-		var ret float32
+		var ret float64
 		return ret
 	}
 	return *o.MinorExitValue
@@ -321,7 +321,7 @@ func (o *AddNumericGaugeRequest) GetMinorExitValue() float32 {
 
 // GetMinorExitValueOk returns a tuple with the MinorExitValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddNumericGaugeRequest) GetMinorExitValueOk() (*float32, bool) {
+func (o *AddNumericGaugeRequest) GetMinorExitValueOk() (*float64, bool) {
 	if o == nil || IsNil(o.MinorExitValue) {
 		return nil, false
 	}
@@ -337,15 +337,15 @@ func (o *AddNumericGaugeRequest) HasMinorExitValue() bool {
 	return false
 }
 
-// SetMinorExitValue gets a reference to the given float32 and assigns it to the MinorExitValue field.
-func (o *AddNumericGaugeRequest) SetMinorExitValue(v float32) {
+// SetMinorExitValue gets a reference to the given float64 and assigns it to the MinorExitValue field.
+func (o *AddNumericGaugeRequest) SetMinorExitValue(v float64) {
 	o.MinorExitValue = &v
 }
 
 // GetWarningValue returns the WarningValue field value if set, zero value otherwise.
-func (o *AddNumericGaugeRequest) GetWarningValue() float32 {
+func (o *AddNumericGaugeRequest) GetWarningValue() float64 {
 	if o == nil || IsNil(o.WarningValue) {
-		var ret float32
+		var ret float64
 		return ret
 	}
 	return *o.WarningValue
@@ -353,7 +353,7 @@ func (o *AddNumericGaugeRequest) GetWarningValue() float32 {
 
 // GetWarningValueOk returns a tuple with the WarningValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddNumericGaugeRequest) GetWarningValueOk() (*float32, bool) {
+func (o *AddNumericGaugeRequest) GetWarningValueOk() (*float64, bool) {
 	if o == nil || IsNil(o.WarningValue) {
 		return nil, false
 	}
@@ -369,15 +369,15 @@ func (o *AddNumericGaugeRequest) HasWarningValue() bool {
 	return false
 }
 
-// SetWarningValue gets a reference to the given float32 and assigns it to the WarningValue field.
-func (o *AddNumericGaugeRequest) SetWarningValue(v float32) {
+// SetWarningValue gets a reference to the given float64 and assigns it to the WarningValue field.
+func (o *AddNumericGaugeRequest) SetWarningValue(v float64) {
 	o.WarningValue = &v
 }
 
 // GetWarningExitValue returns the WarningExitValue field value if set, zero value otherwise.
-func (o *AddNumericGaugeRequest) GetWarningExitValue() float32 {
+func (o *AddNumericGaugeRequest) GetWarningExitValue() float64 {
 	if o == nil || IsNil(o.WarningExitValue) {
-		var ret float32
+		var ret float64
 		return ret
 	}
 	return *o.WarningExitValue
@@ -385,7 +385,7 @@ func (o *AddNumericGaugeRequest) GetWarningExitValue() float32 {
 
 // GetWarningExitValueOk returns a tuple with the WarningExitValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddNumericGaugeRequest) GetWarningExitValueOk() (*float32, bool) {
+func (o *AddNumericGaugeRequest) GetWarningExitValueOk() (*float64, bool) {
 	if o == nil || IsNil(o.WarningExitValue) {
 		return nil, false
 	}
@@ -401,8 +401,8 @@ func (o *AddNumericGaugeRequest) HasWarningExitValue() bool {
 	return false
 }
 
-// SetWarningExitValue gets a reference to the given float32 and assigns it to the WarningExitValue field.
-func (o *AddNumericGaugeRequest) SetWarningExitValue(v float32) {
+// SetWarningExitValue gets a reference to the given float64 and assigns it to the WarningExitValue field.
+func (o *AddNumericGaugeRequest) SetWarningExitValue(v float64) {
 	o.WarningExitValue = &v
 }
 

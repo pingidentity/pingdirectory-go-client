@@ -25,7 +25,7 @@ type AddNumericGaugeDataSourceRequest struct {
 	DataOrientation *EnumgaugeDataSourceDataOrientationProp `json:"dataOrientation,omitempty"`
 	StatisticType   *EnumgaugeDataSourceStatisticTypeProp   `json:"statisticType,omitempty"`
 	// An optional floating point value that can be used to scale the resulting value.
-	DivideValueBy *float32 `json:"divideValueBy,omitempty"`
+	DivideValueBy *float64 `json:"divideValueBy,omitempty"`
 	// An optional property that can scale the resulting value by another attribute in the monitored entry.
 	DivideValueByAttribute *string `json:"divideValueByAttribute,omitempty"`
 	// An optional property that can scale the resulting value by another attribute whose value represents a counter in the monitored entry.
@@ -182,9 +182,9 @@ func (o *AddNumericGaugeDataSourceRequest) SetStatisticType(v EnumgaugeDataSourc
 }
 
 // GetDivideValueBy returns the DivideValueBy field value if set, zero value otherwise.
-func (o *AddNumericGaugeDataSourceRequest) GetDivideValueBy() float32 {
+func (o *AddNumericGaugeDataSourceRequest) GetDivideValueBy() float64 {
 	if o == nil || IsNil(o.DivideValueBy) {
-		var ret float32
+		var ret float64
 		return ret
 	}
 	return *o.DivideValueBy
@@ -192,7 +192,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetDivideValueBy() float32 {
 
 // GetDivideValueByOk returns a tuple with the DivideValueBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddNumericGaugeDataSourceRequest) GetDivideValueByOk() (*float32, bool) {
+func (o *AddNumericGaugeDataSourceRequest) GetDivideValueByOk() (*float64, bool) {
 	if o == nil || IsNil(o.DivideValueBy) {
 		return nil, false
 	}
@@ -208,8 +208,8 @@ func (o *AddNumericGaugeDataSourceRequest) HasDivideValueBy() bool {
 	return false
 }
 
-// SetDivideValueBy gets a reference to the given float32 and assigns it to the DivideValueBy field.
-func (o *AddNumericGaugeDataSourceRequest) SetDivideValueBy(v float32) {
+// SetDivideValueBy gets a reference to the given float64 and assigns it to the DivideValueBy field.
+func (o *AddNumericGaugeDataSourceRequest) SetDivideValueBy(v float64) {
 	o.DivideValueBy = &v
 }
 
