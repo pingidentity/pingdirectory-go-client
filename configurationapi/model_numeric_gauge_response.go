@@ -25,21 +25,21 @@ type NumericGaugeResponse struct {
 	// Specifies the source of data to use in determining this gauge's current severity.
 	GaugeDataSource string `json:"gaugeDataSource"`
 	// A value that is used to determine whether the current monitored value indicates this gauge's severity should be 'critical'.
-	CriticalValue *float32 `json:"criticalValue,omitempty"`
+	CriticalValue *float64 `json:"criticalValue,omitempty"`
 	// A value that is used to determine whether the current monitored value indicates this gauge's severity should no longer be 'critical'.
-	CriticalExitValue *float32 `json:"criticalExitValue,omitempty"`
+	CriticalExitValue *float64 `json:"criticalExitValue,omitempty"`
 	// A value that is used to determine whether the current monitored value indicates this gauge's severity should be 'major'.
-	MajorValue *float32 `json:"majorValue,omitempty"`
+	MajorValue *float64 `json:"majorValue,omitempty"`
 	// A value that is used to determine whether the current monitored value indicates this gauge's severity should no longer be 'major'.
-	MajorExitValue *float32 `json:"majorExitValue,omitempty"`
+	MajorExitValue *float64 `json:"majorExitValue,omitempty"`
 	// A value that is used to determine whether the current monitored value indicates this gauge's severity should be 'minor'.
-	MinorValue *float32 `json:"minorValue,omitempty"`
+	MinorValue *float64 `json:"minorValue,omitempty"`
 	// A value that is used to determine whether the current monitored value indicates this gauge's severity should no longer be 'minor'.
-	MinorExitValue *float32 `json:"minorExitValue,omitempty"`
+	MinorExitValue *float64 `json:"minorExitValue,omitempty"`
 	// A value that is used to determine whether the current monitored value indicates this gauge's severity should be 'warning'.
-	WarningValue *float32 `json:"warningValue,omitempty"`
+	WarningValue *float64 `json:"warningValue,omitempty"`
 	// A value that is used to determine whether the current monitored value indicates this gauge's severity should no longer be 'warning'.
-	WarningExitValue *float32 `json:"warningExitValue,omitempty"`
+	WarningExitValue *float64 `json:"warningExitValue,omitempty"`
 	// A description for this Gauge
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Gauge is enabled.
@@ -154,9 +154,9 @@ func (o *NumericGaugeResponse) SetGaugeDataSource(v string) {
 }
 
 // GetCriticalValue returns the CriticalValue field value if set, zero value otherwise.
-func (o *NumericGaugeResponse) GetCriticalValue() float32 {
+func (o *NumericGaugeResponse) GetCriticalValue() float64 {
 	if o == nil || IsNil(o.CriticalValue) {
-		var ret float32
+		var ret float64
 		return ret
 	}
 	return *o.CriticalValue
@@ -164,7 +164,7 @@ func (o *NumericGaugeResponse) GetCriticalValue() float32 {
 
 // GetCriticalValueOk returns a tuple with the CriticalValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NumericGaugeResponse) GetCriticalValueOk() (*float32, bool) {
+func (o *NumericGaugeResponse) GetCriticalValueOk() (*float64, bool) {
 	if o == nil || IsNil(o.CriticalValue) {
 		return nil, false
 	}
@@ -180,15 +180,15 @@ func (o *NumericGaugeResponse) HasCriticalValue() bool {
 	return false
 }
 
-// SetCriticalValue gets a reference to the given float32 and assigns it to the CriticalValue field.
-func (o *NumericGaugeResponse) SetCriticalValue(v float32) {
+// SetCriticalValue gets a reference to the given float64 and assigns it to the CriticalValue field.
+func (o *NumericGaugeResponse) SetCriticalValue(v float64) {
 	o.CriticalValue = &v
 }
 
 // GetCriticalExitValue returns the CriticalExitValue field value if set, zero value otherwise.
-func (o *NumericGaugeResponse) GetCriticalExitValue() float32 {
+func (o *NumericGaugeResponse) GetCriticalExitValue() float64 {
 	if o == nil || IsNil(o.CriticalExitValue) {
-		var ret float32
+		var ret float64
 		return ret
 	}
 	return *o.CriticalExitValue
@@ -196,7 +196,7 @@ func (o *NumericGaugeResponse) GetCriticalExitValue() float32 {
 
 // GetCriticalExitValueOk returns a tuple with the CriticalExitValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NumericGaugeResponse) GetCriticalExitValueOk() (*float32, bool) {
+func (o *NumericGaugeResponse) GetCriticalExitValueOk() (*float64, bool) {
 	if o == nil || IsNil(o.CriticalExitValue) {
 		return nil, false
 	}
@@ -212,15 +212,15 @@ func (o *NumericGaugeResponse) HasCriticalExitValue() bool {
 	return false
 }
 
-// SetCriticalExitValue gets a reference to the given float32 and assigns it to the CriticalExitValue field.
-func (o *NumericGaugeResponse) SetCriticalExitValue(v float32) {
+// SetCriticalExitValue gets a reference to the given float64 and assigns it to the CriticalExitValue field.
+func (o *NumericGaugeResponse) SetCriticalExitValue(v float64) {
 	o.CriticalExitValue = &v
 }
 
 // GetMajorValue returns the MajorValue field value if set, zero value otherwise.
-func (o *NumericGaugeResponse) GetMajorValue() float32 {
+func (o *NumericGaugeResponse) GetMajorValue() float64 {
 	if o == nil || IsNil(o.MajorValue) {
-		var ret float32
+		var ret float64
 		return ret
 	}
 	return *o.MajorValue
@@ -228,7 +228,7 @@ func (o *NumericGaugeResponse) GetMajorValue() float32 {
 
 // GetMajorValueOk returns a tuple with the MajorValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NumericGaugeResponse) GetMajorValueOk() (*float32, bool) {
+func (o *NumericGaugeResponse) GetMajorValueOk() (*float64, bool) {
 	if o == nil || IsNil(o.MajorValue) {
 		return nil, false
 	}
@@ -244,15 +244,15 @@ func (o *NumericGaugeResponse) HasMajorValue() bool {
 	return false
 }
 
-// SetMajorValue gets a reference to the given float32 and assigns it to the MajorValue field.
-func (o *NumericGaugeResponse) SetMajorValue(v float32) {
+// SetMajorValue gets a reference to the given float64 and assigns it to the MajorValue field.
+func (o *NumericGaugeResponse) SetMajorValue(v float64) {
 	o.MajorValue = &v
 }
 
 // GetMajorExitValue returns the MajorExitValue field value if set, zero value otherwise.
-func (o *NumericGaugeResponse) GetMajorExitValue() float32 {
+func (o *NumericGaugeResponse) GetMajorExitValue() float64 {
 	if o == nil || IsNil(o.MajorExitValue) {
-		var ret float32
+		var ret float64
 		return ret
 	}
 	return *o.MajorExitValue
@@ -260,7 +260,7 @@ func (o *NumericGaugeResponse) GetMajorExitValue() float32 {
 
 // GetMajorExitValueOk returns a tuple with the MajorExitValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NumericGaugeResponse) GetMajorExitValueOk() (*float32, bool) {
+func (o *NumericGaugeResponse) GetMajorExitValueOk() (*float64, bool) {
 	if o == nil || IsNil(o.MajorExitValue) {
 		return nil, false
 	}
@@ -276,15 +276,15 @@ func (o *NumericGaugeResponse) HasMajorExitValue() bool {
 	return false
 }
 
-// SetMajorExitValue gets a reference to the given float32 and assigns it to the MajorExitValue field.
-func (o *NumericGaugeResponse) SetMajorExitValue(v float32) {
+// SetMajorExitValue gets a reference to the given float64 and assigns it to the MajorExitValue field.
+func (o *NumericGaugeResponse) SetMajorExitValue(v float64) {
 	o.MajorExitValue = &v
 }
 
 // GetMinorValue returns the MinorValue field value if set, zero value otherwise.
-func (o *NumericGaugeResponse) GetMinorValue() float32 {
+func (o *NumericGaugeResponse) GetMinorValue() float64 {
 	if o == nil || IsNil(o.MinorValue) {
-		var ret float32
+		var ret float64
 		return ret
 	}
 	return *o.MinorValue
@@ -292,7 +292,7 @@ func (o *NumericGaugeResponse) GetMinorValue() float32 {
 
 // GetMinorValueOk returns a tuple with the MinorValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NumericGaugeResponse) GetMinorValueOk() (*float32, bool) {
+func (o *NumericGaugeResponse) GetMinorValueOk() (*float64, bool) {
 	if o == nil || IsNil(o.MinorValue) {
 		return nil, false
 	}
@@ -308,15 +308,15 @@ func (o *NumericGaugeResponse) HasMinorValue() bool {
 	return false
 }
 
-// SetMinorValue gets a reference to the given float32 and assigns it to the MinorValue field.
-func (o *NumericGaugeResponse) SetMinorValue(v float32) {
+// SetMinorValue gets a reference to the given float64 and assigns it to the MinorValue field.
+func (o *NumericGaugeResponse) SetMinorValue(v float64) {
 	o.MinorValue = &v
 }
 
 // GetMinorExitValue returns the MinorExitValue field value if set, zero value otherwise.
-func (o *NumericGaugeResponse) GetMinorExitValue() float32 {
+func (o *NumericGaugeResponse) GetMinorExitValue() float64 {
 	if o == nil || IsNil(o.MinorExitValue) {
-		var ret float32
+		var ret float64
 		return ret
 	}
 	return *o.MinorExitValue
@@ -324,7 +324,7 @@ func (o *NumericGaugeResponse) GetMinorExitValue() float32 {
 
 // GetMinorExitValueOk returns a tuple with the MinorExitValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NumericGaugeResponse) GetMinorExitValueOk() (*float32, bool) {
+func (o *NumericGaugeResponse) GetMinorExitValueOk() (*float64, bool) {
 	if o == nil || IsNil(o.MinorExitValue) {
 		return nil, false
 	}
@@ -340,15 +340,15 @@ func (o *NumericGaugeResponse) HasMinorExitValue() bool {
 	return false
 }
 
-// SetMinorExitValue gets a reference to the given float32 and assigns it to the MinorExitValue field.
-func (o *NumericGaugeResponse) SetMinorExitValue(v float32) {
+// SetMinorExitValue gets a reference to the given float64 and assigns it to the MinorExitValue field.
+func (o *NumericGaugeResponse) SetMinorExitValue(v float64) {
 	o.MinorExitValue = &v
 }
 
 // GetWarningValue returns the WarningValue field value if set, zero value otherwise.
-func (o *NumericGaugeResponse) GetWarningValue() float32 {
+func (o *NumericGaugeResponse) GetWarningValue() float64 {
 	if o == nil || IsNil(o.WarningValue) {
-		var ret float32
+		var ret float64
 		return ret
 	}
 	return *o.WarningValue
@@ -356,7 +356,7 @@ func (o *NumericGaugeResponse) GetWarningValue() float32 {
 
 // GetWarningValueOk returns a tuple with the WarningValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NumericGaugeResponse) GetWarningValueOk() (*float32, bool) {
+func (o *NumericGaugeResponse) GetWarningValueOk() (*float64, bool) {
 	if o == nil || IsNil(o.WarningValue) {
 		return nil, false
 	}
@@ -372,15 +372,15 @@ func (o *NumericGaugeResponse) HasWarningValue() bool {
 	return false
 }
 
-// SetWarningValue gets a reference to the given float32 and assigns it to the WarningValue field.
-func (o *NumericGaugeResponse) SetWarningValue(v float32) {
+// SetWarningValue gets a reference to the given float64 and assigns it to the WarningValue field.
+func (o *NumericGaugeResponse) SetWarningValue(v float64) {
 	o.WarningValue = &v
 }
 
 // GetWarningExitValue returns the WarningExitValue field value if set, zero value otherwise.
-func (o *NumericGaugeResponse) GetWarningExitValue() float32 {
+func (o *NumericGaugeResponse) GetWarningExitValue() float64 {
 	if o == nil || IsNil(o.WarningExitValue) {
-		var ret float32
+		var ret float64
 		return ret
 	}
 	return *o.WarningExitValue
@@ -388,7 +388,7 @@ func (o *NumericGaugeResponse) GetWarningExitValue() float32 {
 
 // GetWarningExitValueOk returns a tuple with the WarningExitValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NumericGaugeResponse) GetWarningExitValueOk() (*float32, bool) {
+func (o *NumericGaugeResponse) GetWarningExitValueOk() (*float64, bool) {
 	if o == nil || IsNil(o.WarningExitValue) {
 		return nil, false
 	}
@@ -404,8 +404,8 @@ func (o *NumericGaugeResponse) HasWarningExitValue() bool {
 	return false
 }
 
-// SetWarningExitValue gets a reference to the given float32 and assigns it to the WarningExitValue field.
-func (o *NumericGaugeResponse) SetWarningExitValue(v float32) {
+// SetWarningExitValue gets a reference to the given float64 and assigns it to the WarningExitValue field.
+func (o *NumericGaugeResponse) SetWarningExitValue(v float64) {
 	o.WarningExitValue = &v
 }
 

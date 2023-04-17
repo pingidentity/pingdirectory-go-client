@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **DataOrientation** | Pointer to [**EnumgaugeDataSourceDataOrientationProp**](EnumgaugeDataSourceDataOrientationProp.md) |  | [optional] 
 **StatisticType** | [**EnumgaugeDataSourceStatisticTypeProp**](EnumgaugeDataSourceStatisticTypeProp.md) |  | 
-**DivideValueBy** | Pointer to **float32** | An optional floating point value that can be used to scale the resulting value. | [optional] 
+**DivideValueBy** | Pointer to **float64** | An optional floating point value that can be used to scale the resulting value. | [optional] 
 **DivideValueByAttribute** | Pointer to **string** | An optional property that can scale the resulting value by another attribute in the monitored entry. | [optional] 
 **DivideValueByCounterAttribute** | Pointer to **string** | An optional property that can scale the resulting value by another attribute whose value represents a counter in the monitored entry. | [optional] 
 
@@ -368,20 +368,20 @@ SetStatisticType sets StatisticType field to given value.
 
 ### GetDivideValueBy
 
-`func (o *AddGaugeDataSource200Response) GetDivideValueBy() float32`
+`func (o *AddGaugeDataSource200Response) GetDivideValueBy() float64`
 
 GetDivideValueBy returns the DivideValueBy field if non-nil, zero value otherwise.
 
 ### GetDivideValueByOk
 
-`func (o *AddGaugeDataSource200Response) GetDivideValueByOk() (*float32, bool)`
+`func (o *AddGaugeDataSource200Response) GetDivideValueByOk() (*float64, bool)`
 
 GetDivideValueByOk returns a tuple with the DivideValueBy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDivideValueBy
 
-`func (o *AddGaugeDataSource200Response) SetDivideValueBy(v float32)`
+`func (o *AddGaugeDataSource200Response) SetDivideValueBy(v float64)`
 
 SetDivideValueBy sets DivideValueBy field to given value.
 

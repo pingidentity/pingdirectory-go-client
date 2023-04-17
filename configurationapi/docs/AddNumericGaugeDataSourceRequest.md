@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumnumericGaugeDataSourceSchemaUrn**](EnumnumericGaugeDataSourceSchemaUrn.md) |  | 
 **DataOrientation** | Pointer to [**EnumgaugeDataSourceDataOrientationProp**](EnumgaugeDataSourceDataOrientationProp.md) |  | [optional] 
 **StatisticType** | Pointer to [**EnumgaugeDataSourceStatisticTypeProp**](EnumgaugeDataSourceStatisticTypeProp.md) |  | [optional] 
-**DivideValueBy** | Pointer to **float32** | An optional floating point value that can be used to scale the resulting value. | [optional] 
+**DivideValueBy** | Pointer to **float64** | An optional floating point value that can be used to scale the resulting value. | [optional] 
 **DivideValueByAttribute** | Pointer to **string** | An optional property that can scale the resulting value by another attribute in the monitored entry. | [optional] 
 **DivideValueByCounterAttribute** | Pointer to **string** | An optional property that can scale the resulting value by another attribute whose value represents a counter in the monitored entry. | [optional] 
 **Description** | Pointer to **string** | A description for this Gauge Data Source | [optional] 
@@ -131,20 +131,20 @@ HasStatisticType returns a boolean if a field has been set.
 
 ### GetDivideValueBy
 
-`func (o *AddNumericGaugeDataSourceRequest) GetDivideValueBy() float32`
+`func (o *AddNumericGaugeDataSourceRequest) GetDivideValueBy() float64`
 
 GetDivideValueBy returns the DivideValueBy field if non-nil, zero value otherwise.
 
 ### GetDivideValueByOk
 
-`func (o *AddNumericGaugeDataSourceRequest) GetDivideValueByOk() (*float32, bool)`
+`func (o *AddNumericGaugeDataSourceRequest) GetDivideValueByOk() (*float64, bool)`
 
 GetDivideValueByOk returns a tuple with the DivideValueBy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDivideValueBy
 
-`func (o *AddNumericGaugeDataSourceRequest) SetDivideValueBy(v float32)`
+`func (o *AddNumericGaugeDataSourceRequest) SetDivideValueBy(v float64)`
 
 SetDivideValueBy sets DivideValueBy field to given value.
 
