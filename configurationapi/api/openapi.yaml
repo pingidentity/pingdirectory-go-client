@@ -26086,6 +26086,7 @@ components:
       required:
       - cacheLevel
       - enabled
+      - schemas
       type: object
     Enumfifo-entry-cacheSchemaUrn:
       enum:
@@ -26120,6 +26121,7 @@ components:
       - $ref: '#/components/schemas/meta'
       required:
       - enabled
+      - schemas
     Enumdsee-compat-access-control-handlerSchemaUrn:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:access-control-handler:dsee-compat
@@ -29117,6 +29119,7 @@ components:
           description: A description for this Conjur Authentication Method
           type: string
       required:
+      - schemas
       - username
       type: object
     Enumapi-key-conjur-authentication-methodSchemaUrn:
@@ -41289,6 +41292,8 @@ components:
       allOf:
       - $ref: '#/components/schemas/high_throughput_work_queue_response_allOf'
       - $ref: '#/components/schemas/meta'
+      required:
+      - schemas
     Enumhigh-throughput-work-queueSchemaUrn:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:work-queue:high-throughput
@@ -44521,6 +44526,7 @@ components:
       required:
       - enabled
       - extensionClass
+      - schemas
       - subscriptionBaseDN
       type: object
     Enumthird-party-notification-managerSchemaUrn:
@@ -48820,6 +48826,7 @@ components:
       required:
       - enabled
       - hostname
+      - schemas
       type: object
     Enumstatsd-monitoring-endpointSchemaUrn:
       enum:

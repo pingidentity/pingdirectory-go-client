@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    addThirdPartyNotificationManagerRequest := *openapiclient.NewAddThirdPartyNotificationManagerRequest("ManagerName_example", "ExtensionClass_example", false, "SubscriptionBaseDN_example") // AddThirdPartyNotificationManagerRequest | Create a new Notification Manager in the config
+    addThirdPartyNotificationManagerRequest := *openapiclient.NewAddThirdPartyNotificationManagerRequest("ManagerName_example", []openapiclient.EnumthirdPartyNotificationManagerSchemaUrn{openapiclient.Enumthird-party-notification-managerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:notification-manager:third-party")}, "ExtensionClass_example", false, "SubscriptionBaseDN_example") // AddThirdPartyNotificationManagerRequest | Create a new Notification Manager in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

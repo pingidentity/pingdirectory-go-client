@@ -220,6 +220,7 @@ components:
           description: >-
               Indicates whether the entry cache should be updated with entries that have been returned to the client during the course of processing an unindexed search.
       required:
+      - schemas
       - enabled
       - cacheLevel
     Enumfifo-entry-cacheSchemaUrn:

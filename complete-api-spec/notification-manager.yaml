@@ -207,6 +207,7 @@ components:
           description: >-
               Enables monitor entries for this Notification Manager.
       required:
+      - schemas
       - extensionClass
       - enabled
       - subscriptionBaseDN

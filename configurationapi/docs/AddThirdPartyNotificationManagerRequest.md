@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ManagerName** | **string** | Name of the new Notification Manager | 
-**Schemas** | Pointer to [**[]EnumthirdPartyNotificationManagerSchemaUrn**](EnumthirdPartyNotificationManagerSchemaUrn.md) |  | [optional] 
+**Schemas** | [**[]EnumthirdPartyNotificationManagerSchemaUrn**](EnumthirdPartyNotificationManagerSchemaUrn.md) |  | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Notification Manager. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Notification Manager. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **Description** | Pointer to **string** | A description for this Notification Manager | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewAddThirdPartyNotificationManagerRequest
 
-`func NewAddThirdPartyNotificationManagerRequest(managerName string, extensionClass string, enabled bool, subscriptionBaseDN string, ) *AddThirdPartyNotificationManagerRequest`
+`func NewAddThirdPartyNotificationManagerRequest(managerName string, schemas []EnumthirdPartyNotificationManagerSchemaUrn, extensionClass string, enabled bool, subscriptionBaseDN string, ) *AddThirdPartyNotificationManagerRequest`
 
 NewAddThirdPartyNotificationManagerRequest instantiates a new AddThirdPartyNotificationManagerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -72,11 +72,6 @@ and a boolean to check if the value has been set.
 
 SetSchemas sets Schemas field to given value.
 
-### HasSchemas
-
-`func (o *AddThirdPartyNotificationManagerRequest) HasSchemas() bool`
-
-HasSchemas returns a boolean if a field has been set.
 
 ### GetExtensionClass
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Schemas** | Pointer to [**[]EnumdseeCompatAccessControlHandlerSchemaUrn**](EnumdseeCompatAccessControlHandlerSchemaUrn.md) |  | [optional] 
+**Schemas** | [**[]EnumdseeCompatAccessControlHandlerSchemaUrn**](EnumdseeCompatAccessControlHandlerSchemaUrn.md) |  | 
 **GlobalACI** | Pointer to **[]string** | Defines global access control rules. | [optional] 
 **AllowedBindControl** | Pointer to [**[]EnumaccessControlHandlerAllowedBindControlProp**](EnumaccessControlHandlerAllowedBindControlProp.md) |  | [optional] 
 **AllowedBindControlOID** | Pointer to **[]string** | Specifies the OIDs of any additional controls (not covered by the allowed-bind-control property) that should be permitted in bind requests. | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewDseeCompatAccessControlHandlerResponse
 
-`func NewDseeCompatAccessControlHandlerResponse(enabled bool, ) *DseeCompatAccessControlHandlerResponse`
+`func NewDseeCompatAccessControlHandlerResponse(schemas []EnumdseeCompatAccessControlHandlerSchemaUrn, enabled bool, ) *DseeCompatAccessControlHandlerResponse`
 
 NewDseeCompatAccessControlHandlerResponse instantiates a new DseeCompatAccessControlHandlerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -50,11 +50,6 @@ and a boolean to check if the value has been set.
 
 SetSchemas sets Schemas field to given value.
 
-### HasSchemas
-
-`func (o *DseeCompatAccessControlHandlerResponse) HasSchemas() bool`
-
-HasSchemas returns a boolean if a field has been set.
 
 ### GetGlobalACI
 

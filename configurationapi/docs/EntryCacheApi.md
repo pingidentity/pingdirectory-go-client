@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    addFifoEntryCacheRequest := *openapiclient.NewAddFifoEntryCacheRequest("CacheName_example", false, int64(123)) // AddFifoEntryCacheRequest | Create a new Entry Cache in the config
+    addFifoEntryCacheRequest := *openapiclient.NewAddFifoEntryCacheRequest("CacheName_example", []openapiclient.EnumfifoEntryCacheSchemaUrn{openapiclient.Enumfifo-entry-cacheSchemaUrn("urn:pingidentity:schemas:configuration:2.0:entry-cache:fifo")}, false, int64(123)) // AddFifoEntryCacheRequest | Create a new Entry Cache in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
