@@ -21,7 +21,7 @@ var _ MappedNullable = &AddStatsdMonitoringEndpointRequest{}
 type AddStatsdMonitoringEndpointRequest struct {
 	// Name of the new Monitoring Endpoint
 	EndpointName string                                  `json:"endpointName"`
-	Schemas      []EnumstatsdMonitoringEndpointSchemaUrn `json:"schemas,omitempty"`
+	Schemas      []EnumstatsdMonitoringEndpointSchemaUrn `json:"schemas"`
 	// The name of the host where this StatsD Monitoring Endpoint should send metric data.
 	Hostname string `json:"hostname"`
 	// Specifies the port number of the endpoint where metric data should be sent.
@@ -39,9 +39,10 @@ type AddStatsdMonitoringEndpointRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddStatsdMonitoringEndpointRequest(endpointName string, hostname string, enabled bool) *AddStatsdMonitoringEndpointRequest {
+func NewAddStatsdMonitoringEndpointRequest(endpointName string, schemas []EnumstatsdMonitoringEndpointSchemaUrn, hostname string, enabled bool) *AddStatsdMonitoringEndpointRequest {
 	this := AddStatsdMonitoringEndpointRequest{}
 	this.EndpointName = endpointName
+	this.Schemas = schemas
 	this.Hostname = hostname
 	this.Enabled = enabled
 	return &this
@@ -79,34 +80,26 @@ func (o *AddStatsdMonitoringEndpointRequest) SetEndpointName(v string) {
 	o.EndpointName = v
 }
 
-// GetSchemas returns the Schemas field value if set, zero value otherwise.
+// GetSchemas returns the Schemas field value
 func (o *AddStatsdMonitoringEndpointRequest) GetSchemas() []EnumstatsdMonitoringEndpointSchemaUrn {
-	if o == nil || IsNil(o.Schemas) {
+	if o == nil {
 		var ret []EnumstatsdMonitoringEndpointSchemaUrn
 		return ret
 	}
+
 	return o.Schemas
 }
 
-// GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
+// GetSchemasOk returns a tuple with the Schemas field value
 // and a boolean to check if the value has been set.
 func (o *AddStatsdMonitoringEndpointRequest) GetSchemasOk() ([]EnumstatsdMonitoringEndpointSchemaUrn, bool) {
-	if o == nil || IsNil(o.Schemas) {
+	if o == nil {
 		return nil, false
 	}
 	return o.Schemas, true
 }
 
-// HasSchemas returns a boolean if a field has been set.
-func (o *AddStatsdMonitoringEndpointRequest) HasSchemas() bool {
-	if o != nil && !IsNil(o.Schemas) {
-		return true
-	}
-
-	return false
-}
-
-// SetSchemas gets a reference to the given []EnumstatsdMonitoringEndpointSchemaUrn and assigns it to the Schemas field.
+// SetSchemas sets field value
 func (o *AddStatsdMonitoringEndpointRequest) SetSchemas(v []EnumstatsdMonitoringEndpointSchemaUrn) {
 	o.Schemas = v
 }
@@ -298,9 +291,7 @@ func (o AddStatsdMonitoringEndpointRequest) MarshalJSON() ([]byte, error) {
 func (o AddStatsdMonitoringEndpointRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["endpointName"] = o.EndpointName
-	if !IsNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
+	toSerialize["schemas"] = o.Schemas
 	toSerialize["hostname"] = o.Hostname
 	if !IsNil(o.ServerPort) {
 		toSerialize["serverPort"] = o.ServerPort

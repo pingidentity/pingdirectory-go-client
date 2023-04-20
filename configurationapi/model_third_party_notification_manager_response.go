@@ -21,7 +21,7 @@ var _ MappedNullable = &ThirdPartyNotificationManagerResponse{}
 type ThirdPartyNotificationManagerResponse struct {
 	// Name of the Notification Manager
 	Id      string                                       `json:"id"`
-	Schemas []EnumthirdPartyNotificationManagerSchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumthirdPartyNotificationManagerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Notification Manager.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Notification Manager. Each configuration property should be given in the form 'name=value'.
@@ -43,9 +43,10 @@ type ThirdPartyNotificationManagerResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewThirdPartyNotificationManagerResponse(id string, extensionClass string, enabled bool, subscriptionBaseDN string, transactionNotification EnumnotificationManagerTransactionNotificationProp) *ThirdPartyNotificationManagerResponse {
+func NewThirdPartyNotificationManagerResponse(id string, schemas []EnumthirdPartyNotificationManagerSchemaUrn, extensionClass string, enabled bool, subscriptionBaseDN string, transactionNotification EnumnotificationManagerTransactionNotificationProp) *ThirdPartyNotificationManagerResponse {
 	this := ThirdPartyNotificationManagerResponse{}
 	this.Id = id
+	this.Schemas = schemas
 	this.ExtensionClass = extensionClass
 	this.Enabled = enabled
 	this.SubscriptionBaseDN = subscriptionBaseDN
@@ -85,34 +86,26 @@ func (o *ThirdPartyNotificationManagerResponse) SetId(v string) {
 	o.Id = v
 }
 
-// GetSchemas returns the Schemas field value if set, zero value otherwise.
+// GetSchemas returns the Schemas field value
 func (o *ThirdPartyNotificationManagerResponse) GetSchemas() []EnumthirdPartyNotificationManagerSchemaUrn {
-	if o == nil || IsNil(o.Schemas) {
+	if o == nil {
 		var ret []EnumthirdPartyNotificationManagerSchemaUrn
 		return ret
 	}
+
 	return o.Schemas
 }
 
-// GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
+// GetSchemasOk returns a tuple with the Schemas field value
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyNotificationManagerResponse) GetSchemasOk() ([]EnumthirdPartyNotificationManagerSchemaUrn, bool) {
-	if o == nil || IsNil(o.Schemas) {
+	if o == nil {
 		return nil, false
 	}
 	return o.Schemas, true
 }
 
-// HasSchemas returns a boolean if a field has been set.
-func (o *ThirdPartyNotificationManagerResponse) HasSchemas() bool {
-	if o != nil && !IsNil(o.Schemas) {
-		return true
-	}
-
-	return false
-}
-
-// SetSchemas gets a reference to the given []EnumthirdPartyNotificationManagerSchemaUrn and assigns it to the Schemas field.
+// SetSchemas sets field value
 func (o *ThirdPartyNotificationManagerResponse) SetSchemas(v []EnumthirdPartyNotificationManagerSchemaUrn) {
 	o.Schemas = v
 }
@@ -384,9 +377,7 @@ func (o ThirdPartyNotificationManagerResponse) MarshalJSON() ([]byte, error) {
 func (o ThirdPartyNotificationManagerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
-	if !IsNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
+	toSerialize["schemas"] = o.Schemas
 	toSerialize["extensionClass"] = o.ExtensionClass
 	if !IsNil(o.ExtensionArgument) {
 		toSerialize["extensionArgument"] = o.ExtensionArgument

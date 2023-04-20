@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    addApiKeyConjurAuthenticationMethodRequest := *openapiclient.NewAddApiKeyConjurAuthenticationMethodRequest("MethodName_example", "Username_example") // AddApiKeyConjurAuthenticationMethodRequest | Create a new Conjur Authentication Method in the config
+    addApiKeyConjurAuthenticationMethodRequest := *openapiclient.NewAddApiKeyConjurAuthenticationMethodRequest("MethodName_example", []openapiclient.EnumapiKeyConjurAuthenticationMethodSchemaUrn{openapiclient.Enumapi-key-conjur-authentication-methodSchemaUrn("urn:pingidentity:schemas:configuration:2.0:conjur-authentication-method:api-key")}, "Username_example") // AddApiKeyConjurAuthenticationMethodRequest | Create a new Conjur Authentication Method in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

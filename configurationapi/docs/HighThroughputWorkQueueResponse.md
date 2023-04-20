@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Schemas** | Pointer to [**[]EnumhighThroughputWorkQueueSchemaUrn**](EnumhighThroughputWorkQueueSchemaUrn.md) |  | [optional] 
+**Schemas** | [**[]EnumhighThroughputWorkQueueSchemaUrn**](EnumhighThroughputWorkQueueSchemaUrn.md) |  | 
 **NumWorkerThreads** | Pointer to **int64** | Specifies the total number of worker threads that should be used within the server in order to process requested operations. The worker threads will be split evenly across all of the configured queues. | [optional] 
 **NumWriteWorkerThreads** | Pointer to **int64** | Specifies the number of worker threads that should be used within the server to process write (add, delete, modify, and modify DN) operations. If this is specified, then separate sets of worker threads will be used for processing read and write operations, and the value of the num-worker-threads property will reflect the number of threads to use to process read operations. | [optional] 
 **NumAdministrativeSessionWorkerThreads** | Pointer to **int64** | Specifies the number of worker threads that should be used to process operations as part of an administrative session. These threads may be reserved only for special use by management applications like dsconfig, the administration console, and other administrative tools, so that these applications may be used to diagnose problems and take any necessary corrective action even if all \&quot;normal\&quot; worker threads are busy processing other requests. | [optional] 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 
 ### NewHighThroughputWorkQueueResponse
 
-`func NewHighThroughputWorkQueueResponse() *HighThroughputWorkQueueResponse`
+`func NewHighThroughputWorkQueueResponse(schemas []EnumhighThroughputWorkQueueSchemaUrn, ) *HighThroughputWorkQueueResponse`
 
 NewHighThroughputWorkQueueResponse instantiates a new HighThroughputWorkQueueResponse object
 This constructor will assign default values to properties that have it defined,
@@ -58,11 +58,6 @@ and a boolean to check if the value has been set.
 
 SetSchemas sets Schemas field to given value.
 
-### HasSchemas
-
-`func (o *HighThroughputWorkQueueResponse) HasSchemas() bool`
-
-HasSchemas returns a boolean if a field has been set.
 
 ### GetNumWorkerThreads
 

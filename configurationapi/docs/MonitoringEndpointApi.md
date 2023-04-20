@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    addStatsdMonitoringEndpointRequest := *openapiclient.NewAddStatsdMonitoringEndpointRequest("EndpointName_example", "Hostname_example", false) // AddStatsdMonitoringEndpointRequest | Create a new Monitoring Endpoint in the config
+    addStatsdMonitoringEndpointRequest := *openapiclient.NewAddStatsdMonitoringEndpointRequest("EndpointName_example", []openapiclient.EnumstatsdMonitoringEndpointSchemaUrn{openapiclient.Enumstatsd-monitoring-endpointSchemaUrn("urn:pingidentity:schemas:configuration:2.0:monitoring-endpoint:statsd")}, "Hostname_example", false) // AddStatsdMonitoringEndpointRequest | Create a new Monitoring Endpoint in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

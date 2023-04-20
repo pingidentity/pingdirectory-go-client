@@ -19,7 +19,7 @@ var _ MappedNullable = &DseeCompatAccessControlHandlerResponse{}
 
 // DseeCompatAccessControlHandlerResponse struct for DseeCompatAccessControlHandlerResponse
 type DseeCompatAccessControlHandlerResponse struct {
-	Schemas []EnumdseeCompatAccessControlHandlerSchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumdseeCompatAccessControlHandlerSchemaUrn `json:"schemas"`
 	// Defines global access control rules.
 	GlobalACI          []string                                         `json:"globalACI,omitempty"`
 	AllowedBindControl []EnumaccessControlHandlerAllowedBindControlProp `json:"allowedBindControl,omitempty"`
@@ -35,8 +35,9 @@ type DseeCompatAccessControlHandlerResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDseeCompatAccessControlHandlerResponse(enabled bool) *DseeCompatAccessControlHandlerResponse {
+func NewDseeCompatAccessControlHandlerResponse(schemas []EnumdseeCompatAccessControlHandlerSchemaUrn, enabled bool) *DseeCompatAccessControlHandlerResponse {
 	this := DseeCompatAccessControlHandlerResponse{}
+	this.Schemas = schemas
 	this.Enabled = enabled
 	return &this
 }
@@ -49,34 +50,26 @@ func NewDseeCompatAccessControlHandlerResponseWithDefaults() *DseeCompatAccessCo
 	return &this
 }
 
-// GetSchemas returns the Schemas field value if set, zero value otherwise.
+// GetSchemas returns the Schemas field value
 func (o *DseeCompatAccessControlHandlerResponse) GetSchemas() []EnumdseeCompatAccessControlHandlerSchemaUrn {
-	if o == nil || IsNil(o.Schemas) {
+	if o == nil {
 		var ret []EnumdseeCompatAccessControlHandlerSchemaUrn
 		return ret
 	}
+
 	return o.Schemas
 }
 
-// GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
+// GetSchemasOk returns a tuple with the Schemas field value
 // and a boolean to check if the value has been set.
 func (o *DseeCompatAccessControlHandlerResponse) GetSchemasOk() ([]EnumdseeCompatAccessControlHandlerSchemaUrn, bool) {
-	if o == nil || IsNil(o.Schemas) {
+	if o == nil {
 		return nil, false
 	}
 	return o.Schemas, true
 }
 
-// HasSchemas returns a boolean if a field has been set.
-func (o *DseeCompatAccessControlHandlerResponse) HasSchemas() bool {
-	if o != nil && !IsNil(o.Schemas) {
-		return true
-	}
-
-	return false
-}
-
-// SetSchemas gets a reference to the given []EnumdseeCompatAccessControlHandlerSchemaUrn and assigns it to the Schemas field.
+// SetSchemas sets field value
 func (o *DseeCompatAccessControlHandlerResponse) SetSchemas(v []EnumdseeCompatAccessControlHandlerSchemaUrn) {
 	o.Schemas = v
 }
@@ -275,9 +268,7 @@ func (o DseeCompatAccessControlHandlerResponse) MarshalJSON() ([]byte, error) {
 
 func (o DseeCompatAccessControlHandlerResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
+	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.GlobalACI) {
 		toSerialize["globalACI"] = o.GlobalACI
 	}

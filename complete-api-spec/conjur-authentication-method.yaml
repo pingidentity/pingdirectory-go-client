@@ -188,6 +188,7 @@ components:
           description: >-
               A description for this Conjur Authentication Method
       required:
+      - schemas
       - username
     Enumapi-key-conjur-authentication-methodSchemaUrn:
       type: string
