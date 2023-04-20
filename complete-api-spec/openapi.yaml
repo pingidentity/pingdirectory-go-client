@@ -30089,6 +30089,7 @@ components:
           description: >-
               Indicates whether the entry cache should be updated with entries that have been returned to the client during the course of processing an unindexed search.
       required:
+      - schemas
       - enabled
       - cacheLevel
     Enumfifo-entry-cacheSchemaUrn:
@@ -30147,6 +30148,7 @@ components:
                 Indicates whether this Access Control Handler is enabled. If set to FALSE, then no access control is enforced, and any client (including unauthenticated or anonymous clients) could be allowed to perform any operation if not subject to other restrictions, such as those enforced by the privilege subsystem.
       - $ref: '#/components/schemas/meta'
       required:
+      - schemas
       - enabled
     Enumdsee-compat-access-control-handlerSchemaUrn:
       type: string
@@ -33574,6 +33576,7 @@ components:
           description: >-
               A description for this Conjur Authentication Method
       required:
+      - schemas
       - username
     Enumapi-key-conjur-authentication-methodSchemaUrn:
       type: string
@@ -48025,6 +48028,8 @@ components:
             description: >-
                 The minimum length of time that should be required to pass after dumping stack trace information for all threads before the server should be allowed to create a second dump. This will help prevent the server from dumping stack traces too frequently and eventually consuming all available disk space with stack trace log output. This option is primarily intended for debugging purposes and should generally be used under the direction of Ping Identity support.
       - $ref: '#/components/schemas/meta'
+      required:
+      - schemas
     Enumhigh-throughput-work-queueSchemaUrn:
       type: string
       enum:
@@ -52266,6 +52271,7 @@ components:
           description: >-
               Enables monitor entries for this Notification Manager.
       required:
+      - schemas
       - extensionClass
       - enabled
       - subscriptionBaseDN
@@ -56477,6 +56483,7 @@ components:
           description: >-
               Indicates whether this Monitoring Endpoint is enabled for use in the Directory Server.
       required:
+      - schemas
       - hostname
       - enabled
     Enumstatsd-monitoring-endpointSchemaUrn:

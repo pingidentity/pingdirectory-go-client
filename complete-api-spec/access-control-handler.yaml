@@ -114,6 +114,7 @@ components:
                 Indicates whether this Access Control Handler is enabled. If set to FALSE, then no access control is enforced, and any client (including unauthenticated or anonymous clients) could be allowed to perform any operation if not subject to other restrictions, such as those enforced by the privilege subsystem.
       - $ref: '#/components/schemas/meta'
       required:
+      - schemas
       - enabled
     Enumdsee-compat-access-control-handlerSchemaUrn:
       type: string

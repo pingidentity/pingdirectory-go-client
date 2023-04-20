@@ -204,6 +204,7 @@ components:
           description: >-
               Indicates whether this Monitoring Endpoint is enabled for use in the Directory Server.
       required:
+      - schemas
       - hostname
       - enabled
     Enumstatsd-monitoring-endpointSchemaUrn:

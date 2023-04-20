@@ -21,7 +21,7 @@ var _ MappedNullable = &AddApiKeyConjurAuthenticationMethodRequest{}
 type AddApiKeyConjurAuthenticationMethodRequest struct {
 	// Name of the new Conjur Authentication Method
 	MethodName string                                          `json:"methodName"`
-	Schemas    []EnumapiKeyConjurAuthenticationMethodSchemaUrn `json:"schemas,omitempty"`
+	Schemas    []EnumapiKeyConjurAuthenticationMethodSchemaUrn `json:"schemas"`
 	// The username for the user to authenticate.
 	Username string `json:"username"`
 	// The password for the user to authenticate. This will be used to obtain an API key for the target user.
@@ -36,9 +36,10 @@ type AddApiKeyConjurAuthenticationMethodRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddApiKeyConjurAuthenticationMethodRequest(methodName string, username string) *AddApiKeyConjurAuthenticationMethodRequest {
+func NewAddApiKeyConjurAuthenticationMethodRequest(methodName string, schemas []EnumapiKeyConjurAuthenticationMethodSchemaUrn, username string) *AddApiKeyConjurAuthenticationMethodRequest {
 	this := AddApiKeyConjurAuthenticationMethodRequest{}
 	this.MethodName = methodName
+	this.Schemas = schemas
 	this.Username = username
 	return &this
 }
@@ -75,34 +76,26 @@ func (o *AddApiKeyConjurAuthenticationMethodRequest) SetMethodName(v string) {
 	o.MethodName = v
 }
 
-// GetSchemas returns the Schemas field value if set, zero value otherwise.
+// GetSchemas returns the Schemas field value
 func (o *AddApiKeyConjurAuthenticationMethodRequest) GetSchemas() []EnumapiKeyConjurAuthenticationMethodSchemaUrn {
-	if o == nil || IsNil(o.Schemas) {
+	if o == nil {
 		var ret []EnumapiKeyConjurAuthenticationMethodSchemaUrn
 		return ret
 	}
+
 	return o.Schemas
 }
 
-// GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
+// GetSchemasOk returns a tuple with the Schemas field value
 // and a boolean to check if the value has been set.
 func (o *AddApiKeyConjurAuthenticationMethodRequest) GetSchemasOk() ([]EnumapiKeyConjurAuthenticationMethodSchemaUrn, bool) {
-	if o == nil || IsNil(o.Schemas) {
+	if o == nil {
 		return nil, false
 	}
 	return o.Schemas, true
 }
 
-// HasSchemas returns a boolean if a field has been set.
-func (o *AddApiKeyConjurAuthenticationMethodRequest) HasSchemas() bool {
-	if o != nil && !IsNil(o.Schemas) {
-		return true
-	}
-
-	return false
-}
-
-// SetSchemas gets a reference to the given []EnumapiKeyConjurAuthenticationMethodSchemaUrn and assigns it to the Schemas field.
+// SetSchemas sets field value
 func (o *AddApiKeyConjurAuthenticationMethodRequest) SetSchemas(v []EnumapiKeyConjurAuthenticationMethodSchemaUrn) {
 	o.Schemas = v
 }
@@ -238,9 +231,7 @@ func (o AddApiKeyConjurAuthenticationMethodRequest) MarshalJSON() ([]byte, error
 func (o AddApiKeyConjurAuthenticationMethodRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["methodName"] = o.MethodName
-	if !IsNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
+	toSerialize["schemas"] = o.Schemas
 	toSerialize["username"] = o.Username
 	if !IsNil(o.Password) {
 		toSerialize["password"] = o.Password

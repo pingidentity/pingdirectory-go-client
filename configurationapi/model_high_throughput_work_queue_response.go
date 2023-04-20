@@ -19,7 +19,7 @@ var _ MappedNullable = &HighThroughputWorkQueueResponse{}
 
 // HighThroughputWorkQueueResponse struct for HighThroughputWorkQueueResponse
 type HighThroughputWorkQueueResponse struct {
-	Schemas []EnumhighThroughputWorkQueueSchemaUrn `json:"schemas,omitempty"`
+	Schemas []EnumhighThroughputWorkQueueSchemaUrn `json:"schemas"`
 	// Specifies the total number of worker threads that should be used within the server in order to process requested operations. The worker threads will be split evenly across all of the configured queues.
 	NumWorkerThreads *int64 `json:"numWorkerThreads,omitempty"`
 	// Specifies the number of worker threads that should be used within the server to process write (add, delete, modify, and modify DN) operations. If this is specified, then separate sets of worker threads will be used for processing read and write operations, and the value of the num-worker-threads property will reflect the number of threads to use to process read operations.
@@ -52,8 +52,9 @@ type HighThroughputWorkQueueResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewHighThroughputWorkQueueResponse() *HighThroughputWorkQueueResponse {
+func NewHighThroughputWorkQueueResponse(schemas []EnumhighThroughputWorkQueueSchemaUrn) *HighThroughputWorkQueueResponse {
 	this := HighThroughputWorkQueueResponse{}
+	this.Schemas = schemas
 	return &this
 }
 
@@ -65,34 +66,26 @@ func NewHighThroughputWorkQueueResponseWithDefaults() *HighThroughputWorkQueueRe
 	return &this
 }
 
-// GetSchemas returns the Schemas field value if set, zero value otherwise.
+// GetSchemas returns the Schemas field value
 func (o *HighThroughputWorkQueueResponse) GetSchemas() []EnumhighThroughputWorkQueueSchemaUrn {
-	if o == nil || IsNil(o.Schemas) {
+	if o == nil {
 		var ret []EnumhighThroughputWorkQueueSchemaUrn
 		return ret
 	}
+
 	return o.Schemas
 }
 
-// GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
+// GetSchemasOk returns a tuple with the Schemas field value
 // and a boolean to check if the value has been set.
 func (o *HighThroughputWorkQueueResponse) GetSchemasOk() ([]EnumhighThroughputWorkQueueSchemaUrn, bool) {
-	if o == nil || IsNil(o.Schemas) {
+	if o == nil {
 		return nil, false
 	}
 	return o.Schemas, true
 }
 
-// HasSchemas returns a boolean if a field has been set.
-func (o *HighThroughputWorkQueueResponse) HasSchemas() bool {
-	if o != nil && !IsNil(o.Schemas) {
-		return true
-	}
-
-	return false
-}
-
-// SetSchemas gets a reference to the given []EnumhighThroughputWorkQueueSchemaUrn and assigns it to the Schemas field.
+// SetSchemas sets field value
 func (o *HighThroughputWorkQueueResponse) SetSchemas(v []EnumhighThroughputWorkQueueSchemaUrn) {
 	o.Schemas = v
 }
@@ -555,9 +548,7 @@ func (o HighThroughputWorkQueueResponse) MarshalJSON() ([]byte, error) {
 
 func (o HighThroughputWorkQueueResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
+	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.NumWorkerThreads) {
 		toSerialize["numWorkerThreads"] = o.NumWorkerThreads
 	}

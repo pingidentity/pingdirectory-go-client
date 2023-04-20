@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CacheName** | **string** | Name of the new Entry Cache | 
-**Schemas** | Pointer to [**[]EnumfifoEntryCacheSchemaUrn**](EnumfifoEntryCacheSchemaUrn.md) |  | [optional] 
+**Schemas** | [**[]EnumfifoEntryCacheSchemaUrn**](EnumfifoEntryCacheSchemaUrn.md) |  | 
 **MaxMemoryPercent** | Pointer to **int64** | Specifies the maximum amount of memory, as a percentage of the total maximum JVM heap size, that this cache should occupy when full. If the amount of memory the cache is using is greater than this amount, then an attempt to put a new entry in the cache will be ignored and will cause the oldest entry to be purged. | [optional] 
 **MaxEntries** | Pointer to **int64** | Specifies the maximum number of entries that will be allowed in the cache. Once the cache reaches this size, then adding new entries will cause existing entries to be purged, starting with the oldest. | [optional] 
 **OnlyCacheFrequentlyAccessed** | Pointer to **bool** | Specifies that the cache should only store entries which are accessed much more frequently than the average entry. The cache will observe attempts to place entries in the cache and compare an entry&#39;s accesses to the average entry&#39;s. | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewAddFifoEntryCacheRequest
 
-`func NewAddFifoEntryCacheRequest(cacheName string, enabled bool, cacheLevel int64, ) *AddFifoEntryCacheRequest`
+`func NewAddFifoEntryCacheRequest(cacheName string, schemas []EnumfifoEntryCacheSchemaUrn, enabled bool, cacheLevel int64, ) *AddFifoEntryCacheRequest`
 
 NewAddFifoEntryCacheRequest instantiates a new AddFifoEntryCacheRequest object
 This constructor will assign default values to properties that have it defined,
@@ -76,11 +76,6 @@ and a boolean to check if the value has been set.
 
 SetSchemas sets Schemas field to given value.
 
-### HasSchemas
-
-`func (o *AddFifoEntryCacheRequest) HasSchemas() bool`
-
-HasSchemas returns a boolean if a field has been set.
 
 ### GetMaxMemoryPercent
 

@@ -21,7 +21,7 @@ var _ MappedNullable = &AddFifoEntryCacheRequest{}
 type AddFifoEntryCacheRequest struct {
 	// Name of the new Entry Cache
 	CacheName string                        `json:"cacheName"`
-	Schemas   []EnumfifoEntryCacheSchemaUrn `json:"schemas,omitempty"`
+	Schemas   []EnumfifoEntryCacheSchemaUrn `json:"schemas"`
 	// Specifies the maximum amount of memory, as a percentage of the total maximum JVM heap size, that this cache should occupy when full. If the amount of memory the cache is using is greater than this amount, then an attempt to put a new entry in the cache will be ignored and will cause the oldest entry to be purged.
 	MaxMemoryPercent *int64 `json:"maxMemoryPercent,omitempty"`
 	// Specifies the maximum number of entries that will be allowed in the cache. Once the cache reaches this size, then adding new entries will cause existing entries to be purged, starting with the oldest.
@@ -50,9 +50,10 @@ type AddFifoEntryCacheRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddFifoEntryCacheRequest(cacheName string, enabled bool, cacheLevel int64) *AddFifoEntryCacheRequest {
+func NewAddFifoEntryCacheRequest(cacheName string, schemas []EnumfifoEntryCacheSchemaUrn, enabled bool, cacheLevel int64) *AddFifoEntryCacheRequest {
 	this := AddFifoEntryCacheRequest{}
 	this.CacheName = cacheName
+	this.Schemas = schemas
 	this.Enabled = enabled
 	this.CacheLevel = cacheLevel
 	return &this
@@ -90,34 +91,26 @@ func (o *AddFifoEntryCacheRequest) SetCacheName(v string) {
 	o.CacheName = v
 }
 
-// GetSchemas returns the Schemas field value if set, zero value otherwise.
+// GetSchemas returns the Schemas field value
 func (o *AddFifoEntryCacheRequest) GetSchemas() []EnumfifoEntryCacheSchemaUrn {
-	if o == nil || IsNil(o.Schemas) {
+	if o == nil {
 		var ret []EnumfifoEntryCacheSchemaUrn
 		return ret
 	}
+
 	return o.Schemas
 }
 
-// GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
+// GetSchemasOk returns a tuple with the Schemas field value
 // and a boolean to check if the value has been set.
 func (o *AddFifoEntryCacheRequest) GetSchemasOk() ([]EnumfifoEntryCacheSchemaUrn, bool) {
-	if o == nil || IsNil(o.Schemas) {
+	if o == nil {
 		return nil, false
 	}
 	return o.Schemas, true
 }
 
-// HasSchemas returns a boolean if a field has been set.
-func (o *AddFifoEntryCacheRequest) HasSchemas() bool {
-	if o != nil && !IsNil(o.Schemas) {
-		return true
-	}
-
-	return false
-}
-
-// SetSchemas gets a reference to the given []EnumfifoEntryCacheSchemaUrn and assigns it to the Schemas field.
+// SetSchemas sets field value
 func (o *AddFifoEntryCacheRequest) SetSchemas(v []EnumfifoEntryCacheSchemaUrn) {
 	o.Schemas = v
 }
@@ -469,9 +462,7 @@ func (o AddFifoEntryCacheRequest) MarshalJSON() ([]byte, error) {
 func (o AddFifoEntryCacheRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["cacheName"] = o.CacheName
-	if !IsNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
+	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.MaxMemoryPercent) {
 		toSerialize["maxMemoryPercent"] = o.MaxMemoryPercent
 	}

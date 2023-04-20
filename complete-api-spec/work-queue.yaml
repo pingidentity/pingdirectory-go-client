@@ -121,6 +121,8 @@ components:
             description: >-
                 The minimum length of time that should be required to pass after dumping stack trace information for all threads before the server should be allowed to create a second dump. This will help prevent the server from dumping stack traces too frequently and eventually consuming all available disk space with stack trace log output. This option is primarily intended for debugging purposes and should generally be used under the direction of Ping Identity support.
       - $ref: '#/components/schemas/meta'
+      required:
+      - schemas
     Enumhigh-throughput-work-queueSchemaUrn:
       type: string
       enum:

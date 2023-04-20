@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **EndpointName** | **string** | Name of the new Monitoring Endpoint | 
-**Schemas** | Pointer to [**[]EnumstatsdMonitoringEndpointSchemaUrn**](EnumstatsdMonitoringEndpointSchemaUrn.md) |  | [optional] 
+**Schemas** | [**[]EnumstatsdMonitoringEndpointSchemaUrn**](EnumstatsdMonitoringEndpointSchemaUrn.md) |  | 
 **Hostname** | **string** | The name of the host where this StatsD Monitoring Endpoint should send metric data. | 
 **ServerPort** | Pointer to **int64** | Specifies the port number of the endpoint where metric data should be sent. | [optional] 
 **ConnectionType** | Pointer to [**EnummonitoringEndpointConnectionTypeProp**](EnummonitoringEndpointConnectionTypeProp.md) |  | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewAddStatsdMonitoringEndpointRequest
 
-`func NewAddStatsdMonitoringEndpointRequest(endpointName string, hostname string, enabled bool, ) *AddStatsdMonitoringEndpointRequest`
+`func NewAddStatsdMonitoringEndpointRequest(endpointName string, schemas []EnumstatsdMonitoringEndpointSchemaUrn, hostname string, enabled bool, ) *AddStatsdMonitoringEndpointRequest`
 
 NewAddStatsdMonitoringEndpointRequest instantiates a new AddStatsdMonitoringEndpointRequest object
 This constructor will assign default values to properties that have it defined,
@@ -71,11 +71,6 @@ and a boolean to check if the value has been set.
 
 SetSchemas sets Schemas field to given value.
 
-### HasSchemas
-
-`func (o *AddStatsdMonitoringEndpointRequest) HasSchemas() bool`
-
-HasSchemas returns a boolean if a field has been set.
 
 ### GetHostname
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MethodName** | **string** | Name of the new Conjur Authentication Method | 
-**Schemas** | Pointer to [**[]EnumapiKeyConjurAuthenticationMethodSchemaUrn**](EnumapiKeyConjurAuthenticationMethodSchemaUrn.md) |  | [optional] 
+**Schemas** | [**[]EnumapiKeyConjurAuthenticationMethodSchemaUrn**](EnumapiKeyConjurAuthenticationMethodSchemaUrn.md) |  | 
 **Username** | **string** | The username for the user to authenticate. | 
 **Password** | Pointer to **string** | The password for the user to authenticate. This will be used to obtain an API key for the target user. | [optional] 
 **ApiKey** | Pointer to **string** | The API key for the user to authenticate. | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewAddApiKeyConjurAuthenticationMethodRequest
 
-`func NewAddApiKeyConjurAuthenticationMethodRequest(methodName string, username string, ) *AddApiKeyConjurAuthenticationMethodRequest`
+`func NewAddApiKeyConjurAuthenticationMethodRequest(methodName string, schemas []EnumapiKeyConjurAuthenticationMethodSchemaUrn, username string, ) *AddApiKeyConjurAuthenticationMethodRequest`
 
 NewAddApiKeyConjurAuthenticationMethodRequest instantiates a new AddApiKeyConjurAuthenticationMethodRequest object
 This constructor will assign default values to properties that have it defined,
@@ -69,11 +69,6 @@ and a boolean to check if the value has been set.
 
 SetSchemas sets Schemas field to given value.
 
-### HasSchemas
-
-`func (o *AddApiKeyConjurAuthenticationMethodRequest) HasSchemas() bool`
-
-HasSchemas returns a boolean if a field has been set.
 
 ### GetUsername
 
