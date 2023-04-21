@@ -90,6 +90,8 @@ type APIClient struct {
 
 	ConstructedAttributeApi *ConstructedAttributeApiService
 
+	CorrelatedLdapDataViewApi *CorrelatedLdapDataViewApiService
+
 	CryptoManagerApi *CryptoManagerApiService
 
 	CustomLoggedStatsApi *CustomLoggedStatsApiService
@@ -145,6 +147,8 @@ type APIClient struct {
 	KeyManagerProviderApi *KeyManagerProviderApiService
 
 	KeyPairApi *KeyPairApiService
+
+	LdapCorrelationAttributePairApi *LdapCorrelationAttributePairApiService
 
 	LdapSdkDebugLoggerApi *LdapSdkDebugLoggerApiService
 
@@ -232,6 +236,8 @@ type APIClient struct {
 
 	ScimAttributeApi *ScimAttributeApiService
 
+	ScimResourceTypeApi *ScimResourceTypeApiService
+
 	ScimSchemaApi *ScimSchemaApiService
 
 	ScimSubattributeApi *ScimSubattributeApiService
@@ -314,6 +320,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.ConsentDefinitionLocalizationApi = (*ConsentDefinitionLocalizationApiService)(&c.common)
 	c.ConsentServiceApi = (*ConsentServiceApiService)(&c.common)
 	c.ConstructedAttributeApi = (*ConstructedAttributeApiService)(&c.common)
+	c.CorrelatedLdapDataViewApi = (*CorrelatedLdapDataViewApiService)(&c.common)
 	c.CryptoManagerApi = (*CryptoManagerApiService)(&c.common)
 	c.CustomLoggedStatsApi = (*CustomLoggedStatsApiService)(&c.common)
 	c.DataSecurityAuditorApi = (*DataSecurityAuditorApiService)(&c.common)
@@ -342,6 +349,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.JsonFieldConstraintsApi = (*JsonFieldConstraintsApiService)(&c.common)
 	c.KeyManagerProviderApi = (*KeyManagerProviderApiService)(&c.common)
 	c.KeyPairApi = (*KeyPairApiService)(&c.common)
+	c.LdapCorrelationAttributePairApi = (*LdapCorrelationAttributePairApiService)(&c.common)
 	c.LdapSdkDebugLoggerApi = (*LdapSdkDebugLoggerApiService)(&c.common)
 	c.LicenseApi = (*LicenseApiService)(&c.common)
 	c.LocalDbCompositeIndexApi = (*LocalDbCompositeIndexApiService)(&c.common)
@@ -385,6 +393,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.RootDseBackendApi = (*RootDseBackendApiService)(&c.common)
 	c.SaslMechanismHandlerApi = (*SaslMechanismHandlerApiService)(&c.common)
 	c.ScimAttributeApi = (*ScimAttributeApiService)(&c.common)
+	c.ScimResourceTypeApi = (*ScimResourceTypeApiService)(&c.common)
 	c.ScimSchemaApi = (*ScimSchemaApiService)(&c.common)
 	c.ScimSubattributeApi = (*ScimSubattributeApiService)(&c.common)
 	c.SearchEntryCriteriaApi = (*SearchEntryCriteriaApiService)(&c.common)
