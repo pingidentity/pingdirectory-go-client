@@ -2742,6 +2742,26 @@ func StringPointerEnumcopyLogFileRotationListenerSchemaUrn(value *EnumcopyLogFil
 	return &s
 }
 
+func (e EnumcorrelatedLdapDataViewSchemaUrn) String() string {
+	return string(e)
+}
+
+func StringSliceEnumcorrelatedLdapDataViewSchemaUrn(values []EnumcorrelatedLdapDataViewSchemaUrn) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumcorrelatedLdapDataViewSchemaUrn(value *EnumcorrelatedLdapDataViewSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumcramMd5SaslMechanismHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -7022,6 +7042,26 @@ func StringPointerEnumldapConnectionHandlerSchemaUrn(value *EnumldapConnectionHa
 	return &s
 }
 
+func (e EnumldapCorrelationAttributePairSchemaUrn) String() string {
+	return string(e)
+}
+
+func StringSliceEnumldapCorrelationAttributePairSchemaUrn(values []EnumldapCorrelationAttributePairSchemaUrn) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumldapCorrelationAttributePairSchemaUrn(value *EnumldapCorrelationAttributePairSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumldapExternalServerSchemaUrn) String() string {
 	return string(e)
 }
@@ -7062,6 +7102,26 @@ func StringPointerEnumldapMappedScimHttpServletExtensionSchemaUrn(value *Enumlda
 	return &s
 }
 
+func (e EnumldapMappingScimResourceTypeSchemaUrn) String() string {
+	return string(e)
+}
+
+func StringSliceEnumldapMappingScimResourceTypeSchemaUrn(values []EnumldapMappingScimResourceTypeSchemaUrn) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumldapMappingScimResourceTypeSchemaUrn(value *EnumldapMappingScimResourceTypeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumldapPassThroughAuthenticationHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -7075,6 +7135,26 @@ func StringSliceEnumldapPassThroughAuthenticationHandlerSchemaUrn(values []Enuml
 }
 
 func StringPointerEnumldapPassThroughAuthenticationHandlerSchemaUrn(value *EnumldapPassThroughAuthenticationHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
+func (e EnumldapPassThroughScimResourceTypeSchemaUrn) String() string {
+	return string(e)
+}
+
+func StringSliceEnumldapPassThroughScimResourceTypeSchemaUrn(values []EnumldapPassThroughScimResourceTypeSchemaUrn) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumldapPassThroughScimResourceTypeSchemaUrn(value *EnumldapPassThroughScimResourceTypeSchemaUrn) *string {
 	if value == nil {
 		return nil
 	}
@@ -12235,6 +12315,26 @@ func StringSliceEnumscimAttributeTypeProp(values []EnumscimAttributeTypeProp) []
 }
 
 func StringPointerEnumscimAttributeTypeProp(value *EnumscimAttributeTypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
+func (e EnumscimResourceTypeSchemaCheckingOptionProp) String() string {
+	return string(e)
+}
+
+func StringSliceEnumscimResourceTypeSchemaCheckingOptionProp(values []EnumscimResourceTypeSchemaCheckingOptionProp) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumscimResourceTypeSchemaCheckingOptionProp(value *EnumscimResourceTypeSchemaCheckingOptionProp) *string {
 	if value == nil {
 		return nil
 	}

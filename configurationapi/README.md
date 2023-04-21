@@ -151,6 +151,10 @@ Class | Method | HTTP request | Description
 *ConstructedAttributeApi* | [**DeleteConstructedAttribute**](docs/ConstructedAttributeApi.md#deleteconstructedattribute) | **Delete** /constructed-attributes/{constructed-attribute-name} | Delete a Constructed Attribute
 *ConstructedAttributeApi* | [**GetConstructedAttribute**](docs/ConstructedAttributeApi.md#getconstructedattribute) | **Get** /constructed-attributes/{constructed-attribute-name} | Returns a single Constructed Attribute
 *ConstructedAttributeApi* | [**UpdateConstructedAttribute**](docs/ConstructedAttributeApi.md#updateconstructedattribute) | **Patch** /constructed-attributes/{constructed-attribute-name} | Update an existing Constructed Attribute by name
+*CorrelatedLdapDataViewApi* | [**AddCorrelatedLdapDataView**](docs/CorrelatedLdapDataViewApi.md#addcorrelatedldapdataview) | **Post** /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views | Add a new Correlated LDAP Data View to the config
+*CorrelatedLdapDataViewApi* | [**DeleteCorrelatedLdapDataView**](docs/CorrelatedLdapDataViewApi.md#deletecorrelatedldapdataview) | **Delete** /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views/{correlated-ldap-data-view-name} | Delete a Correlated LDAP Data View
+*CorrelatedLdapDataViewApi* | [**GetCorrelatedLdapDataView**](docs/CorrelatedLdapDataViewApi.md#getcorrelatedldapdataview) | **Get** /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views/{correlated-ldap-data-view-name} | Returns a single Correlated LDAP Data View
+*CorrelatedLdapDataViewApi* | [**UpdateCorrelatedLdapDataView**](docs/CorrelatedLdapDataViewApi.md#updatecorrelatedldapdataview) | **Patch** /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views/{correlated-ldap-data-view-name} | Update an existing Correlated LDAP Data View by name
 *CryptoManagerApi* | [**GetCryptoManager**](docs/CryptoManagerApi.md#getcryptomanager) | **Get** /crypto-manager | Returns a single Crypto Manager
 *CryptoManagerApi* | [**UpdateCryptoManager**](docs/CryptoManagerApi.md#updatecryptomanager) | **Patch** /crypto-manager | Update an existing Crypto Manager by name
 *CustomLoggedStatsApi* | [**AddCustomLoggedStats**](docs/CustomLoggedStatsApi.md#addcustomloggedstats) | **Post** /plugin-root/plugins/{plugin-name}/custom-logged-stats | Add a new Custom Logged Stats to the config
@@ -253,6 +257,10 @@ Class | Method | HTTP request | Description
 *KeyPairApi* | [**DeleteKeyPair**](docs/KeyPairApi.md#deletekeypair) | **Delete** /key-pairs/{key-pair-name} | Delete a Key Pair
 *KeyPairApi* | [**GetKeyPair**](docs/KeyPairApi.md#getkeypair) | **Get** /key-pairs/{key-pair-name} | Returns a single Key Pair
 *KeyPairApi* | [**UpdateKeyPair**](docs/KeyPairApi.md#updatekeypair) | **Patch** /key-pairs/{key-pair-name} | Update an existing Key Pair by name
+*LdapCorrelationAttributePairApi* | [**AddLdapCorrelationAttributePair**](docs/LdapCorrelationAttributePairApi.md#addldapcorrelationattributepair) | **Post** /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views/{correlated-ldap-data-view-name}/ldap-correlation-attribute-pairs | Add a new LDAP Correlation Attribute Pair to the config
+*LdapCorrelationAttributePairApi* | [**DeleteLdapCorrelationAttributePair**](docs/LdapCorrelationAttributePairApi.md#deleteldapcorrelationattributepair) | **Delete** /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views/{correlated-ldap-data-view-name}/ldap-correlation-attribute-pairs/{ldap-correlation-attribute-pair-name} | Delete a LDAP Correlation Attribute Pair
+*LdapCorrelationAttributePairApi* | [**GetLdapCorrelationAttributePair**](docs/LdapCorrelationAttributePairApi.md#getldapcorrelationattributepair) | **Get** /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views/{correlated-ldap-data-view-name}/ldap-correlation-attribute-pairs/{ldap-correlation-attribute-pair-name} | Returns a single LDAP Correlation Attribute Pair
+*LdapCorrelationAttributePairApi* | [**UpdateLdapCorrelationAttributePair**](docs/LdapCorrelationAttributePairApi.md#updateldapcorrelationattributepair) | **Patch** /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views/{correlated-ldap-data-view-name}/ldap-correlation-attribute-pairs/{ldap-correlation-attribute-pair-name} | Update an existing LDAP Correlation Attribute Pair by name
 *LdapSdkDebugLoggerApi* | [**GetLdapSdkDebugLogger**](docs/LdapSdkDebugLoggerApi.md#getldapsdkdebuglogger) | **Get** /ldap-sdk-debug-logger | Returns a single LDAP SDK Debug Logger
 *LdapSdkDebugLoggerApi* | [**UpdateLdapSdkDebugLogger**](docs/LdapSdkDebugLoggerApi.md#updateldapsdkdebuglogger) | **Patch** /ldap-sdk-debug-logger | Update an existing LDAP SDK Debug Logger by name
 *LicenseApi* | [**GetLicense**](docs/LicenseApi.md#getlicense) | **Get** /license | Returns a single License
@@ -407,6 +415,10 @@ Class | Method | HTTP request | Description
 *ScimAttributeApi* | [**DeleteScimAttribute**](docs/ScimAttributeApi.md#deletescimattribute) | **Delete** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name} | Delete a SCIM Attribute
 *ScimAttributeApi* | [**GetScimAttribute**](docs/ScimAttributeApi.md#getscimattribute) | **Get** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name} | Returns a single SCIM Attribute
 *ScimAttributeApi* | [**UpdateScimAttribute**](docs/ScimAttributeApi.md#updatescimattribute) | **Patch** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name} | Update an existing SCIM Attribute by name
+*ScimResourceTypeApi* | [**AddScimResourceType**](docs/ScimResourceTypeApi.md#addscimresourcetype) | **Post** /scim-resource-types | Add a new SCIM Resource Type to the config
+*ScimResourceTypeApi* | [**DeleteScimResourceType**](docs/ScimResourceTypeApi.md#deletescimresourcetype) | **Delete** /scim-resource-types/{scim-resource-type-name} | Delete a SCIM Resource Type
+*ScimResourceTypeApi* | [**GetScimResourceType**](docs/ScimResourceTypeApi.md#getscimresourcetype) | **Get** /scim-resource-types/{scim-resource-type-name} | Returns a single SCIM Resource Type
+*ScimResourceTypeApi* | [**UpdateScimResourceType**](docs/ScimResourceTypeApi.md#updatescimresourcetype) | **Patch** /scim-resource-types/{scim-resource-type-name} | Update an existing SCIM Resource Type by name
 *ScimSchemaApi* | [**AddScimSchema**](docs/ScimSchemaApi.md#addscimschema) | **Post** /scim-schemas | Add a new SCIM Schema to the config
 *ScimSchemaApi* | [**DeleteScimSchema**](docs/ScimSchemaApi.md#deletescimschema) | **Delete** /scim-schemas/{scim-schema-name} | Delete a SCIM Schema
 *ScimSchemaApi* | [**GetScimSchema**](docs/ScimSchemaApi.md#getscimschema) | **Get** /scim-schemas/{scim-schema-name} | Returns a single SCIM Schema
@@ -594,6 +606,8 @@ Class | Method | HTTP request | Description
  - [AddConstructedAttributeRequestAllOf](docs/AddConstructedAttributeRequestAllOf.md)
  - [AddConstructedVirtualAttributeRequest](docs/AddConstructedVirtualAttributeRequest.md)
  - [AddCopyLogFileRotationListenerRequest](docs/AddCopyLogFileRotationListenerRequest.md)
+ - [AddCorrelatedLdapDataViewRequest](docs/AddCorrelatedLdapDataViewRequest.md)
+ - [AddCorrelatedLdapDataViewRequestAllOf](docs/AddCorrelatedLdapDataViewRequestAllOf.md)
  - [AddCryptPasswordStorageSchemeRequest](docs/AddCryptPasswordStorageSchemeRequest.md)
  - [AddCustomLoggedStatsRequest](docs/AddCustomLoggedStatsRequest.md)
  - [AddCustomLoggedStatsRequestAllOf](docs/AddCustomLoggedStatsRequestAllOf.md)
@@ -749,10 +763,15 @@ Class | Method | HTTP request | Description
  - [AddKeyPairRequestAllOf](docs/AddKeyPairRequestAllOf.md)
  - [AddLastAccessTimeUncachedEntryCriteriaRequest](docs/AddLastAccessTimeUncachedEntryCriteriaRequest.md)
  - [AddLdapConnectionHandlerRequest](docs/AddLdapConnectionHandlerRequest.md)
+ - [AddLdapCorrelationAttributePairRequest](docs/AddLdapCorrelationAttributePairRequest.md)
+ - [AddLdapCorrelationAttributePairRequestAllOf](docs/AddLdapCorrelationAttributePairRequestAllOf.md)
  - [AddLdapExternalServerRequest](docs/AddLdapExternalServerRequest.md)
  - [AddLdapMappedScimHttpServletExtensionRequest](docs/AddLdapMappedScimHttpServletExtensionRequest.md)
+ - [AddLdapMappingScimResourceTypeRequest](docs/AddLdapMappingScimResourceTypeRequest.md)
  - [AddLdapPassThroughAuthenticationHandlerRequest](docs/AddLdapPassThroughAuthenticationHandlerRequest.md)
  - [AddLdapPassThroughAuthenticationHandlerRequestAllOf](docs/AddLdapPassThroughAuthenticationHandlerRequestAllOf.md)
+ - [AddLdapPassThroughScimResourceTypeRequest](docs/AddLdapPassThroughScimResourceTypeRequest.md)
+ - [AddLdapPassThroughScimResourceTypeRequestAllOf](docs/AddLdapPassThroughScimResourceTypeRequestAllOf.md)
  - [AddLdifConnectionHandlerRequest](docs/AddLdifConnectionHandlerRequest.md)
  - [AddLdifExportRecurringTaskRequest](docs/AddLdifExportRecurringTaskRequest.md)
  - [AddLeaveLockdownModeRecurringTaskRequest](docs/AddLeaveLockdownModeRecurringTaskRequest.md)
@@ -882,6 +901,8 @@ Class | Method | HTTP request | Description
  - [AddSaslMechanismHandlerRequest](docs/AddSaslMechanismHandlerRequest.md)
  - [AddScimAttributeRequest](docs/AddScimAttributeRequest.md)
  - [AddScimAttributeRequestAllOf](docs/AddScimAttributeRequestAllOf.md)
+ - [AddScimResourceType200Response](docs/AddScimResourceType200Response.md)
+ - [AddScimResourceTypeRequest](docs/AddScimResourceTypeRequest.md)
  - [AddScimSchemaRequest](docs/AddScimSchemaRequest.md)
  - [AddScimSchemaRequestAllOf](docs/AddScimSchemaRequestAllOf.md)
  - [AddScimSubattributeRequest](docs/AddScimSubattributeRequest.md)
@@ -1217,6 +1238,8 @@ Class | Method | HTTP request | Description
  - [ConstructedVirtualAttributeShared](docs/ConstructedVirtualAttributeShared.md)
  - [CopyLogFileRotationListenerResponse](docs/CopyLogFileRotationListenerResponse.md)
  - [CopyLogFileRotationListenerShared](docs/CopyLogFileRotationListenerShared.md)
+ - [CorrelatedLdapDataViewResponse](docs/CorrelatedLdapDataViewResponse.md)
+ - [CorrelatedLdapDataViewShared](docs/CorrelatedLdapDataViewShared.md)
  - [CramMd5SaslMechanismHandlerResponse](docs/CramMd5SaslMechanismHandlerResponse.md)
  - [CramMd5SaslMechanismHandlerResponseAllOf](docs/CramMd5SaslMechanismHandlerResponseAllOf.md)
  - [CryptPasswordStorageSchemeResponse](docs/CryptPasswordStorageSchemeResponse.md)
@@ -1463,6 +1486,7 @@ Class | Method | HTTP request | Description
  - [EnumconstructedAttributeSchemaUrn](docs/EnumconstructedAttributeSchemaUrn.md)
  - [EnumconstructedVirtualAttributeSchemaUrn](docs/EnumconstructedVirtualAttributeSchemaUrn.md)
  - [EnumcopyLogFileRotationListenerSchemaUrn](docs/EnumcopyLogFileRotationListenerSchemaUrn.md)
+ - [EnumcorrelatedLdapDataViewSchemaUrn](docs/EnumcorrelatedLdapDataViewSchemaUrn.md)
  - [EnumcramMd5SaslMechanismHandlerSchemaUrn](docs/EnumcramMd5SaslMechanismHandlerSchemaUrn.md)
  - [EnumcryptPasswordStorageSchemeSchemaUrn](docs/EnumcryptPasswordStorageSchemeSchemaUrn.md)
  - [EnumcryptoManagerSchemaUrn](docs/EnumcryptoManagerSchemaUrn.md)
@@ -1676,9 +1700,12 @@ Class | Method | HTTP request | Description
  - [EnumlastAccessTimeUncachedEntryCriteriaSchemaUrn](docs/EnumlastAccessTimeUncachedEntryCriteriaSchemaUrn.md)
  - [EnumlastModPluginSchemaUrn](docs/EnumlastModPluginSchemaUrn.md)
  - [EnumldapConnectionHandlerSchemaUrn](docs/EnumldapConnectionHandlerSchemaUrn.md)
+ - [EnumldapCorrelationAttributePairSchemaUrn](docs/EnumldapCorrelationAttributePairSchemaUrn.md)
  - [EnumldapExternalServerSchemaUrn](docs/EnumldapExternalServerSchemaUrn.md)
  - [EnumldapMappedScimHttpServletExtensionSchemaUrn](docs/EnumldapMappedScimHttpServletExtensionSchemaUrn.md)
+ - [EnumldapMappingScimResourceTypeSchemaUrn](docs/EnumldapMappingScimResourceTypeSchemaUrn.md)
  - [EnumldapPassThroughAuthenticationHandlerSchemaUrn](docs/EnumldapPassThroughAuthenticationHandlerSchemaUrn.md)
+ - [EnumldapPassThroughScimResourceTypeSchemaUrn](docs/EnumldapPassThroughScimResourceTypeSchemaUrn.md)
  - [EnumldapResultCodeTrackerPluginSchemaUrn](docs/EnumldapResultCodeTrackerPluginSchemaUrn.md)
  - [EnumldapSdkDebugLoggerCompressionMechanismProp](docs/EnumldapSdkDebugLoggerCompressionMechanismProp.md)
  - [EnumldapSdkDebugLoggerDebugLevelProp](docs/EnumldapSdkDebugLoggerDebugLevelProp.md)
@@ -1937,6 +1964,7 @@ Class | Method | HTTP request | Description
  - [EnumscimAttributeReturnedProp](docs/EnumscimAttributeReturnedProp.md)
  - [EnumscimAttributeSchemaUrn](docs/EnumscimAttributeSchemaUrn.md)
  - [EnumscimAttributeTypeProp](docs/EnumscimAttributeTypeProp.md)
+ - [EnumscimResourceTypeSchemaCheckingOptionProp](docs/EnumscimResourceTypeSchemaCheckingOptionProp.md)
  - [EnumscimSchemaSchemaUrn](docs/EnumscimSchemaSchemaUrn.md)
  - [EnumscimSubattributeMutabilityProp](docs/EnumscimSubattributeMutabilityProp.md)
  - [EnumscimSubattributeReturnedProp](docs/EnumscimSubattributeReturnedProp.md)
@@ -2341,13 +2369,20 @@ Class | Method | HTTP request | Description
  - [LastModPluginResponseAllOf](docs/LastModPluginResponseAllOf.md)
  - [LdapConnectionHandlerResponse](docs/LdapConnectionHandlerResponse.md)
  - [LdapConnectionHandlerShared](docs/LdapConnectionHandlerShared.md)
+ - [LdapCorrelationAttributePairResponse](docs/LdapCorrelationAttributePairResponse.md)
+ - [LdapCorrelationAttributePairShared](docs/LdapCorrelationAttributePairShared.md)
  - [LdapExternalServerResponse](docs/LdapExternalServerResponse.md)
  - [LdapExternalServerShared](docs/LdapExternalServerShared.md)
  - [LdapMappedScimHttpServletExtensionResponse](docs/LdapMappedScimHttpServletExtensionResponse.md)
  - [LdapMappedScimHttpServletExtensionShared](docs/LdapMappedScimHttpServletExtensionShared.md)
+ - [LdapMappingScimResourceTypeResponse](docs/LdapMappingScimResourceTypeResponse.md)
+ - [LdapMappingScimResourceTypeShared](docs/LdapMappingScimResourceTypeShared.md)
  - [LdapPassThroughAuthenticationHandlerResponse](docs/LdapPassThroughAuthenticationHandlerResponse.md)
  - [LdapPassThroughAuthenticationHandlerResponseAllOf](docs/LdapPassThroughAuthenticationHandlerResponseAllOf.md)
  - [LdapPassThroughAuthenticationHandlerShared](docs/LdapPassThroughAuthenticationHandlerShared.md)
+ - [LdapPassThroughScimResourceTypeResponse](docs/LdapPassThroughScimResourceTypeResponse.md)
+ - [LdapPassThroughScimResourceTypeResponseAllOf](docs/LdapPassThroughScimResourceTypeResponseAllOf.md)
+ - [LdapPassThroughScimResourceTypeShared](docs/LdapPassThroughScimResourceTypeShared.md)
  - [LdapResultCodeTrackerPluginResponse](docs/LdapResultCodeTrackerPluginResponse.md)
  - [LdapResultCodeTrackerPluginResponseAllOf](docs/LdapResultCodeTrackerPluginResponseAllOf.md)
  - [LdapSdkDebugLoggerResponse](docs/LdapSdkDebugLoggerResponse.md)
