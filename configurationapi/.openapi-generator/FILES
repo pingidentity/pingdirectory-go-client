@@ -22,6 +22,7 @@ api_consent_definition.go
 api_consent_definition_localization.go
 api_consent_service.go
 api_constructed_attribute.go
+api_correlated_ldap_data_view.go
 api_crypto_manager.go
 api_custom_logged_stats.go
 api_data_security_auditor.go
@@ -50,6 +51,7 @@ api_json_attribute_constraints.go
 api_json_field_constraints.go
 api_key_manager_provider.go
 api_key_pair.go
+api_ldap_correlation_attribute_pair.go
 api_ldap_sdk_debug_logger.go
 api_license.go
 api_local_db_composite_index.go
@@ -92,6 +94,7 @@ api_root_dn_user.go
 api_root_dse_backend.go
 api_sasl_mechanism_handler.go
 api_scim_attribute.go
+api_scim_resource_type.go
 api_scim_schema.go
 api_scim_subattribute.go
 api_search_entry_criteria.go
@@ -195,6 +198,7 @@ docs/AddConsoleJsonHttpOperationLogPublisherRequest.md
 docs/AddConstructedAttributeRequest.md
 docs/AddConstructedVirtualAttributeRequest.md
 docs/AddCopyLogFileRotationListenerRequest.md
+docs/AddCorrelatedLdapDataViewRequest.md
 docs/AddCryptPasswordStorageSchemeRequest.md
 docs/AddCustomLoggedStatsRequest.md
 docs/AddDataSecurityAuditor200Response.md
@@ -318,9 +322,12 @@ docs/AddKeyManagerProviderRequest.md
 docs/AddKeyPairRequest.md
 docs/AddLastAccessTimeUncachedEntryCriteriaRequest.md
 docs/AddLdapConnectionHandlerRequest.md
+docs/AddLdapCorrelationAttributePairRequest.md
 docs/AddLdapExternalServerRequest.md
 docs/AddLdapMappedScimHttpServletExtensionRequest.md
+docs/AddLdapMappingScimResourceTypeRequest.md
 docs/AddLdapPassThroughAuthenticationHandlerRequest.md
+docs/AddLdapPassThroughScimResourceTypeRequest.md
 docs/AddLdifConnectionHandlerRequest.md
 docs/AddLdifExportRecurringTaskRequest.md
 docs/AddLeaveLockdownModeRecurringTaskRequest.md
@@ -428,6 +435,8 @@ docs/AddRootDseRequestCriteriaRequest.md
 docs/AddSaslMechanismHandler200Response.md
 docs/AddSaslMechanismHandlerRequest.md
 docs/AddScimAttributeRequest.md
+docs/AddScimResourceType200Response.md
+docs/AddScimResourceTypeRequest.md
 docs/AddScimSchemaRequest.md
 docs/AddScimSubattributeRequest.md
 docs/AddScryptPasswordStorageSchemeRequest.md
@@ -652,6 +661,8 @@ docs/ConstructedAttributeApi.md
 docs/ConstructedAttributeResponse.md
 docs/ConstructedVirtualAttributeResponse.md
 docs/CopyLogFileRotationListenerResponse.md
+docs/CorrelatedLdapDataViewApi.md
+docs/CorrelatedLdapDataViewResponse.md
 docs/CramMd5SaslMechanismHandlerResponse.md
 docs/CryptPasswordStorageSchemeResponse.md
 docs/CryptoManagerApi.md
@@ -844,6 +855,7 @@ docs/EnumconsoleWebApplicationExtensionSchemaUrn.md
 docs/EnumconstructedAttributeSchemaUrn.md
 docs/EnumconstructedVirtualAttributeSchemaUrn.md
 docs/EnumcopyLogFileRotationListenerSchemaUrn.md
+docs/EnumcorrelatedLdapDataViewSchemaUrn.md
 docs/EnumcramMd5SaslMechanismHandlerSchemaUrn.md
 docs/EnumcryptPasswordStorageSchemeSchemaUrn.md
 docs/EnumcryptoManagerSchemaUrn.md
@@ -1045,9 +1057,12 @@ docs/EnumlastAccessTimePluginSchemaUrn.md
 docs/EnumlastAccessTimeUncachedEntryCriteriaSchemaUrn.md
 docs/EnumlastModPluginSchemaUrn.md
 docs/EnumldapConnectionHandlerSchemaUrn.md
+docs/EnumldapCorrelationAttributePairSchemaUrn.md
 docs/EnumldapExternalServerSchemaUrn.md
 docs/EnumldapMappedScimHttpServletExtensionSchemaUrn.md
+docs/EnumldapMappingScimResourceTypeSchemaUrn.md
 docs/EnumldapPassThroughAuthenticationHandlerSchemaUrn.md
+docs/EnumldapPassThroughScimResourceTypeSchemaUrn.md
 docs/EnumldapResultCodeTrackerPluginSchemaUrn.md
 docs/EnumldapSdkDebugLoggerCompressionMechanismProp.md
 docs/EnumldapSdkDebugLoggerDebugLevelProp.md
@@ -1302,6 +1317,7 @@ docs/EnumscimAttributeMutabilityProp.md
 docs/EnumscimAttributeReturnedProp.md
 docs/EnumscimAttributeSchemaUrn.md
 docs/EnumscimAttributeTypeProp.md
+docs/EnumscimResourceTypeSchemaCheckingOptionProp.md
 docs/EnumscimSchemaSchemaUrn.md
 docs/EnumscimSubattributeMutabilityProp.md
 docs/EnumscimSubattributeReturnedProp.md
@@ -1598,9 +1614,13 @@ docs/LastAccessTimePluginResponse.md
 docs/LastAccessTimeUncachedEntryCriteriaResponse.md
 docs/LastModPluginResponse.md
 docs/LdapConnectionHandlerResponse.md
+docs/LdapCorrelationAttributePairApi.md
+docs/LdapCorrelationAttributePairResponse.md
 docs/LdapExternalServerResponse.md
 docs/LdapMappedScimHttpServletExtensionResponse.md
+docs/LdapMappingScimResourceTypeResponse.md
 docs/LdapPassThroughAuthenticationHandlerResponse.md
+docs/LdapPassThroughScimResourceTypeResponse.md
 docs/LdapResultCodeTrackerPluginResponse.md
 docs/LdapSdkDebugLoggerApi.md
 docs/LdapSdkDebugLoggerResponse.md
@@ -1758,6 +1778,7 @@ docs/SchemaBackendResponse.md
 docs/Scim2HttpServletExtensionResponse.md
 docs/ScimAttributeApi.md
 docs/ScimAttributeResponse.md
+docs/ScimResourceTypeApi.md
 docs/ScimSchemaApi.md
 docs/ScimSchemaResponse.md
 docs/ScimSubattributeApi.md
@@ -1989,6 +2010,7 @@ model_add_console_json_http_operation_log_publisher_request.go
 model_add_constructed_attribute_request.go
 model_add_constructed_virtual_attribute_request.go
 model_add_copy_log_file_rotation_listener_request.go
+model_add_correlated_ldap_data_view_request.go
 model_add_crypt_password_storage_scheme_request.go
 model_add_custom_logged_stats_request.go
 model_add_data_security_auditor_200_response.go
@@ -2112,9 +2134,12 @@ model_add_key_manager_provider_request.go
 model_add_key_pair_request.go
 model_add_last_access_time_uncached_entry_criteria_request.go
 model_add_ldap_connection_handler_request.go
+model_add_ldap_correlation_attribute_pair_request.go
 model_add_ldap_external_server_request.go
 model_add_ldap_mapped_scim_http_servlet_extension_request.go
+model_add_ldap_mapping_scim_resource_type_request.go
 model_add_ldap_pass_through_authentication_handler_request.go
+model_add_ldap_pass_through_scim_resource_type_request.go
 model_add_ldif_connection_handler_request.go
 model_add_ldif_export_recurring_task_request.go
 model_add_leave_lockdown_mode_recurring_task_request.go
@@ -2222,6 +2247,8 @@ model_add_root_dse_request_criteria_request.go
 model_add_sasl_mechanism_handler_200_response.go
 model_add_sasl_mechanism_handler_request.go
 model_add_scim_attribute_request.go
+model_add_scim_resource_type_200_response.go
+model_add_scim_resource_type_request.go
 model_add_scim_schema_request.go
 model_add_scim_subattribute_request.go
 model_add_scrypt_password_storage_scheme_request.go
@@ -2428,6 +2455,7 @@ model_console_web_application_extension_response.go
 model_constructed_attribute_response.go
 model_constructed_virtual_attribute_response.go
 model_copy_log_file_rotation_listener_response.go
+model_correlated_ldap_data_view_response.go
 model_cram_md5_sasl_mechanism_handler_response.go
 model_crypt_password_storage_scheme_response.go
 model_crypto_manager_response.go
@@ -2609,6 +2637,7 @@ model_enumconsole_web_application_extension_schema_urn.go
 model_enumconstructed_attribute_schema_urn.go
 model_enumconstructed_virtual_attribute_schema_urn.go
 model_enumcopy_log_file_rotation_listener_schema_urn.go
+model_enumcorrelated_ldap_data_view_schema_urn.go
 model_enumcram_md5_sasl_mechanism_handler_schema_urn.go
 model_enumcrypt_password_storage_scheme_schema_urn.go
 model_enumcrypto_manager_schema_urn.go
@@ -2810,9 +2839,12 @@ model_enumlast_access_time_plugin_schema_urn.go
 model_enumlast_access_time_uncached_entry_criteria_schema_urn.go
 model_enumlast_mod_plugin_schema_urn.go
 model_enumldap_connection_handler_schema_urn.go
+model_enumldap_correlation_attribute_pair_schema_urn.go
 model_enumldap_external_server_schema_urn.go
 model_enumldap_mapped_scim_http_servlet_extension_schema_urn.go
+model_enumldap_mapping_scim_resource_type_schema_urn.go
 model_enumldap_pass_through_authentication_handler_schema_urn.go
+model_enumldap_pass_through_scim_resource_type_schema_urn.go
 model_enumldap_result_code_tracker_plugin_schema_urn.go
 model_enumldap_sdk_debug_logger_compression_mechanism_prop.go
 model_enumldap_sdk_debug_logger_debug_level_prop.go
@@ -3067,6 +3099,7 @@ model_enumscim_attribute_mutability_prop.go
 model_enumscim_attribute_returned_prop.go
 model_enumscim_attribute_schema_urn.go
 model_enumscim_attribute_type_prop.go
+model_enumscim_resource_type_schema_checking_option_prop.go
 model_enumscim_schema_schema_urn.go
 model_enumscim_subattribute_mutability_prop.go
 model_enumscim_subattribute_returned_prop.go
@@ -3346,9 +3379,12 @@ model_last_access_time_plugin_response.go
 model_last_access_time_uncached_entry_criteria_response.go
 model_last_mod_plugin_response.go
 model_ldap_connection_handler_response.go
+model_ldap_correlation_attribute_pair_response.go
 model_ldap_external_server_response.go
 model_ldap_mapped_scim_http_servlet_extension_response.go
+model_ldap_mapping_scim_resource_type_response.go
 model_ldap_pass_through_authentication_handler_response.go
+model_ldap_pass_through_scim_resource_type_response.go
 model_ldap_result_code_tracker_plugin_response.go
 model_ldap_sdk_debug_logger_response.go
 model_ldap_server_instance_listener_response.go
@@ -3619,6 +3655,7 @@ test/api_consent_definition_localization_test.go
 test/api_consent_definition_test.go
 test/api_consent_service_test.go
 test/api_constructed_attribute_test.go
+test/api_correlated_ldap_data_view_test.go
 test/api_crypto_manager_test.go
 test/api_custom_logged_stats_test.go
 test/api_data_security_auditor_test.go
@@ -3647,6 +3684,7 @@ test/api_json_attribute_constraints_test.go
 test/api_json_field_constraints_test.go
 test/api_key_manager_provider_test.go
 test/api_key_pair_test.go
+test/api_ldap_correlation_attribute_pair_test.go
 test/api_ldap_sdk_debug_logger_test.go
 test/api_license_test.go
 test/api_local_db_composite_index_test.go
@@ -3689,6 +3727,7 @@ test/api_root_dn_user_test.go
 test/api_root_dse_backend_test.go
 test/api_sasl_mechanism_handler_test.go
 test/api_scim_attribute_test.go
+test/api_scim_resource_type_test.go
 test/api_scim_schema_test.go
 test/api_scim_subattribute_test.go
 test/api_search_entry_criteria_test.go

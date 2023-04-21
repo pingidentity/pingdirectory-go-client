@@ -1,0 +1,887 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the SCIM Resource Type config object
+  title: PingData SCIM Resource Type Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-91/pd_ds_use_config_api
+tags:
+- description: Access scim-resource-types
+  name: scim-resource-type
+paths:
+  /scim-resource-types:
+    post:
+      summary: Add a new SCIM Resource Type to the config
+      operationId: add-scim-resource-type
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - $ref: '#/components/schemas/add-ldap-pass-through-scim-resource-type-request'
+              - $ref: '#/components/schemas/add-ldap-mapping-scim-resource-type-request'
+        description: Create a new SCIM Resource Type in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ldap-pass-through-scim-resource-type-response'
+                - $ref: '#/components/schemas/ldap-mapping-scim-resource-type-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The SCIM Resource Type already exists
+      security:
+      - basicAuth: []
+      tags:
+      - scim-resource-type
+  /scim-resource-types/{scim-resource-type-name}:
+    delete:
+      summary: Delete a SCIM Resource Type
+      operationId: delete-scim-resource-type
+      parameters:
+      - description: Name of the SCIM Resource Type
+        explode: false
+        in: path
+        name: scim-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The SCIM Resource Type does not exist
+        "409":
+          description: The SCIM Resource Type cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - scim-resource-type
+    get:
+      summary: Returns a single SCIM Resource Type
+      operationId: get-scim-resource-type
+      parameters:
+      - description: Name of the SCIM Resource Type
+        explode: false
+        in: path
+        name: scim-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ldap-pass-through-scim-resource-type-response'
+                - $ref: '#/components/schemas/ldap-mapping-scim-resource-type-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The SCIM Resource Type does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - scim-resource-type
+    patch:
+      summary: Update an existing SCIM Resource Type by name
+      operationId: update-scim-resource-type
+      parameters:
+      - description: Name of the SCIM Resource Type
+        explode: false
+        in: path
+        name: scim-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing SCIM Resource Type
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ldap-pass-through-scim-resource-type-response'
+                - $ref: '#/components/schemas/ldap-mapping-scim-resource-type-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The SCIM Resource Type does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - scim-resource-type
+  /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views:
+    post:
+      summary: Add a new Correlated LDAP Data View to the config
+      operationId: add-correlated-ldap-data-view
+      parameters:
+      - description: Name of the SCIM Resource Type
+        explode: false
+        in: path
+        name: scim-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-correlated-ldap-data-view-request'
+        description: Create a new Correlated LDAP Data View in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/correlated-ldap-data-view-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Correlated LDAP Data View already exists
+      security:
+      - basicAuth: []
+      tags:
+      - correlated-ldap-data-view
+  /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views/{correlated-ldap-data-view-name}:
+    delete:
+      summary: Delete a Correlated LDAP Data View
+      operationId: delete-correlated-ldap-data-view
+      parameters:
+      - description: Name of the Correlated LDAP Data View
+        explode: false
+        in: path
+        name: correlated-ldap-data-view-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the SCIM Resource Type
+        explode: false
+        in: path
+        name: scim-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Correlated LDAP Data View does not exist
+        "409":
+          description: The Correlated LDAP Data View cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - correlated-ldap-data-view
+    get:
+      summary: Returns a single Correlated LDAP Data View
+      operationId: get-correlated-ldap-data-view
+      parameters:
+      - description: Name of the Correlated LDAP Data View
+        explode: false
+        in: path
+        name: correlated-ldap-data-view-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the SCIM Resource Type
+        explode: false
+        in: path
+        name: scim-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/correlated-ldap-data-view-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Correlated LDAP Data View does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - correlated-ldap-data-view
+    patch:
+      summary: Update an existing Correlated LDAP Data View by name
+      operationId: update-correlated-ldap-data-view
+      parameters:
+      - description: Name of the Correlated LDAP Data View
+        explode: false
+        in: path
+        name: correlated-ldap-data-view-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the SCIM Resource Type
+        explode: false
+        in: path
+        name: scim-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing Correlated LDAP Data View
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/correlated-ldap-data-view-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Correlated LDAP Data View does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - correlated-ldap-data-view
+  /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views/{correlated-ldap-data-view-name}/ldap-correlation-attribute-pairs:
+    post:
+      summary: Add a new LDAP Correlation Attribute Pair to the config
+      operationId: add-ldap-correlation-attribute-pair
+      parameters:
+      - description: Name of the Correlated LDAP Data View
+        explode: false
+        in: path
+        name: correlated-ldap-data-view-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the SCIM Resource Type
+        explode: false
+        in: path
+        name: scim-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-ldap-correlation-attribute-pair-request'
+        description: Create a new LDAP Correlation Attribute Pair in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ldap-correlation-attribute-pair-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The LDAP Correlation Attribute Pair already exists
+      security:
+      - basicAuth: []
+      tags:
+      - ldap-correlation-attribute-pair
+  /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views/{correlated-ldap-data-view-name}/ldap-correlation-attribute-pairs/{ldap-correlation-attribute-pair-name}:
+    delete:
+      summary: Delete a LDAP Correlation Attribute Pair
+      operationId: delete-ldap-correlation-attribute-pair
+      parameters:
+      - description: Name of the LDAP Correlation Attribute Pair
+        explode: false
+        in: path
+        name: ldap-correlation-attribute-pair-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Correlated LDAP Data View
+        explode: false
+        in: path
+        name: correlated-ldap-data-view-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the SCIM Resource Type
+        explode: false
+        in: path
+        name: scim-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The LDAP Correlation Attribute Pair does not exist
+        "409":
+          description: The LDAP Correlation Attribute Pair cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - ldap-correlation-attribute-pair
+    get:
+      summary: Returns a single LDAP Correlation Attribute Pair
+      operationId: get-ldap-correlation-attribute-pair
+      parameters:
+      - description: Name of the LDAP Correlation Attribute Pair
+        explode: false
+        in: path
+        name: ldap-correlation-attribute-pair-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Correlated LDAP Data View
+        explode: false
+        in: path
+        name: correlated-ldap-data-view-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the SCIM Resource Type
+        explode: false
+        in: path
+        name: scim-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ldap-correlation-attribute-pair-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The LDAP Correlation Attribute Pair does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - ldap-correlation-attribute-pair
+    patch:
+      summary: Update an existing LDAP Correlation Attribute Pair by name
+      operationId: update-ldap-correlation-attribute-pair
+      parameters:
+      - description: Name of the LDAP Correlation Attribute Pair
+        explode: false
+        in: path
+        name: ldap-correlation-attribute-pair-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Correlated LDAP Data View
+        explode: false
+        in: path
+        name: correlated-ldap-data-view-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the SCIM Resource Type
+        explode: false
+        in: path
+        name: scim-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing LDAP Correlation Attribute Pair
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ldap-correlation-attribute-pair-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The LDAP Correlation Attribute Pair does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - ldap-correlation-attribute-pair
+components:
+  schemas:
+    Enumscim-resource-type-schemaCheckingOptionProp:
+      type: string
+      enum:
+      - "allow-undefined-attributes"
+      - "allow-undefined-sub-attributes"
+      description: >-
+          Options to alter the way schema checking is performed during create or modify requests.
+    add-ldap-pass-through-scim-resource-type-request:
+      allOf:
+      - type: object
+        properties:
+          typeName:
+            type: string
+            description: >-
+                Name of the new SCIM Resource Type
+      - $ref: '#/components/schemas/ldap-pass-through-scim-resource-type-shared'
+      required:
+      - typeName
+    ldap-pass-through-scim-resource-type-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the SCIM Resource Type
+      - $ref: '#/components/schemas/ldap-pass-through-scim-resource-type-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    ldap-pass-through-scim-resource-type-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumldap-pass-through-scim-resource-typeSchemaUrn'
+        description:
+          type: string
+          description: >-
+              A description for this SCIM Resource Type
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the SCIM Resource Type is enabled.
+        endpoint:
+          type: string
+          description: >-
+              The HTTP addressable endpoint of this SCIM Resource Type relative to the '/scim/v2' base URL. Do not include a leading '/'.
+        lookthroughLimit:
+          type: integer
+          description: >-
+              The maximum number of resources that the SCIM Resource Type should "look through" in the course of processing a search request.
+        schemaCheckingOption:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumscim-resource-type-schemaCheckingOptionProp'
+        structuralLDAPObjectclass:
+          type: string
+          description: >-
+              Specifies the LDAP structural object class that should be exposed by this SCIM Resource Type.
+        auxiliaryLDAPObjectclass:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies an auxiliary LDAP object class that should be exposed by this SCIM Resource Type.
+        includeBaseDN:
+          type: string
+          description: >-
+              Specifies the base DN of the branch of the LDAP directory that can be accessed by this SCIM Resource Type.
+        includeFilter:
+          type: array
+          items:
+            type: string
+          description: >-
+              The set of LDAP filters that define the LDAP entries that should be included in this SCIM Resource Type.
+        includeOperationalAttribute:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies the set of operational LDAP attributes to be provided by this SCIM Resource Type.
+        createDNPattern:
+          type: string
+          description: >-
+              Specifies the template to use for the DN when creating new entries.
+      required:
+      - schemas
+      - enabled
+      - endpoint
+    Enumldap-pass-through-scim-resource-typeSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:scim-resource-type:ldap-pass-through"
+    add-ldap-mapping-scim-resource-type-request:
+      allOf:
+      - type: object
+        properties:
+          typeName:
+            type: string
+            description: >-
+                Name of the new SCIM Resource Type
+      - $ref: '#/components/schemas/ldap-mapping-scim-resource-type-shared'
+      required:
+      - typeName
+    ldap-mapping-scim-resource-type-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the SCIM Resource Type
+      - $ref: '#/components/schemas/ldap-mapping-scim-resource-type-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    ldap-mapping-scim-resource-type-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumldap-mapping-scim-resource-typeSchemaUrn'
+        coreSchema:
+          type: string
+          description: >-
+              The core schema enforced on core attributes at the top level of a SCIM resource representation exposed by thisMapping SCIM Resource Type.
+        requiredSchemaExtension:
+          type: array
+          items:
+            type: string
+          description: >-
+              Required additive schemas that are enforced on extension attributes in a SCIM resource representation for this Mapping SCIM Resource Type.
+        optionalSchemaExtension:
+          type: array
+          items:
+            type: string
+          description: >-
+              Optional additive schemas that are enforced on extension attributes in a SCIM resource representation for this Mapping SCIM Resource Type.
+        description:
+          type: string
+          description: >-
+              A description for this SCIM Resource Type
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the SCIM Resource Type is enabled.
+        endpoint:
+          type: string
+          description: >-
+              The HTTP addressable endpoint of this SCIM Resource Type relative to the '/scim/v2' base URL. Do not include a leading '/'.
+        lookthroughLimit:
+          type: integer
+          description: >-
+              The maximum number of resources that the SCIM Resource Type should "look through" in the course of processing a search request.
+        schemaCheckingOption:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumscim-resource-type-schemaCheckingOptionProp'
+        structuralLDAPObjectclass:
+          type: string
+          description: >-
+              Specifies the LDAP structural object class that should be exposed by this SCIM Resource Type.
+        auxiliaryLDAPObjectclass:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies an auxiliary LDAP object class that should be exposed by this SCIM Resource Type.
+        includeBaseDN:
+          type: string
+          description: >-
+              Specifies the base DN of the branch of the LDAP directory that can be accessed by this SCIM Resource Type.
+        includeFilter:
+          type: array
+          items:
+            type: string
+          description: >-
+              The set of LDAP filters that define the LDAP entries that should be included in this SCIM Resource Type.
+        includeOperationalAttribute:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies the set of operational LDAP attributes to be provided by this SCIM Resource Type.
+        createDNPattern:
+          type: string
+          description: >-
+              Specifies the template to use for the DN when creating new entries.
+      required:
+      - schemas
+      - coreSchema
+      - enabled
+      - endpoint
+    Enumldap-mapping-scim-resource-typeSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:scim-resource-type:ldap-mapping"
+    add-correlated-ldap-data-view-request:
+      allOf:
+      - type: object
+        properties:
+          viewName:
+            type: string
+            description: >-
+                Name of the new Correlated LDAP Data View
+      - $ref: '#/components/schemas/correlated-ldap-data-view-shared'
+      required:
+      - viewName
+    correlated-ldap-data-view-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the SCIM Resource Type
+      - $ref: '#/components/schemas/correlated-ldap-data-view-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    correlated-ldap-data-view-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumcorrelated-ldap-data-viewSchemaUrn'
+        structuralLDAPObjectclass:
+          type: string
+          description: >-
+              Specifies the LDAP structural object class that should be exposed by this Correlated LDAP Data View.
+        auxiliaryLDAPObjectclass:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies an auxiliary LDAP object class that should be exposed by this Correlated LDAP Data View.
+        includeBaseDN:
+          type: string
+          description: >-
+              Specifies the base DN of the branch of the LDAP directory that can be accessed by this Correlated LDAP Data View.
+        includeFilter:
+          type: array
+          items:
+            type: string
+          description: >-
+              The set of LDAP filters that define the LDAP entries that should be included in this Correlated LDAP Data View.
+        includeOperationalAttribute:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies the set of operational LDAP attributes to be provided by this Correlated LDAP Data View.
+        createDNPattern:
+          type: string
+          description: >-
+              Specifies the template to use for the DN when creating new entries.
+        primaryCorrelationAttribute:
+          type: string
+          description: >-
+              The LDAP attribute from the parent SCIM Resource Type whose value will be used to match objects in the Correlated LDAP Data View. If multiple correlation attributes are required they may be created using additional correlation-attribute-pairs.
+        secondaryCorrelationAttribute:
+          type: string
+          description: >-
+              The LDAP attribute from the Correlated LDAP Data View whose value will be matched with the primary-correlation-attribute. If multiple correlation attributes are required they may be specified by creating additional correlation-attribute-pairs.
+      required:
+      - structuralLDAPObjectclass
+      - includeBaseDN
+      - primaryCorrelationAttribute
+      - secondaryCorrelationAttribute
+    Enumcorrelated-ldap-data-viewSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:correlated-ldap-data-view"
+    add-ldap-correlation-attribute-pair-request:
+      allOf:
+      - type: object
+        properties:
+          pairName:
+            type: string
+            description: >-
+                Name of the new LDAP Correlation Attribute Pair
+      - $ref: '#/components/schemas/ldap-correlation-attribute-pair-shared'
+      required:
+      - pairName
+    ldap-correlation-attribute-pair-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the SCIM Resource Type
+      - $ref: '#/components/schemas/ldap-correlation-attribute-pair-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    ldap-correlation-attribute-pair-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumldap-correlation-attribute-pairSchemaUrn'
+        primaryCorrelationAttribute:
+          type: string
+          description: >-
+              The LDAP attribute from the base SCIM Resource Type whose value will be used to match objects in the Correlated LDAP Data View.
+        secondaryCorrelationAttribute:
+          type: string
+          description: >-
+              The LDAP attribute from the Correlated LDAP Data View whose value will be matched.
+      required:
+      - primaryCorrelationAttribute
+      - secondaryCorrelationAttribute
+    Enumldap-correlation-attribute-pairSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:ldap-correlation-attribute-pair"
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
+            requiredActions:
+              type: array
+              items:
+                type: object
+                properties:
+                  property:
+                    type: string
+                  type:
+                    type: string
+                  synopsis:
+                    type: string
+                required:
+                - type
+                - synopsis
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http
