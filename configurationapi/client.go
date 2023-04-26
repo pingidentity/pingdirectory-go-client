@@ -236,6 +236,8 @@ type APIClient struct {
 
 	ScimAttributeApi *ScimAttributeApiService
 
+	ScimAttributeMappingApi *ScimAttributeMappingApiService
+
 	ScimResourceTypeApi *ScimResourceTypeApiService
 
 	ScimSchemaApi *ScimSchemaApiService
@@ -393,6 +395,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.RootDseBackendApi = (*RootDseBackendApiService)(&c.common)
 	c.SaslMechanismHandlerApi = (*SaslMechanismHandlerApiService)(&c.common)
 	c.ScimAttributeApi = (*ScimAttributeApiService)(&c.common)
+	c.ScimAttributeMappingApi = (*ScimAttributeMappingApiService)(&c.common)
 	c.ScimResourceTypeApi = (*ScimResourceTypeApiService)(&c.common)
 	c.ScimSchemaApi = (*ScimSchemaApiService)(&c.common)
 	c.ScimSubattributeApi = (*ScimSubattributeApiService)(&c.common)
