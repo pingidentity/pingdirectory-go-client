@@ -411,6 +411,10 @@ Class | Method | HTTP request | Description
 *ScimAttributeApi* | [**DeleteScimAttribute**](docs/ScimAttributeApi.md#deletescimattribute) | **Delete** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name} | Delete a SCIM Attribute
 *ScimAttributeApi* | [**GetScimAttribute**](docs/ScimAttributeApi.md#getscimattribute) | **Get** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name} | Returns a single SCIM Attribute
 *ScimAttributeApi* | [**UpdateScimAttribute**](docs/ScimAttributeApi.md#updatescimattribute) | **Patch** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name} | Update an existing SCIM Attribute by name
+*ScimAttributeMappingApi* | [**AddScimAttributeMapping**](docs/ScimAttributeMappingApi.md#addscimattributemapping) | **Post** /scim-resource-types/{scim-resource-type-name}/scim-attribute-mappings | Add a new SCIM Attribute Mapping to the config
+*ScimAttributeMappingApi* | [**DeleteScimAttributeMapping**](docs/ScimAttributeMappingApi.md#deletescimattributemapping) | **Delete** /scim-resource-types/{scim-resource-type-name}/scim-attribute-mappings/{scim-attribute-mapping-name} | Delete a SCIM Attribute Mapping
+*ScimAttributeMappingApi* | [**GetScimAttributeMapping**](docs/ScimAttributeMappingApi.md#getscimattributemapping) | **Get** /scim-resource-types/{scim-resource-type-name}/scim-attribute-mappings/{scim-attribute-mapping-name} | Returns a single SCIM Attribute Mapping
+*ScimAttributeMappingApi* | [**UpdateScimAttributeMapping**](docs/ScimAttributeMappingApi.md#updatescimattributemapping) | **Patch** /scim-resource-types/{scim-resource-type-name}/scim-attribute-mappings/{scim-attribute-mapping-name} | Update an existing SCIM Attribute Mapping by name
 *ScimResourceTypeApi* | [**AddScimResourceType**](docs/ScimResourceTypeApi.md#addscimresourcetype) | **Post** /scim-resource-types | Add a new SCIM Resource Type to the config
 *ScimResourceTypeApi* | [**DeleteScimResourceType**](docs/ScimResourceTypeApi.md#deletescimresourcetype) | **Delete** /scim-resource-types/{scim-resource-type-name} | Delete a SCIM Resource Type
 *ScimResourceTypeApi* | [**GetScimResourceType**](docs/ScimResourceTypeApi.md#getscimresourcetype) | **Get** /scim-resource-types/{scim-resource-type-name} | Returns a single SCIM Resource Type
@@ -877,6 +881,8 @@ Class | Method | HTTP request | Description
  - [AddRootDseRequestCriteriaRequestAllOf](docs/AddRootDseRequestCriteriaRequestAllOf.md)
  - [AddSaslMechanismHandler200Response](docs/AddSaslMechanismHandler200Response.md)
  - [AddSaslMechanismHandlerRequest](docs/AddSaslMechanismHandlerRequest.md)
+ - [AddScimAttributeMappingRequest](docs/AddScimAttributeMappingRequest.md)
+ - [AddScimAttributeMappingRequestAllOf](docs/AddScimAttributeMappingRequestAllOf.md)
  - [AddScimAttributeRequest](docs/AddScimAttributeRequest.md)
  - [AddScimAttributeRequestAllOf](docs/AddScimAttributeRequestAllOf.md)
  - [AddScimResourceType200Response](docs/AddScimResourceType200Response.md)
@@ -1905,6 +1911,7 @@ Class | Method | HTTP request | Description
  - [EnumsaslMechanismHandlerValidateAccessTokenWhenIDTokenIsAlsoProvidedProp](docs/EnumsaslMechanismHandlerValidateAccessTokenWhenIDTokenIsAlsoProvidedProp.md)
  - [EnumschemaBackendSchemaUrn](docs/EnumschemaBackendSchemaUrn.md)
  - [Enumscim2HttpServletExtensionSchemaUrn](docs/Enumscim2HttpServletExtensionSchemaUrn.md)
+ - [EnumscimAttributeMappingSchemaUrn](docs/EnumscimAttributeMappingSchemaUrn.md)
  - [EnumscimAttributeMutabilityProp](docs/EnumscimAttributeMutabilityProp.md)
  - [EnumscimAttributeReturnedProp](docs/EnumscimAttributeReturnedProp.md)
  - [EnumscimAttributeSchemaUrn](docs/EnumscimAttributeSchemaUrn.md)
@@ -2558,6 +2565,8 @@ Class | Method | HTTP request | Description
  - [SchemaBackendResponseAllOf](docs/SchemaBackendResponseAllOf.md)
  - [Scim2HttpServletExtensionResponse](docs/Scim2HttpServletExtensionResponse.md)
  - [Scim2HttpServletExtensionResponseAllOf](docs/Scim2HttpServletExtensionResponseAllOf.md)
+ - [ScimAttributeMappingResponse](docs/ScimAttributeMappingResponse.md)
+ - [ScimAttributeMappingShared](docs/ScimAttributeMappingShared.md)
  - [ScimAttributeResponse](docs/ScimAttributeResponse.md)
  - [ScimAttributeShared](docs/ScimAttributeShared.md)
  - [ScimSchemaResponse](docs/ScimSchemaResponse.md)

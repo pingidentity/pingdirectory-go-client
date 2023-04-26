@@ -301,6 +301,164 @@ paths:
       - basicAuth: []
       tags:
       - correlated-ldap-data-view
+  /scim-resource-types/{scim-resource-type-name}/scim-attribute-mappings:
+    post:
+      summary: Add a new SCIM Attribute Mapping to the config
+      operationId: add-scim-attribute-mapping
+      parameters:
+      - description: Name of the SCIM Resource Type
+        explode: false
+        in: path
+        name: scim-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-scim-attribute-mapping-request'
+        description: Create a new SCIM Attribute Mapping in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/scim-attribute-mapping-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The SCIM Attribute Mapping already exists
+      security:
+      - basicAuth: []
+      tags:
+      - scim-attribute-mapping
+  /scim-resource-types/{scim-resource-type-name}/scim-attribute-mappings/{scim-attribute-mapping-name}:
+    delete:
+      summary: Delete a SCIM Attribute Mapping
+      operationId: delete-scim-attribute-mapping
+      parameters:
+      - description: Name of the SCIM Attribute Mapping
+        explode: false
+        in: path
+        name: scim-attribute-mapping-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the SCIM Resource Type
+        explode: false
+        in: path
+        name: scim-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The SCIM Attribute Mapping does not exist
+        "409":
+          description: The SCIM Attribute Mapping cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - scim-attribute-mapping
+    get:
+      summary: Returns a single SCIM Attribute Mapping
+      operationId: get-scim-attribute-mapping
+      parameters:
+      - description: Name of the SCIM Attribute Mapping
+        explode: false
+        in: path
+        name: scim-attribute-mapping-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the SCIM Resource Type
+        explode: false
+        in: path
+        name: scim-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/scim-attribute-mapping-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The SCIM Attribute Mapping does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - scim-attribute-mapping
+    patch:
+      summary: Update an existing SCIM Attribute Mapping by name
+      operationId: update-scim-attribute-mapping
+      parameters:
+      - description: Name of the SCIM Attribute Mapping
+        explode: false
+        in: path
+        name: scim-attribute-mapping-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the SCIM Resource Type
+        explode: false
+        in: path
+        name: scim-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing SCIM Attribute Mapping
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/scim-attribute-mapping-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The SCIM Attribute Mapping does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - scim-attribute-mapping
   /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views/{correlated-ldap-data-view-name}/ldap-correlation-attribute-pairs:
     post:
       summary: Add a new LDAP Correlation Attribute Pair to the config
@@ -776,6 +934,73 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:correlated-ldap-data-view"
+    add-scim-attribute-mapping-request:
+      allOf:
+      - type: object
+        properties:
+          mappingName:
+            type: string
+            description: >-
+                Name of the new SCIM Attribute Mapping
+      - $ref: '#/components/schemas/scim-attribute-mapping-shared'
+      required:
+      - mappingName
+    scim-attribute-mapping-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the SCIM Resource Type
+      - $ref: '#/components/schemas/scim-attribute-mapping-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    scim-attribute-mapping-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumscim-attribute-mappingSchemaUrn'
+        correlatedLDAPDataView:
+          type: string
+          description: >-
+              The Correlated LDAP Data View that persists the mapped SCIM Resource Type attribute(s).
+        scimResourceTypeAttribute:
+          type: string
+          description: >-
+              The attribute path of SCIM Resource Type attributes to be mapped.
+        ldapAttribute:
+          type: string
+          description: >-
+              The LDAP attribute to be mapped, or the path to a specific field of an LDAP attribute with the JSON object attribute syntax.
+        readable:
+          type: boolean
+          description: >-
+              Specifies whether the mapping is used to map from LDAP attribute to SCIM Resource Type attribute in a read operation.
+        writable:
+          type: boolean
+          description: >-
+              Specifies that the mapping is used to map from SCIM Resource Type attribute to LDAP attribute in a write operation.
+        searchable:
+          type: boolean
+          description: >-
+              Specifies that the mapping is used to map from SCIM Resource Type attribute to LDAP attribute in a search filter.
+        authoritative:
+          type: boolean
+          description: >-
+              Specifies that the mapping is authoritative over other mappings for the same SCIM Resource Type attribute (for read operations).
+      required:
+      - scimResourceTypeAttribute
+      - ldapAttribute
+    Enumscim-attribute-mappingSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:scim-attribute-mapping"
     add-ldap-correlation-attribute-pair-request:
       allOf:
       - type: object

@@ -11782,6 +11782,26 @@ func StringPointerEnumscim2HttpServletExtensionSchemaUrn(value *Enumscim2HttpSer
 	return &s
 }
 
+func (e EnumscimAttributeMappingSchemaUrn) String() string {
+	return string(e)
+}
+
+func StringSliceEnumscimAttributeMappingSchemaUrn(values []EnumscimAttributeMappingSchemaUrn) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumscimAttributeMappingSchemaUrn(value *EnumscimAttributeMappingSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumscimAttributeMutabilityProp) String() string {
 	return string(e)
 }

@@ -94,6 +94,7 @@ api_root_dn_user.go
 api_root_dse_backend.go
 api_sasl_mechanism_handler.go
 api_scim_attribute.go
+api_scim_attribute_mapping.go
 api_scim_resource_type.go
 api_scim_schema.go
 api_scim_subattribute.go
@@ -434,6 +435,7 @@ docs/AddRootDnUserRequest.md
 docs/AddRootDseRequestCriteriaRequest.md
 docs/AddSaslMechanismHandler200Response.md
 docs/AddSaslMechanismHandlerRequest.md
+docs/AddScimAttributeMappingRequest.md
 docs/AddScimAttributeRequest.md
 docs/AddScimResourceType200Response.md
 docs/AddScimResourceTypeRequest.md
@@ -1313,6 +1315,7 @@ docs/EnumsaslMechanismHandlerGssapiRoleProp.md
 docs/EnumsaslMechanismHandlerValidateAccessTokenWhenIDTokenIsAlsoProvidedProp.md
 docs/EnumschemaBackendSchemaUrn.md
 docs/Enumscim2HttpServletExtensionSchemaUrn.md
+docs/EnumscimAttributeMappingSchemaUrn.md
 docs/EnumscimAttributeMutabilityProp.md
 docs/EnumscimAttributeReturnedProp.md
 docs/EnumscimAttributeSchemaUrn.md
@@ -1777,6 +1780,8 @@ docs/SaslMechanismHandlerApi.md
 docs/SchemaBackendResponse.md
 docs/Scim2HttpServletExtensionResponse.md
 docs/ScimAttributeApi.md
+docs/ScimAttributeMappingApi.md
+docs/ScimAttributeMappingResponse.md
 docs/ScimAttributeResponse.md
 docs/ScimResourceTypeApi.md
 docs/ScimSchemaApi.md
@@ -2246,6 +2251,7 @@ model_add_root_dn_user_request.go
 model_add_root_dse_request_criteria_request.go
 model_add_sasl_mechanism_handler_200_response.go
 model_add_sasl_mechanism_handler_request.go
+model_add_scim_attribute_mapping_request.go
 model_add_scim_attribute_request.go
 model_add_scim_resource_type_200_response.go
 model_add_scim_resource_type_request.go
@@ -3095,6 +3101,7 @@ model_enumsasl_mechanism_handler_gssapi_role_prop.go
 model_enumsasl_mechanism_handler_validate_access_token_when_id_token_is_also_provided_prop.go
 model_enumschema_backend_schema_urn.go
 model_enumscim2_http_servlet_extension_schema_urn.go
+model_enumscim_attribute_mapping_schema_urn.go
 model_enumscim_attribute_mutability_prop.go
 model_enumscim_attribute_returned_prop.go
 model_enumscim_attribute_schema_urn.go
@@ -3499,6 +3506,7 @@ model_salted_sha384_password_storage_scheme_response.go
 model_salted_sha512_password_storage_scheme_response.go
 model_schema_backend_response.go
 model_scim2_http_servlet_extension_response.go
+model_scim_attribute_mapping_response.go
 model_scim_attribute_response.go
 model_scim_schema_response.go
 model_scim_subattribute_response.go
@@ -3726,6 +3734,7 @@ test/api_root_dn_test.go
 test/api_root_dn_user_test.go
 test/api_root_dse_backend_test.go
 test/api_sasl_mechanism_handler_test.go
+test/api_scim_attribute_mapping_test.go
 test/api_scim_attribute_test.go
 test/api_scim_resource_type_test.go
 test/api_scim_schema_test.go
