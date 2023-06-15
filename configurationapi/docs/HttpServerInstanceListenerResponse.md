@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | [**[]EnumhttpServerInstanceListenerSchemaUrn**](EnumhttpServerInstanceListenerSchemaUrn.md) |  | 
-**Id** | **string** | Name of the Server Instance | 
+**Id** | **string** | Name of the Server Instance Listener | 
 **ListenAddress** | Pointer to **string** | If the server is listening on a particular address different from the hostname, then this property may be used to specify the address on which to listen for connections from HTTP clients. | [optional] 
 **ServerHTTPPort** | Pointer to **int64** | The TCP port number on which the HTTP server is listening. | [optional] 
 **ConnectionSecurity** | Pointer to [**EnumserverInstanceListenerHttpConnectionSecurityProp**](EnumserverInstanceListenerHttpConnectionSecurityProp.md) |  | [optional] 

@@ -19,7 +19,7 @@ var _ MappedNullable = &CertificateDelegatedAdminAttributeResponse{}
 
 // CertificateDelegatedAdminAttributeResponse struct for CertificateDelegatedAdminAttributeResponse
 type CertificateDelegatedAdminAttributeResponse struct {
-	// Name of the REST Resource Type
+	// Name of the Delegated Admin Attribute
 	Id              string                                                      `json:"id"`
 	Schemas         []EnumcertificateDelegatedAdminAttributeSchemaUrn           `json:"schemas"`
 	AllowedMIMEType []EnumdelegatedAdminAttributeCertificateAllowedMIMETypeProp `json:"allowedMIMEType,omitempty"`

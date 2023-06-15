@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | [**[]EnumldapServerInstanceListenerSchemaUrn**](EnumldapServerInstanceListenerSchemaUrn.md) |  | 
-**Id** | **string** | Name of the Server Instance | 
+**Id** | **string** | Name of the Server Instance Listener | 
 **ServerLDAPPort** | Pointer to **int64** | The TCP port number on which the LDAP server is listening. | [optional] 
 **ConnectionSecurity** | Pointer to [**EnumserverInstanceListenerLdapConnectionSecurityProp**](EnumserverInstanceListenerLdapConnectionSecurityProp.md) |  | [optional] 
 **ListenerCertificate** | Pointer to **string** | The public component of the certificate that the listener is expected to present to clients. When establishing a connection to this server, only the certificate(s) listed here will be trusted. | [optional] 

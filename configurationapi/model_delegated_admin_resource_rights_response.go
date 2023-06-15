@@ -19,7 +19,7 @@ var _ MappedNullable = &DelegatedAdminResourceRightsResponse{}
 
 // DelegatedAdminResourceRightsResponse struct for DelegatedAdminResourceRightsResponse
 type DelegatedAdminResourceRightsResponse struct {
-	// Name of the Delegated Admin Rights
+	// Name of the Delegated Admin Resource Rights
 	Id      string                                      `json:"id"`
 	Schemas []EnumdelegatedAdminResourceRightsSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Delegated Admin Resource Rights

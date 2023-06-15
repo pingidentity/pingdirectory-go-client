@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | Pointer to [**[]EnumcipherSecretKeySchemaUrn**](EnumcipherSecretKeySchemaUrn.md) |  | [optional] 
+**Id** | **string** | Name of the Cipher Secret Key | 
 **CipherTransformationName** | Pointer to **string** | The algorithm name used to produce this cipher, e.g. AES/CBC/PKCS5Padding. | [optional] 
 **InitializationVectorLengthBits** | Pointer to **int64** | The initialization vector length of the cipher in bits. | [optional] 
 **KeyID** | **string** | The unique system-generated identifier for the Secret Key. | 
@@ -18,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewCipherSecretKeyResponse
 
-`func NewCipherSecretKeyResponse(keyID string, keyLengthBits int64, ) *CipherSecretKeyResponse`
+`func NewCipherSecretKeyResponse(id string, keyID string, keyLengthBits int64, ) *CipherSecretKeyResponse`
 
 NewCipherSecretKeyResponse instantiates a new CipherSecretKeyResponse object
 This constructor will assign default values to properties that have it defined,
@@ -57,6 +58,26 @@ SetSchemas sets Schemas field to given value.
 `func (o *CipherSecretKeyResponse) HasSchemas() bool`
 
 HasSchemas returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *CipherSecretKeyResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *CipherSecretKeyResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *CipherSecretKeyResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 ### GetCipherTransformationName
 

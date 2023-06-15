@@ -19,7 +19,7 @@ var _ MappedNullable = &CustomLoggedStatsResponse{}
 
 // CustomLoggedStatsResponse struct for CustomLoggedStatsResponse
 type CustomLoggedStatsResponse struct {
-	// Name of the Plugin Root
+	// Name of the Custom Logged Stats
 	Id      string                           `json:"id"`
 	Schemas []EnumcustomLoggedStatsSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Custom Logged Stats

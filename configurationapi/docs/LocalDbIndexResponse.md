@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Backend | 
+**Id** | **string** | Name of the Local DB Index | 
 **Schemas** | Pointer to [**[]EnumlocalDbIndexSchemaUrn**](EnumlocalDbIndexSchemaUrn.md) |  | [optional] 
 **Attribute** | **string** | Specifies the name of the attribute for which the index is to be maintained. | 
 **IndexEntryLimit** | Pointer to **int64** | Specifies the maximum number of entries that are allowed to match a given index key before that particular index key is no longer maintained. | [optional] 

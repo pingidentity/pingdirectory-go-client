@@ -20,6 +20,8 @@ var _ MappedNullable = &ReplicationDomainResponse{}
 // ReplicationDomainResponse struct for ReplicationDomainResponse
 type ReplicationDomainResponse struct {
 	Schemas []EnumreplicationDomainSchemaUrn `json:"schemas,omitempty"`
+	// Name of the Replication Domain
+	Id string `json:"id"`
 	// Specifies a unique identifier for the Directory Server within the Replication Domain.
 	ServerID int64 `json:"serverID"`
 	// Specifies the base DN of the replicated data.
@@ -44,8 +46,9 @@ type ReplicationDomainResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewReplicationDomainResponse(serverID int64, baseDN string) *ReplicationDomainResponse {
+func NewReplicationDomainResponse(id string, serverID int64, baseDN string) *ReplicationDomainResponse {
 	this := ReplicationDomainResponse{}
+	this.Id = id
 	this.ServerID = serverID
 	this.BaseDN = baseDN
 	return &this
@@ -89,6 +92,30 @@ func (o *ReplicationDomainResponse) HasSchemas() bool {
 // SetSchemas gets a reference to the given []EnumreplicationDomainSchemaUrn and assigns it to the Schemas field.
 func (o *ReplicationDomainResponse) SetSchemas(v []EnumreplicationDomainSchemaUrn) {
 	o.Schemas = v
+}
+
+// GetId returns the Id field value
+func (o *ReplicationDomainResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ReplicationDomainResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ReplicationDomainResponse) SetId(v string) {
+	o.Id = v
 }
 
 // GetServerID returns the ServerID field value
@@ -408,6 +435,7 @@ func (o ReplicationDomainResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
+	toSerialize["id"] = o.Id
 	toSerialize["serverID"] = o.ServerID
 	toSerialize["baseDN"] = o.BaseDN
 	if !IsNil(o.WindowSize) {

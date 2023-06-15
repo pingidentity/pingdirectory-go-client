@@ -19,7 +19,7 @@ var _ MappedNullable = &ScimAttributeResponse{}
 
 // ScimAttributeResponse struct for ScimAttributeResponse
 type ScimAttributeResponse struct {
-	// Name of the SCIM Schema
+	// Name of the SCIM Attribute
 	Id      string                       `json:"id"`
 	Schemas []EnumscimAttributeSchemaUrn `json:"schemas,omitempty"`
 	// A description for this SCIM Attribute

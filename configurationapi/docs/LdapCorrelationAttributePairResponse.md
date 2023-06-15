@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the SCIM Resource Type | 
+**Id** | **string** | Name of the LDAP Correlation Attribute Pair | 
 **Schemas** | Pointer to [**[]EnumldapCorrelationAttributePairSchemaUrn**](EnumldapCorrelationAttributePairSchemaUrn.md) |  | [optional] 
 **PrimaryCorrelationAttribute** | **string** | The LDAP attribute from the base SCIM Resource Type whose value will be used to match objects in the Correlated LDAP Data View. | 
 **SecondaryCorrelationAttribute** | **string** | The LDAP attribute from the Correlated LDAP Data View whose value will be matched. | 

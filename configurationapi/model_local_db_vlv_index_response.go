@@ -19,7 +19,7 @@ var _ MappedNullable = &LocalDbVlvIndexResponse{}
 
 // LocalDbVlvIndexResponse struct for LocalDbVlvIndexResponse
 type LocalDbVlvIndexResponse struct {
-	// Name of the Backend
+	// Name of the Local DB VLV Index
 	Id      string                         `json:"id"`
 	Schemas []EnumlocalDbVlvIndexSchemaUrn `json:"schemas,omitempty"`
 	// Specifies the base DN used in the search query that is being indexed.

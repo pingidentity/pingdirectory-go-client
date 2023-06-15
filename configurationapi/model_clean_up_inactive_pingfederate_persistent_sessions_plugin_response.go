@@ -19,7 +19,7 @@ var _ MappedNullable = &CleanUpInactivePingfederatePersistentSessionsPluginRespo
 
 // CleanUpInactivePingfederatePersistentSessionsPluginResponse struct for CleanUpInactivePingfederatePersistentSessionsPluginResponse
 type CleanUpInactivePingfederatePersistentSessionsPluginResponse struct {
-	// Name of the Plugin Root
+	// Name of the Plugin
 	Id      string                                                             `json:"id"`
 	Schemas []EnumcleanUpInactivePingfederatePersistentSessionsPluginSchemaUrn `json:"schemas"`
 	// Sessions whose last activity timestamp is older than this offset will be removed.

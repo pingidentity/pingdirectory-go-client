@@ -19,7 +19,7 @@ var _ MappedNullable = &VelocityToolsVelocityContextProviderResponse{}
 
 // VelocityToolsVelocityContextProviderResponse struct for VelocityToolsVelocityContextProviderResponse
 type VelocityToolsVelocityContextProviderResponse struct {
-	// Name of the HTTP Servlet Extension
+	// Name of the Velocity Context Provider
 	Id      string                                              `json:"id"`
 	Schemas []EnumvelocityToolsVelocityContextProviderSchemaUrn `json:"schemas"`
 	// The fully-qualified name of a Velocity Tool class that will be initialized for each request. May optionally include a path to a properties file used to configure this tool separated from the class name by a semi-colon (;). The path may absolute or relative to the server root.

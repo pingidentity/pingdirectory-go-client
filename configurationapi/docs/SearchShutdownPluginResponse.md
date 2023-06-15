@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Plugin Root | 
+**Id** | **string** | Name of the Plugin | 
 **Schemas** | [**[]EnumsearchShutdownPluginSchemaUrn**](EnumsearchShutdownPluginSchemaUrn.md) |  | 
 **BaseDN** | Pointer to **string** | The base DN to use for the search. | [optional] 
 **Scope** | [**EnumpluginScopeProp**](EnumpluginScopeProp.md) |  | 

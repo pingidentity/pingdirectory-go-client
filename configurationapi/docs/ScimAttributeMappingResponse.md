@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the SCIM Resource Type | 
+**Id** | **string** | Name of the SCIM Attribute Mapping | 
 **Schemas** | Pointer to [**[]EnumscimAttributeMappingSchemaUrn**](EnumscimAttributeMappingSchemaUrn.md) |  | [optional] 
 **CorrelatedLDAPDataView** | Pointer to **string** | The Correlated LDAP Data View that persists the mapped SCIM Resource Type attribute(s). | [optional] 
 **ScimResourceTypeAttribute** | **string** | The attribute path of SCIM Resource Type attributes to be mapped. | 

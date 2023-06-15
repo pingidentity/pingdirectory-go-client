@@ -19,7 +19,7 @@ var _ MappedNullable = &PluggablePassThroughAuthenticationPluginResponse{}
 
 // PluggablePassThroughAuthenticationPluginResponse struct for PluggablePassThroughAuthenticationPluginResponse
 type PluggablePassThroughAuthenticationPluginResponse struct {
-	// Name of the Plugin Root
+	// Name of the Plugin
 	Id      string                                                  `json:"id"`
 	Schemas []EnumpluggablePassThroughAuthenticationPluginSchemaUrn `json:"schemas"`
 	// The component used to manage authentication with the external authentication service.

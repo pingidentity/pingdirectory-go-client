@@ -1827,7 +1827,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the HTTP Servlet Extension
+                Name of the Prometheus Monitor Attribute Metric
       - $ref: '#/components/schemas/prometheus-monitor-attribute-metric-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -1904,7 +1904,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the HTTP Servlet Extension
+                Name of the Velocity Context Provider
       - $ref: '#/components/schemas/velocity-tools-velocity-context-provider-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -1979,7 +1979,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the HTTP Servlet Extension
+                Name of the Velocity Context Provider
           enabled:
             type: boolean
             description: >-
@@ -2036,7 +2036,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the HTTP Servlet Extension
+                Name of the Velocity Context Provider
       - $ref: '#/components/schemas/third-party-velocity-context-provider-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -2115,7 +2115,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the HTTP Servlet Extension
+                Name of the Velocity Template Loader
       - $ref: '#/components/schemas/velocity-template-loader-shared'
       - $ref: '#/components/schemas/meta'
       required:

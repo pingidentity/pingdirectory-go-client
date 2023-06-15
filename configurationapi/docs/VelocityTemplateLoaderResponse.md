@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the HTTP Servlet Extension | 
+**Id** | **string** | Name of the Velocity Template Loader | 
 **Schemas** | Pointer to [**[]EnumvelocityTemplateLoaderSchemaUrn**](EnumvelocityTemplateLoaderSchemaUrn.md) |  | [optional] 
 **Enabled** | Pointer to **bool** | Indicates whether this Velocity Template Loader is enabled. | [optional] 
 **EvaluationOrderIndex** | **int64** | This property determines the evaluation order for determining the correct Velocity Template Loader to load a template for generating content for a particular request. | 

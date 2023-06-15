@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Delegated Admin Rights | 
+**Id** | **string** | Name of the Delegated Admin Resource Rights | 
 **Schemas** | Pointer to [**[]EnumdelegatedAdminResourceRightsSchemaUrn**](EnumdelegatedAdminResourceRightsSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Delegated Admin Resource Rights | [optional] 
 **Enabled** | **bool** | Indicates whether these Delegated Admin Resource Rights are enabled. | 

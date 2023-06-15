@@ -20,7 +20,7 @@ var _ MappedNullable = &ProfilerPluginResponse{}
 // ProfilerPluginResponse struct for ProfilerPluginResponse
 type ProfilerPluginResponse struct {
 	Schemas []EnumprofilerPluginSchemaUrn `json:"schemas"`
-	// Name of the Plugin Root
+	// Name of the Plugin
 	Id string `json:"id"`
 	// Specifies the sample interval in milliseconds to be used when capturing profiling information in the server.
 	ProfileSampleInterval string `json:"profileSampleInterval"`

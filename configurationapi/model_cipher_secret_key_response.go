@@ -20,6 +20,8 @@ var _ MappedNullable = &CipherSecretKeyResponse{}
 // CipherSecretKeyResponse struct for CipherSecretKeyResponse
 type CipherSecretKeyResponse struct {
 	Schemas []EnumcipherSecretKeySchemaUrn `json:"schemas,omitempty"`
+	// Name of the Cipher Secret Key
+	Id string `json:"id"`
 	// The algorithm name used to produce this cipher, e.g. AES/CBC/PKCS5Padding.
 	CipherTransformationName *string `json:"cipherTransformationName,omitempty"`
 	// The initialization vector length of the cipher in bits.
@@ -40,8 +42,9 @@ type CipherSecretKeyResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCipherSecretKeyResponse(keyID string, keyLengthBits int64) *CipherSecretKeyResponse {
+func NewCipherSecretKeyResponse(id string, keyID string, keyLengthBits int64) *CipherSecretKeyResponse {
 	this := CipherSecretKeyResponse{}
+	this.Id = id
 	this.KeyID = keyID
 	this.KeyLengthBits = keyLengthBits
 	return &this
@@ -85,6 +88,30 @@ func (o *CipherSecretKeyResponse) HasSchemas() bool {
 // SetSchemas gets a reference to the given []EnumcipherSecretKeySchemaUrn and assigns it to the Schemas field.
 func (o *CipherSecretKeyResponse) SetSchemas(v []EnumcipherSecretKeySchemaUrn) {
 	o.Schemas = v
+}
+
+// GetId returns the Id field value
+func (o *CipherSecretKeyResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *CipherSecretKeyResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *CipherSecretKeyResponse) SetId(v string) {
+	o.Id = v
 }
 
 // GetCipherTransformationName returns the CipherTransformationName field value if set, zero value otherwise.
@@ -340,6 +367,7 @@ func (o CipherSecretKeyResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
+	toSerialize["id"] = o.Id
 	if !IsNil(o.CipherTransformationName) {
 		toSerialize["cipherTransformationName"] = o.CipherTransformationName
 	}

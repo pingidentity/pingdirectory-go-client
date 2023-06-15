@@ -19,7 +19,7 @@ var _ MappedNullable = &LocalDbIndexResponse{}
 
 // LocalDbIndexResponse struct for LocalDbIndexResponse
 type LocalDbIndexResponse struct {
-	// Name of the Backend
+	// Name of the Local DB Index
 	Id      string                      `json:"id"`
 	Schemas []EnumlocalDbIndexSchemaUrn `json:"schemas,omitempty"`
 	// Specifies the name of the attribute for which the index is to be maintained.

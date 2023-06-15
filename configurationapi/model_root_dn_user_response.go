@@ -19,7 +19,7 @@ var _ MappedNullable = &RootDnUserResponse{}
 
 // RootDnUserResponse struct for RootDnUserResponse
 type RootDnUserResponse struct {
-	// Name of the Root DN
+	// Name of the Root DN User
 	Id      string                    `json:"id"`
 	Schemas []EnumrootDnUserSchemaUrn `json:"schemas,omitempty"`
 	// Specifies one or more alternate DNs that can be used to bind to the server as this User.

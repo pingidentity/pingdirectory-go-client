@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Plugin Root | 
+**Id** | **string** | Name of the Plugin | 
 **Schemas** | [**[]EnumsnmpSubagentPluginSchemaUrn**](EnumsnmpSubagentPluginSchemaUrn.md) |  | 
 **ContextName** | Pointer to **string** | The SNMP context name for this sub-agent. The context name must not be longer than 30 ASCII characters. Each server in a topology must have a unique SNMP context name. | [optional] 
 **AgentxAddress** | **string** | The hostname or IP address of the SNMP master agent. | 

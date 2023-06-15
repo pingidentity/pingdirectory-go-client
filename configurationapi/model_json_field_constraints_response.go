@@ -19,7 +19,7 @@ var _ MappedNullable = &JsonFieldConstraintsResponse{}
 
 // JsonFieldConstraintsResponse struct for JsonFieldConstraintsResponse
 type JsonFieldConstraintsResponse struct {
-	// Name of the JSON Attribute Constraints
+	// Name of the JSON Field Constraints
 	Id      string                              `json:"id"`
 	Schemas []EnumjsonFieldConstraintsSchemaUrn `json:"schemas,omitempty"`
 	// A description for this JSON Field Constraints

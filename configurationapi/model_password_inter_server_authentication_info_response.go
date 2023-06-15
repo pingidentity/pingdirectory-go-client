@@ -20,7 +20,7 @@ var _ MappedNullable = &PasswordInterServerAuthenticationInfoResponse{}
 // PasswordInterServerAuthenticationInfoResponse struct for PasswordInterServerAuthenticationInfoResponse
 type PasswordInterServerAuthenticationInfoResponse struct {
 	Schemas []EnumpasswordInterServerAuthenticationInfoSchemaUrn `json:"schemas"`
-	// Name of the Server Instance
+	// Name of the Inter Server Authentication Info
 	Id                 string                                                   `json:"id"`
 	AuthenticationType *EnuminterServerAuthenticationInfoAuthenticationTypeProp `json:"authenticationType,omitempty"`
 	// A DN of the username that should be used for the bind request.

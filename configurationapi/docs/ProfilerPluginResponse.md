@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | [**[]EnumprofilerPluginSchemaUrn**](EnumprofilerPluginSchemaUrn.md) |  | 
-**Id** | **string** | Name of the Plugin Root | 
+**Id** | **string** | Name of the Plugin | 
 **ProfileSampleInterval** | **string** | Specifies the sample interval in milliseconds to be used when capturing profiling information in the server. | 
 **ProfileDirectory** | **string** | Specifies the path to the directory where profile information is to be written. This path may be either an absolute path or a path that is relative to the root of the Directory Server instance. | 
 **EnableProfilingOnStartup** | **bool** | Indicates whether the profiler plug-in is to start collecting data automatically when the Directory Server is started. | 

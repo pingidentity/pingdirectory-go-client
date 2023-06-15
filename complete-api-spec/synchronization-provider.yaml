@@ -244,6 +244,10 @@ components:
             maxItems: 1
             items:
               $ref: '#/components/schemas/Enumreplication-domainSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Replication Domain
           serverID:
             type: integer
             description: >-
@@ -278,6 +282,7 @@ components:
                 Defines how long to wait before retrying certain operations, specifically operations that might have failed because they depend on an operation from a different server that has not yet replicated to this instance.
       - $ref: '#/components/schemas/meta'
       required:
+      - id
       - serverID
       - baseDN
     Enumreplication-domainSchemaUrn:

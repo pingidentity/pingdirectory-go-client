@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Backend | 
+**Id** | **string** | Name of the Local DB Composite Index | 
 **Schemas** | Pointer to [**[]EnumlocalDbCompositeIndexSchemaUrn**](EnumlocalDbCompositeIndexSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Local DB Composite Index | [optional] 
 **IndexFilterPattern** | **string** | A filter pattern that identifies which entries to include in the index. | 

@@ -20,7 +20,7 @@ var _ MappedNullable = &ProcessingTimeHistogramPluginResponse{}
 // ProcessingTimeHistogramPluginResponse struct for ProcessingTimeHistogramPluginResponse
 type ProcessingTimeHistogramPluginResponse struct {
 	Schemas []EnumprocessingTimeHistogramPluginSchemaUrn `json:"schemas"`
-	// Name of the Plugin Root
+	// Name of the Plugin
 	Id         string                     `json:"id"`
 	PluginType []EnumpluginPluginTypeProp `json:"pluginType"`
 	// Specifies the boundary values that will be used to separate the processing times into categories. Values should be specified as durations, and all values must be greater than zero.

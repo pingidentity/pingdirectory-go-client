@@ -20,7 +20,7 @@ var _ MappedNullable = &CustomVelocityContextProviderResponse{}
 // CustomVelocityContextProviderResponse struct for CustomVelocityContextProviderResponse
 type CustomVelocityContextProviderResponse struct {
 	Schemas []EnumcustomVelocityContextProviderSchemaUrn `json:"schemas"`
-	// Name of the HTTP Servlet Extension
+	// Name of the Velocity Context Provider
 	Id string `json:"id"`
 	// Indicates whether this Velocity Context Provider is enabled. If set to 'false' this Velocity Context Provider will not contribute context content for any requests.
 	Enabled     *bool                                       `json:"enabled,omitempty"`

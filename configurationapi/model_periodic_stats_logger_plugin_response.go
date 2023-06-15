@@ -19,7 +19,7 @@ var _ MappedNullable = &PeriodicStatsLoggerPluginResponse{}
 
 // PeriodicStatsLoggerPluginResponse struct for PeriodicStatsLoggerPluginResponse
 type PeriodicStatsLoggerPluginResponse struct {
-	// Name of the Plugin Root
+	// Name of the Plugin
 	Id      string                                   `json:"id"`
 	Schemas []EnumperiodicStatsLoggerPluginSchemaUrn `json:"schemas"`
 	// The duration between statistics collection and logging. A new line is logged to the output for each interval. Setting this value too small can have an impact on performance.

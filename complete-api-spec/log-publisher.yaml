@@ -6667,7 +6667,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Log Publisher
+                Name of the Debug Target
       - $ref: '#/components/schemas/debug-target-shared'
       - $ref: '#/components/schemas/meta'
       required:

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Plugin Root | 
+**Id** | **string** | Name of the Plugin | 
 **Schemas** | [**[]EnumperiodicStatsLoggerPluginSchemaUrn**](EnumperiodicStatsLoggerPluginSchemaUrn.md) |  | 
 **LogInterval** | **string** | The duration between statistics collection and logging. A new line is logged to the output for each interval. Setting this value too small can have an impact on performance. | 
 **CollectionInterval** | **string** | Some of the calculated statistics, such as the average and maximum queue sizes, can use multiple samples within a log interval. This value controls how often samples are gathered. It should be a multiple of the log-interval. | 

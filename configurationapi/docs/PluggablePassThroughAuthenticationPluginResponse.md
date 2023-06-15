@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Plugin Root | 
+**Id** | **string** | Name of the Plugin | 
 **Schemas** | [**[]EnumpluggablePassThroughAuthenticationPluginSchemaUrn**](EnumpluggablePassThroughAuthenticationPluginSchemaUrn.md) |  | 
 **PassThroughAuthenticationHandler** | **string** | The component used to manage authentication with the external authentication service. | 
 **IncludedLocalEntryBaseDN** | Pointer to **[]string** | The base DNs for the local users whose authentication attempts may be passed through to the external authentication service. | [optional] 

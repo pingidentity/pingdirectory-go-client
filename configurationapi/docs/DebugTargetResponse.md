@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Log Publisher | 
+**Id** | **string** | Name of the Debug Target | 
 **Schemas** | Pointer to [**[]EnumdebugTargetSchemaUrn**](EnumdebugTargetSchemaUrn.md) |  | [optional] 
 **DebugScope** | **string** | Specifies the fully-qualified Java package, class, or method affected by the settings in this target definition. Use the number character (#) to separate the class name and the method name (that is, com.unboundid.directory.server.core.DirectoryServer#startUp). | 
 **DebugLevel** | [**EnumdebugTargetDebugLevelProp**](EnumdebugTargetDebugLevelProp.md) |  | 

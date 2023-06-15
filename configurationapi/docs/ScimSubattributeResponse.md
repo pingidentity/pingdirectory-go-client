@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the SCIM Schema | 
+**Id** | **string** | Name of the SCIM Subattribute | 
 **Schemas** | Pointer to [**[]EnumscimSubattributeSchemaUrn**](EnumscimSubattributeSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this SCIM Subattribute | [optional] 
 **Type** | [**EnumscimSubattributeTypeProp**](EnumscimSubattributeTypeProp.md) |  | 

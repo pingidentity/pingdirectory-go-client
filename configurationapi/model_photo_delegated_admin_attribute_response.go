@@ -19,7 +19,7 @@ var _ MappedNullable = &PhotoDelegatedAdminAttributeResponse{}
 
 // PhotoDelegatedAdminAttributeResponse struct for PhotoDelegatedAdminAttributeResponse
 type PhotoDelegatedAdminAttributeResponse struct {
-	// Name of the REST Resource Type
+	// Name of the Delegated Admin Attribute
 	Id              string                                                `json:"id"`
 	Schemas         []EnumphotoDelegatedAdminAttributeSchemaUrn           `json:"schemas"`
 	AllowedMIMEType []EnumdelegatedAdminAttributePhotoAllowedMIMETypeProp `json:"allowedMIMEType,omitempty"`
