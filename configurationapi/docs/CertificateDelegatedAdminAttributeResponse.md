@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the REST Resource Type | 
+**Id** | **string** | Name of the Delegated Admin Attribute | 
 **Schemas** | [**[]EnumcertificateDelegatedAdminAttributeSchemaUrn**](EnumcertificateDelegatedAdminAttributeSchemaUrn.md) |  | 
 **AllowedMIMEType** | Pointer to [**[]EnumdelegatedAdminAttributeCertificateAllowedMIMETypeProp**](EnumdelegatedAdminAttributeCertificateAllowedMIMETypeProp.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Delegated Admin Attribute | [optional] 

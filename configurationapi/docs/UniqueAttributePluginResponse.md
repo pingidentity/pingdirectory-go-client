@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Plugin Root | 
+**Id** | **string** | Name of the Plugin | 
 **Schemas** | [**[]EnumuniqueAttributePluginSchemaUrn**](EnumuniqueAttributePluginSchemaUrn.md) |  | 
 **PluginType** | [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | 
 **Type** | **[]string** | Specifies the type of attributes to check for value uniqueness. | 

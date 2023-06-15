@@ -19,7 +19,7 @@ var _ MappedNullable = &SearchShutdownPluginResponse{}
 
 // SearchShutdownPluginResponse struct for SearchShutdownPluginResponse
 type SearchShutdownPluginResponse struct {
-	// Name of the Plugin Root
+	// Name of the Plugin
 	Id      string                              `json:"id"`
 	Schemas []EnumsearchShutdownPluginSchemaUrn `json:"schemas"`
 	// The base DN to use for the search.

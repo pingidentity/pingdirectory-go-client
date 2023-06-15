@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Plugin Root | 
+**Id** | **string** | Name of the Plugin | 
 **Schemas** | [**[]EnumperiodicGcPluginSchemaUrn**](EnumperiodicGcPluginSchemaUrn.md) |  | 
 **PluginType** | [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | 
 **InvokeGCDayOfWeek** | Pointer to [**[]EnumpluginInvokeGCDayOfWeekProp**](EnumpluginInvokeGCDayOfWeekProp.md) |  | [optional] 

@@ -19,7 +19,7 @@ var _ MappedNullable = &UniqueAttributePluginResponse{}
 
 // UniqueAttributePluginResponse struct for UniqueAttributePluginResponse
 type UniqueAttributePluginResponse struct {
-	// Name of the Plugin Root
+	// Name of the Plugin
 	Id         string                               `json:"id"`
 	Schemas    []EnumuniqueAttributePluginSchemaUrn `json:"schemas"`
 	PluginType []EnumpluginPluginTypeProp           `json:"pluginType"`

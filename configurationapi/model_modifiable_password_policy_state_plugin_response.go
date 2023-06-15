@@ -19,7 +19,7 @@ var _ MappedNullable = &ModifiablePasswordPolicyStatePluginResponse{}
 
 // ModifiablePasswordPolicyStatePluginResponse struct for ModifiablePasswordPolicyStatePluginResponse
 type ModifiablePasswordPolicyStatePluginResponse struct {
-	// Name of the Plugin Root
+	// Name of the Plugin
 	Id      string                                             `json:"id"`
 	Schemas []EnummodifiablePasswordPolicyStatePluginSchemaUrn `json:"schemas"`
 	// A base DN that may be used to identify entries that should support the ds-pwp-modifiable-state-json operational attribute.

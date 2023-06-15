@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | [**[]EnumcustomPluginSchemaUrn**](EnumcustomPluginSchemaUrn.md) |  | 
-**Id** | **string** | Name of the Plugin Root | 
+**Id** | **string** | Name of the Plugin | 
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
 **PluginType** | [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | 

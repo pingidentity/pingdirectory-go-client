@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | [**[]EnumchangelogPasswordEncryptionPluginSchemaUrn**](EnumchangelogPasswordEncryptionPluginSchemaUrn.md) |  | 
-**Id** | **string** | Name of the Plugin Root | 
+**Id** | **string** | Name of the Plugin | 
 **ChangelogPasswordEncryptionKey** | Pointer to **string** | A passphrase that may be used to generate the key for encrypting passwords stored in the changelog. The same passphrase also needs to be set (either through the \&quot;changelog-password-decryption-key\&quot; property or the \&quot;changelog-password-decryption-key-passphrase-provider\&quot; property) in the Global Sync Configuration in the Data Sync Server. | [optional] 
 **ChangelogPasswordEncryptionKeyPassphraseProvider** | Pointer to **string** | A passphrase provider that may be used to obtain the passphrase that will be used to generate the key for encrypting passwords stored in the changelog. The same passphrase also needs to be set (either through the \&quot;changelog-password-decryption-key\&quot; property or the \&quot;changelog-password-decryption-key-passphrase-provider\&quot; property) in the Global Sync Configuration in the Data Sync Server. | [optional] 
 **PluginType** | [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | 

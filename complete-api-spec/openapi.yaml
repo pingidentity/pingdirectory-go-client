@@ -16399,7 +16399,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the ID Token Validator
+                Name of the Token Claim Validation
       - $ref: '#/components/schemas/string-array-token-claim-validation-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -16465,7 +16465,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the ID Token Validator
+                Name of the Token Claim Validation
       - $ref: '#/components/schemas/boolean-token-claim-validation-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -16515,7 +16515,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the ID Token Validator
+                Name of the Token Claim Validation
       - $ref: '#/components/schemas/string-token-claim-validation-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -16790,7 +16790,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
           maxUpdateFrequency:
             type: string
             description: >-
@@ -16919,7 +16919,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
           sampleInterval:
             type: string
             description: >-
@@ -17058,7 +17058,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/internal-search-rate-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -17141,7 +17141,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/modifiable-password-policy-state-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -17200,7 +17200,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/seven-bit-clean-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -17269,7 +17269,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/clean-up-expired-pingfederate-persistent-access-grants-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -17347,7 +17347,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/periodic-gc-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -17433,7 +17433,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/ping-one-pass-through-authentication-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -17568,7 +17568,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
           changelogPasswordEncryptionKey:
             type: string
             format: password
@@ -17617,7 +17617,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
           pluginType:
             type: array
             items:
@@ -17686,7 +17686,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/search-shutdown-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -17827,7 +17827,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/periodic-stats-logger-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -17995,7 +17995,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/purge-expired-data-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -18091,7 +18091,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
           pluginType:
             type: array
             items:
@@ -18136,7 +18136,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/sub-operation-timing-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -18201,7 +18201,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/third-party-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -18277,7 +18277,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
           pluginType:
             type: array
             items:
@@ -18339,7 +18339,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/pass-through-authentication-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -18466,7 +18466,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/dn-mapper-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -18548,7 +18548,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
           logInterval:
             type: string
             description: >-
@@ -18616,7 +18616,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/referral-on-update-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -18685,7 +18685,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/simple-to-external-bind-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -18735,7 +18735,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
           description:
             type: string
             description: >-
@@ -18780,7 +18780,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/snmp-subagent-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -18856,7 +18856,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
           invokeForInternalOperations:
             type: boolean
             description: >-
@@ -18912,7 +18912,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
           profileSampleInterval:
             type: string
             description: >-
@@ -18965,7 +18965,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/clean-up-inactive-pingfederate-persistent-sessions-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -19110,7 +19110,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/composed-attribute-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -19213,7 +19213,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
           pluginType:
             type: array
             items:
@@ -19258,7 +19258,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/attribute-mapper-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -19334,7 +19334,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/delay-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -19403,7 +19403,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/clean-up-expired-pingfederate-persistent-sessions-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -19469,7 +19469,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/groovy-scripted-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -19535,7 +19535,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
           pluginType:
             type: array
             items:
@@ -19592,7 +19592,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/pluggable-pass-through-authentication-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -19686,7 +19686,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/referential-integrity-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -19771,7 +19771,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/unique-attribute-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -19860,7 +19860,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Custom Logged Stats
       - $ref: '#/components/schemas/custom-logged-stats-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -25478,7 +25478,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Server Instance
+                Name of the Server Instance Listener
           serverLDAPPort:
             type: integer
             description: >-
@@ -25521,7 +25521,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Server Instance
+                Name of the Server Instance Listener
           listenAddress:
             type: string
             description: >-
@@ -25554,6 +25554,10 @@ components:
             maxItems: 1
             items:
               $ref: '#/components/schemas/Enummac-secret-keySchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Mac Secret Key
           macAlgorithmName:
             type: string
             description: >-
@@ -25578,6 +25582,7 @@ components:
                 The length of the key in bits.
       - $ref: '#/components/schemas/meta'
       required:
+      - id
       - keyID
       - keyLengthBits
     Enummac-secret-keySchemaUrn:
@@ -25594,6 +25599,10 @@ components:
             maxItems: 1
             items:
               $ref: '#/components/schemas/Enumcipher-secret-keySchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Cipher Secret Key
           cipherTransformationName:
             type: string
             description: >-
@@ -25622,6 +25631,7 @@ components:
                 The length of the key in bits.
       - $ref: '#/components/schemas/meta'
       required:
+      - id
       - keyID
       - keyLengthBits
     Enumcipher-secret-keySchemaUrn:
@@ -25654,7 +25664,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Server Instance
+                Name of the Inter Server Authentication Info
           authenticationType:
             $ref: '#/components/schemas/Enuminter-server-authentication-info-authenticationTypeProp'
           bindDN:
@@ -25696,7 +25706,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Server Instance
+                Name of the Inter Server Authentication Info
           purpose:
             type: array
             items:
@@ -26263,7 +26273,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Delegated Admin Rights
+                Name of the Delegated Admin Resource Rights
       - $ref: '#/components/schemas/delegated-admin-resource-rights-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -26671,6 +26681,10 @@ components:
             maxItems: 1
             items:
               $ref: '#/components/schemas/Enumreplication-domainSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Replication Domain
           serverID:
             type: integer
             description: >-
@@ -26705,6 +26719,7 @@ components:
                 Defines how long to wait before retrying certain operations, specifically operations that might have failed because they depend on an operation from a different server that has not yet replicated to this instance.
       - $ref: '#/components/schemas/meta'
       required:
+      - id
       - serverID
       - baseDN
     Enumreplication-domainSchemaUrn:
@@ -27384,7 +27399,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Root DN
+                Name of the Root DN User
       - $ref: '#/components/schemas/root-dn-user-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -28803,7 +28818,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the SCIM Resource Type
+                Name of the Correlated LDAP Data View
       - $ref: '#/components/schemas/correlated-ldap-data-view-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -28882,7 +28897,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the SCIM Resource Type
+                Name of the SCIM Attribute Mapping
       - $ref: '#/components/schemas/scim-attribute-mapping-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -28949,7 +28964,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the SCIM Resource Type
+                Name of the LDAP Correlation Attribute Pair
       - $ref: '#/components/schemas/ldap-correlation-attribute-pair-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -34194,7 +34209,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Consent Definition
+                Name of the Consent Definition Localization
       - $ref: '#/components/schemas/consent-definition-localization-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -43545,7 +43560,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Log Publisher
+                Name of the Debug Target
       - $ref: '#/components/schemas/debug-target-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -48550,7 +48565,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Backend
+                Name of the Local DB Composite Index
       - $ref: '#/components/schemas/local-db-composite-index-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -48636,7 +48651,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Backend
+                Name of the Local DB VLV Index
       - $ref: '#/components/schemas/local-db-vlv-index-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -48725,7 +48740,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Backend
+                Name of the Local DB Index
       - $ref: '#/components/schemas/local-db-index-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -50902,7 +50917,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the HTTP Servlet Extension
+                Name of the Prometheus Monitor Attribute Metric
       - $ref: '#/components/schemas/prometheus-monitor-attribute-metric-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -50979,7 +50994,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the HTTP Servlet Extension
+                Name of the Velocity Context Provider
       - $ref: '#/components/schemas/velocity-tools-velocity-context-provider-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -51054,7 +51069,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the HTTP Servlet Extension
+                Name of the Velocity Context Provider
           enabled:
             type: boolean
             description: >-
@@ -51111,7 +51126,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the HTTP Servlet Extension
+                Name of the Velocity Context Provider
       - $ref: '#/components/schemas/third-party-velocity-context-provider-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -51190,7 +51205,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the HTTP Servlet Extension
+                Name of the Velocity Template Loader
       - $ref: '#/components/schemas/velocity-template-loader-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -56551,7 +56566,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the REST Resource Type
+                Name of the Delegated Admin Attribute
       - $ref: '#/components/schemas/certificate-delegated-admin-attribute-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -56643,7 +56658,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the REST Resource Type
+                Name of the Delegated Admin Attribute
       - $ref: '#/components/schemas/photo-delegated-admin-attribute-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -56726,7 +56741,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the REST Resource Type
+                Name of the Delegated Admin Attribute
       - $ref: '#/components/schemas/generic-delegated-admin-attribute-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -56810,7 +56825,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the REST Resource Type
+                Name of the Delegated Admin Correlated REST Resource
       - $ref: '#/components/schemas/delegated-admin-correlated-rest-resource-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -60151,7 +60166,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the JSON Attribute Constraints
+                Name of the JSON Field Constraints
       - $ref: '#/components/schemas/json-field-constraints-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -60472,7 +60487,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the SCIM Schema
+                Name of the SCIM Attribute
       - $ref: '#/components/schemas/scim-attribute-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -60584,7 +60599,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the SCIM Schema
+                Name of the SCIM Subattribute
       - $ref: '#/components/schemas/scim-subattribute-shared'
       - $ref: '#/components/schemas/meta'
       required:

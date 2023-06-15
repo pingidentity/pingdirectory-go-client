@@ -19,7 +19,7 @@ var _ MappedNullable = &ConsentDefinitionLocalizationResponse{}
 
 // ConsentDefinitionLocalizationResponse struct for ConsentDefinitionLocalizationResponse
 type ConsentDefinitionLocalizationResponse struct {
-	// Name of the Consent Definition
+	// Name of the Consent Definition Localization
 	Id      string                                       `json:"id"`
 	Schemas []EnumconsentDefinitionLocalizationSchemaUrn `json:"schemas,omitempty"`
 	// The locale of this Consent Definition Localization.

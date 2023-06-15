@@ -20,7 +20,7 @@ var _ MappedNullable = &LastAccessTimePluginResponse{}
 // LastAccessTimePluginResponse struct for LastAccessTimePluginResponse
 type LastAccessTimePluginResponse struct {
 	Schemas []EnumlastAccessTimePluginSchemaUrn `json:"schemas"`
-	// Name of the Plugin Root
+	// Name of the Plugin
 	Id string `json:"id"`
 	// Specifies the maximum frequency with which last access time values should be written for an entry. This may help limit the rate of internal write operations processed in the server.
 	MaxUpdateFrequency *string                       `json:"maxUpdateFrequency,omitempty"`

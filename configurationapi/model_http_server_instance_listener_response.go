@@ -20,7 +20,7 @@ var _ MappedNullable = &HttpServerInstanceListenerResponse{}
 // HttpServerInstanceListenerResponse struct for HttpServerInstanceListenerResponse
 type HttpServerInstanceListenerResponse struct {
 	Schemas []EnumhttpServerInstanceListenerSchemaUrn `json:"schemas"`
-	// Name of the Server Instance
+	// Name of the Server Instance Listener
 	Id string `json:"id"`
 	// If the server is listening on a particular address different from the hostname, then this property may be used to specify the address on which to listen for connections from HTTP clients.
 	ListenAddress *string `json:"listenAddress,omitempty"`

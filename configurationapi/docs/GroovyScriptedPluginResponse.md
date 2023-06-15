@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Plugin Root | 
+**Id** | **string** | Name of the Plugin | 
 **Schemas** | [**[]EnumgroovyScriptedPluginSchemaUrn**](EnumgroovyScriptedPluginSchemaUrn.md) |  | 
 **ScriptClass** | **string** | The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Plugin. | 
 **RequestCriteria** | Pointer to **string** | Specifies a set of request criteria that may be used to indicate that this Groovy Scripted Plugin should only be invoked for operations in which the associated request matches this criteria. | [optional] 

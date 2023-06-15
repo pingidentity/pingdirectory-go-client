@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the JSON Attribute Constraints | 
+**Id** | **string** | Name of the JSON Field Constraints | 
 **Schemas** | Pointer to [**[]EnumjsonFieldConstraintsSchemaUrn**](EnumjsonFieldConstraintsSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this JSON Field Constraints | [optional] 
 **JsonField** | **string** | The full name of the JSON field to which these constraints apply. | 

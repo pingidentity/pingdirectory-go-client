@@ -19,7 +19,7 @@ var _ MappedNullable = &SevenBitCleanPluginResponse{}
 
 // SevenBitCleanPluginResponse struct for SevenBitCleanPluginResponse
 type SevenBitCleanPluginResponse struct {
-	// Name of the Plugin Root
+	// Name of the Plugin
 	Id         string                             `json:"id"`
 	Schemas    []EnumsevenBitCleanPluginSchemaUrn `json:"schemas"`
 	PluginType []EnumpluginPluginTypeProp         `json:"pluginType"`

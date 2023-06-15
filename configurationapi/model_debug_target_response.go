@@ -19,7 +19,7 @@ var _ MappedNullable = &DebugTargetResponse{}
 
 // DebugTargetResponse struct for DebugTargetResponse
 type DebugTargetResponse struct {
-	// Name of the Log Publisher
+	// Name of the Debug Target
 	Id      string                     `json:"id"`
 	Schemas []EnumdebugTargetSchemaUrn `json:"schemas,omitempty"`
 	// Specifies the fully-qualified Java package, class, or method affected by the settings in this target definition. Use the number character (#) to separate the class name and the method name (that is, com.unboundid.directory.server.core.DirectoryServer#startUp).

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the ID Token Validator | 
+**Id** | **string** | Name of the Token Claim Validation | 
 **Schemas** | [**[]EnumbooleanTokenClaimValidationSchemaUrn**](EnumbooleanTokenClaimValidationSchemaUrn.md) |  | 
 **RequiredValue** | [**EnumtokenClaimValidationRequiredValueProp**](EnumtokenClaimValidationRequiredValueProp.md) |  | 
 **Description** | Pointer to **string** | A description for this Token Claim Validation | [optional] 

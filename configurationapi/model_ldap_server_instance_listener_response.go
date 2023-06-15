@@ -20,7 +20,7 @@ var _ MappedNullable = &LdapServerInstanceListenerResponse{}
 // LdapServerInstanceListenerResponse struct for LdapServerInstanceListenerResponse
 type LdapServerInstanceListenerResponse struct {
 	Schemas []EnumldapServerInstanceListenerSchemaUrn `json:"schemas"`
-	// Name of the Server Instance
+	// Name of the Server Instance Listener
 	Id string `json:"id"`
 	// The TCP port number on which the LDAP server is listening.
 	ServerLDAPPort     *int64                                                `json:"serverLDAPPort,omitempty"`

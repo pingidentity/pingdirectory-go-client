@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Plugin Root | 
+**Id** | **string** | Name of the Plugin | 
 **Schemas** | [**[]EnumsevenBitCleanPluginSchemaUrn**](EnumsevenBitCleanPluginSchemaUrn.md) |  | 
 **PluginType** | [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | 
 **AttributeType** | **[]string** | Specifies the name or OID of an attribute type for which values should be checked to ensure that they are 7-bit clean. | 

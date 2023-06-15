@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the REST Resource Type | 
+**Id** | **string** | Name of the Delegated Admin Correlated REST Resource | 
 **Schemas** | Pointer to [**[]EnumdelegatedAdminCorrelatedRestResourceSchemaUrn**](EnumdelegatedAdminCorrelatedRestResourceSchemaUrn.md) |  | [optional] 
 **DisplayName** | **string** | A human readable display name for this Delegated Admin Correlated REST Resource. | 
 **CorrelatedRESTResource** | **string** | The REST Resource Type that will be linked to this REST Resource Type. | 

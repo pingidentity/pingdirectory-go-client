@@ -19,7 +19,7 @@ var _ MappedNullable = &ThirdPartyPluginResponse{}
 
 // ThirdPartyPluginResponse struct for ThirdPartyPluginResponse
 type ThirdPartyPluginResponse struct {
-	// Name of the Plugin Root
+	// Name of the Plugin
 	Id      string                          `json:"id"`
 	Schemas []EnumthirdPartyPluginSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Plugin.

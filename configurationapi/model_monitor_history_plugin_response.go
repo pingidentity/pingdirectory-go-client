@@ -20,7 +20,7 @@ var _ MappedNullable = &MonitorHistoryPluginResponse{}
 // MonitorHistoryPluginResponse struct for MonitorHistoryPluginResponse
 type MonitorHistoryPluginResponse struct {
 	Schemas []EnummonitorHistoryPluginSchemaUrn `json:"schemas"`
-	// Name of the Plugin Root
+	// Name of the Plugin
 	Id string `json:"id"`
 	// The duration between logging dumps of cn=monitor to a file.
 	LogInterval string `json:"logInterval"`

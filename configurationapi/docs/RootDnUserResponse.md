@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Root DN | 
+**Id** | **string** | Name of the Root DN User | 
 **Schemas** | Pointer to [**[]EnumrootDnUserSchemaUrn**](EnumrootDnUserSchemaUrn.md) |  | [optional] 
 **AlternateBindDN** | Pointer to **[]string** | Specifies one or more alternate DNs that can be used to bind to the server as this User. | [optional] 
 **Description** | Pointer to **string** | A description for this User. | [optional] 

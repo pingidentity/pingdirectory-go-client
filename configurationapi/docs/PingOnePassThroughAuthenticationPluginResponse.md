@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Plugin Root | 
+**Id** | **string** | Name of the Plugin | 
 **Schemas** | [**[]EnumpingOnePassThroughAuthenticationPluginSchemaUrn**](EnumpingOnePassThroughAuthenticationPluginSchemaUrn.md) |  | 
 **ApiURL** | **string** | Specifies the API endpoint for the PingOne web service. | 
 **AuthURL** | **string** | Specifies the API endpoint for the PingOne authentication service. | 

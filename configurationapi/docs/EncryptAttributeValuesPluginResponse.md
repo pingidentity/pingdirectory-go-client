@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | [**[]EnumencryptAttributeValuesPluginSchemaUrn**](EnumencryptAttributeValuesPluginSchemaUrn.md) |  | 
-**Id** | **string** | Name of the Plugin Root | 
+**Id** | **string** | Name of the Plugin | 
 **PluginType** | [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | 
 **AttributeType** | [**[]EnumpluginAttributeTypeProp**](EnumpluginAttributeTypeProp.md) |  | 
 **EncryptionSettingsDefinitionID** | Pointer to **string** | Specifies the ID of the encryption settings definition that should be used to encrypt the data. If this is not provided, the server&#39;s preferred encryption settings definition will be used. The \&quot;encryption-settings list\&quot; command can be used to obtain a list of the encryption settings definitions available in the server. | [optional] 

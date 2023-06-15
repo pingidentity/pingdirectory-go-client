@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Plugin Root | 
+**Id** | **string** | Name of the Plugin | 
 **Schemas** | [**[]EnumcleanUpInactivePingfederatePersistentSessionsPluginSchemaUrn**](EnumcleanUpInactivePingfederatePersistentSessionsPluginSchemaUrn.md) |  | 
 **ExpirationOffset** | **string** | Sessions whose last activity timestamp is older than this offset will be removed. | 
 **PollingInterval** | **string** | This specifies how often the plugin should check for expired data. It also controls the offset of peer servers (see the peer-server-priority-index for more information). | 

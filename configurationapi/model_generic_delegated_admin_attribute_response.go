@@ -19,7 +19,7 @@ var _ MappedNullable = &GenericDelegatedAdminAttributeResponse{}
 
 // GenericDelegatedAdminAttributeResponse struct for GenericDelegatedAdminAttributeResponse
 type GenericDelegatedAdminAttributeResponse struct {
-	// Name of the REST Resource Type
+	// Name of the Delegated Admin Attribute
 	Id      string                                        `json:"id"`
 	Schemas []EnumgenericDelegatedAdminAttributeSchemaUrn `json:"schemas"`
 	// A description for this Delegated Admin Attribute

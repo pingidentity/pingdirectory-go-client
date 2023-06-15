@@ -14549,7 +14549,7 @@ components:
       - validationName
     string-array-token-claim-validation-response:
       allOf:
-      - $ref: '#/components/schemas/ping_one_id_token_validator_response_allOf'
+      - $ref: '#/components/schemas/string_array_token_claim_validation_response_allOf'
       - $ref: '#/components/schemas/string-array-token-claim-validation-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -14602,7 +14602,7 @@ components:
       - validationName
     boolean-token-claim-validation-response:
       allOf:
-      - $ref: '#/components/schemas/ping_one_id_token_validator_response_allOf'
+      - $ref: '#/components/schemas/string_array_token_claim_validation_response_allOf'
       - $ref: '#/components/schemas/boolean-token-claim-validation-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -14640,7 +14640,7 @@ components:
       - validationName
     string-token-claim-validation-response:
       allOf:
-      - $ref: '#/components/schemas/ping_one_id_token_validator_response_allOf'
+      - $ref: '#/components/schemas/string_array_token_claim_validation_response_allOf'
       - $ref: '#/components/schemas/string-token-claim-validation-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -17139,7 +17139,7 @@ components:
       - statsName
     custom-logged-stats-response:
       allOf:
-      - $ref: '#/components/schemas/internal_search_rate_plugin_response_allOf'
+      - $ref: '#/components/schemas/custom_logged_stats_response_allOf'
       - $ref: '#/components/schemas/custom-logged-stats-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -22140,6 +22140,7 @@ components:
       - $ref: '#/components/schemas/mac_secret_key_response_allOf'
       - $ref: '#/components/schemas/meta'
       required:
+      - id
       - keyID
       - keyLengthBits
     Enummac-secret-keySchemaUrn:
@@ -22151,6 +22152,7 @@ components:
       - $ref: '#/components/schemas/cipher_secret_key_response_allOf'
       - $ref: '#/components/schemas/meta'
       required:
+      - id
       - keyID
       - keyLengthBits
     Enumcipher-secret-keySchemaUrn:
@@ -22703,7 +22705,7 @@ components:
       - restResourceType
     delegated-admin-resource-rights-response:
       allOf:
-      - $ref: '#/components/schemas/delegated_admin_rights_response_allOf'
+      - $ref: '#/components/schemas/delegated_admin_resource_rights_response_allOf'
       - $ref: '#/components/schemas/delegated-admin-resource-rights-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -23013,6 +23015,7 @@ components:
       - $ref: '#/components/schemas/meta'
       required:
       - baseDN
+      - id
       - serverID
     Enumreplication-domainSchemaUrn:
       enum:
@@ -25047,7 +25050,7 @@ components:
       - viewName
     correlated-ldap-data-view-response:
       allOf:
-      - $ref: '#/components/schemas/ldap_pass_through_scim_resource_type_response_allOf'
+      - $ref: '#/components/schemas/correlated_ldap_data_view_response_allOf'
       - $ref: '#/components/schemas/correlated-ldap-data-view-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -25120,7 +25123,7 @@ components:
       - mappingName
     scim-attribute-mapping-response:
       allOf:
-      - $ref: '#/components/schemas/ldap_pass_through_scim_resource_type_response_allOf'
+      - $ref: '#/components/schemas/scim_attribute_mapping_response_allOf'
       - $ref: '#/components/schemas/scim-attribute-mapping-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -25176,7 +25179,7 @@ components:
       - pairName
     ldap-correlation-attribute-pair-response:
       allOf:
-      - $ref: '#/components/schemas/ldap_pass_through_scim_resource_type_response_allOf'
+      - $ref: '#/components/schemas/ldap_correlation_attribute_pair_response_allOf'
       - $ref: '#/components/schemas/ldap-correlation-attribute-pair-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -29567,7 +29570,7 @@ components:
       - localizationName
     consent-definition-localization-response:
       allOf:
-      - $ref: '#/components/schemas/consent_definition_response_allOf'
+      - $ref: '#/components/schemas/consent_definition_localization_response_allOf'
       - $ref: '#/components/schemas/consent-definition-localization-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -38216,7 +38219,7 @@ components:
       - targetName
     debug-target-response:
       allOf:
-      - $ref: '#/components/schemas/syslog_json_audit_log_publisher_response_allOf'
+      - $ref: '#/components/schemas/debug_target_response_allOf'
       - $ref: '#/components/schemas/debug-target-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -41854,7 +41857,7 @@ components:
       - indexName
     local-db-composite-index-response:
       allOf:
-      - $ref: '#/components/schemas/local_db_backend_response_allOf'
+      - $ref: '#/components/schemas/local_db_composite_index_response_allOf'
       - $ref: '#/components/schemas/local-db-composite-index-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -41929,7 +41932,7 @@ components:
       - indexName
     local-db-vlv-index-response:
       allOf:
-      - $ref: '#/components/schemas/local_db_backend_response_allOf'
+      - $ref: '#/components/schemas/local_db_vlv_index_response_allOf'
       - $ref: '#/components/schemas/local-db-vlv-index-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -42007,7 +42010,7 @@ components:
       - indexName
     local-db-index-response:
       allOf:
-      - $ref: '#/components/schemas/local_db_backend_response_allOf'
+      - $ref: '#/components/schemas/local_db_index_response_allOf'
       - $ref: '#/components/schemas/local-db-index-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -43245,7 +43248,7 @@ components:
       - metricName
     prometheus-monitor-attribute-metric-response:
       allOf:
-      - $ref: '#/components/schemas/quickstart_http_servlet_extension_response_allOf'
+      - $ref: '#/components/schemas/prometheus_monitor_attribute_metric_response_allOf'
       - $ref: '#/components/schemas/prometheus-monitor-attribute-metric-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -43312,7 +43315,7 @@ components:
       - providerName
     velocity-tools-velocity-context-provider-response:
       allOf:
-      - $ref: '#/components/schemas/quickstart_http_servlet_extension_response_allOf'
+      - $ref: '#/components/schemas/velocity_tools_velocity_context_provider_response_allOf'
       - $ref: '#/components/schemas/velocity-tools-velocity-context-provider-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -43402,7 +43405,7 @@ components:
       - providerName
     third-party-velocity-context-provider-response:
       allOf:
-      - $ref: '#/components/schemas/quickstart_http_servlet_extension_response_allOf'
+      - $ref: '#/components/schemas/velocity_tools_velocity_context_provider_response_allOf'
       - $ref: '#/components/schemas/third-party-velocity-context-provider-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -43476,7 +43479,7 @@ components:
       - loaderName
     velocity-template-loader-response:
       allOf:
-      - $ref: '#/components/schemas/quickstart_http_servlet_extension_response_allOf'
+      - $ref: '#/components/schemas/velocity_template_loader_response_allOf'
       - $ref: '#/components/schemas/velocity-template-loader-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -48208,7 +48211,7 @@ components:
       - attributeType
     certificate-delegated-admin-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/user_rest_resource_type_response_allOf'
+      - $ref: '#/components/schemas/certificate_delegated_admin_attribute_response_allOf'
       - $ref: '#/components/schemas/certificate-delegated-admin-attribute-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -48289,7 +48292,7 @@ components:
       - attributeType
     photo-delegated-admin-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/user_rest_resource_type_response_allOf'
+      - $ref: '#/components/schemas/certificate_delegated_admin_attribute_response_allOf'
       - $ref: '#/components/schemas/photo-delegated-admin-attribute-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -48361,7 +48364,7 @@ components:
       - attributeType
     generic-delegated-admin-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/user_rest_resource_type_response_allOf'
+      - $ref: '#/components/schemas/certificate_delegated_admin_attribute_response_allOf'
       - $ref: '#/components/schemas/generic-delegated-admin-attribute-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -48434,7 +48437,7 @@ components:
       - resourceName
     delegated-admin-correlated-rest-resource-response:
       allOf:
-      - $ref: '#/components/schemas/user_rest_resource_type_response_allOf'
+      - $ref: '#/components/schemas/delegated_admin_correlated_rest_resource_response_allOf'
       - $ref: '#/components/schemas/delegated-admin-correlated-rest-resource-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -50853,7 +50856,7 @@ components:
       - jsonField
     json-field-constraints-response:
       allOf:
-      - $ref: '#/components/schemas/json_attribute_constraints_response_allOf'
+      - $ref: '#/components/schemas/json_field_constraints_response_allOf'
       - $ref: '#/components/schemas/json-field-constraints-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -51153,7 +51156,7 @@ components:
       - attributeName
     scim-attribute-response:
       allOf:
-      - $ref: '#/components/schemas/scim_schema_response_allOf'
+      - $ref: '#/components/schemas/scim_attribute_response_allOf'
       - $ref: '#/components/schemas/scim-attribute-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -51252,7 +51255,7 @@ components:
       - subattributeName
     scim-subattribute-response:
       allOf:
-      - $ref: '#/components/schemas/scim_schema_response_allOf'
+      - $ref: '#/components/schemas/scim_subattribute_response_allOf'
       - $ref: '#/components/schemas/scim-subattribute-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -53238,6 +53241,13 @@ components:
           type: string
       type: object
       example: null
+    string_array_token_claim_validation_response_allOf:
+      properties:
+        id:
+          description: Name of the Token Claim Validation
+          type: string
+      type: object
+      example: null
     plugin_root_response_allOf:
       properties:
         schemas:
@@ -53457,7 +53467,7 @@ components:
           minItems: 1
           type: array
         id:
-          description: Name of the Plugin Root
+          description: Name of the Plugin
           type: string
         maxUpdateFrequency:
           description: Specifies the maximum frequency with which last access time
@@ -53505,7 +53515,7 @@ components:
           minItems: 1
           type: array
         id:
-          description: Name of the Plugin Root
+          description: Name of the Plugin
           type: string
         sampleInterval:
           description: The duration between statistics collections. Setting this value
@@ -53568,7 +53578,7 @@ components:
     internal_search_rate_plugin_response_allOf:
       properties:
         id:
-          description: Name of the Plugin Root
+          description: Name of the Plugin
           type: string
       type: object
       example: null
@@ -53581,7 +53591,7 @@ components:
           minItems: 1
           type: array
         id:
-          description: Name of the Plugin Root
+          description: Name of the Plugin
           type: string
         changelogPasswordEncryptionKey:
           description: A passphrase that may be used to generate the key for encrypting
@@ -53623,7 +53633,7 @@ components:
           minItems: 1
           type: array
         id:
-          description: Name of the Plugin Root
+          description: Name of the Plugin
           type: string
         pluginType:
           items:
@@ -53667,7 +53677,7 @@ components:
           minItems: 1
           type: array
         id:
-          description: Name of the Plugin Root
+          description: Name of the Plugin
           type: string
         pluginType:
           items:
@@ -53694,7 +53704,7 @@ components:
           minItems: 1
           type: array
         id:
-          description: Name of the Plugin Root
+          description: Name of the Plugin
           type: string
         pluginType:
           items:
@@ -53732,7 +53742,7 @@ components:
           minItems: 1
           type: array
         id:
-          description: Name of the Plugin Root
+          description: Name of the Plugin
           type: string
         logInterval:
           description: The duration between logging dumps of cn=monitor to a file.
@@ -53783,7 +53793,7 @@ components:
           minItems: 1
           type: array
         id:
-          description: Name of the Plugin Root
+          description: Name of the Plugin
           type: string
         description:
           description: A description for this Plugin
@@ -53810,7 +53820,7 @@ components:
           minItems: 1
           type: array
         id:
-          description: Name of the Plugin Root
+          description: Name of the Plugin
           type: string
         invokeForInternalOperations:
           description: Indicates whether the plug-in should be invoked for internal
@@ -53849,7 +53859,7 @@ components:
           minItems: 1
           type: array
         id:
-          description: Name of the Plugin Root
+          description: Name of the Plugin
           type: string
         profileSampleInterval:
           description: Specifies the sample interval in milliseconds to be used when
@@ -53883,7 +53893,7 @@ components:
           minItems: 1
           type: array
         id:
-          description: Name of the Plugin Root
+          description: Name of the Plugin
           type: string
         pluginType:
           items:
@@ -53910,7 +53920,7 @@ components:
           minItems: 1
           type: array
         id:
-          description: Name of the Plugin Root
+          description: Name of the Plugin
           type: string
         pluginType:
           items:
@@ -53946,6 +53956,13 @@ components:
       properties:
         statsName:
           description: Name of the new Custom Logged Stats
+          type: string
+      type: object
+      example: null
+    custom_logged_stats_response_allOf:
+      properties:
+        id:
+          description: Name of the Custom Logged Stats
           type: string
       type: object
       example: null
@@ -54544,7 +54561,7 @@ components:
           minItems: 1
           type: array
         id:
-          description: Name of the Server Instance
+          description: Name of the Server Instance Listener
           type: string
         serverLDAPPort:
           description: The TCP port number on which the LDAP server is listening.
@@ -54571,7 +54588,7 @@ components:
           minItems: 1
           type: array
         id:
-          description: Name of the Server Instance
+          description: Name of the Server Instance Listener
           type: string
         listenAddress:
           description: "If the server is listening on a particular address different\
@@ -54597,6 +54614,9 @@ components:
           maxItems: 1
           minItems: 1
           type: array
+        id:
+          description: Name of the Mac Secret Key
+          type: string
         macAlgorithmName:
           description: "The algorithm name used to generate this MAC key, e.g. HmacMD5,\
             \ HmacSHA1, HMacSHA256, etc."
@@ -54629,6 +54649,9 @@ components:
           maxItems: 1
           minItems: 1
           type: array
+        id:
+          description: Name of the Cipher Secret Key
+          type: string
         cipherTransformationName:
           description: "The algorithm name used to produce this cipher, e.g. AES/CBC/PKCS5Padding."
           type: string
@@ -54664,7 +54687,7 @@ components:
           minItems: 1
           type: array
         id:
-          description: Name of the Server Instance
+          description: Name of the Inter Server Authentication Info
           type: string
         authenticationType:
           $ref: '#/components/schemas/Enuminter-server-authentication-info-authenticationTypeProp'
@@ -54693,7 +54716,7 @@ components:
           minItems: 1
           type: array
         id:
-          description: Name of the Server Instance
+          description: Name of the Inter Server Authentication Info
           type: string
         purpose:
           items:
@@ -54747,6 +54770,13 @@ components:
       properties:
         restResourceType:
           description: Name of the new Delegated Admin Resource Rights
+          type: string
+      type: object
+      example: null
+    delegated_admin_resource_rights_response_allOf:
+      properties:
+        id:
+          description: Name of the Delegated Admin Resource Rights
           type: string
       type: object
       example: null
@@ -54829,6 +54859,9 @@ components:
           maxItems: 1
           minItems: 1
           type: array
+        id:
+          description: Name of the Replication Domain
+          type: string
         serverID:
           description: Specifies a unique identifier for the Directory Server within
             the Replication Domain.
@@ -54906,7 +54939,7 @@ components:
     root_dn_user_response_allOf:
       properties:
         id:
-          description: Name of the Root DN
+          description: Name of the Root DN User
           type: string
       type: object
       example: null
@@ -55061,6 +55094,13 @@ components:
           type: string
       type: object
       example: null
+    correlated_ldap_data_view_response_allOf:
+      properties:
+        id:
+          description: Name of the Correlated LDAP Data View
+          type: string
+      type: object
+      example: null
     add_scim_attribute_mapping_request_allOf:
       properties:
         mappingName:
@@ -55068,10 +55108,24 @@ components:
           type: string
       type: object
       example: null
+    scim_attribute_mapping_response_allOf:
+      properties:
+        id:
+          description: Name of the SCIM Attribute Mapping
+          type: string
+      type: object
+      example: null
     add_ldap_correlation_attribute_pair_request_allOf:
       properties:
         pairName:
           description: Name of the new LDAP Correlation Attribute Pair
+          type: string
+      type: object
+      example: null
+    ldap_correlation_attribute_pair_response_allOf:
+      properties:
+        id:
+          description: Name of the LDAP Correlation Attribute Pair
           type: string
       type: object
       example: null
@@ -55733,6 +55787,13 @@ components:
       properties:
         localizationName:
           description: Name of the new Consent Definition Localization
+          type: string
+      type: object
+      example: null
+    consent_definition_localization_response_allOf:
+      properties:
+        id:
+          description: Name of the Consent Definition Localization
           type: string
       type: object
       example: null
@@ -56491,6 +56552,13 @@ components:
       properties:
         targetName:
           description: Name of the new Debug Target
+          type: string
+      type: object
+      example: null
+    debug_target_response_allOf:
+      properties:
+        id:
+          description: Name of the Debug Target
           type: string
       type: object
       example: null
@@ -57921,6 +57989,13 @@ components:
           type: string
       type: object
       example: null
+    local_db_composite_index_response_allOf:
+      properties:
+        id:
+          description: Name of the Local DB Composite Index
+          type: string
+      type: object
+      example: null
     add_local_db_vlv_index_request_allOf:
       properties:
         indexName:
@@ -57928,10 +58003,24 @@ components:
           type: string
       type: object
       example: null
+    local_db_vlv_index_response_allOf:
+      properties:
+        id:
+          description: Name of the Local DB VLV Index
+          type: string
+      type: object
+      example: null
     add_local_db_index_request_allOf:
       properties:
         indexName:
           description: Name of the new Local DB Index
+          type: string
+      type: object
+      example: null
+    local_db_index_response_allOf:
+      properties:
+        id:
+          description: Name of the Local DB Index
           type: string
       type: object
       example: null
@@ -58995,10 +59084,24 @@ components:
           type: string
       type: object
       example: null
+    prometheus_monitor_attribute_metric_response_allOf:
+      properties:
+        id:
+          description: Name of the Prometheus Monitor Attribute Metric
+          type: string
+      type: object
+      example: null
     add_velocity_tools_velocity_context_provider_request_allOf:
       properties:
         providerName:
           description: Name of the new Velocity Context Provider
+          type: string
+      type: object
+      example: null
+    velocity_tools_velocity_context_provider_response_allOf:
+      properties:
+        id:
+          description: Name of the Velocity Context Provider
           type: string
       type: object
       example: null
@@ -59011,7 +59114,7 @@ components:
           minItems: 1
           type: array
         id:
-          description: Name of the HTTP Servlet Extension
+          description: Name of the Velocity Context Provider
           type: string
         enabled:
           description: Indicates whether this Velocity Context Provider is enabled.
@@ -59053,6 +59156,13 @@ components:
       properties:
         loaderName:
           description: Name of the new Velocity Template Loader
+          type: string
+      type: object
+      example: null
+    velocity_template_loader_response_allOf:
+      properties:
+        id:
+          description: Name of the Velocity Template Loader
           type: string
       type: object
       example: null
@@ -59927,10 +60037,24 @@ components:
           type: string
       type: object
       example: null
+    certificate_delegated_admin_attribute_response_allOf:
+      properties:
+        id:
+          description: Name of the Delegated Admin Attribute
+          type: string
+      type: object
+      example: null
     add_delegated_admin_correlated_rest_resource_request_allOf:
       properties:
         resourceName:
           description: Name of the new Delegated Admin Correlated REST Resource
+          type: string
+      type: object
+      example: null
+    delegated_admin_correlated_rest_resource_response_allOf:
+      properties:
+        id:
+          description: Name of the Delegated Admin Correlated REST Resource
           type: string
       type: object
       example: null
@@ -60674,6 +60798,13 @@ components:
           type: string
       type: object
       example: null
+    json_field_constraints_response_allOf:
+      properties:
+        id:
+          description: Name of the JSON Field Constraints
+          type: string
+      type: object
+      example: null
     add_http_servlet_cross_origin_policy_request_allOf:
       properties:
         policyName:
@@ -60723,10 +60854,24 @@ components:
           type: string
       type: object
       example: null
+    scim_attribute_response_allOf:
+      properties:
+        id:
+          description: Name of the SCIM Attribute
+          type: string
+      type: object
+      example: null
     add_scim_subattribute_request_allOf:
       properties:
         subattributeName:
           description: Name of the new SCIM Subattribute
+          type: string
+      type: object
+      example: null
+    scim_subattribute_response_allOf:
+      properties:
+        id:
+          description: Name of the SCIM Subattribute
           type: string
       type: object
       example: null

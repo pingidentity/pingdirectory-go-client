@@ -2336,7 +2336,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Backend
+                Name of the Local DB Composite Index
       - $ref: '#/components/schemas/local-db-composite-index-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -2422,7 +2422,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Backend
+                Name of the Local DB VLV Index
       - $ref: '#/components/schemas/local-db-vlv-index-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -2511,7 +2511,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Backend
+                Name of the Local DB Index
       - $ref: '#/components/schemas/local-db-index-shared'
       - $ref: '#/components/schemas/meta'
       required:

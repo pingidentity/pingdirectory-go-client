@@ -19,7 +19,7 @@ var _ MappedNullable = &ReferralOnUpdatePluginResponse{}
 
 // ReferralOnUpdatePluginResponse struct for ReferralOnUpdatePluginResponse
 type ReferralOnUpdatePluginResponse struct {
-	// Name of the Plugin Root
+	// Name of the Plugin
 	Id         string                                `json:"id"`
 	Schemas    []EnumreferralOnUpdatePluginSchemaUrn `json:"schemas"`
 	PluginType []EnumpluginPluginTypeProp            `json:"pluginType"`

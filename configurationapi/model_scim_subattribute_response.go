@@ -19,7 +19,7 @@ var _ MappedNullable = &ScimSubattributeResponse{}
 
 // ScimSubattributeResponse struct for ScimSubattributeResponse
 type ScimSubattributeResponse struct {
-	// Name of the SCIM Schema
+	// Name of the SCIM Subattribute
 	Id      string                          `json:"id"`
 	Schemas []EnumscimSubattributeSchemaUrn `json:"schemas,omitempty"`
 	// A description for this SCIM Subattribute

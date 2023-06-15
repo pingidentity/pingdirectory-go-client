@@ -924,7 +924,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the REST Resource Type
+                Name of the Delegated Admin Attribute
       - $ref: '#/components/schemas/certificate-delegated-admin-attribute-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -1016,7 +1016,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the REST Resource Type
+                Name of the Delegated Admin Attribute
       - $ref: '#/components/schemas/photo-delegated-admin-attribute-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -1099,7 +1099,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the REST Resource Type
+                Name of the Delegated Admin Attribute
       - $ref: '#/components/schemas/generic-delegated-admin-attribute-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -1183,7 +1183,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the REST Resource Type
+                Name of the Delegated Admin Correlated REST Resource
       - $ref: '#/components/schemas/delegated-admin-correlated-rest-resource-shared'
       - $ref: '#/components/schemas/meta'
       required:

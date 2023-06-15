@@ -395,7 +395,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the JSON Attribute Constraints
+                Name of the JSON Field Constraints
       - $ref: '#/components/schemas/json-field-constraints-shared'
       - $ref: '#/components/schemas/meta'
       required:

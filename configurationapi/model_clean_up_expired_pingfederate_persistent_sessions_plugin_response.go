@@ -19,7 +19,7 @@ var _ MappedNullable = &CleanUpExpiredPingfederatePersistentSessionsPluginRespon
 
 // CleanUpExpiredPingfederatePersistentSessionsPluginResponse struct for CleanUpExpiredPingfederatePersistentSessionsPluginResponse
 type CleanUpExpiredPingfederatePersistentSessionsPluginResponse struct {
-	// Name of the Plugin Root
+	// Name of the Plugin
 	Id      string                                                            `json:"id"`
 	Schemas []EnumcleanUpExpiredPingfederatePersistentSessionsPluginSchemaUrn `json:"schemas"`
 	// This specifies how often the plugin should check for expired data. It also controls the offset of peer servers (see the peer-server-priority-index for more information).

@@ -19,7 +19,7 @@ var _ MappedNullable = &VelocityTemplateLoaderResponse{}
 
 // VelocityTemplateLoaderResponse struct for VelocityTemplateLoaderResponse
 type VelocityTemplateLoaderResponse struct {
-	// Name of the HTTP Servlet Extension
+	// Name of the Velocity Template Loader
 	Id      string                                `json:"id"`
 	Schemas []EnumvelocityTemplateLoaderSchemaUrn `json:"schemas,omitempty"`
 	// Indicates whether this Velocity Template Loader is enabled.

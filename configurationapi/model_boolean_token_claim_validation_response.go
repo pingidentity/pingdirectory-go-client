@@ -19,7 +19,7 @@ var _ MappedNullable = &BooleanTokenClaimValidationResponse{}
 
 // BooleanTokenClaimValidationResponse struct for BooleanTokenClaimValidationResponse
 type BooleanTokenClaimValidationResponse struct {
-	// Name of the ID Token Validator
+	// Name of the Token Claim Validation
 	Id            string                                     `json:"id"`
 	Schemas       []EnumbooleanTokenClaimValidationSchemaUrn `json:"schemas"`
 	RequiredValue EnumtokenClaimValidationRequiredValueProp  `json:"requiredValue"`

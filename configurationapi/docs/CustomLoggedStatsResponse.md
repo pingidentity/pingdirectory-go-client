@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Plugin Root | 
+**Id** | **string** | Name of the Custom Logged Stats | 
 **Schemas** | Pointer to [**[]EnumcustomLoggedStatsSchemaUrn**](EnumcustomLoggedStatsSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Custom Logged Stats | [optional] 
 **Enabled** | **bool** | Indicates whether the Custom Logged Stats object is enabled. | 

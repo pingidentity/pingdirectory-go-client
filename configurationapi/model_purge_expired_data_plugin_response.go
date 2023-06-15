@@ -19,7 +19,7 @@ var _ MappedNullable = &PurgeExpiredDataPluginResponse{}
 
 // PurgeExpiredDataPluginResponse struct for PurgeExpiredDataPluginResponse
 type PurgeExpiredDataPluginResponse struct {
-	// Name of the Plugin Root
+	// Name of the Plugin
 	Id      string                                `json:"id"`
 	Schemas []EnumpurgeExpiredDataPluginSchemaUrn `json:"schemas"`
 	// The LDAP attribute that determines when data should be deleted. This could store the expiration time, or it could store the creation time and the expiration-offset property specifies the duration before data is deleted.

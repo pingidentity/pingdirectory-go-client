@@ -20,6 +20,8 @@ var _ MappedNullable = &MacSecretKeyResponse{}
 // MacSecretKeyResponse struct for MacSecretKeyResponse
 type MacSecretKeyResponse struct {
 	Schemas []EnummacSecretKeySchemaUrn `json:"schemas,omitempty"`
+	// Name of the Mac Secret Key
+	Id string `json:"id"`
 	// The algorithm name used to generate this MAC key, e.g. HmacMD5, HmacSHA1, HMacSHA256, etc.
 	MacAlgorithmName *string `json:"macAlgorithmName,omitempty"`
 	// The unique system-generated identifier for the Secret Key.
@@ -38,8 +40,9 @@ type MacSecretKeyResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMacSecretKeyResponse(keyID string, keyLengthBits int64) *MacSecretKeyResponse {
+func NewMacSecretKeyResponse(id string, keyID string, keyLengthBits int64) *MacSecretKeyResponse {
 	this := MacSecretKeyResponse{}
+	this.Id = id
 	this.KeyID = keyID
 	this.KeyLengthBits = keyLengthBits
 	return &this
@@ -83,6 +86,30 @@ func (o *MacSecretKeyResponse) HasSchemas() bool {
 // SetSchemas gets a reference to the given []EnummacSecretKeySchemaUrn and assigns it to the Schemas field.
 func (o *MacSecretKeyResponse) SetSchemas(v []EnummacSecretKeySchemaUrn) {
 	o.Schemas = v
+}
+
+// GetId returns the Id field value
+func (o *MacSecretKeyResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *MacSecretKeyResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *MacSecretKeyResponse) SetId(v string) {
+	o.Id = v
 }
 
 // GetMacAlgorithmName returns the MacAlgorithmName field value if set, zero value otherwise.
@@ -306,6 +333,7 @@ func (o MacSecretKeyResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
 	}
+	toSerialize["id"] = o.Id
 	if !IsNil(o.MacAlgorithmName) {
 		toSerialize["macAlgorithmName"] = o.MacAlgorithmName
 	}

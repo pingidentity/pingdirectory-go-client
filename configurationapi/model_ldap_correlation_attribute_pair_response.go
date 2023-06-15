@@ -19,7 +19,7 @@ var _ MappedNullable = &LdapCorrelationAttributePairResponse{}
 
 // LdapCorrelationAttributePairResponse struct for LdapCorrelationAttributePairResponse
 type LdapCorrelationAttributePairResponse struct {
-	// Name of the SCIM Resource Type
+	// Name of the LDAP Correlation Attribute Pair
 	Id      string                                      `json:"id"`
 	Schemas []EnumldapCorrelationAttributePairSchemaUrn `json:"schemas,omitempty"`
 	// The LDAP attribute from the base SCIM Resource Type whose value will be used to match objects in the Correlated LDAP Data View.

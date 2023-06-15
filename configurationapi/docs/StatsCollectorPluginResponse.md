@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | [**[]EnumstatsCollectorPluginSchemaUrn**](EnumstatsCollectorPluginSchemaUrn.md) |  | 
-**Id** | **string** | Name of the Plugin Root | 
+**Id** | **string** | Name of the Plugin | 
 **SampleInterval** | **string** | The duration between statistics collections. Setting this value too small can have an impact on performance. This value should be a multiple of collection-interval. | 
 **CollectionInterval** | **string** | Some of the calculated statistics, such as the average and maximum queue sizes, can use multiple samples within a log interval. This value controls how often samples are gathered, and setting this value too small can have an adverse impact on performance. | 
 **LdapInfo** | Pointer to [**EnumpluginLdapInfoProp**](EnumpluginLdapInfoProp.md) |  | [optional] 

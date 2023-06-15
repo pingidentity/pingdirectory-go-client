@@ -19,7 +19,7 @@ var _ MappedNullable = &PingOnePassThroughAuthenticationPluginResponse{}
 
 // PingOnePassThroughAuthenticationPluginResponse struct for PingOnePassThroughAuthenticationPluginResponse
 type PingOnePassThroughAuthenticationPluginResponse struct {
-	// Name of the Plugin Root
+	// Name of the Plugin
 	Id      string                                                `json:"id"`
 	Schemas []EnumpingOnePassThroughAuthenticationPluginSchemaUrn `json:"schemas"`
 	// Specifies the API endpoint for the PingOne web service.

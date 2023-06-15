@@ -19,7 +19,7 @@ var _ MappedNullable = &SnmpSubagentPluginResponse{}
 
 // SnmpSubagentPluginResponse struct for SnmpSubagentPluginResponse
 type SnmpSubagentPluginResponse struct {
-	// Name of the Plugin Root
+	// Name of the Plugin
 	Id      string                            `json:"id"`
 	Schemas []EnumsnmpSubagentPluginSchemaUrn `json:"schemas"`
 	// The SNMP context name for this sub-agent. The context name must not be longer than 30 ASCII characters. Each server in a topology must have a unique SNMP context name.

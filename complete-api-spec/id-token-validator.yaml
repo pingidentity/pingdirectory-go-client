@@ -520,7 +520,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the ID Token Validator
+                Name of the Token Claim Validation
       - $ref: '#/components/schemas/string-array-token-claim-validation-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -586,7 +586,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the ID Token Validator
+                Name of the Token Claim Validation
       - $ref: '#/components/schemas/boolean-token-claim-validation-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -636,7 +636,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the ID Token Validator
+                Name of the Token Claim Validation
       - $ref: '#/components/schemas/string-token-claim-validation-shared'
       - $ref: '#/components/schemas/meta'
       required:

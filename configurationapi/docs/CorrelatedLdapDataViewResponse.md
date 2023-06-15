@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the SCIM Resource Type | 
+**Id** | **string** | Name of the Correlated LDAP Data View | 
 **Schemas** | Pointer to [**[]EnumcorrelatedLdapDataViewSchemaUrn**](EnumcorrelatedLdapDataViewSchemaUrn.md) |  | [optional] 
 **StructuralLDAPObjectclass** | **string** | Specifies the LDAP structural object class that should be exposed by this Correlated LDAP Data View. | 
 **AuxiliaryLDAPObjectclass** | Pointer to **[]string** | Specifies an auxiliary LDAP object class that should be exposed by this Correlated LDAP Data View. | [optional] 

@@ -20,7 +20,7 @@ var _ MappedNullable = &ChangelogPasswordEncryptionPluginResponse{}
 // ChangelogPasswordEncryptionPluginResponse struct for ChangelogPasswordEncryptionPluginResponse
 type ChangelogPasswordEncryptionPluginResponse struct {
 	Schemas []EnumchangelogPasswordEncryptionPluginSchemaUrn `json:"schemas"`
-	// Name of the Plugin Root
+	// Name of the Plugin
 	Id string `json:"id"`
 	// A passphrase that may be used to generate the key for encrypting passwords stored in the changelog. The same passphrase also needs to be set (either through the \"changelog-password-decryption-key\" property or the \"changelog-password-decryption-key-passphrase-provider\" property) in the Global Sync Configuration in the Data Sync Server.
 	ChangelogPasswordEncryptionKey *string `json:"changelogPasswordEncryptionKey,omitempty"`

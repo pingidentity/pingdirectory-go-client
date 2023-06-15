@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Plugin Root | 
+**Id** | **string** | Name of the Plugin | 
 **Schemas** | [**[]EnummodifiablePasswordPolicyStatePluginSchemaUrn**](EnummodifiablePasswordPolicyStatePluginSchemaUrn.md) |  | 
 **BaseDN** | Pointer to **[]string** | A base DN that may be used to identify entries that should support the ds-pwp-modifiable-state-json operational attribute. | [optional] 
 **Filter** | Pointer to **[]string** | A filter that may be used to identify entries that should support the ds-pwp-modifiable-state-json operational attribute. | [optional] 

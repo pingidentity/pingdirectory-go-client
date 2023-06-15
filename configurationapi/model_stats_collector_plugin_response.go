@@ -20,7 +20,7 @@ var _ MappedNullable = &StatsCollectorPluginResponse{}
 // StatsCollectorPluginResponse struct for StatsCollectorPluginResponse
 type StatsCollectorPluginResponse struct {
 	Schemas []EnumstatsCollectorPluginSchemaUrn `json:"schemas"`
-	// Name of the Plugin Root
+	// Name of the Plugin
 	Id string `json:"id"`
 	// The duration between statistics collections. Setting this value too small can have an impact on performance. This value should be a multiple of collection-interval.
 	SampleInterval string `json:"sampleInterval"`

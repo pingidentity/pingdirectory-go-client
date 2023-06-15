@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Plugin Root | 
+**Id** | **string** | Name of the Plugin | 
 **Schemas** | [**[]EnumsimpleToExternalBindPluginSchemaUrn**](EnumsimpleToExternalBindPluginSchemaUrn.md) |  | 
 **ConnectionCriteria** | Pointer to **string** | Specifies a connection criteria object that may be used to indicate the set of clients for which this plugin should be used. If a value is provided, then this plugin will only be used for requests from client connections matching this criteria. | [optional] 
 **RequestCriteria** | Pointer to **string** | Specifies a request criteria object that may be used to indicate the set of requests for which this plugin should be used. If a value is provided, then this plugin will only be used for bind requests matching this criteria. | [optional] 

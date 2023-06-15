@@ -362,7 +362,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Root DN
+                Name of the Root DN User
       - $ref: '#/components/schemas/root-dn-user-shared'
       - $ref: '#/components/schemas/meta'
       required:

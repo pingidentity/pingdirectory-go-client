@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | Pointer to [**[]EnummacSecretKeySchemaUrn**](EnummacSecretKeySchemaUrn.md) |  | [optional] 
+**Id** | **string** | Name of the Mac Secret Key | 
 **MacAlgorithmName** | Pointer to **string** | The algorithm name used to generate this MAC key, e.g. HmacMD5, HmacSHA1, HMacSHA256, etc. | [optional] 
 **KeyID** | **string** | The unique system-generated identifier for the Secret Key. | 
 **IsCompromised** | Pointer to **bool** | If the key is compromised, an administrator may set this flag to immediately trigger the creation of a new secret key. After the new key is generated, the value of this property will be reset to false. | [optional] 
@@ -17,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewMacSecretKeyResponse
 
-`func NewMacSecretKeyResponse(keyID string, keyLengthBits int64, ) *MacSecretKeyResponse`
+`func NewMacSecretKeyResponse(id string, keyID string, keyLengthBits int64, ) *MacSecretKeyResponse`
 
 NewMacSecretKeyResponse instantiates a new MacSecretKeyResponse object
 This constructor will assign default values to properties that have it defined,
@@ -56,6 +57,26 @@ SetSchemas sets Schemas field to given value.
 `func (o *MacSecretKeyResponse) HasSchemas() bool`
 
 HasSchemas returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *MacSecretKeyResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *MacSecretKeyResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *MacSecretKeyResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 ### GetMacAlgorithmName
 

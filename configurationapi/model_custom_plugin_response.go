@@ -20,7 +20,7 @@ var _ MappedNullable = &CustomPluginResponse{}
 // CustomPluginResponse struct for CustomPluginResponse
 type CustomPluginResponse struct {
 	Schemas []EnumcustomPluginSchemaUrn `json:"schemas"`
-	// Name of the Plugin Root
+	// Name of the Plugin
 	Id string `json:"id"`
 	// A description for this Plugin
 	Description *string `json:"description,omitempty"`
