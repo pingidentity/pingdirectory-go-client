@@ -20,7 +20,7 @@ var _ MappedNullable = &PasswordPolicyImportPluginResponse{}
 // PasswordPolicyImportPluginResponse struct for PasswordPolicyImportPluginResponse
 type PasswordPolicyImportPluginResponse struct {
 	Schemas []EnumpasswordPolicyImportPluginSchemaUrn `json:"schemas"`
-	// Name of the Plugin Root
+	// Name of the Plugin
 	Id string `json:"id"`
 	// Indicates whether the plug-in should be invoked for internal operations.
 	InvokeForInternalOperations *bool `json:"invokeForInternalOperations,omitempty"`

@@ -19,7 +19,7 @@ var _ MappedNullable = &SimpleToExternalBindPluginResponse{}
 
 // SimpleToExternalBindPluginResponse struct for SimpleToExternalBindPluginResponse
 type SimpleToExternalBindPluginResponse struct {
-	// Name of the Plugin Root
+	// Name of the Plugin
 	Id      string                                    `json:"id"`
 	Schemas []EnumsimpleToExternalBindPluginSchemaUrn `json:"schemas"`
 	// Specifies a connection criteria object that may be used to indicate the set of clients for which this plugin should be used. If a value is provided, then this plugin will only be used for requests from client connections matching this criteria.

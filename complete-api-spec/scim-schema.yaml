@@ -584,7 +584,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the SCIM Schema
+                Name of the SCIM Attribute
       - $ref: '#/components/schemas/scim-attribute-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -696,7 +696,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the SCIM Schema
+                Name of the SCIM Subattribute
       - $ref: '#/components/schemas/scim-subattribute-shared'
       - $ref: '#/components/schemas/meta'
       required:

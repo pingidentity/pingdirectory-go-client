@@ -19,7 +19,7 @@ var _ MappedNullable = &PassThroughAuthenticationPluginResponse{}
 
 // PassThroughAuthenticationPluginResponse struct for PassThroughAuthenticationPluginResponse
 type PassThroughAuthenticationPluginResponse struct {
-	// Name of the Plugin Root
+	// Name of the Plugin
 	Id         string                                         `json:"id"`
 	Schemas    []EnumpassThroughAuthenticationPluginSchemaUrn `json:"schemas"`
 	PluginType []EnumpluginPluginTypeProp                     `json:"pluginType"`

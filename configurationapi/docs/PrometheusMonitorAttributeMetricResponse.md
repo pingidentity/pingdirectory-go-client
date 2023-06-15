@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the HTTP Servlet Extension | 
+**Id** | **string** | Name of the Prometheus Monitor Attribute Metric | 
 **Schemas** | Pointer to [**[]EnumprometheusMonitorAttributeMetricSchemaUrn**](EnumprometheusMonitorAttributeMetricSchemaUrn.md) |  | [optional] 
 **MetricName** | **string** | The name that will be used in the metric to be consumed by Prometheus. | 
 **MonitorAttributeName** | **string** | The name of the monitor attribute that contains the numeric value to be published. | 

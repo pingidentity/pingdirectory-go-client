@@ -19,7 +19,7 @@ var _ MappedNullable = &CorrelatedLdapDataViewResponse{}
 
 // CorrelatedLdapDataViewResponse struct for CorrelatedLdapDataViewResponse
 type CorrelatedLdapDataViewResponse struct {
-	// Name of the SCIM Resource Type
+	// Name of the Correlated LDAP Data View
 	Id      string                                `json:"id"`
 	Schemas []EnumcorrelatedLdapDataViewSchemaUrn `json:"schemas,omitempty"`
 	// Specifies the LDAP structural object class that should be exposed by this Correlated LDAP Data View.

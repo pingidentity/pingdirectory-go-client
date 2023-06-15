@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | [**[]EnumcertificateInterServerAuthenticationInfoSchemaUrn**](EnumcertificateInterServerAuthenticationInfoSchemaUrn.md) |  | 
-**Id** | **string** | Name of the Server Instance | 
+**Id** | **string** | Name of the Inter Server Authentication Info | 
 **AuthenticationType** | Pointer to [**EnuminterServerAuthenticationInfoAuthenticationTypeProp**](EnuminterServerAuthenticationInfoAuthenticationTypeProp.md) |  | [optional] 
 **BindDN** | Pointer to **string** | A DN of the username that should be used for the bind request. | [optional] 
 **Username** | Pointer to **string** | The username that should be used for the bind request. | [optional] 

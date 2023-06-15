@@ -20,7 +20,7 @@ var _ MappedNullable = &EncryptAttributeValuesPluginResponse{}
 // EncryptAttributeValuesPluginResponse struct for EncryptAttributeValuesPluginResponse
 type EncryptAttributeValuesPluginResponse struct {
 	Schemas []EnumencryptAttributeValuesPluginSchemaUrn `json:"schemas"`
-	// Name of the Plugin Root
+	// Name of the Plugin
 	Id            string                        `json:"id"`
 	PluginType    []EnumpluginPluginTypeProp    `json:"pluginType"`
 	AttributeType []EnumpluginAttributeTypeProp `json:"attributeType"`

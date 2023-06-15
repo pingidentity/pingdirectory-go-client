@@ -19,7 +19,7 @@ var _ MappedNullable = &StringArrayTokenClaimValidationResponse{}
 
 // StringArrayTokenClaimValidationResponse struct for StringArrayTokenClaimValidationResponse
 type StringArrayTokenClaimValidationResponse struct {
-	// Name of the ID Token Validator
+	// Name of the Token Claim Validation
 	Id      string                                         `json:"id"`
 	Schemas []EnumstringArrayTokenClaimValidationSchemaUrn `json:"schemas"`
 	// The set of all values that the claim must have to be considered valid.

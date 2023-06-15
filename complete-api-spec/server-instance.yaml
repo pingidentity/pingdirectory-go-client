@@ -1060,7 +1060,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Server Instance
+                Name of the Server Instance Listener
           serverLDAPPort:
             type: integer
             description: >-
@@ -1103,7 +1103,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Server Instance
+                Name of the Server Instance Listener
           listenAddress:
             type: string
             description: >-
@@ -1136,6 +1136,10 @@ components:
             maxItems: 1
             items:
               $ref: '#/components/schemas/Enummac-secret-keySchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Mac Secret Key
           macAlgorithmName:
             type: string
             description: >-
@@ -1160,6 +1164,7 @@ components:
                 The length of the key in bits.
       - $ref: '#/components/schemas/meta'
       required:
+      - id
       - keyID
       - keyLengthBits
     Enummac-secret-keySchemaUrn:
@@ -1176,6 +1181,10 @@ components:
             maxItems: 1
             items:
               $ref: '#/components/schemas/Enumcipher-secret-keySchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Cipher Secret Key
           cipherTransformationName:
             type: string
             description: >-
@@ -1204,6 +1213,7 @@ components:
                 The length of the key in bits.
       - $ref: '#/components/schemas/meta'
       required:
+      - id
       - keyID
       - keyLengthBits
     Enumcipher-secret-keySchemaUrn:
@@ -1236,7 +1246,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Server Instance
+                Name of the Inter Server Authentication Info
           authenticationType:
             $ref: '#/components/schemas/Enuminter-server-authentication-info-authenticationTypeProp'
           bindDN:
@@ -1278,7 +1288,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Server Instance
+                Name of the Inter Server Authentication Info
           purpose:
             type: array
             items:

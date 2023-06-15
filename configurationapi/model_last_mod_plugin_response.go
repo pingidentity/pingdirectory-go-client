@@ -20,7 +20,7 @@ var _ MappedNullable = &LastModPluginResponse{}
 // LastModPluginResponse struct for LastModPluginResponse
 type LastModPluginResponse struct {
 	Schemas []EnumlastModPluginSchemaUrn `json:"schemas"`
-	// Name of the Plugin Root
+	// Name of the Plugin
 	Id         string                     `json:"id"`
 	PluginType []EnumpluginPluginTypeProp `json:"pluginType"`
 	// Specifies the name or OID of an attribute type that must be updated in order for the modifiersName and modifyTimestamp attributes to be updated in the target entry.

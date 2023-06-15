@@ -19,7 +19,7 @@ var _ MappedNullable = &DelegatedAdminCorrelatedRestResourceResponse{}
 
 // DelegatedAdminCorrelatedRestResourceResponse struct for DelegatedAdminCorrelatedRestResourceResponse
 type DelegatedAdminCorrelatedRestResourceResponse struct {
-	// Name of the REST Resource Type
+	// Name of the Delegated Admin Correlated REST Resource
 	Id      string                                              `json:"id"`
 	Schemas []EnumdelegatedAdminCorrelatedRestResourceSchemaUrn `json:"schemas,omitempty"`
 	// A human readable display name for this Delegated Admin Correlated REST Resource.

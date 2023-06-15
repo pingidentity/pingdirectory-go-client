@@ -19,7 +19,7 @@ var _ MappedNullable = &DelayPluginResponse{}
 
 // DelayPluginResponse struct for DelayPluginResponse
 type DelayPluginResponse struct {
-	// Name of the Plugin Root
+	// Name of the Plugin
 	Id         string                     `json:"id"`
 	Schemas    []EnumdelayPluginSchemaUrn `json:"schemas"`
 	PluginType []EnumpluginPluginTypeProp `json:"pluginType"`

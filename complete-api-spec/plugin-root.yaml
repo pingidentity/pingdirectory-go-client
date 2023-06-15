@@ -708,7 +708,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
           maxUpdateFrequency:
             type: string
             description: >-
@@ -837,7 +837,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
           sampleInterval:
             type: string
             description: >-
@@ -976,7 +976,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/internal-search-rate-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -1059,7 +1059,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/modifiable-password-policy-state-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -1118,7 +1118,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/seven-bit-clean-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -1187,7 +1187,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/clean-up-expired-pingfederate-persistent-access-grants-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -1265,7 +1265,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/periodic-gc-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -1351,7 +1351,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/ping-one-pass-through-authentication-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -1486,7 +1486,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
           changelogPasswordEncryptionKey:
             type: string
             format: password
@@ -1535,7 +1535,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
           pluginType:
             type: array
             items:
@@ -1604,7 +1604,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/search-shutdown-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -1745,7 +1745,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/periodic-stats-logger-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -1913,7 +1913,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/purge-expired-data-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -2009,7 +2009,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
           pluginType:
             type: array
             items:
@@ -2054,7 +2054,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/sub-operation-timing-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -2119,7 +2119,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/third-party-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -2195,7 +2195,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
           pluginType:
             type: array
             items:
@@ -2257,7 +2257,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/pass-through-authentication-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -2384,7 +2384,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/dn-mapper-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -2466,7 +2466,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
           logInterval:
             type: string
             description: >-
@@ -2534,7 +2534,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/referral-on-update-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -2603,7 +2603,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/simple-to-external-bind-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -2653,7 +2653,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
           description:
             type: string
             description: >-
@@ -2698,7 +2698,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/snmp-subagent-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -2774,7 +2774,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
           invokeForInternalOperations:
             type: boolean
             description: >-
@@ -2830,7 +2830,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
           profileSampleInterval:
             type: string
             description: >-
@@ -2883,7 +2883,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/clean-up-inactive-pingfederate-persistent-sessions-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -3028,7 +3028,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/composed-attribute-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -3131,7 +3131,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
           pluginType:
             type: array
             items:
@@ -3176,7 +3176,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/attribute-mapper-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -3252,7 +3252,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/delay-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -3321,7 +3321,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/clean-up-expired-pingfederate-persistent-sessions-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -3387,7 +3387,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/groovy-scripted-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -3453,7 +3453,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
           pluginType:
             type: array
             items:
@@ -3510,7 +3510,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/pluggable-pass-through-authentication-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -3604,7 +3604,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/referential-integrity-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -3689,7 +3689,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Plugin
       - $ref: '#/components/schemas/unique-attribute-plugin-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -3778,7 +3778,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Plugin Root
+                Name of the Custom Logged Stats
       - $ref: '#/components/schemas/custom-logged-stats-shared'
       - $ref: '#/components/schemas/meta'
       required:

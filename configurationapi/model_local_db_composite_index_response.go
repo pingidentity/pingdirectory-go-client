@@ -19,7 +19,7 @@ var _ MappedNullable = &LocalDbCompositeIndexResponse{}
 
 // LocalDbCompositeIndexResponse struct for LocalDbCompositeIndexResponse
 type LocalDbCompositeIndexResponse struct {
-	// Name of the Backend
+	// Name of the Local DB Composite Index
 	Id      string                               `json:"id"`
 	Schemas []EnumlocalDbCompositeIndexSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Local DB Composite Index

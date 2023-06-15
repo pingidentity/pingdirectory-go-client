@@ -390,7 +390,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the Delegated Admin Rights
+                Name of the Delegated Admin Resource Rights
       - $ref: '#/components/schemas/delegated-admin-resource-rights-shared'
       - $ref: '#/components/schemas/meta'
       required:

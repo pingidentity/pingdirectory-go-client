@@ -19,7 +19,7 @@ var _ MappedNullable = &ReferentialIntegrityPluginResponse{}
 
 // ReferentialIntegrityPluginResponse struct for ReferentialIntegrityPluginResponse
 type ReferentialIntegrityPluginResponse struct {
-	// Name of the Plugin Root
+	// Name of the Plugin
 	Id         string                                    `json:"id"`
 	Schemas    []EnumreferentialIntegrityPluginSchemaUrn `json:"schemas"`
 	PluginType []EnumpluginPluginTypeProp                `json:"pluginType"`

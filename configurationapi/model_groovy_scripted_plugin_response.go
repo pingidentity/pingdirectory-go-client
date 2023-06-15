@@ -19,7 +19,7 @@ var _ MappedNullable = &GroovyScriptedPluginResponse{}
 
 // GroovyScriptedPluginResponse struct for GroovyScriptedPluginResponse
 type GroovyScriptedPluginResponse struct {
-	// Name of the Plugin Root
+	// Name of the Plugin
 	Id      string                              `json:"id"`
 	Schemas []EnumgroovyScriptedPluginSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Plugin.

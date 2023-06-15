@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | Pointer to [**[]EnumreplicationDomainSchemaUrn**](EnumreplicationDomainSchemaUrn.md) |  | [optional] 
+**Id** | **string** | Name of the Replication Domain | 
 **ServerID** | **int64** | Specifies a unique identifier for the Directory Server within the Replication Domain. | 
 **BaseDN** | **string** | Specifies the base DN of the replicated data. | 
 **WindowSize** | Pointer to **int64** | Specifies the maximum number of replication updates the Directory Server can have outstanding from the Replication Server. | [optional] 
@@ -20,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewReplicationDomainResponse
 
-`func NewReplicationDomainResponse(serverID int64, baseDN string, ) *ReplicationDomainResponse`
+`func NewReplicationDomainResponse(id string, serverID int64, baseDN string, ) *ReplicationDomainResponse`
 
 NewReplicationDomainResponse instantiates a new ReplicationDomainResponse object
 This constructor will assign default values to properties that have it defined,
@@ -59,6 +60,26 @@ SetSchemas sets Schemas field to given value.
 `func (o *ReplicationDomainResponse) HasSchemas() bool`
 
 HasSchemas returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *ReplicationDomainResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *ReplicationDomainResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *ReplicationDomainResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 ### GetServerID
 

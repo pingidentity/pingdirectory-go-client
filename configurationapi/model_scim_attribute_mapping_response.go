@@ -19,7 +19,7 @@ var _ MappedNullable = &ScimAttributeMappingResponse{}
 
 // ScimAttributeMappingResponse struct for ScimAttributeMappingResponse
 type ScimAttributeMappingResponse struct {
-	// Name of the SCIM Resource Type
+	// Name of the SCIM Attribute Mapping
 	Id      string                              `json:"id"`
 	Schemas []EnumscimAttributeMappingSchemaUrn `json:"schemas,omitempty"`
 	// The Correlated LDAP Data View that persists the mapped SCIM Resource Type attribute(s).

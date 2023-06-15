@@ -20,7 +20,7 @@ var _ MappedNullable = &CertificateInterServerAuthenticationInfoResponse{}
 // CertificateInterServerAuthenticationInfoResponse struct for CertificateInterServerAuthenticationInfoResponse
 type CertificateInterServerAuthenticationInfoResponse struct {
 	Schemas []EnumcertificateInterServerAuthenticationInfoSchemaUrn `json:"schemas"`
-	// Name of the Server Instance
+	// Name of the Inter Server Authentication Info
 	Id                                            string                                             `json:"id"`
 	Purpose                                       []EnuminterServerAuthenticationInfoPurposeProp     `json:"purpose,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`

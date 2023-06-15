@@ -19,7 +19,7 @@ var _ MappedNullable = &AttributeMapperPluginResponse{}
 
 // AttributeMapperPluginResponse struct for AttributeMapperPluginResponse
 type AttributeMapperPluginResponse struct {
-	// Name of the Plugin Root
+	// Name of the Plugin
 	Id         string                               `json:"id"`
 	Schemas    []EnumattributeMapperPluginSchemaUrn `json:"schemas"`
 	PluginType []EnumpluginPluginTypeProp           `json:"pluginType"`

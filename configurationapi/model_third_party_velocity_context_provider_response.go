@@ -19,7 +19,7 @@ var _ MappedNullable = &ThirdPartyVelocityContextProviderResponse{}
 
 // ThirdPartyVelocityContextProviderResponse struct for ThirdPartyVelocityContextProviderResponse
 type ThirdPartyVelocityContextProviderResponse struct {
-	// Name of the HTTP Servlet Extension
+	// Name of the Velocity Context Provider
 	Id      string                                           `json:"id"`
 	Schemas []EnumthirdPartyVelocityContextProviderSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Velocity Context Provider.

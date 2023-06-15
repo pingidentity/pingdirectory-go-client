@@ -19,7 +19,7 @@ var _ MappedNullable = &PrometheusMonitorAttributeMetricResponse{}
 
 // PrometheusMonitorAttributeMetricResponse struct for PrometheusMonitorAttributeMetricResponse
 type PrometheusMonitorAttributeMetricResponse struct {
-	// Name of the HTTP Servlet Extension
+	// Name of the Prometheus Monitor Attribute Metric
 	Id      string                                          `json:"id"`
 	Schemas []EnumprometheusMonitorAttributeMetricSchemaUrn `json:"schemas,omitempty"`
 	// The name that will be used in the metric to be consumed by Prometheus.

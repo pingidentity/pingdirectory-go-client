@@ -873,7 +873,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the SCIM Resource Type
+                Name of the Correlated LDAP Data View
       - $ref: '#/components/schemas/correlated-ldap-data-view-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -952,7 +952,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the SCIM Resource Type
+                Name of the SCIM Attribute Mapping
       - $ref: '#/components/schemas/scim-attribute-mapping-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -1019,7 +1019,7 @@ components:
           id:
             type: string
             description: >-
-                Name of the SCIM Resource Type
+                Name of the LDAP Correlation Attribute Pair
       - $ref: '#/components/schemas/ldap-correlation-attribute-pair-shared'
       - $ref: '#/components/schemas/meta'
       required:

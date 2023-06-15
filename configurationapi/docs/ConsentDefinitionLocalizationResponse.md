@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Name of the Consent Definition | 
+**Id** | **string** | Name of the Consent Definition Localization | 
 **Schemas** | Pointer to [**[]EnumconsentDefinitionLocalizationSchemaUrn**](EnumconsentDefinitionLocalizationSchemaUrn.md) |  | [optional] 
 **Locale** | **string** | The locale of this Consent Definition Localization. | 
 **Version** | **string** | The version of this Consent Definition Localization, using the format MAJOR.MINOR. | 
