@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **StatsName** | **string** | Name of the new Custom Logged Stats | 
-**Schemas** | Pointer to [**[]EnumcustomLoggedStatsSchemaUrn**](EnumcustomLoggedStatsSchemaUrn.md) |  | [optional] 
+**Schemas** | [**[]EnumcustomLoggedStatsSchemaUrn**](EnumcustomLoggedStatsSchemaUrn.md) |  | 
 **Description** | Pointer to **string** | A description for this Custom Logged Stats | [optional] 
 **Enabled** | Pointer to **bool** | Indicates whether the Custom Logged Stats object is enabled. | [optional] 
 **MonitorObjectclass** | **string** | The objectclass name of the monitor entries to examine for generating these statistics. | 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 
 ### NewAddCustomLoggedStatsRequest
 
-`func NewAddCustomLoggedStatsRequest(statsName string, monitorObjectclass string, attributeToLog []string, statisticType []EnumcustomLoggedStatsStatisticTypeProp, ) *AddCustomLoggedStatsRequest`
+`func NewAddCustomLoggedStatsRequest(statsName string, schemas []EnumcustomLoggedStatsSchemaUrn, monitorObjectclass string, attributeToLog []string, statisticType []EnumcustomLoggedStatsStatisticTypeProp, ) *AddCustomLoggedStatsRequest`
 
 NewAddCustomLoggedStatsRequest instantiates a new AddCustomLoggedStatsRequest object
 This constructor will assign default values to properties that have it defined,
@@ -80,11 +80,6 @@ and a boolean to check if the value has been set.
 
 SetSchemas sets Schemas field to given value.
 
-### HasSchemas
-
-`func (o *AddCustomLoggedStatsRequest) HasSchemas() bool`
-
-HasSchemas returns a boolean if a field has been set.
 
 ### GetDescription
 
