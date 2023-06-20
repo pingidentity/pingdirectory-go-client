@@ -17222,10 +17222,12 @@ components:
       required:
       - attributeToLog
       - monitorObjectclass
+      - schemas
       - statisticType
       type: object
     Enumcustom-logged-statsSchemaUrn:
       enum:
+      - urn:pingidentity:schemas:configuration:2.0:custom-logged-stats:custom
       - urn:pingidentity:schemas:configuration:2.0:custom-logged-stats
       type: string
     Enumsensitive-attribute-allowInReturnedEntriesProp:

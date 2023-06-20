@@ -21,7 +21,7 @@ var _ MappedNullable = &AddCustomLoggedStatsRequest{}
 type AddCustomLoggedStatsRequest struct {
 	// Name of the new Custom Logged Stats
 	StatsName string                           `json:"statsName"`
-	Schemas   []EnumcustomLoggedStatsSchemaUrn `json:"schemas,omitempty"`
+	Schemas   []EnumcustomLoggedStatsSchemaUrn `json:"schemas"`
 	// A description for this Custom Logged Stats
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Custom Logged Stats object is enabled.
@@ -57,9 +57,10 @@ type AddCustomLoggedStatsRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddCustomLoggedStatsRequest(statsName string, monitorObjectclass string, attributeToLog []string, statisticType []EnumcustomLoggedStatsStatisticTypeProp) *AddCustomLoggedStatsRequest {
+func NewAddCustomLoggedStatsRequest(statsName string, schemas []EnumcustomLoggedStatsSchemaUrn, monitorObjectclass string, attributeToLog []string, statisticType []EnumcustomLoggedStatsStatisticTypeProp) *AddCustomLoggedStatsRequest {
 	this := AddCustomLoggedStatsRequest{}
 	this.StatsName = statsName
+	this.Schemas = schemas
 	this.MonitorObjectclass = monitorObjectclass
 	this.AttributeToLog = attributeToLog
 	this.StatisticType = statisticType
@@ -98,34 +99,26 @@ func (o *AddCustomLoggedStatsRequest) SetStatsName(v string) {
 	o.StatsName = v
 }
 
-// GetSchemas returns the Schemas field value if set, zero value otherwise.
+// GetSchemas returns the Schemas field value
 func (o *AddCustomLoggedStatsRequest) GetSchemas() []EnumcustomLoggedStatsSchemaUrn {
-	if o == nil || IsNil(o.Schemas) {
+	if o == nil {
 		var ret []EnumcustomLoggedStatsSchemaUrn
 		return ret
 	}
+
 	return o.Schemas
 }
 
-// GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
+// GetSchemasOk returns a tuple with the Schemas field value
 // and a boolean to check if the value has been set.
 func (o *AddCustomLoggedStatsRequest) GetSchemasOk() ([]EnumcustomLoggedStatsSchemaUrn, bool) {
-	if o == nil || IsNil(o.Schemas) {
+	if o == nil {
 		return nil, false
 	}
 	return o.Schemas, true
 }
 
-// HasSchemas returns a boolean if a field has been set.
-func (o *AddCustomLoggedStatsRequest) HasSchemas() bool {
-	if o != nil && !IsNil(o.Schemas) {
-		return true
-	}
-
-	return false
-}
-
-// SetSchemas gets a reference to the given []EnumcustomLoggedStatsSchemaUrn and assigns it to the Schemas field.
+// SetSchemas sets field value
 func (o *AddCustomLoggedStatsRequest) SetSchemas(v []EnumcustomLoggedStatsSchemaUrn) {
 	o.Schemas = v
 }
@@ -597,9 +590,7 @@ func (o AddCustomLoggedStatsRequest) MarshalJSON() ([]byte, error) {
 func (o AddCustomLoggedStatsRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["statsName"] = o.StatsName
-	if !IsNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
+	toSerialize["schemas"] = o.Schemas
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}

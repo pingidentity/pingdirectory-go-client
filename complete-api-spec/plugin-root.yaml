@@ -3858,12 +3858,14 @@ components:
           description: >-
               If this property is set to true, then the value of any of the monitored attributes here can contribute to whether an interval is considered "idle" by the Periodic Stats Logger.
       required:
+      - schemas
       - monitorObjectclass
       - attributeToLog
       - statisticType
     Enumcustom-logged-statsSchemaUrn:
       type: string
       enum:
+      - "urn:pingidentity:schemas:configuration:2.0:custom-logged-stats:custom"
       - "urn:pingidentity:schemas:configuration:2.0:custom-logged-stats"
     updateRequest:
       type: object
