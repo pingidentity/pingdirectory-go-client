@@ -20,11 +20,13 @@ type EnumcustomLoggedStatsSchemaUrn string
 
 // List of Enumcustom-logged-statsSchemaUrn
 const (
-	ENUMCUSTOMLOGGEDSTATSSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0CUSTOM_LOGGED_STATS EnumcustomLoggedStatsSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:custom-logged-stats"
+	ENUMCUSTOMLOGGEDSTATSSCHEMAURN_STATSCUSTOM EnumcustomLoggedStatsSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:custom-logged-stats:custom"
+	ENUMCUSTOMLOGGEDSTATSSCHEMAURN_STATS       EnumcustomLoggedStatsSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:custom-logged-stats"
 )
 
 // All allowed values of EnumcustomLoggedStatsSchemaUrn enum
 var AllowedEnumcustomLoggedStatsSchemaUrnEnumValues = []EnumcustomLoggedStatsSchemaUrn{
+	"urn:pingidentity:schemas:configuration:2.0:custom-logged-stats:custom",
 	"urn:pingidentity:schemas:configuration:2.0:custom-logged-stats",
 }
 
