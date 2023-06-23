@@ -86,6 +86,7 @@ api_recurring_task.go
 api_recurring_task_chain.go
 api_replication_assurance_policy.go
 api_replication_domain.go
+api_replication_server.go
 api_request_criteria.go
 api_rest_resource_type.go
 api_result_code_map.go
@@ -1311,6 +1312,8 @@ docs/EnumreplicationAssurancePolicyRemoteLevelProp.md
 docs/EnumreplicationAssurancePolicySchemaUrn.md
 docs/EnumreplicationAssuranceResultCriteriaSchemaUrn.md
 docs/EnumreplicationDomainSchemaUrn.md
+docs/EnumreplicationServerCompressionCriteriaProp.md
+docs/EnumreplicationServerSchemaUrn.md
 docs/EnumreplicationStateDetailVirtualAttributeSchemaUrn.md
 docs/EnumreplicationSynchronizationProviderSchemaUrn.md
 docs/EnumrequestCriteriaIncludedSearchScopeProp.md
@@ -1808,6 +1811,8 @@ docs/ReplicationAssurancePolicyResponse.md
 docs/ReplicationAssuranceResultCriteriaResponse.md
 docs/ReplicationDomainApi.md
 docs/ReplicationDomainResponse.md
+docs/ReplicationServerApi.md
+docs/ReplicationServerResponse.md
 docs/ReplicationStateDetailVirtualAttributeResponse.md
 docs/ReplicationSynchronizationProviderResponse.md
 docs/RequestCriteriaApi.md
@@ -3149,6 +3154,8 @@ model_enumreplication_assurance_policy_remote_level_prop.go
 model_enumreplication_assurance_policy_schema_urn.go
 model_enumreplication_assurance_result_criteria_schema_urn.go
 model_enumreplication_domain_schema_urn.go
+model_enumreplication_server_compression_criteria_prop.go
+model_enumreplication_server_schema_urn.go
 model_enumreplication_state_detail_virtual_attribute_schema_urn.go
 model_enumreplication_synchronization_provider_schema_urn.go
 model_enumrequest_criteria_included_search_scope_prop.go
@@ -3594,6 +3601,7 @@ model_replace_certificate_extended_operation_handler_response.go
 model_replication_assurance_policy_response.go
 model_replication_assurance_result_criteria_response.go
 model_replication_domain_response.go
+model_replication_server_response.go
 model_replication_state_detail_virtual_attribute_response.go
 model_replication_synchronization_provider_response.go
 model_result_code_map_response.go
@@ -3831,6 +3839,7 @@ test/api_recurring_task_chain_test.go
 test/api_recurring_task_test.go
 test/api_replication_assurance_policy_test.go
 test/api_replication_domain_test.go
+test/api_replication_server_test.go
 test/api_request_criteria_test.go
 test/api_rest_resource_type_test.go
 test/api_result_code_map_test.go
