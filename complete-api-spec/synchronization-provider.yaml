@@ -82,6 +82,74 @@ paths:
       - basicAuth: []
       tags:
       - synchronization-provider
+  /synchronization-providers/{synchronization-provider-name}/replication-server:
+    get:
+      summary: Returns a single Replication Server
+      operationId: get-replication-server
+      parameters:
+      - description: Name of the Synchronization Provider
+        explode: false
+        in: path
+        name: synchronization-provider-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/replication-server-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Replication Server does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - replication-server
+    patch:
+      summary: Update an existing Replication Server by name
+      operationId: update-replication-server
+      parameters:
+      - description: Name of the Synchronization Provider
+        explode: false
+        in: path
+        name: synchronization-provider-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing Replication Server
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/replication-server-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Replication Server does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - replication-server
   /synchronization-providers/{synchronization-provider-name}/replication-domains/{replication-domain-name}:
     get:
       summary: Returns a single Replication Domain
@@ -234,6 +302,84 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:synchronization-provider:custom"
+    Enumreplication-server-compressionCriteriaProp:
+      type: string
+      enum:
+      - "always"
+      - "remote"
+      - "never"
+      description: >-
+          Specifies when the replication traffic should be compressed.
+    replication-server-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumreplication-serverSchemaUrn'
+          replicationServerID:
+            type: integer
+            description: >-
+                Specifies a unique identifier for the Replication Server.
+          replicationDBDirectory:
+            type: string
+            description: >-
+                The path where the Replication Server stores all persistent information.
+          jeProperty:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the database and environment properties for the Berkeley DB Java Edition database for the replication changelog.
+          replicationPurgeDelay:
+            type: string
+            description: >-
+                Changes are guaranteed to be maintained in the changelog database for at least this duration. Setting target-database-size can allow additional changes to be maintained up to the configured size on disk.
+          targetDatabaseSize:
+            type: string
+            description: >-
+                The replication changelog database is allowed to grow up to this size even if changes are older than the configured replication-purge-delay.
+          replicationPort:
+            type: integer
+            description: >-
+                The port on which this Replication Server waits for connections from other Replication Servers or Directory Server instances.
+          listenOnAllAddresses:
+            type: boolean
+            description: >-
+                Indicates whether the Replication Server should listen on all addresses for this host. If set to FALSE, then the Replication Server will listen only to the address resolved from the hostname provided.
+          compressionCriteria:
+            $ref: '#/components/schemas/Enumreplication-server-compressionCriteriaProp'
+          heartbeatInterval:
+            type: string
+            description: >-
+                Specifies the heartbeat interval that the Directory Server will use when communicating with Replication Servers.
+          remoteMonitorUpdateInterval:
+            type: string
+            description: >-
+                Specifies the duration that topology monitor data will be cached before it is requested again from a remote server.
+          restrictedDomain:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the base DN of domains that are only replicated between server instances that belong to the same replication set.
+          gatewayPriority:
+            type: integer
+            description: >-
+                Specifies the gateway priority of the Replication Server in the current location.
+      - $ref: '#/components/schemas/meta'
+      required:
+      - replicationServerID
+      - replicationDBDirectory
+      - replicationPort
+      - gatewayPriority
+    Enumreplication-serverSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:replication-server"
     replication-domain-response:
       allOf:
       - type: object

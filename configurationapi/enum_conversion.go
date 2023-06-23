@@ -11282,6 +11282,46 @@ func StringPointerEnumreplicationDomainSchemaUrn(value *EnumreplicationDomainSch
 	return &s
 }
 
+func (e EnumreplicationServerCompressionCriteriaProp) String() string {
+	return string(e)
+}
+
+func StringSliceEnumreplicationServerCompressionCriteriaProp(values []EnumreplicationServerCompressionCriteriaProp) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumreplicationServerCompressionCriteriaProp(value *EnumreplicationServerCompressionCriteriaProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
+func (e EnumreplicationServerSchemaUrn) String() string {
+	return string(e)
+}
+
+func StringSliceEnumreplicationServerSchemaUrn(values []EnumreplicationServerSchemaUrn) []string {
+	stringSlice := make([]string, len(values))
+	for i := 0; i < len(values); i++ {
+		stringSlice[i] = string(values[i])
+	}
+	return stringSlice
+}
+
+func StringPointerEnumreplicationServerSchemaUrn(value *EnumreplicationServerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumreplicationStateDetailVirtualAttributeSchemaUrn) String() string {
 	return string(e)
 }

@@ -218,6 +218,8 @@ type APIClient struct {
 
 	ReplicationDomainApi *ReplicationDomainApiService
 
+	ReplicationServerApi *ReplicationServerApiService
+
 	RequestCriteriaApi *RequestCriteriaApiService
 
 	RestResourceTypeApi *RestResourceTypeApiService
@@ -386,6 +388,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.RecurringTaskChainApi = (*RecurringTaskChainApiService)(&c.common)
 	c.ReplicationAssurancePolicyApi = (*ReplicationAssurancePolicyApiService)(&c.common)
 	c.ReplicationDomainApi = (*ReplicationDomainApiService)(&c.common)
+	c.ReplicationServerApi = (*ReplicationServerApiService)(&c.common)
 	c.RequestCriteriaApi = (*RequestCriteriaApiService)(&c.common)
 	c.RestResourceTypeApi = (*RestResourceTypeApiService)(&c.common)
 	c.ResultCodeMapApi = (*ResultCodeMapApiService)(&c.common)

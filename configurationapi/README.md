@@ -383,6 +383,8 @@ Class | Method | HTTP request | Description
 *ReplicationAssurancePolicyApi* | [**UpdateReplicationAssurancePolicy**](docs/ReplicationAssurancePolicyApi.md#updatereplicationassurancepolicy) | **Patch** /replication-assurance-policies/{replication-assurance-policy-name} | Update an existing Replication Assurance Policy by name
 *ReplicationDomainApi* | [**GetReplicationDomain**](docs/ReplicationDomainApi.md#getreplicationdomain) | **Get** /synchronization-providers/{synchronization-provider-name}/replication-domains/{replication-domain-name} | Returns a single Replication Domain
 *ReplicationDomainApi* | [**UpdateReplicationDomain**](docs/ReplicationDomainApi.md#updatereplicationdomain) | **Patch** /synchronization-providers/{synchronization-provider-name}/replication-domains/{replication-domain-name} | Update an existing Replication Domain by name
+*ReplicationServerApi* | [**GetReplicationServer**](docs/ReplicationServerApi.md#getreplicationserver) | **Get** /synchronization-providers/{synchronization-provider-name}/replication-server | Returns a single Replication Server
+*ReplicationServerApi* | [**UpdateReplicationServer**](docs/ReplicationServerApi.md#updatereplicationserver) | **Patch** /synchronization-providers/{synchronization-provider-name}/replication-server | Update an existing Replication Server by name
 *RequestCriteriaApi* | [**AddRequestCriteria**](docs/RequestCriteriaApi.md#addrequestcriteria) | **Post** /request-criteria | Add a new Request Criteria to the config
 *RequestCriteriaApi* | [**DeleteRequestCriteria**](docs/RequestCriteriaApi.md#deleterequestcriteria) | **Delete** /request-criteria/{request-criteria-name} | Delete a Request Criteria
 *RequestCriteriaApi* | [**GetRequestCriteria**](docs/RequestCriteriaApi.md#getrequestcriteria) | **Get** /request-criteria/{request-criteria-name} | Returns a single Request Criteria
@@ -1925,6 +1927,8 @@ Class | Method | HTTP request | Description
  - [EnumreplicationAssurancePolicySchemaUrn](docs/EnumreplicationAssurancePolicySchemaUrn.md)
  - [EnumreplicationAssuranceResultCriteriaSchemaUrn](docs/EnumreplicationAssuranceResultCriteriaSchemaUrn.md)
  - [EnumreplicationDomainSchemaUrn](docs/EnumreplicationDomainSchemaUrn.md)
+ - [EnumreplicationServerCompressionCriteriaProp](docs/EnumreplicationServerCompressionCriteriaProp.md)
+ - [EnumreplicationServerSchemaUrn](docs/EnumreplicationServerSchemaUrn.md)
  - [EnumreplicationStateDetailVirtualAttributeSchemaUrn](docs/EnumreplicationStateDetailVirtualAttributeSchemaUrn.md)
  - [EnumreplicationSynchronizationProviderSchemaUrn](docs/EnumreplicationSynchronizationProviderSchemaUrn.md)
  - [EnumrequestCriteriaIncludedSearchScopeProp](docs/EnumrequestCriteriaIncludedSearchScopeProp.md)
@@ -2613,6 +2617,8 @@ Class | Method | HTTP request | Description
  - [ReplicationAssuranceResultCriteriaShared](docs/ReplicationAssuranceResultCriteriaShared.md)
  - [ReplicationDomainResponse](docs/ReplicationDomainResponse.md)
  - [ReplicationDomainResponseAllOf](docs/ReplicationDomainResponseAllOf.md)
+ - [ReplicationServerResponse](docs/ReplicationServerResponse.md)
+ - [ReplicationServerResponseAllOf](docs/ReplicationServerResponseAllOf.md)
  - [ReplicationStateDetailVirtualAttributeResponse](docs/ReplicationStateDetailVirtualAttributeResponse.md)
  - [ReplicationStateDetailVirtualAttributeResponseAllOf](docs/ReplicationStateDetailVirtualAttributeResponseAllOf.md)
  - [ReplicationSynchronizationProviderResponse](docs/ReplicationSynchronizationProviderResponse.md)
