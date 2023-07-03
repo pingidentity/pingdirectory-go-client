@@ -308,6 +308,10 @@ components:
           type: string
           description: >-
               The key store type to use when obtaining an instance of a key store for interacting with a PKCS #11 token.
+        pkcs11MaxCacheDuration:
+          type: string
+          description: >-
+              The maximum length of time that data retrieved from PKCS #11 tokens may be cached for reuse. Caching might be necessary if there is noticable latency when accessing the token, for example if the token uses a remote key store. A value of zero milliseconds indicates that no caching should be performed.
         keyStorePin:
           type: string
           format: password
