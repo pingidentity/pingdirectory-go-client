@@ -28,6 +28,8 @@ type Pkcs11KeyManagerProviderResponse struct {
 	Pkcs11ProviderConfigurationFile *string `json:"pkcs11ProviderConfigurationFile,omitempty"`
 	// The key store type to use when obtaining an instance of a key store for interacting with a PKCS #11 token.
 	Pkcs11KeyStoreType *string `json:"pkcs11KeyStoreType,omitempty"`
+	// The maximum length of time that data retrieved from PKCS #11 tokens may be cached for reuse. Caching might be necessary if there is noticable latency when accessing the token, for example if the token uses a remote key store. A value of zero milliseconds indicates that no caching should be performed.
+	Pkcs11MaxCacheDuration *string `json:"pkcs11MaxCacheDuration,omitempty"`
 	// Specifies the PIN needed to access the PKCS11 Key Manager Provider.
 	KeyStorePin *string `json:"keyStorePin,omitempty"`
 	// Specifies the path to the text file whose only contents should be a single line containing the clear-text PIN needed to access the PKCS11 Key Manager Provider.
@@ -204,6 +206,38 @@ func (o *Pkcs11KeyManagerProviderResponse) HasPkcs11KeyStoreType() bool {
 // SetPkcs11KeyStoreType gets a reference to the given string and assigns it to the Pkcs11KeyStoreType field.
 func (o *Pkcs11KeyManagerProviderResponse) SetPkcs11KeyStoreType(v string) {
 	o.Pkcs11KeyStoreType = &v
+}
+
+// GetPkcs11MaxCacheDuration returns the Pkcs11MaxCacheDuration field value if set, zero value otherwise.
+func (o *Pkcs11KeyManagerProviderResponse) GetPkcs11MaxCacheDuration() string {
+	if o == nil || IsNil(o.Pkcs11MaxCacheDuration) {
+		var ret string
+		return ret
+	}
+	return *o.Pkcs11MaxCacheDuration
+}
+
+// GetPkcs11MaxCacheDurationOk returns a tuple with the Pkcs11MaxCacheDuration field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Pkcs11KeyManagerProviderResponse) GetPkcs11MaxCacheDurationOk() (*string, bool) {
+	if o == nil || IsNil(o.Pkcs11MaxCacheDuration) {
+		return nil, false
+	}
+	return o.Pkcs11MaxCacheDuration, true
+}
+
+// HasPkcs11MaxCacheDuration returns a boolean if a field has been set.
+func (o *Pkcs11KeyManagerProviderResponse) HasPkcs11MaxCacheDuration() bool {
+	if o != nil && !IsNil(o.Pkcs11MaxCacheDuration) {
+		return true
+	}
+
+	return false
+}
+
+// SetPkcs11MaxCacheDuration gets a reference to the given string and assigns it to the Pkcs11MaxCacheDuration field.
+func (o *Pkcs11KeyManagerProviderResponse) SetPkcs11MaxCacheDuration(v string) {
+	o.Pkcs11MaxCacheDuration = &v
 }
 
 // GetKeyStorePin returns the KeyStorePin field value if set, zero value otherwise.
@@ -442,6 +476,9 @@ func (o Pkcs11KeyManagerProviderResponse) ToMap() (map[string]interface{}, error
 	}
 	if !IsNil(o.Pkcs11KeyStoreType) {
 		toSerialize["pkcs11KeyStoreType"] = o.Pkcs11KeyStoreType
+	}
+	if !IsNil(o.Pkcs11MaxCacheDuration) {
+		toSerialize["pkcs11MaxCacheDuration"] = o.Pkcs11MaxCacheDuration
 	}
 	if !IsNil(o.KeyStorePin) {
 		toSerialize["keyStorePin"] = o.KeyStorePin

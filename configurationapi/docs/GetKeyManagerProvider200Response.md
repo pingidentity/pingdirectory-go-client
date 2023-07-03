@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **Pkcs11ProviderClass** | Pointer to **string** | The fully-qualified name of the Java security provider class that implements support for interacting with PKCS #11 tokens. | [optional] 
 **Pkcs11ProviderConfigurationFile** | Pointer to **string** | The path to the file to use to configure the security provider that implements support for interacting with PKCS #11 tokens. | [optional] 
 **Pkcs11KeyStoreType** | Pointer to **string** | The key store type to use when obtaining an instance of a key store for interacting with a PKCS #11 token. | [optional] 
+**Pkcs11MaxCacheDuration** | Pointer to **string** | The maximum length of time that data retrieved from PKCS #11 tokens may be cached for reuse. Caching might be necessary if there is noticable latency when accessing the token, for example if the token uses a remote key store. A value of zero milliseconds indicates that no caching should be performed. | [optional] 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Key Manager Provider. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Key Manager Provider. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 
@@ -447,6 +448,31 @@ SetPkcs11KeyStoreType sets Pkcs11KeyStoreType field to given value.
 `func (o *GetKeyManagerProvider200Response) HasPkcs11KeyStoreType() bool`
 
 HasPkcs11KeyStoreType returns a boolean if a field has been set.
+
+### GetPkcs11MaxCacheDuration
+
+`func (o *GetKeyManagerProvider200Response) GetPkcs11MaxCacheDuration() string`
+
+GetPkcs11MaxCacheDuration returns the Pkcs11MaxCacheDuration field if non-nil, zero value otherwise.
+
+### GetPkcs11MaxCacheDurationOk
+
+`func (o *GetKeyManagerProvider200Response) GetPkcs11MaxCacheDurationOk() (*string, bool)`
+
+GetPkcs11MaxCacheDurationOk returns a tuple with the Pkcs11MaxCacheDuration field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPkcs11MaxCacheDuration
+
+`func (o *GetKeyManagerProvider200Response) SetPkcs11MaxCacheDuration(v string)`
+
+SetPkcs11MaxCacheDuration sets Pkcs11MaxCacheDuration field to given value.
+
+### HasPkcs11MaxCacheDuration
+
+`func (o *GetKeyManagerProvider200Response) HasPkcs11MaxCacheDuration() bool`
+
+HasPkcs11MaxCacheDuration returns a boolean if a field has been set.
 
 ### GetExtensionClass
 
