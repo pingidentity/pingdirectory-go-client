@@ -26,6 +26,10 @@ type AddFileBasedCipherStreamProviderRequest struct {
 	PasswordFile string `json:"passwordFile"`
 	// Indicates whether the server should wait for the password file to become available if it does not exist.
 	WaitForPasswordFile *bool `json:"waitForPasswordFile,omitempty"`
+	// The path to a file that will hold metadata about the encryption performed by this File Based Cipher Stream Provider.
+	EncryptionMetadataFile *string `json:"encryptionMetadataFile,omitempty"`
+	// The PBKDF2 iteration count that will be used when deriving the encryption key used to protect the encryption settings database.
+	IterationCount *int64 `json:"iterationCount,omitempty"`
 	// A description for this Cipher Stream Provider
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server.
@@ -157,6 +161,70 @@ func (o *AddFileBasedCipherStreamProviderRequest) SetWaitForPasswordFile(v bool)
 	o.WaitForPasswordFile = &v
 }
 
+// GetEncryptionMetadataFile returns the EncryptionMetadataFile field value if set, zero value otherwise.
+func (o *AddFileBasedCipherStreamProviderRequest) GetEncryptionMetadataFile() string {
+	if o == nil || IsNil(o.EncryptionMetadataFile) {
+		var ret string
+		return ret
+	}
+	return *o.EncryptionMetadataFile
+}
+
+// GetEncryptionMetadataFileOk returns a tuple with the EncryptionMetadataFile field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddFileBasedCipherStreamProviderRequest) GetEncryptionMetadataFileOk() (*string, bool) {
+	if o == nil || IsNil(o.EncryptionMetadataFile) {
+		return nil, false
+	}
+	return o.EncryptionMetadataFile, true
+}
+
+// HasEncryptionMetadataFile returns a boolean if a field has been set.
+func (o *AddFileBasedCipherStreamProviderRequest) HasEncryptionMetadataFile() bool {
+	if o != nil && !IsNil(o.EncryptionMetadataFile) {
+		return true
+	}
+
+	return false
+}
+
+// SetEncryptionMetadataFile gets a reference to the given string and assigns it to the EncryptionMetadataFile field.
+func (o *AddFileBasedCipherStreamProviderRequest) SetEncryptionMetadataFile(v string) {
+	o.EncryptionMetadataFile = &v
+}
+
+// GetIterationCount returns the IterationCount field value if set, zero value otherwise.
+func (o *AddFileBasedCipherStreamProviderRequest) GetIterationCount() int64 {
+	if o == nil || IsNil(o.IterationCount) {
+		var ret int64
+		return ret
+	}
+	return *o.IterationCount
+}
+
+// GetIterationCountOk returns a tuple with the IterationCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddFileBasedCipherStreamProviderRequest) GetIterationCountOk() (*int64, bool) {
+	if o == nil || IsNil(o.IterationCount) {
+		return nil, false
+	}
+	return o.IterationCount, true
+}
+
+// HasIterationCount returns a boolean if a field has been set.
+func (o *AddFileBasedCipherStreamProviderRequest) HasIterationCount() bool {
+	if o != nil && !IsNil(o.IterationCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetIterationCount gets a reference to the given int64 and assigns it to the IterationCount field.
+func (o *AddFileBasedCipherStreamProviderRequest) SetIterationCount(v int64) {
+	o.IterationCount = &v
+}
+
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddFileBasedCipherStreamProviderRequest) GetDescription() string {
 	if o == nil || IsNil(o.Description) {
@@ -228,6 +296,12 @@ func (o AddFileBasedCipherStreamProviderRequest) ToMap() (map[string]interface{}
 	toSerialize["passwordFile"] = o.PasswordFile
 	if !IsNil(o.WaitForPasswordFile) {
 		toSerialize["waitForPasswordFile"] = o.WaitForPasswordFile
+	}
+	if !IsNil(o.EncryptionMetadataFile) {
+		toSerialize["encryptionMetadataFile"] = o.EncryptionMetadataFile
+	}
+	if !IsNil(o.IterationCount) {
+		toSerialize["iterationCount"] = o.IterationCount
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description

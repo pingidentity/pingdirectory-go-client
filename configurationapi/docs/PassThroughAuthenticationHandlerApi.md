@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    addPassThroughAuthenticationHandlerRequest := openapiclient.add_pass_through_authentication_handler_request{AddLdapPassThroughAuthenticationHandlerRequest: openapiclient.NewAddLdapPassThroughAuthenticationHandlerRequest("HandlerName_example", []openapiclient.EnumldapPassThroughAuthenticationHandlerSchemaUrn{openapiclient.Enumldap-pass-through-authentication-handlerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:pass-through-authentication-handler:ldap")}, []string{"Server_example"})} // AddPassThroughAuthenticationHandlerRequest | Create a new Pass Through Authentication Handler in the config
+    addPassThroughAuthenticationHandlerRequest := openapiclient.add_pass_through_authentication_handler_request{AddAggregatePassThroughAuthenticationHandlerRequest: openapiclient.NewAddAggregatePassThroughAuthenticationHandlerRequest("HandlerName_example", []openapiclient.EnumaggregatePassThroughAuthenticationHandlerSchemaUrn{openapiclient.Enumaggregate-pass-through-authentication-handlerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:pass-through-authentication-handler:aggregate")}, []string{"SubordinatePassThroughAuthenticationHandler_example"})} // AddPassThroughAuthenticationHandlerRequest | Create a new Pass Through Authentication Handler in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

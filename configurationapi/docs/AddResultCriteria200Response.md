@@ -7,6 +7,16 @@ Name | Type | Description | Notes
 **Id** | **string** | Name of the Result Criteria | 
 **Schemas** | [**[]EnumthirdPartyResultCriteriaSchemaUrn**](EnumthirdPartyResultCriteriaSchemaUrn.md) |  | 
 **RequestCriteria** | Pointer to **string** | Specifies a request criteria object that must match the associated request for operations included in this Simple Result Criteria. | [optional] 
+**IncludeAnonymousBinds** | Pointer to **bool** | Indicates whether this criteria will be permitted to match bind operations that resulted in anonymous authentication. | [optional] 
+**IncludedUserBaseDN** | Pointer to **[]string** | A set of base DNs for authenticated users that will be permitted to match this criteria. | [optional] 
+**ExcludedUserBaseDN** | Pointer to **[]string** | A set of base DNs for authenticated users that will not be permitted to match this criteria. | [optional] 
+**IncludedUserFilter** | Pointer to **[]string** | A set of filters that may be used to identify entries for authenticated users that will be permitted to match this criteria. | [optional] 
+**ExcludedUserFilter** | Pointer to **[]string** | A set of filters that may be used to identify entries for authenticated users that will not be permitted to match this criteria. | [optional] 
+**IncludedUserGroupDN** | Pointer to **[]string** | The DNs of the groups whose members will be permitted to match this criteria. | [optional] 
+**ExcludedUserGroupDN** | Pointer to **[]string** | The DNs of the groups whose members will not be permitted to match this criteria. | [optional] 
+**Description** | Pointer to **string** | A description for this Result Criteria | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
+**Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **ResultCodeCriteria** | Pointer to [**EnumresultCriteriaResultCodeCriteriaProp**](EnumresultCriteriaResultCodeCriteriaProp.md) |  | [optional] 
 **ResultCodeValue** | Pointer to [**[]EnumresultCriteriaResultCodeValueProp**](EnumresultCriteriaResultCodeValueProp.md) |  | [optional] 
 **ProcessingTimeCriteria** | Pointer to [**EnumresultCriteriaProcessingTimeCriteriaProp**](EnumresultCriteriaProcessingTimeCriteriaProp.md) |  | [optional] 
@@ -35,9 +45,6 @@ Name | Type | Description | Notes
 **AnyIncludedAuthzUserGroupDN** | Pointer to **[]string** | Specifies the DN of a group in which authorization users may exist for operations included in this Simple Result Criteria. If any group DNs are provided, then the authorization user must be a member of at least one of those groups. The authorization user could be the currently authenticated user on the connection (the user that performed the Bind operation), or different if proxied authorization was used to request that the operation be performed under the authorization of another user (as is the case for operations that come through a Directory Proxy Server). This property will be ignored for operations where no authentication or authorization has been performed. | [optional] 
 **NotAllIncludedAuthzUserGroupDN** | Pointer to **[]string** | Specifies the DN of a group in which authorization users should not exist for operations included in this Simple Result Criteria. If any group DNs are provided, then the authorization user must not be a member of at least one of those groups (that is, the user may be a member of zero or more of those groups, but not of all of them). The authorization user could be the currently authenticated user on the connection (the user that performed the Bind operation), or different if proxied authorization was used to request that the operation be performed under the authorization of another user (as is the case for operations that come through a Directory Proxy Server). This property will be ignored for operations where no authentication or authorization has been performed. | [optional] 
 **NoneIncludedAuthzUserGroupDN** | Pointer to **[]string** | Specifies the DN of a group in which authorization users must not exist for operations included in this Simple Result Criteria. If any group DNs are provided, then the authorization user must not be a member any of those groups. The authorization user could be the currently authenticated user on the connection (the user that performed the Bind operation), or different if proxied authorization was used to request that the operation be performed under the authorization of another user (as is the case for operations that come through a Directory Proxy Server). This property will be ignored for operations where no authentication or authorization has been performed. | [optional] 
-**Description** | Pointer to **string** | A description for this Result Criteria | [optional] 
-**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
-**Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **AllIncludedResultCriteria** | Pointer to **[]string** | Specifies a result criteria object that must match the associated operation result in order to match the aggregate result criteria. If one or more all-included result criteria objects are provided, then an operation result must match all of them in order to match the aggregate result criteria. | [optional] 
 **AnyIncludedResultCriteria** | Pointer to **[]string** | Specifies a result criteria object that may match the associated operation result in order to match the aggregate result criteria. If one or more any-included result criteria objects are provided, then an operation result must match at least one of them in order to match the aggregate result criteria. | [optional] 
 **NotAllIncludedResultCriteria** | Pointer to **[]string** | Specifies a result criteria object that should not match the associated operation result in order to match the aggregate result criteria. If one or more not-all-included result criteria objects are provided, then an operation result must not match all of them (that is, it may match zero or more of them, but it must not match all of them) in order to match the aggregate result criteria. | [optional] 
@@ -135,6 +142,256 @@ SetRequestCriteria sets RequestCriteria field to given value.
 `func (o *AddResultCriteria200Response) HasRequestCriteria() bool`
 
 HasRequestCriteria returns a boolean if a field has been set.
+
+### GetIncludeAnonymousBinds
+
+`func (o *AddResultCriteria200Response) GetIncludeAnonymousBinds() bool`
+
+GetIncludeAnonymousBinds returns the IncludeAnonymousBinds field if non-nil, zero value otherwise.
+
+### GetIncludeAnonymousBindsOk
+
+`func (o *AddResultCriteria200Response) GetIncludeAnonymousBindsOk() (*bool, bool)`
+
+GetIncludeAnonymousBindsOk returns a tuple with the IncludeAnonymousBinds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeAnonymousBinds
+
+`func (o *AddResultCriteria200Response) SetIncludeAnonymousBinds(v bool)`
+
+SetIncludeAnonymousBinds sets IncludeAnonymousBinds field to given value.
+
+### HasIncludeAnonymousBinds
+
+`func (o *AddResultCriteria200Response) HasIncludeAnonymousBinds() bool`
+
+HasIncludeAnonymousBinds returns a boolean if a field has been set.
+
+### GetIncludedUserBaseDN
+
+`func (o *AddResultCriteria200Response) GetIncludedUserBaseDN() []string`
+
+GetIncludedUserBaseDN returns the IncludedUserBaseDN field if non-nil, zero value otherwise.
+
+### GetIncludedUserBaseDNOk
+
+`func (o *AddResultCriteria200Response) GetIncludedUserBaseDNOk() (*[]string, bool)`
+
+GetIncludedUserBaseDNOk returns a tuple with the IncludedUserBaseDN field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludedUserBaseDN
+
+`func (o *AddResultCriteria200Response) SetIncludedUserBaseDN(v []string)`
+
+SetIncludedUserBaseDN sets IncludedUserBaseDN field to given value.
+
+### HasIncludedUserBaseDN
+
+`func (o *AddResultCriteria200Response) HasIncludedUserBaseDN() bool`
+
+HasIncludedUserBaseDN returns a boolean if a field has been set.
+
+### GetExcludedUserBaseDN
+
+`func (o *AddResultCriteria200Response) GetExcludedUserBaseDN() []string`
+
+GetExcludedUserBaseDN returns the ExcludedUserBaseDN field if non-nil, zero value otherwise.
+
+### GetExcludedUserBaseDNOk
+
+`func (o *AddResultCriteria200Response) GetExcludedUserBaseDNOk() (*[]string, bool)`
+
+GetExcludedUserBaseDNOk returns a tuple with the ExcludedUserBaseDN field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExcludedUserBaseDN
+
+`func (o *AddResultCriteria200Response) SetExcludedUserBaseDN(v []string)`
+
+SetExcludedUserBaseDN sets ExcludedUserBaseDN field to given value.
+
+### HasExcludedUserBaseDN
+
+`func (o *AddResultCriteria200Response) HasExcludedUserBaseDN() bool`
+
+HasExcludedUserBaseDN returns a boolean if a field has been set.
+
+### GetIncludedUserFilter
+
+`func (o *AddResultCriteria200Response) GetIncludedUserFilter() []string`
+
+GetIncludedUserFilter returns the IncludedUserFilter field if non-nil, zero value otherwise.
+
+### GetIncludedUserFilterOk
+
+`func (o *AddResultCriteria200Response) GetIncludedUserFilterOk() (*[]string, bool)`
+
+GetIncludedUserFilterOk returns a tuple with the IncludedUserFilter field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludedUserFilter
+
+`func (o *AddResultCriteria200Response) SetIncludedUserFilter(v []string)`
+
+SetIncludedUserFilter sets IncludedUserFilter field to given value.
+
+### HasIncludedUserFilter
+
+`func (o *AddResultCriteria200Response) HasIncludedUserFilter() bool`
+
+HasIncludedUserFilter returns a boolean if a field has been set.
+
+### GetExcludedUserFilter
+
+`func (o *AddResultCriteria200Response) GetExcludedUserFilter() []string`
+
+GetExcludedUserFilter returns the ExcludedUserFilter field if non-nil, zero value otherwise.
+
+### GetExcludedUserFilterOk
+
+`func (o *AddResultCriteria200Response) GetExcludedUserFilterOk() (*[]string, bool)`
+
+GetExcludedUserFilterOk returns a tuple with the ExcludedUserFilter field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExcludedUserFilter
+
+`func (o *AddResultCriteria200Response) SetExcludedUserFilter(v []string)`
+
+SetExcludedUserFilter sets ExcludedUserFilter field to given value.
+
+### HasExcludedUserFilter
+
+`func (o *AddResultCriteria200Response) HasExcludedUserFilter() bool`
+
+HasExcludedUserFilter returns a boolean if a field has been set.
+
+### GetIncludedUserGroupDN
+
+`func (o *AddResultCriteria200Response) GetIncludedUserGroupDN() []string`
+
+GetIncludedUserGroupDN returns the IncludedUserGroupDN field if non-nil, zero value otherwise.
+
+### GetIncludedUserGroupDNOk
+
+`func (o *AddResultCriteria200Response) GetIncludedUserGroupDNOk() (*[]string, bool)`
+
+GetIncludedUserGroupDNOk returns a tuple with the IncludedUserGroupDN field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludedUserGroupDN
+
+`func (o *AddResultCriteria200Response) SetIncludedUserGroupDN(v []string)`
+
+SetIncludedUserGroupDN sets IncludedUserGroupDN field to given value.
+
+### HasIncludedUserGroupDN
+
+`func (o *AddResultCriteria200Response) HasIncludedUserGroupDN() bool`
+
+HasIncludedUserGroupDN returns a boolean if a field has been set.
+
+### GetExcludedUserGroupDN
+
+`func (o *AddResultCriteria200Response) GetExcludedUserGroupDN() []string`
+
+GetExcludedUserGroupDN returns the ExcludedUserGroupDN field if non-nil, zero value otherwise.
+
+### GetExcludedUserGroupDNOk
+
+`func (o *AddResultCriteria200Response) GetExcludedUserGroupDNOk() (*[]string, bool)`
+
+GetExcludedUserGroupDNOk returns a tuple with the ExcludedUserGroupDN field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExcludedUserGroupDN
+
+`func (o *AddResultCriteria200Response) SetExcludedUserGroupDN(v []string)`
+
+SetExcludedUserGroupDN sets ExcludedUserGroupDN field to given value.
+
+### HasExcludedUserGroupDN
+
+`func (o *AddResultCriteria200Response) HasExcludedUserGroupDN() bool`
+
+HasExcludedUserGroupDN returns a boolean if a field has been set.
+
+### GetDescription
+
+`func (o *AddResultCriteria200Response) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *AddResultCriteria200Response) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *AddResultCriteria200Response) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *AddResultCriteria200Response) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *AddResultCriteria200Response) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *AddResultCriteria200Response) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *AddResultCriteria200Response) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *AddResultCriteria200Response) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
+
+### GetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *AddResultCriteria200Response) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20`
+
+GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field if non-nil, zero value otherwise.
+
+### GetUrnpingidentityschemasconfigurationmessages20Ok
+
+`func (o *AddResultCriteria200Response) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool)`
+
+GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *AddResultCriteria200Response) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20)`
+
+SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconfigurationmessages20 field to given value.
+
+### HasUrnpingidentityschemasconfigurationmessages20
+
+`func (o *AddResultCriteria200Response) HasUrnpingidentityschemasconfigurationmessages20() bool`
+
+HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 
 ### GetResultCodeCriteria
 
@@ -835,81 +1092,6 @@ SetNoneIncludedAuthzUserGroupDN sets NoneIncludedAuthzUserGroupDN field to given
 `func (o *AddResultCriteria200Response) HasNoneIncludedAuthzUserGroupDN() bool`
 
 HasNoneIncludedAuthzUserGroupDN returns a boolean if a field has been set.
-
-### GetDescription
-
-`func (o *AddResultCriteria200Response) GetDescription() string`
-
-GetDescription returns the Description field if non-nil, zero value otherwise.
-
-### GetDescriptionOk
-
-`func (o *AddResultCriteria200Response) GetDescriptionOk() (*string, bool)`
-
-GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDescription
-
-`func (o *AddResultCriteria200Response) SetDescription(v string)`
-
-SetDescription sets Description field to given value.
-
-### HasDescription
-
-`func (o *AddResultCriteria200Response) HasDescription() bool`
-
-HasDescription returns a boolean if a field has been set.
-
-### GetMeta
-
-`func (o *AddResultCriteria200Response) GetMeta() MetaMeta`
-
-GetMeta returns the Meta field if non-nil, zero value otherwise.
-
-### GetMetaOk
-
-`func (o *AddResultCriteria200Response) GetMetaOk() (*MetaMeta, bool)`
-
-GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMeta
-
-`func (o *AddResultCriteria200Response) SetMeta(v MetaMeta)`
-
-SetMeta sets Meta field to given value.
-
-### HasMeta
-
-`func (o *AddResultCriteria200Response) HasMeta() bool`
-
-HasMeta returns a boolean if a field has been set.
-
-### GetUrnpingidentityschemasconfigurationmessages20
-
-`func (o *AddResultCriteria200Response) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20`
-
-GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field if non-nil, zero value otherwise.
-
-### GetUrnpingidentityschemasconfigurationmessages20Ok
-
-`func (o *AddResultCriteria200Response) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool)`
-
-GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUrnpingidentityschemasconfigurationmessages20
-
-`func (o *AddResultCriteria200Response) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20)`
-
-SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconfigurationmessages20 field to given value.
-
-### HasUrnpingidentityschemasconfigurationmessages20
-
-`func (o *AddResultCriteria200Response) HasUrnpingidentityschemasconfigurationmessages20() bool`
-
-HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 
 ### GetAllIncludedResultCriteria
 

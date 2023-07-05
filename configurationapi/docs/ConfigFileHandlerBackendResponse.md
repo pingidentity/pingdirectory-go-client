@@ -10,6 +10,9 @@ Name | Type | Description | Notes
 **BaseDN** | **[]string** | Specifies the base DN(s) for the data that the backend handles. | 
 **WritabilityMode** | [**EnumbackendWritabilityModeProp**](EnumbackendWritabilityModeProp.md) |  | 
 **InsignificantConfigArchiveAttribute** | Pointer to **[]string** | The name or OID of an attribute type that is considered insignificant for the purpose of maintaining the configuration archive. | [optional] 
+**InsignificantConfigArchiveBaseDN** | Pointer to **[]string** | The base DN that is considered insignificant for the purpose of maintaining the configuration archive. | [optional] 
+**MaintainConfigArchive** | Pointer to **bool** | Indicates whether the server should maintain the config archive with new changes to the config backend. | [optional] 
+**MaxConfigArchiveCount** | Pointer to **int64** | Indicates the maximum number of previous config files to keep as part of maintaining the config archive. | [optional] 
 **MirroredSubtreePeerPollingInterval** | Pointer to **string** | Tells the server component that is responsible for mirroring configuration data across a topology of servers the maximum amount of time to wait before polling the peer servers in the topology to determine if there are any changes in the topology. Mirrored data includes meta-data about the servers in the topology as well as cluster-wide configuration data. | [optional] 
 **MirroredSubtreeEntryUpdateTimeout** | Pointer to **string** | Tells the server component that is responsible for mirroring configuration data across a topology of servers the maximum amount of time to wait for an update operation (add, delete, modify and modify-dn) on an entry to be applied on all servers in the topology. Mirrored data includes meta-data about the servers in the topology as well as cluster-wide configuration data. | [optional] 
 **MirroredSubtreeSearchTimeout** | Pointer to **string** | Tells the server component that is responsible for mirroring configuration data across a topology of servers the maximum amount of time to wait for a search operation to complete. Mirrored data includes meta-data about the servers in the topology as well as cluster-wide configuration data. Search requests that take longer than this timeout will be canceled and considered failures. | [optional] 
@@ -165,6 +168,81 @@ SetInsignificantConfigArchiveAttribute sets InsignificantConfigArchiveAttribute 
 `func (o *ConfigFileHandlerBackendResponse) HasInsignificantConfigArchiveAttribute() bool`
 
 HasInsignificantConfigArchiveAttribute returns a boolean if a field has been set.
+
+### GetInsignificantConfigArchiveBaseDN
+
+`func (o *ConfigFileHandlerBackendResponse) GetInsignificantConfigArchiveBaseDN() []string`
+
+GetInsignificantConfigArchiveBaseDN returns the InsignificantConfigArchiveBaseDN field if non-nil, zero value otherwise.
+
+### GetInsignificantConfigArchiveBaseDNOk
+
+`func (o *ConfigFileHandlerBackendResponse) GetInsignificantConfigArchiveBaseDNOk() (*[]string, bool)`
+
+GetInsignificantConfigArchiveBaseDNOk returns a tuple with the InsignificantConfigArchiveBaseDN field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInsignificantConfigArchiveBaseDN
+
+`func (o *ConfigFileHandlerBackendResponse) SetInsignificantConfigArchiveBaseDN(v []string)`
+
+SetInsignificantConfigArchiveBaseDN sets InsignificantConfigArchiveBaseDN field to given value.
+
+### HasInsignificantConfigArchiveBaseDN
+
+`func (o *ConfigFileHandlerBackendResponse) HasInsignificantConfigArchiveBaseDN() bool`
+
+HasInsignificantConfigArchiveBaseDN returns a boolean if a field has been set.
+
+### GetMaintainConfigArchive
+
+`func (o *ConfigFileHandlerBackendResponse) GetMaintainConfigArchive() bool`
+
+GetMaintainConfigArchive returns the MaintainConfigArchive field if non-nil, zero value otherwise.
+
+### GetMaintainConfigArchiveOk
+
+`func (o *ConfigFileHandlerBackendResponse) GetMaintainConfigArchiveOk() (*bool, bool)`
+
+GetMaintainConfigArchiveOk returns a tuple with the MaintainConfigArchive field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaintainConfigArchive
+
+`func (o *ConfigFileHandlerBackendResponse) SetMaintainConfigArchive(v bool)`
+
+SetMaintainConfigArchive sets MaintainConfigArchive field to given value.
+
+### HasMaintainConfigArchive
+
+`func (o *ConfigFileHandlerBackendResponse) HasMaintainConfigArchive() bool`
+
+HasMaintainConfigArchive returns a boolean if a field has been set.
+
+### GetMaxConfigArchiveCount
+
+`func (o *ConfigFileHandlerBackendResponse) GetMaxConfigArchiveCount() int64`
+
+GetMaxConfigArchiveCount returns the MaxConfigArchiveCount field if non-nil, zero value otherwise.
+
+### GetMaxConfigArchiveCountOk
+
+`func (o *ConfigFileHandlerBackendResponse) GetMaxConfigArchiveCountOk() (*int64, bool)`
+
+GetMaxConfigArchiveCountOk returns a tuple with the MaxConfigArchiveCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaxConfigArchiveCount
+
+`func (o *ConfigFileHandlerBackendResponse) SetMaxConfigArchiveCount(v int64)`
+
+SetMaxConfigArchiveCount sets MaxConfigArchiveCount field to given value.
+
+### HasMaxConfigArchiveCount
+
+`func (o *ConfigFileHandlerBackendResponse) HasMaxConfigArchiveCount() bool`
+
+HasMaxConfigArchiveCount returns a boolean if a field has been set.
 
 ### GetMirroredSubtreePeerPollingInterval
 

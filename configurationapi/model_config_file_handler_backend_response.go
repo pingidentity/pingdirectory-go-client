@@ -29,6 +29,12 @@ type ConfigFileHandlerBackendResponse struct {
 	WritabilityMode EnumbackendWritabilityModeProp `json:"writabilityMode"`
 	// The name or OID of an attribute type that is considered insignificant for the purpose of maintaining the configuration archive.
 	InsignificantConfigArchiveAttribute []string `json:"insignificantConfigArchiveAttribute,omitempty"`
+	// The base DN that is considered insignificant for the purpose of maintaining the configuration archive.
+	InsignificantConfigArchiveBaseDN []string `json:"insignificantConfigArchiveBaseDN,omitempty"`
+	// Indicates whether the server should maintain the config archive with new changes to the config backend.
+	MaintainConfigArchive *bool `json:"maintainConfigArchive,omitempty"`
+	// Indicates the maximum number of previous config files to keep as part of maintaining the config archive.
+	MaxConfigArchiveCount *int64 `json:"maxConfigArchiveCount,omitempty"`
 	// Tells the server component that is responsible for mirroring configuration data across a topology of servers the maximum amount of time to wait before polling the peer servers in the topology to determine if there are any changes in the topology. Mirrored data includes meta-data about the servers in the topology as well as cluster-wide configuration data.
 	MirroredSubtreePeerPollingInterval *string `json:"mirroredSubtreePeerPollingInterval,omitempty"`
 	// Tells the server component that is responsible for mirroring configuration data across a topology of servers the maximum amount of time to wait for an update operation (add, delete, modify and modify-dn) on an entry to be applied on all servers in the topology. Mirrored data includes meta-data about the servers in the topology as well as cluster-wide configuration data.
@@ -224,6 +230,102 @@ func (o *ConfigFileHandlerBackendResponse) HasInsignificantConfigArchiveAttribut
 // SetInsignificantConfigArchiveAttribute gets a reference to the given []string and assigns it to the InsignificantConfigArchiveAttribute field.
 func (o *ConfigFileHandlerBackendResponse) SetInsignificantConfigArchiveAttribute(v []string) {
 	o.InsignificantConfigArchiveAttribute = v
+}
+
+// GetInsignificantConfigArchiveBaseDN returns the InsignificantConfigArchiveBaseDN field value if set, zero value otherwise.
+func (o *ConfigFileHandlerBackendResponse) GetInsignificantConfigArchiveBaseDN() []string {
+	if o == nil || IsNil(o.InsignificantConfigArchiveBaseDN) {
+		var ret []string
+		return ret
+	}
+	return o.InsignificantConfigArchiveBaseDN
+}
+
+// GetInsignificantConfigArchiveBaseDNOk returns a tuple with the InsignificantConfigArchiveBaseDN field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ConfigFileHandlerBackendResponse) GetInsignificantConfigArchiveBaseDNOk() ([]string, bool) {
+	if o == nil || IsNil(o.InsignificantConfigArchiveBaseDN) {
+		return nil, false
+	}
+	return o.InsignificantConfigArchiveBaseDN, true
+}
+
+// HasInsignificantConfigArchiveBaseDN returns a boolean if a field has been set.
+func (o *ConfigFileHandlerBackendResponse) HasInsignificantConfigArchiveBaseDN() bool {
+	if o != nil && !IsNil(o.InsignificantConfigArchiveBaseDN) {
+		return true
+	}
+
+	return false
+}
+
+// SetInsignificantConfigArchiveBaseDN gets a reference to the given []string and assigns it to the InsignificantConfigArchiveBaseDN field.
+func (o *ConfigFileHandlerBackendResponse) SetInsignificantConfigArchiveBaseDN(v []string) {
+	o.InsignificantConfigArchiveBaseDN = v
+}
+
+// GetMaintainConfigArchive returns the MaintainConfigArchive field value if set, zero value otherwise.
+func (o *ConfigFileHandlerBackendResponse) GetMaintainConfigArchive() bool {
+	if o == nil || IsNil(o.MaintainConfigArchive) {
+		var ret bool
+		return ret
+	}
+	return *o.MaintainConfigArchive
+}
+
+// GetMaintainConfigArchiveOk returns a tuple with the MaintainConfigArchive field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ConfigFileHandlerBackendResponse) GetMaintainConfigArchiveOk() (*bool, bool) {
+	if o == nil || IsNil(o.MaintainConfigArchive) {
+		return nil, false
+	}
+	return o.MaintainConfigArchive, true
+}
+
+// HasMaintainConfigArchive returns a boolean if a field has been set.
+func (o *ConfigFileHandlerBackendResponse) HasMaintainConfigArchive() bool {
+	if o != nil && !IsNil(o.MaintainConfigArchive) {
+		return true
+	}
+
+	return false
+}
+
+// SetMaintainConfigArchive gets a reference to the given bool and assigns it to the MaintainConfigArchive field.
+func (o *ConfigFileHandlerBackendResponse) SetMaintainConfigArchive(v bool) {
+	o.MaintainConfigArchive = &v
+}
+
+// GetMaxConfigArchiveCount returns the MaxConfigArchiveCount field value if set, zero value otherwise.
+func (o *ConfigFileHandlerBackendResponse) GetMaxConfigArchiveCount() int64 {
+	if o == nil || IsNil(o.MaxConfigArchiveCount) {
+		var ret int64
+		return ret
+	}
+	return *o.MaxConfigArchiveCount
+}
+
+// GetMaxConfigArchiveCountOk returns a tuple with the MaxConfigArchiveCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ConfigFileHandlerBackendResponse) GetMaxConfigArchiveCountOk() (*int64, bool) {
+	if o == nil || IsNil(o.MaxConfigArchiveCount) {
+		return nil, false
+	}
+	return o.MaxConfigArchiveCount, true
+}
+
+// HasMaxConfigArchiveCount returns a boolean if a field has been set.
+func (o *ConfigFileHandlerBackendResponse) HasMaxConfigArchiveCount() bool {
+	if o != nil && !IsNil(o.MaxConfigArchiveCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxConfigArchiveCount gets a reference to the given int64 and assigns it to the MaxConfigArchiveCount field.
+func (o *ConfigFileHandlerBackendResponse) SetMaxConfigArchiveCount(v int64) {
+	o.MaxConfigArchiveCount = &v
 }
 
 // GetMirroredSubtreePeerPollingInterval returns the MirroredSubtreePeerPollingInterval field value if set, zero value otherwise.
@@ -587,6 +689,15 @@ func (o ConfigFileHandlerBackendResponse) ToMap() (map[string]interface{}, error
 	toSerialize["writabilityMode"] = o.WritabilityMode
 	if !IsNil(o.InsignificantConfigArchiveAttribute) {
 		toSerialize["insignificantConfigArchiveAttribute"] = o.InsignificantConfigArchiveAttribute
+	}
+	if !IsNil(o.InsignificantConfigArchiveBaseDN) {
+		toSerialize["insignificantConfigArchiveBaseDN"] = o.InsignificantConfigArchiveBaseDN
+	}
+	if !IsNil(o.MaintainConfigArchive) {
+		toSerialize["maintainConfigArchive"] = o.MaintainConfigArchive
+	}
+	if !IsNil(o.MaxConfigArchiveCount) {
+		toSerialize["maxConfigArchiveCount"] = o.MaxConfigArchiveCount
 	}
 	if !IsNil(o.MirroredSubtreePeerPollingInterval) {
 		toSerialize["mirroredSubtreePeerPollingInterval"] = o.MirroredSubtreePeerPollingInterval

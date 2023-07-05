@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-93/pd_ds_use_config_api
 tags:
 - description: Access http-servlet-extensions
   name: http-servlet-extension
@@ -1705,6 +1705,10 @@ components:
               type: string
             description: >-
                 A set of attributes which the client is not allowed to provide for the expand query parameters. This should be used for attributes that could either have a large number of values or that reference entries that are very large like groups.
+          alwaysUsePermissiveModify:
+            type: boolean
+            description: >-
+                Indicates whether to always use permissive modify behavior for PATCH requests, even if the request did not include the permissive modify request control.
           allowedControl:
             type: array
             items:

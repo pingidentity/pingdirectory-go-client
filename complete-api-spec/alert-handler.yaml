@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-93/pd_ds_use_config_api
 tags:
 - description: Access alert-handlers
   name: alert-handler
@@ -245,6 +245,9 @@ components:
       - "duplicate-info-alerts-suppressed"
       - "duplicate-warning-alerts-suppressed"
       - "embedded-postgresql-unavailable"
+      - "encryption-settings-database-access-restored"
+      - "encryption-settings-database-inaccessible"
+      - "encryption-settings-database-prolonged-outage"
       - "entering-lockdown-mode"
       - "entry-references-removed-attribute-type"
       - "exec-task-launching-command"
@@ -379,7 +382,9 @@ components:
       - "password-expiring-account-status-notification"
       - "password-reset-account-status-notification"
       - "password-changed-account-status-notification"
+      - "account-authenticated-account-status-notification"
       - "account-created-account-status-notification"
+      - "account-deleted-account-status-notification"
       - "account-updated-account-status-notification"
       - "bind-password-failed-validation-account-status-notification"
       - "must-change-password-account-status-notification"
@@ -388,6 +393,8 @@ components:
       - "incremental-backups-deprecated"
       - "replace-certificate-succeeded"
       - "replace-certificate-failed"
+      - "replication-missing-changes-risk"
+      - "replication-not-purging-obsolete-replicas"
       description: >-
           Specifies the names of the alert types that are enabled for this alert handler.
     Enumalert-handler-disabledAlertTypeProp:
@@ -433,6 +440,9 @@ components:
       - "duplicate-info-alerts-suppressed"
       - "duplicate-warning-alerts-suppressed"
       - "embedded-postgresql-unavailable"
+      - "encryption-settings-database-access-restored"
+      - "encryption-settings-database-inaccessible"
+      - "encryption-settings-database-prolonged-outage"
       - "entering-lockdown-mode"
       - "entry-references-removed-attribute-type"
       - "exec-task-launching-command"
@@ -567,7 +577,9 @@ components:
       - "password-expiring-account-status-notification"
       - "password-reset-account-status-notification"
       - "password-changed-account-status-notification"
+      - "account-authenticated-account-status-notification"
       - "account-created-account-status-notification"
+      - "account-deleted-account-status-notification"
       - "account-updated-account-status-notification"
       - "bind-password-failed-validation-account-status-notification"
       - "must-change-password-account-status-notification"
@@ -576,6 +588,8 @@ components:
       - "incremental-backups-deprecated"
       - "replace-certificate-succeeded"
       - "replace-certificate-failed"
+      - "replication-missing-changes-risk"
+      - "replication-not-purging-obsolete-replicas"
       description: >-
           Specifies the names of the alert types that are disabled for this alert handler.
     output-alert-handler-response:

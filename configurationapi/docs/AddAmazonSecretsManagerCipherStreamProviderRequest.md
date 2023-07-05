@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **SecretVersionID** | Pointer to **string** | The unique identifier for the version of the secret to be retrieved. | [optional] 
 **SecretVersionStage** | Pointer to **string** | The staging label for the version of the secret to be retrieved. | [optional] 
 **EncryptionMetadataFile** | Pointer to **string** | The path to a file that will hold metadata about the encryption performed by this Amazon Secrets Manager Cipher Stream Provider. | [optional] 
+**IterationCount** | Pointer to **int64** | The PBKDF2 iteration count that will be used when deriving the encryption key used to protect the encryption settings database. | [optional] 
 **Description** | Pointer to **string** | A description for this Cipher Stream Provider | [optional] 
 **Enabled** | **bool** | Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server. | 
 
@@ -208,6 +209,31 @@ SetEncryptionMetadataFile sets EncryptionMetadataFile field to given value.
 `func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) HasEncryptionMetadataFile() bool`
 
 HasEncryptionMetadataFile returns a boolean if a field has been set.
+
+### GetIterationCount
+
+`func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetIterationCount() int64`
+
+GetIterationCount returns the IterationCount field if non-nil, zero value otherwise.
+
+### GetIterationCountOk
+
+`func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetIterationCountOk() (*int64, bool)`
+
+GetIterationCountOk returns a tuple with the IterationCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIterationCount
+
+`func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) SetIterationCount(v int64)`
+
+SetIterationCount sets IterationCount field to given value.
+
+### HasIterationCount
+
+`func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) HasIterationCount() bool`
+
+HasIterationCount returns a boolean if a field has been set.
 
 ### GetDescription
 

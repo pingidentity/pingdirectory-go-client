@@ -33,7 +33,9 @@ const (
 	ENUMACCOUNTSTATUSNOTIFICATIONHANDLERACCOUNTSTATUSNOTIFICATIONTYPEPROP_PASSWORD_EXPIRING               EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp = "password-expiring"
 	ENUMACCOUNTSTATUSNOTIFICATIONHANDLERACCOUNTSTATUSNOTIFICATIONTYPEPROP_PASSWORD_RESET                  EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp = "password-reset"
 	ENUMACCOUNTSTATUSNOTIFICATIONHANDLERACCOUNTSTATUSNOTIFICATIONTYPEPROP_PASSWORD_CHANGED                EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp = "password-changed"
+	ENUMACCOUNTSTATUSNOTIFICATIONHANDLERACCOUNTSTATUSNOTIFICATIONTYPEPROP_ACCOUNT_AUTHENTICATED           EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp = "account-authenticated"
 	ENUMACCOUNTSTATUSNOTIFICATIONHANDLERACCOUNTSTATUSNOTIFICATIONTYPEPROP_ACCOUNT_CREATED                 EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp = "account-created"
+	ENUMACCOUNTSTATUSNOTIFICATIONHANDLERACCOUNTSTATUSNOTIFICATIONTYPEPROP_ACCOUNT_DELETED                 EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp = "account-deleted"
 	ENUMACCOUNTSTATUSNOTIFICATIONHANDLERACCOUNTSTATUSNOTIFICATIONTYPEPROP_ACCOUNT_UPDATED                 EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp = "account-updated"
 	ENUMACCOUNTSTATUSNOTIFICATIONHANDLERACCOUNTSTATUSNOTIFICATIONTYPEPROP_BIND_PASSWORD_FAILED_VALIDATION EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp = "bind-password-failed-validation"
 	ENUMACCOUNTSTATUSNOTIFICATIONHANDLERACCOUNTSTATUSNOTIFICATIONTYPEPROP_MUST_CHANGE_PASSWORD            EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp = "must-change-password"
@@ -54,7 +56,9 @@ var AllowedEnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp
 	"password-expiring",
 	"password-reset",
 	"password-changed",
+	"account-authenticated",
 	"account-created",
+	"account-deleted",
 	"account-updated",
 	"bind-password-failed-validation",
 	"must-change-password",

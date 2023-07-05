@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-93/pd_ds_use_config_api
 tags:
 - description: Access synchronization-providers
   name: synchronization-provider
@@ -370,6 +370,10 @@ components:
             type: integer
             description: >-
                 Specifies the gateway priority of the Replication Server in the current location.
+          missingChangesAlertThresholdPercent:
+            type: integer
+            description: >-
+                Specifies the missing changes alert threshold as a percentage of the total pending changes. For instance, a value of 80 indicates that the replica is 80% of the way to losing changes.
       - $ref: '#/components/schemas/meta'
       required:
       - replicationServerID

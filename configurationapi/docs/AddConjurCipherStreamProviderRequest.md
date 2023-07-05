@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **ConjurExternalServer** | **string** | An external server definition with information needed to connect and authenticate to the Conjur server. | 
 **ConjurSecretRelativePath** | **string** | The portion of the path that follows the account name in the URI needed to obtain the secret passphrase to use to generate the encryption key. Any special characters in the path must be URL-encoded. | 
 **EncryptionMetadataFile** | Pointer to **string** | The path to a file that will hold metadata about the encryption performed by this Conjur Cipher Stream Provider. | [optional] 
+**IterationCount** | Pointer to **int64** | The PBKDF2 iteration count that will be used when deriving the encryption key used to protect the encryption settings database. | [optional] 
 **Description** | Pointer to **string** | A description for this Cipher Stream Provider | [optional] 
 **Enabled** | **bool** | Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server. | 
 
@@ -135,6 +136,31 @@ SetEncryptionMetadataFile sets EncryptionMetadataFile field to given value.
 `func (o *AddConjurCipherStreamProviderRequest) HasEncryptionMetadataFile() bool`
 
 HasEncryptionMetadataFile returns a boolean if a field has been set.
+
+### GetIterationCount
+
+`func (o *AddConjurCipherStreamProviderRequest) GetIterationCount() int64`
+
+GetIterationCount returns the IterationCount field if non-nil, zero value otherwise.
+
+### GetIterationCountOk
+
+`func (o *AddConjurCipherStreamProviderRequest) GetIterationCountOk() (*int64, bool)`
+
+GetIterationCountOk returns a tuple with the IterationCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIterationCount
+
+`func (o *AddConjurCipherStreamProviderRequest) SetIterationCount(v int64)`
+
+SetIterationCount sets IterationCount field to given value.
+
+### HasIterationCount
+
+`func (o *AddConjurCipherStreamProviderRequest) HasIterationCount() bool`
+
+HasIterationCount returns a boolean if a field has been set.
 
 ### GetDescription
 

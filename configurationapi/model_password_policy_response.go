@@ -40,9 +40,8 @@ type PasswordPolicyResponse struct {
 	// Specifies the names of the password storage schemes that are considered deprecated for this password policy.
 	DeprecatedPasswordStorageScheme []string `json:"deprecatedPasswordStorageScheme,omitempty"`
 	// Indicates whether user entries can have multiple distinct values for the password attribute.
-	AllowMultiplePasswordValues *bool `json:"allowMultiplePasswordValues,omitempty"`
-	// Indicates whether users can change their passwords by providing a pre-encoded value.
-	AllowPreEncodedPasswords *bool `json:"allowPreEncodedPasswords,omitempty"`
+	AllowMultiplePasswordValues *bool                                           `json:"allowMultiplePasswordValues,omitempty"`
+	AllowPreEncodedPasswords    *EnumpasswordPolicyAllowPreEncodedPasswordsProp `json:"allowPreEncodedPasswords,omitempty"`
 	// Specifies the names of the password validators that are used with the associated password storage scheme.
 	PasswordValidator []string `json:"passwordValidator,omitempty"`
 	// Specifies the names of the password validators that should be invoked for bind operations.
@@ -501,9 +500,9 @@ func (o *PasswordPolicyResponse) SetAllowMultiplePasswordValues(v bool) {
 }
 
 // GetAllowPreEncodedPasswords returns the AllowPreEncodedPasswords field value if set, zero value otherwise.
-func (o *PasswordPolicyResponse) GetAllowPreEncodedPasswords() bool {
+func (o *PasswordPolicyResponse) GetAllowPreEncodedPasswords() EnumpasswordPolicyAllowPreEncodedPasswordsProp {
 	if o == nil || IsNil(o.AllowPreEncodedPasswords) {
-		var ret bool
+		var ret EnumpasswordPolicyAllowPreEncodedPasswordsProp
 		return ret
 	}
 	return *o.AllowPreEncodedPasswords
@@ -511,7 +510,7 @@ func (o *PasswordPolicyResponse) GetAllowPreEncodedPasswords() bool {
 
 // GetAllowPreEncodedPasswordsOk returns a tuple with the AllowPreEncodedPasswords field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PasswordPolicyResponse) GetAllowPreEncodedPasswordsOk() (*bool, bool) {
+func (o *PasswordPolicyResponse) GetAllowPreEncodedPasswordsOk() (*EnumpasswordPolicyAllowPreEncodedPasswordsProp, bool) {
 	if o == nil || IsNil(o.AllowPreEncodedPasswords) {
 		return nil, false
 	}
@@ -527,8 +526,8 @@ func (o *PasswordPolicyResponse) HasAllowPreEncodedPasswords() bool {
 	return false
 }
 
-// SetAllowPreEncodedPasswords gets a reference to the given bool and assigns it to the AllowPreEncodedPasswords field.
-func (o *PasswordPolicyResponse) SetAllowPreEncodedPasswords(v bool) {
+// SetAllowPreEncodedPasswords gets a reference to the given EnumpasswordPolicyAllowPreEncodedPasswordsProp and assigns it to the AllowPreEncodedPasswords field.
+func (o *PasswordPolicyResponse) SetAllowPreEncodedPasswords(v EnumpasswordPolicyAllowPreEncodedPasswordsProp) {
 	o.AllowPreEncodedPasswords = &v
 }
 

@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumfileBasedCipherStreamProviderSchemaUrn**](EnumfileBasedCipherStreamProviderSchemaUrn.md) |  | 
 **PasswordFile** | **string** | The path to the file containing the password to use when generating ciphers. | 
 **WaitForPasswordFile** | Pointer to **bool** | Indicates whether the server should wait for the password file to become available if it does not exist. | [optional] 
+**EncryptionMetadataFile** | Pointer to **string** | The path to a file that will hold metadata about the encryption performed by this File Based Cipher Stream Provider. | [optional] 
+**IterationCount** | Pointer to **int64** | The PBKDF2 iteration count that will be used when deriving the encryption key used to protect the encryption settings database. | [optional] 
 **Description** | Pointer to **string** | A description for this Cipher Stream Provider | [optional] 
 **Enabled** | **bool** | Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server. | 
 
@@ -114,6 +116,56 @@ SetWaitForPasswordFile sets WaitForPasswordFile field to given value.
 `func (o *AddFileBasedCipherStreamProviderRequest) HasWaitForPasswordFile() bool`
 
 HasWaitForPasswordFile returns a boolean if a field has been set.
+
+### GetEncryptionMetadataFile
+
+`func (o *AddFileBasedCipherStreamProviderRequest) GetEncryptionMetadataFile() string`
+
+GetEncryptionMetadataFile returns the EncryptionMetadataFile field if non-nil, zero value otherwise.
+
+### GetEncryptionMetadataFileOk
+
+`func (o *AddFileBasedCipherStreamProviderRequest) GetEncryptionMetadataFileOk() (*string, bool)`
+
+GetEncryptionMetadataFileOk returns a tuple with the EncryptionMetadataFile field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEncryptionMetadataFile
+
+`func (o *AddFileBasedCipherStreamProviderRequest) SetEncryptionMetadataFile(v string)`
+
+SetEncryptionMetadataFile sets EncryptionMetadataFile field to given value.
+
+### HasEncryptionMetadataFile
+
+`func (o *AddFileBasedCipherStreamProviderRequest) HasEncryptionMetadataFile() bool`
+
+HasEncryptionMetadataFile returns a boolean if a field has been set.
+
+### GetIterationCount
+
+`func (o *AddFileBasedCipherStreamProviderRequest) GetIterationCount() int64`
+
+GetIterationCount returns the IterationCount field if non-nil, zero value otherwise.
+
+### GetIterationCountOk
+
+`func (o *AddFileBasedCipherStreamProviderRequest) GetIterationCountOk() (*int64, bool)`
+
+GetIterationCountOk returns a tuple with the IterationCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIterationCount
+
+`func (o *AddFileBasedCipherStreamProviderRequest) SetIterationCount(v int64)`
+
+SetIterationCount sets IterationCount field to given value.
+
+### HasIterationCount
+
+`func (o *AddFileBasedCipherStreamProviderRequest) HasIterationCount() bool`
+
+HasIterationCount returns a boolean if a field has been set.
 
 ### GetDescription
 

@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-93/pd_ds_use_config_api
 tags:
 - description: Access backends
   name: backend
@@ -1767,6 +1767,20 @@ components:
               type: string
             description: >-
                 The name or OID of an attribute type that is considered insignificant for the purpose of maintaining the configuration archive.
+          insignificantConfigArchiveBaseDN:
+            type: array
+            items:
+              type: string
+            description: >-
+                The base DN that is considered insignificant for the purpose of maintaining the configuration archive.
+          maintainConfigArchive:
+            type: boolean
+            description: >-
+                Indicates whether the server should maintain the config archive with new changes to the config backend.
+          maxConfigArchiveCount:
+            type: integer
+            description: >-
+                Indicates the maximum number of previous config files to keep as part of maintaining the config archive.
           mirroredSubtreePeerPollingInterval:
             type: string
             description: >-
@@ -1941,6 +1955,9 @@ components:
       - "duplicate-info-alerts-suppressed"
       - "duplicate-warning-alerts-suppressed"
       - "embedded-postgresql-unavailable"
+      - "encryption-settings-database-access-restored"
+      - "encryption-settings-database-inaccessible"
+      - "encryption-settings-database-prolonged-outage"
       - "entering-lockdown-mode"
       - "entry-references-removed-attribute-type"
       - "exec-task-launching-command"
@@ -2075,7 +2092,9 @@ components:
       - "password-expiring-account-status-notification"
       - "password-reset-account-status-notification"
       - "password-changed-account-status-notification"
+      - "account-authenticated-account-status-notification"
       - "account-created-account-status-notification"
+      - "account-deleted-account-status-notification"
       - "account-updated-account-status-notification"
       - "bind-password-failed-validation-account-status-notification"
       - "must-change-password-account-status-notification"
@@ -2084,6 +2103,8 @@ components:
       - "incremental-backups-deprecated"
       - "replace-certificate-succeeded"
       - "replace-certificate-failed"
+      - "replication-missing-changes-risk"
+      - "replication-not-purging-obsolete-replicas"
       description: >-
           Specifies the names of the alert types that should not be added to the backend. This can be used to suppress high volume alerts that might trigger hitting the max-alerts limit sooner than desired. Disabled alert types will not be sent out over persistent searches on this backend.
     alert-backend-response:

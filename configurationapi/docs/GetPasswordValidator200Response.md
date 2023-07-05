@@ -31,6 +31,9 @@ Name | Type | Description | Notes
 **MaximumAllowedPercentOfPassword** | Pointer to **int64** | The maximum allowed percent of a proposed password that any single dictionary word is allowed to comprise. A value of 100 indicates that a proposed password will only be rejected if the dictionary contains the entire proposed password (after any configured transformations have been applied). | [optional] 
 **AssumedPasswordGuessesPerSecond** | **string** | The number of password guesses per second that a potential attacker may be expected to make. | 
 **MinimumAcceptableTimeToExhaustSearchSpace** | **string** | The minimum length of time (using the configured number of password guesses per second) required to exhaust the entire search space for a proposed password in order for that password to be considered acceptable. | 
+**AllowNonAsciiCharacters** | Pointer to **bool** | Indicates whether passwords will be allowed to include characters from outside the ASCII character set. | [optional] 
+**AllowUnknownCharacters** | Pointer to **bool** | Indicates whether passwords will be allowed to include characters that are not recognized by the JVM&#39;s Unicode support. | [optional] 
+**AllowedCharacterType** | Pointer to [**[]EnumpasswordValidatorAllowedCharacterTypeProp**](EnumpasswordValidatorAllowedCharacterTypeProp.md) |  | [optional] 
 **ScriptClass** | **string** | The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Password Validator. | 
 **ScriptArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Scripted Password Validator. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **PwnedPasswordsBaseURL** | **string** | The base URL for requests used to interact with the Pwned Passwords service. The first five characters of the hexadecimal representation of the unsalted SHA-1 digest of a proposed password will be appended to this base URL to construct the HTTP GET request used to obtain information about potential matches. | 
@@ -41,6 +44,9 @@ Name | Type | Description | Notes
 **AcceptPasswordOnServiceError** | **bool** | Indicates whether to accept the proposed password if an error occurs while attempting to interact with the Pwned Passwords service. | 
 **KeyManagerProvider** | Pointer to **string** | Specifies which key manager provider should be used to obtain a client certificate to present to the validation server when performing HTTPS communication. This may be left undefined if communication will not be secured with HTTPS, or if there is no need to present a client certificate to the validation service. | [optional] 
 **TrustManagerProvider** | Pointer to **string** | Specifies which trust manager provider should be used to determine whether to trust the certificate presented by the server when performing HTTPS communication. This may be left undefined if HTTPS communication is not needed, or if the validation service presents a certificate that is trusted by the default JVM configuration (which should be the case for the Pwned Password servers). | [optional] 
+**DisallowedCharacters** | Pointer to **string** | A set of characters that will not be allowed anywhere in a password. | [optional] 
+**DisallowedLeadingCharacters** | Pointer to **string** | A set of characters that will not be allowed as the first character of the password. | [optional] 
+**DisallowedTrailingCharacters** | Pointer to **string** | A set of characters that will not be allowed as the last character of the password. | [optional] 
 **MaxPasswordLength** | Pointer to **int64** | Specifies the maximum number of characters that can be included in a proposed password. | [optional] 
 **MinPasswordLength** | Pointer to **int64** | Specifies the minimum number of characters that must be included in a proposed password. | [optional] 
 **MatchPattern** | **string** | The regular expression to use for this password validator. | 
@@ -683,6 +689,81 @@ and a boolean to check if the value has been set.
 SetMinimumAcceptableTimeToExhaustSearchSpace sets MinimumAcceptableTimeToExhaustSearchSpace field to given value.
 
 
+### GetAllowNonAsciiCharacters
+
+`func (o *GetPasswordValidator200Response) GetAllowNonAsciiCharacters() bool`
+
+GetAllowNonAsciiCharacters returns the AllowNonAsciiCharacters field if non-nil, zero value otherwise.
+
+### GetAllowNonAsciiCharactersOk
+
+`func (o *GetPasswordValidator200Response) GetAllowNonAsciiCharactersOk() (*bool, bool)`
+
+GetAllowNonAsciiCharactersOk returns a tuple with the AllowNonAsciiCharacters field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowNonAsciiCharacters
+
+`func (o *GetPasswordValidator200Response) SetAllowNonAsciiCharacters(v bool)`
+
+SetAllowNonAsciiCharacters sets AllowNonAsciiCharacters field to given value.
+
+### HasAllowNonAsciiCharacters
+
+`func (o *GetPasswordValidator200Response) HasAllowNonAsciiCharacters() bool`
+
+HasAllowNonAsciiCharacters returns a boolean if a field has been set.
+
+### GetAllowUnknownCharacters
+
+`func (o *GetPasswordValidator200Response) GetAllowUnknownCharacters() bool`
+
+GetAllowUnknownCharacters returns the AllowUnknownCharacters field if non-nil, zero value otherwise.
+
+### GetAllowUnknownCharactersOk
+
+`func (o *GetPasswordValidator200Response) GetAllowUnknownCharactersOk() (*bool, bool)`
+
+GetAllowUnknownCharactersOk returns a tuple with the AllowUnknownCharacters field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowUnknownCharacters
+
+`func (o *GetPasswordValidator200Response) SetAllowUnknownCharacters(v bool)`
+
+SetAllowUnknownCharacters sets AllowUnknownCharacters field to given value.
+
+### HasAllowUnknownCharacters
+
+`func (o *GetPasswordValidator200Response) HasAllowUnknownCharacters() bool`
+
+HasAllowUnknownCharacters returns a boolean if a field has been set.
+
+### GetAllowedCharacterType
+
+`func (o *GetPasswordValidator200Response) GetAllowedCharacterType() []EnumpasswordValidatorAllowedCharacterTypeProp`
+
+GetAllowedCharacterType returns the AllowedCharacterType field if non-nil, zero value otherwise.
+
+### GetAllowedCharacterTypeOk
+
+`func (o *GetPasswordValidator200Response) GetAllowedCharacterTypeOk() (*[]EnumpasswordValidatorAllowedCharacterTypeProp, bool)`
+
+GetAllowedCharacterTypeOk returns a tuple with the AllowedCharacterType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowedCharacterType
+
+`func (o *GetPasswordValidator200Response) SetAllowedCharacterType(v []EnumpasswordValidatorAllowedCharacterTypeProp)`
+
+SetAllowedCharacterType sets AllowedCharacterType field to given value.
+
+### HasAllowedCharacterType
+
+`func (o *GetPasswordValidator200Response) HasAllowedCharacterType() bool`
+
+HasAllowedCharacterType returns a boolean if a field has been set.
+
 ### GetScriptClass
 
 `func (o *GetPasswordValidator200Response) GetScriptClass() string`
@@ -902,6 +983,81 @@ SetTrustManagerProvider sets TrustManagerProvider field to given value.
 `func (o *GetPasswordValidator200Response) HasTrustManagerProvider() bool`
 
 HasTrustManagerProvider returns a boolean if a field has been set.
+
+### GetDisallowedCharacters
+
+`func (o *GetPasswordValidator200Response) GetDisallowedCharacters() string`
+
+GetDisallowedCharacters returns the DisallowedCharacters field if non-nil, zero value otherwise.
+
+### GetDisallowedCharactersOk
+
+`func (o *GetPasswordValidator200Response) GetDisallowedCharactersOk() (*string, bool)`
+
+GetDisallowedCharactersOk returns a tuple with the DisallowedCharacters field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisallowedCharacters
+
+`func (o *GetPasswordValidator200Response) SetDisallowedCharacters(v string)`
+
+SetDisallowedCharacters sets DisallowedCharacters field to given value.
+
+### HasDisallowedCharacters
+
+`func (o *GetPasswordValidator200Response) HasDisallowedCharacters() bool`
+
+HasDisallowedCharacters returns a boolean if a field has been set.
+
+### GetDisallowedLeadingCharacters
+
+`func (o *GetPasswordValidator200Response) GetDisallowedLeadingCharacters() string`
+
+GetDisallowedLeadingCharacters returns the DisallowedLeadingCharacters field if non-nil, zero value otherwise.
+
+### GetDisallowedLeadingCharactersOk
+
+`func (o *GetPasswordValidator200Response) GetDisallowedLeadingCharactersOk() (*string, bool)`
+
+GetDisallowedLeadingCharactersOk returns a tuple with the DisallowedLeadingCharacters field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisallowedLeadingCharacters
+
+`func (o *GetPasswordValidator200Response) SetDisallowedLeadingCharacters(v string)`
+
+SetDisallowedLeadingCharacters sets DisallowedLeadingCharacters field to given value.
+
+### HasDisallowedLeadingCharacters
+
+`func (o *GetPasswordValidator200Response) HasDisallowedLeadingCharacters() bool`
+
+HasDisallowedLeadingCharacters returns a boolean if a field has been set.
+
+### GetDisallowedTrailingCharacters
+
+`func (o *GetPasswordValidator200Response) GetDisallowedTrailingCharacters() string`
+
+GetDisallowedTrailingCharacters returns the DisallowedTrailingCharacters field if non-nil, zero value otherwise.
+
+### GetDisallowedTrailingCharactersOk
+
+`func (o *GetPasswordValidator200Response) GetDisallowedTrailingCharactersOk() (*string, bool)`
+
+GetDisallowedTrailingCharactersOk returns a tuple with the DisallowedTrailingCharacters field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisallowedTrailingCharacters
+
+`func (o *GetPasswordValidator200Response) SetDisallowedTrailingCharacters(v string)`
+
+SetDisallowedTrailingCharacters sets DisallowedTrailingCharacters field to given value.
+
+### HasDisallowedTrailingCharacters
+
+`func (o *GetPasswordValidator200Response) HasDisallowedTrailingCharacters() bool`
+
+HasDisallowedTrailingCharacters returns a boolean if a field has been set.
 
 ### GetMaxPasswordLength
 

@@ -17,7 +17,15 @@ import (
 
 // AddMonitorProvider200Response - struct for AddMonitorProvider200Response
 type AddMonitorProvider200Response struct {
-	ThirdPartyMonitorProviderResponse *ThirdPartyMonitorProviderResponse
+	EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse *EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse
+	ThirdPartyMonitorProviderResponse                              *ThirdPartyMonitorProviderResponse
+}
+
+// EncryptionSettingsDatabaseAccessibilityMonitorProviderResponseAsAddMonitorProvider200Response is a convenience function that returns EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse wrapped in AddMonitorProvider200Response
+func EncryptionSettingsDatabaseAccessibilityMonitorProviderResponseAsAddMonitorProvider200Response(v *EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse) AddMonitorProvider200Response {
+	return AddMonitorProvider200Response{
+		EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse: v,
+	}
 }
 
 // ThirdPartyMonitorProviderResponseAsAddMonitorProvider200Response is a convenience function that returns ThirdPartyMonitorProviderResponse wrapped in AddMonitorProvider200Response
@@ -31,6 +39,19 @@ func ThirdPartyMonitorProviderResponseAsAddMonitorProvider200Response(v *ThirdPa
 func (dst *AddMonitorProvider200Response) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
+	// try to unmarshal data into EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse
+	err = newStrictDecoder(data).Decode(&dst.EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse)
+	if err == nil {
+		jsonEncryptionSettingsDatabaseAccessibilityMonitorProviderResponse, _ := json.Marshal(dst.EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse)
+		if string(jsonEncryptionSettingsDatabaseAccessibilityMonitorProviderResponse) == "{}" { // empty struct
+			dst.EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse = nil
+	}
+
 	// try to unmarshal data into ThirdPartyMonitorProviderResponse
 	err = newStrictDecoder(data).Decode(&dst.ThirdPartyMonitorProviderResponse)
 	if err == nil {
@@ -46,6 +67,7 @@ func (dst *AddMonitorProvider200Response) UnmarshalJSON(data []byte) error {
 
 	if match > 1 { // more than 1 match
 		// reset to nil
+		dst.EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse = nil
 		dst.ThirdPartyMonitorProviderResponse = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(AddMonitorProvider200Response)")
@@ -58,6 +80,10 @@ func (dst *AddMonitorProvider200Response) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src AddMonitorProvider200Response) MarshalJSON() ([]byte, error) {
+	if src.EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse != nil {
+		return json.Marshal(&src.EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse)
+	}
+
 	if src.ThirdPartyMonitorProviderResponse != nil {
 		return json.Marshal(&src.ThirdPartyMonitorProviderResponse)
 	}
@@ -70,6 +96,10 @@ func (obj *AddMonitorProvider200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
+	if obj.EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse != nil {
+		return obj.EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse
+	}
+
 	if obj.ThirdPartyMonitorProviderResponse != nil {
 		return obj.ThirdPartyMonitorProviderResponse
 	}

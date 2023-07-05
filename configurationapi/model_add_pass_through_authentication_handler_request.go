@@ -17,14 +17,30 @@ import (
 
 // AddPassThroughAuthenticationHandlerRequest - struct for AddPassThroughAuthenticationHandlerRequest
 type AddPassThroughAuthenticationHandlerRequest struct {
+	AddAggregatePassThroughAuthenticationHandlerRequest  *AddAggregatePassThroughAuthenticationHandlerRequest
 	AddLdapPassThroughAuthenticationHandlerRequest       *AddLdapPassThroughAuthenticationHandlerRequest
+	AddPingOnePassThroughAuthenticationHandlerRequest    *AddPingOnePassThroughAuthenticationHandlerRequest
 	AddThirdPartyPassThroughAuthenticationHandlerRequest *AddThirdPartyPassThroughAuthenticationHandlerRequest
+}
+
+// AddAggregatePassThroughAuthenticationHandlerRequestAsAddPassThroughAuthenticationHandlerRequest is a convenience function that returns AddAggregatePassThroughAuthenticationHandlerRequest wrapped in AddPassThroughAuthenticationHandlerRequest
+func AddAggregatePassThroughAuthenticationHandlerRequestAsAddPassThroughAuthenticationHandlerRequest(v *AddAggregatePassThroughAuthenticationHandlerRequest) AddPassThroughAuthenticationHandlerRequest {
+	return AddPassThroughAuthenticationHandlerRequest{
+		AddAggregatePassThroughAuthenticationHandlerRequest: v,
+	}
 }
 
 // AddLdapPassThroughAuthenticationHandlerRequestAsAddPassThroughAuthenticationHandlerRequest is a convenience function that returns AddLdapPassThroughAuthenticationHandlerRequest wrapped in AddPassThroughAuthenticationHandlerRequest
 func AddLdapPassThroughAuthenticationHandlerRequestAsAddPassThroughAuthenticationHandlerRequest(v *AddLdapPassThroughAuthenticationHandlerRequest) AddPassThroughAuthenticationHandlerRequest {
 	return AddPassThroughAuthenticationHandlerRequest{
 		AddLdapPassThroughAuthenticationHandlerRequest: v,
+	}
+}
+
+// AddPingOnePassThroughAuthenticationHandlerRequestAsAddPassThroughAuthenticationHandlerRequest is a convenience function that returns AddPingOnePassThroughAuthenticationHandlerRequest wrapped in AddPassThroughAuthenticationHandlerRequest
+func AddPingOnePassThroughAuthenticationHandlerRequestAsAddPassThroughAuthenticationHandlerRequest(v *AddPingOnePassThroughAuthenticationHandlerRequest) AddPassThroughAuthenticationHandlerRequest {
+	return AddPassThroughAuthenticationHandlerRequest{
+		AddPingOnePassThroughAuthenticationHandlerRequest: v,
 	}
 }
 
@@ -39,6 +55,19 @@ func AddThirdPartyPassThroughAuthenticationHandlerRequestAsAddPassThroughAuthent
 func (dst *AddPassThroughAuthenticationHandlerRequest) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
+	// try to unmarshal data into AddAggregatePassThroughAuthenticationHandlerRequest
+	err = newStrictDecoder(data).Decode(&dst.AddAggregatePassThroughAuthenticationHandlerRequest)
+	if err == nil {
+		jsonAddAggregatePassThroughAuthenticationHandlerRequest, _ := json.Marshal(dst.AddAggregatePassThroughAuthenticationHandlerRequest)
+		if string(jsonAddAggregatePassThroughAuthenticationHandlerRequest) == "{}" { // empty struct
+			dst.AddAggregatePassThroughAuthenticationHandlerRequest = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.AddAggregatePassThroughAuthenticationHandlerRequest = nil
+	}
+
 	// try to unmarshal data into AddLdapPassThroughAuthenticationHandlerRequest
 	err = newStrictDecoder(data).Decode(&dst.AddLdapPassThroughAuthenticationHandlerRequest)
 	if err == nil {
@@ -50,6 +79,19 @@ func (dst *AddPassThroughAuthenticationHandlerRequest) UnmarshalJSON(data []byte
 		}
 	} else {
 		dst.AddLdapPassThroughAuthenticationHandlerRequest = nil
+	}
+
+	// try to unmarshal data into AddPingOnePassThroughAuthenticationHandlerRequest
+	err = newStrictDecoder(data).Decode(&dst.AddPingOnePassThroughAuthenticationHandlerRequest)
+	if err == nil {
+		jsonAddPingOnePassThroughAuthenticationHandlerRequest, _ := json.Marshal(dst.AddPingOnePassThroughAuthenticationHandlerRequest)
+		if string(jsonAddPingOnePassThroughAuthenticationHandlerRequest) == "{}" { // empty struct
+			dst.AddPingOnePassThroughAuthenticationHandlerRequest = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.AddPingOnePassThroughAuthenticationHandlerRequest = nil
 	}
 
 	// try to unmarshal data into AddThirdPartyPassThroughAuthenticationHandlerRequest
@@ -67,7 +109,9 @@ func (dst *AddPassThroughAuthenticationHandlerRequest) UnmarshalJSON(data []byte
 
 	if match > 1 { // more than 1 match
 		// reset to nil
+		dst.AddAggregatePassThroughAuthenticationHandlerRequest = nil
 		dst.AddLdapPassThroughAuthenticationHandlerRequest = nil
+		dst.AddPingOnePassThroughAuthenticationHandlerRequest = nil
 		dst.AddThirdPartyPassThroughAuthenticationHandlerRequest = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(AddPassThroughAuthenticationHandlerRequest)")
@@ -80,8 +124,16 @@ func (dst *AddPassThroughAuthenticationHandlerRequest) UnmarshalJSON(data []byte
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src AddPassThroughAuthenticationHandlerRequest) MarshalJSON() ([]byte, error) {
+	if src.AddAggregatePassThroughAuthenticationHandlerRequest != nil {
+		return json.Marshal(&src.AddAggregatePassThroughAuthenticationHandlerRequest)
+	}
+
 	if src.AddLdapPassThroughAuthenticationHandlerRequest != nil {
 		return json.Marshal(&src.AddLdapPassThroughAuthenticationHandlerRequest)
+	}
+
+	if src.AddPingOnePassThroughAuthenticationHandlerRequest != nil {
+		return json.Marshal(&src.AddPingOnePassThroughAuthenticationHandlerRequest)
 	}
 
 	if src.AddThirdPartyPassThroughAuthenticationHandlerRequest != nil {
@@ -96,8 +148,16 @@ func (obj *AddPassThroughAuthenticationHandlerRequest) GetActualInstance() inter
 	if obj == nil {
 		return nil
 	}
+	if obj.AddAggregatePassThroughAuthenticationHandlerRequest != nil {
+		return obj.AddAggregatePassThroughAuthenticationHandlerRequest
+	}
+
 	if obj.AddLdapPassThroughAuthenticationHandlerRequest != nil {
 		return obj.AddLdapPassThroughAuthenticationHandlerRequest
+	}
+
+	if obj.AddPingOnePassThroughAuthenticationHandlerRequest != nil {
+		return obj.AddPingOnePassThroughAuthenticationHandlerRequest
 	}
 
 	if obj.AddThirdPartyPassThroughAuthenticationHandlerRequest != nil {

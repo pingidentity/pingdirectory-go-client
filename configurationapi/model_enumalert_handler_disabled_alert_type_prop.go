@@ -60,6 +60,9 @@ const (
 	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_DUPLICATE_INFO_ALERTS_SUPPRESSED                            EnumalertHandlerDisabledAlertTypeProp = "duplicate-info-alerts-suppressed"
 	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_DUPLICATE_WARNING_ALERTS_SUPPRESSED                         EnumalertHandlerDisabledAlertTypeProp = "duplicate-warning-alerts-suppressed"
 	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_EMBEDDED_POSTGRESQL_UNAVAILABLE                             EnumalertHandlerDisabledAlertTypeProp = "embedded-postgresql-unavailable"
+	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_ENCRYPTION_SETTINGS_DATABASE_ACCESS_RESTORED                EnumalertHandlerDisabledAlertTypeProp = "encryption-settings-database-access-restored"
+	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_ENCRYPTION_SETTINGS_DATABASE_INACCESSIBLE                   EnumalertHandlerDisabledAlertTypeProp = "encryption-settings-database-inaccessible"
+	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_ENCRYPTION_SETTINGS_DATABASE_PROLONGED_OUTAGE               EnumalertHandlerDisabledAlertTypeProp = "encryption-settings-database-prolonged-outage"
 	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_ENTERING_LOCKDOWN_MODE                                      EnumalertHandlerDisabledAlertTypeProp = "entering-lockdown-mode"
 	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_ENTRY_REFERENCES_REMOVED_ATTRIBUTE_TYPE                     EnumalertHandlerDisabledAlertTypeProp = "entry-references-removed-attribute-type"
 	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_EXEC_TASK_LAUNCHING_COMMAND                                 EnumalertHandlerDisabledAlertTypeProp = "exec-task-launching-command"
@@ -194,7 +197,9 @@ const (
 	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_PASSWORD_EXPIRING_ACCOUNT_STATUS_NOTIFICATION               EnumalertHandlerDisabledAlertTypeProp = "password-expiring-account-status-notification"
 	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_PASSWORD_RESET_ACCOUNT_STATUS_NOTIFICATION                  EnumalertHandlerDisabledAlertTypeProp = "password-reset-account-status-notification"
 	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_PASSWORD_CHANGED_ACCOUNT_STATUS_NOTIFICATION                EnumalertHandlerDisabledAlertTypeProp = "password-changed-account-status-notification"
+	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_ACCOUNT_AUTHENTICATED_ACCOUNT_STATUS_NOTIFICATION           EnumalertHandlerDisabledAlertTypeProp = "account-authenticated-account-status-notification"
 	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_ACCOUNT_CREATED_ACCOUNT_STATUS_NOTIFICATION                 EnumalertHandlerDisabledAlertTypeProp = "account-created-account-status-notification"
+	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_ACCOUNT_DELETED_ACCOUNT_STATUS_NOTIFICATION                 EnumalertHandlerDisabledAlertTypeProp = "account-deleted-account-status-notification"
 	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_ACCOUNT_UPDATED_ACCOUNT_STATUS_NOTIFICATION                 EnumalertHandlerDisabledAlertTypeProp = "account-updated-account-status-notification"
 	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_BIND_PASSWORD_FAILED_VALIDATION_ACCOUNT_STATUS_NOTIFICATION EnumalertHandlerDisabledAlertTypeProp = "bind-password-failed-validation-account-status-notification"
 	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_MUST_CHANGE_PASSWORD_ACCOUNT_STATUS_NOTIFICATION            EnumalertHandlerDisabledAlertTypeProp = "must-change-password-account-status-notification"
@@ -203,6 +208,8 @@ const (
 	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_INCREMENTAL_BACKUPS_DEPRECATED                              EnumalertHandlerDisabledAlertTypeProp = "incremental-backups-deprecated"
 	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_REPLACE_CERTIFICATE_SUCCEEDED                               EnumalertHandlerDisabledAlertTypeProp = "replace-certificate-succeeded"
 	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_REPLACE_CERTIFICATE_FAILED                                  EnumalertHandlerDisabledAlertTypeProp = "replace-certificate-failed"
+	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_REPLICATION_MISSING_CHANGES_RISK                            EnumalertHandlerDisabledAlertTypeProp = "replication-missing-changes-risk"
+	ENUMALERTHANDLERDISABLEDALERTTYPEPROP_REPLICATION_NOT_PURGING_OBSOLETE_REPLICAS                   EnumalertHandlerDisabledAlertTypeProp = "replication-not-purging-obsolete-replicas"
 )
 
 // All allowed values of EnumalertHandlerDisabledAlertTypeProp enum
@@ -247,6 +254,9 @@ var AllowedEnumalertHandlerDisabledAlertTypePropEnumValues = []EnumalertHandlerD
 	"duplicate-info-alerts-suppressed",
 	"duplicate-warning-alerts-suppressed",
 	"embedded-postgresql-unavailable",
+	"encryption-settings-database-access-restored",
+	"encryption-settings-database-inaccessible",
+	"encryption-settings-database-prolonged-outage",
 	"entering-lockdown-mode",
 	"entry-references-removed-attribute-type",
 	"exec-task-launching-command",
@@ -381,7 +391,9 @@ var AllowedEnumalertHandlerDisabledAlertTypePropEnumValues = []EnumalertHandlerD
 	"password-expiring-account-status-notification",
 	"password-reset-account-status-notification",
 	"password-changed-account-status-notification",
+	"account-authenticated-account-status-notification",
 	"account-created-account-status-notification",
+	"account-deleted-account-status-notification",
 	"account-updated-account-status-notification",
 	"bind-password-failed-validation-account-status-notification",
 	"must-change-password-account-status-notification",
@@ -390,6 +402,8 @@ var AllowedEnumalertHandlerDisabledAlertTypePropEnumValues = []EnumalertHandlerD
 	"incremental-backups-deprecated",
 	"replace-certificate-succeeded",
 	"replace-certificate-failed",
+	"replication-missing-changes-risk",
+	"replication-not-purging-obsolete-replicas",
 }
 
 func (v *EnumalertHandlerDisabledAlertTypeProp) UnmarshalJSON(src []byte) error {

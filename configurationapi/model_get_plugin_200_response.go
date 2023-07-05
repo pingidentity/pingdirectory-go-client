@@ -23,6 +23,7 @@ type GetPlugin200Response struct {
 	CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse *CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse
 	CleanUpExpiredPingfederatePersistentSessionsPluginResponse     *CleanUpExpiredPingfederatePersistentSessionsPluginResponse
 	CleanUpInactivePingfederatePersistentSessionsPluginResponse    *CleanUpInactivePingfederatePersistentSessionsPluginResponse
+	CoalesceModificationsPluginResponse                            *CoalesceModificationsPluginResponse
 	ComposedAttributePluginResponse                                *ComposedAttributePluginResponse
 	CustomPluginResponse                                           *CustomPluginResponse
 	DelayPluginResponse                                            *DelayPluginResponse
@@ -95,6 +96,13 @@ func CleanUpExpiredPingfederatePersistentSessionsPluginResponseAsGetPlugin200Res
 func CleanUpInactivePingfederatePersistentSessionsPluginResponseAsGetPlugin200Response(v *CleanUpInactivePingfederatePersistentSessionsPluginResponse) GetPlugin200Response {
 	return GetPlugin200Response{
 		CleanUpInactivePingfederatePersistentSessionsPluginResponse: v,
+	}
+}
+
+// CoalesceModificationsPluginResponseAsGetPlugin200Response is a convenience function that returns CoalesceModificationsPluginResponse wrapped in GetPlugin200Response
+func CoalesceModificationsPluginResponseAsGetPlugin200Response(v *CoalesceModificationsPluginResponse) GetPlugin200Response {
+	return GetPlugin200Response{
+		CoalesceModificationsPluginResponse: v,
 	}
 }
 
@@ -395,6 +403,19 @@ func (dst *GetPlugin200Response) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.CleanUpInactivePingfederatePersistentSessionsPluginResponse = nil
+	}
+
+	// try to unmarshal data into CoalesceModificationsPluginResponse
+	err = newStrictDecoder(data).Decode(&dst.CoalesceModificationsPluginResponse)
+	if err == nil {
+		jsonCoalesceModificationsPluginResponse, _ := json.Marshal(dst.CoalesceModificationsPluginResponse)
+		if string(jsonCoalesceModificationsPluginResponse) == "{}" { // empty struct
+			dst.CoalesceModificationsPluginResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.CoalesceModificationsPluginResponse = nil
 	}
 
 	// try to unmarshal data into ComposedAttributePluginResponse
@@ -808,6 +829,7 @@ func (dst *GetPlugin200Response) UnmarshalJSON(data []byte) error {
 		dst.CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse = nil
 		dst.CleanUpExpiredPingfederatePersistentSessionsPluginResponse = nil
 		dst.CleanUpInactivePingfederatePersistentSessionsPluginResponse = nil
+		dst.CoalesceModificationsPluginResponse = nil
 		dst.ComposedAttributePluginResponse = nil
 		dst.CustomPluginResponse = nil
 		dst.DelayPluginResponse = nil
@@ -872,6 +894,10 @@ func (src GetPlugin200Response) MarshalJSON() ([]byte, error) {
 
 	if src.CleanUpInactivePingfederatePersistentSessionsPluginResponse != nil {
 		return json.Marshal(&src.CleanUpInactivePingfederatePersistentSessionsPluginResponse)
+	}
+
+	if src.CoalesceModificationsPluginResponse != nil {
+		return json.Marshal(&src.CoalesceModificationsPluginResponse)
 	}
 
 	if src.ComposedAttributePluginResponse != nil {
@@ -1028,6 +1054,10 @@ func (obj *GetPlugin200Response) GetActualInstance() interface{} {
 
 	if obj.CleanUpInactivePingfederatePersistentSessionsPluginResponse != nil {
 		return obj.CleanUpInactivePingfederatePersistentSessionsPluginResponse
+	}
+
+	if obj.CoalesceModificationsPluginResponse != nil {
+		return obj.CoalesceModificationsPluginResponse
 	}
 
 	if obj.ComposedAttributePluginResponse != nil {

@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-93/pd_ds_use_config_api
 servers:
 - url: /
 tags:
@@ -9330,7 +9330,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/add-third-party-monitor-provider-request'
+              $ref: '#/components/schemas/add_monitor_provider_request'
         description: Create a new Monitor Provider in the config
         required: true
       responses:
@@ -16405,6 +16405,58 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:plugin:snmp-subagent
       type: string
+    add-coalesce-modifications-plugin-request:
+      allOf:
+      - $ref: '#/components/schemas/add_internal_search_rate_plugin_request_allOf'
+      - $ref: '#/components/schemas/coalesce-modifications-plugin-shared'
+      required:
+      - pluginName
+    coalesce-modifications-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/internal_search_rate_plugin_response_allOf'
+      - $ref: '#/components/schemas/coalesce-modifications-plugin-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    coalesce-modifications-plugin-shared:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumcoalesce-modifications-pluginSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        requestCriteria:
+          description: A reference to request criteria that indicates which modify
+            requests should be coalesced.
+          type: string
+        allowedRequestControl:
+          description: "Specifies the OIDs of the controls that are allowed to be\
+            \ present in operations to coalesce. These controls are passed through\
+            \ when the request is validated, but they will not be included when the\
+            \ background thread applies the coalesced modify requests."
+          items:
+            type: string
+          type: array
+        invokeForInternalOperations:
+          description: Indicates whether the plug-in should be invoked for internal
+            operations.
+          type: boolean
+        description:
+          description: A description for this Plugin
+          type: string
+        enabled:
+          description: Indicates whether the plug-in is enabled for use.
+          type: boolean
+      required:
+      - enabled
+      - requestCriteria
+      - schemas
+      type: object
+    Enumcoalesce-modifications-pluginSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:plugin:coalesce-modifications
+      type: string
     password-policy-import-plugin-response:
       allOf:
       - $ref: '#/components/schemas/password_policy_import_plugin_response_allOf'
@@ -22407,6 +22459,16 @@ components:
       - reactive
       - proactive
       type: string
+    Enumpassword-policy-allowPreEncodedPasswordsProp:
+      description: Indicates whether users can change their passwords by providing
+        a pre-encoded value.
+      enum:
+      - "false"
+      - add-only
+      - admin-reset-only
+      - add-and-admin-reset-only
+      - "true"
+      type: string
     Enumpassword-policy-bindPasswordValidationFailureActionProp:
       description: Specifies the behavior that the server should exhibit if a bind
         password fails validation by one or more of the configured bind password validators.
@@ -22519,9 +22581,7 @@ components:
             for the password attribute.
           type: boolean
         allowPreEncodedPasswords:
-          description: Indicates whether users can change their passwords by providing
-            a pre-encoded value.
-          type: boolean
+          $ref: '#/components/schemas/Enumpassword-policy-allowPreEncodedPasswordsProp'
         passwordValidator:
           description: Specifies the names of the password validators that are used
             with the associated password storage scheme.
@@ -27267,6 +27327,9 @@ components:
       - duplicate-info-alerts-suppressed
       - duplicate-warning-alerts-suppressed
       - embedded-postgresql-unavailable
+      - encryption-settings-database-access-restored
+      - encryption-settings-database-inaccessible
+      - encryption-settings-database-prolonged-outage
       - entering-lockdown-mode
       - entry-references-removed-attribute-type
       - exec-task-launching-command
@@ -27401,7 +27464,9 @@ components:
       - password-expiring-account-status-notification
       - password-reset-account-status-notification
       - password-changed-account-status-notification
+      - account-authenticated-account-status-notification
       - account-created-account-status-notification
+      - account-deleted-account-status-notification
       - account-updated-account-status-notification
       - bind-password-failed-validation-account-status-notification
       - must-change-password-account-status-notification
@@ -27410,6 +27475,8 @@ components:
       - incremental-backups-deprecated
       - replace-certificate-succeeded
       - replace-certificate-failed
+      - replication-missing-changes-risk
+      - replication-not-purging-obsolete-replicas
       type: string
     Enumalert-handler-disabledAlertTypeProp:
       description: Specifies the names of the alert types that are disabled for this
@@ -27455,6 +27522,9 @@ components:
       - duplicate-info-alerts-suppressed
       - duplicate-warning-alerts-suppressed
       - embedded-postgresql-unavailable
+      - encryption-settings-database-access-restored
+      - encryption-settings-database-inaccessible
+      - encryption-settings-database-prolonged-outage
       - entering-lockdown-mode
       - entry-references-removed-attribute-type
       - exec-task-launching-command
@@ -27589,7 +27659,9 @@ components:
       - password-expiring-account-status-notification
       - password-reset-account-status-notification
       - password-changed-account-status-notification
+      - account-authenticated-account-status-notification
       - account-created-account-status-notification
+      - account-deleted-account-status-notification
       - account-updated-account-status-notification
       - bind-password-failed-validation-account-status-notification
       - must-change-password-account-status-notification
@@ -27598,6 +27670,8 @@ components:
       - incremental-backups-deprecated
       - replace-certificate-succeeded
       - replace-certificate-failed
+      - replication-missing-changes-risk
+      - replication-not-purging-obsolete-replicas
       type: string
     output-alert-handler-response:
       allOf:
@@ -28278,6 +28352,10 @@ components:
             \ and the AWS client must have access to encrypt and decrypt data using\
             \ this key."
           type: string
+        iterationCount:
+          description: The PBKDF2 iteration count that will be used when deriving
+            the encryption key used to protect the encryption settings database.
+          type: integer
         description:
           description: A description for this Cipher Stream Provider
           type: string
@@ -28339,6 +28417,10 @@ components:
           description: The path to a file that will hold metadata about the encryption
             performed by this Amazon Secrets Manager Cipher Stream Provider.
           type: string
+        iterationCount:
+          description: The PBKDF2 iteration count that will be used when deriving
+            the encryption key used to protect the encryption settings database.
+          type: integer
         description:
           description: A description for this Cipher Stream Provider
           type: string
@@ -28397,6 +28479,10 @@ components:
           description: The path to a file that will hold metadata about the encryption
             performed by this Azure Key Vault Cipher Stream Provider.
           type: string
+        iterationCount:
+          description: The PBKDF2 iteration count that will be used when deriving
+            the encryption key used to protect the encryption settings database.
+          type: integer
         description:
           description: A description for this Cipher Stream Provider
           type: string
@@ -28444,6 +28530,14 @@ components:
           description: Indicates whether the server should wait for the password file
             to become available if it does not exist.
           type: boolean
+        encryptionMetadataFile:
+          description: The path to a file that will hold metadata about the encryption
+            performed by this File Based Cipher Stream Provider.
+          type: string
+        iterationCount:
+          description: The PBKDF2 iteration count that will be used when deriving
+            the encryption key used to protect the encryption settings database.
+          type: integer
         description:
           description: A description for this Cipher Stream Provider
           type: string
@@ -28531,6 +28625,10 @@ components:
           description: The path to a file that will hold metadata about the encryption
             performed by this Conjur Cipher Stream Provider.
           type: string
+        iterationCount:
+          description: The PBKDF2 iteration count that will be used when deriving
+            the encryption key used to protect the encryption settings database.
+          type: integer
         description:
           description: A description for this Cipher Stream Provider
           type: string
@@ -28632,6 +28730,10 @@ components:
           description: The path to a file that will hold metadata about the encryption
             performed by this PKCS11 Cipher Stream Provider.
           type: string
+        iterationCount:
+          description: The PBKDF2 iteration count that will be used when deriving
+            the encryption key used to protect the encryption settings database.
+          type: integer
         description:
           description: A description for this Cipher Stream Provider
           type: string
@@ -28712,6 +28814,10 @@ components:
           description: The store type for the specified trust store file. The value
             should likely be one of "JKS" or "PKCS12".
           type: string
+        iterationCount:
+          description: The PBKDF2 iteration count that will be used when deriving
+            the encryption key used to protect the encryption settings database.
+          type: integer
         description:
           description: A description for this Cipher Stream Provider
           type: string
@@ -28983,9 +29089,18 @@ components:
             \ to deliver a message) will not delay processing for the operation that\
             \ triggered the notification."
           type: boolean
+        accountAuthenticationNotificationResultCriteria:
+          description: A result criteria object that identifies which successful bind
+            operations should result in account authentication notifications for this
+            handler.
+          type: string
         accountCreationNotificationRequestCriteria:
           description: A request criteria object that identifies which add requests
             should result in account creation notifications for this handler.
+          type: string
+        accountDeletionNotificationRequestCriteria:
+          description: A request criteria object that identifies which delete requests
+            should result in account deletion notifications for this handler.
           type: string
         accountUpdateNotificationRequestCriteria:
           description: A request criteria object that identifies which modify and
@@ -29050,9 +29165,18 @@ components:
             \ to deliver a message) will not delay processing for the operation that\
             \ triggered the notification."
           type: boolean
+        accountAuthenticationNotificationResultCriteria:
+          description: A result criteria object that identifies which successful bind
+            operations should result in account authentication notifications for this
+            handler.
+          type: string
         accountCreationNotificationRequestCriteria:
           description: A request criteria object that identifies which add requests
             should result in account creation notifications for this handler.
+          type: string
+        accountDeletionNotificationRequestCriteria:
+          description: A request criteria object that identifies which delete requests
+            should result in account deletion notifications for this handler.
           type: string
         accountUpdateNotificationRequestCriteria:
           description: A request criteria object that identifies which modify and
@@ -29085,7 +29209,9 @@ components:
       - password-expiring
       - password-reset
       - password-changed
+      - account-authenticated
       - account-created
+      - account-deleted
       - account-updated
       - bind-password-failed-validation
       - must-change-password
@@ -29130,9 +29256,18 @@ components:
             \ to deliver a message) will not delay processing for the operation that\
             \ triggered the notification."
           type: boolean
+        accountAuthenticationNotificationResultCriteria:
+          description: A result criteria object that identifies which successful bind
+            operations should result in account authentication notifications for this
+            handler.
+          type: string
         accountCreationNotificationRequestCriteria:
           description: A request criteria object that identifies which add requests
             should result in account creation notifications for this handler.
+          type: string
+        accountDeletionNotificationRequestCriteria:
+          description: A request criteria object that identifies which delete requests
+            should result in account deletion notifications for this handler.
           type: string
         accountUpdateNotificationRequestCriteria:
           description: A request criteria object that identifies which modify and
@@ -29188,9 +29323,18 @@ components:
             \ to deliver a message) will not delay processing for the operation that\
             \ triggered the notification."
           type: boolean
+        accountAuthenticationNotificationResultCriteria:
+          description: A result criteria object that identifies which successful bind
+            operations should result in account authentication notifications for this
+            handler.
+          type: string
         accountCreationNotificationRequestCriteria:
           description: A request criteria object that identifies which add requests
             should result in account creation notifications for this handler.
+          type: string
+        accountDeletionNotificationRequestCriteria:
+          description: A request criteria object that identifies which delete requests
+            should result in account deletion notifications for this handler.
           type: string
         accountUpdateNotificationRequestCriteria:
           description: A request criteria object that identifies which modify and
@@ -29295,11 +29439,23 @@ components:
           description: The path to a file containing the template to use to generate
             the email message to send in the event that a user changes their own password.
           type: string
+        accountAuthenticatedMessageTemplate:
+          description: The path to a file containing the template to use to generate
+            the email message to send in the event that an account has successfully
+            authenticated in a bind operation that matches the criteria provided in
+            the account-authentication-notification-request-criteria property.
+          type: string
         accountCreatedMessageTemplate:
           description: The path to a file containing the template to use to generate
             the email message to send in the event that a new account is created in
             an add request that matches the criteria provided in the account-creation-notification-request-criteria
             property.
+          type: string
+        accountDeletedMessageTemplate:
+          description: The path to a file containing the template to use to generate
+            the email message to send in the event that an existing accout has been
+            removed in a delete request that matches the criteria provided in the
+            account-deletion-notification-request-criteria property.
           type: string
         accountUpdatedMessageTemplate:
           description: The path to a file containing the template to use to generate
@@ -29334,9 +29490,18 @@ components:
             \ to deliver a message) will not delay processing for the operation that\
             \ triggered the notification."
           type: boolean
+        accountAuthenticationNotificationResultCriteria:
+          description: A result criteria object that identifies which successful bind
+            operations should result in account authentication notifications for this
+            handler.
+          type: string
         accountCreationNotificationRequestCriteria:
           description: A request criteria object that identifies which add requests
             should result in account creation notifications for this handler.
+          type: string
+        accountDeletionNotificationRequestCriteria:
+          description: A request criteria object that identifies which delete requests
+            should result in account deletion notifications for this handler.
           type: string
         accountUpdateNotificationRequestCriteria:
           description: A request criteria object that identifies which modify and
@@ -29398,9 +29563,18 @@ components:
             \ to deliver a message) will not delay processing for the operation that\
             \ triggered the notification."
           type: boolean
+        accountAuthenticationNotificationResultCriteria:
+          description: A result criteria object that identifies which successful bind
+            operations should result in account authentication notifications for this
+            handler.
+          type: string
         accountCreationNotificationRequestCriteria:
           description: A request criteria object that identifies which add requests
             should result in account creation notifications for this handler.
+          type: string
+        accountDeletionNotificationRequestCriteria:
+          description: A request criteria object that identifies which delete requests
+            should result in account deletion notifications for this handler.
           type: string
         accountUpdateNotificationRequestCriteria:
           description: A request criteria object that identifies which modify and
@@ -29447,6 +29621,106 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:server-group
       type: string
+    add-ping-one-pass-through-authentication-handler-request:
+      allOf:
+      - $ref: '#/components/schemas/add_ping_one_pass_through_authentication_handler_request_allOf'
+      - $ref: '#/components/schemas/ping-one-pass-through-authentication-handler-shared'
+      required:
+      - handlerName
+    ping-one-pass-through-authentication-handler-response:
+      allOf:
+      - $ref: '#/components/schemas/ping_one_pass_through_authentication_handler_response_allOf'
+      - $ref: '#/components/schemas/ping-one-pass-through-authentication-handler-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    ping-one-pass-through-authentication-handler-shared:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumping-one-pass-through-authentication-handlerSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        apiURL:
+          description: Specifies the API endpoint for the PingOne web service.
+          type: string
+        authURL:
+          description: Specifies the API endpoint for the PingOne authentication service.
+          type: string
+        OAuthClientID:
+          description: Specifies the OAuth Client ID used to authenticate connections
+            to the PingOne API.
+          type: string
+        OAuthClientSecret:
+          description: Specifies the OAuth Client Secret used to authenticate connections
+            to the PingOne API.
+          format: password
+          type: string
+        OAuthClientSecretPassphraseProvider:
+          description: Specifies a passphrase provider that can be used to obtain
+            the OAuth Client Secret used to authenticate connections to the PingOne
+            API.
+          type: string
+        environmentID:
+          description: Specifies the PingOne Environment that will be associated with
+            this PingOne Pass Through Authentication Handler.
+          type: string
+        httpProxyExternalServer:
+          description: A reference to an HTTP proxy server that should be used for
+            requests sent to the PingOne service.
+          type: string
+        userMappingLocalAttribute:
+          description: The names of the attributes in the local user entry whose values
+            must match the values of the corresponding fields in the PingOne service.
+          items:
+            type: string
+          type: array
+        userMappingRemoteJSONField:
+          description: "The names of the fields in the PingOne service whose values\
+            \ must match the values of the corresponding attributes in the local user\
+            \ entry, as specified in the user-mapping-local-attribute property."
+          items:
+            type: string
+          type: array
+        additionalUserMappingSCIMFilter:
+          description: "An optional SCIM filter that will be ANDed with the filter\
+            \ created to identify the account in the PingOne service that corresponds\
+            \ to the local entry. Only the \"eq\", \"sw\", \"and\", and \"or\" filter\
+            \ types may be used."
+          type: string
+        description:
+          description: A description for this Pass Through Authentication Handler
+          type: string
+        includedLocalEntryBaseDN:
+          description: The base DNs for the local users whose authentication attempts
+            may be passed through to the external authentication service.
+          items:
+            type: string
+          type: array
+        connectionCriteria:
+          description: A reference to connection criteria that will be used to indicate
+            which bind requests should be passed through to the external authentication
+            service.
+          type: string
+        requestCriteria:
+          description: A reference to request criteria that will be used to indicate
+            which bind requests should be passed through to the external authentication
+            service.
+          type: string
+      required:
+      - OAuthClientID
+      - apiURL
+      - authURL
+      - environmentID
+      - schemas
+      - userMappingLocalAttribute
+      - userMappingRemoteJSONField
+      type: object
+    Enumping-one-pass-through-authentication-handlerSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:pass-through-authentication-handler:ping-one
+      type: string
     Enumpass-through-authentication-handler-serverAccessModeProp:
       description: Specifies the manner in which external servers should be used for
         pass-through authentication attempts if multiple servers are defined.
@@ -29457,13 +29731,13 @@ components:
       type: string
     add-ldap-pass-through-authentication-handler-request:
       allOf:
-      - $ref: '#/components/schemas/add_ldap_pass_through_authentication_handler_request_allOf'
+      - $ref: '#/components/schemas/add_ping_one_pass_through_authentication_handler_request_allOf'
       - $ref: '#/components/schemas/ldap-pass-through-authentication-handler-shared'
       required:
       - handlerName
     ldap-pass-through-authentication-handler-response:
       allOf:
-      - $ref: '#/components/schemas/ldap_pass_through_authentication_handler_response_allOf'
+      - $ref: '#/components/schemas/ping_one_pass_through_authentication_handler_response_allOf'
       - $ref: '#/components/schemas/ldap-pass-through-authentication-handler-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -29559,6 +29833,22 @@ components:
         description:
           description: A description for this Pass Through Authentication Handler
           type: string
+        includedLocalEntryBaseDN:
+          description: The base DNs for the local users whose authentication attempts
+            may be passed through to the external authentication service.
+          items:
+            type: string
+          type: array
+        connectionCriteria:
+          description: A reference to connection criteria that will be used to indicate
+            which bind requests should be passed through to the external authentication
+            service.
+          type: string
+        requestCriteria:
+          description: A reference to request criteria that will be used to indicate
+            which bind requests should be passed through to the external authentication
+            service.
+          type: string
       required:
       - schemas
       - server
@@ -29567,15 +29857,91 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:pass-through-authentication-handler:ldap
       type: string
+    Enumpass-through-authentication-handler-continueOnFailureTypeProp:
+      description: "The set of pass-through authentication failure types that should\
+        \ not result in an immediate failure, but should instead allow the aggregate\
+        \ handler to proceed with the next configured subordinate handler."
+      enum:
+      - no-such-user
+      - wrong-password
+      - must-change-password
+      - account-not-usable
+      - non-specific-authentication-failure
+      - external-service-error
+      - external-service-unavailable
+      - timeout
+      - other-failure
+      type: string
+    add-aggregate-pass-through-authentication-handler-request:
+      allOf:
+      - $ref: '#/components/schemas/add_ping_one_pass_through_authentication_handler_request_allOf'
+      - $ref: '#/components/schemas/aggregate-pass-through-authentication-handler-shared'
+      required:
+      - handlerName
+    aggregate-pass-through-authentication-handler-response:
+      allOf:
+      - $ref: '#/components/schemas/ping_one_pass_through_authentication_handler_response_allOf'
+      - $ref: '#/components/schemas/aggregate-pass-through-authentication-handler-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    aggregate-pass-through-authentication-handler-shared:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumaggregate-pass-through-authentication-handlerSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        subordinatePassThroughAuthenticationHandler:
+          description: The set of subordinate pass-through authentication handlers
+            that may be used to perform the authentication processing. Handlers will
+            be invoked in order until one is found for which the bind operation matches
+            the associated criteria and either succeeds or fails in a manner that
+            should not be ignored.
+          items:
+            type: string
+          type: array
+        continueOnFailureType:
+          items:
+            $ref: '#/components/schemas/Enumpass-through-authentication-handler-continueOnFailureTypeProp'
+          type: array
+        description:
+          description: A description for this Pass Through Authentication Handler
+          type: string
+        includedLocalEntryBaseDN:
+          description: The base DNs for the local users whose authentication attempts
+            may be passed through to the external authentication service.
+          items:
+            type: string
+          type: array
+        connectionCriteria:
+          description: A reference to connection criteria that will be used to indicate
+            which bind requests should be passed through to the external authentication
+            service.
+          type: string
+        requestCriteria:
+          description: A reference to request criteria that will be used to indicate
+            which bind requests should be passed through to the external authentication
+            service.
+          type: string
+      required:
+      - schemas
+      - subordinatePassThroughAuthenticationHandler
+      type: object
+    Enumaggregate-pass-through-authentication-handlerSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:pass-through-authentication-handler:aggregate
+      type: string
     add-third-party-pass-through-authentication-handler-request:
       allOf:
-      - $ref: '#/components/schemas/add_ldap_pass_through_authentication_handler_request_allOf'
+      - $ref: '#/components/schemas/add_ping_one_pass_through_authentication_handler_request_allOf'
       - $ref: '#/components/schemas/third-party-pass-through-authentication-handler-shared'
       required:
       - handlerName
     third-party-pass-through-authentication-handler-response:
       allOf:
-      - $ref: '#/components/schemas/ldap_pass_through_authentication_handler_response_allOf'
+      - $ref: '#/components/schemas/ping_one_pass_through_authentication_handler_response_allOf'
       - $ref: '#/components/schemas/third-party-pass-through-authentication-handler-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -29601,6 +29967,22 @@ components:
           type: array
         description:
           description: A description for this Pass Through Authentication Handler
+          type: string
+        includedLocalEntryBaseDN:
+          description: The base DNs for the local users whose authentication attempts
+            may be passed through to the external authentication service.
+          items:
+            type: string
+          type: array
+        connectionCriteria:
+          description: A reference to connection criteria that will be used to indicate
+            which bind requests should be passed through to the external authentication
+            service.
+          type: string
+        requestCriteria:
+          description: A reference to request criteria that will be used to indicate
+            which bind requests should be passed through to the external authentication
+            service.
           type: string
       required:
       - extensionClass
@@ -30659,6 +31041,79 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:password-validator:haystack
       type: string
+    Enumpassword-validator-allowedCharacterTypeProp:
+      description: Specifies the set of character types that are allowed to be present
+        in passwords.
+      enum:
+      - letters
+      - numbers
+      - punctuation
+      - symbols
+      - spaces
+      - non-space-separators
+      - marks
+      - control
+      - private-use
+      type: string
+    add-utf-8-password-validator-request:
+      allOf:
+      - $ref: '#/components/schemas/add_character_set_password_validator_request_allOf'
+      - $ref: '#/components/schemas/utf-8-password-validator-shared'
+      required:
+      - validatorName
+    utf-8-password-validator-response:
+      allOf:
+      - $ref: '#/components/schemas/character_set_password_validator_response_allOf'
+      - $ref: '#/components/schemas/utf-8-password-validator-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    utf-8-password-validator-shared:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumutf-8-password-validatorSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        allowNonAsciiCharacters:
+          description: Indicates whether passwords will be allowed to include characters
+            from outside the ASCII character set.
+          type: boolean
+        allowUnknownCharacters:
+          description: Indicates whether passwords will be allowed to include characters
+            that are not recognized by the JVM's Unicode support.
+          type: boolean
+        allowedCharacterType:
+          items:
+            $ref: '#/components/schemas/Enumpassword-validator-allowedCharacterTypeProp'
+          type: array
+        description:
+          description: A description for this Password Validator
+          type: string
+        enabled:
+          description: Indicates whether the password validator is enabled for use.
+          type: boolean
+        validatorRequirementDescription:
+          description: "Specifies a message that can be used to describe the requirements\
+            \ imposed by this password validator to end users. If a value is provided\
+            \ for this property, then it will override any description that may have\
+            \ otherwise been generated by the validator."
+          type: string
+        validatorFailureMessage:
+          description: "Specifies a message that may be provided to the end user in\
+            \ the event that a proposed password is rejected by this validator. If\
+            \ a value is provided for this property, then it will override any failure\
+            \ message that may have otherwise been generated by the validator."
+          type: string
+      required:
+      - enabled
+      - schemas
+      type: object
+    Enumutf-8-password-validatorSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:password-validator:utf-8
+      type: string
     add-groovy-scripted-password-validator-request:
       allOf:
       - $ref: '#/components/schemas/add_character_set_password_validator_request_allOf'
@@ -30813,6 +31268,65 @@ components:
     Enumpwned-passwords-password-validatorSchemaUrn:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:password-validator:pwned-passwords
+      type: string
+    add-disallowed-characters-password-validator-request:
+      allOf:
+      - $ref: '#/components/schemas/add_character_set_password_validator_request_allOf'
+      - $ref: '#/components/schemas/disallowed-characters-password-validator-shared'
+      required:
+      - validatorName
+    disallowed-characters-password-validator-response:
+      allOf:
+      - $ref: '#/components/schemas/character_set_password_validator_response_allOf'
+      - $ref: '#/components/schemas/disallowed-characters-password-validator-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    disallowed-characters-password-validator-shared:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumdisallowed-characters-password-validatorSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        disallowedCharacters:
+          description: A set of characters that will not be allowed anywhere in a
+            password.
+          type: string
+        disallowedLeadingCharacters:
+          description: A set of characters that will not be allowed as the first character
+            of the password.
+          type: string
+        disallowedTrailingCharacters:
+          description: A set of characters that will not be allowed as the last character
+            of the password.
+          type: string
+        description:
+          description: A description for this Password Validator
+          type: string
+        enabled:
+          description: Indicates whether the password validator is enabled for use.
+          type: boolean
+        validatorRequirementDescription:
+          description: "Specifies a message that can be used to describe the requirements\
+            \ imposed by this password validator to end users. If a value is provided\
+            \ for this property, then it will override any description that may have\
+            \ otherwise been generated by the validator."
+          type: string
+        validatorFailureMessage:
+          description: "Specifies a message that may be provided to the end user in\
+            \ the event that a proposed password is rejected by this validator. If\
+            \ a value is provided for this property, then it will override any failure\
+            \ message that may have otherwise been generated by the validator."
+          type: string
+      required:
+      - enabled
+      - schemas
+      type: object
+    Enumdisallowed-characters-password-validatorSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:password-validator:disallowed-characters
       type: string
     add-length-based-password-validator-request:
       allOf:
@@ -31249,14 +31763,14 @@ components:
             rejecting new connection attempts.
           type: integer
         sslProtocol:
-          description: Specifies the names of the SSL protocols that are allowed for
+          description: Specifies the names of the TLS protocols that are allowed for
             use in SSL or StartTLS communication. The set of supported ssl protocols
             can be viewed via the ssl context monitor entry.
           items:
             type: string
           type: array
         sslCipherSuite:
-          description: Specifies the names of the SSL cipher suites that are allowed
+          description: Specifies the names of the TLS cipher suites that are allowed
             for use in SSL or StartTLS communication. The set of supported cipher
             suites can be viewed via the ssl context monitor entry.
           items:
@@ -40684,18 +41198,6 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:crypto-manager
       type: string
-    general-monitor-provider-response:
-      allOf:
-      - $ref: '#/components/schemas/general_monitor_provider_response_allOf'
-      - $ref: '#/components/schemas/meta'
-      required:
-      - enabled
-      - id
-      - schemas
-    Enumgeneral-monitor-providerSchemaUrn:
-      enum:
-      - urn:pingidentity:schemas:configuration:2.0:monitor-provider:general
-      type: string
     memory-usage-monitor-provider-response:
       allOf:
       - $ref: '#/components/schemas/memory_usage_monitor_provider_response_allOf'
@@ -40720,30 +41222,62 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:monitor-provider:stack-trace
       type: string
-    disk-space-usage-monitor-provider-response:
-      allOf:
-      - $ref: '#/components/schemas/disk_space_usage_monitor_provider_response_allOf'
-      - $ref: '#/components/schemas/meta'
-      required:
-      - alertFrequency
-      - enabled
-      - id
-      - schemas
-    Enumdisk-space-usage-monitor-providerSchemaUrn:
+    Enummonitor-provider-prolongedOutageBehaviorProp:
+      description: The behavior that the server should exhibit after a prolonged period
+        of time when the encryption settings database remains unreadable.
       enum:
-      - urn:pingidentity:schemas:configuration:2.0:monitor-provider:disk-space-usage
+      - none
+      - issue-alert
+      - enter-lockdown-mode
+      - shut-down-server
       type: string
-    system-info-monitor-provider-response:
+    add-encryption-settings-database-accessibility-monitor-provider-request:
       allOf:
-      - $ref: '#/components/schemas/system_info_monitor_provider_response_allOf'
+      - $ref: '#/components/schemas/add_encryption_settings_database_accessibility_monitor_provider_request_allOf'
+      - $ref: '#/components/schemas/encryption-settings-database-accessibility-monitor-provider-shared'
+      required:
+      - providerName
+    encryption-settings-database-accessibility-monitor-provider-response:
+      allOf:
+      - $ref: '#/components/schemas/encryption_settings_database_accessibility_monitor_provider_response_allOf'
+      - $ref: '#/components/schemas/encryption-settings-database-accessibility-monitor-provider-shared'
       - $ref: '#/components/schemas/meta'
       required:
-      - enabled
+      - checkFrequency
       - id
+    encryption-settings-database-accessibility-monitor-provider-shared:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumencryption-settings-database-accessibility-monitor-providerSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        checkFrequency:
+          description: The frequency with which this monitor provider should confirm
+            the ability to access the server's encryption settings database.
+          type: string
+        prolongedOutageDuration:
+          description: "The minimum length of time that an outage should persist before\
+            \ it is considered a prolonged outage. If an outage lasts at least as\
+            \ long as this duration, then the server will take the action indicated\
+            \ by the prolonged-outage-behavior property."
+          type: string
+        prolongedOutageBehavior:
+          $ref: '#/components/schemas/Enummonitor-provider-prolongedOutageBehaviorProp'
+        description:
+          description: A description for this Monitor Provider
+          type: string
+        enabled:
+          description: Indicates whether the Monitor Provider is enabled for use.
+          type: boolean
+      required:
+      - enabled
       - schemas
-    Enumsystem-info-monitor-providerSchemaUrn:
+      type: object
+    Enumencryption-settings-database-accessibility-monitor-providerSchemaUrn:
       enum:
-      - urn:pingidentity:schemas:configuration:2.0:monitor-provider:system-info
+      - urn:pingidentity:schemas:configuration:2.0:monitor-provider:encryption-settings-database-accessibility
       type: string
     custom-monitor-provider-response:
       allOf:
@@ -40781,18 +41315,6 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:monitor-provider:ssl-context
       type: string
-    client-connection-monitor-provider-response:
-      allOf:
-      - $ref: '#/components/schemas/client_connection_monitor_provider_response_allOf'
-      - $ref: '#/components/schemas/meta'
-      required:
-      - enabled
-      - id
-      - schemas
-    Enumclient-connection-monitor-providerSchemaUrn:
-      enum:
-      - urn:pingidentity:schemas:configuration:2.0:monitor-provider:client-connection
-      type: string
     version-monitor-provider-response:
       allOf:
       - $ref: '#/components/schemas/version_monitor_provider_response_allOf'
@@ -40818,15 +41340,64 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:monitor-provider:host-system
       type: string
+    general-monitor-provider-response:
+      allOf:
+      - $ref: '#/components/schemas/general_monitor_provider_response_allOf'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - enabled
+      - id
+      - schemas
+    Enumgeneral-monitor-providerSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:monitor-provider:general
+      type: string
+    disk-space-usage-monitor-provider-response:
+      allOf:
+      - $ref: '#/components/schemas/disk_space_usage_monitor_provider_response_allOf'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - alertFrequency
+      - enabled
+      - id
+      - schemas
+    Enumdisk-space-usage-monitor-providerSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:monitor-provider:disk-space-usage
+      type: string
+    system-info-monitor-provider-response:
+      allOf:
+      - $ref: '#/components/schemas/system_info_monitor_provider_response_allOf'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - enabled
+      - id
+      - schemas
+    Enumsystem-info-monitor-providerSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:monitor-provider:system-info
+      type: string
+    client-connection-monitor-provider-response:
+      allOf:
+      - $ref: '#/components/schemas/client_connection_monitor_provider_response_allOf'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - enabled
+      - id
+      - schemas
+    Enumclient-connection-monitor-providerSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:monitor-provider:client-connection
+      type: string
     add-third-party-monitor-provider-request:
       allOf:
-      - $ref: '#/components/schemas/add_third_party_monitor_provider_request_allOf'
+      - $ref: '#/components/schemas/add_encryption_settings_database_accessibility_monitor_provider_request_allOf'
       - $ref: '#/components/schemas/third-party-monitor-provider-shared'
       required:
       - providerName
     third-party-monitor-provider-response:
       allOf:
-      - $ref: '#/components/schemas/third_party_monitor_provider_response_allOf'
+      - $ref: '#/components/schemas/encryption_settings_database_accessibility_monitor_provider_response_allOf'
       - $ref: '#/components/schemas/third-party-monitor-provider-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -41743,6 +42314,9 @@ components:
       - duplicate-info-alerts-suppressed
       - duplicate-warning-alerts-suppressed
       - embedded-postgresql-unavailable
+      - encryption-settings-database-access-restored
+      - encryption-settings-database-inaccessible
+      - encryption-settings-database-prolonged-outage
       - entering-lockdown-mode
       - entry-references-removed-attribute-type
       - exec-task-launching-command
@@ -41877,7 +42451,9 @@ components:
       - password-expiring-account-status-notification
       - password-reset-account-status-notification
       - password-changed-account-status-notification
+      - account-authenticated-account-status-notification
       - account-created-account-status-notification
+      - account-deleted-account-status-notification
       - account-updated-account-status-notification
       - bind-password-failed-validation-account-status-notification
       - must-change-password-account-status-notification
@@ -41886,6 +42462,8 @@ components:
       - incremental-backups-deprecated
       - replace-certificate-succeeded
       - replace-certificate-failed
+      - replication-missing-changes-risk
+      - replication-not-purging-obsolete-replicas
       type: string
     alert-backend-response:
       allOf:
@@ -45613,6 +46191,81 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:notification-manager:third-party
       type: string
+    add-successful-bind-result-criteria-request:
+      allOf:
+      - $ref: '#/components/schemas/add_successful_bind_result_criteria_request_allOf'
+      - $ref: '#/components/schemas/successful-bind-result-criteria-shared'
+      required:
+      - criteriaName
+    successful-bind-result-criteria-response:
+      allOf:
+      - $ref: '#/components/schemas/successful_bind_result_criteria_response_allOf'
+      - $ref: '#/components/schemas/successful-bind-result-criteria-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    successful-bind-result-criteria-shared:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumsuccessful-bind-result-criteriaSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        requestCriteria:
+          description: Specifies a request criteria object that must match the associated
+            request for operations included in this Successful Bind Result Criteria.
+          type: string
+        includeAnonymousBinds:
+          description: Indicates whether this criteria will be permitted to match
+            bind operations that resulted in anonymous authentication.
+          type: boolean
+        includedUserBaseDN:
+          description: A set of base DNs for authenticated users that will be permitted
+            to match this criteria.
+          items:
+            type: string
+          type: array
+        excludedUserBaseDN:
+          description: A set of base DNs for authenticated users that will not be
+            permitted to match this criteria.
+          items:
+            type: string
+          type: array
+        includedUserFilter:
+          description: A set of filters that may be used to identify entries for authenticated
+            users that will be permitted to match this criteria.
+          items:
+            type: string
+          type: array
+        excludedUserFilter:
+          description: A set of filters that may be used to identify entries for authenticated
+            users that will not be permitted to match this criteria.
+          items:
+            type: string
+          type: array
+        includedUserGroupDN:
+          description: The DNs of the groups whose members will be permitted to match
+            this criteria.
+          items:
+            type: string
+          type: array
+        excludedUserGroupDN:
+          description: The DNs of the groups whose members will not be permitted to
+            match this criteria.
+          items:
+            type: string
+          type: array
+        description:
+          description: A description for this Result Criteria
+          type: string
+      required:
+      - schemas
+      type: object
+    Enumsuccessful-bind-result-criteriaSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:result-criteria:successful-bind
+      type: string
     Enumresult-criteria-resultCodeCriteriaProp:
       description: Specifies which operation result codes are allowed for operations
         included in this Simple Result Criteria.
@@ -45893,13 +46546,13 @@ components:
       type: string
     add-simple-result-criteria-request:
       allOf:
-      - $ref: '#/components/schemas/add_simple_result_criteria_request_allOf'
+      - $ref: '#/components/schemas/add_successful_bind_result_criteria_request_allOf'
       - $ref: '#/components/schemas/simple-result-criteria-shared'
       required:
       - criteriaName
     simple-result-criteria-response:
       allOf:
-      - $ref: '#/components/schemas/simple_result_criteria_response_allOf'
+      - $ref: '#/components/schemas/successful_bind_result_criteria_response_allOf'
       - $ref: '#/components/schemas/simple-result-criteria-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -46102,13 +46755,13 @@ components:
       type: string
     add-aggregate-result-criteria-request:
       allOf:
-      - $ref: '#/components/schemas/add_simple_result_criteria_request_allOf'
+      - $ref: '#/components/schemas/add_successful_bind_result_criteria_request_allOf'
       - $ref: '#/components/schemas/aggregate-result-criteria-shared'
       required:
       - criteriaName
     aggregate-result-criteria-response:
       allOf:
-      - $ref: '#/components/schemas/simple_result_criteria_response_allOf'
+      - $ref: '#/components/schemas/successful_bind_result_criteria_response_allOf'
       - $ref: '#/components/schemas/aggregate-result-criteria-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -46229,13 +46882,13 @@ components:
       type: string
     add-replication-assurance-result-criteria-request:
       allOf:
-      - $ref: '#/components/schemas/add_simple_result_criteria_request_allOf'
+      - $ref: '#/components/schemas/add_successful_bind_result_criteria_request_allOf'
       - $ref: '#/components/schemas/replication-assurance-result-criteria-shared'
       required:
       - criteriaName
     replication-assurance-result-criteria-response:
       allOf:
-      - $ref: '#/components/schemas/simple_result_criteria_response_allOf'
+      - $ref: '#/components/schemas/successful_bind_result_criteria_response_allOf'
       - $ref: '#/components/schemas/replication-assurance-result-criteria-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -46282,13 +46935,13 @@ components:
       type: string
     add-third-party-result-criteria-request:
       allOf:
-      - $ref: '#/components/schemas/add_simple_result_criteria_request_allOf'
+      - $ref: '#/components/schemas/add_successful_bind_result_criteria_request_allOf'
       - $ref: '#/components/schemas/third-party-result-criteria-shared'
       required:
       - criteriaName
     third-party-result-criteria-response:
       allOf:
-      - $ref: '#/components/schemas/simple_result_criteria_response_allOf'
+      - $ref: '#/components/schemas/successful_bind_result_criteria_response_allOf'
       - $ref: '#/components/schemas/third-party-result-criteria-shared'
       - $ref: '#/components/schemas/meta'
       required:
@@ -51768,6 +52421,7 @@ components:
       - $ref: '#/components/schemas/add-referral-on-update-plugin-request'
       - $ref: '#/components/schemas/add-simple-to-external-bind-plugin-request'
       - $ref: '#/components/schemas/add-snmp-subagent-plugin-request'
+      - $ref: '#/components/schemas/add-coalesce-modifications-plugin-request'
       - $ref: '#/components/schemas/add-clean-up-inactive-pingfederate-persistent-sessions-plugin-request'
       - $ref: '#/components/schemas/add-composed-attribute-plugin-request'
       - $ref: '#/components/schemas/add-attribute-mapper-plugin-request'
@@ -51795,6 +52449,7 @@ components:
       - $ref: '#/components/schemas/referral-on-update-plugin-response'
       - $ref: '#/components/schemas/simple-to-external-bind-plugin-response'
       - $ref: '#/components/schemas/snmp-subagent-plugin-response'
+      - $ref: '#/components/schemas/coalesce-modifications-plugin-response'
       - $ref: '#/components/schemas/clean-up-inactive-pingfederate-persistent-sessions-plugin-response'
       - $ref: '#/components/schemas/composed-attribute-plugin-response'
       - $ref: '#/components/schemas/attribute-mapper-plugin-response'
@@ -51830,6 +52485,7 @@ components:
       - $ref: '#/components/schemas/simple-to-external-bind-plugin-response'
       - $ref: '#/components/schemas/custom-plugin-response'
       - $ref: '#/components/schemas/snmp-subagent-plugin-response'
+      - $ref: '#/components/schemas/coalesce-modifications-plugin-response'
       - $ref: '#/components/schemas/password-policy-import-plugin-response'
       - $ref: '#/components/schemas/profiler-plugin-response'
       - $ref: '#/components/schemas/clean-up-inactive-pingfederate-persistent-sessions-plugin-response'
@@ -52170,11 +52826,15 @@ components:
       - $ref: '#/components/schemas/third-party-account-status-notification-handler-response'
     add_pass_through_authentication_handler_request:
       oneOf:
+      - $ref: '#/components/schemas/add-ping-one-pass-through-authentication-handler-request'
       - $ref: '#/components/schemas/add-ldap-pass-through-authentication-handler-request'
+      - $ref: '#/components/schemas/add-aggregate-pass-through-authentication-handler-request'
       - $ref: '#/components/schemas/add-third-party-pass-through-authentication-handler-request'
     add_pass_through_authentication_handler_200_response:
       oneOf:
+      - $ref: '#/components/schemas/ping-one-pass-through-authentication-handler-response'
       - $ref: '#/components/schemas/ldap-pass-through-authentication-handler-response'
+      - $ref: '#/components/schemas/aggregate-pass-through-authentication-handler-response'
       - $ref: '#/components/schemas/third-party-pass-through-authentication-handler-response'
     add_password_validator_request:
       oneOf:
@@ -52184,8 +52844,10 @@ components:
       - $ref: '#/components/schemas/add-repeated-characters-password-validator-request'
       - $ref: '#/components/schemas/add-dictionary-password-validator-request'
       - $ref: '#/components/schemas/add-haystack-password-validator-request'
+      - $ref: '#/components/schemas/add-utf-8-password-validator-request'
       - $ref: '#/components/schemas/add-groovy-scripted-password-validator-request'
       - $ref: '#/components/schemas/add-pwned-passwords-password-validator-request'
+      - $ref: '#/components/schemas/add-disallowed-characters-password-validator-request'
       - $ref: '#/components/schemas/add-length-based-password-validator-request'
       - $ref: '#/components/schemas/add-regular-expression-password-validator-request'
       - $ref: '#/components/schemas/add-unique-characters-password-validator-request'
@@ -52198,8 +52860,10 @@ components:
       - $ref: '#/components/schemas/repeated-characters-password-validator-response'
       - $ref: '#/components/schemas/dictionary-password-validator-response'
       - $ref: '#/components/schemas/haystack-password-validator-response'
+      - $ref: '#/components/schemas/utf-8-password-validator-response'
       - $ref: '#/components/schemas/groovy-scripted-password-validator-response'
       - $ref: '#/components/schemas/pwned-passwords-password-validator-response'
+      - $ref: '#/components/schemas/disallowed-characters-password-validator-response'
       - $ref: '#/components/schemas/length-based-password-validator-response'
       - $ref: '#/components/schemas/regular-expression-password-validator-response'
       - $ref: '#/components/schemas/unique-characters-password-validator-response'
@@ -52213,8 +52877,10 @@ components:
       - $ref: '#/components/schemas/repeated-characters-password-validator-response'
       - $ref: '#/components/schemas/dictionary-password-validator-response'
       - $ref: '#/components/schemas/haystack-password-validator-response'
+      - $ref: '#/components/schemas/utf-8-password-validator-response'
       - $ref: '#/components/schemas/groovy-scripted-password-validator-response'
       - $ref: '#/components/schemas/pwned-passwords-password-validator-response'
+      - $ref: '#/components/schemas/disallowed-characters-password-validator-response'
       - $ref: '#/components/schemas/length-based-password-validator-response'
       - $ref: '#/components/schemas/regular-expression-password-validator-response'
       - $ref: '#/components/schemas/unique-characters-password-validator-response'
@@ -52454,22 +53120,28 @@ components:
       - $ref: '#/components/schemas/groovy-scripted-change-subscription-handler-response'
       - $ref: '#/components/schemas/logging-change-subscription-handler-response'
       - $ref: '#/components/schemas/third-party-change-subscription-handler-response'
+    add_monitor_provider_request:
+      oneOf:
+      - $ref: '#/components/schemas/add-encryption-settings-database-accessibility-monitor-provider-request'
+      - $ref: '#/components/schemas/add-third-party-monitor-provider-request'
     add_monitor_provider_200_response:
       oneOf:
+      - $ref: '#/components/schemas/encryption-settings-database-accessibility-monitor-provider-response'
       - $ref: '#/components/schemas/third-party-monitor-provider-response'
     get_monitor_provider_200_response:
       oneOf:
-      - $ref: '#/components/schemas/general-monitor-provider-response'
       - $ref: '#/components/schemas/memory-usage-monitor-provider-response'
       - $ref: '#/components/schemas/stack-trace-monitor-provider-response'
-      - $ref: '#/components/schemas/disk-space-usage-monitor-provider-response'
-      - $ref: '#/components/schemas/system-info-monitor-provider-response'
+      - $ref: '#/components/schemas/encryption-settings-database-accessibility-monitor-provider-response'
       - $ref: '#/components/schemas/custom-monitor-provider-response'
       - $ref: '#/components/schemas/active-operations-monitor-provider-response'
       - $ref: '#/components/schemas/ssl-context-monitor-provider-response'
-      - $ref: '#/components/schemas/client-connection-monitor-provider-response'
       - $ref: '#/components/schemas/version-monitor-provider-response'
       - $ref: '#/components/schemas/host-system-monitor-provider-response'
+      - $ref: '#/components/schemas/general-monitor-provider-response'
+      - $ref: '#/components/schemas/disk-space-usage-monitor-provider-response'
+      - $ref: '#/components/schemas/system-info-monitor-provider-response'
+      - $ref: '#/components/schemas/client-connection-monitor-provider-response'
       - $ref: '#/components/schemas/third-party-monitor-provider-response'
     get_group_implementation_200_response:
       oneOf:
@@ -52644,12 +53316,14 @@ components:
       - $ref: '#/components/schemas/third-party-virtual-attribute-response'
     add_result_criteria_request:
       oneOf:
+      - $ref: '#/components/schemas/add-successful-bind-result-criteria-request'
       - $ref: '#/components/schemas/add-simple-result-criteria-request'
       - $ref: '#/components/schemas/add-aggregate-result-criteria-request'
       - $ref: '#/components/schemas/add-replication-assurance-result-criteria-request'
       - $ref: '#/components/schemas/add-third-party-result-criteria-request'
     add_result_criteria_200_response:
       oneOf:
+      - $ref: '#/components/schemas/successful-bind-result-criteria-response'
       - $ref: '#/components/schemas/simple-result-criteria-response'
       - $ref: '#/components/schemas/aggregate-result-criteria-response'
       - $ref: '#/components/schemas/replication-assurance-result-criteria-response'
@@ -55007,6 +55681,11 @@ components:
           description: Specifies the gateway priority of the Replication Server in
             the current location.
           type: integer
+        missingChangesAlertThresholdPercent:
+          description: "Specifies the missing changes alert threshold as a percentage\
+            \ of the total pending changes. For instance, a value of 80 indicates\
+            \ that the replica is 80% of the way to losing changes."
+          type: integer
       type: object
       example: null
     replication_domain_response_allOf:
@@ -55913,14 +56592,14 @@ components:
           type: string
       type: object
       example: null
-    add_ldap_pass_through_authentication_handler_request_allOf:
+    add_ping_one_pass_through_authentication_handler_request_allOf:
       properties:
         handlerName:
           description: Name of the new Pass Through Authentication Handler
           type: string
       type: object
       example: null
-    ldap_pass_through_authentication_handler_response_allOf:
+    ping_one_pass_through_authentication_handler_response_allOf:
       properties:
         id:
           description: Name of the Pass Through Authentication Handler
@@ -56901,25 +57580,6 @@ components:
           type: string
       type: object
       example: null
-    general_monitor_provider_response_allOf:
-      properties:
-        schemas:
-          items:
-            $ref: '#/components/schemas/Enumgeneral-monitor-providerSchemaUrn'
-          maxItems: 1
-          minItems: 1
-          type: array
-        id:
-          description: Name of the Monitor Provider
-          type: string
-        description:
-          description: A description for this Monitor Provider
-          type: string
-        enabled:
-          description: Indicates whether the Monitor Provider is enabled for use.
-          type: boolean
-      type: object
-      example: null
     memory_usage_monitor_provider_response_allOf:
       properties:
         schemas:
@@ -56944,6 +57604,153 @@ components:
         schemas:
           items:
             $ref: '#/components/schemas/Enumstack-trace-monitor-providerSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        id:
+          description: Name of the Monitor Provider
+          type: string
+        description:
+          description: A description for this Monitor Provider
+          type: string
+        enabled:
+          description: Indicates whether the Monitor Provider is enabled for use.
+          type: boolean
+      type: object
+      example: null
+    add_encryption_settings_database_accessibility_monitor_provider_request_allOf:
+      properties:
+        providerName:
+          description: Name of the new Monitor Provider
+          type: string
+      type: object
+      example: null
+    encryption_settings_database_accessibility_monitor_provider_response_allOf:
+      properties:
+        id:
+          description: Name of the Monitor Provider
+          type: string
+      type: object
+      example: null
+    custom_monitor_provider_response_allOf:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumcustom-monitor-providerSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        id:
+          description: Name of the Monitor Provider
+          type: string
+        description:
+          description: A description for this Monitor Provider
+          type: string
+        enabled:
+          description: Indicates whether the Monitor Provider is enabled for use.
+          type: boolean
+      type: object
+      example: null
+    active_operations_monitor_provider_response_allOf:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumactive-operations-monitor-providerSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        id:
+          description: Name of the Monitor Provider
+          type: string
+        description:
+          description: A description for this Monitor Provider
+          type: string
+        enabled:
+          description: Indicates whether the Monitor Provider is enabled for use.
+          type: boolean
+      type: object
+      example: null
+    ssl_context_monitor_provider_response_allOf:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumssl-context-monitor-providerSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        id:
+          description: Name of the Monitor Provider
+          type: string
+        description:
+          description: A description for this Monitor Provider
+          type: string
+        enabled:
+          description: Indicates whether the Monitor Provider is enabled for use.
+          type: boolean
+      type: object
+      example: null
+    version_monitor_provider_response_allOf:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumversion-monitor-providerSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        id:
+          description: Name of the Monitor Provider
+          type: string
+        description:
+          description: A description for this Monitor Provider
+          type: string
+        enabled:
+          description: Indicates whether the Monitor Provider is enabled for use.
+          type: boolean
+      type: object
+      example: null
+    host_system_monitor_provider_response_allOf:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumhost-system-monitor-providerSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        id:
+          description: Name of the Monitor Provider
+          type: string
+        enabled:
+          description: Indicates whether the Host System Monitor Provider is enabled
+            for use.
+          type: boolean
+        diskDevices:
+          description: Specifies which disk devices to monitor for I/O activity. Should
+            be the device name as displayed by iostat -d.
+          items:
+            type: string
+          type: array
+        networkDevices:
+          description: Specifies which network interfaces to monitor for I/O activity.
+            Should be the device name as displayed by netstat -i.
+          items:
+            type: string
+          type: array
+        systemUtilizationMonitorLogDirectory:
+          description: "Specifies a relative or absolute path to the directory on\
+            \ the local filesystem containing the log files used by the system utilization\
+            \ monitor. The path must exist, and it must be a writable directory by\
+            \ the server process."
+          type: string
+        description:
+          description: A description for this Monitor Provider
+          type: string
+      type: object
+      example: null
+    general_monitor_provider_response_allOf:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumgeneral-monitor-providerSchemaUrn'
           maxItems: 1
           minItems: 1
           type: array
@@ -57041,63 +57848,6 @@ components:
           type: boolean
       type: object
       example: null
-    custom_monitor_provider_response_allOf:
-      properties:
-        schemas:
-          items:
-            $ref: '#/components/schemas/Enumcustom-monitor-providerSchemaUrn'
-          maxItems: 1
-          minItems: 1
-          type: array
-        id:
-          description: Name of the Monitor Provider
-          type: string
-        description:
-          description: A description for this Monitor Provider
-          type: string
-        enabled:
-          description: Indicates whether the Monitor Provider is enabled for use.
-          type: boolean
-      type: object
-      example: null
-    active_operations_monitor_provider_response_allOf:
-      properties:
-        schemas:
-          items:
-            $ref: '#/components/schemas/Enumactive-operations-monitor-providerSchemaUrn'
-          maxItems: 1
-          minItems: 1
-          type: array
-        id:
-          description: Name of the Monitor Provider
-          type: string
-        description:
-          description: A description for this Monitor Provider
-          type: string
-        enabled:
-          description: Indicates whether the Monitor Provider is enabled for use.
-          type: boolean
-      type: object
-      example: null
-    ssl_context_monitor_provider_response_allOf:
-      properties:
-        schemas:
-          items:
-            $ref: '#/components/schemas/Enumssl-context-monitor-providerSchemaUrn'
-          maxItems: 1
-          minItems: 1
-          type: array
-        id:
-          description: Name of the Monitor Provider
-          type: string
-        description:
-          description: A description for this Monitor Provider
-          type: string
-        enabled:
-          description: Indicates whether the Monitor Provider is enabled for use.
-          type: boolean
-      type: object
-      example: null
     client_connection_monitor_provider_response_allOf:
       properties:
         schemas:
@@ -57115,77 +57865,6 @@ components:
         enabled:
           description: Indicates whether the Monitor Provider is enabled for use.
           type: boolean
-      type: object
-      example: null
-    version_monitor_provider_response_allOf:
-      properties:
-        schemas:
-          items:
-            $ref: '#/components/schemas/Enumversion-monitor-providerSchemaUrn'
-          maxItems: 1
-          minItems: 1
-          type: array
-        id:
-          description: Name of the Monitor Provider
-          type: string
-        description:
-          description: A description for this Monitor Provider
-          type: string
-        enabled:
-          description: Indicates whether the Monitor Provider is enabled for use.
-          type: boolean
-      type: object
-      example: null
-    host_system_monitor_provider_response_allOf:
-      properties:
-        schemas:
-          items:
-            $ref: '#/components/schemas/Enumhost-system-monitor-providerSchemaUrn'
-          maxItems: 1
-          minItems: 1
-          type: array
-        id:
-          description: Name of the Monitor Provider
-          type: string
-        enabled:
-          description: Indicates whether the Host System Monitor Provider is enabled
-            for use.
-          type: boolean
-        diskDevices:
-          description: Specifies which disk devices to monitor for I/O activity. Should
-            be the device name as displayed by iostat -d.
-          items:
-            type: string
-          type: array
-        networkDevices:
-          description: Specifies which network interfaces to monitor for I/O activity.
-            Should be the device name as displayed by netstat -i.
-          items:
-            type: string
-          type: array
-        systemUtilizationMonitorLogDirectory:
-          description: "Specifies a relative or absolute path to the directory on\
-            \ the local filesystem containing the log files used by the system utilization\
-            \ monitor. The path must exist, and it must be a writable directory by\
-            \ the server process."
-          type: string
-        description:
-          description: A description for this Monitor Provider
-          type: string
-      type: object
-      example: null
-    add_third_party_monitor_provider_request_allOf:
-      properties:
-        providerName:
-          description: Name of the new Monitor Provider
-          type: string
-      type: object
-      example: null
-    third_party_monitor_provider_response_allOf:
-      properties:
-        id:
-          description: Name of the Monitor Provider
-          type: string
       type: object
       example: null
     static_group_implementation_response_allOf:
@@ -57849,6 +58528,20 @@ components:
           items:
             type: string
           type: array
+        insignificantConfigArchiveBaseDN:
+          description: The base DN that is considered insignificant for the purpose
+            of maintaining the configuration archive.
+          items:
+            type: string
+          type: array
+        maintainConfigArchive:
+          description: Indicates whether the server should maintain the config archive
+            with new changes to the config backend.
+          type: boolean
+        maxConfigArchiveCount:
+          description: Indicates the maximum number of previous config files to keep
+            as part of maintaining the config archive.
+          type: integer
         mirroredSubtreePeerPollingInterval:
           description: Tells the server component that is responsible for mirroring
             configuration data across a topology of servers the maximum amount of
@@ -59211,6 +59904,11 @@ components:
           items:
             type: string
           type: array
+        alwaysUsePermissiveModify:
+          description: "Indicates whether to always use permissive modify behavior\
+            \ for PATCH requests, even if the request did not include the permissive\
+            \ modify request control."
+          type: boolean
         allowedControl:
           items:
             $ref: '#/components/schemas/Enumhttp-servlet-extension-allowedControlProp'
@@ -60132,14 +60830,14 @@ components:
           type: string
       type: object
       example: null
-    add_simple_result_criteria_request_allOf:
+    add_successful_bind_result_criteria_request_allOf:
       properties:
         criteriaName:
           description: Name of the new Result Criteria
           type: string
       type: object
       example: null
-    simple_result_criteria_response_allOf:
+    successful_bind_result_criteria_response_allOf:
       properties:
         id:
           description: Name of the Result Criteria
@@ -60932,6 +61630,10 @@ components:
             \ extensions will be included in the resulting error page response. Stack\
             \ traces can be helpful in diagnosing application errors, but in production\
             \ they may reveal information that might be useful to a malicious attacker."
+          type: boolean
+        includeServletInformationInErrorPages:
+          description: Indicates whether to expose servlet information in the error
+            page response.
           type: boolean
       type: object
       example: null

@@ -10,7 +10,9 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | A description for this Account Status Notification Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the Account Status Notification Handler is enabled. Only enabled handlers are invoked whenever a related event occurs in the server. | 
 **Asynchronous** | Pointer to **bool** | Indicates whether the server should attempt to invoke this Account Status Notification Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver a message) will not delay processing for the operation that triggered the notification. | [optional] 
+**AccountAuthenticationNotificationResultCriteria** | Pointer to **string** | A result criteria object that identifies which successful bind operations should result in account authentication notifications for this handler. | [optional] 
 **AccountCreationNotificationRequestCriteria** | Pointer to **string** | A request criteria object that identifies which add requests should result in account creation notifications for this handler. | [optional] 
+**AccountDeletionNotificationRequestCriteria** | Pointer to **string** | A request criteria object that identifies which delete requests should result in account deletion notifications for this handler. | [optional] 
 **AccountUpdateNotificationRequestCriteria** | Pointer to **string** | A request criteria object that identifies which modify and modify DN requests should result in account update notifications for this handler. | [optional] 
 
 ## Methods
@@ -162,6 +164,31 @@ SetAsynchronous sets Asynchronous field to given value.
 
 HasAsynchronous returns a boolean if a field has been set.
 
+### GetAccountAuthenticationNotificationResultCriteria
+
+`func (o *AddErrorLogAccountStatusNotificationHandlerRequest) GetAccountAuthenticationNotificationResultCriteria() string`
+
+GetAccountAuthenticationNotificationResultCriteria returns the AccountAuthenticationNotificationResultCriteria field if non-nil, zero value otherwise.
+
+### GetAccountAuthenticationNotificationResultCriteriaOk
+
+`func (o *AddErrorLogAccountStatusNotificationHandlerRequest) GetAccountAuthenticationNotificationResultCriteriaOk() (*string, bool)`
+
+GetAccountAuthenticationNotificationResultCriteriaOk returns a tuple with the AccountAuthenticationNotificationResultCriteria field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccountAuthenticationNotificationResultCriteria
+
+`func (o *AddErrorLogAccountStatusNotificationHandlerRequest) SetAccountAuthenticationNotificationResultCriteria(v string)`
+
+SetAccountAuthenticationNotificationResultCriteria sets AccountAuthenticationNotificationResultCriteria field to given value.
+
+### HasAccountAuthenticationNotificationResultCriteria
+
+`func (o *AddErrorLogAccountStatusNotificationHandlerRequest) HasAccountAuthenticationNotificationResultCriteria() bool`
+
+HasAccountAuthenticationNotificationResultCriteria returns a boolean if a field has been set.
+
 ### GetAccountCreationNotificationRequestCriteria
 
 `func (o *AddErrorLogAccountStatusNotificationHandlerRequest) GetAccountCreationNotificationRequestCriteria() string`
@@ -186,6 +213,31 @@ SetAccountCreationNotificationRequestCriteria sets AccountCreationNotificationRe
 `func (o *AddErrorLogAccountStatusNotificationHandlerRequest) HasAccountCreationNotificationRequestCriteria() bool`
 
 HasAccountCreationNotificationRequestCriteria returns a boolean if a field has been set.
+
+### GetAccountDeletionNotificationRequestCriteria
+
+`func (o *AddErrorLogAccountStatusNotificationHandlerRequest) GetAccountDeletionNotificationRequestCriteria() string`
+
+GetAccountDeletionNotificationRequestCriteria returns the AccountDeletionNotificationRequestCriteria field if non-nil, zero value otherwise.
+
+### GetAccountDeletionNotificationRequestCriteriaOk
+
+`func (o *AddErrorLogAccountStatusNotificationHandlerRequest) GetAccountDeletionNotificationRequestCriteriaOk() (*string, bool)`
+
+GetAccountDeletionNotificationRequestCriteriaOk returns a tuple with the AccountDeletionNotificationRequestCriteria field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccountDeletionNotificationRequestCriteria
+
+`func (o *AddErrorLogAccountStatusNotificationHandlerRequest) SetAccountDeletionNotificationRequestCriteria(v string)`
+
+SetAccountDeletionNotificationRequestCriteria sets AccountDeletionNotificationRequestCriteria field to given value.
+
+### HasAccountDeletionNotificationRequestCriteria
+
+`func (o *AddErrorLogAccountStatusNotificationHandlerRequest) HasAccountDeletionNotificationRequestCriteria() bool`
+
+HasAccountDeletionNotificationRequestCriteria returns a boolean if a field has been set.
 
 ### GetAccountUpdateNotificationRequestCriteria
 

@@ -17,18 +17,19 @@ import (
 
 // GetMonitorProvider200Response - struct for GetMonitorProvider200Response
 type GetMonitorProvider200Response struct {
-	ActiveOperationsMonitorProviderResponse *ActiveOperationsMonitorProviderResponse
-	ClientConnectionMonitorProviderResponse *ClientConnectionMonitorProviderResponse
-	CustomMonitorProviderResponse           *CustomMonitorProviderResponse
-	DiskSpaceUsageMonitorProviderResponse   *DiskSpaceUsageMonitorProviderResponse
-	GeneralMonitorProviderResponse          *GeneralMonitorProviderResponse
-	HostSystemMonitorProviderResponse       *HostSystemMonitorProviderResponse
-	MemoryUsageMonitorProviderResponse      *MemoryUsageMonitorProviderResponse
-	SslContextMonitorProviderResponse       *SslContextMonitorProviderResponse
-	StackTraceMonitorProviderResponse       *StackTraceMonitorProviderResponse
-	SystemInfoMonitorProviderResponse       *SystemInfoMonitorProviderResponse
-	ThirdPartyMonitorProviderResponse       *ThirdPartyMonitorProviderResponse
-	VersionMonitorProviderResponse          *VersionMonitorProviderResponse
+	ActiveOperationsMonitorProviderResponse                        *ActiveOperationsMonitorProviderResponse
+	ClientConnectionMonitorProviderResponse                        *ClientConnectionMonitorProviderResponse
+	CustomMonitorProviderResponse                                  *CustomMonitorProviderResponse
+	DiskSpaceUsageMonitorProviderResponse                          *DiskSpaceUsageMonitorProviderResponse
+	EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse *EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse
+	GeneralMonitorProviderResponse                                 *GeneralMonitorProviderResponse
+	HostSystemMonitorProviderResponse                              *HostSystemMonitorProviderResponse
+	MemoryUsageMonitorProviderResponse                             *MemoryUsageMonitorProviderResponse
+	SslContextMonitorProviderResponse                              *SslContextMonitorProviderResponse
+	StackTraceMonitorProviderResponse                              *StackTraceMonitorProviderResponse
+	SystemInfoMonitorProviderResponse                              *SystemInfoMonitorProviderResponse
+	ThirdPartyMonitorProviderResponse                              *ThirdPartyMonitorProviderResponse
+	VersionMonitorProviderResponse                                 *VersionMonitorProviderResponse
 }
 
 // ActiveOperationsMonitorProviderResponseAsGetMonitorProvider200Response is a convenience function that returns ActiveOperationsMonitorProviderResponse wrapped in GetMonitorProvider200Response
@@ -56,6 +57,13 @@ func CustomMonitorProviderResponseAsGetMonitorProvider200Response(v *CustomMonit
 func DiskSpaceUsageMonitorProviderResponseAsGetMonitorProvider200Response(v *DiskSpaceUsageMonitorProviderResponse) GetMonitorProvider200Response {
 	return GetMonitorProvider200Response{
 		DiskSpaceUsageMonitorProviderResponse: v,
+	}
+}
+
+// EncryptionSettingsDatabaseAccessibilityMonitorProviderResponseAsGetMonitorProvider200Response is a convenience function that returns EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse wrapped in GetMonitorProvider200Response
+func EncryptionSettingsDatabaseAccessibilityMonitorProviderResponseAsGetMonitorProvider200Response(v *EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse) GetMonitorProvider200Response {
+	return GetMonitorProvider200Response{
+		EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse: v,
 	}
 }
 
@@ -171,6 +179,19 @@ func (dst *GetMonitorProvider200Response) UnmarshalJSON(data []byte) error {
 		dst.DiskSpaceUsageMonitorProviderResponse = nil
 	}
 
+	// try to unmarshal data into EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse
+	err = newStrictDecoder(data).Decode(&dst.EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse)
+	if err == nil {
+		jsonEncryptionSettingsDatabaseAccessibilityMonitorProviderResponse, _ := json.Marshal(dst.EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse)
+		if string(jsonEncryptionSettingsDatabaseAccessibilityMonitorProviderResponse) == "{}" { // empty struct
+			dst.EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse = nil
+	}
+
 	// try to unmarshal data into GeneralMonitorProviderResponse
 	err = newStrictDecoder(data).Decode(&dst.GeneralMonitorProviderResponse)
 	if err == nil {
@@ -281,6 +302,7 @@ func (dst *GetMonitorProvider200Response) UnmarshalJSON(data []byte) error {
 		dst.ClientConnectionMonitorProviderResponse = nil
 		dst.CustomMonitorProviderResponse = nil
 		dst.DiskSpaceUsageMonitorProviderResponse = nil
+		dst.EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse = nil
 		dst.GeneralMonitorProviderResponse = nil
 		dst.HostSystemMonitorProviderResponse = nil
 		dst.MemoryUsageMonitorProviderResponse = nil
@@ -314,6 +336,10 @@ func (src GetMonitorProvider200Response) MarshalJSON() ([]byte, error) {
 
 	if src.DiskSpaceUsageMonitorProviderResponse != nil {
 		return json.Marshal(&src.DiskSpaceUsageMonitorProviderResponse)
+	}
+
+	if src.EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse != nil {
+		return json.Marshal(&src.EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse)
 	}
 
 	if src.GeneralMonitorProviderResponse != nil {
@@ -370,6 +396,10 @@ func (obj *GetMonitorProvider200Response) GetActualInstance() interface{} {
 
 	if obj.DiskSpaceUsageMonitorProviderResponse != nil {
 		return obj.DiskSpaceUsageMonitorProviderResponse
+	}
+
+	if obj.EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse != nil {
+		return obj.EncryptionSettingsDatabaseAccessibilityMonitorProviderResponse
 	}
 
 	if obj.GeneralMonitorProviderResponse != nil {

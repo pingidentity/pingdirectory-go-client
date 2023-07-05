@@ -17,18 +17,20 @@ import (
 
 // AddPasswordValidatorRequest - struct for AddPasswordValidatorRequest
 type AddPasswordValidatorRequest struct {
-	AddAttributeValuePasswordValidatorRequest     *AddAttributeValuePasswordValidatorRequest
-	AddCharacterSetPasswordValidatorRequest       *AddCharacterSetPasswordValidatorRequest
-	AddDictionaryPasswordValidatorRequest         *AddDictionaryPasswordValidatorRequest
-	AddGroovyScriptedPasswordValidatorRequest     *AddGroovyScriptedPasswordValidatorRequest
-	AddHaystackPasswordValidatorRequest           *AddHaystackPasswordValidatorRequest
-	AddLengthBasedPasswordValidatorRequest        *AddLengthBasedPasswordValidatorRequest
-	AddPwnedPasswordsPasswordValidatorRequest     *AddPwnedPasswordsPasswordValidatorRequest
-	AddRegularExpressionPasswordValidatorRequest  *AddRegularExpressionPasswordValidatorRequest
-	AddRepeatedCharactersPasswordValidatorRequest *AddRepeatedCharactersPasswordValidatorRequest
-	AddSimilarityBasedPasswordValidatorRequest    *AddSimilarityBasedPasswordValidatorRequest
-	AddThirdPartyPasswordValidatorRequest         *AddThirdPartyPasswordValidatorRequest
-	AddUniqueCharactersPasswordValidatorRequest   *AddUniqueCharactersPasswordValidatorRequest
+	AddAttributeValuePasswordValidatorRequest       *AddAttributeValuePasswordValidatorRequest
+	AddCharacterSetPasswordValidatorRequest         *AddCharacterSetPasswordValidatorRequest
+	AddDictionaryPasswordValidatorRequest           *AddDictionaryPasswordValidatorRequest
+	AddDisallowedCharactersPasswordValidatorRequest *AddDisallowedCharactersPasswordValidatorRequest
+	AddGroovyScriptedPasswordValidatorRequest       *AddGroovyScriptedPasswordValidatorRequest
+	AddHaystackPasswordValidatorRequest             *AddHaystackPasswordValidatorRequest
+	AddLengthBasedPasswordValidatorRequest          *AddLengthBasedPasswordValidatorRequest
+	AddPwnedPasswordsPasswordValidatorRequest       *AddPwnedPasswordsPasswordValidatorRequest
+	AddRegularExpressionPasswordValidatorRequest    *AddRegularExpressionPasswordValidatorRequest
+	AddRepeatedCharactersPasswordValidatorRequest   *AddRepeatedCharactersPasswordValidatorRequest
+	AddSimilarityBasedPasswordValidatorRequest      *AddSimilarityBasedPasswordValidatorRequest
+	AddThirdPartyPasswordValidatorRequest           *AddThirdPartyPasswordValidatorRequest
+	AddUniqueCharactersPasswordValidatorRequest     *AddUniqueCharactersPasswordValidatorRequest
+	AddUtf8PasswordValidatorRequest                 *AddUtf8PasswordValidatorRequest
 }
 
 // AddAttributeValuePasswordValidatorRequestAsAddPasswordValidatorRequest is a convenience function that returns AddAttributeValuePasswordValidatorRequest wrapped in AddPasswordValidatorRequest
@@ -49,6 +51,13 @@ func AddCharacterSetPasswordValidatorRequestAsAddPasswordValidatorRequest(v *Add
 func AddDictionaryPasswordValidatorRequestAsAddPasswordValidatorRequest(v *AddDictionaryPasswordValidatorRequest) AddPasswordValidatorRequest {
 	return AddPasswordValidatorRequest{
 		AddDictionaryPasswordValidatorRequest: v,
+	}
+}
+
+// AddDisallowedCharactersPasswordValidatorRequestAsAddPasswordValidatorRequest is a convenience function that returns AddDisallowedCharactersPasswordValidatorRequest wrapped in AddPasswordValidatorRequest
+func AddDisallowedCharactersPasswordValidatorRequestAsAddPasswordValidatorRequest(v *AddDisallowedCharactersPasswordValidatorRequest) AddPasswordValidatorRequest {
+	return AddPasswordValidatorRequest{
+		AddDisallowedCharactersPasswordValidatorRequest: v,
 	}
 }
 
@@ -115,6 +124,13 @@ func AddUniqueCharactersPasswordValidatorRequestAsAddPasswordValidatorRequest(v 
 	}
 }
 
+// AddUtf8PasswordValidatorRequestAsAddPasswordValidatorRequest is a convenience function that returns AddUtf8PasswordValidatorRequest wrapped in AddPasswordValidatorRequest
+func AddUtf8PasswordValidatorRequestAsAddPasswordValidatorRequest(v *AddUtf8PasswordValidatorRequest) AddPasswordValidatorRequest {
+	return AddPasswordValidatorRequest{
+		AddUtf8PasswordValidatorRequest: v,
+	}
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddPasswordValidatorRequest) UnmarshalJSON(data []byte) error {
 	var err error
@@ -156,6 +172,19 @@ func (dst *AddPasswordValidatorRequest) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.AddDictionaryPasswordValidatorRequest = nil
+	}
+
+	// try to unmarshal data into AddDisallowedCharactersPasswordValidatorRequest
+	err = newStrictDecoder(data).Decode(&dst.AddDisallowedCharactersPasswordValidatorRequest)
+	if err == nil {
+		jsonAddDisallowedCharactersPasswordValidatorRequest, _ := json.Marshal(dst.AddDisallowedCharactersPasswordValidatorRequest)
+		if string(jsonAddDisallowedCharactersPasswordValidatorRequest) == "{}" { // empty struct
+			dst.AddDisallowedCharactersPasswordValidatorRequest = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.AddDisallowedCharactersPasswordValidatorRequest = nil
 	}
 
 	// try to unmarshal data into AddGroovyScriptedPasswordValidatorRequest
@@ -275,11 +304,25 @@ func (dst *AddPasswordValidatorRequest) UnmarshalJSON(data []byte) error {
 		dst.AddUniqueCharactersPasswordValidatorRequest = nil
 	}
 
+	// try to unmarshal data into AddUtf8PasswordValidatorRequest
+	err = newStrictDecoder(data).Decode(&dst.AddUtf8PasswordValidatorRequest)
+	if err == nil {
+		jsonAddUtf8PasswordValidatorRequest, _ := json.Marshal(dst.AddUtf8PasswordValidatorRequest)
+		if string(jsonAddUtf8PasswordValidatorRequest) == "{}" { // empty struct
+			dst.AddUtf8PasswordValidatorRequest = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.AddUtf8PasswordValidatorRequest = nil
+	}
+
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.AddAttributeValuePasswordValidatorRequest = nil
 		dst.AddCharacterSetPasswordValidatorRequest = nil
 		dst.AddDictionaryPasswordValidatorRequest = nil
+		dst.AddDisallowedCharactersPasswordValidatorRequest = nil
 		dst.AddGroovyScriptedPasswordValidatorRequest = nil
 		dst.AddHaystackPasswordValidatorRequest = nil
 		dst.AddLengthBasedPasswordValidatorRequest = nil
@@ -289,6 +332,7 @@ func (dst *AddPasswordValidatorRequest) UnmarshalJSON(data []byte) error {
 		dst.AddSimilarityBasedPasswordValidatorRequest = nil
 		dst.AddThirdPartyPasswordValidatorRequest = nil
 		dst.AddUniqueCharactersPasswordValidatorRequest = nil
+		dst.AddUtf8PasswordValidatorRequest = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(AddPasswordValidatorRequest)")
 	} else if match == 1 {
@@ -310,6 +354,10 @@ func (src AddPasswordValidatorRequest) MarshalJSON() ([]byte, error) {
 
 	if src.AddDictionaryPasswordValidatorRequest != nil {
 		return json.Marshal(&src.AddDictionaryPasswordValidatorRequest)
+	}
+
+	if src.AddDisallowedCharactersPasswordValidatorRequest != nil {
+		return json.Marshal(&src.AddDisallowedCharactersPasswordValidatorRequest)
 	}
 
 	if src.AddGroovyScriptedPasswordValidatorRequest != nil {
@@ -348,6 +396,10 @@ func (src AddPasswordValidatorRequest) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.AddUniqueCharactersPasswordValidatorRequest)
 	}
 
+	if src.AddUtf8PasswordValidatorRequest != nil {
+		return json.Marshal(&src.AddUtf8PasswordValidatorRequest)
+	}
+
 	return nil, nil // no data in oneOf schemas
 }
 
@@ -366,6 +418,10 @@ func (obj *AddPasswordValidatorRequest) GetActualInstance() interface{} {
 
 	if obj.AddDictionaryPasswordValidatorRequest != nil {
 		return obj.AddDictionaryPasswordValidatorRequest
+	}
+
+	if obj.AddDisallowedCharactersPasswordValidatorRequest != nil {
+		return obj.AddDisallowedCharactersPasswordValidatorRequest
 	}
 
 	if obj.AddGroovyScriptedPasswordValidatorRequest != nil {
@@ -402,6 +458,10 @@ func (obj *AddPasswordValidatorRequest) GetActualInstance() interface{} {
 
 	if obj.AddUniqueCharactersPasswordValidatorRequest != nil {
 		return obj.AddUniqueCharactersPasswordValidatorRequest
+	}
+
+	if obj.AddUtf8PasswordValidatorRequest != nil {
+		return obj.AddUtf8PasswordValidatorRequest
 	}
 
 	// all schemas are nil

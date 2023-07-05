@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **OperationType** | Pointer to [**[]EnumpluginOperationTypeProp**](EnumpluginOperationTypeProp.md) |  | [optional] 
 **InvokeForFailedBinds** | Pointer to **bool** | Indicates whether to update the last access time for an entry targeted by a bind operation if the bind is unsuccessful. | [optional] 
 **MaxSearchResultEntriesToUpdate** | Pointer to **int64** | Specifies the maximum number of entries that should be updated in a search operation. Only search result entries actually returned to the client may have their last access time updated, but because a single search operation may return a very large number of entries, the plugin will only update entries if no more than a specified number of entries are updated. | [optional] 
-**RequestCriteria** | Pointer to **string** | A reference to request criteria that will be used to indicate which bind requests should be passed through to the external authentication service. | [optional] 
+**RequestCriteria** | **string** | A reference to request criteria that will be used to indicate which bind requests should be passed through to the external authentication service. | 
 **InvokeForInternalOperations** | Pointer to **bool** | Indicates whether the plug-in should be invoked for internal operations. | [optional] 
 **Description** | Pointer to **string** | A description for this Plugin | [optional] 
 **Enabled** | **bool** | Indicates whether the plug-in is enabled for use. | 
@@ -126,6 +126,7 @@ Name | Type | Description | Notes
 **SessionTimeout** | Pointer to **string** | Specifies the maximum amount of time to wait for a session to the master agent to be established. | [optional] 
 **ConnectRetryMaxWait** | Pointer to **string** | The maximum amount of time to wait between attempts to establish a connection to the master agent. | [optional] 
 **PingInterval** | Pointer to **string** | The amount of time between consecutive pings sent by the sub-agent on its connection to the master agent. A value of zero disables the sending of pings by the sub-agent. | [optional] 
+**AllowedRequestControl** | Pointer to **[]string** | Specifies the OIDs of the controls that are allowed to be present in operations to coalesce. These controls are passed through when the request is validated, but they will not be included when the background thread applies the coalesced modify requests. | [optional] 
 **DefaultUserPasswordStorageScheme** | Pointer to **[]string** | Specifies the names of the password storage schemes to be used for encoding passwords contained in attributes with the user password syntax for entries that do not include the ds-pwp-password-policy-dn attribute specifying which password policy is to be used to govern them. | [optional] 
 **DefaultAuthPasswordStorageScheme** | Pointer to **[]string** | Specifies the names of password storage schemes that to be used for encoding passwords contained in attributes with the auth password syntax for entries that do not include the ds-pwp-password-policy-dn attribute specifying which password policy should be used to govern them. | [optional] 
 **ProfileSampleInterval** | **string** | Specifies the sample interval in milliseconds to be used when capturing profiling information in the server. | 
@@ -161,7 +162,7 @@ Name | Type | Description | Notes
 
 ### NewGetPlugin200Response
 
-`func NewGetPlugin200Response(schemas []EnumuniqueAttributePluginSchemaUrn, id string, enabled bool, sampleInterval string, collectionInterval string, pluginType []EnumpluginPluginTypeProp, numThreads int64, baseDN []string, filterPrefix string, filter string, attributeType []string, pollingInterval string, maxUpdatesPerSecond int64, numDeleteThreads int64, invokeGCTimeUtc []string, apiURL string, authURL string, oAuthClientID string, environmentID string, tryLocalBind bool, overrideLocalPassword bool, updateLocalPassword bool, userMappingLocalAttribute []string, userMappingRemoteJSONField []string, histogramCategoryBoundary []string, scope EnumpluginScopeProp, outputFile string, logInterval string, suppressIfIdle bool, linesBetweenHeader int64, histogramFormat EnumpluginHistogramFormatProp, logFile string, logFilePermissions string, rotationPolicy []string, retentionPolicy []string, datetimeAttribute string, datetimeFormat EnumpluginDatetimeFormatProp, expirationOffset string, numMostExpensivePhasesShown int64, extensionClass string, server []string, serverAccessMode EnumpluginServerAccessModeProp, initialConnections int64, maxConnections int64, sourceDN string, targetDN string, enableAttributeMapping bool, enableControlMapping bool, alwaysMapResponses bool, referralBaseURL []string, agentxAddress string, agentxPort int64, profileSampleInterval string, profileDirectory string, enableProfilingOnStartup bool, valuePattern []string, sourceAttribute string, targetAttribute string, delay string, scriptClass string, passThroughAuthenticationHandler string, type_ []string, ) *GetPlugin200Response`
+`func NewGetPlugin200Response(schemas []EnumuniqueAttributePluginSchemaUrn, id string, requestCriteria string, enabled bool, sampleInterval string, collectionInterval string, pluginType []EnumpluginPluginTypeProp, numThreads int64, baseDN []string, filterPrefix string, filter string, attributeType []string, pollingInterval string, maxUpdatesPerSecond int64, numDeleteThreads int64, invokeGCTimeUtc []string, apiURL string, authURL string, oAuthClientID string, environmentID string, tryLocalBind bool, overrideLocalPassword bool, updateLocalPassword bool, userMappingLocalAttribute []string, userMappingRemoteJSONField []string, histogramCategoryBoundary []string, scope EnumpluginScopeProp, outputFile string, logInterval string, suppressIfIdle bool, linesBetweenHeader int64, histogramFormat EnumpluginHistogramFormatProp, logFile string, logFilePermissions string, rotationPolicy []string, retentionPolicy []string, datetimeAttribute string, datetimeFormat EnumpluginDatetimeFormatProp, expirationOffset string, numMostExpensivePhasesShown int64, extensionClass string, server []string, serverAccessMode EnumpluginServerAccessModeProp, initialConnections int64, maxConnections int64, sourceDN string, targetDN string, enableAttributeMapping bool, enableControlMapping bool, alwaysMapResponses bool, referralBaseURL []string, agentxAddress string, agentxPort int64, profileSampleInterval string, profileDirectory string, enableProfilingOnStartup bool, valuePattern []string, sourceAttribute string, targetAttribute string, delay string, scriptClass string, passThroughAuthenticationHandler string, type_ []string, ) *GetPlugin200Response`
 
 NewGetPlugin200Response instantiates a new GetPlugin200Response object
 This constructor will assign default values to properties that have it defined,
@@ -335,11 +336,6 @@ and a boolean to check if the value has been set.
 
 SetRequestCriteria sets RequestCriteria field to given value.
 
-### HasRequestCriteria
-
-`func (o *GetPlugin200Response) HasRequestCriteria() bool`
-
-HasRequestCriteria returns a boolean if a field has been set.
 
 ### GetInvokeForInternalOperations
 
@@ -2965,6 +2961,31 @@ SetPingInterval sets PingInterval field to given value.
 `func (o *GetPlugin200Response) HasPingInterval() bool`
 
 HasPingInterval returns a boolean if a field has been set.
+
+### GetAllowedRequestControl
+
+`func (o *GetPlugin200Response) GetAllowedRequestControl() []string`
+
+GetAllowedRequestControl returns the AllowedRequestControl field if non-nil, zero value otherwise.
+
+### GetAllowedRequestControlOk
+
+`func (o *GetPlugin200Response) GetAllowedRequestControlOk() (*[]string, bool)`
+
+GetAllowedRequestControlOk returns a tuple with the AllowedRequestControl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowedRequestControl
+
+`func (o *GetPlugin200Response) SetAllowedRequestControl(v []string)`
+
+SetAllowedRequestControl sets AllowedRequestControl field to given value.
+
+### HasAllowedRequestControl
+
+`func (o *GetPlugin200Response) HasAllowedRequestControl() bool`
+
+HasAllowedRequestControl returns a boolean if a field has been set.
 
 ### GetDefaultUserPasswordStorageScheme
 

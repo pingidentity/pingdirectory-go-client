@@ -55,9 +55,9 @@ type LdapConnectionHandlerResponse struct {
 	SslClientAuthPolicy *EnumconnectionHandlerSslClientAuthPolicyProp `json:"sslClientAuthPolicy,omitempty"`
 	// Specifies the maximum number of pending connection attempts that are allowed to queue up in the accept backlog before the server starts rejecting new connection attempts.
 	AcceptBacklog *int64 `json:"acceptBacklog,omitempty"`
-	// Specifies the names of the SSL protocols that are allowed for use in SSL or StartTLS communication. The set of supported ssl protocols can be viewed via the ssl context monitor entry.
+	// Specifies the names of the TLS protocols that are allowed for use in SSL or StartTLS communication. The set of supported ssl protocols can be viewed via the ssl context monitor entry.
 	SslProtocol []string `json:"sslProtocol,omitempty"`
-	// Specifies the names of the SSL cipher suites that are allowed for use in SSL or StartTLS communication. The set of supported cipher suites can be viewed via the ssl context monitor entry.
+	// Specifies the names of the TLS cipher suites that are allowed for use in SSL or StartTLS communication. The set of supported cipher suites can be viewed via the ssl context monitor entry.
 	SslCipherSuite []string `json:"sslCipherSuite,omitempty"`
 	// Specifies the maximum length of time that attempts to write data to LDAP clients should be allowed to block.
 	MaxBlockedWriteTimeLimit *string `json:"maxBlockedWriteTimeLimit,omitempty"`

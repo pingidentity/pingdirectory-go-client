@@ -32,6 +32,8 @@ type AddAzureKeyVaultCipherStreamProviderRequest struct {
 	SecretName string `json:"secretName"`
 	// The path to a file that will hold metadata about the encryption performed by this Azure Key Vault Cipher Stream Provider.
 	EncryptionMetadataFile *string `json:"encryptionMetadataFile,omitempty"`
+	// The PBKDF2 iteration count that will be used when deriving the encryption key used to protect the encryption settings database.
+	IterationCount *int64 `json:"iterationCount,omitempty"`
 	// A description for this Cipher Stream Provider
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server.
@@ -245,6 +247,38 @@ func (o *AddAzureKeyVaultCipherStreamProviderRequest) SetEncryptionMetadataFile(
 	o.EncryptionMetadataFile = &v
 }
 
+// GetIterationCount returns the IterationCount field value if set, zero value otherwise.
+func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetIterationCount() int64 {
+	if o == nil || IsNil(o.IterationCount) {
+		var ret int64
+		return ret
+	}
+	return *o.IterationCount
+}
+
+// GetIterationCountOk returns a tuple with the IterationCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetIterationCountOk() (*int64, bool) {
+	if o == nil || IsNil(o.IterationCount) {
+		return nil, false
+	}
+	return o.IterationCount, true
+}
+
+// HasIterationCount returns a boolean if a field has been set.
+func (o *AddAzureKeyVaultCipherStreamProviderRequest) HasIterationCount() bool {
+	if o != nil && !IsNil(o.IterationCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetIterationCount gets a reference to the given int64 and assigns it to the IterationCount field.
+func (o *AddAzureKeyVaultCipherStreamProviderRequest) SetIterationCount(v int64) {
+	o.IterationCount = &v
+}
+
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetDescription() string {
 	if o == nil || IsNil(o.Description) {
@@ -321,6 +355,9 @@ func (o AddAzureKeyVaultCipherStreamProviderRequest) ToMap() (map[string]interfa
 	toSerialize["secretName"] = o.SecretName
 	if !IsNil(o.EncryptionMetadataFile) {
 		toSerialize["encryptionMetadataFile"] = o.EncryptionMetadataFile
+	}
+	if !IsNil(o.IterationCount) {
+		toSerialize["iterationCount"] = o.IterationCount
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description

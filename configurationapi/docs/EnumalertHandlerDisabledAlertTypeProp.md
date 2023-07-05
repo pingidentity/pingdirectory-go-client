@@ -83,6 +83,12 @@
 
 * `EMBEDDED_POSTGRESQL_UNAVAILABLE` (value: `"embedded-postgresql-unavailable"`)
 
+* `ENCRYPTION_SETTINGS_DATABASE_ACCESS_RESTORED` (value: `"encryption-settings-database-access-restored"`)
+
+* `ENCRYPTION_SETTINGS_DATABASE_INACCESSIBLE` (value: `"encryption-settings-database-inaccessible"`)
+
+* `ENCRYPTION_SETTINGS_DATABASE_PROLONGED_OUTAGE` (value: `"encryption-settings-database-prolonged-outage"`)
+
 * `ENTERING_LOCKDOWN_MODE` (value: `"entering-lockdown-mode"`)
 
 * `ENTRY_REFERENCES_REMOVED_ATTRIBUTE_TYPE` (value: `"entry-references-removed-attribute-type"`)
@@ -351,7 +357,11 @@
 
 * `PASSWORD_CHANGED_ACCOUNT_STATUS_NOTIFICATION` (value: `"password-changed-account-status-notification"`)
 
+* `ACCOUNT_AUTHENTICATED_ACCOUNT_STATUS_NOTIFICATION` (value: `"account-authenticated-account-status-notification"`)
+
 * `ACCOUNT_CREATED_ACCOUNT_STATUS_NOTIFICATION` (value: `"account-created-account-status-notification"`)
+
+* `ACCOUNT_DELETED_ACCOUNT_STATUS_NOTIFICATION` (value: `"account-deleted-account-status-notification"`)
 
 * `ACCOUNT_UPDATED_ACCOUNT_STATUS_NOTIFICATION` (value: `"account-updated-account-status-notification"`)
 
@@ -368,6 +378,10 @@
 * `REPLACE_CERTIFICATE_SUCCEEDED` (value: `"replace-certificate-succeeded"`)
 
 * `REPLACE_CERTIFICATE_FAILED` (value: `"replace-certificate-failed"`)
+
+* `REPLICATION_MISSING_CHANGES_RISK` (value: `"replication-missing-changes-risk"`)
+
+* `REPLICATION_NOT_PURGING_OBSOLETE_REPLICAS` (value: `"replication-not-purging-obsolete-replicas"`)
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

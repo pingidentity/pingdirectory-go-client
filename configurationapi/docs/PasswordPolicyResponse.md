@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **DefaultPasswordStorageScheme** | **[]string** | Specifies the names of the password storage schemes that are used to encode clear-text passwords for this password policy. | 
 **DeprecatedPasswordStorageScheme** | Pointer to **[]string** | Specifies the names of the password storage schemes that are considered deprecated for this password policy. | [optional] 
 **AllowMultiplePasswordValues** | Pointer to **bool** | Indicates whether user entries can have multiple distinct values for the password attribute. | [optional] 
-**AllowPreEncodedPasswords** | Pointer to **bool** | Indicates whether users can change their passwords by providing a pre-encoded value. | [optional] 
+**AllowPreEncodedPasswords** | Pointer to [**EnumpasswordPolicyAllowPreEncodedPasswordsProp**](EnumpasswordPolicyAllowPreEncodedPasswordsProp.md) |  | [optional] 
 **PasswordValidator** | Pointer to **[]string** | Specifies the names of the password validators that are used with the associated password storage scheme. | [optional] 
 **BindPasswordValidator** | Pointer to **[]string** | Specifies the names of the password validators that should be invoked for bind operations. | [optional] 
 **MinimumBindPasswordValidationFrequency** | Pointer to **string** | Indicates how frequently password validation should be performed during bind operations for each user to whom this password policy is assigned. | [optional] 
@@ -365,20 +365,20 @@ HasAllowMultiplePasswordValues returns a boolean if a field has been set.
 
 ### GetAllowPreEncodedPasswords
 
-`func (o *PasswordPolicyResponse) GetAllowPreEncodedPasswords() bool`
+`func (o *PasswordPolicyResponse) GetAllowPreEncodedPasswords() EnumpasswordPolicyAllowPreEncodedPasswordsProp`
 
 GetAllowPreEncodedPasswords returns the AllowPreEncodedPasswords field if non-nil, zero value otherwise.
 
 ### GetAllowPreEncodedPasswordsOk
 
-`func (o *PasswordPolicyResponse) GetAllowPreEncodedPasswordsOk() (*bool, bool)`
+`func (o *PasswordPolicyResponse) GetAllowPreEncodedPasswordsOk() (*EnumpasswordPolicyAllowPreEncodedPasswordsProp, bool)`
 
 GetAllowPreEncodedPasswordsOk returns a tuple with the AllowPreEncodedPasswords field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowPreEncodedPasswords
 
-`func (o *PasswordPolicyResponse) SetAllowPreEncodedPasswords(v bool)`
+`func (o *PasswordPolicyResponse) SetAllowPreEncodedPasswords(v EnumpasswordPolicyAllowPreEncodedPasswordsProp)`
 
 SetAllowPreEncodedPasswords sets AllowPreEncodedPasswords field to given value.
 

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **HttpProxyExternalServer** | Pointer to **string** | A reference to an HTTP proxy server that should be used for requests sent to the Azure service. | [optional] 
 **SecretName** | **string** | The name of the secret to retrieve. | 
 **EncryptionMetadataFile** | **string** | The path to a file that will hold metadata about the encryption performed by this Azure Key Vault Cipher Stream Provider. | 
+**IterationCount** | Pointer to **int64** | The PBKDF2 iteration count that will be used when deriving the encryption key used to protect the encryption settings database. | [optional] 
 **Description** | Pointer to **string** | A description for this Cipher Stream Provider | [optional] 
 **Enabled** | **bool** | Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server. | 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
@@ -179,6 +180,31 @@ and a boolean to check if the value has been set.
 
 SetEncryptionMetadataFile sets EncryptionMetadataFile field to given value.
 
+
+### GetIterationCount
+
+`func (o *AzureKeyVaultCipherStreamProviderResponse) GetIterationCount() int64`
+
+GetIterationCount returns the IterationCount field if non-nil, zero value otherwise.
+
+### GetIterationCountOk
+
+`func (o *AzureKeyVaultCipherStreamProviderResponse) GetIterationCountOk() (*int64, bool)`
+
+GetIterationCountOk returns a tuple with the IterationCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIterationCount
+
+`func (o *AzureKeyVaultCipherStreamProviderResponse) SetIterationCount(v int64)`
+
+SetIterationCount sets IterationCount field to given value.
+
+### HasIterationCount
+
+`func (o *AzureKeyVaultCipherStreamProviderResponse) HasIterationCount() bool`
+
+HasIterationCount returns a boolean if a field has been set.
 
 ### GetDescription
 
