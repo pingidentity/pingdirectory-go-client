@@ -19,6 +19,9 @@ Name | Type | Description | Notes
 **MaximumAllowedNonlocalResponseTime** | Pointer to **string** | The maximum length of time to wait for a response from an external server in a different location from this Directory Server before considering it unavailable. | [optional] 
 **UsePasswordPolicyControl** | Pointer to **bool** | Indicates whether to include the password policy request control (as defined in draft-behera-ldap-password-policy-10) in bind requests sent to the external server. | [optional] 
 **Description** | Pointer to **string** | A description for this Pass Through Authentication Handler | [optional] 
+**IncludedLocalEntryBaseDN** | Pointer to **[]string** | The base DNs for the local users whose authentication attempts may be passed through to the external authentication service. | [optional] 
+**ConnectionCriteria** | Pointer to **string** | A reference to connection criteria that will be used to indicate which bind requests should be passed through to the external authentication service. | [optional] 
+**RequestCriteria** | Pointer to **string** | A reference to request criteria that will be used to indicate which bind requests should be passed through to the external authentication service. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 
@@ -385,6 +388,81 @@ SetDescription sets Description field to given value.
 `func (o *LdapPassThroughAuthenticationHandlerResponse) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetIncludedLocalEntryBaseDN
+
+`func (o *LdapPassThroughAuthenticationHandlerResponse) GetIncludedLocalEntryBaseDN() []string`
+
+GetIncludedLocalEntryBaseDN returns the IncludedLocalEntryBaseDN field if non-nil, zero value otherwise.
+
+### GetIncludedLocalEntryBaseDNOk
+
+`func (o *LdapPassThroughAuthenticationHandlerResponse) GetIncludedLocalEntryBaseDNOk() (*[]string, bool)`
+
+GetIncludedLocalEntryBaseDNOk returns a tuple with the IncludedLocalEntryBaseDN field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludedLocalEntryBaseDN
+
+`func (o *LdapPassThroughAuthenticationHandlerResponse) SetIncludedLocalEntryBaseDN(v []string)`
+
+SetIncludedLocalEntryBaseDN sets IncludedLocalEntryBaseDN field to given value.
+
+### HasIncludedLocalEntryBaseDN
+
+`func (o *LdapPassThroughAuthenticationHandlerResponse) HasIncludedLocalEntryBaseDN() bool`
+
+HasIncludedLocalEntryBaseDN returns a boolean if a field has been set.
+
+### GetConnectionCriteria
+
+`func (o *LdapPassThroughAuthenticationHandlerResponse) GetConnectionCriteria() string`
+
+GetConnectionCriteria returns the ConnectionCriteria field if non-nil, zero value otherwise.
+
+### GetConnectionCriteriaOk
+
+`func (o *LdapPassThroughAuthenticationHandlerResponse) GetConnectionCriteriaOk() (*string, bool)`
+
+GetConnectionCriteriaOk returns a tuple with the ConnectionCriteria field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConnectionCriteria
+
+`func (o *LdapPassThroughAuthenticationHandlerResponse) SetConnectionCriteria(v string)`
+
+SetConnectionCriteria sets ConnectionCriteria field to given value.
+
+### HasConnectionCriteria
+
+`func (o *LdapPassThroughAuthenticationHandlerResponse) HasConnectionCriteria() bool`
+
+HasConnectionCriteria returns a boolean if a field has been set.
+
+### GetRequestCriteria
+
+`func (o *LdapPassThroughAuthenticationHandlerResponse) GetRequestCriteria() string`
+
+GetRequestCriteria returns the RequestCriteria field if non-nil, zero value otherwise.
+
+### GetRequestCriteriaOk
+
+`func (o *LdapPassThroughAuthenticationHandlerResponse) GetRequestCriteriaOk() (*string, bool)`
+
+GetRequestCriteriaOk returns a tuple with the RequestCriteria field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequestCriteria
+
+`func (o *LdapPassThroughAuthenticationHandlerResponse) SetRequestCriteria(v string)`
+
+SetRequestCriteria sets RequestCriteria field to given value.
+
+### HasRequestCriteria
+
+`func (o *LdapPassThroughAuthenticationHandlerResponse) HasRequestCriteria() bool`
+
+HasRequestCriteria returns a boolean if a field has been set.
 
 ### GetMeta
 

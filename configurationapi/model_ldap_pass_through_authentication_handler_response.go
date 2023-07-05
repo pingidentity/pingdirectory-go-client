@@ -46,7 +46,13 @@ type LdapPassThroughAuthenticationHandlerResponse struct {
 	// Indicates whether to include the password policy request control (as defined in draft-behera-ldap-password-policy-10) in bind requests sent to the external server.
 	UsePasswordPolicyControl *bool `json:"usePasswordPolicyControl,omitempty"`
 	// A description for this Pass Through Authentication Handler
-	Description                                   *string                                            `json:"description,omitempty"`
+	Description *string `json:"description,omitempty"`
+	// The base DNs for the local users whose authentication attempts may be passed through to the external authentication service.
+	IncludedLocalEntryBaseDN []string `json:"includedLocalEntryBaseDN,omitempty"`
+	// A reference to connection criteria that will be used to indicate which bind requests should be passed through to the external authentication service.
+	ConnectionCriteria *string `json:"connectionCriteria,omitempty"`
+	// A reference to request criteria that will be used to indicate which bind requests should be passed through to the external authentication service.
+	RequestCriteria                               *string                                            `json:"requestCriteria,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 }
@@ -506,6 +512,102 @@ func (o *LdapPassThroughAuthenticationHandlerResponse) SetDescription(v string) 
 	o.Description = &v
 }
 
+// GetIncludedLocalEntryBaseDN returns the IncludedLocalEntryBaseDN field value if set, zero value otherwise.
+func (o *LdapPassThroughAuthenticationHandlerResponse) GetIncludedLocalEntryBaseDN() []string {
+	if o == nil || IsNil(o.IncludedLocalEntryBaseDN) {
+		var ret []string
+		return ret
+	}
+	return o.IncludedLocalEntryBaseDN
+}
+
+// GetIncludedLocalEntryBaseDNOk returns a tuple with the IncludedLocalEntryBaseDN field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LdapPassThroughAuthenticationHandlerResponse) GetIncludedLocalEntryBaseDNOk() ([]string, bool) {
+	if o == nil || IsNil(o.IncludedLocalEntryBaseDN) {
+		return nil, false
+	}
+	return o.IncludedLocalEntryBaseDN, true
+}
+
+// HasIncludedLocalEntryBaseDN returns a boolean if a field has been set.
+func (o *LdapPassThroughAuthenticationHandlerResponse) HasIncludedLocalEntryBaseDN() bool {
+	if o != nil && !IsNil(o.IncludedLocalEntryBaseDN) {
+		return true
+	}
+
+	return false
+}
+
+// SetIncludedLocalEntryBaseDN gets a reference to the given []string and assigns it to the IncludedLocalEntryBaseDN field.
+func (o *LdapPassThroughAuthenticationHandlerResponse) SetIncludedLocalEntryBaseDN(v []string) {
+	o.IncludedLocalEntryBaseDN = v
+}
+
+// GetConnectionCriteria returns the ConnectionCriteria field value if set, zero value otherwise.
+func (o *LdapPassThroughAuthenticationHandlerResponse) GetConnectionCriteria() string {
+	if o == nil || IsNil(o.ConnectionCriteria) {
+		var ret string
+		return ret
+	}
+	return *o.ConnectionCriteria
+}
+
+// GetConnectionCriteriaOk returns a tuple with the ConnectionCriteria field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LdapPassThroughAuthenticationHandlerResponse) GetConnectionCriteriaOk() (*string, bool) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
+		return nil, false
+	}
+	return o.ConnectionCriteria, true
+}
+
+// HasConnectionCriteria returns a boolean if a field has been set.
+func (o *LdapPassThroughAuthenticationHandlerResponse) HasConnectionCriteria() bool {
+	if o != nil && !IsNil(o.ConnectionCriteria) {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectionCriteria gets a reference to the given string and assigns it to the ConnectionCriteria field.
+func (o *LdapPassThroughAuthenticationHandlerResponse) SetConnectionCriteria(v string) {
+	o.ConnectionCriteria = &v
+}
+
+// GetRequestCriteria returns the RequestCriteria field value if set, zero value otherwise.
+func (o *LdapPassThroughAuthenticationHandlerResponse) GetRequestCriteria() string {
+	if o == nil || IsNil(o.RequestCriteria) {
+		var ret string
+		return ret
+	}
+	return *o.RequestCriteria
+}
+
+// GetRequestCriteriaOk returns a tuple with the RequestCriteria field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LdapPassThroughAuthenticationHandlerResponse) GetRequestCriteriaOk() (*string, bool) {
+	if o == nil || IsNil(o.RequestCriteria) {
+		return nil, false
+	}
+	return o.RequestCriteria, true
+}
+
+// HasRequestCriteria returns a boolean if a field has been set.
+func (o *LdapPassThroughAuthenticationHandlerResponse) HasRequestCriteria() bool {
+	if o != nil && !IsNil(o.RequestCriteria) {
+		return true
+	}
+
+	return false
+}
+
+// SetRequestCriteria gets a reference to the given string and assigns it to the RequestCriteria field.
+func (o *LdapPassThroughAuthenticationHandlerResponse) SetRequestCriteria(v string) {
+	o.RequestCriteria = &v
+}
+
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *LdapPassThroughAuthenticationHandlerResponse) GetMeta() MetaMeta {
 	if o == nil || IsNil(o.Meta) {
@@ -612,6 +714,15 @@ func (o LdapPassThroughAuthenticationHandlerResponse) ToMap() (map[string]interf
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.IncludedLocalEntryBaseDN) {
+		toSerialize["includedLocalEntryBaseDN"] = o.IncludedLocalEntryBaseDN
+	}
+	if !IsNil(o.ConnectionCriteria) {
+		toSerialize["connectionCriteria"] = o.ConnectionCriteria
+	}
+	if !IsNil(o.RequestCriteria) {
+		toSerialize["requestCriteria"] = o.RequestCriteria
 	}
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta

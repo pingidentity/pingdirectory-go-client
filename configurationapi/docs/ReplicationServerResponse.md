@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **RemoteMonitorUpdateInterval** | Pointer to **string** | Specifies the duration that topology monitor data will be cached before it is requested again from a remote server. | [optional] 
 **RestrictedDomain** | Pointer to **[]string** | Specifies the base DN of domains that are only replicated between server instances that belong to the same replication set. | [optional] 
 **GatewayPriority** | **int64** | Specifies the gateway priority of the Replication Server in the current location. | 
+**MissingChangesAlertThresholdPercent** | Pointer to **int64** | Specifies the missing changes alert threshold as a percentage of the total pending changes. For instance, a value of 80 indicates that the replica is 80% of the way to losing changes. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 
@@ -343,6 +344,31 @@ and a boolean to check if the value has been set.
 
 SetGatewayPriority sets GatewayPriority field to given value.
 
+
+### GetMissingChangesAlertThresholdPercent
+
+`func (o *ReplicationServerResponse) GetMissingChangesAlertThresholdPercent() int64`
+
+GetMissingChangesAlertThresholdPercent returns the MissingChangesAlertThresholdPercent field if non-nil, zero value otherwise.
+
+### GetMissingChangesAlertThresholdPercentOk
+
+`func (o *ReplicationServerResponse) GetMissingChangesAlertThresholdPercentOk() (*int64, bool)`
+
+GetMissingChangesAlertThresholdPercentOk returns a tuple with the MissingChangesAlertThresholdPercent field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMissingChangesAlertThresholdPercent
+
+`func (o *ReplicationServerResponse) SetMissingChangesAlertThresholdPercent(v int64)`
+
+SetMissingChangesAlertThresholdPercent sets MissingChangesAlertThresholdPercent field to given value.
+
+### HasMissingChangesAlertThresholdPercent
+
+`func (o *ReplicationServerResponse) HasMissingChangesAlertThresholdPercent() bool`
+
+HasMissingChangesAlertThresholdPercent returns a boolean if a field has been set.
 
 ### GetMeta
 

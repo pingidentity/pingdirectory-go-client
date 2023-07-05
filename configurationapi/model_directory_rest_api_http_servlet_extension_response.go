@@ -39,8 +39,10 @@ type DirectoryRestApiHttpServletExtensionResponse struct {
 	// A set of operational attributes that will be returned with entries by default.
 	DefaultOperationalAttribute []string `json:"defaultOperationalAttribute,omitempty"`
 	// A set of attributes which the client is not allowed to provide for the expand query parameters. This should be used for attributes that could either have a large number of values or that reference entries that are very large like groups.
-	RejectExpansionAttribute []string                                     `json:"rejectExpansionAttribute,omitempty"`
-	AllowedControl           []EnumhttpServletExtensionAllowedControlProp `json:"allowedControl,omitempty"`
+	RejectExpansionAttribute []string `json:"rejectExpansionAttribute,omitempty"`
+	// Indicates whether to always use permissive modify behavior for PATCH requests, even if the request did not include the permissive modify request control.
+	AlwaysUsePermissiveModify *bool                                        `json:"alwaysUsePermissiveModify,omitempty"`
+	AllowedControl            []EnumhttpServletExtensionAllowedControlProp `json:"allowedControl,omitempty"`
 	// A description for this HTTP Servlet Extension
 	Description *string `json:"description,omitempty"`
 	// The cross-origin request policy to use for the HTTP Servlet Extension.
@@ -408,6 +410,38 @@ func (o *DirectoryRestApiHttpServletExtensionResponse) SetRejectExpansionAttribu
 	o.RejectExpansionAttribute = v
 }
 
+// GetAlwaysUsePermissiveModify returns the AlwaysUsePermissiveModify field value if set, zero value otherwise.
+func (o *DirectoryRestApiHttpServletExtensionResponse) GetAlwaysUsePermissiveModify() bool {
+	if o == nil || IsNil(o.AlwaysUsePermissiveModify) {
+		var ret bool
+		return ret
+	}
+	return *o.AlwaysUsePermissiveModify
+}
+
+// GetAlwaysUsePermissiveModifyOk returns a tuple with the AlwaysUsePermissiveModify field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DirectoryRestApiHttpServletExtensionResponse) GetAlwaysUsePermissiveModifyOk() (*bool, bool) {
+	if o == nil || IsNil(o.AlwaysUsePermissiveModify) {
+		return nil, false
+	}
+	return o.AlwaysUsePermissiveModify, true
+}
+
+// HasAlwaysUsePermissiveModify returns a boolean if a field has been set.
+func (o *DirectoryRestApiHttpServletExtensionResponse) HasAlwaysUsePermissiveModify() bool {
+	if o != nil && !IsNil(o.AlwaysUsePermissiveModify) {
+		return true
+	}
+
+	return false
+}
+
+// SetAlwaysUsePermissiveModify gets a reference to the given bool and assigns it to the AlwaysUsePermissiveModify field.
+func (o *DirectoryRestApiHttpServletExtensionResponse) SetAlwaysUsePermissiveModify(v bool) {
+	o.AlwaysUsePermissiveModify = &v
+}
+
 // GetAllowedControl returns the AllowedControl field value if set, zero value otherwise.
 func (o *DirectoryRestApiHttpServletExtensionResponse) GetAllowedControl() []EnumhttpServletExtensionAllowedControlProp {
 	if o == nil || IsNil(o.AllowedControl) {
@@ -670,6 +704,9 @@ func (o DirectoryRestApiHttpServletExtensionResponse) ToMap() (map[string]interf
 	}
 	if !IsNil(o.RejectExpansionAttribute) {
 		toSerialize["rejectExpansionAttribute"] = o.RejectExpansionAttribute
+	}
+	if !IsNil(o.AlwaysUsePermissiveModify) {
+		toSerialize["alwaysUsePermissiveModify"] = o.AlwaysUsePermissiveModify
 	}
 	if !IsNil(o.AllowedControl) {
 		toSerialize["allowedControl"] = o.AllowedControl

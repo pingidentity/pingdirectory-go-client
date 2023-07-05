@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-93/pd_ds_use_config_api
 tags:
 - description: Access account-status-notification-handlers
   name: account-status-notification-handler
@@ -246,10 +246,18 @@ components:
           type: boolean
           description: >-
               Indicates whether the server should attempt to invoke this Account Status Notification Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver a message) will not delay processing for the operation that triggered the notification.
+        accountAuthenticationNotificationResultCriteria:
+          type: string
+          description: >-
+              A result criteria object that identifies which successful bind operations should result in account authentication notifications for this handler.
         accountCreationNotificationRequestCriteria:
           type: string
           description: >-
               A request criteria object that identifies which add requests should result in account creation notifications for this handler.
+        accountDeletionNotificationRequestCriteria:
+          type: string
+          description: >-
+              A request criteria object that identifies which delete requests should result in account deletion notifications for this handler.
         accountUpdateNotificationRequestCriteria:
           type: string
           description: >-
@@ -318,10 +326,18 @@ components:
           type: boolean
           description: >-
               Indicates whether the server should attempt to invoke this Account Status Notification Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver a message) will not delay processing for the operation that triggered the notification.
+        accountAuthenticationNotificationResultCriteria:
+          type: string
+          description: >-
+              A result criteria object that identifies which successful bind operations should result in account authentication notifications for this handler.
         accountCreationNotificationRequestCriteria:
           type: string
           description: >-
               A request criteria object that identifies which add requests should result in account creation notifications for this handler.
+        accountDeletionNotificationRequestCriteria:
+          type: string
+          description: >-
+              A request criteria object that identifies which delete requests should result in account deletion notifications for this handler.
         accountUpdateNotificationRequestCriteria:
           type: string
           description: >-
@@ -350,7 +366,9 @@ components:
       - "password-expiring"
       - "password-reset"
       - "password-changed"
+      - "account-authenticated"
       - "account-created"
+      - "account-deleted"
       - "account-updated"
       - "bind-password-failed-validation"
       - "must-change-password"
@@ -404,10 +422,18 @@ components:
           type: boolean
           description: >-
               Indicates whether the server should attempt to invoke this Account Status Notification Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver a message) will not delay processing for the operation that triggered the notification.
+        accountAuthenticationNotificationResultCriteria:
+          type: string
+          description: >-
+              A result criteria object that identifies which successful bind operations should result in account authentication notifications for this handler.
         accountCreationNotificationRequestCriteria:
           type: string
           description: >-
               A request criteria object that identifies which add requests should result in account creation notifications for this handler.
+        accountDeletionNotificationRequestCriteria:
+          type: string
+          description: >-
+              A request criteria object that identifies which delete requests should result in account deletion notifications for this handler.
         accountUpdateNotificationRequestCriteria:
           type: string
           description: >-
@@ -468,10 +494,18 @@ components:
           type: boolean
           description: >-
               Indicates whether the server should attempt to invoke this Account Status Notification Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver a message) will not delay processing for the operation that triggered the notification.
+        accountAuthenticationNotificationResultCriteria:
+          type: string
+          description: >-
+              A result criteria object that identifies which successful bind operations should result in account authentication notifications for this handler.
         accountCreationNotificationRequestCriteria:
           type: string
           description: >-
               A request criteria object that identifies which add requests should result in account creation notifications for this handler.
+        accountDeletionNotificationRequestCriteria:
+          type: string
+          description: >-
+              A request criteria object that identifies which delete requests should result in account deletion notifications for this handler.
         accountUpdateNotificationRequestCriteria:
           type: string
           description: >-
@@ -568,10 +602,18 @@ components:
           type: string
           description: >-
               The path to a file containing the template to use to generate the email message to send in the event that a user changes their own password.
+        accountAuthenticatedMessageTemplate:
+          type: string
+          description: >-
+              The path to a file containing the template to use to generate the email message to send in the event that an account has successfully authenticated in a bind operation that matches the criteria provided in the account-authentication-notification-request-criteria property.
         accountCreatedMessageTemplate:
           type: string
           description: >-
               The path to a file containing the template to use to generate the email message to send in the event that a new account is created in an add request that matches the criteria provided in the account-creation-notification-request-criteria property.
+        accountDeletedMessageTemplate:
+          type: string
+          description: >-
+              The path to a file containing the template to use to generate the email message to send in the event that an existing accout has been removed in a delete request that matches the criteria provided in the account-deletion-notification-request-criteria property.
         accountUpdatedMessageTemplate:
           type: string
           description: >-
@@ -596,10 +638,18 @@ components:
           type: boolean
           description: >-
               Indicates whether the server should attempt to invoke this Account Status Notification Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver a message) will not delay processing for the operation that triggered the notification.
+        accountAuthenticationNotificationResultCriteria:
+          type: string
+          description: >-
+              A result criteria object that identifies which successful bind operations should result in account authentication notifications for this handler.
         accountCreationNotificationRequestCriteria:
           type: string
           description: >-
               A request criteria object that identifies which add requests should result in account creation notifications for this handler.
+        accountDeletionNotificationRequestCriteria:
+          type: string
+          description: >-
+              A request criteria object that identifies which delete requests should result in account deletion notifications for this handler.
         accountUpdateNotificationRequestCriteria:
           type: string
           description: >-
@@ -665,10 +715,18 @@ components:
           type: boolean
           description: >-
               Indicates whether the server should attempt to invoke this Account Status Notification Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver a message) will not delay processing for the operation that triggered the notification.
+        accountAuthenticationNotificationResultCriteria:
+          type: string
+          description: >-
+              A result criteria object that identifies which successful bind operations should result in account authentication notifications for this handler.
         accountCreationNotificationRequestCriteria:
           type: string
           description: >-
               A request criteria object that identifies which add requests should result in account creation notifications for this handler.
+        accountDeletionNotificationRequestCriteria:
+          type: string
+          description: >-
+              A request criteria object that identifies which delete requests should result in account deletion notifications for this handler.
         accountUpdateNotificationRequestCriteria:
           type: string
           description: >-

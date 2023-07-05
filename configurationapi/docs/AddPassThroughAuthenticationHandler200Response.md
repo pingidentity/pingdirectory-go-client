@@ -6,6 +6,22 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | Name of the Pass Through Authentication Handler | 
 **Schemas** | [**[]EnumthirdPartyPassThroughAuthenticationHandlerSchemaUrn**](EnumthirdPartyPassThroughAuthenticationHandlerSchemaUrn.md) |  | 
+**ApiURL** | **string** | Specifies the API endpoint for the PingOne web service. | 
+**AuthURL** | **string** | Specifies the API endpoint for the PingOne authentication service. | 
+**OAuthClientID** | **string** | Specifies the OAuth Client ID used to authenticate connections to the PingOne API. | 
+**OAuthClientSecret** | Pointer to **string** | Specifies the OAuth Client Secret used to authenticate connections to the PingOne API. | [optional] 
+**OAuthClientSecretPassphraseProvider** | Pointer to **string** | Specifies a passphrase provider that can be used to obtain the OAuth Client Secret used to authenticate connections to the PingOne API. | [optional] 
+**EnvironmentID** | **string** | Specifies the PingOne Environment that will be associated with this PingOne Pass Through Authentication Handler. | 
+**HttpProxyExternalServer** | Pointer to **string** | A reference to an HTTP proxy server that should be used for requests sent to the PingOne service. | [optional] 
+**UserMappingLocalAttribute** | **[]string** | The names of the attributes in the local user entry whose values must match the values of the corresponding fields in the PingOne service. | 
+**UserMappingRemoteJSONField** | **[]string** | The names of the fields in the PingOne service whose values must match the values of the corresponding attributes in the local user entry, as specified in the user-mapping-local-attribute property. | 
+**AdditionalUserMappingSCIMFilter** | Pointer to **string** | An optional SCIM filter that will be ANDed with the filter created to identify the account in the PingOne service that corresponds to the local entry. Only the \&quot;eq\&quot;, \&quot;sw\&quot;, \&quot;and\&quot;, and \&quot;or\&quot; filter types may be used. | [optional] 
+**Description** | Pointer to **string** | A description for this Pass Through Authentication Handler | [optional] 
+**IncludedLocalEntryBaseDN** | Pointer to **[]string** | The base DNs for the local users whose authentication attempts may be passed through to the external authentication service. | [optional] 
+**ConnectionCriteria** | Pointer to **string** | A reference to connection criteria that will be used to indicate which bind requests should be passed through to the external authentication service. | [optional] 
+**RequestCriteria** | Pointer to **string** | A reference to request criteria that will be used to indicate which bind requests should be passed through to the external authentication service. | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
+**Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Server** | **[]string** | Specifies the LDAP external server(s) to which authentication attempts should be forwarded. | 
 **ServerAccessMode** | [**EnumpassThroughAuthenticationHandlerServerAccessModeProp**](EnumpassThroughAuthenticationHandlerServerAccessModeProp.md) |  | 
 **DnMap** | Pointer to **[]string** | Specifies one or more DN mappings that may be used to transform bind DNs before attempting to bind to the external servers. | [optional] 
@@ -18,9 +34,8 @@ Name | Type | Description | Notes
 **MaximumAllowedLocalResponseTime** | Pointer to **string** | The maximum length of time to wait for a response from an external server in the same location as this Directory Server before considering it unavailable. | [optional] 
 **MaximumAllowedNonlocalResponseTime** | Pointer to **string** | The maximum length of time to wait for a response from an external server in a different location from this Directory Server before considering it unavailable. | [optional] 
 **UsePasswordPolicyControl** | Pointer to **bool** | Indicates whether to include the password policy request control (as defined in draft-behera-ldap-password-policy-10) in bind requests sent to the external server. | [optional] 
-**Description** | Pointer to **string** | A description for this Pass Through Authentication Handler | [optional] 
-**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
-**Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**SubordinatePassThroughAuthenticationHandler** | **[]string** | The set of subordinate pass-through authentication handlers that may be used to perform the authentication processing. Handlers will be invoked in order until one is found for which the bind operation matches the associated criteria and either succeeds or fails in a manner that should not be ignored. | 
+**ContinueOnFailureType** | Pointer to [**[]EnumpassThroughAuthenticationHandlerContinueOnFailureTypeProp**](EnumpassThroughAuthenticationHandlerContinueOnFailureTypeProp.md) |  | [optional] 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Pass Through Authentication Handler. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Pass Through Authentication Handler. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 
@@ -28,7 +43,7 @@ Name | Type | Description | Notes
 
 ### NewAddPassThroughAuthenticationHandler200Response
 
-`func NewAddPassThroughAuthenticationHandler200Response(id string, schemas []EnumthirdPartyPassThroughAuthenticationHandlerSchemaUrn, server []string, serverAccessMode EnumpassThroughAuthenticationHandlerServerAccessModeProp, initialConnections int64, maxConnections int64, extensionClass string, ) *AddPassThroughAuthenticationHandler200Response`
+`func NewAddPassThroughAuthenticationHandler200Response(id string, schemas []EnumthirdPartyPassThroughAuthenticationHandlerSchemaUrn, apiURL string, authURL string, oAuthClientID string, environmentID string, userMappingLocalAttribute []string, userMappingRemoteJSONField []string, server []string, serverAccessMode EnumpassThroughAuthenticationHandlerServerAccessModeProp, initialConnections int64, maxConnections int64, subordinatePassThroughAuthenticationHandler []string, extensionClass string, ) *AddPassThroughAuthenticationHandler200Response`
 
 NewAddPassThroughAuthenticationHandler200Response instantiates a new AddPassThroughAuthenticationHandler200Response object
 This constructor will assign default values to properties that have it defined,
@@ -82,6 +97,376 @@ and a boolean to check if the value has been set.
 
 SetSchemas sets Schemas field to given value.
 
+
+### GetApiURL
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetApiURL() string`
+
+GetApiURL returns the ApiURL field if non-nil, zero value otherwise.
+
+### GetApiURLOk
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetApiURLOk() (*string, bool)`
+
+GetApiURLOk returns a tuple with the ApiURL field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiURL
+
+`func (o *AddPassThroughAuthenticationHandler200Response) SetApiURL(v string)`
+
+SetApiURL sets ApiURL field to given value.
+
+
+### GetAuthURL
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetAuthURL() string`
+
+GetAuthURL returns the AuthURL field if non-nil, zero value otherwise.
+
+### GetAuthURLOk
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetAuthURLOk() (*string, bool)`
+
+GetAuthURLOk returns a tuple with the AuthURL field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAuthURL
+
+`func (o *AddPassThroughAuthenticationHandler200Response) SetAuthURL(v string)`
+
+SetAuthURL sets AuthURL field to given value.
+
+
+### GetOAuthClientID
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetOAuthClientID() string`
+
+GetOAuthClientID returns the OAuthClientID field if non-nil, zero value otherwise.
+
+### GetOAuthClientIDOk
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetOAuthClientIDOk() (*string, bool)`
+
+GetOAuthClientIDOk returns a tuple with the OAuthClientID field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOAuthClientID
+
+`func (o *AddPassThroughAuthenticationHandler200Response) SetOAuthClientID(v string)`
+
+SetOAuthClientID sets OAuthClientID field to given value.
+
+
+### GetOAuthClientSecret
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetOAuthClientSecret() string`
+
+GetOAuthClientSecret returns the OAuthClientSecret field if non-nil, zero value otherwise.
+
+### GetOAuthClientSecretOk
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetOAuthClientSecretOk() (*string, bool)`
+
+GetOAuthClientSecretOk returns a tuple with the OAuthClientSecret field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOAuthClientSecret
+
+`func (o *AddPassThroughAuthenticationHandler200Response) SetOAuthClientSecret(v string)`
+
+SetOAuthClientSecret sets OAuthClientSecret field to given value.
+
+### HasOAuthClientSecret
+
+`func (o *AddPassThroughAuthenticationHandler200Response) HasOAuthClientSecret() bool`
+
+HasOAuthClientSecret returns a boolean if a field has been set.
+
+### GetOAuthClientSecretPassphraseProvider
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetOAuthClientSecretPassphraseProvider() string`
+
+GetOAuthClientSecretPassphraseProvider returns the OAuthClientSecretPassphraseProvider field if non-nil, zero value otherwise.
+
+### GetOAuthClientSecretPassphraseProviderOk
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetOAuthClientSecretPassphraseProviderOk() (*string, bool)`
+
+GetOAuthClientSecretPassphraseProviderOk returns a tuple with the OAuthClientSecretPassphraseProvider field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOAuthClientSecretPassphraseProvider
+
+`func (o *AddPassThroughAuthenticationHandler200Response) SetOAuthClientSecretPassphraseProvider(v string)`
+
+SetOAuthClientSecretPassphraseProvider sets OAuthClientSecretPassphraseProvider field to given value.
+
+### HasOAuthClientSecretPassphraseProvider
+
+`func (o *AddPassThroughAuthenticationHandler200Response) HasOAuthClientSecretPassphraseProvider() bool`
+
+HasOAuthClientSecretPassphraseProvider returns a boolean if a field has been set.
+
+### GetEnvironmentID
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetEnvironmentID() string`
+
+GetEnvironmentID returns the EnvironmentID field if non-nil, zero value otherwise.
+
+### GetEnvironmentIDOk
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetEnvironmentIDOk() (*string, bool)`
+
+GetEnvironmentIDOk returns a tuple with the EnvironmentID field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnvironmentID
+
+`func (o *AddPassThroughAuthenticationHandler200Response) SetEnvironmentID(v string)`
+
+SetEnvironmentID sets EnvironmentID field to given value.
+
+
+### GetHttpProxyExternalServer
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetHttpProxyExternalServer() string`
+
+GetHttpProxyExternalServer returns the HttpProxyExternalServer field if non-nil, zero value otherwise.
+
+### GetHttpProxyExternalServerOk
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetHttpProxyExternalServerOk() (*string, bool)`
+
+GetHttpProxyExternalServerOk returns a tuple with the HttpProxyExternalServer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHttpProxyExternalServer
+
+`func (o *AddPassThroughAuthenticationHandler200Response) SetHttpProxyExternalServer(v string)`
+
+SetHttpProxyExternalServer sets HttpProxyExternalServer field to given value.
+
+### HasHttpProxyExternalServer
+
+`func (o *AddPassThroughAuthenticationHandler200Response) HasHttpProxyExternalServer() bool`
+
+HasHttpProxyExternalServer returns a boolean if a field has been set.
+
+### GetUserMappingLocalAttribute
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetUserMappingLocalAttribute() []string`
+
+GetUserMappingLocalAttribute returns the UserMappingLocalAttribute field if non-nil, zero value otherwise.
+
+### GetUserMappingLocalAttributeOk
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetUserMappingLocalAttributeOk() (*[]string, bool)`
+
+GetUserMappingLocalAttributeOk returns a tuple with the UserMappingLocalAttribute field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserMappingLocalAttribute
+
+`func (o *AddPassThroughAuthenticationHandler200Response) SetUserMappingLocalAttribute(v []string)`
+
+SetUserMappingLocalAttribute sets UserMappingLocalAttribute field to given value.
+
+
+### GetUserMappingRemoteJSONField
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetUserMappingRemoteJSONField() []string`
+
+GetUserMappingRemoteJSONField returns the UserMappingRemoteJSONField field if non-nil, zero value otherwise.
+
+### GetUserMappingRemoteJSONFieldOk
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetUserMappingRemoteJSONFieldOk() (*[]string, bool)`
+
+GetUserMappingRemoteJSONFieldOk returns a tuple with the UserMappingRemoteJSONField field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserMappingRemoteJSONField
+
+`func (o *AddPassThroughAuthenticationHandler200Response) SetUserMappingRemoteJSONField(v []string)`
+
+SetUserMappingRemoteJSONField sets UserMappingRemoteJSONField field to given value.
+
+
+### GetAdditionalUserMappingSCIMFilter
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetAdditionalUserMappingSCIMFilter() string`
+
+GetAdditionalUserMappingSCIMFilter returns the AdditionalUserMappingSCIMFilter field if non-nil, zero value otherwise.
+
+### GetAdditionalUserMappingSCIMFilterOk
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetAdditionalUserMappingSCIMFilterOk() (*string, bool)`
+
+GetAdditionalUserMappingSCIMFilterOk returns a tuple with the AdditionalUserMappingSCIMFilter field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAdditionalUserMappingSCIMFilter
+
+`func (o *AddPassThroughAuthenticationHandler200Response) SetAdditionalUserMappingSCIMFilter(v string)`
+
+SetAdditionalUserMappingSCIMFilter sets AdditionalUserMappingSCIMFilter field to given value.
+
+### HasAdditionalUserMappingSCIMFilter
+
+`func (o *AddPassThroughAuthenticationHandler200Response) HasAdditionalUserMappingSCIMFilter() bool`
+
+HasAdditionalUserMappingSCIMFilter returns a boolean if a field has been set.
+
+### GetDescription
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *AddPassThroughAuthenticationHandler200Response) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *AddPassThroughAuthenticationHandler200Response) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
+
+### GetIncludedLocalEntryBaseDN
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetIncludedLocalEntryBaseDN() []string`
+
+GetIncludedLocalEntryBaseDN returns the IncludedLocalEntryBaseDN field if non-nil, zero value otherwise.
+
+### GetIncludedLocalEntryBaseDNOk
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetIncludedLocalEntryBaseDNOk() (*[]string, bool)`
+
+GetIncludedLocalEntryBaseDNOk returns a tuple with the IncludedLocalEntryBaseDN field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludedLocalEntryBaseDN
+
+`func (o *AddPassThroughAuthenticationHandler200Response) SetIncludedLocalEntryBaseDN(v []string)`
+
+SetIncludedLocalEntryBaseDN sets IncludedLocalEntryBaseDN field to given value.
+
+### HasIncludedLocalEntryBaseDN
+
+`func (o *AddPassThroughAuthenticationHandler200Response) HasIncludedLocalEntryBaseDN() bool`
+
+HasIncludedLocalEntryBaseDN returns a boolean if a field has been set.
+
+### GetConnectionCriteria
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetConnectionCriteria() string`
+
+GetConnectionCriteria returns the ConnectionCriteria field if non-nil, zero value otherwise.
+
+### GetConnectionCriteriaOk
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetConnectionCriteriaOk() (*string, bool)`
+
+GetConnectionCriteriaOk returns a tuple with the ConnectionCriteria field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConnectionCriteria
+
+`func (o *AddPassThroughAuthenticationHandler200Response) SetConnectionCriteria(v string)`
+
+SetConnectionCriteria sets ConnectionCriteria field to given value.
+
+### HasConnectionCriteria
+
+`func (o *AddPassThroughAuthenticationHandler200Response) HasConnectionCriteria() bool`
+
+HasConnectionCriteria returns a boolean if a field has been set.
+
+### GetRequestCriteria
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetRequestCriteria() string`
+
+GetRequestCriteria returns the RequestCriteria field if non-nil, zero value otherwise.
+
+### GetRequestCriteriaOk
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetRequestCriteriaOk() (*string, bool)`
+
+GetRequestCriteriaOk returns a tuple with the RequestCriteria field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequestCriteria
+
+`func (o *AddPassThroughAuthenticationHandler200Response) SetRequestCriteria(v string)`
+
+SetRequestCriteria sets RequestCriteria field to given value.
+
+### HasRequestCriteria
+
+`func (o *AddPassThroughAuthenticationHandler200Response) HasRequestCriteria() bool`
+
+HasRequestCriteria returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *AddPassThroughAuthenticationHandler200Response) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *AddPassThroughAuthenticationHandler200Response) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
+
+### GetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20`
+
+GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field if non-nil, zero value otherwise.
+
+### GetUrnpingidentityschemasconfigurationmessages20Ok
+
+`func (o *AddPassThroughAuthenticationHandler200Response) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool)`
+
+GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *AddPassThroughAuthenticationHandler200Response) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20)`
+
+SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconfigurationmessages20 field to given value.
+
+### HasUrnpingidentityschemasconfigurationmessages20
+
+`func (o *AddPassThroughAuthenticationHandler200Response) HasUrnpingidentityschemasconfigurationmessages20() bool`
+
+HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 
 ### GetServer
 
@@ -363,80 +748,50 @@ SetUsePasswordPolicyControl sets UsePasswordPolicyControl field to given value.
 
 HasUsePasswordPolicyControl returns a boolean if a field has been set.
 
-### GetDescription
+### GetSubordinatePassThroughAuthenticationHandler
 
-`func (o *AddPassThroughAuthenticationHandler200Response) GetDescription() string`
+`func (o *AddPassThroughAuthenticationHandler200Response) GetSubordinatePassThroughAuthenticationHandler() []string`
 
-GetDescription returns the Description field if non-nil, zero value otherwise.
+GetSubordinatePassThroughAuthenticationHandler returns the SubordinatePassThroughAuthenticationHandler field if non-nil, zero value otherwise.
 
-### GetDescriptionOk
+### GetSubordinatePassThroughAuthenticationHandlerOk
 
-`func (o *AddPassThroughAuthenticationHandler200Response) GetDescriptionOk() (*string, bool)`
+`func (o *AddPassThroughAuthenticationHandler200Response) GetSubordinatePassThroughAuthenticationHandlerOk() (*[]string, bool)`
 
-GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+GetSubordinatePassThroughAuthenticationHandlerOk returns a tuple with the SubordinatePassThroughAuthenticationHandler field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDescription
+### SetSubordinatePassThroughAuthenticationHandler
 
-`func (o *AddPassThroughAuthenticationHandler200Response) SetDescription(v string)`
+`func (o *AddPassThroughAuthenticationHandler200Response) SetSubordinatePassThroughAuthenticationHandler(v []string)`
 
-SetDescription sets Description field to given value.
+SetSubordinatePassThroughAuthenticationHandler sets SubordinatePassThroughAuthenticationHandler field to given value.
 
-### HasDescription
 
-`func (o *AddPassThroughAuthenticationHandler200Response) HasDescription() bool`
+### GetContinueOnFailureType
 
-HasDescription returns a boolean if a field has been set.
+`func (o *AddPassThroughAuthenticationHandler200Response) GetContinueOnFailureType() []EnumpassThroughAuthenticationHandlerContinueOnFailureTypeProp`
 
-### GetMeta
+GetContinueOnFailureType returns the ContinueOnFailureType field if non-nil, zero value otherwise.
 
-`func (o *AddPassThroughAuthenticationHandler200Response) GetMeta() MetaMeta`
+### GetContinueOnFailureTypeOk
 
-GetMeta returns the Meta field if non-nil, zero value otherwise.
+`func (o *AddPassThroughAuthenticationHandler200Response) GetContinueOnFailureTypeOk() (*[]EnumpassThroughAuthenticationHandlerContinueOnFailureTypeProp, bool)`
 
-### GetMetaOk
-
-`func (o *AddPassThroughAuthenticationHandler200Response) GetMetaOk() (*MetaMeta, bool)`
-
-GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+GetContinueOnFailureTypeOk returns a tuple with the ContinueOnFailureType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMeta
+### SetContinueOnFailureType
 
-`func (o *AddPassThroughAuthenticationHandler200Response) SetMeta(v MetaMeta)`
+`func (o *AddPassThroughAuthenticationHandler200Response) SetContinueOnFailureType(v []EnumpassThroughAuthenticationHandlerContinueOnFailureTypeProp)`
 
-SetMeta sets Meta field to given value.
+SetContinueOnFailureType sets ContinueOnFailureType field to given value.
 
-### HasMeta
+### HasContinueOnFailureType
 
-`func (o *AddPassThroughAuthenticationHandler200Response) HasMeta() bool`
+`func (o *AddPassThroughAuthenticationHandler200Response) HasContinueOnFailureType() bool`
 
-HasMeta returns a boolean if a field has been set.
-
-### GetUrnpingidentityschemasconfigurationmessages20
-
-`func (o *AddPassThroughAuthenticationHandler200Response) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20`
-
-GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field if non-nil, zero value otherwise.
-
-### GetUrnpingidentityschemasconfigurationmessages20Ok
-
-`func (o *AddPassThroughAuthenticationHandler200Response) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool)`
-
-GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUrnpingidentityschemasconfigurationmessages20
-
-`func (o *AddPassThroughAuthenticationHandler200Response) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20)`
-
-SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconfigurationmessages20 field to given value.
-
-### HasUrnpingidentityschemasconfigurationmessages20
-
-`func (o *AddPassThroughAuthenticationHandler200Response) HasUrnpingidentityschemasconfigurationmessages20() bool`
-
-HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+HasContinueOnFailureType returns a boolean if a field has been set.
 
 ### GetExtensionClass
 

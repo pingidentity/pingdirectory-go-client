@@ -17,14 +17,30 @@ import (
 
 // AddPassThroughAuthenticationHandler200Response - struct for AddPassThroughAuthenticationHandler200Response
 type AddPassThroughAuthenticationHandler200Response struct {
+	AggregatePassThroughAuthenticationHandlerResponse  *AggregatePassThroughAuthenticationHandlerResponse
 	LdapPassThroughAuthenticationHandlerResponse       *LdapPassThroughAuthenticationHandlerResponse
+	PingOnePassThroughAuthenticationHandlerResponse    *PingOnePassThroughAuthenticationHandlerResponse
 	ThirdPartyPassThroughAuthenticationHandlerResponse *ThirdPartyPassThroughAuthenticationHandlerResponse
+}
+
+// AggregatePassThroughAuthenticationHandlerResponseAsAddPassThroughAuthenticationHandler200Response is a convenience function that returns AggregatePassThroughAuthenticationHandlerResponse wrapped in AddPassThroughAuthenticationHandler200Response
+func AggregatePassThroughAuthenticationHandlerResponseAsAddPassThroughAuthenticationHandler200Response(v *AggregatePassThroughAuthenticationHandlerResponse) AddPassThroughAuthenticationHandler200Response {
+	return AddPassThroughAuthenticationHandler200Response{
+		AggregatePassThroughAuthenticationHandlerResponse: v,
+	}
 }
 
 // LdapPassThroughAuthenticationHandlerResponseAsAddPassThroughAuthenticationHandler200Response is a convenience function that returns LdapPassThroughAuthenticationHandlerResponse wrapped in AddPassThroughAuthenticationHandler200Response
 func LdapPassThroughAuthenticationHandlerResponseAsAddPassThroughAuthenticationHandler200Response(v *LdapPassThroughAuthenticationHandlerResponse) AddPassThroughAuthenticationHandler200Response {
 	return AddPassThroughAuthenticationHandler200Response{
 		LdapPassThroughAuthenticationHandlerResponse: v,
+	}
+}
+
+// PingOnePassThroughAuthenticationHandlerResponseAsAddPassThroughAuthenticationHandler200Response is a convenience function that returns PingOnePassThroughAuthenticationHandlerResponse wrapped in AddPassThroughAuthenticationHandler200Response
+func PingOnePassThroughAuthenticationHandlerResponseAsAddPassThroughAuthenticationHandler200Response(v *PingOnePassThroughAuthenticationHandlerResponse) AddPassThroughAuthenticationHandler200Response {
+	return AddPassThroughAuthenticationHandler200Response{
+		PingOnePassThroughAuthenticationHandlerResponse: v,
 	}
 }
 
@@ -39,6 +55,19 @@ func ThirdPartyPassThroughAuthenticationHandlerResponseAsAddPassThroughAuthentic
 func (dst *AddPassThroughAuthenticationHandler200Response) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
+	// try to unmarshal data into AggregatePassThroughAuthenticationHandlerResponse
+	err = newStrictDecoder(data).Decode(&dst.AggregatePassThroughAuthenticationHandlerResponse)
+	if err == nil {
+		jsonAggregatePassThroughAuthenticationHandlerResponse, _ := json.Marshal(dst.AggregatePassThroughAuthenticationHandlerResponse)
+		if string(jsonAggregatePassThroughAuthenticationHandlerResponse) == "{}" { // empty struct
+			dst.AggregatePassThroughAuthenticationHandlerResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.AggregatePassThroughAuthenticationHandlerResponse = nil
+	}
+
 	// try to unmarshal data into LdapPassThroughAuthenticationHandlerResponse
 	err = newStrictDecoder(data).Decode(&dst.LdapPassThroughAuthenticationHandlerResponse)
 	if err == nil {
@@ -50,6 +79,19 @@ func (dst *AddPassThroughAuthenticationHandler200Response) UnmarshalJSON(data []
 		}
 	} else {
 		dst.LdapPassThroughAuthenticationHandlerResponse = nil
+	}
+
+	// try to unmarshal data into PingOnePassThroughAuthenticationHandlerResponse
+	err = newStrictDecoder(data).Decode(&dst.PingOnePassThroughAuthenticationHandlerResponse)
+	if err == nil {
+		jsonPingOnePassThroughAuthenticationHandlerResponse, _ := json.Marshal(dst.PingOnePassThroughAuthenticationHandlerResponse)
+		if string(jsonPingOnePassThroughAuthenticationHandlerResponse) == "{}" { // empty struct
+			dst.PingOnePassThroughAuthenticationHandlerResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.PingOnePassThroughAuthenticationHandlerResponse = nil
 	}
 
 	// try to unmarshal data into ThirdPartyPassThroughAuthenticationHandlerResponse
@@ -67,7 +109,9 @@ func (dst *AddPassThroughAuthenticationHandler200Response) UnmarshalJSON(data []
 
 	if match > 1 { // more than 1 match
 		// reset to nil
+		dst.AggregatePassThroughAuthenticationHandlerResponse = nil
 		dst.LdapPassThroughAuthenticationHandlerResponse = nil
+		dst.PingOnePassThroughAuthenticationHandlerResponse = nil
 		dst.ThirdPartyPassThroughAuthenticationHandlerResponse = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(AddPassThroughAuthenticationHandler200Response)")
@@ -80,8 +124,16 @@ func (dst *AddPassThroughAuthenticationHandler200Response) UnmarshalJSON(data []
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src AddPassThroughAuthenticationHandler200Response) MarshalJSON() ([]byte, error) {
+	if src.AggregatePassThroughAuthenticationHandlerResponse != nil {
+		return json.Marshal(&src.AggregatePassThroughAuthenticationHandlerResponse)
+	}
+
 	if src.LdapPassThroughAuthenticationHandlerResponse != nil {
 		return json.Marshal(&src.LdapPassThroughAuthenticationHandlerResponse)
+	}
+
+	if src.PingOnePassThroughAuthenticationHandlerResponse != nil {
+		return json.Marshal(&src.PingOnePassThroughAuthenticationHandlerResponse)
 	}
 
 	if src.ThirdPartyPassThroughAuthenticationHandlerResponse != nil {
@@ -96,8 +148,16 @@ func (obj *AddPassThroughAuthenticationHandler200Response) GetActualInstance() i
 	if obj == nil {
 		return nil
 	}
+	if obj.AggregatePassThroughAuthenticationHandlerResponse != nil {
+		return obj.AggregatePassThroughAuthenticationHandlerResponse
+	}
+
 	if obj.LdapPassThroughAuthenticationHandlerResponse != nil {
 		return obj.LdapPassThroughAuthenticationHandlerResponse
+	}
+
+	if obj.PingOnePassThroughAuthenticationHandlerResponse != nil {
+		return obj.PingOnePassThroughAuthenticationHandlerResponse
 	}
 
 	if obj.ThirdPartyPassThroughAuthenticationHandlerResponse != nil {

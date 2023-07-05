@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-93/pd_ds_use_config_api
 tags:
 - description: Access cipher-stream-providers
   name: cipher-stream-provider
@@ -231,6 +231,10 @@ components:
           type: string
           description: >-
               The Amazon resource name (ARN) for the KMS key that will be used to encrypt the contents of the passphrase file. This key must exist, and the AWS client must have access to encrypt and decrypt data using this key.
+        iterationCount:
+          type: integer
+          description: >-
+              The PBKDF2 iteration count that will be used when deriving the encryption key used to protect the encryption settings database.
         description:
           type: string
           description: >-
@@ -304,6 +308,10 @@ components:
           type: string
           description: >-
               The path to a file that will hold metadata about the encryption performed by this Amazon Secrets Manager Cipher Stream Provider.
+        iterationCount:
+          type: integer
+          description: >-
+              The PBKDF2 iteration count that will be used when deriving the encryption key used to protect the encryption settings database.
         description:
           type: string
           description: >-
@@ -375,6 +383,10 @@ components:
           type: string
           description: >-
               The path to a file that will hold metadata about the encryption performed by this Azure Key Vault Cipher Stream Provider.
+        iterationCount:
+          type: integer
+          description: >-
+              The PBKDF2 iteration count that will be used when deriving the encryption key used to protect the encryption settings database.
         description:
           type: string
           description: >-
@@ -433,6 +445,14 @@ components:
           type: boolean
           description: >-
               Indicates whether the server should wait for the password file to become available if it does not exist.
+        encryptionMetadataFile:
+          type: string
+          description: >-
+              The path to a file that will hold metadata about the encryption performed by this File Based Cipher Stream Provider.
+        iterationCount:
+          type: integer
+          description: >-
+              The PBKDF2 iteration count that will be used when deriving the encryption key used to protect the encryption settings database.
         description:
           type: string
           description: >-
@@ -541,6 +561,10 @@ components:
           type: string
           description: >-
               The path to a file that will hold metadata about the encryption performed by this Conjur Cipher Stream Provider.
+        iterationCount:
+          type: integer
+          description: >-
+              The PBKDF2 iteration count that will be used when deriving the encryption key used to protect the encryption settings database.
         description:
           type: string
           description: >-
@@ -624,6 +648,10 @@ components:
           type: string
           description: >-
               The path to a file that will hold metadata about the encryption performed by this PKCS11 Cipher Stream Provider.
+        iterationCount:
+          type: integer
+          description: >-
+              The PBKDF2 iteration count that will be used when deriving the encryption key used to protect the encryption settings database.
         description:
           type: string
           description: >-
@@ -712,6 +740,10 @@ components:
           type: string
           description: >-
               The store type for the specified trust store file. The value should likely be one of "JKS" or "PKCS12".
+        iterationCount:
+          type: integer
+          description: >-
+              The PBKDF2 iteration count that will be used when deriving the encryption key used to protect the encryption settings database.
         description:
           type: string
           description: >-

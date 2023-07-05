@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **AwsSecretAccessKey** | Pointer to **string** | The secret access key that will be used if this cipher stream provider will authenticate to the Amazon Key Management Service using an access key rather than an IAM role associated with an EC2 instance. | [optional] 
 **AwsRegionName** | Pointer to **string** | The name of the Amazon Web Services region that holds the encryption key. This is optional, and if it is not provided, then the server will attempt to determine the region from the key ARN. | [optional] 
 **KmsEncryptionKeyArn** | **string** | The Amazon resource name (ARN) for the KMS key that will be used to encrypt the contents of the passphrase file. This key must exist, and the AWS client must have access to encrypt and decrypt data using this key. | 
+**IterationCount** | Pointer to **int64** | The PBKDF2 iteration count that will be used when deriving the encryption key used to protect the encryption settings database. | [optional] 
 **Description** | Pointer to **string** | A description for this Cipher Stream Provider | [optional] 
 **Enabled** | **bool** | Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server. | 
 
@@ -218,6 +219,31 @@ and a boolean to check if the value has been set.
 
 SetKmsEncryptionKeyArn sets KmsEncryptionKeyArn field to given value.
 
+
+### GetIterationCount
+
+`func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetIterationCount() int64`
+
+GetIterationCount returns the IterationCount field if non-nil, zero value otherwise.
+
+### GetIterationCountOk
+
+`func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) GetIterationCountOk() (*int64, bool)`
+
+GetIterationCountOk returns a tuple with the IterationCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIterationCount
+
+`func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) SetIterationCount(v int64)`
+
+SetIterationCount sets IterationCount field to given value.
+
+### HasIterationCount
+
+`func (o *AddAmazonKeyManagementServiceCipherStreamProviderRequest) HasIterationCount() bool`
+
+HasIterationCount returns a boolean if a field has been set.
 
 ### GetDescription
 

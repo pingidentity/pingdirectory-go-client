@@ -20,6 +20,7 @@ type AddResultCriteria200Response struct {
 	AggregateResultCriteriaResponse            *AggregateResultCriteriaResponse
 	ReplicationAssuranceResultCriteriaResponse *ReplicationAssuranceResultCriteriaResponse
 	SimpleResultCriteriaResponse               *SimpleResultCriteriaResponse
+	SuccessfulBindResultCriteriaResponse       *SuccessfulBindResultCriteriaResponse
 	ThirdPartyResultCriteriaResponse           *ThirdPartyResultCriteriaResponse
 }
 
@@ -41,6 +42,13 @@ func ReplicationAssuranceResultCriteriaResponseAsAddResultCriteria200Response(v 
 func SimpleResultCriteriaResponseAsAddResultCriteria200Response(v *SimpleResultCriteriaResponse) AddResultCriteria200Response {
 	return AddResultCriteria200Response{
 		SimpleResultCriteriaResponse: v,
+	}
+}
+
+// SuccessfulBindResultCriteriaResponseAsAddResultCriteria200Response is a convenience function that returns SuccessfulBindResultCriteriaResponse wrapped in AddResultCriteria200Response
+func SuccessfulBindResultCriteriaResponseAsAddResultCriteria200Response(v *SuccessfulBindResultCriteriaResponse) AddResultCriteria200Response {
+	return AddResultCriteria200Response{
+		SuccessfulBindResultCriteriaResponse: v,
 	}
 }
 
@@ -94,6 +102,19 @@ func (dst *AddResultCriteria200Response) UnmarshalJSON(data []byte) error {
 		dst.SimpleResultCriteriaResponse = nil
 	}
 
+	// try to unmarshal data into SuccessfulBindResultCriteriaResponse
+	err = newStrictDecoder(data).Decode(&dst.SuccessfulBindResultCriteriaResponse)
+	if err == nil {
+		jsonSuccessfulBindResultCriteriaResponse, _ := json.Marshal(dst.SuccessfulBindResultCriteriaResponse)
+		if string(jsonSuccessfulBindResultCriteriaResponse) == "{}" { // empty struct
+			dst.SuccessfulBindResultCriteriaResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.SuccessfulBindResultCriteriaResponse = nil
+	}
+
 	// try to unmarshal data into ThirdPartyResultCriteriaResponse
 	err = newStrictDecoder(data).Decode(&dst.ThirdPartyResultCriteriaResponse)
 	if err == nil {
@@ -112,6 +133,7 @@ func (dst *AddResultCriteria200Response) UnmarshalJSON(data []byte) error {
 		dst.AggregateResultCriteriaResponse = nil
 		dst.ReplicationAssuranceResultCriteriaResponse = nil
 		dst.SimpleResultCriteriaResponse = nil
+		dst.SuccessfulBindResultCriteriaResponse = nil
 		dst.ThirdPartyResultCriteriaResponse = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(AddResultCriteria200Response)")
@@ -136,6 +158,10 @@ func (src AddResultCriteria200Response) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.SimpleResultCriteriaResponse)
 	}
 
+	if src.SuccessfulBindResultCriteriaResponse != nil {
+		return json.Marshal(&src.SuccessfulBindResultCriteriaResponse)
+	}
+
 	if src.ThirdPartyResultCriteriaResponse != nil {
 		return json.Marshal(&src.ThirdPartyResultCriteriaResponse)
 	}
@@ -158,6 +184,10 @@ func (obj *AddResultCriteria200Response) GetActualInstance() interface{} {
 
 	if obj.SimpleResultCriteriaResponse != nil {
 		return obj.SimpleResultCriteriaResponse
+	}
+
+	if obj.SuccessfulBindResultCriteriaResponse != nil {
+		return obj.SuccessfulBindResultCriteriaResponse
 	}
 
 	if obj.ThirdPartyResultCriteriaResponse != nil {

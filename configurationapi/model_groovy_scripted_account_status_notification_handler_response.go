@@ -32,8 +32,12 @@ type GroovyScriptedAccountStatusNotificationHandlerResponse struct {
 	Enabled bool `json:"enabled"`
 	// Indicates whether the server should attempt to invoke this Account Status Notification Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver a message) will not delay processing for the operation that triggered the notification.
 	Asynchronous *bool `json:"asynchronous,omitempty"`
+	// A result criteria object that identifies which successful bind operations should result in account authentication notifications for this handler.
+	AccountAuthenticationNotificationResultCriteria *string `json:"accountAuthenticationNotificationResultCriteria,omitempty"`
 	// A request criteria object that identifies which add requests should result in account creation notifications for this handler.
 	AccountCreationNotificationRequestCriteria *string `json:"accountCreationNotificationRequestCriteria,omitempty"`
+	// A request criteria object that identifies which delete requests should result in account deletion notifications for this handler.
+	AccountDeletionNotificationRequestCriteria *string `json:"accountDeletionNotificationRequestCriteria,omitempty"`
 	// A request criteria object that identifies which modify and modify DN requests should result in account update notifications for this handler.
 	AccountUpdateNotificationRequestCriteria      *string                                            `json:"accountUpdateNotificationRequestCriteria,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -253,6 +257,38 @@ func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) SetAsynchronous
 	o.Asynchronous = &v
 }
 
+// GetAccountAuthenticationNotificationResultCriteria returns the AccountAuthenticationNotificationResultCriteria field value if set, zero value otherwise.
+func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetAccountAuthenticationNotificationResultCriteria() string {
+	if o == nil || IsNil(o.AccountAuthenticationNotificationResultCriteria) {
+		var ret string
+		return ret
+	}
+	return *o.AccountAuthenticationNotificationResultCriteria
+}
+
+// GetAccountAuthenticationNotificationResultCriteriaOk returns a tuple with the AccountAuthenticationNotificationResultCriteria field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetAccountAuthenticationNotificationResultCriteriaOk() (*string, bool) {
+	if o == nil || IsNil(o.AccountAuthenticationNotificationResultCriteria) {
+		return nil, false
+	}
+	return o.AccountAuthenticationNotificationResultCriteria, true
+}
+
+// HasAccountAuthenticationNotificationResultCriteria returns a boolean if a field has been set.
+func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) HasAccountAuthenticationNotificationResultCriteria() bool {
+	if o != nil && !IsNil(o.AccountAuthenticationNotificationResultCriteria) {
+		return true
+	}
+
+	return false
+}
+
+// SetAccountAuthenticationNotificationResultCriteria gets a reference to the given string and assigns it to the AccountAuthenticationNotificationResultCriteria field.
+func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) SetAccountAuthenticationNotificationResultCriteria(v string) {
+	o.AccountAuthenticationNotificationResultCriteria = &v
+}
+
 // GetAccountCreationNotificationRequestCriteria returns the AccountCreationNotificationRequestCriteria field value if set, zero value otherwise.
 func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetAccountCreationNotificationRequestCriteria() string {
 	if o == nil || IsNil(o.AccountCreationNotificationRequestCriteria) {
@@ -283,6 +319,38 @@ func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) HasAccountCreat
 // SetAccountCreationNotificationRequestCriteria gets a reference to the given string and assigns it to the AccountCreationNotificationRequestCriteria field.
 func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) SetAccountCreationNotificationRequestCriteria(v string) {
 	o.AccountCreationNotificationRequestCriteria = &v
+}
+
+// GetAccountDeletionNotificationRequestCriteria returns the AccountDeletionNotificationRequestCriteria field value if set, zero value otherwise.
+func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetAccountDeletionNotificationRequestCriteria() string {
+	if o == nil || IsNil(o.AccountDeletionNotificationRequestCriteria) {
+		var ret string
+		return ret
+	}
+	return *o.AccountDeletionNotificationRequestCriteria
+}
+
+// GetAccountDeletionNotificationRequestCriteriaOk returns a tuple with the AccountDeletionNotificationRequestCriteria field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetAccountDeletionNotificationRequestCriteriaOk() (*string, bool) {
+	if o == nil || IsNil(o.AccountDeletionNotificationRequestCriteria) {
+		return nil, false
+	}
+	return o.AccountDeletionNotificationRequestCriteria, true
+}
+
+// HasAccountDeletionNotificationRequestCriteria returns a boolean if a field has been set.
+func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) HasAccountDeletionNotificationRequestCriteria() bool {
+	if o != nil && !IsNil(o.AccountDeletionNotificationRequestCriteria) {
+		return true
+	}
+
+	return false
+}
+
+// SetAccountDeletionNotificationRequestCriteria gets a reference to the given string and assigns it to the AccountDeletionNotificationRequestCriteria field.
+func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) SetAccountDeletionNotificationRequestCriteria(v string) {
+	o.AccountDeletionNotificationRequestCriteria = &v
 }
 
 // GetAccountUpdateNotificationRequestCriteria returns the AccountUpdateNotificationRequestCriteria field value if set, zero value otherwise.
@@ -404,8 +472,14 @@ func (o GroovyScriptedAccountStatusNotificationHandlerResponse) ToMap() (map[str
 	if !IsNil(o.Asynchronous) {
 		toSerialize["asynchronous"] = o.Asynchronous
 	}
+	if !IsNil(o.AccountAuthenticationNotificationResultCriteria) {
+		toSerialize["accountAuthenticationNotificationResultCriteria"] = o.AccountAuthenticationNotificationResultCriteria
+	}
 	if !IsNil(o.AccountCreationNotificationRequestCriteria) {
 		toSerialize["accountCreationNotificationRequestCriteria"] = o.AccountCreationNotificationRequestCriteria
+	}
+	if !IsNil(o.AccountDeletionNotificationRequestCriteria) {
+		toSerialize["accountDeletionNotificationRequestCriteria"] = o.AccountDeletionNotificationRequestCriteria
 	}
 	if !IsNil(o.AccountUpdateNotificationRequestCriteria) {
 		toSerialize["accountUpdateNotificationRequestCriteria"] = o.AccountUpdateNotificationRequestCriteria

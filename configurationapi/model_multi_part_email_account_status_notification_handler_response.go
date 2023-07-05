@@ -48,8 +48,12 @@ type MultiPartEmailAccountStatusNotificationHandlerResponse struct {
 	PasswordResetMessageTemplate *string `json:"passwordResetMessageTemplate,omitempty"`
 	// The path to a file containing the template to use to generate the email message to send in the event that a user changes their own password.
 	PasswordChangedMessageTemplate *string `json:"passwordChangedMessageTemplate,omitempty"`
+	// The path to a file containing the template to use to generate the email message to send in the event that an account has successfully authenticated in a bind operation that matches the criteria provided in the account-authentication-notification-request-criteria property.
+	AccountAuthenticatedMessageTemplate *string `json:"accountAuthenticatedMessageTemplate,omitempty"`
 	// The path to a file containing the template to use to generate the email message to send in the event that a new account is created in an add request that matches the criteria provided in the account-creation-notification-request-criteria property.
 	AccountCreatedMessageTemplate *string `json:"accountCreatedMessageTemplate,omitempty"`
+	// The path to a file containing the template to use to generate the email message to send in the event that an existing accout has been removed in a delete request that matches the criteria provided in the account-deletion-notification-request-criteria property.
+	AccountDeletedMessageTemplate *string `json:"accountDeletedMessageTemplate,omitempty"`
 	// The path to a file containing the template to use to generate the email message to send in the event that an existing account is updated with a modify or modify DN operation that matches the criteria provided in the account-update-notification-request-criteria property.
 	AccountUpdatedMessageTemplate *string `json:"accountUpdatedMessageTemplate,omitempty"`
 	// The path to a file containing the template to use to generate the email message to send in the event that a user authenticated with a password that failed to satisfy the criteria for one or more of the configured password validators.
@@ -62,8 +66,12 @@ type MultiPartEmailAccountStatusNotificationHandlerResponse struct {
 	Enabled bool `json:"enabled"`
 	// Indicates whether the server should attempt to invoke this Account Status Notification Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver a message) will not delay processing for the operation that triggered the notification.
 	Asynchronous *bool `json:"asynchronous,omitempty"`
+	// A result criteria object that identifies which successful bind operations should result in account authentication notifications for this handler.
+	AccountAuthenticationNotificationResultCriteria *string `json:"accountAuthenticationNotificationResultCriteria,omitempty"`
 	// A request criteria object that identifies which add requests should result in account creation notifications for this handler.
 	AccountCreationNotificationRequestCriteria *string `json:"accountCreationNotificationRequestCriteria,omitempty"`
+	// A request criteria object that identifies which delete requests should result in account deletion notifications for this handler.
+	AccountDeletionNotificationRequestCriteria *string `json:"accountDeletionNotificationRequestCriteria,omitempty"`
 	// A request criteria object that identifies which modify and modify DN requests should result in account update notifications for this handler.
 	AccountUpdateNotificationRequestCriteria      *string                                            `json:"accountUpdateNotificationRequestCriteria,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -554,6 +562,38 @@ func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) SetPasswordChan
 	o.PasswordChangedMessageTemplate = &v
 }
 
+// GetAccountAuthenticatedMessageTemplate returns the AccountAuthenticatedMessageTemplate field value if set, zero value otherwise.
+func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) GetAccountAuthenticatedMessageTemplate() string {
+	if o == nil || IsNil(o.AccountAuthenticatedMessageTemplate) {
+		var ret string
+		return ret
+	}
+	return *o.AccountAuthenticatedMessageTemplate
+}
+
+// GetAccountAuthenticatedMessageTemplateOk returns a tuple with the AccountAuthenticatedMessageTemplate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) GetAccountAuthenticatedMessageTemplateOk() (*string, bool) {
+	if o == nil || IsNil(o.AccountAuthenticatedMessageTemplate) {
+		return nil, false
+	}
+	return o.AccountAuthenticatedMessageTemplate, true
+}
+
+// HasAccountAuthenticatedMessageTemplate returns a boolean if a field has been set.
+func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) HasAccountAuthenticatedMessageTemplate() bool {
+	if o != nil && !IsNil(o.AccountAuthenticatedMessageTemplate) {
+		return true
+	}
+
+	return false
+}
+
+// SetAccountAuthenticatedMessageTemplate gets a reference to the given string and assigns it to the AccountAuthenticatedMessageTemplate field.
+func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) SetAccountAuthenticatedMessageTemplate(v string) {
+	o.AccountAuthenticatedMessageTemplate = &v
+}
+
 // GetAccountCreatedMessageTemplate returns the AccountCreatedMessageTemplate field value if set, zero value otherwise.
 func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) GetAccountCreatedMessageTemplate() string {
 	if o == nil || IsNil(o.AccountCreatedMessageTemplate) {
@@ -584,6 +624,38 @@ func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) HasAccountCreat
 // SetAccountCreatedMessageTemplate gets a reference to the given string and assigns it to the AccountCreatedMessageTemplate field.
 func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) SetAccountCreatedMessageTemplate(v string) {
 	o.AccountCreatedMessageTemplate = &v
+}
+
+// GetAccountDeletedMessageTemplate returns the AccountDeletedMessageTemplate field value if set, zero value otherwise.
+func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) GetAccountDeletedMessageTemplate() string {
+	if o == nil || IsNil(o.AccountDeletedMessageTemplate) {
+		var ret string
+		return ret
+	}
+	return *o.AccountDeletedMessageTemplate
+}
+
+// GetAccountDeletedMessageTemplateOk returns a tuple with the AccountDeletedMessageTemplate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) GetAccountDeletedMessageTemplateOk() (*string, bool) {
+	if o == nil || IsNil(o.AccountDeletedMessageTemplate) {
+		return nil, false
+	}
+	return o.AccountDeletedMessageTemplate, true
+}
+
+// HasAccountDeletedMessageTemplate returns a boolean if a field has been set.
+func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) HasAccountDeletedMessageTemplate() bool {
+	if o != nil && !IsNil(o.AccountDeletedMessageTemplate) {
+		return true
+	}
+
+	return false
+}
+
+// SetAccountDeletedMessageTemplate gets a reference to the given string and assigns it to the AccountDeletedMessageTemplate field.
+func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) SetAccountDeletedMessageTemplate(v string) {
+	o.AccountDeletedMessageTemplate = &v
 }
 
 // GetAccountUpdatedMessageTemplate returns the AccountUpdatedMessageTemplate field value if set, zero value otherwise.
@@ -770,6 +842,38 @@ func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) SetAsynchronous
 	o.Asynchronous = &v
 }
 
+// GetAccountAuthenticationNotificationResultCriteria returns the AccountAuthenticationNotificationResultCriteria field value if set, zero value otherwise.
+func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) GetAccountAuthenticationNotificationResultCriteria() string {
+	if o == nil || IsNil(o.AccountAuthenticationNotificationResultCriteria) {
+		var ret string
+		return ret
+	}
+	return *o.AccountAuthenticationNotificationResultCriteria
+}
+
+// GetAccountAuthenticationNotificationResultCriteriaOk returns a tuple with the AccountAuthenticationNotificationResultCriteria field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) GetAccountAuthenticationNotificationResultCriteriaOk() (*string, bool) {
+	if o == nil || IsNil(o.AccountAuthenticationNotificationResultCriteria) {
+		return nil, false
+	}
+	return o.AccountAuthenticationNotificationResultCriteria, true
+}
+
+// HasAccountAuthenticationNotificationResultCriteria returns a boolean if a field has been set.
+func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) HasAccountAuthenticationNotificationResultCriteria() bool {
+	if o != nil && !IsNil(o.AccountAuthenticationNotificationResultCriteria) {
+		return true
+	}
+
+	return false
+}
+
+// SetAccountAuthenticationNotificationResultCriteria gets a reference to the given string and assigns it to the AccountAuthenticationNotificationResultCriteria field.
+func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) SetAccountAuthenticationNotificationResultCriteria(v string) {
+	o.AccountAuthenticationNotificationResultCriteria = &v
+}
+
 // GetAccountCreationNotificationRequestCriteria returns the AccountCreationNotificationRequestCriteria field value if set, zero value otherwise.
 func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) GetAccountCreationNotificationRequestCriteria() string {
 	if o == nil || IsNil(o.AccountCreationNotificationRequestCriteria) {
@@ -800,6 +904,38 @@ func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) HasAccountCreat
 // SetAccountCreationNotificationRequestCriteria gets a reference to the given string and assigns it to the AccountCreationNotificationRequestCriteria field.
 func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) SetAccountCreationNotificationRequestCriteria(v string) {
 	o.AccountCreationNotificationRequestCriteria = &v
+}
+
+// GetAccountDeletionNotificationRequestCriteria returns the AccountDeletionNotificationRequestCriteria field value if set, zero value otherwise.
+func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) GetAccountDeletionNotificationRequestCriteria() string {
+	if o == nil || IsNil(o.AccountDeletionNotificationRequestCriteria) {
+		var ret string
+		return ret
+	}
+	return *o.AccountDeletionNotificationRequestCriteria
+}
+
+// GetAccountDeletionNotificationRequestCriteriaOk returns a tuple with the AccountDeletionNotificationRequestCriteria field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) GetAccountDeletionNotificationRequestCriteriaOk() (*string, bool) {
+	if o == nil || IsNil(o.AccountDeletionNotificationRequestCriteria) {
+		return nil, false
+	}
+	return o.AccountDeletionNotificationRequestCriteria, true
+}
+
+// HasAccountDeletionNotificationRequestCriteria returns a boolean if a field has been set.
+func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) HasAccountDeletionNotificationRequestCriteria() bool {
+	if o != nil && !IsNil(o.AccountDeletionNotificationRequestCriteria) {
+		return true
+	}
+
+	return false
+}
+
+// SetAccountDeletionNotificationRequestCriteria gets a reference to the given string and assigns it to the AccountDeletionNotificationRequestCriteria field.
+func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) SetAccountDeletionNotificationRequestCriteria(v string) {
+	o.AccountDeletionNotificationRequestCriteria = &v
 }
 
 // GetAccountUpdateNotificationRequestCriteria returns the AccountUpdateNotificationRequestCriteria field value if set, zero value otherwise.
@@ -949,8 +1085,14 @@ func (o MultiPartEmailAccountStatusNotificationHandlerResponse) ToMap() (map[str
 	if !IsNil(o.PasswordChangedMessageTemplate) {
 		toSerialize["passwordChangedMessageTemplate"] = o.PasswordChangedMessageTemplate
 	}
+	if !IsNil(o.AccountAuthenticatedMessageTemplate) {
+		toSerialize["accountAuthenticatedMessageTemplate"] = o.AccountAuthenticatedMessageTemplate
+	}
 	if !IsNil(o.AccountCreatedMessageTemplate) {
 		toSerialize["accountCreatedMessageTemplate"] = o.AccountCreatedMessageTemplate
+	}
+	if !IsNil(o.AccountDeletedMessageTemplate) {
+		toSerialize["accountDeletedMessageTemplate"] = o.AccountDeletedMessageTemplate
 	}
 	if !IsNil(o.AccountUpdatedMessageTemplate) {
 		toSerialize["accountUpdatedMessageTemplate"] = o.AccountUpdatedMessageTemplate
@@ -968,8 +1110,14 @@ func (o MultiPartEmailAccountStatusNotificationHandlerResponse) ToMap() (map[str
 	if !IsNil(o.Asynchronous) {
 		toSerialize["asynchronous"] = o.Asynchronous
 	}
+	if !IsNil(o.AccountAuthenticationNotificationResultCriteria) {
+		toSerialize["accountAuthenticationNotificationResultCriteria"] = o.AccountAuthenticationNotificationResultCriteria
+	}
 	if !IsNil(o.AccountCreationNotificationRequestCriteria) {
 		toSerialize["accountCreationNotificationRequestCriteria"] = o.AccountCreationNotificationRequestCriteria
+	}
+	if !IsNil(o.AccountDeletionNotificationRequestCriteria) {
+		toSerialize["accountDeletionNotificationRequestCriteria"] = o.AccountDeletionNotificationRequestCriteria
 	}
 	if !IsNil(o.AccountUpdateNotificationRequestCriteria) {
 		toSerialize["accountUpdateNotificationRequestCriteria"] = o.AccountUpdateNotificationRequestCriteria

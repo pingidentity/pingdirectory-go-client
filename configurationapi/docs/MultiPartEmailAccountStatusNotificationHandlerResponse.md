@@ -19,14 +19,18 @@ Name | Type | Description | Notes
 **PasswordExpiringMessageTemplate** | Pointer to **string** | The path to a file containing the template to use to generate the email message to send in the event that an authentication attempt succeeds, but the user&#39;s password is about to expire. This notification will only be generated the first time the user authenticates within the window of time that the server should warn about an upcoming password expiration. | [optional] 
 **PasswordResetMessageTemplate** | Pointer to **string** | The path to a file containing the template to use to generate the email message to send in the event that a user&#39;s password has been reset by an administrator. | [optional] 
 **PasswordChangedMessageTemplate** | Pointer to **string** | The path to a file containing the template to use to generate the email message to send in the event that a user changes their own password. | [optional] 
+**AccountAuthenticatedMessageTemplate** | Pointer to **string** | The path to a file containing the template to use to generate the email message to send in the event that an account has successfully authenticated in a bind operation that matches the criteria provided in the account-authentication-notification-request-criteria property. | [optional] 
 **AccountCreatedMessageTemplate** | Pointer to **string** | The path to a file containing the template to use to generate the email message to send in the event that a new account is created in an add request that matches the criteria provided in the account-creation-notification-request-criteria property. | [optional] 
+**AccountDeletedMessageTemplate** | Pointer to **string** | The path to a file containing the template to use to generate the email message to send in the event that an existing accout has been removed in a delete request that matches the criteria provided in the account-deletion-notification-request-criteria property. | [optional] 
 **AccountUpdatedMessageTemplate** | Pointer to **string** | The path to a file containing the template to use to generate the email message to send in the event that an existing account is updated with a modify or modify DN operation that matches the criteria provided in the account-update-notification-request-criteria property. | [optional] 
 **BindPasswordFailedValidationMessageTemplate** | Pointer to **string** | The path to a file containing the template to use to generate the email message to send in the event that a user authenticated with a password that failed to satisfy the criteria for one or more of the configured password validators. | [optional] 
 **MustChangePasswordMessageTemplate** | Pointer to **string** | The path to a file containing the template to use to generate the email message to send in the event that a user successfully authenticates to the server but will be required to choose a new password before they will be allowed to perform any other operations. | [optional] 
 **Description** | Pointer to **string** | A description for this Account Status Notification Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the Account Status Notification Handler is enabled. Only enabled handlers are invoked whenever a related event occurs in the server. | 
 **Asynchronous** | Pointer to **bool** | Indicates whether the server should attempt to invoke this Account Status Notification Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver a message) will not delay processing for the operation that triggered the notification. | [optional] 
+**AccountAuthenticationNotificationResultCriteria** | Pointer to **string** | A result criteria object that identifies which successful bind operations should result in account authentication notifications for this handler. | [optional] 
 **AccountCreationNotificationRequestCriteria** | Pointer to **string** | A request criteria object that identifies which add requests should result in account creation notifications for this handler. | [optional] 
+**AccountDeletionNotificationRequestCriteria** | Pointer to **string** | A request criteria object that identifies which delete requests should result in account deletion notifications for this handler. | [optional] 
 **AccountUpdateNotificationRequestCriteria** | Pointer to **string** | A request criteria object that identifies which modify and modify DN requests should result in account update notifications for this handler. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
@@ -415,6 +419,31 @@ SetPasswordChangedMessageTemplate sets PasswordChangedMessageTemplate field to g
 
 HasPasswordChangedMessageTemplate returns a boolean if a field has been set.
 
+### GetAccountAuthenticatedMessageTemplate
+
+`func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) GetAccountAuthenticatedMessageTemplate() string`
+
+GetAccountAuthenticatedMessageTemplate returns the AccountAuthenticatedMessageTemplate field if non-nil, zero value otherwise.
+
+### GetAccountAuthenticatedMessageTemplateOk
+
+`func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) GetAccountAuthenticatedMessageTemplateOk() (*string, bool)`
+
+GetAccountAuthenticatedMessageTemplateOk returns a tuple with the AccountAuthenticatedMessageTemplate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccountAuthenticatedMessageTemplate
+
+`func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) SetAccountAuthenticatedMessageTemplate(v string)`
+
+SetAccountAuthenticatedMessageTemplate sets AccountAuthenticatedMessageTemplate field to given value.
+
+### HasAccountAuthenticatedMessageTemplate
+
+`func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) HasAccountAuthenticatedMessageTemplate() bool`
+
+HasAccountAuthenticatedMessageTemplate returns a boolean if a field has been set.
+
 ### GetAccountCreatedMessageTemplate
 
 `func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) GetAccountCreatedMessageTemplate() string`
@@ -439,6 +468,31 @@ SetAccountCreatedMessageTemplate sets AccountCreatedMessageTemplate field to giv
 `func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) HasAccountCreatedMessageTemplate() bool`
 
 HasAccountCreatedMessageTemplate returns a boolean if a field has been set.
+
+### GetAccountDeletedMessageTemplate
+
+`func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) GetAccountDeletedMessageTemplate() string`
+
+GetAccountDeletedMessageTemplate returns the AccountDeletedMessageTemplate field if non-nil, zero value otherwise.
+
+### GetAccountDeletedMessageTemplateOk
+
+`func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) GetAccountDeletedMessageTemplateOk() (*string, bool)`
+
+GetAccountDeletedMessageTemplateOk returns a tuple with the AccountDeletedMessageTemplate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccountDeletedMessageTemplate
+
+`func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) SetAccountDeletedMessageTemplate(v string)`
+
+SetAccountDeletedMessageTemplate sets AccountDeletedMessageTemplate field to given value.
+
+### HasAccountDeletedMessageTemplate
+
+`func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) HasAccountDeletedMessageTemplate() bool`
+
+HasAccountDeletedMessageTemplate returns a boolean if a field has been set.
 
 ### GetAccountUpdatedMessageTemplate
 
@@ -585,6 +639,31 @@ SetAsynchronous sets Asynchronous field to given value.
 
 HasAsynchronous returns a boolean if a field has been set.
 
+### GetAccountAuthenticationNotificationResultCriteria
+
+`func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) GetAccountAuthenticationNotificationResultCriteria() string`
+
+GetAccountAuthenticationNotificationResultCriteria returns the AccountAuthenticationNotificationResultCriteria field if non-nil, zero value otherwise.
+
+### GetAccountAuthenticationNotificationResultCriteriaOk
+
+`func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) GetAccountAuthenticationNotificationResultCriteriaOk() (*string, bool)`
+
+GetAccountAuthenticationNotificationResultCriteriaOk returns a tuple with the AccountAuthenticationNotificationResultCriteria field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccountAuthenticationNotificationResultCriteria
+
+`func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) SetAccountAuthenticationNotificationResultCriteria(v string)`
+
+SetAccountAuthenticationNotificationResultCriteria sets AccountAuthenticationNotificationResultCriteria field to given value.
+
+### HasAccountAuthenticationNotificationResultCriteria
+
+`func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) HasAccountAuthenticationNotificationResultCriteria() bool`
+
+HasAccountAuthenticationNotificationResultCriteria returns a boolean if a field has been set.
+
 ### GetAccountCreationNotificationRequestCriteria
 
 `func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) GetAccountCreationNotificationRequestCriteria() string`
@@ -609,6 +688,31 @@ SetAccountCreationNotificationRequestCriteria sets AccountCreationNotificationRe
 `func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) HasAccountCreationNotificationRequestCriteria() bool`
 
 HasAccountCreationNotificationRequestCriteria returns a boolean if a field has been set.
+
+### GetAccountDeletionNotificationRequestCriteria
+
+`func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) GetAccountDeletionNotificationRequestCriteria() string`
+
+GetAccountDeletionNotificationRequestCriteria returns the AccountDeletionNotificationRequestCriteria field if non-nil, zero value otherwise.
+
+### GetAccountDeletionNotificationRequestCriteriaOk
+
+`func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) GetAccountDeletionNotificationRequestCriteriaOk() (*string, bool)`
+
+GetAccountDeletionNotificationRequestCriteriaOk returns a tuple with the AccountDeletionNotificationRequestCriteria field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccountDeletionNotificationRequestCriteria
+
+`func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) SetAccountDeletionNotificationRequestCriteria(v string)`
+
+SetAccountDeletionNotificationRequestCriteria sets AccountDeletionNotificationRequestCriteria field to given value.
+
+### HasAccountDeletionNotificationRequestCriteria
+
+`func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) HasAccountDeletionNotificationRequestCriteria() bool`
+
+HasAccountDeletionNotificationRequestCriteria returns a boolean if a field has been set.
 
 ### GetAccountUpdateNotificationRequestCriteria
 

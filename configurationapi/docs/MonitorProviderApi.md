@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## AddMonitorProvider
 
-> AddMonitorProvider200Response AddMonitorProvider(ctx).AddThirdPartyMonitorProviderRequest(addThirdPartyMonitorProviderRequest).Execute()
+> AddMonitorProvider200Response AddMonitorProvider(ctx).AddMonitorProviderRequest(addMonitorProviderRequest).Execute()
 
 Add a new Monitor Provider to the config
 
@@ -30,11 +30,11 @@ import (
 )
 
 func main() {
-    addThirdPartyMonitorProviderRequest := *openapiclient.NewAddThirdPartyMonitorProviderRequest("ProviderName_example", []openapiclient.EnumthirdPartyMonitorProviderSchemaUrn{openapiclient.Enumthird-party-monitor-providerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:monitor-provider:third-party")}, "ExtensionClass_example", false) // AddThirdPartyMonitorProviderRequest | Create a new Monitor Provider in the config
+    addMonitorProviderRequest := openapiclient.add_monitor_provider_request{AddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest: openapiclient.NewAddEncryptionSettingsDatabaseAccessibilityMonitorProviderRequest("ProviderName_example", []openapiclient.EnumencryptionSettingsDatabaseAccessibilityMonitorProviderSchemaUrn{openapiclient.Enumencryption-settings-database-accessibility-monitor-providerSchemaUrn("urn:pingidentity:schemas:configuration:2.0:monitor-provider:encryption-settings-database-accessibility")}, false)} // AddMonitorProviderRequest | Create a new Monitor Provider in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MonitorProviderApi.AddMonitorProvider(context.Background()).AddThirdPartyMonitorProviderRequest(addThirdPartyMonitorProviderRequest).Execute()
+    resp, r, err := apiClient.MonitorProviderApi.AddMonitorProvider(context.Background()).AddMonitorProviderRequest(addMonitorProviderRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MonitorProviderApi.AddMonitorProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -55,7 +55,7 @@ Other parameters are passed through a pointer to a apiAddMonitorProviderRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **addThirdPartyMonitorProviderRequest** | [**AddThirdPartyMonitorProviderRequest**](AddThirdPartyMonitorProviderRequest.md) | Create a new Monitor Provider in the config | 
+ **addMonitorProviderRequest** | [**AddMonitorProviderRequest**](AddMonitorProviderRequest.md) | Create a new Monitor Provider in the config | 
 
 ### Return type
 

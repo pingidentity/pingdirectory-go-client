@@ -40,6 +40,8 @@ type VaultCipherStreamProviderResponse struct {
 	TrustStorePin *string `json:"trustStorePin,omitempty"`
 	// The store type for the specified trust store file. The value should likely be one of \"JKS\" or \"PKCS12\".
 	TrustStoreType *string `json:"trustStoreType,omitempty"`
+	// The PBKDF2 iteration count that will be used when deriving the encryption key used to protect the encryption settings database.
+	IterationCount *int64 `json:"iterationCount,omitempty"`
 	// A description for this Cipher Stream Provider
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server.
@@ -383,6 +385,38 @@ func (o *VaultCipherStreamProviderResponse) SetTrustStoreType(v string) {
 	o.TrustStoreType = &v
 }
 
+// GetIterationCount returns the IterationCount field value if set, zero value otherwise.
+func (o *VaultCipherStreamProviderResponse) GetIterationCount() int64 {
+	if o == nil || IsNil(o.IterationCount) {
+		var ret int64
+		return ret
+	}
+	return *o.IterationCount
+}
+
+// GetIterationCountOk returns a tuple with the IterationCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VaultCipherStreamProviderResponse) GetIterationCountOk() (*int64, bool) {
+	if o == nil || IsNil(o.IterationCount) {
+		return nil, false
+	}
+	return o.IterationCount, true
+}
+
+// HasIterationCount returns a boolean if a field has been set.
+func (o *VaultCipherStreamProviderResponse) HasIterationCount() bool {
+	if o != nil && !IsNil(o.IterationCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetIterationCount gets a reference to the given int64 and assigns it to the IterationCount field.
+func (o *VaultCipherStreamProviderResponse) SetIterationCount(v int64) {
+	o.IterationCount = &v
+}
+
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *VaultCipherStreamProviderResponse) GetDescription() string {
 	if o == nil || IsNil(o.Description) {
@@ -535,6 +569,9 @@ func (o VaultCipherStreamProviderResponse) ToMap() (map[string]interface{}, erro
 	}
 	if !IsNil(o.TrustStoreType) {
 		toSerialize["trustStoreType"] = o.TrustStoreType
+	}
+	if !IsNil(o.IterationCount) {
+		toSerialize["iterationCount"] = o.IterationCount
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description

@@ -23,14 +23,14 @@ import (
 type MonitorProviderApiService service
 
 type ApiAddMonitorProviderRequest struct {
-	ctx                                 context.Context
-	ApiService                          *MonitorProviderApiService
-	addThirdPartyMonitorProviderRequest *AddThirdPartyMonitorProviderRequest
+	ctx                       context.Context
+	ApiService                *MonitorProviderApiService
+	addMonitorProviderRequest *AddMonitorProviderRequest
 }
 
 // Create a new Monitor Provider in the config
-func (r ApiAddMonitorProviderRequest) AddThirdPartyMonitorProviderRequest(addThirdPartyMonitorProviderRequest AddThirdPartyMonitorProviderRequest) ApiAddMonitorProviderRequest {
-	r.addThirdPartyMonitorProviderRequest = &addThirdPartyMonitorProviderRequest
+func (r ApiAddMonitorProviderRequest) AddMonitorProviderRequest(addMonitorProviderRequest AddMonitorProviderRequest) ApiAddMonitorProviderRequest {
+	r.addMonitorProviderRequest = &addMonitorProviderRequest
 	return r
 }
 
@@ -72,8 +72,8 @@ func (a *MonitorProviderApiService) AddMonitorProviderExecute(r ApiAddMonitorPro
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.addThirdPartyMonitorProviderRequest == nil {
-		return localVarReturnValue, nil, reportError("addThirdPartyMonitorProviderRequest is required and must be specified")
+	if r.addMonitorProviderRequest == nil {
+		return localVarReturnValue, nil, reportError("addMonitorProviderRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -94,7 +94,7 @@ func (a *MonitorProviderApiService) AddMonitorProviderExecute(r ApiAddMonitorPro
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.addThirdPartyMonitorProviderRequest
+	localVarPostBody = r.addMonitorProviderRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

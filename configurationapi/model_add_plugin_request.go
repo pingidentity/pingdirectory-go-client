@@ -21,6 +21,7 @@ type AddPluginRequest struct {
 	AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest *AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest
 	AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest     *AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest
 	AddCleanUpInactivePingfederatePersistentSessionsPluginRequest    *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest
+	AddCoalesceModificationsPluginRequest                            *AddCoalesceModificationsPluginRequest
 	AddComposedAttributePluginRequest                                *AddComposedAttributePluginRequest
 	AddDelayPluginRequest                                            *AddDelayPluginRequest
 	AddDnMapperPluginRequest                                         *AddDnMapperPluginRequest
@@ -69,6 +70,13 @@ func AddCleanUpExpiredPingfederatePersistentSessionsPluginRequestAsAddPluginRequ
 func AddCleanUpInactivePingfederatePersistentSessionsPluginRequestAsAddPluginRequest(v *AddCleanUpInactivePingfederatePersistentSessionsPluginRequest) AddPluginRequest {
 	return AddPluginRequest{
 		AddCleanUpInactivePingfederatePersistentSessionsPluginRequest: v,
+	}
+}
+
+// AddCoalesceModificationsPluginRequestAsAddPluginRequest is a convenience function that returns AddCoalesceModificationsPluginRequest wrapped in AddPluginRequest
+func AddCoalesceModificationsPluginRequestAsAddPluginRequest(v *AddCoalesceModificationsPluginRequest) AddPluginRequest {
+	return AddPluginRequest{
+		AddCoalesceModificationsPluginRequest: v,
 	}
 }
 
@@ -273,6 +281,19 @@ func (dst *AddPluginRequest) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.AddCleanUpInactivePingfederatePersistentSessionsPluginRequest = nil
+	}
+
+	// try to unmarshal data into AddCoalesceModificationsPluginRequest
+	err = newStrictDecoder(data).Decode(&dst.AddCoalesceModificationsPluginRequest)
+	if err == nil {
+		jsonAddCoalesceModificationsPluginRequest, _ := json.Marshal(dst.AddCoalesceModificationsPluginRequest)
+		if string(jsonAddCoalesceModificationsPluginRequest) == "{}" { // empty struct
+			dst.AddCoalesceModificationsPluginRequest = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.AddCoalesceModificationsPluginRequest = nil
 	}
 
 	// try to unmarshal data into AddComposedAttributePluginRequest
@@ -554,6 +575,7 @@ func (dst *AddPluginRequest) UnmarshalJSON(data []byte) error {
 		dst.AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest = nil
 		dst.AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest = nil
 		dst.AddCleanUpInactivePingfederatePersistentSessionsPluginRequest = nil
+		dst.AddCoalesceModificationsPluginRequest = nil
 		dst.AddComposedAttributePluginRequest = nil
 		dst.AddDelayPluginRequest = nil
 		dst.AddDnMapperPluginRequest = nil
@@ -600,6 +622,10 @@ func (src AddPluginRequest) MarshalJSON() ([]byte, error) {
 
 	if src.AddCleanUpInactivePingfederatePersistentSessionsPluginRequest != nil {
 		return json.Marshal(&src.AddCleanUpInactivePingfederatePersistentSessionsPluginRequest)
+	}
+
+	if src.AddCoalesceModificationsPluginRequest != nil {
+		return json.Marshal(&src.AddCoalesceModificationsPluginRequest)
 	}
 
 	if src.AddComposedAttributePluginRequest != nil {
@@ -708,6 +734,10 @@ func (obj *AddPluginRequest) GetActualInstance() interface{} {
 
 	if obj.AddCleanUpInactivePingfederatePersistentSessionsPluginRequest != nil {
 		return obj.AddCleanUpInactivePingfederatePersistentSessionsPluginRequest
+	}
+
+	if obj.AddCoalesceModificationsPluginRequest != nil {
+		return obj.AddCoalesceModificationsPluginRequest
 	}
 
 	if obj.AddComposedAttributePluginRequest != nil {

@@ -78,6 +78,7 @@ Name | Type | Description | Notes
 **SchemasEndpointObjectclass** | Pointer to **[]string** | The list of object classes which will be returned by the schemas endpoint. | [optional] 
 **DefaultOperationalAttribute** | Pointer to **[]string** | A set of operational attributes that will be returned with entries by default. | [optional] 
 **RejectExpansionAttribute** | Pointer to **[]string** | A set of attributes which the client is not allowed to provide for the expand query parameters. This should be used for attributes that could either have a large number of values or that reference entries that are very large like groups. | [optional] 
+**AlwaysUsePermissiveModify** | Pointer to **bool** | Indicates whether to always use permissive modify behavior for PATCH requests, even if the request did not include the permissive modify request control. | [optional] 
 **AllowedControl** | Pointer to [**[]EnumhttpServletExtensionAllowedControlProp**](EnumhttpServletExtensionAllowedControlProp.md) |  | [optional] 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party HTTP Servlet Extension. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party HTTP Servlet Extension. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
@@ -1880,6 +1881,31 @@ SetRejectExpansionAttribute sets RejectExpansionAttribute field to given value.
 `func (o *GetHttpServletExtension200Response) HasRejectExpansionAttribute() bool`
 
 HasRejectExpansionAttribute returns a boolean if a field has been set.
+
+### GetAlwaysUsePermissiveModify
+
+`func (o *GetHttpServletExtension200Response) GetAlwaysUsePermissiveModify() bool`
+
+GetAlwaysUsePermissiveModify returns the AlwaysUsePermissiveModify field if non-nil, zero value otherwise.
+
+### GetAlwaysUsePermissiveModifyOk
+
+`func (o *GetHttpServletExtension200Response) GetAlwaysUsePermissiveModifyOk() (*bool, bool)`
+
+GetAlwaysUsePermissiveModifyOk returns a tuple with the AlwaysUsePermissiveModify field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAlwaysUsePermissiveModify
+
+`func (o *GetHttpServletExtension200Response) SetAlwaysUsePermissiveModify(v bool)`
+
+SetAlwaysUsePermissiveModify sets AlwaysUsePermissiveModify field to given value.
+
+### HasAlwaysUsePermissiveModify
+
+`func (o *GetHttpServletExtension200Response) HasAlwaysUsePermissiveModify() bool`
+
+HasAlwaysUsePermissiveModify returns a boolean if a field has been set.
 
 ### GetAllowedControl
 

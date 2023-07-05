@@ -42,7 +42,9 @@ type ReplicationServerResponse struct {
 	// Specifies the base DN of domains that are only replicated between server instances that belong to the same replication set.
 	RestrictedDomain []string `json:"restrictedDomain,omitempty"`
 	// Specifies the gateway priority of the Replication Server in the current location.
-	GatewayPriority                               int64                                              `json:"gatewayPriority"`
+	GatewayPriority int64 `json:"gatewayPriority"`
+	// Specifies the missing changes alert threshold as a percentage of the total pending changes. For instance, a value of 80 indicates that the replica is 80% of the way to losing changes.
+	MissingChangesAlertThresholdPercent           *int64                                             `json:"missingChangesAlertThresholdPercent,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 }
@@ -452,6 +454,38 @@ func (o *ReplicationServerResponse) SetGatewayPriority(v int64) {
 	o.GatewayPriority = v
 }
 
+// GetMissingChangesAlertThresholdPercent returns the MissingChangesAlertThresholdPercent field value if set, zero value otherwise.
+func (o *ReplicationServerResponse) GetMissingChangesAlertThresholdPercent() int64 {
+	if o == nil || IsNil(o.MissingChangesAlertThresholdPercent) {
+		var ret int64
+		return ret
+	}
+	return *o.MissingChangesAlertThresholdPercent
+}
+
+// GetMissingChangesAlertThresholdPercentOk returns a tuple with the MissingChangesAlertThresholdPercent field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ReplicationServerResponse) GetMissingChangesAlertThresholdPercentOk() (*int64, bool) {
+	if o == nil || IsNil(o.MissingChangesAlertThresholdPercent) {
+		return nil, false
+	}
+	return o.MissingChangesAlertThresholdPercent, true
+}
+
+// HasMissingChangesAlertThresholdPercent returns a boolean if a field has been set.
+func (o *ReplicationServerResponse) HasMissingChangesAlertThresholdPercent() bool {
+	if o != nil && !IsNil(o.MissingChangesAlertThresholdPercent) {
+		return true
+	}
+
+	return false
+}
+
+// SetMissingChangesAlertThresholdPercent gets a reference to the given int64 and assigns it to the MissingChangesAlertThresholdPercent field.
+func (o *ReplicationServerResponse) SetMissingChangesAlertThresholdPercent(v int64) {
+	o.MissingChangesAlertThresholdPercent = &v
+}
+
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *ReplicationServerResponse) GetMeta() MetaMeta {
 	if o == nil || IsNil(o.Meta) {
@@ -557,6 +591,9 @@ func (o ReplicationServerResponse) ToMap() (map[string]interface{}, error) {
 		toSerialize["restrictedDomain"] = o.RestrictedDomain
 	}
 	toSerialize["gatewayPriority"] = o.GatewayPriority
+	if !IsNil(o.MissingChangesAlertThresholdPercent) {
+		toSerialize["missingChangesAlertThresholdPercent"] = o.MissingChangesAlertThresholdPercent
+	}
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta
 	}

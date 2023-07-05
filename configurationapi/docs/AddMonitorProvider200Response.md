@@ -6,18 +6,21 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | Name of the Monitor Provider | 
 **Schemas** | [**[]EnumthirdPartyMonitorProviderSchemaUrn**](EnumthirdPartyMonitorProviderSchemaUrn.md) |  | 
-**ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Monitor Provider. | 
-**ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Monitor Provider. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
+**CheckFrequency** | **string** | The frequency with which this monitor provider should confirm the ability to access the server&#39;s encryption settings database. | 
+**ProlongedOutageDuration** | Pointer to **string** | The minimum length of time that an outage should persist before it is considered a prolonged outage. If an outage lasts at least as long as this duration, then the server will take the action indicated by the prolonged-outage-behavior property. | [optional] 
+**ProlongedOutageBehavior** | Pointer to [**EnummonitorProviderProlongedOutageBehaviorProp**](EnummonitorProviderProlongedOutageBehaviorProp.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Monitor Provider | [optional] 
 **Enabled** | **bool** | Indicates whether the Monitor Provider is enabled for use. | 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Monitor Provider. | 
+**ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Monitor Provider. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 
 ## Methods
 
 ### NewAddMonitorProvider200Response
 
-`func NewAddMonitorProvider200Response(id string, schemas []EnumthirdPartyMonitorProviderSchemaUrn, extensionClass string, enabled bool, ) *AddMonitorProvider200Response`
+`func NewAddMonitorProvider200Response(id string, schemas []EnumthirdPartyMonitorProviderSchemaUrn, checkFrequency string, enabled bool, extensionClass string, ) *AddMonitorProvider200Response`
 
 NewAddMonitorProvider200Response instantiates a new AddMonitorProvider200Response object
 This constructor will assign default values to properties that have it defined,
@@ -72,50 +75,75 @@ and a boolean to check if the value has been set.
 SetSchemas sets Schemas field to given value.
 
 
-### GetExtensionClass
+### GetCheckFrequency
 
-`func (o *AddMonitorProvider200Response) GetExtensionClass() string`
+`func (o *AddMonitorProvider200Response) GetCheckFrequency() string`
 
-GetExtensionClass returns the ExtensionClass field if non-nil, zero value otherwise.
+GetCheckFrequency returns the CheckFrequency field if non-nil, zero value otherwise.
 
-### GetExtensionClassOk
+### GetCheckFrequencyOk
 
-`func (o *AddMonitorProvider200Response) GetExtensionClassOk() (*string, bool)`
+`func (o *AddMonitorProvider200Response) GetCheckFrequencyOk() (*string, bool)`
 
-GetExtensionClassOk returns a tuple with the ExtensionClass field if it's non-nil, zero value otherwise
+GetCheckFrequencyOk returns a tuple with the CheckFrequency field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetExtensionClass
+### SetCheckFrequency
 
-`func (o *AddMonitorProvider200Response) SetExtensionClass(v string)`
+`func (o *AddMonitorProvider200Response) SetCheckFrequency(v string)`
 
-SetExtensionClass sets ExtensionClass field to given value.
+SetCheckFrequency sets CheckFrequency field to given value.
 
 
-### GetExtensionArgument
+### GetProlongedOutageDuration
 
-`func (o *AddMonitorProvider200Response) GetExtensionArgument() []string`
+`func (o *AddMonitorProvider200Response) GetProlongedOutageDuration() string`
 
-GetExtensionArgument returns the ExtensionArgument field if non-nil, zero value otherwise.
+GetProlongedOutageDuration returns the ProlongedOutageDuration field if non-nil, zero value otherwise.
 
-### GetExtensionArgumentOk
+### GetProlongedOutageDurationOk
 
-`func (o *AddMonitorProvider200Response) GetExtensionArgumentOk() (*[]string, bool)`
+`func (o *AddMonitorProvider200Response) GetProlongedOutageDurationOk() (*string, bool)`
 
-GetExtensionArgumentOk returns a tuple with the ExtensionArgument field if it's non-nil, zero value otherwise
+GetProlongedOutageDurationOk returns a tuple with the ProlongedOutageDuration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetExtensionArgument
+### SetProlongedOutageDuration
 
-`func (o *AddMonitorProvider200Response) SetExtensionArgument(v []string)`
+`func (o *AddMonitorProvider200Response) SetProlongedOutageDuration(v string)`
 
-SetExtensionArgument sets ExtensionArgument field to given value.
+SetProlongedOutageDuration sets ProlongedOutageDuration field to given value.
 
-### HasExtensionArgument
+### HasProlongedOutageDuration
 
-`func (o *AddMonitorProvider200Response) HasExtensionArgument() bool`
+`func (o *AddMonitorProvider200Response) HasProlongedOutageDuration() bool`
 
-HasExtensionArgument returns a boolean if a field has been set.
+HasProlongedOutageDuration returns a boolean if a field has been set.
+
+### GetProlongedOutageBehavior
+
+`func (o *AddMonitorProvider200Response) GetProlongedOutageBehavior() EnummonitorProviderProlongedOutageBehaviorProp`
+
+GetProlongedOutageBehavior returns the ProlongedOutageBehavior field if non-nil, zero value otherwise.
+
+### GetProlongedOutageBehaviorOk
+
+`func (o *AddMonitorProvider200Response) GetProlongedOutageBehaviorOk() (*EnummonitorProviderProlongedOutageBehaviorProp, bool)`
+
+GetProlongedOutageBehaviorOk returns a tuple with the ProlongedOutageBehavior field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProlongedOutageBehavior
+
+`func (o *AddMonitorProvider200Response) SetProlongedOutageBehavior(v EnummonitorProviderProlongedOutageBehaviorProp)`
+
+SetProlongedOutageBehavior sets ProlongedOutageBehavior field to given value.
+
+### HasProlongedOutageBehavior
+
+`func (o *AddMonitorProvider200Response) HasProlongedOutageBehavior() bool`
+
+HasProlongedOutageBehavior returns a boolean if a field has been set.
 
 ### GetDescription
 
@@ -211,6 +239,51 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *AddMonitorProvider200Response) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetExtensionClass
+
+`func (o *AddMonitorProvider200Response) GetExtensionClass() string`
+
+GetExtensionClass returns the ExtensionClass field if non-nil, zero value otherwise.
+
+### GetExtensionClassOk
+
+`func (o *AddMonitorProvider200Response) GetExtensionClassOk() (*string, bool)`
+
+GetExtensionClassOk returns a tuple with the ExtensionClass field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExtensionClass
+
+`func (o *AddMonitorProvider200Response) SetExtensionClass(v string)`
+
+SetExtensionClass sets ExtensionClass field to given value.
+
+
+### GetExtensionArgument
+
+`func (o *AddMonitorProvider200Response) GetExtensionArgument() []string`
+
+GetExtensionArgument returns the ExtensionArgument field if non-nil, zero value otherwise.
+
+### GetExtensionArgumentOk
+
+`func (o *AddMonitorProvider200Response) GetExtensionArgumentOk() (*[]string, bool)`
+
+GetExtensionArgumentOk returns a tuple with the ExtensionArgument field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExtensionArgument
+
+`func (o *AddMonitorProvider200Response) SetExtensionArgument(v []string)`
+
+SetExtensionArgument sets ExtensionArgument field to given value.
+
+### HasExtensionArgument
+
+`func (o *AddMonitorProvider200Response) HasExtensionArgument() bool`
+
+HasExtensionArgument returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

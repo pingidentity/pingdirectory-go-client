@@ -17,19 +17,21 @@ import (
 
 // GetPasswordValidator200Response - struct for GetPasswordValidator200Response
 type GetPasswordValidator200Response struct {
-	AttributeValuePasswordValidatorResponse     *AttributeValuePasswordValidatorResponse
-	CharacterSetPasswordValidatorResponse       *CharacterSetPasswordValidatorResponse
-	CustomPasswordValidatorResponse             *CustomPasswordValidatorResponse
-	DictionaryPasswordValidatorResponse         *DictionaryPasswordValidatorResponse
-	GroovyScriptedPasswordValidatorResponse     *GroovyScriptedPasswordValidatorResponse
-	HaystackPasswordValidatorResponse           *HaystackPasswordValidatorResponse
-	LengthBasedPasswordValidatorResponse        *LengthBasedPasswordValidatorResponse
-	PwnedPasswordsPasswordValidatorResponse     *PwnedPasswordsPasswordValidatorResponse
-	RegularExpressionPasswordValidatorResponse  *RegularExpressionPasswordValidatorResponse
-	RepeatedCharactersPasswordValidatorResponse *RepeatedCharactersPasswordValidatorResponse
-	SimilarityBasedPasswordValidatorResponse    *SimilarityBasedPasswordValidatorResponse
-	ThirdPartyPasswordValidatorResponse         *ThirdPartyPasswordValidatorResponse
-	UniqueCharactersPasswordValidatorResponse   *UniqueCharactersPasswordValidatorResponse
+	AttributeValuePasswordValidatorResponse       *AttributeValuePasswordValidatorResponse
+	CharacterSetPasswordValidatorResponse         *CharacterSetPasswordValidatorResponse
+	CustomPasswordValidatorResponse               *CustomPasswordValidatorResponse
+	DictionaryPasswordValidatorResponse           *DictionaryPasswordValidatorResponse
+	DisallowedCharactersPasswordValidatorResponse *DisallowedCharactersPasswordValidatorResponse
+	GroovyScriptedPasswordValidatorResponse       *GroovyScriptedPasswordValidatorResponse
+	HaystackPasswordValidatorResponse             *HaystackPasswordValidatorResponse
+	LengthBasedPasswordValidatorResponse          *LengthBasedPasswordValidatorResponse
+	PwnedPasswordsPasswordValidatorResponse       *PwnedPasswordsPasswordValidatorResponse
+	RegularExpressionPasswordValidatorResponse    *RegularExpressionPasswordValidatorResponse
+	RepeatedCharactersPasswordValidatorResponse   *RepeatedCharactersPasswordValidatorResponse
+	SimilarityBasedPasswordValidatorResponse      *SimilarityBasedPasswordValidatorResponse
+	ThirdPartyPasswordValidatorResponse           *ThirdPartyPasswordValidatorResponse
+	UniqueCharactersPasswordValidatorResponse     *UniqueCharactersPasswordValidatorResponse
+	Utf8PasswordValidatorResponse                 *Utf8PasswordValidatorResponse
 }
 
 // AttributeValuePasswordValidatorResponseAsGetPasswordValidator200Response is a convenience function that returns AttributeValuePasswordValidatorResponse wrapped in GetPasswordValidator200Response
@@ -57,6 +59,13 @@ func CustomPasswordValidatorResponseAsGetPasswordValidator200Response(v *CustomP
 func DictionaryPasswordValidatorResponseAsGetPasswordValidator200Response(v *DictionaryPasswordValidatorResponse) GetPasswordValidator200Response {
 	return GetPasswordValidator200Response{
 		DictionaryPasswordValidatorResponse: v,
+	}
+}
+
+// DisallowedCharactersPasswordValidatorResponseAsGetPasswordValidator200Response is a convenience function that returns DisallowedCharactersPasswordValidatorResponse wrapped in GetPasswordValidator200Response
+func DisallowedCharactersPasswordValidatorResponseAsGetPasswordValidator200Response(v *DisallowedCharactersPasswordValidatorResponse) GetPasswordValidator200Response {
+	return GetPasswordValidator200Response{
+		DisallowedCharactersPasswordValidatorResponse: v,
 	}
 }
 
@@ -123,6 +132,13 @@ func UniqueCharactersPasswordValidatorResponseAsGetPasswordValidator200Response(
 	}
 }
 
+// Utf8PasswordValidatorResponseAsGetPasswordValidator200Response is a convenience function that returns Utf8PasswordValidatorResponse wrapped in GetPasswordValidator200Response
+func Utf8PasswordValidatorResponseAsGetPasswordValidator200Response(v *Utf8PasswordValidatorResponse) GetPasswordValidator200Response {
+	return GetPasswordValidator200Response{
+		Utf8PasswordValidatorResponse: v,
+	}
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *GetPasswordValidator200Response) UnmarshalJSON(data []byte) error {
 	var err error
@@ -177,6 +193,19 @@ func (dst *GetPasswordValidator200Response) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.DictionaryPasswordValidatorResponse = nil
+	}
+
+	// try to unmarshal data into DisallowedCharactersPasswordValidatorResponse
+	err = newStrictDecoder(data).Decode(&dst.DisallowedCharactersPasswordValidatorResponse)
+	if err == nil {
+		jsonDisallowedCharactersPasswordValidatorResponse, _ := json.Marshal(dst.DisallowedCharactersPasswordValidatorResponse)
+		if string(jsonDisallowedCharactersPasswordValidatorResponse) == "{}" { // empty struct
+			dst.DisallowedCharactersPasswordValidatorResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.DisallowedCharactersPasswordValidatorResponse = nil
 	}
 
 	// try to unmarshal data into GroovyScriptedPasswordValidatorResponse
@@ -296,12 +325,26 @@ func (dst *GetPasswordValidator200Response) UnmarshalJSON(data []byte) error {
 		dst.UniqueCharactersPasswordValidatorResponse = nil
 	}
 
+	// try to unmarshal data into Utf8PasswordValidatorResponse
+	err = newStrictDecoder(data).Decode(&dst.Utf8PasswordValidatorResponse)
+	if err == nil {
+		jsonUtf8PasswordValidatorResponse, _ := json.Marshal(dst.Utf8PasswordValidatorResponse)
+		if string(jsonUtf8PasswordValidatorResponse) == "{}" { // empty struct
+			dst.Utf8PasswordValidatorResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.Utf8PasswordValidatorResponse = nil
+	}
+
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.AttributeValuePasswordValidatorResponse = nil
 		dst.CharacterSetPasswordValidatorResponse = nil
 		dst.CustomPasswordValidatorResponse = nil
 		dst.DictionaryPasswordValidatorResponse = nil
+		dst.DisallowedCharactersPasswordValidatorResponse = nil
 		dst.GroovyScriptedPasswordValidatorResponse = nil
 		dst.HaystackPasswordValidatorResponse = nil
 		dst.LengthBasedPasswordValidatorResponse = nil
@@ -311,6 +354,7 @@ func (dst *GetPasswordValidator200Response) UnmarshalJSON(data []byte) error {
 		dst.SimilarityBasedPasswordValidatorResponse = nil
 		dst.ThirdPartyPasswordValidatorResponse = nil
 		dst.UniqueCharactersPasswordValidatorResponse = nil
+		dst.Utf8PasswordValidatorResponse = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(GetPasswordValidator200Response)")
 	} else if match == 1 {
@@ -336,6 +380,10 @@ func (src GetPasswordValidator200Response) MarshalJSON() ([]byte, error) {
 
 	if src.DictionaryPasswordValidatorResponse != nil {
 		return json.Marshal(&src.DictionaryPasswordValidatorResponse)
+	}
+
+	if src.DisallowedCharactersPasswordValidatorResponse != nil {
+		return json.Marshal(&src.DisallowedCharactersPasswordValidatorResponse)
 	}
 
 	if src.GroovyScriptedPasswordValidatorResponse != nil {
@@ -374,6 +422,10 @@ func (src GetPasswordValidator200Response) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.UniqueCharactersPasswordValidatorResponse)
 	}
 
+	if src.Utf8PasswordValidatorResponse != nil {
+		return json.Marshal(&src.Utf8PasswordValidatorResponse)
+	}
+
 	return nil, nil // no data in oneOf schemas
 }
 
@@ -396,6 +448,10 @@ func (obj *GetPasswordValidator200Response) GetActualInstance() interface{} {
 
 	if obj.DictionaryPasswordValidatorResponse != nil {
 		return obj.DictionaryPasswordValidatorResponse
+	}
+
+	if obj.DisallowedCharactersPasswordValidatorResponse != nil {
+		return obj.DisallowedCharactersPasswordValidatorResponse
 	}
 
 	if obj.GroovyScriptedPasswordValidatorResponse != nil {
@@ -432,6 +488,10 @@ func (obj *GetPasswordValidator200Response) GetActualInstance() interface{} {
 
 	if obj.UniqueCharactersPasswordValidatorResponse != nil {
 		return obj.UniqueCharactersPasswordValidatorResponse
+	}
+
+	if obj.Utf8PasswordValidatorResponse != nil {
+		return obj.Utf8PasswordValidatorResponse
 	}
 
 	// all schemas are nil

@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **SchemasEndpointObjectclass** | Pointer to **[]string** | The list of object classes which will be returned by the schemas endpoint. | [optional] 
 **DefaultOperationalAttribute** | Pointer to **[]string** | A set of operational attributes that will be returned with entries by default. | [optional] 
 **RejectExpansionAttribute** | Pointer to **[]string** | A set of attributes which the client is not allowed to provide for the expand query parameters. This should be used for attributes that could either have a large number of values or that reference entries that are very large like groups. | [optional] 
+**AlwaysUsePermissiveModify** | Pointer to **bool** | Indicates whether to always use permissive modify behavior for PATCH requests, even if the request did not include the permissive modify request control. | [optional] 
 **AllowedControl** | Pointer to [**[]EnumhttpServletExtensionAllowedControlProp**](EnumhttpServletExtensionAllowedControlProp.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this HTTP Servlet Extension | [optional] 
 **CrossOriginPolicy** | Pointer to **string** | The cross-origin request policy to use for the HTTP Servlet Extension. | [optional] 
@@ -306,6 +307,31 @@ SetRejectExpansionAttribute sets RejectExpansionAttribute field to given value.
 `func (o *DirectoryRestApiHttpServletExtensionResponse) HasRejectExpansionAttribute() bool`
 
 HasRejectExpansionAttribute returns a boolean if a field has been set.
+
+### GetAlwaysUsePermissiveModify
+
+`func (o *DirectoryRestApiHttpServletExtensionResponse) GetAlwaysUsePermissiveModify() bool`
+
+GetAlwaysUsePermissiveModify returns the AlwaysUsePermissiveModify field if non-nil, zero value otherwise.
+
+### GetAlwaysUsePermissiveModifyOk
+
+`func (o *DirectoryRestApiHttpServletExtensionResponse) GetAlwaysUsePermissiveModifyOk() (*bool, bool)`
+
+GetAlwaysUsePermissiveModifyOk returns a tuple with the AlwaysUsePermissiveModify field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAlwaysUsePermissiveModify
+
+`func (o *DirectoryRestApiHttpServletExtensionResponse) SetAlwaysUsePermissiveModify(v bool)`
+
+SetAlwaysUsePermissiveModify sets AlwaysUsePermissiveModify field to given value.
+
+### HasAlwaysUsePermissiveModify
+
+`func (o *DirectoryRestApiHttpServletExtensionResponse) HasAlwaysUsePermissiveModify() bool`
+
+HasAlwaysUsePermissiveModify returns a boolean if a field has been set.
 
 ### GetAllowedControl
 

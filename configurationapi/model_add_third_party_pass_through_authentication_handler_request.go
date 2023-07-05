@@ -28,6 +28,12 @@ type AddThirdPartyPassThroughAuthenticationHandlerRequest struct {
 	ExtensionArgument []string `json:"extensionArgument,omitempty"`
 	// A description for this Pass Through Authentication Handler
 	Description *string `json:"description,omitempty"`
+	// The base DNs for the local users whose authentication attempts may be passed through to the external authentication service.
+	IncludedLocalEntryBaseDN []string `json:"includedLocalEntryBaseDN,omitempty"`
+	// A reference to connection criteria that will be used to indicate which bind requests should be passed through to the external authentication service.
+	ConnectionCriteria *string `json:"connectionCriteria,omitempty"`
+	// A reference to request criteria that will be used to indicate which bind requests should be passed through to the external authentication service.
+	RequestCriteria *string `json:"requestCriteria,omitempty"`
 }
 
 // NewAddThirdPartyPassThroughAuthenticationHandlerRequest instantiates a new AddThirdPartyPassThroughAuthenticationHandlerRequest object
@@ -186,6 +192,102 @@ func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) SetDescription(v 
 	o.Description = &v
 }
 
+// GetIncludedLocalEntryBaseDN returns the IncludedLocalEntryBaseDN field value if set, zero value otherwise.
+func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetIncludedLocalEntryBaseDN() []string {
+	if o == nil || IsNil(o.IncludedLocalEntryBaseDN) {
+		var ret []string
+		return ret
+	}
+	return o.IncludedLocalEntryBaseDN
+}
+
+// GetIncludedLocalEntryBaseDNOk returns a tuple with the IncludedLocalEntryBaseDN field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetIncludedLocalEntryBaseDNOk() ([]string, bool) {
+	if o == nil || IsNil(o.IncludedLocalEntryBaseDN) {
+		return nil, false
+	}
+	return o.IncludedLocalEntryBaseDN, true
+}
+
+// HasIncludedLocalEntryBaseDN returns a boolean if a field has been set.
+func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) HasIncludedLocalEntryBaseDN() bool {
+	if o != nil && !IsNil(o.IncludedLocalEntryBaseDN) {
+		return true
+	}
+
+	return false
+}
+
+// SetIncludedLocalEntryBaseDN gets a reference to the given []string and assigns it to the IncludedLocalEntryBaseDN field.
+func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) SetIncludedLocalEntryBaseDN(v []string) {
+	o.IncludedLocalEntryBaseDN = v
+}
+
+// GetConnectionCriteria returns the ConnectionCriteria field value if set, zero value otherwise.
+func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetConnectionCriteria() string {
+	if o == nil || IsNil(o.ConnectionCriteria) {
+		var ret string
+		return ret
+	}
+	return *o.ConnectionCriteria
+}
+
+// GetConnectionCriteriaOk returns a tuple with the ConnectionCriteria field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetConnectionCriteriaOk() (*string, bool) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
+		return nil, false
+	}
+	return o.ConnectionCriteria, true
+}
+
+// HasConnectionCriteria returns a boolean if a field has been set.
+func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) HasConnectionCriteria() bool {
+	if o != nil && !IsNil(o.ConnectionCriteria) {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectionCriteria gets a reference to the given string and assigns it to the ConnectionCriteria field.
+func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) SetConnectionCriteria(v string) {
+	o.ConnectionCriteria = &v
+}
+
+// GetRequestCriteria returns the RequestCriteria field value if set, zero value otherwise.
+func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetRequestCriteria() string {
+	if o == nil || IsNil(o.RequestCriteria) {
+		var ret string
+		return ret
+	}
+	return *o.RequestCriteria
+}
+
+// GetRequestCriteriaOk returns a tuple with the RequestCriteria field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetRequestCriteriaOk() (*string, bool) {
+	if o == nil || IsNil(o.RequestCriteria) {
+		return nil, false
+	}
+	return o.RequestCriteria, true
+}
+
+// HasRequestCriteria returns a boolean if a field has been set.
+func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) HasRequestCriteria() bool {
+	if o != nil && !IsNil(o.RequestCriteria) {
+		return true
+	}
+
+	return false
+}
+
+// SetRequestCriteria gets a reference to the given string and assigns it to the RequestCriteria field.
+func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) SetRequestCriteria(v string) {
+	o.RequestCriteria = &v
+}
+
 func (o AddThirdPartyPassThroughAuthenticationHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -204,6 +306,15 @@ func (o AddThirdPartyPassThroughAuthenticationHandlerRequest) ToMap() (map[strin
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.IncludedLocalEntryBaseDN) {
+		toSerialize["includedLocalEntryBaseDN"] = o.IncludedLocalEntryBaseDN
+	}
+	if !IsNil(o.ConnectionCriteria) {
+		toSerialize["connectionCriteria"] = o.ConnectionCriteria
+	}
+	if !IsNil(o.RequestCriteria) {
+		toSerialize["requestCriteria"] = o.RequestCriteria
 	}
 	return toSerialize, nil
 }

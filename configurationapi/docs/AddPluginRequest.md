@@ -35,7 +35,7 @@ Name | Type | Description | Notes
 **HttpProxyExternalServer** | Pointer to **string** | A reference to an HTTP proxy server that should be used for requests sent to the PingOne service. | [optional] 
 **IncludedLocalEntryBaseDN** | Pointer to **[]string** | The base DNs for the local users whose authentication attempts may be passed through to the external authentication service. | [optional] 
 **ConnectionCriteria** | Pointer to **string** | A reference to connection criteria that will be used to indicate which bind requests should be passed through to the external authentication service. | [optional] 
-**RequestCriteria** | Pointer to **string** | A reference to request criteria that will be used to indicate which bind requests should be passed through to the external authentication service. | [optional] 
+**RequestCriteria** | **string** | A reference to request criteria that will be used to indicate which bind requests should be passed through to the external authentication service. | 
 **TryLocalBind** | Pointer to **bool** | Indicates whether to attempt the bind in the local server first and only send the request to the external authentication service if the local bind attempt fails, or to only attempt the bind in the external service. | [optional] 
 **OverrideLocalPassword** | Pointer to **bool** | Indicates whether to attempt the authentication in the external service if the local user entry includes a password. This property will be ignored if try-local-bind is false. | [optional] 
 **UpdateLocalPassword** | Pointer to **bool** | Indicates whether to overwrite the user&#39;s local password if the local bind fails but the authentication attempt succeeds when attempted in the external service. This property may only be set to true if try-local-bind is also true. | [optional] 
@@ -108,6 +108,7 @@ Name | Type | Description | Notes
 **SessionTimeout** | Pointer to **string** | Specifies the maximum amount of time to wait for a session to the master agent to be established. | [optional] 
 **ConnectRetryMaxWait** | Pointer to **string** | The maximum amount of time to wait between attempts to establish a connection to the master agent. | [optional] 
 **PingInterval** | Pointer to **string** | The amount of time between consecutive pings sent by the sub-agent on its connection to the master agent. A value of zero disables the sending of pings by the sub-agent. | [optional] 
+**AllowedRequestControl** | Pointer to **[]string** | Specifies the OIDs of the controls that are allowed to be present in operations to coalesce. These controls are passed through when the request is validated, but they will not be included when the background thread applies the coalesced modify requests. | [optional] 
 **ValuePattern** | **[]string** | Specifies a pattern for constructing the values to use for the target attribute type. | 
 **MultipleValuePatternBehavior** | Pointer to [**EnumpluginMultipleValuePatternBehaviorProp**](EnumpluginMultipleValuePatternBehaviorProp.md) |  | [optional] 
 **MultiValuedAttributeBehavior** | Pointer to [**EnumpluginMultiValuedAttributeBehaviorProp**](EnumpluginMultiValuedAttributeBehaviorProp.md) |  | [optional] 
@@ -136,7 +137,7 @@ Name | Type | Description | Notes
 
 ### NewAddPluginRequest
 
-`func NewAddPluginRequest(pluginName string, schemas []EnumuniqueAttributePluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, baseDN []string, filterPrefix string, enabled bool, filter string, attributeType []string, invokeGCTimeUtc []string, apiURL string, authURL string, oAuthClientID string, environmentID string, userMappingLocalAttribute []string, userMappingRemoteJSONField []string, scope EnumpluginScopeProp, outputFile string, logFile string, datetimeAttribute string, expirationOffset string, extensionClass string, server []string, sourceDN string, targetDN string, referralBaseURL []string, valuePattern []string, sourceAttribute string, targetAttribute string, delay string, scriptClass string, passThroughAuthenticationHandler string, type_ []string, ) *AddPluginRequest`
+`func NewAddPluginRequest(pluginName string, schemas []EnumuniqueAttributePluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, baseDN []string, filterPrefix string, enabled bool, filter string, attributeType []string, invokeGCTimeUtc []string, apiURL string, authURL string, oAuthClientID string, environmentID string, requestCriteria string, userMappingLocalAttribute []string, userMappingRemoteJSONField []string, scope EnumpluginScopeProp, outputFile string, logFile string, datetimeAttribute string, expirationOffset string, extensionClass string, server []string, sourceDN string, targetDN string, referralBaseURL []string, valuePattern []string, sourceAttribute string, targetAttribute string, delay string, scriptClass string, passThroughAuthenticationHandler string, type_ []string, ) *AddPluginRequest`
 
 NewAddPluginRequest instantiates a new AddPluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -880,11 +881,6 @@ and a boolean to check if the value has been set.
 
 SetRequestCriteria sets RequestCriteria field to given value.
 
-### HasRequestCriteria
-
-`func (o *AddPluginRequest) HasRequestCriteria() bool`
-
-HasRequestCriteria returns a boolean if a field has been set.
 
 ### GetTryLocalBind
 
@@ -2625,6 +2621,31 @@ SetPingInterval sets PingInterval field to given value.
 `func (o *AddPluginRequest) HasPingInterval() bool`
 
 HasPingInterval returns a boolean if a field has been set.
+
+### GetAllowedRequestControl
+
+`func (o *AddPluginRequest) GetAllowedRequestControl() []string`
+
+GetAllowedRequestControl returns the AllowedRequestControl field if non-nil, zero value otherwise.
+
+### GetAllowedRequestControlOk
+
+`func (o *AddPluginRequest) GetAllowedRequestControlOk() (*[]string, bool)`
+
+GetAllowedRequestControlOk returns a tuple with the AllowedRequestControl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowedRequestControl
+
+`func (o *AddPluginRequest) SetAllowedRequestControl(v []string)`
+
+SetAllowedRequestControl sets AllowedRequestControl field to given value.
+
+### HasAllowedRequestControl
+
+`func (o *AddPluginRequest) HasAllowedRequestControl() bool`
+
+HasAllowedRequestControl returns a boolean if a field has been set.
 
 ### GetValuePattern
 

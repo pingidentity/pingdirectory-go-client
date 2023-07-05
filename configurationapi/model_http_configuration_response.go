@@ -21,7 +21,9 @@ var _ MappedNullable = &HttpConfigurationResponse{}
 type HttpConfigurationResponse struct {
 	Schemas []EnumhttpConfigurationSchemaUrn `json:"schemas,omitempty"`
 	// Indicates whether exceptions thrown by servlet or web application extensions will be included in the resulting error page response. Stack traces can be helpful in diagnosing application errors, but in production they may reveal information that might be useful to a malicious attacker.
-	IncludeStackTracesInErrorPages                *bool                                              `json:"includeStackTracesInErrorPages,omitempty"`
+	IncludeStackTracesInErrorPages *bool `json:"includeStackTracesInErrorPages,omitempty"`
+	// Indicates whether to expose servlet information in the error page response.
+	IncludeServletInformationInErrorPages         *bool                                              `json:"includeServletInformationInErrorPages,omitempty"`
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 }
@@ -107,6 +109,38 @@ func (o *HttpConfigurationResponse) SetIncludeStackTracesInErrorPages(v bool) {
 	o.IncludeStackTracesInErrorPages = &v
 }
 
+// GetIncludeServletInformationInErrorPages returns the IncludeServletInformationInErrorPages field value if set, zero value otherwise.
+func (o *HttpConfigurationResponse) GetIncludeServletInformationInErrorPages() bool {
+	if o == nil || IsNil(o.IncludeServletInformationInErrorPages) {
+		var ret bool
+		return ret
+	}
+	return *o.IncludeServletInformationInErrorPages
+}
+
+// GetIncludeServletInformationInErrorPagesOk returns a tuple with the IncludeServletInformationInErrorPages field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *HttpConfigurationResponse) GetIncludeServletInformationInErrorPagesOk() (*bool, bool) {
+	if o == nil || IsNil(o.IncludeServletInformationInErrorPages) {
+		return nil, false
+	}
+	return o.IncludeServletInformationInErrorPages, true
+}
+
+// HasIncludeServletInformationInErrorPages returns a boolean if a field has been set.
+func (o *HttpConfigurationResponse) HasIncludeServletInformationInErrorPages() bool {
+	if o != nil && !IsNil(o.IncludeServletInformationInErrorPages) {
+		return true
+	}
+
+	return false
+}
+
+// SetIncludeServletInformationInErrorPages gets a reference to the given bool and assigns it to the IncludeServletInformationInErrorPages field.
+func (o *HttpConfigurationResponse) SetIncludeServletInformationInErrorPages(v bool) {
+	o.IncludeServletInformationInErrorPages = &v
+}
+
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *HttpConfigurationResponse) GetMeta() MetaMeta {
 	if o == nil || IsNil(o.Meta) {
@@ -186,6 +220,9 @@ func (o HttpConfigurationResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.IncludeStackTracesInErrorPages) {
 		toSerialize["includeStackTracesInErrorPages"] = o.IncludeStackTracesInErrorPages
+	}
+	if !IsNil(o.IncludeServletInformationInErrorPages) {
+		toSerialize["includeServletInformationInErrorPages"] = o.IncludeServletInformationInErrorPages
 	}
 	if !IsNil(o.Meta) {
 		toSerialize["meta"] = o.Meta

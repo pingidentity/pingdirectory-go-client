@@ -5,7 +5,7 @@ info:
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
-  url: https://docs.pingidentity.com/r/en-us/pingdirectory-92/pd_ds_use_config_api
+  url: https://docs.pingidentity.com/r/en-us/pingdirectory-93/pd_ds_use_config_api
 tags:
 - description: Access the Plugin Root
   name: plugin-root
@@ -85,6 +85,7 @@ paths:
               - $ref: '#/components/schemas/add-referral-on-update-plugin-request'
               - $ref: '#/components/schemas/add-simple-to-external-bind-plugin-request'
               - $ref: '#/components/schemas/add-snmp-subagent-plugin-request'
+              - $ref: '#/components/schemas/add-coalesce-modifications-plugin-request'
               - $ref: '#/components/schemas/add-clean-up-inactive-pingfederate-persistent-sessions-plugin-request'
               - $ref: '#/components/schemas/add-composed-attribute-plugin-request'
               - $ref: '#/components/schemas/add-attribute-mapper-plugin-request'
@@ -119,6 +120,7 @@ paths:
                 - $ref: '#/components/schemas/referral-on-update-plugin-response'
                 - $ref: '#/components/schemas/simple-to-external-bind-plugin-response'
                 - $ref: '#/components/schemas/snmp-subagent-plugin-response'
+                - $ref: '#/components/schemas/coalesce-modifications-plugin-response'
                 - $ref: '#/components/schemas/clean-up-inactive-pingfederate-persistent-sessions-plugin-response'
                 - $ref: '#/components/schemas/composed-attribute-plugin-response'
                 - $ref: '#/components/schemas/attribute-mapper-plugin-response'
@@ -211,6 +213,7 @@ paths:
                 - $ref: '#/components/schemas/simple-to-external-bind-plugin-response'
                 - $ref: '#/components/schemas/custom-plugin-response'
                 - $ref: '#/components/schemas/snmp-subagent-plugin-response'
+                - $ref: '#/components/schemas/coalesce-modifications-plugin-response'
                 - $ref: '#/components/schemas/password-policy-import-plugin-response'
                 - $ref: '#/components/schemas/profiler-plugin-response'
                 - $ref: '#/components/schemas/clean-up-inactive-pingfederate-persistent-sessions-plugin-response'
@@ -284,6 +287,7 @@ paths:
                 - $ref: '#/components/schemas/simple-to-external-bind-plugin-response'
                 - $ref: '#/components/schemas/custom-plugin-response'
                 - $ref: '#/components/schemas/snmp-subagent-plugin-response'
+                - $ref: '#/components/schemas/coalesce-modifications-plugin-response'
                 - $ref: '#/components/schemas/password-policy-import-plugin-response'
                 - $ref: '#/components/schemas/profiler-plugin-response'
                 - $ref: '#/components/schemas/clean-up-inactive-pingfederate-persistent-sessions-plugin-response'
@@ -2761,6 +2765,68 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:plugin:snmp-subagent"
+    add-coalesce-modifications-plugin-request:
+      allOf:
+      - type: object
+        properties:
+          pluginName:
+            type: string
+            description: >-
+                Name of the new Plugin
+      - $ref: '#/components/schemas/coalesce-modifications-plugin-shared'
+      required:
+      - pluginName
+    coalesce-modifications-plugin-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the Plugin
+      - $ref: '#/components/schemas/coalesce-modifications-plugin-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    coalesce-modifications-plugin-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumcoalesce-modifications-pluginSchemaUrn'
+        requestCriteria:
+          type: string
+          description: >-
+              A reference to request criteria that indicates which modify requests should be coalesced.
+        allowedRequestControl:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies the OIDs of the controls that are allowed to be present in operations to coalesce. These controls are passed through when the request is validated, but they will not be included when the background thread applies the coalesced modify requests.
+        invokeForInternalOperations:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in should be invoked for internal operations.
+        description:
+          type: string
+          description: >-
+              A description for this Plugin
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in is enabled for use.
+      required:
+      - schemas
+      - requestCriteria
+      - enabled
+    Enumcoalesce-modifications-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:coalesce-modifications"
     password-policy-import-plugin-response:
       allOf:
       - type: object

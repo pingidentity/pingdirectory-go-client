@@ -60,6 +60,9 @@ const (
 	ENUMBACKENDDISABLEDALERTTYPEPROP_DUPLICATE_INFO_ALERTS_SUPPRESSED                            EnumbackendDisabledAlertTypeProp = "duplicate-info-alerts-suppressed"
 	ENUMBACKENDDISABLEDALERTTYPEPROP_DUPLICATE_WARNING_ALERTS_SUPPRESSED                         EnumbackendDisabledAlertTypeProp = "duplicate-warning-alerts-suppressed"
 	ENUMBACKENDDISABLEDALERTTYPEPROP_EMBEDDED_POSTGRESQL_UNAVAILABLE                             EnumbackendDisabledAlertTypeProp = "embedded-postgresql-unavailable"
+	ENUMBACKENDDISABLEDALERTTYPEPROP_ENCRYPTION_SETTINGS_DATABASE_ACCESS_RESTORED                EnumbackendDisabledAlertTypeProp = "encryption-settings-database-access-restored"
+	ENUMBACKENDDISABLEDALERTTYPEPROP_ENCRYPTION_SETTINGS_DATABASE_INACCESSIBLE                   EnumbackendDisabledAlertTypeProp = "encryption-settings-database-inaccessible"
+	ENUMBACKENDDISABLEDALERTTYPEPROP_ENCRYPTION_SETTINGS_DATABASE_PROLONGED_OUTAGE               EnumbackendDisabledAlertTypeProp = "encryption-settings-database-prolonged-outage"
 	ENUMBACKENDDISABLEDALERTTYPEPROP_ENTERING_LOCKDOWN_MODE                                      EnumbackendDisabledAlertTypeProp = "entering-lockdown-mode"
 	ENUMBACKENDDISABLEDALERTTYPEPROP_ENTRY_REFERENCES_REMOVED_ATTRIBUTE_TYPE                     EnumbackendDisabledAlertTypeProp = "entry-references-removed-attribute-type"
 	ENUMBACKENDDISABLEDALERTTYPEPROP_EXEC_TASK_LAUNCHING_COMMAND                                 EnumbackendDisabledAlertTypeProp = "exec-task-launching-command"
@@ -194,7 +197,9 @@ const (
 	ENUMBACKENDDISABLEDALERTTYPEPROP_PASSWORD_EXPIRING_ACCOUNT_STATUS_NOTIFICATION               EnumbackendDisabledAlertTypeProp = "password-expiring-account-status-notification"
 	ENUMBACKENDDISABLEDALERTTYPEPROP_PASSWORD_RESET_ACCOUNT_STATUS_NOTIFICATION                  EnumbackendDisabledAlertTypeProp = "password-reset-account-status-notification"
 	ENUMBACKENDDISABLEDALERTTYPEPROP_PASSWORD_CHANGED_ACCOUNT_STATUS_NOTIFICATION                EnumbackendDisabledAlertTypeProp = "password-changed-account-status-notification"
+	ENUMBACKENDDISABLEDALERTTYPEPROP_ACCOUNT_AUTHENTICATED_ACCOUNT_STATUS_NOTIFICATION           EnumbackendDisabledAlertTypeProp = "account-authenticated-account-status-notification"
 	ENUMBACKENDDISABLEDALERTTYPEPROP_ACCOUNT_CREATED_ACCOUNT_STATUS_NOTIFICATION                 EnumbackendDisabledAlertTypeProp = "account-created-account-status-notification"
+	ENUMBACKENDDISABLEDALERTTYPEPROP_ACCOUNT_DELETED_ACCOUNT_STATUS_NOTIFICATION                 EnumbackendDisabledAlertTypeProp = "account-deleted-account-status-notification"
 	ENUMBACKENDDISABLEDALERTTYPEPROP_ACCOUNT_UPDATED_ACCOUNT_STATUS_NOTIFICATION                 EnumbackendDisabledAlertTypeProp = "account-updated-account-status-notification"
 	ENUMBACKENDDISABLEDALERTTYPEPROP_BIND_PASSWORD_FAILED_VALIDATION_ACCOUNT_STATUS_NOTIFICATION EnumbackendDisabledAlertTypeProp = "bind-password-failed-validation-account-status-notification"
 	ENUMBACKENDDISABLEDALERTTYPEPROP_MUST_CHANGE_PASSWORD_ACCOUNT_STATUS_NOTIFICATION            EnumbackendDisabledAlertTypeProp = "must-change-password-account-status-notification"
@@ -203,6 +208,8 @@ const (
 	ENUMBACKENDDISABLEDALERTTYPEPROP_INCREMENTAL_BACKUPS_DEPRECATED                              EnumbackendDisabledAlertTypeProp = "incremental-backups-deprecated"
 	ENUMBACKENDDISABLEDALERTTYPEPROP_REPLACE_CERTIFICATE_SUCCEEDED                               EnumbackendDisabledAlertTypeProp = "replace-certificate-succeeded"
 	ENUMBACKENDDISABLEDALERTTYPEPROP_REPLACE_CERTIFICATE_FAILED                                  EnumbackendDisabledAlertTypeProp = "replace-certificate-failed"
+	ENUMBACKENDDISABLEDALERTTYPEPROP_REPLICATION_MISSING_CHANGES_RISK                            EnumbackendDisabledAlertTypeProp = "replication-missing-changes-risk"
+	ENUMBACKENDDISABLEDALERTTYPEPROP_REPLICATION_NOT_PURGING_OBSOLETE_REPLICAS                   EnumbackendDisabledAlertTypeProp = "replication-not-purging-obsolete-replicas"
 )
 
 // All allowed values of EnumbackendDisabledAlertTypeProp enum
@@ -247,6 +254,9 @@ var AllowedEnumbackendDisabledAlertTypePropEnumValues = []EnumbackendDisabledAle
 	"duplicate-info-alerts-suppressed",
 	"duplicate-warning-alerts-suppressed",
 	"embedded-postgresql-unavailable",
+	"encryption-settings-database-access-restored",
+	"encryption-settings-database-inaccessible",
+	"encryption-settings-database-prolonged-outage",
 	"entering-lockdown-mode",
 	"entry-references-removed-attribute-type",
 	"exec-task-launching-command",
@@ -381,7 +391,9 @@ var AllowedEnumbackendDisabledAlertTypePropEnumValues = []EnumbackendDisabledAle
 	"password-expiring-account-status-notification",
 	"password-reset-account-status-notification",
 	"password-changed-account-status-notification",
+	"account-authenticated-account-status-notification",
 	"account-created-account-status-notification",
+	"account-deleted-account-status-notification",
 	"account-updated-account-status-notification",
 	"bind-password-failed-validation-account-status-notification",
 	"must-change-password-account-status-notification",
@@ -390,6 +402,8 @@ var AllowedEnumbackendDisabledAlertTypePropEnumValues = []EnumbackendDisabledAle
 	"incremental-backups-deprecated",
 	"replace-certificate-succeeded",
 	"replace-certificate-failed",
+	"replication-missing-changes-risk",
+	"replication-not-purging-obsolete-replicas",
 }
 
 func (v *EnumbackendDisabledAlertTypeProp) UnmarshalJSON(src []byte) error {

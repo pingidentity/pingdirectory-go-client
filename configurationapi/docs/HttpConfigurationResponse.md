@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | Pointer to [**[]EnumhttpConfigurationSchemaUrn**](EnumhttpConfigurationSchemaUrn.md) |  | [optional] 
 **IncludeStackTracesInErrorPages** | Pointer to **bool** | Indicates whether exceptions thrown by servlet or web application extensions will be included in the resulting error page response. Stack traces can be helpful in diagnosing application errors, but in production they may reveal information that might be useful to a malicious attacker. | [optional] 
+**IncludeServletInformationInErrorPages** | Pointer to **bool** | Indicates whether to expose servlet information in the error page response. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 
@@ -77,6 +78,31 @@ SetIncludeStackTracesInErrorPages sets IncludeStackTracesInErrorPages field to g
 `func (o *HttpConfigurationResponse) HasIncludeStackTracesInErrorPages() bool`
 
 HasIncludeStackTracesInErrorPages returns a boolean if a field has been set.
+
+### GetIncludeServletInformationInErrorPages
+
+`func (o *HttpConfigurationResponse) GetIncludeServletInformationInErrorPages() bool`
+
+GetIncludeServletInformationInErrorPages returns the IncludeServletInformationInErrorPages field if non-nil, zero value otherwise.
+
+### GetIncludeServletInformationInErrorPagesOk
+
+`func (o *HttpConfigurationResponse) GetIncludeServletInformationInErrorPagesOk() (*bool, bool)`
+
+GetIncludeServletInformationInErrorPagesOk returns a tuple with the IncludeServletInformationInErrorPages field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeServletInformationInErrorPages
+
+`func (o *HttpConfigurationResponse) SetIncludeServletInformationInErrorPages(v bool)`
+
+SetIncludeServletInformationInErrorPages sets IncludeServletInformationInErrorPages field to given value.
+
+### HasIncludeServletInformationInErrorPages
+
+`func (o *HttpConfigurationResponse) HasIncludeServletInformationInErrorPages() bool`
+
+HasIncludeServletInformationInErrorPages returns a boolean if a field has been set.
 
 ### GetMeta
 

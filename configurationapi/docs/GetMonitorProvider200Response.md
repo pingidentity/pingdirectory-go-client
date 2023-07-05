@@ -10,6 +10,12 @@ Name | Type | Description | Notes
 **Enabled** | **bool** | Indicates whether the Monitor Provider is enabled for use. | 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
+**CheckFrequency** | **string** | The frequency with which this monitor provider should confirm the ability to access the server&#39;s encryption settings database. | 
+**ProlongedOutageDuration** | Pointer to **string** | The minimum length of time that an outage should persist before it is considered a prolonged outage. If an outage lasts at least as long as this duration, then the server will take the action indicated by the prolonged-outage-behavior property. | [optional] 
+**ProlongedOutageBehavior** | Pointer to [**EnummonitorProviderProlongedOutageBehaviorProp**](EnummonitorProviderProlongedOutageBehaviorProp.md) |  | [optional] 
+**DiskDevices** | Pointer to **[]string** | Specifies which disk devices to monitor for I/O activity. Should be the device name as displayed by iostat -d. | [optional] 
+**NetworkDevices** | Pointer to **[]string** | Specifies which network interfaces to monitor for I/O activity. Should be the device name as displayed by netstat -i. | [optional] 
+**SystemUtilizationMonitorLogDirectory** | **string** | Specifies a relative or absolute path to the directory on the local filesystem containing the log files used by the system utilization monitor. The path must exist, and it must be a writable directory by the server process. | 
 **LowSpaceWarningSizeThreshold** | Pointer to **string** | Specifies the low space warning threshold value as an absolute amount of space. If the amount of usable disk space drops below this amount, then the Directory Server will begin generating warning alert notifications. | [optional] 
 **LowSpaceWarningPercentThreshold** | Pointer to **int64** | Specifies the low space warning threshold value as a percentage of total space. If the amount of usable disk space drops below this amount, then the Directory Server will begin generating warning alert notifications. | [optional] 
 **LowSpaceErrorSizeThreshold** | Pointer to **string** | Specifies the low space error threshold value as an absolute amount of space. If the amount of usable disk space drops below this amount, then the Directory Server will start rejecting operations requested by non-root users. | [optional] 
@@ -17,9 +23,6 @@ Name | Type | Description | Notes
 **OutOfSpaceErrorSizeThreshold** | Pointer to **string** | Specifies the out of space error threshold value as an absolute amount of space. If the amount of usable disk space drops below this amount, then the Directory Server will shut itself down to avoid problems that may occur from complete exhaustion of usable space. | [optional] 
 **OutOfSpaceErrorPercentThreshold** | Pointer to **int64** | Specifies the out of space error threshold value as a percentage of total space. If the amount of usable disk space drops below this amount, then the Directory Server will shut itself down to avoid problems that may occur from complete exhaustion of usable space. | [optional] 
 **AlertFrequency** | **string** | Specifies the length of time between administrative alerts generated in response to lack of usable disk space. Administrative alerts will be generated whenever the amount of usable space drops below any threshold, and they will also be generated at regular intervals as long as the amount of usable space remains below the threshold value. A value of zero indicates that alerts should only be generated when the amount of usable space drops below a configured threshold. | 
-**DiskDevices** | Pointer to **[]string** | Specifies which disk devices to monitor for I/O activity. Should be the device name as displayed by iostat -d. | [optional] 
-**NetworkDevices** | Pointer to **[]string** | Specifies which network interfaces to monitor for I/O activity. Should be the device name as displayed by netstat -i. | [optional] 
-**SystemUtilizationMonitorLogDirectory** | **string** | Specifies a relative or absolute path to the directory on the local filesystem containing the log files used by the system utilization monitor. The path must exist, and it must be a writable directory by the server process. | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Monitor Provider. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Monitor Provider. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 
@@ -27,7 +30,7 @@ Name | Type | Description | Notes
 
 ### NewGetMonitorProvider200Response
 
-`func NewGetMonitorProvider200Response(schemas []EnumthirdPartyMonitorProviderSchemaUrn, id string, enabled bool, alertFrequency string, systemUtilizationMonitorLogDirectory string, extensionClass string, ) *GetMonitorProvider200Response`
+`func NewGetMonitorProvider200Response(schemas []EnumthirdPartyMonitorProviderSchemaUrn, id string, enabled bool, checkFrequency string, systemUtilizationMonitorLogDirectory string, alertFrequency string, extensionClass string, ) *GetMonitorProvider200Response`
 
 NewGetMonitorProvider200Response instantiates a new GetMonitorProvider200Response object
 This constructor will assign default values to properties that have it defined,
@@ -176,6 +179,146 @@ SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconf
 `func (o *GetMonitorProvider200Response) HasUrnpingidentityschemasconfigurationmessages20() bool`
 
 HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+
+### GetCheckFrequency
+
+`func (o *GetMonitorProvider200Response) GetCheckFrequency() string`
+
+GetCheckFrequency returns the CheckFrequency field if non-nil, zero value otherwise.
+
+### GetCheckFrequencyOk
+
+`func (o *GetMonitorProvider200Response) GetCheckFrequencyOk() (*string, bool)`
+
+GetCheckFrequencyOk returns a tuple with the CheckFrequency field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCheckFrequency
+
+`func (o *GetMonitorProvider200Response) SetCheckFrequency(v string)`
+
+SetCheckFrequency sets CheckFrequency field to given value.
+
+
+### GetProlongedOutageDuration
+
+`func (o *GetMonitorProvider200Response) GetProlongedOutageDuration() string`
+
+GetProlongedOutageDuration returns the ProlongedOutageDuration field if non-nil, zero value otherwise.
+
+### GetProlongedOutageDurationOk
+
+`func (o *GetMonitorProvider200Response) GetProlongedOutageDurationOk() (*string, bool)`
+
+GetProlongedOutageDurationOk returns a tuple with the ProlongedOutageDuration field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProlongedOutageDuration
+
+`func (o *GetMonitorProvider200Response) SetProlongedOutageDuration(v string)`
+
+SetProlongedOutageDuration sets ProlongedOutageDuration field to given value.
+
+### HasProlongedOutageDuration
+
+`func (o *GetMonitorProvider200Response) HasProlongedOutageDuration() bool`
+
+HasProlongedOutageDuration returns a boolean if a field has been set.
+
+### GetProlongedOutageBehavior
+
+`func (o *GetMonitorProvider200Response) GetProlongedOutageBehavior() EnummonitorProviderProlongedOutageBehaviorProp`
+
+GetProlongedOutageBehavior returns the ProlongedOutageBehavior field if non-nil, zero value otherwise.
+
+### GetProlongedOutageBehaviorOk
+
+`func (o *GetMonitorProvider200Response) GetProlongedOutageBehaviorOk() (*EnummonitorProviderProlongedOutageBehaviorProp, bool)`
+
+GetProlongedOutageBehaviorOk returns a tuple with the ProlongedOutageBehavior field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProlongedOutageBehavior
+
+`func (o *GetMonitorProvider200Response) SetProlongedOutageBehavior(v EnummonitorProviderProlongedOutageBehaviorProp)`
+
+SetProlongedOutageBehavior sets ProlongedOutageBehavior field to given value.
+
+### HasProlongedOutageBehavior
+
+`func (o *GetMonitorProvider200Response) HasProlongedOutageBehavior() bool`
+
+HasProlongedOutageBehavior returns a boolean if a field has been set.
+
+### GetDiskDevices
+
+`func (o *GetMonitorProvider200Response) GetDiskDevices() []string`
+
+GetDiskDevices returns the DiskDevices field if non-nil, zero value otherwise.
+
+### GetDiskDevicesOk
+
+`func (o *GetMonitorProvider200Response) GetDiskDevicesOk() (*[]string, bool)`
+
+GetDiskDevicesOk returns a tuple with the DiskDevices field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiskDevices
+
+`func (o *GetMonitorProvider200Response) SetDiskDevices(v []string)`
+
+SetDiskDevices sets DiskDevices field to given value.
+
+### HasDiskDevices
+
+`func (o *GetMonitorProvider200Response) HasDiskDevices() bool`
+
+HasDiskDevices returns a boolean if a field has been set.
+
+### GetNetworkDevices
+
+`func (o *GetMonitorProvider200Response) GetNetworkDevices() []string`
+
+GetNetworkDevices returns the NetworkDevices field if non-nil, zero value otherwise.
+
+### GetNetworkDevicesOk
+
+`func (o *GetMonitorProvider200Response) GetNetworkDevicesOk() (*[]string, bool)`
+
+GetNetworkDevicesOk returns a tuple with the NetworkDevices field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNetworkDevices
+
+`func (o *GetMonitorProvider200Response) SetNetworkDevices(v []string)`
+
+SetNetworkDevices sets NetworkDevices field to given value.
+
+### HasNetworkDevices
+
+`func (o *GetMonitorProvider200Response) HasNetworkDevices() bool`
+
+HasNetworkDevices returns a boolean if a field has been set.
+
+### GetSystemUtilizationMonitorLogDirectory
+
+`func (o *GetMonitorProvider200Response) GetSystemUtilizationMonitorLogDirectory() string`
+
+GetSystemUtilizationMonitorLogDirectory returns the SystemUtilizationMonitorLogDirectory field if non-nil, zero value otherwise.
+
+### GetSystemUtilizationMonitorLogDirectoryOk
+
+`func (o *GetMonitorProvider200Response) GetSystemUtilizationMonitorLogDirectoryOk() (*string, bool)`
+
+GetSystemUtilizationMonitorLogDirectoryOk returns a tuple with the SystemUtilizationMonitorLogDirectory field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSystemUtilizationMonitorLogDirectory
+
+`func (o *GetMonitorProvider200Response) SetSystemUtilizationMonitorLogDirectory(v string)`
+
+SetSystemUtilizationMonitorLogDirectory sets SystemUtilizationMonitorLogDirectory field to given value.
+
 
 ### GetLowSpaceWarningSizeThreshold
 
@@ -345,76 +488,6 @@ and a boolean to check if the value has been set.
 `func (o *GetMonitorProvider200Response) SetAlertFrequency(v string)`
 
 SetAlertFrequency sets AlertFrequency field to given value.
-
-
-### GetDiskDevices
-
-`func (o *GetMonitorProvider200Response) GetDiskDevices() []string`
-
-GetDiskDevices returns the DiskDevices field if non-nil, zero value otherwise.
-
-### GetDiskDevicesOk
-
-`func (o *GetMonitorProvider200Response) GetDiskDevicesOk() (*[]string, bool)`
-
-GetDiskDevicesOk returns a tuple with the DiskDevices field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDiskDevices
-
-`func (o *GetMonitorProvider200Response) SetDiskDevices(v []string)`
-
-SetDiskDevices sets DiskDevices field to given value.
-
-### HasDiskDevices
-
-`func (o *GetMonitorProvider200Response) HasDiskDevices() bool`
-
-HasDiskDevices returns a boolean if a field has been set.
-
-### GetNetworkDevices
-
-`func (o *GetMonitorProvider200Response) GetNetworkDevices() []string`
-
-GetNetworkDevices returns the NetworkDevices field if non-nil, zero value otherwise.
-
-### GetNetworkDevicesOk
-
-`func (o *GetMonitorProvider200Response) GetNetworkDevicesOk() (*[]string, bool)`
-
-GetNetworkDevicesOk returns a tuple with the NetworkDevices field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNetworkDevices
-
-`func (o *GetMonitorProvider200Response) SetNetworkDevices(v []string)`
-
-SetNetworkDevices sets NetworkDevices field to given value.
-
-### HasNetworkDevices
-
-`func (o *GetMonitorProvider200Response) HasNetworkDevices() bool`
-
-HasNetworkDevices returns a boolean if a field has been set.
-
-### GetSystemUtilizationMonitorLogDirectory
-
-`func (o *GetMonitorProvider200Response) GetSystemUtilizationMonitorLogDirectory() string`
-
-GetSystemUtilizationMonitorLogDirectory returns the SystemUtilizationMonitorLogDirectory field if non-nil, zero value otherwise.
-
-### GetSystemUtilizationMonitorLogDirectoryOk
-
-`func (o *GetMonitorProvider200Response) GetSystemUtilizationMonitorLogDirectoryOk() (*string, bool)`
-
-GetSystemUtilizationMonitorLogDirectoryOk returns a tuple with the SystemUtilizationMonitorLogDirectory field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSystemUtilizationMonitorLogDirectory
-
-`func (o *GetMonitorProvider200Response) SetSystemUtilizationMonitorLogDirectory(v string)`
-
-SetSystemUtilizationMonitorLogDirectory sets SystemUtilizationMonitorLogDirectory field to given value.
 
 
 ### GetExtensionClass

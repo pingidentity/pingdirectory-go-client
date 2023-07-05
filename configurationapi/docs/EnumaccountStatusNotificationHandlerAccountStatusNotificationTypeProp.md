@@ -29,7 +29,11 @@
 
 * `PASSWORD_CHANGED` (value: `"password-changed"`)
 
+* `ACCOUNT_AUTHENTICATED` (value: `"account-authenticated"`)
+
 * `ACCOUNT_CREATED` (value: `"account-created"`)
+
+* `ACCOUNT_DELETED` (value: `"account-deleted"`)
 
 * `ACCOUNT_UPDATED` (value: `"account-updated"`)
 
