@@ -13,6 +13,7 @@ package configurationapi
 import (
 	"encoding/json"
 	"fmt"
+	"strconv"
 )
 
 // EnumpasswordPolicyAllowPreEncodedPasswordsProp Indicates whether users can change their passwords by providing a pre-encoded value.
@@ -40,7 +41,12 @@ func (v *EnumpasswordPolicyAllowPreEncodedPasswordsProp) UnmarshalJSON(src []byt
 	var value string
 	err := json.Unmarshal(src, &value)
 	if err != nil {
-		return err
+		var boolValue bool
+		err = json.Unmarshal(src, &boolValue)
+		if err != nil {
+			return err
+		}
+		value = strconv.FormatBool(boolValue)
 	}
 	enumTypeValue := EnumpasswordPolicyAllowPreEncodedPasswordsProp(value)
 	for _, existing := range AllowedEnumpasswordPolicyAllowPreEncodedPasswordsPropEnumValues {
