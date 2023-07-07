@@ -38,3 +38,8 @@ git_push.sh
 # And so that we use the top-level go.mod and go.sum files in the repository root
 go.mod
 go.sum
+
+# Ignore the password policy AllowPreEncodedPasswords enum because it requires some special handling,
+# due to changing from a boolean to an enum in version 9.3.0.0. We want to still handle booleans
+# return from PD in this client.
+model_enumpassword_policy_allow_pre_encoded_passwords_prop.go
