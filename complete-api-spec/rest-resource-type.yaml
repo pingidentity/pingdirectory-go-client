@@ -11,6 +11,33 @@ tags:
   name: rest-resource-type
 paths:
   /rest-resource-types:
+    get:
+      summary: Returns a list of all REST Resource Type objects
+      operationId: list-rest-resource-types
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rest-resource-typeListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - rest-resource-type
     post:
       summary: Add a new REST Resource Type to the config
       operationId: add-rest-resource-type
@@ -148,6 +175,41 @@ paths:
       tags:
       - rest-resource-type
   /rest-resource-types/{rest-resource-type-name}/delegated-admin-attributes:
+    get:
+      summary: Returns a list of all Delegated Admin Attribute objects
+      operationId: list-delegated-admin-attributes
+      parameters:
+      - description: Name of the REST Resource Type
+        explode: false
+        in: path
+        name: rest-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/delegated-admin-attributeListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - delegated-admin-attribute
     post:
       summary: Add a new Delegated Admin Attribute to the config
       operationId: add-delegated-admin-attribute
@@ -318,6 +380,41 @@ paths:
       tags:
       - delegated-admin-attribute
   /rest-resource-types/{rest-resource-type-name}/delegated-admin-correlated-rest-resources:
+    get:
+      summary: Returns a list of all Delegated Admin Correlated REST Resource objects
+      operationId: list-delegated-admin-correlated-rest-resources
+      parameters:
+      - description: Name of the REST Resource Type
+        explode: false
+        in: path
+        name: rest-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/delegated-admin-correlated-rest-resourceListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - delegated-admin-correlated-rest-resource
     post:
       summary: Add a new Delegated Admin Correlated REST Resource to the config
       operationId: add-delegated-admin-correlated-rest-resource
@@ -1226,6 +1323,57 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:delegated-admin-correlated-rest-resource"
+    rest-resource-typeListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/user-rest-resource-type-response'
+            - $ref: '#/components/schemas/generic-rest-resource-type-response'
+            - $ref: '#/components/schemas/group-rest-resource-type-response'
+    delegated-admin-attributeListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/certificate-delegated-admin-attribute-response'
+            - $ref: '#/components/schemas/photo-delegated-admin-attribute-response'
+            - $ref: '#/components/schemas/generic-delegated-admin-attribute-response'
+    delegated-admin-correlated-rest-resourceListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/delegated-admin-correlated-rest-resource-response'
     updateRequest:
       type: object
       properties:

@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddLogRotationPolicy**](LogRotationPolicyApi.md#AddLogRotationPolicy) | **Post** /log-rotation-policies | Add a new Log Rotation Policy to the config
 [**DeleteLogRotationPolicy**](LogRotationPolicyApi.md#DeleteLogRotationPolicy) | **Delete** /log-rotation-policies/{log-rotation-policy-name} | Delete a Log Rotation Policy
 [**GetLogRotationPolicy**](LogRotationPolicyApi.md#GetLogRotationPolicy) | **Get** /log-rotation-policies/{log-rotation-policy-name} | Returns a single Log Rotation Policy
+[**ListLogRotationPolicies**](LogRotationPolicyApi.md#ListLogRotationPolicies) | **Get** /log-rotation-policies | Returns a list of all Log Rotation Policy objects
 [**UpdateLogRotationPolicy**](LogRotationPolicyApi.md#UpdateLogRotationPolicy) | **Patch** /log-rotation-policies/{log-rotation-policy-name} | Update an existing Log Rotation Policy by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddLogRotationPolicy200Response**](AddLogRotationPolicy200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListLogRotationPolicies
+
+> LogRotationPolicyListResponse ListLogRotationPolicies(ctx).Filter(filter).Execute()
+
+Returns a list of all Log Rotation Policy objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.LogRotationPolicyApi.ListLogRotationPolicies(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `LogRotationPolicyApi.ListLogRotationPolicies``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListLogRotationPolicies`: LogRotationPolicyListResponse
+    fmt.Fprintf(os.Stdout, "Response from `LogRotationPolicyApi.ListLogRotationPolicies`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListLogRotationPoliciesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**LogRotationPolicyListResponse**](LogRotationPolicyListResponse.md)
 
 ### Authorization
 

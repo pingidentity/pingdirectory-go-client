@@ -11,6 +11,33 @@ tags:
   name: external-server
 paths:
   /external-servers:
+    get:
+      summary: Returns a list of all External Server objects
+      operationId: list-external-servers
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/external-serverListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - external-server
     post:
       summary: Add a new External Server to the config
       operationId: add-external-server
@@ -2055,6 +2082,38 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:external-server:vault"
+    external-serverListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/smtp-external-server-response'
+            - $ref: '#/components/schemas/nokia-ds-external-server-response'
+            - $ref: '#/components/schemas/ping-identity-ds-external-server-response'
+            - $ref: '#/components/schemas/active-directory-external-server-response'
+            - $ref: '#/components/schemas/jdbc-external-server-response'
+            - $ref: '#/components/schemas/syslog-external-server-response'
+            - $ref: '#/components/schemas/ping-identity-proxy-server-external-server-response'
+            - $ref: '#/components/schemas/http-proxy-external-server-response'
+            - $ref: '#/components/schemas/nokia-proxy-server-external-server-response'
+            - $ref: '#/components/schemas/opendj-external-server-response'
+            - $ref: '#/components/schemas/ldap-external-server-response'
+            - $ref: '#/components/schemas/ping-one-http-external-server-response'
+            - $ref: '#/components/schemas/http-external-server-response'
+            - $ref: '#/components/schemas/oracle-unified-directory-external-server-response'
+            - $ref: '#/components/schemas/conjur-external-server-response'
+            - $ref: '#/components/schemas/amazon-aws-external-server-response'
+            - $ref: '#/components/schemas/vault-external-server-response'
     updateRequest:
       type: object
       properties:

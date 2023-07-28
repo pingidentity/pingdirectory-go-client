@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddLogFieldMapping**](LogFieldMappingApi.md#AddLogFieldMapping) | **Post** /log-field-mappings | Add a new Log Field Mapping to the config
 [**DeleteLogFieldMapping**](LogFieldMappingApi.md#DeleteLogFieldMapping) | **Delete** /log-field-mappings/{log-field-mapping-name} | Delete a Log Field Mapping
 [**GetLogFieldMapping**](LogFieldMappingApi.md#GetLogFieldMapping) | **Get** /log-field-mappings/{log-field-mapping-name} | Returns a single Log Field Mapping
+[**ListLogFieldMappings**](LogFieldMappingApi.md#ListLogFieldMappings) | **Get** /log-field-mappings | Returns a list of all Log Field Mapping objects
 [**UpdateLogFieldMapping**](LogFieldMappingApi.md#UpdateLogFieldMapping) | **Patch** /log-field-mappings/{log-field-mapping-name} | Update an existing Log Field Mapping by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddLogFieldMapping200Response**](AddLogFieldMapping200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListLogFieldMappings
+
+> LogFieldMappingListResponse ListLogFieldMappings(ctx).Filter(filter).Execute()
+
+Returns a list of all Log Field Mapping objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.LogFieldMappingApi.ListLogFieldMappings(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `LogFieldMappingApi.ListLogFieldMappings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListLogFieldMappings`: LogFieldMappingListResponse
+    fmt.Fprintf(os.Stdout, "Response from `LogFieldMappingApi.ListLogFieldMappings`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListLogFieldMappingsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**LogFieldMappingListResponse**](LogFieldMappingListResponse.md)
 
 ### Authorization
 

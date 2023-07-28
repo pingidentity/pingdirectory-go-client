@@ -11,6 +11,33 @@ tags:
   name: entry-cache
 paths:
   /entry-caches:
+    get:
+      summary: Returns a list of all Entry Cache objects
+      operationId: list-entry-caches
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/entry-cacheListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - entry-cache
     post:
       summary: Add a new Entry Cache to the config
       operationId: add-entry-cache
@@ -227,6 +254,21 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:entry-cache:fifo"
+    entry-cacheListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/fifo-entry-cache-response'
     updateRequest:
       type: object
       properties:

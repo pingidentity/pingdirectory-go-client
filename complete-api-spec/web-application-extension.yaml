@@ -11,6 +11,33 @@ tags:
   name: web-application-extension
 paths:
   /web-application-extensions:
+    get:
+      summary: Returns a list of all Web Application Extension objects
+      operationId: list-web-application-extensions
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/web-application-extensionListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - web-application-extension
     post:
       summary: Add a new Web Application Extension to the config
       operationId: add-web-application-extension
@@ -336,6 +363,23 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:web-application-extension:generic"
+    web-application-extensionListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/console-web-application-extension-response'
+            - $ref: '#/components/schemas/generic-web-application-extension-response'
     updateRequest:
       type: object
       properties:

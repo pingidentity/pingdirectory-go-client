@@ -11,6 +11,33 @@ tags:
   name: data-security-auditor
 paths:
   /data-security-auditors:
+    get:
+      summary: Returns a list of all Data Security Auditor objects
+      operationId: list-data-security-auditors
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/data-security-auditorListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - data-security-auditor
     post:
       summary: Add a new Data Security Auditor to the config
       operationId: add-data-security-auditor
@@ -1183,6 +1210,35 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:data-security-auditor:third-party"
+    data-security-auditorListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/expired-password-data-security-auditor-response'
+            - $ref: '#/components/schemas/idle-account-data-security-auditor-response'
+            - $ref: '#/components/schemas/disabled-account-data-security-auditor-response'
+            - $ref: '#/components/schemas/weakly-encoded-password-data-security-auditor-response'
+            - $ref: '#/components/schemas/privilege-data-security-auditor-response'
+            - $ref: '#/components/schemas/account-usability-issues-data-security-auditor-response'
+            - $ref: '#/components/schemas/locked-account-data-security-auditor-response'
+            - $ref: '#/components/schemas/filter-data-security-auditor-response'
+            - $ref: '#/components/schemas/account-validity-window-data-security-auditor-response'
+            - $ref: '#/components/schemas/multiple-password-data-security-auditor-response'
+            - $ref: '#/components/schemas/deprecated-password-storage-scheme-data-security-auditor-response'
+            - $ref: '#/components/schemas/nonexistent-password-policy-data-security-auditor-response'
+            - $ref: '#/components/schemas/access-control-data-security-auditor-response'
+            - $ref: '#/components/schemas/third-party-data-security-auditor-response'
     updateRequest:
       type: object
       properties:

@@ -11,6 +11,33 @@ tags:
   name: access-token-validator
 paths:
   /access-token-validators:
+    get:
+      summary: Returns a list of all Access Token Validator objects
+      operationId: list-access-token-validators
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/access-token-validatorListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - access-token-validator
     post:
       summary: Add a new Access Token Validator to the config
       operationId: add-access-token-validator
@@ -516,6 +543,25 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:access-token-validator:third-party"
+    access-token-validatorListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/ping-federate-access-token-validator-response'
+            - $ref: '#/components/schemas/jwt-access-token-validator-response'
+            - $ref: '#/components/schemas/mock-access-token-validator-response'
+            - $ref: '#/components/schemas/third-party-access-token-validator-response'
     updateRequest:
       type: object
       properties:

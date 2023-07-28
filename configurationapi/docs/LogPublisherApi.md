@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddLogPublisher**](LogPublisherApi.md#AddLogPublisher) | **Post** /log-publishers | Add a new Log Publisher to the config
 [**DeleteLogPublisher**](LogPublisherApi.md#DeleteLogPublisher) | **Delete** /log-publishers/{log-publisher-name} | Delete a Log Publisher
 [**GetLogPublisher**](LogPublisherApi.md#GetLogPublisher) | **Get** /log-publishers/{log-publisher-name} | Returns a single Log Publisher
+[**ListLogPublishers**](LogPublisherApi.md#ListLogPublishers) | **Get** /log-publishers | Returns a list of all Log Publisher objects
 [**UpdateLogPublisher**](LogPublisherApi.md#UpdateLogPublisher) | **Patch** /log-publishers/{log-publisher-name} | Update an existing Log Publisher by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetLogPublisher200Response**](GetLogPublisher200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListLogPublishers
+
+> LogPublisherListResponse ListLogPublishers(ctx).Filter(filter).Execute()
+
+Returns a list of all Log Publisher objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.LogPublisherApi.ListLogPublishers(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `LogPublisherApi.ListLogPublishers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListLogPublishers`: LogPublisherListResponse
+    fmt.Fprintf(os.Stdout, "Response from `LogPublisherApi.ListLogPublishers`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListLogPublishersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**LogPublisherListResponse**](LogPublisherListResponse.md)
 
 ### Authorization
 

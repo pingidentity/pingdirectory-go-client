@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddConstructedAttribute**](ConstructedAttributeApi.md#AddConstructedAttribute) | **Post** /constructed-attributes | Add a new Constructed Attribute to the config
 [**DeleteConstructedAttribute**](ConstructedAttributeApi.md#DeleteConstructedAttribute) | **Delete** /constructed-attributes/{constructed-attribute-name} | Delete a Constructed Attribute
 [**GetConstructedAttribute**](ConstructedAttributeApi.md#GetConstructedAttribute) | **Get** /constructed-attributes/{constructed-attribute-name} | Returns a single Constructed Attribute
+[**ListConstructedAttributes**](ConstructedAttributeApi.md#ListConstructedAttributes) | **Get** /constructed-attributes | Returns a list of all Constructed Attribute objects
 [**UpdateConstructedAttribute**](ConstructedAttributeApi.md#UpdateConstructedAttribute) | **Patch** /constructed-attributes/{constructed-attribute-name} | Update an existing Constructed Attribute by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ConstructedAttributeResponse**](ConstructedAttributeResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListConstructedAttributes
+
+> ConstructedAttributeListResponse ListConstructedAttributes(ctx).Filter(filter).Execute()
+
+Returns a list of all Constructed Attribute objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ConstructedAttributeApi.ListConstructedAttributes(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ConstructedAttributeApi.ListConstructedAttributes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListConstructedAttributes`: ConstructedAttributeListResponse
+    fmt.Fprintf(os.Stdout, "Response from `ConstructedAttributeApi.ListConstructedAttributes`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListConstructedAttributesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**ConstructedAttributeListResponse**](ConstructedAttributeListResponse.md)
 
 ### Authorization
 

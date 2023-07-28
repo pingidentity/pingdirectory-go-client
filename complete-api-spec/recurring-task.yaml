@@ -11,6 +11,33 @@ tags:
   name: recurring-task
 paths:
   /recurring-tasks:
+    get:
+      summary: Returns a list of all Recurring Task objects
+      operationId: list-recurring-tasks
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/recurring-taskListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - recurring-task
     post:
       summary: Add a new Recurring Task to the config
       operationId: add-recurring-task
@@ -1461,6 +1488,33 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:recurring-task:third-party"
+    recurring-taskListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/generate-server-profile-recurring-task-response'
+            - $ref: '#/components/schemas/leave-lockdown-mode-recurring-task-response'
+            - $ref: '#/components/schemas/backup-recurring-task-response'
+            - $ref: '#/components/schemas/delay-recurring-task-response'
+            - $ref: '#/components/schemas/statically-defined-recurring-task-response'
+            - $ref: '#/components/schemas/collect-support-data-recurring-task-response'
+            - $ref: '#/components/schemas/ldif-export-recurring-task-response'
+            - $ref: '#/components/schemas/enter-lockdown-mode-recurring-task-response'
+            - $ref: '#/components/schemas/audit-data-security-recurring-task-response'
+            - $ref: '#/components/schemas/exec-recurring-task-response'
+            - $ref: '#/components/schemas/file-retention-recurring-task-response'
+            - $ref: '#/components/schemas/third-party-recurring-task-response'
     updateRequest:
       type: object
       properties:

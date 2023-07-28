@@ -1301,6 +1301,90 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:inter-server-authentication-info:certificate"
+    server-instanceListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/proxy-server-instance-response'
+            - $ref: '#/components/schemas/metrics-engine-server-instance-response'
+            - $ref: '#/components/schemas/authorize-server-instance-response'
+            - $ref: '#/components/schemas/directory-server-instance-response'
+            - $ref: '#/components/schemas/sync-server-instance-response'
+    server-instance-listenerListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/ldap-server-instance-listener-response'
+            - $ref: '#/components/schemas/http-server-instance-listener-response'
+    mac-secret-keyListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/mac-secret-key-response'
+    cipher-secret-keyListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/cipher-secret-key-response'
+    inter-server-authentication-infoListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/password-inter-server-authentication-info-response'
+            - $ref: '#/components/schemas/certificate-inter-server-authentication-info-response'
     updateRequest:
       type: object
       properties:

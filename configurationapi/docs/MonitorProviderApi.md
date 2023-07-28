@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddMonitorProvider**](MonitorProviderApi.md#AddMonitorProvider) | **Post** /monitor-providers | Add a new Monitor Provider to the config
 [**DeleteMonitorProvider**](MonitorProviderApi.md#DeleteMonitorProvider) | **Delete** /monitor-providers/{monitor-provider-name} | Delete a Monitor Provider
 [**GetMonitorProvider**](MonitorProviderApi.md#GetMonitorProvider) | **Get** /monitor-providers/{monitor-provider-name} | Returns a single Monitor Provider
+[**ListMonitorProviders**](MonitorProviderApi.md#ListMonitorProviders) | **Get** /monitor-providers | Returns a list of all Monitor Provider objects
 [**UpdateMonitorProvider**](MonitorProviderApi.md#UpdateMonitorProvider) | **Patch** /monitor-providers/{monitor-provider-name} | Update an existing Monitor Provider by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetMonitorProvider200Response**](GetMonitorProvider200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListMonitorProviders
+
+> MonitorProviderListResponse ListMonitorProviders(ctx).Filter(filter).Execute()
+
+Returns a list of all Monitor Provider objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitorProviderApi.ListMonitorProviders(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `MonitorProviderApi.ListMonitorProviders``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListMonitorProviders`: MonitorProviderListResponse
+    fmt.Fprintf(os.Stdout, "Response from `MonitorProviderApi.ListMonitorProviders`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListMonitorProvidersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**MonitorProviderListResponse**](MonitorProviderListResponse.md)
 
 ### Authorization
 

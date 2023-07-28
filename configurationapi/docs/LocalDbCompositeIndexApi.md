@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddLocalDbCompositeIndex**](LocalDbCompositeIndexApi.md#AddLocalDbCompositeIndex) | **Post** /backends/{backend-name}/local-db-composite-indexes | Add a new Local DB Composite Index to the config
 [**DeleteLocalDbCompositeIndex**](LocalDbCompositeIndexApi.md#DeleteLocalDbCompositeIndex) | **Delete** /backends/{backend-name}/local-db-composite-indexes/{local-db-composite-index-name} | Delete a Local DB Composite Index
 [**GetLocalDbCompositeIndex**](LocalDbCompositeIndexApi.md#GetLocalDbCompositeIndex) | **Get** /backends/{backend-name}/local-db-composite-indexes/{local-db-composite-index-name} | Returns a single Local DB Composite Index
+[**ListLocalDbCompositeIndexes**](LocalDbCompositeIndexApi.md#ListLocalDbCompositeIndexes) | **Get** /backends/{backend-name}/local-db-composite-indexes | Returns a list of all Local DB Composite Index objects
 [**UpdateLocalDbCompositeIndex**](LocalDbCompositeIndexApi.md#UpdateLocalDbCompositeIndex) | **Patch** /backends/{backend-name}/local-db-composite-indexes/{local-db-composite-index-name} | Update an existing Local DB Composite Index by name
 
 
@@ -206,6 +207,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**LocalDbCompositeIndexResponse**](LocalDbCompositeIndexResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListLocalDbCompositeIndexes
+
+> LocalDbCompositeIndexListResponse ListLocalDbCompositeIndexes(ctx, backendName).Filter(filter).Execute()
+
+Returns a list of all Local DB Composite Index objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    backendName := "backendName_example" // string | Name of the Backend
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.LocalDbCompositeIndexApi.ListLocalDbCompositeIndexes(context.Background(), backendName).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbCompositeIndexApi.ListLocalDbCompositeIndexes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListLocalDbCompositeIndexes`: LocalDbCompositeIndexListResponse
+    fmt.Fprintf(os.Stdout, "Response from `LocalDbCompositeIndexApi.ListLocalDbCompositeIndexes`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**backendName** | **string** | Name of the Backend | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListLocalDbCompositeIndexesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**LocalDbCompositeIndexListResponse**](LocalDbCompositeIndexListResponse.md)
 
 ### Authorization
 

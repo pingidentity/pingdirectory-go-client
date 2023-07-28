@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddCipherStreamProvider**](CipherStreamProviderApi.md#AddCipherStreamProvider) | **Post** /cipher-stream-providers | Add a new Cipher Stream Provider to the config
 [**DeleteCipherStreamProvider**](CipherStreamProviderApi.md#DeleteCipherStreamProvider) | **Delete** /cipher-stream-providers/{cipher-stream-provider-name} | Delete a Cipher Stream Provider
 [**GetCipherStreamProvider**](CipherStreamProviderApi.md#GetCipherStreamProvider) | **Get** /cipher-stream-providers/{cipher-stream-provider-name} | Returns a single Cipher Stream Provider
+[**ListCipherStreamProviders**](CipherStreamProviderApi.md#ListCipherStreamProviders) | **Get** /cipher-stream-providers | Returns a list of all Cipher Stream Provider objects
 [**UpdateCipherStreamProvider**](CipherStreamProviderApi.md#UpdateCipherStreamProvider) | **Patch** /cipher-stream-providers/{cipher-stream-provider-name} | Update an existing Cipher Stream Provider by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddCipherStreamProvider200Response**](AddCipherStreamProvider200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListCipherStreamProviders
+
+> CipherStreamProviderListResponse ListCipherStreamProviders(ctx).Filter(filter).Execute()
+
+Returns a list of all Cipher Stream Provider objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CipherStreamProviderApi.ListCipherStreamProviders(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `CipherStreamProviderApi.ListCipherStreamProviders``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListCipherStreamProviders`: CipherStreamProviderListResponse
+    fmt.Fprintf(os.Stdout, "Response from `CipherStreamProviderApi.ListCipherStreamProviders`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListCipherStreamProvidersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**CipherStreamProviderListResponse**](CipherStreamProviderListResponse.md)
 
 ### Authorization
 

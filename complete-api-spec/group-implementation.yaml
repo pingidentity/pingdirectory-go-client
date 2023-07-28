@@ -179,6 +179,24 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:group-implementation:dynamic"
+    group-implementationListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/static-group-implementation-response'
+            - $ref: '#/components/schemas/virtual-static-group-implementation-response'
+            - $ref: '#/components/schemas/dynamic-group-implementation-response'
     updateRequest:
       type: object
       properties:

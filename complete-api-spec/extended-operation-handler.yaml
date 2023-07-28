@@ -11,6 +11,33 @@ tags:
   name: extended-operation-handler
 paths:
   /extended-operation-handlers:
+    get:
+      summary: Returns a list of all Extended Operation Handler objects
+      operationId: list-extended-operation-handlers
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/extended-operation-handlerListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - extended-operation-handler
     post:
       summary: Add a new Extended Operation Handler to the config
       operationId: add-extended-operation-handler
@@ -1131,6 +1158,43 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:third-party"
+    extended-operation-handlerListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/cancel-extended-operation-handler-response'
+            - $ref: '#/components/schemas/validate-totp-password-extended-operation-handler-response'
+            - $ref: '#/components/schemas/replace-certificate-extended-operation-handler-response'
+            - $ref: '#/components/schemas/get-connection-id-extended-operation-handler-response'
+            - $ref: '#/components/schemas/multi-update-extended-operation-handler-response'
+            - $ref: '#/components/schemas/notification-subscription-extended-operation-handler-response'
+            - $ref: '#/components/schemas/password-modify-extended-operation-handler-response'
+            - $ref: '#/components/schemas/custom-extended-operation-handler-response'
+            - $ref: '#/components/schemas/collect-support-data-extended-operation-handler-response'
+            - $ref: '#/components/schemas/export-reversible-passwords-extended-operation-handler-response'
+            - $ref: '#/components/schemas/batched-transactions-extended-operation-handler-response'
+            - $ref: '#/components/schemas/get-changelog-batch-extended-operation-handler-response'
+            - $ref: '#/components/schemas/get-supported-otp-delivery-mechanisms-extended-operation-handler-response'
+            - $ref: '#/components/schemas/single-use-tokens-extended-operation-handler-response'
+            - $ref: '#/components/schemas/generate-password-extended-operation-handler-response'
+            - $ref: '#/components/schemas/who-am-i-extended-operation-handler-response'
+            - $ref: '#/components/schemas/start-tls-extended-operation-handler-response'
+            - $ref: '#/components/schemas/deliver-password-reset-token-extended-operation-handler-response'
+            - $ref: '#/components/schemas/password-policy-state-extended-operation-handler-response'
+            - $ref: '#/components/schemas/get-password-quality-requirements-extended-operation-handler-response'
+            - $ref: '#/components/schemas/deliver-otp-extended-operation-handler-response'
+            - $ref: '#/components/schemas/third-party-extended-operation-handler-response'
     updateRequest:
       type: object
       properties:

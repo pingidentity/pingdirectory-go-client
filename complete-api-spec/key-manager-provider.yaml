@@ -11,6 +11,33 @@ tags:
   name: key-manager-provider
 paths:
   /key-manager-providers:
+    get:
+      summary: Returns a list of all Key Manager Provider objects
+      operationId: list-key-manager-providers
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/key-manager-providerListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - key-manager-provider
     post:
       summary: Add a new Key Manager Provider to the config
       operationId: add-key-manager-provider
@@ -398,6 +425,25 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:key-manager-provider:third-party"
+    key-manager-providerListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/file-based-key-manager-provider-response'
+            - $ref: '#/components/schemas/custom-key-manager-provider-response'
+            - $ref: '#/components/schemas/pkcs11-key-manager-provider-response'
+            - $ref: '#/components/schemas/third-party-key-manager-provider-response'
     updateRequest:
       type: object
       properties:

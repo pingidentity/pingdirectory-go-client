@@ -11,6 +11,33 @@ tags:
   name: change-subscription-handler
 paths:
   /change-subscription-handlers:
+    get:
+      summary: Returns a list of all Change Subscription Handler objects
+      operationId: list-change-subscription-handlers
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/change-subscription-handlerListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - change-subscription-handler
     post:
       summary: Add a new Change Subscription Handler to the config
       operationId: add-change-subscription-handler
@@ -335,6 +362,24 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:change-subscription-handler:third-party"
+    change-subscription-handlerListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/groovy-scripted-change-subscription-handler-response'
+            - $ref: '#/components/schemas/logging-change-subscription-handler-response'
+            - $ref: '#/components/schemas/third-party-change-subscription-handler-response'
     updateRequest:
       type: object
       properties:

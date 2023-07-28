@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddChangeSubscription**](ChangeSubscriptionApi.md#AddChangeSubscription) | **Post** /change-subscriptions | Add a new Change Subscription to the config
 [**DeleteChangeSubscription**](ChangeSubscriptionApi.md#DeleteChangeSubscription) | **Delete** /change-subscriptions/{change-subscription-name} | Delete a Change Subscription
 [**GetChangeSubscription**](ChangeSubscriptionApi.md#GetChangeSubscription) | **Get** /change-subscriptions/{change-subscription-name} | Returns a single Change Subscription
+[**ListChangeSubscriptions**](ChangeSubscriptionApi.md#ListChangeSubscriptions) | **Get** /change-subscriptions | Returns a list of all Change Subscription objects
 [**UpdateChangeSubscription**](ChangeSubscriptionApi.md#UpdateChangeSubscription) | **Patch** /change-subscriptions/{change-subscription-name} | Update an existing Change Subscription by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ChangeSubscriptionResponse**](ChangeSubscriptionResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListChangeSubscriptions
+
+> ChangeSubscriptionListResponse ListChangeSubscriptions(ctx).Filter(filter).Execute()
+
+Returns a list of all Change Subscription objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ChangeSubscriptionApi.ListChangeSubscriptions(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ChangeSubscriptionApi.ListChangeSubscriptions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListChangeSubscriptions`: ChangeSubscriptionListResponse
+    fmt.Fprintf(os.Stdout, "Response from `ChangeSubscriptionApi.ListChangeSubscriptions`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListChangeSubscriptionsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**ChangeSubscriptionListResponse**](ChangeSubscriptionListResponse.md)
 
 ### Authorization
 

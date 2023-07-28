@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddLogFieldBehavior**](LogFieldBehaviorApi.md#AddLogFieldBehavior) | **Post** /log-field-behaviors | Add a new Log Field Behavior to the config
 [**DeleteLogFieldBehavior**](LogFieldBehaviorApi.md#DeleteLogFieldBehavior) | **Delete** /log-field-behaviors/{log-field-behavior-name} | Delete a Log Field Behavior
 [**GetLogFieldBehavior**](LogFieldBehaviorApi.md#GetLogFieldBehavior) | **Get** /log-field-behaviors/{log-field-behavior-name} | Returns a single Log Field Behavior
+[**ListLogFieldBehaviors**](LogFieldBehaviorApi.md#ListLogFieldBehaviors) | **Get** /log-field-behaviors | Returns a list of all Log Field Behavior objects
 [**UpdateLogFieldBehavior**](LogFieldBehaviorApi.md#UpdateLogFieldBehavior) | **Patch** /log-field-behaviors/{log-field-behavior-name} | Update an existing Log Field Behavior by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddLogFieldBehavior200Response**](AddLogFieldBehavior200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListLogFieldBehaviors
+
+> LogFieldBehaviorListResponse ListLogFieldBehaviors(ctx).Filter(filter).Execute()
+
+Returns a list of all Log Field Behavior objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.LogFieldBehaviorApi.ListLogFieldBehaviors(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `LogFieldBehaviorApi.ListLogFieldBehaviors``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListLogFieldBehaviors`: LogFieldBehaviorListResponse
+    fmt.Fprintf(os.Stdout, "Response from `LogFieldBehaviorApi.ListLogFieldBehaviors`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListLogFieldBehaviorsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**LogFieldBehaviorListResponse**](LogFieldBehaviorListResponse.md)
 
 ### Authorization
 

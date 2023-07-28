@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddConnectionCriteria**](ConnectionCriteriaApi.md#AddConnectionCriteria) | **Post** /connection-criteria | Add a new Connection Criteria to the config
 [**DeleteConnectionCriteria**](ConnectionCriteriaApi.md#DeleteConnectionCriteria) | **Delete** /connection-criteria/{connection-criteria-name} | Delete a Connection Criteria
 [**GetConnectionCriteria**](ConnectionCriteriaApi.md#GetConnectionCriteria) | **Get** /connection-criteria/{connection-criteria-name} | Returns a single Connection Criteria
+[**ListConnectionCriteria**](ConnectionCriteriaApi.md#ListConnectionCriteria) | **Get** /connection-criteria | Returns a list of all Connection Criteria objects
 [**UpdateConnectionCriteria**](ConnectionCriteriaApi.md#UpdateConnectionCriteria) | **Patch** /connection-criteria/{connection-criteria-name} | Update an existing Connection Criteria by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddConnectionCriteria200Response**](AddConnectionCriteria200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListConnectionCriteria
+
+> ConnectionCriteriaListResponse ListConnectionCriteria(ctx).Filter(filter).Execute()
+
+Returns a list of all Connection Criteria objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ConnectionCriteriaApi.ListConnectionCriteria(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ConnectionCriteriaApi.ListConnectionCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListConnectionCriteria`: ConnectionCriteriaListResponse
+    fmt.Fprintf(os.Stdout, "Response from `ConnectionCriteriaApi.ListConnectionCriteria`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListConnectionCriteriaRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**ConnectionCriteriaListResponse**](ConnectionCriteriaListResponse.md)
 
 ### Authorization
 

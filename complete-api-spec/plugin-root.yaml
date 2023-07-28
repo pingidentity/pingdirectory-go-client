@@ -61,6 +61,33 @@ paths:
       tags:
       - plugin-root
   /plugin-root/plugins:
+    get:
+      summary: Returns a list of all Plugin objects
+      operationId: list-plugins
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/pluginListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - plugin
     post:
       summary: Add a new Plugin to the config
       operationId: add-plugin
@@ -314,6 +341,41 @@ paths:
       tags:
       - plugin
   /plugin-root/plugins/{plugin-name}/custom-logged-stats:
+    get:
+      summary: Returns a list of all Custom Logged Stats objects
+      operationId: list-custom-logged-stats
+      parameters:
+      - description: Name of the Plugin
+        explode: false
+        in: path
+        name: plugin-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/custom-logged-statsListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - custom-logged-stats
     post:
       summary: Add a new Custom Logged Stats to the config
       operationId: add-custom-logged-stats
@@ -3933,6 +3995,74 @@ components:
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:custom-logged-stats:custom"
       - "urn:pingidentity:schemas:configuration:2.0:custom-logged-stats"
+    pluginListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/last-access-time-plugin-response'
+            - $ref: '#/components/schemas/stats-collector-plugin-response'
+            - $ref: '#/components/schemas/internal-search-rate-plugin-response'
+            - $ref: '#/components/schemas/modifiable-password-policy-state-plugin-response'
+            - $ref: '#/components/schemas/seven-bit-clean-plugin-response'
+            - $ref: '#/components/schemas/clean-up-expired-pingfederate-persistent-access-grants-plugin-response'
+            - $ref: '#/components/schemas/periodic-gc-plugin-response'
+            - $ref: '#/components/schemas/ping-one-pass-through-authentication-plugin-response'
+            - $ref: '#/components/schemas/changelog-password-encryption-plugin-response'
+            - $ref: '#/components/schemas/processing-time-histogram-plugin-response'
+            - $ref: '#/components/schemas/search-shutdown-plugin-response'
+            - $ref: '#/components/schemas/periodic-stats-logger-plugin-response'
+            - $ref: '#/components/schemas/purge-expired-data-plugin-response'
+            - $ref: '#/components/schemas/change-subscription-notification-plugin-response'
+            - $ref: '#/components/schemas/sub-operation-timing-plugin-response'
+            - $ref: '#/components/schemas/third-party-plugin-response'
+            - $ref: '#/components/schemas/encrypt-attribute-values-plugin-response'
+            - $ref: '#/components/schemas/pass-through-authentication-plugin-response'
+            - $ref: '#/components/schemas/dn-mapper-plugin-response'
+            - $ref: '#/components/schemas/monitor-history-plugin-response'
+            - $ref: '#/components/schemas/referral-on-update-plugin-response'
+            - $ref: '#/components/schemas/simple-to-external-bind-plugin-response'
+            - $ref: '#/components/schemas/custom-plugin-response'
+            - $ref: '#/components/schemas/snmp-subagent-plugin-response'
+            - $ref: '#/components/schemas/coalesce-modifications-plugin-response'
+            - $ref: '#/components/schemas/password-policy-import-plugin-response'
+            - $ref: '#/components/schemas/profiler-plugin-response'
+            - $ref: '#/components/schemas/clean-up-inactive-pingfederate-persistent-sessions-plugin-response'
+            - $ref: '#/components/schemas/composed-attribute-plugin-response'
+            - $ref: '#/components/schemas/ldap-result-code-tracker-plugin-response'
+            - $ref: '#/components/schemas/attribute-mapper-plugin-response'
+            - $ref: '#/components/schemas/delay-plugin-response'
+            - $ref: '#/components/schemas/clean-up-expired-pingfederate-persistent-sessions-plugin-response'
+            - $ref: '#/components/schemas/groovy-scripted-plugin-response'
+            - $ref: '#/components/schemas/last-mod-plugin-response'
+            - $ref: '#/components/schemas/pluggable-pass-through-authentication-plugin-response'
+            - $ref: '#/components/schemas/referential-integrity-plugin-response'
+            - $ref: '#/components/schemas/unique-attribute-plugin-response'
+    custom-logged-statsListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/custom-logged-stats-response'
     updateRequest:
       type: object
       properties:

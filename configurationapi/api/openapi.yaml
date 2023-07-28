@@ -245,6 +245,35 @@ paths:
       tags:
       - global-configuration
   /id-token-validators:
+    get:
+      operationId: list-id-token-validators
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/id-token-validatorListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all ID Token Validator objects
+      tags:
+      - id-token-validator
     post:
       operationId: add-id-token-validator
       requestBody:
@@ -370,6 +399,43 @@ paths:
       tags:
       - id-token-validator
   /id-token-validators/{id-token-validator-name}/token-claim-validations:
+    get:
+      operationId: list-token-claim-validations
+      parameters:
+      - description: Name of the ID Token Validator
+        explode: false
+        in: path
+        name: id-token-validator-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/token-claim-validationListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Token Claim Validation objects
+      tags:
+      - token-claim-validation
     post:
       operationId: add-token-claim-validation
       parameters:
@@ -578,6 +644,35 @@ paths:
       tags:
       - plugin-root
   /plugin-root/plugins:
+    get:
+      operationId: list-plugins
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/pluginListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Plugin objects
+      tags:
+      - plugin
     post:
       operationId: add-plugin
       requestBody:
@@ -703,6 +798,43 @@ paths:
       tags:
       - plugin
   /plugin-root/plugins/{plugin-name}/custom-logged-stats:
+    get:
+      operationId: list-custom-logged-stats
+      parameters:
+      - description: Name of the Plugin
+        explode: false
+        in: path
+        name: plugin-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/custom-logged-statsListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Custom Logged Stats objects
+      tags:
+      - custom-logged-stats
     post:
       operationId: add-custom-logged-stats
       parameters:
@@ -861,6 +993,35 @@ paths:
       tags:
       - custom-logged-stats
   /sensitive-attributes:
+    get:
+      operationId: list-sensitive-attributes
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sensitive-attributeListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Sensitive Attribute objects
+      tags:
+      - sensitive-attribute
     post:
       operationId: add-sensitive-attribute
       requestBody:
@@ -986,6 +1147,35 @@ paths:
       tags:
       - sensitive-attribute
   /access-token-validators:
+    get:
+      operationId: list-access-token-validators
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/access-token-validatorListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Access Token Validator objects
+      tags:
+      - access-token-validator
     post:
       operationId: add-access-token-validator
       requestBody:
@@ -1161,6 +1351,35 @@ paths:
       tags:
       - root-dse-backend
   /log-field-mappings:
+    get:
+      operationId: list-log-field-mappings
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/log-field-mappingListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Log Field Mapping objects
+      tags:
+      - log-field-mapping
     post:
       operationId: add-log-field-mapping
       requestBody:
@@ -1286,6 +1505,35 @@ paths:
       tags:
       - log-field-mapping
   /password-generators:
+    get:
+      operationId: list-password-generators
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/password-generatorListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Password Generator objects
+      tags:
+      - password-generator
     post:
       operationId: add-password-generator
       requestBody:
@@ -1411,6 +1659,35 @@ paths:
       tags:
       - password-generator
   /otp-delivery-mechanisms:
+    get:
+      operationId: list-otp-delivery-mechanisms
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/otp-delivery-mechanismListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all OTP Delivery Mechanism objects
+      tags:
+      - otp-delivery-mechanism
     post:
       operationId: add-otp-delivery-mechanism
       requestBody:
@@ -1536,6 +1813,35 @@ paths:
       tags:
       - otp-delivery-mechanism
   /log-field-behaviors:
+    get:
+      operationId: list-log-field-behaviors
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/log-field-behaviorListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Log Field Behavior objects
+      tags:
+      - log-field-behavior
     post:
       operationId: add-log-field-behavior
       requestBody:
@@ -2081,6 +2387,35 @@ paths:
       tags:
       - inter-server-authentication-info
   /log-file-rotation-listeners:
+    get:
+      operationId: list-log-file-rotation-listeners
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/log-file-rotation-listenerListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Log File Rotation Listener objects
+      tags:
+      - log-file-rotation-listener
     post:
       operationId: add-log-file-rotation-listener
       requestBody:
@@ -2206,6 +2541,35 @@ paths:
       tags:
       - log-file-rotation-listener
   /password-policies:
+    get:
+      operationId: list-password-policies
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/password-policyListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Password Policy objects
+      tags:
+      - password-policy
     post:
       operationId: add-password-policy
       requestBody:
@@ -2331,6 +2695,35 @@ paths:
       tags:
       - password-policy
   /delegated-admin-rights:
+    get:
+      operationId: list-delegated-admin-rights
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/delegated-admin-rightsListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Delegated Admin Rights objects
+      tags:
+      - delegated-admin-rights
     post:
       operationId: add-delegated-admin-rights
       requestBody:
@@ -2456,6 +2849,43 @@ paths:
       tags:
       - delegated-admin-rights
   /delegated-admin-rights/{delegated-admin-rights-name}/delegated-admin-resource-rights:
+    get:
+      operationId: list-delegated-admin-resource-rights
+      parameters:
+      - description: Name of the Delegated Admin Rights
+        explode: false
+        in: path
+        name: delegated-admin-rights-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/delegated-admin-resource-rightsListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Delegated Admin Resource Rights objects
+      tags:
+      - delegated-admin-resource-rights
     post:
       operationId: add-delegated-admin-resource-rights
       parameters:
@@ -2614,6 +3044,35 @@ paths:
       tags:
       - delegated-admin-resource-rights
   /uncached-attribute-criteria:
+    get:
+      operationId: list-uncached-attribute-criteria
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/uncached-attribute-criteriaListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Uncached Attribute Criteria objects
+      tags:
+      - uncached-attribute-criteria
     post:
       operationId: add-uncached-attribute-criteria
       requestBody:
@@ -2739,6 +3198,35 @@ paths:
       tags:
       - uncached-attribute-criteria
   /result-code-maps:
+    get:
+      operationId: list-result-code-maps
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/result-code-mapListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Result Code Map objects
+      tags:
+      - result-code-map
     post:
       operationId: add-result-code-map
       requestBody:
@@ -3084,6 +3572,35 @@ paths:
       tags:
       - replication-domain
   /connection-criteria:
+    get:
+      operationId: list-connection-criteria
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connection-criteriaListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Connection Criteria objects
+      tags:
+      - connection-criteria
     post:
       operationId: add-connection-criteria
       requestBody:
@@ -3259,6 +3776,35 @@ paths:
       tags:
       - root-dn
   /root-dn/root-dn-users:
+    get:
+      operationId: list-root-dn-users
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/root-dn-userListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Root DN User objects
+      tags:
+      - root-dn-user
     post:
       operationId: add-root-dn-user
       requestBody:
@@ -3384,6 +3930,35 @@ paths:
       tags:
       - root-dn-user
   /trust-manager-providers:
+    get:
+      operationId: list-trust-manager-providers
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/trust-manager-providerListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Trust Manager Provider objects
+      tags:
+      - trust-manager-provider
     post:
       operationId: add-trust-manager-provider
       requestBody:
@@ -3509,6 +4084,35 @@ paths:
       tags:
       - trust-manager-provider
   /key-pairs:
+    get:
+      operationId: list-key-pairs
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/key-pairListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Key Pair objects
+      tags:
+      - key-pair
     post:
       operationId: add-key-pair
       requestBody:
@@ -3634,6 +4238,35 @@ paths:
       tags:
       - key-pair
   /request-criteria:
+    get:
+      operationId: list-request-criteria
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/request-criteriaListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Request Criteria objects
+      tags:
+      - request-criteria
     post:
       operationId: add-request-criteria
       requestBody:
@@ -3759,6 +4392,35 @@ paths:
       tags:
       - request-criteria
   /log-rotation-policies:
+    get:
+      operationId: list-log-rotation-policies
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/log-rotation-policyListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Log Rotation Policy objects
+      tags:
+      - log-rotation-policy
     post:
       operationId: add-log-rotation-policy
       requestBody:
@@ -3952,6 +4614,35 @@ paths:
       tags:
       - log-field-syntax
   /scim-resource-types:
+    get:
+      operationId: list-scim-resource-types
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/scim-resource-typeListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all SCIM Resource Type objects
+      tags:
+      - scim-resource-type
     post:
       operationId: add-scim-resource-type
       requestBody:
@@ -4077,6 +4768,43 @@ paths:
       tags:
       - scim-resource-type
   /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views:
+    get:
+      operationId: list-correlated-ldap-data-views
+      parameters:
+      - description: Name of the SCIM Resource Type
+        explode: false
+        in: path
+        name: scim-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/correlated-ldap-data-viewListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Correlated LDAP Data View objects
+      tags:
+      - correlated-ldap-data-view
     post:
       operationId: add-correlated-ldap-data-view
       parameters:
@@ -4235,6 +4963,43 @@ paths:
       tags:
       - correlated-ldap-data-view
   /scim-resource-types/{scim-resource-type-name}/scim-attribute-mappings:
+    get:
+      operationId: list-scim-attribute-mappings
+      parameters:
+      - description: Name of the SCIM Resource Type
+        explode: false
+        in: path
+        name: scim-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/scim-attribute-mappingListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all SCIM Attribute Mapping objects
+      tags:
+      - scim-attribute-mapping
     post:
       operationId: add-scim-attribute-mapping
       parameters:
@@ -4393,7 +5158,52 @@ paths:
       tags:
       - scim-attribute-mapping
   ? /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views/{correlated-ldap-data-view-name}/ldap-correlation-attribute-pairs
-  : post:
+  : get:
+      operationId: list-ldap-correlation-attribute-pairs
+      parameters:
+      - description: Name of the Correlated LDAP Data View
+        explode: false
+        in: path
+        name: correlated-ldap-data-view-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the SCIM Resource Type
+        explode: false
+        in: path
+        name: scim-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ldap-correlation-attribute-pairListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all LDAP Correlation Attribute Pair objects
+      tags:
+      - ldap-correlation-attribute-pair
+    post:
       operationId: add-ldap-correlation-attribute-pair
       parameters:
       - description: Name of the Correlated LDAP Data View
@@ -4583,6 +5393,35 @@ paths:
       tags:
       - ldap-correlation-attribute-pair
   /extended-operation-handlers:
+    get:
+      operationId: list-extended-operation-handlers
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/extended-operation-handlerListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Extended Operation Handler objects
+      tags:
+      - extended-operation-handler
     post:
       operationId: add-extended-operation-handler
       requestBody:
@@ -4708,6 +5547,35 @@ paths:
       tags:
       - extended-operation-handler
   /azure-authentication-methods:
+    get:
+      operationId: list-azure-authentication-methods
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/azure-authentication-methodListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Azure Authentication Method objects
+      tags:
+      - azure-authentication-method
     post:
       operationId: add-azure-authentication-method
       requestBody:
@@ -4833,6 +5701,35 @@ paths:
       tags:
       - azure-authentication-method
   /passphrase-providers:
+    get:
+      operationId: list-passphrase-providers
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/passphrase-providerListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Passphrase Provider objects
+      tags:
+      - passphrase-provider
     post:
       operationId: add-passphrase-provider
       requestBody:
@@ -4958,6 +5855,35 @@ paths:
       tags:
       - passphrase-provider
   /soft-delete-policies:
+    get:
+      operationId: list-soft-delete-policies
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/soft-delete-policyListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Soft Delete Policy objects
+      tags:
+      - soft-delete-policy
     post:
       operationId: add-soft-delete-policy
       requestBody:
@@ -5083,6 +6009,35 @@ paths:
       tags:
       - soft-delete-policy
   /recurring-task-chains:
+    get:
+      operationId: list-recurring-task-chains
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/recurring-task-chainListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Recurring Task Chain objects
+      tags:
+      - recurring-task-chain
     post:
       operationId: add-recurring-task-chain
       requestBody:
@@ -5208,6 +6163,35 @@ paths:
       tags:
       - recurring-task-chain
   /gauges:
+    get:
+      operationId: list-gauges
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/gaugeListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Gauge objects
+      tags:
+      - gauge
     post:
       operationId: add-gauge
       requestBody:
@@ -5333,6 +6317,35 @@ paths:
       tags:
       - gauge
   /search-reference-criteria:
+    get:
+      operationId: list-search-reference-criteria
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/search-reference-criteriaListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Search Reference Criteria objects
+      tags:
+      - search-reference-criteria
     post:
       operationId: add-search-reference-criteria
       requestBody:
@@ -5458,6 +6471,35 @@ paths:
       tags:
       - search-reference-criteria
   /entry-caches:
+    get:
+      operationId: list-entry-caches
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/entry-cacheListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Entry Cache objects
+      tags:
+      - entry-cache
     post:
       operationId: add-entry-cache
       requestBody:
@@ -5633,6 +6675,35 @@ paths:
       tags:
       - access-control-handler
   /alert-handlers:
+    get:
+      operationId: list-alert-handlers
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/alert-handlerListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Alert Handler objects
+      tags:
+      - alert-handler
     post:
       operationId: add-alert-handler
       requestBody:
@@ -5808,6 +6879,35 @@ paths:
       tags:
       - license
   /cipher-stream-providers:
+    get:
+      operationId: list-cipher-stream-providers
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cipher-stream-providerListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Cipher Stream Provider objects
+      tags:
+      - cipher-stream-provider
     post:
       operationId: add-cipher-stream-provider
       requestBody:
@@ -5933,6 +7033,35 @@ paths:
       tags:
       - cipher-stream-provider
   /vault-authentication-methods:
+    get:
+      operationId: list-vault-authentication-methods
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/vault-authentication-methodListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Vault Authentication Method objects
+      tags:
+      - vault-authentication-method
     post:
       operationId: add-vault-authentication-method
       requestBody:
@@ -6058,6 +7187,35 @@ paths:
       tags:
       - vault-authentication-method
   /account-status-notification-handlers:
+    get:
+      operationId: list-account-status-notification-handlers
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/account-status-notification-handlerListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Account Status Notification Handler objects
+      tags:
+      - account-status-notification-handler
     post:
       operationId: add-account-status-notification-handler
       requestBody:
@@ -6183,6 +7341,35 @@ paths:
       tags:
       - account-status-notification-handler
   /server-groups:
+    get:
+      operationId: list-server-groups
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/server-groupListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Server Group objects
+      tags:
+      - server-group
     post:
       operationId: add-server-group
       requestBody:
@@ -6308,6 +7495,35 @@ paths:
       tags:
       - server-group
   /pass-through-authentication-handlers:
+    get:
+      operationId: list-pass-through-authentication-handlers
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/pass-through-authentication-handlerListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Pass Through Authentication Handler objects
+      tags:
+      - pass-through-authentication-handler
     post:
       operationId: add-pass-through-authentication-handler
       requestBody:
@@ -6433,6 +7649,35 @@ paths:
       tags:
       - pass-through-authentication-handler
   /consent-definitions:
+    get:
+      operationId: list-consent-definitions
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/consent-definitionListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Consent Definition objects
+      tags:
+      - consent-definition
     post:
       operationId: add-consent-definition
       requestBody:
@@ -6558,6 +7803,43 @@ paths:
       tags:
       - consent-definition
   /consent-definitions/{consent-definition-name}/consent-definition-localizations:
+    get:
+      operationId: list-consent-definition-localizations
+      parameters:
+      - description: Name of the Consent Definition
+        explode: false
+        in: path
+        name: consent-definition-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/consent-definition-localizationListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Consent Definition Localization objects
+      tags:
+      - consent-definition-localization
     post:
       operationId: add-consent-definition-localization
       parameters:
@@ -6766,6 +8048,35 @@ paths:
       tags:
       - consent-service
   /topology-admin-users:
+    get:
+      operationId: list-topology-admin-users
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/topology-admin-userListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Topology Admin User objects
+      tags:
+      - topology-admin-user
     post:
       operationId: add-topology-admin-user
       requestBody:
@@ -6891,6 +8202,35 @@ paths:
       tags:
       - topology-admin-user
   /change-subscriptions:
+    get:
+      operationId: list-change-subscriptions
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/change-subscriptionListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Change Subscription objects
+      tags:
+      - change-subscription
     post:
       operationId: add-change-subscription
       requestBody:
@@ -7066,6 +8406,35 @@ paths:
       tags:
       - ldap-sdk-debug-logger
   /conjur-authentication-methods:
+    get:
+      operationId: list-conjur-authentication-methods
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/conjur-authentication-methodListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Conjur Authentication Method objects
+      tags:
+      - conjur-authentication-method
     post:
       operationId: add-conjur-authentication-method
       requestBody:
@@ -7191,6 +8560,35 @@ paths:
       tags:
       - conjur-authentication-method
   /constructed-attributes:
+    get:
+      operationId: list-constructed-attributes
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/constructed-attributeListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Constructed Attribute objects
+      tags:
+      - constructed-attribute
     post:
       operationId: add-constructed-attribute
       requestBody:
@@ -7316,6 +8714,35 @@ paths:
       tags:
       - constructed-attribute
   /password-validators:
+    get:
+      operationId: list-password-validators
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/password-validatorListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Password Validator objects
+      tags:
+      - password-validator
     post:
       operationId: add-password-validator
       requestBody:
@@ -7491,6 +8918,35 @@ paths:
       tags:
       - alarm-manager
   /connection-handlers:
+    get:
+      operationId: list-connection-handlers
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connection-handlerListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Connection Handler objects
+      tags:
+      - connection-handler
     post:
       operationId: add-connection-handler
       requestBody:
@@ -7616,6 +9072,35 @@ paths:
       tags:
       - connection-handler
   /web-application-extensions:
+    get:
+      operationId: list-web-application-extensions
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/web-application-extensionListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Web Application Extension objects
+      tags:
+      - web-application-extension
     post:
       operationId: add-web-application-extension
       requestBody:
@@ -7741,6 +9226,35 @@ paths:
       tags:
       - web-application-extension
   /trusted-certificates:
+    get:
+      operationId: list-trusted-certificates
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/trusted-certificateListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Trusted Certificate objects
+      tags:
+      - trusted-certificate
     post:
       operationId: add-trusted-certificate
       requestBody:
@@ -7866,6 +9380,35 @@ paths:
       tags:
       - trusted-certificate
   /search-entry-criteria:
+    get:
+      operationId: list-search-entry-criteria
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/search-entry-criteriaListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Search Entry Criteria objects
+      tags:
+      - search-entry-criteria
     post:
       operationId: add-search-entry-criteria
       requestBody:
@@ -7991,6 +9534,35 @@ paths:
       tags:
       - search-entry-criteria
   /failure-lockout-actions:
+    get:
+      operationId: list-failure-lockout-actions
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/failure-lockout-actionListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Failure Lockout Action objects
+      tags:
+      - failure-lockout-action
     post:
       operationId: add-failure-lockout-action
       requestBody:
@@ -8116,6 +9688,35 @@ paths:
       tags:
       - failure-lockout-action
   /certificate-mappers:
+    get:
+      operationId: list-certificate-mappers
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/certificate-mapperListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Certificate Mapper objects
+      tags:
+      - certificate-mapper
     post:
       operationId: add-certificate-mapper
       requestBody:
@@ -8241,6 +9842,35 @@ paths:
       tags:
       - certificate-mapper
   /log-publishers:
+    get:
+      operationId: list-log-publishers
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/log-publisherListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Log Publisher objects
+      tags:
+      - log-publisher
     post:
       operationId: add-log-publisher
       requestBody:
@@ -8366,6 +9996,43 @@ paths:
       tags:
       - log-publisher
   /log-publishers/{log-publisher-name}/debug-targets:
+    get:
+      operationId: list-debug-targets
+      parameters:
+      - description: Name of the Log Publisher
+        explode: false
+        in: path
+        name: log-publisher-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/debug-targetListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Debug Target objects
+      tags:
+      - debug-target
     post:
       operationId: add-debug-target
       parameters:
@@ -8524,6 +10191,35 @@ paths:
       tags:
       - debug-target
   /replication-assurance-policies:
+    get:
+      operationId: list-replication-assurance-policies
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/replication-assurance-policyListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Replication Assurance Policy objects
+      tags:
+      - replication-assurance-policy
     post:
       operationId: add-replication-assurance-policy
       requestBody:
@@ -8649,6 +10345,35 @@ paths:
       tags:
       - replication-assurance-policy
   /key-manager-providers:
+    get:
+      operationId: list-key-manager-providers
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/key-manager-providerListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Key Manager Provider objects
+      tags:
+      - key-manager-provider
     post:
       operationId: add-key-manager-provider
       requestBody:
@@ -8774,6 +10499,35 @@ paths:
       tags:
       - key-manager-provider
   /external-servers:
+    get:
+      operationId: list-external-servers
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/external-serverListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all External Server objects
+      tags:
+      - external-server
     post:
       operationId: add-external-server
       requestBody:
@@ -8899,6 +10653,35 @@ paths:
       tags:
       - external-server
   /dn-maps:
+    get:
+      operationId: list-dn-maps
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/dn-mapListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all DN Map objects
+      tags:
+      - dn-map
     post:
       operationId: add-dn-map
       requestBody:
@@ -9024,6 +10807,35 @@ paths:
       tags:
       - dn-map
   /change-subscription-handlers:
+    get:
+      operationId: list-change-subscription-handlers
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/change-subscription-handlerListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Change Subscription Handler objects
+      tags:
+      - change-subscription-handler
     post:
       operationId: add-change-subscription-handler
       requestBody:
@@ -9149,6 +10961,35 @@ paths:
       tags:
       - change-subscription-handler
   /obscured-values:
+    get:
+      operationId: list-obscured-values
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/obscured-valueListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Obscured Value objects
+      tags:
+      - obscured-value
     post:
       operationId: add-obscured-value
       requestBody:
@@ -9324,6 +11165,35 @@ paths:
       tags:
       - crypto-manager
   /monitor-providers:
+    get:
+      operationId: list-monitor-providers
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/monitor-providerListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Monitor Provider objects
+      tags:
+      - monitor-provider
     post:
       operationId: add-monitor-provider
       requestBody:
@@ -9517,6 +11387,35 @@ paths:
       tags:
       - group-implementation
   /gauge-data-sources:
+    get:
+      operationId: list-gauge-data-sources
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/gauge-data-sourceListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Gauge Data Source objects
+      tags:
+      - gauge-data-source
     post:
       operationId: add-gauge-data-source
       requestBody:
@@ -9642,6 +11541,35 @@ paths:
       tags:
       - gauge-data-source
   /backends:
+    get:
+      operationId: list-backends
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/backendListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Backend objects
+      tags:
+      - backend
     post:
       operationId: add-backend
       requestBody:
@@ -9767,6 +11695,43 @@ paths:
       tags:
       - backend
   /backends/{backend-name}/local-db-composite-indexes:
+    get:
+      operationId: list-local-db-composite-indexes
+      parameters:
+      - description: Name of the Backend
+        explode: false
+        in: path
+        name: backend-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/local-db-composite-indexListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Local DB Composite Index objects
+      tags:
+      - local-db-composite-index
     post:
       operationId: add-local-db-composite-index
       parameters:
@@ -9925,6 +11890,43 @@ paths:
       tags:
       - local-db-composite-index
   /backends/{backend-name}/local-db-vlv-indexes:
+    get:
+      operationId: list-local-db-vlv-indexes
+      parameters:
+      - description: Name of the Backend
+        explode: false
+        in: path
+        name: backend-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/local-db-vlv-indexListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Local DB VLV Index objects
+      tags:
+      - local-db-vlv-index
     post:
       operationId: add-local-db-vlv-index
       parameters:
@@ -10083,6 +12085,43 @@ paths:
       tags:
       - local-db-vlv-index
   /backends/{backend-name}/local-db-indexes:
+    get:
+      operationId: list-local-db-indexes
+      parameters:
+      - description: Name of the Backend
+        explode: false
+        in: path
+        name: backend-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/local-db-indexListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Local DB Index objects
+      tags:
+      - local-db-index
     post:
       operationId: add-local-db-index
       parameters:
@@ -10359,6 +12398,35 @@ paths:
       tags:
       - work-queue
   /uncached-entry-criteria:
+    get:
+      operationId: list-uncached-entry-criteria
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/uncached-entry-criteriaListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Uncached Entry Criteria objects
+      tags:
+      - uncached-entry-criteria
     post:
       operationId: add-uncached-entry-criteria
       requestBody:
@@ -10484,6 +12552,35 @@ paths:
       tags:
       - uncached-entry-criteria
   /http-servlet-extensions:
+    get:
+      operationId: list-http-servlet-extensions
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/http-servlet-extensionListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all HTTP Servlet Extension objects
+      tags:
+      - http-servlet-extension
     post:
       operationId: add-http-servlet-extension
       requestBody:
@@ -10609,6 +12706,43 @@ paths:
       tags:
       - http-servlet-extension
   /http-servlet-extensions/{http-servlet-extension-name}/prometheus-monitor-attribute-metrics:
+    get:
+      operationId: list-prometheus-monitor-attribute-metrics
+      parameters:
+      - description: Name of the HTTP Servlet Extension
+        explode: false
+        in: path
+        name: http-servlet-extension-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/prometheus-monitor-attribute-metricListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Prometheus Monitor Attribute Metric objects
+      tags:
+      - prometheus-monitor-attribute-metric
     post:
       operationId: add-prometheus-monitor-attribute-metric
       parameters:
@@ -10767,6 +12901,43 @@ paths:
       tags:
       - prometheus-monitor-attribute-metric
   /http-servlet-extensions/{http-servlet-extension-name}/velocity-context-providers:
+    get:
+      operationId: list-velocity-context-providers
+      parameters:
+      - description: Name of the HTTP Servlet Extension
+        explode: false
+        in: path
+        name: http-servlet-extension-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/velocity-context-providerListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Velocity Context Provider objects
+      tags:
+      - velocity-context-provider
     post:
       operationId: add-velocity-context-provider
       parameters:
@@ -10925,6 +13096,43 @@ paths:
       tags:
       - velocity-context-provider
   /http-servlet-extensions/{http-servlet-extension-name}/velocity-template-loaders:
+    get:
+      operationId: list-velocity-template-loaders
+      parameters:
+      - description: Name of the HTTP Servlet Extension
+        explode: false
+        in: path
+        name: http-servlet-extension-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/velocity-template-loaderListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Velocity Template Loader objects
+      tags:
+      - velocity-template-loader
     post:
       operationId: add-velocity-template-loader
       parameters:
@@ -11083,6 +13291,35 @@ paths:
       tags:
       - velocity-template-loader
   /client-connection-policies:
+    get:
+      operationId: list-client-connection-policies
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/client-connection-policyListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Client Connection Policy objects
+      tags:
+      - client-connection-policy
     post:
       operationId: add-client-connection-policy
       requestBody:
@@ -11276,6 +13513,35 @@ paths:
       tags:
       - matching-rule
   /virtual-attributes:
+    get:
+      operationId: list-virtual-attributes
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/virtual-attributeListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Virtual Attribute objects
+      tags:
+      - virtual-attribute
     post:
       operationId: add-virtual-attribute
       requestBody:
@@ -11401,6 +13667,35 @@ paths:
       tags:
       - virtual-attribute
   /notification-managers:
+    get:
+      operationId: list-notification-managers
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/notification-managerListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Notification Manager objects
+      tags:
+      - notification-manager
     post:
       operationId: add-notification-manager
       requestBody:
@@ -11526,6 +13821,35 @@ paths:
       tags:
       - notification-manager
   /result-criteria:
+    get:
+      operationId: list-result-criteria
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/result-criteriaListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Result Criteria objects
+      tags:
+      - result-criteria
     post:
       operationId: add-result-criteria
       requestBody:
@@ -11651,6 +13975,35 @@ paths:
       tags:
       - result-criteria
   /identity-mappers:
+    get:
+      operationId: list-identity-mappers
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/identity-mapperListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Identity Mapper objects
+      tags:
+      - identity-mapper
     post:
       operationId: add-identity-mapper
       requestBody:
@@ -11776,6 +14129,35 @@ paths:
       tags:
       - identity-mapper
   /recurring-tasks:
+    get:
+      operationId: list-recurring-tasks
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/recurring-taskListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Recurring Task objects
+      tags:
+      - recurring-task
     post:
       operationId: add-recurring-task
       requestBody:
@@ -11901,6 +14283,35 @@ paths:
       tags:
       - recurring-task
   /rest-resource-types:
+    get:
+      operationId: list-rest-resource-types
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rest-resource-typeListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all REST Resource Type objects
+      tags:
+      - rest-resource-type
     post:
       operationId: add-rest-resource-type
       requestBody:
@@ -12026,6 +14437,43 @@ paths:
       tags:
       - rest-resource-type
   /rest-resource-types/{rest-resource-type-name}/delegated-admin-attributes:
+    get:
+      operationId: list-delegated-admin-attributes
+      parameters:
+      - description: Name of the REST Resource Type
+        explode: false
+        in: path
+        name: rest-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/delegated-admin-attributeListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Delegated Admin Attribute objects
+      tags:
+      - delegated-admin-attribute
     post:
       operationId: add-delegated-admin-attribute
       parameters:
@@ -12184,6 +14632,43 @@ paths:
       tags:
       - delegated-admin-attribute
   /rest-resource-types/{rest-resource-type-name}/delegated-admin-correlated-rest-resources:
+    get:
+      operationId: list-delegated-admin-correlated-rest-resources
+      parameters:
+      - description: Name of the REST Resource Type
+        explode: false
+        in: path
+        name: rest-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/delegated-admin-correlated-rest-resourceListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Delegated Admin Correlated REST Resource objects
+      tags:
+      - delegated-admin-correlated-rest-resource
     post:
       operationId: add-delegated-admin-correlated-rest-resource
       parameters:
@@ -12343,6 +14828,35 @@ paths:
       tags:
       - delegated-admin-correlated-rest-resource
   /sasl-mechanism-handlers:
+    get:
+      operationId: list-sasl-mechanism-handlers
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sasl-mechanism-handlerListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all SASL Mechanism Handler objects
+      tags:
+      - sasl-mechanism-handler
     post:
       operationId: add-sasl-mechanism-handler
       requestBody:
@@ -12468,6 +14982,35 @@ paths:
       tags:
       - sasl-mechanism-handler
   /data-security-auditors:
+    get:
+      operationId: list-data-security-auditors
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/data-security-auditorListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Data Security Auditor objects
+      tags:
+      - data-security-auditor
     post:
       operationId: add-data-security-auditor
       requestBody:
@@ -12593,6 +15136,35 @@ paths:
       tags:
       - data-security-auditor
   /monitoring-endpoints:
+    get:
+      operationId: list-monitoring-endpoints
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/monitoring-endpointListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Monitoring Endpoint objects
+      tags:
+      - monitoring-endpoint
     post:
       operationId: add-monitoring-endpoint
       requestBody:
@@ -12718,6 +15290,35 @@ paths:
       tags:
       - monitoring-endpoint
   /password-storage-schemes:
+    get:
+      operationId: list-password-storage-schemes
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/password-storage-schemeListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Password Storage Scheme objects
+      tags:
+      - password-storage-scheme
     post:
       operationId: add-password-storage-scheme
       requestBody:
@@ -12893,6 +15494,35 @@ paths:
       tags:
       - http-configuration
   /json-attribute-constraints:
+    get:
+      operationId: list-json-attribute-constraints
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/json-attribute-constraintsListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all JSON Attribute Constraints objects
+      tags:
+      - json-attribute-constraints
     post:
       operationId: add-json-attribute-constraints
       requestBody:
@@ -13018,6 +15648,43 @@ paths:
       tags:
       - json-attribute-constraints
   /json-attribute-constraints/{json-attribute-constraints-name}/json-field-constraints:
+    get:
+      operationId: list-json-field-constraints
+      parameters:
+      - description: Name of the JSON Attribute Constraints
+        explode: false
+        in: path
+        name: json-attribute-constraints-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/json-field-constraintsListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all JSON Field Constraints objects
+      tags:
+      - json-field-constraints
     post:
       operationId: add-json-field-constraints
       parameters:
@@ -13176,6 +15843,35 @@ paths:
       tags:
       - json-field-constraints
   /http-servlet-cross-origin-policies:
+    get:
+      operationId: list-http-servlet-cross-origin-policies
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/http-servlet-cross-origin-policyListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all HTTP Servlet Cross Origin Policy objects
+      tags:
+      - http-servlet-cross-origin-policy
     post:
       operationId: add-http-servlet-cross-origin-policy
       requestBody:
@@ -13301,6 +15997,35 @@ paths:
       tags:
       - http-servlet-cross-origin-policy
   /delegated-admin-attribute-categories:
+    get:
+      operationId: list-delegated-admin-attribute-categories
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/delegated-admin-attribute-categoryListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Delegated Admin Attribute Category objects
+      tags:
+      - delegated-admin-attribute-category
     post:
       operationId: add-delegated-admin-attribute-category
       requestBody:
@@ -13426,6 +16151,35 @@ paths:
       tags:
       - delegated-admin-attribute-category
   /scim-schemas:
+    get:
+      operationId: list-scim-schemas
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/scim-schemaListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all SCIM Schema objects
+      tags:
+      - scim-schema
     post:
       operationId: add-scim-schema
       requestBody:
@@ -13551,6 +16305,43 @@ paths:
       tags:
       - scim-schema
   /scim-schemas/{scim-schema-name}/scim-attributes:
+    get:
+      operationId: list-scim-attributes
+      parameters:
+      - description: Name of the SCIM Schema
+        explode: false
+        in: path
+        name: scim-schema-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/scim-attributeListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all SCIM Attribute objects
+      tags:
+      - scim-attribute
     post:
       operationId: add-scim-attribute
       parameters:
@@ -13709,6 +16500,51 @@ paths:
       tags:
       - scim-attribute
   /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name}/scim-subattributes:
+    get:
+      operationId: list-scim-subattributes
+      parameters:
+      - description: Name of the SCIM Attribute
+        explode: false
+        in: path
+        name: scim-attribute-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the SCIM Schema
+        explode: false
+        in: path
+        name: scim-schema-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/scim-subattributeListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all SCIM Subattribute objects
+      tags:
+      - scim-subattribute
     post:
       operationId: add-scim-subattribute
       parameters:
@@ -13899,6 +16735,35 @@ paths:
       tags:
       - scim-subattribute
   /locations:
+    get:
+      operationId: list-locations
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/locationListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Location objects
+      tags:
+      - location
     post:
       operationId: add-location
       requestBody:
@@ -14024,6 +16889,35 @@ paths:
       tags:
       - location
   /log-retention-policies:
+    get:
+      operationId: list-log-retention-policies
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/log-retention-policyListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Log Retention Policy objects
+      tags:
+      - log-retention-policy
     post:
       operationId: add-log-retention-policy
       requestBody:
@@ -14149,6 +17043,35 @@ paths:
       tags:
       - log-retention-policy
   /oauth-token-handlers:
+    get:
+      operationId: list-oauth-token-handlers
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/oauth-token-handlerListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all OAuth Token Handler objects
+      tags:
+      - oauth-token-handler
     post:
       operationId: add-oauth-token-handler
       requestBody:
@@ -14742,6 +17665,50 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:token-claim-validation:string
       type: string
+    id-token-validatorListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_id_token_validator_200_response'
+          type: array
+      type: object
+    token-claim-validationListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_token_claim_validation_200_response'
+          type: array
+      type: object
     plugin-root-response:
       allOf:
       - $ref: '#/components/schemas/plugin_root_response_allOf'
@@ -17350,6 +20317,50 @@ components:
       - urn:pingidentity:schemas:configuration:2.0:custom-logged-stats:custom
       - urn:pingidentity:schemas:configuration:2.0:custom-logged-stats
       type: string
+    pluginListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/get_plugin_200_response'
+          type: array
+      type: object
+    custom-logged-statsListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/custom-logged-stats-response'
+          type: array
+      type: object
     Enumsensitive-attribute-allowInReturnedEntriesProp:
       description: "Indicates whether sensitive attributes should be included in entries\
         \ returned to the client. This includes not only search result entries, but\
@@ -17444,6 +20455,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:sensitive-attribute
       type: string
+    sensitive-attributeListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/sensitive-attribute-response'
+          type: array
+      type: object
     add-ping-federate-access-token-validator-request:
       allOf:
       - $ref: '#/components/schemas/add_ping_federate_access_token_validator_request_allOf'
@@ -17821,6 +20854,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:access-token-validator:third-party
       type: string
+    access-token-validatorListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_access_token_validator_200_response'
+          type: array
+      type: object
     root-dse-backend-response:
       allOf:
       - $ref: '#/components/schemas/root_dse_backend_response_allOf'
@@ -18104,6 +21159,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:log-field-mapping:error
       type: string
+    log-field-mappingListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_log_field_mapping_200_response'
+          type: array
+      type: object
     add-random-password-generator-request:
       allOf:
       - $ref: '#/components/schemas/add_random_password_generator_request_allOf'
@@ -18295,6 +21372,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:password-generator:third-party
       type: string
+    password-generatorListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_password_generator_200_response'
+          type: array
+      type: object
     add-twilio-otp-delivery-mechanism-request:
       allOf:
       - $ref: '#/components/schemas/add_twilio_otp_delivery_mechanism_request_allOf'
@@ -18491,6 +21590,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:otp-delivery-mechanism:third-party
       type: string
+    otp-delivery-mechanismListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_otp_delivery_mechanism_200_response'
+          type: array
+      type: object
     Enumlog-field-behavior-text-access-preserveFieldProp:
       description: "The log fields whose values should be logged with the intended\
         \ value. The values for these fields will be preserved, although they may\
@@ -22128,6 +25249,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:log-field-behavior:json-formatted-access
       type: string
+    log-field-behaviorListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_log_field_behavior_200_response'
+          type: array
+      type: object
     Enumserver-instance-serverInstanceTypeProp:
       description: Specifies the type of server installation.
       enum:
@@ -22315,6 +25458,81 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:inter-server-authentication-info:certificate
       type: string
+    server-instanceListResponse:
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/get_server_instance_200_response'
+          type: array
+      type: object
+    server-instance-listenerListResponse:
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/get_server_instance_listener_200_response'
+          type: array
+      type: object
+    mac-secret-keyListResponse:
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/mac-secret-key-response'
+          type: array
+      type: object
+    cipher-secret-keyListResponse:
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/cipher-secret-key-response'
+          type: array
+      type: object
+    inter-server-authentication-infoListResponse:
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/get_inter_server_authentication_info_200_response'
+          type: array
+      type: object
     add-summarize-log-file-rotation-listener-request:
       allOf:
       - $ref: '#/components/schemas/add_summarize_log_file_rotation_listener_request_allOf'
@@ -22451,6 +25669,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:log-file-rotation-listener:third-party
       type: string
+    log-file-rotation-listenerListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_log_file_rotation_listener_200_response'
+          type: array
+      type: object
     Enumpassword-policy-stateUpdateFailurePolicyProp:
       description: Specifies how the server deals with the inability to update password
         policy state information during an authentication attempt.
@@ -22762,6 +26002,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:password-policy
       type: string
+    password-policyListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/password-policy-response'
+          type: array
+      type: object
     add-delegated-admin-rights-request:
       allOf:
       - $ref: '#/components/schemas/add_delegated_admin_rights_request_allOf'
@@ -22885,6 +26147,50 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:delegated-admin-resource-rights
       type: string
+    delegated-admin-rightsListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/delegated-admin-rights-response'
+          type: array
+      type: object
+    delegated-admin-resource-rightsListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/delegated-admin-resource-rights-response'
+          type: array
+      type: object
     add-default-uncached-attribute-criteria-request:
       allOf:
       - $ref: '#/components/schemas/add_default_uncached_attribute_criteria_request_allOf'
@@ -23069,6 +26375,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:uncached-attribute-criteria:third-party
       type: string
+    uncached-attribute-criteriaListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_uncached_attribute_criteria_200_response'
+          type: array
+      type: object
     add-result-code-map-request:
       allOf:
       - $ref: '#/components/schemas/add_result_code_map_request_allOf'
@@ -23115,6 +26443,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:result-code-map
       type: string
+    result-code-mapListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/result-code-map-response'
+          type: array
+      type: object
     replication-synchronization-provider-response:
       allOf:
       - $ref: '#/components/schemas/replication_synchronization_provider_response_allOf'
@@ -23171,6 +26521,36 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:replication-domain
       type: string
+    synchronization-providerListResponse:
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/get_synchronization_provider_200_response'
+          type: array
+      type: object
+    replication-domainListResponse:
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/replication-domain-response'
+          type: array
+      type: object
     Enumconnection-criteria-communicationSecurityLevelProp:
       description: Indicates whether this Simple Connection Criteria should require
         or allow clients using a secure communication channel.
@@ -23738,6 +27118,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:connection-criteria:third-party
       type: string
+    connection-criteriaListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_connection_criteria_200_response'
+          type: array
+      type: object
     Enumroot-dn-defaultRootPrivilegeNameProp:
       description: Specifies the names of the privileges that root users will be granted
         by default.
@@ -24125,6 +27527,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:root-dn-user
       type: string
+    root-dn-userListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/root-dn-user-response'
+          type: array
+      type: object
     add-blind-trust-manager-provider-request:
       allOf:
       - $ref: '#/components/schemas/add_blind_trust_manager_provider_request_allOf'
@@ -24307,6 +27731,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:trust-manager-provider:third-party
       type: string
+    trust-manager-providerListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_trust_manager_provider_200_response'
+          type: array
+      type: object
     Enumkey-pair-keyAlgorithmProp:
       description: "The algorithm name and the length in bits of the key, e.g. RSA_2048."
       enum:
@@ -24366,6 +27812,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:key-pair
       type: string
+    key-pairListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/key-pair-response'
+          type: array
+      type: object
     Enumrequest-criteria-root-dse-operationTypeProp:
       description: The types of operations that may be matched by this Root DSE Request
         Criteria.
@@ -24828,6 +28296,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:request-criteria:third-party
       type: string
+    request-criteriaListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_request_criteria_200_response'
+          type: array
+      type: object
     add-time-limit-log-rotation-policy-request:
       allOf:
       - $ref: '#/components/schemas/add_time_limit_log_rotation_policy_request_allOf'
@@ -24967,6 +28457,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:log-rotation-policy:size-limit
       type: string
+    log-rotation-policyListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_log_rotation_policy_200_response'
+          type: array
+      type: object
     Enumlog-field-syntax-defaultBehaviorProp:
       description: The default behavior that the server should exhibit when logging
         fields with this syntax. This may be overridden on a per-field basis.
@@ -25011,6 +28523,21 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:log-field-syntax:generic
       type: string
+    log-field-syntaxListResponse:
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/get_log_field_syntax_200_response'
+          type: array
+      type: object
     Enumscim-resource-type-schemaCheckingOptionProp:
       description: Options to alter the way schema checking is performed during create
         or modify requests.
@@ -25358,6 +28885,94 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:ldap-correlation-attribute-pair
       type: string
+    scim-resource-typeListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_scim_resource_type_200_response'
+          type: array
+      type: object
+    correlated-ldap-data-viewListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/correlated-ldap-data-view-response'
+          type: array
+      type: object
+    scim-attribute-mappingListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/scim-attribute-mapping-response'
+          type: array
+      type: object
+    ldap-correlation-attribute-pairListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/ldap-correlation-attribute-pair-response'
+          type: array
+      type: object
     cancel-extended-operation-handler-response:
       allOf:
       - $ref: '#/components/schemas/cancel_extended_operation_handler_response_allOf'
@@ -25930,6 +29545,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:third-party
       type: string
+    extended-operation-handlerListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/get_extended_operation_handler_200_response'
+          type: array
+      type: object
     add-default-azure-authentication-method-request:
       allOf:
       - $ref: '#/components/schemas/add_default_azure_authentication_method_request_allOf'
@@ -26061,6 +29698,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:azure-authentication-method:username-password
       type: string
+    azure-authentication-methodListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_azure_authentication_method_200_response'
+          type: array
+      type: object
     add-environment-variable-passphrase-provider-request:
       allOf:
       - $ref: '#/components/schemas/add_environment_variable_passphrase_provider_request_allOf'
@@ -26470,6 +30129,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:passphrase-provider:third-party
       type: string
+    passphrase-providerListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_passphrase_provider_200_response'
+          type: array
+      type: object
     add-soft-delete-policy-request:
       allOf:
       - $ref: '#/components/schemas/add_soft_delete_policy_request_allOf'
@@ -26515,6 +30196,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:soft-delete-policy
       type: string
+    soft-delete-policyListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/soft-delete-policy-response'
+          type: array
+      type: object
     Enumrecurring-task-chain-scheduledMonthProp:
       description: The months of the year in which instances of this Recurring Task
         Chain may be scheduled to start.
@@ -26735,6 +30438,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:recurring-task-chain
       type: string
+    recurring-task-chainListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/recurring-task-chain-response'
+          type: array
+      type: object
     Enumgauge-overrideSeverityProp:
       description: "When defined, causes this Gauge to assume the specified severity,\
         \ overriding its computed severity. This is useful for testing alarms generated\
@@ -26956,6 +30681,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:gauge:numeric
       type: string
+    gaugeListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_gauge_200_response'
+          type: array
+      type: object
     add-simple-search-reference-criteria-request:
       allOf:
       - $ref: '#/components/schemas/add_simple_search_reference_criteria_request_allOf'
@@ -27137,6 +30884,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:search-reference-criteria:third-party
       type: string
+    search-reference-criteriaListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_search_reference_criteria_200_response'
+          type: array
+      type: object
     add-fifo-entry-cache-request:
       allOf:
       - $ref: '#/components/schemas/add_fifo_entry_cache_request_allOf'
@@ -27225,6 +30994,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:entry-cache:fifo
       type: string
+    entry-cacheListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/fifo-entry-cache-response'
+          type: array
+      type: object
     Enumaccess-control-handler-allowedBindControlProp:
       description: "Specifies a set of controls that clients should be allowed to\
         \ include in bind requests. As bind requests are evaluated as the unauthenticated\
@@ -28292,6 +32083,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:alert-handler:third-party
       type: string
+    alert-handlerListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/get_alert_handler_200_response'
+          type: array
+      type: object
     license-response:
       allOf:
       - $ref: '#/components/schemas/license_response_allOf'
@@ -28883,6 +32696,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:third-party
       type: string
+    cipher-stream-providerListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_cipher_stream_provider_200_response'
+          type: array
+      type: object
     add-static-token-vault-authentication-method-request:
       allOf:
       - $ref: '#/components/schemas/add_static_token_vault_authentication_method_request_allOf'
@@ -29007,6 +32842,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:vault-authentication-method:user-pass
       type: string
+    vault-authentication-methodListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_vault_authentication_method_200_response'
+          type: array
+      type: object
     add-smtp-account-status-notification-handler-request:
       allOf:
       - $ref: '#/components/schemas/add_smtp_account_status_notification_handler_request_allOf'
@@ -29590,6 +33447,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:account-status-notification-handler:third-party
       type: string
+    account-status-notification-handlerListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_account_status_notification_handler_200_response'
+          type: array
+      type: object
     add-server-group-request:
       allOf:
       - $ref: '#/components/schemas/add_server_group_request_allOf'
@@ -29621,6 +33500,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:server-group
       type: string
+    server-groupListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/server-group-response'
+          type: array
+      type: object
     add-ping-one-pass-through-authentication-handler-request:
       allOf:
       - $ref: '#/components/schemas/add_ping_one_pass_through_authentication_handler_request_allOf'
@@ -29992,6 +33893,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:pass-through-authentication-handler:third-party
       type: string
+    pass-through-authentication-handlerListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_pass_through_authentication_handler_200_response'
+          type: array
+      type: object
     add-consent-definition-request:
       allOf:
       - $ref: '#/components/schemas/add_consent_definition_request_allOf'
@@ -30082,6 +34005,50 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:consent-definition-localization
       type: string
+    consent-definitionListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/consent-definition-response'
+          type: array
+      type: object
+    consent-definition-localizationListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/consent-definition-localization-response'
+          type: array
+      type: object
     consent-service-response:
       allOf:
       - $ref: '#/components/schemas/consent_service_response_allOf'
@@ -30426,6 +34393,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:topology-admin-user
       type: string
+    topology-admin-userListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/topology-admin-user-response'
+          type: array
+      type: object
     add-change-subscription-request:
       allOf:
       - $ref: '#/components/schemas/add_change_subscription_request_allOf'
@@ -30475,6 +34464,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:change-subscription
       type: string
+    change-subscriptionListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/change-subscription-response'
+          type: array
+      type: object
     Enumldap-sdk-debug-logger-debugLevelProp:
       description: The minimum debug level that should be used for messages to be
         logged.
@@ -30581,6 +34592,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:conjur-authentication-method:api-key
       type: string
+    conjur-authentication-methodListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/api-key-conjur-authentication-method-response'
+          type: array
+      type: object
     add-constructed-attribute-request:
       allOf:
       - $ref: '#/components/schemas/add_constructed_attribute_request_allOf'
@@ -30623,6 +34656,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:constructed-attribute
       type: string
+    constructed-attributeListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/constructed-attribute-response'
+          type: array
+      type: object
     add-character-set-password-validator-request:
       allOf:
       - $ref: '#/components/schemas/add_character_set_password_validator_request_allOf'
@@ -31560,6 +35615,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:password-validator:third-party
       type: string
+    password-validatorListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/get_password_validator_200_response'
+          type: array
+      type: object
     Enumalarm-manager-defaultGaugeAlertLevelProp:
       description: Specifies the level at which alerts are sent for alarms raised
         by the Alarm Manager.
@@ -32056,6 +36133,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:connection-handler:http
       type: string
+    connection-handlerListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_connection_handler_200_response'
+          type: array
+      type: object
     Enumweb-application-extension-complexityProp:
       description: Specifies the maximum complexity level for managed configuration
         elements.
@@ -32138,6 +36237,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:web-application-extension:generic
       type: string
+    web-application-extensionListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/get_web_application_extension_200_response'
+          type: array
+      type: object
     add-trusted-certificate-request:
       allOf:
       - $ref: '#/components/schemas/add_trusted_certificate_request_allOf'
@@ -32169,6 +36290,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:trusted-certificate
       type: string
+    trusted-certificateListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/trusted-certificate-response'
+          type: array
+      type: object
     add-simple-search-entry-criteria-request:
       allOf:
       - $ref: '#/components/schemas/add_simple_search_entry_criteria_request_allOf'
@@ -32435,6 +36578,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:search-entry-criteria:third-party
       type: string
+    search-entry-criteriaListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_search_entry_criteria_200_response'
+          type: array
+      type: object
     add-delay-bind-response-failure-lockout-action-request:
       allOf:
       - $ref: '#/components/schemas/add_delay_bind_response_failure_lockout_action_request_allOf'
@@ -32547,6 +36712,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:failure-lockout-action:lock-account
       type: string
+    failure-lockout-actionListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_failure_lockout_action_200_response'
+          type: array
+      type: object
     add-subject-equals-dn-certificate-mapper-request:
       allOf:
       - $ref: '#/components/schemas/add_subject_equals_dn_certificate_mapper_request_allOf'
@@ -32825,6 +37012,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:certificate-mapper:third-party
       type: string
+    certificate-mapperListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_certificate_mapper_200_response'
+          type: array
+      type: object
     Enumlog-publisher-syslogFacilityProp:
       description: The syslog facility to use for the messages that are logged by
         this Syslog JSON Audit Log Publisher.
@@ -38874,6 +43083,50 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:debug-target
       type: string
+    log-publisherListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/get_log_publisher_200_response'
+          type: array
+      type: object
+    debug-targetListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/debug-target-response'
+          type: array
+      type: object
     Enumreplication-assurance-policy-localLevelProp:
       description: "Specifies the assurance level used to replicate to local servers.\
         \ A local server is defined as one with the same value for the location setting\
@@ -38966,6 +43219,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:replication-assurance-policy
       type: string
+    replication-assurance-policyListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/replication-assurance-policy-response'
+          type: array
+      type: object
     add-file-based-key-manager-provider-request:
       allOf:
       - $ref: '#/components/schemas/add_file_based_key_manager_provider_request_allOf'
@@ -39167,6 +43442,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:key-manager-provider:third-party
       type: string
+    key-manager-providerListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/get_key_manager_provider_200_response'
+          type: array
+      type: object
     Enumexternal-server-smtpSecurityProp:
       description: This property specifies type of connection security to use when
         connecting to the outgoing mail server.
@@ -40953,6 +45250,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:external-server:vault
       type: string
+    external-serverListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_external_server_200_response'
+          type: array
+      type: object
     add-dn-map-request:
       allOf:
       - $ref: '#/components/schemas/add_dn_map_request_allOf'
@@ -40997,6 +45316,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:dn-map
       type: string
+    dn-mapListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/dn-map-response'
+          type: array
+      type: object
     add-groovy-scripted-change-subscription-handler-request:
       allOf:
       - $ref: '#/components/schemas/add_groovy_scripted_change_subscription_handler_request_allOf'
@@ -41155,6 +45496,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:change-subscription-handler:third-party
       type: string
+    change-subscription-handlerListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_change_subscription_handler_200_response'
+          type: array
+      type: object
     add-obscured-value-request:
       allOf:
       - $ref: '#/components/schemas/add_obscured_value_request_allOf'
@@ -41190,6 +45553,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:obscured-value
       type: string
+    obscured-valueListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/obscured-value-response'
+          type: array
+      type: object
     crypto-manager-response:
       allOf:
       - $ref: '#/components/schemas/crypto_manager_response_allOf'
@@ -41436,6 +45821,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:monitor-provider:third-party
       type: string
+    monitor-providerListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/get_monitor_provider_200_response'
+          type: array
+      type: object
     static-group-implementation-response:
       allOf:
       - $ref: '#/components/schemas/static_group_implementation_response_allOf'
@@ -41472,6 +45879,21 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:group-implementation:dynamic
       type: string
+    group-implementationListResponse:
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/get_group_implementation_200_response'
+          type: array
+      type: object
     add-indicator-gauge-data-source-request:
       allOf:
       - $ref: '#/components/schemas/add_indicator_gauge_data_source_request_allOf'
@@ -41628,6 +46050,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:gauge-data-source:numeric
       type: string
+    gauge-data-sourceListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_gauge_data_source_200_response'
+          type: array
+      type: object
     Enumbackend-writabilityModeProp:
       description: Specifies the behavior that the backend should use when processing
         write operations.
@@ -42766,6 +47210,94 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:local-db-index
       type: string
+    backendListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/get_backend_200_response'
+          type: array
+      type: object
+    local-db-composite-indexListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/local-db-composite-index-response'
+          type: array
+      type: object
+    local-db-vlv-indexListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/local-db-vlv-index-response'
+          type: array
+      type: object
+    local-db-indexListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/local-db-index-response'
+          type: array
+      type: object
     attribute-type-description-attribute-syntax-response:
       allOf:
       - $ref: '#/components/schemas/attribute_type_description_attribute_syntax_response_allOf'
@@ -42946,6 +47478,21 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:attribute-syntax:name-and-optional-uid
       type: string
+    attribute-syntaxListResponse:
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/get_attribute_syntax_200_response'
+          type: array
+      type: object
     high-throughput-work-queue-response:
       allOf:
       - $ref: '#/components/schemas/high_throughput_work_queue_response_allOf'
@@ -43178,6 +47725,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:uncached-entry-criteria:third-party
       type: string
+    uncached-entry-criteriaListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_uncached_entry_criteria_200_response'
+          type: array
+      type: object
     delegated-admin-http-servlet-extension-response:
       allOf:
       - $ref: '#/components/schemas/delegated_admin_http_servlet_extension_response_allOf'
@@ -44198,6 +48767,94 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:velocity-template-loader
       type: string
+    http-servlet-extensionListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/get_http_servlet_extension_200_response'
+          type: array
+      type: object
+    prometheus-monitor-attribute-metricListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/prometheus-monitor-attribute-metric-response'
+          type: array
+      type: object
+    velocity-context-providerListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/get_velocity_context_provider_200_response'
+          type: array
+      type: object
+    velocity-template-loaderListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/velocity-template-loader-response'
+          type: array
+      type: object
     Enumclient-connection-policy-allowedOperationProp:
       description: Specifies the types of operations that clients associated with
         this Client Connection Policy will be allowed to request.
@@ -44550,6 +49207,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:client-connection-policy
       type: string
+    client-connection-policyListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/client-connection-policy-response'
+          type: array
+      type: object
     ordering-matching-rule-response:
       allOf:
       - $ref: '#/components/schemas/ordering_matching_rule_response_allOf'
@@ -44610,6 +49289,21 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:matching-rule:generic
       type: string
+    matching-ruleListResponse:
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/get_matching_rule_200_response'
+          type: array
+      type: object
     Enumvirtual-attribute-conflictBehaviorProp:
       description: Specifies the behavior that the server is to exhibit for entries
         that already contain one or more real values for the associated attribute.
@@ -46120,6 +50814,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:virtual-attribute:third-party
       type: string
+    virtual-attributeListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/get_virtual_attribute_200_response'
+          type: array
+      type: object
     Enumnotification-manager-transactionNotificationProp:
       description: Specifies how the operations in an external transaction (e.g. a
         multi-update extended operation or an LDAP transaction) are notified for this
@@ -46191,6 +50907,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:notification-manager:third-party
       type: string
+    notification-managerListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/third-party-notification-manager-response'
+          type: array
+      type: object
     add-successful-bind-result-criteria-request:
       allOf:
       - $ref: '#/components/schemas/add_successful_bind_result_criteria_request_allOf'
@@ -46976,6 +51714,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:result-criteria:third-party
       type: string
+    result-criteriaListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_result_criteria_200_response'
+          type: array
+      type: object
     add-exact-match-identity-mapper-request:
       allOf:
       - $ref: '#/components/schemas/add_exact_match_identity_mapper_request_allOf'
@@ -47237,6 +51997,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:identity-mapper:third-party
       type: string
+    identity-mapperListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_identity_mapper_200_response'
+          type: array
+      type: object
     add-generate-server-profile-recurring-task-request:
       allOf:
       - $ref: '#/components/schemas/add_generate_server_profile_recurring_task_request_allOf'
@@ -48534,6 +53316,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:recurring-task:third-party
       type: string
+    recurring-taskListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_recurring_task_200_response'
+          type: array
+      type: object
     add-user-rest-resource-type-request:
       allOf:
       - $ref: '#/components/schemas/add_user_rest_resource_type_request_allOf'
@@ -49234,6 +54038,72 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:delegated-admin-correlated-rest-resource
       type: string
+    rest-resource-typeListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_rest_resource_type_200_response'
+          type: array
+      type: object
+    delegated-admin-attributeListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_delegated_admin_attribute_200_response'
+          type: array
+      type: object
+    delegated-admin-correlated-rest-resourceListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/delegated-admin-correlated-rest-resource-response'
+          type: array
+      type: object
     add-unboundid-ms-chap-v2-sasl-mechanism-handler-request:
       allOf:
       - $ref: '#/components/schemas/add_unboundid_ms_chap_v2_sasl_mechanism_handler_request_allOf'
@@ -49619,6 +54489,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:third-party
       type: string
+    sasl-mechanism-handlerListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/get_sasl_mechanism_handler_200_response'
+          type: array
+      type: object
     Enumdata-security-auditor-auditSeverityProp:
       description: Specifies the severity of events to include in the report.
       enum:
@@ -50499,6 +55391,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:data-security-auditor:third-party
       type: string
+    data-security-auditorListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_data_security_auditor_200_response'
+          type: array
+      type: object
     Enummonitoring-endpoint-connectionTypeProp:
       description: Specifies the protocol and security that this StatsD Monitoring
         Endpoint should use to connect to the configured endpoint.
@@ -50565,6 +55479,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:monitoring-endpoint:statsd
       type: string
+    monitoring-endpointListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/statsd-monitoring-endpoint-response'
+          type: array
+      type: object
     salted-sha256-password-storage-scheme-response:
       allOf:
       - $ref: '#/components/schemas/salted_sha256_password_storage_scheme_response_allOf'
@@ -51508,6 +56444,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:password-storage-scheme:md5
       type: string
+    password-storage-schemeListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/get_password_storage_scheme_200_response'
+          type: array
+      type: object
     http-configuration-response:
       allOf:
       - $ref: '#/components/schemas/http_configuration_response_allOf'
@@ -51730,6 +56688,50 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:json-field-constraints
       type: string
+    json-attribute-constraintsListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/json-attribute-constraints-response'
+          type: array
+      type: object
+    json-field-constraintsListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/json-field-constraints-response'
+          type: array
+      type: object
     add-http-servlet-cross-origin-policy-request:
       allOf:
       - $ref: '#/components/schemas/add_http_servlet_cross_origin_policy_request_allOf'
@@ -51791,6 +56793,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:http-servlet-cross-origin-policy
       type: string
+    http-servlet-cross-origin-policyListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/http-servlet-cross-origin-policy-response'
+          type: array
+      type: object
     add-delegated-admin-attribute-category-request:
       allOf:
       - $ref: '#/components/schemas/add_delegated_admin_attribute_category_request_allOf'
@@ -51831,6 +56855,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:delegated-admin-attribute-category
       type: string
+    delegated-admin-attribute-categoryListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/delegated-admin-attribute-category-response'
+          type: array
+      type: object
     add-scim-schema-request:
       allOf:
       - $ref: '#/components/schemas/add_scim_schema_request_allOf'
@@ -52062,6 +57108,72 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:scim-subattribute
       type: string
+    scim-schemaListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/scim-schema-response'
+          type: array
+      type: object
+    scim-attributeListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/scim-attribute-response'
+          type: array
+      type: object
+    scim-subattributeListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/scim-subattribute-response'
+          type: array
+      type: object
     add-location-request:
       allOf:
       - $ref: '#/components/schemas/add_location_request_allOf'
@@ -52091,6 +57203,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:location
       type: string
+    locationListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/location-response'
+          type: array
+      type: object
     add-time-limit-log-retention-policy-request:
       allOf:
       - $ref: '#/components/schemas/add_time_limit_log_retention_policy_request_allOf'
@@ -52265,6 +57399,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:log-retention-policy:size-limit
       type: string
+    log-retention-policyListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_log_retention_policy_200_response'
+          type: array
+      type: object
     add-groovy-scripted-oauth-token-handler-request:
       allOf:
       - $ref: '#/components/schemas/add_groovy_scripted_oauth_token_handler_request_allOf'
@@ -52351,6 +57507,28 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:oauth-token-handler:third-party
       type: string
+    oauth-token-handlerListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
+      properties:
+        schemas:
+          items:
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
+        totalResults:
+          type: number
+        Resources:
+          items:
+            $ref: '#/components/schemas/add_oauth_token_handler_200_response'
+          type: array
+      type: object
     updateRequest:
       properties:
         operations:

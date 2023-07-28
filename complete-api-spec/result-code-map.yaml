@@ -11,6 +11,33 @@ tags:
   name: result-code-map
 paths:
   /result-code-maps:
+    get:
+      summary: Returns a list of all Result Code Map objects
+      operationId: list-result-code-maps
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/result-code-mapListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - result-code-map
     post:
       summary: Add a new Result Code Map to the config
       operationId: add-result-code-map
@@ -193,6 +220,21 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:result-code-map"
+    result-code-mapListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/result-code-map-response'
     updateRequest:
       type: object
       properties:

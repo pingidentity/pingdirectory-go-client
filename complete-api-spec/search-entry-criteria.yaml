@@ -11,6 +11,33 @@ tags:
   name: search-entry-criteria
 paths:
   /search-entry-criteria:
+    get:
+      summary: Returns a list of all Search Entry Criteria objects
+      operationId: list-search-entry-criteria
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/search-entry-criteriaListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - search-entry-criteria
     post:
       summary: Add a new Search Entry Criteria to the config
       operationId: add-search-entry-criteria
@@ -398,6 +425,24 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:search-entry-criteria:third-party"
+    search-entry-criteriaListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/simple-search-entry-criteria-response'
+            - $ref: '#/components/schemas/aggregate-search-entry-criteria-response'
+            - $ref: '#/components/schemas/third-party-search-entry-criteria-response'
     updateRequest:
       type: object
       properties:

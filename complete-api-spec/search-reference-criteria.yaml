@@ -11,6 +11,33 @@ tags:
   name: search-reference-criteria
 paths:
   /search-reference-criteria:
+    get:
+      summary: Returns a list of all Search Reference Criteria objects
+      operationId: list-search-reference-criteria
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/search-reference-criteriaListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - search-reference-criteria
     post:
       summary: Add a new Search Reference Criteria to the config
       operationId: add-search-reference-criteria
@@ -338,6 +365,24 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:search-reference-criteria:third-party"
+    search-reference-criteriaListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/simple-search-reference-criteria-response'
+            - $ref: '#/components/schemas/aggregate-search-reference-criteria-response'
+            - $ref: '#/components/schemas/third-party-search-reference-criteria-response'
     updateRequest:
       type: object
       properties:

@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddDelegatedAdminCorrelatedRestResource**](DelegatedAdminCorrelatedRestResourceApi.md#AddDelegatedAdminCorrelatedRestResource) | **Post** /rest-resource-types/{rest-resource-type-name}/delegated-admin-correlated-rest-resources | Add a new Delegated Admin Correlated REST Resource to the config
 [**DeleteDelegatedAdminCorrelatedRestResource**](DelegatedAdminCorrelatedRestResourceApi.md#DeleteDelegatedAdminCorrelatedRestResource) | **Delete** /rest-resource-types/{rest-resource-type-name}/delegated-admin-correlated-rest-resources/{delegated-admin-correlated-rest-resource-name} | Delete a Delegated Admin Correlated REST Resource
 [**GetDelegatedAdminCorrelatedRestResource**](DelegatedAdminCorrelatedRestResourceApi.md#GetDelegatedAdminCorrelatedRestResource) | **Get** /rest-resource-types/{rest-resource-type-name}/delegated-admin-correlated-rest-resources/{delegated-admin-correlated-rest-resource-name} | Returns a single Delegated Admin Correlated REST Resource
+[**ListDelegatedAdminCorrelatedRestResources**](DelegatedAdminCorrelatedRestResourceApi.md#ListDelegatedAdminCorrelatedRestResources) | **Get** /rest-resource-types/{rest-resource-type-name}/delegated-admin-correlated-rest-resources | Returns a list of all Delegated Admin Correlated REST Resource objects
 [**UpdateDelegatedAdminCorrelatedRestResource**](DelegatedAdminCorrelatedRestResourceApi.md#UpdateDelegatedAdminCorrelatedRestResource) | **Patch** /rest-resource-types/{rest-resource-type-name}/delegated-admin-correlated-rest-resources/{delegated-admin-correlated-rest-resource-name} | Update an existing Delegated Admin Correlated REST Resource by name
 
 
@@ -206,6 +207,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DelegatedAdminCorrelatedRestResourceResponse**](DelegatedAdminCorrelatedRestResourceResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListDelegatedAdminCorrelatedRestResources
+
+> DelegatedAdminCorrelatedRestResourceListResponse ListDelegatedAdminCorrelatedRestResources(ctx, restResourceTypeName).Filter(filter).Execute()
+
+Returns a list of all Delegated Admin Correlated REST Resource objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    restResourceTypeName := "restResourceTypeName_example" // string | Name of the REST Resource Type
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DelegatedAdminCorrelatedRestResourceApi.ListDelegatedAdminCorrelatedRestResources(context.Background(), restResourceTypeName).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminCorrelatedRestResourceApi.ListDelegatedAdminCorrelatedRestResources``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListDelegatedAdminCorrelatedRestResources`: DelegatedAdminCorrelatedRestResourceListResponse
+    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminCorrelatedRestResourceApi.ListDelegatedAdminCorrelatedRestResources`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**restResourceTypeName** | **string** | Name of the REST Resource Type | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListDelegatedAdminCorrelatedRestResourcesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**DelegatedAdminCorrelatedRestResourceListResponse**](DelegatedAdminCorrelatedRestResourceListResponse.md)
 
 ### Authorization
 

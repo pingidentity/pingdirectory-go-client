@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddScimAttributeMapping**](ScimAttributeMappingApi.md#AddScimAttributeMapping) | **Post** /scim-resource-types/{scim-resource-type-name}/scim-attribute-mappings | Add a new SCIM Attribute Mapping to the config
 [**DeleteScimAttributeMapping**](ScimAttributeMappingApi.md#DeleteScimAttributeMapping) | **Delete** /scim-resource-types/{scim-resource-type-name}/scim-attribute-mappings/{scim-attribute-mapping-name} | Delete a SCIM Attribute Mapping
 [**GetScimAttributeMapping**](ScimAttributeMappingApi.md#GetScimAttributeMapping) | **Get** /scim-resource-types/{scim-resource-type-name}/scim-attribute-mappings/{scim-attribute-mapping-name} | Returns a single SCIM Attribute Mapping
+[**ListScimAttributeMappings**](ScimAttributeMappingApi.md#ListScimAttributeMappings) | **Get** /scim-resource-types/{scim-resource-type-name}/scim-attribute-mappings | Returns a list of all SCIM Attribute Mapping objects
 [**UpdateScimAttributeMapping**](ScimAttributeMappingApi.md#UpdateScimAttributeMapping) | **Patch** /scim-resource-types/{scim-resource-type-name}/scim-attribute-mappings/{scim-attribute-mapping-name} | Update an existing SCIM Attribute Mapping by name
 
 
@@ -206,6 +207,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ScimAttributeMappingResponse**](ScimAttributeMappingResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListScimAttributeMappings
+
+> ScimAttributeMappingListResponse ListScimAttributeMappings(ctx, scimResourceTypeName).Filter(filter).Execute()
+
+Returns a list of all SCIM Attribute Mapping objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    scimResourceTypeName := "scimResourceTypeName_example" // string | Name of the SCIM Resource Type
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ScimAttributeMappingApi.ListScimAttributeMappings(context.Background(), scimResourceTypeName).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ScimAttributeMappingApi.ListScimAttributeMappings``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListScimAttributeMappings`: ScimAttributeMappingListResponse
+    fmt.Fprintf(os.Stdout, "Response from `ScimAttributeMappingApi.ListScimAttributeMappings`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**scimResourceTypeName** | **string** | Name of the SCIM Resource Type | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListScimAttributeMappingsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**ScimAttributeMappingListResponse**](ScimAttributeMappingListResponse.md)
 
 ### Authorization
 

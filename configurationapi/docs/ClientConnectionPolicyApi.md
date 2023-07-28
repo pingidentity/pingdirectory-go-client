@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddClientConnectionPolicy**](ClientConnectionPolicyApi.md#AddClientConnectionPolicy) | **Post** /client-connection-policies | Add a new Client Connection Policy to the config
 [**DeleteClientConnectionPolicy**](ClientConnectionPolicyApi.md#DeleteClientConnectionPolicy) | **Delete** /client-connection-policies/{client-connection-policy-name} | Delete a Client Connection Policy
 [**GetClientConnectionPolicy**](ClientConnectionPolicyApi.md#GetClientConnectionPolicy) | **Get** /client-connection-policies/{client-connection-policy-name} | Returns a single Client Connection Policy
+[**ListClientConnectionPolicies**](ClientConnectionPolicyApi.md#ListClientConnectionPolicies) | **Get** /client-connection-policies | Returns a list of all Client Connection Policy objects
 [**UpdateClientConnectionPolicy**](ClientConnectionPolicyApi.md#UpdateClientConnectionPolicy) | **Patch** /client-connection-policies/{client-connection-policy-name} | Update an existing Client Connection Policy by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ClientConnectionPolicyResponse**](ClientConnectionPolicyResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListClientConnectionPolicies
+
+> ClientConnectionPolicyListResponse ListClientConnectionPolicies(ctx).Filter(filter).Execute()
+
+Returns a list of all Client Connection Policy objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ClientConnectionPolicyApi.ListClientConnectionPolicies(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ClientConnectionPolicyApi.ListClientConnectionPolicies``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListClientConnectionPolicies`: ClientConnectionPolicyListResponse
+    fmt.Fprintf(os.Stdout, "Response from `ClientConnectionPolicyApi.ListClientConnectionPolicies`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListClientConnectionPoliciesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**ClientConnectionPolicyListResponse**](ClientConnectionPolicyListResponse.md)
 
 ### Authorization
 

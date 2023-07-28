@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddDnMap**](DnMapApi.md#AddDnMap) | **Post** /dn-maps | Add a new DN Map to the config
 [**DeleteDnMap**](DnMapApi.md#DeleteDnMap) | **Delete** /dn-maps/{dn-map-name} | Delete a DN Map
 [**GetDnMap**](DnMapApi.md#GetDnMap) | **Get** /dn-maps/{dn-map-name} | Returns a single DN Map
+[**ListDnMaps**](DnMapApi.md#ListDnMaps) | **Get** /dn-maps | Returns a list of all DN Map objects
 [**UpdateDnMap**](DnMapApi.md#UpdateDnMap) | **Patch** /dn-maps/{dn-map-name} | Update an existing DN Map by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DnMapResponse**](DnMapResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListDnMaps
+
+> DnMapListResponse ListDnMaps(ctx).Filter(filter).Execute()
+
+Returns a list of all DN Map objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DnMapApi.ListDnMaps(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DnMapApi.ListDnMaps``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListDnMaps`: DnMapListResponse
+    fmt.Fprintf(os.Stdout, "Response from `DnMapApi.ListDnMaps`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListDnMapsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**DnMapListResponse**](DnMapListResponse.md)
 
 ### Authorization
 

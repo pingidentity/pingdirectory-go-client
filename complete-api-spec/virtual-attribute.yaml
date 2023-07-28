@@ -11,6 +11,33 @@ tags:
   name: virtual-attribute
 paths:
   /virtual-attributes:
+    get:
+      summary: Returns a list of all Virtual Attribute objects
+      operationId: list-virtual-attributes
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/virtual-attributeListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - virtual-attribute
     post:
       summary: Add a new Virtual Attribute to the config
       operationId: add-virtual-attribute
@@ -2339,6 +2366,44 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:third-party"
+    virtual-attributeListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/mirror-virtual-attribute-response'
+            - $ref: '#/components/schemas/entry-checksum-virtual-attribute-response'
+            - $ref: '#/components/schemas/member-of-server-group-virtual-attribute-response'
+            - $ref: '#/components/schemas/constructed-virtual-attribute-response'
+            - $ref: '#/components/schemas/is-member-of-virtual-attribute-response'
+            - $ref: '#/components/schemas/custom-virtual-attribute-response'
+            - $ref: '#/components/schemas/num-subordinates-virtual-attribute-response'
+            - $ref: '#/components/schemas/reverse-dn-join-virtual-attribute-response'
+            - $ref: '#/components/schemas/identify-references-virtual-attribute-response'
+            - $ref: '#/components/schemas/user-defined-virtual-attribute-response'
+            - $ref: '#/components/schemas/current-time-virtual-attribute-response'
+            - $ref: '#/components/schemas/short-unique-id-virtual-attribute-response'
+            - $ref: '#/components/schemas/entry-dn-virtual-attribute-response'
+            - $ref: '#/components/schemas/has-subordinates-virtual-attribute-response'
+            - $ref: '#/components/schemas/equality-join-virtual-attribute-response'
+            - $ref: '#/components/schemas/groovy-scripted-virtual-attribute-response'
+            - $ref: '#/components/schemas/instance-name-virtual-attribute-response'
+            - $ref: '#/components/schemas/replication-state-detail-virtual-attribute-response'
+            - $ref: '#/components/schemas/member-virtual-attribute-response'
+            - $ref: '#/components/schemas/password-policy-state-json-virtual-attribute-response'
+            - $ref: '#/components/schemas/subschema-subentry-virtual-attribute-response'
+            - $ref: '#/components/schemas/dn-join-virtual-attribute-response'
+            - $ref: '#/components/schemas/third-party-virtual-attribute-response'
     updateRequest:
       type: object
       properties:

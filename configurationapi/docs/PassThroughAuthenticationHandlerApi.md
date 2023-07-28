@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddPassThroughAuthenticationHandler**](PassThroughAuthenticationHandlerApi.md#AddPassThroughAuthenticationHandler) | **Post** /pass-through-authentication-handlers | Add a new Pass Through Authentication Handler to the config
 [**DeletePassThroughAuthenticationHandler**](PassThroughAuthenticationHandlerApi.md#DeletePassThroughAuthenticationHandler) | **Delete** /pass-through-authentication-handlers/{pass-through-authentication-handler-name} | Delete a Pass Through Authentication Handler
 [**GetPassThroughAuthenticationHandler**](PassThroughAuthenticationHandlerApi.md#GetPassThroughAuthenticationHandler) | **Get** /pass-through-authentication-handlers/{pass-through-authentication-handler-name} | Returns a single Pass Through Authentication Handler
+[**ListPassThroughAuthenticationHandlers**](PassThroughAuthenticationHandlerApi.md#ListPassThroughAuthenticationHandlers) | **Get** /pass-through-authentication-handlers | Returns a list of all Pass Through Authentication Handler objects
 [**UpdatePassThroughAuthenticationHandler**](PassThroughAuthenticationHandlerApi.md#UpdatePassThroughAuthenticationHandler) | **Patch** /pass-through-authentication-handlers/{pass-through-authentication-handler-name} | Update an existing Pass Through Authentication Handler by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddPassThroughAuthenticationHandler200Response**](AddPassThroughAuthenticationHandler200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListPassThroughAuthenticationHandlers
+
+> PassThroughAuthenticationHandlerListResponse ListPassThroughAuthenticationHandlers(ctx).Filter(filter).Execute()
+
+Returns a list of all Pass Through Authentication Handler objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.PassThroughAuthenticationHandlerApi.ListPassThroughAuthenticationHandlers(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `PassThroughAuthenticationHandlerApi.ListPassThroughAuthenticationHandlers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListPassThroughAuthenticationHandlers`: PassThroughAuthenticationHandlerListResponse
+    fmt.Fprintf(os.Stdout, "Response from `PassThroughAuthenticationHandlerApi.ListPassThroughAuthenticationHandlers`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListPassThroughAuthenticationHandlersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**PassThroughAuthenticationHandlerListResponse**](PassThroughAuthenticationHandlerListResponse.md)
 
 ### Authorization
 

@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddKeyManagerProvider**](KeyManagerProviderApi.md#AddKeyManagerProvider) | **Post** /key-manager-providers | Add a new Key Manager Provider to the config
 [**DeleteKeyManagerProvider**](KeyManagerProviderApi.md#DeleteKeyManagerProvider) | **Delete** /key-manager-providers/{key-manager-provider-name} | Delete a Key Manager Provider
 [**GetKeyManagerProvider**](KeyManagerProviderApi.md#GetKeyManagerProvider) | **Get** /key-manager-providers/{key-manager-provider-name} | Returns a single Key Manager Provider
+[**ListKeyManagerProviders**](KeyManagerProviderApi.md#ListKeyManagerProviders) | **Get** /key-manager-providers | Returns a list of all Key Manager Provider objects
 [**UpdateKeyManagerProvider**](KeyManagerProviderApi.md#UpdateKeyManagerProvider) | **Patch** /key-manager-providers/{key-manager-provider-name} | Update an existing Key Manager Provider by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetKeyManagerProvider200Response**](GetKeyManagerProvider200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListKeyManagerProviders
+
+> KeyManagerProviderListResponse ListKeyManagerProviders(ctx).Filter(filter).Execute()
+
+Returns a list of all Key Manager Provider objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.KeyManagerProviderApi.ListKeyManagerProviders(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyManagerProviderApi.ListKeyManagerProviders``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListKeyManagerProviders`: KeyManagerProviderListResponse
+    fmt.Fprintf(os.Stdout, "Response from `KeyManagerProviderApi.ListKeyManagerProviders`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListKeyManagerProvidersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**KeyManagerProviderListResponse**](KeyManagerProviderListResponse.md)
 
 ### Authorization
 

@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddMonitoringEndpoint**](MonitoringEndpointApi.md#AddMonitoringEndpoint) | **Post** /monitoring-endpoints | Add a new Monitoring Endpoint to the config
 [**DeleteMonitoringEndpoint**](MonitoringEndpointApi.md#DeleteMonitoringEndpoint) | **Delete** /monitoring-endpoints/{monitoring-endpoint-name} | Delete a Monitoring Endpoint
 [**GetMonitoringEndpoint**](MonitoringEndpointApi.md#GetMonitoringEndpoint) | **Get** /monitoring-endpoints/{monitoring-endpoint-name} | Returns a single Monitoring Endpoint
+[**ListMonitoringEndpoints**](MonitoringEndpointApi.md#ListMonitoringEndpoints) | **Get** /monitoring-endpoints | Returns a list of all Monitoring Endpoint objects
 [**UpdateMonitoringEndpoint**](MonitoringEndpointApi.md#UpdateMonitoringEndpoint) | **Patch** /monitoring-endpoints/{monitoring-endpoint-name} | Update an existing Monitoring Endpoint by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**StatsdMonitoringEndpointResponse**](StatsdMonitoringEndpointResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListMonitoringEndpoints
+
+> MonitoringEndpointListResponse ListMonitoringEndpoints(ctx).Filter(filter).Execute()
+
+Returns a list of all Monitoring Endpoint objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.MonitoringEndpointApi.ListMonitoringEndpoints(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `MonitoringEndpointApi.ListMonitoringEndpoints``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListMonitoringEndpoints`: MonitoringEndpointListResponse
+    fmt.Fprintf(os.Stdout, "Response from `MonitoringEndpointApi.ListMonitoringEndpoints`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListMonitoringEndpointsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**MonitoringEndpointListResponse**](MonitoringEndpointListResponse.md)
 
 ### Authorization
 

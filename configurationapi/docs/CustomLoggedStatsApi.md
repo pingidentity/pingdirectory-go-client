@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddCustomLoggedStats**](CustomLoggedStatsApi.md#AddCustomLoggedStats) | **Post** /plugin-root/plugins/{plugin-name}/custom-logged-stats | Add a new Custom Logged Stats to the config
 [**DeleteCustomLoggedStats**](CustomLoggedStatsApi.md#DeleteCustomLoggedStats) | **Delete** /plugin-root/plugins/{plugin-name}/custom-logged-stats/{custom-logged-stats-name} | Delete a Custom Logged Stats
 [**GetCustomLoggedStats**](CustomLoggedStatsApi.md#GetCustomLoggedStats) | **Get** /plugin-root/plugins/{plugin-name}/custom-logged-stats/{custom-logged-stats-name} | Returns a single Custom Logged Stats
+[**ListCustomLoggedStats**](CustomLoggedStatsApi.md#ListCustomLoggedStats) | **Get** /plugin-root/plugins/{plugin-name}/custom-logged-stats | Returns a list of all Custom Logged Stats objects
 [**UpdateCustomLoggedStats**](CustomLoggedStatsApi.md#UpdateCustomLoggedStats) | **Patch** /plugin-root/plugins/{plugin-name}/custom-logged-stats/{custom-logged-stats-name} | Update an existing Custom Logged Stats by name
 
 
@@ -206,6 +207,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CustomLoggedStatsResponse**](CustomLoggedStatsResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListCustomLoggedStats
+
+> CustomLoggedStatsListResponse ListCustomLoggedStats(ctx, pluginName).Filter(filter).Execute()
+
+Returns a list of all Custom Logged Stats objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    pluginName := "pluginName_example" // string | Name of the Plugin
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CustomLoggedStatsApi.ListCustomLoggedStats(context.Background(), pluginName).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `CustomLoggedStatsApi.ListCustomLoggedStats``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListCustomLoggedStats`: CustomLoggedStatsListResponse
+    fmt.Fprintf(os.Stdout, "Response from `CustomLoggedStatsApi.ListCustomLoggedStats`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**pluginName** | **string** | Name of the Plugin | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListCustomLoggedStatsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**CustomLoggedStatsListResponse**](CustomLoggedStatsListResponse.md)
 
 ### Authorization
 

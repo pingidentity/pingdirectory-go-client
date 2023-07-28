@@ -11,6 +11,33 @@ tags:
   name: vault-authentication-method
 paths:
   /vault-authentication-methods:
+    get:
+      summary: Returns a list of all Vault Authentication Method objects
+      operationId: list-vault-authentication-methods
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/vault-authentication-methodListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - vault-authentication-method
     post:
       summary: Add a new Vault Authentication Method to the config
       operationId: add-vault-authentication-method
@@ -311,6 +338,24 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:vault-authentication-method:user-pass"
+    vault-authentication-methodListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/static-token-vault-authentication-method-response'
+            - $ref: '#/components/schemas/app-role-vault-authentication-method-response'
+            - $ref: '#/components/schemas/user-pass-vault-authentication-method-response'
     updateRequest:
       type: object
       properties:

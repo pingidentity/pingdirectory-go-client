@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddIdTokenValidator**](IdTokenValidatorApi.md#AddIdTokenValidator) | **Post** /id-token-validators | Add a new ID Token Validator to the config
 [**DeleteIdTokenValidator**](IdTokenValidatorApi.md#DeleteIdTokenValidator) | **Delete** /id-token-validators/{id-token-validator-name} | Delete a ID Token Validator
 [**GetIdTokenValidator**](IdTokenValidatorApi.md#GetIdTokenValidator) | **Get** /id-token-validators/{id-token-validator-name} | Returns a single ID Token Validator
+[**ListIdTokenValidators**](IdTokenValidatorApi.md#ListIdTokenValidators) | **Get** /id-token-validators | Returns a list of all ID Token Validator objects
 [**UpdateIdTokenValidator**](IdTokenValidatorApi.md#UpdateIdTokenValidator) | **Patch** /id-token-validators/{id-token-validator-name} | Update an existing ID Token Validator by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddIdTokenValidator200Response**](AddIdTokenValidator200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListIdTokenValidators
+
+> IdTokenValidatorListResponse ListIdTokenValidators(ctx).Filter(filter).Execute()
+
+Returns a list of all ID Token Validator objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IdTokenValidatorApi.ListIdTokenValidators(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IdTokenValidatorApi.ListIdTokenValidators``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListIdTokenValidators`: IdTokenValidatorListResponse
+    fmt.Fprintf(os.Stdout, "Response from `IdTokenValidatorApi.ListIdTokenValidators`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListIdTokenValidatorsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**IdTokenValidatorListResponse**](IdTokenValidatorListResponse.md)
 
 ### Authorization
 

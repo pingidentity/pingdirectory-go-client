@@ -11,6 +11,33 @@ tags:
   name: failure-lockout-action
 paths:
   /failure-lockout-actions:
+    get:
+      summary: Returns a list of all Failure Lockout Action objects
+      operationId: list-failure-lockout-actions
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/failure-lockout-actionListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - failure-lockout-action
     post:
       summary: Add a new Failure Lockout Action to the config
       operationId: add-failure-lockout-action
@@ -292,6 +319,24 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:failure-lockout-action:lock-account"
+    failure-lockout-actionListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/delay-bind-response-failure-lockout-action-response'
+            - $ref: '#/components/schemas/no-operation-failure-lockout-action-response'
+            - $ref: '#/components/schemas/lock-account-failure-lockout-action-response'
     updateRequest:
       type: object
       properties:

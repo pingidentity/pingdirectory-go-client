@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddResultCodeMap**](ResultCodeMapApi.md#AddResultCodeMap) | **Post** /result-code-maps | Add a new Result Code Map to the config
 [**DeleteResultCodeMap**](ResultCodeMapApi.md#DeleteResultCodeMap) | **Delete** /result-code-maps/{result-code-map-name} | Delete a Result Code Map
 [**GetResultCodeMap**](ResultCodeMapApi.md#GetResultCodeMap) | **Get** /result-code-maps/{result-code-map-name} | Returns a single Result Code Map
+[**ListResultCodeMaps**](ResultCodeMapApi.md#ListResultCodeMaps) | **Get** /result-code-maps | Returns a list of all Result Code Map objects
 [**UpdateResultCodeMap**](ResultCodeMapApi.md#UpdateResultCodeMap) | **Patch** /result-code-maps/{result-code-map-name} | Update an existing Result Code Map by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ResultCodeMapResponse**](ResultCodeMapResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListResultCodeMaps
+
+> ResultCodeMapListResponse ListResultCodeMaps(ctx).Filter(filter).Execute()
+
+Returns a list of all Result Code Map objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ResultCodeMapApi.ListResultCodeMaps(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ResultCodeMapApi.ListResultCodeMaps``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListResultCodeMaps`: ResultCodeMapListResponse
+    fmt.Fprintf(os.Stdout, "Response from `ResultCodeMapApi.ListResultCodeMaps`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListResultCodeMapsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**ResultCodeMapListResponse**](ResultCodeMapListResponse.md)
 
 ### Authorization
 

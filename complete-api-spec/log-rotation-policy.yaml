@@ -11,6 +11,33 @@ tags:
   name: log-rotation-policy
 paths:
   /log-rotation-policies:
+    get:
+      summary: Returns a list of all Log Rotation Policy objects
+      operationId: list-log-rotation-policies
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/log-rotation-policyListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - log-rotation-policy
     post:
       summary: Add a new Log Rotation Policy to the config
       operationId: add-log-rotation-policy
@@ -338,6 +365,25 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:log-rotation-policy:size-limit"
+    log-rotation-policyListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/time-limit-log-rotation-policy-response'
+            - $ref: '#/components/schemas/fixed-time-log-rotation-policy-response'
+            - $ref: '#/components/schemas/never-rotate-log-rotation-policy-response'
+            - $ref: '#/components/schemas/size-limit-log-rotation-policy-response'
     updateRequest:
       type: object
       properties:

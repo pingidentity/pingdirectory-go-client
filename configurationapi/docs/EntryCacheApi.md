@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddEntryCache**](EntryCacheApi.md#AddEntryCache) | **Post** /entry-caches | Add a new Entry Cache to the config
 [**DeleteEntryCache**](EntryCacheApi.md#DeleteEntryCache) | **Delete** /entry-caches/{entry-cache-name} | Delete a Entry Cache
 [**GetEntryCache**](EntryCacheApi.md#GetEntryCache) | **Get** /entry-caches/{entry-cache-name} | Returns a single Entry Cache
+[**ListEntryCaches**](EntryCacheApi.md#ListEntryCaches) | **Get** /entry-caches | Returns a list of all Entry Cache objects
 [**UpdateEntryCache**](EntryCacheApi.md#UpdateEntryCache) | **Patch** /entry-caches/{entry-cache-name} | Update an existing Entry Cache by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**FifoEntryCacheResponse**](FifoEntryCacheResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListEntryCaches
+
+> EntryCacheListResponse ListEntryCaches(ctx).Filter(filter).Execute()
+
+Returns a list of all Entry Cache objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.EntryCacheApi.ListEntryCaches(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EntryCacheApi.ListEntryCaches``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListEntryCaches`: EntryCacheListResponse
+    fmt.Fprintf(os.Stdout, "Response from `EntryCacheApi.ListEntryCaches`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListEntryCachesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**EntryCacheListResponse**](EntryCacheListResponse.md)
 
 ### Authorization
 

@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddVirtualAttribute**](VirtualAttributeApi.md#AddVirtualAttribute) | **Post** /virtual-attributes | Add a new Virtual Attribute to the config
 [**DeleteVirtualAttribute**](VirtualAttributeApi.md#DeleteVirtualAttribute) | **Delete** /virtual-attributes/{virtual-attribute-name} | Delete a Virtual Attribute
 [**GetVirtualAttribute**](VirtualAttributeApi.md#GetVirtualAttribute) | **Get** /virtual-attributes/{virtual-attribute-name} | Returns a single Virtual Attribute
+[**ListVirtualAttributes**](VirtualAttributeApi.md#ListVirtualAttributes) | **Get** /virtual-attributes | Returns a list of all Virtual Attribute objects
 [**UpdateVirtualAttribute**](VirtualAttributeApi.md#UpdateVirtualAttribute) | **Patch** /virtual-attributes/{virtual-attribute-name} | Update an existing Virtual Attribute by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetVirtualAttribute200Response**](GetVirtualAttribute200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListVirtualAttributes
+
+> VirtualAttributeListResponse ListVirtualAttributes(ctx).Filter(filter).Execute()
+
+Returns a list of all Virtual Attribute objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VirtualAttributeApi.ListVirtualAttributes(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `VirtualAttributeApi.ListVirtualAttributes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListVirtualAttributes`: VirtualAttributeListResponse
+    fmt.Fprintf(os.Stdout, "Response from `VirtualAttributeApi.ListVirtualAttributes`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListVirtualAttributesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**VirtualAttributeListResponse**](VirtualAttributeListResponse.md)
 
 ### Authorization
 

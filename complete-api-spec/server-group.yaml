@@ -11,6 +11,33 @@ tags:
   name: server-group
 paths:
   /server-groups:
+    get:
+      summary: Returns a list of all Server Group objects
+      operationId: list-server-groups
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/server-groupListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - server-group
     post:
       summary: Add a new Server Group to the config
       operationId: add-server-group
@@ -179,6 +206,21 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:server-group"
+    server-groupListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/server-group-response'
     updateRequest:
       type: object
       properties:

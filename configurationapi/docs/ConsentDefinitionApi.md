@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddConsentDefinition**](ConsentDefinitionApi.md#AddConsentDefinition) | **Post** /consent-definitions | Add a new Consent Definition to the config
 [**DeleteConsentDefinition**](ConsentDefinitionApi.md#DeleteConsentDefinition) | **Delete** /consent-definitions/{consent-definition-name} | Delete a Consent Definition
 [**GetConsentDefinition**](ConsentDefinitionApi.md#GetConsentDefinition) | **Get** /consent-definitions/{consent-definition-name} | Returns a single Consent Definition
+[**ListConsentDefinitions**](ConsentDefinitionApi.md#ListConsentDefinitions) | **Get** /consent-definitions | Returns a list of all Consent Definition objects
 [**UpdateConsentDefinition**](ConsentDefinitionApi.md#UpdateConsentDefinition) | **Patch** /consent-definitions/{consent-definition-name} | Update an existing Consent Definition by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ConsentDefinitionResponse**](ConsentDefinitionResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListConsentDefinitions
+
+> ConsentDefinitionListResponse ListConsentDefinitions(ctx).Filter(filter).Execute()
+
+Returns a list of all Consent Definition objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ConsentDefinitionApi.ListConsentDefinitions(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ConsentDefinitionApi.ListConsentDefinitions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListConsentDefinitions`: ConsentDefinitionListResponse
+    fmt.Fprintf(os.Stdout, "Response from `ConsentDefinitionApi.ListConsentDefinitions`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListConsentDefinitionsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**ConsentDefinitionListResponse**](ConsentDefinitionListResponse.md)
 
 ### Authorization
 

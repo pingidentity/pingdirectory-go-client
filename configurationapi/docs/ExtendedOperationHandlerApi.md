@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddExtendedOperationHandler**](ExtendedOperationHandlerApi.md#AddExtendedOperationHandler) | **Post** /extended-operation-handlers | Add a new Extended Operation Handler to the config
 [**DeleteExtendedOperationHandler**](ExtendedOperationHandlerApi.md#DeleteExtendedOperationHandler) | **Delete** /extended-operation-handlers/{extended-operation-handler-name} | Delete a Extended Operation Handler
 [**GetExtendedOperationHandler**](ExtendedOperationHandlerApi.md#GetExtendedOperationHandler) | **Get** /extended-operation-handlers/{extended-operation-handler-name} | Returns a single Extended Operation Handler
+[**ListExtendedOperationHandlers**](ExtendedOperationHandlerApi.md#ListExtendedOperationHandlers) | **Get** /extended-operation-handlers | Returns a list of all Extended Operation Handler objects
 [**UpdateExtendedOperationHandler**](ExtendedOperationHandlerApi.md#UpdateExtendedOperationHandler) | **Patch** /extended-operation-handlers/{extended-operation-handler-name} | Update an existing Extended Operation Handler by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetExtendedOperationHandler200Response**](GetExtendedOperationHandler200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListExtendedOperationHandlers
+
+> ExtendedOperationHandlerListResponse ListExtendedOperationHandlers(ctx).Filter(filter).Execute()
+
+Returns a list of all Extended Operation Handler objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ExtendedOperationHandlerApi.ListExtendedOperationHandlers(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ExtendedOperationHandlerApi.ListExtendedOperationHandlers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListExtendedOperationHandlers`: ExtendedOperationHandlerListResponse
+    fmt.Fprintf(os.Stdout, "Response from `ExtendedOperationHandlerApi.ListExtendedOperationHandlers`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListExtendedOperationHandlersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**ExtendedOperationHandlerListResponse**](ExtendedOperationHandlerListResponse.md)
 
 ### Authorization
 

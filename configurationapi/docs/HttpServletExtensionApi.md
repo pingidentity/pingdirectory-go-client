@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddHttpServletExtension**](HttpServletExtensionApi.md#AddHttpServletExtension) | **Post** /http-servlet-extensions | Add a new HTTP Servlet Extension to the config
 [**DeleteHttpServletExtension**](HttpServletExtensionApi.md#DeleteHttpServletExtension) | **Delete** /http-servlet-extensions/{http-servlet-extension-name} | Delete a HTTP Servlet Extension
 [**GetHttpServletExtension**](HttpServletExtensionApi.md#GetHttpServletExtension) | **Get** /http-servlet-extensions/{http-servlet-extension-name} | Returns a single HTTP Servlet Extension
+[**ListHttpServletExtensions**](HttpServletExtensionApi.md#ListHttpServletExtensions) | **Get** /http-servlet-extensions | Returns a list of all HTTP Servlet Extension objects
 [**UpdateHttpServletExtension**](HttpServletExtensionApi.md#UpdateHttpServletExtension) | **Patch** /http-servlet-extensions/{http-servlet-extension-name} | Update an existing HTTP Servlet Extension by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetHttpServletExtension200Response**](GetHttpServletExtension200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListHttpServletExtensions
+
+> HttpServletExtensionListResponse ListHttpServletExtensions(ctx).Filter(filter).Execute()
+
+Returns a list of all HTTP Servlet Extension objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HttpServletExtensionApi.ListHttpServletExtensions(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HttpServletExtensionApi.ListHttpServletExtensions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListHttpServletExtensions`: HttpServletExtensionListResponse
+    fmt.Fprintf(os.Stdout, "Response from `HttpServletExtensionApi.ListHttpServletExtensions`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListHttpServletExtensionsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**HttpServletExtensionListResponse**](HttpServletExtensionListResponse.md)
 
 ### Authorization
 

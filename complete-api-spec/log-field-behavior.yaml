@@ -11,6 +11,33 @@ tags:
   name: log-field-behavior
 paths:
   /log-field-behaviors:
+    get:
+      summary: Returns a list of all Log Field Behavior objects
+      operationId: list-log-field-behaviors
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/log-field-behaviorListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - log-field-behavior
     post:
       summary: Add a new Log Field Behavior to the config
       operationId: add-log-field-behavior
@@ -3772,6 +3799,23 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:log-field-behavior:json-formatted-access"
+    log-field-behaviorListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/text-access-log-field-behavior-response'
+            - $ref: '#/components/schemas/json-formatted-access-log-field-behavior-response'
     updateRequest:
       type: object
       properties:

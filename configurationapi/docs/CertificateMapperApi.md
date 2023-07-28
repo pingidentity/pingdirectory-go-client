@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddCertificateMapper**](CertificateMapperApi.md#AddCertificateMapper) | **Post** /certificate-mappers | Add a new Certificate Mapper to the config
 [**DeleteCertificateMapper**](CertificateMapperApi.md#DeleteCertificateMapper) | **Delete** /certificate-mappers/{certificate-mapper-name} | Delete a Certificate Mapper
 [**GetCertificateMapper**](CertificateMapperApi.md#GetCertificateMapper) | **Get** /certificate-mappers/{certificate-mapper-name} | Returns a single Certificate Mapper
+[**ListCertificateMappers**](CertificateMapperApi.md#ListCertificateMappers) | **Get** /certificate-mappers | Returns a list of all Certificate Mapper objects
 [**UpdateCertificateMapper**](CertificateMapperApi.md#UpdateCertificateMapper) | **Patch** /certificate-mappers/{certificate-mapper-name} | Update an existing Certificate Mapper by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddCertificateMapper200Response**](AddCertificateMapper200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListCertificateMappers
+
+> CertificateMapperListResponse ListCertificateMappers(ctx).Filter(filter).Execute()
+
+Returns a list of all Certificate Mapper objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CertificateMapperApi.ListCertificateMappers(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `CertificateMapperApi.ListCertificateMappers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListCertificateMappers`: CertificateMapperListResponse
+    fmt.Fprintf(os.Stdout, "Response from `CertificateMapperApi.ListCertificateMappers`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListCertificateMappersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**CertificateMapperListResponse**](CertificateMapperListResponse.md)
 
 ### Authorization
 

@@ -11,6 +11,33 @@ tags:
   name: change-subscription
 paths:
   /change-subscriptions:
+    get:
+      summary: Returns a list of all Change Subscription objects
+      operationId: list-change-subscriptions
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/change-subscriptionListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - change-subscription
     post:
       summary: Add a new Change Subscription to the config
       operationId: add-change-subscription
@@ -193,6 +220,21 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:change-subscription"
+    change-subscriptionListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/change-subscription-response'
     updateRequest:
       type: object
       properties:

@@ -336,6 +336,118 @@ func (a *LocalDbCompositeIndexApiService) GetLocalDbCompositeIndexExecute(r ApiG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiListLocalDbCompositeIndexesRequest struct {
+	ctx         context.Context
+	ApiService  *LocalDbCompositeIndexApiService
+	backendName string
+	filter      *string
+}
+
+// SCIM filter
+func (r ApiListLocalDbCompositeIndexesRequest) Filter(filter string) ApiListLocalDbCompositeIndexesRequest {
+	r.filter = &filter
+	return r
+}
+
+func (r ApiListLocalDbCompositeIndexesRequest) Execute() (*LocalDbCompositeIndexListResponse, *http.Response, error) {
+	return r.ApiService.ListLocalDbCompositeIndexesExecute(r)
+}
+
+/*
+ListLocalDbCompositeIndexes Returns a list of all Local DB Composite Index objects
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param backendName Name of the Backend
+	@return ApiListLocalDbCompositeIndexesRequest
+*/
+func (a *LocalDbCompositeIndexApiService) ListLocalDbCompositeIndexes(ctx context.Context, backendName string) ApiListLocalDbCompositeIndexesRequest {
+	return ApiListLocalDbCompositeIndexesRequest{
+		ApiService:  a,
+		ctx:         ctx,
+		backendName: backendName,
+	}
+}
+
+// Execute executes the request
+//
+//	@return LocalDbCompositeIndexListResponse
+func (a *LocalDbCompositeIndexApiService) ListLocalDbCompositeIndexesExecute(r ApiListLocalDbCompositeIndexesRequest) (*LocalDbCompositeIndexListResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *LocalDbCompositeIndexListResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalDbCompositeIndexApiService.ListLocalDbCompositeIndexes")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/backends/{backend-name}/local-db-composite-indexes"
+	localVarPath = strings.Replace(localVarPath, "{"+"backend-name"+"}", url.PathEscape(parameterValueToString(r.backendName, "backendName")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.filter != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter", r.filter, "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiUpdateLocalDbCompositeIndexRequest struct {
 	ctx                       context.Context
 	ApiService                *LocalDbCompositeIndexApiService

@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddSensitiveAttribute**](SensitiveAttributeApi.md#AddSensitiveAttribute) | **Post** /sensitive-attributes | Add a new Sensitive Attribute to the config
 [**DeleteSensitiveAttribute**](SensitiveAttributeApi.md#DeleteSensitiveAttribute) | **Delete** /sensitive-attributes/{sensitive-attribute-name} | Delete a Sensitive Attribute
 [**GetSensitiveAttribute**](SensitiveAttributeApi.md#GetSensitiveAttribute) | **Get** /sensitive-attributes/{sensitive-attribute-name} | Returns a single Sensitive Attribute
+[**ListSensitiveAttributes**](SensitiveAttributeApi.md#ListSensitiveAttributes) | **Get** /sensitive-attributes | Returns a list of all Sensitive Attribute objects
 [**UpdateSensitiveAttribute**](SensitiveAttributeApi.md#UpdateSensitiveAttribute) | **Patch** /sensitive-attributes/{sensitive-attribute-name} | Update an existing Sensitive Attribute by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SensitiveAttributeResponse**](SensitiveAttributeResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListSensitiveAttributes
+
+> SensitiveAttributeListResponse ListSensitiveAttributes(ctx).Filter(filter).Execute()
+
+Returns a list of all Sensitive Attribute objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SensitiveAttributeApi.ListSensitiveAttributes(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SensitiveAttributeApi.ListSensitiveAttributes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListSensitiveAttributes`: SensitiveAttributeListResponse
+    fmt.Fprintf(os.Stdout, "Response from `SensitiveAttributeApi.ListSensitiveAttributes`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListSensitiveAttributesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**SensitiveAttributeListResponse**](SensitiveAttributeListResponse.md)
 
 ### Authorization
 

@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddGauge**](GaugeApi.md#AddGauge) | **Post** /gauges | Add a new Gauge to the config
 [**DeleteGauge**](GaugeApi.md#DeleteGauge) | **Delete** /gauges/{gauge-name} | Delete a Gauge
 [**GetGauge**](GaugeApi.md#GetGauge) | **Get** /gauges/{gauge-name} | Returns a single Gauge
+[**ListGauges**](GaugeApi.md#ListGauges) | **Get** /gauges | Returns a list of all Gauge objects
 [**UpdateGauge**](GaugeApi.md#UpdateGauge) | **Patch** /gauges/{gauge-name} | Update an existing Gauge by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddGauge200Response**](AddGauge200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListGauges
+
+> GaugeListResponse ListGauges(ctx).Filter(filter).Execute()
+
+Returns a list of all Gauge objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.GaugeApi.ListGauges(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `GaugeApi.ListGauges``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListGauges`: GaugeListResponse
+    fmt.Fprintf(os.Stdout, "Response from `GaugeApi.ListGauges`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListGaugesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**GaugeListResponse**](GaugeListResponse.md)
 
 ### Authorization
 

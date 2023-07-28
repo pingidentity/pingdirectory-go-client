@@ -225,6 +225,26 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:matching-rule:generic"
+    matching-ruleListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/ordering-matching-rule-response'
+            - $ref: '#/components/schemas/approximate-matching-rule-response'
+            - $ref: '#/components/schemas/equality-matching-rule-response'
+            - $ref: '#/components/schemas/substring-matching-rule-response'
+            - $ref: '#/components/schemas/generic-matching-rule-response'
     updateRequest:
       type: object
       properties:

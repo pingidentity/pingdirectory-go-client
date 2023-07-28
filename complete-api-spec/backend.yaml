@@ -11,6 +11,33 @@ tags:
   name: backend
 paths:
   /backends:
+    get:
+      summary: Returns a list of all Backend objects
+      operationId: list-backends
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/backendListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - backend
     post:
       summary: Add a new Backend to the config
       operationId: add-backend
@@ -165,6 +192,41 @@ paths:
       tags:
       - backend
   /backends/{backend-name}/local-db-composite-indexes:
+    get:
+      summary: Returns a list of all Local DB Composite Index objects
+      operationId: list-local-db-composite-indexes
+      parameters:
+      - description: Name of the Backend
+        explode: false
+        in: path
+        name: backend-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/local-db-composite-indexListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - local-db-composite-index
     post:
       summary: Add a new Local DB Composite Index to the config
       operationId: add-local-db-composite-index
@@ -323,6 +385,41 @@ paths:
       tags:
       - local-db-composite-index
   /backends/{backend-name}/local-db-vlv-indexes:
+    get:
+      summary: Returns a list of all Local DB VLV Index objects
+      operationId: list-local-db-vlv-indexes
+      parameters:
+      - description: Name of the Backend
+        explode: false
+        in: path
+        name: backend-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/local-db-vlv-indexListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - local-db-vlv-index
     post:
       summary: Add a new Local DB VLV Index to the config
       operationId: add-local-db-vlv-index
@@ -481,6 +578,41 @@ paths:
       tags:
       - local-db-vlv-index
   /backends/{backend-name}/local-db-indexes:
+    get:
+      summary: Returns a list of all Local DB Index objects
+      operationId: list-local-db-indexes
+      parameters:
+      - description: Name of the Backend
+        explode: false
+        in: path
+        name: backend-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/local-db-indexListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - local-db-index
     post:
       summary: Add a new Local DB Index to the config
       operationId: add-local-db-index
@@ -2597,6 +2729,80 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:local-db-index"
+    backendListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/schema-backend-response'
+            - $ref: '#/components/schemas/backup-backend-response'
+            - $ref: '#/components/schemas/encryption-settings-backend-response'
+            - $ref: '#/components/schemas/ldif-backend-response'
+            - $ref: '#/components/schemas/trust-store-backend-response'
+            - $ref: '#/components/schemas/custom-backend-response'
+            - $ref: '#/components/schemas/changelog-backend-response'
+            - $ref: '#/components/schemas/monitor-backend-response'
+            - $ref: '#/components/schemas/local-db-backend-response'
+            - $ref: '#/components/schemas/config-file-handler-backend-response'
+            - $ref: '#/components/schemas/task-backend-response'
+            - $ref: '#/components/schemas/alert-backend-response'
+            - $ref: '#/components/schemas/alarm-backend-response'
+            - $ref: '#/components/schemas/metrics-backend-response'
+    local-db-composite-indexListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/local-db-composite-index-response'
+    local-db-vlv-indexListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/local-db-vlv-index-response'
+    local-db-indexListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/local-db-index-response'
     updateRequest:
       type: object
       properties:

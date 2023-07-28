@@ -11,6 +11,33 @@ tags:
   name: obscured-value
 paths:
   /obscured-values:
+    get:
+      summary: Returns a list of all Obscured Value objects
+      operationId: list-obscured-values
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/obscured-valueListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - obscured-value
     post:
       summary: Add a new Obscured Value to the config
       operationId: add-obscured-value
@@ -184,6 +211,21 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:obscured-value"
+    obscured-valueListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/obscured-value-response'
     updateRequest:
       type: object
       properties:

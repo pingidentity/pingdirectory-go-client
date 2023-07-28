@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddGaugeDataSource**](GaugeDataSourceApi.md#AddGaugeDataSource) | **Post** /gauge-data-sources | Add a new Gauge Data Source to the config
 [**DeleteGaugeDataSource**](GaugeDataSourceApi.md#DeleteGaugeDataSource) | **Delete** /gauge-data-sources/{gauge-data-source-name} | Delete a Gauge Data Source
 [**GetGaugeDataSource**](GaugeDataSourceApi.md#GetGaugeDataSource) | **Get** /gauge-data-sources/{gauge-data-source-name} | Returns a single Gauge Data Source
+[**ListGaugeDataSources**](GaugeDataSourceApi.md#ListGaugeDataSources) | **Get** /gauge-data-sources | Returns a list of all Gauge Data Source objects
 [**UpdateGaugeDataSource**](GaugeDataSourceApi.md#UpdateGaugeDataSource) | **Patch** /gauge-data-sources/{gauge-data-source-name} | Update an existing Gauge Data Source by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddGaugeDataSource200Response**](AddGaugeDataSource200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListGaugeDataSources
+
+> GaugeDataSourceListResponse ListGaugeDataSources(ctx).Filter(filter).Execute()
+
+Returns a list of all Gauge Data Source objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.GaugeDataSourceApi.ListGaugeDataSources(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `GaugeDataSourceApi.ListGaugeDataSources``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListGaugeDataSources`: GaugeDataSourceListResponse
+    fmt.Fprintf(os.Stdout, "Response from `GaugeDataSourceApi.ListGaugeDataSources`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListGaugeDataSourcesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**GaugeDataSourceListResponse**](GaugeDataSourceListResponse.md)
 
 ### Authorization
 

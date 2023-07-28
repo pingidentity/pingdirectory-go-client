@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddLocalDbIndex**](LocalDbIndexApi.md#AddLocalDbIndex) | **Post** /backends/{backend-name}/local-db-indexes | Add a new Local DB Index to the config
 [**DeleteLocalDbIndex**](LocalDbIndexApi.md#DeleteLocalDbIndex) | **Delete** /backends/{backend-name}/local-db-indexes/{local-db-index-name} | Delete a Local DB Index
 [**GetLocalDbIndex**](LocalDbIndexApi.md#GetLocalDbIndex) | **Get** /backends/{backend-name}/local-db-indexes/{local-db-index-name} | Returns a single Local DB Index
+[**ListLocalDbIndexes**](LocalDbIndexApi.md#ListLocalDbIndexes) | **Get** /backends/{backend-name}/local-db-indexes | Returns a list of all Local DB Index objects
 [**UpdateLocalDbIndex**](LocalDbIndexApi.md#UpdateLocalDbIndex) | **Patch** /backends/{backend-name}/local-db-indexes/{local-db-index-name} | Update an existing Local DB Index by name
 
 
@@ -206,6 +207,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**LocalDbIndexResponse**](LocalDbIndexResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListLocalDbIndexes
+
+> LocalDbIndexListResponse ListLocalDbIndexes(ctx, backendName).Filter(filter).Execute()
+
+Returns a list of all Local DB Index objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    backendName := "backendName_example" // string | Name of the Backend
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.LocalDbIndexApi.ListLocalDbIndexes(context.Background(), backendName).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbIndexApi.ListLocalDbIndexes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListLocalDbIndexes`: LocalDbIndexListResponse
+    fmt.Fprintf(os.Stdout, "Response from `LocalDbIndexApi.ListLocalDbIndexes`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**backendName** | **string** | Name of the Backend | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListLocalDbIndexesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**LocalDbIndexListResponse**](LocalDbIndexListResponse.md)
 
 ### Authorization
 

@@ -336,6 +336,118 @@ func (a *DelegatedAdminCorrelatedRestResourceApiService) GetDelegatedAdminCorrel
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiListDelegatedAdminCorrelatedRestResourcesRequest struct {
+	ctx                  context.Context
+	ApiService           *DelegatedAdminCorrelatedRestResourceApiService
+	restResourceTypeName string
+	filter               *string
+}
+
+// SCIM filter
+func (r ApiListDelegatedAdminCorrelatedRestResourcesRequest) Filter(filter string) ApiListDelegatedAdminCorrelatedRestResourcesRequest {
+	r.filter = &filter
+	return r
+}
+
+func (r ApiListDelegatedAdminCorrelatedRestResourcesRequest) Execute() (*DelegatedAdminCorrelatedRestResourceListResponse, *http.Response, error) {
+	return r.ApiService.ListDelegatedAdminCorrelatedRestResourcesExecute(r)
+}
+
+/*
+ListDelegatedAdminCorrelatedRestResources Returns a list of all Delegated Admin Correlated REST Resource objects
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param restResourceTypeName Name of the REST Resource Type
+	@return ApiListDelegatedAdminCorrelatedRestResourcesRequest
+*/
+func (a *DelegatedAdminCorrelatedRestResourceApiService) ListDelegatedAdminCorrelatedRestResources(ctx context.Context, restResourceTypeName string) ApiListDelegatedAdminCorrelatedRestResourcesRequest {
+	return ApiListDelegatedAdminCorrelatedRestResourcesRequest{
+		ApiService:           a,
+		ctx:                  ctx,
+		restResourceTypeName: restResourceTypeName,
+	}
+}
+
+// Execute executes the request
+//
+//	@return DelegatedAdminCorrelatedRestResourceListResponse
+func (a *DelegatedAdminCorrelatedRestResourceApiService) ListDelegatedAdminCorrelatedRestResourcesExecute(r ApiListDelegatedAdminCorrelatedRestResourcesRequest) (*DelegatedAdminCorrelatedRestResourceListResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DelegatedAdminCorrelatedRestResourceListResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminCorrelatedRestResourceApiService.ListDelegatedAdminCorrelatedRestResources")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/rest-resource-types/{rest-resource-type-name}/delegated-admin-correlated-rest-resources"
+	localVarPath = strings.Replace(localVarPath, "{"+"rest-resource-type-name"+"}", url.PathEscape(parameterValueToString(r.restResourceTypeName, "restResourceTypeName")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.filter != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter", r.filter, "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiUpdateDelegatedAdminCorrelatedRestResourceRequest struct {
 	ctx                                      context.Context
 	ApiService                               *DelegatedAdminCorrelatedRestResourceApiService

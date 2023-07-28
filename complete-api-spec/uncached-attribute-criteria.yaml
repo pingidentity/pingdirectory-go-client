@@ -11,6 +11,33 @@ tags:
   name: uncached-attribute-criteria
 paths:
   /uncached-attribute-criteria:
+    get:
+      summary: Returns a list of all Uncached Attribute Criteria objects
+      operationId: list-uncached-attribute-criteria
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/uncached-attribute-criteriaListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - uncached-attribute-criteria
     post:
       summary: Add a new Uncached Attribute Criteria to the config
       operationId: add-uncached-attribute-criteria
@@ -378,6 +405,25 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:uncached-attribute-criteria:third-party"
+    uncached-attribute-criteriaListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/default-uncached-attribute-criteria-response'
+            - $ref: '#/components/schemas/groovy-scripted-uncached-attribute-criteria-response'
+            - $ref: '#/components/schemas/simple-uncached-attribute-criteria-response'
+            - $ref: '#/components/schemas/third-party-uncached-attribute-criteria-response'
     updateRequest:
       type: object
       properties:

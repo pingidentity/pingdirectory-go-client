@@ -439,6 +439,38 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:replication-domain"
+    synchronization-providerListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/replication-synchronization-provider-response'
+            - $ref: '#/components/schemas/custom-synchronization-provider-response'
+    replication-domainListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/replication-domain-response'
     updateRequest:
       type: object
       properties:

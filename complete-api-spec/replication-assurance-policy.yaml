@@ -11,6 +11,33 @@ tags:
   name: replication-assurance-policy
 paths:
   /replication-assurance-policies:
+    get:
+      summary: Returns a list of all Replication Assurance Policy objects
+      operationId: list-replication-assurance-policies
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/replication-assurance-policyListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - replication-assurance-policy
     post:
       summary: Add a new Replication Assurance Policy to the config
       operationId: add-replication-assurance-policy
@@ -224,6 +251,21 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:replication-assurance-policy"
+    replication-assurance-policyListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/replication-assurance-policy-response'
     updateRequest:
       type: object
       properties:

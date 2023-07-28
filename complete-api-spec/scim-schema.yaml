@@ -11,6 +11,33 @@ tags:
   name: scim-schema
 paths:
   /scim-schemas:
+    get:
+      summary: Returns a list of all SCIM Schema objects
+      operationId: list-scim-schemas
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/scim-schemaListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - scim-schema
     post:
       summary: Add a new SCIM Schema to the config
       operationId: add-scim-schema
@@ -136,6 +163,41 @@ paths:
       tags:
       - scim-schema
   /scim-schemas/{scim-schema-name}/scim-attributes:
+    get:
+      summary: Returns a list of all SCIM Attribute objects
+      operationId: list-scim-attributes
+      parameters:
+      - description: Name of the SCIM Schema
+        explode: false
+        in: path
+        name: scim-schema-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/scim-attributeListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - scim-attribute
     post:
       summary: Add a new SCIM Attribute to the config
       operationId: add-scim-attribute
@@ -294,6 +356,49 @@ paths:
       tags:
       - scim-attribute
   /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name}/scim-subattributes:
+    get:
+      summary: Returns a list of all SCIM Subattribute objects
+      operationId: list-scim-subattributes
+      parameters:
+      - description: Name of the SCIM Attribute
+        explode: false
+        in: path
+        name: scim-attribute-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the SCIM Schema
+        explode: false
+        in: path
+        name: scim-schema-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/scim-subattributeListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - scim-subattribute
     post:
       summary: Add a new SCIM Subattribute to the config
       operationId: add-scim-subattribute
@@ -754,6 +859,51 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:scim-subattribute"
+    scim-schemaListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/scim-schema-response'
+    scim-attributeListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/scim-attribute-response'
+    scim-subattributeListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/scim-subattribute-response'
     updateRequest:
       type: object
       properties:

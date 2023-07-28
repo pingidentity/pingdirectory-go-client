@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddAccountStatusNotificationHandler**](AccountStatusNotificationHandlerApi.md#AddAccountStatusNotificationHandler) | **Post** /account-status-notification-handlers | Add a new Account Status Notification Handler to the config
 [**DeleteAccountStatusNotificationHandler**](AccountStatusNotificationHandlerApi.md#DeleteAccountStatusNotificationHandler) | **Delete** /account-status-notification-handlers/{account-status-notification-handler-name} | Delete a Account Status Notification Handler
 [**GetAccountStatusNotificationHandler**](AccountStatusNotificationHandlerApi.md#GetAccountStatusNotificationHandler) | **Get** /account-status-notification-handlers/{account-status-notification-handler-name} | Returns a single Account Status Notification Handler
+[**ListAccountStatusNotificationHandlers**](AccountStatusNotificationHandlerApi.md#ListAccountStatusNotificationHandlers) | **Get** /account-status-notification-handlers | Returns a list of all Account Status Notification Handler objects
 [**UpdateAccountStatusNotificationHandler**](AccountStatusNotificationHandlerApi.md#UpdateAccountStatusNotificationHandler) | **Patch** /account-status-notification-handlers/{account-status-notification-handler-name} | Update an existing Account Status Notification Handler by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddAccountStatusNotificationHandler200Response**](AddAccountStatusNotificationHandler200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListAccountStatusNotificationHandlers
+
+> AccountStatusNotificationHandlerListResponse ListAccountStatusNotificationHandlers(ctx).Filter(filter).Execute()
+
+Returns a list of all Account Status Notification Handler objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AccountStatusNotificationHandlerApi.ListAccountStatusNotificationHandlers(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AccountStatusNotificationHandlerApi.ListAccountStatusNotificationHandlers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListAccountStatusNotificationHandlers`: AccountStatusNotificationHandlerListResponse
+    fmt.Fprintf(os.Stdout, "Response from `AccountStatusNotificationHandlerApi.ListAccountStatusNotificationHandlers`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListAccountStatusNotificationHandlersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**AccountStatusNotificationHandlerListResponse**](AccountStatusNotificationHandlerListResponse.md)
 
 ### Authorization
 

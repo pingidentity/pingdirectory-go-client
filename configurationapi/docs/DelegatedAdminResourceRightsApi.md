@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddDelegatedAdminResourceRights**](DelegatedAdminResourceRightsApi.md#AddDelegatedAdminResourceRights) | **Post** /delegated-admin-rights/{delegated-admin-rights-name}/delegated-admin-resource-rights | Add a new Delegated Admin Resource Rights to the config
 [**DeleteDelegatedAdminResourceRights**](DelegatedAdminResourceRightsApi.md#DeleteDelegatedAdminResourceRights) | **Delete** /delegated-admin-rights/{delegated-admin-rights-name}/delegated-admin-resource-rights/{delegated-admin-resource-rights-name} | Delete a Delegated Admin Resource Rights
 [**GetDelegatedAdminResourceRights**](DelegatedAdminResourceRightsApi.md#GetDelegatedAdminResourceRights) | **Get** /delegated-admin-rights/{delegated-admin-rights-name}/delegated-admin-resource-rights/{delegated-admin-resource-rights-name} | Returns a single Delegated Admin Resource Rights
+[**ListDelegatedAdminResourceRights**](DelegatedAdminResourceRightsApi.md#ListDelegatedAdminResourceRights) | **Get** /delegated-admin-rights/{delegated-admin-rights-name}/delegated-admin-resource-rights | Returns a list of all Delegated Admin Resource Rights objects
 [**UpdateDelegatedAdminResourceRights**](DelegatedAdminResourceRightsApi.md#UpdateDelegatedAdminResourceRights) | **Patch** /delegated-admin-rights/{delegated-admin-rights-name}/delegated-admin-resource-rights/{delegated-admin-resource-rights-name} | Update an existing Delegated Admin Resource Rights by name
 
 
@@ -206,6 +207,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DelegatedAdminResourceRightsResponse**](DelegatedAdminResourceRightsResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListDelegatedAdminResourceRights
+
+> DelegatedAdminResourceRightsListResponse ListDelegatedAdminResourceRights(ctx, delegatedAdminRightsName).Filter(filter).Execute()
+
+Returns a list of all Delegated Admin Resource Rights objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    delegatedAdminRightsName := "delegatedAdminRightsName_example" // string | Name of the Delegated Admin Rights
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DelegatedAdminResourceRightsApi.ListDelegatedAdminResourceRights(context.Background(), delegatedAdminRightsName).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminResourceRightsApi.ListDelegatedAdminResourceRights``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListDelegatedAdminResourceRights`: DelegatedAdminResourceRightsListResponse
+    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminResourceRightsApi.ListDelegatedAdminResourceRights`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**delegatedAdminRightsName** | **string** | Name of the Delegated Admin Rights | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListDelegatedAdminResourceRightsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**DelegatedAdminResourceRightsListResponse**](DelegatedAdminResourceRightsListResponse.md)
 
 ### Authorization
 

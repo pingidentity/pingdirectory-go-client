@@ -11,6 +11,33 @@ tags:
   name: account-status-notification-handler
 paths:
   /account-status-notification-handlers:
+    get:
+      summary: Returns a list of all Account Status Notification Handler objects
+      operationId: list-account-status-notification-handlers
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/account-status-notification-handlerListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - account-status-notification-handler
     post:
       summary: Add a new Account Status Notification Handler to the config
       operationId: add-account-status-notification-handler
@@ -739,6 +766,27 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:account-status-notification-handler:third-party"
+    account-status-notification-handlerListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/smtp-account-status-notification-handler-response'
+            - $ref: '#/components/schemas/groovy-scripted-account-status-notification-handler-response'
+            - $ref: '#/components/schemas/admin-alert-account-status-notification-handler-response'
+            - $ref: '#/components/schemas/error-log-account-status-notification-handler-response'
+            - $ref: '#/components/schemas/multi-part-email-account-status-notification-handler-response'
+            - $ref: '#/components/schemas/third-party-account-status-notification-handler-response'
     updateRequest:
       type: object
       properties:

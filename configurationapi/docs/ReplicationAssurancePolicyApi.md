@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddReplicationAssurancePolicy**](ReplicationAssurancePolicyApi.md#AddReplicationAssurancePolicy) | **Post** /replication-assurance-policies | Add a new Replication Assurance Policy to the config
 [**DeleteReplicationAssurancePolicy**](ReplicationAssurancePolicyApi.md#DeleteReplicationAssurancePolicy) | **Delete** /replication-assurance-policies/{replication-assurance-policy-name} | Delete a Replication Assurance Policy
 [**GetReplicationAssurancePolicy**](ReplicationAssurancePolicyApi.md#GetReplicationAssurancePolicy) | **Get** /replication-assurance-policies/{replication-assurance-policy-name} | Returns a single Replication Assurance Policy
+[**ListReplicationAssurancePolicies**](ReplicationAssurancePolicyApi.md#ListReplicationAssurancePolicies) | **Get** /replication-assurance-policies | Returns a list of all Replication Assurance Policy objects
 [**UpdateReplicationAssurancePolicy**](ReplicationAssurancePolicyApi.md#UpdateReplicationAssurancePolicy) | **Patch** /replication-assurance-policies/{replication-assurance-policy-name} | Update an existing Replication Assurance Policy by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ReplicationAssurancePolicyResponse**](ReplicationAssurancePolicyResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListReplicationAssurancePolicies
+
+> ReplicationAssurancePolicyListResponse ListReplicationAssurancePolicies(ctx).Filter(filter).Execute()
+
+Returns a list of all Replication Assurance Policy objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ReplicationAssurancePolicyApi.ListReplicationAssurancePolicies(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ReplicationAssurancePolicyApi.ListReplicationAssurancePolicies``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListReplicationAssurancePolicies`: ReplicationAssurancePolicyListResponse
+    fmt.Fprintf(os.Stdout, "Response from `ReplicationAssurancePolicyApi.ListReplicationAssurancePolicies`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListReplicationAssurancePoliciesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**ReplicationAssurancePolicyListResponse**](ReplicationAssurancePolicyListResponse.md)
 
 ### Authorization
 

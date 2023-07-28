@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddPasswordPolicy**](PasswordPolicyApi.md#AddPasswordPolicy) | **Post** /password-policies | Add a new Password Policy to the config
 [**DeletePasswordPolicy**](PasswordPolicyApi.md#DeletePasswordPolicy) | **Delete** /password-policies/{password-policy-name} | Delete a Password Policy
 [**GetPasswordPolicy**](PasswordPolicyApi.md#GetPasswordPolicy) | **Get** /password-policies/{password-policy-name} | Returns a single Password Policy
+[**ListPasswordPolicies**](PasswordPolicyApi.md#ListPasswordPolicies) | **Get** /password-policies | Returns a list of all Password Policy objects
 [**UpdatePasswordPolicy**](PasswordPolicyApi.md#UpdatePasswordPolicy) | **Patch** /password-policies/{password-policy-name} | Update an existing Password Policy by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PasswordPolicyResponse**](PasswordPolicyResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListPasswordPolicies
+
+> PasswordPolicyListResponse ListPasswordPolicies(ctx).Filter(filter).Execute()
+
+Returns a list of all Password Policy objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.PasswordPolicyApi.ListPasswordPolicies(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `PasswordPolicyApi.ListPasswordPolicies``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListPasswordPolicies`: PasswordPolicyListResponse
+    fmt.Fprintf(os.Stdout, "Response from `PasswordPolicyApi.ListPasswordPolicies`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListPasswordPoliciesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**PasswordPolicyListResponse**](PasswordPolicyListResponse.md)
 
 ### Authorization
 

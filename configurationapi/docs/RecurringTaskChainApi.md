@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddRecurringTaskChain**](RecurringTaskChainApi.md#AddRecurringTaskChain) | **Post** /recurring-task-chains | Add a new Recurring Task Chain to the config
 [**DeleteRecurringTaskChain**](RecurringTaskChainApi.md#DeleteRecurringTaskChain) | **Delete** /recurring-task-chains/{recurring-task-chain-name} | Delete a Recurring Task Chain
 [**GetRecurringTaskChain**](RecurringTaskChainApi.md#GetRecurringTaskChain) | **Get** /recurring-task-chains/{recurring-task-chain-name} | Returns a single Recurring Task Chain
+[**ListRecurringTaskChains**](RecurringTaskChainApi.md#ListRecurringTaskChains) | **Get** /recurring-task-chains | Returns a list of all Recurring Task Chain objects
 [**UpdateRecurringTaskChain**](RecurringTaskChainApi.md#UpdateRecurringTaskChain) | **Patch** /recurring-task-chains/{recurring-task-chain-name} | Update an existing Recurring Task Chain by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RecurringTaskChainResponse**](RecurringTaskChainResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListRecurringTaskChains
+
+> RecurringTaskChainListResponse ListRecurringTaskChains(ctx).Filter(filter).Execute()
+
+Returns a list of all Recurring Task Chain objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RecurringTaskChainApi.ListRecurringTaskChains(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `RecurringTaskChainApi.ListRecurringTaskChains``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListRecurringTaskChains`: RecurringTaskChainListResponse
+    fmt.Fprintf(os.Stdout, "Response from `RecurringTaskChainApi.ListRecurringTaskChains`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListRecurringTaskChainsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**RecurringTaskChainListResponse**](RecurringTaskChainListResponse.md)
 
 ### Authorization
 

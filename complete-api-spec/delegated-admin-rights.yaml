@@ -11,6 +11,33 @@ tags:
   name: delegated-admin-rights
 paths:
   /delegated-admin-rights:
+    get:
+      summary: Returns a list of all Delegated Admin Rights objects
+      operationId: list-delegated-admin-rights
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/delegated-admin-rightsListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - delegated-admin-rights
     post:
       summary: Add a new Delegated Admin Rights to the config
       operationId: add-delegated-admin-rights
@@ -136,6 +163,41 @@ paths:
       tags:
       - delegated-admin-rights
   /delegated-admin-rights/{delegated-admin-rights-name}/delegated-admin-resource-rights:
+    get:
+      summary: Returns a list of all Delegated Admin Resource Rights objects
+      operationId: list-delegated-admin-resource-rights
+      parameters:
+      - description: Name of the Delegated Admin Rights
+        explode: false
+        in: path
+        name: delegated-admin-rights-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/delegated-admin-resource-rightsListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - delegated-admin-resource-rights
     post:
       summary: Add a new Delegated Admin Resource Rights to the config
       operationId: add-delegated-admin-resource-rights
@@ -441,6 +503,36 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:delegated-admin-resource-rights"
+    delegated-admin-rightsListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/delegated-admin-rights-response'
+    delegated-admin-resource-rightsListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/delegated-admin-resource-rights-response'
     updateRequest:
       type: object
       properties:

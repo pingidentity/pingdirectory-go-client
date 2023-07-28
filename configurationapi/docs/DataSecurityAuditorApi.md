@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddDataSecurityAuditor**](DataSecurityAuditorApi.md#AddDataSecurityAuditor) | **Post** /data-security-auditors | Add a new Data Security Auditor to the config
 [**DeleteDataSecurityAuditor**](DataSecurityAuditorApi.md#DeleteDataSecurityAuditor) | **Delete** /data-security-auditors/{data-security-auditor-name} | Delete a Data Security Auditor
 [**GetDataSecurityAuditor**](DataSecurityAuditorApi.md#GetDataSecurityAuditor) | **Get** /data-security-auditors/{data-security-auditor-name} | Returns a single Data Security Auditor
+[**ListDataSecurityAuditors**](DataSecurityAuditorApi.md#ListDataSecurityAuditors) | **Get** /data-security-auditors | Returns a list of all Data Security Auditor objects
 [**UpdateDataSecurityAuditor**](DataSecurityAuditorApi.md#UpdateDataSecurityAuditor) | **Patch** /data-security-auditors/{data-security-auditor-name} | Update an existing Data Security Auditor by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddDataSecurityAuditor200Response**](AddDataSecurityAuditor200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListDataSecurityAuditors
+
+> DataSecurityAuditorListResponse ListDataSecurityAuditors(ctx).Filter(filter).Execute()
+
+Returns a list of all Data Security Auditor objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DataSecurityAuditorApi.ListDataSecurityAuditors(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DataSecurityAuditorApi.ListDataSecurityAuditors``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListDataSecurityAuditors`: DataSecurityAuditorListResponse
+    fmt.Fprintf(os.Stdout, "Response from `DataSecurityAuditorApi.ListDataSecurityAuditors`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListDataSecurityAuditorsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**DataSecurityAuditorListResponse**](DataSecurityAuditorListResponse.md)
 
 ### Authorization
 

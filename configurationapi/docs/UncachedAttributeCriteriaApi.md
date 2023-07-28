@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddUncachedAttributeCriteria**](UncachedAttributeCriteriaApi.md#AddUncachedAttributeCriteria) | **Post** /uncached-attribute-criteria | Add a new Uncached Attribute Criteria to the config
 [**DeleteUncachedAttributeCriteria**](UncachedAttributeCriteriaApi.md#DeleteUncachedAttributeCriteria) | **Delete** /uncached-attribute-criteria/{uncached-attribute-criteria-name} | Delete a Uncached Attribute Criteria
 [**GetUncachedAttributeCriteria**](UncachedAttributeCriteriaApi.md#GetUncachedAttributeCriteria) | **Get** /uncached-attribute-criteria/{uncached-attribute-criteria-name} | Returns a single Uncached Attribute Criteria
+[**ListUncachedAttributeCriteria**](UncachedAttributeCriteriaApi.md#ListUncachedAttributeCriteria) | **Get** /uncached-attribute-criteria | Returns a list of all Uncached Attribute Criteria objects
 [**UpdateUncachedAttributeCriteria**](UncachedAttributeCriteriaApi.md#UpdateUncachedAttributeCriteria) | **Patch** /uncached-attribute-criteria/{uncached-attribute-criteria-name} | Update an existing Uncached Attribute Criteria by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddUncachedAttributeCriteria200Response**](AddUncachedAttributeCriteria200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListUncachedAttributeCriteria
+
+> UncachedAttributeCriteriaListResponse ListUncachedAttributeCriteria(ctx).Filter(filter).Execute()
+
+Returns a list of all Uncached Attribute Criteria objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.UncachedAttributeCriteriaApi.ListUncachedAttributeCriteria(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `UncachedAttributeCriteriaApi.ListUncachedAttributeCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListUncachedAttributeCriteria`: UncachedAttributeCriteriaListResponse
+    fmt.Fprintf(os.Stdout, "Response from `UncachedAttributeCriteriaApi.ListUncachedAttributeCriteria`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListUncachedAttributeCriteriaRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**UncachedAttributeCriteriaListResponse**](UncachedAttributeCriteriaListResponse.md)
 
 ### Authorization
 

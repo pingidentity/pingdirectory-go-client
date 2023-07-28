@@ -11,6 +11,33 @@ tags:
   name: scim-resource-type
 paths:
   /scim-resource-types:
+    get:
+      summary: Returns a list of all SCIM Resource Type objects
+      operationId: list-scim-resource-types
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/scim-resource-typeListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - scim-resource-type
     post:
       summary: Add a new SCIM Resource Type to the config
       operationId: add-scim-resource-type
@@ -144,6 +171,41 @@ paths:
       tags:
       - scim-resource-type
   /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views:
+    get:
+      summary: Returns a list of all Correlated LDAP Data View objects
+      operationId: list-correlated-ldap-data-views
+      parameters:
+      - description: Name of the SCIM Resource Type
+        explode: false
+        in: path
+        name: scim-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/correlated-ldap-data-viewListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - correlated-ldap-data-view
     post:
       summary: Add a new Correlated LDAP Data View to the config
       operationId: add-correlated-ldap-data-view
@@ -302,6 +364,41 @@ paths:
       tags:
       - correlated-ldap-data-view
   /scim-resource-types/{scim-resource-type-name}/scim-attribute-mappings:
+    get:
+      summary: Returns a list of all SCIM Attribute Mapping objects
+      operationId: list-scim-attribute-mappings
+      parameters:
+      - description: Name of the SCIM Resource Type
+        explode: false
+        in: path
+        name: scim-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/scim-attribute-mappingListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - scim-attribute-mapping
     post:
       summary: Add a new SCIM Attribute Mapping to the config
       operationId: add-scim-attribute-mapping
@@ -460,6 +557,49 @@ paths:
       tags:
       - scim-attribute-mapping
   /scim-resource-types/{scim-resource-type-name}/correlated-ldap-data-views/{correlated-ldap-data-view-name}/ldap-correlation-attribute-pairs:
+    get:
+      summary: Returns a list of all LDAP Correlation Attribute Pair objects
+      operationId: list-ldap-correlation-attribute-pairs
+      parameters:
+      - description: Name of the Correlated LDAP Data View
+        explode: false
+        in: path
+        name: correlated-ldap-data-view-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the SCIM Resource Type
+        explode: false
+        in: path
+        name: scim-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ldap-correlation-attribute-pairListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - ldap-correlation-attribute-pair
     post:
       summary: Add a new LDAP Correlation Attribute Pair to the config
       operationId: add-ldap-correlation-attribute-pair
@@ -1048,6 +1188,68 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:ldap-correlation-attribute-pair"
+    scim-resource-typeListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/ldap-pass-through-scim-resource-type-response'
+            - $ref: '#/components/schemas/ldap-mapping-scim-resource-type-response'
+    correlated-ldap-data-viewListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/correlated-ldap-data-view-response'
+    scim-attribute-mappingListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/scim-attribute-mapping-response'
+    ldap-correlation-attribute-pairListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/ldap-correlation-attribute-pair-response'
     updateRequest:
       type: object
       properties:

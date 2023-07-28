@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddRestResourceType**](RestResourceTypeApi.md#AddRestResourceType) | **Post** /rest-resource-types | Add a new REST Resource Type to the config
 [**DeleteRestResourceType**](RestResourceTypeApi.md#DeleteRestResourceType) | **Delete** /rest-resource-types/{rest-resource-type-name} | Delete a REST Resource Type
 [**GetRestResourceType**](RestResourceTypeApi.md#GetRestResourceType) | **Get** /rest-resource-types/{rest-resource-type-name} | Returns a single REST Resource Type
+[**ListRestResourceTypes**](RestResourceTypeApi.md#ListRestResourceTypes) | **Get** /rest-resource-types | Returns a list of all REST Resource Type objects
 [**UpdateRestResourceType**](RestResourceTypeApi.md#UpdateRestResourceType) | **Patch** /rest-resource-types/{rest-resource-type-name} | Update an existing REST Resource Type by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddRestResourceType200Response**](AddRestResourceType200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListRestResourceTypes
+
+> RestResourceTypeListResponse ListRestResourceTypes(ctx).Filter(filter).Execute()
+
+Returns a list of all REST Resource Type objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RestResourceTypeApi.ListRestResourceTypes(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `RestResourceTypeApi.ListRestResourceTypes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListRestResourceTypes`: RestResourceTypeListResponse
+    fmt.Fprintf(os.Stdout, "Response from `RestResourceTypeApi.ListRestResourceTypes`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListRestResourceTypesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**RestResourceTypeListResponse**](RestResourceTypeListResponse.md)
 
 ### Authorization
 

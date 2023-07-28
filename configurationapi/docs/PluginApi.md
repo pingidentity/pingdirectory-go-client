@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddPlugin**](PluginApi.md#AddPlugin) | **Post** /plugin-root/plugins | Add a new Plugin to the config
 [**DeletePlugin**](PluginApi.md#DeletePlugin) | **Delete** /plugin-root/plugins/{plugin-name} | Delete a Plugin
 [**GetPlugin**](PluginApi.md#GetPlugin) | **Get** /plugin-root/plugins/{plugin-name} | Returns a single Plugin
+[**ListPlugins**](PluginApi.md#ListPlugins) | **Get** /plugin-root/plugins | Returns a list of all Plugin objects
 [**UpdatePlugin**](PluginApi.md#UpdatePlugin) | **Patch** /plugin-root/plugins/{plugin-name} | Update an existing Plugin by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetPlugin200Response**](GetPlugin200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListPlugins
+
+> PluginListResponse ListPlugins(ctx).Filter(filter).Execute()
+
+Returns a list of all Plugin objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.PluginApi.ListPlugins(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `PluginApi.ListPlugins``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListPlugins`: PluginListResponse
+    fmt.Fprintf(os.Stdout, "Response from `PluginApi.ListPlugins`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListPluginsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**PluginListResponse**](PluginListResponse.md)
 
 ### Authorization
 

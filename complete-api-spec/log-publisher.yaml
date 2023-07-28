@@ -11,6 +11,33 @@ tags:
   name: log-publisher
 paths:
   /log-publishers:
+    get:
+      summary: Returns a list of all Log Publisher objects
+      operationId: list-log-publishers
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/log-publisherListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - log-publisher
     post:
       summary: Add a new Log Publisher to the config
       operationId: add-log-publisher
@@ -284,6 +311,41 @@ paths:
       tags:
       - log-publisher
   /log-publishers/{log-publisher-name}/debug-targets:
+    get:
+      summary: Returns a list of all Debug Target objects
+      operationId: list-debug-targets
+      parameters:
+      - description: Name of the Log Publisher
+        explode: false
+        in: path
+        name: log-publisher-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/debug-targetListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - debug-target
     post:
       summary: Add a new Debug Target to the config
       operationId: add-debug-target
@@ -6718,6 +6780,74 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:debug-target"
+    log-publisherListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/syslog-json-audit-log-publisher-response'
+            - $ref: '#/components/schemas/syslog-based-error-log-publisher-response'
+            - $ref: '#/components/schemas/third-party-file-based-access-log-publisher-response'
+            - $ref: '#/components/schemas/operation-timing-access-log-publisher-response'
+            - $ref: '#/components/schemas/third-party-http-operation-log-publisher-response'
+            - $ref: '#/components/schemas/admin-alert-access-log-publisher-response'
+            - $ref: '#/components/schemas/file-based-trace-log-publisher-response'
+            - $ref: '#/components/schemas/jdbc-based-error-log-publisher-response'
+            - $ref: '#/components/schemas/jdbc-based-access-log-publisher-response'
+            - $ref: '#/components/schemas/common-log-file-http-operation-log-publisher-response'
+            - $ref: '#/components/schemas/console-json-error-log-publisher-response'
+            - $ref: '#/components/schemas/syslog-text-error-log-publisher-response'
+            - $ref: '#/components/schemas/syslog-based-access-log-publisher-response'
+            - $ref: '#/components/schemas/file-based-json-audit-log-publisher-response'
+            - $ref: '#/components/schemas/file-based-debug-log-publisher-response'
+            - $ref: '#/components/schemas/file-based-error-log-publisher-response'
+            - $ref: '#/components/schemas/third-party-error-log-publisher-response'
+            - $ref: '#/components/schemas/syslog-text-access-log-publisher-response'
+            - $ref: '#/components/schemas/detailed-http-operation-log-publisher-response'
+            - $ref: '#/components/schemas/json-access-log-publisher-response'
+            - $ref: '#/components/schemas/debug-access-log-publisher-response'
+            - $ref: '#/components/schemas/syslog-json-http-operation-log-publisher-response'
+            - $ref: '#/components/schemas/third-party-access-log-publisher-response'
+            - $ref: '#/components/schemas/file-based-audit-log-publisher-response'
+            - $ref: '#/components/schemas/json-error-log-publisher-response'
+            - $ref: '#/components/schemas/groovy-scripted-file-based-access-log-publisher-response'
+            - $ref: '#/components/schemas/groovy-scripted-file-based-error-log-publisher-response'
+            - $ref: '#/components/schemas/syslog-json-access-log-publisher-response'
+            - $ref: '#/components/schemas/groovy-scripted-access-log-publisher-response'
+            - $ref: '#/components/schemas/third-party-file-based-error-log-publisher-response'
+            - $ref: '#/components/schemas/console-json-audit-log-publisher-response'
+            - $ref: '#/components/schemas/console-json-http-operation-log-publisher-response'
+            - $ref: '#/components/schemas/console-json-access-log-publisher-response'
+            - $ref: '#/components/schemas/file-based-access-log-publisher-response'
+            - $ref: '#/components/schemas/groovy-scripted-error-log-publisher-response'
+            - $ref: '#/components/schemas/file-based-json-http-operation-log-publisher-response'
+            - $ref: '#/components/schemas/syslog-json-error-log-publisher-response'
+            - $ref: '#/components/schemas/groovy-scripted-http-operation-log-publisher-response'
+    debug-targetListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/debug-target-response'
     updateRequest:
       type: object
       properties:

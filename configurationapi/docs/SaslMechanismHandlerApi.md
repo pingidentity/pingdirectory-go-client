@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddSaslMechanismHandler**](SaslMechanismHandlerApi.md#AddSaslMechanismHandler) | **Post** /sasl-mechanism-handlers | Add a new SASL Mechanism Handler to the config
 [**DeleteSaslMechanismHandler**](SaslMechanismHandlerApi.md#DeleteSaslMechanismHandler) | **Delete** /sasl-mechanism-handlers/{sasl-mechanism-handler-name} | Delete a SASL Mechanism Handler
 [**GetSaslMechanismHandler**](SaslMechanismHandlerApi.md#GetSaslMechanismHandler) | **Get** /sasl-mechanism-handlers/{sasl-mechanism-handler-name} | Returns a single SASL Mechanism Handler
+[**ListSaslMechanismHandlers**](SaslMechanismHandlerApi.md#ListSaslMechanismHandlers) | **Get** /sasl-mechanism-handlers | Returns a list of all SASL Mechanism Handler objects
 [**UpdateSaslMechanismHandler**](SaslMechanismHandlerApi.md#UpdateSaslMechanismHandler) | **Patch** /sasl-mechanism-handlers/{sasl-mechanism-handler-name} | Update an existing SASL Mechanism Handler by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetSaslMechanismHandler200Response**](GetSaslMechanismHandler200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListSaslMechanismHandlers
+
+> SaslMechanismHandlerListResponse ListSaslMechanismHandlers(ctx).Filter(filter).Execute()
+
+Returns a list of all SASL Mechanism Handler objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SaslMechanismHandlerApi.ListSaslMechanismHandlers(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SaslMechanismHandlerApi.ListSaslMechanismHandlers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListSaslMechanismHandlers`: SaslMechanismHandlerListResponse
+    fmt.Fprintf(os.Stdout, "Response from `SaslMechanismHandlerApi.ListSaslMechanismHandlers`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListSaslMechanismHandlersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**SaslMechanismHandlerListResponse**](SaslMechanismHandlerListResponse.md)
 
 ### Authorization
 

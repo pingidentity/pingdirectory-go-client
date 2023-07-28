@@ -11,6 +11,33 @@ tags:
   name: id-token-validator
 paths:
   /id-token-validators:
+    get:
+      summary: Returns a list of all ID Token Validator objects
+      operationId: list-id-token-validators
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/id-token-validatorListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - id-token-validator
     post:
       summary: Add a new ID Token Validator to the config
       operationId: add-id-token-validator
@@ -144,6 +171,41 @@ paths:
       tags:
       - id-token-validator
   /id-token-validators/{id-token-validator-name}/token-claim-validations:
+    get:
+      summary: Returns a list of all Token Claim Validation objects
+      operationId: list-token-claim-validations
+      parameters:
+      - description: Name of the ID Token Validator
+        explode: false
+        in: path
+        name: id-token-validator-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/token-claim-validationListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - token-claim-validation
     post:
       summary: Add a new Token Claim Validation to the config
       operationId: add-token-claim-validation
@@ -672,6 +734,41 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:token-claim-validation:string"
+    id-token-validatorListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/ping-one-id-token-validator-response'
+            - $ref: '#/components/schemas/openid-connect-id-token-validator-response'
+    token-claim-validationListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/string-array-token-claim-validation-response'
+            - $ref: '#/components/schemas/boolean-token-claim-validation-response'
+            - $ref: '#/components/schemas/string-token-claim-validation-response'
     updateRequest:
       type: object
       properties:

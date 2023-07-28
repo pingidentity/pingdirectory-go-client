@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddResultCriteria**](ResultCriteriaApi.md#AddResultCriteria) | **Post** /result-criteria | Add a new Result Criteria to the config
 [**DeleteResultCriteria**](ResultCriteriaApi.md#DeleteResultCriteria) | **Delete** /result-criteria/{result-criteria-name} | Delete a Result Criteria
 [**GetResultCriteria**](ResultCriteriaApi.md#GetResultCriteria) | **Get** /result-criteria/{result-criteria-name} | Returns a single Result Criteria
+[**ListResultCriteria**](ResultCriteriaApi.md#ListResultCriteria) | **Get** /result-criteria | Returns a list of all Result Criteria objects
 [**UpdateResultCriteria**](ResultCriteriaApi.md#UpdateResultCriteria) | **Patch** /result-criteria/{result-criteria-name} | Update an existing Result Criteria by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddResultCriteria200Response**](AddResultCriteria200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListResultCriteria
+
+> ResultCriteriaListResponse ListResultCriteria(ctx).Filter(filter).Execute()
+
+Returns a list of all Result Criteria objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ResultCriteriaApi.ListResultCriteria(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ResultCriteriaApi.ListResultCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListResultCriteria`: ResultCriteriaListResponse
+    fmt.Fprintf(os.Stdout, "Response from `ResultCriteriaApi.ListResultCriteria`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListResultCriteriaRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**ResultCriteriaListResponse**](ResultCriteriaListResponse.md)
 
 ### Authorization
 

@@ -11,6 +11,33 @@ tags:
   name: uncached-entry-criteria
 paths:
   /uncached-entry-criteria:
+    get:
+      summary: Returns a list of all Uncached Entry Criteria objects
+      operationId: list-uncached-entry-criteria
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/uncached-entry-criteriaListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - uncached-entry-criteria
     post:
       summary: Add a new Uncached Entry Criteria to the config
       operationId: add-uncached-entry-criteria
@@ -429,6 +456,26 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:uncached-entry-criteria:third-party"
+    uncached-entry-criteriaListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/default-uncached-entry-criteria-response'
+            - $ref: '#/components/schemas/last-access-time-uncached-entry-criteria-response'
+            - $ref: '#/components/schemas/filter-based-uncached-entry-criteria-response'
+            - $ref: '#/components/schemas/groovy-scripted-uncached-entry-criteria-response'
+            - $ref: '#/components/schemas/third-party-uncached-entry-criteria-response'
     updateRequest:
       type: object
       properties:
