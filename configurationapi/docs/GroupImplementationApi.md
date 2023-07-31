@@ -5,6 +5,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetGroupImplementation**](GroupImplementationApi.md#GetGroupImplementation) | **Get** /group-implementations/{group-implementation-name} | Returns a single Group Implementation
+[**ListGroupImplementations**](GroupImplementationApi.md#ListGroupImplementations) | **Get** /group-implementations | Returns a list of all Group Implementation objects
 [**UpdateGroupImplementation**](GroupImplementationApi.md#UpdateGroupImplementation) | **Patch** /group-implementations/{group-implementation-name} | Update an existing Group Implementation by name
 
 
@@ -62,6 +63,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetGroupImplementation200Response**](GetGroupImplementation200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListGroupImplementations
+
+> GroupImplementationListResponse ListGroupImplementations(ctx).Filter(filter).Execute()
+
+Returns a list of all Group Implementation objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.GroupImplementationApi.ListGroupImplementations(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `GroupImplementationApi.ListGroupImplementations``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListGroupImplementations`: GroupImplementationListResponse
+    fmt.Fprintf(os.Stdout, "Response from `GroupImplementationApi.ListGroupImplementations`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListGroupImplementationsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**GroupImplementationListResponse**](GroupImplementationListResponse.md)
 
 ### Authorization
 

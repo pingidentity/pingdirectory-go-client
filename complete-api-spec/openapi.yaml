@@ -2152,6 +2152,34 @@ paths:
       - basicAuth: []
       tags:
       - log-field-behavior
+  /server-instances:
+    get:
+      summary: Returns a list of all Server Instance objects
+      operationId: list-server-instances
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/server-instanceListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - server-instance
   /server-instances/{server-instance-name}:
     get:
       summary: Returns a single Server Instance
@@ -2230,6 +2258,42 @@ paths:
       - basicAuth: []
       tags:
       - server-instance
+  /server-instances/{server-instance-name}/server-instance-listeners:
+    get:
+      summary: Returns a list of all Server Instance Listener objects
+      operationId: list-server-instance-listeners
+      parameters:
+      - description: Name of the Server Instance
+        explode: false
+        in: path
+        name: server-instance-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/server-instance-listenerListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - server-instance-listener
   /server-instances/{server-instance-name}/server-instance-listeners/{server-instance-listener-name}:
     get:
       summary: Returns a single Server Instance Listener
@@ -2318,6 +2382,42 @@ paths:
       - basicAuth: []
       tags:
       - server-instance-listener
+  /server-instances/{server-instance-name}/mac-secret-keys:
+    get:
+      summary: Returns a list of all Mac Secret Key objects
+      operationId: list-mac-secret-keys
+      parameters:
+      - description: Name of the Server Instance
+        explode: false
+        in: path
+        name: server-instance-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mac-secret-keyListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - mac-secret-key
   /server-instances/{server-instance-name}/mac-secret-keys/{mac-secret-key-name}:
     get:
       summary: Returns a single Mac Secret Key
@@ -2402,6 +2502,42 @@ paths:
       - basicAuth: []
       tags:
       - mac-secret-key
+  /server-instances/{server-instance-name}/cipher-secret-keys:
+    get:
+      summary: Returns a list of all Cipher Secret Key objects
+      operationId: list-cipher-secret-keys
+      parameters:
+      - description: Name of the Server Instance
+        explode: false
+        in: path
+        name: server-instance-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cipher-secret-keyListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - cipher-secret-key
   /server-instances/{server-instance-name}/cipher-secret-keys/{cipher-secret-key-name}:
     get:
       summary: Returns a single Cipher Secret Key
@@ -2486,6 +2622,50 @@ paths:
       - basicAuth: []
       tags:
       - cipher-secret-key
+  /server-instances/{server-instance-name}/server-instance-listeners/{server-instance-listener-name}/inter-server-authentication-info:
+    get:
+      summary: Returns a list of all Inter Server Authentication Info objects
+      operationId: list-inter-server-authentication-info
+      parameters:
+      - description: Name of the Server Instance Listener
+        explode: false
+        in: path
+        name: server-instance-listener-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Server Instance
+        explode: false
+        in: path
+        name: server-instance-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inter-server-authentication-infoListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - inter-server-authentication-info
   /server-instances/{server-instance-name}/server-instance-listeners/{server-instance-listener-name}/inter-server-authentication-info/{inter-server-authentication-info-name}:
     get:
       summary: Returns a single Inter Server Authentication Info
@@ -3571,6 +3751,34 @@ paths:
       - basicAuth: []
       tags:
       - result-code-map
+  /synchronization-providers:
+    get:
+      summary: Returns a list of all Synchronization Provider objects
+      operationId: list-synchronization-providers
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/synchronization-providerListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - synchronization-provider
   /synchronization-providers/{synchronization-provider-name}:
     get:
       summary: Returns a single Synchronization Provider
@@ -3711,6 +3919,42 @@ paths:
       - basicAuth: []
       tags:
       - replication-server
+  /synchronization-providers/{synchronization-provider-name}/replication-domains:
+    get:
+      summary: Returns a list of all Replication Domain objects
+      operationId: list-replication-domains
+      parameters:
+      - description: Name of the Synchronization Provider
+        explode: false
+        in: path
+        name: synchronization-provider-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/replication-domainListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - replication-domain
   /synchronization-providers/{synchronization-provider-name}/replication-domains/{replication-domain-name}:
     get:
       summary: Returns a single Replication Domain
@@ -4817,6 +5061,34 @@ paths:
       - basicAuth: []
       tags:
       - log-rotation-policy
+  /log-field-syntaxes:
+    get:
+      summary: Returns a list of all Log Field Syntax objects
+      operationId: list-log-field-syntaxes
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/log-field-syntaxListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - log-field-syntax
   /log-field-syntaxes/{log-field-syntax-name}:
     get:
       summary: Returns a single Log Field Syntax
@@ -12175,6 +12447,34 @@ paths:
       - basicAuth: []
       tags:
       - monitor-provider
+  /group-implementations:
+    get:
+      summary: Returns a list of all Group Implementation objects
+      operationId: list-group-implementations
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/group-implementationListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - group-implementation
   /group-implementations/{group-implementation-name}:
     get:
       summary: Returns a single Group Implementation
@@ -13169,6 +13469,34 @@ paths:
       - basicAuth: []
       tags:
       - local-db-index
+  /attribute-syntaxes:
+    get:
+      summary: Returns a list of all Attribute Syntax objects
+      operationId: list-attribute-syntaxes
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/attribute-syntaxListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - attribute-syntax
   /attribute-syntaxes/{attribute-syntax-name}:
     get:
       summary: Returns a single Attribute Syntax
@@ -14422,6 +14750,34 @@ paths:
       - basicAuth: []
       tags:
       - client-connection-policy
+  /matching-rules:
+    get:
+      summary: Returns a list of all Matching Rule objects
+      operationId: list-matching-rules
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/matching-ruleListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - matching-rule
   /matching-rules/{matching-rule-name}:
     get:
       summary: Returns a single Matching Rule

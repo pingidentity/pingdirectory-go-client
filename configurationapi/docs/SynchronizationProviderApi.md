@@ -5,6 +5,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetSynchronizationProvider**](SynchronizationProviderApi.md#GetSynchronizationProvider) | **Get** /synchronization-providers/{synchronization-provider-name} | Returns a single Synchronization Provider
+[**ListSynchronizationProviders**](SynchronizationProviderApi.md#ListSynchronizationProviders) | **Get** /synchronization-providers | Returns a list of all Synchronization Provider objects
 [**UpdateSynchronizationProvider**](SynchronizationProviderApi.md#UpdateSynchronizationProvider) | **Patch** /synchronization-providers/{synchronization-provider-name} | Update an existing Synchronization Provider by name
 
 
@@ -62,6 +63,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetSynchronizationProvider200Response**](GetSynchronizationProvider200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListSynchronizationProviders
+
+> SynchronizationProviderListResponse ListSynchronizationProviders(ctx).Filter(filter).Execute()
+
+Returns a list of all Synchronization Provider objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SynchronizationProviderApi.ListSynchronizationProviders(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SynchronizationProviderApi.ListSynchronizationProviders``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListSynchronizationProviders`: SynchronizationProviderListResponse
+    fmt.Fprintf(os.Stdout, "Response from `SynchronizationProviderApi.ListSynchronizationProviders`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListSynchronizationProvidersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**SynchronizationProviderListResponse**](SynchronizationProviderListResponse.md)
 
 ### Authorization
 

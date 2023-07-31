@@ -10,6 +10,34 @@ tags:
 - description: Access group-implementations
   name: group-implementation
 paths:
+  /group-implementations:
+    get:
+      summary: Returns a list of all Group Implementation objects
+      operationId: list-group-implementations
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/group-implementationListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - group-implementation
   /group-implementations/{group-implementation-name}:
     get:
       summary: Returns a single Group Implementation

@@ -1966,6 +1966,36 @@ paths:
       summary: Update an existing Log Field Behavior by name
       tags:
       - log-field-behavior
+  /server-instances:
+    get:
+      operationId: list-server-instances
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/server-instanceListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Server Instance objects
+      tags:
+      - server-instance
   /server-instances/{server-instance-name}:
     get:
       operationId: get-server-instance
@@ -2034,6 +2064,44 @@ paths:
       summary: Update an existing Server Instance by name
       tags:
       - server-instance
+  /server-instances/{server-instance-name}/server-instance-listeners:
+    get:
+      operationId: list-server-instance-listeners
+      parameters:
+      - description: Name of the Server Instance
+        explode: false
+        in: path
+        name: server-instance-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/server-instance-listenerListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Server Instance Listener objects
+      tags:
+      - server-instance-listener
   /server-instances/{server-instance-name}/server-instance-listeners/{server-instance-listener-name}:
     get:
       operationId: get-server-instance-listener
@@ -2118,6 +2186,44 @@ paths:
       summary: Update an existing Server Instance Listener by name
       tags:
       - server-instance-listener
+  /server-instances/{server-instance-name}/mac-secret-keys:
+    get:
+      operationId: list-mac-secret-keys
+      parameters:
+      - description: Name of the Server Instance
+        explode: false
+        in: path
+        name: server-instance-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mac-secret-keyListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Mac Secret Key objects
+      tags:
+      - mac-secret-key
   /server-instances/{server-instance-name}/mac-secret-keys/{mac-secret-key-name}:
     get:
       operationId: get-mac-secret-key
@@ -2202,6 +2308,44 @@ paths:
       summary: Update an existing Mac Secret Key by name
       tags:
       - mac-secret-key
+  /server-instances/{server-instance-name}/cipher-secret-keys:
+    get:
+      operationId: list-cipher-secret-keys
+      parameters:
+      - description: Name of the Server Instance
+        explode: false
+        in: path
+        name: server-instance-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cipher-secret-keyListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Cipher Secret Key objects
+      tags:
+      - cipher-secret-key
   /server-instances/{server-instance-name}/cipher-secret-keys/{cipher-secret-key-name}:
     get:
       operationId: get-cipher-secret-key
@@ -2286,6 +2430,52 @@ paths:
       summary: Update an existing Cipher Secret Key by name
       tags:
       - cipher-secret-key
+  ? /server-instances/{server-instance-name}/server-instance-listeners/{server-instance-listener-name}/inter-server-authentication-info
+  : get:
+      operationId: list-inter-server-authentication-info
+      parameters:
+      - description: Name of the Server Instance Listener
+        explode: false
+        in: path
+        name: server-instance-listener-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Server Instance
+        explode: false
+        in: path
+        name: server-instance-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inter-server-authentication-infoListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Inter Server Authentication Info objects
+      tags:
+      - inter-server-authentication-info
   ? /server-instances/{server-instance-name}/server-instance-listeners/{server-instance-listener-name}/inter-server-authentication-info/{inter-server-authentication-info-name}
   : get:
       operationId: get-inter-server-authentication-info
@@ -3351,6 +3541,36 @@ paths:
       summary: Update an existing Result Code Map by name
       tags:
       - result-code-map
+  /synchronization-providers:
+    get:
+      operationId: list-synchronization-providers
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/synchronization-providerListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Synchronization Provider objects
+      tags:
+      - synchronization-provider
   /synchronization-providers/{synchronization-provider-name}:
     get:
       operationId: get-synchronization-provider
@@ -3487,6 +3707,44 @@ paths:
       summary: Update an existing Replication Server by name
       tags:
       - replication-server
+  /synchronization-providers/{synchronization-provider-name}/replication-domains:
+    get:
+      operationId: list-replication-domains
+      parameters:
+      - description: Name of the Synchronization Provider
+        explode: false
+        in: path
+        name: synchronization-provider-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/replication-domainListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Replication Domain objects
+      tags:
+      - replication-domain
   /synchronization-providers/{synchronization-provider-name}/replication-domains/{replication-domain-name}:
     get:
       operationId: get-replication-domain
@@ -4545,6 +4803,36 @@ paths:
       summary: Update an existing Log Rotation Policy by name
       tags:
       - log-rotation-policy
+  /log-field-syntaxes:
+    get:
+      operationId: list-log-field-syntaxes
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/log-field-syntaxListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Log Field Syntax objects
+      tags:
+      - log-field-syntax
   /log-field-syntaxes/{log-field-syntax-name}:
     get:
       operationId: get-log-field-syntax
@@ -11318,6 +11606,36 @@ paths:
       summary: Update an existing Monitor Provider by name
       tags:
       - monitor-provider
+  /group-implementations:
+    get:
+      operationId: list-group-implementations
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/group-implementationListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Group Implementation objects
+      tags:
+      - group-implementation
   /group-implementations/{group-implementation-name}:
     get:
       operationId: get-group-implementation
@@ -12279,6 +12597,36 @@ paths:
       summary: Update an existing Local DB Index by name
       tags:
       - local-db-index
+  /attribute-syntaxes:
+    get:
+      operationId: list-attribute-syntaxes
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/attribute-syntaxListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Attribute Syntax objects
+      tags:
+      - attribute-syntax
   /attribute-syntaxes/{attribute-syntax-name}:
     get:
       operationId: get-attribute-syntax
@@ -13444,6 +13792,36 @@ paths:
       summary: Update an existing Client Connection Policy by name
       tags:
       - client-connection-policy
+  /matching-rules:
+    get:
+      operationId: list-matching-rules
+      parameters:
+      - description: SCIM filter
+        explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/matching-ruleListResponse'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      summary: Returns a list of all Matching Rule objects
+      tags:
+      - matching-rule
   /matching-rules/{matching-rule-name}:
     get:
       operationId: get-matching-rule
@@ -25459,6 +25837,13 @@ components:
       - urn:pingidentity:schemas:configuration:2.0:inter-server-authentication-info:certificate
       type: string
     server-instanceListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
       properties:
         schemas:
           items:
@@ -25474,6 +25859,13 @@ components:
           type: array
       type: object
     server-instance-listenerListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
       properties:
         schemas:
           items:
@@ -25489,6 +25881,13 @@ components:
           type: array
       type: object
     mac-secret-keyListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
       properties:
         schemas:
           items:
@@ -25504,6 +25903,13 @@ components:
           type: array
       type: object
     cipher-secret-keyListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
       properties:
         schemas:
           items:
@@ -25519,6 +25925,13 @@ components:
           type: array
       type: object
     inter-server-authentication-infoListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
       properties:
         schemas:
           items:
@@ -26522,6 +26935,13 @@ components:
       - urn:pingidentity:schemas:configuration:2.0:replication-domain
       type: string
     synchronization-providerListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
       properties:
         schemas:
           items:
@@ -26537,6 +26957,13 @@ components:
           type: array
       type: object
     replication-domainListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
       properties:
         schemas:
           items:
@@ -28524,6 +28951,13 @@ components:
       - urn:pingidentity:schemas:configuration:2.0:log-field-syntax:generic
       type: string
     log-field-syntaxListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
       properties:
         schemas:
           items:
@@ -45880,6 +46314,13 @@ components:
       - urn:pingidentity:schemas:configuration:2.0:group-implementation:dynamic
       type: string
     group-implementationListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
       properties:
         schemas:
           items:
@@ -47479,6 +47920,13 @@ components:
       - urn:pingidentity:schemas:configuration:2.0:attribute-syntax:name-and-optional-uid
       type: string
     attribute-syntaxListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
       properties:
         schemas:
           items:
@@ -49290,6 +49738,13 @@ components:
       - urn:pingidentity:schemas:configuration:2.0:matching-rule:generic
       type: string
     matching-ruleListResponse:
+      example:
+        totalResults: 0.8008281904610115
+        schemas:
+        - schemas
+        Resources:
+        - null
+        - null
       properties:
         schemas:
           items:

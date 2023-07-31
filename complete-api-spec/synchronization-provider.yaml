@@ -10,6 +10,34 @@ tags:
 - description: Access synchronization-providers
   name: synchronization-provider
 paths:
+  /synchronization-providers:
+    get:
+      summary: Returns a list of all Synchronization Provider objects
+      operationId: list-synchronization-providers
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/synchronization-providerListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - synchronization-provider
   /synchronization-providers/{synchronization-provider-name}:
     get:
       summary: Returns a single Synchronization Provider
@@ -150,6 +178,42 @@ paths:
       - basicAuth: []
       tags:
       - replication-server
+  /synchronization-providers/{synchronization-provider-name}/replication-domains:
+    get:
+      summary: Returns a list of all Replication Domain objects
+      operationId: list-replication-domains
+      parameters:
+      - description: Name of the Synchronization Provider
+        explode: false
+        in: path
+        name: synchronization-provider-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/replication-domainListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - replication-domain
   /synchronization-providers/{synchronization-provider-name}/replication-domains/{replication-domain-name}:
     get:
       summary: Returns a single Replication Domain

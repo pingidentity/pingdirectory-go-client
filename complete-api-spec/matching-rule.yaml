@@ -10,6 +10,34 @@ tags:
 - description: Access matching-rules
   name: matching-rule
 paths:
+  /matching-rules:
+    get:
+      summary: Returns a list of all Matching Rule objects
+      operationId: list-matching-rules
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/matching-ruleListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - matching-rule
   /matching-rules/{matching-rule-name}:
     get:
       summary: Returns a single Matching Rule

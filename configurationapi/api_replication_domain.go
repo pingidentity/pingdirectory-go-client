@@ -128,6 +128,118 @@ func (a *ReplicationDomainApiService) GetReplicationDomainExecute(r ApiGetReplic
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiListReplicationDomainsRequest struct {
+	ctx                         context.Context
+	ApiService                  *ReplicationDomainApiService
+	synchronizationProviderName string
+	filter                      *string
+}
+
+// SCIM filter
+func (r ApiListReplicationDomainsRequest) Filter(filter string) ApiListReplicationDomainsRequest {
+	r.filter = &filter
+	return r
+}
+
+func (r ApiListReplicationDomainsRequest) Execute() (*ReplicationDomainListResponse, *http.Response, error) {
+	return r.ApiService.ListReplicationDomainsExecute(r)
+}
+
+/*
+ListReplicationDomains Returns a list of all Replication Domain objects
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param synchronizationProviderName Name of the Synchronization Provider
+	@return ApiListReplicationDomainsRequest
+*/
+func (a *ReplicationDomainApiService) ListReplicationDomains(ctx context.Context, synchronizationProviderName string) ApiListReplicationDomainsRequest {
+	return ApiListReplicationDomainsRequest{
+		ApiService:                  a,
+		ctx:                         ctx,
+		synchronizationProviderName: synchronizationProviderName,
+	}
+}
+
+// Execute executes the request
+//
+//	@return ReplicationDomainListResponse
+func (a *ReplicationDomainApiService) ListReplicationDomainsExecute(r ApiListReplicationDomainsRequest) (*ReplicationDomainListResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ReplicationDomainListResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReplicationDomainApiService.ListReplicationDomains")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/synchronization-providers/{synchronization-provider-name}/replication-domains"
+	localVarPath = strings.Replace(localVarPath, "{"+"synchronization-provider-name"+"}", url.PathEscape(parameterValueToString(r.synchronizationProviderName, "synchronizationProviderName")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.filter != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter", r.filter, "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiUpdateReplicationDomainRequest struct {
 	ctx                         context.Context
 	ApiService                  *ReplicationDomainApiService

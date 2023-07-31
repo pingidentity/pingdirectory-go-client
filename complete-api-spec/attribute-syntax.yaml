@@ -10,6 +10,34 @@ tags:
 - description: Access attribute-syntaxes
   name: attribute-syntax
 paths:
+  /attribute-syntaxes:
+    get:
+      summary: Returns a list of all Attribute Syntax objects
+      operationId: list-attribute-syntaxes
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/attribute-syntaxListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - attribute-syntax
   /attribute-syntaxes/{attribute-syntax-name}:
     get:
       summary: Returns a single Attribute Syntax
