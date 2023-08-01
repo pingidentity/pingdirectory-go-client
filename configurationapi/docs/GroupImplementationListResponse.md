@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | Pointer to **[]string** |  | [optional] 
 **TotalResults** | Pointer to **float64** |  | [optional] 
-**Resources** | Pointer to [**[]GetGroupImplementation200Response**](GetGroupImplementation200Response.md) |  | [optional] 
+**Resources** | Pointer to [**[]GroupImplementationListResponseResourcesInner**](GroupImplementationListResponseResourcesInner.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasTotalResults returns a boolean if a field has been set.
 
 ### GetResources
 
-`func (o *GroupImplementationListResponse) GetResources() []GetGroupImplementation200Response`
+`func (o *GroupImplementationListResponse) GetResources() []GroupImplementationListResponseResourcesInner`
 
 GetResources returns the Resources field if non-nil, zero value otherwise.
 
 ### GetResourcesOk
 
-`func (o *GroupImplementationListResponse) GetResourcesOk() (*[]GetGroupImplementation200Response, bool)`
+`func (o *GroupImplementationListResponse) GetResourcesOk() (*[]GroupImplementationListResponseResourcesInner, bool)`
 
 GetResourcesOk returns a tuple with the Resources field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResources
 
-`func (o *GroupImplementationListResponse) SetResources(v []GetGroupImplementation200Response)`
+`func (o *GroupImplementationListResponse) SetResources(v []GroupImplementationListResponseResourcesInner)`
 
 SetResources sets Resources field to given value.
 

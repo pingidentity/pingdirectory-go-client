@@ -19,9 +19,9 @@ var _ MappedNullable = &PasswordGeneratorListResponse{}
 
 // PasswordGeneratorListResponse struct for PasswordGeneratorListResponse
 type PasswordGeneratorListResponse struct {
-	Schemas      []string                          `json:"schemas,omitempty"`
-	TotalResults *float64                          `json:"totalResults,omitempty"`
-	Resources    []AddPasswordGenerator200Response `json:"Resources,omitempty"`
+	Schemas      []string                                      `json:"schemas,omitempty"`
+	TotalResults *float64                                      `json:"totalResults,omitempty"`
+	Resources    []PasswordGeneratorListResponseResourcesInner `json:"Resources,omitempty"`
 }
 
 // NewPasswordGeneratorListResponse instantiates a new PasswordGeneratorListResponse object
@@ -106,9 +106,9 @@ func (o *PasswordGeneratorListResponse) SetTotalResults(v float64) {
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *PasswordGeneratorListResponse) GetResources() []AddPasswordGenerator200Response {
+func (o *PasswordGeneratorListResponse) GetResources() []PasswordGeneratorListResponseResourcesInner {
 	if o == nil || IsNil(o.Resources) {
-		var ret []AddPasswordGenerator200Response
+		var ret []PasswordGeneratorListResponseResourcesInner
 		return ret
 	}
 	return o.Resources
@@ -116,7 +116,7 @@ func (o *PasswordGeneratorListResponse) GetResources() []AddPasswordGenerator200
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PasswordGeneratorListResponse) GetResourcesOk() ([]AddPasswordGenerator200Response, bool) {
+func (o *PasswordGeneratorListResponse) GetResourcesOk() ([]PasswordGeneratorListResponseResourcesInner, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *PasswordGeneratorListResponse) HasResources() bool {
 	return false
 }
 
-// SetResources gets a reference to the given []AddPasswordGenerator200Response and assigns it to the Resources field.
-func (o *PasswordGeneratorListResponse) SetResources(v []AddPasswordGenerator200Response) {
+// SetResources gets a reference to the given []PasswordGeneratorListResponseResourcesInner and assigns it to the Resources field.
+func (o *PasswordGeneratorListResponse) SetResources(v []PasswordGeneratorListResponseResourcesInner) {
 	o.Resources = v
 }
 

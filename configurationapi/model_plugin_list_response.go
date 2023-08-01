@@ -19,9 +19,9 @@ var _ MappedNullable = &PluginListResponse{}
 
 // PluginListResponse struct for PluginListResponse
 type PluginListResponse struct {
-	Schemas      []string               `json:"schemas,omitempty"`
-	TotalResults *float64               `json:"totalResults,omitempty"`
-	Resources    []GetPlugin200Response `json:"Resources,omitempty"`
+	Schemas      []string                           `json:"schemas,omitempty"`
+	TotalResults *float64                           `json:"totalResults,omitempty"`
+	Resources    []PluginListResponseResourcesInner `json:"Resources,omitempty"`
 }
 
 // NewPluginListResponse instantiates a new PluginListResponse object
@@ -106,9 +106,9 @@ func (o *PluginListResponse) SetTotalResults(v float64) {
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *PluginListResponse) GetResources() []GetPlugin200Response {
+func (o *PluginListResponse) GetResources() []PluginListResponseResourcesInner {
 	if o == nil || IsNil(o.Resources) {
-		var ret []GetPlugin200Response
+		var ret []PluginListResponseResourcesInner
 		return ret
 	}
 	return o.Resources
@@ -116,7 +116,7 @@ func (o *PluginListResponse) GetResources() []GetPlugin200Response {
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PluginListResponse) GetResourcesOk() ([]GetPlugin200Response, bool) {
+func (o *PluginListResponse) GetResourcesOk() ([]PluginListResponseResourcesInner, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *PluginListResponse) HasResources() bool {
 	return false
 }
 
-// SetResources gets a reference to the given []GetPlugin200Response and assigns it to the Resources field.
-func (o *PluginListResponse) SetResources(v []GetPlugin200Response) {
+// SetResources gets a reference to the given []PluginListResponseResourcesInner and assigns it to the Resources field.
+func (o *PluginListResponse) SetResources(v []PluginListResponseResourcesInner) {
 	o.Resources = v
 }
 

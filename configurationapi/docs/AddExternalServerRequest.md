@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **UseAdministrativeOperationControl** | Pointer to **bool** | Indicates whether to include the administrative operation request control in requests sent to this server which are intended for administrative operations (e.g., health checking) rather than requests directly from clients. | [optional] 
 **Location** | Pointer to **string** | Specifies the location for the LDAP External Server. | [optional] 
 **BindDN** | Pointer to **string** | The DN to use to bind to the target LDAP server if simple authentication is required. | [optional] 
-**ConnectionSecurity** | Pointer to [**EnumexternalServerConnectionSecurityProp**](EnumexternalServerConnectionSecurityProp.md) |  | [optional] 
+**ConnectionSecurity** | Pointer to [**EnumexternalServerOracleUnifiedDirectoryConnectionSecurityProp**](EnumexternalServerOracleUnifiedDirectoryConnectionSecurityProp.md) |  | [optional] 
 **AuthenticationMethod** | Pointer to [**EnumexternalServerAmazonAwsAuthenticationMethodProp**](EnumexternalServerAmazonAwsAuthenticationMethodProp.md) |  | [optional] 
 **HealthCheckConnectTimeout** | Pointer to **string** | Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable. | [optional] 
 **MaxConnectionAge** | Pointer to **string** | Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections. | [optional] 
@@ -42,7 +42,7 @@ Name | Type | Description | Notes
 **TransportMechanism** | [**EnumexternalServerTransportMechanismProp**](EnumexternalServerTransportMechanismProp.md) |  | 
 **BasicAuthenticationUsername** | Pointer to **string** | The username to use to authenticate to the HTTP Proxy External Server. | [optional] 
 **BasicAuthenticationPassphraseProvider** | Pointer to **string** | A passphrase provider that provides access to the password to use to authenticate to the HTTP Proxy External Server. | [optional] 
-**HostnameVerificationMethod** | Pointer to [**EnumexternalServerHostnameVerificationMethodProp**](EnumexternalServerHostnameVerificationMethodProp.md) |  | [optional] 
+**HostnameVerificationMethod** | Pointer to [**EnumexternalServerHttpHostnameVerificationMethodProp**](EnumexternalServerHttpHostnameVerificationMethodProp.md) |  | [optional] 
 **ResponseTimeout** | Pointer to **string** | Specifies the maximum length of time to wait for response data to be read from an established connection before aborting a request to the server. | [optional] 
 **BaseURL** | **string** | The base URL of the external server, optionally including port number, for example \&quot;https://externalService:9031\&quot;. | 
 **SslCertNickname** | Pointer to **string** | The certificate alias within the keystore to use if SSL (HTTPS) is to be used for connection-level security. When specifying a value for this property you must ensure that the external server trusts this server&#39;s public certificate by adding this server&#39;s public certificate to the external server&#39;s trust store. | [optional] 
@@ -435,20 +435,20 @@ HasBindDN returns a boolean if a field has been set.
 
 ### GetConnectionSecurity
 
-`func (o *AddExternalServerRequest) GetConnectionSecurity() EnumexternalServerConnectionSecurityProp`
+`func (o *AddExternalServerRequest) GetConnectionSecurity() EnumexternalServerOracleUnifiedDirectoryConnectionSecurityProp`
 
 GetConnectionSecurity returns the ConnectionSecurity field if non-nil, zero value otherwise.
 
 ### GetConnectionSecurityOk
 
-`func (o *AddExternalServerRequest) GetConnectionSecurityOk() (*EnumexternalServerConnectionSecurityProp, bool)`
+`func (o *AddExternalServerRequest) GetConnectionSecurityOk() (*EnumexternalServerOracleUnifiedDirectoryConnectionSecurityProp, bool)`
 
 GetConnectionSecurityOk returns a tuple with the ConnectionSecurity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConnectionSecurity
 
-`func (o *AddExternalServerRequest) SetConnectionSecurity(v EnumexternalServerConnectionSecurityProp)`
+`func (o *AddExternalServerRequest) SetConnectionSecurity(v EnumexternalServerOracleUnifiedDirectoryConnectionSecurityProp)`
 
 SetConnectionSecurity sets ConnectionSecurity field to given value.
 
@@ -1000,20 +1000,20 @@ HasBasicAuthenticationPassphraseProvider returns a boolean if a field has been s
 
 ### GetHostnameVerificationMethod
 
-`func (o *AddExternalServerRequest) GetHostnameVerificationMethod() EnumexternalServerHostnameVerificationMethodProp`
+`func (o *AddExternalServerRequest) GetHostnameVerificationMethod() EnumexternalServerHttpHostnameVerificationMethodProp`
 
 GetHostnameVerificationMethod returns the HostnameVerificationMethod field if non-nil, zero value otherwise.
 
 ### GetHostnameVerificationMethodOk
 
-`func (o *AddExternalServerRequest) GetHostnameVerificationMethodOk() (*EnumexternalServerHostnameVerificationMethodProp, bool)`
+`func (o *AddExternalServerRequest) GetHostnameVerificationMethodOk() (*EnumexternalServerHttpHostnameVerificationMethodProp, bool)`
 
 GetHostnameVerificationMethodOk returns a tuple with the HostnameVerificationMethod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHostnameVerificationMethod
 
-`func (o *AddExternalServerRequest) SetHostnameVerificationMethod(v EnumexternalServerHostnameVerificationMethodProp)`
+`func (o *AddExternalServerRequest) SetHostnameVerificationMethod(v EnumexternalServerHttpHostnameVerificationMethodProp)`
 
 SetHostnameVerificationMethod sets HostnameVerificationMethod field to given value.
 

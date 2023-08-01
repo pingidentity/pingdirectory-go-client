@@ -19,9 +19,9 @@ var _ MappedNullable = &GroupImplementationListResponse{}
 
 // GroupImplementationListResponse struct for GroupImplementationListResponse
 type GroupImplementationListResponse struct {
-	Schemas      []string                            `json:"schemas,omitempty"`
-	TotalResults *float64                            `json:"totalResults,omitempty"`
-	Resources    []GetGroupImplementation200Response `json:"Resources,omitempty"`
+	Schemas      []string                                        `json:"schemas,omitempty"`
+	TotalResults *float64                                        `json:"totalResults,omitempty"`
+	Resources    []GroupImplementationListResponseResourcesInner `json:"Resources,omitempty"`
 }
 
 // NewGroupImplementationListResponse instantiates a new GroupImplementationListResponse object
@@ -106,9 +106,9 @@ func (o *GroupImplementationListResponse) SetTotalResults(v float64) {
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *GroupImplementationListResponse) GetResources() []GetGroupImplementation200Response {
+func (o *GroupImplementationListResponse) GetResources() []GroupImplementationListResponseResourcesInner {
 	if o == nil || IsNil(o.Resources) {
-		var ret []GetGroupImplementation200Response
+		var ret []GroupImplementationListResponseResourcesInner
 		return ret
 	}
 	return o.Resources
@@ -116,7 +116,7 @@ func (o *GroupImplementationListResponse) GetResources() []GetGroupImplementatio
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GroupImplementationListResponse) GetResourcesOk() ([]GetGroupImplementation200Response, bool) {
+func (o *GroupImplementationListResponse) GetResourcesOk() ([]GroupImplementationListResponseResourcesInner, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *GroupImplementationListResponse) HasResources() bool {
 	return false
 }
 
-// SetResources gets a reference to the given []GetGroupImplementation200Response and assigns it to the Resources field.
-func (o *GroupImplementationListResponse) SetResources(v []GetGroupImplementation200Response) {
+// SetResources gets a reference to the given []GroupImplementationListResponseResourcesInner and assigns it to the Resources field.
+func (o *GroupImplementationListResponse) SetResources(v []GroupImplementationListResponseResourcesInner) {
 	o.Resources = v
 }
 

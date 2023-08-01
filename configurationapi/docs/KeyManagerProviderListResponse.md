@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | Pointer to **[]string** |  | [optional] 
 **TotalResults** | Pointer to **float64** |  | [optional] 
-**Resources** | Pointer to [**[]GetKeyManagerProvider200Response**](GetKeyManagerProvider200Response.md) |  | [optional] 
+**Resources** | Pointer to [**[]KeyManagerProviderListResponseResourcesInner**](KeyManagerProviderListResponseResourcesInner.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasTotalResults returns a boolean if a field has been set.
 
 ### GetResources
 
-`func (o *KeyManagerProviderListResponse) GetResources() []GetKeyManagerProvider200Response`
+`func (o *KeyManagerProviderListResponse) GetResources() []KeyManagerProviderListResponseResourcesInner`
 
 GetResources returns the Resources field if non-nil, zero value otherwise.
 
 ### GetResourcesOk
 
-`func (o *KeyManagerProviderListResponse) GetResourcesOk() (*[]GetKeyManagerProvider200Response, bool)`
+`func (o *KeyManagerProviderListResponse) GetResourcesOk() (*[]KeyManagerProviderListResponseResourcesInner, bool)`
 
 GetResourcesOk returns a tuple with the Resources field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResources
 
-`func (o *KeyManagerProviderListResponse) SetResources(v []GetKeyManagerProvider200Response)`
+`func (o *KeyManagerProviderListResponse) SetResources(v []KeyManagerProviderListResponseResourcesInner)`
 
 SetResources sets Resources field to given value.
 

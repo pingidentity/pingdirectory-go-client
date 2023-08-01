@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **BindDN** | Pointer to **string** | The DN to use to bind to the target LDAP server if simple authentication is required. | [optional] 
 **Password** | Pointer to **string** | The login password for the specified user. | [optional] 
 **PassphraseProvider** | Pointer to **string** | The passphrase provider to use to obtain the login password for the specified user. | [optional] 
-**ConnectionSecurity** | [**EnumexternalServerConnectionSecurityProp**](EnumexternalServerConnectionSecurityProp.md) |  | 
+**ConnectionSecurity** | [**EnumexternalServerPingIdentityDsConnectionSecurityProp**](EnumexternalServerPingIdentityDsConnectionSecurityProp.md) |  | 
 **AuthenticationMethod** | [**EnumexternalServerPingIdentityDsAuthenticationMethodProp**](EnumexternalServerPingIdentityDsAuthenticationMethodProp.md) |  | 
 **HealthCheckConnectTimeout** | Pointer to **string** | Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable. | [optional] 
 **MaxConnectionAge** | **string** | Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections. | 
@@ -35,7 +35,7 @@ Name | Type | Description | Notes
 
 ### NewPingIdentityDsExternalServerResponse
 
-`func NewPingIdentityDsExternalServerResponse(id string, schemas []EnumpingIdentityDsExternalServerSchemaUrn, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, serverHostName string, serverPort int64, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerPingIdentityDsAuthenticationMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string, ) *PingIdentityDsExternalServerResponse`
+`func NewPingIdentityDsExternalServerResponse(id string, schemas []EnumpingIdentityDsExternalServerSchemaUrn, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, serverHostName string, serverPort int64, connectionSecurity EnumexternalServerPingIdentityDsConnectionSecurityProp, authenticationMethod EnumexternalServerPingIdentityDsAuthenticationMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string, ) *PingIdentityDsExternalServerResponse`
 
 NewPingIdentityDsExternalServerResponse instantiates a new PingIdentityDsExternalServerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -277,20 +277,20 @@ HasPassphraseProvider returns a boolean if a field has been set.
 
 ### GetConnectionSecurity
 
-`func (o *PingIdentityDsExternalServerResponse) GetConnectionSecurity() EnumexternalServerConnectionSecurityProp`
+`func (o *PingIdentityDsExternalServerResponse) GetConnectionSecurity() EnumexternalServerPingIdentityDsConnectionSecurityProp`
 
 GetConnectionSecurity returns the ConnectionSecurity field if non-nil, zero value otherwise.
 
 ### GetConnectionSecurityOk
 
-`func (o *PingIdentityDsExternalServerResponse) GetConnectionSecurityOk() (*EnumexternalServerConnectionSecurityProp, bool)`
+`func (o *PingIdentityDsExternalServerResponse) GetConnectionSecurityOk() (*EnumexternalServerPingIdentityDsConnectionSecurityProp, bool)`
 
 GetConnectionSecurityOk returns a tuple with the ConnectionSecurity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConnectionSecurity
 
-`func (o *PingIdentityDsExternalServerResponse) SetConnectionSecurity(v EnumexternalServerConnectionSecurityProp)`
+`func (o *PingIdentityDsExternalServerResponse) SetConnectionSecurity(v EnumexternalServerPingIdentityDsConnectionSecurityProp)`
 
 SetConnectionSecurity sets ConnectionSecurity field to given value.
 

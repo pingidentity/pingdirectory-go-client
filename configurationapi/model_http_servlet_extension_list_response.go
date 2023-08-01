@@ -19,9 +19,9 @@ var _ MappedNullable = &HttpServletExtensionListResponse{}
 
 // HttpServletExtensionListResponse struct for HttpServletExtensionListResponse
 type HttpServletExtensionListResponse struct {
-	Schemas      []string                             `json:"schemas,omitempty"`
-	TotalResults *float64                             `json:"totalResults,omitempty"`
-	Resources    []GetHttpServletExtension200Response `json:"Resources,omitempty"`
+	Schemas      []string                                         `json:"schemas,omitempty"`
+	TotalResults *float64                                         `json:"totalResults,omitempty"`
+	Resources    []HttpServletExtensionListResponseResourcesInner `json:"Resources,omitempty"`
 }
 
 // NewHttpServletExtensionListResponse instantiates a new HttpServletExtensionListResponse object
@@ -106,9 +106,9 @@ func (o *HttpServletExtensionListResponse) SetTotalResults(v float64) {
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *HttpServletExtensionListResponse) GetResources() []GetHttpServletExtension200Response {
+func (o *HttpServletExtensionListResponse) GetResources() []HttpServletExtensionListResponseResourcesInner {
 	if o == nil || IsNil(o.Resources) {
-		var ret []GetHttpServletExtension200Response
+		var ret []HttpServletExtensionListResponseResourcesInner
 		return ret
 	}
 	return o.Resources
@@ -116,7 +116,7 @@ func (o *HttpServletExtensionListResponse) GetResources() []GetHttpServletExtens
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HttpServletExtensionListResponse) GetResourcesOk() ([]GetHttpServletExtension200Response, bool) {
+func (o *HttpServletExtensionListResponse) GetResourcesOk() ([]HttpServletExtensionListResponseResourcesInner, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *HttpServletExtensionListResponse) HasResources() bool {
 	return false
 }
 
-// SetResources gets a reference to the given []GetHttpServletExtension200Response and assigns it to the Resources field.
-func (o *HttpServletExtensionListResponse) SetResources(v []GetHttpServletExtension200Response) {
+// SetResources gets a reference to the given []HttpServletExtensionListResponseResourcesInner and assigns it to the Resources field.
+func (o *HttpServletExtensionListResponse) SetResources(v []HttpServletExtensionListResponseResourcesInner) {
 	o.Resources = v
 }
 

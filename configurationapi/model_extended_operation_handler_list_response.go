@@ -19,9 +19,9 @@ var _ MappedNullable = &ExtendedOperationHandlerListResponse{}
 
 // ExtendedOperationHandlerListResponse struct for ExtendedOperationHandlerListResponse
 type ExtendedOperationHandlerListResponse struct {
-	Schemas      []string                                 `json:"schemas,omitempty"`
-	TotalResults *float64                                 `json:"totalResults,omitempty"`
-	Resources    []GetExtendedOperationHandler200Response `json:"Resources,omitempty"`
+	Schemas      []string                                             `json:"schemas,omitempty"`
+	TotalResults *float64                                             `json:"totalResults,omitempty"`
+	Resources    []ExtendedOperationHandlerListResponseResourcesInner `json:"Resources,omitempty"`
 }
 
 // NewExtendedOperationHandlerListResponse instantiates a new ExtendedOperationHandlerListResponse object
@@ -106,9 +106,9 @@ func (o *ExtendedOperationHandlerListResponse) SetTotalResults(v float64) {
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *ExtendedOperationHandlerListResponse) GetResources() []GetExtendedOperationHandler200Response {
+func (o *ExtendedOperationHandlerListResponse) GetResources() []ExtendedOperationHandlerListResponseResourcesInner {
 	if o == nil || IsNil(o.Resources) {
-		var ret []GetExtendedOperationHandler200Response
+		var ret []ExtendedOperationHandlerListResponseResourcesInner
 		return ret
 	}
 	return o.Resources
@@ -116,7 +116,7 @@ func (o *ExtendedOperationHandlerListResponse) GetResources() []GetExtendedOpera
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ExtendedOperationHandlerListResponse) GetResourcesOk() ([]GetExtendedOperationHandler200Response, bool) {
+func (o *ExtendedOperationHandlerListResponse) GetResourcesOk() ([]ExtendedOperationHandlerListResponseResourcesInner, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *ExtendedOperationHandlerListResponse) HasResources() bool {
 	return false
 }
 
-// SetResources gets a reference to the given []GetExtendedOperationHandler200Response and assigns it to the Resources field.
-func (o *ExtendedOperationHandlerListResponse) SetResources(v []GetExtendedOperationHandler200Response) {
+// SetResources gets a reference to the given []ExtendedOperationHandlerListResponseResourcesInner and assigns it to the Resources field.
+func (o *ExtendedOperationHandlerListResponse) SetResources(v []ExtendedOperationHandlerListResponseResourcesInner) {
 	o.Resources = v
 }
 

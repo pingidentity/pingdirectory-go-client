@@ -19,9 +19,9 @@ var _ MappedNullable = &LogFieldMappingListResponse{}
 
 // LogFieldMappingListResponse struct for LogFieldMappingListResponse
 type LogFieldMappingListResponse struct {
-	Schemas      []string                        `json:"schemas,omitempty"`
-	TotalResults *float64                        `json:"totalResults,omitempty"`
-	Resources    []AddLogFieldMapping200Response `json:"Resources,omitempty"`
+	Schemas      []string                                    `json:"schemas,omitempty"`
+	TotalResults *float64                                    `json:"totalResults,omitempty"`
+	Resources    []LogFieldMappingListResponseResourcesInner `json:"Resources,omitempty"`
 }
 
 // NewLogFieldMappingListResponse instantiates a new LogFieldMappingListResponse object
@@ -106,9 +106,9 @@ func (o *LogFieldMappingListResponse) SetTotalResults(v float64) {
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *LogFieldMappingListResponse) GetResources() []AddLogFieldMapping200Response {
+func (o *LogFieldMappingListResponse) GetResources() []LogFieldMappingListResponseResourcesInner {
 	if o == nil || IsNil(o.Resources) {
-		var ret []AddLogFieldMapping200Response
+		var ret []LogFieldMappingListResponseResourcesInner
 		return ret
 	}
 	return o.Resources
@@ -116,7 +116,7 @@ func (o *LogFieldMappingListResponse) GetResources() []AddLogFieldMapping200Resp
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LogFieldMappingListResponse) GetResourcesOk() ([]AddLogFieldMapping200Response, bool) {
+func (o *LogFieldMappingListResponse) GetResourcesOk() ([]LogFieldMappingListResponseResourcesInner, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *LogFieldMappingListResponse) HasResources() bool {
 	return false
 }
 
-// SetResources gets a reference to the given []AddLogFieldMapping200Response and assigns it to the Resources field.
-func (o *LogFieldMappingListResponse) SetResources(v []AddLogFieldMapping200Response) {
+// SetResources gets a reference to the given []LogFieldMappingListResponseResourcesInner and assigns it to the Resources field.
+func (o *LogFieldMappingListResponse) SetResources(v []LogFieldMappingListResponseResourcesInner) {
 	o.Resources = v
 }
 

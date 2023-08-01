@@ -34,7 +34,7 @@ type OpendjExternalServerResponse struct {
 	Password *string `json:"password,omitempty"`
 	// The passphrase provider to use to obtain the login password for the specified user.
 	PassphraseProvider      *string                                          `json:"passphraseProvider,omitempty"`
-	ConnectionSecurity      EnumexternalServerConnectionSecurityProp         `json:"connectionSecurity"`
+	ConnectionSecurity      EnumexternalServerOpendjConnectionSecurityProp   `json:"connectionSecurity"`
 	AuthenticationMethod    EnumexternalServerOpendjAuthenticationMethodProp `json:"authenticationMethod"`
 	VerifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp    `json:"verifyCredentialsMethod"`
 	// Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
@@ -68,7 +68,7 @@ type OpendjExternalServerResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOpendjExternalServerResponse(id string, schemas []EnumopendjExternalServerSchemaUrn, serverHostName string, serverPort int64, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerOpendjAuthenticationMethodProp, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string) *OpendjExternalServerResponse {
+func NewOpendjExternalServerResponse(id string, schemas []EnumopendjExternalServerSchemaUrn, serverHostName string, serverPort int64, connectionSecurity EnumexternalServerOpendjConnectionSecurityProp, authenticationMethod EnumexternalServerOpendjAuthenticationMethodProp, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string) *OpendjExternalServerResponse {
 	this := OpendjExternalServerResponse{}
 	this.Id = id
 	this.Schemas = schemas
@@ -316,9 +316,9 @@ func (o *OpendjExternalServerResponse) SetPassphraseProvider(v string) {
 }
 
 // GetConnectionSecurity returns the ConnectionSecurity field value
-func (o *OpendjExternalServerResponse) GetConnectionSecurity() EnumexternalServerConnectionSecurityProp {
+func (o *OpendjExternalServerResponse) GetConnectionSecurity() EnumexternalServerOpendjConnectionSecurityProp {
 	if o == nil {
-		var ret EnumexternalServerConnectionSecurityProp
+		var ret EnumexternalServerOpendjConnectionSecurityProp
 		return ret
 	}
 
@@ -327,7 +327,7 @@ func (o *OpendjExternalServerResponse) GetConnectionSecurity() EnumexternalServe
 
 // GetConnectionSecurityOk returns a tuple with the ConnectionSecurity field value
 // and a boolean to check if the value has been set.
-func (o *OpendjExternalServerResponse) GetConnectionSecurityOk() (*EnumexternalServerConnectionSecurityProp, bool) {
+func (o *OpendjExternalServerResponse) GetConnectionSecurityOk() (*EnumexternalServerOpendjConnectionSecurityProp, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -335,7 +335,7 @@ func (o *OpendjExternalServerResponse) GetConnectionSecurityOk() (*EnumexternalS
 }
 
 // SetConnectionSecurity sets field value
-func (o *OpendjExternalServerResponse) SetConnectionSecurity(v EnumexternalServerConnectionSecurityProp) {
+func (o *OpendjExternalServerResponse) SetConnectionSecurity(v EnumexternalServerOpendjConnectionSecurityProp) {
 	o.ConnectionSecurity = v
 }
 

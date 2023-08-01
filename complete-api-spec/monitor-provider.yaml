@@ -354,6 +354,37 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:custom"
+    entry-cache-monitor-provider-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumentry-cache-monitor-providerSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Monitor Provider
+          description:
+            type: string
+            description: >-
+                A description for this Monitor Provider
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Monitor Provider is enabled for use.
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
+    Enumentry-cache-monitor-providerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:entry-cache"
     active-operations-monitor-provider-response:
       allOf:
       - type: object
@@ -725,6 +756,7 @@ components:
             - $ref: '#/components/schemas/stack-trace-monitor-provider-response'
             - $ref: '#/components/schemas/encryption-settings-database-accessibility-monitor-provider-response'
             - $ref: '#/components/schemas/custom-monitor-provider-response'
+            - $ref: '#/components/schemas/entry-cache-monitor-provider-response'
             - $ref: '#/components/schemas/active-operations-monitor-provider-response'
             - $ref: '#/components/schemas/ssl-context-monitor-provider-response'
             - $ref: '#/components/schemas/version-monitor-provider-response'

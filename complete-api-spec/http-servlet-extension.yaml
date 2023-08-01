@@ -793,6 +793,46 @@ paths:
       - velocity-template-loader
 components:
   schemas:
+    standard-http-servlet-extension-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumstandard-http-servlet-extensionSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the HTTP Servlet Extension
+          description:
+            type: string
+            description: >-
+                A description for this HTTP Servlet Extension
+          crossOriginPolicy:
+            type: string
+            description: >-
+                The cross-origin request policy to use for the HTTP Servlet Extension.
+          responseHeader:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies HTTP header fields and values added to response headers for all requests.
+          correlationIDResponseHeader:
+            type: string
+            description: >-
+                Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+    Enumstandard-http-servlet-extensionSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:standard"
     delegated-admin-http-servlet-extension-response:
       allOf:
       - type: object
@@ -1493,6 +1533,109 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:groovy-scripted"
+    open-banking-http-servlet-extension-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumopen-banking-http-servlet-extensionSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the HTTP Servlet Extension
+          correlationIDResponseHeader:
+            type: string
+            description: >-
+                Specifies the name of the HTTP header that will contain a correlation ID value. This header will be used both in downstream requests to the Consent API and in responses to the Open Banking client. The value "x-fapi-interaction-id" is recommended.
+          fapiFinancialID:
+            type: string
+            description: >-
+                The unique financial id of the ASPSP associated with this Open Banking service.
+          accessTokenValidator:
+            type: array
+            items:
+              type: string
+            description: >-
+                If specified, the Access Token Validator(s) that may be used to validate access tokens for requests submitted to this Open Banking HTTP Servlet Extension.
+          pathPrefix:
+            type: string
+            description: >-
+                An optional ASPSP-specific path prefix to include in the base URI path. If specified with the value "myPrefix", for example, the base path will be /myPrefix/open-banking/v1.1/.
+          consentServer:
+            type: string
+            description: >-
+                Specifies the PingDirectory instance that is hosting the Consent API for storage and retrieval of Account Requests.
+          consentDefinitionID:
+            type: string
+            description: >-
+                The name/id of the consent definition, as defined in the consent-server, that is used for storing Account Requests.
+          description:
+            type: string
+            description: >-
+                A description for this HTTP Servlet Extension
+          crossOriginPolicy:
+            type: string
+            description: >-
+                The cross-origin request policy to use for the HTTP Servlet Extension.
+          responseHeader:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies HTTP header fields and values added to response headers for all requests.
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - consentDefinitionID
+    Enumopen-banking-http-servlet-extensionSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:open-banking"
+    pdp-endpoint-http-servlet-extension-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumpdp-endpoint-http-servlet-extensionSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the HTTP Servlet Extension
+          description:
+            type: string
+            description: >-
+                A description for this HTTP Servlet Extension
+          crossOriginPolicy:
+            type: string
+            description: >-
+                The cross-origin request policy to use for the HTTP Servlet Extension.
+          responseHeader:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies HTTP header fields and values added to response headers for all requests.
+          correlationIDResponseHeader:
+            type: string
+            description: >-
+                Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+    Enumpdp-endpoint-http-servlet-extensionSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:pdp-endpoint"
     Enumhttp-servlet-extension-allowedAuthenticationTypeProp:
       type: string
       enum:
@@ -1619,6 +1762,113 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:file-server"
+    json-pdp-api-http-servlet-extension-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumjson-pdp-api-http-servlet-extensionSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the HTTP Servlet Extension
+          sharedSecretHeaderName:
+            type: string
+            description: >-
+                The request header used to find the shared secret header for incoming JSON PDP API HTTP Servlet Extension requests.
+          sharedSecrets:
+            type: array
+            items:
+              type: string
+            description: >-
+                Shared secrets between the third-party Policy Enforcement Point and the JSON PDP API HTTP Servlet Extension.
+          description:
+            type: string
+            description: >-
+                A description for this HTTP Servlet Extension
+          crossOriginPolicy:
+            type: string
+            description: >-
+                The cross-origin request policy to use for the HTTP Servlet Extension.
+          responseHeader:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies HTTP header fields and values added to response headers for all requests.
+          correlationIDResponseHeader:
+            type: string
+            description: >-
+                Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - sharedSecretHeaderName
+    Enumjson-pdp-api-http-servlet-extensionSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:json-pdp-api"
+    metrics-http-servlet-extension-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enummetrics-http-servlet-extensionSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the HTTP Servlet Extension
+          requireAPIAuthentication:
+            type: boolean
+            description: >-
+                Require authentication when accessing the REST API.
+          identityMapper:
+            type: string
+            description: >-
+                Specifies the name of the identity mapper that is to be used for associating user entries with basic authentication user names.
+          omitErrorMessageDetails:
+            type: boolean
+            description: >-
+                Specifies that API error messages for invalid queries, unknown resources, service unavailable, and internal server errors are generic in nature.
+          apiAuthenticationTimeout:
+            type: string
+            description: >-
+                Length of time before a REST API authentication session expires.
+          description:
+            type: string
+            description: >-
+                A description for this HTTP Servlet Extension
+          crossOriginPolicy:
+            type: string
+            description: >-
+                The cross-origin request policy to use for the HTTP Servlet Extension.
+          responseHeader:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies HTTP header fields and values added to response headers for all requests.
+          correlationIDResponseHeader:
+            type: string
+            description: >-
+                Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+    Enummetrics-http-servlet-extensionSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:metrics"
     config-http-servlet-extension-response:
       allOf:
       - type: object
@@ -1871,6 +2121,60 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:directory-rest-api"
+    gateway-http-servlet-extension-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumgateway-http-servlet-extensionSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the HTTP Servlet Extension
+          excludedAPIEndpoint:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies any Gateway API Endpoints that will not be handled by the Gateway HTTP Servlet Extension.
+          requestLimit:
+            type: string
+            description: >-
+                The maximum number of bytes allowed per request body.
+          responseLimit:
+            type: string
+            description: >-
+                The maximum number of bytes allowed per response body.
+          numForwardThreads:
+            type: integer
+            description: >-
+                The number of threads used to forward responses to the API backend.
+          description:
+            type: string
+            description: >-
+                A description for this HTTP Servlet Extension
+          crossOriginPolicy:
+            type: string
+            description: >-
+                The cross-origin request policy to use for the HTTP Servlet Extension.
+          responseHeader:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies HTTP header fields and values added to response headers for all requests.
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+    Enumgateway-http-servlet-extensionSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:gateway"
     add-third-party-http-servlet-extension-request:
       allOf:
       - type: object
@@ -1938,6 +2242,71 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:third-party"
+    Enumhttp-servlet-extension-requestContextMethodProp:
+      type: string
+      enum:
+      - "none"
+      - "state"
+      - "request"
+      description: >-
+          The mechanism that the Sideband API response endpoint uses to accept data about the related request.
+    sideband-api-http-servlet-extension-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumsideband-api-http-servlet-extensionSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the HTTP Servlet Extension
+          requestLimit:
+            type: string
+            description: >-
+                The maximum number of bytes allowed per request body.
+          requestContextMethod:
+            $ref: '#/components/schemas/Enumhttp-servlet-extension-requestContextMethodProp'
+          sharedSecretHeaderName:
+            type: string
+            description: >-
+                The request header used to find the shared secret header for incoming Sideband API HTTP Servlet Extension requests.
+          sharedSecrets:
+            type: array
+            items:
+              type: string
+            description: >-
+                Shared secrets between the third-party API Gateway and Sideband API HTTP Servlet Extension.
+          description:
+            type: string
+            description: >-
+                A description for this HTTP Servlet Extension
+          crossOriginPolicy:
+            type: string
+            description: >-
+                The cross-origin request policy to use for the HTTP Servlet Extension.
+          responseHeader:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies HTTP header fields and values added to response headers for all requests.
+          correlationIDResponseHeader:
+            type: string
+            description: >-
+                Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - sharedSecretHeaderName
+    Enumsideband-api-http-servlet-extensionSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:sideband-api"
     Enumprometheus-monitor-attribute-metric-metricTypeProp:
       type: string
       enum:
@@ -2311,6 +2680,7 @@ components:
           type: array
           items:
             oneOf:
+            - $ref: '#/components/schemas/standard-http-servlet-extension-response'
             - $ref: '#/components/schemas/delegated-admin-http-servlet-extension-response'
             - $ref: '#/components/schemas/quickstart-http-servlet-extension-response'
             - $ref: '#/components/schemas/availability-state-http-servlet-extension-response'
@@ -2319,11 +2689,17 @@ components:
             - $ref: '#/components/schemas/consent-http-servlet-extension-response'
             - $ref: '#/components/schemas/ldap-mapped-scim-http-servlet-extension-response'
             - $ref: '#/components/schemas/groovy-scripted-http-servlet-extension-response'
+            - $ref: '#/components/schemas/open-banking-http-servlet-extension-response'
+            - $ref: '#/components/schemas/pdp-endpoint-http-servlet-extension-response'
             - $ref: '#/components/schemas/file-server-http-servlet-extension-response'
+            - $ref: '#/components/schemas/json-pdp-api-http-servlet-extension-response'
+            - $ref: '#/components/schemas/metrics-http-servlet-extension-response'
             - $ref: '#/components/schemas/config-http-servlet-extension-response'
             - $ref: '#/components/schemas/scim2-http-servlet-extension-response'
             - $ref: '#/components/schemas/directory-rest-api-http-servlet-extension-response'
+            - $ref: '#/components/schemas/gateway-http-servlet-extension-response'
             - $ref: '#/components/schemas/third-party-http-servlet-extension-response'
+            - $ref: '#/components/schemas/sideband-api-http-servlet-extension-response'
     prometheus-monitor-attribute-metricListResponse:
       type: object
       properties:

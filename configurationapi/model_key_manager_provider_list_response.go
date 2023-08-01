@@ -19,9 +19,9 @@ var _ MappedNullable = &KeyManagerProviderListResponse{}
 
 // KeyManagerProviderListResponse struct for KeyManagerProviderListResponse
 type KeyManagerProviderListResponse struct {
-	Schemas      []string                           `json:"schemas,omitempty"`
-	TotalResults *float64                           `json:"totalResults,omitempty"`
-	Resources    []GetKeyManagerProvider200Response `json:"Resources,omitempty"`
+	Schemas      []string                                       `json:"schemas,omitempty"`
+	TotalResults *float64                                       `json:"totalResults,omitempty"`
+	Resources    []KeyManagerProviderListResponseResourcesInner `json:"Resources,omitempty"`
 }
 
 // NewKeyManagerProviderListResponse instantiates a new KeyManagerProviderListResponse object
@@ -106,9 +106,9 @@ func (o *KeyManagerProviderListResponse) SetTotalResults(v float64) {
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *KeyManagerProviderListResponse) GetResources() []GetKeyManagerProvider200Response {
+func (o *KeyManagerProviderListResponse) GetResources() []KeyManagerProviderListResponseResourcesInner {
 	if o == nil || IsNil(o.Resources) {
-		var ret []GetKeyManagerProvider200Response
+		var ret []KeyManagerProviderListResponseResourcesInner
 		return ret
 	}
 	return o.Resources
@@ -116,7 +116,7 @@ func (o *KeyManagerProviderListResponse) GetResources() []GetKeyManagerProvider2
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyManagerProviderListResponse) GetResourcesOk() ([]GetKeyManagerProvider200Response, bool) {
+func (o *KeyManagerProviderListResponse) GetResourcesOk() ([]KeyManagerProviderListResponseResourcesInner, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *KeyManagerProviderListResponse) HasResources() bool {
 	return false
 }
 
-// SetResources gets a reference to the given []GetKeyManagerProvider200Response and assigns it to the Resources field.
-func (o *KeyManagerProviderListResponse) SetResources(v []GetKeyManagerProvider200Response) {
+// SetResources gets a reference to the given []KeyManagerProviderListResponseResourcesInner and assigns it to the Resources field.
+func (o *KeyManagerProviderListResponse) SetResources(v []KeyManagerProviderListResponseResourcesInner) {
 	o.Resources = v
 }
 

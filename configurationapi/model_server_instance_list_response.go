@@ -19,9 +19,9 @@ var _ MappedNullable = &ServerInstanceListResponse{}
 
 // ServerInstanceListResponse struct for ServerInstanceListResponse
 type ServerInstanceListResponse struct {
-	Schemas      []string                       `json:"schemas,omitempty"`
-	TotalResults *float64                       `json:"totalResults,omitempty"`
-	Resources    []GetServerInstance200Response `json:"Resources,omitempty"`
+	Schemas      []string                                   `json:"schemas,omitempty"`
+	TotalResults *float64                                   `json:"totalResults,omitempty"`
+	Resources    []ServerInstanceListResponseResourcesInner `json:"Resources,omitempty"`
 }
 
 // NewServerInstanceListResponse instantiates a new ServerInstanceListResponse object
@@ -106,9 +106,9 @@ func (o *ServerInstanceListResponse) SetTotalResults(v float64) {
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *ServerInstanceListResponse) GetResources() []GetServerInstance200Response {
+func (o *ServerInstanceListResponse) GetResources() []ServerInstanceListResponseResourcesInner {
 	if o == nil || IsNil(o.Resources) {
-		var ret []GetServerInstance200Response
+		var ret []ServerInstanceListResponseResourcesInner
 		return ret
 	}
 	return o.Resources
@@ -116,7 +116,7 @@ func (o *ServerInstanceListResponse) GetResources() []GetServerInstance200Respon
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServerInstanceListResponse) GetResourcesOk() ([]GetServerInstance200Response, bool) {
+func (o *ServerInstanceListResponse) GetResourcesOk() ([]ServerInstanceListResponseResourcesInner, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *ServerInstanceListResponse) HasResources() bool {
 	return false
 }
 
-// SetResources gets a reference to the given []GetServerInstance200Response and assigns it to the Resources field.
-func (o *ServerInstanceListResponse) SetResources(v []GetServerInstance200Response) {
+// SetResources gets a reference to the given []ServerInstanceListResponseResourcesInner and assigns it to the Resources field.
+func (o *ServerInstanceListResponse) SetResources(v []ServerInstanceListResponseResourcesInner) {
 	o.Resources = v
 }
 

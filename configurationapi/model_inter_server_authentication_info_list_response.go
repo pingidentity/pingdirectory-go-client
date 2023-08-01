@@ -19,9 +19,9 @@ var _ MappedNullable = &InterServerAuthenticationInfoListResponse{}
 
 // InterServerAuthenticationInfoListResponse struct for InterServerAuthenticationInfoListResponse
 type InterServerAuthenticationInfoListResponse struct {
-	Schemas      []string                                      `json:"schemas,omitempty"`
-	TotalResults *float64                                      `json:"totalResults,omitempty"`
-	Resources    []GetInterServerAuthenticationInfo200Response `json:"Resources,omitempty"`
+	Schemas      []string                                                  `json:"schemas,omitempty"`
+	TotalResults *float64                                                  `json:"totalResults,omitempty"`
+	Resources    []InterServerAuthenticationInfoListResponseResourcesInner `json:"Resources,omitempty"`
 }
 
 // NewInterServerAuthenticationInfoListResponse instantiates a new InterServerAuthenticationInfoListResponse object
@@ -106,9 +106,9 @@ func (o *InterServerAuthenticationInfoListResponse) SetTotalResults(v float64) {
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *InterServerAuthenticationInfoListResponse) GetResources() []GetInterServerAuthenticationInfo200Response {
+func (o *InterServerAuthenticationInfoListResponse) GetResources() []InterServerAuthenticationInfoListResponseResourcesInner {
 	if o == nil || IsNil(o.Resources) {
-		var ret []GetInterServerAuthenticationInfo200Response
+		var ret []InterServerAuthenticationInfoListResponseResourcesInner
 		return ret
 	}
 	return o.Resources
@@ -116,7 +116,7 @@ func (o *InterServerAuthenticationInfoListResponse) GetResources() []GetInterSer
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InterServerAuthenticationInfoListResponse) GetResourcesOk() ([]GetInterServerAuthenticationInfo200Response, bool) {
+func (o *InterServerAuthenticationInfoListResponse) GetResourcesOk() ([]InterServerAuthenticationInfoListResponseResourcesInner, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *InterServerAuthenticationInfoListResponse) HasResources() bool {
 	return false
 }
 
-// SetResources gets a reference to the given []GetInterServerAuthenticationInfo200Response and assigns it to the Resources field.
-func (o *InterServerAuthenticationInfoListResponse) SetResources(v []GetInterServerAuthenticationInfo200Response) {
+// SetResources gets a reference to the given []InterServerAuthenticationInfoListResponseResourcesInner and assigns it to the Resources field.
+func (o *InterServerAuthenticationInfoListResponse) SetResources(v []InterServerAuthenticationInfoListResponseResourcesInner) {
 	o.Resources = v
 }
 

@@ -227,64 +227,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:uncached-attribute-criteria:default"
-    add-groovy-scripted-uncached-attribute-criteria-request:
-      allOf:
-      - type: object
-        properties:
-          criteriaName:
-            type: string
-            description: >-
-                Name of the new Uncached Attribute Criteria
-      - $ref: '#/components/schemas/groovy-scripted-uncached-attribute-criteria-shared'
-      required:
-      - criteriaName
-    groovy-scripted-uncached-attribute-criteria-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            type: string
-            description: >-
-                Name of the Uncached Attribute Criteria
-      - $ref: '#/components/schemas/groovy-scripted-uncached-attribute-criteria-shared'
-      - $ref: '#/components/schemas/meta'
-      required:
-      - id
-    groovy-scripted-uncached-attribute-criteria-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumgroovy-scripted-uncached-attribute-criteriaSchemaUrn'
-        scriptClass:
-          type: string
-          description: >-
-              The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Uncached Attribute Criteria.
-        scriptArgument:
-          type: array
-          items:
-            type: string
-          description: >-
-              The set of arguments used to customize the behavior for the Scripted Uncached Attribute Criteria. Each configuration property should be given in the form 'name=value'.
-        description:
-          type: string
-          description: >-
-              A description for this Uncached Attribute Criteria
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether this Uncached Attribute Criteria is enabled for use in the server.
-      required:
-      - schemas
-      - scriptClass
-      - enabled
-    Enumgroovy-scripted-uncached-attribute-criteriaSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:uncached-attribute-criteria:groovy-scripted"
     add-simple-uncached-attribute-criteria-request:
       allOf:
       - type: object
@@ -347,6 +289,64 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:uncached-attribute-criteria:simple"
+    add-groovy-scripted-uncached-attribute-criteria-request:
+      allOf:
+      - type: object
+        properties:
+          criteriaName:
+            type: string
+            description: >-
+                Name of the new Uncached Attribute Criteria
+      - $ref: '#/components/schemas/groovy-scripted-uncached-attribute-criteria-shared'
+      required:
+      - criteriaName
+    groovy-scripted-uncached-attribute-criteria-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the Uncached Attribute Criteria
+      - $ref: '#/components/schemas/groovy-scripted-uncached-attribute-criteria-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    groovy-scripted-uncached-attribute-criteria-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumgroovy-scripted-uncached-attribute-criteriaSchemaUrn'
+        scriptClass:
+          type: string
+          description: >-
+              The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Uncached Attribute Criteria.
+        scriptArgument:
+          type: array
+          items:
+            type: string
+          description: >-
+              The set of arguments used to customize the behavior for the Scripted Uncached Attribute Criteria. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: >-
+              A description for this Uncached Attribute Criteria
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether this Uncached Attribute Criteria is enabled for use in the server.
+      required:
+      - schemas
+      - scriptClass
+      - enabled
+    Enumgroovy-scripted-uncached-attribute-criteriaSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:uncached-attribute-criteria:groovy-scripted"
     add-third-party-uncached-attribute-criteria-request:
       allOf:
       - type: object
@@ -421,8 +421,8 @@ components:
           items:
             oneOf:
             - $ref: '#/components/schemas/default-uncached-attribute-criteria-response'
-            - $ref: '#/components/schemas/groovy-scripted-uncached-attribute-criteria-response'
             - $ref: '#/components/schemas/simple-uncached-attribute-criteria-response'
+            - $ref: '#/components/schemas/groovy-scripted-uncached-attribute-criteria-response'
             - $ref: '#/components/schemas/third-party-uncached-attribute-criteria-response'
     updateRequest:
       type: object

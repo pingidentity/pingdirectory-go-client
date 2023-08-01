@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | Pointer to **[]string** |  | [optional] 
 **TotalResults** | Pointer to **float64** |  | [optional] 
-**Resources** | Pointer to [**[]AddTrustManagerProvider200Response**](AddTrustManagerProvider200Response.md) |  | [optional] 
+**Resources** | Pointer to [**[]TrustManagerProviderListResponseResourcesInner**](TrustManagerProviderListResponseResourcesInner.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasTotalResults returns a boolean if a field has been set.
 
 ### GetResources
 
-`func (o *TrustManagerProviderListResponse) GetResources() []AddTrustManagerProvider200Response`
+`func (o *TrustManagerProviderListResponse) GetResources() []TrustManagerProviderListResponseResourcesInner`
 
 GetResources returns the Resources field if non-nil, zero value otherwise.
 
 ### GetResourcesOk
 
-`func (o *TrustManagerProviderListResponse) GetResourcesOk() (*[]AddTrustManagerProvider200Response, bool)`
+`func (o *TrustManagerProviderListResponse) GetResourcesOk() (*[]TrustManagerProviderListResponseResourcesInner, bool)`
 
 GetResourcesOk returns a tuple with the Resources field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResources
 
-`func (o *TrustManagerProviderListResponse) SetResources(v []AddTrustManagerProvider200Response)`
+`func (o *TrustManagerProviderListResponse) SetResources(v []TrustManagerProviderListResponseResourcesInner)`
 
 SetResources sets Resources field to given value.
 

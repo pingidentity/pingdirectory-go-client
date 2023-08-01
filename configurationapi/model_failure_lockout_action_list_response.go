@@ -19,9 +19,9 @@ var _ MappedNullable = &FailureLockoutActionListResponse{}
 
 // FailureLockoutActionListResponse struct for FailureLockoutActionListResponse
 type FailureLockoutActionListResponse struct {
-	Schemas      []string                             `json:"schemas,omitempty"`
-	TotalResults *float64                             `json:"totalResults,omitempty"`
-	Resources    []AddFailureLockoutAction200Response `json:"Resources,omitempty"`
+	Schemas      []string                                         `json:"schemas,omitempty"`
+	TotalResults *float64                                         `json:"totalResults,omitempty"`
+	Resources    []FailureLockoutActionListResponseResourcesInner `json:"Resources,omitempty"`
 }
 
 // NewFailureLockoutActionListResponse instantiates a new FailureLockoutActionListResponse object
@@ -106,9 +106,9 @@ func (o *FailureLockoutActionListResponse) SetTotalResults(v float64) {
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *FailureLockoutActionListResponse) GetResources() []AddFailureLockoutAction200Response {
+func (o *FailureLockoutActionListResponse) GetResources() []FailureLockoutActionListResponseResourcesInner {
 	if o == nil || IsNil(o.Resources) {
-		var ret []AddFailureLockoutAction200Response
+		var ret []FailureLockoutActionListResponseResourcesInner
 		return ret
 	}
 	return o.Resources
@@ -116,7 +116,7 @@ func (o *FailureLockoutActionListResponse) GetResources() []AddFailureLockoutAct
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FailureLockoutActionListResponse) GetResourcesOk() ([]AddFailureLockoutAction200Response, bool) {
+func (o *FailureLockoutActionListResponse) GetResourcesOk() ([]FailureLockoutActionListResponseResourcesInner, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *FailureLockoutActionListResponse) HasResources() bool {
 	return false
 }
 
-// SetResources gets a reference to the given []AddFailureLockoutAction200Response and assigns it to the Resources field.
-func (o *FailureLockoutActionListResponse) SetResources(v []AddFailureLockoutAction200Response) {
+// SetResources gets a reference to the given []FailureLockoutActionListResponseResourcesInner and assigns it to the Resources field.
+func (o *FailureLockoutActionListResponse) SetResources(v []FailureLockoutActionListResponseResourcesInner) {
 	o.Resources = v
 }
 

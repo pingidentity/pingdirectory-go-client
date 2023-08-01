@@ -178,6 +178,82 @@ paths:
       - key-manager-provider
 components:
   schemas:
+    add-pkcs11-key-manager-provider-request:
+      allOf:
+      - type: object
+        properties:
+          providerName:
+            type: string
+            description: >-
+                Name of the new Key Manager Provider
+      - $ref: '#/components/schemas/pkcs11-key-manager-provider-shared'
+      required:
+      - providerName
+    pkcs11-key-manager-provider-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the Key Manager Provider
+      - $ref: '#/components/schemas/pkcs11-key-manager-provider-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    pkcs11-key-manager-provider-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumpkcs11-key-manager-providerSchemaUrn'
+        pkcs11ProviderClass:
+          type: string
+          description: >-
+              The fully-qualified name of the Java security provider class that implements support for interacting with PKCS #11 tokens.
+        pkcs11ProviderConfigurationFile:
+          type: string
+          description: >-
+              The path to the file to use to configure the security provider that implements support for interacting with PKCS #11 tokens.
+        pkcs11KeyStoreType:
+          type: string
+          description: >-
+              The key store type to use when obtaining an instance of a key store for interacting with a PKCS #11 token.
+        pkcs11MaxCacheDuration:
+          type: string
+          description: >-
+              The maximum length of time that data retrieved from PKCS #11 tokens may be cached for reuse. Caching might be necessary if there is noticable latency when accessing the token, for example if the token uses a remote key store. A value of zero milliseconds indicates that no caching should be performed.
+        keyStorePin:
+          type: string
+          format: password
+          description: >-
+              Specifies the PIN needed to access the PKCS11 Key Manager Provider.
+        keyStorePinFile:
+          type: string
+          description: >-
+              Specifies the path to the text file whose only contents should be a single line containing the clear-text PIN needed to access the PKCS11 Key Manager Provider.
+        keyStorePinPassphraseProvider:
+          type: string
+          description: >-
+              The passphrase provider to use to obtain the clear-text PIN needed to access the PKCS11 Key Manager Provider.
+        description:
+          type: string
+          description: >-
+              A description for this Key Manager Provider
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the Key Manager Provider is enabled for use.
+      required:
+      - schemas
+      - enabled
+    Enumpkcs11-key-manager-providerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:key-manager-provider:pkcs11"
     add-file-based-key-manager-provider-request:
       allOf:
       - type: object
@@ -291,82 +367,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:key-manager-provider:custom"
-    add-pkcs11-key-manager-provider-request:
-      allOf:
-      - type: object
-        properties:
-          providerName:
-            type: string
-            description: >-
-                Name of the new Key Manager Provider
-      - $ref: '#/components/schemas/pkcs11-key-manager-provider-shared'
-      required:
-      - providerName
-    pkcs11-key-manager-provider-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            type: string
-            description: >-
-                Name of the Key Manager Provider
-      - $ref: '#/components/schemas/pkcs11-key-manager-provider-shared'
-      - $ref: '#/components/schemas/meta'
-      required:
-      - id
-    pkcs11-key-manager-provider-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumpkcs11-key-manager-providerSchemaUrn'
-        pkcs11ProviderClass:
-          type: string
-          description: >-
-              The fully-qualified name of the Java security provider class that implements support for interacting with PKCS #11 tokens.
-        pkcs11ProviderConfigurationFile:
-          type: string
-          description: >-
-              The path to the file to use to configure the security provider that implements support for interacting with PKCS #11 tokens.
-        pkcs11KeyStoreType:
-          type: string
-          description: >-
-              The key store type to use when obtaining an instance of a key store for interacting with a PKCS #11 token.
-        pkcs11MaxCacheDuration:
-          type: string
-          description: >-
-              The maximum length of time that data retrieved from PKCS #11 tokens may be cached for reuse. Caching might be necessary if there is noticable latency when accessing the token, for example if the token uses a remote key store. A value of zero milliseconds indicates that no caching should be performed.
-        keyStorePin:
-          type: string
-          format: password
-          description: >-
-              Specifies the PIN needed to access the PKCS11 Key Manager Provider.
-        keyStorePinFile:
-          type: string
-          description: >-
-              Specifies the path to the text file whose only contents should be a single line containing the clear-text PIN needed to access the PKCS11 Key Manager Provider.
-        keyStorePinPassphraseProvider:
-          type: string
-          description: >-
-              The passphrase provider to use to obtain the clear-text PIN needed to access the PKCS11 Key Manager Provider.
-        description:
-          type: string
-          description: >-
-              A description for this Key Manager Provider
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the Key Manager Provider is enabled for use.
-      required:
-      - schemas
-      - enabled
-    Enumpkcs11-key-manager-providerSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:key-manager-provider:pkcs11"
     add-third-party-key-manager-provider-request:
       allOf:
       - type: object
@@ -440,9 +440,9 @@ components:
           type: array
           items:
             oneOf:
+            - $ref: '#/components/schemas/pkcs11-key-manager-provider-response'
             - $ref: '#/components/schemas/file-based-key-manager-provider-response'
             - $ref: '#/components/schemas/custom-key-manager-provider-response'
-            - $ref: '#/components/schemas/pkcs11-key-manager-provider-response'
             - $ref: '#/components/schemas/third-party-key-manager-provider-response'
     updateRequest:
       type: object

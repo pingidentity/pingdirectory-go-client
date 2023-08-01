@@ -37,7 +37,7 @@ type NokiaProxyServerExternalServerResponse struct {
 	Password *string `json:"password,omitempty"`
 	// The passphrase provider to use to obtain the login password for the specified user.
 	PassphraseProvider   *string                                                    `json:"passphraseProvider,omitempty"`
-	ConnectionSecurity   EnumexternalServerConnectionSecurityProp                   `json:"connectionSecurity"`
+	ConnectionSecurity   EnumexternalServerNokiaProxyServerConnectionSecurityProp   `json:"connectionSecurity"`
 	AuthenticationMethod EnumexternalServerNokiaProxyServerAuthenticationMethodProp `json:"authenticationMethod"`
 	// Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
 	HealthCheckConnectTimeout *string `json:"healthCheckConnectTimeout,omitempty"`
@@ -70,7 +70,7 @@ type NokiaProxyServerExternalServerResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNokiaProxyServerExternalServerResponse(id string, schemas []EnumnokiaProxyServerExternalServerSchemaUrn, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, serverHostName string, serverPort int64, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerNokiaProxyServerAuthenticationMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string) *NokiaProxyServerExternalServerResponse {
+func NewNokiaProxyServerExternalServerResponse(id string, schemas []EnumnokiaProxyServerExternalServerSchemaUrn, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, serverHostName string, serverPort int64, connectionSecurity EnumexternalServerNokiaProxyServerConnectionSecurityProp, authenticationMethod EnumexternalServerNokiaProxyServerAuthenticationMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string) *NokiaProxyServerExternalServerResponse {
 	this := NokiaProxyServerExternalServerResponse{}
 	this.Id = id
 	this.Schemas = schemas
@@ -374,9 +374,9 @@ func (o *NokiaProxyServerExternalServerResponse) SetPassphraseProvider(v string)
 }
 
 // GetConnectionSecurity returns the ConnectionSecurity field value
-func (o *NokiaProxyServerExternalServerResponse) GetConnectionSecurity() EnumexternalServerConnectionSecurityProp {
+func (o *NokiaProxyServerExternalServerResponse) GetConnectionSecurity() EnumexternalServerNokiaProxyServerConnectionSecurityProp {
 	if o == nil {
-		var ret EnumexternalServerConnectionSecurityProp
+		var ret EnumexternalServerNokiaProxyServerConnectionSecurityProp
 		return ret
 	}
 
@@ -385,7 +385,7 @@ func (o *NokiaProxyServerExternalServerResponse) GetConnectionSecurity() Enumext
 
 // GetConnectionSecurityOk returns a tuple with the ConnectionSecurity field value
 // and a boolean to check if the value has been set.
-func (o *NokiaProxyServerExternalServerResponse) GetConnectionSecurityOk() (*EnumexternalServerConnectionSecurityProp, bool) {
+func (o *NokiaProxyServerExternalServerResponse) GetConnectionSecurityOk() (*EnumexternalServerNokiaProxyServerConnectionSecurityProp, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -393,7 +393,7 @@ func (o *NokiaProxyServerExternalServerResponse) GetConnectionSecurityOk() (*Enu
 }
 
 // SetConnectionSecurity sets field value
-func (o *NokiaProxyServerExternalServerResponse) SetConnectionSecurity(v EnumexternalServerConnectionSecurityProp) {
+func (o *NokiaProxyServerExternalServerResponse) SetConnectionSecurity(v EnumexternalServerNokiaProxyServerConnectionSecurityProp) {
 	o.ConnectionSecurity = v
 }
 

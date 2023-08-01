@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | Pointer to **[]string** |  | [optional] 
 **TotalResults** | Pointer to **float64** |  | [optional] 
-**Resources** | Pointer to [**[]AddRequestCriteria200Response**](AddRequestCriteria200Response.md) |  | [optional] 
+**Resources** | Pointer to [**[]RequestCriteriaListResponseResourcesInner**](RequestCriteriaListResponseResourcesInner.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasTotalResults returns a boolean if a field has been set.
 
 ### GetResources
 
-`func (o *RequestCriteriaListResponse) GetResources() []AddRequestCriteria200Response`
+`func (o *RequestCriteriaListResponse) GetResources() []RequestCriteriaListResponseResourcesInner`
 
 GetResources returns the Resources field if non-nil, zero value otherwise.
 
 ### GetResourcesOk
 
-`func (o *RequestCriteriaListResponse) GetResourcesOk() (*[]AddRequestCriteria200Response, bool)`
+`func (o *RequestCriteriaListResponse) GetResourcesOk() (*[]RequestCriteriaListResponseResourcesInner, bool)`
 
 GetResourcesOk returns a tuple with the Resources field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResources
 
-`func (o *RequestCriteriaListResponse) SetResources(v []AddRequestCriteria200Response)`
+`func (o *RequestCriteriaListResponse) SetResources(v []RequestCriteriaListResponseResourcesInner)`
 
 SetResources sets Resources field to given value.
 

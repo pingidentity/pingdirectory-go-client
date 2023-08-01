@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | Pointer to **[]string** |  | [optional] 
 **TotalResults** | Pointer to **float64** |  | [optional] 
-**Resources** | Pointer to [**[]FifoEntryCacheResponse**](FifoEntryCacheResponse.md) |  | [optional] 
+**Resources** | Pointer to [**[]EntryCacheListResponseResourcesInner**](EntryCacheListResponseResourcesInner.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasTotalResults returns a boolean if a field has been set.
 
 ### GetResources
 
-`func (o *EntryCacheListResponse) GetResources() []FifoEntryCacheResponse`
+`func (o *EntryCacheListResponse) GetResources() []EntryCacheListResponseResourcesInner`
 
 GetResources returns the Resources field if non-nil, zero value otherwise.
 
 ### GetResourcesOk
 
-`func (o *EntryCacheListResponse) GetResourcesOk() (*[]FifoEntryCacheResponse, bool)`
+`func (o *EntryCacheListResponse) GetResourcesOk() (*[]EntryCacheListResponseResourcesInner, bool)`
 
 GetResourcesOk returns a tuple with the Resources field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResources
 
-`func (o *EntryCacheListResponse) SetResources(v []FifoEntryCacheResponse)`
+`func (o *EntryCacheListResponse) SetResources(v []EntryCacheListResponseResourcesInner)`
 
 SetResources sets Resources field to given value.
 

@@ -19,9 +19,9 @@ var _ MappedNullable = &ChangeSubscriptionHandlerListResponse{}
 
 // ChangeSubscriptionHandlerListResponse struct for ChangeSubscriptionHandlerListResponse
 type ChangeSubscriptionHandlerListResponse struct {
-	Schemas      []string                                  `json:"schemas,omitempty"`
-	TotalResults *float64                                  `json:"totalResults,omitempty"`
-	Resources    []AddChangeSubscriptionHandler200Response `json:"Resources,omitempty"`
+	Schemas      []string                                              `json:"schemas,omitempty"`
+	TotalResults *float64                                              `json:"totalResults,omitempty"`
+	Resources    []ChangeSubscriptionHandlerListResponseResourcesInner `json:"Resources,omitempty"`
 }
 
 // NewChangeSubscriptionHandlerListResponse instantiates a new ChangeSubscriptionHandlerListResponse object
@@ -106,9 +106,9 @@ func (o *ChangeSubscriptionHandlerListResponse) SetTotalResults(v float64) {
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *ChangeSubscriptionHandlerListResponse) GetResources() []AddChangeSubscriptionHandler200Response {
+func (o *ChangeSubscriptionHandlerListResponse) GetResources() []ChangeSubscriptionHandlerListResponseResourcesInner {
 	if o == nil || IsNil(o.Resources) {
-		var ret []AddChangeSubscriptionHandler200Response
+		var ret []ChangeSubscriptionHandlerListResponseResourcesInner
 		return ret
 	}
 	return o.Resources
@@ -116,7 +116,7 @@ func (o *ChangeSubscriptionHandlerListResponse) GetResources() []AddChangeSubscr
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ChangeSubscriptionHandlerListResponse) GetResourcesOk() ([]AddChangeSubscriptionHandler200Response, bool) {
+func (o *ChangeSubscriptionHandlerListResponse) GetResourcesOk() ([]ChangeSubscriptionHandlerListResponseResourcesInner, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *ChangeSubscriptionHandlerListResponse) HasResources() bool {
 	return false
 }
 
-// SetResources gets a reference to the given []AddChangeSubscriptionHandler200Response and assigns it to the Resources field.
-func (o *ChangeSubscriptionHandlerListResponse) SetResources(v []AddChangeSubscriptionHandler200Response) {
+// SetResources gets a reference to the given []ChangeSubscriptionHandlerListResponseResourcesInner and assigns it to the Resources field.
+func (o *ChangeSubscriptionHandlerListResponse) SetResources(v []ChangeSubscriptionHandlerListResponseResourcesInner) {
 	o.Resources = v
 }
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | Pointer to **[]string** |  | [optional] 
 **TotalResults** | Pointer to **float64** |  | [optional] 
-**Resources** | Pointer to [**[]GetVirtualAttribute200Response**](GetVirtualAttribute200Response.md) |  | [optional] 
+**Resources** | Pointer to [**[]VirtualAttributeListResponseResourcesInner**](VirtualAttributeListResponseResourcesInner.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasTotalResults returns a boolean if a field has been set.
 
 ### GetResources
 
-`func (o *VirtualAttributeListResponse) GetResources() []GetVirtualAttribute200Response`
+`func (o *VirtualAttributeListResponse) GetResources() []VirtualAttributeListResponseResourcesInner`
 
 GetResources returns the Resources field if non-nil, zero value otherwise.
 
 ### GetResourcesOk
 
-`func (o *VirtualAttributeListResponse) GetResourcesOk() (*[]GetVirtualAttribute200Response, bool)`
+`func (o *VirtualAttributeListResponse) GetResourcesOk() (*[]VirtualAttributeListResponseResourcesInner, bool)`
 
 GetResourcesOk returns a tuple with the Resources field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResources
 
-`func (o *VirtualAttributeListResponse) SetResources(v []GetVirtualAttribute200Response)`
+`func (o *VirtualAttributeListResponse) SetResources(v []VirtualAttributeListResponseResourcesInner)`
 
 SetResources sets Resources field to given value.
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | Pointer to **[]string** |  | [optional] 
 **TotalResults** | Pointer to **float64** |  | [optional] 
-**Resources** | Pointer to [**[]GetHttpServletExtension200Response**](GetHttpServletExtension200Response.md) |  | [optional] 
+**Resources** | Pointer to [**[]HttpServletExtensionListResponseResourcesInner**](HttpServletExtensionListResponseResourcesInner.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasTotalResults returns a boolean if a field has been set.
 
 ### GetResources
 
-`func (o *HttpServletExtensionListResponse) GetResources() []GetHttpServletExtension200Response`
+`func (o *HttpServletExtensionListResponse) GetResources() []HttpServletExtensionListResponseResourcesInner`
 
 GetResources returns the Resources field if non-nil, zero value otherwise.
 
 ### GetResourcesOk
 
-`func (o *HttpServletExtensionListResponse) GetResourcesOk() (*[]GetHttpServletExtension200Response, bool)`
+`func (o *HttpServletExtensionListResponse) GetResourcesOk() (*[]HttpServletExtensionListResponseResourcesInner, bool)`
 
 GetResourcesOk returns a tuple with the Resources field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResources
 
-`func (o *HttpServletExtensionListResponse) SetResources(v []GetHttpServletExtension200Response)`
+`func (o *HttpServletExtensionListResponse) SetResources(v []HttpServletExtensionListResponseResourcesInner)`
 
 SetResources sets Resources field to given value.
 

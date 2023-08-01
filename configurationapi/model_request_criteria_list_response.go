@@ -19,9 +19,9 @@ var _ MappedNullable = &RequestCriteriaListResponse{}
 
 // RequestCriteriaListResponse struct for RequestCriteriaListResponse
 type RequestCriteriaListResponse struct {
-	Schemas      []string                        `json:"schemas,omitempty"`
-	TotalResults *float64                        `json:"totalResults,omitempty"`
-	Resources    []AddRequestCriteria200Response `json:"Resources,omitempty"`
+	Schemas      []string                                    `json:"schemas,omitempty"`
+	TotalResults *float64                                    `json:"totalResults,omitempty"`
+	Resources    []RequestCriteriaListResponseResourcesInner `json:"Resources,omitempty"`
 }
 
 // NewRequestCriteriaListResponse instantiates a new RequestCriteriaListResponse object
@@ -106,9 +106,9 @@ func (o *RequestCriteriaListResponse) SetTotalResults(v float64) {
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *RequestCriteriaListResponse) GetResources() []AddRequestCriteria200Response {
+func (o *RequestCriteriaListResponse) GetResources() []RequestCriteriaListResponseResourcesInner {
 	if o == nil || IsNil(o.Resources) {
-		var ret []AddRequestCriteria200Response
+		var ret []RequestCriteriaListResponseResourcesInner
 		return ret
 	}
 	return o.Resources
@@ -116,7 +116,7 @@ func (o *RequestCriteriaListResponse) GetResources() []AddRequestCriteria200Resp
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RequestCriteriaListResponse) GetResourcesOk() ([]AddRequestCriteria200Response, bool) {
+func (o *RequestCriteriaListResponse) GetResourcesOk() ([]RequestCriteriaListResponseResourcesInner, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *RequestCriteriaListResponse) HasResources() bool {
 	return false
 }
 
-// SetResources gets a reference to the given []AddRequestCriteria200Response and assigns it to the Resources field.
-func (o *RequestCriteriaListResponse) SetResources(v []AddRequestCriteria200Response) {
+// SetResources gets a reference to the given []RequestCriteriaListResponseResourcesInner and assigns it to the Resources field.
+func (o *RequestCriteriaListResponse) SetResources(v []RequestCriteriaListResponseResourcesInner) {
 	o.Resources = v
 }
 

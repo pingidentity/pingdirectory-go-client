@@ -19,9 +19,9 @@ var _ MappedNullable = &ExternalServerListResponse{}
 
 // ExternalServerListResponse struct for ExternalServerListResponse
 type ExternalServerListResponse struct {
-	Schemas      []string                       `json:"schemas,omitempty"`
-	TotalResults *float64                       `json:"totalResults,omitempty"`
-	Resources    []AddExternalServer200Response `json:"Resources,omitempty"`
+	Schemas      []string                                   `json:"schemas,omitempty"`
+	TotalResults *float64                                   `json:"totalResults,omitempty"`
+	Resources    []ExternalServerListResponseResourcesInner `json:"Resources,omitempty"`
 }
 
 // NewExternalServerListResponse instantiates a new ExternalServerListResponse object
@@ -106,9 +106,9 @@ func (o *ExternalServerListResponse) SetTotalResults(v float64) {
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *ExternalServerListResponse) GetResources() []AddExternalServer200Response {
+func (o *ExternalServerListResponse) GetResources() []ExternalServerListResponseResourcesInner {
 	if o == nil || IsNil(o.Resources) {
-		var ret []AddExternalServer200Response
+		var ret []ExternalServerListResponseResourcesInner
 		return ret
 	}
 	return o.Resources
@@ -116,7 +116,7 @@ func (o *ExternalServerListResponse) GetResources() []AddExternalServer200Respon
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ExternalServerListResponse) GetResourcesOk() ([]AddExternalServer200Response, bool) {
+func (o *ExternalServerListResponse) GetResourcesOk() ([]ExternalServerListResponseResourcesInner, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *ExternalServerListResponse) HasResources() bool {
 	return false
 }
 
-// SetResources gets a reference to the given []AddExternalServer200Response and assigns it to the Resources field.
-func (o *ExternalServerListResponse) SetResources(v []AddExternalServer200Response) {
+// SetResources gets a reference to the given []ExternalServerListResponseResourcesInner and assigns it to the Resources field.
+func (o *ExternalServerListResponse) SetResources(v []ExternalServerListResponseResourcesInner) {
 	o.Resources = v
 }
 

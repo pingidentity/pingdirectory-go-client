@@ -19,9 +19,9 @@ var _ MappedNullable = &ScimResourceTypeListResponse{}
 
 // ScimResourceTypeListResponse struct for ScimResourceTypeListResponse
 type ScimResourceTypeListResponse struct {
-	Schemas      []string                         `json:"schemas,omitempty"`
-	TotalResults *float64                         `json:"totalResults,omitempty"`
-	Resources    []AddScimResourceType200Response `json:"Resources,omitempty"`
+	Schemas      []string                                     `json:"schemas,omitempty"`
+	TotalResults *float64                                     `json:"totalResults,omitempty"`
+	Resources    []ScimResourceTypeListResponseResourcesInner `json:"Resources,omitempty"`
 }
 
 // NewScimResourceTypeListResponse instantiates a new ScimResourceTypeListResponse object
@@ -106,9 +106,9 @@ func (o *ScimResourceTypeListResponse) SetTotalResults(v float64) {
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *ScimResourceTypeListResponse) GetResources() []AddScimResourceType200Response {
+func (o *ScimResourceTypeListResponse) GetResources() []ScimResourceTypeListResponseResourcesInner {
 	if o == nil || IsNil(o.Resources) {
-		var ret []AddScimResourceType200Response
+		var ret []ScimResourceTypeListResponseResourcesInner
 		return ret
 	}
 	return o.Resources
@@ -116,7 +116,7 @@ func (o *ScimResourceTypeListResponse) GetResources() []AddScimResourceType200Re
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ScimResourceTypeListResponse) GetResourcesOk() ([]AddScimResourceType200Response, bool) {
+func (o *ScimResourceTypeListResponse) GetResourcesOk() ([]ScimResourceTypeListResponseResourcesInner, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *ScimResourceTypeListResponse) HasResources() bool {
 	return false
 }
 
-// SetResources gets a reference to the given []AddScimResourceType200Response and assigns it to the Resources field.
-func (o *ScimResourceTypeListResponse) SetResources(v []AddScimResourceType200Response) {
+// SetResources gets a reference to the given []ScimResourceTypeListResponseResourcesInner and assigns it to the Resources field.
+func (o *ScimResourceTypeListResponse) SetResources(v []ScimResourceTypeListResponseResourcesInner) {
 	o.Resources = v
 }
 

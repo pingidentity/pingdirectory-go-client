@@ -34,7 +34,7 @@ type LdapExternalServerResponse struct {
 	Password *string `json:"password,omitempty"`
 	// The passphrase provider to use to obtain the login password for the specified user.
 	PassphraseProvider      *string                                        `json:"passphraseProvider,omitempty"`
-	ConnectionSecurity      EnumexternalServerConnectionSecurityProp       `json:"connectionSecurity"`
+	ConnectionSecurity      EnumexternalServerLdapConnectionSecurityProp   `json:"connectionSecurity"`
 	AuthenticationMethod    EnumexternalServerLdapAuthenticationMethodProp `json:"authenticationMethod"`
 	VerifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp  `json:"verifyCredentialsMethod"`
 	// Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
@@ -68,7 +68,7 @@ type LdapExternalServerResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLdapExternalServerResponse(id string, schemas []EnumldapExternalServerSchemaUrn, serverHostName string, serverPort int64, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerLdapAuthenticationMethodProp, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string) *LdapExternalServerResponse {
+func NewLdapExternalServerResponse(id string, schemas []EnumldapExternalServerSchemaUrn, serverHostName string, serverPort int64, connectionSecurity EnumexternalServerLdapConnectionSecurityProp, authenticationMethod EnumexternalServerLdapAuthenticationMethodProp, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string) *LdapExternalServerResponse {
 	this := LdapExternalServerResponse{}
 	this.Id = id
 	this.Schemas = schemas
@@ -316,9 +316,9 @@ func (o *LdapExternalServerResponse) SetPassphraseProvider(v string) {
 }
 
 // GetConnectionSecurity returns the ConnectionSecurity field value
-func (o *LdapExternalServerResponse) GetConnectionSecurity() EnumexternalServerConnectionSecurityProp {
+func (o *LdapExternalServerResponse) GetConnectionSecurity() EnumexternalServerLdapConnectionSecurityProp {
 	if o == nil {
-		var ret EnumexternalServerConnectionSecurityProp
+		var ret EnumexternalServerLdapConnectionSecurityProp
 		return ret
 	}
 
@@ -327,7 +327,7 @@ func (o *LdapExternalServerResponse) GetConnectionSecurity() EnumexternalServerC
 
 // GetConnectionSecurityOk returns a tuple with the ConnectionSecurity field value
 // and a boolean to check if the value has been set.
-func (o *LdapExternalServerResponse) GetConnectionSecurityOk() (*EnumexternalServerConnectionSecurityProp, bool) {
+func (o *LdapExternalServerResponse) GetConnectionSecurityOk() (*EnumexternalServerLdapConnectionSecurityProp, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -335,7 +335,7 @@ func (o *LdapExternalServerResponse) GetConnectionSecurityOk() (*EnumexternalSer
 }
 
 // SetConnectionSecurity sets field value
-func (o *LdapExternalServerResponse) SetConnectionSecurity(v EnumexternalServerConnectionSecurityProp) {
+func (o *LdapExternalServerResponse) SetConnectionSecurity(v EnumexternalServerLdapConnectionSecurityProp) {
 	o.ConnectionSecurity = v
 }
 

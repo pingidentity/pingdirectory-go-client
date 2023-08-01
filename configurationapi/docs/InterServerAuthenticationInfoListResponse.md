@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | Pointer to **[]string** |  | [optional] 
 **TotalResults** | Pointer to **float64** |  | [optional] 
-**Resources** | Pointer to [**[]GetInterServerAuthenticationInfo200Response**](GetInterServerAuthenticationInfo200Response.md) |  | [optional] 
+**Resources** | Pointer to [**[]InterServerAuthenticationInfoListResponseResourcesInner**](InterServerAuthenticationInfoListResponseResourcesInner.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasTotalResults returns a boolean if a field has been set.
 
 ### GetResources
 
-`func (o *InterServerAuthenticationInfoListResponse) GetResources() []GetInterServerAuthenticationInfo200Response`
+`func (o *InterServerAuthenticationInfoListResponse) GetResources() []InterServerAuthenticationInfoListResponseResourcesInner`
 
 GetResources returns the Resources field if non-nil, zero value otherwise.
 
 ### GetResourcesOk
 
-`func (o *InterServerAuthenticationInfoListResponse) GetResourcesOk() (*[]GetInterServerAuthenticationInfo200Response, bool)`
+`func (o *InterServerAuthenticationInfoListResponse) GetResourcesOk() (*[]InterServerAuthenticationInfoListResponseResourcesInner, bool)`
 
 GetResourcesOk returns a tuple with the Resources field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResources
 
-`func (o *InterServerAuthenticationInfoListResponse) SetResources(v []GetInterServerAuthenticationInfo200Response)`
+`func (o *InterServerAuthenticationInfoListResponse) SetResources(v []InterServerAuthenticationInfoListResponseResourcesInner)`
 
 SetResources sets Resources field to given value.
 

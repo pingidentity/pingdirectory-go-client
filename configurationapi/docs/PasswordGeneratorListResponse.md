@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | Pointer to **[]string** |  | [optional] 
 **TotalResults** | Pointer to **float64** |  | [optional] 
-**Resources** | Pointer to [**[]AddPasswordGenerator200Response**](AddPasswordGenerator200Response.md) |  | [optional] 
+**Resources** | Pointer to [**[]PasswordGeneratorListResponseResourcesInner**](PasswordGeneratorListResponseResourcesInner.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasTotalResults returns a boolean if a field has been set.
 
 ### GetResources
 
-`func (o *PasswordGeneratorListResponse) GetResources() []AddPasswordGenerator200Response`
+`func (o *PasswordGeneratorListResponse) GetResources() []PasswordGeneratorListResponseResourcesInner`
 
 GetResources returns the Resources field if non-nil, zero value otherwise.
 
 ### GetResourcesOk
 
-`func (o *PasswordGeneratorListResponse) GetResourcesOk() (*[]AddPasswordGenerator200Response, bool)`
+`func (o *PasswordGeneratorListResponse) GetResourcesOk() (*[]PasswordGeneratorListResponseResourcesInner, bool)`
 
 GetResourcesOk returns a tuple with the Resources field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResources
 
-`func (o *PasswordGeneratorListResponse) SetResources(v []AddPasswordGenerator200Response)`
+`func (o *PasswordGeneratorListResponse) SetResources(v []PasswordGeneratorListResponseResourcesInner)`
 
 SetResources sets Resources field to given value.
 

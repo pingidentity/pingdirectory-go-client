@@ -19,9 +19,9 @@ var _ MappedNullable = &VaultAuthenticationMethodListResponse{}
 
 // VaultAuthenticationMethodListResponse struct for VaultAuthenticationMethodListResponse
 type VaultAuthenticationMethodListResponse struct {
-	Schemas      []string                                  `json:"schemas,omitempty"`
-	TotalResults *float64                                  `json:"totalResults,omitempty"`
-	Resources    []AddVaultAuthenticationMethod200Response `json:"Resources,omitempty"`
+	Schemas      []string                                              `json:"schemas,omitempty"`
+	TotalResults *float64                                              `json:"totalResults,omitempty"`
+	Resources    []VaultAuthenticationMethodListResponseResourcesInner `json:"Resources,omitempty"`
 }
 
 // NewVaultAuthenticationMethodListResponse instantiates a new VaultAuthenticationMethodListResponse object
@@ -106,9 +106,9 @@ func (o *VaultAuthenticationMethodListResponse) SetTotalResults(v float64) {
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *VaultAuthenticationMethodListResponse) GetResources() []AddVaultAuthenticationMethod200Response {
+func (o *VaultAuthenticationMethodListResponse) GetResources() []VaultAuthenticationMethodListResponseResourcesInner {
 	if o == nil || IsNil(o.Resources) {
-		var ret []AddVaultAuthenticationMethod200Response
+		var ret []VaultAuthenticationMethodListResponseResourcesInner
 		return ret
 	}
 	return o.Resources
@@ -116,7 +116,7 @@ func (o *VaultAuthenticationMethodListResponse) GetResources() []AddVaultAuthent
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VaultAuthenticationMethodListResponse) GetResourcesOk() ([]AddVaultAuthenticationMethod200Response, bool) {
+func (o *VaultAuthenticationMethodListResponse) GetResourcesOk() ([]VaultAuthenticationMethodListResponseResourcesInner, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *VaultAuthenticationMethodListResponse) HasResources() bool {
 	return false
 }
 
-// SetResources gets a reference to the given []AddVaultAuthenticationMethod200Response and assigns it to the Resources field.
-func (o *VaultAuthenticationMethodListResponse) SetResources(v []AddVaultAuthenticationMethod200Response) {
+// SetResources gets a reference to the given []VaultAuthenticationMethodListResponseResourcesInner and assigns it to the Resources field.
+func (o *VaultAuthenticationMethodListResponse) SetResources(v []VaultAuthenticationMethodListResponseResourcesInner) {
 	o.Resources = v
 }
 

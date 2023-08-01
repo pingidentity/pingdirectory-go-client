@@ -19,9 +19,9 @@ var _ MappedNullable = &BackendListResponse{}
 
 // BackendListResponse struct for BackendListResponse
 type BackendListResponse struct {
-	Schemas      []string                `json:"schemas,omitempty"`
-	TotalResults *float64                `json:"totalResults,omitempty"`
-	Resources    []GetBackend200Response `json:"Resources,omitempty"`
+	Schemas      []string                            `json:"schemas,omitempty"`
+	TotalResults *float64                            `json:"totalResults,omitempty"`
+	Resources    []BackendListResponseResourcesInner `json:"Resources,omitempty"`
 }
 
 // NewBackendListResponse instantiates a new BackendListResponse object
@@ -106,9 +106,9 @@ func (o *BackendListResponse) SetTotalResults(v float64) {
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *BackendListResponse) GetResources() []GetBackend200Response {
+func (o *BackendListResponse) GetResources() []BackendListResponseResourcesInner {
 	if o == nil || IsNil(o.Resources) {
-		var ret []GetBackend200Response
+		var ret []BackendListResponseResourcesInner
 		return ret
 	}
 	return o.Resources
@@ -116,7 +116,7 @@ func (o *BackendListResponse) GetResources() []GetBackend200Response {
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BackendListResponse) GetResourcesOk() ([]GetBackend200Response, bool) {
+func (o *BackendListResponse) GetResourcesOk() ([]BackendListResponseResourcesInner, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *BackendListResponse) HasResources() bool {
 	return false
 }
 
-// SetResources gets a reference to the given []GetBackend200Response and assigns it to the Resources field.
-func (o *BackendListResponse) SetResources(v []GetBackend200Response) {
+// SetResources gets a reference to the given []BackendListResponseResourcesInner and assigns it to the Resources field.
+func (o *BackendListResponse) SetResources(v []BackendListResponseResourcesInner) {
 	o.Resources = v
 }
 

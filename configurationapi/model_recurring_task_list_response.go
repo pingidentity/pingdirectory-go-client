@@ -19,9 +19,9 @@ var _ MappedNullable = &RecurringTaskListResponse{}
 
 // RecurringTaskListResponse struct for RecurringTaskListResponse
 type RecurringTaskListResponse struct {
-	Schemas      []string                      `json:"schemas,omitempty"`
-	TotalResults *float64                      `json:"totalResults,omitempty"`
-	Resources    []AddRecurringTask200Response `json:"Resources,omitempty"`
+	Schemas      []string                                  `json:"schemas,omitempty"`
+	TotalResults *float64                                  `json:"totalResults,omitempty"`
+	Resources    []RecurringTaskListResponseResourcesInner `json:"Resources,omitempty"`
 }
 
 // NewRecurringTaskListResponse instantiates a new RecurringTaskListResponse object
@@ -106,9 +106,9 @@ func (o *RecurringTaskListResponse) SetTotalResults(v float64) {
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *RecurringTaskListResponse) GetResources() []AddRecurringTask200Response {
+func (o *RecurringTaskListResponse) GetResources() []RecurringTaskListResponseResourcesInner {
 	if o == nil || IsNil(o.Resources) {
-		var ret []AddRecurringTask200Response
+		var ret []RecurringTaskListResponseResourcesInner
 		return ret
 	}
 	return o.Resources
@@ -116,7 +116,7 @@ func (o *RecurringTaskListResponse) GetResources() []AddRecurringTask200Response
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RecurringTaskListResponse) GetResourcesOk() ([]AddRecurringTask200Response, bool) {
+func (o *RecurringTaskListResponse) GetResourcesOk() ([]RecurringTaskListResponseResourcesInner, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *RecurringTaskListResponse) HasResources() bool {
 	return false
 }
 
-// SetResources gets a reference to the given []AddRecurringTask200Response and assigns it to the Resources field.
-func (o *RecurringTaskListResponse) SetResources(v []AddRecurringTask200Response) {
+// SetResources gets a reference to the given []RecurringTaskListResponseResourcesInner and assigns it to the Resources field.
+func (o *RecurringTaskListResponse) SetResources(v []RecurringTaskListResponseResourcesInner) {
 	o.Resources = v
 }
 

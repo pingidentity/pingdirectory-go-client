@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | Pointer to **[]string** |  | [optional] 
 **TotalResults** | Pointer to **float64** |  | [optional] 
-**Resources** | Pointer to [**[]GetMonitorProvider200Response**](GetMonitorProvider200Response.md) |  | [optional] 
+**Resources** | Pointer to [**[]MonitorProviderListResponseResourcesInner**](MonitorProviderListResponseResourcesInner.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasTotalResults returns a boolean if a field has been set.
 
 ### GetResources
 
-`func (o *MonitorProviderListResponse) GetResources() []GetMonitorProvider200Response`
+`func (o *MonitorProviderListResponse) GetResources() []MonitorProviderListResponseResourcesInner`
 
 GetResources returns the Resources field if non-nil, zero value otherwise.
 
 ### GetResourcesOk
 
-`func (o *MonitorProviderListResponse) GetResourcesOk() (*[]GetMonitorProvider200Response, bool)`
+`func (o *MonitorProviderListResponse) GetResourcesOk() (*[]MonitorProviderListResponseResourcesInner, bool)`
 
 GetResourcesOk returns a tuple with the Resources field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResources
 
-`func (o *MonitorProviderListResponse) SetResources(v []GetMonitorProvider200Response)`
+`func (o *MonitorProviderListResponse) SetResources(v []MonitorProviderListResponseResourcesInner)`
 
 SetResources sets Resources field to given value.
 

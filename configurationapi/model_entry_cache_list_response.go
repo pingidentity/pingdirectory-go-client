@@ -19,9 +19,9 @@ var _ MappedNullable = &EntryCacheListResponse{}
 
 // EntryCacheListResponse struct for EntryCacheListResponse
 type EntryCacheListResponse struct {
-	Schemas      []string                 `json:"schemas,omitempty"`
-	TotalResults *float64                 `json:"totalResults,omitempty"`
-	Resources    []FifoEntryCacheResponse `json:"Resources,omitempty"`
+	Schemas      []string                               `json:"schemas,omitempty"`
+	TotalResults *float64                               `json:"totalResults,omitempty"`
+	Resources    []EntryCacheListResponseResourcesInner `json:"Resources,omitempty"`
 }
 
 // NewEntryCacheListResponse instantiates a new EntryCacheListResponse object
@@ -106,9 +106,9 @@ func (o *EntryCacheListResponse) SetTotalResults(v float64) {
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *EntryCacheListResponse) GetResources() []FifoEntryCacheResponse {
+func (o *EntryCacheListResponse) GetResources() []EntryCacheListResponseResourcesInner {
 	if o == nil || IsNil(o.Resources) {
-		var ret []FifoEntryCacheResponse
+		var ret []EntryCacheListResponseResourcesInner
 		return ret
 	}
 	return o.Resources
@@ -116,7 +116,7 @@ func (o *EntryCacheListResponse) GetResources() []FifoEntryCacheResponse {
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EntryCacheListResponse) GetResourcesOk() ([]FifoEntryCacheResponse, bool) {
+func (o *EntryCacheListResponse) GetResourcesOk() ([]EntryCacheListResponseResourcesInner, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *EntryCacheListResponse) HasResources() bool {
 	return false
 }
 
-// SetResources gets a reference to the given []FifoEntryCacheResponse and assigns it to the Resources field.
-func (o *EntryCacheListResponse) SetResources(v []FifoEntryCacheResponse) {
+// SetResources gets a reference to the given []EntryCacheListResponseResourcesInner and assigns it to the Resources field.
+func (o *EntryCacheListResponse) SetResources(v []EntryCacheListResponseResourcesInner) {
 	o.Resources = v
 }
 

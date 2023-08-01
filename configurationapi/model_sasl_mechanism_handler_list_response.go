@@ -19,9 +19,9 @@ var _ MappedNullable = &SaslMechanismHandlerListResponse{}
 
 // SaslMechanismHandlerListResponse struct for SaslMechanismHandlerListResponse
 type SaslMechanismHandlerListResponse struct {
-	Schemas      []string                             `json:"schemas,omitempty"`
-	TotalResults *float64                             `json:"totalResults,omitempty"`
-	Resources    []GetSaslMechanismHandler200Response `json:"Resources,omitempty"`
+	Schemas      []string                                         `json:"schemas,omitempty"`
+	TotalResults *float64                                         `json:"totalResults,omitempty"`
+	Resources    []SaslMechanismHandlerListResponseResourcesInner `json:"Resources,omitempty"`
 }
 
 // NewSaslMechanismHandlerListResponse instantiates a new SaslMechanismHandlerListResponse object
@@ -106,9 +106,9 @@ func (o *SaslMechanismHandlerListResponse) SetTotalResults(v float64) {
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *SaslMechanismHandlerListResponse) GetResources() []GetSaslMechanismHandler200Response {
+func (o *SaslMechanismHandlerListResponse) GetResources() []SaslMechanismHandlerListResponseResourcesInner {
 	if o == nil || IsNil(o.Resources) {
-		var ret []GetSaslMechanismHandler200Response
+		var ret []SaslMechanismHandlerListResponseResourcesInner
 		return ret
 	}
 	return o.Resources
@@ -116,7 +116,7 @@ func (o *SaslMechanismHandlerListResponse) GetResources() []GetSaslMechanismHand
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SaslMechanismHandlerListResponse) GetResourcesOk() ([]GetSaslMechanismHandler200Response, bool) {
+func (o *SaslMechanismHandlerListResponse) GetResourcesOk() ([]SaslMechanismHandlerListResponseResourcesInner, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *SaslMechanismHandlerListResponse) HasResources() bool {
 	return false
 }
 
-// SetResources gets a reference to the given []GetSaslMechanismHandler200Response and assigns it to the Resources field.
-func (o *SaslMechanismHandlerListResponse) SetResources(v []GetSaslMechanismHandler200Response) {
+// SetResources gets a reference to the given []SaslMechanismHandlerListResponseResourcesInner and assigns it to the Resources field.
+func (o *SaslMechanismHandlerListResponse) SetResources(v []SaslMechanismHandlerListResponseResourcesInner) {
 	o.Resources = v
 }
 

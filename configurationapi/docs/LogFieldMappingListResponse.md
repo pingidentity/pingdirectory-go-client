@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | Pointer to **[]string** |  | [optional] 
 **TotalResults** | Pointer to **float64** |  | [optional] 
-**Resources** | Pointer to [**[]AddLogFieldMapping200Response**](AddLogFieldMapping200Response.md) |  | [optional] 
+**Resources** | Pointer to [**[]LogFieldMappingListResponseResourcesInner**](LogFieldMappingListResponseResourcesInner.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasTotalResults returns a boolean if a field has been set.
 
 ### GetResources
 
-`func (o *LogFieldMappingListResponse) GetResources() []AddLogFieldMapping200Response`
+`func (o *LogFieldMappingListResponse) GetResources() []LogFieldMappingListResponseResourcesInner`
 
 GetResources returns the Resources field if non-nil, zero value otherwise.
 
 ### GetResourcesOk
 
-`func (o *LogFieldMappingListResponse) GetResourcesOk() (*[]AddLogFieldMapping200Response, bool)`
+`func (o *LogFieldMappingListResponse) GetResourcesOk() (*[]LogFieldMappingListResponseResourcesInner, bool)`
 
 GetResourcesOk returns a tuple with the Resources field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResources
 
-`func (o *LogFieldMappingListResponse) SetResources(v []AddLogFieldMapping200Response)`
+`func (o *LogFieldMappingListResponse) SetResources(v []LogFieldMappingListResponseResourcesInner)`
 
 SetResources sets Resources field to given value.
 

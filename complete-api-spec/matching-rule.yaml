@@ -118,60 +118,6 @@ paths:
       - matching-rule
 components:
   schemas:
-    ordering-matching-rule-response:
-      allOf:
-      - type: object
-        properties:
-          schemas:
-            type: array
-            minItems: 1
-            maxItems: 1
-            items:
-              $ref: '#/components/schemas/Enumordering-matching-ruleSchemaUrn'
-          id:
-            type: string
-            description: >-
-                Name of the Matching Rule
-          enabled:
-            type: boolean
-            description: >-
-                Indicates whether the Matching Rule is enabled for use.
-      - $ref: '#/components/schemas/meta'
-      required:
-      - id
-      - schemas
-      - enabled
-    Enumordering-matching-ruleSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:matching-rule:ordering"
-    approximate-matching-rule-response:
-      allOf:
-      - type: object
-        properties:
-          schemas:
-            type: array
-            minItems: 1
-            maxItems: 1
-            items:
-              $ref: '#/components/schemas/Enumapproximate-matching-ruleSchemaUrn'
-          id:
-            type: string
-            description: >-
-                Name of the Matching Rule
-          enabled:
-            type: boolean
-            description: >-
-                Indicates whether the Matching Rule is enabled for use.
-      - $ref: '#/components/schemas/meta'
-      required:
-      - id
-      - schemas
-      - enabled
-    Enumapproximate-matching-ruleSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:matching-rule:approximate"
     equality-matching-rule-response:
       allOf:
       - type: object
@@ -199,6 +145,33 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:matching-rule:equality"
+    ordering-matching-rule-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumordering-matching-ruleSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Matching Rule
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Matching Rule is enabled for use.
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
+    Enumordering-matching-ruleSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:matching-rule:ordering"
     substring-matching-rule-response:
       allOf:
       - type: object
@@ -253,6 +226,33 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:matching-rule:generic"
+    approximate-matching-rule-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumapproximate-matching-ruleSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Matching Rule
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Matching Rule is enabled for use.
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
+    Enumapproximate-matching-ruleSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:matching-rule:approximate"
     matching-ruleListResponse:
       type: object
       properties:
@@ -268,11 +268,11 @@ components:
           type: array
           items:
             oneOf:
-            - $ref: '#/components/schemas/ordering-matching-rule-response'
-            - $ref: '#/components/schemas/approximate-matching-rule-response'
             - $ref: '#/components/schemas/equality-matching-rule-response'
+            - $ref: '#/components/schemas/ordering-matching-rule-response'
             - $ref: '#/components/schemas/substring-matching-rule-response'
             - $ref: '#/components/schemas/generic-matching-rule-response'
+            - $ref: '#/components/schemas/approximate-matching-rule-response'
     updateRequest:
       type: object
       properties:

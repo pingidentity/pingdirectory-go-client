@@ -227,6 +227,49 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:trust-manager-provider:blind"
+    add-jvm-default-trust-manager-provider-request:
+      allOf:
+      - type: object
+        properties:
+          providerName:
+            type: string
+            description: >-
+                Name of the new Trust Manager Provider
+      - $ref: '#/components/schemas/jvm-default-trust-manager-provider-shared'
+      required:
+      - providerName
+    jvm-default-trust-manager-provider-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the Trust Manager Provider
+      - $ref: '#/components/schemas/jvm-default-trust-manager-provider-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    jvm-default-trust-manager-provider-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumjvm-default-trust-manager-providerSchemaUrn'
+        enabled:
+          type: boolean
+          description: >-
+              Indicate whether the Trust Manager Provider is enabled for use.
+      required:
+      - schemas
+      - enabled
+    Enumjvm-default-trust-manager-providerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:trust-manager-provider:jvm-default"
     add-file-based-trust-manager-provider-request:
       allOf:
       - type: object
@@ -296,49 +339,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:trust-manager-provider:file-based"
-    add-jvm-default-trust-manager-provider-request:
-      allOf:
-      - type: object
-        properties:
-          providerName:
-            type: string
-            description: >-
-                Name of the new Trust Manager Provider
-      - $ref: '#/components/schemas/jvm-default-trust-manager-provider-shared'
-      required:
-      - providerName
-    jvm-default-trust-manager-provider-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            type: string
-            description: >-
-                Name of the Trust Manager Provider
-      - $ref: '#/components/schemas/jvm-default-trust-manager-provider-shared'
-      - $ref: '#/components/schemas/meta'
-      required:
-      - id
-    jvm-default-trust-manager-provider-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumjvm-default-trust-manager-providerSchemaUrn'
-        enabled:
-          type: boolean
-          description: >-
-              Indicate whether the Trust Manager Provider is enabled for use.
-      required:
-      - schemas
-      - enabled
-    Enumjvm-default-trust-manager-providerSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:trust-manager-provider:jvm-default"
     add-third-party-trust-manager-provider-request:
       allOf:
       - type: object
@@ -413,8 +413,8 @@ components:
           items:
             oneOf:
             - $ref: '#/components/schemas/blind-trust-manager-provider-response'
-            - $ref: '#/components/schemas/file-based-trust-manager-provider-response'
             - $ref: '#/components/schemas/jvm-default-trust-manager-provider-response'
+            - $ref: '#/components/schemas/file-based-trust-manager-provider-response'
             - $ref: '#/components/schemas/third-party-trust-manager-provider-response'
     updateRequest:
       type: object

@@ -308,6 +308,68 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:unboundid-totp"
+    unboundid-inter-server-sasl-mechanism-handler-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumunboundid-inter-server-sasl-mechanism-handlerSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the SASL Mechanism Handler
+          description:
+            type: string
+            description: >-
+                A description for this SASL Mechanism Handler
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the SASL mechanism handler is enabled for use.
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
+    Enumunboundid-inter-server-sasl-mechanism-handlerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:unboundid-inter-server"
+    ping-identity-inter-server-sasl-mechanism-handler-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumping-identity-inter-server-sasl-mechanism-handlerSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the SASL Mechanism Handler
+          description:
+            type: string
+            description: >-
+                A description for this SASL Mechanism Handler
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the SASL mechanism handler is enabled for use.
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
+    Enumping-identity-inter-server-sasl-mechanism-handlerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:ping-identity-inter-server"
     unboundid-yubikey-otp-sasl-mechanism-handler-response:
       allOf:
       - type: object
@@ -972,6 +1034,8 @@ components:
             oneOf:
             - $ref: '#/components/schemas/unboundid-ms-chap-v2-sasl-mechanism-handler-response'
             - $ref: '#/components/schemas/unboundid-totp-sasl-mechanism-handler-response'
+            - $ref: '#/components/schemas/unboundid-inter-server-sasl-mechanism-handler-response'
+            - $ref: '#/components/schemas/ping-identity-inter-server-sasl-mechanism-handler-response'
             - $ref: '#/components/schemas/unboundid-yubikey-otp-sasl-mechanism-handler-response'
             - $ref: '#/components/schemas/external-sasl-mechanism-handler-response'
             - $ref: '#/components/schemas/digest-md5-sasl-mechanism-handler-response'

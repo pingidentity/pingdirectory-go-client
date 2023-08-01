@@ -37,7 +37,7 @@ type AddNokiaProxyServerExternalServerRequest struct {
 	Password *string `json:"password,omitempty"`
 	// The passphrase provider to use to obtain the login password for the specified user.
 	PassphraseProvider   *string                                                     `json:"passphraseProvider,omitempty"`
-	ConnectionSecurity   *EnumexternalServerConnectionSecurityProp                   `json:"connectionSecurity,omitempty"`
+	ConnectionSecurity   *EnumexternalServerNokiaProxyServerConnectionSecurityProp   `json:"connectionSecurity,omitempty"`
 	AuthenticationMethod *EnumexternalServerNokiaProxyServerAuthenticationMethodProp `json:"authenticationMethod,omitempty"`
 	// Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
 	HealthCheckConnectTimeout *string `json:"healthCheckConnectTimeout,omitempty"`
@@ -381,9 +381,9 @@ func (o *AddNokiaProxyServerExternalServerRequest) SetPassphraseProvider(v strin
 }
 
 // GetConnectionSecurity returns the ConnectionSecurity field value if set, zero value otherwise.
-func (o *AddNokiaProxyServerExternalServerRequest) GetConnectionSecurity() EnumexternalServerConnectionSecurityProp {
+func (o *AddNokiaProxyServerExternalServerRequest) GetConnectionSecurity() EnumexternalServerNokiaProxyServerConnectionSecurityProp {
 	if o == nil || IsNil(o.ConnectionSecurity) {
-		var ret EnumexternalServerConnectionSecurityProp
+		var ret EnumexternalServerNokiaProxyServerConnectionSecurityProp
 		return ret
 	}
 	return *o.ConnectionSecurity
@@ -391,7 +391,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetConnectionSecurity() Enume
 
 // GetConnectionSecurityOk returns a tuple with the ConnectionSecurity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddNokiaProxyServerExternalServerRequest) GetConnectionSecurityOk() (*EnumexternalServerConnectionSecurityProp, bool) {
+func (o *AddNokiaProxyServerExternalServerRequest) GetConnectionSecurityOk() (*EnumexternalServerNokiaProxyServerConnectionSecurityProp, bool) {
 	if o == nil || IsNil(o.ConnectionSecurity) {
 		return nil, false
 	}
@@ -407,8 +407,8 @@ func (o *AddNokiaProxyServerExternalServerRequest) HasConnectionSecurity() bool 
 	return false
 }
 
-// SetConnectionSecurity gets a reference to the given EnumexternalServerConnectionSecurityProp and assigns it to the ConnectionSecurity field.
-func (o *AddNokiaProxyServerExternalServerRequest) SetConnectionSecurity(v EnumexternalServerConnectionSecurityProp) {
+// SetConnectionSecurity gets a reference to the given EnumexternalServerNokiaProxyServerConnectionSecurityProp and assigns it to the ConnectionSecurity field.
+func (o *AddNokiaProxyServerExternalServerRequest) SetConnectionSecurity(v EnumexternalServerNokiaProxyServerConnectionSecurityProp) {
 	o.ConnectionSecurity = &v
 }
 

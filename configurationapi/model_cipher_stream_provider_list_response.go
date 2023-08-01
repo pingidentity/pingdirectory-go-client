@@ -19,9 +19,9 @@ var _ MappedNullable = &CipherStreamProviderListResponse{}
 
 // CipherStreamProviderListResponse struct for CipherStreamProviderListResponse
 type CipherStreamProviderListResponse struct {
-	Schemas      []string                             `json:"schemas,omitempty"`
-	TotalResults *float64                             `json:"totalResults,omitempty"`
-	Resources    []AddCipherStreamProvider200Response `json:"Resources,omitempty"`
+	Schemas      []string                                         `json:"schemas,omitempty"`
+	TotalResults *float64                                         `json:"totalResults,omitempty"`
+	Resources    []CipherStreamProviderListResponseResourcesInner `json:"Resources,omitempty"`
 }
 
 // NewCipherStreamProviderListResponse instantiates a new CipherStreamProviderListResponse object
@@ -106,9 +106,9 @@ func (o *CipherStreamProviderListResponse) SetTotalResults(v float64) {
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *CipherStreamProviderListResponse) GetResources() []AddCipherStreamProvider200Response {
+func (o *CipherStreamProviderListResponse) GetResources() []CipherStreamProviderListResponseResourcesInner {
 	if o == nil || IsNil(o.Resources) {
-		var ret []AddCipherStreamProvider200Response
+		var ret []CipherStreamProviderListResponseResourcesInner
 		return ret
 	}
 	return o.Resources
@@ -116,7 +116,7 @@ func (o *CipherStreamProviderListResponse) GetResources() []AddCipherStreamProvi
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CipherStreamProviderListResponse) GetResourcesOk() ([]AddCipherStreamProvider200Response, bool) {
+func (o *CipherStreamProviderListResponse) GetResourcesOk() ([]CipherStreamProviderListResponseResourcesInner, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *CipherStreamProviderListResponse) HasResources() bool {
 	return false
 }
 
-// SetResources gets a reference to the given []AddCipherStreamProvider200Response and assigns it to the Resources field.
-func (o *CipherStreamProviderListResponse) SetResources(v []AddCipherStreamProvider200Response) {
+// SetResources gets a reference to the given []CipherStreamProviderListResponseResourcesInner and assigns it to the Resources field.
+func (o *CipherStreamProviderListResponse) SetResources(v []CipherStreamProviderListResponseResourcesInner) {
 	o.Resources = v
 }
 

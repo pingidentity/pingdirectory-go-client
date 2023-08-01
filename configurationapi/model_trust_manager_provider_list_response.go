@@ -19,9 +19,9 @@ var _ MappedNullable = &TrustManagerProviderListResponse{}
 
 // TrustManagerProviderListResponse struct for TrustManagerProviderListResponse
 type TrustManagerProviderListResponse struct {
-	Schemas      []string                             `json:"schemas,omitempty"`
-	TotalResults *float64                             `json:"totalResults,omitempty"`
-	Resources    []AddTrustManagerProvider200Response `json:"Resources,omitempty"`
+	Schemas      []string                                         `json:"schemas,omitempty"`
+	TotalResults *float64                                         `json:"totalResults,omitempty"`
+	Resources    []TrustManagerProviderListResponseResourcesInner `json:"Resources,omitempty"`
 }
 
 // NewTrustManagerProviderListResponse instantiates a new TrustManagerProviderListResponse object
@@ -106,9 +106,9 @@ func (o *TrustManagerProviderListResponse) SetTotalResults(v float64) {
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *TrustManagerProviderListResponse) GetResources() []AddTrustManagerProvider200Response {
+func (o *TrustManagerProviderListResponse) GetResources() []TrustManagerProviderListResponseResourcesInner {
 	if o == nil || IsNil(o.Resources) {
-		var ret []AddTrustManagerProvider200Response
+		var ret []TrustManagerProviderListResponseResourcesInner
 		return ret
 	}
 	return o.Resources
@@ -116,7 +116,7 @@ func (o *TrustManagerProviderListResponse) GetResources() []AddTrustManagerProvi
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrustManagerProviderListResponse) GetResourcesOk() ([]AddTrustManagerProvider200Response, bool) {
+func (o *TrustManagerProviderListResponse) GetResourcesOk() ([]TrustManagerProviderListResponseResourcesInner, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *TrustManagerProviderListResponse) HasResources() bool {
 	return false
 }
 
-// SetResources gets a reference to the given []AddTrustManagerProvider200Response and assigns it to the Resources field.
-func (o *TrustManagerProviderListResponse) SetResources(v []AddTrustManagerProvider200Response) {
+// SetResources gets a reference to the given []TrustManagerProviderListResponseResourcesInner and assigns it to the Resources field.
+func (o *TrustManagerProviderListResponse) SetResources(v []TrustManagerProviderListResponseResourcesInner) {
 	o.Resources = v
 }
 

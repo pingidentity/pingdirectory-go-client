@@ -19,9 +19,9 @@ var _ MappedNullable = &LogPublisherListResponse{}
 
 // LogPublisherListResponse struct for LogPublisherListResponse
 type LogPublisherListResponse struct {
-	Schemas      []string                     `json:"schemas,omitempty"`
-	TotalResults *float64                     `json:"totalResults,omitempty"`
-	Resources    []GetLogPublisher200Response `json:"Resources,omitempty"`
+	Schemas      []string                                 `json:"schemas,omitempty"`
+	TotalResults *float64                                 `json:"totalResults,omitempty"`
+	Resources    []LogPublisherListResponseResourcesInner `json:"Resources,omitempty"`
 }
 
 // NewLogPublisherListResponse instantiates a new LogPublisherListResponse object
@@ -106,9 +106,9 @@ func (o *LogPublisherListResponse) SetTotalResults(v float64) {
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *LogPublisherListResponse) GetResources() []GetLogPublisher200Response {
+func (o *LogPublisherListResponse) GetResources() []LogPublisherListResponseResourcesInner {
 	if o == nil || IsNil(o.Resources) {
-		var ret []GetLogPublisher200Response
+		var ret []LogPublisherListResponseResourcesInner
 		return ret
 	}
 	return o.Resources
@@ -116,7 +116,7 @@ func (o *LogPublisherListResponse) GetResources() []GetLogPublisher200Response {
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LogPublisherListResponse) GetResourcesOk() ([]GetLogPublisher200Response, bool) {
+func (o *LogPublisherListResponse) GetResourcesOk() ([]LogPublisherListResponseResourcesInner, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *LogPublisherListResponse) HasResources() bool {
 	return false
 }
 
-// SetResources gets a reference to the given []GetLogPublisher200Response and assigns it to the Resources field.
-func (o *LogPublisherListResponse) SetResources(v []GetLogPublisher200Response) {
+// SetResources gets a reference to the given []LogPublisherListResponseResourcesInner and assigns it to the Resources field.
+func (o *LogPublisherListResponse) SetResources(v []LogPublisherListResponseResourcesInner) {
 	o.Resources = v
 }
 

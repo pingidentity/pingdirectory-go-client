@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | Pointer to **[]string** |  | [optional] 
 **TotalResults** | Pointer to **float64** |  | [optional] 
-**Resources** | Pointer to [**[]AddScimResourceType200Response**](AddScimResourceType200Response.md) |  | [optional] 
+**Resources** | Pointer to [**[]ScimResourceTypeListResponseResourcesInner**](ScimResourceTypeListResponseResourcesInner.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasTotalResults returns a boolean if a field has been set.
 
 ### GetResources
 
-`func (o *ScimResourceTypeListResponse) GetResources() []AddScimResourceType200Response`
+`func (o *ScimResourceTypeListResponse) GetResources() []ScimResourceTypeListResponseResourcesInner`
 
 GetResources returns the Resources field if non-nil, zero value otherwise.
 
 ### GetResourcesOk
 
-`func (o *ScimResourceTypeListResponse) GetResourcesOk() (*[]AddScimResourceType200Response, bool)`
+`func (o *ScimResourceTypeListResponse) GetResourcesOk() (*[]ScimResourceTypeListResponseResourcesInner, bool)`
 
 GetResourcesOk returns a tuple with the Resources field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResources
 
-`func (o *ScimResourceTypeListResponse) SetResources(v []AddScimResourceType200Response)`
+`func (o *ScimResourceTypeListResponse) SetResources(v []ScimResourceTypeListResponseResourcesInner)`
 
 SetResources sets Resources field to given value.
 

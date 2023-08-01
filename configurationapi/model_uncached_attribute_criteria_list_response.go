@@ -19,9 +19,9 @@ var _ MappedNullable = &UncachedAttributeCriteriaListResponse{}
 
 // UncachedAttributeCriteriaListResponse struct for UncachedAttributeCriteriaListResponse
 type UncachedAttributeCriteriaListResponse struct {
-	Schemas      []string                                  `json:"schemas,omitempty"`
-	TotalResults *float64                                  `json:"totalResults,omitempty"`
-	Resources    []AddUncachedAttributeCriteria200Response `json:"Resources,omitempty"`
+	Schemas      []string                                              `json:"schemas,omitempty"`
+	TotalResults *float64                                              `json:"totalResults,omitempty"`
+	Resources    []UncachedAttributeCriteriaListResponseResourcesInner `json:"Resources,omitempty"`
 }
 
 // NewUncachedAttributeCriteriaListResponse instantiates a new UncachedAttributeCriteriaListResponse object
@@ -106,9 +106,9 @@ func (o *UncachedAttributeCriteriaListResponse) SetTotalResults(v float64) {
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *UncachedAttributeCriteriaListResponse) GetResources() []AddUncachedAttributeCriteria200Response {
+func (o *UncachedAttributeCriteriaListResponse) GetResources() []UncachedAttributeCriteriaListResponseResourcesInner {
 	if o == nil || IsNil(o.Resources) {
-		var ret []AddUncachedAttributeCriteria200Response
+		var ret []UncachedAttributeCriteriaListResponseResourcesInner
 		return ret
 	}
 	return o.Resources
@@ -116,7 +116,7 @@ func (o *UncachedAttributeCriteriaListResponse) GetResources() []AddUncachedAttr
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UncachedAttributeCriteriaListResponse) GetResourcesOk() ([]AddUncachedAttributeCriteria200Response, bool) {
+func (o *UncachedAttributeCriteriaListResponse) GetResourcesOk() ([]UncachedAttributeCriteriaListResponseResourcesInner, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *UncachedAttributeCriteriaListResponse) HasResources() bool {
 	return false
 }
 
-// SetResources gets a reference to the given []AddUncachedAttributeCriteria200Response and assigns it to the Resources field.
-func (o *UncachedAttributeCriteriaListResponse) SetResources(v []AddUncachedAttributeCriteria200Response) {
+// SetResources gets a reference to the given []UncachedAttributeCriteriaListResponseResourcesInner and assigns it to the Resources field.
+func (o *UncachedAttributeCriteriaListResponse) SetResources(v []UncachedAttributeCriteriaListResponseResourcesInner) {
 	o.Resources = v
 }
 

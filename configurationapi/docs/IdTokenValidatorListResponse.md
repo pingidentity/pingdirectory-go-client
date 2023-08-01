@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | Pointer to **[]string** |  | [optional] 
 **TotalResults** | Pointer to **float64** |  | [optional] 
-**Resources** | Pointer to [**[]AddIdTokenValidator200Response**](AddIdTokenValidator200Response.md) |  | [optional] 
+**Resources** | Pointer to [**[]IdTokenValidatorListResponseResourcesInner**](IdTokenValidatorListResponseResourcesInner.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasTotalResults returns a boolean if a field has been set.
 
 ### GetResources
 
-`func (o *IdTokenValidatorListResponse) GetResources() []AddIdTokenValidator200Response`
+`func (o *IdTokenValidatorListResponse) GetResources() []IdTokenValidatorListResponseResourcesInner`
 
 GetResources returns the Resources field if non-nil, zero value otherwise.
 
 ### GetResourcesOk
 
-`func (o *IdTokenValidatorListResponse) GetResourcesOk() (*[]AddIdTokenValidator200Response, bool)`
+`func (o *IdTokenValidatorListResponse) GetResourcesOk() (*[]IdTokenValidatorListResponseResourcesInner, bool)`
 
 GetResourcesOk returns a tuple with the Resources field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResources
 
-`func (o *IdTokenValidatorListResponse) SetResources(v []AddIdTokenValidator200Response)`
+`func (o *IdTokenValidatorListResponse) SetResources(v []IdTokenValidatorListResponseResourcesInner)`
 
 SetResources sets Resources field to given value.
 

@@ -19,9 +19,9 @@ var _ MappedNullable = &MatchingRuleListResponse{}
 
 // MatchingRuleListResponse struct for MatchingRuleListResponse
 type MatchingRuleListResponse struct {
-	Schemas      []string                     `json:"schemas,omitempty"`
-	TotalResults *float64                     `json:"totalResults,omitempty"`
-	Resources    []GetMatchingRule200Response `json:"Resources,omitempty"`
+	Schemas      []string                                 `json:"schemas,omitempty"`
+	TotalResults *float64                                 `json:"totalResults,omitempty"`
+	Resources    []MatchingRuleListResponseResourcesInner `json:"Resources,omitempty"`
 }
 
 // NewMatchingRuleListResponse instantiates a new MatchingRuleListResponse object
@@ -106,9 +106,9 @@ func (o *MatchingRuleListResponse) SetTotalResults(v float64) {
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *MatchingRuleListResponse) GetResources() []GetMatchingRule200Response {
+func (o *MatchingRuleListResponse) GetResources() []MatchingRuleListResponseResourcesInner {
 	if o == nil || IsNil(o.Resources) {
-		var ret []GetMatchingRule200Response
+		var ret []MatchingRuleListResponseResourcesInner
 		return ret
 	}
 	return o.Resources
@@ -116,7 +116,7 @@ func (o *MatchingRuleListResponse) GetResources() []GetMatchingRule200Response {
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MatchingRuleListResponse) GetResourcesOk() ([]GetMatchingRule200Response, bool) {
+func (o *MatchingRuleListResponse) GetResourcesOk() ([]MatchingRuleListResponseResourcesInner, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *MatchingRuleListResponse) HasResources() bool {
 	return false
 }
 
-// SetResources gets a reference to the given []GetMatchingRule200Response and assigns it to the Resources field.
-func (o *MatchingRuleListResponse) SetResources(v []GetMatchingRule200Response) {
+// SetResources gets a reference to the given []MatchingRuleListResponseResourcesInner and assigns it to the Resources field.
+func (o *MatchingRuleListResponse) SetResources(v []MatchingRuleListResponseResourcesInner) {
 	o.Resources = v
 }
 

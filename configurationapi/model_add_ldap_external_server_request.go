@@ -34,7 +34,7 @@ type AddLdapExternalServerRequest struct {
 	Password *string `json:"password,omitempty"`
 	// The passphrase provider to use to obtain the login password for the specified user.
 	PassphraseProvider      *string                                         `json:"passphraseProvider,omitempty"`
-	ConnectionSecurity      *EnumexternalServerConnectionSecurityProp       `json:"connectionSecurity,omitempty"`
+	ConnectionSecurity      *EnumexternalServerLdapConnectionSecurityProp   `json:"connectionSecurity,omitempty"`
 	AuthenticationMethod    *EnumexternalServerLdapAuthenticationMethodProp `json:"authenticationMethod,omitempty"`
 	VerifyCredentialsMethod *EnumexternalServerVerifyCredentialsMethodProp  `json:"verifyCredentialsMethod,omitempty"`
 	// Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
@@ -315,9 +315,9 @@ func (o *AddLdapExternalServerRequest) SetPassphraseProvider(v string) {
 }
 
 // GetConnectionSecurity returns the ConnectionSecurity field value if set, zero value otherwise.
-func (o *AddLdapExternalServerRequest) GetConnectionSecurity() EnumexternalServerConnectionSecurityProp {
+func (o *AddLdapExternalServerRequest) GetConnectionSecurity() EnumexternalServerLdapConnectionSecurityProp {
 	if o == nil || IsNil(o.ConnectionSecurity) {
-		var ret EnumexternalServerConnectionSecurityProp
+		var ret EnumexternalServerLdapConnectionSecurityProp
 		return ret
 	}
 	return *o.ConnectionSecurity
@@ -325,7 +325,7 @@ func (o *AddLdapExternalServerRequest) GetConnectionSecurity() EnumexternalServe
 
 // GetConnectionSecurityOk returns a tuple with the ConnectionSecurity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddLdapExternalServerRequest) GetConnectionSecurityOk() (*EnumexternalServerConnectionSecurityProp, bool) {
+func (o *AddLdapExternalServerRequest) GetConnectionSecurityOk() (*EnumexternalServerLdapConnectionSecurityProp, bool) {
 	if o == nil || IsNil(o.ConnectionSecurity) {
 		return nil, false
 	}
@@ -341,8 +341,8 @@ func (o *AddLdapExternalServerRequest) HasConnectionSecurity() bool {
 	return false
 }
 
-// SetConnectionSecurity gets a reference to the given EnumexternalServerConnectionSecurityProp and assigns it to the ConnectionSecurity field.
-func (o *AddLdapExternalServerRequest) SetConnectionSecurity(v EnumexternalServerConnectionSecurityProp) {
+// SetConnectionSecurity gets a reference to the given EnumexternalServerLdapConnectionSecurityProp and assigns it to the ConnectionSecurity field.
+func (o *AddLdapExternalServerRequest) SetConnectionSecurity(v EnumexternalServerLdapConnectionSecurityProp) {
 	o.ConnectionSecurity = &v
 }
 

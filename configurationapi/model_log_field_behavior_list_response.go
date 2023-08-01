@@ -19,9 +19,9 @@ var _ MappedNullable = &LogFieldBehaviorListResponse{}
 
 // LogFieldBehaviorListResponse struct for LogFieldBehaviorListResponse
 type LogFieldBehaviorListResponse struct {
-	Schemas      []string                         `json:"schemas,omitempty"`
-	TotalResults *float64                         `json:"totalResults,omitempty"`
-	Resources    []AddLogFieldBehavior200Response `json:"Resources,omitempty"`
+	Schemas      []string                                     `json:"schemas,omitempty"`
+	TotalResults *float64                                     `json:"totalResults,omitempty"`
+	Resources    []LogFieldBehaviorListResponseResourcesInner `json:"Resources,omitempty"`
 }
 
 // NewLogFieldBehaviorListResponse instantiates a new LogFieldBehaviorListResponse object
@@ -106,9 +106,9 @@ func (o *LogFieldBehaviorListResponse) SetTotalResults(v float64) {
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *LogFieldBehaviorListResponse) GetResources() []AddLogFieldBehavior200Response {
+func (o *LogFieldBehaviorListResponse) GetResources() []LogFieldBehaviorListResponseResourcesInner {
 	if o == nil || IsNil(o.Resources) {
-		var ret []AddLogFieldBehavior200Response
+		var ret []LogFieldBehaviorListResponseResourcesInner
 		return ret
 	}
 	return o.Resources
@@ -116,7 +116,7 @@ func (o *LogFieldBehaviorListResponse) GetResources() []AddLogFieldBehavior200Re
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LogFieldBehaviorListResponse) GetResourcesOk() ([]AddLogFieldBehavior200Response, bool) {
+func (o *LogFieldBehaviorListResponse) GetResourcesOk() ([]LogFieldBehaviorListResponseResourcesInner, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *LogFieldBehaviorListResponse) HasResources() bool {
 	return false
 }
 
-// SetResources gets a reference to the given []AddLogFieldBehavior200Response and assigns it to the Resources field.
-func (o *LogFieldBehaviorListResponse) SetResources(v []AddLogFieldBehavior200Response) {
+// SetResources gets a reference to the given []LogFieldBehaviorListResponseResourcesInner and assigns it to the Resources field.
+func (o *LogFieldBehaviorListResponse) SetResources(v []LogFieldBehaviorListResponseResourcesInner) {
 	o.Resources = v
 }
 

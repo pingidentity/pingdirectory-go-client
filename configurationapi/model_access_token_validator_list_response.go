@@ -19,9 +19,9 @@ var _ MappedNullable = &AccessTokenValidatorListResponse{}
 
 // AccessTokenValidatorListResponse struct for AccessTokenValidatorListResponse
 type AccessTokenValidatorListResponse struct {
-	Schemas      []string                             `json:"schemas,omitempty"`
-	TotalResults *float64                             `json:"totalResults,omitempty"`
-	Resources    []AddAccessTokenValidator200Response `json:"Resources,omitempty"`
+	Schemas      []string                                         `json:"schemas,omitempty"`
+	TotalResults *float64                                         `json:"totalResults,omitempty"`
+	Resources    []AccessTokenValidatorListResponseResourcesInner `json:"Resources,omitempty"`
 }
 
 // NewAccessTokenValidatorListResponse instantiates a new AccessTokenValidatorListResponse object
@@ -106,9 +106,9 @@ func (o *AccessTokenValidatorListResponse) SetTotalResults(v float64) {
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *AccessTokenValidatorListResponse) GetResources() []AddAccessTokenValidator200Response {
+func (o *AccessTokenValidatorListResponse) GetResources() []AccessTokenValidatorListResponseResourcesInner {
 	if o == nil || IsNil(o.Resources) {
-		var ret []AddAccessTokenValidator200Response
+		var ret []AccessTokenValidatorListResponseResourcesInner
 		return ret
 	}
 	return o.Resources
@@ -116,7 +116,7 @@ func (o *AccessTokenValidatorListResponse) GetResources() []AddAccessTokenValida
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AccessTokenValidatorListResponse) GetResourcesOk() ([]AddAccessTokenValidator200Response, bool) {
+func (o *AccessTokenValidatorListResponse) GetResourcesOk() ([]AccessTokenValidatorListResponseResourcesInner, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *AccessTokenValidatorListResponse) HasResources() bool {
 	return false
 }
 
-// SetResources gets a reference to the given []AddAccessTokenValidator200Response and assigns it to the Resources field.
-func (o *AccessTokenValidatorListResponse) SetResources(v []AddAccessTokenValidator200Response) {
+// SetResources gets a reference to the given []AccessTokenValidatorListResponseResourcesInner and assigns it to the Resources field.
+func (o *AccessTokenValidatorListResponse) SetResources(v []AccessTokenValidatorListResponseResourcesInner) {
 	o.Resources = v
 }
 

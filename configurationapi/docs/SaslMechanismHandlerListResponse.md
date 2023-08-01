@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | Pointer to **[]string** |  | [optional] 
 **TotalResults** | Pointer to **float64** |  | [optional] 
-**Resources** | Pointer to [**[]GetSaslMechanismHandler200Response**](GetSaslMechanismHandler200Response.md) |  | [optional] 
+**Resources** | Pointer to [**[]SaslMechanismHandlerListResponseResourcesInner**](SaslMechanismHandlerListResponseResourcesInner.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasTotalResults returns a boolean if a field has been set.
 
 ### GetResources
 
-`func (o *SaslMechanismHandlerListResponse) GetResources() []GetSaslMechanismHandler200Response`
+`func (o *SaslMechanismHandlerListResponse) GetResources() []SaslMechanismHandlerListResponseResourcesInner`
 
 GetResources returns the Resources field if non-nil, zero value otherwise.
 
 ### GetResourcesOk
 
-`func (o *SaslMechanismHandlerListResponse) GetResourcesOk() (*[]GetSaslMechanismHandler200Response, bool)`
+`func (o *SaslMechanismHandlerListResponse) GetResourcesOk() (*[]SaslMechanismHandlerListResponseResourcesInner, bool)`
 
 GetResourcesOk returns a tuple with the Resources field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResources
 
-`func (o *SaslMechanismHandlerListResponse) SetResources(v []GetSaslMechanismHandler200Response)`
+`func (o *SaslMechanismHandlerListResponse) SetResources(v []SaslMechanismHandlerListResponseResourcesInner)`
 
 SetResources sets Resources field to given value.
 

@@ -19,9 +19,9 @@ var _ MappedNullable = &ConnectionHandlerListResponse{}
 
 // ConnectionHandlerListResponse struct for ConnectionHandlerListResponse
 type ConnectionHandlerListResponse struct {
-	Schemas      []string                          `json:"schemas,omitempty"`
-	TotalResults *float64                          `json:"totalResults,omitempty"`
-	Resources    []AddConnectionHandler200Response `json:"Resources,omitempty"`
+	Schemas      []string                                      `json:"schemas,omitempty"`
+	TotalResults *float64                                      `json:"totalResults,omitempty"`
+	Resources    []ConnectionHandlerListResponseResourcesInner `json:"Resources,omitempty"`
 }
 
 // NewConnectionHandlerListResponse instantiates a new ConnectionHandlerListResponse object
@@ -106,9 +106,9 @@ func (o *ConnectionHandlerListResponse) SetTotalResults(v float64) {
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *ConnectionHandlerListResponse) GetResources() []AddConnectionHandler200Response {
+func (o *ConnectionHandlerListResponse) GetResources() []ConnectionHandlerListResponseResourcesInner {
 	if o == nil || IsNil(o.Resources) {
-		var ret []AddConnectionHandler200Response
+		var ret []ConnectionHandlerListResponseResourcesInner
 		return ret
 	}
 	return o.Resources
@@ -116,7 +116,7 @@ func (o *ConnectionHandlerListResponse) GetResources() []AddConnectionHandler200
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ConnectionHandlerListResponse) GetResourcesOk() ([]AddConnectionHandler200Response, bool) {
+func (o *ConnectionHandlerListResponse) GetResourcesOk() ([]ConnectionHandlerListResponseResourcesInner, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *ConnectionHandlerListResponse) HasResources() bool {
 	return false
 }
 
-// SetResources gets a reference to the given []AddConnectionHandler200Response and assigns it to the Resources field.
-func (o *ConnectionHandlerListResponse) SetResources(v []AddConnectionHandler200Response) {
+// SetResources gets a reference to the given []ConnectionHandlerListResponseResourcesInner and assigns it to the Resources field.
+func (o *ConnectionHandlerListResponse) SetResources(v []ConnectionHandlerListResponseResourcesInner) {
 	o.Resources = v
 }
 

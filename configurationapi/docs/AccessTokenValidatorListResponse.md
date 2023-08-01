@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | Pointer to **[]string** |  | [optional] 
 **TotalResults** | Pointer to **float64** |  | [optional] 
-**Resources** | Pointer to [**[]AddAccessTokenValidator200Response**](AddAccessTokenValidator200Response.md) |  | [optional] 
+**Resources** | Pointer to [**[]AccessTokenValidatorListResponseResourcesInner**](AccessTokenValidatorListResponseResourcesInner.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasTotalResults returns a boolean if a field has been set.
 
 ### GetResources
 
-`func (o *AccessTokenValidatorListResponse) GetResources() []AddAccessTokenValidator200Response`
+`func (o *AccessTokenValidatorListResponse) GetResources() []AccessTokenValidatorListResponseResourcesInner`
 
 GetResources returns the Resources field if non-nil, zero value otherwise.
 
 ### GetResourcesOk
 
-`func (o *AccessTokenValidatorListResponse) GetResourcesOk() (*[]AddAccessTokenValidator200Response, bool)`
+`func (o *AccessTokenValidatorListResponse) GetResourcesOk() (*[]AccessTokenValidatorListResponseResourcesInner, bool)`
 
 GetResourcesOk returns a tuple with the Resources field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResources
 
-`func (o *AccessTokenValidatorListResponse) SetResources(v []AddAccessTokenValidator200Response)`
+`func (o *AccessTokenValidatorListResponse) SetResources(v []AccessTokenValidatorListResponseResourcesInner)`
 
 SetResources sets Resources field to given value.
 

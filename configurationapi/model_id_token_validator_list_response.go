@@ -19,9 +19,9 @@ var _ MappedNullable = &IdTokenValidatorListResponse{}
 
 // IdTokenValidatorListResponse struct for IdTokenValidatorListResponse
 type IdTokenValidatorListResponse struct {
-	Schemas      []string                         `json:"schemas,omitempty"`
-	TotalResults *float64                         `json:"totalResults,omitempty"`
-	Resources    []AddIdTokenValidator200Response `json:"Resources,omitempty"`
+	Schemas      []string                                     `json:"schemas,omitempty"`
+	TotalResults *float64                                     `json:"totalResults,omitempty"`
+	Resources    []IdTokenValidatorListResponseResourcesInner `json:"Resources,omitempty"`
 }
 
 // NewIdTokenValidatorListResponse instantiates a new IdTokenValidatorListResponse object
@@ -106,9 +106,9 @@ func (o *IdTokenValidatorListResponse) SetTotalResults(v float64) {
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *IdTokenValidatorListResponse) GetResources() []AddIdTokenValidator200Response {
+func (o *IdTokenValidatorListResponse) GetResources() []IdTokenValidatorListResponseResourcesInner {
 	if o == nil || IsNil(o.Resources) {
-		var ret []AddIdTokenValidator200Response
+		var ret []IdTokenValidatorListResponseResourcesInner
 		return ret
 	}
 	return o.Resources
@@ -116,7 +116,7 @@ func (o *IdTokenValidatorListResponse) GetResources() []AddIdTokenValidator200Re
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IdTokenValidatorListResponse) GetResourcesOk() ([]AddIdTokenValidator200Response, bool) {
+func (o *IdTokenValidatorListResponse) GetResourcesOk() ([]IdTokenValidatorListResponseResourcesInner, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *IdTokenValidatorListResponse) HasResources() bool {
 	return false
 }
 
-// SetResources gets a reference to the given []AddIdTokenValidator200Response and assigns it to the Resources field.
-func (o *IdTokenValidatorListResponse) SetResources(v []AddIdTokenValidator200Response) {
+// SetResources gets a reference to the given []IdTokenValidatorListResponseResourcesInner and assigns it to the Resources field.
+func (o *IdTokenValidatorListResponse) SetResources(v []IdTokenValidatorListResponseResourcesInner) {
 	o.Resources = v
 }
 

@@ -19,9 +19,9 @@ var _ MappedNullable = &MonitorProviderListResponse{}
 
 // MonitorProviderListResponse struct for MonitorProviderListResponse
 type MonitorProviderListResponse struct {
-	Schemas      []string                        `json:"schemas,omitempty"`
-	TotalResults *float64                        `json:"totalResults,omitempty"`
-	Resources    []GetMonitorProvider200Response `json:"Resources,omitempty"`
+	Schemas      []string                                    `json:"schemas,omitempty"`
+	TotalResults *float64                                    `json:"totalResults,omitempty"`
+	Resources    []MonitorProviderListResponseResourcesInner `json:"Resources,omitempty"`
 }
 
 // NewMonitorProviderListResponse instantiates a new MonitorProviderListResponse object
@@ -106,9 +106,9 @@ func (o *MonitorProviderListResponse) SetTotalResults(v float64) {
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *MonitorProviderListResponse) GetResources() []GetMonitorProvider200Response {
+func (o *MonitorProviderListResponse) GetResources() []MonitorProviderListResponseResourcesInner {
 	if o == nil || IsNil(o.Resources) {
-		var ret []GetMonitorProvider200Response
+		var ret []MonitorProviderListResponseResourcesInner
 		return ret
 	}
 	return o.Resources
@@ -116,7 +116,7 @@ func (o *MonitorProviderListResponse) GetResources() []GetMonitorProvider200Resp
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MonitorProviderListResponse) GetResourcesOk() ([]GetMonitorProvider200Response, bool) {
+func (o *MonitorProviderListResponse) GetResourcesOk() ([]MonitorProviderListResponseResourcesInner, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *MonitorProviderListResponse) HasResources() bool {
 	return false
 }
 
-// SetResources gets a reference to the given []GetMonitorProvider200Response and assigns it to the Resources field.
-func (o *MonitorProviderListResponse) SetResources(v []GetMonitorProvider200Response) {
+// SetResources gets a reference to the given []MonitorProviderListResponseResourcesInner and assigns it to the Resources field.
+func (o *MonitorProviderListResponse) SetResources(v []MonitorProviderListResponseResourcesInner) {
 	o.Resources = v
 }
 

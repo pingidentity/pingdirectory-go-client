@@ -24,8 +24,8 @@ type AddUniqueAttributePluginRequest struct {
 	Schemas    []EnumuniqueAttributePluginSchemaUrn `json:"schemas"`
 	PluginType []EnumpluginPluginTypeProp           `json:"pluginType,omitempty"`
 	// Specifies the type of attributes to check for value uniqueness.
-	Type                      []string                                 `json:"type"`
-	MultipleAttributeBehavior *EnumpluginMultipleAttributeBehaviorProp `json:"multipleAttributeBehavior,omitempty"`
+	Type                      []string                                                `json:"type"`
+	MultipleAttributeBehavior *EnumpluginUniqueAttributeMultipleAttributeBehaviorProp `json:"multipleAttributeBehavior,omitempty"`
 	// Specifies a base DN within which the attribute must be unique.
 	BaseDN []string `json:"baseDN,omitempty"`
 	// Indicates whether this Unique Attribute Plugin should reject a change that would result in one or more conflicts, even if those conflicts only exist in soft-deleted entries.
@@ -166,9 +166,9 @@ func (o *AddUniqueAttributePluginRequest) SetType(v []string) {
 }
 
 // GetMultipleAttributeBehavior returns the MultipleAttributeBehavior field value if set, zero value otherwise.
-func (o *AddUniqueAttributePluginRequest) GetMultipleAttributeBehavior() EnumpluginMultipleAttributeBehaviorProp {
+func (o *AddUniqueAttributePluginRequest) GetMultipleAttributeBehavior() EnumpluginUniqueAttributeMultipleAttributeBehaviorProp {
 	if o == nil || IsNil(o.MultipleAttributeBehavior) {
-		var ret EnumpluginMultipleAttributeBehaviorProp
+		var ret EnumpluginUniqueAttributeMultipleAttributeBehaviorProp
 		return ret
 	}
 	return *o.MultipleAttributeBehavior
@@ -176,7 +176,7 @@ func (o *AddUniqueAttributePluginRequest) GetMultipleAttributeBehavior() Enumplu
 
 // GetMultipleAttributeBehaviorOk returns a tuple with the MultipleAttributeBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddUniqueAttributePluginRequest) GetMultipleAttributeBehaviorOk() (*EnumpluginMultipleAttributeBehaviorProp, bool) {
+func (o *AddUniqueAttributePluginRequest) GetMultipleAttributeBehaviorOk() (*EnumpluginUniqueAttributeMultipleAttributeBehaviorProp, bool) {
 	if o == nil || IsNil(o.MultipleAttributeBehavior) {
 		return nil, false
 	}
@@ -192,8 +192,8 @@ func (o *AddUniqueAttributePluginRequest) HasMultipleAttributeBehavior() bool {
 	return false
 }
 
-// SetMultipleAttributeBehavior gets a reference to the given EnumpluginMultipleAttributeBehaviorProp and assigns it to the MultipleAttributeBehavior field.
-func (o *AddUniqueAttributePluginRequest) SetMultipleAttributeBehavior(v EnumpluginMultipleAttributeBehaviorProp) {
+// SetMultipleAttributeBehavior gets a reference to the given EnumpluginUniqueAttributeMultipleAttributeBehaviorProp and assigns it to the MultipleAttributeBehavior field.
+func (o *AddUniqueAttributePluginRequest) SetMultipleAttributeBehavior(v EnumpluginUniqueAttributeMultipleAttributeBehaviorProp) {
 	o.MultipleAttributeBehavior = &v
 }
 

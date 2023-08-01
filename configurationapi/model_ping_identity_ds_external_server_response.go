@@ -37,7 +37,7 @@ type PingIdentityDsExternalServerResponse struct {
 	Password *string `json:"password,omitempty"`
 	// The passphrase provider to use to obtain the login password for the specified user.
 	PassphraseProvider   *string                                                  `json:"passphraseProvider,omitempty"`
-	ConnectionSecurity   EnumexternalServerConnectionSecurityProp                 `json:"connectionSecurity"`
+	ConnectionSecurity   EnumexternalServerPingIdentityDsConnectionSecurityProp   `json:"connectionSecurity"`
 	AuthenticationMethod EnumexternalServerPingIdentityDsAuthenticationMethodProp `json:"authenticationMethod"`
 	// Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
 	HealthCheckConnectTimeout *string `json:"healthCheckConnectTimeout,omitempty"`
@@ -70,7 +70,7 @@ type PingIdentityDsExternalServerResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPingIdentityDsExternalServerResponse(id string, schemas []EnumpingIdentityDsExternalServerSchemaUrn, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, serverHostName string, serverPort int64, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerPingIdentityDsAuthenticationMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string) *PingIdentityDsExternalServerResponse {
+func NewPingIdentityDsExternalServerResponse(id string, schemas []EnumpingIdentityDsExternalServerSchemaUrn, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, serverHostName string, serverPort int64, connectionSecurity EnumexternalServerPingIdentityDsConnectionSecurityProp, authenticationMethod EnumexternalServerPingIdentityDsAuthenticationMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string) *PingIdentityDsExternalServerResponse {
 	this := PingIdentityDsExternalServerResponse{}
 	this.Id = id
 	this.Schemas = schemas
@@ -374,9 +374,9 @@ func (o *PingIdentityDsExternalServerResponse) SetPassphraseProvider(v string) {
 }
 
 // GetConnectionSecurity returns the ConnectionSecurity field value
-func (o *PingIdentityDsExternalServerResponse) GetConnectionSecurity() EnumexternalServerConnectionSecurityProp {
+func (o *PingIdentityDsExternalServerResponse) GetConnectionSecurity() EnumexternalServerPingIdentityDsConnectionSecurityProp {
 	if o == nil {
-		var ret EnumexternalServerConnectionSecurityProp
+		var ret EnumexternalServerPingIdentityDsConnectionSecurityProp
 		return ret
 	}
 
@@ -385,7 +385,7 @@ func (o *PingIdentityDsExternalServerResponse) GetConnectionSecurity() Enumexter
 
 // GetConnectionSecurityOk returns a tuple with the ConnectionSecurity field value
 // and a boolean to check if the value has been set.
-func (o *PingIdentityDsExternalServerResponse) GetConnectionSecurityOk() (*EnumexternalServerConnectionSecurityProp, bool) {
+func (o *PingIdentityDsExternalServerResponse) GetConnectionSecurityOk() (*EnumexternalServerPingIdentityDsConnectionSecurityProp, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -393,7 +393,7 @@ func (o *PingIdentityDsExternalServerResponse) GetConnectionSecurityOk() (*Enume
 }
 
 // SetConnectionSecurity sets field value
-func (o *PingIdentityDsExternalServerResponse) SetConnectionSecurity(v EnumexternalServerConnectionSecurityProp) {
+func (o *PingIdentityDsExternalServerResponse) SetConnectionSecurity(v EnumexternalServerPingIdentityDsConnectionSecurityProp) {
 	o.ConnectionSecurity = v
 }
 

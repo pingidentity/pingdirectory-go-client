@@ -648,117 +648,6 @@ components:
       - "starttls"
       description: >-
           Specifies the preferred mechanism to use for securing connections to the server.
-    proxy-server-instance-response:
-      allOf:
-      - type: object
-        properties:
-          schemas:
-            type: array
-            minItems: 1
-            maxItems: 1
-            items:
-              $ref: '#/components/schemas/Enumproxy-server-instanceSchemaUrn'
-          id:
-            type: string
-            description: >-
-                Name of the Server Instance
-          serverInstanceType:
-            $ref: '#/components/schemas/Enumserver-instance-serverInstanceTypeProp'
-          serverInstanceName:
-            type: string
-            description: >-
-                The name of this Server Instance. The instance name needs to be unique if this server will be part of a topology of servers that are connected to each other. Once set, it may not be changed.
-          clusterName:
-            type: string
-            description: >-
-                The name of the cluster to which this Server Instance belongs. Server instances within the same cluster will share the same cluster-wide configuration.
-          serverInstanceLocation:
-            type: string
-            description: >-
-                Specifies the location for the Server Instance.
-          hostname:
-            type: string
-            description: >-
-                The name of the host where this Server Instance is installed.
-          serverRoot:
-            type: string
-            description: >-
-                The file system path where this Server Instance is installed.
-          serverVersion:
-            type: string
-            description: >-
-                The version of the server.
-          interServerCertificate:
-            type: string
-            description: >-
-                The public component of the certificate used by this instance to protect inter-server communication and to perform server-specific encryption. This will generally be managed by the server and should only be altered by administrators under explicit direction from Ping Identity support personnel.
-          ldapPort:
-            type: integer
-            description: >-
-                The TCP port on which this server is listening for LDAP connections.
-          ldapsPort:
-            type: integer
-            description: >-
-                The TCP port on which this server is listening for LDAP secure connections.
-          httpPort:
-            type: integer
-            description: >-
-                The TCP port on which this server is listening for HTTP connections.
-          httpsPort:
-            type: integer
-            description: >-
-                The TCP port on which this server is listening for HTTPS connections.
-          replicationPort:
-            type: integer
-            description: >-
-                The replication TCP port.
-          replicationServerID:
-            type: integer
-            description: >-
-                Specifies a unique identifier for the replication server on this server instance.
-          replicationDomainServerID:
-            type: array
-            items:
-              type: integer
-            description: >-
-                Specifies a unique identifier for the Directory Server within the replication domain.
-          jmxPort:
-            type: integer
-            description: >-
-                The TCP port on which this server is listening for JMX connections.
-          jmxsPort:
-            type: integer
-            description: >-
-                The TCP port on which this server is listening for JMX secure connections.
-          preferredSecurity:
-            $ref: '#/components/schemas/Enumserver-instance-preferredSecurityProp'
-          startTLSEnabled:
-            type: boolean
-            description: >-
-                Indicates whether StartTLS is enabled on this server.
-          baseDN:
-            type: array
-            items:
-              type: string
-            description: >-
-                The set of base DNs under the root DSE.
-          memberOfServerGroup:
-            type: array
-            items:
-              type: string
-            description: >-
-                The set of groups of which this server is a member.
-      - $ref: '#/components/schemas/meta'
-      required:
-      - id
-      - schemas
-      - serverInstanceName
-      - clusterName
-      - serverVersion
-    Enumproxy-server-instanceSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:server-instance:proxy"
     metrics-engine-server-instance-response:
       allOf:
       - type: object
@@ -870,6 +759,117 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:server-instance:metrics-engine"
+    proxy-server-instance-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumproxy-server-instanceSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Server Instance
+          serverInstanceType:
+            $ref: '#/components/schemas/Enumserver-instance-serverInstanceTypeProp'
+          serverInstanceName:
+            type: string
+            description: >-
+                The name of this Server Instance. The instance name needs to be unique if this server will be part of a topology of servers that are connected to each other. Once set, it may not be changed.
+          clusterName:
+            type: string
+            description: >-
+                The name of the cluster to which this Server Instance belongs. Server instances within the same cluster will share the same cluster-wide configuration.
+          serverInstanceLocation:
+            type: string
+            description: >-
+                Specifies the location for the Server Instance.
+          hostname:
+            type: string
+            description: >-
+                The name of the host where this Server Instance is installed.
+          serverRoot:
+            type: string
+            description: >-
+                The file system path where this Server Instance is installed.
+          serverVersion:
+            type: string
+            description: >-
+                The version of the server.
+          interServerCertificate:
+            type: string
+            description: >-
+                The public component of the certificate used by this instance to protect inter-server communication and to perform server-specific encryption. This will generally be managed by the server and should only be altered by administrators under explicit direction from Ping Identity support personnel.
+          ldapPort:
+            type: integer
+            description: >-
+                The TCP port on which this server is listening for LDAP connections.
+          ldapsPort:
+            type: integer
+            description: >-
+                The TCP port on which this server is listening for LDAP secure connections.
+          httpPort:
+            type: integer
+            description: >-
+                The TCP port on which this server is listening for HTTP connections.
+          httpsPort:
+            type: integer
+            description: >-
+                The TCP port on which this server is listening for HTTPS connections.
+          replicationPort:
+            type: integer
+            description: >-
+                The replication TCP port.
+          replicationServerID:
+            type: integer
+            description: >-
+                Specifies a unique identifier for the replication server on this server instance.
+          replicationDomainServerID:
+            type: array
+            items:
+              type: integer
+            description: >-
+                Specifies a unique identifier for the Directory Server within the replication domain.
+          jmxPort:
+            type: integer
+            description: >-
+                The TCP port on which this server is listening for JMX connections.
+          jmxsPort:
+            type: integer
+            description: >-
+                The TCP port on which this server is listening for JMX secure connections.
+          preferredSecurity:
+            $ref: '#/components/schemas/Enumserver-instance-preferredSecurityProp'
+          startTLSEnabled:
+            type: boolean
+            description: >-
+                Indicates whether StartTLS is enabled on this server.
+          baseDN:
+            type: array
+            items:
+              type: string
+            description: >-
+                The set of base DNs under the root DSE.
+          memberOfServerGroup:
+            type: array
+            items:
+              type: string
+            description: >-
+                The set of groups of which this server is a member.
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - serverInstanceName
+      - clusterName
+      - serverVersion
+    Enumproxy-server-instanceSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:server-instance:proxy"
     authorize-server-instance-response:
       allOf:
       - type: object
@@ -1400,6 +1400,38 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:cipher-secret-key"
+    Enuminter-server-authentication-info-purposeProp:
+      type: string
+      enum:
+      - "mirrored-config"
+      description: >-
+          Identifies the purpose of this Inter Server Authentication Info.
+    certificate-inter-server-authentication-info-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumcertificate-inter-server-authentication-infoSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Inter Server Authentication Info
+          purpose:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enuminter-server-authentication-info-purposeProp'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+    Enumcertificate-inter-server-authentication-infoSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:inter-server-authentication-info:certificate"
     Enuminter-server-authentication-info-authenticationTypeProp:
       type: string
       enum:
@@ -1407,12 +1439,6 @@ components:
       - "sasl-plain"
       description: >-
           Identifies the type of password authentication that will be used.
-    Enuminter-server-authentication-info-purposeProp:
-      type: string
-      enum:
-      - "mirrored-config"
-      description: >-
-          Identifies the purpose of this Inter Server Authentication Info.
     password-inter-server-authentication-info-response:
       allOf:
       - type: object
@@ -1455,32 +1481,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:inter-server-authentication-info:password"
-    certificate-inter-server-authentication-info-response:
-      allOf:
-      - type: object
-        properties:
-          schemas:
-            type: array
-            minItems: 1
-            maxItems: 1
-            items:
-              $ref: '#/components/schemas/Enumcertificate-inter-server-authentication-infoSchemaUrn'
-          id:
-            type: string
-            description: >-
-                Name of the Inter Server Authentication Info
-          purpose:
-            type: array
-            items:
-              $ref: '#/components/schemas/Enuminter-server-authentication-info-purposeProp'
-      - $ref: '#/components/schemas/meta'
-      required:
-      - id
-      - schemas
-    Enumcertificate-inter-server-authentication-infoSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:inter-server-authentication-info:certificate"
     server-instanceListResponse:
       type: object
       properties:
@@ -1496,8 +1496,8 @@ components:
           type: array
           items:
             oneOf:
-            - $ref: '#/components/schemas/proxy-server-instance-response'
             - $ref: '#/components/schemas/metrics-engine-server-instance-response'
+            - $ref: '#/components/schemas/proxy-server-instance-response'
             - $ref: '#/components/schemas/authorize-server-instance-response'
             - $ref: '#/components/schemas/directory-server-instance-response'
             - $ref: '#/components/schemas/sync-server-instance-response'
@@ -1563,8 +1563,8 @@ components:
           type: array
           items:
             oneOf:
-            - $ref: '#/components/schemas/password-inter-server-authentication-info-response'
             - $ref: '#/components/schemas/certificate-inter-server-authentication-info-response'
+            - $ref: '#/components/schemas/password-inter-server-authentication-info-response'
     updateRequest:
       type: object
       properties:

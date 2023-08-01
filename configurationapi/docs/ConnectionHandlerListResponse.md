@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | Pointer to **[]string** |  | [optional] 
 **TotalResults** | Pointer to **float64** |  | [optional] 
-**Resources** | Pointer to [**[]AddConnectionHandler200Response**](AddConnectionHandler200Response.md) |  | [optional] 
+**Resources** | Pointer to [**[]ConnectionHandlerListResponseResourcesInner**](ConnectionHandlerListResponseResourcesInner.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasTotalResults returns a boolean if a field has been set.
 
 ### GetResources
 
-`func (o *ConnectionHandlerListResponse) GetResources() []AddConnectionHandler200Response`
+`func (o *ConnectionHandlerListResponse) GetResources() []ConnectionHandlerListResponseResourcesInner`
 
 GetResources returns the Resources field if non-nil, zero value otherwise.
 
 ### GetResourcesOk
 
-`func (o *ConnectionHandlerListResponse) GetResourcesOk() (*[]AddConnectionHandler200Response, bool)`
+`func (o *ConnectionHandlerListResponse) GetResourcesOk() (*[]ConnectionHandlerListResponseResourcesInner, bool)`
 
 GetResourcesOk returns a tuple with the Resources field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResources
 
-`func (o *ConnectionHandlerListResponse) SetResources(v []AddConnectionHandler200Response)`
+`func (o *ConnectionHandlerListResponse) SetResources(v []ConnectionHandlerListResponseResourcesInner)`
 
 SetResources sets Resources field to given value.
 

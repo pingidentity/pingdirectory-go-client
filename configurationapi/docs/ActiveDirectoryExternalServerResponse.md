@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Location** | Pointer to **string** | Specifies the location for the LDAP External Server. | [optional] 
 **Password** | Pointer to **string** | The login password for the specified user. | [optional] 
 **PassphraseProvider** | Pointer to **string** | The passphrase provider to use to obtain the login password for the specified user. | [optional] 
-**ConnectionSecurity** | [**EnumexternalServerConnectionSecurityProp**](EnumexternalServerConnectionSecurityProp.md) |  | 
+**ConnectionSecurity** | [**EnumexternalServerActiveDirectoryConnectionSecurityProp**](EnumexternalServerActiveDirectoryConnectionSecurityProp.md) |  | 
 **AuthenticationMethod** | [**EnumexternalServerActiveDirectoryAuthenticationMethodProp**](EnumexternalServerActiveDirectoryAuthenticationMethodProp.md) |  | 
 **VerifyCredentialsMethod** | [**EnumexternalServerVerifyCredentialsMethodProp**](EnumexternalServerVerifyCredentialsMethodProp.md) |  | 
 **HealthCheckConnectTimeout** | Pointer to **string** | Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable. | [optional] 
@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 
 ### NewActiveDirectoryExternalServerResponse
 
-`func NewActiveDirectoryExternalServerResponse(id string, schemas []EnumactiveDirectoryExternalServerSchemaUrn, serverHostName string, serverPort int64, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerActiveDirectoryAuthenticationMethodProp, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string, ) *ActiveDirectoryExternalServerResponse`
+`func NewActiveDirectoryExternalServerResponse(id string, schemas []EnumactiveDirectoryExternalServerSchemaUrn, serverHostName string, serverPort int64, connectionSecurity EnumexternalServerActiveDirectoryConnectionSecurityProp, authenticationMethod EnumexternalServerActiveDirectoryAuthenticationMethodProp, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string, ) *ActiveDirectoryExternalServerResponse`
 
 NewActiveDirectoryExternalServerResponse instantiates a new ActiveDirectoryExternalServerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -231,20 +231,20 @@ HasPassphraseProvider returns a boolean if a field has been set.
 
 ### GetConnectionSecurity
 
-`func (o *ActiveDirectoryExternalServerResponse) GetConnectionSecurity() EnumexternalServerConnectionSecurityProp`
+`func (o *ActiveDirectoryExternalServerResponse) GetConnectionSecurity() EnumexternalServerActiveDirectoryConnectionSecurityProp`
 
 GetConnectionSecurity returns the ConnectionSecurity field if non-nil, zero value otherwise.
 
 ### GetConnectionSecurityOk
 
-`func (o *ActiveDirectoryExternalServerResponse) GetConnectionSecurityOk() (*EnumexternalServerConnectionSecurityProp, bool)`
+`func (o *ActiveDirectoryExternalServerResponse) GetConnectionSecurityOk() (*EnumexternalServerActiveDirectoryConnectionSecurityProp, bool)`
 
 GetConnectionSecurityOk returns a tuple with the ConnectionSecurity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConnectionSecurity
 
-`func (o *ActiveDirectoryExternalServerResponse) SetConnectionSecurity(v EnumexternalServerConnectionSecurityProp)`
+`func (o *ActiveDirectoryExternalServerResponse) SetConnectionSecurity(v EnumexternalServerActiveDirectoryConnectionSecurityProp)`
 
 SetConnectionSecurity sets ConnectionSecurity field to given value.
 

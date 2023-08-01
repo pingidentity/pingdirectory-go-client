@@ -19,9 +19,9 @@ var _ MappedNullable = &VirtualAttributeListResponse{}
 
 // VirtualAttributeListResponse struct for VirtualAttributeListResponse
 type VirtualAttributeListResponse struct {
-	Schemas      []string                         `json:"schemas,omitempty"`
-	TotalResults *float64                         `json:"totalResults,omitempty"`
-	Resources    []GetVirtualAttribute200Response `json:"Resources,omitempty"`
+	Schemas      []string                                     `json:"schemas,omitempty"`
+	TotalResults *float64                                     `json:"totalResults,omitempty"`
+	Resources    []VirtualAttributeListResponseResourcesInner `json:"Resources,omitempty"`
 }
 
 // NewVirtualAttributeListResponse instantiates a new VirtualAttributeListResponse object
@@ -106,9 +106,9 @@ func (o *VirtualAttributeListResponse) SetTotalResults(v float64) {
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *VirtualAttributeListResponse) GetResources() []GetVirtualAttribute200Response {
+func (o *VirtualAttributeListResponse) GetResources() []VirtualAttributeListResponseResourcesInner {
 	if o == nil || IsNil(o.Resources) {
-		var ret []GetVirtualAttribute200Response
+		var ret []VirtualAttributeListResponseResourcesInner
 		return ret
 	}
 	return o.Resources
@@ -116,7 +116,7 @@ func (o *VirtualAttributeListResponse) GetResources() []GetVirtualAttribute200Re
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VirtualAttributeListResponse) GetResourcesOk() ([]GetVirtualAttribute200Response, bool) {
+func (o *VirtualAttributeListResponse) GetResourcesOk() ([]VirtualAttributeListResponseResourcesInner, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *VirtualAttributeListResponse) HasResources() bool {
 	return false
 }
 
-// SetResources gets a reference to the given []GetVirtualAttribute200Response and assigns it to the Resources field.
-func (o *VirtualAttributeListResponse) SetResources(v []GetVirtualAttribute200Response) {
+// SetResources gets a reference to the given []VirtualAttributeListResponseResourcesInner and assigns it to the Resources field.
+func (o *VirtualAttributeListResponse) SetResources(v []VirtualAttributeListResponseResourcesInner) {
 	o.Resources = v
 }
 

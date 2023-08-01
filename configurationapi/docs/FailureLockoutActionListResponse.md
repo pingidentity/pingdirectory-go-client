@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | Pointer to **[]string** |  | [optional] 
 **TotalResults** | Pointer to **float64** |  | [optional] 
-**Resources** | Pointer to [**[]AddFailureLockoutAction200Response**](AddFailureLockoutAction200Response.md) |  | [optional] 
+**Resources** | Pointer to [**[]FailureLockoutActionListResponseResourcesInner**](FailureLockoutActionListResponseResourcesInner.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasTotalResults returns a boolean if a field has been set.
 
 ### GetResources
 
-`func (o *FailureLockoutActionListResponse) GetResources() []AddFailureLockoutAction200Response`
+`func (o *FailureLockoutActionListResponse) GetResources() []FailureLockoutActionListResponseResourcesInner`
 
 GetResources returns the Resources field if non-nil, zero value otherwise.
 
 ### GetResourcesOk
 
-`func (o *FailureLockoutActionListResponse) GetResourcesOk() (*[]AddFailureLockoutAction200Response, bool)`
+`func (o *FailureLockoutActionListResponse) GetResourcesOk() (*[]FailureLockoutActionListResponseResourcesInner, bool)`
 
 GetResourcesOk returns a tuple with the Resources field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResources
 
-`func (o *FailureLockoutActionListResponse) SetResources(v []AddFailureLockoutAction200Response)`
+`func (o *FailureLockoutActionListResponse) SetResources(v []FailureLockoutActionListResponseResourcesInner)`
 
 SetResources sets Resources field to given value.
 
