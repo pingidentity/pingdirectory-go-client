@@ -37,7 +37,7 @@ type AddPingIdentityDsExternalServerRequest struct {
 	Password *string `json:"password,omitempty"`
 	// The passphrase provider to use to obtain the login password for the specified user.
 	PassphraseProvider   *string                                                   `json:"passphraseProvider,omitempty"`
-	ConnectionSecurity   *EnumexternalServerConnectionSecurityProp                 `json:"connectionSecurity,omitempty"`
+	ConnectionSecurity   *EnumexternalServerPingIdentityDsConnectionSecurityProp   `json:"connectionSecurity,omitempty"`
 	AuthenticationMethod *EnumexternalServerPingIdentityDsAuthenticationMethodProp `json:"authenticationMethod,omitempty"`
 	// Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
 	HealthCheckConnectTimeout *string `json:"healthCheckConnectTimeout,omitempty"`
@@ -381,9 +381,9 @@ func (o *AddPingIdentityDsExternalServerRequest) SetPassphraseProvider(v string)
 }
 
 // GetConnectionSecurity returns the ConnectionSecurity field value if set, zero value otherwise.
-func (o *AddPingIdentityDsExternalServerRequest) GetConnectionSecurity() EnumexternalServerConnectionSecurityProp {
+func (o *AddPingIdentityDsExternalServerRequest) GetConnectionSecurity() EnumexternalServerPingIdentityDsConnectionSecurityProp {
 	if o == nil || IsNil(o.ConnectionSecurity) {
-		var ret EnumexternalServerConnectionSecurityProp
+		var ret EnumexternalServerPingIdentityDsConnectionSecurityProp
 		return ret
 	}
 	return *o.ConnectionSecurity
@@ -391,7 +391,7 @@ func (o *AddPingIdentityDsExternalServerRequest) GetConnectionSecurity() Enumext
 
 // GetConnectionSecurityOk returns a tuple with the ConnectionSecurity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddPingIdentityDsExternalServerRequest) GetConnectionSecurityOk() (*EnumexternalServerConnectionSecurityProp, bool) {
+func (o *AddPingIdentityDsExternalServerRequest) GetConnectionSecurityOk() (*EnumexternalServerPingIdentityDsConnectionSecurityProp, bool) {
 	if o == nil || IsNil(o.ConnectionSecurity) {
 		return nil, false
 	}
@@ -407,8 +407,8 @@ func (o *AddPingIdentityDsExternalServerRequest) HasConnectionSecurity() bool {
 	return false
 }
 
-// SetConnectionSecurity gets a reference to the given EnumexternalServerConnectionSecurityProp and assigns it to the ConnectionSecurity field.
-func (o *AddPingIdentityDsExternalServerRequest) SetConnectionSecurity(v EnumexternalServerConnectionSecurityProp) {
+// SetConnectionSecurity gets a reference to the given EnumexternalServerPingIdentityDsConnectionSecurityProp and assigns it to the ConnectionSecurity field.
+func (o *AddPingIdentityDsExternalServerRequest) SetConnectionSecurity(v EnumexternalServerPingIdentityDsConnectionSecurityProp) {
 	o.ConnectionSecurity = &v
 }
 

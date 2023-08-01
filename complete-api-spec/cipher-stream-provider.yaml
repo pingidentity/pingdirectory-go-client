@@ -11,6 +11,33 @@ tags:
   name: cipher-stream-provider
 paths:
   /cipher-stream-providers:
+    get:
+      summary: Returns a list of all Cipher Stream Provider objects
+      operationId: list-cipher-stream-providers
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cipher-stream-providerListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - cipher-stream-provider
     post:
       summary: Add a new Cipher Stream Provider to the config
       operationId: add-cipher-stream-provider
@@ -251,6 +278,37 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:amazon-key-management-service"
+    default-cipher-stream-provider-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumdefault-cipher-stream-providerSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Cipher Stream Provider
+          description:
+            type: string
+            description: >-
+                A description for this Cipher Stream Provider
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server.
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
+    Enumdefault-cipher-stream-providerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:default"
     add-amazon-secrets-manager-cipher-stream-provider-request:
       allOf:
       - type: object
@@ -819,6 +877,31 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:third-party"
+    cipher-stream-providerListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/amazon-key-management-service-cipher-stream-provider-response'
+            - $ref: '#/components/schemas/default-cipher-stream-provider-response'
+            - $ref: '#/components/schemas/amazon-secrets-manager-cipher-stream-provider-response'
+            - $ref: '#/components/schemas/azure-key-vault-cipher-stream-provider-response'
+            - $ref: '#/components/schemas/file-based-cipher-stream-provider-response'
+            - $ref: '#/components/schemas/wait-for-passphrase-cipher-stream-provider-response'
+            - $ref: '#/components/schemas/conjur-cipher-stream-provider-response'
+            - $ref: '#/components/schemas/pkcs11-cipher-stream-provider-response'
+            - $ref: '#/components/schemas/vault-cipher-stream-provider-response'
+            - $ref: '#/components/schemas/third-party-cipher-stream-provider-response'
     updateRequest:
       type: object
       properties:

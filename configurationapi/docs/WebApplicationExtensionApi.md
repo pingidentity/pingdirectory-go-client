@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddWebApplicationExtension**](WebApplicationExtensionApi.md#AddWebApplicationExtension) | **Post** /web-application-extensions | Add a new Web Application Extension to the config
 [**DeleteWebApplicationExtension**](WebApplicationExtensionApi.md#DeleteWebApplicationExtension) | **Delete** /web-application-extensions/{web-application-extension-name} | Delete a Web Application Extension
 [**GetWebApplicationExtension**](WebApplicationExtensionApi.md#GetWebApplicationExtension) | **Get** /web-application-extensions/{web-application-extension-name} | Returns a single Web Application Extension
+[**ListWebApplicationExtensions**](WebApplicationExtensionApi.md#ListWebApplicationExtensions) | **Get** /web-application-extensions | Returns a list of all Web Application Extension objects
 [**UpdateWebApplicationExtension**](WebApplicationExtensionApi.md#UpdateWebApplicationExtension) | **Patch** /web-application-extensions/{web-application-extension-name} | Update an existing Web Application Extension by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetWebApplicationExtension200Response**](GetWebApplicationExtension200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListWebApplicationExtensions
+
+> WebApplicationExtensionListResponse ListWebApplicationExtensions(ctx).Filter(filter).Execute()
+
+Returns a list of all Web Application Extension objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebApplicationExtensionApi.ListWebApplicationExtensions(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `WebApplicationExtensionApi.ListWebApplicationExtensions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListWebApplicationExtensions`: WebApplicationExtensionListResponse
+    fmt.Fprintf(os.Stdout, "Response from `WebApplicationExtensionApi.ListWebApplicationExtensions`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListWebApplicationExtensionsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**WebApplicationExtensionListResponse**](WebApplicationExtensionListResponse.md)
 
 ### Authorization
 

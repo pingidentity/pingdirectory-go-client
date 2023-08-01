@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddRecurringTask**](RecurringTaskApi.md#AddRecurringTask) | **Post** /recurring-tasks | Add a new Recurring Task to the config
 [**DeleteRecurringTask**](RecurringTaskApi.md#DeleteRecurringTask) | **Delete** /recurring-tasks/{recurring-task-name} | Delete a Recurring Task
 [**GetRecurringTask**](RecurringTaskApi.md#GetRecurringTask) | **Get** /recurring-tasks/{recurring-task-name} | Returns a single Recurring Task
+[**ListRecurringTasks**](RecurringTaskApi.md#ListRecurringTasks) | **Get** /recurring-tasks | Returns a list of all Recurring Task objects
 [**UpdateRecurringTask**](RecurringTaskApi.md#UpdateRecurringTask) | **Patch** /recurring-tasks/{recurring-task-name} | Update an existing Recurring Task by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddRecurringTask200Response**](AddRecurringTask200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListRecurringTasks
+
+> RecurringTaskListResponse ListRecurringTasks(ctx).Filter(filter).Execute()
+
+Returns a list of all Recurring Task objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RecurringTaskApi.ListRecurringTasks(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `RecurringTaskApi.ListRecurringTasks``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListRecurringTasks`: RecurringTaskListResponse
+    fmt.Fprintf(os.Stdout, "Response from `RecurringTaskApi.ListRecurringTasks`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListRecurringTasksRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**RecurringTaskListResponse**](RecurringTaskListResponse.md)
 
 ### Authorization
 

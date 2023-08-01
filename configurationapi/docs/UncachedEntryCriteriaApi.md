@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddUncachedEntryCriteria**](UncachedEntryCriteriaApi.md#AddUncachedEntryCriteria) | **Post** /uncached-entry-criteria | Add a new Uncached Entry Criteria to the config
 [**DeleteUncachedEntryCriteria**](UncachedEntryCriteriaApi.md#DeleteUncachedEntryCriteria) | **Delete** /uncached-entry-criteria/{uncached-entry-criteria-name} | Delete a Uncached Entry Criteria
 [**GetUncachedEntryCriteria**](UncachedEntryCriteriaApi.md#GetUncachedEntryCriteria) | **Get** /uncached-entry-criteria/{uncached-entry-criteria-name} | Returns a single Uncached Entry Criteria
+[**ListUncachedEntryCriteria**](UncachedEntryCriteriaApi.md#ListUncachedEntryCriteria) | **Get** /uncached-entry-criteria | Returns a list of all Uncached Entry Criteria objects
 [**UpdateUncachedEntryCriteria**](UncachedEntryCriteriaApi.md#UpdateUncachedEntryCriteria) | **Patch** /uncached-entry-criteria/{uncached-entry-criteria-name} | Update an existing Uncached Entry Criteria by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddUncachedEntryCriteria200Response**](AddUncachedEntryCriteria200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListUncachedEntryCriteria
+
+> UncachedEntryCriteriaListResponse ListUncachedEntryCriteria(ctx).Filter(filter).Execute()
+
+Returns a list of all Uncached Entry Criteria objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.UncachedEntryCriteriaApi.ListUncachedEntryCriteria(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `UncachedEntryCriteriaApi.ListUncachedEntryCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListUncachedEntryCriteria`: UncachedEntryCriteriaListResponse
+    fmt.Fprintf(os.Stdout, "Response from `UncachedEntryCriteriaApi.ListUncachedEntryCriteria`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListUncachedEntryCriteriaRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**UncachedEntryCriteriaListResponse**](UncachedEntryCriteriaListResponse.md)
 
 ### Authorization
 

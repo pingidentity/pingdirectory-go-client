@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddDebugTarget**](DebugTargetApi.md#AddDebugTarget) | **Post** /log-publishers/{log-publisher-name}/debug-targets | Add a new Debug Target to the config
 [**DeleteDebugTarget**](DebugTargetApi.md#DeleteDebugTarget) | **Delete** /log-publishers/{log-publisher-name}/debug-targets/{debug-target-name} | Delete a Debug Target
 [**GetDebugTarget**](DebugTargetApi.md#GetDebugTarget) | **Get** /log-publishers/{log-publisher-name}/debug-targets/{debug-target-name} | Returns a single Debug Target
+[**ListDebugTargets**](DebugTargetApi.md#ListDebugTargets) | **Get** /log-publishers/{log-publisher-name}/debug-targets | Returns a list of all Debug Target objects
 [**UpdateDebugTarget**](DebugTargetApi.md#UpdateDebugTarget) | **Patch** /log-publishers/{log-publisher-name}/debug-targets/{debug-target-name} | Update an existing Debug Target by name
 
 
@@ -206,6 +207,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DebugTargetResponse**](DebugTargetResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListDebugTargets
+
+> DebugTargetListResponse ListDebugTargets(ctx, logPublisherName).Filter(filter).Execute()
+
+Returns a list of all Debug Target objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    logPublisherName := "logPublisherName_example" // string | Name of the Log Publisher
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DebugTargetApi.ListDebugTargets(context.Background(), logPublisherName).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DebugTargetApi.ListDebugTargets``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListDebugTargets`: DebugTargetListResponse
+    fmt.Fprintf(os.Stdout, "Response from `DebugTargetApi.ListDebugTargets`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**logPublisherName** | **string** | Name of the Log Publisher | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListDebugTargetsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**DebugTargetListResponse**](DebugTargetListResponse.md)
 
 ### Authorization
 

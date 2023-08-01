@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddLocation**](LocationApi.md#AddLocation) | **Post** /locations | Add a new Location to the config
 [**DeleteLocation**](LocationApi.md#DeleteLocation) | **Delete** /locations/{location-name} | Delete a Location
 [**GetLocation**](LocationApi.md#GetLocation) | **Get** /locations/{location-name} | Returns a single Location
+[**ListLocations**](LocationApi.md#ListLocations) | **Get** /locations | Returns a list of all Location objects
 [**UpdateLocation**](LocationApi.md#UpdateLocation) | **Patch** /locations/{location-name} | Update an existing Location by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**LocationResponse**](LocationResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListLocations
+
+> LocationListResponse ListLocations(ctx).Filter(filter).Execute()
+
+Returns a list of all Location objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.LocationApi.ListLocations(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `LocationApi.ListLocations``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListLocations`: LocationListResponse
+    fmt.Fprintf(os.Stdout, "Response from `LocationApi.ListLocations`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListLocationsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**LocationListResponse**](LocationListResponse.md)
 
 ### Authorization
 

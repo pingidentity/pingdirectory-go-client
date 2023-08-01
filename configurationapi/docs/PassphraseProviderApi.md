@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddPassphraseProvider**](PassphraseProviderApi.md#AddPassphraseProvider) | **Post** /passphrase-providers | Add a new Passphrase Provider to the config
 [**DeletePassphraseProvider**](PassphraseProviderApi.md#DeletePassphraseProvider) | **Delete** /passphrase-providers/{passphrase-provider-name} | Delete a Passphrase Provider
 [**GetPassphraseProvider**](PassphraseProviderApi.md#GetPassphraseProvider) | **Get** /passphrase-providers/{passphrase-provider-name} | Returns a single Passphrase Provider
+[**ListPassphraseProviders**](PassphraseProviderApi.md#ListPassphraseProviders) | **Get** /passphrase-providers | Returns a list of all Passphrase Provider objects
 [**UpdatePassphraseProvider**](PassphraseProviderApi.md#UpdatePassphraseProvider) | **Patch** /passphrase-providers/{passphrase-provider-name} | Update an existing Passphrase Provider by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddPassphraseProvider200Response**](AddPassphraseProvider200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListPassphraseProviders
+
+> PassphraseProviderListResponse ListPassphraseProviders(ctx).Filter(filter).Execute()
+
+Returns a list of all Passphrase Provider objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.PassphraseProviderApi.ListPassphraseProviders(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `PassphraseProviderApi.ListPassphraseProviders``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListPassphraseProviders`: PassphraseProviderListResponse
+    fmt.Fprintf(os.Stdout, "Response from `PassphraseProviderApi.ListPassphraseProviders`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListPassphraseProvidersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**PassphraseProviderListResponse**](PassphraseProviderListResponse.md)
 
 ### Authorization
 

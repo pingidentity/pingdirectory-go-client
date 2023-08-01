@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddTokenClaimValidation**](TokenClaimValidationApi.md#AddTokenClaimValidation) | **Post** /id-token-validators/{id-token-validator-name}/token-claim-validations | Add a new Token Claim Validation to the config
 [**DeleteTokenClaimValidation**](TokenClaimValidationApi.md#DeleteTokenClaimValidation) | **Delete** /id-token-validators/{id-token-validator-name}/token-claim-validations/{token-claim-validation-name} | Delete a Token Claim Validation
 [**GetTokenClaimValidation**](TokenClaimValidationApi.md#GetTokenClaimValidation) | **Get** /id-token-validators/{id-token-validator-name}/token-claim-validations/{token-claim-validation-name} | Returns a single Token Claim Validation
+[**ListTokenClaimValidations**](TokenClaimValidationApi.md#ListTokenClaimValidations) | **Get** /id-token-validators/{id-token-validator-name}/token-claim-validations | Returns a list of all Token Claim Validation objects
 [**UpdateTokenClaimValidation**](TokenClaimValidationApi.md#UpdateTokenClaimValidation) | **Patch** /id-token-validators/{id-token-validator-name}/token-claim-validations/{token-claim-validation-name} | Update an existing Token Claim Validation by name
 
 
@@ -206,6 +207,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddTokenClaimValidation200Response**](AddTokenClaimValidation200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListTokenClaimValidations
+
+> TokenClaimValidationListResponse ListTokenClaimValidations(ctx, idTokenValidatorName).Filter(filter).Execute()
+
+Returns a list of all Token Claim Validation objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    idTokenValidatorName := "idTokenValidatorName_example" // string | Name of the ID Token Validator
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TokenClaimValidationApi.ListTokenClaimValidations(context.Background(), idTokenValidatorName).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `TokenClaimValidationApi.ListTokenClaimValidations``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListTokenClaimValidations`: TokenClaimValidationListResponse
+    fmt.Fprintf(os.Stdout, "Response from `TokenClaimValidationApi.ListTokenClaimValidations`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**idTokenValidatorName** | **string** | Name of the ID Token Validator | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListTokenClaimValidationsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**TokenClaimValidationListResponse**](TokenClaimValidationListResponse.md)
 
 ### Authorization
 

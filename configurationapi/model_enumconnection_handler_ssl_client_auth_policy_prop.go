@@ -15,7 +15,7 @@ import (
 	"fmt"
 )
 
-// EnumconnectionHandlerSslClientAuthPolicyProp Specifies the policy that the LDAP Connection Handler should use regarding client SSL certificates.
+// EnumconnectionHandlerSslClientAuthPolicyProp Specifies the policy that the HTTP Connection Handler should use regarding client SSL certificates. In order for a client certificate to be accepted it must be known to the trust-manager-provider associated with this HTTP Connection Handler. Client certificates received by the HTTP Connection Handler are by default used for TLS mutual authentication only, as there is no support for user authentication.
 type EnumconnectionHandlerSslClientAuthPolicyProp string
 
 // List of Enumconnection-handler-sslClientAuthPolicyProp

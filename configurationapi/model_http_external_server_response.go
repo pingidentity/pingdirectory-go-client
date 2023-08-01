@@ -23,8 +23,8 @@ type HttpExternalServerResponse struct {
 	Id      string                            `json:"id"`
 	Schemas []EnumhttpExternalServerSchemaUrn `json:"schemas"`
 	// The base URL of the external server, optionally including port number, for example \"https://externalService:9031\".
-	BaseURL                    string                                            `json:"baseURL"`
-	HostnameVerificationMethod *EnumexternalServerHostnameVerificationMethodProp `json:"hostnameVerificationMethod,omitempty"`
+	BaseURL                    string                                                `json:"baseURL"`
+	HostnameVerificationMethod *EnumexternalServerHttpHostnameVerificationMethodProp `json:"hostnameVerificationMethod,omitempty"`
 	// The key manager provider to use if SSL (HTTPS) is to be used for connection-level security. When specifying a value for this property (except when using the Null key manager provider) you must ensure that the external server trusts this server's public certificate by adding this server's public certificate to the external server's trust store.
 	KeyManagerProvider *string `json:"keyManagerProvider,omitempty"`
 	// The trust manager provider to use if SSL (HTTPS) is to be used for connection-level security.
@@ -134,9 +134,9 @@ func (o *HttpExternalServerResponse) SetBaseURL(v string) {
 }
 
 // GetHostnameVerificationMethod returns the HostnameVerificationMethod field value if set, zero value otherwise.
-func (o *HttpExternalServerResponse) GetHostnameVerificationMethod() EnumexternalServerHostnameVerificationMethodProp {
+func (o *HttpExternalServerResponse) GetHostnameVerificationMethod() EnumexternalServerHttpHostnameVerificationMethodProp {
 	if o == nil || IsNil(o.HostnameVerificationMethod) {
-		var ret EnumexternalServerHostnameVerificationMethodProp
+		var ret EnumexternalServerHttpHostnameVerificationMethodProp
 		return ret
 	}
 	return *o.HostnameVerificationMethod
@@ -144,7 +144,7 @@ func (o *HttpExternalServerResponse) GetHostnameVerificationMethod() Enumexterna
 
 // GetHostnameVerificationMethodOk returns a tuple with the HostnameVerificationMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HttpExternalServerResponse) GetHostnameVerificationMethodOk() (*EnumexternalServerHostnameVerificationMethodProp, bool) {
+func (o *HttpExternalServerResponse) GetHostnameVerificationMethodOk() (*EnumexternalServerHttpHostnameVerificationMethodProp, bool) {
 	if o == nil || IsNil(o.HostnameVerificationMethod) {
 		return nil, false
 	}
@@ -160,8 +160,8 @@ func (o *HttpExternalServerResponse) HasHostnameVerificationMethod() bool {
 	return false
 }
 
-// SetHostnameVerificationMethod gets a reference to the given EnumexternalServerHostnameVerificationMethodProp and assigns it to the HostnameVerificationMethod field.
-func (o *HttpExternalServerResponse) SetHostnameVerificationMethod(v EnumexternalServerHostnameVerificationMethodProp) {
+// SetHostnameVerificationMethod gets a reference to the given EnumexternalServerHttpHostnameVerificationMethodProp and assigns it to the HostnameVerificationMethod field.
+func (o *HttpExternalServerResponse) SetHostnameVerificationMethod(v EnumexternalServerHttpHostnameVerificationMethodProp) {
 	o.HostnameVerificationMethod = &v
 }
 

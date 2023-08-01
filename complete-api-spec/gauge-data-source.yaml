@@ -11,6 +11,33 @@ tags:
   name: gauge-data-source
 paths:
   /gauge-data-sources:
+    get:
+      summary: Returns a list of all Gauge Data Source objects
+      operationId: list-gauge-data-sources
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/gauge-data-sourceListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - gauge-data-source
     post:
       summary: Add a new Gauge Data Source to the config
       operationId: add-gauge-data-source
@@ -322,6 +349,23 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:gauge-data-source:numeric"
+    gauge-data-sourceListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/indicator-gauge-data-source-response'
+            - $ref: '#/components/schemas/numeric-gauge-data-source-response'
     updateRequest:
       type: object
       properties:

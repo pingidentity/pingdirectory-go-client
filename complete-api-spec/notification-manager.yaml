@@ -11,6 +11,33 @@ tags:
   name: notification-manager
 paths:
   /notification-managers:
+    get:
+      summary: Returns a list of all Notification Manager objects
+      operationId: list-notification-managers
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/notification-managerListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - notification-manager
     post:
       summary: Add a new Notification Manager to the config
       operationId: add-notification-manager
@@ -215,6 +242,21 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:notification-manager:third-party"
+    notification-managerListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/third-party-notification-manager-response'
     updateRequest:
       type: object
       properties:

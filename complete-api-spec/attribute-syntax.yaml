@@ -10,6 +10,34 @@ tags:
 - description: Access attribute-syntaxes
   name: attribute-syntax
 paths:
+  /attribute-syntaxes:
+    get:
+      summary: Returns a list of all Attribute Syntax objects
+      operationId: list-attribute-syntaxes
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/attribute-syntaxListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - attribute-syntax
   /attribute-syntaxes/{attribute-syntax-name}:
     get:
       summary: Returns a single Attribute Syntax
@@ -719,6 +747,36 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:name-and-optional-uid"
+    attribute-syntaxListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/attribute-type-description-attribute-syntax-response'
+            - $ref: '#/components/schemas/directory-string-attribute-syntax-response'
+            - $ref: '#/components/schemas/telephone-number-attribute-syntax-response'
+            - $ref: '#/components/schemas/distinguished-name-attribute-syntax-response'
+            - $ref: '#/components/schemas/generalized-time-attribute-syntax-response'
+            - $ref: '#/components/schemas/integer-attribute-syntax-response'
+            - $ref: '#/components/schemas/uuid-attribute-syntax-response'
+            - $ref: '#/components/schemas/generic-attribute-syntax-response'
+            - $ref: '#/components/schemas/json-object-attribute-syntax-response'
+            - $ref: '#/components/schemas/user-password-attribute-syntax-response'
+            - $ref: '#/components/schemas/boolean-attribute-syntax-response'
+            - $ref: '#/components/schemas/hex-string-attribute-syntax-response'
+            - $ref: '#/components/schemas/bit-string-attribute-syntax-response'
+            - $ref: '#/components/schemas/ldap-url-attribute-syntax-response'
+            - $ref: '#/components/schemas/name-and-optional-uid-attribute-syntax-response'
     updateRequest:
       type: object
       properties:

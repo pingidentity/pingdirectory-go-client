@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddScimSubattribute**](ScimSubattributeApi.md#AddScimSubattribute) | **Post** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name}/scim-subattributes | Add a new SCIM Subattribute to the config
 [**DeleteScimSubattribute**](ScimSubattributeApi.md#DeleteScimSubattribute) | **Delete** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name}/scim-subattributes/{scim-subattribute-name} | Delete a SCIM Subattribute
 [**GetScimSubattribute**](ScimSubattributeApi.md#GetScimSubattribute) | **Get** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name}/scim-subattributes/{scim-subattribute-name} | Returns a single SCIM Subattribute
+[**ListScimSubattributes**](ScimSubattributeApi.md#ListScimSubattributes) | **Get** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name}/scim-subattributes | Returns a list of all SCIM Subattribute objects
 [**UpdateScimSubattribute**](ScimSubattributeApi.md#UpdateScimSubattribute) | **Patch** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name}/scim-subattributes/{scim-subattribute-name} | Update an existing SCIM Subattribute by name
 
 
@@ -215,6 +216,79 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ScimSubattributeResponse**](ScimSubattributeResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListScimSubattributes
+
+> ScimSubattributeListResponse ListScimSubattributes(ctx, scimAttributeName, scimSchemaName).Filter(filter).Execute()
+
+Returns a list of all SCIM Subattribute objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    scimAttributeName := "scimAttributeName_example" // string | Name of the SCIM Attribute
+    scimSchemaName := "scimSchemaName_example" // string | Name of the SCIM Schema
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ScimSubattributeApi.ListScimSubattributes(context.Background(), scimAttributeName, scimSchemaName).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ScimSubattributeApi.ListScimSubattributes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListScimSubattributes`: ScimSubattributeListResponse
+    fmt.Fprintf(os.Stdout, "Response from `ScimSubattributeApi.ListScimSubattributes`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**scimAttributeName** | **string** | Name of the SCIM Attribute | 
+**scimSchemaName** | **string** | Name of the SCIM Schema | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListScimSubattributesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**ScimSubattributeListResponse**](ScimSubattributeListResponse.md)
 
 ### Authorization
 

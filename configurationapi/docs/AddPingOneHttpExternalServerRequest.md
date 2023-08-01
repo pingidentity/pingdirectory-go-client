@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ServerName** | **string** | Name of the new External Server | 
 **Schemas** | [**[]EnumpingOneHttpExternalServerSchemaUrn**](EnumpingOneHttpExternalServerSchemaUrn.md) |  | 
-**HostnameVerificationMethod** | Pointer to [**EnumexternalServerHostnameVerificationMethodProp**](EnumexternalServerHostnameVerificationMethodProp.md) |  | [optional] 
+**HostnameVerificationMethod** | Pointer to [**EnumexternalServerPingOneHttpHostnameVerificationMethodProp**](EnumexternalServerPingOneHttpHostnameVerificationMethodProp.md) |  | [optional] 
 **TrustManagerProvider** | Pointer to **string** | The trust manager provider to use for HTTPS connection-level security. | [optional] 
 **ConnectTimeout** | Pointer to **string** | Specifies the maximum length of time to wait for a connection to be established before aborting a request to PingOne. | [optional] 
 **ResponseTimeout** | Pointer to **string** | Specifies the maximum length of time to wait for response data to be read from an established connection before aborting a request to PingOne. | [optional] 
@@ -73,20 +73,20 @@ SetSchemas sets Schemas field to given value.
 
 ### GetHostnameVerificationMethod
 
-`func (o *AddPingOneHttpExternalServerRequest) GetHostnameVerificationMethod() EnumexternalServerHostnameVerificationMethodProp`
+`func (o *AddPingOneHttpExternalServerRequest) GetHostnameVerificationMethod() EnumexternalServerPingOneHttpHostnameVerificationMethodProp`
 
 GetHostnameVerificationMethod returns the HostnameVerificationMethod field if non-nil, zero value otherwise.
 
 ### GetHostnameVerificationMethodOk
 
-`func (o *AddPingOneHttpExternalServerRequest) GetHostnameVerificationMethodOk() (*EnumexternalServerHostnameVerificationMethodProp, bool)`
+`func (o *AddPingOneHttpExternalServerRequest) GetHostnameVerificationMethodOk() (*EnumexternalServerPingOneHttpHostnameVerificationMethodProp, bool)`
 
 GetHostnameVerificationMethodOk returns a tuple with the HostnameVerificationMethod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHostnameVerificationMethod
 
-`func (o *AddPingOneHttpExternalServerRequest) SetHostnameVerificationMethod(v EnumexternalServerHostnameVerificationMethodProp)`
+`func (o *AddPingOneHttpExternalServerRequest) SetHostnameVerificationMethod(v EnumexternalServerPingOneHttpHostnameVerificationMethodProp)`
 
 SetHostnameVerificationMethod sets HostnameVerificationMethod field to given value.
 

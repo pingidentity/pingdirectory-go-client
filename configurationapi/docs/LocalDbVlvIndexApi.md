@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddLocalDbVlvIndex**](LocalDbVlvIndexApi.md#AddLocalDbVlvIndex) | **Post** /backends/{backend-name}/local-db-vlv-indexes | Add a new Local DB VLV Index to the config
 [**DeleteLocalDbVlvIndex**](LocalDbVlvIndexApi.md#DeleteLocalDbVlvIndex) | **Delete** /backends/{backend-name}/local-db-vlv-indexes/{local-db-vlv-index-name} | Delete a Local DB VLV Index
 [**GetLocalDbVlvIndex**](LocalDbVlvIndexApi.md#GetLocalDbVlvIndex) | **Get** /backends/{backend-name}/local-db-vlv-indexes/{local-db-vlv-index-name} | Returns a single Local DB VLV Index
+[**ListLocalDbVlvIndexes**](LocalDbVlvIndexApi.md#ListLocalDbVlvIndexes) | **Get** /backends/{backend-name}/local-db-vlv-indexes | Returns a list of all Local DB VLV Index objects
 [**UpdateLocalDbVlvIndex**](LocalDbVlvIndexApi.md#UpdateLocalDbVlvIndex) | **Patch** /backends/{backend-name}/local-db-vlv-indexes/{local-db-vlv-index-name} | Update an existing Local DB VLV Index by name
 
 
@@ -206,6 +207,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**LocalDbVlvIndexResponse**](LocalDbVlvIndexResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListLocalDbVlvIndexes
+
+> LocalDbVlvIndexListResponse ListLocalDbVlvIndexes(ctx, backendName).Filter(filter).Execute()
+
+Returns a list of all Local DB VLV Index objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    backendName := "backendName_example" // string | Name of the Backend
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.LocalDbVlvIndexApi.ListLocalDbVlvIndexes(context.Background(), backendName).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `LocalDbVlvIndexApi.ListLocalDbVlvIndexes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListLocalDbVlvIndexes`: LocalDbVlvIndexListResponse
+    fmt.Fprintf(os.Stdout, "Response from `LocalDbVlvIndexApi.ListLocalDbVlvIndexes`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**backendName** | **string** | Name of the Backend | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListLocalDbVlvIndexesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**LocalDbVlvIndexListResponse**](LocalDbVlvIndexListResponse.md)
 
 ### Authorization
 

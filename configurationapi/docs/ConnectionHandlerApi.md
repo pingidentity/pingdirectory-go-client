@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddConnectionHandler**](ConnectionHandlerApi.md#AddConnectionHandler) | **Post** /connection-handlers | Add a new Connection Handler to the config
 [**DeleteConnectionHandler**](ConnectionHandlerApi.md#DeleteConnectionHandler) | **Delete** /connection-handlers/{connection-handler-name} | Delete a Connection Handler
 [**GetConnectionHandler**](ConnectionHandlerApi.md#GetConnectionHandler) | **Get** /connection-handlers/{connection-handler-name} | Returns a single Connection Handler
+[**ListConnectionHandlers**](ConnectionHandlerApi.md#ListConnectionHandlers) | **Get** /connection-handlers | Returns a list of all Connection Handler objects
 [**UpdateConnectionHandler**](ConnectionHandlerApi.md#UpdateConnectionHandler) | **Patch** /connection-handlers/{connection-handler-name} | Update an existing Connection Handler by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddConnectionHandler200Response**](AddConnectionHandler200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListConnectionHandlers
+
+> ConnectionHandlerListResponse ListConnectionHandlers(ctx).Filter(filter).Execute()
+
+Returns a list of all Connection Handler objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ConnectionHandlerApi.ListConnectionHandlers(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ConnectionHandlerApi.ListConnectionHandlers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListConnectionHandlers`: ConnectionHandlerListResponse
+    fmt.Fprintf(os.Stdout, "Response from `ConnectionHandlerApi.ListConnectionHandlers`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListConnectionHandlersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**ConnectionHandlerListResponse**](ConnectionHandlerListResponse.md)
 
 ### Authorization
 

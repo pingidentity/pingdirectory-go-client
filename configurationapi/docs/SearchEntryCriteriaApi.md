@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddSearchEntryCriteria**](SearchEntryCriteriaApi.md#AddSearchEntryCriteria) | **Post** /search-entry-criteria | Add a new Search Entry Criteria to the config
 [**DeleteSearchEntryCriteria**](SearchEntryCriteriaApi.md#DeleteSearchEntryCriteria) | **Delete** /search-entry-criteria/{search-entry-criteria-name} | Delete a Search Entry Criteria
 [**GetSearchEntryCriteria**](SearchEntryCriteriaApi.md#GetSearchEntryCriteria) | **Get** /search-entry-criteria/{search-entry-criteria-name} | Returns a single Search Entry Criteria
+[**ListSearchEntryCriteria**](SearchEntryCriteriaApi.md#ListSearchEntryCriteria) | **Get** /search-entry-criteria | Returns a list of all Search Entry Criteria objects
 [**UpdateSearchEntryCriteria**](SearchEntryCriteriaApi.md#UpdateSearchEntryCriteria) | **Patch** /search-entry-criteria/{search-entry-criteria-name} | Update an existing Search Entry Criteria by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddSearchEntryCriteria200Response**](AddSearchEntryCriteria200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListSearchEntryCriteria
+
+> SearchEntryCriteriaListResponse ListSearchEntryCriteria(ctx).Filter(filter).Execute()
+
+Returns a list of all Search Entry Criteria objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SearchEntryCriteriaApi.ListSearchEntryCriteria(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SearchEntryCriteriaApi.ListSearchEntryCriteria``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListSearchEntryCriteria`: SearchEntryCriteriaListResponse
+    fmt.Fprintf(os.Stdout, "Response from `SearchEntryCriteriaApi.ListSearchEntryCriteria`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListSearchEntryCriteriaRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**SearchEntryCriteriaListResponse**](SearchEntryCriteriaListResponse.md)
 
 ### Authorization
 

@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddAccessTokenValidator**](AccessTokenValidatorApi.md#AddAccessTokenValidator) | **Post** /access-token-validators | Add a new Access Token Validator to the config
 [**DeleteAccessTokenValidator**](AccessTokenValidatorApi.md#DeleteAccessTokenValidator) | **Delete** /access-token-validators/{access-token-validator-name} | Delete a Access Token Validator
 [**GetAccessTokenValidator**](AccessTokenValidatorApi.md#GetAccessTokenValidator) | **Get** /access-token-validators/{access-token-validator-name} | Returns a single Access Token Validator
+[**ListAccessTokenValidators**](AccessTokenValidatorApi.md#ListAccessTokenValidators) | **Get** /access-token-validators | Returns a list of all Access Token Validator objects
 [**UpdateAccessTokenValidator**](AccessTokenValidatorApi.md#UpdateAccessTokenValidator) | **Patch** /access-token-validators/{access-token-validator-name} | Update an existing Access Token Validator by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddAccessTokenValidator200Response**](AddAccessTokenValidator200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListAccessTokenValidators
+
+> AccessTokenValidatorListResponse ListAccessTokenValidators(ctx).Filter(filter).Execute()
+
+Returns a list of all Access Token Validator objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AccessTokenValidatorApi.ListAccessTokenValidators(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AccessTokenValidatorApi.ListAccessTokenValidators``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListAccessTokenValidators`: AccessTokenValidatorListResponse
+    fmt.Fprintf(os.Stdout, "Response from `AccessTokenValidatorApi.ListAccessTokenValidators`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListAccessTokenValidatorsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**AccessTokenValidatorListResponse**](AccessTokenValidatorListResponse.md)
 
 ### Authorization
 

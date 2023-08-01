@@ -24,8 +24,8 @@ type UniqueAttributePluginResponse struct {
 	Schemas    []EnumuniqueAttributePluginSchemaUrn `json:"schemas"`
 	PluginType []EnumpluginPluginTypeProp           `json:"pluginType"`
 	// Specifies the type of attributes to check for value uniqueness.
-	Type                      []string                                 `json:"type"`
-	MultipleAttributeBehavior *EnumpluginMultipleAttributeBehaviorProp `json:"multipleAttributeBehavior,omitempty"`
+	Type                      []string                                                `json:"type"`
+	MultipleAttributeBehavior *EnumpluginUniqueAttributeMultipleAttributeBehaviorProp `json:"multipleAttributeBehavior,omitempty"`
 	// Specifies a base DN within which the attribute must be unique.
 	BaseDN []string `json:"baseDN,omitempty"`
 	// Indicates whether this Unique Attribute Plugin should reject a change that would result in one or more conflicts, even if those conflicts only exist in soft-deleted entries.
@@ -161,9 +161,9 @@ func (o *UniqueAttributePluginResponse) SetType(v []string) {
 }
 
 // GetMultipleAttributeBehavior returns the MultipleAttributeBehavior field value if set, zero value otherwise.
-func (o *UniqueAttributePluginResponse) GetMultipleAttributeBehavior() EnumpluginMultipleAttributeBehaviorProp {
+func (o *UniqueAttributePluginResponse) GetMultipleAttributeBehavior() EnumpluginUniqueAttributeMultipleAttributeBehaviorProp {
 	if o == nil || IsNil(o.MultipleAttributeBehavior) {
-		var ret EnumpluginMultipleAttributeBehaviorProp
+		var ret EnumpluginUniqueAttributeMultipleAttributeBehaviorProp
 		return ret
 	}
 	return *o.MultipleAttributeBehavior
@@ -171,7 +171,7 @@ func (o *UniqueAttributePluginResponse) GetMultipleAttributeBehavior() Enumplugi
 
 // GetMultipleAttributeBehaviorOk returns a tuple with the MultipleAttributeBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UniqueAttributePluginResponse) GetMultipleAttributeBehaviorOk() (*EnumpluginMultipleAttributeBehaviorProp, bool) {
+func (o *UniqueAttributePluginResponse) GetMultipleAttributeBehaviorOk() (*EnumpluginUniqueAttributeMultipleAttributeBehaviorProp, bool) {
 	if o == nil || IsNil(o.MultipleAttributeBehavior) {
 		return nil, false
 	}
@@ -187,8 +187,8 @@ func (o *UniqueAttributePluginResponse) HasMultipleAttributeBehavior() bool {
 	return false
 }
 
-// SetMultipleAttributeBehavior gets a reference to the given EnumpluginMultipleAttributeBehaviorProp and assigns it to the MultipleAttributeBehavior field.
-func (o *UniqueAttributePluginResponse) SetMultipleAttributeBehavior(v EnumpluginMultipleAttributeBehaviorProp) {
+// SetMultipleAttributeBehavior gets a reference to the given EnumpluginUniqueAttributeMultipleAttributeBehaviorProp and assigns it to the MultipleAttributeBehavior field.
+func (o *UniqueAttributePluginResponse) SetMultipleAttributeBehavior(v EnumpluginUniqueAttributeMultipleAttributeBehaviorProp) {
 	o.MultipleAttributeBehavior = &v
 }
 

@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddObscuredValue**](ObscuredValueApi.md#AddObscuredValue) | **Post** /obscured-values | Add a new Obscured Value to the config
 [**DeleteObscuredValue**](ObscuredValueApi.md#DeleteObscuredValue) | **Delete** /obscured-values/{obscured-value-name} | Delete a Obscured Value
 [**GetObscuredValue**](ObscuredValueApi.md#GetObscuredValue) | **Get** /obscured-values/{obscured-value-name} | Returns a single Obscured Value
+[**ListObscuredValues**](ObscuredValueApi.md#ListObscuredValues) | **Get** /obscured-values | Returns a list of all Obscured Value objects
 [**UpdateObscuredValue**](ObscuredValueApi.md#UpdateObscuredValue) | **Patch** /obscured-values/{obscured-value-name} | Update an existing Obscured Value by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ObscuredValueResponse**](ObscuredValueResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListObscuredValues
+
+> ObscuredValueListResponse ListObscuredValues(ctx).Filter(filter).Execute()
+
+Returns a list of all Obscured Value objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ObscuredValueApi.ListObscuredValues(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ObscuredValueApi.ListObscuredValues``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListObscuredValues`: ObscuredValueListResponse
+    fmt.Fprintf(os.Stdout, "Response from `ObscuredValueApi.ListObscuredValues`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListObscuredValuesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**ObscuredValueListResponse**](ObscuredValueListResponse.md)
 
 ### Authorization
 

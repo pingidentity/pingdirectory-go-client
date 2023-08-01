@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddConjurAuthenticationMethod**](ConjurAuthenticationMethodApi.md#AddConjurAuthenticationMethod) | **Post** /conjur-authentication-methods | Add a new Conjur Authentication Method to the config
 [**DeleteConjurAuthenticationMethod**](ConjurAuthenticationMethodApi.md#DeleteConjurAuthenticationMethod) | **Delete** /conjur-authentication-methods/{conjur-authentication-method-name} | Delete a Conjur Authentication Method
 [**GetConjurAuthenticationMethod**](ConjurAuthenticationMethodApi.md#GetConjurAuthenticationMethod) | **Get** /conjur-authentication-methods/{conjur-authentication-method-name} | Returns a single Conjur Authentication Method
+[**ListConjurAuthenticationMethods**](ConjurAuthenticationMethodApi.md#ListConjurAuthenticationMethods) | **Get** /conjur-authentication-methods | Returns a list of all Conjur Authentication Method objects
 [**UpdateConjurAuthenticationMethod**](ConjurAuthenticationMethodApi.md#UpdateConjurAuthenticationMethod) | **Patch** /conjur-authentication-methods/{conjur-authentication-method-name} | Update an existing Conjur Authentication Method by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiKeyConjurAuthenticationMethodResponse**](ApiKeyConjurAuthenticationMethodResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListConjurAuthenticationMethods
+
+> ConjurAuthenticationMethodListResponse ListConjurAuthenticationMethods(ctx).Filter(filter).Execute()
+
+Returns a list of all Conjur Authentication Method objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ConjurAuthenticationMethodApi.ListConjurAuthenticationMethods(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ConjurAuthenticationMethodApi.ListConjurAuthenticationMethods``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListConjurAuthenticationMethods`: ConjurAuthenticationMethodListResponse
+    fmt.Fprintf(os.Stdout, "Response from `ConjurAuthenticationMethodApi.ListConjurAuthenticationMethods`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListConjurAuthenticationMethodsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**ConjurAuthenticationMethodListResponse**](ConjurAuthenticationMethodListResponse.md)
 
 ### Authorization
 

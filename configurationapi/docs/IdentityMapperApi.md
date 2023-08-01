@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddIdentityMapper**](IdentityMapperApi.md#AddIdentityMapper) | **Post** /identity-mappers | Add a new Identity Mapper to the config
 [**DeleteIdentityMapper**](IdentityMapperApi.md#DeleteIdentityMapper) | **Delete** /identity-mappers/{identity-mapper-name} | Delete a Identity Mapper
 [**GetIdentityMapper**](IdentityMapperApi.md#GetIdentityMapper) | **Get** /identity-mappers/{identity-mapper-name} | Returns a single Identity Mapper
+[**ListIdentityMappers**](IdentityMapperApi.md#ListIdentityMappers) | **Get** /identity-mappers | Returns a list of all Identity Mapper objects
 [**UpdateIdentityMapper**](IdentityMapperApi.md#UpdateIdentityMapper) | **Patch** /identity-mappers/{identity-mapper-name} | Update an existing Identity Mapper by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddIdentityMapper200Response**](AddIdentityMapper200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListIdentityMappers
+
+> IdentityMapperListResponse ListIdentityMappers(ctx).Filter(filter).Execute()
+
+Returns a list of all Identity Mapper objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IdentityMapperApi.ListIdentityMappers(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IdentityMapperApi.ListIdentityMappers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListIdentityMappers`: IdentityMapperListResponse
+    fmt.Fprintf(os.Stdout, "Response from `IdentityMapperApi.ListIdentityMappers`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListIdentityMappersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**IdentityMapperListResponse**](IdentityMapperListResponse.md)
 
 ### Authorization
 

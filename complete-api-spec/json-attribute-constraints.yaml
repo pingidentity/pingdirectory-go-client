@@ -11,6 +11,33 @@ tags:
   name: json-attribute-constraints
 paths:
   /json-attribute-constraints:
+    get:
+      summary: Returns a list of all JSON Attribute Constraints objects
+      operationId: list-json-attribute-constraints
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/json-attribute-constraintsListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - json-attribute-constraints
     post:
       summary: Add a new JSON Attribute Constraints to the config
       operationId: add-json-attribute-constraints
@@ -136,6 +163,41 @@ paths:
       tags:
       - json-attribute-constraints
   /json-attribute-constraints/{json-attribute-constraints-name}/json-field-constraints:
+    get:
+      summary: Returns a list of all JSON Field Constraints objects
+      operationId: list-json-field-constraints
+      parameters:
+      - description: Name of the JSON Attribute Constraints
+        explode: false
+        in: path
+        name: json-attribute-constraints-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/json-field-constraintsListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - json-field-constraints
     post:
       summary: Add a new JSON Field Constraints to the config
       operationId: add-json-field-constraints
@@ -494,6 +556,36 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:json-field-constraints"
+    json-attribute-constraintsListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/json-attribute-constraints-response'
+    json-field-constraintsListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/json-field-constraints-response'
     updateRequest:
       type: object
       properties:

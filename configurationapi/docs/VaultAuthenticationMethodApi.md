@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddVaultAuthenticationMethod**](VaultAuthenticationMethodApi.md#AddVaultAuthenticationMethod) | **Post** /vault-authentication-methods | Add a new Vault Authentication Method to the config
 [**DeleteVaultAuthenticationMethod**](VaultAuthenticationMethodApi.md#DeleteVaultAuthenticationMethod) | **Delete** /vault-authentication-methods/{vault-authentication-method-name} | Delete a Vault Authentication Method
 [**GetVaultAuthenticationMethod**](VaultAuthenticationMethodApi.md#GetVaultAuthenticationMethod) | **Get** /vault-authentication-methods/{vault-authentication-method-name} | Returns a single Vault Authentication Method
+[**ListVaultAuthenticationMethods**](VaultAuthenticationMethodApi.md#ListVaultAuthenticationMethods) | **Get** /vault-authentication-methods | Returns a list of all Vault Authentication Method objects
 [**UpdateVaultAuthenticationMethod**](VaultAuthenticationMethodApi.md#UpdateVaultAuthenticationMethod) | **Patch** /vault-authentication-methods/{vault-authentication-method-name} | Update an existing Vault Authentication Method by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddVaultAuthenticationMethod200Response**](AddVaultAuthenticationMethod200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListVaultAuthenticationMethods
+
+> VaultAuthenticationMethodListResponse ListVaultAuthenticationMethods(ctx).Filter(filter).Execute()
+
+Returns a list of all Vault Authentication Method objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VaultAuthenticationMethodApi.ListVaultAuthenticationMethods(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `VaultAuthenticationMethodApi.ListVaultAuthenticationMethods``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListVaultAuthenticationMethods`: VaultAuthenticationMethodListResponse
+    fmt.Fprintf(os.Stdout, "Response from `VaultAuthenticationMethodApi.ListVaultAuthenticationMethods`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListVaultAuthenticationMethodsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**VaultAuthenticationMethodListResponse**](VaultAuthenticationMethodListResponse.md)
 
 ### Authorization
 

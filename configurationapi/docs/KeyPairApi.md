@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddKeyPair**](KeyPairApi.md#AddKeyPair) | **Post** /key-pairs | Add a new Key Pair to the config
 [**DeleteKeyPair**](KeyPairApi.md#DeleteKeyPair) | **Delete** /key-pairs/{key-pair-name} | Delete a Key Pair
 [**GetKeyPair**](KeyPairApi.md#GetKeyPair) | **Get** /key-pairs/{key-pair-name} | Returns a single Key Pair
+[**ListKeyPairs**](KeyPairApi.md#ListKeyPairs) | **Get** /key-pairs | Returns a list of all Key Pair objects
 [**UpdateKeyPair**](KeyPairApi.md#UpdateKeyPair) | **Patch** /key-pairs/{key-pair-name} | Update an existing Key Pair by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**KeyPairResponse**](KeyPairResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListKeyPairs
+
+> KeyPairListResponse ListKeyPairs(ctx).Filter(filter).Execute()
+
+Returns a list of all Key Pair objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.KeyPairApi.ListKeyPairs(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `KeyPairApi.ListKeyPairs``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListKeyPairs`: KeyPairListResponse
+    fmt.Fprintf(os.Stdout, "Response from `KeyPairApi.ListKeyPairs`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListKeyPairsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**KeyPairListResponse**](KeyPairListResponse.md)
 
 ### Authorization
 

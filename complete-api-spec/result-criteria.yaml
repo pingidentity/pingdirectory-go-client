@@ -11,6 +11,33 @@ tags:
   name: result-criteria
 paths:
   /result-criteria:
+    get:
+      summary: Returns a list of all Result Criteria objects
+      operationId: list-result-criteria
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/result-criteriaListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - result-criteria
     post:
       summary: Add a new Result Criteria to the config
       operationId: add-result-criteria
@@ -157,92 +184,6 @@ paths:
       - result-criteria
 components:
   schemas:
-    add-successful-bind-result-criteria-request:
-      allOf:
-      - type: object
-        properties:
-          criteriaName:
-            type: string
-            description: >-
-                Name of the new Result Criteria
-      - $ref: '#/components/schemas/successful-bind-result-criteria-shared'
-      required:
-      - criteriaName
-    successful-bind-result-criteria-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            type: string
-            description: >-
-                Name of the Result Criteria
-      - $ref: '#/components/schemas/successful-bind-result-criteria-shared'
-      - $ref: '#/components/schemas/meta'
-      required:
-      - id
-    successful-bind-result-criteria-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumsuccessful-bind-result-criteriaSchemaUrn'
-        requestCriteria:
-          type: string
-          description: >-
-              Specifies a request criteria object that must match the associated request for operations included in this Successful Bind Result Criteria.
-        includeAnonymousBinds:
-          type: boolean
-          description: >-
-              Indicates whether this criteria will be permitted to match bind operations that resulted in anonymous authentication.
-        includedUserBaseDN:
-          type: array
-          items:
-            type: string
-          description: >-
-              A set of base DNs for authenticated users that will be permitted to match this criteria.
-        excludedUserBaseDN:
-          type: array
-          items:
-            type: string
-          description: >-
-              A set of base DNs for authenticated users that will not be permitted to match this criteria.
-        includedUserFilter:
-          type: array
-          items:
-            type: string
-          description: >-
-              A set of filters that may be used to identify entries for authenticated users that will be permitted to match this criteria.
-        excludedUserFilter:
-          type: array
-          items:
-            type: string
-          description: >-
-              A set of filters that may be used to identify entries for authenticated users that will not be permitted to match this criteria.
-        includedUserGroupDN:
-          type: array
-          items:
-            type: string
-          description: >-
-              The DNs of the groups whose members will be permitted to match this criteria.
-        excludedUserGroupDN:
-          type: array
-          items:
-            type: string
-          description: >-
-              The DNs of the groups whose members will not be permitted to match this criteria.
-        description:
-          type: string
-          description: >-
-              A description for this Result Criteria
-      required:
-      - schemas
-    Enumsuccessful-bind-result-criteriaSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:result-criteria:successful-bind"
     Enumresult-criteria-resultCodeCriteriaProp:
       type: string
       enum:
@@ -643,6 +584,92 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:result-criteria:simple"
+    add-successful-bind-result-criteria-request:
+      allOf:
+      - type: object
+        properties:
+          criteriaName:
+            type: string
+            description: >-
+                Name of the new Result Criteria
+      - $ref: '#/components/schemas/successful-bind-result-criteria-shared'
+      required:
+      - criteriaName
+    successful-bind-result-criteria-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the Result Criteria
+      - $ref: '#/components/schemas/successful-bind-result-criteria-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    successful-bind-result-criteria-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumsuccessful-bind-result-criteriaSchemaUrn'
+        requestCriteria:
+          type: string
+          description: >-
+              Specifies a request criteria object that must match the associated request for operations included in this Successful Bind Result Criteria.
+        includeAnonymousBinds:
+          type: boolean
+          description: >-
+              Indicates whether this criteria will be permitted to match bind operations that resulted in anonymous authentication.
+        includedUserBaseDN:
+          type: array
+          items:
+            type: string
+          description: >-
+              A set of base DNs for authenticated users that will be permitted to match this criteria.
+        excludedUserBaseDN:
+          type: array
+          items:
+            type: string
+          description: >-
+              A set of base DNs for authenticated users that will not be permitted to match this criteria.
+        includedUserFilter:
+          type: array
+          items:
+            type: string
+          description: >-
+              A set of filters that may be used to identify entries for authenticated users that will be permitted to match this criteria.
+        excludedUserFilter:
+          type: array
+          items:
+            type: string
+          description: >-
+              A set of filters that may be used to identify entries for authenticated users that will not be permitted to match this criteria.
+        includedUserGroupDN:
+          type: array
+          items:
+            type: string
+          description: >-
+              The DNs of the groups whose members will be permitted to match this criteria.
+        excludedUserGroupDN:
+          type: array
+          items:
+            type: string
+          description: >-
+              The DNs of the groups whose members will not be permitted to match this criteria.
+        description:
+          type: string
+          description: >-
+              A description for this Result Criteria
+      required:
+      - schemas
+    Enumsuccessful-bind-result-criteriaSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:result-criteria:successful-bind"
     add-aggregate-result-criteria-request:
       allOf:
       - type: object
@@ -883,6 +910,26 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:result-criteria:third-party"
+    result-criteriaListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/simple-result-criteria-response'
+            - $ref: '#/components/schemas/successful-bind-result-criteria-response'
+            - $ref: '#/components/schemas/aggregate-result-criteria-response'
+            - $ref: '#/components/schemas/replication-assurance-result-criteria-response'
+            - $ref: '#/components/schemas/third-party-result-criteria-response'
     updateRequest:
       type: object
       properties:

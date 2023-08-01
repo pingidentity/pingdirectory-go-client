@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddPasswordValidator**](PasswordValidatorApi.md#AddPasswordValidator) | **Post** /password-validators | Add a new Password Validator to the config
 [**DeletePasswordValidator**](PasswordValidatorApi.md#DeletePasswordValidator) | **Delete** /password-validators/{password-validator-name} | Delete a Password Validator
 [**GetPasswordValidator**](PasswordValidatorApi.md#GetPasswordValidator) | **Get** /password-validators/{password-validator-name} | Returns a single Password Validator
+[**ListPasswordValidators**](PasswordValidatorApi.md#ListPasswordValidators) | **Get** /password-validators | Returns a list of all Password Validator objects
 [**UpdatePasswordValidator**](PasswordValidatorApi.md#UpdatePasswordValidator) | **Patch** /password-validators/{password-validator-name} | Update an existing Password Validator by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetPasswordValidator200Response**](GetPasswordValidator200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListPasswordValidators
+
+> PasswordValidatorListResponse ListPasswordValidators(ctx).Filter(filter).Execute()
+
+Returns a list of all Password Validator objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.PasswordValidatorApi.ListPasswordValidators(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `PasswordValidatorApi.ListPasswordValidators``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListPasswordValidators`: PasswordValidatorListResponse
+    fmt.Fprintf(os.Stdout, "Response from `PasswordValidatorApi.ListPasswordValidators`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListPasswordValidatorsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**PasswordValidatorListResponse**](PasswordValidatorListResponse.md)
 
 ### Authorization
 

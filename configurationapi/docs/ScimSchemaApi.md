@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddScimSchema**](ScimSchemaApi.md#AddScimSchema) | **Post** /scim-schemas | Add a new SCIM Schema to the config
 [**DeleteScimSchema**](ScimSchemaApi.md#DeleteScimSchema) | **Delete** /scim-schemas/{scim-schema-name} | Delete a SCIM Schema
 [**GetScimSchema**](ScimSchemaApi.md#GetScimSchema) | **Get** /scim-schemas/{scim-schema-name} | Returns a single SCIM Schema
+[**ListScimSchemas**](ScimSchemaApi.md#ListScimSchemas) | **Get** /scim-schemas | Returns a list of all SCIM Schema objects
 [**UpdateScimSchema**](ScimSchemaApi.md#UpdateScimSchema) | **Patch** /scim-schemas/{scim-schema-name} | Update an existing SCIM Schema by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ScimSchemaResponse**](ScimSchemaResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListScimSchemas
+
+> ScimSchemaListResponse ListScimSchemas(ctx).Filter(filter).Execute()
+
+Returns a list of all SCIM Schema objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ScimSchemaApi.ListScimSchemas(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ScimSchemaApi.ListScimSchemas``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListScimSchemas`: ScimSchemaListResponse
+    fmt.Fprintf(os.Stdout, "Response from `ScimSchemaApi.ListScimSchemas`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListScimSchemasRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**ScimSchemaListResponse**](ScimSchemaListResponse.md)
 
 ### Authorization
 

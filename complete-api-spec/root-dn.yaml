@@ -61,6 +61,33 @@ paths:
       tags:
       - root-dn
   /root-dn/root-dn-users:
+    get:
+      summary: Returns a list of all Root DN User objects
+      operationId: list-root-dn-users
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/root-dn-userListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - root-dn-user
     post:
       summary: Add a new Root DN User to the config
       operationId: add-root-dn-user
@@ -553,6 +580,21 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:root-dn-user"
+    root-dn-userListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/root-dn-user-response'
     updateRequest:
       type: object
       properties:

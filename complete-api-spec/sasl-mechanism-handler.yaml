@@ -11,6 +11,33 @@ tags:
   name: sasl-mechanism-handler
 paths:
   /sasl-mechanism-handlers:
+    get:
+      summary: Returns a list of all SASL Mechanism Handler objects
+      operationId: list-sasl-mechanism-handlers
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sasl-mechanism-handlerListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - sasl-mechanism-handler
     post:
       summary: Add a new SASL Mechanism Handler to the config
       operationId: add-sasl-mechanism-handler
@@ -281,6 +308,68 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:unboundid-totp"
+    unboundid-inter-server-sasl-mechanism-handler-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumunboundid-inter-server-sasl-mechanism-handlerSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the SASL Mechanism Handler
+          description:
+            type: string
+            description: >-
+                A description for this SASL Mechanism Handler
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the SASL mechanism handler is enabled for use.
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
+    Enumunboundid-inter-server-sasl-mechanism-handlerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:unboundid-inter-server"
+    ping-identity-inter-server-sasl-mechanism-handler-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumping-identity-inter-server-sasl-mechanism-handlerSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the SASL Mechanism Handler
+          description:
+            type: string
+            description: >-
+                A description for this SASL Mechanism Handler
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the SASL mechanism handler is enabled for use.
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
+    Enumping-identity-inter-server-sasl-mechanism-handlerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:ping-identity-inter-server"
     unboundid-yubikey-otp-sasl-mechanism-handler-response:
       allOf:
       - type: object
@@ -928,6 +1017,37 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:third-party"
+    sasl-mechanism-handlerListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/unboundid-ms-chap-v2-sasl-mechanism-handler-response'
+            - $ref: '#/components/schemas/unboundid-totp-sasl-mechanism-handler-response'
+            - $ref: '#/components/schemas/unboundid-inter-server-sasl-mechanism-handler-response'
+            - $ref: '#/components/schemas/ping-identity-inter-server-sasl-mechanism-handler-response'
+            - $ref: '#/components/schemas/unboundid-yubikey-otp-sasl-mechanism-handler-response'
+            - $ref: '#/components/schemas/external-sasl-mechanism-handler-response'
+            - $ref: '#/components/schemas/digest-md5-sasl-mechanism-handler-response'
+            - $ref: '#/components/schemas/plain-sasl-mechanism-handler-response'
+            - $ref: '#/components/schemas/unboundid-delivered-otp-sasl-mechanism-handler-response'
+            - $ref: '#/components/schemas/unboundid-external-auth-sasl-mechanism-handler-response'
+            - $ref: '#/components/schemas/anonymous-sasl-mechanism-handler-response'
+            - $ref: '#/components/schemas/cram-md5-sasl-mechanism-handler-response'
+            - $ref: '#/components/schemas/oauth-bearer-sasl-mechanism-handler-response'
+            - $ref: '#/components/schemas/unboundid-certificate-plus-password-sasl-mechanism-handler-response'
+            - $ref: '#/components/schemas/gssapi-sasl-mechanism-handler-response'
+            - $ref: '#/components/schemas/third-party-sasl-mechanism-handler-response'
     updateRequest:
       type: object
       properties:

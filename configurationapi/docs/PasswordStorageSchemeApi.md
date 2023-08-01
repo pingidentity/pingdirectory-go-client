@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddPasswordStorageScheme**](PasswordStorageSchemeApi.md#AddPasswordStorageScheme) | **Post** /password-storage-schemes | Add a new Password Storage Scheme to the config
 [**DeletePasswordStorageScheme**](PasswordStorageSchemeApi.md#DeletePasswordStorageScheme) | **Delete** /password-storage-schemes/{password-storage-scheme-name} | Delete a Password Storage Scheme
 [**GetPasswordStorageScheme**](PasswordStorageSchemeApi.md#GetPasswordStorageScheme) | **Get** /password-storage-schemes/{password-storage-scheme-name} | Returns a single Password Storage Scheme
+[**ListPasswordStorageSchemes**](PasswordStorageSchemeApi.md#ListPasswordStorageSchemes) | **Get** /password-storage-schemes | Returns a list of all Password Storage Scheme objects
 [**UpdatePasswordStorageScheme**](PasswordStorageSchemeApi.md#UpdatePasswordStorageScheme) | **Patch** /password-storage-schemes/{password-storage-scheme-name} | Update an existing Password Storage Scheme by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetPasswordStorageScheme200Response**](GetPasswordStorageScheme200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListPasswordStorageSchemes
+
+> PasswordStorageSchemeListResponse ListPasswordStorageSchemes(ctx).Filter(filter).Execute()
+
+Returns a list of all Password Storage Scheme objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.PasswordStorageSchemeApi.ListPasswordStorageSchemes(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `PasswordStorageSchemeApi.ListPasswordStorageSchemes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListPasswordStorageSchemes`: PasswordStorageSchemeListResponse
+    fmt.Fprintf(os.Stdout, "Response from `PasswordStorageSchemeApi.ListPasswordStorageSchemes`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListPasswordStorageSchemesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**PasswordStorageSchemeListResponse**](PasswordStorageSchemeListResponse.md)
 
 ### Authorization
 

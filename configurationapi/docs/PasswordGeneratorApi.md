@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddPasswordGenerator**](PasswordGeneratorApi.md#AddPasswordGenerator) | **Post** /password-generators | Add a new Password Generator to the config
 [**DeletePasswordGenerator**](PasswordGeneratorApi.md#DeletePasswordGenerator) | **Delete** /password-generators/{password-generator-name} | Delete a Password Generator
 [**GetPasswordGenerator**](PasswordGeneratorApi.md#GetPasswordGenerator) | **Get** /password-generators/{password-generator-name} | Returns a single Password Generator
+[**ListPasswordGenerators**](PasswordGeneratorApi.md#ListPasswordGenerators) | **Get** /password-generators | Returns a list of all Password Generator objects
 [**UpdatePasswordGenerator**](PasswordGeneratorApi.md#UpdatePasswordGenerator) | **Patch** /password-generators/{password-generator-name} | Update an existing Password Generator by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddPasswordGenerator200Response**](AddPasswordGenerator200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListPasswordGenerators
+
+> PasswordGeneratorListResponse ListPasswordGenerators(ctx).Filter(filter).Execute()
+
+Returns a list of all Password Generator objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.PasswordGeneratorApi.ListPasswordGenerators(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `PasswordGeneratorApi.ListPasswordGenerators``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListPasswordGenerators`: PasswordGeneratorListResponse
+    fmt.Fprintf(os.Stdout, "Response from `PasswordGeneratorApi.ListPasswordGenerators`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListPasswordGeneratorsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**PasswordGeneratorListResponse**](PasswordGeneratorListResponse.md)
 
 ### Authorization
 

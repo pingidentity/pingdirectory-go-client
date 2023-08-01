@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddFailureLockoutAction**](FailureLockoutActionApi.md#AddFailureLockoutAction) | **Post** /failure-lockout-actions | Add a new Failure Lockout Action to the config
 [**DeleteFailureLockoutAction**](FailureLockoutActionApi.md#DeleteFailureLockoutAction) | **Delete** /failure-lockout-actions/{failure-lockout-action-name} | Delete a Failure Lockout Action
 [**GetFailureLockoutAction**](FailureLockoutActionApi.md#GetFailureLockoutAction) | **Get** /failure-lockout-actions/{failure-lockout-action-name} | Returns a single Failure Lockout Action
+[**ListFailureLockoutActions**](FailureLockoutActionApi.md#ListFailureLockoutActions) | **Get** /failure-lockout-actions | Returns a list of all Failure Lockout Action objects
 [**UpdateFailureLockoutAction**](FailureLockoutActionApi.md#UpdateFailureLockoutAction) | **Patch** /failure-lockout-actions/{failure-lockout-action-name} | Update an existing Failure Lockout Action by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddFailureLockoutAction200Response**](AddFailureLockoutAction200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListFailureLockoutActions
+
+> FailureLockoutActionListResponse ListFailureLockoutActions(ctx).Filter(filter).Execute()
+
+Returns a list of all Failure Lockout Action objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.FailureLockoutActionApi.ListFailureLockoutActions(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `FailureLockoutActionApi.ListFailureLockoutActions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListFailureLockoutActions`: FailureLockoutActionListResponse
+    fmt.Fprintf(os.Stdout, "Response from `FailureLockoutActionApi.ListFailureLockoutActions`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListFailureLockoutActionsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**FailureLockoutActionListResponse**](FailureLockoutActionListResponse.md)
 
 ### Authorization
 

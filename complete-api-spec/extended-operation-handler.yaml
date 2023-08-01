@@ -11,6 +11,33 @@ tags:
   name: extended-operation-handler
 paths:
   /extended-operation-handlers:
+    get:
+      summary: Returns a list of all Extended Operation Handler objects
+      operationId: list-extended-operation-handlers
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/extended-operation-handlerListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - extended-operation-handler
     post:
       summary: Add a new Extended Operation Handler to the config
       operationId: add-extended-operation-handler
@@ -291,6 +318,42 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:validate-totp-password"
+    interactive-transactions-extended-operation-handler-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enuminteractive-transactions-extended-operation-handlerSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Extended Operation Handler
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Interactive Transactions Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
+          backendID:
+            type: string
+            description: >-
+                Specifies the backend ID for the backend in which the transactions will be allowed. Interactive transactions will only be supported for operations in a single backend.
+          description:
+            type: string
+            description: >-
+                A description for this Extended Operation Handler
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
+      - backendID
+    Enuminteractive-transactions-extended-operation-handlerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:interactive-transactions"
     Enumextended-operation-handler-allowedOperationProp:
       type: string
       enum:
@@ -363,6 +426,37 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:replace-certificate"
+    backup-compatibility-extended-operation-handler-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumbackup-compatibility-extended-operation-handlerSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Extended Operation Handler
+          description:
+            type: string
+            description: >-
+                A description for this Extended Operation Handler
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
+    Enumbackup-compatibility-extended-operation-handlerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:backup-compatibility"
     get-connection-id-extended-operation-handler-response:
       allOf:
       - type: object
@@ -394,6 +488,506 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:get-connection-id"
+    batched-transactions-extended-operation-handler-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumbatched-transactions-extended-operation-handlerSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Extended Operation Handler
+          description:
+            type: string
+            description: >-
+                A description for this Extended Operation Handler
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
+    Enumbatched-transactions-extended-operation-handlerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:batched-transactions"
+    administrative-session-extended-operation-handler-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumadministrative-session-extended-operation-handlerSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Extended Operation Handler
+          description:
+            type: string
+            description: >-
+                A description for this Extended Operation Handler
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
+    Enumadministrative-session-extended-operation-handlerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:administrative-session"
+    add-single-use-tokens-extended-operation-handler-request:
+      allOf:
+      - type: object
+        properties:
+          handlerName:
+            type: string
+            description: >-
+                Name of the new Extended Operation Handler
+      - $ref: '#/components/schemas/single-use-tokens-extended-operation-handler-shared'
+      required:
+      - handlerName
+    single-use-tokens-extended-operation-handler-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the Extended Operation Handler
+      - $ref: '#/components/schemas/single-use-tokens-extended-operation-handler-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    single-use-tokens-extended-operation-handler-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumsingle-use-tokens-extended-operation-handlerSchemaUrn'
+        passwordGenerator:
+          type: string
+          description: >-
+              The password generator that will be used to create the single-use token values to be delivered to the end user.
+        defaultOTPDeliveryMechanism:
+          type: array
+          items:
+            type: string
+          description: >-
+              The set of delivery mechanisms that may be used to deliver single-use tokens to users in requests that do not specify one or more preferred delivery mechanisms.
+        defaultSingleUseTokenValidityDuration:
+          type: string
+          description: >-
+              The default length of time that a single-use token will be considered valid by the server if the client doesn't specify a duration in the deliver single-use token request.
+        description:
+          type: string
+          description: >-
+              A description for this Extended Operation Handler
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
+      required:
+      - schemas
+      - passwordGenerator
+      - defaultOTPDeliveryMechanism
+      - enabled
+    Enumsingle-use-tokens-extended-operation-handlerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:single-use-tokens"
+    stream-directory-values-extended-operation-handler-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumstream-directory-values-extended-operation-handlerSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Extended Operation Handler
+          valuesPerStreamResponse:
+            type: integer
+            description: >-
+                The maximum number of values to include per response when responding to a stream values extended request, when the client does not specify a value.
+          description:
+            type: string
+            description: >-
+                A description for this Extended Operation Handler
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
+    Enumstream-directory-values-extended-operation-handlerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:stream-directory-values"
+    start-tls-extended-operation-handler-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumstart-tls-extended-operation-handlerSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Extended Operation Handler
+          description:
+            type: string
+            description: >-
+                A description for this Extended Operation Handler
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
+    Enumstart-tls-extended-operation-handlerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:start-tls"
+    subtree-accessibility-extended-operation-handler-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumsubtree-accessibility-extended-operation-handlerSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Extended Operation Handler
+          nonAccessibleSubtreeUnauthorizedBindResultCode:
+            type: integer
+            description: >-
+                The integer value for the result code that the server should return to clients that attempt to perform an unauthorized bind operation in a non-accessible subtree.
+          nonAccessibleSubtreeUnauthorizedReadResultCode:
+            type: integer
+            description: >-
+                The integer value for the result code that the server should return to clients that attempt to perform an unauthorized read (e.g., search or compare) operation in a non-accessible subtree.
+          nonAccessibleSubtreeUnauthorizedWriteResultCode:
+            type: integer
+            description: >-
+                The integer value for the result code that the server should return to clients that attempt to perform an unauthorized write (e.g., add, delete, modify or modify DN) operation in a non-accessible subtree.
+          description:
+            type: string
+            description: >-
+                A description for this Extended Operation Handler
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
+    Enumsubtree-accessibility-extended-operation-handlerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:subtree-accessibility"
+    get-symmetric-key-extended-operation-handler-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumget-symmetric-key-extended-operation-handlerSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Extended Operation Handler
+          description:
+            type: string
+            description: >-
+                A description for this Extended Operation Handler
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
+    Enumget-symmetric-key-extended-operation-handlerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:get-symmetric-key"
+    get-password-quality-requirements-extended-operation-handler-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumget-password-quality-requirements-extended-operation-handlerSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Extended Operation Handler
+          description:
+            type: string
+            description: >-
+                A description for this Extended Operation Handler
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
+    Enumget-password-quality-requirements-extended-operation-handlerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:get-password-quality-requirements"
+    add-deliver-otp-extended-operation-handler-request:
+      allOf:
+      - type: object
+        properties:
+          handlerName:
+            type: string
+            description: >-
+                Name of the new Extended Operation Handler
+      - $ref: '#/components/schemas/deliver-otp-extended-operation-handler-shared'
+      required:
+      - handlerName
+    deliver-otp-extended-operation-handler-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the Extended Operation Handler
+      - $ref: '#/components/schemas/deliver-otp-extended-operation-handler-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    deliver-otp-extended-operation-handler-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumdeliver-otp-extended-operation-handlerSchemaUrn'
+        identityMapper:
+          type: string
+          description: >-
+              The identity mapper that should be used to identify the user(s) targeted by the authentication identity contained in the extended request. This will only be used for "u:"-style authentication identities.
+        passwordGenerator:
+          type: string
+          description: >-
+              The password generator that will be used to create the one-time password values to be delivered to the end user.
+        defaultOTPDeliveryMechanism:
+          type: array
+          items:
+            type: string
+          description: >-
+              The set of delivery mechanisms that may be used to deliver one-time passwords to users in requests that do not specify one or more preferred delivery mechanisms.
+        description:
+          type: string
+          description: >-
+              A description for this Extended Operation Handler
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
+      required:
+      - schemas
+      - identityMapper
+      - passwordGenerator
+      - defaultOTPDeliveryMechanism
+      - enabled
+    Enumdeliver-otp-extended-operation-handlerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:deliver-otp"
+    add-third-party-extended-operation-handler-request:
+      allOf:
+      - type: object
+        properties:
+          handlerName:
+            type: string
+            description: >-
+                Name of the new Extended Operation Handler
+      - $ref: '#/components/schemas/third-party-extended-operation-handler-shared'
+      required:
+      - handlerName
+    third-party-extended-operation-handler-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the Extended Operation Handler
+      - $ref: '#/components/schemas/third-party-extended-operation-handler-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    third-party-extended-operation-handler-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumthird-party-extended-operation-handlerSchemaUrn'
+        extensionClass:
+          type: string
+          description: >-
+              The fully-qualified name of the Java class providing the logic for the Third Party Extended Operation Handler.
+        extensionArgument:
+          type: array
+          items:
+            type: string
+          description: >-
+              The set of arguments used to customize the behavior for the Third Party Extended Operation Handler. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: >-
+              A description for this Extended Operation Handler
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
+      required:
+      - schemas
+      - extensionClass
+      - enabled
+    Enumthird-party-extended-operation-handlerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:third-party"
+    Enumextended-operation-handler-routeToBackendSetBehaviorProp:
+      type: string
+      enum:
+      - "named-request-processors-only"
+      - "all-request-processors"
+      description: >-
+          Specifies which request processors may process extended operations containing "route to backend set" request controls.
+    third-party-proxied-extended-operation-handler-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumthird-party-proxied-extended-operation-handlerSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Extended Operation Handler
+          extensionClass:
+            type: string
+            description: >-
+                The fully-qualified name of the Java class providing the logic for the Third Party Proxied Extended Operation Handler.
+          extensionArgument:
+            type: array
+            items:
+              type: string
+            description: >-
+                The set of arguments used to customize the behavior for the Third Party Proxied Extended Operation Handler. Each configuration property should be given in the form 'name=value'.
+          routeToBackendSetBehavior:
+            $ref: '#/components/schemas/Enumextended-operation-handler-routeToBackendSetBehaviorProp'
+          description:
+            type: string
+            description: >-
+                A description for this Extended Operation Handler
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - extensionClass
+      - enabled
+    Enumthird-party-proxied-extended-operation-handlerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:third-party-proxied"
+    synchronize-encryption-settings-extended-operation-handler-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumsynchronize-encryption-settings-extended-operation-handlerSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Extended Operation Handler
+          description:
+            type: string
+            description: >-
+                A description for this Extended Operation Handler
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
+    Enumsynchronize-encryption-settings-extended-operation-handlerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:synchronize-encryption-settings"
     multi-update-extended-operation-handler-response:
       allOf:
       - type: object
@@ -617,37 +1211,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:export-reversible-passwords"
-    batched-transactions-extended-operation-handler-response:
-      allOf:
-      - type: object
-        properties:
-          schemas:
-            type: array
-            minItems: 1
-            maxItems: 1
-            items:
-              $ref: '#/components/schemas/Enumbatched-transactions-extended-operation-handlerSchemaUrn'
-          id:
-            type: string
-            description: >-
-                Name of the Extended Operation Handler
-          description:
-            type: string
-            description: >-
-                A description for this Extended Operation Handler
-          enabled:
-            type: boolean
-            description: >-
-                Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
-      - $ref: '#/components/schemas/meta'
-      required:
-      - id
-      - schemas
-      - enabled
-    Enumbatched-transactions-extended-operation-handlerSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:batched-transactions"
     get-changelog-batch-extended-operation-handler-response:
       allOf:
       - type: object
@@ -710,69 +1273,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:get-supported-otp-delivery-mechanisms"
-    add-single-use-tokens-extended-operation-handler-request:
-      allOf:
-      - type: object
-        properties:
-          handlerName:
-            type: string
-            description: >-
-                Name of the new Extended Operation Handler
-      - $ref: '#/components/schemas/single-use-tokens-extended-operation-handler-shared'
-      required:
-      - handlerName
-    single-use-tokens-extended-operation-handler-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            type: string
-            description: >-
-                Name of the Extended Operation Handler
-      - $ref: '#/components/schemas/single-use-tokens-extended-operation-handler-shared'
-      - $ref: '#/components/schemas/meta'
-      required:
-      - id
-    single-use-tokens-extended-operation-handler-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumsingle-use-tokens-extended-operation-handlerSchemaUrn'
-        passwordGenerator:
-          type: string
-          description: >-
-              The password generator that will be used to create the single-use token values to be delivered to the end user.
-        defaultOTPDeliveryMechanism:
-          type: array
-          items:
-            type: string
-          description: >-
-              The set of delivery mechanisms that may be used to deliver single-use tokens to users in requests that do not specify one or more preferred delivery mechanisms.
-        defaultSingleUseTokenValidityDuration:
-          type: string
-          description: >-
-              The default length of time that a single-use token will be considered valid by the server if the client doesn't specify a duration in the deliver single-use token request.
-        description:
-          type: string
-          description: >-
-              A description for this Extended Operation Handler
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
-      required:
-      - schemas
-      - passwordGenerator
-      - defaultOTPDeliveryMechanism
-      - enabled
-    Enumsingle-use-tokens-extended-operation-handlerSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:single-use-tokens"
     generate-password-extended-operation-handler-response:
       allOf:
       - type: object
@@ -852,37 +1352,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:who-am-i"
-    start-tls-extended-operation-handler-response:
-      allOf:
-      - type: object
-        properties:
-          schemas:
-            type: array
-            minItems: 1
-            maxItems: 1
-            items:
-              $ref: '#/components/schemas/Enumstart-tls-extended-operation-handlerSchemaUrn'
-          id:
-            type: string
-            description: >-
-                Name of the Extended Operation Handler
-          description:
-            type: string
-            description: >-
-                A description for this Extended Operation Handler
-          enabled:
-            type: boolean
-            description: >-
-                Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
-      - $ref: '#/components/schemas/meta'
-      required:
-      - id
-      - schemas
-      - enabled
-    Enumstart-tls-extended-operation-handlerSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:start-tls"
     add-deliver-password-reset-token-extended-operation-handler-request:
       allOf:
       - type: object
@@ -947,6 +1416,41 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:deliver-password-reset-token"
+    stream-proxy-values-extended-operation-handler-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumstream-proxy-values-extended-operation-handlerSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Extended Operation Handler
+          valuesPerStreamResponse:
+            type: integer
+            description: >-
+                The maximum number of values to include per response when responding to a stream values extended request, when the client does not specify a value.
+          description:
+            type: string
+            description: >-
+                A description for this Extended Operation Handler
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
+    Enumstream-proxy-values-extended-operation-handlerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:stream-proxy-values"
     password-policy-state-extended-operation-handler-response:
       allOf:
       - type: object
@@ -978,7 +1482,7 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:password-policy-state"
-    get-password-quality-requirements-extended-operation-handler-response:
+    get-configuration-extended-operation-handler-response:
       allOf:
       - type: object
         properties:
@@ -987,7 +1491,7 @@ components:
             minItems: 1
             maxItems: 1
             items:
-              $ref: '#/components/schemas/Enumget-password-quality-requirements-extended-operation-handlerSchemaUrn'
+              $ref: '#/components/schemas/Enumget-configuration-extended-operation-handlerSchemaUrn'
           id:
             type: string
             description: >-
@@ -1005,34 +1509,11 @@ components:
       - id
       - schemas
       - enabled
-    Enumget-password-quality-requirements-extended-operation-handlerSchemaUrn:
+    Enumget-configuration-extended-operation-handlerSchemaUrn:
       type: string
       enum:
-      - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:get-password-quality-requirements"
-    add-deliver-otp-extended-operation-handler-request:
-      allOf:
-      - type: object
-        properties:
-          handlerName:
-            type: string
-            description: >-
-                Name of the new Extended Operation Handler
-      - $ref: '#/components/schemas/deliver-otp-extended-operation-handler-shared'
-      required:
-      - handlerName
-    deliver-otp-extended-operation-handler-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            type: string
-            description: >-
-                Name of the Extended Operation Handler
-      - $ref: '#/components/schemas/deliver-otp-extended-operation-handler-shared'
-      - $ref: '#/components/schemas/meta'
-      required:
-      - id
-    deliver-otp-extended-operation-handler-shared:
+      - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:get-configuration"
+    extended-operation-handlerListResponse:
       type: object
       properties:
         schemas:
@@ -1040,97 +1521,45 @@ components:
           minItems: 1
           maxItems: 1
           items:
-            $ref: '#/components/schemas/Enumdeliver-otp-extended-operation-handlerSchemaUrn'
-        identityMapper:
-          type: string
-          description: >-
-              The identity mapper that should be used to identify the user(s) targeted by the authentication identity contained in the extended request. This will only be used for "u:"-style authentication identities.
-        passwordGenerator:
-          type: string
-          description: >-
-              The password generator that will be used to create the one-time password values to be delivered to the end user.
-        defaultOTPDeliveryMechanism:
+            type: string
+        totalResults:
+          type: number
+        Resources:
           type: array
           items:
-            type: string
-          description: >-
-              The set of delivery mechanisms that may be used to deliver one-time passwords to users in requests that do not specify one or more preferred delivery mechanisms.
-        description:
-          type: string
-          description: >-
-              A description for this Extended Operation Handler
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
-      required:
-      - schemas
-      - identityMapper
-      - passwordGenerator
-      - defaultOTPDeliveryMechanism
-      - enabled
-    Enumdeliver-otp-extended-operation-handlerSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:deliver-otp"
-    add-third-party-extended-operation-handler-request:
-      allOf:
-      - type: object
-        properties:
-          handlerName:
-            type: string
-            description: >-
-                Name of the new Extended Operation Handler
-      - $ref: '#/components/schemas/third-party-extended-operation-handler-shared'
-      required:
-      - handlerName
-    third-party-extended-operation-handler-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            type: string
-            description: >-
-                Name of the Extended Operation Handler
-      - $ref: '#/components/schemas/third-party-extended-operation-handler-shared'
-      - $ref: '#/components/schemas/meta'
-      required:
-      - id
-    third-party-extended-operation-handler-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumthird-party-extended-operation-handlerSchemaUrn'
-        extensionClass:
-          type: string
-          description: >-
-              The fully-qualified name of the Java class providing the logic for the Third Party Extended Operation Handler.
-        extensionArgument:
-          type: array
-          items:
-            type: string
-          description: >-
-              The set of arguments used to customize the behavior for the Third Party Extended Operation Handler. Each configuration property should be given in the form 'name=value'.
-        description:
-          type: string
-          description: >-
-              A description for this Extended Operation Handler
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
-      required:
-      - schemas
-      - extensionClass
-      - enabled
-    Enumthird-party-extended-operation-handlerSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:third-party"
+            oneOf:
+            - $ref: '#/components/schemas/cancel-extended-operation-handler-response'
+            - $ref: '#/components/schemas/validate-totp-password-extended-operation-handler-response'
+            - $ref: '#/components/schemas/interactive-transactions-extended-operation-handler-response'
+            - $ref: '#/components/schemas/replace-certificate-extended-operation-handler-response'
+            - $ref: '#/components/schemas/backup-compatibility-extended-operation-handler-response'
+            - $ref: '#/components/schemas/get-connection-id-extended-operation-handler-response'
+            - $ref: '#/components/schemas/batched-transactions-extended-operation-handler-response'
+            - $ref: '#/components/schemas/administrative-session-extended-operation-handler-response'
+            - $ref: '#/components/schemas/single-use-tokens-extended-operation-handler-response'
+            - $ref: '#/components/schemas/stream-directory-values-extended-operation-handler-response'
+            - $ref: '#/components/schemas/start-tls-extended-operation-handler-response'
+            - $ref: '#/components/schemas/subtree-accessibility-extended-operation-handler-response'
+            - $ref: '#/components/schemas/get-symmetric-key-extended-operation-handler-response'
+            - $ref: '#/components/schemas/get-password-quality-requirements-extended-operation-handler-response'
+            - $ref: '#/components/schemas/deliver-otp-extended-operation-handler-response'
+            - $ref: '#/components/schemas/third-party-extended-operation-handler-response'
+            - $ref: '#/components/schemas/third-party-proxied-extended-operation-handler-response'
+            - $ref: '#/components/schemas/synchronize-encryption-settings-extended-operation-handler-response'
+            - $ref: '#/components/schemas/multi-update-extended-operation-handler-response'
+            - $ref: '#/components/schemas/notification-subscription-extended-operation-handler-response'
+            - $ref: '#/components/schemas/password-modify-extended-operation-handler-response'
+            - $ref: '#/components/schemas/custom-extended-operation-handler-response'
+            - $ref: '#/components/schemas/collect-support-data-extended-operation-handler-response'
+            - $ref: '#/components/schemas/export-reversible-passwords-extended-operation-handler-response'
+            - $ref: '#/components/schemas/get-changelog-batch-extended-operation-handler-response'
+            - $ref: '#/components/schemas/get-supported-otp-delivery-mechanisms-extended-operation-handler-response'
+            - $ref: '#/components/schemas/generate-password-extended-operation-handler-response'
+            - $ref: '#/components/schemas/who-am-i-extended-operation-handler-response'
+            - $ref: '#/components/schemas/deliver-password-reset-token-extended-operation-handler-response'
+            - $ref: '#/components/schemas/stream-proxy-values-extended-operation-handler-response'
+            - $ref: '#/components/schemas/password-policy-state-extended-operation-handler-response'
+            - $ref: '#/components/schemas/get-configuration-extended-operation-handler-response'
     updateRequest:
       type: object
       properties:

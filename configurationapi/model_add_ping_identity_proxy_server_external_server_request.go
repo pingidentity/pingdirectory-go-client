@@ -37,7 +37,7 @@ type AddPingIdentityProxyServerExternalServerRequest struct {
 	Password *string `json:"password,omitempty"`
 	// The passphrase provider to use to obtain the login password for the specified user.
 	PassphraseProvider   *string                                                            `json:"passphraseProvider,omitempty"`
-	ConnectionSecurity   *EnumexternalServerConnectionSecurityProp                          `json:"connectionSecurity,omitempty"`
+	ConnectionSecurity   *EnumexternalServerPingIdentityProxyServerConnectionSecurityProp   `json:"connectionSecurity,omitempty"`
 	AuthenticationMethod *EnumexternalServerPingIdentityProxyServerAuthenticationMethodProp `json:"authenticationMethod,omitempty"`
 	// Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
 	HealthCheckConnectTimeout *string `json:"healthCheckConnectTimeout,omitempty"`
@@ -381,9 +381,9 @@ func (o *AddPingIdentityProxyServerExternalServerRequest) SetPassphraseProvider(
 }
 
 // GetConnectionSecurity returns the ConnectionSecurity field value if set, zero value otherwise.
-func (o *AddPingIdentityProxyServerExternalServerRequest) GetConnectionSecurity() EnumexternalServerConnectionSecurityProp {
+func (o *AddPingIdentityProxyServerExternalServerRequest) GetConnectionSecurity() EnumexternalServerPingIdentityProxyServerConnectionSecurityProp {
 	if o == nil || IsNil(o.ConnectionSecurity) {
-		var ret EnumexternalServerConnectionSecurityProp
+		var ret EnumexternalServerPingIdentityProxyServerConnectionSecurityProp
 		return ret
 	}
 	return *o.ConnectionSecurity
@@ -391,7 +391,7 @@ func (o *AddPingIdentityProxyServerExternalServerRequest) GetConnectionSecurity(
 
 // GetConnectionSecurityOk returns a tuple with the ConnectionSecurity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddPingIdentityProxyServerExternalServerRequest) GetConnectionSecurityOk() (*EnumexternalServerConnectionSecurityProp, bool) {
+func (o *AddPingIdentityProxyServerExternalServerRequest) GetConnectionSecurityOk() (*EnumexternalServerPingIdentityProxyServerConnectionSecurityProp, bool) {
 	if o == nil || IsNil(o.ConnectionSecurity) {
 		return nil, false
 	}
@@ -407,8 +407,8 @@ func (o *AddPingIdentityProxyServerExternalServerRequest) HasConnectionSecurity(
 	return false
 }
 
-// SetConnectionSecurity gets a reference to the given EnumexternalServerConnectionSecurityProp and assigns it to the ConnectionSecurity field.
-func (o *AddPingIdentityProxyServerExternalServerRequest) SetConnectionSecurity(v EnumexternalServerConnectionSecurityProp) {
+// SetConnectionSecurity gets a reference to the given EnumexternalServerPingIdentityProxyServerConnectionSecurityProp and assigns it to the ConnectionSecurity field.
+func (o *AddPingIdentityProxyServerExternalServerRequest) SetConnectionSecurity(v EnumexternalServerPingIdentityProxyServerConnectionSecurityProp) {
 	o.ConnectionSecurity = &v
 }
 

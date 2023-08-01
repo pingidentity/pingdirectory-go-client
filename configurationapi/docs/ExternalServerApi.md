@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddExternalServer**](ExternalServerApi.md#AddExternalServer) | **Post** /external-servers | Add a new External Server to the config
 [**DeleteExternalServer**](ExternalServerApi.md#DeleteExternalServer) | **Delete** /external-servers/{external-server-name} | Delete a External Server
 [**GetExternalServer**](ExternalServerApi.md#GetExternalServer) | **Get** /external-servers/{external-server-name} | Returns a single External Server
+[**ListExternalServers**](ExternalServerApi.md#ListExternalServers) | **Get** /external-servers | Returns a list of all External Server objects
 [**UpdateExternalServer**](ExternalServerApi.md#UpdateExternalServer) | **Patch** /external-servers/{external-server-name} | Update an existing External Server by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddExternalServer200Response**](AddExternalServer200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListExternalServers
+
+> ExternalServerListResponse ListExternalServers(ctx).Filter(filter).Execute()
+
+Returns a list of all External Server objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ExternalServerApi.ListExternalServers(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ExternalServerApi.ListExternalServers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListExternalServers`: ExternalServerListResponse
+    fmt.Fprintf(os.Stdout, "Response from `ExternalServerApi.ListExternalServers`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListExternalServersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**ExternalServerListResponse**](ExternalServerListResponse.md)
 
 ### Authorization
 

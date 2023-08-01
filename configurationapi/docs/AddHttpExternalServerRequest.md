@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **ServerName** | **string** | Name of the new External Server | 
 **Schemas** | [**[]EnumhttpExternalServerSchemaUrn**](EnumhttpExternalServerSchemaUrn.md) |  | 
 **BaseURL** | **string** | The base URL of the external server, optionally including port number, for example \&quot;https://externalService:9031\&quot;. | 
-**HostnameVerificationMethod** | Pointer to [**EnumexternalServerHostnameVerificationMethodProp**](EnumexternalServerHostnameVerificationMethodProp.md) |  | [optional] 
+**HostnameVerificationMethod** | Pointer to [**EnumexternalServerHttpHostnameVerificationMethodProp**](EnumexternalServerHttpHostnameVerificationMethodProp.md) |  | [optional] 
 **KeyManagerProvider** | Pointer to **string** | The key manager provider to use if SSL (HTTPS) is to be used for connection-level security. When specifying a value for this property (except when using the Null key manager provider) you must ensure that the external server trusts this server&#39;s public certificate by adding this server&#39;s public certificate to the external server&#39;s trust store. | [optional] 
 **TrustManagerProvider** | Pointer to **string** | The trust manager provider to use if SSL (HTTPS) is to be used for connection-level security. | [optional] 
 **SslCertNickname** | Pointer to **string** | The certificate alias within the keystore to use if SSL (HTTPS) is to be used for connection-level security. When specifying a value for this property you must ensure that the external server trusts this server&#39;s public certificate by adding this server&#39;s public certificate to the external server&#39;s trust store. | [optional] 
@@ -96,20 +96,20 @@ SetBaseURL sets BaseURL field to given value.
 
 ### GetHostnameVerificationMethod
 
-`func (o *AddHttpExternalServerRequest) GetHostnameVerificationMethod() EnumexternalServerHostnameVerificationMethodProp`
+`func (o *AddHttpExternalServerRequest) GetHostnameVerificationMethod() EnumexternalServerHttpHostnameVerificationMethodProp`
 
 GetHostnameVerificationMethod returns the HostnameVerificationMethod field if non-nil, zero value otherwise.
 
 ### GetHostnameVerificationMethodOk
 
-`func (o *AddHttpExternalServerRequest) GetHostnameVerificationMethodOk() (*EnumexternalServerHostnameVerificationMethodProp, bool)`
+`func (o *AddHttpExternalServerRequest) GetHostnameVerificationMethodOk() (*EnumexternalServerHttpHostnameVerificationMethodProp, bool)`
 
 GetHostnameVerificationMethodOk returns a tuple with the HostnameVerificationMethod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHostnameVerificationMethod
 
-`func (o *AddHttpExternalServerRequest) SetHostnameVerificationMethod(v EnumexternalServerHostnameVerificationMethodProp)`
+`func (o *AddHttpExternalServerRequest) SetHostnameVerificationMethod(v EnumexternalServerHttpHostnameVerificationMethodProp)`
 
 SetHostnameVerificationMethod sets HostnameVerificationMethod field to given value.
 

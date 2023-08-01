@@ -11,6 +11,33 @@ tags:
   name: log-field-mapping
 paths:
   /log-field-mappings:
+    get:
+      summary: Returns a list of all Log Field Mapping objects
+      operationId: list-log-field-mappings
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/log-field-mappingListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - log-field-mapping
     post:
       summary: Add a new Log Field Mapping to the config
       operationId: add-log-field-mapping
@@ -145,6 +172,80 @@ paths:
       - log-field-mapping
 components:
   schemas:
+    add-error-log-field-mapping-request:
+      allOf:
+      - type: object
+        properties:
+          mappingName:
+            type: string
+            description: >-
+                Name of the new Log Field Mapping
+      - $ref: '#/components/schemas/error-log-field-mapping-shared'
+      required:
+      - mappingName
+    error-log-field-mapping-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the Log Field Mapping
+      - $ref: '#/components/schemas/error-log-field-mapping-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    error-log-field-mapping-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumerror-log-field-mappingSchemaUrn'
+        logFieldTimestamp:
+          type: string
+          description: >-
+              The time that the log message was generated.
+        logFieldProductName:
+          type: string
+          description: >-
+              The name for this Directory Server product, which may be used to identify which product was used to log the message if multiple products log to the same database table.
+        logFieldInstanceName:
+          type: string
+          description: >-
+              A name that uniquely identifies this Directory Server instance, which may be used to identify which instance was used to log the message if multiple server instances log to the same database table.
+        logFieldStartupid:
+          type: string
+          description: >-
+              The startup ID for the Directory Server. A different value will be generated each time the server is started.
+        logFieldCategory:
+          type: string
+          description: >-
+              The category for the log message.
+        logFieldSeverity:
+          type: string
+          description: >-
+              The severity for the log message.
+        logFieldMessageID:
+          type: string
+          description: >-
+              The numeric value which uniquely identifies the type of message.
+        logFieldMessage:
+          type: string
+          description: >-
+              The text of the log message.
+        description:
+          type: string
+          description: >-
+              A description for this Log Field Mapping
+      required:
+      - schemas
+    Enumerror-log-field-mappingSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:log-field-mapping:error"
     add-access-log-field-mapping-request:
       allOf:
       - type: object
@@ -395,30 +496,7 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:log-field-mapping:access"
-    add-error-log-field-mapping-request:
-      allOf:
-      - type: object
-        properties:
-          mappingName:
-            type: string
-            description: >-
-                Name of the new Log Field Mapping
-      - $ref: '#/components/schemas/error-log-field-mapping-shared'
-      required:
-      - mappingName
-    error-log-field-mapping-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            type: string
-            description: >-
-                Name of the Log Field Mapping
-      - $ref: '#/components/schemas/error-log-field-mapping-shared'
-      - $ref: '#/components/schemas/meta'
-      required:
-      - id
-    error-log-field-mapping-shared:
+    log-field-mappingListResponse:
       type: object
       properties:
         schemas:
@@ -426,49 +504,15 @@ components:
           minItems: 1
           maxItems: 1
           items:
-            $ref: '#/components/schemas/Enumerror-log-field-mappingSchemaUrn'
-        logFieldTimestamp:
-          type: string
-          description: >-
-              The time that the log message was generated.
-        logFieldProductName:
-          type: string
-          description: >-
-              The name for this Directory Server product, which may be used to identify which product was used to log the message if multiple products log to the same database table.
-        logFieldInstanceName:
-          type: string
-          description: >-
-              A name that uniquely identifies this Directory Server instance, which may be used to identify which instance was used to log the message if multiple server instances log to the same database table.
-        logFieldStartupid:
-          type: string
-          description: >-
-              The startup ID for the Directory Server. A different value will be generated each time the server is started.
-        logFieldCategory:
-          type: string
-          description: >-
-              The category for the log message.
-        logFieldSeverity:
-          type: string
-          description: >-
-              The severity for the log message.
-        logFieldMessageID:
-          type: string
-          description: >-
-              The numeric value which uniquely identifies the type of message.
-        logFieldMessage:
-          type: string
-          description: >-
-              The text of the log message.
-        description:
-          type: string
-          description: >-
-              A description for this Log Field Mapping
-      required:
-      - schemas
-    Enumerror-log-field-mappingSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:log-field-mapping:error"
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/error-log-field-mapping-response'
+            - $ref: '#/components/schemas/access-log-field-mapping-response'
     updateRequest:
       type: object
       properties:

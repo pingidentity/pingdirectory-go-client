@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddLogFileRotationListener**](LogFileRotationListenerApi.md#AddLogFileRotationListener) | **Post** /log-file-rotation-listeners | Add a new Log File Rotation Listener to the config
 [**DeleteLogFileRotationListener**](LogFileRotationListenerApi.md#DeleteLogFileRotationListener) | **Delete** /log-file-rotation-listeners/{log-file-rotation-listener-name} | Delete a Log File Rotation Listener
 [**GetLogFileRotationListener**](LogFileRotationListenerApi.md#GetLogFileRotationListener) | **Get** /log-file-rotation-listeners/{log-file-rotation-listener-name} | Returns a single Log File Rotation Listener
+[**ListLogFileRotationListeners**](LogFileRotationListenerApi.md#ListLogFileRotationListeners) | **Get** /log-file-rotation-listeners | Returns a list of all Log File Rotation Listener objects
 [**UpdateLogFileRotationListener**](LogFileRotationListenerApi.md#UpdateLogFileRotationListener) | **Patch** /log-file-rotation-listeners/{log-file-rotation-listener-name} | Update an existing Log File Rotation Listener by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddLogFileRotationListener200Response**](AddLogFileRotationListener200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListLogFileRotationListeners
+
+> LogFileRotationListenerListResponse ListLogFileRotationListeners(ctx).Filter(filter).Execute()
+
+Returns a list of all Log File Rotation Listener objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.LogFileRotationListenerApi.ListLogFileRotationListeners(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `LogFileRotationListenerApi.ListLogFileRotationListeners``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListLogFileRotationListeners`: LogFileRotationListenerListResponse
+    fmt.Fprintf(os.Stdout, "Response from `LogFileRotationListenerApi.ListLogFileRotationListeners`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListLogFileRotationListenersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**LogFileRotationListenerListResponse**](LogFileRotationListenerListResponse.md)
 
 ### Authorization
 

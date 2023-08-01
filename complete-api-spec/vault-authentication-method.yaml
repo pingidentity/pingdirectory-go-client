@@ -11,6 +11,33 @@ tags:
   name: vault-authentication-method
 paths:
   /vault-authentication-methods:
+    get:
+      summary: Returns a list of all Vault Authentication Method objects
+      operationId: list-vault-authentication-methods
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/vault-authentication-methodListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - vault-authentication-method
     post:
       summary: Add a new Vault Authentication Method to the config
       operationId: add-vault-authentication-method
@@ -149,54 +176,6 @@ paths:
       - vault-authentication-method
 components:
   schemas:
-    add-static-token-vault-authentication-method-request:
-      allOf:
-      - type: object
-        properties:
-          methodName:
-            type: string
-            description: >-
-                Name of the new Vault Authentication Method
-      - $ref: '#/components/schemas/static-token-vault-authentication-method-shared'
-      required:
-      - methodName
-    static-token-vault-authentication-method-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            type: string
-            description: >-
-                Name of the Vault Authentication Method
-      - $ref: '#/components/schemas/static-token-vault-authentication-method-shared'
-      - $ref: '#/components/schemas/meta'
-      required:
-      - id
-    static-token-vault-authentication-method-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumstatic-token-vault-authentication-methodSchemaUrn'
-        vaultAccessToken:
-          type: string
-          format: password
-          description: >-
-              The static token used to authenticate to the Vault server.
-        description:
-          type: string
-          description: >-
-              A description for this Vault Authentication Method
-      required:
-      - schemas
-      - vaultAccessToken
-    Enumstatic-token-vault-authentication-methodSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:vault-authentication-method:static-token"
     add-app-role-vault-authentication-method-request:
       allOf:
       - type: object
@@ -311,6 +290,72 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:vault-authentication-method:user-pass"
+    add-static-token-vault-authentication-method-request:
+      allOf:
+      - type: object
+        properties:
+          methodName:
+            type: string
+            description: >-
+                Name of the new Vault Authentication Method
+      - $ref: '#/components/schemas/static-token-vault-authentication-method-shared'
+      required:
+      - methodName
+    static-token-vault-authentication-method-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the Vault Authentication Method
+      - $ref: '#/components/schemas/static-token-vault-authentication-method-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    static-token-vault-authentication-method-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumstatic-token-vault-authentication-methodSchemaUrn'
+        vaultAccessToken:
+          type: string
+          format: password
+          description: >-
+              The static token used to authenticate to the Vault server.
+        description:
+          type: string
+          description: >-
+              A description for this Vault Authentication Method
+      required:
+      - schemas
+      - vaultAccessToken
+    Enumstatic-token-vault-authentication-methodSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:vault-authentication-method:static-token"
+    vault-authentication-methodListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/app-role-vault-authentication-method-response'
+            - $ref: '#/components/schemas/user-pass-vault-authentication-method-response'
+            - $ref: '#/components/schemas/static-token-vault-authentication-method-response'
     updateRequest:
       type: object
       properties:

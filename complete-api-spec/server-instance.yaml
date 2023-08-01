@@ -10,6 +10,34 @@ tags:
 - description: Access server-instances
   name: server-instance
 paths:
+  /server-instances:
+    get:
+      summary: Returns a list of all Server Instance objects
+      operationId: list-server-instances
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/server-instanceListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - server-instance
   /server-instances/{server-instance-name}:
     get:
       summary: Returns a single Server Instance
@@ -88,6 +116,42 @@ paths:
       - basicAuth: []
       tags:
       - server-instance
+  /server-instances/{server-instance-name}/server-instance-listeners:
+    get:
+      summary: Returns a list of all Server Instance Listener objects
+      operationId: list-server-instance-listeners
+      parameters:
+      - description: Name of the Server Instance
+        explode: false
+        in: path
+        name: server-instance-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/server-instance-listenerListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - server-instance-listener
   /server-instances/{server-instance-name}/server-instance-listeners/{server-instance-listener-name}:
     get:
       summary: Returns a single Server Instance Listener
@@ -176,6 +240,42 @@ paths:
       - basicAuth: []
       tags:
       - server-instance-listener
+  /server-instances/{server-instance-name}/mac-secret-keys:
+    get:
+      summary: Returns a list of all Mac Secret Key objects
+      operationId: list-mac-secret-keys
+      parameters:
+      - description: Name of the Server Instance
+        explode: false
+        in: path
+        name: server-instance-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mac-secret-keyListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - mac-secret-key
   /server-instances/{server-instance-name}/mac-secret-keys/{mac-secret-key-name}:
     get:
       summary: Returns a single Mac Secret Key
@@ -260,6 +360,42 @@ paths:
       - basicAuth: []
       tags:
       - mac-secret-key
+  /server-instances/{server-instance-name}/cipher-secret-keys:
+    get:
+      summary: Returns a list of all Cipher Secret Key objects
+      operationId: list-cipher-secret-keys
+      parameters:
+      - description: Name of the Server Instance
+        explode: false
+        in: path
+        name: server-instance-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cipher-secret-keyListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - cipher-secret-key
   /server-instances/{server-instance-name}/cipher-secret-keys/{cipher-secret-key-name}:
     get:
       summary: Returns a single Cipher Secret Key
@@ -344,6 +480,50 @@ paths:
       - basicAuth: []
       tags:
       - cipher-secret-key
+  /server-instances/{server-instance-name}/server-instance-listeners/{server-instance-listener-name}/inter-server-authentication-info:
+    get:
+      summary: Returns a list of all Inter Server Authentication Info objects
+      operationId: list-inter-server-authentication-info
+      parameters:
+      - description: Name of the Server Instance Listener
+        explode: false
+        in: path
+        name: server-instance-listener-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Server Instance
+        explode: false
+        in: path
+        name: server-instance-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inter-server-authentication-infoListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - inter-server-authentication-info
   /server-instances/{server-instance-name}/server-instance-listeners/{server-instance-listener-name}/inter-server-authentication-info/{inter-server-authentication-info-name}:
     get:
       summary: Returns a single Inter Server Authentication Info
@@ -468,117 +648,6 @@ components:
       - "starttls"
       description: >-
           Specifies the preferred mechanism to use for securing connections to the server.
-    proxy-server-instance-response:
-      allOf:
-      - type: object
-        properties:
-          schemas:
-            type: array
-            minItems: 1
-            maxItems: 1
-            items:
-              $ref: '#/components/schemas/Enumproxy-server-instanceSchemaUrn'
-          id:
-            type: string
-            description: >-
-                Name of the Server Instance
-          serverInstanceType:
-            $ref: '#/components/schemas/Enumserver-instance-serverInstanceTypeProp'
-          serverInstanceName:
-            type: string
-            description: >-
-                The name of this Server Instance. The instance name needs to be unique if this server will be part of a topology of servers that are connected to each other. Once set, it may not be changed.
-          clusterName:
-            type: string
-            description: >-
-                The name of the cluster to which this Server Instance belongs. Server instances within the same cluster will share the same cluster-wide configuration.
-          serverInstanceLocation:
-            type: string
-            description: >-
-                Specifies the location for the Server Instance.
-          hostname:
-            type: string
-            description: >-
-                The name of the host where this Server Instance is installed.
-          serverRoot:
-            type: string
-            description: >-
-                The file system path where this Server Instance is installed.
-          serverVersion:
-            type: string
-            description: >-
-                The version of the server.
-          interServerCertificate:
-            type: string
-            description: >-
-                The public component of the certificate used by this instance to protect inter-server communication and to perform server-specific encryption. This will generally be managed by the server and should only be altered by administrators under explicit direction from Ping Identity support personnel.
-          ldapPort:
-            type: integer
-            description: >-
-                The TCP port on which this server is listening for LDAP connections.
-          ldapsPort:
-            type: integer
-            description: >-
-                The TCP port on which this server is listening for LDAP secure connections.
-          httpPort:
-            type: integer
-            description: >-
-                The TCP port on which this server is listening for HTTP connections.
-          httpsPort:
-            type: integer
-            description: >-
-                The TCP port on which this server is listening for HTTPS connections.
-          replicationPort:
-            type: integer
-            description: >-
-                The replication TCP port.
-          replicationServerID:
-            type: integer
-            description: >-
-                Specifies a unique identifier for the replication server on this server instance.
-          replicationDomainServerID:
-            type: array
-            items:
-              type: integer
-            description: >-
-                Specifies a unique identifier for the Directory Server within the replication domain.
-          jmxPort:
-            type: integer
-            description: >-
-                The TCP port on which this server is listening for JMX connections.
-          jmxsPort:
-            type: integer
-            description: >-
-                The TCP port on which this server is listening for JMX secure connections.
-          preferredSecurity:
-            $ref: '#/components/schemas/Enumserver-instance-preferredSecurityProp'
-          startTLSEnabled:
-            type: boolean
-            description: >-
-                Indicates whether StartTLS is enabled on this server.
-          baseDN:
-            type: array
-            items:
-              type: string
-            description: >-
-                The set of base DNs under the root DSE.
-          memberOfServerGroup:
-            type: array
-            items:
-              type: string
-            description: >-
-                The set of groups of which this server is a member.
-      - $ref: '#/components/schemas/meta'
-      required:
-      - id
-      - schemas
-      - serverInstanceName
-      - clusterName
-      - serverVersion
-    Enumproxy-server-instanceSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:server-instance:proxy"
     metrics-engine-server-instance-response:
       allOf:
       - type: object
@@ -690,6 +759,117 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:server-instance:metrics-engine"
+    proxy-server-instance-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumproxy-server-instanceSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Server Instance
+          serverInstanceType:
+            $ref: '#/components/schemas/Enumserver-instance-serverInstanceTypeProp'
+          serverInstanceName:
+            type: string
+            description: >-
+                The name of this Server Instance. The instance name needs to be unique if this server will be part of a topology of servers that are connected to each other. Once set, it may not be changed.
+          clusterName:
+            type: string
+            description: >-
+                The name of the cluster to which this Server Instance belongs. Server instances within the same cluster will share the same cluster-wide configuration.
+          serverInstanceLocation:
+            type: string
+            description: >-
+                Specifies the location for the Server Instance.
+          hostname:
+            type: string
+            description: >-
+                The name of the host where this Server Instance is installed.
+          serverRoot:
+            type: string
+            description: >-
+                The file system path where this Server Instance is installed.
+          serverVersion:
+            type: string
+            description: >-
+                The version of the server.
+          interServerCertificate:
+            type: string
+            description: >-
+                The public component of the certificate used by this instance to protect inter-server communication and to perform server-specific encryption. This will generally be managed by the server and should only be altered by administrators under explicit direction from Ping Identity support personnel.
+          ldapPort:
+            type: integer
+            description: >-
+                The TCP port on which this server is listening for LDAP connections.
+          ldapsPort:
+            type: integer
+            description: >-
+                The TCP port on which this server is listening for LDAP secure connections.
+          httpPort:
+            type: integer
+            description: >-
+                The TCP port on which this server is listening for HTTP connections.
+          httpsPort:
+            type: integer
+            description: >-
+                The TCP port on which this server is listening for HTTPS connections.
+          replicationPort:
+            type: integer
+            description: >-
+                The replication TCP port.
+          replicationServerID:
+            type: integer
+            description: >-
+                Specifies a unique identifier for the replication server on this server instance.
+          replicationDomainServerID:
+            type: array
+            items:
+              type: integer
+            description: >-
+                Specifies a unique identifier for the Directory Server within the replication domain.
+          jmxPort:
+            type: integer
+            description: >-
+                The TCP port on which this server is listening for JMX connections.
+          jmxsPort:
+            type: integer
+            description: >-
+                The TCP port on which this server is listening for JMX secure connections.
+          preferredSecurity:
+            $ref: '#/components/schemas/Enumserver-instance-preferredSecurityProp'
+          startTLSEnabled:
+            type: boolean
+            description: >-
+                Indicates whether StartTLS is enabled on this server.
+          baseDN:
+            type: array
+            items:
+              type: string
+            description: >-
+                The set of base DNs under the root DSE.
+          memberOfServerGroup:
+            type: array
+            items:
+              type: string
+            description: >-
+                The set of groups of which this server is a member.
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - serverInstanceName
+      - clusterName
+      - serverVersion
+    Enumproxy-server-instanceSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:server-instance:proxy"
     authorize-server-instance-response:
       allOf:
       - type: object
@@ -1220,6 +1400,38 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:cipher-secret-key"
+    Enuminter-server-authentication-info-purposeProp:
+      type: string
+      enum:
+      - "mirrored-config"
+      description: >-
+          Identifies the purpose of this Inter Server Authentication Info.
+    certificate-inter-server-authentication-info-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumcertificate-inter-server-authentication-infoSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Inter Server Authentication Info
+          purpose:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enuminter-server-authentication-info-purposeProp'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+    Enumcertificate-inter-server-authentication-infoSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:inter-server-authentication-info:certificate"
     Enuminter-server-authentication-info-authenticationTypeProp:
       type: string
       enum:
@@ -1227,12 +1439,6 @@ components:
       - "sasl-plain"
       description: >-
           Identifies the type of password authentication that will be used.
-    Enuminter-server-authentication-info-purposeProp:
-      type: string
-      enum:
-      - "mirrored-config"
-      description: >-
-          Identifies the purpose of this Inter Server Authentication Info.
     password-inter-server-authentication-info-response:
       allOf:
       - type: object
@@ -1275,32 +1481,90 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:inter-server-authentication-info:password"
-    certificate-inter-server-authentication-info-response:
-      allOf:
-      - type: object
-        properties:
-          schemas:
-            type: array
-            minItems: 1
-            maxItems: 1
-            items:
-              $ref: '#/components/schemas/Enumcertificate-inter-server-authentication-infoSchemaUrn'
-          id:
+    server-instanceListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
             type: string
-            description: >-
-                Name of the Inter Server Authentication Info
-          purpose:
-            type: array
-            items:
-              $ref: '#/components/schemas/Enuminter-server-authentication-info-purposeProp'
-      - $ref: '#/components/schemas/meta'
-      required:
-      - id
-      - schemas
-    Enumcertificate-inter-server-authentication-infoSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:inter-server-authentication-info:certificate"
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/metrics-engine-server-instance-response'
+            - $ref: '#/components/schemas/proxy-server-instance-response'
+            - $ref: '#/components/schemas/authorize-server-instance-response'
+            - $ref: '#/components/schemas/directory-server-instance-response'
+            - $ref: '#/components/schemas/sync-server-instance-response'
+    server-instance-listenerListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/ldap-server-instance-listener-response'
+            - $ref: '#/components/schemas/http-server-instance-listener-response'
+    mac-secret-keyListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/mac-secret-key-response'
+    cipher-secret-keyListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/cipher-secret-key-response'
+    inter-server-authentication-infoListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/certificate-inter-server-authentication-info-response'
+            - $ref: '#/components/schemas/password-inter-server-authentication-info-response'
     updateRequest:
       type: object
       properties:

@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddScimResourceType**](ScimResourceTypeApi.md#AddScimResourceType) | **Post** /scim-resource-types | Add a new SCIM Resource Type to the config
 [**DeleteScimResourceType**](ScimResourceTypeApi.md#DeleteScimResourceType) | **Delete** /scim-resource-types/{scim-resource-type-name} | Delete a SCIM Resource Type
 [**GetScimResourceType**](ScimResourceTypeApi.md#GetScimResourceType) | **Get** /scim-resource-types/{scim-resource-type-name} | Returns a single SCIM Resource Type
+[**ListScimResourceTypes**](ScimResourceTypeApi.md#ListScimResourceTypes) | **Get** /scim-resource-types | Returns a list of all SCIM Resource Type objects
 [**UpdateScimResourceType**](ScimResourceTypeApi.md#UpdateScimResourceType) | **Patch** /scim-resource-types/{scim-resource-type-name} | Update an existing SCIM Resource Type by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddScimResourceType200Response**](AddScimResourceType200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListScimResourceTypes
+
+> ScimResourceTypeListResponse ListScimResourceTypes(ctx).Filter(filter).Execute()
+
+Returns a list of all SCIM Resource Type objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ScimResourceTypeApi.ListScimResourceTypes(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ScimResourceTypeApi.ListScimResourceTypes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListScimResourceTypes`: ScimResourceTypeListResponse
+    fmt.Fprintf(os.Stdout, "Response from `ScimResourceTypeApi.ListScimResourceTypes`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListScimResourceTypesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**ScimResourceTypeListResponse**](ScimResourceTypeListResponse.md)
 
 ### Authorization
 

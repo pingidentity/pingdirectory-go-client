@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumuniqueAttributePluginSchemaUrn**](EnumuniqueAttributePluginSchemaUrn.md) |  | 
 **PluginType** | [**[]EnumpluginPluginTypeProp**](EnumpluginPluginTypeProp.md) |  | 
 **Type** | **[]string** | Specifies the type of attributes to check for value uniqueness. | 
-**MultipleAttributeBehavior** | Pointer to [**EnumpluginMultipleAttributeBehaviorProp**](EnumpluginMultipleAttributeBehaviorProp.md) |  | [optional] 
+**MultipleAttributeBehavior** | Pointer to [**EnumpluginUniqueAttributeMultipleAttributeBehaviorProp**](EnumpluginUniqueAttributeMultipleAttributeBehaviorProp.md) |  | [optional] 
 **BaseDN** | Pointer to **[]string** | Specifies a base DN within which the attribute must be unique. | [optional] 
 **PreventConflictsWithSoftDeletedEntries** | Pointer to **bool** | Indicates whether this Unique Attribute Plugin should reject a change that would result in one or more conflicts, even if those conflicts only exist in soft-deleted entries. | [optional] 
 **Filter** | Pointer to **string** | Specifies the search filter to apply to determine if attribute uniqueness is enforced for the matching entries. | [optional] 
@@ -119,20 +119,20 @@ SetType sets Type field to given value.
 
 ### GetMultipleAttributeBehavior
 
-`func (o *UniqueAttributePluginResponse) GetMultipleAttributeBehavior() EnumpluginMultipleAttributeBehaviorProp`
+`func (o *UniqueAttributePluginResponse) GetMultipleAttributeBehavior() EnumpluginUniqueAttributeMultipleAttributeBehaviorProp`
 
 GetMultipleAttributeBehavior returns the MultipleAttributeBehavior field if non-nil, zero value otherwise.
 
 ### GetMultipleAttributeBehaviorOk
 
-`func (o *UniqueAttributePluginResponse) GetMultipleAttributeBehaviorOk() (*EnumpluginMultipleAttributeBehaviorProp, bool)`
+`func (o *UniqueAttributePluginResponse) GetMultipleAttributeBehaviorOk() (*EnumpluginUniqueAttributeMultipleAttributeBehaviorProp, bool)`
 
 GetMultipleAttributeBehaviorOk returns a tuple with the MultipleAttributeBehavior field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMultipleAttributeBehavior
 
-`func (o *UniqueAttributePluginResponse) SetMultipleAttributeBehavior(v EnumpluginMultipleAttributeBehaviorProp)`
+`func (o *UniqueAttributePluginResponse) SetMultipleAttributeBehavior(v EnumpluginUniqueAttributeMultipleAttributeBehaviorProp)`
 
 SetMultipleAttributeBehavior sets MultipleAttributeBehavior field to given value.
 

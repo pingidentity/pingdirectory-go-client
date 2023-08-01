@@ -5,6 +5,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetCipherSecretKey**](CipherSecretKeyApi.md#GetCipherSecretKey) | **Get** /server-instances/{server-instance-name}/cipher-secret-keys/{cipher-secret-key-name} | Returns a single Cipher Secret Key
+[**ListCipherSecretKeys**](CipherSecretKeyApi.md#ListCipherSecretKeys) | **Get** /server-instances/{server-instance-name}/cipher-secret-keys | Returns a list of all Cipher Secret Key objects
 [**UpdateCipherSecretKey**](CipherSecretKeyApi.md#UpdateCipherSecretKey) | **Patch** /server-instances/{server-instance-name}/cipher-secret-keys/{cipher-secret-key-name} | Update an existing Cipher Secret Key by name
 
 
@@ -65,6 +66,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CipherSecretKeyResponse**](CipherSecretKeyResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListCipherSecretKeys
+
+> CipherSecretKeyListResponse ListCipherSecretKeys(ctx, serverInstanceName).Filter(filter).Execute()
+
+Returns a list of all Cipher Secret Key objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    serverInstanceName := "serverInstanceName_example" // string | Name of the Server Instance
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.CipherSecretKeyApi.ListCipherSecretKeys(context.Background(), serverInstanceName).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `CipherSecretKeyApi.ListCipherSecretKeys``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListCipherSecretKeys`: CipherSecretKeyListResponse
+    fmt.Fprintf(os.Stdout, "Response from `CipherSecretKeyApi.ListCipherSecretKeys`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**serverInstanceName** | **string** | Name of the Server Instance | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListCipherSecretKeysRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**CipherSecretKeyListResponse**](CipherSecretKeyListResponse.md)
 
 ### Authorization
 

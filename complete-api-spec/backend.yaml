@@ -11,6 +11,33 @@ tags:
   name: backend
 paths:
   /backends:
+    get:
+      summary: Returns a list of all Backend objects
+      operationId: list-backends
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/backendListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - backend
     post:
       summary: Add a new Backend to the config
       operationId: add-backend
@@ -165,6 +192,41 @@ paths:
       tags:
       - backend
   /backends/{backend-name}/local-db-composite-indexes:
+    get:
+      summary: Returns a list of all Local DB Composite Index objects
+      operationId: list-local-db-composite-indexes
+      parameters:
+      - description: Name of the Backend
+        explode: false
+        in: path
+        name: backend-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/local-db-composite-indexListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - local-db-composite-index
     post:
       summary: Add a new Local DB Composite Index to the config
       operationId: add-local-db-composite-index
@@ -323,6 +385,41 @@ paths:
       tags:
       - local-db-composite-index
   /backends/{backend-name}/local-db-vlv-indexes:
+    get:
+      summary: Returns a list of all Local DB VLV Index objects
+      operationId: list-local-db-vlv-indexes
+      parameters:
+      - description: Name of the Backend
+        explode: false
+        in: path
+        name: backend-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/local-db-vlv-indexListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - local-db-vlv-index
     post:
       summary: Add a new Local DB VLV Index to the config
       operationId: add-local-db-vlv-index
@@ -481,6 +578,41 @@ paths:
       tags:
       - local-db-vlv-index
   /backends/{backend-name}/local-db-indexes:
+    get:
+      summary: Returns a list of all Local DB Index objects
+      operationId: list-local-db-indexes
+      parameters:
+      - description: Name of the Backend
+        explode: false
+        in: path
+        name: backend-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/local-db-indexListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - local-db-index
     post:
       summary: Add a new Local DB Index to the config
       operationId: add-local-db-index
@@ -792,6 +924,64 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:backend:backup"
+    memory-backend-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enummemory-backendSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Backend
+          writabilityMode:
+            $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
+          backendID:
+            type: string
+            description: >-
+                Specifies a name to identify the associated backend.
+          description:
+            type: string
+            description: >-
+                A description for this Backend
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the backend is enabled in the server.
+          baseDN:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the base DN(s) for the data that the backend handles.
+          setDegradedAlertWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
+          returnUnavailableWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
+          notificationManager:
+            type: string
+            description: >-
+                Specifies a notification manager for changes resulting from operations processed through this Backend
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - writabilityMode
+      - backendID
+      - enabled
+      - baseDN
+    Enummemory-backendSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:backend:memory"
     encryption-settings-backend-response:
       allOf:
       - type: object
@@ -1735,6 +1925,113 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:backend:local-db"
+    Enumbackend-mirroredSubtreePreferredMasterTypeProp:
+      type: string
+      enum:
+      - "ds"
+      - "proxy"
+      - "broker"
+      - "metrics"
+      - "sync"
+      description: >-
+          Specifies whether the master selection algorithm should favor particular types of server.
+    mirrored-ldif-backend-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enummirrored-ldif-backendSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Backend
+          mirroredSubtreePeerPollingInterval:
+            type: string
+            description: >-
+                The amount of time to wait before polling the peer servers in the topology to determine if there are any changes in the topology. A lower value will make for a quicker failover in the event of a failure, but it will also cause more frequent traffic among the peers.
+          mirroredSubtreeEntryUpdateTimeout:
+            type: string
+            description: >-
+                Specifies the maximum length of time to wait for an update operation (add, delete, modify and modify-dn) on an entry to be applied on all servers in the topology.
+          mirroredSubtreeSearchTimeout:
+            type: string
+            description: >-
+                Specifies the maximum length of time to wait for a search operation to complete. Search requests that take longer than this timeout will be canceled and considered failures.
+          peerServer:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the set of peer servers onto which updates should be mirrored. The local server should not be included in this set, but if it is, then it will just be ignored.
+          mirroredSubtreePreferredMasterType:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enumbackend-mirroredSubtreePreferredMasterTypeProp'
+          simulatedResultCode:
+            type: integer
+            description: >-
+                Specifies the numeric value of the result code to be assumed for update operations (add, delete, modify and modify-dn) targeted to this backend.
+          writabilityMode:
+            $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
+          isPrivateBackend:
+            type: boolean
+            description: >-
+                Indicates whether the backend should be considered a private backend, which indicates that it is used for storing operational data rather than user-defined information.
+          ldifFile:
+            type: string
+            description: >-
+                Specifies the path to the LDIF file containing the data for this backend.
+          backendID:
+            type: string
+            description: >-
+                Specifies a name to identify the associated backend.
+          description:
+            type: string
+            description: >-
+                A description for this Backend
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the backend is enabled in the server.
+          baseDN:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the base DN(s) for the data that the backend handles.
+          setDegradedAlertWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
+          returnUnavailableWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
+          backupFilePermissions:
+            type: string
+            description: >-
+                Specifies the permissions that should be applied to files and directories created by a backup of the backend.
+          notificationManager:
+            type: string
+            description: >-
+                Specifies a notification manager for changes resulting from operations processed through this Backend
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - writabilityMode
+      - ldifFile
+      - backendID
+      - enabled
+      - baseDN
+    Enummirrored-ldif-backendSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:backend:mirrored-ldif"
     config-file-handler-backend-response:
       allOf:
       - type: object
@@ -2331,6 +2628,288 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:backend:metrics"
+    large-attribute-backend-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumlarge-attribute-backendSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Backend
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the backend is enabled in the server.
+          baseDN:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the base DN(s) for the data that the backend handles.
+          writabilityMode:
+            $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
+          isPrivateBackend:
+            type: boolean
+            description: >-
+                Indicates whether this backend should be considered a private backend in the server. Private backends are meant for storing server-internal information and should not be used for user or application data.
+          dbCachePercent:
+            type: integer
+            description: >-
+                Specifies the percentage of JVM memory to allocate to the database cache.
+          defaultCacheMode:
+            $ref: '#/components/schemas/Enumbackend-defaultCacheModeProp'
+          dbDirectory:
+            type: string
+            description: >-
+                Specifies the path to the filesystem directory that is used to hold the Berkeley DB Java Edition database files containing the data for this backend. The files for this backend are stored in a sub-directory named after the backend-id.
+          dbDirectoryPermissions:
+            type: string
+            description: >-
+                Specifies the permissions that should be applied to the directory containing the backend database files and to directories and files created during backup or LDIF export of the backend.
+          compactCommonParentDN:
+            type: array
+            items:
+              type: string
+            description: >-
+                Provides a DN of an entry that may be the parent for a large number of entries in the backend. This may be used to help increase the space efficiency when encoding entries for storage.
+          compressEntries:
+            type: boolean
+            description: >-
+                Indicates whether the backend should attempt to compress entries before storing them in the database.
+          hashEntries:
+            type: boolean
+            description: >-
+                Indicates whether to calculate and store a message digest of the entry contents along with the entry data, in order to provide a means of verifying the integrity of the entry data.
+          dbNumCleanerThreads:
+            type: integer
+            description: >-
+                Specifies the number of threads that the backend should maintain to keep the database log files at or near the desired utilization. A value of zero indicates that the number of cleaner threads should be automatically configured based on the number of available CPUs.
+          dbCleanerMinUtilization:
+            type: integer
+            description: >-
+                Specifies the minimum percentage of "live" data that the database cleaner attempts to keep in database log files.
+          dbEvictorCriticalPercentage:
+            type: integer
+            description: >-
+                Specifies the percentage over the configured maximum that the database cache is allowed to grow. It is recommended to set this value slightly above zero when the database is too large to fully cache in memory. In this case, a dedicated background evictor thread is used to perform evictions once the cache fills up reducing the possibility that server threads are blocked.
+          dbCheckpointerWakeupInterval:
+            type: string
+            description: >-
+                Specifies the maximum length of time that should pass between checkpoints.
+          dbBackgroundSyncInterval:
+            type: string
+            description: >-
+                Specifies the interval to use when performing background synchronous writes in the database environment in order to smooth overall write performance and increase data durability. A value of "0 s" will disable background synchronous writes.
+          dbUseThreadLocalHandles:
+            type: boolean
+            description: >-
+                Indicates whether to use thread-local database handles to reduce contention in the backend.
+          dbLogFileMax:
+            type: string
+            description: >-
+                Specifies the maximum size for a database log file.
+          dbLoggingLevel:
+            type: string
+            description: >-
+                Specifies the log level that should be used by the database when it is writing information into the je.info file.
+          jeProperty:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the database and environment properties for the Berkeley DB Java Edition database serving the data for this backend.
+          id2entryCacheMode:
+            $ref: '#/components/schemas/Enumbackend-id2entryCacheModeProp'
+          dn2idCacheMode:
+            $ref: '#/components/schemas/Enumbackend-dn2idCacheModeProp'
+          id2childrenCacheMode:
+            $ref: '#/components/schemas/Enumbackend-id2childrenCacheModeProp'
+          id2subtreeCacheMode:
+            $ref: '#/components/schemas/Enumbackend-id2subtreeCacheModeProp'
+          dn2uriCacheMode:
+            $ref: '#/components/schemas/Enumbackend-dn2uriCacheModeProp'
+          primeMethod:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enumbackend-primeMethodProp'
+          primeThreadCount:
+            type: integer
+            description: >-
+                Specifies the number of threads to use when priming. At present, this applies only to the preload and cursor-across-indexes prime methods.
+          primeTimeLimit:
+            type: string
+            description: >-
+                Specifies the maximum length of time that the backend prime should be allowed to run. A duration of zero seconds indicates that there should not be a time limit.
+          primeAllIndexes:
+            type: boolean
+            description: >-
+                Indicates whether to prime all indexes associated with this backend, or to only prime the specified set of indexes (as configured with the system-index-to-prime property for the system indexes, and the prime-index property in the attribute index definition for attribute indexes).
+          systemIndexToPrime:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enumbackend-systemIndexToPrimeProp'
+          systemIndexToPrimeInternalNodesOnly:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enumbackend-systemIndexToPrimeInternalNodesOnlyProp'
+          backgroundPrime:
+            type: boolean
+            description: >-
+                Indicates whether to attempt to perform the prime using a background thread if possible. If background priming is enabled, then the Directory Server may be allowed to accept client connections and process requests while the prime is in progress.
+          indexEntryLimit:
+            type: integer
+            description: >-
+                Specifies the maximum number of entries that are allowed to match a given index key before that particular index key is no longer maintained.
+          compositeIndexEntryLimit:
+            type: integer
+            description: >-
+                Specifies the maximum number of entries that are allowed to match a given composite index key before that particular composite index key is no longer maintained.
+          id2childrenIndexEntryLimit:
+            type: integer
+            description: >-
+                Specifies the maximum number of entry IDs to maintain for each entry in the id2children system index (which keeps track of the immediate children for an entry, to assist in otherwise unindexed searches with a single-level scope). A value of 0 means there is no limit, however this could have a big impact on database size on disk and on server performance.
+          id2subtreeIndexEntryLimit:
+            type: integer
+            description: >-
+                Specifies the maximum number of entry IDs to maintain for each entry in the id2subtree system index (which keeps track of all descendants below an entry, to assist in otherwise unindexed searches with a whole-subtree or subordinate subtree scope). A value of 0 means there is no limit, however this could have a big impact on database size on disk and on server performance.
+          importTempDirectory:
+            type: string
+            description: >-
+                Specifies the location of the directory that is used to hold temporary information during the index post-processing phase of an LDIF import.
+          importThreadCount:
+            type: integer
+            description: >-
+                Specifies the number of threads to use for concurrent processing during an LDIF import.
+          exportThreadCount:
+            type: integer
+            description: >-
+                Specifies the number of threads to use for concurrently retrieving and encoding entries during an LDIF export.
+          dbImportCachePercent:
+            type: integer
+            description: >-
+                The percentage of JVM memory to allocate to the database cache during import operations.
+          dbTxnWriteNoSync:
+            type: boolean
+            description: >-
+                Indicates whether the database should synchronously flush data as it is written to disk.
+          deadlockRetryLimit:
+            type: integer
+            description: >-
+                Specifies the number of times that the server should retry an attempted operation in the backend if a deadlock results from two concurrent requests that interfere with each other in a conflicting manner.
+          externalTxnDefaultBackendLockBehavior:
+            $ref: '#/components/schemas/Enumbackend-externalTxnDefaultBackendLockBehaviorProp'
+          singleWriterLockBehavior:
+            $ref: '#/components/schemas/Enumbackend-singleWriterLockBehaviorProp'
+          subtreeDeleteSizeLimit:
+            type: integer
+            description: >-
+                Specifies the maximum number of entries that may be deleted from the backend when using the subtree delete control.
+          numRecentChanges:
+            type: integer
+            description: >-
+                Specifies the number of recent LDAP entry changes per replica for which the backend keeps a record to allow replication to recover in the event that the server is abruptly terminated. Increasing this value can lead to an increased peak server modification rate as well as increased replication throughput.
+          offlineProcessDatabaseOpenTimeout:
+            type: string
+            description: >-
+                Specifies a timeout duration which will be used for opening the database environment by an offline process, such as export-ldif.
+          backendID:
+            type: string
+            description: >-
+                Specifies a name to identify the associated backend.
+          description:
+            type: string
+            description: >-
+                A description for this Backend
+          setDegradedAlertWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
+          returnUnavailableWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
+          notificationManager:
+            type: string
+            description: >-
+                Specifies a notification manager for changes resulting from operations processed through this Backend
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
+      - baseDN
+      - writabilityMode
+      - dbDirectory
+      - importTempDirectory
+      - backendID
+    Enumlarge-attribute-backendSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:backend:large-attribute"
+    canned-response-backend-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumcanned-response-backendSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Backend
+          writabilityMode:
+            $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
+          backendID:
+            type: string
+            description: >-
+                Specifies a name to identify the associated backend.
+          description:
+            type: string
+            description: >-
+                A description for this Backend
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the backend is enabled in the server.
+          baseDN:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the base DN(s) for the data that the backend handles.
+          setDegradedAlertWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
+          returnUnavailableWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
+          notificationManager:
+            type: string
+            description: >-
+                Specifies a notification manager for changes resulting from operations processed through this Backend
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - writabilityMode
+      - backendID
+      - enabled
+      - baseDN
+    Enumcanned-response-backendSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:backend:canned-response"
     Enumlocal-db-composite-index-cacheModeProp:
       type: string
       enum:
@@ -2597,6 +3176,84 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:local-db-index"
+    backendListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/schema-backend-response'
+            - $ref: '#/components/schemas/backup-backend-response'
+            - $ref: '#/components/schemas/memory-backend-response'
+            - $ref: '#/components/schemas/encryption-settings-backend-response'
+            - $ref: '#/components/schemas/ldif-backend-response'
+            - $ref: '#/components/schemas/trust-store-backend-response'
+            - $ref: '#/components/schemas/custom-backend-response'
+            - $ref: '#/components/schemas/changelog-backend-response'
+            - $ref: '#/components/schemas/monitor-backend-response'
+            - $ref: '#/components/schemas/local-db-backend-response'
+            - $ref: '#/components/schemas/mirrored-ldif-backend-response'
+            - $ref: '#/components/schemas/config-file-handler-backend-response'
+            - $ref: '#/components/schemas/task-backend-response'
+            - $ref: '#/components/schemas/alert-backend-response'
+            - $ref: '#/components/schemas/alarm-backend-response'
+            - $ref: '#/components/schemas/metrics-backend-response'
+            - $ref: '#/components/schemas/large-attribute-backend-response'
+            - $ref: '#/components/schemas/canned-response-backend-response'
+    local-db-composite-indexListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/local-db-composite-index-response'
+    local-db-vlv-indexListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/local-db-vlv-index-response'
+    local-db-indexListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/local-db-index-response'
     updateRequest:
       type: object
       properties:

@@ -11,6 +11,33 @@ tags:
   name: conjur-authentication-method
 paths:
   /conjur-authentication-methods:
+    get:
+      summary: Returns a list of all Conjur Authentication Method objects
+      operationId: list-conjur-authentication-methods
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/conjur-authentication-methodListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - conjur-authentication-method
     post:
       summary: Add a new Conjur Authentication Method to the config
       operationId: add-conjur-authentication-method
@@ -194,6 +221,21 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:conjur-authentication-method:api-key"
+    conjur-authentication-methodListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/api-key-conjur-authentication-method-response'
     updateRequest:
       type: object
       properties:

@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddConsentDefinitionLocalization**](ConsentDefinitionLocalizationApi.md#AddConsentDefinitionLocalization) | **Post** /consent-definitions/{consent-definition-name}/consent-definition-localizations | Add a new Consent Definition Localization to the config
 [**DeleteConsentDefinitionLocalization**](ConsentDefinitionLocalizationApi.md#DeleteConsentDefinitionLocalization) | **Delete** /consent-definitions/{consent-definition-name}/consent-definition-localizations/{consent-definition-localization-name} | Delete a Consent Definition Localization
 [**GetConsentDefinitionLocalization**](ConsentDefinitionLocalizationApi.md#GetConsentDefinitionLocalization) | **Get** /consent-definitions/{consent-definition-name}/consent-definition-localizations/{consent-definition-localization-name} | Returns a single Consent Definition Localization
+[**ListConsentDefinitionLocalizations**](ConsentDefinitionLocalizationApi.md#ListConsentDefinitionLocalizations) | **Get** /consent-definitions/{consent-definition-name}/consent-definition-localizations | Returns a list of all Consent Definition Localization objects
 [**UpdateConsentDefinitionLocalization**](ConsentDefinitionLocalizationApi.md#UpdateConsentDefinitionLocalization) | **Patch** /consent-definitions/{consent-definition-name}/consent-definition-localizations/{consent-definition-localization-name} | Update an existing Consent Definition Localization by name
 
 
@@ -206,6 +207,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ConsentDefinitionLocalizationResponse**](ConsentDefinitionLocalizationResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListConsentDefinitionLocalizations
+
+> ConsentDefinitionLocalizationListResponse ListConsentDefinitionLocalizations(ctx, consentDefinitionName).Filter(filter).Execute()
+
+Returns a list of all Consent Definition Localization objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    consentDefinitionName := "consentDefinitionName_example" // string | Name of the Consent Definition
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ConsentDefinitionLocalizationApi.ListConsentDefinitionLocalizations(context.Background(), consentDefinitionName).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ConsentDefinitionLocalizationApi.ListConsentDefinitionLocalizations``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListConsentDefinitionLocalizations`: ConsentDefinitionLocalizationListResponse
+    fmt.Fprintf(os.Stdout, "Response from `ConsentDefinitionLocalizationApi.ListConsentDefinitionLocalizations`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**consentDefinitionName** | **string** | Name of the Consent Definition | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListConsentDefinitionLocalizationsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**ConsentDefinitionLocalizationListResponse**](ConsentDefinitionLocalizationListResponse.md)
 
 ### Authorization
 

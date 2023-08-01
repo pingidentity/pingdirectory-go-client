@@ -11,6 +11,33 @@ tags:
   name: identity-mapper
 paths:
   /identity-mappers:
+    get:
+      summary: Returns a list of all Identity Mapper objects
+      operationId: list-identity-mappers
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/identity-mapperListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - identity-mapper
     post:
       summary: Add a new Identity Mapper to the config
       operationId: add-identity-mapper
@@ -221,64 +248,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:identity-mapper:exact-match"
-    add-groovy-scripted-identity-mapper-request:
-      allOf:
-      - type: object
-        properties:
-          mapperName:
-            type: string
-            description: >-
-                Name of the new Identity Mapper
-      - $ref: '#/components/schemas/groovy-scripted-identity-mapper-shared'
-      required:
-      - mapperName
-    groovy-scripted-identity-mapper-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            type: string
-            description: >-
-                Name of the Identity Mapper
-      - $ref: '#/components/schemas/groovy-scripted-identity-mapper-shared'
-      - $ref: '#/components/schemas/meta'
-      required:
-      - id
-    groovy-scripted-identity-mapper-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumgroovy-scripted-identity-mapperSchemaUrn'
-        scriptClass:
-          type: string
-          description: >-
-              The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Identity Mapper.
-        scriptArgument:
-          type: array
-          items:
-            type: string
-          description: >-
-              The set of arguments used to customize the behavior for the Scripted Identity Mapper. Each configuration property should be given in the form 'name=value'.
-        description:
-          type: string
-          description: >-
-              A description for this Identity Mapper
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the Identity Mapper is enabled for use.
-      required:
-      - schemas
-      - scriptClass
-      - enabled
-    Enumgroovy-scripted-identity-mapperSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:identity-mapper:groovy-scripted"
     add-regular-expression-identity-mapper-request:
       allOf:
       - type: object
@@ -352,6 +321,64 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:identity-mapper:regular-expression"
+    add-groovy-scripted-identity-mapper-request:
+      allOf:
+      - type: object
+        properties:
+          mapperName:
+            type: string
+            description: >-
+                Name of the new Identity Mapper
+      - $ref: '#/components/schemas/groovy-scripted-identity-mapper-shared'
+      required:
+      - mapperName
+    groovy-scripted-identity-mapper-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the Identity Mapper
+      - $ref: '#/components/schemas/groovy-scripted-identity-mapper-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    groovy-scripted-identity-mapper-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumgroovy-scripted-identity-mapperSchemaUrn'
+        scriptClass:
+          type: string
+          description: >-
+              The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Identity Mapper.
+        scriptArgument:
+          type: array
+          items:
+            type: string
+          description: >-
+              The set of arguments used to customize the behavior for the Scripted Identity Mapper. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: >-
+              A description for this Identity Mapper
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the Identity Mapper is enabled for use.
+      required:
+      - schemas
+      - scriptClass
+      - enabled
+    Enumgroovy-scripted-identity-mapperSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:identity-mapper:groovy-scripted"
     add-aggregate-identity-mapper-request:
       allOf:
       - type: object
@@ -469,6 +496,26 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:identity-mapper:third-party"
+    identity-mapperListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/exact-match-identity-mapper-response'
+            - $ref: '#/components/schemas/regular-expression-identity-mapper-response'
+            - $ref: '#/components/schemas/groovy-scripted-identity-mapper-response'
+            - $ref: '#/components/schemas/aggregate-identity-mapper-response'
+            - $ref: '#/components/schemas/third-party-identity-mapper-response'
     updateRequest:
       type: object
       properties:

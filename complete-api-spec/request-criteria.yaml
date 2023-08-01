@@ -11,6 +11,33 @@ tags:
   name: request-criteria
 paths:
   /request-criteria:
+    get:
+      summary: Returns a list of all Request Criteria objects
+      operationId: list-request-criteria
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/request-criteriaListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - request-criteria
     post:
       summary: Add a new Request Criteria to the config
       operationId: add-request-criteria
@@ -153,62 +180,6 @@ paths:
       - request-criteria
 components:
   schemas:
-    Enumrequest-criteria-root-dse-operationTypeProp:
-      type: string
-      enum:
-      - "compare"
-      - "base-object-search"
-      - "single-level-search"
-      - "whole-subtree-search"
-      - "subordinate-subtree-search"
-      description: >-
-          The types of operations that may be matched by this Root DSE Request Criteria.
-    add-root-dse-request-criteria-request:
-      allOf:
-      - type: object
-        properties:
-          criteriaName:
-            type: string
-            description: >-
-                Name of the new Request Criteria
-      - $ref: '#/components/schemas/root-dse-request-criteria-shared'
-      required:
-      - criteriaName
-    root-dse-request-criteria-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            type: string
-            description: >-
-                Name of the Request Criteria
-      - $ref: '#/components/schemas/root-dse-request-criteria-shared'
-      - $ref: '#/components/schemas/meta'
-      required:
-      - id
-    root-dse-request-criteria-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumroot-dse-request-criteriaSchemaUrn'
-        operationType:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enumrequest-criteria-root-dse-operationTypeProp'
-        description:
-          type: string
-          description: >-
-              A description for this Request Criteria
-      required:
-      - schemas
-    Enumroot-dse-request-criteriaSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:request-criteria:root-dse"
     Enumrequest-criteria-simple-operationTypeProp:
       type: string
       enum:
@@ -452,6 +423,62 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:request-criteria:simple"
+    Enumrequest-criteria-root-dse-operationTypeProp:
+      type: string
+      enum:
+      - "compare"
+      - "base-object-search"
+      - "single-level-search"
+      - "whole-subtree-search"
+      - "subordinate-subtree-search"
+      description: >-
+          The types of operations that may be matched by this Root DSE Request Criteria.
+    add-root-dse-request-criteria-request:
+      allOf:
+      - type: object
+        properties:
+          criteriaName:
+            type: string
+            description: >-
+                Name of the new Request Criteria
+      - $ref: '#/components/schemas/root-dse-request-criteria-shared'
+      required:
+      - criteriaName
+    root-dse-request-criteria-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: >-
+                Name of the Request Criteria
+      - $ref: '#/components/schemas/root-dse-request-criteria-shared'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+    root-dse-request-criteria-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumroot-dse-request-criteriaSchemaUrn'
+        operationType:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumrequest-criteria-root-dse-operationTypeProp'
+        description:
+          type: string
+          description: >-
+              A description for this Request Criteria
+      required:
+      - schemas
+    Enumroot-dse-request-criteriaSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:request-criteria:root-dse"
     add-aggregate-request-criteria-request:
       allOf:
       - type: object
@@ -571,6 +598,25 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:request-criteria:third-party"
+    request-criteriaListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/simple-request-criteria-response'
+            - $ref: '#/components/schemas/root-dse-request-criteria-response'
+            - $ref: '#/components/schemas/aggregate-request-criteria-response'
+            - $ref: '#/components/schemas/third-party-request-criteria-response'
     updateRequest:
       type: object
       properties:

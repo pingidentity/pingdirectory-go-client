@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddDelegatedAdminRights**](DelegatedAdminRightsApi.md#AddDelegatedAdminRights) | **Post** /delegated-admin-rights | Add a new Delegated Admin Rights to the config
 [**DeleteDelegatedAdminRights**](DelegatedAdminRightsApi.md#DeleteDelegatedAdminRights) | **Delete** /delegated-admin-rights/{delegated-admin-rights-name} | Delete a Delegated Admin Rights
 [**GetDelegatedAdminRights**](DelegatedAdminRightsApi.md#GetDelegatedAdminRights) | **Get** /delegated-admin-rights/{delegated-admin-rights-name} | Returns a single Delegated Admin Rights
+[**ListDelegatedAdminRights**](DelegatedAdminRightsApi.md#ListDelegatedAdminRights) | **Get** /delegated-admin-rights | Returns a list of all Delegated Admin Rights objects
 [**UpdateDelegatedAdminRights**](DelegatedAdminRightsApi.md#UpdateDelegatedAdminRights) | **Patch** /delegated-admin-rights/{delegated-admin-rights-name} | Update an existing Delegated Admin Rights by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DelegatedAdminRightsResponse**](DelegatedAdminRightsResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListDelegatedAdminRights
+
+> DelegatedAdminRightsListResponse ListDelegatedAdminRights(ctx).Filter(filter).Execute()
+
+Returns a list of all Delegated Admin Rights objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DelegatedAdminRightsApi.ListDelegatedAdminRights(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminRightsApi.ListDelegatedAdminRights``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListDelegatedAdminRights`: DelegatedAdminRightsListResponse
+    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminRightsApi.ListDelegatedAdminRights`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListDelegatedAdminRightsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**DelegatedAdminRightsListResponse**](DelegatedAdminRightsListResponse.md)
 
 ### Authorization
 

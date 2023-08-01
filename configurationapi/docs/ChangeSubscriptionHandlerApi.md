@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddChangeSubscriptionHandler**](ChangeSubscriptionHandlerApi.md#AddChangeSubscriptionHandler) | **Post** /change-subscription-handlers | Add a new Change Subscription Handler to the config
 [**DeleteChangeSubscriptionHandler**](ChangeSubscriptionHandlerApi.md#DeleteChangeSubscriptionHandler) | **Delete** /change-subscription-handlers/{change-subscription-handler-name} | Delete a Change Subscription Handler
 [**GetChangeSubscriptionHandler**](ChangeSubscriptionHandlerApi.md#GetChangeSubscriptionHandler) | **Get** /change-subscription-handlers/{change-subscription-handler-name} | Returns a single Change Subscription Handler
+[**ListChangeSubscriptionHandlers**](ChangeSubscriptionHandlerApi.md#ListChangeSubscriptionHandlers) | **Get** /change-subscription-handlers | Returns a list of all Change Subscription Handler objects
 [**UpdateChangeSubscriptionHandler**](ChangeSubscriptionHandlerApi.md#UpdateChangeSubscriptionHandler) | **Patch** /change-subscription-handlers/{change-subscription-handler-name} | Update an existing Change Subscription Handler by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddChangeSubscriptionHandler200Response**](AddChangeSubscriptionHandler200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListChangeSubscriptionHandlers
+
+> ChangeSubscriptionHandlerListResponse ListChangeSubscriptionHandlers(ctx).Filter(filter).Execute()
+
+Returns a list of all Change Subscription Handler objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ChangeSubscriptionHandlerApi.ListChangeSubscriptionHandlers(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ChangeSubscriptionHandlerApi.ListChangeSubscriptionHandlers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListChangeSubscriptionHandlers`: ChangeSubscriptionHandlerListResponse
+    fmt.Fprintf(os.Stdout, "Response from `ChangeSubscriptionHandlerApi.ListChangeSubscriptionHandlers`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListChangeSubscriptionHandlersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**ChangeSubscriptionHandlerListResponse**](ChangeSubscriptionHandlerListResponse.md)
 
 ### Authorization
 

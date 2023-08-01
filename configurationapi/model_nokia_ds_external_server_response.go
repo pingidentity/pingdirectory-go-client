@@ -37,7 +37,7 @@ type NokiaDsExternalServerResponse struct {
 	Password *string `json:"password,omitempty"`
 	// The passphrase provider to use to obtain the login password for the specified user.
 	PassphraseProvider   *string                                           `json:"passphraseProvider,omitempty"`
-	ConnectionSecurity   EnumexternalServerConnectionSecurityProp          `json:"connectionSecurity"`
+	ConnectionSecurity   EnumexternalServerNokiaDsConnectionSecurityProp   `json:"connectionSecurity"`
 	AuthenticationMethod EnumexternalServerNokiaDsAuthenticationMethodProp `json:"authenticationMethod"`
 	// Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
 	HealthCheckConnectTimeout *string `json:"healthCheckConnectTimeout,omitempty"`
@@ -70,7 +70,7 @@ type NokiaDsExternalServerResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNokiaDsExternalServerResponse(id string, schemas []EnumnokiaDsExternalServerSchemaUrn, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, serverHostName string, serverPort int64, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerNokiaDsAuthenticationMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string) *NokiaDsExternalServerResponse {
+func NewNokiaDsExternalServerResponse(id string, schemas []EnumnokiaDsExternalServerSchemaUrn, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, serverHostName string, serverPort int64, connectionSecurity EnumexternalServerNokiaDsConnectionSecurityProp, authenticationMethod EnumexternalServerNokiaDsAuthenticationMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string) *NokiaDsExternalServerResponse {
 	this := NokiaDsExternalServerResponse{}
 	this.Id = id
 	this.Schemas = schemas
@@ -374,9 +374,9 @@ func (o *NokiaDsExternalServerResponse) SetPassphraseProvider(v string) {
 }
 
 // GetConnectionSecurity returns the ConnectionSecurity field value
-func (o *NokiaDsExternalServerResponse) GetConnectionSecurity() EnumexternalServerConnectionSecurityProp {
+func (o *NokiaDsExternalServerResponse) GetConnectionSecurity() EnumexternalServerNokiaDsConnectionSecurityProp {
 	if o == nil {
-		var ret EnumexternalServerConnectionSecurityProp
+		var ret EnumexternalServerNokiaDsConnectionSecurityProp
 		return ret
 	}
 
@@ -385,7 +385,7 @@ func (o *NokiaDsExternalServerResponse) GetConnectionSecurity() EnumexternalServ
 
 // GetConnectionSecurityOk returns a tuple with the ConnectionSecurity field value
 // and a boolean to check if the value has been set.
-func (o *NokiaDsExternalServerResponse) GetConnectionSecurityOk() (*EnumexternalServerConnectionSecurityProp, bool) {
+func (o *NokiaDsExternalServerResponse) GetConnectionSecurityOk() (*EnumexternalServerNokiaDsConnectionSecurityProp, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -393,7 +393,7 @@ func (o *NokiaDsExternalServerResponse) GetConnectionSecurityOk() (*Enumexternal
 }
 
 // SetConnectionSecurity sets field value
-func (o *NokiaDsExternalServerResponse) SetConnectionSecurity(v EnumexternalServerConnectionSecurityProp) {
+func (o *NokiaDsExternalServerResponse) SetConnectionSecurity(v EnumexternalServerNokiaDsConnectionSecurityProp) {
 	o.ConnectionSecurity = v
 }
 

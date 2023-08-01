@@ -11,6 +11,33 @@ tags:
   name: entry-cache
 paths:
   /entry-caches:
+    get:
+      summary: Returns a list of all Entry Cache objects
+      operationId: list-entry-caches
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/entry-cacheListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - entry-cache
     post:
       summary: Add a new Entry Cache to the config
       operationId: add-entry-cache
@@ -137,6 +164,153 @@ paths:
       - entry-cache
 components:
   schemas:
+    Enumentry-cache-cacheTypeProp:
+      type: string
+      enum:
+      - "fifo"
+      - "lru"
+      description: >-
+          Specifies the policy which should be used for purging entries from the cache.
+    file-system-entry-cache-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumfile-system-entry-cacheSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Entry Cache
+          maxMemorySize:
+            type: string
+            description: >-
+                The maximum size of the entry cache in bytes.
+          maxEntries:
+            type: integer
+            description: >-
+                The maximum number of entries allowed in the cache.
+          cacheType:
+            $ref: '#/components/schemas/Enumentry-cache-cacheTypeProp'
+          cacheDirectory:
+            type: string
+            description: >-
+                Specifies the directory in which the cache database files should be stored.
+          persistentCache:
+            type: boolean
+            description: >-
+                Specifies whether the cache should persist across restarts.
+          compactEncoding:
+            type: boolean
+            description: >-
+                Indicates whether the cache should use a compact form when encoding cache entries by compressing the attribute descriptions and object class sets.
+          dbCachePercent:
+            type: integer
+            description: >-
+                Specifies the maximum memory usage for the internal JE cache as a percentage of the total JVM memory.
+          dbCacheSize:
+            type: string
+            description: >-
+                Specifies the maximum JVM memory usage in bytes for the internal JE cache.
+          jeProperty:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the environment properties for the Berkeley DB Java Edition database providing the backend for this entry cache.
+          includeFilter:
+            type: array
+            items:
+              type: string
+            description: >-
+                The set of filters that define the entries that should be included in the cache.
+          excludeFilter:
+            type: array
+            items:
+              type: string
+            description: >-
+                The set of filters that define the entries that should be excluded from the cache.
+          description:
+            type: string
+            description: >-
+                A description for this Entry Cache
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Entry Cache is enabled.
+          cacheLevel:
+            type: integer
+            description: >-
+                Specifies the cache level in the cache order if more than one instance of the cache is configured.
+          cacheUnindexedSearchResults:
+            type: boolean
+            description: >-
+                Indicates whether the entry cache should be updated with entries that have been returned to the client during the course of processing an unindexed search.
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
+      - cacheLevel
+    Enumfile-system-entry-cacheSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:entry-cache:file-system"
+    soft-reference-entry-cache-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumsoft-reference-entry-cacheSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Entry Cache
+          includeFilter:
+            type: array
+            items:
+              type: string
+            description: >-
+                The set of filters that define the entries that should be included in the cache.
+          excludeFilter:
+            type: array
+            items:
+              type: string
+            description: >-
+                The set of filters that define the entries that should be excluded from the cache.
+          description:
+            type: string
+            description: >-
+                A description for this Entry Cache
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Entry Cache is enabled.
+          cacheLevel:
+            type: integer
+            description: >-
+                Specifies the cache level in the cache order if more than one instance of the cache is configured.
+          cacheUnindexedSearchResults:
+            type: boolean
+            description: >-
+                Indicates whether the entry cache should be updated with entries that have been returned to the client during the course of processing an unindexed search.
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
+      - cacheLevel
+    Enumsoft-reference-entry-cacheSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:entry-cache:soft-reference"
     add-fifo-entry-cache-request:
       allOf:
       - type: object
@@ -227,6 +401,24 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:entry-cache:fifo"
+    entry-cacheListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/file-system-entry-cache-response'
+            - $ref: '#/components/schemas/soft-reference-entry-cache-response'
+            - $ref: '#/components/schemas/fifo-entry-cache-response'
     updateRequest:
       type: object
       properties:

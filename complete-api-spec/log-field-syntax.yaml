@@ -10,6 +10,34 @@ tags:
 - description: Access log-field-syntaxes
   name: log-field-syntax
 paths:
+  /log-field-syntaxes:
+    get:
+      summary: Returns a list of all Log Field Syntax objects
+      operationId: list-log-field-syntaxes
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/log-field-syntaxListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - log-field-syntax
   /log-field-syntaxes/{log-field-syntax-name}:
     get:
       summary: Returns a single Log Field Syntax
@@ -205,6 +233,24 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:log-field-syntax:generic"
+    log-field-syntaxListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/json-log-field-syntax-response'
+            - $ref: '#/components/schemas/attribute-based-log-field-syntax-response'
+            - $ref: '#/components/schemas/generic-log-field-syntax-response'
     updateRequest:
       type: object
       properties:

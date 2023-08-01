@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddTrustManagerProvider**](TrustManagerProviderApi.md#AddTrustManagerProvider) | **Post** /trust-manager-providers | Add a new Trust Manager Provider to the config
 [**DeleteTrustManagerProvider**](TrustManagerProviderApi.md#DeleteTrustManagerProvider) | **Delete** /trust-manager-providers/{trust-manager-provider-name} | Delete a Trust Manager Provider
 [**GetTrustManagerProvider**](TrustManagerProviderApi.md#GetTrustManagerProvider) | **Get** /trust-manager-providers/{trust-manager-provider-name} | Returns a single Trust Manager Provider
+[**ListTrustManagerProviders**](TrustManagerProviderApi.md#ListTrustManagerProviders) | **Get** /trust-manager-providers | Returns a list of all Trust Manager Provider objects
 [**UpdateTrustManagerProvider**](TrustManagerProviderApi.md#UpdateTrustManagerProvider) | **Patch** /trust-manager-providers/{trust-manager-provider-name} | Update an existing Trust Manager Provider by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddTrustManagerProvider200Response**](AddTrustManagerProvider200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListTrustManagerProviders
+
+> TrustManagerProviderListResponse ListTrustManagerProviders(ctx).Filter(filter).Execute()
+
+Returns a list of all Trust Manager Provider objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TrustManagerProviderApi.ListTrustManagerProviders(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `TrustManagerProviderApi.ListTrustManagerProviders``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListTrustManagerProviders`: TrustManagerProviderListResponse
+    fmt.Fprintf(os.Stdout, "Response from `TrustManagerProviderApi.ListTrustManagerProviders`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListTrustManagerProvidersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**TrustManagerProviderListResponse**](TrustManagerProviderListResponse.md)
 
 ### Authorization
 

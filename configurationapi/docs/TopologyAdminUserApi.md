@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddTopologyAdminUser**](TopologyAdminUserApi.md#AddTopologyAdminUser) | **Post** /topology-admin-users | Add a new Topology Admin User to the config
 [**DeleteTopologyAdminUser**](TopologyAdminUserApi.md#DeleteTopologyAdminUser) | **Delete** /topology-admin-users/{topology-admin-user-name} | Delete a Topology Admin User
 [**GetTopologyAdminUser**](TopologyAdminUserApi.md#GetTopologyAdminUser) | **Get** /topology-admin-users/{topology-admin-user-name} | Returns a single Topology Admin User
+[**ListTopologyAdminUsers**](TopologyAdminUserApi.md#ListTopologyAdminUsers) | **Get** /topology-admin-users | Returns a list of all Topology Admin User objects
 [**UpdateTopologyAdminUser**](TopologyAdminUserApi.md#UpdateTopologyAdminUser) | **Patch** /topology-admin-users/{topology-admin-user-name} | Update an existing Topology Admin User by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TopologyAdminUserResponse**](TopologyAdminUserResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListTopologyAdminUsers
+
+> TopologyAdminUserListResponse ListTopologyAdminUsers(ctx).Filter(filter).Execute()
+
+Returns a list of all Topology Admin User objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TopologyAdminUserApi.ListTopologyAdminUsers(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `TopologyAdminUserApi.ListTopologyAdminUsers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListTopologyAdminUsers`: TopologyAdminUserListResponse
+    fmt.Fprintf(os.Stdout, "Response from `TopologyAdminUserApi.ListTopologyAdminUsers`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListTopologyAdminUsersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**TopologyAdminUserListResponse**](TopologyAdminUserListResponse.md)
 
 ### Authorization
 

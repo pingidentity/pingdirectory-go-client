@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddOauthTokenHandler**](OauthTokenHandlerApi.md#AddOauthTokenHandler) | **Post** /oauth-token-handlers | Add a new OAuth Token Handler to the config
 [**DeleteOauthTokenHandler**](OauthTokenHandlerApi.md#DeleteOauthTokenHandler) | **Delete** /oauth-token-handlers/{oauth-token-handler-name} | Delete a OAuth Token Handler
 [**GetOauthTokenHandler**](OauthTokenHandlerApi.md#GetOauthTokenHandler) | **Get** /oauth-token-handlers/{oauth-token-handler-name} | Returns a single OAuth Token Handler
+[**ListOauthTokenHandlers**](OauthTokenHandlerApi.md#ListOauthTokenHandlers) | **Get** /oauth-token-handlers | Returns a list of all OAuth Token Handler objects
 [**UpdateOauthTokenHandler**](OauthTokenHandlerApi.md#UpdateOauthTokenHandler) | **Patch** /oauth-token-handlers/{oauth-token-handler-name} | Update an existing OAuth Token Handler by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddOauthTokenHandler200Response**](AddOauthTokenHandler200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListOauthTokenHandlers
+
+> OauthTokenHandlerListResponse ListOauthTokenHandlers(ctx).Filter(filter).Execute()
+
+Returns a list of all OAuth Token Handler objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OauthTokenHandlerApi.ListOauthTokenHandlers(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `OauthTokenHandlerApi.ListOauthTokenHandlers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListOauthTokenHandlers`: OauthTokenHandlerListResponse
+    fmt.Fprintf(os.Stdout, "Response from `OauthTokenHandlerApi.ListOauthTokenHandlers`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListOauthTokenHandlersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**OauthTokenHandlerListResponse**](OauthTokenHandlerListResponse.md)
 
 ### Authorization
 

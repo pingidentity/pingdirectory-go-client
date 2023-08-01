@@ -11,6 +11,33 @@ tags:
   name: monitor-provider
 paths:
   /monitor-providers:
+    get:
+      summary: Returns a list of all Monitor Provider objects
+      operationId: list-monitor-providers
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/monitor-providerListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - monitor-provider
     post:
       summary: Add a new Monitor Provider to the config
       operationId: add-monitor-provider
@@ -327,6 +354,37 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:custom"
+    entry-cache-monitor-provider-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumentry-cache-monitor-providerSchemaUrn'
+          id:
+            type: string
+            description: >-
+                Name of the Monitor Provider
+          description:
+            type: string
+            description: >-
+                A description for this Monitor Provider
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Monitor Provider is enabled for use.
+      - $ref: '#/components/schemas/meta'
+      required:
+      - id
+      - schemas
+      - enabled
+    Enumentry-cache-monitor-providerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:entry-cache"
     active-operations-monitor-provider-response:
       allOf:
       - type: object
@@ -679,6 +737,35 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:third-party"
+    monitor-providerListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/memory-usage-monitor-provider-response'
+            - $ref: '#/components/schemas/stack-trace-monitor-provider-response'
+            - $ref: '#/components/schemas/encryption-settings-database-accessibility-monitor-provider-response'
+            - $ref: '#/components/schemas/custom-monitor-provider-response'
+            - $ref: '#/components/schemas/entry-cache-monitor-provider-response'
+            - $ref: '#/components/schemas/active-operations-monitor-provider-response'
+            - $ref: '#/components/schemas/ssl-context-monitor-provider-response'
+            - $ref: '#/components/schemas/version-monitor-provider-response'
+            - $ref: '#/components/schemas/host-system-monitor-provider-response'
+            - $ref: '#/components/schemas/general-monitor-provider-response'
+            - $ref: '#/components/schemas/disk-space-usage-monitor-provider-response'
+            - $ref: '#/components/schemas/system-info-monitor-provider-response'
+            - $ref: '#/components/schemas/client-connection-monitor-provider-response'
+            - $ref: '#/components/schemas/third-party-monitor-provider-response'
     updateRequest:
       type: object
       properties:

@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddDelegatedAdminAttribute**](DelegatedAdminAttributeApi.md#AddDelegatedAdminAttribute) | **Post** /rest-resource-types/{rest-resource-type-name}/delegated-admin-attributes | Add a new Delegated Admin Attribute to the config
 [**DeleteDelegatedAdminAttribute**](DelegatedAdminAttributeApi.md#DeleteDelegatedAdminAttribute) | **Delete** /rest-resource-types/{rest-resource-type-name}/delegated-admin-attributes/{delegated-admin-attribute-name} | Delete a Delegated Admin Attribute
 [**GetDelegatedAdminAttribute**](DelegatedAdminAttributeApi.md#GetDelegatedAdminAttribute) | **Get** /rest-resource-types/{rest-resource-type-name}/delegated-admin-attributes/{delegated-admin-attribute-name} | Returns a single Delegated Admin Attribute
+[**ListDelegatedAdminAttributes**](DelegatedAdminAttributeApi.md#ListDelegatedAdminAttributes) | **Get** /rest-resource-types/{rest-resource-type-name}/delegated-admin-attributes | Returns a list of all Delegated Admin Attribute objects
 [**UpdateDelegatedAdminAttribute**](DelegatedAdminAttributeApi.md#UpdateDelegatedAdminAttribute) | **Patch** /rest-resource-types/{rest-resource-type-name}/delegated-admin-attributes/{delegated-admin-attribute-name} | Update an existing Delegated Admin Attribute by name
 
 
@@ -206,6 +207,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddDelegatedAdminAttribute200Response**](AddDelegatedAdminAttribute200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListDelegatedAdminAttributes
+
+> DelegatedAdminAttributeListResponse ListDelegatedAdminAttributes(ctx, restResourceTypeName).Filter(filter).Execute()
+
+Returns a list of all Delegated Admin Attribute objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    restResourceTypeName := "restResourceTypeName_example" // string | Name of the REST Resource Type
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DelegatedAdminAttributeApi.ListDelegatedAdminAttributes(context.Background(), restResourceTypeName).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminAttributeApi.ListDelegatedAdminAttributes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListDelegatedAdminAttributes`: DelegatedAdminAttributeListResponse
+    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminAttributeApi.ListDelegatedAdminAttributes`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**restResourceTypeName** | **string** | Name of the REST Resource Type | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListDelegatedAdminAttributesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**DelegatedAdminAttributeListResponse**](DelegatedAdminAttributeListResponse.md)
 
 ### Authorization
 

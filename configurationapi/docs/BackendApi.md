@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddBackend**](BackendApi.md#AddBackend) | **Post** /backends | Add a new Backend to the config
 [**DeleteBackend**](BackendApi.md#DeleteBackend) | **Delete** /backends/{backend-name} | Delete a Backend
 [**GetBackend**](BackendApi.md#GetBackend) | **Get** /backends/{backend-name} | Returns a single Backend
+[**ListBackends**](BackendApi.md#ListBackends) | **Get** /backends | Returns a list of all Backend objects
 [**UpdateBackend**](BackendApi.md#UpdateBackend) | **Patch** /backends/{backend-name} | Update an existing Backend by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetBackend200Response**](GetBackend200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListBackends
+
+> BackendListResponse ListBackends(ctx).Filter(filter).Execute()
+
+Returns a list of all Backend objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.BackendApi.ListBackends(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `BackendApi.ListBackends``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListBackends`: BackendListResponse
+    fmt.Fprintf(os.Stdout, "Response from `BackendApi.ListBackends`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListBackendsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**BackendListResponse**](BackendListResponse.md)
 
 ### Authorization
 

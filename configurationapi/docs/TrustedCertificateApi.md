@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddTrustedCertificate**](TrustedCertificateApi.md#AddTrustedCertificate) | **Post** /trusted-certificates | Add a new Trusted Certificate to the config
 [**DeleteTrustedCertificate**](TrustedCertificateApi.md#DeleteTrustedCertificate) | **Delete** /trusted-certificates/{trusted-certificate-name} | Delete a Trusted Certificate
 [**GetTrustedCertificate**](TrustedCertificateApi.md#GetTrustedCertificate) | **Get** /trusted-certificates/{trusted-certificate-name} | Returns a single Trusted Certificate
+[**ListTrustedCertificates**](TrustedCertificateApi.md#ListTrustedCertificates) | **Get** /trusted-certificates | Returns a list of all Trusted Certificate objects
 [**UpdateTrustedCertificate**](TrustedCertificateApi.md#UpdateTrustedCertificate) | **Patch** /trusted-certificates/{trusted-certificate-name} | Update an existing Trusted Certificate by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TrustedCertificateResponse**](TrustedCertificateResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListTrustedCertificates
+
+> TrustedCertificateListResponse ListTrustedCertificates(ctx).Filter(filter).Execute()
+
+Returns a list of all Trusted Certificate objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TrustedCertificateApi.ListTrustedCertificates(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `TrustedCertificateApi.ListTrustedCertificates``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListTrustedCertificates`: TrustedCertificateListResponse
+    fmt.Fprintf(os.Stdout, "Response from `TrustedCertificateApi.ListTrustedCertificates`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListTrustedCertificatesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**TrustedCertificateListResponse**](TrustedCertificateListResponse.md)
 
 ### Authorization
 

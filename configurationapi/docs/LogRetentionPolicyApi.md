@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddLogRetentionPolicy**](LogRetentionPolicyApi.md#AddLogRetentionPolicy) | **Post** /log-retention-policies | Add a new Log Retention Policy to the config
 [**DeleteLogRetentionPolicy**](LogRetentionPolicyApi.md#DeleteLogRetentionPolicy) | **Delete** /log-retention-policies/{log-retention-policy-name} | Delete a Log Retention Policy
 [**GetLogRetentionPolicy**](LogRetentionPolicyApi.md#GetLogRetentionPolicy) | **Get** /log-retention-policies/{log-retention-policy-name} | Returns a single Log Retention Policy
+[**ListLogRetentionPolicies**](LogRetentionPolicyApi.md#ListLogRetentionPolicies) | **Get** /log-retention-policies | Returns a list of all Log Retention Policy objects
 [**UpdateLogRetentionPolicy**](LogRetentionPolicyApi.md#UpdateLogRetentionPolicy) | **Patch** /log-retention-policies/{log-retention-policy-name} | Update an existing Log Retention Policy by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddLogRetentionPolicy200Response**](AddLogRetentionPolicy200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListLogRetentionPolicies
+
+> LogRetentionPolicyListResponse ListLogRetentionPolicies(ctx).Filter(filter).Execute()
+
+Returns a list of all Log Retention Policy objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.LogRetentionPolicyApi.ListLogRetentionPolicies(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `LogRetentionPolicyApi.ListLogRetentionPolicies``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListLogRetentionPolicies`: LogRetentionPolicyListResponse
+    fmt.Fprintf(os.Stdout, "Response from `LogRetentionPolicyApi.ListLogRetentionPolicies`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListLogRetentionPoliciesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**LogRetentionPolicyListResponse**](LogRetentionPolicyListResponse.md)
 
 ### Authorization
 

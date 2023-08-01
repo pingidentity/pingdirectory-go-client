@@ -62,6 +62,57 @@ paths:
       - work-queue
 components:
   schemas:
+    traditional-work-queue-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumtraditional-work-queueSchemaUrn'
+          numWorkerThreads:
+            type: integer
+            description: >-
+                Specifies the number of worker threads to be used for processing operations placed in the queue.
+          maxWorkQueueCapacity:
+            type: integer
+            description: >-
+                Specifies the maximum number of queued operations that can be in the work queue at any given time.
+      - $ref: '#/components/schemas/meta'
+      required:
+      - schemas
+      - numWorkerThreads
+    Enumtraditional-work-queueSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:work-queue:traditional"
+    wait-notify-work-queue-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumwait-notify-work-queueSchemaUrn'
+          numWorkerThreads:
+            type: integer
+            description: >-
+                Specifies the number of worker threads that should be used within the server in order to process requested operations.
+          maxWorkQueueCapacity:
+            type: integer
+            description: >-
+                Specifies the maximum number of pending operations that may be held in the work queue at any given time.
+      - $ref: '#/components/schemas/meta'
+      required:
+      - schemas
+    Enumwait-notify-work-queueSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:work-queue:wait-notify"
     high-throughput-work-queue-response:
       allOf:
       - type: object
@@ -127,6 +178,40 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:work-queue:high-throughput"
+    caller-invoked-work-queue-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumcaller-invoked-work-queueSchemaUrn'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - schemas
+    Enumcaller-invoked-work-queueSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:work-queue:caller-invoked"
+    canned-response-work-queue-response:
+      allOf:
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumcanned-response-work-queueSchemaUrn'
+      - $ref: '#/components/schemas/meta'
+      required:
+      - schemas
+    Enumcanned-response-work-queueSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:work-queue:canned-response"
     updateRequest:
       type: object
       properties:

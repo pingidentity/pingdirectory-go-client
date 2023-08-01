@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddDelegatedAdminAttributeCategory**](DelegatedAdminAttributeCategoryApi.md#AddDelegatedAdminAttributeCategory) | **Post** /delegated-admin-attribute-categories | Add a new Delegated Admin Attribute Category to the config
 [**DeleteDelegatedAdminAttributeCategory**](DelegatedAdminAttributeCategoryApi.md#DeleteDelegatedAdminAttributeCategory) | **Delete** /delegated-admin-attribute-categories/{delegated-admin-attribute-category-name} | Delete a Delegated Admin Attribute Category
 [**GetDelegatedAdminAttributeCategory**](DelegatedAdminAttributeCategoryApi.md#GetDelegatedAdminAttributeCategory) | **Get** /delegated-admin-attribute-categories/{delegated-admin-attribute-category-name} | Returns a single Delegated Admin Attribute Category
+[**ListDelegatedAdminAttributeCategories**](DelegatedAdminAttributeCategoryApi.md#ListDelegatedAdminAttributeCategories) | **Get** /delegated-admin-attribute-categories | Returns a list of all Delegated Admin Attribute Category objects
 [**UpdateDelegatedAdminAttributeCategory**](DelegatedAdminAttributeCategoryApi.md#UpdateDelegatedAdminAttributeCategory) | **Patch** /delegated-admin-attribute-categories/{delegated-admin-attribute-category-name} | Update an existing Delegated Admin Attribute Category by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DelegatedAdminAttributeCategoryResponse**](DelegatedAdminAttributeCategoryResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListDelegatedAdminAttributeCategories
+
+> DelegatedAdminAttributeCategoryListResponse ListDelegatedAdminAttributeCategories(ctx).Filter(filter).Execute()
+
+Returns a list of all Delegated Admin Attribute Category objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DelegatedAdminAttributeCategoryApi.ListDelegatedAdminAttributeCategories(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DelegatedAdminAttributeCategoryApi.ListDelegatedAdminAttributeCategories``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListDelegatedAdminAttributeCategories`: DelegatedAdminAttributeCategoryListResponse
+    fmt.Fprintf(os.Stdout, "Response from `DelegatedAdminAttributeCategoryApi.ListDelegatedAdminAttributeCategories`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListDelegatedAdminAttributeCategoriesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**DelegatedAdminAttributeCategoryListResponse**](DelegatedAdminAttributeCategoryListResponse.md)
 
 ### Authorization
 

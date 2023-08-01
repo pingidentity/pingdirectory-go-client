@@ -11,6 +11,33 @@ tags:
   name: trusted-certificate
 paths:
   /trusted-certificates:
+    get:
+      summary: Returns a list of all Trusted Certificate objects
+      operationId: list-trusted-certificates
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/trusted-certificateListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - trusted-certificate
     post:
       summary: Add a new Trusted Certificate to the config
       operationId: add-trusted-certificate
@@ -179,6 +206,21 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:trusted-certificate"
+    trusted-certificateListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/trusted-certificate-response'
     updateRequest:
       type: object
       properties:

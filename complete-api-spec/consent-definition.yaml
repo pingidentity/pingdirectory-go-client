@@ -11,6 +11,33 @@ tags:
   name: consent-definition
 paths:
   /consent-definitions:
+    get:
+      summary: Returns a list of all Consent Definition objects
+      operationId: list-consent-definitions
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/consent-definitionListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - consent-definition
     post:
       summary: Add a new Consent Definition to the config
       operationId: add-consent-definition
@@ -136,6 +163,41 @@ paths:
       tags:
       - consent-definition
   /consent-definitions/{consent-definition-name}/consent-definition-localizations:
+    get:
+      summary: Returns a list of all Consent Definition Localization objects
+      operationId: list-consent-definition-localizations
+      parameters:
+      - description: Name of the Consent Definition
+        explode: false
+        in: path
+        name: consent-definition-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/consent-definition-localizationListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - consent-definition-localization
     post:
       summary: Add a new Consent Definition Localization to the config
       operationId: add-consent-definition-localization
@@ -412,6 +474,36 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:consent-definition-localization"
+    consent-definitionListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/consent-definition-response'
+    consent-definition-localizationListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/consent-definition-localization-response'
     updateRequest:
       type: object
       properties:

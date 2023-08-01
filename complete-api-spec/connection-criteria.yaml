@@ -11,6 +11,33 @@ tags:
   name: connection-criteria
 paths:
   /connection-criteria:
+    get:
+      summary: Returns a list of all Connection Criteria objects
+      operationId: list-connection-criteria
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/connection-criteriaListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - connection-criteria
     post:
       summary: Add a new Connection Criteria to the config
       operationId: add-connection-criteria
@@ -647,6 +674,24 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:connection-criteria:third-party"
+    connection-criteriaListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/simple-connection-criteria-response'
+            - $ref: '#/components/schemas/aggregate-connection-criteria-response'
+            - $ref: '#/components/schemas/third-party-connection-criteria-response'
     updateRequest:
       type: object
       properties:

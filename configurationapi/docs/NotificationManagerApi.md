@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddNotificationManager**](NotificationManagerApi.md#AddNotificationManager) | **Post** /notification-managers | Add a new Notification Manager to the config
 [**DeleteNotificationManager**](NotificationManagerApi.md#DeleteNotificationManager) | **Delete** /notification-managers/{notification-manager-name} | Delete a Notification Manager
 [**GetNotificationManager**](NotificationManagerApi.md#GetNotificationManager) | **Get** /notification-managers/{notification-manager-name} | Returns a single Notification Manager
+[**ListNotificationManagers**](NotificationManagerApi.md#ListNotificationManagers) | **Get** /notification-managers | Returns a list of all Notification Manager objects
 [**UpdateNotificationManager**](NotificationManagerApi.md#UpdateNotificationManager) | **Patch** /notification-managers/{notification-manager-name} | Update an existing Notification Manager by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ThirdPartyNotificationManagerResponse**](ThirdPartyNotificationManagerResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListNotificationManagers
+
+> NotificationManagerListResponse ListNotificationManagers(ctx).Filter(filter).Execute()
+
+Returns a list of all Notification Manager objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.NotificationManagerApi.ListNotificationManagers(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `NotificationManagerApi.ListNotificationManagers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListNotificationManagers`: NotificationManagerListResponse
+    fmt.Fprintf(os.Stdout, "Response from `NotificationManagerApi.ListNotificationManagers`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListNotificationManagersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**NotificationManagerListResponse**](NotificationManagerListResponse.md)
 
 ### Authorization
 

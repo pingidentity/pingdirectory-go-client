@@ -11,6 +11,33 @@ tags:
   name: pass-through-authentication-handler
 paths:
   /pass-through-authentication-handlers:
+    get:
+      summary: Returns a list of all Pass Through Authentication Handler objects
+      operationId: list-pass-through-authentication-handlers
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/pass-through-authentication-handlerListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - pass-through-authentication-handler
     post:
       summary: Add a new Pass Through Authentication Handler to the config
       operationId: add-pass-through-authentication-handler
@@ -526,6 +553,25 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:pass-through-authentication-handler:third-party"
+    pass-through-authentication-handlerListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/ping-one-pass-through-authentication-handler-response'
+            - $ref: '#/components/schemas/ldap-pass-through-authentication-handler-response'
+            - $ref: '#/components/schemas/aggregate-pass-through-authentication-handler-response'
+            - $ref: '#/components/schemas/third-party-pass-through-authentication-handler-response'
     updateRequest:
       type: object
       properties:

@@ -130,7 +130,7 @@ Name | Type | Description | Notes
 **PassThroughAuthenticationHandler** | **string** | The component used to manage authentication with the external authentication service. | 
 **UpdateInterval** | Pointer to **string** | Specifies the interval in seconds when referential integrity updates are made. | [optional] 
 **Type** | **[]string** | Specifies the type of attributes to check for value uniqueness. | 
-**MultipleAttributeBehavior** | Pointer to [**EnumpluginMultipleAttributeBehaviorProp**](EnumpluginMultipleAttributeBehaviorProp.md) |  | [optional] 
+**MultipleAttributeBehavior** | Pointer to [**EnumpluginUniqueAttributeMultipleAttributeBehaviorProp**](EnumpluginUniqueAttributeMultipleAttributeBehaviorProp.md) |  | [optional] 
 **PreventConflictsWithSoftDeletedEntries** | Pointer to **bool** | Indicates whether this Unique Attribute Plugin should reject a change that would result in one or more conflicts, even if those conflicts only exist in soft-deleted entries. | [optional] 
 
 ## Methods
@@ -3139,20 +3139,20 @@ SetType sets Type field to given value.
 
 ### GetMultipleAttributeBehavior
 
-`func (o *AddPluginRequest) GetMultipleAttributeBehavior() EnumpluginMultipleAttributeBehaviorProp`
+`func (o *AddPluginRequest) GetMultipleAttributeBehavior() EnumpluginUniqueAttributeMultipleAttributeBehaviorProp`
 
 GetMultipleAttributeBehavior returns the MultipleAttributeBehavior field if non-nil, zero value otherwise.
 
 ### GetMultipleAttributeBehaviorOk
 
-`func (o *AddPluginRequest) GetMultipleAttributeBehaviorOk() (*EnumpluginMultipleAttributeBehaviorProp, bool)`
+`func (o *AddPluginRequest) GetMultipleAttributeBehaviorOk() (*EnumpluginUniqueAttributeMultipleAttributeBehaviorProp, bool)`
 
 GetMultipleAttributeBehaviorOk returns a tuple with the MultipleAttributeBehavior field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMultipleAttributeBehavior
 
-`func (o *AddPluginRequest) SetMultipleAttributeBehavior(v EnumpluginMultipleAttributeBehaviorProp)`
+`func (o *AddPluginRequest) SetMultipleAttributeBehavior(v EnumpluginUniqueAttributeMultipleAttributeBehaviorProp)`
 
 SetMultipleAttributeBehavior sets MultipleAttributeBehavior field to given value.
 

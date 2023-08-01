@@ -348,6 +348,122 @@ func (a *ScimSubattributeApiService) GetScimSubattributeExecute(r ApiGetScimSuba
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiListScimSubattributesRequest struct {
+	ctx               context.Context
+	ApiService        *ScimSubattributeApiService
+	scimAttributeName string
+	scimSchemaName    string
+	filter            *string
+}
+
+// SCIM filter
+func (r ApiListScimSubattributesRequest) Filter(filter string) ApiListScimSubattributesRequest {
+	r.filter = &filter
+	return r
+}
+
+func (r ApiListScimSubattributesRequest) Execute() (*ScimSubattributeListResponse, *http.Response, error) {
+	return r.ApiService.ListScimSubattributesExecute(r)
+}
+
+/*
+ListScimSubattributes Returns a list of all SCIM Subattribute objects
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scimAttributeName Name of the SCIM Attribute
+	@param scimSchemaName Name of the SCIM Schema
+	@return ApiListScimSubattributesRequest
+*/
+func (a *ScimSubattributeApiService) ListScimSubattributes(ctx context.Context, scimAttributeName string, scimSchemaName string) ApiListScimSubattributesRequest {
+	return ApiListScimSubattributesRequest{
+		ApiService:        a,
+		ctx:               ctx,
+		scimAttributeName: scimAttributeName,
+		scimSchemaName:    scimSchemaName,
+	}
+}
+
+// Execute executes the request
+//
+//	@return ScimSubattributeListResponse
+func (a *ScimSubattributeApiService) ListScimSubattributesExecute(r ApiListScimSubattributesRequest) (*ScimSubattributeListResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ScimSubattributeListResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScimSubattributeApiService.ListScimSubattributes")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name}/scim-subattributes"
+	localVarPath = strings.Replace(localVarPath, "{"+"scim-attribute-name"+"}", url.PathEscape(parameterValueToString(r.scimAttributeName, "scimAttributeName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"scim-schema-name"+"}", url.PathEscape(parameterValueToString(r.scimSchemaName, "scimSchemaName")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.filter != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter", r.filter, "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiUpdateScimSubattributeRequest struct {
 	ctx                  context.Context
 	ApiService           *ScimSubattributeApiService

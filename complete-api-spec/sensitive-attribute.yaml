@@ -11,6 +11,33 @@ tags:
   name: sensitive-attribute
 paths:
   /sensitive-attributes:
+    get:
+      summary: Returns a list of all Sensitive Attribute objects
+      operationId: list-sensitive-attributes
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sensitive-attributeListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - sensitive-attribute
     post:
       summary: Add a new Sensitive Attribute to the config
       operationId: add-sensitive-attribute
@@ -239,6 +266,21 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:sensitive-attribute"
+    sensitive-attributeListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/sensitive-attribute-response'
     updateRequest:
       type: object
       properties:

@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddAzureAuthenticationMethod**](AzureAuthenticationMethodApi.md#AddAzureAuthenticationMethod) | **Post** /azure-authentication-methods | Add a new Azure Authentication Method to the config
 [**DeleteAzureAuthenticationMethod**](AzureAuthenticationMethodApi.md#DeleteAzureAuthenticationMethod) | **Delete** /azure-authentication-methods/{azure-authentication-method-name} | Delete a Azure Authentication Method
 [**GetAzureAuthenticationMethod**](AzureAuthenticationMethodApi.md#GetAzureAuthenticationMethod) | **Get** /azure-authentication-methods/{azure-authentication-method-name} | Returns a single Azure Authentication Method
+[**ListAzureAuthenticationMethods**](AzureAuthenticationMethodApi.md#ListAzureAuthenticationMethods) | **Get** /azure-authentication-methods | Returns a list of all Azure Authentication Method objects
 [**UpdateAzureAuthenticationMethod**](AzureAuthenticationMethodApi.md#UpdateAzureAuthenticationMethod) | **Patch** /azure-authentication-methods/{azure-authentication-method-name} | Update an existing Azure Authentication Method by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddAzureAuthenticationMethod200Response**](AddAzureAuthenticationMethod200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListAzureAuthenticationMethods
+
+> AzureAuthenticationMethodListResponse ListAzureAuthenticationMethods(ctx).Filter(filter).Execute()
+
+Returns a list of all Azure Authentication Method objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AzureAuthenticationMethodApi.ListAzureAuthenticationMethods(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AzureAuthenticationMethodApi.ListAzureAuthenticationMethods``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListAzureAuthenticationMethods`: AzureAuthenticationMethodListResponse
+    fmt.Fprintf(os.Stdout, "Response from `AzureAuthenticationMethodApi.ListAzureAuthenticationMethods`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListAzureAuthenticationMethodsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**AzureAuthenticationMethodListResponse**](AzureAuthenticationMethodListResponse.md)
 
 ### Authorization
 

@@ -11,6 +11,33 @@ tags:
   name: alert-handler
 paths:
   /alert-handlers:
+    get:
+      summary: Returns a list of all Alert Handler objects
+      operationId: list-alert-handlers
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/alert-handlerListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - alert-handler
     post:
       summary: Add a new Alert Handler to the config
       operationId: add-alert-handler
@@ -1367,6 +1394,32 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:alert-handler:third-party"
+    alert-handlerListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/output-alert-handler-response'
+            - $ref: '#/components/schemas/smtp-alert-handler-response'
+            - $ref: '#/components/schemas/jmx-alert-handler-response'
+            - $ref: '#/components/schemas/groovy-scripted-alert-handler-response'
+            - $ref: '#/components/schemas/custom-alert-handler-response'
+            - $ref: '#/components/schemas/snmp-alert-handler-response'
+            - $ref: '#/components/schemas/twilio-alert-handler-response'
+            - $ref: '#/components/schemas/error-log-alert-handler-response'
+            - $ref: '#/components/schemas/snmp-sub-agent-alert-handler-response'
+            - $ref: '#/components/schemas/exec-alert-handler-response'
+            - $ref: '#/components/schemas/third-party-alert-handler-response'
     updateRequest:
       type: object
       properties:

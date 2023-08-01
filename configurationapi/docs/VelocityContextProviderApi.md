@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddVelocityContextProvider**](VelocityContextProviderApi.md#AddVelocityContextProvider) | **Post** /http-servlet-extensions/{http-servlet-extension-name}/velocity-context-providers | Add a new Velocity Context Provider to the config
 [**DeleteVelocityContextProvider**](VelocityContextProviderApi.md#DeleteVelocityContextProvider) | **Delete** /http-servlet-extensions/{http-servlet-extension-name}/velocity-context-providers/{velocity-context-provider-name} | Delete a Velocity Context Provider
 [**GetVelocityContextProvider**](VelocityContextProviderApi.md#GetVelocityContextProvider) | **Get** /http-servlet-extensions/{http-servlet-extension-name}/velocity-context-providers/{velocity-context-provider-name} | Returns a single Velocity Context Provider
+[**ListVelocityContextProviders**](VelocityContextProviderApi.md#ListVelocityContextProviders) | **Get** /http-servlet-extensions/{http-servlet-extension-name}/velocity-context-providers | Returns a list of all Velocity Context Provider objects
 [**UpdateVelocityContextProvider**](VelocityContextProviderApi.md#UpdateVelocityContextProvider) | **Patch** /http-servlet-extensions/{http-servlet-extension-name}/velocity-context-providers/{velocity-context-provider-name} | Update an existing Velocity Context Provider by name
 
 
@@ -206,6 +207,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetVelocityContextProvider200Response**](GetVelocityContextProvider200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListVelocityContextProviders
+
+> VelocityContextProviderListResponse ListVelocityContextProviders(ctx, httpServletExtensionName).Filter(filter).Execute()
+
+Returns a list of all Velocity Context Provider objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    httpServletExtensionName := "httpServletExtensionName_example" // string | Name of the HTTP Servlet Extension
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VelocityContextProviderApi.ListVelocityContextProviders(context.Background(), httpServletExtensionName).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `VelocityContextProviderApi.ListVelocityContextProviders``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListVelocityContextProviders`: VelocityContextProviderListResponse
+    fmt.Fprintf(os.Stdout, "Response from `VelocityContextProviderApi.ListVelocityContextProviders`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**httpServletExtensionName** | **string** | Name of the HTTP Servlet Extension | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListVelocityContextProvidersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**VelocityContextProviderListResponse**](VelocityContextProviderListResponse.md)
 
 ### Authorization
 

@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddOtpDeliveryMechanism**](OtpDeliveryMechanismApi.md#AddOtpDeliveryMechanism) | **Post** /otp-delivery-mechanisms | Add a new OTP Delivery Mechanism to the config
 [**DeleteOtpDeliveryMechanism**](OtpDeliveryMechanismApi.md#DeleteOtpDeliveryMechanism) | **Delete** /otp-delivery-mechanisms/{otp-delivery-mechanism-name} | Delete a OTP Delivery Mechanism
 [**GetOtpDeliveryMechanism**](OtpDeliveryMechanismApi.md#GetOtpDeliveryMechanism) | **Get** /otp-delivery-mechanisms/{otp-delivery-mechanism-name} | Returns a single OTP Delivery Mechanism
+[**ListOtpDeliveryMechanisms**](OtpDeliveryMechanismApi.md#ListOtpDeliveryMechanisms) | **Get** /otp-delivery-mechanisms | Returns a list of all OTP Delivery Mechanism objects
 [**UpdateOtpDeliveryMechanism**](OtpDeliveryMechanismApi.md#UpdateOtpDeliveryMechanism) | **Patch** /otp-delivery-mechanisms/{otp-delivery-mechanism-name} | Update an existing OTP Delivery Mechanism by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AddOtpDeliveryMechanism200Response**](AddOtpDeliveryMechanism200Response.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListOtpDeliveryMechanisms
+
+> OtpDeliveryMechanismListResponse ListOtpDeliveryMechanisms(ctx).Filter(filter).Execute()
+
+Returns a list of all OTP Delivery Mechanism objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.OtpDeliveryMechanismApi.ListOtpDeliveryMechanisms(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `OtpDeliveryMechanismApi.ListOtpDeliveryMechanisms``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListOtpDeliveryMechanisms`: OtpDeliveryMechanismListResponse
+    fmt.Fprintf(os.Stdout, "Response from `OtpDeliveryMechanismApi.ListOtpDeliveryMechanisms`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListOtpDeliveryMechanismsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**OtpDeliveryMechanismListResponse**](OtpDeliveryMechanismListResponse.md)
 
 ### Authorization
 

@@ -11,6 +11,33 @@ tags:
   name: otp-delivery-mechanism
 paths:
   /otp-delivery-mechanisms:
+    get:
+      summary: Returns a list of all OTP Delivery Mechanism objects
+      operationId: list-otp-delivery-mechanisms
+      parameters:
+      - in: query
+        name: filter
+        schema:
+          type: string
+        required: false
+        description: SCIM filter
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/otp-delivery-mechanismListResponse'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+      security:
+      - basicAuth: []
+      tags:
+      - otp-delivery-mechanism
     post:
       summary: Add a new OTP Delivery Mechanism to the config
       operationId: add-otp-delivery-mechanism
@@ -378,6 +405,24 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:otp-delivery-mechanism:third-party"
+    otp-delivery-mechanismListResponse:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            type: string
+        totalResults:
+          type: number
+        Resources:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/twilio-otp-delivery-mechanism-response'
+            - $ref: '#/components/schemas/email-otp-delivery-mechanism-response'
+            - $ref: '#/components/schemas/third-party-otp-delivery-mechanism-response'
     updateRequest:
       type: object
       properties:

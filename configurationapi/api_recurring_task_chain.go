@@ -324,6 +324,114 @@ func (a *RecurringTaskChainApiService) GetRecurringTaskChainExecute(r ApiGetRecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiListRecurringTaskChainsRequest struct {
+	ctx        context.Context
+	ApiService *RecurringTaskChainApiService
+	filter     *string
+}
+
+// SCIM filter
+func (r ApiListRecurringTaskChainsRequest) Filter(filter string) ApiListRecurringTaskChainsRequest {
+	r.filter = &filter
+	return r
+}
+
+func (r ApiListRecurringTaskChainsRequest) Execute() (*RecurringTaskChainListResponse, *http.Response, error) {
+	return r.ApiService.ListRecurringTaskChainsExecute(r)
+}
+
+/*
+ListRecurringTaskChains Returns a list of all Recurring Task Chain objects
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListRecurringTaskChainsRequest
+*/
+func (a *RecurringTaskChainApiService) ListRecurringTaskChains(ctx context.Context) ApiListRecurringTaskChainsRequest {
+	return ApiListRecurringTaskChainsRequest{
+		ApiService: a,
+		ctx:        ctx,
+	}
+}
+
+// Execute executes the request
+//
+//	@return RecurringTaskChainListResponse
+func (a *RecurringTaskChainApiService) ListRecurringTaskChainsExecute(r ApiListRecurringTaskChainsRequest) (*RecurringTaskChainListResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RecurringTaskChainListResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecurringTaskChainApiService.ListRecurringTaskChains")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/recurring-task-chains"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.filter != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter", r.filter, "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiUpdateRecurringTaskChainRequest struct {
 	ctx                    context.Context
 	ApiService             *RecurringTaskChainApiService

@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddServerGroup**](ServerGroupApi.md#AddServerGroup) | **Post** /server-groups | Add a new Server Group to the config
 [**DeleteServerGroup**](ServerGroupApi.md#DeleteServerGroup) | **Delete** /server-groups/{server-group-name} | Delete a Server Group
 [**GetServerGroup**](ServerGroupApi.md#GetServerGroup) | **Get** /server-groups/{server-group-name} | Returns a single Server Group
+[**ListServerGroups**](ServerGroupApi.md#ListServerGroups) | **Get** /server-groups | Returns a list of all Server Group objects
 [**UpdateServerGroup**](ServerGroupApi.md#UpdateServerGroup) | **Patch** /server-groups/{server-group-name} | Update an existing Server Group by name
 
 
@@ -194,6 +195,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ServerGroupResponse**](ServerGroupResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListServerGroups
+
+> ServerGroupListResponse ListServerGroups(ctx).Filter(filter).Execute()
+
+Returns a list of all Server Group objects
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
+)
+
+func main() {
+    filter := "filter_example" // string | SCIM filter (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ServerGroupApi.ListServerGroups(context.Background()).Filter(filter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ServerGroupApi.ListServerGroups``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListServerGroups`: ServerGroupListResponse
+    fmt.Fprintf(os.Stdout, "Response from `ServerGroupApi.ListServerGroups`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListServerGroupsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | SCIM filter | 
+
+### Return type
+
+[**ServerGroupListResponse**](ServerGroupListResponse.md)
 
 ### Authorization
 
